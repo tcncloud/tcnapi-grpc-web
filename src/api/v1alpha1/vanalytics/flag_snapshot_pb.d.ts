@@ -1,0 +1,135 @@
+// package: api.v1alpha1.vanalytics
+// file: api/v1alpha1/vanalytics/flag_snapshot.proto
+
+import * as jspb from "google-protobuf";
+import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+
+export class ListFlagSnapshotsRequest extends jspb.Message {
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
+  clearFlagSnapshotSidsList(): void;
+  getFlagSnapshotSidsList(): Array<number>;
+  setFlagSnapshotSidsList(value: Array<number>): void;
+  addFlagSnapshotSids(value: number, index?: number): number;
+
+  hasMask(): boolean;
+  clearMask(): void;
+  getMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  getTranscriptSid(): number;
+  setTranscriptSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListFlagSnapshotsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFlagSnapshotsRequest): ListFlagSnapshotsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListFlagSnapshotsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFlagSnapshotsRequest;
+  static deserializeBinaryFromReader(message: ListFlagSnapshotsRequest, reader: jspb.BinaryReader): ListFlagSnapshotsRequest;
+}
+
+export namespace ListFlagSnapshotsRequest {
+  export type AsObject = {
+    pageSize: number,
+    orderBy: string,
+    pageToken: string,
+    flagSnapshotSidsList: Array<number>,
+    mask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    transcriptSid: number,
+  }
+}
+
+export class ListFlagSnapshotsResponse extends jspb.Message {
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
+  clearFlagSnapshotsList(): void;
+  getFlagSnapshotsList(): Array<FlagSnapshot>;
+  setFlagSnapshotsList(value: Array<FlagSnapshot>): void;
+  addFlagSnapshots(value?: FlagSnapshot, index?: number): FlagSnapshot;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListFlagSnapshotsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFlagSnapshotsResponse): ListFlagSnapshotsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListFlagSnapshotsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFlagSnapshotsResponse;
+  static deserializeBinaryFromReader(message: ListFlagSnapshotsResponse, reader: jspb.BinaryReader): ListFlagSnapshotsResponse;
+}
+
+export namespace ListFlagSnapshotsResponse {
+  export type AsObject = {
+    nextPageToken: string,
+    flagSnapshotsList: Array<FlagSnapshot.AsObject>,
+  }
+}
+
+export class FlagSnapshot extends jspb.Message {
+  getFlagSnapshotSid(): number;
+  setFlagSnapshotSid(value: number): void;
+
+  getFlagSid(): number;
+  setFlagSid(value: number): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getReviewGroupId(): string;
+  setReviewGroupId(value: string): void;
+
+  getNotifyGroupId(): string;
+  setNotifyGroupId(value: string): void;
+
+  getPriority(): number;
+  setPriority(value: number): void;
+
+  getVersion(): number;
+  setVersion(value: number): void;
+
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getMustReview(): boolean;
+  setMustReview(value: boolean): void;
+
+  getMustNotify(): boolean;
+  setMustNotify(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FlagSnapshot.AsObject;
+  static toObject(includeInstance: boolean, msg: FlagSnapshot): FlagSnapshot.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FlagSnapshot, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FlagSnapshot;
+  static deserializeBinaryFromReader(message: FlagSnapshot, reader: jspb.BinaryReader): FlagSnapshot;
+}
+
+export namespace FlagSnapshot {
+  export type AsObject = {
+    flagSnapshotSid: number,
+    flagSid: number,
+    name: string,
+    reviewGroupId: string,
+    notifyGroupId: string,
+    priority: number,
+    version: number,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    mustReview: boolean,
+    mustNotify: boolean,
+  }
+}
+
