@@ -1437,3 +1437,29 @@ export namespace OmnichannelSystemMessageUnitsEvent {
   }
 }
 
+export class OmnichannelPaymentLinkSentEvent extends jspb.Message {
+  hasMessage(): boolean;
+  clearMessage(): void;
+  getMessage(): api_commons_omnichannel_pb.OmniMessage | undefined;
+  setMessage(value?: api_commons_omnichannel_pb.OmniMessage): void;
+
+  getLink(): string;
+  setLink(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmnichannelPaymentLinkSentEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: OmnichannelPaymentLinkSentEvent): OmnichannelPaymentLinkSentEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmnichannelPaymentLinkSentEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmnichannelPaymentLinkSentEvent;
+  static deserializeBinaryFromReader(message: OmnichannelPaymentLinkSentEvent, reader: jspb.BinaryReader): OmnichannelPaymentLinkSentEvent;
+}
+
+export namespace OmnichannelPaymentLinkSentEvent {
+  export type AsObject = {
+    message?: api_commons_omnichannel_pb.OmniMessage.AsObject,
+    link: string,
+  }
+}
+

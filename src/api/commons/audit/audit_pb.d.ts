@@ -273,6 +273,11 @@ export class AuditEvent extends jspb.Message {
   getOmnichannelSystemMessageUnitsEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelSystemMessageUnitsEvent | undefined;
   setOmnichannelSystemMessageUnitsEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelSystemMessageUnitsEvent): void;
 
+  hasOmnichannelPaymentLinkSentEvent(): boolean;
+  clearOmnichannelPaymentLinkSentEvent(): void;
+  getOmnichannelPaymentLinkSentEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent | undefined;
+  setOmnichannelPaymentLinkSentEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent): void;
+
   hasAsmAgentLoginEvent(): boolean;
   clearAsmAgentLoginEvent(): void;
   getAsmAgentLoginEvent(): api_commons_audit_asm_events_pb.AsmAgentLoginEvent | undefined;
@@ -510,6 +515,7 @@ export namespace AuditEvent {
     omnichannelManagerMessageUnitsEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelManagerMessageUnitsEvent.AsObject,
     omnichannelCustomerMessageUnitsEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelCustomerMessageUnitsEvent.AsObject,
     omnichannelSystemMessageUnitsEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelSystemMessageUnitsEvent.AsObject,
+    omnichannelPaymentLinkSentEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent.AsObject,
     asmAgentLoginEvent?: api_commons_audit_asm_events_pb.AsmAgentLoginEvent.AsObject,
     asmOpenVoiceEvent?: api_commons_audit_asm_events_pb.AsmOpenVoiceEvent.AsObject,
     asmOpenOmniAgentEvent?: api_commons_audit_asm_events_pb.AsmOpenOmniAgentEvent.AsObject,
@@ -596,6 +602,7 @@ export namespace AuditEvent {
     OMNICHANNEL_MANAGER_MESSAGE_UNITS_EVENT = 354,
     OMNICHANNEL_CUSTOMER_MESSAGE_UNITS_EVENT = 355,
     OMNICHANNEL_SYSTEM_MESSAGE_UNITS_EVENT = 356,
+    OMNICHANNEL_PAYMENT_LINK_SENT_EVENT = 357,
     ASM_AGENT_LOGIN_EVENT = 400,
     ASM_OPEN_VOICE_EVENT = 401,
     ASM_OPEN_OMNI_AGENT_EVENT = 402,

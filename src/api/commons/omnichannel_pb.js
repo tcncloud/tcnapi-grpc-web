@@ -817,7 +817,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.commons.OmniConversation.ConversationDetails = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.OmniConversation.ConversationDetails.repeatedFields_, null);
 };
 goog.inherits(proto.api.commons.OmniConversation.ConversationDetails, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -3015,7 +3015,7 @@ proto.api.commons.OmniCampaignModuleConfig.toObject = function(includeInstance, 
     attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
     proto.api.commons.OmniAttachment.toObject, includeInstance),
     complianceRuleSetId: (f = msg.getComplianceRuleSetId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    paymentPortalSidsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f
+    paymentPortalIdsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3138,10 +3138,8 @@ proto.api.commons.OmniCampaignModuleConfig.deserializeBinaryFromReader = functio
       msg.setComplianceRuleSetId(value);
       break;
     case 19:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addPaymentPortalSids(values[i]);
-      }
+      var value = /** @type {string} */ (reader.readString());
+      msg.addPaymentPortalIds(value);
       break;
     default:
       reader.skipField();
@@ -3308,9 +3306,9 @@ proto.api.commons.OmniCampaignModuleConfig.serializeBinaryToWriter = function(me
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
-  f = message.getPaymentPortalSidsList();
+  f = message.getPaymentPortalIdsList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writeRepeatedString(
       19,
       f
     );
@@ -3950,29 +3948,29 @@ proto.api.commons.OmniCampaignModuleConfig.prototype.hasComplianceRuleSetId = fu
 
 
 /**
- * repeated int64 payment_portal_sids = 19;
- * @return {!Array<number>}
+ * repeated string payment_portal_ids = 19;
+ * @return {!Array<string>}
  */
-proto.api.commons.OmniCampaignModuleConfig.prototype.getPaymentPortalSidsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 19));
+proto.api.commons.OmniCampaignModuleConfig.prototype.getPaymentPortalIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 19));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.api.commons.OmniCampaignModuleConfig} returns this
  */
-proto.api.commons.OmniCampaignModuleConfig.prototype.setPaymentPortalSidsList = function(value) {
+proto.api.commons.OmniCampaignModuleConfig.prototype.setPaymentPortalIdsList = function(value) {
   return jspb.Message.setField(this, 19, value || []);
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.api.commons.OmniCampaignModuleConfig} returns this
  */
-proto.api.commons.OmniCampaignModuleConfig.prototype.addPaymentPortalSids = function(value, opt_index) {
+proto.api.commons.OmniCampaignModuleConfig.prototype.addPaymentPortalIds = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 19, value, opt_index);
 };
 
@@ -3981,8 +3979,8 @@ proto.api.commons.OmniCampaignModuleConfig.prototype.addPaymentPortalSids = func
  * Clears the list making it empty but non-null.
  * @return {!proto.api.commons.OmniCampaignModuleConfig} returns this
  */
-proto.api.commons.OmniCampaignModuleConfig.prototype.clearPaymentPortalSidsList = function() {
-  return this.setPaymentPortalSidsList([]);
+proto.api.commons.OmniCampaignModuleConfig.prototype.clearPaymentPortalIdsList = function() {
+  return this.setPaymentPortalIdsList([]);
 };
 
 
@@ -11497,6 +11495,13 @@ proto.api.commons.OmniConversation.serializeBinaryToWriter = function(message, w
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.commons.OmniConversation.ConversationDetails.repeatedFields_ = [4];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -11530,7 +11535,8 @@ proto.api.commons.OmniConversation.ConversationDetails.toObject = function(inclu
   var f, obj = {
     campaignName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     supportEmail: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    campaignShortenUrl: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+    campaignShortenUrl: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    paymentPortalIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -11579,6 +11585,10 @@ proto.api.commons.OmniConversation.ConversationDetails.deserializeBinaryFromRead
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCampaignShortenUrl(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addPaymentPortalIds(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -11626,6 +11636,13 @@ proto.api.commons.OmniConversation.ConversationDetails.serializeBinaryToWriter =
   if (f) {
     writer.writeBool(
       3,
+      f
+    );
+  }
+  f = message.getPaymentPortalIdsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
       f
     );
   }
@@ -11683,6 +11700,43 @@ proto.api.commons.OmniConversation.ConversationDetails.prototype.getCampaignShor
  */
 proto.api.commons.OmniConversation.ConversationDetails.prototype.setCampaignShortenUrl = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * repeated string payment_portal_ids = 4;
+ * @return {!Array<string>}
+ */
+proto.api.commons.OmniConversation.ConversationDetails.prototype.getPaymentPortalIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.commons.OmniConversation.ConversationDetails} returns this
+ */
+proto.api.commons.OmniConversation.ConversationDetails.prototype.setPaymentPortalIdsList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.OmniConversation.ConversationDetails} returns this
+ */
+proto.api.commons.OmniConversation.ConversationDetails.prototype.addPaymentPortalIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.OmniConversation.ConversationDetails} returns this
+ */
+proto.api.commons.OmniConversation.ConversationDetails.prototype.clearPaymentPortalIdsList = function() {
+  return this.setPaymentPortalIdsList([]);
 };
 
 
@@ -19404,7 +19458,8 @@ proto.api.commons.OmniSenderType = {
   OMNI_SENDER_TYPE_AGENT: 0,
   OMNI_SENDER_TYPE_CUSTOMER: 1,
   OMNI_SENDER_TYPE_SYSTEM: 2,
-  OMNI_SENDER_TYPE_MANAGER: 3
+  OMNI_SENDER_TYPE_MANAGER: 3,
+  OMNI_SENDER_TYPE_FLOW: 4
 };
 
 /**

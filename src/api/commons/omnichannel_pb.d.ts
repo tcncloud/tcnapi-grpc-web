@@ -308,10 +308,10 @@ export class OmniCampaignModuleConfig extends jspb.Message {
   getComplianceRuleSetId(): google_protobuf_wrappers_pb.StringValue | undefined;
   setComplianceRuleSetId(value?: google_protobuf_wrappers_pb.StringValue): void;
 
-  clearPaymentPortalSidsList(): void;
-  getPaymentPortalSidsList(): Array<number>;
-  setPaymentPortalSidsList(value: Array<number>): void;
-  addPaymentPortalSids(value: number, index?: number): number;
+  clearPaymentPortalIdsList(): void;
+  getPaymentPortalIdsList(): Array<string>;
+  setPaymentPortalIdsList(value: Array<string>): void;
+  addPaymentPortalIds(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaignModuleConfig.AsObject;
@@ -342,7 +342,7 @@ export namespace OmniCampaignModuleConfig {
     stopOnTaskDeplete?: google_protobuf_wrappers_pb.BoolValue.AsObject,
     attachmentsList: Array<OmniAttachment.AsObject>,
     complianceRuleSetId?: google_protobuf_wrappers_pb.StringValue.AsObject,
-    paymentPortalSidsList: Array<number>,
+    paymentPortalIdsList: Array<string>,
   }
 }
 
@@ -1482,6 +1482,11 @@ export namespace OmniConversation {
     getCampaignShortenUrl(): boolean;
     setCampaignShortenUrl(value: boolean): void;
 
+    clearPaymentPortalIdsList(): void;
+    getPaymentPortalIdsList(): Array<string>;
+    setPaymentPortalIdsList(value: Array<string>): void;
+    addPaymentPortalIds(value: string, index?: number): string;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ConversationDetails.AsObject;
     static toObject(includeInstance: boolean, msg: ConversationDetails): ConversationDetails.AsObject;
@@ -1497,6 +1502,7 @@ export namespace OmniConversation {
       campaignName: string,
       supportEmail: string,
       campaignShortenUrl: boolean,
+      paymentPortalIdsList: Array<string>,
     }
   }
 }
@@ -2582,6 +2588,7 @@ export interface OmniSenderTypeMap {
   OMNI_SENDER_TYPE_CUSTOMER: 1;
   OMNI_SENDER_TYPE_SYSTEM: 2;
   OMNI_SENDER_TYPE_MANAGER: 3;
+  OMNI_SENDER_TYPE_FLOW: 4;
 }
 
 export const OmniSenderType: OmniSenderTypeMap;

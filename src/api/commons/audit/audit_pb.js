@@ -71,7 +71,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,400,401,402,403,404,405,406,407,408,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,601,700,701]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,400,401,402,403,404,405,406,407,408,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,601,700,701]];
 
 /**
  * @enum {number}
@@ -126,6 +126,7 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   OMNICHANNEL_MANAGER_MESSAGE_UNITS_EVENT: 354,
   OMNICHANNEL_CUSTOMER_MESSAGE_UNITS_EVENT: 355,
   OMNICHANNEL_SYSTEM_MESSAGE_UNITS_EVENT: 356,
+  OMNICHANNEL_PAYMENT_LINK_SENT_EVENT: 357,
   ASM_AGENT_LOGIN_EVENT: 400,
   ASM_OPEN_VOICE_EVENT: 401,
   ASM_OPEN_OMNI_AGENT_EVENT: 402,
@@ -254,6 +255,7 @@ proto.api.commons.audit.AuditEvent.toObject = function(includeInstance, msg) {
     omnichannelManagerMessageUnitsEvent: (f = msg.getOmnichannelManagerMessageUnitsEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelManagerMessageUnitsEvent.toObject(includeInstance, f),
     omnichannelCustomerMessageUnitsEvent: (f = msg.getOmnichannelCustomerMessageUnitsEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelCustomerMessageUnitsEvent.toObject(includeInstance, f),
     omnichannelSystemMessageUnitsEvent: (f = msg.getOmnichannelSystemMessageUnitsEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelSystemMessageUnitsEvent.toObject(includeInstance, f),
+    omnichannelPaymentLinkSentEvent: (f = msg.getOmnichannelPaymentLinkSentEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent.toObject(includeInstance, f),
     asmAgentLoginEvent: (f = msg.getAsmAgentLoginEvent()) && api_commons_audit_asm_events_pb.AsmAgentLoginEvent.toObject(includeInstance, f),
     asmOpenVoiceEvent: (f = msg.getAsmOpenVoiceEvent()) && api_commons_audit_asm_events_pb.AsmOpenVoiceEvent.toObject(includeInstance, f),
     asmOpenOmniAgentEvent: (f = msg.getAsmOpenOmniAgentEvent()) && api_commons_audit_asm_events_pb.AsmOpenOmniAgentEvent.toObject(includeInstance, f),
@@ -588,6 +590,11 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_omnichannel_events_pb.OmnichannelSystemMessageUnitsEvent;
       reader.readMessage(value,api_commons_audit_omnichannel_events_pb.OmnichannelSystemMessageUnitsEvent.deserializeBinaryFromReader);
       msg.setOmnichannelSystemMessageUnitsEvent(value);
+      break;
+    case 357:
+      var value = new api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent;
+      reader.readMessage(value,api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent.deserializeBinaryFromReader);
+      msg.setOmnichannelPaymentLinkSentEvent(value);
       break;
     case 400:
       var value = new api_commons_audit_asm_events_pb.AsmAgentLoginEvent;
@@ -1213,6 +1220,14 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       356,
       f,
       api_commons_audit_omnichannel_events_pb.OmnichannelSystemMessageUnitsEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getOmnichannelPaymentLinkSentEvent();
+  if (f != null) {
+    writer.writeMessage(
+      357,
+      f,
+      api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent.serializeBinaryToWriter
     );
   }
   f = message.getAsmAgentLoginEvent();
@@ -3390,6 +3405,43 @@ proto.api.commons.audit.AuditEvent.prototype.clearOmnichannelSystemMessageUnitsE
  */
 proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelSystemMessageUnitsEvent = function() {
   return jspb.Message.getField(this, 356) != null;
+};
+
+
+/**
+ * optional OmnichannelPaymentLinkSentEvent omnichannel_payment_link_sent_event = 357;
+ * @return {?proto.api.commons.audit.OmnichannelPaymentLinkSentEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getOmnichannelPaymentLinkSentEvent = function() {
+  return /** @type{?proto.api.commons.audit.OmnichannelPaymentLinkSentEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent, 357));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.OmnichannelPaymentLinkSentEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setOmnichannelPaymentLinkSentEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 357, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearOmnichannelPaymentLinkSentEvent = function() {
+  return this.setOmnichannelPaymentLinkSentEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelPaymentLinkSentEvent = function() {
+  return jspb.Message.getField(this, 357) != null;
 };
 
 
