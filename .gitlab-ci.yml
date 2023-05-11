@@ -1,0 +1,4 @@
+include:
+  - project: "tcnpublic/api-ci"
+    ref: master
+    file: tcnapi-grpc-web.yml
