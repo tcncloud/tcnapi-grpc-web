@@ -2,6 +2,7 @@
 // file: api/v0alpha/compliance.proto
 
 import * as jspb from "google-protobuf";
+import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as api_commons_acd_pb from "../../api/commons/acd_pb";
 import * as api_commons_communication_pb from "../../api/commons/communication_pb";
 import * as api_commons_compliance_pb from "../../api/commons/compliance_pb";
