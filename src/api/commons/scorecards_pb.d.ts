@@ -447,9 +447,6 @@ export class AutoEvaluationQuestion extends jspb.Message {
   getRiskLevel(): RiskLevelMap[keyof RiskLevelMap];
   setRiskLevel(value: RiskLevelMap[keyof RiskLevelMap]): void;
 
-  getExpressionMatched(): boolean;
-  setExpressionMatched(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AutoEvaluationQuestion.AsObject;
   static toObject(includeInstance: boolean, msg: AutoEvaluationQuestion): AutoEvaluationQuestion.AsObject;
@@ -470,7 +467,6 @@ export namespace AutoEvaluationQuestion {
     passed: boolean,
     sortOrder: number,
     riskLevel: RiskLevelMap[keyof RiskLevelMap],
-    expressionMatched: boolean,
   }
 }
 
@@ -797,9 +793,6 @@ export class Scorecard extends jspb.Message {
   setCustomFieldKeysList(value: Array<string>): void;
   addCustomFieldKeys(value: string, index?: number): string;
 
-  getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
-  setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Scorecard.AsObject;
   static toObject(includeInstance: boolean, msg: Scorecard): Scorecard.AsObject;
@@ -827,7 +820,6 @@ export namespace Scorecard {
     state: ScorecardStateMap[keyof ScorecardStateMap],
     isAdHoc: boolean,
     customFieldKeysList: Array<string>,
-    callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
   }
 }
 

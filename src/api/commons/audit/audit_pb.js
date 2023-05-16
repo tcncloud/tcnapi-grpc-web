@@ -71,7 +71,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,400,401,402,403,404,405,406,407,408,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,400,401,402,403,404,405,406,407,408,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,601,700,701]];
 
 /**
  * @enum {number}
@@ -158,7 +158,6 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   SCORECARDS_UPDATE_SCORECARD_QUESTION_EVENT: 519,
   SCORECARDS_DELETE_SCORECARD_QUESTION_EVENT: 520,
   SCORECARDS_CREATE_AUTO_EVALUATION_EVENT: 521,
-  SCORECARDS_UPDATE_EVALUATION_EVENT: 522,
   TICKET_EVENT: 601,
   COMPLIANCE_RND_QUERY_EVENT: 700,
   COMPLIANCE_RND_QUERY_CACHED_EVENT: 701
@@ -288,7 +287,6 @@ proto.api.commons.audit.AuditEvent.toObject = function(includeInstance, msg) {
     scorecardsUpdateScorecardQuestionEvent: (f = msg.getScorecardsUpdateScorecardQuestionEvent()) && api_commons_audit_scorecards_events_pb.ScorecardsUpdateScorecardQuestionEvent.toObject(includeInstance, f),
     scorecardsDeleteScorecardQuestionEvent: (f = msg.getScorecardsDeleteScorecardQuestionEvent()) && api_commons_audit_scorecards_events_pb.ScorecardsDeleteScorecardQuestionEvent.toObject(includeInstance, f),
     scorecardsCreateAutoEvaluationEvent: (f = msg.getScorecardsCreateAutoEvaluationEvent()) && api_commons_audit_scorecards_events_pb.ScorecardsCreateAutoEvaluationEvent.toObject(includeInstance, f),
-    scorecardsUpdateEvaluationEvent: (f = msg.getScorecardsUpdateEvaluationEvent()) && api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent.toObject(includeInstance, f),
     ticketEvent: (f = msg.getTicketEvent()) && api_commons_audit_tickets_events_pb.TicketEvent.toObject(includeInstance, f),
     complianceRndQueryEvent: (f = msg.getComplianceRndQueryEvent()) && api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.toObject(includeInstance, f),
     complianceRndQueryCachedEvent: (f = msg.getComplianceRndQueryCachedEvent()) && api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.toObject(includeInstance, f)
@@ -752,11 +750,6 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_scorecards_events_pb.ScorecardsCreateAutoEvaluationEvent;
       reader.readMessage(value,api_commons_audit_scorecards_events_pb.ScorecardsCreateAutoEvaluationEvent.deserializeBinaryFromReader);
       msg.setScorecardsCreateAutoEvaluationEvent(value);
-      break;
-    case 522:
-      var value = new api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent;
-      reader.readMessage(value,api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent.deserializeBinaryFromReader);
-      msg.setScorecardsUpdateEvaluationEvent(value);
       break;
     case 601:
       var value = new api_commons_audit_tickets_events_pb.TicketEvent;
@@ -1483,14 +1476,6 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       521,
       f,
       api_commons_audit_scorecards_events_pb.ScorecardsCreateAutoEvaluationEvent.serializeBinaryToWriter
-    );
-  }
-  f = message.getScorecardsUpdateEvaluationEvent();
-  if (f != null) {
-    writer.writeMessage(
-      522,
-      f,
-      api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent.serializeBinaryToWriter
     );
   }
   f = message.getTicketEvent();
@@ -4604,43 +4589,6 @@ proto.api.commons.audit.AuditEvent.prototype.clearScorecardsCreateAutoEvaluation
  */
 proto.api.commons.audit.AuditEvent.prototype.hasScorecardsCreateAutoEvaluationEvent = function() {
   return jspb.Message.getField(this, 521) != null;
-};
-
-
-/**
- * optional ScorecardsUpdateEvaluationEvent scorecards_update_evaluation_event = 522;
- * @return {?proto.api.commons.audit.ScorecardsUpdateEvaluationEvent}
- */
-proto.api.commons.audit.AuditEvent.prototype.getScorecardsUpdateEvaluationEvent = function() {
-  return /** @type{?proto.api.commons.audit.ScorecardsUpdateEvaluationEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent, 522));
-};
-
-
-/**
- * @param {?proto.api.commons.audit.ScorecardsUpdateEvaluationEvent|undefined} value
- * @return {!proto.api.commons.audit.AuditEvent} returns this
-*/
-proto.api.commons.audit.AuditEvent.prototype.setScorecardsUpdateEvaluationEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 522, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.AuditEvent} returns this
- */
-proto.api.commons.audit.AuditEvent.prototype.clearScorecardsUpdateEvaluationEvent = function() {
-  return this.setScorecardsUpdateEvaluationEvent(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.AuditEvent.prototype.hasScorecardsUpdateEvaluationEvent = function() {
-  return jspb.Message.getField(this, 522) != null;
 };
 
 

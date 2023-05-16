@@ -3584,8 +3584,7 @@ proto.api.commons.AutoEvaluationQuestion.toObject = function(includeInstance, ms
     flaggedList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
     passed: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     sortOrder: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    riskLevel: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    expressionMatched: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
+    riskLevel: jspb.Message.getFieldWithDefault(msg, 11, 0)
   };
 
   if (includeInstance) {
@@ -3655,10 +3654,6 @@ proto.api.commons.AutoEvaluationQuestion.deserializeBinaryFromReader = function(
     case 11:
       var value = /** @type {!proto.api.commons.RiskLevel} */ (reader.readEnum());
       msg.setRiskLevel(value);
-      break;
-    case 14:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setExpressionMatched(value);
       break;
     default:
       reader.skipField();
@@ -3742,13 +3737,6 @@ proto.api.commons.AutoEvaluationQuestion.serializeBinaryToWriter = function(mess
   if (f !== 0.0) {
     writer.writeEnum(
       11,
-      f
-    );
-  }
-  f = message.getExpressionMatched();
-  if (f) {
-    writer.writeBool(
-      14,
       f
     );
   }
@@ -3915,24 +3903,6 @@ proto.api.commons.AutoEvaluationQuestion.prototype.getRiskLevel = function() {
  */
 proto.api.commons.AutoEvaluationQuestion.prototype.setRiskLevel = function(value) {
   return jspb.Message.setProto3EnumField(this, 11, value);
-};
-
-
-/**
- * optional bool expression_matched = 14;
- * @return {boolean}
- */
-proto.api.commons.AutoEvaluationQuestion.prototype.getExpressionMatched = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.commons.AutoEvaluationQuestion} returns this
- */
-proto.api.commons.AutoEvaluationQuestion.prototype.setExpressionMatched = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
@@ -5968,8 +5938,7 @@ proto.api.commons.Scorecard.toObject = function(includeInstance, msg) {
     version: jspb.Message.getFieldWithDefault(msg, 14, 0),
     state: jspb.Message.getFieldWithDefault(msg, 15, 0),
     isAdHoc: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
-    customFieldKeysList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
-    callType: jspb.Message.getFieldWithDefault(msg, 20, 0)
+    customFieldKeysList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6067,10 +6036,6 @@ proto.api.commons.Scorecard.deserializeBinaryFromReader = function(msg, reader) 
     case 19:
       var value = /** @type {string} */ (reader.readString());
       msg.addCustomFieldKeys(value);
-      break;
-    case 20:
-      var value = /** @type {!proto.api.commons.CallType.Enum} */ (reader.readEnum());
-      msg.setCallType(value);
       break;
     default:
       reader.skipField();
@@ -6205,13 +6170,6 @@ proto.api.commons.Scorecard.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeRepeatedString(
       19,
-      f
-    );
-  }
-  f = message.getCallType();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      20,
       f
     );
   }
@@ -6543,24 +6501,6 @@ proto.api.commons.Scorecard.prototype.addCustomFieldKeys = function(value, opt_i
  */
 proto.api.commons.Scorecard.prototype.clearCustomFieldKeysList = function() {
   return this.setCustomFieldKeysList([]);
-};
-
-
-/**
- * optional CallType.Enum call_type = 20;
- * @return {!proto.api.commons.CallType.Enum}
- */
-proto.api.commons.Scorecard.prototype.getCallType = function() {
-  return /** @type {!proto.api.commons.CallType.Enum} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
-};
-
-
-/**
- * @param {!proto.api.commons.CallType.Enum} value
- * @return {!proto.api.commons.Scorecard} returns this
- */
-proto.api.commons.Scorecard.prototype.setCallType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 20, value);
 };
 
 

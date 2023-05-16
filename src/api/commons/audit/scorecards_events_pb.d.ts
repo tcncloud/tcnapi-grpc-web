@@ -365,48 +365,6 @@ export namespace ScorecardsCreateEvaluationEvent {
   }
 }
 
-export class ScorecardsUpdateEvaluationEvent extends jspb.Message {
-  getEvaluationId(): number;
-  setEvaluationId(value: number): void;
-
-  getScorecardId(): number;
-  setScorecardId(value: number): void;
-
-  getScorerId(): string;
-  setScorerId(value: string): void;
-
-  getAgentUserId(): string;
-  setAgentUserId(value: string): void;
-
-  getCallSid(): number;
-  setCallSid(value: number): void;
-
-  hasEvaluation(): boolean;
-  clearEvaluation(): void;
-  getEvaluation(): api_commons_scorecards_pb.Evaluation | undefined;
-  setEvaluation(value?: api_commons_scorecards_pb.Evaluation): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ScorecardsUpdateEvaluationEvent.AsObject;
-  static toObject(includeInstance: boolean, msg: ScorecardsUpdateEvaluationEvent): ScorecardsUpdateEvaluationEvent.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ScorecardsUpdateEvaluationEvent, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ScorecardsUpdateEvaluationEvent;
-  static deserializeBinaryFromReader(message: ScorecardsUpdateEvaluationEvent, reader: jspb.BinaryReader): ScorecardsUpdateEvaluationEvent;
-}
-
-export namespace ScorecardsUpdateEvaluationEvent {
-  export type AsObject = {
-    evaluationId: number,
-    scorecardId: number,
-    scorerId: string,
-    agentUserId: string,
-    callSid: number,
-    evaluation?: api_commons_scorecards_pb.Evaluation.AsObject,
-  }
-}
-
 export class ScorecardsDeleteEvaluationEvent extends jspb.Message {
   getEvaluationId(): number;
   setEvaluationId(value: number): void;
