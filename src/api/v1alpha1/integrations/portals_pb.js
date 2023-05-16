@@ -21,8 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var api_commons_public_integrations_pb = require('../../../api/commons/public/integrations_pb.js');
-goog.object.extend(proto, api_commons_public_integrations_pb);
+var api_commons_integrations_integrations_pb = require('../../../api/commons/integrations/integrations_pb.js');
+goog.object.extend(proto, api_commons_integrations_integrations_pb);
 var api_v1alpha1_integrations_service_pb = require('../../../api/v1alpha1/integrations/service_pb.js');
 goog.object.extend(proto, api_v1alpha1_integrations_service_pb);
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
@@ -8562,7 +8562,7 @@ proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity.prototype.toObject 
  */
 proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flow: (f = msg.getFlow()) && api_commons_public_integrations_pb.Flow.toObject(includeInstance, f),
+    flow: (f = msg.getFlow()) && api_commons_integrations_integrations_pb.Flow.toObject(includeInstance, f),
     loc: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
@@ -8601,8 +8601,8 @@ proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity.deserializeBinaryFr
     var field = reader.getFieldNumber();
     switch (field) {
     case 3:
-      var value = new api_commons_public_integrations_pb.Flow;
-      reader.readMessage(value,api_commons_public_integrations_pb.Flow.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.Flow;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.Flow.deserializeBinaryFromReader);
       msg.setFlow(value);
       break;
     case 4:
@@ -8643,7 +8643,7 @@ proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity.serializeBinaryToWr
     writer.writeMessage(
       3,
       f,
-      api_commons_public_integrations_pb.Flow.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.Flow.serializeBinaryToWriter
     );
   }
   f = message.getLoc();
@@ -8662,7 +8662,7 @@ proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity.serializeBinaryToWr
  */
 proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity.prototype.getFlow = function() {
   return /** @type{?proto.api.commons.public.Flow} */ (
-    jspb.Message.getWrapperField(this, api_commons_public_integrations_pb.Flow, 3));
+    jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.Flow, 3));
 };
 
 
@@ -8936,7 +8936,7 @@ proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsReq.prototype.toO
  */
 proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    verification: (f = msg.getVerification()) && api_commons_public_integrations_pb.VerificationFlow.toObject(includeInstance, f)
+    verification: (f = msg.getVerification()) && api_commons_integrations_integrations_pb.VerificationFlow.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8974,8 +8974,8 @@ proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsReq.deserializeBi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new api_commons_public_integrations_pb.VerificationFlow;
-      reader.readMessage(value,api_commons_public_integrations_pb.VerificationFlow.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.VerificationFlow;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.VerificationFlow.deserializeBinaryFromReader);
       msg.setVerification(value);
       break;
     default:
@@ -9012,7 +9012,7 @@ proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsReq.serializeBina
     writer.writeMessage(
       1,
       f,
-      api_commons_public_integrations_pb.VerificationFlow.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.VerificationFlow.serializeBinaryToWriter
     );
   }
 };
@@ -9024,7 +9024,7 @@ proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsReq.serializeBina
  */
 proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsReq.prototype.getVerification = function() {
   return /** @type{?proto.api.commons.public.VerificationFlow} */ (
-    jspb.Message.getWrapperField(this, api_commons_public_integrations_pb.VerificationFlow, 1));
+    jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.VerificationFlow, 1));
 };
 
 
@@ -9095,7 +9095,7 @@ proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsRes.prototype.toO
 proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
     verificationFieldsList: jspb.Message.toObjectList(msg.getVerificationFieldsList(),
-    api_commons_public_integrations_pb.FieldDefinition.toObject, includeInstance)
+    api_commons_integrations_integrations_pb.FieldDefinition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -9133,8 +9133,8 @@ proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsRes.deserializeBi
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new api_commons_public_integrations_pb.FieldDefinition;
-      reader.readMessage(value,api_commons_public_integrations_pb.FieldDefinition.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.FieldDefinition;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.FieldDefinition.deserializeBinaryFromReader);
       msg.addVerificationFields(value);
       break;
     default:
@@ -9171,7 +9171,7 @@ proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsRes.serializeBina
     writer.writeRepeatedMessage(
       2,
       f,
-      api_commons_public_integrations_pb.FieldDefinition.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.FieldDefinition.serializeBinaryToWriter
     );
   }
 };
@@ -9183,7 +9183,7 @@ proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsRes.serializeBina
  */
 proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsRes.prototype.getVerificationFieldsList = function() {
   return /** @type{!Array<!proto.api.commons.public.FieldDefinition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_public_integrations_pb.FieldDefinition, 2));
+    jspb.Message.getRepeatedWrapperField(this, api_commons_integrations_integrations_pb.FieldDefinition, 2));
 };
 
 
@@ -9247,7 +9247,7 @@ proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsReq.prototype.toObject
  */
 proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    payment: (f = msg.getPayment()) && api_commons_public_integrations_pb.PaymentFlow.toObject(includeInstance, f)
+    payment: (f = msg.getPayment()) && api_commons_integrations_integrations_pb.PaymentFlow.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9285,8 +9285,8 @@ proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsReq.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new api_commons_public_integrations_pb.PaymentFlow;
-      reader.readMessage(value,api_commons_public_integrations_pb.PaymentFlow.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.PaymentFlow;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.PaymentFlow.deserializeBinaryFromReader);
       msg.setPayment(value);
       break;
     default:
@@ -9323,7 +9323,7 @@ proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsReq.serializeBinaryToW
     writer.writeMessage(
       1,
       f,
-      api_commons_public_integrations_pb.PaymentFlow.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.PaymentFlow.serializeBinaryToWriter
     );
   }
 };
@@ -9335,7 +9335,7 @@ proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsReq.serializeBinaryToW
  */
 proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsReq.prototype.getPayment = function() {
   return /** @type{?proto.api.commons.public.PaymentFlow} */ (
-    jspb.Message.getWrapperField(this, api_commons_public_integrations_pb.PaymentFlow, 1));
+    jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.PaymentFlow, 1));
 };
 
 
@@ -9406,7 +9406,7 @@ proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsRes.prototype.toObject
 proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
     paymentFieldsList: jspb.Message.toObjectList(msg.getPaymentFieldsList(),
-    api_commons_public_integrations_pb.FieldDefinition.toObject, includeInstance)
+    api_commons_integrations_integrations_pb.FieldDefinition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -9444,8 +9444,8 @@ proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsRes.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new api_commons_public_integrations_pb.FieldDefinition;
-      reader.readMessage(value,api_commons_public_integrations_pb.FieldDefinition.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.FieldDefinition;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.FieldDefinition.deserializeBinaryFromReader);
       msg.addPaymentFields(value);
       break;
     default:
@@ -9482,7 +9482,7 @@ proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsRes.serializeBinaryToW
     writer.writeRepeatedMessage(
       2,
       f,
-      api_commons_public_integrations_pb.FieldDefinition.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.FieldDefinition.serializeBinaryToWriter
     );
   }
 };
@@ -9494,7 +9494,7 @@ proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsRes.serializeBinaryToW
  */
 proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsRes.prototype.getPaymentFieldsList = function() {
   return /** @type{!Array<!proto.api.commons.public.FieldDefinition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_public_integrations_pb.FieldDefinition, 2));
+    jspb.Message.getRepeatedWrapperField(this, api_commons_integrations_integrations_pb.FieldDefinition, 2));
 };
 
 

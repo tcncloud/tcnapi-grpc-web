@@ -2,7 +2,7 @@
 // file: api/v1alpha1/integrationspublic/service.proto
 
 import * as jspb from "google-protobuf";
-import * as api_commons_public_integrations_pb from "../../../api/commons/public/integrations_pb";
+import * as api_commons_integrations_integrations_pb from "../../../api/commons/integrations/integrations_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -59,8 +59,8 @@ export class Value extends jspb.Message {
   getSensitive(): boolean;
   setSensitive(value: boolean): void;
 
-  getValidation(): api_commons_public_integrations_pb.ValidationMap[keyof api_commons_public_integrations_pb.ValidationMap];
-  setValidation(value: api_commons_public_integrations_pb.ValidationMap[keyof api_commons_public_integrations_pb.ValidationMap]): void;
+  getValidation(): api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap];
+  setValidation(value: api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap]): void;
 
   getValCase(): Value.ValCase;
   serializeBinary(): Uint8Array;
@@ -82,7 +82,7 @@ export namespace Value {
     compVal?: CompositeVal.AsObject,
     intVal: number,
     sensitive: boolean,
-    validation: api_commons_public_integrations_pb.ValidationMap[keyof api_commons_public_integrations_pb.ValidationMap],
+    validation: api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap],
   }
 
   export enum ValCase {
@@ -303,18 +303,18 @@ export class GetLinkDataRes extends jspb.Message {
 
   hasVerification(): boolean;
   clearVerification(): void;
-  getVerification(): api_commons_public_integrations_pb.VerificationFlow | undefined;
-  setVerification(value?: api_commons_public_integrations_pb.VerificationFlow): void;
+  getVerification(): api_commons_integrations_integrations_pb.VerificationFlow | undefined;
+  setVerification(value?: api_commons_integrations_integrations_pb.VerificationFlow): void;
 
   hasInvoice(): boolean;
   clearInvoice(): void;
-  getInvoice(): api_commons_public_integrations_pb.InvoiceFlow | undefined;
-  setInvoice(value?: api_commons_public_integrations_pb.InvoiceFlow): void;
+  getInvoice(): api_commons_integrations_integrations_pb.InvoiceFlow | undefined;
+  setInvoice(value?: api_commons_integrations_integrations_pb.InvoiceFlow): void;
 
   clearPaymentsList(): void;
-  getPaymentsList(): Array<api_commons_public_integrations_pb.PaymentFlow>;
-  setPaymentsList(value: Array<api_commons_public_integrations_pb.PaymentFlow>): void;
-  addPayments(value?: api_commons_public_integrations_pb.PaymentFlow, index?: number): api_commons_public_integrations_pb.PaymentFlow;
+  getPaymentsList(): Array<api_commons_integrations_integrations_pb.PaymentFlow>;
+  setPaymentsList(value: Array<api_commons_integrations_integrations_pb.PaymentFlow>): void;
+  addPayments(value?: api_commons_integrations_integrations_pb.PaymentFlow, index?: number): api_commons_integrations_integrations_pb.PaymentFlow;
 
   clearFlowFormsList(): void;
   getFlowFormsList(): Array<GetLinkDataRes.FieldNames>;
@@ -341,9 +341,9 @@ export namespace GetLinkDataRes {
     complete: boolean,
     expired: boolean,
     portalConfig?: PortalConfig.AsObject,
-    verification?: api_commons_public_integrations_pb.VerificationFlow.AsObject,
-    invoice?: api_commons_public_integrations_pb.InvoiceFlow.AsObject,
-    paymentsList: Array<api_commons_public_integrations_pb.PaymentFlow.AsObject>,
+    verification?: api_commons_integrations_integrations_pb.VerificationFlow.AsObject,
+    invoice?: api_commons_integrations_integrations_pb.InvoiceFlow.AsObject,
+    paymentsList: Array<api_commons_integrations_integrations_pb.PaymentFlow.AsObject>,
     flowFormsList: Array<GetLinkDataRes.FieldNames.AsObject>,
     portalText?: PortalText.AsObject,
   }
@@ -351,8 +351,8 @@ export namespace GetLinkDataRes {
   export class FieldNames extends jspb.Message {
     hasFlow(): boolean;
     clearFlow(): void;
-    getFlow(): api_commons_public_integrations_pb.Flow | undefined;
-    setFlow(value?: api_commons_public_integrations_pb.Flow): void;
+    getFlow(): api_commons_integrations_integrations_pb.Flow | undefined;
+    setFlow(value?: api_commons_integrations_integrations_pb.Flow): void;
 
     clearFieldNamesList(): void;
     getFieldNamesList(): Array<string>;
@@ -360,9 +360,9 @@ export namespace GetLinkDataRes {
     addFieldNames(value: string, index?: number): string;
 
     clearFieldsList(): void;
-    getFieldsList(): Array<api_commons_public_integrations_pb.FieldDefinition>;
-    setFieldsList(value: Array<api_commons_public_integrations_pb.FieldDefinition>): void;
-    addFields(value?: api_commons_public_integrations_pb.FieldDefinition, index?: number): api_commons_public_integrations_pb.FieldDefinition;
+    getFieldsList(): Array<api_commons_integrations_integrations_pb.FieldDefinition>;
+    setFieldsList(value: Array<api_commons_integrations_integrations_pb.FieldDefinition>): void;
+    addFields(value?: api_commons_integrations_integrations_pb.FieldDefinition, index?: number): api_commons_integrations_integrations_pb.FieldDefinition;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): FieldNames.AsObject;
@@ -376,9 +376,9 @@ export namespace GetLinkDataRes {
 
   export namespace FieldNames {
     export type AsObject = {
-      flow?: api_commons_public_integrations_pb.Flow.AsObject,
+      flow?: api_commons_integrations_integrations_pb.Flow.AsObject,
       fieldNamesList: Array<string>,
-      fieldsList: Array<api_commons_public_integrations_pb.FieldDefinition.AsObject>,
+      fieldsList: Array<api_commons_integrations_integrations_pb.FieldDefinition.AsObject>,
     }
   }
 }
@@ -567,8 +567,8 @@ export class GetInvoiceRes extends jspb.Message {
 
   hasInvoices(): boolean;
   clearInvoices(): void;
-  getInvoices(): api_commons_public_integrations_pb.Invoices | undefined;
-  setInvoices(value?: api_commons_public_integrations_pb.Invoices): void;
+  getInvoices(): api_commons_integrations_integrations_pb.Invoices | undefined;
+  setInvoices(value?: api_commons_integrations_integrations_pb.Invoices): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetInvoiceRes.AsObject;
@@ -585,7 +585,7 @@ export namespace GetInvoiceRes {
     fieldsMap: Array<[string, Value.AsObject]>,
     amountDue: number,
     amountDueKey: string,
-    invoices?: api_commons_public_integrations_pb.Invoices.AsObject,
+    invoices?: api_commons_integrations_integrations_pb.Invoices.AsObject,
   }
 }
 
@@ -602,8 +602,8 @@ export class SubmitPaymentReq extends jspb.Message {
   clearPaymentFieldsMap(): void;
   hasPaymentFlow(): boolean;
   clearPaymentFlow(): void;
-  getPaymentFlow(): api_commons_public_integrations_pb.PaymentFlow | undefined;
-  setPaymentFlow(value?: api_commons_public_integrations_pb.PaymentFlow): void;
+  getPaymentFlow(): api_commons_integrations_integrations_pb.PaymentFlow | undefined;
+  setPaymentFlow(value?: api_commons_integrations_integrations_pb.PaymentFlow): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SubmitPaymentReq.AsObject;
@@ -620,7 +620,7 @@ export namespace SubmitPaymentReq {
     entity?: PortalLinkId.AsObject,
     sessionId: string,
     paymentFieldsMap: Array<[string, Value.AsObject]>,
-    paymentFlow?: api_commons_public_integrations_pb.PaymentFlow.AsObject,
+    paymentFlow?: api_commons_integrations_integrations_pb.PaymentFlow.AsObject,
   }
 }
 
@@ -693,8 +693,8 @@ export class GetReceiptRes extends jspb.Message {
 
   hasPaymentFlow(): boolean;
   clearPaymentFlow(): void;
-  getPaymentFlow(): api_commons_public_integrations_pb.PaymentFlow | undefined;
-  setPaymentFlow(value?: api_commons_public_integrations_pb.PaymentFlow): void;
+  getPaymentFlow(): api_commons_integrations_integrations_pb.PaymentFlow | undefined;
+  setPaymentFlow(value?: api_commons_integrations_integrations_pb.PaymentFlow): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetReceiptRes.AsObject;
@@ -713,7 +713,7 @@ export namespace GetReceiptRes {
     responseMap: Array<[string, Value.AsObject]>,
     amountPaid: number,
     amountPaidKey: string,
-    paymentFlow?: api_commons_public_integrations_pb.PaymentFlow.AsObject,
+    paymentFlow?: api_commons_integrations_integrations_pb.PaymentFlow.AsObject,
   }
 }
 

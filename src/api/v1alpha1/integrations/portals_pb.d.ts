@@ -2,7 +2,7 @@
 // file: api/v1alpha1/integrations/portals.proto
 
 import * as jspb from "google-protobuf";
-import * as api_commons_public_integrations_pb from "../../../api/commons/public/integrations_pb";
+import * as api_commons_integrations_integrations_pb from "../../../api/commons/integrations/integrations_pb";
 import * as api_v1alpha1_integrations_service_pb from "../../../api/v1alpha1/integrations/service_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
@@ -1059,11 +1059,11 @@ export namespace ListFlowFieldNamesReq {
   export class Entity extends jspb.Message {
     hasFlow(): boolean;
     clearFlow(): void;
-    getFlow(): api_commons_public_integrations_pb.Flow | undefined;
-    setFlow(value?: api_commons_public_integrations_pb.Flow): void;
+    getFlow(): api_commons_integrations_integrations_pb.Flow | undefined;
+    setFlow(value?: api_commons_integrations_integrations_pb.Flow): void;
 
-    getLoc(): api_commons_public_integrations_pb.FlowFieldLocMap[keyof api_commons_public_integrations_pb.FlowFieldLocMap];
-    setLoc(value: api_commons_public_integrations_pb.FlowFieldLocMap[keyof api_commons_public_integrations_pb.FlowFieldLocMap]): void;
+    getLoc(): api_commons_integrations_integrations_pb.FlowFieldLocMap[keyof api_commons_integrations_integrations_pb.FlowFieldLocMap];
+    setLoc(value: api_commons_integrations_integrations_pb.FlowFieldLocMap[keyof api_commons_integrations_integrations_pb.FlowFieldLocMap]): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Entity.AsObject;
@@ -1077,8 +1077,8 @@ export namespace ListFlowFieldNamesReq {
 
   export namespace Entity {
     export type AsObject = {
-      flow?: api_commons_public_integrations_pb.Flow.AsObject,
-      loc: api_commons_public_integrations_pb.FlowFieldLocMap[keyof api_commons_public_integrations_pb.FlowFieldLocMap],
+      flow?: api_commons_integrations_integrations_pb.Flow.AsObject,
+      loc: api_commons_integrations_integrations_pb.FlowFieldLocMap[keyof api_commons_integrations_integrations_pb.FlowFieldLocMap],
     }
   }
 }
@@ -1108,8 +1108,8 @@ export namespace ListFlowFieldNamesRes {
 export class ListAvailableVerificationFieldsReq extends jspb.Message {
   hasVerification(): boolean;
   clearVerification(): void;
-  getVerification(): api_commons_public_integrations_pb.VerificationFlow | undefined;
-  setVerification(value?: api_commons_public_integrations_pb.VerificationFlow): void;
+  getVerification(): api_commons_integrations_integrations_pb.VerificationFlow | undefined;
+  setVerification(value?: api_commons_integrations_integrations_pb.VerificationFlow): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAvailableVerificationFieldsReq.AsObject;
@@ -1123,15 +1123,15 @@ export class ListAvailableVerificationFieldsReq extends jspb.Message {
 
 export namespace ListAvailableVerificationFieldsReq {
   export type AsObject = {
-    verification?: api_commons_public_integrations_pb.VerificationFlow.AsObject,
+    verification?: api_commons_integrations_integrations_pb.VerificationFlow.AsObject,
   }
 }
 
 export class ListAvailableVerificationFieldsRes extends jspb.Message {
   clearVerificationFieldsList(): void;
-  getVerificationFieldsList(): Array<api_commons_public_integrations_pb.FieldDefinition>;
-  setVerificationFieldsList(value: Array<api_commons_public_integrations_pb.FieldDefinition>): void;
-  addVerificationFields(value?: api_commons_public_integrations_pb.FieldDefinition, index?: number): api_commons_public_integrations_pb.FieldDefinition;
+  getVerificationFieldsList(): Array<api_commons_integrations_integrations_pb.FieldDefinition>;
+  setVerificationFieldsList(value: Array<api_commons_integrations_integrations_pb.FieldDefinition>): void;
+  addVerificationFields(value?: api_commons_integrations_integrations_pb.FieldDefinition, index?: number): api_commons_integrations_integrations_pb.FieldDefinition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAvailableVerificationFieldsRes.AsObject;
@@ -1145,15 +1145,15 @@ export class ListAvailableVerificationFieldsRes extends jspb.Message {
 
 export namespace ListAvailableVerificationFieldsRes {
   export type AsObject = {
-    verificationFieldsList: Array<api_commons_public_integrations_pb.FieldDefinition.AsObject>,
+    verificationFieldsList: Array<api_commons_integrations_integrations_pb.FieldDefinition.AsObject>,
   }
 }
 
 export class ListAvailablePaymentFieldsReq extends jspb.Message {
   hasPayment(): boolean;
   clearPayment(): void;
-  getPayment(): api_commons_public_integrations_pb.PaymentFlow | undefined;
-  setPayment(value?: api_commons_public_integrations_pb.PaymentFlow): void;
+  getPayment(): api_commons_integrations_integrations_pb.PaymentFlow | undefined;
+  setPayment(value?: api_commons_integrations_integrations_pb.PaymentFlow): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAvailablePaymentFieldsReq.AsObject;
@@ -1167,15 +1167,15 @@ export class ListAvailablePaymentFieldsReq extends jspb.Message {
 
 export namespace ListAvailablePaymentFieldsReq {
   export type AsObject = {
-    payment?: api_commons_public_integrations_pb.PaymentFlow.AsObject,
+    payment?: api_commons_integrations_integrations_pb.PaymentFlow.AsObject,
   }
 }
 
 export class ListAvailablePaymentFieldsRes extends jspb.Message {
   clearPaymentFieldsList(): void;
-  getPaymentFieldsList(): Array<api_commons_public_integrations_pb.FieldDefinition>;
-  setPaymentFieldsList(value: Array<api_commons_public_integrations_pb.FieldDefinition>): void;
-  addPaymentFields(value?: api_commons_public_integrations_pb.FieldDefinition, index?: number): api_commons_public_integrations_pb.FieldDefinition;
+  getPaymentFieldsList(): Array<api_commons_integrations_integrations_pb.FieldDefinition>;
+  setPaymentFieldsList(value: Array<api_commons_integrations_integrations_pb.FieldDefinition>): void;
+  addPaymentFields(value?: api_commons_integrations_integrations_pb.FieldDefinition, index?: number): api_commons_integrations_integrations_pb.FieldDefinition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAvailablePaymentFieldsRes.AsObject;
@@ -1189,7 +1189,7 @@ export class ListAvailablePaymentFieldsRes extends jspb.Message {
 
 export namespace ListAvailablePaymentFieldsRes {
   export type AsObject = {
-    paymentFieldsList: Array<api_commons_public_integrations_pb.FieldDefinition.AsObject>,
+    paymentFieldsList: Array<api_commons_integrations_integrations_pb.FieldDefinition.AsObject>,
   }
 }
 

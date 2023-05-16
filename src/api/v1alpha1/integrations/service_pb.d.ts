@@ -2,7 +2,7 @@
 // file: api/v1alpha1/integrations/service.proto
 
 import * as jspb from "google-protobuf";
-import * as api_commons_public_integrations_pb from "../../../api/commons/public/integrations_pb";
+import * as api_commons_integrations_integrations_pb from "../../../api/commons/integrations/integrations_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
@@ -62,8 +62,8 @@ export namespace IntegrationConfigs {
 }
 
 export class GetIntegrationConfigReq extends jspb.Message {
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
   getName(): string;
   setName(value: string): void;
@@ -83,7 +83,7 @@ export class GetIntegrationConfigReq extends jspb.Message {
 
 export namespace GetIntegrationConfigReq {
   export type AsObject = {
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
     name: string,
     id: string,
   }
@@ -93,8 +93,8 @@ export class UpdateIntegrationConfigReq extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
   getName(): string;
   setName(value: string): void;
@@ -120,7 +120,7 @@ export class UpdateIntegrationConfigReq extends jspb.Message {
 export namespace UpdateIntegrationConfigReq {
   export type AsObject = {
     id: string,
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
     name: string,
     description: string,
     params?: Values.AsObject,
@@ -128,8 +128,8 @@ export namespace UpdateIntegrationConfigReq {
 }
 
 export class DeleteIntegrationConfigReq extends jspb.Message {
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
   getName(): string;
   setName(value: string): void;
@@ -149,7 +149,7 @@ export class DeleteIntegrationConfigReq extends jspb.Message {
 
 export namespace DeleteIntegrationConfigReq {
   export type AsObject = {
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
     name: string,
     id: string,
   }
@@ -159,11 +159,11 @@ export class ProcessReq extends jspb.Message {
   getRequestId(): string;
   setRequestId(value: string): void;
 
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
-  getMethodId(): api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap];
-  setMethodId(value: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap]): void;
+  getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
   getConfigName(): string;
   setConfigName(value: string): void;
@@ -191,8 +191,8 @@ export class ProcessReq extends jspb.Message {
 export namespace ProcessReq {
   export type AsObject = {
     requestId: string,
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
-    methodId: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
+    methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
     configName: string,
     configId: string,
     paramsMap: Array<[string, Value.AsObject]>,
@@ -261,8 +261,8 @@ export class IntegrationInfo extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
   getDescription(): string;
   setDescription(value: string): void;
@@ -287,7 +287,7 @@ export class IntegrationInfo extends jspb.Message {
 export namespace IntegrationInfo {
   export type AsObject = {
     name: string,
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
     description: string,
     methodsList: Array<MethodInfo.AsObject>,
     groupParamsMap: Array<[number, Parameter.AsObject]>,
@@ -298,11 +298,11 @@ export class MethodInfo extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getMethodId(): api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap];
-  setMethodId(value: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap]): void;
+  getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
-  getTxType(): api_commons_public_integrations_pb.TransactionTypeMap[keyof api_commons_public_integrations_pb.TransactionTypeMap];
-  setTxType(value: api_commons_public_integrations_pb.TransactionTypeMap[keyof api_commons_public_integrations_pb.TransactionTypeMap]): void;
+  getTxType(): api_commons_integrations_integrations_pb.TransactionTypeMap[keyof api_commons_integrations_integrations_pb.TransactionTypeMap];
+  setTxType(value: api_commons_integrations_integrations_pb.TransactionTypeMap[keyof api_commons_integrations_integrations_pb.TransactionTypeMap]): void;
 
   clearParamsList(): void;
   getParamsList(): Array<Parameter>;
@@ -332,8 +332,8 @@ export class MethodInfo extends jspb.Message {
 export namespace MethodInfo {
   export type AsObject = {
     name: string,
-    methodId: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap],
-    txType: api_commons_public_integrations_pb.TransactionTypeMap[keyof api_commons_public_integrations_pb.TransactionTypeMap],
+    methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
+    txType: api_commons_integrations_integrations_pb.TransactionTypeMap[keyof api_commons_integrations_integrations_pb.TransactionTypeMap],
     paramsList: Array<Parameter.AsObject>,
     url: string,
     responseList: Array<Parameter.AsObject>,
@@ -345,8 +345,8 @@ export class Parameter extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getParamType(): api_commons_public_integrations_pb.ValueTypeMap[keyof api_commons_public_integrations_pb.ValueTypeMap];
-  setParamType(value: api_commons_public_integrations_pb.ValueTypeMap[keyof api_commons_public_integrations_pb.ValueTypeMap]): void;
+  getParamType(): api_commons_integrations_integrations_pb.ValueTypeMap[keyof api_commons_integrations_integrations_pb.ValueTypeMap];
+  setParamType(value: api_commons_integrations_integrations_pb.ValueTypeMap[keyof api_commons_integrations_integrations_pb.ValueTypeMap]): void;
 
   getRequired(): boolean;
   setRequired(value: boolean): void;
@@ -371,8 +371,8 @@ export class Parameter extends jspb.Message {
   getTemplateLocked(): boolean;
   setTemplateLocked(value: boolean): void;
 
-  getValidation(): api_commons_public_integrations_pb.ValidationMap[keyof api_commons_public_integrations_pb.ValidationMap];
-  setValidation(value: api_commons_public_integrations_pb.ValidationMap[keyof api_commons_public_integrations_pb.ValidationMap]): void;
+  getValidation(): api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap];
+  setValidation(value: api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Parameter.AsObject;
@@ -387,7 +387,7 @@ export class Parameter extends jspb.Message {
 export namespace Parameter {
   export type AsObject = {
     name: string,
-    paramType: api_commons_public_integrations_pb.ValueTypeMap[keyof api_commons_public_integrations_pb.ValueTypeMap],
+    paramType: api_commons_integrations_integrations_pb.ValueTypeMap[keyof api_commons_integrations_integrations_pb.ValueTypeMap],
     required: boolean,
     defaultValue?: Value.AsObject,
     displayName: string,
@@ -395,7 +395,7 @@ export namespace Parameter {
     runtimeParam: boolean,
     helperText: string,
     templateLocked: boolean,
-    validation: api_commons_public_integrations_pb.ValidationMap[keyof api_commons_public_integrations_pb.ValidationMap],
+    validation: api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap],
   }
 }
 
@@ -446,8 +446,8 @@ export class GetAggregatedMetadataReq extends jspb.Message {
   getEnd(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setEnd(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  getMethodId(): api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap];
-  setMethodId(value: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap]): void;
+  getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAggregatedMetadataReq.AsObject;
@@ -463,7 +463,7 @@ export namespace GetAggregatedMetadataReq {
   export type AsObject = {
     start?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     end?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    methodId: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap],
+    methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
   }
 }
 
@@ -548,23 +548,23 @@ export namespace GetIntegrationTransactionReportReq {
 }
 
 export class IntegrationTransactionReportRow extends jspb.Message {
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
   getIntegrationName(): string;
   setIntegrationName(value: string): void;
 
-  getMethodId(): api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap];
-  setMethodId(value: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap]): void;
+  getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
   getMethodName(): string;
   setMethodName(value: string): void;
 
-  getTransactionType(): api_commons_public_integrations_pb.TransactionTypeMap[keyof api_commons_public_integrations_pb.TransactionTypeMap];
-  setTransactionType(value: api_commons_public_integrations_pb.TransactionTypeMap[keyof api_commons_public_integrations_pb.TransactionTypeMap]): void;
+  getTransactionType(): api_commons_integrations_integrations_pb.TransactionTypeMap[keyof api_commons_integrations_integrations_pb.TransactionTypeMap];
+  setTransactionType(value: api_commons_integrations_integrations_pb.TransactionTypeMap[keyof api_commons_integrations_integrations_pb.TransactionTypeMap]): void;
 
-  getRequestSource(): api_commons_public_integrations_pb.RequestSourceMap[keyof api_commons_public_integrations_pb.RequestSourceMap];
-  setRequestSource(value: api_commons_public_integrations_pb.RequestSourceMap[keyof api_commons_public_integrations_pb.RequestSourceMap]): void;
+  getRequestSource(): api_commons_integrations_integrations_pb.RequestSourceMap[keyof api_commons_integrations_integrations_pb.RequestSourceMap];
+  setRequestSource(value: api_commons_integrations_integrations_pb.RequestSourceMap[keyof api_commons_integrations_integrations_pb.RequestSourceMap]): void;
 
   getFlowName(): string;
   setFlowName(value: string): void;
@@ -613,12 +613,12 @@ export class IntegrationTransactionReportRow extends jspb.Message {
 
 export namespace IntegrationTransactionReportRow {
   export type AsObject = {
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
     integrationName: string,
-    methodId: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap],
+    methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
     methodName: string,
-    transactionType: api_commons_public_integrations_pb.TransactionTypeMap[keyof api_commons_public_integrations_pb.TransactionTypeMap],
-    requestSource: api_commons_public_integrations_pb.RequestSourceMap[keyof api_commons_public_integrations_pb.RequestSourceMap],
+    transactionType: api_commons_integrations_integrations_pb.TransactionTypeMap[keyof api_commons_integrations_integrations_pb.TransactionTypeMap],
+    requestSource: api_commons_integrations_integrations_pb.RequestSourceMap[keyof api_commons_integrations_integrations_pb.RequestSourceMap],
     flowName: string,
     campaignType: string,
     groupByValuesMap: Array<[string, string]>,
@@ -675,8 +675,8 @@ export class GetIntegrationTransactionReportDataReq extends jspb.Message {
   getPageNum(): number;
   setPageNum(value: number): void;
 
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
   getSearchAfterSid(): number;
   setSearchAfterSid(value: number): void;
@@ -698,7 +698,7 @@ export namespace GetIntegrationTransactionReportDataReq {
     groupByMap: Array<[string, string]>,
     pageSize: number,
     pageNum: number,
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
     searchAfterSid: number,
   }
 }
@@ -846,8 +846,8 @@ export namespace SearchIntegrationTransactionsRes {
 }
 
 export class IntegrationType extends jspb.Message {
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IntegrationType.AsObject;
@@ -861,13 +861,13 @@ export class IntegrationType extends jspb.Message {
 
 export namespace IntegrationType {
   export type AsObject = {
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
   }
 }
 
 export class RequestMethod extends jspb.Message {
-  getMethodId(): api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap];
-  setMethodId(value: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap]): void;
+  getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RequestMethod.AsObject;
@@ -881,13 +881,13 @@ export class RequestMethod extends jspb.Message {
 
 export namespace RequestMethod {
   export type AsObject = {
-    methodId: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap],
+    methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
   }
 }
 
 export class TransactionType extends jspb.Message {
-  getTransactionType(): api_commons_public_integrations_pb.TransactionTypeMap[keyof api_commons_public_integrations_pb.TransactionTypeMap];
-  setTransactionType(value: api_commons_public_integrations_pb.TransactionTypeMap[keyof api_commons_public_integrations_pb.TransactionTypeMap]): void;
+  getTransactionType(): api_commons_integrations_integrations_pb.TransactionTypeMap[keyof api_commons_integrations_integrations_pb.TransactionTypeMap];
+  setTransactionType(value: api_commons_integrations_integrations_pb.TransactionTypeMap[keyof api_commons_integrations_integrations_pb.TransactionTypeMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TransactionType.AsObject;
@@ -901,13 +901,13 @@ export class TransactionType extends jspb.Message {
 
 export namespace TransactionType {
   export type AsObject = {
-    transactionType: api_commons_public_integrations_pb.TransactionTypeMap[keyof api_commons_public_integrations_pb.TransactionTypeMap],
+    transactionType: api_commons_integrations_integrations_pb.TransactionTypeMap[keyof api_commons_integrations_integrations_pb.TransactionTypeMap],
   }
 }
 
 export class RequestSource extends jspb.Message {
-  getRequestSource(): api_commons_public_integrations_pb.RequestSourceMap[keyof api_commons_public_integrations_pb.RequestSourceMap];
-  setRequestSource(value: api_commons_public_integrations_pb.RequestSourceMap[keyof api_commons_public_integrations_pb.RequestSourceMap]): void;
+  getRequestSource(): api_commons_integrations_integrations_pb.RequestSourceMap[keyof api_commons_integrations_integrations_pb.RequestSourceMap];
+  setRequestSource(value: api_commons_integrations_integrations_pb.RequestSourceMap[keyof api_commons_integrations_integrations_pb.RequestSourceMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RequestSource.AsObject;
@@ -921,13 +921,13 @@ export class RequestSource extends jspb.Message {
 
 export namespace RequestSource {
   export type AsObject = {
-    requestSource: api_commons_public_integrations_pb.RequestSourceMap[keyof api_commons_public_integrations_pb.RequestSourceMap],
+    requestSource: api_commons_integrations_integrations_pb.RequestSourceMap[keyof api_commons_integrations_integrations_pb.RequestSourceMap],
   }
 }
 
 export class TransactionResult extends jspb.Message {
-  getResult(): api_commons_public_integrations_pb.TransactionResultMap[keyof api_commons_public_integrations_pb.TransactionResultMap];
-  setResult(value: api_commons_public_integrations_pb.TransactionResultMap[keyof api_commons_public_integrations_pb.TransactionResultMap]): void;
+  getResult(): api_commons_integrations_integrations_pb.TransactionResultMap[keyof api_commons_integrations_integrations_pb.TransactionResultMap];
+  setResult(value: api_commons_integrations_integrations_pb.TransactionResultMap[keyof api_commons_integrations_integrations_pb.TransactionResultMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TransactionResult.AsObject;
@@ -941,13 +941,13 @@ export class TransactionResult extends jspb.Message {
 
 export namespace TransactionResult {
   export type AsObject = {
-    result: api_commons_public_integrations_pb.TransactionResultMap[keyof api_commons_public_integrations_pb.TransactionResultMap],
+    result: api_commons_integrations_integrations_pb.TransactionResultMap[keyof api_commons_integrations_integrations_pb.TransactionResultMap],
   }
 }
 
 export class ListIntegrationConfigNamesReq extends jspb.Message {
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListIntegrationConfigNamesReq.AsObject;
@@ -961,13 +961,13 @@ export class ListIntegrationConfigNamesReq extends jspb.Message {
 
 export namespace ListIntegrationConfigNamesReq {
   export type AsObject = {
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
   }
 }
 
 export class ListIntegrationConfigNamesRes extends jspb.Message {
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
   clearNamesList(): void;
   getNamesList(): Array<string>;
@@ -986,7 +986,7 @@ export class ListIntegrationConfigNamesRes extends jspb.Message {
 
 export namespace ListIntegrationConfigNamesRes {
   export type AsObject = {
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
     namesList: Array<string>,
   }
 }
@@ -1254,17 +1254,17 @@ export class PaymentLinkConfig extends jspb.Message {
   getCollectionId(): string;
   setCollectionId(value: string): void;
 
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
-  getVerificationMethodId(): api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap];
-  setVerificationMethodId(value: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap]): void;
+  getVerificationMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setVerificationMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
-  getInvoiceMethodId(): api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap];
-  setInvoiceMethodId(value: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap]): void;
+  getInvoiceMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setInvoiceMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
-  getPaymentMethodId(): api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap];
-  setPaymentMethodId(value: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap]): void;
+  getPaymentMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setPaymentMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
   getNameMappingMap(): jspb.Map<string, string>;
   clearNameMappingMap(): void;
@@ -1334,10 +1334,10 @@ export namespace PaymentLinkConfig {
     name: string,
     description: string,
     collectionId: string,
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
-    verificationMethodId: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap],
-    invoiceMethodId: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap],
-    paymentMethodId: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
+    verificationMethodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
+    invoiceMethodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
+    paymentMethodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
     nameMappingMap: Array<[string, string]>,
     verificationFieldsList: Array<string>,
     paymentPortalId: string,
@@ -1551,8 +1551,8 @@ export namespace Request {
 }
 
 export class Validation extends jspb.Message {
-  getEnum(): api_commons_public_integrations_pb.ValidationMap[keyof api_commons_public_integrations_pb.ValidationMap];
-  setEnum(value: api_commons_public_integrations_pb.ValidationMap[keyof api_commons_public_integrations_pb.ValidationMap]): void;
+  getEnum(): api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap];
+  setEnum(value: api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Validation.AsObject;
@@ -1566,16 +1566,16 @@ export class Validation extends jspb.Message {
 
 export namespace Validation {
   export type AsObject = {
-    pb_enum: api_commons_public_integrations_pb.ValidationMap[keyof api_commons_public_integrations_pb.ValidationMap],
+    pb_enum: api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap],
   }
 }
 
 export class MethodCall extends jspb.Message {
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
-  getMethodId(): api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap];
-  setMethodId(value: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap]): void;
+  getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MethodCall.AsObject;
@@ -1589,8 +1589,8 @@ export class MethodCall extends jspb.Message {
 
 export namespace MethodCall {
   export type AsObject = {
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
-    methodId: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
+    methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
   }
 }
 
@@ -1811,8 +1811,8 @@ export namespace CalendarSummary {
 }
 
 export class IntegrationTypeSummary extends jspb.Message {
-  getIntegrationType(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationType(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationType(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationType(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
   hasIntegrationSummary(): boolean;
   clearIntegrationSummary(): void;
@@ -1831,7 +1831,7 @@ export class IntegrationTypeSummary extends jspb.Message {
 
 export namespace IntegrationTypeSummary {
   export type AsObject = {
-    integrationType: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
+    integrationType: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
     integrationSummary?: TransactionSummary.AsObject,
   }
 }
@@ -2061,9 +2061,9 @@ export class UnknownField extends jspb.Message {
   setReasonNeeded(value: string): void;
 
   clearPotentialSourcesList(): void;
-  getPotentialSourcesList(): Array<api_commons_public_integrations_pb.FieldSourceMap[keyof api_commons_public_integrations_pb.FieldSourceMap]>;
-  setPotentialSourcesList(value: Array<api_commons_public_integrations_pb.FieldSourceMap[keyof api_commons_public_integrations_pb.FieldSourceMap]>): void;
-  addPotentialSources(value: api_commons_public_integrations_pb.FieldSourceMap[keyof api_commons_public_integrations_pb.FieldSourceMap], index?: number): api_commons_public_integrations_pb.FieldSourceMap[keyof api_commons_public_integrations_pb.FieldSourceMap];
+  getPotentialSourcesList(): Array<api_commons_integrations_integrations_pb.FieldSourceMap[keyof api_commons_integrations_integrations_pb.FieldSourceMap]>;
+  setPotentialSourcesList(value: Array<api_commons_integrations_integrations_pb.FieldSourceMap[keyof api_commons_integrations_integrations_pb.FieldSourceMap]>): void;
+  addPotentialSources(value: api_commons_integrations_integrations_pb.FieldSourceMap[keyof api_commons_integrations_integrations_pb.FieldSourceMap], index?: number): api_commons_integrations_integrations_pb.FieldSourceMap[keyof api_commons_integrations_integrations_pb.FieldSourceMap];
 
   clearSuggestedFieldsList(): void;
   getSuggestedFieldsList(): Array<ProvidedField>;
@@ -2085,7 +2085,7 @@ export namespace UnknownField {
     name: string,
     displayName: string,
     reasonNeeded: string,
-    potentialSourcesList: Array<api_commons_public_integrations_pb.FieldSourceMap[keyof api_commons_public_integrations_pb.FieldSourceMap]>,
+    potentialSourcesList: Array<api_commons_integrations_integrations_pb.FieldSourceMap[keyof api_commons_integrations_integrations_pb.FieldSourceMap]>,
     suggestedFieldsList: Array<ProvidedField.AsObject>,
   }
 }
@@ -2100,8 +2100,8 @@ export class ProvidedField extends jspb.Message {
   getAltName(): string;
   setAltName(value: string): void;
 
-  getProvidedBy(): api_commons_public_integrations_pb.FieldSourceMap[keyof api_commons_public_integrations_pb.FieldSourceMap];
-  setProvidedBy(value: api_commons_public_integrations_pb.FieldSourceMap[keyof api_commons_public_integrations_pb.FieldSourceMap]): void;
+  getProvidedBy(): api_commons_integrations_integrations_pb.FieldSourceMap[keyof api_commons_integrations_integrations_pb.FieldSourceMap];
+  setProvidedBy(value: api_commons_integrations_integrations_pb.FieldSourceMap[keyof api_commons_integrations_integrations_pb.FieldSourceMap]): void;
 
   getProvidedByDetailsNum(): number;
   setProvidedByDetailsNum(value: number): void;
@@ -2124,7 +2124,7 @@ export namespace ProvidedField {
     name: string,
     displayName: string,
     altName: string,
-    providedBy: api_commons_public_integrations_pb.FieldSourceMap[keyof api_commons_public_integrations_pb.FieldSourceMap],
+    providedBy: api_commons_integrations_integrations_pb.FieldSourceMap[keyof api_commons_integrations_integrations_pb.FieldSourceMap],
     providedByDetailsNum: number,
     providedByDetailsStr: string,
   }
@@ -2183,8 +2183,8 @@ export class Value extends jspb.Message {
   getSensitive(): boolean;
   setSensitive(value: boolean): void;
 
-  getValidation(): api_commons_public_integrations_pb.ValidationMap[keyof api_commons_public_integrations_pb.ValidationMap];
-  setValidation(value: api_commons_public_integrations_pb.ValidationMap[keyof api_commons_public_integrations_pb.ValidationMap]): void;
+  getValidation(): api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap];
+  setValidation(value: api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap]): void;
 
   getValCase(): Value.ValCase;
   serializeBinary(): Uint8Array;
@@ -2206,7 +2206,7 @@ export namespace Value {
     compVal?: CompositeVal.AsObject,
     intVal: number,
     sensitive: boolean,
-    validation: api_commons_public_integrations_pb.ValidationMap[keyof api_commons_public_integrations_pb.ValidationMap],
+    validation: api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap],
   }
 
   export enum ValCase {
@@ -2281,8 +2281,8 @@ export class Condition extends jspb.Message {
   getKey(): string;
   setKey(value: string): void;
 
-  getOp(): api_commons_public_integrations_pb.CompareOperationMap[keyof api_commons_public_integrations_pb.CompareOperationMap];
-  setOp(value: api_commons_public_integrations_pb.CompareOperationMap[keyof api_commons_public_integrations_pb.CompareOperationMap]): void;
+  getOp(): api_commons_integrations_integrations_pb.CompareOperationMap[keyof api_commons_integrations_integrations_pb.CompareOperationMap];
+  setOp(value: api_commons_integrations_integrations_pb.CompareOperationMap[keyof api_commons_integrations_integrations_pb.CompareOperationMap]): void;
 
   hasValue(): boolean;
   clearValue(): void;
@@ -2302,7 +2302,7 @@ export class Condition extends jspb.Message {
 export namespace Condition {
   export type AsObject = {
     key: string,
-    op: api_commons_public_integrations_pb.CompareOperationMap[keyof api_commons_public_integrations_pb.CompareOperationMap],
+    op: api_commons_integrations_integrations_pb.CompareOperationMap[keyof api_commons_integrations_integrations_pb.CompareOperationMap],
     value?: Value.AsObject,
   }
 }
@@ -2311,8 +2311,8 @@ export class IntegrationConfig extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
   getName(): string;
   setName(value: string): void;
@@ -2343,8 +2343,8 @@ export class IntegrationConfig extends jspb.Message {
   getConds(): Conditions | undefined;
   setConds(value?: Conditions): void;
 
-  getMethodId(): api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap];
-  setMethodId(value: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap]): void;
+  getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IntegrationConfig.AsObject;
@@ -2359,7 +2359,7 @@ export class IntegrationConfig extends jspb.Message {
 export namespace IntegrationConfig {
   export type AsObject = {
     id: string,
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
     name: string,
     description: string,
     params?: Values.AsObject,
@@ -2367,7 +2367,7 @@ export namespace IntegrationConfig {
     createdOn?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     alias?: MapString.AsObject,
     conds?: Conditions.AsObject,
-    methodId: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap],
+    methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
   }
 }
 
@@ -2378,20 +2378,20 @@ export class IntegrationTransaction extends jspb.Message {
   getTaskId(): string;
   setTaskId(value: string): void;
 
-  getIntegrationId(): api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap];
-  setIntegrationId(value: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap]): void;
+  getIntegrationId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntegrationId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
 
-  getMethodId(): api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap];
-  setMethodId(value: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap]): void;
+  getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
-  getTransactionType(): api_commons_public_integrations_pb.TransactionTypeMap[keyof api_commons_public_integrations_pb.TransactionTypeMap];
-  setTransactionType(value: api_commons_public_integrations_pb.TransactionTypeMap[keyof api_commons_public_integrations_pb.TransactionTypeMap]): void;
+  getTransactionType(): api_commons_integrations_integrations_pb.TransactionTypeMap[keyof api_commons_integrations_integrations_pb.TransactionTypeMap];
+  setTransactionType(value: api_commons_integrations_integrations_pb.TransactionTypeMap[keyof api_commons_integrations_integrations_pb.TransactionTypeMap]): void;
 
-  getRequestSource(): api_commons_public_integrations_pb.RequestSourceMap[keyof api_commons_public_integrations_pb.RequestSourceMap];
-  setRequestSource(value: api_commons_public_integrations_pb.RequestSourceMap[keyof api_commons_public_integrations_pb.RequestSourceMap]): void;
+  getRequestSource(): api_commons_integrations_integrations_pb.RequestSourceMap[keyof api_commons_integrations_integrations_pb.RequestSourceMap];
+  setRequestSource(value: api_commons_integrations_integrations_pb.RequestSourceMap[keyof api_commons_integrations_integrations_pb.RequestSourceMap]): void;
 
-  getResult(): api_commons_public_integrations_pb.TransactionResultMap[keyof api_commons_public_integrations_pb.TransactionResultMap];
-  setResult(value: api_commons_public_integrations_pb.TransactionResultMap[keyof api_commons_public_integrations_pb.TransactionResultMap]): void;
+  getResult(): api_commons_integrations_integrations_pb.TransactionResultMap[keyof api_commons_integrations_integrations_pb.TransactionResultMap];
+  setResult(value: api_commons_integrations_integrations_pb.TransactionResultMap[keyof api_commons_integrations_integrations_pb.TransactionResultMap]): void;
 
   getAmountCollected(): number;
   setAmountCollected(value: number): void;
@@ -2433,11 +2433,11 @@ export namespace IntegrationTransaction {
   export type AsObject = {
     integrationTransactionId: string,
     taskId: string,
-    integrationId: api_commons_public_integrations_pb.IntegrationTypeMap[keyof api_commons_public_integrations_pb.IntegrationTypeMap],
-    methodId: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap],
-    transactionType: api_commons_public_integrations_pb.TransactionTypeMap[keyof api_commons_public_integrations_pb.TransactionTypeMap],
-    requestSource: api_commons_public_integrations_pb.RequestSourceMap[keyof api_commons_public_integrations_pb.RequestSourceMap],
-    result: api_commons_public_integrations_pb.TransactionResultMap[keyof api_commons_public_integrations_pb.TransactionResultMap],
+    integrationId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
+    methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
+    transactionType: api_commons_integrations_integrations_pb.TransactionTypeMap[keyof api_commons_integrations_integrations_pb.TransactionTypeMap],
+    requestSource: api_commons_integrations_integrations_pb.RequestSourceMap[keyof api_commons_integrations_integrations_pb.RequestSourceMap],
+    result: api_commons_integrations_integrations_pb.TransactionResultMap[keyof api_commons_integrations_integrations_pb.TransactionResultMap],
     amountCollected: number,
     requestData?: Values.AsObject,
     responseData?: Values.AsObject,
@@ -2494,8 +2494,8 @@ export class Task extends jspb.Message {
   getTaskId(): string;
   setTaskId(value: string): void;
 
-  getSrc(): api_commons_public_integrations_pb.RequestSourceMap[keyof api_commons_public_integrations_pb.RequestSourceMap];
-  setSrc(value: api_commons_public_integrations_pb.RequestSourceMap[keyof api_commons_public_integrations_pb.RequestSourceMap]): void;
+  getSrc(): api_commons_integrations_integrations_pb.RequestSourceMap[keyof api_commons_integrations_integrations_pb.RequestSourceMap];
+  setSrc(value: api_commons_integrations_integrations_pb.RequestSourceMap[keyof api_commons_integrations_integrations_pb.RequestSourceMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Task.AsObject;
@@ -2511,7 +2511,7 @@ export namespace Task {
   export type AsObject = {
     valuesMap: Array<[string, Value.AsObject]>,
     taskId: string,
-    src: api_commons_public_integrations_pb.RequestSourceMap[keyof api_commons_public_integrations_pb.RequestSourceMap],
+    src: api_commons_integrations_integrations_pb.RequestSourceMap[keyof api_commons_integrations_integrations_pb.RequestSourceMap],
   }
 }
 
@@ -2833,18 +2833,18 @@ export namespace PortalType {
 export class PaymentPortal extends jspb.Message {
   hasVerification(): boolean;
   clearVerification(): void;
-  getVerification(): api_commons_public_integrations_pb.VerificationFlow | undefined;
-  setVerification(value?: api_commons_public_integrations_pb.VerificationFlow): void;
+  getVerification(): api_commons_integrations_integrations_pb.VerificationFlow | undefined;
+  setVerification(value?: api_commons_integrations_integrations_pb.VerificationFlow): void;
 
   hasInvoice(): boolean;
   clearInvoice(): void;
-  getInvoice(): api_commons_public_integrations_pb.InvoiceFlow | undefined;
-  setInvoice(value?: api_commons_public_integrations_pb.InvoiceFlow): void;
+  getInvoice(): api_commons_integrations_integrations_pb.InvoiceFlow | undefined;
+  setInvoice(value?: api_commons_integrations_integrations_pb.InvoiceFlow): void;
 
   clearPaymentsList(): void;
-  getPaymentsList(): Array<api_commons_public_integrations_pb.PaymentFlow>;
-  setPaymentsList(value: Array<api_commons_public_integrations_pb.PaymentFlow>): void;
-  addPayments(value?: api_commons_public_integrations_pb.PaymentFlow, index?: number): api_commons_public_integrations_pb.PaymentFlow;
+  getPaymentsList(): Array<api_commons_integrations_integrations_pb.PaymentFlow>;
+  setPaymentsList(value: Array<api_commons_integrations_integrations_pb.PaymentFlow>): void;
+  addPayments(value?: api_commons_integrations_integrations_pb.PaymentFlow, index?: number): api_commons_integrations_integrations_pb.PaymentFlow;
 
   hasPortalText(): boolean;
   clearPortalText(): void;
@@ -2863,9 +2863,9 @@ export class PaymentPortal extends jspb.Message {
 
 export namespace PaymentPortal {
   export type AsObject = {
-    verification?: api_commons_public_integrations_pb.VerificationFlow.AsObject,
-    invoice?: api_commons_public_integrations_pb.InvoiceFlow.AsObject,
-    paymentsList: Array<api_commons_public_integrations_pb.PaymentFlow.AsObject>,
+    verification?: api_commons_integrations_integrations_pb.VerificationFlow.AsObject,
+    invoice?: api_commons_integrations_integrations_pb.InvoiceFlow.AsObject,
+    paymentsList: Array<api_commons_integrations_integrations_pb.PaymentFlow.AsObject>,
     portalText?: PortalText.AsObject,
   }
 }
@@ -2934,8 +2934,8 @@ export class PluginInstance extends jspb.Message {
   getLastEdited(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLastEdited(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  getMethodId(): api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap];
-  setMethodId(value: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap]): void;
+  getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PluginInstance.AsObject;
@@ -2956,7 +2956,7 @@ export namespace PluginInstance {
     data?: Values.AsObject,
     metadata?: Values.AsObject,
     lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    methodId: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap],
+    methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
   }
 }
 
@@ -3032,8 +3032,8 @@ export class GetPortalLinksByDateRangeReq extends jspb.Message {
   getPageNum(): number;
   setPageNum(value: number): void;
 
-  getMethodId(): api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap];
-  setMethodId(value: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap]): void;
+  getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPortalLinksByDateRangeReq.AsObject;
@@ -3053,7 +3053,7 @@ export namespace GetPortalLinksByDateRangeReq {
     end?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     pageSize: number,
     pageNum: number,
-    methodId: api_commons_public_integrations_pb.RequestMethodMap[keyof api_commons_public_integrations_pb.RequestMethodMap],
+    methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
   }
 }
 

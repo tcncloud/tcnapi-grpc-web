@@ -1,4 +1,4 @@
-// source: api/commons/public/integrations.proto
+// source: api/commons/integrations/integrations.proto
 /**
  * @fileoverview
  * @enhanceable

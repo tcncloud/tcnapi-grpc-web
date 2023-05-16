@@ -1,5 +1,5 @@
 // package: api.commons.public
-// file: api/commons/public/integrations.proto
+// file: api/commons/integrations/integrations.proto
 
 import * as jspb from "google-protobuf";
 

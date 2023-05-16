@@ -21,8 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var api_commons_public_integrations_pb = require('../../../api/commons/public/integrations_pb.js');
-goog.object.extend(proto, api_commons_public_integrations_pb);
+var api_commons_integrations_integrations_pb = require('../../../api/commons/integrations/integrations_pb.js');
+goog.object.extend(proto, api_commons_integrations_integrations_pb);
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -2488,10 +2488,10 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.toObject = function(include
     complete: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
     expired: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     portalConfig: (f = msg.getPortalConfig()) && proto.api.v1alpha1.integrationspublic.PortalConfig.toObject(includeInstance, f),
-    verification: (f = msg.getVerification()) && api_commons_public_integrations_pb.VerificationFlow.toObject(includeInstance, f),
-    invoice: (f = msg.getInvoice()) && api_commons_public_integrations_pb.InvoiceFlow.toObject(includeInstance, f),
+    verification: (f = msg.getVerification()) && api_commons_integrations_integrations_pb.VerificationFlow.toObject(includeInstance, f),
+    invoice: (f = msg.getInvoice()) && api_commons_integrations_integrations_pb.InvoiceFlow.toObject(includeInstance, f),
     paymentsList: jspb.Message.toObjectList(msg.getPaymentsList(),
-    api_commons_public_integrations_pb.PaymentFlow.toObject, includeInstance),
+    api_commons_integrations_integrations_pb.PaymentFlow.toObject, includeInstance),
     flowFormsList: jspb.Message.toObjectList(msg.getFlowFormsList(),
     proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.toObject, includeInstance),
     portalText: (f = msg.getPortalText()) && proto.api.v1alpha1.integrationspublic.PortalText.toObject(includeInstance, f)
@@ -2545,18 +2545,18 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.deserializeBinaryFromReader
       msg.setPortalConfig(value);
       break;
     case 5:
-      var value = new api_commons_public_integrations_pb.VerificationFlow;
-      reader.readMessage(value,api_commons_public_integrations_pb.VerificationFlow.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.VerificationFlow;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.VerificationFlow.deserializeBinaryFromReader);
       msg.setVerification(value);
       break;
     case 6:
-      var value = new api_commons_public_integrations_pb.InvoiceFlow;
-      reader.readMessage(value,api_commons_public_integrations_pb.InvoiceFlow.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.InvoiceFlow;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.InvoiceFlow.deserializeBinaryFromReader);
       msg.setInvoice(value);
       break;
     case 7:
-      var value = new api_commons_public_integrations_pb.PaymentFlow;
-      reader.readMessage(value,api_commons_public_integrations_pb.PaymentFlow.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.PaymentFlow;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.PaymentFlow.deserializeBinaryFromReader);
       msg.addPayments(value);
       break;
     case 9:
@@ -2625,7 +2625,7 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.serializeBinaryToWriter = f
     writer.writeMessage(
       5,
       f,
-      api_commons_public_integrations_pb.VerificationFlow.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.VerificationFlow.serializeBinaryToWriter
     );
   }
   f = message.getInvoice();
@@ -2633,7 +2633,7 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.serializeBinaryToWriter = f
     writer.writeMessage(
       6,
       f,
-      api_commons_public_integrations_pb.InvoiceFlow.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.InvoiceFlow.serializeBinaryToWriter
     );
   }
   f = message.getPaymentsList();
@@ -2641,7 +2641,7 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.serializeBinaryToWriter = f
     writer.writeRepeatedMessage(
       7,
       f,
-      api_commons_public_integrations_pb.PaymentFlow.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.PaymentFlow.serializeBinaryToWriter
     );
   }
   f = message.getFlowFormsList();
@@ -2702,10 +2702,10 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.prototype.toObje
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flow: (f = msg.getFlow()) && api_commons_public_integrations_pb.Flow.toObject(includeInstance, f),
+    flow: (f = msg.getFlow()) && api_commons_integrations_integrations_pb.Flow.toObject(includeInstance, f),
     fieldNamesList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
     fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
-    api_commons_public_integrations_pb.FieldDefinition.toObject, includeInstance)
+    api_commons_integrations_integrations_pb.FieldDefinition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2743,8 +2743,8 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.deserializeBinar
     var field = reader.getFieldNumber();
     switch (field) {
     case 8:
-      var value = new api_commons_public_integrations_pb.Flow;
-      reader.readMessage(value,api_commons_public_integrations_pb.Flow.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.Flow;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.Flow.deserializeBinaryFromReader);
       msg.setFlow(value);
       break;
     case 9:
@@ -2752,8 +2752,8 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.deserializeBinar
       msg.addFieldNames(value);
       break;
     case 10:
-      var value = new api_commons_public_integrations_pb.FieldDefinition;
-      reader.readMessage(value,api_commons_public_integrations_pb.FieldDefinition.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.FieldDefinition;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.FieldDefinition.deserializeBinaryFromReader);
       msg.addFields(value);
       break;
     default:
@@ -2790,7 +2790,7 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.serializeBinaryT
     writer.writeMessage(
       8,
       f,
-      api_commons_public_integrations_pb.Flow.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.Flow.serializeBinaryToWriter
     );
   }
   f = message.getFieldNamesList();
@@ -2805,7 +2805,7 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.serializeBinaryT
     writer.writeRepeatedMessage(
       10,
       f,
-      api_commons_public_integrations_pb.FieldDefinition.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.FieldDefinition.serializeBinaryToWriter
     );
   }
 };
@@ -2817,7 +2817,7 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.serializeBinaryT
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.prototype.getFlow = function() {
   return /** @type{?proto.api.commons.public.Flow} */ (
-    jspb.Message.getWrapperField(this, api_commons_public_integrations_pb.Flow, 8));
+    jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.Flow, 8));
 };
 
 
@@ -2891,7 +2891,7 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.prototype.clearF
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.prototype.getFieldsList = function() {
   return /** @type{!Array<!proto.api.commons.public.FieldDefinition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_public_integrations_pb.FieldDefinition, 10));
+    jspb.Message.getRepeatedWrapperField(this, api_commons_integrations_integrations_pb.FieldDefinition, 10));
 };
 
 
@@ -3002,7 +3002,7 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.hasPortalConfig =
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.getVerification = function() {
   return /** @type{?proto.api.commons.public.VerificationFlow} */ (
-    jspb.Message.getWrapperField(this, api_commons_public_integrations_pb.VerificationFlow, 5));
+    jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.VerificationFlow, 5));
 };
 
 
@@ -3039,7 +3039,7 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.hasVerification =
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.getInvoice = function() {
   return /** @type{?proto.api.commons.public.InvoiceFlow} */ (
-    jspb.Message.getWrapperField(this, api_commons_public_integrations_pb.InvoiceFlow, 6));
+    jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.InvoiceFlow, 6));
 };
 
 
@@ -3076,7 +3076,7 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.hasInvoice = func
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.getPaymentsList = function() {
   return /** @type{!Array<!proto.api.commons.public.PaymentFlow>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_public_integrations_pb.PaymentFlow, 7));
+    jspb.Message.getRepeatedWrapperField(this, api_commons_integrations_integrations_pb.PaymentFlow, 7));
 };
 
 
@@ -4425,7 +4425,7 @@ proto.api.v1alpha1.integrationspublic.GetInvoiceRes.toObject = function(includeI
     fieldsMap: (f = msg.getFieldsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
     amountDue: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
     amountDueKey: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    invoices: (f = msg.getInvoices()) && api_commons_public_integrations_pb.Invoices.toObject(includeInstance, f)
+    invoices: (f = msg.getInvoices()) && api_commons_integrations_integrations_pb.Invoices.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4477,8 +4477,8 @@ proto.api.v1alpha1.integrationspublic.GetInvoiceRes.deserializeBinaryFromReader 
       msg.setAmountDueKey(value);
       break;
     case 4:
-      var value = new api_commons_public_integrations_pb.Invoices;
-      reader.readMessage(value,api_commons_public_integrations_pb.Invoices.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.Invoices;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.Invoices.deserializeBinaryFromReader);
       msg.setInvoices(value);
       break;
     default:
@@ -4533,7 +4533,7 @@ proto.api.v1alpha1.integrationspublic.GetInvoiceRes.serializeBinaryToWriter = fu
     writer.writeMessage(
       4,
       f,
-      api_commons_public_integrations_pb.Invoices.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.Invoices.serializeBinaryToWriter
     );
   }
 };
@@ -4604,7 +4604,7 @@ proto.api.v1alpha1.integrationspublic.GetInvoiceRes.prototype.setAmountDueKey = 
  */
 proto.api.v1alpha1.integrationspublic.GetInvoiceRes.prototype.getInvoices = function() {
   return /** @type{?proto.api.commons.public.Invoices} */ (
-    jspb.Message.getWrapperField(this, api_commons_public_integrations_pb.Invoices, 4));
+    jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.Invoices, 4));
 };
 
 
@@ -4670,7 +4670,7 @@ proto.api.v1alpha1.integrationspublic.SubmitPaymentReq.toObject = function(inclu
     entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f),
     sessionId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     paymentFieldsMap: (f = msg.getPaymentFieldsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
-    paymentFlow: (f = msg.getPaymentFlow()) && api_commons_public_integrations_pb.PaymentFlow.toObject(includeInstance, f)
+    paymentFlow: (f = msg.getPaymentFlow()) && api_commons_integrations_integrations_pb.PaymentFlow.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4723,8 +4723,8 @@ proto.api.v1alpha1.integrationspublic.SubmitPaymentReq.deserializeBinaryFromRead
          });
       break;
     case 4:
-      var value = new api_commons_public_integrations_pb.PaymentFlow;
-      reader.readMessage(value,api_commons_public_integrations_pb.PaymentFlow.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.PaymentFlow;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.PaymentFlow.deserializeBinaryFromReader);
       msg.setPaymentFlow(value);
       break;
     default:
@@ -4780,7 +4780,7 @@ proto.api.v1alpha1.integrationspublic.SubmitPaymentReq.serializeBinaryToWriter =
     writer.writeMessage(
       4,
       f,
-      api_commons_public_integrations_pb.PaymentFlow.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.PaymentFlow.serializeBinaryToWriter
     );
   }
 };
@@ -4870,7 +4870,7 @@ proto.api.v1alpha1.integrationspublic.SubmitPaymentReq.prototype.clearPaymentFie
  */
 proto.api.v1alpha1.integrationspublic.SubmitPaymentReq.prototype.getPaymentFlow = function() {
   return /** @type{?proto.api.commons.public.PaymentFlow} */ (
-    jspb.Message.getWrapperField(this, api_commons_public_integrations_pb.PaymentFlow, 4));
+    jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.PaymentFlow, 4));
 };
 
 
@@ -5313,7 +5313,7 @@ proto.api.v1alpha1.integrationspublic.GetReceiptRes.toObject = function(includeI
     responseMap: (f = msg.getResponseMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
     amountPaid: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
     amountPaidKey: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    paymentFlow: (f = msg.getPaymentFlow()) && api_commons_public_integrations_pb.PaymentFlow.toObject(includeInstance, f)
+    paymentFlow: (f = msg.getPaymentFlow()) && api_commons_integrations_integrations_pb.PaymentFlow.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5375,8 +5375,8 @@ proto.api.v1alpha1.integrationspublic.GetReceiptRes.deserializeBinaryFromReader 
       msg.setAmountPaidKey(value);
       break;
     case 6:
-      var value = new api_commons_public_integrations_pb.PaymentFlow;
-      reader.readMessage(value,api_commons_public_integrations_pb.PaymentFlow.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.PaymentFlow;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.PaymentFlow.deserializeBinaryFromReader);
       msg.setPaymentFlow(value);
       break;
     default:
@@ -5442,7 +5442,7 @@ proto.api.v1alpha1.integrationspublic.GetReceiptRes.serializeBinaryToWriter = fu
     writer.writeMessage(
       6,
       f,
-      api_commons_public_integrations_pb.PaymentFlow.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.PaymentFlow.serializeBinaryToWriter
     );
   }
 };
@@ -5554,7 +5554,7 @@ proto.api.v1alpha1.integrationspublic.GetReceiptRes.prototype.setAmountPaidKey =
  */
 proto.api.v1alpha1.integrationspublic.GetReceiptRes.prototype.getPaymentFlow = function() {
   return /** @type{?proto.api.commons.public.PaymentFlow} */ (
-    jspb.Message.getWrapperField(this, api_commons_public_integrations_pb.PaymentFlow, 6));
+    jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.PaymentFlow, 6));
 };
 
 

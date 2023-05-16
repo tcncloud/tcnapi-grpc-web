@@ -21,8 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var api_commons_public_integrations_pb = require('../../../api/commons/public/integrations_pb.js');
-goog.object.extend(proto, api_commons_public_integrations_pb);
+var api_commons_integrations_integrations_pb = require('../../../api/commons/integrations/integrations_pb.js');
+goog.object.extend(proto, api_commons_integrations_integrations_pb);
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
@@ -22475,10 +22475,10 @@ proto.api.v1alpha1.integrations.PaymentPortal.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.integrations.PaymentPortal.toObject = function(includeInstance, msg) {
   var f, obj = {
-    verification: (f = msg.getVerification()) && api_commons_public_integrations_pb.VerificationFlow.toObject(includeInstance, f),
-    invoice: (f = msg.getInvoice()) && api_commons_public_integrations_pb.InvoiceFlow.toObject(includeInstance, f),
+    verification: (f = msg.getVerification()) && api_commons_integrations_integrations_pb.VerificationFlow.toObject(includeInstance, f),
+    invoice: (f = msg.getInvoice()) && api_commons_integrations_integrations_pb.InvoiceFlow.toObject(includeInstance, f),
     paymentsList: jspb.Message.toObjectList(msg.getPaymentsList(),
-    api_commons_public_integrations_pb.PaymentFlow.toObject, includeInstance),
+    api_commons_integrations_integrations_pb.PaymentFlow.toObject, includeInstance),
     portalText: (f = msg.getPortalText()) && proto.api.v1alpha1.integrations.PortalText.toObject(includeInstance, f)
   };
 
@@ -22517,18 +22517,18 @@ proto.api.v1alpha1.integrations.PaymentPortal.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 8:
-      var value = new api_commons_public_integrations_pb.VerificationFlow;
-      reader.readMessage(value,api_commons_public_integrations_pb.VerificationFlow.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.VerificationFlow;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.VerificationFlow.deserializeBinaryFromReader);
       msg.setVerification(value);
       break;
     case 9:
-      var value = new api_commons_public_integrations_pb.InvoiceFlow;
-      reader.readMessage(value,api_commons_public_integrations_pb.InvoiceFlow.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.InvoiceFlow;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.InvoiceFlow.deserializeBinaryFromReader);
       msg.setInvoice(value);
       break;
     case 10:
-      var value = new api_commons_public_integrations_pb.PaymentFlow;
-      reader.readMessage(value,api_commons_public_integrations_pb.PaymentFlow.deserializeBinaryFromReader);
+      var value = new api_commons_integrations_integrations_pb.PaymentFlow;
+      reader.readMessage(value,api_commons_integrations_integrations_pb.PaymentFlow.deserializeBinaryFromReader);
       msg.addPayments(value);
       break;
     case 20:
@@ -22570,7 +22570,7 @@ proto.api.v1alpha1.integrations.PaymentPortal.serializeBinaryToWriter = function
     writer.writeMessage(
       8,
       f,
-      api_commons_public_integrations_pb.VerificationFlow.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.VerificationFlow.serializeBinaryToWriter
     );
   }
   f = message.getInvoice();
@@ -22578,7 +22578,7 @@ proto.api.v1alpha1.integrations.PaymentPortal.serializeBinaryToWriter = function
     writer.writeMessage(
       9,
       f,
-      api_commons_public_integrations_pb.InvoiceFlow.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.InvoiceFlow.serializeBinaryToWriter
     );
   }
   f = message.getPaymentsList();
@@ -22586,7 +22586,7 @@ proto.api.v1alpha1.integrations.PaymentPortal.serializeBinaryToWriter = function
     writer.writeRepeatedMessage(
       10,
       f,
-      api_commons_public_integrations_pb.PaymentFlow.serializeBinaryToWriter
+      api_commons_integrations_integrations_pb.PaymentFlow.serializeBinaryToWriter
     );
   }
   f = message.getPortalText();
@@ -22606,7 +22606,7 @@ proto.api.v1alpha1.integrations.PaymentPortal.serializeBinaryToWriter = function
  */
 proto.api.v1alpha1.integrations.PaymentPortal.prototype.getVerification = function() {
   return /** @type{?proto.api.commons.public.VerificationFlow} */ (
-    jspb.Message.getWrapperField(this, api_commons_public_integrations_pb.VerificationFlow, 8));
+    jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.VerificationFlow, 8));
 };
 
 
@@ -22643,7 +22643,7 @@ proto.api.v1alpha1.integrations.PaymentPortal.prototype.hasVerification = functi
  */
 proto.api.v1alpha1.integrations.PaymentPortal.prototype.getInvoice = function() {
   return /** @type{?proto.api.commons.public.InvoiceFlow} */ (
-    jspb.Message.getWrapperField(this, api_commons_public_integrations_pb.InvoiceFlow, 9));
+    jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.InvoiceFlow, 9));
 };
 
 
@@ -22680,7 +22680,7 @@ proto.api.v1alpha1.integrations.PaymentPortal.prototype.hasInvoice = function() 
  */
 proto.api.v1alpha1.integrations.PaymentPortal.prototype.getPaymentsList = function() {
   return /** @type{!Array<!proto.api.commons.public.PaymentFlow>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_public_integrations_pb.PaymentFlow, 10));
+    jspb.Message.getRepeatedWrapperField(this, api_commons_integrations_integrations_pb.PaymentFlow, 10));
 };
 
 
