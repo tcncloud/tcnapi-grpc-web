@@ -762,7 +762,7 @@ proto.api.v1alpha1.integrationspublic.Value.deserializeBinaryFromReader = functi
       msg.setSensitive(value);
       break;
     case 8:
-      var value = /** @type {!proto.api.commons.public.Validation} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.Validation} */ (reader.readEnum());
       msg.setValidation(value);
       break;
     default:
@@ -1092,16 +1092,16 @@ proto.api.v1alpha1.integrationspublic.Value.prototype.setSensitive = function(va
 
 
 /**
- * optional api.commons.public.Validation validation = 8;
- * @return {!proto.api.commons.public.Validation}
+ * optional api.commons.integrations.Validation validation = 8;
+ * @return {!proto.api.commons.integrations.Validation}
  */
 proto.api.v1alpha1.integrationspublic.Value.prototype.getValidation = function() {
-  return /** @type {!proto.api.commons.public.Validation} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {!proto.api.commons.integrations.Validation} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.Validation} value
+ * @param {!proto.api.commons.integrations.Validation} value
  * @return {!proto.api.v1alpha1.integrationspublic.Value} returns this
  */
 proto.api.v1alpha1.integrationspublic.Value.prototype.setValidation = function(value) {
@@ -2812,17 +2812,17 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.serializeBinaryT
 
 
 /**
- * optional api.commons.public.Flow flow = 8;
- * @return {?proto.api.commons.public.Flow}
+ * optional api.commons.integrations.Flow flow = 8;
+ * @return {?proto.api.commons.integrations.Flow}
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.prototype.getFlow = function() {
-  return /** @type{?proto.api.commons.public.Flow} */ (
+  return /** @type{?proto.api.commons.integrations.Flow} */ (
     jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.Flow, 8));
 };
 
 
 /**
- * @param {?proto.api.commons.public.Flow|undefined} value
+ * @param {?proto.api.commons.integrations.Flow|undefined} value
  * @return {!proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames} returns this
 */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.prototype.setFlow = function(value) {
@@ -2886,17 +2886,17 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.prototype.clearF
 
 
 /**
- * repeated api.commons.public.FieldDefinition fields = 10;
- * @return {!Array<!proto.api.commons.public.FieldDefinition>}
+ * repeated api.commons.integrations.FieldDefinition fields = 10;
+ * @return {!Array<!proto.api.commons.integrations.FieldDefinition>}
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.prototype.getFieldsList = function() {
-  return /** @type{!Array<!proto.api.commons.public.FieldDefinition>} */ (
+  return /** @type{!Array<!proto.api.commons.integrations.FieldDefinition>} */ (
     jspb.Message.getRepeatedWrapperField(this, api_commons_integrations_integrations_pb.FieldDefinition, 10));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.public.FieldDefinition>} value
+ * @param {!Array<!proto.api.commons.integrations.FieldDefinition>} value
  * @return {!proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames} returns this
 */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.prototype.setFieldsList = function(value) {
@@ -2905,12 +2905,12 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.prototype.setFie
 
 
 /**
- * @param {!proto.api.commons.public.FieldDefinition=} opt_value
+ * @param {!proto.api.commons.integrations.FieldDefinition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.commons.public.FieldDefinition}
+ * @return {!proto.api.commons.integrations.FieldDefinition}
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.prototype.addFields = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.api.commons.public.FieldDefinition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.api.commons.integrations.FieldDefinition, opt_index);
 };
 
 
@@ -2997,17 +2997,17 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.hasPortalConfig =
 
 
 /**
- * optional api.commons.public.VerificationFlow verification = 5;
- * @return {?proto.api.commons.public.VerificationFlow}
+ * optional api.commons.integrations.VerificationFlow verification = 5;
+ * @return {?proto.api.commons.integrations.VerificationFlow}
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.getVerification = function() {
-  return /** @type{?proto.api.commons.public.VerificationFlow} */ (
+  return /** @type{?proto.api.commons.integrations.VerificationFlow} */ (
     jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.VerificationFlow, 5));
 };
 
 
 /**
- * @param {?proto.api.commons.public.VerificationFlow|undefined} value
+ * @param {?proto.api.commons.integrations.VerificationFlow|undefined} value
  * @return {!proto.api.v1alpha1.integrationspublic.GetLinkDataRes} returns this
 */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.setVerification = function(value) {
@@ -3034,17 +3034,17 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.hasVerification =
 
 
 /**
- * optional api.commons.public.InvoiceFlow invoice = 6;
- * @return {?proto.api.commons.public.InvoiceFlow}
+ * optional api.commons.integrations.InvoiceFlow invoice = 6;
+ * @return {?proto.api.commons.integrations.InvoiceFlow}
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.getInvoice = function() {
-  return /** @type{?proto.api.commons.public.InvoiceFlow} */ (
+  return /** @type{?proto.api.commons.integrations.InvoiceFlow} */ (
     jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.InvoiceFlow, 6));
 };
 
 
 /**
- * @param {?proto.api.commons.public.InvoiceFlow|undefined} value
+ * @param {?proto.api.commons.integrations.InvoiceFlow|undefined} value
  * @return {!proto.api.v1alpha1.integrationspublic.GetLinkDataRes} returns this
 */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.setInvoice = function(value) {
@@ -3071,17 +3071,17 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.hasInvoice = func
 
 
 /**
- * repeated api.commons.public.PaymentFlow payments = 7;
- * @return {!Array<!proto.api.commons.public.PaymentFlow>}
+ * repeated api.commons.integrations.PaymentFlow payments = 7;
+ * @return {!Array<!proto.api.commons.integrations.PaymentFlow>}
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.getPaymentsList = function() {
-  return /** @type{!Array<!proto.api.commons.public.PaymentFlow>} */ (
+  return /** @type{!Array<!proto.api.commons.integrations.PaymentFlow>} */ (
     jspb.Message.getRepeatedWrapperField(this, api_commons_integrations_integrations_pb.PaymentFlow, 7));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.public.PaymentFlow>} value
+ * @param {!Array<!proto.api.commons.integrations.PaymentFlow>} value
  * @return {!proto.api.v1alpha1.integrationspublic.GetLinkDataRes} returns this
 */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.setPaymentsList = function(value) {
@@ -3090,12 +3090,12 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.setPaymentsList =
 
 
 /**
- * @param {!proto.api.commons.public.PaymentFlow=} opt_value
+ * @param {!proto.api.commons.integrations.PaymentFlow=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.commons.public.PaymentFlow}
+ * @return {!proto.api.commons.integrations.PaymentFlow}
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.addPayments = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.api.commons.public.PaymentFlow, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.api.commons.integrations.PaymentFlow, opt_index);
 };
 
 
@@ -4599,17 +4599,17 @@ proto.api.v1alpha1.integrationspublic.GetInvoiceRes.prototype.setAmountDueKey = 
 
 
 /**
- * optional api.commons.public.Invoices invoices = 4;
- * @return {?proto.api.commons.public.Invoices}
+ * optional api.commons.integrations.Invoices invoices = 4;
+ * @return {?proto.api.commons.integrations.Invoices}
  */
 proto.api.v1alpha1.integrationspublic.GetInvoiceRes.prototype.getInvoices = function() {
-  return /** @type{?proto.api.commons.public.Invoices} */ (
+  return /** @type{?proto.api.commons.integrations.Invoices} */ (
     jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.Invoices, 4));
 };
 
 
 /**
- * @param {?proto.api.commons.public.Invoices|undefined} value
+ * @param {?proto.api.commons.integrations.Invoices|undefined} value
  * @return {!proto.api.v1alpha1.integrationspublic.GetInvoiceRes} returns this
 */
 proto.api.v1alpha1.integrationspublic.GetInvoiceRes.prototype.setInvoices = function(value) {
@@ -4865,17 +4865,17 @@ proto.api.v1alpha1.integrationspublic.SubmitPaymentReq.prototype.clearPaymentFie
 
 
 /**
- * optional api.commons.public.PaymentFlow payment_flow = 4;
- * @return {?proto.api.commons.public.PaymentFlow}
+ * optional api.commons.integrations.PaymentFlow payment_flow = 4;
+ * @return {?proto.api.commons.integrations.PaymentFlow}
  */
 proto.api.v1alpha1.integrationspublic.SubmitPaymentReq.prototype.getPaymentFlow = function() {
-  return /** @type{?proto.api.commons.public.PaymentFlow} */ (
+  return /** @type{?proto.api.commons.integrations.PaymentFlow} */ (
     jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.PaymentFlow, 4));
 };
 
 
 /**
- * @param {?proto.api.commons.public.PaymentFlow|undefined} value
+ * @param {?proto.api.commons.integrations.PaymentFlow|undefined} value
  * @return {!proto.api.v1alpha1.integrationspublic.SubmitPaymentReq} returns this
 */
 proto.api.v1alpha1.integrationspublic.SubmitPaymentReq.prototype.setPaymentFlow = function(value) {
@@ -5549,17 +5549,17 @@ proto.api.v1alpha1.integrationspublic.GetReceiptRes.prototype.setAmountPaidKey =
 
 
 /**
- * optional api.commons.public.PaymentFlow payment_flow = 6;
- * @return {?proto.api.commons.public.PaymentFlow}
+ * optional api.commons.integrations.PaymentFlow payment_flow = 6;
+ * @return {?proto.api.commons.integrations.PaymentFlow}
  */
 proto.api.v1alpha1.integrationspublic.GetReceiptRes.prototype.getPaymentFlow = function() {
-  return /** @type{?proto.api.commons.public.PaymentFlow} */ (
+  return /** @type{?proto.api.commons.integrations.PaymentFlow} */ (
     jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.PaymentFlow, 6));
 };
 
 
 /**
- * @param {?proto.api.commons.public.PaymentFlow|undefined} value
+ * @param {?proto.api.commons.integrations.PaymentFlow|undefined} value
  * @return {!proto.api.v1alpha1.integrationspublic.GetReceiptRes} returns this
 */
 proto.api.v1alpha1.integrationspublic.GetReceiptRes.prototype.setPaymentFlow = function(value) {

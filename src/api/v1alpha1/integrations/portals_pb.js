@@ -8606,7 +8606,7 @@ proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity.deserializeBinaryFr
       msg.setFlow(value);
       break;
     case 4:
-      var value = /** @type {!proto.api.commons.public.FlowFieldLoc} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.FlowFieldLoc} */ (reader.readEnum());
       msg.setLoc(value);
       break;
     default:
@@ -8657,17 +8657,17 @@ proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity.serializeBinaryToWr
 
 
 /**
- * optional api.commons.public.Flow flow = 3;
- * @return {?proto.api.commons.public.Flow}
+ * optional api.commons.integrations.Flow flow = 3;
+ * @return {?proto.api.commons.integrations.Flow}
  */
 proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity.prototype.getFlow = function() {
-  return /** @type{?proto.api.commons.public.Flow} */ (
+  return /** @type{?proto.api.commons.integrations.Flow} */ (
     jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.Flow, 3));
 };
 
 
 /**
- * @param {?proto.api.commons.public.Flow|undefined} value
+ * @param {?proto.api.commons.integrations.Flow|undefined} value
  * @return {!proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity} returns this
 */
 proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity.prototype.setFlow = function(value) {
@@ -8694,16 +8694,16 @@ proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity.prototype.hasFlow =
 
 
 /**
- * optional api.commons.public.FlowFieldLoc loc = 4;
- * @return {!proto.api.commons.public.FlowFieldLoc}
+ * optional api.commons.integrations.FlowFieldLoc loc = 4;
+ * @return {!proto.api.commons.integrations.FlowFieldLoc}
  */
 proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity.prototype.getLoc = function() {
-  return /** @type {!proto.api.commons.public.FlowFieldLoc} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {!proto.api.commons.integrations.FlowFieldLoc} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.FlowFieldLoc} value
+ * @param {!proto.api.commons.integrations.FlowFieldLoc} value
  * @return {!proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity} returns this
  */
 proto.api.v1alpha1.integrations.ListFlowFieldNamesReq.Entity.prototype.setLoc = function(value) {
@@ -9019,17 +9019,17 @@ proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsReq.serializeBina
 
 
 /**
- * optional api.commons.public.VerificationFlow verification = 1;
- * @return {?proto.api.commons.public.VerificationFlow}
+ * optional api.commons.integrations.VerificationFlow verification = 1;
+ * @return {?proto.api.commons.integrations.VerificationFlow}
  */
 proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsReq.prototype.getVerification = function() {
-  return /** @type{?proto.api.commons.public.VerificationFlow} */ (
+  return /** @type{?proto.api.commons.integrations.VerificationFlow} */ (
     jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.VerificationFlow, 1));
 };
 
 
 /**
- * @param {?proto.api.commons.public.VerificationFlow|undefined} value
+ * @param {?proto.api.commons.integrations.VerificationFlow|undefined} value
  * @return {!proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsReq} returns this
 */
 proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsReq.prototype.setVerification = function(value) {
@@ -9178,17 +9178,17 @@ proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsRes.serializeBina
 
 
 /**
- * repeated api.commons.public.FieldDefinition verification_fields = 2;
- * @return {!Array<!proto.api.commons.public.FieldDefinition>}
+ * repeated api.commons.integrations.FieldDefinition verification_fields = 2;
+ * @return {!Array<!proto.api.commons.integrations.FieldDefinition>}
  */
 proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsRes.prototype.getVerificationFieldsList = function() {
-  return /** @type{!Array<!proto.api.commons.public.FieldDefinition>} */ (
+  return /** @type{!Array<!proto.api.commons.integrations.FieldDefinition>} */ (
     jspb.Message.getRepeatedWrapperField(this, api_commons_integrations_integrations_pb.FieldDefinition, 2));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.public.FieldDefinition>} value
+ * @param {!Array<!proto.api.commons.integrations.FieldDefinition>} value
  * @return {!proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsRes} returns this
 */
 proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsRes.prototype.setVerificationFieldsList = function(value) {
@@ -9197,12 +9197,12 @@ proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsRes.prototype.set
 
 
 /**
- * @param {!proto.api.commons.public.FieldDefinition=} opt_value
+ * @param {!proto.api.commons.integrations.FieldDefinition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.commons.public.FieldDefinition}
+ * @return {!proto.api.commons.integrations.FieldDefinition}
  */
 proto.api.v1alpha1.integrations.ListAvailableVerificationFieldsRes.prototype.addVerificationFields = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.commons.public.FieldDefinition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.commons.integrations.FieldDefinition, opt_index);
 };
 
 
@@ -9330,17 +9330,17 @@ proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsReq.serializeBinaryToW
 
 
 /**
- * optional api.commons.public.PaymentFlow payment = 1;
- * @return {?proto.api.commons.public.PaymentFlow}
+ * optional api.commons.integrations.PaymentFlow payment = 1;
+ * @return {?proto.api.commons.integrations.PaymentFlow}
  */
 proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsReq.prototype.getPayment = function() {
-  return /** @type{?proto.api.commons.public.PaymentFlow} */ (
+  return /** @type{?proto.api.commons.integrations.PaymentFlow} */ (
     jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.PaymentFlow, 1));
 };
 
 
 /**
- * @param {?proto.api.commons.public.PaymentFlow|undefined} value
+ * @param {?proto.api.commons.integrations.PaymentFlow|undefined} value
  * @return {!proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsReq} returns this
 */
 proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsReq.prototype.setPayment = function(value) {
@@ -9489,17 +9489,17 @@ proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsRes.serializeBinaryToW
 
 
 /**
- * repeated api.commons.public.FieldDefinition payment_fields = 2;
- * @return {!Array<!proto.api.commons.public.FieldDefinition>}
+ * repeated api.commons.integrations.FieldDefinition payment_fields = 2;
+ * @return {!Array<!proto.api.commons.integrations.FieldDefinition>}
  */
 proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsRes.prototype.getPaymentFieldsList = function() {
-  return /** @type{!Array<!proto.api.commons.public.FieldDefinition>} */ (
+  return /** @type{!Array<!proto.api.commons.integrations.FieldDefinition>} */ (
     jspb.Message.getRepeatedWrapperField(this, api_commons_integrations_integrations_pb.FieldDefinition, 2));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.public.FieldDefinition>} value
+ * @param {!Array<!proto.api.commons.integrations.FieldDefinition>} value
  * @return {!proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsRes} returns this
 */
 proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsRes.prototype.setPaymentFieldsList = function(value) {
@@ -9508,12 +9508,12 @@ proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsRes.prototype.setPayme
 
 
 /**
- * @param {!proto.api.commons.public.FieldDefinition=} opt_value
+ * @param {!proto.api.commons.integrations.FieldDefinition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.commons.public.FieldDefinition}
+ * @return {!proto.api.commons.integrations.FieldDefinition}
  */
 proto.api.v1alpha1.integrations.ListAvailablePaymentFieldsRes.prototype.addPaymentFields = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.commons.public.FieldDefinition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.commons.integrations.FieldDefinition, opt_index);
 };
 
 

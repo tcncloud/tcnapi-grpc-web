@@ -2557,7 +2557,7 @@ proto.api.v1alpha1.integrations.GetIntegrationConfigReq.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 3:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     case 4:
@@ -2622,16 +2622,16 @@ proto.api.v1alpha1.integrations.GetIntegrationConfigReq.serializeBinaryToWriter 
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 3;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 3;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.GetIntegrationConfigReq.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.GetIntegrationConfigReq} returns this
  */
 proto.api.v1alpha1.integrations.GetIntegrationConfigReq.prototype.setIntegrationId = function(value) {
@@ -2753,7 +2753,7 @@ proto.api.v1alpha1.integrations.UpdateIntegrationConfigReq.deserializeBinaryFrom
       msg.setId(value);
       break;
     case 4:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     case 5:
@@ -2856,16 +2856,16 @@ proto.api.v1alpha1.integrations.UpdateIntegrationConfigReq.prototype.setId = fun
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 4;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 4;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.UpdateIntegrationConfigReq.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.UpdateIntegrationConfigReq} returns this
  */
 proto.api.v1alpha1.integrations.UpdateIntegrationConfigReq.prototype.setIntegrationId = function(value) {
@@ -3018,7 +3018,7 @@ proto.api.v1alpha1.integrations.DeleteIntegrationConfigReq.deserializeBinaryFrom
     var field = reader.getFieldNumber();
     switch (field) {
     case 4:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     case 5:
@@ -3083,16 +3083,16 @@ proto.api.v1alpha1.integrations.DeleteIntegrationConfigReq.serializeBinaryToWrit
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 4;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 4;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.DeleteIntegrationConfigReq.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.DeleteIntegrationConfigReq} returns this
  */
 proto.api.v1alpha1.integrations.DeleteIntegrationConfigReq.prototype.setIntegrationId = function(value) {
@@ -3224,11 +3224,11 @@ proto.api.v1alpha1.integrations.ProcessReq.deserializeBinaryFromReader = functio
       msg.setRequestId(value);
       break;
     case 3:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     case 4:
-      var value = /** @type {!proto.api.commons.public.RequestMethod} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setMethodId(value);
       break;
     case 5:
@@ -3348,16 +3348,16 @@ proto.api.v1alpha1.integrations.ProcessReq.prototype.setRequestId = function(val
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 3;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 3;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.ProcessReq.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.ProcessReq} returns this
  */
 proto.api.v1alpha1.integrations.ProcessReq.prototype.setIntegrationId = function(value) {
@@ -3366,16 +3366,16 @@ proto.api.v1alpha1.integrations.ProcessReq.prototype.setIntegrationId = function
 
 
 /**
- * optional api.commons.public.RequestMethod method_id = 4;
- * @return {!proto.api.commons.public.RequestMethod}
+ * optional api.commons.integrations.RequestMethod method_id = 4;
+ * @return {!proto.api.commons.integrations.RequestMethod}
  */
 proto.api.v1alpha1.integrations.ProcessReq.prototype.getMethodId = function() {
-  return /** @type {!proto.api.commons.public.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {!proto.api.commons.integrations.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestMethod} value
+ * @param {!proto.api.commons.integrations.RequestMethod} value
  * @return {!proto.api.v1alpha1.integrations.ProcessReq} returns this
  */
 proto.api.v1alpha1.integrations.ProcessReq.prototype.setMethodId = function(value) {
@@ -3980,7 +3980,7 @@ proto.api.v1alpha1.integrations.IntegrationInfo.deserializeBinaryFromReader = fu
       msg.setName(value);
       break;
     case 2:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     case 3:
@@ -4082,16 +4082,16 @@ proto.api.v1alpha1.integrations.IntegrationInfo.prototype.setName = function(val
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 2;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 2;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.IntegrationInfo.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationInfo} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationInfo.prototype.setIntegrationId = function(value) {
@@ -4267,11 +4267,11 @@ proto.api.v1alpha1.integrations.MethodInfo.deserializeBinaryFromReader = functio
       msg.setName(value);
       break;
     case 2:
-      var value = /** @type {!proto.api.commons.public.RequestMethod} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setMethodId(value);
       break;
     case 3:
-      var value = /** @type {!proto.api.commons.public.TransactionType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.TransactionType} */ (reader.readEnum());
       msg.setTxType(value);
       break;
     case 4:
@@ -4393,16 +4393,16 @@ proto.api.v1alpha1.integrations.MethodInfo.prototype.setName = function(value) {
 
 
 /**
- * optional api.commons.public.RequestMethod method_id = 2;
- * @return {!proto.api.commons.public.RequestMethod}
+ * optional api.commons.integrations.RequestMethod method_id = 2;
+ * @return {!proto.api.commons.integrations.RequestMethod}
  */
 proto.api.v1alpha1.integrations.MethodInfo.prototype.getMethodId = function() {
-  return /** @type {!proto.api.commons.public.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {!proto.api.commons.integrations.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestMethod} value
+ * @param {!proto.api.commons.integrations.RequestMethod} value
  * @return {!proto.api.v1alpha1.integrations.MethodInfo} returns this
  */
 proto.api.v1alpha1.integrations.MethodInfo.prototype.setMethodId = function(value) {
@@ -4411,16 +4411,16 @@ proto.api.v1alpha1.integrations.MethodInfo.prototype.setMethodId = function(valu
 
 
 /**
- * optional api.commons.public.TransactionType tx_type = 3;
- * @return {!proto.api.commons.public.TransactionType}
+ * optional api.commons.integrations.TransactionType tx_type = 3;
+ * @return {!proto.api.commons.integrations.TransactionType}
  */
 proto.api.v1alpha1.integrations.MethodInfo.prototype.getTxType = function() {
-  return /** @type {!proto.api.commons.public.TransactionType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {!proto.api.commons.integrations.TransactionType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.TransactionType} value
+ * @param {!proto.api.commons.integrations.TransactionType} value
  * @return {!proto.api.v1alpha1.integrations.MethodInfo} returns this
  */
 proto.api.v1alpha1.integrations.MethodInfo.prototype.setTxType = function(value) {
@@ -4628,7 +4628,7 @@ proto.api.v1alpha1.integrations.Parameter.deserializeBinaryFromReader = function
       msg.setName(value);
       break;
     case 2:
-      var value = /** @type {!proto.api.commons.public.ValueType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.ValueType} */ (reader.readEnum());
       msg.setParamType(value);
       break;
     case 3:
@@ -4661,7 +4661,7 @@ proto.api.v1alpha1.integrations.Parameter.deserializeBinaryFromReader = function
       msg.setTemplateLocked(value);
       break;
     case 10:
-      var value = /** @type {!proto.api.commons.public.Validation} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.Validation} */ (reader.readEnum());
       msg.setValidation(value);
       break;
     default:
@@ -4786,16 +4786,16 @@ proto.api.v1alpha1.integrations.Parameter.prototype.setName = function(value) {
 
 
 /**
- * optional api.commons.public.ValueType param_type = 2;
- * @return {!proto.api.commons.public.ValueType}
+ * optional api.commons.integrations.ValueType param_type = 2;
+ * @return {!proto.api.commons.integrations.ValueType}
  */
 proto.api.v1alpha1.integrations.Parameter.prototype.getParamType = function() {
-  return /** @type {!proto.api.commons.public.ValueType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {!proto.api.commons.integrations.ValueType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.ValueType} value
+ * @param {!proto.api.commons.integrations.ValueType} value
  * @return {!proto.api.v1alpha1.integrations.Parameter} returns this
  */
 proto.api.v1alpha1.integrations.Parameter.prototype.setParamType = function(value) {
@@ -4949,16 +4949,16 @@ proto.api.v1alpha1.integrations.Parameter.prototype.setTemplateLocked = function
 
 
 /**
- * optional api.commons.public.Validation validation = 10;
- * @return {!proto.api.commons.public.Validation}
+ * optional api.commons.integrations.Validation validation = 10;
+ * @return {!proto.api.commons.integrations.Validation}
  */
 proto.api.v1alpha1.integrations.Parameter.prototype.getValidation = function() {
-  return /** @type {!proto.api.commons.public.Validation} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+  return /** @type {!proto.api.commons.integrations.Validation} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.Validation} value
+ * @param {!proto.api.commons.integrations.Validation} value
  * @return {!proto.api.v1alpha1.integrations.Parameter} returns this
  */
 proto.api.v1alpha1.integrations.Parameter.prototype.setValidation = function(value) {
@@ -5279,7 +5279,7 @@ proto.api.v1alpha1.integrations.GetAggregatedMetadataReq.deserializeBinaryFromRe
       msg.setEnd(value);
       break;
     case 5:
-      var value = /** @type {!proto.api.commons.public.RequestMethod} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setMethodId(value);
       break;
     default:
@@ -5412,16 +5412,16 @@ proto.api.v1alpha1.integrations.GetAggregatedMetadataReq.prototype.hasEnd = func
 
 
 /**
- * optional api.commons.public.RequestMethod method_id = 5;
- * @return {!proto.api.commons.public.RequestMethod}
+ * optional api.commons.integrations.RequestMethod method_id = 5;
+ * @return {!proto.api.commons.integrations.RequestMethod}
  */
 proto.api.v1alpha1.integrations.GetAggregatedMetadataReq.prototype.getMethodId = function() {
-  return /** @type {!proto.api.commons.public.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.api.commons.integrations.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestMethod} value
+ * @param {!proto.api.commons.integrations.RequestMethod} value
  * @return {!proto.api.v1alpha1.integrations.GetAggregatedMetadataReq} returns this
  */
 proto.api.v1alpha1.integrations.GetAggregatedMetadataReq.prototype.setMethodId = function(value) {
@@ -6117,7 +6117,7 @@ proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.deserializeBinar
     var field = reader.getFieldNumber();
     switch (field) {
     case 5:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     case 17:
@@ -6125,7 +6125,7 @@ proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.deserializeBinar
       msg.setIntegrationName(value);
       break;
     case 6:
-      var value = /** @type {!proto.api.commons.public.RequestMethod} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setMethodId(value);
       break;
     case 18:
@@ -6133,11 +6133,11 @@ proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.deserializeBinar
       msg.setMethodName(value);
       break;
     case 7:
-      var value = /** @type {!proto.api.commons.public.TransactionType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.TransactionType} */ (reader.readEnum());
       msg.setTransactionType(value);
       break;
     case 8:
-      var value = /** @type {!proto.api.commons.public.RequestSource} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestSource} */ (reader.readEnum());
       msg.setRequestSource(value);
       break;
     case 20:
@@ -6344,16 +6344,16 @@ proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.serializeBinaryT
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 5;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 5;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationTransactionReportRow} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.prototype.setIntegrationId = function(value) {
@@ -6380,16 +6380,16 @@ proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.prototype.setInt
 
 
 /**
- * optional api.commons.public.RequestMethod method_id = 6;
- * @return {!proto.api.commons.public.RequestMethod}
+ * optional api.commons.integrations.RequestMethod method_id = 6;
+ * @return {!proto.api.commons.integrations.RequestMethod}
  */
 proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.prototype.getMethodId = function() {
-  return /** @type {!proto.api.commons.public.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {!proto.api.commons.integrations.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestMethod} value
+ * @param {!proto.api.commons.integrations.RequestMethod} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationTransactionReportRow} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.prototype.setMethodId = function(value) {
@@ -6416,16 +6416,16 @@ proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.prototype.setMet
 
 
 /**
- * optional api.commons.public.TransactionType transaction_type = 7;
- * @return {!proto.api.commons.public.TransactionType}
+ * optional api.commons.integrations.TransactionType transaction_type = 7;
+ * @return {!proto.api.commons.integrations.TransactionType}
  */
 proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.prototype.getTransactionType = function() {
-  return /** @type {!proto.api.commons.public.TransactionType} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {!proto.api.commons.integrations.TransactionType} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.TransactionType} value
+ * @param {!proto.api.commons.integrations.TransactionType} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationTransactionReportRow} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.prototype.setTransactionType = function(value) {
@@ -6434,16 +6434,16 @@ proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.prototype.setTra
 
 
 /**
- * optional api.commons.public.RequestSource request_source = 8;
- * @return {!proto.api.commons.public.RequestSource}
+ * optional api.commons.integrations.RequestSource request_source = 8;
+ * @return {!proto.api.commons.integrations.RequestSource}
  */
 proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.prototype.getRequestSource = function() {
-  return /** @type {!proto.api.commons.public.RequestSource} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {!proto.api.commons.integrations.RequestSource} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestSource} value
+ * @param {!proto.api.commons.integrations.RequestSource} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationTransactionReportRow} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationTransactionReportRow.prototype.setRequestSource = function(value) {
@@ -6961,7 +6961,7 @@ proto.api.v1alpha1.integrations.GetIntegrationTransactionReportDataReq.deseriali
       msg.setPageNum(value);
       break;
     case 9:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     case 10:
@@ -7182,16 +7182,16 @@ proto.api.v1alpha1.integrations.GetIntegrationTransactionReportDataReq.prototype
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 9;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 9;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.GetIntegrationTransactionReportDataReq.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.GetIntegrationTransactionReportDataReq} returns this
  */
 proto.api.v1alpha1.integrations.GetIntegrationTransactionReportDataReq.prototype.setIntegrationId = function(value) {
@@ -8373,7 +8373,7 @@ proto.api.v1alpha1.integrations.IntegrationType.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     default:
@@ -8416,16 +8416,16 @@ proto.api.v1alpha1.integrations.IntegrationType.serializeBinaryToWriter = functi
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 1;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 1;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.IntegrationType.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationType} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationType.prototype.setIntegrationId = function(value) {
@@ -8503,7 +8503,7 @@ proto.api.v1alpha1.integrations.RequestMethod.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.api.commons.public.RequestMethod} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setMethodId(value);
       break;
     default:
@@ -8546,16 +8546,16 @@ proto.api.v1alpha1.integrations.RequestMethod.serializeBinaryToWriter = function
 
 
 /**
- * optional api.commons.public.RequestMethod method_id = 1;
- * @return {!proto.api.commons.public.RequestMethod}
+ * optional api.commons.integrations.RequestMethod method_id = 1;
+ * @return {!proto.api.commons.integrations.RequestMethod}
  */
 proto.api.v1alpha1.integrations.RequestMethod.prototype.getMethodId = function() {
-  return /** @type {!proto.api.commons.public.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.api.commons.integrations.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestMethod} value
+ * @param {!proto.api.commons.integrations.RequestMethod} value
  * @return {!proto.api.v1alpha1.integrations.RequestMethod} returns this
  */
 proto.api.v1alpha1.integrations.RequestMethod.prototype.setMethodId = function(value) {
@@ -8633,7 +8633,7 @@ proto.api.v1alpha1.integrations.TransactionType.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.api.commons.public.TransactionType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.TransactionType} */ (reader.readEnum());
       msg.setTransactionType(value);
       break;
     default:
@@ -8676,16 +8676,16 @@ proto.api.v1alpha1.integrations.TransactionType.serializeBinaryToWriter = functi
 
 
 /**
- * optional api.commons.public.TransactionType transaction_type = 1;
- * @return {!proto.api.commons.public.TransactionType}
+ * optional api.commons.integrations.TransactionType transaction_type = 1;
+ * @return {!proto.api.commons.integrations.TransactionType}
  */
 proto.api.v1alpha1.integrations.TransactionType.prototype.getTransactionType = function() {
-  return /** @type {!proto.api.commons.public.TransactionType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.api.commons.integrations.TransactionType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.TransactionType} value
+ * @param {!proto.api.commons.integrations.TransactionType} value
  * @return {!proto.api.v1alpha1.integrations.TransactionType} returns this
  */
 proto.api.v1alpha1.integrations.TransactionType.prototype.setTransactionType = function(value) {
@@ -8763,7 +8763,7 @@ proto.api.v1alpha1.integrations.RequestSource.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.api.commons.public.RequestSource} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestSource} */ (reader.readEnum());
       msg.setRequestSource(value);
       break;
     default:
@@ -8806,16 +8806,16 @@ proto.api.v1alpha1.integrations.RequestSource.serializeBinaryToWriter = function
 
 
 /**
- * optional api.commons.public.RequestSource request_source = 1;
- * @return {!proto.api.commons.public.RequestSource}
+ * optional api.commons.integrations.RequestSource request_source = 1;
+ * @return {!proto.api.commons.integrations.RequestSource}
  */
 proto.api.v1alpha1.integrations.RequestSource.prototype.getRequestSource = function() {
-  return /** @type {!proto.api.commons.public.RequestSource} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.api.commons.integrations.RequestSource} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestSource} value
+ * @param {!proto.api.commons.integrations.RequestSource} value
  * @return {!proto.api.v1alpha1.integrations.RequestSource} returns this
  */
 proto.api.v1alpha1.integrations.RequestSource.prototype.setRequestSource = function(value) {
@@ -8893,7 +8893,7 @@ proto.api.v1alpha1.integrations.TransactionResult.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.api.commons.public.TransactionResult} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.TransactionResult} */ (reader.readEnum());
       msg.setResult(value);
       break;
     default:
@@ -8936,16 +8936,16 @@ proto.api.v1alpha1.integrations.TransactionResult.serializeBinaryToWriter = func
 
 
 /**
- * optional api.commons.public.TransactionResult result = 1;
- * @return {!proto.api.commons.public.TransactionResult}
+ * optional api.commons.integrations.TransactionResult result = 1;
+ * @return {!proto.api.commons.integrations.TransactionResult}
  */
 proto.api.v1alpha1.integrations.TransactionResult.prototype.getResult = function() {
-  return /** @type {!proto.api.commons.public.TransactionResult} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.api.commons.integrations.TransactionResult} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.TransactionResult} value
+ * @param {!proto.api.commons.integrations.TransactionResult} value
  * @return {!proto.api.v1alpha1.integrations.TransactionResult} returns this
  */
 proto.api.v1alpha1.integrations.TransactionResult.prototype.setResult = function(value) {
@@ -9023,7 +9023,7 @@ proto.api.v1alpha1.integrations.ListIntegrationConfigNamesReq.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 4:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     default:
@@ -9066,16 +9066,16 @@ proto.api.v1alpha1.integrations.ListIntegrationConfigNamesReq.serializeBinaryToW
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 4;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 4;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.ListIntegrationConfigNamesReq.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.ListIntegrationConfigNamesReq} returns this
  */
 proto.api.v1alpha1.integrations.ListIntegrationConfigNamesReq.prototype.setIntegrationId = function(value) {
@@ -9161,7 +9161,7 @@ proto.api.v1alpha1.integrations.ListIntegrationConfigNamesRes.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 3:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     case 4:
@@ -9215,16 +9215,16 @@ proto.api.v1alpha1.integrations.ListIntegrationConfigNamesRes.serializeBinaryToW
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 3;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 3;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.ListIntegrationConfigNamesRes.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.ListIntegrationConfigNamesRes} returns this
  */
 proto.api.v1alpha1.integrations.ListIntegrationConfigNamesRes.prototype.setIntegrationId = function(value) {
@@ -11119,19 +11119,19 @@ proto.api.v1alpha1.integrations.PaymentLinkConfig.deserializeBinaryFromReader = 
       msg.setCollectionId(value);
       break;
     case 6:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     case 7:
-      var value = /** @type {!proto.api.commons.public.RequestMethod} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setVerificationMethodId(value);
       break;
     case 8:
-      var value = /** @type {!proto.api.commons.public.RequestMethod} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setInvoiceMethodId(value);
       break;
     case 9:
-      var value = /** @type {!proto.api.commons.public.RequestMethod} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setPaymentMethodId(value);
       break;
     case 10:
@@ -11457,16 +11457,16 @@ proto.api.v1alpha1.integrations.PaymentLinkConfig.prototype.setCollectionId = fu
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 6;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 6;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.PaymentLinkConfig.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.PaymentLinkConfig} returns this
  */
 proto.api.v1alpha1.integrations.PaymentLinkConfig.prototype.setIntegrationId = function(value) {
@@ -11475,16 +11475,16 @@ proto.api.v1alpha1.integrations.PaymentLinkConfig.prototype.setIntegrationId = f
 
 
 /**
- * optional api.commons.public.RequestMethod verification_method_id = 7;
- * @return {!proto.api.commons.public.RequestMethod}
+ * optional api.commons.integrations.RequestMethod verification_method_id = 7;
+ * @return {!proto.api.commons.integrations.RequestMethod}
  */
 proto.api.v1alpha1.integrations.PaymentLinkConfig.prototype.getVerificationMethodId = function() {
-  return /** @type {!proto.api.commons.public.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {!proto.api.commons.integrations.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestMethod} value
+ * @param {!proto.api.commons.integrations.RequestMethod} value
  * @return {!proto.api.v1alpha1.integrations.PaymentLinkConfig} returns this
  */
 proto.api.v1alpha1.integrations.PaymentLinkConfig.prototype.setVerificationMethodId = function(value) {
@@ -11493,16 +11493,16 @@ proto.api.v1alpha1.integrations.PaymentLinkConfig.prototype.setVerificationMetho
 
 
 /**
- * optional api.commons.public.RequestMethod invoice_method_id = 8;
- * @return {!proto.api.commons.public.RequestMethod}
+ * optional api.commons.integrations.RequestMethod invoice_method_id = 8;
+ * @return {!proto.api.commons.integrations.RequestMethod}
  */
 proto.api.v1alpha1.integrations.PaymentLinkConfig.prototype.getInvoiceMethodId = function() {
-  return /** @type {!proto.api.commons.public.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {!proto.api.commons.integrations.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestMethod} value
+ * @param {!proto.api.commons.integrations.RequestMethod} value
  * @return {!proto.api.v1alpha1.integrations.PaymentLinkConfig} returns this
  */
 proto.api.v1alpha1.integrations.PaymentLinkConfig.prototype.setInvoiceMethodId = function(value) {
@@ -11511,16 +11511,16 @@ proto.api.v1alpha1.integrations.PaymentLinkConfig.prototype.setInvoiceMethodId =
 
 
 /**
- * optional api.commons.public.RequestMethod payment_method_id = 9;
- * @return {!proto.api.commons.public.RequestMethod}
+ * optional api.commons.integrations.RequestMethod payment_method_id = 9;
+ * @return {!proto.api.commons.integrations.RequestMethod}
  */
 proto.api.v1alpha1.integrations.PaymentLinkConfig.prototype.getPaymentMethodId = function() {
-  return /** @type {!proto.api.commons.public.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {!proto.api.commons.integrations.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestMethod} value
+ * @param {!proto.api.commons.integrations.RequestMethod} value
  * @return {!proto.api.v1alpha1.integrations.PaymentLinkConfig} returns this
  */
 proto.api.v1alpha1.integrations.PaymentLinkConfig.prototype.setPaymentMethodId = function(value) {
@@ -13428,7 +13428,7 @@ proto.api.v1alpha1.integrations.Validation.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.api.commons.public.Validation} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.Validation} */ (reader.readEnum());
       msg.setEnum(value);
       break;
     default:
@@ -13471,16 +13471,16 @@ proto.api.v1alpha1.integrations.Validation.serializeBinaryToWriter = function(me
 
 
 /**
- * optional api.commons.public.Validation enum = 1;
- * @return {!proto.api.commons.public.Validation}
+ * optional api.commons.integrations.Validation enum = 1;
+ * @return {!proto.api.commons.integrations.Validation}
  */
 proto.api.v1alpha1.integrations.Validation.prototype.getEnum = function() {
-  return /** @type {!proto.api.commons.public.Validation} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.api.commons.integrations.Validation} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.Validation} value
+ * @param {!proto.api.commons.integrations.Validation} value
  * @return {!proto.api.v1alpha1.integrations.Validation} returns this
  */
 proto.api.v1alpha1.integrations.Validation.prototype.setEnum = function(value) {
@@ -13559,11 +13559,11 @@ proto.api.v1alpha1.integrations.MethodCall.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     case 2:
-      var value = /** @type {!proto.api.commons.public.RequestMethod} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setMethodId(value);
       break;
     default:
@@ -13613,16 +13613,16 @@ proto.api.v1alpha1.integrations.MethodCall.serializeBinaryToWriter = function(me
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 1;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 1;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.MethodCall.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.MethodCall} returns this
  */
 proto.api.v1alpha1.integrations.MethodCall.prototype.setIntegrationId = function(value) {
@@ -13631,16 +13631,16 @@ proto.api.v1alpha1.integrations.MethodCall.prototype.setIntegrationId = function
 
 
 /**
- * optional api.commons.public.RequestMethod method_id = 2;
- * @return {!proto.api.commons.public.RequestMethod}
+ * optional api.commons.integrations.RequestMethod method_id = 2;
+ * @return {!proto.api.commons.integrations.RequestMethod}
  */
 proto.api.v1alpha1.integrations.MethodCall.prototype.getMethodId = function() {
-  return /** @type {!proto.api.commons.public.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {!proto.api.commons.integrations.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestMethod} value
+ * @param {!proto.api.commons.integrations.RequestMethod} value
  * @return {!proto.api.v1alpha1.integrations.MethodCall} returns this
  */
 proto.api.v1alpha1.integrations.MethodCall.prototype.setMethodId = function(value) {
@@ -15273,7 +15273,7 @@ proto.api.v1alpha1.integrations.IntegrationTypeSummary.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationType(value);
       break;
     case 2:
@@ -15329,16 +15329,16 @@ proto.api.v1alpha1.integrations.IntegrationTypeSummary.serializeBinaryToWriter =
 
 
 /**
- * optional api.commons.public.IntegrationType integration_type = 1;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_type = 1;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.IntegrationTypeSummary.prototype.getIntegrationType = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationTypeSummary} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationTypeSummary.prototype.setIntegrationType = function(value) {
@@ -16943,7 +16943,7 @@ proto.api.v1alpha1.integrations.UnknownField.deserializeBinaryFromReader = funct
       msg.setReasonNeeded(value);
       break;
     case 3:
-      var values = /** @type {!Array<!proto.api.commons.public.FieldSource>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      var values = /** @type {!Array<!proto.api.commons.integrations.FieldSource>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
       for (var i = 0; i < values.length; i++) {
         msg.addPotentialSources(values[i]);
       }
@@ -17076,16 +17076,16 @@ proto.api.v1alpha1.integrations.UnknownField.prototype.setReasonNeeded = functio
 
 
 /**
- * repeated api.commons.public.FieldSource potential_sources = 3;
- * @return {!Array<!proto.api.commons.public.FieldSource>}
+ * repeated api.commons.integrations.FieldSource potential_sources = 3;
+ * @return {!Array<!proto.api.commons.integrations.FieldSource>}
  */
 proto.api.v1alpha1.integrations.UnknownField.prototype.getPotentialSourcesList = function() {
-  return /** @type {!Array<!proto.api.commons.public.FieldSource>} */ (jspb.Message.getRepeatedField(this, 3));
+  return /** @type {!Array<!proto.api.commons.integrations.FieldSource>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.public.FieldSource>} value
+ * @param {!Array<!proto.api.commons.integrations.FieldSource>} value
  * @return {!proto.api.v1alpha1.integrations.UnknownField} returns this
  */
 proto.api.v1alpha1.integrations.UnknownField.prototype.setPotentialSourcesList = function(value) {
@@ -17094,7 +17094,7 @@ proto.api.v1alpha1.integrations.UnknownField.prototype.setPotentialSourcesList =
 
 
 /**
- * @param {!proto.api.commons.public.FieldSource} value
+ * @param {!proto.api.commons.integrations.FieldSource} value
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.integrations.UnknownField} returns this
  */
@@ -17237,7 +17237,7 @@ proto.api.v1alpha1.integrations.ProvidedField.deserializeBinaryFromReader = func
       msg.setAltName(value);
       break;
     case 3:
-      var value = /** @type {!proto.api.commons.public.FieldSource} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.FieldSource} */ (reader.readEnum());
       msg.setProvidedBy(value);
       break;
     case 4:
@@ -17377,16 +17377,16 @@ proto.api.v1alpha1.integrations.ProvidedField.prototype.setAltName = function(va
 
 
 /**
- * optional api.commons.public.FieldSource provided_by = 3;
- * @return {!proto.api.commons.public.FieldSource}
+ * optional api.commons.integrations.FieldSource provided_by = 3;
+ * @return {!proto.api.commons.integrations.FieldSource}
  */
 proto.api.v1alpha1.integrations.ProvidedField.prototype.getProvidedBy = function() {
-  return /** @type {!proto.api.commons.public.FieldSource} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {!proto.api.commons.integrations.FieldSource} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.FieldSource} value
+ * @param {!proto.api.commons.integrations.FieldSource} value
  * @return {!proto.api.v1alpha1.integrations.ProvidedField} returns this
  */
 proto.api.v1alpha1.integrations.ProvidedField.prototype.setProvidedBy = function(value) {
@@ -17701,7 +17701,7 @@ proto.api.v1alpha1.integrations.Value.deserializeBinaryFromReader = function(msg
       msg.setSensitive(value);
       break;
     case 8:
-      var value = /** @type {!proto.api.commons.public.Validation} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.Validation} */ (reader.readEnum());
       msg.setValidation(value);
       break;
     default:
@@ -18031,16 +18031,16 @@ proto.api.v1alpha1.integrations.Value.prototype.setSensitive = function(value) {
 
 
 /**
- * optional api.commons.public.Validation validation = 8;
- * @return {!proto.api.commons.public.Validation}
+ * optional api.commons.integrations.Validation validation = 8;
+ * @return {!proto.api.commons.integrations.Validation}
  */
 proto.api.v1alpha1.integrations.Value.prototype.getValidation = function() {
-  return /** @type {!proto.api.commons.public.Validation} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {!proto.api.commons.integrations.Validation} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.Validation} value
+ * @param {!proto.api.commons.integrations.Validation} value
  * @return {!proto.api.v1alpha1.integrations.Value} returns this
  */
 proto.api.v1alpha1.integrations.Value.prototype.setValidation = function(value) {
@@ -18506,7 +18506,7 @@ proto.api.v1alpha1.integrations.Condition.deserializeBinaryFromReader = function
       msg.setKey(value);
       break;
     case 2:
-      var value = /** @type {!proto.api.commons.public.CompareOperation} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.CompareOperation} */ (reader.readEnum());
       msg.setOp(value);
       break;
     case 3:
@@ -18587,16 +18587,16 @@ proto.api.v1alpha1.integrations.Condition.prototype.setKey = function(value) {
 
 
 /**
- * optional api.commons.public.CompareOperation op = 2;
- * @return {!proto.api.commons.public.CompareOperation}
+ * optional api.commons.integrations.CompareOperation op = 2;
+ * @return {!proto.api.commons.integrations.CompareOperation}
  */
 proto.api.v1alpha1.integrations.Condition.prototype.getOp = function() {
-  return /** @type {!proto.api.commons.public.CompareOperation} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {!proto.api.commons.integrations.CompareOperation} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.CompareOperation} value
+ * @param {!proto.api.commons.integrations.CompareOperation} value
  * @return {!proto.api.v1alpha1.integrations.Condition} returns this
  */
 proto.api.v1alpha1.integrations.Condition.prototype.setOp = function(value) {
@@ -18724,7 +18724,7 @@ proto.api.v1alpha1.integrations.IntegrationConfig.deserializeBinaryFromReader = 
       msg.setId(value);
       break;
     case 4:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     case 6:
@@ -18760,7 +18760,7 @@ proto.api.v1alpha1.integrations.IntegrationConfig.deserializeBinaryFromReader = 
       msg.setConds(value);
       break;
     case 15:
-      var value = /** @type {!proto.api.commons.public.RequestMethod} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setMethodId(value);
       break;
     default:
@@ -18888,16 +18888,16 @@ proto.api.v1alpha1.integrations.IntegrationConfig.prototype.setId = function(val
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 4;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 4;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.IntegrationConfig.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationConfig} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationConfig.prototype.setIntegrationId = function(value) {
@@ -19108,16 +19108,16 @@ proto.api.v1alpha1.integrations.IntegrationConfig.prototype.hasConds = function(
 
 
 /**
- * optional api.commons.public.RequestMethod method_id = 15;
- * @return {!proto.api.commons.public.RequestMethod}
+ * optional api.commons.integrations.RequestMethod method_id = 15;
+ * @return {!proto.api.commons.integrations.RequestMethod}
  */
 proto.api.v1alpha1.integrations.IntegrationConfig.prototype.getMethodId = function() {
-  return /** @type {!proto.api.commons.public.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+  return /** @type {!proto.api.commons.integrations.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestMethod} value
+ * @param {!proto.api.commons.integrations.RequestMethod} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationConfig} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationConfig.prototype.setMethodId = function(value) {
@@ -19215,23 +19215,23 @@ proto.api.v1alpha1.integrations.IntegrationTransaction.deserializeBinaryFromRead
       msg.setTaskId(value);
       break;
     case 5:
-      var value = /** @type {!proto.api.commons.public.IntegrationType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.IntegrationType} */ (reader.readEnum());
       msg.setIntegrationId(value);
       break;
     case 6:
-      var value = /** @type {!proto.api.commons.public.RequestMethod} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setMethodId(value);
       break;
     case 7:
-      var value = /** @type {!proto.api.commons.public.TransactionType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.TransactionType} */ (reader.readEnum());
       msg.setTransactionType(value);
       break;
     case 8:
-      var value = /** @type {!proto.api.commons.public.RequestSource} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestSource} */ (reader.readEnum());
       msg.setRequestSource(value);
       break;
     case 9:
-      var value = /** @type {!proto.api.commons.public.TransactionResult} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.TransactionResult} */ (reader.readEnum());
       msg.setResult(value);
       break;
     case 10:
@@ -19426,16 +19426,16 @@ proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.setTaskId = fun
 
 
 /**
- * optional api.commons.public.IntegrationType integration_id = 5;
- * @return {!proto.api.commons.public.IntegrationType}
+ * optional api.commons.integrations.IntegrationType integration_id = 5;
+ * @return {!proto.api.commons.integrations.IntegrationType}
  */
 proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.getIntegrationId = function() {
-  return /** @type {!proto.api.commons.public.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.api.commons.integrations.IntegrationType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.IntegrationType} value
+ * @param {!proto.api.commons.integrations.IntegrationType} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationTransaction} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.setIntegrationId = function(value) {
@@ -19444,16 +19444,16 @@ proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.setIntegrationI
 
 
 /**
- * optional api.commons.public.RequestMethod method_id = 6;
- * @return {!proto.api.commons.public.RequestMethod}
+ * optional api.commons.integrations.RequestMethod method_id = 6;
+ * @return {!proto.api.commons.integrations.RequestMethod}
  */
 proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.getMethodId = function() {
-  return /** @type {!proto.api.commons.public.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {!proto.api.commons.integrations.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestMethod} value
+ * @param {!proto.api.commons.integrations.RequestMethod} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationTransaction} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.setMethodId = function(value) {
@@ -19462,16 +19462,16 @@ proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.setMethodId = f
 
 
 /**
- * optional api.commons.public.TransactionType transaction_type = 7;
- * @return {!proto.api.commons.public.TransactionType}
+ * optional api.commons.integrations.TransactionType transaction_type = 7;
+ * @return {!proto.api.commons.integrations.TransactionType}
  */
 proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.getTransactionType = function() {
-  return /** @type {!proto.api.commons.public.TransactionType} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {!proto.api.commons.integrations.TransactionType} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.TransactionType} value
+ * @param {!proto.api.commons.integrations.TransactionType} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationTransaction} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.setTransactionType = function(value) {
@@ -19480,16 +19480,16 @@ proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.setTransactionT
 
 
 /**
- * optional api.commons.public.RequestSource request_source = 8;
- * @return {!proto.api.commons.public.RequestSource}
+ * optional api.commons.integrations.RequestSource request_source = 8;
+ * @return {!proto.api.commons.integrations.RequestSource}
  */
 proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.getRequestSource = function() {
-  return /** @type {!proto.api.commons.public.RequestSource} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {!proto.api.commons.integrations.RequestSource} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestSource} value
+ * @param {!proto.api.commons.integrations.RequestSource} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationTransaction} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.setRequestSource = function(value) {
@@ -19498,16 +19498,16 @@ proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.setRequestSourc
 
 
 /**
- * optional api.commons.public.TransactionResult result = 9;
- * @return {!proto.api.commons.public.TransactionResult}
+ * optional api.commons.integrations.TransactionResult result = 9;
+ * @return {!proto.api.commons.integrations.TransactionResult}
  */
 proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.getResult = function() {
-  return /** @type {!proto.api.commons.public.TransactionResult} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {!proto.api.commons.integrations.TransactionResult} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.TransactionResult} value
+ * @param {!proto.api.commons.integrations.TransactionResult} value
  * @return {!proto.api.v1alpha1.integrations.IntegrationTransaction} returns this
  */
 proto.api.v1alpha1.integrations.IntegrationTransaction.prototype.setResult = function(value) {
@@ -20075,7 +20075,7 @@ proto.api.v1alpha1.integrations.Task.deserializeBinaryFromReader = function(msg,
       msg.setTaskId(value);
       break;
     case 3:
-      var value = /** @type {!proto.api.commons.public.RequestSource} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestSource} */ (reader.readEnum());
       msg.setSrc(value);
       break;
     default:
@@ -20170,16 +20170,16 @@ proto.api.v1alpha1.integrations.Task.prototype.setTaskId = function(value) {
 
 
 /**
- * optional api.commons.public.RequestSource src = 3;
- * @return {!proto.api.commons.public.RequestSource}
+ * optional api.commons.integrations.RequestSource src = 3;
+ * @return {!proto.api.commons.integrations.RequestSource}
  */
 proto.api.v1alpha1.integrations.Task.prototype.getSrc = function() {
-  return /** @type {!proto.api.commons.public.RequestSource} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {!proto.api.commons.integrations.RequestSource} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestSource} value
+ * @param {!proto.api.commons.integrations.RequestSource} value
  * @return {!proto.api.v1alpha1.integrations.Task} returns this
  */
 proto.api.v1alpha1.integrations.Task.prototype.setSrc = function(value) {
@@ -22601,17 +22601,17 @@ proto.api.v1alpha1.integrations.PaymentPortal.serializeBinaryToWriter = function
 
 
 /**
- * optional api.commons.public.VerificationFlow verification = 8;
- * @return {?proto.api.commons.public.VerificationFlow}
+ * optional api.commons.integrations.VerificationFlow verification = 8;
+ * @return {?proto.api.commons.integrations.VerificationFlow}
  */
 proto.api.v1alpha1.integrations.PaymentPortal.prototype.getVerification = function() {
-  return /** @type{?proto.api.commons.public.VerificationFlow} */ (
+  return /** @type{?proto.api.commons.integrations.VerificationFlow} */ (
     jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.VerificationFlow, 8));
 };
 
 
 /**
- * @param {?proto.api.commons.public.VerificationFlow|undefined} value
+ * @param {?proto.api.commons.integrations.VerificationFlow|undefined} value
  * @return {!proto.api.v1alpha1.integrations.PaymentPortal} returns this
 */
 proto.api.v1alpha1.integrations.PaymentPortal.prototype.setVerification = function(value) {
@@ -22638,17 +22638,17 @@ proto.api.v1alpha1.integrations.PaymentPortal.prototype.hasVerification = functi
 
 
 /**
- * optional api.commons.public.InvoiceFlow invoice = 9;
- * @return {?proto.api.commons.public.InvoiceFlow}
+ * optional api.commons.integrations.InvoiceFlow invoice = 9;
+ * @return {?proto.api.commons.integrations.InvoiceFlow}
  */
 proto.api.v1alpha1.integrations.PaymentPortal.prototype.getInvoice = function() {
-  return /** @type{?proto.api.commons.public.InvoiceFlow} */ (
+  return /** @type{?proto.api.commons.integrations.InvoiceFlow} */ (
     jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.InvoiceFlow, 9));
 };
 
 
 /**
- * @param {?proto.api.commons.public.InvoiceFlow|undefined} value
+ * @param {?proto.api.commons.integrations.InvoiceFlow|undefined} value
  * @return {!proto.api.v1alpha1.integrations.PaymentPortal} returns this
 */
 proto.api.v1alpha1.integrations.PaymentPortal.prototype.setInvoice = function(value) {
@@ -22675,17 +22675,17 @@ proto.api.v1alpha1.integrations.PaymentPortal.prototype.hasInvoice = function() 
 
 
 /**
- * repeated api.commons.public.PaymentFlow payments = 10;
- * @return {!Array<!proto.api.commons.public.PaymentFlow>}
+ * repeated api.commons.integrations.PaymentFlow payments = 10;
+ * @return {!Array<!proto.api.commons.integrations.PaymentFlow>}
  */
 proto.api.v1alpha1.integrations.PaymentPortal.prototype.getPaymentsList = function() {
-  return /** @type{!Array<!proto.api.commons.public.PaymentFlow>} */ (
+  return /** @type{!Array<!proto.api.commons.integrations.PaymentFlow>} */ (
     jspb.Message.getRepeatedWrapperField(this, api_commons_integrations_integrations_pb.PaymentFlow, 10));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.public.PaymentFlow>} value
+ * @param {!Array<!proto.api.commons.integrations.PaymentFlow>} value
  * @return {!proto.api.v1alpha1.integrations.PaymentPortal} returns this
 */
 proto.api.v1alpha1.integrations.PaymentPortal.prototype.setPaymentsList = function(value) {
@@ -22694,12 +22694,12 @@ proto.api.v1alpha1.integrations.PaymentPortal.prototype.setPaymentsList = functi
 
 
 /**
- * @param {!proto.api.commons.public.PaymentFlow=} opt_value
+ * @param {!proto.api.commons.integrations.PaymentFlow=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.commons.public.PaymentFlow}
+ * @return {!proto.api.commons.integrations.PaymentFlow}
  */
 proto.api.v1alpha1.integrations.PaymentPortal.prototype.addPayments = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.api.commons.public.PaymentFlow, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.api.commons.integrations.PaymentFlow, opt_index);
 };
 
 
@@ -23088,7 +23088,7 @@ proto.api.v1alpha1.integrations.PluginInstance.deserializeBinaryFromReader = fun
       msg.setLastEdited(value);
       break;
     case 12:
-      var value = /** @type {!proto.api.commons.public.RequestMethod} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setMethodId(value);
       break;
     default:
@@ -23366,16 +23366,16 @@ proto.api.v1alpha1.integrations.PluginInstance.prototype.hasLastEdited = functio
 
 
 /**
- * optional api.commons.public.RequestMethod method_id = 12;
- * @return {!proto.api.commons.public.RequestMethod}
+ * optional api.commons.integrations.RequestMethod method_id = 12;
+ * @return {!proto.api.commons.integrations.RequestMethod}
  */
 proto.api.v1alpha1.integrations.PluginInstance.prototype.getMethodId = function() {
-  return /** @type {!proto.api.commons.public.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+  return /** @type {!proto.api.commons.integrations.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestMethod} value
+ * @param {!proto.api.commons.integrations.RequestMethod} value
  * @return {!proto.api.v1alpha1.integrations.PluginInstance} returns this
  */
 proto.api.v1alpha1.integrations.PluginInstance.prototype.setMethodId = function(value) {
@@ -23850,7 +23850,7 @@ proto.api.v1alpha1.integrations.GetPortalLinksByDateRangeReq.deserializeBinaryFr
       msg.setPageNum(value);
       break;
     case 7:
-      var value = /** @type {!proto.api.commons.public.RequestMethod} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setMethodId(value);
       break;
     default:
@@ -24083,16 +24083,16 @@ proto.api.v1alpha1.integrations.GetPortalLinksByDateRangeReq.prototype.setPageNu
 
 
 /**
- * optional api.commons.public.RequestMethod method_id = 7;
- * @return {!proto.api.commons.public.RequestMethod}
+ * optional api.commons.integrations.RequestMethod method_id = 7;
+ * @return {!proto.api.commons.integrations.RequestMethod}
  */
 proto.api.v1alpha1.integrations.GetPortalLinksByDateRangeReq.prototype.getMethodId = function() {
-  return /** @type {!proto.api.commons.public.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {!proto.api.commons.integrations.RequestMethod} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.public.RequestMethod} value
+ * @param {!proto.api.commons.integrations.RequestMethod} value
  * @return {!proto.api.v1alpha1.integrations.GetPortalLinksByDateRangeReq} returns this
  */
 proto.api.v1alpha1.integrations.GetPortalLinksByDateRangeReq.prototype.setMethodId = function(value) {
