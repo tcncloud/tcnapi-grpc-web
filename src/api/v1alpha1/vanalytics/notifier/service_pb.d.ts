@@ -2,7 +2,6 @@
 // file: api/v1alpha1/vanalytics/notifier/service.proto
 
 import * as jspb from "google-protobuf";
-import * as annotations_authz_pb from "../../../../annotations/authz_pb";
 import * as google_api_annotations_pb from "../../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
