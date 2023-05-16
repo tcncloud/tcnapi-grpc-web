@@ -433,6 +433,11 @@ export class AuditEvent extends jspb.Message {
   getScorecardsCreateAutoEvaluationEvent(): api_commons_audit_scorecards_events_pb.ScorecardsCreateAutoEvaluationEvent | undefined;
   setScorecardsCreateAutoEvaluationEvent(value?: api_commons_audit_scorecards_events_pb.ScorecardsCreateAutoEvaluationEvent): void;
 
+  hasScorecardsUpdateEvaluationEvent(): boolean;
+  clearScorecardsUpdateEvaluationEvent(): void;
+  getScorecardsUpdateEvaluationEvent(): api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent | undefined;
+  setScorecardsUpdateEvaluationEvent(value?: api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent): void;
+
   hasTicketEvent(): boolean;
   clearTicketEvent(): void;
   getTicketEvent(): api_commons_audit_tickets_events_pb.TicketEvent | undefined;
@@ -547,6 +552,7 @@ export namespace AuditEvent {
     scorecardsUpdateScorecardQuestionEvent?: api_commons_audit_scorecards_events_pb.ScorecardsUpdateScorecardQuestionEvent.AsObject,
     scorecardsDeleteScorecardQuestionEvent?: api_commons_audit_scorecards_events_pb.ScorecardsDeleteScorecardQuestionEvent.AsObject,
     scorecardsCreateAutoEvaluationEvent?: api_commons_audit_scorecards_events_pb.ScorecardsCreateAutoEvaluationEvent.AsObject,
+    scorecardsUpdateEvaluationEvent?: api_commons_audit_scorecards_events_pb.ScorecardsUpdateEvaluationEvent.AsObject,
     ticketEvent?: api_commons_audit_tickets_events_pb.TicketEvent.AsObject,
     complianceRndQueryEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
     complianceRndQueryCachedEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
@@ -634,6 +640,7 @@ export namespace AuditEvent {
     SCORECARDS_UPDATE_SCORECARD_QUESTION_EVENT = 519,
     SCORECARDS_DELETE_SCORECARD_QUESTION_EVENT = 520,
     SCORECARDS_CREATE_AUTO_EVALUATION_EVENT = 521,
+    SCORECARDS_UPDATE_EVALUATION_EVENT = 522,
     TICKET_EVENT = 601,
     COMPLIANCE_RND_QUERY_EVENT = 700,
     COMPLIANCE_RND_QUERY_CACHED_EVENT = 701,

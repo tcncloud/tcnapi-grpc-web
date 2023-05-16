@@ -289,6 +289,15 @@ Scorecards.ScoreEvaluation = {
   responseType: api_v1alpha1_scorecards_evaluation_pb.ScoreEvaluationResponse
 };
 
+Scorecards.UpdateEvaluation = {
+  methodName: "UpdateEvaluation",
+  service: Scorecards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_scorecards_evaluation_pb.UpdateEvaluationRequest,
+  responseType: api_v1alpha1_scorecards_evaluation_pb.UpdateEvaluationResponse
+};
+
 Scorecards.GetEvaluation = {
   methodName: "GetEvaluation",
   service: Scorecards,
@@ -1317,6 +1326,37 @@ ScorecardsClient.prototype.scoreEvaluation = function scoreEvaluation(requestMes
     callback = arguments[1];
   }
   var client = grpc.unary(Scorecards.ScoreEvaluation, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ScorecardsClient.prototype.updateEvaluation = function updateEvaluation(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Scorecards.UpdateEvaluation, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
