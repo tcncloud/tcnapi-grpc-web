@@ -283,6 +283,15 @@ type ScorecardsScoreEvaluation = {
   readonly responseType: typeof api_v1alpha1_scorecards_evaluation_pb.ScoreEvaluationResponse;
 };
 
+type ScorecardsUpdateEvaluation = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_evaluation_pb.UpdateEvaluationRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_evaluation_pb.UpdateEvaluationResponse;
+};
+
 type ScorecardsGetEvaluation = {
   readonly methodName: string;
   readonly service: typeof Scorecards;
@@ -432,6 +441,7 @@ export class Scorecards {
   static readonly CreateEvaluation: ScorecardsCreateEvaluation;
   static readonly DeleteEvaluation: ScorecardsDeleteEvaluation;
   static readonly ScoreEvaluation: ScorecardsScoreEvaluation;
+  static readonly UpdateEvaluation: ScorecardsUpdateEvaluation;
   static readonly GetEvaluation: ScorecardsGetEvaluation;
   static readonly ListEvaluations: ScorecardsListEvaluations;
   static readonly CreateEvaluationQuestion: ScorecardsCreateEvaluationQuestion;
@@ -748,6 +758,15 @@ export class ScorecardsClient {
   scoreEvaluation(
     requestMessage: api_v1alpha1_scorecards_evaluation_pb.ScoreEvaluationRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.ScoreEvaluationResponse|null) => void
+  ): UnaryResponse;
+  updateEvaluation(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.UpdateEvaluationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.UpdateEvaluationResponse|null) => void
+  ): UnaryResponse;
+  updateEvaluation(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.UpdateEvaluationRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.UpdateEvaluationResponse|null) => void
   ): UnaryResponse;
   getEvaluation(
     requestMessage: api_v1alpha1_scorecards_evaluation_pb.GetEvaluationRequest,
