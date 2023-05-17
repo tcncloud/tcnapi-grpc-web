@@ -2,6 +2,7 @@
 // file: api/commons/compliance.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_communication_pb from "../../api/commons/communication_pb";
 import * as api_commons_enums_pb from "../../api/commons/enums_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -706,6 +707,189 @@ export namespace ConsentCondition {
     timeOfDayTo: string,
     fromDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     toDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class ScenarioData extends jspb.Message {
+  hasCommType(): boolean;
+  clearCommType(): void;
+  getCommType(): api_commons_communication_pb.CommType | undefined;
+  setCommType(value?: api_commons_communication_pb.CommType): void;
+
+  getPhoneNumber(): string;
+  setPhoneNumber(value: string): void;
+
+  getCountryCode(): string;
+  setCountryCode(value: string): void;
+
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  getCallMetadataMap(): jspb.Map<string, string>;
+  clearCallMetadataMap(): void;
+  hasTimeOfCall(): boolean;
+  clearTimeOfCall(): void;
+  getTimeOfCall(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimeOfCall(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getFrequencyCount(): number;
+  setFrequencyCount(value: number): void;
+
+  getFrequencyDuration(): number;
+  setFrequencyDuration(value: number): void;
+
+  getDnclBlocks(): boolean;
+  setDnclBlocks(value: boolean): void;
+
+  getCountry(): string;
+  setCountry(value: string): void;
+
+  getState(): string;
+  setState(value: string): void;
+
+  getCounty(): string;
+  setCounty(value: string): void;
+
+  getCity(): string;
+  setCity(value: string): void;
+
+  getProvince(): string;
+  setProvince(value: string): void;
+
+  getPhoneType(): PhoneTypeMap[keyof PhoneTypeMap];
+  setPhoneType(value: PhoneTypeMap[keyof PhoneTypeMap]): void;
+
+  getTimeZone(): string;
+  setTimeZone(value: string): void;
+
+  clearHolidaysList(): void;
+  getHolidaysList(): Array<string>;
+  setHolidaysList(value: Array<string>): void;
+  addHolidays(value: string, index?: number): string;
+
+  hasCountryCodeData(): boolean;
+  clearCountryCodeData(): void;
+  getCountryCodeData(): CountryCode | undefined;
+  setCountryCodeData(value?: CountryCode): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ScenarioData.AsObject;
+  static toObject(includeInstance: boolean, msg: ScenarioData): ScenarioData.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ScenarioData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ScenarioData;
+  static deserializeBinaryFromReader(message: ScenarioData, reader: jspb.BinaryReader): ScenarioData;
+}
+
+export namespace ScenarioData {
+  export type AsObject = {
+    commType?: api_commons_communication_pb.CommType.AsObject,
+    phoneNumber: string,
+    countryCode: string,
+    email: string,
+    callMetadataMap: Array<[string, string]>,
+    timeOfCall?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    frequencyCount: number,
+    frequencyDuration: number,
+    dnclBlocks: boolean,
+    country: string,
+    state: string,
+    county: string,
+    city: string,
+    province: string,
+    phoneType: PhoneTypeMap[keyof PhoneTypeMap],
+    timeZone: string,
+    holidaysList: Array<string>,
+    countryCodeData?: CountryCode.AsObject,
+  }
+}
+
+export class CountryCode extends jspb.Message {
+  getCountryCode(): number;
+  setCountryCode(value: number): void;
+
+  getCountryName(): string;
+  setCountryName(value: string): void;
+
+  getCountryId(): string;
+  setCountryId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CountryCode.AsObject;
+  static toObject(includeInstance: boolean, msg: CountryCode): CountryCode.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CountryCode, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CountryCode;
+  static deserializeBinaryFromReader(message: CountryCode, reader: jspb.BinaryReader): CountryCode;
+}
+
+export namespace CountryCode {
+  export type AsObject = {
+    countryCode: number,
+    countryName: string,
+    countryId: string,
+  }
+}
+
+export class ScenarioResult extends jspb.Message {
+  getPassedValue(): boolean;
+  setPassedValue(value: boolean): void;
+
+  clearShouldAllowResponsesList(): void;
+  getShouldAllowResponsesList(): Array<ScenarioRuleResponse>;
+  setShouldAllowResponsesList(value: Array<ScenarioRuleResponse>): void;
+  addShouldAllowResponses(value?: ScenarioRuleResponse, index?: number): ScenarioRuleResponse;
+
+  clearShouldDenyResponsesList(): void;
+  getShouldDenyResponsesList(): Array<ScenarioRuleResponse>;
+  setShouldDenyResponsesList(value: Array<ScenarioRuleResponse>): void;
+  addShouldDenyResponses(value?: ScenarioRuleResponse, index?: number): ScenarioRuleResponse;
+
+  getScenarioName(): string;
+  setScenarioName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ScenarioResult.AsObject;
+  static toObject(includeInstance: boolean, msg: ScenarioResult): ScenarioResult.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ScenarioResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ScenarioResult;
+  static deserializeBinaryFromReader(message: ScenarioResult, reader: jspb.BinaryReader): ScenarioResult;
+}
+
+export namespace ScenarioResult {
+  export type AsObject = {
+    passedValue: boolean,
+    shouldAllowResponsesList: Array<ScenarioRuleResponse.AsObject>,
+    shouldDenyResponsesList: Array<ScenarioRuleResponse.AsObject>,
+    scenarioName: string,
+  }
+}
+
+export class ScenarioRuleResponse extends jspb.Message {
+  getRuleText(): string;
+  setRuleText(value: string): void;
+
+  getPermitValue(): boolean;
+  setPermitValue(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ScenarioRuleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ScenarioRuleResponse): ScenarioRuleResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ScenarioRuleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ScenarioRuleResponse;
+  static deserializeBinaryFromReader(message: ScenarioRuleResponse, reader: jspb.BinaryReader): ScenarioRuleResponse;
+}
+
+export namespace ScenarioRuleResponse {
+  export type AsObject = {
+    ruleText: string,
+    permitValue: boolean,
   }
 }
 
