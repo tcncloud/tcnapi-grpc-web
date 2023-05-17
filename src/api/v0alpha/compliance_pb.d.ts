@@ -1039,58 +1039,58 @@ export namespace Rule {
 export class Selector extends jspb.Message {
   hasTime(): boolean;
   clearTime(): void;
-  getTime(): TimeExp | undefined;
-  setTime(value?: TimeExp): void;
+  getTime(): api_commons_compliance_pb.TimeExp | undefined;
+  setTime(value?: api_commons_compliance_pb.TimeExp): void;
 
   hasWeek(): boolean;
   clearWeek(): void;
-  getWeek(): WeekdayExp | undefined;
-  setWeek(value?: WeekdayExp): void;
+  getWeek(): api_commons_compliance_pb.WeekdayExp | undefined;
+  setWeek(value?: api_commons_compliance_pb.WeekdayExp): void;
 
   hasDncl(): boolean;
   clearDncl(): void;
-  getDncl(): DnclExp | undefined;
-  setDncl(value?: DnclExp): void;
+  getDncl(): api_commons_compliance_pb.DnclExp | undefined;
+  setDncl(value?: api_commons_compliance_pb.DnclExp): void;
 
   hasFrequency(): boolean;
   clearFrequency(): void;
-  getFrequency(): FrequencyExp | undefined;
-  setFrequency(value?: FrequencyExp): void;
+  getFrequency(): api_commons_compliance_pb.FrequencyExp | undefined;
+  setFrequency(value?: api_commons_compliance_pb.FrequencyExp): void;
 
   hasLocation(): boolean;
   clearLocation(): void;
-  getLocation(): LocationExp | undefined;
-  setLocation(value?: LocationExp): void;
+  getLocation(): api_commons_compliance_pb.LocationExp | undefined;
+  setLocation(value?: api_commons_compliance_pb.LocationExp): void;
 
   hasPhoneType(): boolean;
   clearPhoneType(): void;
-  getPhoneType(): PhoneTypeExp | undefined;
-  setPhoneType(value?: PhoneTypeExp): void;
+  getPhoneType(): api_commons_compliance_pb.PhoneTypeExp | undefined;
+  setPhoneType(value?: api_commons_compliance_pb.PhoneTypeExp): void;
 
   hasMonth(): boolean;
   clearMonth(): void;
-  getMonth(): MonthExp | undefined;
-  setMonth(value?: MonthExp): void;
+  getMonth(): api_commons_compliance_pb.MonthExp | undefined;
+  setMonth(value?: api_commons_compliance_pb.MonthExp): void;
 
   hasHoliday(): boolean;
   clearHoliday(): void;
-  getHoliday(): HolidayExp | undefined;
-  setHoliday(value?: HolidayExp): void;
+  getHoliday(): api_commons_compliance_pb.HolidayExp | undefined;
+  setHoliday(value?: api_commons_compliance_pb.HolidayExp): void;
 
   hasDate(): boolean;
   clearDate(): void;
-  getDate(): DateExp | undefined;
-  setDate(value?: DateExp): void;
+  getDate(): api_commons_compliance_pb.DateExp | undefined;
+  setDate(value?: api_commons_compliance_pb.DateExp): void;
 
   hasMeta(): boolean;
   clearMeta(): void;
-  getMeta(): MetaFieldExp | undefined;
-  setMeta(value?: MetaFieldExp): void;
+  getMeta(): api_commons_compliance_pb.MetaFieldExp | undefined;
+  setMeta(value?: api_commons_compliance_pb.MetaFieldExp): void;
 
   hasPlugin(): boolean;
   clearPlugin(): void;
-  getPlugin(): PluginExp | undefined;
-  setPlugin(value?: PluginExp): void;
+  getPlugin(): api_commons_compliance_pb.PluginExp | undefined;
+  setPlugin(value?: api_commons_compliance_pb.PluginExp): void;
 
   getSelectionRuleCase(): Selector.SelectionRuleCase;
   serializeBinary(): Uint8Array;
@@ -1105,17 +1105,17 @@ export class Selector extends jspb.Message {
 
 export namespace Selector {
   export type AsObject = {
-    time?: TimeExp.AsObject,
-    week?: WeekdayExp.AsObject,
-    dncl?: DnclExp.AsObject,
-    frequency?: FrequencyExp.AsObject,
-    location?: LocationExp.AsObject,
-    phoneType?: PhoneTypeExp.AsObject,
-    month?: MonthExp.AsObject,
-    holiday?: HolidayExp.AsObject,
-    date?: DateExp.AsObject,
-    meta?: MetaFieldExp.AsObject,
-    plugin?: PluginExp.AsObject,
+    time?: api_commons_compliance_pb.TimeExp.AsObject,
+    week?: api_commons_compliance_pb.WeekdayExp.AsObject,
+    dncl?: api_commons_compliance_pb.DnclExp.AsObject,
+    frequency?: api_commons_compliance_pb.FrequencyExp.AsObject,
+    location?: api_commons_compliance_pb.LocationExp.AsObject,
+    phoneType?: api_commons_compliance_pb.PhoneTypeExp.AsObject,
+    month?: api_commons_compliance_pb.MonthExp.AsObject,
+    holiday?: api_commons_compliance_pb.HolidayExp.AsObject,
+    date?: api_commons_compliance_pb.DateExp.AsObject,
+    meta?: api_commons_compliance_pb.MetaFieldExp.AsObject,
+    plugin?: api_commons_compliance_pb.PluginExp.AsObject,
   }
 
   export enum SelectionRuleCase {
@@ -1131,302 +1131,6 @@ export namespace Selector {
     DATE = 9,
     META = 10,
     PLUGIN = 11,
-  }
-}
-
-export class HolidayExp extends jspb.Message {
-  getMonth(): api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap];
-  setMonth(value: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap]): void;
-
-  getDay(): number;
-  setDay(value: number): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HolidayExp.AsObject;
-  static toObject(includeInstance: boolean, msg: HolidayExp): HolidayExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: HolidayExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HolidayExp;
-  static deserializeBinaryFromReader(message: HolidayExp, reader: jspb.BinaryReader): HolidayExp;
-}
-
-export namespace HolidayExp {
-  export type AsObject = {
-    month: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap],
-    day: number,
-    name: string,
-  }
-}
-
-export class TimeExp extends jspb.Message {
-  getStartHour(): string;
-  setStartHour(value: string): void;
-
-  getEndHour(): string;
-  setEndHour(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TimeExp.AsObject;
-  static toObject(includeInstance: boolean, msg: TimeExp): TimeExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TimeExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TimeExp;
-  static deserializeBinaryFromReader(message: TimeExp, reader: jspb.BinaryReader): TimeExp;
-}
-
-export namespace TimeExp {
-  export type AsObject = {
-    startHour: string,
-    endHour: string,
-  }
-}
-
-export class WeekdayExp extends jspb.Message {
-  getDay(): api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap];
-  setDay(value: api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap]): void;
-
-  getText(): string;
-  setText(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): WeekdayExp.AsObject;
-  static toObject(includeInstance: boolean, msg: WeekdayExp): WeekdayExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: WeekdayExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): WeekdayExp;
-  static deserializeBinaryFromReader(message: WeekdayExp, reader: jspb.BinaryReader): WeekdayExp;
-}
-
-export namespace WeekdayExp {
-  export type AsObject = {
-    day: api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap],
-    text: string,
-  }
-}
-
-export class MonthExp extends jspb.Message {
-  getMonth(): api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap];
-  setMonth(value: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap]): void;
-
-  getText(): string;
-  setText(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MonthExp.AsObject;
-  static toObject(includeInstance: boolean, msg: MonthExp): MonthExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: MonthExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MonthExp;
-  static deserializeBinaryFromReader(message: MonthExp, reader: jspb.BinaryReader): MonthExp;
-}
-
-export namespace MonthExp {
-  export type AsObject = {
-    month: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap],
-    text: string,
-  }
-}
-
-export class DateExp extends jspb.Message {
-  getMonth(): api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap];
-  setMonth(value: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap]): void;
-
-  getDay(): number;
-  setDay(value: number): void;
-
-  getYear(): number;
-  setYear(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DateExp.AsObject;
-  static toObject(includeInstance: boolean, msg: DateExp): DateExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DateExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DateExp;
-  static deserializeBinaryFromReader(message: DateExp, reader: jspb.BinaryReader): DateExp;
-}
-
-export namespace DateExp {
-  export type AsObject = {
-    month: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap],
-    day: number,
-    year: number,
-  }
-}
-
-export class DnclExp extends jspb.Message {
-  getListName(): string;
-  setListName(value: string): void;
-
-  getFieldName(): string;
-  setFieldName(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DnclExp.AsObject;
-  static toObject(includeInstance: boolean, msg: DnclExp): DnclExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DnclExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DnclExp;
-  static deserializeBinaryFromReader(message: DnclExp, reader: jspb.BinaryReader): DnclExp;
-}
-
-export namespace DnclExp {
-  export type AsObject = {
-    listName: string,
-    fieldName: string,
-  }
-}
-
-export class FrequencyExp extends jspb.Message {
-  getCount(): number;
-  setCount(value: number): void;
-
-  getDuration(): number;
-  setDuration(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FrequencyExp.AsObject;
-  static toObject(includeInstance: boolean, msg: FrequencyExp): FrequencyExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: FrequencyExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FrequencyExp;
-  static deserializeBinaryFromReader(message: FrequencyExp, reader: jspb.BinaryReader): FrequencyExp;
-}
-
-export namespace FrequencyExp {
-  export type AsObject = {
-    count: number,
-    duration: number,
-  }
-}
-
-export class LocationExp extends jspb.Message {
-  getLocation(): string;
-  setLocation(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LocationExp.AsObject;
-  static toObject(includeInstance: boolean, msg: LocationExp): LocationExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: LocationExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LocationExp;
-  static deserializeBinaryFromReader(message: LocationExp, reader: jspb.BinaryReader): LocationExp;
-}
-
-export namespace LocationExp {
-  export type AsObject = {
-    location: string,
-  }
-}
-
-export class PhoneTypeExp extends jspb.Message {
-  getPhoneType(): api_commons_compliance_pb.PhoneTypeMap[keyof api_commons_compliance_pb.PhoneTypeMap];
-  setPhoneType(value: api_commons_compliance_pb.PhoneTypeMap[keyof api_commons_compliance_pb.PhoneTypeMap]): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PhoneTypeExp.AsObject;
-  static toObject(includeInstance: boolean, msg: PhoneTypeExp): PhoneTypeExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PhoneTypeExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PhoneTypeExp;
-  static deserializeBinaryFromReader(message: PhoneTypeExp, reader: jspb.BinaryReader): PhoneTypeExp;
-}
-
-export namespace PhoneTypeExp {
-  export type AsObject = {
-    phoneType: api_commons_compliance_pb.PhoneTypeMap[keyof api_commons_compliance_pb.PhoneTypeMap],
-  }
-}
-
-export class MetaFieldExp extends jspb.Message {
-  getField(): string;
-  setField(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MetaFieldExp.AsObject;
-  static toObject(includeInstance: boolean, msg: MetaFieldExp): MetaFieldExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: MetaFieldExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MetaFieldExp;
-  static deserializeBinaryFromReader(message: MetaFieldExp, reader: jspb.BinaryReader): MetaFieldExp;
-}
-
-export namespace MetaFieldExp {
-  export type AsObject = {
-    field: string,
-  }
-}
-
-export class PluginExp extends jspb.Message {
-  getType(): api_commons_compliance_pb.PluginTypeMap[keyof api_commons_compliance_pb.PluginTypeMap];
-  setType(value: api_commons_compliance_pb.PluginTypeMap[keyof api_commons_compliance_pb.PluginTypeMap]): void;
-
-  getTcnStrict(): boolean;
-  setTcnStrict(value: boolean): void;
-
-  getLicenseId(): string;
-  setLicenseId(value: string): void;
-
-  getReferenceKey(): string;
-  setReferenceKey(value: string): void;
-
-  getFromNumber(): string;
-  setFromNumber(value: string): void;
-
-  getEnv(): api_commons_compliance_pb.EnvironmentMap[keyof api_commons_compliance_pb.EnvironmentMap];
-  setEnv(value: api_commons_compliance_pb.EnvironmentMap[keyof api_commons_compliance_pb.EnvironmentMap]): void;
-
-  getProfile(): string;
-  setProfile(value: string): void;
-
-  getContentField(): string;
-  setContentField(value: string): void;
-
-  getTopic(): string;
-  setTopic(value: string): void;
-
-  getAbsentAction(): api_commons_compliance_pb.ConsentAbsentActionMap[keyof api_commons_compliance_pb.ConsentAbsentActionMap];
-  setAbsentAction(value: api_commons_compliance_pb.ConsentAbsentActionMap[keyof api_commons_compliance_pb.ConsentAbsentActionMap]): void;
-
-  getDateLastContact(): string;
-  setDateLastContact(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PluginExp.AsObject;
-  static toObject(includeInstance: boolean, msg: PluginExp): PluginExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PluginExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PluginExp;
-  static deserializeBinaryFromReader(message: PluginExp, reader: jspb.BinaryReader): PluginExp;
-}
-
-export namespace PluginExp {
-  export type AsObject = {
-    type: api_commons_compliance_pb.PluginTypeMap[keyof api_commons_compliance_pb.PluginTypeMap],
-    tcnStrict: boolean,
-    licenseId: string,
-    referenceKey: string,
-    fromNumber: string,
-    env: api_commons_compliance_pb.EnvironmentMap[keyof api_commons_compliance_pb.EnvironmentMap],
-    profile: string,
-    contentField: string,
-    topic: string,
-    absentAction: api_commons_compliance_pb.ConsentAbsentActionMap[keyof api_commons_compliance_pb.ConsentAbsentActionMap],
-    dateLastContact: string,
   }
 }
 
