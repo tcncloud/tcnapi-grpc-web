@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_enums_pb from "../../api/commons/enums_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class Rule extends jspb.Message {
   getVerb(): VerbMap[keyof VerbMap];
@@ -165,10 +166,8 @@ export namespace TimeExp {
 }
 
 export class WeekdayExp extends jspb.Message {
-  hasDay(): boolean;
-  clearDay(): void;
-  getDay(): api_commons_enums_pb.Weekday | undefined;
-  setDay(value?: api_commons_enums_pb.Weekday): void;
+  getDay(): api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap];
+  setDay(value: api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap]): void;
 
   getText(): string;
   setText(value: string): void;
@@ -185,7 +184,7 @@ export class WeekdayExp extends jspb.Message {
 
 export namespace WeekdayExp {
   export type AsObject = {
-    day?: api_commons_enums_pb.Weekday.AsObject,
+    day: api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap],
     text: string,
   }
 }
@@ -657,6 +656,56 @@ export namespace Field {
   export type AsObject = {
     field: string,
     content: string,
+  }
+}
+
+export class ConsentCondition extends jspb.Message {
+  getConsentConditionId(): number;
+  setConsentConditionId(value: number): void;
+
+  getConsentId(): number;
+  setConsentId(value: number): void;
+
+  clearDaysOfTheWeekList(): void;
+  getDaysOfTheWeekList(): Array<api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap]>;
+  setDaysOfTheWeekList(value: Array<api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap]>): void;
+  addDaysOfTheWeek(value: api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap], index?: number): api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap];
+
+  getTimeOfDayFrom(): string;
+  setTimeOfDayFrom(value: string): void;
+
+  getTimeOfDayTo(): string;
+  setTimeOfDayTo(value: string): void;
+
+  hasFromDate(): boolean;
+  clearFromDate(): void;
+  getFromDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setFromDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasToDate(): boolean;
+  clearToDate(): void;
+  getToDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setToDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConsentCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsentCondition): ConsentCondition.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConsentCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsentCondition;
+  static deserializeBinaryFromReader(message: ConsentCondition, reader: jspb.BinaryReader): ConsentCondition;
+}
+
+export namespace ConsentCondition {
+  export type AsObject = {
+    consentConditionId: number,
+    consentId: number,
+    daysOfTheWeekList: Array<api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap]>,
+    timeOfDayFrom: string,
+    timeOfDayTo: string,
+    fromDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    toDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
