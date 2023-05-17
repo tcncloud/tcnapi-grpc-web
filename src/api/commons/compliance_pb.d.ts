@@ -4,6 +4,142 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_enums_pb from "../../api/commons/enums_pb";
 
+export class Rule extends jspb.Message {
+  getVerb(): VerbMap[keyof VerbMap];
+  setVerb(value: VerbMap[keyof VerbMap]): void;
+
+  getEntity(): EntityMap[keyof EntityMap];
+  setEntity(value: EntityMap[keyof EntityMap]): void;
+
+  getSubEntity(): SubEntityMap[keyof SubEntityMap];
+  setSubEntity(value: SubEntityMap[keyof SubEntityMap]): void;
+
+  clearSelectorsList(): void;
+  getSelectorsList(): Array<Selector>;
+  setSelectorsList(value: Array<Selector>): void;
+  addSelectors(value?: Selector, index?: number): Selector;
+
+  getRuleText(): string;
+  setRuleText(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Rule.AsObject;
+  static toObject(includeInstance: boolean, msg: Rule): Rule.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Rule, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Rule;
+  static deserializeBinaryFromReader(message: Rule, reader: jspb.BinaryReader): Rule;
+}
+
+export namespace Rule {
+  export type AsObject = {
+    verb: VerbMap[keyof VerbMap],
+    entity: EntityMap[keyof EntityMap],
+    subEntity: SubEntityMap[keyof SubEntityMap],
+    selectorsList: Array<Selector.AsObject>,
+    ruleText: string,
+  }
+}
+
+export class Selector extends jspb.Message {
+  hasTime(): boolean;
+  clearTime(): void;
+  getTime(): TimeExp | undefined;
+  setTime(value?: TimeExp): void;
+
+  hasWeek(): boolean;
+  clearWeek(): void;
+  getWeek(): WeekdayExp | undefined;
+  setWeek(value?: WeekdayExp): void;
+
+  hasDncl(): boolean;
+  clearDncl(): void;
+  getDncl(): DnclExp | undefined;
+  setDncl(value?: DnclExp): void;
+
+  hasFrequency(): boolean;
+  clearFrequency(): void;
+  getFrequency(): FrequencyExp | undefined;
+  setFrequency(value?: FrequencyExp): void;
+
+  hasLocation(): boolean;
+  clearLocation(): void;
+  getLocation(): LocationExp | undefined;
+  setLocation(value?: LocationExp): void;
+
+  hasPhoneType(): boolean;
+  clearPhoneType(): void;
+  getPhoneType(): PhoneTypeExp | undefined;
+  setPhoneType(value?: PhoneTypeExp): void;
+
+  hasMonth(): boolean;
+  clearMonth(): void;
+  getMonth(): MonthExp | undefined;
+  setMonth(value?: MonthExp): void;
+
+  hasDate(): boolean;
+  clearDate(): void;
+  getDate(): DateExp | undefined;
+  setDate(value?: DateExp): void;
+
+  hasHoliday(): boolean;
+  clearHoliday(): void;
+  getHoliday(): HolidayExp | undefined;
+  setHoliday(value?: HolidayExp): void;
+
+  hasMeta(): boolean;
+  clearMeta(): void;
+  getMeta(): MetaFieldExp | undefined;
+  setMeta(value?: MetaFieldExp): void;
+
+  hasPlugin(): boolean;
+  clearPlugin(): void;
+  getPlugin(): PluginExp | undefined;
+  setPlugin(value?: PluginExp): void;
+
+  getSelectionRuleCase(): Selector.SelectionRuleCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Selector.AsObject;
+  static toObject(includeInstance: boolean, msg: Selector): Selector.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Selector, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Selector;
+  static deserializeBinaryFromReader(message: Selector, reader: jspb.BinaryReader): Selector;
+}
+
+export namespace Selector {
+  export type AsObject = {
+    time?: TimeExp.AsObject,
+    week?: WeekdayExp.AsObject,
+    dncl?: DnclExp.AsObject,
+    frequency?: FrequencyExp.AsObject,
+    location?: LocationExp.AsObject,
+    phoneType?: PhoneTypeExp.AsObject,
+    month?: MonthExp.AsObject,
+    date?: DateExp.AsObject,
+    holiday?: HolidayExp.AsObject,
+    meta?: MetaFieldExp.AsObject,
+    plugin?: PluginExp.AsObject,
+  }
+
+  export enum SelectionRuleCase {
+    SELECTION_RULE_NOT_SET = 0,
+    TIME = 1,
+    WEEK = 2,
+    DNCL = 3,
+    FREQUENCY = 4,
+    LOCATION = 5,
+    PHONE_TYPE = 6,
+    MONTH = 7,
+    DATE = 8,
+    HOLIDAY = 9,
+    META = 10,
+    PLUGIN = 11,
+  }
+}
+
 export class TimeExp extends jspb.Message {
   getStartHour(): string;
   setStartHour(value: string): void;

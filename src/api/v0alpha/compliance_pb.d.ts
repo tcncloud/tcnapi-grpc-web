@@ -614,9 +614,9 @@ export namespace CheckRuleSetReq {
 
 export class CheckRuleSetRes extends jspb.Message {
   clearRulesList(): void;
-  getRulesList(): Array<Rule>;
-  setRulesList(value: Array<Rule>): void;
-  addRules(value?: Rule, index?: number): Rule;
+  getRulesList(): Array<api_commons_compliance_pb.Rule>;
+  setRulesList(value: Array<api_commons_compliance_pb.Rule>): void;
+  addRules(value?: api_commons_compliance_pb.Rule, index?: number): api_commons_compliance_pb.Rule;
 
   clearWarningsList(): void;
   getWarningsList(): Array<string>;
@@ -635,7 +635,7 @@ export class CheckRuleSetRes extends jspb.Message {
 
 export namespace CheckRuleSetRes {
   export type AsObject = {
-    rulesList: Array<Rule.AsObject>,
+    rulesList: Array<api_commons_compliance_pb.Rule.AsObject>,
     warningsList: Array<string>,
   }
 }
@@ -837,9 +837,9 @@ export class CreateRuleSetReq extends jspb.Message {
   setRulesText(value: string): void;
 
   clearRulesList(): void;
-  getRulesList(): Array<Rule>;
-  setRulesList(value: Array<Rule>): void;
-  addRules(value?: Rule, index?: number): Rule;
+  getRulesList(): Array<api_commons_compliance_pb.Rule>;
+  setRulesList(value: Array<api_commons_compliance_pb.Rule>): void;
+  addRules(value?: api_commons_compliance_pb.Rule, index?: number): api_commons_compliance_pb.Rule;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRuleSetReq.AsObject;
@@ -856,7 +856,7 @@ export namespace CreateRuleSetReq {
     ruleSetId: string,
     name: string,
     rulesText: string,
-    rulesList: Array<Rule.AsObject>,
+    rulesList: Array<api_commons_compliance_pb.Rule.AsObject>,
   }
 }
 
@@ -976,9 +976,9 @@ export class RuleSet extends jspb.Message {
   setSha(value: string): void;
 
   clearRulesList(): void;
-  getRulesList(): Array<Rule>;
-  setRulesList(value: Array<Rule>): void;
-  addRules(value?: Rule, index?: number): Rule;
+  getRulesList(): Array<api_commons_compliance_pb.Rule>;
+  setRulesList(value: Array<api_commons_compliance_pb.Rule>): void;
+  addRules(value?: api_commons_compliance_pb.Rule, index?: number): api_commons_compliance_pb.Rule;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RuleSet.AsObject;
@@ -998,139 +998,7 @@ export namespace RuleSet {
     disabled: boolean,
     rulesText: string,
     sha: string,
-    rulesList: Array<Rule.AsObject>,
-  }
-}
-
-export class Rule extends jspb.Message {
-  getVerb(): api_commons_compliance_pb.VerbMap[keyof api_commons_compliance_pb.VerbMap];
-  setVerb(value: api_commons_compliance_pb.VerbMap[keyof api_commons_compliance_pb.VerbMap]): void;
-
-  getEntity(): api_commons_compliance_pb.EntityMap[keyof api_commons_compliance_pb.EntityMap];
-  setEntity(value: api_commons_compliance_pb.EntityMap[keyof api_commons_compliance_pb.EntityMap]): void;
-
-  getSubEntity(): api_commons_compliance_pb.SubEntityMap[keyof api_commons_compliance_pb.SubEntityMap];
-  setSubEntity(value: api_commons_compliance_pb.SubEntityMap[keyof api_commons_compliance_pb.SubEntityMap]): void;
-
-  clearSelectorsList(): void;
-  getSelectorsList(): Array<Selector>;
-  setSelectorsList(value: Array<Selector>): void;
-  addSelectors(value?: Selector, index?: number): Selector;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Rule.AsObject;
-  static toObject(includeInstance: boolean, msg: Rule): Rule.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Rule, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Rule;
-  static deserializeBinaryFromReader(message: Rule, reader: jspb.BinaryReader): Rule;
-}
-
-export namespace Rule {
-  export type AsObject = {
-    verb: api_commons_compliance_pb.VerbMap[keyof api_commons_compliance_pb.VerbMap],
-    entity: api_commons_compliance_pb.EntityMap[keyof api_commons_compliance_pb.EntityMap],
-    subEntity: api_commons_compliance_pb.SubEntityMap[keyof api_commons_compliance_pb.SubEntityMap],
-    selectorsList: Array<Selector.AsObject>,
-  }
-}
-
-export class Selector extends jspb.Message {
-  hasTime(): boolean;
-  clearTime(): void;
-  getTime(): api_commons_compliance_pb.TimeExp | undefined;
-  setTime(value?: api_commons_compliance_pb.TimeExp): void;
-
-  hasWeek(): boolean;
-  clearWeek(): void;
-  getWeek(): api_commons_compliance_pb.WeekdayExp | undefined;
-  setWeek(value?: api_commons_compliance_pb.WeekdayExp): void;
-
-  hasDncl(): boolean;
-  clearDncl(): void;
-  getDncl(): api_commons_compliance_pb.DnclExp | undefined;
-  setDncl(value?: api_commons_compliance_pb.DnclExp): void;
-
-  hasFrequency(): boolean;
-  clearFrequency(): void;
-  getFrequency(): api_commons_compliance_pb.FrequencyExp | undefined;
-  setFrequency(value?: api_commons_compliance_pb.FrequencyExp): void;
-
-  hasLocation(): boolean;
-  clearLocation(): void;
-  getLocation(): api_commons_compliance_pb.LocationExp | undefined;
-  setLocation(value?: api_commons_compliance_pb.LocationExp): void;
-
-  hasPhoneType(): boolean;
-  clearPhoneType(): void;
-  getPhoneType(): api_commons_compliance_pb.PhoneTypeExp | undefined;
-  setPhoneType(value?: api_commons_compliance_pb.PhoneTypeExp): void;
-
-  hasMonth(): boolean;
-  clearMonth(): void;
-  getMonth(): api_commons_compliance_pb.MonthExp | undefined;
-  setMonth(value?: api_commons_compliance_pb.MonthExp): void;
-
-  hasHoliday(): boolean;
-  clearHoliday(): void;
-  getHoliday(): api_commons_compliance_pb.HolidayExp | undefined;
-  setHoliday(value?: api_commons_compliance_pb.HolidayExp): void;
-
-  hasDate(): boolean;
-  clearDate(): void;
-  getDate(): api_commons_compliance_pb.DateExp | undefined;
-  setDate(value?: api_commons_compliance_pb.DateExp): void;
-
-  hasMeta(): boolean;
-  clearMeta(): void;
-  getMeta(): api_commons_compliance_pb.MetaFieldExp | undefined;
-  setMeta(value?: api_commons_compliance_pb.MetaFieldExp): void;
-
-  hasPlugin(): boolean;
-  clearPlugin(): void;
-  getPlugin(): api_commons_compliance_pb.PluginExp | undefined;
-  setPlugin(value?: api_commons_compliance_pb.PluginExp): void;
-
-  getSelectionRuleCase(): Selector.SelectionRuleCase;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Selector.AsObject;
-  static toObject(includeInstance: boolean, msg: Selector): Selector.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Selector, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Selector;
-  static deserializeBinaryFromReader(message: Selector, reader: jspb.BinaryReader): Selector;
-}
-
-export namespace Selector {
-  export type AsObject = {
-    time?: api_commons_compliance_pb.TimeExp.AsObject,
-    week?: api_commons_compliance_pb.WeekdayExp.AsObject,
-    dncl?: api_commons_compliance_pb.DnclExp.AsObject,
-    frequency?: api_commons_compliance_pb.FrequencyExp.AsObject,
-    location?: api_commons_compliance_pb.LocationExp.AsObject,
-    phoneType?: api_commons_compliance_pb.PhoneTypeExp.AsObject,
-    month?: api_commons_compliance_pb.MonthExp.AsObject,
-    holiday?: api_commons_compliance_pb.HolidayExp.AsObject,
-    date?: api_commons_compliance_pb.DateExp.AsObject,
-    meta?: api_commons_compliance_pb.MetaFieldExp.AsObject,
-    plugin?: api_commons_compliance_pb.PluginExp.AsObject,
-  }
-
-  export enum SelectionRuleCase {
-    SELECTION_RULE_NOT_SET = 0,
-    TIME = 1,
-    WEEK = 2,
-    DNCL = 3,
-    FREQUENCY = 4,
-    LOCATION = 5,
-    PHONE_TYPE = 6,
-    MONTH = 7,
-    HOLIDAY = 8,
-    DATE = 9,
-    META = 10,
-    PLUGIN = 11,
+    rulesList: Array<api_commons_compliance_pb.Rule.AsObject>,
   }
 }
 
