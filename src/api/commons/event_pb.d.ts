@@ -207,6 +207,11 @@ export class AsmEvent extends jspb.Message {
   getResumeEvent(): ResumeEvent | undefined;
   setResumeEvent(value?: ResumeEvent): void;
 
+  hasConversationPulledEvent(): boolean;
+  clearConversationPulledEvent(): void;
+  getConversationPulledEvent(): ConversationPulledEvent | undefined;
+  setConversationPulledEvent(value?: ConversationPulledEvent): void;
+
   getEventCase(): AsmEvent.EventCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AsmEvent.AsObject;
@@ -228,6 +233,7 @@ export namespace AsmEvent {
     sendStatusAsmEvent?: SendStatusAsmEvent.AsObject,
     pauseEvent?: PauseEvent.AsObject,
     resumeEvent?: ResumeEvent.AsObject,
+    conversationPulledEvent?: ConversationPulledEvent.AsObject,
   }
 
   export enum EventCase {
@@ -238,6 +244,7 @@ export namespace AsmEvent {
     SEND_STATUS_ASM_EVENT = 8,
     PAUSE_EVENT = 9,
     RESUME_EVENT = 10,
+    CONVERSATION_PULLED_EVENT = 11,
   }
 }
 
@@ -360,6 +367,28 @@ export class ResumeEvent extends jspb.Message {
 
 export namespace ResumeEvent {
   export type AsObject = {
+  }
+}
+
+export class ConversationPulledEvent extends jspb.Message {
+  hasConversation(): boolean;
+  clearConversation(): void;
+  getConversation(): api_commons_omnichannel_pb.OmniConversation | undefined;
+  setConversation(value?: api_commons_omnichannel_pb.OmniConversation): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConversationPulledEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: ConversationPulledEvent): ConversationPulledEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConversationPulledEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConversationPulledEvent;
+  static deserializeBinaryFromReader(message: ConversationPulledEvent, reader: jspb.BinaryReader): ConversationPulledEvent;
+}
+
+export namespace ConversationPulledEvent {
+  export type AsObject = {
+    conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
   }
 }
 

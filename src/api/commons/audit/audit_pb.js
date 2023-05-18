@@ -71,7 +71,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,400,401,402,403,404,405,406,407,408,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701]];
 
 /**
  * @enum {number}
@@ -136,6 +136,7 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   ASM_AGENT_LOGOUT_EVENT: 406,
   ASM_PAUSE_EVENT: 407,
   ASM_RESUME_EVENT: 408,
+  ASM_CONVERSATION_PULLED_EVENT: 409,
   SCORECARDS_CREATE_QUESTION_EVENT: 500,
   SCORECARDS_UPDATE_QUESTION_EVENT: 501,
   SCORECARDS_DELETE_QUESTION_EVENT: 502,
@@ -266,6 +267,7 @@ proto.api.commons.audit.AuditEvent.toObject = function(includeInstance, msg) {
     asmAgentLogoutEvent: (f = msg.getAsmAgentLogoutEvent()) && api_commons_audit_asm_events_pb.AsmAgentLogoutEvent.toObject(includeInstance, f),
     asmPauseEvent: (f = msg.getAsmPauseEvent()) && api_commons_audit_asm_events_pb.AsmPauseEvent.toObject(includeInstance, f),
     asmResumeEvent: (f = msg.getAsmResumeEvent()) && api_commons_audit_asm_events_pb.AsmResumeEvent.toObject(includeInstance, f),
+    asmConversationPulledEvent: (f = msg.getAsmConversationPulledEvent()) && api_commons_audit_asm_events_pb.AsmConversationPulledEvent.toObject(includeInstance, f),
     scorecardsCreateQuestionEvent: (f = msg.getScorecardsCreateQuestionEvent()) && api_commons_audit_scorecards_events_pb.ScorecardsCreateQuestionEvent.toObject(includeInstance, f),
     scorecardsUpdateQuestionEvent: (f = msg.getScorecardsUpdateQuestionEvent()) && api_commons_audit_scorecards_events_pb.ScorecardsUpdateQuestionEvent.toObject(includeInstance, f),
     scorecardsDeleteQuestionEvent: (f = msg.getScorecardsDeleteQuestionEvent()) && api_commons_audit_scorecards_events_pb.ScorecardsDeleteQuestionEvent.toObject(includeInstance, f),
@@ -642,6 +644,11 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_asm_events_pb.AsmResumeEvent;
       reader.readMessage(value,api_commons_audit_asm_events_pb.AsmResumeEvent.deserializeBinaryFromReader);
       msg.setAsmResumeEvent(value);
+      break;
+    case 409:
+      var value = new api_commons_audit_asm_events_pb.AsmConversationPulledEvent;
+      reader.readMessage(value,api_commons_audit_asm_events_pb.AsmConversationPulledEvent.deserializeBinaryFromReader);
+      msg.setAsmConversationPulledEvent(value);
       break;
     case 500:
       var value = new api_commons_audit_scorecards_events_pb.ScorecardsCreateQuestionEvent;
@@ -1307,6 +1314,14 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       408,
       f,
       api_commons_audit_asm_events_pb.AsmResumeEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getAsmConversationPulledEvent();
+  if (f != null) {
+    writer.writeMessage(
+      409,
+      f,
+      api_commons_audit_asm_events_pb.AsmConversationPulledEvent.serializeBinaryToWriter
     );
   }
   f = message.getScorecardsCreateQuestionEvent();
@@ -3790,6 +3805,43 @@ proto.api.commons.audit.AuditEvent.prototype.clearAsmResumeEvent = function() {
  */
 proto.api.commons.audit.AuditEvent.prototype.hasAsmResumeEvent = function() {
   return jspb.Message.getField(this, 408) != null;
+};
+
+
+/**
+ * optional AsmConversationPulledEvent asm_conversation_pulled_event = 409;
+ * @return {?proto.api.commons.audit.AsmConversationPulledEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getAsmConversationPulledEvent = function() {
+  return /** @type{?proto.api.commons.audit.AsmConversationPulledEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_asm_events_pb.AsmConversationPulledEvent, 409));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.AsmConversationPulledEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setAsmConversationPulledEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 409, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearAsmConversationPulledEvent = function() {
+  return this.setAsmConversationPulledEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasAsmConversationPulledEvent = function() {
+  return jspb.Message.getField(this, 409) != null;
 };
 
 
