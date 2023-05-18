@@ -136,32 +136,6 @@ export namespace ScrubList {
   }
 }
 
-export class ScrubEntryDetails extends jspb.Message {
-  getContent(): string;
-  setContent(value: string): void;
-
-  hasExpirationDate(): boolean;
-  clearExpirationDate(): void;
-  getExpirationDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setExpirationDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ScrubEntryDetails.AsObject;
-  static toObject(includeInstance: boolean, msg: ScrubEntryDetails): ScrubEntryDetails.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ScrubEntryDetails, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ScrubEntryDetails;
-  static deserializeBinaryFromReader(message: ScrubEntryDetails, reader: jspb.BinaryReader): ScrubEntryDetails;
-}
-
-export namespace ScrubEntryDetails {
-  export type AsObject = {
-    content: string,
-    expirationDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-  }
-}
-
 export class CreateScrubListReq extends jspb.Message {
   getListId(): string;
   setListId(value: string): void;
@@ -178,9 +152,9 @@ export class CreateScrubListReq extends jspb.Message {
   setCountryCode(value: string): void;
 
   clearScrubEntryDetailsList(): void;
-  getScrubEntryDetailsList(): Array<ScrubEntryDetails>;
-  setScrubEntryDetailsList(value: Array<ScrubEntryDetails>): void;
-  addScrubEntryDetails(value?: ScrubEntryDetails, index?: number): ScrubEntryDetails;
+  getScrubEntryDetailsList(): Array<api_commons_compliance_pb.ScrubEntryDetails>;
+  setScrubEntryDetailsList(value: Array<api_commons_compliance_pb.ScrubEntryDetails>): void;
+  addScrubEntryDetails(value?: api_commons_compliance_pb.ScrubEntryDetails, index?: number): api_commons_compliance_pb.ScrubEntryDetails;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateScrubListReq.AsObject;
@@ -198,7 +172,7 @@ export namespace CreateScrubListReq {
     listList: Array<string>,
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
     countryCode: string,
-    scrubEntryDetailsList: Array<ScrubEntryDetails.AsObject>,
+    scrubEntryDetailsList: Array<api_commons_compliance_pb.ScrubEntryDetails.AsObject>,
   }
 }
 
@@ -218,9 +192,9 @@ export class AddScrubListEntriesReq extends jspb.Message {
   setCountryCode(value: string): void;
 
   clearScrubEntryDetailsList(): void;
-  getScrubEntryDetailsList(): Array<ScrubEntryDetails>;
-  setScrubEntryDetailsList(value: Array<ScrubEntryDetails>): void;
-  addScrubEntryDetails(value?: ScrubEntryDetails, index?: number): ScrubEntryDetails;
+  getScrubEntryDetailsList(): Array<api_commons_compliance_pb.ScrubEntryDetails>;
+  setScrubEntryDetailsList(value: Array<api_commons_compliance_pb.ScrubEntryDetails>): void;
+  addScrubEntryDetails(value?: api_commons_compliance_pb.ScrubEntryDetails, index?: number): api_commons_compliance_pb.ScrubEntryDetails;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddScrubListEntriesReq.AsObject;
@@ -238,7 +212,7 @@ export namespace AddScrubListEntriesReq {
     listList: Array<string>,
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
     countryCode: string,
-    scrubEntryDetailsList: Array<ScrubEntryDetails.AsObject>,
+    scrubEntryDetailsList: Array<api_commons_compliance_pb.ScrubEntryDetails.AsObject>,
   }
 }
 
@@ -2999,6 +2973,9 @@ export class GetConsentByProfileAndContentReq extends jspb.Message {
   getContentType(): api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap];
   setContentType(value: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap]): void;
 
+  getChannelType(): api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap];
+  setChannelType(value: api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetConsentByProfileAndContentReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetConsentByProfileAndContentReq): GetConsentByProfileAndContentReq.AsObject;
@@ -3015,6 +2992,7 @@ export namespace GetConsentByProfileAndContentReq {
     content: string,
     profileId: string,
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
+    channelType: api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap],
   }
 }
 

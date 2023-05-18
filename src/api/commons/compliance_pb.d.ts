@@ -893,6 +893,32 @@ export namespace ScenarioRuleResponse {
   }
 }
 
+export class ScrubEntryDetails extends jspb.Message {
+  getContent(): string;
+  setContent(value: string): void;
+
+  hasExpirationDate(): boolean;
+  clearExpirationDate(): void;
+  getExpirationDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpirationDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ScrubEntryDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: ScrubEntryDetails): ScrubEntryDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ScrubEntryDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ScrubEntryDetails;
+  static deserializeBinaryFromReader(message: ScrubEntryDetails, reader: jspb.BinaryReader): ScrubEntryDetails;
+}
+
+export namespace ScrubEntryDetails {
+  export type AsObject = {
+    content: string,
+    expirationDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export interface VerbMap {
   V_UNKNOWN: 0;
   V_ALLOW: 1;
