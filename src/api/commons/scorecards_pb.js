@@ -32,6 +32,7 @@ goog.exportSymbol('proto.api.commons.AutoQuestion', null, global);
 goog.exportSymbol('proto.api.commons.AutoQuestion.FlagExpr', null, global);
 goog.exportSymbol('proto.api.commons.AutoQuestion.FlagExpr.Flag', null, global);
 goog.exportSymbol('proto.api.commons.Category', null, global);
+goog.exportSymbol('proto.api.commons.CategoryType', null, global);
 goog.exportSymbol('proto.api.commons.Evaluation', null, global);
 goog.exportSymbol('proto.api.commons.Evaluation.CustomField', null, global);
 goog.exportSymbol('proto.api.commons.EvaluationQuestion', null, global);
@@ -852,7 +853,8 @@ proto.api.commons.Category.toObject = function(includeInstance, msg) {
     skillProfilesList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
     version: jspb.Message.getFieldWithDefault(msg, 7, 0),
     callTypesList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
-    isSystem: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
+    isSystem: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    categoryType: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -924,6 +926,10 @@ proto.api.commons.Category.deserializeBinaryFromReader = function(msg, reader) {
     case 11:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsSystem(value);
+      break;
+    case 12:
+      var value = /** @type {!proto.api.commons.CategoryType} */ (reader.readEnum());
+      msg.setCategoryType(value);
       break;
     default:
       reader.skipField();
@@ -1007,6 +1013,13 @@ proto.api.commons.Category.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       11,
+      f
+    );
+  }
+  f = message.getCategoryType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      12,
       f
     );
   }
@@ -1192,6 +1205,24 @@ proto.api.commons.Category.prototype.getIsSystem = function() {
  */
 proto.api.commons.Category.prototype.setIsSystem = function(value) {
   return jspb.Message.setProto3BooleanField(this, 11, value);
+};
+
+
+/**
+ * optional CategoryType category_type = 12;
+ * @return {!proto.api.commons.CategoryType}
+ */
+proto.api.commons.Category.prototype.getCategoryType = function() {
+  return /** @type {!proto.api.commons.CategoryType} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.CategoryType} value
+ * @return {!proto.api.commons.Category} returns this
+ */
+proto.api.commons.Category.prototype.setCategoryType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 
@@ -7429,6 +7460,15 @@ proto.api.commons.AutoQuestion.prototype.setRiskLevel = function(value) {
   return jspb.Message.setProto3EnumField(this, 14, value);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.CategoryType = {
+  INVALID: 0,
+  SKILL_CALLS: 1,
+  MANUAL_DIAL: 2
+};
 
 /**
  * @enum {number}

@@ -80,6 +80,9 @@ export class Category extends jspb.Message {
   getIsSystem(): boolean;
   setIsSystem(value: boolean): void;
 
+  getCategoryType(): CategoryTypeMap[keyof CategoryTypeMap];
+  setCategoryType(value: CategoryTypeMap[keyof CategoryTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Category.AsObject;
   static toObject(includeInstance: boolean, msg: Category): Category.AsObject;
@@ -100,6 +103,7 @@ export namespace Category {
     version: number,
     callTypesList: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>,
     isSystem: boolean,
+    categoryType: CategoryTypeMap[keyof CategoryTypeMap],
   }
 }
 
@@ -948,6 +952,14 @@ export namespace AutoQuestion {
     }
   }
 }
+
+export interface CategoryTypeMap {
+  INVALID: 0;
+  SKILL_CALLS: 1;
+  MANUAL_DIAL: 2;
+}
+
+export const CategoryType: CategoryTypeMap;
 
 export interface EvaluationTypeMap {
   EVALUATE_MANUAL: 0;
