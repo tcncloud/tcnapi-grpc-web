@@ -2,7 +2,6 @@
 // file: api/v1alpha1/asm/public_service.proto
 
 var api_v1alpha1_asm_public_service_pb = require("../../../api/v1alpha1/asm/public_service_pb");
-var api_commons_acd_pb = require("../../../api/commons/acd_pb");
 var api_commons_asm_pb = require("../../../api/commons/asm_pb");
 var api_commons_omnichannel_pb = require("../../../api/commons/omnichannel_pb");
 var api_v1alpha1_asm_service_pb = require("../../../api/v1alpha1/asm/service_pb");
@@ -29,7 +28,7 @@ Asm.ManagerStreamAgentState = {
   requestStream: false,
   responseStream: true,
   requestType: api_v1alpha1_asm_service_pb.ManagerStreamAgentStateReq,
-  responseType: api_commons_acd_pb.AgentState
+  responseType: api_commons_asm_pb.ManagerStreamAgentStateRes
 };
 
 Asm.PushEvents = {
