@@ -249,25 +249,3 @@ export namespace AsmResumeEvent {
   }
 }
 
-export class AsmConversationPulledEvent extends jspb.Message {
-  hasConversation(): boolean;
-  clearConversation(): void;
-  getConversation(): api_commons_omnichannel_pb.OmniConversation | undefined;
-  setConversation(value?: api_commons_omnichannel_pb.OmniConversation): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AsmConversationPulledEvent.AsObject;
-  static toObject(includeInstance: boolean, msg: AsmConversationPulledEvent): AsmConversationPulledEvent.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AsmConversationPulledEvent, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AsmConversationPulledEvent;
-  static deserializeBinaryFromReader(message: AsmConversationPulledEvent, reader: jspb.BinaryReader): AsmConversationPulledEvent;
-}
-
-export namespace AsmConversationPulledEvent {
-  export type AsObject = {
-    conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
-  }
-}
-

@@ -323,11 +323,6 @@ export class AuditEvent extends jspb.Message {
   getAsmResumeEvent(): api_commons_audit_asm_events_pb.AsmResumeEvent | undefined;
   setAsmResumeEvent(value?: api_commons_audit_asm_events_pb.AsmResumeEvent): void;
 
-  hasAsmConversationPulledEvent(): boolean;
-  clearAsmConversationPulledEvent(): void;
-  getAsmConversationPulledEvent(): api_commons_audit_asm_events_pb.AsmConversationPulledEvent | undefined;
-  setAsmConversationPulledEvent(value?: api_commons_audit_asm_events_pb.AsmConversationPulledEvent): void;
-
   hasScorecardsCreateQuestionEvent(): boolean;
   clearScorecardsCreateQuestionEvent(): void;
   getScorecardsCreateQuestionEvent(): api_commons_audit_scorecards_events_pb.ScorecardsCreateQuestionEvent | undefined;
@@ -535,7 +530,6 @@ export namespace AuditEvent {
     asmAgentLogoutEvent?: api_commons_audit_asm_events_pb.AsmAgentLogoutEvent.AsObject,
     asmPauseEvent?: api_commons_audit_asm_events_pb.AsmPauseEvent.AsObject,
     asmResumeEvent?: api_commons_audit_asm_events_pb.AsmResumeEvent.AsObject,
-    asmConversationPulledEvent?: api_commons_audit_asm_events_pb.AsmConversationPulledEvent.AsObject,
     scorecardsCreateQuestionEvent?: api_commons_audit_scorecards_events_pb.ScorecardsCreateQuestionEvent.AsObject,
     scorecardsUpdateQuestionEvent?: api_commons_audit_scorecards_events_pb.ScorecardsUpdateQuestionEvent.AsObject,
     scorecardsDeleteQuestionEvent?: api_commons_audit_scorecards_events_pb.ScorecardsDeleteQuestionEvent.AsObject,
@@ -624,7 +618,6 @@ export namespace AuditEvent {
     ASM_AGENT_LOGOUT_EVENT = 406,
     ASM_PAUSE_EVENT = 407,
     ASM_RESUME_EVENT = 408,
-    ASM_CONVERSATION_PULLED_EVENT = 409,
     SCORECARDS_CREATE_QUESTION_EVENT = 500,
     SCORECARDS_UPDATE_QUESTION_EVENT = 501,
     SCORECARDS_DELETE_QUESTION_EVENT = 502,

@@ -2,6 +2,7 @@
 // file: api/v1alpha1/asm/public_service.proto
 
 import * as api_v1alpha1_asm_public_service_pb from "../../../api/v1alpha1/asm/public_service_pb";
+import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
 import * as api_commons_asm_pb from "../../../api/commons/asm_pb";
 import * as api_commons_omnichannel_pb from "../../../api/commons/omnichannel_pb";
 import * as api_v1alpha1_asm_service_pb from "../../../api/v1alpha1/asm/service_pb";
@@ -22,7 +23,7 @@ type AsmManagerStreamAgentState = {
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_v1alpha1_asm_service_pb.ManagerStreamAgentStateReq;
-  readonly responseType: typeof api_commons_asm_pb.ManagerStreamAgentStateRes;
+  readonly responseType: typeof api_commons_acd_pb.AgentState;
 };
 
 type AsmPushEvents = {
@@ -174,7 +175,7 @@ export class AsmClient {
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
   streamAgentState(requestMessage: api_v1alpha1_asm_service_pb.StreamAgentStateReq, metadata?: grpc.Metadata): ResponseStream<api_commons_asm_pb.StreamAgentStateRes>;
-  managerStreamAgentState(requestMessage: api_v1alpha1_asm_service_pb.ManagerStreamAgentStateReq, metadata?: grpc.Metadata): ResponseStream<api_commons_asm_pb.ManagerStreamAgentStateRes>;
+  managerStreamAgentState(requestMessage: api_v1alpha1_asm_service_pb.ManagerStreamAgentStateReq, metadata?: grpc.Metadata): ResponseStream<api_commons_acd_pb.AgentState>;
   pushEvents(
     requestMessage: api_v1alpha1_asm_service_pb.PushEventsReq,
     metadata: grpc.Metadata,

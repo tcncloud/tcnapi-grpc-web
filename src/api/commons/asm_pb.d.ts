@@ -208,41 +208,6 @@ export namespace StreamAgentStateRes {
   }
 }
 
-export class ManagerStreamAgentStateRes extends jspb.Message {
-  hasState(): boolean;
-  clearState(): void;
-  getState(): api_commons_acd_pb.AgentState | undefined;
-  setState(value?: api_commons_acd_pb.AgentState): void;
-
-  hasHeartBeat(): boolean;
-  clearHeartBeat(): void;
-  getHeartBeat(): KeepAlive | undefined;
-  setHeartBeat(value?: KeepAlive): void;
-
-  getManagerAgentStateCase(): ManagerStreamAgentStateRes.ManagerAgentStateCase;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ManagerStreamAgentStateRes.AsObject;
-  static toObject(includeInstance: boolean, msg: ManagerStreamAgentStateRes): ManagerStreamAgentStateRes.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ManagerStreamAgentStateRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ManagerStreamAgentStateRes;
-  static deserializeBinaryFromReader(message: ManagerStreamAgentStateRes, reader: jspb.BinaryReader): ManagerStreamAgentStateRes;
-}
-
-export namespace ManagerStreamAgentStateRes {
-  export type AsObject = {
-    state?: api_commons_acd_pb.AgentState.AsObject,
-    heartBeat?: KeepAlive.AsObject,
-  }
-
-  export enum ManagerAgentStateCase {
-    MANAGER_AGENT_STATE_NOT_SET = 0,
-    STATE = 1,
-    HEART_BEAT = 2,
-  }
-}
-
 export class KeepAlive extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): KeepAlive.AsObject;
