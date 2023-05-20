@@ -21,6 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var annotations_authz_pb = require('../../annotations/authz_pb.js');
+goog.object.extend(proto, annotations_authz_pb);
 var api_commons_ana_pb = require('../../api/commons/ana_pb.js');
 goog.object.extend(proto, api_commons_ana_pb);
 var api_commons_ana_charts_pb = require('../../api/commons/ana_charts_pb.js');
