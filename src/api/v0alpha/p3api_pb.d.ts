@@ -2,6 +2,7 @@
 // file: api/v0alpha/p3api.proto
 
 import * as jspb from "google-protobuf";
+import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as api_commons_acd_pb from "../../api/commons/acd_pb";
 import * as api_commons_broadcasts_pb from "../../api/commons/broadcasts_pb";
 import * as api_commons_call_pb from "../../api/commons/call_pb";

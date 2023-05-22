@@ -2,6 +2,7 @@
 // file: api/v0alpha/org.proto
 
 import * as jspb from "google-protobuf";
+import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as api_commons_ana_pb from "../../api/commons/ana_pb";
 import * as api_commons_audit_event_types_pb from "../../api/commons/audit/event_types_pb";
 import * as api_commons_auth_perms_pb from "../../api/commons/auth/perms_pb";

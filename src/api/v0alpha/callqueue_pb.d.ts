@@ -2,6 +2,7 @@
 // file: api/v0alpha/callqueue.proto
 
 import * as jspb from "google-protobuf";
+import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as api_commons_call_pb from "../../api/commons/call_pb";
 import * as api_commons_sms_pb from "../../api/commons/sms_pb";
 import * as api_v0alpha_p3api_pb from "../../api/v0alpha/p3api_pb";
