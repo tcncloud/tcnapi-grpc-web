@@ -2,6 +2,7 @@
 // file: api/v0alpha/smsapi.proto
 
 import * as jspb from "google-protobuf";
+import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as api_commons_sms_pb from "../../api/commons/sms_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
