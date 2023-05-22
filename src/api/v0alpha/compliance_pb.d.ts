@@ -28,8 +28,8 @@ export class ProcessOutboundCallReq extends jspb.Message {
   getSourceId(): number;
   setSourceId(value: number): void;
 
-  getSourceField(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
-  setSourceField(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+  getSourceField(): string;
+  setSourceField(value: string): void;
 
   getCallerId(): string;
   setCallerId(value: string): void;
@@ -51,36 +51,8 @@ export namespace ProcessOutboundCallReq {
     phoneNumber: string,
     callMetadataMap: Array<[string, string]>,
     sourceId: number,
-    sourceField: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+    sourceField: string,
     callerId: string,
-  }
-}
-
-export class RuleResponse extends jspb.Message {
-  getRuleText(): string;
-  setRuleText(value: string): void;
-
-  getPermit(): boolean;
-  setPermit(value: boolean): void;
-
-  getPluginResponse(): string;
-  setPluginResponse(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RuleResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: RuleResponse): RuleResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: RuleResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RuleResponse;
-  static deserializeBinaryFromReader(message: RuleResponse, reader: jspb.BinaryReader): RuleResponse;
-}
-
-export namespace RuleResponse {
-  export type AsObject = {
-    ruleText: string,
-    permit: boolean,
-    pluginResponse: string,
   }
 }
 
@@ -89,9 +61,9 @@ export class ProcessRes extends jspb.Message {
   setPermit(value: boolean): void;
 
   clearRuleResponsesList(): void;
-  getRuleResponsesList(): Array<RuleResponse>;
-  setRuleResponsesList(value: Array<RuleResponse>): void;
-  addRuleResponses(value?: RuleResponse, index?: number): RuleResponse;
+  getRuleResponsesList(): Array<api_commons_compliance_pb.RuleResponse>;
+  setRuleResponsesList(value: Array<api_commons_compliance_pb.RuleResponse>): void;
+  addRuleResponses(value?: api_commons_compliance_pb.RuleResponse, index?: number): api_commons_compliance_pb.RuleResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessRes.AsObject;
@@ -106,7 +78,7 @@ export class ProcessRes extends jspb.Message {
 export namespace ProcessRes {
   export type AsObject = {
     permit: boolean,
-    ruleResponsesList: Array<RuleResponse.AsObject>,
+    ruleResponsesList: Array<api_commons_compliance_pb.RuleResponse.AsObject>,
   }
 }
 

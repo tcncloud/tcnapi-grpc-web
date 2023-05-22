@@ -919,6 +919,34 @@ export namespace ScrubEntryDetails {
   }
 }
 
+export class RuleResponse extends jspb.Message {
+  getRuleText(): string;
+  setRuleText(value: string): void;
+
+  getPermit(): boolean;
+  setPermit(value: boolean): void;
+
+  getPluginResponse(): string;
+  setPluginResponse(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RuleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RuleResponse): RuleResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RuleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RuleResponse;
+  static deserializeBinaryFromReader(message: RuleResponse, reader: jspb.BinaryReader): RuleResponse;
+}
+
+export namespace RuleResponse {
+  export type AsObject = {
+    ruleText: string,
+    permit: boolean,
+    pluginResponse: string,
+  }
+}
+
 export interface VerbMap {
   V_UNKNOWN: 0;
   V_ALLOW: 1;
