@@ -33,15 +33,6 @@ type OmniApiGetCampaignById = {
   readonly responseType: typeof api_commons_omnichannel_pb.OmniCampaign;
 };
 
-type OmniApiListCampaigns = {
-  readonly methodName: string;
-  readonly service: typeof OmniApi;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_omniapi_pb.ListCampaignsReq;
-  readonly responseType: typeof api_v0alpha_omniapi_pb.ListCampaignsRes;
-};
-
 type OmniApiPauseCampaign = {
   readonly methodName: string;
   readonly service: typeof OmniApi;
@@ -78,33 +69,6 @@ type OmniApiUpdateCampaignPacingSpeed = {
   readonly responseType: typeof api_v0alpha_omniapi_pb.UpdateCampaignPacingSpeedRes;
 };
 
-type OmniApiGetOffLoadedTextMessage = {
-  readonly methodName: string;
-  readonly service: typeof OmniApi;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_omniapi_pb.GetOffLoadedTextMessageReq;
-  readonly responseType: typeof api_v0alpha_omniapi_pb.GetOffLoadedTextMessageRes;
-};
-
-type OmniApiManagerListMessages = {
-  readonly methodName: string;
-  readonly service: typeof OmniApi;
-  readonly requestStream: false;
-  readonly responseStream: true;
-  readonly requestType: typeof api_v0alpha_omniapi_pb.ManagerListMessagesReq;
-  readonly responseType: typeof api_commons_omnichannel_pb.OmniMessage;
-};
-
-type OmniApiListMessages = {
-  readonly methodName: string;
-  readonly service: typeof OmniApi;
-  readonly requestStream: false;
-  readonly responseStream: true;
-  readonly requestType: typeof api_v0alpha_omniapi_pb.ListMessagesReq;
-  readonly responseType: typeof api_commons_omnichannel_pb.OmniMessage;
-};
-
 type OmniApiSendOmniMessage = {
   readonly methodName: string;
   readonly service: typeof OmniApi;
@@ -121,24 +85,6 @@ type OmniApiManagerSendOmniMessage = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_omniapi_pb.SendOmniMessageReq;
   readonly responseType: typeof api_commons_types_pb.Empty;
-};
-
-type OmniApiManagerListConversations = {
-  readonly methodName: string;
-  readonly service: typeof OmniApi;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_omniapi_pb.ListConversationsReq;
-  readonly responseType: typeof api_v0alpha_omniapi_pb.ListConversationsRes;
-};
-
-type OmniApiSuggestResponse = {
-  readonly methodName: string;
-  readonly service: typeof OmniApi;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_omniapi_pb.SuggestResponseReq;
-  readonly responseType: typeof api_v0alpha_omniapi_pb.SuggestResponseRes;
 };
 
 type OmniApiCreateDisposition = {
@@ -211,6 +157,42 @@ type OmniApiDeleteCustomUnsubscribeLink = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_omniapi_pb.DeleteCustomUnsubscribeLinkReq;
   readonly responseType: typeof api_commons_types_pb.Empty;
+};
+
+type OmniApiListCampaigns = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.ListCampaignsReq;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.ListCampaignsRes;
+};
+
+type OmniApiManagerListMessages = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: true;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.ManagerListMessagesReq;
+  readonly responseType: typeof api_commons_omnichannel_pb.OmniMessage;
+};
+
+type OmniApiListMessages = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: true;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.ListMessagesReq;
+  readonly responseType: typeof api_commons_omnichannel_pb.OmniMessage;
+};
+
+type OmniApiManagerListConversations = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.ListConversationsReq;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.ListConversationsRes;
 };
 
 type OmniApiListContactLists = {
@@ -321,15 +303,6 @@ type OmniApiCreateVerifiedEmail = {
   readonly responseType: typeof api_v0alpha_omniapi_pb.CreateVerifiedEmailRes;
 };
 
-type OmniApiSendEmailNotification = {
-  readonly methodName: string;
-  readonly service: typeof OmniApi;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_omniapi_pb.SendEmailNotificationReq;
-  readonly responseType: typeof api_v0alpha_omniapi_pb.SendEmailNotificationRes;
-};
-
 type OmniApiDeleteVerifiedEmail = {
   readonly methodName: string;
   readonly service: typeof OmniApi;
@@ -382,6 +355,15 @@ type OmniApiGetPendingGoogleXOAuth2Data = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_omniapi_pb.GetPendingGoogleXOAuth2DataReq;
   readonly responseType: typeof api_v0alpha_omniapi_pb.GetPendingGoogleXOAuth2DataRes;
+};
+
+type OmniApiSendEmailNotification = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.SendEmailNotificationReq;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.SendEmailNotificationRes;
 };
 
 type OmniApiSendFeedbackEmail = {
@@ -445,6 +427,15 @@ type OmniApiUpdateSignature = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_omniapi_pb.UpdateSignatureReq;
   readonly responseType: typeof api_v0alpha_omniapi_pb.UpdateSignatureRes;
+};
+
+type OmniApiSuggestResponse = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.SuggestResponseReq;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.SuggestResponseRes;
 };
 
 type OmniApiCreateProject = {
@@ -596,18 +587,12 @@ export class OmniApi {
   static readonly ArchiveCampaign: OmniApiArchiveCampaign;
   static readonly CreateCampaign: OmniApiCreateCampaign;
   static readonly GetCampaignById: OmniApiGetCampaignById;
-  static readonly ListCampaigns: OmniApiListCampaigns;
   static readonly PauseCampaign: OmniApiPauseCampaign;
   static readonly ResumeCampaign: OmniApiResumeCampaign;
   static readonly UpdateCampaign: OmniApiUpdateCampaign;
   static readonly UpdateCampaignPacingSpeed: OmniApiUpdateCampaignPacingSpeed;
-  static readonly GetOffLoadedTextMessage: OmniApiGetOffLoadedTextMessage;
-  static readonly ManagerListMessages: OmniApiManagerListMessages;
-  static readonly ListMessages: OmniApiListMessages;
   static readonly SendOmniMessage: OmniApiSendOmniMessage;
   static readonly ManagerSendOmniMessage: OmniApiManagerSendOmniMessage;
-  static readonly ManagerListConversations: OmniApiManagerListConversations;
-  static readonly SuggestResponse: OmniApiSuggestResponse;
   static readonly CreateDisposition: OmniApiCreateDisposition;
   static readonly DeleteDisposition: OmniApiDeleteDisposition;
   static readonly ListDispositions: OmniApiListDispositions;
@@ -616,6 +601,10 @@ export class OmniApi {
   static readonly CreateCustomUnsubscribeLink: OmniApiCreateCustomUnsubscribeLink;
   static readonly UpdateCustomUnsubscribeLink: OmniApiUpdateCustomUnsubscribeLink;
   static readonly DeleteCustomUnsubscribeLink: OmniApiDeleteCustomUnsubscribeLink;
+  static readonly ListCampaigns: OmniApiListCampaigns;
+  static readonly ManagerListMessages: OmniApiManagerListMessages;
+  static readonly ListMessages: OmniApiListMessages;
+  static readonly ManagerListConversations: OmniApiManagerListConversations;
   static readonly ListContactLists: OmniApiListContactLists;
   static readonly GetAvailableHeaders: OmniApiGetAvailableHeaders;
   static readonly GetTask: OmniApiGetTask;
@@ -628,13 +617,13 @@ export class OmniApi {
   static readonly TestConnectedInbox: OmniApiTestConnectedInbox;
   static readonly UpdateConnectedInbox: OmniApiUpdateConnectedInbox;
   static readonly CreateVerifiedEmail: OmniApiCreateVerifiedEmail;
-  static readonly SendEmailNotification: OmniApiSendEmailNotification;
   static readonly DeleteVerifiedEmail: OmniApiDeleteVerifiedEmail;
   static readonly GetVerifiedEmailBySid: OmniApiGetVerifiedEmailBySid;
   static readonly ListVerifiedEmails: OmniApiListVerifiedEmails;
   static readonly ResendVerifiedEmail: OmniApiResendVerifiedEmail;
   static readonly UpdateVerifiedEmail: OmniApiUpdateVerifiedEmail;
   static readonly GetPendingGoogleXOAuth2Data: OmniApiGetPendingGoogleXOAuth2Data;
+  static readonly SendEmailNotification: OmniApiSendEmailNotification;
   static readonly SendFeedbackEmail: OmniApiSendFeedbackEmail;
   static readonly GetOmniAttachment: OmniApiGetOmniAttachment;
   static readonly CreateTasks: OmniApiCreateTasks;
@@ -642,6 +631,7 @@ export class OmniApi {
   static readonly DeleteSignature: OmniApiDeleteSignature;
   static readonly ListSignatures: OmniApiListSignatures;
   static readonly UpdateSignature: OmniApiUpdateSignature;
+  static readonly SuggestResponse: OmniApiSuggestResponse;
   static readonly CreateProject: OmniApiCreateProject;
   static readonly ListProjects: OmniApiListProjects;
   static readonly EditProjectById: OmniApiEditProjectById;
@@ -719,15 +709,6 @@ export class OmniApiClient {
     requestMessage: api_v0alpha_omniapi_pb.GetCampaignByIdReq,
     callback: (error: ServiceError|null, responseMessage: api_commons_omnichannel_pb.OmniCampaign|null) => void
   ): UnaryResponse;
-  listCampaigns(
-    requestMessage: api_v0alpha_omniapi_pb.ListCampaignsReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListCampaignsRes|null) => void
-  ): UnaryResponse;
-  listCampaigns(
-    requestMessage: api_v0alpha_omniapi_pb.ListCampaignsReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListCampaignsRes|null) => void
-  ): UnaryResponse;
   pauseCampaign(
     requestMessage: api_v0alpha_omniapi_pb.PauseCampaignReq,
     metadata: grpc.Metadata,
@@ -764,35 +745,107 @@ export class OmniApiClient {
     requestMessage: api_v0alpha_omniapi_pb.UpdateCampaignPacingSpeedReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.UpdateCampaignPacingSpeedRes|null) => void
   ): UnaryResponse;
-  getOffLoadedTextMessage(
-    requestMessage: api_v0alpha_omniapi_pb.GetOffLoadedTextMessageReq,
+  sendOmniMessage(
+    requestMessage: api_v0alpha_omniapi_pb.SendOmniMessageReq,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.GetOffLoadedTextMessageRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
   ): UnaryResponse;
-  getOffLoadedTextMessage(
-    requestMessage: api_v0alpha_omniapi_pb.GetOffLoadedTextMessageReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.GetOffLoadedTextMessageRes|null) => void
+  sendOmniMessage(
+    requestMessage: api_v0alpha_omniapi_pb.SendOmniMessageReq,
+    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
+  ): UnaryResponse;
+  managerSendOmniMessage(
+    requestMessage: api_v0alpha_omniapi_pb.SendOmniMessageReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
+  ): UnaryResponse;
+  managerSendOmniMessage(
+    requestMessage: api_v0alpha_omniapi_pb.SendOmniMessageReq,
+    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
+  ): UnaryResponse;
+  createDisposition(
+    requestMessage: api_v0alpha_omniapi_pb.CreateDispositionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CreateDispositionRes|null) => void
+  ): UnaryResponse;
+  createDisposition(
+    requestMessage: api_v0alpha_omniapi_pb.CreateDispositionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CreateDispositionRes|null) => void
+  ): UnaryResponse;
+  deleteDisposition(
+    requestMessage: api_v0alpha_omniapi_pb.DeleteDispositionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
+  ): UnaryResponse;
+  deleteDisposition(
+    requestMessage: api_v0alpha_omniapi_pb.DeleteDispositionReq,
+    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
+  ): UnaryResponse;
+  listDispositions(
+    requestMessage: api_v0alpha_omniapi_pb.ListDispositionsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListDispositionsRes|null) => void
+  ): UnaryResponse;
+  listDispositions(
+    requestMessage: api_v0alpha_omniapi_pb.ListDispositionsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListDispositionsRes|null) => void
+  ): UnaryResponse;
+  updateDisposition(
+    requestMessage: api_v0alpha_omniapi_pb.UpdateDispositionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
+  ): UnaryResponse;
+  updateDisposition(
+    requestMessage: api_v0alpha_omniapi_pb.UpdateDispositionReq,
+    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
+  ): UnaryResponse;
+  listCustomUnsubscribeLinks(
+    requestMessage: api_commons_types_pb.Empty,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListCustomUnsubscribeLinksRes|null) => void
+  ): UnaryResponse;
+  listCustomUnsubscribeLinks(
+    requestMessage: api_commons_types_pb.Empty,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListCustomUnsubscribeLinksRes|null) => void
+  ): UnaryResponse;
+  createCustomUnsubscribeLink(
+    requestMessage: api_commons_omnichannel_pb.OmniCustomUnsubscribeLink,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CreateCustomUnsubscribeLinkRes|null) => void
+  ): UnaryResponse;
+  createCustomUnsubscribeLink(
+    requestMessage: api_commons_omnichannel_pb.OmniCustomUnsubscribeLink,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CreateCustomUnsubscribeLinkRes|null) => void
+  ): UnaryResponse;
+  updateCustomUnsubscribeLink(
+    requestMessage: api_v0alpha_omniapi_pb.UpdateCustomUnsubscribeLinkReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.UpdateCustomUnsubscribeLinkRes|null) => void
+  ): UnaryResponse;
+  updateCustomUnsubscribeLink(
+    requestMessage: api_v0alpha_omniapi_pb.UpdateCustomUnsubscribeLinkReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.UpdateCustomUnsubscribeLinkRes|null) => void
+  ): UnaryResponse;
+  deleteCustomUnsubscribeLink(
+    requestMessage: api_v0alpha_omniapi_pb.DeleteCustomUnsubscribeLinkReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
+  ): UnaryResponse;
+  deleteCustomUnsubscribeLink(
+    requestMessage: api_v0alpha_omniapi_pb.DeleteCustomUnsubscribeLinkReq,
+    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
+  ): UnaryResponse;
+  listCampaigns(
+    requestMessage: api_v0alpha_omniapi_pb.ListCampaignsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListCampaignsRes|null) => void
+  ): UnaryResponse;
+  listCampaigns(
+    requestMessage: api_v0alpha_omniapi_pb.ListCampaignsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListCampaignsRes|null) => void
   ): UnaryResponse;
   managerListMessages(requestMessage: api_v0alpha_omniapi_pb.ManagerListMessagesReq, metadata?: grpc.Metadata): ResponseStream<api_commons_omnichannel_pb.OmniMessage>;
   listMessages(requestMessage: api_v0alpha_omniapi_pb.ListMessagesReq, metadata?: grpc.Metadata): ResponseStream<api_commons_omnichannel_pb.OmniMessage>;
-  sendOmniMessage(
-    requestMessage: api_v0alpha_omniapi_pb.SendOmniMessageReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
-  ): UnaryResponse;
-  sendOmniMessage(
-    requestMessage: api_v0alpha_omniapi_pb.SendOmniMessageReq,
-    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
-  ): UnaryResponse;
-  managerSendOmniMessage(
-    requestMessage: api_v0alpha_omniapi_pb.SendOmniMessageReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
-  ): UnaryResponse;
-  managerSendOmniMessage(
-    requestMessage: api_v0alpha_omniapi_pb.SendOmniMessageReq,
-    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
-  ): UnaryResponse;
   managerListConversations(
     requestMessage: api_v0alpha_omniapi_pb.ListConversationsReq,
     metadata: grpc.Metadata,
@@ -801,87 +854,6 @@ export class OmniApiClient {
   managerListConversations(
     requestMessage: api_v0alpha_omniapi_pb.ListConversationsReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListConversationsRes|null) => void
-  ): UnaryResponse;
-  suggestResponse(
-    requestMessage: api_v0alpha_omniapi_pb.SuggestResponseReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.SuggestResponseRes|null) => void
-  ): UnaryResponse;
-  suggestResponse(
-    requestMessage: api_v0alpha_omniapi_pb.SuggestResponseReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.SuggestResponseRes|null) => void
-  ): UnaryResponse;
-  createDisposition(
-    requestMessage: api_v0alpha_omniapi_pb.CreateDispositionReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CreateDispositionRes|null) => void
-  ): UnaryResponse;
-  createDisposition(
-    requestMessage: api_v0alpha_omniapi_pb.CreateDispositionReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CreateDispositionRes|null) => void
-  ): UnaryResponse;
-  deleteDisposition(
-    requestMessage: api_v0alpha_omniapi_pb.DeleteDispositionReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
-  ): UnaryResponse;
-  deleteDisposition(
-    requestMessage: api_v0alpha_omniapi_pb.DeleteDispositionReq,
-    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
-  ): UnaryResponse;
-  listDispositions(
-    requestMessage: api_v0alpha_omniapi_pb.ListDispositionsReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListDispositionsRes|null) => void
-  ): UnaryResponse;
-  listDispositions(
-    requestMessage: api_v0alpha_omniapi_pb.ListDispositionsReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListDispositionsRes|null) => void
-  ): UnaryResponse;
-  updateDisposition(
-    requestMessage: api_v0alpha_omniapi_pb.UpdateDispositionReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
-  ): UnaryResponse;
-  updateDisposition(
-    requestMessage: api_v0alpha_omniapi_pb.UpdateDispositionReq,
-    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
-  ): UnaryResponse;
-  listCustomUnsubscribeLinks(
-    requestMessage: api_commons_types_pb.Empty,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListCustomUnsubscribeLinksRes|null) => void
-  ): UnaryResponse;
-  listCustomUnsubscribeLinks(
-    requestMessage: api_commons_types_pb.Empty,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListCustomUnsubscribeLinksRes|null) => void
-  ): UnaryResponse;
-  createCustomUnsubscribeLink(
-    requestMessage: api_commons_omnichannel_pb.OmniCustomUnsubscribeLink,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CreateCustomUnsubscribeLinkRes|null) => void
-  ): UnaryResponse;
-  createCustomUnsubscribeLink(
-    requestMessage: api_commons_omnichannel_pb.OmniCustomUnsubscribeLink,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CreateCustomUnsubscribeLinkRes|null) => void
-  ): UnaryResponse;
-  updateCustomUnsubscribeLink(
-    requestMessage: api_v0alpha_omniapi_pb.UpdateCustomUnsubscribeLinkReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.UpdateCustomUnsubscribeLinkRes|null) => void
-  ): UnaryResponse;
-  updateCustomUnsubscribeLink(
-    requestMessage: api_v0alpha_omniapi_pb.UpdateCustomUnsubscribeLinkReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.UpdateCustomUnsubscribeLinkRes|null) => void
-  ): UnaryResponse;
-  deleteCustomUnsubscribeLink(
-    requestMessage: api_v0alpha_omniapi_pb.DeleteCustomUnsubscribeLinkReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
-  ): UnaryResponse;
-  deleteCustomUnsubscribeLink(
-    requestMessage: api_v0alpha_omniapi_pb.DeleteCustomUnsubscribeLinkReq,
-    callback: (error: ServiceError|null, responseMessage: api_commons_types_pb.Empty|null) => void
   ): UnaryResponse;
   listContactLists(
     requestMessage: api_v0alpha_omniapi_pb.ListContactListsReq,
@@ -991,15 +963,6 @@ export class OmniApiClient {
     requestMessage: api_commons_omnichannel_pb.VerifiedEmail,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CreateVerifiedEmailRes|null) => void
   ): UnaryResponse;
-  sendEmailNotification(
-    requestMessage: api_v0alpha_omniapi_pb.SendEmailNotificationReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.SendEmailNotificationRes|null) => void
-  ): UnaryResponse;
-  sendEmailNotification(
-    requestMessage: api_v0alpha_omniapi_pb.SendEmailNotificationReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.SendEmailNotificationRes|null) => void
-  ): UnaryResponse;
   deleteVerifiedEmail(
     requestMessage: api_v0alpha_omniapi_pb.DeleteVerifiedEmailReq,
     metadata: grpc.Metadata,
@@ -1053,6 +1016,15 @@ export class OmniApiClient {
   getPendingGoogleXOAuth2Data(
     requestMessage: api_v0alpha_omniapi_pb.GetPendingGoogleXOAuth2DataReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.GetPendingGoogleXOAuth2DataRes|null) => void
+  ): UnaryResponse;
+  sendEmailNotification(
+    requestMessage: api_v0alpha_omniapi_pb.SendEmailNotificationReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.SendEmailNotificationRes|null) => void
+  ): UnaryResponse;
+  sendEmailNotification(
+    requestMessage: api_v0alpha_omniapi_pb.SendEmailNotificationReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.SendEmailNotificationRes|null) => void
   ): UnaryResponse;
   sendFeedbackEmail(
     requestMessage: api_v0alpha_omniapi_pb.SendFeedbackEmailReq,
@@ -1116,6 +1088,15 @@ export class OmniApiClient {
   updateSignature(
     requestMessage: api_v0alpha_omniapi_pb.UpdateSignatureReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.UpdateSignatureRes|null) => void
+  ): UnaryResponse;
+  suggestResponse(
+    requestMessage: api_v0alpha_omniapi_pb.SuggestResponseReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.SuggestResponseRes|null) => void
+  ): UnaryResponse;
+  suggestResponse(
+    requestMessage: api_v0alpha_omniapi_pb.SuggestResponseReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.SuggestResponseRes|null) => void
   ): UnaryResponse;
   createProject(
     requestMessage: api_v0alpha_omniapi_pb.CreateProjectReq,
