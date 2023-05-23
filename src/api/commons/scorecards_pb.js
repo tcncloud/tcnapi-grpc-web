@@ -5951,7 +5951,7 @@ proto.api.commons.Section.prototype.clearAutoQuestionsList = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.Scorecard.repeatedFields_ = [13,19];
+proto.api.commons.Scorecard.repeatedFields_ = [13,19,20];
 
 
 
@@ -6000,7 +6000,7 @@ proto.api.commons.Scorecard.toObject = function(includeInstance, msg) {
     state: jspb.Message.getFieldWithDefault(msg, 15, 0),
     isAdHoc: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
     customFieldKeysList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
-    callType: jspb.Message.getFieldWithDefault(msg, 20, 0)
+    callTypesList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6100,8 +6100,10 @@ proto.api.commons.Scorecard.deserializeBinaryFromReader = function(msg, reader) 
       msg.addCustomFieldKeys(value);
       break;
     case 20:
-      var value = /** @type {!proto.api.commons.CallType.Enum} */ (reader.readEnum());
-      msg.setCallType(value);
+      var values = /** @type {!Array<!proto.api.commons.CallType.Enum>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addCallTypes(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -6239,9 +6241,9 @@ proto.api.commons.Scorecard.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getCallType();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  f = message.getCallTypesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
       20,
       f
     );
@@ -6578,20 +6580,39 @@ proto.api.commons.Scorecard.prototype.clearCustomFieldKeysList = function() {
 
 
 /**
- * optional CallType.Enum call_type = 20;
- * @return {!proto.api.commons.CallType.Enum}
+ * repeated CallType.Enum call_types = 20;
+ * @return {!Array<!proto.api.commons.CallType.Enum>}
  */
-proto.api.commons.Scorecard.prototype.getCallType = function() {
-  return /** @type {!proto.api.commons.CallType.Enum} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
+proto.api.commons.Scorecard.prototype.getCallTypesList = function() {
+  return /** @type {!Array<!proto.api.commons.CallType.Enum>} */ (jspb.Message.getRepeatedField(this, 20));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.CallType.Enum>} value
+ * @return {!proto.api.commons.Scorecard} returns this
+ */
+proto.api.commons.Scorecard.prototype.setCallTypesList = function(value) {
+  return jspb.Message.setField(this, 20, value || []);
 };
 
 
 /**
  * @param {!proto.api.commons.CallType.Enum} value
+ * @param {number=} opt_index
  * @return {!proto.api.commons.Scorecard} returns this
  */
-proto.api.commons.Scorecard.prototype.setCallType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 20, value);
+proto.api.commons.Scorecard.prototype.addCallTypes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 20, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.Scorecard} returns this
+ */
+proto.api.commons.Scorecard.prototype.clearCallTypesList = function() {
+  return this.setCallTypesList([]);
 };
 
 

@@ -801,8 +801,10 @@ export class Scorecard extends jspb.Message {
   setCustomFieldKeysList(value: Array<string>): void;
   addCustomFieldKeys(value: string, index?: number): string;
 
-  getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
-  setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+  clearCallTypesList(): void;
+  getCallTypesList(): Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>;
+  setCallTypesList(value: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>): void;
+  addCallTypes(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap], index?: number): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Scorecard.AsObject;
@@ -831,7 +833,7 @@ export namespace Scorecard {
     state: ScorecardStateMap[keyof ScorecardStateMap],
     isAdHoc: boolean,
     customFieldKeysList: Array<string>,
-    callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+    callTypesList: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>,
   }
 }
 
