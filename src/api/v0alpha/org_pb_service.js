@@ -325,13 +325,13 @@ Org.UpdateUserPassword = {
   responseType: api_v0alpha_org_pb.UpdateUserPasswordResponse
 };
 
-Org.UpdateUserPasswordByUserId = {
-  methodName: "UpdateUserPasswordByUserId",
+Org.UpdateMyUserPassword = {
+  methodName: "UpdateMyUserPassword",
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_org_pb.UpdateUserPasswordByUserIdRequest,
-  responseType: api_v0alpha_org_pb.UpdateUserPasswordByUserIdResponse
+  requestType: api_v0alpha_org_pb.UpdateMyUserPasswordRequest,
+  responseType: api_v0alpha_org_pb.UpdateMyUserPasswordResponse
 };
 
 Org.UpdateUserPasswordByOrgId = {
@@ -352,15 +352,6 @@ Org.ResetUserRequirePasswordReset = {
   responseType: api_v0alpha_org_pb.ResetUserRequirePasswordResetResponse
 };
 
-Org.GetMyUserPasswordResetLink = {
-  methodName: "GetMyUserPasswordResetLink",
-  service: Org,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_org_pb.GetMyUserPasswordResetLinkRequest,
-  responseType: api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse
-};
-
 Org.GetUserPasswordResetLink = {
   methodName: "GetUserPasswordResetLink",
   service: Org,
@@ -368,6 +359,15 @@ Org.GetUserPasswordResetLink = {
   responseStream: false,
   requestType: api_v0alpha_org_pb.GetUserPasswordResetLinkRequest,
   responseType: api_v0alpha_org_pb.GetUserPasswordResetLinkResponse
+};
+
+Org.GetMyUserPasswordResetLink = {
+  methodName: "GetMyUserPasswordResetLink",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.GetMyUserPasswordResetLinkRequest,
+  responseType: api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse
 };
 
 Org.GetUserPasswordResetLinkByOrgId = {
@@ -2909,11 +2909,11 @@ OrgClient.prototype.updateUserPassword = function updateUserPassword(requestMess
   };
 };
 
-OrgClient.prototype.updateUserPasswordByUserId = function updateUserPasswordByUserId(requestMessage, metadata, callback) {
+OrgClient.prototype.updateMyUserPassword = function updateMyUserPassword(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.UpdateUserPasswordByUserId, {
+  var client = grpc.unary(Org.UpdateMyUserPassword, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -3002,11 +3002,11 @@ OrgClient.prototype.resetUserRequirePasswordReset = function resetUserRequirePas
   };
 };
 
-OrgClient.prototype.getMyUserPasswordResetLink = function getMyUserPasswordResetLink(requestMessage, metadata, callback) {
+OrgClient.prototype.getUserPasswordResetLink = function getUserPasswordResetLink(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.GetMyUserPasswordResetLink, {
+  var client = grpc.unary(Org.GetUserPasswordResetLink, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -3033,11 +3033,11 @@ OrgClient.prototype.getMyUserPasswordResetLink = function getMyUserPasswordReset
   };
 };
 
-OrgClient.prototype.getUserPasswordResetLink = function getUserPasswordResetLink(requestMessage, metadata, callback) {
+OrgClient.prototype.getMyUserPasswordResetLink = function getMyUserPasswordResetLink(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.GetUserPasswordResetLink, {
+  var client = grpc.unary(Org.GetMyUserPasswordResetLink, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

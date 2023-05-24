@@ -319,13 +319,13 @@ type OrgUpdateUserPassword = {
   readonly responseType: typeof api_v0alpha_org_pb.UpdateUserPasswordResponse;
 };
 
-type OrgUpdateUserPasswordByUserId = {
+type OrgUpdateMyUserPassword = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_org_pb.UpdateUserPasswordByUserIdRequest;
-  readonly responseType: typeof api_v0alpha_org_pb.UpdateUserPasswordByUserIdResponse;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateMyUserPasswordRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateMyUserPasswordResponse;
 };
 
 type OrgUpdateUserPasswordByOrgId = {
@@ -346,15 +346,6 @@ type OrgResetUserRequirePasswordReset = {
   readonly responseType: typeof api_v0alpha_org_pb.ResetUserRequirePasswordResetResponse;
 };
 
-type OrgGetMyUserPasswordResetLink = {
-  readonly methodName: string;
-  readonly service: typeof Org;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_org_pb.GetMyUserPasswordResetLinkRequest;
-  readonly responseType: typeof api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse;
-};
-
 type OrgGetUserPasswordResetLink = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -362,6 +353,15 @@ type OrgGetUserPasswordResetLink = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_org_pb.GetUserPasswordResetLinkRequest;
   readonly responseType: typeof api_v0alpha_org_pb.GetUserPasswordResetLinkResponse;
+};
+
+type OrgGetMyUserPasswordResetLink = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.GetMyUserPasswordResetLinkRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse;
 };
 
 type OrgGetUserPasswordResetLinkByOrgId = {
@@ -1832,11 +1832,11 @@ export class Org {
   static readonly CreateUserByOrgId: OrgCreateUserByOrgId;
   static readonly CreateDelegatedUser: OrgCreateDelegatedUser;
   static readonly UpdateUserPassword: OrgUpdateUserPassword;
-  static readonly UpdateUserPasswordByUserId: OrgUpdateUserPasswordByUserId;
+  static readonly UpdateMyUserPassword: OrgUpdateMyUserPassword;
   static readonly UpdateUserPasswordByOrgId: OrgUpdateUserPasswordByOrgId;
   static readonly ResetUserRequirePasswordReset: OrgResetUserRequirePasswordReset;
-  static readonly GetMyUserPasswordResetLink: OrgGetMyUserPasswordResetLink;
   static readonly GetUserPasswordResetLink: OrgGetUserPasswordResetLink;
+  static readonly GetMyUserPasswordResetLink: OrgGetMyUserPasswordResetLink;
   static readonly GetUserPasswordResetLinkByOrgId: OrgGetUserPasswordResetLinkByOrgId;
   static readonly GetUserEmailVerified: OrgGetUserEmailVerified;
   static readonly GetUserEmailVerifiedByOrgId: OrgGetUserEmailVerifiedByOrgId;
@@ -2329,14 +2329,14 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.UpdateUserPasswordRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserPasswordResponse|null) => void
   ): UnaryResponse;
-  updateUserPasswordByUserId(
-    requestMessage: api_v0alpha_org_pb.UpdateUserPasswordByUserIdRequest,
+  updateMyUserPassword(
+    requestMessage: api_v0alpha_org_pb.UpdateMyUserPasswordRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserPasswordByUserIdResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateMyUserPasswordResponse|null) => void
   ): UnaryResponse;
-  updateUserPasswordByUserId(
-    requestMessage: api_v0alpha_org_pb.UpdateUserPasswordByUserIdRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserPasswordByUserIdResponse|null) => void
+  updateMyUserPassword(
+    requestMessage: api_v0alpha_org_pb.UpdateMyUserPasswordRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateMyUserPasswordResponse|null) => void
   ): UnaryResponse;
   updateUserPasswordByOrgId(
     requestMessage: api_v0alpha_org_pb.UpdateUserPasswordByOrgIdRequest,
@@ -2356,15 +2356,6 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.ResetUserRequirePasswordResetRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ResetUserRequirePasswordResetResponse|null) => void
   ): UnaryResponse;
-  getMyUserPasswordResetLink(
-    requestMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse|null) => void
-  ): UnaryResponse;
-  getMyUserPasswordResetLink(
-    requestMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse|null) => void
-  ): UnaryResponse;
   getUserPasswordResetLink(
     requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkRequest,
     metadata: grpc.Metadata,
@@ -2373,6 +2364,15 @@ export class OrgClient {
   getUserPasswordResetLink(
     requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkResponse|null) => void
+  ): UnaryResponse;
+  getMyUserPasswordResetLink(
+    requestMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse|null) => void
+  ): UnaryResponse;
+  getMyUserPasswordResetLink(
+    requestMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse|null) => void
   ): UnaryResponse;
   getUserPasswordResetLinkByOrgId(
     requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByOrgIdRequest,

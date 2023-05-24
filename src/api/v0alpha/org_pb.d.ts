@@ -10476,6 +10476,9 @@ export namespace CreateUserByOrgIdResponse {
 }
 
 export class UpdateUserPasswordRequest extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
   getPassword(): string;
   setPassword(value: string): void;
 
@@ -10494,6 +10497,7 @@ export class UpdateUserPasswordRequest extends jspb.Message {
 
 export namespace UpdateUserPasswordRequest {
   export type AsObject = {
+    userId: string,
     password: string,
     currentPassword: string,
   }
@@ -10515,10 +10519,7 @@ export namespace UpdateUserPasswordResponse {
   }
 }
 
-export class UpdateUserPasswordByUserIdRequest extends jspb.Message {
-  getUserId(): string;
-  setUserId(value: string): void;
-
+export class UpdateMyUserPasswordRequest extends jspb.Message {
   getPassword(): string;
   setPassword(value: string): void;
 
@@ -10526,35 +10527,34 @@ export class UpdateUserPasswordByUserIdRequest extends jspb.Message {
   setCurrentPassword(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateUserPasswordByUserIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateUserPasswordByUserIdRequest): UpdateUserPasswordByUserIdRequest.AsObject;
+  toObject(includeInstance?: boolean): UpdateMyUserPasswordRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateMyUserPasswordRequest): UpdateMyUserPasswordRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateUserPasswordByUserIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateUserPasswordByUserIdRequest;
-  static deserializeBinaryFromReader(message: UpdateUserPasswordByUserIdRequest, reader: jspb.BinaryReader): UpdateUserPasswordByUserIdRequest;
+  static serializeBinaryToWriter(message: UpdateMyUserPasswordRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateMyUserPasswordRequest;
+  static deserializeBinaryFromReader(message: UpdateMyUserPasswordRequest, reader: jspb.BinaryReader): UpdateMyUserPasswordRequest;
 }
 
-export namespace UpdateUserPasswordByUserIdRequest {
+export namespace UpdateMyUserPasswordRequest {
   export type AsObject = {
-    userId: string,
     password: string,
     currentPassword: string,
   }
 }
 
-export class UpdateUserPasswordByUserIdResponse extends jspb.Message {
+export class UpdateMyUserPasswordResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateUserPasswordByUserIdResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateUserPasswordByUserIdResponse): UpdateUserPasswordByUserIdResponse.AsObject;
+  toObject(includeInstance?: boolean): UpdateMyUserPasswordResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateMyUserPasswordResponse): UpdateMyUserPasswordResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateUserPasswordByUserIdResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateUserPasswordByUserIdResponse;
-  static deserializeBinaryFromReader(message: UpdateUserPasswordByUserIdResponse, reader: jspb.BinaryReader): UpdateUserPasswordByUserIdResponse;
+  static serializeBinaryToWriter(message: UpdateMyUserPasswordResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateMyUserPasswordResponse;
+  static deserializeBinaryFromReader(message: UpdateMyUserPasswordResponse, reader: jspb.BinaryReader): UpdateMyUserPasswordResponse;
 }
 
-export namespace UpdateUserPasswordByUserIdResponse {
+export namespace UpdateMyUserPasswordResponse {
   export type AsObject = {
   }
 }
@@ -10607,46 +10607,6 @@ export namespace UpdateUserPasswordByOrgIdResponse {
   }
 }
 
-export class GetMyUserPasswordResetLinkRequest extends jspb.Message {
-  getTtl(): number;
-  setTtl(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetMyUserPasswordResetLinkRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetMyUserPasswordResetLinkRequest): GetMyUserPasswordResetLinkRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetMyUserPasswordResetLinkRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetMyUserPasswordResetLinkRequest;
-  static deserializeBinaryFromReader(message: GetMyUserPasswordResetLinkRequest, reader: jspb.BinaryReader): GetMyUserPasswordResetLinkRequest;
-}
-
-export namespace GetMyUserPasswordResetLinkRequest {
-  export type AsObject = {
-    ttl: number,
-  }
-}
-
-export class GetMyUserPasswordResetLinkResponse extends jspb.Message {
-  getUrl(): string;
-  setUrl(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetMyUserPasswordResetLinkResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetMyUserPasswordResetLinkResponse): GetMyUserPasswordResetLinkResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetMyUserPasswordResetLinkResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetMyUserPasswordResetLinkResponse;
-  static deserializeBinaryFromReader(message: GetMyUserPasswordResetLinkResponse, reader: jspb.BinaryReader): GetMyUserPasswordResetLinkResponse;
-}
-
-export namespace GetMyUserPasswordResetLinkResponse {
-  export type AsObject = {
-    url: string,
-  }
-}
-
 export class GetUserPasswordResetLinkRequest extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
@@ -10686,6 +10646,46 @@ export class GetUserPasswordResetLinkResponse extends jspb.Message {
 }
 
 export namespace GetUserPasswordResetLinkResponse {
+  export type AsObject = {
+    url: string,
+  }
+}
+
+export class GetMyUserPasswordResetLinkRequest extends jspb.Message {
+  getTtl(): number;
+  setTtl(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetMyUserPasswordResetLinkRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetMyUserPasswordResetLinkRequest): GetMyUserPasswordResetLinkRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetMyUserPasswordResetLinkRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetMyUserPasswordResetLinkRequest;
+  static deserializeBinaryFromReader(message: GetMyUserPasswordResetLinkRequest, reader: jspb.BinaryReader): GetMyUserPasswordResetLinkRequest;
+}
+
+export namespace GetMyUserPasswordResetLinkRequest {
+  export type AsObject = {
+    ttl: number,
+  }
+}
+
+export class GetMyUserPasswordResetLinkResponse extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetMyUserPasswordResetLinkResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetMyUserPasswordResetLinkResponse): GetMyUserPasswordResetLinkResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetMyUserPasswordResetLinkResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetMyUserPasswordResetLinkResponse;
+  static deserializeBinaryFromReader(message: GetMyUserPasswordResetLinkResponse, reader: jspb.BinaryReader): GetMyUserPasswordResetLinkResponse;
+}
+
+export namespace GetMyUserPasswordResetLinkResponse {
   export type AsObject = {
     url: string,
   }
