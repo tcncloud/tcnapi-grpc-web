@@ -32,6 +32,7 @@ goog.exportSymbol('proto.api.commons.AutoQuestion', null, global);
 goog.exportSymbol('proto.api.commons.AutoQuestion.FlagExpr', null, global);
 goog.exportSymbol('proto.api.commons.AutoQuestion.FlagExpr.Flag', null, global);
 goog.exportSymbol('proto.api.commons.Category', null, global);
+goog.exportSymbol('proto.api.commons.CategoryType', null, global);
 goog.exportSymbol('proto.api.commons.Evaluation', null, global);
 goog.exportSymbol('proto.api.commons.Evaluation.CustomField', null, global);
 goog.exportSymbol('proto.api.commons.EvaluationQuestion', null, global);
@@ -852,7 +853,8 @@ proto.api.commons.Category.toObject = function(includeInstance, msg) {
     skillProfilesList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
     version: jspb.Message.getFieldWithDefault(msg, 7, 0),
     callTypesList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
-    isSystem: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
+    isSystem: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    categoryType: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -924,6 +926,10 @@ proto.api.commons.Category.deserializeBinaryFromReader = function(msg, reader) {
     case 11:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsSystem(value);
+      break;
+    case 12:
+      var value = /** @type {!proto.api.commons.CategoryType} */ (reader.readEnum());
+      msg.setCategoryType(value);
       break;
     default:
       reader.skipField();
@@ -1007,6 +1013,13 @@ proto.api.commons.Category.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       11,
+      f
+    );
+  }
+  f = message.getCategoryType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      12,
       f
     );
   }
@@ -1192,6 +1205,24 @@ proto.api.commons.Category.prototype.getIsSystem = function() {
  */
 proto.api.commons.Category.prototype.setIsSystem = function(value) {
   return jspb.Message.setProto3BooleanField(this, 11, value);
+};
+
+
+/**
+ * optional CategoryType category_type = 12;
+ * @return {!proto.api.commons.CategoryType}
+ */
+proto.api.commons.Category.prototype.getCategoryType = function() {
+  return /** @type {!proto.api.commons.CategoryType} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.CategoryType} value
+ * @return {!proto.api.commons.Category} returns this
+ */
+proto.api.commons.Category.prototype.setCategoryType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 
@@ -5920,7 +5951,7 @@ proto.api.commons.Section.prototype.clearAutoQuestionsList = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.Scorecard.repeatedFields_ = [13,19];
+proto.api.commons.Scorecard.repeatedFields_ = [13,19,20];
 
 
 
@@ -5969,7 +6000,7 @@ proto.api.commons.Scorecard.toObject = function(includeInstance, msg) {
     state: jspb.Message.getFieldWithDefault(msg, 15, 0),
     isAdHoc: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
     customFieldKeysList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
-    callType: jspb.Message.getFieldWithDefault(msg, 20, 0)
+    callTypesList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6069,8 +6100,10 @@ proto.api.commons.Scorecard.deserializeBinaryFromReader = function(msg, reader) 
       msg.addCustomFieldKeys(value);
       break;
     case 20:
-      var value = /** @type {!proto.api.commons.CallType.Enum} */ (reader.readEnum());
-      msg.setCallType(value);
+      var values = /** @type {!Array<!proto.api.commons.CallType.Enum>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addCallTypes(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -6208,9 +6241,9 @@ proto.api.commons.Scorecard.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getCallType();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  f = message.getCallTypesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
       20,
       f
     );
@@ -6547,20 +6580,39 @@ proto.api.commons.Scorecard.prototype.clearCustomFieldKeysList = function() {
 
 
 /**
- * optional CallType.Enum call_type = 20;
- * @return {!proto.api.commons.CallType.Enum}
+ * repeated CallType.Enum call_types = 20;
+ * @return {!Array<!proto.api.commons.CallType.Enum>}
  */
-proto.api.commons.Scorecard.prototype.getCallType = function() {
-  return /** @type {!proto.api.commons.CallType.Enum} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
+proto.api.commons.Scorecard.prototype.getCallTypesList = function() {
+  return /** @type {!Array<!proto.api.commons.CallType.Enum>} */ (jspb.Message.getRepeatedField(this, 20));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.CallType.Enum>} value
+ * @return {!proto.api.commons.Scorecard} returns this
+ */
+proto.api.commons.Scorecard.prototype.setCallTypesList = function(value) {
+  return jspb.Message.setField(this, 20, value || []);
 };
 
 
 /**
  * @param {!proto.api.commons.CallType.Enum} value
+ * @param {number=} opt_index
  * @return {!proto.api.commons.Scorecard} returns this
  */
-proto.api.commons.Scorecard.prototype.setCallType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 20, value);
+proto.api.commons.Scorecard.prototype.addCallTypes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 20, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.Scorecard} returns this
+ */
+proto.api.commons.Scorecard.prototype.clearCallTypesList = function() {
+  return this.setCallTypesList([]);
 };
 
 
@@ -7429,6 +7481,15 @@ proto.api.commons.AutoQuestion.prototype.setRiskLevel = function(value) {
   return jspb.Message.setProto3EnumField(this, 14, value);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.CategoryType = {
+  INVALID: 0,
+  SKILL_CALLS: 1,
+  MANUAL_DIAL: 2
+};
 
 /**
  * @enum {number}
