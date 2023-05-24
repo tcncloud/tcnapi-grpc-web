@@ -1705,6 +1705,15 @@ type OrgAddUserSubscription = {
   readonly responseType: typeof api_v0alpha_org_pb.AddUserSubscriptionResponse;
 };
 
+type OrgAddMyUserSubscription = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.AddMyUserSubscriptionRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.AddMyUserSubscriptionResponse;
+};
+
 type OrgRemoveUserSubscription = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1986,6 +1995,7 @@ export class Org {
   static readonly DeleteAuthConnection: OrgDeleteAuthConnection;
   static readonly GetUserSubscription: OrgGetUserSubscription;
   static readonly AddUserSubscription: OrgAddUserSubscription;
+  static readonly AddMyUserSubscription: OrgAddMyUserSubscription;
   static readonly RemoveUserSubscription: OrgRemoveUserSubscription;
   static readonly RemoveMyUserSubscription: OrgRemoveMyUserSubscription;
   static readonly UpdateUserSubscription: OrgUpdateUserSubscription;
@@ -3714,6 +3724,15 @@ export class OrgClient {
   addUserSubscription(
     requestMessage: api_v0alpha_org_pb.AddUserSubscriptionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.AddUserSubscriptionResponse|null) => void
+  ): UnaryResponse;
+  addMyUserSubscription(
+    requestMessage: api_v0alpha_org_pb.AddMyUserSubscriptionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.AddMyUserSubscriptionResponse|null) => void
+  ): UnaryResponse;
+  addMyUserSubscription(
+    requestMessage: api_v0alpha_org_pb.AddMyUserSubscriptionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.AddMyUserSubscriptionResponse|null) => void
   ): UnaryResponse;
   removeUserSubscription(
     requestMessage: api_v0alpha_org_pb.RemoveUserSubscriptionRequest,

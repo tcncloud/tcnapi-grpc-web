@@ -14184,6 +14184,50 @@ export namespace AddUserSubscriptionResponse {
   }
 }
 
+export class AddMyUserSubscriptionRequest extends jspb.Message {
+  hasSubscription(): boolean;
+  clearSubscription(): void;
+  getSubscription(): UserSubscription | undefined;
+  setSubscription(value?: UserSubscription): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddMyUserSubscriptionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AddMyUserSubscriptionRequest): AddMyUserSubscriptionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddMyUserSubscriptionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddMyUserSubscriptionRequest;
+  static deserializeBinaryFromReader(message: AddMyUserSubscriptionRequest, reader: jspb.BinaryReader): AddMyUserSubscriptionRequest;
+}
+
+export namespace AddMyUserSubscriptionRequest {
+  export type AsObject = {
+    subscription?: UserSubscription.AsObject,
+  }
+}
+
+export class AddMyUserSubscriptionResponse extends jspb.Message {
+  hasSubscription(): boolean;
+  clearSubscription(): void;
+  getSubscription(): UserSubscription | undefined;
+  setSubscription(value?: UserSubscription): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddMyUserSubscriptionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AddMyUserSubscriptionResponse): AddMyUserSubscriptionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddMyUserSubscriptionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddMyUserSubscriptionResponse;
+  static deserializeBinaryFromReader(message: AddMyUserSubscriptionResponse, reader: jspb.BinaryReader): AddMyUserSubscriptionResponse;
+}
+
+export namespace AddMyUserSubscriptionResponse {
+  export type AsObject = {
+    subscription?: UserSubscription.AsObject,
+  }
+}
+
 export class GetUserSubscriptionRequest extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;

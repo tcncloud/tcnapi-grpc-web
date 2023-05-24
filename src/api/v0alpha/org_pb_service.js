@@ -1711,6 +1711,15 @@ Org.AddUserSubscription = {
   responseType: api_v0alpha_org_pb.AddUserSubscriptionResponse
 };
 
+Org.AddMyUserSubscription = {
+  methodName: "AddMyUserSubscription",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.AddMyUserSubscriptionRequest,
+  responseType: api_v0alpha_org_pb.AddMyUserSubscriptionResponse
+};
+
 Org.RemoveUserSubscription = {
   methodName: "RemoveUserSubscription",
   service: Org,
@@ -7657,6 +7666,37 @@ OrgClient.prototype.addUserSubscription = function addUserSubscription(requestMe
     callback = arguments[1];
   }
   var client = grpc.unary(Org.AddUserSubscription, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.addMyUserSubscription = function addMyUserSubscription(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.AddMyUserSubscription, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
