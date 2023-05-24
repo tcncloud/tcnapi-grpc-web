@@ -39,15 +39,6 @@ OmniApi.GetCampaignById = {
   responseType: api_commons_omnichannel_pb.OmniCampaign
 };
 
-OmniApi.ListCampaigns = {
-  methodName: "ListCampaigns",
-  service: OmniApi,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_omniapi_pb.ListCampaignsReq,
-  responseType: api_v0alpha_omniapi_pb.ListCampaignsRes
-};
-
 OmniApi.PauseCampaign = {
   methodName: "PauseCampaign",
   service: OmniApi,
@@ -84,33 +75,6 @@ OmniApi.UpdateCampaignPacingSpeed = {
   responseType: api_v0alpha_omniapi_pb.UpdateCampaignPacingSpeedRes
 };
 
-OmniApi.GetOffLoadedTextMessage = {
-  methodName: "GetOffLoadedTextMessage",
-  service: OmniApi,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_omniapi_pb.GetOffLoadedTextMessageReq,
-  responseType: api_v0alpha_omniapi_pb.GetOffLoadedTextMessageRes
-};
-
-OmniApi.ManagerListMessages = {
-  methodName: "ManagerListMessages",
-  service: OmniApi,
-  requestStream: false,
-  responseStream: true,
-  requestType: api_v0alpha_omniapi_pb.ManagerListMessagesReq,
-  responseType: api_commons_omnichannel_pb.OmniMessage
-};
-
-OmniApi.ListMessages = {
-  methodName: "ListMessages",
-  service: OmniApi,
-  requestStream: false,
-  responseStream: true,
-  requestType: api_v0alpha_omniapi_pb.ListMessagesReq,
-  responseType: api_commons_omnichannel_pb.OmniMessage
-};
-
 OmniApi.SendOmniMessage = {
   methodName: "SendOmniMessage",
   service: OmniApi,
@@ -127,24 +91,6 @@ OmniApi.ManagerSendOmniMessage = {
   responseStream: false,
   requestType: api_v0alpha_omniapi_pb.SendOmniMessageReq,
   responseType: api_commons_types_pb.Empty
-};
-
-OmniApi.ManagerListConversations = {
-  methodName: "ManagerListConversations",
-  service: OmniApi,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_omniapi_pb.ListConversationsReq,
-  responseType: api_v0alpha_omniapi_pb.ListConversationsRes
-};
-
-OmniApi.SuggestResponse = {
-  methodName: "SuggestResponse",
-  service: OmniApi,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_omniapi_pb.SuggestResponseReq,
-  responseType: api_v0alpha_omniapi_pb.SuggestResponseRes
 };
 
 OmniApi.CreateDisposition = {
@@ -217,6 +163,42 @@ OmniApi.DeleteCustomUnsubscribeLink = {
   responseStream: false,
   requestType: api_v0alpha_omniapi_pb.DeleteCustomUnsubscribeLinkReq,
   responseType: api_commons_types_pb.Empty
+};
+
+OmniApi.ListCampaigns = {
+  methodName: "ListCampaigns",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.ListCampaignsReq,
+  responseType: api_v0alpha_omniapi_pb.ListCampaignsRes
+};
+
+OmniApi.ManagerListMessages = {
+  methodName: "ManagerListMessages",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v0alpha_omniapi_pb.ManagerListMessagesReq,
+  responseType: api_commons_omnichannel_pb.OmniMessage
+};
+
+OmniApi.ListMessages = {
+  methodName: "ListMessages",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v0alpha_omniapi_pb.ListMessagesReq,
+  responseType: api_commons_omnichannel_pb.OmniMessage
+};
+
+OmniApi.ManagerListConversations = {
+  methodName: "ManagerListConversations",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.ListConversationsReq,
+  responseType: api_v0alpha_omniapi_pb.ListConversationsRes
 };
 
 OmniApi.ListContactLists = {
@@ -327,15 +309,6 @@ OmniApi.CreateVerifiedEmail = {
   responseType: api_v0alpha_omniapi_pb.CreateVerifiedEmailRes
 };
 
-OmniApi.SendEmailNotification = {
-  methodName: "SendEmailNotification",
-  service: OmniApi,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_omniapi_pb.SendEmailNotificationReq,
-  responseType: api_v0alpha_omniapi_pb.SendEmailNotificationRes
-};
-
 OmniApi.DeleteVerifiedEmail = {
   methodName: "DeleteVerifiedEmail",
   service: OmniApi,
@@ -388,6 +361,15 @@ OmniApi.GetPendingGoogleXOAuth2Data = {
   responseStream: false,
   requestType: api_v0alpha_omniapi_pb.GetPendingGoogleXOAuth2DataReq,
   responseType: api_v0alpha_omniapi_pb.GetPendingGoogleXOAuth2DataRes
+};
+
+OmniApi.SendEmailNotification = {
+  methodName: "SendEmailNotification",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.SendEmailNotificationReq,
+  responseType: api_v0alpha_omniapi_pb.SendEmailNotificationRes
 };
 
 OmniApi.SendFeedbackEmail = {
@@ -451,6 +433,15 @@ OmniApi.UpdateSignature = {
   responseStream: false,
   requestType: api_v0alpha_omniapi_pb.UpdateSignatureReq,
   responseType: api_v0alpha_omniapi_pb.UpdateSignatureRes
+};
+
+OmniApi.SuggestResponse = {
+  methodName: "SuggestResponse",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.SuggestResponseReq,
+  responseType: api_v0alpha_omniapi_pb.SuggestResponseRes
 };
 
 OmniApi.CreateProject = {
@@ -697,37 +688,6 @@ OmniApiClient.prototype.getCampaignById = function getCampaignById(requestMessag
   };
 };
 
-OmniApiClient.prototype.listCampaigns = function listCampaigns(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(OmniApi.ListCampaigns, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
 OmniApiClient.prototype.pauseCampaign = function pauseCampaign(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -852,115 +812,6 @@ OmniApiClient.prototype.updateCampaignPacingSpeed = function updateCampaignPacin
   };
 };
 
-OmniApiClient.prototype.getOffLoadedTextMessage = function getOffLoadedTextMessage(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(OmniApi.GetOffLoadedTextMessage, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-OmniApiClient.prototype.managerListMessages = function managerListMessages(requestMessage, metadata) {
-  var listeners = {
-    data: [],
-    end: [],
-    status: []
-  };
-  var client = grpc.invoke(OmniApi.ManagerListMessages, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onMessage: function (responseMessage) {
-      listeners.data.forEach(function (handler) {
-        handler(responseMessage);
-      });
-    },
-    onEnd: function (status, statusMessage, trailers) {
-      listeners.status.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners.end.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners = null;
-    }
-  });
-  return {
-    on: function (type, handler) {
-      listeners[type].push(handler);
-      return this;
-    },
-    cancel: function () {
-      listeners = null;
-      client.close();
-    }
-  };
-};
-
-OmniApiClient.prototype.listMessages = function listMessages(requestMessage, metadata) {
-  var listeners = {
-    data: [],
-    end: [],
-    status: []
-  };
-  var client = grpc.invoke(OmniApi.ListMessages, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onMessage: function (responseMessage) {
-      listeners.data.forEach(function (handler) {
-        handler(responseMessage);
-      });
-    },
-    onEnd: function (status, statusMessage, trailers) {
-      listeners.status.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners.end.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners = null;
-    }
-  });
-  return {
-    on: function (type, handler) {
-      listeners[type].push(handler);
-      return this;
-    },
-    cancel: function () {
-      listeners = null;
-      client.close();
-    }
-  };
-};
-
 OmniApiClient.prototype.sendOmniMessage = function sendOmniMessage(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -997,68 +848,6 @@ OmniApiClient.prototype.managerSendOmniMessage = function managerSendOmniMessage
     callback = arguments[1];
   }
   var client = grpc.unary(OmniApi.ManagerSendOmniMessage, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-OmniApiClient.prototype.managerListConversations = function managerListConversations(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(OmniApi.ManagerListConversations, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-OmniApiClient.prototype.suggestResponse = function suggestResponse(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(OmniApi.SuggestResponse, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1307,6 +1096,146 @@ OmniApiClient.prototype.deleteCustomUnsubscribeLink = function deleteCustomUnsub
     callback = arguments[1];
   }
   var client = grpc.unary(OmniApi.DeleteCustomUnsubscribeLink, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.listCampaigns = function listCampaigns(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.ListCampaigns, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.managerListMessages = function managerListMessages(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(OmniApi.ManagerListMessages, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.listMessages = function listMessages(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(OmniApi.ListMessages, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.managerListConversations = function managerListConversations(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.ManagerListConversations, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1705,37 +1634,6 @@ OmniApiClient.prototype.createVerifiedEmail = function createVerifiedEmail(reque
   };
 };
 
-OmniApiClient.prototype.sendEmailNotification = function sendEmailNotification(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(OmniApi.SendEmailNotification, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
 OmniApiClient.prototype.deleteVerifiedEmail = function deleteVerifiedEmail(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -1896,6 +1794,37 @@ OmniApiClient.prototype.getPendingGoogleXOAuth2Data = function getPendingGoogleX
     callback = arguments[1];
   }
   var client = grpc.unary(OmniApi.GetPendingGoogleXOAuth2Data, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.sendEmailNotification = function sendEmailNotification(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.SendEmailNotification, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2113,6 +2042,37 @@ OmniApiClient.prototype.updateSignature = function updateSignature(requestMessag
     callback = arguments[1];
   }
   var client = grpc.unary(OmniApi.UpdateSignature, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.suggestResponse = function suggestResponse(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.SuggestResponse, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

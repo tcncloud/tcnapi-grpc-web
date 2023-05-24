@@ -21,6 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var annotations_authz_pb = require('../../annotations/authz_pb.js');
+goog.object.extend(proto, annotations_authz_pb);
 var api_commons_omnichannel_pb = require('../../api/commons/omnichannel_pb.js');
 goog.object.extend(proto, api_commons_omnichannel_pb);
 var api_commons_types_pb = require('../../api/commons/types_pb.js');
