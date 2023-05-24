@@ -256,6 +256,15 @@ type OrgAssignAgentProfileGroups = {
   readonly responseType: typeof api_v0alpha_org_pb.AssignAgentProfileGroupsResponse;
 };
 
+type OrgUpdateUser = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateUserRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateUserResponse;
+};
+
 type OrgUpdateMyUser = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -263,15 +272,6 @@ type OrgUpdateMyUser = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_org_pb.UpdateMyUserRequest;
   readonly responseType: typeof api_v0alpha_org_pb.UpdateMyUserResponse;
-};
-
-type OrgUpdateUserByUserId = {
-  readonly methodName: string;
-  readonly service: typeof Org;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_org_pb.UpdateUserByUserIdRequest;
-  readonly responseType: typeof api_v0alpha_org_pb.UpdateUserByUserIdResponse;
 };
 
 type OrgUpdateUserByCallerId = {
@@ -310,13 +310,13 @@ type OrgCreateDelegatedUser = {
   readonly responseType: typeof api_v0alpha_org_pb.CreateDelegatedUserResponse;
 };
 
-type OrgUpdateMyUserPassword = {
+type OrgUpdateUserPassword = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_org_pb.UpdateMyUserPasswordRequest;
-  readonly responseType: typeof api_v0alpha_org_pb.UpdateMyUserPasswordResponse;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateUserPasswordRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateUserPasswordResponse;
 };
 
 type OrgUpdateUserPasswordByUserId = {
@@ -355,13 +355,13 @@ type OrgGetMyUserPasswordResetLink = {
   readonly responseType: typeof api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse;
 };
 
-type OrgGetUserPasswordResetLinkByUserId = {
+type OrgGetUserPasswordResetLink = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdRequest;
-  readonly responseType: typeof api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdResponse;
+  readonly requestType: typeof api_v0alpha_org_pb.GetUserPasswordResetLinkRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.GetUserPasswordResetLinkResponse;
 };
 
 type OrgGetUserPasswordResetLinkByOrgId = {
@@ -427,13 +427,13 @@ type OrgManualUserEmailVerification = {
   readonly responseType: typeof api_v0alpha_org_pb.ManualUserEmailVerificationResponse;
 };
 
-type OrgGetMyTempUserToken = {
+type OrgGetTempUserToken = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_org_pb.GetMyTempUserTokenReq;
-  readonly responseType: typeof api_v0alpha_org_pb.GetMyTempUserTokenRes;
+  readonly requestType: typeof api_v0alpha_org_pb.GetTempUserTokenReq;
+  readonly responseType: typeof api_v0alpha_org_pb.GetTempUserTokenRes;
 };
 
 type OrgGetTempUserTokenByUserId = {
@@ -1705,15 +1705,6 @@ type OrgAddUserSubscription = {
   readonly responseType: typeof api_v0alpha_org_pb.AddUserSubscriptionResponse;
 };
 
-type OrgAddMyUserSubscription = {
-  readonly methodName: string;
-  readonly service: typeof Org;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_org_pb.AddMyUserSubscriptionRequest;
-  readonly responseType: typeof api_v0alpha_org_pb.AddMyUserSubscriptionResponse;
-};
-
 type OrgRemoveUserSubscription = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1834,18 +1825,18 @@ export class Org {
   static readonly ListAgentProfileGroups: OrgListAgentProfileGroups;
   static readonly DeleteAgentProfileGroup: OrgDeleteAgentProfileGroup;
   static readonly AssignAgentProfileGroups: OrgAssignAgentProfileGroups;
+  static readonly UpdateUser: OrgUpdateUser;
   static readonly UpdateMyUser: OrgUpdateMyUser;
-  static readonly UpdateUserByUserId: OrgUpdateUserByUserId;
   static readonly UpdateUserByCallerId: OrgUpdateUserByCallerId;
   static readonly CreateUser: OrgCreateUser;
   static readonly CreateUserByOrgId: OrgCreateUserByOrgId;
   static readonly CreateDelegatedUser: OrgCreateDelegatedUser;
-  static readonly UpdateMyUserPassword: OrgUpdateMyUserPassword;
+  static readonly UpdateUserPassword: OrgUpdateUserPassword;
   static readonly UpdateUserPasswordByUserId: OrgUpdateUserPasswordByUserId;
   static readonly UpdateUserPasswordByOrgId: OrgUpdateUserPasswordByOrgId;
   static readonly ResetUserRequirePasswordReset: OrgResetUserRequirePasswordReset;
   static readonly GetMyUserPasswordResetLink: OrgGetMyUserPasswordResetLink;
-  static readonly GetUserPasswordResetLinkByUserId: OrgGetUserPasswordResetLinkByUserId;
+  static readonly GetUserPasswordResetLink: OrgGetUserPasswordResetLink;
   static readonly GetUserPasswordResetLinkByOrgId: OrgGetUserPasswordResetLinkByOrgId;
   static readonly GetUserEmailVerified: OrgGetUserEmailVerified;
   static readonly GetUserEmailVerifiedByOrgId: OrgGetUserEmailVerifiedByOrgId;
@@ -1853,7 +1844,7 @@ export class Org {
   static readonly SendUserVerificationEmail: OrgSendUserVerificationEmail;
   static readonly ManualUserEmailVerificationByOrgId: OrgManualUserEmailVerificationByOrgId;
   static readonly ManualUserEmailVerification: OrgManualUserEmailVerification;
-  static readonly GetMyTempUserToken: OrgGetMyTempUserToken;
+  static readonly GetTempUserToken: OrgGetTempUserToken;
   static readonly GetTempUserTokenByUserId: OrgGetTempUserTokenByUserId;
   static readonly GetCountriesList: OrgGetCountriesList;
   static readonly GetAdminClientPreferences: OrgGetAdminClientPreferences;
@@ -1995,7 +1986,6 @@ export class Org {
   static readonly DeleteAuthConnection: OrgDeleteAuthConnection;
   static readonly GetUserSubscription: OrgGetUserSubscription;
   static readonly AddUserSubscription: OrgAddUserSubscription;
-  static readonly AddMyUserSubscription: OrgAddMyUserSubscription;
   static readonly RemoveUserSubscription: OrgRemoveUserSubscription;
   static readonly RemoveMyUserSubscription: OrgRemoveMyUserSubscription;
   static readonly UpdateUserSubscription: OrgUpdateUserSubscription;
@@ -2276,6 +2266,15 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.AssignAgentProfileGroupsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.AssignAgentProfileGroupsResponse|null) => void
   ): UnaryResponse;
+  updateUser(
+    requestMessage: api_v0alpha_org_pb.UpdateUserRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserResponse|null) => void
+  ): UnaryResponse;
+  updateUser(
+    requestMessage: api_v0alpha_org_pb.UpdateUserRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserResponse|null) => void
+  ): UnaryResponse;
   updateMyUser(
     requestMessage: api_v0alpha_org_pb.UpdateMyUserRequest,
     metadata: grpc.Metadata,
@@ -2284,15 +2283,6 @@ export class OrgClient {
   updateMyUser(
     requestMessage: api_v0alpha_org_pb.UpdateMyUserRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateMyUserResponse|null) => void
-  ): UnaryResponse;
-  updateUserByUserId(
-    requestMessage: api_v0alpha_org_pb.UpdateUserByUserIdRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserByUserIdResponse|null) => void
-  ): UnaryResponse;
-  updateUserByUserId(
-    requestMessage: api_v0alpha_org_pb.UpdateUserByUserIdRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserByUserIdResponse|null) => void
   ): UnaryResponse;
   updateUserByCallerId(
     requestMessage: api_v0alpha_org_pb.UpdateUserByCallerIdRequest,
@@ -2330,14 +2320,14 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.CreateDelegatedUserRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.CreateDelegatedUserResponse|null) => void
   ): UnaryResponse;
-  updateMyUserPassword(
-    requestMessage: api_v0alpha_org_pb.UpdateMyUserPasswordRequest,
+  updateUserPassword(
+    requestMessage: api_v0alpha_org_pb.UpdateUserPasswordRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateMyUserPasswordResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserPasswordResponse|null) => void
   ): UnaryResponse;
-  updateMyUserPassword(
-    requestMessage: api_v0alpha_org_pb.UpdateMyUserPasswordRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateMyUserPasswordResponse|null) => void
+  updateUserPassword(
+    requestMessage: api_v0alpha_org_pb.UpdateUserPasswordRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserPasswordResponse|null) => void
   ): UnaryResponse;
   updateUserPasswordByUserId(
     requestMessage: api_v0alpha_org_pb.UpdateUserPasswordByUserIdRequest,
@@ -2375,14 +2365,14 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse|null) => void
   ): UnaryResponse;
-  getUserPasswordResetLinkByUserId(
-    requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdRequest,
+  getUserPasswordResetLink(
+    requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkResponse|null) => void
   ): UnaryResponse;
-  getUserPasswordResetLinkByUserId(
-    requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdResponse|null) => void
+  getUserPasswordResetLink(
+    requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkResponse|null) => void
   ): UnaryResponse;
   getUserPasswordResetLinkByOrgId(
     requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByOrgIdRequest,
@@ -2447,14 +2437,14 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.ManualUserEmailVerificationRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ManualUserEmailVerificationResponse|null) => void
   ): UnaryResponse;
-  getMyTempUserToken(
-    requestMessage: api_v0alpha_org_pb.GetMyTempUserTokenReq,
+  getTempUserToken(
+    requestMessage: api_v0alpha_org_pb.GetTempUserTokenReq,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetMyTempUserTokenRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetTempUserTokenRes|null) => void
   ): UnaryResponse;
-  getMyTempUserToken(
-    requestMessage: api_v0alpha_org_pb.GetMyTempUserTokenReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetMyTempUserTokenRes|null) => void
+  getTempUserToken(
+    requestMessage: api_v0alpha_org_pb.GetTempUserTokenReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetTempUserTokenRes|null) => void
   ): UnaryResponse;
   getTempUserTokenByUserId(
     requestMessage: api_v0alpha_org_pb.GetTempUserTokenByUserIdReq,
@@ -3724,15 +3714,6 @@ export class OrgClient {
   addUserSubscription(
     requestMessage: api_v0alpha_org_pb.AddUserSubscriptionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.AddUserSubscriptionResponse|null) => void
-  ): UnaryResponse;
-  addMyUserSubscription(
-    requestMessage: api_v0alpha_org_pb.AddMyUserSubscriptionRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.AddMyUserSubscriptionResponse|null) => void
-  ): UnaryResponse;
-  addMyUserSubscription(
-    requestMessage: api_v0alpha_org_pb.AddMyUserSubscriptionRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.AddMyUserSubscriptionResponse|null) => void
   ): UnaryResponse;
   removeUserSubscription(
     requestMessage: api_v0alpha_org_pb.RemoveUserSubscriptionRequest,

@@ -262,6 +262,15 @@ Org.AssignAgentProfileGroups = {
   responseType: api_v0alpha_org_pb.AssignAgentProfileGroupsResponse
 };
 
+Org.UpdateUser = {
+  methodName: "UpdateUser",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.UpdateUserRequest,
+  responseType: api_v0alpha_org_pb.UpdateUserResponse
+};
+
 Org.UpdateMyUser = {
   methodName: "UpdateMyUser",
   service: Org,
@@ -269,15 +278,6 @@ Org.UpdateMyUser = {
   responseStream: false,
   requestType: api_v0alpha_org_pb.UpdateMyUserRequest,
   responseType: api_v0alpha_org_pb.UpdateMyUserResponse
-};
-
-Org.UpdateUserByUserId = {
-  methodName: "UpdateUserByUserId",
-  service: Org,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_org_pb.UpdateUserByUserIdRequest,
-  responseType: api_v0alpha_org_pb.UpdateUserByUserIdResponse
 };
 
 Org.UpdateUserByCallerId = {
@@ -316,13 +316,13 @@ Org.CreateDelegatedUser = {
   responseType: api_v0alpha_org_pb.CreateDelegatedUserResponse
 };
 
-Org.UpdateMyUserPassword = {
-  methodName: "UpdateMyUserPassword",
+Org.UpdateUserPassword = {
+  methodName: "UpdateUserPassword",
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_org_pb.UpdateMyUserPasswordRequest,
-  responseType: api_v0alpha_org_pb.UpdateMyUserPasswordResponse
+  requestType: api_v0alpha_org_pb.UpdateUserPasswordRequest,
+  responseType: api_v0alpha_org_pb.UpdateUserPasswordResponse
 };
 
 Org.UpdateUserPasswordByUserId = {
@@ -361,13 +361,13 @@ Org.GetMyUserPasswordResetLink = {
   responseType: api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse
 };
 
-Org.GetUserPasswordResetLinkByUserId = {
-  methodName: "GetUserPasswordResetLinkByUserId",
+Org.GetUserPasswordResetLink = {
+  methodName: "GetUserPasswordResetLink",
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdRequest,
-  responseType: api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdResponse
+  requestType: api_v0alpha_org_pb.GetUserPasswordResetLinkRequest,
+  responseType: api_v0alpha_org_pb.GetUserPasswordResetLinkResponse
 };
 
 Org.GetUserPasswordResetLinkByOrgId = {
@@ -433,13 +433,13 @@ Org.ManualUserEmailVerification = {
   responseType: api_v0alpha_org_pb.ManualUserEmailVerificationResponse
 };
 
-Org.GetMyTempUserToken = {
-  methodName: "GetMyTempUserToken",
+Org.GetTempUserToken = {
+  methodName: "GetTempUserToken",
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_org_pb.GetMyTempUserTokenReq,
-  responseType: api_v0alpha_org_pb.GetMyTempUserTokenRes
+  requestType: api_v0alpha_org_pb.GetTempUserTokenReq,
+  responseType: api_v0alpha_org_pb.GetTempUserTokenRes
 };
 
 Org.GetTempUserTokenByUserId = {
@@ -1711,15 +1711,6 @@ Org.AddUserSubscription = {
   responseType: api_v0alpha_org_pb.AddUserSubscriptionResponse
 };
 
-Org.AddMyUserSubscription = {
-  methodName: "AddMyUserSubscription",
-  service: Org,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_org_pb.AddMyUserSubscriptionRequest,
-  responseType: api_v0alpha_org_pb.AddMyUserSubscriptionResponse
-};
-
 Org.RemoveUserSubscription = {
   methodName: "RemoveUserSubscription",
   service: Org,
@@ -2701,11 +2692,11 @@ OrgClient.prototype.assignAgentProfileGroups = function assignAgentProfileGroups
   };
 };
 
-OrgClient.prototype.updateMyUser = function updateMyUser(requestMessage, metadata, callback) {
+OrgClient.prototype.updateUser = function updateUser(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.UpdateMyUser, {
+  var client = grpc.unary(Org.UpdateUser, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2732,11 +2723,11 @@ OrgClient.prototype.updateMyUser = function updateMyUser(requestMessage, metadat
   };
 };
 
-OrgClient.prototype.updateUserByUserId = function updateUserByUserId(requestMessage, metadata, callback) {
+OrgClient.prototype.updateMyUser = function updateMyUser(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.UpdateUserByUserId, {
+  var client = grpc.unary(Org.UpdateMyUser, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2887,11 +2878,11 @@ OrgClient.prototype.createDelegatedUser = function createDelegatedUser(requestMe
   };
 };
 
-OrgClient.prototype.updateMyUserPassword = function updateMyUserPassword(requestMessage, metadata, callback) {
+OrgClient.prototype.updateUserPassword = function updateUserPassword(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.UpdateMyUserPassword, {
+  var client = grpc.unary(Org.UpdateUserPassword, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -3042,11 +3033,11 @@ OrgClient.prototype.getMyUserPasswordResetLink = function getMyUserPasswordReset
   };
 };
 
-OrgClient.prototype.getUserPasswordResetLinkByUserId = function getUserPasswordResetLinkByUserId(requestMessage, metadata, callback) {
+OrgClient.prototype.getUserPasswordResetLink = function getUserPasswordResetLink(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.GetUserPasswordResetLinkByUserId, {
+  var client = grpc.unary(Org.GetUserPasswordResetLink, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -3290,11 +3281,11 @@ OrgClient.prototype.manualUserEmailVerification = function manualUserEmailVerifi
   };
 };
 
-OrgClient.prototype.getMyTempUserToken = function getMyTempUserToken(requestMessage, metadata, callback) {
+OrgClient.prototype.getTempUserToken = function getTempUserToken(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.GetMyTempUserToken, {
+  var client = grpc.unary(Org.GetTempUserToken, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -7666,37 +7657,6 @@ OrgClient.prototype.addUserSubscription = function addUserSubscription(requestMe
     callback = arguments[1];
   }
   var client = grpc.unary(Org.AddUserSubscription, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-OrgClient.prototype.addMyUserSubscription = function addMyUserSubscription(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Org.AddMyUserSubscription, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
