@@ -121,6 +121,15 @@ type OrgListOrganizationUserDescriptions = {
   readonly responseType: typeof api_v0alpha_org_pb.ListOrganizationUserDescriptionsResponse;
 };
 
+type OrgAdminListUserDescriptions = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: true;
+  readonly requestType: typeof api_v0alpha_org_pb.AdminListUserDescriptionsRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.AdminListUserDescriptionsResponse;
+};
+
 type OrgListUserDescriptions = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -146,6 +155,15 @@ type OrgGetRegions = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_org_pb.GetRegionsRequest;
   readonly responseType: typeof api_v0alpha_org_pb.GetRegionsResponse;
+};
+
+type OrgGetMyUserDetails = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.GetMyUserDetailsRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UserDetails;
 };
 
 type OrgGetUserDetails = {
@@ -238,13 +256,31 @@ type OrgAssignAgentProfileGroups = {
   readonly responseType: typeof api_v0alpha_org_pb.AssignAgentProfileGroupsResponse;
 };
 
-type OrgUpdateUser = {
+type OrgUpdateMyUser = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_org_pb.UpdateUserRequest;
-  readonly responseType: typeof api_v0alpha_org_pb.UpdateUserResponse;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateMyUserRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateMyUserResponse;
+};
+
+type OrgUpdateUserByUserId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateUserByUserIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateUserByUserIdResponse;
+};
+
+type OrgUpdateUserByCallerId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateUserByCallerIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateUserByCallerIdResponse;
 };
 
 type OrgCreateUser = {
@@ -256,6 +292,15 @@ type OrgCreateUser = {
   readonly responseType: typeof api_v0alpha_org_pb.CreateUserResponse;
 };
 
+type OrgCreateUserByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.CreateUserByOrgIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.CreateUserByOrgIdResponse;
+};
+
 type OrgCreateDelegatedUser = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -265,13 +310,31 @@ type OrgCreateDelegatedUser = {
   readonly responseType: typeof api_v0alpha_org_pb.CreateDelegatedUserResponse;
 };
 
-type OrgUpdateUserPassword = {
+type OrgUpdateMyUserPassword = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_org_pb.UpdateUserPasswordRequest;
-  readonly responseType: typeof api_v0alpha_org_pb.UpdateUserPasswordResponse;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateMyUserPasswordRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateMyUserPasswordResponse;
+};
+
+type OrgUpdateUserPasswordByUserId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateUserPasswordByUserIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateUserPasswordByUserIdResponse;
+};
+
+type OrgUpdateUserPasswordByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateUserPasswordByOrgIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateUserPasswordByOrgIdResponse;
 };
 
 type OrgResetUserRequirePasswordReset = {
@@ -283,13 +346,31 @@ type OrgResetUserRequirePasswordReset = {
   readonly responseType: typeof api_v0alpha_org_pb.ResetUserRequirePasswordResetResponse;
 };
 
-type OrgGetUserPasswordResetLink = {
+type OrgGetMyUserPasswordResetLink = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_org_pb.GetUserPasswordResetLinkRequest;
-  readonly responseType: typeof api_v0alpha_org_pb.GetUserPasswordResetLinkResponse;
+  readonly requestType: typeof api_v0alpha_org_pb.GetMyUserPasswordResetLinkRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse;
+};
+
+type OrgGetUserPasswordResetLinkByUserId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdResponse;
+};
+
+type OrgGetUserPasswordResetLinkByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.GetUserPasswordResetLinkByOrgIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.GetUserPasswordResetLinkByOrgIdResponse;
 };
 
 type OrgGetUserEmailVerified = {
@@ -301,6 +382,24 @@ type OrgGetUserEmailVerified = {
   readonly responseType: typeof api_v0alpha_org_pb.GetUserEmailVerifiedResponse;
 };
 
+type OrgGetUserEmailVerifiedByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.GetUserEmailVerifiedByOrgIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.GetUserEmailVerifiedByOrgIdResponse;
+};
+
+type OrgSendUserVerificationEmailByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.SendUserVerificationEmailByOrgIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.SendUserVerificationEmailByOrgIdResponse;
+};
+
 type OrgSendUserVerificationEmail = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -308,6 +407,15 @@ type OrgSendUserVerificationEmail = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_org_pb.SendUserVerificationEmailRequest;
   readonly responseType: typeof api_v0alpha_org_pb.SendUserVerificationEmailResponse;
+};
+
+type OrgManualUserEmailVerificationByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.ManualUserEmailVerificationByOrgIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.ManualUserEmailVerificationByOrgIdResponse;
 };
 
 type OrgManualUserEmailVerification = {
@@ -319,13 +427,22 @@ type OrgManualUserEmailVerification = {
   readonly responseType: typeof api_v0alpha_org_pb.ManualUserEmailVerificationResponse;
 };
 
-type OrgGetTempUserToken = {
+type OrgGetMyTempUserToken = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_org_pb.GetTempUserTokenReq;
-  readonly responseType: typeof api_v0alpha_org_pb.GetTempUserTokenRes;
+  readonly requestType: typeof api_v0alpha_org_pb.GetMyTempUserTokenReq;
+  readonly responseType: typeof api_v0alpha_org_pb.GetMyTempUserTokenRes;
+};
+
+type OrgGetTempUserTokenByUserId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.GetTempUserTokenByUserIdReq;
+  readonly responseType: typeof api_v0alpha_org_pb.GetTempUserTokenByUserIdRes;
 };
 
 type OrgGetCountriesList = {
@@ -382,6 +499,15 @@ type OrgUpdateUserDisabled = {
   readonly responseType: typeof api_v0alpha_org_pb.UpdateUserDisabledResponse;
 };
 
+type OrgUpdateUserDisabledByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateUserDisabledByOrgIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateUserDisabledByOrgIdResponse;
+};
+
 type OrgUpdateBulkUsersDisabled = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -389,6 +515,15 @@ type OrgUpdateBulkUsersDisabled = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_org_pb.UpdateBulkUsersDisabledRequest;
   readonly responseType: typeof api_v0alpha_org_pb.UpdateBulkUsersDisabledResponse;
+};
+
+type OrgGetOrgBillingSettingsByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.GetOrgBillingSettingsByOrgIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.GetOrgBillingSettingsByOrgIdResponse;
 };
 
 type OrgGetOrgBillingSettings = {
@@ -434,6 +569,15 @@ type OrgGetSystemDefaultBillingRates = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_org_pb.GetSystemDefaultBillingRatesRequest;
   readonly responseType: typeof api_v0alpha_org_pb.GetSystemDefaultBillingRatesResponse;
+};
+
+type OrgListPermissionGroupsByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.ListPermissionGroupsByOrgIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.ListPermissionGroupsByOrgIdResponse;
 };
 
 type OrgListPermissionGroups = {
@@ -580,6 +724,15 @@ type OrgGetOrgDefaultSuperUserGroup = {
   readonly responseType: typeof api_v0alpha_org_pb.GetOrgDefaultSuperUserGroupResponse;
 };
 
+type OrgListP3PermissionGroupsByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.ListP3PermissionGroupsByOrgIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.ListP3PermissionGroupsByOrgIdResponse;
+};
+
 type OrgListP3PermissionGroups = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -614,6 +767,15 @@ type OrgCreateP3PermissionGroup = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_org_pb.CreateP3PermissionGroupRequest;
   readonly responseType: typeof api_v0alpha_org_pb.CreateP3PermissionGroupResponse;
+};
+
+type OrgUpdateP3PermissionGroupByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateP3PermissionGroupByOrgIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateP3PermissionGroupByOrgIdResponse;
 };
 
 type OrgUpdateP3PermissionGroup = {
@@ -956,6 +1118,15 @@ type OrgUpdateVoiceAnalyticsPreferences = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesRequest;
   readonly responseType: typeof api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesResponse;
+};
+
+type OrgUpdateVoiceAnalyticsPreferencesEnabled = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesEnabledRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesEnabledResponse;
 };
 
 type OrgGetScorecardsPreferences = {
@@ -1426,6 +1597,15 @@ type OrgListOwnedUsers = {
   readonly responseType: typeof api_v0alpha_org_pb.ListOwnedUsersResponse;
 };
 
+type OrgListOwnedOrgsByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.ListOwnedOrgsByOrgIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.ListOwnedOrgsByOrgIdResponse;
+};
+
 type OrgListOwnedOrgs = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1534,6 +1714,15 @@ type OrgRemoveUserSubscription = {
   readonly responseType: typeof api_v0alpha_org_pb.RemoveUserSubscriptionResponse;
 };
 
+type OrgRemoveMyUserSubscription = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.RemoveMyUserSubscriptionRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.RemoveMyUserSubscriptionResponse;
+};
+
 type OrgUpdateUserSubscription = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1621,9 +1810,11 @@ export class Org {
   static readonly UpdateP3OwningOrg: OrgUpdateP3OwningOrg;
   static readonly GetP3OwningOrg: OrgGetP3OwningOrg;
   static readonly ListOrganizationUserDescriptions: OrgListOrganizationUserDescriptions;
+  static readonly AdminListUserDescriptions: OrgAdminListUserDescriptions;
   static readonly ListUserDescriptions: OrgListUserDescriptions;
   static readonly GetUserDirectory: OrgGetUserDirectory;
   static readonly GetRegions: OrgGetRegions;
+  static readonly GetMyUserDetails: OrgGetMyUserDetails;
   static readonly GetUserDetails: OrgGetUserDetails;
   static readonly AdminGetUserDetails: OrgAdminGetUserDetails;
   static readonly GetAgentUsers: OrgGetAgentUsers;
@@ -1634,28 +1825,42 @@ export class Org {
   static readonly ListAgentProfileGroups: OrgListAgentProfileGroups;
   static readonly DeleteAgentProfileGroup: OrgDeleteAgentProfileGroup;
   static readonly AssignAgentProfileGroups: OrgAssignAgentProfileGroups;
-  static readonly UpdateUser: OrgUpdateUser;
+  static readonly UpdateMyUser: OrgUpdateMyUser;
+  static readonly UpdateUserByUserId: OrgUpdateUserByUserId;
+  static readonly UpdateUserByCallerId: OrgUpdateUserByCallerId;
   static readonly CreateUser: OrgCreateUser;
+  static readonly CreateUserByOrgId: OrgCreateUserByOrgId;
   static readonly CreateDelegatedUser: OrgCreateDelegatedUser;
-  static readonly UpdateUserPassword: OrgUpdateUserPassword;
+  static readonly UpdateMyUserPassword: OrgUpdateMyUserPassword;
+  static readonly UpdateUserPasswordByUserId: OrgUpdateUserPasswordByUserId;
+  static readonly UpdateUserPasswordByOrgId: OrgUpdateUserPasswordByOrgId;
   static readonly ResetUserRequirePasswordReset: OrgResetUserRequirePasswordReset;
-  static readonly GetUserPasswordResetLink: OrgGetUserPasswordResetLink;
+  static readonly GetMyUserPasswordResetLink: OrgGetMyUserPasswordResetLink;
+  static readonly GetUserPasswordResetLinkByUserId: OrgGetUserPasswordResetLinkByUserId;
+  static readonly GetUserPasswordResetLinkByOrgId: OrgGetUserPasswordResetLinkByOrgId;
   static readonly GetUserEmailVerified: OrgGetUserEmailVerified;
+  static readonly GetUserEmailVerifiedByOrgId: OrgGetUserEmailVerifiedByOrgId;
+  static readonly SendUserVerificationEmailByOrgId: OrgSendUserVerificationEmailByOrgId;
   static readonly SendUserVerificationEmail: OrgSendUserVerificationEmail;
+  static readonly ManualUserEmailVerificationByOrgId: OrgManualUserEmailVerificationByOrgId;
   static readonly ManualUserEmailVerification: OrgManualUserEmailVerification;
-  static readonly GetTempUserToken: OrgGetTempUserToken;
+  static readonly GetMyTempUserToken: OrgGetMyTempUserToken;
+  static readonly GetTempUserTokenByUserId: OrgGetTempUserTokenByUserId;
   static readonly GetCountriesList: OrgGetCountriesList;
   static readonly GetAdminClientPreferences: OrgGetAdminClientPreferences;
   static readonly UpdateAdminClientPreferences: OrgUpdateAdminClientPreferences;
   static readonly GetPermissions: OrgGetPermissions;
   static readonly RevokeAccountOwnerPermissionFromUser: OrgRevokeAccountOwnerPermissionFromUser;
   static readonly UpdateUserDisabled: OrgUpdateUserDisabled;
+  static readonly UpdateUserDisabledByOrgId: OrgUpdateUserDisabledByOrgId;
   static readonly UpdateBulkUsersDisabled: OrgUpdateBulkUsersDisabled;
+  static readonly GetOrgBillingSettingsByOrgId: OrgGetOrgBillingSettingsByOrgId;
   static readonly GetOrgBillingSettings: OrgGetOrgBillingSettings;
   static readonly SetOrgBillingSettings: OrgSetOrgBillingSettings;
   static readonly AddOrgBillingOverride: OrgAddOrgBillingOverride;
   static readonly RemoveOrgBillingOverride: OrgRemoveOrgBillingOverride;
   static readonly GetSystemDefaultBillingRates: OrgGetSystemDefaultBillingRates;
+  static readonly ListPermissionGroupsByOrgId: OrgListPermissionGroupsByOrgId;
   static readonly ListPermissionGroups: OrgListPermissionGroups;
   static readonly CreatePermissionGroup: OrgCreatePermissionGroup;
   static readonly UpdatePermissionGroup: OrgUpdatePermissionGroup;
@@ -1672,10 +1877,12 @@ export class Org {
   static readonly AddPermissionToOrgDefaultGroup: OrgAddPermissionToOrgDefaultGroup;
   static readonly RemovePermissionFromOrgDefaultGroup: OrgRemovePermissionFromOrgDefaultGroup;
   static readonly GetOrgDefaultSuperUserGroup: OrgGetOrgDefaultSuperUserGroup;
+  static readonly ListP3PermissionGroupsByOrgId: OrgListP3PermissionGroupsByOrgId;
   static readonly ListP3PermissionGroups: OrgListP3PermissionGroups;
   static readonly AddUserRegion: OrgAddUserRegion;
   static readonly RemoveUserRegion: OrgRemoveUserRegion;
   static readonly CreateP3PermissionGroup: OrgCreateP3PermissionGroup;
+  static readonly UpdateP3PermissionGroupByOrgId: OrgUpdateP3PermissionGroupByOrgId;
   static readonly UpdateP3PermissionGroup: OrgUpdateP3PermissionGroup;
   static readonly DeleteP3PermissionGroup: OrgDeleteP3PermissionGroup;
   static readonly AssignUsersP3PermissionGroup: OrgAssignUsersP3PermissionGroup;
@@ -1714,6 +1921,7 @@ export class Org {
   static readonly GetAgentQuickViewPreferences: OrgGetAgentQuickViewPreferences;
   static readonly GetVoiceAnalyticsPreferences: OrgGetVoiceAnalyticsPreferences;
   static readonly UpdateVoiceAnalyticsPreferences: OrgUpdateVoiceAnalyticsPreferences;
+  static readonly UpdateVoiceAnalyticsPreferencesEnabled: OrgUpdateVoiceAnalyticsPreferencesEnabled;
   static readonly GetScorecardsPreferences: OrgGetScorecardsPreferences;
   static readonly UpdateScorecardsPreferences: OrgUpdateScorecardsPreferences;
   static readonly GetEmailSmsPreferences: OrgGetEmailSmsPreferences;
@@ -1766,6 +1974,7 @@ export class Org {
   static readonly MigrateP3User: OrgMigrateP3User;
   static readonly UpdateP3UserName: OrgUpdateP3UserName;
   static readonly ListOwnedUsers: OrgListOwnedUsers;
+  static readonly ListOwnedOrgsByOrgId: OrgListOwnedOrgsByOrgId;
   static readonly ListOwnedOrgs: OrgListOwnedOrgs;
   static readonly RemoveLoginStrikes: OrgRemoveLoginStrikes;
   static readonly RemoveUserLoginStrikes: OrgRemoveUserLoginStrikes;
@@ -1778,6 +1987,7 @@ export class Org {
   static readonly GetUserSubscription: OrgGetUserSubscription;
   static readonly AddUserSubscription: OrgAddUserSubscription;
   static readonly RemoveUserSubscription: OrgRemoveUserSubscription;
+  static readonly RemoveMyUserSubscription: OrgRemoveMyUserSubscription;
   static readonly UpdateUserSubscription: OrgUpdateUserSubscription;
   static readonly ListUserSubscriptions: OrgListUserSubscriptions;
   static readonly ListOrgSubscriptions: OrgListOrgSubscriptions;
@@ -1937,6 +2147,7 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.ListOrganizationUserDescriptionsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListOrganizationUserDescriptionsResponse|null) => void
   ): UnaryResponse;
+  adminListUserDescriptions(requestMessage: api_v0alpha_org_pb.AdminListUserDescriptionsRequest, metadata?: grpc.Metadata): ResponseStream<api_v0alpha_org_pb.AdminListUserDescriptionsResponse>;
   listUserDescriptions(requestMessage: api_v0alpha_org_pb.ListUserDescriptionsRequest, metadata?: grpc.Metadata): ResponseStream<api_v0alpha_org_pb.ListUserDescriptionsResponse>;
   getUserDirectory(
     requestMessage: api_v0alpha_org_pb.GetUserDirectoryRequest,
@@ -1956,6 +2167,15 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.GetRegionsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetRegionsResponse|null) => void
   ): UnaryResponse;
+  getMyUserDetails(
+    requestMessage: api_v0alpha_org_pb.GetMyUserDetailsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UserDetails|null) => void
+  ): UnaryResponse;
+  getMyUserDetails(
+    requestMessage: api_v0alpha_org_pb.GetMyUserDetailsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UserDetails|null) => void
+  ): UnaryResponse;
   getUserDetails(
     requestMessage: api_v0alpha_org_pb.GetUserDetailsRequest,
     metadata: grpc.Metadata,
@@ -2046,14 +2266,32 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.AssignAgentProfileGroupsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.AssignAgentProfileGroupsResponse|null) => void
   ): UnaryResponse;
-  updateUser(
-    requestMessage: api_v0alpha_org_pb.UpdateUserRequest,
+  updateMyUser(
+    requestMessage: api_v0alpha_org_pb.UpdateMyUserRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateMyUserResponse|null) => void
   ): UnaryResponse;
-  updateUser(
-    requestMessage: api_v0alpha_org_pb.UpdateUserRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserResponse|null) => void
+  updateMyUser(
+    requestMessage: api_v0alpha_org_pb.UpdateMyUserRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateMyUserResponse|null) => void
+  ): UnaryResponse;
+  updateUserByUserId(
+    requestMessage: api_v0alpha_org_pb.UpdateUserByUserIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserByUserIdResponse|null) => void
+  ): UnaryResponse;
+  updateUserByUserId(
+    requestMessage: api_v0alpha_org_pb.UpdateUserByUserIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserByUserIdResponse|null) => void
+  ): UnaryResponse;
+  updateUserByCallerId(
+    requestMessage: api_v0alpha_org_pb.UpdateUserByCallerIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserByCallerIdResponse|null) => void
+  ): UnaryResponse;
+  updateUserByCallerId(
+    requestMessage: api_v0alpha_org_pb.UpdateUserByCallerIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserByCallerIdResponse|null) => void
   ): UnaryResponse;
   createUser(
     requestMessage: api_v0alpha_org_pb.CreateUserRequest,
@@ -2064,6 +2302,15 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.CreateUserRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.CreateUserResponse|null) => void
   ): UnaryResponse;
+  createUserByOrgId(
+    requestMessage: api_v0alpha_org_pb.CreateUserByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.CreateUserByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  createUserByOrgId(
+    requestMessage: api_v0alpha_org_pb.CreateUserByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.CreateUserByOrgIdResponse|null) => void
+  ): UnaryResponse;
   createDelegatedUser(
     requestMessage: api_v0alpha_org_pb.CreateDelegatedUserRequest,
     metadata: grpc.Metadata,
@@ -2073,14 +2320,32 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.CreateDelegatedUserRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.CreateDelegatedUserResponse|null) => void
   ): UnaryResponse;
-  updateUserPassword(
-    requestMessage: api_v0alpha_org_pb.UpdateUserPasswordRequest,
+  updateMyUserPassword(
+    requestMessage: api_v0alpha_org_pb.UpdateMyUserPasswordRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserPasswordResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateMyUserPasswordResponse|null) => void
   ): UnaryResponse;
-  updateUserPassword(
-    requestMessage: api_v0alpha_org_pb.UpdateUserPasswordRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserPasswordResponse|null) => void
+  updateMyUserPassword(
+    requestMessage: api_v0alpha_org_pb.UpdateMyUserPasswordRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateMyUserPasswordResponse|null) => void
+  ): UnaryResponse;
+  updateUserPasswordByUserId(
+    requestMessage: api_v0alpha_org_pb.UpdateUserPasswordByUserIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserPasswordByUserIdResponse|null) => void
+  ): UnaryResponse;
+  updateUserPasswordByUserId(
+    requestMessage: api_v0alpha_org_pb.UpdateUserPasswordByUserIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserPasswordByUserIdResponse|null) => void
+  ): UnaryResponse;
+  updateUserPasswordByOrgId(
+    requestMessage: api_v0alpha_org_pb.UpdateUserPasswordByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserPasswordByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  updateUserPasswordByOrgId(
+    requestMessage: api_v0alpha_org_pb.UpdateUserPasswordByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserPasswordByOrgIdResponse|null) => void
   ): UnaryResponse;
   resetUserRequirePasswordReset(
     requestMessage: api_v0alpha_org_pb.ResetUserRequirePasswordResetRequest,
@@ -2091,14 +2356,32 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.ResetUserRequirePasswordResetRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ResetUserRequirePasswordResetResponse|null) => void
   ): UnaryResponse;
-  getUserPasswordResetLink(
-    requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkRequest,
+  getMyUserPasswordResetLink(
+    requestMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse|null) => void
   ): UnaryResponse;
-  getUserPasswordResetLink(
-    requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkResponse|null) => void
+  getMyUserPasswordResetLink(
+    requestMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse|null) => void
+  ): UnaryResponse;
+  getUserPasswordResetLinkByUserId(
+    requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdResponse|null) => void
+  ): UnaryResponse;
+  getUserPasswordResetLinkByUserId(
+    requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByUserIdResponse|null) => void
+  ): UnaryResponse;
+  getUserPasswordResetLinkByOrgId(
+    requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  getUserPasswordResetLinkByOrgId(
+    requestMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserPasswordResetLinkByOrgIdResponse|null) => void
   ): UnaryResponse;
   getUserEmailVerified(
     requestMessage: api_v0alpha_org_pb.GetUserEmailVerifiedRequest,
@@ -2109,6 +2392,24 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.GetUserEmailVerifiedRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserEmailVerifiedResponse|null) => void
   ): UnaryResponse;
+  getUserEmailVerifiedByOrgId(
+    requestMessage: api_v0alpha_org_pb.GetUserEmailVerifiedByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserEmailVerifiedByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  getUserEmailVerifiedByOrgId(
+    requestMessage: api_v0alpha_org_pb.GetUserEmailVerifiedByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserEmailVerifiedByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  sendUserVerificationEmailByOrgId(
+    requestMessage: api_v0alpha_org_pb.SendUserVerificationEmailByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.SendUserVerificationEmailByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  sendUserVerificationEmailByOrgId(
+    requestMessage: api_v0alpha_org_pb.SendUserVerificationEmailByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.SendUserVerificationEmailByOrgIdResponse|null) => void
+  ): UnaryResponse;
   sendUserVerificationEmail(
     requestMessage: api_v0alpha_org_pb.SendUserVerificationEmailRequest,
     metadata: grpc.Metadata,
@@ -2117,6 +2418,15 @@ export class OrgClient {
   sendUserVerificationEmail(
     requestMessage: api_v0alpha_org_pb.SendUserVerificationEmailRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.SendUserVerificationEmailResponse|null) => void
+  ): UnaryResponse;
+  manualUserEmailVerificationByOrgId(
+    requestMessage: api_v0alpha_org_pb.ManualUserEmailVerificationByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ManualUserEmailVerificationByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  manualUserEmailVerificationByOrgId(
+    requestMessage: api_v0alpha_org_pb.ManualUserEmailVerificationByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ManualUserEmailVerificationByOrgIdResponse|null) => void
   ): UnaryResponse;
   manualUserEmailVerification(
     requestMessage: api_v0alpha_org_pb.ManualUserEmailVerificationRequest,
@@ -2127,14 +2437,23 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.ManualUserEmailVerificationRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ManualUserEmailVerificationResponse|null) => void
   ): UnaryResponse;
-  getTempUserToken(
-    requestMessage: api_v0alpha_org_pb.GetTempUserTokenReq,
+  getMyTempUserToken(
+    requestMessage: api_v0alpha_org_pb.GetMyTempUserTokenReq,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetTempUserTokenRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetMyTempUserTokenRes|null) => void
   ): UnaryResponse;
-  getTempUserToken(
-    requestMessage: api_v0alpha_org_pb.GetTempUserTokenReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetTempUserTokenRes|null) => void
+  getMyTempUserToken(
+    requestMessage: api_v0alpha_org_pb.GetMyTempUserTokenReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetMyTempUserTokenRes|null) => void
+  ): UnaryResponse;
+  getTempUserTokenByUserId(
+    requestMessage: api_v0alpha_org_pb.GetTempUserTokenByUserIdReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetTempUserTokenByUserIdRes|null) => void
+  ): UnaryResponse;
+  getTempUserTokenByUserId(
+    requestMessage: api_v0alpha_org_pb.GetTempUserTokenByUserIdReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetTempUserTokenByUserIdRes|null) => void
   ): UnaryResponse;
   getCountriesList(
     requestMessage: api_v0alpha_org_pb.GetCountriesListRequest,
@@ -2190,6 +2509,15 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.UpdateUserDisabledRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserDisabledResponse|null) => void
   ): UnaryResponse;
+  updateUserDisabledByOrgId(
+    requestMessage: api_v0alpha_org_pb.UpdateUserDisabledByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserDisabledByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  updateUserDisabledByOrgId(
+    requestMessage: api_v0alpha_org_pb.UpdateUserDisabledByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserDisabledByOrgIdResponse|null) => void
+  ): UnaryResponse;
   updateBulkUsersDisabled(
     requestMessage: api_v0alpha_org_pb.UpdateBulkUsersDisabledRequest,
     metadata: grpc.Metadata,
@@ -2198,6 +2526,15 @@ export class OrgClient {
   updateBulkUsersDisabled(
     requestMessage: api_v0alpha_org_pb.UpdateBulkUsersDisabledRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateBulkUsersDisabledResponse|null) => void
+  ): UnaryResponse;
+  getOrgBillingSettingsByOrgId(
+    requestMessage: api_v0alpha_org_pb.GetOrgBillingSettingsByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetOrgBillingSettingsByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  getOrgBillingSettingsByOrgId(
+    requestMessage: api_v0alpha_org_pb.GetOrgBillingSettingsByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetOrgBillingSettingsByOrgIdResponse|null) => void
   ): UnaryResponse;
   getOrgBillingSettings(
     requestMessage: api_v0alpha_org_pb.GetOrgBillingSettingsRequest,
@@ -2243,6 +2580,15 @@ export class OrgClient {
   getSystemDefaultBillingRates(
     requestMessage: api_v0alpha_org_pb.GetSystemDefaultBillingRatesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetSystemDefaultBillingRatesResponse|null) => void
+  ): UnaryResponse;
+  listPermissionGroupsByOrgId(
+    requestMessage: api_v0alpha_org_pb.ListPermissionGroupsByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListPermissionGroupsByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  listPermissionGroupsByOrgId(
+    requestMessage: api_v0alpha_org_pb.ListPermissionGroupsByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListPermissionGroupsByOrgIdResponse|null) => void
   ): UnaryResponse;
   listPermissionGroups(
     requestMessage: api_v0alpha_org_pb.ListPermissionGroupsRequest,
@@ -2388,6 +2734,15 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.GetOrgDefaultSuperUserGroupRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetOrgDefaultSuperUserGroupResponse|null) => void
   ): UnaryResponse;
+  listP3PermissionGroupsByOrgId(
+    requestMessage: api_v0alpha_org_pb.ListP3PermissionGroupsByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListP3PermissionGroupsByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  listP3PermissionGroupsByOrgId(
+    requestMessage: api_v0alpha_org_pb.ListP3PermissionGroupsByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListP3PermissionGroupsByOrgIdResponse|null) => void
+  ): UnaryResponse;
   listP3PermissionGroups(
     requestMessage: api_v0alpha_org_pb.ListP3PermissionGroupsRequest,
     metadata: grpc.Metadata,
@@ -2423,6 +2778,15 @@ export class OrgClient {
   createP3PermissionGroup(
     requestMessage: api_v0alpha_org_pb.CreateP3PermissionGroupRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.CreateP3PermissionGroupResponse|null) => void
+  ): UnaryResponse;
+  updateP3PermissionGroupByOrgId(
+    requestMessage: api_v0alpha_org_pb.UpdateP3PermissionGroupByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateP3PermissionGroupByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  updateP3PermissionGroupByOrgId(
+    requestMessage: api_v0alpha_org_pb.UpdateP3PermissionGroupByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateP3PermissionGroupByOrgIdResponse|null) => void
   ): UnaryResponse;
   updateP3PermissionGroup(
     requestMessage: api_v0alpha_org_pb.UpdateP3PermissionGroupRequest,
@@ -2765,6 +3129,15 @@ export class OrgClient {
   updateVoiceAnalyticsPreferences(
     requestMessage: api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesResponse|null) => void
+  ): UnaryResponse;
+  updateVoiceAnalyticsPreferencesEnabled(
+    requestMessage: api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesEnabledRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesEnabledResponse|null) => void
+  ): UnaryResponse;
+  updateVoiceAnalyticsPreferencesEnabled(
+    requestMessage: api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesEnabledRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesEnabledResponse|null) => void
   ): UnaryResponse;
   getScorecardsPreferences(
     requestMessage: api_v0alpha_org_pb.GetScorecardsPreferencesRequest,
@@ -3234,6 +3607,15 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.ListOwnedUsersRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListOwnedUsersResponse|null) => void
   ): UnaryResponse;
+  listOwnedOrgsByOrgId(
+    requestMessage: api_v0alpha_org_pb.ListOwnedOrgsByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListOwnedOrgsByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  listOwnedOrgsByOrgId(
+    requestMessage: api_v0alpha_org_pb.ListOwnedOrgsByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListOwnedOrgsByOrgIdResponse|null) => void
+  ): UnaryResponse;
   listOwnedOrgs(
     requestMessage: api_v0alpha_org_pb.ListOwnedOrgsRequest,
     metadata: grpc.Metadata,
@@ -3341,6 +3723,15 @@ export class OrgClient {
   removeUserSubscription(
     requestMessage: api_v0alpha_org_pb.RemoveUserSubscriptionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.RemoveUserSubscriptionResponse|null) => void
+  ): UnaryResponse;
+  removeMyUserSubscription(
+    requestMessage: api_v0alpha_org_pb.RemoveMyUserSubscriptionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.RemoveMyUserSubscriptionResponse|null) => void
+  ): UnaryResponse;
+  removeMyUserSubscription(
+    requestMessage: api_v0alpha_org_pb.RemoveMyUserSubscriptionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.RemoveMyUserSubscriptionResponse|null) => void
   ): UnaryResponse;
   updateUserSubscription(
     requestMessage: api_v0alpha_org_pb.UpdateUserSubscriptionRequest,
