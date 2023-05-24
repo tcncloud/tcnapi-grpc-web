@@ -28,8 +28,8 @@ export class ProcessOutboundCallReq extends jspb.Message {
   getSourceId(): number;
   setSourceId(value: number): void;
 
-  getSourceField(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
-  setSourceField(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+  getSourceField(): string;
+  setSourceField(value: string): void;
 
   getCallerId(): string;
   setCallerId(value: string): void;
@@ -51,36 +51,8 @@ export namespace ProcessOutboundCallReq {
     phoneNumber: string,
     callMetadataMap: Array<[string, string]>,
     sourceId: number,
-    sourceField: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+    sourceField: string,
     callerId: string,
-  }
-}
-
-export class RuleResponse extends jspb.Message {
-  getRuleText(): string;
-  setRuleText(value: string): void;
-
-  getPermit(): boolean;
-  setPermit(value: boolean): void;
-
-  getPluginResponse(): string;
-  setPluginResponse(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RuleResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: RuleResponse): RuleResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: RuleResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RuleResponse;
-  static deserializeBinaryFromReader(message: RuleResponse, reader: jspb.BinaryReader): RuleResponse;
-}
-
-export namespace RuleResponse {
-  export type AsObject = {
-    ruleText: string,
-    permit: boolean,
-    pluginResponse: string,
   }
 }
 
@@ -89,9 +61,9 @@ export class ProcessRes extends jspb.Message {
   setPermit(value: boolean): void;
 
   clearRuleResponsesList(): void;
-  getRuleResponsesList(): Array<RuleResponse>;
-  setRuleResponsesList(value: Array<RuleResponse>): void;
-  addRuleResponses(value?: RuleResponse, index?: number): RuleResponse;
+  getRuleResponsesList(): Array<api_commons_compliance_pb.RuleResponse>;
+  setRuleResponsesList(value: Array<api_commons_compliance_pb.RuleResponse>): void;
+  addRuleResponses(value?: api_commons_compliance_pb.RuleResponse, index?: number): api_commons_compliance_pb.RuleResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessRes.AsObject;
@@ -106,7 +78,7 @@ export class ProcessRes extends jspb.Message {
 export namespace ProcessRes {
   export type AsObject = {
     permit: boolean,
-    ruleResponsesList: Array<RuleResponse.AsObject>,
+    ruleResponsesList: Array<api_commons_compliance_pb.RuleResponse.AsObject>,
   }
 }
 
@@ -136,32 +108,6 @@ export namespace ScrubList {
   }
 }
 
-export class ScrubEntryDetails extends jspb.Message {
-  getContent(): string;
-  setContent(value: string): void;
-
-  hasExpirationDate(): boolean;
-  clearExpirationDate(): void;
-  getExpirationDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setExpirationDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ScrubEntryDetails.AsObject;
-  static toObject(includeInstance: boolean, msg: ScrubEntryDetails): ScrubEntryDetails.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ScrubEntryDetails, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ScrubEntryDetails;
-  static deserializeBinaryFromReader(message: ScrubEntryDetails, reader: jspb.BinaryReader): ScrubEntryDetails;
-}
-
-export namespace ScrubEntryDetails {
-  export type AsObject = {
-    content: string,
-    expirationDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-  }
-}
-
 export class CreateScrubListReq extends jspb.Message {
   getListId(): string;
   setListId(value: string): void;
@@ -178,9 +124,9 @@ export class CreateScrubListReq extends jspb.Message {
   setCountryCode(value: string): void;
 
   clearScrubEntryDetailsList(): void;
-  getScrubEntryDetailsList(): Array<ScrubEntryDetails>;
-  setScrubEntryDetailsList(value: Array<ScrubEntryDetails>): void;
-  addScrubEntryDetails(value?: ScrubEntryDetails, index?: number): ScrubEntryDetails;
+  getScrubEntryDetailsList(): Array<api_commons_compliance_pb.ScrubEntryDetails>;
+  setScrubEntryDetailsList(value: Array<api_commons_compliance_pb.ScrubEntryDetails>): void;
+  addScrubEntryDetails(value?: api_commons_compliance_pb.ScrubEntryDetails, index?: number): api_commons_compliance_pb.ScrubEntryDetails;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateScrubListReq.AsObject;
@@ -198,7 +144,7 @@ export namespace CreateScrubListReq {
     listList: Array<string>,
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
     countryCode: string,
-    scrubEntryDetailsList: Array<ScrubEntryDetails.AsObject>,
+    scrubEntryDetailsList: Array<api_commons_compliance_pb.ScrubEntryDetails.AsObject>,
   }
 }
 
@@ -218,9 +164,9 @@ export class AddScrubListEntriesReq extends jspb.Message {
   setCountryCode(value: string): void;
 
   clearScrubEntryDetailsList(): void;
-  getScrubEntryDetailsList(): Array<ScrubEntryDetails>;
-  setScrubEntryDetailsList(value: Array<ScrubEntryDetails>): void;
-  addScrubEntryDetails(value?: ScrubEntryDetails, index?: number): ScrubEntryDetails;
+  getScrubEntryDetailsList(): Array<api_commons_compliance_pb.ScrubEntryDetails>;
+  setScrubEntryDetailsList(value: Array<api_commons_compliance_pb.ScrubEntryDetails>): void;
+  addScrubEntryDetails(value?: api_commons_compliance_pb.ScrubEntryDetails, index?: number): api_commons_compliance_pb.ScrubEntryDetails;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddScrubListEntriesReq.AsObject;
@@ -238,7 +184,7 @@ export namespace AddScrubListEntriesReq {
     listList: Array<string>,
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
     countryCode: string,
-    scrubEntryDetailsList: Array<ScrubEntryDetails.AsObject>,
+    scrubEntryDetailsList: Array<api_commons_compliance_pb.ScrubEntryDetails.AsObject>,
   }
 }
 
@@ -614,9 +560,9 @@ export namespace CheckRuleSetReq {
 
 export class CheckRuleSetRes extends jspb.Message {
   clearRulesList(): void;
-  getRulesList(): Array<Rule>;
-  setRulesList(value: Array<Rule>): void;
-  addRules(value?: Rule, index?: number): Rule;
+  getRulesList(): Array<api_commons_compliance_pb.Rule>;
+  setRulesList(value: Array<api_commons_compliance_pb.Rule>): void;
+  addRules(value?: api_commons_compliance_pb.Rule, index?: number): api_commons_compliance_pb.Rule;
 
   clearWarningsList(): void;
   getWarningsList(): Array<string>;
@@ -635,7 +581,7 @@ export class CheckRuleSetRes extends jspb.Message {
 
 export namespace CheckRuleSetRes {
   export type AsObject = {
-    rulesList: Array<Rule.AsObject>,
+    rulesList: Array<api_commons_compliance_pb.Rule.AsObject>,
     warningsList: Array<string>,
   }
 }
@@ -837,9 +783,9 @@ export class CreateRuleSetReq extends jspb.Message {
   setRulesText(value: string): void;
 
   clearRulesList(): void;
-  getRulesList(): Array<Rule>;
-  setRulesList(value: Array<Rule>): void;
-  addRules(value?: Rule, index?: number): Rule;
+  getRulesList(): Array<api_commons_compliance_pb.Rule>;
+  setRulesList(value: Array<api_commons_compliance_pb.Rule>): void;
+  addRules(value?: api_commons_compliance_pb.Rule, index?: number): api_commons_compliance_pb.Rule;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRuleSetReq.AsObject;
@@ -856,7 +802,7 @@ export namespace CreateRuleSetReq {
     ruleSetId: string,
     name: string,
     rulesText: string,
-    rulesList: Array<Rule.AsObject>,
+    rulesList: Array<api_commons_compliance_pb.Rule.AsObject>,
   }
 }
 
@@ -976,9 +922,9 @@ export class RuleSet extends jspb.Message {
   setSha(value: string): void;
 
   clearRulesList(): void;
-  getRulesList(): Array<Rule>;
-  setRulesList(value: Array<Rule>): void;
-  addRules(value?: Rule, index?: number): Rule;
+  getRulesList(): Array<api_commons_compliance_pb.Rule>;
+  setRulesList(value: Array<api_commons_compliance_pb.Rule>): void;
+  addRules(value?: api_commons_compliance_pb.Rule, index?: number): api_commons_compliance_pb.Rule;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RuleSet.AsObject;
@@ -998,435 +944,7 @@ export namespace RuleSet {
     disabled: boolean,
     rulesText: string,
     sha: string,
-    rulesList: Array<Rule.AsObject>,
-  }
-}
-
-export class Rule extends jspb.Message {
-  getVerb(): api_commons_compliance_pb.VerbMap[keyof api_commons_compliance_pb.VerbMap];
-  setVerb(value: api_commons_compliance_pb.VerbMap[keyof api_commons_compliance_pb.VerbMap]): void;
-
-  getEntity(): api_commons_compliance_pb.EntityMap[keyof api_commons_compliance_pb.EntityMap];
-  setEntity(value: api_commons_compliance_pb.EntityMap[keyof api_commons_compliance_pb.EntityMap]): void;
-
-  getSubEntity(): api_commons_compliance_pb.SubEntityMap[keyof api_commons_compliance_pb.SubEntityMap];
-  setSubEntity(value: api_commons_compliance_pb.SubEntityMap[keyof api_commons_compliance_pb.SubEntityMap]): void;
-
-  clearSelectorsList(): void;
-  getSelectorsList(): Array<Selector>;
-  setSelectorsList(value: Array<Selector>): void;
-  addSelectors(value?: Selector, index?: number): Selector;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Rule.AsObject;
-  static toObject(includeInstance: boolean, msg: Rule): Rule.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Rule, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Rule;
-  static deserializeBinaryFromReader(message: Rule, reader: jspb.BinaryReader): Rule;
-}
-
-export namespace Rule {
-  export type AsObject = {
-    verb: api_commons_compliance_pb.VerbMap[keyof api_commons_compliance_pb.VerbMap],
-    entity: api_commons_compliance_pb.EntityMap[keyof api_commons_compliance_pb.EntityMap],
-    subEntity: api_commons_compliance_pb.SubEntityMap[keyof api_commons_compliance_pb.SubEntityMap],
-    selectorsList: Array<Selector.AsObject>,
-  }
-}
-
-export class Selector extends jspb.Message {
-  hasTime(): boolean;
-  clearTime(): void;
-  getTime(): TimeExp | undefined;
-  setTime(value?: TimeExp): void;
-
-  hasWeek(): boolean;
-  clearWeek(): void;
-  getWeek(): WeekdayExp | undefined;
-  setWeek(value?: WeekdayExp): void;
-
-  hasDncl(): boolean;
-  clearDncl(): void;
-  getDncl(): DnclExp | undefined;
-  setDncl(value?: DnclExp): void;
-
-  hasFrequency(): boolean;
-  clearFrequency(): void;
-  getFrequency(): FrequencyExp | undefined;
-  setFrequency(value?: FrequencyExp): void;
-
-  hasLocation(): boolean;
-  clearLocation(): void;
-  getLocation(): LocationExp | undefined;
-  setLocation(value?: LocationExp): void;
-
-  hasPhoneType(): boolean;
-  clearPhoneType(): void;
-  getPhoneType(): PhoneTypeExp | undefined;
-  setPhoneType(value?: PhoneTypeExp): void;
-
-  hasMonth(): boolean;
-  clearMonth(): void;
-  getMonth(): MonthExp | undefined;
-  setMonth(value?: MonthExp): void;
-
-  hasHoliday(): boolean;
-  clearHoliday(): void;
-  getHoliday(): HolidayExp | undefined;
-  setHoliday(value?: HolidayExp): void;
-
-  hasDate(): boolean;
-  clearDate(): void;
-  getDate(): DateExp | undefined;
-  setDate(value?: DateExp): void;
-
-  hasMeta(): boolean;
-  clearMeta(): void;
-  getMeta(): MetaFieldExp | undefined;
-  setMeta(value?: MetaFieldExp): void;
-
-  hasPlugin(): boolean;
-  clearPlugin(): void;
-  getPlugin(): PluginExp | undefined;
-  setPlugin(value?: PluginExp): void;
-
-  getSelectionRuleCase(): Selector.SelectionRuleCase;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Selector.AsObject;
-  static toObject(includeInstance: boolean, msg: Selector): Selector.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Selector, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Selector;
-  static deserializeBinaryFromReader(message: Selector, reader: jspb.BinaryReader): Selector;
-}
-
-export namespace Selector {
-  export type AsObject = {
-    time?: TimeExp.AsObject,
-    week?: WeekdayExp.AsObject,
-    dncl?: DnclExp.AsObject,
-    frequency?: FrequencyExp.AsObject,
-    location?: LocationExp.AsObject,
-    phoneType?: PhoneTypeExp.AsObject,
-    month?: MonthExp.AsObject,
-    holiday?: HolidayExp.AsObject,
-    date?: DateExp.AsObject,
-    meta?: MetaFieldExp.AsObject,
-    plugin?: PluginExp.AsObject,
-  }
-
-  export enum SelectionRuleCase {
-    SELECTION_RULE_NOT_SET = 0,
-    TIME = 1,
-    WEEK = 2,
-    DNCL = 3,
-    FREQUENCY = 4,
-    LOCATION = 5,
-    PHONE_TYPE = 6,
-    MONTH = 7,
-    HOLIDAY = 8,
-    DATE = 9,
-    META = 10,
-    PLUGIN = 11,
-  }
-}
-
-export class HolidayExp extends jspb.Message {
-  getMonth(): api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap];
-  setMonth(value: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap]): void;
-
-  getDay(): number;
-  setDay(value: number): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HolidayExp.AsObject;
-  static toObject(includeInstance: boolean, msg: HolidayExp): HolidayExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: HolidayExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HolidayExp;
-  static deserializeBinaryFromReader(message: HolidayExp, reader: jspb.BinaryReader): HolidayExp;
-}
-
-export namespace HolidayExp {
-  export type AsObject = {
-    month: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap],
-    day: number,
-    name: string,
-  }
-}
-
-export class TimeExp extends jspb.Message {
-  getStartHour(): string;
-  setStartHour(value: string): void;
-
-  getEndHour(): string;
-  setEndHour(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TimeExp.AsObject;
-  static toObject(includeInstance: boolean, msg: TimeExp): TimeExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TimeExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TimeExp;
-  static deserializeBinaryFromReader(message: TimeExp, reader: jspb.BinaryReader): TimeExp;
-}
-
-export namespace TimeExp {
-  export type AsObject = {
-    startHour: string,
-    endHour: string,
-  }
-}
-
-export class WeekdayExp extends jspb.Message {
-  getDay(): api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap];
-  setDay(value: api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap]): void;
-
-  getText(): string;
-  setText(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): WeekdayExp.AsObject;
-  static toObject(includeInstance: boolean, msg: WeekdayExp): WeekdayExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: WeekdayExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): WeekdayExp;
-  static deserializeBinaryFromReader(message: WeekdayExp, reader: jspb.BinaryReader): WeekdayExp;
-}
-
-export namespace WeekdayExp {
-  export type AsObject = {
-    day: api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap],
-    text: string,
-  }
-}
-
-export class MonthExp extends jspb.Message {
-  getMonth(): api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap];
-  setMonth(value: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap]): void;
-
-  getText(): string;
-  setText(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MonthExp.AsObject;
-  static toObject(includeInstance: boolean, msg: MonthExp): MonthExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: MonthExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MonthExp;
-  static deserializeBinaryFromReader(message: MonthExp, reader: jspb.BinaryReader): MonthExp;
-}
-
-export namespace MonthExp {
-  export type AsObject = {
-    month: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap],
-    text: string,
-  }
-}
-
-export class DateExp extends jspb.Message {
-  getMonth(): api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap];
-  setMonth(value: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap]): void;
-
-  getDay(): number;
-  setDay(value: number): void;
-
-  getYear(): number;
-  setYear(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DateExp.AsObject;
-  static toObject(includeInstance: boolean, msg: DateExp): DateExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DateExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DateExp;
-  static deserializeBinaryFromReader(message: DateExp, reader: jspb.BinaryReader): DateExp;
-}
-
-export namespace DateExp {
-  export type AsObject = {
-    month: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap],
-    day: number,
-    year: number,
-  }
-}
-
-export class DnclExp extends jspb.Message {
-  getListName(): string;
-  setListName(value: string): void;
-
-  getFieldName(): string;
-  setFieldName(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DnclExp.AsObject;
-  static toObject(includeInstance: boolean, msg: DnclExp): DnclExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DnclExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DnclExp;
-  static deserializeBinaryFromReader(message: DnclExp, reader: jspb.BinaryReader): DnclExp;
-}
-
-export namespace DnclExp {
-  export type AsObject = {
-    listName: string,
-    fieldName: string,
-  }
-}
-
-export class FrequencyExp extends jspb.Message {
-  getCount(): number;
-  setCount(value: number): void;
-
-  getDuration(): number;
-  setDuration(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FrequencyExp.AsObject;
-  static toObject(includeInstance: boolean, msg: FrequencyExp): FrequencyExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: FrequencyExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FrequencyExp;
-  static deserializeBinaryFromReader(message: FrequencyExp, reader: jspb.BinaryReader): FrequencyExp;
-}
-
-export namespace FrequencyExp {
-  export type AsObject = {
-    count: number,
-    duration: number,
-  }
-}
-
-export class LocationExp extends jspb.Message {
-  getLocation(): string;
-  setLocation(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LocationExp.AsObject;
-  static toObject(includeInstance: boolean, msg: LocationExp): LocationExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: LocationExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LocationExp;
-  static deserializeBinaryFromReader(message: LocationExp, reader: jspb.BinaryReader): LocationExp;
-}
-
-export namespace LocationExp {
-  export type AsObject = {
-    location: string,
-  }
-}
-
-export class PhoneTypeExp extends jspb.Message {
-  getPhoneType(): api_commons_compliance_pb.PhoneTypeMap[keyof api_commons_compliance_pb.PhoneTypeMap];
-  setPhoneType(value: api_commons_compliance_pb.PhoneTypeMap[keyof api_commons_compliance_pb.PhoneTypeMap]): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PhoneTypeExp.AsObject;
-  static toObject(includeInstance: boolean, msg: PhoneTypeExp): PhoneTypeExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PhoneTypeExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PhoneTypeExp;
-  static deserializeBinaryFromReader(message: PhoneTypeExp, reader: jspb.BinaryReader): PhoneTypeExp;
-}
-
-export namespace PhoneTypeExp {
-  export type AsObject = {
-    phoneType: api_commons_compliance_pb.PhoneTypeMap[keyof api_commons_compliance_pb.PhoneTypeMap],
-  }
-}
-
-export class MetaFieldExp extends jspb.Message {
-  getField(): string;
-  setField(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MetaFieldExp.AsObject;
-  static toObject(includeInstance: boolean, msg: MetaFieldExp): MetaFieldExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: MetaFieldExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MetaFieldExp;
-  static deserializeBinaryFromReader(message: MetaFieldExp, reader: jspb.BinaryReader): MetaFieldExp;
-}
-
-export namespace MetaFieldExp {
-  export type AsObject = {
-    field: string,
-  }
-}
-
-export class PluginExp extends jspb.Message {
-  getType(): api_commons_compliance_pb.PluginTypeMap[keyof api_commons_compliance_pb.PluginTypeMap];
-  setType(value: api_commons_compliance_pb.PluginTypeMap[keyof api_commons_compliance_pb.PluginTypeMap]): void;
-
-  getTcnStrict(): boolean;
-  setTcnStrict(value: boolean): void;
-
-  getLicenseId(): string;
-  setLicenseId(value: string): void;
-
-  getReferenceKey(): string;
-  setReferenceKey(value: string): void;
-
-  getFromNumber(): string;
-  setFromNumber(value: string): void;
-
-  getEnv(): api_commons_compliance_pb.EnvironmentMap[keyof api_commons_compliance_pb.EnvironmentMap];
-  setEnv(value: api_commons_compliance_pb.EnvironmentMap[keyof api_commons_compliance_pb.EnvironmentMap]): void;
-
-  getProfile(): string;
-  setProfile(value: string): void;
-
-  getContentField(): string;
-  setContentField(value: string): void;
-
-  getTopic(): string;
-  setTopic(value: string): void;
-
-  getAbsentAction(): api_commons_compliance_pb.ConsentAbsentActionMap[keyof api_commons_compliance_pb.ConsentAbsentActionMap];
-  setAbsentAction(value: api_commons_compliance_pb.ConsentAbsentActionMap[keyof api_commons_compliance_pb.ConsentAbsentActionMap]): void;
-
-  getDateLastContact(): string;
-  setDateLastContact(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PluginExp.AsObject;
-  static toObject(includeInstance: boolean, msg: PluginExp): PluginExp.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PluginExp, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PluginExp;
-  static deserializeBinaryFromReader(message: PluginExp, reader: jspb.BinaryReader): PluginExp;
-}
-
-export namespace PluginExp {
-  export type AsObject = {
-    type: api_commons_compliance_pb.PluginTypeMap[keyof api_commons_compliance_pb.PluginTypeMap],
-    tcnStrict: boolean,
-    licenseId: string,
-    referenceKey: string,
-    fromNumber: string,
-    env: api_commons_compliance_pb.EnvironmentMap[keyof api_commons_compliance_pb.EnvironmentMap],
-    profile: string,
-    contentField: string,
-    topic: string,
-    absentAction: api_commons_compliance_pb.ConsentAbsentActionMap[keyof api_commons_compliance_pb.ConsentAbsentActionMap],
-    dateLastContact: string,
+    rulesList: Array<api_commons_compliance_pb.Rule.AsObject>,
   }
 }
 
@@ -1662,52 +1180,24 @@ export namespace ExportScrubListRes {
   }
 }
 
-export class CountryCode extends jspb.Message {
-  getCountryCode(): number;
-  setCountryCode(value: number): void;
-
-  getCountryName(): string;
-  setCountryName(value: string): void;
-
-  getCountryId(): string;
-  setCountryId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CountryCode.AsObject;
-  static toObject(includeInstance: boolean, msg: CountryCode): CountryCode.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CountryCode, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CountryCode;
-  static deserializeBinaryFromReader(message: CountryCode, reader: jspb.BinaryReader): CountryCode;
-}
-
-export namespace CountryCode {
-  export type AsObject = {
-    countryCode: number,
-    countryName: string,
-    countryId: string,
-  }
-}
-
 export class Scenario extends jspb.Message {
   getCplScenarioId(): number;
   setCplScenarioId(value: number): void;
 
   hasShouldAllow(): boolean;
   clearShouldAllow(): void;
-  getShouldAllow(): ScenarioData | undefined;
-  setShouldAllow(value?: ScenarioData): void;
+  getShouldAllow(): api_commons_compliance_pb.ScenarioData | undefined;
+  setShouldAllow(value?: api_commons_compliance_pb.ScenarioData): void;
 
   hasShouldDeny(): boolean;
   clearShouldDeny(): void;
-  getShouldDeny(): ScenarioData | undefined;
-  setShouldDeny(value?: ScenarioData): void;
+  getShouldDeny(): api_commons_compliance_pb.ScenarioData | undefined;
+  setShouldDeny(value?: api_commons_compliance_pb.ScenarioData): void;
 
   hasLastExecutionResult(): boolean;
   clearLastExecutionResult(): void;
-  getLastExecutionResult(): ScenarioResult | undefined;
-  setLastExecutionResult(value?: ScenarioResult): void;
+  getLastExecutionResult(): api_commons_compliance_pb.ScenarioResult | undefined;
+  setLastExecutionResult(value?: api_commons_compliance_pb.ScenarioResult): void;
 
   getName(): string;
   setName(value: string): void;
@@ -1725,118 +1215,23 @@ export class Scenario extends jspb.Message {
 export namespace Scenario {
   export type AsObject = {
     cplScenarioId: number,
-    shouldAllow?: ScenarioData.AsObject,
-    shouldDeny?: ScenarioData.AsObject,
-    lastExecutionResult?: ScenarioResult.AsObject,
+    shouldAllow?: api_commons_compliance_pb.ScenarioData.AsObject,
+    shouldDeny?: api_commons_compliance_pb.ScenarioData.AsObject,
+    lastExecutionResult?: api_commons_compliance_pb.ScenarioResult.AsObject,
     name: string,
-  }
-}
-
-export class ScenarioData extends jspb.Message {
-  hasCommType(): boolean;
-  clearCommType(): void;
-  getCommType(): api_commons_communication_pb.CommType | undefined;
-  setCommType(value?: api_commons_communication_pb.CommType): void;
-
-  getPhoneNumber(): string;
-  setPhoneNumber(value: string): void;
-
-  getCountryCode(): string;
-  setCountryCode(value: string): void;
-
-  getEmail(): string;
-  setEmail(value: string): void;
-
-  getCallMetadataMap(): jspb.Map<string, string>;
-  clearCallMetadataMap(): void;
-  hasTimeOfCall(): boolean;
-  clearTimeOfCall(): void;
-  getTimeOfCall(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setTimeOfCall(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  getFrequencyCount(): number;
-  setFrequencyCount(value: number): void;
-
-  getFrequencyDuration(): number;
-  setFrequencyDuration(value: number): void;
-
-  getDnclBlocks(): boolean;
-  setDnclBlocks(value: boolean): void;
-
-  getCountry(): string;
-  setCountry(value: string): void;
-
-  getState(): string;
-  setState(value: string): void;
-
-  getCounty(): string;
-  setCounty(value: string): void;
-
-  getCity(): string;
-  setCity(value: string): void;
-
-  getProvince(): string;
-  setProvince(value: string): void;
-
-  getPhoneType(): api_commons_compliance_pb.PhoneTypeMap[keyof api_commons_compliance_pb.PhoneTypeMap];
-  setPhoneType(value: api_commons_compliance_pb.PhoneTypeMap[keyof api_commons_compliance_pb.PhoneTypeMap]): void;
-
-  getTimeZone(): string;
-  setTimeZone(value: string): void;
-
-  clearHolidaysList(): void;
-  getHolidaysList(): Array<string>;
-  setHolidaysList(value: Array<string>): void;
-  addHolidays(value: string, index?: number): string;
-
-  hasCountryCodeData(): boolean;
-  clearCountryCodeData(): void;
-  getCountryCodeData(): CountryCode | undefined;
-  setCountryCodeData(value?: CountryCode): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ScenarioData.AsObject;
-  static toObject(includeInstance: boolean, msg: ScenarioData): ScenarioData.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ScenarioData, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ScenarioData;
-  static deserializeBinaryFromReader(message: ScenarioData, reader: jspb.BinaryReader): ScenarioData;
-}
-
-export namespace ScenarioData {
-  export type AsObject = {
-    commType?: api_commons_communication_pb.CommType.AsObject,
-    phoneNumber: string,
-    countryCode: string,
-    email: string,
-    callMetadataMap: Array<[string, string]>,
-    timeOfCall?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    frequencyCount: number,
-    frequencyDuration: number,
-    dnclBlocks: boolean,
-    country: string,
-    state: string,
-    county: string,
-    city: string,
-    province: string,
-    phoneType: api_commons_compliance_pb.PhoneTypeMap[keyof api_commons_compliance_pb.PhoneTypeMap],
-    timeZone: string,
-    holidaysList: Array<string>,
-    countryCodeData?: CountryCode.AsObject,
   }
 }
 
 export class CreateScenarioReq extends jspb.Message {
   hasShouldAllow(): boolean;
   clearShouldAllow(): void;
-  getShouldAllow(): ScenarioData | undefined;
-  setShouldAllow(value?: ScenarioData): void;
+  getShouldAllow(): api_commons_compliance_pb.ScenarioData | undefined;
+  setShouldAllow(value?: api_commons_compliance_pb.ScenarioData): void;
 
   hasShouldDeny(): boolean;
   clearShouldDeny(): void;
-  getShouldDeny(): ScenarioData | undefined;
-  setShouldDeny(value?: ScenarioData): void;
+  getShouldDeny(): api_commons_compliance_pb.ScenarioData | undefined;
+  setShouldDeny(value?: api_commons_compliance_pb.ScenarioData): void;
 
   getName(): string;
   setName(value: string): void;
@@ -1853,8 +1248,8 @@ export class CreateScenarioReq extends jspb.Message {
 
 export namespace CreateScenarioReq {
   export type AsObject = {
-    shouldAllow?: ScenarioData.AsObject,
-    shouldDeny?: ScenarioData.AsObject,
+    shouldAllow?: api_commons_compliance_pb.ScenarioData.AsObject,
+    shouldDeny?: api_commons_compliance_pb.ScenarioData.AsObject,
     name: string,
   }
 }
@@ -2025,9 +1420,9 @@ export namespace RunAssignedScenariosReq {
 
 export class RunAssignedScenariosRes extends jspb.Message {
   clearResultsList(): void;
-  getResultsList(): Array<ScenarioResult>;
-  setResultsList(value: Array<ScenarioResult>): void;
-  addResults(value?: ScenarioResult, index?: number): ScenarioResult;
+  getResultsList(): Array<api_commons_compliance_pb.ScenarioResult>;
+  setResultsList(value: Array<api_commons_compliance_pb.ScenarioResult>): void;
+  addResults(value?: api_commons_compliance_pb.ScenarioResult, index?: number): api_commons_compliance_pb.ScenarioResult;
 
   getPassedValue(): boolean;
   setPassedValue(value: boolean): void;
@@ -2047,69 +1442,9 @@ export class RunAssignedScenariosRes extends jspb.Message {
 
 export namespace RunAssignedScenariosRes {
   export type AsObject = {
-    resultsList: Array<ScenarioResult.AsObject>,
+    resultsList: Array<api_commons_compliance_pb.ScenarioResult.AsObject>,
     passedValue: boolean,
     cplRuleSetName: string,
-  }
-}
-
-export class ScenarioResult extends jspb.Message {
-  getPassedValue(): boolean;
-  setPassedValue(value: boolean): void;
-
-  clearShouldAllowResponsesList(): void;
-  getShouldAllowResponsesList(): Array<ScenarioRuleResponse>;
-  setShouldAllowResponsesList(value: Array<ScenarioRuleResponse>): void;
-  addShouldAllowResponses(value?: ScenarioRuleResponse, index?: number): ScenarioRuleResponse;
-
-  clearShouldDenyResponsesList(): void;
-  getShouldDenyResponsesList(): Array<ScenarioRuleResponse>;
-  setShouldDenyResponsesList(value: Array<ScenarioRuleResponse>): void;
-  addShouldDenyResponses(value?: ScenarioRuleResponse, index?: number): ScenarioRuleResponse;
-
-  getScenarioName(): string;
-  setScenarioName(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ScenarioResult.AsObject;
-  static toObject(includeInstance: boolean, msg: ScenarioResult): ScenarioResult.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ScenarioResult, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ScenarioResult;
-  static deserializeBinaryFromReader(message: ScenarioResult, reader: jspb.BinaryReader): ScenarioResult;
-}
-
-export namespace ScenarioResult {
-  export type AsObject = {
-    passedValue: boolean,
-    shouldAllowResponsesList: Array<ScenarioRuleResponse.AsObject>,
-    shouldDenyResponsesList: Array<ScenarioRuleResponse.AsObject>,
-    scenarioName: string,
-  }
-}
-
-export class ScenarioRuleResponse extends jspb.Message {
-  getRuleText(): string;
-  setRuleText(value: string): void;
-
-  getPermitValue(): boolean;
-  setPermitValue(value: boolean): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ScenarioRuleResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ScenarioRuleResponse): ScenarioRuleResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ScenarioRuleResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ScenarioRuleResponse;
-  static deserializeBinaryFromReader(message: ScenarioRuleResponse, reader: jspb.BinaryReader): ScenarioRuleResponse;
-}
-
-export namespace ScenarioRuleResponse {
-  export type AsObject = {
-    ruleText: string,
-    permitValue: boolean,
   }
 }
 
@@ -2224,8 +1559,8 @@ export class AssignedScenario extends jspb.Message {
 
   hasLastExecutionResult(): boolean;
   clearLastExecutionResult(): void;
-  getLastExecutionResult(): ScenarioResult | undefined;
-  setLastExecutionResult(value?: ScenarioResult): void;
+  getLastExecutionResult(): api_commons_compliance_pb.ScenarioResult | undefined;
+  setLastExecutionResult(value?: api_commons_compliance_pb.ScenarioResult): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AssignedScenario.AsObject;
@@ -2241,7 +1576,7 @@ export namespace AssignedScenario {
   export type AsObject = {
     scenario?: Scenario.AsObject,
     enabled: boolean,
-    lastExecutionResult?: ScenarioResult.AsObject,
+    lastExecutionResult?: api_commons_compliance_pb.ScenarioResult.AsObject,
   }
 }
 
@@ -2545,9 +1880,9 @@ export class CreateConsentReq extends jspb.Message {
   setNotes(value: string): void;
 
   clearConditionsList(): void;
-  getConditionsList(): Array<ConsentCondition>;
-  setConditionsList(value: Array<ConsentCondition>): void;
-  addConditions(value?: ConsentCondition, index?: number): ConsentCondition;
+  getConditionsList(): Array<api_commons_compliance_pb.ConsentCondition>;
+  setConditionsList(value: Array<api_commons_compliance_pb.ConsentCondition>): void;
+  addConditions(value?: api_commons_compliance_pb.ConsentCondition, index?: number): api_commons_compliance_pb.ConsentCondition;
 
   getContentType(): api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap];
   setContentType(value: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap]): void;
@@ -2583,7 +1918,7 @@ export namespace CreateConsentReq {
     conditionFrom?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     conditionTo?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     notes: string,
-    conditionsList: Array<ConsentCondition.AsObject>,
+    conditionsList: Array<api_commons_compliance_pb.ConsentCondition.AsObject>,
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
     channelType: api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap],
   }
@@ -2737,9 +2072,9 @@ export class Consent extends jspb.Message {
   setNotes(value: string): void;
 
   clearConditionsList(): void;
-  getConditionsList(): Array<ConsentCondition>;
-  setConditionsList(value: Array<ConsentCondition>): void;
-  addConditions(value?: ConsentCondition, index?: number): ConsentCondition;
+  getConditionsList(): Array<api_commons_compliance_pb.ConsentCondition>;
+  setConditionsList(value: Array<api_commons_compliance_pb.ConsentCondition>): void;
+  addConditions(value?: api_commons_compliance_pb.ConsentCondition, index?: number): api_commons_compliance_pb.ConsentCondition;
 
   getContentType(): api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap];
   setContentType(value: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap]): void;
@@ -2779,59 +2114,9 @@ export namespace Consent {
     conditionFrom?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     conditionTo?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     notes: string,
-    conditionsList: Array<ConsentCondition.AsObject>,
+    conditionsList: Array<api_commons_compliance_pb.ConsentCondition.AsObject>,
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
     channelType: api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap],
-  }
-}
-
-export class ConsentCondition extends jspb.Message {
-  getConsentConditionId(): number;
-  setConsentConditionId(value: number): void;
-
-  getConsentId(): number;
-  setConsentId(value: number): void;
-
-  clearDaysOfTheWeekList(): void;
-  getDaysOfTheWeekList(): Array<api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap]>;
-  setDaysOfTheWeekList(value: Array<api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap]>): void;
-  addDaysOfTheWeek(value: api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap], index?: number): api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap];
-
-  getTimeOfDayFrom(): string;
-  setTimeOfDayFrom(value: string): void;
-
-  getTimeOfDayTo(): string;
-  setTimeOfDayTo(value: string): void;
-
-  hasFromDate(): boolean;
-  clearFromDate(): void;
-  getFromDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setFromDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  hasToDate(): boolean;
-  clearToDate(): void;
-  getToDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setToDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConsentCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: ConsentCondition): ConsentCondition.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ConsentCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConsentCondition;
-  static deserializeBinaryFromReader(message: ConsentCondition, reader: jspb.BinaryReader): ConsentCondition;
-}
-
-export namespace ConsentCondition {
-  export type AsObject = {
-    consentConditionId: number,
-    consentId: number,
-    daysOfTheWeekList: Array<api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap]>,
-    timeOfDayFrom: string,
-    timeOfDayTo: string,
-    fromDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    toDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -2925,9 +2210,9 @@ export class UpdateConsentReq extends jspb.Message {
   setNotes(value: string): void;
 
   clearConditionsList(): void;
-  getConditionsList(): Array<ConsentCondition>;
-  setConditionsList(value: Array<ConsentCondition>): void;
-  addConditions(value?: ConsentCondition, index?: number): ConsentCondition;
+  getConditionsList(): Array<api_commons_compliance_pb.ConsentCondition>;
+  setConditionsList(value: Array<api_commons_compliance_pb.ConsentCondition>): void;
+  addConditions(value?: api_commons_compliance_pb.ConsentCondition, index?: number): api_commons_compliance_pb.ConsentCondition;
 
   getContentType(): api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap];
   setContentType(value: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap]): void;
@@ -2965,7 +2250,7 @@ export namespace UpdateConsentReq {
     conditionFrom?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     conditionTo?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     notes: string,
-    conditionsList: Array<ConsentCondition.AsObject>,
+    conditionsList: Array<api_commons_compliance_pb.ConsentCondition.AsObject>,
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
     channelType: api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap],
   }
@@ -3584,9 +2869,9 @@ export class ConsentByContent extends jspb.Message {
   setContentType(value: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap]): void;
 
   clearConditionsList(): void;
-  getConditionsList(): Array<ConsentCondition>;
-  setConditionsList(value: Array<ConsentCondition>): void;
-  addConditions(value?: ConsentCondition, index?: number): ConsentCondition;
+  getConditionsList(): Array<api_commons_compliance_pb.ConsentCondition>;
+  setConditionsList(value: Array<api_commons_compliance_pb.ConsentCondition>): void;
+  addConditions(value?: api_commons_compliance_pb.ConsentCondition, index?: number): api_commons_compliance_pb.ConsentCondition;
 
   getChannelType(): api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap];
   setChannelType(value: api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap]): void;
@@ -3620,7 +2905,7 @@ export namespace ConsentByContent {
     conditionTo?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     notes: string,
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
-    conditionsList: Array<ConsentCondition.AsObject>,
+    conditionsList: Array<api_commons_compliance_pb.ConsentCondition.AsObject>,
     channelType: api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap],
   }
 }
@@ -3660,6 +2945,9 @@ export class GetConsentByProfileAndContentReq extends jspb.Message {
   getContentType(): api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap];
   setContentType(value: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap]): void;
 
+  getChannelType(): api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap];
+  setChannelType(value: api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetConsentByProfileAndContentReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetConsentByProfileAndContentReq): GetConsentByProfileAndContentReq.AsObject;
@@ -3676,6 +2964,7 @@ export namespace GetConsentByProfileAndContentReq {
     content: string,
     profileId: string,
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
+    channelType: api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap],
   }
 }
 
@@ -3741,9 +3030,9 @@ export class GetConsentByProfileAndContentRes extends jspb.Message {
   setContentType(value: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap]): void;
 
   clearConditionsList(): void;
-  getConditionsList(): Array<ConsentCondition>;
-  setConditionsList(value: Array<ConsentCondition>): void;
-  addConditions(value?: ConsentCondition, index?: number): ConsentCondition;
+  getConditionsList(): Array<api_commons_compliance_pb.ConsentCondition>;
+  setConditionsList(value: Array<api_commons_compliance_pb.ConsentCondition>): void;
+  addConditions(value?: api_commons_compliance_pb.ConsentCondition, index?: number): api_commons_compliance_pb.ConsentCondition;
 
   getChannelType(): api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap];
   setChannelType(value: api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap]): void;
@@ -3785,7 +3074,7 @@ export namespace GetConsentByProfileAndContentRes {
     conditionTo?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     notes: string,
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
-    conditionsList: Array<ConsentCondition.AsObject>,
+    conditionsList: Array<api_commons_compliance_pb.ConsentCondition.AsObject>,
     channelType: api_commons_compliance_pb.ChannelMap[keyof api_commons_compliance_pb.ChannelMap],
     revokedReason: string,
     grantedReason: string,
