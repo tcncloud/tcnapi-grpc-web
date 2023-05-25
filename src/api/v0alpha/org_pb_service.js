@@ -127,6 +127,15 @@ Org.ListOrganizationUserDescriptions = {
   responseType: api_v0alpha_org_pb.ListOrganizationUserDescriptionsResponse
 };
 
+Org.AdminListUserDescriptions = {
+  methodName: "AdminListUserDescriptions",
+  service: Org,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v0alpha_org_pb.AdminListUserDescriptionsRequest,
+  responseType: api_v0alpha_org_pb.AdminListUserDescriptionsResponse
+};
+
 Org.ListUserDescriptions = {
   methodName: "ListUserDescriptions",
   service: Org,
@@ -152,6 +161,15 @@ Org.GetRegions = {
   responseStream: false,
   requestType: api_v0alpha_org_pb.GetRegionsRequest,
   responseType: api_v0alpha_org_pb.GetRegionsResponse
+};
+
+Org.GetMyUserDetails = {
+  methodName: "GetMyUserDetails",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.GetMyUserDetailsRequest,
+  responseType: api_v0alpha_org_pb.UserDetails
 };
 
 Org.GetUserDetails = {
@@ -253,6 +271,24 @@ Org.UpdateUser = {
   responseType: api_v0alpha_org_pb.UpdateUserResponse
 };
 
+Org.UpdateMyUser = {
+  methodName: "UpdateMyUser",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.UpdateMyUserRequest,
+  responseType: api_v0alpha_org_pb.UpdateMyUserResponse
+};
+
+Org.UpdateUserCallerId = {
+  methodName: "UpdateUserCallerId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.UpdateUserCallerIdRequest,
+  responseType: api_v0alpha_org_pb.UpdateUserCallerIdResponse
+};
+
 Org.CreateUser = {
   methodName: "CreateUser",
   service: Org,
@@ -260,6 +296,15 @@ Org.CreateUser = {
   responseStream: false,
   requestType: api_v0alpha_org_pb.CreateUserRequest,
   responseType: api_v0alpha_org_pb.CreateUserResponse
+};
+
+Org.CreateUserByOrgId = {
+  methodName: "CreateUserByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.CreateUserByOrgIdRequest,
+  responseType: api_v0alpha_org_pb.CreateUserByOrgIdResponse
 };
 
 Org.CreateDelegatedUser = {
@@ -280,6 +325,24 @@ Org.UpdateUserPassword = {
   responseType: api_v0alpha_org_pb.UpdateUserPasswordResponse
 };
 
+Org.UpdateMyUserPassword = {
+  methodName: "UpdateMyUserPassword",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.UpdateMyUserPasswordRequest,
+  responseType: api_v0alpha_org_pb.UpdateMyUserPasswordResponse
+};
+
+Org.UpdateUserPasswordByOrgId = {
+  methodName: "UpdateUserPasswordByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.UpdateUserPasswordByOrgIdRequest,
+  responseType: api_v0alpha_org_pb.UpdateUserPasswordByOrgIdResponse
+};
+
 Org.ResetUserRequirePasswordReset = {
   methodName: "ResetUserRequirePasswordReset",
   service: Org,
@@ -298,6 +361,24 @@ Org.GetUserPasswordResetLink = {
   responseType: api_v0alpha_org_pb.GetUserPasswordResetLinkResponse
 };
 
+Org.GetMyUserPasswordResetLink = {
+  methodName: "GetMyUserPasswordResetLink",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.GetMyUserPasswordResetLinkRequest,
+  responseType: api_v0alpha_org_pb.GetMyUserPasswordResetLinkResponse
+};
+
+Org.GetUserPasswordResetLinkByOrgId = {
+  methodName: "GetUserPasswordResetLinkByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.GetUserPasswordResetLinkByOrgIdRequest,
+  responseType: api_v0alpha_org_pb.GetUserPasswordResetLinkByOrgIdResponse
+};
+
 Org.GetUserEmailVerified = {
   methodName: "GetUserEmailVerified",
   service: Org,
@@ -307,6 +388,24 @@ Org.GetUserEmailVerified = {
   responseType: api_v0alpha_org_pb.GetUserEmailVerifiedResponse
 };
 
+Org.GetUserEmailVerifiedByOrgId = {
+  methodName: "GetUserEmailVerifiedByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.GetUserEmailVerifiedByOrgIdRequest,
+  responseType: api_v0alpha_org_pb.GetUserEmailVerifiedByOrgIdResponse
+};
+
+Org.SendUserVerificationEmailByOrgId = {
+  methodName: "SendUserVerificationEmailByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.SendUserVerificationEmailByOrgIdRequest,
+  responseType: api_v0alpha_org_pb.SendUserVerificationEmailByOrgIdResponse
+};
+
 Org.SendUserVerificationEmail = {
   methodName: "SendUserVerificationEmail",
   service: Org,
@@ -314,6 +413,15 @@ Org.SendUserVerificationEmail = {
   responseStream: false,
   requestType: api_v0alpha_org_pb.SendUserVerificationEmailRequest,
   responseType: api_v0alpha_org_pb.SendUserVerificationEmailResponse
+};
+
+Org.ManualUserEmailVerificationByOrgId = {
+  methodName: "ManualUserEmailVerificationByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.ManualUserEmailVerificationByOrgIdRequest,
+  responseType: api_v0alpha_org_pb.ManualUserEmailVerificationByOrgIdResponse
 };
 
 Org.ManualUserEmailVerification = {
@@ -332,6 +440,15 @@ Org.GetTempUserToken = {
   responseStream: false,
   requestType: api_v0alpha_org_pb.GetTempUserTokenReq,
   responseType: api_v0alpha_org_pb.GetTempUserTokenRes
+};
+
+Org.GetTempUserTokenByUserId = {
+  methodName: "GetTempUserTokenByUserId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.GetTempUserTokenByUserIdReq,
+  responseType: api_v0alpha_org_pb.GetTempUserTokenByUserIdRes
 };
 
 Org.GetCountriesList = {
@@ -388,6 +505,15 @@ Org.UpdateUserDisabled = {
   responseType: api_v0alpha_org_pb.UpdateUserDisabledResponse
 };
 
+Org.UpdateUserDisabledByOrgId = {
+  methodName: "UpdateUserDisabledByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.UpdateUserDisabledByOrgIdRequest,
+  responseType: api_v0alpha_org_pb.UpdateUserDisabledByOrgIdResponse
+};
+
 Org.UpdateBulkUsersDisabled = {
   methodName: "UpdateBulkUsersDisabled",
   service: Org,
@@ -395,6 +521,15 @@ Org.UpdateBulkUsersDisabled = {
   responseStream: false,
   requestType: api_v0alpha_org_pb.UpdateBulkUsersDisabledRequest,
   responseType: api_v0alpha_org_pb.UpdateBulkUsersDisabledResponse
+};
+
+Org.GetOrgBillingSettingsByOrgId = {
+  methodName: "GetOrgBillingSettingsByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.GetOrgBillingSettingsByOrgIdRequest,
+  responseType: api_v0alpha_org_pb.GetOrgBillingSettingsByOrgIdResponse
 };
 
 Org.GetOrgBillingSettings = {
@@ -440,6 +575,15 @@ Org.GetSystemDefaultBillingRates = {
   responseStream: false,
   requestType: api_v0alpha_org_pb.GetSystemDefaultBillingRatesRequest,
   responseType: api_v0alpha_org_pb.GetSystemDefaultBillingRatesResponse
+};
+
+Org.ListPermissionGroupsByOrgId = {
+  methodName: "ListPermissionGroupsByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.ListPermissionGroupsByOrgIdRequest,
+  responseType: api_v0alpha_org_pb.ListPermissionGroupsByOrgIdResponse
 };
 
 Org.ListPermissionGroups = {
@@ -586,6 +730,15 @@ Org.GetOrgDefaultSuperUserGroup = {
   responseType: api_v0alpha_org_pb.GetOrgDefaultSuperUserGroupResponse
 };
 
+Org.ListP3PermissionGroupsByOrgId = {
+  methodName: "ListP3PermissionGroupsByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.ListP3PermissionGroupsByOrgIdRequest,
+  responseType: api_v0alpha_org_pb.ListP3PermissionGroupsByOrgIdResponse
+};
+
 Org.ListP3PermissionGroups = {
   methodName: "ListP3PermissionGroups",
   service: Org,
@@ -620,6 +773,15 @@ Org.CreateP3PermissionGroup = {
   responseStream: false,
   requestType: api_v0alpha_org_pb.CreateP3PermissionGroupRequest,
   responseType: api_v0alpha_org_pb.CreateP3PermissionGroupResponse
+};
+
+Org.UpdateP3PermissionGroupByOrgId = {
+  methodName: "UpdateP3PermissionGroupByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.UpdateP3PermissionGroupByOrgIdRequest,
+  responseType: api_v0alpha_org_pb.UpdateP3PermissionGroupByOrgIdResponse
 };
 
 Org.UpdateP3PermissionGroup = {
@@ -962,6 +1124,15 @@ Org.UpdateVoiceAnalyticsPreferences = {
   responseStream: false,
   requestType: api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesRequest,
   responseType: api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesResponse
+};
+
+Org.UpdateVoiceAnalyticsPreferencesEnabled = {
+  methodName: "UpdateVoiceAnalyticsPreferencesEnabled",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesEnabledRequest,
+  responseType: api_v0alpha_org_pb.UpdateVoiceAnalyticsPreferencesEnabledResponse
 };
 
 Org.GetScorecardsPreferences = {
@@ -1432,6 +1603,15 @@ Org.ListOwnedUsers = {
   responseType: api_v0alpha_org_pb.ListOwnedUsersResponse
 };
 
+Org.ListOwnedOrgsByOrgId = {
+  methodName: "ListOwnedOrgsByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.ListOwnedOrgsByOrgIdRequest,
+  responseType: api_v0alpha_org_pb.ListOwnedOrgsByOrgIdResponse
+};
+
 Org.ListOwnedOrgs = {
   methodName: "ListOwnedOrgs",
   service: Org,
@@ -1538,6 +1718,15 @@ Org.RemoveUserSubscription = {
   responseStream: false,
   requestType: api_v0alpha_org_pb.RemoveUserSubscriptionRequest,
   responseType: api_v0alpha_org_pb.RemoveUserSubscriptionResponse
+};
+
+Org.RemoveMyUserSubscription = {
+  methodName: "RemoveMyUserSubscription",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.RemoveMyUserSubscriptionRequest,
+  responseType: api_v0alpha_org_pb.RemoveMyUserSubscriptionResponse
 };
 
 Org.UpdateUserSubscription = {
@@ -2022,6 +2211,45 @@ OrgClient.prototype.listOrganizationUserDescriptions = function listOrganization
   };
 };
 
+OrgClient.prototype.adminListUserDescriptions = function adminListUserDescriptions(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(Org.AdminListUserDescriptions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.listUserDescriptions = function listUserDescriptions(requestMessage, metadata) {
   var listeners = {
     data: [],
@@ -2097,6 +2325,37 @@ OrgClient.prototype.getRegions = function getRegions(requestMessage, metadata, c
     callback = arguments[1];
   }
   var client = grpc.unary(Org.GetRegions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.getMyUserDetails = function getMyUserDetails(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetMyUserDetails, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2464,11 +2723,104 @@ OrgClient.prototype.updateUser = function updateUser(requestMessage, metadata, c
   };
 };
 
+OrgClient.prototype.updateMyUser = function updateMyUser(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateMyUser, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.updateUserCallerId = function updateUserCallerId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateUserCallerId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.createUser = function createUser(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(Org.CreateUser, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.createUserByOrgId = function createUserByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CreateUserByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2557,6 +2909,68 @@ OrgClient.prototype.updateUserPassword = function updateUserPassword(requestMess
   };
 };
 
+OrgClient.prototype.updateMyUserPassword = function updateMyUserPassword(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateMyUserPassword, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.updateUserPasswordByOrgId = function updateUserPasswordByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateUserPasswordByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.resetUserRequirePasswordReset = function resetUserRequirePasswordReset(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -2619,6 +3033,68 @@ OrgClient.prototype.getUserPasswordResetLink = function getUserPasswordResetLink
   };
 };
 
+OrgClient.prototype.getMyUserPasswordResetLink = function getMyUserPasswordResetLink(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetMyUserPasswordResetLink, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.getUserPasswordResetLinkByOrgId = function getUserPasswordResetLinkByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetUserPasswordResetLinkByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.getUserEmailVerified = function getUserEmailVerified(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -2650,11 +3126,104 @@ OrgClient.prototype.getUserEmailVerified = function getUserEmailVerified(request
   };
 };
 
+OrgClient.prototype.getUserEmailVerifiedByOrgId = function getUserEmailVerifiedByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetUserEmailVerifiedByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.sendUserVerificationEmailByOrgId = function sendUserVerificationEmailByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.SendUserVerificationEmailByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.sendUserVerificationEmail = function sendUserVerificationEmail(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(Org.SendUserVerificationEmail, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.manualUserEmailVerificationByOrgId = function manualUserEmailVerificationByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ManualUserEmailVerificationByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2717,6 +3286,37 @@ OrgClient.prototype.getTempUserToken = function getTempUserToken(requestMessage,
     callback = arguments[1];
   }
   var client = grpc.unary(Org.GetTempUserToken, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.getTempUserTokenByUserId = function getTempUserTokenByUserId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetTempUserTokenByUserId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2929,11 +3529,73 @@ OrgClient.prototype.updateUserDisabled = function updateUserDisabled(requestMess
   };
 };
 
+OrgClient.prototype.updateUserDisabledByOrgId = function updateUserDisabledByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateUserDisabledByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.updateBulkUsersDisabled = function updateBulkUsersDisabled(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(Org.UpdateBulkUsersDisabled, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.getOrgBillingSettingsByOrgId = function getOrgBillingSettingsByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetOrgBillingSettingsByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -3089,6 +3751,37 @@ OrgClient.prototype.getSystemDefaultBillingRates = function getSystemDefaultBill
     callback = arguments[1];
   }
   var client = grpc.unary(Org.GetSystemDefaultBillingRates, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listPermissionGroupsByOrgId = function listPermissionGroupsByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListPermissionGroupsByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -3611,6 +4304,37 @@ OrgClient.prototype.getOrgDefaultSuperUserGroup = function getOrgDefaultSuperUse
   };
 };
 
+OrgClient.prototype.listP3PermissionGroupsByOrgId = function listP3PermissionGroupsByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListP3PermissionGroupsByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.listP3PermissionGroups = function listP3PermissionGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -3709,6 +4433,37 @@ OrgClient.prototype.createP3PermissionGroup = function createP3PermissionGroup(r
     callback = arguments[1];
   }
   var client = grpc.unary(Org.CreateP3PermissionGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.updateP3PermissionGroupByOrgId = function updateP3PermissionGroupByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateP3PermissionGroupByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -4887,6 +5642,37 @@ OrgClient.prototype.updateVoiceAnalyticsPreferences = function updateVoiceAnalyt
     callback = arguments[1];
   }
   var client = grpc.unary(Org.UpdateVoiceAnalyticsPreferences, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.updateVoiceAnalyticsPreferencesEnabled = function updateVoiceAnalyticsPreferencesEnabled(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateVoiceAnalyticsPreferencesEnabled, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -6525,6 +7311,37 @@ OrgClient.prototype.listOwnedUsers = function listOwnedUsers(requestMessage, met
   };
 };
 
+OrgClient.prototype.listOwnedOrgsByOrgId = function listOwnedOrgsByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListOwnedOrgsByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.listOwnedOrgs = function listOwnedOrgs(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -6871,6 +7688,37 @@ OrgClient.prototype.removeUserSubscription = function removeUserSubscription(req
     callback = arguments[1];
   }
   var client = grpc.unary(Org.RemoveUserSubscription, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.removeMyUserSubscription = function removeMyUserSubscription(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.RemoveMyUserSubscription, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
