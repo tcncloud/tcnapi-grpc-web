@@ -280,13 +280,13 @@ Org.UpdateMyUser = {
   responseType: api_v0alpha_org_pb.UpdateMyUserResponse
 };
 
-Org.UpdateUserByCallerId = {
-  methodName: "UpdateUserByCallerId",
+Org.UpdateUserCallerId = {
+  methodName: "UpdateUserCallerId",
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_org_pb.UpdateUserByCallerIdRequest,
-  responseType: api_v0alpha_org_pb.UpdateUserByCallerIdResponse
+  requestType: api_v0alpha_org_pb.UpdateUserCallerIdRequest,
+  responseType: api_v0alpha_org_pb.UpdateUserCallerIdResponse
 };
 
 Org.CreateUser = {
@@ -2754,11 +2754,11 @@ OrgClient.prototype.updateMyUser = function updateMyUser(requestMessage, metadat
   };
 };
 
-OrgClient.prototype.updateUserByCallerId = function updateUserByCallerId(requestMessage, metadata, callback) {
+OrgClient.prototype.updateUserCallerId = function updateUserCallerId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.UpdateUserByCallerId, {
+  var client = grpc.unary(Org.UpdateUserCallerId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

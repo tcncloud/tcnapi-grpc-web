@@ -274,13 +274,13 @@ type OrgUpdateMyUser = {
   readonly responseType: typeof api_v0alpha_org_pb.UpdateMyUserResponse;
 };
 
-type OrgUpdateUserByCallerId = {
+type OrgUpdateUserCallerId = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_org_pb.UpdateUserByCallerIdRequest;
-  readonly responseType: typeof api_v0alpha_org_pb.UpdateUserByCallerIdResponse;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateUserCallerIdRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateUserCallerIdResponse;
 };
 
 type OrgCreateUser = {
@@ -1827,7 +1827,7 @@ export class Org {
   static readonly AssignAgentProfileGroups: OrgAssignAgentProfileGroups;
   static readonly UpdateUser: OrgUpdateUser;
   static readonly UpdateMyUser: OrgUpdateMyUser;
-  static readonly UpdateUserByCallerId: OrgUpdateUserByCallerId;
+  static readonly UpdateUserCallerId: OrgUpdateUserCallerId;
   static readonly CreateUser: OrgCreateUser;
   static readonly CreateUserByOrgId: OrgCreateUserByOrgId;
   static readonly CreateDelegatedUser: OrgCreateDelegatedUser;
@@ -2284,14 +2284,14 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.UpdateMyUserRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateMyUserResponse|null) => void
   ): UnaryResponse;
-  updateUserByCallerId(
-    requestMessage: api_v0alpha_org_pb.UpdateUserByCallerIdRequest,
+  updateUserCallerId(
+    requestMessage: api_v0alpha_org_pb.UpdateUserCallerIdRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserByCallerIdResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserCallerIdResponse|null) => void
   ): UnaryResponse;
-  updateUserByCallerId(
-    requestMessage: api_v0alpha_org_pb.UpdateUserByCallerIdRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserByCallerIdResponse|null) => void
+  updateUserCallerId(
+    requestMessage: api_v0alpha_org_pb.UpdateUserCallerIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserCallerIdResponse|null) => void
   ): UnaryResponse;
   createUser(
     requestMessage: api_v0alpha_org_pb.CreateUserRequest,

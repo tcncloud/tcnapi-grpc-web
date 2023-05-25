@@ -809,6 +809,9 @@ export namespace UserDirectoryEntry {
 }
 
 export class GetTempUserTokenReq extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetTempUserTokenReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetTempUserTokenReq): GetTempUserTokenReq.AsObject;
@@ -821,6 +824,7 @@ export class GetTempUserTokenReq extends jspb.Message {
 
 export namespace GetTempUserTokenReq {
   export type AsObject = {
+    userId: string,
   }
 }
 
@@ -1804,6 +1808,9 @@ export class UpdateUserRequest extends jspb.Message {
   getDefaultApp(): api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap];
   setDefaultApp(value: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap]): void;
 
+  getUserCallerId(): string;
+  setUserCallerId(value: string): void;
+
   getPasswordResetRequired(): boolean;
   setPasswordResetRequired(value: boolean): void;
 
@@ -1844,6 +1851,7 @@ export namespace UpdateUserRequest {
     callerIdsList: Array<string>,
     userName: string,
     defaultApp: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap],
+    userCallerId: string,
     passwordResetRequired: boolean,
     agentProfileGroupId: string,
     labelEntitiesList: Array<Label.AsObject>,
@@ -1962,104 +1970,42 @@ export namespace UpdateMyUserResponse {
   }
 }
 
-export class UpdateUserByCallerIdRequest extends jspb.Message {
+export class UpdateUserCallerIdRequest extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
-
-  getFirstName(): string;
-  setFirstName(value: string): void;
-
-  getLastName(): string;
-  setLastName(value: string): void;
-
-  getPartnerAgentId(): string;
-  setPartnerAgentId(value: string): void;
-
-  hasTimeZoneOverride(): boolean;
-  clearTimeZoneOverride(): void;
-  getTimeZoneOverride(): api_commons_org_pb.TimeZoneWrapper | undefined;
-  setTimeZoneOverride(value?: api_commons_org_pb.TimeZoneWrapper): void;
-
-  clearLinkbackNumbersList(): void;
-  getLinkbackNumbersList(): Array<string>;
-  setLinkbackNumbersList(value: Array<string>): void;
-  addLinkbackNumbers(value: string, index?: number): string;
-
-  clearCallerIdsList(): void;
-  getCallerIdsList(): Array<string>;
-  setCallerIdsList(value: Array<string>): void;
-  addCallerIds(value: string, index?: number): string;
-
-  getUserName(): string;
-  setUserName(value: string): void;
-
-  getDefaultApp(): api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap];
-  setDefaultApp(value: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap]): void;
 
   getUserCallerId(): string;
   setUserCallerId(value: string): void;
 
-  getPasswordResetRequired(): boolean;
-  setPasswordResetRequired(value: boolean): void;
-
-  getAgentProfileGroupId(): string;
-  setAgentProfileGroupId(value: string): void;
-
-  clearLabelEntitiesList(): void;
-  getLabelEntitiesList(): Array<Label>;
-  setLabelEntitiesList(value: Array<Label>): void;
-  addLabelEntities(value?: Label, index?: number): Label;
-
-  getEmail(): string;
-  setEmail(value: string): void;
-
-  hasFieldMask(): boolean;
-  clearFieldMask(): void;
-  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
-  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
-
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateUserByCallerIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateUserByCallerIdRequest): UpdateUserByCallerIdRequest.AsObject;
+  toObject(includeInstance?: boolean): UpdateUserCallerIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateUserCallerIdRequest): UpdateUserCallerIdRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateUserByCallerIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateUserByCallerIdRequest;
-  static deserializeBinaryFromReader(message: UpdateUserByCallerIdRequest, reader: jspb.BinaryReader): UpdateUserByCallerIdRequest;
+  static serializeBinaryToWriter(message: UpdateUserCallerIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateUserCallerIdRequest;
+  static deserializeBinaryFromReader(message: UpdateUserCallerIdRequest, reader: jspb.BinaryReader): UpdateUserCallerIdRequest;
 }
 
-export namespace UpdateUserByCallerIdRequest {
+export namespace UpdateUserCallerIdRequest {
   export type AsObject = {
     userId: string,
-    firstName: string,
-    lastName: string,
-    partnerAgentId: string,
-    timeZoneOverride?: api_commons_org_pb.TimeZoneWrapper.AsObject,
-    linkbackNumbersList: Array<string>,
-    callerIdsList: Array<string>,
-    userName: string,
-    defaultApp: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap],
     userCallerId: string,
-    passwordResetRequired: boolean,
-    agentProfileGroupId: string,
-    labelEntitiesList: Array<Label.AsObject>,
-    email: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
-export class UpdateUserByCallerIdResponse extends jspb.Message {
+export class UpdateUserCallerIdResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateUserByCallerIdResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateUserByCallerIdResponse): UpdateUserByCallerIdResponse.AsObject;
+  toObject(includeInstance?: boolean): UpdateUserCallerIdResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateUserCallerIdResponse): UpdateUserCallerIdResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateUserByCallerIdResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateUserByCallerIdResponse;
-  static deserializeBinaryFromReader(message: UpdateUserByCallerIdResponse, reader: jspb.BinaryReader): UpdateUserByCallerIdResponse;
+  static serializeBinaryToWriter(message: UpdateUserCallerIdResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateUserCallerIdResponse;
+  static deserializeBinaryFromReader(message: UpdateUserCallerIdResponse, reader: jspb.BinaryReader): UpdateUserCallerIdResponse;
 }
 
-export namespace UpdateUserByCallerIdResponse {
+export namespace UpdateUserCallerIdResponse {
   export type AsObject = {
   }
 }
@@ -2341,6 +2287,9 @@ export class UpdateUserDisabledRequest extends jspb.Message {
   getDisable(): boolean;
   setDisable(value: boolean): void;
 
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateUserDisabledRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateUserDisabledRequest): UpdateUserDisabledRequest.AsObject;
@@ -2355,6 +2304,7 @@ export namespace UpdateUserDisabledRequest {
   export type AsObject = {
     userId: string,
     disable: boolean,
+    orgId: string,
   }
 }
 
@@ -10252,6 +10202,9 @@ export namespace GetClientInfoDisplayTemplateResponse {
 }
 
 export class CreateUserRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   getFirstName(): string;
   setFirstName(value: string): void;
 
@@ -10322,6 +10275,7 @@ export class CreateUserRequest extends jspb.Message {
 
 export namespace CreateUserRequest {
   export type AsObject = {
+    orgId: string,
     firstName: string,
     lastName: string,
     email: string,
@@ -10485,6 +10439,9 @@ export class UpdateUserPasswordRequest extends jspb.Message {
   getCurrentPassword(): string;
   setCurrentPassword(value: string): void;
 
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateUserPasswordRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateUserPasswordRequest): UpdateUserPasswordRequest.AsObject;
@@ -10500,6 +10457,7 @@ export namespace UpdateUserPasswordRequest {
     userId: string,
     password: string,
     currentPassword: string,
+    orgId: string,
   }
 }
 
@@ -10611,6 +10569,9 @@ export class GetUserPasswordResetLinkRequest extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   getTtl(): number;
   setTtl(value: number): void;
 
@@ -10627,6 +10588,7 @@ export class GetUserPasswordResetLinkRequest extends jspb.Message {
 export namespace GetUserPasswordResetLinkRequest {
   export type AsObject = {
     userId: string,
+    orgId: string,
     ttl: number,
   }
 }
@@ -12513,6 +12475,9 @@ export namespace ListOwnedOrgsByOrgIdResponse {
 }
 
 export class ListOwnedOrgsRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListOwnedOrgsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListOwnedOrgsRequest): ListOwnedOrgsRequest.AsObject;
@@ -12525,6 +12490,7 @@ export class ListOwnedOrgsRequest extends jspb.Message {
 
 export namespace ListOwnedOrgsRequest {
   export type AsObject = {
+    orgId: string,
   }
 }
 
@@ -13516,6 +13482,9 @@ export namespace GetOrgBillingSettingsByOrgIdResponse {
 }
 
 export class GetOrgBillingSettingsRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetOrgBillingSettingsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetOrgBillingSettingsRequest): GetOrgBillingSettingsRequest.AsObject;
@@ -13528,6 +13497,7 @@ export class GetOrgBillingSettingsRequest extends jspb.Message {
 
 export namespace GetOrgBillingSettingsRequest {
   export type AsObject = {
+    orgId: string,
   }
 }
 
@@ -14554,6 +14524,9 @@ export class GetUserEmailVerifiedRequest extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserEmailVerifiedRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserEmailVerifiedRequest): GetUserEmailVerifiedRequest.AsObject;
@@ -14567,6 +14540,7 @@ export class GetUserEmailVerifiedRequest extends jspb.Message {
 export namespace GetUserEmailVerifiedRequest {
   export type AsObject = {
     userId: string,
+    orgId: string,
   }
 }
 
@@ -14678,6 +14652,9 @@ export class SendUserVerificationEmailRequest extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SendUserVerificationEmailRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SendUserVerificationEmailRequest): SendUserVerificationEmailRequest.AsObject;
@@ -14691,6 +14668,7 @@ export class SendUserVerificationEmailRequest extends jspb.Message {
 export namespace SendUserVerificationEmailRequest {
   export type AsObject = {
     userId: string,
+    orgId: string,
   }
 }
 
@@ -14754,6 +14732,9 @@ export class ManualUserEmailVerificationRequest extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManualUserEmailVerificationRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ManualUserEmailVerificationRequest): ManualUserEmailVerificationRequest.AsObject;
@@ -14767,6 +14748,7 @@ export class ManualUserEmailVerificationRequest extends jspb.Message {
 export namespace ManualUserEmailVerificationRequest {
   export type AsObject = {
     userId: string,
+    orgId: string,
   }
 }
 
