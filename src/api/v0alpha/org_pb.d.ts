@@ -943,6 +943,12 @@ export namespace AdminListUserDescriptionsResponse {
 }
 
 export class ListUserDescriptionsRequest extends jspb.Message {
+  getRegionId(): string;
+  setRegionId(value: string): void;
+
+  getOrgIdFilter(): string;
+  setOrgIdFilter(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUserDescriptionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListUserDescriptionsRequest): ListUserDescriptionsRequest.AsObject;
@@ -955,6 +961,8 @@ export class ListUserDescriptionsRequest extends jspb.Message {
 
 export namespace ListUserDescriptionsRequest {
   export type AsObject = {
+    regionId: string,
+    orgIdFilter: string,
   }
 }
 
@@ -2695,6 +2703,9 @@ export namespace ListPermissionGroupsByOrgIdResponse {
 }
 
 export class ListPermissionGroupsRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPermissionGroupsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListPermissionGroupsRequest): ListPermissionGroupsRequest.AsObject;
@@ -2707,6 +2718,7 @@ export class ListPermissionGroupsRequest extends jspb.Message {
 
 export namespace ListPermissionGroupsRequest {
   export type AsObject = {
+    orgId: string,
   }
 }
 
@@ -3143,6 +3155,9 @@ export namespace ListP3PermissionGroupsByOrgIdResponse {
 }
 
 export class ListP3PermissionGroupsRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListP3PermissionGroupsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListP3PermissionGroupsRequest): ListP3PermissionGroupsRequest.AsObject;
@@ -3155,6 +3170,7 @@ export class ListP3PermissionGroupsRequest extends jspb.Message {
 
 export namespace ListP3PermissionGroupsRequest {
   export type AsObject = {
+    orgId: string,
   }
 }
 
@@ -3331,6 +3347,9 @@ export namespace UpdateP3PermissionGroupByOrgIdResponse {
 }
 
 export class UpdateP3PermissionGroupRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   getPermissionGroupId(): string;
   setPermissionGroupId(value: string): void;
 
@@ -3357,6 +3376,7 @@ export class UpdateP3PermissionGroupRequest extends jspb.Message {
 
 export namespace UpdateP3PermissionGroupRequest {
   export type AsObject = {
+    orgId: string,
     permissionGroupId: string,
     name: string,
     description: string,

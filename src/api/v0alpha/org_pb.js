@@ -18832,7 +18832,8 @@ proto.api.v0alpha.ListUserDescriptionsRequest.prototype.toObject = function(opt_
  */
 proto.api.v0alpha.ListUserDescriptionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    regionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    orgIdFilter: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -18869,6 +18870,14 @@ proto.api.v0alpha.ListUserDescriptionsRequest.deserializeBinaryFromReader = func
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRegionId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgIdFilter(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -18898,6 +18907,56 @@ proto.api.v0alpha.ListUserDescriptionsRequest.prototype.serializeBinary = functi
  */
 proto.api.v0alpha.ListUserDescriptionsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getRegionId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getOrgIdFilter();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string region_id = 1;
+ * @return {string}
+ */
+proto.api.v0alpha.ListUserDescriptionsRequest.prototype.getRegionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ListUserDescriptionsRequest} returns this
+ */
+proto.api.v0alpha.ListUserDescriptionsRequest.prototype.setRegionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string org_id_filter = 2;
+ * @return {string}
+ */
+proto.api.v0alpha.ListUserDescriptionsRequest.prototype.getOrgIdFilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ListUserDescriptionsRequest} returns this
+ */
+proto.api.v0alpha.ListUserDescriptionsRequest.prototype.setOrgIdFilter = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -31402,7 +31461,7 @@ proto.api.v0alpha.ListPermissionGroupsRequest.prototype.toObject = function(opt_
  */
 proto.api.v0alpha.ListPermissionGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    orgId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -31439,6 +31498,10 @@ proto.api.v0alpha.ListPermissionGroupsRequest.deserializeBinaryFromReader = func
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -31468,6 +31531,31 @@ proto.api.v0alpha.ListPermissionGroupsRequest.prototype.serializeBinary = functi
  */
 proto.api.v0alpha.ListPermissionGroupsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getOrgId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string org_id = 1;
+ * @return {string}
+ */
+proto.api.v0alpha.ListPermissionGroupsRequest.prototype.getOrgId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ListPermissionGroupsRequest} returns this
+ */
+proto.api.v0alpha.ListPermissionGroupsRequest.prototype.setOrgId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -34419,7 +34507,7 @@ proto.api.v0alpha.ListP3PermissionGroupsRequest.prototype.toObject = function(op
  */
 proto.api.v0alpha.ListP3PermissionGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    orgId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -34456,6 +34544,10 @@ proto.api.v0alpha.ListP3PermissionGroupsRequest.deserializeBinaryFromReader = fu
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -34485,6 +34577,31 @@ proto.api.v0alpha.ListP3PermissionGroupsRequest.prototype.serializeBinary = func
  */
 proto.api.v0alpha.ListP3PermissionGroupsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getOrgId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string org_id = 1;
+ * @return {string}
+ */
+proto.api.v0alpha.ListP3PermissionGroupsRequest.prototype.getOrgId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ListP3PermissionGroupsRequest} returns this
+ */
+proto.api.v0alpha.ListP3PermissionGroupsRequest.prototype.setOrgId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -35763,6 +35880,7 @@ proto.api.v0alpha.UpdateP3PermissionGroupRequest.prototype.toObject = function(o
  */
 proto.api.v0alpha.UpdateP3PermissionGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
+    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     permissionGroupId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -35803,6 +35921,10 @@ proto.api.v0alpha.UpdateP3PermissionGroupRequest.deserializeBinaryFromReader = f
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgId(value);
+      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setPermissionGroupId(value);
@@ -35850,6 +35972,13 @@ proto.api.v0alpha.UpdateP3PermissionGroupRequest.prototype.serializeBinary = fun
  */
 proto.api.v0alpha.UpdateP3PermissionGroupRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getOrgId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getPermissionGroupId();
   if (f.length > 0) {
     writer.writeString(
@@ -35878,6 +36007,24 @@ proto.api.v0alpha.UpdateP3PermissionGroupRequest.serializeBinaryToWriter = funct
       f
     );
   }
+};
+
+
+/**
+ * optional string org_id = 1;
+ * @return {string}
+ */
+proto.api.v0alpha.UpdateP3PermissionGroupRequest.prototype.getOrgId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.UpdateP3PermissionGroupRequest} returns this
+ */
+proto.api.v0alpha.UpdateP3PermissionGroupRequest.prototype.setOrgId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
