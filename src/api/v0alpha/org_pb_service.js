@@ -1468,6 +1468,15 @@ Org.ListQueueConfigs = {
   responseType: api_v0alpha_org_pb.ListQueueConfigsRes
 };
 
+Org.ListQueueConfigsByOrgId = {
+  methodName: "ListQueueConfigsByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.ListQueueConfigsByOrgIdReq,
+  responseType: api_v0alpha_org_pb.ListQueueConfigsByOrgIdRes
+};
+
 Org.DeleteQueueConfig = {
   methodName: "DeleteQueueConfig",
   service: Org,
@@ -1702,6 +1711,15 @@ Org.GetUserSubscription = {
   responseType: api_v0alpha_org_pb.GetUserSubscriptionResponse
 };
 
+Org.GetMyUserSubscription = {
+  methodName: "GetMyUserSubscription",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.GetMyUserSubscriptionRequest,
+  responseType: api_v0alpha_org_pb.GetMyUserSubscriptionResponse
+};
+
 Org.AddUserSubscription = {
   methodName: "AddUserSubscription",
   service: Org,
@@ -1709,6 +1727,15 @@ Org.AddUserSubscription = {
   responseStream: false,
   requestType: api_v0alpha_org_pb.AddUserSubscriptionRequest,
   responseType: api_v0alpha_org_pb.AddUserSubscriptionResponse
+};
+
+Org.AddMyUserSubscription = {
+  methodName: "AddMyUserSubscription",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.AddMyUserSubscriptionRequest,
+  responseType: api_v0alpha_org_pb.AddMyUserSubscriptionResponse
 };
 
 Org.RemoveUserSubscription = {
@@ -1738,6 +1765,15 @@ Org.UpdateUserSubscription = {
   responseType: api_v0alpha_org_pb.UpdateUserSubscriptionResponse
 };
 
+Org.UpdateMyUserSubscription = {
+  methodName: "UpdateMyUserSubscription",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.UpdateMyUserSubscriptionRequest,
+  responseType: api_v0alpha_org_pb.UpdateMyUserSubscriptionResponse
+};
+
 Org.ListUserSubscriptions = {
   methodName: "ListUserSubscriptions",
   service: Org,
@@ -1745,6 +1781,15 @@ Org.ListUserSubscriptions = {
   responseStream: false,
   requestType: api_v0alpha_org_pb.ListUserSubscriptionsRequest,
   responseType: api_v0alpha_org_pb.ListUserSubscriptionsResponse
+};
+
+Org.ListMyUserSubscriptions = {
+  methodName: "ListMyUserSubscriptions",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_org_pb.ListMyUserSubscriptionsRequest,
+  responseType: api_v0alpha_org_pb.ListMyUserSubscriptionsResponse
 };
 
 Org.ListOrgSubscriptions = {
@@ -6846,6 +6891,37 @@ OrgClient.prototype.listQueueConfigs = function listQueueConfigs(requestMessage,
   };
 };
 
+OrgClient.prototype.listQueueConfigsByOrgId = function listQueueConfigsByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListQueueConfigsByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.deleteQueueConfig = function deleteQueueConfig(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -7652,11 +7728,73 @@ OrgClient.prototype.getUserSubscription = function getUserSubscription(requestMe
   };
 };
 
+OrgClient.prototype.getMyUserSubscription = function getMyUserSubscription(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetMyUserSubscription, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.addUserSubscription = function addUserSubscription(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(Org.AddUserSubscription, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.addMyUserSubscription = function addMyUserSubscription(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.AddMyUserSubscription, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -7776,11 +7914,73 @@ OrgClient.prototype.updateUserSubscription = function updateUserSubscription(req
   };
 };
 
+OrgClient.prototype.updateMyUserSubscription = function updateMyUserSubscription(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateMyUserSubscription, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.listUserSubscriptions = function listUserSubscriptions(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(Org.ListUserSubscriptions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listMyUserSubscriptions = function listMyUserSubscriptions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListMyUserSubscriptions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

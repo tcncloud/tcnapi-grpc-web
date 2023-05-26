@@ -1462,6 +1462,15 @@ type OrgListQueueConfigs = {
   readonly responseType: typeof api_v0alpha_org_pb.ListQueueConfigsRes;
 };
 
+type OrgListQueueConfigsByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.ListQueueConfigsByOrgIdReq;
+  readonly responseType: typeof api_v0alpha_org_pb.ListQueueConfigsByOrgIdRes;
+};
+
 type OrgDeleteQueueConfig = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1696,6 +1705,15 @@ type OrgGetUserSubscription = {
   readonly responseType: typeof api_v0alpha_org_pb.GetUserSubscriptionResponse;
 };
 
+type OrgGetMyUserSubscription = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.GetMyUserSubscriptionRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.GetMyUserSubscriptionResponse;
+};
+
 type OrgAddUserSubscription = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1703,6 +1721,15 @@ type OrgAddUserSubscription = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_org_pb.AddUserSubscriptionRequest;
   readonly responseType: typeof api_v0alpha_org_pb.AddUserSubscriptionResponse;
+};
+
+type OrgAddMyUserSubscription = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.AddMyUserSubscriptionRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.AddMyUserSubscriptionResponse;
 };
 
 type OrgRemoveUserSubscription = {
@@ -1732,6 +1759,15 @@ type OrgUpdateUserSubscription = {
   readonly responseType: typeof api_v0alpha_org_pb.UpdateUserSubscriptionResponse;
 };
 
+type OrgUpdateMyUserSubscription = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.UpdateMyUserSubscriptionRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.UpdateMyUserSubscriptionResponse;
+};
+
 type OrgListUserSubscriptions = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1739,6 +1775,15 @@ type OrgListUserSubscriptions = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_org_pb.ListUserSubscriptionsRequest;
   readonly responseType: typeof api_v0alpha_org_pb.ListUserSubscriptionsResponse;
+};
+
+type OrgListMyUserSubscriptions = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_org_pb.ListMyUserSubscriptionsRequest;
+  readonly responseType: typeof api_v0alpha_org_pb.ListMyUserSubscriptionsResponse;
 };
 
 type OrgListOrgSubscriptions = {
@@ -1959,6 +2004,7 @@ export class Org {
   static readonly ListAgentResponseGroups: OrgListAgentResponseGroups;
   static readonly ListLastTemplateElements: OrgListLastTemplateElements;
   static readonly ListQueueConfigs: OrgListQueueConfigs;
+  static readonly ListQueueConfigsByOrgId: OrgListQueueConfigsByOrgId;
   static readonly DeleteQueueConfig: OrgDeleteQueueConfig;
   static readonly GetQueueConfig: OrgGetQueueConfig;
   static readonly CreateQueueConfig: OrgCreateQueueConfig;
@@ -1985,11 +2031,15 @@ export class Org {
   static readonly UpdateAuthConnectionSettings: OrgUpdateAuthConnectionSettings;
   static readonly DeleteAuthConnection: OrgDeleteAuthConnection;
   static readonly GetUserSubscription: OrgGetUserSubscription;
+  static readonly GetMyUserSubscription: OrgGetMyUserSubscription;
   static readonly AddUserSubscription: OrgAddUserSubscription;
+  static readonly AddMyUserSubscription: OrgAddMyUserSubscription;
   static readonly RemoveUserSubscription: OrgRemoveUserSubscription;
   static readonly RemoveMyUserSubscription: OrgRemoveMyUserSubscription;
   static readonly UpdateUserSubscription: OrgUpdateUserSubscription;
+  static readonly UpdateMyUserSubscription: OrgUpdateMyUserSubscription;
   static readonly ListUserSubscriptions: OrgListUserSubscriptions;
+  static readonly ListMyUserSubscriptions: OrgListMyUserSubscriptions;
   static readonly ListOrgSubscriptions: OrgListOrgSubscriptions;
   static readonly GetSystemEnvironmentDetails: OrgGetSystemEnvironmentDetails;
   static readonly ListAgentStatisticsTemplates: OrgListAgentStatisticsTemplates;
@@ -3472,6 +3522,15 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.ListQueueConfigsReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListQueueConfigsRes|null) => void
   ): UnaryResponse;
+  listQueueConfigsByOrgId(
+    requestMessage: api_v0alpha_org_pb.ListQueueConfigsByOrgIdReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListQueueConfigsByOrgIdRes|null) => void
+  ): UnaryResponse;
+  listQueueConfigsByOrgId(
+    requestMessage: api_v0alpha_org_pb.ListQueueConfigsByOrgIdReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListQueueConfigsByOrgIdRes|null) => void
+  ): UnaryResponse;
   deleteQueueConfig(
     requestMessage: api_v0alpha_org_pb.DeleteQueueConfigReq,
     metadata: grpc.Metadata,
@@ -3706,6 +3765,15 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.GetUserSubscriptionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetUserSubscriptionResponse|null) => void
   ): UnaryResponse;
+  getMyUserSubscription(
+    requestMessage: api_v0alpha_org_pb.GetMyUserSubscriptionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetMyUserSubscriptionResponse|null) => void
+  ): UnaryResponse;
+  getMyUserSubscription(
+    requestMessage: api_v0alpha_org_pb.GetMyUserSubscriptionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.GetMyUserSubscriptionResponse|null) => void
+  ): UnaryResponse;
   addUserSubscription(
     requestMessage: api_v0alpha_org_pb.AddUserSubscriptionRequest,
     metadata: grpc.Metadata,
@@ -3714,6 +3782,15 @@ export class OrgClient {
   addUserSubscription(
     requestMessage: api_v0alpha_org_pb.AddUserSubscriptionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.AddUserSubscriptionResponse|null) => void
+  ): UnaryResponse;
+  addMyUserSubscription(
+    requestMessage: api_v0alpha_org_pb.AddMyUserSubscriptionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.AddMyUserSubscriptionResponse|null) => void
+  ): UnaryResponse;
+  addMyUserSubscription(
+    requestMessage: api_v0alpha_org_pb.AddMyUserSubscriptionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.AddMyUserSubscriptionResponse|null) => void
   ): UnaryResponse;
   removeUserSubscription(
     requestMessage: api_v0alpha_org_pb.RemoveUserSubscriptionRequest,
@@ -3742,6 +3819,15 @@ export class OrgClient {
     requestMessage: api_v0alpha_org_pb.UpdateUserSubscriptionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateUserSubscriptionResponse|null) => void
   ): UnaryResponse;
+  updateMyUserSubscription(
+    requestMessage: api_v0alpha_org_pb.UpdateMyUserSubscriptionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateMyUserSubscriptionResponse|null) => void
+  ): UnaryResponse;
+  updateMyUserSubscription(
+    requestMessage: api_v0alpha_org_pb.UpdateMyUserSubscriptionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.UpdateMyUserSubscriptionResponse|null) => void
+  ): UnaryResponse;
   listUserSubscriptions(
     requestMessage: api_v0alpha_org_pb.ListUserSubscriptionsRequest,
     metadata: grpc.Metadata,
@@ -3750,6 +3836,15 @@ export class OrgClient {
   listUserSubscriptions(
     requestMessage: api_v0alpha_org_pb.ListUserSubscriptionsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListUserSubscriptionsResponse|null) => void
+  ): UnaryResponse;
+  listMyUserSubscriptions(
+    requestMessage: api_v0alpha_org_pb.ListMyUserSubscriptionsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListMyUserSubscriptionsResponse|null) => void
+  ): UnaryResponse;
+  listMyUserSubscriptions(
+    requestMessage: api_v0alpha_org_pb.ListMyUserSubscriptionsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_org_pb.ListMyUserSubscriptionsResponse|null) => void
   ): UnaryResponse;
   listOrgSubscriptions(
     requestMessage: api_v0alpha_org_pb.ListOrgSubscriptionsRequest,
