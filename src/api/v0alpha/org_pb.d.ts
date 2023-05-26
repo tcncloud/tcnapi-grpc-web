@@ -10951,6 +10951,48 @@ export namespace ListQueueConfigsRes {
   }
 }
 
+export class ListQueueConfigsByOrgIdReq extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListQueueConfigsByOrgIdReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListQueueConfigsByOrgIdReq): ListQueueConfigsByOrgIdReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListQueueConfigsByOrgIdReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListQueueConfigsByOrgIdReq;
+  static deserializeBinaryFromReader(message: ListQueueConfigsByOrgIdReq, reader: jspb.BinaryReader): ListQueueConfigsByOrgIdReq;
+}
+
+export namespace ListQueueConfigsByOrgIdReq {
+  export type AsObject = {
+    orgId: string,
+  }
+}
+
+export class ListQueueConfigsByOrgIdRes extends jspb.Message {
+  clearConfigsList(): void;
+  getConfigsList(): Array<QueueConfig>;
+  setConfigsList(value: Array<QueueConfig>): void;
+  addConfigs(value?: QueueConfig, index?: number): QueueConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListQueueConfigsByOrgIdRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListQueueConfigsByOrgIdRes): ListQueueConfigsByOrgIdRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListQueueConfigsByOrgIdRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListQueueConfigsByOrgIdRes;
+  static deserializeBinaryFromReader(message: ListQueueConfigsByOrgIdRes, reader: jspb.BinaryReader): ListQueueConfigsByOrgIdRes;
+}
+
+export namespace ListQueueConfigsByOrgIdRes {
+  export type AsObject = {
+    configsList: Array<QueueConfig.AsObject>,
+  }
+}
+
 export class DeleteQueueConfigReq extends jspb.Message {
   getConfigName(): string;
   setConfigName(value: string): void;
@@ -14170,6 +14212,50 @@ export namespace AddUserSubscriptionResponse {
   }
 }
 
+export class AddMyUserSubscriptionRequest extends jspb.Message {
+  hasSubscription(): boolean;
+  clearSubscription(): void;
+  getSubscription(): UserSubscription | undefined;
+  setSubscription(value?: UserSubscription): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddMyUserSubscriptionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AddMyUserSubscriptionRequest): AddMyUserSubscriptionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddMyUserSubscriptionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddMyUserSubscriptionRequest;
+  static deserializeBinaryFromReader(message: AddMyUserSubscriptionRequest, reader: jspb.BinaryReader): AddMyUserSubscriptionRequest;
+}
+
+export namespace AddMyUserSubscriptionRequest {
+  export type AsObject = {
+    subscription?: UserSubscription.AsObject,
+  }
+}
+
+export class AddMyUserSubscriptionResponse extends jspb.Message {
+  hasSubscription(): boolean;
+  clearSubscription(): void;
+  getSubscription(): UserSubscription | undefined;
+  setSubscription(value?: UserSubscription): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddMyUserSubscriptionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AddMyUserSubscriptionResponse): AddMyUserSubscriptionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddMyUserSubscriptionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddMyUserSubscriptionResponse;
+  static deserializeBinaryFromReader(message: AddMyUserSubscriptionResponse, reader: jspb.BinaryReader): AddMyUserSubscriptionResponse;
+}
+
+export namespace AddMyUserSubscriptionResponse {
+  export type AsObject = {
+    subscription?: UserSubscription.AsObject,
+  }
+}
+
 export class GetUserSubscriptionRequest extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
@@ -14211,6 +14297,48 @@ export class GetUserSubscriptionResponse extends jspb.Message {
 }
 
 export namespace GetUserSubscriptionResponse {
+  export type AsObject = {
+    subscription?: UserSubscription.AsObject,
+  }
+}
+
+export class GetMyUserSubscriptionRequest extends jspb.Message {
+  getSubscriptionId(): string;
+  setSubscriptionId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetMyUserSubscriptionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetMyUserSubscriptionRequest): GetMyUserSubscriptionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetMyUserSubscriptionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetMyUserSubscriptionRequest;
+  static deserializeBinaryFromReader(message: GetMyUserSubscriptionRequest, reader: jspb.BinaryReader): GetMyUserSubscriptionRequest;
+}
+
+export namespace GetMyUserSubscriptionRequest {
+  export type AsObject = {
+    subscriptionId: string,
+  }
+}
+
+export class GetMyUserSubscriptionResponse extends jspb.Message {
+  hasSubscription(): boolean;
+  clearSubscription(): void;
+  getSubscription(): UserSubscription | undefined;
+  setSubscription(value?: UserSubscription): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetMyUserSubscriptionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetMyUserSubscriptionResponse): GetMyUserSubscriptionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetMyUserSubscriptionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetMyUserSubscriptionResponse;
+  static deserializeBinaryFromReader(message: GetMyUserSubscriptionResponse, reader: jspb.BinaryReader): GetMyUserSubscriptionResponse;
+}
+
+export namespace GetMyUserSubscriptionResponse {
   export type AsObject = {
     subscription?: UserSubscription.AsObject,
   }
@@ -14261,6 +14389,56 @@ export class UpdateUserSubscriptionResponse extends jspb.Message {
 }
 
 export namespace UpdateUserSubscriptionResponse {
+  export type AsObject = {
+    subscription?: UserSubscription.AsObject,
+  }
+}
+
+export class UpdateMyUserSubscriptionRequest extends jspb.Message {
+  hasSubscription(): boolean;
+  clearSubscription(): void;
+  getSubscription(): UserSubscription | undefined;
+  setSubscription(value?: UserSubscription): void;
+
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateMyUserSubscriptionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateMyUserSubscriptionRequest): UpdateMyUserSubscriptionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateMyUserSubscriptionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateMyUserSubscriptionRequest;
+  static deserializeBinaryFromReader(message: UpdateMyUserSubscriptionRequest, reader: jspb.BinaryReader): UpdateMyUserSubscriptionRequest;
+}
+
+export namespace UpdateMyUserSubscriptionRequest {
+  export type AsObject = {
+    subscription?: UserSubscription.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class UpdateMyUserSubscriptionResponse extends jspb.Message {
+  hasSubscription(): boolean;
+  clearSubscription(): void;
+  getSubscription(): UserSubscription | undefined;
+  setSubscription(value?: UserSubscription): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateMyUserSubscriptionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateMyUserSubscriptionResponse): UpdateMyUserSubscriptionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateMyUserSubscriptionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateMyUserSubscriptionResponse;
+  static deserializeBinaryFromReader(message: UpdateMyUserSubscriptionResponse, reader: jspb.BinaryReader): UpdateMyUserSubscriptionResponse;
+}
+
+export namespace UpdateMyUserSubscriptionResponse {
   export type AsObject = {
     subscription?: UserSubscription.AsObject,
   }
@@ -14379,6 +14557,44 @@ export class ListUserSubscriptionsResponse extends jspb.Message {
 }
 
 export namespace ListUserSubscriptionsResponse {
+  export type AsObject = {
+    subscriptionsList: Array<UserSubscription.AsObject>,
+  }
+}
+
+export class ListMyUserSubscriptionsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListMyUserSubscriptionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListMyUserSubscriptionsRequest): ListMyUserSubscriptionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListMyUserSubscriptionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListMyUserSubscriptionsRequest;
+  static deserializeBinaryFromReader(message: ListMyUserSubscriptionsRequest, reader: jspb.BinaryReader): ListMyUserSubscriptionsRequest;
+}
+
+export namespace ListMyUserSubscriptionsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListMyUserSubscriptionsResponse extends jspb.Message {
+  clearSubscriptionsList(): void;
+  getSubscriptionsList(): Array<UserSubscription>;
+  setSubscriptionsList(value: Array<UserSubscription>): void;
+  addSubscriptions(value?: UserSubscription, index?: number): UserSubscription;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListMyUserSubscriptionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListMyUserSubscriptionsResponse): ListMyUserSubscriptionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListMyUserSubscriptionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListMyUserSubscriptionsResponse;
+  static deserializeBinaryFromReader(message: ListMyUserSubscriptionsResponse, reader: jspb.BinaryReader): ListMyUserSubscriptionsResponse;
+}
+
+export namespace ListMyUserSubscriptionsResponse {
   export type AsObject = {
     subscriptionsList: Array<UserSubscription.AsObject>,
   }
