@@ -1,8 +1,8 @@
 // package: api.v1alpha1.soundboard
-// file: api/v1alpha1/org/soundboard/entities.proto
+// file: api/v1alpha1/soundboard/entities.proto
 
 import * as jspb from "google-protobuf";
-import * as api_commons_org_pb from "../../../../api/commons/org_pb";
+import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class SoundboardDetails extends jspb.Message {
