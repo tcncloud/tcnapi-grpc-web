@@ -21,6 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_commons_acd_pb = require('../../../api/commons/acd_pb.js');
+goog.object.extend(proto, api_commons_acd_pb);
 var api_commons_scorecards_pb = require('../../../api/commons/scorecards_pb.js');
 goog.object.extend(proto, api_commons_scorecards_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
@@ -553,7 +555,7 @@ proto.api.v1alpha1.scorecards.CreateScorecardResponse.prototype.hasScorecard = f
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.scorecards.ListScorecardsRequest.repeatedFields_ = [2,3,4];
+proto.api.v1alpha1.scorecards.ListScorecardsRequest.repeatedFields_ = [2,3,4,5,6];
 
 
 
@@ -588,7 +590,9 @@ proto.api.v1alpha1.scorecards.ListScorecardsRequest.toObject = function(includeI
   var f, obj = {
     authorIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    statesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+    statesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    evaluationTypesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    callTypesList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -641,6 +645,18 @@ proto.api.v1alpha1.scorecards.ListScorecardsRequest.deserializeBinaryFromReader 
         msg.addStates(values[i]);
       }
       break;
+    case 5:
+      var values = /** @type {!Array<!proto.api.commons.EvaluationType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addEvaluationTypes(values[i]);
+      }
+      break;
+    case 6:
+      var values = /** @type {!Array<!proto.api.commons.CallType.Enum>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addCallTypes(values[i]);
+      }
+      break;
     default:
       reader.skipField();
       break;
@@ -688,6 +704,20 @@ proto.api.v1alpha1.scorecards.ListScorecardsRequest.serializeBinaryToWriter = fu
   if (f.length > 0) {
     writer.writePackedEnum(
       4,
+      f
+    );
+  }
+  f = message.getEvaluationTypesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      5,
+      f
+    );
+  }
+  f = message.getCallTypesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      6,
       f
     );
   }
@@ -802,6 +832,80 @@ proto.api.v1alpha1.scorecards.ListScorecardsRequest.prototype.addStates = functi
  */
 proto.api.v1alpha1.scorecards.ListScorecardsRequest.prototype.clearStatesList = function() {
   return this.setStatesList([]);
+};
+
+
+/**
+ * repeated api.commons.EvaluationType evaluation_types = 5;
+ * @return {!Array<!proto.api.commons.EvaluationType>}
+ */
+proto.api.v1alpha1.scorecards.ListScorecardsRequest.prototype.getEvaluationTypesList = function() {
+  return /** @type {!Array<!proto.api.commons.EvaluationType>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.EvaluationType>} value
+ * @return {!proto.api.v1alpha1.scorecards.ListScorecardsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListScorecardsRequest.prototype.setEvaluationTypesList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {!proto.api.commons.EvaluationType} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.scorecards.ListScorecardsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListScorecardsRequest.prototype.addEvaluationTypes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.scorecards.ListScorecardsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListScorecardsRequest.prototype.clearEvaluationTypesList = function() {
+  return this.setEvaluationTypesList([]);
+};
+
+
+/**
+ * repeated api.commons.CallType.Enum call_types = 6;
+ * @return {!Array<!proto.api.commons.CallType.Enum>}
+ */
+proto.api.v1alpha1.scorecards.ListScorecardsRequest.prototype.getCallTypesList = function() {
+  return /** @type {!Array<!proto.api.commons.CallType.Enum>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.CallType.Enum>} value
+ * @return {!proto.api.v1alpha1.scorecards.ListScorecardsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListScorecardsRequest.prototype.setCallTypesList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {!proto.api.commons.CallType.Enum} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.scorecards.ListScorecardsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListScorecardsRequest.prototype.addCallTypes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.scorecards.ListScorecardsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListScorecardsRequest.prototype.clearCallTypesList = function() {
+  return this.setCallTypesList([]);
 };
 
 
