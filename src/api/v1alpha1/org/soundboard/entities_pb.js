@@ -1,4 +1,4 @@
-// source: api/v1alpha1/soundboard/entities.proto
+// source: api/v1alpha1/org/soundboard/entities.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -21,7 +21,7 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var api_commons_org_pb = require('../../../api/commons/org_pb.js');
+var api_commons_org_pb = require('../../../../api/commons/org_pb.js');
 goog.object.extend(proto, api_commons_org_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);

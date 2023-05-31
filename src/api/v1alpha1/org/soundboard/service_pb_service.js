@@ -1,8 +1,8 @@
 // package: api.v1alpha1.soundboard
-// file: api/v1alpha1/soundboard/service.proto
+// file: api/v1alpha1/org/soundboard/service.proto
 
-var api_v1alpha1_soundboard_service_pb = require("../../../api/v1alpha1/soundboard/service_pb");
-var api_v1alpha1_soundboard_entities_pb = require("../../../api/v1alpha1/soundboard/entities_pb");
+var api_v1alpha1_org_soundboard_service_pb = require("../../../../api/v1alpha1/org/soundboard/service_pb");
+var api_v1alpha1_org_soundboard_entities_pb = require("../../../../api/v1alpha1/org/soundboard/entities_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var Soundboard = (function () {
@@ -16,8 +16,8 @@ Soundboard.GetSoundboardFile = {
   service: Soundboard,
   requestStream: false,
   responseStream: true,
-  requestType: api_v1alpha1_soundboard_entities_pb.GetSoundboardFileReq,
-  responseType: api_v1alpha1_soundboard_entities_pb.GetSoundboardFileRes
+  requestType: api_v1alpha1_org_soundboard_entities_pb.GetSoundboardFileReq,
+  responseType: api_v1alpha1_org_soundboard_entities_pb.GetSoundboardFileRes
 };
 
 Soundboard.CreateSoundboard = {
@@ -25,8 +25,8 @@ Soundboard.CreateSoundboard = {
   service: Soundboard,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_soundboard_entities_pb.CreateSoundboardReq,
-  responseType: api_v1alpha1_soundboard_entities_pb.CreateSoundboardRes
+  requestType: api_v1alpha1_org_soundboard_entities_pb.CreateSoundboardReq,
+  responseType: api_v1alpha1_org_soundboard_entities_pb.CreateSoundboardRes
 };
 
 Soundboard.ListSoundboards = {
@@ -34,8 +34,8 @@ Soundboard.ListSoundboards = {
   service: Soundboard,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_soundboard_entities_pb.ListSoundboardsReq,
-  responseType: api_v1alpha1_soundboard_entities_pb.ListSoundboardsRes
+  requestType: api_v1alpha1_org_soundboard_entities_pb.ListSoundboardsReq,
+  responseType: api_v1alpha1_org_soundboard_entities_pb.ListSoundboardsRes
 };
 
 Soundboard.UpdateSoundboard = {
@@ -43,8 +43,8 @@ Soundboard.UpdateSoundboard = {
   service: Soundboard,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_soundboard_entities_pb.UpdateSoundboardReq,
-  responseType: api_v1alpha1_soundboard_entities_pb.UpdateSoundboardRes
+  requestType: api_v1alpha1_org_soundboard_entities_pb.UpdateSoundboardReq,
+  responseType: api_v1alpha1_org_soundboard_entities_pb.UpdateSoundboardRes
 };
 
 Soundboard.DeleteSoundboard = {
@@ -52,8 +52,8 @@ Soundboard.DeleteSoundboard = {
   service: Soundboard,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_soundboard_entities_pb.DeleteSoundboardReq,
-  responseType: api_v1alpha1_soundboard_entities_pb.DeleteSoundboardRes
+  requestType: api_v1alpha1_org_soundboard_entities_pb.DeleteSoundboardReq,
+  responseType: api_v1alpha1_org_soundboard_entities_pb.DeleteSoundboardRes
 };
 
 exports.Soundboard = Soundboard;
