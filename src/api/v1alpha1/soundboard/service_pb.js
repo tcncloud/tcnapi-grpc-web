@@ -1,4 +1,4 @@
-// source: api/v1alpha1/org/soundboard/service.proto
+// source: api/v1alpha1/soundboard/service.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -21,7 +21,9 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var api_v1alpha1_org_soundboard_entities_pb = require('../../../../api/v1alpha1/org/soundboard/entities_pb.js');
-goog.object.extend(proto, api_v1alpha1_org_soundboard_entities_pb);
-var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
+var annotations_authz_pb = require('../../../annotations/authz_pb.js');
+goog.object.extend(proto, annotations_authz_pb);
+var api_v1alpha1_soundboard_entities_pb = require('../../../api/v1alpha1/soundboard/entities_pb.js');
+goog.object.extend(proto, api_v1alpha1_soundboard_entities_pb);
+var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
