@@ -27,6 +27,8 @@ var api_commons_enums_pb = require('../../api/commons/enums_pb.js');
 goog.object.extend(proto, api_commons_enums_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
+var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
+goog.object.extend(proto, google_protobuf_wrappers_pb);
 goog.exportSymbol('proto.api.commons.Channel', null, global);
 goog.exportSymbol('proto.api.commons.ConsentAbsentAction', null, global);
 goog.exportSymbol('proto.api.commons.ConsentCondition', null, global);
@@ -7011,7 +7013,8 @@ proto.api.commons.ScrubEntryDetails.prototype.toObject = function(opt_includeIns
 proto.api.commons.ScrubEntryDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
     content: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    expirationDate: (f = msg.getExpirationDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    expirationDate: (f = msg.getExpirationDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    notes: (f = msg.getNotes()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7057,6 +7060,11 @@ proto.api.commons.ScrubEntryDetails.deserializeBinaryFromReader = function(msg, 
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setExpirationDate(value);
       break;
+    case 3:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setNotes(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -7099,6 +7107,14 @@ proto.api.commons.ScrubEntryDetails.serializeBinaryToWriter = function(message, 
       2,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getNotes();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
@@ -7156,6 +7172,43 @@ proto.api.commons.ScrubEntryDetails.prototype.clearExpirationDate = function() {
  */
 proto.api.commons.ScrubEntryDetails.prototype.hasExpirationDate = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue notes = 3;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.api.commons.ScrubEntryDetails.prototype.getNotes = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.StringValue|undefined} value
+ * @return {!proto.api.commons.ScrubEntryDetails} returns this
+*/
+proto.api.commons.ScrubEntryDetails.prototype.setNotes = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.ScrubEntryDetails} returns this
+ */
+proto.api.commons.ScrubEntryDetails.prototype.clearNotes = function() {
+  return this.setNotes(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.ScrubEntryDetails.prototype.hasNotes = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
