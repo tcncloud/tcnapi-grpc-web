@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as api_commons_communication_pb from "../../api/commons/communication_pb";
 import * as api_commons_enums_pb from "../../api/commons/enums_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class Rule extends jspb.Message {
   getVerb(): VerbMap[keyof VerbMap];
@@ -902,6 +903,11 @@ export class ScrubEntryDetails extends jspb.Message {
   getExpirationDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setExpirationDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasNotes(): boolean;
+  clearNotes(): void;
+  getNotes(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setNotes(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ScrubEntryDetails.AsObject;
   static toObject(includeInstance: boolean, msg: ScrubEntryDetails): ScrubEntryDetails.AsObject;
@@ -916,6 +922,7 @@ export namespace ScrubEntryDetails {
   export type AsObject = {
     content: string,
     expirationDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    notes?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 
