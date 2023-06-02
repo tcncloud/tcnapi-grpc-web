@@ -2,6 +2,7 @@
 // file: api/v1alpha1/scorecards/scorecard.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
 import * as api_commons_scorecards_pb from "../../../api/commons/scorecards_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 
@@ -65,6 +66,16 @@ export class ListScorecardsRequest extends jspb.Message {
   setStatesList(value: Array<api_commons_scorecards_pb.ScorecardStateMap[keyof api_commons_scorecards_pb.ScorecardStateMap]>): void;
   addStates(value: api_commons_scorecards_pb.ScorecardStateMap[keyof api_commons_scorecards_pb.ScorecardStateMap], index?: number): api_commons_scorecards_pb.ScorecardStateMap[keyof api_commons_scorecards_pb.ScorecardStateMap];
 
+  clearEvaluationTypesList(): void;
+  getEvaluationTypesList(): Array<api_commons_scorecards_pb.EvaluationTypeMap[keyof api_commons_scorecards_pb.EvaluationTypeMap]>;
+  setEvaluationTypesList(value: Array<api_commons_scorecards_pb.EvaluationTypeMap[keyof api_commons_scorecards_pb.EvaluationTypeMap]>): void;
+  addEvaluationTypes(value: api_commons_scorecards_pb.EvaluationTypeMap[keyof api_commons_scorecards_pb.EvaluationTypeMap], index?: number): api_commons_scorecards_pb.EvaluationTypeMap[keyof api_commons_scorecards_pb.EvaluationTypeMap];
+
+  clearCallTypesList(): void;
+  getCallTypesList(): Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>;
+  setCallTypesList(value: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>): void;
+  addCallTypes(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap], index?: number): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListScorecardsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListScorecardsRequest): ListScorecardsRequest.AsObject;
@@ -80,6 +91,8 @@ export namespace ListScorecardsRequest {
     authorIdsList: Array<string>,
     categoryIdsList: Array<number>,
     statesList: Array<api_commons_scorecards_pb.ScorecardStateMap[keyof api_commons_scorecards_pb.ScorecardStateMap]>,
+    evaluationTypesList: Array<api_commons_scorecards_pb.EvaluationTypeMap[keyof api_commons_scorecards_pb.EvaluationTypeMap]>,
+    callTypesList: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>,
   }
 }
 
