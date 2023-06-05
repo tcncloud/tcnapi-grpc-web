@@ -7176,15 +7176,10 @@ export class CreateShiftInstanceReq extends jspb.Message {
   getIsLocked(): boolean;
   setIsLocked(value: boolean): void;
 
-  clearWfmAgentSidList(): void;
-  getWfmAgentSidList(): Array<google_protobuf_wrappers_pb.Int64Value>;
-  setWfmAgentSidList(value: Array<google_protobuf_wrappers_pb.Int64Value>): void;
-  addWfmAgentSid(value?: google_protobuf_wrappers_pb.Int64Value, index?: number): google_protobuf_wrappers_pb.Int64Value;
-
-  clearMetricTypesList(): void;
-  getMetricTypesList(): Array<api_commons_wfm_pb.PerformanceMetricTypeMap[keyof api_commons_wfm_pb.PerformanceMetricTypeMap]>;
-  setMetricTypesList(value: Array<api_commons_wfm_pb.PerformanceMetricTypeMap[keyof api_commons_wfm_pb.PerformanceMetricTypeMap]>): void;
-  addMetricTypes(value: api_commons_wfm_pb.PerformanceMetricTypeMap[keyof api_commons_wfm_pb.PerformanceMetricTypeMap], index?: number): api_commons_wfm_pb.PerformanceMetricTypeMap[keyof api_commons_wfm_pb.PerformanceMetricTypeMap];
+  clearWfmAgentSidsList(): void;
+  getWfmAgentSidsList(): Array<google_protobuf_wrappers_pb.Int64Value>;
+  setWfmAgentSidsList(value: Array<google_protobuf_wrappers_pb.Int64Value>): void;
+  addWfmAgentSids(value?: google_protobuf_wrappers_pb.Int64Value, index?: number): google_protobuf_wrappers_pb.Int64Value;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateShiftInstanceReq.AsObject;
@@ -7203,8 +7198,7 @@ export namespace CreateShiftInstanceReq {
     startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     widthInMinutes: number,
     isLocked: boolean,
-    wfmAgentSidList: Array<google_protobuf_wrappers_pb.Int64Value.AsObject>,
-    metricTypesList: Array<api_commons_wfm_pb.PerformanceMetricTypeMap[keyof api_commons_wfm_pb.PerformanceMetricTypeMap]>,
+    wfmAgentSidsList: Array<google_protobuf_wrappers_pb.Int64Value.AsObject>,
   }
 }
 

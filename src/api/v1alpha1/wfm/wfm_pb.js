@@ -56765,7 +56765,7 @@ proto.api.v1alpha1.wfm.DeleteDraftScheduleRes.serializeBinaryToWriter = function
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.repeatedFields_ = [6,7];
+proto.api.v1alpha1.wfm.CreateShiftInstanceReq.repeatedFields_ = [6];
 
 
 
@@ -56803,9 +56803,8 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.toObject = function(includeInstanc
     startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     widthInMinutes: jspb.Message.getFieldWithDefault(msg, 4, 0),
     isLocked: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    wfmAgentSidList: jspb.Message.toObjectList(msg.getWfmAgentSidList(),
-    google_protobuf_wrappers_pb.Int64Value.toObject, includeInstance),
-    metricTypesList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    wfmAgentSidsList: jspb.Message.toObjectList(msg.getWfmAgentSidsList(),
+    google_protobuf_wrappers_pb.Int64Value.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -56866,13 +56865,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.deserializeBinaryFromReader = func
     case 6:
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
-      msg.addWfmAgentSid(value);
-      break;
-    case 7:
-      var values = /** @type {!Array<!proto.api.commons.PerformanceMetricType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addMetricTypes(values[i]);
-      }
+      msg.addWfmAgentSids(value);
       break;
     default:
       reader.skipField();
@@ -56939,19 +56932,12 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.serializeBinaryToWriter = function
       f
     );
   }
-  f = message.getWfmAgentSidList();
+  f = message.getWfmAgentSidsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       6,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
-    );
-  }
-  f = message.getMetricTypesList();
-  if (f.length > 0) {
-    writer.writePackedEnum(
-      7,
-      f
     );
   }
 };
@@ -57067,10 +57053,10 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setIsLocked = function(v
 
 
 /**
- * repeated google.protobuf.Int64Value wfm_agent_sid = 6;
+ * repeated google.protobuf.Int64Value wfm_agent_sids = 6;
  * @return {!Array<!proto.google.protobuf.Int64Value>}
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.getWfmAgentSidList = function() {
+proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.getWfmAgentSidsList = function() {
   return /** @type{!Array<!proto.google.protobuf.Int64Value>} */ (
     jspb.Message.getRepeatedWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 6));
 };
@@ -57080,7 +57066,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.getWfmAgentSidList = fun
  * @param {!Array<!proto.google.protobuf.Int64Value>} value
  * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceReq} returns this
 */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setWfmAgentSidList = function(value) {
+proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setWfmAgentSidsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
@@ -57090,7 +57076,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setWfmAgentSidList = fun
  * @param {number=} opt_index
  * @return {!proto.google.protobuf.Int64Value}
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.addWfmAgentSid = function(opt_value, opt_index) {
+proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.addWfmAgentSids = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.google.protobuf.Int64Value, opt_index);
 };
 
@@ -57099,45 +57085,8 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.addWfmAgentSid = functio
  * Clears the list making it empty but non-null.
  * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceReq} returns this
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.clearWfmAgentSidList = function() {
-  return this.setWfmAgentSidList([]);
-};
-
-
-/**
- * repeated api.commons.PerformanceMetricType metric_types = 7;
- * @return {!Array<!proto.api.commons.PerformanceMetricType>}
- */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.getMetricTypesList = function() {
-  return /** @type {!Array<!proto.api.commons.PerformanceMetricType>} */ (jspb.Message.getRepeatedField(this, 7));
-};
-
-
-/**
- * @param {!Array<!proto.api.commons.PerformanceMetricType>} value
- * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceReq} returns this
- */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setMetricTypesList = function(value) {
-  return jspb.Message.setField(this, 7, value || []);
-};
-
-
-/**
- * @param {!proto.api.commons.PerformanceMetricType} value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceReq} returns this
- */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.addMetricTypes = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceReq} returns this
- */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.clearMetricTypesList = function() {
-  return this.setMetricTypesList([]);
+proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.clearWfmAgentSidsList = function() {
+  return this.setWfmAgentSidsList([]);
 };
 
 
