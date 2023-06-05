@@ -7176,10 +7176,10 @@ export class CreateShiftInstanceReq extends jspb.Message {
   getIsLocked(): boolean;
   setIsLocked(value: boolean): void;
 
-  hasWfmAgentSid(): boolean;
-  clearWfmAgentSid(): void;
-  getWfmAgentSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
-  setWfmAgentSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
+  clearWfmAgentSidList(): void;
+  getWfmAgentSidList(): Array<google_protobuf_wrappers_pb.Int64Value>;
+  setWfmAgentSidList(value: Array<google_protobuf_wrappers_pb.Int64Value>): void;
+  addWfmAgentSid(value?: google_protobuf_wrappers_pb.Int64Value, index?: number): google_protobuf_wrappers_pb.Int64Value;
 
   clearMetricTypesList(): void;
   getMetricTypesList(): Array<api_commons_wfm_pb.PerformanceMetricTypeMap[keyof api_commons_wfm_pb.PerformanceMetricTypeMap]>;
@@ -7203,21 +7203,21 @@ export namespace CreateShiftInstanceReq {
     startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     widthInMinutes: number,
     isLocked: boolean,
-    wfmAgentSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    wfmAgentSidList: Array<google_protobuf_wrappers_pb.Int64Value.AsObject>,
     metricTypesList: Array<api_commons_wfm_pb.PerformanceMetricTypeMap[keyof api_commons_wfm_pb.PerformanceMetricTypeMap]>,
   }
 }
 
 export class CreateShiftInstanceRes extends jspb.Message {
-  hasShiftInstance(): boolean;
-  clearShiftInstance(): void;
-  getShiftInstance(): ShiftInstance | undefined;
-  setShiftInstance(value?: ShiftInstance): void;
+  clearShiftInstanceList(): void;
+  getShiftInstanceList(): Array<ShiftInstance>;
+  setShiftInstanceList(value: Array<ShiftInstance>): void;
+  addShiftInstance(value?: ShiftInstance, index?: number): ShiftInstance;
 
-  clearPerformanceMetricsList(): void;
-  getPerformanceMetricsList(): Array<PerformanceMetric>;
-  setPerformanceMetricsList(value: Array<PerformanceMetric>): void;
-  addPerformanceMetrics(value?: PerformanceMetric, index?: number): PerformanceMetric;
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateShiftInstanceRes.AsObject;
@@ -7231,8 +7231,8 @@ export class CreateShiftInstanceRes extends jspb.Message {
 
 export namespace CreateShiftInstanceRes {
   export type AsObject = {
-    shiftInstance?: ShiftInstance.AsObject,
-    performanceMetricsList: Array<PerformanceMetric.AsObject>,
+    shiftInstanceList: Array<ShiftInstance.AsObject>,
+    diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
 

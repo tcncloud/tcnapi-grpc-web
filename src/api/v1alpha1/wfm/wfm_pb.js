@@ -56765,7 +56765,7 @@ proto.api.v1alpha1.wfm.DeleteDraftScheduleRes.serializeBinaryToWriter = function
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.repeatedFields_ = [7];
+proto.api.v1alpha1.wfm.CreateShiftInstanceReq.repeatedFields_ = [6,7];
 
 
 
@@ -56803,7 +56803,8 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.toObject = function(includeInstanc
     startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     widthInMinutes: jspb.Message.getFieldWithDefault(msg, 4, 0),
     isLocked: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    wfmAgentSid: (f = msg.getWfmAgentSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    wfmAgentSidList: jspb.Message.toObjectList(msg.getWfmAgentSidList(),
+    google_protobuf_wrappers_pb.Int64Value.toObject, includeInstance),
     metricTypesList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
   };
 
@@ -56865,7 +56866,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.deserializeBinaryFromReader = func
     case 6:
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
-      msg.setWfmAgentSid(value);
+      msg.addWfmAgentSid(value);
       break;
     case 7:
       var values = /** @type {!Array<!proto.api.commons.PerformanceMetricType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
@@ -56938,9 +56939,9 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.serializeBinaryToWriter = function
       f
     );
   }
-  f = message.getWfmAgentSid();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getWfmAgentSidList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       6,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
@@ -57066,39 +57067,40 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setIsLocked = function(v
 
 
 /**
- * optional google.protobuf.Int64Value wfm_agent_sid = 6;
- * @return {?proto.google.protobuf.Int64Value}
+ * repeated google.protobuf.Int64Value wfm_agent_sid = 6;
+ * @return {!Array<!proto.google.protobuf.Int64Value>}
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.getWfmAgentSid = function() {
-  return /** @type{?proto.google.protobuf.Int64Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 6));
+proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.getWfmAgentSidList = function() {
+  return /** @type{!Array<!proto.google.protobuf.Int64Value>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 6));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Int64Value|undefined} value
+ * @param {!Array<!proto.google.protobuf.Int64Value>} value
  * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceReq} returns this
 */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setWfmAgentSid = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setWfmAgentSidList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.google.protobuf.Int64Value=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.protobuf.Int64Value}
+ */
+proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.addWfmAgentSid = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.google.protobuf.Int64Value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceReq} returns this
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.clearWfmAgentSid = function() {
-  return this.setWfmAgentSid(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.hasWfmAgentSid = function() {
-  return jspb.Message.getField(this, 6) != null;
+proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.clearWfmAgentSidList = function() {
+  return this.setWfmAgentSidList([]);
 };
 
 
@@ -57145,7 +57147,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.clearMetricTypesList = f
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.repeatedFields_ = [2];
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.repeatedFields_ = [1,2];
 
 
 
@@ -57178,9 +57180,10 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.wfm.CreateShiftInstanceRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    shiftInstance: (f = msg.getShiftInstance()) && proto.api.v1alpha1.wfm.ShiftInstance.toObject(includeInstance, f),
-    performanceMetricsList: jspb.Message.toObjectList(msg.getPerformanceMetricsList(),
-    proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance)
+    shiftInstanceList: jspb.Message.toObjectList(msg.getShiftInstanceList(),
+    proto.api.v1alpha1.wfm.ShiftInstance.toObject, includeInstance),
+    diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
+    proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -57220,12 +57223,12 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.deserializeBinaryFromReader = func
     case 1:
       var value = new proto.api.v1alpha1.wfm.ShiftInstance;
       reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader);
-      msg.setShiftInstance(value);
+      msg.addShiftInstance(value);
       break;
     case 2:
-      var value = new proto.api.v1alpha1.wfm.PerformanceMetric;
-      reader.readMessage(value,proto.api.v1alpha1.wfm.PerformanceMetric.deserializeBinaryFromReader);
-      msg.addPerformanceMetrics(value);
+      var value = new proto.api.v1alpha1.wfm.Diagnostic;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.Diagnostic.deserializeBinaryFromReader);
+      msg.addDiagnostics(value);
       break;
     default:
       reader.skipField();
@@ -57256,88 +57259,51 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.serializeBinary = functi
  */
 proto.api.v1alpha1.wfm.CreateShiftInstanceRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getShiftInstance();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getShiftInstanceList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       1,
       f,
       proto.api.v1alpha1.wfm.ShiftInstance.serializeBinaryToWriter
     );
   }
-  f = message.getPerformanceMetricsList();
+  f = message.getDiagnosticsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       2,
       f,
-      proto.api.v1alpha1.wfm.PerformanceMetric.serializeBinaryToWriter
+      proto.api.v1alpha1.wfm.Diagnostic.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional ShiftInstance shift_instance = 1;
- * @return {?proto.api.v1alpha1.wfm.ShiftInstance}
+ * repeated ShiftInstance shift_instance = 1;
+ * @return {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>}
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.getShiftInstance = function() {
-  return /** @type{?proto.api.v1alpha1.wfm.ShiftInstance} */ (
-    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.ShiftInstance, 1));
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.getShiftInstanceList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.ShiftInstance, 1));
 };
 
 
 /**
- * @param {?proto.api.v1alpha1.wfm.ShiftInstance|undefined} value
+ * @param {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} value
  * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceRes} returns this
 */
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.setShiftInstance = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.setShiftInstanceList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceRes} returns this
- */
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.clearShiftInstance = function() {
-  return this.setShiftInstance(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.hasShiftInstance = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * repeated PerformanceMetric performance_metrics = 2;
- * @return {!Array<!proto.api.v1alpha1.wfm.PerformanceMetric>}
- */
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.getPerformanceMetricsList = function() {
-  return /** @type{!Array<!proto.api.v1alpha1.wfm.PerformanceMetric>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.PerformanceMetric, 2));
-};
-
-
-/**
- * @param {!Array<!proto.api.v1alpha1.wfm.PerformanceMetric>} value
- * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceRes} returns this
-*/
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.setPerformanceMetricsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
-};
-
-
-/**
- * @param {!proto.api.v1alpha1.wfm.PerformanceMetric=} opt_value
+ * @param {!proto.api.v1alpha1.wfm.ShiftInstance=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.wfm.PerformanceMetric}
+ * @return {!proto.api.v1alpha1.wfm.ShiftInstance}
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.addPerformanceMetrics = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.PerformanceMetric, opt_index);
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.addShiftInstance = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.wfm.ShiftInstance, opt_index);
 };
 
 
@@ -57345,8 +57311,46 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.addPerformanceMetrics = 
  * Clears the list making it empty but non-null.
  * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceRes} returns this
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.clearPerformanceMetricsList = function() {
-  return this.setPerformanceMetricsList([]);
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.clearShiftInstanceList = function() {
+  return this.setShiftInstanceList([]);
+};
+
+
+/**
+ * repeated Diagnostic diagnostics = 2;
+ * @return {!Array<!proto.api.v1alpha1.wfm.Diagnostic>}
+ */
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.getDiagnosticsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.Diagnostic>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.Diagnostic, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.Diagnostic>} value
+ * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceRes} returns this
+*/
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.setDiagnosticsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.Diagnostic=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.Diagnostic}
+ */
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.addDiagnostics = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.Diagnostic, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceRes} returns this
+ */
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.clearDiagnosticsList = function() {
+  return this.setDiagnosticsList([]);
 };
 
 
