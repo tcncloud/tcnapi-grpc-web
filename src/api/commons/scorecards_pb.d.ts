@@ -1010,6 +1010,7 @@ export interface RiskLevelMap {
   RISK_LEVEL_LOW: 1;
   RISK_LEVEL_MEDIUM: 2;
   RISK_LEVEL_HIGH: 3;
+  RISK_LEVEL_RISK_FREE: 4;
 }
 
 export const RiskLevel: RiskLevelMap;
