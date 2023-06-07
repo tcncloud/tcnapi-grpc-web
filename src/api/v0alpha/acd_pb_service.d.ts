@@ -4,15 +4,6 @@
 import * as api_v0alpha_acd_pb from "../../api/v0alpha/acd_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type AcdAgentGetStatusStream = {
-  readonly methodName: string;
-  readonly service: typeof Acd;
-  readonly requestStream: false;
-  readonly responseStream: true;
-  readonly requestType: typeof api_v0alpha_acd_pb.AgentGetStatusRequest;
-  readonly responseType: typeof api_v0alpha_acd_pb.AgentGetStatusReply;
-};
-
 type AcdAgentGetStatus = {
   readonly methodName: string;
   readonly service: typeof Acd;
@@ -465,7 +456,6 @@ type AcdAgentUnmute = {
 
 export class Acd {
   static readonly serviceName: string;
-  static readonly AgentGetStatusStream: AcdAgentGetStatusStream;
   static readonly AgentGetStatus: AcdAgentGetStatus;
   static readonly AgentGetConnectedParty: AcdAgentGetConnectedParty;
   static readonly AgentIntercom: AcdAgentIntercom;
@@ -550,7 +540,6 @@ export class AcdClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
-  agentGetStatusStream(requestMessage: api_v0alpha_acd_pb.AgentGetStatusRequest, metadata?: grpc.Metadata): ResponseStream<api_v0alpha_acd_pb.AgentGetStatusReply>;
   agentGetStatus(
     requestMessage: api_v0alpha_acd_pb.AgentGetStatusRequest,
     metadata: grpc.Metadata,
