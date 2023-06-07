@@ -7661,7 +7661,7 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileRes.serializeBinaryToWriter = function(
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.repeatedFields_ = [2];
+proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.repeatedFields_ = [1];
 
 
 
@@ -7694,7 +7694,6 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.prototype.toObject = f
  */
 proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     proficienciesList: jspb.Message.toObjectList(msg.getProficienciesList(),
     proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency.toObject, includeInstance)
   };
@@ -7734,10 +7733,6 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrgId(value);
-      break;
-    case 2:
       var value = new proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency;
       reader.readMessage(value,proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency.deserializeBinaryFromReader);
       msg.addProficiencies(value);
@@ -7771,17 +7766,10 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.prototype.serializeBin
  */
 proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrgId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getProficienciesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      1,
       f,
       proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency.serializeBinaryToWriter
     );
@@ -7980,30 +7968,12 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency.prototype.
 
 
 /**
- * optional string org_id = 1;
- * @return {string}
- */
-proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.prototype.getOrgId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq} returns this
- */
-proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.prototype.setOrgId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * repeated Proficiency proficiencies = 2;
+ * repeated Proficiency proficiencies = 1;
  * @return {!Array<!proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency>}
  */
 proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.prototype.getProficienciesList = function() {
   return /** @type{!Array<!proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency, 1));
 };
 
 
@@ -8012,7 +7982,7 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.prototype.getProficien
  * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq} returns this
 */
 proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.prototype.setProficienciesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -8022,7 +7992,7 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.prototype.setProficien
  * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency}
  */
 proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.prototype.addProficiencies = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency, opt_index);
 };
 
 

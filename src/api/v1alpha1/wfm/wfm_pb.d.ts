@@ -240,9 +240,6 @@ export namespace UpdateSkillProfileRes {
 }
 
 export class UpdateSkillProfileProficienciesReq extends jspb.Message {
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   clearProficienciesList(): void;
   getProficienciesList(): Array<UpdateSkillProfileProficienciesReq.Proficiency>;
   setProficienciesList(value: Array<UpdateSkillProfileProficienciesReq.Proficiency>): void;
@@ -260,7 +257,6 @@ export class UpdateSkillProfileProficienciesReq extends jspb.Message {
 
 export namespace UpdateSkillProfileProficienciesReq {
   export type AsObject = {
-    orgId: string,
     proficienciesList: Array<UpdateSkillProfileProficienciesReq.Proficiency.AsObject>,
   }
 
