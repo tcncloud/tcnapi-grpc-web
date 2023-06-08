@@ -85,6 +85,15 @@ type LearnStandalone = {
   readonly responseType: typeof api_v0alpha_learn_pb.StandaloneRes;
 };
 
+type LearnDeleteStandalone = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_learn_pb.DeleteStandaloneReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.DeleteStandaloneRes;
+};
+
 export class Learn {
   static readonly serviceName: string;
   static readonly Exist: LearnExist;
@@ -96,6 +105,7 @@ export class Learn {
   static readonly SearchContent: LearnSearchContent;
   static readonly UploadDynamicScreenshot: LearnUploadDynamicScreenshot;
   static readonly Standalone: LearnStandalone;
+  static readonly DeleteStandalone: LearnDeleteStandalone;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -210,6 +220,15 @@ export class LearnClient {
   standalone(
     requestMessage: api_v0alpha_learn_pb.StandaloneReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.StandaloneRes|null) => void
+  ): UnaryResponse;
+  deleteStandalone(
+    requestMessage: api_v0alpha_learn_pb.DeleteStandaloneReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.DeleteStandaloneRes|null) => void
+  ): UnaryResponse;
+  deleteStandalone(
+    requestMessage: api_v0alpha_learn_pb.DeleteStandaloneReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.DeleteStandaloneRes|null) => void
   ): UnaryResponse;
 }
 

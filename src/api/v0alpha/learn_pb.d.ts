@@ -523,3 +523,49 @@ export namespace LearnStandaloneDetails {
   }
 }
 
+export class DeleteStandaloneReq extends jspb.Message {
+  getLocale(): string;
+  setLocale(value: string): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  clearArticleNamesList(): void;
+  getArticleNamesList(): Array<string>;
+  setArticleNamesList(value: Array<string>): void;
+  addArticleNames(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteStandaloneReq.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteStandaloneReq): DeleteStandaloneReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteStandaloneReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteStandaloneReq;
+  static deserializeBinaryFromReader(message: DeleteStandaloneReq, reader: jspb.BinaryReader): DeleteStandaloneReq;
+}
+
+export namespace DeleteStandaloneReq {
+  export type AsObject = {
+    locale: string,
+    orgId: string,
+    articleNamesList: Array<string>,
+  }
+}
+
+export class DeleteStandaloneRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteStandaloneRes.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteStandaloneRes): DeleteStandaloneRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteStandaloneRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteStandaloneRes;
+  static deserializeBinaryFromReader(message: DeleteStandaloneRes, reader: jspb.BinaryReader): DeleteStandaloneRes;
+}
+
+export namespace DeleteStandaloneRes {
+  export type AsObject = {
+  }
+}
+
