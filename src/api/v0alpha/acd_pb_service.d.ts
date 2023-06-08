@@ -31,6 +31,15 @@ type AcdAgentGetConnectedParty = {
   readonly responseType: typeof api_v0alpha_acd_pb.AgentGetConnectedPartyReply;
 };
 
+type AcdManagerAgentGetConnectedParty = {
+  readonly methodName: string;
+  readonly service: typeof Acd;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_acd_pb.ManagerAgentGetConnectedPartyRequest;
+  readonly responseType: typeof api_v0alpha_acd_pb.ManagerAgentGetConnectedPartyReply;
+};
+
 type AcdAgentIntercom = {
   readonly methodName: string;
   readonly service: typeof Acd;
@@ -468,6 +477,7 @@ export class Acd {
   static readonly AgentGetStatusStream: AcdAgentGetStatusStream;
   static readonly AgentGetStatus: AcdAgentGetStatus;
   static readonly AgentGetConnectedParty: AcdAgentGetConnectedParty;
+  static readonly ManagerAgentGetConnectedParty: AcdManagerAgentGetConnectedParty;
   static readonly AgentIntercom: AcdAgentIntercom;
   static readonly AgentIntercomAccept: AcdAgentIntercomAccept;
   static readonly AgentIntercomReject: AcdAgentIntercomReject;
@@ -568,6 +578,15 @@ export class AcdClient {
   agentGetConnectedParty(
     requestMessage: api_v0alpha_acd_pb.AgentGetConnectedPartyRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.AgentGetConnectedPartyReply|null) => void
+  ): UnaryResponse;
+  managerAgentGetConnectedParty(
+    requestMessage: api_v0alpha_acd_pb.ManagerAgentGetConnectedPartyRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ManagerAgentGetConnectedPartyReply|null) => void
+  ): UnaryResponse;
+  managerAgentGetConnectedParty(
+    requestMessage: api_v0alpha_acd_pb.ManagerAgentGetConnectedPartyRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ManagerAgentGetConnectedPartyReply|null) => void
   ): UnaryResponse;
   agentIntercom(
     requestMessage: api_v0alpha_acd_pb.AgentIntercomRequest,
