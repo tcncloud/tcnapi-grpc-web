@@ -188,6 +188,15 @@ type Room303APIArchiveRoom = {
   readonly responseType: typeof api_commons_room303_pb.Room;
 };
 
+type Room303APIListUsersByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Room303API;
+  readonly requestStream: false;
+  readonly responseStream: true;
+  readonly requestType: typeof api_v1alpha1_room303_room_pb.ListUsersByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_room303_room_pb.ListUsersByOrgIdResponse;
+};
+
 export class Room303API {
   static readonly serviceName: string;
   static readonly AddRoomMember: Room303APIAddRoomMember;
@@ -210,6 +219,7 @@ export class Room303API {
   static readonly ListAllRooms: Room303APIListAllRooms;
   static readonly ListRoomsForMember: Room303APIListRoomsForMember;
   static readonly ArchiveRoom: Room303APIArchiveRoom;
+  static readonly ListUsersByOrgId: Room303APIListUsersByOrgId;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -416,5 +426,6 @@ export class Room303APIClient {
     requestMessage: api_v1alpha1_room303_room_pb.ArchiveRoomRequest,
     callback: (error: ServiceError|null, responseMessage: api_commons_room303_pb.Room|null) => void
   ): UnaryResponse;
+  listUsersByOrgId(requestMessage: api_v1alpha1_room303_room_pb.ListUsersByOrgIdRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_room303_room_pb.ListUsersByOrgIdResponse>;
 }
 

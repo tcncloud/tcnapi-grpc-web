@@ -194,6 +194,15 @@ Room303API.ArchiveRoom = {
   responseType: api_commons_room303_pb.Room
 };
 
+Room303API.ListUsersByOrgId = {
+  methodName: "ListUsersByOrgId",
+  service: Room303API,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_room303_room_pb.ListUsersByOrgIdRequest,
+  responseType: api_v1alpha1_room303_room_pb.ListUsersByOrgIdResponse
+};
+
 exports.Room303API = Room303API;
 
 function Room303APIClient(serviceHost, options) {
@@ -824,6 +833,45 @@ Room303APIClient.prototype.archiveRoom = function archiveRoom(requestMessage, me
   return {
     cancel: function () {
       callback = null;
+      client.close();
+    }
+  };
+};
+
+Room303APIClient.prototype.listUsersByOrgId = function listUsersByOrgId(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(Room303API.ListUsersByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
       client.close();
     }
   };

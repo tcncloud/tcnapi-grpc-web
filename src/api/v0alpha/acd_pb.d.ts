@@ -2,6 +2,7 @@
 // file: api/v0alpha/acd.proto
 
 import * as jspb from "google-protobuf";
+import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as api_commons_acd_pb from "../../api/commons/acd_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 
@@ -145,6 +146,54 @@ export class AgentGetConnectedPartyReply extends jspb.Message {
 }
 
 export namespace AgentGetConnectedPartyReply {
+  export type AsObject = {
+    callId: number,
+    callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+  }
+}
+
+export class ManagerAgentGetConnectedPartyRequest extends jspb.Message {
+  getSessionSid(): number;
+  setSessionSid(value: number): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ManagerAgentGetConnectedPartyRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ManagerAgentGetConnectedPartyRequest): ManagerAgentGetConnectedPartyRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ManagerAgentGetConnectedPartyRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ManagerAgentGetConnectedPartyRequest;
+  static deserializeBinaryFromReader(message: ManagerAgentGetConnectedPartyRequest, reader: jspb.BinaryReader): ManagerAgentGetConnectedPartyRequest;
+}
+
+export namespace ManagerAgentGetConnectedPartyRequest {
+  export type AsObject = {
+    sessionSid: number,
+    userId: string,
+  }
+}
+
+export class ManagerAgentGetConnectedPartyReply extends jspb.Message {
+  getCallId(): number;
+  setCallId(value: number): void;
+
+  getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+  setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ManagerAgentGetConnectedPartyReply.AsObject;
+  static toObject(includeInstance: boolean, msg: ManagerAgentGetConnectedPartyReply): ManagerAgentGetConnectedPartyReply.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ManagerAgentGetConnectedPartyReply, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ManagerAgentGetConnectedPartyReply;
+  static deserializeBinaryFromReader(message: ManagerAgentGetConnectedPartyReply, reader: jspb.BinaryReader): ManagerAgentGetConnectedPartyReply;
+}
+
+export namespace ManagerAgentGetConnectedPartyReply {
   export type AsObject = {
     callId: number,
     callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
