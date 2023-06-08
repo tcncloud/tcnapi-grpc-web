@@ -4089,7 +4089,7 @@ proto.api.v0alpha.LearnStandaloneDetails.prototype.hasLastEditedTimestamp = func
  * @private {!Array<number>}
  * @const
  */
-proto.api.v0alpha.DeleteStandaloneReq.repeatedFields_ = [3];
+proto.api.v0alpha.DeleteStandaloneReq.repeatedFields_ = [2];
 
 
 
@@ -4123,8 +4123,7 @@ proto.api.v0alpha.DeleteStandaloneReq.prototype.toObject = function(opt_includeI
 proto.api.v0alpha.DeleteStandaloneReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    articleNamesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+    articleNamesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4167,10 +4166,6 @@ proto.api.v0alpha.DeleteStandaloneReq.deserializeBinaryFromReader = function(msg
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOrgId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
       msg.addArticleNames(value);
       break;
     default:
@@ -4209,17 +4204,10 @@ proto.api.v0alpha.DeleteStandaloneReq.serializeBinaryToWriter = function(message
       f
     );
   }
-  f = message.getOrgId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getArticleNamesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      3,
+      2,
       f
     );
   }
@@ -4245,29 +4233,11 @@ proto.api.v0alpha.DeleteStandaloneReq.prototype.setLocale = function(value) {
 
 
 /**
- * optional string org_id = 2;
- * @return {string}
- */
-proto.api.v0alpha.DeleteStandaloneReq.prototype.getOrgId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v0alpha.DeleteStandaloneReq} returns this
- */
-proto.api.v0alpha.DeleteStandaloneReq.prototype.setOrgId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * repeated string article_names = 3;
+ * repeated string article_names = 2;
  * @return {!Array<string>}
  */
 proto.api.v0alpha.DeleteStandaloneReq.prototype.getArticleNamesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
@@ -4276,7 +4246,7 @@ proto.api.v0alpha.DeleteStandaloneReq.prototype.getArticleNamesList = function()
  * @return {!proto.api.v0alpha.DeleteStandaloneReq} returns this
  */
 proto.api.v0alpha.DeleteStandaloneReq.prototype.setArticleNamesList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
@@ -4286,7 +4256,7 @@ proto.api.v0alpha.DeleteStandaloneReq.prototype.setArticleNamesList = function(v
  * @return {!proto.api.v0alpha.DeleteStandaloneReq} returns this
  */
 proto.api.v0alpha.DeleteStandaloneReq.prototype.addArticleNames = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 

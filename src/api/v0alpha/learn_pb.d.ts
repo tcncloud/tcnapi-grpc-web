@@ -527,9 +527,6 @@ export class DeleteStandaloneReq extends jspb.Message {
   getLocale(): string;
   setLocale(value: string): void;
 
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   clearArticleNamesList(): void;
   getArticleNamesList(): Array<string>;
   setArticleNamesList(value: Array<string>): void;
@@ -548,7 +545,6 @@ export class DeleteStandaloneReq extends jspb.Message {
 export namespace DeleteStandaloneReq {
   export type AsObject = {
     locale: string,
-    orgId: string,
     articleNamesList: Array<string>,
   }
 }
