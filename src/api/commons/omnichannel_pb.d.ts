@@ -2330,11 +2330,6 @@ export class VerifiedEmail extends jspb.Message {
   getVerifiedEmailSid(): string;
   setVerifiedEmailSid(value: string): void;
 
-  hasVerificationKey(): boolean;
-  clearVerificationKey(): void;
-  getVerificationKey(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setVerificationKey(value?: google_protobuf_wrappers_pb.StringValue): void;
-
   getEmailAddress(): string;
   setEmailAddress(value: string): void;
 
@@ -2372,7 +2367,6 @@ export class VerifiedEmail extends jspb.Message {
 export namespace VerifiedEmail {
   export type AsObject = {
     verifiedEmailSid: string,
-    verificationKey?: google_protobuf_wrappers_pb.StringValue.AsObject,
     emailAddress: string,
     verified: boolean,
     createdOn?: google_protobuf_timestamp_pb.Timestamp.AsObject,
