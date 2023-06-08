@@ -18522,7 +18522,6 @@ proto.api.commons.VerifiedEmail.prototype.toObject = function(opt_includeInstanc
 proto.api.commons.VerifiedEmail.toObject = function(includeInstance, msg) {
   var f, obj = {
     verifiedEmailSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    verificationKey: (f = msg.getVerificationKey()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     emailAddress: jspb.Message.getFieldWithDefault(msg, 3, ""),
     verified: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -18568,11 +18567,6 @@ proto.api.commons.VerifiedEmail.deserializeBinaryFromReader = function(msg, read
     case 1:
       var value = /** @type {string} */ (reader.readInt64String());
       msg.setVerifiedEmailSid(value);
-      break;
-    case 2:
-      var value = new google_protobuf_wrappers_pb.StringValue;
-      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
-      msg.setVerificationKey(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -18635,14 +18629,6 @@ proto.api.commons.VerifiedEmail.serializeBinaryToWriter = function(message, writ
     writer.writeInt64String(
       1,
       f
-    );
-  }
-  f = message.getVerificationKey();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = message.getEmailAddress();
@@ -18708,43 +18694,6 @@ proto.api.commons.VerifiedEmail.prototype.getVerifiedEmailSid = function() {
  */
 proto.api.commons.VerifiedEmail.prototype.setVerifiedEmailSid = function(value) {
   return jspb.Message.setProto3StringIntField(this, 1, value);
-};
-
-
-/**
- * optional google.protobuf.StringValue verification_key = 2;
- * @return {?proto.google.protobuf.StringValue}
- */
-proto.api.commons.VerifiedEmail.prototype.getVerificationKey = function() {
-  return /** @type{?proto.google.protobuf.StringValue} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 2));
-};
-
-
-/**
- * @param {?proto.google.protobuf.StringValue|undefined} value
- * @return {!proto.api.commons.VerifiedEmail} returns this
-*/
-proto.api.commons.VerifiedEmail.prototype.setVerificationKey = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.VerifiedEmail} returns this
- */
-proto.api.commons.VerifiedEmail.prototype.clearVerificationKey = function() {
-  return this.setVerificationKey(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.VerifiedEmail.prototype.hasVerificationKey = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
