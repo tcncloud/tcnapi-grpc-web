@@ -2,9 +2,7 @@
 // file: api/v1alpha1/integrations/portals.proto
 
 import * as jspb from "google-protobuf";
-import * as annotations_authz_pb from "../../../annotations/authz_pb";
 import * as api_commons_integrations_integrations_pb from "../../../api/commons/integrations/integrations_pb";
-import * as api_commons_perms_pb from "../../../api/commons/perms_pb";
 import * as api_v1alpha1_integrations_service_pb from "../../../api/v1alpha1/integrations/service_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";

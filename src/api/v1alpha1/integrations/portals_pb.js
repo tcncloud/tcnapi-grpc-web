@@ -21,12 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var annotations_authz_pb = require('../../../annotations/authz_pb.js');
-goog.object.extend(proto, annotations_authz_pb);
 var api_commons_integrations_integrations_pb = require('../../../api/commons/integrations/integrations_pb.js');
 goog.object.extend(proto, api_commons_integrations_integrations_pb);
-var api_commons_perms_pb = require('../../../api/commons/perms_pb.js');
-goog.object.extend(proto, api_commons_perms_pb);
 var api_v1alpha1_integrations_service_pb = require('../../../api/v1alpha1/integrations/service_pb.js');
 goog.object.extend(proto, api_v1alpha1_integrations_service_pb);
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
