@@ -346,6 +346,76 @@ export namespace DownloadMessageRes {
   }
 }
 
+export class DownloadSpecifiedMessagesReq extends jspb.Message {
+  clearMessagesList(): void;
+  getMessagesList(): Array<DownloadSpecifiedMessagesReq.MessageReq>;
+  setMessagesList(value: Array<DownloadSpecifiedMessagesReq.MessageReq>): void;
+  addMessages(value?: DownloadSpecifiedMessagesReq.MessageReq, index?: number): DownloadSpecifiedMessagesReq.MessageReq;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadSpecifiedMessagesReq.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadSpecifiedMessagesReq): DownloadSpecifiedMessagesReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DownloadSpecifiedMessagesReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadSpecifiedMessagesReq;
+  static deserializeBinaryFromReader(message: DownloadSpecifiedMessagesReq, reader: jspb.BinaryReader): DownloadSpecifiedMessagesReq;
+}
+
+export namespace DownloadSpecifiedMessagesReq {
+  export type AsObject = {
+    messagesList: Array<DownloadSpecifiedMessagesReq.MessageReq.AsObject>,
+  }
+
+  export class MessageReq extends jspb.Message {
+    getMailBox(): string;
+    setMailBox(value: string): void;
+
+    getCallerSid(): string;
+    setCallerSid(value: string): void;
+
+    getCallerType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+    setCallerType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): MessageReq.AsObject;
+    static toObject(includeInstance: boolean, msg: MessageReq): MessageReq.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: MessageReq, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): MessageReq;
+    static deserializeBinaryFromReader(message: MessageReq, reader: jspb.BinaryReader): MessageReq;
+  }
+
+  export namespace MessageReq {
+    export type AsObject = {
+      mailBox: string,
+      callerSid: string,
+      callerType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+    }
+  }
+}
+
+export class DownloadSpecifiedMessagesRes extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadSpecifiedMessagesRes.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadSpecifiedMessagesRes): DownloadSpecifiedMessagesRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DownloadSpecifiedMessagesRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadSpecifiedMessagesRes;
+  static deserializeBinaryFromReader(message: DownloadSpecifiedMessagesRes, reader: jspb.BinaryReader): DownloadSpecifiedMessagesRes;
+}
+
+export namespace DownloadSpecifiedMessagesRes {
+  export type AsObject = {
+    url: string,
+  }
+}
+
 export class GetUploadGreetingUrlReq extends jspb.Message {
   getPbxExtension(): string;
   setPbxExtension(value: string): void;

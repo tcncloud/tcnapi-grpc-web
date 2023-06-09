@@ -67,6 +67,15 @@ type VmdsDownloadMessage = {
   readonly responseType: typeof api_v0alpha_vmds_pb.DownloadMessageRes;
 };
 
+type VmdsDownloadSpecifiedMessages = {
+  readonly methodName: string;
+  readonly service: typeof Vmds;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_vmds_pb.DownloadSpecifiedMessagesReq;
+  readonly responseType: typeof api_v0alpha_vmds_pb.DownloadSpecifiedMessagesRes;
+};
+
 type VmdsDownloadMessages = {
   readonly methodName: string;
   readonly service: typeof Vmds;
@@ -139,6 +148,7 @@ export class Vmds {
   static readonly UpdateUploadName: VmdsUpdateUploadName;
   static readonly UpdateVoicemailFlagRead: VmdsUpdateVoicemailFlagRead;
   static readonly DownloadMessage: VmdsDownloadMessage;
+  static readonly DownloadSpecifiedMessages: VmdsDownloadSpecifiedMessages;
   static readonly DownloadMessages: VmdsDownloadMessages;
   static readonly DownloadGreetingForExtension: VmdsDownloadGreetingForExtension;
   static readonly DownloadGreeting: VmdsDownloadGreeting;
@@ -234,6 +244,15 @@ export class VmdsClient {
   downloadMessage(
     requestMessage: api_v0alpha_vmds_pb.DownloadMessageReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_vmds_pb.DownloadMessageRes|null) => void
+  ): UnaryResponse;
+  downloadSpecifiedMessages(
+    requestMessage: api_v0alpha_vmds_pb.DownloadSpecifiedMessagesReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_vmds_pb.DownloadSpecifiedMessagesRes|null) => void
+  ): UnaryResponse;
+  downloadSpecifiedMessages(
+    requestMessage: api_v0alpha_vmds_pb.DownloadSpecifiedMessagesReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_vmds_pb.DownloadSpecifiedMessagesRes|null) => void
   ): UnaryResponse;
   downloadMessages(
     requestMessage: api_v0alpha_vmds_pb.DownloadMessagesReq,
