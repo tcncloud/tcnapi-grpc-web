@@ -2,7 +2,9 @@
 // file: api/v0alpha/sentinel.proto
 
 import * as jspb from "google-protobuf";
+import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as api_commons_logging_pb from "../../api/commons/logging_pb";
+import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class SentinelEvent extends jspb.Message {
