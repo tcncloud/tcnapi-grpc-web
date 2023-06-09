@@ -2,9 +2,11 @@
 // file: api/v0alpha/lms.proto
 
 import * as jspb from "google-protobuf";
+import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as api_commons_communication_pb from "../../api/commons/communication_pb";
 import * as api_commons_compliance_pb from "../../api/commons/compliance_pb";
 import * as api_commons_lms_pb from "../../api/commons/lms_pb";
+import * as api_commons_perms_pb from "../../api/commons/perms_pb";
 import * as api_commons_types_pb from "../../api/commons/types_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";

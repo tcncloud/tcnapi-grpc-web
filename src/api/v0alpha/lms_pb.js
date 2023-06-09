@@ -21,12 +21,16 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var annotations_authz_pb = require('../../annotations/authz_pb.js');
+goog.object.extend(proto, annotations_authz_pb);
 var api_commons_communication_pb = require('../../api/commons/communication_pb.js');
 goog.object.extend(proto, api_commons_communication_pb);
 var api_commons_compliance_pb = require('../../api/commons/compliance_pb.js');
 goog.object.extend(proto, api_commons_compliance_pb);
 var api_commons_lms_pb = require('../../api/commons/lms_pb.js');
 goog.object.extend(proto, api_commons_lms_pb);
+var api_commons_perms_pb = require('../../api/commons/perms_pb.js');
+goog.object.extend(proto, api_commons_perms_pb);
 var api_commons_types_pb = require('../../api/commons/types_pb.js');
 goog.object.extend(proto, api_commons_types_pb);
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
