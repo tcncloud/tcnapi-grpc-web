@@ -6840,6 +6840,74 @@ export namespace CreateDraftScheduleRes {
   }
 }
 
+export class UpdateDraftScheduleReq extends jspb.Message {
+  getDraftScheduleSid(): number;
+  setDraftScheduleSid(value: number): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  getDeleteShiftsNotInRange(): boolean;
+  setDeleteShiftsNotInRange(value: boolean): void;
+
+  getCopyShiftsIntoNewRange(): boolean;
+  setCopyShiftsIntoNewRange(value: boolean): void;
+
+  getGetUpdatedShifts(): boolean;
+  setGetUpdatedShifts(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateDraftScheduleReq.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateDraftScheduleReq): UpdateDraftScheduleReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateDraftScheduleReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateDraftScheduleReq;
+  static deserializeBinaryFromReader(message: UpdateDraftScheduleReq, reader: jspb.BinaryReader): UpdateDraftScheduleReq;
+}
+
+export namespace UpdateDraftScheduleReq {
+  export type AsObject = {
+    draftScheduleSid: number,
+    name: string,
+    description: string,
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    deleteShiftsNotInRange: boolean,
+    copyShiftsIntoNewRange: boolean,
+    getUpdatedShifts: boolean,
+  }
+}
+
+export class UpdateDraftScheduleRes extends jspb.Message {
+  hasDraftSchedule(): boolean;
+  clearDraftSchedule(): void;
+  getDraftSchedule(): DraftSchedule | undefined;
+  setDraftSchedule(value?: DraftSchedule): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateDraftScheduleRes.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateDraftScheduleRes): UpdateDraftScheduleRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateDraftScheduleRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateDraftScheduleRes;
+  static deserializeBinaryFromReader(message: UpdateDraftScheduleRes, reader: jspb.BinaryReader): UpdateDraftScheduleRes;
+}
+
+export namespace UpdateDraftScheduleRes {
+  export type AsObject = {
+    draftSchedule?: DraftSchedule.AsObject,
+  }
+}
+
 export class BuildDraftScheduleReq extends jspb.Message {
   getDraftScheduleSid(): number;
   setDraftScheduleSid(value: number): void;

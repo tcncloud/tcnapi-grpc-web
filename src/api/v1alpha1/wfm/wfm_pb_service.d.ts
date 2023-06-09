@@ -841,6 +841,15 @@ type WFMCreateDraftSchedule = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateDraftScheduleRes;
 };
 
+type WFMUpdateDraftSchedule = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateDraftScheduleReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateDraftScheduleRes;
+};
+
 type WFMBuildDraftSchedule = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1062,6 +1071,7 @@ export class WFM {
   static readonly GetPublishedScheduleRequiredCalls: WFMGetPublishedScheduleRequiredCalls;
   static readonly GetDraftScheduleRequiredCalls: WFMGetDraftScheduleRequiredCalls;
   static readonly CreateDraftSchedule: WFMCreateDraftSchedule;
+  static readonly UpdateDraftSchedule: WFMUpdateDraftSchedule;
   static readonly BuildDraftSchedule: WFMBuildDraftSchedule;
   static readonly PublishDraftSchedule: WFMPublishDraftSchedule;
   static readonly GetDraftSchedule: WFMGetDraftSchedule;
@@ -1906,6 +1916,15 @@ export class WFMClient {
   createDraftSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateDraftScheduleReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateDraftScheduleRes|null) => void
+  ): UnaryResponse;
+  updateDraftSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateDraftScheduleReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateDraftScheduleRes|null) => void
+  ): UnaryResponse;
+  updateDraftSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateDraftScheduleReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateDraftScheduleRes|null) => void
   ): UnaryResponse;
   buildDraftSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.BuildDraftScheduleReq,
