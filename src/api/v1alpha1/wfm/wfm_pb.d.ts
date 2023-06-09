@@ -5605,6 +5605,9 @@ export class ListConfigEntitiesReq extends jspb.Message {
   getMemberDepth(): number;
   setMemberDepth(value: number): void;
 
+  getScheduleScenarioSid(): number;
+  setScheduleScenarioSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListConfigEntitiesReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListConfigEntitiesReq): ListConfigEntitiesReq.AsObject;
@@ -5621,6 +5624,7 @@ export namespace ListConfigEntitiesReq {
     belongsToEntity?: ParentEntity.AsObject,
     includeInactive: boolean,
     memberDepth: number,
+    scheduleScenarioSid: number,
   }
 }
 

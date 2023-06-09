@@ -45413,7 +45413,8 @@ proto.api.v1alpha1.wfm.ListConfigEntitiesReq.toObject = function(includeInstance
     entityType: jspb.Message.getFieldWithDefault(msg, 1, 0),
     belongsToEntity: (f = msg.getBelongsToEntity()) && proto.api.v1alpha1.wfm.ParentEntity.toObject(includeInstance, f),
     includeInactive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    memberDepth: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    memberDepth: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -45466,6 +45467,10 @@ proto.api.v1alpha1.wfm.ListConfigEntitiesReq.deserializeBinaryFromReader = funct
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setMemberDepth(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setScheduleScenarioSid(value);
       break;
     default:
       reader.skipField();
@@ -45522,6 +45527,13 @@ proto.api.v1alpha1.wfm.ListConfigEntitiesReq.serializeBinaryToWriter = function(
   if (f !== 0) {
     writer.writeInt32(
       4,
+      f
+    );
+  }
+  f = message.getScheduleScenarioSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      5,
       f
     );
   }
@@ -45616,6 +45628,24 @@ proto.api.v1alpha1.wfm.ListConfigEntitiesReq.prototype.getMemberDepth = function
  */
 proto.api.v1alpha1.wfm.ListConfigEntitiesReq.prototype.setMemberDepth = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional int64 schedule_scenario_sid = 5;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.ListConfigEntitiesReq.prototype.getScheduleScenarioSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.ListConfigEntitiesReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListConfigEntitiesReq.prototype.setScheduleScenarioSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
