@@ -70,6 +70,9 @@ export class CreateTicketReq extends jspb.Message {
   setTicketSlaList(value: Array<api_commons_tickets_pb.Sla>): void;
   addTicketSla(value?: api_commons_tickets_pb.Sla, index?: number): api_commons_tickets_pb.Sla;
 
+  getAssignSelf(): boolean;
+  setAssignSelf(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTicketReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateTicketReq): CreateTicketReq.AsObject;
@@ -90,6 +93,7 @@ export namespace CreateTicketReq {
     ticketSkillsList: Array<api_commons_tickets_pb.Skills.AsObject>,
     status: number,
     ticketSlaList: Array<api_commons_tickets_pb.Sla.AsObject>,
+    assignSelf: boolean,
   }
 }
 
@@ -630,6 +634,46 @@ export class ReplyCommentRes extends jspb.Message {
 export namespace ReplyCommentRes {
   export type AsObject = {
     isCreated?: api_commons_tickets_pb.ConfirmReplyComment.AsObject,
+  }
+}
+
+export class CreateSelfAssignReq extends jspb.Message {
+  getTicketSid(): string;
+  setTicketSid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSelfAssignReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSelfAssignReq): CreateSelfAssignReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateSelfAssignReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSelfAssignReq;
+  static deserializeBinaryFromReader(message: CreateSelfAssignReq, reader: jspb.BinaryReader): CreateSelfAssignReq;
+}
+
+export namespace CreateSelfAssignReq {
+  export type AsObject = {
+    ticketSid: string,
+  }
+}
+
+export class CreateSelfAssignRes extends jspb.Message {
+  getIsAssigned(): boolean;
+  setIsAssigned(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSelfAssignRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSelfAssignRes): CreateSelfAssignRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateSelfAssignRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSelfAssignRes;
+  static deserializeBinaryFromReader(message: CreateSelfAssignRes, reader: jspb.BinaryReader): CreateSelfAssignRes;
+}
+
+export namespace CreateSelfAssignRes {
+  export type AsObject = {
+    isAssigned: boolean,
   }
 }
 

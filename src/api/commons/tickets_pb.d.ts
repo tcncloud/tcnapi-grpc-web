@@ -63,6 +63,9 @@ export class Ticket extends jspb.Message {
   setTicketSlaList(value: Array<Sla>): void;
   addTicketSla(value?: Sla, index?: number): Sla;
 
+  getAssignee(): string;
+  setAssignee(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ticket.AsObject;
   static toObject(includeInstance: boolean, msg: Ticket): Ticket.AsObject;
@@ -91,6 +94,7 @@ export namespace Ticket {
     ticketSkillsList: Array<Skills.AsObject>,
     status: number,
     ticketSlaList: Array<Sla.AsObject>,
+    assignee: string,
   }
 }
 
