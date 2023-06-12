@@ -8,50 +8,6 @@ import * as api_commons_billing_invoice_pb from "../../../api/commons/billing/in
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
-export class CreateBillingPlanReq extends jspb.Message {
-  hasBillingPlan(): boolean;
-  clearBillingPlan(): void;
-  getBillingPlan(): api_commons_billing_detail_pb.Plan | undefined;
-  setBillingPlan(value?: api_commons_billing_detail_pb.Plan): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateBillingPlanReq.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateBillingPlanReq): CreateBillingPlanReq.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateBillingPlanReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateBillingPlanReq;
-  static deserializeBinaryFromReader(message: CreateBillingPlanReq, reader: jspb.BinaryReader): CreateBillingPlanReq;
-}
-
-export namespace CreateBillingPlanReq {
-  export type AsObject = {
-    billingPlan?: api_commons_billing_detail_pb.Plan.AsObject,
-  }
-}
-
-export class CreateBillingPlanRes extends jspb.Message {
-  hasBillingPlan(): boolean;
-  clearBillingPlan(): void;
-  getBillingPlan(): api_commons_billing_detail_pb.Plan | undefined;
-  setBillingPlan(value?: api_commons_billing_detail_pb.Plan): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateBillingPlanRes.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateBillingPlanRes): CreateBillingPlanRes.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateBillingPlanRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateBillingPlanRes;
-  static deserializeBinaryFromReader(message: CreateBillingPlanRes, reader: jspb.BinaryReader): CreateBillingPlanRes;
-}
-
-export namespace CreateBillingPlanRes {
-  export type AsObject = {
-    billingPlan?: api_commons_billing_detail_pb.Plan.AsObject,
-  }
-}
-
 export class GetBillingPlanReq extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetBillingPlanReq.AsObject;
@@ -159,44 +115,6 @@ export class UpdateBillingPlanRes extends jspb.Message {
 export namespace UpdateBillingPlanRes {
   export type AsObject = {
     billingPlan?: api_commons_billing_detail_pb.Plan.AsObject,
-  }
-}
-
-export class DeleteBillingDetailsReq extends jspb.Message {
-  clearBillingDetailSidsList(): void;
-  getBillingDetailSidsList(): Array<number>;
-  setBillingDetailSidsList(value: Array<number>): void;
-  addBillingDetailSids(value: number, index?: number): number;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteBillingDetailsReq.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteBillingDetailsReq): DeleteBillingDetailsReq.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DeleteBillingDetailsReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteBillingDetailsReq;
-  static deserializeBinaryFromReader(message: DeleteBillingDetailsReq, reader: jspb.BinaryReader): DeleteBillingDetailsReq;
-}
-
-export namespace DeleteBillingDetailsReq {
-  export type AsObject = {
-    billingDetailSidsList: Array<number>,
-  }
-}
-
-export class DeleteBillingDetailsRes extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteBillingDetailsRes.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteBillingDetailsRes): DeleteBillingDetailsRes.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DeleteBillingDetailsRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteBillingDetailsRes;
-  static deserializeBinaryFromReader(message: DeleteBillingDetailsRes, reader: jspb.BinaryReader): DeleteBillingDetailsRes;
-}
-
-export namespace DeleteBillingDetailsRes {
-  export type AsObject = {
   }
 }
 
