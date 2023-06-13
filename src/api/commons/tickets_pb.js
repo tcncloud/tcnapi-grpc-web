@@ -28,6 +28,7 @@ goog.exportSymbol('proto.api.commons.Comment', null, global);
 goog.exportSymbol('proto.api.commons.ConfirmClose', null, global);
 goog.exportSymbol('proto.api.commons.ConfirmReplyComment', null, global);
 goog.exportSymbol('proto.api.commons.EditAttribute', null, global);
+goog.exportSymbol('proto.api.commons.EditColumnType', null, global);
 goog.exportSymbol('proto.api.commons.EditTicket', null, global);
 goog.exportSymbol('proto.api.commons.Metadata', null, global);
 goog.exportSymbol('proto.api.commons.ReplyComment', null, global);
@@ -1273,7 +1274,8 @@ proto.api.commons.Skills.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.Skills.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    skillId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    mandatoryPreferred: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1314,6 +1316,10 @@ proto.api.commons.Skills.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setSkillId(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setMandatoryPreferred(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1350,6 +1356,13 @@ proto.api.commons.Skills.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getMandatoryPreferred();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -1368,6 +1381,24 @@ proto.api.commons.Skills.prototype.getSkillId = function() {
  */
 proto.api.commons.Skills.prototype.setSkillId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int64 mandatory_preferred = 2;
+ * @return {number}
+ */
+proto.api.commons.Skills.prototype.getMandatoryPreferred = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.Skills} returns this
+ */
+proto.api.commons.Skills.prototype.setMandatoryPreferred = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -3880,7 +3911,8 @@ proto.api.commons.EditAttribute.toObject = function(includeInstance, msg) {
     colDesc: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     fromVal: jspb.Message.getFieldWithDefault(msg, 2, ""),
     toVal: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    isEdited: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+    isEdited: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    editColumnType: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -3932,6 +3964,10 @@ proto.api.commons.EditAttribute.deserializeBinaryFromReader = function(msg, read
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsEdited(value);
+      break;
+    case 5:
+      var value = /** @type {!proto.api.commons.EditColumnType} */ (reader.readEnum());
+      msg.setEditColumnType(value);
       break;
     default:
       reader.skipField();
@@ -3987,6 +4023,13 @@ proto.api.commons.EditAttribute.serializeBinaryToWriter = function(message, writ
   if (f) {
     writer.writeBool(
       4,
+      f
+    );
+  }
+  f = message.getEditColumnType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      5,
       f
     );
   }
@@ -4064,5 +4107,36 @@ proto.api.commons.EditAttribute.prototype.setIsEdited = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
+
+/**
+ * optional EditColumnType edit_column_type = 5;
+ * @return {!proto.api.commons.EditColumnType}
+ */
+proto.api.commons.EditAttribute.prototype.getEditColumnType = function() {
+  return /** @type {!proto.api.commons.EditColumnType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.EditColumnType} value
+ * @return {!proto.api.commons.EditAttribute} returns this
+ */
+proto.api.commons.EditAttribute.prototype.setEditColumnType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 5, value);
+};
+
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.EditColumnType = {
+  NONE_COLUMN: 0,
+  DESCRIPTION: 1,
+  SKILLS: 2,
+  STATUS: 3,
+  DUE_DATE: 4,
+  SLA: 5,
+  ASSIGNEE: 6
+};
 
 goog.object.extend(exports, proto.api.commons);

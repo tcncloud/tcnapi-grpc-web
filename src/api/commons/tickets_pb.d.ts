@@ -126,6 +126,9 @@ export class Skills extends jspb.Message {
   getSkillId(): string;
   setSkillId(value: string): void;
 
+  getMandatoryPreferred(): number;
+  setMandatoryPreferred(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Skills.AsObject;
   static toObject(includeInstance: boolean, msg: Skills): Skills.AsObject;
@@ -139,6 +142,7 @@ export class Skills extends jspb.Message {
 export namespace Skills {
   export type AsObject = {
     skillId: string,
+    mandatoryPreferred: number,
   }
 }
 
@@ -511,6 +515,9 @@ export class EditAttribute extends jspb.Message {
   getIsEdited(): boolean;
   setIsEdited(value: boolean): void;
 
+  getEditColumnType(): EditColumnTypeMap[keyof EditColumnTypeMap];
+  setEditColumnType(value: EditColumnTypeMap[keyof EditColumnTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EditAttribute.AsObject;
   static toObject(includeInstance: boolean, msg: EditAttribute): EditAttribute.AsObject;
@@ -527,6 +534,19 @@ export namespace EditAttribute {
     fromVal: string,
     toVal: string,
     isEdited: boolean,
+    editColumnType: EditColumnTypeMap[keyof EditColumnTypeMap],
   }
 }
+
+export interface EditColumnTypeMap {
+  NONE_COLUMN: 0;
+  DESCRIPTION: 1;
+  SKILLS: 2;
+  STATUS: 3;
+  DUE_DATE: 4;
+  SLA: 5;
+  ASSIGNEE: 6;
+}
+
+export const EditColumnType: EditColumnTypeMap;
 

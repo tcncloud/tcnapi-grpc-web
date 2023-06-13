@@ -120,8 +120,8 @@ export namespace CreateTicketRes {
 }
 
 export class EditTicketReq extends jspb.Message {
-  getTicketSid(): number;
-  setTicketSid(value: number): void;
+  getTicketSid(): string;
+  setTicketSid(value: string): void;
 
   hasEditValue(): boolean;
   clearEditValue(): void;
@@ -140,7 +140,7 @@ export class EditTicketReq extends jspb.Message {
 
 export namespace EditTicketReq {
   export type AsObject = {
-    ticketSid: number,
+    ticketSid: string,
     editValue?: api_commons_tickets_pb.EditAttribute.AsObject,
   }
 }
