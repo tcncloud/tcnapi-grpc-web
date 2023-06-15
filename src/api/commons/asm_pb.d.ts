@@ -291,9 +291,6 @@ export class QueueCallAdd extends jspb.Message {
 
   getSkillsMap(): jspb.Map<string, boolean>;
   clearSkillsMap(): void;
-  getQueueType(): QueueTypeMap[keyof QueueTypeMap];
-  setQueueType(value: QueueTypeMap[keyof QueueTypeMap]): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueueCallAdd.AsObject;
   static toObject(includeInstance: boolean, msg: QueueCallAdd): QueueCallAdd.AsObject;
@@ -315,7 +312,6 @@ export namespace QueueCallAdd {
     queuedNotificationType: api_commons_acd_pb.QueuedNotificationTypeMap[keyof api_commons_acd_pb.QueuedNotificationTypeMap],
     callerSid?: api_commons_acd_pb.CallerSid.AsObject,
     skillsMap: Array<[string, boolean]>,
-    queueType: QueueTypeMap[keyof QueueTypeMap],
   }
 }
 
@@ -356,12 +352,4 @@ export interface StatusStateMap {
 }
 
 export const StatusState: StatusStateMap;
-
-export interface QueueTypeMap {
-  AGENT_QUEUE_CALL: 0;
-  ON_HOLD_CALL: 1;
-  HQM_CALL: 2;
-}
-
-export const QueueType: QueueTypeMap;
 

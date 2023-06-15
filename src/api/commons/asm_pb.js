@@ -35,7 +35,6 @@ goog.exportSymbol('proto.api.commons.ManagerStreamAgentStateRes', null, global);
 goog.exportSymbol('proto.api.commons.ManagerStreamAgentStateRes.ManagerAgentStateCase', null, global);
 goog.exportSymbol('proto.api.commons.QueueCallAdd', null, global);
 goog.exportSymbol('proto.api.commons.QueueCallRemove', null, global);
-goog.exportSymbol('proto.api.commons.QueueType', null, global);
 goog.exportSymbol('proto.api.commons.StatusState', null, global);
 goog.exportSymbol('proto.api.commons.StreamAgentStateRes', null, global);
 goog.exportSymbol('proto.api.commons.StreamAgentStateRes.AgentStateCase', null, global);
@@ -2057,8 +2056,7 @@ proto.api.commons.QueueCallAdd.toObject = function(includeInstance, msg) {
     agentSpecific: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     queuedNotificationType: jspb.Message.getFieldWithDefault(msg, 7, 0),
     callerSid: (f = msg.getCallerSid()) && api_commons_acd_pb.CallerSid.toObject(includeInstance, f),
-    skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : [],
-    queueType: jspb.Message.getFieldWithDefault(msg, 10, 0)
+    skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -2137,10 +2135,6 @@ proto.api.commons.QueueCallAdd.deserializeBinaryFromReader = function(msg, reade
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
          });
-      break;
-    case 10:
-      var value = /** @type {!proto.api.commons.QueueType} */ (reader.readEnum());
-      msg.setQueueType(value);
       break;
     default:
       reader.skipField();
@@ -2230,13 +2224,6 @@ proto.api.commons.QueueCallAdd.serializeBinaryToWriter = function(message, write
   f = message.getSkillsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
-  }
-  f = message.getQueueType();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      10,
-      f
-    );
   }
 };
 
@@ -2470,24 +2457,6 @@ proto.api.commons.QueueCallAdd.prototype.clearSkillsMap = function() {
 };
 
 
-/**
- * optional QueueType queue_type = 10;
- * @return {!proto.api.commons.QueueType}
- */
-proto.api.commons.QueueCallAdd.prototype.getQueueType = function() {
-  return /** @type {!proto.api.commons.QueueType} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
-};
-
-
-/**
- * @param {!proto.api.commons.QueueType} value
- * @return {!proto.api.commons.QueueCallAdd} returns this
- */
-proto.api.commons.QueueCallAdd.prototype.setQueueType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 10, value);
-};
-
-
 
 
 
@@ -2655,15 +2624,6 @@ proto.api.commons.StatusState = {
   WAITING: 1,
   IDLE: 2,
   CONVERSATION_OPEN: 3
-};
-
-/**
- * @enum {number}
- */
-proto.api.commons.QueueType = {
-  AGENT_QUEUE_CALL: 0,
-  ON_HOLD_CALL: 1,
-  HQM_CALL: 2
 };
 
 goog.object.extend(exports, proto.api.commons);
