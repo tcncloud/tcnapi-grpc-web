@@ -28,7 +28,6 @@ goog.exportSymbol('proto.api.commons.Comment', null, global);
 goog.exportSymbol('proto.api.commons.ConfirmClose', null, global);
 goog.exportSymbol('proto.api.commons.ConfirmReplyComment', null, global);
 goog.exportSymbol('proto.api.commons.EditAttribute', null, global);
-goog.exportSymbol('proto.api.commons.EditColumnType', null, global);
 goog.exportSymbol('proto.api.commons.EditTicket', null, global);
 goog.exportSymbol('proto.api.commons.Metadata', null, global);
 goog.exportSymbol('proto.api.commons.ReplyComment', null, global);
@@ -3911,8 +3910,7 @@ proto.api.commons.EditAttribute.toObject = function(includeInstance, msg) {
     colDesc: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     fromVal: jspb.Message.getFieldWithDefault(msg, 2, ""),
     toVal: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    isEdited: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    editColumnType: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    isEdited: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -3964,10 +3962,6 @@ proto.api.commons.EditAttribute.deserializeBinaryFromReader = function(msg, read
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsEdited(value);
-      break;
-    case 5:
-      var value = /** @type {!proto.api.commons.EditColumnType} */ (reader.readEnum());
-      msg.setEditColumnType(value);
       break;
     default:
       reader.skipField();
@@ -4023,13 +4017,6 @@ proto.api.commons.EditAttribute.serializeBinaryToWriter = function(message, writ
   if (f) {
     writer.writeBool(
       4,
-      f
-    );
-  }
-  f = message.getEditColumnType();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      5,
       f
     );
   }
@@ -4107,36 +4094,5 @@ proto.api.commons.EditAttribute.prototype.setIsEdited = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
-
-/**
- * optional EditColumnType edit_column_type = 5;
- * @return {!proto.api.commons.EditColumnType}
- */
-proto.api.commons.EditAttribute.prototype.getEditColumnType = function() {
-  return /** @type {!proto.api.commons.EditColumnType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
-};
-
-
-/**
- * @param {!proto.api.commons.EditColumnType} value
- * @return {!proto.api.commons.EditAttribute} returns this
- */
-proto.api.commons.EditAttribute.prototype.setEditColumnType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 5, value);
-};
-
-
-/**
- * @enum {number}
- */
-proto.api.commons.EditColumnType = {
-  NONE_COLUMN: 0,
-  DESCRIPTION: 1,
-  SKILLS: 2,
-  STATUS: 3,
-  DUE_DATE: 4,
-  SLA: 5,
-  ASSIGNEE: 6
-};
 
 goog.object.extend(exports, proto.api.commons);

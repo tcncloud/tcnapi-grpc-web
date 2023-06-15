@@ -515,9 +515,6 @@ export class EditAttribute extends jspb.Message {
   getIsEdited(): boolean;
   setIsEdited(value: boolean): void;
 
-  getEditColumnType(): EditColumnTypeMap[keyof EditColumnTypeMap];
-  setEditColumnType(value: EditColumnTypeMap[keyof EditColumnTypeMap]): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EditAttribute.AsObject;
   static toObject(includeInstance: boolean, msg: EditAttribute): EditAttribute.AsObject;
@@ -534,19 +531,6 @@ export namespace EditAttribute {
     fromVal: string,
     toVal: string,
     isEdited: boolean,
-    editColumnType: EditColumnTypeMap[keyof EditColumnTypeMap],
   }
 }
-
-export interface EditColumnTypeMap {
-  NONE_COLUMN: 0;
-  DESCRIPTION: 1;
-  SKILLS: 2;
-  STATUS: 3;
-  DUE_DATE: 4;
-  SLA: 5;
-  ASSIGNEE: 6;
-}
-
-export const EditColumnType: EditColumnTypeMap;
 
