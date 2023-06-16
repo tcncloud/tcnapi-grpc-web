@@ -410,7 +410,8 @@ proto.api.commons.Ticket.toObject = function(includeInstance, msg) {
     proto.api.commons.Skills.toObject, includeInstance),
     status: jspb.Message.getFieldWithDefault(msg, 16, 0),
     ticketSlaList: jspb.Message.toObjectList(msg.getTicketSlaList(),
-    proto.api.commons.Sla.toObject, includeInstance)
+    proto.api.commons.Sla.toObject, includeInstance),
+    assignee: jspb.Message.getFieldWithDefault(msg, 18, "")
   };
 
   if (includeInstance) {
@@ -515,6 +516,10 @@ proto.api.commons.Ticket.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.api.commons.Sla;
       reader.readMessage(value,proto.api.commons.Sla.deserializeBinaryFromReader);
       msg.addTicketSla(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssignee(value);
       break;
     default:
       reader.skipField();
@@ -660,6 +665,13 @@ proto.api.commons.Ticket.serializeBinaryToWriter = function(message, writer) {
       17,
       f,
       proto.api.commons.Sla.serializeBinaryToWriter
+    );
+  }
+  f = message.getAssignee();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
+      f
     );
   }
 };
@@ -1048,6 +1060,24 @@ proto.api.commons.Ticket.prototype.addTicketSla = function(opt_value, opt_index)
  */
 proto.api.commons.Ticket.prototype.clearTicketSlaList = function() {
   return this.setTicketSlaList([]);
+};
+
+
+/**
+ * optional string assignee = 18;
+ * @return {string}
+ */
+proto.api.commons.Ticket.prototype.getAssignee = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.Ticket} returns this
+ */
+proto.api.commons.Ticket.prototype.setAssignee = function(value) {
+  return jspb.Message.setProto3StringField(this, 18, value);
 };
 
 

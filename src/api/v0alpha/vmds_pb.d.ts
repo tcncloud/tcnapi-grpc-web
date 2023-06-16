@@ -2,6 +2,7 @@
 // file: api/v0alpha/vmds.proto
 
 import * as jspb from "google-protobuf";
+import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as api_commons_acd_pb from "../../api/commons/acd_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 

@@ -2,6 +2,7 @@
 // file: api/v1alpha1/asm/service.proto
 
 import * as jspb from "google-protobuf";
+import * as annotations_authz_pb from "../../../annotations/authz_pb";
 import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
 import * as api_commons_asm_pb from "../../../api/commons/asm_pb";
 import * as api_commons_auth_user_pb from "../../../api/commons/auth/user_pb";

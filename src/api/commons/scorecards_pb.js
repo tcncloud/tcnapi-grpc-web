@@ -7545,7 +7545,8 @@ proto.api.commons.RiskLevel = {
   RISK_LEVEL_NONE: 0,
   RISK_LEVEL_LOW: 1,
   RISK_LEVEL_MEDIUM: 2,
-  RISK_LEVEL_HIGH: 3
+  RISK_LEVEL_HIGH: 3,
+  RISK_LEVEL_RISK_FREE: 4
 };
 
 goog.object.extend(exports, proto.api.commons);
