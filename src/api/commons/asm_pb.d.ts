@@ -276,11 +276,8 @@ export class QueueCallAdd extends jspb.Message {
   getHoldDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setHoldDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  clearSkillsList(): void;
-  getSkillsList(): Array<string>;
-  setSkillsList(value: Array<string>): void;
-  addSkills(value: string, index?: number): string;
-
+  getFormattedSkillsMap(): jspb.Map<string, string>;
+  clearFormattedSkillsMap(): void;
   getAgentSpecific(): boolean;
   setAgentSpecific(value: boolean): void;
 
@@ -292,6 +289,8 @@ export class QueueCallAdd extends jspb.Message {
   getCallerSid(): api_commons_acd_pb.CallerSid | undefined;
   setCallerSid(value?: api_commons_acd_pb.CallerSid): void;
 
+  getSkillsMap(): jspb.Map<string, boolean>;
+  clearSkillsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueueCallAdd.AsObject;
   static toObject(includeInstance: boolean, msg: QueueCallAdd): QueueCallAdd.AsObject;
@@ -308,10 +307,11 @@ export namespace QueueCallAdd {
     callerId: string,
     startDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     holdDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    skillsList: Array<string>,
+    formattedSkillsMap: Array<[string, string]>,
     agentSpecific: boolean,
     queuedNotificationType: api_commons_acd_pb.QueuedNotificationTypeMap[keyof api_commons_acd_pb.QueuedNotificationTypeMap],
     callerSid?: api_commons_acd_pb.CallerSid.AsObject,
+    skillsMap: Array<[string, boolean]>,
   }
 }
 
