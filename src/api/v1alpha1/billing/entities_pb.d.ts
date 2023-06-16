@@ -47,10 +47,10 @@ export namespace GetBillingPlanRes {
 }
 
 export class UpdateBillingPlanReq extends jspb.Message {
-  clearUpdatesList(): void;
-  getUpdatesList(): Array<UpdateBillingPlanReq.UpdateReq>;
-  setUpdatesList(value: Array<UpdateBillingPlanReq.UpdateReq>): void;
-  addUpdates(value?: UpdateBillingPlanReq.UpdateReq, index?: number): UpdateBillingPlanReq.UpdateReq;
+  clearBillingDetailsList(): void;
+  getBillingDetailsList(): Array<api_commons_billing_detail_pb.Detail>;
+  setBillingDetailsList(value: Array<api_commons_billing_detail_pb.Detail>): void;
+  addBillingDetails(value?: api_commons_billing_detail_pb.Detail, index?: number): api_commons_billing_detail_pb.Detail;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateBillingPlanReq.AsObject;
@@ -64,35 +64,7 @@ export class UpdateBillingPlanReq extends jspb.Message {
 
 export namespace UpdateBillingPlanReq {
   export type AsObject = {
-    updatesList: Array<UpdateBillingPlanReq.UpdateReq.AsObject>,
-  }
-
-  export class UpdateReq extends jspb.Message {
-    hasBillingDetail(): boolean;
-    clearBillingDetail(): void;
-    getBillingDetail(): api_commons_billing_detail_pb.Detail | undefined;
-    setBillingDetail(value?: api_commons_billing_detail_pb.Detail): void;
-
-    clearFieldsList(): void;
-    getFieldsList(): Array<string>;
-    setFieldsList(value: Array<string>): void;
-    addFields(value: string, index?: number): string;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): UpdateReq.AsObject;
-    static toObject(includeInstance: boolean, msg: UpdateReq): UpdateReq.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: UpdateReq, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): UpdateReq;
-    static deserializeBinaryFromReader(message: UpdateReq, reader: jspb.BinaryReader): UpdateReq;
-  }
-
-  export namespace UpdateReq {
-    export type AsObject = {
-      billingDetail?: api_commons_billing_detail_pb.Detail.AsObject,
-      fieldsList: Array<string>,
-    }
+    billingDetailsList: Array<api_commons_billing_detail_pb.Detail.AsObject>,
   }
 }
 
