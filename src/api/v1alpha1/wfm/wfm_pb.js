@@ -57291,7 +57291,7 @@ proto.api.v1alpha1.wfm.DeleteDraftScheduleRes.serializeBinaryToWriter = function
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.repeatedFields_ = [6];
+proto.api.v1alpha1.wfm.CreateShiftInstanceReq.repeatedFields_ = [5];
 
 
 
@@ -57327,9 +57327,8 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.toObject = function(includeInstanc
     draftScheduleSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     shiftTemplateSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    widthInMinutes: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    isLocked: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    wfmAgentSidsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+    isLocked: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    wfmAgentSidsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -57380,14 +57379,10 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.deserializeBinaryFromReader = func
       msg.setStartDatetime(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setWidthInMinutes(value);
-      break;
-    case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsLocked(value);
       break;
-    case 6:
+    case 5:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
       for (var i = 0; i < values.length; i++) {
         msg.addWfmAgentSids(values[i]);
@@ -57444,24 +57439,17 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.serializeBinaryToWriter = function
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getWidthInMinutes();
-  if (f !== 0) {
-    writer.writeInt32(
-      4,
-      f
-    );
-  }
   f = message.getIsLocked();
   if (f) {
     writer.writeBool(
-      5,
+      4,
       f
     );
   }
   f = message.getWfmAgentSidsList();
   if (f.length > 0) {
     writer.writePackedInt64(
-      6,
+      5,
       f
     );
   }
@@ -57542,29 +57530,11 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.hasStartDatetime = funct
 
 
 /**
- * optional int32 width_in_minutes = 4;
- * @return {number}
- */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.getWidthInMinutes = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceReq} returns this
- */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setWidthInMinutes = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
-};
-
-
-/**
- * optional bool is_locked = 5;
+ * optional bool is_locked = 4;
  * @return {boolean}
  */
 proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.getIsLocked = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
 
@@ -57573,16 +57543,16 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.getIsLocked = function()
  * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceReq} returns this
  */
 proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setIsLocked = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 5, value);
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
 /**
- * repeated int64 wfm_agent_sids = 6;
+ * repeated int64 wfm_agent_sids = 5;
  * @return {!Array<number>}
  */
 proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.getWfmAgentSidsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 6));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
@@ -57591,7 +57561,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.getWfmAgentSidsList = fu
  * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceReq} returns this
  */
 proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setWfmAgentSidsList = function(value) {
-  return jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 5, value || []);
 };
 
 
@@ -57601,7 +57571,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setWfmAgentSidsList = fu
  * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceReq} returns this
  */
 proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.addWfmAgentSids = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
 

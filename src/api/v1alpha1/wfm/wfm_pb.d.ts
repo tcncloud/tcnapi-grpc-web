@@ -7238,9 +7238,6 @@ export class CreateShiftInstanceReq extends jspb.Message {
   getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  getWidthInMinutes(): number;
-  setWidthInMinutes(value: number): void;
-
   getIsLocked(): boolean;
   setIsLocked(value: boolean): void;
 
@@ -7264,7 +7261,6 @@ export namespace CreateShiftInstanceReq {
     draftScheduleSid: number,
     shiftTemplateSid: number,
     startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    widthInMinutes: number,
     isLocked: boolean,
     wfmAgentSidsList: Array<number>,
   }
