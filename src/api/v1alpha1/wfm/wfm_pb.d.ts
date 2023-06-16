@@ -7173,9 +7173,9 @@ export class CreateShiftInstanceReq extends jspb.Message {
   setIsLocked(value: boolean): void;
 
   clearWfmAgentSidsList(): void;
-  getWfmAgentSidsList(): Array<google_protobuf_wrappers_pb.Int64Value>;
-  setWfmAgentSidsList(value: Array<google_protobuf_wrappers_pb.Int64Value>): void;
-  addWfmAgentSids(value?: google_protobuf_wrappers_pb.Int64Value, index?: number): google_protobuf_wrappers_pb.Int64Value;
+  getWfmAgentSidsList(): Array<number>;
+  setWfmAgentSidsList(value: Array<number>): void;
+  addWfmAgentSids(value: number, index?: number): number;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateShiftInstanceReq.AsObject;
@@ -7194,7 +7194,7 @@ export namespace CreateShiftInstanceReq {
     startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     widthInMinutes: number,
     isLocked: boolean,
-    wfmAgentSidsList: Array<google_protobuf_wrappers_pb.Int64Value.AsObject>,
+    wfmAgentSidsList: Array<number>,
   }
 }
 

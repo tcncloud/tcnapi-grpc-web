@@ -56773,8 +56773,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.toObject = function(includeInstanc
     startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     widthInMinutes: jspb.Message.getFieldWithDefault(msg, 4, 0),
     isLocked: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    wfmAgentSidsList: jspb.Message.toObjectList(msg.getWfmAgentSidsList(),
-    google_protobuf_wrappers_pb.Int64Value.toObject, includeInstance)
+    wfmAgentSidsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -56833,9 +56832,10 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.deserializeBinaryFromReader = func
       msg.setIsLocked(value);
       break;
     case 6:
-      var value = new google_protobuf_wrappers_pb.Int64Value;
-      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
-      msg.addWfmAgentSids(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addWfmAgentSids(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -56904,10 +56904,9 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.serializeBinaryToWriter = function
   }
   f = message.getWfmAgentSidsList();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(
+    writer.writePackedInt64(
       6,
-      f,
-      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -57023,31 +57022,30 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setIsLocked = function(v
 
 
 /**
- * repeated google.protobuf.Int64Value wfm_agent_sids = 6;
- * @return {!Array<!proto.google.protobuf.Int64Value>}
+ * repeated int64 wfm_agent_sids = 6;
+ * @return {!Array<number>}
  */
 proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.getWfmAgentSidsList = function() {
-  return /** @type{!Array<!proto.google.protobuf.Int64Value>} */ (
-    jspb.Message.getRepeatedWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 6));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
 
 /**
- * @param {!Array<!proto.google.protobuf.Int64Value>} value
+ * @param {!Array<number>} value
  * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceReq} returns this
-*/
+ */
 proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.setWfmAgentSidsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
- * @param {!proto.google.protobuf.Int64Value=} opt_value
+ * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.google.protobuf.Int64Value}
+ * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceReq} returns this
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.addWfmAgentSids = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.google.protobuf.Int64Value, opt_index);
+proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.addWfmAgentSids = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
