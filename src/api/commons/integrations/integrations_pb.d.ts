@@ -1347,6 +1347,21 @@ export class ExecuteFlow extends jspb.Message {
   getShift4CcPayment(): ExecuteShift4CcPayments | undefined;
   setShift4CcPayment(value?: ExecuteShift4CcPayments): void;
 
+  hasPoscorpAccesstoken(): boolean;
+  clearPoscorpAccesstoken(): void;
+  getPoscorpAccesstoken(): ExecutePoscorpAccesstoken | undefined;
+  setPoscorpAccesstoken(value?: ExecutePoscorpAccesstoken): void;
+
+  hasPoscorpLookupGuarantor(): boolean;
+  clearPoscorpLookupGuarantor(): void;
+  getPoscorpLookupGuarantor(): ExecutePoscorpLookupGuarantor | undefined;
+  setPoscorpLookupGuarantor(value?: ExecutePoscorpLookupGuarantor): void;
+
+  hasPoscorpUpdatePaymentStatus(): boolean;
+  clearPoscorpUpdatePaymentStatus(): void;
+  getPoscorpUpdatePaymentStatus(): ExecutePoscorpUpdatePaymentStatus | undefined;
+  setPoscorpUpdatePaymentStatus(value?: ExecutePoscorpUpdatePaymentStatus): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -1519,6 +1534,9 @@ export namespace ExecuteFlow {
     i2cTransactionHistory?: ExecuteI2cTransactionHistory.AsObject,
     opayoCcPayment?: ExecuteOpayoCcPayments.AsObject,
     shift4CcPayment?: ExecuteShift4CcPayments.AsObject,
+    poscorpAccesstoken?: ExecutePoscorpAccesstoken.AsObject,
+    poscorpLookupGuarantor?: ExecutePoscorpLookupGuarantor.AsObject,
+    poscorpUpdatePaymentStatus?: ExecutePoscorpUpdatePaymentStatus.AsObject,
   }
 
   export enum ValueCase {
@@ -1681,6 +1699,9 @@ export namespace ExecuteFlow {
     I2C_TRANSACTION_HISTORY = 3210,
     OPAYO_CC_PAYMENT = 3301,
     SHIFT4_CC_PAYMENT = 3401,
+    POSCORP_ACCESSTOKEN = 3501,
+    POSCORP_LOOKUP_GUARANTOR = 3502,
+    POSCORP_UPDATE_PAYMENT_STATUS = 3503,
   }
 }
 
@@ -4549,6 +4570,54 @@ export namespace ExecuteShift4CcPayments {
   }
 }
 
+export class ExecutePoscorpAccesstoken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePoscorpAccesstoken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePoscorpAccesstoken): ExecutePoscorpAccesstoken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePoscorpAccesstoken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePoscorpAccesstoken;
+  static deserializeBinaryFromReader(message: ExecutePoscorpAccesstoken, reader: jspb.BinaryReader): ExecutePoscorpAccesstoken;
+}
+
+export namespace ExecutePoscorpAccesstoken {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePoscorpLookupGuarantor extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePoscorpLookupGuarantor.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePoscorpLookupGuarantor): ExecutePoscorpLookupGuarantor.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePoscorpLookupGuarantor, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePoscorpLookupGuarantor;
+  static deserializeBinaryFromReader(message: ExecutePoscorpLookupGuarantor, reader: jspb.BinaryReader): ExecutePoscorpLookupGuarantor;
+}
+
+export namespace ExecutePoscorpLookupGuarantor {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePoscorpUpdatePaymentStatus extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePoscorpUpdatePaymentStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePoscorpUpdatePaymentStatus): ExecutePoscorpUpdatePaymentStatus.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePoscorpUpdatePaymentStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePoscorpUpdatePaymentStatus;
+  static deserializeBinaryFromReader(message: ExecutePoscorpUpdatePaymentStatus, reader: jspb.BinaryReader): ExecutePoscorpUpdatePaymentStatus;
+}
+
+export namespace ExecutePoscorpUpdatePaymentStatus {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -4585,6 +4654,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_I2C: 3200;
   INTEGRATION_TYPE_OPAYO: 3300;
   INTEGRATION_TYPE_SHIFT4: 3400;
+  INTEGRATION_TYPE_POSCORP: 3500;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -4749,6 +4819,9 @@ export interface RequestMethodMap {
   REQUEST_METHOD_I2C_TRANSACTION_HISTORY: 3210;
   REQUEST_METHOD_OPAYO_CCPAYMENTS: 3301;
   REQUEST_METHOD_SHIFT4_CCPAYMENTS: 3401;
+  REQUEST_METHOD_POSCORP_ACCESSTOKEN: 3501;
+  REQUEST_METHOD_POSCORP_LOOKUP_GUARANTOR: 3502;
+  REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS: 3503;
 }
 
 export const RequestMethod: RequestMethodMap;
