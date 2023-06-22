@@ -126,8 +126,8 @@ export class Skills extends jspb.Message {
   getSkillId(): string;
   setSkillId(value: string): void;
 
-  getMandatoryPreferred(): number;
-  setMandatoryPreferred(value: number): void;
+  getIsPreferred(): boolean;
+  setIsPreferred(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Skills.AsObject;
@@ -142,7 +142,7 @@ export class Skills extends jspb.Message {
 export namespace Skills {
   export type AsObject = {
     skillId: string,
-    mandatoryPreferred: number,
+    isPreferred: boolean,
   }
 }
 
