@@ -36109,7 +36109,7 @@ proto.api.v1alpha1.wfm.ListShiftTemplatesBySidsReq.prototype.toObject = function
 proto.api.v1alpha1.wfm.ListShiftTemplatesBySidsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     shiftTemplateSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    includePlacementRules: jspb.Message.getBooleanFieldWithDefault(msg, 32, false)
+    includePlacementRules: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -36152,7 +36152,7 @@ proto.api.v1alpha1.wfm.ListShiftTemplatesBySidsReq.deserializeBinaryFromReader =
         msg.addShiftTemplateSids(values[i]);
       }
       break;
-    case 32:
+    case 2:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIncludePlacementRules(value);
       break;
@@ -36195,7 +36195,7 @@ proto.api.v1alpha1.wfm.ListShiftTemplatesBySidsReq.serializeBinaryToWriter = fun
   f = message.getIncludePlacementRules();
   if (f) {
     writer.writeBool(
-      32,
+      2,
       f
     );
   }
@@ -36240,11 +36240,11 @@ proto.api.v1alpha1.wfm.ListShiftTemplatesBySidsReq.prototype.clearShiftTemplateS
 
 
 /**
- * optional bool include_placement_rules = 32;
+ * optional bool include_placement_rules = 2;
  * @return {boolean}
  */
 proto.api.v1alpha1.wfm.ListShiftTemplatesBySidsReq.prototype.getIncludePlacementRules = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 32, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
 
@@ -36253,7 +36253,7 @@ proto.api.v1alpha1.wfm.ListShiftTemplatesBySidsReq.prototype.getIncludePlacement
  * @return {!proto.api.v1alpha1.wfm.ListShiftTemplatesBySidsReq} returns this
  */
 proto.api.v1alpha1.wfm.ListShiftTemplatesBySidsReq.prototype.setIncludePlacementRules = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 32, value);
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
