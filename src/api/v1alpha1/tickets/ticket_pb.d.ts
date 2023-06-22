@@ -73,6 +73,9 @@ export class CreateTicketReq extends jspb.Message {
   getAssignSelf(): boolean;
   setAssignSelf(value: boolean): void;
 
+  getAssignOther(): string;
+  setAssignOther(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTicketReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateTicketReq): CreateTicketReq.AsObject;
@@ -94,6 +97,7 @@ export namespace CreateTicketReq {
     status: number,
     ticketSlaList: Array<api_commons_tickets_pb.Sla.AsObject>,
     assignSelf: boolean,
+    assignOther: string,
   }
 }
 
@@ -120,8 +124,8 @@ export namespace CreateTicketRes {
 }
 
 export class EditTicketReq extends jspb.Message {
-  getTicketSid(): number;
-  setTicketSid(value: number): void;
+  getTicketSid(): string;
+  setTicketSid(value: string): void;
 
   hasEditValue(): boolean;
   clearEditValue(): void;
@@ -140,7 +144,7 @@ export class EditTicketReq extends jspb.Message {
 
 export namespace EditTicketReq {
   export type AsObject = {
-    ticketSid: number,
+    ticketSid: string,
     editValue?: api_commons_tickets_pb.EditAttribute.AsObject,
   }
 }
