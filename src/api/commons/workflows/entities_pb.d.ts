@@ -1,5 +1,5 @@
 // package: api.commons.workflows
-// file: api/commons/workflows/flows.proto
+// file: api/commons/workflows/entities.proto
 
 import * as jspb from "google-protobuf";
 import * as api_commons_workflows_nodes_pb from "../../../api/commons/workflows/nodes_pb";

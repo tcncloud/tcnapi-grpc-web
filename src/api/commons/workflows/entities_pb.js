@@ -1,4 +1,4 @@
-// source: api/commons/workflows/flows.proto
+// source: api/commons/workflows/entities.proto
 /**
  * @fileoverview
  * @enhanceable
