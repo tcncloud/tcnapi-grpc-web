@@ -1444,7 +1444,9 @@ proto.api.v1alpha1.room303.UserDetails.prototype.toObject = function(opt_include
 proto.api.v1alpha1.room303.UserDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
     userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userName: jspb.Message.getFieldWithDefault(msg, 2, "")
+    userName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    lastName: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1489,6 +1491,14 @@ proto.api.v1alpha1.room303.UserDetails.deserializeBinaryFromReader = function(ms
       var value = /** @type {string} */ (reader.readString());
       msg.setUserName(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFirstName(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLastName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1532,6 +1542,20 @@ proto.api.v1alpha1.room303.UserDetails.serializeBinaryToWriter = function(messag
       f
     );
   }
+  f = message.getFirstName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getLastName();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
 };
 
 
@@ -1568,6 +1592,42 @@ proto.api.v1alpha1.room303.UserDetails.prototype.getUserName = function() {
  */
 proto.api.v1alpha1.room303.UserDetails.prototype.setUserName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string first_name = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.room303.UserDetails.prototype.getFirstName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.room303.UserDetails} returns this
+ */
+proto.api.v1alpha1.room303.UserDetails.prototype.setFirstName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string last_name = 4;
+ * @return {string}
+ */
+proto.api.v1alpha1.room303.UserDetails.prototype.getLastName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.room303.UserDetails} returns this
+ */
+proto.api.v1alpha1.room303.UserDetails.prototype.setLastName = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

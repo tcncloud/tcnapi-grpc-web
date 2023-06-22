@@ -186,6 +186,12 @@ export class UserDetails extends jspb.Message {
   getUserName(): string;
   setUserName(value: string): void;
 
+  getFirstName(): string;
+  setFirstName(value: string): void;
+
+  getLastName(): string;
+  setLastName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserDetails.AsObject;
   static toObject(includeInstance: boolean, msg: UserDetails): UserDetails.AsObject;
@@ -200,6 +206,8 @@ export namespace UserDetails {
   export type AsObject = {
     userId: string,
     userName: string,
+    firstName: string,
+    lastName: string,
   }
 }
 
