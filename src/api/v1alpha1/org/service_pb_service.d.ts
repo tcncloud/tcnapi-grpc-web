@@ -3,6 +3,7 @@
 
 import * as api_v1alpha1_org_service_pb from "../../../api/v1alpha1/org/service_pb";
 import * as api_v1alpha1_org_agent_profile_group_pb from "../../../api/v1alpha1/org/agent_profile_group_pb";
+import * as api_v1alpha1_org_auth_connections_pb from "../../../api/v1alpha1/org/auth_connections_pb";
 import * as api_v1alpha1_org_huntgroup_pb from "../../../api/v1alpha1/org/huntgroup_pb";
 import * as api_v1alpha1_org_labels_pb from "../../../api/v1alpha1/org/labels_pb";
 import * as api_v1alpha1_org_notifications_pb from "../../../api/v1alpha1/org/notifications_pb";
@@ -1355,6 +1356,51 @@ type OrgRevokeUsersP3PermissionGroup = {
   readonly responseType: typeof api_v1alpha1_org_p3_permissions_pb.RevokeUsersP3PermissionGroupResponse;
 };
 
+type OrgCreateAuthConnection = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_connections_pb.CreateAuthConnectionRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_connections_pb.CreateAuthConnectionResponse;
+};
+
+type OrgGetAuthConnectionSettings = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_connections_pb.GetAuthConnectionSettingsRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_connections_pb.GetAuthConnectionSettingsResponse;
+};
+
+type OrgDeleteAuthConnection = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_connections_pb.DeleteAuthConnectionRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_connections_pb.DeleteAuthConnectionResponse;
+};
+
+type OrgUpdateAuthConnectionSecret = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_connections_pb.UpdateAuthConnectionSecretRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_connections_pb.UpdateAuthConnectionSecretResponse;
+};
+
+type OrgUpdateAuthConnectionGroups = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_connections_pb.UpdateAuthConnectionGroupsRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_connections_pb.UpdateAuthConnectionGroupsResponse;
+};
+
 export class Org {
   static readonly serviceName: string;
   static readonly CreateOrganization: OrgCreateOrganization;
@@ -1506,6 +1552,11 @@ export class Org {
   static readonly DeleteP3PermissionGroup: OrgDeleteP3PermissionGroup;
   static readonly AssignUsersP3PermissionGroup: OrgAssignUsersP3PermissionGroup;
   static readonly RevokeUsersP3PermissionGroup: OrgRevokeUsersP3PermissionGroup;
+  static readonly CreateAuthConnection: OrgCreateAuthConnection;
+  static readonly GetAuthConnectionSettings: OrgGetAuthConnectionSettings;
+  static readonly DeleteAuthConnection: OrgDeleteAuthConnection;
+  static readonly UpdateAuthConnectionSecret: OrgUpdateAuthConnectionSecret;
+  static readonly UpdateAuthConnectionGroups: OrgUpdateAuthConnectionGroups;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -2816,6 +2867,51 @@ export class OrgClient {
   revokeUsersP3PermissionGroup(
     requestMessage: api_v1alpha1_org_p3_permissions_pb.RevokeUsersP3PermissionGroupRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_p3_permissions_pb.RevokeUsersP3PermissionGroupResponse|null) => void
+  ): UnaryResponse;
+  createAuthConnection(
+    requestMessage: api_v1alpha1_org_auth_connections_pb.CreateAuthConnectionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_connections_pb.CreateAuthConnectionResponse|null) => void
+  ): UnaryResponse;
+  createAuthConnection(
+    requestMessage: api_v1alpha1_org_auth_connections_pb.CreateAuthConnectionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_connections_pb.CreateAuthConnectionResponse|null) => void
+  ): UnaryResponse;
+  getAuthConnectionSettings(
+    requestMessage: api_v1alpha1_org_auth_connections_pb.GetAuthConnectionSettingsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_connections_pb.GetAuthConnectionSettingsResponse|null) => void
+  ): UnaryResponse;
+  getAuthConnectionSettings(
+    requestMessage: api_v1alpha1_org_auth_connections_pb.GetAuthConnectionSettingsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_connections_pb.GetAuthConnectionSettingsResponse|null) => void
+  ): UnaryResponse;
+  deleteAuthConnection(
+    requestMessage: api_v1alpha1_org_auth_connections_pb.DeleteAuthConnectionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_connections_pb.DeleteAuthConnectionResponse|null) => void
+  ): UnaryResponse;
+  deleteAuthConnection(
+    requestMessage: api_v1alpha1_org_auth_connections_pb.DeleteAuthConnectionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_connections_pb.DeleteAuthConnectionResponse|null) => void
+  ): UnaryResponse;
+  updateAuthConnectionSecret(
+    requestMessage: api_v1alpha1_org_auth_connections_pb.UpdateAuthConnectionSecretRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_connections_pb.UpdateAuthConnectionSecretResponse|null) => void
+  ): UnaryResponse;
+  updateAuthConnectionSecret(
+    requestMessage: api_v1alpha1_org_auth_connections_pb.UpdateAuthConnectionSecretRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_connections_pb.UpdateAuthConnectionSecretResponse|null) => void
+  ): UnaryResponse;
+  updateAuthConnectionGroups(
+    requestMessage: api_v1alpha1_org_auth_connections_pb.UpdateAuthConnectionGroupsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_connections_pb.UpdateAuthConnectionGroupsResponse|null) => void
+  ): UnaryResponse;
+  updateAuthConnectionGroups(
+    requestMessage: api_v1alpha1_org_auth_connections_pb.UpdateAuthConnectionGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_connections_pb.UpdateAuthConnectionGroupsResponse|null) => void
   ): UnaryResponse;
 }
 

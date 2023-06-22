@@ -25,6 +25,8 @@ var annotations_authz_pb = require('../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
 var api_v1alpha1_org_agent_profile_group_pb = require('../../../api/v1alpha1/org/agent_profile_group_pb.js');
 goog.object.extend(proto, api_v1alpha1_org_agent_profile_group_pb);
+var api_v1alpha1_org_auth_connections_pb = require('../../../api/v1alpha1/org/auth_connections_pb.js');
+goog.object.extend(proto, api_v1alpha1_org_auth_connections_pb);
 var api_v1alpha1_org_huntgroup_pb = require('../../../api/v1alpha1/org/huntgroup_pb.js');
 goog.object.extend(proto, api_v1alpha1_org_huntgroup_pb);
 var api_v1alpha1_org_labels_pb = require('../../../api/v1alpha1/org/labels_pb.js');
