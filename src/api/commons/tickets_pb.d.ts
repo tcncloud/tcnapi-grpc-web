@@ -126,9 +126,6 @@ export class Skills extends jspb.Message {
   getSkillId(): string;
   setSkillId(value: string): void;
 
-  getIsPreferred(): boolean;
-  setIsPreferred(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Skills.AsObject;
   static toObject(includeInstance: boolean, msg: Skills): Skills.AsObject;
@@ -142,7 +139,6 @@ export class Skills extends jspb.Message {
 export namespace Skills {
   export type AsObject = {
     skillId: string,
-    isPreferred: boolean,
   }
 }
 

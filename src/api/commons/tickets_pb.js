@@ -1273,8 +1273,7 @@ proto.api.commons.Skills.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.Skills.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    isPreferred: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+    skillId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1315,10 +1314,6 @@ proto.api.commons.Skills.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setSkillId(value);
       break;
-    case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsPreferred(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1355,13 +1350,6 @@ proto.api.commons.Skills.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getIsPreferred();
-  if (f) {
-    writer.writeBool(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -1380,24 +1368,6 @@ proto.api.commons.Skills.prototype.getSkillId = function() {
  */
 proto.api.commons.Skills.prototype.setSkillId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional bool is_preferred = 2;
- * @return {boolean}
- */
-proto.api.commons.Skills.prototype.getIsPreferred = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.commons.Skills} returns this
- */
-proto.api.commons.Skills.prototype.setIsPreferred = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
