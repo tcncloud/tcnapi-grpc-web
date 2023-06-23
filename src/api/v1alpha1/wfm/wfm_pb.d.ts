@@ -4058,6 +4058,50 @@ export namespace DeleteWFMAgentMembershipsRes {
   }
 }
 
+export class DeleteWFMAgentsMembershipsReq extends jspb.Message {
+  clearWfmAgentSidsList(): void;
+  getWfmAgentSidsList(): Array<number>;
+  setWfmAgentSidsList(value: Array<number>): void;
+  addWfmAgentSids(value: number, index?: number): number;
+
+  clearAgentGroupSidsList(): void;
+  getAgentGroupSidsList(): Array<number>;
+  setAgentGroupSidsList(value: Array<number>): void;
+  addAgentGroupSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteWFMAgentsMembershipsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteWFMAgentsMembershipsReq): DeleteWFMAgentsMembershipsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteWFMAgentsMembershipsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteWFMAgentsMembershipsReq;
+  static deserializeBinaryFromReader(message: DeleteWFMAgentsMembershipsReq, reader: jspb.BinaryReader): DeleteWFMAgentsMembershipsReq;
+}
+
+export namespace DeleteWFMAgentsMembershipsReq {
+  export type AsObject = {
+    wfmAgentSidsList: Array<number>,
+    agentGroupSidsList: Array<number>,
+  }
+}
+
+export class DeleteWFMAgentsMembershipsRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteWFMAgentsMembershipsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteWFMAgentsMembershipsRes): DeleteWFMAgentsMembershipsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteWFMAgentsMembershipsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteWFMAgentsMembershipsRes;
+  static deserializeBinaryFromReader(message: DeleteWFMAgentsMembershipsRes, reader: jspb.BinaryReader): DeleteWFMAgentsMembershipsRes;
+}
+
+export namespace DeleteWFMAgentsMembershipsRes {
+  export type AsObject = {
+  }
+}
+
 export class DOWPlacement extends jspb.Message {
   getStartMinute(): number;
   setStartMinute(value: number): void;
@@ -4266,6 +4310,9 @@ export class ListShiftTemplatesBySidsReq extends jspb.Message {
   setShiftTemplateSidsList(value: Array<number>): void;
   addShiftTemplateSids(value: number, index?: number): number;
 
+  getIncludePlacementRules(): boolean;
+  setIncludePlacementRules(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListShiftTemplatesBySidsReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListShiftTemplatesBySidsReq): ListShiftTemplatesBySidsReq.AsObject;
@@ -4279,6 +4326,7 @@ export class ListShiftTemplatesBySidsReq extends jspb.Message {
 export namespace ListShiftTemplatesBySidsReq {
   export type AsObject = {
     shiftTemplateSidsList: Array<number>,
+    includePlacementRules: boolean,
   }
 }
 
