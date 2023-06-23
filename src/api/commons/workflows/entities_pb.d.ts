@@ -17,9 +17,6 @@ export class FlowDefinition extends jspb.Message {
   getEntryNodeId(): string;
   setEntryNodeId(value: string): void;
 
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   clearNodesList(): void;
   getNodesList(): Array<api_commons_workflows_nodes_pb.NodeDefinition>;
   setNodesList(value: Array<api_commons_workflows_nodes_pb.NodeDefinition>): void;
@@ -44,7 +41,6 @@ export namespace FlowDefinition {
     name: string,
     description: string,
     entryNodeId: string,
-    orgId: string,
     nodesList: Array<api_commons_workflows_nodes_pb.NodeDefinition.AsObject>,
     errorNodeId: string,
   }

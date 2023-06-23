@@ -194,13 +194,13 @@ Room303API.ArchiveRoom = {
   responseType: api_commons_room303_pb.Room
 };
 
-Room303API.ListUsersNames = {
-  methodName: "ListUsersNames",
+Room303API.ListUsersByOrgId = {
+  methodName: "ListUsersByOrgId",
   service: Room303API,
   requestStream: false,
   responseStream: true,
-  requestType: api_v1alpha1_room303_room_pb.ListUsersNamesRequest,
-  responseType: api_v1alpha1_room303_room_pb.ListUsersNamesResponse
+  requestType: api_v1alpha1_room303_room_pb.ListUsersByOrgIdRequest,
+  responseType: api_v1alpha1_room303_room_pb.ListUsersByOrgIdResponse
 };
 
 exports.Room303API = Room303API;
@@ -838,13 +838,13 @@ Room303APIClient.prototype.archiveRoom = function archiveRoom(requestMessage, me
   };
 };
 
-Room303APIClient.prototype.listUsersNames = function listUsersNames(requestMessage, metadata) {
+Room303APIClient.prototype.listUsersByOrgId = function listUsersByOrgId(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(Room303API.ListUsersNames, {
+  var client = grpc.invoke(Room303API.ListUsersByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
