@@ -32,13 +32,13 @@ type WorkflowsDefinitionsServiceGetFlowDefinition = {
   readonly responseType: typeof api_v1alpha1_workflows_entities_pb.GetFlowDefinitionResponse;
 };
 
-type WorkflowsDefinitionsServiceDeleteFlowDefinition = {
+type WorkflowsDefinitionsServiceDeleteFlowDefinitionById = {
   readonly methodName: string;
   readonly service: typeof WorkflowsDefinitionsService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionRequest;
-  readonly responseType: typeof api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionResponse;
+  readonly requestType: typeof api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionByIdRequest;
+  readonly responseType: typeof api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionByIdResponse;
 };
 
 export class WorkflowsDefinitionsService {
@@ -46,7 +46,7 @@ export class WorkflowsDefinitionsService {
   static readonly ListFlowDefinitions: WorkflowsDefinitionsServiceListFlowDefinitions;
   static readonly SaveFlowDefinition: WorkflowsDefinitionsServiceSaveFlowDefinition;
   static readonly GetFlowDefinition: WorkflowsDefinitionsServiceGetFlowDefinition;
-  static readonly DeleteFlowDefinition: WorkflowsDefinitionsServiceDeleteFlowDefinition;
+  static readonly DeleteFlowDefinitionById: WorkflowsDefinitionsServiceDeleteFlowDefinitionById;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -108,14 +108,14 @@ export class WorkflowsDefinitionsServiceClient {
     requestMessage: api_v1alpha1_workflows_entities_pb.GetFlowDefinitionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_entities_pb.GetFlowDefinitionResponse|null) => void
   ): UnaryResponse;
-  deleteFlowDefinition(
-    requestMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionRequest,
+  deleteFlowDefinitionById(
+    requestMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionByIdRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionByIdResponse|null) => void
   ): UnaryResponse;
-  deleteFlowDefinition(
-    requestMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionResponse|null) => void
+  deleteFlowDefinitionById(
+    requestMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionByIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionByIdResponse|null) => void
   ): UnaryResponse;
 }
 

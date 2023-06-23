@@ -38,13 +38,13 @@ WorkflowsDefinitionsService.GetFlowDefinition = {
   responseType: api_v1alpha1_workflows_entities_pb.GetFlowDefinitionResponse
 };
 
-WorkflowsDefinitionsService.DeleteFlowDefinition = {
-  methodName: "DeleteFlowDefinition",
+WorkflowsDefinitionsService.DeleteFlowDefinitionById = {
+  methodName: "DeleteFlowDefinitionById",
   service: WorkflowsDefinitionsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionRequest,
-  responseType: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionResponse
+  requestType: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionByIdRequest,
+  responseType: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionByIdResponse
 };
 
 exports.WorkflowsDefinitionsService = WorkflowsDefinitionsService;
@@ -147,11 +147,11 @@ WorkflowsDefinitionsServiceClient.prototype.getFlowDefinition = function getFlow
   };
 };
 
-WorkflowsDefinitionsServiceClient.prototype.deleteFlowDefinition = function deleteFlowDefinition(requestMessage, metadata, callback) {
+WorkflowsDefinitionsServiceClient.prototype.deleteFlowDefinitionById = function deleteFlowDefinitionById(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WorkflowsDefinitionsService.DeleteFlowDefinition, {
+  var client = grpc.unary(WorkflowsDefinitionsService.DeleteFlowDefinitionById, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
