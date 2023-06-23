@@ -49,6 +49,30 @@ export class WorkflowsDefinitionsService {
   static readonly DeleteFlowDefinitionById: WorkflowsDefinitionsServiceDeleteFlowDefinitionById;
 }
 
+type WorkflowsStateServiceGetFlowState = {
+  readonly methodName: string;
+  readonly service: typeof WorkflowsStateService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_workflows_entities_pb.GetFlowStateRequest;
+  readonly responseType: typeof api_v1alpha1_workflows_entities_pb.GetFlowStateResponse;
+};
+
+type WorkflowsStateServiceSaveFlowState = {
+  readonly methodName: string;
+  readonly service: typeof WorkflowsStateService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_workflows_entities_pb.SaveFlowStateRequest;
+  readonly responseType: typeof api_v1alpha1_workflows_entities_pb.SaveFlowStateResponse;
+};
+
+export class WorkflowsStateService {
+  static readonly serviceName: string;
+  static readonly GetFlowState: WorkflowsStateServiceGetFlowState;
+  static readonly SaveFlowState: WorkflowsStateServiceSaveFlowState;
+}
+
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
 export type Status = { details: string, code: number; metadata: grpc.Metadata }
 
@@ -116,6 +140,30 @@ export class WorkflowsDefinitionsServiceClient {
   deleteFlowDefinitionById(
     requestMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionByIdRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionByIdResponse|null) => void
+  ): UnaryResponse;
+}
+
+export class WorkflowsStateServiceClient {
+  readonly serviceHost: string;
+
+  constructor(serviceHost: string, options?: grpc.RpcOptions);
+  getFlowState(
+    requestMessage: api_v1alpha1_workflows_entities_pb.GetFlowStateRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_entities_pb.GetFlowStateResponse|null) => void
+  ): UnaryResponse;
+  getFlowState(
+    requestMessage: api_v1alpha1_workflows_entities_pb.GetFlowStateRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_entities_pb.GetFlowStateResponse|null) => void
+  ): UnaryResponse;
+  saveFlowState(
+    requestMessage: api_v1alpha1_workflows_entities_pb.SaveFlowStateRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_entities_pb.SaveFlowStateResponse|null) => void
+  ): UnaryResponse;
+  saveFlowState(
+    requestMessage: api_v1alpha1_workflows_entities_pb.SaveFlowStateRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_entities_pb.SaveFlowStateResponse|null) => void
   ): UnaryResponse;
 }
 
