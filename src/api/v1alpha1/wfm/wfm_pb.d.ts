@@ -4310,6 +4310,9 @@ export class ListShiftTemplatesBySidsReq extends jspb.Message {
   setShiftTemplateSidsList(value: Array<number>): void;
   addShiftTemplateSids(value: number, index?: number): number;
 
+  getIncludePlacementRules(): boolean;
+  setIncludePlacementRules(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListShiftTemplatesBySidsReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListShiftTemplatesBySidsReq): ListShiftTemplatesBySidsReq.AsObject;
@@ -4323,6 +4326,7 @@ export class ListShiftTemplatesBySidsReq extends jspb.Message {
 export namespace ListShiftTemplatesBySidsReq {
   export type AsObject = {
     shiftTemplateSidsList: Array<number>,
+    includePlacementRules: boolean,
   }
 }
 
