@@ -1,8 +1,8 @@
-// package: api.v1alpha1.org
-// file: api/v1alpha1/org/auth_connections.proto
+// package: api.v1alpha1.org.authconnection
+// file: api/v1alpha1/org/authconnection/entities.proto
 
 import * as jspb from "google-protobuf";
-import * as api_commons_org_auth_connections_pb from "../../../api/commons/org/auth_connections_pb";
+import * as api_commons_org_auth_connections_pb from "../../../../api/commons/org/auth_connections_pb";
 
 export class CreateAuthConnectionRequest extends jspb.Message {
   hasSettings(): boolean;

@@ -4,7 +4,6 @@
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../../annotations/authz_pb";
 import * as api_v1alpha1_org_agent_profile_group_pb from "../../../api/v1alpha1/org/agent_profile_group_pb";
-import * as api_v1alpha1_org_auth_connections_pb from "../../../api/v1alpha1/org/auth_connections_pb";
 import * as api_v1alpha1_org_huntgroup_pb from "../../../api/v1alpha1/org/huntgroup_pb";
 import * as api_v1alpha1_org_labels_pb from "../../../api/v1alpha1/org/labels_pb";
 import * as api_v1alpha1_org_notifications_pb from "../../../api/v1alpha1/org/notifications_pb";
