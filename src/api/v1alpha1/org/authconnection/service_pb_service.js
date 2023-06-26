@@ -5,69 +5,69 @@ var api_v1alpha1_org_authconnection_service_pb = require("../../../../api/v1alph
 var api_v1alpha1_org_authconnection_entities_pb = require("../../../../api/v1alpha1/org/authconnection/entities_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var AuthConnection = (function () {
-  function AuthConnection() {}
-  AuthConnection.serviceName = "api.v1alpha1.org.authconnection.AuthConnection";
-  return AuthConnection;
+var AuthConnectionService = (function () {
+  function AuthConnectionService() {}
+  AuthConnectionService.serviceName = "api.v1alpha1.org.authconnection.AuthConnectionService";
+  return AuthConnectionService;
 }());
 
-AuthConnection.CreateAuthConnection = {
+AuthConnectionService.CreateAuthConnection = {
   methodName: "CreateAuthConnection",
-  service: AuthConnection,
+  service: AuthConnectionService,
   requestStream: false,
   responseStream: false,
   requestType: api_v1alpha1_org_authconnection_entities_pb.CreateAuthConnectionRequest,
   responseType: api_v1alpha1_org_authconnection_entities_pb.CreateAuthConnectionResponse
 };
 
-AuthConnection.GetAuthConnectionSettings = {
+AuthConnectionService.GetAuthConnectionSettings = {
   methodName: "GetAuthConnectionSettings",
-  service: AuthConnection,
+  service: AuthConnectionService,
   requestStream: false,
   responseStream: false,
   requestType: api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionSettingsRequest,
   responseType: api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionSettingsResponse
 };
 
-AuthConnection.DeleteAuthConnection = {
+AuthConnectionService.DeleteAuthConnection = {
   methodName: "DeleteAuthConnection",
-  service: AuthConnection,
+  service: AuthConnectionService,
   requestStream: false,
   responseStream: false,
   requestType: api_v1alpha1_org_authconnection_entities_pb.DeleteAuthConnectionRequest,
   responseType: api_v1alpha1_org_authconnection_entities_pb.DeleteAuthConnectionResponse
 };
 
-AuthConnection.UpdateAuthConnectionSecret = {
+AuthConnectionService.UpdateAuthConnectionSecret = {
   methodName: "UpdateAuthConnectionSecret",
-  service: AuthConnection,
+  service: AuthConnectionService,
   requestStream: false,
   responseStream: false,
   requestType: api_v1alpha1_org_authconnection_entities_pb.UpdateAuthConnectionSecretRequest,
   responseType: api_v1alpha1_org_authconnection_entities_pb.UpdateAuthConnectionSecretResponse
 };
 
-AuthConnection.UpdateAuthConnectionGroups = {
+AuthConnectionService.UpdateAuthConnectionGroups = {
   methodName: "UpdateAuthConnectionGroups",
-  service: AuthConnection,
+  service: AuthConnectionService,
   requestStream: false,
   responseStream: false,
   requestType: api_v1alpha1_org_authconnection_entities_pb.UpdateAuthConnectionGroupsRequest,
   responseType: api_v1alpha1_org_authconnection_entities_pb.UpdateAuthConnectionGroupsResponse
 };
 
-exports.AuthConnection = AuthConnection;
+exports.AuthConnectionService = AuthConnectionService;
 
-function AuthConnectionClient(serviceHost, options) {
+function AuthConnectionServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-AuthConnectionClient.prototype.createAuthConnection = function createAuthConnection(requestMessage, metadata, callback) {
+AuthConnectionServiceClient.prototype.createAuthConnection = function createAuthConnection(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AuthConnection.CreateAuthConnection, {
+  var client = grpc.unary(AuthConnectionService.CreateAuthConnection, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -94,11 +94,11 @@ AuthConnectionClient.prototype.createAuthConnection = function createAuthConnect
   };
 };
 
-AuthConnectionClient.prototype.getAuthConnectionSettings = function getAuthConnectionSettings(requestMessage, metadata, callback) {
+AuthConnectionServiceClient.prototype.getAuthConnectionSettings = function getAuthConnectionSettings(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AuthConnection.GetAuthConnectionSettings, {
+  var client = grpc.unary(AuthConnectionService.GetAuthConnectionSettings, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -125,11 +125,11 @@ AuthConnectionClient.prototype.getAuthConnectionSettings = function getAuthConne
   };
 };
 
-AuthConnectionClient.prototype.deleteAuthConnection = function deleteAuthConnection(requestMessage, metadata, callback) {
+AuthConnectionServiceClient.prototype.deleteAuthConnection = function deleteAuthConnection(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AuthConnection.DeleteAuthConnection, {
+  var client = grpc.unary(AuthConnectionService.DeleteAuthConnection, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -156,11 +156,11 @@ AuthConnectionClient.prototype.deleteAuthConnection = function deleteAuthConnect
   };
 };
 
-AuthConnectionClient.prototype.updateAuthConnectionSecret = function updateAuthConnectionSecret(requestMessage, metadata, callback) {
+AuthConnectionServiceClient.prototype.updateAuthConnectionSecret = function updateAuthConnectionSecret(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AuthConnection.UpdateAuthConnectionSecret, {
+  var client = grpc.unary(AuthConnectionService.UpdateAuthConnectionSecret, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -187,11 +187,11 @@ AuthConnectionClient.prototype.updateAuthConnectionSecret = function updateAuthC
   };
 };
 
-AuthConnectionClient.prototype.updateAuthConnectionGroups = function updateAuthConnectionGroups(requestMessage, metadata, callback) {
+AuthConnectionServiceClient.prototype.updateAuthConnectionGroups = function updateAuthConnectionGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AuthConnection.UpdateAuthConnectionGroups, {
+  var client = grpc.unary(AuthConnectionService.UpdateAuthConnectionGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -218,5 +218,5 @@ AuthConnectionClient.prototype.updateAuthConnectionGroups = function updateAuthC
   };
 };
 
-exports.AuthConnectionClient = AuthConnectionClient;
+exports.AuthConnectionServiceClient = AuthConnectionServiceClient;
 

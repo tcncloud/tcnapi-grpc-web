@@ -5,58 +5,58 @@ import * as api_v1alpha1_org_authconnection_service_pb from "../../../../api/v1a
 import * as api_v1alpha1_org_authconnection_entities_pb from "../../../../api/v1alpha1/org/authconnection/entities_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type AuthConnectionCreateAuthConnection = {
+type AuthConnectionServiceCreateAuthConnection = {
   readonly methodName: string;
-  readonly service: typeof AuthConnection;
+  readonly service: typeof AuthConnectionService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_org_authconnection_entities_pb.CreateAuthConnectionRequest;
   readonly responseType: typeof api_v1alpha1_org_authconnection_entities_pb.CreateAuthConnectionResponse;
 };
 
-type AuthConnectionGetAuthConnectionSettings = {
+type AuthConnectionServiceGetAuthConnectionSettings = {
   readonly methodName: string;
-  readonly service: typeof AuthConnection;
+  readonly service: typeof AuthConnectionService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionSettingsRequest;
   readonly responseType: typeof api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionSettingsResponse;
 };
 
-type AuthConnectionDeleteAuthConnection = {
+type AuthConnectionServiceDeleteAuthConnection = {
   readonly methodName: string;
-  readonly service: typeof AuthConnection;
+  readonly service: typeof AuthConnectionService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_org_authconnection_entities_pb.DeleteAuthConnectionRequest;
   readonly responseType: typeof api_v1alpha1_org_authconnection_entities_pb.DeleteAuthConnectionResponse;
 };
 
-type AuthConnectionUpdateAuthConnectionSecret = {
+type AuthConnectionServiceUpdateAuthConnectionSecret = {
   readonly methodName: string;
-  readonly service: typeof AuthConnection;
+  readonly service: typeof AuthConnectionService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_org_authconnection_entities_pb.UpdateAuthConnectionSecretRequest;
   readonly responseType: typeof api_v1alpha1_org_authconnection_entities_pb.UpdateAuthConnectionSecretResponse;
 };
 
-type AuthConnectionUpdateAuthConnectionGroups = {
+type AuthConnectionServiceUpdateAuthConnectionGroups = {
   readonly methodName: string;
-  readonly service: typeof AuthConnection;
+  readonly service: typeof AuthConnectionService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_org_authconnection_entities_pb.UpdateAuthConnectionGroupsRequest;
   readonly responseType: typeof api_v1alpha1_org_authconnection_entities_pb.UpdateAuthConnectionGroupsResponse;
 };
 
-export class AuthConnection {
+export class AuthConnectionService {
   static readonly serviceName: string;
-  static readonly CreateAuthConnection: AuthConnectionCreateAuthConnection;
-  static readonly GetAuthConnectionSettings: AuthConnectionGetAuthConnectionSettings;
-  static readonly DeleteAuthConnection: AuthConnectionDeleteAuthConnection;
-  static readonly UpdateAuthConnectionSecret: AuthConnectionUpdateAuthConnectionSecret;
-  static readonly UpdateAuthConnectionGroups: AuthConnectionUpdateAuthConnectionGroups;
+  static readonly CreateAuthConnection: AuthConnectionServiceCreateAuthConnection;
+  static readonly GetAuthConnectionSettings: AuthConnectionServiceGetAuthConnectionSettings;
+  static readonly DeleteAuthConnection: AuthConnectionServiceDeleteAuthConnection;
+  static readonly UpdateAuthConnectionSecret: AuthConnectionServiceUpdateAuthConnectionSecret;
+  static readonly UpdateAuthConnectionGroups: AuthConnectionServiceUpdateAuthConnectionGroups;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -87,7 +87,7 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class AuthConnectionClient {
+export class AuthConnectionServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
