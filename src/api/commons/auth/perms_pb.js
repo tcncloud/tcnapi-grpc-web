@@ -94,7 +94,7 @@ proto.api.commons.auth.Permission = {
   PERMISSION_DELIVERY_NOTIFICATIONS_EDIT: 2001,
   PERMISSION_TICKETS_APP: 3100,
   PERMISSION_TICKETS_ADMIN: 3101,
-  PERMISSION_WORKFLOWS_EDIT: 4000
+  PERMISSION_WORKFLOWS: 4000
 };
 
 goog.object.extend(exports, proto.api.commons.auth);
