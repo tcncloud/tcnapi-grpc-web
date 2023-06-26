@@ -1669,8 +1669,8 @@ export class Process extends jspb.Message {
 
   hasSplit(): boolean;
   clearSplit(): void;
-  getSplit(): SplitCreiteria | undefined;
-  setSplit(value?: SplitCreiteria): void;
+  getSplit(): SplitCriteria | undefined;
+  setSplit(value?: SplitCriteria): void;
 
   getProcCase(): Process.ProcCase;
   serializeBinary(): Uint8Array;
@@ -1719,7 +1719,7 @@ export namespace Process {
     bulkWebEntrypoint?: BulkWebEntrypointProcess.AsObject,
     omniExchangeProcess?: OmniExchangeProcess.AsObject,
     webExchangeProcess?: WebExchangeProcess.AsObject,
-    split?: SplitCreiteria.AsObject,
+    split?: SplitCriteria.AsObject,
   }
 
   export enum ProcCase {
@@ -6584,7 +6584,7 @@ export namespace CjsSecureSearchCriteriaField {
   }
 }
 
-export class SplitCreiteria extends jspb.Message {
+export class SplitCriteria extends jspb.Message {
   hasUnique(): boolean;
   clearUnique(): void;
   getUnique(): SplitByUnique | undefined;
@@ -6600,18 +6600,18 @@ export class SplitCreiteria extends jspb.Message {
   getEqualParts(): SplitByEqualParts | undefined;
   setEqualParts(value?: SplitByEqualParts): void;
 
-  getActionCase(): SplitCreiteria.ActionCase;
+  getActionCase(): SplitCriteria.ActionCase;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SplitCreiteria.AsObject;
-  static toObject(includeInstance: boolean, msg: SplitCreiteria): SplitCreiteria.AsObject;
+  toObject(includeInstance?: boolean): SplitCriteria.AsObject;
+  static toObject(includeInstance: boolean, msg: SplitCriteria): SplitCriteria.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SplitCreiteria, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SplitCreiteria;
-  static deserializeBinaryFromReader(message: SplitCreiteria, reader: jspb.BinaryReader): SplitCreiteria;
+  static serializeBinaryToWriter(message: SplitCriteria, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SplitCriteria;
+  static deserializeBinaryFromReader(message: SplitCriteria, reader: jspb.BinaryReader): SplitCriteria;
 }
 
-export namespace SplitCreiteria {
+export namespace SplitCriteria {
   export type AsObject = {
     unique?: SplitByUnique.AsObject,
     maxSize?: SplitByMaxSize.AsObject,
