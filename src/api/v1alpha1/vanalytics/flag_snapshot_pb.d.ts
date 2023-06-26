@@ -154,6 +154,11 @@ export namespace FlagSnapshot {
     getFilter(): FlagSnapshot.BoolExpr.Filter | undefined;
     setFilter(value?: FlagSnapshot.BoolExpr.Filter): void;
 
+    hasNot(): boolean;
+    clearNot(): void;
+    getNot(): FlagSnapshot.BoolExpr | undefined;
+    setNot(value?: FlagSnapshot.BoolExpr): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): BoolExpr.AsObject;
     static toObject(includeInstance: boolean, msg: BoolExpr): BoolExpr.AsObject;
@@ -169,6 +174,7 @@ export namespace FlagSnapshot {
       andList: Array<FlagSnapshot.BoolExpr.AsObject>,
       orList: Array<FlagSnapshot.BoolExpr.AsObject>,
       filter?: FlagSnapshot.BoolExpr.Filter.AsObject,
+      not?: FlagSnapshot.BoolExpr.AsObject,
     }
 
     export class Filter extends jspb.Message {

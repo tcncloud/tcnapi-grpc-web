@@ -933,7 +933,8 @@ proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.toObject = function(includeI
     proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.toObject, includeInstance),
     orList: jspb.Message.toObjectList(msg.getOrList(),
     proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.toObject, includeInstance),
-    filter: (f = msg.getFilter()) && proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.Filter.toObject(includeInstance, f)
+    filter: (f = msg.getFilter()) && proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.Filter.toObject(includeInstance, f),
+    not: (f = msg.getNot()) && proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -984,6 +985,11 @@ proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.deserializeBinaryFromReader 
       var value = new proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.Filter;
       reader.readMessage(value,proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.Filter.deserializeBinaryFromReader);
       msg.setFilter(value);
+      break;
+    case 4:
+      var value = new proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr;
+      reader.readMessage(value,proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.deserializeBinaryFromReader);
+      msg.setNot(value);
       break;
     default:
       reader.skipField();
@@ -1036,6 +1042,14 @@ proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.serializeBinaryToWriter = fu
       3,
       f,
       proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.Filter.serializeBinaryToWriter
+    );
+  }
+  f = message.getNot();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.serializeBinaryToWriter
     );
   }
 };
@@ -1281,6 +1295,43 @@ proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.prototype.clearFilter = func
  */
 proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.prototype.hasFilter = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional BoolExpr not = 4;
+ * @return {?proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr}
+ */
+proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.prototype.getNot = function() {
+  return /** @type{?proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr, 4));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr|undefined} value
+ * @return {!proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr} returns this
+*/
+proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.prototype.setNot = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr} returns this
+ */
+proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.prototype.clearNot = function() {
+  return this.setNot(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.prototype.hasNot = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
