@@ -21,6 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_commons_workflows_example_pb = require('../../../api/commons/workflows/example_pb.js');
+goog.object.extend(proto, api_commons_workflows_example_pb);
 var api_commons_workflows_omni_pb = require('../../../api/commons/workflows/omni_pb.js');
 goog.object.extend(proto, api_commons_workflows_omni_pb);
 goog.exportSymbol('proto.api.commons.workflows.NodeDefinition', null, global);
@@ -36,7 +38,7 @@ goog.exportSymbol('proto.api.commons.workflows.NodeDefinition.DefinitionCase', n
  * @constructor
  */
 proto.api.commons.workflows.NodeDefinition = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.workflows.NodeDefinition.repeatedFields_, proto.api.commons.workflows.NodeDefinition.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, 500, proto.api.commons.workflows.NodeDefinition.repeatedFields_, proto.api.commons.workflows.NodeDefinition.oneofGroups_);
 };
 goog.inherits(proto.api.commons.workflows.NodeDefinition, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -62,13 +64,19 @@ proto.api.commons.workflows.NodeDefinition.repeatedFields_ = [5];
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.workflows.NodeDefinition.oneofGroups_ = [[201,202,203,204]];
+proto.api.commons.workflows.NodeDefinition.oneofGroups_ = [[101,102,103,104,105,1000,201,202,203,204]];
 
 /**
  * @enum {number}
  */
 proto.api.commons.workflows.NodeDefinition.DefinitionCase = {
   DEFINITION_NOT_SET: 0,
+  PRINT: 101,
+  RANDOM: 102,
+  CONSOLE_INPUT: 103,
+  COMPARATOR: 104,
+  STORE_INPUT: 105,
+  CHATBOT: 1000,
   OMNI_PROMPT: 201,
   OMNI_SET_SKILL: 202,
   OMNI_TO_AGENT: 203,
@@ -118,6 +126,12 @@ proto.api.commons.workflows.NodeDefinition.toObject = function(includeInstance, 
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
     outputsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     errorNodeId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    print: (f = msg.getPrint()) && api_commons_workflows_example_pb.NodePrint.toObject(includeInstance, f),
+    random: (f = msg.getRandom()) && api_commons_workflows_example_pb.NodeRandom.toObject(includeInstance, f),
+    consoleInput: (f = msg.getConsoleInput()) && api_commons_workflows_example_pb.NodeConsoleInput.toObject(includeInstance, f),
+    comparator: (f = msg.getComparator()) && api_commons_workflows_example_pb.NodeComparator.toObject(includeInstance, f),
+    storeInput: (f = msg.getStoreInput()) && api_commons_workflows_example_pb.NodeStoreInput.toObject(includeInstance, f),
+    chatbot: (f = msg.getChatbot()) && api_commons_workflows_example_pb.NodeChatbot.toObject(includeInstance, f),
     omniPrompt: (f = msg.getOmniPrompt()) && api_commons_workflows_omni_pb.OmniNodePrompt.toObject(includeInstance, f),
     omniSetSkill: (f = msg.getOmniSetSkill()) && api_commons_workflows_omni_pb.OmniNodeSetSkill.toObject(includeInstance, f),
     omniToAgent: (f = msg.getOmniToAgent()) && api_commons_workflows_omni_pb.OmniNodeToAgent.toObject(includeInstance, f),
@@ -177,6 +191,36 @@ proto.api.commons.workflows.NodeDefinition.deserializeBinaryFromReader = functio
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setErrorNodeId(value);
+      break;
+    case 101:
+      var value = new api_commons_workflows_example_pb.NodePrint;
+      reader.readMessage(value,api_commons_workflows_example_pb.NodePrint.deserializeBinaryFromReader);
+      msg.setPrint(value);
+      break;
+    case 102:
+      var value = new api_commons_workflows_example_pb.NodeRandom;
+      reader.readMessage(value,api_commons_workflows_example_pb.NodeRandom.deserializeBinaryFromReader);
+      msg.setRandom(value);
+      break;
+    case 103:
+      var value = new api_commons_workflows_example_pb.NodeConsoleInput;
+      reader.readMessage(value,api_commons_workflows_example_pb.NodeConsoleInput.deserializeBinaryFromReader);
+      msg.setConsoleInput(value);
+      break;
+    case 104:
+      var value = new api_commons_workflows_example_pb.NodeComparator;
+      reader.readMessage(value,api_commons_workflows_example_pb.NodeComparator.deserializeBinaryFromReader);
+      msg.setComparator(value);
+      break;
+    case 105:
+      var value = new api_commons_workflows_example_pb.NodeStoreInput;
+      reader.readMessage(value,api_commons_workflows_example_pb.NodeStoreInput.deserializeBinaryFromReader);
+      msg.setStoreInput(value);
+      break;
+    case 1000:
+      var value = new api_commons_workflows_example_pb.NodeChatbot;
+      reader.readMessage(value,api_commons_workflows_example_pb.NodeChatbot.deserializeBinaryFromReader);
+      msg.setChatbot(value);
       break;
     case 201:
       var value = new api_commons_workflows_omni_pb.OmniNodePrompt;
@@ -260,6 +304,54 @@ proto.api.commons.workflows.NodeDefinition.serializeBinaryToWriter = function(me
     writer.writeString(
       6,
       f
+    );
+  }
+  f = message.getPrint();
+  if (f != null) {
+    writer.writeMessage(
+      101,
+      f,
+      api_commons_workflows_example_pb.NodePrint.serializeBinaryToWriter
+    );
+  }
+  f = message.getRandom();
+  if (f != null) {
+    writer.writeMessage(
+      102,
+      f,
+      api_commons_workflows_example_pb.NodeRandom.serializeBinaryToWriter
+    );
+  }
+  f = message.getConsoleInput();
+  if (f != null) {
+    writer.writeMessage(
+      103,
+      f,
+      api_commons_workflows_example_pb.NodeConsoleInput.serializeBinaryToWriter
+    );
+  }
+  f = message.getComparator();
+  if (f != null) {
+    writer.writeMessage(
+      104,
+      f,
+      api_commons_workflows_example_pb.NodeComparator.serializeBinaryToWriter
+    );
+  }
+  f = message.getStoreInput();
+  if (f != null) {
+    writer.writeMessage(
+      105,
+      f,
+      api_commons_workflows_example_pb.NodeStoreInput.serializeBinaryToWriter
+    );
+  }
+  f = message.getChatbot();
+  if (f != null) {
+    writer.writeMessage(
+      1000,
+      f,
+      api_commons_workflows_example_pb.NodeChatbot.serializeBinaryToWriter
     );
   }
   f = message.getOmniPrompt();
@@ -403,6 +495,228 @@ proto.api.commons.workflows.NodeDefinition.prototype.getErrorNodeId = function()
  */
 proto.api.commons.workflows.NodeDefinition.prototype.setErrorNodeId = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional NodePrint print = 101;
+ * @return {?proto.api.commons.workflows.NodePrint}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.getPrint = function() {
+  return /** @type{?proto.api.commons.workflows.NodePrint} */ (
+    jspb.Message.getWrapperField(this, api_commons_workflows_example_pb.NodePrint, 101));
+};
+
+
+/**
+ * @param {?proto.api.commons.workflows.NodePrint|undefined} value
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+*/
+proto.api.commons.workflows.NodeDefinition.prototype.setPrint = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 101, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.clearPrint = function() {
+  return this.setPrint(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.hasPrint = function() {
+  return jspb.Message.getField(this, 101) != null;
+};
+
+
+/**
+ * optional NodeRandom random = 102;
+ * @return {?proto.api.commons.workflows.NodeRandom}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.getRandom = function() {
+  return /** @type{?proto.api.commons.workflows.NodeRandom} */ (
+    jspb.Message.getWrapperField(this, api_commons_workflows_example_pb.NodeRandom, 102));
+};
+
+
+/**
+ * @param {?proto.api.commons.workflows.NodeRandom|undefined} value
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+*/
+proto.api.commons.workflows.NodeDefinition.prototype.setRandom = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 102, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.clearRandom = function() {
+  return this.setRandom(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.hasRandom = function() {
+  return jspb.Message.getField(this, 102) != null;
+};
+
+
+/**
+ * optional NodeConsoleInput console_input = 103;
+ * @return {?proto.api.commons.workflows.NodeConsoleInput}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.getConsoleInput = function() {
+  return /** @type{?proto.api.commons.workflows.NodeConsoleInput} */ (
+    jspb.Message.getWrapperField(this, api_commons_workflows_example_pb.NodeConsoleInput, 103));
+};
+
+
+/**
+ * @param {?proto.api.commons.workflows.NodeConsoleInput|undefined} value
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+*/
+proto.api.commons.workflows.NodeDefinition.prototype.setConsoleInput = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 103, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.clearConsoleInput = function() {
+  return this.setConsoleInput(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.hasConsoleInput = function() {
+  return jspb.Message.getField(this, 103) != null;
+};
+
+
+/**
+ * optional NodeComparator comparator = 104;
+ * @return {?proto.api.commons.workflows.NodeComparator}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.getComparator = function() {
+  return /** @type{?proto.api.commons.workflows.NodeComparator} */ (
+    jspb.Message.getWrapperField(this, api_commons_workflows_example_pb.NodeComparator, 104));
+};
+
+
+/**
+ * @param {?proto.api.commons.workflows.NodeComparator|undefined} value
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+*/
+proto.api.commons.workflows.NodeDefinition.prototype.setComparator = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 104, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.clearComparator = function() {
+  return this.setComparator(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.hasComparator = function() {
+  return jspb.Message.getField(this, 104) != null;
+};
+
+
+/**
+ * optional NodeStoreInput store_input = 105;
+ * @return {?proto.api.commons.workflows.NodeStoreInput}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.getStoreInput = function() {
+  return /** @type{?proto.api.commons.workflows.NodeStoreInput} */ (
+    jspb.Message.getWrapperField(this, api_commons_workflows_example_pb.NodeStoreInput, 105));
+};
+
+
+/**
+ * @param {?proto.api.commons.workflows.NodeStoreInput|undefined} value
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+*/
+proto.api.commons.workflows.NodeDefinition.prototype.setStoreInput = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 105, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.clearStoreInput = function() {
+  return this.setStoreInput(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.hasStoreInput = function() {
+  return jspb.Message.getField(this, 105) != null;
+};
+
+
+/**
+ * optional NodeChatbot chatbot = 1000;
+ * @return {?proto.api.commons.workflows.NodeChatbot}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.getChatbot = function() {
+  return /** @type{?proto.api.commons.workflows.NodeChatbot} */ (
+    jspb.Message.getWrapperField(this, api_commons_workflows_example_pb.NodeChatbot, 1000));
+};
+
+
+/**
+ * @param {?proto.api.commons.workflows.NodeChatbot|undefined} value
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+*/
+proto.api.commons.workflows.NodeDefinition.prototype.setChatbot = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1000, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.clearChatbot = function() {
+  return this.setChatbot(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.hasChatbot = function() {
+  return jspb.Message.getField(this, 1000) != null;
 };
 
 

@@ -2,6 +2,7 @@
 // file: api/commons/workflows/nodes.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_workflows_example_pb from "../../../api/commons/workflows/example_pb";
 import * as api_commons_workflows_omni_pb from "../../../api/commons/workflows/omni_pb";
 
 export class NodeDefinition extends jspb.Message {
@@ -21,6 +22,36 @@ export class NodeDefinition extends jspb.Message {
 
   getErrorNodeId(): string;
   setErrorNodeId(value: string): void;
+
+  hasPrint(): boolean;
+  clearPrint(): void;
+  getPrint(): api_commons_workflows_example_pb.NodePrint | undefined;
+  setPrint(value?: api_commons_workflows_example_pb.NodePrint): void;
+
+  hasRandom(): boolean;
+  clearRandom(): void;
+  getRandom(): api_commons_workflows_example_pb.NodeRandom | undefined;
+  setRandom(value?: api_commons_workflows_example_pb.NodeRandom): void;
+
+  hasConsoleInput(): boolean;
+  clearConsoleInput(): void;
+  getConsoleInput(): api_commons_workflows_example_pb.NodeConsoleInput | undefined;
+  setConsoleInput(value?: api_commons_workflows_example_pb.NodeConsoleInput): void;
+
+  hasComparator(): boolean;
+  clearComparator(): void;
+  getComparator(): api_commons_workflows_example_pb.NodeComparator | undefined;
+  setComparator(value?: api_commons_workflows_example_pb.NodeComparator): void;
+
+  hasStoreInput(): boolean;
+  clearStoreInput(): void;
+  getStoreInput(): api_commons_workflows_example_pb.NodeStoreInput | undefined;
+  setStoreInput(value?: api_commons_workflows_example_pb.NodeStoreInput): void;
+
+  hasChatbot(): boolean;
+  clearChatbot(): void;
+  getChatbot(): api_commons_workflows_example_pb.NodeChatbot | undefined;
+  setChatbot(value?: api_commons_workflows_example_pb.NodeChatbot): void;
 
   hasOmniPrompt(): boolean;
   clearOmniPrompt(): void;
@@ -60,6 +91,12 @@ export namespace NodeDefinition {
     description: string,
     outputsList: Array<string>,
     errorNodeId: string,
+    print?: api_commons_workflows_example_pb.NodePrint.AsObject,
+    random?: api_commons_workflows_example_pb.NodeRandom.AsObject,
+    consoleInput?: api_commons_workflows_example_pb.NodeConsoleInput.AsObject,
+    comparator?: api_commons_workflows_example_pb.NodeComparator.AsObject,
+    storeInput?: api_commons_workflows_example_pb.NodeStoreInput.AsObject,
+    chatbot?: api_commons_workflows_example_pb.NodeChatbot.AsObject,
     omniPrompt?: api_commons_workflows_omni_pb.OmniNodePrompt.AsObject,
     omniSetSkill?: api_commons_workflows_omni_pb.OmniNodeSetSkill.AsObject,
     omniToAgent?: api_commons_workflows_omni_pb.OmniNodeToAgent.AsObject,
@@ -68,6 +105,12 @@ export namespace NodeDefinition {
 
   export enum DefinitionCase {
     DEFINITION_NOT_SET = 0,
+    PRINT = 101,
+    RANDOM = 102,
+    CONSOLE_INPUT = 103,
+    COMPARATOR = 104,
+    STORE_INPUT = 105,
+    CHATBOT = 1000,
     OMNI_PROMPT = 201,
     OMNI_SET_SKILL = 202,
     OMNI_TO_AGENT = 203,
