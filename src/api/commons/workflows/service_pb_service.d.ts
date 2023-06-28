@@ -4,28 +4,28 @@
 import * as api_commons_workflows_service_pb from "../../../api/commons/workflows/service_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type WorkflowsDefinitionsServiceSaveFlowDefinition = {
+type WorkflowsDefinitionServiceSaveFlowDefinition = {
   readonly methodName: string;
-  readonly service: typeof WorkflowsDefinitionsService;
+  readonly service: typeof WorkflowsDefinitionService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_commons_workflows_service_pb.SaveFlowDefinitionRequest;
   readonly responseType: typeof api_commons_workflows_service_pb.SaveFlowDefinitionResponse;
 };
 
-type WorkflowsDefinitionsServiceGetFlowDefinition = {
+type WorkflowsDefinitionServiceGetFlowDefinition = {
   readonly methodName: string;
-  readonly service: typeof WorkflowsDefinitionsService;
+  readonly service: typeof WorkflowsDefinitionService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_commons_workflows_service_pb.GetFlowDefinitionRequest;
   readonly responseType: typeof api_commons_workflows_service_pb.GetFlowDefinitionResponse;
 };
 
-export class WorkflowsDefinitionsService {
+export class WorkflowsDefinitionService {
   static readonly serviceName: string;
-  static readonly SaveFlowDefinition: WorkflowsDefinitionsServiceSaveFlowDefinition;
-  static readonly GetFlowDefinition: WorkflowsDefinitionsServiceGetFlowDefinition;
+  static readonly SaveFlowDefinition: WorkflowsDefinitionServiceSaveFlowDefinition;
+  static readonly GetFlowDefinition: WorkflowsDefinitionServiceGetFlowDefinition;
 }
 
 type WorkflowsStateServiceSaveFlowState = {
@@ -80,7 +80,7 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class WorkflowsDefinitionsServiceClient {
+export class WorkflowsDefinitionServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
