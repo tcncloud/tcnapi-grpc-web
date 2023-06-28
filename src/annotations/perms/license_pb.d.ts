@@ -20,6 +20,7 @@ export interface ApplicationMap {
   APPLICATION_TICKETS: 13;
   APPLICATION_VOICE_ANALYTICS: 14;
   APPLICATION_WORK_FORCE_MANAGEMENT: 15;
+  APPLICATION_WORKFLOWS: 16;
 }
 
 export const Application: ApplicationMap;

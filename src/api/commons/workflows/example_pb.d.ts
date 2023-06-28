@@ -136,14 +136,14 @@ export namespace NodeChatbot {
 }
 
 export class DiceDocument extends jspb.Message {
-  getDicevalue(): number;
-  setDicevalue(value: number): void;
+  getDiceValue(): number;
+  setDiceValue(value: number): void;
 
-  getDicevaluemax(): number;
-  setDicevaluemax(value: number): void;
+  getDiceValueMax(): number;
+  setDiceValueMax(value: number): void;
 
-  getDicevaluemin(): number;
-  setDicevaluemin(value: number): void;
+  getDiceValueMin(): number;
+  setDiceValueMin(value: number): void;
 
   getLastMessage(): string;
   setLastMessage(value: string): void;
@@ -165,9 +165,9 @@ export class DiceDocument extends jspb.Message {
 
 export namespace DiceDocument {
   export type AsObject = {
-    dicevalue: number,
-    dicevaluemax: number,
-    dicevaluemin: number,
+    diceValue: number,
+    diceValueMax: number,
+    diceValueMin: number,
     lastMessage: string,
     variablesMap: Array<[string, string]>,
     error: string,

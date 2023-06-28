@@ -1,5 +1,5 @@
 // package: api.commons.workflows
-// file: api/commons/workflows/flows.proto
+// file: api/commons/workflows/entities.proto
 
 import * as jspb from "google-protobuf";
 import * as api_commons_workflows_nodes_pb from "../../../api/commons/workflows/nodes_pb";
@@ -16,6 +16,9 @@ export class FlowDefinition extends jspb.Message {
 
   getEntryNodeId(): string;
   setEntryNodeId(value: string): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
 
   clearNodesList(): void;
   getNodesList(): Array<api_commons_workflows_nodes_pb.NodeDefinition>;
@@ -41,6 +44,7 @@ export namespace FlowDefinition {
     name: string,
     description: string,
     entryNodeId: string,
+    orgId: string,
     nodesList: Array<api_commons_workflows_nodes_pb.NodeDefinition.AsObject>,
     errorNodeId: string,
   }

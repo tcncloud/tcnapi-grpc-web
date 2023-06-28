@@ -1,4 +1,4 @@
-// source: api/v1alpha1/org/authconnection/service.proto
+// source: api/v1alpha1/workflows/service.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -21,9 +21,9 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var annotations_authz_pb = require('../../../../annotations/authz_pb.js');
+var annotations_authz_pb = require('../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
-var api_v1alpha1_org_authconnection_entities_pb = require('../../../../api/v1alpha1/org/authconnection/entities_pb.js');
-goog.object.extend(proto, api_v1alpha1_org_authconnection_entities_pb);
-var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
+var api_v1alpha1_workflows_entities_pb = require('../../../api/v1alpha1/workflows/entities_pb.js');
+goog.object.extend(proto, api_v1alpha1_workflows_entities_pb);
+var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
