@@ -1667,6 +1667,11 @@ export class Process extends jspb.Message {
   getWebExchangeProcess(): WebExchangeProcess | undefined;
   setWebExchangeProcess(value?: WebExchangeProcess): void;
 
+  hasSplit(): boolean;
+  clearSplit(): void;
+  getSplit(): SplitCriteria | undefined;
+  setSplit(value?: SplitCriteria): void;
+
   getProcCase(): Process.ProcCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Process.AsObject;
@@ -1714,6 +1719,7 @@ export namespace Process {
     bulkWebEntrypoint?: BulkWebEntrypointProcess.AsObject,
     omniExchangeProcess?: OmniExchangeProcess.AsObject,
     webExchangeProcess?: WebExchangeProcess.AsObject,
+    split?: SplitCriteria.AsObject,
   }
 
   export enum ProcCase {
@@ -1751,6 +1757,7 @@ export namespace Process {
     BULK_WEB_ENTRYPOINT = 72,
     OMNI_EXCHANGE_PROCESS = 73,
     WEB_EXCHANGE_PROCESS = 74,
+    SPLIT = 75,
   }
 }
 
@@ -6574,6 +6581,158 @@ export namespace CjsSecureSearchCriteriaField {
     cjsSecureSearchCriteriaFieldId: string,
     cjsSecureSearchCriteriaId: string,
     fieldType: api_commons_lms_pb.FieldTypeMap[keyof api_commons_lms_pb.FieldTypeMap],
+  }
+}
+
+export class SplitCriteria extends jspb.Message {
+  hasUnique(): boolean;
+  clearUnique(): void;
+  getUnique(): SplitByUnique | undefined;
+  setUnique(value?: SplitByUnique): void;
+
+  hasMaxSize(): boolean;
+  clearMaxSize(): void;
+  getMaxSize(): SplitByMaxSize | undefined;
+  setMaxSize(value?: SplitByMaxSize): void;
+
+  hasEqualParts(): boolean;
+  clearEqualParts(): void;
+  getEqualParts(): SplitByEqualParts | undefined;
+  setEqualParts(value?: SplitByEqualParts): void;
+
+  getActionCase(): SplitCriteria.ActionCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SplitCriteria.AsObject;
+  static toObject(includeInstance: boolean, msg: SplitCriteria): SplitCriteria.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SplitCriteria, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SplitCriteria;
+  static deserializeBinaryFromReader(message: SplitCriteria, reader: jspb.BinaryReader): SplitCriteria;
+}
+
+export namespace SplitCriteria {
+  export type AsObject = {
+    unique?: SplitByUnique.AsObject,
+    maxSize?: SplitByMaxSize.AsObject,
+    equalParts?: SplitByEqualParts.AsObject,
+  }
+
+  export enum ActionCase {
+    ACTION_NOT_SET = 0,
+    UNIQUE = 1,
+    MAX_SIZE = 2,
+    EQUAL_PARTS = 3,
+  }
+}
+
+export class UniquePair extends jspb.Message {
+  hasSplitOnFields(): boolean;
+  clearSplitOnFields(): void;
+  getSplitOnFields(): FieldIndex | undefined;
+  setSplitOnFields(value?: FieldIndex): void;
+
+  getSplitValue(): string;
+  setSplitValue(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UniquePair.AsObject;
+  static toObject(includeInstance: boolean, msg: UniquePair): UniquePair.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UniquePair, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UniquePair;
+  static deserializeBinaryFromReader(message: UniquePair, reader: jspb.BinaryReader): UniquePair;
+}
+
+export namespace UniquePair {
+  export type AsObject = {
+    splitOnFields?: FieldIndex.AsObject,
+    splitValue: string,
+  }
+}
+
+export class SplitByNamedUnique extends jspb.Message {
+  clearNamedFieldsList(): void;
+  getNamedFieldsList(): Array<UniquePair>;
+  setNamedFieldsList(value: Array<UniquePair>): void;
+  addNamedFields(value?: UniquePair, index?: number): UniquePair;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SplitByNamedUnique.AsObject;
+  static toObject(includeInstance: boolean, msg: SplitByNamedUnique): SplitByNamedUnique.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SplitByNamedUnique, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SplitByNamedUnique;
+  static deserializeBinaryFromReader(message: SplitByNamedUnique, reader: jspb.BinaryReader): SplitByNamedUnique;
+}
+
+export namespace SplitByNamedUnique {
+  export type AsObject = {
+    namedFieldsList: Array<UniquePair.AsObject>,
+  }
+}
+
+export class SplitByUnique extends jspb.Message {
+  clearSplitOnFieldsList(): void;
+  getSplitOnFieldsList(): Array<FieldIndex>;
+  setSplitOnFieldsList(value: Array<FieldIndex>): void;
+  addSplitOnFields(value?: FieldIndex, index?: number): FieldIndex;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SplitByUnique.AsObject;
+  static toObject(includeInstance: boolean, msg: SplitByUnique): SplitByUnique.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SplitByUnique, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SplitByUnique;
+  static deserializeBinaryFromReader(message: SplitByUnique, reader: jspb.BinaryReader): SplitByUnique;
+}
+
+export namespace SplitByUnique {
+  export type AsObject = {
+    splitOnFieldsList: Array<FieldIndex.AsObject>,
+  }
+}
+
+export class SplitByMaxSize extends jspb.Message {
+  getMaxSize(): number;
+  setMaxSize(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SplitByMaxSize.AsObject;
+  static toObject(includeInstance: boolean, msg: SplitByMaxSize): SplitByMaxSize.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SplitByMaxSize, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SplitByMaxSize;
+  static deserializeBinaryFromReader(message: SplitByMaxSize, reader: jspb.BinaryReader): SplitByMaxSize;
+}
+
+export namespace SplitByMaxSize {
+  export type AsObject = {
+    maxSize: number,
+  }
+}
+
+export class SplitByEqualParts extends jspb.Message {
+  getPartSize(): number;
+  setPartSize(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SplitByEqualParts.AsObject;
+  static toObject(includeInstance: boolean, msg: SplitByEqualParts): SplitByEqualParts.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SplitByEqualParts, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SplitByEqualParts;
+  static deserializeBinaryFromReader(message: SplitByEqualParts, reader: jspb.BinaryReader): SplitByEqualParts;
+}
+
+export namespace SplitByEqualParts {
+  export type AsObject = {
+    partSize: number,
   }
 }
 
