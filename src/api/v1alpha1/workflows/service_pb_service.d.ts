@@ -32,7 +32,7 @@ type WorkflowsDefinitionServiceGetFlowDefinition = {
   readonly responseType: typeof api_v1alpha1_workflows_entities_pb.GetFlowDefinitionResponse;
 };
 
-type WorkflowsDefinitionServiceDeleteFlowDefinitionById = {
+type WorkflowsDefinitionServiceDeleteFlowDefinition = {
   readonly methodName: string;
   readonly service: typeof WorkflowsDefinitionService;
   readonly requestStream: false;
@@ -46,7 +46,7 @@ export class WorkflowsDefinitionService {
   static readonly ListFlowDefinitions: WorkflowsDefinitionServiceListFlowDefinitions;
   static readonly SaveFlowDefinition: WorkflowsDefinitionServiceSaveFlowDefinition;
   static readonly GetFlowDefinition: WorkflowsDefinitionServiceGetFlowDefinition;
-  static readonly DeleteFlowDefinitionById: WorkflowsDefinitionServiceDeleteFlowDefinitionById;
+  static readonly DeleteFlowDefinition: WorkflowsDefinitionServiceDeleteFlowDefinition;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -108,12 +108,12 @@ export class WorkflowsDefinitionServiceClient {
     requestMessage: api_v1alpha1_workflows_entities_pb.GetFlowDefinitionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_entities_pb.GetFlowDefinitionResponse|null) => void
   ): UnaryResponse;
-  deleteFlowDefinitionById(
+  deleteFlowDefinition(
     requestMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionResponse|null) => void
   ): UnaryResponse;
-  deleteFlowDefinitionById(
+  deleteFlowDefinition(
     requestMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionResponse|null) => void
   ): UnaryResponse;

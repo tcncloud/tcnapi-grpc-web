@@ -38,8 +38,8 @@ WorkflowsDefinitionService.GetFlowDefinition = {
   responseType: api_v1alpha1_workflows_entities_pb.GetFlowDefinitionResponse
 };
 
-WorkflowsDefinitionService.DeleteFlowDefinitionById = {
-  methodName: "DeleteFlowDefinitionById",
+WorkflowsDefinitionService.DeleteFlowDefinition = {
+  methodName: "DeleteFlowDefinition",
   service: WorkflowsDefinitionService,
   requestStream: false,
   responseStream: false,
@@ -147,11 +147,11 @@ WorkflowsDefinitionServiceClient.prototype.getFlowDefinition = function getFlowD
   };
 };
 
-WorkflowsDefinitionServiceClient.prototype.deleteFlowDefinitionById = function deleteFlowDefinitionById(requestMessage, metadata, callback) {
+WorkflowsDefinitionServiceClient.prototype.deleteFlowDefinition = function deleteFlowDefinition(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WorkflowsDefinitionService.DeleteFlowDefinitionById, {
+  var client = grpc.unary(WorkflowsDefinitionService.DeleteFlowDefinition, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
