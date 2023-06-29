@@ -5483,6 +5483,11 @@ export class CopyScenarioReq extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
+  hasScheduleRange(): boolean;
+  clearScheduleRange(): void;
+  getScheduleRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setScheduleRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CopyScenarioReq.AsObject;
   static toObject(includeInstance: boolean, msg: CopyScenarioReq): CopyScenarioReq.AsObject;
@@ -5499,6 +5504,7 @@ export namespace CopyScenarioReq {
     includeInactive: boolean,
     name: string,
     description: string,
+    scheduleRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
   }
 }
 
