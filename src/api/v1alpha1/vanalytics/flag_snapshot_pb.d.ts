@@ -108,6 +108,11 @@ export class FlagSnapshot extends jspb.Message {
   getMustNotify(): boolean;
   setMustNotify(value: boolean): void;
 
+  hasBoolExpr(): boolean;
+  clearBoolExpr(): void;
+  getBoolExpr(): FlagSnapshot.BoolExpr | undefined;
+  setBoolExpr(value?: FlagSnapshot.BoolExpr): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FlagSnapshot.AsObject;
   static toObject(includeInstance: boolean, msg: FlagSnapshot): FlagSnapshot.AsObject;
@@ -130,6 +135,67 @@ export namespace FlagSnapshot {
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     mustReview: boolean,
     mustNotify: boolean,
+    boolExpr?: FlagSnapshot.BoolExpr.AsObject,
+  }
+
+  export class BoolExpr extends jspb.Message {
+    clearAndList(): void;
+    getAndList(): Array<FlagSnapshot.BoolExpr>;
+    setAndList(value: Array<FlagSnapshot.BoolExpr>): void;
+    addAnd(value?: FlagSnapshot.BoolExpr, index?: number): FlagSnapshot.BoolExpr;
+
+    clearOrList(): void;
+    getOrList(): Array<FlagSnapshot.BoolExpr>;
+    setOrList(value: Array<FlagSnapshot.BoolExpr>): void;
+    addOr(value?: FlagSnapshot.BoolExpr, index?: number): FlagSnapshot.BoolExpr;
+
+    hasFilter(): boolean;
+    clearFilter(): void;
+    getFilter(): FlagSnapshot.BoolExpr.Filter | undefined;
+    setFilter(value?: FlagSnapshot.BoolExpr.Filter): void;
+
+    hasNot(): boolean;
+    clearNot(): void;
+    getNot(): FlagSnapshot.BoolExpr | undefined;
+    setNot(value?: FlagSnapshot.BoolExpr): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): BoolExpr.AsObject;
+    static toObject(includeInstance: boolean, msg: BoolExpr): BoolExpr.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: BoolExpr, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): BoolExpr;
+    static deserializeBinaryFromReader(message: BoolExpr, reader: jspb.BinaryReader): BoolExpr;
+  }
+
+  export namespace BoolExpr {
+    export type AsObject = {
+      andList: Array<FlagSnapshot.BoolExpr.AsObject>,
+      orList: Array<FlagSnapshot.BoolExpr.AsObject>,
+      filter?: FlagSnapshot.BoolExpr.Filter.AsObject,
+      not?: FlagSnapshot.BoolExpr.AsObject,
+    }
+
+    export class Filter extends jspb.Message {
+      getFilterSid(): number;
+      setFilterSid(value: number): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Filter.AsObject;
+      static toObject(includeInstance: boolean, msg: Filter): Filter.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Filter, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Filter;
+      static deserializeBinaryFromReader(message: Filter, reader: jspb.BinaryReader): Filter;
+    }
+
+    export namespace Filter {
+      export type AsObject = {
+        filterSid: number,
+      }
+    }
   }
 }
 

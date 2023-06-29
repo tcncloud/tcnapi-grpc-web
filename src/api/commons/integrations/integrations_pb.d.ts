@@ -972,6 +972,46 @@ export class ExecuteFlow extends jspb.Message {
   getExperianAchPaymentPlanRequest(): ExecuteExperianAchPaymentPlanRequest | undefined;
   setExperianAchPaymentPlanRequest(value?: ExecuteExperianAchPaymentPlanRequest): void;
 
+  hasExperianStellaCardEntry(): boolean;
+  clearExperianStellaCardEntry(): void;
+  getExperianStellaCardEntry(): ExecuteExperianStellaCardEntry | undefined;
+  setExperianStellaCardEntry(value?: ExecuteExperianStellaCardEntry): void;
+
+  hasExperianStellaEcheck(): boolean;
+  clearExperianStellaEcheck(): void;
+  getExperianStellaEcheck(): ExecuteExperianStellaECheck | undefined;
+  setExperianStellaEcheck(value?: ExecuteExperianStellaECheck): void;
+
+  hasExperianStellaCardDeviceTokenization(): boolean;
+  clearExperianStellaCardDeviceTokenization(): void;
+  getExperianStellaCardDeviceTokenization(): ExecuteExperianStellaCardDeviceTokenization | undefined;
+  setExperianStellaCardDeviceTokenization(value?: ExecuteExperianStellaCardDeviceTokenization): void;
+
+  hasExperianStellaTokenPayment(): boolean;
+  clearExperianStellaTokenPayment(): void;
+  getExperianStellaTokenPayment(): ExecuteExperianStellaTokenPayment | undefined;
+  setExperianStellaTokenPayment(value?: ExecuteExperianStellaTokenPayment): void;
+
+  hasExperianStellaAchTokenization(): boolean;
+  clearExperianStellaAchTokenization(): void;
+  getExperianStellaAchTokenization(): ExecuteExperianStellaAchTokenization | undefined;
+  setExperianStellaAchTokenization(value?: ExecuteExperianStellaAchTokenization): void;
+
+  hasExperianStellaAddUsaEpayToken(): boolean;
+  clearExperianStellaAddUsaEpayToken(): void;
+  getExperianStellaAddUsaEpayToken(): ExecuteExperianStellaAddusaepaytoken | undefined;
+  setExperianStellaAddUsaEpayToken(value?: ExecuteExperianStellaAddusaepaytoken): void;
+
+  hasExperianStellaPaymentPlans(): boolean;
+  clearExperianStellaPaymentPlans(): void;
+  getExperianStellaPaymentPlans(): ExecuteExperianStellaPaymentPlans | undefined;
+  setExperianStellaPaymentPlans(value?: ExecuteExperianStellaPaymentPlans): void;
+
+  hasExperianStellaAuth(): boolean;
+  clearExperianStellaAuth(): void;
+  getExperianStellaAuth(): ExecuteExperianStellaAuth | undefined;
+  setExperianStellaAuth(value?: ExecuteExperianStellaAuth): void;
+
   hasNewscycleLogin(): boolean;
   clearNewscycleLogin(): void;
   getNewscycleLogin(): ExecuteNewscycleLogin | undefined;
@@ -1459,6 +1499,14 @@ export namespace ExecuteFlow {
     experianBalancerequest?: ExecuteExperianBalancerequest.AsObject,
     experianAchPaymentRequest?: ExecuteExperianAchPaymentRequest.AsObject,
     experianAchPaymentPlanRequest?: ExecuteExperianAchPaymentPlanRequest.AsObject,
+    experianStellaCardEntry?: ExecuteExperianStellaCardEntry.AsObject,
+    experianStellaEcheck?: ExecuteExperianStellaECheck.AsObject,
+    experianStellaCardDeviceTokenization?: ExecuteExperianStellaCardDeviceTokenization.AsObject,
+    experianStellaTokenPayment?: ExecuteExperianStellaTokenPayment.AsObject,
+    experianStellaAchTokenization?: ExecuteExperianStellaAchTokenization.AsObject,
+    experianStellaAddUsaEpayToken?: ExecuteExperianStellaAddusaepaytoken.AsObject,
+    experianStellaPaymentPlans?: ExecuteExperianStellaPaymentPlans.AsObject,
+    experianStellaAuth?: ExecuteExperianStellaAuth.AsObject,
     newscycleLogin?: ExecuteNewscycleLogin.AsObject,
     newscycleSearchPage?: ExecuteNewscycleSearchPage.AsObject,
     newscycleBillingInfo?: ExecuteNewscycleBillingInfo.AsObject,
@@ -1624,6 +1672,14 @@ export namespace ExecuteFlow {
     EXPERIAN_BALANCEREQUEST = 2003,
     EXPERIAN_ACH_PAYMENT_REQUEST = 2004,
     EXPERIAN_ACH_PAYMENT_PLAN_REQUEST = 2005,
+    EXPERIAN_STELLA_CARD_ENTRY = 2006,
+    EXPERIAN_STELLA_ECHECK = 2007,
+    EXPERIAN_STELLA_CARD_DEVICE_TOKENIZATION = 2008,
+    EXPERIAN_STELLA_TOKEN_PAYMENT = 2009,
+    EXPERIAN_STELLA_ACH_TOKENIZATION = 2010,
+    EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN = 2011,
+    EXPERIAN_STELLA_PAYMENT_PLANS = 2012,
+    EXPERIAN_STELLA_AUTH = 2013,
     NEWSCYCLE_LOGIN = 2101,
     NEWSCYCLE_SEARCH_PAGE = 2102,
     NEWSCYCLE_BILLING_INFO = 2103,
@@ -3370,6 +3426,134 @@ export namespace ExecuteExperianAchPaymentPlanRequest {
   }
 }
 
+export class ExecuteExperianStellaCardEntry extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaCardEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaCardEntry): ExecuteExperianStellaCardEntry.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaCardEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaCardEntry;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaCardEntry, reader: jspb.BinaryReader): ExecuteExperianStellaCardEntry;
+}
+
+export namespace ExecuteExperianStellaCardEntry {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaECheck extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaECheck.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaECheck): ExecuteExperianStellaECheck.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaECheck, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaECheck;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaECheck, reader: jspb.BinaryReader): ExecuteExperianStellaECheck;
+}
+
+export namespace ExecuteExperianStellaECheck {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaCardDeviceTokenization extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaCardDeviceTokenization.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaCardDeviceTokenization): ExecuteExperianStellaCardDeviceTokenization.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaCardDeviceTokenization, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaCardDeviceTokenization;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaCardDeviceTokenization, reader: jspb.BinaryReader): ExecuteExperianStellaCardDeviceTokenization;
+}
+
+export namespace ExecuteExperianStellaCardDeviceTokenization {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaTokenPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaTokenPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaTokenPayment): ExecuteExperianStellaTokenPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaTokenPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaTokenPayment;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaTokenPayment, reader: jspb.BinaryReader): ExecuteExperianStellaTokenPayment;
+}
+
+export namespace ExecuteExperianStellaTokenPayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaAchTokenization extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaAchTokenization.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaAchTokenization): ExecuteExperianStellaAchTokenization.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaAchTokenization, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaAchTokenization;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaAchTokenization, reader: jspb.BinaryReader): ExecuteExperianStellaAchTokenization;
+}
+
+export namespace ExecuteExperianStellaAchTokenization {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaAddusaepaytoken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaAddusaepaytoken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaAddusaepaytoken): ExecuteExperianStellaAddusaepaytoken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaAddusaepaytoken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaAddusaepaytoken;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaAddusaepaytoken, reader: jspb.BinaryReader): ExecuteExperianStellaAddusaepaytoken;
+}
+
+export namespace ExecuteExperianStellaAddusaepaytoken {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaPaymentPlans extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaPaymentPlans.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaPaymentPlans): ExecuteExperianStellaPaymentPlans.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaPaymentPlans, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaPaymentPlans;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaPaymentPlans, reader: jspb.BinaryReader): ExecuteExperianStellaPaymentPlans;
+}
+
+export namespace ExecuteExperianStellaPaymentPlans {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaAuth extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaAuth.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaAuth): ExecuteExperianStellaAuth.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaAuth, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaAuth;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaAuth, reader: jspb.BinaryReader): ExecuteExperianStellaAuth;
+}
+
+export namespace ExecuteExperianStellaAuth {
+  export type AsObject = {
+  }
+}
+
 export class ExecuteNewscycleLogin extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteNewscycleLogin.AsObject;
@@ -4744,6 +4928,14 @@ export interface RequestMethodMap {
   REQUEST_METHOD_EXPERIAN_BALANCEREQUEST: 2003;
   REQUEST_METHOD_EXPERIAN_ACH_PAYMENT_REQUEST: 2004;
   REQUEST_METHOD_EXPERIAN_ACH_PAYMENTPLANREQUEST: 2005;
+  REQUEST_METHOD_EXPERIAN_STELLA_CARD_ENTRY: 2006;
+  REQUEST_METHOD_EXPERIAN_STELLA_ECHECK: 2007;
+  REQUEST_METHOD_EXPERIAN_STELLA_CARD_DEVICE_TOKENIZATION: 2008;
+  REQUEST_METHOD_EXPERIAN_STELLA_TOKEN_PAYMENT: 2009;
+  REQUEST_METHOD_EXPERIAN_STELLA_ACH_TOKENIZATION: 2010;
+  REQUEST_METHOD_EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN: 2011;
+  REQUEST_METHOD_EXPERIAN_STELLA_PAYMENT_PLANS: 2012;
+  REQUEST_METHOD_EXPERIAN_STELLA_AUTH: 2013;
   REQUEST_METHOD_NEWSCYCLE_LOGIN: 2101;
   REQUEST_METHOD_NEWSCYCLE_SEARCHPAGE: 2102;
   REQUEST_METHOD_NEWSCYCLE_BILLINGINFO: 2103;

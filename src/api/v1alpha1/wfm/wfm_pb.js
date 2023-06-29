@@ -44688,7 +44688,8 @@ proto.api.v1alpha1.wfm.CopyScenarioReq.toObject = function(includeInstance, msg)
     scenarioSidToCopy: jspb.Message.getFieldWithDefault(msg, 1, 0),
     includeInactive: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, "")
+    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    scheduleRange: (f = msg.getScheduleRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -44740,6 +44741,11 @@ proto.api.v1alpha1.wfm.CopyScenarioReq.deserializeBinaryFromReader = function(ms
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
+      break;
+    case 5:
+      var value = new api_commons_wfm_pb.DatetimeRange;
+      reader.readMessage(value,api_commons_wfm_pb.DatetimeRange.deserializeBinaryFromReader);
+      msg.setScheduleRange(value);
       break;
     default:
       reader.skipField();
@@ -44796,6 +44802,14 @@ proto.api.v1alpha1.wfm.CopyScenarioReq.serializeBinaryToWriter = function(messag
     writer.writeString(
       4,
       f
+    );
+  }
+  f = message.getScheduleRange();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
     );
   }
 };
@@ -44870,6 +44884,43 @@ proto.api.v1alpha1.wfm.CopyScenarioReq.prototype.getDescription = function() {
  */
 proto.api.v1alpha1.wfm.CopyScenarioReq.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional api.commons.DatetimeRange schedule_range = 5;
+ * @return {?proto.api.commons.DatetimeRange}
+ */
+proto.api.v1alpha1.wfm.CopyScenarioReq.prototype.getScheduleRange = function() {
+  return /** @type{?proto.api.commons.DatetimeRange} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.DatetimeRange, 5));
+};
+
+
+/**
+ * @param {?proto.api.commons.DatetimeRange|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.CopyScenarioReq} returns this
+*/
+proto.api.v1alpha1.wfm.CopyScenarioReq.prototype.setScheduleRange = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.CopyScenarioReq} returns this
+ */
+proto.api.v1alpha1.wfm.CopyScenarioReq.prototype.clearScheduleRange = function() {
+  return this.setScheduleRange(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.CopyScenarioReq.prototype.hasScheduleRange = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
