@@ -43,8 +43,8 @@ WorkflowsDefinitionService.DeleteFlowDefinitionById = {
   service: WorkflowsDefinitionService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionByIdRequest,
-  responseType: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionByIdResponse
+  requestType: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionRequest,
+  responseType: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionResponse
 };
 
 exports.WorkflowsDefinitionService = WorkflowsDefinitionService;

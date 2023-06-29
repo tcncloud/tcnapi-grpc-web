@@ -143,41 +143,41 @@ export namespace GetFlowDefinitionResponse {
   }
 }
 
-export class DeleteFlowDefinitionByIdRequest extends jspb.Message {
+export class DeleteFlowDefinitionRequest extends jspb.Message {
   getFlowDefinitionId(): string;
   setFlowDefinitionId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteFlowDefinitionByIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteFlowDefinitionByIdRequest): DeleteFlowDefinitionByIdRequest.AsObject;
+  toObject(includeInstance?: boolean): DeleteFlowDefinitionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteFlowDefinitionRequest): DeleteFlowDefinitionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DeleteFlowDefinitionByIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteFlowDefinitionByIdRequest;
-  static deserializeBinaryFromReader(message: DeleteFlowDefinitionByIdRequest, reader: jspb.BinaryReader): DeleteFlowDefinitionByIdRequest;
+  static serializeBinaryToWriter(message: DeleteFlowDefinitionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteFlowDefinitionRequest;
+  static deserializeBinaryFromReader(message: DeleteFlowDefinitionRequest, reader: jspb.BinaryReader): DeleteFlowDefinitionRequest;
 }
 
-export namespace DeleteFlowDefinitionByIdRequest {
+export namespace DeleteFlowDefinitionRequest {
   export type AsObject = {
     flowDefinitionId: string,
   }
 }
 
-export class DeleteFlowDefinitionByIdResponse extends jspb.Message {
+export class DeleteFlowDefinitionResponse extends jspb.Message {
   getResult(): boolean;
   setResult(value: boolean): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteFlowDefinitionByIdResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteFlowDefinitionByIdResponse): DeleteFlowDefinitionByIdResponse.AsObject;
+  toObject(includeInstance?: boolean): DeleteFlowDefinitionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteFlowDefinitionResponse): DeleteFlowDefinitionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DeleteFlowDefinitionByIdResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteFlowDefinitionByIdResponse;
-  static deserializeBinaryFromReader(message: DeleteFlowDefinitionByIdResponse, reader: jspb.BinaryReader): DeleteFlowDefinitionByIdResponse;
+  static serializeBinaryToWriter(message: DeleteFlowDefinitionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteFlowDefinitionResponse;
+  static deserializeBinaryFromReader(message: DeleteFlowDefinitionResponse, reader: jspb.BinaryReader): DeleteFlowDefinitionResponse;
 }
 
-export namespace DeleteFlowDefinitionByIdResponse {
+export namespace DeleteFlowDefinitionResponse {
   export type AsObject = {
     result: boolean,
   }
