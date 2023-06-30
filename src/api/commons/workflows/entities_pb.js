@@ -1,4 +1,4 @@
-// source: api/commons/workflows/flows.proto
+// source: api/commons/workflows/entities.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -199,6 +199,7 @@ proto.api.commons.workflows.FlowDefinition.toObject = function(includeInstance, 
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
     entryNodeId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    orgId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     nodesList: jspb.Message.toObjectList(msg.getNodesList(),
     api_commons_workflows_nodes_pb.NodeDefinition.toObject, includeInstance),
     errorNodeId: jspb.Message.getFieldWithDefault(msg, 11, "")
@@ -253,6 +254,10 @@ proto.api.commons.workflows.FlowDefinition.deserializeBinaryFromReader = functio
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setEntryNodeId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgId(value);
       break;
     case 10:
       var value = new api_commons_workflows_nodes_pb.NodeDefinition;
@@ -317,6 +322,13 @@ proto.api.commons.workflows.FlowDefinition.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getOrgId();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -407,6 +419,24 @@ proto.api.commons.workflows.FlowDefinition.prototype.getEntryNodeId = function()
  */
 proto.api.commons.workflows.FlowDefinition.prototype.setEntryNodeId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string org_id = 5;
+ * @return {string}
+ */
+proto.api.commons.workflows.FlowDefinition.prototype.getOrgId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.workflows.FlowDefinition} returns this
+ */
+proto.api.commons.workflows.FlowDefinition.prototype.setOrgId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
