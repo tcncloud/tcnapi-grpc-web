@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as api_commons_country_pb from "../../../api/commons/country_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as api_commons_org_organization_pb from "../../../api/commons/org/organization_pb";
+import * as api_commons_wfm_pb from "../../../api/commons/wfm_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class CreateOrganizationRequest extends jspb.Message {
@@ -711,6 +712,86 @@ export namespace ListArchivedOrganizationsResponse {
       addDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       lastScheduledDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
+  }
+}
+
+export class ListOrgSkillsReq extends jspb.Message {
+  clearTypeFiltersList(): void;
+  getTypeFiltersList(): Array<api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap]>;
+  setTypeFiltersList(value: Array<api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap]>): void;
+  addTypeFilters(value: api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap], index?: number): api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap];
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListOrgSkillsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListOrgSkillsReq): ListOrgSkillsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListOrgSkillsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListOrgSkillsReq;
+  static deserializeBinaryFromReader(message: ListOrgSkillsReq, reader: jspb.BinaryReader): ListOrgSkillsReq;
+}
+
+export namespace ListOrgSkillsReq {
+  export type AsObject = {
+    typeFiltersList: Array<api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap]>,
+  }
+}
+
+export class ListOrgSkillsRes extends jspb.Message {
+  clearSkillsList(): void;
+  getSkillsList(): Array<OrgSkill>;
+  setSkillsList(value: Array<OrgSkill>): void;
+  addSkills(value?: OrgSkill, index?: number): OrgSkill;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListOrgSkillsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListOrgSkillsRes): ListOrgSkillsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListOrgSkillsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListOrgSkillsRes;
+  static deserializeBinaryFromReader(message: ListOrgSkillsRes, reader: jspb.BinaryReader): ListOrgSkillsRes;
+}
+
+export namespace ListOrgSkillsRes {
+  export type AsObject = {
+    skillsList: Array<OrgSkill.AsObject>,
+  }
+}
+
+export class OrgSkill extends jspb.Message {
+  getRegion(): string;
+  setRegion(value: string): void;
+
+  getP3Id(): string;
+  setP3Id(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getType(): api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap];
+  setType(value: api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OrgSkill.AsObject;
+  static toObject(includeInstance: boolean, msg: OrgSkill): OrgSkill.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OrgSkill, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrgSkill;
+  static deserializeBinaryFromReader(message: OrgSkill, reader: jspb.BinaryReader): OrgSkill;
+}
+
+export namespace OrgSkill {
+  export type AsObject = {
+    region: string,
+    p3Id: string,
+    name: string,
+    description: string,
+    type: api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap],
   }
 }
 

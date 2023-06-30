@@ -1355,6 +1355,15 @@ type OrgRevokeUsersP3PermissionGroup = {
   readonly responseType: typeof api_v1alpha1_org_p3_permissions_pb.RevokeUsersP3PermissionGroupResponse;
 };
 
+type OrgListOrgSkills = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_organization_pb.ListOrgSkillsReq;
+  readonly responseType: typeof api_v1alpha1_org_organization_pb.ListOrgSkillsRes;
+};
+
 export class Org {
   static readonly serviceName: string;
   static readonly CreateOrganization: OrgCreateOrganization;
@@ -1506,6 +1515,7 @@ export class Org {
   static readonly DeleteP3PermissionGroup: OrgDeleteP3PermissionGroup;
   static readonly AssignUsersP3PermissionGroup: OrgAssignUsersP3PermissionGroup;
   static readonly RevokeUsersP3PermissionGroup: OrgRevokeUsersP3PermissionGroup;
+  static readonly ListOrgSkills: OrgListOrgSkills;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -2816,6 +2826,15 @@ export class OrgClient {
   revokeUsersP3PermissionGroup(
     requestMessage: api_v1alpha1_org_p3_permissions_pb.RevokeUsersP3PermissionGroupRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_p3_permissions_pb.RevokeUsersP3PermissionGroupResponse|null) => void
+  ): UnaryResponse;
+  listOrgSkills(
+    requestMessage: api_v1alpha1_org_organization_pb.ListOrgSkillsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_organization_pb.ListOrgSkillsRes|null) => void
+  ): UnaryResponse;
+  listOrgSkills(
+    requestMessage: api_v1alpha1_org_organization_pb.ListOrgSkillsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_organization_pb.ListOrgSkillsRes|null) => void
   ): UnaryResponse;
 }
 
