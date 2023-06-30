@@ -582,6 +582,15 @@ type OmniApiGetCannedMessageGroupById = {
   readonly responseType: typeof api_v0alpha_omniapi_pb.CannedMessageGroup;
 };
 
+type OmniApiListUserSkills = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.ListUserSkillsReq;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.ListUserSkillsRes;
+};
+
 export class OmniApi {
   static readonly serviceName: string;
   static readonly ArchiveCampaign: OmniApiArchiveCampaign;
@@ -648,6 +657,7 @@ export class OmniApi {
   static readonly DeleteCannedMessageGroup: OmniApiDeleteCannedMessageGroup;
   static readonly ListCannedMessagesByGroupId: OmniApiListCannedMessagesByGroupId;
   static readonly GetCannedMessageGroupById: OmniApiGetCannedMessageGroupById;
+  static readonly ListUserSkills: OmniApiListUserSkills;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1241,6 +1251,15 @@ export class OmniApiClient {
   getCannedMessageGroupById(
     requestMessage: api_v0alpha_omniapi_pb.GetCannedMessageGroupByIdReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CannedMessageGroup|null) => void
+  ): UnaryResponse;
+  listUserSkills(
+    requestMessage: api_v0alpha_omniapi_pb.ListUserSkillsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListUserSkillsRes|null) => void
+  ): UnaryResponse;
+  listUserSkills(
+    requestMessage: api_v0alpha_omniapi_pb.ListUserSkillsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListUserSkillsRes|null) => void
   ): UnaryResponse;
 }
 

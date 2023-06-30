@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as api_commons_omnichannel_pb from "../../api/commons/omnichannel_pb";
 import * as api_commons_types_pb from "../../api/commons/types_pb";
+import * as api_commons_wfm_pb from "../../api/commons/wfm_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
@@ -3218,6 +3219,86 @@ export class GetCannedMessageGroupByIdReq extends jspb.Message {
 export namespace GetCannedMessageGroupByIdReq {
   export type AsObject = {
     cannedMessageGroupId: string,
+  }
+}
+
+export class ListUserSkillsReq extends jspb.Message {
+  clearTypeFiltersList(): void;
+  getTypeFiltersList(): Array<api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap]>;
+  setTypeFiltersList(value: Array<api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap]>): void;
+  addTypeFilters(value: api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap], index?: number): api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap];
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListUserSkillsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUserSkillsReq): ListUserSkillsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListUserSkillsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUserSkillsReq;
+  static deserializeBinaryFromReader(message: ListUserSkillsReq, reader: jspb.BinaryReader): ListUserSkillsReq;
+}
+
+export namespace ListUserSkillsReq {
+  export type AsObject = {
+    typeFiltersList: Array<api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap]>,
+  }
+}
+
+export class ListUserSkillsRes extends jspb.Message {
+  clearSkillsList(): void;
+  getSkillsList(): Array<OmniSkill>;
+  setSkillsList(value: Array<OmniSkill>): void;
+  addSkills(value?: OmniSkill, index?: number): OmniSkill;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListUserSkillsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUserSkillsRes): ListUserSkillsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListUserSkillsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUserSkillsRes;
+  static deserializeBinaryFromReader(message: ListUserSkillsRes, reader: jspb.BinaryReader): ListUserSkillsRes;
+}
+
+export namespace ListUserSkillsRes {
+  export type AsObject = {
+    skillsList: Array<OmniSkill.AsObject>,
+  }
+}
+
+export class OmniSkill extends jspb.Message {
+  getRegion(): string;
+  setRegion(value: string): void;
+
+  getP3Id(): string;
+  setP3Id(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getType(): api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap];
+  setType(value: api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniSkill.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniSkill): OmniSkill.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniSkill, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniSkill;
+  static deserializeBinaryFromReader(message: OmniSkill, reader: jspb.BinaryReader): OmniSkill;
+}
+
+export namespace OmniSkill {
+  export type AsObject = {
+    region: string,
+    p3Id: string,
+    name: string,
+    description: string,
+    type: api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap],
   }
 }
 
