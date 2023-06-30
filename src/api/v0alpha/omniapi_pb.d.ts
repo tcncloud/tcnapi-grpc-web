@@ -3246,9 +3246,9 @@ export namespace ListUserSkillsReq {
 
 export class ListUserSkillsRes extends jspb.Message {
   clearSkillsList(): void;
-  getSkillsList(): Array<OmniSkill>;
-  setSkillsList(value: Array<OmniSkill>): void;
-  addSkills(value?: OmniSkill, index?: number): OmniSkill;
+  getSkillsList(): Array<UserSkill>;
+  setSkillsList(value: Array<UserSkill>): void;
+  addSkills(value?: UserSkill, index?: number): UserSkill;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUserSkillsRes.AsObject;
@@ -3262,11 +3262,11 @@ export class ListUserSkillsRes extends jspb.Message {
 
 export namespace ListUserSkillsRes {
   export type AsObject = {
-    skillsList: Array<OmniSkill.AsObject>,
+    skillsList: Array<UserSkill.AsObject>,
   }
 }
 
-export class OmniSkill extends jspb.Message {
+export class UserSkill extends jspb.Message {
   getRegion(): string;
   setRegion(value: string): void;
 
@@ -3283,16 +3283,16 @@ export class OmniSkill extends jspb.Message {
   setType(value: api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap]): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OmniSkill.AsObject;
-  static toObject(includeInstance: boolean, msg: OmniSkill): OmniSkill.AsObject;
+  toObject(includeInstance?: boolean): UserSkill.AsObject;
+  static toObject(includeInstance: boolean, msg: UserSkill): UserSkill.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OmniSkill, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OmniSkill;
-  static deserializeBinaryFromReader(message: OmniSkill, reader: jspb.BinaryReader): OmniSkill;
+  static serializeBinaryToWriter(message: UserSkill, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserSkill;
+  static deserializeBinaryFromReader(message: UserSkill, reader: jspb.BinaryReader): UserSkill;
 }
 
-export namespace OmniSkill {
+export namespace UserSkill {
   export type AsObject = {
     region: string,
     p3Id: string,
