@@ -44289,8 +44289,7 @@ proto.api.v1alpha1.wfm.ScheduleScenario.toObject = function(includeInstance, msg
     createdByUserId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     isDefault: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     copiedFromScenarioSid: (f = msg.getCopiedFromScenarioSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    scheduleRange: (f = msg.getScheduleRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
-    datetimeSetToInactive: (f = msg.getDatetimeSetToInactive()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    scheduleRange: (f = msg.getScheduleRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -44361,11 +44360,6 @@ proto.api.v1alpha1.wfm.ScheduleScenario.deserializeBinaryFromReader = function(m
       var value = new api_commons_wfm_pb.DatetimeRange;
       reader.readMessage(value,api_commons_wfm_pb.DatetimeRange.deserializeBinaryFromReader);
       msg.setScheduleRange(value);
-      break;
-    case 9:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setDatetimeSetToInactive(value);
       break;
     default:
       reader.skipField();
@@ -44453,14 +44447,6 @@ proto.api.v1alpha1.wfm.ScheduleScenario.serializeBinaryToWriter = function(messa
       8,
       f,
       api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
-    );
-  }
-  f = message.getDatetimeSetToInactive();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -44664,43 +44650,6 @@ proto.api.v1alpha1.wfm.ScheduleScenario.prototype.clearScheduleRange = function(
  */
 proto.api.v1alpha1.wfm.ScheduleScenario.prototype.hasScheduleRange = function() {
   return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional google.protobuf.Timestamp datetime_set_to_inactive = 9;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.api.v1alpha1.wfm.ScheduleScenario.prototype.getDatetimeSetToInactive = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.v1alpha1.wfm.ScheduleScenario} returns this
-*/
-proto.api.v1alpha1.wfm.ScheduleScenario.prototype.setDatetimeSetToInactive = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.wfm.ScheduleScenario} returns this
- */
-proto.api.v1alpha1.wfm.ScheduleScenario.prototype.clearDatetimeSetToInactive = function() {
-  return this.setDatetimeSetToInactive(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v1alpha1.wfm.ScheduleScenario.prototype.hasDatetimeSetToInactive = function() {
-  return jspb.Message.getField(this, 9) != null;
 };
 
 
