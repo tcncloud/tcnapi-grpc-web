@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_workflows_example_pb from "../../../api/commons/workflows/example_pb";
 import * as api_commons_workflows_omni_pb from "../../../api/commons/workflows/omni_pb";
+import * as api_commons_workflows_omni_bot_pb from "../../../api/commons/workflows/omni_bot_pb";
 
 export class NodeDefinition extends jspb.Message {
   getId(): string;
@@ -73,6 +74,21 @@ export class NodeDefinition extends jspb.Message {
   getOmniError(): api_commons_workflows_omni_pb.OmniNodeError | undefined;
   setOmniError(value?: api_commons_workflows_omni_pb.OmniNodeError): void;
 
+  hasOmniBotTestStart(): boolean;
+  clearOmniBotTestStart(): void;
+  getOmniBotTestStart(): api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart | undefined;
+  setOmniBotTestStart(value?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart): void;
+
+  hasOmniBotTestStep(): boolean;
+  clearOmniBotTestStep(): void;
+  getOmniBotTestStep(): api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep | undefined;
+  setOmniBotTestStep(value?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep): void;
+
+  hasOmniBotTestEnd(): boolean;
+  clearOmniBotTestEnd(): void;
+  getOmniBotTestEnd(): api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd | undefined;
+  setOmniBotTestEnd(value?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd): void;
+
   getDefinitionCase(): NodeDefinition.DefinitionCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NodeDefinition.AsObject;
@@ -101,6 +117,9 @@ export namespace NodeDefinition {
     omniSetSkill?: api_commons_workflows_omni_pb.OmniNodeSetSkill.AsObject,
     omniToAgent?: api_commons_workflows_omni_pb.OmniNodeToAgent.AsObject,
     omniError?: api_commons_workflows_omni_pb.OmniNodeError.AsObject,
+    omniBotTestStart?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart.AsObject,
+    omniBotTestStep?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep.AsObject,
+    omniBotTestEnd?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.AsObject,
   }
 
   export enum DefinitionCase {
@@ -115,6 +134,9 @@ export namespace NodeDefinition {
     OMNI_SET_SKILL = 202,
     OMNI_TO_AGENT = 203,
     OMNI_ERROR = 204,
+    OMNI_BOT_TEST_START = 301,
+    OMNI_BOT_TEST_STEP = 302,
+    OMNI_BOT_TEST_END = 303,
   }
 }
 
