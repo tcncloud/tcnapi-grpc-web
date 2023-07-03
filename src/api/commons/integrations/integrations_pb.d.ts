@@ -1402,6 +1402,16 @@ export class ExecuteFlow extends jspb.Message {
   getPoscorpUpdatePaymentStatus(): ExecutePoscorpUpdatePaymentStatus | undefined;
   setPoscorpUpdatePaymentStatus(value?: ExecutePoscorpUpdatePaymentStatus): void;
 
+  hasPianoGetUser(): boolean;
+  clearPianoGetUser(): void;
+  getPianoGetUser(): ExecutePianoGetUser | undefined;
+  setPianoGetUser(value?: ExecutePianoGetUser): void;
+
+  hasPianoUpdateUser(): boolean;
+  clearPianoUpdateUser(): void;
+  getPianoUpdateUser(): ExecutePianoUpdateUser | undefined;
+  setPianoUpdateUser(value?: ExecutePianoUpdateUser): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -1585,6 +1595,8 @@ export namespace ExecuteFlow {
     poscorpAccesstoken?: ExecutePoscorpAccesstoken.AsObject,
     poscorpLookupGuarantor?: ExecutePoscorpLookupGuarantor.AsObject,
     poscorpUpdatePaymentStatus?: ExecutePoscorpUpdatePaymentStatus.AsObject,
+    pianoGetUser?: ExecutePianoGetUser.AsObject,
+    pianoUpdateUser?: ExecutePianoUpdateUser.AsObject,
   }
 
   export enum ValueCase {
@@ -1758,6 +1770,8 @@ export namespace ExecuteFlow {
     POSCORP_ACCESSTOKEN = 3501,
     POSCORP_LOOKUP_GUARANTOR = 3502,
     POSCORP_UPDATE_PAYMENT_STATUS = 3503,
+    PIANO_GET_USER = 3601,
+    PIANO_UPDATE_USER = 3602,
   }
 }
 
@@ -4802,6 +4816,38 @@ export namespace ExecutePoscorpUpdatePaymentStatus {
   }
 }
 
+export class ExecutePianoGetUser extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePianoGetUser.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePianoGetUser): ExecutePianoGetUser.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePianoGetUser, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePianoGetUser;
+  static deserializeBinaryFromReader(message: ExecutePianoGetUser, reader: jspb.BinaryReader): ExecutePianoGetUser;
+}
+
+export namespace ExecutePianoGetUser {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePianoUpdateUser extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePianoUpdateUser.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePianoUpdateUser): ExecutePianoUpdateUser.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePianoUpdateUser, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePianoUpdateUser;
+  static deserializeBinaryFromReader(message: ExecutePianoUpdateUser, reader: jspb.BinaryReader): ExecutePianoUpdateUser;
+}
+
+export namespace ExecutePianoUpdateUser {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -4839,6 +4885,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_OPAYO: 3300;
   INTEGRATION_TYPE_SHIFT4: 3400;
   INTEGRATION_TYPE_POSCORP: 3500;
+  INTEGRATION_TYPE_PIANO: 3600;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -5014,6 +5061,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_POSCORP_ACCESSTOKEN: 3501;
   REQUEST_METHOD_POSCORP_LOOKUP_GUARANTOR: 3502;
   REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS: 3503;
+  REQUEST_METHOD_PIANO_GET_USER: 3601;
+  REQUEST_METHOD_PIANO_UPDATE_USER: 3602;
 }
 
 export const RequestMethod: RequestMethodMap;

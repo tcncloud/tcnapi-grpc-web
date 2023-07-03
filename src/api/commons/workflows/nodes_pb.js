@@ -25,6 +25,8 @@ var api_commons_workflows_example_pb = require('../../../api/commons/workflows/e
 goog.object.extend(proto, api_commons_workflows_example_pb);
 var api_commons_workflows_omni_pb = require('../../../api/commons/workflows/omni_pb.js');
 goog.object.extend(proto, api_commons_workflows_omni_pb);
+var api_commons_workflows_omni_bot_pb = require('../../../api/commons/workflows/omni_bot_pb.js');
+goog.object.extend(proto, api_commons_workflows_omni_bot_pb);
 goog.exportSymbol('proto.api.commons.workflows.NodeDefinition', null, global);
 goog.exportSymbol('proto.api.commons.workflows.NodeDefinition.DefinitionCase', null, global);
 /**
@@ -64,7 +66,7 @@ proto.api.commons.workflows.NodeDefinition.repeatedFields_ = [5];
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.workflows.NodeDefinition.oneofGroups_ = [[101,102,103,104,105,1000,201,202,203,204]];
+proto.api.commons.workflows.NodeDefinition.oneofGroups_ = [[101,102,103,104,105,1000,201,202,203,204,301,302,303]];
 
 /**
  * @enum {number}
@@ -80,7 +82,10 @@ proto.api.commons.workflows.NodeDefinition.DefinitionCase = {
   OMNI_PROMPT: 201,
   OMNI_SET_SKILL: 202,
   OMNI_TO_AGENT: 203,
-  OMNI_ERROR: 204
+  OMNI_ERROR: 204,
+  OMNI_BOT_TEST_START: 301,
+  OMNI_BOT_TEST_STEP: 302,
+  OMNI_BOT_TEST_END: 303
 };
 
 /**
@@ -135,7 +140,10 @@ proto.api.commons.workflows.NodeDefinition.toObject = function(includeInstance, 
     omniPrompt: (f = msg.getOmniPrompt()) && api_commons_workflows_omni_pb.OmniNodePrompt.toObject(includeInstance, f),
     omniSetSkill: (f = msg.getOmniSetSkill()) && api_commons_workflows_omni_pb.OmniNodeSetSkill.toObject(includeInstance, f),
     omniToAgent: (f = msg.getOmniToAgent()) && api_commons_workflows_omni_pb.OmniNodeToAgent.toObject(includeInstance, f),
-    omniError: (f = msg.getOmniError()) && api_commons_workflows_omni_pb.OmniNodeError.toObject(includeInstance, f)
+    omniError: (f = msg.getOmniError()) && api_commons_workflows_omni_pb.OmniNodeError.toObject(includeInstance, f),
+    omniBotTestStart: (f = msg.getOmniBotTestStart()) && api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart.toObject(includeInstance, f),
+    omniBotTestStep: (f = msg.getOmniBotTestStep()) && api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep.toObject(includeInstance, f),
+    omniBotTestEnd: (f = msg.getOmniBotTestEnd()) && api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -241,6 +249,21 @@ proto.api.commons.workflows.NodeDefinition.deserializeBinaryFromReader = functio
       var value = new api_commons_workflows_omni_pb.OmniNodeError;
       reader.readMessage(value,api_commons_workflows_omni_pb.OmniNodeError.deserializeBinaryFromReader);
       msg.setOmniError(value);
+      break;
+    case 301:
+      var value = new api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart;
+      reader.readMessage(value,api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart.deserializeBinaryFromReader);
+      msg.setOmniBotTestStart(value);
+      break;
+    case 302:
+      var value = new api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep;
+      reader.readMessage(value,api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep.deserializeBinaryFromReader);
+      msg.setOmniBotTestStep(value);
+      break;
+    case 303:
+      var value = new api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd;
+      reader.readMessage(value,api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.deserializeBinaryFromReader);
+      msg.setOmniBotTestEnd(value);
       break;
     default:
       reader.skipField();
@@ -384,6 +407,30 @@ proto.api.commons.workflows.NodeDefinition.serializeBinaryToWriter = function(me
       204,
       f,
       api_commons_workflows_omni_pb.OmniNodeError.serializeBinaryToWriter
+    );
+  }
+  f = message.getOmniBotTestStart();
+  if (f != null) {
+    writer.writeMessage(
+      301,
+      f,
+      api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart.serializeBinaryToWriter
+    );
+  }
+  f = message.getOmniBotTestStep();
+  if (f != null) {
+    writer.writeMessage(
+      302,
+      f,
+      api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep.serializeBinaryToWriter
+    );
+  }
+  f = message.getOmniBotTestEnd();
+  if (f != null) {
+    writer.writeMessage(
+      303,
+      f,
+      api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.serializeBinaryToWriter
     );
   }
 };
@@ -865,6 +912,117 @@ proto.api.commons.workflows.NodeDefinition.prototype.clearOmniError = function()
  */
 proto.api.commons.workflows.NodeDefinition.prototype.hasOmniError = function() {
   return jspb.Message.getField(this, 204) != null;
+};
+
+
+/**
+ * optional OmniBotNodeTestStart omni_bot_test_start = 301;
+ * @return {?proto.api.commons.workflows.OmniBotNodeTestStart}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.getOmniBotTestStart = function() {
+  return /** @type{?proto.api.commons.workflows.OmniBotNodeTestStart} */ (
+    jspb.Message.getWrapperField(this, api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart, 301));
+};
+
+
+/**
+ * @param {?proto.api.commons.workflows.OmniBotNodeTestStart|undefined} value
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+*/
+proto.api.commons.workflows.NodeDefinition.prototype.setOmniBotTestStart = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 301, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.clearOmniBotTestStart = function() {
+  return this.setOmniBotTestStart(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.hasOmniBotTestStart = function() {
+  return jspb.Message.getField(this, 301) != null;
+};
+
+
+/**
+ * optional OmniBotNodeTestStep omni_bot_test_step = 302;
+ * @return {?proto.api.commons.workflows.OmniBotNodeTestStep}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.getOmniBotTestStep = function() {
+  return /** @type{?proto.api.commons.workflows.OmniBotNodeTestStep} */ (
+    jspb.Message.getWrapperField(this, api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep, 302));
+};
+
+
+/**
+ * @param {?proto.api.commons.workflows.OmniBotNodeTestStep|undefined} value
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+*/
+proto.api.commons.workflows.NodeDefinition.prototype.setOmniBotTestStep = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 302, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.clearOmniBotTestStep = function() {
+  return this.setOmniBotTestStep(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.hasOmniBotTestStep = function() {
+  return jspb.Message.getField(this, 302) != null;
+};
+
+
+/**
+ * optional OmniBotNodeTestEnd omni_bot_test_end = 303;
+ * @return {?proto.api.commons.workflows.OmniBotNodeTestEnd}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.getOmniBotTestEnd = function() {
+  return /** @type{?proto.api.commons.workflows.OmniBotNodeTestEnd} */ (
+    jspb.Message.getWrapperField(this, api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd, 303));
+};
+
+
+/**
+ * @param {?proto.api.commons.workflows.OmniBotNodeTestEnd|undefined} value
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+*/
+proto.api.commons.workflows.NodeDefinition.prototype.setOmniBotTestEnd = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 303, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.workflows.NodeDefinition} returns this
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.clearOmniBotTestEnd = function() {
+  return this.setOmniBotTestEnd(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.workflows.NodeDefinition.prototype.hasOmniBotTestEnd = function() {
+  return jspb.Message.getField(this, 303) != null;
 };
 
 
