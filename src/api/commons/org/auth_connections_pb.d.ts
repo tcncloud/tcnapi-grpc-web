@@ -5,6 +5,15 @@ import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class AuthConnectionSettings extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getType(): ConnectionTypeMap[keyof ConnectionTypeMap];
+  setType(value: ConnectionTypeMap[keyof ConnectionTypeMap]): void;
+
   getIssuerUrl(): string;
   setIssuerUrl(value: string): void;
 
@@ -44,6 +53,9 @@ export class AuthConnectionSettings extends jspb.Message {
 
 export namespace AuthConnectionSettings {
   export type AsObject = {
+    orgId: string,
+    name: string,
+    type: ConnectionTypeMap[keyof ConnectionTypeMap],
     issuerUrl: string,
     tenantUrl: string,
     clientId: string,
@@ -113,4 +125,11 @@ export namespace GroupItem {
     permissionGroupIdsList: Array<string>,
   }
 }
+
+export interface ConnectionTypeMap {
+  CONNECTION_TYPE_NONE: 0;
+  CONNECTION_TYPE_OIDC: 1;
+}
+
+export const ConnectionType: ConnectionTypeMap;
 
