@@ -21,9 +21,8 @@ export const Interval: IntervalMap;
 
 export interface LanguageMap {
   LANGUAGE_ENGLISH: 0;
-  LANGUAGE_AUTO_DETECT: 1;
-  LANGUAGE_SPANISH: 2;
-  LANGUAGE_ROMANIAN: 3;
+  LANGUAGE_SPANISH: 1;
+  LANGUAGE_ROMANIAN: 2;
 }
 
 export const Language: LanguageMap;
