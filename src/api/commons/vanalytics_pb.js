@@ -22,6 +22,7 @@ var global =
     Function('return this')();
 
 goog.exportSymbol('proto.api.commons.Interval', null, global);
+goog.exportSymbol('proto.api.commons.Language', null, global);
 /**
  * @enum {number}
  */
@@ -37,6 +38,16 @@ proto.api.commons.Interval = {
   LAST_60_DAYS: 8,
   LAST_90_DAYS: 9,
   LAST_180_DAYS: 10
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.Language = {
+  LANGUAGE_ENGLISH: 0,
+  LANGUAGE_AUTO_DETECT: 1,
+  LANGUAGE_SPANISH: 2,
+  LANGUAGE_ROMANIAN: 3
 };
 
 goog.object.extend(exports, proto.api.commons);
