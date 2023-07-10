@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_tickets_pb from "../../../api/commons/tickets_pb";
+import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class PingReq extends jspb.Message {
@@ -146,6 +147,58 @@ export namespace EditTicketReq {
   export type AsObject = {
     ticketSid: string,
     editValue?: api_commons_tickets_pb.EditAttribute.AsObject,
+  }
+}
+
+export class EditMaskTicketReq extends jspb.Message {
+  getTicketSid(): string;
+  setTicketSid(value: string): void;
+
+  hasEditValue(): boolean;
+  clearEditValue(): void;
+  getEditValue(): api_commons_tickets_pb.Ticket | undefined;
+  setEditValue(value?: api_commons_tickets_pb.Ticket): void;
+
+  clearEditedFieldsMaskList(): void;
+  getEditedFieldsMaskList(): Array<google_protobuf_field_mask_pb.FieldMask>;
+  setEditedFieldsMaskList(value: Array<google_protobuf_field_mask_pb.FieldMask>): void;
+  addEditedFieldsMask(value?: google_protobuf_field_mask_pb.FieldMask, index?: number): google_protobuf_field_mask_pb.FieldMask;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EditMaskTicketReq.AsObject;
+  static toObject(includeInstance: boolean, msg: EditMaskTicketReq): EditMaskTicketReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EditMaskTicketReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EditMaskTicketReq;
+  static deserializeBinaryFromReader(message: EditMaskTicketReq, reader: jspb.BinaryReader): EditMaskTicketReq;
+}
+
+export namespace EditMaskTicketReq {
+  export type AsObject = {
+    ticketSid: string,
+    editValue?: api_commons_tickets_pb.Ticket.AsObject,
+    editedFieldsMaskList: Array<google_protobuf_field_mask_pb.FieldMask.AsObject>,
+  }
+}
+
+export class EditMaskTicketRes extends jspb.Message {
+  getIsEdited(): boolean;
+  setIsEdited(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EditMaskTicketRes.AsObject;
+  static toObject(includeInstance: boolean, msg: EditMaskTicketRes): EditMaskTicketRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EditMaskTicketRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EditMaskTicketRes;
+  static deserializeBinaryFromReader(message: EditMaskTicketRes, reader: jspb.BinaryReader): EditMaskTicketRes;
+}
+
+export namespace EditMaskTicketRes {
+  export type AsObject = {
+    isEdited: boolean,
   }
 }
 

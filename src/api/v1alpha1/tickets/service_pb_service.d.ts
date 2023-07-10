@@ -150,6 +150,15 @@ type TicketsAssignSelf = {
   readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.CreateSelfAssignRes;
 };
 
+type TicketsEditMaskTicket = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.EditMaskTicketReq;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.EditMaskTicketRes;
+};
+
 export class Tickets {
   static readonly serviceName: string;
   static readonly CreateTicket: TicketsCreateTicket;
@@ -168,6 +177,7 @@ export class Tickets {
   static readonly ReplyComment: TicketsReplyComment;
   static readonly ListTicketAuditLog: TicketsListTicketAuditLog;
   static readonly AssignSelf: TicketsAssignSelf;
+  static readonly EditMaskTicket: TicketsEditMaskTicket;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -345,6 +355,15 @@ export class TicketsClient {
   assignSelf(
     requestMessage: api_v1alpha1_tickets_ticket_pb.CreateSelfAssignReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.CreateSelfAssignRes|null) => void
+  ): UnaryResponse;
+  editMaskTicket(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.EditMaskTicketReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.EditMaskTicketRes|null) => void
+  ): UnaryResponse;
+  editMaskTicket(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.EditMaskTicketReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.EditMaskTicketRes|null) => void
   ): UnaryResponse;
 }
 
