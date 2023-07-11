@@ -113,6 +113,24 @@ type LMSListAvailableFieldsByElementId = {
   readonly responseType: typeof api_v0alpha_lms_pb.ProcessFields;
 };
 
+type LMSListFieldsForElement = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.ListFieldsForElementReq;
+  readonly responseType: typeof api_v0alpha_lms_pb.ListFieldsForElementRes;
+};
+
+type LMSListAutocompleteFields = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.ListAutocompleteFieldsReq;
+  readonly responseType: typeof api_v0alpha_lms_pb.ListAutocompleteFieldsRes;
+};
+
 type LMSListCampaignLinks = {
   readonly methodName: string;
   readonly service: typeof LMS;
@@ -469,6 +487,8 @@ export class LMS {
   static readonly UpdateField: LMSUpdateField;
   static readonly DeleteField: LMSDeleteField;
   static readonly ListAvailableFieldsByElementId: LMSListAvailableFieldsByElementId;
+  static readonly ListFieldsForElement: LMSListFieldsForElement;
+  static readonly ListAutocompleteFields: LMSListAutocompleteFields;
   static readonly ListCampaignLinks: LMSListCampaignLinks;
   static readonly PeekList: LMSPeekList;
   static readonly GetHistory: LMSGetHistory;
@@ -640,6 +660,24 @@ export class LMSClient {
   listAvailableFieldsByElementId(
     requestMessage: api_v0alpha_lms_pb.ListAvailableFieldsByElementIdReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ProcessFields|null) => void
+  ): UnaryResponse;
+  listFieldsForElement(
+    requestMessage: api_v0alpha_lms_pb.ListFieldsForElementReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ListFieldsForElementRes|null) => void
+  ): UnaryResponse;
+  listFieldsForElement(
+    requestMessage: api_v0alpha_lms_pb.ListFieldsForElementReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ListFieldsForElementRes|null) => void
+  ): UnaryResponse;
+  listAutocompleteFields(
+    requestMessage: api_v0alpha_lms_pb.ListAutocompleteFieldsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ListAutocompleteFieldsRes|null) => void
+  ): UnaryResponse;
+  listAutocompleteFields(
+    requestMessage: api_v0alpha_lms_pb.ListAutocompleteFieldsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ListAutocompleteFieldsRes|null) => void
   ): UnaryResponse;
   listCampaignLinks(
     requestMessage: google_protobuf_empty_pb.Empty,

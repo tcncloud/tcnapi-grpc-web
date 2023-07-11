@@ -32,15 +32,6 @@ export class AuthConnectionSettings extends jspb.Message {
   setCustomGroupsList(value: Array<GroupItem>): void;
   addCustomGroups(value?: GroupItem, index?: number): GroupItem;
 
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getType(): ConnectionTypeMap[keyof ConnectionTypeMap];
-  setType(value: ConnectionTypeMap[keyof ConnectionTypeMap]): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuthConnectionSettings.AsObject;
   static toObject(includeInstance: boolean, msg: AuthConnectionSettings): AuthConnectionSettings.AsObject;
@@ -60,9 +51,6 @@ export namespace AuthConnectionSettings {
     secretExpiration?: AuthConnectionSettings.SecretExpiration.AsObject,
     defaultGroup?: GroupItem.AsObject,
     customGroupsList: Array<GroupItem.AsObject>,
-    orgId: string,
-    name: string,
-    type: ConnectionTypeMap[keyof ConnectionTypeMap],
   }
 
   export class SecretExpiration extends jspb.Message {
@@ -125,11 +113,4 @@ export namespace GroupItem {
     permissionGroupIdsList: Array<string>,
   }
 }
-
-export interface ConnectionTypeMap {
-  CONNECTION_TYPE_NONE: 0;
-  CONNECTION_TYPE_OIDC: 1;
-}
-
-export const ConnectionType: ConnectionTypeMap;
 

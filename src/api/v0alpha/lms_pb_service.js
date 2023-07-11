@@ -119,6 +119,24 @@ LMS.ListAvailableFieldsByElementId = {
   responseType: api_v0alpha_lms_pb.ProcessFields
 };
 
+LMS.ListFieldsForElement = {
+  methodName: "ListFieldsForElement",
+  service: LMS,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.ListFieldsForElementReq,
+  responseType: api_v0alpha_lms_pb.ListFieldsForElementRes
+};
+
+LMS.ListAutocompleteFields = {
+  methodName: "ListAutocompleteFields",
+  service: LMS,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.ListAutocompleteFieldsReq,
+  responseType: api_v0alpha_lms_pb.ListAutocompleteFieldsRes
+};
+
 LMS.ListCampaignLinks = {
   methodName: "ListCampaignLinks",
   service: LMS,
@@ -822,6 +840,68 @@ LMSClient.prototype.listAvailableFieldsByElementId = function listAvailableField
     callback = arguments[1];
   }
   var client = grpc.unary(LMS.ListAvailableFieldsByElementId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.listFieldsForElement = function listFieldsForElement(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LMS.ListFieldsForElement, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.listAutocompleteFields = function listAutocompleteFields(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LMS.ListAutocompleteFields, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
