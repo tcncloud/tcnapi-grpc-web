@@ -6378,6 +6378,9 @@ export class DraftSchedule extends jspb.Message {
   setPerformanceMetricsList(value: Array<PerformanceMetric>): void;
   addPerformanceMetrics(value?: PerformanceMetric, index?: number): PerformanceMetric;
 
+  getScheduleScenarioSid(): number;
+  setScheduleScenarioSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DraftSchedule.AsObject;
   static toObject(includeInstance: boolean, msg: DraftSchedule): DraftSchedule.AsObject;
@@ -6399,6 +6402,7 @@ export namespace DraftSchedule {
     createdByUserId: string,
     shiftInstancesList: Array<ShiftInstance.AsObject>,
     performanceMetricsList: Array<PerformanceMetric.AsObject>,
+    scheduleScenarioSid: number,
   }
 }
 

@@ -50954,7 +50954,8 @@ proto.api.v1alpha1.wfm.DraftSchedule.toObject = function(includeInstance, msg) {
     shiftInstancesList: jspb.Message.toObjectList(msg.getShiftInstancesList(),
     proto.api.v1alpha1.wfm.ShiftInstance.toObject, includeInstance),
     performanceMetricsList: jspb.Message.toObjectList(msg.getPerformanceMetricsList(),
-    proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance)
+    proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance),
+    scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -51031,6 +51032,10 @@ proto.api.v1alpha1.wfm.DraftSchedule.deserializeBinaryFromReader = function(msg,
       var value = new proto.api.v1alpha1.wfm.PerformanceMetric;
       reader.readMessage(value,proto.api.v1alpha1.wfm.PerformanceMetric.deserializeBinaryFromReader);
       msg.addPerformanceMetrics(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setScheduleScenarioSid(value);
       break;
     default:
       reader.skipField();
@@ -51127,6 +51132,13 @@ proto.api.v1alpha1.wfm.DraftSchedule.serializeBinaryToWriter = function(message,
       9,
       f,
       proto.api.v1alpha1.wfm.PerformanceMetric.serializeBinaryToWriter
+    );
+  }
+  f = message.getScheduleScenarioSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      10,
+      f
     );
   }
 };
@@ -51388,6 +51400,24 @@ proto.api.v1alpha1.wfm.DraftSchedule.prototype.addPerformanceMetrics = function(
  */
 proto.api.v1alpha1.wfm.DraftSchedule.prototype.clearPerformanceMetricsList = function() {
   return this.setPerformanceMetricsList([]);
+};
+
+
+/**
+ * optional int64 schedule_scenario_sid = 10;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.DraftSchedule.prototype.getScheduleScenarioSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.DraftSchedule} returns this
+ */
+proto.api.v1alpha1.wfm.DraftSchedule.prototype.setScheduleScenarioSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
