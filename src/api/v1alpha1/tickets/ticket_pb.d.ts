@@ -202,6 +202,44 @@ export namespace EditMaskTicketRes {
   }
 }
 
+export class ListAllocatedTicketRes extends jspb.Message {
+  clearTicketSidList(): void;
+  getTicketSidList(): Array<string>;
+  setTicketSidList(value: Array<string>): void;
+  addTicketSid(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAllocatedTicketRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAllocatedTicketRes): ListAllocatedTicketRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAllocatedTicketRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAllocatedTicketRes;
+  static deserializeBinaryFromReader(message: ListAllocatedTicketRes, reader: jspb.BinaryReader): ListAllocatedTicketRes;
+}
+
+export namespace ListAllocatedTicketRes {
+  export type AsObject = {
+    ticketSidList: Array<string>,
+  }
+}
+
+export class ListAllocatedTicketReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAllocatedTicketReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAllocatedTicketReq): ListAllocatedTicketReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAllocatedTicketReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAllocatedTicketReq;
+  static deserializeBinaryFromReader(message: ListAllocatedTicketReq, reader: jspb.BinaryReader): ListAllocatedTicketReq;
+}
+
+export namespace ListAllocatedTicketReq {
+  export type AsObject = {
+  }
+}
+
 export class EditTicketRes extends jspb.Message {
   getIsEdited(): boolean;
   setIsEdited(value: boolean): void;

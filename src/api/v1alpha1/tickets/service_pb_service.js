@@ -165,6 +165,15 @@ Tickets.EditMaskTicket = {
   responseType: api_v1alpha1_tickets_ticket_pb.EditMaskTicketRes
 };
 
+Tickets.ListAllocatedTickets = {
+  methodName: "ListAllocatedTickets",
+  service: Tickets,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_tickets_ticket_pb.ListAllocatedTicketReq,
+  responseType: api_v1alpha1_tickets_ticket_pb.ListAllocatedTicketRes
+};
+
 exports.Tickets = Tickets;
 
 function TicketsClient(serviceHost, options) {
@@ -673,6 +682,37 @@ TicketsClient.prototype.editMaskTicket = function editMaskTicket(requestMessage,
     callback = arguments[1];
   }
   var client = grpc.unary(Tickets.EditMaskTicket, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TicketsClient.prototype.listAllocatedTickets = function listAllocatedTickets(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Tickets.ListAllocatedTickets, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
