@@ -5,15 +5,6 @@ import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class AuthConnectionSettings extends jspb.Message {
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getType(): ConnectionTypeMap[keyof ConnectionTypeMap];
-  setType(value: ConnectionTypeMap[keyof ConnectionTypeMap]): void;
-
   getIssuerUrl(): string;
   setIssuerUrl(value: string): void;
 
@@ -41,6 +32,15 @@ export class AuthConnectionSettings extends jspb.Message {
   setCustomGroupsList(value: Array<GroupItem>): void;
   addCustomGroups(value?: GroupItem, index?: number): GroupItem;
 
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getType(): ConnectionTypeMap[keyof ConnectionTypeMap];
+  setType(value: ConnectionTypeMap[keyof ConnectionTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuthConnectionSettings.AsObject;
   static toObject(includeInstance: boolean, msg: AuthConnectionSettings): AuthConnectionSettings.AsObject;
@@ -53,9 +53,6 @@ export class AuthConnectionSettings extends jspb.Message {
 
 export namespace AuthConnectionSettings {
   export type AsObject = {
-    orgId: string,
-    name: string,
-    type: ConnectionTypeMap[keyof ConnectionTypeMap],
     issuerUrl: string,
     tenantUrl: string,
     clientId: string,
@@ -63,6 +60,9 @@ export namespace AuthConnectionSettings {
     secretExpiration?: AuthConnectionSettings.SecretExpiration.AsObject,
     defaultGroup?: GroupItem.AsObject,
     customGroupsList: Array<GroupItem.AsObject>,
+    orgId: string,
+    name: string,
+    type: ConnectionTypeMap[keyof ConnectionTypeMap],
   }
 
   export class SecretExpiration extends jspb.Message {

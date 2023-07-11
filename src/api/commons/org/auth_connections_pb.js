@@ -129,9 +129,6 @@ proto.api.commons.org.AuthConnectionSettings.prototype.toObject = function(opt_i
  */
 proto.api.commons.org.AuthConnectionSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 10, 0),
     issuerUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
     tenantUrl: jspb.Message.getFieldWithDefault(msg, 2, ""),
     clientId: jspb.Message.getFieldWithDefault(msg, 3, ""),
@@ -139,7 +136,10 @@ proto.api.commons.org.AuthConnectionSettings.toObject = function(includeInstance
     secretExpiration: (f = msg.getSecretExpiration()) && proto.api.commons.org.AuthConnectionSettings.SecretExpiration.toObject(includeInstance, f),
     defaultGroup: (f = msg.getDefaultGroup()) && proto.api.commons.org.GroupItem.toObject(includeInstance, f),
     customGroupsList: jspb.Message.toObjectList(msg.getCustomGroupsList(),
-    proto.api.commons.org.GroupItem.toObject, includeInstance)
+    proto.api.commons.org.GroupItem.toObject, includeInstance),
+    orgId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -176,18 +176,6 @@ proto.api.commons.org.AuthConnectionSettings.deserializeBinaryFromReader = funct
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrgId(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 10:
-      var value = /** @type {!proto.api.commons.org.ConnectionType} */ (reader.readEnum());
-      msg.setType(value);
-      break;
     case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setIssuerUrl(value);
@@ -219,6 +207,18 @@ proto.api.commons.org.AuthConnectionSettings.deserializeBinaryFromReader = funct
       reader.readMessage(value,proto.api.commons.org.GroupItem.deserializeBinaryFromReader);
       msg.addCustomGroups(value);
       break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgId(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 10:
+      var value = /** @type {!proto.api.commons.org.ConnectionType} */ (reader.readEnum());
+      msg.setType(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -248,27 +248,6 @@ proto.api.commons.org.AuthConnectionSettings.prototype.serializeBinary = functio
  */
 proto.api.commons.org.AuthConnectionSettings.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrgId();
-  if (f.length > 0) {
-    writer.writeString(
-      8,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      9,
-      f
-    );
-  }
-  f = message.getType();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      10,
-      f
-    );
-  }
   f = message.getIssuerUrl();
   if (f.length > 0) {
     writer.writeString(
@@ -319,6 +298,27 @@ proto.api.commons.org.AuthConnectionSettings.serializeBinaryToWriter = function(
       7,
       f,
       proto.api.commons.org.GroupItem.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrgId();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      10,
+      f
     );
   }
 };
@@ -472,60 +472,6 @@ proto.api.commons.org.AuthConnectionSettings.SecretExpiration.prototype.clearDat
  */
 proto.api.commons.org.AuthConnectionSettings.SecretExpiration.prototype.hasDate = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string org_id = 8;
- * @return {string}
- */
-proto.api.commons.org.AuthConnectionSettings.prototype.getOrgId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.org.AuthConnectionSettings} returns this
- */
-proto.api.commons.org.AuthConnectionSettings.prototype.setOrgId = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
-};
-
-
-/**
- * optional string name = 9;
- * @return {string}
- */
-proto.api.commons.org.AuthConnectionSettings.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.org.AuthConnectionSettings} returns this
- */
-proto.api.commons.org.AuthConnectionSettings.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
-};
-
-
-/**
- * optional ConnectionType type = 10;
- * @return {!proto.api.commons.org.ConnectionType}
- */
-proto.api.commons.org.AuthConnectionSettings.prototype.getType = function() {
-  return /** @type {!proto.api.commons.org.ConnectionType} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
-};
-
-
-/**
- * @param {!proto.api.commons.org.ConnectionType} value
- * @return {!proto.api.commons.org.AuthConnectionSettings} returns this
- */
-proto.api.commons.org.AuthConnectionSettings.prototype.setType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 10, value);
 };
 
 
@@ -710,6 +656,60 @@ proto.api.commons.org.AuthConnectionSettings.prototype.addCustomGroups = functio
  */
 proto.api.commons.org.AuthConnectionSettings.prototype.clearCustomGroupsList = function() {
   return this.setCustomGroupsList([]);
+};
+
+
+/**
+ * optional string org_id = 8;
+ * @return {string}
+ */
+proto.api.commons.org.AuthConnectionSettings.prototype.getOrgId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.AuthConnectionSettings} returns this
+ */
+proto.api.commons.org.AuthConnectionSettings.prototype.setOrgId = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string name = 9;
+ * @return {string}
+ */
+proto.api.commons.org.AuthConnectionSettings.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.AuthConnectionSettings} returns this
+ */
+proto.api.commons.org.AuthConnectionSettings.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional ConnectionType type = 10;
+ * @return {!proto.api.commons.org.ConnectionType}
+ */
+proto.api.commons.org.AuthConnectionSettings.prototype.getType = function() {
+  return /** @type {!proto.api.commons.org.ConnectionType} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.org.ConnectionType} value
+ * @return {!proto.api.commons.org.AuthConnectionSettings} returns this
+ */
+proto.api.commons.org.AuthConnectionSettings.prototype.setType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 10, value);
 };
 
 
