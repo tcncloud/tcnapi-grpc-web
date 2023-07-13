@@ -21,18 +21,6 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var api_commons_org_pb = require('../../../api/commons/org_pb.js');
-goog.object.extend(proto, api_commons_org_pb);
-var api_commons_org_agent_profile_group_pb = require('../../../api/commons/org/agent_profile_group_pb.js');
-goog.object.extend(proto, api_commons_org_agent_profile_group_pb);
-var api_commons_org_labels_pb = require('../../../api/commons/org/labels_pb.js');
-goog.object.extend(proto, api_commons_org_labels_pb);
-var api_commons_org_permissions_pb = require('../../../api/commons/org/permissions_pb.js');
-goog.object.extend(proto, api_commons_org_permissions_pb);
-var api_commons_org_trusts_pb = require('../../../api/commons/org/trusts_pb.js');
-goog.object.extend(proto, api_commons_org_trusts_pb);
-var api_commons_org_user_pb = require('../../../api/commons/org/user_pb.js');
-goog.object.extend(proto, api_commons_org_user_pb);
 var api_commons_room303_pb = require('../../../api/commons/room303_pb.js');
 goog.object.extend(proto, api_commons_room303_pb);
 var api_commons_user_pb = require('../../../api/commons/user_pb.js');

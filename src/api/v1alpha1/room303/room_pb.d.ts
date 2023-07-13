@@ -2,12 +2,6 @@
 // file: api/v1alpha1/room303/room.proto
 
 import * as jspb from "google-protobuf";
-import * as api_commons_org_pb from "../../../api/commons/org_pb";
-import * as api_commons_org_agent_profile_group_pb from "../../../api/commons/org/agent_profile_group_pb";
-import * as api_commons_org_labels_pb from "../../../api/commons/org/labels_pb";
-import * as api_commons_org_permissions_pb from "../../../api/commons/org/permissions_pb";
-import * as api_commons_org_trusts_pb from "../../../api/commons/org/trusts_pb";
-import * as api_commons_org_user_pb from "../../../api/commons/org/user_pb";
 import * as api_commons_room303_pb from "../../../api/commons/room303_pb";
 import * as api_commons_user_pb from "../../../api/commons/user_pb";
 
