@@ -7325,10 +7325,10 @@ export namespace CreateShiftInstanceReq {
 }
 
 export class CreateShiftInstanceRes extends jspb.Message {
-  clearShiftInstanceList(): void;
-  getShiftInstanceList(): Array<ShiftInstance>;
-  setShiftInstanceList(value: Array<ShiftInstance>): void;
-  addShiftInstance(value?: ShiftInstance, index?: number): ShiftInstance;
+  clearShiftInstancesList(): void;
+  getShiftInstancesList(): Array<ShiftInstance>;
+  setShiftInstancesList(value: Array<ShiftInstance>): void;
+  addShiftInstances(value?: ShiftInstance, index?: number): ShiftInstance;
 
   clearDiagnosticsList(): void;
   getDiagnosticsList(): Array<Diagnostic>;
@@ -7347,7 +7347,7 @@ export class CreateShiftInstanceRes extends jspb.Message {
 
 export namespace CreateShiftInstanceRes {
   export type AsObject = {
-    shiftInstanceList: Array<ShiftInstance.AsObject>,
+    shiftInstancesList: Array<ShiftInstance.AsObject>,
     diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }

@@ -58088,7 +58088,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.wfm.CreateShiftInstanceRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    shiftInstanceList: jspb.Message.toObjectList(msg.getShiftInstanceList(),
+    shiftInstancesList: jspb.Message.toObjectList(msg.getShiftInstancesList(),
     proto.api.v1alpha1.wfm.ShiftInstance.toObject, includeInstance),
     diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
     proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
@@ -58131,7 +58131,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.deserializeBinaryFromReader = func
     case 1:
       var value = new proto.api.v1alpha1.wfm.ShiftInstance;
       reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader);
-      msg.addShiftInstance(value);
+      msg.addShiftInstances(value);
       break;
     case 2:
       var value = new proto.api.v1alpha1.wfm.Diagnostic;
@@ -58167,7 +58167,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.serializeBinary = functi
  */
 proto.api.v1alpha1.wfm.CreateShiftInstanceRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getShiftInstanceList();
+  f = message.getShiftInstancesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -58187,10 +58187,10 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.serializeBinaryToWriter = function
 
 
 /**
- * repeated ShiftInstance shift_instance = 1;
+ * repeated ShiftInstance shift_instances = 1;
  * @return {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>}
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.getShiftInstanceList = function() {
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.getShiftInstancesList = function() {
   return /** @type{!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.ShiftInstance, 1));
 };
@@ -58200,7 +58200,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.getShiftInstanceList = f
  * @param {!Array<!proto.api.v1alpha1.wfm.ShiftInstance>} value
  * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceRes} returns this
 */
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.setShiftInstanceList = function(value) {
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.setShiftInstancesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -58210,7 +58210,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.setShiftInstanceList = f
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.wfm.ShiftInstance}
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.addShiftInstance = function(opt_value, opt_index) {
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.addShiftInstances = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.wfm.ShiftInstance, opt_index);
 };
 
@@ -58219,8 +58219,8 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.addShiftInstance = funct
  * Clears the list making it empty but non-null.
  * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceRes} returns this
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.clearShiftInstanceList = function() {
-  return this.setShiftInstanceList([]);
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.clearShiftInstancesList = function() {
+  return this.setShiftInstancesList([]);
 };
 
 
