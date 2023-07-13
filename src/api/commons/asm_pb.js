@@ -154,7 +154,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.commons.QueueCallAdd = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.QueueCallAdd.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.commons.QueueCallAdd, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -2017,13 +2017,6 @@ proto.api.commons.KeepAlive.serializeBinaryToWriter = function(message, writer) 
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.commons.QueueCallAdd.repeatedFields_ = [5];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2059,10 +2052,11 @@ proto.api.commons.QueueCallAdd.toObject = function(includeInstance, msg) {
     callerId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     startDate: (f = msg.getStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     holdDate: (f = msg.getHoldDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    skillsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    formattedSkillsMap: (f = msg.getFormattedSkillsMap()) ? f.toObject(includeInstance, undefined) : [],
     agentSpecific: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     queuedNotificationType: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    callerSid: (f = msg.getCallerSid()) && api_commons_acd_pb.CallerSid.toObject(includeInstance, f)
+    callerSid: (f = msg.getCallerSid()) && api_commons_acd_pb.CallerSid.toObject(includeInstance, f),
+    skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -2118,8 +2112,10 @@ proto.api.commons.QueueCallAdd.deserializeBinaryFromReader = function(msg, reade
       msg.setHoldDate(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addSkills(value);
+      var value = msg.getFormattedSkillsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
       break;
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -2133,6 +2129,12 @@ proto.api.commons.QueueCallAdd.deserializeBinaryFromReader = function(msg, reade
       var value = new api_commons_acd_pb.CallerSid;
       reader.readMessage(value,api_commons_acd_pb.CallerSid.deserializeBinaryFromReader);
       msg.setCallerSid(value);
+      break;
+    case 9:
+      var value = msg.getSkillsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
+         });
       break;
     default:
       reader.skipField();
@@ -2193,12 +2195,9 @@ proto.api.commons.QueueCallAdd.serializeBinaryToWriter = function(message, write
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getSkillsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      5,
-      f
-    );
+  f = message.getFormattedSkillsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getAgentSpecific();
   if (f) {
@@ -2221,6 +2220,10 @@ proto.api.commons.QueueCallAdd.serializeBinaryToWriter = function(message, write
       f,
       api_commons_acd_pb.CallerSid.serializeBinaryToWriter
     );
+  }
+  f = message.getSkillsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
   }
 };
 
@@ -2336,39 +2339,25 @@ proto.api.commons.QueueCallAdd.prototype.hasHoldDate = function() {
 
 
 /**
- * repeated string skills = 5;
- * @return {!Array<string>}
+ * map<string, string> formatted_skills = 5;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
  */
-proto.api.commons.QueueCallAdd.prototype.getSkillsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+proto.api.commons.QueueCallAdd.prototype.getFormattedSkillsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {!Array<string>} value
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.api.commons.QueueCallAdd} returns this
  */
-proto.api.commons.QueueCallAdd.prototype.setSkillsList = function(value) {
-  return jspb.Message.setField(this, 5, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.api.commons.QueueCallAdd} returns this
- */
-proto.api.commons.QueueCallAdd.prototype.addSkills = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.commons.QueueCallAdd} returns this
- */
-proto.api.commons.QueueCallAdd.prototype.clearSkillsList = function() {
-  return this.setSkillsList([]);
+proto.api.commons.QueueCallAdd.prototype.clearFormattedSkillsMap = function() {
+  this.getFormattedSkillsMap().clear();
+  return this;
 };
 
 
@@ -2442,6 +2431,29 @@ proto.api.commons.QueueCallAdd.prototype.clearCallerSid = function() {
  */
 proto.api.commons.QueueCallAdd.prototype.hasCallerSid = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * map<string, bool> skills = 9;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,boolean>}
+ */
+proto.api.commons.QueueCallAdd.prototype.getSkillsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,boolean>} */ (
+      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.api.commons.QueueCallAdd} returns this
+ */
+proto.api.commons.QueueCallAdd.prototype.clearSkillsMap = function() {
+  this.getSkillsMap().clear();
+  return this;
 };
 
 

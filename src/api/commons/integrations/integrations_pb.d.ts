@@ -597,6 +597,26 @@ export class ExecuteFlow extends jspb.Message {
   getRelatientPostBalanceById(): ExecuteRelatientPostBalanceById | undefined;
   setRelatientPostBalanceById(value?: ExecuteRelatientPostBalanceById): void;
 
+  hasRelatientCreateFortisAchtoken(): boolean;
+  clearRelatientCreateFortisAchtoken(): void;
+  getRelatientCreateFortisAchtoken(): ExecuteRelatientCreateFortisAchtoken | undefined;
+  setRelatientCreateFortisAchtoken(value?: ExecuteRelatientCreateFortisAchtoken): void;
+
+  hasRelatientCreateFortisCctoken(): boolean;
+  clearRelatientCreateFortisCctoken(): void;
+  getRelatientCreateFortisCctoken(): ExecuteRelatientCreateFortisCctoken | undefined;
+  setRelatientCreateFortisCctoken(value?: ExecuteRelatientCreateFortisCctoken): void;
+
+  hasRelatientFortisTokenAchDebitPayment(): boolean;
+  clearRelatientFortisTokenAchDebitPayment(): void;
+  getRelatientFortisTokenAchDebitPayment(): ExecuteRelatientFortisTokenAchDebitPayment | undefined;
+  setRelatientFortisTokenAchDebitPayment(value?: ExecuteRelatientFortisTokenAchDebitPayment): void;
+
+  hasRelatientFortisTokenCcPayment(): boolean;
+  clearRelatientFortisTokenCcPayment(): void;
+  getRelatientFortisTokenCcPayment(): ExecuteRelatientFortisTokenCcPayment | undefined;
+  setRelatientFortisTokenCcPayment(value?: ExecuteRelatientFortisTokenCcPayment): void;
+
   hasCybersourceCreditPayment(): boolean;
   clearCybersourceCreditPayment(): void;
   getCybersourceCreditPayment(): ExecuteCybersourceCreditPayment | undefined;
@@ -756,6 +776,11 @@ export class ExecuteFlow extends jspb.Message {
   clearUsaepaySubmitAchPayments(): void;
   getUsaepaySubmitAchPayments(): ExecuteUsaepaySubmitAchPayments | undefined;
   setUsaepaySubmitAchPayments(value?: ExecuteUsaepaySubmitAchPayments): void;
+
+  hasUsaepayGetCcToken(): boolean;
+  clearUsaepayGetCcToken(): void;
+  getUsaepayGetCcToken(): ExecuteUsaepayGetCcToken | undefined;
+  setUsaepayGetCcToken(value?: ExecuteUsaepayGetCcToken): void;
 
   hasEzidebitSubmitCcPayments(): boolean;
   clearEzidebitSubmitCcPayments(): void;
@@ -951,6 +976,46 @@ export class ExecuteFlow extends jspb.Message {
   clearExperianAchPaymentPlanRequest(): void;
   getExperianAchPaymentPlanRequest(): ExecuteExperianAchPaymentPlanRequest | undefined;
   setExperianAchPaymentPlanRequest(value?: ExecuteExperianAchPaymentPlanRequest): void;
+
+  hasExperianStellaCardEntry(): boolean;
+  clearExperianStellaCardEntry(): void;
+  getExperianStellaCardEntry(): ExecuteExperianStellaCardEntry | undefined;
+  setExperianStellaCardEntry(value?: ExecuteExperianStellaCardEntry): void;
+
+  hasExperianStellaEcheck(): boolean;
+  clearExperianStellaEcheck(): void;
+  getExperianStellaEcheck(): ExecuteExperianStellaECheck | undefined;
+  setExperianStellaEcheck(value?: ExecuteExperianStellaECheck): void;
+
+  hasExperianStellaCardDeviceTokenization(): boolean;
+  clearExperianStellaCardDeviceTokenization(): void;
+  getExperianStellaCardDeviceTokenization(): ExecuteExperianStellaCardDeviceTokenization | undefined;
+  setExperianStellaCardDeviceTokenization(value?: ExecuteExperianStellaCardDeviceTokenization): void;
+
+  hasExperianStellaTokenPayment(): boolean;
+  clearExperianStellaTokenPayment(): void;
+  getExperianStellaTokenPayment(): ExecuteExperianStellaTokenPayment | undefined;
+  setExperianStellaTokenPayment(value?: ExecuteExperianStellaTokenPayment): void;
+
+  hasExperianStellaAchTokenization(): boolean;
+  clearExperianStellaAchTokenization(): void;
+  getExperianStellaAchTokenization(): ExecuteExperianStellaAchTokenization | undefined;
+  setExperianStellaAchTokenization(value?: ExecuteExperianStellaAchTokenization): void;
+
+  hasExperianStellaAddUsaEpayToken(): boolean;
+  clearExperianStellaAddUsaEpayToken(): void;
+  getExperianStellaAddUsaEpayToken(): ExecuteExperianStellaAddusaepaytoken | undefined;
+  setExperianStellaAddUsaEpayToken(value?: ExecuteExperianStellaAddusaepaytoken): void;
+
+  hasExperianStellaPaymentPlans(): boolean;
+  clearExperianStellaPaymentPlans(): void;
+  getExperianStellaPaymentPlans(): ExecuteExperianStellaPaymentPlans | undefined;
+  setExperianStellaPaymentPlans(value?: ExecuteExperianStellaPaymentPlans): void;
+
+  hasExperianStellaAuth(): boolean;
+  clearExperianStellaAuth(): void;
+  getExperianStellaAuth(): ExecuteExperianStellaAuth | undefined;
+  setExperianStellaAuth(value?: ExecuteExperianStellaAuth): void;
 
   hasNewscycleLogin(): boolean;
   clearNewscycleLogin(): void;
@@ -1327,6 +1392,31 @@ export class ExecuteFlow extends jspb.Message {
   getShift4CcPayment(): ExecuteShift4CcPayments | undefined;
   setShift4CcPayment(value?: ExecuteShift4CcPayments): void;
 
+  hasPoscorpAccesstoken(): boolean;
+  clearPoscorpAccesstoken(): void;
+  getPoscorpAccesstoken(): ExecutePoscorpAccesstoken | undefined;
+  setPoscorpAccesstoken(value?: ExecutePoscorpAccesstoken): void;
+
+  hasPoscorpLookupGuarantor(): boolean;
+  clearPoscorpLookupGuarantor(): void;
+  getPoscorpLookupGuarantor(): ExecutePoscorpLookupGuarantor | undefined;
+  setPoscorpLookupGuarantor(value?: ExecutePoscorpLookupGuarantor): void;
+
+  hasPoscorpUpdatePaymentStatus(): boolean;
+  clearPoscorpUpdatePaymentStatus(): void;
+  getPoscorpUpdatePaymentStatus(): ExecutePoscorpUpdatePaymentStatus | undefined;
+  setPoscorpUpdatePaymentStatus(value?: ExecutePoscorpUpdatePaymentStatus): void;
+
+  hasPianoGetUser(): boolean;
+  clearPianoGetUser(): void;
+  getPianoGetUser(): ExecutePianoGetUser | undefined;
+  setPianoGetUser(value?: ExecutePianoGetUser): void;
+
+  hasPianoUpdateUser(): boolean;
+  clearPianoUpdateUser(): void;
+  getPianoUpdateUser(): ExecutePianoUpdateUser | undefined;
+  setPianoUpdateUser(value?: ExecutePianoUpdateUser): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -1349,6 +1439,10 @@ export namespace ExecuteFlow {
     relatientPostPatientBalance?: ExecuteRelatientPostPatientBalance.AsObject,
     relatientGetPatient?: ExecuteRelatientGetPatient.AsObject,
     relatientPostBalanceById?: ExecuteRelatientPostBalanceById.AsObject,
+    relatientCreateFortisAchtoken?: ExecuteRelatientCreateFortisAchtoken.AsObject,
+    relatientCreateFortisCctoken?: ExecuteRelatientCreateFortisCctoken.AsObject,
+    relatientFortisTokenAchDebitPayment?: ExecuteRelatientFortisTokenAchDebitPayment.AsObject,
+    relatientFortisTokenCcPayment?: ExecuteRelatientFortisTokenCcPayment.AsObject,
     cybersourceCreditPayment?: ExecuteCybersourceCreditPayment.AsObject,
     cybersourceEcheckPayment?: ExecuteCybersourceEcheckPayment.AsObject,
     circproPhoneLookupWithBundle?: ExecuteCircproPhoneLookupWithBundle.AsObject,
@@ -1381,6 +1475,7 @@ export namespace ExecuteFlow {
     instamedVoidPayment?: ExecuteInstamedVoidPayment.AsObject,
     usaepaySubmitCcPayments?: ExecuteUsaepaySubmitCcPayments.AsObject,
     usaepaySubmitAchPayments?: ExecuteUsaepaySubmitAchPayments.AsObject,
+    usaepayGetCcToken?: ExecuteUsaepayGetCcToken.AsObject,
     ezidebitSubmitCcPayments?: ExecuteEzidebitSubmitCcPayments.AsObject,
     ezidebitSubmitAchPayments?: ExecuteEzidebitSubmitAchPayments.AsObject,
     bamboraSubmitCcPayments?: ExecuteBamboraSubmitCcPayments.AsObject,
@@ -1420,6 +1515,14 @@ export namespace ExecuteFlow {
     experianBalancerequest?: ExecuteExperianBalancerequest.AsObject,
     experianAchPaymentRequest?: ExecuteExperianAchPaymentRequest.AsObject,
     experianAchPaymentPlanRequest?: ExecuteExperianAchPaymentPlanRequest.AsObject,
+    experianStellaCardEntry?: ExecuteExperianStellaCardEntry.AsObject,
+    experianStellaEcheck?: ExecuteExperianStellaECheck.AsObject,
+    experianStellaCardDeviceTokenization?: ExecuteExperianStellaCardDeviceTokenization.AsObject,
+    experianStellaTokenPayment?: ExecuteExperianStellaTokenPayment.AsObject,
+    experianStellaAchTokenization?: ExecuteExperianStellaAchTokenization.AsObject,
+    experianStellaAddUsaEpayToken?: ExecuteExperianStellaAddusaepaytoken.AsObject,
+    experianStellaPaymentPlans?: ExecuteExperianStellaPaymentPlans.AsObject,
+    experianStellaAuth?: ExecuteExperianStellaAuth.AsObject,
     newscycleLogin?: ExecuteNewscycleLogin.AsObject,
     newscycleSearchPage?: ExecuteNewscycleSearchPage.AsObject,
     newscycleBillingInfo?: ExecuteNewscycleBillingInfo.AsObject,
@@ -1495,6 +1598,11 @@ export namespace ExecuteFlow {
     i2cTransactionHistory?: ExecuteI2cTransactionHistory.AsObject,
     opayoCcPayment?: ExecuteOpayoCcPayments.AsObject,
     shift4CcPayment?: ExecuteShift4CcPayments.AsObject,
+    poscorpAccesstoken?: ExecutePoscorpAccesstoken.AsObject,
+    poscorpLookupGuarantor?: ExecutePoscorpLookupGuarantor.AsObject,
+    poscorpUpdatePaymentStatus?: ExecutePoscorpUpdatePaymentStatus.AsObject,
+    pianoGetUser?: ExecutePianoGetUser.AsObject,
+    pianoUpdateUser?: ExecutePianoUpdateUser.AsObject,
   }
 
   export enum ValueCase {
@@ -1507,6 +1615,10 @@ export namespace ExecuteFlow {
     RELATIENT_POST_PATIENT_BALANCE = 204,
     RELATIENT_GET_PATIENT = 205,
     RELATIENT_POST_BALANCE_BY_ID = 206,
+    RELATIENT_CREATE_FORTIS_ACHTOKEN = 207,
+    RELATIENT_CREATE_FORTIS_CCTOKEN = 208,
+    RELATIENT_FORTIS_TOKEN_ACH_DEBIT_PAYMENT = 209,
+    RELATIENT_FORTIS_TOKEN_CC_PAYMENT = 210,
     CYBERSOURCE_CREDIT_PAYMENT = 301,
     CYBERSOURCE_ECHECK_PAYMENT = 302,
     CIRCPRO_PHONE_LOOKUP_WITH_BUNDLE = 401,
@@ -1539,6 +1651,7 @@ export namespace ExecuteFlow {
     INSTAMED_VOID_PAYMENT = 802,
     USAEPAY_SUBMIT_CC_PAYMENTS = 901,
     USAEPAY_SUBMIT_ACH_PAYMENTS = 902,
+    USAEPAY_GET_CC_TOKEN = 903,
     EZIDEBIT_SUBMIT_CC_PAYMENTS = 1001,
     EZIDEBIT_SUBMIT_ACH_PAYMENTS = 1002,
     BAMBORA_SUBMIT_CC_PAYMENTS = 1101,
@@ -1578,6 +1691,14 @@ export namespace ExecuteFlow {
     EXPERIAN_BALANCEREQUEST = 2003,
     EXPERIAN_ACH_PAYMENT_REQUEST = 2004,
     EXPERIAN_ACH_PAYMENT_PLAN_REQUEST = 2005,
+    EXPERIAN_STELLA_CARD_ENTRY = 2006,
+    EXPERIAN_STELLA_ECHECK = 2007,
+    EXPERIAN_STELLA_CARD_DEVICE_TOKENIZATION = 2008,
+    EXPERIAN_STELLA_TOKEN_PAYMENT = 2009,
+    EXPERIAN_STELLA_ACH_TOKENIZATION = 2010,
+    EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN = 2011,
+    EXPERIAN_STELLA_PAYMENT_PLANS = 2012,
+    EXPERIAN_STELLA_AUTH = 2013,
     NEWSCYCLE_LOGIN = 2101,
     NEWSCYCLE_SEARCH_PAGE = 2102,
     NEWSCYCLE_BILLING_INFO = 2103,
@@ -1653,6 +1774,11 @@ export namespace ExecuteFlow {
     I2C_TRANSACTION_HISTORY = 3210,
     OPAYO_CC_PAYMENT = 3301,
     SHIFT4_CC_PAYMENT = 3401,
+    POSCORP_ACCESSTOKEN = 3501,
+    POSCORP_LOOKUP_GUARANTOR = 3502,
+    POSCORP_UPDATE_PAYMENT_STATUS = 3503,
+    PIANO_GET_USER = 3601,
+    PIANO_UPDATE_USER = 3602,
   }
 }
 
@@ -2117,6 +2243,70 @@ export class ExecuteRelatientPostBalanceById extends jspb.Message {
 }
 
 export namespace ExecuteRelatientPostBalanceById {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteRelatientCreateFortisAchtoken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteRelatientCreateFortisAchtoken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteRelatientCreateFortisAchtoken): ExecuteRelatientCreateFortisAchtoken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteRelatientCreateFortisAchtoken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteRelatientCreateFortisAchtoken;
+  static deserializeBinaryFromReader(message: ExecuteRelatientCreateFortisAchtoken, reader: jspb.BinaryReader): ExecuteRelatientCreateFortisAchtoken;
+}
+
+export namespace ExecuteRelatientCreateFortisAchtoken {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteRelatientCreateFortisCctoken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteRelatientCreateFortisCctoken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteRelatientCreateFortisCctoken): ExecuteRelatientCreateFortisCctoken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteRelatientCreateFortisCctoken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteRelatientCreateFortisCctoken;
+  static deserializeBinaryFromReader(message: ExecuteRelatientCreateFortisCctoken, reader: jspb.BinaryReader): ExecuteRelatientCreateFortisCctoken;
+}
+
+export namespace ExecuteRelatientCreateFortisCctoken {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteRelatientFortisTokenAchDebitPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteRelatientFortisTokenAchDebitPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteRelatientFortisTokenAchDebitPayment): ExecuteRelatientFortisTokenAchDebitPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteRelatientFortisTokenAchDebitPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteRelatientFortisTokenAchDebitPayment;
+  static deserializeBinaryFromReader(message: ExecuteRelatientFortisTokenAchDebitPayment, reader: jspb.BinaryReader): ExecuteRelatientFortisTokenAchDebitPayment;
+}
+
+export namespace ExecuteRelatientFortisTokenAchDebitPayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteRelatientFortisTokenCcPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteRelatientFortisTokenCcPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteRelatientFortisTokenCcPayment): ExecuteRelatientFortisTokenCcPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteRelatientFortisTokenCcPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteRelatientFortisTokenCcPayment;
+  static deserializeBinaryFromReader(message: ExecuteRelatientFortisTokenCcPayment, reader: jspb.BinaryReader): ExecuteRelatientFortisTokenCcPayment;
+}
+
+export namespace ExecuteRelatientFortisTokenCcPayment {
   export type AsObject = {
   }
 }
@@ -2629,6 +2819,22 @@ export class ExecuteUsaepaySubmitAchPayments extends jspb.Message {
 }
 
 export namespace ExecuteUsaepaySubmitAchPayments {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteUsaepayGetCcToken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteUsaepayGetCcToken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteUsaepayGetCcToken): ExecuteUsaepayGetCcToken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteUsaepayGetCcToken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteUsaepayGetCcToken;
+  static deserializeBinaryFromReader(message: ExecuteUsaepayGetCcToken, reader: jspb.BinaryReader): ExecuteUsaepayGetCcToken;
+}
+
+export namespace ExecuteUsaepayGetCcToken {
   export type AsObject = {
   }
 }
@@ -3253,6 +3459,134 @@ export class ExecuteExperianAchPaymentPlanRequest extends jspb.Message {
 }
 
 export namespace ExecuteExperianAchPaymentPlanRequest {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaCardEntry extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaCardEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaCardEntry): ExecuteExperianStellaCardEntry.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaCardEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaCardEntry;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaCardEntry, reader: jspb.BinaryReader): ExecuteExperianStellaCardEntry;
+}
+
+export namespace ExecuteExperianStellaCardEntry {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaECheck extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaECheck.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaECheck): ExecuteExperianStellaECheck.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaECheck, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaECheck;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaECheck, reader: jspb.BinaryReader): ExecuteExperianStellaECheck;
+}
+
+export namespace ExecuteExperianStellaECheck {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaCardDeviceTokenization extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaCardDeviceTokenization.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaCardDeviceTokenization): ExecuteExperianStellaCardDeviceTokenization.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaCardDeviceTokenization, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaCardDeviceTokenization;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaCardDeviceTokenization, reader: jspb.BinaryReader): ExecuteExperianStellaCardDeviceTokenization;
+}
+
+export namespace ExecuteExperianStellaCardDeviceTokenization {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaTokenPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaTokenPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaTokenPayment): ExecuteExperianStellaTokenPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaTokenPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaTokenPayment;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaTokenPayment, reader: jspb.BinaryReader): ExecuteExperianStellaTokenPayment;
+}
+
+export namespace ExecuteExperianStellaTokenPayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaAchTokenization extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaAchTokenization.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaAchTokenization): ExecuteExperianStellaAchTokenization.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaAchTokenization, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaAchTokenization;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaAchTokenization, reader: jspb.BinaryReader): ExecuteExperianStellaAchTokenization;
+}
+
+export namespace ExecuteExperianStellaAchTokenization {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaAddusaepaytoken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaAddusaepaytoken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaAddusaepaytoken): ExecuteExperianStellaAddusaepaytoken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaAddusaepaytoken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaAddusaepaytoken;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaAddusaepaytoken, reader: jspb.BinaryReader): ExecuteExperianStellaAddusaepaytoken;
+}
+
+export namespace ExecuteExperianStellaAddusaepaytoken {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaPaymentPlans extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaPaymentPlans.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaPaymentPlans): ExecuteExperianStellaPaymentPlans.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaPaymentPlans, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaPaymentPlans;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaPaymentPlans, reader: jspb.BinaryReader): ExecuteExperianStellaPaymentPlans;
+}
+
+export namespace ExecuteExperianStellaPaymentPlans {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaAuth extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaAuth.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaAuth): ExecuteExperianStellaAuth.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaAuth, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaAuth;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaAuth, reader: jspb.BinaryReader): ExecuteExperianStellaAuth;
+}
+
+export namespace ExecuteExperianStellaAuth {
   export type AsObject = {
   }
 }
@@ -4457,6 +4791,86 @@ export namespace ExecuteShift4CcPayments {
   }
 }
 
+export class ExecutePoscorpAccesstoken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePoscorpAccesstoken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePoscorpAccesstoken): ExecutePoscorpAccesstoken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePoscorpAccesstoken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePoscorpAccesstoken;
+  static deserializeBinaryFromReader(message: ExecutePoscorpAccesstoken, reader: jspb.BinaryReader): ExecutePoscorpAccesstoken;
+}
+
+export namespace ExecutePoscorpAccesstoken {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePoscorpLookupGuarantor extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePoscorpLookupGuarantor.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePoscorpLookupGuarantor): ExecutePoscorpLookupGuarantor.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePoscorpLookupGuarantor, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePoscorpLookupGuarantor;
+  static deserializeBinaryFromReader(message: ExecutePoscorpLookupGuarantor, reader: jspb.BinaryReader): ExecutePoscorpLookupGuarantor;
+}
+
+export namespace ExecutePoscorpLookupGuarantor {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePoscorpUpdatePaymentStatus extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePoscorpUpdatePaymentStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePoscorpUpdatePaymentStatus): ExecutePoscorpUpdatePaymentStatus.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePoscorpUpdatePaymentStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePoscorpUpdatePaymentStatus;
+  static deserializeBinaryFromReader(message: ExecutePoscorpUpdatePaymentStatus, reader: jspb.BinaryReader): ExecutePoscorpUpdatePaymentStatus;
+}
+
+export namespace ExecutePoscorpUpdatePaymentStatus {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePianoGetUser extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePianoGetUser.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePianoGetUser): ExecutePianoGetUser.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePianoGetUser, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePianoGetUser;
+  static deserializeBinaryFromReader(message: ExecutePianoGetUser, reader: jspb.BinaryReader): ExecutePianoGetUser;
+}
+
+export namespace ExecutePianoGetUser {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePianoUpdateUser extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePianoUpdateUser.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePianoUpdateUser): ExecutePianoUpdateUser.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePianoUpdateUser, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePianoUpdateUser;
+  static deserializeBinaryFromReader(message: ExecutePianoUpdateUser, reader: jspb.BinaryReader): ExecutePianoUpdateUser;
+}
+
+export namespace ExecutePianoUpdateUser {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -4493,6 +4907,8 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_I2C: 3200;
   INTEGRATION_TYPE_OPAYO: 3300;
   INTEGRATION_TYPE_SHIFT4: 3400;
+  INTEGRATION_TYPE_POSCORP: 3500;
+  INTEGRATION_TYPE_PIANO: 3600;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -4507,6 +4923,10 @@ export interface RequestMethodMap {
   REQUEST_METHOD_RELATIENT_POSTPATIENTBALANCE: 204;
   REQUEST_METHOD_RELATIENT_GETPATIENT: 205;
   REQUEST_METHOD_RELATIENT_POSTBALANCEBYID: 206;
+  REQUEST_METHOD_RELATIENT_CREATE_FORTIS_ACHTOKEN: 207;
+  REQUEST_METHOD_RELATIENT_CREATE_FORTIS_CCTOKEN: 208;
+  REQUEST_METHOD_RELATIENT_FORTIS_TOKEN_ACH_DEBIT_PAYMENT: 209;
+  REQUEST_METHOD_RELATIENT_FORTIS_TOKEN_CC_PAYMENT: 210;
   REQUEST_METHOD_CYBERSOURCE_CREDITPAYMENT: 301;
   REQUEST_METHOD_CYBERSOURCE_ECHECKPAYMENT: 302;
   REQUEST_METHOD_CIRCPRO_PHONELOOKUPWITHBUNDLE: 401;
@@ -4539,6 +4959,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_INSTAMED_VOIDPAYMENT: 802;
   REQUEST_METHOD_USAEPAY_SUBMITCCPAYMENTS: 901;
   REQUEST_METHOD_USAEPAY_SUBMITACHPAYMENTS: 902;
+  REQUEST_METHOD_USAEPAY_GETCCTOKEN: 903;
   REQUEST_METHOD_EZIDEBIT_SUBMITCCPAYMENTS: 1001;
   REQUEST_METHOD_EZIDEBIT_SUBMITACHPAYMENTS: 1002;
   REQUEST_METHOD_BAMBORA_SUBMITCCPAYMENTS: 1101;
@@ -4578,6 +4999,14 @@ export interface RequestMethodMap {
   REQUEST_METHOD_EXPERIAN_BALANCEREQUEST: 2003;
   REQUEST_METHOD_EXPERIAN_ACH_PAYMENT_REQUEST: 2004;
   REQUEST_METHOD_EXPERIAN_ACH_PAYMENTPLANREQUEST: 2005;
+  REQUEST_METHOD_EXPERIAN_STELLA_CARD_ENTRY: 2006;
+  REQUEST_METHOD_EXPERIAN_STELLA_ECHECK: 2007;
+  REQUEST_METHOD_EXPERIAN_STELLA_CARD_DEVICE_TOKENIZATION: 2008;
+  REQUEST_METHOD_EXPERIAN_STELLA_TOKEN_PAYMENT: 2009;
+  REQUEST_METHOD_EXPERIAN_STELLA_ACH_TOKENIZATION: 2010;
+  REQUEST_METHOD_EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN: 2011;
+  REQUEST_METHOD_EXPERIAN_STELLA_PAYMENT_PLANS: 2012;
+  REQUEST_METHOD_EXPERIAN_STELLA_AUTH: 2013;
   REQUEST_METHOD_NEWSCYCLE_LOGIN: 2101;
   REQUEST_METHOD_NEWSCYCLE_SEARCHPAGE: 2102;
   REQUEST_METHOD_NEWSCYCLE_BILLINGINFO: 2103;
@@ -4653,6 +5082,11 @@ export interface RequestMethodMap {
   REQUEST_METHOD_I2C_TRANSACTION_HISTORY: 3210;
   REQUEST_METHOD_OPAYO_CCPAYMENTS: 3301;
   REQUEST_METHOD_SHIFT4_CCPAYMENTS: 3401;
+  REQUEST_METHOD_POSCORP_ACCESSTOKEN: 3501;
+  REQUEST_METHOD_POSCORP_LOOKUP_GUARANTOR: 3502;
+  REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS: 3503;
+  REQUEST_METHOD_PIANO_GET_USER: 3601;
+  REQUEST_METHOD_PIANO_UPDATE_USER: 3602;
 }
 
 export const RequestMethod: RequestMethodMap;

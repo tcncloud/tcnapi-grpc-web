@@ -893,7 +893,8 @@ proto.api.v1alpha1.tickets.CreateTicketReq.toObject = function(includeInstance, 
     status: jspb.Message.getFieldWithDefault(msg, 11, 0),
     ticketSlaList: jspb.Message.toObjectList(msg.getTicketSlaList(),
     api_commons_tickets_pb.Sla.toObject, includeInstance),
-    assignSelf: jspb.Message.getBooleanFieldWithDefault(msg, 13, false)
+    assignSelf: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
+    assignOther: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
 
   if (includeInstance) {
@@ -969,6 +970,10 @@ proto.api.v1alpha1.tickets.CreateTicketReq.deserializeBinaryFromReader = functio
     case 13:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAssignSelf(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssignOther(value);
       break;
     default:
       reader.skipField();
@@ -1063,6 +1068,13 @@ proto.api.v1alpha1.tickets.CreateTicketReq.serializeBinaryToWriter = function(me
   if (f) {
     writer.writeBool(
       13,
+      f
+    );
+  }
+  f = message.getAssignOther();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
       f
     );
   }
@@ -1310,6 +1322,24 @@ proto.api.v1alpha1.tickets.CreateTicketReq.prototype.setAssignSelf = function(va
 };
 
 
+/**
+ * optional string assign_other = 14;
+ * @return {string}
+ */
+proto.api.v1alpha1.tickets.CreateTicketReq.prototype.getAssignOther = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.tickets.CreateTicketReq} returns this
+ */
+proto.api.v1alpha1.tickets.CreateTicketReq.prototype.setAssignOther = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
 
 
 
@@ -1493,7 +1523,7 @@ proto.api.v1alpha1.tickets.EditTicketReq.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.tickets.EditTicketReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ticketSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    ticketSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     editValue: (f = msg.getEditValue()) && api_commons_tickets_pb.EditAttribute.toObject(includeInstance, f)
   };
 
@@ -1532,7 +1562,7 @@ proto.api.v1alpha1.tickets.EditTicketReq.deserializeBinaryFromReader = function(
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTicketSid(value);
       break;
     case 2:
@@ -1570,8 +1600,8 @@ proto.api.v1alpha1.tickets.EditTicketReq.prototype.serializeBinary = function() 
 proto.api.v1alpha1.tickets.EditTicketReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTicketSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -1589,19 +1619,19 @@ proto.api.v1alpha1.tickets.EditTicketReq.serializeBinaryToWriter = function(mess
 
 /**
  * optional int64 ticket_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.tickets.EditTicketReq.prototype.getTicketSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.tickets.EditTicketReq} returns this
  */
 proto.api.v1alpha1.tickets.EditTicketReq.prototype.setTicketSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
