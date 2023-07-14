@@ -5447,6 +5447,14 @@ export class ScheduleScenario extends jspb.Message {
   getScheduleRange(): api_commons_wfm_pb.DatetimeRange | undefined;
   setScheduleRange(value?: api_commons_wfm_pb.DatetimeRange): void;
 
+  hasDatetimeSetToInactive(): boolean;
+  clearDatetimeSetToInactive(): void;
+  getDatetimeSetToInactive(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDatetimeSetToInactive(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getIsActive(): boolean;
+  setIsActive(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ScheduleScenario.AsObject;
   static toObject(includeInstance: boolean, msg: ScheduleScenario): ScheduleScenario.AsObject;
@@ -5467,6 +5475,8 @@ export namespace ScheduleScenario {
     isDefault: boolean,
     copiedFromScenarioSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     scheduleRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    datetimeSetToInactive?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    isActive: boolean,
   }
 }
 
