@@ -240,9 +240,6 @@ export namespace UpdateSkillProfileRes {
 }
 
 export class UpdateSkillProfileProficienciesReq extends jspb.Message {
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   clearProficienciesList(): void;
   getProficienciesList(): Array<UpdateSkillProfileProficienciesReq.Proficiency>;
   setProficienciesList(value: Array<UpdateSkillProfileProficienciesReq.Proficiency>): void;
@@ -260,7 +257,6 @@ export class UpdateSkillProfileProficienciesReq extends jspb.Message {
 
 export namespace UpdateSkillProfileProficienciesReq {
   export type AsObject = {
-    orgId: string,
     proficienciesList: Array<UpdateSkillProfileProficienciesReq.Proficiency.AsObject>,
   }
 
@@ -7373,6 +7369,74 @@ export namespace CreateShiftInstanceRes {
   export type AsObject = {
     shiftInstance?: ShiftInstance.AsObject,
     performanceMetricsList: Array<PerformanceMetric.AsObject>,
+  }
+}
+
+export class CreateShiftInstanceV2Req extends jspb.Message {
+  getDraftScheduleSid(): number;
+  setDraftScheduleSid(value: number): void;
+
+  getShiftTemplateSid(): number;
+  setShiftTemplateSid(value: number): void;
+
+  hasStartDatetime(): boolean;
+  clearStartDatetime(): void;
+  getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getIsLocked(): boolean;
+  setIsLocked(value: boolean): void;
+
+  clearWfmAgentSidsList(): void;
+  getWfmAgentSidsList(): Array<number>;
+  setWfmAgentSidsList(value: Array<number>): void;
+  addWfmAgentSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateShiftInstanceV2Req.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateShiftInstanceV2Req): CreateShiftInstanceV2Req.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateShiftInstanceV2Req, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateShiftInstanceV2Req;
+  static deserializeBinaryFromReader(message: CreateShiftInstanceV2Req, reader: jspb.BinaryReader): CreateShiftInstanceV2Req;
+}
+
+export namespace CreateShiftInstanceV2Req {
+  export type AsObject = {
+    draftScheduleSid: number,
+    shiftTemplateSid: number,
+    startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    isLocked: boolean,
+    wfmAgentSidsList: Array<number>,
+  }
+}
+
+export class CreateShiftInstanceV2Res extends jspb.Message {
+  clearShiftInstancesList(): void;
+  getShiftInstancesList(): Array<ShiftInstance>;
+  setShiftInstancesList(value: Array<ShiftInstance>): void;
+  addShiftInstances(value?: ShiftInstance, index?: number): ShiftInstance;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateShiftInstanceV2Res.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateShiftInstanceV2Res): CreateShiftInstanceV2Res.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateShiftInstanceV2Res, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateShiftInstanceV2Res;
+  static deserializeBinaryFromReader(message: CreateShiftInstanceV2Res, reader: jspb.BinaryReader): CreateShiftInstanceV2Res;
+}
+
+export namespace CreateShiftInstanceV2Res {
+  export type AsObject = {
+    shiftInstancesList: Array<ShiftInstance.AsObject>,
+    diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
 
