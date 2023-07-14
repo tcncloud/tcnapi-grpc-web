@@ -777,6 +777,11 @@ export class ExecuteFlow extends jspb.Message {
   getUsaepaySubmitAchPayments(): ExecuteUsaepaySubmitAchPayments | undefined;
   setUsaepaySubmitAchPayments(value?: ExecuteUsaepaySubmitAchPayments): void;
 
+  hasUsaepayGetCcToken(): boolean;
+  clearUsaepayGetCcToken(): void;
+  getUsaepayGetCcToken(): ExecuteUsaepayGetCcToken | undefined;
+  setUsaepayGetCcToken(value?: ExecuteUsaepayGetCcToken): void;
+
   hasEzidebitSubmitCcPayments(): boolean;
   clearEzidebitSubmitCcPayments(): void;
   getEzidebitSubmitCcPayments(): ExecuteEzidebitSubmitCcPayments | undefined;
@@ -1470,6 +1475,7 @@ export namespace ExecuteFlow {
     instamedVoidPayment?: ExecuteInstamedVoidPayment.AsObject,
     usaepaySubmitCcPayments?: ExecuteUsaepaySubmitCcPayments.AsObject,
     usaepaySubmitAchPayments?: ExecuteUsaepaySubmitAchPayments.AsObject,
+    usaepayGetCcToken?: ExecuteUsaepayGetCcToken.AsObject,
     ezidebitSubmitCcPayments?: ExecuteEzidebitSubmitCcPayments.AsObject,
     ezidebitSubmitAchPayments?: ExecuteEzidebitSubmitAchPayments.AsObject,
     bamboraSubmitCcPayments?: ExecuteBamboraSubmitCcPayments.AsObject,
@@ -1645,6 +1651,7 @@ export namespace ExecuteFlow {
     INSTAMED_VOID_PAYMENT = 802,
     USAEPAY_SUBMIT_CC_PAYMENTS = 901,
     USAEPAY_SUBMIT_ACH_PAYMENTS = 902,
+    USAEPAY_GET_CC_TOKEN = 903,
     EZIDEBIT_SUBMIT_CC_PAYMENTS = 1001,
     EZIDEBIT_SUBMIT_ACH_PAYMENTS = 1002,
     BAMBORA_SUBMIT_CC_PAYMENTS = 1101,
@@ -2812,6 +2819,22 @@ export class ExecuteUsaepaySubmitAchPayments extends jspb.Message {
 }
 
 export namespace ExecuteUsaepaySubmitAchPayments {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteUsaepayGetCcToken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteUsaepayGetCcToken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteUsaepayGetCcToken): ExecuteUsaepayGetCcToken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteUsaepayGetCcToken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteUsaepayGetCcToken;
+  static deserializeBinaryFromReader(message: ExecuteUsaepayGetCcToken, reader: jspb.BinaryReader): ExecuteUsaepayGetCcToken;
+}
+
+export namespace ExecuteUsaepayGetCcToken {
   export type AsObject = {
   }
 }
@@ -4936,6 +4959,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_INSTAMED_VOIDPAYMENT: 802;
   REQUEST_METHOD_USAEPAY_SUBMITCCPAYMENTS: 901;
   REQUEST_METHOD_USAEPAY_SUBMITACHPAYMENTS: 902;
+  REQUEST_METHOD_USAEPAY_GETCCTOKEN: 903;
   REQUEST_METHOD_EZIDEBIT_SUBMITCCPAYMENTS: 1001;
   REQUEST_METHOD_EZIDEBIT_SUBMITACHPAYMENTS: 1002;
   REQUEST_METHOD_BAMBORA_SUBMITCCPAYMENTS: 1101;

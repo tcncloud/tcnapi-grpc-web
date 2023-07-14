@@ -44289,7 +44289,9 @@ proto.api.v1alpha1.wfm.ScheduleScenario.toObject = function(includeInstance, msg
     createdByUserId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     isDefault: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     copiedFromScenarioSid: (f = msg.getCopiedFromScenarioSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    scheduleRange: (f = msg.getScheduleRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f)
+    scheduleRange: (f = msg.getScheduleRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
+    datetimeSetToInactive: (f = msg.getDatetimeSetToInactive()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -44360,6 +44362,15 @@ proto.api.v1alpha1.wfm.ScheduleScenario.deserializeBinaryFromReader = function(m
       var value = new api_commons_wfm_pb.DatetimeRange;
       reader.readMessage(value,api_commons_wfm_pb.DatetimeRange.deserializeBinaryFromReader);
       msg.setScheduleRange(value);
+      break;
+    case 9:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setDatetimeSetToInactive(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsActive(value);
       break;
     default:
       reader.skipField();
@@ -44447,6 +44458,21 @@ proto.api.v1alpha1.wfm.ScheduleScenario.serializeBinaryToWriter = function(messa
       8,
       f,
       api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
+    );
+  }
+  f = message.getDatetimeSetToInactive();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getIsActive();
+  if (f) {
+    writer.writeBool(
+      10,
+      f
     );
   }
 };
@@ -44650,6 +44676,61 @@ proto.api.v1alpha1.wfm.ScheduleScenario.prototype.clearScheduleRange = function(
  */
 proto.api.v1alpha1.wfm.ScheduleScenario.prototype.hasScheduleRange = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp datetime_set_to_inactive = 9;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.wfm.ScheduleScenario.prototype.getDatetimeSetToInactive = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.ScheduleScenario} returns this
+*/
+proto.api.v1alpha1.wfm.ScheduleScenario.prototype.setDatetimeSetToInactive = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.ScheduleScenario} returns this
+ */
+proto.api.v1alpha1.wfm.ScheduleScenario.prototype.clearDatetimeSetToInactive = function() {
+  return this.setDatetimeSetToInactive(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ScheduleScenario.prototype.hasDatetimeSetToInactive = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional bool is_active = 10;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ScheduleScenario.prototype.getIsActive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.ScheduleScenario} returns this
+ */
+proto.api.v1alpha1.wfm.ScheduleScenario.prototype.setIsActive = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
@@ -50954,7 +51035,8 @@ proto.api.v1alpha1.wfm.DraftSchedule.toObject = function(includeInstance, msg) {
     shiftInstancesList: jspb.Message.toObjectList(msg.getShiftInstancesList(),
     proto.api.v1alpha1.wfm.ShiftInstance.toObject, includeInstance),
     performanceMetricsList: jspb.Message.toObjectList(msg.getPerformanceMetricsList(),
-    proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance)
+    proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance),
+    scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -51031,6 +51113,10 @@ proto.api.v1alpha1.wfm.DraftSchedule.deserializeBinaryFromReader = function(msg,
       var value = new proto.api.v1alpha1.wfm.PerformanceMetric;
       reader.readMessage(value,proto.api.v1alpha1.wfm.PerformanceMetric.deserializeBinaryFromReader);
       msg.addPerformanceMetrics(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setScheduleScenarioSid(value);
       break;
     default:
       reader.skipField();
@@ -51127,6 +51213,13 @@ proto.api.v1alpha1.wfm.DraftSchedule.serializeBinaryToWriter = function(message,
       9,
       f,
       proto.api.v1alpha1.wfm.PerformanceMetric.serializeBinaryToWriter
+    );
+  }
+  f = message.getScheduleScenarioSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      10,
+      f
     );
   }
 };
@@ -51388,6 +51481,24 @@ proto.api.v1alpha1.wfm.DraftSchedule.prototype.addPerformanceMetrics = function(
  */
 proto.api.v1alpha1.wfm.DraftSchedule.prototype.clearPerformanceMetricsList = function() {
   return this.setPerformanceMetricsList([]);
+};
+
+
+/**
+ * optional int64 schedule_scenario_sid = 10;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.DraftSchedule.prototype.getScheduleScenarioSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.DraftSchedule} returns this
+ */
+proto.api.v1alpha1.wfm.DraftSchedule.prototype.setScheduleScenarioSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
