@@ -367,6 +367,16 @@ export class PaymentFlow extends jspb.Message {
   getAuthorizeNetGooglePay(): PaymentAuthorizeNetGooglePay | undefined;
   setAuthorizeNetGooglePay(value?: PaymentAuthorizeNetGooglePay): void;
 
+  hasPaywaySubmitCardSaleRequest(): boolean;
+  clearPaywaySubmitCardSaleRequest(): void;
+  getPaywaySubmitCardSaleRequest(): PaymentPaywaySubmitCardSaleRequest | undefined;
+  setPaywaySubmitCardSaleRequest(value?: PaymentPaywaySubmitCardSaleRequest): void;
+
+  hasPaywaySubmitAchAlertRequest(): boolean;
+  clearPaywaySubmitAchAlertRequest(): void;
+  getPaywaySubmitAchAlertRequest(): PaymentPaywaySubmitACHAlertRequest | undefined;
+  setPaywaySubmitAchAlertRequest(value?: PaymentPaywaySubmitACHAlertRequest): void;
+
   clearPaymentFieldsList(): void;
   getPaymentFieldsList(): Array<FieldDefinition>;
   setPaymentFieldsList(value: Array<FieldDefinition>): void;
@@ -393,6 +403,8 @@ export namespace PaymentFlow {
     authorizeNetPaypal?: PaymentAuthorizeNetPaypal.AsObject,
     authorizeNetApplePay?: PaymentAuthorizeNetApplePay.AsObject,
     authorizeNetGooglePay?: PaymentAuthorizeNetGooglePay.AsObject,
+    paywaySubmitCardSaleRequest?: PaymentPaywaySubmitCardSaleRequest.AsObject,
+    paywaySubmitAchAlertRequest?: PaymentPaywaySubmitACHAlertRequest.AsObject,
     paymentFieldsList: Array<FieldDefinition.AsObject>,
   }
 
@@ -405,6 +417,8 @@ export namespace PaymentFlow {
     AUTHORIZE_NET_PAYPAL = 6,
     AUTHORIZE_NET_APPLE_PAY = 7,
     AUTHORIZE_NET_GOOGLE_PAY = 8,
+    PAYWAY_SUBMIT_CARD_SALE_REQUEST = 9,
+    PAYWAY_SUBMIT_ACH_ALERT_REQUEST = 10,
   }
 }
 
@@ -2115,6 +2129,38 @@ export class PaymentAuthorizeNetGooglePay extends jspb.Message {
 }
 
 export namespace PaymentAuthorizeNetGooglePay {
+  export type AsObject = {
+  }
+}
+
+export class PaymentPaywaySubmitCardSaleRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentPaywaySubmitCardSaleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentPaywaySubmitCardSaleRequest): PaymentPaywaySubmitCardSaleRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentPaywaySubmitCardSaleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentPaywaySubmitCardSaleRequest;
+  static deserializeBinaryFromReader(message: PaymentPaywaySubmitCardSaleRequest, reader: jspb.BinaryReader): PaymentPaywaySubmitCardSaleRequest;
+}
+
+export namespace PaymentPaywaySubmitCardSaleRequest {
+  export type AsObject = {
+  }
+}
+
+export class PaymentPaywaySubmitACHAlertRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentPaywaySubmitACHAlertRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentPaywaySubmitACHAlertRequest): PaymentPaywaySubmitACHAlertRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentPaywaySubmitACHAlertRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentPaywaySubmitACHAlertRequest;
+  static deserializeBinaryFromReader(message: PaymentPaywaySubmitACHAlertRequest, reader: jspb.BinaryReader): PaymentPaywaySubmitACHAlertRequest;
+}
+
+export namespace PaymentPaywaySubmitACHAlertRequest {
   export type AsObject = {
   }
 }
