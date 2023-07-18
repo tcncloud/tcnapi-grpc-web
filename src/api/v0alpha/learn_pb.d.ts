@@ -457,6 +457,9 @@ export class StandaloneReq extends jspb.Message {
   getLocale(): string;
   setLocale(value: string): void;
 
+  getCategory(): string;
+  setCategory(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StandaloneReq.AsObject;
   static toObject(includeInstance: boolean, msg: StandaloneReq): StandaloneReq.AsObject;
@@ -470,6 +473,7 @@ export class StandaloneReq extends jspb.Message {
 export namespace StandaloneReq {
   export type AsObject = {
     locale: string,
+    category: string,
   }
 }
 
@@ -499,14 +503,6 @@ export class LearnStandaloneDetails extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getContent(): string;
-  setContent(value: string): void;
-
-  hasLastEditedTimestamp(): boolean;
-  clearLastEditedTimestamp(): void;
-  getLastEditedTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setLastEditedTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LearnStandaloneDetails.AsObject;
   static toObject(includeInstance: boolean, msg: LearnStandaloneDetails): LearnStandaloneDetails.AsObject;
@@ -520,8 +516,6 @@ export class LearnStandaloneDetails extends jspb.Message {
 export namespace LearnStandaloneDetails {
   export type AsObject = {
     name: string,
-    content: string,
-    lastEditedTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

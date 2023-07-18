@@ -3618,7 +3618,8 @@ proto.api.v0alpha.StandaloneReq.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.v0alpha.StandaloneReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    locale: jspb.Message.getFieldWithDefault(msg, 1, "")
+    locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    category: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3659,6 +3660,10 @@ proto.api.v0alpha.StandaloneReq.deserializeBinaryFromReader = function(msg, read
       var value = /** @type {string} */ (reader.readString());
       msg.setLocale(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCategory(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3695,6 +3700,13 @@ proto.api.v0alpha.StandaloneReq.serializeBinaryToWriter = function(message, writ
       f
     );
   }
+  f = message.getCategory();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -3713,6 +3725,24 @@ proto.api.v0alpha.StandaloneReq.prototype.getLocale = function() {
  */
 proto.api.v0alpha.StandaloneReq.prototype.setLocale = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string category = 2;
+ * @return {string}
+ */
+proto.api.v0alpha.StandaloneReq.prototype.getCategory = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.StandaloneReq} returns this
+ */
+proto.api.v0alpha.StandaloneReq.prototype.setCategory = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -3908,9 +3938,7 @@ proto.api.v0alpha.LearnStandaloneDetails.prototype.toObject = function(opt_inclu
  */
 proto.api.v0alpha.LearnStandaloneDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    content: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3951,15 +3979,6 @@ proto.api.v0alpha.LearnStandaloneDetails.deserializeBinaryFromReader = function(
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setContent(value);
-      break;
-    case 3:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setLastEditedTimestamp(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -3996,21 +4015,6 @@ proto.api.v0alpha.LearnStandaloneDetails.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getContent();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLastEditedTimestamp();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -4029,61 +4033,6 @@ proto.api.v0alpha.LearnStandaloneDetails.prototype.getName = function() {
  */
 proto.api.v0alpha.LearnStandaloneDetails.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string content = 2;
- * @return {string}
- */
-proto.api.v0alpha.LearnStandaloneDetails.prototype.getContent = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v0alpha.LearnStandaloneDetails} returns this
- */
-proto.api.v0alpha.LearnStandaloneDetails.prototype.setContent = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional google.protobuf.Timestamp last_edited_timestamp = 3;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.api.v0alpha.LearnStandaloneDetails.prototype.getLastEditedTimestamp = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.v0alpha.LearnStandaloneDetails} returns this
-*/
-proto.api.v0alpha.LearnStandaloneDetails.prototype.setLastEditedTimestamp = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v0alpha.LearnStandaloneDetails} returns this
- */
-proto.api.v0alpha.LearnStandaloneDetails.prototype.clearLastEditedTimestamp = function() {
-  return this.setLastEditedTimestamp(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v0alpha.LearnStandaloneDetails.prototype.hasLastEditedTimestamp = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 
