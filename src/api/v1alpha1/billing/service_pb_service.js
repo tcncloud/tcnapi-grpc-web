@@ -38,6 +38,15 @@ Billing.GetInvoice = {
   responseType: api_v1alpha1_billing_entities_pb.GetInvoiceRes
 };
 
+Billing.ExportGeneratedInvoice = {
+  methodName: "ExportGeneratedInvoice",
+  service: Billing,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_billing_entities_pb.ExportGeneratedInvoicesReq,
+  responseType: api_v1alpha1_billing_entities_pb.ExportGeneratedInvoicesRes
+};
+
 exports.Billing = Billing;
 
 function BillingClient(serviceHost, options) {
@@ -112,6 +121,37 @@ BillingClient.prototype.getInvoice = function getInvoice(requestMessage, metadat
     callback = arguments[1];
   }
   var client = grpc.unary(Billing.GetInvoice, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingClient.prototype.exportGeneratedInvoice = function exportGeneratedInvoice(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Billing.ExportGeneratedInvoice, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
