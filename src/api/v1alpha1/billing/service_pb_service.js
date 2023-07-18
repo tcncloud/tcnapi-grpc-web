@@ -43,8 +43,8 @@ Billing.ExportGeneratedInvoice = {
   service: Billing,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_billing_entities_pb.ExportGeneratedInvoicesReq,
-  responseType: api_v1alpha1_billing_entities_pb.ExportGeneratedInvoicesRes
+  requestType: api_v1alpha1_billing_entities_pb.ExportGeneratedInvoiceReq,
+  responseType: api_v1alpha1_billing_entities_pb.ExportGeneratedInvoiceRes
 };
 
 exports.Billing = Billing;

@@ -3350,9 +3350,9 @@ proto.api.commons.HolidayExp.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.commons.HolidayExp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    country: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 5, "")
+    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    country: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -3389,15 +3389,15 @@ proto.api.commons.HolidayExp.deserializeBinaryFromReader = function(msg, reader)
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 3:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
-    case 4:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setCountry(value);
       break;
-    case 5:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setType(value);
       break;
@@ -3433,21 +3433,21 @@ proto.api.commons.HolidayExp.serializeBinaryToWriter = function(message, writer)
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      1,
       f
     );
   }
   f = message.getCountry();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      2,
       f
     );
   }
   f = message.getType();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      3,
       f
     );
   }
@@ -3455,11 +3455,11 @@ proto.api.commons.HolidayExp.serializeBinaryToWriter = function(message, writer)
 
 
 /**
- * optional string name = 3;
+ * optional string name = 1;
  * @return {string}
  */
 proto.api.commons.HolidayExp.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -3468,16 +3468,16 @@ proto.api.commons.HolidayExp.prototype.getName = function() {
  * @return {!proto.api.commons.HolidayExp} returns this
  */
 proto.api.commons.HolidayExp.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string country = 4;
+ * optional string country = 2;
  * @return {string}
  */
 proto.api.commons.HolidayExp.prototype.getCountry = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -3486,16 +3486,16 @@ proto.api.commons.HolidayExp.prototype.getCountry = function() {
  * @return {!proto.api.commons.HolidayExp} returns this
  */
 proto.api.commons.HolidayExp.prototype.setCountry = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string type = 5;
+ * optional string type = 3;
  * @return {string}
  */
 proto.api.commons.HolidayExp.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -3504,7 +3504,7 @@ proto.api.commons.HolidayExp.prototype.getType = function() {
  * @return {!proto.api.commons.HolidayExp} returns this
  */
 proto.api.commons.HolidayExp.prototype.setType = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

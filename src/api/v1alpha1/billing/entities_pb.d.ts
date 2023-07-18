@@ -107,6 +107,17 @@ export class GetInvoiceReq extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
+  hasInvoice(): boolean;
+  clearInvoice(): void;
+  getInvoice(): api_commons_billing_invoice_pb.Invoice | undefined;
+  setInvoice(value?: api_commons_billing_invoice_pb.Invoice): void;
+
+  hasCsv(): boolean;
+  clearCsv(): void;
+  getCsv(): string;
+  setCsv(value: string): void;
+
+  getFormatCase(): GetInvoiceReq.FormatCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetInvoiceReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetInvoiceReq): GetInvoiceReq.AsObject;
@@ -121,6 +132,14 @@ export namespace GetInvoiceReq {
   export type AsObject = {
     invoiceDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     orgId: string,
+    invoice?: api_commons_billing_invoice_pb.Invoice.AsObject,
+    csv: string,
+  }
+
+  export enum FormatCase {
+    FORMAT_NOT_SET = 0,
+    INVOICE = 3,
+    CSV = 4,
   }
 }
 
@@ -129,6 +148,11 @@ export class GetInvoiceRes extends jspb.Message {
   clearInvoice(): void;
   getInvoice(): api_commons_billing_invoice_pb.Invoice | undefined;
   setInvoice(value?: api_commons_billing_invoice_pb.Invoice): void;
+
+  hasInvoiceFormat(): boolean;
+  clearInvoiceFormat(): void;
+  getInvoiceFormat(): api_commons_billing_invoice_pb.Invoice | undefined;
+  setInvoiceFormat(value?: api_commons_billing_invoice_pb.Invoice): void;
 
   hasCsv(): boolean;
   clearCsv(): void;
@@ -149,17 +173,18 @@ export class GetInvoiceRes extends jspb.Message {
 export namespace GetInvoiceRes {
   export type AsObject = {
     invoice?: api_commons_billing_invoice_pb.Invoice.AsObject,
+    invoiceFormat?: api_commons_billing_invoice_pb.Invoice.AsObject,
     csv: string,
   }
 
   export enum FormatCase {
     FORMAT_NOT_SET = 0,
-    INVOICE = 1,
-    CSV = 2,
+    INVOICE_FORMAT = 2,
+    CSV = 3,
   }
 }
 
-export class ExportGeneratedInvoicesReq extends jspb.Message {
+export class ExportGeneratedInvoiceReq extends jspb.Message {
   hasInvoiceDate(): boolean;
   clearInvoiceDate(): void;
   getInvoiceDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -169,23 +194,23 @@ export class ExportGeneratedInvoicesReq extends jspb.Message {
   setOrgId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExportGeneratedInvoicesReq.AsObject;
-  static toObject(includeInstance: boolean, msg: ExportGeneratedInvoicesReq): ExportGeneratedInvoicesReq.AsObject;
+  toObject(includeInstance?: boolean): ExportGeneratedInvoiceReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ExportGeneratedInvoiceReq): ExportGeneratedInvoiceReq.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExportGeneratedInvoicesReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExportGeneratedInvoicesReq;
-  static deserializeBinaryFromReader(message: ExportGeneratedInvoicesReq, reader: jspb.BinaryReader): ExportGeneratedInvoicesReq;
+  static serializeBinaryToWriter(message: ExportGeneratedInvoiceReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExportGeneratedInvoiceReq;
+  static deserializeBinaryFromReader(message: ExportGeneratedInvoiceReq, reader: jspb.BinaryReader): ExportGeneratedInvoiceReq;
 }
 
-export namespace ExportGeneratedInvoicesReq {
+export namespace ExportGeneratedInvoiceReq {
   export type AsObject = {
     invoiceDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     orgId: string,
   }
 }
 
-export class ExportGeneratedInvoicesRes extends jspb.Message {
+export class ExportGeneratedInvoiceRes extends jspb.Message {
   hasInvoice(): boolean;
   clearInvoice(): void;
   getInvoice(): api_commons_billing_invoice_pb.Invoice | undefined;
@@ -196,18 +221,18 @@ export class ExportGeneratedInvoicesRes extends jspb.Message {
   getCsv(): string;
   setCsv(value: string): void;
 
-  getFormatCase(): ExportGeneratedInvoicesRes.FormatCase;
+  getFormatCase(): ExportGeneratedInvoiceRes.FormatCase;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExportGeneratedInvoicesRes.AsObject;
-  static toObject(includeInstance: boolean, msg: ExportGeneratedInvoicesRes): ExportGeneratedInvoicesRes.AsObject;
+  toObject(includeInstance?: boolean): ExportGeneratedInvoiceRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ExportGeneratedInvoiceRes): ExportGeneratedInvoiceRes.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExportGeneratedInvoicesRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExportGeneratedInvoicesRes;
-  static deserializeBinaryFromReader(message: ExportGeneratedInvoicesRes, reader: jspb.BinaryReader): ExportGeneratedInvoicesRes;
+  static serializeBinaryToWriter(message: ExportGeneratedInvoiceRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExportGeneratedInvoiceRes;
+  static deserializeBinaryFromReader(message: ExportGeneratedInvoiceRes, reader: jspb.BinaryReader): ExportGeneratedInvoiceRes;
 }
 
-export namespace ExportGeneratedInvoicesRes {
+export namespace ExportGeneratedInvoiceRes {
   export type AsObject = {
     invoice?: api_commons_billing_invoice_pb.Invoice.AsObject,
     csv: string,
