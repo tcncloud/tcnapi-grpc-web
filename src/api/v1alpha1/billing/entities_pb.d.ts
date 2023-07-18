@@ -107,17 +107,9 @@ export class GetInvoiceReq extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
-  hasInvoice(): boolean;
-  clearInvoice(): void;
-  getInvoice(): api_commons_billing_invoice_pb.Invoice | undefined;
-  setInvoice(value?: api_commons_billing_invoice_pb.Invoice): void;
+  getFormat(): InvoiceFormatMap[keyof InvoiceFormatMap];
+  setFormat(value: InvoiceFormatMap[keyof InvoiceFormatMap]): void;
 
-  hasCsv(): boolean;
-  clearCsv(): void;
-  getCsv(): string;
-  setCsv(value: string): void;
-
-  getFormatCase(): GetInvoiceReq.FormatCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetInvoiceReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetInvoiceReq): GetInvoiceReq.AsObject;
@@ -132,14 +124,7 @@ export namespace GetInvoiceReq {
   export type AsObject = {
     invoiceDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     orgId: string,
-    invoice?: api_commons_billing_invoice_pb.Invoice.AsObject,
-    csv: string,
-  }
-
-  export enum FormatCase {
-    FORMAT_NOT_SET = 0,
-    INVOICE = 3,
-    CSV = 4,
+    format: InvoiceFormatMap[keyof InvoiceFormatMap],
   }
 }
 
