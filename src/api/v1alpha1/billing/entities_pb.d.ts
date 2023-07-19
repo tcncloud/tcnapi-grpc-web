@@ -139,10 +139,10 @@ export class GetInvoiceRes extends jspb.Message {
   getInvoiceFormat(): api_commons_billing_invoice_pb.Invoice | undefined;
   setInvoiceFormat(value?: api_commons_billing_invoice_pb.Invoice): void;
 
-  hasCsv(): boolean;
-  clearCsv(): void;
-  getCsv(): string;
-  setCsv(value: string): void;
+  hasCsvUrl(): boolean;
+  clearCsvUrl(): void;
+  getCsvUrl(): string;
+  setCsvUrl(value: string): void;
 
   getFormatCase(): GetInvoiceRes.FormatCase;
   serializeBinary(): Uint8Array;
@@ -159,13 +159,13 @@ export namespace GetInvoiceRes {
   export type AsObject = {
     invoice?: api_commons_billing_invoice_pb.Invoice.AsObject,
     invoiceFormat?: api_commons_billing_invoice_pb.Invoice.AsObject,
-    csv: string,
+    csvUrl: string,
   }
 
   export enum FormatCase {
     FORMAT_NOT_SET = 0,
     INVOICE_FORMAT = 2,
-    CSV = 3,
+    CSV_URL = 3,
   }
 }
 
@@ -201,10 +201,10 @@ export class ExportGeneratedInvoiceRes extends jspb.Message {
   getInvoice(): api_commons_billing_invoice_pb.Invoice | undefined;
   setInvoice(value?: api_commons_billing_invoice_pb.Invoice): void;
 
-  hasCsv(): boolean;
-  clearCsv(): void;
-  getCsv(): string;
-  setCsv(value: string): void;
+  hasCsvUrl(): boolean;
+  clearCsvUrl(): void;
+  getCsvUrl(): string;
+  setCsvUrl(value: string): void;
 
   getFormatCase(): ExportGeneratedInvoiceRes.FormatCase;
   serializeBinary(): Uint8Array;
@@ -220,13 +220,13 @@ export class ExportGeneratedInvoiceRes extends jspb.Message {
 export namespace ExportGeneratedInvoiceRes {
   export type AsObject = {
     invoice?: api_commons_billing_invoice_pb.Invoice.AsObject,
-    csv: string,
+    csvUrl: string,
   }
 
   export enum FormatCase {
     FORMAT_NOT_SET = 0,
     INVOICE = 1,
-    CSV = 2,
+    CSV_URL = 2,
   }
 }
 
