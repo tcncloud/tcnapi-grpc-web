@@ -35,7 +35,7 @@ type LearnSearchContent = {
   readonly methodName: string;
   readonly service: typeof Learn;
   readonly requestStream: false;
-  readonly responseStream: false;
+  readonly responseStream: true;
   readonly requestType: typeof api_v0alpha_learn_pb.SearchContentReq;
   readonly responseType: typeof api_v0alpha_learn_pb.SearchRes;
 };
@@ -187,15 +187,7 @@ export class LearnClient {
     requestMessage: api_v0alpha_learn_pb.ExportManyReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.ExportRes|null) => void
   ): UnaryResponse;
-  searchContent(
-    requestMessage: api_v0alpha_learn_pb.SearchContentReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.SearchRes|null) => void
-  ): UnaryResponse;
-  searchContent(
-    requestMessage: api_v0alpha_learn_pb.SearchContentReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.SearchRes|null) => void
-  ): UnaryResponse;
+  searchContent(requestMessage: api_v0alpha_learn_pb.SearchContentReq, metadata?: grpc.Metadata): ResponseStream<api_v0alpha_learn_pb.SearchRes>;
   standalone(
     requestMessage: api_v0alpha_learn_pb.StandaloneReq,
     metadata: grpc.Metadata,
