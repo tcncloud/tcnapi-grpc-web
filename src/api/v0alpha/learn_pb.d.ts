@@ -561,3 +561,117 @@ export namespace DeleteStandaloneRes {
   }
 }
 
+export class SnippetReq extends jspb.Message {
+  getLocale(): string;
+  setLocale(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SnippetReq.AsObject;
+  static toObject(includeInstance: boolean, msg: SnippetReq): SnippetReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SnippetReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SnippetReq;
+  static deserializeBinaryFromReader(message: SnippetReq, reader: jspb.BinaryReader): SnippetReq;
+}
+
+export namespace SnippetReq {
+  export type AsObject = {
+    locale: string,
+  }
+}
+
+export class SnippetRes extends jspb.Message {
+  clearSnippetDetailsList(): void;
+  getSnippetDetailsList(): Array<LearnSnippetDetails>;
+  setSnippetDetailsList(value: Array<LearnSnippetDetails>): void;
+  addSnippetDetails(value?: LearnSnippetDetails, index?: number): LearnSnippetDetails;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SnippetRes.AsObject;
+  static toObject(includeInstance: boolean, msg: SnippetRes): SnippetRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SnippetRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SnippetRes;
+  static deserializeBinaryFromReader(message: SnippetRes, reader: jspb.BinaryReader): SnippetRes;
+}
+
+export namespace SnippetRes {
+  export type AsObject = {
+    snippetDetailsList: Array<LearnSnippetDetails.AsObject>,
+  }
+}
+
+export class LearnSnippetDetails extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getContent(): string;
+  setContent(value: string): void;
+
+  hasLastEditedTimestamp(): boolean;
+  clearLastEditedTimestamp(): void;
+  getLastEditedTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastEditedTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LearnSnippetDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: LearnSnippetDetails): LearnSnippetDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LearnSnippetDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LearnSnippetDetails;
+  static deserializeBinaryFromReader(message: LearnSnippetDetails, reader: jspb.BinaryReader): LearnSnippetDetails;
+}
+
+export namespace LearnSnippetDetails {
+  export type AsObject = {
+    name: string,
+    content: string,
+    lastEditedTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class DeleteLearnPagesReq extends jspb.Message {
+  getLocale(): string;
+  setLocale(value: string): void;
+
+  clearUrlList(): void;
+  getUrlList(): Array<string>;
+  setUrlList(value: Array<string>): void;
+  addUrl(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteLearnPagesReq.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteLearnPagesReq): DeleteLearnPagesReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteLearnPagesReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteLearnPagesReq;
+  static deserializeBinaryFromReader(message: DeleteLearnPagesReq, reader: jspb.BinaryReader): DeleteLearnPagesReq;
+}
+
+export namespace DeleteLearnPagesReq {
+  export type AsObject = {
+    locale: string,
+    urlList: Array<string>,
+  }
+}
+
+export class DeleteLearnPagesRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteLearnPagesRes.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteLearnPagesRes): DeleteLearnPagesRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteLearnPagesRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteLearnPagesRes;
+  static deserializeBinaryFromReader(message: DeleteLearnPagesRes, reader: jspb.BinaryReader): DeleteLearnPagesRes;
+}
+
+export namespace DeleteLearnPagesRes {
+  export type AsObject = {
+  }
+}
+

@@ -100,6 +100,24 @@ Learn.DeleteStandalone = {
   responseType: api_v0alpha_learn_pb.DeleteStandaloneRes
 };
 
+Learn.Snippet = {
+  methodName: "Snippet",
+  service: Learn,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_learn_pb.SnippetReq,
+  responseType: api_v0alpha_learn_pb.SnippetRes
+};
+
+Learn.DeleteLearnPages = {
+  methodName: "DeleteLearnPages",
+  service: Learn,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_learn_pb.DeleteLearnPagesReq,
+  responseType: api_v0alpha_learn_pb.DeleteLearnPagesRes
+};
+
 exports.Learn = Learn;
 
 function LearnClient(serviceHost, options) {
@@ -391,6 +409,68 @@ LearnClient.prototype.deleteStandalone = function deleteStandalone(requestMessag
     callback = arguments[1];
   }
   var client = grpc.unary(Learn.DeleteStandalone, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.snippet = function snippet(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Learn.Snippet, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.deleteLearnPages = function deleteLearnPages(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Learn.DeleteLearnPages, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
