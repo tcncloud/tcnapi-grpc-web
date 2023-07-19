@@ -134,10 +134,10 @@ export class GetInvoiceRes extends jspb.Message {
   getInvoice(): api_commons_billing_invoice_pb.Invoice | undefined;
   setInvoice(value?: api_commons_billing_invoice_pb.Invoice): void;
 
-  hasInvoiceFormat(): boolean;
-  clearInvoiceFormat(): void;
-  getInvoiceFormat(): api_commons_billing_invoice_pb.Invoice | undefined;
-  setInvoiceFormat(value?: api_commons_billing_invoice_pb.Invoice): void;
+  hasProto(): boolean;
+  clearProto(): void;
+  getProto(): api_commons_billing_invoice_pb.Invoice | undefined;
+  setProto(value?: api_commons_billing_invoice_pb.Invoice): void;
 
   hasCsvUrl(): boolean;
   clearCsvUrl(): void;
@@ -158,13 +158,13 @@ export class GetInvoiceRes extends jspb.Message {
 export namespace GetInvoiceRes {
   export type AsObject = {
     invoice?: api_commons_billing_invoice_pb.Invoice.AsObject,
-    invoiceFormat?: api_commons_billing_invoice_pb.Invoice.AsObject,
+    proto?: api_commons_billing_invoice_pb.Invoice.AsObject,
     csvUrl: string,
   }
 
   export enum FormatCase {
     FORMAT_NOT_SET = 0,
-    INVOICE_FORMAT = 2,
+    PROTO = 2,
     CSV_URL = 3,
   }
 }
@@ -177,6 +177,9 @@ export class ExportGeneratedInvoiceReq extends jspb.Message {
 
   getOrgId(): string;
   setOrgId(value: string): void;
+
+  getFormat(): InvoiceFormatMap[keyof InvoiceFormatMap];
+  setFormat(value: InvoiceFormatMap[keyof InvoiceFormatMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExportGeneratedInvoiceReq.AsObject;
@@ -192,14 +195,15 @@ export namespace ExportGeneratedInvoiceReq {
   export type AsObject = {
     invoiceDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     orgId: string,
+    format: InvoiceFormatMap[keyof InvoiceFormatMap],
   }
 }
 
 export class ExportGeneratedInvoiceRes extends jspb.Message {
-  hasInvoice(): boolean;
-  clearInvoice(): void;
-  getInvoice(): api_commons_billing_invoice_pb.Invoice | undefined;
-  setInvoice(value?: api_commons_billing_invoice_pb.Invoice): void;
+  hasProto(): boolean;
+  clearProto(): void;
+  getProto(): api_commons_billing_invoice_pb.Invoice | undefined;
+  setProto(value?: api_commons_billing_invoice_pb.Invoice): void;
 
   hasCsvUrl(): boolean;
   clearCsvUrl(): void;
@@ -219,13 +223,13 @@ export class ExportGeneratedInvoiceRes extends jspb.Message {
 
 export namespace ExportGeneratedInvoiceRes {
   export type AsObject = {
-    invoice?: api_commons_billing_invoice_pb.Invoice.AsObject,
+    proto?: api_commons_billing_invoice_pb.Invoice.AsObject,
     csvUrl: string,
   }
 
   export enum FormatCase {
     FORMAT_NOT_SET = 0,
-    INVOICE = 1,
+    PROTO = 1,
     CSV_URL = 2,
   }
 }

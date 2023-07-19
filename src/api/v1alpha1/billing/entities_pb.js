@@ -1059,7 +1059,7 @@ proto.api.v1alpha1.billing.GetInvoiceRes.oneofGroups_ = [[2,3]];
  */
 proto.api.v1alpha1.billing.GetInvoiceRes.FormatCase = {
   FORMAT_NOT_SET: 0,
-  INVOICE_FORMAT: 2,
+  PROTO: 2,
   CSV_URL: 3
 };
 
@@ -1102,7 +1102,7 @@ proto.api.v1alpha1.billing.GetInvoiceRes.prototype.toObject = function(opt_inclu
 proto.api.v1alpha1.billing.GetInvoiceRes.toObject = function(includeInstance, msg) {
   var f, obj = {
     invoice: (f = msg.getInvoice()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
-    invoiceFormat: (f = msg.getInvoiceFormat()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
+    proto: (f = msg.getProto()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
     csvUrl: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -1148,7 +1148,7 @@ proto.api.v1alpha1.billing.GetInvoiceRes.deserializeBinaryFromReader = function(
     case 2:
       var value = new api_commons_billing_invoice_pb.Invoice;
       reader.readMessage(value,api_commons_billing_invoice_pb.Invoice.deserializeBinaryFromReader);
-      msg.setInvoiceFormat(value);
+      msg.setProto(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -1191,7 +1191,7 @@ proto.api.v1alpha1.billing.GetInvoiceRes.serializeBinaryToWriter = function(mess
       api_commons_billing_invoice_pb.Invoice.serializeBinaryToWriter
     );
   }
-  f = message.getInvoiceFormat();
+  f = message.getProto();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1247,10 +1247,10 @@ proto.api.v1alpha1.billing.GetInvoiceRes.prototype.hasInvoice = function() {
 
 
 /**
- * optional api.commons.billing.Invoice invoice_format = 2;
+ * optional api.commons.billing.Invoice proto = 2;
  * @return {?proto.api.commons.billing.Invoice}
  */
-proto.api.v1alpha1.billing.GetInvoiceRes.prototype.getInvoiceFormat = function() {
+proto.api.v1alpha1.billing.GetInvoiceRes.prototype.getProto = function() {
   return /** @type{?proto.api.commons.billing.Invoice} */ (
     jspb.Message.getWrapperField(this, api_commons_billing_invoice_pb.Invoice, 2));
 };
@@ -1260,7 +1260,7 @@ proto.api.v1alpha1.billing.GetInvoiceRes.prototype.getInvoiceFormat = function()
  * @param {?proto.api.commons.billing.Invoice|undefined} value
  * @return {!proto.api.v1alpha1.billing.GetInvoiceRes} returns this
 */
-proto.api.v1alpha1.billing.GetInvoiceRes.prototype.setInvoiceFormat = function(value) {
+proto.api.v1alpha1.billing.GetInvoiceRes.prototype.setProto = function(value) {
   return jspb.Message.setOneofWrapperField(this, 2, proto.api.v1alpha1.billing.GetInvoiceRes.oneofGroups_[0], value);
 };
 
@@ -1269,8 +1269,8 @@ proto.api.v1alpha1.billing.GetInvoiceRes.prototype.setInvoiceFormat = function(v
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.billing.GetInvoiceRes} returns this
  */
-proto.api.v1alpha1.billing.GetInvoiceRes.prototype.clearInvoiceFormat = function() {
-  return this.setInvoiceFormat(undefined);
+proto.api.v1alpha1.billing.GetInvoiceRes.prototype.clearProto = function() {
+  return this.setProto(undefined);
 };
 
 
@@ -1278,7 +1278,7 @@ proto.api.v1alpha1.billing.GetInvoiceRes.prototype.clearInvoiceFormat = function
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.billing.GetInvoiceRes.prototype.hasInvoiceFormat = function() {
+proto.api.v1alpha1.billing.GetInvoiceRes.prototype.hasProto = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -1352,7 +1352,8 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.prototype.toObject = functi
 proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     invoiceDate: (f = msg.getInvoiceDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    format: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1398,6 +1399,10 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.deserializeBinaryFromReader
       var value = /** @type {string} */ (reader.readString());
       msg.setOrgId(value);
       break;
+    case 3:
+      var value = /** @type {!proto.api.v1alpha1.billing.InvoiceFormat} */ (reader.readEnum());
+      msg.setFormat(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1439,6 +1444,13 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.serializeBinaryToWriter = f
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getFormat();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
       f
     );
   }
@@ -1500,6 +1512,24 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.prototype.setOrgId = functi
 };
 
 
+/**
+ * optional InvoiceFormat format = 3;
+ * @return {!proto.api.v1alpha1.billing.InvoiceFormat}
+ */
+proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.prototype.getFormat = function() {
+  return /** @type {!proto.api.v1alpha1.billing.InvoiceFormat} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.billing.InvoiceFormat} value
+ * @return {!proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq} returns this
+ */
+proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.prototype.setFormat = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
 
 /**
  * Oneof group definitions for this message. Each group defines the field
@@ -1516,7 +1546,7 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.oneofGroups_ = [[1,2]];
  */
 proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.FormatCase = {
   FORMAT_NOT_SET: 0,
-  INVOICE: 1,
+  PROTO: 1,
   CSV_URL: 2
 };
 
@@ -1558,7 +1588,7 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.toObject = functi
  */
 proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
+    proto: (f = msg.getProto()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
     csvUrl: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1599,7 +1629,7 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.deserializeBinaryFromReader
     case 1:
       var value = new api_commons_billing_invoice_pb.Invoice;
       reader.readMessage(value,api_commons_billing_invoice_pb.Invoice.deserializeBinaryFromReader);
-      msg.setInvoice(value);
+      msg.setProto(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1634,7 +1664,7 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.serializeBinary =
  */
 proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getInvoice();
+  f = message.getProto();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1653,10 +1683,10 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.serializeBinaryToWriter = f
 
 
 /**
- * optional api.commons.billing.Invoice invoice = 1;
+ * optional api.commons.billing.Invoice proto = 1;
  * @return {?proto.api.commons.billing.Invoice}
  */
-proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.getInvoice = function() {
+proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.getProto = function() {
   return /** @type{?proto.api.commons.billing.Invoice} */ (
     jspb.Message.getWrapperField(this, api_commons_billing_invoice_pb.Invoice, 1));
 };
@@ -1666,7 +1696,7 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.getInvoice = func
  * @param {?proto.api.commons.billing.Invoice|undefined} value
  * @return {!proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes} returns this
 */
-proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.setInvoice = function(value) {
+proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.setProto = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1, proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.oneofGroups_[0], value);
 };
 
@@ -1675,8 +1705,8 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.setInvoice = func
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes} returns this
  */
-proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.clearInvoice = function() {
-  return this.setInvoice(undefined);
+proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.clearProto = function() {
+  return this.setProto(undefined);
 };
 
 
@@ -1684,7 +1714,7 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.clearInvoice = fu
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.hasInvoice = function() {
+proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.hasProto = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
