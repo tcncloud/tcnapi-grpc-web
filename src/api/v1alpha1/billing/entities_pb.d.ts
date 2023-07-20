@@ -107,8 +107,8 @@ export class GetInvoiceReq extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
-  getFormat(): InvoiceFormatMap[keyof InvoiceFormatMap];
-  setFormat(value: InvoiceFormatMap[keyof InvoiceFormatMap]): void;
+  getInvoiceFormat(): api_commons_billing_invoice_pb.InvoiceFormatMap[keyof api_commons_billing_invoice_pb.InvoiceFormatMap];
+  setInvoiceFormat(value: api_commons_billing_invoice_pb.InvoiceFormatMap[keyof api_commons_billing_invoice_pb.InvoiceFormatMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetInvoiceReq.AsObject;
@@ -124,7 +124,7 @@ export namespace GetInvoiceReq {
   export type AsObject = {
     invoiceDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     orgId: string,
-    format: InvoiceFormatMap[keyof InvoiceFormatMap],
+    invoiceFormat: api_commons_billing_invoice_pb.InvoiceFormatMap[keyof api_commons_billing_invoice_pb.InvoiceFormatMap],
   }
 }
 
@@ -144,6 +144,9 @@ export class GetInvoiceRes extends jspb.Message {
   getCsvUrl(): string;
   setCsvUrl(value: string): void;
 
+  getBillingCycle(): string;
+  setBillingCycle(value: string): void;
+
   getFormatCase(): GetInvoiceRes.FormatCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetInvoiceRes.AsObject;
@@ -160,6 +163,7 @@ export namespace GetInvoiceRes {
     invoice?: api_commons_billing_invoice_pb.Invoice.AsObject,
     proto?: api_commons_billing_invoice_pb.Invoice.AsObject,
     csvUrl: string,
+    billingCycle: string,
   }
 
   export enum FormatCase {
@@ -178,8 +182,8 @@ export class ExportGeneratedInvoiceReq extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
-  getFormat(): InvoiceFormatMap[keyof InvoiceFormatMap];
-  setFormat(value: InvoiceFormatMap[keyof InvoiceFormatMap]): void;
+  getInvoiceFormat(): api_commons_billing_invoice_pb.InvoiceFormatMap[keyof api_commons_billing_invoice_pb.InvoiceFormatMap];
+  setInvoiceFormat(value: api_commons_billing_invoice_pb.InvoiceFormatMap[keyof api_commons_billing_invoice_pb.InvoiceFormatMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExportGeneratedInvoiceReq.AsObject;
@@ -195,7 +199,7 @@ export namespace ExportGeneratedInvoiceReq {
   export type AsObject = {
     invoiceDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     orgId: string,
-    format: InvoiceFormatMap[keyof InvoiceFormatMap],
+    invoiceFormat: api_commons_billing_invoice_pb.InvoiceFormatMap[keyof api_commons_billing_invoice_pb.InvoiceFormatMap],
   }
 }
 
@@ -209,6 +213,9 @@ export class ExportGeneratedInvoiceRes extends jspb.Message {
   clearCsvUrl(): void;
   getCsvUrl(): string;
   setCsvUrl(value: string): void;
+
+  getBillingCycle(): string;
+  setBillingCycle(value: string): void;
 
   getFormatCase(): ExportGeneratedInvoiceRes.FormatCase;
   serializeBinary(): Uint8Array;
@@ -225,6 +232,7 @@ export namespace ExportGeneratedInvoiceRes {
   export type AsObject = {
     proto?: api_commons_billing_invoice_pb.Invoice.AsObject,
     csvUrl: string,
+    billingCycle: string,
   }
 
   export enum FormatCase {
