@@ -7566,6 +7566,72 @@ export namespace UpdateShiftInstanceRes {
   }
 }
 
+export class UpdateShiftInstanceV2Req extends jspb.Message {
+  getShiftInstanceSid(): number;
+  setShiftInstanceSid(value: number): void;
+
+  hasStartDatetime(): boolean;
+  clearStartDatetime(): void;
+  getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getWidthInMinutes(): number;
+  setWidthInMinutes(value: number): void;
+
+  getWfmAgentSid(): number;
+  setWfmAgentSid(value: number): void;
+
+  getIsLocked(): boolean;
+  setIsLocked(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateShiftInstanceV2Req.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateShiftInstanceV2Req): UpdateShiftInstanceV2Req.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateShiftInstanceV2Req, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateShiftInstanceV2Req;
+  static deserializeBinaryFromReader(message: UpdateShiftInstanceV2Req, reader: jspb.BinaryReader): UpdateShiftInstanceV2Req;
+}
+
+export namespace UpdateShiftInstanceV2Req {
+  export type AsObject = {
+    shiftInstanceSid: number,
+    startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    widthInMinutes: number,
+    wfmAgentSid: number,
+    isLocked: boolean,
+  }
+}
+
+export class UpdateShiftInstanceV2Res extends jspb.Message {
+  hasShiftInstance(): boolean;
+  clearShiftInstance(): void;
+  getShiftInstance(): ShiftInstance | undefined;
+  setShiftInstance(value?: ShiftInstance): void;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateShiftInstanceV2Res.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateShiftInstanceV2Res): UpdateShiftInstanceV2Res.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateShiftInstanceV2Res, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateShiftInstanceV2Res;
+  static deserializeBinaryFromReader(message: UpdateShiftInstanceV2Res, reader: jspb.BinaryReader): UpdateShiftInstanceV2Res;
+}
+
+export namespace UpdateShiftInstanceV2Res {
+  export type AsObject = {
+    shiftInstance?: ShiftInstance.AsObject,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
 export class ListShiftSegmentsByShiftInstanceSidsReq extends jspb.Message {
   clearShiftInstanceSidsList(): void;
   getShiftInstanceSidsList(): Array<number>;
