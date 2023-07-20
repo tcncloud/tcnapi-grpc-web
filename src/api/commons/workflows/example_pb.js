@@ -1099,9 +1099,9 @@ proto.api.commons.workflows.DiceDocument.prototype.toObject = function(opt_inclu
  */
 proto.api.commons.workflows.DiceDocument.toObject = function(includeInstance, msg) {
   var f, obj = {
-    diceValue: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    diceValueMax: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    diceValueMin: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    diceValue: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    diceValueMax: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    diceValueMin: jspb.Message.getFieldWithDefault(msg, 13, 0),
     lastMessage: jspb.Message.getFieldWithDefault(msg, 14, ""),
     variablesMap: (f = msg.getVariablesMap()) ? f.toObject(includeInstance, undefined) : [],
     error: jspb.Message.getFieldWithDefault(msg, 100, "")
@@ -1141,15 +1141,15 @@ proto.api.commons.workflows.DiceDocument.deserializeBinaryFromReader = function(
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
+    case 11:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setDiceValue(value);
       break;
-    case 2:
+    case 12:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setDiceValueMax(value);
       break;
-    case 3:
+    case 13:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setDiceValueMin(value);
       break;
@@ -1157,7 +1157,7 @@ proto.api.commons.workflows.DiceDocument.deserializeBinaryFromReader = function(
       var value = /** @type {string} */ (reader.readString());
       msg.setLastMessage(value);
       break;
-    case 5:
+    case 15:
       var value = msg.getVariablesMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
@@ -1199,21 +1199,21 @@ proto.api.commons.workflows.DiceDocument.serializeBinaryToWriter = function(mess
   f = message.getDiceValue();
   if (f !== 0) {
     writer.writeInt32(
-      1,
+      11,
       f
     );
   }
   f = message.getDiceValueMax();
   if (f !== 0) {
     writer.writeInt32(
-      2,
+      12,
       f
     );
   }
   f = message.getDiceValueMin();
   if (f !== 0) {
     writer.writeInt32(
-      3,
+      13,
       f
     );
   }
@@ -1226,7 +1226,7 @@ proto.api.commons.workflows.DiceDocument.serializeBinaryToWriter = function(mess
   }
   f = message.getVariablesMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(15, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getError();
   if (f.length > 0) {
@@ -1239,11 +1239,11 @@ proto.api.commons.workflows.DiceDocument.serializeBinaryToWriter = function(mess
 
 
 /**
- * optional int32 dice_value = 1;
+ * optional int32 dice_value = 11;
  * @return {number}
  */
 proto.api.commons.workflows.DiceDocument.prototype.getDiceValue = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
@@ -1252,16 +1252,16 @@ proto.api.commons.workflows.DiceDocument.prototype.getDiceValue = function() {
  * @return {!proto.api.commons.workflows.DiceDocument} returns this
  */
 proto.api.commons.workflows.DiceDocument.prototype.setDiceValue = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
 /**
- * optional int32 dice_value_max = 2;
+ * optional int32 dice_value_max = 12;
  * @return {number}
  */
 proto.api.commons.workflows.DiceDocument.prototype.getDiceValueMax = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
@@ -1270,16 +1270,16 @@ proto.api.commons.workflows.DiceDocument.prototype.getDiceValueMax = function() 
  * @return {!proto.api.commons.workflows.DiceDocument} returns this
  */
 proto.api.commons.workflows.DiceDocument.prototype.setDiceValueMax = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 12, value);
 };
 
 
 /**
- * optional int32 dice_value_min = 3;
+ * optional int32 dice_value_min = 13;
  * @return {number}
  */
 proto.api.commons.workflows.DiceDocument.prototype.getDiceValueMin = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
 };
 
 
@@ -1288,7 +1288,7 @@ proto.api.commons.workflows.DiceDocument.prototype.getDiceValueMin = function() 
  * @return {!proto.api.commons.workflows.DiceDocument} returns this
  */
 proto.api.commons.workflows.DiceDocument.prototype.setDiceValueMin = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3IntField(this, 13, value);
 };
 
 
@@ -1311,14 +1311,14 @@ proto.api.commons.workflows.DiceDocument.prototype.setLastMessage = function(val
 
 
 /**
- * map<string, string> variables = 5;
+ * map<string, string> variables = 15;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.api.commons.workflows.DiceDocument.prototype.getVariablesMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 15, opt_noLazyCreate,
       null));
 };
 
