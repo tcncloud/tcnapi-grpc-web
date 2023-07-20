@@ -866,6 +866,7 @@ proto.api.v1alpha1.billing.GetInvoiceReq.toObject = function(includeInstance, ms
   var f, obj = {
     invoiceDate: (f = msg.getInvoiceDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    format: jspb.Message.getFieldWithDefault(msg, 3, 0),
     invoiceFormat: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
@@ -912,6 +913,10 @@ proto.api.v1alpha1.billing.GetInvoiceReq.deserializeBinaryFromReader = function(
       var value = /** @type {string} */ (reader.readString());
       msg.setOrgId(value);
       break;
+    case 3:
+      var value = /** @type {!proto.api.v1alpha1.billing.InvoiceFormat} */ (reader.readEnum());
+      msg.setFormat(value);
+      break;
     case 4:
       var value = /** @type {!proto.api.commons.billing.InvoiceFormat} */ (reader.readEnum());
       msg.setInvoiceFormat(value);
@@ -957,6 +962,13 @@ proto.api.v1alpha1.billing.GetInvoiceReq.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getFormat();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
       f
     );
   }
@@ -1022,6 +1034,24 @@ proto.api.v1alpha1.billing.GetInvoiceReq.prototype.getOrgId = function() {
  */
 proto.api.v1alpha1.billing.GetInvoiceReq.prototype.setOrgId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional InvoiceFormat format = 3;
+ * @return {!proto.api.v1alpha1.billing.InvoiceFormat}
+ */
+proto.api.v1alpha1.billing.GetInvoiceReq.prototype.getFormat = function() {
+  return /** @type {!proto.api.v1alpha1.billing.InvoiceFormat} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.billing.InvoiceFormat} value
+ * @return {!proto.api.v1alpha1.billing.GetInvoiceReq} returns this
+ */
+proto.api.v1alpha1.billing.GetInvoiceReq.prototype.setFormat = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -1383,6 +1413,7 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.toObject = function(include
   var f, obj = {
     invoiceDate: (f = msg.getInvoiceDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    format: jspb.Message.getFieldWithDefault(msg, 3, 0),
     invoiceFormat: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
@@ -1429,6 +1460,10 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.deserializeBinaryFromReader
       var value = /** @type {string} */ (reader.readString());
       msg.setOrgId(value);
       break;
+    case 3:
+      var value = /** @type {!proto.api.v1alpha1.billing.InvoiceFormat} */ (reader.readEnum());
+      msg.setFormat(value);
+      break;
     case 4:
       var value = /** @type {!proto.api.commons.billing.InvoiceFormat} */ (reader.readEnum());
       msg.setInvoiceFormat(value);
@@ -1474,6 +1509,13 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.serializeBinaryToWriter = f
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getFormat();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
       f
     );
   }
@@ -1539,6 +1581,24 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.prototype.getOrgId = functi
  */
 proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.prototype.setOrgId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional InvoiceFormat format = 3;
+ * @return {!proto.api.v1alpha1.billing.InvoiceFormat}
+ */
+proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.prototype.getFormat = function() {
+  return /** @type {!proto.api.v1alpha1.billing.InvoiceFormat} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.billing.InvoiceFormat} value
+ * @return {!proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq} returns this
+ */
+proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.prototype.setFormat = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 

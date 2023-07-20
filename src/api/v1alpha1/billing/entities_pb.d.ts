@@ -107,6 +107,9 @@ export class GetInvoiceReq extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
+  getFormat(): InvoiceFormatMap[keyof InvoiceFormatMap];
+  setFormat(value: InvoiceFormatMap[keyof InvoiceFormatMap]): void;
+
   getInvoiceFormat(): api_commons_billing_invoice_pb.InvoiceFormatMap[keyof api_commons_billing_invoice_pb.InvoiceFormatMap];
   setInvoiceFormat(value: api_commons_billing_invoice_pb.InvoiceFormatMap[keyof api_commons_billing_invoice_pb.InvoiceFormatMap]): void;
 
@@ -124,6 +127,7 @@ export namespace GetInvoiceReq {
   export type AsObject = {
     invoiceDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     orgId: string,
+    format: InvoiceFormatMap[keyof InvoiceFormatMap],
     invoiceFormat: api_commons_billing_invoice_pb.InvoiceFormatMap[keyof api_commons_billing_invoice_pb.InvoiceFormatMap],
   }
 }
@@ -182,6 +186,9 @@ export class ExportGeneratedInvoiceReq extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
+  getFormat(): InvoiceFormatMap[keyof InvoiceFormatMap];
+  setFormat(value: InvoiceFormatMap[keyof InvoiceFormatMap]): void;
+
   getInvoiceFormat(): api_commons_billing_invoice_pb.InvoiceFormatMap[keyof api_commons_billing_invoice_pb.InvoiceFormatMap];
   setInvoiceFormat(value: api_commons_billing_invoice_pb.InvoiceFormatMap[keyof api_commons_billing_invoice_pb.InvoiceFormatMap]): void;
 
@@ -199,6 +206,7 @@ export namespace ExportGeneratedInvoiceReq {
   export type AsObject = {
     invoiceDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     orgId: string,
+    format: InvoiceFormatMap[keyof InvoiceFormatMap],
     invoiceFormat: api_commons_billing_invoice_pb.InvoiceFormatMap[keyof api_commons_billing_invoice_pb.InvoiceFormatMap],
   }
 }
