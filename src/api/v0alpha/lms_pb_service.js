@@ -182,6 +182,15 @@ LMS.ListElements = {
   responseType: api_v0alpha_lms_pb.Element
 };
 
+LMS.GetElement = {
+  methodName: "GetElement",
+  service: LMS,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.ElementPK,
+  responseType: api_v0alpha_lms_pb.Element
+};
+
 LMS.UpdateElement = {
   methodName: "UpdateElement",
   service: LMS,
@@ -1086,6 +1095,37 @@ LMSClient.prototype.listElements = function listElements(requestMessage, metadat
     },
     cancel: function () {
       listeners = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.getElement = function getElement(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LMS.GetElement, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
       client.close();
     }
   };

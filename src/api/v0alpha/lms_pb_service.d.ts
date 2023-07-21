@@ -176,6 +176,15 @@ type LMSListElements = {
   readonly responseType: typeof api_v0alpha_lms_pb.Element;
 };
 
+type LMSGetElement = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.ElementPK;
+  readonly responseType: typeof api_v0alpha_lms_pb.Element;
+};
+
 type LMSUpdateElement = {
   readonly methodName: string;
   readonly service: typeof LMS;
@@ -494,6 +503,7 @@ export class LMS {
   static readonly GetHistory: LMSGetHistory;
   static readonly CreateElement: LMSCreateElement;
   static readonly ListElements: LMSListElements;
+  static readonly GetElement: LMSGetElement;
   static readonly UpdateElement: LMSUpdateElement;
   static readonly DeleteElement: LMSDeleteElement;
   static readonly CopyPipelineUpstream: LMSCopyPipelineUpstream;
@@ -716,6 +726,15 @@ export class LMSClient {
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.Element|null) => void
   ): UnaryResponse;
   listElements(requestMessage: api_v0alpha_lms_pb.ListElementsReq, metadata?: grpc.Metadata): ResponseStream<api_v0alpha_lms_pb.Element>;
+  getElement(
+    requestMessage: api_v0alpha_lms_pb.ElementPK,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.Element|null) => void
+  ): UnaryResponse;
+  getElement(
+    requestMessage: api_v0alpha_lms_pb.ElementPK,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.Element|null) => void
+  ): UnaryResponse;
   updateElement(
     requestMessage: api_v0alpha_lms_pb.Element,
     metadata: grpc.Metadata,

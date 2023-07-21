@@ -462,6 +462,26 @@ export namespace ListAutocompleteFieldsRes {
   }
 }
 
+export class ElementPK extends jspb.Message {
+  getElementId(): string;
+  setElementId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ElementPK.AsObject;
+  static toObject(includeInstance: boolean, msg: ElementPK): ElementPK.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ElementPK, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ElementPK;
+  static deserializeBinaryFromReader(message: ElementPK, reader: jspb.BinaryReader): ElementPK;
+}
+
+export namespace ElementPK {
+  export type AsObject = {
+    elementId: string,
+  }
+}
+
 export class Element extends jspb.Message {
   getElementId(): string;
   setElementId(value: string): void;
