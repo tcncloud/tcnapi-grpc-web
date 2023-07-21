@@ -382,6 +382,106 @@ export namespace ListAvailableFieldsByElementIdReq {
   }
 }
 
+export class ListFieldsForElementReq extends jspb.Message {
+  getElementId(): string;
+  setElementId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListFieldsForElementReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFieldsForElementReq): ListFieldsForElementReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListFieldsForElementReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFieldsForElementReq;
+  static deserializeBinaryFromReader(message: ListFieldsForElementReq, reader: jspb.BinaryReader): ListFieldsForElementReq;
+}
+
+export namespace ListFieldsForElementReq {
+  export type AsObject = {
+    elementId: string,
+  }
+}
+
+export class ListFieldsForElementRes extends jspb.Message {
+  clearFieldsList(): void;
+  getFieldsList(): Array<Field>;
+  setFieldsList(value: Array<Field>): void;
+  addFields(value?: Field, index?: number): Field;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListFieldsForElementRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFieldsForElementRes): ListFieldsForElementRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListFieldsForElementRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFieldsForElementRes;
+  static deserializeBinaryFromReader(message: ListFieldsForElementRes, reader: jspb.BinaryReader): ListFieldsForElementRes;
+}
+
+export namespace ListFieldsForElementRes {
+  export type AsObject = {
+    fieldsList: Array<Field.AsObject>,
+  }
+}
+
+export class ListAutocompleteFieldsReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAutocompleteFieldsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAutocompleteFieldsReq): ListAutocompleteFieldsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAutocompleteFieldsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAutocompleteFieldsReq;
+  static deserializeBinaryFromReader(message: ListAutocompleteFieldsReq, reader: jspb.BinaryReader): ListAutocompleteFieldsReq;
+}
+
+export namespace ListAutocompleteFieldsReq {
+  export type AsObject = {
+  }
+}
+
+export class ListAutocompleteFieldsRes extends jspb.Message {
+  clearFieldsList(): void;
+  getFieldsList(): Array<Field>;
+  setFieldsList(value: Array<Field>): void;
+  addFields(value?: Field, index?: number): Field;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAutocompleteFieldsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAutocompleteFieldsRes): ListAutocompleteFieldsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAutocompleteFieldsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAutocompleteFieldsRes;
+  static deserializeBinaryFromReader(message: ListAutocompleteFieldsRes, reader: jspb.BinaryReader): ListAutocompleteFieldsRes;
+}
+
+export namespace ListAutocompleteFieldsRes {
+  export type AsObject = {
+    fieldsList: Array<Field.AsObject>,
+  }
+}
+
+export class ElementPK extends jspb.Message {
+  getElementId(): string;
+  setElementId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ElementPK.AsObject;
+  static toObject(includeInstance: boolean, msg: ElementPK): ElementPK.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ElementPK, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ElementPK;
+  static deserializeBinaryFromReader(message: ElementPK, reader: jspb.BinaryReader): ElementPK;
+}
+
+export namespace ElementPK {
+  export type AsObject = {
+    elementId: string,
+  }
+}
+
 export class Element extends jspb.Message {
   getElementId(): string;
   setElementId(value: string): void;
@@ -5300,6 +5400,11 @@ export class ListMetrics extends jspb.Message {
   setFieldTypesList(value: Array<api_commons_lms_pb.RecordTypeMap[keyof api_commons_lms_pb.RecordTypeMap]>): void;
   addFieldTypes(value: api_commons_lms_pb.RecordTypeMap[keyof api_commons_lms_pb.RecordTypeMap], index?: number): api_commons_lms_pb.RecordTypeMap[keyof api_commons_lms_pb.RecordTypeMap];
 
+  clearFtypesList(): void;
+  getFtypesList(): Array<api_commons_lms_pb.FieldTypeMap[keyof api_commons_lms_pb.FieldTypeMap]>;
+  setFtypesList(value: Array<api_commons_lms_pb.FieldTypeMap[keyof api_commons_lms_pb.FieldTypeMap]>): void;
+  addFtypes(value: api_commons_lms_pb.FieldTypeMap[keyof api_commons_lms_pb.FieldTypeMap], index?: number): api_commons_lms_pb.FieldTypeMap[keyof api_commons_lms_pb.FieldTypeMap];
+
   clearFieldCountsList(): void;
   getFieldCountsList(): Array<number>;
   setFieldCountsList(value: Array<number>): void;
@@ -5360,6 +5465,7 @@ export namespace ListMetrics {
     outputRecordCount: number,
     fieldNamesList: Array<string>,
     fieldTypesList: Array<api_commons_lms_pb.RecordTypeMap[keyof api_commons_lms_pb.RecordTypeMap]>,
+    ftypesList: Array<api_commons_lms_pb.FieldTypeMap[keyof api_commons_lms_pb.FieldTypeMap]>,
     fieldCountsList: Array<number>,
     runType: api_commons_lms_pb.RunTypeMap[keyof api_commons_lms_pb.RunTypeMap],
     successMessage: string,
