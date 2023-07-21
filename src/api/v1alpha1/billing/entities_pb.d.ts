@@ -148,10 +148,21 @@ export class GetInvoiceRes extends jspb.Message {
   getCsvUrl(): string;
   setCsvUrl(value: string): void;
 
+  hasInvoiceProto(): boolean;
+  clearInvoiceProto(): void;
+  getInvoiceProto(): api_commons_billing_invoice_pb.Invoice | undefined;
+  setInvoiceProto(value?: api_commons_billing_invoice_pb.Invoice): void;
+
+  hasInvoiceCsvUrl(): boolean;
+  clearInvoiceCsvUrl(): void;
+  getInvoiceCsvUrl(): string;
+  setInvoiceCsvUrl(value: string): void;
+
   getBillingCycle(): string;
   setBillingCycle(value: string): void;
 
   getFormatCase(): GetInvoiceRes.FormatCase;
+  getInvoiceDataCase(): GetInvoiceRes.InvoiceDataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetInvoiceRes.AsObject;
   static toObject(includeInstance: boolean, msg: GetInvoiceRes): GetInvoiceRes.AsObject;
@@ -167,6 +178,8 @@ export namespace GetInvoiceRes {
     invoice?: api_commons_billing_invoice_pb.Invoice.AsObject,
     proto?: api_commons_billing_invoice_pb.Invoice.AsObject,
     csvUrl: string,
+    invoiceProto?: api_commons_billing_invoice_pb.Invoice.AsObject,
+    invoiceCsvUrl: string,
     billingCycle: string,
   }
 
@@ -174,6 +187,12 @@ export namespace GetInvoiceRes {
     FORMAT_NOT_SET = 0,
     PROTO = 2,
     CSV_URL = 3,
+  }
+
+  export enum InvoiceDataCase {
+    INVOICE_DATA_NOT_SET = 0,
+    INVOICE_PROTO = 100,
+    INVOICE_CSV_URL = 1001,
   }
 }
 
@@ -222,10 +241,21 @@ export class ExportGeneratedInvoiceRes extends jspb.Message {
   getCsvUrl(): string;
   setCsvUrl(value: string): void;
 
+  hasInvoiceProto(): boolean;
+  clearInvoiceProto(): void;
+  getInvoiceProto(): api_commons_billing_invoice_pb.Invoice | undefined;
+  setInvoiceProto(value?: api_commons_billing_invoice_pb.Invoice): void;
+
+  hasInvoiceCsvUrl(): boolean;
+  clearInvoiceCsvUrl(): void;
+  getInvoiceCsvUrl(): string;
+  setInvoiceCsvUrl(value: string): void;
+
   getBillingCycle(): string;
   setBillingCycle(value: string): void;
 
   getFormatCase(): ExportGeneratedInvoiceRes.FormatCase;
+  getInvoiceDataCase(): ExportGeneratedInvoiceRes.InvoiceDataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExportGeneratedInvoiceRes.AsObject;
   static toObject(includeInstance: boolean, msg: ExportGeneratedInvoiceRes): ExportGeneratedInvoiceRes.AsObject;
@@ -240,6 +270,8 @@ export namespace ExportGeneratedInvoiceRes {
   export type AsObject = {
     proto?: api_commons_billing_invoice_pb.Invoice.AsObject,
     csvUrl: string,
+    invoiceProto?: api_commons_billing_invoice_pb.Invoice.AsObject,
+    invoiceCsvUrl: string,
     billingCycle: string,
   }
 
@@ -247,6 +279,12 @@ export namespace ExportGeneratedInvoiceRes {
     FORMAT_NOT_SET = 0,
     PROTO = 1,
     CSV_URL = 2,
+  }
+
+  export enum InvoiceDataCase {
+    INVOICE_DATA_NOT_SET = 0,
+    INVOICE_PROTO = 100,
+    INVOICE_CSV_URL = 1001,
   }
 }
 
