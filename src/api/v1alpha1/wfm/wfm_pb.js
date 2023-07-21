@@ -35300,7 +35300,7 @@ proto.api.v1alpha1.wfm.DOWPlacement.prototype.setWeekNumber = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.ShiftTemplate.repeatedFields_ = [15,16];
+proto.api.v1alpha1.wfm.ShiftTemplate.repeatedFields_ = [15,16,17];
 
 
 
@@ -35350,7 +35350,9 @@ proto.api.v1alpha1.wfm.ShiftTemplate.toObject = function(includeInstance, msg) {
     memberPlacementRulesList: jspb.Message.toObjectList(msg.getMemberPlacementRulesList(),
     proto.api.v1alpha1.wfm.PlacementRule.toObject, includeInstance),
     dowPlacementsList: jspb.Message.toObjectList(msg.getDowPlacementsList(),
-    proto.api.v1alpha1.wfm.DOWPlacement.toObject, includeInstance)
+    proto.api.v1alpha1.wfm.DOWPlacement.toObject, includeInstance),
+    memberAgentGroupsList: jspb.Message.toObjectList(msg.getMemberAgentGroupsList(),
+    proto.api.v1alpha1.wfm.AgentGroup.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -35453,6 +35455,11 @@ proto.api.v1alpha1.wfm.ShiftTemplate.deserializeBinaryFromReader = function(msg,
       var value = new proto.api.v1alpha1.wfm.DOWPlacement;
       reader.readMessage(value,proto.api.v1alpha1.wfm.DOWPlacement.deserializeBinaryFromReader);
       msg.addDowPlacements(value);
+      break;
+    case 17:
+      var value = new proto.api.v1alpha1.wfm.AgentGroup;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.AgentGroup.deserializeBinaryFromReader);
+      msg.addMemberAgentGroups(value);
       break;
     default:
       reader.skipField();
@@ -35596,6 +35603,14 @@ proto.api.v1alpha1.wfm.ShiftTemplate.serializeBinaryToWriter = function(message,
       16,
       f,
       proto.api.v1alpha1.wfm.DOWPlacement.serializeBinaryToWriter
+    );
+  }
+  f = message.getMemberAgentGroupsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      17,
+      f,
+      proto.api.v1alpha1.wfm.AgentGroup.serializeBinaryToWriter
     );
   }
 };
@@ -35945,6 +35960,44 @@ proto.api.v1alpha1.wfm.ShiftTemplate.prototype.addDowPlacements = function(opt_v
  */
 proto.api.v1alpha1.wfm.ShiftTemplate.prototype.clearDowPlacementsList = function() {
   return this.setDowPlacementsList([]);
+};
+
+
+/**
+ * repeated AgentGroup member_agent_groups = 17;
+ * @return {!Array<!proto.api.v1alpha1.wfm.AgentGroup>}
+ */
+proto.api.v1alpha1.wfm.ShiftTemplate.prototype.getMemberAgentGroupsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.AgentGroup>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.AgentGroup, 17));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.AgentGroup>} value
+ * @return {!proto.api.v1alpha1.wfm.ShiftTemplate} returns this
+*/
+proto.api.v1alpha1.wfm.ShiftTemplate.prototype.setMemberAgentGroupsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 17, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.AgentGroup=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.AgentGroup}
+ */
+proto.api.v1alpha1.wfm.ShiftTemplate.prototype.addMemberAgentGroups = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 17, opt_value, proto.api.v1alpha1.wfm.AgentGroup, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.ShiftTemplate} returns this
+ */
+proto.api.v1alpha1.wfm.ShiftTemplate.prototype.clearMemberAgentGroupsList = function() {
+  return this.setMemberAgentGroupsList([]);
 };
 
 

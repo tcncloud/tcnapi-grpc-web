@@ -4189,6 +4189,11 @@ export class ShiftTemplate extends jspb.Message {
   setDowPlacementsList(value: Array<DOWPlacement>): void;
   addDowPlacements(value?: DOWPlacement, index?: number): DOWPlacement;
 
+  clearMemberAgentGroupsList(): void;
+  getMemberAgentGroupsList(): Array<AgentGroup>;
+  setMemberAgentGroupsList(value: Array<AgentGroup>): void;
+  addMemberAgentGroups(value?: AgentGroup, index?: number): AgentGroup;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ShiftTemplate.AsObject;
   static toObject(includeInstance: boolean, msg: ShiftTemplate): ShiftTemplate.AsObject;
@@ -4217,6 +4222,7 @@ export namespace ShiftTemplate {
     scheduleScenarioSid: number,
     memberPlacementRulesList: Array<PlacementRule.AsObject>,
     dowPlacementsList: Array<DOWPlacement.AsObject>,
+    memberAgentGroupsList: Array<AgentGroup.AsObject>,
   }
 }
 
