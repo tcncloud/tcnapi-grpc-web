@@ -192,7 +192,7 @@ export namespace GetInvoiceRes {
   export enum InvoiceDataCase {
     INVOICE_DATA_NOT_SET = 0,
     INVOICE_PROTO = 100,
-    INVOICE_CSV_URL = 1001,
+    INVOICE_CSV_URL = 101,
   }
 }
 
@@ -284,7 +284,7 @@ export namespace ExportGeneratedInvoiceRes {
   export enum InvoiceDataCase {
     INVOICE_DATA_NOT_SET = 0,
     INVOICE_PROTO = 100,
-    INVOICE_CSV_URL = 1001,
+    INVOICE_CSV_URL = 101,
   }
 }
 
