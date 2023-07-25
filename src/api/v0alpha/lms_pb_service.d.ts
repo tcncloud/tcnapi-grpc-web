@@ -113,24 +113,6 @@ type LMSListAvailableFieldsByElementId = {
   readonly responseType: typeof api_v0alpha_lms_pb.ProcessFields;
 };
 
-type LMSListFieldsForElement = {
-  readonly methodName: string;
-  readonly service: typeof LMS;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_lms_pb.ListFieldsForElementReq;
-  readonly responseType: typeof api_v0alpha_lms_pb.ListFieldsForElementRes;
-};
-
-type LMSListAutocompleteFields = {
-  readonly methodName: string;
-  readonly service: typeof LMS;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_lms_pb.ListAutocompleteFieldsReq;
-  readonly responseType: typeof api_v0alpha_lms_pb.ListAutocompleteFieldsRes;
-};
-
 type LMSListCampaignLinks = {
   readonly methodName: string;
   readonly service: typeof LMS;
@@ -173,15 +155,6 @@ type LMSListElements = {
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_v0alpha_lms_pb.ListElementsReq;
-  readonly responseType: typeof api_v0alpha_lms_pb.Element;
-};
-
-type LMSGetElement = {
-  readonly methodName: string;
-  readonly service: typeof LMS;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_lms_pb.ElementPK;
   readonly responseType: typeof api_v0alpha_lms_pb.Element;
 };
 
@@ -496,14 +469,11 @@ export class LMS {
   static readonly UpdateField: LMSUpdateField;
   static readonly DeleteField: LMSDeleteField;
   static readonly ListAvailableFieldsByElementId: LMSListAvailableFieldsByElementId;
-  static readonly ListFieldsForElement: LMSListFieldsForElement;
-  static readonly ListAutocompleteFields: LMSListAutocompleteFields;
   static readonly ListCampaignLinks: LMSListCampaignLinks;
   static readonly PeekList: LMSPeekList;
   static readonly GetHistory: LMSGetHistory;
   static readonly CreateElement: LMSCreateElement;
   static readonly ListElements: LMSListElements;
-  static readonly GetElement: LMSGetElement;
   static readonly UpdateElement: LMSUpdateElement;
   static readonly DeleteElement: LMSDeleteElement;
   static readonly CopyPipelineUpstream: LMSCopyPipelineUpstream;
@@ -671,24 +641,6 @@ export class LMSClient {
     requestMessage: api_v0alpha_lms_pb.ListAvailableFieldsByElementIdReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ProcessFields|null) => void
   ): UnaryResponse;
-  listFieldsForElement(
-    requestMessage: api_v0alpha_lms_pb.ListFieldsForElementReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ListFieldsForElementRes|null) => void
-  ): UnaryResponse;
-  listFieldsForElement(
-    requestMessage: api_v0alpha_lms_pb.ListFieldsForElementReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ListFieldsForElementRes|null) => void
-  ): UnaryResponse;
-  listAutocompleteFields(
-    requestMessage: api_v0alpha_lms_pb.ListAutocompleteFieldsReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ListAutocompleteFieldsRes|null) => void
-  ): UnaryResponse;
-  listAutocompleteFields(
-    requestMessage: api_v0alpha_lms_pb.ListAutocompleteFieldsReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ListAutocompleteFieldsRes|null) => void
-  ): UnaryResponse;
   listCampaignLinks(
     requestMessage: google_protobuf_empty_pb.Empty,
     metadata: grpc.Metadata,
@@ -726,15 +678,6 @@ export class LMSClient {
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.Element|null) => void
   ): UnaryResponse;
   listElements(requestMessage: api_v0alpha_lms_pb.ListElementsReq, metadata?: grpc.Metadata): ResponseStream<api_v0alpha_lms_pb.Element>;
-  getElement(
-    requestMessage: api_v0alpha_lms_pb.ElementPK,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.Element|null) => void
-  ): UnaryResponse;
-  getElement(
-    requestMessage: api_v0alpha_lms_pb.ElementPK,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.Element|null) => void
-  ): UnaryResponse;
   updateElement(
     requestMessage: api_v0alpha_lms_pb.Element,
     metadata: grpc.Metadata,

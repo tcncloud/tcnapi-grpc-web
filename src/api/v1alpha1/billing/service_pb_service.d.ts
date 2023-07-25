@@ -32,21 +32,11 @@ type BillingGetInvoice = {
   readonly responseType: typeof api_v1alpha1_billing_entities_pb.GetInvoiceRes;
 };
 
-type BillingExportGeneratedInvoice = {
-  readonly methodName: string;
-  readonly service: typeof Billing;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_billing_entities_pb.ExportGeneratedInvoiceReq;
-  readonly responseType: typeof api_v1alpha1_billing_entities_pb.ExportGeneratedInvoiceRes;
-};
-
 export class Billing {
   static readonly serviceName: string;
   static readonly GetBillingPlan: BillingGetBillingPlan;
   static readonly UpdateBillingPlan: BillingUpdateBillingPlan;
   static readonly GetInvoice: BillingGetInvoice;
-  static readonly ExportGeneratedInvoice: BillingExportGeneratedInvoice;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -107,15 +97,6 @@ export class BillingClient {
   getInvoice(
     requestMessage: api_v1alpha1_billing_entities_pb.GetInvoiceReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_billing_entities_pb.GetInvoiceRes|null) => void
-  ): UnaryResponse;
-  exportGeneratedInvoice(
-    requestMessage: api_v1alpha1_billing_entities_pb.ExportGeneratedInvoiceReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_billing_entities_pb.ExportGeneratedInvoiceRes|null) => void
-  ): UnaryResponse;
-  exportGeneratedInvoice(
-    requestMessage: api_v1alpha1_billing_entities_pb.ExportGeneratedInvoiceReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_billing_entities_pb.ExportGeneratedInvoiceRes|null) => void
   ): UnaryResponse;
 }
 

@@ -940,15 +940,6 @@ type WFMUpdateShiftInstance = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceRes;
 };
 
-type WFMUpdateShiftInstanceV2 = {
-  readonly methodName: string;
-  readonly service: typeof WFM;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceV2Req;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceV2Res;
-};
-
 type WFMListShiftSegmentsByShiftInstanceSids = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1109,7 +1100,6 @@ export class WFM {
   static readonly CreateShiftInstanceV2: WFMCreateShiftInstanceV2;
   static readonly SwapShiftInstances: WFMSwapShiftInstances;
   static readonly UpdateShiftInstance: WFMUpdateShiftInstance;
-  static readonly UpdateShiftInstanceV2: WFMUpdateShiftInstanceV2;
   static readonly ListShiftSegmentsByShiftInstanceSids: WFMListShiftSegmentsByShiftInstanceSids;
   static readonly SetSchedulingTarget: WFMSetSchedulingTarget;
   static readonly GetSchedulingTarget: WFMGetSchedulingTarget;
@@ -2045,15 +2035,6 @@ export class WFMClient {
   updateShiftInstance(
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceRes|null) => void
-  ): UnaryResponse;
-  updateShiftInstanceV2(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceV2Req,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceV2Res|null) => void
-  ): UnaryResponse;
-  updateShiftInstanceV2(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceV2Req,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceV2Res|null) => void
   ): UnaryResponse;
   listShiftSegmentsByShiftInstanceSids(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListShiftSegmentsByShiftInstanceSidsReq,

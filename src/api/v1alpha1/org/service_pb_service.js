@@ -929,24 +929,6 @@ Org.CreateDataDipTemplate = {
   responseType: api_v1alpha1_org_huntgroup_pb.CreateDataDipTemplateResponse
 };
 
-Org.UpdateDataDipTemplate = {
-  methodName: "UpdateDataDipTemplate",
-  service: Org,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_org_huntgroup_pb.UpdateDataDipTemplateRequest,
-  responseType: api_v1alpha1_org_huntgroup_pb.UpdateDataDipTemplateResponse
-};
-
-Org.DeleteDataDipTemplate = {
-  methodName: "DeleteDataDipTemplate",
-  service: Org,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_org_huntgroup_pb.DeleteDataDipTemplateRequest,
-  responseType: api_v1alpha1_org_huntgroup_pb.DeleteDataDipTemplateResponse
-};
-
 Org.ListAgentResponseAutoRules = {
   methodName: "ListAgentResponseAutoRules",
   service: Org,
@@ -4555,68 +4537,6 @@ OrgClient.prototype.createDataDipTemplate = function createDataDipTemplate(reque
     callback = arguments[1];
   }
   var client = grpc.unary(Org.CreateDataDipTemplate, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-OrgClient.prototype.updateDataDipTemplate = function updateDataDipTemplate(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Org.UpdateDataDipTemplate, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-OrgClient.prototype.deleteDataDipTemplate = function deleteDataDipTemplate(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Org.DeleteDataDipTemplate, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

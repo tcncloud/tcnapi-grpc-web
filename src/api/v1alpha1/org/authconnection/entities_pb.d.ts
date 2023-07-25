@@ -31,6 +31,9 @@ export namespace CreateAuthConnectionRequest {
 }
 
 export class CreateAuthConnectionResponse extends jspb.Message {
+  getConnectionId(): string;
+  setConnectionId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAuthConnectionResponse.AsObject;
   static toObject(includeInstance: boolean, msg: CreateAuthConnectionResponse): CreateAuthConnectionResponse.AsObject;
@@ -43,6 +46,7 @@ export class CreateAuthConnectionResponse extends jspb.Message {
 
 export namespace CreateAuthConnectionResponse {
   export type AsObject = {
+    connectionId: string,
   }
 }
 
@@ -79,6 +83,48 @@ export class GetAuthConnectionSettingsResponse extends jspb.Message {
 }
 
 export namespace GetAuthConnectionSettingsResponse {
+  export type AsObject = {
+    settings?: api_commons_org_auth_connections_pb.AuthConnectionSettings.AsObject,
+  }
+}
+
+export class GetAuthConnectionRequest extends jspb.Message {
+  getConnectionId(): string;
+  setConnectionId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAuthConnectionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAuthConnectionRequest): GetAuthConnectionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAuthConnectionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAuthConnectionRequest;
+  static deserializeBinaryFromReader(message: GetAuthConnectionRequest, reader: jspb.BinaryReader): GetAuthConnectionRequest;
+}
+
+export namespace GetAuthConnectionRequest {
+  export type AsObject = {
+    connectionId: string,
+  }
+}
+
+export class GetAuthConnectionResponse extends jspb.Message {
+  hasSettings(): boolean;
+  clearSettings(): void;
+  getSettings(): api_commons_org_auth_connections_pb.AuthConnectionSettings | undefined;
+  setSettings(value?: api_commons_org_auth_connections_pb.AuthConnectionSettings): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAuthConnectionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAuthConnectionResponse): GetAuthConnectionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAuthConnectionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAuthConnectionResponse;
+  static deserializeBinaryFromReader(message: GetAuthConnectionResponse, reader: jspb.BinaryReader): GetAuthConnectionResponse;
+}
+
+export namespace GetAuthConnectionResponse {
   export type AsObject = {
     settings?: api_commons_org_auth_connections_pb.AuthConnectionSettings.AsObject,
   }

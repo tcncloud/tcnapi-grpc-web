@@ -23,6 +23,15 @@ type AuthConnectionServiceGetAuthConnectionSettings = {
   readonly responseType: typeof api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionSettingsResponse;
 };
 
+type AuthConnectionServiceGetAuthConnection = {
+  readonly methodName: string;
+  readonly service: typeof AuthConnectionService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionRequest;
+  readonly responseType: typeof api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionResponse;
+};
+
 type AuthConnectionServiceDeleteAuthConnection = {
   readonly methodName: string;
   readonly service: typeof AuthConnectionService;
@@ -54,6 +63,7 @@ export class AuthConnectionService {
   static readonly serviceName: string;
   static readonly CreateAuthConnection: AuthConnectionServiceCreateAuthConnection;
   static readonly GetAuthConnectionSettings: AuthConnectionServiceGetAuthConnectionSettings;
+  static readonly GetAuthConnection: AuthConnectionServiceGetAuthConnection;
   static readonly DeleteAuthConnection: AuthConnectionServiceDeleteAuthConnection;
   static readonly UpdateAuthConnectionSecret: AuthConnectionServiceUpdateAuthConnectionSecret;
   static readonly UpdateAuthConnectionGroups: AuthConnectionServiceUpdateAuthConnectionGroups;
@@ -108,6 +118,15 @@ export class AuthConnectionServiceClient {
   getAuthConnectionSettings(
     requestMessage: api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionSettingsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionSettingsResponse|null) => void
+  ): UnaryResponse;
+  getAuthConnection(
+    requestMessage: api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionResponse|null) => void
+  ): UnaryResponse;
+  getAuthConnection(
+    requestMessage: api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionResponse|null) => void
   ): UnaryResponse;
   deleteAuthConnection(
     requestMessage: api_v1alpha1_org_authconnection_entities_pb.DeleteAuthConnectionRequest,
