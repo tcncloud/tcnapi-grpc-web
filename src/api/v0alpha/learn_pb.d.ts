@@ -515,6 +515,9 @@ export class LearnStandaloneDetails extends jspb.Message {
   getLastEditedTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLastEditedTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getTitle(): string;
+  setTitle(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LearnStandaloneDetails.AsObject;
   static toObject(includeInstance: boolean, msg: LearnStandaloneDetails): LearnStandaloneDetails.AsObject;
@@ -530,6 +533,7 @@ export namespace LearnStandaloneDetails {
     name: string,
     content: string,
     lastEditedTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    title: string,
   }
 }
 

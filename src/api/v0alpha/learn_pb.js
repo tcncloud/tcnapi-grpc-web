@@ -4080,7 +4080,8 @@ proto.api.v0alpha.LearnStandaloneDetails.toObject = function(includeInstance, ms
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     content: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    title: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -4129,6 +4130,10 @@ proto.api.v0alpha.LearnStandaloneDetails.deserializeBinaryFromReader = function(
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setLastEditedTimestamp(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTitle(value);
       break;
     default:
       reader.skipField();
@@ -4179,6 +4184,13 @@ proto.api.v0alpha.LearnStandaloneDetails.serializeBinaryToWriter = function(mess
       3,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getTitle();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -4254,6 +4266,24 @@ proto.api.v0alpha.LearnStandaloneDetails.prototype.clearLastEditedTimestamp = fu
  */
 proto.api.v0alpha.LearnStandaloneDetails.prototype.hasLastEditedTimestamp = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string title = 4;
+ * @return {string}
+ */
+proto.api.v0alpha.LearnStandaloneDetails.prototype.getTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.LearnStandaloneDetails} returns this
+ */
+proto.api.v0alpha.LearnStandaloneDetails.prototype.setTitle = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
