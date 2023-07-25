@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_org_auth_connections_pb from "../../../../api/commons/org/auth_connections_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class CreateAuthConnectionRequest extends jspb.Message {
   hasSettings(): boolean;
@@ -173,6 +174,11 @@ export class UpdateAuthConnectionSecretRequest extends jspb.Message {
   getClientSecret(): string;
   setClientSecret(value: string): void;
 
+  hasSecretExpiration(): boolean;
+  clearSecretExpiration(): void;
+  getSecretExpiration(): UpdateAuthConnectionSecretRequest.SecretExpiration | undefined;
+  setSecretExpiration(value?: UpdateAuthConnectionSecretRequest.SecretExpiration): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateAuthConnectionSecretRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateAuthConnectionSecretRequest): UpdateAuthConnectionSecretRequest.AsObject;
@@ -187,6 +193,29 @@ export namespace UpdateAuthConnectionSecretRequest {
   export type AsObject = {
     connectionId: string,
     clientSecret: string,
+    secretExpiration?: UpdateAuthConnectionSecretRequest.SecretExpiration.AsObject,
+  }
+
+  export class SecretExpiration extends jspb.Message {
+    hasDate(): boolean;
+    clearDate(): void;
+    getDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SecretExpiration.AsObject;
+    static toObject(includeInstance: boolean, msg: SecretExpiration): SecretExpiration.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SecretExpiration, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SecretExpiration;
+    static deserializeBinaryFromReader(message: SecretExpiration, reader: jspb.BinaryReader): SecretExpiration;
+  }
+
+  export namespace SecretExpiration {
+    export type AsObject = {
+      date?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
   }
 }
 
