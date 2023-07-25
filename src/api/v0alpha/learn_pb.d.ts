@@ -629,6 +629,9 @@ export class LearnSnippetDetails extends jspb.Message {
   getLastEditedTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLastEditedTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getTitle(): string;
+  setTitle(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LearnSnippetDetails.AsObject;
   static toObject(includeInstance: boolean, msg: LearnSnippetDetails): LearnSnippetDetails.AsObject;
@@ -644,6 +647,7 @@ export namespace LearnSnippetDetails {
     name: string,
     content: string,
     lastEditedTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    title: string,
   }
 }
 
