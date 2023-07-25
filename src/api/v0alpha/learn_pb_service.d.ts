@@ -40,6 +40,15 @@ type LearnSearchContent = {
   readonly responseType: typeof api_v0alpha_learn_pb.SearchRes;
 };
 
+type LearnListSearchResults = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: false;
+  readonly responseStream: true;
+  readonly requestType: typeof api_v0alpha_learn_pb.SearchContentReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.SearchRes;
+};
+
 type LearnStandalone = {
   readonly methodName: string;
   readonly service: typeof Learn;
@@ -94,18 +103,39 @@ type LearnDeleteStandalone = {
   readonly responseType: typeof api_v0alpha_learn_pb.DeleteStandaloneRes;
 };
 
+type LearnSnippet = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_learn_pb.SnippetReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.SnippetRes;
+};
+
+type LearnDeleteLearnPages = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_learn_pb.DeleteLearnPagesReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.DeleteLearnPagesRes;
+};
+
 export class Learn {
   static readonly serviceName: string;
   static readonly Exist: LearnExist;
   static readonly Content: LearnContent;
   static readonly ExportMany: LearnExportMany;
   static readonly SearchContent: LearnSearchContent;
+  static readonly ListSearchResults: LearnListSearchResults;
   static readonly Standalone: LearnStandalone;
   static readonly ContentEditorData: LearnContentEditorData;
   static readonly Update: LearnUpdate;
   static readonly StoreStaticImage: LearnStoreStaticImage;
   static readonly UploadDynamicScreenshot: LearnUploadDynamicScreenshot;
   static readonly DeleteStandalone: LearnDeleteStandalone;
+  static readonly Snippet: LearnSnippet;
+  static readonly DeleteLearnPages: LearnDeleteLearnPages;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -176,6 +206,7 @@ export class LearnClient {
     requestMessage: api_v0alpha_learn_pb.SearchContentReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.SearchRes|null) => void
   ): UnaryResponse;
+  listSearchResults(requestMessage: api_v0alpha_learn_pb.SearchContentReq, metadata?: grpc.Metadata): ResponseStream<api_v0alpha_learn_pb.SearchRes>;
   standalone(
     requestMessage: api_v0alpha_learn_pb.StandaloneReq,
     metadata: grpc.Metadata,
@@ -229,6 +260,24 @@ export class LearnClient {
   deleteStandalone(
     requestMessage: api_v0alpha_learn_pb.DeleteStandaloneReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.DeleteStandaloneRes|null) => void
+  ): UnaryResponse;
+  snippet(
+    requestMessage: api_v0alpha_learn_pb.SnippetReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.SnippetRes|null) => void
+  ): UnaryResponse;
+  snippet(
+    requestMessage: api_v0alpha_learn_pb.SnippetReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.SnippetRes|null) => void
+  ): UnaryResponse;
+  deleteLearnPages(
+    requestMessage: api_v0alpha_learn_pb.DeleteLearnPagesReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.DeleteLearnPagesRes|null) => void
+  ): UnaryResponse;
+  deleteLearnPages(
+    requestMessage: api_v0alpha_learn_pb.DeleteLearnPagesReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.DeleteLearnPagesRes|null) => void
   ): UnaryResponse;
 }
 
