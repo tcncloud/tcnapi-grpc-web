@@ -1890,7 +1890,8 @@ proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionGroupsRequest.toObject
   var f, obj = {
     defaultGroup: (f = msg.getDefaultGroup()) && api_commons_org_auth_connections_pb.GroupItem.toObject(includeInstance, f),
     customGroupsList: jspb.Message.toObjectList(msg.getCustomGroupsList(),
-    api_commons_org_auth_connections_pb.GroupItem.toObject, includeInstance)
+    api_commons_org_auth_connections_pb.GroupItem.toObject, includeInstance),
+    connectionId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1937,6 +1938,10 @@ proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionGroupsRequest.deserial
       reader.readMessage(value,api_commons_org_auth_connections_pb.GroupItem.deserializeBinaryFromReader);
       msg.addCustomGroups(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConnectionId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1980,6 +1985,13 @@ proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionGroupsRequest.serializ
       2,
       f,
       api_commons_org_auth_connections_pb.GroupItem.serializeBinaryToWriter
+    );
+  }
+  f = message.getConnectionId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -2057,6 +2069,24 @@ proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionGroupsRequest.prototyp
  */
 proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionGroupsRequest.prototype.clearCustomGroupsList = function() {
   return this.setCustomGroupsList([]);
+};
+
+
+/**
+ * optional string connection_id = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionGroupsRequest.prototype.getConnectionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionGroupsRequest} returns this
+ */
+proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionGroupsRequest.prototype.setConnectionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

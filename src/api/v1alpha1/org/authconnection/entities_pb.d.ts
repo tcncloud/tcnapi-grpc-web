@@ -246,6 +246,9 @@ export class UpdateAuthConnectionGroupsRequest extends jspb.Message {
   setCustomGroupsList(value: Array<api_commons_org_auth_connections_pb.GroupItem>): void;
   addCustomGroups(value?: api_commons_org_auth_connections_pb.GroupItem, index?: number): api_commons_org_auth_connections_pb.GroupItem;
 
+  getConnectionId(): string;
+  setConnectionId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateAuthConnectionGroupsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateAuthConnectionGroupsRequest): UpdateAuthConnectionGroupsRequest.AsObject;
@@ -260,6 +263,7 @@ export namespace UpdateAuthConnectionGroupsRequest {
   export type AsObject = {
     defaultGroup?: api_commons_org_auth_connections_pb.GroupItem.AsObject,
     customGroupsList: Array<api_commons_org_auth_connections_pb.GroupItem.AsObject>,
+    connectionId: string,
   }
 }
 
