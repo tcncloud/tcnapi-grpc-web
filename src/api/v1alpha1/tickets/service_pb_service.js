@@ -179,8 +179,8 @@ Tickets.ListSkills = {
   service: Tickets,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_tickets_ticket_pb.ListSkillsReq,
-  responseType: api_v1alpha1_tickets_ticket_pb.ListSkillsRes
+  requestType: api_v1alpha1_tickets_ticket_pb.ListSkillsRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.ListSkillsResponse
 };
 
 Tickets.ListUsers = {
@@ -188,8 +188,8 @@ Tickets.ListUsers = {
   service: Tickets,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_tickets_ticket_pb.ListUsersReq,
-  responseType: api_v1alpha1_tickets_ticket_pb.ListUsersRes
+  requestType: api_v1alpha1_tickets_ticket_pb.ListUsersRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.ListUsersResponse
 };
 
 exports.Tickets = Tickets;

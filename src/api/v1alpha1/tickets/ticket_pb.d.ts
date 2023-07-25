@@ -772,39 +772,39 @@ export namespace CreateSelfAssignRes {
   }
 }
 
-export class ListSkillsReq extends jspb.Message {
+export class ListSkillsRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListSkillsReq.AsObject;
-  static toObject(includeInstance: boolean, msg: ListSkillsReq): ListSkillsReq.AsObject;
+  toObject(includeInstance?: boolean): ListSkillsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSkillsRequest): ListSkillsRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListSkillsReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListSkillsReq;
-  static deserializeBinaryFromReader(message: ListSkillsReq, reader: jspb.BinaryReader): ListSkillsReq;
+  static serializeBinaryToWriter(message: ListSkillsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSkillsRequest;
+  static deserializeBinaryFromReader(message: ListSkillsRequest, reader: jspb.BinaryReader): ListSkillsRequest;
 }
 
-export namespace ListSkillsReq {
+export namespace ListSkillsRequest {
   export type AsObject = {
   }
 }
 
-export class ListSkillsRes extends jspb.Message {
+export class ListSkillsResponse extends jspb.Message {
   clearSkillsList(): void;
   getSkillsList(): Array<Skill>;
   setSkillsList(value: Array<Skill>): void;
   addSkills(value?: Skill, index?: number): Skill;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListSkillsRes.AsObject;
-  static toObject(includeInstance: boolean, msg: ListSkillsRes): ListSkillsRes.AsObject;
+  toObject(includeInstance?: boolean): ListSkillsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSkillsResponse): ListSkillsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListSkillsRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListSkillsRes;
-  static deserializeBinaryFromReader(message: ListSkillsRes, reader: jspb.BinaryReader): ListSkillsRes;
+  static serializeBinaryToWriter(message: ListSkillsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSkillsResponse;
+  static deserializeBinaryFromReader(message: ListSkillsResponse, reader: jspb.BinaryReader): ListSkillsResponse;
 }
 
-export namespace ListSkillsRes {
+export namespace ListSkillsResponse {
   export type AsObject = {
     skillsList: Array<Skill.AsObject>,
   }
@@ -834,39 +834,39 @@ export namespace Skill {
   }
 }
 
-export class ListUsersReq extends jspb.Message {
+export class ListUsersRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListUsersReq.AsObject;
-  static toObject(includeInstance: boolean, msg: ListUsersReq): ListUsersReq.AsObject;
+  toObject(includeInstance?: boolean): ListUsersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUsersRequest): ListUsersRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListUsersReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListUsersReq;
-  static deserializeBinaryFromReader(message: ListUsersReq, reader: jspb.BinaryReader): ListUsersReq;
+  static serializeBinaryToWriter(message: ListUsersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUsersRequest;
+  static deserializeBinaryFromReader(message: ListUsersRequest, reader: jspb.BinaryReader): ListUsersRequest;
 }
 
-export namespace ListUsersReq {
+export namespace ListUsersRequest {
   export type AsObject = {
   }
 }
 
-export class ListUsersRes extends jspb.Message {
+export class ListUsersResponse extends jspb.Message {
   clearUsersList(): void;
   getUsersList(): Array<User>;
   setUsersList(value: Array<User>): void;
   addUsers(value?: User, index?: number): User;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListUsersRes.AsObject;
-  static toObject(includeInstance: boolean, msg: ListUsersRes): ListUsersRes.AsObject;
+  toObject(includeInstance?: boolean): ListUsersResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUsersResponse): ListUsersResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListUsersRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListUsersRes;
-  static deserializeBinaryFromReader(message: ListUsersRes, reader: jspb.BinaryReader): ListUsersRes;
+  static serializeBinaryToWriter(message: ListUsersResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUsersResponse;
+  static deserializeBinaryFromReader(message: ListUsersResponse, reader: jspb.BinaryReader): ListUsersResponse;
 }
 
-export namespace ListUsersRes {
+export namespace ListUsersResponse {
   export type AsObject = {
     usersList: Array<User.AsObject>,
   }
