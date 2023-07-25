@@ -1661,7 +1661,8 @@ proto.api.v0alpha.UpdateReq.toObject = function(includeInstance, msg) {
     url: jspb.Message.getFieldWithDefault(msg, 1, ""),
     locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
     content: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    message: jspb.Message.getFieldWithDefault(msg, 12, "")
+    message: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    previousName: jspb.Message.getFieldWithDefault(msg, 13, "")
   };
 
   if (includeInstance) {
@@ -1713,6 +1714,10 @@ proto.api.v0alpha.UpdateReq.deserializeBinaryFromReader = function(msg, reader) 
     case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setMessage(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreviousName(value);
       break;
     default:
       reader.skipField();
@@ -1768,6 +1773,13 @@ proto.api.v0alpha.UpdateReq.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       12,
+      f
+    );
+  }
+  f = message.getPreviousName();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
       f
     );
   }
@@ -1843,6 +1855,24 @@ proto.api.v0alpha.UpdateReq.prototype.getMessage = function() {
  */
 proto.api.v0alpha.UpdateReq.prototype.setMessage = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string previous_name = 13;
+ * @return {string}
+ */
+proto.api.v0alpha.UpdateReq.prototype.getPreviousName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.UpdateReq} returns this
+ */
+proto.api.v0alpha.UpdateReq.prototype.setPreviousName = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 

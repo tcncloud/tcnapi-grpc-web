@@ -164,6 +164,9 @@ export class UpdateReq extends jspb.Message {
   getMessage(): string;
   setMessage(value: string): void;
 
+  getPreviousName(): string;
+  setPreviousName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateReq.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateReq): UpdateReq.AsObject;
@@ -180,6 +183,7 @@ export namespace UpdateReq {
     locale: string,
     content: string,
     message: string,
+    previousName: string,
   }
 }
 
