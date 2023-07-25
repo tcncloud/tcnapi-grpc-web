@@ -89,6 +89,9 @@ export class ContentRes extends jspb.Message {
   setImagesList(value: Array<LearnImage>): void;
   addImages(value?: LearnImage, index?: number): LearnImage;
 
+  getTitle(): string;
+  setTitle(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContentRes.AsObject;
   static toObject(includeInstance: boolean, msg: ContentRes): ContentRes.AsObject;
@@ -104,6 +107,7 @@ export namespace ContentRes {
     content: string,
     lastEditedTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     imagesList: Array<LearnImage.AsObject>,
+    title: string,
   }
 }
 
@@ -164,8 +168,8 @@ export class UpdateReq extends jspb.Message {
   getMessage(): string;
   setMessage(value: string): void;
 
-  getPreviousName(): string;
-  setPreviousName(value: string): void;
+  getTitle(): string;
+  setTitle(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateReq.AsObject;
@@ -183,7 +187,7 @@ export namespace UpdateReq {
     locale: string,
     content: string,
     message: string,
-    previousName: string,
+    title: string,
   }
 }
 
