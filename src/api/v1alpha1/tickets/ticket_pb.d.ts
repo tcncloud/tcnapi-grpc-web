@@ -240,6 +240,44 @@ export namespace ListAllocatedTicketReq {
   }
 }
 
+export class ListAvailableAgentTicketsResponse extends jspb.Message {
+  clearTicketSidList(): void;
+  getTicketSidList(): Array<string>;
+  setTicketSidList(value: Array<string>): void;
+  addTicketSid(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAvailableAgentTicketsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAvailableAgentTicketsResponse): ListAvailableAgentTicketsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAvailableAgentTicketsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAvailableAgentTicketsResponse;
+  static deserializeBinaryFromReader(message: ListAvailableAgentTicketsResponse, reader: jspb.BinaryReader): ListAvailableAgentTicketsResponse;
+}
+
+export namespace ListAvailableAgentTicketsResponse {
+  export type AsObject = {
+    ticketSidList: Array<string>,
+  }
+}
+
+export class ListAvailableAgentTicketsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAvailableAgentTicketsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAvailableAgentTicketsRequest): ListAvailableAgentTicketsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAvailableAgentTicketsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAvailableAgentTicketsRequest;
+  static deserializeBinaryFromReader(message: ListAvailableAgentTicketsRequest, reader: jspb.BinaryReader): ListAvailableAgentTicketsRequest;
+}
+
+export namespace ListAvailableAgentTicketsRequest {
+  export type AsObject = {
+  }
+}
+
 export class EditTicketRes extends jspb.Message {
   getIsEdited(): boolean;
   setIsEdited(value: boolean): void;
