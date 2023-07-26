@@ -2041,11 +2041,6 @@ export class Transcript extends jspb.Message {
 
   getAgentResponseMap(): jspb.Map<string, AgentResponse>;
   clearAgentResponseMap(): void;
-  hasPhone(): boolean;
-  clearPhone(): void;
-  getPhone(): Transcript.Phone | undefined;
-  setPhone(value?: Transcript.Phone): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Transcript.AsObject;
   static toObject(includeInstance: boolean, msg: Transcript): Transcript.AsObject;
@@ -2077,113 +2072,6 @@ export namespace Transcript {
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     numberFormat: string,
     agentResponseMap: Array<[string, AgentResponse.AsObject]>,
-    phone?: Transcript.Phone.AsObject,
-  }
-
-  export class Phone extends jspb.Message {
-    clearCcList(): void;
-    getCcList(): Array<string>;
-    setCcList(value: Array<string>): void;
-    addCc(value: string, index?: number): string;
-
-    clearNdcList(): void;
-    getNdcList(): Array<string>;
-    setNdcList(value: Array<string>): void;
-    addNdc(value: string, index?: number): string;
-
-    clearPrefixList(): void;
-    getPrefixList(): Array<string>;
-    setPrefixList(value: Array<string>): void;
-    addPrefix(value: string, index?: number): string;
-
-    clearCityList(): void;
-    getCityList(): Array<string>;
-    setCityList(value: Array<string>): void;
-    addCity(value: string, index?: number): string;
-
-    clearIso2List(): void;
-    getIso2List(): Array<string>;
-    setIso2List(value: Array<string>): void;
-    addIso2(value: string, index?: number): string;
-
-    clearRegionCodeList(): void;
-    getRegionCodeList(): Array<string>;
-    setRegionCodeList(value: Array<string>): void;
-    addRegionCode(value: string, index?: number): string;
-
-    clearRegionNameList(): void;
-    getRegionNameList(): Array<string>;
-    setRegionNameList(value: Array<string>): void;
-    addRegionName(value: string, index?: number): string;
-
-    clearTimeZoneList(): void;
-    getTimeZoneList(): Array<string>;
-    setTimeZoneList(value: Array<string>): void;
-    addTimeZone(value: string, index?: number): string;
-
-    clearTypeList(): void;
-    getTypeList(): Array<string>;
-    setTypeList(value: Array<string>): void;
-    addType(value: string, index?: number): string;
-
-    clearUtcList(): void;
-    getUtcList(): Array<number>;
-    setUtcList(value: Array<number>): void;
-    addUtc(value: number, index?: number): number;
-
-    clearLocationList(): void;
-    getLocationList(): Array<Transcript.Phone.Location>;
-    setLocationList(value: Array<Transcript.Phone.Location>): void;
-    addLocation(value?: Transcript.Phone.Location, index?: number): Transcript.Phone.Location;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Phone.AsObject;
-    static toObject(includeInstance: boolean, msg: Phone): Phone.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Phone, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Phone;
-    static deserializeBinaryFromReader(message: Phone, reader: jspb.BinaryReader): Phone;
-  }
-
-  export namespace Phone {
-    export type AsObject = {
-      ccList: Array<string>,
-      ndcList: Array<string>,
-      prefixList: Array<string>,
-      cityList: Array<string>,
-      iso2List: Array<string>,
-      regionCodeList: Array<string>,
-      regionNameList: Array<string>,
-      timeZoneList: Array<string>,
-      typeList: Array<string>,
-      utcList: Array<number>,
-      locationList: Array<Transcript.Phone.Location.AsObject>,
-    }
-
-    export class Location extends jspb.Message {
-      getLon(): number;
-      setLon(value: number): void;
-
-      getLat(): number;
-      setLat(value: number): void;
-
-      serializeBinary(): Uint8Array;
-      toObject(includeInstance?: boolean): Location.AsObject;
-      static toObject(includeInstance: boolean, msg: Location): Location.AsObject;
-      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-      static serializeBinaryToWriter(message: Location, writer: jspb.BinaryWriter): void;
-      static deserializeBinary(bytes: Uint8Array): Location;
-      static deserializeBinaryFromReader(message: Location, reader: jspb.BinaryReader): Location;
-    }
-
-    export namespace Location {
-      export type AsObject = {
-        lon: number,
-        lat: number,
-      }
-    }
   }
 }
 
