@@ -7486,6 +7486,11 @@ export class SwapShiftInstancesRes extends jspb.Message {
   setShiftInstancesList(value: Array<ShiftInstance>): void;
   addShiftInstances(value?: ShiftInstance, index?: number): ShiftInstance;
 
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SwapShiftInstancesRes.AsObject;
   static toObject(includeInstance: boolean, msg: SwapShiftInstancesRes): SwapShiftInstancesRes.AsObject;
@@ -7499,6 +7504,7 @@ export class SwapShiftInstancesRes extends jspb.Message {
 export namespace SwapShiftInstancesRes {
   export type AsObject = {
     shiftInstancesList: Array<ShiftInstance.AsObject>,
+    diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
 
@@ -7639,6 +7645,60 @@ export namespace UpdateShiftInstanceV2Res {
   export type AsObject = {
     shiftInstance?: ShiftInstance.AsObject,
     diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
+export class ListShiftInstanceSidsForAgentReq extends jspb.Message {
+  hasScheduleSelector(): boolean;
+  clearScheduleSelector(): void;
+  getScheduleSelector(): api_commons_wfm_pb.ScheduleSelector | undefined;
+  setScheduleSelector(value?: api_commons_wfm_pb.ScheduleSelector): void;
+
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  getWfmAgentSid(): number;
+  setWfmAgentSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListShiftInstanceSidsForAgentReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListShiftInstanceSidsForAgentReq): ListShiftInstanceSidsForAgentReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListShiftInstanceSidsForAgentReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListShiftInstanceSidsForAgentReq;
+  static deserializeBinaryFromReader(message: ListShiftInstanceSidsForAgentReq, reader: jspb.BinaryReader): ListShiftInstanceSidsForAgentReq;
+}
+
+export namespace ListShiftInstanceSidsForAgentReq {
+  export type AsObject = {
+    scheduleSelector?: api_commons_wfm_pb.ScheduleSelector.AsObject,
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    wfmAgentSid: number,
+  }
+}
+
+export class ListShiftInstanceSidsForAgentRes extends jspb.Message {
+  clearShiftInstanceSidsList(): void;
+  getShiftInstanceSidsList(): Array<number>;
+  setShiftInstanceSidsList(value: Array<number>): void;
+  addShiftInstanceSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListShiftInstanceSidsForAgentRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListShiftInstanceSidsForAgentRes): ListShiftInstanceSidsForAgentRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListShiftInstanceSidsForAgentRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListShiftInstanceSidsForAgentRes;
+  static deserializeBinaryFromReader(message: ListShiftInstanceSidsForAgentRes, reader: jspb.BinaryReader): ListShiftInstanceSidsForAgentRes;
+}
+
+export namespace ListShiftInstanceSidsForAgentRes {
+  export type AsObject = {
+    shiftInstanceSidsList: Array<number>,
   }
 }
 
