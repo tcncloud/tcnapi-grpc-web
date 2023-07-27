@@ -6089,7 +6089,13 @@ proto.api.v1alpha1.delivery.History.toObject = function(includeInstance, msg) {
     createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     transferStart: (f = msg.getTransferStart()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     transferComplete: (f = msg.getTransferComplete()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    origin: jspb.Message.getFieldWithDefault(msg, 11, 0)
+    origin: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    orgId: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    messagePayload: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    messagePayloadLen: jspb.Message.getFieldWithDefault(msg, 14, 0),
+    status: jspb.Message.getFieldWithDefault(msg, 15, 0),
+    isInbound: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+    transactionSid: jspb.Message.getFieldWithDefault(msg, 17, "0")
   };
 
   if (includeInstance) {
@@ -6168,6 +6174,30 @@ proto.api.v1alpha1.delivery.History.deserializeBinaryFromReader = function(msg, 
     case 11:
       var value = /** @type {!proto.api.commons.OperatorApplications} */ (reader.readEnum());
       msg.setOrigin(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgId(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMessagePayload(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMessagePayloadLen(value);
+      break;
+    case 15:
+      var value = /** @type {!proto.api.commons.TransferStatus} */ (reader.readEnum());
+      msg.setStatus(value);
+      break;
+    case 16:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsInbound(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setTransactionSid(value);
       break;
     default:
       reader.skipField();
@@ -6268,6 +6298,48 @@ proto.api.v1alpha1.delivery.History.serializeBinaryToWriter = function(message, 
   if (f !== 0.0) {
     writer.writeEnum(
       11,
+      f
+    );
+  }
+  f = message.getOrgId();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getMessagePayload();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
+  f = message.getMessagePayloadLen();
+  if (f !== 0) {
+    writer.writeInt32(
+      14,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      15,
+      f
+    );
+  }
+  f = message.getIsInbound();
+  if (f) {
+    writer.writeBool(
+      16,
+      f
+    );
+  }
+  f = message.getTransactionSid();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      17,
       f
     );
   }
@@ -6508,6 +6580,114 @@ proto.api.v1alpha1.delivery.History.prototype.getOrigin = function() {
  */
 proto.api.v1alpha1.delivery.History.prototype.setOrigin = function(value) {
   return jspb.Message.setProto3EnumField(this, 11, value);
+};
+
+
+/**
+ * optional string org_id = 12;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.History.prototype.getOrgId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.History} returns this
+ */
+proto.api.v1alpha1.delivery.History.prototype.setOrgId = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string message_payload = 13;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.History.prototype.getMessagePayload = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.History} returns this
+ */
+proto.api.v1alpha1.delivery.History.prototype.setMessagePayload = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional int32 message_payload_len = 14;
+ * @return {number}
+ */
+proto.api.v1alpha1.delivery.History.prototype.getMessagePayloadLen = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.delivery.History} returns this
+ */
+proto.api.v1alpha1.delivery.History.prototype.setMessagePayloadLen = function(value) {
+  return jspb.Message.setProto3IntField(this, 14, value);
+};
+
+
+/**
+ * optional api.commons.TransferStatus status = 15;
+ * @return {!proto.api.commons.TransferStatus}
+ */
+proto.api.v1alpha1.delivery.History.prototype.getStatus = function() {
+  return /** @type {!proto.api.commons.TransferStatus} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.TransferStatus} value
+ * @return {!proto.api.v1alpha1.delivery.History} returns this
+ */
+proto.api.v1alpha1.delivery.History.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 15, value);
+};
+
+
+/**
+ * optional bool is_inbound = 16;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.History.prototype.getIsInbound = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.delivery.History} returns this
+ */
+proto.api.v1alpha1.delivery.History.prototype.setIsInbound = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 16, value);
+};
+
+
+/**
+ * optional int64 transaction_sid = 17;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.History.prototype.getTransactionSid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.History} returns this
+ */
+proto.api.v1alpha1.delivery.History.prototype.setTransactionSid = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 17, value);
 };
 
 

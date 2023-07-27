@@ -724,6 +724,24 @@ export class History extends jspb.Message {
   getOrigin(): api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap];
   setOrigin(value: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap]): void;
 
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getMessagePayload(): string;
+  setMessagePayload(value: string): void;
+
+  getMessagePayloadLen(): number;
+  setMessagePayloadLen(value: number): void;
+
+  getStatus(): api_commons_delivery_pb.TransferStatusMap[keyof api_commons_delivery_pb.TransferStatusMap];
+  setStatus(value: api_commons_delivery_pb.TransferStatusMap[keyof api_commons_delivery_pb.TransferStatusMap]): void;
+
+  getIsInbound(): boolean;
+  setIsInbound(value: boolean): void;
+
+  getTransactionSid(): string;
+  setTransactionSid(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): History.AsObject;
   static toObject(includeInstance: boolean, msg: History): History.AsObject;
@@ -746,6 +764,12 @@ export namespace History {
     transferStart?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     transferComplete?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     origin: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap],
+    orgId: string,
+    messagePayload: string,
+    messagePayloadLen: number,
+    status: api_commons_delivery_pb.TransferStatusMap[keyof api_commons_delivery_pb.TransferStatusMap],
+    isInbound: boolean,
+    transactionSid: string,
   }
 }
 
