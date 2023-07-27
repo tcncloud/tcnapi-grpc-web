@@ -688,23 +688,23 @@ export namespace ListReq {
 }
 
 export class History extends jspb.Message {
-  getSid(): number;
-  setSid(value: number): void;
-
-  getOrgId(): string;
-  setOrgId(value: string): void;
+  getSid(): string;
+  setSid(value: string): void;
 
   getTransferConfigName(): string;
   setTransferConfigName(value: string): void;
 
-  getTransferConfigSid(): number;
-  setTransferConfigSid(value: number): void;
+  getTransferConfigSid(): string;
+  setTransferConfigSid(value: string): void;
 
   getDeliveryType(): string;
   setDeliveryType(value: string): void;
 
   getError(): string;
   setError(value: string): void;
+
+  getSuccess(): boolean;
+  setSuccess(value: boolean): void;
 
   hasCreatedOn(): boolean;
   clearCreatedOn(): void;
@@ -721,14 +721,17 @@ export class History extends jspb.Message {
   getTransferComplete(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setTransferComplete(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getOrigin(): api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap];
+  setOrigin(value: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap]): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   getMessagePayload(): string;
   setMessagePayload(value: string): void;
 
   getMessagePayloadLen(): number;
   setMessagePayloadLen(value: number): void;
-
-  getOrigin(): api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap];
-  setOrigin(value: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap]): void;
 
   getStatus(): api_commons_delivery_pb.TransferStatusMap[keyof api_commons_delivery_pb.TransferStatusMap];
   setStatus(value: api_commons_delivery_pb.TransferStatusMap[keyof api_commons_delivery_pb.TransferStatusMap]): void;
@@ -751,18 +754,19 @@ export class History extends jspb.Message {
 
 export namespace History {
   export type AsObject = {
-    sid: number,
-    orgId: string,
+    sid: string,
     transferConfigName: string,
-    transferConfigSid: number,
+    transferConfigSid: string,
     deliveryType: string,
     error: string,
+    success: boolean,
     createdOn?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     transferStart?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     transferComplete?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    origin: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap],
+    orgId: string,
     messagePayload: string,
     messagePayloadLen: number,
-    origin: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap],
     status: api_commons_delivery_pb.TransferStatusMap[keyof api_commons_delivery_pb.TransferStatusMap],
     isInbound: boolean,
     transactionSid: number,
