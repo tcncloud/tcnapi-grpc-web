@@ -739,8 +739,8 @@ export class History extends jspb.Message {
   getIsInbound(): boolean;
   setIsInbound(value: boolean): void;
 
-  getTransactionSid(): number;
-  setTransactionSid(value: number): void;
+  getTransactionSid(): string;
+  setTransactionSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): History.AsObject;
@@ -769,7 +769,7 @@ export namespace History {
     messagePayloadLen: number,
     status: api_commons_delivery_pb.TransferStatusMap[keyof api_commons_delivery_pb.TransferStatusMap],
     isInbound: boolean,
-    transactionSid: number,
+    transactionSid: string,
   }
 }
 

@@ -6095,7 +6095,7 @@ proto.api.v1alpha1.delivery.History.toObject = function(includeInstance, msg) {
     messagePayloadLen: jspb.Message.getFieldWithDefault(msg, 14, 0),
     status: jspb.Message.getFieldWithDefault(msg, 15, 0),
     isInbound: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
-    transactionSid: jspb.Message.getFieldWithDefault(msg, 17, 0)
+    transactionSid: jspb.Message.getFieldWithDefault(msg, 17, "0")
   };
 
   if (includeInstance) {
@@ -6196,7 +6196,7 @@ proto.api.v1alpha1.delivery.History.deserializeBinaryFromReader = function(msg, 
       msg.setIsInbound(value);
       break;
     case 17:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTransactionSid(value);
       break;
     default:
@@ -6337,8 +6337,8 @@ proto.api.v1alpha1.delivery.History.serializeBinaryToWriter = function(message, 
     );
   }
   f = message.getTransactionSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       17,
       f
     );
@@ -6675,19 +6675,19 @@ proto.api.v1alpha1.delivery.History.prototype.setIsInbound = function(value) {
 
 /**
  * optional int64 transaction_sid = 17;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.delivery.History.prototype.getTransactionSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.delivery.History} returns this
  */
 proto.api.v1alpha1.delivery.History.prototype.setTransactionSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 17, value);
+  return jspb.Message.setProto3StringIntField(this, 17, value);
 };
 
 
