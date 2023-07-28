@@ -59,7 +59,8 @@ proto.annotations.perms.Card = {
   CARD_TRUSTS: 6,
   CARD_HUNT_GROUPS: 7,
   CARD_SOUNDBOARD: 8,
-  CARD_SUBSCRIPTIONS: 9
+  CARD_SUBSCRIPTIONS: 9,
+  CARD_PBX_MANAGER: 10
 };
 
 goog.object.extend(exports, proto.annotations.perms);

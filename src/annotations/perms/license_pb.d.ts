@@ -36,6 +36,7 @@ export interface CardMap {
   CARD_HUNT_GROUPS: 7;
   CARD_SOUNDBOARD: 8;
   CARD_SUBSCRIPTIONS: 9;
+  CARD_PBX_MANAGER: 10;
 }
 
 export const Card: CardMap;
