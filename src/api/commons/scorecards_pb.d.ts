@@ -398,6 +398,9 @@ export class AutoEvaluation extends jspb.Message {
   getRiskLevel(): RiskLevelMap[keyof RiskLevelMap];
   setRiskLevel(value: RiskLevelMap[keyof RiskLevelMap]): void;
 
+  getCallLength(): number;
+  setCallLength(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AutoEvaluation.AsObject;
   static toObject(includeInstance: boolean, msg: AutoEvaluation): AutoEvaluation.AsObject;
@@ -421,6 +424,7 @@ export namespace AutoEvaluation {
     transcriptSid: number,
     expressionMatched: boolean,
     riskLevel: RiskLevelMap[keyof RiskLevelMap],
+    callLength: number,
   }
 }
 
