@@ -241,10 +241,10 @@ export namespace ListAllocatedTicketReq {
 }
 
 export class ListAvailableAgentTicketsResponse extends jspb.Message {
-  clearTicketSidList(): void;
-  getTicketSidList(): Array<string>;
-  setTicketSidList(value: Array<string>): void;
-  addTicketSid(value: string, index?: number): string;
+  clearTicketList(): void;
+  getTicketList(): Array<api_commons_tickets_pb.Ticket>;
+  setTicketList(value: Array<api_commons_tickets_pb.Ticket>): void;
+  addTicket(value?: api_commons_tickets_pb.Ticket, index?: number): api_commons_tickets_pb.Ticket;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAvailableAgentTicketsResponse.AsObject;
@@ -258,7 +258,7 @@ export class ListAvailableAgentTicketsResponse extends jspb.Message {
 
 export namespace ListAvailableAgentTicketsResponse {
   export type AsObject = {
-    ticketSidList: Array<string>,
+    ticketList: Array<api_commons_tickets_pb.Ticket.AsObject>,
   }
 }
 
