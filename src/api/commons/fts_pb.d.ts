@@ -16,6 +16,7 @@ export interface AppNameMap {
   INTEGRATIONS: 9;
   OMNICHANNEL: 10;
   LEARN: 11;
+  BILLING: 12;
 }
 
 export const AppName: AppNameMap;
