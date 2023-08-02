@@ -2574,7 +2574,7 @@ proto.api.v1alpha1.tickets.ListAllocatedTicketReq.serializeBinaryToWriter = func
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.repeatedFields_ = [2];
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.repeatedFields_ = [1,2];
 
 
 
@@ -2607,6 +2607,7 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.toObject 
  */
 proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
+    ticketSidList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     ticketList: jspb.Message.toObjectList(msg.getTicketList(),
     api_commons_tickets_pb.Ticket.toObject, includeInstance)
   };
@@ -2645,6 +2646,12 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.deserializeBinaryFr
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var values = /** @type {!Array<string>} */ (reader.isDelimited() ? reader.readPackedInt64String() : [reader.readInt64String()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addTicketSid(values[i]);
+      }
+      break;
     case 2:
       var value = new api_commons_tickets_pb.Ticket;
       reader.readMessage(value,api_commons_tickets_pb.Ticket.deserializeBinaryFromReader);
@@ -2679,6 +2686,13 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.serialize
  */
 proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getTicketSidList();
+  if (f.length > 0) {
+    writer.writePackedInt64String(
+      1,
+      f
+    );
+  }
   f = message.getTicketList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -2687,6 +2701,43 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.serializeBinaryToWr
       api_commons_tickets_pb.Ticket.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * repeated int64 ticket_sid = 1;
+ * @return {!Array<string>}
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.getTicketSidList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse} returns this
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.setTicketSidList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse} returns this
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.addTicketSid = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse} returns this
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.clearTicketSidList = function() {
+  return this.setTicketSidList([]);
 };
 
 
