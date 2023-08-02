@@ -955,6 +955,15 @@ WFM.UpdateShiftInstanceV2 = {
   responseType: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceV2Res
 };
 
+WFM.ListShiftInstanceSidsForAgent = {
+  methodName: "ListShiftInstanceSidsForAgent",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListShiftInstanceSidsForAgentReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListShiftInstanceSidsForAgentRes
+};
+
 WFM.ListShiftSegmentsByShiftInstanceSids = {
   methodName: "ListShiftSegmentsByShiftInstanceSids",
   service: WFM,
@@ -4285,6 +4294,37 @@ WFMClient.prototype.updateShiftInstanceV2 = function updateShiftInstanceV2(reque
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.UpdateShiftInstanceV2, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listShiftInstanceSidsForAgent = function listShiftInstanceSidsForAgent(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListShiftInstanceSidsForAgent, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

@@ -37,7 +37,8 @@ proto.api.commons.AppName = {
   VANALYTICS: 8,
   INTEGRATIONS: 9,
   OMNICHANNEL: 10,
-  LEARN: 11
+  LEARN: 11,
+  BILLING: 12
 };
 
 goog.object.extend(exports, proto.api.commons);

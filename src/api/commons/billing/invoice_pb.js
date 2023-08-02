@@ -24,6 +24,7 @@ var global =
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.api.commons.billing.Invoice', null, global);
+goog.exportSymbol('proto.api.commons.billing.InvoiceFormat', null, global);
 goog.exportSymbol('proto.api.commons.billing.InvoiceItem', null, global);
 goog.exportSymbol('proto.api.commons.billing.Product', null, global);
 /**
@@ -536,6 +537,15 @@ proto.api.commons.billing.Product = {
   PRODUCT_OMNI: 300,
   PRODUCT_VANA: 400,
   PRODUCT_COMPLIANCE: 500
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.billing.InvoiceFormat = {
+  INVOICE_FORMAT_UNSPECIFIED: 0,
+  INVOICE_FORMAT_PROTO: 1,
+  INVOICE_FORMAT_CSV: 2
 };
 
 goog.object.extend(exports, proto.api.commons.billing);

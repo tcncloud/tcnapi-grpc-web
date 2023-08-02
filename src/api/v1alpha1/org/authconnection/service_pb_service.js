@@ -29,6 +29,15 @@ AuthConnectionService.GetAuthConnectionSettings = {
   responseType: api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionSettingsResponse
 };
 
+AuthConnectionService.GetAuthConnection = {
+  methodName: "GetAuthConnection",
+  service: AuthConnectionService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionRequest,
+  responseType: api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionResponse
+};
+
 AuthConnectionService.DeleteAuthConnection = {
   methodName: "DeleteAuthConnection",
   service: AuthConnectionService,
@@ -99,6 +108,37 @@ AuthConnectionServiceClient.prototype.getAuthConnectionSettings = function getAu
     callback = arguments[1];
   }
   var client = grpc.unary(AuthConnectionService.GetAuthConnectionSettings, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AuthConnectionServiceClient.prototype.getAuthConnection = function getAuthConnection(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(AuthConnectionService.GetAuthConnection, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

@@ -83,3 +83,11 @@ export interface ProductMap {
 
 export const Product: ProductMap;
 
+export interface InvoiceFormatMap {
+  INVOICE_FORMAT_UNSPECIFIED: 0;
+  INVOICE_FORMAT_PROTO: 1;
+  INVOICE_FORMAT_CSV: 2;
+}
+
+export const InvoiceFormat: InvoiceFormatMap;
+

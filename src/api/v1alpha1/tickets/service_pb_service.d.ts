@@ -168,6 +168,33 @@ type TicketsListAllocatedTickets = {
   readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.ListAllocatedTicketRes;
 };
 
+type TicketsListAvailableAgentTickets = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.ListAvailableAgentTicketsRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.ListAvailableAgentTicketsResponse;
+};
+
+type TicketsListSkills = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.ListSkillsRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.ListSkillsResponse;
+};
+
+type TicketsListUsers = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.ListUsersRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.ListUsersResponse;
+};
+
 export class Tickets {
   static readonly serviceName: string;
   static readonly CreateTicket: TicketsCreateTicket;
@@ -188,6 +215,9 @@ export class Tickets {
   static readonly AssignSelf: TicketsAssignSelf;
   static readonly EditMaskTicket: TicketsEditMaskTicket;
   static readonly ListAllocatedTickets: TicketsListAllocatedTickets;
+  static readonly ListAvailableAgentTickets: TicketsListAvailableAgentTickets;
+  static readonly ListSkills: TicketsListSkills;
+  static readonly ListUsers: TicketsListUsers;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -383,6 +413,33 @@ export class TicketsClient {
   listAllocatedTickets(
     requestMessage: api_v1alpha1_tickets_ticket_pb.ListAllocatedTicketReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListAllocatedTicketRes|null) => void
+  ): UnaryResponse;
+  listAvailableAgentTickets(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListAvailableAgentTicketsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListAvailableAgentTicketsResponse|null) => void
+  ): UnaryResponse;
+  listAvailableAgentTickets(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListAvailableAgentTicketsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListAvailableAgentTicketsResponse|null) => void
+  ): UnaryResponse;
+  listSkills(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListSkillsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListSkillsResponse|null) => void
+  ): UnaryResponse;
+  listSkills(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListSkillsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListSkillsResponse|null) => void
+  ): UnaryResponse;
+  listUsers(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListUsersRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListUsersResponse|null) => void
+  ): UnaryResponse;
+  listUsers(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListUsersRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListUsersResponse|null) => void
   ): UnaryResponse;
 }
 
