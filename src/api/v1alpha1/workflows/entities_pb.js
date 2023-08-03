@@ -371,7 +371,8 @@ proto.api.v1alpha1.workflows.ListFlowDefinitionsResponse.prototype.toObject = fu
 proto.api.v1alpha1.workflows.ListFlowDefinitionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     flowDefinitionsList: jspb.Message.toObjectList(msg.getFlowDefinitionsList(),
-    api_commons_workflows_entities_pb.FlowDefinition.toObject, includeInstance)
+    api_commons_workflows_entities_pb.FlowDefinition.toObject, includeInstance),
+    filterMask: (f = msg.getFilterMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -413,6 +414,11 @@ proto.api.v1alpha1.workflows.ListFlowDefinitionsResponse.deserializeBinaryFromRe
       reader.readMessage(value,api_commons_workflows_entities_pb.FlowDefinition.deserializeBinaryFromReader);
       msg.addFlowDefinitions(value);
       break;
+    case 2:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setFilterMask(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -448,6 +454,14 @@ proto.api.v1alpha1.workflows.ListFlowDefinitionsResponse.serializeBinaryToWriter
       1,
       f,
       api_commons_workflows_entities_pb.FlowDefinition.serializeBinaryToWriter
+    );
+  }
+  f = message.getFilterMask();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
@@ -488,6 +502,43 @@ proto.api.v1alpha1.workflows.ListFlowDefinitionsResponse.prototype.addFlowDefini
  */
 proto.api.v1alpha1.workflows.ListFlowDefinitionsResponse.prototype.clearFlowDefinitionsList = function() {
   return this.setFlowDefinitionsList([]);
+};
+
+
+/**
+ * optional google.protobuf.FieldMask filter_mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.workflows.ListFlowDefinitionsResponse.prototype.getFilterMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.workflows.ListFlowDefinitionsResponse} returns this
+*/
+proto.api.v1alpha1.workflows.ListFlowDefinitionsResponse.prototype.setFilterMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.workflows.ListFlowDefinitionsResponse} returns this
+ */
+proto.api.v1alpha1.workflows.ListFlowDefinitionsResponse.prototype.clearFilterMask = function() {
+  return this.setFilterMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.workflows.ListFlowDefinitionsResponse.prototype.hasFilterMask = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
