@@ -409,6 +409,15 @@ type ScorecardsDeleteAutoEvaluation = {
   readonly responseType: typeof api_v1alpha1_scorecards_auto_evaluation_pb.DeleteAutoEvaluationResponse;
 };
 
+type ScorecardsPreviewEvaluationScore = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_evaluation_pb.PreviewEvaluationScoreRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_evaluation_pb.PreviewEvaluationScoreResponse;
+};
+
 export class Scorecards {
   static readonly serviceName: string;
   static readonly CreateScorecard: ScorecardsCreateScorecard;
@@ -455,6 +464,7 @@ export class Scorecards {
   static readonly GetAutoEvaluation: ScorecardsGetAutoEvaluation;
   static readonly ListAutoEvaluations: ScorecardsListAutoEvaluations;
   static readonly DeleteAutoEvaluation: ScorecardsDeleteAutoEvaluation;
+  static readonly PreviewEvaluationScore: ScorecardsPreviewEvaluationScore;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -884,6 +894,15 @@ export class ScorecardsClient {
   deleteAutoEvaluation(
     requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.DeleteAutoEvaluationRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.DeleteAutoEvaluationResponse|null) => void
+  ): UnaryResponse;
+  previewEvaluationScore(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.PreviewEvaluationScoreRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.PreviewEvaluationScoreResponse|null) => void
+  ): UnaryResponse;
+  previewEvaluationScore(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.PreviewEvaluationScoreRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.PreviewEvaluationScoreResponse|null) => void
   ): UnaryResponse;
 }
 

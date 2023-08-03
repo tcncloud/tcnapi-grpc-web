@@ -293,3 +293,53 @@ export namespace ListEvaluationsResponse {
   }
 }
 
+export class PreviewEvaluationScoreRequest extends jspb.Message {
+  hasEvaluation(): boolean;
+  clearEvaluation(): void;
+  getEvaluation(): api_commons_scorecards_pb.Evaluation | undefined;
+  setEvaluation(value?: api_commons_scorecards_pb.Evaluation): void;
+
+  hasScorecard(): boolean;
+  clearScorecard(): void;
+  getScorecard(): api_commons_scorecards_pb.Scorecard | undefined;
+  setScorecard(value?: api_commons_scorecards_pb.Scorecard): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PreviewEvaluationScoreRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PreviewEvaluationScoreRequest): PreviewEvaluationScoreRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PreviewEvaluationScoreRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PreviewEvaluationScoreRequest;
+  static deserializeBinaryFromReader(message: PreviewEvaluationScoreRequest, reader: jspb.BinaryReader): PreviewEvaluationScoreRequest;
+}
+
+export namespace PreviewEvaluationScoreRequest {
+  export type AsObject = {
+    evaluation?: api_commons_scorecards_pb.Evaluation.AsObject,
+    scorecard?: api_commons_scorecards_pb.Scorecard.AsObject,
+  }
+}
+
+export class PreviewEvaluationScoreResponse extends jspb.Message {
+  hasEvaluation(): boolean;
+  clearEvaluation(): void;
+  getEvaluation(): api_commons_scorecards_pb.Evaluation | undefined;
+  setEvaluation(value?: api_commons_scorecards_pb.Evaluation): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PreviewEvaluationScoreResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PreviewEvaluationScoreResponse): PreviewEvaluationScoreResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PreviewEvaluationScoreResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PreviewEvaluationScoreResponse;
+  static deserializeBinaryFromReader(message: PreviewEvaluationScoreResponse, reader: jspb.BinaryReader): PreviewEvaluationScoreResponse;
+}
+
+export namespace PreviewEvaluationScoreResponse {
+  export type AsObject = {
+    evaluation?: api_commons_scorecards_pb.Evaluation.AsObject,
+  }
+}
+
