@@ -6860,7 +6860,7 @@ proto.api.v1alpha1.org.ListAgentsResponse.serializeBinaryToWriter = function(mes
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.repeatedFields_ = [6,9,11,12];
+proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.repeatedFields_ = [6,11,12];
 
 
 
@@ -6902,8 +6902,6 @@ proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.toObject = function(inclu
     api_commons_org_user_pb.Skill.toObject, includeInstance),
     loginDisabled: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     huntGroup: (f = msg.getHuntGroup()) && proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.HuntGroup.toObject(includeInstance, f),
-    labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
-    api_commons_org_labels_pb.Label.toObject, includeInstance),
     delegated: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     trustIdsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
     permissionGroupsList: jspb.Message.toObjectList(msg.getPermissionGroupsList(),
@@ -6987,11 +6985,6 @@ proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.deserializeBinaryFromRead
       var value = new proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.HuntGroup;
       reader.readMessage(value,proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.HuntGroup.deserializeBinaryFromReader);
       msg.setHuntGroup(value);
-      break;
-    case 9:
-      var value = new api_commons_org_labels_pb.Label;
-      reader.readMessage(value,api_commons_org_labels_pb.Label.deserializeBinaryFromReader);
-      msg.addLabels(value);
       break;
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -7135,14 +7128,6 @@ proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.serializeBinaryToWriter =
       8,
       f,
       proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.HuntGroup.serializeBinaryToWriter
-    );
-  }
-  f = message.getLabelsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      9,
-      f,
-      api_commons_org_labels_pb.Label.serializeBinaryToWriter
     );
   }
   f = message.getDelegated();
@@ -7744,44 +7729,6 @@ proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.clearHuntGroup 
  */
 proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.hasHuntGroup = function() {
   return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * repeated api.commons.org.Label labels = 9;
- * @return {!Array<!proto.api.commons.org.Label>}
- */
-proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.getLabelsList = function() {
-  return /** @type{!Array<!proto.api.commons.org.Label>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_org_labels_pb.Label, 9));
-};
-
-
-/**
- * @param {!Array<!proto.api.commons.org.Label>} value
- * @return {!proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails} returns this
-*/
-proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.setLabelsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
-};
-
-
-/**
- * @param {!proto.api.commons.org.Label=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.commons.org.Label}
- */
-proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.addLabels = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.commons.org.Label, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails} returns this
- */
-proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.clearLabelsList = function() {
-  return this.setLabelsList([]);
 };
 
 
@@ -8401,7 +8348,7 @@ proto.api.v1alpha1.org.ListUsersResponse.serializeBinaryToWriter = function(mess
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.org.ListUsersResponse.UserDetails.repeatedFields_ = [9,10,13];
+proto.api.v1alpha1.org.ListUsersResponse.UserDetails.repeatedFields_ = [9,13];
 
 
 
@@ -8441,8 +8388,6 @@ proto.api.v1alpha1.org.ListUsersResponse.UserDetails.toObject = function(include
     username: jspb.Message.getFieldWithDefault(msg, 5, ""),
     loginDisabled: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     permissionGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
-    labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
-    api_commons_org_labels_pb.Label.toObject, includeInstance),
     accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     agent: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
     trustIdsList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f
@@ -8509,11 +8454,6 @@ proto.api.v1alpha1.org.ListUsersResponse.UserDetails.deserializeBinaryFromReader
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.addPermissionGroupIds(value);
-      break;
-    case 10:
-      var value = new api_commons_org_labels_pb.Label;
-      reader.readMessage(value,api_commons_org_labels_pb.Label.deserializeBinaryFromReader);
-      msg.addLabels(value);
       break;
     case 11:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -8603,14 +8543,6 @@ proto.api.v1alpha1.org.ListUsersResponse.UserDetails.serializeBinaryToWriter = f
     writer.writeRepeatedString(
       9,
       f
-    );
-  }
-  f = message.getLabelsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      10,
-      f,
-      api_commons_org_labels_pb.Label.serializeBinaryToWriter
     );
   }
   f = message.getAccountOwner();
@@ -8779,44 +8711,6 @@ proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.addPermissionGrou
  */
 proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.clearPermissionGroupIdsList = function() {
   return this.setPermissionGroupIdsList([]);
-};
-
-
-/**
- * repeated api.commons.org.Label labels = 10;
- * @return {!Array<!proto.api.commons.org.Label>}
- */
-proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.getLabelsList = function() {
-  return /** @type{!Array<!proto.api.commons.org.Label>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_org_labels_pb.Label, 10));
-};
-
-
-/**
- * @param {!Array<!proto.api.commons.org.Label>} value
- * @return {!proto.api.v1alpha1.org.ListUsersResponse.UserDetails} returns this
-*/
-proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.setLabelsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 10, value);
-};
-
-
-/**
- * @param {!proto.api.commons.org.Label=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.commons.org.Label}
- */
-proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.addLabels = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.api.commons.org.Label, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.org.ListUsersResponse.UserDetails} returns this
- */
-proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.clearLabelsList = function() {
-  return this.setLabelsList([]);
 };
 
 
@@ -9219,7 +9113,7 @@ proto.api.v1alpha1.org.ListUsersByOrgIdResponse.serializeBinaryToWriter = functi
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.repeatedFields_ = [8,9,12];
+proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.repeatedFields_ = [8,12];
 
 
 
@@ -9260,8 +9154,6 @@ proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.toObject = function(
     username: jspb.Message.getFieldWithDefault(msg, 6, ""),
     loginDisabled: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     permissionGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-    labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
-    api_commons_org_labels_pb.Label.toObject, includeInstance),
     accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     agent: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     trustIdsList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f
@@ -9332,11 +9224,6 @@ proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.deserializeBinaryFro
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.addPermissionGroupIds(value);
-      break;
-    case 9:
-      var value = new api_commons_org_labels_pb.Label;
-      reader.readMessage(value,api_commons_org_labels_pb.Label.deserializeBinaryFromReader);
-      msg.addLabels(value);
       break;
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -9433,14 +9320,6 @@ proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.serializeBinaryToWri
     writer.writeRepeatedString(
       8,
       f
-    );
-  }
-  f = message.getLabelsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      9,
-      f,
-      api_commons_org_labels_pb.Label.serializeBinaryToWriter
     );
   }
   f = message.getAccountOwner();
@@ -9627,44 +9506,6 @@ proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.addPermiss
  */
 proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.clearPermissionGroupIdsList = function() {
   return this.setPermissionGroupIdsList([]);
-};
-
-
-/**
- * repeated api.commons.org.Label labels = 9;
- * @return {!Array<!proto.api.commons.org.Label>}
- */
-proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.getLabelsList = function() {
-  return /** @type{!Array<!proto.api.commons.org.Label>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_org_labels_pb.Label, 9));
-};
-
-
-/**
- * @param {!Array<!proto.api.commons.org.Label>} value
- * @return {!proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails} returns this
-*/
-proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.setLabelsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
-};
-
-
-/**
- * @param {!proto.api.commons.org.Label=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.commons.org.Label}
- */
-proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.addLabels = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.commons.org.Label, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails} returns this
- */
-proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.clearLabelsList = function() {
-  return this.setLabelsList([]);
 };
 
 
@@ -10097,7 +9938,7 @@ proto.api.v1alpha1.org.ListUsersByRegionResponse.serializeBinaryToWriter = funct
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.repeatedFields_ = [9,10,13];
+proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.repeatedFields_ = [9,13];
 
 
 
@@ -10137,8 +9978,6 @@ proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.toObject = function
     username: jspb.Message.getFieldWithDefault(msg, 5, ""),
     loginDisabled: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     permissionGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
-    labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
-    api_commons_org_labels_pb.Label.toObject, includeInstance),
     accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     agent: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
     trustIdsList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f
@@ -10205,11 +10044,6 @@ proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.deserializeBinaryFr
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.addPermissionGroupIds(value);
-      break;
-    case 10:
-      var value = new api_commons_org_labels_pb.Label;
-      reader.readMessage(value,api_commons_org_labels_pb.Label.deserializeBinaryFromReader);
-      msg.addLabels(value);
       break;
     case 11:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -10299,14 +10133,6 @@ proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.serializeBinaryToWr
     writer.writeRepeatedString(
       9,
       f
-    );
-  }
-  f = message.getLabelsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      10,
-      f,
-      api_commons_org_labels_pb.Label.serializeBinaryToWriter
     );
   }
   f = message.getAccountOwner();
@@ -10475,44 +10301,6 @@ proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.addPermis
  */
 proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.clearPermissionGroupIdsList = function() {
   return this.setPermissionGroupIdsList([]);
-};
-
-
-/**
- * repeated api.commons.org.Label labels = 10;
- * @return {!Array<!proto.api.commons.org.Label>}
- */
-proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.getLabelsList = function() {
-  return /** @type{!Array<!proto.api.commons.org.Label>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_org_labels_pb.Label, 10));
-};
-
-
-/**
- * @param {!Array<!proto.api.commons.org.Label>} value
- * @return {!proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails} returns this
-*/
-proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.setLabelsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 10, value);
-};
-
-
-/**
- * @param {!proto.api.commons.org.Label=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.commons.org.Label}
- */
-proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.addLabels = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.api.commons.org.Label, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails} returns this
- */
-proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.clearLabelsList = function() {
-  return this.setLabelsList([]);
 };
 
 

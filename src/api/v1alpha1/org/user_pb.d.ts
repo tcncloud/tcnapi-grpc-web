@@ -786,11 +786,6 @@ export namespace ListAgentsResponse {
     getHuntGroup(): ListAgentsResponse.AgentDetails.HuntGroup | undefined;
     setHuntGroup(value?: ListAgentsResponse.AgentDetails.HuntGroup): void;
 
-    clearLabelsList(): void;
-    getLabelsList(): Array<api_commons_org_labels_pb.Label>;
-    setLabelsList(value: Array<api_commons_org_labels_pb.Label>): void;
-    addLabels(value?: api_commons_org_labels_pb.Label, index?: number): api_commons_org_labels_pb.Label;
-
     getDelegated(): boolean;
     setDelegated(value: boolean): void;
 
@@ -862,7 +857,6 @@ export namespace ListAgentsResponse {
       skillsList: Array<api_commons_org_user_pb.Skill.AsObject>,
       loginDisabled: boolean,
       huntGroup?: ListAgentsResponse.AgentDetails.HuntGroup.AsObject,
-      labelsList: Array<api_commons_org_labels_pb.Label.AsObject>,
       delegated: boolean,
       trustIdsList: Array<string>,
       permissionGroupsList: Array<api_commons_org_permissions_pb.PermissionGroup.AsObject>,
@@ -989,11 +983,6 @@ export namespace ListUsersResponse {
     setPermissionGroupIdsList(value: Array<string>): void;
     addPermissionGroupIds(value: string, index?: number): string;
 
-    clearLabelsList(): void;
-    getLabelsList(): Array<api_commons_org_labels_pb.Label>;
-    setLabelsList(value: Array<api_commons_org_labels_pb.Label>): void;
-    addLabels(value?: api_commons_org_labels_pb.Label, index?: number): api_commons_org_labels_pb.Label;
-
     getAccountOwner(): boolean;
     setAccountOwner(value: boolean): void;
 
@@ -1024,7 +1013,6 @@ export namespace ListUsersResponse {
       username: string,
       loginDisabled: boolean,
       permissionGroupIdsList: Array<string>,
-      labelsList: Array<api_commons_org_labels_pb.Label.AsObject>,
       accountOwner: boolean,
       agent: boolean,
       trustIdsList: Array<string>,
@@ -1104,11 +1092,6 @@ export namespace ListUsersByOrgIdResponse {
     setPermissionGroupIdsList(value: Array<string>): void;
     addPermissionGroupIds(value: string, index?: number): string;
 
-    clearLabelsList(): void;
-    getLabelsList(): Array<api_commons_org_labels_pb.Label>;
-    setLabelsList(value: Array<api_commons_org_labels_pb.Label>): void;
-    addLabels(value?: api_commons_org_labels_pb.Label, index?: number): api_commons_org_labels_pb.Label;
-
     getAccountOwner(): boolean;
     setAccountOwner(value: boolean): void;
 
@@ -1140,7 +1123,6 @@ export namespace ListUsersByOrgIdResponse {
       username: string,
       loginDisabled: boolean,
       permissionGroupIdsList: Array<string>,
-      labelsList: Array<api_commons_org_labels_pb.Label.AsObject>,
       accountOwner: boolean,
       agent: boolean,
       trustIdsList: Array<string>,
@@ -1221,11 +1203,6 @@ export namespace ListUsersByRegionResponse {
     setPermissionGroupIdsList(value: Array<string>): void;
     addPermissionGroupIds(value: string, index?: number): string;
 
-    clearLabelsList(): void;
-    getLabelsList(): Array<api_commons_org_labels_pb.Label>;
-    setLabelsList(value: Array<api_commons_org_labels_pb.Label>): void;
-    addLabels(value?: api_commons_org_labels_pb.Label, index?: number): api_commons_org_labels_pb.Label;
-
     getAccountOwner(): boolean;
     setAccountOwner(value: boolean): void;
 
@@ -1256,7 +1233,6 @@ export namespace ListUsersByRegionResponse {
       username: string,
       loginDisabled: boolean,
       permissionGroupIdsList: Array<string>,
-      labelsList: Array<api_commons_org_labels_pb.Label.AsObject>,
       accountOwner: boolean,
       agent: boolean,
       trustIdsList: Array<string>,
