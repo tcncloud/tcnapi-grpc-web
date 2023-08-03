@@ -346,6 +346,9 @@ export class ProcessElementReq extends jspb.Message {
   getElementId(): string;
   setElementId(value: string): void;
 
+  getProcessMessage(): string;
+  setProcessMessage(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessElementReq.AsObject;
   static toObject(includeInstance: boolean, msg: ProcessElementReq): ProcessElementReq.AsObject;
@@ -359,6 +362,7 @@ export class ProcessElementReq extends jspb.Message {
 export namespace ProcessElementReq {
   export type AsObject = {
     elementId: string,
+    processMessage: string,
   }
 }
 

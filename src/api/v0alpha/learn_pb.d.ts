@@ -89,6 +89,9 @@ export class ContentRes extends jspb.Message {
   setImagesList(value: Array<LearnImage>): void;
   addImages(value?: LearnImage, index?: number): LearnImage;
 
+  getTitle(): string;
+  setTitle(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContentRes.AsObject;
   static toObject(includeInstance: boolean, msg: ContentRes): ContentRes.AsObject;
@@ -104,6 +107,7 @@ export namespace ContentRes {
     content: string,
     lastEditedTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     imagesList: Array<LearnImage.AsObject>,
+    title: string,
   }
 }
 
@@ -164,6 +168,9 @@ export class UpdateReq extends jspb.Message {
   getMessage(): string;
   setMessage(value: string): void;
 
+  getTitle(): string;
+  setTitle(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateReq.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateReq): UpdateReq.AsObject;
@@ -180,6 +187,7 @@ export namespace UpdateReq {
     locale: string,
     content: string,
     message: string,
+    title: string,
   }
 }
 
@@ -457,6 +465,9 @@ export class StandaloneReq extends jspb.Message {
   getLocale(): string;
   setLocale(value: string): void;
 
+  getCategory(): string;
+  setCategory(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StandaloneReq.AsObject;
   static toObject(includeInstance: boolean, msg: StandaloneReq): StandaloneReq.AsObject;
@@ -470,6 +481,7 @@ export class StandaloneReq extends jspb.Message {
 export namespace StandaloneReq {
   export type AsObject = {
     locale: string,
+    category: string,
   }
 }
 
@@ -507,6 +519,9 @@ export class LearnStandaloneDetails extends jspb.Message {
   getLastEditedTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLastEditedTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getTitle(): string;
+  setTitle(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LearnStandaloneDetails.AsObject;
   static toObject(includeInstance: boolean, msg: LearnStandaloneDetails): LearnStandaloneDetails.AsObject;
@@ -522,6 +537,7 @@ export namespace LearnStandaloneDetails {
     name: string,
     content: string,
     lastEditedTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    title: string,
   }
 }
 
@@ -621,6 +637,9 @@ export class LearnSnippetDetails extends jspb.Message {
   getLastEditedTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLastEditedTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getTitle(): string;
+  setTitle(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LearnSnippetDetails.AsObject;
   static toObject(includeInstance: boolean, msg: LearnSnippetDetails): LearnSnippetDetails.AsObject;
@@ -636,6 +655,7 @@ export namespace LearnSnippetDetails {
     name: string,
     content: string,
     lastEditedTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    title: string,
   }
 }
 

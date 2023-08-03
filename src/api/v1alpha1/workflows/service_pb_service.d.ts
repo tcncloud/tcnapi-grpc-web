@@ -5,48 +5,48 @@ import * as api_v1alpha1_workflows_service_pb from "../../../api/v1alpha1/workfl
 import * as api_v1alpha1_workflows_entities_pb from "../../../api/v1alpha1/workflows/entities_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type WorkflowsDefinitionServiceListFlowDefinitions = {
+type WorkflowsListFlowDefinitions = {
   readonly methodName: string;
-  readonly service: typeof WorkflowsDefinitionService;
+  readonly service: typeof Workflows;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_workflows_entities_pb.ListFlowDefinitionsRequest;
   readonly responseType: typeof api_v1alpha1_workflows_entities_pb.ListFlowDefinitionsResponse;
 };
 
-type WorkflowsDefinitionServiceSaveFlowDefinition = {
+type WorkflowsSaveFlowDefinition = {
   readonly methodName: string;
-  readonly service: typeof WorkflowsDefinitionService;
+  readonly service: typeof Workflows;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_workflows_entities_pb.SaveFlowDefinitionRequest;
   readonly responseType: typeof api_v1alpha1_workflows_entities_pb.SaveFlowDefinitionResponse;
 };
 
-type WorkflowsDefinitionServiceGetFlowDefinition = {
+type WorkflowsGetFlowDefinition = {
   readonly methodName: string;
-  readonly service: typeof WorkflowsDefinitionService;
+  readonly service: typeof Workflows;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_workflows_entities_pb.GetFlowDefinitionRequest;
   readonly responseType: typeof api_v1alpha1_workflows_entities_pb.GetFlowDefinitionResponse;
 };
 
-type WorkflowsDefinitionServiceDeleteFlowDefinition = {
+type WorkflowsDeleteFlowDefinition = {
   readonly methodName: string;
-  readonly service: typeof WorkflowsDefinitionService;
+  readonly service: typeof Workflows;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionRequest;
   readonly responseType: typeof api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionResponse;
 };
 
-export class WorkflowsDefinitionService {
+export class Workflows {
   static readonly serviceName: string;
-  static readonly ListFlowDefinitions: WorkflowsDefinitionServiceListFlowDefinitions;
-  static readonly SaveFlowDefinition: WorkflowsDefinitionServiceSaveFlowDefinition;
-  static readonly GetFlowDefinition: WorkflowsDefinitionServiceGetFlowDefinition;
-  static readonly DeleteFlowDefinition: WorkflowsDefinitionServiceDeleteFlowDefinition;
+  static readonly ListFlowDefinitions: WorkflowsListFlowDefinitions;
+  static readonly SaveFlowDefinition: WorkflowsSaveFlowDefinition;
+  static readonly GetFlowDefinition: WorkflowsGetFlowDefinition;
+  static readonly DeleteFlowDefinition: WorkflowsDeleteFlowDefinition;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -77,7 +77,7 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class WorkflowsDefinitionServiceClient {
+export class WorkflowsClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);

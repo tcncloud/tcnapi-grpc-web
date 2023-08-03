@@ -6542,7 +6542,8 @@ proto.api.v0alpha.ProcessElementReq.prototype.toObject = function(opt_includeIns
  */
 proto.api.v0alpha.ProcessElementReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    elementId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    elementId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    processMessage: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -6583,6 +6584,10 @@ proto.api.v0alpha.ProcessElementReq.deserializeBinaryFromReader = function(msg, 
       var value = /** @type {string} */ (reader.readString());
       msg.setElementId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProcessMessage(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -6619,6 +6624,13 @@ proto.api.v0alpha.ProcessElementReq.serializeBinaryToWriter = function(message, 
       f
     );
   }
+  f = message.getProcessMessage();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -6637,6 +6649,24 @@ proto.api.v0alpha.ProcessElementReq.prototype.getElementId = function() {
  */
 proto.api.v0alpha.ProcessElementReq.prototype.setElementId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string process_message = 2;
+ * @return {string}
+ */
+proto.api.v0alpha.ProcessElementReq.prototype.getProcessMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ProcessElementReq} returns this
+ */
+proto.api.v0alpha.ProcessElementReq.prototype.setProcessMessage = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

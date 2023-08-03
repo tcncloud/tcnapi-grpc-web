@@ -1137,7 +1137,8 @@ proto.api.v0alpha.ContentRes.toObject = function(includeInstance, msg) {
     content: jspb.Message.getFieldWithDefault(msg, 1, ""),
     lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     imagesList: jspb.Message.toObjectList(msg.getImagesList(),
-    proto.api.v0alpha.LearnImage.toObject, includeInstance)
+    proto.api.v0alpha.LearnImage.toObject, includeInstance),
+    title: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1187,6 +1188,10 @@ proto.api.v0alpha.ContentRes.deserializeBinaryFromReader = function(msg, reader)
       var value = new proto.api.v0alpha.LearnImage;
       reader.readMessage(value,proto.api.v0alpha.LearnImage.deserializeBinaryFromReader);
       msg.addImages(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTitle(value);
       break;
     default:
       reader.skipField();
@@ -1238,6 +1243,13 @@ proto.api.v0alpha.ContentRes.serializeBinaryToWriter = function(message, writer)
       3,
       f,
       proto.api.v0alpha.LearnImage.serializeBinaryToWriter
+    );
+  }
+  f = message.getTitle();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -1333,6 +1345,24 @@ proto.api.v0alpha.ContentRes.prototype.addImages = function(opt_value, opt_index
  */
 proto.api.v0alpha.ContentRes.prototype.clearImagesList = function() {
   return this.setImagesList([]);
+};
+
+
+/**
+ * optional string title = 4;
+ * @return {string}
+ */
+proto.api.v0alpha.ContentRes.prototype.getTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ContentRes} returns this
+ */
+proto.api.v0alpha.ContentRes.prototype.setTitle = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -1661,7 +1691,8 @@ proto.api.v0alpha.UpdateReq.toObject = function(includeInstance, msg) {
     url: jspb.Message.getFieldWithDefault(msg, 1, ""),
     locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
     content: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    message: jspb.Message.getFieldWithDefault(msg, 12, "")
+    message: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    title: jspb.Message.getFieldWithDefault(msg, 13, "")
   };
 
   if (includeInstance) {
@@ -1713,6 +1744,10 @@ proto.api.v0alpha.UpdateReq.deserializeBinaryFromReader = function(msg, reader) 
     case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setMessage(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTitle(value);
       break;
     default:
       reader.skipField();
@@ -1768,6 +1803,13 @@ proto.api.v0alpha.UpdateReq.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       12,
+      f
+    );
+  }
+  f = message.getTitle();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
       f
     );
   }
@@ -1843,6 +1885,24 @@ proto.api.v0alpha.UpdateReq.prototype.getMessage = function() {
  */
 proto.api.v0alpha.UpdateReq.prototype.setMessage = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string title = 13;
+ * @return {string}
+ */
+proto.api.v0alpha.UpdateReq.prototype.getTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.UpdateReq} returns this
+ */
+proto.api.v0alpha.UpdateReq.prototype.setTitle = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -3728,7 +3788,8 @@ proto.api.v0alpha.StandaloneReq.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.v0alpha.StandaloneReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    locale: jspb.Message.getFieldWithDefault(msg, 1, "")
+    locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    category: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3769,6 +3830,10 @@ proto.api.v0alpha.StandaloneReq.deserializeBinaryFromReader = function(msg, read
       var value = /** @type {string} */ (reader.readString());
       msg.setLocale(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCategory(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3805,6 +3870,13 @@ proto.api.v0alpha.StandaloneReq.serializeBinaryToWriter = function(message, writ
       f
     );
   }
+  f = message.getCategory();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -3823,6 +3895,24 @@ proto.api.v0alpha.StandaloneReq.prototype.getLocale = function() {
  */
 proto.api.v0alpha.StandaloneReq.prototype.setLocale = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string category = 2;
+ * @return {string}
+ */
+proto.api.v0alpha.StandaloneReq.prototype.getCategory = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.StandaloneReq} returns this
+ */
+proto.api.v0alpha.StandaloneReq.prototype.setCategory = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -4020,7 +4110,8 @@ proto.api.v0alpha.LearnStandaloneDetails.toObject = function(includeInstance, ms
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     content: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    title: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -4069,6 +4160,10 @@ proto.api.v0alpha.LearnStandaloneDetails.deserializeBinaryFromReader = function(
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setLastEditedTimestamp(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTitle(value);
       break;
     default:
       reader.skipField();
@@ -4119,6 +4214,13 @@ proto.api.v0alpha.LearnStandaloneDetails.serializeBinaryToWriter = function(mess
       3,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getTitle();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -4194,6 +4296,24 @@ proto.api.v0alpha.LearnStandaloneDetails.prototype.clearLastEditedTimestamp = fu
  */
 proto.api.v0alpha.LearnStandaloneDetails.prototype.hasLastEditedTimestamp = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string title = 4;
+ * @return {string}
+ */
+proto.api.v0alpha.LearnStandaloneDetails.prototype.getTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.LearnStandaloneDetails} returns this
+ */
+proto.api.v0alpha.LearnStandaloneDetails.prototype.setTitle = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -4808,7 +4928,8 @@ proto.api.v0alpha.LearnSnippetDetails.toObject = function(includeInstance, msg) 
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     content: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    title: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -4857,6 +4978,10 @@ proto.api.v0alpha.LearnSnippetDetails.deserializeBinaryFromReader = function(msg
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setLastEditedTimestamp(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTitle(value);
       break;
     default:
       reader.skipField();
@@ -4907,6 +5032,13 @@ proto.api.v0alpha.LearnSnippetDetails.serializeBinaryToWriter = function(message
       3,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getTitle();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -4982,6 +5114,24 @@ proto.api.v0alpha.LearnSnippetDetails.prototype.clearLastEditedTimestamp = funct
  */
 proto.api.v0alpha.LearnSnippetDetails.prototype.hasLastEditedTimestamp = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string title = 4;
+ * @return {string}
+ */
+proto.api.v0alpha.LearnSnippetDetails.prototype.getTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.LearnSnippetDetails} returns this
+ */
+proto.api.v0alpha.LearnSnippetDetails.prototype.setTitle = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
