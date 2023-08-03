@@ -2574,7 +2574,7 @@ proto.api.v1alpha1.tickets.ListAllocatedTicketReq.serializeBinaryToWriter = func
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.repeatedFields_ = [1];
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.repeatedFields_ = [1,2];
 
 
 
@@ -2607,7 +2607,9 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.toObject 
  */
 proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ticketSidList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+    ticketSidList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    ticketList: jspb.Message.toObjectList(msg.getTicketList(),
+    api_commons_tickets_pb.Ticket.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2650,6 +2652,11 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.deserializeBinaryFr
         msg.addTicketSid(values[i]);
       }
       break;
+    case 2:
+      var value = new api_commons_tickets_pb.Ticket;
+      reader.readMessage(value,api_commons_tickets_pb.Ticket.deserializeBinaryFromReader);
+      msg.addTicket(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2684,6 +2691,14 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.serializeBinaryToWr
     writer.writePackedInt64String(
       1,
       f
+    );
+  }
+  f = message.getTicketList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      api_commons_tickets_pb.Ticket.serializeBinaryToWriter
     );
   }
 };
@@ -2723,6 +2738,44 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.addTicket
  */
 proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.clearTicketSidList = function() {
   return this.setTicketSidList([]);
+};
+
+
+/**
+ * repeated api.commons.Ticket ticket = 2;
+ * @return {!Array<!proto.api.commons.Ticket>}
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.getTicketList = function() {
+  return /** @type{!Array<!proto.api.commons.Ticket>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_commons_tickets_pb.Ticket, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.Ticket>} value
+ * @return {!proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse} returns this
+*/
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.setTicketList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.Ticket=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.Ticket}
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.addTicket = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.commons.Ticket, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse} returns this
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.clearTicketList = function() {
+  return this.setTicketList([]);
 };
 
 
