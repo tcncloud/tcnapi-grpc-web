@@ -5,60 +5,60 @@ var api_v1alpha1_workflows_service_pb = require("../../../api/v1alpha1/workflows
 var api_v1alpha1_workflows_entities_pb = require("../../../api/v1alpha1/workflows/entities_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var Workflows = (function () {
-  function Workflows() {}
-  Workflows.serviceName = "api.v1alpha1.workflows.Workflows";
-  return Workflows;
+var WorkflowsService = (function () {
+  function WorkflowsService() {}
+  WorkflowsService.serviceName = "api.v1alpha1.workflows.WorkflowsService";
+  return WorkflowsService;
 }());
 
-Workflows.ListFlowDefinitions = {
+WorkflowsService.ListFlowDefinitions = {
   methodName: "ListFlowDefinitions",
-  service: Workflows,
+  service: WorkflowsService,
   requestStream: false,
   responseStream: false,
   requestType: api_v1alpha1_workflows_entities_pb.ListFlowDefinitionsRequest,
   responseType: api_v1alpha1_workflows_entities_pb.ListFlowDefinitionsResponse
 };
 
-Workflows.SaveFlowDefinition = {
+WorkflowsService.SaveFlowDefinition = {
   methodName: "SaveFlowDefinition",
-  service: Workflows,
+  service: WorkflowsService,
   requestStream: false,
   responseStream: false,
   requestType: api_v1alpha1_workflows_entities_pb.SaveFlowDefinitionRequest,
   responseType: api_v1alpha1_workflows_entities_pb.SaveFlowDefinitionResponse
 };
 
-Workflows.GetFlowDefinition = {
+WorkflowsService.GetFlowDefinition = {
   methodName: "GetFlowDefinition",
-  service: Workflows,
+  service: WorkflowsService,
   requestStream: false,
   responseStream: false,
   requestType: api_v1alpha1_workflows_entities_pb.GetFlowDefinitionRequest,
   responseType: api_v1alpha1_workflows_entities_pb.GetFlowDefinitionResponse
 };
 
-Workflows.DeleteFlowDefinition = {
+WorkflowsService.DeleteFlowDefinition = {
   methodName: "DeleteFlowDefinition",
-  service: Workflows,
+  service: WorkflowsService,
   requestStream: false,
   responseStream: false,
   requestType: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionRequest,
   responseType: api_v1alpha1_workflows_entities_pb.DeleteFlowDefinitionResponse
 };
 
-exports.Workflows = Workflows;
+exports.WorkflowsService = WorkflowsService;
 
-function WorkflowsClient(serviceHost, options) {
+function WorkflowsServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-WorkflowsClient.prototype.listFlowDefinitions = function listFlowDefinitions(requestMessage, metadata, callback) {
+WorkflowsServiceClient.prototype.listFlowDefinitions = function listFlowDefinitions(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Workflows.ListFlowDefinitions, {
+  var client = grpc.unary(WorkflowsService.ListFlowDefinitions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -85,11 +85,11 @@ WorkflowsClient.prototype.listFlowDefinitions = function listFlowDefinitions(req
   };
 };
 
-WorkflowsClient.prototype.saveFlowDefinition = function saveFlowDefinition(requestMessage, metadata, callback) {
+WorkflowsServiceClient.prototype.saveFlowDefinition = function saveFlowDefinition(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Workflows.SaveFlowDefinition, {
+  var client = grpc.unary(WorkflowsService.SaveFlowDefinition, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -116,11 +116,11 @@ WorkflowsClient.prototype.saveFlowDefinition = function saveFlowDefinition(reque
   };
 };
 
-WorkflowsClient.prototype.getFlowDefinition = function getFlowDefinition(requestMessage, metadata, callback) {
+WorkflowsServiceClient.prototype.getFlowDefinition = function getFlowDefinition(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Workflows.GetFlowDefinition, {
+  var client = grpc.unary(WorkflowsService.GetFlowDefinition, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -147,11 +147,11 @@ WorkflowsClient.prototype.getFlowDefinition = function getFlowDefinition(request
   };
 };
 
-WorkflowsClient.prototype.deleteFlowDefinition = function deleteFlowDefinition(requestMessage, metadata, callback) {
+WorkflowsServiceClient.prototype.deleteFlowDefinition = function deleteFlowDefinition(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Workflows.DeleteFlowDefinition, {
+  var client = grpc.unary(WorkflowsService.DeleteFlowDefinition, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -178,5 +178,5 @@ WorkflowsClient.prototype.deleteFlowDefinition = function deleteFlowDefinition(r
   };
 };
 
-exports.WorkflowsClient = WorkflowsClient;
+exports.WorkflowsServiceClient = WorkflowsServiceClient;
 
