@@ -31,11 +31,6 @@ export class ListFlowDefinitionsResponse extends jspb.Message {
   setFlowDefinitionsList(value: Array<api_commons_workflows_entities_pb.FlowDefinition>): void;
   addFlowDefinitions(value?: api_commons_workflows_entities_pb.FlowDefinition, index?: number): api_commons_workflows_entities_pb.FlowDefinition;
 
-  hasFilterMask(): boolean;
-  clearFilterMask(): void;
-  getFilterMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
-  setFilterMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFlowDefinitionsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListFlowDefinitionsResponse): ListFlowDefinitionsResponse.AsObject;
@@ -49,7 +44,6 @@ export class ListFlowDefinitionsResponse extends jspb.Message {
 export namespace ListFlowDefinitionsResponse {
   export type AsObject = {
     flowDefinitionsList: Array<api_commons_workflows_entities_pb.FlowDefinition.AsObject>,
-    filterMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
