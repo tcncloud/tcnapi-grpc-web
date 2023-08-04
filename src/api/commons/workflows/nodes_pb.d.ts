@@ -5,7 +5,6 @@ import * as jspb from "google-protobuf";
 import * as api_commons_workflows_example_pb from "../../../api/commons/workflows/example_pb";
 import * as api_commons_workflows_omni_pb from "../../../api/commons/workflows/omni_pb";
 import * as api_commons_workflows_omni_bot_pb from "../../../api/commons/workflows/omni_bot_pb";
-import * as api_commons_workflows_test_bot_pb from "../../../api/commons/workflows/test_bot_pb";
 
 export class NodeDefinition extends jspb.Message {
   getId(): string;
@@ -90,21 +89,6 @@ export class NodeDefinition extends jspb.Message {
   getOmniBotTestEnd(): api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd | undefined;
   setOmniBotTestEnd(value?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd): void;
 
-  hasTestBotTestStart(): boolean;
-  clearTestBotTestStart(): void;
-  getTestBotTestStart(): api_commons_workflows_test_bot_pb.TestBotNodeTestStart | undefined;
-  setTestBotTestStart(value?: api_commons_workflows_test_bot_pb.TestBotNodeTestStart): void;
-
-  hasTestBotTestStep(): boolean;
-  clearTestBotTestStep(): void;
-  getTestBotTestStep(): api_commons_workflows_test_bot_pb.TestBotNodeTestStep | undefined;
-  setTestBotTestStep(value?: api_commons_workflows_test_bot_pb.TestBotNodeTestStep): void;
-
-  hasTestBotTestEnd(): boolean;
-  clearTestBotTestEnd(): void;
-  getTestBotTestEnd(): api_commons_workflows_test_bot_pb.TestBotNodeTestEnd | undefined;
-  setTestBotTestEnd(value?: api_commons_workflows_test_bot_pb.TestBotNodeTestEnd): void;
-
   getDefinitionCase(): NodeDefinition.DefinitionCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NodeDefinition.AsObject;
@@ -136,9 +120,6 @@ export namespace NodeDefinition {
     omniBotTestStart?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart.AsObject,
     omniBotTestStep?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep.AsObject,
     omniBotTestEnd?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.AsObject,
-    testBotTestStart?: api_commons_workflows_test_bot_pb.TestBotNodeTestStart.AsObject,
-    testBotTestStep?: api_commons_workflows_test_bot_pb.TestBotNodeTestStep.AsObject,
-    testBotTestEnd?: api_commons_workflows_test_bot_pb.TestBotNodeTestEnd.AsObject,
   }
 
   export enum DefinitionCase {
@@ -156,9 +137,6 @@ export namespace NodeDefinition {
     OMNI_BOT_TEST_START = 301,
     OMNI_BOT_TEST_STEP = 302,
     OMNI_BOT_TEST_END = 303,
-    TEST_BOT_TEST_START = 401,
-    TEST_BOT_TEST_STEP = 402,
-    TEST_BOT_TEST_END = 403,
   }
 }
 

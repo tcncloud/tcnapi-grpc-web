@@ -27,8 +27,6 @@ var api_commons_workflows_omni_pb = require('../../../api/commons/workflows/omni
 goog.object.extend(proto, api_commons_workflows_omni_pb);
 var api_commons_workflows_omni_bot_pb = require('../../../api/commons/workflows/omni_bot_pb.js');
 goog.object.extend(proto, api_commons_workflows_omni_bot_pb);
-var api_commons_workflows_test_bot_pb = require('../../../api/commons/workflows/test_bot_pb.js');
-goog.object.extend(proto, api_commons_workflows_test_bot_pb);
 goog.exportSymbol('proto.api.commons.workflows.NodeDefinition', null, global);
 goog.exportSymbol('proto.api.commons.workflows.NodeDefinition.DefinitionCase', null, global);
 /**
@@ -68,7 +66,7 @@ proto.api.commons.workflows.NodeDefinition.repeatedFields_ = [5];
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.workflows.NodeDefinition.oneofGroups_ = [[101,102,103,104,105,1000,201,202,203,204,301,302,303,401,402,403]];
+proto.api.commons.workflows.NodeDefinition.oneofGroups_ = [[101,102,103,104,105,1000,201,202,203,204,301,302,303]];
 
 /**
  * @enum {number}
@@ -87,10 +85,7 @@ proto.api.commons.workflows.NodeDefinition.DefinitionCase = {
   OMNI_ERROR: 204,
   OMNI_BOT_TEST_START: 301,
   OMNI_BOT_TEST_STEP: 302,
-  OMNI_BOT_TEST_END: 303,
-  TEST_BOT_TEST_START: 401,
-  TEST_BOT_TEST_STEP: 402,
-  TEST_BOT_TEST_END: 403
+  OMNI_BOT_TEST_END: 303
 };
 
 /**
@@ -148,10 +143,7 @@ proto.api.commons.workflows.NodeDefinition.toObject = function(includeInstance, 
     omniError: (f = msg.getOmniError()) && api_commons_workflows_omni_pb.OmniNodeError.toObject(includeInstance, f),
     omniBotTestStart: (f = msg.getOmniBotTestStart()) && api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart.toObject(includeInstance, f),
     omniBotTestStep: (f = msg.getOmniBotTestStep()) && api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep.toObject(includeInstance, f),
-    omniBotTestEnd: (f = msg.getOmniBotTestEnd()) && api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.toObject(includeInstance, f),
-    testBotTestStart: (f = msg.getTestBotTestStart()) && api_commons_workflows_test_bot_pb.TestBotNodeTestStart.toObject(includeInstance, f),
-    testBotTestStep: (f = msg.getTestBotTestStep()) && api_commons_workflows_test_bot_pb.TestBotNodeTestStep.toObject(includeInstance, f),
-    testBotTestEnd: (f = msg.getTestBotTestEnd()) && api_commons_workflows_test_bot_pb.TestBotNodeTestEnd.toObject(includeInstance, f)
+    omniBotTestEnd: (f = msg.getOmniBotTestEnd()) && api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -272,21 +264,6 @@ proto.api.commons.workflows.NodeDefinition.deserializeBinaryFromReader = functio
       var value = new api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd;
       reader.readMessage(value,api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.deserializeBinaryFromReader);
       msg.setOmniBotTestEnd(value);
-      break;
-    case 401:
-      var value = new api_commons_workflows_test_bot_pb.TestBotNodeTestStart;
-      reader.readMessage(value,api_commons_workflows_test_bot_pb.TestBotNodeTestStart.deserializeBinaryFromReader);
-      msg.setTestBotTestStart(value);
-      break;
-    case 402:
-      var value = new api_commons_workflows_test_bot_pb.TestBotNodeTestStep;
-      reader.readMessage(value,api_commons_workflows_test_bot_pb.TestBotNodeTestStep.deserializeBinaryFromReader);
-      msg.setTestBotTestStep(value);
-      break;
-    case 403:
-      var value = new api_commons_workflows_test_bot_pb.TestBotNodeTestEnd;
-      reader.readMessage(value,api_commons_workflows_test_bot_pb.TestBotNodeTestEnd.deserializeBinaryFromReader);
-      msg.setTestBotTestEnd(value);
       break;
     default:
       reader.skipField();
@@ -454,30 +431,6 @@ proto.api.commons.workflows.NodeDefinition.serializeBinaryToWriter = function(me
       303,
       f,
       api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.serializeBinaryToWriter
-    );
-  }
-  f = message.getTestBotTestStart();
-  if (f != null) {
-    writer.writeMessage(
-      401,
-      f,
-      api_commons_workflows_test_bot_pb.TestBotNodeTestStart.serializeBinaryToWriter
-    );
-  }
-  f = message.getTestBotTestStep();
-  if (f != null) {
-    writer.writeMessage(
-      402,
-      f,
-      api_commons_workflows_test_bot_pb.TestBotNodeTestStep.serializeBinaryToWriter
-    );
-  }
-  f = message.getTestBotTestEnd();
-  if (f != null) {
-    writer.writeMessage(
-      403,
-      f,
-      api_commons_workflows_test_bot_pb.TestBotNodeTestEnd.serializeBinaryToWriter
     );
   }
 };
@@ -1070,117 +1023,6 @@ proto.api.commons.workflows.NodeDefinition.prototype.clearOmniBotTestEnd = funct
  */
 proto.api.commons.workflows.NodeDefinition.prototype.hasOmniBotTestEnd = function() {
   return jspb.Message.getField(this, 303) != null;
-};
-
-
-/**
- * optional TestBotNodeTestStart test_bot_test_start = 401;
- * @return {?proto.api.commons.workflows.TestBotNodeTestStart}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.getTestBotTestStart = function() {
-  return /** @type{?proto.api.commons.workflows.TestBotNodeTestStart} */ (
-    jspb.Message.getWrapperField(this, api_commons_workflows_test_bot_pb.TestBotNodeTestStart, 401));
-};
-
-
-/**
- * @param {?proto.api.commons.workflows.TestBotNodeTestStart|undefined} value
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
-*/
-proto.api.commons.workflows.NodeDefinition.prototype.setTestBotTestStart = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 401, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
- */
-proto.api.commons.workflows.NodeDefinition.prototype.clearTestBotTestStart = function() {
-  return this.setTestBotTestStart(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.hasTestBotTestStart = function() {
-  return jspb.Message.getField(this, 401) != null;
-};
-
-
-/**
- * optional TestBotNodeTestStep test_bot_test_step = 402;
- * @return {?proto.api.commons.workflows.TestBotNodeTestStep}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.getTestBotTestStep = function() {
-  return /** @type{?proto.api.commons.workflows.TestBotNodeTestStep} */ (
-    jspb.Message.getWrapperField(this, api_commons_workflows_test_bot_pb.TestBotNodeTestStep, 402));
-};
-
-
-/**
- * @param {?proto.api.commons.workflows.TestBotNodeTestStep|undefined} value
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
-*/
-proto.api.commons.workflows.NodeDefinition.prototype.setTestBotTestStep = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 402, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
- */
-proto.api.commons.workflows.NodeDefinition.prototype.clearTestBotTestStep = function() {
-  return this.setTestBotTestStep(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.hasTestBotTestStep = function() {
-  return jspb.Message.getField(this, 402) != null;
-};
-
-
-/**
- * optional TestBotNodeTestEnd test_bot_test_end = 403;
- * @return {?proto.api.commons.workflows.TestBotNodeTestEnd}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.getTestBotTestEnd = function() {
-  return /** @type{?proto.api.commons.workflows.TestBotNodeTestEnd} */ (
-    jspb.Message.getWrapperField(this, api_commons_workflows_test_bot_pb.TestBotNodeTestEnd, 403));
-};
-
-
-/**
- * @param {?proto.api.commons.workflows.TestBotNodeTestEnd|undefined} value
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
-*/
-proto.api.commons.workflows.NodeDefinition.prototype.setTestBotTestEnd = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 403, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
- */
-proto.api.commons.workflows.NodeDefinition.prototype.clearTestBotTestEnd = function() {
-  return this.setTestBotTestEnd(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.hasTestBotTestEnd = function() {
-  return jspb.Message.getField(this, 403) != null;
 };
 
 
