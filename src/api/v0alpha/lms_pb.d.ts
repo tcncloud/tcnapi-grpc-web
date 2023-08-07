@@ -4997,6 +4997,16 @@ export namespace ReshapeAction {
     getNewtype(): api_commons_lms_pb.RecordTypeMap[keyof api_commons_lms_pb.RecordTypeMap];
     setNewtype(value: api_commons_lms_pb.RecordTypeMap[keyof api_commons_lms_pb.RecordTypeMap]): void;
 
+    hasNewField(): boolean;
+    clearNewField(): void;
+    getNewField(): Field | undefined;
+    setNewField(value?: Field): void;
+
+    hasDefaultValue(): boolean;
+    clearDefaultValue(): void;
+    getDefaultValue(): RecordFieldProto | undefined;
+    setDefaultValue(value?: RecordFieldProto): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Convert.AsObject;
     static toObject(includeInstance: boolean, msg: Convert): Convert.AsObject;
@@ -5010,6 +5020,8 @@ export namespace ReshapeAction {
   export namespace Convert {
     export type AsObject = {
       newtype: api_commons_lms_pb.RecordTypeMap[keyof api_commons_lms_pb.RecordTypeMap],
+      newField?: Field.AsObject,
+      defaultValue?: RecordFieldProto.AsObject,
     }
   }
 

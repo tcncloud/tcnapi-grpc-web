@@ -39166,7 +39166,9 @@ proto.api.v0alpha.ReshapeAction.Convert.prototype.toObject = function(opt_includ
  */
 proto.api.v0alpha.ReshapeAction.Convert.toObject = function(includeInstance, msg) {
   var f, obj = {
-    newtype: jspb.Message.getFieldWithDefault(msg, 17, 0)
+    newtype: jspb.Message.getFieldWithDefault(msg, 17, 0),
+    newField: (f = msg.getNewField()) && proto.api.v0alpha.Field.toObject(includeInstance, f),
+    defaultValue: (f = msg.getDefaultValue()) && proto.api.v0alpha.RecordFieldProto.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -39207,6 +39209,16 @@ proto.api.v0alpha.ReshapeAction.Convert.deserializeBinaryFromReader = function(m
       var value = /** @type {!proto.api.commons.RecordType} */ (reader.readEnum());
       msg.setNewtype(value);
       break;
+    case 18:
+      var value = new proto.api.v0alpha.Field;
+      reader.readMessage(value,proto.api.v0alpha.Field.deserializeBinaryFromReader);
+      msg.setNewField(value);
+      break;
+    case 19:
+      var value = new proto.api.v0alpha.RecordFieldProto;
+      reader.readMessage(value,proto.api.v0alpha.RecordFieldProto.deserializeBinaryFromReader);
+      msg.setDefaultValue(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -39243,6 +39255,22 @@ proto.api.v0alpha.ReshapeAction.Convert.serializeBinaryToWriter = function(messa
       f
     );
   }
+  f = message.getNewField();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      proto.api.v0alpha.Field.serializeBinaryToWriter
+    );
+  }
+  f = message.getDefaultValue();
+  if (f != null) {
+    writer.writeMessage(
+      19,
+      f,
+      proto.api.v0alpha.RecordFieldProto.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -39261,6 +39289,80 @@ proto.api.v0alpha.ReshapeAction.Convert.prototype.getNewtype = function() {
  */
 proto.api.v0alpha.ReshapeAction.Convert.prototype.setNewtype = function(value) {
   return jspb.Message.setProto3EnumField(this, 17, value);
+};
+
+
+/**
+ * optional Field new_field = 18;
+ * @return {?proto.api.v0alpha.Field}
+ */
+proto.api.v0alpha.ReshapeAction.Convert.prototype.getNewField = function() {
+  return /** @type{?proto.api.v0alpha.Field} */ (
+    jspb.Message.getWrapperField(this, proto.api.v0alpha.Field, 18));
+};
+
+
+/**
+ * @param {?proto.api.v0alpha.Field|undefined} value
+ * @return {!proto.api.v0alpha.ReshapeAction.Convert} returns this
+*/
+proto.api.v0alpha.ReshapeAction.Convert.prototype.setNewField = function(value) {
+  return jspb.Message.setWrapperField(this, 18, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v0alpha.ReshapeAction.Convert} returns this
+ */
+proto.api.v0alpha.ReshapeAction.Convert.prototype.clearNewField = function() {
+  return this.setNewField(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.ReshapeAction.Convert.prototype.hasNewField = function() {
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional RecordFieldProto default_value = 19;
+ * @return {?proto.api.v0alpha.RecordFieldProto}
+ */
+proto.api.v0alpha.ReshapeAction.Convert.prototype.getDefaultValue = function() {
+  return /** @type{?proto.api.v0alpha.RecordFieldProto} */ (
+    jspb.Message.getWrapperField(this, proto.api.v0alpha.RecordFieldProto, 19));
+};
+
+
+/**
+ * @param {?proto.api.v0alpha.RecordFieldProto|undefined} value
+ * @return {!proto.api.v0alpha.ReshapeAction.Convert} returns this
+*/
+proto.api.v0alpha.ReshapeAction.Convert.prototype.setDefaultValue = function(value) {
+  return jspb.Message.setWrapperField(this, 19, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v0alpha.ReshapeAction.Convert} returns this
+ */
+proto.api.v0alpha.ReshapeAction.Convert.prototype.clearDefaultValue = function() {
+  return this.setDefaultValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.ReshapeAction.Convert.prototype.hasDefaultValue = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 
