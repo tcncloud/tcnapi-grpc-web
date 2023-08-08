@@ -40344,8 +40344,7 @@ proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.toObject = function(includeInstanc
     scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     includeInactive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
-    onlyWeekmaps: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    onlyCalendarItems: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+    bitmapType: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -40401,12 +40400,8 @@ proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.deserializeBinaryFromReader = func
       msg.setDatetimeRange(value);
       break;
     case 5:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOnlyWeekmaps(value);
-      break;
-    case 6:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOnlyCalendarItems(value);
+      var value = /** @type {!proto.api.commons.BitmapType} */ (reader.readEnum());
+      msg.setBitmapType(value);
       break;
     default:
       reader.skipField();
@@ -40467,17 +40462,10 @@ proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.serializeBinaryToWriter = function
       api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
     );
   }
-  f = message.getOnlyWeekmaps();
-  if (f) {
-    writer.writeBool(
+  f = message.getBitmapType();
+  if (f !== 0.0) {
+    writer.writeEnum(
       5,
-      f
-    );
-  }
-  f = message.getOnlyCalendarItems();
-  if (f) {
-    writer.writeBool(
-      6,
       f
     );
   }
@@ -40595,38 +40583,20 @@ proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.hasDatetimeRange = funct
 
 
 /**
- * optional bool only_weekmaps = 5;
- * @return {boolean}
+ * optional api.commons.BitmapType bitmap_type = 5;
+ * @return {!proto.api.commons.BitmapType}
  */
-proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.getOnlyWeekmaps = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.getBitmapType = function() {
+  return /** @type {!proto.api.commons.BitmapType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {!proto.api.commons.BitmapType} value
  * @return {!proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq} returns this
  */
-proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.setOnlyWeekmaps = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 5, value);
-};
-
-
-/**
- * optional bool only_calendar_items = 6;
- * @return {boolean}
- */
-proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.getOnlyCalendarItems = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq} returns this
- */
-proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.setOnlyCalendarItems = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 6, value);
+proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.setBitmapType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -42271,8 +42241,7 @@ proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.toObject = function(includeInst
     scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     includeInactive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
-    onlyWeekmaps: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    onlyCalendarItems: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+    bitmapType: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -42328,12 +42297,8 @@ proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.deserializeBinaryFromReader = f
       msg.setDatetimeRange(value);
       break;
     case 5:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOnlyWeekmaps(value);
-      break;
-    case 6:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOnlyCalendarItems(value);
+      var value = /** @type {!proto.api.commons.BitmapType} */ (reader.readEnum());
+      msg.setBitmapType(value);
       break;
     default:
       reader.skipField();
@@ -42394,17 +42359,10 @@ proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.serializeBinaryToWriter = funct
       api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
     );
   }
-  f = message.getOnlyWeekmaps();
-  if (f) {
-    writer.writeBool(
+  f = message.getBitmapType();
+  if (f !== 0.0) {
+    writer.writeEnum(
       5,
-      f
-    );
-  }
-  f = message.getOnlyCalendarItems();
-  if (f) {
-    writer.writeBool(
-      6,
       f
     );
   }
@@ -42523,38 +42481,20 @@ proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.hasDatetimeRange = fu
 
 
 /**
- * optional bool only_weekmaps = 5;
- * @return {boolean}
+ * optional api.commons.BitmapType bitmap_type = 5;
+ * @return {!proto.api.commons.BitmapType}
  */
-proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.getOnlyWeekmaps = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.getBitmapType = function() {
+  return /** @type {!proto.api.commons.BitmapType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {!proto.api.commons.BitmapType} value
  * @return {!proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq} returns this
  */
-proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.setOnlyWeekmaps = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 5, value);
-};
-
-
-/**
- * optional bool only_calendar_items = 6;
- * @return {boolean}
- */
-proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.getOnlyCalendarItems = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq} returns this
- */
-proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.setOnlyCalendarItems = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 6, value);
+proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.setBitmapType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 

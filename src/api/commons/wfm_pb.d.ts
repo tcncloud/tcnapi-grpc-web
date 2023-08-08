@@ -737,3 +737,11 @@ export interface SchedulingTargetTypeMap {
 
 export const SchedulingTargetType: SchedulingTargetTypeMap;
 
+export interface BitmapTypeMap {
+  COMPLETE: 0;
+  ONLY_WEEKMAPS: 1;
+  ONLY_CALENDAR_ITEMS: 2;
+}
+
+export const BitmapType: BitmapTypeMap;
+
