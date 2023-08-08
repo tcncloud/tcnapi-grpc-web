@@ -852,6 +852,32 @@ export namespace AgentState {
   }
 }
 
+export class AudioSenderPacket extends jspb.Message {
+  getDirection(): number;
+  setDirection(value: number): void;
+
+  getFrame(): Uint8Array | string;
+  getFrame_asU8(): Uint8Array;
+  getFrame_asB64(): string;
+  setFrame(value: Uint8Array | string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AudioSenderPacket.AsObject;
+  static toObject(includeInstance: boolean, msg: AudioSenderPacket): AudioSenderPacket.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AudioSenderPacket, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AudioSenderPacket;
+  static deserializeBinaryFromReader(message: AudioSenderPacket, reader: jspb.BinaryReader): AudioSenderPacket;
+}
+
+export namespace AudioSenderPacket {
+  export type AsObject = {
+    direction: number,
+    frame: Uint8Array | string,
+  }
+}
+
 export interface ACDStatusMap {
   ACD_UNKNOWN: 0;
   AGENT_SESSION_LOGGING_IN: 4100;
