@@ -75,6 +75,21 @@ export class NodeDefinition extends jspb.Message {
   getOmniError(): api_commons_workflows_omni_pb.OmniNodeError | undefined;
   setOmniError(value?: api_commons_workflows_omni_pb.OmniNodeError): void;
 
+  hasOmniSendMessage(): boolean;
+  clearOmniSendMessage(): void;
+  getOmniSendMessage(): api_commons_workflows_omni_pb.OmniNodeSendMessage | undefined;
+  setOmniSendMessage(value?: api_commons_workflows_omni_pb.OmniNodeSendMessage): void;
+
+  hasOmniStore(): boolean;
+  clearOmniStore(): void;
+  getOmniStore(): api_commons_workflows_omni_pb.OmniNodeStore | undefined;
+  setOmniStore(value?: api_commons_workflows_omni_pb.OmniNodeStore): void;
+
+  hasOmniCompare(): boolean;
+  clearOmniCompare(): void;
+  getOmniCompare(): api_commons_workflows_omni_pb.OmniNodeCompare | undefined;
+  setOmniCompare(value?: api_commons_workflows_omni_pb.OmniNodeCompare): void;
+
   hasOmniBotTestStart(): boolean;
   clearOmniBotTestStart(): void;
   getOmniBotTestStart(): api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart | undefined;
@@ -133,6 +148,9 @@ export namespace NodeDefinition {
     omniSetSkill?: api_commons_workflows_omni_pb.OmniNodeSetSkill.AsObject,
     omniToAgent?: api_commons_workflows_omni_pb.OmniNodeToAgent.AsObject,
     omniError?: api_commons_workflows_omni_pb.OmniNodeError.AsObject,
+    omniSendMessage?: api_commons_workflows_omni_pb.OmniNodeSendMessage.AsObject,
+    omniStore?: api_commons_workflows_omni_pb.OmniNodeStore.AsObject,
+    omniCompare?: api_commons_workflows_omni_pb.OmniNodeCompare.AsObject,
     omniBotTestStart?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart.AsObject,
     omniBotTestStep?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep.AsObject,
     omniBotTestEnd?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.AsObject,
@@ -153,6 +171,9 @@ export namespace NodeDefinition {
     OMNI_SET_SKILL = 202,
     OMNI_TO_AGENT = 203,
     OMNI_ERROR = 204,
+    OMNI_SEND_MESSAGE = 205,
+    OMNI_STORE = 206,
+    OMNI_COMPARE = 207,
     OMNI_BOT_TEST_START = 301,
     OMNI_BOT_TEST_STEP = 302,
     OMNI_BOT_TEST_END = 303,

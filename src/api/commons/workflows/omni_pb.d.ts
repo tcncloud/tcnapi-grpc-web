@@ -33,6 +33,78 @@ export namespace OmniNodePrompt {
   }
 }
 
+export class OmniNodeSendMessage extends jspb.Message {
+  getPrompt(): string;
+  setPrompt(value: string): void;
+
+  clearOptionsList(): void;
+  getOptionsList(): Array<string>;
+  setOptionsList(value: Array<string>): void;
+  addOptions(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniNodeSendMessage.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniNodeSendMessage): OmniNodeSendMessage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniNodeSendMessage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniNodeSendMessage;
+  static deserializeBinaryFromReader(message: OmniNodeSendMessage, reader: jspb.BinaryReader): OmniNodeSendMessage;
+}
+
+export namespace OmniNodeSendMessage {
+  export type AsObject = {
+    prompt: string,
+    optionsList: Array<string>,
+  }
+}
+
+export class OmniNodeStore extends jspb.Message {
+  getStoreTo(): string;
+  setStoreTo(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniNodeStore.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniNodeStore): OmniNodeStore.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniNodeStore, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniNodeStore;
+  static deserializeBinaryFromReader(message: OmniNodeStore, reader: jspb.BinaryReader): OmniNodeStore;
+}
+
+export namespace OmniNodeStore {
+  export type AsObject = {
+    storeTo: string,
+  }
+}
+
+export class OmniNodeCompare extends jspb.Message {
+  getInput(): string;
+  setInput(value: string): void;
+
+  clearValidoptionsList(): void;
+  getValidoptionsList(): Array<string>;
+  setValidoptionsList(value: Array<string>): void;
+  addValidoptions(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniNodeCompare.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniNodeCompare): OmniNodeCompare.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniNodeCompare, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniNodeCompare;
+  static deserializeBinaryFromReader(message: OmniNodeCompare, reader: jspb.BinaryReader): OmniNodeCompare;
+}
+
+export namespace OmniNodeCompare {
+  export type AsObject = {
+    input: string,
+    validoptionsList: Array<string>,
+  }
+}
+
 export class OmniNodeSetSkill extends jspb.Message {
   getSkill(): string;
   setSkill(value: string): void;
