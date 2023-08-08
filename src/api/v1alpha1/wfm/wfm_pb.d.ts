@@ -4853,6 +4853,12 @@ export class GetOpenTimesBitmapsReq extends jspb.Message {
   getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
   setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
 
+  getOnlyWeekmaps(): boolean;
+  setOnlyWeekmaps(value: boolean): void;
+
+  getOnlyCalendarItems(): boolean;
+  setOnlyCalendarItems(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetOpenTimesBitmapsReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetOpenTimesBitmapsReq): GetOpenTimesBitmapsReq.AsObject;
@@ -4869,6 +4875,8 @@ export namespace GetOpenTimesBitmapsReq {
     scheduleScenarioSid: number,
     includeInactive: boolean,
     datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    onlyWeekmaps: boolean,
+    onlyCalendarItems: boolean,
   }
 }
 
@@ -5115,6 +5123,12 @@ export class GetAvailabilityBitmapsReq extends jspb.Message {
   getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
   setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
 
+  getOnlyWeekmaps(): boolean;
+  setOnlyWeekmaps(value: boolean): void;
+
+  getOnlyCalendarItems(): boolean;
+  setOnlyCalendarItems(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAvailabilityBitmapsReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetAvailabilityBitmapsReq): GetAvailabilityBitmapsReq.AsObject;
@@ -5131,6 +5145,8 @@ export namespace GetAvailabilityBitmapsReq {
     scheduleScenarioSid: number,
     includeInactive: boolean,
     datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    onlyWeekmaps: boolean,
+    onlyCalendarItems: boolean,
   }
 }
 

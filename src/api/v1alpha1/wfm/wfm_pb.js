@@ -40343,7 +40343,9 @@ proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.toObject = function(includeInstanc
     nodeToCheck: (f = msg.getNodeToCheck()) && proto.api.v1alpha1.wfm.ParentEntity.toObject(includeInstance, f),
     scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     includeInactive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f)
+    datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
+    onlyWeekmaps: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    onlyCalendarItems: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -40397,6 +40399,14 @@ proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.deserializeBinaryFromReader = func
       var value = new api_commons_wfm_pb.DatetimeRange;
       reader.readMessage(value,api_commons_wfm_pb.DatetimeRange.deserializeBinaryFromReader);
       msg.setDatetimeRange(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setOnlyWeekmaps(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setOnlyCalendarItems(value);
       break;
     default:
       reader.skipField();
@@ -40455,6 +40465,20 @@ proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.serializeBinaryToWriter = function
       4,
       f,
       api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
+    );
+  }
+  f = message.getOnlyWeekmaps();
+  if (f) {
+    writer.writeBool(
+      5,
+      f
+    );
+  }
+  f = message.getOnlyCalendarItems();
+  if (f) {
+    writer.writeBool(
+      6,
+      f
     );
   }
 };
@@ -40567,6 +40591,42 @@ proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.clearDatetimeRange = fun
  */
 proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.hasDatetimeRange = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool only_weekmaps = 5;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.getOnlyWeekmaps = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq} returns this
+ */
+proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.setOnlyWeekmaps = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * optional bool only_calendar_items = 6;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.getOnlyCalendarItems = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq} returns this
+ */
+proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.setOnlyCalendarItems = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -42210,7 +42270,9 @@ proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.toObject = function(includeInst
     proto.api.v1alpha1.wfm.ParentEntity.toObject, includeInstance),
     scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     includeInactive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f)
+    datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
+    onlyWeekmaps: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    onlyCalendarItems: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -42264,6 +42326,14 @@ proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.deserializeBinaryFromReader = f
       var value = new api_commons_wfm_pb.DatetimeRange;
       reader.readMessage(value,api_commons_wfm_pb.DatetimeRange.deserializeBinaryFromReader);
       msg.setDatetimeRange(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setOnlyWeekmaps(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setOnlyCalendarItems(value);
       break;
     default:
       reader.skipField();
@@ -42322,6 +42392,20 @@ proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.serializeBinaryToWriter = funct
       4,
       f,
       api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
+    );
+  }
+  f = message.getOnlyWeekmaps();
+  if (f) {
+    writer.writeBool(
+      5,
+      f
+    );
+  }
+  f = message.getOnlyCalendarItems();
+  if (f) {
+    writer.writeBool(
+      6,
+      f
     );
   }
 };
@@ -42435,6 +42519,42 @@ proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.clearDatetimeRange = 
  */
 proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.hasDatetimeRange = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool only_weekmaps = 5;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.getOnlyWeekmaps = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq} returns this
+ */
+proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.setOnlyWeekmaps = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * optional bool only_calendar_items = 6;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.getOnlyCalendarItems = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq} returns this
+ */
+proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.setOnlyCalendarItems = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
