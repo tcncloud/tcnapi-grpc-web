@@ -7648,6 +7648,60 @@ export namespace UpdateShiftInstanceV2Res {
   }
 }
 
+export class CopyShiftInstancesToScheduleReq extends jspb.Message {
+  hasDestinationSchedule(): boolean;
+  clearDestinationSchedule(): void;
+  getDestinationSchedule(): api_commons_wfm_pb.ScheduleSelector | undefined;
+  setDestinationSchedule(value?: api_commons_wfm_pb.ScheduleSelector): void;
+
+  clearShiftInstanceSidsList(): void;
+  getShiftInstanceSidsList(): Array<number>;
+  setShiftInstanceSidsList(value: Array<number>): void;
+  addShiftInstanceSids(value: number, index?: number): number;
+
+  getOverlapAsWarning(): boolean;
+  setOverlapAsWarning(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyShiftInstancesToScheduleReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyShiftInstancesToScheduleReq): CopyShiftInstancesToScheduleReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyShiftInstancesToScheduleReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyShiftInstancesToScheduleReq;
+  static deserializeBinaryFromReader(message: CopyShiftInstancesToScheduleReq, reader: jspb.BinaryReader): CopyShiftInstancesToScheduleReq;
+}
+
+export namespace CopyShiftInstancesToScheduleReq {
+  export type AsObject = {
+    destinationSchedule?: api_commons_wfm_pb.ScheduleSelector.AsObject,
+    shiftInstanceSidsList: Array<number>,
+    overlapAsWarning: boolean,
+  }
+}
+
+export class CopyShiftInstancesToScheduleRes extends jspb.Message {
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyShiftInstancesToScheduleRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyShiftInstancesToScheduleRes): CopyShiftInstancesToScheduleRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyShiftInstancesToScheduleRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyShiftInstancesToScheduleRes;
+  static deserializeBinaryFromReader(message: CopyShiftInstancesToScheduleRes, reader: jspb.BinaryReader): CopyShiftInstancesToScheduleRes;
+}
+
+export namespace CopyShiftInstancesToScheduleRes {
+  export type AsObject = {
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
 export class ListShiftInstanceSidsForAgentReq extends jspb.Message {
   hasScheduleSelector(): boolean;
   clearScheduleSelector(): void;

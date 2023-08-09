@@ -3788,7 +3788,8 @@ proto.api.v0alpha.StandaloneReq.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.v0alpha.StandaloneReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    locale: jspb.Message.getFieldWithDefault(msg, 1, "")
+    locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    category: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3829,6 +3830,10 @@ proto.api.v0alpha.StandaloneReq.deserializeBinaryFromReader = function(msg, read
       var value = /** @type {string} */ (reader.readString());
       msg.setLocale(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCategory(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3865,6 +3870,13 @@ proto.api.v0alpha.StandaloneReq.serializeBinaryToWriter = function(message, writ
       f
     );
   }
+  f = message.getCategory();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -3883,6 +3895,24 @@ proto.api.v0alpha.StandaloneReq.prototype.getLocale = function() {
  */
 proto.api.v0alpha.StandaloneReq.prototype.setLocale = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string category = 2;
+ * @return {string}
+ */
+proto.api.v0alpha.StandaloneReq.prototype.getCategory = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.StandaloneReq} returns this
+ */
+proto.api.v0alpha.StandaloneReq.prototype.setCategory = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

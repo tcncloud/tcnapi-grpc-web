@@ -465,6 +465,9 @@ export class StandaloneReq extends jspb.Message {
   getLocale(): string;
   setLocale(value: string): void;
 
+  getCategory(): string;
+  setCategory(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StandaloneReq.AsObject;
   static toObject(includeInstance: boolean, msg: StandaloneReq): StandaloneReq.AsObject;
@@ -478,6 +481,7 @@ export class StandaloneReq extends jspb.Message {
 export namespace StandaloneReq {
   export type AsObject = {
     locale: string,
+    category: string,
   }
 }
 

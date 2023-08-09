@@ -3117,7 +3117,8 @@ proto.api.commons.AutoEvaluation.toObject = function(includeInstance, msg) {
     callType: jspb.Message.getFieldWithDefault(msg, 9, 0),
     transcriptSid: jspb.Message.getFieldWithDefault(msg, 10, 0),
     expressionMatched: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    riskLevel: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    riskLevel: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    callLength: jspb.Message.getFieldWithDefault(msg, 16, 0)
   };
 
   if (includeInstance) {
@@ -3200,6 +3201,10 @@ proto.api.commons.AutoEvaluation.deserializeBinaryFromReader = function(msg, rea
     case 12:
       var value = /** @type {!proto.api.commons.RiskLevel} */ (reader.readEnum());
       msg.setRiskLevel(value);
+      break;
+    case 16:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setCallLength(value);
       break;
     default:
       reader.skipField();
@@ -3307,6 +3312,13 @@ proto.api.commons.AutoEvaluation.serializeBinaryToWriter = function(message, wri
   if (f !== 0.0) {
     writer.writeEnum(
       12,
+      f
+    );
+  }
+  f = message.getCallLength();
+  if (f !== 0) {
+    writer.writeInt32(
+      16,
       f
     );
   }
@@ -3566,6 +3578,24 @@ proto.api.commons.AutoEvaluation.prototype.getRiskLevel = function() {
  */
 proto.api.commons.AutoEvaluation.prototype.setRiskLevel = function(value) {
   return jspb.Message.setProto3EnumField(this, 12, value);
+};
+
+
+/**
+ * optional int32 call_length = 16;
+ * @return {number}
+ */
+proto.api.commons.AutoEvaluation.prototype.getCallLength = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.AutoEvaluation} returns this
+ */
+proto.api.commons.AutoEvaluation.prototype.setCallLength = function(value) {
+  return jspb.Message.setProto3IntField(this, 16, value);
 };
 
 
