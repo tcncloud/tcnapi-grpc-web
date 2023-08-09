@@ -4853,6 +4853,9 @@ export class GetOpenTimesBitmapsReq extends jspb.Message {
   getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
   setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
 
+  getBitmapType(): api_commons_wfm_pb.BitmapTypeMap[keyof api_commons_wfm_pb.BitmapTypeMap];
+  setBitmapType(value: api_commons_wfm_pb.BitmapTypeMap[keyof api_commons_wfm_pb.BitmapTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetOpenTimesBitmapsReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetOpenTimesBitmapsReq): GetOpenTimesBitmapsReq.AsObject;
@@ -4869,6 +4872,7 @@ export namespace GetOpenTimesBitmapsReq {
     scheduleScenarioSid: number,
     includeInactive: boolean,
     datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    bitmapType: api_commons_wfm_pb.BitmapTypeMap[keyof api_commons_wfm_pb.BitmapTypeMap],
   }
 }
 
@@ -5115,6 +5119,9 @@ export class GetAvailabilityBitmapsReq extends jspb.Message {
   getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
   setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
 
+  getBitmapType(): api_commons_wfm_pb.BitmapTypeMap[keyof api_commons_wfm_pb.BitmapTypeMap];
+  setBitmapType(value: api_commons_wfm_pb.BitmapTypeMap[keyof api_commons_wfm_pb.BitmapTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAvailabilityBitmapsReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetAvailabilityBitmapsReq): GetAvailabilityBitmapsReq.AsObject;
@@ -5131,6 +5138,7 @@ export namespace GetAvailabilityBitmapsReq {
     scheduleScenarioSid: number,
     includeInactive: boolean,
     datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    bitmapType: api_commons_wfm_pb.BitmapTypeMap[keyof api_commons_wfm_pb.BitmapTypeMap],
   }
 }
 
@@ -7304,6 +7312,76 @@ export namespace DeleteDraftScheduleRes {
   }
 }
 
+export class CopyScheduleToScheduleReq extends jspb.Message {
+  hasSourceScheduleSelector(): boolean;
+  clearSourceScheduleSelector(): void;
+  getSourceScheduleSelector(): api_commons_wfm_pb.ScheduleSelector | undefined;
+  setSourceScheduleSelector(value?: api_commons_wfm_pb.ScheduleSelector): void;
+
+  hasDestinationScheduleSelector(): boolean;
+  clearDestinationScheduleSelector(): void;
+  getDestinationScheduleSelector(): api_commons_wfm_pb.ScheduleSelector | undefined;
+  setDestinationScheduleSelector(value?: api_commons_wfm_pb.ScheduleSelector): void;
+
+  hasNodeSelector(): boolean;
+  clearNodeSelector(): void;
+  getNodeSelector(): ParentEntity | undefined;
+  setNodeSelector(value?: ParentEntity): void;
+
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  getStartDatetimesOnly(): boolean;
+  setStartDatetimesOnly(value: boolean): void;
+
+  getOverlapAsWarning(): boolean;
+  setOverlapAsWarning(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyScheduleToScheduleReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyScheduleToScheduleReq): CopyScheduleToScheduleReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyScheduleToScheduleReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyScheduleToScheduleReq;
+  static deserializeBinaryFromReader(message: CopyScheduleToScheduleReq, reader: jspb.BinaryReader): CopyScheduleToScheduleReq;
+}
+
+export namespace CopyScheduleToScheduleReq {
+  export type AsObject = {
+    sourceScheduleSelector?: api_commons_wfm_pb.ScheduleSelector.AsObject,
+    destinationScheduleSelector?: api_commons_wfm_pb.ScheduleSelector.AsObject,
+    nodeSelector?: ParentEntity.AsObject,
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    startDatetimesOnly: boolean,
+    overlapAsWarning: boolean,
+  }
+}
+
+export class CopyScheduleToScheduleRes extends jspb.Message {
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyScheduleToScheduleRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyScheduleToScheduleRes): CopyScheduleToScheduleRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyScheduleToScheduleRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyScheduleToScheduleRes;
+  static deserializeBinaryFromReader(message: CopyScheduleToScheduleRes, reader: jspb.BinaryReader): CopyScheduleToScheduleRes;
+}
+
+export namespace CopyScheduleToScheduleRes {
+  export type AsObject = {
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
 export class CreateShiftInstanceReq extends jspb.Message {
   getDraftScheduleSid(): number;
   setDraftScheduleSid(value: number): void;
@@ -7644,6 +7722,60 @@ export class UpdateShiftInstanceV2Res extends jspb.Message {
 export namespace UpdateShiftInstanceV2Res {
   export type AsObject = {
     shiftInstance?: ShiftInstance.AsObject,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
+export class CopyShiftInstancesToScheduleReq extends jspb.Message {
+  hasDestinationSchedule(): boolean;
+  clearDestinationSchedule(): void;
+  getDestinationSchedule(): api_commons_wfm_pb.ScheduleSelector | undefined;
+  setDestinationSchedule(value?: api_commons_wfm_pb.ScheduleSelector): void;
+
+  clearShiftInstanceSidsList(): void;
+  getShiftInstanceSidsList(): Array<number>;
+  setShiftInstanceSidsList(value: Array<number>): void;
+  addShiftInstanceSids(value: number, index?: number): number;
+
+  getOverlapAsWarning(): boolean;
+  setOverlapAsWarning(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyShiftInstancesToScheduleReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyShiftInstancesToScheduleReq): CopyShiftInstancesToScheduleReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyShiftInstancesToScheduleReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyShiftInstancesToScheduleReq;
+  static deserializeBinaryFromReader(message: CopyShiftInstancesToScheduleReq, reader: jspb.BinaryReader): CopyShiftInstancesToScheduleReq;
+}
+
+export namespace CopyShiftInstancesToScheduleReq {
+  export type AsObject = {
+    destinationSchedule?: api_commons_wfm_pb.ScheduleSelector.AsObject,
+    shiftInstanceSidsList: Array<number>,
+    overlapAsWarning: boolean,
+  }
+}
+
+export class CopyShiftInstancesToScheduleRes extends jspb.Message {
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyShiftInstancesToScheduleRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyShiftInstancesToScheduleRes): CopyShiftInstancesToScheduleRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyShiftInstancesToScheduleRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyShiftInstancesToScheduleRes;
+  static deserializeBinaryFromReader(message: CopyShiftInstancesToScheduleRes, reader: jspb.BinaryReader): CopyShiftInstancesToScheduleRes;
+}
+
+export namespace CopyShiftInstancesToScheduleRes {
+  export type AsObject = {
     diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
