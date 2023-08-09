@@ -553,6 +553,37 @@ export namespace ScheduleSelector {
   }
 }
 
+export class SkillProfileCategory extends jspb.Message {
+  getSkillProfileCategorySid(): number;
+  setSkillProfileCategorySid(value: number): void;
+
+  getSkillProfileCategoryType(): SkillProfileCategory.CategoryTypeMap[keyof SkillProfileCategory.CategoryTypeMap];
+  setSkillProfileCategoryType(value: SkillProfileCategory.CategoryTypeMap[keyof SkillProfileCategory.CategoryTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SkillProfileCategory.AsObject;
+  static toObject(includeInstance: boolean, msg: SkillProfileCategory): SkillProfileCategory.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SkillProfileCategory, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SkillProfileCategory;
+  static deserializeBinaryFromReader(message: SkillProfileCategory, reader: jspb.BinaryReader): SkillProfileCategory;
+}
+
+export namespace SkillProfileCategory {
+  export type AsObject = {
+    skillProfileCategorySid: number,
+    skillProfileCategoryType: SkillProfileCategory.CategoryTypeMap[keyof SkillProfileCategory.CategoryTypeMap],
+  }
+
+  export interface CategoryTypeMap {
+    SINGLE_SKILL_PROFILE: 0;
+    SKILL_PROFILE_GROUP: 1;
+  }
+
+  export const CategoryType: CategoryTypeMap;
+}
+
 export interface RegressionForecasterModelTypesMap {
   RANDOM_FOREST: 0;
   ADABOOST: 1;
