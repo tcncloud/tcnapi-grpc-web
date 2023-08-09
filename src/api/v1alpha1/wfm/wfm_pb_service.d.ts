@@ -949,6 +949,15 @@ type WFMUpdateShiftInstanceV2 = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceV2Res;
 };
 
+type WFMCopyShiftInstancesToSchedule = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CopyShiftInstancesToScheduleReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CopyShiftInstancesToScheduleRes;
+};
+
 type WFMListShiftInstanceSidsForAgent = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1119,6 +1128,7 @@ export class WFM {
   static readonly SwapShiftInstances: WFMSwapShiftInstances;
   static readonly UpdateShiftInstance: WFMUpdateShiftInstance;
   static readonly UpdateShiftInstanceV2: WFMUpdateShiftInstanceV2;
+  static readonly CopyShiftInstancesToSchedule: WFMCopyShiftInstancesToSchedule;
   static readonly ListShiftInstanceSidsForAgent: WFMListShiftInstanceSidsForAgent;
   static readonly ListShiftSegmentsByShiftInstanceSids: WFMListShiftSegmentsByShiftInstanceSids;
   static readonly SetSchedulingTarget: WFMSetSchedulingTarget;
@@ -2064,6 +2074,15 @@ export class WFMClient {
   updateShiftInstanceV2(
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceV2Req,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceV2Res|null) => void
+  ): UnaryResponse;
+  copyShiftInstancesToSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CopyShiftInstancesToScheduleReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CopyShiftInstancesToScheduleRes|null) => void
+  ): UnaryResponse;
+  copyShiftInstancesToSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CopyShiftInstancesToScheduleReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CopyShiftInstancesToScheduleRes|null) => void
   ): UnaryResponse;
   listShiftInstanceSidsForAgent(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListShiftInstanceSidsForAgentReq,
