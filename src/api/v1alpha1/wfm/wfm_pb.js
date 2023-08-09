@@ -40343,7 +40343,8 @@ proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.toObject = function(includeInstanc
     nodeToCheck: (f = msg.getNodeToCheck()) && proto.api.v1alpha1.wfm.ParentEntity.toObject(includeInstance, f),
     scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     includeInactive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f)
+    datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
+    bitmapType: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -40397,6 +40398,10 @@ proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.deserializeBinaryFromReader = func
       var value = new api_commons_wfm_pb.DatetimeRange;
       reader.readMessage(value,api_commons_wfm_pb.DatetimeRange.deserializeBinaryFromReader);
       msg.setDatetimeRange(value);
+      break;
+    case 5:
+      var value = /** @type {!proto.api.commons.BitmapType} */ (reader.readEnum());
+      msg.setBitmapType(value);
       break;
     default:
       reader.skipField();
@@ -40455,6 +40460,13 @@ proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.serializeBinaryToWriter = function
       4,
       f,
       api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
+    );
+  }
+  f = message.getBitmapType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      5,
+      f
     );
   }
 };
@@ -40567,6 +40579,24 @@ proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.clearDatetimeRange = fun
  */
 proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.hasDatetimeRange = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional api.commons.BitmapType bitmap_type = 5;
+ * @return {!proto.api.commons.BitmapType}
+ */
+proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.getBitmapType = function() {
+  return /** @type {!proto.api.commons.BitmapType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.BitmapType} value
+ * @return {!proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq} returns this
+ */
+proto.api.v1alpha1.wfm.GetOpenTimesBitmapsReq.prototype.setBitmapType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -42210,7 +42240,8 @@ proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.toObject = function(includeInst
     proto.api.v1alpha1.wfm.ParentEntity.toObject, includeInstance),
     scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     includeInactive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f)
+    datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
+    bitmapType: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -42264,6 +42295,10 @@ proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.deserializeBinaryFromReader = f
       var value = new api_commons_wfm_pb.DatetimeRange;
       reader.readMessage(value,api_commons_wfm_pb.DatetimeRange.deserializeBinaryFromReader);
       msg.setDatetimeRange(value);
+      break;
+    case 5:
+      var value = /** @type {!proto.api.commons.BitmapType} */ (reader.readEnum());
+      msg.setBitmapType(value);
       break;
     default:
       reader.skipField();
@@ -42322,6 +42357,13 @@ proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.serializeBinaryToWriter = funct
       4,
       f,
       api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
+    );
+  }
+  f = message.getBitmapType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      5,
+      f
     );
   }
 };
@@ -42435,6 +42477,24 @@ proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.clearDatetimeRange = 
  */
 proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.hasDatetimeRange = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional api.commons.BitmapType bitmap_type = 5;
+ * @return {!proto.api.commons.BitmapType}
+ */
+proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.getBitmapType = function() {
+  return /** @type {!proto.api.commons.BitmapType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.BitmapType} value
+ * @return {!proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq} returns this
+ */
+proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq.prototype.setBitmapType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 

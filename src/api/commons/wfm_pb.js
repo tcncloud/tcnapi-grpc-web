@@ -24,6 +24,7 @@ var global =
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.api.commons.AvailabilityOption', null, global);
+goog.exportSymbol('proto.api.commons.BitmapType', null, global);
 goog.exportSymbol('proto.api.commons.CallProfileGroupAvgs', null, global);
 goog.exportSymbol('proto.api.commons.CallProfileGroupCalls', null, global);
 goog.exportSymbol('proto.api.commons.ConfigEntityType', null, global);
@@ -4588,6 +4589,15 @@ proto.api.commons.ScheduleType = {
 proto.api.commons.SchedulingTargetType = {
   COVERAGE: 0,
   SERVICE_LEVEL: 1
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.BitmapType = {
+  COMPLETE: 0,
+  ONLY_WEEKMAPS: 1,
+  ONLY_CALENDAR_ITEMS: 2
 };
 
 goog.object.extend(exports, proto.api.commons);
