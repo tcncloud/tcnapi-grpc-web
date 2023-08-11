@@ -527,8 +527,8 @@ proto.api.commons.workflows.OmniNodeInject.serializeBinaryToWriter = function(me
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
+  f = message.getData();
+  if (f.length > 0) {
     writer.writeString(
       2,
       f
@@ -569,25 +569,7 @@ proto.api.commons.workflows.OmniNodeInject.prototype.getData = function() {
  * @return {!proto.api.commons.workflows.OmniNodeInject} returns this
  */
 proto.api.commons.workflows.OmniNodeInject.prototype.setData = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.api.commons.workflows.OmniNodeInject} returns this
- */
-proto.api.commons.workflows.OmniNodeInject.prototype.clearData = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.workflows.OmniNodeInject.prototype.hasData = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -705,8 +687,8 @@ proto.api.commons.workflows.OmniNodeSendMessage.serializeBinaryToWriter = functi
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
+  f = message.getOptionsKey();
+  if (f.length > 0) {
     writer.writeString(
       3,
       f
@@ -747,25 +729,7 @@ proto.api.commons.workflows.OmniNodeSendMessage.prototype.getOptionsKey = functi
  * @return {!proto.api.commons.workflows.OmniNodeSendMessage} returns this
  */
 proto.api.commons.workflows.OmniNodeSendMessage.prototype.setOptionsKey = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.api.commons.workflows.OmniNodeSendMessage} returns this
- */
-proto.api.commons.workflows.OmniNodeSendMessage.prototype.clearOptionsKey = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.workflows.OmniNodeSendMessage.prototype.hasOptionsKey = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -1013,8 +977,8 @@ proto.api.commons.workflows.OmniNodeCompare.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
+  f = message.getOptionsKey();
+  if (f.length > 0) {
     writer.writeString(
       2,
       f
@@ -1055,25 +1019,7 @@ proto.api.commons.workflows.OmniNodeCompare.prototype.getOptionsKey = function()
  * @return {!proto.api.commons.workflows.OmniNodeCompare} returns this
  */
 proto.api.commons.workflows.OmniNodeCompare.prototype.setOptionsKey = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.api.commons.workflows.OmniNodeCompare} returns this
- */
-proto.api.commons.workflows.OmniNodeCompare.prototype.clearOptionsKey = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.workflows.OmniNodeCompare.prototype.hasOptionsKey = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

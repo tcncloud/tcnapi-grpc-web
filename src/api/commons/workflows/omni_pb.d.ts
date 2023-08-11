@@ -37,8 +37,6 @@ export class OmniNodeInject extends jspb.Message {
   getStoreTo(): string;
   setStoreTo(value: string): void;
 
-  hasData(): boolean;
-  clearData(): void;
   getData(): string;
   setData(value: string): void;
 
@@ -63,8 +61,6 @@ export class OmniNodeSendMessage extends jspb.Message {
   getPrompt(): string;
   setPrompt(value: string): void;
 
-  hasOptionsKey(): boolean;
-  clearOptionsKey(): void;
   getOptionsKey(): string;
   setOptionsKey(value: string): void;
 
@@ -109,8 +105,6 @@ export class OmniNodeCompare extends jspb.Message {
   getInput(): string;
   setInput(value: string): void;
 
-  hasOptionsKey(): boolean;
-  clearOptionsKey(): void;
   getOptionsKey(): string;
   setOptionsKey(value: string): void;
 
