@@ -2398,6 +2398,9 @@ export class ManualDialSettings extends jspb.Message {
   getUseTimezoneValidationZip(): ManualDialSettings.ZipCodeValidationMap[keyof ManualDialSettings.ZipCodeValidationMap];
   setUseTimezoneValidationZip(value: ManualDialSettings.ZipCodeValidationMap[keyof ManualDialSettings.ZipCodeValidationMap]): void;
 
+  getEnableRejectOptionForApprovers(): boolean;
+  setEnableRejectOptionForApprovers(value: boolean): void;
+
   getEnableSipAddress(): boolean;
   setEnableSipAddress(value: boolean): void;
 
@@ -2417,9 +2420,6 @@ export class ManualDialSettings extends jspb.Message {
   clearDataDipManualDialIntegrationMap(): void;
   getDataDipManualDialIntegrationHandling(): ManualDialDataDipHandling.EnumMap[keyof ManualDialDataDipHandling.EnumMap];
   setDataDipManualDialIntegrationHandling(value: ManualDialDataDipHandling.EnumMap[keyof ManualDialDataDipHandling.EnumMap]): void;
-
-  getEnableRejectOptionForApprovers(): boolean;
-  setEnableRejectOptionForApprovers(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManualDialSettings.AsObject;
@@ -2458,6 +2458,7 @@ export namespace ManualDialSettings {
     complianceMetadataList: Array<ComplianceMetadata.AsObject>,
     enableMetadata: boolean,
     useTimezoneValidationZip: ManualDialSettings.ZipCodeValidationMap[keyof ManualDialSettings.ZipCodeValidationMap],
+    enableRejectOptionForApprovers: boolean,
     enableSipAddress: boolean,
     maskManualDialCallerId: boolean,
     enableManualDialDataDip: string,
@@ -2465,7 +2466,6 @@ export namespace ManualDialSettings {
     manualDialDataDipResultHandling: ManualDialDataDipHandling.EnumMap[keyof ManualDialDataDipHandling.EnumMap],
     dataDipManualDialIntegrationMap: Array<[string, string]>,
     dataDipManualDialIntegrationHandling: ManualDialDataDipHandling.EnumMap[keyof ManualDialDataDipHandling.EnumMap],
-    enableRejectOptionForApprovers: boolean,
   }
 
   export interface ZipCodeValidationMap {

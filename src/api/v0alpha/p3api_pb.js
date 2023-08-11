@@ -22813,14 +22813,14 @@ proto.api.v0alpha.ManualDialSettings.toObject = function(includeInstance, msg) {
     proto.api.v0alpha.ComplianceMetadata.toObject, includeInstance),
     enableMetadata: jspb.Message.getBooleanFieldWithDefault(msg, 27, false),
     useTimezoneValidationZip: jspb.Message.getFieldWithDefault(msg, 28, 0),
+    enableRejectOptionForApprovers: jspb.Message.getBooleanFieldWithDefault(msg, 29, false),
     enableSipAddress: jspb.Message.getBooleanFieldWithDefault(msg, 30, false),
     maskManualDialCallerId: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
     enableManualDialDataDip: jspb.Message.getFieldWithDefault(msg, 32, ""),
     manualDialDataDipConfig: jspb.Message.getFieldWithDefault(msg, 33, 0),
     manualDialDataDipResultHandling: jspb.Message.getFieldWithDefault(msg, 34, 0),
     dataDipManualDialIntegrationMap: (f = msg.getDataDipManualDialIntegrationMap()) ? f.toObject(includeInstance, undefined) : [],
-    dataDipManualDialIntegrationHandling: jspb.Message.getFieldWithDefault(msg, 36, 0),
-    enableRejectOptionForApprovers: jspb.Message.getBooleanFieldWithDefault(msg, 29, false)
+    dataDipManualDialIntegrationHandling: jspb.Message.getFieldWithDefault(msg, 36, 0)
   };
 
   if (includeInstance) {
@@ -22958,6 +22958,10 @@ proto.api.v0alpha.ManualDialSettings.deserializeBinaryFromReader = function(msg,
       var value = /** @type {!proto.api.v0alpha.ManualDialSettings.ZipCodeValidation} */ (reader.readEnum());
       msg.setUseTimezoneValidationZip(value);
       break;
+    case 29:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnableRejectOptionForApprovers(value);
+      break;
     case 30:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableSipAddress(value);
@@ -22987,10 +22991,6 @@ proto.api.v0alpha.ManualDialSettings.deserializeBinaryFromReader = function(msg,
     case 36:
       var value = /** @type {!proto.api.v0alpha.ManualDialDataDipHandling.Enum} */ (reader.readEnum());
       msg.setDataDipManualDialIntegrationHandling(value);
-      break;
-    case 29:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEnableRejectOptionForApprovers(value);
       break;
     default:
       reader.skipField();
@@ -23197,6 +23197,13 @@ proto.api.v0alpha.ManualDialSettings.serializeBinaryToWriter = function(message,
       f
     );
   }
+  f = message.getEnableRejectOptionForApprovers();
+  if (f) {
+    writer.writeBool(
+      29,
+      f
+    );
+  }
   f = message.getEnableSipAddress();
   if (f) {
     writer.writeBool(
@@ -23240,13 +23247,6 @@ proto.api.v0alpha.ManualDialSettings.serializeBinaryToWriter = function(message,
   if (f !== 0.0) {
     writer.writeEnum(
       36,
-      f
-    );
-  }
-  f = message.getEnableRejectOptionForApprovers();
-  if (f) {
-    writer.writeBool(
-      29,
       f
     );
   }
@@ -23733,6 +23733,24 @@ proto.api.v0alpha.ManualDialSettings.prototype.setUseTimezoneValidationZip = fun
 
 
 /**
+ * optional bool enable_reject_option_for_approvers = 29;
+ * @return {boolean}
+ */
+proto.api.v0alpha.ManualDialSettings.prototype.getEnableRejectOptionForApprovers = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 29, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.ManualDialSettings} returns this
+ */
+proto.api.v0alpha.ManualDialSettings.prototype.setEnableRejectOptionForApprovers = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 29, value);
+};
+
+
+/**
  * optional bool enable_sip_address = 30;
  * @return {boolean}
  */
@@ -23860,24 +23878,6 @@ proto.api.v0alpha.ManualDialSettings.prototype.getDataDipManualDialIntegrationHa
  */
 proto.api.v0alpha.ManualDialSettings.prototype.setDataDipManualDialIntegrationHandling = function(value) {
   return jspb.Message.setProto3EnumField(this, 36, value);
-};
-
-
-/**
- * optional bool enable_reject_option_for_approvers = 29;
- * @return {boolean}
- */
-proto.api.v0alpha.ManualDialSettings.prototype.getEnableRejectOptionForApprovers = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 29, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v0alpha.ManualDialSettings} returns this
- */
-proto.api.v0alpha.ManualDialSettings.prototype.setEnableRejectOptionForApprovers = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 29, value);
 };
 
 
