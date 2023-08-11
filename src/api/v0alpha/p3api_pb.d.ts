@@ -2398,6 +2398,9 @@ export class ManualDialSettings extends jspb.Message {
   getUseTimezoneValidationZip(): ManualDialSettings.ZipCodeValidationMap[keyof ManualDialSettings.ZipCodeValidationMap];
   setUseTimezoneValidationZip(value: ManualDialSettings.ZipCodeValidationMap[keyof ManualDialSettings.ZipCodeValidationMap]): void;
 
+  getEnableRejectOptionForApprovers(): boolean;
+  setEnableRejectOptionForApprovers(value: boolean): void;
+
   getEnableSipAddress(): boolean;
   setEnableSipAddress(value: boolean): void;
 
@@ -2455,6 +2458,7 @@ export namespace ManualDialSettings {
     complianceMetadataList: Array<ComplianceMetadata.AsObject>,
     enableMetadata: boolean,
     useTimezoneValidationZip: ManualDialSettings.ZipCodeValidationMap[keyof ManualDialSettings.ZipCodeValidationMap],
+    enableRejectOptionForApprovers: boolean,
     enableSipAddress: boolean,
     maskManualDialCallerId: boolean,
     enableManualDialDataDip: string,
