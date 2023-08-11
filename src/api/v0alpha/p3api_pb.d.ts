@@ -2418,6 +2418,9 @@ export class ManualDialSettings extends jspb.Message {
   getDataDipManualDialIntegrationHandling(): ManualDialDataDipHandling.EnumMap[keyof ManualDialDataDipHandling.EnumMap];
   setDataDipManualDialIntegrationHandling(value: ManualDialDataDipHandling.EnumMap[keyof ManualDialDataDipHandling.EnumMap]): void;
 
+  getEnableRejectOptionForApprovers(): boolean;
+  setEnableRejectOptionForApprovers(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManualDialSettings.AsObject;
   static toObject(includeInstance: boolean, msg: ManualDialSettings): ManualDialSettings.AsObject;
@@ -2462,6 +2465,7 @@ export namespace ManualDialSettings {
     manualDialDataDipResultHandling: ManualDialDataDipHandling.EnumMap[keyof ManualDialDataDipHandling.EnumMap],
     dataDipManualDialIntegrationMap: Array<[string, string]>,
     dataDipManualDialIntegrationHandling: ManualDialDataDipHandling.EnumMap[keyof ManualDialDataDipHandling.EnumMap],
+    enableRejectOptionForApprovers: boolean,
   }
 
   export interface ZipCodeValidationMap {
