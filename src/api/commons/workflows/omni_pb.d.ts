@@ -33,14 +33,40 @@ export namespace OmniNodePrompt {
   }
 }
 
+export class OmniNodeInject extends jspb.Message {
+  getStoreTo(): string;
+  setStoreTo(value: string): void;
+
+  hasData(): boolean;
+  clearData(): void;
+  getData(): string;
+  setData(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniNodeInject.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniNodeInject): OmniNodeInject.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniNodeInject, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniNodeInject;
+  static deserializeBinaryFromReader(message: OmniNodeInject, reader: jspb.BinaryReader): OmniNodeInject;
+}
+
+export namespace OmniNodeInject {
+  export type AsObject = {
+    storeTo: string,
+    data: string,
+  }
+}
+
 export class OmniNodeSendMessage extends jspb.Message {
   getPrompt(): string;
   setPrompt(value: string): void;
 
-  clearOptionsList(): void;
-  getOptionsList(): Array<string>;
-  setOptionsList(value: Array<string>): void;
-  addOptions(value: string, index?: number): string;
+  hasOptionsKey(): boolean;
+  clearOptionsKey(): void;
+  getOptionsKey(): string;
+  setOptionsKey(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniNodeSendMessage.AsObject;
@@ -55,7 +81,7 @@ export class OmniNodeSendMessage extends jspb.Message {
 export namespace OmniNodeSendMessage {
   export type AsObject = {
     prompt: string,
-    optionsList: Array<string>,
+    optionsKey: string,
   }
 }
 
@@ -83,10 +109,10 @@ export class OmniNodeCompare extends jspb.Message {
   getInput(): string;
   setInput(value: string): void;
 
-  clearValidoptionsList(): void;
-  getValidoptionsList(): Array<string>;
-  setValidoptionsList(value: Array<string>): void;
-  addValidoptions(value: string, index?: number): string;
+  hasOptionsKey(): boolean;
+  clearOptionsKey(): void;
+  getOptionsKey(): string;
+  setOptionsKey(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniNodeCompare.AsObject;
@@ -101,7 +127,7 @@ export class OmniNodeCompare extends jspb.Message {
 export namespace OmniNodeCompare {
   export type AsObject = {
     input: string,
-    validoptionsList: Array<string>,
+    optionsKey: string,
   }
 }
 
