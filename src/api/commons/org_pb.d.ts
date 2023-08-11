@@ -349,7 +349,6 @@ export interface OperatorApplicationsMap {
   PERFORMANCE_MANAGEMENT_APP: 23;
   TICKETS_APP: 31;
   AGENT_BETA_APP: 32;
-  NEWSROOM_APP: 33;
 }
 
 export const OperatorApplications: OperatorApplicationsMap;

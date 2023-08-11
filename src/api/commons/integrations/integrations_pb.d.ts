@@ -1431,41 +1431,6 @@ export class ExecuteFlow extends jspb.Message {
   getPianoUpdateUser(): ExecutePianoUpdateUser | undefined;
   setPianoUpdateUser(value?: ExecutePianoUpdateUser): void;
 
-  hasEpicGetToken(): boolean;
-  clearEpicGetToken(): void;
-  getEpicGetToken(): ExecuteEpicGetToken | undefined;
-  setEpicGetToken(value?: ExecuteEpicGetToken): void;
-
-  hasEpicGetPatient(): boolean;
-  clearEpicGetPatient(): void;
-  getEpicGetPatient(): ExecuteEpicGetPatient | undefined;
-  setEpicGetPatient(value?: ExecuteEpicGetPatient): void;
-
-  hasEpicMatchPatient(): boolean;
-  clearEpicMatchPatient(): void;
-  getEpicMatchPatient(): ExecuteEpicMatchPatient | undefined;
-  setEpicMatchPatient(value?: ExecuteEpicMatchPatient): void;
-
-  hasEpicSearchAppointment(): boolean;
-  clearEpicSearchAppointment(): void;
-  getEpicSearchAppointment(): ExecuteEpicSearchAppointment | undefined;
-  setEpicSearchAppointment(value?: ExecuteEpicSearchAppointment): void;
-
-  hasEpicFindAppointment(): boolean;
-  clearEpicFindAppointment(): void;
-  getEpicFindAppointment(): ExecuteEpicFindAppointment | undefined;
-  setEpicFindAppointment(value?: ExecuteEpicFindAppointment): void;
-
-  hasEpicBookAppointment(): boolean;
-  clearEpicBookAppointment(): void;
-  getEpicBookAppointment(): ExecuteEpicBookAppointment | undefined;
-  setEpicBookAppointment(value?: ExecuteEpicBookAppointment): void;
-
-  hasEpicGetAccount(): boolean;
-  clearEpicGetAccount(): void;
-  getEpicGetAccount(): ExecuteEpicGetAccount | undefined;
-  setEpicGetAccount(value?: ExecuteEpicGetAccount): void;
-
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -1652,13 +1617,6 @@ export namespace ExecuteFlow {
     poscorpUpdatePaymentStatus?: ExecutePoscorpUpdatePaymentStatus.AsObject,
     pianoGetUser?: ExecutePianoGetUser.AsObject,
     pianoUpdateUser?: ExecutePianoUpdateUser.AsObject,
-    epicGetToken?: ExecuteEpicGetToken.AsObject,
-    epicGetPatient?: ExecuteEpicGetPatient.AsObject,
-    epicMatchPatient?: ExecuteEpicMatchPatient.AsObject,
-    epicSearchAppointment?: ExecuteEpicSearchAppointment.AsObject,
-    epicFindAppointment?: ExecuteEpicFindAppointment.AsObject,
-    epicBookAppointment?: ExecuteEpicBookAppointment.AsObject,
-    epicGetAccount?: ExecuteEpicGetAccount.AsObject,
   }
 
   export enum ValueCase {
@@ -1835,13 +1793,6 @@ export namespace ExecuteFlow {
     POSCORP_UPDATE_PAYMENT_STATUS = 3503,
     PIANO_GET_USER = 3601,
     PIANO_UPDATE_USER = 3602,
-    EPIC_GET_TOKEN = 3701,
-    EPIC_GET_PATIENT = 3702,
-    EPIC_MATCH_PATIENT = 3703,
-    EPIC_SEARCH_APPOINTMENT = 3704,
-    EPIC_FIND_APPOINTMENT = 3705,
-    EPIC_BOOK_APPOINTMENT = 3706,
-    EPIC_GET_ACCOUNT = 3707,
   }
 }
 
@@ -4966,118 +4917,6 @@ export namespace ExecutePianoUpdateUser {
   }
 }
 
-export class ExecuteEpicGetToken extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteEpicGetToken.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteEpicGetToken): ExecuteEpicGetToken.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteEpicGetToken, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteEpicGetToken;
-  static deserializeBinaryFromReader(message: ExecuteEpicGetToken, reader: jspb.BinaryReader): ExecuteEpicGetToken;
-}
-
-export namespace ExecuteEpicGetToken {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteEpicGetPatient extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteEpicGetPatient.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteEpicGetPatient): ExecuteEpicGetPatient.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteEpicGetPatient, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteEpicGetPatient;
-  static deserializeBinaryFromReader(message: ExecuteEpicGetPatient, reader: jspb.BinaryReader): ExecuteEpicGetPatient;
-}
-
-export namespace ExecuteEpicGetPatient {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteEpicMatchPatient extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteEpicMatchPatient.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteEpicMatchPatient): ExecuteEpicMatchPatient.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteEpicMatchPatient, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteEpicMatchPatient;
-  static deserializeBinaryFromReader(message: ExecuteEpicMatchPatient, reader: jspb.BinaryReader): ExecuteEpicMatchPatient;
-}
-
-export namespace ExecuteEpicMatchPatient {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteEpicSearchAppointment extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteEpicSearchAppointment.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteEpicSearchAppointment): ExecuteEpicSearchAppointment.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteEpicSearchAppointment, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteEpicSearchAppointment;
-  static deserializeBinaryFromReader(message: ExecuteEpicSearchAppointment, reader: jspb.BinaryReader): ExecuteEpicSearchAppointment;
-}
-
-export namespace ExecuteEpicSearchAppointment {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteEpicFindAppointment extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteEpicFindAppointment.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteEpicFindAppointment): ExecuteEpicFindAppointment.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteEpicFindAppointment, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteEpicFindAppointment;
-  static deserializeBinaryFromReader(message: ExecuteEpicFindAppointment, reader: jspb.BinaryReader): ExecuteEpicFindAppointment;
-}
-
-export namespace ExecuteEpicFindAppointment {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteEpicBookAppointment extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteEpicBookAppointment.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteEpicBookAppointment): ExecuteEpicBookAppointment.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteEpicBookAppointment, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteEpicBookAppointment;
-  static deserializeBinaryFromReader(message: ExecuteEpicBookAppointment, reader: jspb.BinaryReader): ExecuteEpicBookAppointment;
-}
-
-export namespace ExecuteEpicBookAppointment {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteEpicGetAccount extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteEpicGetAccount.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteEpicGetAccount): ExecuteEpicGetAccount.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteEpicGetAccount, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteEpicGetAccount;
-  static deserializeBinaryFromReader(message: ExecuteEpicGetAccount, reader: jspb.BinaryReader): ExecuteEpicGetAccount;
-}
-
-export namespace ExecuteEpicGetAccount {
-  export type AsObject = {
-  }
-}
-
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -5116,7 +4955,6 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_SHIFT4: 3400;
   INTEGRATION_TYPE_POSCORP: 3500;
   INTEGRATION_TYPE_PIANO: 3600;
-  INTEGRATION_TYPE_EPIC: 3700;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -5295,13 +5133,6 @@ export interface RequestMethodMap {
   REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS: 3503;
   REQUEST_METHOD_PIANO_GET_USER: 3601;
   REQUEST_METHOD_PIANO_UPDATE_USER: 3602;
-  REQUEST_METHOD_EPIC_GET_TOKEN: 3701;
-  REQUEST_METHOD_EPIC_GET_PATIENT: 3702;
-  REQUEST_METHOD_EPIC_MATCH_PATIENT: 3703;
-  REQUEST_METHOD_EPIC_SEARCH_APPOINTMENT: 3704;
-  REQUEST_METHOD_EPIC_FIND_APPOINTMENT: 3705;
-  REQUEST_METHOD_EPIC_BOOK_APPOINTMENT: 3706;
-  REQUEST_METHOD_EPIC_GET_ACCOUNT: 3707;
 }
 
 export const RequestMethod: RequestMethodMap;

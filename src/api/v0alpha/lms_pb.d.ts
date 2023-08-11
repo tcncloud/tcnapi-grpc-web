@@ -4797,21 +4797,6 @@ export class ReshapeAction extends jspb.Message {
   getChangeCurrencyType(): ReshapeAction.ChangeCurrencyType | undefined;
   setChangeCurrencyType(value?: ReshapeAction.ChangeCurrencyType): void;
 
-  hasDivide(): boolean;
-  clearDivide(): void;
-  getDivide(): ReshapeAction.Divide | undefined;
-  setDivide(value?: ReshapeAction.Divide): void;
-
-  hasMultiply(): boolean;
-  clearMultiply(): void;
-  getMultiply(): ReshapeAction.Multiply | undefined;
-  setMultiply(value?: ReshapeAction.Multiply): void;
-
-  hasModulo(): boolean;
-  clearModulo(): void;
-  getModulo(): ReshapeAction.Modulo | undefined;
-  setModulo(value?: ReshapeAction.Modulo): void;
-
   hasMerge(): boolean;
   clearMerge(): void;
   getMerge(): ReshapeAction.Merge | undefined;
@@ -4873,9 +4858,6 @@ export namespace ReshapeAction {
     removeField?: ReshapeAction.RemoveField.AsObject,
     addNewField?: ReshapeAction.AddNewField.AsObject,
     changeCurrencyType?: ReshapeAction.ChangeCurrencyType.AsObject,
-    divide?: ReshapeAction.Divide.AsObject,
-    multiply?: ReshapeAction.Multiply.AsObject,
-    modulo?: ReshapeAction.Modulo.AsObject,
     merge?: ReshapeAction.Merge.AsObject,
     setFieldValue?: ReshapeAction.SetFieldValue.AsObject,
     addNewFieldFromField?: ReshapeAction.AddNewFieldFromField.AsObject,
@@ -5040,78 +5022,6 @@ export namespace ReshapeAction {
       newtype: api_commons_lms_pb.RecordTypeMap[keyof api_commons_lms_pb.RecordTypeMap],
       newField?: Field.AsObject,
       defaultValue?: RecordFieldProto.AsObject,
-    }
-  }
-
-  export class Divide extends jspb.Message {
-    getDefaultValue(): number;
-    setDefaultValue(value: number): void;
-
-    getDivisor(): number;
-    setDivisor(value: number): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Divide.AsObject;
-    static toObject(includeInstance: boolean, msg: Divide): Divide.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Divide, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Divide;
-    static deserializeBinaryFromReader(message: Divide, reader: jspb.BinaryReader): Divide;
-  }
-
-  export namespace Divide {
-    export type AsObject = {
-      defaultValue: number,
-      divisor: number,
-    }
-  }
-
-  export class Multiply extends jspb.Message {
-    getDefaultValue(): number;
-    setDefaultValue(value: number): void;
-
-    getMultiplier(): number;
-    setMultiplier(value: number): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Multiply.AsObject;
-    static toObject(includeInstance: boolean, msg: Multiply): Multiply.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Multiply, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Multiply;
-    static deserializeBinaryFromReader(message: Multiply, reader: jspb.BinaryReader): Multiply;
-  }
-
-  export namespace Multiply {
-    export type AsObject = {
-      defaultValue: number,
-      multiplier: number,
-    }
-  }
-
-  export class Modulo extends jspb.Message {
-    getDefaultValue(): number;
-    setDefaultValue(value: number): void;
-
-    getModulus(): number;
-    setModulus(value: number): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Modulo.AsObject;
-    static toObject(includeInstance: boolean, msg: Modulo): Modulo.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Modulo, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Modulo;
-    static deserializeBinaryFromReader(message: Modulo, reader: jspb.BinaryReader): Modulo;
-  }
-
-  export namespace Modulo {
-    export type AsObject = {
-      defaultValue: number,
-      modulus: number,
     }
   }
 
@@ -5479,9 +5389,6 @@ export namespace ReshapeAction {
     REMOVE_FIELD = 29,
     ADD_NEW_FIELD = 30,
     CHANGE_CURRENCY_TYPE = 31,
-    DIVIDE = 32,
-    MULTIPLY = 33,
-    MODULO = 34,
     MERGE = 40,
     SET_FIELD_VALUE = 41,
     ADD_NEW_FIELD_FROM_FIELD = 45,

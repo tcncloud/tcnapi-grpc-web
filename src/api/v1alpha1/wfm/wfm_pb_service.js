@@ -910,15 +910,6 @@ WFM.DeleteDraftSchedule = {
   responseType: api_v1alpha1_wfm_wfm_pb.DeleteDraftScheduleRes
 };
 
-WFM.CopyScheduleToSchedule = {
-  methodName: "CopyScheduleToSchedule",
-  service: WFM,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.CopyScheduleToScheduleReq,
-  responseType: api_v1alpha1_wfm_wfm_pb.CopyScheduleToScheduleRes
-};
-
 WFM.CreateShiftInstance = {
   methodName: "CreateShiftInstance",
   service: WFM,
@@ -4157,37 +4148,6 @@ WFMClient.prototype.deleteDraftSchedule = function deleteDraftSchedule(requestMe
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.DeleteDraftSchedule, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-WFMClient.prototype.copyScheduleToSchedule = function copyScheduleToSchedule(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(WFM.CopyScheduleToSchedule, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
