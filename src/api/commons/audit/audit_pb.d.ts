@@ -2,6 +2,7 @@
 // file: api/commons/audit/audit.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_audit_agent_training_events_pb from "../../../api/commons/audit/agent_training_events_pb";
 import * as api_commons_audit_asm_events_pb from "../../../api/commons/audit/asm_events_pb";
 import * as api_commons_audit_compliance_events_pb from "../../../api/commons/audit/compliance_events_pb";
 import * as api_commons_audit_event_types_pb from "../../../api/commons/audit/event_types_pb";
@@ -458,6 +459,11 @@ export class AuditEvent extends jspb.Message {
   getComplianceRndQueryCachedEvent(): api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent | undefined;
   setComplianceRndQueryCachedEvent(value?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent): void;
 
+  hasAgentTrainingCreateLearningOpportunityEvent(): boolean;
+  clearAgentTrainingCreateLearningOpportunityEvent(): void;
+  getAgentTrainingCreateLearningOpportunityEvent(): api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent | undefined;
+  setAgentTrainingCreateLearningOpportunityEvent(value?: api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent): void;
+
   getEventCase(): AuditEvent.EventCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuditEvent.AsObject;
@@ -562,6 +568,7 @@ export namespace AuditEvent {
     ticketEvent?: api_commons_audit_tickets_events_pb.TicketEvent.AsObject,
     complianceRndQueryEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
     complianceRndQueryCachedEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
+    agentTrainingCreateLearningOpportunityEvent?: api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent.AsObject,
   }
 
   export enum EventCase {
@@ -651,6 +658,7 @@ export namespace AuditEvent {
     TICKET_EVENT = 601,
     COMPLIANCE_RND_QUERY_EVENT = 700,
     COMPLIANCE_RND_QUERY_CACHED_EVENT = 701,
+    AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800,
   }
 }
 
