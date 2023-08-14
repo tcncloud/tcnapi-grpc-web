@@ -80,11 +80,6 @@ export class NodeDefinition extends jspb.Message {
   getOmniInject(): api_commons_workflows_omni_pb.OmniNodeInject | undefined;
   setOmniInject(value?: api_commons_workflows_omni_pb.OmniNodeInject): void;
 
-  hasOmniInjectMessage(): boolean;
-  clearOmniInjectMessage(): void;
-  getOmniInjectMessage(): api_commons_workflows_omni_pb.OmniNodeInjectMessage | undefined;
-  setOmniInjectMessage(value?: api_commons_workflows_omni_pb.OmniNodeInjectMessage): void;
-
   hasOmniSendMessage(): boolean;
   clearOmniSendMessage(): void;
   getOmniSendMessage(): api_commons_workflows_omni_pb.OmniNodeSendMessage | undefined;
@@ -159,7 +154,6 @@ export namespace NodeDefinition {
     omniToAgent?: api_commons_workflows_omni_pb.OmniNodeToAgent.AsObject,
     omniError?: api_commons_workflows_omni_pb.OmniNodeError.AsObject,
     omniInject?: api_commons_workflows_omni_pb.OmniNodeInject.AsObject,
-    omniInjectMessage?: api_commons_workflows_omni_pb.OmniNodeInjectMessage.AsObject,
     omniSendMessage?: api_commons_workflows_omni_pb.OmniNodeSendMessage.AsObject,
     omniStore?: api_commons_workflows_omni_pb.OmniNodeStore.AsObject,
     omniCompare?: api_commons_workflows_omni_pb.OmniNodeCompare.AsObject,
@@ -184,10 +178,9 @@ export namespace NodeDefinition {
     OMNI_TO_AGENT = 203,
     OMNI_ERROR = 204,
     OMNI_INJECT = 205,
-    OMNI_INJECT_MESSAGE = 206,
-    OMNI_SEND_MESSAGE = 207,
-    OMNI_STORE = 208,
-    OMNI_COMPARE = 209,
+    OMNI_SEND_MESSAGE = 206,
+    OMNI_STORE = 207,
+    OMNI_COMPARE = 208,
     OMNI_BOT_TEST_START = 301,
     OMNI_BOT_TEST_STEP = 302,
     OMNI_BOT_TEST_END = 303,
