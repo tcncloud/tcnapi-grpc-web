@@ -419,7 +419,7 @@ proto.api.commons.workflows.OmniNodePrompt.prototype.clearOptionsList = function
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.workflows.OmniNodeOptions.repeatedFields_ = [1];
+proto.api.commons.workflows.OmniNodeOptions.repeatedFields_ = [2];
 
 
 
@@ -452,7 +452,8 @@ proto.api.commons.workflows.OmniNodeOptions.prototype.toObject = function(opt_in
  */
 proto.api.commons.workflows.OmniNodeOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    optionsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+    storeTo: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    optionsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -491,6 +492,10 @@ proto.api.commons.workflows.OmniNodeOptions.deserializeBinaryFromReader = functi
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
+      msg.setStoreTo(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
       msg.addOptions(value);
       break;
     default:
@@ -522,10 +527,17 @@ proto.api.commons.workflows.OmniNodeOptions.prototype.serializeBinary = function
  */
 proto.api.commons.workflows.OmniNodeOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getStoreTo();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getOptionsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      1,
+      2,
       f
     );
   }
@@ -533,11 +545,29 @@ proto.api.commons.workflows.OmniNodeOptions.serializeBinaryToWriter = function(m
 
 
 /**
- * repeated string options = 1;
+ * optional string store_to = 1;
+ * @return {string}
+ */
+proto.api.commons.workflows.OmniNodeOptions.prototype.getStoreTo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.workflows.OmniNodeOptions} returns this
+ */
+proto.api.commons.workflows.OmniNodeOptions.prototype.setStoreTo = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * repeated string options = 2;
  * @return {!Array<string>}
  */
 proto.api.commons.workflows.OmniNodeOptions.prototype.getOptionsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
@@ -546,7 +576,7 @@ proto.api.commons.workflows.OmniNodeOptions.prototype.getOptionsList = function(
  * @return {!proto.api.commons.workflows.OmniNodeOptions} returns this
  */
 proto.api.commons.workflows.OmniNodeOptions.prototype.setOptionsList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
@@ -556,7 +586,7 @@ proto.api.commons.workflows.OmniNodeOptions.prototype.setOptionsList = function(
  * @return {!proto.api.commons.workflows.OmniNodeOptions} returns this
  */
 proto.api.commons.workflows.OmniNodeOptions.prototype.addOptions = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
