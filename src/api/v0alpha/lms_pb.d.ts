@@ -1776,6 +1776,11 @@ export class Process extends jspb.Message {
   getSplit(): SplitCriteria | undefined;
   setSplit(value?: SplitCriteria): void;
 
+  hasEpicEntryPoint(): boolean;
+  clearEpicEntryPoint(): void;
+  getEpicEntryPoint(): EpicEntrypoint | undefined;
+  setEpicEntryPoint(value?: EpicEntrypoint): void;
+
   getProcCase(): Process.ProcCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Process.AsObject;
@@ -1824,6 +1829,7 @@ export namespace Process {
     omniExchangeProcess?: OmniExchangeProcess.AsObject,
     webExchangeProcess?: WebExchangeProcess.AsObject,
     split?: SplitCriteria.AsObject,
+    epicEntryPoint?: EpicEntrypoint.AsObject,
   }
 
   export enum ProcCase {
@@ -1862,6 +1868,7 @@ export namespace Process {
     OMNI_EXCHANGE_PROCESS = 73,
     WEB_EXCHANGE_PROCESS = 74,
     SPLIT = 75,
+    EPIC_ENTRY_POINT = 76,
   }
 }
 
@@ -6951,6 +6958,160 @@ export namespace SplitByEqualParts {
   }
 }
 
+export class EpicEntrypoint extends jspb.Message {
+  getCron(): string;
+  setCron(value: string): void;
+
+  getMaxWaitTime(): number;
+  setMaxWaitTime(value: number): void;
+
+  clearEntityTypesList(): void;
+  getEntityTypesList(): Array<EpicEntityTypeMap[keyof EpicEntityTypeMap]>;
+  setEntityTypesList(value: Array<EpicEntityTypeMap[keyof EpicEntityTypeMap]>): void;
+  addEntityTypes(value: EpicEntityTypeMap[keyof EpicEntityTypeMap], index?: number): EpicEntityTypeMap[keyof EpicEntityTypeMap];
+
+  getGroupBaseUrl(): string;
+  setGroupBaseUrl(value: string): void;
+
+  getGroupFhirId(): string;
+  setGroupFhirId(value: string): void;
+
+  hasRuntimeValues(): boolean;
+  clearRuntimeValues(): void;
+  getRuntimeValues(): RuntimeValues | undefined;
+  setRuntimeValues(value?: RuntimeValues): void;
+
+  getFlushPageCount(): number;
+  setFlushPageCount(value: number): void;
+
+  getFlushMinuteCount(): number;
+  setFlushMinuteCount(value: number): void;
+
+  getFlushDuringCheck(): boolean;
+  setFlushDuringCheck(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EpicEntrypoint.AsObject;
+  static toObject(includeInstance: boolean, msg: EpicEntrypoint): EpicEntrypoint.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EpicEntrypoint, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EpicEntrypoint;
+  static deserializeBinaryFromReader(message: EpicEntrypoint, reader: jspb.BinaryReader): EpicEntrypoint;
+}
+
+export namespace EpicEntrypoint {
+  export type AsObject = {
+    cron: string,
+    maxWaitTime: number,
+    entityTypesList: Array<EpicEntityTypeMap[keyof EpicEntityTypeMap]>,
+    groupBaseUrl: string,
+    groupFhirId: string,
+    runtimeValues?: RuntimeValues.AsObject,
+    flushPageCount: number,
+    flushMinuteCount: number,
+    flushDuringCheck: boolean,
+  }
+}
+
+export class RuntimeValues extends jspb.Message {
+  getState(): api_commons_lms_pb.EventStateMap[keyof api_commons_lms_pb.EventStateMap];
+  setState(value: api_commons_lms_pb.EventStateMap[keyof api_commons_lms_pb.EventStateMap]): void;
+
+  getAccessToken(): string;
+  setAccessToken(value: string): void;
+
+  getCheckUrl(): string;
+  setCheckUrl(value: string): void;
+
+  clearDataUrlsList(): void;
+  getDataUrlsList(): Array<EntityURL>;
+  setDataUrlsList(value: Array<EntityURL>): void;
+  addDataUrls(value?: EntityURL, index?: number): EntityURL;
+
+  getCurrentIteration(): number;
+  setCurrentIteration(value: number): void;
+
+  getTotalSecondsSpent(): number;
+  setTotalSecondsSpent(value: number): void;
+
+  clearErrorsList(): void;
+  getErrorsList(): Array<string>;
+  setErrorsList(value: Array<string>): void;
+  addErrors(value: string, index?: number): string;
+
+  getTotalNotReadyCount(): number;
+  setTotalNotReadyCount(value: number): void;
+
+  getFileIdsMap(): jspb.Map<string, number>;
+  clearFileIdsMap(): void;
+  getPreliminaryVarsMap(): jspb.Map<string, string>;
+  clearPreliminaryVarsMap(): void;
+  clearParentEventIdsList(): void;
+  getParentEventIdsList(): Array<number>;
+  setParentEventIdsList(value: Array<number>): void;
+  addParentEventIds(value: number, index?: number): number;
+
+  getNoMorePages(): boolean;
+  setNoMorePages(value: boolean): void;
+
+  clearTotalFtsIdsList(): void;
+  getTotalFtsIdsList(): Array<string>;
+  setTotalFtsIdsList(value: Array<string>): void;
+  addTotalFtsIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RuntimeValues.AsObject;
+  static toObject(includeInstance: boolean, msg: RuntimeValues): RuntimeValues.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RuntimeValues, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RuntimeValues;
+  static deserializeBinaryFromReader(message: RuntimeValues, reader: jspb.BinaryReader): RuntimeValues;
+}
+
+export namespace RuntimeValues {
+  export type AsObject = {
+    state: api_commons_lms_pb.EventStateMap[keyof api_commons_lms_pb.EventStateMap],
+    accessToken: string,
+    checkUrl: string,
+    dataUrlsList: Array<EntityURL.AsObject>,
+    currentIteration: number,
+    totalSecondsSpent: number,
+    errorsList: Array<string>,
+    totalNotReadyCount: number,
+    fileIdsMap: Array<[string, number]>,
+    preliminaryVarsMap: Array<[string, string]>,
+    parentEventIdsList: Array<number>,
+    noMorePages: boolean,
+    totalFtsIdsList: Array<string>,
+  }
+}
+
+export class EntityURL extends jspb.Message {
+  getEntityType(): EpicEntityTypeMap[keyof EpicEntityTypeMap];
+  setEntityType(value: EpicEntityTypeMap[keyof EpicEntityTypeMap]): void;
+
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EntityURL.AsObject;
+  static toObject(includeInstance: boolean, msg: EntityURL): EntityURL.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EntityURL, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EntityURL;
+  static deserializeBinaryFromReader(message: EntityURL, reader: jspb.BinaryReader): EntityURL;
+}
+
+export namespace EntityURL {
+  export type AsObject = {
+    entityType: EpicEntityTypeMap[keyof EpicEntityTypeMap],
+    url: string,
+  }
+}
+
 export interface TimeUnitMap {
   DEFAULT: 0;
   TIME_WEEKS: 1;
@@ -6959,4 +7120,15 @@ export interface TimeUnitMap {
 }
 
 export const TimeUnit: TimeUnitMap;
+
+export interface EpicEntityTypeMap {
+  EPIC_UNKNOWN_TYPE: 0;
+  EPIC_ENTITY_TYPE_PATIENT: 1;
+  EPIC_ENTITY_TYPE_APPOINTMENT: 2;
+  EPIC_ENTITY_TYPE_MEDICATION: 3;
+  EPIC_ENTITY_TYPE_MEDICATION_REQUEST: 4;
+  EPIC_ENTITY_TYPE_ACCOUNT: 5;
+}
+
+export const EpicEntityType: EpicEntityTypeMap;
 
