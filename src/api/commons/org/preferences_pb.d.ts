@@ -980,6 +980,9 @@ export class SchedulePreferences extends jspb.Message {
   getDefaultCampaignLinkId(): string;
   setDefaultCampaignLinkId(value: string): void;
 
+  getResendCancelledCampaigns(): boolean;
+  setResendCancelledCampaigns(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SchedulePreferences.AsObject;
   static toObject(includeInstance: boolean, msg: SchedulePreferences): SchedulePreferences.AsObject;
@@ -1003,6 +1006,7 @@ export namespace SchedulePreferences {
     useCampaignLinking: boolean,
     campaignLinksMap: Array<[string, string]>,
     defaultCampaignLinkId: string,
+    resendCancelledCampaigns: boolean,
   }
 }
 
