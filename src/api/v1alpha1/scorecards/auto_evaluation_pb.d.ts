@@ -52,6 +52,11 @@ export class ListAutoEvaluationsRequest extends jspb.Message {
   setScorecardIdsList(value: Array<number>): void;
   addScorecardIds(value: number, index?: number): number;
 
+  hasCompletedAt(): boolean;
+  clearCompletedAt(): void;
+  getCompletedAt(): api_commons_scorecards_pb.TimeFilter | undefined;
+  setCompletedAt(value?: api_commons_scorecards_pb.TimeFilter): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAutoEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAutoEvaluationsRequest): ListAutoEvaluationsRequest.AsObject;
@@ -65,6 +70,7 @@ export class ListAutoEvaluationsRequest extends jspb.Message {
 export namespace ListAutoEvaluationsRequest {
   export type AsObject = {
     scorecardIdsList: Array<number>,
+    completedAt?: api_commons_scorecards_pb.TimeFilter.AsObject,
   }
 }
 
