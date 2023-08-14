@@ -57,6 +57,30 @@ export namespace OmniNodeInject {
   }
 }
 
+export class OmniNodeInjectMessage extends jspb.Message {
+  getStoreTo(): string;
+  setStoreTo(value: string): void;
+
+  getMessageKey(): string;
+  setMessageKey(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniNodeInjectMessage.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniNodeInjectMessage): OmniNodeInjectMessage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniNodeInjectMessage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniNodeInjectMessage;
+  static deserializeBinaryFromReader(message: OmniNodeInjectMessage, reader: jspb.BinaryReader): OmniNodeInjectMessage;
+}
+
+export namespace OmniNodeInjectMessage {
+  export type AsObject = {
+    storeTo: string,
+    messageKey: string,
+  }
+}
+
 export class OmniNodeSendMessage extends jspb.Message {
   getPrompt(): string;
   setPrompt(value: string): void;
