@@ -7158,58 +7158,6 @@ export namespace PublishDraftScheduleRes {
   }
 }
 
-export class ResetDraftScheduleReq extends jspb.Message {
-  getDraftScheduleSid(): number;
-  setDraftScheduleSid(value: number): void;
-
-  hasDatetimeRange(): boolean;
-  clearDatetimeRange(): void;
-  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
-  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
-
-  getUnlockedOnly(): boolean;
-  setUnlockedOnly(value: boolean): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ResetDraftScheduleReq.AsObject;
-  static toObject(includeInstance: boolean, msg: ResetDraftScheduleReq): ResetDraftScheduleReq.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ResetDraftScheduleReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ResetDraftScheduleReq;
-  static deserializeBinaryFromReader(message: ResetDraftScheduleReq, reader: jspb.BinaryReader): ResetDraftScheduleReq;
-}
-
-export namespace ResetDraftScheduleReq {
-  export type AsObject = {
-    draftScheduleSid: number,
-    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
-    unlockedOnly: boolean,
-  }
-}
-
-export class ResetDraftScheduleRes extends jspb.Message {
-  clearDiagnosticsList(): void;
-  getDiagnosticsList(): Array<Diagnostic>;
-  setDiagnosticsList(value: Array<Diagnostic>): void;
-  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ResetDraftScheduleRes.AsObject;
-  static toObject(includeInstance: boolean, msg: ResetDraftScheduleRes): ResetDraftScheduleRes.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ResetDraftScheduleRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ResetDraftScheduleRes;
-  static deserializeBinaryFromReader(message: ResetDraftScheduleRes, reader: jspb.BinaryReader): ResetDraftScheduleRes;
-}
-
-export namespace ResetDraftScheduleRes {
-  export type AsObject = {
-    diagnosticsList: Array<Diagnostic.AsObject>,
-  }
-}
-
 export class GetDraftScheduleReq extends jspb.Message {
   getDraftScheduleSid(): number;
   setDraftScheduleSid(value: number): void;

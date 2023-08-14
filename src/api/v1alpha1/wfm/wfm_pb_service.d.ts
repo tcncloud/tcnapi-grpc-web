@@ -877,15 +877,6 @@ type WFMPublishDraftSchedule = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.PublishDraftScheduleRes;
 };
 
-type WFMResetDraftSchedule = {
-  readonly methodName: string;
-  readonly service: typeof WFM;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ResetDraftScheduleReq;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ResetDraftScheduleRes;
-};
-
 type WFMGetDraftSchedule = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1138,7 +1129,6 @@ export class WFM {
   static readonly UpdateDraftSchedule: WFMUpdateDraftSchedule;
   static readonly BuildDraftSchedule: WFMBuildDraftSchedule;
   static readonly PublishDraftSchedule: WFMPublishDraftSchedule;
-  static readonly ResetDraftSchedule: WFMResetDraftSchedule;
   static readonly GetDraftSchedule: WFMGetDraftSchedule;
   static readonly ListDraftSchedules: WFMListDraftSchedules;
   static readonly DeleteDraftSchedule: WFMDeleteDraftSchedule;
@@ -2022,15 +2012,6 @@ export class WFMClient {
   publishDraftSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.PublishDraftScheduleReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.PublishDraftScheduleRes|null) => void
-  ): UnaryResponse;
-  resetDraftSchedule(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.ResetDraftScheduleReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ResetDraftScheduleRes|null) => void
-  ): UnaryResponse;
-  resetDraftSchedule(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.ResetDraftScheduleReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ResetDraftScheduleRes|null) => void
   ): UnaryResponse;
   getDraftSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetDraftScheduleReq,
