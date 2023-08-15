@@ -75,26 +75,6 @@ export class NodeDefinition extends jspb.Message {
   getOmniError(): api_commons_workflows_omni_pb.OmniNodeError | undefined;
   setOmniError(value?: api_commons_workflows_omni_pb.OmniNodeError): void;
 
-  hasOmniOptions(): boolean;
-  clearOmniOptions(): void;
-  getOmniOptions(): api_commons_workflows_omni_pb.OmniNodeOptions | undefined;
-  setOmniOptions(value?: api_commons_workflows_omni_pb.OmniNodeOptions): void;
-
-  hasOmniSendMessage(): boolean;
-  clearOmniSendMessage(): void;
-  getOmniSendMessage(): api_commons_workflows_omni_pb.OmniNodeSendMessage | undefined;
-  setOmniSendMessage(value?: api_commons_workflows_omni_pb.OmniNodeSendMessage): void;
-
-  hasOmniStore(): boolean;
-  clearOmniStore(): void;
-  getOmniStore(): api_commons_workflows_omni_pb.OmniNodeStore | undefined;
-  setOmniStore(value?: api_commons_workflows_omni_pb.OmniNodeStore): void;
-
-  hasOmniDecision(): boolean;
-  clearOmniDecision(): void;
-  getOmniDecision(): api_commons_workflows_omni_pb.OmniNodeDecision | undefined;
-  setOmniDecision(value?: api_commons_workflows_omni_pb.OmniNodeDecision): void;
-
   hasOmniBotTestStart(): boolean;
   clearOmniBotTestStart(): void;
   getOmniBotTestStart(): api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart | undefined;
@@ -153,10 +133,6 @@ export namespace NodeDefinition {
     omniSetSkill?: api_commons_workflows_omni_pb.OmniNodeSetSkill.AsObject,
     omniToAgent?: api_commons_workflows_omni_pb.OmniNodeToAgent.AsObject,
     omniError?: api_commons_workflows_omni_pb.OmniNodeError.AsObject,
-    omniOptions?: api_commons_workflows_omni_pb.OmniNodeOptions.AsObject,
-    omniSendMessage?: api_commons_workflows_omni_pb.OmniNodeSendMessage.AsObject,
-    omniStore?: api_commons_workflows_omni_pb.OmniNodeStore.AsObject,
-    omniDecision?: api_commons_workflows_omni_pb.OmniNodeDecision.AsObject,
     omniBotTestStart?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart.AsObject,
     omniBotTestStep?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep.AsObject,
     omniBotTestEnd?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.AsObject,
@@ -177,10 +153,6 @@ export namespace NodeDefinition {
     OMNI_SET_SKILL = 202,
     OMNI_TO_AGENT = 203,
     OMNI_ERROR = 204,
-    OMNI_OPTIONS = 205,
-    OMNI_SEND_MESSAGE = 206,
-    OMNI_STORE = 207,
-    OMNI_DECISION = 208,
     OMNI_BOT_TEST_START = 301,
     OMNI_BOT_TEST_STEP = 302,
     OMNI_BOT_TEST_END = 303,
