@@ -1528,6 +1528,7 @@ proto.api.commons.org.GeneralSettings.toObject = function(includeInstance, msg) 
     requireManualApprovalNumber: jspb.Message.getBooleanFieldWithDefault(msg, 701, false),
     enableManualApprovalOfSms: jspb.Message.getBooleanFieldWithDefault(msg, 702, false),
     requireManualApprovalNumberSms: jspb.Message.getBooleanFieldWithDefault(msg, 703, false),
+    disableRejectOptionForApprovers: jspb.Message.getBooleanFieldWithDefault(msg, 704, false),
     alphanumericKeypad: (f = msg.getAlphanumericKeypad()) && proto.api.commons.org.GeneralSettings.AlphanumericKeypad.toObject(includeInstance, f),
     enableCallDesktopNotifications: jspb.Message.getBooleanFieldWithDefault(msg, 801, false),
     inboundComplianceMetadata: (f = msg.getInboundComplianceMetadata()) && proto.api.commons.org.GeneralSettings.InboundComplianceMetadata.toObject(includeInstance, f),
@@ -1731,6 +1732,10 @@ proto.api.commons.org.GeneralSettings.deserializeBinaryFromReader = function(msg
     case 703:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRequireManualApprovalNumberSms(value);
+      break;
+    case 704:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDisableRejectOptionForApprovers(value);
       break;
     case 800:
       var value = new proto.api.commons.org.GeneralSettings.AlphanumericKeypad;
@@ -2057,6 +2062,13 @@ proto.api.commons.org.GeneralSettings.serializeBinaryToWriter = function(message
   if (f) {
     writer.writeBool(
       703,
+      f
+    );
+  }
+  f = message.getDisableRejectOptionForApprovers();
+  if (f) {
+    writer.writeBool(
+      704,
       f
     );
   }
@@ -4836,6 +4848,24 @@ proto.api.commons.org.GeneralSettings.prototype.getRequireManualApprovalNumberSm
  */
 proto.api.commons.org.GeneralSettings.prototype.setRequireManualApprovalNumberSms = function(value) {
   return jspb.Message.setProto3BooleanField(this, 703, value);
+};
+
+
+/**
+ * optional bool disable_reject_option_for_approvers = 704;
+ * @return {boolean}
+ */
+proto.api.commons.org.GeneralSettings.prototype.getDisableRejectOptionForApprovers = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 704, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.org.GeneralSettings} returns this
+ */
+proto.api.commons.org.GeneralSettings.prototype.setDisableRejectOptionForApprovers = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 704, value);
 };
 
 
@@ -7626,8 +7656,7 @@ proto.api.commons.org.ManualDialSettings.toObject = function(includeInstance, ms
     dataDipResultHandling: jspb.Message.getFieldWithDefault(msg, 26, 0),
     dataDipIntegrationMappingsList: jspb.Message.toObjectList(msg.getDataDipIntegrationMappingsList(),
     proto.api.commons.org.ManualDialSettings.DataDipIntegrationMapping.toObject, includeInstance),
-    dataDipIntegrationHandling: jspb.Message.getFieldWithDefault(msg, 28, 0),
-    enableRejectOptionForApprovers: jspb.Message.getBooleanFieldWithDefault(msg, 29, false)
+    dataDipIntegrationHandling: jspb.Message.getFieldWithDefault(msg, 28, 0)
   };
 
   if (includeInstance) {
@@ -7780,10 +7809,6 @@ proto.api.commons.org.ManualDialSettings.deserializeBinaryFromReader = function(
     case 28:
       var value = /** @type {!proto.api.commons.ManualDialDataDipHandling} */ (reader.readEnum());
       msg.setDataDipIntegrationHandling(value);
-      break;
-    case 29:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEnableRejectOptionForApprovers(value);
       break;
     default:
       reader.skipField();
@@ -8012,13 +8037,6 @@ proto.api.commons.org.ManualDialSettings.serializeBinaryToWriter = function(mess
   if (f !== 0.0) {
     writer.writeEnum(
       28,
-      f
-    );
-  }
-  f = message.getEnableRejectOptionForApprovers();
-  if (f) {
-    writer.writeBool(
-      29,
       f
     );
   }
@@ -9192,24 +9210,6 @@ proto.api.commons.org.ManualDialSettings.prototype.getDataDipIntegrationHandling
  */
 proto.api.commons.org.ManualDialSettings.prototype.setDataDipIntegrationHandling = function(value) {
   return jspb.Message.setProto3EnumField(this, 28, value);
-};
-
-
-/**
- * optional bool enable_reject_option_for_approvers = 29;
- * @return {boolean}
- */
-proto.api.commons.org.ManualDialSettings.prototype.getEnableRejectOptionForApprovers = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 29, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.commons.org.ManualDialSettings} returns this
- */
-proto.api.commons.org.ManualDialSettings.prototype.setEnableRejectOptionForApprovers = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 29, value);
 };
 
 
