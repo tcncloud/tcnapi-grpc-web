@@ -7644,7 +7644,7 @@ proto.api.commons.org.SchedulePreferences.toObject = function(includeInstance, m
     useCampaignLinking: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
     campaignLinksMap: (f = msg.getCampaignLinksMap()) ? f.toObject(includeInstance, undefined) : [],
     defaultCampaignLinkId: jspb.Message.getFieldWithDefault(msg, 19, ""),
-    prohibitCancelledResend: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
+    resendCancelledCampaigns: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
   };
 
   if (includeInstance) {
@@ -7729,7 +7729,7 @@ proto.api.commons.org.SchedulePreferences.deserializeBinaryFromReader = function
       break;
     case 20:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setProhibitCancelledResend(value);
+      msg.setResendCancelledCampaigns(value);
       break;
     default:
       reader.skipField();
@@ -7834,7 +7834,7 @@ proto.api.commons.org.SchedulePreferences.serializeBinaryToWriter = function(mes
       f
     );
   }
-  f = message.getProhibitCancelledResend();
+  f = message.getResendCancelledCampaigns();
   if (f) {
     writer.writeBool(
       20,
@@ -8048,10 +8048,10 @@ proto.api.commons.org.SchedulePreferences.prototype.setDefaultCampaignLinkId = f
 
 
 /**
- * optional bool prohibit_cancelled_resend = 20;
+ * optional bool resend_cancelled_campaigns = 20;
  * @return {boolean}
  */
-proto.api.commons.org.SchedulePreferences.prototype.getProhibitCancelledResend = function() {
+proto.api.commons.org.SchedulePreferences.prototype.getResendCancelledCampaigns = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
 };
 
@@ -8060,7 +8060,7 @@ proto.api.commons.org.SchedulePreferences.prototype.getProhibitCancelledResend =
  * @param {boolean} value
  * @return {!proto.api.commons.org.SchedulePreferences} returns this
  */
-proto.api.commons.org.SchedulePreferences.prototype.setProhibitCancelledResend = function(value) {
+proto.api.commons.org.SchedulePreferences.prototype.setResendCancelledCampaigns = function(value) {
   return jspb.Message.setProto3BooleanField(this, 20, value);
 };
 
