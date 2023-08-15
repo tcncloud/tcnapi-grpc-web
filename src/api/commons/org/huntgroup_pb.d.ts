@@ -992,6 +992,9 @@ export class ManualDialSettings extends jspb.Message {
   getDataDipIntegrationHandling(): api_commons_org_pb.ManualDialDataDipHandlingMap[keyof api_commons_org_pb.ManualDialDataDipHandlingMap];
   setDataDipIntegrationHandling(value: api_commons_org_pb.ManualDialDataDipHandlingMap[keyof api_commons_org_pb.ManualDialDataDipHandlingMap]): void;
 
+  getEnableRejectOptionForApprovers(): boolean;
+  setEnableRejectOptionForApprovers(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManualDialSettings.AsObject;
   static toObject(includeInstance: boolean, msg: ManualDialSettings): ManualDialSettings.AsObject;
@@ -1032,6 +1035,7 @@ export namespace ManualDialSettings {
     dataDipResultHandling: api_commons_org_pb.ManualDialDataDipHandlingMap[keyof api_commons_org_pb.ManualDialDataDipHandlingMap],
     dataDipIntegrationMappingsList: Array<ManualDialSettings.DataDipIntegrationMapping.AsObject>,
     dataDipIntegrationHandling: api_commons_org_pb.ManualDialDataDipHandlingMap[keyof api_commons_org_pb.ManualDialDataDipHandlingMap],
+    enableRejectOptionForApprovers: boolean,
   }
 
   export class ScrubOverride extends jspb.Message {
