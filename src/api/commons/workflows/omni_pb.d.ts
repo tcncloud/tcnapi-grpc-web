@@ -34,8 +34,8 @@ export namespace OmniNodePrompt {
 }
 
 export class OmniNodeOptions extends jspb.Message {
-  getStoreTo(): string;
-  setStoreTo(value: string): void;
+  getOptionsId(): string;
+  setOptionsId(value: string): void;
 
   clearOptionsList(): void;
   getOptionsList(): Array<string>;
@@ -54,7 +54,7 @@ export class OmniNodeOptions extends jspb.Message {
 
 export namespace OmniNodeOptions {
   export type AsObject = {
-    storeTo: string,
+    optionsId: string,
     optionsList: Array<string>,
   }
 }

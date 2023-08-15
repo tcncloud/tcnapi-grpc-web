@@ -452,7 +452,7 @@ proto.api.commons.workflows.OmniNodeOptions.prototype.toObject = function(opt_in
  */
 proto.api.commons.workflows.OmniNodeOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    storeTo: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    optionsId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     optionsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
@@ -492,7 +492,7 @@ proto.api.commons.workflows.OmniNodeOptions.deserializeBinaryFromReader = functi
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setStoreTo(value);
+      msg.setOptionsId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -527,7 +527,7 @@ proto.api.commons.workflows.OmniNodeOptions.prototype.serializeBinary = function
  */
 proto.api.commons.workflows.OmniNodeOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getStoreTo();
+  f = message.getOptionsId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -545,10 +545,10 @@ proto.api.commons.workflows.OmniNodeOptions.serializeBinaryToWriter = function(m
 
 
 /**
- * optional string store_to = 1;
+ * optional string options_id = 1;
  * @return {string}
  */
-proto.api.commons.workflows.OmniNodeOptions.prototype.getStoreTo = function() {
+proto.api.commons.workflows.OmniNodeOptions.prototype.getOptionsId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -557,7 +557,7 @@ proto.api.commons.workflows.OmniNodeOptions.prototype.getStoreTo = function() {
  * @param {string} value
  * @return {!proto.api.commons.workflows.OmniNodeOptions} returns this
  */
-proto.api.commons.workflows.OmniNodeOptions.prototype.setStoreTo = function(value) {
+proto.api.commons.workflows.OmniNodeOptions.prototype.setOptionsId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
