@@ -63,8 +63,8 @@ export class OmniNodeSendMessage extends jspb.Message {
   getPrompt(): string;
   setPrompt(value: string): void;
 
-  getOptions(): string;
-  setOptions(value: string): void;
+  getOptionsId(): string;
+  setOptionsId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniNodeSendMessage.AsObject;
@@ -79,13 +79,13 @@ export class OmniNodeSendMessage extends jspb.Message {
 export namespace OmniNodeSendMessage {
   export type AsObject = {
     prompt: string,
-    options: string,
+    optionsId: string,
   }
 }
 
 export class OmniNodeStore extends jspb.Message {
-  getStoreTo(): string;
-  setStoreTo(value: string): void;
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniNodeStore.AsObject;
@@ -99,13 +99,13 @@ export class OmniNodeStore extends jspb.Message {
 
 export namespace OmniNodeStore {
   export type AsObject = {
-    storeTo: string,
+    storeId: string,
   }
 }
 
 export class OmniNodeDecision extends jspb.Message {
-  getOptions(): string;
-  setOptions(value: string): void;
+  getOptionsId(): string;
+  setOptionsId(value: string): void;
 
   getInput(): string;
   setInput(value: string): void;
@@ -122,7 +122,7 @@ export class OmniNodeDecision extends jspb.Message {
 
 export namespace OmniNodeDecision {
   export type AsObject = {
-    options: string,
+    optionsId: string,
     input: string,
   }
 }
