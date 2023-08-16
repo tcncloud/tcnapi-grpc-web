@@ -475,7 +475,8 @@ proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -518,6 +519,11 @@ proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.deserializeBinaryFromRe
         msg.addScorecardIds(values[i]);
       }
       break;
+    case 3:
+      var value = new api_commons_scorecards_pb.TimeFilter;
+      reader.readMessage(value,api_commons_scorecards_pb.TimeFilter.deserializeBinaryFromReader);
+      msg.setCompletedAt(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -552,6 +558,14 @@ proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.serializeBinaryToWriter
     writer.writePackedInt64(
       2,
       f
+    );
+  }
+  f = message.getCompletedAt();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      api_commons_scorecards_pb.TimeFilter.serializeBinaryToWriter
     );
   }
 };
@@ -591,6 +605,43 @@ proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.addScorecardI
  */
 proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.clearScorecardIdsList = function() {
   return this.setScorecardIdsList([]);
+};
+
+
+/**
+ * optional api.commons.TimeFilter completed_at = 3;
+ * @return {?proto.api.commons.TimeFilter}
+ */
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.getCompletedAt = function() {
+  return /** @type{?proto.api.commons.TimeFilter} */ (
+    jspb.Message.getWrapperField(this, api_commons_scorecards_pb.TimeFilter, 3));
+};
+
+
+/**
+ * @param {?proto.api.commons.TimeFilter|undefined} value
+ * @return {!proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest} returns this
+*/
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.setCompletedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.clearCompletedAt = function() {
+  return this.setCompletedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.hasCompletedAt = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
