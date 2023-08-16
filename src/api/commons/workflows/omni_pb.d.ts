@@ -131,6 +131,11 @@ export class OmniNodeSetSkill extends jspb.Message {
   getSkill(): string;
   setSkill(value: string): void;
 
+  clearSkillsList(): void;
+  getSkillsList(): Array<string>;
+  setSkillsList(value: Array<string>): void;
+  addSkills(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniNodeSetSkill.AsObject;
   static toObject(includeInstance: boolean, msg: OmniNodeSetSkill): OmniNodeSetSkill.AsObject;
@@ -144,6 +149,29 @@ export class OmniNodeSetSkill extends jspb.Message {
 export namespace OmniNodeSetSkill {
   export type AsObject = {
     skill: string,
+    skillsList: Array<string>,
+  }
+}
+
+export class OmniNodeSetSkills extends jspb.Message {
+  clearSkillsList(): void;
+  getSkillsList(): Array<string>;
+  setSkillsList(value: Array<string>): void;
+  addSkills(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniNodeSetSkills.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniNodeSetSkills): OmniNodeSetSkills.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniNodeSetSkills, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniNodeSetSkills;
+  static deserializeBinaryFromReader(message: OmniNodeSetSkills, reader: jspb.BinaryReader): OmniNodeSetSkills;
+}
+
+export namespace OmniNodeSetSkills {
+  export type AsObject = {
+    skillsList: Array<string>,
   }
 }
 
