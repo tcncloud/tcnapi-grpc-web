@@ -85,15 +85,15 @@ export class NodeDefinition extends jspb.Message {
   getOmniSendMessage(): api_commons_workflows_omni_pb.OmniNodeSendMessage | undefined;
   setOmniSendMessage(value?: api_commons_workflows_omni_pb.OmniNodeSendMessage): void;
 
-  hasOmniStore(): boolean;
-  clearOmniStore(): void;
-  getOmniStore(): api_commons_workflows_omni_pb.OmniNodeStore | undefined;
-  setOmniStore(value?: api_commons_workflows_omni_pb.OmniNodeStore): void;
+  hasOmniUserInput(): boolean;
+  clearOmniUserInput(): void;
+  getOmniUserInput(): api_commons_workflows_omni_pb.OmniNodeUserInput | undefined;
+  setOmniUserInput(value?: api_commons_workflows_omni_pb.OmniNodeUserInput): void;
 
-  hasOmniDecision(): boolean;
-  clearOmniDecision(): void;
-  getOmniDecision(): api_commons_workflows_omni_pb.OmniNodeDecision | undefined;
-  setOmniDecision(value?: api_commons_workflows_omni_pb.OmniNodeDecision): void;
+  hasOmniBranching(): boolean;
+  clearOmniBranching(): void;
+  getOmniBranching(): api_commons_workflows_omni_pb.OmniNodeBranching | undefined;
+  setOmniBranching(value?: api_commons_workflows_omni_pb.OmniNodeBranching): void;
 
   hasOmniBotTestStart(): boolean;
   clearOmniBotTestStart(): void;
@@ -155,8 +155,8 @@ export namespace NodeDefinition {
     omniError?: api_commons_workflows_omni_pb.OmniNodeError.AsObject,
     omniOptions?: api_commons_workflows_omni_pb.OmniNodeOptions.AsObject,
     omniSendMessage?: api_commons_workflows_omni_pb.OmniNodeSendMessage.AsObject,
-    omniStore?: api_commons_workflows_omni_pb.OmniNodeStore.AsObject,
-    omniDecision?: api_commons_workflows_omni_pb.OmniNodeDecision.AsObject,
+    omniUserInput?: api_commons_workflows_omni_pb.OmniNodeUserInput.AsObject,
+    omniBranching?: api_commons_workflows_omni_pb.OmniNodeBranching.AsObject,
     omniBotTestStart?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart.AsObject,
     omniBotTestStep?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep.AsObject,
     omniBotTestEnd?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.AsObject,
@@ -179,8 +179,8 @@ export namespace NodeDefinition {
     OMNI_ERROR = 204,
     OMNI_OPTIONS = 205,
     OMNI_SEND_MESSAGE = 206,
-    OMNI_STORE = 207,
-    OMNI_DECISION = 208,
+    OMNI_USER_INPUT = 207,
+    OMNI_BRANCHING = 208,
     OMNI_BOT_TEST_START = 301,
     OMNI_BOT_TEST_STEP = 302,
     OMNI_BOT_TEST_END = 303,

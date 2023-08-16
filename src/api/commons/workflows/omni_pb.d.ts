@@ -83,47 +83,47 @@ export namespace OmniNodeSendMessage {
   }
 }
 
-export class OmniNodeStore extends jspb.Message {
+export class OmniNodeUserInput extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OmniNodeStore.AsObject;
-  static toObject(includeInstance: boolean, msg: OmniNodeStore): OmniNodeStore.AsObject;
+  toObject(includeInstance?: boolean): OmniNodeUserInput.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniNodeUserInput): OmniNodeUserInput.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OmniNodeStore, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OmniNodeStore;
-  static deserializeBinaryFromReader(message: OmniNodeStore, reader: jspb.BinaryReader): OmniNodeStore;
+  static serializeBinaryToWriter(message: OmniNodeUserInput, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniNodeUserInput;
+  static deserializeBinaryFromReader(message: OmniNodeUserInput, reader: jspb.BinaryReader): OmniNodeUserInput;
 }
 
-export namespace OmniNodeStore {
+export namespace OmniNodeUserInput {
   export type AsObject = {
     storeId: string,
   }
 }
 
-export class OmniNodeDecision extends jspb.Message {
+export class OmniNodeBranching extends jspb.Message {
   getOptionsId(): string;
   setOptionsId(value: string): void;
 
-  getInput(): string;
-  setInput(value: string): void;
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OmniNodeDecision.AsObject;
-  static toObject(includeInstance: boolean, msg: OmniNodeDecision): OmniNodeDecision.AsObject;
+  toObject(includeInstance?: boolean): OmniNodeBranching.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniNodeBranching): OmniNodeBranching.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OmniNodeDecision, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OmniNodeDecision;
-  static deserializeBinaryFromReader(message: OmniNodeDecision, reader: jspb.BinaryReader): OmniNodeDecision;
+  static serializeBinaryToWriter(message: OmniNodeBranching, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniNodeBranching;
+  static deserializeBinaryFromReader(message: OmniNodeBranching, reader: jspb.BinaryReader): OmniNodeBranching;
 }
 
-export namespace OmniNodeDecision {
+export namespace OmniNodeBranching {
   export type AsObject = {
     optionsId: string,
-    input: string,
+    storeId: string,
   }
 }
 

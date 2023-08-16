@@ -87,8 +87,8 @@ proto.api.commons.workflows.NodeDefinition.DefinitionCase = {
   OMNI_ERROR: 204,
   OMNI_OPTIONS: 205,
   OMNI_SEND_MESSAGE: 206,
-  OMNI_STORE: 207,
-  OMNI_DECISION: 208,
+  OMNI_USER_INPUT: 207,
+  OMNI_BRANCHING: 208,
   OMNI_BOT_TEST_START: 301,
   OMNI_BOT_TEST_STEP: 302,
   OMNI_BOT_TEST_END: 303,
@@ -152,8 +152,8 @@ proto.api.commons.workflows.NodeDefinition.toObject = function(includeInstance, 
     omniError: (f = msg.getOmniError()) && api_commons_workflows_omni_pb.OmniNodeError.toObject(includeInstance, f),
     omniOptions: (f = msg.getOmniOptions()) && api_commons_workflows_omni_pb.OmniNodeOptions.toObject(includeInstance, f),
     omniSendMessage: (f = msg.getOmniSendMessage()) && api_commons_workflows_omni_pb.OmniNodeSendMessage.toObject(includeInstance, f),
-    omniStore: (f = msg.getOmniStore()) && api_commons_workflows_omni_pb.OmniNodeStore.toObject(includeInstance, f),
-    omniDecision: (f = msg.getOmniDecision()) && api_commons_workflows_omni_pb.OmniNodeDecision.toObject(includeInstance, f),
+    omniUserInput: (f = msg.getOmniUserInput()) && api_commons_workflows_omni_pb.OmniNodeUserInput.toObject(includeInstance, f),
+    omniBranching: (f = msg.getOmniBranching()) && api_commons_workflows_omni_pb.OmniNodeBranching.toObject(includeInstance, f),
     omniBotTestStart: (f = msg.getOmniBotTestStart()) && api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart.toObject(includeInstance, f),
     omniBotTestStep: (f = msg.getOmniBotTestStep()) && api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep.toObject(includeInstance, f),
     omniBotTestEnd: (f = msg.getOmniBotTestEnd()) && api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.toObject(includeInstance, f),
@@ -277,14 +277,14 @@ proto.api.commons.workflows.NodeDefinition.deserializeBinaryFromReader = functio
       msg.setOmniSendMessage(value);
       break;
     case 207:
-      var value = new api_commons_workflows_omni_pb.OmniNodeStore;
-      reader.readMessage(value,api_commons_workflows_omni_pb.OmniNodeStore.deserializeBinaryFromReader);
-      msg.setOmniStore(value);
+      var value = new api_commons_workflows_omni_pb.OmniNodeUserInput;
+      reader.readMessage(value,api_commons_workflows_omni_pb.OmniNodeUserInput.deserializeBinaryFromReader);
+      msg.setOmniUserInput(value);
       break;
     case 208:
-      var value = new api_commons_workflows_omni_pb.OmniNodeDecision;
-      reader.readMessage(value,api_commons_workflows_omni_pb.OmniNodeDecision.deserializeBinaryFromReader);
-      msg.setOmniDecision(value);
+      var value = new api_commons_workflows_omni_pb.OmniNodeBranching;
+      reader.readMessage(value,api_commons_workflows_omni_pb.OmniNodeBranching.deserializeBinaryFromReader);
+      msg.setOmniBranching(value);
       break;
     case 301:
       var value = new api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart;
@@ -476,20 +476,20 @@ proto.api.commons.workflows.NodeDefinition.serializeBinaryToWriter = function(me
       api_commons_workflows_omni_pb.OmniNodeSendMessage.serializeBinaryToWriter
     );
   }
-  f = message.getOmniStore();
+  f = message.getOmniUserInput();
   if (f != null) {
     writer.writeMessage(
       207,
       f,
-      api_commons_workflows_omni_pb.OmniNodeStore.serializeBinaryToWriter
+      api_commons_workflows_omni_pb.OmniNodeUserInput.serializeBinaryToWriter
     );
   }
-  f = message.getOmniDecision();
+  f = message.getOmniBranching();
   if (f != null) {
     writer.writeMessage(
       208,
       f,
-      api_commons_workflows_omni_pb.OmniNodeDecision.serializeBinaryToWriter
+      api_commons_workflows_omni_pb.OmniNodeBranching.serializeBinaryToWriter
     );
   }
   f = message.getOmniBotTestStart();
@@ -1097,20 +1097,20 @@ proto.api.commons.workflows.NodeDefinition.prototype.hasOmniSendMessage = functi
 
 
 /**
- * optional OmniNodeStore omni_store = 207;
- * @return {?proto.api.commons.workflows.OmniNodeStore}
+ * optional OmniNodeUserInput omni_user_input = 207;
+ * @return {?proto.api.commons.workflows.OmniNodeUserInput}
  */
-proto.api.commons.workflows.NodeDefinition.prototype.getOmniStore = function() {
-  return /** @type{?proto.api.commons.workflows.OmniNodeStore} */ (
-    jspb.Message.getWrapperField(this, api_commons_workflows_omni_pb.OmniNodeStore, 207));
+proto.api.commons.workflows.NodeDefinition.prototype.getOmniUserInput = function() {
+  return /** @type{?proto.api.commons.workflows.OmniNodeUserInput} */ (
+    jspb.Message.getWrapperField(this, api_commons_workflows_omni_pb.OmniNodeUserInput, 207));
 };
 
 
 /**
- * @param {?proto.api.commons.workflows.OmniNodeStore|undefined} value
+ * @param {?proto.api.commons.workflows.OmniNodeUserInput|undefined} value
  * @return {!proto.api.commons.workflows.NodeDefinition} returns this
 */
-proto.api.commons.workflows.NodeDefinition.prototype.setOmniStore = function(value) {
+proto.api.commons.workflows.NodeDefinition.prototype.setOmniUserInput = function(value) {
   return jspb.Message.setOneofWrapperField(this, 207, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
 };
 
@@ -1119,8 +1119,8 @@ proto.api.commons.workflows.NodeDefinition.prototype.setOmniStore = function(val
  * Clears the message field making it undefined.
  * @return {!proto.api.commons.workflows.NodeDefinition} returns this
  */
-proto.api.commons.workflows.NodeDefinition.prototype.clearOmniStore = function() {
-  return this.setOmniStore(undefined);
+proto.api.commons.workflows.NodeDefinition.prototype.clearOmniUserInput = function() {
+  return this.setOmniUserInput(undefined);
 };
 
 
@@ -1128,26 +1128,26 @@ proto.api.commons.workflows.NodeDefinition.prototype.clearOmniStore = function()
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.workflows.NodeDefinition.prototype.hasOmniStore = function() {
+proto.api.commons.workflows.NodeDefinition.prototype.hasOmniUserInput = function() {
   return jspb.Message.getField(this, 207) != null;
 };
 
 
 /**
- * optional OmniNodeDecision omni_decision = 208;
- * @return {?proto.api.commons.workflows.OmniNodeDecision}
+ * optional OmniNodeBranching omni_branching = 208;
+ * @return {?proto.api.commons.workflows.OmniNodeBranching}
  */
-proto.api.commons.workflows.NodeDefinition.prototype.getOmniDecision = function() {
-  return /** @type{?proto.api.commons.workflows.OmniNodeDecision} */ (
-    jspb.Message.getWrapperField(this, api_commons_workflows_omni_pb.OmniNodeDecision, 208));
+proto.api.commons.workflows.NodeDefinition.prototype.getOmniBranching = function() {
+  return /** @type{?proto.api.commons.workflows.OmniNodeBranching} */ (
+    jspb.Message.getWrapperField(this, api_commons_workflows_omni_pb.OmniNodeBranching, 208));
 };
 
 
 /**
- * @param {?proto.api.commons.workflows.OmniNodeDecision|undefined} value
+ * @param {?proto.api.commons.workflows.OmniNodeBranching|undefined} value
  * @return {!proto.api.commons.workflows.NodeDefinition} returns this
 */
-proto.api.commons.workflows.NodeDefinition.prototype.setOmniDecision = function(value) {
+proto.api.commons.workflows.NodeDefinition.prototype.setOmniBranching = function(value) {
   return jspb.Message.setOneofWrapperField(this, 208, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
 };
 
@@ -1156,8 +1156,8 @@ proto.api.commons.workflows.NodeDefinition.prototype.setOmniDecision = function(
  * Clears the message field making it undefined.
  * @return {!proto.api.commons.workflows.NodeDefinition} returns this
  */
-proto.api.commons.workflows.NodeDefinition.prototype.clearOmniDecision = function() {
-  return this.setOmniDecision(undefined);
+proto.api.commons.workflows.NodeDefinition.prototype.clearOmniBranching = function() {
+  return this.setOmniBranching(undefined);
 };
 
 
@@ -1165,7 +1165,7 @@ proto.api.commons.workflows.NodeDefinition.prototype.clearOmniDecision = functio
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.workflows.NodeDefinition.prototype.hasOmniDecision = function() {
+proto.api.commons.workflows.NodeDefinition.prototype.hasOmniBranching = function() {
   return jspb.Message.getField(this, 208) != null;
 };
 
