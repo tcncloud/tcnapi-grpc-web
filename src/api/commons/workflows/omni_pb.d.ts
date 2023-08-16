@@ -191,6 +191,22 @@ export namespace OmniNodeToAgent {
   }
 }
 
+export class OmniNodeToMatcher extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniNodeToMatcher.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniNodeToMatcher): OmniNodeToMatcher.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniNodeToMatcher, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniNodeToMatcher;
+  static deserializeBinaryFromReader(message: OmniNodeToMatcher, reader: jspb.BinaryReader): OmniNodeToMatcher;
+}
+
+export namespace OmniNodeToMatcher {
+  export type AsObject = {
+  }
+}
+
 export class OmniNodeError extends jspb.Message {
   getError(): string;
   setError(value: string): void;

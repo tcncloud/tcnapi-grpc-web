@@ -95,6 +95,11 @@ export class NodeDefinition extends jspb.Message {
   getOmniBranching(): api_commons_workflows_omni_pb.OmniNodeBranching | undefined;
   setOmniBranching(value?: api_commons_workflows_omni_pb.OmniNodeBranching): void;
 
+  hasOmniToMatcher(): boolean;
+  clearOmniToMatcher(): void;
+  getOmniToMatcher(): api_commons_workflows_omni_pb.OmniNodeToMatcher | undefined;
+  setOmniToMatcher(value?: api_commons_workflows_omni_pb.OmniNodeToMatcher): void;
+
   hasOmniBotTestStart(): boolean;
   clearOmniBotTestStart(): void;
   getOmniBotTestStart(): api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart | undefined;
@@ -157,6 +162,7 @@ export namespace NodeDefinition {
     omniSendMessage?: api_commons_workflows_omni_pb.OmniNodeSendMessage.AsObject,
     omniUserInput?: api_commons_workflows_omni_pb.OmniNodeUserInput.AsObject,
     omniBranching?: api_commons_workflows_omni_pb.OmniNodeBranching.AsObject,
+    omniToMatcher?: api_commons_workflows_omni_pb.OmniNodeToMatcher.AsObject,
     omniBotTestStart?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart.AsObject,
     omniBotTestStep?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep.AsObject,
     omniBotTestEnd?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.AsObject,
@@ -181,6 +187,7 @@ export namespace NodeDefinition {
     OMNI_SEND_MESSAGE = 206,
     OMNI_USER_INPUT = 207,
     OMNI_BRANCHING = 208,
+    OMNI_TO_MATCHER = 209,
     OMNI_BOT_TEST_START = 301,
     OMNI_BOT_TEST_STEP = 302,
     OMNI_BOT_TEST_END = 303,
