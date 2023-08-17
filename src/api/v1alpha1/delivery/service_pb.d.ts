@@ -1038,11 +1038,6 @@ export class CredentialData extends jspb.Message {
   getAesPassword(): AESPassword | undefined;
   setAesPassword(value?: AESPassword): void;
 
-  hasUserDefaultSsh(): boolean;
-  clearUserDefaultSsh(): void;
-  getUserDefaultSsh(): UserDefaultSSH | undefined;
-  setUserDefaultSsh(value?: UserDefaultSSH): void;
-
   getDataCase(): CredentialData.DataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CredentialData.AsObject;
@@ -1061,7 +1056,6 @@ export namespace CredentialData {
     sshKeyPair?: SSHKeyPair.AsObject,
     pgpKeyPair?: PGPKeyPair.AsObject,
     aesPassword?: AESPassword.AsObject,
-    userDefaultSsh?: UserDefaultSSH.AsObject,
   }
 
   export enum DataCase {
@@ -1071,7 +1065,6 @@ export namespace CredentialData {
     SSH_KEY_PAIR = 3,
     PGP_KEY_PAIR = 4,
     AES_PASSWORD = 5,
-    USER_DEFAULT_SSH = 6,
   }
 }
 
@@ -1184,26 +1177,6 @@ export class AESPassword extends jspb.Message {
 export namespace AESPassword {
   export type AsObject = {
     password: string,
-  }
-}
-
-export class UserDefaultSSH extends jspb.Message {
-  getUsername(): string;
-  setUsername(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UserDefaultSSH.AsObject;
-  static toObject(includeInstance: boolean, msg: UserDefaultSSH): UserDefaultSSH.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UserDefaultSSH, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UserDefaultSSH;
-  static deserializeBinaryFromReader(message: UserDefaultSSH, reader: jspb.BinaryReader): UserDefaultSSH;
-}
-
-export namespace UserDefaultSSH {
-  export type AsObject = {
-    username: string,
   }
 }
 
