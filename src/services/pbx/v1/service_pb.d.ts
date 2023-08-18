@@ -1,9 +1,9 @@
-// package: api.services.pbx.v1
-// file: api/services/pbx/v1/service.proto
+// package: services.pbx.v1
+// file: services/pbx/v1/service.proto
 
 import * as jspb from "google-protobuf";
-import * as annotations_authz_pb from "../../../../annotations/authz_pb";
-import * as google_api_annotations_pb from "../../../../google/api/annotations_pb";
+import * as annotations_authz_pb from "../../../annotations/authz_pb";
+import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 
 export class PBXUser extends jspb.Message {

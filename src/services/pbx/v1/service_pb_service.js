@@ -1,12 +1,12 @@
-// package: api.services.pbx.v1
-// file: api/services/pbx/v1/service.proto
+// package: services.pbx.v1
+// file: services/pbx/v1/service.proto
 
-var api_services_pbx_v1_service_pb = require("../../../../api/services/pbx/v1/service_pb");
+var services_pbx_v1_service_pb = require("../../../services/pbx/v1/service_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var PBXService = (function () {
   function PBXService() {}
-  PBXService.serviceName = "api.services.pbx.v1.PBXService";
+  PBXService.serviceName = "services.pbx.v1.PBXService";
   return PBXService;
 }());
 
@@ -15,8 +15,8 @@ PBXService.QueryPbxUsers = {
   service: PBXService,
   requestStream: false,
   responseStream: false,
-  requestType: api_services_pbx_v1_service_pb.QueryPbxUsersRequest,
-  responseType: api_services_pbx_v1_service_pb.QueryPbxUsersResponse
+  requestType: services_pbx_v1_service_pb.QueryPbxUsersRequest,
+  responseType: services_pbx_v1_service_pb.QueryPbxUsersResponse
 };
 
 PBXService.QueryRingGroups = {
@@ -24,8 +24,8 @@ PBXService.QueryRingGroups = {
   service: PBXService,
   requestStream: false,
   responseStream: false,
-  requestType: api_services_pbx_v1_service_pb.QueryRingGroupsRequest,
-  responseType: api_services_pbx_v1_service_pb.QueryRingGroupsResponse
+  requestType: services_pbx_v1_service_pb.QueryRingGroupsRequest,
+  responseType: services_pbx_v1_service_pb.QueryRingGroupsResponse
 };
 
 PBXService.UpdatePbxUser = {
@@ -33,8 +33,8 @@ PBXService.UpdatePbxUser = {
   service: PBXService,
   requestStream: false,
   responseStream: false,
-  requestType: api_services_pbx_v1_service_pb.UpdatePbxUserRequest,
-  responseType: api_services_pbx_v1_service_pb.UpdatePbxUserResponse
+  requestType: services_pbx_v1_service_pb.UpdatePbxUserRequest,
+  responseType: services_pbx_v1_service_pb.UpdatePbxUserResponse
 };
 
 PBXService.UpdateRingGroup = {
@@ -42,8 +42,8 @@ PBXService.UpdateRingGroup = {
   service: PBXService,
   requestStream: false,
   responseStream: false,
-  requestType: api_services_pbx_v1_service_pb.UpdateRingGroupRequest,
-  responseType: api_services_pbx_v1_service_pb.UpdateRingGroupResponse
+  requestType: services_pbx_v1_service_pb.UpdateRingGroupRequest,
+  responseType: services_pbx_v1_service_pb.UpdateRingGroupResponse
 };
 
 PBXService.CreateRingGroup = {
@@ -51,8 +51,8 @@ PBXService.CreateRingGroup = {
   service: PBXService,
   requestStream: false,
   responseStream: false,
-  requestType: api_services_pbx_v1_service_pb.CreateRingGroupRequest,
-  responseType: api_services_pbx_v1_service_pb.CreateRingGroupResponse
+  requestType: services_pbx_v1_service_pb.CreateRingGroupRequest,
+  responseType: services_pbx_v1_service_pb.CreateRingGroupResponse
 };
 
 PBXService.DeleteRingGroup = {
@@ -60,8 +60,8 @@ PBXService.DeleteRingGroup = {
   service: PBXService,
   requestStream: false,
   responseStream: false,
-  requestType: api_services_pbx_v1_service_pb.DeleteRingGroupRequest,
-  responseType: api_services_pbx_v1_service_pb.DeleteRingGroupResponse
+  requestType: services_pbx_v1_service_pb.DeleteRingGroupRequest,
+  responseType: services_pbx_v1_service_pb.DeleteRingGroupResponse
 };
 
 PBXService.AssignRandomExtension = {
@@ -69,8 +69,8 @@ PBXService.AssignRandomExtension = {
   service: PBXService,
   requestStream: false,
   responseStream: false,
-  requestType: api_services_pbx_v1_service_pb.AssignRandomExtensionRequest,
-  responseType: api_services_pbx_v1_service_pb.AssignRandomExtensionResponse
+  requestType: services_pbx_v1_service_pb.AssignRandomExtensionRequest,
+  responseType: services_pbx_v1_service_pb.AssignRandomExtensionResponse
 };
 
 exports.PBXService = PBXService;
