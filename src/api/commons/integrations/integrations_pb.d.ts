@@ -291,11 +291,6 @@ export class InvoiceFlow extends jspb.Message {
   getDynamicJourney(): InvoiceDynamicJourney | undefined;
   setDynamicJourney(value?: InvoiceDynamicJourney): void;
 
-  hasNewzwareLookupPhone(): boolean;
-  clearNewzwareLookupPhone(): void;
-  getNewzwareLookupPhone(): InvoiceNewzwareLookupPhone | undefined;
-  setNewzwareLookupPhone(value?: InvoiceNewzwareLookupPhone): void;
-
   hasNewzwareAccountInquiry(): boolean;
   clearNewzwareAccountInquiry(): void;
   getNewzwareAccountInquiry(): InvoiceNewzwareAccountInquiry | undefined;
@@ -325,7 +320,6 @@ export namespace InvoiceFlow {
     authorizeNetCustomHttp?: InvoiceAuthorizeNetCustomHttp.AsObject,
     journey?: InvoiceJourney.AsObject,
     dynamicJourney?: InvoiceDynamicJourney.AsObject,
-    newzwareLookupPhone?: InvoiceNewzwareLookupPhone.AsObject,
     newzwareAccountInquiry?: InvoiceNewzwareAccountInquiry.AsObject,
     invoiceTemplate?: InvoiceTemplate.AsObject,
   }
@@ -337,8 +331,7 @@ export namespace InvoiceFlow {
     AUTHORIZE_NET_CUSTOM_HTTP = 11,
     JOURNEY = 12,
     DYNAMIC_JOURNEY = 13,
-    NEWZWARE_LOOKUP_PHONE = 14,
-    NEWZWARE_ACCOUNT_INQUIRY = 15,
+    NEWZWARE_ACCOUNT_INQUIRY = 14,
   }
 }
 
@@ -2021,22 +2014,6 @@ export namespace InvoiceDynamicJourney {
     matchFieldsList: Array<string>,
     totalField: string,
     journeyFieldsMap: Array<[string, ListOfStrings.AsObject]>,
-  }
-}
-
-export class InvoiceNewzwareLookupPhone extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): InvoiceNewzwareLookupPhone.AsObject;
-  static toObject(includeInstance: boolean, msg: InvoiceNewzwareLookupPhone): InvoiceNewzwareLookupPhone.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: InvoiceNewzwareLookupPhone, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): InvoiceNewzwareLookupPhone;
-  static deserializeBinaryFromReader(message: InvoiceNewzwareLookupPhone, reader: jspb.BinaryReader): InvoiceNewzwareLookupPhone;
-}
-
-export namespace InvoiceNewzwareLookupPhone {
-  export type AsObject = {
   }
 }
 
