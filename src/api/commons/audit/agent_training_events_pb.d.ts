@@ -5,12 +5,6 @@ import * as jspb from "google-protobuf";
 import * as api_commons_agent_training_pb from "../../../api/commons/agent_training_pb";
 
 export class AgentTrainingCreateLearningOpportunityEvent extends jspb.Message {
-  getAgentUserId(): string;
-  setAgentUserId(value: string): void;
-
-  getDescription(): string;
-  setDescription(value: string): void;
-
   hasLearningOpportunity(): boolean;
   clearLearningOpportunity(): void;
   getLearningOpportunity(): api_commons_agent_training_pb.LearningOpportunity | undefined;
@@ -28,8 +22,6 @@ export class AgentTrainingCreateLearningOpportunityEvent extends jspb.Message {
 
 export namespace AgentTrainingCreateLearningOpportunityEvent {
   export type AsObject = {
-    agentUserId: string,
-    description: string,
     learningOpportunity?: api_commons_agent_training_pb.LearningOpportunity.AsObject,
   }
 }

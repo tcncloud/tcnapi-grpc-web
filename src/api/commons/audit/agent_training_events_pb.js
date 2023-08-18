@@ -77,8 +77,6 @@ proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.prototype.to
  */
 proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentUserId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 2, ""),
     learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
   };
 
@@ -117,14 +115,6 @@ proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.deserializeB
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAgentUserId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
-      break;
-    case 3:
       var value = new api_commons_agent_training_pb.LearningOpportunity;
       reader.readMessage(value,api_commons_agent_training_pb.LearningOpportunity.deserializeBinaryFromReader);
       msg.setLearningOpportunity(value);
@@ -158,24 +148,10 @@ proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.prototype.se
  */
 proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAgentUserId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getDescription();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getLearningOpportunity();
   if (f != null) {
     writer.writeMessage(
-      3,
+      1,
       f,
       api_commons_agent_training_pb.LearningOpportunity.serializeBinaryToWriter
     );
@@ -184,48 +160,12 @@ proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.serializeBin
 
 
 /**
- * optional string agent_user_id = 1;
- * @return {string}
- */
-proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.prototype.getAgentUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent} returns this
- */
-proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.prototype.setAgentUserId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string description = 2;
- * @return {string}
- */
-proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent} returns this
- */
-proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.prototype.setDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional api.commons.LearningOpportunity learning_opportunity = 3;
+ * optional api.commons.LearningOpportunity learning_opportunity = 1;
  * @return {?proto.api.commons.LearningOpportunity}
  */
 proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.prototype.getLearningOpportunity = function() {
   return /** @type{?proto.api.commons.LearningOpportunity} */ (
-    jspb.Message.getWrapperField(this, api_commons_agent_training_pb.LearningOpportunity, 3));
+    jspb.Message.getWrapperField(this, api_commons_agent_training_pb.LearningOpportunity, 1));
 };
 
 
@@ -234,7 +174,7 @@ proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.prototype.ge
  * @return {!proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent} returns this
 */
 proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.prototype.setLearningOpportunity = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -252,7 +192,7 @@ proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.prototype.cl
  * @return {boolean}
  */
 proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.prototype.hasLearningOpportunity = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
