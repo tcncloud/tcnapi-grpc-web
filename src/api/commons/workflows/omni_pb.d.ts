@@ -66,6 +66,11 @@ export class OmniNodeSendMessage extends jspb.Message {
   getOptionsId(): string;
   setOptionsId(value: string): void;
 
+  clearOptionsList(): void;
+  getOptionsList(): Array<string>;
+  setOptionsList(value: Array<string>): void;
+  addOptions(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniNodeSendMessage.AsObject;
   static toObject(includeInstance: boolean, msg: OmniNodeSendMessage): OmniNodeSendMessage.AsObject;
@@ -80,6 +85,7 @@ export namespace OmniNodeSendMessage {
   export type AsObject = {
     prompt: string,
     optionsId: string,
+    optionsList: Array<string>,
   }
 }
 
@@ -110,6 +116,11 @@ export class OmniNodeBranching extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
+  clearOptionsList(): void;
+  getOptionsList(): Array<string>;
+  setOptionsList(value: Array<string>): void;
+  addOptions(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniNodeBranching.AsObject;
   static toObject(includeInstance: boolean, msg: OmniNodeBranching): OmniNodeBranching.AsObject;
@@ -124,6 +135,7 @@ export namespace OmniNodeBranching {
   export type AsObject = {
     optionsId: string,
     storeId: string,
+    optionsList: Array<string>,
   }
 }
 

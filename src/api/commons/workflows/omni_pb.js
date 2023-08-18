@@ -84,7 +84,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.commons.workflows.OmniNodeSendMessage = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.workflows.OmniNodeSendMessage.repeatedFields_, null);
 };
 goog.inherits(proto.api.commons.workflows.OmniNodeSendMessage, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -126,7 +126,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.commons.workflows.OmniNodeBranching = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.workflows.OmniNodeBranching.repeatedFields_, null);
 };
 goog.inherits(proto.api.commons.workflows.OmniNodeBranching, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -644,6 +644,13 @@ proto.api.commons.workflows.OmniNodeOptions.prototype.clearOptionsList = functio
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.commons.workflows.OmniNodeSendMessage.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -676,7 +683,8 @@ proto.api.commons.workflows.OmniNodeSendMessage.prototype.toObject = function(op
 proto.api.commons.workflows.OmniNodeSendMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
     prompt: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    optionsId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    optionsId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    optionsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -721,6 +729,10 @@ proto.api.commons.workflows.OmniNodeSendMessage.deserializeBinaryFromReader = fu
       var value = /** @type {string} */ (reader.readString());
       msg.setOptionsId(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addOptions(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -764,6 +776,13 @@ proto.api.commons.workflows.OmniNodeSendMessage.serializeBinaryToWriter = functi
       f
     );
   }
+  f = message.getOptionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -800,6 +819,43 @@ proto.api.commons.workflows.OmniNodeSendMessage.prototype.getOptionsId = functio
  */
 proto.api.commons.workflows.OmniNodeSendMessage.prototype.setOptionsId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * repeated string options = 3;
+ * @return {!Array<string>}
+ */
+proto.api.commons.workflows.OmniNodeSendMessage.prototype.getOptionsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.commons.workflows.OmniNodeSendMessage} returns this
+ */
+proto.api.commons.workflows.OmniNodeSendMessage.prototype.setOptionsList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.workflows.OmniNodeSendMessage} returns this
+ */
+proto.api.commons.workflows.OmniNodeSendMessage.prototype.addOptions = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.workflows.OmniNodeSendMessage} returns this
+ */
+proto.api.commons.workflows.OmniNodeSendMessage.prototype.clearOptionsList = function() {
+  return this.setOptionsList([]);
 };
 
 
@@ -934,6 +990,13 @@ proto.api.commons.workflows.OmniNodeUserInput.prototype.setStoreId = function(va
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.commons.workflows.OmniNodeBranching.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -966,7 +1029,8 @@ proto.api.commons.workflows.OmniNodeBranching.prototype.toObject = function(opt_
 proto.api.commons.workflows.OmniNodeBranching.toObject = function(includeInstance, msg) {
   var f, obj = {
     optionsId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    storeId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    optionsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1011,6 +1075,10 @@ proto.api.commons.workflows.OmniNodeBranching.deserializeBinaryFromReader = func
       var value = /** @type {string} */ (reader.readString());
       msg.setStoreId(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addOptions(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1054,6 +1122,13 @@ proto.api.commons.workflows.OmniNodeBranching.serializeBinaryToWriter = function
       f
     );
   }
+  f = message.getOptionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -1090,6 +1165,43 @@ proto.api.commons.workflows.OmniNodeBranching.prototype.getStoreId = function() 
  */
 proto.api.commons.workflows.OmniNodeBranching.prototype.setStoreId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * repeated string options = 3;
+ * @return {!Array<string>}
+ */
+proto.api.commons.workflows.OmniNodeBranching.prototype.getOptionsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.commons.workflows.OmniNodeBranching} returns this
+ */
+proto.api.commons.workflows.OmniNodeBranching.prototype.setOptionsList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.workflows.OmniNodeBranching} returns this
+ */
+proto.api.commons.workflows.OmniNodeBranching.prototype.addOptions = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.workflows.OmniNodeBranching} returns this
+ */
+proto.api.commons.workflows.OmniNodeBranching.prototype.clearOptionsList = function() {
+  return this.setOptionsList([]);
 };
 
 
