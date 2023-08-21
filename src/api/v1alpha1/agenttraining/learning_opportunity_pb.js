@@ -878,12 +878,12 @@ proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.deserializeBin
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
+    case 2:
       var value = new api_commons_agent_training_pb.LearningOpportunity;
       reader.readMessage(value,api_commons_agent_training_pb.LearningOpportunity.deserializeBinaryFromReader);
       msg.setLearningOpportunity(value);
       break;
-    case 2:
+    case 3:
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
       msg.setUpdateMask(value);
@@ -920,7 +920,7 @@ proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.serializeBinar
   f = message.getLearningOpportunity();
   if (f != null) {
     writer.writeMessage(
-      1,
+      2,
       f,
       api_commons_agent_training_pb.LearningOpportunity.serializeBinaryToWriter
     );
@@ -928,7 +928,7 @@ proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.serializeBinar
   f = message.getUpdateMask();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
@@ -937,12 +937,12 @@ proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.serializeBinar
 
 
 /**
- * optional api.commons.LearningOpportunity learning_opportunity = 1;
+ * optional api.commons.LearningOpportunity learning_opportunity = 2;
  * @return {?proto.api.commons.LearningOpportunity}
  */
 proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.prototype.getLearningOpportunity = function() {
   return /** @type{?proto.api.commons.LearningOpportunity} */ (
-    jspb.Message.getWrapperField(this, api_commons_agent_training_pb.LearningOpportunity, 1));
+    jspb.Message.getWrapperField(this, api_commons_agent_training_pb.LearningOpportunity, 2));
 };
 
 
@@ -951,7 +951,7 @@ proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.prototype.getL
  * @return {!proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest} returns this
 */
 proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.prototype.setLearningOpportunity = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -969,17 +969,17 @@ proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.prototype.clea
  * @return {boolean}
  */
 proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.prototype.hasLearningOpportunity = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional google.protobuf.FieldMask update_mask = 2;
+ * optional google.protobuf.FieldMask update_mask = 3;
  * @return {?proto.google.protobuf.FieldMask}
  */
 proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.prototype.getUpdateMask = function() {
   return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 3));
 };
 
 
@@ -988,7 +988,7 @@ proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.prototype.getU
  * @return {!proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest} returns this
 */
 proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.prototype.setUpdateMask = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -1006,7 +1006,7 @@ proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.prototype.clea
  * @return {boolean}
  */
 proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.prototype.hasUpdateMask = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -1193,7 +1193,7 @@ proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest.prototype.toOb
  */
 proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunityId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    learningOpportunityId: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1230,7 +1230,7 @@ proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest.deserializeBin
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
+    case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setLearningOpportunityId(value);
       break;
@@ -1266,7 +1266,7 @@ proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest.serializeBinar
   f = message.getLearningOpportunityId();
   if (f !== 0) {
     writer.writeInt64(
-      1,
+      3,
       f
     );
   }
@@ -1274,11 +1274,11 @@ proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest.serializeBinar
 
 
 /**
- * optional int64 learning_opportunity_id = 1;
+ * optional int64 learning_opportunity_id = 3;
  * @return {number}
  */
 proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest.prototype.getLearningOpportunityId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -1287,7 +1287,7 @@ proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest.prototype.getL
  * @return {!proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest} returns this
  */
 proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest.prototype.setLearningOpportunityId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -1474,7 +1474,7 @@ proto.api.v1alpha1.agenttraining.GetLearningOpportunityRequest.prototype.toObjec
  */
 proto.api.v1alpha1.agenttraining.GetLearningOpportunityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunity: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    learningOpportunity: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1511,7 +1511,7 @@ proto.api.v1alpha1.agenttraining.GetLearningOpportunityRequest.deserializeBinary
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
+    case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setLearningOpportunity(value);
       break;
@@ -1547,7 +1547,7 @@ proto.api.v1alpha1.agenttraining.GetLearningOpportunityRequest.serializeBinaryTo
   f = message.getLearningOpportunity();
   if (f !== 0) {
     writer.writeInt64(
-      1,
+      2,
       f
     );
   }
@@ -1555,11 +1555,11 @@ proto.api.v1alpha1.agenttraining.GetLearningOpportunityRequest.serializeBinaryTo
 
 
 /**
- * optional int64 learning_opportunity = 1;
+ * optional int64 learning_opportunity = 2;
  * @return {number}
  */
 proto.api.v1alpha1.agenttraining.GetLearningOpportunityRequest.prototype.getLearningOpportunity = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -1568,7 +1568,7 @@ proto.api.v1alpha1.agenttraining.GetLearningOpportunityRequest.prototype.getLear
  * @return {!proto.api.v1alpha1.agenttraining.GetLearningOpportunityRequest} returns this
  */
 proto.api.v1alpha1.agenttraining.GetLearningOpportunityRequest.prototype.setLearningOpportunity = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
