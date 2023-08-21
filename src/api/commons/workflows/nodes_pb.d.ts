@@ -75,11 +75,6 @@ export class NodeDefinition extends jspb.Message {
   getOmniError(): api_commons_workflows_omni_pb.OmniNodeError | undefined;
   setOmniError(value?: api_commons_workflows_omni_pb.OmniNodeError): void;
 
-  hasOmniOptions(): boolean;
-  clearOmniOptions(): void;
-  getOmniOptions(): api_commons_workflows_omni_pb.OmniNodeOptions | undefined;
-  setOmniOptions(value?: api_commons_workflows_omni_pb.OmniNodeOptions): void;
-
   hasOmniSendMessage(): boolean;
   clearOmniSendMessage(): void;
   getOmniSendMessage(): api_commons_workflows_omni_pb.OmniNodeSendMessage | undefined;
@@ -158,7 +153,6 @@ export namespace NodeDefinition {
     omniSetSkill?: api_commons_workflows_omni_pb.OmniNodeSetSkill.AsObject,
     omniToAgent?: api_commons_workflows_omni_pb.OmniNodeToAgent.AsObject,
     omniError?: api_commons_workflows_omni_pb.OmniNodeError.AsObject,
-    omniOptions?: api_commons_workflows_omni_pb.OmniNodeOptions.AsObject,
     omniSendMessage?: api_commons_workflows_omni_pb.OmniNodeSendMessage.AsObject,
     omniUserInput?: api_commons_workflows_omni_pb.OmniNodeUserInput.AsObject,
     omniBranching?: api_commons_workflows_omni_pb.OmniNodeBranching.AsObject,
@@ -183,7 +177,6 @@ export namespace NodeDefinition {
     OMNI_SET_SKILL = 202,
     OMNI_TO_AGENT = 203,
     OMNI_ERROR = 204,
-    OMNI_OPTIONS = 205,
     OMNI_SEND_MESSAGE = 206,
     OMNI_USER_INPUT = 207,
     OMNI_BRANCHING = 208,

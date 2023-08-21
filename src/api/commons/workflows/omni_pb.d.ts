@@ -33,38 +33,9 @@ export namespace OmniNodePrompt {
   }
 }
 
-export class OmniNodeOptions extends jspb.Message {
-  getOptionsId(): string;
-  setOptionsId(value: string): void;
-
-  clearOptionsList(): void;
-  getOptionsList(): Array<string>;
-  setOptionsList(value: Array<string>): void;
-  addOptions(value: string, index?: number): string;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OmniNodeOptions.AsObject;
-  static toObject(includeInstance: boolean, msg: OmniNodeOptions): OmniNodeOptions.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OmniNodeOptions, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OmniNodeOptions;
-  static deserializeBinaryFromReader(message: OmniNodeOptions, reader: jspb.BinaryReader): OmniNodeOptions;
-}
-
-export namespace OmniNodeOptions {
-  export type AsObject = {
-    optionsId: string,
-    optionsList: Array<string>,
-  }
-}
-
 export class OmniNodeSendMessage extends jspb.Message {
   getPrompt(): string;
   setPrompt(value: string): void;
-
-  getOptionsId(): string;
-  setOptionsId(value: string): void;
 
   clearOptionsList(): void;
   getOptionsList(): Array<string>;
@@ -84,7 +55,6 @@ export class OmniNodeSendMessage extends jspb.Message {
 export namespace OmniNodeSendMessage {
   export type AsObject = {
     prompt: string,
-    optionsId: string,
     optionsList: Array<string>,
   }
 }
@@ -110,9 +80,6 @@ export namespace OmniNodeUserInput {
 }
 
 export class OmniNodeBranching extends jspb.Message {
-  getOptionsId(): string;
-  setOptionsId(value: string): void;
-
   getStoreId(): string;
   setStoreId(value: string): void;
 
@@ -133,7 +100,6 @@ export class OmniNodeBranching extends jspb.Message {
 
 export namespace OmniNodeBranching {
   export type AsObject = {
-    optionsId: string,
     storeId: string,
     optionsList: Array<string>,
   }
