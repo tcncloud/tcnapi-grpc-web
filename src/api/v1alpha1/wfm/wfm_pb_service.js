@@ -883,6 +883,15 @@ WFM.PublishDraftSchedule = {
   responseType: api_v1alpha1_wfm_wfm_pb.PublishDraftScheduleRes
 };
 
+WFM.ResetDraftSchedule = {
+  methodName: "ResetDraftSchedule",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ResetDraftScheduleReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ResetDraftScheduleRes
+};
+
 WFM.GetDraftSchedule = {
   methodName: "GetDraftSchedule",
   service: WFM,
@@ -4064,6 +4073,37 @@ WFMClient.prototype.publishDraftSchedule = function publishDraftSchedule(request
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.PublishDraftSchedule, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.resetDraftSchedule = function resetDraftSchedule(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ResetDraftSchedule, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
