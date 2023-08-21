@@ -22813,6 +22813,7 @@ proto.api.v0alpha.ManualDialSettings.toObject = function(includeInstance, msg) {
     proto.api.v0alpha.ComplianceMetadata.toObject, includeInstance),
     enableMetadata: jspb.Message.getBooleanFieldWithDefault(msg, 27, false),
     useTimezoneValidationZip: jspb.Message.getFieldWithDefault(msg, 28, 0),
+    enableRejectOptionForApprovers: jspb.Message.getBooleanFieldWithDefault(msg, 29, false),
     enableSipAddress: jspb.Message.getBooleanFieldWithDefault(msg, 30, false),
     maskManualDialCallerId: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
     enableManualDialDataDip: jspb.Message.getFieldWithDefault(msg, 32, ""),
@@ -22956,6 +22957,10 @@ proto.api.v0alpha.ManualDialSettings.deserializeBinaryFromReader = function(msg,
     case 28:
       var value = /** @type {!proto.api.v0alpha.ManualDialSettings.ZipCodeValidation} */ (reader.readEnum());
       msg.setUseTimezoneValidationZip(value);
+      break;
+    case 29:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnableRejectOptionForApprovers(value);
       break;
     case 30:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -23189,6 +23194,13 @@ proto.api.v0alpha.ManualDialSettings.serializeBinaryToWriter = function(message,
   if (f !== 0.0) {
     writer.writeEnum(
       28,
+      f
+    );
+  }
+  f = message.getEnableRejectOptionForApprovers();
+  if (f) {
+    writer.writeBool(
+      29,
       f
     );
   }
@@ -23717,6 +23729,24 @@ proto.api.v0alpha.ManualDialSettings.prototype.getUseTimezoneValidationZip = fun
  */
 proto.api.v0alpha.ManualDialSettings.prototype.setUseTimezoneValidationZip = function(value) {
   return jspb.Message.setProto3EnumField(this, 28, value);
+};
+
+
+/**
+ * optional bool enable_reject_option_for_approvers = 29;
+ * @return {boolean}
+ */
+proto.api.v0alpha.ManualDialSettings.prototype.getEnableRejectOptionForApprovers = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 29, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.ManualDialSettings} returns this
+ */
+proto.api.v0alpha.ManualDialSettings.prototype.setEnableRejectOptionForApprovers = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 29, value);
 };
 
 

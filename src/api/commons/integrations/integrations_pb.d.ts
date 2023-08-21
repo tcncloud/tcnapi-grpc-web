@@ -291,6 +291,11 @@ export class InvoiceFlow extends jspb.Message {
   getDynamicJourney(): InvoiceDynamicJourney | undefined;
   setDynamicJourney(value?: InvoiceDynamicJourney): void;
 
+  hasNewzwareAccountInquiry(): boolean;
+  clearNewzwareAccountInquiry(): void;
+  getNewzwareAccountInquiry(): InvoiceNewzwareAccountInquiry | undefined;
+  setNewzwareAccountInquiry(value?: InvoiceNewzwareAccountInquiry): void;
+
   hasInvoiceTemplate(): boolean;
   clearInvoiceTemplate(): void;
   getInvoiceTemplate(): InvoiceTemplate | undefined;
@@ -315,6 +320,7 @@ export namespace InvoiceFlow {
     authorizeNetCustomHttp?: InvoiceAuthorizeNetCustomHttp.AsObject,
     journey?: InvoiceJourney.AsObject,
     dynamicJourney?: InvoiceDynamicJourney.AsObject,
+    newzwareAccountInquiry?: InvoiceNewzwareAccountInquiry.AsObject,
     invoiceTemplate?: InvoiceTemplate.AsObject,
   }
 
@@ -325,6 +331,7 @@ export namespace InvoiceFlow {
     AUTHORIZE_NET_CUSTOM_HTTP = 11,
     JOURNEY = 12,
     DYNAMIC_JOURNEY = 13,
+    NEWZWARE_ACCOUNT_INQUIRY = 14,
   }
 }
 
@@ -377,6 +384,16 @@ export class PaymentFlow extends jspb.Message {
   getPaywaySubmitAchAlertRequest(): PaymentPaywaySubmitACHAlertRequest | undefined;
   setPaywaySubmitAchAlertRequest(value?: PaymentPaywaySubmitACHAlertRequest): void;
 
+  hasNewzwareCc(): boolean;
+  clearNewzwareCc(): void;
+  getNewzwareCc(): PaymentNewzwareCc | undefined;
+  setNewzwareCc(value?: PaymentNewzwareCc): void;
+
+  hasNewzwareAch(): boolean;
+  clearNewzwareAch(): void;
+  getNewzwareAch(): PaymentNewzwareAch | undefined;
+  setNewzwareAch(value?: PaymentNewzwareAch): void;
+
   clearPaymentFieldsList(): void;
   getPaymentFieldsList(): Array<FieldDefinition>;
   setPaymentFieldsList(value: Array<FieldDefinition>): void;
@@ -405,6 +422,8 @@ export namespace PaymentFlow {
     authorizeNetGooglePay?: PaymentAuthorizeNetGooglePay.AsObject,
     paywaySubmitCardSaleRequest?: PaymentPaywaySubmitCardSaleRequest.AsObject,
     paywaySubmitAchAlertRequest?: PaymentPaywaySubmitACHAlertRequest.AsObject,
+    newzwareCc?: PaymentNewzwareCc.AsObject,
+    newzwareAch?: PaymentNewzwareAch.AsObject,
     paymentFieldsList: Array<FieldDefinition.AsObject>,
   }
 
@@ -419,6 +438,8 @@ export namespace PaymentFlow {
     AUTHORIZE_NET_GOOGLE_PAY = 8,
     PAYWAY_SUBMIT_CARD_SALE_REQUEST = 9,
     PAYWAY_SUBMIT_ACH_ALERT_REQUEST = 10,
+    NEWZWARE_CC = 11,
+    NEWZWARE_ACH = 12,
   }
 }
 
@@ -456,6 +477,16 @@ export class VerificationFlow extends jspb.Message {
   getJourney(): VerificationJourney | undefined;
   setJourney(value?: VerificationJourney): void;
 
+  hasNewzwareLookupPhone(): boolean;
+  clearNewzwareLookupPhone(): void;
+  getNewzwareLookupPhone(): VerificationNewzwareLookupPhone | undefined;
+  setNewzwareLookupPhone(value?: VerificationNewzwareLookupPhone): void;
+
+  hasNewzwareAccountInquiry(): boolean;
+  clearNewzwareAccountInquiry(): void;
+  getNewzwareAccountInquiry(): VerificationNewzwareAccountInquiry | undefined;
+  setNewzwareAccountInquiry(value?: VerificationNewzwareAccountInquiry): void;
+
   clearVerificationFieldsList(): void;
   getVerificationFieldsList(): Array<FieldDefinition>;
   setVerificationFieldsList(value: Array<FieldDefinition>): void;
@@ -481,6 +512,8 @@ export namespace VerificationFlow {
     authorizeNetCustomerProfile?: VerificationAuthorizeNetCustomerProfile.AsObject,
     authorizeNetLinkData?: VerificationAuthorizeNetLinkData.AsObject,
     journey?: VerificationJourney.AsObject,
+    newzwareLookupPhone?: VerificationNewzwareLookupPhone.AsObject,
+    newzwareAccountInquiry?: VerificationNewzwareAccountInquiry.AsObject,
     verificationFieldsList: Array<FieldDefinition.AsObject>,
   }
 
@@ -492,6 +525,8 @@ export namespace VerificationFlow {
     AUTHORIZE_NET_CUSTOMER_PROFILE = 6,
     AUTHORIZE_NET_LINK_DATA = 7,
     JOURNEY = 12,
+    NEWZWARE_LOOKUP_PHONE = 13,
+    NEWZWARE_ACCOUNT_INQUIRY = 14,
   }
 }
 
@@ -1431,6 +1466,61 @@ export class ExecuteFlow extends jspb.Message {
   getPianoUpdateUser(): ExecutePianoUpdateUser | undefined;
   setPianoUpdateUser(value?: ExecutePianoUpdateUser): void;
 
+  hasEpicGetToken(): boolean;
+  clearEpicGetToken(): void;
+  getEpicGetToken(): ExecuteEpicGetToken | undefined;
+  setEpicGetToken(value?: ExecuteEpicGetToken): void;
+
+  hasEpicGetPatient(): boolean;
+  clearEpicGetPatient(): void;
+  getEpicGetPatient(): ExecuteEpicGetPatient | undefined;
+  setEpicGetPatient(value?: ExecuteEpicGetPatient): void;
+
+  hasEpicMatchPatient(): boolean;
+  clearEpicMatchPatient(): void;
+  getEpicMatchPatient(): ExecuteEpicMatchPatient | undefined;
+  setEpicMatchPatient(value?: ExecuteEpicMatchPatient): void;
+
+  hasEpicSearchAppointment(): boolean;
+  clearEpicSearchAppointment(): void;
+  getEpicSearchAppointment(): ExecuteEpicSearchAppointment | undefined;
+  setEpicSearchAppointment(value?: ExecuteEpicSearchAppointment): void;
+
+  hasEpicFindAppointment(): boolean;
+  clearEpicFindAppointment(): void;
+  getEpicFindAppointment(): ExecuteEpicFindAppointment | undefined;
+  setEpicFindAppointment(value?: ExecuteEpicFindAppointment): void;
+
+  hasEpicBookAppointment(): boolean;
+  clearEpicBookAppointment(): void;
+  getEpicBookAppointment(): ExecuteEpicBookAppointment | undefined;
+  setEpicBookAppointment(value?: ExecuteEpicBookAppointment): void;
+
+  hasEpicGetAccount(): boolean;
+  clearEpicGetAccount(): void;
+  getEpicGetAccount(): ExecuteEpicGetAccount | undefined;
+  setEpicGetAccount(value?: ExecuteEpicGetAccount): void;
+
+  hasNewzwarePhoneLookup(): boolean;
+  clearNewzwarePhoneLookup(): void;
+  getNewzwarePhoneLookup(): ExecuteNewzwarePhoneLookup | undefined;
+  setNewzwarePhoneLookup(value?: ExecuteNewzwarePhoneLookup): void;
+
+  hasNewzwareAccountInquiry(): boolean;
+  clearNewzwareAccountInquiry(): void;
+  getNewzwareAccountInquiry(): ExecuteNewzwareAccountInquiry | undefined;
+  setNewzwareAccountInquiry(value?: ExecuteNewzwareAccountInquiry): void;
+
+  hasNewzwareCcPayment(): boolean;
+  clearNewzwareCcPayment(): void;
+  getNewzwareCcPayment(): ExecuteNewzwareCcPayment | undefined;
+  setNewzwareCcPayment(value?: ExecuteNewzwareCcPayment): void;
+
+  hasNewzwareAchPayment(): boolean;
+  clearNewzwareAchPayment(): void;
+  getNewzwareAchPayment(): ExecuteNewzwareAchPayment | undefined;
+  setNewzwareAchPayment(value?: ExecuteNewzwareAchPayment): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -1617,6 +1707,17 @@ export namespace ExecuteFlow {
     poscorpUpdatePaymentStatus?: ExecutePoscorpUpdatePaymentStatus.AsObject,
     pianoGetUser?: ExecutePianoGetUser.AsObject,
     pianoUpdateUser?: ExecutePianoUpdateUser.AsObject,
+    epicGetToken?: ExecuteEpicGetToken.AsObject,
+    epicGetPatient?: ExecuteEpicGetPatient.AsObject,
+    epicMatchPatient?: ExecuteEpicMatchPatient.AsObject,
+    epicSearchAppointment?: ExecuteEpicSearchAppointment.AsObject,
+    epicFindAppointment?: ExecuteEpicFindAppointment.AsObject,
+    epicBookAppointment?: ExecuteEpicBookAppointment.AsObject,
+    epicGetAccount?: ExecuteEpicGetAccount.AsObject,
+    newzwarePhoneLookup?: ExecuteNewzwarePhoneLookup.AsObject,
+    newzwareAccountInquiry?: ExecuteNewzwareAccountInquiry.AsObject,
+    newzwareCcPayment?: ExecuteNewzwareCcPayment.AsObject,
+    newzwareAchPayment?: ExecuteNewzwareAchPayment.AsObject,
   }
 
   export enum ValueCase {
@@ -1793,6 +1894,17 @@ export namespace ExecuteFlow {
     POSCORP_UPDATE_PAYMENT_STATUS = 3503,
     PIANO_GET_USER = 3601,
     PIANO_UPDATE_USER = 3602,
+    EPIC_GET_TOKEN = 3701,
+    EPIC_GET_PATIENT = 3702,
+    EPIC_MATCH_PATIENT = 3703,
+    EPIC_SEARCH_APPOINTMENT = 3704,
+    EPIC_FIND_APPOINTMENT = 3705,
+    EPIC_BOOK_APPOINTMENT = 3706,
+    EPIC_GET_ACCOUNT = 3707,
+    NEWZWARE_PHONE_LOOKUP = 3801,
+    NEWZWARE_ACCOUNT_INQUIRY = 3802,
+    NEWZWARE_CC_PAYMENT = 3803,
+    NEWZWARE_ACH_PAYMENT = 3804,
   }
 }
 
@@ -1902,6 +2014,22 @@ export namespace InvoiceDynamicJourney {
     matchFieldsList: Array<string>,
     totalField: string,
     journeyFieldsMap: Array<[string, ListOfStrings.AsObject]>,
+  }
+}
+
+export class InvoiceNewzwareAccountInquiry extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InvoiceNewzwareAccountInquiry.AsObject;
+  static toObject(includeInstance: boolean, msg: InvoiceNewzwareAccountInquiry): InvoiceNewzwareAccountInquiry.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: InvoiceNewzwareAccountInquiry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InvoiceNewzwareAccountInquiry;
+  static deserializeBinaryFromReader(message: InvoiceNewzwareAccountInquiry, reader: jspb.BinaryReader): InvoiceNewzwareAccountInquiry;
+}
+
+export namespace InvoiceNewzwareAccountInquiry {
+  export type AsObject = {
   }
 }
 
@@ -2018,6 +2146,38 @@ export namespace VerificationJourney {
     firstNameField: string,
     zipField: string,
     last4Ssn: string,
+  }
+}
+
+export class VerificationNewzwareLookupPhone extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VerificationNewzwareLookupPhone.AsObject;
+  static toObject(includeInstance: boolean, msg: VerificationNewzwareLookupPhone): VerificationNewzwareLookupPhone.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: VerificationNewzwareLookupPhone, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VerificationNewzwareLookupPhone;
+  static deserializeBinaryFromReader(message: VerificationNewzwareLookupPhone, reader: jspb.BinaryReader): VerificationNewzwareLookupPhone;
+}
+
+export namespace VerificationNewzwareLookupPhone {
+  export type AsObject = {
+  }
+}
+
+export class VerificationNewzwareAccountInquiry extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VerificationNewzwareAccountInquiry.AsObject;
+  static toObject(includeInstance: boolean, msg: VerificationNewzwareAccountInquiry): VerificationNewzwareAccountInquiry.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: VerificationNewzwareAccountInquiry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VerificationNewzwareAccountInquiry;
+  static deserializeBinaryFromReader(message: VerificationNewzwareAccountInquiry, reader: jspb.BinaryReader): VerificationNewzwareAccountInquiry;
+}
+
+export namespace VerificationNewzwareAccountInquiry {
+  export type AsObject = {
   }
 }
 
@@ -2161,6 +2321,38 @@ export class PaymentPaywaySubmitACHAlertRequest extends jspb.Message {
 }
 
 export namespace PaymentPaywaySubmitACHAlertRequest {
+  export type AsObject = {
+  }
+}
+
+export class PaymentNewzwareCc extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentNewzwareCc.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentNewzwareCc): PaymentNewzwareCc.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentNewzwareCc, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentNewzwareCc;
+  static deserializeBinaryFromReader(message: PaymentNewzwareCc, reader: jspb.BinaryReader): PaymentNewzwareCc;
+}
+
+export namespace PaymentNewzwareCc {
+  export type AsObject = {
+  }
+}
+
+export class PaymentNewzwareAch extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentNewzwareAch.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentNewzwareAch): PaymentNewzwareAch.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentNewzwareAch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentNewzwareAch;
+  static deserializeBinaryFromReader(message: PaymentNewzwareAch, reader: jspb.BinaryReader): PaymentNewzwareAch;
+}
+
+export namespace PaymentNewzwareAch {
   export type AsObject = {
   }
 }
@@ -4917,6 +5109,182 @@ export namespace ExecutePianoUpdateUser {
   }
 }
 
+export class ExecuteEpicGetToken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicGetToken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicGetToken): ExecuteEpicGetToken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicGetToken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicGetToken;
+  static deserializeBinaryFromReader(message: ExecuteEpicGetToken, reader: jspb.BinaryReader): ExecuteEpicGetToken;
+}
+
+export namespace ExecuteEpicGetToken {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteEpicGetPatient extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicGetPatient.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicGetPatient): ExecuteEpicGetPatient.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicGetPatient, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicGetPatient;
+  static deserializeBinaryFromReader(message: ExecuteEpicGetPatient, reader: jspb.BinaryReader): ExecuteEpicGetPatient;
+}
+
+export namespace ExecuteEpicGetPatient {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteEpicMatchPatient extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicMatchPatient.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicMatchPatient): ExecuteEpicMatchPatient.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicMatchPatient, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicMatchPatient;
+  static deserializeBinaryFromReader(message: ExecuteEpicMatchPatient, reader: jspb.BinaryReader): ExecuteEpicMatchPatient;
+}
+
+export namespace ExecuteEpicMatchPatient {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteEpicSearchAppointment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicSearchAppointment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicSearchAppointment): ExecuteEpicSearchAppointment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicSearchAppointment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicSearchAppointment;
+  static deserializeBinaryFromReader(message: ExecuteEpicSearchAppointment, reader: jspb.BinaryReader): ExecuteEpicSearchAppointment;
+}
+
+export namespace ExecuteEpicSearchAppointment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteEpicFindAppointment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicFindAppointment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicFindAppointment): ExecuteEpicFindAppointment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicFindAppointment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicFindAppointment;
+  static deserializeBinaryFromReader(message: ExecuteEpicFindAppointment, reader: jspb.BinaryReader): ExecuteEpicFindAppointment;
+}
+
+export namespace ExecuteEpicFindAppointment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteEpicBookAppointment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicBookAppointment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicBookAppointment): ExecuteEpicBookAppointment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicBookAppointment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicBookAppointment;
+  static deserializeBinaryFromReader(message: ExecuteEpicBookAppointment, reader: jspb.BinaryReader): ExecuteEpicBookAppointment;
+}
+
+export namespace ExecuteEpicBookAppointment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteEpicGetAccount extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicGetAccount.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicGetAccount): ExecuteEpicGetAccount.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicGetAccount, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicGetAccount;
+  static deserializeBinaryFromReader(message: ExecuteEpicGetAccount, reader: jspb.BinaryReader): ExecuteEpicGetAccount;
+}
+
+export namespace ExecuteEpicGetAccount {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNewzwarePhoneLookup extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNewzwarePhoneLookup.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNewzwarePhoneLookup): ExecuteNewzwarePhoneLookup.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNewzwarePhoneLookup, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNewzwarePhoneLookup;
+  static deserializeBinaryFromReader(message: ExecuteNewzwarePhoneLookup, reader: jspb.BinaryReader): ExecuteNewzwarePhoneLookup;
+}
+
+export namespace ExecuteNewzwarePhoneLookup {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNewzwareAccountInquiry extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNewzwareAccountInquiry.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNewzwareAccountInquiry): ExecuteNewzwareAccountInquiry.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNewzwareAccountInquiry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNewzwareAccountInquiry;
+  static deserializeBinaryFromReader(message: ExecuteNewzwareAccountInquiry, reader: jspb.BinaryReader): ExecuteNewzwareAccountInquiry;
+}
+
+export namespace ExecuteNewzwareAccountInquiry {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNewzwareCcPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNewzwareCcPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNewzwareCcPayment): ExecuteNewzwareCcPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNewzwareCcPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNewzwareCcPayment;
+  static deserializeBinaryFromReader(message: ExecuteNewzwareCcPayment, reader: jspb.BinaryReader): ExecuteNewzwareCcPayment;
+}
+
+export namespace ExecuteNewzwareCcPayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNewzwareAchPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNewzwareAchPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNewzwareAchPayment): ExecuteNewzwareAchPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNewzwareAchPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNewzwareAchPayment;
+  static deserializeBinaryFromReader(message: ExecuteNewzwareAchPayment, reader: jspb.BinaryReader): ExecuteNewzwareAchPayment;
+}
+
+export namespace ExecuteNewzwareAchPayment {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -4955,6 +5323,8 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_SHIFT4: 3400;
   INTEGRATION_TYPE_POSCORP: 3500;
   INTEGRATION_TYPE_PIANO: 3600;
+  INTEGRATION_TYPE_EPIC: 3700;
+  INTEGRATION_TYPE_NEWZWARE: 3800;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -5133,6 +5503,17 @@ export interface RequestMethodMap {
   REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS: 3503;
   REQUEST_METHOD_PIANO_GET_USER: 3601;
   REQUEST_METHOD_PIANO_UPDATE_USER: 3602;
+  REQUEST_METHOD_EPIC_GET_TOKEN: 3701;
+  REQUEST_METHOD_EPIC_GET_PATIENT: 3702;
+  REQUEST_METHOD_EPIC_MATCH_PATIENT: 3703;
+  REQUEST_METHOD_EPIC_SEARCH_APPOINTMENT: 3704;
+  REQUEST_METHOD_EPIC_FIND_APPOINTMENT: 3705;
+  REQUEST_METHOD_EPIC_BOOK_APPOINTMENT: 3706;
+  REQUEST_METHOD_EPIC_GET_ACCOUNT: 3707;
+  REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP: 3801;
+  REQUEST_METHOD_NEWZWARE_ACCOUNT_INQUIRY: 3802;
+  REQUEST_METHOD_NEWZWARE_CC_PAYMENT: 3803;
+  REQUEST_METHOD_NEWZWARE_ACH_PAYMENT: 3804;
 }
 
 export const RequestMethod: RequestMethodMap;

@@ -688,7 +688,8 @@ proto.api.commons.OperatorApplications = {
   DELIVERY_SERVICE_APP: 22,
   PERFORMANCE_MANAGEMENT_APP: 23,
   TICKETS_APP: 31,
-  AGENT_BETA_APP: 32
+  AGENT_BETA_APP: 32,
+  NEWSROOM_APP: 33
 };
 
 /**
