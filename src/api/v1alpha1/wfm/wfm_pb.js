@@ -58693,7 +58693,10 @@ proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.toObject = function(
 proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     shiftInstanceSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    includeShiftSegments: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+    includeShiftSegments: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    includeShiftTemplate: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    includeSchedulingActivity: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    includeActivity: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -58740,6 +58743,18 @@ proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.deserializeBinaryFromReader = 
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIncludeShiftSegments(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIncludeShiftTemplate(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIncludeSchedulingActivity(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIncludeActivity(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -58780,6 +58795,27 @@ proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.serializeBinaryToWriter = func
   if (f) {
     writer.writeBool(
       2,
+      f
+    );
+  }
+  f = message.getIncludeShiftTemplate();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
+  f = message.getIncludeSchedulingActivity();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+  f = message.getIncludeActivity();
+  if (f) {
+    writer.writeBool(
+      5,
       f
     );
   }
@@ -58838,6 +58874,60 @@ proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.getIncludeShiftSegme
  */
 proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.setIncludeShiftSegments = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+/**
+ * optional bool include_shift_template = 3;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.getIncludeShiftTemplate = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.setIncludeShiftTemplate = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional bool include_scheduling_activity = 4;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.getIncludeSchedulingActivity = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.setIncludeSchedulingActivity = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
+/**
+ * optional bool include_activity = 5;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.getIncludeActivity = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.setIncludeActivity = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
