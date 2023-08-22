@@ -913,6 +913,15 @@ type WFMDeleteDraftSchedule = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteDraftScheduleRes;
 };
 
+type WFMListShiftInstancesBySid = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListShiftInstancesBySidReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListShiftInstancesBySidRes;
+};
+
 type WFMCopyScheduleToSchedule = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1142,6 +1151,7 @@ export class WFM {
   static readonly GetDraftSchedule: WFMGetDraftSchedule;
   static readonly ListDraftSchedules: WFMListDraftSchedules;
   static readonly DeleteDraftSchedule: WFMDeleteDraftSchedule;
+  static readonly ListShiftInstancesBySid: WFMListShiftInstancesBySid;
   static readonly CopyScheduleToSchedule: WFMCopyScheduleToSchedule;
   static readonly CreateShiftInstance: WFMCreateShiftInstance;
   static readonly CreateShiftInstanceV2: WFMCreateShiftInstanceV2;
@@ -2058,6 +2068,15 @@ export class WFMClient {
   deleteDraftSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteDraftScheduleReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteDraftScheduleRes|null) => void
+  ): UnaryResponse;
+  listShiftInstancesBySid(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListShiftInstancesBySidReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListShiftInstancesBySidRes|null) => void
+  ): UnaryResponse;
+  listShiftInstancesBySid(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListShiftInstancesBySidReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListShiftInstancesBySidRes|null) => void
   ): UnaryResponse;
   copyScheduleToSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CopyScheduleToScheduleReq,

@@ -7364,6 +7364,54 @@ export namespace DeleteDraftScheduleRes {
   }
 }
 
+export class ListShiftInstancesBySidReq extends jspb.Message {
+  clearShiftInstanceSidsList(): void;
+  getShiftInstanceSidsList(): Array<number>;
+  setShiftInstanceSidsList(value: Array<number>): void;
+  addShiftInstanceSids(value: number, index?: number): number;
+
+  getIncludeShiftSegments(): boolean;
+  setIncludeShiftSegments(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListShiftInstancesBySidReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListShiftInstancesBySidReq): ListShiftInstancesBySidReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListShiftInstancesBySidReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListShiftInstancesBySidReq;
+  static deserializeBinaryFromReader(message: ListShiftInstancesBySidReq, reader: jspb.BinaryReader): ListShiftInstancesBySidReq;
+}
+
+export namespace ListShiftInstancesBySidReq {
+  export type AsObject = {
+    shiftInstanceSidsList: Array<number>,
+    includeShiftSegments: boolean,
+  }
+}
+
+export class ListShiftInstancesBySidRes extends jspb.Message {
+  clearShiftInstancesList(): void;
+  getShiftInstancesList(): Array<ShiftInstance>;
+  setShiftInstancesList(value: Array<ShiftInstance>): void;
+  addShiftInstances(value?: ShiftInstance, index?: number): ShiftInstance;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListShiftInstancesBySidRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListShiftInstancesBySidRes): ListShiftInstancesBySidRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListShiftInstancesBySidRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListShiftInstancesBySidRes;
+  static deserializeBinaryFromReader(message: ListShiftInstancesBySidRes, reader: jspb.BinaryReader): ListShiftInstancesBySidRes;
+}
+
+export namespace ListShiftInstancesBySidRes {
+  export type AsObject = {
+    shiftInstancesList: Array<ShiftInstance.AsObject>,
+  }
+}
+
 export class CopyScheduleToScheduleReq extends jspb.Message {
   hasSourceScheduleSelector(): boolean;
   clearSourceScheduleSelector(): void;
