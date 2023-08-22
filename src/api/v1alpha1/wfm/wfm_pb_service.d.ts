@@ -904,6 +904,15 @@ type WFMListDraftSchedules = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListDraftSchedulesRes;
 };
 
+type WFMClearSchedule = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ClearScheduleReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ClearScheduleRes;
+};
+
 type WFMDeleteDraftSchedule = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1141,6 +1150,7 @@ export class WFM {
   static readonly ResetDraftSchedule: WFMResetDraftSchedule;
   static readonly GetDraftSchedule: WFMGetDraftSchedule;
   static readonly ListDraftSchedules: WFMListDraftSchedules;
+  static readonly ClearSchedule: WFMClearSchedule;
   static readonly DeleteDraftSchedule: WFMDeleteDraftSchedule;
   static readonly CopyScheduleToSchedule: WFMCopyScheduleToSchedule;
   static readonly CreateShiftInstance: WFMCreateShiftInstance;
@@ -2049,6 +2059,15 @@ export class WFMClient {
   listDraftSchedules(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListDraftSchedulesReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListDraftSchedulesRes|null) => void
+  ): UnaryResponse;
+  clearSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ClearScheduleReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ClearScheduleRes|null) => void
+  ): UnaryResponse;
+  clearSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ClearScheduleReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ClearScheduleRes|null) => void
   ): UnaryResponse;
   deleteDraftSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteDraftScheduleReq,
