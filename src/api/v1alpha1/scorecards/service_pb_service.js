@@ -406,6 +406,15 @@ Scorecards.ListAutoEvaluations = {
   responseType: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsResponse
 };
 
+Scorecards.StreamAutoEvaluations = {
+  methodName: "StreamAutoEvaluations",
+  service: Scorecards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsRequest,
+  responseType: api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsResponse
+};
+
 Scorecards.DeleteAutoEvaluation = {
   methodName: "DeleteAutoEvaluation",
   service: Scorecards,
@@ -1738,6 +1747,37 @@ ScorecardsClient.prototype.listAutoEvaluations = function listAutoEvaluations(re
     callback = arguments[1];
   }
   var client = grpc.unary(Scorecards.ListAutoEvaluations, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ScorecardsClient.prototype.streamAutoEvaluations = function streamAutoEvaluations(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Scorecards.StreamAutoEvaluations, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

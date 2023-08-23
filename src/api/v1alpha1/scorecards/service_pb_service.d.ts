@@ -400,6 +400,15 @@ type ScorecardsListAutoEvaluations = {
   readonly responseType: typeof api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsResponse;
 };
 
+type ScorecardsStreamAutoEvaluations = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsResponse;
+};
+
 type ScorecardsDeleteAutoEvaluation = {
   readonly methodName: string;
   readonly service: typeof Scorecards;
@@ -463,6 +472,7 @@ export class Scorecards {
   static readonly GetAutoQuestion: ScorecardsGetAutoQuestion;
   static readonly GetAutoEvaluation: ScorecardsGetAutoEvaluation;
   static readonly ListAutoEvaluations: ScorecardsListAutoEvaluations;
+  static readonly StreamAutoEvaluations: ScorecardsStreamAutoEvaluations;
   static readonly DeleteAutoEvaluation: ScorecardsDeleteAutoEvaluation;
   static readonly PreviewEvaluationScore: ScorecardsPreviewEvaluationScore;
 }
@@ -885,6 +895,15 @@ export class ScorecardsClient {
   listAutoEvaluations(
     requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsResponse|null) => void
+  ): UnaryResponse;
+  streamAutoEvaluations(
+    requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsResponse|null) => void
+  ): UnaryResponse;
+  streamAutoEvaluations(
+    requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsResponse|null) => void
   ): UnaryResponse;
   deleteAutoEvaluation(
     requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.DeleteAutoEvaluationRequest,

@@ -138,3 +138,53 @@ export namespace DeleteAutoEvaluationResponse {
   }
 }
 
+export class StreamAutoEvaluationsRequest extends jspb.Message {
+  clearScorecardIdsList(): void;
+  getScorecardIdsList(): Array<number>;
+  setScorecardIdsList(value: Array<number>): void;
+  addScorecardIds(value: number, index?: number): number;
+
+  hasCompletedAt(): boolean;
+  clearCompletedAt(): void;
+  getCompletedAt(): api_commons_scorecards_pb.TimeFilter | undefined;
+  setCompletedAt(value?: api_commons_scorecards_pb.TimeFilter): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StreamAutoEvaluationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: StreamAutoEvaluationsRequest): StreamAutoEvaluationsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: StreamAutoEvaluationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StreamAutoEvaluationsRequest;
+  static deserializeBinaryFromReader(message: StreamAutoEvaluationsRequest, reader: jspb.BinaryReader): StreamAutoEvaluationsRequest;
+}
+
+export namespace StreamAutoEvaluationsRequest {
+  export type AsObject = {
+    scorecardIdsList: Array<number>,
+    completedAt?: api_commons_scorecards_pb.TimeFilter.AsObject,
+  }
+}
+
+export class StreamAutoEvaluationsResponse extends jspb.Message {
+  hasAutoEvaluation(): boolean;
+  clearAutoEvaluation(): void;
+  getAutoEvaluation(): api_commons_scorecards_pb.AutoEvaluation | undefined;
+  setAutoEvaluation(value?: api_commons_scorecards_pb.AutoEvaluation): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StreamAutoEvaluationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: StreamAutoEvaluationsResponse): StreamAutoEvaluationsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: StreamAutoEvaluationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StreamAutoEvaluationsResponse;
+  static deserializeBinaryFromReader(message: StreamAutoEvaluationsResponse, reader: jspb.BinaryReader): StreamAutoEvaluationsResponse;
+}
+
+export namespace StreamAutoEvaluationsResponse {
+  export type AsObject = {
+    autoEvaluation?: api_commons_scorecards_pb.AutoEvaluation.AsObject,
+  }
+}
+
