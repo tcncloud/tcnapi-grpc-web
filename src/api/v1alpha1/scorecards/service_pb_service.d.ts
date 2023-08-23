@@ -404,7 +404,7 @@ type ScorecardsStreamAutoEvaluations = {
   readonly methodName: string;
   readonly service: typeof Scorecards;
   readonly requestStream: false;
-  readonly responseStream: false;
+  readonly responseStream: true;
   readonly requestType: typeof api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsRequest;
   readonly responseType: typeof api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsResponse;
 };
@@ -896,15 +896,7 @@ export class ScorecardsClient {
     requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsResponse|null) => void
   ): UnaryResponse;
-  streamAutoEvaluations(
-    requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsResponse|null) => void
-  ): UnaryResponse;
-  streamAutoEvaluations(
-    requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsResponse|null) => void
-  ): UnaryResponse;
+  streamAutoEvaluations(requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsResponse>;
   deleteAutoEvaluation(
     requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.DeleteAutoEvaluationRequest,
     metadata: grpc.Metadata,
