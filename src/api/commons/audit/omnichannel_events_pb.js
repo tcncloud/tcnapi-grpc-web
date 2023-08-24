@@ -6106,7 +6106,6 @@ proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.toObject = 
     channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
     campaignDirection: jspb.Message.getFieldWithDefault(msg, 4, 0),
     collectedData: (f = msg.getCollectedData()) && api_commons_omnichannel_pb.ConversationCollectedData.toObject(includeInstance, f),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
     asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
@@ -6166,11 +6165,6 @@ proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.deserialize
       msg.setCollectedData(value);
       break;
     case 6:
-      var value = new api_commons_omnichannel_pb.OmniConversation;
-      reader.readMessage(value,api_commons_omnichannel_pb.OmniConversation.deserializeBinaryFromReader);
-      msg.setConversation(value);
-      break;
-    case 7:
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setAsmSessionSid(value);
@@ -6240,18 +6234,10 @@ proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.serializeBi
       api_commons_omnichannel_pb.ConversationCollectedData.serializeBinaryToWriter
     );
   }
-  f = message.getConversation();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      api_commons_omnichannel_pb.OmniConversation.serializeBinaryToWriter
-    );
-  }
   f = message.getAsmSessionSid();
   if (f != null) {
     writer.writeMessage(
-      7,
+      6,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
@@ -6369,49 +6355,12 @@ proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.prototype.h
 
 
 /**
- * optional api.commons.OmniConversation conversation = 6;
- * @return {?proto.api.commons.OmniConversation}
- */
-proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.prototype.getConversation = function() {
-  return /** @type{?proto.api.commons.OmniConversation} */ (
-    jspb.Message.getWrapperField(this, api_commons_omnichannel_pb.OmniConversation, 6));
-};
-
-
-/**
- * @param {?proto.api.commons.OmniConversation|undefined} value
- * @return {!proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent} returns this
-*/
-proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.prototype.setConversation = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent} returns this
- */
-proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.prototype.clearConversation = function() {
-  return this.setConversation(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.prototype.hasConversation = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional google.protobuf.Int64Value asm_session_sid = 7;
+ * optional google.protobuf.Int64Value asm_session_sid = 6;
  * @return {?proto.google.protobuf.Int64Value}
  */
 proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.prototype.getAsmSessionSid = function() {
   return /** @type{?proto.google.protobuf.Int64Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 7));
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 6));
 };
 
 
@@ -6420,7 +6369,7 @@ proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.prototype.g
  * @return {!proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent} returns this
 */
 proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.prototype.setAsmSessionSid = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -6438,7 +6387,7 @@ proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.prototype.c
  * @return {boolean}
  */
 proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.prototype.hasAsmSessionSid = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

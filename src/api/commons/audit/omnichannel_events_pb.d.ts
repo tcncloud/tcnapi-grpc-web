@@ -719,11 +719,6 @@ export class OmnichannelSetConversationCollectedDataEvent extends jspb.Message {
   getCollectedData(): api_commons_omnichannel_pb.ConversationCollectedData | undefined;
   setCollectedData(value?: api_commons_omnichannel_pb.ConversationCollectedData): void;
 
-  hasConversation(): boolean;
-  clearConversation(): void;
-  getConversation(): api_commons_omnichannel_pb.OmniConversation | undefined;
-  setConversation(value?: api_commons_omnichannel_pb.OmniConversation): void;
-
   hasAsmSessionSid(): boolean;
   clearAsmSessionSid(): void;
   getAsmSessionSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
@@ -746,7 +741,6 @@ export namespace OmnichannelSetConversationCollectedDataEvent {
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
     campaignDirection: api_commons_omnichannel_pb.CampaignDirectionMap[keyof api_commons_omnichannel_pb.CampaignDirectionMap],
     collectedData?: api_commons_omnichannel_pb.ConversationCollectedData.AsObject,
-    conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
     asmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
   }
 }
