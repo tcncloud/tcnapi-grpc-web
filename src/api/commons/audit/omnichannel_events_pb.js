@@ -3825,7 +3825,8 @@ proto.api.commons.audit.OmnichannelManagerTextMessageEvent.toObject = function(i
     conversationSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
     message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
     conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    userId: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -3880,6 +3881,10 @@ proto.api.commons.audit.OmnichannelManagerTextMessageEvent.deserializeBinaryFrom
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setAsmSessionSid(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
       break;
     default:
       reader.skipField();
@@ -3939,6 +3944,13 @@ proto.api.commons.audit.OmnichannelManagerTextMessageEvent.serializeBinaryToWrit
       6,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
     );
   }
 };
@@ -4070,6 +4082,24 @@ proto.api.commons.audit.OmnichannelManagerTextMessageEvent.prototype.clearAsmSes
  */
 proto.api.commons.audit.OmnichannelManagerTextMessageEvent.prototype.hasAsmSessionSid = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string user_id = 7;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelManagerTextMessageEvent.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelManagerTextMessageEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelManagerTextMessageEvent.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

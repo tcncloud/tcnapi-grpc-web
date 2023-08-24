@@ -811,6 +811,9 @@ export class SetConversationCollectedDataReq extends jspb.Message {
 
   getCollectedDataMap(): jspb.Map<string, string>;
   clearCollectedDataMap(): void;
+  getAsmSessionSid(): number;
+  setAsmSessionSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetConversationCollectedDataReq.AsObject;
   static toObject(includeInstance: boolean, msg: SetConversationCollectedDataReq): SetConversationCollectedDataReq.AsObject;
@@ -826,6 +829,7 @@ export namespace SetConversationCollectedDataReq {
     conversationSid: string,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
     collectedDataMap: Array<[string, string]>,
+    asmSessionSid: number,
   }
 }
 
