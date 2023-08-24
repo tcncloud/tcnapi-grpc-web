@@ -649,6 +649,9 @@ export class OmnichannelCloseConversationEvent extends jspb.Message {
   getAsmSessionSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setAsmSessionSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  getUserId(): string;
+  setUserId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelCloseConversationEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelCloseConversationEvent): OmnichannelCloseConversationEvent.AsObject;
@@ -664,6 +667,7 @@ export namespace OmnichannelCloseConversationEvent {
     message?: api_commons_omnichannel_pb.OmniMessage.AsObject,
     conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
     asmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    userId: string,
   }
 }
 

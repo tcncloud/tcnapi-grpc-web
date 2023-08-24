@@ -5609,7 +5609,8 @@ proto.api.commons.audit.OmnichannelCloseConversationEvent.toObject = function(in
   var f, obj = {
     message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
     conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    userId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -5660,6 +5661,10 @@ proto.api.commons.audit.OmnichannelCloseConversationEvent.deserializeBinaryFromR
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setAsmSessionSid(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
       break;
     default:
       reader.skipField();
@@ -5712,6 +5717,13 @@ proto.api.commons.audit.OmnichannelCloseConversationEvent.serializeBinaryToWrite
       3,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -5825,6 +5837,24 @@ proto.api.commons.audit.OmnichannelCloseConversationEvent.prototype.clearAsmSess
  */
 proto.api.commons.audit.OmnichannelCloseConversationEvent.prototype.hasAsmSessionSid = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string user_id = 4;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelCloseConversationEvent.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelCloseConversationEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelCloseConversationEvent.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
