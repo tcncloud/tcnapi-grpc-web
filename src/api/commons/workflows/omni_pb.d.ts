@@ -121,8 +121,8 @@ export namespace OmniNodeWebhook {
 }
 
 export class OmniNodeScrublist extends jspb.Message {
-  getAction(): ScrublistActionMap[keyof ScrublistActionMap];
-  setAction(value: ScrublistActionMap[keyof ScrublistActionMap]): void;
+  getAction(): OmniNodeScrublistActionMap[keyof OmniNodeScrublistActionMap];
+  setAction(value: OmniNodeScrublistActionMap[keyof OmniNodeScrublistActionMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniNodeScrublist.AsObject;
@@ -136,7 +136,7 @@ export class OmniNodeScrublist extends jspb.Message {
 
 export namespace OmniNodeScrublist {
   export type AsObject = {
-    action: ScrublistActionMap[keyof ScrublistActionMap],
+    action: OmniNodeScrublistActionMap[keyof OmniNodeScrublistActionMap],
   }
 }
 
@@ -156,10 +156,10 @@ export namespace OmniNodeEndConversation {
   }
 }
 
-export interface ScrublistActionMap {
+export interface OmniNodeScrublistActionMap {
   ADD: 0;
   REMOVE: 1;
 }
 
-export const ScrublistAction: ScrublistActionMap;
+export const OmniNodeScrublistAction: OmniNodeScrublistActionMap;
 
