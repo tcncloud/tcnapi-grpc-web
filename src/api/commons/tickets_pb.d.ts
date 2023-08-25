@@ -134,9 +134,12 @@ export class TicketAction extends jspb.Message {
   setStatus(value: number): void;
 
   clearActionSkillsList(): void;
-  getActionSkillsList(): Array<Skills>;
-  setActionSkillsList(value: Array<Skills>): void;
-  addActionSkills(value?: Skills, index?: number): Skills;
+  getActionSkillsList(): Array<string>;
+  setActionSkillsList(value: Array<string>): void;
+  addActionSkills(value: string, index?: number): string;
+
+  getActionSlaId(): number;
+  setActionSlaId(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketAction.AsObject;
@@ -158,7 +161,8 @@ export namespace TicketAction {
     expiryDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     assignee: string,
     status: number,
-    actionSkillsList: Array<Skills.AsObject>,
+    actionSkillsList: Array<string>,
+    actionSlaId: number,
   }
 }
 

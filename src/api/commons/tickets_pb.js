@@ -1203,8 +1203,8 @@ proto.api.commons.TicketAction.toObject = function(includeInstance, msg) {
     expiryDate: (f = msg.getExpiryDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     assignee: jspb.Message.getFieldWithDefault(msg, 7, ""),
     status: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    actionSkillsList: jspb.Message.toObjectList(msg.getActionSkillsList(),
-    proto.api.commons.Skills.toObject, includeInstance)
+    actionSkillsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
+    actionSlaId: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -1276,9 +1276,12 @@ proto.api.commons.TicketAction.deserializeBinaryFromReader = function(msg, reade
       msg.setStatus(value);
       break;
     case 9:
-      var value = new proto.api.commons.Skills;
-      reader.readMessage(value,proto.api.commons.Skills.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.addActionSkills(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setActionSlaId(value);
       break;
     default:
       reader.skipField();
@@ -1369,10 +1372,16 @@ proto.api.commons.TicketAction.serializeBinaryToWriter = function(message, write
   }
   f = message.getActionSkillsList();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(
+    writer.writeRepeatedString(
       9,
-      f,
-      proto.api.commons.Skills.serializeBinaryToWriter
+      f
+    );
+  }
+  f = message.getActionSlaId();
+  if (f !== 0) {
+    writer.writeInt64(
+      10,
+      f
     );
   }
 };
@@ -1561,31 +1570,30 @@ proto.api.commons.TicketAction.prototype.setStatus = function(value) {
 
 
 /**
- * repeated Skills action_skills = 9;
- * @return {!Array<!proto.api.commons.Skills>}
+ * repeated string action_skills = 9;
+ * @return {!Array<string>}
  */
 proto.api.commons.TicketAction.prototype.getActionSkillsList = function() {
-  return /** @type{!Array<!proto.api.commons.Skills>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.Skills, 9));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.Skills>} value
+ * @param {!Array<string>} value
  * @return {!proto.api.commons.TicketAction} returns this
-*/
+ */
 proto.api.commons.TicketAction.prototype.setActionSkillsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+  return jspb.Message.setField(this, 9, value || []);
 };
 
 
 /**
- * @param {!proto.api.commons.Skills=} opt_value
+ * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.api.commons.Skills}
+ * @return {!proto.api.commons.TicketAction} returns this
  */
-proto.api.commons.TicketAction.prototype.addActionSkills = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.commons.Skills, opt_index);
+proto.api.commons.TicketAction.prototype.addActionSkills = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
 };
 
 
@@ -1595,6 +1603,24 @@ proto.api.commons.TicketAction.prototype.addActionSkills = function(opt_value, o
  */
 proto.api.commons.TicketAction.prototype.clearActionSkillsList = function() {
   return this.setActionSkillsList([]);
+};
+
+
+/**
+ * optional int64 action_sla_id = 10;
+ * @return {number}
+ */
+proto.api.commons.TicketAction.prototype.getActionSlaId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.TicketAction} returns this
+ */
+proto.api.commons.TicketAction.prototype.setActionSlaId = function(value) {
+  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 

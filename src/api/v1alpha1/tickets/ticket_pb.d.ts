@@ -1082,3 +1082,47 @@ export namespace AssignTicketActionResponse {
   }
 }
 
+export class ChangeTicketStatusRequest extends jspb.Message {
+  getTicketId(): string;
+  setTicketId(value: string): void;
+
+  getStatusId(): string;
+  setStatusId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ChangeTicketStatusRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ChangeTicketStatusRequest): ChangeTicketStatusRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ChangeTicketStatusRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ChangeTicketStatusRequest;
+  static deserializeBinaryFromReader(message: ChangeTicketStatusRequest, reader: jspb.BinaryReader): ChangeTicketStatusRequest;
+}
+
+export namespace ChangeTicketStatusRequest {
+  export type AsObject = {
+    ticketId: string,
+    statusId: string,
+  }
+}
+
+export class ChangeTicketStatusResponse extends jspb.Message {
+  getIsStatusEdited(): boolean;
+  setIsStatusEdited(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ChangeTicketStatusResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ChangeTicketStatusResponse): ChangeTicketStatusResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ChangeTicketStatusResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ChangeTicketStatusResponse;
+  static deserializeBinaryFromReader(message: ChangeTicketStatusResponse, reader: jspb.BinaryReader): ChangeTicketStatusResponse;
+}
+
+export namespace ChangeTicketStatusResponse {
+  export type AsObject = {
+    isStatusEdited: boolean,
+  }
+}
+
