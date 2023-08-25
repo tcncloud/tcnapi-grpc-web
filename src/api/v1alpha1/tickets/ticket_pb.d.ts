@@ -77,6 +77,11 @@ export class CreateTicketReq extends jspb.Message {
   getAssignOther(): string;
   setAssignOther(value: string): void;
 
+  clearTicketActionList(): void;
+  getTicketActionList(): Array<api_commons_tickets_pb.TicketAction>;
+  setTicketActionList(value: Array<api_commons_tickets_pb.TicketAction>): void;
+  addTicketAction(value?: api_commons_tickets_pb.TicketAction, index?: number): api_commons_tickets_pb.TicketAction;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTicketReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateTicketReq): CreateTicketReq.AsObject;
@@ -99,6 +104,7 @@ export namespace CreateTicketReq {
     ticketSlaList: Array<api_commons_tickets_pb.Sla.AsObject>,
     assignSelf: boolean,
     assignOther: string,
+    ticketActionList: Array<api_commons_tickets_pb.TicketAction.AsObject>,
   }
 }
 
@@ -941,6 +947,138 @@ export namespace User {
     userId: string,
     firstName: string,
     lastName: string,
+  }
+}
+
+export class CreateTicketActionRequest extends jspb.Message {
+  hasTicketAction(): boolean;
+  clearTicketAction(): void;
+  getTicketAction(): api_commons_tickets_pb.TicketAction | undefined;
+  setTicketAction(value?: api_commons_tickets_pb.TicketAction): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTicketActionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTicketActionRequest): CreateTicketActionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTicketActionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTicketActionRequest;
+  static deserializeBinaryFromReader(message: CreateTicketActionRequest, reader: jspb.BinaryReader): CreateTicketActionRequest;
+}
+
+export namespace CreateTicketActionRequest {
+  export type AsObject = {
+    ticketAction?: api_commons_tickets_pb.TicketAction.AsObject,
+  }
+}
+
+export class CreateTicketActionResponse extends jspb.Message {
+  hasTicketAction(): boolean;
+  clearTicketAction(): void;
+  getTicketAction(): api_commons_tickets_pb.TicketAction | undefined;
+  setTicketAction(value?: api_commons_tickets_pb.TicketAction): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTicketActionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTicketActionResponse): CreateTicketActionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTicketActionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTicketActionResponse;
+  static deserializeBinaryFromReader(message: CreateTicketActionResponse, reader: jspb.BinaryReader): CreateTicketActionResponse;
+}
+
+export namespace CreateTicketActionResponse {
+  export type AsObject = {
+    ticketAction?: api_commons_tickets_pb.TicketAction.AsObject,
+  }
+}
+
+export class CloseTicketActionRequest extends jspb.Message {
+  getTicketActionId(): string;
+  setTicketActionId(value: string): void;
+
+  getTicketId(): string;
+  setTicketId(value: string): void;
+
+  getComment(): string;
+  setComment(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CloseTicketActionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CloseTicketActionRequest): CloseTicketActionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CloseTicketActionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CloseTicketActionRequest;
+  static deserializeBinaryFromReader(message: CloseTicketActionRequest, reader: jspb.BinaryReader): CloseTicketActionRequest;
+}
+
+export namespace CloseTicketActionRequest {
+  export type AsObject = {
+    ticketActionId: string,
+    ticketId: string,
+    comment: string,
+  }
+}
+
+export class CloseTicketActionResponse extends jspb.Message {
+  getIsClosed(): boolean;
+  setIsClosed(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CloseTicketActionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CloseTicketActionResponse): CloseTicketActionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CloseTicketActionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CloseTicketActionResponse;
+  static deserializeBinaryFromReader(message: CloseTicketActionResponse, reader: jspb.BinaryReader): CloseTicketActionResponse;
+}
+
+export namespace CloseTicketActionResponse {
+  export type AsObject = {
+    isClosed: boolean,
+  }
+}
+
+export class AssignTicketActionRequest extends jspb.Message {
+  getTicketActionId(): string;
+  setTicketActionId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignTicketActionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignTicketActionRequest): AssignTicketActionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignTicketActionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignTicketActionRequest;
+  static deserializeBinaryFromReader(message: AssignTicketActionRequest, reader: jspb.BinaryReader): AssignTicketActionRequest;
+}
+
+export namespace AssignTicketActionRequest {
+  export type AsObject = {
+    ticketActionId: string,
+  }
+}
+
+export class AssignTicketActionResponse extends jspb.Message {
+  getIsAssigned(): boolean;
+  setIsAssigned(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignTicketActionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignTicketActionResponse): AssignTicketActionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignTicketActionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignTicketActionResponse;
+  static deserializeBinaryFromReader(message: AssignTicketActionResponse, reader: jspb.BinaryReader): AssignTicketActionResponse;
+}
+
+export namespace AssignTicketActionResponse {
+  export type AsObject = {
+    isAssigned: boolean,
   }
 }
 

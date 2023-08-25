@@ -195,6 +195,33 @@ type TicketsListUsers = {
   readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.ListUsersResponse;
 };
 
+type TicketsCloseTicketAction = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.CloseTicketActionRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.CloseTicketActionResponse;
+};
+
+type TicketsAssignTicketAction = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.AssignTicketActionRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.AssignTicketActionResponse;
+};
+
+type TicketsCreateTicketAction = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.CreateTicketActionRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.CreateTicketActionResponse;
+};
+
 export class Tickets {
   static readonly serviceName: string;
   static readonly CreateTicket: TicketsCreateTicket;
@@ -218,6 +245,9 @@ export class Tickets {
   static readonly ListAvailableAgentTickets: TicketsListAvailableAgentTickets;
   static readonly ListSkills: TicketsListSkills;
   static readonly ListUsers: TicketsListUsers;
+  static readonly CloseTicketAction: TicketsCloseTicketAction;
+  static readonly AssignTicketAction: TicketsAssignTicketAction;
+  static readonly CreateTicketAction: TicketsCreateTicketAction;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -440,6 +470,33 @@ export class TicketsClient {
   listUsers(
     requestMessage: api_v1alpha1_tickets_ticket_pb.ListUsersRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListUsersResponse|null) => void
+  ): UnaryResponse;
+  closeTicketAction(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.CloseTicketActionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.CloseTicketActionResponse|null) => void
+  ): UnaryResponse;
+  closeTicketAction(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.CloseTicketActionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.CloseTicketActionResponse|null) => void
+  ): UnaryResponse;
+  assignTicketAction(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.AssignTicketActionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.AssignTicketActionResponse|null) => void
+  ): UnaryResponse;
+  assignTicketAction(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.AssignTicketActionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.AssignTicketActionResponse|null) => void
+  ): UnaryResponse;
+  createTicketAction(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.CreateTicketActionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.CreateTicketActionResponse|null) => void
+  ): UnaryResponse;
+  createTicketAction(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.CreateTicketActionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.CreateTicketActionResponse|null) => void
   ): UnaryResponse;
 }
 

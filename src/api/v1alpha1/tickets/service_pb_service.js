@@ -201,6 +201,33 @@ Tickets.ListUsers = {
   responseType: api_v1alpha1_tickets_ticket_pb.ListUsersResponse
 };
 
+Tickets.CloseTicketAction = {
+  methodName: "CloseTicketAction",
+  service: Tickets,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_tickets_ticket_pb.CloseTicketActionRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.CloseTicketActionResponse
+};
+
+Tickets.AssignTicketAction = {
+  methodName: "AssignTicketAction",
+  service: Tickets,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_tickets_ticket_pb.AssignTicketActionRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.AssignTicketActionResponse
+};
+
+Tickets.CreateTicketAction = {
+  methodName: "CreateTicketAction",
+  service: Tickets,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_tickets_ticket_pb.CreateTicketActionRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.CreateTicketActionResponse
+};
+
 exports.Tickets = Tickets;
 
 function TicketsClient(serviceHost, options) {
@@ -833,6 +860,99 @@ TicketsClient.prototype.listUsers = function listUsers(requestMessage, metadata,
     callback = arguments[1];
   }
   var client = grpc.unary(Tickets.ListUsers, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TicketsClient.prototype.closeTicketAction = function closeTicketAction(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Tickets.CloseTicketAction, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TicketsClient.prototype.assignTicketAction = function assignTicketAction(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Tickets.AssignTicketAction, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TicketsClient.prototype.createTicketAction = function createTicketAction(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Tickets.CreateTicketAction, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

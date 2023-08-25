@@ -66,6 +66,11 @@ export class Ticket extends jspb.Message {
   getAssignee(): string;
   setAssignee(value: string): void;
 
+  clearTicketActionList(): void;
+  getTicketActionList(): Array<TicketAction>;
+  setTicketActionList(value: Array<TicketAction>): void;
+  addTicketAction(value?: TicketAction, index?: number): TicketAction;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ticket.AsObject;
   static toObject(includeInstance: boolean, msg: Ticket): Ticket.AsObject;
@@ -95,6 +100,65 @@ export namespace Ticket {
     status: number,
     ticketSlaList: Array<Sla.AsObject>,
     assignee: string,
+    ticketActionList: Array<TicketAction.AsObject>,
+  }
+}
+
+export class TicketAction extends jspb.Message {
+  getTicketActionId(): string;
+  setTicketActionId(value: string): void;
+
+  getActionId(): string;
+  setActionId(value: string): void;
+
+  getTicketContext(): string;
+  setTicketContext(value: string): void;
+
+  getTicketId(): string;
+  setTicketId(value: string): void;
+
+  hasStartDate(): boolean;
+  clearStartDate(): void;
+  getStartDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasExpiryDate(): boolean;
+  clearExpiryDate(): void;
+  getExpiryDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiryDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getAssignee(): string;
+  setAssignee(value: string): void;
+
+  getStatus(): number;
+  setStatus(value: number): void;
+
+  clearActionSkillsList(): void;
+  getActionSkillsList(): Array<Skills>;
+  setActionSkillsList(value: Array<Skills>): void;
+  addActionSkills(value?: Skills, index?: number): Skills;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketAction.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketAction): TicketAction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketAction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketAction;
+  static deserializeBinaryFromReader(message: TicketAction, reader: jspb.BinaryReader): TicketAction;
+}
+
+export namespace TicketAction {
+  export type AsObject = {
+    ticketActionId: string,
+    actionId: string,
+    ticketContext: string,
+    ticketId: string,
+    startDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    expiryDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    assignee: string,
+    status: number,
+    actionSkillsList: Array<Skills.AsObject>,
   }
 }
 
