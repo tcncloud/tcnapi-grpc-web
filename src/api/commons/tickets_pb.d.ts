@@ -111,8 +111,10 @@ export class TicketAction extends jspb.Message {
   getActionId(): string;
   setActionId(value: string): void;
 
-  getTicketContext(): string;
-  setTicketContext(value: string): void;
+  hasCallbackContext(): boolean;
+  clearCallbackContext(): void;
+  getCallbackContext(): CallbackContext | undefined;
+  setCallbackContext(value?: CallbackContext): void;
 
   getTicketId(): string;
   setTicketId(value: string): void;
@@ -138,8 +140,10 @@ export class TicketAction extends jspb.Message {
   setActionSkillsList(value: Array<string>): void;
   addActionSkills(value: string, index?: number): string;
 
-  getActionSlaId(): number;
-  setActionSlaId(value: number): void;
+  clearActionSlaIdList(): void;
+  getActionSlaIdList(): Array<Sla>;
+  setActionSlaIdList(value: Array<Sla>): void;
+  addActionSlaId(value?: Sla, index?: number): Sla;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketAction.AsObject;
@@ -155,14 +159,46 @@ export namespace TicketAction {
   export type AsObject = {
     ticketActionId: string,
     actionId: string,
-    ticketContext: string,
+    callbackContext?: CallbackContext.AsObject,
     ticketId: string,
     startDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     expiryDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     assignee: string,
     status: number,
     actionSkillsList: Array<string>,
-    actionSlaId: number,
+    actionSlaIdList: Array<Sla.AsObject>,
+  }
+}
+
+export class CallbackContext extends jspb.Message {
+  getCallerId(): string;
+  setCallerId(value: string): void;
+
+  getPhoneNo(): string;
+  setPhoneNo(value: string): void;
+
+  getCountryCode(): string;
+  setCountryCode(value: string): void;
+
+  getCallerName(): string;
+  setCallerName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CallbackContext.AsObject;
+  static toObject(includeInstance: boolean, msg: CallbackContext): CallbackContext.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CallbackContext, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CallbackContext;
+  static deserializeBinaryFromReader(message: CallbackContext, reader: jspb.BinaryReader): CallbackContext;
+}
+
+export namespace CallbackContext {
+  export type AsObject = {
+    callerId: string,
+    phoneNo: string,
+    countryCode: string,
+    callerName: string,
   }
 }
 
