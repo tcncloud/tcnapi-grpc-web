@@ -27630,7 +27630,8 @@ proto.api.v0alpha.ManualApprovalSettings.toObject = function(includeInstance, ms
     allowed: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
     confirm: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
     smsAllowed: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    smsNumberConfirmation: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+    smsNumberConfirmation: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    disableRejectOptionForApprovers: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -27682,6 +27683,10 @@ proto.api.v0alpha.ManualApprovalSettings.deserializeBinaryFromReader = function(
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSmsNumberConfirmation(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDisableRejectOptionForApprovers(value);
       break;
     default:
       reader.skipField();
@@ -27737,6 +27742,13 @@ proto.api.v0alpha.ManualApprovalSettings.serializeBinaryToWriter = function(mess
   if (f) {
     writer.writeBool(
       4,
+      f
+    );
+  }
+  f = message.getDisableRejectOptionForApprovers();
+  if (f) {
+    writer.writeBool(
+      5,
       f
     );
   }
@@ -27812,6 +27824,24 @@ proto.api.v0alpha.ManualApprovalSettings.prototype.getSmsNumberConfirmation = fu
  */
 proto.api.v0alpha.ManualApprovalSettings.prototype.setSmsNumberConfirmation = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
+/**
+ * optional bool disable_reject_option_for_approvers = 5;
+ * @return {boolean}
+ */
+proto.api.v0alpha.ManualApprovalSettings.prototype.getDisableRejectOptionForApprovers = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.ManualApprovalSettings} returns this
+ */
+proto.api.v0alpha.ManualApprovalSettings.prototype.setDisableRejectOptionForApprovers = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 

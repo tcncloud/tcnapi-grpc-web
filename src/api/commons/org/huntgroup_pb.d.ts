@@ -199,6 +199,9 @@ export class GeneralSettings extends jspb.Message {
   getRequireManualApprovalNumberSms(): boolean;
   setRequireManualApprovalNumberSms(value: boolean): void;
 
+  getDisableRejectOptionForApprovers(): boolean;
+  setDisableRejectOptionForApprovers(value: boolean): void;
+
   hasAlphanumericKeypad(): boolean;
   clearAlphanumericKeypad(): void;
   getAlphanumericKeypad(): GeneralSettings.AlphanumericKeypad | undefined;
@@ -266,6 +269,7 @@ export namespace GeneralSettings {
     requireManualApprovalNumber: boolean,
     enableManualApprovalOfSms: boolean,
     requireManualApprovalNumberSms: boolean,
+    disableRejectOptionForApprovers: boolean,
     alphanumericKeypad?: GeneralSettings.AlphanumericKeypad.AsObject,
     enableCallDesktopNotifications: boolean,
     inboundComplianceMetadata?: GeneralSettings.InboundComplianceMetadata.AsObject,

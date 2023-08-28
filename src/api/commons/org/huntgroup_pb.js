@@ -1528,6 +1528,7 @@ proto.api.commons.org.GeneralSettings.toObject = function(includeInstance, msg) 
     requireManualApprovalNumber: jspb.Message.getBooleanFieldWithDefault(msg, 701, false),
     enableManualApprovalOfSms: jspb.Message.getBooleanFieldWithDefault(msg, 702, false),
     requireManualApprovalNumberSms: jspb.Message.getBooleanFieldWithDefault(msg, 703, false),
+    disableRejectOptionForApprovers: jspb.Message.getBooleanFieldWithDefault(msg, 704, false),
     alphanumericKeypad: (f = msg.getAlphanumericKeypad()) && proto.api.commons.org.GeneralSettings.AlphanumericKeypad.toObject(includeInstance, f),
     enableCallDesktopNotifications: jspb.Message.getBooleanFieldWithDefault(msg, 801, false),
     inboundComplianceMetadata: (f = msg.getInboundComplianceMetadata()) && proto.api.commons.org.GeneralSettings.InboundComplianceMetadata.toObject(includeInstance, f),
@@ -1731,6 +1732,10 @@ proto.api.commons.org.GeneralSettings.deserializeBinaryFromReader = function(msg
     case 703:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRequireManualApprovalNumberSms(value);
+      break;
+    case 704:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDisableRejectOptionForApprovers(value);
       break;
     case 800:
       var value = new proto.api.commons.org.GeneralSettings.AlphanumericKeypad;
@@ -2057,6 +2062,13 @@ proto.api.commons.org.GeneralSettings.serializeBinaryToWriter = function(message
   if (f) {
     writer.writeBool(
       703,
+      f
+    );
+  }
+  f = message.getDisableRejectOptionForApprovers();
+  if (f) {
+    writer.writeBool(
+      704,
       f
     );
   }
@@ -4836,6 +4848,24 @@ proto.api.commons.org.GeneralSettings.prototype.getRequireManualApprovalNumberSm
  */
 proto.api.commons.org.GeneralSettings.prototype.setRequireManualApprovalNumberSms = function(value) {
   return jspb.Message.setProto3BooleanField(this, 703, value);
+};
+
+
+/**
+ * optional bool disable_reject_option_for_approvers = 704;
+ * @return {boolean}
+ */
+proto.api.commons.org.GeneralSettings.prototype.getDisableRejectOptionForApprovers = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 704, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.org.GeneralSettings} returns this
+ */
+proto.api.commons.org.GeneralSettings.prototype.setDisableRejectOptionForApprovers = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 704, value);
 };
 
 
