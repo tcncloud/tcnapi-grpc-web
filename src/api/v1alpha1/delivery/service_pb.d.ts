@@ -937,6 +937,9 @@ export class Room303Destination extends jspb.Message {
   getUsername(): string;
   setUsername(value: string): void;
 
+  getUserId(): string;
+  setUserId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Room303Destination.AsObject;
   static toObject(includeInstance: boolean, msg: Room303Destination): Room303Destination.AsObject;
@@ -951,6 +954,7 @@ export namespace Room303Destination {
   export type AsObject = {
     room: string,
     username: string,
+    userId: string,
   }
 }
 

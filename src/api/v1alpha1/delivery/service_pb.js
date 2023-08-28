@@ -7830,7 +7830,8 @@ proto.api.v1alpha1.delivery.Room303Destination.prototype.toObject = function(opt
 proto.api.v1alpha1.delivery.Room303Destination.toObject = function(includeInstance, msg) {
   var f, obj = {
     room: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    username: jspb.Message.getFieldWithDefault(msg, 2, "")
+    username: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -7875,6 +7876,10 @@ proto.api.v1alpha1.delivery.Room303Destination.deserializeBinaryFromReader = fun
       var value = /** @type {string} */ (reader.readString());
       msg.setUsername(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -7918,6 +7923,13 @@ proto.api.v1alpha1.delivery.Room303Destination.serializeBinaryToWriter = functio
       f
     );
   }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -7954,6 +7966,24 @@ proto.api.v1alpha1.delivery.Room303Destination.prototype.getUsername = function(
  */
 proto.api.v1alpha1.delivery.Room303Destination.prototype.setUsername = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string user_id = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.Room303Destination.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.Room303Destination} returns this
+ */
+proto.api.v1alpha1.delivery.Room303Destination.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
