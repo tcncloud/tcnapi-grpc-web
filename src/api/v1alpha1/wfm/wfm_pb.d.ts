@@ -3320,6 +3320,44 @@ export namespace UpdateNonSkillActivityRes {
   }
 }
 
+export class ListNonSkillActivitiesReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListNonSkillActivitiesReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListNonSkillActivitiesReq): ListNonSkillActivitiesReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListNonSkillActivitiesReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListNonSkillActivitiesReq;
+  static deserializeBinaryFromReader(message: ListNonSkillActivitiesReq, reader: jspb.BinaryReader): ListNonSkillActivitiesReq;
+}
+
+export namespace ListNonSkillActivitiesReq {
+  export type AsObject = {
+  }
+}
+
+export class ListNonSkillActivitiesRes extends jspb.Message {
+  clearNonSkillActivitiesList(): void;
+  getNonSkillActivitiesList(): Array<NonSkillActivity>;
+  setNonSkillActivitiesList(value: Array<NonSkillActivity>): void;
+  addNonSkillActivities(value?: NonSkillActivity, index?: number): NonSkillActivity;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListNonSkillActivitiesRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListNonSkillActivitiesRes): ListNonSkillActivitiesRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListNonSkillActivitiesRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListNonSkillActivitiesRes;
+  static deserializeBinaryFromReader(message: ListNonSkillActivitiesRes, reader: jspb.BinaryReader): ListNonSkillActivitiesRes;
+}
+
+export namespace ListNonSkillActivitiesRes {
+  export type AsObject = {
+    nonSkillActivitiesList: Array<NonSkillActivity.AsObject>,
+  }
+}
+
 export class ListNonSkillActivityAssociationsReq extends jspb.Message {
   hasAssociatedEntity(): boolean;
   clearAssociatedEntity(): void;
@@ -7361,6 +7399,66 @@ export class DeleteDraftScheduleRes extends jspb.Message {
 
 export namespace DeleteDraftScheduleRes {
   export type AsObject = {
+  }
+}
+
+export class ListShiftInstancesBySidReq extends jspb.Message {
+  clearShiftInstanceSidsList(): void;
+  getShiftInstanceSidsList(): Array<number>;
+  setShiftInstanceSidsList(value: Array<number>): void;
+  addShiftInstanceSids(value: number, index?: number): number;
+
+  getIncludeShiftSegments(): boolean;
+  setIncludeShiftSegments(value: boolean): void;
+
+  getIncludeShiftTemplate(): boolean;
+  setIncludeShiftTemplate(value: boolean): void;
+
+  getIncludeSchedulingActivity(): boolean;
+  setIncludeSchedulingActivity(value: boolean): void;
+
+  getIncludeActivity(): boolean;
+  setIncludeActivity(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListShiftInstancesBySidReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListShiftInstancesBySidReq): ListShiftInstancesBySidReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListShiftInstancesBySidReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListShiftInstancesBySidReq;
+  static deserializeBinaryFromReader(message: ListShiftInstancesBySidReq, reader: jspb.BinaryReader): ListShiftInstancesBySidReq;
+}
+
+export namespace ListShiftInstancesBySidReq {
+  export type AsObject = {
+    shiftInstanceSidsList: Array<number>,
+    includeShiftSegments: boolean,
+    includeShiftTemplate: boolean,
+    includeSchedulingActivity: boolean,
+    includeActivity: boolean,
+  }
+}
+
+export class ListShiftInstancesBySidRes extends jspb.Message {
+  clearShiftInstancesList(): void;
+  getShiftInstancesList(): Array<ShiftInstance>;
+  setShiftInstancesList(value: Array<ShiftInstance>): void;
+  addShiftInstances(value?: ShiftInstance, index?: number): ShiftInstance;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListShiftInstancesBySidRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListShiftInstancesBySidRes): ListShiftInstancesBySidRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListShiftInstancesBySidRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListShiftInstancesBySidRes;
+  static deserializeBinaryFromReader(message: ListShiftInstancesBySidRes, reader: jspb.BinaryReader): ListShiftInstancesBySidRes;
+}
+
+export namespace ListShiftInstancesBySidRes {
+  export type AsObject = {
+    shiftInstancesList: Array<ShiftInstance.AsObject>,
   }
 }
 
