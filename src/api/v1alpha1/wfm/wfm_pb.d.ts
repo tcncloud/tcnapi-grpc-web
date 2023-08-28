@@ -7366,6 +7366,74 @@ export namespace ListDraftSchedulesRes {
   }
 }
 
+export class ClearScheduleReq extends jspb.Message {
+  hasScheduleSelector(): boolean;
+  clearScheduleSelector(): void;
+  getScheduleSelector(): api_commons_wfm_pb.ScheduleSelector | undefined;
+  setScheduleSelector(value?: api_commons_wfm_pb.ScheduleSelector): void;
+
+  hasNodeSelector(): boolean;
+  clearNodeSelector(): void;
+  getNodeSelector(): ParentEntity | undefined;
+  setNodeSelector(value?: ParentEntity): void;
+
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  getInvertDatetimeRange(): boolean;
+  setInvertDatetimeRange(value: boolean): void;
+
+  getStartDatetimesOnly(): boolean;
+  setStartDatetimesOnly(value: boolean): void;
+
+  getDeleteLocked(): boolean;
+  setDeleteLocked(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ClearScheduleReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ClearScheduleReq): ClearScheduleReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ClearScheduleReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ClearScheduleReq;
+  static deserializeBinaryFromReader(message: ClearScheduleReq, reader: jspb.BinaryReader): ClearScheduleReq;
+}
+
+export namespace ClearScheduleReq {
+  export type AsObject = {
+    scheduleSelector?: api_commons_wfm_pb.ScheduleSelector.AsObject,
+    nodeSelector?: ParentEntity.AsObject,
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    invertDatetimeRange: boolean,
+    startDatetimesOnly: boolean,
+    deleteLocked: boolean,
+  }
+}
+
+export class ClearScheduleRes extends jspb.Message {
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ClearScheduleRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ClearScheduleRes): ClearScheduleRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ClearScheduleRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ClearScheduleRes;
+  static deserializeBinaryFromReader(message: ClearScheduleRes, reader: jspb.BinaryReader): ClearScheduleRes;
+}
+
+export namespace ClearScheduleRes {
+  export type AsObject = {
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
 export class DeleteDraftScheduleReq extends jspb.Message {
   getDraftScheduleSid(): number;
   setDraftScheduleSid(value: number): void;
