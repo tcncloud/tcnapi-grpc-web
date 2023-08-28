@@ -66,6 +66,14 @@ export class Ticket extends jspb.Message {
   getAssignee(): string;
   setAssignee(value: string): void;
 
+  clearTicketActionList(): void;
+  getTicketActionList(): Array<TicketAction>;
+  setTicketActionList(value: Array<TicketAction>): void;
+  addTicketAction(value?: TicketAction, index?: number): TicketAction;
+
+  getTicketStatus(): TicketStatusMap[keyof TicketStatusMap];
+  setTicketStatus(value: TicketStatusMap[keyof TicketStatusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ticket.AsObject;
   static toObject(includeInstance: boolean, msg: Ticket): Ticket.AsObject;
@@ -95,6 +103,126 @@ export namespace Ticket {
     status: number,
     ticketSlaList: Array<Sla.AsObject>,
     assignee: string,
+    ticketActionList: Array<TicketAction.AsObject>,
+    ticketStatus: TicketStatusMap[keyof TicketStatusMap],
+  }
+}
+
+export class Duration extends jspb.Message {
+  getValue(): string;
+  setValue(value: string): void;
+
+  getScale(): TimeScaleMap[keyof TimeScaleMap];
+  setScale(value: TimeScaleMap[keyof TimeScaleMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Duration.AsObject;
+  static toObject(includeInstance: boolean, msg: Duration): Duration.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Duration, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Duration;
+  static deserializeBinaryFromReader(message: Duration, reader: jspb.BinaryReader): Duration;
+}
+
+export namespace Duration {
+  export type AsObject = {
+    value: string,
+    scale: TimeScaleMap[keyof TimeScaleMap],
+  }
+}
+
+export class TicketAction extends jspb.Message {
+  getTicketActionId(): string;
+  setTicketActionId(value: string): void;
+
+  getActionId(): string;
+  setActionId(value: string): void;
+
+  hasCallbackContext(): boolean;
+  clearCallbackContext(): void;
+  getCallbackContext(): CallbackContext | undefined;
+  setCallbackContext(value?: CallbackContext): void;
+
+  getTicketId(): string;
+  setTicketId(value: string): void;
+
+  hasStartTs(): boolean;
+  clearStartTs(): void;
+  getStartTs(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTs(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasExpiryTs(): boolean;
+  clearExpiryTs(): void;
+  getExpiryTs(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiryTs(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getState(): number;
+  setState(value: number): void;
+
+  clearActionSkillsList(): void;
+  getActionSkillsList(): Array<string>;
+  setActionSkillsList(value: Array<string>): void;
+  addActionSkills(value: string, index?: number): string;
+
+  clearActionSlaIdList(): void;
+  getActionSlaIdList(): Array<Sla>;
+  setActionSlaIdList(value: Array<Sla>): void;
+  addActionSlaId(value?: Sla, index?: number): Sla;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketAction.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketAction): TicketAction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketAction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketAction;
+  static deserializeBinaryFromReader(message: TicketAction, reader: jspb.BinaryReader): TicketAction;
+}
+
+export namespace TicketAction {
+  export type AsObject = {
+    ticketActionId: string,
+    actionId: string,
+    callbackContext?: CallbackContext.AsObject,
+    ticketId: string,
+    startTs?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    expiryTs?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    state: number,
+    actionSkillsList: Array<string>,
+    actionSlaIdList: Array<Sla.AsObject>,
+  }
+}
+
+export class CallbackContext extends jspb.Message {
+  getCallerId(): string;
+  setCallerId(value: string): void;
+
+  getPhoneNo(): string;
+  setPhoneNo(value: string): void;
+
+  getCountryCode(): string;
+  setCountryCode(value: string): void;
+
+  getCallerName(): string;
+  setCallerName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CallbackContext.AsObject;
+  static toObject(includeInstance: boolean, msg: CallbackContext): CallbackContext.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CallbackContext, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CallbackContext;
+  static deserializeBinaryFromReader(message: CallbackContext, reader: jspb.BinaryReader): CallbackContext;
+}
+
+export namespace CallbackContext {
+  export type AsObject = {
+    callerId: string,
+    phoneNo: string,
+    countryCode: string,
+    callerName: string,
   }
 }
 
@@ -156,6 +284,11 @@ export class Sla extends jspb.Message {
   getSlaMin(): string;
   setSlaMin(value: string): void;
 
+  hasSlaDuration(): boolean;
+  clearSlaDuration(): void;
+  getSlaDuration(): Duration | undefined;
+  setSlaDuration(value?: Duration): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Sla.AsObject;
   static toObject(includeInstance: boolean, msg: Sla): Sla.AsObject;
@@ -171,6 +304,7 @@ export namespace Sla {
     conditionSid: string,
     slaSid: string,
     slaMin: string,
+    slaDuration?: Duration.AsObject,
   }
 }
 
@@ -328,6 +462,11 @@ export class TicketSla extends jspb.Message {
   getIsActive(): number;
   setIsActive(value: number): void;
 
+  hasTicketSlaDuration(): boolean;
+  clearTicketSlaDuration(): void;
+  getTicketSlaDuration(): Duration | undefined;
+  setTicketSlaDuration(value?: Duration): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketSla.AsObject;
   static toObject(includeInstance: boolean, msg: TicketSla): TicketSla.AsObject;
@@ -345,6 +484,7 @@ export namespace TicketSla {
     description: string,
     interval: number,
     isActive: number,
+    ticketSlaDuration?: Duration.AsObject,
   }
 }
 
@@ -533,4 +673,23 @@ export namespace EditAttribute {
     isEdited: boolean,
   }
 }
+
+export interface TimeScaleMap {
+  TIME_SCALE_MINUTE: 0;
+  TIME_SCALE_HOUR: 1;
+  TIME_SCALE_DAY: 2;
+  TIME_SCALE_WEEK: 3;
+  TIME_SCALE_MONTH: 4;
+  TIME_SCALE_YEAR: 5;
+}
+
+export const TimeScale: TimeScaleMap;
+
+export interface TicketStatusMap {
+  TICKET_STATUS_NEW: 0;
+  TICKET_STATUS_OPEN: 1;
+  TICKET_STATUS_CLOSE: 2;
+}
+
+export const TicketStatus: TicketStatusMap;
 
