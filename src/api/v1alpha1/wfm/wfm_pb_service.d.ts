@@ -463,6 +463,15 @@ type WFMUpdateNonSkillActivity = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateNonSkillActivityRes;
 };
 
+type WFMListNonSkillActivities = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListNonSkillActivitiesReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListNonSkillActivitiesRes;
+};
+
 type WFMListNonSkillActivityAssociations = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1101,6 +1110,7 @@ export class WFM {
   static readonly DeleteConstraintRule: WFMDeleteConstraintRule;
   static readonly CreateNonSkillActivity: WFMCreateNonSkillActivity;
   static readonly UpdateNonSkillActivity: WFMUpdateNonSkillActivity;
+  static readonly ListNonSkillActivities: WFMListNonSkillActivities;
   static readonly ListNonSkillActivityAssociations: WFMListNonSkillActivityAssociations;
   static readonly ListCandidateSchedulingActivities: WFMListCandidateSchedulingActivities;
   static readonly CreateAgentGroup: WFMCreateAgentGroup;
@@ -1618,6 +1628,15 @@ export class WFMClient {
   updateNonSkillActivity(
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateNonSkillActivityReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateNonSkillActivityRes|null) => void
+  ): UnaryResponse;
+  listNonSkillActivities(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListNonSkillActivitiesReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListNonSkillActivitiesRes|null) => void
+  ): UnaryResponse;
+  listNonSkillActivities(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListNonSkillActivitiesReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListNonSkillActivitiesRes|null) => void
   ): UnaryResponse;
   listNonSkillActivityAssociations(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListNonSkillActivityAssociationsReq,

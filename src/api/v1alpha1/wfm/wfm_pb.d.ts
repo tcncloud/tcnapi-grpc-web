@@ -3320,6 +3320,44 @@ export namespace UpdateNonSkillActivityRes {
   }
 }
 
+export class ListNonSkillActivitiesReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListNonSkillActivitiesReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListNonSkillActivitiesReq): ListNonSkillActivitiesReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListNonSkillActivitiesReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListNonSkillActivitiesReq;
+  static deserializeBinaryFromReader(message: ListNonSkillActivitiesReq, reader: jspb.BinaryReader): ListNonSkillActivitiesReq;
+}
+
+export namespace ListNonSkillActivitiesReq {
+  export type AsObject = {
+  }
+}
+
+export class ListNonSkillActivitiesRes extends jspb.Message {
+  clearNonSkillActivitiesList(): void;
+  getNonSkillActivitiesList(): Array<NonSkillActivity>;
+  setNonSkillActivitiesList(value: Array<NonSkillActivity>): void;
+  addNonSkillActivities(value?: NonSkillActivity, index?: number): NonSkillActivity;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListNonSkillActivitiesRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListNonSkillActivitiesRes): ListNonSkillActivitiesRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListNonSkillActivitiesRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListNonSkillActivitiesRes;
+  static deserializeBinaryFromReader(message: ListNonSkillActivitiesRes, reader: jspb.BinaryReader): ListNonSkillActivitiesRes;
+}
+
+export namespace ListNonSkillActivitiesRes {
+  export type AsObject = {
+    nonSkillActivitiesList: Array<NonSkillActivity.AsObject>,
+  }
+}
+
 export class ListNonSkillActivityAssociationsReq extends jspb.Message {
   hasAssociatedEntity(): boolean;
   clearAssociatedEntity(): void;
