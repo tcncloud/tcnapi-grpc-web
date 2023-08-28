@@ -3015,8 +3015,7 @@ proto.api.commons.OmniCampaignModuleConfig.toObject = function(includeInstance, 
     attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
     proto.api.commons.OmniAttachment.toObject, includeInstance),
     complianceRuleSetId: (f = msg.getComplianceRuleSetId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    paymentPortalIdsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
-    flowId: (f = msg.getFlowId()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f)
+    paymentPortalIdsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3141,11 +3140,6 @@ proto.api.commons.OmniCampaignModuleConfig.deserializeBinaryFromReader = functio
     case 19:
       var value = /** @type {string} */ (reader.readString());
       msg.addPaymentPortalIds(value);
-      break;
-    case 20:
-      var value = new api_commons_types_pb.Int64Id;
-      reader.readMessage(value,api_commons_types_pb.Int64Id.deserializeBinaryFromReader);
-      msg.setFlowId(value);
       break;
     default:
       reader.skipField();
@@ -3317,14 +3311,6 @@ proto.api.commons.OmniCampaignModuleConfig.serializeBinaryToWriter = function(me
     writer.writeRepeatedString(
       19,
       f
-    );
-  }
-  f = message.getFlowId();
-  if (f != null) {
-    writer.writeMessage(
-      20,
-      f,
-      api_commons_types_pb.Int64Id.serializeBinaryToWriter
     );
   }
 };
@@ -3995,43 +3981,6 @@ proto.api.commons.OmniCampaignModuleConfig.prototype.addPaymentPortalIds = funct
  */
 proto.api.commons.OmniCampaignModuleConfig.prototype.clearPaymentPortalIdsList = function() {
   return this.setPaymentPortalIdsList([]);
-};
-
-
-/**
- * optional Int64Id flow_id = 20;
- * @return {?proto.api.commons.Int64Id}
- */
-proto.api.commons.OmniCampaignModuleConfig.prototype.getFlowId = function() {
-  return /** @type{?proto.api.commons.Int64Id} */ (
-    jspb.Message.getWrapperField(this, api_commons_types_pb.Int64Id, 20));
-};
-
-
-/**
- * @param {?proto.api.commons.Int64Id|undefined} value
- * @return {!proto.api.commons.OmniCampaignModuleConfig} returns this
-*/
-proto.api.commons.OmniCampaignModuleConfig.prototype.setFlowId = function(value) {
-  return jspb.Message.setWrapperField(this, 20, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.OmniCampaignModuleConfig} returns this
- */
-proto.api.commons.OmniCampaignModuleConfig.prototype.clearFlowId = function() {
-  return this.setFlowId(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.OmniCampaignModuleConfig.prototype.hasFlowId = function() {
-  return jspb.Message.getField(this, 20) != null;
 };
 
 
