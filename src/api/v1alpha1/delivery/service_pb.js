@@ -14976,6 +14976,7 @@ proto.api.v1alpha1.delivery.Encryption.prototype.toObject = function(opt_include
  */
 proto.api.v1alpha1.delivery.Encryption.toObject = function(includeInstance, msg) {
   var f, obj = {
+    encryptionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -15019,6 +15020,10 @@ proto.api.v1alpha1.delivery.Encryption.deserializeBinaryFromReader = function(ms
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setEncryptionSid(value);
+      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setOrgId(value);
@@ -15080,6 +15085,13 @@ proto.api.v1alpha1.delivery.Encryption.prototype.serializeBinary = function() {
  */
 proto.api.v1alpha1.delivery.Encryption.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getEncryptionSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
   f = message.getOrgId();
   if (f.length > 0) {
     writer.writeString(
@@ -15133,6 +15145,24 @@ proto.api.v1alpha1.delivery.Encryption.serializeBinaryToWriter = function(messag
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * optional int64 encryption_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.getEncryptionSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.delivery.Encryption} returns this
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.setEncryptionSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 

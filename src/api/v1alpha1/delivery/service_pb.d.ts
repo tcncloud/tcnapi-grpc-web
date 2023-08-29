@@ -1927,6 +1927,9 @@ export namespace CreateDeliveryDefinitionRes {
 }
 
 export class Encryption extends jspb.Message {
+  getEncryptionSid(): number;
+  setEncryptionSid(value: number): void;
+
   getOrgId(): string;
   setOrgId(value: string): void;
 
@@ -1969,6 +1972,7 @@ export class Encryption extends jspb.Message {
 
 export namespace Encryption {
   export type AsObject = {
+    encryptionSid: number,
     orgId: string,
     name: string,
     description: string,
