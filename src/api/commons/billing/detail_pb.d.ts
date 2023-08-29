@@ -15,6 +15,29 @@ export class BillingPlan extends jspb.Message {
   setPlansList(value: Array<Plan>): void;
   addPlans(value?: Plan, index?: number): Plan;
 
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  hasDateCreated(): boolean;
+  clearDateCreated(): void;
+  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasDateModified(): boolean;
+  clearDateModified(): void;
+  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasStartTime(): boolean;
+  clearStartTime(): void;
+  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasEndTime(): boolean;
+  clearEndTime(): void;
+  getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BillingPlan.AsObject;
   static toObject(includeInstance: boolean, msg: BillingPlan): BillingPlan.AsObject;
@@ -29,6 +52,11 @@ export namespace BillingPlan {
   export type AsObject = {
     orgId: string,
     plansList: Array<Plan.AsObject>,
+    billingPlanId: string,
+    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -84,6 +112,9 @@ export class Detail extends jspb.Message {
   getDeletedOn(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setDeletedOn(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Detail.AsObject;
   static toObject(includeInstance: boolean, msg: Detail): Detail.AsObject;
@@ -103,6 +134,7 @@ export namespace Detail {
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     deletedOn?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    billingPlanId: string,
   }
 }
 

@@ -10,6 +10,22 @@ export class Invoice extends jspb.Message {
   setItemsList(value: Array<InvoiceItem>): void;
   addItems(value?: InvoiceItem, index?: number): InvoiceItem;
 
+  getInvoiceId(): string;
+  setInvoiceId(value: string): void;
+
+  getBillingCycle(): string;
+  setBillingCycle(value: string): void;
+
+  hasDateCreated(): boolean;
+  clearDateCreated(): void;
+  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasDateModified(): boolean;
+  clearDateModified(): void;
+  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Invoice.AsObject;
   static toObject(includeInstance: boolean, msg: Invoice): Invoice.AsObject;
@@ -23,6 +39,10 @@ export class Invoice extends jspb.Message {
 export namespace Invoice {
   export type AsObject = {
     itemsList: Array<InvoiceItem.AsObject>,
+    invoiceId: string,
+    billingCycle: string,
+    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

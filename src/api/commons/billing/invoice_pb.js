@@ -109,7 +109,11 @@ proto.api.commons.billing.Invoice.prototype.toObject = function(opt_includeInsta
 proto.api.commons.billing.Invoice.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    proto.api.commons.billing.InvoiceItem.toObject, includeInstance)
+    proto.api.commons.billing.InvoiceItem.toObject, includeInstance),
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    billingCycle: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -151,6 +155,24 @@ proto.api.commons.billing.Invoice.deserializeBinaryFromReader = function(msg, re
       reader.readMessage(value,proto.api.commons.billing.InvoiceItem.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInvoiceId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBillingCycle(value);
+      break;
+    case 4:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setDateCreated(value);
+      break;
+    case 5:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setDateModified(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -186,6 +208,36 @@ proto.api.commons.billing.Invoice.serializeBinaryToWriter = function(message, wr
       1,
       f,
       proto.api.commons.billing.InvoiceItem.serializeBinaryToWriter
+    );
+  }
+  f = message.getInvoiceId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getBillingCycle();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getDateCreated();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getDateModified();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -226,6 +278,116 @@ proto.api.commons.billing.Invoice.prototype.addItems = function(opt_value, opt_i
  */
 proto.api.commons.billing.Invoice.prototype.clearItemsList = function() {
   return this.setItemsList([]);
+};
+
+
+/**
+ * optional string invoice_id = 2;
+ * @return {string}
+ */
+proto.api.commons.billing.Invoice.prototype.getInvoiceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.billing.Invoice} returns this
+ */
+proto.api.commons.billing.Invoice.prototype.setInvoiceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string billing_cycle = 3;
+ * @return {string}
+ */
+proto.api.commons.billing.Invoice.prototype.getBillingCycle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.billing.Invoice} returns this
+ */
+proto.api.commons.billing.Invoice.prototype.setBillingCycle = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp date_created = 4;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.commons.billing.Invoice.prototype.getDateCreated = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.commons.billing.Invoice} returns this
+*/
+proto.api.commons.billing.Invoice.prototype.setDateCreated = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.billing.Invoice} returns this
+ */
+proto.api.commons.billing.Invoice.prototype.clearDateCreated = function() {
+  return this.setDateCreated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.billing.Invoice.prototype.hasDateCreated = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp date_modified = 5;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.commons.billing.Invoice.prototype.getDateModified = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.commons.billing.Invoice} returns this
+*/
+proto.api.commons.billing.Invoice.prototype.setDateModified = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.billing.Invoice} returns this
+ */
+proto.api.commons.billing.Invoice.prototype.clearDateModified = function() {
+  return this.setDateModified(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.billing.Invoice.prototype.hasDateModified = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
