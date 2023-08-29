@@ -253,6 +253,12 @@ export class ContactFieldDescription extends jspb.Message {
   getFieldName(): string;
   setFieldName(value: string): void;
 
+  getIsPhone(): boolean;
+  setIsPhone(value: boolean): void;
+
+  getDisplayFormatString(): string;
+  setDisplayFormatString(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactFieldDescription.AsObject;
   static toObject(includeInstance: boolean, msg: ContactFieldDescription): ContactFieldDescription.AsObject;
@@ -267,6 +273,8 @@ export namespace ContactFieldDescription {
   export type AsObject = {
     id: number,
     fieldName: string,
+    isPhone: boolean,
+    displayFormatString: string,
   }
 }
 
