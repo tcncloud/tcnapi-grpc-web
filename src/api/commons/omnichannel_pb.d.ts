@@ -313,11 +313,6 @@ export class OmniCampaignModuleConfig extends jspb.Message {
   setPaymentPortalIdsList(value: Array<string>): void;
   addPaymentPortalIds(value: string, index?: number): string;
 
-  hasFlowId(): boolean;
-  clearFlowId(): void;
-  getFlowId(): api_commons_types_pb.Int64Id | undefined;
-  setFlowId(value?: api_commons_types_pb.Int64Id): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaignModuleConfig.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCampaignModuleConfig): OmniCampaignModuleConfig.AsObject;
@@ -348,7 +343,6 @@ export namespace OmniCampaignModuleConfig {
     attachmentsList: Array<OmniAttachment.AsObject>,
     complianceRuleSetId?: google_protobuf_wrappers_pb.StringValue.AsObject,
     paymentPortalIdsList: Array<string>,
-    flowId?: api_commons_types_pb.Int64Id.AsObject,
   }
 }
 
