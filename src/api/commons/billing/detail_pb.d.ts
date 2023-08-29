@@ -18,15 +18,15 @@ export class BillingPlan extends jspb.Message {
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;
 
-  hasDateCreated(): boolean;
-  clearDateCreated(): void;
-  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  hasDateModified(): boolean;
-  clearDateModified(): void;
-  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasUpdateTime(): boolean;
+  clearUpdateTime(): void;
+  getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   hasStartTime(): boolean;
   clearStartTime(): void;
@@ -53,8 +53,8 @@ export namespace BillingPlan {
     orgId: string,
     plansList: Array<Plan.AsObject>,
     billingPlanId: string,
-    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }

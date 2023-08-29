@@ -160,8 +160,8 @@ proto.api.commons.billing.BillingPlan.toObject = function(includeInstance, msg) 
     plansList: jspb.Message.toObjectList(msg.getPlansList(),
     proto.api.commons.billing.Plan.toObject, includeInstance),
     billingPlanId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -216,12 +216,12 @@ proto.api.commons.billing.BillingPlan.deserializeBinaryFromReader = function(msg
     case 4:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setDateCreated(value);
+      msg.setCreateTime(value);
       break;
     case 5:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setDateModified(value);
+      msg.setUpdateTime(value);
       break;
     case 6:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -284,7 +284,7 @@ proto.api.commons.billing.BillingPlan.serializeBinaryToWriter = function(message
       f
     );
   }
-  f = message.getDateCreated();
+  f = message.getCreateTime();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -292,7 +292,7 @@ proto.api.commons.billing.BillingPlan.serializeBinaryToWriter = function(message
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getDateModified();
+  f = message.getUpdateTime();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -394,10 +394,10 @@ proto.api.commons.billing.BillingPlan.prototype.setBillingPlanId = function(valu
 
 
 /**
- * optional google.protobuf.Timestamp date_created = 4;
+ * optional google.protobuf.Timestamp create_time = 4;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.api.commons.billing.BillingPlan.prototype.getDateCreated = function() {
+proto.api.commons.billing.BillingPlan.prototype.getCreateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
 };
@@ -407,7 +407,7 @@ proto.api.commons.billing.BillingPlan.prototype.getDateCreated = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.api.commons.billing.BillingPlan} returns this
 */
-proto.api.commons.billing.BillingPlan.prototype.setDateCreated = function(value) {
+proto.api.commons.billing.BillingPlan.prototype.setCreateTime = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -416,8 +416,8 @@ proto.api.commons.billing.BillingPlan.prototype.setDateCreated = function(value)
  * Clears the message field making it undefined.
  * @return {!proto.api.commons.billing.BillingPlan} returns this
  */
-proto.api.commons.billing.BillingPlan.prototype.clearDateCreated = function() {
-  return this.setDateCreated(undefined);
+proto.api.commons.billing.BillingPlan.prototype.clearCreateTime = function() {
+  return this.setCreateTime(undefined);
 };
 
 
@@ -425,16 +425,16 @@ proto.api.commons.billing.BillingPlan.prototype.clearDateCreated = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.billing.BillingPlan.prototype.hasDateCreated = function() {
+proto.api.commons.billing.BillingPlan.prototype.hasCreateTime = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp date_modified = 5;
+ * optional google.protobuf.Timestamp update_time = 5;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.api.commons.billing.BillingPlan.prototype.getDateModified = function() {
+proto.api.commons.billing.BillingPlan.prototype.getUpdateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
 };
@@ -444,7 +444,7 @@ proto.api.commons.billing.BillingPlan.prototype.getDateModified = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.api.commons.billing.BillingPlan} returns this
 */
-proto.api.commons.billing.BillingPlan.prototype.setDateModified = function(value) {
+proto.api.commons.billing.BillingPlan.prototype.setUpdateTime = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -453,8 +453,8 @@ proto.api.commons.billing.BillingPlan.prototype.setDateModified = function(value
  * Clears the message field making it undefined.
  * @return {!proto.api.commons.billing.BillingPlan} returns this
  */
-proto.api.commons.billing.BillingPlan.prototype.clearDateModified = function() {
-  return this.setDateModified(undefined);
+proto.api.commons.billing.BillingPlan.prototype.clearUpdateTime = function() {
+  return this.setUpdateTime(undefined);
 };
 
 
@@ -462,7 +462,7 @@ proto.api.commons.billing.BillingPlan.prototype.clearDateModified = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.billing.BillingPlan.prototype.hasDateModified = function() {
+proto.api.commons.billing.BillingPlan.prototype.hasUpdateTime = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
