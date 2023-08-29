@@ -581,6 +581,50 @@ export namespace GetHistoryRes {
   }
 }
 
+export class CreateDeliveryDefinitionReq extends jspb.Message {
+  hasDefinition(): boolean;
+  clearDefinition(): void;
+  getDefinition(): DeliveryDefinition | undefined;
+  setDefinition(value?: DeliveryDefinition): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDeliveryDefinitionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDeliveryDefinitionReq): CreateDeliveryDefinitionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateDeliveryDefinitionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDeliveryDefinitionReq;
+  static deserializeBinaryFromReader(message: CreateDeliveryDefinitionReq, reader: jspb.BinaryReader): CreateDeliveryDefinitionReq;
+}
+
+export namespace CreateDeliveryDefinitionReq {
+  export type AsObject = {
+    definition?: DeliveryDefinition.AsObject,
+  }
+}
+
+export class CreateDeliveryDefinitionRes extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): ID | undefined;
+  setEntity(value?: ID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDeliveryDefinitionRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDeliveryDefinitionRes): CreateDeliveryDefinitionRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateDeliveryDefinitionRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDeliveryDefinitionRes;
+  static deserializeBinaryFromReader(message: CreateDeliveryDefinitionRes, reader: jspb.BinaryReader): CreateDeliveryDefinitionRes;
+}
+
+export namespace CreateDeliveryDefinitionRes {
+  export type AsObject = {
+    entity?: ID.AsObject,
+  }
+}
+
 export class CreateEncryptionReq extends jspb.Message {
   hasEncryption(): boolean;
   clearEncryption(): void;
@@ -1879,50 +1923,6 @@ export class SSHKeyRef extends jspb.Message {
 export namespace SSHKeyRef {
   export type AsObject = {
     sshKeySid: number,
-  }
-}
-
-export class CreateDeliveryDefinitionReq extends jspb.Message {
-  hasDefinition(): boolean;
-  clearDefinition(): void;
-  getDefinition(): DeliveryDefinition | undefined;
-  setDefinition(value?: DeliveryDefinition): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateDeliveryDefinitionReq.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateDeliveryDefinitionReq): CreateDeliveryDefinitionReq.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateDeliveryDefinitionReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateDeliveryDefinitionReq;
-  static deserializeBinaryFromReader(message: CreateDeliveryDefinitionReq, reader: jspb.BinaryReader): CreateDeliveryDefinitionReq;
-}
-
-export namespace CreateDeliveryDefinitionReq {
-  export type AsObject = {
-    definition?: DeliveryDefinition.AsObject,
-  }
-}
-
-export class CreateDeliveryDefinitionRes extends jspb.Message {
-  hasEntity(): boolean;
-  clearEntity(): void;
-  getEntity(): ID | undefined;
-  setEntity(value?: ID): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateDeliveryDefinitionRes.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateDeliveryDefinitionRes): CreateDeliveryDefinitionRes.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateDeliveryDefinitionRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateDeliveryDefinitionRes;
-  static deserializeBinaryFromReader(message: CreateDeliveryDefinitionRes, reader: jspb.BinaryReader): CreateDeliveryDefinitionRes;
-}
-
-export namespace CreateDeliveryDefinitionRes {
-  export type AsObject = {
-    entity?: ID.AsObject,
   }
 }
 
