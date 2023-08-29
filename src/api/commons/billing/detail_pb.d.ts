@@ -6,14 +6,14 @@ import * as api_commons_audit_event_types_pb from "../../../api/commons/audit/ev
 import * as api_commons_billing_modules_modules_pb from "../../../api/commons/billing/modules/modules_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
-export class BillingPlan extends jspb.Message {
+export class Plan extends jspb.Message {
+  clearDetailsList(): void;
+  getDetailsList(): Array<Detail>;
+  setDetailsList(value: Array<Detail>): void;
+  addDetails(value?: Detail, index?: number): Detail;
+
   getOrgId(): string;
   setOrgId(value: string): void;
-
-  clearPlansList(): void;
-  getPlansList(): Array<Plan>;
-  setPlansList(value: Array<Plan>): void;
-  addPlans(value?: Plan, index?: number): Plan;
 
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;
@@ -39,34 +39,6 @@ export class BillingPlan extends jspb.Message {
   setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BillingPlan.AsObject;
-  static toObject(includeInstance: boolean, msg: BillingPlan): BillingPlan.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BillingPlan, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BillingPlan;
-  static deserializeBinaryFromReader(message: BillingPlan, reader: jspb.BinaryReader): BillingPlan;
-}
-
-export namespace BillingPlan {
-  export type AsObject = {
-    orgId: string,
-    plansList: Array<Plan.AsObject>,
-    billingPlanId: string,
-    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-  }
-}
-
-export class Plan extends jspb.Message {
-  clearDetailsList(): void;
-  getDetailsList(): Array<Detail>;
-  setDetailsList(value: Array<Detail>): void;
-  addDetails(value?: Detail, index?: number): Detail;
-
-  serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Plan.AsObject;
   static toObject(includeInstance: boolean, msg: Plan): Plan.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
@@ -79,6 +51,12 @@ export class Plan extends jspb.Message {
 export namespace Plan {
   export type AsObject = {
     detailsList: Array<Detail.AsObject>,
+    orgId: string,
+    billingPlanId: string,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
