@@ -110,7 +110,7 @@ proto.api.commons.billing.Invoice.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.api.commons.billing.InvoiceItem.toObject, includeInstance),
-    invoiceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 2, 0),
     billingCycle: jspb.Message.getFieldWithDefault(msg, 3, ""),
     cretaeTime: (f = msg.getCretaeTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
@@ -156,7 +156,7 @@ proto.api.commons.billing.Invoice.deserializeBinaryFromReader = function(msg, re
       msg.addItems(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setInvoiceId(value);
       break;
     case 3:
@@ -211,8 +211,8 @@ proto.api.commons.billing.Invoice.serializeBinaryToWriter = function(message, wr
     );
   }
   f = message.getInvoiceId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt64(
       2,
       f
     );
@@ -282,20 +282,20 @@ proto.api.commons.billing.Invoice.prototype.clearItemsList = function() {
 
 
 /**
- * optional string invoice_id = 2;
- * @return {string}
+ * optional int64 invoice_id = 2;
+ * @return {number}
  */
 proto.api.commons.billing.Invoice.prototype.getInvoiceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.commons.billing.Invoice} returns this
  */
 proto.api.commons.billing.Invoice.prototype.setInvoiceId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -427,7 +427,8 @@ proto.api.commons.billing.InvoiceItem.toObject = function(includeInstance, msg) 
     product: jspb.Message.getFieldWithDefault(msg, 2, 0),
     amount: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
     dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -485,6 +486,10 @@ proto.api.commons.billing.InvoiceItem.deserializeBinaryFromReader = function(msg
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setDateModified(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setInvoiceId(value);
       break;
     default:
       reader.skipField();
@@ -550,6 +555,13 @@ proto.api.commons.billing.InvoiceItem.serializeBinaryToWriter = function(message
       5,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getInvoiceId();
+  if (f !== 0) {
+    writer.writeInt64(
+      6,
+      f
     );
   }
 };
@@ -680,6 +692,24 @@ proto.api.commons.billing.InvoiceItem.prototype.clearDateModified = function() {
  */
 proto.api.commons.billing.InvoiceItem.prototype.hasDateModified = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional int64 invoice_id = 6;
+ * @return {number}
+ */
+proto.api.commons.billing.InvoiceItem.prototype.getInvoiceId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.billing.InvoiceItem} returns this
+ */
+proto.api.commons.billing.InvoiceItem.prototype.setInvoiceId = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
