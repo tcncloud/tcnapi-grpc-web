@@ -137,7 +137,7 @@ proto.api.commons.billing.Plan.toObject = function(includeInstance, msg) {
     detailsList: jspb.Message.toObjectList(msg.getDetailsList(),
     proto.api.commons.billing.Detail.toObject, includeInstance),
     orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    billingPlanId: jspb.Message.getFieldWithDefault(msg, 3, "0"),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -188,7 +188,7 @@ proto.api.commons.billing.Plan.deserializeBinaryFromReader = function(msg, reade
       msg.setOrgId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setBillingPlanId(value);
       break;
     case 4:
@@ -256,8 +256,8 @@ proto.api.commons.billing.Plan.serializeBinaryToWriter = function(message, write
     );
   }
   f = message.getBillingPlanId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       3,
       f
     );
@@ -354,11 +354,11 @@ proto.api.commons.billing.Plan.prototype.setOrgId = function(value) {
 
 
 /**
- * optional string billing_plan_id = 3;
+ * optional int64 billing_plan_id = 3;
  * @return {string}
  */
 proto.api.commons.billing.Plan.prototype.getBillingPlanId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, "0"));
 };
 
 
@@ -367,7 +367,7 @@ proto.api.commons.billing.Plan.prototype.getBillingPlanId = function() {
  * @return {!proto.api.commons.billing.Plan} returns this
  */
 proto.api.commons.billing.Plan.prototype.setBillingPlanId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringIntField(this, 3, value);
 };
 
 
@@ -558,7 +558,7 @@ proto.api.commons.billing.Detail.toObject = function(includeInstance, msg) {
     dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     deletedOn: (f = msg.getDeletedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 8, "")
+    billingPlanId: jspb.Message.getFieldWithDefault(msg, 8, "0")
   };
 
   if (includeInstance) {
@@ -628,7 +628,7 @@ proto.api.commons.billing.Detail.deserializeBinaryFromReader = function(msg, rea
       msg.setDeletedOn(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setBillingPlanId(value);
       break;
     default:
@@ -714,8 +714,8 @@ proto.api.commons.billing.Detail.serializeBinaryToWriter = function(message, wri
     );
   }
   f = message.getBillingPlanId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       8,
       f
     );
@@ -926,11 +926,11 @@ proto.api.commons.billing.Detail.prototype.hasDeletedOn = function() {
 
 
 /**
- * optional string billing_plan_id = 8;
+ * optional int64 billing_plan_id = 8;
  * @return {string}
  */
 proto.api.commons.billing.Detail.prototype.getBillingPlanId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, "0"));
 };
 
 
@@ -939,7 +939,7 @@ proto.api.commons.billing.Detail.prototype.getBillingPlanId = function() {
  * @return {!proto.api.commons.billing.Detail} returns this
  */
 proto.api.commons.billing.Detail.prototype.setBillingPlanId = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringIntField(this, 8, value);
 };
 
 
