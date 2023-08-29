@@ -112,7 +112,7 @@ proto.api.commons.billing.Invoice.toObject = function(includeInstance, msg) {
     proto.api.commons.billing.InvoiceItem.toObject, includeInstance),
     invoiceId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
     billingCycle: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    cretaeTime: (f = msg.getCretaeTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
@@ -166,7 +166,7 @@ proto.api.commons.billing.Invoice.deserializeBinaryFromReader = function(msg, re
     case 4:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setCretaeTime(value);
+      msg.setCreateTime(value);
       break;
     case 5:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -224,7 +224,7 @@ proto.api.commons.billing.Invoice.serializeBinaryToWriter = function(message, wr
       f
     );
   }
-  f = message.getCretaeTime();
+  f = message.getCreateTime();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -318,10 +318,10 @@ proto.api.commons.billing.Invoice.prototype.setBillingCycle = function(value) {
 
 
 /**
- * optional google.protobuf.Timestamp cretae_time = 4;
+ * optional google.protobuf.Timestamp create_time = 4;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.api.commons.billing.Invoice.prototype.getCretaeTime = function() {
+proto.api.commons.billing.Invoice.prototype.getCreateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
 };
@@ -331,7 +331,7 @@ proto.api.commons.billing.Invoice.prototype.getCretaeTime = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.api.commons.billing.Invoice} returns this
 */
-proto.api.commons.billing.Invoice.prototype.setCretaeTime = function(value) {
+proto.api.commons.billing.Invoice.prototype.setCreateTime = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -340,8 +340,8 @@ proto.api.commons.billing.Invoice.prototype.setCretaeTime = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.api.commons.billing.Invoice} returns this
  */
-proto.api.commons.billing.Invoice.prototype.clearCretaeTime = function() {
-  return this.setCretaeTime(undefined);
+proto.api.commons.billing.Invoice.prototype.clearCreateTime = function() {
+  return this.setCreateTime(undefined);
 };
 
 
@@ -349,7 +349,7 @@ proto.api.commons.billing.Invoice.prototype.clearCretaeTime = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.billing.Invoice.prototype.hasCretaeTime = function() {
+proto.api.commons.billing.Invoice.prototype.hasCreateTime = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 

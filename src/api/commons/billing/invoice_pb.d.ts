@@ -16,10 +16,10 @@ export class Invoice extends jspb.Message {
   getBillingCycle(): string;
   setBillingCycle(value: string): void;
 
-  hasCretaeTime(): boolean;
-  clearCretaeTime(): void;
-  getCretaeTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCretaeTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   hasUpdateTime(): boolean;
   clearUpdateTime(): void;
@@ -41,7 +41,7 @@ export namespace Invoice {
     itemsList: Array<InvoiceItem.AsObject>,
     invoiceId: string,
     billingCycle: string,
-    cretaeTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
