@@ -218,11 +218,6 @@ export class GeneralSettings extends jspb.Message {
   getEnableAgentIntercom(): boolean;
   setEnableAgentIntercom(value: boolean): void;
 
-  hasPrepareStateCallDelivery(): boolean;
-  clearPrepareStateCallDelivery(): void;
-  getPrepareStateCallDelivery(): GeneralSettings.PrepareStateCallDelivery | undefined;
-  setPrepareStateCallDelivery(value?: GeneralSettings.PrepareStateCallDelivery): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GeneralSettings.AsObject;
   static toObject(includeInstance: boolean, msg: GeneralSettings): GeneralSettings.AsObject;
@@ -279,7 +274,6 @@ export namespace GeneralSettings {
     enableCallDesktopNotifications: boolean,
     inboundComplianceMetadata?: GeneralSettings.InboundComplianceMetadata.AsObject,
     enableAgentIntercom: boolean,
-    prepareStateCallDelivery?: GeneralSettings.PrepareStateCallDelivery.AsObject,
   }
 
   export class PauseOptionSet extends jspb.Message {
@@ -545,30 +539,6 @@ export namespace GeneralSettings {
       enabled: boolean,
       optionalDataList: Array<number>,
       requiredDataList: Array<number>,
-    }
-  }
-
-  export class PrepareStateCallDelivery extends jspb.Message {
-    getManualDial(): boolean;
-    setManualDial(value: boolean): void;
-
-    getPreviewDial(): boolean;
-    setPreviewDial(value: boolean): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): PrepareStateCallDelivery.AsObject;
-    static toObject(includeInstance: boolean, msg: PrepareStateCallDelivery): PrepareStateCallDelivery.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: PrepareStateCallDelivery, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): PrepareStateCallDelivery;
-    static deserializeBinaryFromReader(message: PrepareStateCallDelivery, reader: jspb.BinaryReader): PrepareStateCallDelivery;
-  }
-
-  export namespace PrepareStateCallDelivery {
-    export type AsObject = {
-      manualDial: boolean,
-      previewDial: boolean,
     }
   }
 }

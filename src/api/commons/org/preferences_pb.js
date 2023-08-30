@@ -2674,9 +2674,7 @@ proto.api.commons.org.ContactFieldDescription.prototype.toObject = function(opt_
 proto.api.commons.org.ContactFieldDescription.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    fieldName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    isPhone: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    displayFormatString: jspb.Message.getFieldWithDefault(msg, 4, "")
+    fieldName: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2721,14 +2719,6 @@ proto.api.commons.org.ContactFieldDescription.deserializeBinaryFromReader = func
       var value = /** @type {string} */ (reader.readString());
       msg.setFieldName(value);
       break;
-    case 3:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsPhone(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDisplayFormatString(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2772,20 +2762,6 @@ proto.api.commons.org.ContactFieldDescription.serializeBinaryToWriter = function
       f
     );
   }
-  f = message.getIsPhone();
-  if (f) {
-    writer.writeBool(
-      3,
-      f
-    );
-  }
-  f = message.getDisplayFormatString();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
 };
 
 
@@ -2822,42 +2798,6 @@ proto.api.commons.org.ContactFieldDescription.prototype.getFieldName = function(
  */
 proto.api.commons.org.ContactFieldDescription.prototype.setFieldName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional bool is_phone = 3;
- * @return {boolean}
- */
-proto.api.commons.org.ContactFieldDescription.prototype.getIsPhone = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.commons.org.ContactFieldDescription} returns this
- */
-proto.api.commons.org.ContactFieldDescription.prototype.setIsPhone = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
-};
-
-
-/**
- * optional string display_format_string = 4;
- * @return {string}
- */
-proto.api.commons.org.ContactFieldDescription.prototype.getDisplayFormatString = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.org.ContactFieldDescription} returns this
- */
-proto.api.commons.org.ContactFieldDescription.prototype.setDisplayFormatString = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

@@ -135,13 +135,7 @@ proto.api.commons.billing.Plan.prototype.toObject = function(opt_includeInstance
 proto.api.commons.billing.Plan.toObject = function(includeInstance, msg) {
   var f, obj = {
     detailsList: jspb.Message.toObjectList(msg.getDetailsList(),
-    proto.api.commons.billing.Detail.toObject, includeInstance),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 3, "0"),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    proto.api.commons.billing.Detail.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -183,34 +177,6 @@ proto.api.commons.billing.Plan.deserializeBinaryFromReader = function(msg, reade
       reader.readMessage(value,proto.api.commons.billing.Detail.deserializeBinaryFromReader);
       msg.addDetails(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrgId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readInt64String());
-      msg.setBillingPlanId(value);
-      break;
-    case 4:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setCreateTime(value);
-      break;
-    case 5:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setUpdateTime(value);
-      break;
-    case 6:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setStartTime(value);
-      break;
-    case 7:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setEndTime(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -246,52 +212,6 @@ proto.api.commons.billing.Plan.serializeBinaryToWriter = function(message, write
       1,
       f,
       proto.api.commons.billing.Detail.serializeBinaryToWriter
-    );
-  }
-  f = message.getOrgId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getBillingPlanId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
-      3,
-      f
-    );
-  }
-  f = message.getCreateTime();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getUpdateTime();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getStartTime();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getEndTime();
-  if (f != null) {
-    writer.writeMessage(
-      7,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -335,190 +255,6 @@ proto.api.commons.billing.Plan.prototype.clearDetailsList = function() {
 };
 
 
-/**
- * optional string org_id = 2;
- * @return {string}
- */
-proto.api.commons.billing.Plan.prototype.getOrgId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.billing.Plan} returns this
- */
-proto.api.commons.billing.Plan.prototype.setOrgId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional int64 billing_plan_id = 3;
- * @return {string}
- */
-proto.api.commons.billing.Plan.prototype.getBillingPlanId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, "0"));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.billing.Plan} returns this
- */
-proto.api.commons.billing.Plan.prototype.setBillingPlanId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 3, value);
-};
-
-
-/**
- * optional google.protobuf.Timestamp create_time = 4;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.api.commons.billing.Plan.prototype.getCreateTime = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.commons.billing.Plan} returns this
-*/
-proto.api.commons.billing.Plan.prototype.setCreateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.billing.Plan} returns this
- */
-proto.api.commons.billing.Plan.prototype.clearCreateTime = function() {
-  return this.setCreateTime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.billing.Plan.prototype.hasCreateTime = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional google.protobuf.Timestamp update_time = 5;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.api.commons.billing.Plan.prototype.getUpdateTime = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.commons.billing.Plan} returns this
-*/
-proto.api.commons.billing.Plan.prototype.setUpdateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.billing.Plan} returns this
- */
-proto.api.commons.billing.Plan.prototype.clearUpdateTime = function() {
-  return this.setUpdateTime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.billing.Plan.prototype.hasUpdateTime = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional google.protobuf.Timestamp start_time = 6;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.api.commons.billing.Plan.prototype.getStartTime = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.commons.billing.Plan} returns this
-*/
-proto.api.commons.billing.Plan.prototype.setStartTime = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.billing.Plan} returns this
- */
-proto.api.commons.billing.Plan.prototype.clearStartTime = function() {
-  return this.setStartTime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.billing.Plan.prototype.hasStartTime = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional google.protobuf.Timestamp end_time = 7;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.api.commons.billing.Plan.prototype.getEndTime = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.commons.billing.Plan} returns this
-*/
-proto.api.commons.billing.Plan.prototype.setEndTime = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.billing.Plan} returns this
- */
-proto.api.commons.billing.Plan.prototype.clearEndTime = function() {
-  return this.setEndTime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.billing.Plan.prototype.hasEndTime = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
 
 
 
@@ -557,8 +293,7 @@ proto.api.commons.billing.Detail.toObject = function(includeInstance, msg) {
     config: (f = msg.getConfig()) && proto.api.commons.billing.DetailConfig.toObject(includeInstance, f),
     dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    deletedOn: (f = msg.getDeletedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 8, "0")
+    deletedOn: (f = msg.getDeletedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -626,10 +361,6 @@ proto.api.commons.billing.Detail.deserializeBinaryFromReader = function(msg, rea
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setDeletedOn(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readInt64String());
-      msg.setBillingPlanId(value);
       break;
     default:
       reader.skipField();
@@ -711,13 +442,6 @@ proto.api.commons.billing.Detail.serializeBinaryToWriter = function(message, wri
       7,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getBillingPlanId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
-      8,
-      f
     );
   }
 };
@@ -922,24 +646,6 @@ proto.api.commons.billing.Detail.prototype.clearDeletedOn = function() {
  */
 proto.api.commons.billing.Detail.prototype.hasDeletedOn = function() {
   return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional int64 billing_plan_id = 8;
- * @return {string}
- */
-proto.api.commons.billing.Detail.prototype.getBillingPlanId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, "0"));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.billing.Detail} returns this
- */
-proto.api.commons.billing.Detail.prototype.setBillingPlanId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 8, value);
 };
 
 

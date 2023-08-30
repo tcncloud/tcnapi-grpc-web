@@ -994,8 +994,7 @@ proto.api.commons.org.GroupItem.prototype.clearPermissionGroupIdsList = function
  */
 proto.api.commons.org.ConnectionType = {
   CONNECTION_TYPE_NONE: 0,
-  CONNECTION_TYPE_OIDC: 1,
-  CONNECTION_TYPE_AZURE: 2
+  CONNECTION_TYPE_OIDC: 1
 };
 
 goog.object.extend(exports, proto.api.commons.org);
