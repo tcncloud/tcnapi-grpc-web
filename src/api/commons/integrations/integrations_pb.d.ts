@@ -394,6 +394,16 @@ export class PaymentFlow extends jspb.Message {
   getNewzwareAch(): PaymentNewzwareAch | undefined;
   setNewzwareAch(value?: PaymentNewzwareAch): void;
 
+  hasPriocommerceCc(): boolean;
+  clearPriocommerceCc(): void;
+  getPriocommerceCc(): PaymentPriocommerceCc | undefined;
+  setPriocommerceCc(value?: PaymentPriocommerceCc): void;
+
+  hasPriocommerceAch(): boolean;
+  clearPriocommerceAch(): void;
+  getPriocommerceAch(): PaymentPriocommerceAch | undefined;
+  setPriocommerceAch(value?: PaymentPriocommerceAch): void;
+
   clearPaymentFieldsList(): void;
   getPaymentFieldsList(): Array<FieldDefinition>;
   setPaymentFieldsList(value: Array<FieldDefinition>): void;
@@ -424,6 +434,8 @@ export namespace PaymentFlow {
     paywaySubmitAchAlertRequest?: PaymentPaywaySubmitACHAlertRequest.AsObject,
     newzwareCc?: PaymentNewzwareCc.AsObject,
     newzwareAch?: PaymentNewzwareAch.AsObject,
+    priocommerceCc?: PaymentPriocommerceCc.AsObject,
+    priocommerceAch?: PaymentPriocommerceAch.AsObject,
     paymentFieldsList: Array<FieldDefinition.AsObject>,
   }
 
@@ -440,6 +452,8 @@ export namespace PaymentFlow {
     PAYWAY_SUBMIT_ACH_ALERT_REQUEST = 10,
     NEWZWARE_CC = 11,
     NEWZWARE_ACH = 12,
+    PRIOCOMMERCE_CC = 13,
+    PRIOCOMMERCE_ACH = 14,
   }
 }
 
@@ -1546,6 +1560,16 @@ export class ExecuteFlow extends jspb.Message {
   getNewzwarePhoneLookupMulti(): ExecuteNewzwarePhoneLookupMulti | undefined;
   setNewzwarePhoneLookupMulti(value?: ExecuteNewzwarePhoneLookupMulti): void;
 
+  hasPriocommerceAchPayment(): boolean;
+  clearPriocommerceAchPayment(): void;
+  getPriocommerceAchPayment(): ExecutePriocommerceAchPayment | undefined;
+  setPriocommerceAchPayment(value?: ExecutePriocommerceAchPayment): void;
+
+  hasPriocommerceCcPayment(): boolean;
+  clearPriocommerceCcPayment(): void;
+  getPriocommerceCcPayment(): ExecutePriocommerceCcPayment | undefined;
+  setPriocommerceCcPayment(value?: ExecutePriocommerceCcPayment): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -1748,6 +1772,8 @@ export namespace ExecuteFlow {
     newzwareVacationRestart?: ExecuteNewzwareVacationRestart.AsObject,
     newzwareVacationUpdate?: ExecuteNewzwareVacationUpdate.AsObject,
     newzwarePhoneLookupMulti?: ExecuteNewzwarePhoneLookupMulti.AsObject,
+    priocommerceAchPayment?: ExecutePriocommerceAchPayment.AsObject,
+    priocommerceCcPayment?: ExecutePriocommerceCcPayment.AsObject,
   }
 
   export enum ValueCase {
@@ -1940,6 +1966,8 @@ export namespace ExecuteFlow {
     NEWZWARE_VACATION_RESTART = 3807,
     NEWZWARE_VACATION_UPDATE = 3808,
     NEWZWARE_PHONE_LOOKUP_MULTI = 3809,
+    PRIOCOMMERCE_ACH_PAYMENT = 3901,
+    PRIOCOMMERCE_CC_PAYMENT = 3902,
   }
 }
 
@@ -2388,6 +2416,38 @@ export class PaymentNewzwareAch extends jspb.Message {
 }
 
 export namespace PaymentNewzwareAch {
+  export type AsObject = {
+  }
+}
+
+export class PaymentPriocommerceCc extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentPriocommerceCc.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentPriocommerceCc): PaymentPriocommerceCc.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentPriocommerceCc, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentPriocommerceCc;
+  static deserializeBinaryFromReader(message: PaymentPriocommerceCc, reader: jspb.BinaryReader): PaymentPriocommerceCc;
+}
+
+export namespace PaymentPriocommerceCc {
+  export type AsObject = {
+  }
+}
+
+export class PaymentPriocommerceAch extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentPriocommerceAch.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentPriocommerceAch): PaymentPriocommerceAch.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentPriocommerceAch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentPriocommerceAch;
+  static deserializeBinaryFromReader(message: PaymentPriocommerceAch, reader: jspb.BinaryReader): PaymentPriocommerceAch;
+}
+
+export namespace PaymentPriocommerceAch {
   export type AsObject = {
   }
 }
@@ -5400,6 +5460,38 @@ export namespace ExecuteNewzwarePhoneLookupMulti {
   }
 }
 
+export class ExecutePriocommerceAchPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePriocommerceAchPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePriocommerceAchPayment): ExecutePriocommerceAchPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePriocommerceAchPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePriocommerceAchPayment;
+  static deserializeBinaryFromReader(message: ExecutePriocommerceAchPayment, reader: jspb.BinaryReader): ExecutePriocommerceAchPayment;
+}
+
+export namespace ExecutePriocommerceAchPayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePriocommerceCcPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePriocommerceCcPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePriocommerceCcPayment): ExecutePriocommerceCcPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePriocommerceCcPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePriocommerceCcPayment;
+  static deserializeBinaryFromReader(message: ExecutePriocommerceCcPayment, reader: jspb.BinaryReader): ExecutePriocommerceCcPayment;
+}
+
+export namespace ExecutePriocommerceCcPayment {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -5440,6 +5532,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_PIANO: 3600;
   INTEGRATION_TYPE_EPIC: 3700;
   INTEGRATION_TYPE_NEWZWARE: 3800;
+  INTEGRATION_TYPE_PRIOCOMMERCE: 3900;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -5634,6 +5727,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_NEWZWARE_VACATION_RESTART: 3807;
   REQUEST_METHOD_NEWZWARE_VACATION_UPDATE: 3808;
   REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP_MULTI: 3809;
+  REQUEST_METHOD_PRIOCOMMERCE_ACH_PAYMENT: 3901;
+  REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT: 3902;
 }
 
 export const RequestMethod: RequestMethodMap;
