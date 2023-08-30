@@ -3954,6 +3954,46 @@ export namespace ListWFMAgentsAssociatedWithAgentGroupRes {
   }
 }
 
+export class GetWFMAgentSidReq extends jspb.Message {
+  getTcnAgentSid(): number;
+  setTcnAgentSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetWFMAgentSidReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetWFMAgentSidReq): GetWFMAgentSidReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetWFMAgentSidReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetWFMAgentSidReq;
+  static deserializeBinaryFromReader(message: GetWFMAgentSidReq, reader: jspb.BinaryReader): GetWFMAgentSidReq;
+}
+
+export namespace GetWFMAgentSidReq {
+  export type AsObject = {
+    tcnAgentSid: number,
+  }
+}
+
+export class GetWFMAgentSidRes extends jspb.Message {
+  getWfmAgentSid(): number;
+  setWfmAgentSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetWFMAgentSidRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetWFMAgentSidRes): GetWFMAgentSidRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetWFMAgentSidRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetWFMAgentSidRes;
+  static deserializeBinaryFromReader(message: GetWFMAgentSidRes, reader: jspb.BinaryReader): GetWFMAgentSidRes;
+}
+
+export namespace GetWFMAgentSidRes {
+  export type AsObject = {
+    wfmAgentSid: number,
+  }
+}
+
 export class BuildAgentDiagnosticsReq extends jspb.Message {
   getWfmAgentSid(): number;
   setWfmAgentSid(value: number): void;

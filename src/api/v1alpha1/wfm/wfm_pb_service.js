@@ -559,6 +559,15 @@ WFM.ListWFMAgentsAssociatedWithAgentGroup = {
   responseType: api_v1alpha1_wfm_wfm_pb.ListWFMAgentsAssociatedWithAgentGroupRes
 };
 
+WFM.GetWFMAgentSid = {
+  methodName: "GetWFMAgentSid",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.GetWFMAgentSidReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.GetWFMAgentSidRes
+};
+
 WFM.CreateWFMAgentMemberships = {
   methodName: "CreateWFMAgentMemberships",
   service: WFM,
@@ -2984,6 +2993,37 @@ WFMClient.prototype.listWFMAgentsAssociatedWithAgentGroup = function listWFMAgen
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.ListWFMAgentsAssociatedWithAgentGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.getWFMAgentSid = function getWFMAgentSid(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.GetWFMAgentSid, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

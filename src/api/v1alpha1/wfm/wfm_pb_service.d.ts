@@ -553,6 +553,15 @@ type WFMListWFMAgentsAssociatedWithAgentGroup = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListWFMAgentsAssociatedWithAgentGroupRes;
 };
 
+type WFMGetWFMAgentSid = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetWFMAgentSidReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetWFMAgentSidRes;
+};
+
 type WFMCreateWFMAgentMemberships = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1129,6 +1138,7 @@ export class WFM {
   static readonly ListCandidateWFMAgents: WFMListCandidateWFMAgents;
   static readonly ListUngroupedWFMAgents: WFMListUngroupedWFMAgents;
   static readonly ListWFMAgentsAssociatedWithAgentGroup: WFMListWFMAgentsAssociatedWithAgentGroup;
+  static readonly GetWFMAgentSid: WFMGetWFMAgentSid;
   static readonly CreateWFMAgentMemberships: WFMCreateWFMAgentMemberships;
   static readonly DeleteWFMAgentMemberships: WFMDeleteWFMAgentMemberships;
   static readonly DeleteWFMAgentsMemberships: WFMDeleteWFMAgentsMemberships;
@@ -1728,6 +1738,15 @@ export class WFMClient {
   listWFMAgentsAssociatedWithAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentsAssociatedWithAgentGroupReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentsAssociatedWithAgentGroupRes|null) => void
+  ): UnaryResponse;
+  getWFMAgentSid(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetWFMAgentSidReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetWFMAgentSidRes|null) => void
+  ): UnaryResponse;
+  getWFMAgentSid(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetWFMAgentSidReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetWFMAgentSidRes|null) => void
   ): UnaryResponse;
   createWFMAgentMemberships(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateWFMAgentMembershipsReq,
