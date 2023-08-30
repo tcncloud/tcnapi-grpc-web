@@ -1535,6 +1535,31 @@ export class ExecuteFlow extends jspb.Message {
   getNewzwareAchPayment(): ExecuteNewzwareAchPayment | undefined;
   setNewzwareAchPayment(value?: ExecuteNewzwareAchPayment): void;
 
+  hasNewzwareComplaintHistory(): boolean;
+  clearNewzwareComplaintHistory(): void;
+  getNewzwareComplaintHistory(): ExecuteNewzwareComplaintHistory | undefined;
+  setNewzwareComplaintHistory(value?: ExecuteNewzwareComplaintHistory): void;
+
+  hasNewzwareComplaintUpdate(): boolean;
+  clearNewzwareComplaintUpdate(): void;
+  getNewzwareComplaintUpdate(): ExecuteNewzwareComplaintUpdate | undefined;
+  setNewzwareComplaintUpdate(value?: ExecuteNewzwareComplaintUpdate): void;
+
+  hasNewzwareVacationRestart(): boolean;
+  clearNewzwareVacationRestart(): void;
+  getNewzwareVacationRestart(): ExecuteNewzwareVacationRestart | undefined;
+  setNewzwareVacationRestart(value?: ExecuteNewzwareVacationRestart): void;
+
+  hasNewzwareVacationUpdate(): boolean;
+  clearNewzwareVacationUpdate(): void;
+  getNewzwareVacationUpdate(): ExecuteNewzwareVacationUpdate | undefined;
+  setNewzwareVacationUpdate(value?: ExecuteNewzwareVacationUpdate): void;
+
+  hasNewzwarePhoneLookupMulti(): boolean;
+  clearNewzwarePhoneLookupMulti(): void;
+  getNewzwarePhoneLookupMulti(): ExecuteNewzwarePhoneLookupMulti | undefined;
+  setNewzwarePhoneLookupMulti(value?: ExecuteNewzwarePhoneLookupMulti): void;
+
   hasPriocommerceAchPayment(): boolean;
   clearPriocommerceAchPayment(): void;
   getPriocommerceAchPayment(): ExecutePriocommerceAchPayment | undefined;
@@ -1742,6 +1767,11 @@ export namespace ExecuteFlow {
     newzwareAccountInquiry?: ExecuteNewzwareAccountInquiry.AsObject,
     newzwareCcPayment?: ExecuteNewzwareCcPayment.AsObject,
     newzwareAchPayment?: ExecuteNewzwareAchPayment.AsObject,
+    newzwareComplaintHistory?: ExecuteNewzwareComplaintHistory.AsObject,
+    newzwareComplaintUpdate?: ExecuteNewzwareComplaintUpdate.AsObject,
+    newzwareVacationRestart?: ExecuteNewzwareVacationRestart.AsObject,
+    newzwareVacationUpdate?: ExecuteNewzwareVacationUpdate.AsObject,
+    newzwarePhoneLookupMulti?: ExecuteNewzwarePhoneLookupMulti.AsObject,
     priocommerceAchPayment?: ExecutePriocommerceAchPayment.AsObject,
     priocommerceCcPayment?: ExecutePriocommerceCcPayment.AsObject,
   }
@@ -1931,6 +1961,11 @@ export namespace ExecuteFlow {
     NEWZWARE_ACCOUNT_INQUIRY = 3802,
     NEWZWARE_CC_PAYMENT = 3803,
     NEWZWARE_ACH_PAYMENT = 3804,
+    NEWZWARE_COMPLAINT_HISTORY = 3805,
+    NEWZWARE_COMPLAINT_UPDATE = 3806,
+    NEWZWARE_VACATION_RESTART = 3807,
+    NEWZWARE_VACATION_UPDATE = 3808,
+    NEWZWARE_PHONE_LOOKUP_MULTI = 3809,
     PRIOCOMMERCE_ACH_PAYMENT = 3901,
     PRIOCOMMERCE_CC_PAYMENT = 3902,
   }
@@ -5345,6 +5380,86 @@ export namespace ExecuteNewzwareAchPayment {
   }
 }
 
+export class ExecuteNewzwareComplaintHistory extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNewzwareComplaintHistory.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNewzwareComplaintHistory): ExecuteNewzwareComplaintHistory.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNewzwareComplaintHistory, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNewzwareComplaintHistory;
+  static deserializeBinaryFromReader(message: ExecuteNewzwareComplaintHistory, reader: jspb.BinaryReader): ExecuteNewzwareComplaintHistory;
+}
+
+export namespace ExecuteNewzwareComplaintHistory {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNewzwareComplaintUpdate extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNewzwareComplaintUpdate.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNewzwareComplaintUpdate): ExecuteNewzwareComplaintUpdate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNewzwareComplaintUpdate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNewzwareComplaintUpdate;
+  static deserializeBinaryFromReader(message: ExecuteNewzwareComplaintUpdate, reader: jspb.BinaryReader): ExecuteNewzwareComplaintUpdate;
+}
+
+export namespace ExecuteNewzwareComplaintUpdate {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNewzwareVacationRestart extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNewzwareVacationRestart.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNewzwareVacationRestart): ExecuteNewzwareVacationRestart.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNewzwareVacationRestart, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNewzwareVacationRestart;
+  static deserializeBinaryFromReader(message: ExecuteNewzwareVacationRestart, reader: jspb.BinaryReader): ExecuteNewzwareVacationRestart;
+}
+
+export namespace ExecuteNewzwareVacationRestart {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNewzwareVacationUpdate extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNewzwareVacationUpdate.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNewzwareVacationUpdate): ExecuteNewzwareVacationUpdate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNewzwareVacationUpdate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNewzwareVacationUpdate;
+  static deserializeBinaryFromReader(message: ExecuteNewzwareVacationUpdate, reader: jspb.BinaryReader): ExecuteNewzwareVacationUpdate;
+}
+
+export namespace ExecuteNewzwareVacationUpdate {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNewzwarePhoneLookupMulti extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNewzwarePhoneLookupMulti.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNewzwarePhoneLookupMulti): ExecuteNewzwarePhoneLookupMulti.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNewzwarePhoneLookupMulti, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNewzwarePhoneLookupMulti;
+  static deserializeBinaryFromReader(message: ExecuteNewzwarePhoneLookupMulti, reader: jspb.BinaryReader): ExecuteNewzwarePhoneLookupMulti;
+}
+
+export namespace ExecuteNewzwarePhoneLookupMulti {
+  export type AsObject = {
+  }
+}
+
 export class ExecutePriocommerceAchPayment extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecutePriocommerceAchPayment.AsObject;
@@ -5607,6 +5722,11 @@ export interface RequestMethodMap {
   REQUEST_METHOD_NEWZWARE_ACCOUNT_INQUIRY: 3802;
   REQUEST_METHOD_NEWZWARE_CC_PAYMENT: 3803;
   REQUEST_METHOD_NEWZWARE_ACH_PAYMENT: 3804;
+  REQUEST_METHOD_NEWZWARE_COMPLAINT_HISTORY: 3805;
+  REQUEST_METHOD_NEWZWARE_COMPLAINT_UPDATE: 3806;
+  REQUEST_METHOD_NEWZWARE_VACATION_RESTART: 3807;
+  REQUEST_METHOD_NEWZWARE_VACATION_UPDATE: 3808;
+  REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP_MULTI: 3809;
   REQUEST_METHOD_PRIOCOMMERCE_ACH_PAYMENT: 3901;
   REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT: 3902;
 }
