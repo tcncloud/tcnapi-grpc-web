@@ -75,6 +75,26 @@ export class NodeDefinition extends jspb.Message {
   getOmniError(): api_commons_workflows_omni_pb.OmniNodeError | undefined;
   setOmniError(value?: api_commons_workflows_omni_pb.OmniNodeError): void;
 
+  hasOmniSendMessage(): boolean;
+  clearOmniSendMessage(): void;
+  getOmniSendMessage(): api_commons_workflows_omni_pb.OmniNodeSendMessage | undefined;
+  setOmniSendMessage(value?: api_commons_workflows_omni_pb.OmniNodeSendMessage): void;
+
+  hasOmniUserInput(): boolean;
+  clearOmniUserInput(): void;
+  getOmniUserInput(): api_commons_workflows_omni_pb.OmniNodeUserInput | undefined;
+  setOmniUserInput(value?: api_commons_workflows_omni_pb.OmniNodeUserInput): void;
+
+  hasOmniBranching(): boolean;
+  clearOmniBranching(): void;
+  getOmniBranching(): api_commons_workflows_omni_pb.OmniNodeBranching | undefined;
+  setOmniBranching(value?: api_commons_workflows_omni_pb.OmniNodeBranching): void;
+
+  hasOmniToMatcher(): boolean;
+  clearOmniToMatcher(): void;
+  getOmniToMatcher(): api_commons_workflows_omni_pb.OmniNodeToMatcher | undefined;
+  setOmniToMatcher(value?: api_commons_workflows_omni_pb.OmniNodeToMatcher): void;
+
   hasOmniWebhook(): boolean;
   clearOmniWebhook(): void;
   getOmniWebhook(): api_commons_workflows_omni_pb.OmniNodeWebhook | undefined;
@@ -148,6 +168,10 @@ export namespace NodeDefinition {
     omniSetSkill?: api_commons_workflows_omni_pb.OmniNodeSetSkill.AsObject,
     omniToAgent?: api_commons_workflows_omni_pb.OmniNodeToAgent.AsObject,
     omniError?: api_commons_workflows_omni_pb.OmniNodeError.AsObject,
+    omniSendMessage?: api_commons_workflows_omni_pb.OmniNodeSendMessage.AsObject,
+    omniUserInput?: api_commons_workflows_omni_pb.OmniNodeUserInput.AsObject,
+    omniBranching?: api_commons_workflows_omni_pb.OmniNodeBranching.AsObject,
+    omniToMatcher?: api_commons_workflows_omni_pb.OmniNodeToMatcher.AsObject,
     omniWebhook?: api_commons_workflows_omni_pb.OmniNodeWebhook.AsObject,
     omniScrublist?: api_commons_workflows_omni_pb.OmniNodeScrublist.AsObject,
     omniEndConversation?: api_commons_workflows_omni_pb.OmniNodeEndConversation.AsObject,
@@ -171,6 +195,10 @@ export namespace NodeDefinition {
     OMNI_SET_SKILL = 202,
     OMNI_TO_AGENT = 203,
     OMNI_ERROR = 204,
+    OMNI_SEND_MESSAGE = 206,
+    OMNI_USER_INPUT = 207,
+    OMNI_BRANCHING = 208,
+    OMNI_TO_MATCHER = 209,
     OMNI_WEBHOOK = 210,
     OMNI_SCRUBLIST = 211,
     OMNI_END_CONVERSATION = 212,

@@ -406,6 +406,15 @@ Scorecards.ListAutoEvaluations = {
   responseType: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsResponse
 };
 
+Scorecards.StreamAutoEvaluations = {
+  methodName: "StreamAutoEvaluations",
+  service: Scorecards,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsRequest,
+  responseType: api_v1alpha1_scorecards_auto_evaluation_pb.StreamAutoEvaluationsResponse
+};
+
 Scorecards.DeleteAutoEvaluation = {
   methodName: "DeleteAutoEvaluation",
   service: Scorecards,
@@ -1759,6 +1768,45 @@ ScorecardsClient.prototype.listAutoEvaluations = function listAutoEvaluations(re
   return {
     cancel: function () {
       callback = null;
+      client.close();
+    }
+  };
+};
+
+ScorecardsClient.prototype.streamAutoEvaluations = function streamAutoEvaluations(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(Scorecards.StreamAutoEvaluations, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
       client.close();
     }
   };
