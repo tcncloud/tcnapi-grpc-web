@@ -183,3 +183,77 @@ export namespace OmniNodeError {
   }
 }
 
+export class OmniNodeWebhook extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  getMethod(): string;
+  setMethod(value: string): void;
+
+  getBody(): string;
+  setBody(value: string): void;
+
+  getHeadersMap(): jspb.Map<string, string>;
+  clearHeadersMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniNodeWebhook.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniNodeWebhook): OmniNodeWebhook.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniNodeWebhook, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniNodeWebhook;
+  static deserializeBinaryFromReader(message: OmniNodeWebhook, reader: jspb.BinaryReader): OmniNodeWebhook;
+}
+
+export namespace OmniNodeWebhook {
+  export type AsObject = {
+    url: string,
+    method: string,
+    body: string,
+    headersMap: Array<[string, string]>,
+  }
+}
+
+export class OmniNodeScrublist extends jspb.Message {
+  getAction(): OmniNodeScrublistActionMap[keyof OmniNodeScrublistActionMap];
+  setAction(value: OmniNodeScrublistActionMap[keyof OmniNodeScrublistActionMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniNodeScrublist.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniNodeScrublist): OmniNodeScrublist.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniNodeScrublist, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniNodeScrublist;
+  static deserializeBinaryFromReader(message: OmniNodeScrublist, reader: jspb.BinaryReader): OmniNodeScrublist;
+}
+
+export namespace OmniNodeScrublist {
+  export type AsObject = {
+    action: OmniNodeScrublistActionMap[keyof OmniNodeScrublistActionMap],
+  }
+}
+
+export class OmniNodeEndConversation extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniNodeEndConversation.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniNodeEndConversation): OmniNodeEndConversation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniNodeEndConversation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniNodeEndConversation;
+  static deserializeBinaryFromReader(message: OmniNodeEndConversation, reader: jspb.BinaryReader): OmniNodeEndConversation;
+}
+
+export namespace OmniNodeEndConversation {
+  export type AsObject = {
+  }
+}
+
+export interface OmniNodeScrublistActionMap {
+  ADD: 0;
+  REMOVE: 1;
+}
+
+export const OmniNodeScrublistAction: OmniNodeScrublistActionMap;
+

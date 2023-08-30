@@ -95,6 +95,21 @@ export class NodeDefinition extends jspb.Message {
   getOmniToMatcher(): api_commons_workflows_omni_pb.OmniNodeToMatcher | undefined;
   setOmniToMatcher(value?: api_commons_workflows_omni_pb.OmniNodeToMatcher): void;
 
+  hasOmniWebhook(): boolean;
+  clearOmniWebhook(): void;
+  getOmniWebhook(): api_commons_workflows_omni_pb.OmniNodeWebhook | undefined;
+  setOmniWebhook(value?: api_commons_workflows_omni_pb.OmniNodeWebhook): void;
+
+  hasOmniScrublist(): boolean;
+  clearOmniScrublist(): void;
+  getOmniScrublist(): api_commons_workflows_omni_pb.OmniNodeScrublist | undefined;
+  setOmniScrublist(value?: api_commons_workflows_omni_pb.OmniNodeScrublist): void;
+
+  hasOmniEndConversation(): boolean;
+  clearOmniEndConversation(): void;
+  getOmniEndConversation(): api_commons_workflows_omni_pb.OmniNodeEndConversation | undefined;
+  setOmniEndConversation(value?: api_commons_workflows_omni_pb.OmniNodeEndConversation): void;
+
   hasOmniBotTestStart(): boolean;
   clearOmniBotTestStart(): void;
   getOmniBotTestStart(): api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart | undefined;
@@ -157,6 +172,9 @@ export namespace NodeDefinition {
     omniUserInput?: api_commons_workflows_omni_pb.OmniNodeUserInput.AsObject,
     omniBranching?: api_commons_workflows_omni_pb.OmniNodeBranching.AsObject,
     omniToMatcher?: api_commons_workflows_omni_pb.OmniNodeToMatcher.AsObject,
+    omniWebhook?: api_commons_workflows_omni_pb.OmniNodeWebhook.AsObject,
+    omniScrublist?: api_commons_workflows_omni_pb.OmniNodeScrublist.AsObject,
+    omniEndConversation?: api_commons_workflows_omni_pb.OmniNodeEndConversation.AsObject,
     omniBotTestStart?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart.AsObject,
     omniBotTestStep?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep.AsObject,
     omniBotTestEnd?: api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.AsObject,
@@ -181,6 +199,9 @@ export namespace NodeDefinition {
     OMNI_USER_INPUT = 207,
     OMNI_BRANCHING = 208,
     OMNI_TO_MATCHER = 209,
+    OMNI_WEBHOOK = 210,
+    OMNI_SCRUBLIST = 211,
+    OMNI_END_CONVERSATION = 212,
     OMNI_BOT_TEST_START = 301,
     OMNI_BOT_TEST_STEP = 302,
     OMNI_BOT_TEST_END = 303,
