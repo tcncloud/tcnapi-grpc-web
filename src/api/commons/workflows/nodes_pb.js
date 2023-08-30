@@ -68,7 +68,7 @@ proto.api.commons.workflows.NodeDefinition.repeatedFields_ = [5];
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.workflows.NodeDefinition.oneofGroups_ = [[101,102,103,104,105,1000,201,202,203,204,206,207,208,209,301,302,303,401,402,403]];
+proto.api.commons.workflows.NodeDefinition.oneofGroups_ = [[101,102,103,104,105,1000,201,202,203,204,301,302,303,401,402,403]];
 
 /**
  * @enum {number}
@@ -85,10 +85,6 @@ proto.api.commons.workflows.NodeDefinition.DefinitionCase = {
   OMNI_SET_SKILL: 202,
   OMNI_TO_AGENT: 203,
   OMNI_ERROR: 204,
-  OMNI_SEND_MESSAGE: 206,
-  OMNI_USER_INPUT: 207,
-  OMNI_BRANCHING: 208,
-  OMNI_TO_MATCHER: 209,
   OMNI_BOT_TEST_START: 301,
   OMNI_BOT_TEST_STEP: 302,
   OMNI_BOT_TEST_END: 303,
@@ -150,10 +146,6 @@ proto.api.commons.workflows.NodeDefinition.toObject = function(includeInstance, 
     omniSetSkill: (f = msg.getOmniSetSkill()) && api_commons_workflows_omni_pb.OmniNodeSetSkill.toObject(includeInstance, f),
     omniToAgent: (f = msg.getOmniToAgent()) && api_commons_workflows_omni_pb.OmniNodeToAgent.toObject(includeInstance, f),
     omniError: (f = msg.getOmniError()) && api_commons_workflows_omni_pb.OmniNodeError.toObject(includeInstance, f),
-    omniSendMessage: (f = msg.getOmniSendMessage()) && api_commons_workflows_omni_pb.OmniNodeSendMessage.toObject(includeInstance, f),
-    omniUserInput: (f = msg.getOmniUserInput()) && api_commons_workflows_omni_pb.OmniNodeUserInput.toObject(includeInstance, f),
-    omniBranching: (f = msg.getOmniBranching()) && api_commons_workflows_omni_pb.OmniNodeBranching.toObject(includeInstance, f),
-    omniToMatcher: (f = msg.getOmniToMatcher()) && api_commons_workflows_omni_pb.OmniNodeToMatcher.toObject(includeInstance, f),
     omniBotTestStart: (f = msg.getOmniBotTestStart()) && api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart.toObject(includeInstance, f),
     omniBotTestStep: (f = msg.getOmniBotTestStep()) && api_commons_workflows_omni_bot_pb.OmniBotNodeTestStep.toObject(includeInstance, f),
     omniBotTestEnd: (f = msg.getOmniBotTestEnd()) && api_commons_workflows_omni_bot_pb.OmniBotNodeTestEnd.toObject(includeInstance, f),
@@ -265,26 +257,6 @@ proto.api.commons.workflows.NodeDefinition.deserializeBinaryFromReader = functio
       var value = new api_commons_workflows_omni_pb.OmniNodeError;
       reader.readMessage(value,api_commons_workflows_omni_pb.OmniNodeError.deserializeBinaryFromReader);
       msg.setOmniError(value);
-      break;
-    case 206:
-      var value = new api_commons_workflows_omni_pb.OmniNodeSendMessage;
-      reader.readMessage(value,api_commons_workflows_omni_pb.OmniNodeSendMessage.deserializeBinaryFromReader);
-      msg.setOmniSendMessage(value);
-      break;
-    case 207:
-      var value = new api_commons_workflows_omni_pb.OmniNodeUserInput;
-      reader.readMessage(value,api_commons_workflows_omni_pb.OmniNodeUserInput.deserializeBinaryFromReader);
-      msg.setOmniUserInput(value);
-      break;
-    case 208:
-      var value = new api_commons_workflows_omni_pb.OmniNodeBranching;
-      reader.readMessage(value,api_commons_workflows_omni_pb.OmniNodeBranching.deserializeBinaryFromReader);
-      msg.setOmniBranching(value);
-      break;
-    case 209:
-      var value = new api_commons_workflows_omni_pb.OmniNodeToMatcher;
-      reader.readMessage(value,api_commons_workflows_omni_pb.OmniNodeToMatcher.deserializeBinaryFromReader);
-      msg.setOmniToMatcher(value);
       break;
     case 301:
       var value = new api_commons_workflows_omni_bot_pb.OmniBotNodeTestStart;
@@ -458,38 +430,6 @@ proto.api.commons.workflows.NodeDefinition.serializeBinaryToWriter = function(me
       204,
       f,
       api_commons_workflows_omni_pb.OmniNodeError.serializeBinaryToWriter
-    );
-  }
-  f = message.getOmniSendMessage();
-  if (f != null) {
-    writer.writeMessage(
-      206,
-      f,
-      api_commons_workflows_omni_pb.OmniNodeSendMessage.serializeBinaryToWriter
-    );
-  }
-  f = message.getOmniUserInput();
-  if (f != null) {
-    writer.writeMessage(
-      207,
-      f,
-      api_commons_workflows_omni_pb.OmniNodeUserInput.serializeBinaryToWriter
-    );
-  }
-  f = message.getOmniBranching();
-  if (f != null) {
-    writer.writeMessage(
-      208,
-      f,
-      api_commons_workflows_omni_pb.OmniNodeBranching.serializeBinaryToWriter
-    );
-  }
-  f = message.getOmniToMatcher();
-  if (f != null) {
-    writer.writeMessage(
-      209,
-      f,
-      api_commons_workflows_omni_pb.OmniNodeToMatcher.serializeBinaryToWriter
     );
   }
   f = message.getOmniBotTestStart();
@@ -1019,154 +959,6 @@ proto.api.commons.workflows.NodeDefinition.prototype.clearOmniError = function()
  */
 proto.api.commons.workflows.NodeDefinition.prototype.hasOmniError = function() {
   return jspb.Message.getField(this, 204) != null;
-};
-
-
-/**
- * optional OmniNodeSendMessage omni_send_message = 206;
- * @return {?proto.api.commons.workflows.OmniNodeSendMessage}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.getOmniSendMessage = function() {
-  return /** @type{?proto.api.commons.workflows.OmniNodeSendMessage} */ (
-    jspb.Message.getWrapperField(this, api_commons_workflows_omni_pb.OmniNodeSendMessage, 206));
-};
-
-
-/**
- * @param {?proto.api.commons.workflows.OmniNodeSendMessage|undefined} value
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
-*/
-proto.api.commons.workflows.NodeDefinition.prototype.setOmniSendMessage = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 206, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
- */
-proto.api.commons.workflows.NodeDefinition.prototype.clearOmniSendMessage = function() {
-  return this.setOmniSendMessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.hasOmniSendMessage = function() {
-  return jspb.Message.getField(this, 206) != null;
-};
-
-
-/**
- * optional OmniNodeUserInput omni_user_input = 207;
- * @return {?proto.api.commons.workflows.OmniNodeUserInput}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.getOmniUserInput = function() {
-  return /** @type{?proto.api.commons.workflows.OmniNodeUserInput} */ (
-    jspb.Message.getWrapperField(this, api_commons_workflows_omni_pb.OmniNodeUserInput, 207));
-};
-
-
-/**
- * @param {?proto.api.commons.workflows.OmniNodeUserInput|undefined} value
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
-*/
-proto.api.commons.workflows.NodeDefinition.prototype.setOmniUserInput = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 207, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
- */
-proto.api.commons.workflows.NodeDefinition.prototype.clearOmniUserInput = function() {
-  return this.setOmniUserInput(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.hasOmniUserInput = function() {
-  return jspb.Message.getField(this, 207) != null;
-};
-
-
-/**
- * optional OmniNodeBranching omni_branching = 208;
- * @return {?proto.api.commons.workflows.OmniNodeBranching}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.getOmniBranching = function() {
-  return /** @type{?proto.api.commons.workflows.OmniNodeBranching} */ (
-    jspb.Message.getWrapperField(this, api_commons_workflows_omni_pb.OmniNodeBranching, 208));
-};
-
-
-/**
- * @param {?proto.api.commons.workflows.OmniNodeBranching|undefined} value
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
-*/
-proto.api.commons.workflows.NodeDefinition.prototype.setOmniBranching = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 208, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
- */
-proto.api.commons.workflows.NodeDefinition.prototype.clearOmniBranching = function() {
-  return this.setOmniBranching(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.hasOmniBranching = function() {
-  return jspb.Message.getField(this, 208) != null;
-};
-
-
-/**
- * optional OmniNodeToMatcher omni_to_matcher = 209;
- * @return {?proto.api.commons.workflows.OmniNodeToMatcher}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.getOmniToMatcher = function() {
-  return /** @type{?proto.api.commons.workflows.OmniNodeToMatcher} */ (
-    jspb.Message.getWrapperField(this, api_commons_workflows_omni_pb.OmniNodeToMatcher, 209));
-};
-
-
-/**
- * @param {?proto.api.commons.workflows.OmniNodeToMatcher|undefined} value
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
-*/
-proto.api.commons.workflows.NodeDefinition.prototype.setOmniToMatcher = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 209, proto.api.commons.workflows.NodeDefinition.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.workflows.NodeDefinition} returns this
- */
-proto.api.commons.workflows.NodeDefinition.prototype.clearOmniToMatcher = function() {
-  return this.setOmniToMatcher(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.workflows.NodeDefinition.prototype.hasOmniToMatcher = function() {
-  return jspb.Message.getField(this, 209) != null;
 };
 
 
