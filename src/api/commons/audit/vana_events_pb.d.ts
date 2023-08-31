@@ -168,3 +168,43 @@ export namespace VanaFlagSummaryEvent {
   }
 }
 
+export class VanaPhraseCorrectionEvent extends jspb.Message {
+  getStartTime(): number;
+  setStartTime(value: number): void;
+
+  getEndTime(): number;
+  setEndTime(value: number): void;
+
+  getOriginalText(): string;
+  setOriginalText(value: string): void;
+
+  getProposedText(): string;
+  setProposedText(value: string): void;
+
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  getChannel(): number;
+  setChannel(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VanaPhraseCorrectionEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: VanaPhraseCorrectionEvent): VanaPhraseCorrectionEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: VanaPhraseCorrectionEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VanaPhraseCorrectionEvent;
+  static deserializeBinaryFromReader(message: VanaPhraseCorrectionEvent, reader: jspb.BinaryReader): VanaPhraseCorrectionEvent;
+}
+
+export namespace VanaPhraseCorrectionEvent {
+  export type AsObject = {
+    startTime: number,
+    endTime: number,
+    originalText: string,
+    proposedText: string,
+    url: string,
+    channel: number,
+  }
+}
+
