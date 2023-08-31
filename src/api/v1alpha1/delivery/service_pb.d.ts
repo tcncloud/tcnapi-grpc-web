@@ -669,6 +669,60 @@ export namespace CreateEncryptionRes {
   }
 }
 
+export class GetDeliveryDefinitionByNameReq extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  hasMask(): boolean;
+  clearMask(): void;
+  getMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): DeliveryDefinition | undefined;
+  setEntity(value?: DeliveryDefinition): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDeliveryDefinitionByNameReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDeliveryDefinitionByNameReq): GetDeliveryDefinitionByNameReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDeliveryDefinitionByNameReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDeliveryDefinitionByNameReq;
+  static deserializeBinaryFromReader(message: GetDeliveryDefinitionByNameReq, reader: jspb.BinaryReader): GetDeliveryDefinitionByNameReq;
+}
+
+export namespace GetDeliveryDefinitionByNameReq {
+  export type AsObject = {
+    name: string,
+    mask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    entity?: DeliveryDefinition.AsObject,
+  }
+}
+
+export class GetDeliveryDefinitionByNameRes extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): DeliveryDefinition | undefined;
+  setEntity(value?: DeliveryDefinition): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDeliveryDefinitionByNameRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDeliveryDefinitionByNameRes): GetDeliveryDefinitionByNameRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDeliveryDefinitionByNameRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDeliveryDefinitionByNameRes;
+  static deserializeBinaryFromReader(message: GetDeliveryDefinitionByNameRes, reader: jspb.BinaryReader): GetDeliveryDefinitionByNameRes;
+}
+
+export namespace GetDeliveryDefinitionByNameRes {
+  export type AsObject = {
+    entity?: DeliveryDefinition.AsObject,
+  }
+}
+
 export class TransferConfig extends jspb.Message {
   getSid(): string;
   setSid(value: string): void;

@@ -67,6 +67,15 @@ type DeliveryApiDeleteTransferConfig = {
   readonly responseType: typeof api_v1alpha1_delivery_service_pb.DeleteTransferConfigRes;
 };
 
+type DeliveryApiGetDeliveryDefinitionByName = {
+  readonly methodName: string;
+  readonly service: typeof DeliveryApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameReq;
+  readonly responseType: typeof api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameRes;
+};
+
 type DeliveryApiGetTransferConfig = {
   readonly methodName: string;
   readonly service: typeof DeliveryApi;
@@ -157,6 +166,7 @@ export class DeliveryApi {
   static readonly ListTransferConfigsByCredentialID: DeliveryApiListTransferConfigsByCredentialID;
   static readonly UpdateTransferConfig: DeliveryApiUpdateTransferConfig;
   static readonly DeleteTransferConfig: DeliveryApiDeleteTransferConfig;
+  static readonly GetDeliveryDefinitionByName: DeliveryApiGetDeliveryDefinitionByName;
   static readonly GetTransferConfig: DeliveryApiGetTransferConfig;
   static readonly GetTransferConfigByName: DeliveryApiGetTransferConfigByName;
   static readonly ListHistory: DeliveryApiListHistory;
@@ -262,6 +272,15 @@ export class DeliveryApiClient {
   deleteTransferConfig(
     requestMessage: api_v1alpha1_delivery_service_pb.DeleteTransferConfigReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.DeleteTransferConfigRes|null) => void
+  ): UnaryResponse;
+  getDeliveryDefinitionByName(
+    requestMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameRes|null) => void
+  ): UnaryResponse;
+  getDeliveryDefinitionByName(
+    requestMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameRes|null) => void
   ): UnaryResponse;
   getTransferConfig(
     requestMessage: api_v1alpha1_delivery_service_pb.GetTransferConfigReq,
