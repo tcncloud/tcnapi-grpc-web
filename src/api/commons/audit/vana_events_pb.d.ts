@@ -2,6 +2,7 @@
 // file: api/commons/audit/vana_events.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class VanaFlagEvent extends jspb.Message {
@@ -169,11 +170,15 @@ export namespace VanaFlagSummaryEvent {
 }
 
 export class VanaPhraseCorrectionEvent extends jspb.Message {
-  getStartTime(): number;
-  setStartTime(value: number): void;
+  hasStartOffset(): boolean;
+  clearStartOffset(): void;
+  getStartOffset(): google_protobuf_duration_pb.Duration | undefined;
+  setStartOffset(value?: google_protobuf_duration_pb.Duration): void;
 
-  getEndTime(): number;
-  setEndTime(value: number): void;
+  hasEndOffset(): boolean;
+  clearEndOffset(): void;
+  getEndOffset(): google_protobuf_duration_pb.Duration | undefined;
+  setEndOffset(value?: google_protobuf_duration_pb.Duration): void;
 
   getOriginalText(): string;
   setOriginalText(value: string): void;
@@ -199,8 +204,8 @@ export class VanaPhraseCorrectionEvent extends jspb.Message {
 
 export namespace VanaPhraseCorrectionEvent {
   export type AsObject = {
-    startTime: number,
-    endTime: number,
+    startOffset?: google_protobuf_duration_pb.Duration.AsObject,
+    endOffset?: google_protobuf_duration_pb.Duration.AsObject,
     originalText: string,
     proposedText: string,
     url: string,

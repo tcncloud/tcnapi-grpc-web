@@ -21,6 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
+goog.object.extend(proto, google_protobuf_duration_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.api.commons.audit.VanaBillingReportEvent', null, global);
@@ -1369,8 +1371,8 @@ proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.toObject = function(
  */
 proto.api.commons.audit.VanaPhraseCorrectionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    startTime: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    endTime: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    startOffset: (f = msg.getStartOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+    endOffset: (f = msg.getEndOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
     originalText: jspb.Message.getFieldWithDefault(msg, 3, ""),
     proposedText: jspb.Message.getFieldWithDefault(msg, 4, ""),
     url: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -1412,12 +1414,14 @@ proto.api.commons.audit.VanaPhraseCorrectionEvent.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setStartTime(value);
+      var value = new google_protobuf_duration_pb.Duration;
+      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
+      msg.setStartOffset(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setEndTime(value);
+      var value = new google_protobuf_duration_pb.Duration;
+      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
+      msg.setEndOffset(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -1464,18 +1468,20 @@ proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.serializeBinary = fu
  */
 proto.api.commons.audit.VanaPhraseCorrectionEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getStartTime();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getStartOffset();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
     );
   }
-  f = message.getEndTime();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getEndOffset();
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
+      f,
+      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
     );
   }
   f = message.getOriginalText();
@@ -1510,38 +1516,76 @@ proto.api.commons.audit.VanaPhraseCorrectionEvent.serializeBinaryToWriter = func
 
 
 /**
- * optional uint32 start_time = 1;
- * @return {number}
+ * optional google.protobuf.Duration start_offset = 1;
+ * @return {?proto.google.protobuf.Duration}
  */
-proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.getStartTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.getStartOffset = function() {
+  return /** @type{?proto.google.protobuf.Duration} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 1));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Duration|undefined} value
+ * @return {!proto.api.commons.audit.VanaPhraseCorrectionEvent} returns this
+*/
+proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.setStartOffset = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.api.commons.audit.VanaPhraseCorrectionEvent} returns this
  */
-proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.setStartTime = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.clearStartOffset = function() {
+  return this.setStartOffset(undefined);
 };
 
 
 /**
- * optional uint32 end_time = 2;
- * @return {number}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.getEndTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.hasStartOffset = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * @param {number} value
+ * optional google.protobuf.Duration end_offset = 2;
+ * @return {?proto.google.protobuf.Duration}
+ */
+proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.getEndOffset = function() {
+  return /** @type{?proto.google.protobuf.Duration} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Duration|undefined} value
+ * @return {!proto.api.commons.audit.VanaPhraseCorrectionEvent} returns this
+*/
+proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.setEndOffset = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.api.commons.audit.VanaPhraseCorrectionEvent} returns this
  */
-proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.setEndTime = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.clearEndOffset = function() {
+  return this.setEndOffset(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.hasEndOffset = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
