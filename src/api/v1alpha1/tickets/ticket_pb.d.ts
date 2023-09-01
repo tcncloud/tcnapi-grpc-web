@@ -565,6 +565,11 @@ export class CreateSlaReq extends jspb.Message {
   getInterval(): number;
   setInterval(value: number): void;
 
+  hasDuration(): boolean;
+  clearDuration(): void;
+  getDuration(): api_commons_tickets_pb.Duration | undefined;
+  setDuration(value?: api_commons_tickets_pb.Duration): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateSlaReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateSlaReq): CreateSlaReq.AsObject;
@@ -581,6 +586,7 @@ export namespace CreateSlaReq {
     name: string,
     description: string,
     interval: number,
+    duration?: api_commons_tickets_pb.Duration.AsObject,
   }
 }
 
