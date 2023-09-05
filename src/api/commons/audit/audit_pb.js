@@ -73,7 +73,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800]];
 
 /**
  * @enum {number}
@@ -85,6 +85,7 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   VANA_FLAG_REVIEW_EVENT: 201,
   VANA_BILLING_REPORT_EVENT: 202,
   VANA_FLAG_SUMMARY_EVENT: 203,
+  VANA_PHRASE_CORRECTION_EVENT: 204,
   OMNICHANNEL_CREATE_PROJECT_EVENT: 300,
   OMNICHANNEL_CREATE_CAMPAIGN_EVENT: 301,
   OMNICHANNEL_DAILY_PROJECT_REPORT_EVENT: 302,
@@ -217,6 +218,7 @@ proto.api.commons.audit.AuditEvent.toObject = function(includeInstance, msg) {
     vanaFlagReviewEvent: (f = msg.getVanaFlagReviewEvent()) && api_commons_audit_vana_events_pb.VanaFlagReviewEvent.toObject(includeInstance, f),
     vanaBillingReportEvent: (f = msg.getVanaBillingReportEvent()) && api_commons_audit_vana_events_pb.VanaBillingReportEvent.toObject(includeInstance, f),
     vanaFlagSummaryEvent: (f = msg.getVanaFlagSummaryEvent()) && api_commons_audit_vana_events_pb.VanaFlagSummaryEvent.toObject(includeInstance, f),
+    vanaPhraseCorrectionEvent: (f = msg.getVanaPhraseCorrectionEvent()) && api_commons_audit_vana_events_pb.VanaPhraseCorrectionEvent.toObject(includeInstance, f),
     omnichannelCreateProjectEvent: (f = msg.getOmnichannelCreateProjectEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelCreateProjectEvent.toObject(includeInstance, f),
     omnichannelCreateCampaignEvent: (f = msg.getOmnichannelCreateCampaignEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelCreateCampaignEvent.toObject(includeInstance, f),
     omnichannelDailyProjectReportEvent: (f = msg.getOmnichannelDailyProjectReportEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelDailyProjectReportEvent.toObject(includeInstance, f),
@@ -383,6 +385,11 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_vana_events_pb.VanaFlagSummaryEvent;
       reader.readMessage(value,api_commons_audit_vana_events_pb.VanaFlagSummaryEvent.deserializeBinaryFromReader);
       msg.setVanaFlagSummaryEvent(value);
+      break;
+    case 204:
+      var value = new api_commons_audit_vana_events_pb.VanaPhraseCorrectionEvent;
+      reader.readMessage(value,api_commons_audit_vana_events_pb.VanaPhraseCorrectionEvent.deserializeBinaryFromReader);
+      msg.setVanaPhraseCorrectionEvent(value);
       break;
     case 300:
       var value = new api_commons_audit_omnichannel_events_pb.OmnichannelCreateProjectEvent;
@@ -899,6 +906,14 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       203,
       f,
       api_commons_audit_vana_events_pb.VanaFlagSummaryEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getVanaPhraseCorrectionEvent();
+  if (f != null) {
+    writer.writeMessage(
+      204,
+      f,
+      api_commons_audit_vana_events_pb.VanaPhraseCorrectionEvent.serializeBinaryToWriter
     );
   }
   f = message.getOmnichannelCreateProjectEvent();
@@ -1861,6 +1876,43 @@ proto.api.commons.audit.AuditEvent.prototype.clearVanaFlagSummaryEvent = functio
  */
 proto.api.commons.audit.AuditEvent.prototype.hasVanaFlagSummaryEvent = function() {
   return jspb.Message.getField(this, 203) != null;
+};
+
+
+/**
+ * optional VanaPhraseCorrectionEvent vana_phrase_correction_event = 204;
+ * @return {?proto.api.commons.audit.VanaPhraseCorrectionEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getVanaPhraseCorrectionEvent = function() {
+  return /** @type{?proto.api.commons.audit.VanaPhraseCorrectionEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_vana_events_pb.VanaPhraseCorrectionEvent, 204));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.VanaPhraseCorrectionEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setVanaPhraseCorrectionEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 204, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearVanaPhraseCorrectionEvent = function() {
+  return this.setVanaPhraseCorrectionEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasVanaPhraseCorrectionEvent = function() {
+  return jspb.Message.getField(this, 204) != null;
 };
 
 
