@@ -10181,7 +10181,8 @@ proto.api.v1alpha1.wfm.HistoricalDataInterval.toObject = function(includeInstanc
     originalAverageAfterCallWorkInSeconds: (f = msg.getOriginalAverageAfterCallWorkInSeconds()) && google_protobuf_wrappers_pb.FloatValue.toObject(includeInstance, f),
     originalAverageTimeToAbortInSeconds: (f = msg.getOriginalAverageTimeToAbortInSeconds()) && google_protobuf_wrappers_pb.FloatValue.toObject(includeInstance, f),
     originalTotalCalls: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    originalTotalAbandonedCalls: jspb.Message.getFieldWithDefault(msg, 15, 0)
+    originalTotalAbandonedCalls: jspb.Message.getFieldWithDefault(msg, 15, 0),
+    skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10286,6 +10287,11 @@ proto.api.v1alpha1.wfm.HistoricalDataInterval.deserializeBinaryFromReader = func
     case 15:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setOriginalTotalAbandonedCalls(value);
+      break;
+    case 16:
+      var value = new api_commons_wfm_pb.SkillProfileCategory;
+      reader.readMessage(value,api_commons_wfm_pb.SkillProfileCategory.deserializeBinaryFromReader);
+      msg.setSkillProfileCategory(value);
       break;
     default:
       reader.skipField();
@@ -10428,6 +10434,14 @@ proto.api.v1alpha1.wfm.HistoricalDataInterval.serializeBinaryToWriter = function
     writer.writeInt32(
       15,
       f
+    );
+  }
+  f = message.getSkillProfileCategory();
+  if (f != null) {
+    writer.writeMessage(
+      16,
+      f,
+      api_commons_wfm_pb.SkillProfileCategory.serializeBinaryToWriter
     );
   }
 };
@@ -10871,6 +10885,43 @@ proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.getOriginalTotalAbandone
  */
 proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.setOriginalTotalAbandonedCalls = function(value) {
   return jspb.Message.setProto3IntField(this, 15, value);
+};
+
+
+/**
+ * optional api.commons.SkillProfileCategory skill_profile_category = 16;
+ * @return {?proto.api.commons.SkillProfileCategory}
+ */
+proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.getSkillProfileCategory = function() {
+  return /** @type{?proto.api.commons.SkillProfileCategory} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.SkillProfileCategory, 16));
+};
+
+
+/**
+ * @param {?proto.api.commons.SkillProfileCategory|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.HistoricalDataInterval} returns this
+*/
+proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.setSkillProfileCategory = function(value) {
+  return jspb.Message.setWrapperField(this, 16, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.HistoricalDataInterval} returns this
+ */
+proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.clearSkillProfileCategory = function() {
+  return this.setSkillProfileCategory(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.HistoricalDataInterval.prototype.hasSkillProfileCategory = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
