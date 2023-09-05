@@ -10957,7 +10957,8 @@ proto.api.v1alpha1.wfm.ListHistoricalDataReq.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.wfm.ListHistoricalDataReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillProfileSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    skillProfileSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10998,6 +10999,11 @@ proto.api.v1alpha1.wfm.ListHistoricalDataReq.deserializeBinaryFromReader = funct
       var value = /** @type {number} */ (reader.readInt64());
       msg.setSkillProfileSid(value);
       break;
+    case 2:
+      var value = new api_commons_wfm_pb.SkillProfileCategory;
+      reader.readMessage(value,api_commons_wfm_pb.SkillProfileCategory.deserializeBinaryFromReader);
+      msg.setSkillProfileCategory(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -11034,6 +11040,14 @@ proto.api.v1alpha1.wfm.ListHistoricalDataReq.serializeBinaryToWriter = function(
       f
     );
   }
+  f = message.getSkillProfileCategory();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      api_commons_wfm_pb.SkillProfileCategory.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -11052,6 +11066,43 @@ proto.api.v1alpha1.wfm.ListHistoricalDataReq.prototype.getSkillProfileSid = func
  */
 proto.api.v1alpha1.wfm.ListHistoricalDataReq.prototype.setSkillProfileSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional api.commons.SkillProfileCategory skill_profile_category = 2;
+ * @return {?proto.api.commons.SkillProfileCategory}
+ */
+proto.api.v1alpha1.wfm.ListHistoricalDataReq.prototype.getSkillProfileCategory = function() {
+  return /** @type{?proto.api.commons.SkillProfileCategory} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.SkillProfileCategory, 2));
+};
+
+
+/**
+ * @param {?proto.api.commons.SkillProfileCategory|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.ListHistoricalDataReq} returns this
+*/
+proto.api.v1alpha1.wfm.ListHistoricalDataReq.prototype.setSkillProfileCategory = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.ListHistoricalDataReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListHistoricalDataReq.prototype.clearSkillProfileCategory = function() {
+  return this.setSkillProfileCategory(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ListHistoricalDataReq.prototype.hasSkillProfileCategory = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

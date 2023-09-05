@@ -637,6 +637,11 @@ export class ListHistoricalDataReq extends jspb.Message {
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListHistoricalDataReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListHistoricalDataReq): ListHistoricalDataReq.AsObject;
@@ -650,6 +655,7 @@ export class ListHistoricalDataReq extends jspb.Message {
 export namespace ListHistoricalDataReq {
   export type AsObject = {
     skillProfileSid: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
