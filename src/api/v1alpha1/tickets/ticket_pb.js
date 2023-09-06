@@ -4940,7 +4940,8 @@ proto.api.v1alpha1.tickets.CreateSlaReq.toObject = function(includeInstance, msg
     slaSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    interval: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    interval: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    duration: (f = msg.getDuration()) && api_commons_tickets_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4992,6 +4993,11 @@ proto.api.v1alpha1.tickets.CreateSlaReq.deserializeBinaryFromReader = function(m
     case 4:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setInterval(value);
+      break;
+    case 5:
+      var value = new api_commons_tickets_pb.Duration;
+      reader.readMessage(value,api_commons_tickets_pb.Duration.deserializeBinaryFromReader);
+      msg.setDuration(value);
       break;
     default:
       reader.skipField();
@@ -5048,6 +5054,14 @@ proto.api.v1alpha1.tickets.CreateSlaReq.serializeBinaryToWriter = function(messa
     writer.writeInt64(
       4,
       f
+    );
+  }
+  f = message.getDuration();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      api_commons_tickets_pb.Duration.serializeBinaryToWriter
     );
   }
 };
@@ -5122,6 +5136,43 @@ proto.api.v1alpha1.tickets.CreateSlaReq.prototype.getInterval = function() {
  */
 proto.api.v1alpha1.tickets.CreateSlaReq.prototype.setInterval = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional api.commons.Duration duration = 5;
+ * @return {?proto.api.commons.Duration}
+ */
+proto.api.v1alpha1.tickets.CreateSlaReq.prototype.getDuration = function() {
+  return /** @type{?proto.api.commons.Duration} */ (
+    jspb.Message.getWrapperField(this, api_commons_tickets_pb.Duration, 5));
+};
+
+
+/**
+ * @param {?proto.api.commons.Duration|undefined} value
+ * @return {!proto.api.v1alpha1.tickets.CreateSlaReq} returns this
+*/
+proto.api.v1alpha1.tickets.CreateSlaReq.prototype.setDuration = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.tickets.CreateSlaReq} returns this
+ */
+proto.api.v1alpha1.tickets.CreateSlaReq.prototype.clearDuration = function() {
+  return this.setDuration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.tickets.CreateSlaReq.prototype.hasDuration = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
