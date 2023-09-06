@@ -2245,6 +2245,9 @@ export namespace VerificationNewzwareAccountInquiry {
 }
 
 export class PaymentExperianCC extends jspb.Message {
+  getUseInvoiceAccountNumber(): boolean;
+  setUseInvoiceAccountNumber(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PaymentExperianCC.AsObject;
   static toObject(includeInstance: boolean, msg: PaymentExperianCC): PaymentExperianCC.AsObject;
@@ -2257,10 +2260,14 @@ export class PaymentExperianCC extends jspb.Message {
 
 export namespace PaymentExperianCC {
   export type AsObject = {
+    useInvoiceAccountNumber: boolean,
   }
 }
 
 export class PaymentExperianACH extends jspb.Message {
+  getUseInvoiceAccountNumber(): boolean;
+  setUseInvoiceAccountNumber(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PaymentExperianACH.AsObject;
   static toObject(includeInstance: boolean, msg: PaymentExperianACH): PaymentExperianACH.AsObject;
@@ -2273,6 +2280,7 @@ export class PaymentExperianACH extends jspb.Message {
 
 export namespace PaymentExperianACH {
   export type AsObject = {
+    useInvoiceAccountNumber: boolean,
   }
 }
 
