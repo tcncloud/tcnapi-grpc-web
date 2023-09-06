@@ -28,6 +28,11 @@ export class RateDefinition extends jspb.Message {
   getConfig(): RateDefinitionConfig | undefined;
   setConfig(value?: RateDefinitionConfig): void;
 
+  hasMatchingConfig(): boolean;
+  clearMatchingConfig(): void;
+  getMatchingConfig(): data_billing_v1alpha1_matching_pb.MatchingConfig | undefined;
+  setMatchingConfig(value?: data_billing_v1alpha1_matching_pb.MatchingConfig): void;
+
   hasCreateTime(): boolean;
   clearCreateTime(): void;
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -56,6 +61,7 @@ export namespace RateDefinition {
     configType: RateDefinitionConfigTypeMap[keyof RateDefinitionConfigTypeMap],
     matchingRule: data_billing_v1alpha1_matching_pb.MatchingRuleMap[keyof data_billing_v1alpha1_matching_pb.MatchingRuleMap],
     config?: RateDefinitionConfig.AsObject,
+    matchingConfig?: data_billing_v1alpha1_matching_pb.MatchingConfig.AsObject,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }

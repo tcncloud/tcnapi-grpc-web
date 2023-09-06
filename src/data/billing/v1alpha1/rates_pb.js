@@ -113,6 +113,7 @@ proto.data.billing.v1alpha1.RateDefinition.toObject = function(includeInstance, 
     configType: jspb.Message.getFieldWithDefault(msg, 4, 0),
     matchingRule: jspb.Message.getFieldWithDefault(msg, 5, 0),
     config: (f = msg.getConfig()) && proto.data.billing.v1alpha1.RateDefinitionConfig.toObject(includeInstance, f),
+    matchingConfig: (f = msg.getMatchingConfig()) && data_billing_v1alpha1_matching_pb.MatchingConfig.toObject(includeInstance, f),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -177,11 +178,16 @@ proto.data.billing.v1alpha1.RateDefinition.deserializeBinaryFromReader = functio
       msg.setConfig(value);
       break;
     case 7:
+      var value = new data_billing_v1alpha1_matching_pb.MatchingConfig;
+      reader.readMessage(value,data_billing_v1alpha1_matching_pb.MatchingConfig.deserializeBinaryFromReader);
+      msg.setMatchingConfig(value);
+      break;
+    case 8:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateTime(value);
       break;
-    case 8:
+    case 9:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateTime(value);
@@ -258,10 +264,18 @@ proto.data.billing.v1alpha1.RateDefinition.serializeBinaryToWriter = function(me
       proto.data.billing.v1alpha1.RateDefinitionConfig.serializeBinaryToWriter
     );
   }
-  f = message.getCreateTime();
+  f = message.getMatchingConfig();
   if (f != null) {
     writer.writeMessage(
       7,
+      f,
+      data_billing_v1alpha1_matching_pb.MatchingConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getCreateTime();
+  if (f != null) {
+    writer.writeMessage(
+      8,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -269,7 +283,7 @@ proto.data.billing.v1alpha1.RateDefinition.serializeBinaryToWriter = function(me
   f = message.getUpdateTime();
   if (f != null) {
     writer.writeMessage(
-      8,
+      9,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -405,12 +419,49 @@ proto.data.billing.v1alpha1.RateDefinition.prototype.hasConfig = function() {
 
 
 /**
- * optional google.protobuf.Timestamp create_time = 7;
+ * optional MatchingConfig matching_config = 7;
+ * @return {?proto.data.billing.v1alpha1.MatchingConfig}
+ */
+proto.data.billing.v1alpha1.RateDefinition.prototype.getMatchingConfig = function() {
+  return /** @type{?proto.data.billing.v1alpha1.MatchingConfig} */ (
+    jspb.Message.getWrapperField(this, data_billing_v1alpha1_matching_pb.MatchingConfig, 7));
+};
+
+
+/**
+ * @param {?proto.data.billing.v1alpha1.MatchingConfig|undefined} value
+ * @return {!proto.data.billing.v1alpha1.RateDefinition} returns this
+*/
+proto.data.billing.v1alpha1.RateDefinition.prototype.setMatchingConfig = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.billing.v1alpha1.RateDefinition} returns this
+ */
+proto.data.billing.v1alpha1.RateDefinition.prototype.clearMatchingConfig = function() {
+  return this.setMatchingConfig(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.billing.v1alpha1.RateDefinition.prototype.hasMatchingConfig = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp create_time = 8;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.data.billing.v1alpha1.RateDefinition.prototype.getCreateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
 };
 
 
@@ -419,7 +470,7 @@ proto.data.billing.v1alpha1.RateDefinition.prototype.getCreateTime = function() 
  * @return {!proto.data.billing.v1alpha1.RateDefinition} returns this
 */
 proto.data.billing.v1alpha1.RateDefinition.prototype.setCreateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -437,17 +488,17 @@ proto.data.billing.v1alpha1.RateDefinition.prototype.clearCreateTime = function(
  * @return {boolean}
  */
 proto.data.billing.v1alpha1.RateDefinition.prototype.hasCreateTime = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp update_time = 8;
+ * optional google.protobuf.Timestamp update_time = 9;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.data.billing.v1alpha1.RateDefinition.prototype.getUpdateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
 };
 
 
@@ -456,7 +507,7 @@ proto.data.billing.v1alpha1.RateDefinition.prototype.getUpdateTime = function() 
  * @return {!proto.data.billing.v1alpha1.RateDefinition} returns this
 */
 proto.data.billing.v1alpha1.RateDefinition.prototype.setUpdateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -474,7 +525,7 @@ proto.data.billing.v1alpha1.RateDefinition.prototype.clearUpdateTime = function(
  * @return {boolean}
  */
 proto.data.billing.v1alpha1.RateDefinition.prototype.hasUpdateTime = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
