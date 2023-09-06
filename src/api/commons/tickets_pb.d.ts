@@ -74,6 +74,11 @@ export class Ticket extends jspb.Message {
   getTicketStatus(): TicketStatusMap[keyof TicketStatusMap];
   setTicketStatus(value: TicketStatusMap[keyof TicketStatusMap]): void;
 
+  clearTicketAssigneeList(): void;
+  getTicketAssigneeList(): Array<string>;
+  setTicketAssigneeList(value: Array<string>): void;
+  addTicketAssignee(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ticket.AsObject;
   static toObject(includeInstance: boolean, msg: Ticket): Ticket.AsObject;
@@ -105,6 +110,7 @@ export namespace Ticket {
     assignee: string,
     ticketActionList: Array<TicketAction.AsObject>,
     ticketStatus: TicketStatusMap[keyof TicketStatusMap],
+    ticketAssigneeList: Array<string>,
   }
 }
 
