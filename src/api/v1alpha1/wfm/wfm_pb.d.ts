@@ -597,6 +597,11 @@ export class HistoricalDataInterval extends jspb.Message {
   getOriginalTotalAbandonedCalls(): number;
   setOriginalTotalAbandonedCalls(value: number): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HistoricalDataInterval.AsObject;
   static toObject(includeInstance: boolean, msg: HistoricalDataInterval): HistoricalDataInterval.AsObject;
@@ -624,12 +629,18 @@ export namespace HistoricalDataInterval {
     originalAverageTimeToAbortInSeconds?: google_protobuf_wrappers_pb.FloatValue.AsObject,
     originalTotalCalls: number,
     originalTotalAbandonedCalls: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
 export class ListHistoricalDataReq extends jspb.Message {
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;
+
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListHistoricalDataReq.AsObject;
@@ -644,6 +655,7 @@ export class ListHistoricalDataReq extends jspb.Message {
 export namespace ListHistoricalDataReq {
   export type AsObject = {
     skillProfileSid: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
