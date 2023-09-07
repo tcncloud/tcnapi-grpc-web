@@ -1480,6 +1480,16 @@ export class ExecuteFlow extends jspb.Message {
   getPianoUpdateUser(): ExecutePianoUpdateUser | undefined;
   setPianoUpdateUser(value?: ExecutePianoUpdateUser): void;
 
+  hasPianoUpdateSubscription(): boolean;
+  clearPianoUpdateSubscription(): void;
+  getPianoUpdateSubscription(): ExecutePianoUpdateSubscription | undefined;
+  setPianoUpdateSubscription(value?: ExecutePianoUpdateSubscription): void;
+
+  hasPianoGetPayment(): boolean;
+  clearPianoGetPayment(): void;
+  getPianoGetPayment(): ExecutePianoGetPayment | undefined;
+  setPianoGetPayment(value?: ExecutePianoGetPayment): void;
+
   hasEpicGetToken(): boolean;
   clearEpicGetToken(): void;
   getEpicGetToken(): ExecuteEpicGetToken | undefined;
@@ -1756,6 +1766,8 @@ export namespace ExecuteFlow {
     poscorpUpdatePaymentStatus?: ExecutePoscorpUpdatePaymentStatus.AsObject,
     pianoGetUser?: ExecutePianoGetUser.AsObject,
     pianoUpdateUser?: ExecutePianoUpdateUser.AsObject,
+    pianoUpdateSubscription?: ExecutePianoUpdateSubscription.AsObject,
+    pianoGetPayment?: ExecutePianoGetPayment.AsObject,
     epicGetToken?: ExecuteEpicGetToken.AsObject,
     epicGetPatient?: ExecuteEpicGetPatient.AsObject,
     epicMatchPatient?: ExecuteEpicMatchPatient.AsObject,
@@ -1950,6 +1962,8 @@ export namespace ExecuteFlow {
     POSCORP_UPDATE_PAYMENT_STATUS = 3503,
     PIANO_GET_USER = 3601,
     PIANO_UPDATE_USER = 3602,
+    PIANO_UPDATE_SUBSCRIPTION = 3603,
+    PIANO_GET_PAYMENT = 3604,
     EPIC_GET_TOKEN = 3701,
     EPIC_GET_PATIENT = 3702,
     EPIC_MATCH_PATIENT = 3703,
@@ -5212,6 +5226,38 @@ export namespace ExecutePianoUpdateUser {
   }
 }
 
+export class ExecutePianoUpdateSubscription extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePianoUpdateSubscription.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePianoUpdateSubscription): ExecutePianoUpdateSubscription.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePianoUpdateSubscription, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePianoUpdateSubscription;
+  static deserializeBinaryFromReader(message: ExecutePianoUpdateSubscription, reader: jspb.BinaryReader): ExecutePianoUpdateSubscription;
+}
+
+export namespace ExecutePianoUpdateSubscription {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePianoGetPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePianoGetPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePianoGetPayment): ExecutePianoGetPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePianoGetPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePianoGetPayment;
+  static deserializeBinaryFromReader(message: ExecutePianoGetPayment, reader: jspb.BinaryReader): ExecutePianoGetPayment;
+}
+
+export namespace ExecutePianoGetPayment {
+  export type AsObject = {
+  }
+}
+
 export class ExecuteEpicGetToken extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteEpicGetToken.AsObject;
@@ -5719,6 +5765,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS: 3503;
   REQUEST_METHOD_PIANO_GET_USER: 3601;
   REQUEST_METHOD_PIANO_UPDATE_USER: 3602;
+  REQUEST_METHOD_PIANO_UPDATE_SUBSCRIPTION: 3603;
+  REQUEST_METHOD_PIANO_GET_PAYMENT: 3604;
   REQUEST_METHOD_EPIC_GET_TOKEN: 3701;
   REQUEST_METHOD_EPIC_GET_PATIENT: 3702;
   REQUEST_METHOD_EPIC_MATCH_PATIENT: 3703;
