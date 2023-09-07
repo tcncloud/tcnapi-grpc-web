@@ -2982,10 +2982,10 @@ export namespace ListProgramNodesBySidReq {
 }
 
 export class ListProgramNodesBySidRes extends jspb.Message {
-  clearProgramNodeList(): void;
-  getProgramNodeList(): Array<ProgramNode>;
-  setProgramNodeList(value: Array<ProgramNode>): void;
-  addProgramNode(value?: ProgramNode, index?: number): ProgramNode;
+  clearProgramNodesList(): void;
+  getProgramNodesList(): Array<ProgramNode>;
+  setProgramNodesList(value: Array<ProgramNode>): void;
+  addProgramNodes(value?: ProgramNode, index?: number): ProgramNode;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListProgramNodesBySidRes.AsObject;
@@ -2999,7 +2999,7 @@ export class ListProgramNodesBySidRes extends jspb.Message {
 
 export namespace ListProgramNodesBySidRes {
   export type AsObject = {
-    programNodeList: Array<ProgramNode.AsObject>,
+    programNodesList: Array<ProgramNode.AsObject>,
   }
 }
 

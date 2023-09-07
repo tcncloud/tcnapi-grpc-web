@@ -27570,7 +27570,7 @@ proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.prototype.toObject = function(op
  */
 proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    programNodeList: jspb.Message.toObjectList(msg.getProgramNodeList(),
+    programNodesList: jspb.Message.toObjectList(msg.getProgramNodesList(),
     proto.api.v1alpha1.wfm.ProgramNode.toObject, includeInstance)
   };
 
@@ -27611,7 +27611,7 @@ proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.deserializeBinaryFromReader = fu
     case 1:
       var value = new proto.api.v1alpha1.wfm.ProgramNode;
       reader.readMessage(value,proto.api.v1alpha1.wfm.ProgramNode.deserializeBinaryFromReader);
-      msg.addProgramNode(value);
+      msg.addProgramNodes(value);
       break;
     default:
       reader.skipField();
@@ -27642,7 +27642,7 @@ proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.prototype.serializeBinary = func
  */
 proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getProgramNodeList();
+  f = message.getProgramNodesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -27654,10 +27654,10 @@ proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.serializeBinaryToWriter = functi
 
 
 /**
- * repeated ProgramNode program_node = 1;
+ * repeated ProgramNode program_nodes = 1;
  * @return {!Array<!proto.api.v1alpha1.wfm.ProgramNode>}
  */
-proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.prototype.getProgramNodeList = function() {
+proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.prototype.getProgramNodesList = function() {
   return /** @type{!Array<!proto.api.v1alpha1.wfm.ProgramNode>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.ProgramNode, 1));
 };
@@ -27667,7 +27667,7 @@ proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.prototype.getProgramNodeList = f
  * @param {!Array<!proto.api.v1alpha1.wfm.ProgramNode>} value
  * @return {!proto.api.v1alpha1.wfm.ListProgramNodesBySidRes} returns this
 */
-proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.prototype.setProgramNodeList = function(value) {
+proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.prototype.setProgramNodesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -27677,7 +27677,7 @@ proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.prototype.setProgramNodeList = f
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.wfm.ProgramNode}
  */
-proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.prototype.addProgramNode = function(opt_value, opt_index) {
+proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.prototype.addProgramNodes = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.wfm.ProgramNode, opt_index);
 };
 
@@ -27686,8 +27686,8 @@ proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.prototype.addProgramNode = funct
  * Clears the list making it empty but non-null.
  * @return {!proto.api.v1alpha1.wfm.ListProgramNodesBySidRes} returns this
  */
-proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.prototype.clearProgramNodeList = function() {
-  return this.setProgramNodeList([]);
+proto.api.v1alpha1.wfm.ListProgramNodesBySidRes.prototype.clearProgramNodesList = function() {
+  return this.setProgramNodesList([]);
 };
 
 
