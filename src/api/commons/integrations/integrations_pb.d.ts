@@ -501,6 +501,11 @@ export class VerificationFlow extends jspb.Message {
   getNewzwareAccountInquiry(): VerificationNewzwareAccountInquiry | undefined;
   setNewzwareAccountInquiry(value?: VerificationNewzwareAccountInquiry): void;
 
+  hasPricommerceGetCustomer(): boolean;
+  clearPricommerceGetCustomer(): void;
+  getPricommerceGetCustomer(): VerificationPriocommerceGetCustomer | undefined;
+  setPricommerceGetCustomer(value?: VerificationPriocommerceGetCustomer): void;
+
   clearVerificationFieldsList(): void;
   getVerificationFieldsList(): Array<FieldDefinition>;
   setVerificationFieldsList(value: Array<FieldDefinition>): void;
@@ -528,6 +533,7 @@ export namespace VerificationFlow {
     journey?: VerificationJourney.AsObject,
     newzwareLookupPhone?: VerificationNewzwareLookupPhone.AsObject,
     newzwareAccountInquiry?: VerificationNewzwareAccountInquiry.AsObject,
+    pricommerceGetCustomer?: VerificationPriocommerceGetCustomer.AsObject,
     verificationFieldsList: Array<FieldDefinition.AsObject>,
   }
 
@@ -541,6 +547,7 @@ export namespace VerificationFlow {
     JOURNEY = 12,
     NEWZWARE_LOOKUP_PHONE = 13,
     NEWZWARE_ACCOUNT_INQUIRY = 14,
+    PRICOMMERCE_GET_CUSTOMER = 15,
   }
 }
 
@@ -1570,6 +1577,11 @@ export class ExecuteFlow extends jspb.Message {
   getPriocommerceCcPayment(): ExecutePriocommerceCcPayment | undefined;
   setPriocommerceCcPayment(value?: ExecutePriocommerceCcPayment): void;
 
+  hasPriocommerceGetCustomer(): boolean;
+  clearPriocommerceGetCustomer(): void;
+  getPriocommerceGetCustomer(): ExecutePriocommerceAchGetCustomer | undefined;
+  setPriocommerceGetCustomer(value?: ExecutePriocommerceAchGetCustomer): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -1774,6 +1786,7 @@ export namespace ExecuteFlow {
     newzwarePhoneLookupMulti?: ExecuteNewzwarePhoneLookupMulti.AsObject,
     priocommerceAchPayment?: ExecutePriocommerceAchPayment.AsObject,
     priocommerceCcPayment?: ExecutePriocommerceCcPayment.AsObject,
+    priocommerceGetCustomer?: ExecutePriocommerceAchGetCustomer.AsObject,
   }
 
   export enum ValueCase {
@@ -1968,6 +1981,7 @@ export namespace ExecuteFlow {
     NEWZWARE_PHONE_LOOKUP_MULTI = 3809,
     PRIOCOMMERCE_ACH_PAYMENT = 3901,
     PRIOCOMMERCE_CC_PAYMENT = 3902,
+    PRIOCOMMERCE_GET_CUSTOMER = 3903,
   }
 }
 
@@ -2240,6 +2254,22 @@ export class VerificationNewzwareAccountInquiry extends jspb.Message {
 }
 
 export namespace VerificationNewzwareAccountInquiry {
+  export type AsObject = {
+  }
+}
+
+export class VerificationPriocommerceGetCustomer extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VerificationPriocommerceGetCustomer.AsObject;
+  static toObject(includeInstance: boolean, msg: VerificationPriocommerceGetCustomer): VerificationPriocommerceGetCustomer.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: VerificationPriocommerceGetCustomer, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VerificationPriocommerceGetCustomer;
+  static deserializeBinaryFromReader(message: VerificationPriocommerceGetCustomer, reader: jspb.BinaryReader): VerificationPriocommerceGetCustomer;
+}
+
+export namespace VerificationPriocommerceGetCustomer {
   export type AsObject = {
   }
 }
@@ -5492,6 +5522,22 @@ export namespace ExecutePriocommerceCcPayment {
   }
 }
 
+export class ExecutePriocommerceAchGetCustomer extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePriocommerceAchGetCustomer.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePriocommerceAchGetCustomer): ExecutePriocommerceAchGetCustomer.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePriocommerceAchGetCustomer, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePriocommerceAchGetCustomer;
+  static deserializeBinaryFromReader(message: ExecutePriocommerceAchGetCustomer, reader: jspb.BinaryReader): ExecutePriocommerceAchGetCustomer;
+}
+
+export namespace ExecutePriocommerceAchGetCustomer {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -5729,6 +5775,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP_MULTI: 3809;
   REQUEST_METHOD_PRIOCOMMERCE_ACH_PAYMENT: 3901;
   REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT: 3902;
+  REQUEST_METHOD_PRIOCOMMERCE_GET_CUSTOMER: 3903;
 }
 
 export const RequestMethod: RequestMethodMap;
