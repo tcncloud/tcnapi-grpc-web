@@ -51111,7 +51111,8 @@ proto.api.v1alpha1.org.legacy.SchedulePreferences.toObject = function(includeIns
     displayCampaignLinking: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     useCampaignLinking: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
     campaignLinksMap: (f = msg.getCampaignLinksMap()) ? f.toObject(includeInstance, undefined) : [],
-    defaultCampaignLinkId: jspb.Message.getFieldWithDefault(msg, 10, "")
+    defaultCampaignLinkId: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    resendCancelledCampaigns: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
   };
 
   if (includeInstance) {
@@ -51189,6 +51190,10 @@ proto.api.v1alpha1.org.legacy.SchedulePreferences.deserializeBinaryFromReader = 
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setDefaultCampaignLinkId(value);
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setResendCancelledCampaigns(value);
       break;
     default:
       reader.skipField();
@@ -51283,6 +51288,13 @@ proto.api.v1alpha1.org.legacy.SchedulePreferences.serializeBinaryToWriter = func
   if (f.length > 0) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = message.getResendCancelledCampaigns();
+  if (f) {
+    writer.writeBool(
+      11,
       f
     );
   }
@@ -51471,6 +51483,24 @@ proto.api.v1alpha1.org.legacy.SchedulePreferences.prototype.getDefaultCampaignLi
  */
 proto.api.v1alpha1.org.legacy.SchedulePreferences.prototype.setDefaultCampaignLinkId = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional bool resend_cancelled_campaigns = 11;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.legacy.SchedulePreferences.prototype.getResendCancelledCampaigns = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.legacy.SchedulePreferences} returns this
+ */
+proto.api.v1alpha1.org.legacy.SchedulePreferences.prototype.setResendCancelledCampaigns = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
