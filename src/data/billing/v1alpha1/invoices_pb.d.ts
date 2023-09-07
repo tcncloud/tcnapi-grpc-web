@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as data_billing_v1alpha1_products_pb from "../../../data/billing/v1alpha1/products_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class Invoice extends jspb.Message {
   getInvoiceId(): string;
@@ -30,8 +31,10 @@ export class Invoice extends jspb.Message {
   setItemsList(value: Array<InvoiceItem>): void;
   addItems(value?: InvoiceItem, index?: number): InvoiceItem;
 
-  getUrl(): string;
-  setUrl(value: string): void;
+  hasUrl(): boolean;
+  clearUrl(): void;
+  getUrl(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setUrl(value?: google_protobuf_wrappers_pb.StringValue): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Invoice.AsObject;
@@ -51,7 +54,7 @@ export namespace Invoice {
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     itemsList: Array<InvoiceItem.AsObject>,
-    url: string,
+    url?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 

@@ -25,6 +25,8 @@ var data_billing_v1alpha1_products_pb = require('../../../data/billing/v1alpha1/
 goog.object.extend(proto, data_billing_v1alpha1_products_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
+var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
+goog.object.extend(proto, google_protobuf_wrappers_pb);
 goog.exportSymbol('proto.data.billing.v1alpha1.Invoice', null, global);
 goog.exportSymbol('proto.data.billing.v1alpha1.InvoiceItem', null, global);
 /**
@@ -115,7 +117,7 @@ proto.data.billing.v1alpha1.Invoice.toObject = function(includeInstance, msg) {
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.data.billing.v1alpha1.InvoiceItem.toObject, includeInstance),
-    url: jspb.Message.getFieldWithDefault(msg, 7, "")
+    url: (f = msg.getUrl()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -180,7 +182,8 @@ proto.data.billing.v1alpha1.Invoice.deserializeBinaryFromReader = function(msg, 
       msg.addItems(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setUrl(value);
       break;
     default:
@@ -258,10 +261,11 @@ proto.data.billing.v1alpha1.Invoice.serializeBinaryToWriter = function(message, 
     );
   }
   f = message.getUrl();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       7,
-      f
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
@@ -434,20 +438,39 @@ proto.data.billing.v1alpha1.Invoice.prototype.clearItemsList = function() {
 
 
 /**
- * optional string url = 7;
- * @return {string}
+ * optional google.protobuf.StringValue url = 7;
+ * @return {?proto.google.protobuf.StringValue}
  */
 proto.data.billing.v1alpha1.Invoice.prototype.getUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 7));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.google.protobuf.StringValue|undefined} value
+ * @return {!proto.data.billing.v1alpha1.Invoice} returns this
+*/
+proto.data.billing.v1alpha1.Invoice.prototype.setUrl = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.data.billing.v1alpha1.Invoice} returns this
  */
-proto.data.billing.v1alpha1.Invoice.prototype.setUrl = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+proto.data.billing.v1alpha1.Invoice.prototype.clearUrl = function() {
+  return this.setUrl(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.billing.v1alpha1.Invoice.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
