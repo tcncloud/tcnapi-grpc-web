@@ -33013,8 +33013,7 @@ proto.api.v1alpha1.wfm.ListAllWFMAgentsReq.toObject = function(includeInstance, 
   var f, obj = {
     includeInactive: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
     includeSkillProficiencies: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    includeAgentGroups: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    agentGroupScheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    includeAgentGroups: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -33063,10 +33062,6 @@ proto.api.v1alpha1.wfm.ListAllWFMAgentsReq.deserializeBinaryFromReader = functio
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIncludeAgentGroups(value);
       break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setAgentGroupScheduleScenarioSid(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -33114,13 +33109,6 @@ proto.api.v1alpha1.wfm.ListAllWFMAgentsReq.serializeBinaryToWriter = function(me
   if (f) {
     writer.writeBool(
       3,
-      f
-    );
-  }
-  f = message.getAgentGroupScheduleScenarioSid();
-  if (f !== 0) {
-    writer.writeInt64(
-      4,
       f
     );
   }
@@ -33178,24 +33166,6 @@ proto.api.v1alpha1.wfm.ListAllWFMAgentsReq.prototype.getIncludeAgentGroups = fun
  */
 proto.api.v1alpha1.wfm.ListAllWFMAgentsReq.prototype.setIncludeAgentGroups = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
-};
-
-
-/**
- * optional int64 agent_group_schedule_scenario_sid = 4;
- * @return {number}
- */
-proto.api.v1alpha1.wfm.ListAllWFMAgentsReq.prototype.getAgentGroupScheduleScenarioSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.wfm.ListAllWFMAgentsReq} returns this
- */
-proto.api.v1alpha1.wfm.ListAllWFMAgentsReq.prototype.setAgentGroupScheduleScenarioSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
