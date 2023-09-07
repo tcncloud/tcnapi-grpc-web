@@ -47,40 +47,40 @@ NewsroomAPI.UpdateNewsArticle = {
   responseType: api_v1alpha1_newsroom_entities_pb.UpdateNewsArticleResponse
 };
 
-NewsroomAPI.CreatePublishedNewsArticle = {
-  methodName: "CreatePublishedNewsArticle",
+NewsroomAPI.CreatePublishedArticle = {
+  methodName: "CreatePublishedArticle",
   service: NewsroomAPI,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_newsroom_entities_pb.CreatePublishedNewsArticleRequest,
-  responseType: api_v1alpha1_newsroom_entities_pb.CreatePublishedNewsArticleResponse
+  requestType: api_v1alpha1_newsroom_entities_pb.CreatePublishedArticleRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.CreatePublishedArticleResponse
 };
 
-NewsroomAPI.ListPublishedNewsArticles = {
-  methodName: "ListPublishedNewsArticles",
+NewsroomAPI.ListPublishedArticles = {
+  methodName: "ListPublishedArticles",
   service: NewsroomAPI,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_newsroom_entities_pb.ListPublishedNewsArticlesRequest,
-  responseType: api_v1alpha1_newsroom_entities_pb.ListPublishedNewsArticlesResponse
+  requestType: api_v1alpha1_newsroom_entities_pb.ListPublishedArticlesRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.ListPublishedArticlesResponse
 };
 
-NewsroomAPI.GetPublishedNewsArticleById = {
-  methodName: "GetPublishedNewsArticleById",
+NewsroomAPI.GetPublishedArticleById = {
+  methodName: "GetPublishedArticleById",
   service: NewsroomAPI,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_newsroom_entities_pb.GetPublishedNewsArticleByIdRequest,
-  responseType: api_v1alpha1_newsroom_entities_pb.GetPublishedNewsArticleByIdResponse
+  requestType: api_v1alpha1_newsroom_entities_pb.GetPublishedArticleByIdRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.GetPublishedArticleByIdResponse
 };
 
-NewsroomAPI.UpdatePublishedNewsArticle = {
-  methodName: "UpdatePublishedNewsArticle",
+NewsroomAPI.UpdatePublishedArticle = {
+  methodName: "UpdatePublishedArticle",
   service: NewsroomAPI,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_newsroom_entities_pb.UpdatePublishedNewsArticleRequest,
-  responseType: api_v1alpha1_newsroom_entities_pb.UpdatePublishedNewsArticleResponse
+  requestType: api_v1alpha1_newsroom_entities_pb.UpdatePublishedArticleRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.UpdatePublishedArticleResponse
 };
 
 exports.NewsroomAPI = NewsroomAPI;
@@ -214,11 +214,11 @@ NewsroomAPIClient.prototype.updateNewsArticle = function updateNewsArticle(reque
   };
 };
 
-NewsroomAPIClient.prototype.createPublishedNewsArticle = function createPublishedNewsArticle(requestMessage, metadata, callback) {
+NewsroomAPIClient.prototype.createPublishedArticle = function createPublishedArticle(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(NewsroomAPI.CreatePublishedNewsArticle, {
+  var client = grpc.unary(NewsroomAPI.CreatePublishedArticle, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -245,11 +245,11 @@ NewsroomAPIClient.prototype.createPublishedNewsArticle = function createPublishe
   };
 };
 
-NewsroomAPIClient.prototype.listPublishedNewsArticles = function listPublishedNewsArticles(requestMessage, metadata, callback) {
+NewsroomAPIClient.prototype.listPublishedArticles = function listPublishedArticles(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(NewsroomAPI.ListPublishedNewsArticles, {
+  var client = grpc.unary(NewsroomAPI.ListPublishedArticles, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -276,11 +276,11 @@ NewsroomAPIClient.prototype.listPublishedNewsArticles = function listPublishedNe
   };
 };
 
-NewsroomAPIClient.prototype.getPublishedNewsArticleById = function getPublishedNewsArticleById(requestMessage, metadata, callback) {
+NewsroomAPIClient.prototype.getPublishedArticleById = function getPublishedArticleById(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(NewsroomAPI.GetPublishedNewsArticleById, {
+  var client = grpc.unary(NewsroomAPI.GetPublishedArticleById, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -307,11 +307,11 @@ NewsroomAPIClient.prototype.getPublishedNewsArticleById = function getPublishedN
   };
 };
 
-NewsroomAPIClient.prototype.updatePublishedNewsArticle = function updatePublishedNewsArticle(requestMessage, metadata, callback) {
+NewsroomAPIClient.prototype.updatePublishedArticle = function updatePublishedArticle(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(NewsroomAPI.UpdatePublishedNewsArticle, {
+  var client = grpc.unary(NewsroomAPI.UpdatePublishedArticle, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
