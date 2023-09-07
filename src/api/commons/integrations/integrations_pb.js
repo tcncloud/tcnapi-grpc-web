@@ -21448,7 +21448,7 @@ proto.api.commons.integrations.PaymentExperianCC.prototype.toObject = function(o
  */
 proto.api.commons.integrations.PaymentExperianCC.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    useInvoiceAccountNumber: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -21485,6 +21485,10 @@ proto.api.commons.integrations.PaymentExperianCC.deserializeBinaryFromReader = f
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUseInvoiceAccountNumber(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -21514,6 +21518,31 @@ proto.api.commons.integrations.PaymentExperianCC.prototype.serializeBinary = fun
  */
 proto.api.commons.integrations.PaymentExperianCC.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getUseInvoiceAccountNumber();
+  if (f) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bool use_invoice_account_number = 1;
+ * @return {boolean}
+ */
+proto.api.commons.integrations.PaymentExperianCC.prototype.getUseInvoiceAccountNumber = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.integrations.PaymentExperianCC} returns this
+ */
+proto.api.commons.integrations.PaymentExperianCC.prototype.setUseInvoiceAccountNumber = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
@@ -21549,7 +21578,7 @@ proto.api.commons.integrations.PaymentExperianACH.prototype.toObject = function(
  */
 proto.api.commons.integrations.PaymentExperianACH.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    useInvoiceAccountNumber: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -21586,6 +21615,10 @@ proto.api.commons.integrations.PaymentExperianACH.deserializeBinaryFromReader = 
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUseInvoiceAccountNumber(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -21615,6 +21648,31 @@ proto.api.commons.integrations.PaymentExperianACH.prototype.serializeBinary = fu
  */
 proto.api.commons.integrations.PaymentExperianACH.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getUseInvoiceAccountNumber();
+  if (f) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bool use_invoice_account_number = 1;
+ * @return {boolean}
+ */
+proto.api.commons.integrations.PaymentExperianACH.prototype.getUseInvoiceAccountNumber = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.integrations.PaymentExperianACH} returns this
+ */
+proto.api.commons.integrations.PaymentExperianACH.prototype.setUseInvoiceAccountNumber = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
