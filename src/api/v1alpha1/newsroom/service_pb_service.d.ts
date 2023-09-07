@@ -68,15 +68,6 @@ type NewsroomAPIGetPublishedArticleById = {
   readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.GetPublishedArticleByIdResponse;
 };
 
-type NewsroomAPIUpdatePublishedArticle = {
-  readonly methodName: string;
-  readonly service: typeof NewsroomAPI;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_newsroom_entities_pb.UpdatePublishedArticleRequest;
-  readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.UpdatePublishedArticleResponse;
-};
-
 export class NewsroomAPI {
   static readonly serviceName: string;
   static readonly CreateNewsArticle: NewsroomAPICreateNewsArticle;
@@ -86,7 +77,6 @@ export class NewsroomAPI {
   static readonly CreatePublishedArticle: NewsroomAPICreatePublishedArticle;
   static readonly ListPublishedArticles: NewsroomAPIListPublishedArticles;
   static readonly GetPublishedArticleById: NewsroomAPIGetPublishedArticleById;
-  static readonly UpdatePublishedArticle: NewsroomAPIUpdatePublishedArticle;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -183,15 +173,6 @@ export class NewsroomAPIClient {
   getPublishedArticleById(
     requestMessage: api_v1alpha1_newsroom_entities_pb.GetPublishedArticleByIdRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.GetPublishedArticleByIdResponse|null) => void
-  ): UnaryResponse;
-  updatePublishedArticle(
-    requestMessage: api_v1alpha1_newsroom_entities_pb.UpdatePublishedArticleRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.UpdatePublishedArticleResponse|null) => void
-  ): UnaryResponse;
-  updatePublishedArticle(
-    requestMessage: api_v1alpha1_newsroom_entities_pb.UpdatePublishedArticleRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.UpdatePublishedArticleResponse|null) => void
   ): UnaryResponse;
 }
 
