@@ -3924,6 +3924,47 @@ export namespace ListUngroupedWFMAgentsRes {
   }
 }
 
+export class ListWFMAgentSidsReq extends jspb.Message {
+  clearTcnAgentSidsList(): void;
+  getTcnAgentSidsList(): Array<number>;
+  setTcnAgentSidsList(value: Array<number>): void;
+  addTcnAgentSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListWFMAgentSidsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListWFMAgentSidsReq): ListWFMAgentSidsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListWFMAgentSidsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListWFMAgentSidsReq;
+  static deserializeBinaryFromReader(message: ListWFMAgentSidsReq, reader: jspb.BinaryReader): ListWFMAgentSidsReq;
+}
+
+export namespace ListWFMAgentSidsReq {
+  export type AsObject = {
+    tcnAgentSidsList: Array<number>,
+  }
+}
+
+export class ListWFMAgentSidsRes extends jspb.Message {
+  getSidsMap(): jspb.Map<number, number>;
+  clearSidsMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListWFMAgentSidsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListWFMAgentSidsRes): ListWFMAgentSidsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListWFMAgentSidsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListWFMAgentSidsRes;
+  static deserializeBinaryFromReader(message: ListWFMAgentSidsRes, reader: jspb.BinaryReader): ListWFMAgentSidsRes;
+}
+
+export namespace ListWFMAgentSidsRes {
+  export type AsObject = {
+    sidsMap: Array<[number, number]>,
+  }
+}
+
 export class ListWFMAgentsAssociatedWithAgentGroupReq extends jspb.Message {
   getAgentGroupSid(): number;
   setAgentGroupSid(value: number): void;
