@@ -923,6 +923,50 @@ export namespace BuildCallProfileTemplateForSkillProfileRes {
   }
 }
 
+export class BuildCallProfileTemplateReq extends jspb.Message {
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BuildCallProfileTemplateReq.AsObject;
+  static toObject(includeInstance: boolean, msg: BuildCallProfileTemplateReq): BuildCallProfileTemplateReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BuildCallProfileTemplateReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BuildCallProfileTemplateReq;
+  static deserializeBinaryFromReader(message: BuildCallProfileTemplateReq, reader: jspb.BinaryReader): BuildCallProfileTemplateReq;
+}
+
+export namespace BuildCallProfileTemplateReq {
+  export type AsObject = {
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+  }
+}
+
+export class BuildCallProfileTemplateRes extends jspb.Message {
+  hasCallProfileTemplate(): boolean;
+  clearCallProfileTemplate(): void;
+  getCallProfileTemplate(): CallProfileTemplate | undefined;
+  setCallProfileTemplate(value?: CallProfileTemplate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BuildCallProfileTemplateRes.AsObject;
+  static toObject(includeInstance: boolean, msg: BuildCallProfileTemplateRes): BuildCallProfileTemplateRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BuildCallProfileTemplateRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BuildCallProfileTemplateRes;
+  static deserializeBinaryFromReader(message: BuildCallProfileTemplateRes, reader: jspb.BinaryReader): BuildCallProfileTemplateRes;
+}
+
+export namespace BuildCallProfileTemplateRes {
+  export type AsObject = {
+    callProfileTemplate?: CallProfileTemplate.AsObject,
+  }
+}
+
 export class CreateInactiveSkillProfileMappingReq extends jspb.Message {
   getInactiveSkillProfileSid(): number;
   setInactiveSkillProfileSid(value: number): void;
