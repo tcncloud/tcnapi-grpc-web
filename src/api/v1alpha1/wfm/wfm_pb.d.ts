@@ -1213,6 +1213,11 @@ export class BuildProfileForecastByIntervalReq extends jspb.Message {
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildProfileForecastByIntervalReq.AsObject;
   static toObject(includeInstance: boolean, msg: BuildProfileForecastByIntervalReq): BuildProfileForecastByIntervalReq.AsObject;
@@ -1228,6 +1233,7 @@ export namespace BuildProfileForecastByIntervalReq {
     callProfileTemplate?: CallProfileTemplate.AsObject,
     fixedAveragesForecast: boolean,
     skillProfileSid: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -1267,6 +1273,11 @@ export class CallDataByInterval extends jspb.Message {
   getIntervalWidthInMinutes(): number;
   setIntervalWidthInMinutes(value: number): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CallDataByInterval.AsObject;
   static toObject(includeInstance: boolean, msg: CallDataByInterval): CallDataByInterval.AsObject;
@@ -1290,6 +1301,7 @@ export namespace CallDataByInterval {
     isDelta: boolean,
     forecastDataIntervalSid: number,
     intervalWidthInMinutes: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 

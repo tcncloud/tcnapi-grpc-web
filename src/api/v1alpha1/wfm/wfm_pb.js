@@ -14930,7 +14930,8 @@ proto.api.v1alpha1.wfm.BuildProfileForecastByIntervalReq.toObject = function(inc
   var f, obj = {
     callProfileTemplate: (f = msg.getCallProfileTemplate()) && proto.api.v1alpha1.wfm.CallProfileTemplate.toObject(includeInstance, f),
     fixedAveragesForecast: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    skillProfileSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    skillProfileSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14979,6 +14980,11 @@ proto.api.v1alpha1.wfm.BuildProfileForecastByIntervalReq.deserializeBinaryFromRe
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setSkillProfileSid(value);
+      break;
+    case 16:
+      var value = new api_commons_wfm_pb.SkillProfileCategory;
+      reader.readMessage(value,api_commons_wfm_pb.SkillProfileCategory.deserializeBinaryFromReader);
+      msg.setSkillProfileCategory(value);
       break;
     default:
       reader.skipField();
@@ -15029,6 +15035,14 @@ proto.api.v1alpha1.wfm.BuildProfileForecastByIntervalReq.serializeBinaryToWriter
     writer.writeInt64(
       3,
       f
+    );
+  }
+  f = message.getSkillProfileCategory();
+  if (f != null) {
+    writer.writeMessage(
+      16,
+      f,
+      api_commons_wfm_pb.SkillProfileCategory.serializeBinaryToWriter
     );
   }
 };
@@ -15107,6 +15121,43 @@ proto.api.v1alpha1.wfm.BuildProfileForecastByIntervalReq.prototype.setSkillProfi
 };
 
 
+/**
+ * optional api.commons.SkillProfileCategory skill_profile_category = 16;
+ * @return {?proto.api.commons.SkillProfileCategory}
+ */
+proto.api.v1alpha1.wfm.BuildProfileForecastByIntervalReq.prototype.getSkillProfileCategory = function() {
+  return /** @type{?proto.api.commons.SkillProfileCategory} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.SkillProfileCategory, 16));
+};
+
+
+/**
+ * @param {?proto.api.commons.SkillProfileCategory|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.BuildProfileForecastByIntervalReq} returns this
+*/
+proto.api.v1alpha1.wfm.BuildProfileForecastByIntervalReq.prototype.setSkillProfileCategory = function(value) {
+  return jspb.Message.setWrapperField(this, 16, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.BuildProfileForecastByIntervalReq} returns this
+ */
+proto.api.v1alpha1.wfm.BuildProfileForecastByIntervalReq.prototype.clearSkillProfileCategory = function() {
+  return this.setSkillProfileCategory(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.BuildProfileForecastByIntervalReq.prototype.hasSkillProfileCategory = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
 
 
 
@@ -15149,7 +15200,8 @@ proto.api.v1alpha1.wfm.CallDataByInterval.toObject = function(includeInstance, m
     totalAbandonedCalls: jspb.Message.getFieldWithDefault(msg, 8, 0),
     isDelta: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     forecastDataIntervalSid: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    intervalWidthInMinutes: jspb.Message.getFieldWithDefault(msg, 11, 0)
+    intervalWidthInMinutes: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15230,6 +15282,11 @@ proto.api.v1alpha1.wfm.CallDataByInterval.deserializeBinaryFromReader = function
     case 11:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setIntervalWidthInMinutes(value);
+      break;
+    case 12:
+      var value = new api_commons_wfm_pb.SkillProfileCategory;
+      reader.readMessage(value,api_commons_wfm_pb.SkillProfileCategory.deserializeBinaryFromReader);
+      msg.setSkillProfileCategory(value);
       break;
     default:
       reader.skipField();
@@ -15336,6 +15393,14 @@ proto.api.v1alpha1.wfm.CallDataByInterval.serializeBinaryToWriter = function(mes
     writer.writeInt32(
       11,
       f
+    );
+  }
+  f = message.getSkillProfileCategory();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      api_commons_wfm_pb.SkillProfileCategory.serializeBinaryToWriter
     );
   }
 };
@@ -15555,6 +15620,43 @@ proto.api.v1alpha1.wfm.CallDataByInterval.prototype.getIntervalWidthInMinutes = 
  */
 proto.api.v1alpha1.wfm.CallDataByInterval.prototype.setIntervalWidthInMinutes = function(value) {
   return jspb.Message.setProto3IntField(this, 11, value);
+};
+
+
+/**
+ * optional api.commons.SkillProfileCategory skill_profile_category = 12;
+ * @return {?proto.api.commons.SkillProfileCategory}
+ */
+proto.api.v1alpha1.wfm.CallDataByInterval.prototype.getSkillProfileCategory = function() {
+  return /** @type{?proto.api.commons.SkillProfileCategory} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.SkillProfileCategory, 12));
+};
+
+
+/**
+ * @param {?proto.api.commons.SkillProfileCategory|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.CallDataByInterval} returns this
+*/
+proto.api.v1alpha1.wfm.CallDataByInterval.prototype.setSkillProfileCategory = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.CallDataByInterval} returns this
+ */
+proto.api.v1alpha1.wfm.CallDataByInterval.prototype.clearSkillProfileCategory = function() {
+  return this.setSkillProfileCategory(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.CallDataByInterval.prototype.hasSkillProfileCategory = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
