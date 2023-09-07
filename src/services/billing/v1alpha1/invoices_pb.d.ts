@@ -169,10 +169,10 @@ export namespace ListInvoicesRequest {
 }
 
 export class ListInvoicesResponse extends jspb.Message {
-  clearInvoicesList(): void;
-  getInvoicesList(): Array<data_billing_v1alpha1_invoices_pb.Invoice>;
-  setInvoicesList(value: Array<data_billing_v1alpha1_invoices_pb.Invoice>): void;
-  addInvoices(value?: data_billing_v1alpha1_invoices_pb.Invoice, index?: number): data_billing_v1alpha1_invoices_pb.Invoice;
+  hasInvoice(): boolean;
+  clearInvoice(): void;
+  getInvoice(): data_billing_v1alpha1_invoices_pb.Invoice | undefined;
+  setInvoice(value?: data_billing_v1alpha1_invoices_pb.Invoice): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListInvoicesResponse.AsObject;
@@ -186,7 +186,7 @@ export class ListInvoicesResponse extends jspb.Message {
 
 export namespace ListInvoicesResponse {
   export type AsObject = {
-    invoicesList: Array<data_billing_v1alpha1_invoices_pb.Invoice.AsObject>,
+    invoice?: data_billing_v1alpha1_invoices_pb.Invoice.AsObject,
   }
 }
 

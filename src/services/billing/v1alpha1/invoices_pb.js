@@ -195,7 +195,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.services.billing.v1alpha1.ListInvoicesResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.services.billing.v1alpha1.ListInvoicesResponse.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.services.billing.v1alpha1.ListInvoicesResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1366,13 +1366,6 @@ proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.hasOrderBy = funct
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.services.billing.v1alpha1.ListInvoicesResponse.repeatedFields_ = [1];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1404,8 +1397,7 @@ proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.toObject = functi
  */
 proto.services.billing.v1alpha1.ListInvoicesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoicesList: jspb.Message.toObjectList(msg.getInvoicesList(),
-    data_billing_v1alpha1_invoices_pb.Invoice.toObject, includeInstance)
+    invoice: (f = msg.getInvoice()) && data_billing_v1alpha1_invoices_pb.Invoice.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1445,7 +1437,7 @@ proto.services.billing.v1alpha1.ListInvoicesResponse.deserializeBinaryFromReader
     case 1:
       var value = new data_billing_v1alpha1_invoices_pb.Invoice;
       reader.readMessage(value,data_billing_v1alpha1_invoices_pb.Invoice.deserializeBinaryFromReader);
-      msg.addInvoices(value);
+      msg.setInvoice(value);
       break;
     default:
       reader.skipField();
@@ -1476,9 +1468,9 @@ proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.serializeBinary =
  */
 proto.services.billing.v1alpha1.ListInvoicesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getInvoicesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getInvoice();
+  if (f != null) {
+    writer.writeMessage(
       1,
       f,
       data_billing_v1alpha1_invoices_pb.Invoice.serializeBinaryToWriter
@@ -1488,40 +1480,39 @@ proto.services.billing.v1alpha1.ListInvoicesResponse.serializeBinaryToWriter = f
 
 
 /**
- * repeated data.billing.v1alpha1.Invoice invoices = 1;
- * @return {!Array<!proto.data.billing.v1alpha1.Invoice>}
+ * optional data.billing.v1alpha1.Invoice invoice = 1;
+ * @return {?proto.data.billing.v1alpha1.Invoice}
  */
-proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.getInvoicesList = function() {
-  return /** @type{!Array<!proto.data.billing.v1alpha1.Invoice>} */ (
-    jspb.Message.getRepeatedWrapperField(this, data_billing_v1alpha1_invoices_pb.Invoice, 1));
+proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.getInvoice = function() {
+  return /** @type{?proto.data.billing.v1alpha1.Invoice} */ (
+    jspb.Message.getWrapperField(this, data_billing_v1alpha1_invoices_pb.Invoice, 1));
 };
 
 
 /**
- * @param {!Array<!proto.data.billing.v1alpha1.Invoice>} value
+ * @param {?proto.data.billing.v1alpha1.Invoice|undefined} value
  * @return {!proto.services.billing.v1alpha1.ListInvoicesResponse} returns this
 */
-proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.setInvoicesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.setInvoice = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.data.billing.v1alpha1.Invoice=} opt_value
- * @param {number=} opt_index
- * @return {!proto.data.billing.v1alpha1.Invoice}
- */
-proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.addInvoices = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.data.billing.v1alpha1.Invoice, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.services.billing.v1alpha1.ListInvoicesResponse} returns this
  */
-proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.clearInvoicesList = function() {
-  return this.setInvoicesList([]);
+proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.clearInvoice = function() {
+  return this.setInvoice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.hasInvoice = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
