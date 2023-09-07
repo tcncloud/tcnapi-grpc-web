@@ -8527,7 +8527,7 @@ proto.api.commons.integrations.VerificationFlow.ValueCase = {
   JOURNEY: 12,
   NEWZWARE_LOOKUP_PHONE: 13,
   NEWZWARE_ACCOUNT_INQUIRY: 14,
-  PRICOMMERCE_GET_CUSTOMER: 15
+  PRIOCOMMERCE_GET_CUSTOMER: 15
 };
 
 /**
@@ -8577,7 +8577,7 @@ proto.api.commons.integrations.VerificationFlow.toObject = function(includeInsta
     journey: (f = msg.getJourney()) && proto.api.commons.integrations.VerificationJourney.toObject(includeInstance, f),
     newzwareLookupPhone: (f = msg.getNewzwareLookupPhone()) && proto.api.commons.integrations.VerificationNewzwareLookupPhone.toObject(includeInstance, f),
     newzwareAccountInquiry: (f = msg.getNewzwareAccountInquiry()) && proto.api.commons.integrations.VerificationNewzwareAccountInquiry.toObject(includeInstance, f),
-    pricommerceGetCustomer: (f = msg.getPricommerceGetCustomer()) && proto.api.commons.integrations.VerificationPriocommerceGetCustomer.toObject(includeInstance, f),
+    priocommerceGetCustomer: (f = msg.getPriocommerceGetCustomer()) && proto.api.commons.integrations.VerificationPriocommerceGetCustomer.toObject(includeInstance, f),
     verificationFieldsList: jspb.Message.toObjectList(msg.getVerificationFieldsList(),
     proto.api.commons.integrations.FieldDefinition.toObject, includeInstance)
   };
@@ -8663,7 +8663,7 @@ proto.api.commons.integrations.VerificationFlow.deserializeBinaryFromReader = fu
     case 15:
       var value = new proto.api.commons.integrations.VerificationPriocommerceGetCustomer;
       reader.readMessage(value,proto.api.commons.integrations.VerificationPriocommerceGetCustomer.deserializeBinaryFromReader);
-      msg.setPricommerceGetCustomer(value);
+      msg.setPriocommerceGetCustomer(value);
       break;
     case 20:
       var value = new proto.api.commons.integrations.FieldDefinition;
@@ -8770,7 +8770,7 @@ proto.api.commons.integrations.VerificationFlow.serializeBinaryToWriter = functi
       proto.api.commons.integrations.VerificationNewzwareAccountInquiry.serializeBinaryToWriter
     );
   }
-  f = message.getPricommerceGetCustomer();
+  f = message.getPriocommerceGetCustomer();
   if (f != null) {
     writer.writeMessage(
       15,
@@ -9104,10 +9104,10 @@ proto.api.commons.integrations.VerificationFlow.prototype.hasNewzwareAccountInqu
 
 
 /**
- * optional VerificationPriocommerceGetCustomer pricommerce_get_customer = 15;
+ * optional VerificationPriocommerceGetCustomer priocommerce_get_customer = 15;
  * @return {?proto.api.commons.integrations.VerificationPriocommerceGetCustomer}
  */
-proto.api.commons.integrations.VerificationFlow.prototype.getPricommerceGetCustomer = function() {
+proto.api.commons.integrations.VerificationFlow.prototype.getPriocommerceGetCustomer = function() {
   return /** @type{?proto.api.commons.integrations.VerificationPriocommerceGetCustomer} */ (
     jspb.Message.getWrapperField(this, proto.api.commons.integrations.VerificationPriocommerceGetCustomer, 15));
 };
@@ -9117,7 +9117,7 @@ proto.api.commons.integrations.VerificationFlow.prototype.getPricommerceGetCusto
  * @param {?proto.api.commons.integrations.VerificationPriocommerceGetCustomer|undefined} value
  * @return {!proto.api.commons.integrations.VerificationFlow} returns this
 */
-proto.api.commons.integrations.VerificationFlow.prototype.setPricommerceGetCustomer = function(value) {
+proto.api.commons.integrations.VerificationFlow.prototype.setPriocommerceGetCustomer = function(value) {
   return jspb.Message.setOneofWrapperField(this, 15, proto.api.commons.integrations.VerificationFlow.oneofGroups_[0], value);
 };
 
@@ -9126,8 +9126,8 @@ proto.api.commons.integrations.VerificationFlow.prototype.setPricommerceGetCusto
  * Clears the message field making it undefined.
  * @return {!proto.api.commons.integrations.VerificationFlow} returns this
  */
-proto.api.commons.integrations.VerificationFlow.prototype.clearPricommerceGetCustomer = function() {
-  return this.setPricommerceGetCustomer(undefined);
+proto.api.commons.integrations.VerificationFlow.prototype.clearPriocommerceGetCustomer = function() {
+  return this.setPriocommerceGetCustomer(undefined);
 };
 
 
@@ -9135,7 +9135,7 @@ proto.api.commons.integrations.VerificationFlow.prototype.clearPricommerceGetCus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.integrations.VerificationFlow.prototype.hasPricommerceGetCustomer = function() {
+proto.api.commons.integrations.VerificationFlow.prototype.hasPriocommerceGetCustomer = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 

@@ -501,10 +501,10 @@ export class VerificationFlow extends jspb.Message {
   getNewzwareAccountInquiry(): VerificationNewzwareAccountInquiry | undefined;
   setNewzwareAccountInquiry(value?: VerificationNewzwareAccountInquiry): void;
 
-  hasPricommerceGetCustomer(): boolean;
-  clearPricommerceGetCustomer(): void;
-  getPricommerceGetCustomer(): VerificationPriocommerceGetCustomer | undefined;
-  setPricommerceGetCustomer(value?: VerificationPriocommerceGetCustomer): void;
+  hasPriocommerceGetCustomer(): boolean;
+  clearPriocommerceGetCustomer(): void;
+  getPriocommerceGetCustomer(): VerificationPriocommerceGetCustomer | undefined;
+  setPriocommerceGetCustomer(value?: VerificationPriocommerceGetCustomer): void;
 
   clearVerificationFieldsList(): void;
   getVerificationFieldsList(): Array<FieldDefinition>;
@@ -533,7 +533,7 @@ export namespace VerificationFlow {
     journey?: VerificationJourney.AsObject,
     newzwareLookupPhone?: VerificationNewzwareLookupPhone.AsObject,
     newzwareAccountInquiry?: VerificationNewzwareAccountInquiry.AsObject,
-    pricommerceGetCustomer?: VerificationPriocommerceGetCustomer.AsObject,
+    priocommerceGetCustomer?: VerificationPriocommerceGetCustomer.AsObject,
     verificationFieldsList: Array<FieldDefinition.AsObject>,
   }
 
@@ -547,7 +547,7 @@ export namespace VerificationFlow {
     JOURNEY = 12,
     NEWZWARE_LOOKUP_PHONE = 13,
     NEWZWARE_ACCOUNT_INQUIRY = 14,
-    PRICOMMERCE_GET_CUSTOMER = 15,
+    PRIOCOMMERCE_GET_CUSTOMER = 15,
   }
 }
 
