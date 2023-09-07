@@ -47,6 +47,42 @@ NewsroomAPI.UpdateNewsArticle = {
   responseType: api_v1alpha1_newsroom_entities_pb.UpdateNewsArticleResponse
 };
 
+NewsroomAPI.CreatePublishedNewsArticle = {
+  methodName: "CreatePublishedNewsArticle",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.CreatePublishedNewsArticleRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.CreatePublishedNewsArticleResponse
+};
+
+NewsroomAPI.ListPublishedNewsArticles = {
+  methodName: "ListPublishedNewsArticles",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.ListPublishedNewsArticlesRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.ListPublishedNewsArticlesResponse
+};
+
+NewsroomAPI.GetPublishedNewsArticleById = {
+  methodName: "GetPublishedNewsArticleById",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.GetPublishedNewsArticleByIdRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.GetPublishedNewsArticleByIdResponse
+};
+
+NewsroomAPI.UpdatePublishedNewsArticle = {
+  methodName: "UpdatePublishedNewsArticle",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.UpdatePublishedNewsArticleRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.UpdatePublishedNewsArticleResponse
+};
+
 exports.NewsroomAPI = NewsroomAPI;
 
 function NewsroomAPIClient(serviceHost, options) {
@@ -152,6 +188,130 @@ NewsroomAPIClient.prototype.updateNewsArticle = function updateNewsArticle(reque
     callback = arguments[1];
   }
   var client = grpc.unary(NewsroomAPI.UpdateNewsArticle, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.createPublishedNewsArticle = function createPublishedNewsArticle(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.CreatePublishedNewsArticle, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.listPublishedNewsArticles = function listPublishedNewsArticles(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.ListPublishedNewsArticles, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.getPublishedNewsArticleById = function getPublishedNewsArticleById(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.GetPublishedNewsArticleById, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.updatePublishedNewsArticle = function updatePublishedNewsArticle(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.UpdatePublishedNewsArticle, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
