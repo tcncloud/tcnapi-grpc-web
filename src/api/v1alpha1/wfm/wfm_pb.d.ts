@@ -1317,6 +1317,11 @@ export class BuildProfileForecastByIntervalWithStatsReq extends jspb.Message {
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildProfileForecastByIntervalWithStatsReq.AsObject;
   static toObject(includeInstance: boolean, msg: BuildProfileForecastByIntervalWithStatsReq): BuildProfileForecastByIntervalWithStatsReq.AsObject;
@@ -1332,6 +1337,7 @@ export namespace BuildProfileForecastByIntervalWithStatsReq {
     callProfileTemplate?: CallProfileTemplate.AsObject,
     fixedAveragesForecast: boolean,
     skillProfileSid: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -1382,6 +1388,11 @@ export class UpsertProfileForecastReq extends jspb.Message {
   getFixedAveragesForecast(): boolean;
   setFixedAveragesForecast(value: boolean): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpsertProfileForecastReq.AsObject;
   static toObject(includeInstance: boolean, msg: UpsertProfileForecastReq): UpsertProfileForecastReq.AsObject;
@@ -1397,6 +1408,7 @@ export namespace UpsertProfileForecastReq {
     skillProfileSid: number,
     callProfileTemplate?: CallProfileTemplate.AsObject,
     fixedAveragesForecast: boolean,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
