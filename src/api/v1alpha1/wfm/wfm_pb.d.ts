@@ -923,6 +923,50 @@ export namespace BuildCallProfileTemplateForSkillProfileRes {
   }
 }
 
+export class BuildCallProfileTemplateReq extends jspb.Message {
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BuildCallProfileTemplateReq.AsObject;
+  static toObject(includeInstance: boolean, msg: BuildCallProfileTemplateReq): BuildCallProfileTemplateReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BuildCallProfileTemplateReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BuildCallProfileTemplateReq;
+  static deserializeBinaryFromReader(message: BuildCallProfileTemplateReq, reader: jspb.BinaryReader): BuildCallProfileTemplateReq;
+}
+
+export namespace BuildCallProfileTemplateReq {
+  export type AsObject = {
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+  }
+}
+
+export class BuildCallProfileTemplateRes extends jspb.Message {
+  hasCallProfileTemplate(): boolean;
+  clearCallProfileTemplate(): void;
+  getCallProfileTemplate(): CallProfileTemplate | undefined;
+  setCallProfileTemplate(value?: CallProfileTemplate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BuildCallProfileTemplateRes.AsObject;
+  static toObject(includeInstance: boolean, msg: BuildCallProfileTemplateRes): BuildCallProfileTemplateRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BuildCallProfileTemplateRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BuildCallProfileTemplateRes;
+  static deserializeBinaryFromReader(message: BuildCallProfileTemplateRes, reader: jspb.BinaryReader): BuildCallProfileTemplateRes;
+}
+
+export namespace BuildCallProfileTemplateRes {
+  export type AsObject = {
+    callProfileTemplate?: CallProfileTemplate.AsObject,
+  }
+}
+
 export class CreateInactiveSkillProfileMappingReq extends jspb.Message {
   getInactiveSkillProfileSid(): number;
   setInactiveSkillProfileSid(value: number): void;
@@ -1169,6 +1213,11 @@ export class BuildProfileForecastByIntervalReq extends jspb.Message {
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildProfileForecastByIntervalReq.AsObject;
   static toObject(includeInstance: boolean, msg: BuildProfileForecastByIntervalReq): BuildProfileForecastByIntervalReq.AsObject;
@@ -1184,6 +1233,7 @@ export namespace BuildProfileForecastByIntervalReq {
     callProfileTemplate?: CallProfileTemplate.AsObject,
     fixedAveragesForecast: boolean,
     skillProfileSid: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -1223,6 +1273,11 @@ export class CallDataByInterval extends jspb.Message {
   getIntervalWidthInMinutes(): number;
   setIntervalWidthInMinutes(value: number): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CallDataByInterval.AsObject;
   static toObject(includeInstance: boolean, msg: CallDataByInterval): CallDataByInterval.AsObject;
@@ -1246,6 +1301,7 @@ export namespace CallDataByInterval {
     isDelta: boolean,
     forecastDataIntervalSid: number,
     intervalWidthInMinutes: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -1260,6 +1316,11 @@ export class BuildProfileForecastByIntervalWithStatsReq extends jspb.Message {
 
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;
+
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildProfileForecastByIntervalWithStatsReq.AsObject;
@@ -1276,6 +1337,7 @@ export namespace BuildProfileForecastByIntervalWithStatsReq {
     callProfileTemplate?: CallProfileTemplate.AsObject,
     fixedAveragesForecast: boolean,
     skillProfileSid: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -1326,6 +1388,11 @@ export class UpsertProfileForecastReq extends jspb.Message {
   getFixedAveragesForecast(): boolean;
   setFixedAveragesForecast(value: boolean): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpsertProfileForecastReq.AsObject;
   static toObject(includeInstance: boolean, msg: UpsertProfileForecastReq): UpsertProfileForecastReq.AsObject;
@@ -1341,6 +1408,7 @@ export namespace UpsertProfileForecastReq {
     skillProfileSid: number,
     callProfileTemplate?: CallProfileTemplate.AsObject,
     fixedAveragesForecast: boolean,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -2956,6 +3024,50 @@ export class UpdateProgramNodeRes extends jspb.Message {
 
 export namespace UpdateProgramNodeRes {
   export type AsObject = {
+  }
+}
+
+export class ListProgramNodesBySidReq extends jspb.Message {
+  clearProgramNodeSidsList(): void;
+  getProgramNodeSidsList(): Array<number>;
+  setProgramNodeSidsList(value: Array<number>): void;
+  addProgramNodeSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListProgramNodesBySidReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListProgramNodesBySidReq): ListProgramNodesBySidReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListProgramNodesBySidReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListProgramNodesBySidReq;
+  static deserializeBinaryFromReader(message: ListProgramNodesBySidReq, reader: jspb.BinaryReader): ListProgramNodesBySidReq;
+}
+
+export namespace ListProgramNodesBySidReq {
+  export type AsObject = {
+    programNodeSidsList: Array<number>,
+  }
+}
+
+export class ListProgramNodesBySidRes extends jspb.Message {
+  clearProgramNodesList(): void;
+  getProgramNodesList(): Array<ProgramNode>;
+  setProgramNodesList(value: Array<ProgramNode>): void;
+  addProgramNodes(value?: ProgramNode, index?: number): ProgramNode;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListProgramNodesBySidRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListProgramNodesBySidRes): ListProgramNodesBySidRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListProgramNodesBySidRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListProgramNodesBySidRes;
+  static deserializeBinaryFromReader(message: ListProgramNodesBySidRes, reader: jspb.BinaryReader): ListProgramNodesBySidRes;
+}
+
+export namespace ListProgramNodesBySidRes {
+  export type AsObject = {
+    programNodesList: Array<ProgramNode.AsObject>,
   }
 }
 

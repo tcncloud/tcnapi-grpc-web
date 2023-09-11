@@ -41,12 +41,42 @@ type NewsroomAPIUpdateNewsArticle = {
   readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.UpdateNewsArticleResponse;
 };
 
+type NewsroomAPICreatePublishedArticle = {
+  readonly methodName: string;
+  readonly service: typeof NewsroomAPI;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_newsroom_entities_pb.CreatePublishedArticleRequest;
+  readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.CreatePublishedArticleResponse;
+};
+
+type NewsroomAPIListPublishedArticles = {
+  readonly methodName: string;
+  readonly service: typeof NewsroomAPI;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_newsroom_entities_pb.ListPublishedArticlesRequest;
+  readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.ListPublishedArticlesResponse;
+};
+
+type NewsroomAPIGetPublishedArticleById = {
+  readonly methodName: string;
+  readonly service: typeof NewsroomAPI;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_newsroom_entities_pb.GetPublishedArticleByIdRequest;
+  readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.GetPublishedArticleByIdResponse;
+};
+
 export class NewsroomAPI {
   static readonly serviceName: string;
   static readonly CreateNewsArticle: NewsroomAPICreateNewsArticle;
   static readonly ListNewsArticles: NewsroomAPIListNewsArticles;
   static readonly GetNewsArticleById: NewsroomAPIGetNewsArticleById;
   static readonly UpdateNewsArticle: NewsroomAPIUpdateNewsArticle;
+  static readonly CreatePublishedArticle: NewsroomAPICreatePublishedArticle;
+  static readonly ListPublishedArticles: NewsroomAPIListPublishedArticles;
+  static readonly GetPublishedArticleById: NewsroomAPIGetPublishedArticleById;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -116,6 +146,33 @@ export class NewsroomAPIClient {
   updateNewsArticle(
     requestMessage: api_v1alpha1_newsroom_entities_pb.UpdateNewsArticleRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.UpdateNewsArticleResponse|null) => void
+  ): UnaryResponse;
+  createPublishedArticle(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.CreatePublishedArticleRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.CreatePublishedArticleResponse|null) => void
+  ): UnaryResponse;
+  createPublishedArticle(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.CreatePublishedArticleRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.CreatePublishedArticleResponse|null) => void
+  ): UnaryResponse;
+  listPublishedArticles(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.ListPublishedArticlesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.ListPublishedArticlesResponse|null) => void
+  ): UnaryResponse;
+  listPublishedArticles(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.ListPublishedArticlesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.ListPublishedArticlesResponse|null) => void
+  ): UnaryResponse;
+  getPublishedArticleById(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.GetPublishedArticleByIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.GetPublishedArticleByIdResponse|null) => void
+  ): UnaryResponse;
+  getPublishedArticleById(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.GetPublishedArticleByIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.GetPublishedArticleByIdResponse|null) => void
   ): UnaryResponse;
 }
 
