@@ -427,6 +427,15 @@ type WFMUpdateProgramNode = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeRes;
 };
 
+type WFMListProgramNodesBySid = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidRes;
+};
+
 type WFMCreateConstraintRule = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1124,6 +1133,7 @@ export class WFM {
   static readonly UpdateLocationNode: WFMUpdateLocationNode;
   static readonly CreateProgramNode: WFMCreateProgramNode;
   static readonly UpdateProgramNode: WFMUpdateProgramNode;
+  static readonly ListProgramNodesBySid: WFMListProgramNodesBySid;
   static readonly CreateConstraintRule: WFMCreateConstraintRule;
   static readonly UpdateConstraintRule: WFMUpdateConstraintRule;
   static readonly DeleteConstraintRule: WFMDeleteConstraintRule;
@@ -1612,6 +1622,15 @@ export class WFMClient {
   updateProgramNode(
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeRes|null) => void
+  ): UnaryResponse;
+  listProgramNodesBySid(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidRes|null) => void
+  ): UnaryResponse;
+  listProgramNodesBySid(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidRes|null) => void
   ): UnaryResponse;
   createConstraintRule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateConstraintRuleReq,
