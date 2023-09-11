@@ -127,6 +127,15 @@ WFM.BuildCallProfileTemplateForSkillProfile = {
   responseType: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateForSkillProfileRes
 };
 
+WFM.BuildCallProfileTemplate = {
+  methodName: "BuildCallProfileTemplate",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateRes
+};
+
 WFM.CreateInactiveSkillProfileMapping = {
   methodName: "CreateInactiveSkillProfileMapping",
   service: WFM,
@@ -422,6 +431,15 @@ WFM.UpdateProgramNode = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeReq,
   responseType: api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeRes
+};
+
+WFM.ListProgramNodesBySid = {
+  methodName: "ListProgramNodesBySid",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidRes
 };
 
 WFM.CreateConstraintRule = {
@@ -1456,6 +1474,37 @@ WFMClient.prototype.buildCallProfileTemplateForSkillProfile = function buildCall
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.BuildCallProfileTemplateForSkillProfile, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.buildCallProfileTemplate = function buildCallProfileTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.BuildCallProfileTemplate, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2519,6 +2568,37 @@ WFMClient.prototype.updateProgramNode = function updateProgramNode(requestMessag
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.UpdateProgramNode, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listProgramNodesBySid = function listProgramNodesBySid(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListProgramNodesBySid, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
