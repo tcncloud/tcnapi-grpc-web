@@ -3874,6 +3874,9 @@ export class ListAllWFMAgentsReq extends jspb.Message {
   getIncludeAgentGroups(): boolean;
   setIncludeAgentGroups(value: boolean): void;
 
+  getAgentGroupScheduleScenarioSid(): number;
+  setAgentGroupScheduleScenarioSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAllWFMAgentsReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListAllWFMAgentsReq): ListAllWFMAgentsReq.AsObject;
@@ -3889,6 +3892,7 @@ export namespace ListAllWFMAgentsReq {
     includeInactive: boolean,
     includeSkillProficiencies: boolean,
     includeAgentGroups: boolean,
+    agentGroupScheduleScenarioSid: number,
   }
 }
 
