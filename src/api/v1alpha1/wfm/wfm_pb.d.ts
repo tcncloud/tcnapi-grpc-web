@@ -3027,6 +3027,50 @@ export namespace UpdateProgramNodeRes {
   }
 }
 
+export class ListProgramNodesBySidReq extends jspb.Message {
+  clearProgramNodeSidsList(): void;
+  getProgramNodeSidsList(): Array<number>;
+  setProgramNodeSidsList(value: Array<number>): void;
+  addProgramNodeSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListProgramNodesBySidReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListProgramNodesBySidReq): ListProgramNodesBySidReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListProgramNodesBySidReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListProgramNodesBySidReq;
+  static deserializeBinaryFromReader(message: ListProgramNodesBySidReq, reader: jspb.BinaryReader): ListProgramNodesBySidReq;
+}
+
+export namespace ListProgramNodesBySidReq {
+  export type AsObject = {
+    programNodeSidsList: Array<number>,
+  }
+}
+
+export class ListProgramNodesBySidRes extends jspb.Message {
+  clearProgramNodesList(): void;
+  getProgramNodesList(): Array<ProgramNode>;
+  setProgramNodesList(value: Array<ProgramNode>): void;
+  addProgramNodes(value?: ProgramNode, index?: number): ProgramNode;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListProgramNodesBySidRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListProgramNodesBySidRes): ListProgramNodesBySidRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListProgramNodesBySidRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListProgramNodesBySidRes;
+  static deserializeBinaryFromReader(message: ListProgramNodesBySidRes, reader: jspb.BinaryReader): ListProgramNodesBySidRes;
+}
+
+export namespace ListProgramNodesBySidRes {
+  export type AsObject = {
+    programNodesList: Array<ProgramNode.AsObject>,
+  }
+}
+
 export class ParentEntity extends jspb.Message {
   getParentSid(): number;
   setParentSid(value: number): void;
@@ -3830,6 +3874,9 @@ export class ListAllWFMAgentsReq extends jspb.Message {
   getIncludeAgentGroups(): boolean;
   setIncludeAgentGroups(value: boolean): void;
 
+  getAgentGroupScheduleScenarioSid(): number;
+  setAgentGroupScheduleScenarioSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAllWFMAgentsReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListAllWFMAgentsReq): ListAllWFMAgentsReq.AsObject;
@@ -3845,6 +3892,7 @@ export namespace ListAllWFMAgentsReq {
     includeInactive: boolean,
     includeSkillProficiencies: boolean,
     includeAgentGroups: boolean,
+    agentGroupScheduleScenarioSid: number,
   }
 }
 
@@ -3989,6 +4037,47 @@ export class ListUngroupedWFMAgentsRes extends jspb.Message {
 export namespace ListUngroupedWFMAgentsRes {
   export type AsObject = {
     wfmAgentsList: Array<WFMAgent.AsObject>,
+  }
+}
+
+export class ListWFMAgentSidsReq extends jspb.Message {
+  clearTcnAgentSidsList(): void;
+  getTcnAgentSidsList(): Array<number>;
+  setTcnAgentSidsList(value: Array<number>): void;
+  addTcnAgentSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListWFMAgentSidsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListWFMAgentSidsReq): ListWFMAgentSidsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListWFMAgentSidsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListWFMAgentSidsReq;
+  static deserializeBinaryFromReader(message: ListWFMAgentSidsReq, reader: jspb.BinaryReader): ListWFMAgentSidsReq;
+}
+
+export namespace ListWFMAgentSidsReq {
+  export type AsObject = {
+    tcnAgentSidsList: Array<number>,
+  }
+}
+
+export class ListWFMAgentSidsRes extends jspb.Message {
+  getSidsMap(): jspb.Map<number, number>;
+  clearSidsMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListWFMAgentSidsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListWFMAgentSidsRes): ListWFMAgentSidsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListWFMAgentSidsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListWFMAgentSidsRes;
+  static deserializeBinaryFromReader(message: ListWFMAgentSidsRes, reader: jspb.BinaryReader): ListWFMAgentSidsRes;
+}
+
+export namespace ListWFMAgentSidsRes {
+  export type AsObject = {
+    sidsMap: Array<[number, number]>,
   }
 }
 

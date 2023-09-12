@@ -427,6 +427,15 @@ type WFMUpdateProgramNode = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeRes;
 };
 
+type WFMListProgramNodesBySid = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidRes;
+};
+
 type WFMCreateConstraintRule = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -551,6 +560,15 @@ type WFMListUngroupedWFMAgents = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsReq;
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsRes;
+};
+
+type WFMListWFMAgentSids = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes;
 };
 
 type WFMListWFMAgentsAssociatedWithAgentGroup = {
@@ -1124,6 +1142,7 @@ export class WFM {
   static readonly UpdateLocationNode: WFMUpdateLocationNode;
   static readonly CreateProgramNode: WFMCreateProgramNode;
   static readonly UpdateProgramNode: WFMUpdateProgramNode;
+  static readonly ListProgramNodesBySid: WFMListProgramNodesBySid;
   static readonly CreateConstraintRule: WFMCreateConstraintRule;
   static readonly UpdateConstraintRule: WFMUpdateConstraintRule;
   static readonly DeleteConstraintRule: WFMDeleteConstraintRule;
@@ -1138,6 +1157,7 @@ export class WFM {
   static readonly ListAllWFMAgents: WFMListAllWFMAgents;
   static readonly ListCandidateWFMAgents: WFMListCandidateWFMAgents;
   static readonly ListUngroupedWFMAgents: WFMListUngroupedWFMAgents;
+  static readonly ListWFMAgentSids: WFMListWFMAgentSids;
   static readonly ListWFMAgentsAssociatedWithAgentGroup: WFMListWFMAgentsAssociatedWithAgentGroup;
   static readonly CreateWFMAgentMemberships: WFMCreateWFMAgentMemberships;
   static readonly DeleteWFMAgentMemberships: WFMDeleteWFMAgentMemberships;
@@ -1613,6 +1633,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeRes|null) => void
   ): UnaryResponse;
+  listProgramNodesBySid(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidRes|null) => void
+  ): UnaryResponse;
+  listProgramNodesBySid(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidRes|null) => void
+  ): UnaryResponse;
   createConstraintRule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateConstraintRuleReq,
     metadata: grpc.Metadata,
@@ -1738,6 +1767,15 @@ export class WFMClient {
   listUngroupedWFMAgents(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  listWFMAgentSids(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes|null) => void
+  ): UnaryResponse;
+  listWFMAgentSids(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes|null) => void
   ): UnaryResponse;
   listWFMAgentsAssociatedWithAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentsAssociatedWithAgentGroupReq,
