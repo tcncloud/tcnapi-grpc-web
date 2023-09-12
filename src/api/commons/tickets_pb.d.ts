@@ -213,9 +213,6 @@ export class CallbackContext extends jspb.Message {
   getCallerName(): string;
   setCallerName(value: string): void;
 
-  getCallerCountryCode(): string;
-  setCallerCountryCode(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CallbackContext.AsObject;
   static toObject(includeInstance: boolean, msg: CallbackContext): CallbackContext.AsObject;
@@ -232,7 +229,6 @@ export namespace CallbackContext {
     phoneNo: string,
     countryCode: string,
     callerName: string,
-    callerCountryCode: string,
   }
 }
 

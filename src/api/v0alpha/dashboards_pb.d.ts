@@ -196,6 +196,26 @@ export namespace DeleteDashboardRequest {
   }
 }
 
+export class DeleteStandardDashboardRequest extends jspb.Message {
+  getDashboardId(): string;
+  setDashboardId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteStandardDashboardRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteStandardDashboardRequest): DeleteStandardDashboardRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteStandardDashboardRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteStandardDashboardRequest;
+  static deserializeBinaryFromReader(message: DeleteStandardDashboardRequest, reader: jspb.BinaryReader): DeleteStandardDashboardRequest;
+}
+
+export namespace DeleteStandardDashboardRequest {
+  export type AsObject = {
+    dashboardId: string,
+  }
+}
+
 export class GetDashboardRequest extends jspb.Message {
   getDashboardId(): string;
   setDashboardId(value: string): void;
@@ -211,6 +231,68 @@ export class GetDashboardRequest extends jspb.Message {
 }
 
 export namespace GetDashboardRequest {
+  export type AsObject = {
+    dashboardId: string,
+  }
+}
+
+export class CreateStandardDashboardRequest extends jspb.Message {
+  getTitle(): string;
+  setTitle(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  hasLayout(): boolean;
+  clearLayout(): void;
+  getLayout(): DashboardLayout | undefined;
+  setLayout(value?: DashboardLayout): void;
+
+  hasView(): boolean;
+  clearView(): void;
+  getView(): DashboardView | undefined;
+  setView(value?: DashboardView): void;
+
+  hasType(): boolean;
+  clearType(): void;
+  getType(): DashboardType | undefined;
+  setType(value?: DashboardType): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateStandardDashboardRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateStandardDashboardRequest): CreateStandardDashboardRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateStandardDashboardRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateStandardDashboardRequest;
+  static deserializeBinaryFromReader(message: CreateStandardDashboardRequest, reader: jspb.BinaryReader): CreateStandardDashboardRequest;
+}
+
+export namespace CreateStandardDashboardRequest {
+  export type AsObject = {
+    title: string,
+    description: string,
+    layout?: DashboardLayout.AsObject,
+    view?: DashboardView.AsObject,
+    type?: DashboardType.AsObject,
+  }
+}
+
+export class CreateStandardDashboardResponse extends jspb.Message {
+  getDashboardId(): string;
+  setDashboardId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateStandardDashboardResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateStandardDashboardResponse): CreateStandardDashboardResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateStandardDashboardResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateStandardDashboardResponse;
+  static deserializeBinaryFromReader(message: CreateStandardDashboardResponse, reader: jspb.BinaryReader): CreateStandardDashboardResponse;
+}
+
+export namespace CreateStandardDashboardResponse {
   export type AsObject = {
     dashboardId: string,
   }
@@ -555,6 +637,52 @@ export namespace UpdateDashboardRequest {
   }
 }
 
+export class UpdateStandardDashboardRequest extends jspb.Message {
+  getDashboardId(): string;
+  setDashboardId(value: string): void;
+
+  getTitle(): string;
+  setTitle(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  hasLayout(): boolean;
+  clearLayout(): void;
+  getLayout(): DashboardLayout | undefined;
+  setLayout(value?: DashboardLayout): void;
+
+  hasView(): boolean;
+  clearView(): void;
+  getView(): DashboardView | undefined;
+  setView(value?: DashboardView): void;
+
+  hasType(): boolean;
+  clearType(): void;
+  getType(): DashboardType | undefined;
+  setType(value?: DashboardType): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateStandardDashboardRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateStandardDashboardRequest): UpdateStandardDashboardRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateStandardDashboardRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateStandardDashboardRequest;
+  static deserializeBinaryFromReader(message: UpdateStandardDashboardRequest, reader: jspb.BinaryReader): UpdateStandardDashboardRequest;
+}
+
+export namespace UpdateStandardDashboardRequest {
+  export type AsObject = {
+    dashboardId: string,
+    title: string,
+    description: string,
+    layout?: DashboardLayout.AsObject,
+    view?: DashboardView.AsObject,
+    type?: DashboardType.AsObject,
+  }
+}
+
 export class UpdateDashboardTitleAndDescriptionRequest extends jspb.Message {
   getDashboardId(): string;
   setDashboardId(value: string): void;
@@ -576,6 +704,34 @@ export class UpdateDashboardTitleAndDescriptionRequest extends jspb.Message {
 }
 
 export namespace UpdateDashboardTitleAndDescriptionRequest {
+  export type AsObject = {
+    dashboardId: string,
+    title: string,
+    description: string,
+  }
+}
+
+export class UpdateStandardDashboardTitleAndDescriptionRequest extends jspb.Message {
+  getDashboardId(): string;
+  setDashboardId(value: string): void;
+
+  getTitle(): string;
+  setTitle(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateStandardDashboardTitleAndDescriptionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateStandardDashboardTitleAndDescriptionRequest): UpdateStandardDashboardTitleAndDescriptionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateStandardDashboardTitleAndDescriptionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateStandardDashboardTitleAndDescriptionRequest;
+  static deserializeBinaryFromReader(message: UpdateStandardDashboardTitleAndDescriptionRequest, reader: jspb.BinaryReader): UpdateStandardDashboardTitleAndDescriptionRequest;
+}
+
+export namespace UpdateStandardDashboardTitleAndDescriptionRequest {
   export type AsObject = {
     dashboardId: string,
     title: string,
@@ -609,6 +765,32 @@ export namespace UpdateDashboardLayoutRequest {
   }
 }
 
+export class UpdateStandardDashboardLayoutRequest extends jspb.Message {
+  getDashboardId(): string;
+  setDashboardId(value: string): void;
+
+  hasLayout(): boolean;
+  clearLayout(): void;
+  getLayout(): DashboardLayout | undefined;
+  setLayout(value?: DashboardLayout): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateStandardDashboardLayoutRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateStandardDashboardLayoutRequest): UpdateStandardDashboardLayoutRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateStandardDashboardLayoutRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateStandardDashboardLayoutRequest;
+  static deserializeBinaryFromReader(message: UpdateStandardDashboardLayoutRequest, reader: jspb.BinaryReader): UpdateStandardDashboardLayoutRequest;
+}
+
+export namespace UpdateStandardDashboardLayoutRequest {
+  export type AsObject = {
+    dashboardId: string,
+    layout?: DashboardLayout.AsObject,
+  }
+}
+
 export class UpdateDashboardViewRequest extends jspb.Message {
   getDashboardId(): string;
   setDashboardId(value: string): void;
@@ -629,6 +811,32 @@ export class UpdateDashboardViewRequest extends jspb.Message {
 }
 
 export namespace UpdateDashboardViewRequest {
+  export type AsObject = {
+    dashboardId: string,
+    view?: DashboardView.AsObject,
+  }
+}
+
+export class UpdateStandardDashboardViewRequest extends jspb.Message {
+  getDashboardId(): string;
+  setDashboardId(value: string): void;
+
+  hasView(): boolean;
+  clearView(): void;
+  getView(): DashboardView | undefined;
+  setView(value?: DashboardView): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateStandardDashboardViewRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateStandardDashboardViewRequest): UpdateStandardDashboardViewRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateStandardDashboardViewRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateStandardDashboardViewRequest;
+  static deserializeBinaryFromReader(message: UpdateStandardDashboardViewRequest, reader: jspb.BinaryReader): UpdateStandardDashboardViewRequest;
+}
+
+export namespace UpdateStandardDashboardViewRequest {
   export type AsObject = {
     dashboardId: string,
     view?: DashboardView.AsObject,
