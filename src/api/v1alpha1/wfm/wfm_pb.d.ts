@@ -1697,6 +1697,11 @@ export class BuildRegressionForecastByIntervalReq extends jspb.Message {
   setSkillProfileSidsToForecastList(value: Array<number>): void;
   addSkillProfileSidsToForecast(value: number, index?: number): number;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildRegressionForecastByIntervalReq.AsObject;
   static toObject(includeInstance: boolean, msg: BuildRegressionForecastByIntervalReq): BuildRegressionForecastByIntervalReq.AsObject;
@@ -1715,6 +1720,7 @@ export namespace BuildRegressionForecastByIntervalReq {
     averageTimeToAbortInSeconds: number,
     regressionTemplate?: RegressionTemplate.AsObject,
     skillProfileSidsToForecastList: Array<number>,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -1741,6 +1747,11 @@ export class BuildRegressionForecastByIntervalWithStatsReq extends jspb.Message 
   setSkillProfileSidsToForecastList(value: Array<number>): void;
   addSkillProfileSidsToForecast(value: number, index?: number): number;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildRegressionForecastByIntervalWithStatsReq.AsObject;
   static toObject(includeInstance: boolean, msg: BuildRegressionForecastByIntervalWithStatsReq): BuildRegressionForecastByIntervalWithStatsReq.AsObject;
@@ -1759,6 +1770,7 @@ export namespace BuildRegressionForecastByIntervalWithStatsReq {
     averageTimeToAbortInSeconds: number,
     regressionTemplate?: RegressionTemplate.AsObject,
     skillProfileSidsToForecastList: Array<number>,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -1938,6 +1950,11 @@ export class UpsertRegressionForecastReq extends jspb.Message {
   setSkillProfileSidsToForecastList(value: Array<number>): void;
   addSkillProfileSidsToForecast(value: number, index?: number): number;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpsertRegressionForecastReq.AsObject;
   static toObject(includeInstance: boolean, msg: UpsertRegressionForecastReq): UpsertRegressionForecastReq.AsObject;
@@ -1956,6 +1973,7 @@ export namespace UpsertRegressionForecastReq {
     averageAfterCallWorkInSeconds: number,
     averageTimeToAbortInSeconds: number,
     skillProfileSidsToForecastList: Array<number>,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
