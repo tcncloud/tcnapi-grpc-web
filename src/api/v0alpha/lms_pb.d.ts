@@ -7082,6 +7082,9 @@ export class EpicEntrypoint extends jspb.Message {
   getFlushDuringCheck(): boolean;
   setFlushDuringCheck(value: boolean): void;
 
+  getTimezone(): string;
+  setTimezone(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EpicEntrypoint.AsObject;
   static toObject(includeInstance: boolean, msg: EpicEntrypoint): EpicEntrypoint.AsObject;
@@ -7103,6 +7106,7 @@ export namespace EpicEntrypoint {
     flushPageCount: number,
     flushMinuteCount: number,
     flushDuringCheck: boolean,
+    timezone: string,
   }
 }
 
