@@ -230,6 +230,24 @@ type LMSProcessElement = {
   readonly responseType: typeof google_protobuf_empty_pb.Empty;
 };
 
+type LMSProcessList = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.ProcessListRequest;
+  readonly responseType: typeof api_v0alpha_lms_pb.ProcessListResponse;
+};
+
+type LMSStreamList = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: true;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.StreamListRequest;
+  readonly responseType: typeof api_v0alpha_lms_pb.StreamListResponse;
+};
+
 type LMSGetAvailableFields = {
   readonly methodName: string;
   readonly service: typeof LMS;
@@ -518,6 +536,8 @@ export class LMS {
   static readonly CopyPipelineUpstream: LMSCopyPipelineUpstream;
   static readonly CopyPipelineDownstream: LMSCopyPipelineDownstream;
   static readonly ProcessElement: LMSProcessElement;
+  static readonly ProcessList: LMSProcessList;
+  static readonly StreamList: LMSStreamList;
   static readonly GetAvailableFields: LMSGetAvailableFields;
   static readonly ListNewEvents: LMSListNewEvents;
   static readonly ViewQueue: LMSViewQueue;
@@ -774,6 +794,16 @@ export class LMSClient {
     requestMessage: api_v0alpha_lms_pb.ProcessElementReq,
     callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
   ): UnaryResponse;
+  processList(
+    requestMessage: api_v0alpha_lms_pb.ProcessListRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ProcessListResponse|null) => void
+  ): UnaryResponse;
+  processList(
+    requestMessage: api_v0alpha_lms_pb.ProcessListRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ProcessListResponse|null) => void
+  ): UnaryResponse;
+  streamList(metadata?: grpc.Metadata): RequestStream<api_v0alpha_lms_pb.StreamListRequest>;
   getAvailableFields(
     requestMessage: google_protobuf_empty_pb.Empty,
     metadata: grpc.Metadata,
