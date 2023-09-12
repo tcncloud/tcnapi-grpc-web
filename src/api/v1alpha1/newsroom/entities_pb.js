@@ -2309,7 +2309,7 @@ proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.prototype.toObject = f
  */
 proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     displayToUser: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
@@ -2348,7 +2348,7 @@ proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setNewArticleSid(value);
       break;
     case 2:
@@ -2385,8 +2385,8 @@ proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.prototype.serializeBin
 proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNewArticleSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -2403,19 +2403,19 @@ proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.serializeBinaryToWrite
 
 /**
  * optional int64 new_article_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.prototype.getNewArticleSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest} returns this
  */
 proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.prototype.setNewArticleSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 

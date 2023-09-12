@@ -275,8 +275,8 @@ export namespace PublishedArticleDetails {
 }
 
 export class CreatePublishedArticleRequest extends jspb.Message {
-  getNewArticleSid(): number;
-  setNewArticleSid(value: number): void;
+  getNewArticleSid(): string;
+  setNewArticleSid(value: string): void;
 
   getDisplayToUser(): boolean;
   setDisplayToUser(value: boolean): void;
@@ -293,7 +293,7 @@ export class CreatePublishedArticleRequest extends jspb.Message {
 
 export namespace CreatePublishedArticleRequest {
   export type AsObject = {
-    newArticleSid: number,
+    newArticleSid: string,
     displayToUser: boolean,
   }
 }
