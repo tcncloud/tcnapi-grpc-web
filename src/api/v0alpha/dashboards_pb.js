@@ -23,6 +23,8 @@ var global =
 
 var annotations_authz_pb = require('../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
+var api_commons_dashboards_pb = require('../../api/commons/dashboards_pb.js');
+goog.object.extend(proto, api_commons_dashboards_pb);
 var api_commons_org_pb = require('../../api/commons/org_pb.js');
 goog.object.extend(proto, api_commons_org_pb);
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
@@ -3860,7 +3862,8 @@ proto.api.v0alpha.Dashboard.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
     layout: (f = msg.getLayout()) && proto.api.v0alpha.DashboardLayout.toObject(includeInstance, f),
     view: (f = msg.getView()) && proto.api.v0alpha.DashboardView.toObject(includeInstance, f),
-    type: (f = msg.getType()) && proto.api.v0alpha.DashboardType.toObject(includeInstance, f)
+    type: (f = msg.getType()) && proto.api.v0alpha.DashboardType.toObject(includeInstance, f),
+    permissionType: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -3923,6 +3926,10 @@ proto.api.v0alpha.Dashboard.deserializeBinaryFromReader = function(msg, reader) 
       var value = new proto.api.v0alpha.DashboardType;
       reader.readMessage(value,proto.api.v0alpha.DashboardType.deserializeBinaryFromReader);
       msg.setType(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.api.commons.DashboardPermissionType} */ (reader.readEnum());
+      msg.setPermissionType(value);
       break;
     default:
       reader.skipField();
@@ -3996,6 +4003,13 @@ proto.api.v0alpha.Dashboard.serializeBinaryToWriter = function(message, writer) 
       6,
       f,
       proto.api.v0alpha.DashboardType.serializeBinaryToWriter
+    );
+  }
+  f = message.getPermissionType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
+      f
     );
   }
 };
@@ -4163,6 +4177,24 @@ proto.api.v0alpha.Dashboard.prototype.clearType = function() {
  */
 proto.api.v0alpha.Dashboard.prototype.hasType = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional api.commons.DashboardPermissionType permission_type = 7;
+ * @return {!proto.api.commons.DashboardPermissionType}
+ */
+proto.api.v0alpha.Dashboard.prototype.getPermissionType = function() {
+  return /** @type {!proto.api.commons.DashboardPermissionType} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.DashboardPermissionType} value
+ * @return {!proto.api.v0alpha.Dashboard} returns this
+ */
+proto.api.v0alpha.Dashboard.prototype.setPermissionType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 

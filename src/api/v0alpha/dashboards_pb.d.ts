@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../annotations/authz_pb";
+import * as api_commons_dashboards_pb from "../../api/commons/dashboards_pb";
 import * as api_commons_org_pb from "../../api/commons/org_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
@@ -480,6 +481,9 @@ export class Dashboard extends jspb.Message {
   getType(): DashboardType | undefined;
   setType(value?: DashboardType): void;
 
+  getPermissionType(): api_commons_dashboards_pb.DashboardPermissionTypeMap[keyof api_commons_dashboards_pb.DashboardPermissionTypeMap];
+  setPermissionType(value: api_commons_dashboards_pb.DashboardPermissionTypeMap[keyof api_commons_dashboards_pb.DashboardPermissionTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Dashboard.AsObject;
   static toObject(includeInstance: boolean, msg: Dashboard): Dashboard.AsObject;
@@ -498,6 +502,7 @@ export namespace Dashboard {
     layout?: DashboardLayout.AsObject,
     view?: DashboardView.AsObject,
     type?: DashboardType.AsObject,
+    permissionType: api_commons_dashboards_pb.DashboardPermissionTypeMap[keyof api_commons_dashboards_pb.DashboardPermissionTypeMap],
   }
 }
 
