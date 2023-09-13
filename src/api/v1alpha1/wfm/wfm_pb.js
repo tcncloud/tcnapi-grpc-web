@@ -21140,7 +21140,7 @@ proto.api.v1alpha1.wfm.UpsertForecastDataDeltasRes.serializeBinaryToWriter = fun
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.oneofGroups_ = [[1,2]];
+proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.oneofGroups_ = [[1,2,4]];
 
 /**
  * @enum {number}
@@ -21148,7 +21148,8 @@ proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.oneofGroups_ = [[1,2]];
 proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.DeleteParamCase = {
   DELETE_PARAM_NOT_SET: 0,
   SKILL_PROFILE_SID: 1,
-  FORECAST_INTERVAL_SIDS: 2
+  FORECAST_INTERVAL_SIDS: 2,
+  SKILL_PROFILE_CATEGORY: 4
 };
 
 /**
@@ -21191,6 +21192,7 @@ proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.toObject = function(includeIns
   var f, obj = {
     skillProfileSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     forecastIntervalSids: (f = msg.getForecastIntervalSids()) && proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.IntervalSids.toObject(includeInstance, f),
+    skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f),
     forecastIntervalDeleteType: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
@@ -21236,6 +21238,11 @@ proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.deserializeBinaryFromReader = 
       var value = new proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.IntervalSids;
       reader.readMessage(value,proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.IntervalSids.deserializeBinaryFromReader);
       msg.setForecastIntervalSids(value);
+      break;
+    case 4:
+      var value = new api_commons_wfm_pb.SkillProfileCategory;
+      reader.readMessage(value,api_commons_wfm_pb.SkillProfileCategory.deserializeBinaryFromReader);
+      msg.setSkillProfileCategory(value);
       break;
     case 3:
       var value = /** @type {!proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.ForecastIntervalDeleteType} */ (reader.readEnum());
@@ -21283,6 +21290,14 @@ proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.serializeBinaryToWriter = func
       2,
       f,
       proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.IntervalSids.serializeBinaryToWriter
+    );
+  }
+  f = message.getSkillProfileCategory();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      api_commons_wfm_pb.SkillProfileCategory.serializeBinaryToWriter
     );
   }
   f = message.getForecastIntervalDeleteType();
@@ -21531,6 +21546,43 @@ proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.prototype.clearForecastInterva
  */
 proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.prototype.hasForecastIntervalSids = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional api.commons.SkillProfileCategory skill_profile_category = 4;
+ * @return {?proto.api.commons.SkillProfileCategory}
+ */
+proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.prototype.getSkillProfileCategory = function() {
+  return /** @type{?proto.api.commons.SkillProfileCategory} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.SkillProfileCategory, 4));
+};
+
+
+/**
+ * @param {?proto.api.commons.SkillProfileCategory|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq} returns this
+*/
+proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.prototype.setSkillProfileCategory = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 4, proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq} returns this
+ */
+proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.prototype.clearSkillProfileCategory = function() {
+  return this.setSkillProfileCategory(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.DeleteForecastIntervalsReq.prototype.hasSkillProfileCategory = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

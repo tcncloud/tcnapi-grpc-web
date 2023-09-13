@@ -2090,6 +2090,11 @@ export class DeleteForecastIntervalsReq extends jspb.Message {
   getForecastIntervalSids(): DeleteForecastIntervalsReq.IntervalSids | undefined;
   setForecastIntervalSids(value?: DeleteForecastIntervalsReq.IntervalSids): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   getForecastIntervalDeleteType(): DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap[keyof DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap];
   setForecastIntervalDeleteType(value: DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap[keyof DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap]): void;
 
@@ -2108,6 +2113,7 @@ export namespace DeleteForecastIntervalsReq {
   export type AsObject = {
     skillProfileSid: number,
     forecastIntervalSids?: DeleteForecastIntervalsReq.IntervalSids.AsObject,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
     forecastIntervalDeleteType: DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap[keyof DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap],
   }
 
@@ -2144,6 +2150,7 @@ export namespace DeleteForecastIntervalsReq {
     DELETE_PARAM_NOT_SET = 0,
     SKILL_PROFILE_SID = 1,
     FORECAST_INTERVAL_SIDS = 2,
+    SKILL_PROFILE_CATEGORY = 4,
   }
 }
 
