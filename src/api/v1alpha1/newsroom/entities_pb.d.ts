@@ -359,8 +359,8 @@ export namespace ListPublishedArticlesResponse {
 }
 
 export class GetPublishedArticleByIdRequest extends jspb.Message {
-  getNewArticleSid(): string;
-  setNewArticleSid(value: string): void;
+  getPublishedArticleSid(): string;
+  setPublishedArticleSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPublishedArticleByIdRequest.AsObject;
@@ -374,7 +374,7 @@ export class GetPublishedArticleByIdRequest extends jspb.Message {
 
 export namespace GetPublishedArticleByIdRequest {
   export type AsObject = {
-    newArticleSid: string,
+    publishedArticleSid: string,
   }
 }
 

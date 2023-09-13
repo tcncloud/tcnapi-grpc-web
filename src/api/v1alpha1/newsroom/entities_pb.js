@@ -2881,7 +2881,7 @@ proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest.prototype.toObject = 
  */
 proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+    publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -2920,7 +2920,7 @@ proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest.deserializeBinaryFrom
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readInt64String());
-      msg.setNewArticleSid(value);
+      msg.setPublishedArticleSid(value);
       break;
     default:
       reader.skipField();
@@ -2951,7 +2951,7 @@ proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest.prototype.serializeBi
  */
 proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNewArticleSid();
+  f = message.getPublishedArticleSid();
   if (parseInt(f, 10) !== 0) {
     writer.writeInt64String(
       1,
@@ -2962,10 +2962,10 @@ proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest.serializeBinaryToWrit
 
 
 /**
- * optional int64 new_article_sid = 1;
+ * optional int64 published_article_sid = 1;
  * @return {string}
  */
-proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest.prototype.getNewArticleSid = function() {
+proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest.prototype.getPublishedArticleSid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
@@ -2974,7 +2974,7 @@ proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest.prototype.getNewArtic
  * @param {string} value
  * @return {!proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest} returns this
  */
-proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest.prototype.setNewArticleSid = function(value) {
+proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest.prototype.setPublishedArticleSid = function(value) {
   return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
