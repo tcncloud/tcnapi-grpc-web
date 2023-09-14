@@ -713,6 +713,60 @@ export namespace GetDeliveryDefinitionRes {
   }
 }
 
+export class GetDeliveryDefinitionByNameReq extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  hasMask(): boolean;
+  clearMask(): void;
+  getMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): DeliveryDefinition | undefined;
+  setEntity(value?: DeliveryDefinition): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDeliveryDefinitionByNameReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDeliveryDefinitionByNameReq): GetDeliveryDefinitionByNameReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDeliveryDefinitionByNameReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDeliveryDefinitionByNameReq;
+  static deserializeBinaryFromReader(message: GetDeliveryDefinitionByNameReq, reader: jspb.BinaryReader): GetDeliveryDefinitionByNameReq;
+}
+
+export namespace GetDeliveryDefinitionByNameReq {
+  export type AsObject = {
+    name: string,
+    mask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    entity?: DeliveryDefinition.AsObject,
+  }
+}
+
+export class GetDeliveryDefinitionByNameRes extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): DeliveryDefinition | undefined;
+  setEntity(value?: DeliveryDefinition): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDeliveryDefinitionByNameRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDeliveryDefinitionByNameRes): GetDeliveryDefinitionByNameRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDeliveryDefinitionByNameRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDeliveryDefinitionByNameRes;
+  static deserializeBinaryFromReader(message: GetDeliveryDefinitionByNameRes, reader: jspb.BinaryReader): GetDeliveryDefinitionByNameRes;
+}
+
+export namespace GetDeliveryDefinitionByNameRes {
+  export type AsObject = {
+    entity?: DeliveryDefinition.AsObject,
+  }
+}
+
 export class ListDeliveryDefinitionsReq extends jspb.Message {
   hasEntity(): boolean;
   clearEntity(): void;
@@ -925,57 +979,197 @@ export namespace CreateEncryptionRes {
   }
 }
 
-export class GetDeliveryDefinitionByNameReq extends jspb.Message {
-  getName(): string;
-  setName(value: string): void;
+export class DeleteEncryptionReq extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): ID | undefined;
+  setEntity(value?: ID): void;
 
   hasMask(): boolean;
   clearMask(): void;
   getMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
 
-  hasEntity(): boolean;
-  clearEntity(): void;
-  getEntity(): DeliveryDefinition | undefined;
-  setEntity(value?: DeliveryDefinition): void;
-
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetDeliveryDefinitionByNameReq.AsObject;
-  static toObject(includeInstance: boolean, msg: GetDeliveryDefinitionByNameReq): GetDeliveryDefinitionByNameReq.AsObject;
+  toObject(includeInstance?: boolean): DeleteEncryptionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteEncryptionReq): DeleteEncryptionReq.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetDeliveryDefinitionByNameReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetDeliveryDefinitionByNameReq;
-  static deserializeBinaryFromReader(message: GetDeliveryDefinitionByNameReq, reader: jspb.BinaryReader): GetDeliveryDefinitionByNameReq;
+  static serializeBinaryToWriter(message: DeleteEncryptionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteEncryptionReq;
+  static deserializeBinaryFromReader(message: DeleteEncryptionReq, reader: jspb.BinaryReader): DeleteEncryptionReq;
 }
 
-export namespace GetDeliveryDefinitionByNameReq {
+export namespace DeleteEncryptionReq {
   export type AsObject = {
-    name: string,
+    entity?: ID.AsObject,
     mask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    entity?: DeliveryDefinition.AsObject,
   }
 }
 
-export class GetDeliveryDefinitionByNameRes extends jspb.Message {
-  hasEntity(): boolean;
-  clearEntity(): void;
-  getEntity(): DeliveryDefinition | undefined;
-  setEntity(value?: DeliveryDefinition): void;
-
+export class DeleteEncryptionRes extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetDeliveryDefinitionByNameRes.AsObject;
-  static toObject(includeInstance: boolean, msg: GetDeliveryDefinitionByNameRes): GetDeliveryDefinitionByNameRes.AsObject;
+  toObject(includeInstance?: boolean): DeleteEncryptionRes.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteEncryptionRes): DeleteEncryptionRes.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetDeliveryDefinitionByNameRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetDeliveryDefinitionByNameRes;
-  static deserializeBinaryFromReader(message: GetDeliveryDefinitionByNameRes, reader: jspb.BinaryReader): GetDeliveryDefinitionByNameRes;
+  static serializeBinaryToWriter(message: DeleteEncryptionRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteEncryptionRes;
+  static deserializeBinaryFromReader(message: DeleteEncryptionRes, reader: jspb.BinaryReader): DeleteEncryptionRes;
 }
 
-export namespace GetDeliveryDefinitionByNameRes {
+export namespace DeleteEncryptionRes {
   export type AsObject = {
-    entity?: DeliveryDefinition.AsObject,
+  }
+}
+
+export class GetEncryptionReq extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): Encryption | undefined;
+  setEntity(value?: Encryption): void;
+
+  hasMask(): boolean;
+  clearMask(): void;
+  getMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetEncryptionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetEncryptionReq): GetEncryptionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetEncryptionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetEncryptionReq;
+  static deserializeBinaryFromReader(message: GetEncryptionReq, reader: jspb.BinaryReader): GetEncryptionReq;
+}
+
+export namespace GetEncryptionReq {
+  export type AsObject = {
+    entity?: Encryption.AsObject,
+    mask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class GetEncryptionRes extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): Encryption | undefined;
+  setEntity(value?: Encryption): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetEncryptionRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetEncryptionRes): GetEncryptionRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetEncryptionRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetEncryptionRes;
+  static deserializeBinaryFromReader(message: GetEncryptionRes, reader: jspb.BinaryReader): GetEncryptionRes;
+}
+
+export namespace GetEncryptionRes {
+  export type AsObject = {
+    entity?: Encryption.AsObject,
+  }
+}
+
+export class ListEncryptionsReq extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): ListReq | undefined;
+  setEntity(value?: ListReq): void;
+
+  hasMask(): boolean;
+  clearMask(): void;
+  getMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListEncryptionsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListEncryptionsReq): ListEncryptionsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListEncryptionsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListEncryptionsReq;
+  static deserializeBinaryFromReader(message: ListEncryptionsReq, reader: jspb.BinaryReader): ListEncryptionsReq;
+}
+
+export namespace ListEncryptionsReq {
+  export type AsObject = {
+    entity?: ListReq.AsObject,
+    mask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class ListEncryptionsRes extends jspb.Message {
+  clearEntitiesList(): void;
+  getEntitiesList(): Array<Encryption>;
+  setEntitiesList(value: Array<Encryption>): void;
+  addEntities(value?: Encryption, index?: number): Encryption;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListEncryptionsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListEncryptionsRes): ListEncryptionsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListEncryptionsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListEncryptionsRes;
+  static deserializeBinaryFromReader(message: ListEncryptionsRes, reader: jspb.BinaryReader): ListEncryptionsRes;
+}
+
+export namespace ListEncryptionsRes {
+  export type AsObject = {
+    entitiesList: Array<Encryption.AsObject>,
+  }
+}
+
+export class UpdateEncryptionReq extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): Encryption | undefined;
+  setEntity(value?: Encryption): void;
+
+  hasMask(): boolean;
+  clearMask(): void;
+  getMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateEncryptionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateEncryptionReq): UpdateEncryptionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateEncryptionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateEncryptionReq;
+  static deserializeBinaryFromReader(message: UpdateEncryptionReq, reader: jspb.BinaryReader): UpdateEncryptionReq;
+}
+
+export namespace UpdateEncryptionReq {
+  export type AsObject = {
+    entity?: Encryption.AsObject,
+    mask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class UpdateEncryptionRes extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): ID | undefined;
+  setEntity(value?: ID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateEncryptionRes.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateEncryptionRes): UpdateEncryptionRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateEncryptionRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateEncryptionRes;
+  static deserializeBinaryFromReader(message: UpdateEncryptionRes, reader: jspb.BinaryReader): UpdateEncryptionRes;
+}
+
+export namespace UpdateEncryptionRes {
+  export type AsObject = {
+    entity?: ID.AsObject,
   }
 }
 

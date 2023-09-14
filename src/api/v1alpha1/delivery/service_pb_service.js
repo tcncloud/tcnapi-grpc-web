@@ -208,6 +208,42 @@ DeliveryApi.CreateEncryption = {
   responseType: api_v1alpha1_delivery_service_pb.CreateEncryptionRes
 };
 
+DeliveryApi.DeleteEncryption = {
+  methodName: "DeleteEncryption",
+  service: DeliveryApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_delivery_service_pb.DeleteEncryptionReq,
+  responseType: api_v1alpha1_delivery_service_pb.DeleteEncryptionRes
+};
+
+DeliveryApi.GetEncryption = {
+  methodName: "GetEncryption",
+  service: DeliveryApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_delivery_service_pb.GetEncryptionReq,
+  responseType: api_v1alpha1_delivery_service_pb.GetEncryptionRes
+};
+
+DeliveryApi.ListEncryptions = {
+  methodName: "ListEncryptions",
+  service: DeliveryApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_delivery_service_pb.ListEncryptionsReq,
+  responseType: api_v1alpha1_delivery_service_pb.ListEncryptionsRes
+};
+
+DeliveryApi.UpdateEncryption = {
+  methodName: "UpdateEncryption",
+  service: DeliveryApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_delivery_service_pb.UpdateEncryptionReq,
+  responseType: api_v1alpha1_delivery_service_pb.UpdateEncryptionRes
+};
+
 exports.DeliveryApi = DeliveryApi;
 
 function DeliveryApiClient(serviceHost, options) {
@@ -871,6 +907,130 @@ DeliveryApiClient.prototype.createEncryption = function createEncryption(request
     callback = arguments[1];
   }
   var client = grpc.unary(DeliveryApi.CreateEncryption, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DeliveryApiClient.prototype.deleteEncryption = function deleteEncryption(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DeliveryApi.DeleteEncryption, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DeliveryApiClient.prototype.getEncryption = function getEncryption(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DeliveryApi.GetEncryption, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DeliveryApiClient.prototype.listEncryptions = function listEncryptions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DeliveryApi.ListEncryptions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DeliveryApiClient.prototype.updateEncryption = function updateEncryption(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DeliveryApi.UpdateEncryption, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

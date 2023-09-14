@@ -202,6 +202,42 @@ type DeliveryApiCreateEncryption = {
   readonly responseType: typeof api_v1alpha1_delivery_service_pb.CreateEncryptionRes;
 };
 
+type DeliveryApiDeleteEncryption = {
+  readonly methodName: string;
+  readonly service: typeof DeliveryApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_delivery_service_pb.DeleteEncryptionReq;
+  readonly responseType: typeof api_v1alpha1_delivery_service_pb.DeleteEncryptionRes;
+};
+
+type DeliveryApiGetEncryption = {
+  readonly methodName: string;
+  readonly service: typeof DeliveryApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_delivery_service_pb.GetEncryptionReq;
+  readonly responseType: typeof api_v1alpha1_delivery_service_pb.GetEncryptionRes;
+};
+
+type DeliveryApiListEncryptions = {
+  readonly methodName: string;
+  readonly service: typeof DeliveryApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_delivery_service_pb.ListEncryptionsReq;
+  readonly responseType: typeof api_v1alpha1_delivery_service_pb.ListEncryptionsRes;
+};
+
+type DeliveryApiUpdateEncryption = {
+  readonly methodName: string;
+  readonly service: typeof DeliveryApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_delivery_service_pb.UpdateEncryptionReq;
+  readonly responseType: typeof api_v1alpha1_delivery_service_pb.UpdateEncryptionRes;
+};
+
 export class DeliveryApi {
   static readonly serviceName: string;
   static readonly CreateTransferConfig: DeliveryApiCreateTransferConfig;
@@ -226,6 +262,10 @@ export class DeliveryApi {
   static readonly ListDeliveryDefinitionsByCredentialID: DeliveryApiListDeliveryDefinitionsByCredentialID;
   static readonly UpdateDeliveryDefinition: DeliveryApiUpdateDeliveryDefinition;
   static readonly CreateEncryption: DeliveryApiCreateEncryption;
+  static readonly DeleteEncryption: DeliveryApiDeleteEncryption;
+  static readonly GetEncryption: DeliveryApiGetEncryption;
+  static readonly ListEncryptions: DeliveryApiListEncryptions;
+  static readonly UpdateEncryption: DeliveryApiUpdateEncryption;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -457,6 +497,42 @@ export class DeliveryApiClient {
   createEncryption(
     requestMessage: api_v1alpha1_delivery_service_pb.CreateEncryptionReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.CreateEncryptionRes|null) => void
+  ): UnaryResponse;
+  deleteEncryption(
+    requestMessage: api_v1alpha1_delivery_service_pb.DeleteEncryptionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.DeleteEncryptionRes|null) => void
+  ): UnaryResponse;
+  deleteEncryption(
+    requestMessage: api_v1alpha1_delivery_service_pb.DeleteEncryptionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.DeleteEncryptionRes|null) => void
+  ): UnaryResponse;
+  getEncryption(
+    requestMessage: api_v1alpha1_delivery_service_pb.GetEncryptionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.GetEncryptionRes|null) => void
+  ): UnaryResponse;
+  getEncryption(
+    requestMessage: api_v1alpha1_delivery_service_pb.GetEncryptionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.GetEncryptionRes|null) => void
+  ): UnaryResponse;
+  listEncryptions(
+    requestMessage: api_v1alpha1_delivery_service_pb.ListEncryptionsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.ListEncryptionsRes|null) => void
+  ): UnaryResponse;
+  listEncryptions(
+    requestMessage: api_v1alpha1_delivery_service_pb.ListEncryptionsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.ListEncryptionsRes|null) => void
+  ): UnaryResponse;
+  updateEncryption(
+    requestMessage: api_v1alpha1_delivery_service_pb.UpdateEncryptionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.UpdateEncryptionRes|null) => void
+  ): UnaryResponse;
+  updateEncryption(
+    requestMessage: api_v1alpha1_delivery_service_pb.UpdateEncryptionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.UpdateEncryptionRes|null) => void
   ): UnaryResponse;
 }
 
