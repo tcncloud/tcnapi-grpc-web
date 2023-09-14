@@ -19,24 +19,6 @@ DeliveryApi.CreateTransferConfig = {
   responseType: api_v1alpha1_delivery_service_pb.CreateTransferConfigRes
 };
 
-DeliveryApi.CreateDeliveryDefinition = {
-  methodName: "CreateDeliveryDefinition",
-  service: DeliveryApi,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_delivery_service_pb.CreateDeliveryDefinitionReq,
-  responseType: api_v1alpha1_delivery_service_pb.CreateDeliveryDefinitionRes
-};
-
-DeliveryApi.CreateEncryption = {
-  methodName: "CreateEncryption",
-  service: DeliveryApi,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_delivery_service_pb.CreateEncryptionReq,
-  responseType: api_v1alpha1_delivery_service_pb.CreateEncryptionRes
-};
-
 DeliveryApi.ListTransferConfigs = {
   methodName: "ListTransferConfigs",
   service: DeliveryApi,
@@ -163,6 +145,24 @@ DeliveryApi.UpdateCredential = {
   responseType: api_v1alpha1_delivery_service_pb.UpdateCredentialRes
 };
 
+DeliveryApi.CreateDeliveryDefinition = {
+  methodName: "CreateDeliveryDefinition",
+  service: DeliveryApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_delivery_service_pb.CreateDeliveryDefinitionReq,
+  responseType: api_v1alpha1_delivery_service_pb.CreateDeliveryDefinitionRes
+};
+
+DeliveryApi.CreateEncryption = {
+  methodName: "CreateEncryption",
+  service: DeliveryApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_delivery_service_pb.CreateEncryptionReq,
+  responseType: api_v1alpha1_delivery_service_pb.CreateEncryptionRes
+};
+
 exports.DeliveryApi = DeliveryApi;
 
 function DeliveryApiClient(serviceHost, options) {
@@ -175,68 +175,6 @@ DeliveryApiClient.prototype.createTransferConfig = function createTransferConfig
     callback = arguments[1];
   }
   var client = grpc.unary(DeliveryApi.CreateTransferConfig, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-DeliveryApiClient.prototype.createDeliveryDefinition = function createDeliveryDefinition(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(DeliveryApi.CreateDeliveryDefinition, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-DeliveryApiClient.prototype.createEncryption = function createEncryption(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(DeliveryApi.CreateEncryption, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -671,6 +609,68 @@ DeliveryApiClient.prototype.updateCredential = function updateCredential(request
     callback = arguments[1];
   }
   var client = grpc.unary(DeliveryApi.UpdateCredential, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DeliveryApiClient.prototype.createDeliveryDefinition = function createDeliveryDefinition(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DeliveryApi.CreateDeliveryDefinition, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DeliveryApiClient.prototype.createEncryption = function createEncryption(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DeliveryApi.CreateEncryption, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
