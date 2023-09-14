@@ -49,15 +49,6 @@ type DeliveryApiDeleteTransferConfig = {
   readonly responseType: typeof api_v1alpha1_delivery_service_pb.DeleteTransferConfigRes;
 };
 
-type DeliveryApiGetDeliveryDefinitionByName = {
-  readonly methodName: string;
-  readonly service: typeof DeliveryApi;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameReq;
-  readonly responseType: typeof api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameRes;
-};
-
 type DeliveryApiGetTransferConfig = {
   readonly methodName: string;
   readonly service: typeof DeliveryApi;
@@ -148,6 +139,60 @@ type DeliveryApiCreateDeliveryDefinition = {
   readonly responseType: typeof api_v1alpha1_delivery_service_pb.CreateDeliveryDefinitionRes;
 };
 
+type DeliveryApiDeleteDeliveryDefinition = {
+  readonly methodName: string;
+  readonly service: typeof DeliveryApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_delivery_service_pb.DeleteDeliveryDefinitionReq;
+  readonly responseType: typeof api_v1alpha1_delivery_service_pb.DeleteDeliveryDefinitionRes;
+};
+
+type DeliveryApiGetDeliveryDefinition = {
+  readonly methodName: string;
+  readonly service: typeof DeliveryApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionReq;
+  readonly responseType: typeof api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionRes;
+};
+
+type DeliveryApiGetDeliveryDefinitionByName = {
+  readonly methodName: string;
+  readonly service: typeof DeliveryApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameReq;
+  readonly responseType: typeof api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameRes;
+};
+
+type DeliveryApiListDeliveryDefinitions = {
+  readonly methodName: string;
+  readonly service: typeof DeliveryApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsReq;
+  readonly responseType: typeof api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsRes;
+};
+
+type DeliveryApiListDeliveryDefinitionsByCredentialID = {
+  readonly methodName: string;
+  readonly service: typeof DeliveryApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsByCredentialIDReq;
+  readonly responseType: typeof api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsByCredentialIDRes;
+};
+
+type DeliveryApiUpdateDeliveryDefinition = {
+  readonly methodName: string;
+  readonly service: typeof DeliveryApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_delivery_service_pb.UpdateDeliveryDefinitionReq;
+  readonly responseType: typeof api_v1alpha1_delivery_service_pb.UpdateDeliveryDefinitionRes;
+};
+
 type DeliveryApiCreateEncryption = {
   readonly methodName: string;
   readonly service: typeof DeliveryApi;
@@ -164,7 +209,6 @@ export class DeliveryApi {
   static readonly ListTransferConfigsByCredentialID: DeliveryApiListTransferConfigsByCredentialID;
   static readonly UpdateTransferConfig: DeliveryApiUpdateTransferConfig;
   static readonly DeleteTransferConfig: DeliveryApiDeleteTransferConfig;
-  static readonly GetDeliveryDefinitionByName: DeliveryApiGetDeliveryDefinitionByName;
   static readonly GetTransferConfig: DeliveryApiGetTransferConfig;
   static readonly GetTransferConfigByName: DeliveryApiGetTransferConfigByName;
   static readonly ListHistory: DeliveryApiListHistory;
@@ -175,6 +219,12 @@ export class DeliveryApi {
   static readonly DeleteCredential: DeliveryApiDeleteCredential;
   static readonly UpdateCredential: DeliveryApiUpdateCredential;
   static readonly CreateDeliveryDefinition: DeliveryApiCreateDeliveryDefinition;
+  static readonly DeleteDeliveryDefinition: DeliveryApiDeleteDeliveryDefinition;
+  static readonly GetDeliveryDefinition: DeliveryApiGetDeliveryDefinition;
+  static readonly GetDeliveryDefinitionByName: DeliveryApiGetDeliveryDefinitionByName;
+  static readonly ListDeliveryDefinitions: DeliveryApiListDeliveryDefinitions;
+  static readonly ListDeliveryDefinitionsByCredentialID: DeliveryApiListDeliveryDefinitionsByCredentialID;
+  static readonly UpdateDeliveryDefinition: DeliveryApiUpdateDeliveryDefinition;
   static readonly CreateEncryption: DeliveryApiCreateEncryption;
 }
 
@@ -255,15 +305,6 @@ export class DeliveryApiClient {
     requestMessage: api_v1alpha1_delivery_service_pb.DeleteTransferConfigReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.DeleteTransferConfigRes|null) => void
   ): UnaryResponse;
-  getDeliveryDefinitionByName(
-    requestMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameRes|null) => void
-  ): UnaryResponse;
-  getDeliveryDefinitionByName(
-    requestMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameRes|null) => void
-  ): UnaryResponse;
   getTransferConfig(
     requestMessage: api_v1alpha1_delivery_service_pb.GetTransferConfigReq,
     metadata: grpc.Metadata,
@@ -353,6 +394,60 @@ export class DeliveryApiClient {
   createDeliveryDefinition(
     requestMessage: api_v1alpha1_delivery_service_pb.CreateDeliveryDefinitionReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.CreateDeliveryDefinitionRes|null) => void
+  ): UnaryResponse;
+  deleteDeliveryDefinition(
+    requestMessage: api_v1alpha1_delivery_service_pb.DeleteDeliveryDefinitionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.DeleteDeliveryDefinitionRes|null) => void
+  ): UnaryResponse;
+  deleteDeliveryDefinition(
+    requestMessage: api_v1alpha1_delivery_service_pb.DeleteDeliveryDefinitionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.DeleteDeliveryDefinitionRes|null) => void
+  ): UnaryResponse;
+  getDeliveryDefinition(
+    requestMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionRes|null) => void
+  ): UnaryResponse;
+  getDeliveryDefinition(
+    requestMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionRes|null) => void
+  ): UnaryResponse;
+  getDeliveryDefinitionByName(
+    requestMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameRes|null) => void
+  ): UnaryResponse;
+  getDeliveryDefinitionByName(
+    requestMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameRes|null) => void
+  ): UnaryResponse;
+  listDeliveryDefinitions(
+    requestMessage: api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsRes|null) => void
+  ): UnaryResponse;
+  listDeliveryDefinitions(
+    requestMessage: api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsRes|null) => void
+  ): UnaryResponse;
+  listDeliveryDefinitionsByCredentialID(
+    requestMessage: api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsByCredentialIDReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsByCredentialIDRes|null) => void
+  ): UnaryResponse;
+  listDeliveryDefinitionsByCredentialID(
+    requestMessage: api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsByCredentialIDReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsByCredentialIDRes|null) => void
+  ): UnaryResponse;
+  updateDeliveryDefinition(
+    requestMessage: api_v1alpha1_delivery_service_pb.UpdateDeliveryDefinitionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.UpdateDeliveryDefinitionRes|null) => void
+  ): UnaryResponse;
+  updateDeliveryDefinition(
+    requestMessage: api_v1alpha1_delivery_service_pb.UpdateDeliveryDefinitionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_delivery_service_pb.UpdateDeliveryDefinitionRes|null) => void
   ): UnaryResponse;
   createEncryption(
     requestMessage: api_v1alpha1_delivery_service_pb.CreateEncryptionReq,

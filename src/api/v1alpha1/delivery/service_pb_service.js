@@ -55,15 +55,6 @@ DeliveryApi.DeleteTransferConfig = {
   responseType: api_v1alpha1_delivery_service_pb.DeleteTransferConfigRes
 };
 
-DeliveryApi.GetDeliveryDefinitionByName = {
-  methodName: "GetDeliveryDefinitionByName",
-  service: DeliveryApi,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameReq,
-  responseType: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameRes
-};
-
 DeliveryApi.GetTransferConfig = {
   methodName: "GetTransferConfig",
   service: DeliveryApi,
@@ -152,6 +143,60 @@ DeliveryApi.CreateDeliveryDefinition = {
   responseStream: false,
   requestType: api_v1alpha1_delivery_service_pb.CreateDeliveryDefinitionReq,
   responseType: api_v1alpha1_delivery_service_pb.CreateDeliveryDefinitionRes
+};
+
+DeliveryApi.DeleteDeliveryDefinition = {
+  methodName: "DeleteDeliveryDefinition",
+  service: DeliveryApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_delivery_service_pb.DeleteDeliveryDefinitionReq,
+  responseType: api_v1alpha1_delivery_service_pb.DeleteDeliveryDefinitionRes
+};
+
+DeliveryApi.GetDeliveryDefinition = {
+  methodName: "GetDeliveryDefinition",
+  service: DeliveryApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionReq,
+  responseType: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionRes
+};
+
+DeliveryApi.GetDeliveryDefinitionByName = {
+  methodName: "GetDeliveryDefinitionByName",
+  service: DeliveryApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameReq,
+  responseType: api_v1alpha1_delivery_service_pb.GetDeliveryDefinitionByNameRes
+};
+
+DeliveryApi.ListDeliveryDefinitions = {
+  methodName: "ListDeliveryDefinitions",
+  service: DeliveryApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsReq,
+  responseType: api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsRes
+};
+
+DeliveryApi.ListDeliveryDefinitionsByCredentialID = {
+  methodName: "ListDeliveryDefinitionsByCredentialID",
+  service: DeliveryApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsByCredentialIDReq,
+  responseType: api_v1alpha1_delivery_service_pb.ListDeliveryDefinitionsByCredentialIDRes
+};
+
+DeliveryApi.UpdateDeliveryDefinition = {
+  methodName: "UpdateDeliveryDefinition",
+  service: DeliveryApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_delivery_service_pb.UpdateDeliveryDefinitionReq,
+  responseType: api_v1alpha1_delivery_service_pb.UpdateDeliveryDefinitionRes
 };
 
 DeliveryApi.CreateEncryption = {
@@ -299,37 +344,6 @@ DeliveryApiClient.prototype.deleteTransferConfig = function deleteTransferConfig
     callback = arguments[1];
   }
   var client = grpc.unary(DeliveryApi.DeleteTransferConfig, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-DeliveryApiClient.prototype.getDeliveryDefinitionByName = function getDeliveryDefinitionByName(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(DeliveryApi.GetDeliveryDefinitionByName, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -640,6 +654,192 @@ DeliveryApiClient.prototype.createDeliveryDefinition = function createDeliveryDe
     callback = arguments[1];
   }
   var client = grpc.unary(DeliveryApi.CreateDeliveryDefinition, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DeliveryApiClient.prototype.deleteDeliveryDefinition = function deleteDeliveryDefinition(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DeliveryApi.DeleteDeliveryDefinition, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DeliveryApiClient.prototype.getDeliveryDefinition = function getDeliveryDefinition(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DeliveryApi.GetDeliveryDefinition, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DeliveryApiClient.prototype.getDeliveryDefinitionByName = function getDeliveryDefinitionByName(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DeliveryApi.GetDeliveryDefinitionByName, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DeliveryApiClient.prototype.listDeliveryDefinitions = function listDeliveryDefinitions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DeliveryApi.ListDeliveryDefinitions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DeliveryApiClient.prototype.listDeliveryDefinitionsByCredentialID = function listDeliveryDefinitionsByCredentialID(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DeliveryApi.ListDeliveryDefinitionsByCredentialID, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DeliveryApiClient.prototype.updateDeliveryDefinition = function updateDeliveryDefinition(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DeliveryApi.UpdateDeliveryDefinition, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
