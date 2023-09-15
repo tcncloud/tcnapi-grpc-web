@@ -427,7 +427,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.Ticket.repeatedFields_ = [14,15,17,19];
+proto.api.commons.Ticket.repeatedFields_ = [14,15,17,19,21];
 
 
 
@@ -482,7 +482,8 @@ proto.api.commons.Ticket.toObject = function(includeInstance, msg) {
     assignee: jspb.Message.getFieldWithDefault(msg, 18, ""),
     ticketActionList: jspb.Message.toObjectList(msg.getTicketActionList(),
     proto.api.commons.TicketAction.toObject, includeInstance),
-    ticketStatus: jspb.Message.getFieldWithDefault(msg, 20, 0)
+    ticketStatus: jspb.Message.getFieldWithDefault(msg, 20, 0),
+    ticketAssigneeList: (f = jspb.Message.getRepeatedField(msg, 21)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -600,6 +601,10 @@ proto.api.commons.Ticket.deserializeBinaryFromReader = function(msg, reader) {
     case 20:
       var value = /** @type {!proto.api.commons.TicketStatus} */ (reader.readEnum());
       msg.setTicketStatus(value);
+      break;
+    case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTicketAssignee(value);
       break;
     default:
       reader.skipField();
@@ -766,6 +771,13 @@ proto.api.commons.Ticket.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       20,
+      f
+    );
+  }
+  f = message.getTicketAssigneeList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      21,
       f
     );
   }
@@ -1229,6 +1241,43 @@ proto.api.commons.Ticket.prototype.getTicketStatus = function() {
  */
 proto.api.commons.Ticket.prototype.setTicketStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 20, value);
+};
+
+
+/**
+ * repeated string ticket_assignee = 21;
+ * @return {!Array<string>}
+ */
+proto.api.commons.Ticket.prototype.getTicketAssigneeList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 21));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.commons.Ticket} returns this
+ */
+proto.api.commons.Ticket.prototype.setTicketAssigneeList = function(value) {
+  return jspb.Message.setField(this, 21, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.Ticket} returns this
+ */
+proto.api.commons.Ticket.prototype.addTicketAssignee = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 21, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.Ticket} returns this
+ */
+proto.api.commons.Ticket.prototype.clearTicketAssigneeList = function() {
+  return this.setTicketAssigneeList([]);
 };
 
 
@@ -1909,7 +1958,8 @@ proto.api.commons.CallbackContext.toObject = function(includeInstance, msg) {
     callerId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     phoneNo: jspb.Message.getFieldWithDefault(msg, 2, ""),
     countryCode: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    callerName: jspb.Message.getFieldWithDefault(msg, 4, "")
+    callerName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    callerCountryCode: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1961,6 +2011,10 @@ proto.api.commons.CallbackContext.deserializeBinaryFromReader = function(msg, re
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setCallerName(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCallerCountryCode(value);
       break;
     default:
       reader.skipField();
@@ -2016,6 +2070,13 @@ proto.api.commons.CallbackContext.serializeBinaryToWriter = function(message, wr
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getCallerCountryCode();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -2091,6 +2152,24 @@ proto.api.commons.CallbackContext.prototype.getCallerName = function() {
  */
 proto.api.commons.CallbackContext.prototype.setCallerName = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string caller_country_code = 5;
+ * @return {string}
+ */
+proto.api.commons.CallbackContext.prototype.getCallerCountryCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.CallbackContext} returns this
+ */
+proto.api.commons.CallbackContext.prototype.setCallerCountryCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

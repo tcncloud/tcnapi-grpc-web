@@ -1291,7 +1291,7 @@ proto.api.v1alpha1.tickets.PingRes.serializeBinaryToWriter = function(message, w
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.tickets.CreateTicketReq.repeatedFields_ = [9,10,12,15];
+proto.api.v1alpha1.tickets.CreateTicketReq.repeatedFields_ = [9,10,12,15,16];
 
 
 
@@ -1338,7 +1338,8 @@ proto.api.v1alpha1.tickets.CreateTicketReq.toObject = function(includeInstance, 
     assignSelf: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
     assignOther: jspb.Message.getFieldWithDefault(msg, 14, ""),
     ticketActionList: jspb.Message.toObjectList(msg.getTicketActionList(),
-    api_commons_tickets_pb.TicketAction.toObject, includeInstance)
+    api_commons_tickets_pb.TicketAction.toObject, includeInstance),
+    ticketAssigneeList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1423,6 +1424,10 @@ proto.api.v1alpha1.tickets.CreateTicketReq.deserializeBinaryFromReader = functio
       var value = new api_commons_tickets_pb.TicketAction;
       reader.readMessage(value,api_commons_tickets_pb.TicketAction.deserializeBinaryFromReader);
       msg.addTicketAction(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTicketAssignee(value);
       break;
     default:
       reader.skipField();
@@ -1533,6 +1538,13 @@ proto.api.v1alpha1.tickets.CreateTicketReq.serializeBinaryToWriter = function(me
       15,
       f,
       api_commons_tickets_pb.TicketAction.serializeBinaryToWriter
+    );
+  }
+  f = message.getTicketAssigneeList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      16,
+      f
     );
   }
 };
@@ -1832,6 +1844,43 @@ proto.api.v1alpha1.tickets.CreateTicketReq.prototype.addTicketAction = function(
  */
 proto.api.v1alpha1.tickets.CreateTicketReq.prototype.clearTicketActionList = function() {
   return this.setTicketActionList([]);
+};
+
+
+/**
+ * repeated string ticket_assignee = 16;
+ * @return {!Array<string>}
+ */
+proto.api.v1alpha1.tickets.CreateTicketReq.prototype.getTicketAssigneeList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 16));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v1alpha1.tickets.CreateTicketReq} returns this
+ */
+proto.api.v1alpha1.tickets.CreateTicketReq.prototype.setTicketAssigneeList = function(value) {
+  return jspb.Message.setField(this, 16, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.tickets.CreateTicketReq} returns this
+ */
+proto.api.v1alpha1.tickets.CreateTicketReq.prototype.addTicketAssignee = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 16, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.tickets.CreateTicketReq} returns this
+ */
+proto.api.v1alpha1.tickets.CreateTicketReq.prototype.clearTicketAssigneeList = function() {
+  return this.setTicketAssigneeList([]);
 };
 
 
@@ -4940,7 +4989,8 @@ proto.api.v1alpha1.tickets.CreateSlaReq.toObject = function(includeInstance, msg
     slaSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    interval: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    interval: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    duration: (f = msg.getDuration()) && api_commons_tickets_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4992,6 +5042,11 @@ proto.api.v1alpha1.tickets.CreateSlaReq.deserializeBinaryFromReader = function(m
     case 4:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setInterval(value);
+      break;
+    case 5:
+      var value = new api_commons_tickets_pb.Duration;
+      reader.readMessage(value,api_commons_tickets_pb.Duration.deserializeBinaryFromReader);
+      msg.setDuration(value);
       break;
     default:
       reader.skipField();
@@ -5048,6 +5103,14 @@ proto.api.v1alpha1.tickets.CreateSlaReq.serializeBinaryToWriter = function(messa
     writer.writeInt64(
       4,
       f
+    );
+  }
+  f = message.getDuration();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      api_commons_tickets_pb.Duration.serializeBinaryToWriter
     );
   }
 };
@@ -5122,6 +5185,43 @@ proto.api.v1alpha1.tickets.CreateSlaReq.prototype.getInterval = function() {
  */
 proto.api.v1alpha1.tickets.CreateSlaReq.prototype.setInterval = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional api.commons.Duration duration = 5;
+ * @return {?proto.api.commons.Duration}
+ */
+proto.api.v1alpha1.tickets.CreateSlaReq.prototype.getDuration = function() {
+  return /** @type{?proto.api.commons.Duration} */ (
+    jspb.Message.getWrapperField(this, api_commons_tickets_pb.Duration, 5));
+};
+
+
+/**
+ * @param {?proto.api.commons.Duration|undefined} value
+ * @return {!proto.api.v1alpha1.tickets.CreateSlaReq} returns this
+*/
+proto.api.v1alpha1.tickets.CreateSlaReq.prototype.setDuration = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.tickets.CreateSlaReq} returns this
+ */
+proto.api.v1alpha1.tickets.CreateSlaReq.prototype.clearDuration = function() {
+  return this.setDuration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.tickets.CreateSlaReq.prototype.hasDuration = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -8527,7 +8627,8 @@ proto.api.v1alpha1.tickets.ChangeTicketStatusRequest.prototype.toObject = functi
 proto.api.v1alpha1.tickets.ChangeTicketStatusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     ticketId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    statusId: jspb.Message.getFieldWithDefault(msg, 2, "0")
+    statusId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+    ticketStatus: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -8572,6 +8673,10 @@ proto.api.v1alpha1.tickets.ChangeTicketStatusRequest.deserializeBinaryFromReader
       var value = /** @type {string} */ (reader.readInt64String());
       msg.setStatusId(value);
       break;
+    case 3:
+      var value = /** @type {!proto.api.commons.TicketStatus} */ (reader.readEnum());
+      msg.setTicketStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -8615,6 +8720,13 @@ proto.api.v1alpha1.tickets.ChangeTicketStatusRequest.serializeBinaryToWriter = f
       f
     );
   }
+  f = message.getTicketStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -8651,6 +8763,24 @@ proto.api.v1alpha1.tickets.ChangeTicketStatusRequest.prototype.getStatusId = fun
  */
 proto.api.v1alpha1.tickets.ChangeTicketStatusRequest.prototype.setStatusId = function(value) {
   return jspb.Message.setProto3StringIntField(this, 2, value);
+};
+
+
+/**
+ * optional api.commons.TicketStatus ticket_status = 3;
+ * @return {!proto.api.commons.TicketStatus}
+ */
+proto.api.v1alpha1.tickets.ChangeTicketStatusRequest.prototype.getTicketStatus = function() {
+  return /** @type {!proto.api.commons.TicketStatus} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.TicketStatus} value
+ * @return {!proto.api.v1alpha1.tickets.ChangeTicketStatusRequest} returns this
+ */
+proto.api.v1alpha1.tickets.ChangeTicketStatusRequest.prototype.setTicketStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 

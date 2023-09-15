@@ -74,6 +74,11 @@ export class Ticket extends jspb.Message {
   getTicketStatus(): TicketStatusMap[keyof TicketStatusMap];
   setTicketStatus(value: TicketStatusMap[keyof TicketStatusMap]): void;
 
+  clearTicketAssigneeList(): void;
+  getTicketAssigneeList(): Array<string>;
+  setTicketAssigneeList(value: Array<string>): void;
+  addTicketAssignee(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ticket.AsObject;
   static toObject(includeInstance: boolean, msg: Ticket): Ticket.AsObject;
@@ -105,6 +110,7 @@ export namespace Ticket {
     assignee: string,
     ticketActionList: Array<TicketAction.AsObject>,
     ticketStatus: TicketStatusMap[keyof TicketStatusMap],
+    ticketAssigneeList: Array<string>,
   }
 }
 
@@ -207,6 +213,9 @@ export class CallbackContext extends jspb.Message {
   getCallerName(): string;
   setCallerName(value: string): void;
 
+  getCallerCountryCode(): string;
+  setCallerCountryCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CallbackContext.AsObject;
   static toObject(includeInstance: boolean, msg: CallbackContext): CallbackContext.AsObject;
@@ -223,6 +232,7 @@ export namespace CallbackContext {
     phoneNo: string,
     countryCode: string,
     callerName: string,
+    callerCountryCode: string,
   }
 }
 

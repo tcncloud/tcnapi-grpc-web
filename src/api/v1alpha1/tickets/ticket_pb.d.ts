@@ -82,6 +82,11 @@ export class CreateTicketReq extends jspb.Message {
   setTicketActionList(value: Array<api_commons_tickets_pb.TicketAction>): void;
   addTicketAction(value?: api_commons_tickets_pb.TicketAction, index?: number): api_commons_tickets_pb.TicketAction;
 
+  clearTicketAssigneeList(): void;
+  getTicketAssigneeList(): Array<string>;
+  setTicketAssigneeList(value: Array<string>): void;
+  addTicketAssignee(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTicketReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateTicketReq): CreateTicketReq.AsObject;
@@ -105,6 +110,7 @@ export namespace CreateTicketReq {
     assignSelf: boolean,
     assignOther: string,
     ticketActionList: Array<api_commons_tickets_pb.TicketAction.AsObject>,
+    ticketAssigneeList: Array<string>,
   }
 }
 
@@ -565,6 +571,11 @@ export class CreateSlaReq extends jspb.Message {
   getInterval(): number;
   setInterval(value: number): void;
 
+  hasDuration(): boolean;
+  clearDuration(): void;
+  getDuration(): api_commons_tickets_pb.Duration | undefined;
+  setDuration(value?: api_commons_tickets_pb.Duration): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateSlaReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateSlaReq): CreateSlaReq.AsObject;
@@ -581,6 +592,7 @@ export namespace CreateSlaReq {
     name: string,
     description: string,
     interval: number,
+    duration?: api_commons_tickets_pb.Duration.AsObject,
   }
 }
 
@@ -1089,6 +1101,9 @@ export class ChangeTicketStatusRequest extends jspb.Message {
   getStatusId(): string;
   setStatusId(value: string): void;
 
+  getTicketStatus(): api_commons_tickets_pb.TicketStatusMap[keyof api_commons_tickets_pb.TicketStatusMap];
+  setTicketStatus(value: api_commons_tickets_pb.TicketStatusMap[keyof api_commons_tickets_pb.TicketStatusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ChangeTicketStatusRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ChangeTicketStatusRequest): ChangeTicketStatusRequest.AsObject;
@@ -1103,6 +1118,7 @@ export namespace ChangeTicketStatusRequest {
   export type AsObject = {
     ticketId: string,
     statusId: string,
+    ticketStatus: api_commons_tickets_pb.TicketStatusMap[keyof api_commons_tickets_pb.TicketStatusMap],
   }
 }
 

@@ -2,6 +2,7 @@
 // file: api/commons/audit/vana_events.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class VanaFlagEvent extends jspb.Message {
@@ -165,6 +166,50 @@ export namespace VanaFlagSummaryEvent {
       transcriptSid: number,
       flagSidsList: Array<number>,
     }
+  }
+}
+
+export class VanaPhraseCorrectionEvent extends jspb.Message {
+  hasStartOffset(): boolean;
+  clearStartOffset(): void;
+  getStartOffset(): google_protobuf_duration_pb.Duration | undefined;
+  setStartOffset(value?: google_protobuf_duration_pb.Duration): void;
+
+  hasEndOffset(): boolean;
+  clearEndOffset(): void;
+  getEndOffset(): google_protobuf_duration_pb.Duration | undefined;
+  setEndOffset(value?: google_protobuf_duration_pb.Duration): void;
+
+  getOriginalText(): string;
+  setOriginalText(value: string): void;
+
+  getProposedText(): string;
+  setProposedText(value: string): void;
+
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  getChannel(): number;
+  setChannel(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VanaPhraseCorrectionEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: VanaPhraseCorrectionEvent): VanaPhraseCorrectionEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: VanaPhraseCorrectionEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VanaPhraseCorrectionEvent;
+  static deserializeBinaryFromReader(message: VanaPhraseCorrectionEvent, reader: jspb.BinaryReader): VanaPhraseCorrectionEvent;
+}
+
+export namespace VanaPhraseCorrectionEvent {
+  export type AsObject = {
+    startOffset?: google_protobuf_duration_pb.Duration.AsObject,
+    endOffset?: google_protobuf_duration_pb.Duration.AsObject,
+    originalText: string,
+    proposedText: string,
+    url: string,
+    channel: number,
   }
 }
 

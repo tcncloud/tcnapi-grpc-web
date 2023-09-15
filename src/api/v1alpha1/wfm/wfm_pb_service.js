@@ -127,6 +127,15 @@ WFM.BuildCallProfileTemplateForSkillProfile = {
   responseType: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateForSkillProfileRes
 };
 
+WFM.BuildCallProfileTemplate = {
+  methodName: "BuildCallProfileTemplate",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateRes
+};
+
 WFM.CreateInactiveSkillProfileMapping = {
   methodName: "CreateInactiveSkillProfileMapping",
   service: WFM,
@@ -259,6 +268,15 @@ WFM.ListForecastIntervalsForSkillProfile = {
   requestStream: false,
   responseStream: true,
   requestType: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsForSkillProfileReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.CallDataByInterval
+};
+
+WFM.ListForecastIntervals = {
+  methodName: "ListForecastIntervals",
+  service: WFM,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsReq,
   responseType: api_v1alpha1_wfm_wfm_pb.CallDataByInterval
 };
 
@@ -424,6 +442,15 @@ WFM.UpdateProgramNode = {
   responseType: api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeRes
 };
 
+WFM.ListProgramNodesBySid = {
+  methodName: "ListProgramNodesBySid",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidRes
+};
+
 WFM.CreateConstraintRule = {
   methodName: "CreateConstraintRule",
   service: WFM,
@@ -548,6 +575,15 @@ WFM.ListUngroupedWFMAgents = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsReq,
   responseType: api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsRes
+};
+
+WFM.ListWFMAgentSids = {
+  methodName: "ListWFMAgentSids",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes
 };
 
 WFM.ListWFMAgentsAssociatedWithAgentGroup = {
@@ -1482,6 +1518,37 @@ WFMClient.prototype.buildCallProfileTemplateForSkillProfile = function buildCall
   };
 };
 
+WFMClient.prototype.buildCallProfileTemplate = function buildCallProfileTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.BuildCallProfileTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.createInactiveSkillProfileMapping = function createInactiveSkillProfileMapping(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -1939,6 +2006,45 @@ WFMClient.prototype.listForecastIntervalsForSkillProfile = function listForecast
     status: []
   };
   var client = grpc.invoke(WFM.ListForecastIntervalsForSkillProfile, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listForecastIntervals = function listForecastIntervals(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(WFM.ListForecastIntervals, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2545,6 +2651,37 @@ WFMClient.prototype.updateProgramNode = function updateProgramNode(requestMessag
   };
 };
 
+WFMClient.prototype.listProgramNodesBySid = function listProgramNodesBySid(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListProgramNodesBySid, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.createConstraintRule = function createConstraintRule(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -2953,6 +3090,37 @@ WFMClient.prototype.listUngroupedWFMAgents = function listUngroupedWFMAgents(req
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.ListUngroupedWFMAgents, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listWFMAgentSids = function listWFMAgentSids(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListWFMAgentSids, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
