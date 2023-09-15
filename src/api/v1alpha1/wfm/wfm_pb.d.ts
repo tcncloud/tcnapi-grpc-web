@@ -1915,6 +1915,28 @@ export namespace ListForecastIntervalsForSkillProfileReq {
   }
 }
 
+export class ListForecastIntervalsReq extends jspb.Message {
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListForecastIntervalsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListForecastIntervalsReq): ListForecastIntervalsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListForecastIntervalsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListForecastIntervalsReq;
+  static deserializeBinaryFromReader(message: ListForecastIntervalsReq, reader: jspb.BinaryReader): ListForecastIntervalsReq;
+}
+
+export namespace ListForecastIntervalsReq {
+  export type AsObject = {
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+  }
+}
+
 export class UpsertRegressionForecastReq extends jspb.Message {
   hasRegressionTemplate(): boolean;
   clearRegressionTemplate(): void;
@@ -2068,6 +2090,11 @@ export class DeleteForecastIntervalsReq extends jspb.Message {
   getForecastIntervalSids(): DeleteForecastIntervalsReq.IntervalSids | undefined;
   setForecastIntervalSids(value?: DeleteForecastIntervalsReq.IntervalSids): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   getForecastIntervalDeleteType(): DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap[keyof DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap];
   setForecastIntervalDeleteType(value: DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap[keyof DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap]): void;
 
@@ -2086,6 +2113,7 @@ export namespace DeleteForecastIntervalsReq {
   export type AsObject = {
     skillProfileSid: number,
     forecastIntervalSids?: DeleteForecastIntervalsReq.IntervalSids.AsObject,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
     forecastIntervalDeleteType: DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap[keyof DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap],
   }
 
@@ -2122,6 +2150,7 @@ export namespace DeleteForecastIntervalsReq {
     DELETE_PARAM_NOT_SET = 0,
     SKILL_PROFILE_SID = 1,
     FORECAST_INTERVAL_SIDS = 2,
+    SKILL_PROFILE_CATEGORY = 4,
   }
 }
 
