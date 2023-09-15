@@ -265,6 +265,15 @@ type WFMListForecastIntervalsForSkillProfile = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CallDataByInterval;
 };
 
+type WFMListForecastIntervals = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: true;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CallDataByInterval;
+};
+
 type WFMBuildRegressionForecastByInterval = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1124,6 +1133,7 @@ export class WFM {
   static readonly DeleteRegressionTemplate: WFMDeleteRegressionTemplate;
   static readonly ListRegressionTemplates: WFMListRegressionTemplates;
   static readonly ListForecastIntervalsForSkillProfile: WFMListForecastIntervalsForSkillProfile;
+  static readonly ListForecastIntervals: WFMListForecastIntervals;
   static readonly BuildRegressionForecastByInterval: WFMBuildRegressionForecastByInterval;
   static readonly BuildRegressionForecastByIntervalWithStats: WFMBuildRegressionForecastByIntervalWithStats;
   static readonly ListCallProfileTemplates: WFMListCallProfileTemplates;
@@ -1487,6 +1497,7 @@ export class WFMClient {
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRegressionTemplatesRes|null) => void
   ): UnaryResponse;
   listForecastIntervalsForSkillProfile(requestMessage: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsForSkillProfileReq, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_wfm_wfm_pb.CallDataByInterval>;
+  listForecastIntervals(requestMessage: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsReq, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_wfm_wfm_pb.CallDataByInterval>;
   buildRegressionForecastByInterval(requestMessage: api_v1alpha1_wfm_wfm_pb.BuildRegressionForecastByIntervalReq, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_wfm_wfm_pb.CallDataByInterval>;
   buildRegressionForecastByIntervalWithStats(requestMessage: api_v1alpha1_wfm_wfm_pb.BuildRegressionForecastByIntervalWithStatsReq, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_wfm_wfm_pb.BuildRegressionForecastByIntervalWithStatsRes>;
   listCallProfileTemplates(
