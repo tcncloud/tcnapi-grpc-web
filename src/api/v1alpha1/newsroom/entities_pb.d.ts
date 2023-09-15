@@ -498,3 +498,41 @@ export namespace UserActivityResponse {
   }
 }
 
+export class GetNewsForUserRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetNewsForUserRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetNewsForUserRequest): GetNewsForUserRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetNewsForUserRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetNewsForUserRequest;
+  static deserializeBinaryFromReader(message: GetNewsForUserRequest, reader: jspb.BinaryReader): GetNewsForUserRequest;
+}
+
+export namespace GetNewsForUserRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetNewsForUserResponse extends jspb.Message {
+  clearPublishedArticleDetailsList(): void;
+  getPublishedArticleDetailsList(): Array<PublishedArticleDetails>;
+  setPublishedArticleDetailsList(value: Array<PublishedArticleDetails>): void;
+  addPublishedArticleDetails(value?: PublishedArticleDetails, index?: number): PublishedArticleDetails;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetNewsForUserResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetNewsForUserResponse): GetNewsForUserResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetNewsForUserResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetNewsForUserResponse;
+  static deserializeBinaryFromReader(message: GetNewsForUserResponse, reader: jspb.BinaryReader): GetNewsForUserResponse;
+}
+
+export namespace GetNewsForUserResponse {
+  export type AsObject = {
+    publishedArticleDetailsList: Array<PublishedArticleDetails.AsObject>,
+  }
+}
+
