@@ -2843,8 +2843,7 @@ proto.services.pbx.v1.CreateRingGroupRequest.toObject = function(includeInstance
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     description: jspb.Message.getFieldWithDefault(msg, 2, ""),
     ringStrategy: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    pbxUserIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    extension: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    pbxUserIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2896,10 +2895,6 @@ proto.services.pbx.v1.CreateRingGroupRequest.deserializeBinaryFromReader = funct
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.addPbxUserIds(value);
-      break;
-    case 5:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setExtension$(value);
       break;
     default:
       reader.skipField();
@@ -2955,13 +2950,6 @@ proto.services.pbx.v1.CreateRingGroupRequest.serializeBinaryToWriter = function(
   if (f.length > 0) {
     writer.writeRepeatedString(
       4,
-      f
-    );
-  }
-  f = message.getExtension$();
-  if (f !== 0) {
-    writer.writeInt32(
-      5,
       f
     );
   }
@@ -3056,24 +3044,6 @@ proto.services.pbx.v1.CreateRingGroupRequest.prototype.addPbxUserIds = function(
  */
 proto.services.pbx.v1.CreateRingGroupRequest.prototype.clearPbxUserIdsList = function() {
   return this.setPbxUserIdsList([]);
-};
-
-
-/**
- * optional int32 extension = 5;
- * @return {number}
- */
-proto.services.pbx.v1.CreateRingGroupRequest.prototype.getExtension$ = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.services.pbx.v1.CreateRingGroupRequest} returns this
- */
-proto.services.pbx.v1.CreateRingGroupRequest.prototype.setExtension$ = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 

@@ -359,9 +359,6 @@ export class CreateRingGroupRequest extends jspb.Message {
   setPbxUserIdsList(value: Array<string>): void;
   addPbxUserIds(value: string, index?: number): string;
 
-  getExtension$(): number;
-  setExtension$(value: number): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRingGroupRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateRingGroupRequest): CreateRingGroupRequest.AsObject;
@@ -378,7 +375,6 @@ export namespace CreateRingGroupRequest {
     description: string,
     ringStrategy: RingStrategyMap[keyof RingStrategyMap],
     pbxUserIdsList: Array<string>,
-    extension: number,
   }
 }
 
