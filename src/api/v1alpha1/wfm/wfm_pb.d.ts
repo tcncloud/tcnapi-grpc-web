@@ -1183,6 +1183,44 @@ export namespace CreateSkillProfileGroupRes {
   }
 }
 
+export class UpdateSkillProfileGroupReq extends jspb.Message {
+  hasSkillProfileGroup(): boolean;
+  clearSkillProfileGroup(): void;
+  getSkillProfileGroup(): SkillProfileGroup | undefined;
+  setSkillProfileGroup(value?: SkillProfileGroup): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSkillProfileGroupReq.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSkillProfileGroupReq): UpdateSkillProfileGroupReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSkillProfileGroupReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSkillProfileGroupReq;
+  static deserializeBinaryFromReader(message: UpdateSkillProfileGroupReq, reader: jspb.BinaryReader): UpdateSkillProfileGroupReq;
+}
+
+export namespace UpdateSkillProfileGroupReq {
+  export type AsObject = {
+    skillProfileGroup?: SkillProfileGroup.AsObject,
+  }
+}
+
+export class UpdateSkillProfileGroupRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSkillProfileGroupRes.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSkillProfileGroupRes): UpdateSkillProfileGroupRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSkillProfileGroupRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSkillProfileGroupRes;
+  static deserializeBinaryFromReader(message: UpdateSkillProfileGroupRes, reader: jspb.BinaryReader): UpdateSkillProfileGroupRes;
+}
+
+export namespace UpdateSkillProfileGroupRes {
+  export type AsObject = {
+  }
+}
+
 export class DeleteHistoricalDataDeltasReq extends jspb.Message {
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;
