@@ -8,6 +8,50 @@ import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
+export class PublishDashboardRequest extends jspb.Message {
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
+  getDestinationResourceId(): string;
+  setDestinationResourceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PublishDashboardRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PublishDashboardRequest): PublishDashboardRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PublishDashboardRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PublishDashboardRequest;
+  static deserializeBinaryFromReader(message: PublishDashboardRequest, reader: jspb.BinaryReader): PublishDashboardRequest;
+}
+
+export namespace PublishDashboardRequest {
+  export type AsObject = {
+    resourceId: string,
+    destinationResourceId: string,
+  }
+}
+
+export class PublishDashboardResponse extends jspb.Message {
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PublishDashboardResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PublishDashboardResponse): PublishDashboardResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PublishDashboardResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PublishDashboardResponse;
+  static deserializeBinaryFromReader(message: PublishDashboardResponse, reader: jspb.BinaryReader): PublishDashboardResponse;
+}
+
+export namespace PublishDashboardResponse {
+  export type AsObject = {
+    resourceId: string,
+  }
+}
+
 export class ListDashboardsRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDashboardsRequest.AsObject;
