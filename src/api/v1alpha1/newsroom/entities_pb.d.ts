@@ -274,9 +274,61 @@ export namespace PublishedArticleDetails {
   }
 }
 
+export class UserActivity extends jspb.Message {
+  getUserActivityLogSid(): string;
+  setUserActivityLogSid(value: string): void;
+
+  hasDateCreated(): boolean;
+  clearDateCreated(): void;
+  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasUserActivityDetails(): boolean;
+  clearUserActivityDetails(): void;
+  getUserActivityDetails(): UserActivity.UserActivityDetails | undefined;
+  setUserActivityDetails(value?: UserActivity.UserActivityDetails): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UserActivity.AsObject;
+  static toObject(includeInstance: boolean, msg: UserActivity): UserActivity.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UserActivity, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserActivity;
+  static deserializeBinaryFromReader(message: UserActivity, reader: jspb.BinaryReader): UserActivity;
+}
+
+export namespace UserActivity {
+  export type AsObject = {
+    userActivityLogSid: string,
+    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    userActivityDetails?: UserActivity.UserActivityDetails.AsObject,
+  }
+
+  export class UserActivityDetails extends jspb.Message {
+    getPublishedArticleSid(): string;
+    setPublishedArticleSid(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): UserActivityDetails.AsObject;
+    static toObject(includeInstance: boolean, msg: UserActivityDetails): UserActivityDetails.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: UserActivityDetails, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): UserActivityDetails;
+    static deserializeBinaryFromReader(message: UserActivityDetails, reader: jspb.BinaryReader): UserActivityDetails;
+  }
+
+  export namespace UserActivityDetails {
+    export type AsObject = {
+      publishedArticleSid: string,
+    }
+  }
+}
+
 export class CreatePublishedArticleRequest extends jspb.Message {
-  getNewArticleSid(): number;
-  setNewArticleSid(value: number): void;
+  getNewArticleSid(): string;
+  setNewArticleSid(value: string): void;
 
   getDisplayToUser(): boolean;
   setDisplayToUser(value: boolean): void;
@@ -293,7 +345,7 @@ export class CreatePublishedArticleRequest extends jspb.Message {
 
 export namespace CreatePublishedArticleRequest {
   export type AsObject = {
-    newArticleSid: number,
+    newArticleSid: string,
     displayToUser: boolean,
   }
 }
@@ -359,8 +411,11 @@ export namespace ListPublishedArticlesResponse {
 }
 
 export class GetPublishedArticleByIdRequest extends jspb.Message {
-  getNewArticleSid(): string;
-  setNewArticleSid(value: string): void;
+  getNewArticleSid(): number;
+  setNewArticleSid(value: number): void;
+
+  getPublishedArticleSid(): string;
+  setPublishedArticleSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPublishedArticleByIdRequest.AsObject;
@@ -374,7 +429,8 @@ export class GetPublishedArticleByIdRequest extends jspb.Message {
 
 export namespace GetPublishedArticleByIdRequest {
   export type AsObject = {
-    newArticleSid: string,
+    newArticleSid: number,
+    publishedArticleSid: string,
   }
 }
 
@@ -397,6 +453,86 @@ export class GetPublishedArticleByIdResponse extends jspb.Message {
 export namespace GetPublishedArticleByIdResponse {
   export type AsObject = {
     publishedArticleDetails?: PublishedArticleDetails.AsObject,
+  }
+}
+
+export class UserActivityRequest extends jspb.Message {
+  getPublishedArticleSid(): string;
+  setPublishedArticleSid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UserActivityRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UserActivityRequest): UserActivityRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UserActivityRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserActivityRequest;
+  static deserializeBinaryFromReader(message: UserActivityRequest, reader: jspb.BinaryReader): UserActivityRequest;
+}
+
+export namespace UserActivityRequest {
+  export type AsObject = {
+    publishedArticleSid: string,
+  }
+}
+
+export class UserActivityResponse extends jspb.Message {
+  hasUserActivity(): boolean;
+  clearUserActivity(): void;
+  getUserActivity(): UserActivity | undefined;
+  setUserActivity(value?: UserActivity): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UserActivityResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UserActivityResponse): UserActivityResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UserActivityResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserActivityResponse;
+  static deserializeBinaryFromReader(message: UserActivityResponse, reader: jspb.BinaryReader): UserActivityResponse;
+}
+
+export namespace UserActivityResponse {
+  export type AsObject = {
+    userActivity?: UserActivity.AsObject,
+  }
+}
+
+export class GetNewsForUserRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetNewsForUserRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetNewsForUserRequest): GetNewsForUserRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetNewsForUserRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetNewsForUserRequest;
+  static deserializeBinaryFromReader(message: GetNewsForUserRequest, reader: jspb.BinaryReader): GetNewsForUserRequest;
+}
+
+export namespace GetNewsForUserRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetNewsForUserResponse extends jspb.Message {
+  clearPublishedArticleDetailsList(): void;
+  getPublishedArticleDetailsList(): Array<PublishedArticleDetails>;
+  setPublishedArticleDetailsList(value: Array<PublishedArticleDetails>): void;
+  addPublishedArticleDetails(value?: PublishedArticleDetails, index?: number): PublishedArticleDetails;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetNewsForUserResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetNewsForUserResponse): GetNewsForUserResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetNewsForUserResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetNewsForUserResponse;
+  static deserializeBinaryFromReader(message: GetNewsForUserResponse, reader: jspb.BinaryReader): GetNewsForUserResponse;
+}
+
+export namespace GetNewsForUserResponse {
+  export type AsObject = {
+    publishedArticleDetailsList: Array<PublishedArticleDetails.AsObject>,
   }
 }
 
