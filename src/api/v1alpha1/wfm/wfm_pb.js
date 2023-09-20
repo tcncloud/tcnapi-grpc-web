@@ -68168,7 +68168,7 @@ proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.deserializeBinaryFromReader
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = new proto.api.v1alpha1.wfm.SchedulingTarget;
       reader.readMessage(value,proto.api.v1alpha1.wfm.SchedulingTarget.deserializeBinaryFromReader);
       msg.setSchedulingTarget(value);
@@ -68205,7 +68205,7 @@ proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.serializeBinaryToWriter = f
   f = message.getSchedulingTarget();
   if (f != null) {
     writer.writeMessage(
-      2,
+      1,
       f,
       proto.api.v1alpha1.wfm.SchedulingTarget.serializeBinaryToWriter
     );
@@ -68214,12 +68214,12 @@ proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.serializeBinaryToWriter = f
 
 
 /**
- * optional SchedulingTarget scheduling_target = 2;
+ * optional SchedulingTarget scheduling_target = 1;
  * @return {?proto.api.v1alpha1.wfm.SchedulingTarget}
  */
 proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.getSchedulingTarget = function() {
   return /** @type{?proto.api.v1alpha1.wfm.SchedulingTarget} */ (
-    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.SchedulingTarget, 2));
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.SchedulingTarget, 1));
 };
 
 
@@ -68228,7 +68228,7 @@ proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.getSchedulingTarg
  * @return {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq} returns this
 */
 proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.setSchedulingTarget = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -68246,7 +68246,7 @@ proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.clearSchedulingTa
  * @return {boolean}
  */
 proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.hasSchedulingTarget = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
