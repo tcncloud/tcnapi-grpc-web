@@ -8575,9 +8575,6 @@ export namespace DeleteSchedulingTargetRes {
 }
 
 export class GetDefaultSchedulingTargetReq extends jspb.Message {
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDefaultSchedulingTargetReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetDefaultSchedulingTargetReq): GetDefaultSchedulingTargetReq.AsObject;
@@ -8590,7 +8587,6 @@ export class GetDefaultSchedulingTargetReq extends jspb.Message {
 
 export namespace GetDefaultSchedulingTargetReq {
   export type AsObject = {
-    orgId: string,
   }
 }
 
@@ -8617,9 +8613,6 @@ export namespace GetDefaultSchedulingTargetRes {
 }
 
 export class SetDefaultSchedulingTargetReq extends jspb.Message {
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   hasSchedulingTarget(): boolean;
   clearSchedulingTarget(): void;
   getSchedulingTarget(): SchedulingTarget | undefined;
@@ -8637,7 +8630,6 @@ export class SetDefaultSchedulingTargetReq extends jspb.Message {
 
 export namespace SetDefaultSchedulingTargetReq {
   export type AsObject = {
-    orgId: string,
     schedulingTarget?: SchedulingTarget.AsObject,
   }
 }

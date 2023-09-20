@@ -1090,6 +1090,24 @@ WFM.DeleteSchedulingTarget = {
   responseType: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingTargetRes
 };
 
+WFM.GetDefaultSchedulingTarget = {
+  methodName: "GetDefaultSchedulingTarget",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetRes
+};
+
+WFM.SetDefaultSchedulingTarget = {
+  methodName: "SetDefaultSchedulingTarget",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetRes
+};
+
 WFM.GetPerformanceMetrics = {
   methodName: "GetPerformanceMetrics",
   service: WFM,
@@ -4857,6 +4875,68 @@ WFMClient.prototype.deleteSchedulingTarget = function deleteSchedulingTarget(req
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.DeleteSchedulingTarget, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.getDefaultSchedulingTarget = function getDefaultSchedulingTarget(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.GetDefaultSchedulingTarget, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.setDefaultSchedulingTarget = function setDefaultSchedulingTarget(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.SetDefaultSchedulingTarget, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

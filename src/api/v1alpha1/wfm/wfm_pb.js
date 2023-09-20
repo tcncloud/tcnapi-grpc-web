@@ -67879,7 +67879,7 @@ proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.prototype.toObject = functi
  */
 proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -67916,10 +67916,6 @@ proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.deserializeBinaryFromReader
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrgId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -67949,31 +67945,6 @@ proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.prototype.serializeBinary =
  */
 proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrgId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string org_id = 1;
- * @return {string}
- */
-proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.prototype.getOrgId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq} returns this
- */
-proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.prototype.setOrgId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -68160,7 +68131,6 @@ proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.toObject = functi
  */
 proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     schedulingTarget: (f = msg.getSchedulingTarget()) && proto.api.v1alpha1.wfm.SchedulingTarget.toObject(includeInstance, f)
   };
 
@@ -68198,10 +68168,6 @@ proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.deserializeBinaryFromReader
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrgId(value);
-      break;
     case 2:
       var value = new proto.api.v1alpha1.wfm.SchedulingTarget;
       reader.readMessage(value,proto.api.v1alpha1.wfm.SchedulingTarget.deserializeBinaryFromReader);
@@ -68236,13 +68202,6 @@ proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.serializeBinary =
  */
 proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrgId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getSchedulingTarget();
   if (f != null) {
     writer.writeMessage(
@@ -68251,24 +68210,6 @@ proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.serializeBinaryToWriter = f
       proto.api.v1alpha1.wfm.SchedulingTarget.serializeBinaryToWriter
     );
   }
-};
-
-
-/**
- * optional string org_id = 1;
- * @return {string}
- */
-proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.getOrgId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq} returns this
- */
-proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.setOrgId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
