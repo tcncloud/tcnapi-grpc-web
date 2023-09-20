@@ -129,6 +129,66 @@ export namespace SkillProfile {
   }
 }
 
+export class SkillProfileGroup extends jspb.Message {
+  getSkillProfileGroupSid(): number;
+  setSkillProfileGroupSid(value: number): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getAverageSpeedOfAnswerInSeconds(): number;
+  setAverageSpeedOfAnswerInSeconds(value: number): void;
+
+  getAverageHandleTimeInSeconds(): number;
+  setAverageHandleTimeInSeconds(value: number): void;
+
+  getAverageAfterCallWorkInSeconds(): number;
+  setAverageAfterCallWorkInSeconds(value: number): void;
+
+  getAverageTimeToAbortInSeconds(): number;
+  setAverageTimeToAbortInSeconds(value: number): void;
+
+  getAreAveragesManual(): boolean;
+  setAreAveragesManual(value: boolean): void;
+
+  clearSkillProfileSidsList(): void;
+  getSkillProfileSidsList(): Array<number>;
+  setSkillProfileSidsList(value: Array<number>): void;
+  addSkillProfileSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SkillProfileGroup.AsObject;
+  static toObject(includeInstance: boolean, msg: SkillProfileGroup): SkillProfileGroup.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SkillProfileGroup, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SkillProfileGroup;
+  static deserializeBinaryFromReader(message: SkillProfileGroup, reader: jspb.BinaryReader): SkillProfileGroup;
+}
+
+export namespace SkillProfileGroup {
+  export type AsObject = {
+    skillProfileGroupSid: number,
+    name: string,
+    description: string,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    averageSpeedOfAnswerInSeconds: number,
+    averageHandleTimeInSeconds: number,
+    averageAfterCallWorkInSeconds: number,
+    averageTimeToAbortInSeconds: number,
+    areAveragesManual: boolean,
+    skillProfileSidsList: Array<number>,
+  }
+}
+
 export class ListSkillProfilesReq extends jspb.Message {
   getActiveOnly(): boolean;
   setActiveOnly(value: boolean): void;
@@ -1078,6 +1138,48 @@ export class DisconnectInactiveSkillProfileMappingRes extends jspb.Message {
 
 export namespace DisconnectInactiveSkillProfileMappingRes {
   export type AsObject = {
+  }
+}
+
+export class CreateSkillProfileGroupReq extends jspb.Message {
+  hasSkillProfileGroup(): boolean;
+  clearSkillProfileGroup(): void;
+  getSkillProfileGroup(): SkillProfileGroup | undefined;
+  setSkillProfileGroup(value?: SkillProfileGroup): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSkillProfileGroupReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSkillProfileGroupReq): CreateSkillProfileGroupReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateSkillProfileGroupReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSkillProfileGroupReq;
+  static deserializeBinaryFromReader(message: CreateSkillProfileGroupReq, reader: jspb.BinaryReader): CreateSkillProfileGroupReq;
+}
+
+export namespace CreateSkillProfileGroupReq {
+  export type AsObject = {
+    skillProfileGroup?: SkillProfileGroup.AsObject,
+  }
+}
+
+export class CreateSkillProfileGroupRes extends jspb.Message {
+  getSkillProfileGroupSid(): number;
+  setSkillProfileGroupSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSkillProfileGroupRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSkillProfileGroupRes): CreateSkillProfileGroupRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateSkillProfileGroupRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSkillProfileGroupRes;
+  static deserializeBinaryFromReader(message: CreateSkillProfileGroupRes, reader: jspb.BinaryReader): CreateSkillProfileGroupRes;
+}
+
+export namespace CreateSkillProfileGroupRes {
+  export type AsObject = {
+    skillProfileGroupSid: number,
   }
 }
 

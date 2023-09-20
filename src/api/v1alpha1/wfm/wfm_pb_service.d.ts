@@ -157,6 +157,15 @@ type WFMDisconnectInactiveSkillProfileMapping = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingRes;
 };
 
+type WFMCreateSkillProfileGroup = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupRes;
+};
+
 type WFMDeleteHistoricalDataDeltas = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1121,6 +1130,7 @@ export class WFM {
   static readonly CreateInactiveSkillProfileMapping: WFMCreateInactiveSkillProfileMapping;
   static readonly GetAvailableRegressionForecasterModelTypes: WFMGetAvailableRegressionForecasterModelTypes;
   static readonly DisconnectInactiveSkillProfileMapping: WFMDisconnectInactiveSkillProfileMapping;
+  static readonly CreateSkillProfileGroup: WFMCreateSkillProfileGroup;
   static readonly DeleteHistoricalDataDeltas: WFMDeleteHistoricalDataDeltas;
   static readonly ListTopSkillProfiles: WFMListTopSkillProfiles;
   static readonly GetSkillProfilesCount: WFMGetSkillProfilesCount;
@@ -1412,6 +1422,15 @@ export class WFMClient {
   disconnectInactiveSkillProfileMapping(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingRes|null) => void
+  ): UnaryResponse;
+  createSkillProfileGroup(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupRes|null) => void
+  ): UnaryResponse;
+  createSkillProfileGroup(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupRes|null) => void
   ): UnaryResponse;
   deleteHistoricalDataDeltas(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteHistoricalDataDeltasReq,
