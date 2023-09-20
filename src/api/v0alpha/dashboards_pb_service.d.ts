@@ -104,60 +104,6 @@ type DashboardsUpdateDashboardLayout = {
   readonly responseType: typeof google_protobuf_empty_pb.Empty;
 };
 
-type DashboardsCreateStandardDashboard = {
-  readonly methodName: string;
-  readonly service: typeof Dashboards;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_dashboards_pb.CreateStandardDashboardRequest;
-  readonly responseType: typeof api_v0alpha_dashboards_pb.CreateStandardDashboardResponse;
-};
-
-type DashboardsUpdateStandardDashboard = {
-  readonly methodName: string;
-  readonly service: typeof Dashboards;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_dashboards_pb.UpdateStandardDashboardRequest;
-  readonly responseType: typeof google_protobuf_empty_pb.Empty;
-};
-
-type DashboardsUpdateStandardDashboardTitleAndDescription = {
-  readonly methodName: string;
-  readonly service: typeof Dashboards;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_dashboards_pb.UpdateStandardDashboardTitleAndDescriptionRequest;
-  readonly responseType: typeof google_protobuf_empty_pb.Empty;
-};
-
-type DashboardsUpdateStandardDashboardView = {
-  readonly methodName: string;
-  readonly service: typeof Dashboards;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_dashboards_pb.UpdateStandardDashboardViewRequest;
-  readonly responseType: typeof google_protobuf_empty_pb.Empty;
-};
-
-type DashboardsUpdateStandardDashboardLayout = {
-  readonly methodName: string;
-  readonly service: typeof Dashboards;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_dashboards_pb.UpdateStandardDashboardLayoutRequest;
-  readonly responseType: typeof google_protobuf_empty_pb.Empty;
-};
-
-type DashboardsDeleteStandardDashboard = {
-  readonly methodName: string;
-  readonly service: typeof Dashboards;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_dashboards_pb.DeleteStandardDashboardRequest;
-  readonly responseType: typeof google_protobuf_empty_pb.Empty;
-};
-
 export class Dashboards {
   static readonly serviceName: string;
   static readonly CreateDashboard: DashboardsCreateDashboard;
@@ -171,12 +117,6 @@ export class Dashboards {
   static readonly UpdateDashboardTitleAndDescription: DashboardsUpdateDashboardTitleAndDescription;
   static readonly UpdateDashboardView: DashboardsUpdateDashboardView;
   static readonly UpdateDashboardLayout: DashboardsUpdateDashboardLayout;
-  static readonly CreateStandardDashboard: DashboardsCreateStandardDashboard;
-  static readonly UpdateStandardDashboard: DashboardsUpdateStandardDashboard;
-  static readonly UpdateStandardDashboardTitleAndDescription: DashboardsUpdateStandardDashboardTitleAndDescription;
-  static readonly UpdateStandardDashboardView: DashboardsUpdateStandardDashboardView;
-  static readonly UpdateStandardDashboardLayout: DashboardsUpdateStandardDashboardLayout;
-  static readonly DeleteStandardDashboard: DashboardsDeleteStandardDashboard;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -308,60 +248,6 @@ export class DashboardsClient {
   ): UnaryResponse;
   updateDashboardLayout(
     requestMessage: api_v0alpha_dashboards_pb.UpdateDashboardLayoutRequest,
-    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
-  ): UnaryResponse;
-  createStandardDashboard(
-    requestMessage: api_v0alpha_dashboards_pb.CreateStandardDashboardRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_dashboards_pb.CreateStandardDashboardResponse|null) => void
-  ): UnaryResponse;
-  createStandardDashboard(
-    requestMessage: api_v0alpha_dashboards_pb.CreateStandardDashboardRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_dashboards_pb.CreateStandardDashboardResponse|null) => void
-  ): UnaryResponse;
-  updateStandardDashboard(
-    requestMessage: api_v0alpha_dashboards_pb.UpdateStandardDashboardRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
-  ): UnaryResponse;
-  updateStandardDashboard(
-    requestMessage: api_v0alpha_dashboards_pb.UpdateStandardDashboardRequest,
-    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
-  ): UnaryResponse;
-  updateStandardDashboardTitleAndDescription(
-    requestMessage: api_v0alpha_dashboards_pb.UpdateStandardDashboardTitleAndDescriptionRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
-  ): UnaryResponse;
-  updateStandardDashboardTitleAndDescription(
-    requestMessage: api_v0alpha_dashboards_pb.UpdateStandardDashboardTitleAndDescriptionRequest,
-    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
-  ): UnaryResponse;
-  updateStandardDashboardView(
-    requestMessage: api_v0alpha_dashboards_pb.UpdateStandardDashboardViewRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
-  ): UnaryResponse;
-  updateStandardDashboardView(
-    requestMessage: api_v0alpha_dashboards_pb.UpdateStandardDashboardViewRequest,
-    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
-  ): UnaryResponse;
-  updateStandardDashboardLayout(
-    requestMessage: api_v0alpha_dashboards_pb.UpdateStandardDashboardLayoutRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
-  ): UnaryResponse;
-  updateStandardDashboardLayout(
-    requestMessage: api_v0alpha_dashboards_pb.UpdateStandardDashboardLayoutRequest,
-    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
-  ): UnaryResponse;
-  deleteStandardDashboard(
-    requestMessage: api_v0alpha_dashboards_pb.DeleteStandardDashboardRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
-  ): UnaryResponse;
-  deleteStandardDashboard(
-    requestMessage: api_v0alpha_dashboards_pb.DeleteStandardDashboardRequest,
     callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
   ): UnaryResponse;
 }
