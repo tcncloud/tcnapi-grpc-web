@@ -5662,7 +5662,7 @@ proto.api.commons.TourPattern.toObject = function(includeInstance, msg) {
     shiftTemplateSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     memberTourWeekPatternsList: jspb.Message.toObjectList(msg.getMemberTourWeekPatternsList(),
     proto.api.commons.TourWeekPattern.toObject, includeInstance),
-    memberTourAgentCollectionList: jspb.Message.toObjectList(msg.getMemberTourAgentCollectionList(),
+    memberTourAgentCollectionsList: jspb.Message.toObjectList(msg.getMemberTourAgentCollectionsList(),
     proto.api.commons.TourAgentCollection.toObject, includeInstance)
   };
 
@@ -5716,7 +5716,7 @@ proto.api.commons.TourPattern.deserializeBinaryFromReader = function(msg, reader
     case 4:
       var value = new proto.api.commons.TourAgentCollection;
       reader.readMessage(value,proto.api.commons.TourAgentCollection.deserializeBinaryFromReader);
-      msg.addMemberTourAgentCollection(value);
+      msg.addMemberTourAgentCollections(value);
       break;
     default:
       reader.skipField();
@@ -5769,7 +5769,7 @@ proto.api.commons.TourPattern.serializeBinaryToWriter = function(message, writer
       proto.api.commons.TourWeekPattern.serializeBinaryToWriter
     );
   }
-  f = message.getMemberTourAgentCollectionList();
+  f = message.getMemberTourAgentCollectionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       4,
@@ -5855,10 +5855,10 @@ proto.api.commons.TourPattern.prototype.clearMemberTourWeekPatternsList = functi
 
 
 /**
- * repeated TourAgentCollection member_tour_agent_collection = 4;
+ * repeated TourAgentCollection member_tour_agent_collections = 4;
  * @return {!Array<!proto.api.commons.TourAgentCollection>}
  */
-proto.api.commons.TourPattern.prototype.getMemberTourAgentCollectionList = function() {
+proto.api.commons.TourPattern.prototype.getMemberTourAgentCollectionsList = function() {
   return /** @type{!Array<!proto.api.commons.TourAgentCollection>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.api.commons.TourAgentCollection, 4));
 };
@@ -5868,7 +5868,7 @@ proto.api.commons.TourPattern.prototype.getMemberTourAgentCollectionList = funct
  * @param {!Array<!proto.api.commons.TourAgentCollection>} value
  * @return {!proto.api.commons.TourPattern} returns this
 */
-proto.api.commons.TourPattern.prototype.setMemberTourAgentCollectionList = function(value) {
+proto.api.commons.TourPattern.prototype.setMemberTourAgentCollectionsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
@@ -5878,7 +5878,7 @@ proto.api.commons.TourPattern.prototype.setMemberTourAgentCollectionList = funct
  * @param {number=} opt_index
  * @return {!proto.api.commons.TourAgentCollection}
  */
-proto.api.commons.TourPattern.prototype.addMemberTourAgentCollection = function(opt_value, opt_index) {
+proto.api.commons.TourPattern.prototype.addMemberTourAgentCollections = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.api.commons.TourAgentCollection, opt_index);
 };
 
@@ -5887,8 +5887,8 @@ proto.api.commons.TourPattern.prototype.addMemberTourAgentCollection = function(
  * Clears the list making it empty but non-null.
  * @return {!proto.api.commons.TourPattern} returns this
  */
-proto.api.commons.TourPattern.prototype.clearMemberTourAgentCollectionList = function() {
-  return this.setMemberTourAgentCollectionList([]);
+proto.api.commons.TourPattern.prototype.clearMemberTourAgentCollectionsList = function() {
+  return this.setMemberTourAgentCollectionsList([]);
 };
 
 

@@ -750,10 +750,10 @@ export class TourPattern extends jspb.Message {
   setMemberTourWeekPatternsList(value: Array<TourWeekPattern>): void;
   addMemberTourWeekPatterns(value?: TourWeekPattern, index?: number): TourWeekPattern;
 
-  clearMemberTourAgentCollectionList(): void;
-  getMemberTourAgentCollectionList(): Array<TourAgentCollection>;
-  setMemberTourAgentCollectionList(value: Array<TourAgentCollection>): void;
-  addMemberTourAgentCollection(value?: TourAgentCollection, index?: number): TourAgentCollection;
+  clearMemberTourAgentCollectionsList(): void;
+  getMemberTourAgentCollectionsList(): Array<TourAgentCollection>;
+  setMemberTourAgentCollectionsList(value: Array<TourAgentCollection>): void;
+  addMemberTourAgentCollections(value?: TourAgentCollection, index?: number): TourAgentCollection;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TourPattern.AsObject;
@@ -770,7 +770,7 @@ export namespace TourPattern {
     tourPatternSid: number,
     shiftTemplateSid: number,
     memberTourWeekPatternsList: Array<TourWeekPattern.AsObject>,
-    memberTourAgentCollectionList: Array<TourAgentCollection.AsObject>,
+    memberTourAgentCollectionsList: Array<TourAgentCollection.AsObject>,
   }
 }
 
