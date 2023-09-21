@@ -84,7 +84,8 @@ proto.api.commons.audit.LMSPipelineFailureEvent.toObject = function(includeInsta
   var f, obj = {
     elementId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     elementName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fileNamesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+    fileNamesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    failureMessage: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -133,6 +134,10 @@ proto.api.commons.audit.LMSPipelineFailureEvent.deserializeBinaryFromReader = fu
       var value = /** @type {string} */ (reader.readString());
       msg.addFileNames(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailureMessage(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -180,6 +185,13 @@ proto.api.commons.audit.LMSPipelineFailureEvent.serializeBinaryToWriter = functi
   if (f.length > 0) {
     writer.writeRepeatedString(
       3,
+      f
+    );
+  }
+  f = message.getFailureMessage();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -256,6 +268,24 @@ proto.api.commons.audit.LMSPipelineFailureEvent.prototype.addFileNames = functio
  */
 proto.api.commons.audit.LMSPipelineFailureEvent.prototype.clearFileNamesList = function() {
   return this.setFileNamesList([]);
+};
+
+
+/**
+ * optional string failure_message = 4;
+ * @return {string}
+ */
+proto.api.commons.audit.LMSPipelineFailureEvent.prototype.getFailureMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.LMSPipelineFailureEvent} returns this
+ */
+proto.api.commons.audit.LMSPipelineFailureEvent.prototype.setFailureMessage = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

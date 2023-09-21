@@ -15,6 +15,9 @@ export class LMSPipelineFailureEvent extends jspb.Message {
   setFileNamesList(value: Array<string>): void;
   addFileNames(value: string, index?: number): string;
 
+  getFailureMessage(): string;
+  setFailureMessage(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LMSPipelineFailureEvent.AsObject;
   static toObject(includeInstance: boolean, msg: LMSPipelineFailureEvent): LMSPipelineFailureEvent.AsObject;
@@ -30,6 +33,7 @@ export namespace LMSPipelineFailureEvent {
     elementId: string,
     elementName: string,
     fileNamesList: Array<string>,
+    failureMessage: string,
   }
 }
 
