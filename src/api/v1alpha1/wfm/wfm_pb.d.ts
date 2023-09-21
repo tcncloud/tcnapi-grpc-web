@@ -1221,6 +1221,50 @@ export namespace UpdateSkillProfileGroupRes {
   }
 }
 
+export class ListSkillProfileGroupsReq extends jspb.Message {
+  clearSkillProfileGroupSidsList(): void;
+  getSkillProfileGroupSidsList(): Array<number>;
+  setSkillProfileGroupSidsList(value: Array<number>): void;
+  addSkillProfileGroupSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSkillProfileGroupsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSkillProfileGroupsReq): ListSkillProfileGroupsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSkillProfileGroupsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSkillProfileGroupsReq;
+  static deserializeBinaryFromReader(message: ListSkillProfileGroupsReq, reader: jspb.BinaryReader): ListSkillProfileGroupsReq;
+}
+
+export namespace ListSkillProfileGroupsReq {
+  export type AsObject = {
+    skillProfileGroupSidsList: Array<number>,
+  }
+}
+
+export class ListSkillProfileGroupsRes extends jspb.Message {
+  clearSkillProfileGroupsList(): void;
+  getSkillProfileGroupsList(): Array<SkillProfileGroup>;
+  setSkillProfileGroupsList(value: Array<SkillProfileGroup>): void;
+  addSkillProfileGroups(value?: SkillProfileGroup, index?: number): SkillProfileGroup;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSkillProfileGroupsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSkillProfileGroupsRes): ListSkillProfileGroupsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSkillProfileGroupsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSkillProfileGroupsRes;
+  static deserializeBinaryFromReader(message: ListSkillProfileGroupsRes, reader: jspb.BinaryReader): ListSkillProfileGroupsRes;
+}
+
+export namespace ListSkillProfileGroupsRes {
+  export type AsObject = {
+    skillProfileGroupsList: Array<SkillProfileGroup.AsObject>,
+  }
+}
+
 export class DeleteHistoricalDataDeltasReq extends jspb.Message {
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;
