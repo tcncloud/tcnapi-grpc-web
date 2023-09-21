@@ -33,7 +33,7 @@ goog.exportSymbol('proto.api.commons.audit.LMSPipelineFailureEvent', null, globa
  * @constructor
  */
 proto.api.commons.audit.LMSPipelineFailureEvent = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.audit.LMSPipelineFailureEvent.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.commons.audit.LMSPipelineFailureEvent, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -43,13 +43,6 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.api.commons.audit.LMSPipelineFailureEvent.displayName = 'proto.api.commons.audit.LMSPipelineFailureEvent';
 }
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.commons.audit.LMSPipelineFailureEvent.repeatedFields_ = [3];
 
 
 
@@ -84,7 +77,7 @@ proto.api.commons.audit.LMSPipelineFailureEvent.toObject = function(includeInsta
   var f, obj = {
     elementId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     elementName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fileNamesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    fileName: jspb.Message.getFieldWithDefault(msg, 3, ""),
     failureMessage: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
@@ -132,7 +125,7 @@ proto.api.commons.audit.LMSPipelineFailureEvent.deserializeBinaryFromReader = fu
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.addFileNames(value);
+      msg.setFileName(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -181,9 +174,9 @@ proto.api.commons.audit.LMSPipelineFailureEvent.serializeBinaryToWriter = functi
       f
     );
   }
-  f = message.getFileNamesList();
+  f = message.getFileName();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeString(
       3,
       f
     );
@@ -235,39 +228,20 @@ proto.api.commons.audit.LMSPipelineFailureEvent.prototype.setElementName = funct
 
 
 /**
- * repeated string file_names = 3;
- * @return {!Array<string>}
+ * optional string file_name = 3;
+ * @return {string}
  */
-proto.api.commons.audit.LMSPipelineFailureEvent.prototype.getFileNamesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.api.commons.audit.LMSPipelineFailureEvent} returns this
- */
-proto.api.commons.audit.LMSPipelineFailureEvent.prototype.setFileNamesList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
+proto.api.commons.audit.LMSPipelineFailureEvent.prototype.getFileName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @param {number=} opt_index
  * @return {!proto.api.commons.audit.LMSPipelineFailureEvent} returns this
  */
-proto.api.commons.audit.LMSPipelineFailureEvent.prototype.addFileNames = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.commons.audit.LMSPipelineFailureEvent} returns this
- */
-proto.api.commons.audit.LMSPipelineFailureEvent.prototype.clearFileNamesList = function() {
-  return this.setFileNamesList([]);
+proto.api.commons.audit.LMSPipelineFailureEvent.prototype.setFileName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

@@ -10,10 +10,8 @@ export class LMSPipelineFailureEvent extends jspb.Message {
   getElementName(): string;
   setElementName(value: string): void;
 
-  clearFileNamesList(): void;
-  getFileNamesList(): Array<string>;
-  setFileNamesList(value: Array<string>): void;
-  addFileNames(value: string, index?: number): string;
+  getFileName(): string;
+  setFileName(value: string): void;
 
   getFailureMessage(): string;
   setFailureMessage(value: string): void;
@@ -32,7 +30,7 @@ export namespace LMSPipelineFailureEvent {
   export type AsObject = {
     elementId: string,
     elementName: string,
-    fileNamesList: Array<string>,
+    fileName: string,
     failureMessage: string,
   }
 }
