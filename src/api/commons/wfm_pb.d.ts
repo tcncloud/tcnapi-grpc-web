@@ -584,6 +584,196 @@ export namespace SkillProfileCategory {
   export const CategoryType: CategoryTypeMap;
 }
 
+export class TourShiftSegmentConfig extends jspb.Message {
+  getTourShiftSegmentConfigSid(): number;
+  setTourShiftSegmentConfigSid(value: number): void;
+
+  getTourShiftInstanceConfigSid(): number;
+  setTourShiftInstanceConfigSid(value: number): void;
+
+  getStartMinuteInShift(): number;
+  setStartMinuteInShift(value: number): void;
+
+  getWidthInMinutes(): number;
+  setWidthInMinutes(value: number): void;
+
+  getSchedulingActivitySid(): number;
+  setSchedulingActivitySid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TourShiftSegmentConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: TourShiftSegmentConfig): TourShiftSegmentConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TourShiftSegmentConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TourShiftSegmentConfig;
+  static deserializeBinaryFromReader(message: TourShiftSegmentConfig, reader: jspb.BinaryReader): TourShiftSegmentConfig;
+}
+
+export namespace TourShiftSegmentConfig {
+  export type AsObject = {
+    tourShiftSegmentConfigSid: number,
+    tourShiftInstanceConfigSid: number,
+    startMinuteInShift: number,
+    widthInMinutes: number,
+    schedulingActivitySid: number,
+  }
+}
+
+export class TourShiftInstanceConfig extends jspb.Message {
+  getTourShiftInstanceConfigSid(): number;
+  setTourShiftInstanceConfigSid(value: number): void;
+
+  getTourWeekPatternSid(): number;
+  setTourWeekPatternSid(value: number): void;
+
+  getStartMinuteInWeek(): number;
+  setStartMinuteInWeek(value: number): void;
+
+  getWidthInMinutes(): number;
+  setWidthInMinutes(value: number): void;
+
+  clearMemberTourShiftSegmentConfigsList(): void;
+  getMemberTourShiftSegmentConfigsList(): Array<TourShiftSegmentConfig>;
+  setMemberTourShiftSegmentConfigsList(value: Array<TourShiftSegmentConfig>): void;
+  addMemberTourShiftSegmentConfigs(value?: TourShiftSegmentConfig, index?: number): TourShiftSegmentConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TourShiftInstanceConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: TourShiftInstanceConfig): TourShiftInstanceConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TourShiftInstanceConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TourShiftInstanceConfig;
+  static deserializeBinaryFromReader(message: TourShiftInstanceConfig, reader: jspb.BinaryReader): TourShiftInstanceConfig;
+}
+
+export namespace TourShiftInstanceConfig {
+  export type AsObject = {
+    tourShiftInstanceConfigSid: number,
+    tourWeekPatternSid: number,
+    startMinuteInWeek: number,
+    widthInMinutes: number,
+    memberTourShiftSegmentConfigsList: Array<TourShiftSegmentConfig.AsObject>,
+  }
+}
+
+export class TourWeekPattern extends jspb.Message {
+  getTourWeekPatternSid(): number;
+  setTourWeekPatternSid(value: number): void;
+
+  getTourPatternSid(): number;
+  setTourPatternSid(value: number): void;
+
+  getWeekPatternNumber(): number;
+  setWeekPatternNumber(value: number): void;
+
+  clearMemberTourShiftInstanceConfigsList(): void;
+  getMemberTourShiftInstanceConfigsList(): Array<TourShiftInstanceConfig>;
+  setMemberTourShiftInstanceConfigsList(value: Array<TourShiftInstanceConfig>): void;
+  addMemberTourShiftInstanceConfigs(value?: TourShiftInstanceConfig, index?: number): TourShiftInstanceConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TourWeekPattern.AsObject;
+  static toObject(includeInstance: boolean, msg: TourWeekPattern): TourWeekPattern.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TourWeekPattern, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TourWeekPattern;
+  static deserializeBinaryFromReader(message: TourWeekPattern, reader: jspb.BinaryReader): TourWeekPattern;
+}
+
+export namespace TourWeekPattern {
+  export type AsObject = {
+    tourWeekPatternSid: number,
+    tourPatternSid: number,
+    weekPatternNumber: number,
+    memberTourShiftInstanceConfigsList: Array<TourShiftInstanceConfig.AsObject>,
+  }
+}
+
+export class TourAgentCollection extends jspb.Message {
+  getTourAgentCollectionSid(): number;
+  setTourAgentCollectionSid(value: number): void;
+
+  getTourPatternSid(): number;
+  setTourPatternSid(value: number): void;
+
+  getMinAgentsToSchedule(): number;
+  setMinAgentsToSchedule(value: number): void;
+
+  getMaxAgentsToSchedule(): number;
+  setMaxAgentsToSchedule(value: number): void;
+
+  getFirstWeekPatternNumber(): number;
+  setFirstWeekPatternNumber(value: number): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  clearWfmAgentSidsList(): void;
+  getWfmAgentSidsList(): Array<number>;
+  setWfmAgentSidsList(value: Array<number>): void;
+  addWfmAgentSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TourAgentCollection.AsObject;
+  static toObject(includeInstance: boolean, msg: TourAgentCollection): TourAgentCollection.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TourAgentCollection, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TourAgentCollection;
+  static deserializeBinaryFromReader(message: TourAgentCollection, reader: jspb.BinaryReader): TourAgentCollection;
+}
+
+export namespace TourAgentCollection {
+  export type AsObject = {
+    tourAgentCollectionSid: number,
+    tourPatternSid: number,
+    minAgentsToSchedule: number,
+    maxAgentsToSchedule: number,
+    firstWeekPatternNumber: number,
+    name: string,
+    wfmAgentSidsList: Array<number>,
+  }
+}
+
+export class TourPattern extends jspb.Message {
+  getTourPatternSid(): number;
+  setTourPatternSid(value: number): void;
+
+  getShiftTemplateSid(): number;
+  setShiftTemplateSid(value: number): void;
+
+  clearMemberTourWeekPatternsList(): void;
+  getMemberTourWeekPatternsList(): Array<TourWeekPattern>;
+  setMemberTourWeekPatternsList(value: Array<TourWeekPattern>): void;
+  addMemberTourWeekPatterns(value?: TourWeekPattern, index?: number): TourWeekPattern;
+
+  clearMemberTourAgentCollectionList(): void;
+  getMemberTourAgentCollectionList(): Array<TourAgentCollection>;
+  setMemberTourAgentCollectionList(value: Array<TourAgentCollection>): void;
+  addMemberTourAgentCollection(value?: TourAgentCollection, index?: number): TourAgentCollection;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TourPattern.AsObject;
+  static toObject(includeInstance: boolean, msg: TourPattern): TourPattern.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TourPattern, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TourPattern;
+  static deserializeBinaryFromReader(message: TourPattern, reader: jspb.BinaryReader): TourPattern;
+}
+
+export namespace TourPattern {
+  export type AsObject = {
+    tourPatternSid: number,
+    shiftTemplateSid: number,
+    memberTourWeekPatternsList: Array<TourWeekPattern.AsObject>,
+    memberTourAgentCollectionList: Array<TourAgentCollection.AsObject>,
+  }
+}
+
 export interface RegressionForecasterModelTypesMap {
   RANDOM_FOREST: 0;
   ADABOOST: 1;

@@ -8632,3 +8632,535 @@ export namespace ListRequiredCallsIntervalsRes {
   }
 }
 
+export class CreateTourPatternReq extends jspb.Message {
+  getShiftTemplateSid(): number;
+  setShiftTemplateSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTourPatternReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTourPatternReq): CreateTourPatternReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTourPatternReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTourPatternReq;
+  static deserializeBinaryFromReader(message: CreateTourPatternReq, reader: jspb.BinaryReader): CreateTourPatternReq;
+}
+
+export namespace CreateTourPatternReq {
+  export type AsObject = {
+    shiftTemplateSid: number,
+  }
+}
+
+export class CreateTourPatternRes extends jspb.Message {
+  getTourPatternSid(): number;
+  setTourPatternSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTourPatternRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTourPatternRes): CreateTourPatternRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTourPatternRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTourPatternRes;
+  static deserializeBinaryFromReader(message: CreateTourPatternRes, reader: jspb.BinaryReader): CreateTourPatternRes;
+}
+
+export namespace CreateTourPatternRes {
+  export type AsObject = {
+    tourPatternSid: number,
+  }
+}
+
+export class GetTourPatternReq extends jspb.Message {
+  getShiftTemplateSid(): number;
+  setShiftTemplateSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTourPatternReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTourPatternReq): GetTourPatternReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetTourPatternReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTourPatternReq;
+  static deserializeBinaryFromReader(message: GetTourPatternReq, reader: jspb.BinaryReader): GetTourPatternReq;
+}
+
+export namespace GetTourPatternReq {
+  export type AsObject = {
+    shiftTemplateSid: number,
+  }
+}
+
+export class GetTourPatternRes extends jspb.Message {
+  hasTourPattern(): boolean;
+  clearTourPattern(): void;
+  getTourPattern(): api_commons_wfm_pb.TourPattern | undefined;
+  setTourPattern(value?: api_commons_wfm_pb.TourPattern): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTourPatternRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTourPatternRes): GetTourPatternRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetTourPatternRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTourPatternRes;
+  static deserializeBinaryFromReader(message: GetTourPatternRes, reader: jspb.BinaryReader): GetTourPatternRes;
+}
+
+export namespace GetTourPatternRes {
+  export type AsObject = {
+    tourPattern?: api_commons_wfm_pb.TourPattern.AsObject,
+  }
+}
+
+export class CreateTourWeekPatternReq extends jspb.Message {
+  getTourPatternSid(): number;
+  setTourPatternSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTourWeekPatternReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTourWeekPatternReq): CreateTourWeekPatternReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTourWeekPatternReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTourWeekPatternReq;
+  static deserializeBinaryFromReader(message: CreateTourWeekPatternReq, reader: jspb.BinaryReader): CreateTourWeekPatternReq;
+}
+
+export namespace CreateTourWeekPatternReq {
+  export type AsObject = {
+    tourPatternSid: number,
+  }
+}
+
+export class CreateTourWeekPatternRes extends jspb.Message {
+  getTourWeekPatternSid(): number;
+  setTourWeekPatternSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTourWeekPatternRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTourWeekPatternRes): CreateTourWeekPatternRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTourWeekPatternRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTourWeekPatternRes;
+  static deserializeBinaryFromReader(message: CreateTourWeekPatternRes, reader: jspb.BinaryReader): CreateTourWeekPatternRes;
+}
+
+export namespace CreateTourWeekPatternRes {
+  export type AsObject = {
+    tourWeekPatternSid: number,
+  }
+}
+
+export class ListTourWeekPatternsReq extends jspb.Message {
+  getTourPatternSid(): number;
+  setTourPatternSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTourWeekPatternsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTourWeekPatternsReq): ListTourWeekPatternsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTourWeekPatternsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTourWeekPatternsReq;
+  static deserializeBinaryFromReader(message: ListTourWeekPatternsReq, reader: jspb.BinaryReader): ListTourWeekPatternsReq;
+}
+
+export namespace ListTourWeekPatternsReq {
+  export type AsObject = {
+    tourPatternSid: number,
+  }
+}
+
+export class ListTourWeekPatternsRes extends jspb.Message {
+  clearTourWeekPatternsList(): void;
+  getTourWeekPatternsList(): Array<api_commons_wfm_pb.TourWeekPattern>;
+  setTourWeekPatternsList(value: Array<api_commons_wfm_pb.TourWeekPattern>): void;
+  addTourWeekPatterns(value?: api_commons_wfm_pb.TourWeekPattern, index?: number): api_commons_wfm_pb.TourWeekPattern;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTourWeekPatternsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTourWeekPatternsRes): ListTourWeekPatternsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTourWeekPatternsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTourWeekPatternsRes;
+  static deserializeBinaryFromReader(message: ListTourWeekPatternsRes, reader: jspb.BinaryReader): ListTourWeekPatternsRes;
+}
+
+export namespace ListTourWeekPatternsRes {
+  export type AsObject = {
+    tourWeekPatternsList: Array<api_commons_wfm_pb.TourWeekPattern.AsObject>,
+  }
+}
+
+export class CreateTourShiftInstanceConfigReq extends jspb.Message {
+  hasTourShiftInstanceConfig(): boolean;
+  clearTourShiftInstanceConfig(): void;
+  getTourShiftInstanceConfig(): api_commons_wfm_pb.TourShiftInstanceConfig | undefined;
+  setTourShiftInstanceConfig(value?: api_commons_wfm_pb.TourShiftInstanceConfig): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTourShiftInstanceConfigReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTourShiftInstanceConfigReq): CreateTourShiftInstanceConfigReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTourShiftInstanceConfigReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTourShiftInstanceConfigReq;
+  static deserializeBinaryFromReader(message: CreateTourShiftInstanceConfigReq, reader: jspb.BinaryReader): CreateTourShiftInstanceConfigReq;
+}
+
+export namespace CreateTourShiftInstanceConfigReq {
+  export type AsObject = {
+    tourShiftInstanceConfig?: api_commons_wfm_pb.TourShiftInstanceConfig.AsObject,
+  }
+}
+
+export class CreateTourShiftInstanceConfigRes extends jspb.Message {
+  getTourShiftInstanceConfigSid(): number;
+  setTourShiftInstanceConfigSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTourShiftInstanceConfigRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTourShiftInstanceConfigRes): CreateTourShiftInstanceConfigRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTourShiftInstanceConfigRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTourShiftInstanceConfigRes;
+  static deserializeBinaryFromReader(message: CreateTourShiftInstanceConfigRes, reader: jspb.BinaryReader): CreateTourShiftInstanceConfigRes;
+}
+
+export namespace CreateTourShiftInstanceConfigRes {
+  export type AsObject = {
+    tourShiftInstanceConfigSid: number,
+  }
+}
+
+export class ListTourShiftInstanceConfigsReq extends jspb.Message {
+  clearTourWeekPatternSidsList(): void;
+  getTourWeekPatternSidsList(): Array<number>;
+  setTourWeekPatternSidsList(value: Array<number>): void;
+  addTourWeekPatternSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTourShiftInstanceConfigsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTourShiftInstanceConfigsReq): ListTourShiftInstanceConfigsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTourShiftInstanceConfigsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTourShiftInstanceConfigsReq;
+  static deserializeBinaryFromReader(message: ListTourShiftInstanceConfigsReq, reader: jspb.BinaryReader): ListTourShiftInstanceConfigsReq;
+}
+
+export namespace ListTourShiftInstanceConfigsReq {
+  export type AsObject = {
+    tourWeekPatternSidsList: Array<number>,
+  }
+}
+
+export class ListTourShiftInstanceConfigsRes extends jspb.Message {
+  clearTourShiftInstanceConfigsList(): void;
+  getTourShiftInstanceConfigsList(): Array<api_commons_wfm_pb.TourShiftInstanceConfig>;
+  setTourShiftInstanceConfigsList(value: Array<api_commons_wfm_pb.TourShiftInstanceConfig>): void;
+  addTourShiftInstanceConfigs(value?: api_commons_wfm_pb.TourShiftInstanceConfig, index?: number): api_commons_wfm_pb.TourShiftInstanceConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTourShiftInstanceConfigsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTourShiftInstanceConfigsRes): ListTourShiftInstanceConfigsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTourShiftInstanceConfigsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTourShiftInstanceConfigsRes;
+  static deserializeBinaryFromReader(message: ListTourShiftInstanceConfigsRes, reader: jspb.BinaryReader): ListTourShiftInstanceConfigsRes;
+}
+
+export namespace ListTourShiftInstanceConfigsRes {
+  export type AsObject = {
+    tourShiftInstanceConfigsList: Array<api_commons_wfm_pb.TourShiftInstanceConfig.AsObject>,
+  }
+}
+
+export class CreateTourShiftSegmentConfigReq extends jspb.Message {
+  hasTourShiftSegmentConfig(): boolean;
+  clearTourShiftSegmentConfig(): void;
+  getTourShiftSegmentConfig(): api_commons_wfm_pb.TourShiftSegmentConfig | undefined;
+  setTourShiftSegmentConfig(value?: api_commons_wfm_pb.TourShiftSegmentConfig): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTourShiftSegmentConfigReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTourShiftSegmentConfigReq): CreateTourShiftSegmentConfigReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTourShiftSegmentConfigReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTourShiftSegmentConfigReq;
+  static deserializeBinaryFromReader(message: CreateTourShiftSegmentConfigReq, reader: jspb.BinaryReader): CreateTourShiftSegmentConfigReq;
+}
+
+export namespace CreateTourShiftSegmentConfigReq {
+  export type AsObject = {
+    tourShiftSegmentConfig?: api_commons_wfm_pb.TourShiftSegmentConfig.AsObject,
+  }
+}
+
+export class CreateTourShiftSegmentConfigRes extends jspb.Message {
+  getTourShiftSegmentConfigSid(): number;
+  setTourShiftSegmentConfigSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTourShiftSegmentConfigRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTourShiftSegmentConfigRes): CreateTourShiftSegmentConfigRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTourShiftSegmentConfigRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTourShiftSegmentConfigRes;
+  static deserializeBinaryFromReader(message: CreateTourShiftSegmentConfigRes, reader: jspb.BinaryReader): CreateTourShiftSegmentConfigRes;
+}
+
+export namespace CreateTourShiftSegmentConfigRes {
+  export type AsObject = {
+    tourShiftSegmentConfigSid: number,
+  }
+}
+
+export class ListTourShiftSegmentConfigsReq extends jspb.Message {
+  clearTourShiftInstanceConfigSidsList(): void;
+  getTourShiftInstanceConfigSidsList(): Array<number>;
+  setTourShiftInstanceConfigSidsList(value: Array<number>): void;
+  addTourShiftInstanceConfigSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTourShiftSegmentConfigsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTourShiftSegmentConfigsReq): ListTourShiftSegmentConfigsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTourShiftSegmentConfigsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTourShiftSegmentConfigsReq;
+  static deserializeBinaryFromReader(message: ListTourShiftSegmentConfigsReq, reader: jspb.BinaryReader): ListTourShiftSegmentConfigsReq;
+}
+
+export namespace ListTourShiftSegmentConfigsReq {
+  export type AsObject = {
+    tourShiftInstanceConfigSidsList: Array<number>,
+  }
+}
+
+export class ListTourShiftSegmentConfigsRes extends jspb.Message {
+  clearTourShiftSegmentConfigsList(): void;
+  getTourShiftSegmentConfigsList(): Array<api_commons_wfm_pb.TourShiftSegmentConfig>;
+  setTourShiftSegmentConfigsList(value: Array<api_commons_wfm_pb.TourShiftSegmentConfig>): void;
+  addTourShiftSegmentConfigs(value?: api_commons_wfm_pb.TourShiftSegmentConfig, index?: number): api_commons_wfm_pb.TourShiftSegmentConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTourShiftSegmentConfigsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTourShiftSegmentConfigsRes): ListTourShiftSegmentConfigsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTourShiftSegmentConfigsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTourShiftSegmentConfigsRes;
+  static deserializeBinaryFromReader(message: ListTourShiftSegmentConfigsRes, reader: jspb.BinaryReader): ListTourShiftSegmentConfigsRes;
+}
+
+export namespace ListTourShiftSegmentConfigsRes {
+  export type AsObject = {
+    tourShiftSegmentConfigsList: Array<api_commons_wfm_pb.TourShiftSegmentConfig.AsObject>,
+  }
+}
+
+export class CreateTourAgentCollectionReq extends jspb.Message {
+  hasTourAgentCollection(): boolean;
+  clearTourAgentCollection(): void;
+  getTourAgentCollection(): api_commons_wfm_pb.TourAgentCollection | undefined;
+  setTourAgentCollection(value?: api_commons_wfm_pb.TourAgentCollection): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTourAgentCollectionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTourAgentCollectionReq): CreateTourAgentCollectionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTourAgentCollectionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTourAgentCollectionReq;
+  static deserializeBinaryFromReader(message: CreateTourAgentCollectionReq, reader: jspb.BinaryReader): CreateTourAgentCollectionReq;
+}
+
+export namespace CreateTourAgentCollectionReq {
+  export type AsObject = {
+    tourAgentCollection?: api_commons_wfm_pb.TourAgentCollection.AsObject,
+  }
+}
+
+export class CreateTourAgentCollectionRes extends jspb.Message {
+  getTourAgentCollectionSid(): number;
+  setTourAgentCollectionSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTourAgentCollectionRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTourAgentCollectionRes): CreateTourAgentCollectionRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTourAgentCollectionRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTourAgentCollectionRes;
+  static deserializeBinaryFromReader(message: CreateTourAgentCollectionRes, reader: jspb.BinaryReader): CreateTourAgentCollectionRes;
+}
+
+export namespace CreateTourAgentCollectionRes {
+  export type AsObject = {
+    tourAgentCollectionSid: number,
+  }
+}
+
+export class ListTourAgentCollectionsReq extends jspb.Message {
+  getTourPatternSid(): number;
+  setTourPatternSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTourAgentCollectionsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTourAgentCollectionsReq): ListTourAgentCollectionsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTourAgentCollectionsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTourAgentCollectionsReq;
+  static deserializeBinaryFromReader(message: ListTourAgentCollectionsReq, reader: jspb.BinaryReader): ListTourAgentCollectionsReq;
+}
+
+export namespace ListTourAgentCollectionsReq {
+  export type AsObject = {
+    tourPatternSid: number,
+  }
+}
+
+export class ListTourAgentCollectionsRes extends jspb.Message {
+  clearTourAgentCollectionsList(): void;
+  getTourAgentCollectionsList(): Array<api_commons_wfm_pb.TourAgentCollection>;
+  setTourAgentCollectionsList(value: Array<api_commons_wfm_pb.TourAgentCollection>): void;
+  addTourAgentCollections(value?: api_commons_wfm_pb.TourAgentCollection, index?: number): api_commons_wfm_pb.TourAgentCollection;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTourAgentCollectionsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTourAgentCollectionsRes): ListTourAgentCollectionsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTourAgentCollectionsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTourAgentCollectionsRes;
+  static deserializeBinaryFromReader(message: ListTourAgentCollectionsRes, reader: jspb.BinaryReader): ListTourAgentCollectionsRes;
+}
+
+export namespace ListTourAgentCollectionsRes {
+  export type AsObject = {
+    tourAgentCollectionsList: Array<api_commons_wfm_pb.TourAgentCollection.AsObject>,
+  }
+}
+
+export class CreateTourAgentCollectionWFMAgentsReq extends jspb.Message {
+  clearWfmAgentSidsList(): void;
+  getWfmAgentSidsList(): Array<number>;
+  setWfmAgentSidsList(value: Array<number>): void;
+  addWfmAgentSids(value: number, index?: number): number;
+
+  getTourAgentCollectionSid(): number;
+  setTourAgentCollectionSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTourAgentCollectionWFMAgentsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTourAgentCollectionWFMAgentsReq): CreateTourAgentCollectionWFMAgentsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTourAgentCollectionWFMAgentsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTourAgentCollectionWFMAgentsReq;
+  static deserializeBinaryFromReader(message: CreateTourAgentCollectionWFMAgentsReq, reader: jspb.BinaryReader): CreateTourAgentCollectionWFMAgentsReq;
+}
+
+export namespace CreateTourAgentCollectionWFMAgentsReq {
+  export type AsObject = {
+    wfmAgentSidsList: Array<number>,
+    tourAgentCollectionSid: number,
+  }
+}
+
+export class CreateTourAgentCollectionWFMAgentsRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTourAgentCollectionWFMAgentsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTourAgentCollectionWFMAgentsRes): CreateTourAgentCollectionWFMAgentsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTourAgentCollectionWFMAgentsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTourAgentCollectionWFMAgentsRes;
+  static deserializeBinaryFromReader(message: CreateTourAgentCollectionWFMAgentsRes, reader: jspb.BinaryReader): CreateTourAgentCollectionWFMAgentsRes;
+}
+
+export namespace CreateTourAgentCollectionWFMAgentsRes {
+  export type AsObject = {
+  }
+}
+
+export class ListTourAgentCollectionWFMAgentsReq extends jspb.Message {
+  clearTourAgentCollectionSidsList(): void;
+  getTourAgentCollectionSidsList(): Array<number>;
+  setTourAgentCollectionSidsList(value: Array<number>): void;
+  addTourAgentCollectionSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTourAgentCollectionWFMAgentsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTourAgentCollectionWFMAgentsReq): ListTourAgentCollectionWFMAgentsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTourAgentCollectionWFMAgentsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTourAgentCollectionWFMAgentsReq;
+  static deserializeBinaryFromReader(message: ListTourAgentCollectionWFMAgentsReq, reader: jspb.BinaryReader): ListTourAgentCollectionWFMAgentsReq;
+}
+
+export namespace ListTourAgentCollectionWFMAgentsReq {
+  export type AsObject = {
+    tourAgentCollectionSidsList: Array<number>,
+  }
+}
+
+export class ListTourAgentCollectionWFMAgentsRes extends jspb.Message {
+  clearWfmAgentPairingsList(): void;
+  getWfmAgentPairingsList(): Array<ListTourAgentCollectionWFMAgentsRes.SidMapping>;
+  setWfmAgentPairingsList(value: Array<ListTourAgentCollectionWFMAgentsRes.SidMapping>): void;
+  addWfmAgentPairings(value?: ListTourAgentCollectionWFMAgentsRes.SidMapping, index?: number): ListTourAgentCollectionWFMAgentsRes.SidMapping;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTourAgentCollectionWFMAgentsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTourAgentCollectionWFMAgentsRes): ListTourAgentCollectionWFMAgentsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTourAgentCollectionWFMAgentsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTourAgentCollectionWFMAgentsRes;
+  static deserializeBinaryFromReader(message: ListTourAgentCollectionWFMAgentsRes, reader: jspb.BinaryReader): ListTourAgentCollectionWFMAgentsRes;
+}
+
+export namespace ListTourAgentCollectionWFMAgentsRes {
+  export type AsObject = {
+    wfmAgentPairingsList: Array<ListTourAgentCollectionWFMAgentsRes.SidMapping.AsObject>,
+  }
+
+  export class SidMapping extends jspb.Message {
+    getAgentCollectionSid(): number;
+    setAgentCollectionSid(value: number): void;
+
+    clearWfmAgentSidsList(): void;
+    getWfmAgentSidsList(): Array<number>;
+    setWfmAgentSidsList(value: Array<number>): void;
+    addWfmAgentSids(value: number, index?: number): number;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SidMapping.AsObject;
+    static toObject(includeInstance: boolean, msg: SidMapping): SidMapping.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SidMapping, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SidMapping;
+    static deserializeBinaryFromReader(message: SidMapping, reader: jspb.BinaryReader): SidMapping;
+  }
+
+  export namespace SidMapping {
+    export type AsObject = {
+      agentCollectionSid: number,
+      wfmAgentSidsList: Array<number>,
+    }
+  }
+}
+
