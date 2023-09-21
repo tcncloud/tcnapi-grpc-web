@@ -1265,6 +1265,54 @@ export namespace ListSkillProfileGroupsRes {
   }
 }
 
+export class UpdateSkillProfileGroupAssociationsReq extends jspb.Message {
+  getSkillProfileGroupSid(): number;
+  setSkillProfileGroupSid(value: number): void;
+
+  clearSkillProfileSidsToAssociateList(): void;
+  getSkillProfileSidsToAssociateList(): Array<number>;
+  setSkillProfileSidsToAssociateList(value: Array<number>): void;
+  addSkillProfileSidsToAssociate(value: number, index?: number): number;
+
+  clearSkillProfileSidsToDisassociateList(): void;
+  getSkillProfileSidsToDisassociateList(): Array<number>;
+  setSkillProfileSidsToDisassociateList(value: Array<number>): void;
+  addSkillProfileSidsToDisassociate(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSkillProfileGroupAssociationsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSkillProfileGroupAssociationsReq): UpdateSkillProfileGroupAssociationsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSkillProfileGroupAssociationsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSkillProfileGroupAssociationsReq;
+  static deserializeBinaryFromReader(message: UpdateSkillProfileGroupAssociationsReq, reader: jspb.BinaryReader): UpdateSkillProfileGroupAssociationsReq;
+}
+
+export namespace UpdateSkillProfileGroupAssociationsReq {
+  export type AsObject = {
+    skillProfileGroupSid: number,
+    skillProfileSidsToAssociateList: Array<number>,
+    skillProfileSidsToDisassociateList: Array<number>,
+  }
+}
+
+export class UpdateSkillProfileGroupAssociationsRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSkillProfileGroupAssociationsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSkillProfileGroupAssociationsRes): UpdateSkillProfileGroupAssociationsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSkillProfileGroupAssociationsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSkillProfileGroupAssociationsRes;
+  static deserializeBinaryFromReader(message: UpdateSkillProfileGroupAssociationsRes, reader: jspb.BinaryReader): UpdateSkillProfileGroupAssociationsRes;
+}
+
+export namespace UpdateSkillProfileGroupAssociationsRes {
+  export type AsObject = {
+  }
+}
+
 export class DeleteHistoricalDataDeltasReq extends jspb.Message {
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;

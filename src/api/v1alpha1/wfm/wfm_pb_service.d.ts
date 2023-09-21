@@ -184,6 +184,15 @@ type WFMListSkillProfileGroups = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsRes;
 };
 
+type WFMUpdateSkillProfileGroupAssociations = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsRes;
+};
+
 type WFMDeleteHistoricalDataDeltas = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1151,6 +1160,7 @@ export class WFM {
   static readonly CreateSkillProfileGroup: WFMCreateSkillProfileGroup;
   static readonly UpdateSkillProfileGroup: WFMUpdateSkillProfileGroup;
   static readonly ListSkillProfileGroups: WFMListSkillProfileGroups;
+  static readonly UpdateSkillProfileGroupAssociations: WFMUpdateSkillProfileGroupAssociations;
   static readonly DeleteHistoricalDataDeltas: WFMDeleteHistoricalDataDeltas;
   static readonly ListTopSkillProfiles: WFMListTopSkillProfiles;
   static readonly GetSkillProfilesCount: WFMGetSkillProfilesCount;
@@ -1469,6 +1479,15 @@ export class WFMClient {
   listSkillProfileGroups(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsRes|null) => void
+  ): UnaryResponse;
+  updateSkillProfileGroupAssociations(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsRes|null) => void
+  ): UnaryResponse;
+  updateSkillProfileGroupAssociations(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsRes|null) => void
   ): UnaryResponse;
   deleteHistoricalDataDeltas(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteHistoricalDataDeltasReq,
