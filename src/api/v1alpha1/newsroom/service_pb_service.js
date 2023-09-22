@@ -92,6 +92,15 @@ NewsroomAPI.GetNewsForUser = {
   responseType: api_v1alpha1_newsroom_entities_pb.GetNewsForUserResponse
 };
 
+NewsroomAPI.StoreNewsroomImage = {
+  methodName: "StoreNewsroomImage",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.StoreNewsroomImageRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.StoreNewsroomImageResponse
+};
+
 exports.NewsroomAPI = NewsroomAPI;
 
 function NewsroomAPIClient(serviceHost, options) {
@@ -352,6 +361,37 @@ NewsroomAPIClient.prototype.getNewsForUser = function getNewsForUser(requestMess
     callback = arguments[1];
   }
   var client = grpc.unary(NewsroomAPI.GetNewsForUser, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.storeNewsroomImage = function storeNewsroomImage(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.StoreNewsroomImage, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

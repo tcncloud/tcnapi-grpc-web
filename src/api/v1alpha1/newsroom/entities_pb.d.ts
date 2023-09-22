@@ -536,3 +536,75 @@ export namespace GetNewsForUserResponse {
   }
 }
 
+export class StoreNewsroomImageRequest extends jspb.Message {
+  hasImage(): boolean;
+  clearImage(): void;
+  getImage(): NewsroomImage | undefined;
+  setImage(value?: NewsroomImage): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StoreNewsroomImageRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: StoreNewsroomImageRequest): StoreNewsroomImageRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: StoreNewsroomImageRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StoreNewsroomImageRequest;
+  static deserializeBinaryFromReader(message: StoreNewsroomImageRequest, reader: jspb.BinaryReader): StoreNewsroomImageRequest;
+}
+
+export namespace StoreNewsroomImageRequest {
+  export type AsObject = {
+    image?: NewsroomImage.AsObject,
+  }
+}
+
+export class NewsroomImage extends jspb.Message {
+  getUuid(): string;
+  setUuid(value: string): void;
+
+  getContent(): string;
+  setContent(value: string): void;
+
+  getDownloadUrl(): string;
+  setDownloadUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NewsroomImage.AsObject;
+  static toObject(includeInstance: boolean, msg: NewsroomImage): NewsroomImage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: NewsroomImage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NewsroomImage;
+  static deserializeBinaryFromReader(message: NewsroomImage, reader: jspb.BinaryReader): NewsroomImage;
+}
+
+export namespace NewsroomImage {
+  export type AsObject = {
+    uuid: string,
+    content: string,
+    downloadUrl: string,
+  }
+}
+
+export class StoreNewsroomImageResponse extends jspb.Message {
+  hasImage(): boolean;
+  clearImage(): void;
+  getImage(): NewsroomImage | undefined;
+  setImage(value?: NewsroomImage): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StoreNewsroomImageResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: StoreNewsroomImageResponse): StoreNewsroomImageResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: StoreNewsroomImageResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StoreNewsroomImageResponse;
+  static deserializeBinaryFromReader(message: StoreNewsroomImageResponse, reader: jspb.BinaryReader): StoreNewsroomImageResponse;
+}
+
+export namespace StoreNewsroomImageResponse {
+  export type AsObject = {
+    image?: NewsroomImage.AsObject,
+  }
+}
+
