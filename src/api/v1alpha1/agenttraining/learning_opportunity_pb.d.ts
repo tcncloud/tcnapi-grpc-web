@@ -87,6 +87,44 @@ export namespace ListLearningOpportunitiesResponse {
   }
 }
 
+export class ListAgentLearningOpportunitiesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentLearningOpportunitiesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentLearningOpportunitiesRequest): ListAgentLearningOpportunitiesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentLearningOpportunitiesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentLearningOpportunitiesRequest;
+  static deserializeBinaryFromReader(message: ListAgentLearningOpportunitiesRequest, reader: jspb.BinaryReader): ListAgentLearningOpportunitiesRequest;
+}
+
+export namespace ListAgentLearningOpportunitiesRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListAgentLearningOpportunitiesResponse extends jspb.Message {
+  clearLearningOpportunitiesList(): void;
+  getLearningOpportunitiesList(): Array<api_commons_agent_training_pb.LearningOpportunity>;
+  setLearningOpportunitiesList(value: Array<api_commons_agent_training_pb.LearningOpportunity>): void;
+  addLearningOpportunities(value?: api_commons_agent_training_pb.LearningOpportunity, index?: number): api_commons_agent_training_pb.LearningOpportunity;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentLearningOpportunitiesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentLearningOpportunitiesResponse): ListAgentLearningOpportunitiesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentLearningOpportunitiesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentLearningOpportunitiesResponse;
+  static deserializeBinaryFromReader(message: ListAgentLearningOpportunitiesResponse, reader: jspb.BinaryReader): ListAgentLearningOpportunitiesResponse;
+}
+
+export namespace ListAgentLearningOpportunitiesResponse {
+  export type AsObject = {
+    learningOpportunitiesList: Array<api_commons_agent_training_pb.LearningOpportunity.AsObject>,
+  }
+}
+
 export class UpdateLearningOpportunityRequest extends jspb.Message {
   hasLearningOpportunity(): boolean;
   clearLearningOpportunity(): void;

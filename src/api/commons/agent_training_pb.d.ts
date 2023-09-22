@@ -29,6 +29,12 @@ export class LearningOpportunity extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
+  getTitle(): string;
+  setTitle(value: string): void;
+
+  getStatus(): LearningOpportunityStatusMap[keyof LearningOpportunityStatusMap];
+  setStatus(value: LearningOpportunityStatusMap[keyof LearningOpportunityStatusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LearningOpportunity.AsObject;
   static toObject(includeInstance: boolean, msg: LearningOpportunity): LearningOpportunity.AsObject;
@@ -49,6 +55,15 @@ export namespace LearningOpportunity {
     startOffset: number,
     endOffset: number,
     description: string,
+    title: string,
+    status: LearningOpportunityStatusMap[keyof LearningOpportunityStatusMap],
   }
 }
+
+export interface LearningOpportunityStatusMap {
+  STATUS_OPEN: 0;
+  STATUS_COMPLETED: 1;
+}
+
+export const LearningOpportunityStatus: LearningOpportunityStatusMap;
 
