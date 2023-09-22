@@ -8,6 +8,50 @@ import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
+export class PublishDashboardRequest extends jspb.Message {
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
+  getDestinationResourceId(): string;
+  setDestinationResourceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PublishDashboardRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PublishDashboardRequest): PublishDashboardRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PublishDashboardRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PublishDashboardRequest;
+  static deserializeBinaryFromReader(message: PublishDashboardRequest, reader: jspb.BinaryReader): PublishDashboardRequest;
+}
+
+export namespace PublishDashboardRequest {
+  export type AsObject = {
+    resourceId: string,
+    destinationResourceId: string,
+  }
+}
+
+export class PublishDashboardResponse extends jspb.Message {
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PublishDashboardResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PublishDashboardResponse): PublishDashboardResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PublishDashboardResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PublishDashboardResponse;
+  static deserializeBinaryFromReader(message: PublishDashboardResponse, reader: jspb.BinaryReader): PublishDashboardResponse;
+}
+
+export namespace PublishDashboardResponse {
+  export type AsObject = {
+    resourceId: string,
+  }
+}
+
 export class ListDashboardsRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDashboardsRequest.AsObject;
@@ -59,6 +103,9 @@ export class DashboardSummary extends jspb.Message {
   getPanelCount(): number;
   setPanelCount(value: number): void;
 
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DashboardSummary.AsObject;
   static toObject(includeInstance: boolean, msg: DashboardSummary): DashboardSummary.AsObject;
@@ -75,6 +122,7 @@ export namespace DashboardSummary {
     title: string,
     description: string,
     panelCount: number,
+    resourceId: string,
   }
 }
 
@@ -180,6 +228,9 @@ export class DeleteDashboardRequest extends jspb.Message {
   getDashboardId(): string;
   setDashboardId(value: string): void;
 
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteDashboardRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DeleteDashboardRequest): DeleteDashboardRequest.AsObject;
@@ -193,12 +244,16 @@ export class DeleteDashboardRequest extends jspb.Message {
 export namespace DeleteDashboardRequest {
   export type AsObject = {
     dashboardId: string,
+    resourceId: string,
   }
 }
 
 export class GetDashboardRequest extends jspb.Message {
   getDashboardId(): string;
   setDashboardId(value: string): void;
+
+  getResourceId(): string;
+  setResourceId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDashboardRequest.AsObject;
@@ -213,6 +268,7 @@ export class GetDashboardRequest extends jspb.Message {
 export namespace GetDashboardRequest {
   export type AsObject = {
     dashboardId: string,
+    resourceId: string,
   }
 }
 
@@ -262,6 +318,9 @@ export class CreateDashboardResponse extends jspb.Message {
   getDashboardId(): string;
   setDashboardId(value: string): void;
 
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDashboardResponse.AsObject;
   static toObject(includeInstance: boolean, msg: CreateDashboardResponse): CreateDashboardResponse.AsObject;
@@ -275,6 +334,7 @@ export class CreateDashboardResponse extends jspb.Message {
 export namespace CreateDashboardResponse {
   export type AsObject = {
     dashboardId: string,
+    resourceId: string,
   }
 }
 
@@ -398,6 +458,9 @@ export class Dashboard extends jspb.Message {
   getType(): DashboardType | undefined;
   setType(value?: DashboardType): void;
 
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Dashboard.AsObject;
   static toObject(includeInstance: boolean, msg: Dashboard): Dashboard.AsObject;
@@ -416,6 +479,7 @@ export namespace Dashboard {
     layout?: DashboardLayout.AsObject,
     view?: DashboardView.AsObject,
     type?: DashboardType.AsObject,
+    resourceId: string,
   }
 }
 
@@ -534,6 +598,9 @@ export class UpdateDashboardRequest extends jspb.Message {
   getType(): DashboardType | undefined;
   setType(value?: DashboardType): void;
 
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateDashboardRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateDashboardRequest): UpdateDashboardRequest.AsObject;
@@ -552,6 +619,7 @@ export namespace UpdateDashboardRequest {
     layout?: DashboardLayout.AsObject,
     view?: DashboardView.AsObject,
     type?: DashboardType.AsObject,
+    resourceId: string,
   }
 }
 
@@ -564,6 +632,9 @@ export class UpdateDashboardTitleAndDescriptionRequest extends jspb.Message {
 
   getDescription(): string;
   setDescription(value: string): void;
+
+  getResourceId(): string;
+  setResourceId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateDashboardTitleAndDescriptionRequest.AsObject;
@@ -580,6 +651,7 @@ export namespace UpdateDashboardTitleAndDescriptionRequest {
     dashboardId: string,
     title: string,
     description: string,
+    resourceId: string,
   }
 }
 
@@ -591,6 +663,9 @@ export class UpdateDashboardLayoutRequest extends jspb.Message {
   clearLayout(): void;
   getLayout(): DashboardLayout | undefined;
   setLayout(value?: DashboardLayout): void;
+
+  getResourceId(): string;
+  setResourceId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateDashboardLayoutRequest.AsObject;
@@ -606,6 +681,7 @@ export namespace UpdateDashboardLayoutRequest {
   export type AsObject = {
     dashboardId: string,
     layout?: DashboardLayout.AsObject,
+    resourceId: string,
   }
 }
 
@@ -617,6 +693,9 @@ export class UpdateDashboardViewRequest extends jspb.Message {
   clearView(): void;
   getView(): DashboardView | undefined;
   setView(value?: DashboardView): void;
+
+  getResourceId(): string;
+  setResourceId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateDashboardViewRequest.AsObject;
@@ -632,6 +711,7 @@ export namespace UpdateDashboardViewRequest {
   export type AsObject = {
     dashboardId: string,
     view?: DashboardView.AsObject,
+    resourceId: string,
   }
 }
 

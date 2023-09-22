@@ -8574,6 +8574,82 @@ export namespace DeleteSchedulingTargetRes {
   }
 }
 
+export class GetDefaultSchedulingTargetReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDefaultSchedulingTargetReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDefaultSchedulingTargetReq): GetDefaultSchedulingTargetReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDefaultSchedulingTargetReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDefaultSchedulingTargetReq;
+  static deserializeBinaryFromReader(message: GetDefaultSchedulingTargetReq, reader: jspb.BinaryReader): GetDefaultSchedulingTargetReq;
+}
+
+export namespace GetDefaultSchedulingTargetReq {
+  export type AsObject = {
+  }
+}
+
+export class GetDefaultSchedulingTargetRes extends jspb.Message {
+  hasSchedulingTarget(): boolean;
+  clearSchedulingTarget(): void;
+  getSchedulingTarget(): SchedulingTarget | undefined;
+  setSchedulingTarget(value?: SchedulingTarget): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDefaultSchedulingTargetRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDefaultSchedulingTargetRes): GetDefaultSchedulingTargetRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDefaultSchedulingTargetRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDefaultSchedulingTargetRes;
+  static deserializeBinaryFromReader(message: GetDefaultSchedulingTargetRes, reader: jspb.BinaryReader): GetDefaultSchedulingTargetRes;
+}
+
+export namespace GetDefaultSchedulingTargetRes {
+  export type AsObject = {
+    schedulingTarget?: SchedulingTarget.AsObject,
+  }
+}
+
+export class SetDefaultSchedulingTargetReq extends jspb.Message {
+  hasSchedulingTarget(): boolean;
+  clearSchedulingTarget(): void;
+  getSchedulingTarget(): SchedulingTarget | undefined;
+  setSchedulingTarget(value?: SchedulingTarget): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetDefaultSchedulingTargetReq.AsObject;
+  static toObject(includeInstance: boolean, msg: SetDefaultSchedulingTargetReq): SetDefaultSchedulingTargetReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetDefaultSchedulingTargetReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetDefaultSchedulingTargetReq;
+  static deserializeBinaryFromReader(message: SetDefaultSchedulingTargetReq, reader: jspb.BinaryReader): SetDefaultSchedulingTargetReq;
+}
+
+export namespace SetDefaultSchedulingTargetReq {
+  export type AsObject = {
+    schedulingTarget?: SchedulingTarget.AsObject,
+  }
+}
+
+export class SetDefaultSchedulingTargetRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetDefaultSchedulingTargetRes.AsObject;
+  static toObject(includeInstance: boolean, msg: SetDefaultSchedulingTargetRes): SetDefaultSchedulingTargetRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetDefaultSchedulingTargetRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetDefaultSchedulingTargetRes;
+  static deserializeBinaryFromReader(message: SetDefaultSchedulingTargetRes, reader: jspb.BinaryReader): SetDefaultSchedulingTargetRes;
+}
+
+export namespace SetDefaultSchedulingTargetRes {
+  export type AsObject = {
+  }
+}
+
 export class ListRequiredCallsIntervalsReq extends jspb.Message {
   hasNodeSelector(): boolean;
   clearNodeSelector(): void;

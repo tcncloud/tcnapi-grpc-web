@@ -104,6 +104,15 @@ type DashboardsUpdateDashboardLayout = {
   readonly responseType: typeof google_protobuf_empty_pb.Empty;
 };
 
+type DashboardsPublishDashboard = {
+  readonly methodName: string;
+  readonly service: typeof Dashboards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_dashboards_pb.PublishDashboardRequest;
+  readonly responseType: typeof api_v0alpha_dashboards_pb.PublishDashboardResponse;
+};
+
 export class Dashboards {
   static readonly serviceName: string;
   static readonly CreateDashboard: DashboardsCreateDashboard;
@@ -117,6 +126,7 @@ export class Dashboards {
   static readonly UpdateDashboardTitleAndDescription: DashboardsUpdateDashboardTitleAndDescription;
   static readonly UpdateDashboardView: DashboardsUpdateDashboardView;
   static readonly UpdateDashboardLayout: DashboardsUpdateDashboardLayout;
+  static readonly PublishDashboard: DashboardsPublishDashboard;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -249,6 +259,15 @@ export class DashboardsClient {
   updateDashboardLayout(
     requestMessage: api_v0alpha_dashboards_pb.UpdateDashboardLayoutRequest,
     callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
+  ): UnaryResponse;
+  publishDashboard(
+    requestMessage: api_v0alpha_dashboards_pb.PublishDashboardRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_dashboards_pb.PublishDashboardResponse|null) => void
+  ): UnaryResponse;
+  publishDashboard(
+    requestMessage: api_v0alpha_dashboards_pb.PublishDashboardRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_dashboards_pb.PublishDashboardResponse|null) => void
   ): UnaryResponse;
 }
 

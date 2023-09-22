@@ -110,6 +110,15 @@ Dashboards.UpdateDashboardLayout = {
   responseType: google_protobuf_empty_pb.Empty
 };
 
+Dashboards.PublishDashboard = {
+  methodName: "PublishDashboard",
+  service: Dashboards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_dashboards_pb.PublishDashboardRequest,
+  responseType: api_v0alpha_dashboards_pb.PublishDashboardResponse
+};
+
 exports.Dashboards = Dashboards;
 
 function DashboardsClient(serviceHost, options) {
@@ -432,6 +441,37 @@ DashboardsClient.prototype.updateDashboardLayout = function updateDashboardLayou
     callback = arguments[1];
   }
   var client = grpc.unary(Dashboards.UpdateDashboardLayout, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DashboardsClient.prototype.publishDashboard = function publishDashboard(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Dashboards.PublishDashboard, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

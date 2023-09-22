@@ -1084,6 +1084,24 @@ type WFMDeleteSchedulingTarget = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteSchedulingTargetRes;
 };
 
+type WFMGetDefaultSchedulingTarget = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetRes;
+};
+
+type WFMSetDefaultSchedulingTarget = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetRes;
+};
+
 type WFMGetPerformanceMetrics = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1224,6 +1242,8 @@ export class WFM {
   static readonly SetSchedulingTarget: WFMSetSchedulingTarget;
   static readonly GetSchedulingTarget: WFMGetSchedulingTarget;
   static readonly DeleteSchedulingTarget: WFMDeleteSchedulingTarget;
+  static readonly GetDefaultSchedulingTarget: WFMGetDefaultSchedulingTarget;
+  static readonly SetDefaultSchedulingTarget: WFMSetDefaultSchedulingTarget;
   static readonly GetPerformanceMetrics: WFMGetPerformanceMetrics;
   static readonly ListRequiredCallsIntervals: WFMListRequiredCallsIntervals;
 }
@@ -2291,6 +2311,24 @@ export class WFMClient {
   deleteSchedulingTarget(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingTargetReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingTargetRes|null) => void
+  ): UnaryResponse;
+  getDefaultSchedulingTarget(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetRes|null) => void
+  ): UnaryResponse;
+  getDefaultSchedulingTarget(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetRes|null) => void
+  ): UnaryResponse;
+  setDefaultSchedulingTarget(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetRes|null) => void
+  ): UnaryResponse;
+  setDefaultSchedulingTarget(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetRes|null) => void
   ): UnaryResponse;
   getPerformanceMetrics(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetPerformanceMetricsReq,
