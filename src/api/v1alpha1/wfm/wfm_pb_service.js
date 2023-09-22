@@ -163,6 +163,42 @@ WFM.DisconnectInactiveSkillProfileMapping = {
   responseType: api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingRes
 };
 
+WFM.CreateSkillProfileGroup = {
+  methodName: "CreateSkillProfileGroup",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupRes
+};
+
+WFM.UpdateSkillProfileGroup = {
+  methodName: "UpdateSkillProfileGroup",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupRes
+};
+
+WFM.ListSkillProfileGroups = {
+  methodName: "ListSkillProfileGroups",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsRes
+};
+
+WFM.UpdateSkillProfileGroupAssociations = {
+  methodName: "UpdateSkillProfileGroupAssociations",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsRes
+};
+
 WFM.DeleteHistoricalDataDeltas = {
   methodName: "DeleteHistoricalDataDeltas",
   service: WFM,
@@ -1634,6 +1670,130 @@ WFMClient.prototype.disconnectInactiveSkillProfileMapping = function disconnectI
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.DisconnectInactiveSkillProfileMapping, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createSkillProfileGroup = function createSkillProfileGroup(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateSkillProfileGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.updateSkillProfileGroup = function updateSkillProfileGroup(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdateSkillProfileGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listSkillProfileGroups = function listSkillProfileGroups(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListSkillProfileGroups, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.updateSkillProfileGroupAssociations = function updateSkillProfileGroupAssociations(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdateSkillProfileGroupAssociations, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
