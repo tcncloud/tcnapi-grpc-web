@@ -460,7 +460,8 @@ proto.api.v1alpha1.insights.Insight.toObject = function(includeInstance, msg) {
     insightVersion: jspb.Message.getFieldWithDefault(msg, 6, 0),
     body: jspb.Message.getFieldWithDefault(msg, 7, ""),
     insightPermissionType: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 9, "")
+    resourceId: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    standardInsight: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -528,6 +529,10 @@ proto.api.v1alpha1.insights.Insight.deserializeBinaryFromReader = function(msg, 
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setResourceId(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStandardInsight(value);
       break;
     default:
       reader.skipField();
@@ -611,6 +616,13 @@ proto.api.v1alpha1.insights.Insight.serializeBinaryToWriter = function(message, 
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getStandardInsight();
+  if (f) {
+    writer.writeBool(
+      10,
       f
     );
   }
@@ -758,6 +770,24 @@ proto.api.v1alpha1.insights.Insight.prototype.getResourceId = function() {
  */
 proto.api.v1alpha1.insights.Insight.prototype.setResourceId = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional bool standard_insight = 10;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.insights.Insight.prototype.getStandardInsight = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.insights.Insight} returns this
+ */
+proto.api.v1alpha1.insights.Insight.prototype.setStandardInsight = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 

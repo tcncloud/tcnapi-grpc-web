@@ -30,6 +30,9 @@ export class Insight extends jspb.Message {
   getResourceId(): string;
   setResourceId(value: string): void;
 
+  getStandardInsight(): boolean;
+  setStandardInsight(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Insight.AsObject;
   static toObject(includeInstance: boolean, msg: Insight): Insight.AsObject;
@@ -50,6 +53,7 @@ export namespace Insight {
     body: string,
     insightPermissionType: api_commons_insights_pb.InsightPermissionTypeMap[keyof api_commons_insights_pb.InsightPermissionTypeMap],
     resourceId: string,
+    standardInsight: boolean,
   }
 }
 
