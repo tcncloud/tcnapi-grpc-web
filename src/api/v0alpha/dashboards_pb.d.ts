@@ -106,6 +106,9 @@ export class DashboardSummary extends jspb.Message {
   getResourceId(): string;
   setResourceId(value: string): void;
 
+  getStandardDashboard(): boolean;
+  setStandardDashboard(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DashboardSummary.AsObject;
   static toObject(includeInstance: boolean, msg: DashboardSummary): DashboardSummary.AsObject;
@@ -123,6 +126,7 @@ export namespace DashboardSummary {
     description: string,
     panelCount: number,
     resourceId: string,
+    standardDashboard: boolean,
   }
 }
 
@@ -461,6 +465,9 @@ export class Dashboard extends jspb.Message {
   getResourceId(): string;
   setResourceId(value: string): void;
 
+  getStandardDashboard(): boolean;
+  setStandardDashboard(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Dashboard.AsObject;
   static toObject(includeInstance: boolean, msg: Dashboard): Dashboard.AsObject;
@@ -480,6 +487,7 @@ export namespace Dashboard {
     view?: DashboardView.AsObject,
     type?: DashboardType.AsObject,
     resourceId: string,
+    standardDashboard: boolean,
   }
 }
 

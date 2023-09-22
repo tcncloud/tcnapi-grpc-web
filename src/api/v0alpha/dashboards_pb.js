@@ -1238,7 +1238,8 @@ proto.api.v0alpha.DashboardSummary.toObject = function(includeInstance, msg) {
     title: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
     panelCount: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 5, "")
+    resourceId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    standardDashboard: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -1294,6 +1295,10 @@ proto.api.v0alpha.DashboardSummary.deserializeBinaryFromReader = function(msg, r
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setResourceId(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStandardDashboard(value);
       break;
     default:
       reader.skipField();
@@ -1356,6 +1361,13 @@ proto.api.v0alpha.DashboardSummary.serializeBinaryToWriter = function(message, w
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getStandardDashboard();
+  if (f) {
+    writer.writeBool(
+      6,
       f
     );
   }
@@ -1449,6 +1461,24 @@ proto.api.v0alpha.DashboardSummary.prototype.getResourceId = function() {
  */
 proto.api.v0alpha.DashboardSummary.prototype.setResourceId = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional bool standard_dashboard = 6;
+ * @return {boolean}
+ */
+proto.api.v0alpha.DashboardSummary.prototype.getStandardDashboard = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.DashboardSummary} returns this
+ */
+proto.api.v0alpha.DashboardSummary.prototype.setStandardDashboard = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -3588,7 +3618,8 @@ proto.api.v0alpha.Dashboard.toObject = function(includeInstance, msg) {
     layout: (f = msg.getLayout()) && proto.api.v0alpha.DashboardLayout.toObject(includeInstance, f),
     view: (f = msg.getView()) && proto.api.v0alpha.DashboardView.toObject(includeInstance, f),
     type: (f = msg.getType()) && proto.api.v0alpha.DashboardType.toObject(includeInstance, f),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 7, "")
+    resourceId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    standardDashboard: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -3655,6 +3686,10 @@ proto.api.v0alpha.Dashboard.deserializeBinaryFromReader = function(msg, reader) 
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setResourceId(value);
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStandardDashboard(value);
       break;
     default:
       reader.skipField();
@@ -3734,6 +3769,13 @@ proto.api.v0alpha.Dashboard.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getStandardDashboard();
+  if (f) {
+    writer.writeBool(
+      8,
       f
     );
   }
@@ -3920,6 +3962,24 @@ proto.api.v0alpha.Dashboard.prototype.getResourceId = function() {
  */
 proto.api.v0alpha.Dashboard.prototype.setResourceId = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional bool standard_dashboard = 8;
+ * @return {boolean}
+ */
+proto.api.v0alpha.Dashboard.prototype.getStandardDashboard = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.Dashboard} returns this
+ */
+proto.api.v0alpha.Dashboard.prototype.setStandardDashboard = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
