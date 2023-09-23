@@ -27,6 +27,12 @@ export class Insight extends jspb.Message {
   getInsightPermissionType(): api_commons_insights_pb.InsightPermissionTypeMap[keyof api_commons_insights_pb.InsightPermissionTypeMap];
   setInsightPermissionType(value: api_commons_insights_pb.InsightPermissionTypeMap[keyof api_commons_insights_pb.InsightPermissionTypeMap]): void;
 
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
+  getStandardInsight(): boolean;
+  setStandardInsight(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Insight.AsObject;
   static toObject(includeInstance: boolean, msg: Insight): Insight.AsObject;
@@ -46,6 +52,54 @@ export namespace Insight {
     insightVersion: number,
     body: string,
     insightPermissionType: api_commons_insights_pb.InsightPermissionTypeMap[keyof api_commons_insights_pb.InsightPermissionTypeMap],
+    resourceId: string,
+    standardInsight: boolean,
+  }
+}
+
+export class PublishInsightRequest extends jspb.Message {
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
+  getDestinationResourceId(): string;
+  setDestinationResourceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PublishInsightRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PublishInsightRequest): PublishInsightRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PublishInsightRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PublishInsightRequest;
+  static deserializeBinaryFromReader(message: PublishInsightRequest, reader: jspb.BinaryReader): PublishInsightRequest;
+}
+
+export namespace PublishInsightRequest {
+  export type AsObject = {
+    resourceId: string,
+    destinationResourceId: string,
+  }
+}
+
+export class PublishInsightResponse extends jspb.Message {
+  hasInsight(): boolean;
+  clearInsight(): void;
+  getInsight(): Insight | undefined;
+  setInsight(value?: Insight): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PublishInsightResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PublishInsightResponse): PublishInsightResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PublishInsightResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PublishInsightResponse;
+  static deserializeBinaryFromReader(message: PublishInsightResponse, reader: jspb.BinaryReader): PublishInsightResponse;
+}
+
+export namespace PublishInsightResponse {
+  export type AsObject = {
+    insight?: Insight.AsObject,
   }
 }
 
@@ -191,6 +245,9 @@ export class DeleteInsightRequest extends jspb.Message {
   getInsightId(): string;
   setInsightId(value: string): void;
 
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteInsightRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DeleteInsightRequest): DeleteInsightRequest.AsObject;
@@ -204,6 +261,7 @@ export class DeleteInsightRequest extends jspb.Message {
 export namespace DeleteInsightRequest {
   export type AsObject = {
     insightId: string,
+    resourceId: string,
   }
 }
 
@@ -233,6 +291,9 @@ export class GetInsightRequest extends jspb.Message {
   getInsightId(): string;
   setInsightId(value: string): void;
 
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetInsightRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetInsightRequest): GetInsightRequest.AsObject;
@@ -246,6 +307,7 @@ export class GetInsightRequest extends jspb.Message {
 export namespace GetInsightRequest {
   export type AsObject = {
     insightId: string,
+    resourceId: string,
   }
 }
 

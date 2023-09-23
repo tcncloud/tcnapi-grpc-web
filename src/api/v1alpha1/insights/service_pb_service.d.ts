@@ -95,6 +95,15 @@ type InsightsListVfses = {
   readonly responseType: typeof api_v1alpha1_insights_insight_pb.ListVfsesResponse;
 };
 
+type InsightsPublishInsight = {
+  readonly methodName: string;
+  readonly service: typeof Insights;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_insights_insight_pb.PublishInsightRequest;
+  readonly responseType: typeof api_v1alpha1_insights_insight_pb.PublishInsightResponse;
+};
+
 export class Insights {
   static readonly serviceName: string;
   static readonly CreateInsight: InsightsCreateInsight;
@@ -107,6 +116,7 @@ export class Insights {
   static readonly DeleteCommonsInsight: InsightsDeleteCommonsInsight;
   static readonly GetVfsSchema: InsightsGetVfsSchema;
   static readonly ListVfses: InsightsListVfses;
+  static readonly PublishInsight: InsightsPublishInsight;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -230,6 +240,15 @@ export class InsightsClient {
   listVfses(
     requestMessage: api_v1alpha1_insights_insight_pb.ListVfsesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_insight_pb.ListVfsesResponse|null) => void
+  ): UnaryResponse;
+  publishInsight(
+    requestMessage: api_v1alpha1_insights_insight_pb.PublishInsightRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_insight_pb.PublishInsightResponse|null) => void
+  ): UnaryResponse;
+  publishInsight(
+    requestMessage: api_v1alpha1_insights_insight_pb.PublishInsightRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_insight_pb.PublishInsightResponse|null) => void
   ): UnaryResponse;
 }
 
