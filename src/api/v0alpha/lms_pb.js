@@ -54520,7 +54520,8 @@ proto.api.v0alpha.EpicEntrypoint.toObject = function(includeInstance, msg) {
     flushPageCount: jspb.Message.getFieldWithDefault(msg, 8, 0),
     flushMinuteCount: jspb.Message.getFieldWithDefault(msg, 9, 0),
     flushDuringCheck: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    timezone: jspb.Message.getFieldWithDefault(msg, 11, "")
+    timezone: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    enabled: jspb.Message.getBooleanFieldWithDefault(msg, 12, false)
   };
 
   if (includeInstance) {
@@ -54599,6 +54600,10 @@ proto.api.v0alpha.EpicEntrypoint.deserializeBinaryFromReader = function(msg, rea
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setTimezone(value);
+      break;
+    case 12:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
       break;
     default:
       reader.skipField();
@@ -54697,6 +54702,13 @@ proto.api.v0alpha.EpicEntrypoint.serializeBinaryToWriter = function(message, wri
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getEnabled();
+  if (f) {
+    writer.writeBool(
+      12,
       f
     );
   }
@@ -54918,6 +54930,24 @@ proto.api.v0alpha.EpicEntrypoint.prototype.getTimezone = function() {
  */
 proto.api.v0alpha.EpicEntrypoint.prototype.setTimezone = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional bool enabled = 12;
+ * @return {boolean}
+ */
+proto.api.v0alpha.EpicEntrypoint.prototype.getEnabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.EpicEntrypoint} returns this
+ */
+proto.api.v0alpha.EpicEntrypoint.prototype.setEnabled = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
