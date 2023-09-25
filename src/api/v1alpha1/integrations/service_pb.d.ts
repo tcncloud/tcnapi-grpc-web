@@ -237,6 +237,22 @@ export namespace ProcessRes {
   }
 }
 
+export class ListIntegrationsForOrgReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListIntegrationsForOrgReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListIntegrationsForOrgReq): ListIntegrationsForOrgReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListIntegrationsForOrgReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListIntegrationsForOrgReq;
+  static deserializeBinaryFromReader(message: ListIntegrationsForOrgReq, reader: jspb.BinaryReader): ListIntegrationsForOrgReq;
+}
+
+export namespace ListIntegrationsForOrgReq {
+  export type AsObject = {
+  }
+}
+
 export class IntegrationInfos extends jspb.Message {
   clearValuesList(): void;
   getValuesList(): Array<IntegrationInfo>;

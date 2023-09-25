@@ -60,6 +60,30 @@ export namespace LearningOpportunity {
   }
 }
 
+export class CallIdentifier extends jspb.Message {
+  getSid(): number;
+  setSid(value: number): void;
+
+  getType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+  setType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CallIdentifier.AsObject;
+  static toObject(includeInstance: boolean, msg: CallIdentifier): CallIdentifier.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CallIdentifier, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CallIdentifier;
+  static deserializeBinaryFromReader(message: CallIdentifier, reader: jspb.BinaryReader): CallIdentifier;
+}
+
+export namespace CallIdentifier {
+  export type AsObject = {
+    sid: number,
+    type: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+  }
+}
+
 export interface LearningOpportunityStatusMap {
   STATUS_OPEN: 0;
   STATUS_COMPLETED: 1;

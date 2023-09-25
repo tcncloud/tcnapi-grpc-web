@@ -6570,7 +6570,8 @@ proto.api.v1alpha1.asm.SetConversationCollectedDataReq.toObject = function(inclu
   var f, obj = {
     conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     channelType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    collectedDataMap: (f = msg.getCollectedDataMap()) ? f.toObject(includeInstance, undefined) : []
+    collectedDataMap: (f = msg.getCollectedDataMap()) ? f.toObject(includeInstance, undefined) : [],
+    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -6621,6 +6622,10 @@ proto.api.v1alpha1.asm.SetConversationCollectedDataReq.deserializeBinaryFromRead
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setAsmSessionSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -6667,6 +6672,13 @@ proto.api.v1alpha1.asm.SetConversationCollectedDataReq.serializeBinaryToWriter =
   f = message.getCollectedDataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getAsmSessionSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      4,
+      f
+    );
   }
 };
 
@@ -6727,6 +6739,24 @@ proto.api.v1alpha1.asm.SetConversationCollectedDataReq.prototype.getCollectedDat
 proto.api.v1alpha1.asm.SetConversationCollectedDataReq.prototype.clearCollectedDataMap = function() {
   this.getCollectedDataMap().clear();
   return this;
+};
+
+
+/**
+ * optional int64 asm_session_sid = 4;
+ * @return {number}
+ */
+proto.api.v1alpha1.asm.SetConversationCollectedDataReq.prototype.getAsmSessionSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.asm.SetConversationCollectedDataReq} returns this
+ */
+proto.api.v1alpha1.asm.SetConversationCollectedDataReq.prototype.setAsmSessionSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 

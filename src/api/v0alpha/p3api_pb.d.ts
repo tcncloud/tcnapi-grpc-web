@@ -3063,6 +3063,9 @@ export class ManualApprovalSettings extends jspb.Message {
   getSmsNumberConfirmation(): boolean;
   setSmsNumberConfirmation(value: boolean): void;
 
+  getDisableRejectOptionForApprovers(): boolean;
+  setDisableRejectOptionForApprovers(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManualApprovalSettings.AsObject;
   static toObject(includeInstance: boolean, msg: ManualApprovalSettings): ManualApprovalSettings.AsObject;
@@ -3079,6 +3082,7 @@ export namespace ManualApprovalSettings {
     confirm: boolean,
     smsAllowed: boolean,
     smsNumberConfirmation: boolean,
+    disableRejectOptionForApprovers: boolean,
   }
 }
 

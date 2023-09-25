@@ -199,6 +199,9 @@ export class GeneralSettings extends jspb.Message {
   getRequireManualApprovalNumberSms(): boolean;
   setRequireManualApprovalNumberSms(value: boolean): void;
 
+  getDisableRejectOptionForApprovers(): boolean;
+  setDisableRejectOptionForApprovers(value: boolean): void;
+
   hasAlphanumericKeypad(): boolean;
   clearAlphanumericKeypad(): void;
   getAlphanumericKeypad(): GeneralSettings.AlphanumericKeypad | undefined;
@@ -214,6 +217,11 @@ export class GeneralSettings extends jspb.Message {
 
   getEnableAgentIntercom(): boolean;
   setEnableAgentIntercom(value: boolean): void;
+
+  hasPrepareStateCallDelivery(): boolean;
+  clearPrepareStateCallDelivery(): void;
+  getPrepareStateCallDelivery(): GeneralSettings.PrepareStateCallDelivery | undefined;
+  setPrepareStateCallDelivery(value?: GeneralSettings.PrepareStateCallDelivery): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GeneralSettings.AsObject;
@@ -266,10 +274,12 @@ export namespace GeneralSettings {
     requireManualApprovalNumber: boolean,
     enableManualApprovalOfSms: boolean,
     requireManualApprovalNumberSms: boolean,
+    disableRejectOptionForApprovers: boolean,
     alphanumericKeypad?: GeneralSettings.AlphanumericKeypad.AsObject,
     enableCallDesktopNotifications: boolean,
     inboundComplianceMetadata?: GeneralSettings.InboundComplianceMetadata.AsObject,
     enableAgentIntercom: boolean,
+    prepareStateCallDelivery?: GeneralSettings.PrepareStateCallDelivery.AsObject,
   }
 
   export class PauseOptionSet extends jspb.Message {
@@ -535,6 +545,30 @@ export namespace GeneralSettings {
       enabled: boolean,
       optionalDataList: Array<number>,
       requiredDataList: Array<number>,
+    }
+  }
+
+  export class PrepareStateCallDelivery extends jspb.Message {
+    getManualDial(): boolean;
+    setManualDial(value: boolean): void;
+
+    getPreviewDial(): boolean;
+    setPreviewDial(value: boolean): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): PrepareStateCallDelivery.AsObject;
+    static toObject(includeInstance: boolean, msg: PrepareStateCallDelivery): PrepareStateCallDelivery.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: PrepareStateCallDelivery, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): PrepareStateCallDelivery;
+    static deserializeBinaryFromReader(message: PrepareStateCallDelivery, reader: jspb.BinaryReader): PrepareStateCallDelivery;
+  }
+
+  export namespace PrepareStateCallDelivery {
+    export type AsObject = {
+      manualDial: boolean,
+      previewDial: boolean,
     }
   }
 }

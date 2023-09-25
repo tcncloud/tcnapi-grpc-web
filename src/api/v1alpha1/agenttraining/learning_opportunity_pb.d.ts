@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_agent_training_pb from "../../../api/commons/agent_training_pb";
+import * as api_commons_scorecards_pb from "../../../api/commons/scorecards_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 
 export class CreateLearningOpportunityRequest extends jspb.Message {
@@ -50,6 +51,26 @@ export namespace CreateLearningOpportunityResponse {
 }
 
 export class ListLearningOpportunitiesRequest extends jspb.Message {
+  clearCallIdentifiersList(): void;
+  getCallIdentifiersList(): Array<api_commons_agent_training_pb.CallIdentifier>;
+  setCallIdentifiersList(value: Array<api_commons_agent_training_pb.CallIdentifier>): void;
+  addCallIdentifiers(value?: api_commons_agent_training_pb.CallIdentifier, index?: number): api_commons_agent_training_pb.CallIdentifier;
+
+  clearTranscriptSidsList(): void;
+  getTranscriptSidsList(): Array<number>;
+  setTranscriptSidsList(value: Array<number>): void;
+  addTranscriptSids(value: number, index?: number): number;
+
+  clearAgentUserIdsList(): void;
+  getAgentUserIdsList(): Array<string>;
+  setAgentUserIdsList(value: Array<string>): void;
+  addAgentUserIds(value: string, index?: number): string;
+
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): void;
+  getCreatedAt(): api_commons_scorecards_pb.TimeFilter | undefined;
+  setCreatedAt(value?: api_commons_scorecards_pb.TimeFilter): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListLearningOpportunitiesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListLearningOpportunitiesRequest): ListLearningOpportunitiesRequest.AsObject;
@@ -62,6 +83,10 @@ export class ListLearningOpportunitiesRequest extends jspb.Message {
 
 export namespace ListLearningOpportunitiesRequest {
   export type AsObject = {
+    callIdentifiersList: Array<api_commons_agent_training_pb.CallIdentifier.AsObject>,
+    transcriptSidsList: Array<number>,
+    agentUserIdsList: Array<string>,
+    createdAt?: api_commons_scorecards_pb.TimeFilter.AsObject,
   }
 }
 

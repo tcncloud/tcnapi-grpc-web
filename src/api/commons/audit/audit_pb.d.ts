@@ -2,10 +2,12 @@
 // file: api/commons/audit/audit.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_audit_agent_training_events_pb from "../../../api/commons/audit/agent_training_events_pb";
 import * as api_commons_audit_asm_events_pb from "../../../api/commons/audit/asm_events_pb";
 import * as api_commons_audit_compliance_events_pb from "../../../api/commons/audit/compliance_events_pb";
 import * as api_commons_audit_event_types_pb from "../../../api/commons/audit/event_types_pb";
 import * as api_commons_audit_events_pb from "../../../api/commons/audit/events_pb";
+import * as api_commons_audit_lms_events_pb from "../../../api/commons/audit/lms_events_pb";
 import * as api_commons_audit_omnichannel_events_pb from "../../../api/commons/audit/omnichannel_events_pb";
 import * as api_commons_audit_scorecards_events_pb from "../../../api/commons/audit/scorecards_events_pb";
 import * as api_commons_audit_tickets_events_pb from "../../../api/commons/audit/tickets_events_pb";
@@ -57,6 +59,11 @@ export class AuditEvent extends jspb.Message {
   clearVanaFlagSummaryEvent(): void;
   getVanaFlagSummaryEvent(): api_commons_audit_vana_events_pb.VanaFlagSummaryEvent | undefined;
   setVanaFlagSummaryEvent(value?: api_commons_audit_vana_events_pb.VanaFlagSummaryEvent): void;
+
+  hasVanaPhraseCorrectionEvent(): boolean;
+  clearVanaPhraseCorrectionEvent(): void;
+  getVanaPhraseCorrectionEvent(): api_commons_audit_vana_events_pb.VanaPhraseCorrectionEvent | undefined;
+  setVanaPhraseCorrectionEvent(value?: api_commons_audit_vana_events_pb.VanaPhraseCorrectionEvent): void;
 
   hasOmnichannelCreateProjectEvent(): boolean;
   clearOmnichannelCreateProjectEvent(): void;
@@ -458,6 +465,16 @@ export class AuditEvent extends jspb.Message {
   getComplianceRndQueryCachedEvent(): api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent | undefined;
   setComplianceRndQueryCachedEvent(value?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent): void;
 
+  hasAgentTrainingCreateLearningOpportunityEvent(): boolean;
+  clearAgentTrainingCreateLearningOpportunityEvent(): void;
+  getAgentTrainingCreateLearningOpportunityEvent(): api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent | undefined;
+  setAgentTrainingCreateLearningOpportunityEvent(value?: api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent): void;
+
+  hasLmsPipelineFailureEvent(): boolean;
+  clearLmsPipelineFailureEvent(): void;
+  getLmsPipelineFailureEvent(): api_commons_audit_lms_events_pb.LMSPipelineFailureEvent | undefined;
+  setLmsPipelineFailureEvent(value?: api_commons_audit_lms_events_pb.LMSPipelineFailureEvent): void;
+
   getEventCase(): AuditEvent.EventCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuditEvent.AsObject;
@@ -482,6 +499,7 @@ export namespace AuditEvent {
     vanaFlagReviewEvent?: api_commons_audit_vana_events_pb.VanaFlagReviewEvent.AsObject,
     vanaBillingReportEvent?: api_commons_audit_vana_events_pb.VanaBillingReportEvent.AsObject,
     vanaFlagSummaryEvent?: api_commons_audit_vana_events_pb.VanaFlagSummaryEvent.AsObject,
+    vanaPhraseCorrectionEvent?: api_commons_audit_vana_events_pb.VanaPhraseCorrectionEvent.AsObject,
     omnichannelCreateProjectEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelCreateProjectEvent.AsObject,
     omnichannelCreateCampaignEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelCreateCampaignEvent.AsObject,
     omnichannelDailyProjectReportEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelDailyProjectReportEvent.AsObject,
@@ -562,6 +580,8 @@ export namespace AuditEvent {
     ticketEvent?: api_commons_audit_tickets_events_pb.TicketEvent.AsObject,
     complianceRndQueryEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
     complianceRndQueryCachedEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
+    agentTrainingCreateLearningOpportunityEvent?: api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent.AsObject,
+    lmsPipelineFailureEvent?: api_commons_audit_lms_events_pb.LMSPipelineFailureEvent.AsObject,
   }
 
   export enum EventCase {
@@ -571,6 +591,7 @@ export namespace AuditEvent {
     VANA_FLAG_REVIEW_EVENT = 201,
     VANA_BILLING_REPORT_EVENT = 202,
     VANA_FLAG_SUMMARY_EVENT = 203,
+    VANA_PHRASE_CORRECTION_EVENT = 204,
     OMNICHANNEL_CREATE_PROJECT_EVENT = 300,
     OMNICHANNEL_CREATE_CAMPAIGN_EVENT = 301,
     OMNICHANNEL_DAILY_PROJECT_REPORT_EVENT = 302,
@@ -651,6 +672,8 @@ export namespace AuditEvent {
     TICKET_EVENT = 601,
     COMPLIANCE_RND_QUERY_EVENT = 700,
     COMPLIANCE_RND_QUERY_CACHED_EVENT = 701,
+    AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800,
+    LMS_PIPELINE_FAILURE_EVENT = 900,
   }
 }
 

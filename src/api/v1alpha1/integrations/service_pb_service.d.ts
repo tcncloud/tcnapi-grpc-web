@@ -103,6 +103,15 @@ type IntegrationsListIntegrations = {
   readonly responseType: typeof api_v1alpha1_integrations_service_pb.IntegrationInfos;
 };
 
+type IntegrationsListIntegrationsForOrg = {
+  readonly methodName: string;
+  readonly service: typeof Integrations;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrations_service_pb.ListIntegrationsForOrgReq;
+  readonly responseType: typeof api_v1alpha1_integrations_service_pb.IntegrationInfos;
+};
+
 type IntegrationsListIntegrationConfigNames = {
   readonly methodName: string;
   readonly service: typeof Integrations;
@@ -233,6 +242,7 @@ export class Integrations {
   static readonly UpdateIntegrationConfig: IntegrationsUpdateIntegrationConfig;
   static readonly DeleteIntegrationConfig: IntegrationsDeleteIntegrationConfig;
   static readonly ListIntegrations: IntegrationsListIntegrations;
+  static readonly ListIntegrationsForOrg: IntegrationsListIntegrationsForOrg;
   static readonly ListIntegrationConfigNames: IntegrationsListIntegrationConfigNames;
   static readonly ListJourneyConfigs: IntegrationsListJourneyConfigs;
   static readonly ListNonJourneyConfigs: IntegrationsListNonJourneyConfigs;
@@ -377,6 +387,15 @@ export class IntegrationsClient {
   ): UnaryResponse;
   listIntegrations(
     requestMessage: api_v1alpha1_integrations_service_pb.Empty,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.IntegrationInfos|null) => void
+  ): UnaryResponse;
+  listIntegrationsForOrg(
+    requestMessage: api_v1alpha1_integrations_service_pb.ListIntegrationsForOrgReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.IntegrationInfos|null) => void
+  ): UnaryResponse;
+  listIntegrationsForOrg(
+    requestMessage: api_v1alpha1_integrations_service_pb.ListIntegrationsForOrgReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.IntegrationInfos|null) => void
   ): UnaryResponse;
   listIntegrationConfigNames(

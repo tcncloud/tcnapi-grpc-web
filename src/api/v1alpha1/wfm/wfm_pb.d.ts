@@ -129,6 +129,66 @@ export namespace SkillProfile {
   }
 }
 
+export class SkillProfileGroup extends jspb.Message {
+  getSkillProfileGroupSid(): number;
+  setSkillProfileGroupSid(value: number): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getAverageSpeedOfAnswerInSeconds(): number;
+  setAverageSpeedOfAnswerInSeconds(value: number): void;
+
+  getAverageHandleTimeInSeconds(): number;
+  setAverageHandleTimeInSeconds(value: number): void;
+
+  getAverageAfterCallWorkInSeconds(): number;
+  setAverageAfterCallWorkInSeconds(value: number): void;
+
+  getAverageTimeToAbortInSeconds(): number;
+  setAverageTimeToAbortInSeconds(value: number): void;
+
+  getAreAveragesManual(): boolean;
+  setAreAveragesManual(value: boolean): void;
+
+  clearSkillProfileSidsList(): void;
+  getSkillProfileSidsList(): Array<number>;
+  setSkillProfileSidsList(value: Array<number>): void;
+  addSkillProfileSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SkillProfileGroup.AsObject;
+  static toObject(includeInstance: boolean, msg: SkillProfileGroup): SkillProfileGroup.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SkillProfileGroup, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SkillProfileGroup;
+  static deserializeBinaryFromReader(message: SkillProfileGroup, reader: jspb.BinaryReader): SkillProfileGroup;
+}
+
+export namespace SkillProfileGroup {
+  export type AsObject = {
+    skillProfileGroupSid: number,
+    name: string,
+    description: string,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    averageSpeedOfAnswerInSeconds: number,
+    averageHandleTimeInSeconds: number,
+    averageAfterCallWorkInSeconds: number,
+    averageTimeToAbortInSeconds: number,
+    areAveragesManual: boolean,
+    skillProfileSidsList: Array<number>,
+  }
+}
+
 export class ListSkillProfilesReq extends jspb.Message {
   getActiveOnly(): boolean;
   setActiveOnly(value: boolean): void;
@@ -597,6 +657,11 @@ export class HistoricalDataInterval extends jspb.Message {
   getOriginalTotalAbandonedCalls(): number;
   setOriginalTotalAbandonedCalls(value: number): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HistoricalDataInterval.AsObject;
   static toObject(includeInstance: boolean, msg: HistoricalDataInterval): HistoricalDataInterval.AsObject;
@@ -624,12 +689,18 @@ export namespace HistoricalDataInterval {
     originalAverageTimeToAbortInSeconds?: google_protobuf_wrappers_pb.FloatValue.AsObject,
     originalTotalCalls: number,
     originalTotalAbandonedCalls: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
 export class ListHistoricalDataReq extends jspb.Message {
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;
+
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListHistoricalDataReq.AsObject;
@@ -644,6 +715,7 @@ export class ListHistoricalDataReq extends jspb.Message {
 export namespace ListHistoricalDataReq {
   export type AsObject = {
     skillProfileSid: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -911,6 +983,50 @@ export namespace BuildCallProfileTemplateForSkillProfileRes {
   }
 }
 
+export class BuildCallProfileTemplateReq extends jspb.Message {
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BuildCallProfileTemplateReq.AsObject;
+  static toObject(includeInstance: boolean, msg: BuildCallProfileTemplateReq): BuildCallProfileTemplateReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BuildCallProfileTemplateReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BuildCallProfileTemplateReq;
+  static deserializeBinaryFromReader(message: BuildCallProfileTemplateReq, reader: jspb.BinaryReader): BuildCallProfileTemplateReq;
+}
+
+export namespace BuildCallProfileTemplateReq {
+  export type AsObject = {
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+  }
+}
+
+export class BuildCallProfileTemplateRes extends jspb.Message {
+  hasCallProfileTemplate(): boolean;
+  clearCallProfileTemplate(): void;
+  getCallProfileTemplate(): CallProfileTemplate | undefined;
+  setCallProfileTemplate(value?: CallProfileTemplate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BuildCallProfileTemplateRes.AsObject;
+  static toObject(includeInstance: boolean, msg: BuildCallProfileTemplateRes): BuildCallProfileTemplateRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BuildCallProfileTemplateRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BuildCallProfileTemplateRes;
+  static deserializeBinaryFromReader(message: BuildCallProfileTemplateRes, reader: jspb.BinaryReader): BuildCallProfileTemplateRes;
+}
+
+export namespace BuildCallProfileTemplateRes {
+  export type AsObject = {
+    callProfileTemplate?: CallProfileTemplate.AsObject,
+  }
+}
+
 export class CreateInactiveSkillProfileMappingReq extends jspb.Message {
   getInactiveSkillProfileSid(): number;
   setInactiveSkillProfileSid(value: number): void;
@@ -1021,6 +1137,178 @@ export class DisconnectInactiveSkillProfileMappingRes extends jspb.Message {
 }
 
 export namespace DisconnectInactiveSkillProfileMappingRes {
+  export type AsObject = {
+  }
+}
+
+export class CreateSkillProfileGroupReq extends jspb.Message {
+  hasSkillProfileGroup(): boolean;
+  clearSkillProfileGroup(): void;
+  getSkillProfileGroup(): SkillProfileGroup | undefined;
+  setSkillProfileGroup(value?: SkillProfileGroup): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSkillProfileGroupReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSkillProfileGroupReq): CreateSkillProfileGroupReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateSkillProfileGroupReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSkillProfileGroupReq;
+  static deserializeBinaryFromReader(message: CreateSkillProfileGroupReq, reader: jspb.BinaryReader): CreateSkillProfileGroupReq;
+}
+
+export namespace CreateSkillProfileGroupReq {
+  export type AsObject = {
+    skillProfileGroup?: SkillProfileGroup.AsObject,
+  }
+}
+
+export class CreateSkillProfileGroupRes extends jspb.Message {
+  getSkillProfileGroupSid(): number;
+  setSkillProfileGroupSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSkillProfileGroupRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSkillProfileGroupRes): CreateSkillProfileGroupRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateSkillProfileGroupRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSkillProfileGroupRes;
+  static deserializeBinaryFromReader(message: CreateSkillProfileGroupRes, reader: jspb.BinaryReader): CreateSkillProfileGroupRes;
+}
+
+export namespace CreateSkillProfileGroupRes {
+  export type AsObject = {
+    skillProfileGroupSid: number,
+  }
+}
+
+export class UpdateSkillProfileGroupReq extends jspb.Message {
+  hasSkillProfileGroup(): boolean;
+  clearSkillProfileGroup(): void;
+  getSkillProfileGroup(): SkillProfileGroup | undefined;
+  setSkillProfileGroup(value?: SkillProfileGroup): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSkillProfileGroupReq.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSkillProfileGroupReq): UpdateSkillProfileGroupReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSkillProfileGroupReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSkillProfileGroupReq;
+  static deserializeBinaryFromReader(message: UpdateSkillProfileGroupReq, reader: jspb.BinaryReader): UpdateSkillProfileGroupReq;
+}
+
+export namespace UpdateSkillProfileGroupReq {
+  export type AsObject = {
+    skillProfileGroup?: SkillProfileGroup.AsObject,
+  }
+}
+
+export class UpdateSkillProfileGroupRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSkillProfileGroupRes.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSkillProfileGroupRes): UpdateSkillProfileGroupRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSkillProfileGroupRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSkillProfileGroupRes;
+  static deserializeBinaryFromReader(message: UpdateSkillProfileGroupRes, reader: jspb.BinaryReader): UpdateSkillProfileGroupRes;
+}
+
+export namespace UpdateSkillProfileGroupRes {
+  export type AsObject = {
+  }
+}
+
+export class ListSkillProfileGroupsReq extends jspb.Message {
+  clearSkillProfileGroupSidsList(): void;
+  getSkillProfileGroupSidsList(): Array<number>;
+  setSkillProfileGroupSidsList(value: Array<number>): void;
+  addSkillProfileGroupSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSkillProfileGroupsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSkillProfileGroupsReq): ListSkillProfileGroupsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSkillProfileGroupsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSkillProfileGroupsReq;
+  static deserializeBinaryFromReader(message: ListSkillProfileGroupsReq, reader: jspb.BinaryReader): ListSkillProfileGroupsReq;
+}
+
+export namespace ListSkillProfileGroupsReq {
+  export type AsObject = {
+    skillProfileGroupSidsList: Array<number>,
+  }
+}
+
+export class ListSkillProfileGroupsRes extends jspb.Message {
+  clearSkillProfileGroupsList(): void;
+  getSkillProfileGroupsList(): Array<SkillProfileGroup>;
+  setSkillProfileGroupsList(value: Array<SkillProfileGroup>): void;
+  addSkillProfileGroups(value?: SkillProfileGroup, index?: number): SkillProfileGroup;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSkillProfileGroupsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSkillProfileGroupsRes): ListSkillProfileGroupsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSkillProfileGroupsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSkillProfileGroupsRes;
+  static deserializeBinaryFromReader(message: ListSkillProfileGroupsRes, reader: jspb.BinaryReader): ListSkillProfileGroupsRes;
+}
+
+export namespace ListSkillProfileGroupsRes {
+  export type AsObject = {
+    skillProfileGroupsList: Array<SkillProfileGroup.AsObject>,
+  }
+}
+
+export class UpdateSkillProfileGroupAssociationsReq extends jspb.Message {
+  getSkillProfileGroupSid(): number;
+  setSkillProfileGroupSid(value: number): void;
+
+  clearSkillProfileSidsToAssociateList(): void;
+  getSkillProfileSidsToAssociateList(): Array<number>;
+  setSkillProfileSidsToAssociateList(value: Array<number>): void;
+  addSkillProfileSidsToAssociate(value: number, index?: number): number;
+
+  clearSkillProfileSidsToDisassociateList(): void;
+  getSkillProfileSidsToDisassociateList(): Array<number>;
+  setSkillProfileSidsToDisassociateList(value: Array<number>): void;
+  addSkillProfileSidsToDisassociate(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSkillProfileGroupAssociationsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSkillProfileGroupAssociationsReq): UpdateSkillProfileGroupAssociationsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSkillProfileGroupAssociationsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSkillProfileGroupAssociationsReq;
+  static deserializeBinaryFromReader(message: UpdateSkillProfileGroupAssociationsReq, reader: jspb.BinaryReader): UpdateSkillProfileGroupAssociationsReq;
+}
+
+export namespace UpdateSkillProfileGroupAssociationsReq {
+  export type AsObject = {
+    skillProfileGroupSid: number,
+    skillProfileSidsToAssociateList: Array<number>,
+    skillProfileSidsToDisassociateList: Array<number>,
+  }
+}
+
+export class UpdateSkillProfileGroupAssociationsRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSkillProfileGroupAssociationsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSkillProfileGroupAssociationsRes): UpdateSkillProfileGroupAssociationsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSkillProfileGroupAssociationsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSkillProfileGroupAssociationsRes;
+  static deserializeBinaryFromReader(message: UpdateSkillProfileGroupAssociationsRes, reader: jspb.BinaryReader): UpdateSkillProfileGroupAssociationsRes;
+}
+
+export namespace UpdateSkillProfileGroupAssociationsRes {
   export type AsObject = {
   }
 }
@@ -1157,6 +1445,11 @@ export class BuildProfileForecastByIntervalReq extends jspb.Message {
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildProfileForecastByIntervalReq.AsObject;
   static toObject(includeInstance: boolean, msg: BuildProfileForecastByIntervalReq): BuildProfileForecastByIntervalReq.AsObject;
@@ -1172,6 +1465,7 @@ export namespace BuildProfileForecastByIntervalReq {
     callProfileTemplate?: CallProfileTemplate.AsObject,
     fixedAveragesForecast: boolean,
     skillProfileSid: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -1211,6 +1505,11 @@ export class CallDataByInterval extends jspb.Message {
   getIntervalWidthInMinutes(): number;
   setIntervalWidthInMinutes(value: number): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CallDataByInterval.AsObject;
   static toObject(includeInstance: boolean, msg: CallDataByInterval): CallDataByInterval.AsObject;
@@ -1234,6 +1533,7 @@ export namespace CallDataByInterval {
     isDelta: boolean,
     forecastDataIntervalSid: number,
     intervalWidthInMinutes: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -1248,6 +1548,11 @@ export class BuildProfileForecastByIntervalWithStatsReq extends jspb.Message {
 
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;
+
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildProfileForecastByIntervalWithStatsReq.AsObject;
@@ -1264,6 +1569,7 @@ export namespace BuildProfileForecastByIntervalWithStatsReq {
     callProfileTemplate?: CallProfileTemplate.AsObject,
     fixedAveragesForecast: boolean,
     skillProfileSid: number,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -1314,6 +1620,11 @@ export class UpsertProfileForecastReq extends jspb.Message {
   getFixedAveragesForecast(): boolean;
   setFixedAveragesForecast(value: boolean): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpsertProfileForecastReq.AsObject;
   static toObject(includeInstance: boolean, msg: UpsertProfileForecastReq): UpsertProfileForecastReq.AsObject;
@@ -1329,6 +1640,7 @@ export namespace UpsertProfileForecastReq {
     skillProfileSid: number,
     callProfileTemplate?: CallProfileTemplate.AsObject,
     fixedAveragesForecast: boolean,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -1835,6 +2147,28 @@ export namespace ListForecastIntervalsForSkillProfileReq {
   }
 }
 
+export class ListForecastIntervalsReq extends jspb.Message {
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListForecastIntervalsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListForecastIntervalsReq): ListForecastIntervalsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListForecastIntervalsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListForecastIntervalsReq;
+  static deserializeBinaryFromReader(message: ListForecastIntervalsReq, reader: jspb.BinaryReader): ListForecastIntervalsReq;
+}
+
+export namespace ListForecastIntervalsReq {
+  export type AsObject = {
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+  }
+}
+
 export class UpsertRegressionForecastReq extends jspb.Message {
   hasRegressionTemplate(): boolean;
   clearRegressionTemplate(): void;
@@ -1988,6 +2322,11 @@ export class DeleteForecastIntervalsReq extends jspb.Message {
   getForecastIntervalSids(): DeleteForecastIntervalsReq.IntervalSids | undefined;
   setForecastIntervalSids(value?: DeleteForecastIntervalsReq.IntervalSids): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   getForecastIntervalDeleteType(): DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap[keyof DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap];
   setForecastIntervalDeleteType(value: DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap[keyof DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap]): void;
 
@@ -2006,6 +2345,7 @@ export namespace DeleteForecastIntervalsReq {
   export type AsObject = {
     skillProfileSid: number,
     forecastIntervalSids?: DeleteForecastIntervalsReq.IntervalSids.AsObject,
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
     forecastIntervalDeleteType: DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap[keyof DeleteForecastIntervalsReq.ForecastIntervalDeleteTypeMap],
   }
 
@@ -2042,6 +2382,7 @@ export namespace DeleteForecastIntervalsReq {
     DELETE_PARAM_NOT_SET = 0,
     SKILL_PROFILE_SID = 1,
     FORECAST_INTERVAL_SIDS = 2,
+    SKILL_PROFILE_CATEGORY = 4,
   }
 }
 
@@ -2947,6 +3288,50 @@ export namespace UpdateProgramNodeRes {
   }
 }
 
+export class ListProgramNodesBySidReq extends jspb.Message {
+  clearProgramNodeSidsList(): void;
+  getProgramNodeSidsList(): Array<number>;
+  setProgramNodeSidsList(value: Array<number>): void;
+  addProgramNodeSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListProgramNodesBySidReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListProgramNodesBySidReq): ListProgramNodesBySidReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListProgramNodesBySidReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListProgramNodesBySidReq;
+  static deserializeBinaryFromReader(message: ListProgramNodesBySidReq, reader: jspb.BinaryReader): ListProgramNodesBySidReq;
+}
+
+export namespace ListProgramNodesBySidReq {
+  export type AsObject = {
+    programNodeSidsList: Array<number>,
+  }
+}
+
+export class ListProgramNodesBySidRes extends jspb.Message {
+  clearProgramNodesList(): void;
+  getProgramNodesList(): Array<ProgramNode>;
+  setProgramNodesList(value: Array<ProgramNode>): void;
+  addProgramNodes(value?: ProgramNode, index?: number): ProgramNode;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListProgramNodesBySidRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListProgramNodesBySidRes): ListProgramNodesBySidRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListProgramNodesBySidRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListProgramNodesBySidRes;
+  static deserializeBinaryFromReader(message: ListProgramNodesBySidRes, reader: jspb.BinaryReader): ListProgramNodesBySidRes;
+}
+
+export namespace ListProgramNodesBySidRes {
+  export type AsObject = {
+    programNodesList: Array<ProgramNode.AsObject>,
+  }
+}
+
 export class ParentEntity extends jspb.Message {
   getParentSid(): number;
   setParentSid(value: number): void;
@@ -3317,6 +3702,44 @@ export class UpdateNonSkillActivityRes extends jspb.Message {
 
 export namespace UpdateNonSkillActivityRes {
   export type AsObject = {
+  }
+}
+
+export class ListNonSkillActivitiesReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListNonSkillActivitiesReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListNonSkillActivitiesReq): ListNonSkillActivitiesReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListNonSkillActivitiesReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListNonSkillActivitiesReq;
+  static deserializeBinaryFromReader(message: ListNonSkillActivitiesReq, reader: jspb.BinaryReader): ListNonSkillActivitiesReq;
+}
+
+export namespace ListNonSkillActivitiesReq {
+  export type AsObject = {
+  }
+}
+
+export class ListNonSkillActivitiesRes extends jspb.Message {
+  clearNonSkillActivitiesList(): void;
+  getNonSkillActivitiesList(): Array<NonSkillActivity>;
+  setNonSkillActivitiesList(value: Array<NonSkillActivity>): void;
+  addNonSkillActivities(value?: NonSkillActivity, index?: number): NonSkillActivity;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListNonSkillActivitiesRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListNonSkillActivitiesRes): ListNonSkillActivitiesRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListNonSkillActivitiesRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListNonSkillActivitiesRes;
+  static deserializeBinaryFromReader(message: ListNonSkillActivitiesRes, reader: jspb.BinaryReader): ListNonSkillActivitiesRes;
+}
+
+export namespace ListNonSkillActivitiesRes {
+  export type AsObject = {
+    nonSkillActivitiesList: Array<NonSkillActivity.AsObject>,
   }
 }
 
@@ -3712,6 +4135,9 @@ export class ListAllWFMAgentsReq extends jspb.Message {
   getIncludeAgentGroups(): boolean;
   setIncludeAgentGroups(value: boolean): void;
 
+  getAgentGroupScheduleScenarioSid(): number;
+  setAgentGroupScheduleScenarioSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAllWFMAgentsReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListAllWFMAgentsReq): ListAllWFMAgentsReq.AsObject;
@@ -3727,6 +4153,7 @@ export namespace ListAllWFMAgentsReq {
     includeInactive: boolean,
     includeSkillProficiencies: boolean,
     includeAgentGroups: boolean,
+    agentGroupScheduleScenarioSid: number,
   }
 }
 
@@ -3871,6 +4298,47 @@ export class ListUngroupedWFMAgentsRes extends jspb.Message {
 export namespace ListUngroupedWFMAgentsRes {
   export type AsObject = {
     wfmAgentsList: Array<WFMAgent.AsObject>,
+  }
+}
+
+export class ListWFMAgentSidsReq extends jspb.Message {
+  clearTcnAgentSidsList(): void;
+  getTcnAgentSidsList(): Array<number>;
+  setTcnAgentSidsList(value: Array<number>): void;
+  addTcnAgentSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListWFMAgentSidsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListWFMAgentSidsReq): ListWFMAgentSidsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListWFMAgentSidsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListWFMAgentSidsReq;
+  static deserializeBinaryFromReader(message: ListWFMAgentSidsReq, reader: jspb.BinaryReader): ListWFMAgentSidsReq;
+}
+
+export namespace ListWFMAgentSidsReq {
+  export type AsObject = {
+    tcnAgentSidsList: Array<number>,
+  }
+}
+
+export class ListWFMAgentSidsRes extends jspb.Message {
+  getSidsMap(): jspb.Map<number, number>;
+  clearSidsMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListWFMAgentSidsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListWFMAgentSidsRes): ListWFMAgentSidsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListWFMAgentSidsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListWFMAgentSidsRes;
+  static deserializeBinaryFromReader(message: ListWFMAgentSidsRes, reader: jspb.BinaryReader): ListWFMAgentSidsRes;
+}
+
+export namespace ListWFMAgentSidsRes {
+  export type AsObject = {
+    sidsMap: Array<[number, number]>,
   }
 }
 
@@ -7328,6 +7796,74 @@ export namespace ListDraftSchedulesRes {
   }
 }
 
+export class ClearScheduleReq extends jspb.Message {
+  hasScheduleSelector(): boolean;
+  clearScheduleSelector(): void;
+  getScheduleSelector(): api_commons_wfm_pb.ScheduleSelector | undefined;
+  setScheduleSelector(value?: api_commons_wfm_pb.ScheduleSelector): void;
+
+  hasNodeSelector(): boolean;
+  clearNodeSelector(): void;
+  getNodeSelector(): ParentEntity | undefined;
+  setNodeSelector(value?: ParentEntity): void;
+
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  getInvertDatetimeRange(): boolean;
+  setInvertDatetimeRange(value: boolean): void;
+
+  getStartDatetimesOnly(): boolean;
+  setStartDatetimesOnly(value: boolean): void;
+
+  getDeleteLocked(): boolean;
+  setDeleteLocked(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ClearScheduleReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ClearScheduleReq): ClearScheduleReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ClearScheduleReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ClearScheduleReq;
+  static deserializeBinaryFromReader(message: ClearScheduleReq, reader: jspb.BinaryReader): ClearScheduleReq;
+}
+
+export namespace ClearScheduleReq {
+  export type AsObject = {
+    scheduleSelector?: api_commons_wfm_pb.ScheduleSelector.AsObject,
+    nodeSelector?: ParentEntity.AsObject,
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    invertDatetimeRange: boolean,
+    startDatetimesOnly: boolean,
+    deleteLocked: boolean,
+  }
+}
+
+export class ClearScheduleRes extends jspb.Message {
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ClearScheduleRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ClearScheduleRes): ClearScheduleRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ClearScheduleRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ClearScheduleRes;
+  static deserializeBinaryFromReader(message: ClearScheduleRes, reader: jspb.BinaryReader): ClearScheduleRes;
+}
+
+export namespace ClearScheduleRes {
+  export type AsObject = {
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
 export class DeleteDraftScheduleReq extends jspb.Message {
   getDraftScheduleSid(): number;
   setDraftScheduleSid(value: number): void;
@@ -7361,6 +7897,66 @@ export class DeleteDraftScheduleRes extends jspb.Message {
 
 export namespace DeleteDraftScheduleRes {
   export type AsObject = {
+  }
+}
+
+export class ListShiftInstancesBySidReq extends jspb.Message {
+  clearShiftInstanceSidsList(): void;
+  getShiftInstanceSidsList(): Array<number>;
+  setShiftInstanceSidsList(value: Array<number>): void;
+  addShiftInstanceSids(value: number, index?: number): number;
+
+  getIncludeShiftSegments(): boolean;
+  setIncludeShiftSegments(value: boolean): void;
+
+  getIncludeShiftTemplate(): boolean;
+  setIncludeShiftTemplate(value: boolean): void;
+
+  getIncludeSchedulingActivity(): boolean;
+  setIncludeSchedulingActivity(value: boolean): void;
+
+  getIncludeActivity(): boolean;
+  setIncludeActivity(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListShiftInstancesBySidReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListShiftInstancesBySidReq): ListShiftInstancesBySidReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListShiftInstancesBySidReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListShiftInstancesBySidReq;
+  static deserializeBinaryFromReader(message: ListShiftInstancesBySidReq, reader: jspb.BinaryReader): ListShiftInstancesBySidReq;
+}
+
+export namespace ListShiftInstancesBySidReq {
+  export type AsObject = {
+    shiftInstanceSidsList: Array<number>,
+    includeShiftSegments: boolean,
+    includeShiftTemplate: boolean,
+    includeSchedulingActivity: boolean,
+    includeActivity: boolean,
+  }
+}
+
+export class ListShiftInstancesBySidRes extends jspb.Message {
+  clearShiftInstancesList(): void;
+  getShiftInstancesList(): Array<ShiftInstance>;
+  setShiftInstancesList(value: Array<ShiftInstance>): void;
+  addShiftInstances(value?: ShiftInstance, index?: number): ShiftInstance;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListShiftInstancesBySidRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListShiftInstancesBySidRes): ListShiftInstancesBySidRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListShiftInstancesBySidRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListShiftInstancesBySidRes;
+  static deserializeBinaryFromReader(message: ListShiftInstancesBySidRes, reader: jspb.BinaryReader): ListShiftInstancesBySidRes;
+}
+
+export namespace ListShiftInstancesBySidRes {
+  export type AsObject = {
+    shiftInstancesList: Array<ShiftInstance.AsObject>,
   }
 }
 
@@ -8206,6 +8802,82 @@ export class DeleteSchedulingTargetRes extends jspb.Message {
 }
 
 export namespace DeleteSchedulingTargetRes {
+  export type AsObject = {
+  }
+}
+
+export class GetDefaultSchedulingTargetReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDefaultSchedulingTargetReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDefaultSchedulingTargetReq): GetDefaultSchedulingTargetReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDefaultSchedulingTargetReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDefaultSchedulingTargetReq;
+  static deserializeBinaryFromReader(message: GetDefaultSchedulingTargetReq, reader: jspb.BinaryReader): GetDefaultSchedulingTargetReq;
+}
+
+export namespace GetDefaultSchedulingTargetReq {
+  export type AsObject = {
+  }
+}
+
+export class GetDefaultSchedulingTargetRes extends jspb.Message {
+  hasSchedulingTarget(): boolean;
+  clearSchedulingTarget(): void;
+  getSchedulingTarget(): SchedulingTarget | undefined;
+  setSchedulingTarget(value?: SchedulingTarget): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDefaultSchedulingTargetRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDefaultSchedulingTargetRes): GetDefaultSchedulingTargetRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDefaultSchedulingTargetRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDefaultSchedulingTargetRes;
+  static deserializeBinaryFromReader(message: GetDefaultSchedulingTargetRes, reader: jspb.BinaryReader): GetDefaultSchedulingTargetRes;
+}
+
+export namespace GetDefaultSchedulingTargetRes {
+  export type AsObject = {
+    schedulingTarget?: SchedulingTarget.AsObject,
+  }
+}
+
+export class SetDefaultSchedulingTargetReq extends jspb.Message {
+  hasSchedulingTarget(): boolean;
+  clearSchedulingTarget(): void;
+  getSchedulingTarget(): SchedulingTarget | undefined;
+  setSchedulingTarget(value?: SchedulingTarget): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetDefaultSchedulingTargetReq.AsObject;
+  static toObject(includeInstance: boolean, msg: SetDefaultSchedulingTargetReq): SetDefaultSchedulingTargetReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetDefaultSchedulingTargetReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetDefaultSchedulingTargetReq;
+  static deserializeBinaryFromReader(message: SetDefaultSchedulingTargetReq, reader: jspb.BinaryReader): SetDefaultSchedulingTargetReq;
+}
+
+export namespace SetDefaultSchedulingTargetReq {
+  export type AsObject = {
+    schedulingTarget?: SchedulingTarget.AsObject,
+  }
+}
+
+export class SetDefaultSchedulingTargetRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetDefaultSchedulingTargetRes.AsObject;
+  static toObject(includeInstance: boolean, msg: SetDefaultSchedulingTargetRes): SetDefaultSchedulingTargetRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetDefaultSchedulingTargetRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetDefaultSchedulingTargetRes;
+  static deserializeBinaryFromReader(message: SetDefaultSchedulingTargetRes, reader: jspb.BinaryReader): SetDefaultSchedulingTargetRes;
+}
+
+export namespace SetDefaultSchedulingTargetRes {
   export type AsObject = {
   }
 }

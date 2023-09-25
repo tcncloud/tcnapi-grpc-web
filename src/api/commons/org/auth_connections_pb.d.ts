@@ -129,6 +129,7 @@ export namespace GroupItem {
 export interface ConnectionTypeMap {
   CONNECTION_TYPE_NONE: 0;
   CONNECTION_TYPE_OIDC: 1;
+  CONNECTION_TYPE_AZURE: 2;
 }
 
 export const ConnectionType: ConnectionTypeMap;

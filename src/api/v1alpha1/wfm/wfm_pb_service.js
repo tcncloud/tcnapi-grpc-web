@@ -127,6 +127,15 @@ WFM.BuildCallProfileTemplateForSkillProfile = {
   responseType: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateForSkillProfileRes
 };
 
+WFM.BuildCallProfileTemplate = {
+  methodName: "BuildCallProfileTemplate",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateRes
+};
+
 WFM.CreateInactiveSkillProfileMapping = {
   methodName: "CreateInactiveSkillProfileMapping",
   service: WFM,
@@ -152,6 +161,42 @@ WFM.DisconnectInactiveSkillProfileMapping = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingReq,
   responseType: api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingRes
+};
+
+WFM.CreateSkillProfileGroup = {
+  methodName: "CreateSkillProfileGroup",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupRes
+};
+
+WFM.UpdateSkillProfileGroup = {
+  methodName: "UpdateSkillProfileGroup",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupRes
+};
+
+WFM.ListSkillProfileGroups = {
+  methodName: "ListSkillProfileGroups",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsRes
+};
+
+WFM.UpdateSkillProfileGroupAssociations = {
+  methodName: "UpdateSkillProfileGroupAssociations",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsRes
 };
 
 WFM.DeleteHistoricalDataDeltas = {
@@ -259,6 +304,15 @@ WFM.ListForecastIntervalsForSkillProfile = {
   requestStream: false,
   responseStream: true,
   requestType: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsForSkillProfileReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.CallDataByInterval
+};
+
+WFM.ListForecastIntervals = {
+  methodName: "ListForecastIntervals",
+  service: WFM,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsReq,
   responseType: api_v1alpha1_wfm_wfm_pb.CallDataByInterval
 };
 
@@ -424,6 +478,15 @@ WFM.UpdateProgramNode = {
   responseType: api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeRes
 };
 
+WFM.ListProgramNodesBySid = {
+  methodName: "ListProgramNodesBySid",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidRes
+};
+
 WFM.CreateConstraintRule = {
   methodName: "CreateConstraintRule",
   service: WFM,
@@ -467,6 +530,15 @@ WFM.UpdateNonSkillActivity = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.UpdateNonSkillActivityReq,
   responseType: api_v1alpha1_wfm_wfm_pb.UpdateNonSkillActivityRes
+};
+
+WFM.ListNonSkillActivities = {
+  methodName: "ListNonSkillActivities",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListNonSkillActivitiesReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListNonSkillActivitiesRes
 };
 
 WFM.ListNonSkillActivityAssociations = {
@@ -539,6 +611,15 @@ WFM.ListUngroupedWFMAgents = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsReq,
   responseType: api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsRes
+};
+
+WFM.ListWFMAgentSids = {
+  methodName: "ListWFMAgentSids",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes
 };
 
 WFM.ListWFMAgentsAssociatedWithAgentGroup = {
@@ -910,6 +991,15 @@ WFM.ListDraftSchedules = {
   responseType: api_v1alpha1_wfm_wfm_pb.ListDraftSchedulesRes
 };
 
+WFM.ClearSchedule = {
+  methodName: "ClearSchedule",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ClearScheduleReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ClearScheduleRes
+};
+
 WFM.DeleteDraftSchedule = {
   methodName: "DeleteDraftSchedule",
   service: WFM,
@@ -917,6 +1007,15 @@ WFM.DeleteDraftSchedule = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.DeleteDraftScheduleReq,
   responseType: api_v1alpha1_wfm_wfm_pb.DeleteDraftScheduleRes
+};
+
+WFM.ListShiftInstancesBySid = {
+  methodName: "ListShiftInstancesBySid",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListShiftInstancesBySidReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListShiftInstancesBySidRes
 };
 
 WFM.CopyScheduleToSchedule = {
@@ -1025,6 +1124,24 @@ WFM.DeleteSchedulingTarget = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingTargetReq,
   responseType: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingTargetRes
+};
+
+WFM.GetDefaultSchedulingTarget = {
+  methodName: "GetDefaultSchedulingTarget",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetRes
+};
+
+WFM.SetDefaultSchedulingTarget = {
+  methodName: "SetDefaultSchedulingTarget",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetRes
 };
 
 WFM.GetPerformanceMetrics = {
@@ -1455,6 +1572,37 @@ WFMClient.prototype.buildCallProfileTemplateForSkillProfile = function buildCall
   };
 };
 
+WFMClient.prototype.buildCallProfileTemplate = function buildCallProfileTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.BuildCallProfileTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.createInactiveSkillProfileMapping = function createInactiveSkillProfileMapping(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -1522,6 +1670,130 @@ WFMClient.prototype.disconnectInactiveSkillProfileMapping = function disconnectI
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.DisconnectInactiveSkillProfileMapping, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createSkillProfileGroup = function createSkillProfileGroup(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateSkillProfileGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.updateSkillProfileGroup = function updateSkillProfileGroup(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdateSkillProfileGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listSkillProfileGroups = function listSkillProfileGroups(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListSkillProfileGroups, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.updateSkillProfileGroupAssociations = function updateSkillProfileGroupAssociations(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdateSkillProfileGroupAssociations, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1912,6 +2184,45 @@ WFMClient.prototype.listForecastIntervalsForSkillProfile = function listForecast
     status: []
   };
   var client = grpc.invoke(WFM.ListForecastIntervalsForSkillProfile, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listForecastIntervals = function listForecastIntervals(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(WFM.ListForecastIntervals, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2518,6 +2829,37 @@ WFMClient.prototype.updateProgramNode = function updateProgramNode(requestMessag
   };
 };
 
+WFMClient.prototype.listProgramNodesBySid = function listProgramNodesBySid(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListProgramNodesBySid, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.createConstraintRule = function createConstraintRule(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -2647,6 +2989,37 @@ WFMClient.prototype.updateNonSkillActivity = function updateNonSkillActivity(req
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.UpdateNonSkillActivity, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listNonSkillActivities = function listNonSkillActivities(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListNonSkillActivities, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2895,6 +3268,37 @@ WFMClient.prototype.listUngroupedWFMAgents = function listUngroupedWFMAgents(req
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.ListUngroupedWFMAgents, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listWFMAgentSids = function listWFMAgentSids(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListWFMAgentSids, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -4192,11 +4596,73 @@ WFMClient.prototype.listDraftSchedules = function listDraftSchedules(requestMess
   };
 };
 
+WFMClient.prototype.clearSchedule = function clearSchedule(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ClearSchedule, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.deleteDraftSchedule = function deleteDraftSchedule(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.DeleteDraftSchedule, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listShiftInstancesBySid = function listShiftInstancesBySid(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListShiftInstancesBySid, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -4569,6 +5035,68 @@ WFMClient.prototype.deleteSchedulingTarget = function deleteSchedulingTarget(req
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.DeleteSchedulingTarget, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.getDefaultSchedulingTarget = function getDefaultSchedulingTarget(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.GetDefaultSchedulingTarget, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.setDefaultSchedulingTarget = function setDefaultSchedulingTarget(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.SetDefaultSchedulingTarget, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

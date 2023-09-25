@@ -33,9 +33,14 @@ var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/fie
 goog.object.extend(proto, google_protobuf_field_mask_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
+goog.exportSymbol('proto.api.v1alpha1.delivery.AESEncryptionRef', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.AESPassword', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.CreateCredentialReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.CreateCredentialRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.CreateEncryptionReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.CreateEncryptionRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.CreateHistoryReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.CreateHistoryRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.CreateTransferConfigReq', null, global);
@@ -46,13 +51,29 @@ goog.exportSymbol('proto.api.v1alpha1.delivery.CredentialData.DataCase', null, g
 goog.exportSymbol('proto.api.v1alpha1.delivery.Credentials', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.DeleteCredentialReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.DeleteCredentialRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.DeleteEncryptionReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.DeleteEncryptionRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.DeleteTransferConfigReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.DeleteTransferConfigRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.DeliveryDefinition', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.DeliveryDefinition.EncryptionCase', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.DeliveryDefinition.TransportCase', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.Destination', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.Destination.ValueCase', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.EmailDestination', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.EmailTransport', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.Encryption', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.Encryption.EncryptionCase', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.GetCredentialReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.GetCredentialRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.GetEncryptionReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.GetEncryptionRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.GetHistoryReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.GetHistoryRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.GetTransferConfigByNameReq', null, global);
@@ -64,6 +85,12 @@ goog.exportSymbol('proto.api.v1alpha1.delivery.ID', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.ListByIDReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.ListCredentialsReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.ListCredentialsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.ListEncryptionsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.ListEncryptionsRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.ListHistoryByTransferConfigReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.ListHistoryByTransferConfigRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.ListHistoryReq', null, global);
@@ -73,10 +100,20 @@ goog.exportSymbol('proto.api.v1alpha1.delivery.ListTransferConfigsByCredentialID
 goog.exportSymbol('proto.api.v1alpha1.delivery.ListTransferConfigsByCredentialIDRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.ListTransferConfigsReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.ListTransferConfigsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.PGPEncryptionRef', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.PGPKeyPair', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.Password', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.PasswordRef', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.Room303Destination', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.Room303SystemMessage', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.Room303SystemMessage.UserCase', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.Room303Transport', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.Room303Transport.TransportCase', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.SFTPTransport', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.SFTPTransport.CredentialsCase', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.SMSTransport', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.SSHKeyPair', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.SSHKeyRef', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.SftpDestination', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.SftpSource', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.SmsDestination', null, global);
@@ -85,6 +122,10 @@ goog.exportSymbol('proto.api.v1alpha1.delivery.Source.ValueCase', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.TransferConfig', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.UpdateCredentialReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.UpdateCredentialRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.UpdateEncryptionReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.delivery.UpdateEncryptionRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.UpdateTransferConfigReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.UpdateTransferConfigRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.delivery.UserPassword', null, global);
@@ -549,6 +590,510 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.api.v1alpha1.delivery.GetHistoryRes.displayName = 'proto.api.v1alpha1.delivery.GetHistoryRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.displayName = 'proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.displayName = 'proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.displayName = 'proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes.displayName = 'proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.displayName = 'proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.displayName = 'proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.displayName = 'proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.displayName = 'proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.displayName = 'proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.displayName = 'proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.displayName = 'proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.displayName = 'proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.displayName = 'proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.displayName = 'proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.CreateEncryptionReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.CreateEncryptionReq.displayName = 'proto.api.v1alpha1.delivery.CreateEncryptionReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.CreateEncryptionRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.CreateEncryptionRes.displayName = 'proto.api.v1alpha1.delivery.CreateEncryptionRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.DeleteEncryptionReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.DeleteEncryptionReq.displayName = 'proto.api.v1alpha1.delivery.DeleteEncryptionReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.DeleteEncryptionRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.DeleteEncryptionRes.displayName = 'proto.api.v1alpha1.delivery.DeleteEncryptionRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.GetEncryptionReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.GetEncryptionReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.GetEncryptionReq.displayName = 'proto.api.v1alpha1.delivery.GetEncryptionReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.GetEncryptionRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.GetEncryptionRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.GetEncryptionRes.displayName = 'proto.api.v1alpha1.delivery.GetEncryptionRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.ListEncryptionsReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.ListEncryptionsReq.displayName = 'proto.api.v1alpha1.delivery.ListEncryptionsReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.delivery.ListEncryptionsRes.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.ListEncryptionsRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.ListEncryptionsRes.displayName = 'proto.api.v1alpha1.delivery.ListEncryptionsRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.UpdateEncryptionReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.UpdateEncryptionReq.displayName = 'proto.api.v1alpha1.delivery.UpdateEncryptionReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.UpdateEncryptionRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.UpdateEncryptionRes.displayName = 'proto.api.v1alpha1.delivery.UpdateEncryptionRes';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1179,6 +1724,237 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.api.v1alpha1.delivery.Credentials.displayName = 'proto.api.v1alpha1.delivery.Credentials';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.api.v1alpha1.delivery.DeliveryDefinition.oneofGroups_);
+};
+goog.inherits(proto.api.v1alpha1.delivery.DeliveryDefinition, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.DeliveryDefinition.displayName = 'proto.api.v1alpha1.delivery.DeliveryDefinition';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.SFTPTransport = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.api.v1alpha1.delivery.SFTPTransport.oneofGroups_);
+};
+goog.inherits(proto.api.v1alpha1.delivery.SFTPTransport, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.SFTPTransport.displayName = 'proto.api.v1alpha1.delivery.SFTPTransport';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.EmailTransport = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.EmailTransport, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.EmailTransport.displayName = 'proto.api.v1alpha1.delivery.EmailTransport';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.Room303Transport = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.api.v1alpha1.delivery.Room303Transport.oneofGroups_);
+};
+goog.inherits(proto.api.v1alpha1.delivery.Room303Transport, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.Room303Transport.displayName = 'proto.api.v1alpha1.delivery.Room303Transport';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.api.v1alpha1.delivery.Room303SystemMessage.oneofGroups_);
+};
+goog.inherits(proto.api.v1alpha1.delivery.Room303SystemMessage, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.Room303SystemMessage.displayName = 'proto.api.v1alpha1.delivery.Room303SystemMessage';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.SMSTransport = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.SMSTransport, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.SMSTransport.displayName = 'proto.api.v1alpha1.delivery.SMSTransport';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.AESEncryptionRef = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.AESEncryptionRef, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.AESEncryptionRef.displayName = 'proto.api.v1alpha1.delivery.AESEncryptionRef';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.PGPEncryptionRef = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.PGPEncryptionRef, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.PGPEncryptionRef.displayName = 'proto.api.v1alpha1.delivery.PGPEncryptionRef';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.PasswordRef = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.PasswordRef, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.PasswordRef.displayName = 'proto.api.v1alpha1.delivery.PasswordRef';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.SSHKeyRef = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.delivery.SSHKeyRef, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.SSHKeyRef.displayName = 'proto.api.v1alpha1.delivery.SSHKeyRef';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.delivery.Encryption = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.api.v1alpha1.delivery.Encryption.oneofGroups_);
+};
+goog.inherits(proto.api.v1alpha1.delivery.Encryption, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.delivery.Encryption.displayName = 'proto.api.v1alpha1.delivery.Encryption';
 }
 
 
@@ -5299,6 +6075,4199 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    definition: (f = msg.getDefinition()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq}
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq;
+  return proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq}
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.DeliveryDefinition;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.DeliveryDefinition.deserializeBinaryFromReader);
+      msg.setDefinition(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getDefinition();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.DeliveryDefinition.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional DeliveryDefinition definition = 1;
+ * @return {?proto.api.v1alpha1.delivery.DeliveryDefinition}
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.prototype.getDefinition = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.DeliveryDefinition} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.DeliveryDefinition, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.DeliveryDefinition|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq} returns this
+*/
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.prototype.setDefinition = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq} returns this
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.prototype.clearDefinition = function() {
+  return this.setDefinition(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.prototype.hasDefinition = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes}
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes;
+  return proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes}
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.ID;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.ID.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.ID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ID entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.ID}
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.ID} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.ID, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.ID|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes} returns this
+*/
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes} returns this
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq}
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq;
+  return proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq}
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.ID;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.ID.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.ID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ID entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.ID}
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.ID} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.ID, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.ID|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq} returns this
+*/
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq} returns this
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes}
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes;
+  return proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes}
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f),
+    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq;
+  return proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.DeliveryDefinition;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.DeliveryDefinition.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    case 2:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setMask(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.DeliveryDefinition.serializeBinaryToWriter
+    );
+  }
+  f = message.getMask();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional DeliveryDefinition entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.DeliveryDefinition}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.DeliveryDefinition} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.DeliveryDefinition, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.DeliveryDefinition|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq} returns this
+*/
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq} returns this
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldMask mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.prototype.getMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq} returns this
+*/
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.prototype.setMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq} returns this
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.prototype.clearMask = function() {
+  return this.setMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.prototype.hasMask = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes;
+  return proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.DeliveryDefinition;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.DeliveryDefinition.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.DeliveryDefinition.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional DeliveryDefinition entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.DeliveryDefinition}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.DeliveryDefinition} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.DeliveryDefinition, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.DeliveryDefinition|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes} returns this
+*/
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes} returns this
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq;
+  return proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 2:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setMask(value);
+      break;
+    case 3:
+      var value = new proto.api.v1alpha1.delivery.DeliveryDefinition;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.DeliveryDefinition.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getMask();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.api.v1alpha1.delivery.DeliveryDefinition.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string name = 1;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq} returns this
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional google.protobuf.FieldMask mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.prototype.getMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq} returns this
+*/
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.prototype.setMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq} returns this
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.prototype.clearMask = function() {
+  return this.setMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.prototype.hasMask = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional DeliveryDefinition entity = 3;
+ * @return {?proto.api.v1alpha1.delivery.DeliveryDefinition}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.DeliveryDefinition} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.DeliveryDefinition, 3));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.DeliveryDefinition|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq} returns this
+*/
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq} returns this
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes;
+  return proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.DeliveryDefinition;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.DeliveryDefinition.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.DeliveryDefinition.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional DeliveryDefinition entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.DeliveryDefinition}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.DeliveryDefinition} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.DeliveryDefinition, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.DeliveryDefinition|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes} returns this
+*/
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes} returns this
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f),
+    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+    listReq: (f = msg.getListReq()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq;
+  return proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.DeliveryDefinition;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.DeliveryDefinition.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    case 2:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setMask(value);
+      break;
+    case 3:
+      var value = new proto.api.v1alpha1.delivery.ListReq;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.ListReq.deserializeBinaryFromReader);
+      msg.setListReq(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.DeliveryDefinition.serializeBinaryToWriter
+    );
+  }
+  f = message.getMask();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+  f = message.getListReq();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.api.v1alpha1.delivery.ListReq.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional DeliveryDefinition entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.DeliveryDefinition}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.DeliveryDefinition} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.DeliveryDefinition, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.DeliveryDefinition|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq} returns this
+*/
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq} returns this
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldMask mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.getMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq} returns this
+*/
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.setMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq} returns this
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.clearMask = function() {
+  return this.setMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.hasMask = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional ListReq list_req = 3;
+ * @return {?proto.api.v1alpha1.delivery.ListReq}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.getListReq = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.ListReq} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.ListReq, 3));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.ListReq|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq} returns this
+*/
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.setListReq = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq} returns this
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.clearListReq = function() {
+  return this.setListReq(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.hasListReq = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+    proto.api.v1alpha1.delivery.DeliveryDefinition.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes;
+  return proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.DeliveryDefinition;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.DeliveryDefinition.deserializeBinaryFromReader);
+      msg.addEntities(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntitiesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.DeliveryDefinition.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated DeliveryDefinition entities = 1;
+ * @return {!Array<!proto.api.v1alpha1.delivery.DeliveryDefinition>}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.prototype.getEntitiesList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.delivery.DeliveryDefinition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.delivery.DeliveryDefinition, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.delivery.DeliveryDefinition>} value
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes} returns this
+*/
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.prototype.setEntitiesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.delivery.DeliveryDefinition=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.prototype.addEntities = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.delivery.DeliveryDefinition, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes} returns this
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.prototype.clearEntitiesList = function() {
+  return this.setEntitiesList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f),
+    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+    credentialSid: (f = msg.getCredentialSid()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f),
+    listReq: (f = msg.getListReq()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq;
+  return proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.DeliveryDefinition;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.DeliveryDefinition.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    case 2:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setMask(value);
+      break;
+    case 3:
+      var value = new proto.api.v1alpha1.delivery.ID;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.ID.deserializeBinaryFromReader);
+      msg.setCredentialSid(value);
+      break;
+    case 4:
+      var value = new proto.api.v1alpha1.delivery.ListReq;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.ListReq.deserializeBinaryFromReader);
+      msg.setListReq(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.DeliveryDefinition.serializeBinaryToWriter
+    );
+  }
+  f = message.getMask();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+  f = message.getCredentialSid();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.api.v1alpha1.delivery.ID.serializeBinaryToWriter
+    );
+  }
+  f = message.getListReq();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.api.v1alpha1.delivery.ListReq.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional DeliveryDefinition entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.DeliveryDefinition}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.DeliveryDefinition} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.DeliveryDefinition, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.DeliveryDefinition|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq} returns this
+*/
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq} returns this
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldMask mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.getMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq} returns this
+*/
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.setMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq} returns this
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.clearMask = function() {
+  return this.setMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.hasMask = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional ID credential_sid = 3;
+ * @return {?proto.api.v1alpha1.delivery.ID}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.getCredentialSid = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.ID} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.ID, 3));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.ID|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq} returns this
+*/
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.setCredentialSid = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq} returns this
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.clearCredentialSid = function() {
+  return this.setCredentialSid(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.hasCredentialSid = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional ListReq list_req = 4;
+ * @return {?proto.api.v1alpha1.delivery.ListReq}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.getListReq = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.ListReq} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.ListReq, 4));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.ListReq|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq} returns this
+*/
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.setListReq = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq} returns this
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.clearListReq = function() {
+  return this.setListReq(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.hasListReq = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+    proto.api.v1alpha1.delivery.DeliveryDefinition.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes;
+  return proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.DeliveryDefinition;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.DeliveryDefinition.deserializeBinaryFromReader);
+      msg.addEntities(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntitiesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.DeliveryDefinition.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated DeliveryDefinition entities = 1;
+ * @return {!Array<!proto.api.v1alpha1.delivery.DeliveryDefinition>}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.prototype.getEntitiesList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.delivery.DeliveryDefinition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.delivery.DeliveryDefinition, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.delivery.DeliveryDefinition>} value
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes} returns this
+*/
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.prototype.setEntitiesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.delivery.DeliveryDefinition=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition}
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.prototype.addEntities = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.delivery.DeliveryDefinition, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes} returns this
+ */
+proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.prototype.clearEntitiesList = function() {
+  return this.setEntitiesList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f),
+    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq;
+  return proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.DeliveryDefinition;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.DeliveryDefinition.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    case 2:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setMask(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.DeliveryDefinition.serializeBinaryToWriter
+    );
+  }
+  f = message.getMask();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional DeliveryDefinition entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.DeliveryDefinition}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.DeliveryDefinition} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.DeliveryDefinition, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.DeliveryDefinition|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq} returns this
+*/
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq} returns this
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldMask mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.prototype.getMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq} returns this
+*/
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.prototype.setMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq} returns this
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.prototype.clearMask = function() {
+  return this.setMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.prototype.hasMask = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes;
+  return proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.ID;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.ID.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.ID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ID entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.ID}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.ID} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.ID, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.ID|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes} returns this
+*/
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes} returns this
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.CreateEncryptionReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.CreateEncryptionReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    encryption: (f = msg.getEncryption()) && proto.api.v1alpha1.delivery.Encryption.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.CreateEncryptionReq}
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.CreateEncryptionReq;
+  return proto.api.v1alpha1.delivery.CreateEncryptionReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.CreateEncryptionReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.CreateEncryptionReq}
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.Encryption;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.Encryption.deserializeBinaryFromReader);
+      msg.setEncryption(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.CreateEncryptionReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.CreateEncryptionReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEncryption();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.Encryption.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional Encryption encryption = 1;
+ * @return {?proto.api.v1alpha1.delivery.Encryption}
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionReq.prototype.getEncryption = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.Encryption} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.Encryption, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.Encryption|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.CreateEncryptionReq} returns this
+*/
+proto.api.v1alpha1.delivery.CreateEncryptionReq.prototype.setEncryption = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.CreateEncryptionReq} returns this
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionReq.prototype.clearEncryption = function() {
+  return this.setEncryption(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionReq.prototype.hasEncryption = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.CreateEncryptionRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.CreateEncryptionRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.CreateEncryptionRes}
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.CreateEncryptionRes;
+  return proto.api.v1alpha1.delivery.CreateEncryptionRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.CreateEncryptionRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.CreateEncryptionRes}
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.ID;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.ID.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.CreateEncryptionRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.CreateEncryptionRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.ID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ID entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.ID}
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionRes.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.ID} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.ID, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.ID|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.CreateEncryptionRes} returns this
+*/
+proto.api.v1alpha1.delivery.CreateEncryptionRes.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.CreateEncryptionRes} returns this
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionRes.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.CreateEncryptionRes.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.DeleteEncryptionReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.DeleteEncryptionReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f),
+    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.DeleteEncryptionReq}
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.DeleteEncryptionReq;
+  return proto.api.v1alpha1.delivery.DeleteEncryptionReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.DeleteEncryptionReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.DeleteEncryptionReq}
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.ID;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.ID.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    case 2:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setMask(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.DeleteEncryptionReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.DeleteEncryptionReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.ID.serializeBinaryToWriter
+    );
+  }
+  f = message.getMask();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ID entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.ID}
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.ID} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.ID, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.ID|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.DeleteEncryptionReq} returns this
+*/
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.DeleteEncryptionReq} returns this
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldMask mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.prototype.getMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.DeleteEncryptionReq} returns this
+*/
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.prototype.setMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.DeleteEncryptionReq} returns this
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.prototype.clearMask = function() {
+  return this.setMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionReq.prototype.hasMask = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.DeleteEncryptionRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.DeleteEncryptionRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.DeleteEncryptionRes}
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.DeleteEncryptionRes;
+  return proto.api.v1alpha1.delivery.DeleteEncryptionRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.DeleteEncryptionRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.DeleteEncryptionRes}
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.DeleteEncryptionRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.DeleteEncryptionRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.DeleteEncryptionRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.GetEncryptionReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.GetEncryptionReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.GetEncryptionReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Encryption.toObject(includeInstance, f),
+    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.GetEncryptionReq}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.GetEncryptionReq;
+  return proto.api.v1alpha1.delivery.GetEncryptionReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.GetEncryptionReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.GetEncryptionReq}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.Encryption;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.Encryption.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    case 2:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setMask(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.GetEncryptionReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.GetEncryptionReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.GetEncryptionReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.Encryption.serializeBinaryToWriter
+    );
+  }
+  f = message.getMask();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional Encryption entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.Encryption}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionReq.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.Encryption} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.Encryption, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.Encryption|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.GetEncryptionReq} returns this
+*/
+proto.api.v1alpha1.delivery.GetEncryptionReq.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.GetEncryptionReq} returns this
+ */
+proto.api.v1alpha1.delivery.GetEncryptionReq.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionReq.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldMask mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionReq.prototype.getMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.GetEncryptionReq} returns this
+*/
+proto.api.v1alpha1.delivery.GetEncryptionReq.prototype.setMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.GetEncryptionReq} returns this
+ */
+proto.api.v1alpha1.delivery.GetEncryptionReq.prototype.clearMask = function() {
+  return this.setMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionReq.prototype.hasMask = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.GetEncryptionRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.GetEncryptionRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.GetEncryptionRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Encryption.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.GetEncryptionRes}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.GetEncryptionRes;
+  return proto.api.v1alpha1.delivery.GetEncryptionRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.GetEncryptionRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.GetEncryptionRes}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.Encryption;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.Encryption.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.GetEncryptionRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.GetEncryptionRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.GetEncryptionRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.Encryption.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional Encryption entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.Encryption}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionRes.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.Encryption} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.Encryption, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.Encryption|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.GetEncryptionRes} returns this
+*/
+proto.api.v1alpha1.delivery.GetEncryptionRes.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.GetEncryptionRes} returns this
+ */
+proto.api.v1alpha1.delivery.GetEncryptionRes.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.GetEncryptionRes.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.ListEncryptionsReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.ListEncryptionsReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f),
+    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.ListEncryptionsReq}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.ListEncryptionsReq;
+  return proto.api.v1alpha1.delivery.ListEncryptionsReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.ListEncryptionsReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.ListEncryptionsReq}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.ListReq;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.ListReq.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    case 2:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setMask(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.ListEncryptionsReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.ListEncryptionsReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.ListReq.serializeBinaryToWriter
+    );
+  }
+  f = message.getMask();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ListReq entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.ListReq}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsReq.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.ListReq} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.ListReq, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.ListReq|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.ListEncryptionsReq} returns this
+*/
+proto.api.v1alpha1.delivery.ListEncryptionsReq.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.ListEncryptionsReq} returns this
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsReq.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsReq.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldMask mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsReq.prototype.getMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.ListEncryptionsReq} returns this
+*/
+proto.api.v1alpha1.delivery.ListEncryptionsReq.prototype.setMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.ListEncryptionsReq} returns this
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsReq.prototype.clearMask = function() {
+  return this.setMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsReq.prototype.hasMask = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsRes.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.ListEncryptionsRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.ListEncryptionsRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+    proto.api.v1alpha1.delivery.Encryption.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.ListEncryptionsRes}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.ListEncryptionsRes;
+  return proto.api.v1alpha1.delivery.ListEncryptionsRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.ListEncryptionsRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.ListEncryptionsRes}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.Encryption;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.Encryption.deserializeBinaryFromReader);
+      msg.addEntities(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.ListEncryptionsRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.ListEncryptionsRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntitiesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.Encryption.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated Encryption entities = 1;
+ * @return {!Array<!proto.api.v1alpha1.delivery.Encryption>}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsRes.prototype.getEntitiesList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.delivery.Encryption>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.delivery.Encryption, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.delivery.Encryption>} value
+ * @return {!proto.api.v1alpha1.delivery.ListEncryptionsRes} returns this
+*/
+proto.api.v1alpha1.delivery.ListEncryptionsRes.prototype.setEntitiesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.delivery.Encryption=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.delivery.Encryption}
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsRes.prototype.addEntities = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.delivery.Encryption, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.delivery.ListEncryptionsRes} returns this
+ */
+proto.api.v1alpha1.delivery.ListEncryptionsRes.prototype.clearEntitiesList = function() {
+  return this.setEntitiesList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.UpdateEncryptionReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.UpdateEncryptionReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Encryption.toObject(includeInstance, f),
+    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.UpdateEncryptionReq}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.UpdateEncryptionReq;
+  return proto.api.v1alpha1.delivery.UpdateEncryptionReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.UpdateEncryptionReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.UpdateEncryptionReq}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.Encryption;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.Encryption.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    case 2:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setMask(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.UpdateEncryptionReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.UpdateEncryptionReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.Encryption.serializeBinaryToWriter
+    );
+  }
+  f = message.getMask();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional Encryption entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.Encryption}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.Encryption} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.Encryption, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.Encryption|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.UpdateEncryptionReq} returns this
+*/
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.UpdateEncryptionReq} returns this
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldMask mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.prototype.getMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.UpdateEncryptionReq} returns this
+*/
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.prototype.setMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.UpdateEncryptionReq} returns this
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.prototype.clearMask = function() {
+  return this.setMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionReq.prototype.hasMask = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.UpdateEncryptionRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.UpdateEncryptionRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.UpdateEncryptionRes}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.UpdateEncryptionRes;
+  return proto.api.v1alpha1.delivery.UpdateEncryptionRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.UpdateEncryptionRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.UpdateEncryptionRes}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.ID;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.ID.deserializeBinaryFromReader);
+      msg.setEntity(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.UpdateEncryptionRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.UpdateEncryptionRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEntity();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.ID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ID entity = 1;
+ * @return {?proto.api.v1alpha1.delivery.ID}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionRes.prototype.getEntity = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.ID} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.ID, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.ID|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.UpdateEncryptionRes} returns this
+*/
+proto.api.v1alpha1.delivery.UpdateEncryptionRes.prototype.setEntity = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.UpdateEncryptionRes} returns this
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionRes.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.UpdateEncryptionRes.prototype.hasEntity = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
 proto.api.v1alpha1.delivery.TransferConfig.prototype.toObject = function(opt_includeInstance) {
   return proto.api.v1alpha1.delivery.TransferConfig.toObject(opt_includeInstance, this);
 };
@@ -7830,7 +12799,8 @@ proto.api.v1alpha1.delivery.Room303Destination.prototype.toObject = function(opt
 proto.api.v1alpha1.delivery.Room303Destination.toObject = function(includeInstance, msg) {
   var f, obj = {
     room: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    username: jspb.Message.getFieldWithDefault(msg, 2, "")
+    username: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -7875,6 +12845,10 @@ proto.api.v1alpha1.delivery.Room303Destination.deserializeBinaryFromReader = fun
       var value = /** @type {string} */ (reader.readString());
       msg.setUsername(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -7918,6 +12892,13 @@ proto.api.v1alpha1.delivery.Room303Destination.serializeBinaryToWriter = functio
       f
     );
   }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -7954,6 +12935,24 @@ proto.api.v1alpha1.delivery.Room303Destination.prototype.getUsername = function(
  */
 proto.api.v1alpha1.delivery.Room303Destination.prototype.setUsername = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string user_id = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.Room303Destination.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.Room303Destination} returns this
+ */
+proto.api.v1alpha1.delivery.Room303Destination.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -11686,6 +16685,2715 @@ proto.api.v1alpha1.delivery.Credentials.prototype.addEntities = function(opt_val
  */
 proto.api.v1alpha1.delivery.Credentials.prototype.clearEntitiesList = function() {
   return this.setEntitiesList([]);
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.oneofGroups_ = [[9,10,11,12],[13,14]];
+
+/**
+ * @enum {number}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.TransportCase = {
+  TRANSPORT_NOT_SET: 0,
+  SFTP: 9,
+  EMAIL: 10,
+  ROOM303: 11,
+  SMS: 12
+};
+
+/**
+ * @return {proto.api.v1alpha1.delivery.DeliveryDefinition.TransportCase}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getTransportCase = function() {
+  return /** @type {proto.api.v1alpha1.delivery.DeliveryDefinition.TransportCase} */(jspb.Message.computeOneofCase(this, proto.api.v1alpha1.delivery.DeliveryDefinition.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.EncryptionCase = {
+  ENCRYPTION_NOT_SET: 0,
+  AES: 13,
+  PGP: 14
+};
+
+/**
+ * @return {proto.api.v1alpha1.delivery.DeliveryDefinition.EncryptionCase}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getEncryptionCase = function() {
+  return /** @type {proto.api.v1alpha1.delivery.DeliveryDefinition.EncryptionCase} */(jspb.Message.computeOneofCase(this, proto.api.v1alpha1.delivery.DeliveryDefinition.oneofGroups_[1]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.DeliveryDefinition} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    deliveryDefinitionSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    ttl: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    sftp: (f = msg.getSftp()) && proto.api.v1alpha1.delivery.SFTPTransport.toObject(includeInstance, f),
+    email: (f = msg.getEmail()) && proto.api.v1alpha1.delivery.EmailTransport.toObject(includeInstance, f),
+    room303: (f = msg.getRoom303()) && proto.api.v1alpha1.delivery.Room303Transport.toObject(includeInstance, f),
+    sms: (f = msg.getSms()) && proto.api.v1alpha1.delivery.SMSTransport.toObject(includeInstance, f),
+    aes: (f = msg.getAes()) && proto.api.v1alpha1.delivery.AESEncryptionRef.toObject(includeInstance, f),
+    pgp: (f = msg.getPgp()) && proto.api.v1alpha1.delivery.PGPEncryptionRef.toObject(includeInstance, f),
+    createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.DeliveryDefinition;
+  return proto.api.v1alpha1.delivery.DeliveryDefinition.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.DeliveryDefinition} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setDeliveryDefinitionSid(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTtl(value);
+      break;
+    case 9:
+      var value = new proto.api.v1alpha1.delivery.SFTPTransport;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.SFTPTransport.deserializeBinaryFromReader);
+      msg.setSftp(value);
+      break;
+    case 10:
+      var value = new proto.api.v1alpha1.delivery.EmailTransport;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.EmailTransport.deserializeBinaryFromReader);
+      msg.setEmail(value);
+      break;
+    case 11:
+      var value = new proto.api.v1alpha1.delivery.Room303Transport;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.Room303Transport.deserializeBinaryFromReader);
+      msg.setRoom303(value);
+      break;
+    case 12:
+      var value = new proto.api.v1alpha1.delivery.SMSTransport;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.SMSTransport.deserializeBinaryFromReader);
+      msg.setSms(value);
+      break;
+    case 13:
+      var value = new proto.api.v1alpha1.delivery.AESEncryptionRef;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.AESEncryptionRef.deserializeBinaryFromReader);
+      msg.setAes(value);
+      break;
+    case 14:
+      var value = new proto.api.v1alpha1.delivery.PGPEncryptionRef;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.PGPEncryptionRef.deserializeBinaryFromReader);
+      msg.setPgp(value);
+      break;
+    case 15:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreatedOn(value);
+      break;
+    case 16:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setLastEdited(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.DeliveryDefinition.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.DeliveryDefinition} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getDeliveryDefinitionSid();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      1,
+      f
+    );
+  }
+  f = message.getOrgId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getTtl();
+  if (f !== 0) {
+    writer.writeInt32(
+      8,
+      f
+    );
+  }
+  f = message.getSftp();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.api.v1alpha1.delivery.SFTPTransport.serializeBinaryToWriter
+    );
+  }
+  f = message.getEmail();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      proto.api.v1alpha1.delivery.EmailTransport.serializeBinaryToWriter
+    );
+  }
+  f = message.getRoom303();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      proto.api.v1alpha1.delivery.Room303Transport.serializeBinaryToWriter
+    );
+  }
+  f = message.getSms();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      proto.api.v1alpha1.delivery.SMSTransport.serializeBinaryToWriter
+    );
+  }
+  f = message.getAes();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      proto.api.v1alpha1.delivery.AESEncryptionRef.serializeBinaryToWriter
+    );
+  }
+  f = message.getPgp();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      proto.api.v1alpha1.delivery.PGPEncryptionRef.serializeBinaryToWriter
+    );
+  }
+  f = message.getCreatedOn();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getLastEdited();
+  if (f != null) {
+    writer.writeMessage(
+      16,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional int64 delivery_definition_sid = 1;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getDeliveryDefinitionSid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.setDeliveryDefinitionSid = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 1, value);
+};
+
+
+/**
+ * optional string org_id = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getOrgId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.setOrgId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string description = 4;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional int32 ttl = 8;
+ * @return {number}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getTtl = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.setTtl = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional SFTPTransport sftp = 9;
+ * @return {?proto.api.v1alpha1.delivery.SFTPTransport}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getSftp = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.SFTPTransport} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.SFTPTransport, 9));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.SFTPTransport|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+*/
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.setSftp = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 9, proto.api.v1alpha1.delivery.DeliveryDefinition.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.clearSftp = function() {
+  return this.setSftp(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.hasSftp = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional EmailTransport email = 10;
+ * @return {?proto.api.v1alpha1.delivery.EmailTransport}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getEmail = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.EmailTransport} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.EmailTransport, 10));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.EmailTransport|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+*/
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.setEmail = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 10, proto.api.v1alpha1.delivery.DeliveryDefinition.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.clearEmail = function() {
+  return this.setEmail(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.hasEmail = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional Room303Transport room303 = 11;
+ * @return {?proto.api.v1alpha1.delivery.Room303Transport}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getRoom303 = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.Room303Transport} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.Room303Transport, 11));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.Room303Transport|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+*/
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.setRoom303 = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 11, proto.api.v1alpha1.delivery.DeliveryDefinition.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.clearRoom303 = function() {
+  return this.setRoom303(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.hasRoom303 = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional SMSTransport sms = 12;
+ * @return {?proto.api.v1alpha1.delivery.SMSTransport}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getSms = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.SMSTransport} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.SMSTransport, 12));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.SMSTransport|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+*/
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.setSms = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 12, proto.api.v1alpha1.delivery.DeliveryDefinition.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.clearSms = function() {
+  return this.setSms(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.hasSms = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional AESEncryptionRef aes = 13;
+ * @return {?proto.api.v1alpha1.delivery.AESEncryptionRef}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getAes = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.AESEncryptionRef} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.AESEncryptionRef, 13));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.AESEncryptionRef|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+*/
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.setAes = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 13, proto.api.v1alpha1.delivery.DeliveryDefinition.oneofGroups_[1], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.clearAes = function() {
+  return this.setAes(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.hasAes = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional PGPEncryptionRef pgp = 14;
+ * @return {?proto.api.v1alpha1.delivery.PGPEncryptionRef}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getPgp = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.PGPEncryptionRef} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.PGPEncryptionRef, 14));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.PGPEncryptionRef|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+*/
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.setPgp = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 14, proto.api.v1alpha1.delivery.DeliveryDefinition.oneofGroups_[1], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.clearPgp = function() {
+  return this.setPgp(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.hasPgp = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp created_on = 15;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getCreatedOn = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 15));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+*/
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.setCreatedOn = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.clearCreatedOn = function() {
+  return this.setCreatedOn(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.hasCreatedOn = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp last_edited = 16;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.getLastEdited = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 16));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+*/
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.setLastEdited = function(value) {
+  return jspb.Message.setWrapperField(this, 16, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.DeliveryDefinition} returns this
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.clearLastEdited = function() {
+  return this.setLastEdited(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.hasLastEdited = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.oneofGroups_ = [[3,4]];
+
+/**
+ * @enum {number}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.CredentialsCase = {
+  CREDENTIALS_NOT_SET: 0,
+  PASSWORD: 3,
+  SSH_KEY: 4
+};
+
+/**
+ * @return {proto.api.v1alpha1.delivery.SFTPTransport.CredentialsCase}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.getCredentialsCase = function() {
+  return /** @type {proto.api.v1alpha1.delivery.SFTPTransport.CredentialsCase} */(jspb.Message.computeOneofCase(this, proto.api.v1alpha1.delivery.SFTPTransport.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.SFTPTransport.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.SFTPTransport} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    host: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    port: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    password: (f = msg.getPassword()) && proto.api.v1alpha1.delivery.PasswordRef.toObject(includeInstance, f),
+    sshKey: (f = msg.getSshKey()) && proto.api.v1alpha1.delivery.SSHKeyRef.toObject(includeInstance, f),
+    username: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    baseDir: jspb.Message.getFieldWithDefault(msg, 6, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.SFTPTransport}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.SFTPTransport;
+  return proto.api.v1alpha1.delivery.SFTPTransport.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.SFTPTransport} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.SFTPTransport}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHost(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPort(value);
+      break;
+    case 3:
+      var value = new proto.api.v1alpha1.delivery.PasswordRef;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.PasswordRef.deserializeBinaryFromReader);
+      msg.setPassword(value);
+      break;
+    case 4:
+      var value = new proto.api.v1alpha1.delivery.SSHKeyRef;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.SSHKeyRef.deserializeBinaryFromReader);
+      msg.setSshKey(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBaseDir(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.SFTPTransport.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.SFTPTransport} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getHost();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getPort();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = message.getPassword();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.api.v1alpha1.delivery.PasswordRef.serializeBinaryToWriter
+    );
+  }
+  f = message.getSshKey();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.api.v1alpha1.delivery.SSHKeyRef.serializeBinaryToWriter
+    );
+  }
+  f = message.getUsername();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getBaseDir();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string host = 1;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.getHost = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.SFTPTransport} returns this
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.setHost = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int32 port = 2;
+ * @return {number}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.getPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.delivery.SFTPTransport} returns this
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.setPort = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional PasswordRef password = 3;
+ * @return {?proto.api.v1alpha1.delivery.PasswordRef}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.getPassword = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.PasswordRef} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.PasswordRef, 3));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.PasswordRef|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.SFTPTransport} returns this
+*/
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.setPassword = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 3, proto.api.v1alpha1.delivery.SFTPTransport.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.SFTPTransport} returns this
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.clearPassword = function() {
+  return this.setPassword(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.hasPassword = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional SSHKeyRef ssh_key = 4;
+ * @return {?proto.api.v1alpha1.delivery.SSHKeyRef}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.getSshKey = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.SSHKeyRef} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.SSHKeyRef, 4));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.SSHKeyRef|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.SFTPTransport} returns this
+*/
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.setSshKey = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 4, proto.api.v1alpha1.delivery.SFTPTransport.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.SFTPTransport} returns this
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.clearSshKey = function() {
+  return this.setSshKey(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.hasSshKey = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string username = 5;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.SFTPTransport} returns this
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.setUsername = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string base_dir = 6;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.getBaseDir = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.SFTPTransport} returns this
+ */
+proto.api.v1alpha1.delivery.SFTPTransport.prototype.setBaseDir = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.EmailTransport.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.EmailTransport.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.EmailTransport} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.EmailTransport.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    fromAddress: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    toAddress: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.EmailTransport}
+ */
+proto.api.v1alpha1.delivery.EmailTransport.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.EmailTransport;
+  return proto.api.v1alpha1.delivery.EmailTransport.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.EmailTransport} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.EmailTransport}
+ */
+proto.api.v1alpha1.delivery.EmailTransport.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFromAddress(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setToAddress(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.EmailTransport.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.EmailTransport.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.EmailTransport} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.EmailTransport.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getFromAddress();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getToAddress();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string from_address = 1;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.EmailTransport.prototype.getFromAddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.EmailTransport} returns this
+ */
+proto.api.v1alpha1.delivery.EmailTransport.prototype.setFromAddress = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string to_address = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.EmailTransport.prototype.getToAddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.EmailTransport} returns this
+ */
+proto.api.v1alpha1.delivery.EmailTransport.prototype.setToAddress = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.api.v1alpha1.delivery.Room303Transport.oneofGroups_ = [[1]];
+
+/**
+ * @enum {number}
+ */
+proto.api.v1alpha1.delivery.Room303Transport.TransportCase = {
+  TRANSPORT_NOT_SET: 0,
+  SYSTEM_MESSAGE: 1
+};
+
+/**
+ * @return {proto.api.v1alpha1.delivery.Room303Transport.TransportCase}
+ */
+proto.api.v1alpha1.delivery.Room303Transport.prototype.getTransportCase = function() {
+  return /** @type {proto.api.v1alpha1.delivery.Room303Transport.TransportCase} */(jspb.Message.computeOneofCase(this, proto.api.v1alpha1.delivery.Room303Transport.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.Room303Transport.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.Room303Transport.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.Room303Transport} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.Room303Transport.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    systemMessage: (f = msg.getSystemMessage()) && proto.api.v1alpha1.delivery.Room303SystemMessage.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.Room303Transport}
+ */
+proto.api.v1alpha1.delivery.Room303Transport.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.Room303Transport;
+  return proto.api.v1alpha1.delivery.Room303Transport.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.Room303Transport} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.Room303Transport}
+ */
+proto.api.v1alpha1.delivery.Room303Transport.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.delivery.Room303SystemMessage;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.Room303SystemMessage.deserializeBinaryFromReader);
+      msg.setSystemMessage(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.Room303Transport.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.Room303Transport.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.Room303Transport} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.Room303Transport.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSystemMessage();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.delivery.Room303SystemMessage.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional Room303SystemMessage system_message = 1;
+ * @return {?proto.api.v1alpha1.delivery.Room303SystemMessage}
+ */
+proto.api.v1alpha1.delivery.Room303Transport.prototype.getSystemMessage = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.Room303SystemMessage} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.Room303SystemMessage, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.Room303SystemMessage|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.Room303Transport} returns this
+*/
+proto.api.v1alpha1.delivery.Room303Transport.prototype.setSystemMessage = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1, proto.api.v1alpha1.delivery.Room303Transport.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.Room303Transport} returns this
+ */
+proto.api.v1alpha1.delivery.Room303Transport.prototype.clearSystemMessage = function() {
+  return this.setSystemMessage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.Room303Transport.prototype.hasSystemMessage = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.oneofGroups_ = [[2,3]];
+
+/**
+ * @enum {number}
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.UserCase = {
+  USER_NOT_SET: 0,
+  USERNAME: 2,
+  USER_ID: 3
+};
+
+/**
+ * @return {proto.api.v1alpha1.delivery.Room303SystemMessage.UserCase}
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.getUserCase = function() {
+  return /** @type {proto.api.v1alpha1.delivery.Room303SystemMessage.UserCase} */(jspb.Message.computeOneofCase(this, proto.api.v1alpha1.delivery.Room303SystemMessage.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.Room303SystemMessage.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.Room303SystemMessage} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    room: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    username: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 3, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.Room303SystemMessage}
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.Room303SystemMessage;
+  return proto.api.v1alpha1.delivery.Room303SystemMessage.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.Room303SystemMessage} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.Room303SystemMessage}
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRoom(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.Room303SystemMessage.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.Room303SystemMessage} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getRoom();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string room = 1;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.getRoom = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.Room303SystemMessage} returns this
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.setRoom = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string username = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.Room303SystemMessage} returns this
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.setUsername = function(value) {
+  return jspb.Message.setOneofField(this, 2, proto.api.v1alpha1.delivery.Room303SystemMessage.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.Room303SystemMessage} returns this
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.clearUsername = function() {
+  return jspb.Message.setOneofField(this, 2, proto.api.v1alpha1.delivery.Room303SystemMessage.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.hasUsername = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string user_id = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.Room303SystemMessage} returns this
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.setUserId = function(value) {
+  return jspb.Message.setOneofField(this, 3, proto.api.v1alpha1.delivery.Room303SystemMessage.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.Room303SystemMessage} returns this
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.clearUserId = function() {
+  return jspb.Message.setOneofField(this, 3, proto.api.v1alpha1.delivery.Room303SystemMessage.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.hasUserId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.SMSTransport.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.SMSTransport.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.SMSTransport} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.SMSTransport.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.SMSTransport}
+ */
+proto.api.v1alpha1.delivery.SMSTransport.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.SMSTransport;
+  return proto.api.v1alpha1.delivery.SMSTransport.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.SMSTransport} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.SMSTransport}
+ */
+proto.api.v1alpha1.delivery.SMSTransport.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.SMSTransport.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.SMSTransport.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.SMSTransport} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.SMSTransport.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.AESEncryptionRef.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.AESEncryptionRef.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.AESEncryptionRef} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.AESEncryptionRef.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    aesSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.AESEncryptionRef}
+ */
+proto.api.v1alpha1.delivery.AESEncryptionRef.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.AESEncryptionRef;
+  return proto.api.v1alpha1.delivery.AESEncryptionRef.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.AESEncryptionRef} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.AESEncryptionRef}
+ */
+proto.api.v1alpha1.delivery.AESEncryptionRef.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setAesSid(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.AESEncryptionRef.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.AESEncryptionRef.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.AESEncryptionRef} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.AESEncryptionRef.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getAesSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 aes_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.delivery.AESEncryptionRef.prototype.getAesSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.delivery.AESEncryptionRef} returns this
+ */
+proto.api.v1alpha1.delivery.AESEncryptionRef.prototype.setAesSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.PGPEncryptionRef.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.PGPEncryptionRef.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.PGPEncryptionRef} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.PGPEncryptionRef.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    pgpSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.PGPEncryptionRef}
+ */
+proto.api.v1alpha1.delivery.PGPEncryptionRef.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.PGPEncryptionRef;
+  return proto.api.v1alpha1.delivery.PGPEncryptionRef.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.PGPEncryptionRef} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.PGPEncryptionRef}
+ */
+proto.api.v1alpha1.delivery.PGPEncryptionRef.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setPgpSid(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.PGPEncryptionRef.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.PGPEncryptionRef.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.PGPEncryptionRef} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.PGPEncryptionRef.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPgpSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 pgp_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.delivery.PGPEncryptionRef.prototype.getPgpSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.delivery.PGPEncryptionRef} returns this
+ */
+proto.api.v1alpha1.delivery.PGPEncryptionRef.prototype.setPgpSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.PasswordRef.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.PasswordRef.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.PasswordRef} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.PasswordRef.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    passwordSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.PasswordRef}
+ */
+proto.api.v1alpha1.delivery.PasswordRef.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.PasswordRef;
+  return proto.api.v1alpha1.delivery.PasswordRef.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.PasswordRef} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.PasswordRef}
+ */
+proto.api.v1alpha1.delivery.PasswordRef.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setPasswordSid(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.PasswordRef.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.PasswordRef.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.PasswordRef} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.PasswordRef.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPasswordSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 password_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.delivery.PasswordRef.prototype.getPasswordSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.delivery.PasswordRef} returns this
+ */
+proto.api.v1alpha1.delivery.PasswordRef.prototype.setPasswordSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.SSHKeyRef.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.SSHKeyRef.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.SSHKeyRef} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.SSHKeyRef.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    sshKeySid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.SSHKeyRef}
+ */
+proto.api.v1alpha1.delivery.SSHKeyRef.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.SSHKeyRef;
+  return proto.api.v1alpha1.delivery.SSHKeyRef.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.SSHKeyRef} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.SSHKeyRef}
+ */
+proto.api.v1alpha1.delivery.SSHKeyRef.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setSshKeySid(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.SSHKeyRef.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.SSHKeyRef.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.SSHKeyRef} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.SSHKeyRef.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSshKeySid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 ssh_key_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.delivery.SSHKeyRef.prototype.getSshKeySid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.delivery.SSHKeyRef} returns this
+ */
+proto.api.v1alpha1.delivery.SSHKeyRef.prototype.setSshKeySid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.api.v1alpha1.delivery.Encryption.oneofGroups_ = [[5,6]];
+
+/**
+ * @enum {number}
+ */
+proto.api.v1alpha1.delivery.Encryption.EncryptionCase = {
+  ENCRYPTION_NOT_SET: 0,
+  PGP_KEY_PAIR: 5,
+  AES_PASSWORD: 6
+};
+
+/**
+ * @return {proto.api.v1alpha1.delivery.Encryption.EncryptionCase}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.getEncryptionCase = function() {
+  return /** @type {proto.api.v1alpha1.delivery.Encryption.EncryptionCase} */(jspb.Message.computeOneofCase(this, proto.api.v1alpha1.delivery.Encryption.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.delivery.Encryption.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.delivery.Encryption} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.Encryption.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    encryptionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    pgpKeyPair: (f = msg.getPgpKeyPair()) && proto.api.v1alpha1.delivery.PGPKeyPair.toObject(includeInstance, f),
+    aesPassword: (f = msg.getAesPassword()) && proto.api.v1alpha1.delivery.AESPassword.toObject(includeInstance, f),
+    createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.delivery.Encryption}
+ */
+proto.api.v1alpha1.delivery.Encryption.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.delivery.Encryption;
+  return proto.api.v1alpha1.delivery.Encryption.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.delivery.Encryption} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.delivery.Encryption}
+ */
+proto.api.v1alpha1.delivery.Encryption.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setEncryptionSid(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 5:
+      var value = new proto.api.v1alpha1.delivery.PGPKeyPair;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.PGPKeyPair.deserializeBinaryFromReader);
+      msg.setPgpKeyPair(value);
+      break;
+    case 6:
+      var value = new proto.api.v1alpha1.delivery.AESPassword;
+      reader.readMessage(value,proto.api.v1alpha1.delivery.AESPassword.deserializeBinaryFromReader);
+      msg.setAesPassword(value);
+      break;
+    case 10:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreatedOn(value);
+      break;
+    case 11:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setLastEdited(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.delivery.Encryption.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.delivery.Encryption} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.delivery.Encryption.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEncryptionSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getOrgId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getPgpKeyPair();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.api.v1alpha1.delivery.PGPKeyPair.serializeBinaryToWriter
+    );
+  }
+  f = message.getAesPassword();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.api.v1alpha1.delivery.AESPassword.serializeBinaryToWriter
+    );
+  }
+  f = message.getCreatedOn();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getLastEdited();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional int64 encryption_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.getEncryptionSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.delivery.Encryption} returns this
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.setEncryptionSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string org_id = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.getOrgId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.Encryption} returns this
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.setOrgId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.Encryption} returns this
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string description = 4;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.Encryption} returns this
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional PGPKeyPair pgp_key_pair = 5;
+ * @return {?proto.api.v1alpha1.delivery.PGPKeyPair}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.getPgpKeyPair = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.PGPKeyPair} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.PGPKeyPair, 5));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.PGPKeyPair|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.Encryption} returns this
+*/
+proto.api.v1alpha1.delivery.Encryption.prototype.setPgpKeyPair = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 5, proto.api.v1alpha1.delivery.Encryption.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.Encryption} returns this
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.clearPgpKeyPair = function() {
+  return this.setPgpKeyPair(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.hasPgpKeyPair = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional AESPassword aes_password = 6;
+ * @return {?proto.api.v1alpha1.delivery.AESPassword}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.getAesPassword = function() {
+  return /** @type{?proto.api.v1alpha1.delivery.AESPassword} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.delivery.AESPassword, 6));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.delivery.AESPassword|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.Encryption} returns this
+*/
+proto.api.v1alpha1.delivery.Encryption.prototype.setAesPassword = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 6, proto.api.v1alpha1.delivery.Encryption.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.Encryption} returns this
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.clearAesPassword = function() {
+  return this.setAesPassword(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.hasAesPassword = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp created_on = 10;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.getCreatedOn = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 10));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.Encryption} returns this
+*/
+proto.api.v1alpha1.delivery.Encryption.prototype.setCreatedOn = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.Encryption} returns this
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.clearCreatedOn = function() {
+  return this.setCreatedOn(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.hasCreatedOn = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp last_edited = 11;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.getLastEdited = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 11));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.delivery.Encryption} returns this
+*/
+proto.api.v1alpha1.delivery.Encryption.prototype.setLastEdited = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.delivery.Encryption} returns this
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.clearLastEdited = function() {
+  return this.setLastEdited(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.delivery.Encryption.prototype.hasLastEdited = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
