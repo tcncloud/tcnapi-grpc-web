@@ -113,6 +113,21 @@ export namespace ListLearningOpportunitiesResponse {
 }
 
 export class ListAgentLearningOpportunitiesRequest extends jspb.Message {
+  clearCallIdentifiersList(): void;
+  getCallIdentifiersList(): Array<api_commons_agent_training_pb.CallIdentifier>;
+  setCallIdentifiersList(value: Array<api_commons_agent_training_pb.CallIdentifier>): void;
+  addCallIdentifiers(value?: api_commons_agent_training_pb.CallIdentifier, index?: number): api_commons_agent_training_pb.CallIdentifier;
+
+  clearTranscriptSidsList(): void;
+  getTranscriptSidsList(): Array<number>;
+  setTranscriptSidsList(value: Array<number>): void;
+  addTranscriptSids(value: number, index?: number): number;
+
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): void;
+  getCreatedAt(): api_commons_scorecards_pb.TimeFilter | undefined;
+  setCreatedAt(value?: api_commons_scorecards_pb.TimeFilter): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAgentLearningOpportunitiesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAgentLearningOpportunitiesRequest): ListAgentLearningOpportunitiesRequest.AsObject;
@@ -125,6 +140,9 @@ export class ListAgentLearningOpportunitiesRequest extends jspb.Message {
 
 export namespace ListAgentLearningOpportunitiesRequest {
   export type AsObject = {
+    callIdentifiersList: Array<api_commons_agent_training_pb.CallIdentifier.AsObject>,
+    transcriptSidsList: Array<number>,
+    createdAt?: api_commons_scorecards_pb.TimeFilter.AsObject,
   }
 }
 

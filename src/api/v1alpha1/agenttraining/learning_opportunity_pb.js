@@ -134,7 +134,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1065,6 +1065,13 @@ proto.api.v1alpha1.agenttraining.ListLearningOpportunitiesResponse.prototype.cle
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.repeatedFields_ = [2,3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1096,7 +1103,10 @@ proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype
  */
 proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    callIdentifiersList: jspb.Message.toObjectList(msg.getCallIdentifiersList(),
+    api_commons_agent_training_pb.CallIdentifier.toObject, includeInstance),
+    transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    createdAt: (f = msg.getCreatedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1133,6 +1143,22 @@ proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.deseriali
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 2:
+      var value = new api_commons_agent_training_pb.CallIdentifier;
+      reader.readMessage(value,api_commons_agent_training_pb.CallIdentifier.deserializeBinaryFromReader);
+      msg.addCallIdentifiers(value);
+      break;
+    case 3:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addTranscriptSids(values[i]);
+      }
+      break;
+    case 4:
+      var value = new api_commons_scorecards_pb.TimeFilter;
+      reader.readMessage(value,api_commons_scorecards_pb.TimeFilter.deserializeBinaryFromReader);
+      msg.setCreatedAt(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1162,6 +1188,141 @@ proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype
  */
 proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getCallIdentifiersList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      api_commons_agent_training_pb.CallIdentifier.serializeBinaryToWriter
+    );
+  }
+  f = message.getTranscriptSidsList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      3,
+      f
+    );
+  }
+  f = message.getCreatedAt();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      api_commons_scorecards_pb.TimeFilter.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated api.commons.CallIdentifier call_identifiers = 2;
+ * @return {!Array<!proto.api.commons.CallIdentifier>}
+ */
+proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype.getCallIdentifiersList = function() {
+  return /** @type{!Array<!proto.api.commons.CallIdentifier>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_commons_agent_training_pb.CallIdentifier, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.CallIdentifier>} value
+ * @return {!proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest} returns this
+*/
+proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype.setCallIdentifiersList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.CallIdentifier=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.CallIdentifier}
+ */
+proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype.addCallIdentifiers = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.commons.CallIdentifier, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest} returns this
+ */
+proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype.clearCallIdentifiersList = function() {
+  return this.setCallIdentifiersList([]);
+};
+
+
+/**
+ * repeated int64 transcript_sids = 3;
+ * @return {!Array<number>}
+ */
+proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype.getTranscriptSidsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest} returns this
+ */
+proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype.setTranscriptSidsList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest} returns this
+ */
+proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype.addTranscriptSids = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest} returns this
+ */
+proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype.clearTranscriptSidsList = function() {
+  return this.setTranscriptSidsList([]);
+};
+
+
+/**
+ * optional api.commons.TimeFilter created_at = 4;
+ * @return {?proto.api.commons.TimeFilter}
+ */
+proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype.getCreatedAt = function() {
+  return /** @type{?proto.api.commons.TimeFilter} */ (
+    jspb.Message.getWrapperField(this, api_commons_scorecards_pb.TimeFilter, 4));
+};
+
+
+/**
+ * @param {?proto.api.commons.TimeFilter|undefined} value
+ * @return {!proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest} returns this
+*/
+proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype.setCreatedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest} returns this
+ */
+proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype.clearCreatedAt = function() {
+  return this.setCreatedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype.hasCreatedAt = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
