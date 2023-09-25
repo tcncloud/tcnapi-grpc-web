@@ -106,6 +106,9 @@ export class DashboardSummary extends jspb.Message {
   getResourceId(): string;
   setResourceId(value: string): void;
 
+  getStandardDashboard(): boolean;
+  setStandardDashboard(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DashboardSummary.AsObject;
   static toObject(includeInstance: boolean, msg: DashboardSummary): DashboardSummary.AsObject;
@@ -123,6 +126,7 @@ export namespace DashboardSummary {
     description: string,
     panelCount: number,
     resourceId: string,
+    standardDashboard: boolean,
   }
 }
 
@@ -146,6 +150,9 @@ export class SetDefaultDashboardRequest extends jspb.Message {
   getDashboardId(): string;
   setDashboardId(value: string): void;
 
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetDefaultDashboardRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SetDefaultDashboardRequest): SetDefaultDashboardRequest.AsObject;
@@ -159,6 +166,7 @@ export class SetDefaultDashboardRequest extends jspb.Message {
 export namespace SetDefaultDashboardRequest {
   export type AsObject = {
     dashboardId: string,
+    resourceId: string,
   }
 }
 
@@ -461,6 +469,9 @@ export class Dashboard extends jspb.Message {
   getResourceId(): string;
   setResourceId(value: string): void;
 
+  getStandardDashboard(): boolean;
+  setStandardDashboard(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Dashboard.AsObject;
   static toObject(includeInstance: boolean, msg: Dashboard): Dashboard.AsObject;
@@ -480,6 +491,7 @@ export namespace Dashboard {
     view?: DashboardView.AsObject,
     type?: DashboardType.AsObject,
     resourceId: string,
+    standardDashboard: boolean,
   }
 }
 
