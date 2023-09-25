@@ -112,6 +112,8 @@ goog.exportSymbol('proto.api.v1alpha1.wfm.CreateShiftTemplateReq', null, global)
 goog.exportSymbol('proto.api.v1alpha1.wfm.CreateShiftTemplateRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CreateSkillProficienciesReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CreateSkillProficienciesRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CreateWFMAgentMembershipsReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.CreateWFMAgentMembershipsRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.DOWPlacement', null, global);
@@ -160,6 +162,8 @@ goog.exportSymbol('proto.api.v1alpha1.wfm.GetAvailabilityBitmapsReq', null, glob
 goog.exportSymbol('proto.api.v1alpha1.wfm.GetAvailabilityBitmapsRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.GetAvailableRegressionForecasterModelTypesReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.GetAvailableRegressionForecasterModelTypesRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.GetDraftScheduleReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.GetDraftScheduleRequiredCallsReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.GetDraftScheduleRequiredCallsRes', null, global);
@@ -236,6 +240,8 @@ goog.exportSymbol('proto.api.v1alpha1.wfm.ListShiftSegmentsByShiftInstanceSidsRe
 goog.exportSymbol('proto.api.v1alpha1.wfm.ListShiftSegmentsByShiftInstanceSidsRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.ListShiftTemplatesBySidsReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.ListShiftTemplatesBySidsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.ListSkillProfilesReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.ListSkillProfilesRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.ListSkillsReq', null, global);
@@ -269,6 +275,8 @@ goog.exportSymbol('proto.api.v1alpha1.wfm.ScheduleScenario', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SchedulingActivity', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SchedulingTarget', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.ServiceLevelInterval', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SetSchedulingTargetReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SetSchedulingTargetRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.ShiftInstance', null, global);
@@ -277,6 +285,7 @@ goog.exportSymbol('proto.api.v1alpha1.wfm.ShiftTemplate', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.Skill', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SkillProficiency', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SkillProfile', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.SkillProfileGroup', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SwapShiftInstancesReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.SwapShiftInstancesRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateAgentAvailabilityPatternReq', null, global);
@@ -313,6 +322,10 @@ goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateSkillProficienciesReq', null, gl
 goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateSkillProficienciesRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq', null, global);
+goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency', null, global);
 goog.exportSymbol('proto.api.v1alpha1.wfm.UpdateSkillProfileProficienciesRes', null, global);
@@ -380,6 +393,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.api.v1alpha1.wfm.SkillProfile.displayName = 'proto.api.v1alpha1.wfm.SkillProfile';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.SkillProfileGroup.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.SkillProfileGroup, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.SkillProfileGroup.displayName = 'proto.api.v1alpha1.wfm.SkillProfileGroup';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1178,6 +1212,174 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.api.v1alpha1.wfm.DisconnectInactiveSkillProfileMappingRes.displayName = 'proto.api.v1alpha1.wfm.DisconnectInactiveSkillProfileMappingRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.displayName = 'proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.displayName = 'proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.displayName = 'proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes.displayName = 'proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.displayName = 'proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.displayName = 'proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.displayName = 'proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes.displayName = 'proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -6607,6 +6809,90 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.displayName = 'proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.displayName = 'proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.displayName = 'proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes.displayName = 'proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.api.v1alpha1.wfm.ListRequiredCallsIntervalsReq = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -7529,6 +7815,455 @@ proto.api.v1alpha1.wfm.SkillProfile.prototype.getAreAveragesManual = function() 
  */
 proto.api.v1alpha1.wfm.SkillProfile.prototype.setAreAveragesManual = function(value) {
   return jspb.Message.setProto3BooleanField(this, 14, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.repeatedFields_ = [10];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.SkillProfileGroup.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.SkillProfileGroup} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    skillProfileGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    averageSpeedOfAnswerInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
+    averageHandleTimeInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
+    averageAfterCallWorkInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
+    averageTimeToAbortInSeconds: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
+    areAveragesManual: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    skillProfileSidsList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.SkillProfileGroup;
+  return proto.api.v1alpha1.wfm.SkillProfileGroup.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.SkillProfileGroup} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setSkillProfileGroupSid(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 4:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreateTime(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAverageSpeedOfAnswerInSeconds(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAverageHandleTimeInSeconds(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAverageAfterCallWorkInSeconds(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAverageTimeToAbortInSeconds(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAreAveragesManual(value);
+      break;
+    case 10:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addSkillProfileSids(values[i]);
+      }
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.SkillProfileGroup.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.SkillProfileGroup} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSkillProfileGroupSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getCreateTime();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getAverageSpeedOfAnswerInSeconds();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      5,
+      f
+    );
+  }
+  f = message.getAverageHandleTimeInSeconds();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      6,
+      f
+    );
+  }
+  f = message.getAverageAfterCallWorkInSeconds();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      7,
+      f
+    );
+  }
+  f = message.getAverageTimeToAbortInSeconds();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      8,
+      f
+    );
+  }
+  f = message.getAreAveragesManual();
+  if (f) {
+    writer.writeBool(
+      9,
+      f
+    );
+  }
+  f = message.getSkillProfileSidsList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      10,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 skill_profile_group_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.getSkillProfileGroupSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.setSkillProfileGroupSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string description = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp create_time = 4;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.getCreateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+*/
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.setCreateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.clearCreateTime = function() {
+  return this.setCreateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.hasCreateTime = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional float average_speed_of_answer_in_seconds = 5;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.getAverageSpeedOfAnswerInSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.setAverageSpeedOfAnswerInSeconds = function(value) {
+  return jspb.Message.setProto3FloatField(this, 5, value);
+};
+
+
+/**
+ * optional float average_handle_time_in_seconds = 6;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.getAverageHandleTimeInSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.setAverageHandleTimeInSeconds = function(value) {
+  return jspb.Message.setProto3FloatField(this, 6, value);
+};
+
+
+/**
+ * optional float average_after_call_work_in_seconds = 7;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.getAverageAfterCallWorkInSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.setAverageAfterCallWorkInSeconds = function(value) {
+  return jspb.Message.setProto3FloatField(this, 7, value);
+};
+
+
+/**
+ * optional float average_time_to_abort_in_seconds = 8;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.getAverageTimeToAbortInSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.setAverageTimeToAbortInSeconds = function(value) {
+  return jspb.Message.setProto3FloatField(this, 8, value);
+};
+
+
+/**
+ * optional bool are_averages_manual = 9;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.getAreAveragesManual = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.setAreAveragesManual = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
+};
+
+
+/**
+ * repeated int64 skill_profile_sids = 10;
+ * @return {!Array<number>}
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.getSkillProfileSidsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 10));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.setSkillProfileSidsList = function(value) {
+  return jspb.Message.setField(this, 10, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.addSkillProfileSids = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 10, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
+ */
+proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.clearSkillProfileSidsList = function() {
+  return this.setSkillProfileSidsList([]);
 };
 
 
@@ -14190,6 +14925,1197 @@ proto.api.v1alpha1.wfm.DisconnectInactiveSkillProfileMappingRes.prototype.serial
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.v1alpha1.wfm.DisconnectInactiveSkillProfileMappingRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    skillProfileGroup: (f = msg.getSkillProfileGroup()) && proto.api.v1alpha1.wfm.SkillProfileGroup.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq}
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq;
+  return proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq}
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.SkillProfileGroup;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.SkillProfileGroup.deserializeBinaryFromReader);
+      msg.setSkillProfileGroup(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSkillProfileGroup();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.SkillProfileGroup.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional SkillProfileGroup skill_profile_group = 1;
+ * @return {?proto.api.v1alpha1.wfm.SkillProfileGroup}
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.prototype.getSkillProfileGroup = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.SkillProfileGroup} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.SkillProfileGroup, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.SkillProfileGroup|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq} returns this
+*/
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.prototype.setSkillProfileGroup = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq} returns this
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.prototype.clearSkillProfileGroup = function() {
+  return this.setSkillProfileGroup(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupReq.prototype.hasSkillProfileGroup = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    skillProfileGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes}
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes;
+  return proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes}
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setSkillProfileGroupSid(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSkillProfileGroupSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 skill_profile_group_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.prototype.getSkillProfileGroupSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes} returns this
+ */
+proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.prototype.setSkillProfileGroupSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    skillProfileGroup: (f = msg.getSkillProfileGroup()) && proto.api.v1alpha1.wfm.SkillProfileGroup.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq;
+  return proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.SkillProfileGroup;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.SkillProfileGroup.deserializeBinaryFromReader);
+      msg.setSkillProfileGroup(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSkillProfileGroup();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.SkillProfileGroup.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional SkillProfileGroup skill_profile_group = 1;
+ * @return {?proto.api.v1alpha1.wfm.SkillProfileGroup}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.prototype.getSkillProfileGroup = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.SkillProfileGroup} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.SkillProfileGroup, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.SkillProfileGroup|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq} returns this
+*/
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.prototype.setSkillProfileGroup = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.prototype.clearSkillProfileGroup = function() {
+  return this.setSkillProfileGroup(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupReq.prototype.hasSkillProfileGroup = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes;
+  return proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    skillProfileGroupSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq}
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq;
+  return proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq}
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addSkillProfileGroupSids(values[i]);
+      }
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSkillProfileGroupSidsList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated int64 skill_profile_group_sids = 1;
+ * @return {!Array<number>}
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.getSkillProfileGroupSidsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.setSkillProfileGroupSidsList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.addSkillProfileGroupSids = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.clearSkillProfileGroupSidsList = function() {
+  return this.setSkillProfileGroupSidsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    skillProfileGroupsList: jspb.Message.toObjectList(msg.getSkillProfileGroupsList(),
+    proto.api.v1alpha1.wfm.SkillProfileGroup.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes}
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes;
+  return proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes}
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.SkillProfileGroup;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.SkillProfileGroup.deserializeBinaryFromReader);
+      msg.addSkillProfileGroups(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSkillProfileGroupsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.SkillProfileGroup.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated SkillProfileGroup skill_profile_groups = 1;
+ * @return {!Array<!proto.api.v1alpha1.wfm.SkillProfileGroup>}
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.prototype.getSkillProfileGroupsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.SkillProfileGroup>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.SkillProfileGroup, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.SkillProfileGroup>} value
+ * @return {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes} returns this
+*/
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.prototype.setSkillProfileGroupsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.SkillProfileGroup=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup}
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.prototype.addSkillProfileGroups = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.wfm.SkillProfileGroup, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes} returns this
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsRes.prototype.clearSkillProfileGroupsList = function() {
+  return this.setSkillProfileGroupsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.repeatedFields_ = [2,3];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    skillProfileGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    skillProfileSidsToAssociateList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    skillProfileSidsToDisassociateList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq;
+  return proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setSkillProfileGroupSid(value);
+      break;
+    case 2:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addSkillProfileSidsToAssociate(values[i]);
+      }
+      break;
+    case 3:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addSkillProfileSidsToDisassociate(values[i]);
+      }
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSkillProfileGroupSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getSkillProfileSidsToAssociateList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      2,
+      f
+    );
+  }
+  f = message.getSkillProfileSidsToDisassociateList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 skill_profile_group_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.getSkillProfileGroupSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.setSkillProfileGroupSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * repeated int64 skill_profile_sids_to_associate = 2;
+ * @return {!Array<number>}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.getSkillProfileSidsToAssociateList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.setSkillProfileSidsToAssociateList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.addSkillProfileSidsToAssociate = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.clearSkillProfileSidsToAssociateList = function() {
+  return this.setSkillProfileSidsToAssociateList([]);
+};
+
+
+/**
+ * repeated int64 skill_profile_sids_to_disassociate = 3;
+ * @return {!Array<number>}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.getSkillProfileSidsToDisassociateList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.setSkillProfileSidsToDisassociateList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.addSkillProfileSidsToDisassociate = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.clearSkillProfileSidsToDisassociateList = function() {
+  return this.setSkillProfileSidsToDisassociateList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes;
+  return proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -67755,6 +69681,510 @@ proto.api.v1alpha1.wfm.DeleteSchedulingTargetRes.prototype.serializeBinary = fun
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.v1alpha1.wfm.DeleteSchedulingTargetRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq}
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq;
+  return proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq}
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    schedulingTarget: (f = msg.getSchedulingTarget()) && proto.api.v1alpha1.wfm.SchedulingTarget.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes}
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes;
+  return proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes}
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.SchedulingTarget;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.SchedulingTarget.deserializeBinaryFromReader);
+      msg.setSchedulingTarget(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSchedulingTarget();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.SchedulingTarget.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional SchedulingTarget scheduling_target = 1;
+ * @return {?proto.api.v1alpha1.wfm.SchedulingTarget}
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.prototype.getSchedulingTarget = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.SchedulingTarget} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.SchedulingTarget, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.SchedulingTarget|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes} returns this
+*/
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.prototype.setSchedulingTarget = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes} returns this
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.prototype.clearSchedulingTarget = function() {
+  return this.setSchedulingTarget(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.GetDefaultSchedulingTargetRes.prototype.hasSchedulingTarget = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    schedulingTarget: (f = msg.getSchedulingTarget()) && proto.api.v1alpha1.wfm.SchedulingTarget.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq}
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq;
+  return proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq}
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.v1alpha1.wfm.SchedulingTarget;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.SchedulingTarget.deserializeBinaryFromReader);
+      msg.setSchedulingTarget(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSchedulingTarget();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.v1alpha1.wfm.SchedulingTarget.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional SchedulingTarget scheduling_target = 1;
+ * @return {?proto.api.v1alpha1.wfm.SchedulingTarget}
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.getSchedulingTarget = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.SchedulingTarget} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.SchedulingTarget, 1));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.SchedulingTarget|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq} returns this
+*/
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.setSchedulingTarget = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq} returns this
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.clearSchedulingTarget = function() {
+  return this.setSchedulingTarget(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetReq.prototype.hasSchedulingTarget = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes}
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes;
+  return proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes}
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.wfm.SetDefaultSchedulingTargetRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 

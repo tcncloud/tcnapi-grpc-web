@@ -7,6 +7,7 @@ import * as api_commons_audit_asm_events_pb from "../../../api/commons/audit/asm
 import * as api_commons_audit_compliance_events_pb from "../../../api/commons/audit/compliance_events_pb";
 import * as api_commons_audit_event_types_pb from "../../../api/commons/audit/event_types_pb";
 import * as api_commons_audit_events_pb from "../../../api/commons/audit/events_pb";
+import * as api_commons_audit_lms_events_pb from "../../../api/commons/audit/lms_events_pb";
 import * as api_commons_audit_omnichannel_events_pb from "../../../api/commons/audit/omnichannel_events_pb";
 import * as api_commons_audit_scorecards_events_pb from "../../../api/commons/audit/scorecards_events_pb";
 import * as api_commons_audit_tickets_events_pb from "../../../api/commons/audit/tickets_events_pb";
@@ -469,6 +470,11 @@ export class AuditEvent extends jspb.Message {
   getAgentTrainingCreateLearningOpportunityEvent(): api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent | undefined;
   setAgentTrainingCreateLearningOpportunityEvent(value?: api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent): void;
 
+  hasLmsPipelineFailureEvent(): boolean;
+  clearLmsPipelineFailureEvent(): void;
+  getLmsPipelineFailureEvent(): api_commons_audit_lms_events_pb.LMSPipelineFailureEvent | undefined;
+  setLmsPipelineFailureEvent(value?: api_commons_audit_lms_events_pb.LMSPipelineFailureEvent): void;
+
   getEventCase(): AuditEvent.EventCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuditEvent.AsObject;
@@ -575,6 +581,7 @@ export namespace AuditEvent {
     complianceRndQueryEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
     complianceRndQueryCachedEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
     agentTrainingCreateLearningOpportunityEvent?: api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent.AsObject,
+    lmsPipelineFailureEvent?: api_commons_audit_lms_events_pb.LMSPipelineFailureEvent.AsObject,
   }
 
   export enum EventCase {
@@ -666,6 +673,7 @@ export namespace AuditEvent {
     COMPLIANCE_RND_QUERY_EVENT = 700,
     COMPLIANCE_RND_QUERY_CACHED_EVENT = 701,
     AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800,
+    LMS_PIPELINE_FAILURE_EVENT = 900,
   }
 }
 

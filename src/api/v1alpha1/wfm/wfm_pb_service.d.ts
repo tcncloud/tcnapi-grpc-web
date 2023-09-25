@@ -157,6 +157,42 @@ type WFMDisconnectInactiveSkillProfileMapping = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingRes;
 };
 
+type WFMCreateSkillProfileGroup = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupRes;
+};
+
+type WFMUpdateSkillProfileGroup = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupRes;
+};
+
+type WFMListSkillProfileGroups = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsRes;
+};
+
+type WFMUpdateSkillProfileGroupAssociations = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsRes;
+};
+
 type WFMDeleteHistoricalDataDeltas = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1084,6 +1120,24 @@ type WFMDeleteSchedulingTarget = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteSchedulingTargetRes;
 };
 
+type WFMGetDefaultSchedulingTarget = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetRes;
+};
+
+type WFMSetDefaultSchedulingTarget = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetRes;
+};
+
 type WFMGetPerformanceMetrics = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1121,6 +1175,10 @@ export class WFM {
   static readonly CreateInactiveSkillProfileMapping: WFMCreateInactiveSkillProfileMapping;
   static readonly GetAvailableRegressionForecasterModelTypes: WFMGetAvailableRegressionForecasterModelTypes;
   static readonly DisconnectInactiveSkillProfileMapping: WFMDisconnectInactiveSkillProfileMapping;
+  static readonly CreateSkillProfileGroup: WFMCreateSkillProfileGroup;
+  static readonly UpdateSkillProfileGroup: WFMUpdateSkillProfileGroup;
+  static readonly ListSkillProfileGroups: WFMListSkillProfileGroups;
+  static readonly UpdateSkillProfileGroupAssociations: WFMUpdateSkillProfileGroupAssociations;
   static readonly DeleteHistoricalDataDeltas: WFMDeleteHistoricalDataDeltas;
   static readonly ListTopSkillProfiles: WFMListTopSkillProfiles;
   static readonly GetSkillProfilesCount: WFMGetSkillProfilesCount;
@@ -1224,6 +1282,8 @@ export class WFM {
   static readonly SetSchedulingTarget: WFMSetSchedulingTarget;
   static readonly GetSchedulingTarget: WFMGetSchedulingTarget;
   static readonly DeleteSchedulingTarget: WFMDeleteSchedulingTarget;
+  static readonly GetDefaultSchedulingTarget: WFMGetDefaultSchedulingTarget;
+  static readonly SetDefaultSchedulingTarget: WFMSetDefaultSchedulingTarget;
   static readonly GetPerformanceMetrics: WFMGetPerformanceMetrics;
   static readonly ListRequiredCallsIntervals: WFMListRequiredCallsIntervals;
 }
@@ -1412,6 +1472,42 @@ export class WFMClient {
   disconnectInactiveSkillProfileMapping(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingRes|null) => void
+  ): UnaryResponse;
+  createSkillProfileGroup(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupRes|null) => void
+  ): UnaryResponse;
+  createSkillProfileGroup(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupRes|null) => void
+  ): UnaryResponse;
+  updateSkillProfileGroup(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupRes|null) => void
+  ): UnaryResponse;
+  updateSkillProfileGroup(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupRes|null) => void
+  ): UnaryResponse;
+  listSkillProfileGroups(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsRes|null) => void
+  ): UnaryResponse;
+  listSkillProfileGroups(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsRes|null) => void
+  ): UnaryResponse;
+  updateSkillProfileGroupAssociations(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsRes|null) => void
+  ): UnaryResponse;
+  updateSkillProfileGroupAssociations(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsRes|null) => void
   ): UnaryResponse;
   deleteHistoricalDataDeltas(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteHistoricalDataDeltasReq,
@@ -2291,6 +2387,24 @@ export class WFMClient {
   deleteSchedulingTarget(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingTargetReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingTargetRes|null) => void
+  ): UnaryResponse;
+  getDefaultSchedulingTarget(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetRes|null) => void
+  ): UnaryResponse;
+  getDefaultSchedulingTarget(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetRes|null) => void
+  ): UnaryResponse;
+  setDefaultSchedulingTarget(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetRes|null) => void
+  ): UnaryResponse;
+  setDefaultSchedulingTarget(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetRes|null) => void
   ): UnaryResponse;
   getPerformanceMetrics(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetPerformanceMetricsReq,

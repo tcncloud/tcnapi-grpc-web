@@ -92,13 +92,22 @@ NewsroomAPI.GetNewsForUser = {
   responseType: api_v1alpha1_newsroom_entities_pb.GetNewsForUserResponse
 };
 
-NewsroomAPI.StoreNewsroomImage = {
-  methodName: "StoreNewsroomImage",
+NewsroomAPI.StoreNewsArticleImage = {
+  methodName: "StoreNewsArticleImage",
   service: NewsroomAPI,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_newsroom_entities_pb.StoreNewsroomImageRequest,
-  responseType: api_v1alpha1_newsroom_entities_pb.StoreNewsroomImageResponse
+  requestType: api_v1alpha1_newsroom_entities_pb.StoreNewsArticleImageRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.StoreNewsArticleImageResponse
+};
+
+NewsroomAPI.ListImagesForNewsArticle = {
+  methodName: "ListImagesForNewsArticle",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.ListImagesForNewsArticleRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.ListImagesForNewsArticleResponse
 };
 
 exports.NewsroomAPI = NewsroomAPI;
@@ -387,11 +396,42 @@ NewsroomAPIClient.prototype.getNewsForUser = function getNewsForUser(requestMess
   };
 };
 
-NewsroomAPIClient.prototype.storeNewsroomImage = function storeNewsroomImage(requestMessage, metadata, callback) {
+NewsroomAPIClient.prototype.storeNewsArticleImage = function storeNewsArticleImage(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(NewsroomAPI.StoreNewsroomImage, {
+  var client = grpc.unary(NewsroomAPI.StoreNewsArticleImage, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.listImagesForNewsArticle = function listImagesForNewsArticle(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.ListImagesForNewsArticle, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
