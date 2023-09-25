@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_acd_pb from "../../api/commons/acd_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class LearningOpportunity extends jspb.Message {
   getLearningOpportunityId(): number;
@@ -28,6 +29,11 @@ export class LearningOpportunity extends jspb.Message {
 
   getDescription(): string;
   setDescription(value: string): void;
+
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): void;
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   getTitle(): string;
   setTitle(value: string): void;
@@ -55,6 +61,7 @@ export namespace LearningOpportunity {
     startOffset: number,
     endOffset: number,
     description: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     title: string,
     status: LearningOpportunityStatusMap[keyof LearningOpportunityStatusMap],
   }

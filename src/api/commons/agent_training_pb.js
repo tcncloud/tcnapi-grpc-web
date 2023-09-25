@@ -23,6 +23,8 @@ var global =
 
 var api_commons_acd_pb = require('../../api/commons/acd_pb.js');
 goog.object.extend(proto, api_commons_acd_pb);
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.api.commons.CallIdentifier', null, global);
 goog.exportSymbol('proto.api.commons.LearningOpportunity', null, global);
 goog.exportSymbol('proto.api.commons.LearningOpportunityStatus', null, global);
@@ -108,8 +110,9 @@ proto.api.commons.LearningOpportunity.toObject = function(includeInstance, msg) 
     startOffset: jspb.Message.getFieldWithDefault(msg, 7, 0),
     endOffset: jspb.Message.getFieldWithDefault(msg, 8, 0),
     description: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 11, 0)
+    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    title: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 13, 0)
   };
 
   if (includeInstance) {
@@ -179,10 +182,15 @@ proto.api.commons.LearningOpportunity.deserializeBinaryFromReader = function(msg
       msg.setDescription(value);
       break;
     case 10:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreatedAt(value);
+      break;
+    case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setTitle(value);
       break;
-    case 11:
+    case 13:
       var value = /** @type {!proto.api.commons.LearningOpportunityStatus} */ (reader.readEnum());
       msg.setStatus(value);
       break;
@@ -271,17 +279,25 @@ proto.api.commons.LearningOpportunity.serializeBinaryToWriter = function(message
       f
     );
   }
+  f = message.getCreatedAt();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
   f = message.getTitle();
   if (f.length > 0) {
     writer.writeString(
-      10,
+      12,
       f
     );
   }
   f = message.getStatus();
   if (f !== 0.0) {
     writer.writeEnum(
-      11,
+      13,
       f
     );
   }
@@ -433,11 +449,48 @@ proto.api.commons.LearningOpportunity.prototype.setDescription = function(value)
 
 
 /**
- * optional string title = 10;
+ * optional google.protobuf.Timestamp created_at = 10;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.commons.LearningOpportunity.prototype.getCreatedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 10));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.commons.LearningOpportunity} returns this
+*/
+proto.api.commons.LearningOpportunity.prototype.setCreatedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.LearningOpportunity} returns this
+ */
+proto.api.commons.LearningOpportunity.prototype.clearCreatedAt = function() {
+  return this.setCreatedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.LearningOpportunity.prototype.hasCreatedAt = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional string title = 12;
  * @return {string}
  */
 proto.api.commons.LearningOpportunity.prototype.getTitle = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
@@ -446,16 +499,16 @@ proto.api.commons.LearningOpportunity.prototype.getTitle = function() {
  * @return {!proto.api.commons.LearningOpportunity} returns this
  */
 proto.api.commons.LearningOpportunity.prototype.setTitle = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
+  return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
 /**
- * optional LearningOpportunityStatus status = 11;
+ * optional LearningOpportunityStatus status = 13;
  * @return {!proto.api.commons.LearningOpportunityStatus}
  */
 proto.api.commons.LearningOpportunity.prototype.getStatus = function() {
-  return /** @type {!proto.api.commons.LearningOpportunityStatus} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+  return /** @type {!proto.api.commons.LearningOpportunityStatus} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
 };
 
 
@@ -464,7 +517,7 @@ proto.api.commons.LearningOpportunity.prototype.getStatus = function() {
  * @return {!proto.api.commons.LearningOpportunity} returns this
  */
 proto.api.commons.LearningOpportunity.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3EnumField(this, 11, value);
+  return jspb.Message.setProto3EnumField(this, 13, value);
 };
 
 
