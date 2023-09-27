@@ -79611,7 +79611,7 @@ proto.api.v1alpha1.wfm.GenerateTourWeekPatternsReq.prototype.setScheduleScenario
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.repeatedFields_ = [2];
+proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.repeatedFields_ = [1,2];
 
 
 
@@ -79644,7 +79644,8 @@ proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.prototype.toObject = function
  */
 proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourPattern: (f = msg.getTourPattern()) && proto.api.v1alpha1.wfm.TourPattern.toObject(includeInstance, f),
+    tourWeekPatternsList: jspb.Message.toObjectList(msg.getTourWeekPatternsList(),
+    proto.api.v1alpha1.wfm.TourWeekPattern.toObject, includeInstance),
     diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
     proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance)
   };
@@ -79684,9 +79685,9 @@ proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.deserializeBinaryFromReader =
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.api.v1alpha1.wfm.TourPattern;
-      reader.readMessage(value,proto.api.v1alpha1.wfm.TourPattern.deserializeBinaryFromReader);
-      msg.setTourPattern(value);
+      var value = new proto.api.v1alpha1.wfm.TourWeekPattern;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.TourWeekPattern.deserializeBinaryFromReader);
+      msg.addTourWeekPatterns(value);
       break;
     case 2:
       var value = new proto.api.v1alpha1.wfm.Diagnostic;
@@ -79722,12 +79723,12 @@ proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.prototype.serializeBinary = f
  */
 proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTourPattern();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getTourWeekPatternsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       1,
       f,
-      proto.api.v1alpha1.wfm.TourPattern.serializeBinaryToWriter
+      proto.api.v1alpha1.wfm.TourWeekPattern.serializeBinaryToWriter
     );
   }
   f = message.getDiagnosticsList();
@@ -79742,39 +79743,40 @@ proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.serializeBinaryToWriter = fun
 
 
 /**
- * optional TourPattern tour_pattern = 1;
- * @return {?proto.api.v1alpha1.wfm.TourPattern}
+ * repeated TourWeekPattern tour_week_patterns = 1;
+ * @return {!Array<!proto.api.v1alpha1.wfm.TourWeekPattern>}
  */
-proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.prototype.getTourPattern = function() {
-  return /** @type{?proto.api.v1alpha1.wfm.TourPattern} */ (
-    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.TourPattern, 1));
+proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.prototype.getTourWeekPatternsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.TourWeekPattern>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.TourWeekPattern, 1));
 };
 
 
 /**
- * @param {?proto.api.v1alpha1.wfm.TourPattern|undefined} value
+ * @param {!Array<!proto.api.v1alpha1.wfm.TourWeekPattern>} value
  * @return {!proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes} returns this
 */
-proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.prototype.setTourPattern = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.prototype.setTourWeekPatternsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.api.v1alpha1.wfm.TourWeekPattern=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.TourWeekPattern}
+ */
+proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.prototype.addTourWeekPatterns = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.wfm.TourWeekPattern, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes} returns this
  */
-proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.prototype.clearTourPattern = function() {
-  return this.setTourPattern(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.prototype.hasTourPattern = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.api.v1alpha1.wfm.GenerateTourWeekPatternsRes.prototype.clearTourWeekPatternsList = function() {
+  return this.setTourWeekPatternsList([]);
 };
 
 

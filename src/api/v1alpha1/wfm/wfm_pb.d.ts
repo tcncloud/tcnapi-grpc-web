@@ -10079,10 +10079,10 @@ export namespace GenerateTourWeekPatternsReq {
 }
 
 export class GenerateTourWeekPatternsRes extends jspb.Message {
-  hasTourPattern(): boolean;
-  clearTourPattern(): void;
-  getTourPattern(): TourPattern | undefined;
-  setTourPattern(value?: TourPattern): void;
+  clearTourWeekPatternsList(): void;
+  getTourWeekPatternsList(): Array<TourWeekPattern>;
+  setTourWeekPatternsList(value: Array<TourWeekPattern>): void;
+  addTourWeekPatterns(value?: TourWeekPattern, index?: number): TourWeekPattern;
 
   clearDiagnosticsList(): void;
   getDiagnosticsList(): Array<Diagnostic>;
@@ -10101,7 +10101,7 @@ export class GenerateTourWeekPatternsRes extends jspb.Message {
 
 export namespace GenerateTourWeekPatternsRes {
   export type AsObject = {
-    tourPattern?: TourPattern.AsObject,
+    tourWeekPatternsList: Array<TourWeekPattern.AsObject>,
     diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
