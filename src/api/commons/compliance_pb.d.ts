@@ -25,6 +25,11 @@ export class Rule extends jspb.Message {
   getRuleText(): string;
   setRuleText(value: string): void;
 
+  hasPredicates(): boolean;
+  clearPredicates(): void;
+  getPredicates(): Predicate | undefined;
+  setPredicates(value?: Predicate): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Rule.AsObject;
   static toObject(includeInstance: boolean, msg: Rule): Rule.AsObject;
@@ -42,6 +47,45 @@ export namespace Rule {
     subEntity: SubEntityMap[keyof SubEntityMap],
     selectorsList: Array<Selector.AsObject>,
     ruleText: string,
+    predicates?: Predicate.AsObject,
+  }
+}
+
+export class Predicate extends jspb.Message {
+  clearAndList(): void;
+  getAndList(): Array<Predicate>;
+  setAndList(value: Array<Predicate>): void;
+  addAnd(value?: Predicate, index?: number): Predicate;
+
+  clearOrList(): void;
+  getOrList(): Array<Predicate>;
+  setOrList(value: Array<Predicate>): void;
+  addOr(value?: Predicate, index?: number): Predicate;
+
+  getNot(): boolean;
+  setNot(value: boolean): void;
+
+  hasSelector(): boolean;
+  clearSelector(): void;
+  getSelector(): Selector | undefined;
+  setSelector(value?: Selector): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Predicate.AsObject;
+  static toObject(includeInstance: boolean, msg: Predicate): Predicate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Predicate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Predicate;
+  static deserializeBinaryFromReader(message: Predicate, reader: jspb.BinaryReader): Predicate;
+}
+
+export namespace Predicate {
+  export type AsObject = {
+    andList: Array<Predicate.AsObject>,
+    orList: Array<Predicate.AsObject>,
+    not: boolean,
+    selector?: Selector.AsObject,
   }
 }
 
@@ -244,6 +288,11 @@ export class FrequencyExp extends jspb.Message {
   setCheckingEntitiesList(value: Array<EntityExp>): void;
   addCheckingEntities(value?: EntityExp, index?: number): EntityExp;
 
+  hasPredicate(): boolean;
+  clearPredicate(): void;
+  getPredicate(): ModPredicate | undefined;
+  setPredicate(value?: ModPredicate): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FrequencyExp.AsObject;
   static toObject(includeInstance: boolean, msg: FrequencyExp): FrequencyExp.AsObject;
@@ -262,6 +311,73 @@ export namespace FrequencyExp {
     dispositions?: DispositionMod.AsObject,
     fieldNames?: FieldNamesMod.AsObject,
     checkingEntitiesList: Array<EntityExp.AsObject>,
+    predicate?: ModPredicate.AsObject,
+  }
+}
+
+export class Mod extends jspb.Message {
+  hasResults(): boolean;
+  clearResults(): void;
+  getResults(): ResultsMod | undefined;
+  setResults(value?: ResultsMod): void;
+
+  hasDispositions(): boolean;
+  clearDispositions(): void;
+  getDispositions(): DispositionMod | undefined;
+  setDispositions(value?: DispositionMod): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Mod.AsObject;
+  static toObject(includeInstance: boolean, msg: Mod): Mod.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Mod, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Mod;
+  static deserializeBinaryFromReader(message: Mod, reader: jspb.BinaryReader): Mod;
+}
+
+export namespace Mod {
+  export type AsObject = {
+    results?: ResultsMod.AsObject,
+    dispositions?: DispositionMod.AsObject,
+  }
+}
+
+export class ModPredicate extends jspb.Message {
+  clearAndList(): void;
+  getAndList(): Array<ModPredicate>;
+  setAndList(value: Array<ModPredicate>): void;
+  addAnd(value?: ModPredicate, index?: number): ModPredicate;
+
+  clearOrList(): void;
+  getOrList(): Array<ModPredicate>;
+  setOrList(value: Array<ModPredicate>): void;
+  addOr(value?: ModPredicate, index?: number): ModPredicate;
+
+  getNot(): boolean;
+  setNot(value: boolean): void;
+
+  hasMod(): boolean;
+  clearMod(): void;
+  getMod(): Mod | undefined;
+  setMod(value?: Mod): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModPredicate.AsObject;
+  static toObject(includeInstance: boolean, msg: ModPredicate): ModPredicate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ModPredicate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModPredicate;
+  static deserializeBinaryFromReader(message: ModPredicate, reader: jspb.BinaryReader): ModPredicate;
+}
+
+export namespace ModPredicate {
+  export type AsObject = {
+    andList: Array<ModPredicate.AsObject>,
+    orList: Array<ModPredicate.AsObject>,
+    not: boolean,
+    mod?: Mod.AsObject,
   }
 }
 
