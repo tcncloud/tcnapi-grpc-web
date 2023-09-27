@@ -25738,7 +25738,7 @@ proto.api.v1alpha1.wfm.CalculateTrainingDataAveragesForSkillProfileRes.prototype
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.repeatedFields_ = [1];
+proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.repeatedFields_ = [1,4];
 
 
 
@@ -25773,7 +25773,8 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.toObject
   var f, obj = {
     skillProfileSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
-    excludeSkillProfilesWithManualAverages: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+    excludeSkillProfilesWithManualAverages: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    skillProfileGroupSidsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -25825,6 +25826,12 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.deserial
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setExcludeSkillProfilesWithManualAverages(value);
       break;
+    case 4:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addSkillProfileGroupSids(values[i]);
+      }
+      break;
     default:
       reader.skipField();
       break;
@@ -25873,6 +25880,13 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.serializ
   if (f) {
     writer.writeBool(
       3,
+      f
+    );
+  }
+  f = message.getSkillProfileGroupSidsList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      4,
       f
     );
   }
@@ -25968,6 +25982,43 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.prototyp
  */
 proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.prototype.setExcludeSkillProfilesWithManualAverages = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * repeated int64 skill_profile_group_sids = 4;
+ * @return {!Array<number>}
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.prototype.getSkillProfileGroupSidsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.prototype.setSkillProfileGroupSidsList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.prototype.addSkillProfileGroupSids = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.prototype.clearSkillProfileGroupSidsList = function() {
+  return this.setSkillProfileGroupSidsList([]);
 };
 
 
