@@ -1156,6 +1156,195 @@ type WFMListRequiredCallsIntervals = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListRequiredCallsIntervalsRes;
 };
 
+type WFMCreateTourPattern = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourPatternReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourPatternRes;
+};
+
+type WFMGetTourPattern = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternRes;
+};
+
+type WFMDeleteTourPattern = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourPatternReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourPatternRes;
+};
+
+type WFMCreateTourWeekPattern = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternRes;
+};
+
+type WFMListTourWeekPatterns = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsRes;
+};
+
+type WFMDeleteTourWeekPatterns = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsRes;
+};
+
+type WFMCreateTourShiftInstanceConfig = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigRes;
+};
+
+type WFMUpdateTourShiftInstanceConfig = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigRes;
+};
+
+type WFMListTourShiftInstanceConfigs = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsRes;
+};
+
+type WFMDeleteTourShiftInstanceConfigs = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsRes;
+};
+
+type WFMCreateTourShiftSegmentConfig = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigRes;
+};
+
+type WFMUpdateTourShiftSegmentConfig = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigRes;
+};
+
+type WFMListTourShiftSegmentConfigs = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsRes;
+};
+
+type WFMDeleteTourShiftSegmentConfigs = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsRes;
+};
+
+type WFMCreateTourAgentCollection = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionRes;
+};
+
+type WFMUpdateTourAgentCollection = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionRes;
+};
+
+type WFMListTourAgentCollections = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsRes;
+};
+
+type WFMDeleteTourAgentCollections = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsRes;
+};
+
+type WFMCreateTourAgentCollectionWFMAgents = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsRes;
+};
+
+type WFMListTourAgentCollectionWFMAgents = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsRes;
+};
+
+type WFMDeleteTourAgentCollectionWFMAgents = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsRes;
+};
+
 export class WFM {
   static readonly serviceName: string;
   static readonly ListSkillProfiles: WFMListSkillProfiles;
@@ -1286,6 +1475,27 @@ export class WFM {
   static readonly SetDefaultSchedulingTarget: WFMSetDefaultSchedulingTarget;
   static readonly GetPerformanceMetrics: WFMGetPerformanceMetrics;
   static readonly ListRequiredCallsIntervals: WFMListRequiredCallsIntervals;
+  static readonly CreateTourPattern: WFMCreateTourPattern;
+  static readonly GetTourPattern: WFMGetTourPattern;
+  static readonly DeleteTourPattern: WFMDeleteTourPattern;
+  static readonly CreateTourWeekPattern: WFMCreateTourWeekPattern;
+  static readonly ListTourWeekPatterns: WFMListTourWeekPatterns;
+  static readonly DeleteTourWeekPatterns: WFMDeleteTourWeekPatterns;
+  static readonly CreateTourShiftInstanceConfig: WFMCreateTourShiftInstanceConfig;
+  static readonly UpdateTourShiftInstanceConfig: WFMUpdateTourShiftInstanceConfig;
+  static readonly ListTourShiftInstanceConfigs: WFMListTourShiftInstanceConfigs;
+  static readonly DeleteTourShiftInstanceConfigs: WFMDeleteTourShiftInstanceConfigs;
+  static readonly CreateTourShiftSegmentConfig: WFMCreateTourShiftSegmentConfig;
+  static readonly UpdateTourShiftSegmentConfig: WFMUpdateTourShiftSegmentConfig;
+  static readonly ListTourShiftSegmentConfigs: WFMListTourShiftSegmentConfigs;
+  static readonly DeleteTourShiftSegmentConfigs: WFMDeleteTourShiftSegmentConfigs;
+  static readonly CreateTourAgentCollection: WFMCreateTourAgentCollection;
+  static readonly UpdateTourAgentCollection: WFMUpdateTourAgentCollection;
+  static readonly ListTourAgentCollections: WFMListTourAgentCollections;
+  static readonly DeleteTourAgentCollections: WFMDeleteTourAgentCollections;
+  static readonly CreateTourAgentCollectionWFMAgents: WFMCreateTourAgentCollectionWFMAgents;
+  static readonly ListTourAgentCollectionWFMAgents: WFMListTourAgentCollectionWFMAgents;
+  static readonly DeleteTourAgentCollectionWFMAgents: WFMDeleteTourAgentCollectionWFMAgents;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -2423,6 +2633,195 @@ export class WFMClient {
   listRequiredCallsIntervals(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListRequiredCallsIntervalsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRequiredCallsIntervalsRes|null) => void
+  ): UnaryResponse;
+  createTourPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourPatternReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourPatternRes|null) => void
+  ): UnaryResponse;
+  createTourPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourPatternReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourPatternRes|null) => void
+  ): UnaryResponse;
+  getTourPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternRes|null) => void
+  ): UnaryResponse;
+  getTourPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternRes|null) => void
+  ): UnaryResponse;
+  deleteTourPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourPatternReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourPatternRes|null) => void
+  ): UnaryResponse;
+  deleteTourPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourPatternReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourPatternRes|null) => void
+  ): UnaryResponse;
+  createTourWeekPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternRes|null) => void
+  ): UnaryResponse;
+  createTourWeekPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternRes|null) => void
+  ): UnaryResponse;
+  listTourWeekPatterns(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsRes|null) => void
+  ): UnaryResponse;
+  listTourWeekPatterns(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsRes|null) => void
+  ): UnaryResponse;
+  deleteTourWeekPatterns(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsRes|null) => void
+  ): UnaryResponse;
+  deleteTourWeekPatterns(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsRes|null) => void
+  ): UnaryResponse;
+  createTourShiftInstanceConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigRes|null) => void
+  ): UnaryResponse;
+  createTourShiftInstanceConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigRes|null) => void
+  ): UnaryResponse;
+  updateTourShiftInstanceConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigRes|null) => void
+  ): UnaryResponse;
+  updateTourShiftInstanceConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigRes|null) => void
+  ): UnaryResponse;
+  listTourShiftInstanceConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsRes|null) => void
+  ): UnaryResponse;
+  listTourShiftInstanceConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsRes|null) => void
+  ): UnaryResponse;
+  deleteTourShiftInstanceConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsRes|null) => void
+  ): UnaryResponse;
+  deleteTourShiftInstanceConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsRes|null) => void
+  ): UnaryResponse;
+  createTourShiftSegmentConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigRes|null) => void
+  ): UnaryResponse;
+  createTourShiftSegmentConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigRes|null) => void
+  ): UnaryResponse;
+  updateTourShiftSegmentConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigRes|null) => void
+  ): UnaryResponse;
+  updateTourShiftSegmentConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigRes|null) => void
+  ): UnaryResponse;
+  listTourShiftSegmentConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsRes|null) => void
+  ): UnaryResponse;
+  listTourShiftSegmentConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsRes|null) => void
+  ): UnaryResponse;
+  deleteTourShiftSegmentConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsRes|null) => void
+  ): UnaryResponse;
+  deleteTourShiftSegmentConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsRes|null) => void
+  ): UnaryResponse;
+  createTourAgentCollection(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionRes|null) => void
+  ): UnaryResponse;
+  createTourAgentCollection(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionRes|null) => void
+  ): UnaryResponse;
+  updateTourAgentCollection(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionRes|null) => void
+  ): UnaryResponse;
+  updateTourAgentCollection(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionRes|null) => void
+  ): UnaryResponse;
+  listTourAgentCollections(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsRes|null) => void
+  ): UnaryResponse;
+  listTourAgentCollections(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsRes|null) => void
+  ): UnaryResponse;
+  deleteTourAgentCollections(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsRes|null) => void
+  ): UnaryResponse;
+  deleteTourAgentCollections(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsRes|null) => void
+  ): UnaryResponse;
+  createTourAgentCollectionWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  createTourAgentCollectionWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  listTourAgentCollectionWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  listTourAgentCollectionWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  deleteTourAgentCollectionWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  deleteTourAgentCollectionWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsRes|null) => void
   ): UnaryResponse;
 }
 
