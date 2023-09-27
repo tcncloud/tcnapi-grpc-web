@@ -2,6 +2,7 @@
 // file: api/v1alpha1/vanalytics/service.proto
 
 import * as api_v1alpha1_vanalytics_service_pb from "../../../api/v1alpha1/vanalytics/service_pb";
+import * as api_v1alpha1_vanalytics_correction_pb from "../../../api/v1alpha1/vanalytics/correction_pb";
 import * as api_v1alpha1_vanalytics_filter_pb from "../../../api/v1alpha1/vanalytics/filter_pb";
 import * as api_v1alpha1_vanalytics_flag_pb from "../../../api/v1alpha1/vanalytics/flag_pb";
 import * as api_v1alpha1_vanalytics_flag_filter_pb from "../../../api/v1alpha1/vanalytics/flag_filter_pb";
@@ -264,6 +265,15 @@ type VanalyticsListFlagTranscriptFilters = {
   readonly responseType: typeof api_v1alpha1_vanalytics_flag_transcript_filter_pb.ListFlagTranscriptFiltersResponse;
 };
 
+type VanalyticsCreateCorrection = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_vanalytics_correction_pb.CreateCorrectionRequest;
+  readonly responseType: typeof api_v1alpha1_vanalytics_correction_pb.CreateCorrectionResponse;
+};
+
 export class Vanalytics {
   static readonly serviceName: string;
   static readonly Audit: VanalyticsAudit;
@@ -294,6 +304,7 @@ export class Vanalytics {
   static readonly DeleteFlagFilter: VanalyticsDeleteFlagFilter;
   static readonly ListFlagSnapshots: VanalyticsListFlagSnapshots;
   static readonly ListFlagTranscriptFilters: VanalyticsListFlagTranscriptFilters;
+  static readonly CreateCorrection: VanalyticsCreateCorrection;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -579,6 +590,15 @@ export class VanalyticsClient {
   listFlagTranscriptFilters(
     requestMessage: api_v1alpha1_vanalytics_flag_transcript_filter_pb.ListFlagTranscriptFiltersRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_flag_transcript_filter_pb.ListFlagTranscriptFiltersResponse|null) => void
+  ): UnaryResponse;
+  createCorrection(
+    requestMessage: api_v1alpha1_vanalytics_correction_pb.CreateCorrectionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_correction_pb.CreateCorrectionResponse|null) => void
+  ): UnaryResponse;
+  createCorrection(
+    requestMessage: api_v1alpha1_vanalytics_correction_pb.CreateCorrectionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_correction_pb.CreateCorrectionResponse|null) => void
   ): UnaryResponse;
 }
 

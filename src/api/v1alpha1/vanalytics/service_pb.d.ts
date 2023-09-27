@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../../annotations/authz_pb";
+import * as api_v1alpha1_vanalytics_correction_pb from "../../../api/v1alpha1/vanalytics/correction_pb";
 import * as api_v1alpha1_vanalytics_filter_pb from "../../../api/v1alpha1/vanalytics/filter_pb";
 import * as api_v1alpha1_vanalytics_flag_pb from "../../../api/v1alpha1/vanalytics/flag_pb";
 import * as api_v1alpha1_vanalytics_flag_filter_pb from "../../../api/v1alpha1/vanalytics/flag_filter_pb";
