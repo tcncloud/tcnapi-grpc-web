@@ -427,7 +427,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.Ticket.repeatedFields_ = [14,15,17,19,21];
+proto.api.commons.Ticket.repeatedFields_ = [14,15,17,19,21,22];
 
 
 
@@ -483,7 +483,8 @@ proto.api.commons.Ticket.toObject = function(includeInstance, msg) {
     ticketActionList: jspb.Message.toObjectList(msg.getTicketActionList(),
     proto.api.commons.TicketAction.toObject, includeInstance),
     ticketStatus: jspb.Message.getFieldWithDefault(msg, 20, 0),
-    ticketAssigneeList: (f = jspb.Message.getRepeatedField(msg, 21)) == null ? undefined : f
+    ticketAssigneeList: (f = jspb.Message.getRepeatedField(msg, 21)) == null ? undefined : f,
+    ticketParticipantList: (f = jspb.Message.getRepeatedField(msg, 22)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -605,6 +606,10 @@ proto.api.commons.Ticket.deserializeBinaryFromReader = function(msg, reader) {
     case 21:
       var value = /** @type {string} */ (reader.readString());
       msg.addTicketAssignee(value);
+      break;
+    case 22:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTicketParticipant(value);
       break;
     default:
       reader.skipField();
@@ -778,6 +783,13 @@ proto.api.commons.Ticket.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeRepeatedString(
       21,
+      f
+    );
+  }
+  f = message.getTicketParticipantList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      22,
       f
     );
   }
@@ -1281,6 +1293,43 @@ proto.api.commons.Ticket.prototype.clearTicketAssigneeList = function() {
 };
 
 
+/**
+ * repeated string ticket_participant = 22;
+ * @return {!Array<string>}
+ */
+proto.api.commons.Ticket.prototype.getTicketParticipantList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 22));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.commons.Ticket} returns this
+ */
+proto.api.commons.Ticket.prototype.setTicketParticipantList = function(value) {
+  return jspb.Message.setField(this, 22, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.Ticket} returns this
+ */
+proto.api.commons.Ticket.prototype.addTicketParticipant = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 22, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.Ticket} returns this
+ */
+proto.api.commons.Ticket.prototype.clearTicketParticipantList = function() {
+  return this.setTicketParticipantList([]);
+};
+
+
 
 
 
@@ -1489,7 +1538,8 @@ proto.api.commons.TicketAction.toObject = function(includeInstance, msg) {
     state: jspb.Message.getFieldWithDefault(msg, 8, 0),
     actionSkillsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
     actionSlaIdList: jspb.Message.toObjectList(msg.getActionSlaIdList(),
-    proto.api.commons.Sla.toObject, includeInstance)
+    proto.api.commons.Sla.toObject, includeInstance),
+    workDoneBy: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -1565,6 +1615,10 @@ proto.api.commons.TicketAction.deserializeBinaryFromReader = function(msg, reade
       var value = new proto.api.commons.Sla;
       reader.readMessage(value,proto.api.commons.Sla.deserializeBinaryFromReader);
       msg.addActionSlaId(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkDoneBy(value);
       break;
     default:
       reader.skipField();
@@ -1660,6 +1714,13 @@ proto.api.commons.TicketAction.serializeBinaryToWriter = function(message, write
       10,
       f,
       proto.api.commons.Sla.serializeBinaryToWriter
+    );
+  }
+  f = message.getWorkDoneBy();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
     );
   }
 };
@@ -1920,6 +1981,24 @@ proto.api.commons.TicketAction.prototype.addActionSlaId = function(opt_value, op
  */
 proto.api.commons.TicketAction.prototype.clearActionSlaIdList = function() {
   return this.setActionSlaIdList([]);
+};
+
+
+/**
+ * optional string work_done_by = 11;
+ * @return {string}
+ */
+proto.api.commons.TicketAction.prototype.getWorkDoneBy = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.TicketAction} returns this
+ */
+proto.api.commons.TicketAction.prototype.setWorkDoneBy = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 

@@ -79,6 +79,11 @@ export class Ticket extends jspb.Message {
   setTicketAssigneeList(value: Array<string>): void;
   addTicketAssignee(value: string, index?: number): string;
 
+  clearTicketParticipantList(): void;
+  getTicketParticipantList(): Array<string>;
+  setTicketParticipantList(value: Array<string>): void;
+  addTicketParticipant(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ticket.AsObject;
   static toObject(includeInstance: boolean, msg: Ticket): Ticket.AsObject;
@@ -111,6 +116,7 @@ export namespace Ticket {
     ticketActionList: Array<TicketAction.AsObject>,
     ticketStatus: TicketStatusMap[keyof TicketStatusMap],
     ticketAssigneeList: Array<string>,
+    ticketParticipantList: Array<string>,
   }
 }
 
@@ -176,6 +182,9 @@ export class TicketAction extends jspb.Message {
   setActionSlaIdList(value: Array<Sla>): void;
   addActionSlaId(value?: Sla, index?: number): Sla;
 
+  getWorkDoneBy(): string;
+  setWorkDoneBy(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketAction.AsObject;
   static toObject(includeInstance: boolean, msg: TicketAction): TicketAction.AsObject;
@@ -197,6 +206,7 @@ export namespace TicketAction {
     state: number,
     actionSkillsList: Array<string>,
     actionSlaIdList: Array<Sla.AsObject>,
+    workDoneBy: string,
   }
 }
 
