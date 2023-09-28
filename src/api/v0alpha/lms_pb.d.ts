@@ -1389,6 +1389,11 @@ export class RecordFieldProto extends jspb.Message {
   getEnrichedZip(): EnrichedZip | undefined;
   setEnrichedZip(value?: EnrichedZip): void;
 
+  hasEhrDetails(): boolean;
+  clearEhrDetails(): void;
+  getEhrDetails(): EHRDetails | undefined;
+  setEhrDetails(value?: EHRDetails): void;
+
   getPayloadCase(): RecordFieldProto.PayloadCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecordFieldProto.AsObject;
@@ -1416,6 +1421,7 @@ export namespace RecordFieldProto {
     err?: Error.AsObject,
     enrichedPhone?: EnrichedPhone.AsObject,
     enrichedZip?: EnrichedZip.AsObject,
+    ehrDetails?: EHRDetails.AsObject,
   }
 
   export enum PayloadCase {
@@ -1433,6 +1439,7 @@ export namespace RecordFieldProto {
     ERR = 15,
     ENRICHED_PHONE = 16,
     ENRICHED_ZIP = 17,
+    EHR_DETAILS = 18,
   }
 }
 
@@ -4577,6 +4584,42 @@ export namespace EnrichedZip {
     stateFips: string,
     timeZone: string,
     utc: number,
+  }
+}
+
+export class EHRDetails extends jspb.Message {
+  getDisplayCollection(): string;
+  setDisplayCollection(value: string): void;
+
+  getDisplayKey(): string;
+  setDisplayKey(value: string): void;
+
+  getStringsMap(): jspb.Map<string, string>;
+  clearStringsMap(): void;
+  getNumbersMap(): jspb.Map<string, number>;
+  clearNumbersMap(): void;
+  getDatesMap(): jspb.Map<string, DateTime>;
+  clearDatesMap(): void;
+  getBoolsMap(): jspb.Map<string, boolean>;
+  clearBoolsMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EHRDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: EHRDetails): EHRDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EHRDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EHRDetails;
+  static deserializeBinaryFromReader(message: EHRDetails, reader: jspb.BinaryReader): EHRDetails;
+}
+
+export namespace EHRDetails {
+  export type AsObject = {
+    displayCollection: string,
+    displayKey: string,
+    stringsMap: Array<[string, string]>,
+    numbersMap: Array<[string, number]>,
+    datesMap: Array<[string, DateTime.AsObject]>,
+    boolsMap: Array<[string, boolean]>,
   }
 }
 
