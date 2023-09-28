@@ -25,11 +25,6 @@ export class Rule extends jspb.Message {
   getRuleText(): string;
   setRuleText(value: string): void;
 
-  hasPredicate(): boolean;
-  clearPredicate(): void;
-  getPredicate(): Predicate | undefined;
-  setPredicate(value?: Predicate): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Rule.AsObject;
   static toObject(includeInstance: boolean, msg: Rule): Rule.AsObject;
@@ -47,45 +42,6 @@ export namespace Rule {
     subEntity: SubEntityMap[keyof SubEntityMap],
     selectorsList: Array<Selector.AsObject>,
     ruleText: string,
-    predicate?: Predicate.AsObject,
-  }
-}
-
-export class Predicate extends jspb.Message {
-  clearAndList(): void;
-  getAndList(): Array<Predicate>;
-  setAndList(value: Array<Predicate>): void;
-  addAnd(value?: Predicate, index?: number): Predicate;
-
-  clearOrList(): void;
-  getOrList(): Array<Predicate>;
-  setOrList(value: Array<Predicate>): void;
-  addOr(value?: Predicate, index?: number): Predicate;
-
-  getNot(): boolean;
-  setNot(value: boolean): void;
-
-  hasSelector(): boolean;
-  clearSelector(): void;
-  getSelector(): Selector | undefined;
-  setSelector(value?: Selector): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Predicate.AsObject;
-  static toObject(includeInstance: boolean, msg: Predicate): Predicate.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Predicate, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Predicate;
-  static deserializeBinaryFromReader(message: Predicate, reader: jspb.BinaryReader): Predicate;
-}
-
-export namespace Predicate {
-  export type AsObject = {
-    andList: Array<Predicate.AsObject>,
-    orList: Array<Predicate.AsObject>,
-    not: boolean,
-    selector?: Selector.AsObject,
   }
 }
 
