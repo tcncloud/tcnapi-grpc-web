@@ -23,6 +23,8 @@ var global =
 
 var annotations_authz_pb = require('../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
+var api_v1alpha1_vanalytics_correction_pb = require('../../../api/v1alpha1/vanalytics/correction_pb.js');
+goog.object.extend(proto, api_v1alpha1_vanalytics_correction_pb);
 var api_v1alpha1_vanalytics_filter_pb = require('../../../api/v1alpha1/vanalytics/filter_pb.js');
 goog.object.extend(proto, api_v1alpha1_vanalytics_filter_pb);
 var api_v1alpha1_vanalytics_flag_pb = require('../../../api/v1alpha1/vanalytics/flag_pb.js');
