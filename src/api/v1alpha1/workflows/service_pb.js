@@ -713,7 +713,7 @@ proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    definition: (f = msg.getDefinition()) && proto.api.v1alpha1.workflows.PersistedFlowDefinition.toObject(includeInstance, f)
+    flowDefinition: (f = msg.getFlowDefinition()) && proto.api.v1alpha1.workflows.PersistedFlowDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -753,7 +753,7 @@ proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.deserializeBinaryFromRe
     case 1:
       var value = new proto.api.v1alpha1.workflows.PersistedFlowDefinition;
       reader.readMessage(value,proto.api.v1alpha1.workflows.PersistedFlowDefinition.deserializeBinaryFromReader);
-      msg.setDefinition(value);
+      msg.setFlowDefinition(value);
       break;
     default:
       reader.skipField();
@@ -784,7 +784,7 @@ proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.prototype.serializeBina
  */
 proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDefinition();
+  f = message.getFlowDefinition();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -796,10 +796,10 @@ proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.serializeBinaryToWriter
 
 
 /**
- * optional PersistedFlowDefinition definition = 1;
+ * optional PersistedFlowDefinition flow_definition = 1;
  * @return {?proto.api.v1alpha1.workflows.PersistedFlowDefinition}
  */
-proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.prototype.getDefinition = function() {
+proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.prototype.getFlowDefinition = function() {
   return /** @type{?proto.api.v1alpha1.workflows.PersistedFlowDefinition} */ (
     jspb.Message.getWrapperField(this, proto.api.v1alpha1.workflows.PersistedFlowDefinition, 1));
 };
@@ -809,7 +809,7 @@ proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.prototype.getDefinition
  * @param {?proto.api.v1alpha1.workflows.PersistedFlowDefinition|undefined} value
  * @return {!proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest} returns this
 */
-proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.prototype.setDefinition = function(value) {
+proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.prototype.setFlowDefinition = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -818,8 +818,8 @@ proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.prototype.setDefinition
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest} returns this
  */
-proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.prototype.clearDefinition = function() {
-  return this.setDefinition(undefined);
+proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.prototype.clearFlowDefinition = function() {
+  return this.setFlowDefinition(undefined);
 };
 
 
@@ -827,7 +827,7 @@ proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.prototype.clearDefiniti
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.prototype.hasDefinition = function() {
+proto.api.v1alpha1.workflows.CreateFlowDefinitionRequest.prototype.hasFlowDefinition = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -864,7 +864,7 @@ proto.api.v1alpha1.workflows.CreateFlowDefinitionResponse.prototype.toObject = f
  */
 proto.api.v1alpha1.workflows.CreateFlowDefinitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flowDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    flowDefinition: (f = msg.getFlowDefinition()) && proto.api.v1alpha1.workflows.PersistedFlowDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -902,8 +902,9 @@ proto.api.v1alpha1.workflows.CreateFlowDefinitionResponse.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFlowDefinitionId(value);
+      var value = new proto.api.v1alpha1.workflows.PersistedFlowDefinition;
+      reader.readMessage(value,proto.api.v1alpha1.workflows.PersistedFlowDefinition.deserializeBinaryFromReader);
+      msg.setFlowDefinition(value);
       break;
     default:
       reader.skipField();
@@ -934,31 +935,51 @@ proto.api.v1alpha1.workflows.CreateFlowDefinitionResponse.prototype.serializeBin
  */
 proto.api.v1alpha1.workflows.CreateFlowDefinitionResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFlowDefinitionId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getFlowDefinition();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      proto.api.v1alpha1.workflows.PersistedFlowDefinition.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string flow_definition_id = 1;
- * @return {string}
+ * optional PersistedFlowDefinition flow_definition = 1;
+ * @return {?proto.api.v1alpha1.workflows.PersistedFlowDefinition}
  */
-proto.api.v1alpha1.workflows.CreateFlowDefinitionResponse.prototype.getFlowDefinitionId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.api.v1alpha1.workflows.CreateFlowDefinitionResponse.prototype.getFlowDefinition = function() {
+  return /** @type{?proto.api.v1alpha1.workflows.PersistedFlowDefinition} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.workflows.PersistedFlowDefinition, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.api.v1alpha1.workflows.PersistedFlowDefinition|undefined} value
+ * @return {!proto.api.v1alpha1.workflows.CreateFlowDefinitionResponse} returns this
+*/
+proto.api.v1alpha1.workflows.CreateFlowDefinitionResponse.prototype.setFlowDefinition = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.workflows.CreateFlowDefinitionResponse} returns this
  */
-proto.api.v1alpha1.workflows.CreateFlowDefinitionResponse.prototype.setFlowDefinitionId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.api.v1alpha1.workflows.CreateFlowDefinitionResponse.prototype.clearFlowDefinition = function() {
+  return this.setFlowDefinition(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.workflows.CreateFlowDefinitionResponse.prototype.hasFlowDefinition = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -1124,7 +1145,7 @@ proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.prototype.toObject = func
  */
 proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    definition: (f = msg.getDefinition()) && proto.api.v1alpha1.workflows.PersistedFlowDefinition.toObject(includeInstance, f)
+    flowDefinition: (f = msg.getFlowDefinition()) && proto.api.v1alpha1.workflows.PersistedFlowDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1164,7 +1185,7 @@ proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.deserializeBinaryFromRead
     case 1:
       var value = new proto.api.v1alpha1.workflows.PersistedFlowDefinition;
       reader.readMessage(value,proto.api.v1alpha1.workflows.PersistedFlowDefinition.deserializeBinaryFromReader);
-      msg.setDefinition(value);
+      msg.setFlowDefinition(value);
       break;
     default:
       reader.skipField();
@@ -1195,7 +1216,7 @@ proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.prototype.serializeBinary
  */
 proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDefinition();
+  f = message.getFlowDefinition();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1207,10 +1228,10 @@ proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.serializeBinaryToWriter =
 
 
 /**
- * optional PersistedFlowDefinition definition = 1;
+ * optional PersistedFlowDefinition flow_definition = 1;
  * @return {?proto.api.v1alpha1.workflows.PersistedFlowDefinition}
  */
-proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.prototype.getDefinition = function() {
+proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.prototype.getFlowDefinition = function() {
   return /** @type{?proto.api.v1alpha1.workflows.PersistedFlowDefinition} */ (
     jspb.Message.getWrapperField(this, proto.api.v1alpha1.workflows.PersistedFlowDefinition, 1));
 };
@@ -1220,7 +1241,7 @@ proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.prototype.getDefinition =
  * @param {?proto.api.v1alpha1.workflows.PersistedFlowDefinition|undefined} value
  * @return {!proto.api.v1alpha1.workflows.GetFlowDefinitionResponse} returns this
 */
-proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.prototype.setDefinition = function(value) {
+proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.prototype.setFlowDefinition = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1229,8 +1250,8 @@ proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.prototype.setDefinition =
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.workflows.GetFlowDefinitionResponse} returns this
  */
-proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.prototype.clearDefinition = function() {
-  return this.setDefinition(undefined);
+proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.prototype.clearFlowDefinition = function() {
+  return this.setFlowDefinition(undefined);
 };
 
 
@@ -1238,7 +1259,7 @@ proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.prototype.clearDefinition
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.prototype.hasDefinition = function() {
+proto.api.v1alpha1.workflows.GetFlowDefinitionResponse.prototype.hasFlowDefinition = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

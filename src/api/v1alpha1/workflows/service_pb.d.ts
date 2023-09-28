@@ -63,10 +63,10 @@ export namespace PersistedFlowDefinition {
 }
 
 export class CreateFlowDefinitionRequest extends jspb.Message {
-  hasDefinition(): boolean;
-  clearDefinition(): void;
-  getDefinition(): PersistedFlowDefinition | undefined;
-  setDefinition(value?: PersistedFlowDefinition): void;
+  hasFlowDefinition(): boolean;
+  clearFlowDefinition(): void;
+  getFlowDefinition(): PersistedFlowDefinition | undefined;
+  setFlowDefinition(value?: PersistedFlowDefinition): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateFlowDefinitionRequest.AsObject;
@@ -80,13 +80,15 @@ export class CreateFlowDefinitionRequest extends jspb.Message {
 
 export namespace CreateFlowDefinitionRequest {
   export type AsObject = {
-    definition?: PersistedFlowDefinition.AsObject,
+    flowDefinition?: PersistedFlowDefinition.AsObject,
   }
 }
 
 export class CreateFlowDefinitionResponse extends jspb.Message {
-  getFlowDefinitionId(): string;
-  setFlowDefinitionId(value: string): void;
+  hasFlowDefinition(): boolean;
+  clearFlowDefinition(): void;
+  getFlowDefinition(): PersistedFlowDefinition | undefined;
+  setFlowDefinition(value?: PersistedFlowDefinition): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateFlowDefinitionResponse.AsObject;
@@ -100,7 +102,7 @@ export class CreateFlowDefinitionResponse extends jspb.Message {
 
 export namespace CreateFlowDefinitionResponse {
   export type AsObject = {
-    flowDefinitionId: string,
+    flowDefinition?: PersistedFlowDefinition.AsObject,
   }
 }
 
@@ -125,10 +127,10 @@ export namespace GetFlowDefinitionRequest {
 }
 
 export class GetFlowDefinitionResponse extends jspb.Message {
-  hasDefinition(): boolean;
-  clearDefinition(): void;
-  getDefinition(): PersistedFlowDefinition | undefined;
-  setDefinition(value?: PersistedFlowDefinition): void;
+  hasFlowDefinition(): boolean;
+  clearFlowDefinition(): void;
+  getFlowDefinition(): PersistedFlowDefinition | undefined;
+  setFlowDefinition(value?: PersistedFlowDefinition): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetFlowDefinitionResponse.AsObject;
@@ -142,7 +144,7 @@ export class GetFlowDefinitionResponse extends jspb.Message {
 
 export namespace GetFlowDefinitionResponse {
   export type AsObject = {
-    definition?: PersistedFlowDefinition.AsObject,
+    flowDefinition?: PersistedFlowDefinition.AsObject,
   }
 }
 
