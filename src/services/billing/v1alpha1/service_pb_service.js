@@ -88,7 +88,7 @@ BillingService.ListBillingPlans = {
   methodName: "ListBillingPlans",
   service: BillingService,
   requestStream: false,
-  responseStream: true,
+  responseStream: false,
   requestType: services_billing_v1alpha1_plans_pb.ListBillingPlansRequest,
   responseType: services_billing_v1alpha1_plans_pb.ListBillingPlansResponse
 };
@@ -97,7 +97,7 @@ BillingService.ListInvoices = {
   methodName: "ListInvoices",
   service: BillingService,
   requestStream: false,
-  responseStream: true,
+  responseStream: false,
   requestType: services_billing_v1alpha1_invoices_pb.ListInvoicesRequest,
   responseType: services_billing_v1alpha1_invoices_pb.ListInvoicesResponse
 };
@@ -384,79 +384,63 @@ BillingServiceClient.prototype.getInvoice = function getInvoice(requestMessage, 
   };
 };
 
-BillingServiceClient.prototype.listBillingPlans = function listBillingPlans(requestMessage, metadata) {
-  var listeners = {
-    data: [],
-    end: [],
-    status: []
-  };
-  var client = grpc.invoke(BillingService.ListBillingPlans, {
+BillingServiceClient.prototype.listBillingPlans = function listBillingPlans(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.ListBillingPlans, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
     transport: this.options.transport,
     debug: this.options.debug,
-    onMessage: function (responseMessage) {
-      listeners.data.forEach(function (handler) {
-        handler(responseMessage);
-      });
-    },
-    onEnd: function (status, statusMessage, trailers) {
-      listeners.status.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners.end.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners = null;
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
     }
   });
   return {
-    on: function (type, handler) {
-      listeners[type].push(handler);
-      return this;
-    },
     cancel: function () {
-      listeners = null;
+      callback = null;
       client.close();
     }
   };
 };
 
-BillingServiceClient.prototype.listInvoices = function listInvoices(requestMessage, metadata) {
-  var listeners = {
-    data: [],
-    end: [],
-    status: []
-  };
-  var client = grpc.invoke(BillingService.ListInvoices, {
+BillingServiceClient.prototype.listInvoices = function listInvoices(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.ListInvoices, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
     transport: this.options.transport,
     debug: this.options.debug,
-    onMessage: function (responseMessage) {
-      listeners.data.forEach(function (handler) {
-        handler(responseMessage);
-      });
-    },
-    onEnd: function (status, statusMessage, trailers) {
-      listeners.status.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners.end.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners = null;
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
     }
   });
   return {
-    on: function (type, handler) {
-      listeners[type].push(handler);
-      return this;
-    },
     cancel: function () {
-      listeners = null;
+      callback = null;
       client.close();
     }
   };

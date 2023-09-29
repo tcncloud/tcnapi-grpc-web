@@ -82,7 +82,7 @@ type BillingServiceListBillingPlans = {
   readonly methodName: string;
   readonly service: typeof BillingService;
   readonly requestStream: false;
-  readonly responseStream: true;
+  readonly responseStream: false;
   readonly requestType: typeof services_billing_v1alpha1_plans_pb.ListBillingPlansRequest;
   readonly responseType: typeof services_billing_v1alpha1_plans_pb.ListBillingPlansResponse;
 };
@@ -91,7 +91,7 @@ type BillingServiceListInvoices = {
   readonly methodName: string;
   readonly service: typeof BillingService;
   readonly requestStream: false;
-  readonly responseStream: true;
+  readonly responseStream: false;
   readonly requestType: typeof services_billing_v1alpha1_invoices_pb.ListInvoicesRequest;
   readonly responseType: typeof services_billing_v1alpha1_invoices_pb.ListInvoicesResponse;
 };
@@ -244,8 +244,24 @@ export class BillingServiceClient {
     requestMessage: services_billing_v1alpha1_invoices_pb.GetInvoiceRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_invoices_pb.GetInvoiceResponse|null) => void
   ): UnaryResponse;
-  listBillingPlans(requestMessage: services_billing_v1alpha1_plans_pb.ListBillingPlansRequest, metadata?: grpc.Metadata): ResponseStream<services_billing_v1alpha1_plans_pb.ListBillingPlansResponse>;
-  listInvoices(requestMessage: services_billing_v1alpha1_invoices_pb.ListInvoicesRequest, metadata?: grpc.Metadata): ResponseStream<services_billing_v1alpha1_invoices_pb.ListInvoicesResponse>;
+  listBillingPlans(
+    requestMessage: services_billing_v1alpha1_plans_pb.ListBillingPlansRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.ListBillingPlansResponse|null) => void
+  ): UnaryResponse;
+  listBillingPlans(
+    requestMessage: services_billing_v1alpha1_plans_pb.ListBillingPlansRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.ListBillingPlansResponse|null) => void
+  ): UnaryResponse;
+  listInvoices(
+    requestMessage: services_billing_v1alpha1_invoices_pb.ListInvoicesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_invoices_pb.ListInvoicesResponse|null) => void
+  ): UnaryResponse;
+  listInvoices(
+    requestMessage: services_billing_v1alpha1_invoices_pb.ListInvoicesRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_invoices_pb.ListInvoicesResponse|null) => void
+  ): UnaryResponse;
   updateBillingPlan(
     requestMessage: services_billing_v1alpha1_plans_pb.UpdateBillingPlanRequest,
     metadata: grpc.Metadata,
