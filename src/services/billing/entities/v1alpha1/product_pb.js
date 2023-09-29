@@ -1,4 +1,4 @@
-// source: data/billing/v1alpha1/products.proto
+// source: services/billing/entities/v1alpha1/product.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -21,11 +21,11 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-goog.exportSymbol('proto.data.billing.v1alpha1.Product', null, global);
+goog.exportSymbol('proto.services.billing.entities.v1alpha1.Product', null, global);
 /**
  * @enum {number}
  */
-proto.data.billing.v1alpha1.Product = {
+proto.services.billing.entities.v1alpha1.Product = {
   PRODUCT_UNSPECIFIED: 0,
   PRODUCT_AGENT_SEATS: 100,
   PRODUCT_EMAILS_SENT: 200,
@@ -39,4 +39,4 @@ proto.data.billing.v1alpha1.Product = {
   PRODUCT_COMPLIANCE: 500
 };
 
-goog.object.extend(exports, proto.data.billing.v1alpha1);
+goog.object.extend(exports, proto.services.billing.entities.v1alpha1);

@@ -2,15 +2,18 @@
 // file: services/billing/v1alpha1/invoices.proto
 
 import * as jspb from "google-protobuf";
-import * as data_billing_v1alpha1_invoices_pb from "../../../data/billing/v1alpha1/invoices_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
+import * as services_billing_entities_v1alpha1_invoice_pb from "../../../services/billing/entities/v1alpha1/invoice_pb";
 import * as services_billing_v1alpha1_core_pb from "../../../services/billing/v1alpha1/core_pb";
 
 export class CreateInvoiceRequest extends jspb.Message {
+  getInvoiceId(): string;
+  setInvoiceId(value: string): void;
+
   hasInvoice(): boolean;
   clearInvoice(): void;
-  getInvoice(): data_billing_v1alpha1_invoices_pb.Invoice | undefined;
-  setInvoice(value?: data_billing_v1alpha1_invoices_pb.Invoice): void;
+  getInvoice(): services_billing_entities_v1alpha1_invoice_pb.Invoice | undefined;
+  setInvoice(value?: services_billing_entities_v1alpha1_invoice_pb.Invoice): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateInvoiceRequest.AsObject;
@@ -24,15 +27,14 @@ export class CreateInvoiceRequest extends jspb.Message {
 
 export namespace CreateInvoiceRequest {
   export type AsObject = {
-    invoice?: data_billing_v1alpha1_invoices_pb.Invoice.AsObject,
+    invoiceId: string,
+    invoice?: services_billing_entities_v1alpha1_invoice_pb.Invoice.AsObject,
   }
 }
 
 export class CreateInvoiceResponse extends jspb.Message {
-  hasInvoice(): boolean;
-  clearInvoice(): void;
-  getInvoice(): data_billing_v1alpha1_invoices_pb.Invoice | undefined;
-  setInvoice(value?: data_billing_v1alpha1_invoices_pb.Invoice): void;
+  getInvoiceId(): string;
+  setInvoiceId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateInvoiceResponse.AsObject;
@@ -46,7 +48,7 @@ export class CreateInvoiceResponse extends jspb.Message {
 
 export namespace CreateInvoiceResponse {
   export type AsObject = {
-    invoice?: data_billing_v1alpha1_invoices_pb.Invoice.AsObject,
+    invoiceId: string,
   }
 }
 
@@ -109,8 +111,8 @@ export namespace GetInvoiceRequest {
 export class GetInvoiceResponse extends jspb.Message {
   hasInvoice(): boolean;
   clearInvoice(): void;
-  getInvoice(): data_billing_v1alpha1_invoices_pb.Invoice | undefined;
-  setInvoice(value?: data_billing_v1alpha1_invoices_pb.Invoice): void;
+  getInvoice(): services_billing_entities_v1alpha1_invoice_pb.Invoice | undefined;
+  setInvoice(value?: services_billing_entities_v1alpha1_invoice_pb.Invoice): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetInvoiceResponse.AsObject;
@@ -124,30 +126,36 @@ export class GetInvoiceResponse extends jspb.Message {
 
 export namespace GetInvoiceResponse {
   export type AsObject = {
-    invoice?: data_billing_v1alpha1_invoices_pb.Invoice.AsObject,
+    invoice?: services_billing_entities_v1alpha1_invoice_pb.Invoice.AsObject,
   }
 }
 
 export class ListInvoicesRequest extends jspb.Message {
+  getInvoiceId(): string;
+  setInvoiceId(value: string): void;
+
   hasInvoice(): boolean;
   clearInvoice(): void;
-  getInvoice(): data_billing_v1alpha1_invoices_pb.Invoice | undefined;
-  setInvoice(value?: data_billing_v1alpha1_invoices_pb.Invoice): void;
-
-  hasSelectorFields(): boolean;
-  clearSelectorFields(): void;
-  getSelectorFields(): google_protobuf_field_mask_pb.FieldMask | undefined;
-  setSelectorFields(value?: google_protobuf_field_mask_pb.FieldMask): void;
+  getInvoice(): services_billing_entities_v1alpha1_invoice_pb.Invoice | undefined;
+  setInvoice(value?: services_billing_entities_v1alpha1_invoice_pb.Invoice): void;
 
   hasReturnFields(): boolean;
   clearReturnFields(): void;
   getReturnFields(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setReturnFields(value?: google_protobuf_field_mask_pb.FieldMask): void;
 
-  hasOrderBy(): boolean;
-  clearOrderBy(): void;
-  getOrderBy(): services_billing_v1alpha1_core_pb.OrderBy | undefined;
-  setOrderBy(value?: services_billing_v1alpha1_core_pb.OrderBy): void;
+  getFilter(): string;
+  setFilter(value: string): void;
+
+  hasSort(): boolean;
+  clearSort(): void;
+  getSort(): services_billing_v1alpha1_core_pb.Sort | undefined;
+  setSort(value?: services_billing_v1alpha1_core_pb.Sort): void;
+
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): services_billing_v1alpha1_core_pb.Page | undefined;
+  setPage(value?: services_billing_v1alpha1_core_pb.Page): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListInvoicesRequest.AsObject;
@@ -161,18 +169,23 @@ export class ListInvoicesRequest extends jspb.Message {
 
 export namespace ListInvoicesRequest {
   export type AsObject = {
-    invoice?: data_billing_v1alpha1_invoices_pb.Invoice.AsObject,
-    selectorFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    invoiceId: string,
+    invoice?: services_billing_entities_v1alpha1_invoice_pb.Invoice.AsObject,
     returnFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    orderBy?: services_billing_v1alpha1_core_pb.OrderBy.AsObject,
+    filter: string,
+    sort?: services_billing_v1alpha1_core_pb.Sort.AsObject,
+    page?: services_billing_v1alpha1_core_pb.Page.AsObject,
   }
 }
 
 export class ListInvoicesResponse extends jspb.Message {
-  hasInvoice(): boolean;
-  clearInvoice(): void;
-  getInvoice(): data_billing_v1alpha1_invoices_pb.Invoice | undefined;
-  setInvoice(value?: data_billing_v1alpha1_invoices_pb.Invoice): void;
+  clearInvoicesList(): void;
+  getInvoicesList(): Array<services_billing_entities_v1alpha1_invoice_pb.Invoice>;
+  setInvoicesList(value: Array<services_billing_entities_v1alpha1_invoice_pb.Invoice>): void;
+  addInvoices(value?: services_billing_entities_v1alpha1_invoice_pb.Invoice, index?: number): services_billing_entities_v1alpha1_invoice_pb.Invoice;
+
+  getToken(): string;
+  setToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListInvoicesResponse.AsObject;
@@ -186,15 +199,19 @@ export class ListInvoicesResponse extends jspb.Message {
 
 export namespace ListInvoicesResponse {
   export type AsObject = {
-    invoice?: data_billing_v1alpha1_invoices_pb.Invoice.AsObject,
+    invoicesList: Array<services_billing_entities_v1alpha1_invoice_pb.Invoice.AsObject>,
+    token: string,
   }
 }
 
 export class UpdateInvoiceRequest extends jspb.Message {
+  getInvoiceId(): string;
+  setInvoiceId(value: string): void;
+
   hasInvoice(): boolean;
   clearInvoice(): void;
-  getInvoice(): data_billing_v1alpha1_invoices_pb.Invoice | undefined;
-  setInvoice(value?: data_billing_v1alpha1_invoices_pb.Invoice): void;
+  getInvoice(): services_billing_entities_v1alpha1_invoice_pb.Invoice | undefined;
+  setInvoice(value?: services_billing_entities_v1alpha1_invoice_pb.Invoice): void;
 
   hasUpdateFields(): boolean;
   clearUpdateFields(): void;
@@ -213,17 +230,13 @@ export class UpdateInvoiceRequest extends jspb.Message {
 
 export namespace UpdateInvoiceRequest {
   export type AsObject = {
-    invoice?: data_billing_v1alpha1_invoices_pb.Invoice.AsObject,
+    invoiceId: string,
+    invoice?: services_billing_entities_v1alpha1_invoice_pb.Invoice.AsObject,
     updateFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
 export class UpdateInvoiceResponse extends jspb.Message {
-  hasInvoice(): boolean;
-  clearInvoice(): void;
-  getInvoice(): data_billing_v1alpha1_invoices_pb.Invoice | undefined;
-  setInvoice(value?: data_billing_v1alpha1_invoices_pb.Invoice): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateInvoiceResponse.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateInvoiceResponse): UpdateInvoiceResponse.AsObject;
@@ -236,7 +249,6 @@ export class UpdateInvoiceResponse extends jspb.Message {
 
 export namespace UpdateInvoiceResponse {
   export type AsObject = {
-    invoice?: data_billing_v1alpha1_invoices_pb.Invoice.AsObject,
   }
 }
 

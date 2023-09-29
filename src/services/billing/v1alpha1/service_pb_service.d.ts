@@ -42,6 +42,15 @@ type BillingServiceDeleteInvoice = {
   readonly responseType: typeof services_billing_v1alpha1_invoices_pb.DeleteInvoiceResponse;
 };
 
+type BillingServiceGetActiveBillingPlan = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_plans_pb.GetActiveBillingPlanRequest;
+  readonly responseType: typeof services_billing_v1alpha1_plans_pb.GetActiveBillingPlanResponse;
+};
+
 type BillingServiceGetBillingPlan = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -120,6 +129,7 @@ export class BillingService {
   static readonly CreateInvoice: BillingServiceCreateInvoice;
   static readonly DeleteBillingPlan: BillingServiceDeleteBillingPlan;
   static readonly DeleteInvoice: BillingServiceDeleteInvoice;
+  static readonly GetActiveBillingPlan: BillingServiceGetActiveBillingPlan;
   static readonly GetBillingPlan: BillingServiceGetBillingPlan;
   static readonly GetDefaultBillingPlan: BillingServiceGetDefaultBillingPlan;
   static readonly GetInvoice: BillingServiceGetInvoice;
@@ -197,6 +207,15 @@ export class BillingServiceClient {
   deleteInvoice(
     requestMessage: services_billing_v1alpha1_invoices_pb.DeleteInvoiceRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_invoices_pb.DeleteInvoiceResponse|null) => void
+  ): UnaryResponse;
+  getActiveBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.GetActiveBillingPlanRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.GetActiveBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  getActiveBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.GetActiveBillingPlanRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.GetActiveBillingPlanResponse|null) => void
   ): UnaryResponse;
   getBillingPlan(
     requestMessage: services_billing_v1alpha1_plans_pb.GetBillingPlanRequest,

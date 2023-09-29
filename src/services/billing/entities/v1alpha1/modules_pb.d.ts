@@ -1,5 +1,5 @@
-// package: data.billing.v1alpha1
-// file: data/billing/v1alpha1/modules.proto
+// package: services.billing.entities.v1alpha1
+// file: services/billing/entities/v1alpha1/modules.proto
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";

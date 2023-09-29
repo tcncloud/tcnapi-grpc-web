@@ -1,5 +1,5 @@
-// package: data.billing.v1alpha1
-// file: data/billing/v1alpha1/products.proto
+// package: services.billing.entities.v1alpha1
+// file: services/billing/entities/v1alpha1/product.proto
 
 import * as jspb from "google-protobuf";
 

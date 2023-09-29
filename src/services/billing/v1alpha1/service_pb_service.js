@@ -48,6 +48,15 @@ BillingService.DeleteInvoice = {
   responseType: services_billing_v1alpha1_invoices_pb.DeleteInvoiceResponse
 };
 
+BillingService.GetActiveBillingPlan = {
+  methodName: "GetActiveBillingPlan",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha1_plans_pb.GetActiveBillingPlanRequest,
+  responseType: services_billing_v1alpha1_plans_pb.GetActiveBillingPlanResponse
+};
+
 BillingService.GetBillingPlan = {
   methodName: "GetBillingPlan",
   service: BillingService,
@@ -225,6 +234,37 @@ BillingServiceClient.prototype.deleteInvoice = function deleteInvoice(requestMes
     callback = arguments[1];
   }
   var client = grpc.unary(BillingService.DeleteInvoice, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.getActiveBillingPlan = function getActiveBillingPlan(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.GetActiveBillingPlan, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

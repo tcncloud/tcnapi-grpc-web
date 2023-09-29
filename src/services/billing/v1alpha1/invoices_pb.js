@@ -21,10 +21,10 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var data_billing_v1alpha1_invoices_pb = require('../../../data/billing/v1alpha1/invoices_pb.js');
-goog.object.extend(proto, data_billing_v1alpha1_invoices_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
+var services_billing_entities_v1alpha1_invoice_pb = require('../../../services/billing/entities/v1alpha1/invoice_pb.js');
+goog.object.extend(proto, services_billing_entities_v1alpha1_invoice_pb);
 var services_billing_v1alpha1_core_pb = require('../../../services/billing/v1alpha1/core_pb.js');
 goog.object.extend(proto, services_billing_v1alpha1_core_pb);
 goog.exportSymbol('proto.services.billing.v1alpha1.CreateInvoiceRequest', null, global);
@@ -195,7 +195,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.services.billing.v1alpha1.ListInvoicesResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.services.billing.v1alpha1.ListInvoicesResponse.repeatedFields_, null);
 };
 goog.inherits(proto.services.billing.v1alpha1.ListInvoicesResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -279,7 +279,8 @@ proto.services.billing.v1alpha1.CreateInvoiceRequest.prototype.toObject = functi
  */
 proto.services.billing.v1alpha1.CreateInvoiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && data_billing_v1alpha1_invoices_pb.Invoice.toObject(includeInstance, f)
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -317,8 +318,12 @@ proto.services.billing.v1alpha1.CreateInvoiceRequest.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new data_billing_v1alpha1_invoices_pb.Invoice;
-      reader.readMessage(value,data_billing_v1alpha1_invoices_pb.Invoice.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInvoiceId(value);
+      break;
+    case 2:
+      var value = new services_billing_entities_v1alpha1_invoice_pb.Invoice;
+      reader.readMessage(value,services_billing_entities_v1alpha1_invoice_pb.Invoice.deserializeBinaryFromReader);
       msg.setInvoice(value);
       break;
     default:
@@ -350,33 +355,58 @@ proto.services.billing.v1alpha1.CreateInvoiceRequest.prototype.serializeBinary =
  */
 proto.services.billing.v1alpha1.CreateInvoiceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getInvoiceId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getInvoice();
   if (f != null) {
     writer.writeMessage(
-      1,
+      2,
       f,
-      data_billing_v1alpha1_invoices_pb.Invoice.serializeBinaryToWriter
+      services_billing_entities_v1alpha1_invoice_pb.Invoice.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional data.billing.v1alpha1.Invoice invoice = 1;
- * @return {?proto.data.billing.v1alpha1.Invoice}
+ * optional string invoice_id = 1;
+ * @return {string}
  */
-proto.services.billing.v1alpha1.CreateInvoiceRequest.prototype.getInvoice = function() {
-  return /** @type{?proto.data.billing.v1alpha1.Invoice} */ (
-    jspb.Message.getWrapperField(this, data_billing_v1alpha1_invoices_pb.Invoice, 1));
+proto.services.billing.v1alpha1.CreateInvoiceRequest.prototype.getInvoiceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.data.billing.v1alpha1.Invoice|undefined} value
+ * @param {string} value
+ * @return {!proto.services.billing.v1alpha1.CreateInvoiceRequest} returns this
+ */
+proto.services.billing.v1alpha1.CreateInvoiceRequest.prototype.setInvoiceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional services.billing.entities.v1alpha1.Invoice invoice = 2;
+ * @return {?proto.services.billing.entities.v1alpha1.Invoice}
+ */
+proto.services.billing.v1alpha1.CreateInvoiceRequest.prototype.getInvoice = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha1.Invoice} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_invoice_pb.Invoice, 2));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha1.Invoice|undefined} value
  * @return {!proto.services.billing.v1alpha1.CreateInvoiceRequest} returns this
 */
 proto.services.billing.v1alpha1.CreateInvoiceRequest.prototype.setInvoice = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -394,7 +424,7 @@ proto.services.billing.v1alpha1.CreateInvoiceRequest.prototype.clearInvoice = fu
  * @return {boolean}
  */
 proto.services.billing.v1alpha1.CreateInvoiceRequest.prototype.hasInvoice = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -430,7 +460,7 @@ proto.services.billing.v1alpha1.CreateInvoiceResponse.prototype.toObject = funct
  */
 proto.services.billing.v1alpha1.CreateInvoiceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && data_billing_v1alpha1_invoices_pb.Invoice.toObject(includeInstance, f)
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -468,9 +498,8 @@ proto.services.billing.v1alpha1.CreateInvoiceResponse.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new data_billing_v1alpha1_invoices_pb.Invoice;
-      reader.readMessage(value,data_billing_v1alpha1_invoices_pb.Invoice.deserializeBinaryFromReader);
-      msg.setInvoice(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInvoiceId(value);
       break;
     default:
       reader.skipField();
@@ -501,51 +530,31 @@ proto.services.billing.v1alpha1.CreateInvoiceResponse.prototype.serializeBinary 
  */
 proto.services.billing.v1alpha1.CreateInvoiceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getInvoice();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getInvoiceId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      data_billing_v1alpha1_invoices_pb.Invoice.serializeBinaryToWriter
+      f
     );
   }
 };
 
 
 /**
- * optional data.billing.v1alpha1.Invoice invoice = 1;
- * @return {?proto.data.billing.v1alpha1.Invoice}
+ * optional string invoice_id = 1;
+ * @return {string}
  */
-proto.services.billing.v1alpha1.CreateInvoiceResponse.prototype.getInvoice = function() {
-  return /** @type{?proto.data.billing.v1alpha1.Invoice} */ (
-    jspb.Message.getWrapperField(this, data_billing_v1alpha1_invoices_pb.Invoice, 1));
+proto.services.billing.v1alpha1.CreateInvoiceResponse.prototype.getInvoiceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.data.billing.v1alpha1.Invoice|undefined} value
- * @return {!proto.services.billing.v1alpha1.CreateInvoiceResponse} returns this
-*/
-proto.services.billing.v1alpha1.CreateInvoiceResponse.prototype.setInvoice = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.services.billing.v1alpha1.CreateInvoiceResponse} returns this
  */
-proto.services.billing.v1alpha1.CreateInvoiceResponse.prototype.clearInvoice = function() {
-  return this.setInvoice(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.services.billing.v1alpha1.CreateInvoiceResponse.prototype.hasInvoice = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.services.billing.v1alpha1.CreateInvoiceResponse.prototype.setInvoiceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -942,7 +951,7 @@ proto.services.billing.v1alpha1.GetInvoiceResponse.prototype.toObject = function
  */
 proto.services.billing.v1alpha1.GetInvoiceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && data_billing_v1alpha1_invoices_pb.Invoice.toObject(includeInstance, f)
+    invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -980,8 +989,8 @@ proto.services.billing.v1alpha1.GetInvoiceResponse.deserializeBinaryFromReader =
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new data_billing_v1alpha1_invoices_pb.Invoice;
-      reader.readMessage(value,data_billing_v1alpha1_invoices_pb.Invoice.deserializeBinaryFromReader);
+      var value = new services_billing_entities_v1alpha1_invoice_pb.Invoice;
+      reader.readMessage(value,services_billing_entities_v1alpha1_invoice_pb.Invoice.deserializeBinaryFromReader);
       msg.setInvoice(value);
       break;
     default:
@@ -1018,24 +1027,24 @@ proto.services.billing.v1alpha1.GetInvoiceResponse.serializeBinaryToWriter = fun
     writer.writeMessage(
       1,
       f,
-      data_billing_v1alpha1_invoices_pb.Invoice.serializeBinaryToWriter
+      services_billing_entities_v1alpha1_invoice_pb.Invoice.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional data.billing.v1alpha1.Invoice invoice = 1;
- * @return {?proto.data.billing.v1alpha1.Invoice}
+ * optional services.billing.entities.v1alpha1.Invoice invoice = 1;
+ * @return {?proto.services.billing.entities.v1alpha1.Invoice}
  */
 proto.services.billing.v1alpha1.GetInvoiceResponse.prototype.getInvoice = function() {
-  return /** @type{?proto.data.billing.v1alpha1.Invoice} */ (
-    jspb.Message.getWrapperField(this, data_billing_v1alpha1_invoices_pb.Invoice, 1));
+  return /** @type{?proto.services.billing.entities.v1alpha1.Invoice} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_invoice_pb.Invoice, 1));
 };
 
 
 /**
- * @param {?proto.data.billing.v1alpha1.Invoice|undefined} value
+ * @param {?proto.services.billing.entities.v1alpha1.Invoice|undefined} value
  * @return {!proto.services.billing.v1alpha1.GetInvoiceResponse} returns this
 */
 proto.services.billing.v1alpha1.GetInvoiceResponse.prototype.setInvoice = function(value) {
@@ -1093,10 +1102,12 @@ proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.toObject = functio
  */
 proto.services.billing.v1alpha1.ListInvoicesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && data_billing_v1alpha1_invoices_pb.Invoice.toObject(includeInstance, f),
-    selectorFields: (f = msg.getSelectorFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f),
     returnFields: (f = msg.getReturnFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    orderBy: (f = msg.getOrderBy()) && services_billing_v1alpha1_core_pb.OrderBy.toObject(includeInstance, f)
+    filter: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    sort: (f = msg.getSort()) && services_billing_v1alpha1_core_pb.Sort.toObject(includeInstance, f),
+    page: (f = msg.getPage()) && services_billing_v1alpha1_core_pb.Page.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1134,14 +1145,13 @@ proto.services.billing.v1alpha1.ListInvoicesRequest.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new data_billing_v1alpha1_invoices_pb.Invoice;
-      reader.readMessage(value,data_billing_v1alpha1_invoices_pb.Invoice.deserializeBinaryFromReader);
-      msg.setInvoice(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInvoiceId(value);
       break;
     case 2:
-      var value = new google_protobuf_field_mask_pb.FieldMask;
-      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setSelectorFields(value);
+      var value = new services_billing_entities_v1alpha1_invoice_pb.Invoice;
+      reader.readMessage(value,services_billing_entities_v1alpha1_invoice_pb.Invoice.deserializeBinaryFromReader);
+      msg.setInvoice(value);
       break;
     case 3:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1149,9 +1159,18 @@ proto.services.billing.v1alpha1.ListInvoicesRequest.deserializeBinaryFromReader 
       msg.setReturnFields(value);
       break;
     case 4:
-      var value = new services_billing_v1alpha1_core_pb.OrderBy;
-      reader.readMessage(value,services_billing_v1alpha1_core_pb.OrderBy.deserializeBinaryFromReader);
-      msg.setOrderBy(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilter(value);
+      break;
+    case 5:
+      var value = new services_billing_v1alpha1_core_pb.Sort;
+      reader.readMessage(value,services_billing_v1alpha1_core_pb.Sort.deserializeBinaryFromReader);
+      msg.setSort(value);
+      break;
+    case 6:
+      var value = new services_billing_v1alpha1_core_pb.Page;
+      reader.readMessage(value,services_billing_v1alpha1_core_pb.Page.deserializeBinaryFromReader);
+      msg.setPage(value);
       break;
     default:
       reader.skipField();
@@ -1182,20 +1201,19 @@ proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.serializeBinary = 
  */
 proto.services.billing.v1alpha1.ListInvoicesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getInvoice();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getInvoiceId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      data_billing_v1alpha1_invoices_pb.Invoice.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getSelectorFields();
+  f = message.getInvoice();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+      services_billing_entities_v1alpha1_invoice_pb.Invoice.serializeBinaryToWriter
     );
   }
   f = message.getReturnFields();
@@ -1206,33 +1224,66 @@ proto.services.billing.v1alpha1.ListInvoicesRequest.serializeBinaryToWriter = fu
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
-  f = message.getOrderBy();
+  f = message.getFilter();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getSort();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
-      services_billing_v1alpha1_core_pb.OrderBy.serializeBinaryToWriter
+      services_billing_v1alpha1_core_pb.Sort.serializeBinaryToWriter
+    );
+  }
+  f = message.getPage();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      services_billing_v1alpha1_core_pb.Page.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional data.billing.v1alpha1.Invoice invoice = 1;
- * @return {?proto.data.billing.v1alpha1.Invoice}
+ * optional string invoice_id = 1;
+ * @return {string}
  */
-proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.getInvoice = function() {
-  return /** @type{?proto.data.billing.v1alpha1.Invoice} */ (
-    jspb.Message.getWrapperField(this, data_billing_v1alpha1_invoices_pb.Invoice, 1));
+proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.getInvoiceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.data.billing.v1alpha1.Invoice|undefined} value
+ * @param {string} value
+ * @return {!proto.services.billing.v1alpha1.ListInvoicesRequest} returns this
+ */
+proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.setInvoiceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional services.billing.entities.v1alpha1.Invoice invoice = 2;
+ * @return {?proto.services.billing.entities.v1alpha1.Invoice}
+ */
+proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.getInvoice = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha1.Invoice} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_invoice_pb.Invoice, 2));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha1.Invoice|undefined} value
  * @return {!proto.services.billing.v1alpha1.ListInvoicesRequest} returns this
 */
 proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.setInvoice = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -1250,43 +1301,6 @@ proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.clearInvoice = fun
  * @return {boolean}
  */
 proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.hasInvoice = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional google.protobuf.FieldMask selector_fields = 2;
- * @return {?proto.google.protobuf.FieldMask}
- */
-proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.getSelectorFields = function() {
-  return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
-};
-
-
-/**
- * @param {?proto.google.protobuf.FieldMask|undefined} value
- * @return {!proto.services.billing.v1alpha1.ListInvoicesRequest} returns this
-*/
-proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.setSelectorFields = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.services.billing.v1alpha1.ListInvoicesRequest} returns this
- */
-proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.clearSelectorFields = function() {
-  return this.setSelectorFields(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.hasSelectorFields = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -1329,21 +1343,39 @@ proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.hasReturnFields = 
 
 
 /**
- * optional OrderBy order_by = 4;
- * @return {?proto.services.billing.v1alpha1.OrderBy}
+ * optional string filter = 4;
+ * @return {string}
  */
-proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.getOrderBy = function() {
-  return /** @type{?proto.services.billing.v1alpha1.OrderBy} */ (
-    jspb.Message.getWrapperField(this, services_billing_v1alpha1_core_pb.OrderBy, 4));
+proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.getFilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {?proto.services.billing.v1alpha1.OrderBy|undefined} value
+ * @param {string} value
+ * @return {!proto.services.billing.v1alpha1.ListInvoicesRequest} returns this
+ */
+proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.setFilter = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional Sort sort = 5;
+ * @return {?proto.services.billing.v1alpha1.Sort}
+ */
+proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.getSort = function() {
+  return /** @type{?proto.services.billing.v1alpha1.Sort} */ (
+    jspb.Message.getWrapperField(this, services_billing_v1alpha1_core_pb.Sort, 5));
+};
+
+
+/**
+ * @param {?proto.services.billing.v1alpha1.Sort|undefined} value
  * @return {!proto.services.billing.v1alpha1.ListInvoicesRequest} returns this
 */
-proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.setOrderBy = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.setSort = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -1351,8 +1383,8 @@ proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.setOrderBy = funct
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.v1alpha1.ListInvoicesRequest} returns this
  */
-proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.clearOrderBy = function() {
-  return this.setOrderBy(undefined);
+proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.clearSort = function() {
+  return this.setSort(undefined);
 };
 
 
@@ -1360,11 +1392,55 @@ proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.clearOrderBy = fun
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.hasOrderBy = function() {
-  return jspb.Message.getField(this, 4) != null;
+proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.hasSort = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
+/**
+ * optional Page page = 6;
+ * @return {?proto.services.billing.v1alpha1.Page}
+ */
+proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.getPage = function() {
+  return /** @type{?proto.services.billing.v1alpha1.Page} */ (
+    jspb.Message.getWrapperField(this, services_billing_v1alpha1_core_pb.Page, 6));
+};
+
+
+/**
+ * @param {?proto.services.billing.v1alpha1.Page|undefined} value
+ * @return {!proto.services.billing.v1alpha1.ListInvoicesRequest} returns this
+*/
+proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.setPage = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.v1alpha1.ListInvoicesRequest} returns this
+ */
+proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.clearPage = function() {
+  return this.setPage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.hasPage = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.services.billing.v1alpha1.ListInvoicesResponse.repeatedFields_ = [1];
 
 
 
@@ -1397,7 +1473,9 @@ proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.toObject = functi
  */
 proto.services.billing.v1alpha1.ListInvoicesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && data_billing_v1alpha1_invoices_pb.Invoice.toObject(includeInstance, f)
+    invoicesList: jspb.Message.toObjectList(msg.getInvoicesList(),
+    services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject, includeInstance),
+    token: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1435,9 +1513,13 @@ proto.services.billing.v1alpha1.ListInvoicesResponse.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new data_billing_v1alpha1_invoices_pb.Invoice;
-      reader.readMessage(value,data_billing_v1alpha1_invoices_pb.Invoice.deserializeBinaryFromReader);
-      msg.setInvoice(value);
+      var value = new services_billing_entities_v1alpha1_invoice_pb.Invoice;
+      reader.readMessage(value,services_billing_entities_v1alpha1_invoice_pb.Invoice.deserializeBinaryFromReader);
+      msg.addInvoices(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setToken(value);
       break;
     default:
       reader.skipField();
@@ -1468,51 +1550,77 @@ proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.serializeBinary =
  */
 proto.services.billing.v1alpha1.ListInvoicesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getInvoice();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getInvoicesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       1,
       f,
-      data_billing_v1alpha1_invoices_pb.Invoice.serializeBinaryToWriter
+      services_billing_entities_v1alpha1_invoice_pb.Invoice.serializeBinaryToWriter
+    );
+  }
+  f = message.getToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
 
 
 /**
- * optional data.billing.v1alpha1.Invoice invoice = 1;
- * @return {?proto.data.billing.v1alpha1.Invoice}
+ * repeated services.billing.entities.v1alpha1.Invoice invoices = 1;
+ * @return {!Array<!proto.services.billing.entities.v1alpha1.Invoice>}
  */
-proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.getInvoice = function() {
-  return /** @type{?proto.data.billing.v1alpha1.Invoice} */ (
-    jspb.Message.getWrapperField(this, data_billing_v1alpha1_invoices_pb.Invoice, 1));
+proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.getInvoicesList = function() {
+  return /** @type{!Array<!proto.services.billing.entities.v1alpha1.Invoice>} */ (
+    jspb.Message.getRepeatedWrapperField(this, services_billing_entities_v1alpha1_invoice_pb.Invoice, 1));
 };
 
 
 /**
- * @param {?proto.data.billing.v1alpha1.Invoice|undefined} value
+ * @param {!Array<!proto.services.billing.entities.v1alpha1.Invoice>} value
  * @return {!proto.services.billing.v1alpha1.ListInvoicesResponse} returns this
 */
-proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.setInvoice = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.setInvoicesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.services.billing.entities.v1alpha1.Invoice=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.services.billing.entities.v1alpha1.Invoice}
+ */
+proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.addInvoices = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.services.billing.entities.v1alpha1.Invoice, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.services.billing.v1alpha1.ListInvoicesResponse} returns this
  */
-proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.clearInvoice = function() {
-  return this.setInvoice(undefined);
+proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.clearInvoicesList = function() {
+  return this.setInvoicesList([]);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {boolean}
+ * optional string token = 2;
+ * @return {string}
  */
-proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.hasInvoice = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.getToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.v1alpha1.ListInvoicesResponse} returns this
+ */
+proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.setToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1548,7 +1656,8 @@ proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.toObject = functi
  */
 proto.services.billing.v1alpha1.UpdateInvoiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && data_billing_v1alpha1_invoices_pb.Invoice.toObject(includeInstance, f),
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f),
     updateFields: (f = msg.getUpdateFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1587,11 +1696,15 @@ proto.services.billing.v1alpha1.UpdateInvoiceRequest.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new data_billing_v1alpha1_invoices_pb.Invoice;
-      reader.readMessage(value,data_billing_v1alpha1_invoices_pb.Invoice.deserializeBinaryFromReader);
-      msg.setInvoice(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInvoiceId(value);
       break;
     case 2:
+      var value = new services_billing_entities_v1alpha1_invoice_pb.Invoice;
+      reader.readMessage(value,services_billing_entities_v1alpha1_invoice_pb.Invoice.deserializeBinaryFromReader);
+      msg.setInvoice(value);
+      break;
+    case 3:
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
       msg.setUpdateFields(value);
@@ -1625,18 +1738,25 @@ proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.serializeBinary =
  */
 proto.services.billing.v1alpha1.UpdateInvoiceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getInvoiceId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getInvoice();
   if (f != null) {
     writer.writeMessage(
-      1,
+      2,
       f,
-      data_billing_v1alpha1_invoices_pb.Invoice.serializeBinaryToWriter
+      services_billing_entities_v1alpha1_invoice_pb.Invoice.serializeBinaryToWriter
     );
   }
   f = message.getUpdateFields();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
@@ -1645,21 +1765,39 @@ proto.services.billing.v1alpha1.UpdateInvoiceRequest.serializeBinaryToWriter = f
 
 
 /**
- * optional data.billing.v1alpha1.Invoice invoice = 1;
- * @return {?proto.data.billing.v1alpha1.Invoice}
+ * optional string invoice_id = 1;
+ * @return {string}
  */
-proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.getInvoice = function() {
-  return /** @type{?proto.data.billing.v1alpha1.Invoice} */ (
-    jspb.Message.getWrapperField(this, data_billing_v1alpha1_invoices_pb.Invoice, 1));
+proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.getInvoiceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.data.billing.v1alpha1.Invoice|undefined} value
+ * @param {string} value
+ * @return {!proto.services.billing.v1alpha1.UpdateInvoiceRequest} returns this
+ */
+proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.setInvoiceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional services.billing.entities.v1alpha1.Invoice invoice = 2;
+ * @return {?proto.services.billing.entities.v1alpha1.Invoice}
+ */
+proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.getInvoice = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha1.Invoice} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_invoice_pb.Invoice, 2));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha1.Invoice|undefined} value
  * @return {!proto.services.billing.v1alpha1.UpdateInvoiceRequest} returns this
 */
 proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.setInvoice = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -1677,17 +1815,17 @@ proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.clearInvoice = fu
  * @return {boolean}
  */
 proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.hasInvoice = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional google.protobuf.FieldMask update_fields = 2;
+ * optional google.protobuf.FieldMask update_fields = 3;
  * @return {?proto.google.protobuf.FieldMask}
  */
 proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.getUpdateFields = function() {
   return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 3));
 };
 
 
@@ -1696,7 +1834,7 @@ proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.getUpdateFields =
  * @return {!proto.services.billing.v1alpha1.UpdateInvoiceRequest} returns this
 */
 proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.setUpdateFields = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -1714,7 +1852,7 @@ proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.clearUpdateFields
  * @return {boolean}
  */
 proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.hasUpdateFields = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -1750,7 +1888,7 @@ proto.services.billing.v1alpha1.UpdateInvoiceResponse.prototype.toObject = funct
  */
 proto.services.billing.v1alpha1.UpdateInvoiceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && data_billing_v1alpha1_invoices_pb.Invoice.toObject(includeInstance, f)
+
   };
 
   if (includeInstance) {
@@ -1787,11 +1925,6 @@ proto.services.billing.v1alpha1.UpdateInvoiceResponse.deserializeBinaryFromReade
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new data_billing_v1alpha1_invoices_pb.Invoice;
-      reader.readMessage(value,data_billing_v1alpha1_invoices_pb.Invoice.deserializeBinaryFromReader);
-      msg.setInvoice(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1821,51 +1954,6 @@ proto.services.billing.v1alpha1.UpdateInvoiceResponse.prototype.serializeBinary 
  */
 proto.services.billing.v1alpha1.UpdateInvoiceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getInvoice();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      data_billing_v1alpha1_invoices_pb.Invoice.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional data.billing.v1alpha1.Invoice invoice = 1;
- * @return {?proto.data.billing.v1alpha1.Invoice}
- */
-proto.services.billing.v1alpha1.UpdateInvoiceResponse.prototype.getInvoice = function() {
-  return /** @type{?proto.data.billing.v1alpha1.Invoice} */ (
-    jspb.Message.getWrapperField(this, data_billing_v1alpha1_invoices_pb.Invoice, 1));
-};
-
-
-/**
- * @param {?proto.data.billing.v1alpha1.Invoice|undefined} value
- * @return {!proto.services.billing.v1alpha1.UpdateInvoiceResponse} returns this
-*/
-proto.services.billing.v1alpha1.UpdateInvoiceResponse.prototype.setInvoice = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.services.billing.v1alpha1.UpdateInvoiceResponse} returns this
- */
-proto.services.billing.v1alpha1.UpdateInvoiceResponse.prototype.clearInvoice = function() {
-  return this.setInvoice(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.services.billing.v1alpha1.UpdateInvoiceResponse.prototype.hasInvoice = function() {
-  return jspb.Message.getField(this, 1) != null;
 };
 
 

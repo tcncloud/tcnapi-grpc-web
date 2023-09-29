@@ -1,10 +1,10 @@
-// package: data.billing.v1alpha1
-// file: data/billing/v1alpha1/invoices.proto
+// package: services.billing.entities.v1alpha1
+// file: services/billing/entities/v1alpha1/invoice.proto
 
 import * as jspb from "google-protobuf";
-import * as data_billing_v1alpha1_products_pb from "../../../data/billing/v1alpha1/products_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
+import * as services_billing_entities_v1alpha1_product_pb from "../../../../services/billing/entities/v1alpha1/product_pb";
 
 export class Invoice extends jspb.Message {
   getInvoiceId(): string;
@@ -65,8 +65,8 @@ export class InvoiceItem extends jspb.Message {
   getInvoiceId(): string;
   setInvoiceId(value: string): void;
 
-  getProduct(): data_billing_v1alpha1_products_pb.ProductMap[keyof data_billing_v1alpha1_products_pb.ProductMap];
-  setProduct(value: data_billing_v1alpha1_products_pb.ProductMap[keyof data_billing_v1alpha1_products_pb.ProductMap]): void;
+  getProduct(): services_billing_entities_v1alpha1_product_pb.ProductMap[keyof services_billing_entities_v1alpha1_product_pb.ProductMap];
+  setProduct(value: services_billing_entities_v1alpha1_product_pb.ProductMap[keyof services_billing_entities_v1alpha1_product_pb.ProductMap]): void;
 
   getPrice(): number;
   setPrice(value: number): void;
@@ -95,7 +95,7 @@ export namespace InvoiceItem {
   export type AsObject = {
     invoiceItemId: string,
     invoiceId: string,
-    product: data_billing_v1alpha1_products_pb.ProductMap[keyof data_billing_v1alpha1_products_pb.ProductMap],
+    product: services_billing_entities_v1alpha1_product_pb.ProductMap[keyof services_billing_entities_v1alpha1_product_pb.ProductMap],
     price: number,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,

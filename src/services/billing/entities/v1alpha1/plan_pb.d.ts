@@ -1,9 +1,9 @@
-// package: data.billing.v1alpha1
-// file: data/billing/v1alpha1/plans.proto
+// package: services.billing.entities.v1alpha1
+// file: services/billing/entities/v1alpha1/plan.proto
 
 import * as jspb from "google-protobuf";
-import * as data_billing_v1alpha1_rates_pb from "../../../data/billing/v1alpha1/rates_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as services_billing_entities_v1alpha1_rates_pb from "../../../../services/billing/entities/v1alpha1/rates_pb";
 
 export class BillingPlan extends jspb.Message {
   getBillingPlanId(): string;
@@ -33,9 +33,9 @@ export class BillingPlan extends jspb.Message {
   setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   clearRateDefinitionsList(): void;
-  getRateDefinitionsList(): Array<data_billing_v1alpha1_rates_pb.RateDefinition>;
-  setRateDefinitionsList(value: Array<data_billing_v1alpha1_rates_pb.RateDefinition>): void;
-  addRateDefinitions(value?: data_billing_v1alpha1_rates_pb.RateDefinition, index?: number): data_billing_v1alpha1_rates_pb.RateDefinition;
+  getRateDefinitionsList(): Array<services_billing_entities_v1alpha1_rates_pb.RateDefinition>;
+  setRateDefinitionsList(value: Array<services_billing_entities_v1alpha1_rates_pb.RateDefinition>): void;
+  addRateDefinitions(value?: services_billing_entities_v1alpha1_rates_pb.RateDefinition, index?: number): services_billing_entities_v1alpha1_rates_pb.RateDefinition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BillingPlan.AsObject;
@@ -55,7 +55,7 @@ export namespace BillingPlan {
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    rateDefinitionsList: Array<data_billing_v1alpha1_rates_pb.RateDefinition.AsObject>,
+    rateDefinitionsList: Array<services_billing_entities_v1alpha1_rates_pb.RateDefinition.AsObject>,
   }
 }
 
