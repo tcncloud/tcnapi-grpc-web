@@ -4,58 +4,58 @@
 import * as api_v1alpha1_workflows_service_pb from "../../../api/v1alpha1/workflows/service_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type FlowDefinitionPersistServiceCreateFlowDefinition = {
+type WorkflowDefinitionPersistServiceCreateWorkflowDefinition = {
   readonly methodName: string;
-  readonly service: typeof FlowDefinitionPersistService;
+  readonly service: typeof WorkflowDefinitionPersistService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_workflows_service_pb.CreateFlowDefinitionRequest;
-  readonly responseType: typeof api_v1alpha1_workflows_service_pb.CreateFlowDefinitionResponse;
+  readonly requestType: typeof api_v1alpha1_workflows_service_pb.CreateWorkflowDefinitionRequest;
+  readonly responseType: typeof api_v1alpha1_workflows_service_pb.CreateWorkflowDefinitionResponse;
 };
 
-type FlowDefinitionPersistServiceGetFlowDefinition = {
+type WorkflowDefinitionPersistServiceGetWorkflowDefinition = {
   readonly methodName: string;
-  readonly service: typeof FlowDefinitionPersistService;
+  readonly service: typeof WorkflowDefinitionPersistService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_workflows_service_pb.GetFlowDefinitionRequest;
-  readonly responseType: typeof api_v1alpha1_workflows_service_pb.GetFlowDefinitionResponse;
+  readonly requestType: typeof api_v1alpha1_workflows_service_pb.GetWorkflowDefinitionRequest;
+  readonly responseType: typeof api_v1alpha1_workflows_service_pb.GetWorkflowDefinitionResponse;
 };
 
-type FlowDefinitionPersistServiceListFlowDefinitions = {
+type WorkflowDefinitionPersistServiceListWorkflowDefinitions = {
   readonly methodName: string;
-  readonly service: typeof FlowDefinitionPersistService;
+  readonly service: typeof WorkflowDefinitionPersistService;
   readonly requestStream: false;
   readonly responseStream: true;
-  readonly requestType: typeof api_v1alpha1_workflows_service_pb.ListFlowDefinitionsRequest;
-  readonly responseType: typeof api_v1alpha1_workflows_service_pb.ListFlowDefinitionsResponse;
+  readonly requestType: typeof api_v1alpha1_workflows_service_pb.ListWorkflowDefinitionsRequest;
+  readonly responseType: typeof api_v1alpha1_workflows_service_pb.ListWorkflowDefinitionsResponse;
 };
 
-type FlowDefinitionPersistServiceUpdateFlowDefinition = {
+type WorkflowDefinitionPersistServiceUpdateWorkflowDefinition = {
   readonly methodName: string;
-  readonly service: typeof FlowDefinitionPersistService;
+  readonly service: typeof WorkflowDefinitionPersistService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_workflows_service_pb.UpdateFlowDefinitionRequest;
-  readonly responseType: typeof api_v1alpha1_workflows_service_pb.UpdateFlowDefinitionResponse;
+  readonly requestType: typeof api_v1alpha1_workflows_service_pb.UpdateWorkflowDefinitionRequest;
+  readonly responseType: typeof api_v1alpha1_workflows_service_pb.UpdateWorkflowDefinitionResponse;
 };
 
-type FlowDefinitionPersistServiceValidateFlowDefinition = {
+type WorkflowDefinitionPersistServiceValidateWorkflowDefinition = {
   readonly methodName: string;
-  readonly service: typeof FlowDefinitionPersistService;
+  readonly service: typeof WorkflowDefinitionPersistService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_workflows_service_pb.ValidateFlowDefinitionRequest;
-  readonly responseType: typeof api_v1alpha1_workflows_service_pb.ValidateFlowDefinitionResponse;
+  readonly requestType: typeof api_v1alpha1_workflows_service_pb.ValidateWorkflowDefinitionRequest;
+  readonly responseType: typeof api_v1alpha1_workflows_service_pb.ValidateWorkflowDefinitionResponse;
 };
 
-export class FlowDefinitionPersistService {
+export class WorkflowDefinitionPersistService {
   static readonly serviceName: string;
-  static readonly CreateFlowDefinition: FlowDefinitionPersistServiceCreateFlowDefinition;
-  static readonly GetFlowDefinition: FlowDefinitionPersistServiceGetFlowDefinition;
-  static readonly ListFlowDefinitions: FlowDefinitionPersistServiceListFlowDefinitions;
-  static readonly UpdateFlowDefinition: FlowDefinitionPersistServiceUpdateFlowDefinition;
-  static readonly ValidateFlowDefinition: FlowDefinitionPersistServiceValidateFlowDefinition;
+  static readonly CreateWorkflowDefinition: WorkflowDefinitionPersistServiceCreateWorkflowDefinition;
+  static readonly GetWorkflowDefinition: WorkflowDefinitionPersistServiceGetWorkflowDefinition;
+  static readonly ListWorkflowDefinitions: WorkflowDefinitionPersistServiceListWorkflowDefinitions;
+  static readonly UpdateWorkflowDefinition: WorkflowDefinitionPersistServiceUpdateWorkflowDefinition;
+  static readonly ValidateWorkflowDefinition: WorkflowDefinitionPersistServiceValidateWorkflowDefinition;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -86,46 +86,46 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class FlowDefinitionPersistServiceClient {
+export class WorkflowDefinitionPersistServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
-  createFlowDefinition(
-    requestMessage: api_v1alpha1_workflows_service_pb.CreateFlowDefinitionRequest,
+  createWorkflowDefinition(
+    requestMessage: api_v1alpha1_workflows_service_pb.CreateWorkflowDefinitionRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.CreateFlowDefinitionResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.CreateWorkflowDefinitionResponse|null) => void
   ): UnaryResponse;
-  createFlowDefinition(
-    requestMessage: api_v1alpha1_workflows_service_pb.CreateFlowDefinitionRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.CreateFlowDefinitionResponse|null) => void
+  createWorkflowDefinition(
+    requestMessage: api_v1alpha1_workflows_service_pb.CreateWorkflowDefinitionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.CreateWorkflowDefinitionResponse|null) => void
   ): UnaryResponse;
-  getFlowDefinition(
-    requestMessage: api_v1alpha1_workflows_service_pb.GetFlowDefinitionRequest,
+  getWorkflowDefinition(
+    requestMessage: api_v1alpha1_workflows_service_pb.GetWorkflowDefinitionRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.GetFlowDefinitionResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.GetWorkflowDefinitionResponse|null) => void
   ): UnaryResponse;
-  getFlowDefinition(
-    requestMessage: api_v1alpha1_workflows_service_pb.GetFlowDefinitionRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.GetFlowDefinitionResponse|null) => void
+  getWorkflowDefinition(
+    requestMessage: api_v1alpha1_workflows_service_pb.GetWorkflowDefinitionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.GetWorkflowDefinitionResponse|null) => void
   ): UnaryResponse;
-  listFlowDefinitions(requestMessage: api_v1alpha1_workflows_service_pb.ListFlowDefinitionsRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_workflows_service_pb.ListFlowDefinitionsResponse>;
-  updateFlowDefinition(
-    requestMessage: api_v1alpha1_workflows_service_pb.UpdateFlowDefinitionRequest,
+  listWorkflowDefinitions(requestMessage: api_v1alpha1_workflows_service_pb.ListWorkflowDefinitionsRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_workflows_service_pb.ListWorkflowDefinitionsResponse>;
+  updateWorkflowDefinition(
+    requestMessage: api_v1alpha1_workflows_service_pb.UpdateWorkflowDefinitionRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.UpdateFlowDefinitionResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.UpdateWorkflowDefinitionResponse|null) => void
   ): UnaryResponse;
-  updateFlowDefinition(
-    requestMessage: api_v1alpha1_workflows_service_pb.UpdateFlowDefinitionRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.UpdateFlowDefinitionResponse|null) => void
+  updateWorkflowDefinition(
+    requestMessage: api_v1alpha1_workflows_service_pb.UpdateWorkflowDefinitionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.UpdateWorkflowDefinitionResponse|null) => void
   ): UnaryResponse;
-  validateFlowDefinition(
-    requestMessage: api_v1alpha1_workflows_service_pb.ValidateFlowDefinitionRequest,
+  validateWorkflowDefinition(
+    requestMessage: api_v1alpha1_workflows_service_pb.ValidateWorkflowDefinitionRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.ValidateFlowDefinitionResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.ValidateWorkflowDefinitionResponse|null) => void
   ): UnaryResponse;
-  validateFlowDefinition(
-    requestMessage: api_v1alpha1_workflows_service_pb.ValidateFlowDefinitionRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.ValidateFlowDefinitionResponse|null) => void
+  validateWorkflowDefinition(
+    requestMessage: api_v1alpha1_workflows_service_pb.ValidateWorkflowDefinitionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_workflows_service_pb.ValidateWorkflowDefinitionResponse|null) => void
   ): UnaryResponse;
 }
 

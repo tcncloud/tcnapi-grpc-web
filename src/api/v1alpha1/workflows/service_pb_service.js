@@ -4,69 +4,69 @@
 var api_v1alpha1_workflows_service_pb = require("../../../api/v1alpha1/workflows/service_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var FlowDefinitionPersistService = (function () {
-  function FlowDefinitionPersistService() {}
-  FlowDefinitionPersistService.serviceName = "api.v1alpha1.workflows.FlowDefinitionPersistService";
-  return FlowDefinitionPersistService;
+var WorkflowDefinitionPersistService = (function () {
+  function WorkflowDefinitionPersistService() {}
+  WorkflowDefinitionPersistService.serviceName = "api.v1alpha1.workflows.WorkflowDefinitionPersistService";
+  return WorkflowDefinitionPersistService;
 }());
 
-FlowDefinitionPersistService.CreateFlowDefinition = {
-  methodName: "CreateFlowDefinition",
-  service: FlowDefinitionPersistService,
+WorkflowDefinitionPersistService.CreateWorkflowDefinition = {
+  methodName: "CreateWorkflowDefinition",
+  service: WorkflowDefinitionPersistService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_workflows_service_pb.CreateFlowDefinitionRequest,
-  responseType: api_v1alpha1_workflows_service_pb.CreateFlowDefinitionResponse
+  requestType: api_v1alpha1_workflows_service_pb.CreateWorkflowDefinitionRequest,
+  responseType: api_v1alpha1_workflows_service_pb.CreateWorkflowDefinitionResponse
 };
 
-FlowDefinitionPersistService.GetFlowDefinition = {
-  methodName: "GetFlowDefinition",
-  service: FlowDefinitionPersistService,
+WorkflowDefinitionPersistService.GetWorkflowDefinition = {
+  methodName: "GetWorkflowDefinition",
+  service: WorkflowDefinitionPersistService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_workflows_service_pb.GetFlowDefinitionRequest,
-  responseType: api_v1alpha1_workflows_service_pb.GetFlowDefinitionResponse
+  requestType: api_v1alpha1_workflows_service_pb.GetWorkflowDefinitionRequest,
+  responseType: api_v1alpha1_workflows_service_pb.GetWorkflowDefinitionResponse
 };
 
-FlowDefinitionPersistService.ListFlowDefinitions = {
-  methodName: "ListFlowDefinitions",
-  service: FlowDefinitionPersistService,
+WorkflowDefinitionPersistService.ListWorkflowDefinitions = {
+  methodName: "ListWorkflowDefinitions",
+  service: WorkflowDefinitionPersistService,
   requestStream: false,
   responseStream: true,
-  requestType: api_v1alpha1_workflows_service_pb.ListFlowDefinitionsRequest,
-  responseType: api_v1alpha1_workflows_service_pb.ListFlowDefinitionsResponse
+  requestType: api_v1alpha1_workflows_service_pb.ListWorkflowDefinitionsRequest,
+  responseType: api_v1alpha1_workflows_service_pb.ListWorkflowDefinitionsResponse
 };
 
-FlowDefinitionPersistService.UpdateFlowDefinition = {
-  methodName: "UpdateFlowDefinition",
-  service: FlowDefinitionPersistService,
+WorkflowDefinitionPersistService.UpdateWorkflowDefinition = {
+  methodName: "UpdateWorkflowDefinition",
+  service: WorkflowDefinitionPersistService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_workflows_service_pb.UpdateFlowDefinitionRequest,
-  responseType: api_v1alpha1_workflows_service_pb.UpdateFlowDefinitionResponse
+  requestType: api_v1alpha1_workflows_service_pb.UpdateWorkflowDefinitionRequest,
+  responseType: api_v1alpha1_workflows_service_pb.UpdateWorkflowDefinitionResponse
 };
 
-FlowDefinitionPersistService.ValidateFlowDefinition = {
-  methodName: "ValidateFlowDefinition",
-  service: FlowDefinitionPersistService,
+WorkflowDefinitionPersistService.ValidateWorkflowDefinition = {
+  methodName: "ValidateWorkflowDefinition",
+  service: WorkflowDefinitionPersistService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_workflows_service_pb.ValidateFlowDefinitionRequest,
-  responseType: api_v1alpha1_workflows_service_pb.ValidateFlowDefinitionResponse
+  requestType: api_v1alpha1_workflows_service_pb.ValidateWorkflowDefinitionRequest,
+  responseType: api_v1alpha1_workflows_service_pb.ValidateWorkflowDefinitionResponse
 };
 
-exports.FlowDefinitionPersistService = FlowDefinitionPersistService;
+exports.WorkflowDefinitionPersistService = WorkflowDefinitionPersistService;
 
-function FlowDefinitionPersistServiceClient(serviceHost, options) {
+function WorkflowDefinitionPersistServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-FlowDefinitionPersistServiceClient.prototype.createFlowDefinition = function createFlowDefinition(requestMessage, metadata, callback) {
+WorkflowDefinitionPersistServiceClient.prototype.createWorkflowDefinition = function createWorkflowDefinition(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(FlowDefinitionPersistService.CreateFlowDefinition, {
+  var client = grpc.unary(WorkflowDefinitionPersistService.CreateWorkflowDefinition, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -93,11 +93,11 @@ FlowDefinitionPersistServiceClient.prototype.createFlowDefinition = function cre
   };
 };
 
-FlowDefinitionPersistServiceClient.prototype.getFlowDefinition = function getFlowDefinition(requestMessage, metadata, callback) {
+WorkflowDefinitionPersistServiceClient.prototype.getWorkflowDefinition = function getWorkflowDefinition(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(FlowDefinitionPersistService.GetFlowDefinition, {
+  var client = grpc.unary(WorkflowDefinitionPersistService.GetWorkflowDefinition, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -124,13 +124,13 @@ FlowDefinitionPersistServiceClient.prototype.getFlowDefinition = function getFlo
   };
 };
 
-FlowDefinitionPersistServiceClient.prototype.listFlowDefinitions = function listFlowDefinitions(requestMessage, metadata) {
+WorkflowDefinitionPersistServiceClient.prototype.listWorkflowDefinitions = function listWorkflowDefinitions(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(FlowDefinitionPersistService.ListFlowDefinitions, {
+  var client = grpc.invoke(WorkflowDefinitionPersistService.ListWorkflowDefinitions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -163,11 +163,11 @@ FlowDefinitionPersistServiceClient.prototype.listFlowDefinitions = function list
   };
 };
 
-FlowDefinitionPersistServiceClient.prototype.updateFlowDefinition = function updateFlowDefinition(requestMessage, metadata, callback) {
+WorkflowDefinitionPersistServiceClient.prototype.updateWorkflowDefinition = function updateWorkflowDefinition(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(FlowDefinitionPersistService.UpdateFlowDefinition, {
+  var client = grpc.unary(WorkflowDefinitionPersistService.UpdateWorkflowDefinition, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -194,11 +194,11 @@ FlowDefinitionPersistServiceClient.prototype.updateFlowDefinition = function upd
   };
 };
 
-FlowDefinitionPersistServiceClient.prototype.validateFlowDefinition = function validateFlowDefinition(requestMessage, metadata, callback) {
+WorkflowDefinitionPersistServiceClient.prototype.validateWorkflowDefinition = function validateWorkflowDefinition(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(FlowDefinitionPersistService.ValidateFlowDefinition, {
+  var client = grpc.unary(WorkflowDefinitionPersistService.ValidateWorkflowDefinition, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -225,5 +225,5 @@ FlowDefinitionPersistServiceClient.prototype.validateFlowDefinition = function v
   };
 };
 
-exports.FlowDefinitionPersistServiceClient = FlowDefinitionPersistServiceClient;
+exports.WorkflowDefinitionPersistServiceClient = WorkflowDefinitionPersistServiceClient;
 

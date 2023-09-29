@@ -6,7 +6,7 @@ import * as annotations_authz_pb from "../../../annotations/authz_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
-export class PersistedFlowDefinition extends jspb.Message {
+export class PersistedWorkflowDefinition extends jspb.Message {
   getFlowDefinitionId(): string;
   setFlowDefinitionId(value: string): void;
 
@@ -39,16 +39,16 @@ export class PersistedFlowDefinition extends jspb.Message {
   setExtra(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PersistedFlowDefinition.AsObject;
-  static toObject(includeInstance: boolean, msg: PersistedFlowDefinition): PersistedFlowDefinition.AsObject;
+  toObject(includeInstance?: boolean): PersistedWorkflowDefinition.AsObject;
+  static toObject(includeInstance: boolean, msg: PersistedWorkflowDefinition): PersistedWorkflowDefinition.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PersistedFlowDefinition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PersistedFlowDefinition;
-  static deserializeBinaryFromReader(message: PersistedFlowDefinition, reader: jspb.BinaryReader): PersistedFlowDefinition;
+  static serializeBinaryToWriter(message: PersistedWorkflowDefinition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PersistedWorkflowDefinition;
+  static deserializeBinaryFromReader(message: PersistedWorkflowDefinition, reader: jspb.BinaryReader): PersistedWorkflowDefinition;
 }
 
-export namespace PersistedFlowDefinition {
+export namespace PersistedWorkflowDefinition {
   export type AsObject = {
     flowDefinitionId: string,
     orgId: string,
@@ -62,93 +62,93 @@ export namespace PersistedFlowDefinition {
   }
 }
 
-export class CreateFlowDefinitionRequest extends jspb.Message {
-  hasFlowDefinition(): boolean;
-  clearFlowDefinition(): void;
-  getFlowDefinition(): PersistedFlowDefinition | undefined;
-  setFlowDefinition(value?: PersistedFlowDefinition): void;
+export class CreateWorkflowDefinitionRequest extends jspb.Message {
+  hasWorkflowDefinition(): boolean;
+  clearWorkflowDefinition(): void;
+  getWorkflowDefinition(): PersistedWorkflowDefinition | undefined;
+  setWorkflowDefinition(value?: PersistedWorkflowDefinition): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateFlowDefinitionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateFlowDefinitionRequest): CreateFlowDefinitionRequest.AsObject;
+  toObject(includeInstance?: boolean): CreateWorkflowDefinitionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateWorkflowDefinitionRequest): CreateWorkflowDefinitionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateFlowDefinitionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateFlowDefinitionRequest;
-  static deserializeBinaryFromReader(message: CreateFlowDefinitionRequest, reader: jspb.BinaryReader): CreateFlowDefinitionRequest;
+  static serializeBinaryToWriter(message: CreateWorkflowDefinitionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateWorkflowDefinitionRequest;
+  static deserializeBinaryFromReader(message: CreateWorkflowDefinitionRequest, reader: jspb.BinaryReader): CreateWorkflowDefinitionRequest;
 }
 
-export namespace CreateFlowDefinitionRequest {
+export namespace CreateWorkflowDefinitionRequest {
   export type AsObject = {
-    flowDefinition?: PersistedFlowDefinition.AsObject,
+    workflowDefinition?: PersistedWorkflowDefinition.AsObject,
   }
 }
 
-export class CreateFlowDefinitionResponse extends jspb.Message {
-  hasFlowDefinition(): boolean;
-  clearFlowDefinition(): void;
-  getFlowDefinition(): PersistedFlowDefinition | undefined;
-  setFlowDefinition(value?: PersistedFlowDefinition): void;
+export class CreateWorkflowDefinitionResponse extends jspb.Message {
+  hasWorkflowDefinition(): boolean;
+  clearWorkflowDefinition(): void;
+  getWorkflowDefinition(): PersistedWorkflowDefinition | undefined;
+  setWorkflowDefinition(value?: PersistedWorkflowDefinition): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateFlowDefinitionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateFlowDefinitionResponse): CreateFlowDefinitionResponse.AsObject;
+  toObject(includeInstance?: boolean): CreateWorkflowDefinitionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateWorkflowDefinitionResponse): CreateWorkflowDefinitionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateFlowDefinitionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateFlowDefinitionResponse;
-  static deserializeBinaryFromReader(message: CreateFlowDefinitionResponse, reader: jspb.BinaryReader): CreateFlowDefinitionResponse;
+  static serializeBinaryToWriter(message: CreateWorkflowDefinitionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateWorkflowDefinitionResponse;
+  static deserializeBinaryFromReader(message: CreateWorkflowDefinitionResponse, reader: jspb.BinaryReader): CreateWorkflowDefinitionResponse;
 }
 
-export namespace CreateFlowDefinitionResponse {
+export namespace CreateWorkflowDefinitionResponse {
   export type AsObject = {
-    flowDefinition?: PersistedFlowDefinition.AsObject,
+    workflowDefinition?: PersistedWorkflowDefinition.AsObject,
   }
 }
 
-export class GetFlowDefinitionRequest extends jspb.Message {
-  getFlowDefinitionId(): string;
-  setFlowDefinitionId(value: string): void;
+export class GetWorkflowDefinitionRequest extends jspb.Message {
+  getWorkflowDefinitionId(): string;
+  setWorkflowDefinitionId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetFlowDefinitionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetFlowDefinitionRequest): GetFlowDefinitionRequest.AsObject;
+  toObject(includeInstance?: boolean): GetWorkflowDefinitionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetWorkflowDefinitionRequest): GetWorkflowDefinitionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetFlowDefinitionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetFlowDefinitionRequest;
-  static deserializeBinaryFromReader(message: GetFlowDefinitionRequest, reader: jspb.BinaryReader): GetFlowDefinitionRequest;
+  static serializeBinaryToWriter(message: GetWorkflowDefinitionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetWorkflowDefinitionRequest;
+  static deserializeBinaryFromReader(message: GetWorkflowDefinitionRequest, reader: jspb.BinaryReader): GetWorkflowDefinitionRequest;
 }
 
-export namespace GetFlowDefinitionRequest {
+export namespace GetWorkflowDefinitionRequest {
   export type AsObject = {
-    flowDefinitionId: string,
+    workflowDefinitionId: string,
   }
 }
 
-export class GetFlowDefinitionResponse extends jspb.Message {
-  hasFlowDefinition(): boolean;
-  clearFlowDefinition(): void;
-  getFlowDefinition(): PersistedFlowDefinition | undefined;
-  setFlowDefinition(value?: PersistedFlowDefinition): void;
+export class GetWorkflowDefinitionResponse extends jspb.Message {
+  hasWorkflowDefinition(): boolean;
+  clearWorkflowDefinition(): void;
+  getWorkflowDefinition(): PersistedWorkflowDefinition | undefined;
+  setWorkflowDefinition(value?: PersistedWorkflowDefinition): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetFlowDefinitionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetFlowDefinitionResponse): GetFlowDefinitionResponse.AsObject;
+  toObject(includeInstance?: boolean): GetWorkflowDefinitionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetWorkflowDefinitionResponse): GetWorkflowDefinitionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetFlowDefinitionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetFlowDefinitionResponse;
-  static deserializeBinaryFromReader(message: GetFlowDefinitionResponse, reader: jspb.BinaryReader): GetFlowDefinitionResponse;
+  static serializeBinaryToWriter(message: GetWorkflowDefinitionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetWorkflowDefinitionResponse;
+  static deserializeBinaryFromReader(message: GetWorkflowDefinitionResponse, reader: jspb.BinaryReader): GetWorkflowDefinitionResponse;
 }
 
-export namespace GetFlowDefinitionResponse {
+export namespace GetWorkflowDefinitionResponse {
   export type AsObject = {
-    flowDefinition?: PersistedFlowDefinition.AsObject,
+    workflowDefinition?: PersistedWorkflowDefinition.AsObject,
   }
 }
 
-export class ListFlowDefinitionsRequest extends jspb.Message {
+export class ListWorkflowDefinitionsRequest extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
@@ -156,111 +156,111 @@ export class ListFlowDefinitionsRequest extends jspb.Message {
   setApplication(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListFlowDefinitionsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListFlowDefinitionsRequest): ListFlowDefinitionsRequest.AsObject;
+  toObject(includeInstance?: boolean): ListWorkflowDefinitionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListWorkflowDefinitionsRequest): ListWorkflowDefinitionsRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListFlowDefinitionsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListFlowDefinitionsRequest;
-  static deserializeBinaryFromReader(message: ListFlowDefinitionsRequest, reader: jspb.BinaryReader): ListFlowDefinitionsRequest;
+  static serializeBinaryToWriter(message: ListWorkflowDefinitionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListWorkflowDefinitionsRequest;
+  static deserializeBinaryFromReader(message: ListWorkflowDefinitionsRequest, reader: jspb.BinaryReader): ListWorkflowDefinitionsRequest;
 }
 
-export namespace ListFlowDefinitionsRequest {
+export namespace ListWorkflowDefinitionsRequest {
   export type AsObject = {
     orgId: string,
     application: string,
   }
 }
 
-export class ListFlowDefinitionsResponse extends jspb.Message {
-  hasFlowDefinition(): boolean;
-  clearFlowDefinition(): void;
-  getFlowDefinition(): PersistedFlowDefinition | undefined;
-  setFlowDefinition(value?: PersistedFlowDefinition): void;
+export class ListWorkflowDefinitionsResponse extends jspb.Message {
+  hasWorkflowDefinition(): boolean;
+  clearWorkflowDefinition(): void;
+  getWorkflowDefinition(): PersistedWorkflowDefinition | undefined;
+  setWorkflowDefinition(value?: PersistedWorkflowDefinition): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListFlowDefinitionsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListFlowDefinitionsResponse): ListFlowDefinitionsResponse.AsObject;
+  toObject(includeInstance?: boolean): ListWorkflowDefinitionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListWorkflowDefinitionsResponse): ListWorkflowDefinitionsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListFlowDefinitionsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListFlowDefinitionsResponse;
-  static deserializeBinaryFromReader(message: ListFlowDefinitionsResponse, reader: jspb.BinaryReader): ListFlowDefinitionsResponse;
+  static serializeBinaryToWriter(message: ListWorkflowDefinitionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListWorkflowDefinitionsResponse;
+  static deserializeBinaryFromReader(message: ListWorkflowDefinitionsResponse, reader: jspb.BinaryReader): ListWorkflowDefinitionsResponse;
 }
 
-export namespace ListFlowDefinitionsResponse {
+export namespace ListWorkflowDefinitionsResponse {
   export type AsObject = {
-    flowDefinition?: PersistedFlowDefinition.AsObject,
+    workflowDefinition?: PersistedWorkflowDefinition.AsObject,
   }
 }
 
-export class UpdateFlowDefinitionRequest extends jspb.Message {
-  hasFlowDefinition(): boolean;
-  clearFlowDefinition(): void;
-  getFlowDefinition(): PersistedFlowDefinition | undefined;
-  setFlowDefinition(value?: PersistedFlowDefinition): void;
+export class UpdateWorkflowDefinitionRequest extends jspb.Message {
+  hasWorkflowDefinition(): boolean;
+  clearWorkflowDefinition(): void;
+  getWorkflowDefinition(): PersistedWorkflowDefinition | undefined;
+  setWorkflowDefinition(value?: PersistedWorkflowDefinition): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateFlowDefinitionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateFlowDefinitionRequest): UpdateFlowDefinitionRequest.AsObject;
+  toObject(includeInstance?: boolean): UpdateWorkflowDefinitionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateWorkflowDefinitionRequest): UpdateWorkflowDefinitionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateFlowDefinitionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateFlowDefinitionRequest;
-  static deserializeBinaryFromReader(message: UpdateFlowDefinitionRequest, reader: jspb.BinaryReader): UpdateFlowDefinitionRequest;
+  static serializeBinaryToWriter(message: UpdateWorkflowDefinitionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateWorkflowDefinitionRequest;
+  static deserializeBinaryFromReader(message: UpdateWorkflowDefinitionRequest, reader: jspb.BinaryReader): UpdateWorkflowDefinitionRequest;
 }
 
-export namespace UpdateFlowDefinitionRequest {
+export namespace UpdateWorkflowDefinitionRequest {
   export type AsObject = {
-    flowDefinition?: PersistedFlowDefinition.AsObject,
+    workflowDefinition?: PersistedWorkflowDefinition.AsObject,
   }
 }
 
-export class UpdateFlowDefinitionResponse extends jspb.Message {
-  hasFlowDefinition(): boolean;
-  clearFlowDefinition(): void;
-  getFlowDefinition(): PersistedFlowDefinition | undefined;
-  setFlowDefinition(value?: PersistedFlowDefinition): void;
+export class UpdateWorkflowDefinitionResponse extends jspb.Message {
+  hasWorkflowDefinition(): boolean;
+  clearWorkflowDefinition(): void;
+  getWorkflowDefinition(): PersistedWorkflowDefinition | undefined;
+  setWorkflowDefinition(value?: PersistedWorkflowDefinition): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateFlowDefinitionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateFlowDefinitionResponse): UpdateFlowDefinitionResponse.AsObject;
+  toObject(includeInstance?: boolean): UpdateWorkflowDefinitionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateWorkflowDefinitionResponse): UpdateWorkflowDefinitionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateFlowDefinitionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateFlowDefinitionResponse;
-  static deserializeBinaryFromReader(message: UpdateFlowDefinitionResponse, reader: jspb.BinaryReader): UpdateFlowDefinitionResponse;
+  static serializeBinaryToWriter(message: UpdateWorkflowDefinitionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateWorkflowDefinitionResponse;
+  static deserializeBinaryFromReader(message: UpdateWorkflowDefinitionResponse, reader: jspb.BinaryReader): UpdateWorkflowDefinitionResponse;
 }
 
-export namespace UpdateFlowDefinitionResponse {
+export namespace UpdateWorkflowDefinitionResponse {
   export type AsObject = {
-    flowDefinition?: PersistedFlowDefinition.AsObject,
+    workflowDefinition?: PersistedWorkflowDefinition.AsObject,
   }
 }
 
-export class ValidateFlowDefinitionRequest extends jspb.Message {
-  hasFlowDefinition(): boolean;
-  clearFlowDefinition(): void;
-  getFlowDefinition(): PersistedFlowDefinition | undefined;
-  setFlowDefinition(value?: PersistedFlowDefinition): void;
+export class ValidateWorkflowDefinitionRequest extends jspb.Message {
+  hasWorkflowDefinition(): boolean;
+  clearWorkflowDefinition(): void;
+  getWorkflowDefinition(): PersistedWorkflowDefinition | undefined;
+  setWorkflowDefinition(value?: PersistedWorkflowDefinition): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ValidateFlowDefinitionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ValidateFlowDefinitionRequest): ValidateFlowDefinitionRequest.AsObject;
+  toObject(includeInstance?: boolean): ValidateWorkflowDefinitionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ValidateWorkflowDefinitionRequest): ValidateWorkflowDefinitionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ValidateFlowDefinitionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ValidateFlowDefinitionRequest;
-  static deserializeBinaryFromReader(message: ValidateFlowDefinitionRequest, reader: jspb.BinaryReader): ValidateFlowDefinitionRequest;
+  static serializeBinaryToWriter(message: ValidateWorkflowDefinitionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ValidateWorkflowDefinitionRequest;
+  static deserializeBinaryFromReader(message: ValidateWorkflowDefinitionRequest, reader: jspb.BinaryReader): ValidateWorkflowDefinitionRequest;
 }
 
-export namespace ValidateFlowDefinitionRequest {
+export namespace ValidateWorkflowDefinitionRequest {
   export type AsObject = {
-    flowDefinition?: PersistedFlowDefinition.AsObject,
+    workflowDefinition?: PersistedWorkflowDefinition.AsObject,
   }
 }
 
-export class ValidateFlowDefinitionResponse extends jspb.Message {
+export class ValidateWorkflowDefinitionResponse extends jspb.Message {
   getValid(): boolean;
   setValid(value: boolean): void;
 
@@ -268,16 +268,16 @@ export class ValidateFlowDefinitionResponse extends jspb.Message {
   setError(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ValidateFlowDefinitionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ValidateFlowDefinitionResponse): ValidateFlowDefinitionResponse.AsObject;
+  toObject(includeInstance?: boolean): ValidateWorkflowDefinitionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ValidateWorkflowDefinitionResponse): ValidateWorkflowDefinitionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ValidateFlowDefinitionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ValidateFlowDefinitionResponse;
-  static deserializeBinaryFromReader(message: ValidateFlowDefinitionResponse, reader: jspb.BinaryReader): ValidateFlowDefinitionResponse;
+  static serializeBinaryToWriter(message: ValidateWorkflowDefinitionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ValidateWorkflowDefinitionResponse;
+  static deserializeBinaryFromReader(message: ValidateWorkflowDefinitionResponse, reader: jspb.BinaryReader): ValidateWorkflowDefinitionResponse;
 }
 
-export namespace ValidateFlowDefinitionResponse {
+export namespace ValidateWorkflowDefinitionResponse {
   export type AsObject = {
     valid: boolean,
     error: string,
