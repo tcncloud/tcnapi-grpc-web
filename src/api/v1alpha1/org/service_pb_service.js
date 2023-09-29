@@ -947,6 +947,24 @@ Org.DeleteDataDipTemplate = {
   responseType: api_v1alpha1_org_huntgroup_pb.DeleteDataDipTemplateResponse
 };
 
+Org.CopyDataDipTemplate = {
+  methodName: "CopyDataDipTemplate",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateResponse
+};
+
+Org.CopyDataDipTemplateToOrganization = {
+  methodName: "CopyDataDipTemplateToOrganization",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateToOrganizationRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateToOrganizationResponse
+};
+
 Org.ListAgentResponseAutoRules = {
   methodName: "ListAgentResponseAutoRules",
   service: Org,
@@ -4617,6 +4635,68 @@ OrgClient.prototype.deleteDataDipTemplate = function deleteDataDipTemplate(reque
     callback = arguments[1];
   }
   var client = grpc.unary(Org.DeleteDataDipTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.copyDataDipTemplate = function copyDataDipTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CopyDataDipTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.copyDataDipTemplateToOrganization = function copyDataDipTemplateToOrganization(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CopyDataDipTemplateToOrganization, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
