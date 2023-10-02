@@ -333,6 +333,9 @@ export class CreatePublishedArticleRequest extends jspb.Message {
   getDisplayToUser(): boolean;
   setDisplayToUser(value: boolean): void;
 
+  getArticleLink(): string;
+  setArticleLink(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreatePublishedArticleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreatePublishedArticleRequest): CreatePublishedArticleRequest.AsObject;
@@ -347,6 +350,7 @@ export namespace CreatePublishedArticleRequest {
   export type AsObject = {
     newArticleSid: string,
     displayToUser: boolean,
+    articleLink: string,
   }
 }
 

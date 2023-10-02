@@ -941,6 +941,24 @@ type OrgDeleteDataDipTemplate = {
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.DeleteDataDipTemplateResponse;
 };
 
+type OrgCopyDataDipTemplate = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateResponse;
+};
+
+type OrgCopyDataDipTemplateToOrganization = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateToOrganizationRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateToOrganizationResponse;
+};
+
 type OrgListAgentResponseAutoRules = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1478,6 +1496,8 @@ export class Org {
   static readonly CreateDataDipTemplate: OrgCreateDataDipTemplate;
   static readonly UpdateDataDipTemplate: OrgUpdateDataDipTemplate;
   static readonly DeleteDataDipTemplate: OrgDeleteDataDipTemplate;
+  static readonly CopyDataDipTemplate: OrgCopyDataDipTemplate;
+  static readonly CopyDataDipTemplateToOrganization: OrgCopyDataDipTemplateToOrganization;
   static readonly ListAgentResponseAutoRules: OrgListAgentResponseAutoRules;
   static readonly CreateAgentResponseAutoRules: OrgCreateAgentResponseAutoRules;
   static readonly UpdateAgentResponseAutoRules: OrgUpdateAgentResponseAutoRules;
@@ -2422,6 +2442,24 @@ export class OrgClient {
   deleteDataDipTemplate(
     requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteDataDipTemplateRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteDataDipTemplateResponse|null) => void
+  ): UnaryResponse;
+  copyDataDipTemplate(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateResponse|null) => void
+  ): UnaryResponse;
+  copyDataDipTemplate(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateResponse|null) => void
+  ): UnaryResponse;
+  copyDataDipTemplateToOrganization(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateToOrganizationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateToOrganizationResponse|null) => void
+  ): UnaryResponse;
+  copyDataDipTemplateToOrganization(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateToOrganizationRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateToOrganizationResponse|null) => void
   ): UnaryResponse;
   listAgentResponseAutoRules(
     requestMessage: api_v1alpha1_org_huntgroup_pb.ListAgentResponseAutoRulesRequest,
