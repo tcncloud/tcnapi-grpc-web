@@ -50693,7 +50693,8 @@ proto.api.v1alpha1.wfm.CreateScheduleScenarioWithNodesReq.toObject = function(in
     locationNodeDescription: jspb.Message.getFieldWithDefault(msg, 7, ""),
     programNodeName: jspb.Message.getFieldWithDefault(msg, 8, ""),
     programNodeDescription: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    timeZoneVal: jspb.Message.getFieldWithDefault(msg, 10, 0)
+    timeZoneVal: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -50770,6 +50771,11 @@ proto.api.v1alpha1.wfm.CreateScheduleScenarioWithNodesReq.deserializeBinaryFromR
     case 10:
       var value = /** @type {!proto.api.commons.TimeZone} */ (reader.readEnum());
       msg.setTimeZoneVal(value);
+      break;
+    case 11:
+      var value = new api_commons_wfm_pb.SkillProfileCategory;
+      reader.readMessage(value,api_commons_wfm_pb.SkillProfileCategory.deserializeBinaryFromReader);
+      msg.setSkillProfileCategory(value);
       break;
     default:
       reader.skipField();
@@ -50869,6 +50875,14 @@ proto.api.v1alpha1.wfm.CreateScheduleScenarioWithNodesReq.serializeBinaryToWrite
     writer.writeEnum(
       10,
       f
+    );
+  }
+  f = message.getSkillProfileCategory();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      api_commons_wfm_pb.SkillProfileCategory.serializeBinaryToWriter
     );
   }
 };
@@ -51070,6 +51084,43 @@ proto.api.v1alpha1.wfm.CreateScheduleScenarioWithNodesReq.prototype.getTimeZoneV
  */
 proto.api.v1alpha1.wfm.CreateScheduleScenarioWithNodesReq.prototype.setTimeZoneVal = function(value) {
   return jspb.Message.setProto3EnumField(this, 10, value);
+};
+
+
+/**
+ * optional api.commons.SkillProfileCategory skill_profile_category = 11;
+ * @return {?proto.api.commons.SkillProfileCategory}
+ */
+proto.api.v1alpha1.wfm.CreateScheduleScenarioWithNodesReq.prototype.getSkillProfileCategory = function() {
+  return /** @type{?proto.api.commons.SkillProfileCategory} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.SkillProfileCategory, 11));
+};
+
+
+/**
+ * @param {?proto.api.commons.SkillProfileCategory|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.CreateScheduleScenarioWithNodesReq} returns this
+*/
+proto.api.v1alpha1.wfm.CreateScheduleScenarioWithNodesReq.prototype.setSkillProfileCategory = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.CreateScheduleScenarioWithNodesReq} returns this
+ */
+proto.api.v1alpha1.wfm.CreateScheduleScenarioWithNodesReq.prototype.clearSkillProfileCategory = function() {
+  return this.setSkillProfileCategory(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.CreateScheduleScenarioWithNodesReq.prototype.hasSkillProfileCategory = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 

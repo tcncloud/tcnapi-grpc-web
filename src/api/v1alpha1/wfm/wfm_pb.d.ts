@@ -6061,6 +6061,11 @@ export class CreateScheduleScenarioWithNodesReq extends jspb.Message {
   getTimeZoneVal(): api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap];
   setTimeZoneVal(value: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap]): void;
 
+  hasSkillProfileCategory(): boolean;
+  clearSkillProfileCategory(): void;
+  getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateScheduleScenarioWithNodesReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateScheduleScenarioWithNodesReq): CreateScheduleScenarioWithNodesReq.AsObject;
@@ -6083,6 +6088,7 @@ export namespace CreateScheduleScenarioWithNodesReq {
     programNodeName: string,
     programNodeDescription: string,
     timeZoneVal: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
+    skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
