@@ -259,10 +259,10 @@ export namespace ListBillingPlansRequest {
 }
 
 export class ListBillingPlansResponse extends jspb.Message {
-  clearBillingPlanList(): void;
-  getBillingPlanList(): Array<services_billing_entities_v1alpha1_plan_pb.BillingPlan>;
-  setBillingPlanList(value: Array<services_billing_entities_v1alpha1_plan_pb.BillingPlan>): void;
-  addBillingPlan(value?: services_billing_entities_v1alpha1_plan_pb.BillingPlan, index?: number): services_billing_entities_v1alpha1_plan_pb.BillingPlan;
+  clearBillingPlansList(): void;
+  getBillingPlansList(): Array<services_billing_entities_v1alpha1_plan_pb.BillingPlan>;
+  setBillingPlansList(value: Array<services_billing_entities_v1alpha1_plan_pb.BillingPlan>): void;
+  addBillingPlans(value?: services_billing_entities_v1alpha1_plan_pb.BillingPlan, index?: number): services_billing_entities_v1alpha1_plan_pb.BillingPlan;
 
   getToken(): string;
   setToken(value: string): void;
@@ -279,7 +279,7 @@ export class ListBillingPlansResponse extends jspb.Message {
 
 export namespace ListBillingPlansResponse {
   export type AsObject = {
-    billingPlanList: Array<services_billing_entities_v1alpha1_plan_pb.BillingPlan.AsObject>,
+    billingPlansList: Array<services_billing_entities_v1alpha1_plan_pb.BillingPlan.AsObject>,
     token: string,
   }
 }

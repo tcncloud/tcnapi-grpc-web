@@ -2138,7 +2138,7 @@ proto.services.billing.v1alpha1.ListBillingPlansResponse.prototype.toObject = fu
  */
 proto.services.billing.v1alpha1.ListBillingPlansResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanList: jspb.Message.toObjectList(msg.getBillingPlanList(),
+    billingPlansList: jspb.Message.toObjectList(msg.getBillingPlansList(),
     services_billing_entities_v1alpha1_plan_pb.BillingPlan.toObject, includeInstance),
     token: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
@@ -2180,7 +2180,7 @@ proto.services.billing.v1alpha1.ListBillingPlansResponse.deserializeBinaryFromRe
     case 1:
       var value = new services_billing_entities_v1alpha1_plan_pb.BillingPlan;
       reader.readMessage(value,services_billing_entities_v1alpha1_plan_pb.BillingPlan.deserializeBinaryFromReader);
-      msg.addBillingPlan(value);
+      msg.addBillingPlans(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -2215,7 +2215,7 @@ proto.services.billing.v1alpha1.ListBillingPlansResponse.prototype.serializeBina
  */
 proto.services.billing.v1alpha1.ListBillingPlansResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getBillingPlanList();
+  f = message.getBillingPlansList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -2234,10 +2234,10 @@ proto.services.billing.v1alpha1.ListBillingPlansResponse.serializeBinaryToWriter
 
 
 /**
- * repeated services.billing.entities.v1alpha1.BillingPlan billing_plan = 1;
+ * repeated services.billing.entities.v1alpha1.BillingPlan billing_plans = 1;
  * @return {!Array<!proto.services.billing.entities.v1alpha1.BillingPlan>}
  */
-proto.services.billing.v1alpha1.ListBillingPlansResponse.prototype.getBillingPlanList = function() {
+proto.services.billing.v1alpha1.ListBillingPlansResponse.prototype.getBillingPlansList = function() {
   return /** @type{!Array<!proto.services.billing.entities.v1alpha1.BillingPlan>} */ (
     jspb.Message.getRepeatedWrapperField(this, services_billing_entities_v1alpha1_plan_pb.BillingPlan, 1));
 };
@@ -2247,7 +2247,7 @@ proto.services.billing.v1alpha1.ListBillingPlansResponse.prototype.getBillingPla
  * @param {!Array<!proto.services.billing.entities.v1alpha1.BillingPlan>} value
  * @return {!proto.services.billing.v1alpha1.ListBillingPlansResponse} returns this
 */
-proto.services.billing.v1alpha1.ListBillingPlansResponse.prototype.setBillingPlanList = function(value) {
+proto.services.billing.v1alpha1.ListBillingPlansResponse.prototype.setBillingPlansList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -2257,7 +2257,7 @@ proto.services.billing.v1alpha1.ListBillingPlansResponse.prototype.setBillingPla
  * @param {number=} opt_index
  * @return {!proto.services.billing.entities.v1alpha1.BillingPlan}
  */
-proto.services.billing.v1alpha1.ListBillingPlansResponse.prototype.addBillingPlan = function(opt_value, opt_index) {
+proto.services.billing.v1alpha1.ListBillingPlansResponse.prototype.addBillingPlans = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.services.billing.entities.v1alpha1.BillingPlan, opt_index);
 };
 
@@ -2266,8 +2266,8 @@ proto.services.billing.v1alpha1.ListBillingPlansResponse.prototype.addBillingPla
  * Clears the list making it empty but non-null.
  * @return {!proto.services.billing.v1alpha1.ListBillingPlansResponse} returns this
  */
-proto.services.billing.v1alpha1.ListBillingPlansResponse.prototype.clearBillingPlanList = function() {
-  return this.setBillingPlanList([]);
+proto.services.billing.v1alpha1.ListBillingPlansResponse.prototype.clearBillingPlansList = function() {
+  return this.setBillingPlansList([]);
 };
 
 
