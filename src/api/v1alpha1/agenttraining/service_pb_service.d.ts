@@ -32,15 +32,6 @@ type AgentTrainingServiceListAgentLearningOpportunities = {
   readonly responseType: typeof api_v1alpha1_agenttraining_learning_opportunity_pb.ListAgentLearningOpportunitiesResponse;
 };
 
-type AgentTrainingServiceCompleteAgentLearningOpportunity = {
-  readonly methodName: string;
-  readonly service: typeof AgentTrainingService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_agenttraining_learning_opportunity_pb.CompleteAgentLearningOpportunityRequest;
-  readonly responseType: typeof api_v1alpha1_agenttraining_learning_opportunity_pb.CompleteAgentLearningOpportunityResponse;
-};
-
 type AgentTrainingServiceUpdateLearningOpportunity = {
   readonly methodName: string;
   readonly service: typeof AgentTrainingService;
@@ -73,7 +64,6 @@ export class AgentTrainingService {
   static readonly CreateLearningOpportunity: AgentTrainingServiceCreateLearningOpportunity;
   static readonly ListLearningOpportunities: AgentTrainingServiceListLearningOpportunities;
   static readonly ListAgentLearningOpportunities: AgentTrainingServiceListAgentLearningOpportunities;
-  static readonly CompleteAgentLearningOpportunity: AgentTrainingServiceCompleteAgentLearningOpportunity;
   static readonly UpdateLearningOpportunity: AgentTrainingServiceUpdateLearningOpportunity;
   static readonly DeleteLearningOpportunity: AgentTrainingServiceDeleteLearningOpportunity;
   static readonly GetLearningOpportunity: AgentTrainingServiceGetLearningOpportunity;
@@ -137,15 +127,6 @@ export class AgentTrainingServiceClient {
   listAgentLearningOpportunities(
     requestMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.ListAgentLearningOpportunitiesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.ListAgentLearningOpportunitiesResponse|null) => void
-  ): UnaryResponse;
-  completeAgentLearningOpportunity(
-    requestMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.CompleteAgentLearningOpportunityRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.CompleteAgentLearningOpportunityResponse|null) => void
-  ): UnaryResponse;
-  completeAgentLearningOpportunity(
-    requestMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.CompleteAgentLearningOpportunityRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.CompleteAgentLearningOpportunityResponse|null) => void
   ): UnaryResponse;
   updateLearningOpportunity(
     requestMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.UpdateLearningOpportunityRequest,

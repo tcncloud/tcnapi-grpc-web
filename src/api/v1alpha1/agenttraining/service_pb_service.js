@@ -38,15 +38,6 @@ AgentTrainingService.ListAgentLearningOpportunities = {
   responseType: api_v1alpha1_agenttraining_learning_opportunity_pb.ListAgentLearningOpportunitiesResponse
 };
 
-AgentTrainingService.CompleteAgentLearningOpportunity = {
-  methodName: "CompleteAgentLearningOpportunity",
-  service: AgentTrainingService,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_agenttraining_learning_opportunity_pb.CompleteAgentLearningOpportunityRequest,
-  responseType: api_v1alpha1_agenttraining_learning_opportunity_pb.CompleteAgentLearningOpportunityResponse
-};
-
 AgentTrainingService.UpdateLearningOpportunity = {
   methodName: "UpdateLearningOpportunity",
   service: AgentTrainingService,
@@ -148,37 +139,6 @@ AgentTrainingServiceClient.prototype.listAgentLearningOpportunities = function l
     callback = arguments[1];
   }
   var client = grpc.unary(AgentTrainingService.ListAgentLearningOpportunities, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-AgentTrainingServiceClient.prototype.completeAgentLearningOpportunity = function completeAgentLearningOpportunity(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(AgentTrainingService.CompleteAgentLearningOpportunity, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
