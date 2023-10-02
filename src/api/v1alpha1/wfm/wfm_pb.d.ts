@@ -2566,6 +2566,11 @@ export class UpdateSkillProfileAveragesUsingHistoricalDataReq extends jspb.Messa
   getExcludeSkillProfilesWithManualAverages(): boolean;
   setExcludeSkillProfilesWithManualAverages(value: boolean): void;
 
+  clearSkillProfileGroupSidsList(): void;
+  getSkillProfileGroupSidsList(): Array<number>;
+  setSkillProfileGroupSidsList(value: Array<number>): void;
+  addSkillProfileGroupSids(value: number, index?: number): number;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateSkillProfileAveragesUsingHistoricalDataReq.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateSkillProfileAveragesUsingHistoricalDataReq): UpdateSkillProfileAveragesUsingHistoricalDataReq.AsObject;
@@ -2581,6 +2586,7 @@ export namespace UpdateSkillProfileAveragesUsingHistoricalDataReq {
     skillProfileSidsList: Array<number>,
     datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     excludeSkillProfilesWithManualAverages: boolean,
+    skillProfileGroupSidsList: Array<number>,
   }
 }
 
