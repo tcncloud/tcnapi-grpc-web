@@ -109,9 +109,10 @@ proto.services.billing.entities.v1alpha1.RateDefinition.toObject = function(incl
   var f, obj = {
     rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     billingPlanId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    eventType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    configType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    matchingRule: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    rateDefinitionGroupId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    eventType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    configType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    matchingRule: jspb.Message.getFieldWithDefault(msg, 6, 0),
     config: (f = msg.getConfig()) && proto.services.billing.entities.v1alpha1.RateDefinitionConfig.toObject(includeInstance, f),
     matchingConfig: (f = msg.getMatchingConfig()) && services_billing_entities_v1alpha1_matching_pb.MatchingConfig.toObject(includeInstance, f),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -161,33 +162,37 @@ proto.services.billing.entities.v1alpha1.RateDefinition.deserializeBinaryFromRea
       msg.setBillingPlanId(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRateDefinitionGroupId(value);
+      break;
+    case 4:
       var value = /** @type {!proto.api.commons.audit.EventType} */ (reader.readEnum());
       msg.setEventType(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {!proto.services.billing.entities.v1alpha1.RateDefinitionConfigType} */ (reader.readEnum());
       msg.setConfigType(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {!proto.services.billing.entities.v1alpha1.MatchingRule} */ (reader.readEnum());
       msg.setMatchingRule(value);
       break;
-    case 6:
+    case 7:
       var value = new proto.services.billing.entities.v1alpha1.RateDefinitionConfig;
       reader.readMessage(value,proto.services.billing.entities.v1alpha1.RateDefinitionConfig.deserializeBinaryFromReader);
       msg.setConfig(value);
       break;
-    case 7:
+    case 8:
       var value = new services_billing_entities_v1alpha1_matching_pb.MatchingConfig;
       reader.readMessage(value,services_billing_entities_v1alpha1_matching_pb.MatchingConfig.deserializeBinaryFromReader);
       msg.setMatchingConfig(value);
       break;
-    case 8:
+    case 9:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateTime(value);
       break;
-    case 9:
+    case 10:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateTime(value);
@@ -235,31 +240,38 @@ proto.services.billing.entities.v1alpha1.RateDefinition.serializeBinaryToWriter 
       f
     );
   }
-  f = message.getEventType();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  f = message.getRateDefinitionGroupId();
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
-  f = message.getConfigType();
+  f = message.getEventType();
   if (f !== 0.0) {
     writer.writeEnum(
       4,
       f
     );
   }
-  f = message.getMatchingRule();
+  f = message.getConfigType();
   if (f !== 0.0) {
     writer.writeEnum(
       5,
       f
     );
   }
+  f = message.getMatchingRule();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      6,
+      f
+    );
+  }
   f = message.getConfig();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       proto.services.billing.entities.v1alpha1.RateDefinitionConfig.serializeBinaryToWriter
     );
@@ -267,7 +279,7 @@ proto.services.billing.entities.v1alpha1.RateDefinition.serializeBinaryToWriter 
   f = message.getMatchingConfig();
   if (f != null) {
     writer.writeMessage(
-      7,
+      8,
       f,
       services_billing_entities_v1alpha1_matching_pb.MatchingConfig.serializeBinaryToWriter
     );
@@ -275,7 +287,7 @@ proto.services.billing.entities.v1alpha1.RateDefinition.serializeBinaryToWriter 
   f = message.getCreateTime();
   if (f != null) {
     writer.writeMessage(
-      8,
+      9,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -283,7 +295,7 @@ proto.services.billing.entities.v1alpha1.RateDefinition.serializeBinaryToWriter 
   f = message.getUpdateTime();
   if (f != null) {
     writer.writeMessage(
-      9,
+      10,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -328,11 +340,29 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.setBillingPlan
 
 
 /**
- * optional api.commons.audit.EventType event_type = 3;
+ * optional string rate_definition_group_id = 3;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getRateDefinitionGroupId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha1.RateDefinition} returns this
+ */
+proto.services.billing.entities.v1alpha1.RateDefinition.prototype.setRateDefinitionGroupId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional api.commons.audit.EventType event_type = 4;
  * @return {!proto.api.commons.audit.EventType}
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getEventType = function() {
-  return /** @type {!proto.api.commons.audit.EventType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {!proto.api.commons.audit.EventType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -341,16 +371,16 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getEventType =
  * @return {!proto.services.billing.entities.v1alpha1.RateDefinition} returns this
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.setEventType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
 /**
- * optional RateDefinitionConfigType config_type = 4;
+ * optional RateDefinitionConfigType config_type = 5;
  * @return {!proto.services.billing.entities.v1alpha1.RateDefinitionConfigType}
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getConfigType = function() {
-  return /** @type {!proto.services.billing.entities.v1alpha1.RateDefinitionConfigType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {!proto.services.billing.entities.v1alpha1.RateDefinitionConfigType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
@@ -359,16 +389,16 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getConfigType 
  * @return {!proto.services.billing.entities.v1alpha1.RateDefinition} returns this
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.setConfigType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 4, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
 /**
- * optional MatchingRule matching_rule = 5;
+ * optional MatchingRule matching_rule = 6;
  * @return {!proto.services.billing.entities.v1alpha1.MatchingRule}
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getMatchingRule = function() {
-  return /** @type {!proto.services.billing.entities.v1alpha1.MatchingRule} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.services.billing.entities.v1alpha1.MatchingRule} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -377,17 +407,17 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getMatchingRul
  * @return {!proto.services.billing.entities.v1alpha1.RateDefinition} returns this
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.setMatchingRule = function(value) {
-  return jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 6, value);
 };
 
 
 /**
- * optional RateDefinitionConfig config = 6;
+ * optional RateDefinitionConfig config = 7;
  * @return {?proto.services.billing.entities.v1alpha1.RateDefinitionConfig}
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getConfig = function() {
   return /** @type{?proto.services.billing.entities.v1alpha1.RateDefinitionConfig} */ (
-    jspb.Message.getWrapperField(this, proto.services.billing.entities.v1alpha1.RateDefinitionConfig, 6));
+    jspb.Message.getWrapperField(this, proto.services.billing.entities.v1alpha1.RateDefinitionConfig, 7));
 };
 
 
@@ -396,7 +426,7 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getConfig = fu
  * @return {!proto.services.billing.entities.v1alpha1.RateDefinition} returns this
 */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.setConfig = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -414,17 +444,17 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.clearConfig = 
  * @return {boolean}
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.hasConfig = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional MatchingConfig matching_config = 7;
+ * optional MatchingConfig matching_config = 8;
  * @return {?proto.services.billing.entities.v1alpha1.MatchingConfig}
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getMatchingConfig = function() {
   return /** @type{?proto.services.billing.entities.v1alpha1.MatchingConfig} */ (
-    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_matching_pb.MatchingConfig, 7));
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_matching_pb.MatchingConfig, 8));
 };
 
 
@@ -433,7 +463,7 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getMatchingCon
  * @return {!proto.services.billing.entities.v1alpha1.RateDefinition} returns this
 */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.setMatchingConfig = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -451,17 +481,17 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.clearMatchingC
  * @return {boolean}
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.hasMatchingConfig = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp create_time = 8;
+ * optional google.protobuf.Timestamp create_time = 9;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getCreateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
 };
 
 
@@ -470,7 +500,7 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getCreateTime 
  * @return {!proto.services.billing.entities.v1alpha1.RateDefinition} returns this
 */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.setCreateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -488,17 +518,17 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.clearCreateTim
  * @return {boolean}
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.hasCreateTime = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp update_time = 9;
+ * optional google.protobuf.Timestamp update_time = 10;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getUpdateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 10));
 };
 
 
@@ -507,7 +537,7 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getUpdateTime 
  * @return {!proto.services.billing.entities.v1alpha1.RateDefinition} returns this
 */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.setUpdateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -525,7 +555,7 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.clearUpdateTim
  * @return {boolean}
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.hasUpdateTime = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 

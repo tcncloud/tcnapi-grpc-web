@@ -14,6 +14,9 @@ export class RateDefinition extends jspb.Message {
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;
 
+  getRateDefinitionGroupId(): string;
+  setRateDefinitionGroupId(value: string): void;
+
   getEventType(): api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap];
   setEventType(value: api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap]): void;
 
@@ -57,6 +60,7 @@ export namespace RateDefinition {
   export type AsObject = {
     rateDefinitionId: string,
     billingPlanId: string,
+    rateDefinitionGroupId: string,
     eventType: api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap],
     configType: RateDefinitionConfigTypeMap[keyof RateDefinitionConfigTypeMap],
     matchingRule: services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap[keyof services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap],
