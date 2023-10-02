@@ -1171,6 +1171,15 @@ WFM.CreateTourPattern = {
   responseType: api_v1alpha1_wfm_wfm_pb.CreateTourPatternRes
 };
 
+WFM.UpsertTourPatternWithMembers = {
+  methodName: "UpsertTourPatternWithMembers",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersRes
+};
+
 WFM.GetTourPattern = {
   methodName: "GetTourPattern",
   service: WFM,
@@ -1349,6 +1358,15 @@ WFM.DeleteTourAgentCollectionWFMAgents = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsReq,
   responseType: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsRes
+};
+
+WFM.GenerateTourWeekPatterns = {
+  methodName: "GenerateTourWeekPatterns",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsRes
 };
 
 exports.WFM = WFM;
@@ -5405,6 +5423,37 @@ WFMClient.prototype.createTourPattern = function createTourPattern(requestMessag
   };
 };
 
+WFMClient.prototype.upsertTourPatternWithMembers = function upsertTourPatternWithMembers(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpsertTourPatternWithMembers, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.getTourPattern = function getTourPattern(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -5999,6 +6048,37 @@ WFMClient.prototype.deleteTourAgentCollectionWFMAgents = function deleteTourAgen
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.DeleteTourAgentCollectionWFMAgents, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.generateTourWeekPatterns = function generateTourWeekPatterns(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.GenerateTourWeekPatterns, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
