@@ -30051,7 +30051,8 @@ proto.api.v1alpha1.wfm.ProgramNode.toObject = function(includeInstance, msg) {
     proto.api.v1alpha1.wfm.AgentGroup.toObject, includeInstance),
     memberSkillProficienciesList: jspb.Message.toObjectList(msg.getMemberSkillProficienciesList(),
     proto.api.v1alpha1.wfm.SkillProficiency.toObject, includeInstance),
-    originSid: (f = msg.getOriginSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+    originSid: (f = msg.getOriginSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -30160,6 +30161,11 @@ proto.api.v1alpha1.wfm.ProgramNode.deserializeBinaryFromReader = function(msg, r
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setOriginSid(value);
+      break;
+    case 17:
+      var value = new api_commons_wfm_pb.SkillProfileCategory;
+      reader.readMessage(value,api_commons_wfm_pb.SkillProfileCategory.deserializeBinaryFromReader);
+      msg.setSkillProfileCategory(value);
       break;
     default:
       reader.skipField();
@@ -30309,6 +30315,14 @@ proto.api.v1alpha1.wfm.ProgramNode.serializeBinaryToWriter = function(message, w
       16,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getSkillProfileCategory();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      api_commons_wfm_pb.SkillProfileCategory.serializeBinaryToWriter
     );
   }
 };
@@ -30777,6 +30791,43 @@ proto.api.v1alpha1.wfm.ProgramNode.prototype.clearOriginSid = function() {
  */
 proto.api.v1alpha1.wfm.ProgramNode.prototype.hasOriginSid = function() {
   return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional api.commons.SkillProfileCategory skill_profile_category = 17;
+ * @return {?proto.api.commons.SkillProfileCategory}
+ */
+proto.api.v1alpha1.wfm.ProgramNode.prototype.getSkillProfileCategory = function() {
+  return /** @type{?proto.api.commons.SkillProfileCategory} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.SkillProfileCategory, 17));
+};
+
+
+/**
+ * @param {?proto.api.commons.SkillProfileCategory|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.ProgramNode} returns this
+*/
+proto.api.v1alpha1.wfm.ProgramNode.prototype.setSkillProfileCategory = function(value) {
+  return jspb.Message.setWrapperField(this, 17, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.ProgramNode} returns this
+ */
+proto.api.v1alpha1.wfm.ProgramNode.prototype.clearSkillProfileCategory = function() {
+  return this.setSkillProfileCategory(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ProgramNode.prototype.hasSkillProfileCategory = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
