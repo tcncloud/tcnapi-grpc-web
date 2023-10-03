@@ -1165,6 +1165,15 @@ type WFMCreateTourPattern = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourPatternRes;
 };
 
+type WFMUpsertTourPatternWithMembers = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersRes;
+};
+
 type WFMGetTourPattern = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1345,6 +1354,15 @@ type WFMDeleteTourAgentCollectionWFMAgents = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsRes;
 };
 
+type WFMGenerateTourWeekPatterns = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsRes;
+};
+
 export class WFM {
   static readonly serviceName: string;
   static readonly ListSkillProfiles: WFMListSkillProfiles;
@@ -1476,6 +1494,7 @@ export class WFM {
   static readonly GetPerformanceMetrics: WFMGetPerformanceMetrics;
   static readonly ListRequiredCallsIntervals: WFMListRequiredCallsIntervals;
   static readonly CreateTourPattern: WFMCreateTourPattern;
+  static readonly UpsertTourPatternWithMembers: WFMUpsertTourPatternWithMembers;
   static readonly GetTourPattern: WFMGetTourPattern;
   static readonly DeleteTourPattern: WFMDeleteTourPattern;
   static readonly CreateTourWeekPattern: WFMCreateTourWeekPattern;
@@ -1496,6 +1515,7 @@ export class WFM {
   static readonly CreateTourAgentCollectionWFMAgents: WFMCreateTourAgentCollectionWFMAgents;
   static readonly ListTourAgentCollectionWFMAgents: WFMListTourAgentCollectionWFMAgents;
   static readonly DeleteTourAgentCollectionWFMAgents: WFMDeleteTourAgentCollectionWFMAgents;
+  static readonly GenerateTourWeekPatterns: WFMGenerateTourWeekPatterns;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -2643,6 +2663,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourPatternReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourPatternRes|null) => void
   ): UnaryResponse;
+  upsertTourPatternWithMembers(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersRes|null) => void
+  ): UnaryResponse;
+  upsertTourPatternWithMembers(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersRes|null) => void
+  ): UnaryResponse;
   getTourPattern(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternReq,
     metadata: grpc.Metadata,
@@ -2822,6 +2851,15 @@ export class WFMClient {
   deleteTourAgentCollectionWFMAgents(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  generateTourWeekPatterns(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsRes|null) => void
+  ): UnaryResponse;
+  generateTourWeekPatterns(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsRes|null) => void
   ): UnaryResponse;
 }
 

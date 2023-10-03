@@ -282,9 +282,6 @@ export class MatchingMod extends jspb.Message {
   setOrList(value: Array<MatchingMod>): void;
   addOr(value?: MatchingMod, index?: number): MatchingMod;
 
-  getNot(): boolean;
-  setNot(value: boolean): void;
-
   hasMod(): boolean;
   clearMod(): void;
   getMod(): MatchingEntity | undefined;
@@ -304,7 +301,6 @@ export namespace MatchingMod {
   export type AsObject = {
     andList: Array<MatchingMod.AsObject>,
     orList: Array<MatchingMod.AsObject>,
-    not: boolean,
     mod?: MatchingEntity.AsObject,
   }
 }

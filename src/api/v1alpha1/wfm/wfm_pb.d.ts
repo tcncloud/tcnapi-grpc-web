@@ -2566,6 +2566,11 @@ export class UpdateSkillProfileAveragesUsingHistoricalDataReq extends jspb.Messa
   getExcludeSkillProfilesWithManualAverages(): boolean;
   setExcludeSkillProfilesWithManualAverages(value: boolean): void;
 
+  clearSkillProfileGroupSidsList(): void;
+  getSkillProfileGroupSidsList(): Array<number>;
+  setSkillProfileGroupSidsList(value: Array<number>): void;
+  addSkillProfileGroupSids(value: number, index?: number): number;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateSkillProfileAveragesUsingHistoricalDataReq.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateSkillProfileAveragesUsingHistoricalDataReq): UpdateSkillProfileAveragesUsingHistoricalDataReq.AsObject;
@@ -2581,6 +2586,7 @@ export namespace UpdateSkillProfileAveragesUsingHistoricalDataReq {
     skillProfileSidsList: Array<number>,
     datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     excludeSkillProfilesWithManualAverages: boolean,
+    skillProfileGroupSidsList: Array<number>,
   }
 }
 
@@ -9170,6 +9176,50 @@ export namespace CreateTourPatternRes {
   }
 }
 
+export class UpsertTourPatternWithMembersReq extends jspb.Message {
+  hasTourPattern(): boolean;
+  clearTourPattern(): void;
+  getTourPattern(): TourPattern | undefined;
+  setTourPattern(value?: TourPattern): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpsertTourPatternWithMembersReq.AsObject;
+  static toObject(includeInstance: boolean, msg: UpsertTourPatternWithMembersReq): UpsertTourPatternWithMembersReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpsertTourPatternWithMembersReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpsertTourPatternWithMembersReq;
+  static deserializeBinaryFromReader(message: UpsertTourPatternWithMembersReq, reader: jspb.BinaryReader): UpsertTourPatternWithMembersReq;
+}
+
+export namespace UpsertTourPatternWithMembersReq {
+  export type AsObject = {
+    tourPattern?: TourPattern.AsObject,
+  }
+}
+
+export class UpsertTourPatternWithMembersRes extends jspb.Message {
+  hasTourPattern(): boolean;
+  clearTourPattern(): void;
+  getTourPattern(): TourPattern | undefined;
+  setTourPattern(value?: TourPattern): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpsertTourPatternWithMembersRes.AsObject;
+  static toObject(includeInstance: boolean, msg: UpsertTourPatternWithMembersRes): UpsertTourPatternWithMembersRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpsertTourPatternWithMembersRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpsertTourPatternWithMembersRes;
+  static deserializeBinaryFromReader(message: UpsertTourPatternWithMembersRes, reader: jspb.BinaryReader): UpsertTourPatternWithMembersRes;
+}
+
+export namespace UpsertTourPatternWithMembersRes {
+  export type AsObject = {
+    tourPattern?: TourPattern.AsObject,
+  }
+}
+
 export class GetTourPatternReq extends jspb.Message {
   getShiftTemplateSid(): number;
   setShiftTemplateSid(value: number): void;
@@ -10003,6 +10053,62 @@ export class DeleteTourAgentCollectionWFMAgentsRes extends jspb.Message {
 
 export namespace DeleteTourAgentCollectionWFMAgentsRes {
   export type AsObject = {
+  }
+}
+
+export class GenerateTourWeekPatternsReq extends jspb.Message {
+  getTargetShiftTemplateSid(): number;
+  setTargetShiftTemplateSid(value: number): void;
+
+  getNumWeeksInTour(): number;
+  setNumWeeksInTour(value: number): void;
+
+  getScheduleScenarioSid(): number;
+  setScheduleScenarioSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateTourWeekPatternsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateTourWeekPatternsReq): GenerateTourWeekPatternsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateTourWeekPatternsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateTourWeekPatternsReq;
+  static deserializeBinaryFromReader(message: GenerateTourWeekPatternsReq, reader: jspb.BinaryReader): GenerateTourWeekPatternsReq;
+}
+
+export namespace GenerateTourWeekPatternsReq {
+  export type AsObject = {
+    targetShiftTemplateSid: number,
+    numWeeksInTour: number,
+    scheduleScenarioSid: number,
+  }
+}
+
+export class GenerateTourWeekPatternsRes extends jspb.Message {
+  clearTourWeekPatternsList(): void;
+  getTourWeekPatternsList(): Array<TourWeekPattern>;
+  setTourWeekPatternsList(value: Array<TourWeekPattern>): void;
+  addTourWeekPatterns(value?: TourWeekPattern, index?: number): TourWeekPattern;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateTourWeekPatternsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateTourWeekPatternsRes): GenerateTourWeekPatternsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateTourWeekPatternsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateTourWeekPatternsRes;
+  static deserializeBinaryFromReader(message: GenerateTourWeekPatternsRes, reader: jspb.BinaryReader): GenerateTourWeekPatternsRes;
+}
+
+export namespace GenerateTourWeekPatternsRes {
+  export type AsObject = {
+    tourWeekPatternsList: Array<TourWeekPattern.AsObject>,
+    diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
 

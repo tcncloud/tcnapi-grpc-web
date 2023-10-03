@@ -2621,7 +2621,6 @@ proto.api.commons.MatchingMod.toObject = function(includeInstance, msg) {
     proto.api.commons.MatchingMod.toObject, includeInstance),
     orList: jspb.Message.toObjectList(msg.getOrList(),
     proto.api.commons.MatchingMod.toObject, includeInstance),
-    not: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     mod: (f = msg.getMod()) && proto.api.commons.MatchingEntity.toObject(includeInstance, f)
   };
 
@@ -2670,10 +2669,6 @@ proto.api.commons.MatchingMod.deserializeBinaryFromReader = function(msg, reader
       msg.addOr(value);
       break;
     case 3:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setNot(value);
-      break;
-    case 4:
       var value = new proto.api.commons.MatchingEntity;
       reader.readMessage(value,proto.api.commons.MatchingEntity.deserializeBinaryFromReader);
       msg.setMod(value);
@@ -2723,17 +2718,10 @@ proto.api.commons.MatchingMod.serializeBinaryToWriter = function(message, writer
       proto.api.commons.MatchingMod.serializeBinaryToWriter
     );
   }
-  f = message.getNot();
-  if (f) {
-    writer.writeBool(
-      3,
-      f
-    );
-  }
   f = message.getMod();
   if (f != null) {
     writer.writeMessage(
-      4,
+      3,
       f,
       proto.api.commons.MatchingEntity.serializeBinaryToWriter
     );
@@ -2818,30 +2806,12 @@ proto.api.commons.MatchingMod.prototype.clearOrList = function() {
 
 
 /**
- * optional bool not = 3;
- * @return {boolean}
- */
-proto.api.commons.MatchingMod.prototype.getNot = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.commons.MatchingMod} returns this
- */
-proto.api.commons.MatchingMod.prototype.setNot = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
-};
-
-
-/**
- * optional MatchingEntity mod = 4;
+ * optional MatchingEntity mod = 3;
  * @return {?proto.api.commons.MatchingEntity}
  */
 proto.api.commons.MatchingMod.prototype.getMod = function() {
   return /** @type{?proto.api.commons.MatchingEntity} */ (
-    jspb.Message.getWrapperField(this, proto.api.commons.MatchingEntity, 4));
+    jspb.Message.getWrapperField(this, proto.api.commons.MatchingEntity, 3));
 };
 
 
@@ -2850,7 +2820,7 @@ proto.api.commons.MatchingMod.prototype.getMod = function() {
  * @return {!proto.api.commons.MatchingMod} returns this
 */
 proto.api.commons.MatchingMod.prototype.setMod = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -2868,7 +2838,7 @@ proto.api.commons.MatchingMod.prototype.clearMod = function() {
  * @return {boolean}
  */
 proto.api.commons.MatchingMod.prototype.hasMod = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

@@ -496,6 +496,7 @@ export interface EventStateMap {
   EVENT_STATE_CHECK: 2;
   EVENT_STATE_PROCESS: 3;
   EVENT_STATE_CLEANUP: 4;
+  EVENT_STATE_FINISHED: 5;
 }
 
 export const EventState: EventStateMap;

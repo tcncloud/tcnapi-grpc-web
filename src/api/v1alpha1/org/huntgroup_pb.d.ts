@@ -420,6 +420,102 @@ export namespace DeleteDataDipTemplateResponse {
   }
 }
 
+export class CopyDataDipTemplateRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getXmlClientPropertySid(): number;
+  setXmlClientPropertySid(value: number): void;
+
+  getConfigName(): string;
+  setConfigName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyDataDipTemplateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyDataDipTemplateRequest): CopyDataDipTemplateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyDataDipTemplateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyDataDipTemplateRequest;
+  static deserializeBinaryFromReader(message: CopyDataDipTemplateRequest, reader: jspb.BinaryReader): CopyDataDipTemplateRequest;
+}
+
+export namespace CopyDataDipTemplateRequest {
+  export type AsObject = {
+    orgId: string,
+    xmlClientPropertySid: number,
+    configName: string,
+  }
+}
+
+export class CopyDataDipTemplateResponse extends jspb.Message {
+  getXmlClientPropertySid(): number;
+  setXmlClientPropertySid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyDataDipTemplateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyDataDipTemplateResponse): CopyDataDipTemplateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyDataDipTemplateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyDataDipTemplateResponse;
+  static deserializeBinaryFromReader(message: CopyDataDipTemplateResponse, reader: jspb.BinaryReader): CopyDataDipTemplateResponse;
+}
+
+export namespace CopyDataDipTemplateResponse {
+  export type AsObject = {
+    xmlClientPropertySid: number,
+  }
+}
+
+export class CopyDataDipTemplateToOrganizationRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getXmlClientPropertySid(): number;
+  setXmlClientPropertySid(value: number): void;
+
+  getConfigName(): string;
+  setConfigName(value: string): void;
+
+  getDestinationOrgId(): string;
+  setDestinationOrgId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyDataDipTemplateToOrganizationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyDataDipTemplateToOrganizationRequest): CopyDataDipTemplateToOrganizationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyDataDipTemplateToOrganizationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyDataDipTemplateToOrganizationRequest;
+  static deserializeBinaryFromReader(message: CopyDataDipTemplateToOrganizationRequest, reader: jspb.BinaryReader): CopyDataDipTemplateToOrganizationRequest;
+}
+
+export namespace CopyDataDipTemplateToOrganizationRequest {
+  export type AsObject = {
+    orgId: string,
+    xmlClientPropertySid: number,
+    configName: string,
+    destinationOrgId: string,
+  }
+}
+
+export class CopyDataDipTemplateToOrganizationResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyDataDipTemplateToOrganizationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyDataDipTemplateToOrganizationResponse): CopyDataDipTemplateToOrganizationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyDataDipTemplateToOrganizationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyDataDipTemplateToOrganizationResponse;
+  static deserializeBinaryFromReader(message: CopyDataDipTemplateToOrganizationResponse, reader: jspb.BinaryReader): CopyDataDipTemplateToOrganizationResponse;
+}
+
+export namespace CopyDataDipTemplateToOrganizationResponse {
+  export type AsObject = {
+  }
+}
+
 export class ListAgentResponseAutoRulesRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAgentResponseAutoRulesRequest.AsObject;

@@ -2914,7 +2914,8 @@ proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.prototype.toObject = f
 proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    displayToUser: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+    displayToUser: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    articleLink: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2959,6 +2960,10 @@ proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.deserializeBinaryFromR
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDisplayToUser(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setArticleLink(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3002,6 +3007,13 @@ proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.serializeBinaryToWrite
       f
     );
   }
+  f = message.getArticleLink();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -3038,6 +3050,24 @@ proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.prototype.getDisplayTo
  */
 proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.prototype.setDisplayToUser = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+/**
+ * optional string article_link = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.prototype.getArticleLink = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest} returns this
+ */
+proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.prototype.setArticleLink = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
