@@ -134,23 +134,18 @@ export class ListInvoicesRequest extends jspb.Message {
   getInvoiceId(): string;
   setInvoiceId(value: string): void;
 
-  hasInvoice(): boolean;
-  clearInvoice(): void;
-  getInvoice(): services_billing_entities_v1alpha1_invoice_pb.Invoice | undefined;
-  setInvoice(value?: services_billing_entities_v1alpha1_invoice_pb.Invoice): void;
-
-  hasReturnFields(): boolean;
-  clearReturnFields(): void;
-  getReturnFields(): google_protobuf_field_mask_pb.FieldMask | undefined;
-  setReturnFields(value?: google_protobuf_field_mask_pb.FieldMask): void;
-
   getFilter(): string;
   setFilter(value: string): void;
 
-  hasSort(): boolean;
-  clearSort(): void;
-  getSort(): services_billing_v1alpha1_core_pb.Sort | undefined;
-  setSort(value?: services_billing_v1alpha1_core_pb.Sort): void;
+  hasFields(): boolean;
+  clearFields(): void;
+  getFields(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFields(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  clearSortList(): void;
+  getSortList(): Array<services_billing_v1alpha1_core_pb.Sort>;
+  setSortList(value: Array<services_billing_v1alpha1_core_pb.Sort>): void;
+  addSort(value?: services_billing_v1alpha1_core_pb.Sort, index?: number): services_billing_v1alpha1_core_pb.Sort;
 
   hasPage(): boolean;
   clearPage(): void;
@@ -170,10 +165,9 @@ export class ListInvoicesRequest extends jspb.Message {
 export namespace ListInvoicesRequest {
   export type AsObject = {
     invoiceId: string,
-    invoice?: services_billing_entities_v1alpha1_invoice_pb.Invoice.AsObject,
-    returnFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
     filter: string,
-    sort?: services_billing_v1alpha1_core_pb.Sort.AsObject,
+    fields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    sortList: Array<services_billing_v1alpha1_core_pb.Sort.AsObject>,
     page?: services_billing_v1alpha1_core_pb.Page.AsObject,
   }
 }

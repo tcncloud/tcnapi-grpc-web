@@ -264,7 +264,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.services.billing.v1alpha1.ListBillingPlansRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.services.billing.v1alpha1.ListBillingPlansRequest.repeatedFields_, null);
 };
 goog.inherits(proto.services.billing.v1alpha1.ListBillingPlansRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1736,6 +1736,13 @@ proto.services.billing.v1alpha1.GetDefaultBillingPlanResponse.prototype.hasBilli
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.services.billing.v1alpha1.ListBillingPlansRequest.repeatedFields_ = [4];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1768,10 +1775,10 @@ proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.toObject = fun
 proto.services.billing.v1alpha1.ListBillingPlansRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    billingPlan: (f = msg.getBillingPlan()) && services_billing_entities_v1alpha1_plan_pb.BillingPlan.toObject(includeInstance, f),
-    returnFields: (f = msg.getReturnFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    filter: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    sort: (f = msg.getSort()) && services_billing_v1alpha1_core_pb.Sort.toObject(includeInstance, f),
+    filter: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    fields: (f = msg.getFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+    sortList: jspb.Message.toObjectList(msg.getSortList(),
+    services_billing_v1alpha1_core_pb.Sort.toObject, includeInstance),
     page: (f = msg.getPage()) && services_billing_v1alpha1_core_pb.Page.toObject(includeInstance, f)
   };
 
@@ -1814,25 +1821,20 @@ proto.services.billing.v1alpha1.ListBillingPlansRequest.deserializeBinaryFromRea
       msg.setBillingPlanId(value);
       break;
     case 2:
-      var value = new services_billing_entities_v1alpha1_plan_pb.BillingPlan;
-      reader.readMessage(value,services_billing_entities_v1alpha1_plan_pb.BillingPlan.deserializeBinaryFromReader);
-      msg.setBillingPlan(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilter(value);
       break;
     case 3:
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setReturnFields(value);
+      msg.setFields(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFilter(value);
-      break;
-    case 5:
       var value = new services_billing_v1alpha1_core_pb.Sort;
       reader.readMessage(value,services_billing_v1alpha1_core_pb.Sort.deserializeBinaryFromReader);
-      msg.setSort(value);
+      msg.addSort(value);
       break;
-    case 6:
+    case 5:
       var value = new services_billing_v1alpha1_core_pb.Page;
       reader.readMessage(value,services_billing_v1alpha1_core_pb.Page.deserializeBinaryFromReader);
       msg.setPage(value);
@@ -1873,15 +1875,14 @@ proto.services.billing.v1alpha1.ListBillingPlansRequest.serializeBinaryToWriter 
       f
     );
   }
-  f = message.getBillingPlan();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getFilter();
+  if (f.length > 0) {
+    writer.writeString(
       2,
-      f,
-      services_billing_entities_v1alpha1_plan_pb.BillingPlan.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getReturnFields();
+  f = message.getFields();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -1889,17 +1890,10 @@ proto.services.billing.v1alpha1.ListBillingPlansRequest.serializeBinaryToWriter 
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
-  f = message.getFilter();
+  f = message.getSortList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedMessage(
       4,
-      f
-    );
-  }
-  f = message.getSort();
-  if (f != null) {
-    writer.writeMessage(
-      5,
       f,
       services_billing_v1alpha1_core_pb.Sort.serializeBinaryToWriter
     );
@@ -1907,7 +1901,7 @@ proto.services.billing.v1alpha1.ListBillingPlansRequest.serializeBinaryToWriter 
   f = message.getPage();
   if (f != null) {
     writer.writeMessage(
-      6,
+      5,
       f,
       services_billing_v1alpha1_core_pb.Page.serializeBinaryToWriter
     );
@@ -1934,47 +1928,28 @@ proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.setBillingPlan
 
 
 /**
- * optional services.billing.entities.v1alpha1.BillingPlan billing_plan = 2;
- * @return {?proto.services.billing.entities.v1alpha1.BillingPlan}
+ * optional string filter = 2;
+ * @return {string}
  */
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.getBillingPlan = function() {
-  return /** @type{?proto.services.billing.entities.v1alpha1.BillingPlan} */ (
-    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_plan_pb.BillingPlan, 2));
+proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.getFilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {?proto.services.billing.entities.v1alpha1.BillingPlan|undefined} value
- * @return {!proto.services.billing.v1alpha1.ListBillingPlansRequest} returns this
-*/
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.setBillingPlan = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.services.billing.v1alpha1.ListBillingPlansRequest} returns this
  */
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.clearBillingPlan = function() {
-  return this.setBillingPlan(undefined);
+proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.setFilter = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.hasBillingPlan = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional google.protobuf.FieldMask return_fields = 3;
+ * optional google.protobuf.FieldMask fields = 3;
  * @return {?proto.google.protobuf.FieldMask}
  */
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.getReturnFields = function() {
+proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.getFields = function() {
   return /** @type{?proto.google.protobuf.FieldMask} */ (
     jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 3));
 };
@@ -1984,7 +1959,7 @@ proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.getReturnField
  * @param {?proto.google.protobuf.FieldMask|undefined} value
  * @return {!proto.services.billing.v1alpha1.ListBillingPlansRequest} returns this
 */
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.setReturnFields = function(value) {
+proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.setFields = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -1993,8 +1968,8 @@ proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.setReturnField
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.v1alpha1.ListBillingPlansRequest} returns this
  */
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.clearReturnFields = function() {
-  return this.setReturnFields(undefined);
+proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.clearFields = function() {
+  return this.setFields(undefined);
 };
 
 
@@ -2002,73 +1977,56 @@ proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.clearReturnFie
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.hasReturnFields = function() {
+proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.hasFields = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string filter = 4;
- * @return {string}
+ * repeated Sort sort = 4;
+ * @return {!Array<!proto.services.billing.v1alpha1.Sort>}
  */
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.getFilter = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.getSortList = function() {
+  return /** @type{!Array<!proto.services.billing.v1alpha1.Sort>} */ (
+    jspb.Message.getRepeatedWrapperField(this, services_billing_v1alpha1_core_pb.Sort, 4));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.services.billing.v1alpha1.ListBillingPlansRequest} returns this
- */
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.setFilter = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional Sort sort = 5;
- * @return {?proto.services.billing.v1alpha1.Sort}
- */
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.getSort = function() {
-  return /** @type{?proto.services.billing.v1alpha1.Sort} */ (
-    jspb.Message.getWrapperField(this, services_billing_v1alpha1_core_pb.Sort, 5));
-};
-
-
-/**
- * @param {?proto.services.billing.v1alpha1.Sort|undefined} value
+ * @param {!Array<!proto.services.billing.v1alpha1.Sort>} value
  * @return {!proto.services.billing.v1alpha1.ListBillingPlansRequest} returns this
 */
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.setSort = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.setSortList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.services.billing.v1alpha1.Sort=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.services.billing.v1alpha1.Sort}
+ */
+proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.addSort = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.services.billing.v1alpha1.Sort, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.services.billing.v1alpha1.ListBillingPlansRequest} returns this
  */
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.clearSort = function() {
-  return this.setSort(undefined);
+proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.clearSortList = function() {
+  return this.setSortList([]);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.hasSort = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional Page page = 6;
+ * optional Page page = 5;
  * @return {?proto.services.billing.v1alpha1.Page}
  */
 proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.getPage = function() {
   return /** @type{?proto.services.billing.v1alpha1.Page} */ (
-    jspb.Message.getWrapperField(this, services_billing_v1alpha1_core_pb.Page, 6));
+    jspb.Message.getWrapperField(this, services_billing_v1alpha1_core_pb.Page, 5));
 };
 
 
@@ -2077,7 +2035,7 @@ proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.getPage = func
  * @return {!proto.services.billing.v1alpha1.ListBillingPlansRequest} returns this
 */
 proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.setPage = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -2095,7 +2053,7 @@ proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.clearPage = fu
  * @return {boolean}
  */
 proto.services.billing.v1alpha1.ListBillingPlansRequest.prototype.hasPage = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

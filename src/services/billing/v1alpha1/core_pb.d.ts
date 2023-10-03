@@ -28,10 +28,11 @@ export namespace Page {
 }
 
 export class Sort extends jspb.Message {
-  clearFieldsList(): void;
-  getFieldsList(): Array<SortField>;
-  setFieldsList(value: Array<SortField>): void;
-  addFields(value?: SortField, index?: number): SortField;
+  getKey(): string;
+  setKey(value: string): void;
+
+  getDirection(): OrderMap[keyof OrderMap];
+  setDirection(value: OrderMap[keyof OrderMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Sort.AsObject;
@@ -45,38 +46,15 @@ export class Sort extends jspb.Message {
 
 export namespace Sort {
   export type AsObject = {
-    fieldsList: Array<SortField.AsObject>,
+    key: string,
+    direction: OrderMap[keyof OrderMap],
   }
 }
 
-export class SortField extends jspb.Message {
-  getField(): string;
-  setField(value: string): void;
-
-  getDirection(): SortDirectionMap[keyof SortDirectionMap];
-  setDirection(value: SortDirectionMap[keyof SortDirectionMap]): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SortField.AsObject;
-  static toObject(includeInstance: boolean, msg: SortField): SortField.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SortField, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SortField;
-  static deserializeBinaryFromReader(message: SortField, reader: jspb.BinaryReader): SortField;
+export interface OrderMap {
+  ORDER_UNSPECIFIED: 0;
+  ORDER_DESC: 1;
 }
 
-export namespace SortField {
-  export type AsObject = {
-    field: string,
-    direction: SortDirectionMap[keyof SortDirectionMap],
-  }
-}
-
-export interface SortDirectionMap {
-  SORT_DIRECTION_UNSPECIFIED: 0;
-  SORT_DIRECTION_DESC: 1;
-}
-
-export const SortDirection: SortDirectionMap;
+export const Order: OrderMap;
 
