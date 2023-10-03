@@ -316,6 +316,7 @@ export class MatchingEntity extends jspb.Message {
   getDispositions(): DispositionMod | undefined;
   setDispositions(value?: DispositionMod): void;
 
+  getEntityCase(): MatchingEntity.EntityCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MatchingEntity.AsObject;
   static toObject(includeInstance: boolean, msg: MatchingEntity): MatchingEntity.AsObject;
@@ -330,6 +331,12 @@ export namespace MatchingEntity {
   export type AsObject = {
     results?: ResultsMod.AsObject,
     dispositions?: DispositionMod.AsObject,
+  }
+
+  export enum EntityCase {
+    ENTITY_NOT_SET = 0,
+    RESULTS = 1,
+    DISPOSITIONS = 2,
   }
 }
 

@@ -48,6 +48,7 @@ goog.exportSymbol('proto.api.commons.FrequencyExp', null, global);
 goog.exportSymbol('proto.api.commons.HolidayExp', null, global);
 goog.exportSymbol('proto.api.commons.LocationExp', null, global);
 goog.exportSymbol('proto.api.commons.MatchingEntity', null, global);
+goog.exportSymbol('proto.api.commons.MatchingEntity.EntityCase', null, global);
 goog.exportSymbol('proto.api.commons.MatchingMod', null, global);
 goog.exportSymbol('proto.api.commons.MetaFieldExp', null, global);
 goog.exportSymbol('proto.api.commons.MonthExp', null, global);
@@ -226,7 +227,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.commons.MatchingEntity = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.api.commons.MatchingEntity.oneofGroups_);
 };
 goog.inherits(proto.api.commons.MatchingEntity, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -2843,6 +2844,32 @@ proto.api.commons.MatchingMod.prototype.hasMod = function() {
 
 
 
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.api.commons.MatchingEntity.oneofGroups_ = [[1,2]];
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.MatchingEntity.EntityCase = {
+  ENTITY_NOT_SET: 0,
+  RESULTS: 1,
+  DISPOSITIONS: 2
+};
+
+/**
+ * @return {proto.api.commons.MatchingEntity.EntityCase}
+ */
+proto.api.commons.MatchingEntity.prototype.getEntityCase = function() {
+  return /** @type {proto.api.commons.MatchingEntity.EntityCase} */(jspb.Message.computeOneofCase(this, proto.api.commons.MatchingEntity.oneofGroups_[0]));
+};
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2985,7 +3012,7 @@ proto.api.commons.MatchingEntity.prototype.getResults = function() {
  * @return {!proto.api.commons.MatchingEntity} returns this
 */
 proto.api.commons.MatchingEntity.prototype.setResults = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setOneofWrapperField(this, 1, proto.api.commons.MatchingEntity.oneofGroups_[0], value);
 };
 
 
@@ -3022,7 +3049,7 @@ proto.api.commons.MatchingEntity.prototype.getDispositions = function() {
  * @return {!proto.api.commons.MatchingEntity} returns this
 */
 proto.api.commons.MatchingEntity.prototype.setDispositions = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setOneofWrapperField(this, 2, proto.api.commons.MatchingEntity.oneofGroups_[0], value);
 };
 
 
