@@ -42,6 +42,15 @@ type BillingServiceDeleteInvoice = {
   readonly responseType: typeof services_billing_v1alpha1_invoices_pb.DeleteInvoiceResponse;
 };
 
+type BillingServiceExportInvoice = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_invoices_pb.ExportInvoiceRequest;
+  readonly responseType: typeof services_billing_v1alpha1_invoices_pb.ExportInvoiceResponse;
+};
+
 type BillingServiceGetActiveBillingPlan = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -129,6 +138,7 @@ export class BillingService {
   static readonly CreateInvoice: BillingServiceCreateInvoice;
   static readonly DeleteBillingPlan: BillingServiceDeleteBillingPlan;
   static readonly DeleteInvoice: BillingServiceDeleteInvoice;
+  static readonly ExportInvoice: BillingServiceExportInvoice;
   static readonly GetActiveBillingPlan: BillingServiceGetActiveBillingPlan;
   static readonly GetBillingPlan: BillingServiceGetBillingPlan;
   static readonly GetDefaultBillingPlan: BillingServiceGetDefaultBillingPlan;
@@ -207,6 +217,15 @@ export class BillingServiceClient {
   deleteInvoice(
     requestMessage: services_billing_v1alpha1_invoices_pb.DeleteInvoiceRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_invoices_pb.DeleteInvoiceResponse|null) => void
+  ): UnaryResponse;
+  exportInvoice(
+    requestMessage: services_billing_v1alpha1_invoices_pb.ExportInvoiceRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_invoices_pb.ExportInvoiceResponse|null) => void
+  ): UnaryResponse;
+  exportInvoice(
+    requestMessage: services_billing_v1alpha1_invoices_pb.ExportInvoiceRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_invoices_pb.ExportInvoiceResponse|null) => void
   ): UnaryResponse;
   getActiveBillingPlan(
     requestMessage: services_billing_v1alpha1_plans_pb.GetActiveBillingPlanRequest,

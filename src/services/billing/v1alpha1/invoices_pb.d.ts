@@ -88,6 +88,52 @@ export namespace DeleteInvoiceResponse {
   }
 }
 
+export class ExportInvoiceRequest extends jspb.Message {
+  getInvoiceId(): string;
+  setInvoiceId(value: string): void;
+
+  getFormat(): InvoiceFormatMap[keyof InvoiceFormatMap];
+  setFormat(value: InvoiceFormatMap[keyof InvoiceFormatMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExportInvoiceRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ExportInvoiceRequest): ExportInvoiceRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExportInvoiceRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExportInvoiceRequest;
+  static deserializeBinaryFromReader(message: ExportInvoiceRequest, reader: jspb.BinaryReader): ExportInvoiceRequest;
+}
+
+export namespace ExportInvoiceRequest {
+  export type AsObject = {
+    invoiceId: string,
+    format: InvoiceFormatMap[keyof InvoiceFormatMap],
+  }
+}
+
+export class ExportInvoiceResponse extends jspb.Message {
+  hasInvoice(): boolean;
+  clearInvoice(): void;
+  getInvoice(): services_billing_entities_v1alpha1_invoice_pb.Invoice | undefined;
+  setInvoice(value?: services_billing_entities_v1alpha1_invoice_pb.Invoice): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExportInvoiceResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ExportInvoiceResponse): ExportInvoiceResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExportInvoiceResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExportInvoiceResponse;
+  static deserializeBinaryFromReader(message: ExportInvoiceResponse, reader: jspb.BinaryReader): ExportInvoiceResponse;
+}
+
+export namespace ExportInvoiceResponse {
+  export type AsObject = {
+    invoice?: services_billing_entities_v1alpha1_invoice_pb.Invoice.AsObject,
+  }
+}
+
 export class GetInvoiceRequest extends jspb.Message {
   getInvoiceId(): string;
   setInvoiceId(value: string): void;
@@ -245,4 +291,11 @@ export namespace UpdateInvoiceResponse {
   export type AsObject = {
   }
 }
+
+export interface InvoiceFormatMap {
+  INVOICE_FORMAT_UNSPECIFIED: 0;
+  INVOICE_FORMAT_CSV: 1;
+}
+
+export const InvoiceFormat: InvoiceFormatMap;
 
