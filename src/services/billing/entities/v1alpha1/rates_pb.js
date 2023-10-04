@@ -116,7 +116,8 @@ proto.services.billing.entities.v1alpha1.RateDefinition.toObject = function(incl
     config: (f = msg.getConfig()) && proto.services.billing.entities.v1alpha1.RateDefinitionConfig.toObject(includeInstance, f),
     matchingConfig: (f = msg.getMatchingConfig()) && services_billing_entities_v1alpha1_matching_pb.MatchingConfig.toObject(includeInstance, f),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -196,6 +197,11 @@ proto.services.billing.entities.v1alpha1.RateDefinition.deserializeBinaryFromRea
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateTime(value);
+      break;
+    case 11:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setDeleteTime(value);
       break;
     default:
       reader.skipField();
@@ -296,6 +302,14 @@ proto.services.billing.entities.v1alpha1.RateDefinition.serializeBinaryToWriter 
   if (f != null) {
     writer.writeMessage(
       10,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeleteTime();
+  if (f != null) {
+    writer.writeMessage(
+      11,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -556,6 +570,43 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.clearUpdateTim
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.hasUpdateTime = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp delete_time = 11;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getDeleteTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 11));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha1.RateDefinition} returns this
+*/
+proto.services.billing.entities.v1alpha1.RateDefinition.prototype.setDeleteTime = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha1.RateDefinition} returns this
+ */
+proto.services.billing.entities.v1alpha1.RateDefinition.prototype.clearDeleteTime = function() {
+  return this.setDeleteTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha1.RateDefinition.prototype.hasDeleteTime = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 

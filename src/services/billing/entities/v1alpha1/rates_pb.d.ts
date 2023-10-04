@@ -46,6 +46,11 @@ export class RateDefinition extends jspb.Message {
   getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasDeleteTime(): boolean;
+  clearDeleteTime(): void;
+  getDeleteTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDeleteTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RateDefinition.AsObject;
   static toObject(includeInstance: boolean, msg: RateDefinition): RateDefinition.AsObject;
@@ -68,6 +73,7 @@ export namespace RateDefinition {
     matchingConfig?: services_billing_entities_v1alpha1_matching_pb.MatchingConfig.AsObject,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
