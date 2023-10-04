@@ -75,7 +75,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900]];
 
 /**
  * @enum {number}
@@ -132,6 +132,10 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   OMNICHANNEL_CUSTOMER_MESSAGE_UNITS_EVENT: 355,
   OMNICHANNEL_SYSTEM_MESSAGE_UNITS_EVENT: 356,
   OMNICHANNEL_PAYMENT_LINK_SENT_EVENT: 357,
+  OMNICHANNEL_MANUAL_APPROVE_TASK_ACCEPTED_EVENT: 358,
+  OMNICHANNEL_MANUAL_APPROVE_TASK_REJECTED_EVENT: 359,
+  OMNICHANNEL_MANUAL_APPROVE_TASK_TIMEOUT_EVENT: 360,
+  OMNICHANNEL_MANUAL_APPROVE_TASK_REQUEUE_EVENT: 361,
   ASM_AGENT_LOGIN_EVENT: 400,
   ASM_OPEN_VOICE_EVENT: 401,
   ASM_OPEN_OMNI_AGENT_EVENT: 402,
@@ -266,6 +270,10 @@ proto.api.commons.audit.AuditEvent.toObject = function(includeInstance, msg) {
     omnichannelCustomerMessageUnitsEvent: (f = msg.getOmnichannelCustomerMessageUnitsEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelCustomerMessageUnitsEvent.toObject(includeInstance, f),
     omnichannelSystemMessageUnitsEvent: (f = msg.getOmnichannelSystemMessageUnitsEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelSystemMessageUnitsEvent.toObject(includeInstance, f),
     omnichannelPaymentLinkSentEvent: (f = msg.getOmnichannelPaymentLinkSentEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent.toObject(includeInstance, f),
+    omnichannelManualApproveTaskAcceptedEvent: (f = msg.getOmnichannelManualApproveTaskAcceptedEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskAcceptedEvent.toObject(includeInstance, f),
+    omnichannelManualApproveTaskRejectedEvent: (f = msg.getOmnichannelManualApproveTaskRejectedEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRejectedEvent.toObject(includeInstance, f),
+    omnichannelManualApproveTaskTimeoutEvent: (f = msg.getOmnichannelManualApproveTaskTimeoutEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskTimeoutEvent.toObject(includeInstance, f),
+    omnichannelManualApproveTaskRequeueEvent: (f = msg.getOmnichannelManualApproveTaskRequeueEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.toObject(includeInstance, f),
     asmAgentLoginEvent: (f = msg.getAsmAgentLoginEvent()) && api_commons_audit_asm_events_pb.AsmAgentLoginEvent.toObject(includeInstance, f),
     asmOpenVoiceEvent: (f = msg.getAsmOpenVoiceEvent()) && api_commons_audit_asm_events_pb.AsmOpenVoiceEvent.toObject(includeInstance, f),
     asmOpenOmniAgentEvent: (f = msg.getAsmOpenOmniAgentEvent()) && api_commons_audit_asm_events_pb.AsmOpenOmniAgentEvent.toObject(includeInstance, f),
@@ -614,6 +622,26 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent;
       reader.readMessage(value,api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent.deserializeBinaryFromReader);
       msg.setOmnichannelPaymentLinkSentEvent(value);
+      break;
+    case 358:
+      var value = new api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskAcceptedEvent;
+      reader.readMessage(value,api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskAcceptedEvent.deserializeBinaryFromReader);
+      msg.setOmnichannelManualApproveTaskAcceptedEvent(value);
+      break;
+    case 359:
+      var value = new api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRejectedEvent;
+      reader.readMessage(value,api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRejectedEvent.deserializeBinaryFromReader);
+      msg.setOmnichannelManualApproveTaskRejectedEvent(value);
+      break;
+    case 360:
+      var value = new api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskTimeoutEvent;
+      reader.readMessage(value,api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskTimeoutEvent.deserializeBinaryFromReader);
+      msg.setOmnichannelManualApproveTaskTimeoutEvent(value);
+      break;
+    case 361:
+      var value = new api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent;
+      reader.readMessage(value,api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.deserializeBinaryFromReader);
+      msg.setOmnichannelManualApproveTaskRequeueEvent(value);
       break;
     case 400:
       var value = new api_commons_audit_asm_events_pb.AsmAgentLoginEvent;
@@ -1275,6 +1303,38 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       357,
       f,
       api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getOmnichannelManualApproveTaskAcceptedEvent();
+  if (f != null) {
+    writer.writeMessage(
+      358,
+      f,
+      api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskAcceptedEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getOmnichannelManualApproveTaskRejectedEvent();
+  if (f != null) {
+    writer.writeMessage(
+      359,
+      f,
+      api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRejectedEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getOmnichannelManualApproveTaskTimeoutEvent();
+  if (f != null) {
+    writer.writeMessage(
+      360,
+      f,
+      api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskTimeoutEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getOmnichannelManualApproveTaskRequeueEvent();
+  if (f != null) {
+    writer.writeMessage(
+      361,
+      f,
+      api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.serializeBinaryToWriter
     );
   }
   f = message.getAsmAgentLoginEvent();
@@ -3558,6 +3618,154 @@ proto.api.commons.audit.AuditEvent.prototype.clearOmnichannelPaymentLinkSentEven
  */
 proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelPaymentLinkSentEvent = function() {
   return jspb.Message.getField(this, 357) != null;
+};
+
+
+/**
+ * optional OmnichannelManualApproveTaskAcceptedEvent omnichannel_manual_approve_task_accepted_event = 358;
+ * @return {?proto.api.commons.audit.OmnichannelManualApproveTaskAcceptedEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getOmnichannelManualApproveTaskAcceptedEvent = function() {
+  return /** @type{?proto.api.commons.audit.OmnichannelManualApproveTaskAcceptedEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskAcceptedEvent, 358));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.OmnichannelManualApproveTaskAcceptedEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setOmnichannelManualApproveTaskAcceptedEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 358, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearOmnichannelManualApproveTaskAcceptedEvent = function() {
+  return this.setOmnichannelManualApproveTaskAcceptedEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelManualApproveTaskAcceptedEvent = function() {
+  return jspb.Message.getField(this, 358) != null;
+};
+
+
+/**
+ * optional OmnichannelManualApproveTaskRejectedEvent omnichannel_manual_approve_task_rejected_event = 359;
+ * @return {?proto.api.commons.audit.OmnichannelManualApproveTaskRejectedEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getOmnichannelManualApproveTaskRejectedEvent = function() {
+  return /** @type{?proto.api.commons.audit.OmnichannelManualApproveTaskRejectedEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRejectedEvent, 359));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.OmnichannelManualApproveTaskRejectedEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setOmnichannelManualApproveTaskRejectedEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 359, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearOmnichannelManualApproveTaskRejectedEvent = function() {
+  return this.setOmnichannelManualApproveTaskRejectedEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelManualApproveTaskRejectedEvent = function() {
+  return jspb.Message.getField(this, 359) != null;
+};
+
+
+/**
+ * optional OmnichannelManualApproveTaskTimeoutEvent omnichannel_manual_approve_task_timeout_event = 360;
+ * @return {?proto.api.commons.audit.OmnichannelManualApproveTaskTimeoutEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getOmnichannelManualApproveTaskTimeoutEvent = function() {
+  return /** @type{?proto.api.commons.audit.OmnichannelManualApproveTaskTimeoutEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskTimeoutEvent, 360));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.OmnichannelManualApproveTaskTimeoutEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setOmnichannelManualApproveTaskTimeoutEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 360, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearOmnichannelManualApproveTaskTimeoutEvent = function() {
+  return this.setOmnichannelManualApproveTaskTimeoutEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelManualApproveTaskTimeoutEvent = function() {
+  return jspb.Message.getField(this, 360) != null;
+};
+
+
+/**
+ * optional OmnichannelManualApproveTaskRequeueEvent omnichannel_manual_approve_task_requeue_event = 361;
+ * @return {?proto.api.commons.audit.OmnichannelManualApproveTaskRequeueEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getOmnichannelManualApproveTaskRequeueEvent = function() {
+  return /** @type{?proto.api.commons.audit.OmnichannelManualApproveTaskRequeueEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent, 361));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.OmnichannelManualApproveTaskRequeueEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setOmnichannelManualApproveTaskRequeueEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 361, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearOmnichannelManualApproveTaskRequeueEvent = function() {
+  return this.setOmnichannelManualApproveTaskRequeueEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelManualApproveTaskRequeueEvent = function() {
+  return jspb.Message.getField(this, 361) != null;
 };
 
 
