@@ -1580,6 +1580,11 @@ export class ExecuteFlow extends jspb.Message {
   getPriocommerceCcPayment(): ExecutePriocommerceCcPayment | undefined;
   setPriocommerceCcPayment(value?: ExecutePriocommerceCcPayment): void;
 
+  hasNavigaCreatePayment(): boolean;
+  clearNavigaCreatePayment(): void;
+  getNavigaCreatePayment(): ExecuteNavigaCreatePayment | undefined;
+  setNavigaCreatePayment(value?: ExecuteNavigaCreatePayment): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -1786,6 +1791,7 @@ export namespace ExecuteFlow {
     newzwarePhoneLookupMulti?: ExecuteNewzwarePhoneLookupMulti.AsObject,
     priocommerceAchPayment?: ExecutePriocommerceAchPayment.AsObject,
     priocommerceCcPayment?: ExecutePriocommerceCcPayment.AsObject,
+    navigaCreatePayment?: ExecuteNavigaCreatePayment.AsObject,
   }
 
   export enum ValueCase {
@@ -1982,6 +1988,7 @@ export namespace ExecuteFlow {
     NEWZWARE_PHONE_LOOKUP_MULTI = 3809,
     PRIOCOMMERCE_ACH_PAYMENT = 3901,
     PRIOCOMMERCE_CC_PAYMENT = 3902,
+    NAVIGA_CREATE_PAYMENT = 4001,
   }
 }
 
@@ -5546,6 +5553,22 @@ export namespace ExecutePriocommerceCcPayment {
   }
 }
 
+export class ExecuteNavigaCreatePayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaCreatePayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaCreatePayment): ExecuteNavigaCreatePayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaCreatePayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaCreatePayment;
+  static deserializeBinaryFromReader(message: ExecuteNavigaCreatePayment, reader: jspb.BinaryReader): ExecuteNavigaCreatePayment;
+}
+
+export namespace ExecuteNavigaCreatePayment {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -5587,6 +5610,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_EPIC: 3700;
   INTEGRATION_TYPE_NEWZWARE: 3800;
   INTEGRATION_TYPE_PRIOCOMMERCE: 3900;
+  INTEGRATION_TYPE_NAVIGA: 4000;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -5785,6 +5809,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP_MULTI: 3809;
   REQUEST_METHOD_PRIOCOMMERCE_ACH_PAYMENT: 3901;
   REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT: 3902;
+  REQUEST_METHOD_NAVIGA_CREATE_PAYMENT: 4001;
 }
 
 export const RequestMethod: RequestMethodMap;
