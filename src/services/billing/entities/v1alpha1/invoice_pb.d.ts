@@ -10,9 +10,6 @@ export class Invoice extends jspb.Message {
   getInvoiceId(): string;
   setInvoiceId(value: string): void;
 
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   getBillingCycle(): string;
   setBillingCycle(value: string): void;
 
@@ -54,7 +51,6 @@ export class Invoice extends jspb.Message {
 export namespace Invoice {
   export type AsObject = {
     invoiceId: string,
-    orgId: string,
     billingCycle: string,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -67,9 +63,6 @@ export namespace Invoice {
 export class InvoiceItem extends jspb.Message {
   getInvoiceItemId(): string;
   setInvoiceItemId(value: string): void;
-
-  getInvoiceId(): string;
-  setInvoiceId(value: string): void;
 
   getProduct(): services_billing_entities_v1alpha1_product_pb.ProductMap[keyof services_billing_entities_v1alpha1_product_pb.ProductMap];
   setProduct(value: services_billing_entities_v1alpha1_product_pb.ProductMap[keyof services_billing_entities_v1alpha1_product_pb.ProductMap]): void;
@@ -100,7 +93,6 @@ export class InvoiceItem extends jspb.Message {
 export namespace InvoiceItem {
   export type AsObject = {
     invoiceItemId: string,
-    invoiceId: string,
     product: services_billing_entities_v1alpha1_product_pb.ProductMap[keyof services_billing_entities_v1alpha1_product_pb.ProductMap],
     price: number,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,

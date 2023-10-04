@@ -77,7 +77,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.services.billing.entities.v1alpha1.Invoice.repeatedFields_ = [7];
+proto.services.billing.entities.v1alpha1.Invoice.repeatedFields_ = [6];
 
 
 
@@ -111,8 +111,7 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.toObject = function(o
 proto.services.billing.entities.v1alpha1.Invoice.toObject = function(includeInstance, msg) {
   var f, obj = {
     invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    billingCycle: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    billingCycle: jspb.Message.getFieldWithDefault(msg, 2, ""),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -161,33 +160,29 @@ proto.services.billing.entities.v1alpha1.Invoice.deserializeBinaryFromReader = f
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOrgId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
       msg.setBillingCycle(value);
       break;
-    case 4:
+    case 3:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateTime(value);
       break;
-    case 5:
+    case 4:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateTime(value);
       break;
-    case 6:
+    case 5:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setDeleteTime(value);
       break;
-    case 7:
+    case 6:
       var value = new proto.services.billing.entities.v1alpha1.InvoiceItem;
       reader.readMessage(value,proto.services.billing.entities.v1alpha1.InvoiceItem.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
-    case 8:
+    case 7:
       var value = new google_protobuf_wrappers_pb.StringValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setUrl(value);
@@ -228,24 +223,17 @@ proto.services.billing.entities.v1alpha1.Invoice.serializeBinaryToWriter = funct
       f
     );
   }
-  f = message.getOrgId();
+  f = message.getBillingCycle();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getBillingCycle();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getCreateTime();
   if (f != null) {
     writer.writeMessage(
-      4,
+      3,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -253,7 +241,7 @@ proto.services.billing.entities.v1alpha1.Invoice.serializeBinaryToWriter = funct
   f = message.getUpdateTime();
   if (f != null) {
     writer.writeMessage(
-      5,
+      4,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -261,7 +249,7 @@ proto.services.billing.entities.v1alpha1.Invoice.serializeBinaryToWriter = funct
   f = message.getDeleteTime();
   if (f != null) {
     writer.writeMessage(
-      6,
+      5,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -269,7 +257,7 @@ proto.services.billing.entities.v1alpha1.Invoice.serializeBinaryToWriter = funct
   f = message.getItemsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      6,
       f,
       proto.services.billing.entities.v1alpha1.InvoiceItem.serializeBinaryToWriter
     );
@@ -277,7 +265,7 @@ proto.services.billing.entities.v1alpha1.Invoice.serializeBinaryToWriter = funct
   f = message.getUrl();
   if (f != null) {
     writer.writeMessage(
-      8,
+      7,
       f,
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
@@ -304,10 +292,10 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.setInvoiceId = functi
 
 
 /**
- * optional string org_id = 2;
+ * optional string billing_cycle = 2;
  * @return {string}
  */
-proto.services.billing.entities.v1alpha1.Invoice.prototype.getOrgId = function() {
+proto.services.billing.entities.v1alpha1.Invoice.prototype.getBillingCycle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -316,36 +304,18 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.getOrgId = function()
  * @param {string} value
  * @return {!proto.services.billing.entities.v1alpha1.Invoice} returns this
  */
-proto.services.billing.entities.v1alpha1.Invoice.prototype.setOrgId = function(value) {
+proto.services.billing.entities.v1alpha1.Invoice.prototype.setBillingCycle = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string billing_cycle = 3;
- * @return {string}
- */
-proto.services.billing.entities.v1alpha1.Invoice.prototype.getBillingCycle = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.services.billing.entities.v1alpha1.Invoice} returns this
- */
-proto.services.billing.entities.v1alpha1.Invoice.prototype.setBillingCycle = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional google.protobuf.Timestamp create_time = 4;
+ * optional google.protobuf.Timestamp create_time = 3;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.getCreateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
 };
 
 
@@ -354,7 +324,7 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.getCreateTime = funct
  * @return {!proto.services.billing.entities.v1alpha1.Invoice} returns this
 */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.setCreateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -372,17 +342,17 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.clearCreateTime = fun
  * @return {boolean}
  */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.hasCreateTime = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp update_time = 5;
+ * optional google.protobuf.Timestamp update_time = 4;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.getUpdateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
 };
 
 
@@ -391,7 +361,7 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.getUpdateTime = funct
  * @return {!proto.services.billing.entities.v1alpha1.Invoice} returns this
 */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.setUpdateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -409,17 +379,17 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.clearUpdateTime = fun
  * @return {boolean}
  */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.hasUpdateTime = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp delete_time = 6;
+ * optional google.protobuf.Timestamp delete_time = 5;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.getDeleteTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
 };
 
 
@@ -428,7 +398,7 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.getDeleteTime = funct
  * @return {!proto.services.billing.entities.v1alpha1.Invoice} returns this
 */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.setDeleteTime = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -446,17 +416,17 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.clearDeleteTime = fun
  * @return {boolean}
  */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.hasDeleteTime = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * repeated InvoiceItem items = 7;
+ * repeated InvoiceItem items = 6;
  * @return {!Array<!proto.services.billing.entities.v1alpha1.InvoiceItem>}
  */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.getItemsList = function() {
   return /** @type{!Array<!proto.services.billing.entities.v1alpha1.InvoiceItem>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.services.billing.entities.v1alpha1.InvoiceItem, 7));
+    jspb.Message.getRepeatedWrapperField(this, proto.services.billing.entities.v1alpha1.InvoiceItem, 6));
 };
 
 
@@ -465,7 +435,7 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.getItemsList = functi
  * @return {!proto.services.billing.entities.v1alpha1.Invoice} returns this
 */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.setItemsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -475,7 +445,7 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.setItemsList = functi
  * @return {!proto.services.billing.entities.v1alpha1.InvoiceItem}
  */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.services.billing.entities.v1alpha1.InvoiceItem, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.services.billing.entities.v1alpha1.InvoiceItem, opt_index);
 };
 
 
@@ -489,12 +459,12 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.clearItemsList = func
 
 
 /**
- * optional google.protobuf.StringValue url = 8;
+ * optional google.protobuf.StringValue url = 7;
  * @return {?proto.google.protobuf.StringValue}
  */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.getUrl = function() {
   return /** @type{?proto.google.protobuf.StringValue} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 8));
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 7));
 };
 
 
@@ -503,7 +473,7 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.getUrl = function() {
  * @return {!proto.services.billing.entities.v1alpha1.Invoice} returns this
 */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.setUrl = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -521,7 +491,7 @@ proto.services.billing.entities.v1alpha1.Invoice.prototype.clearUrl = function()
  * @return {boolean}
  */
 proto.services.billing.entities.v1alpha1.Invoice.prototype.hasUrl = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -558,9 +528,8 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.toObject = functi
 proto.services.billing.entities.v1alpha1.InvoiceItem.toObject = function(includeInstance, msg) {
   var f, obj = {
     invoiceItemId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    invoiceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    product: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    price: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+    product: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    price: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -604,23 +573,19 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.deserializeBinaryFromReader
       msg.setInvoiceItemId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setInvoiceId(value);
-      break;
-    case 3:
       var value = /** @type {!proto.services.billing.entities.v1alpha1.Product} */ (reader.readEnum());
       msg.setProduct(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setPrice(value);
       break;
-    case 5:
+    case 4:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateTime(value);
       break;
-    case 6:
+    case 5:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateTime(value);
@@ -661,31 +626,24 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.serializeBinaryToWriter = f
       f
     );
   }
-  f = message.getInvoiceId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getProduct();
   if (f !== 0.0) {
     writer.writeEnum(
-      3,
+      2,
       f
     );
   }
   f = message.getPrice();
   if (f !== 0.0) {
     writer.writeDouble(
-      4,
+      3,
       f
     );
   }
   f = message.getCreateTime();
   if (f != null) {
     writer.writeMessage(
-      5,
+      4,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -693,7 +651,7 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.serializeBinaryToWriter = f
   f = message.getUpdateTime();
   if (f != null) {
     writer.writeMessage(
-      6,
+      5,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -720,29 +678,11 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.setInvoiceItemId 
 
 
 /**
- * optional string invoice_id = 2;
- * @return {string}
- */
-proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.getInvoiceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.services.billing.entities.v1alpha1.InvoiceItem} returns this
- */
-proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.setInvoiceId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional Product product = 3;
+ * optional Product product = 2;
  * @return {!proto.services.billing.entities.v1alpha1.Product}
  */
 proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.getProduct = function() {
-  return /** @type {!proto.services.billing.entities.v1alpha1.Product} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {!proto.services.billing.entities.v1alpha1.Product} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -751,16 +691,16 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.getProduct = func
  * @return {!proto.services.billing.entities.v1alpha1.InvoiceItem} returns this
  */
 proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.setProduct = function(value) {
-  return jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
 /**
- * optional double price = 4;
+ * optional double price = 3;
  * @return {number}
  */
 proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
 
@@ -769,17 +709,17 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.getPrice = functi
  * @return {!proto.services.billing.entities.v1alpha1.InvoiceItem} returns this
  */
 proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3FloatField(this, 4, value);
+  return jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp create_time = 5;
+ * optional google.protobuf.Timestamp create_time = 4;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.getCreateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
 };
 
 
@@ -788,7 +728,7 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.getCreateTime = f
  * @return {!proto.services.billing.entities.v1alpha1.InvoiceItem} returns this
 */
 proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.setCreateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -806,17 +746,17 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.clearCreateTime =
  * @return {boolean}
  */
 proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.hasCreateTime = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp update_time = 6;
+ * optional google.protobuf.Timestamp update_time = 5;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.getUpdateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
 };
 
 
@@ -825,7 +765,7 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.getUpdateTime = f
  * @return {!proto.services.billing.entities.v1alpha1.InvoiceItem} returns this
 */
 proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.setUpdateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -843,7 +783,7 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.clearUpdateTime =
  * @return {boolean}
  */
 proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.hasUpdateTime = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

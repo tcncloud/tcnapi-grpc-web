@@ -9,9 +9,6 @@ export class BillingPlan extends jspb.Message {
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;
 
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   hasCreateTime(): boolean;
   clearCreateTime(): void;
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -50,7 +47,6 @@ export class BillingPlan extends jspb.Message {
 export namespace BillingPlan {
   export type AsObject = {
     billingPlanId: string,
-    orgId: string,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
