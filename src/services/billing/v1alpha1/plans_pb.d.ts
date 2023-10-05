@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as services_billing_entities_v1alpha1_plan_pb from "../../../services/billing/entities/v1alpha1/plan_pb";
 import * as services_billing_v1alpha1_core_pb from "../../../services/billing/v1alpha1/core_pb";
 
@@ -114,6 +115,11 @@ export class GetActiveBillingPlanResponse extends jspb.Message {
   getBillingPlan(): services_billing_entities_v1alpha1_plan_pb.BillingPlan | undefined;
   setBillingPlan(value?: services_billing_entities_v1alpha1_plan_pb.BillingPlan): void;
 
+  hasEffectiveTime(): boolean;
+  clearEffectiveTime(): void;
+  getEffectiveTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEffectiveTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetActiveBillingPlanResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetActiveBillingPlanResponse): GetActiveBillingPlanResponse.AsObject;
@@ -127,6 +133,7 @@ export class GetActiveBillingPlanResponse extends jspb.Message {
 export namespace GetActiveBillingPlanResponse {
   export type AsObject = {
     billingPlan?: services_billing_entities_v1alpha1_plan_pb.BillingPlan.AsObject,
+    effectiveTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

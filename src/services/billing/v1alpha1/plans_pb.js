@@ -23,6 +23,8 @@ var global =
 
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 var services_billing_entities_v1alpha1_plan_pb = require('../../../services/billing/entities/v1alpha1/plan_pb.js');
 goog.object.extend(proto, services_billing_entities_v1alpha1_plan_pb);
 var services_billing_v1alpha1_core_pb = require('../../../services/billing/v1alpha1/core_pb.js');
@@ -1083,7 +1085,8 @@ proto.services.billing.v1alpha1.GetActiveBillingPlanResponse.prototype.toObject 
  */
 proto.services.billing.v1alpha1.GetActiveBillingPlanResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlan: (f = msg.getBillingPlan()) && services_billing_entities_v1alpha1_plan_pb.BillingPlan.toObject(includeInstance, f)
+    billingPlan: (f = msg.getBillingPlan()) && services_billing_entities_v1alpha1_plan_pb.BillingPlan.toObject(includeInstance, f),
+    effectiveTime: (f = msg.getEffectiveTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1125,6 +1128,11 @@ proto.services.billing.v1alpha1.GetActiveBillingPlanResponse.deserializeBinaryFr
       reader.readMessage(value,services_billing_entities_v1alpha1_plan_pb.BillingPlan.deserializeBinaryFromReader);
       msg.setBillingPlan(value);
       break;
+    case 2:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setEffectiveTime(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1160,6 +1168,14 @@ proto.services.billing.v1alpha1.GetActiveBillingPlanResponse.serializeBinaryToWr
       1,
       f,
       services_billing_entities_v1alpha1_plan_pb.BillingPlan.serializeBinaryToWriter
+    );
+  }
+  f = message.getEffectiveTime();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -1199,6 +1215,43 @@ proto.services.billing.v1alpha1.GetActiveBillingPlanResponse.prototype.clearBill
  */
 proto.services.billing.v1alpha1.GetActiveBillingPlanResponse.prototype.hasBillingPlan = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp effective_time = 2;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.services.billing.v1alpha1.GetActiveBillingPlanResponse.prototype.getEffectiveTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.services.billing.v1alpha1.GetActiveBillingPlanResponse} returns this
+*/
+proto.services.billing.v1alpha1.GetActiveBillingPlanResponse.prototype.setEffectiveTime = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.v1alpha1.GetActiveBillingPlanResponse} returns this
+ */
+proto.services.billing.v1alpha1.GetActiveBillingPlanResponse.prototype.clearEffectiveTime = function() {
+  return this.setEffectiveTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.v1alpha1.GetActiveBillingPlanResponse.prototype.hasEffectiveTime = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
