@@ -2,8 +2,8 @@
 // file: services/billing/entities/v1alpha1/rates.proto
 
 import * as jspb from "google-protobuf";
-import * as api_commons_audit_event_types_pb from "../../../../api/commons/audit/event_types_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as services_billing_entities_v1alpha1_config_pb from "../../../../services/billing/entities/v1alpha1/config_pb";
 import * as services_billing_entities_v1alpha1_matching_pb from "../../../../services/billing/entities/v1alpha1/matching_pb";
 import * as services_billing_entities_v1alpha1_modules_pb from "../../../../services/billing/entities/v1alpha1/modules_pb";
 
@@ -14,24 +14,10 @@ export class RateDefinition extends jspb.Message {
   getRateDefinitionGroupId(): string;
   setRateDefinitionGroupId(value: string): void;
 
-  getEventType(): api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap];
-  setEventType(value: api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap]): void;
-
-  getConfigType(): RateDefinitionConfigTypeMap[keyof RateDefinitionConfigTypeMap];
-  setConfigType(value: RateDefinitionConfigTypeMap[keyof RateDefinitionConfigTypeMap]): void;
-
-  getMatchingRule(): services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap[keyof services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap];
-  setMatchingRule(value: services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap[keyof services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap]): void;
-
   hasConfig(): boolean;
   clearConfig(): void;
   getConfig(): RateDefinitionConfig | undefined;
   setConfig(value?: RateDefinitionConfig): void;
-
-  hasMatchingConfig(): boolean;
-  clearMatchingConfig(): void;
-  getMatchingConfig(): services_billing_entities_v1alpha1_matching_pb.MatchingConfig | undefined;
-  setMatchingConfig(value?: services_billing_entities_v1alpha1_matching_pb.MatchingConfig): void;
 
   hasCreateTime(): boolean;
   clearCreateTime(): void;
@@ -62,11 +48,7 @@ export namespace RateDefinition {
   export type AsObject = {
     rateDefinitionId: string,
     rateDefinitionGroupId: string,
-    eventType: api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap],
-    configType: RateDefinitionConfigTypeMap[keyof RateDefinitionConfigTypeMap],
-    matchingRule: services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap[keyof services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap],
     config?: RateDefinitionConfig.AsObject,
-    matchingConfig?: services_billing_entities_v1alpha1_matching_pb.MatchingConfig.AsObject,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -366,50 +348,4 @@ export namespace RateDefinitionConfig {
     COMPLIANCE_RND_QUERY_CACHED_CONFIG = 201,
   }
 }
-
-export interface RateDefinitionConfigTypeMap {
-  RATE_DEFINITION_CONFIG_TYPE_UNSPECIFIED: 0;
-  RATE_DEFINITION_CONFIG_TYPE_NOOP: 1;
-  RATE_DEFINITION_CONFIG_TYPE_AGENT_SEATS: 2;
-  RATE_DEFINITION_CONFIG_TYPE_AGENT_TEXT_MESSAGE_CHAT: 100;
-  RATE_DEFINITION_CONFIG_TYPE_AGENT_TEXT_MESSAGE_EMAIL_MESSAGE: 101;
-  RATE_DEFINITION_CONFIG_TYPE_AGENT_TEXT_MESSAGE_EMAIL_SIZE: 102;
-  RATE_DEFINITION_CONFIG_TYPE_AGENT_TEXT_MESSAGE_SMS: 103;
-  RATE_DEFINITION_CONFIG_TYPE_TASK_MESSAGE_SENT_EMAIL_MESSAGE: 104;
-  RATE_DEFINITION_CONFIG_TYPE_TASK_MESSAGE_SENT_EMAIL_SIZE: 105;
-  RATE_DEFINITION_CONFIG_TYPE_TASK_MESSAGE_SENT_SMS: 106;
-  RATE_DEFINITION_CONFIG_TYPE_CONNECTED_INBOX_POLL: 107;
-  RATE_DEFINITION_CONFIG_TYPE_MANAGER_TEXT_MESSAGE_CHAT: 108;
-  RATE_DEFINITION_CONFIG_TYPE_MANAGER_TEXT_MESSAGE_EMAIL_MESSAGE: 109;
-  RATE_DEFINITION_CONFIG_TYPE_MANAGER_TEXT_MESSAGE_EMAIL_SIZE: 110;
-  RATE_DEFINITION_CONFIG_TYPE_MANAGER_TEXT_MESSAGE_SMS: 111;
-  RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_TEXT_MESSAGE_CHAT: 112;
-  RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_TEXT_MESSAGE_EMAIL_MESSAGE: 113;
-  RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_TEXT_MESSAGE_EMAIL_SIZE: 114;
-  RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_TEXT_MESSAGE_SMS: 115;
-  RATE_DEFINITION_CONFIG_TYPE_AGENT_TEXT_MESSAGE_CHAT_SIZE: 116;
-  RATE_DEFINITION_CONFIG_TYPE_MANAGER_TEXT_MESSAGE_CHAT_SIZE: 117;
-  RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_TEXT_MESSAGE_CHAT_SIZE: 118;
-  RATE_DEFINITION_CONFIG_TYPE_CONNECTED_INBOX_CREATED: 119;
-  RATE_DEFINITION_CONFIG_TYPE_AGENT_TEXT_MESSAGE_SMS_SIZE: 120;
-  RATE_DEFINITION_CONFIG_TYPE_MANAGER_TEXT_MESSAGE_SMS_SIZE: 121;
-  RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_TEXT_MESSAGE_SMS_SIZE: 122;
-  RATE_DEFINITION_CONFIG_TYPE_TASK_MESSAGE_SENT_SMS_SIZE: 123;
-  RATE_DEFINITION_CONFIG_TYPE_AGENT_CHAT_MESSAGE_UNITS: 124;
-  RATE_DEFINITION_CONFIG_TYPE_AGENT_EMAIL_MESSAGE_UNITS: 125;
-  RATE_DEFINITION_CONFIG_TYPE_AGENT_SMS_MESSAGE_UNITS: 126;
-  RATE_DEFINITION_CONFIG_TYPE_MANAGER_CHAT_MESSAGE_UNITS: 127;
-  RATE_DEFINITION_CONFIG_TYPE_MANAGER_EMAIL_MESSAGE_UNITS: 128;
-  RATE_DEFINITION_CONFIG_TYPE_MANAGER_SMS_MESSAGE_UNITS: 129;
-  RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_CHAT_MESSAGE_UNITS: 130;
-  RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_EMAIL_MESSAGE_UNITS: 131;
-  RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_SMS_MESSAGE_UNITS: 132;
-  RATE_DEFINITION_CONFIG_TYPE_SYSTEM_CHAT_MESSAGE_UNITS: 133;
-  RATE_DEFINITION_CONFIG_TYPE_SYSTEM_EMAIL_MESSAGE_UNITS: 134;
-  RATE_DEFINITION_CONFIG_TYPE_SYSTEM_SMS_MESSAGE_UNITS: 135;
-  RATE_DEFINITION_CONFIG_TYPE_COMPLIANCE_RND_QUERY: 200;
-  RATE_DEFINITION_CONFIG_TYPE_COMPLIANCE_RND_QUERY_CACHED: 201;
-}
-
-export const RateDefinitionConfigType: RateDefinitionConfigTypeMap;
 

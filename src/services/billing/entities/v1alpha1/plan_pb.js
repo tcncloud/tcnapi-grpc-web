@@ -91,8 +91,7 @@ proto.services.billing.entities.v1alpha1.BillingPlan.toObject = function(include
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    rateDefinitionsList: jspb.Message.toObjectList(msg.getRateDefinitionsList(),
-    services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject, includeInstance)
+    rateDefinitionIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -154,9 +153,8 @@ proto.services.billing.entities.v1alpha1.BillingPlan.deserializeBinaryFromReader
       msg.setEndTime(value);
       break;
     case 6:
-      var value = new services_billing_entities_v1alpha1_rates_pb.RateDefinition;
-      reader.readMessage(value,services_billing_entities_v1alpha1_rates_pb.RateDefinition.deserializeBinaryFromReader);
-      msg.addRateDefinitions(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.addRateDefinitionIds(value);
       break;
     default:
       reader.skipField();
@@ -226,12 +224,11 @@ proto.services.billing.entities.v1alpha1.BillingPlan.serializeBinaryToWriter = f
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getRateDefinitionsList();
+  f = message.getRateDefinitionIdsList();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(
+    writer.writeRepeatedString(
       6,
-      f,
-      services_billing_entities_v1alpha1_rates_pb.RateDefinition.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -404,31 +401,30 @@ proto.services.billing.entities.v1alpha1.BillingPlan.prototype.hasEndTime = func
 
 
 /**
- * repeated RateDefinition rate_definitions = 6;
- * @return {!Array<!proto.services.billing.entities.v1alpha1.RateDefinition>}
+ * repeated string rate_definition_ids = 6;
+ * @return {!Array<string>}
  */
-proto.services.billing.entities.v1alpha1.BillingPlan.prototype.getRateDefinitionsList = function() {
-  return /** @type{!Array<!proto.services.billing.entities.v1alpha1.RateDefinition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, services_billing_entities_v1alpha1_rates_pb.RateDefinition, 6));
+proto.services.billing.entities.v1alpha1.BillingPlan.prototype.getRateDefinitionIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
 
 /**
- * @param {!Array<!proto.services.billing.entities.v1alpha1.RateDefinition>} value
+ * @param {!Array<string>} value
  * @return {!proto.services.billing.entities.v1alpha1.BillingPlan} returns this
-*/
-proto.services.billing.entities.v1alpha1.BillingPlan.prototype.setRateDefinitionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+ */
+proto.services.billing.entities.v1alpha1.BillingPlan.prototype.setRateDefinitionIdsList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
- * @param {!proto.services.billing.entities.v1alpha1.RateDefinition=} opt_value
+ * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.services.billing.entities.v1alpha1.RateDefinition}
+ * @return {!proto.services.billing.entities.v1alpha1.BillingPlan} returns this
  */
-proto.services.billing.entities.v1alpha1.BillingPlan.prototype.addRateDefinitions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.services.billing.entities.v1alpha1.RateDefinition, opt_index);
+proto.services.billing.entities.v1alpha1.BillingPlan.prototype.addRateDefinitionIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
@@ -436,8 +432,8 @@ proto.services.billing.entities.v1alpha1.BillingPlan.prototype.addRateDefinition
  * Clears the list making it empty but non-null.
  * @return {!proto.services.billing.entities.v1alpha1.BillingPlan} returns this
  */
-proto.services.billing.entities.v1alpha1.BillingPlan.prototype.clearRateDefinitionsList = function() {
-  return this.setRateDefinitionsList([]);
+proto.services.billing.entities.v1alpha1.BillingPlan.prototype.clearRateDefinitionIdsList = function() {
+  return this.setRateDefinitionIdsList([]);
 };
 
 

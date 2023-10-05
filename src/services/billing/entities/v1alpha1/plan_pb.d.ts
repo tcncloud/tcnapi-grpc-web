@@ -29,10 +29,10 @@ export class BillingPlan extends jspb.Message {
   getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  clearRateDefinitionsList(): void;
-  getRateDefinitionsList(): Array<services_billing_entities_v1alpha1_rates_pb.RateDefinition>;
-  setRateDefinitionsList(value: Array<services_billing_entities_v1alpha1_rates_pb.RateDefinition>): void;
-  addRateDefinitions(value?: services_billing_entities_v1alpha1_rates_pb.RateDefinition, index?: number): services_billing_entities_v1alpha1_rates_pb.RateDefinition;
+  clearRateDefinitionIdsList(): void;
+  getRateDefinitionIdsList(): Array<string>;
+  setRateDefinitionIdsList(value: Array<string>): void;
+  addRateDefinitionIds(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BillingPlan.AsObject;
@@ -51,7 +51,7 @@ export namespace BillingPlan {
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    rateDefinitionsList: Array<services_billing_entities_v1alpha1_rates_pb.RateDefinition.AsObject>,
+    rateDefinitionIdsList: Array<string>,
   }
 }
 
