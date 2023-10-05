@@ -1490,6 +1490,16 @@ export class ExecuteFlow extends jspb.Message {
   getPianoGetPayment(): ExecutePianoGetPayment | undefined;
   setPianoGetPayment(value?: ExecutePianoGetPayment): void;
 
+  hasPianoListSubscription(): boolean;
+  clearPianoListSubscription(): void;
+  getPianoListSubscription(): ExecutePianoListSubscription | undefined;
+  setPianoListSubscription(value?: ExecutePianoListSubscription): void;
+
+  hasPianoLastaccessConversion(): boolean;
+  clearPianoLastaccessConversion(): void;
+  getPianoLastaccessConversion(): ExecutePianoLastAccessConversion | undefined;
+  setPianoLastaccessConversion(value?: ExecutePianoLastAccessConversion): void;
+
   hasEpicGetToken(): boolean;
   clearEpicGetToken(): void;
   getEpicGetToken(): ExecuteEpicGetToken | undefined;
@@ -1768,6 +1778,8 @@ export namespace ExecuteFlow {
     pianoUpdateUser?: ExecutePianoUpdateUser.AsObject,
     pianoUpdateSubscription?: ExecutePianoUpdateSubscription.AsObject,
     pianoGetPayment?: ExecutePianoGetPayment.AsObject,
+    pianoListSubscription?: ExecutePianoListSubscription.AsObject,
+    pianoLastaccessConversion?: ExecutePianoLastAccessConversion.AsObject,
     epicGetToken?: ExecuteEpicGetToken.AsObject,
     epicGetPatient?: ExecuteEpicGetPatient.AsObject,
     epicMatchPatient?: ExecuteEpicMatchPatient.AsObject,
@@ -1964,6 +1976,8 @@ export namespace ExecuteFlow {
     PIANO_UPDATE_USER = 3602,
     PIANO_UPDATE_SUBSCRIPTION = 3603,
     PIANO_GET_PAYMENT = 3604,
+    PIANO_LIST_SUBSCRIPTION = 3605,
+    PIANO_LASTACCESS_CONVERSION = 3606,
     EPIC_GET_TOKEN = 3701,
     EPIC_GET_PATIENT = 3702,
     EPIC_MATCH_PATIENT = 3703,
@@ -5258,6 +5272,38 @@ export namespace ExecutePianoGetPayment {
   }
 }
 
+export class ExecutePianoListSubscription extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePianoListSubscription.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePianoListSubscription): ExecutePianoListSubscription.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePianoListSubscription, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePianoListSubscription;
+  static deserializeBinaryFromReader(message: ExecutePianoListSubscription, reader: jspb.BinaryReader): ExecutePianoListSubscription;
+}
+
+export namespace ExecutePianoListSubscription {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePianoLastAccessConversion extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePianoLastAccessConversion.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePianoLastAccessConversion): ExecutePianoLastAccessConversion.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePianoLastAccessConversion, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePianoLastAccessConversion;
+  static deserializeBinaryFromReader(message: ExecutePianoLastAccessConversion, reader: jspb.BinaryReader): ExecutePianoLastAccessConversion;
+}
+
+export namespace ExecutePianoLastAccessConversion {
+  export type AsObject = {
+  }
+}
+
 export class ExecuteEpicGetToken extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteEpicGetToken.AsObject;
@@ -5767,6 +5813,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_PIANO_UPDATE_USER: 3602;
   REQUEST_METHOD_PIANO_UPDATE_SUBSCRIPTION: 3603;
   REQUEST_METHOD_PIANO_GET_PAYMENT: 3604;
+  REQUEST_METHOD_PIANO_LIST_SUBSCRIPTION: 3605;
+  REQUEST_METHOD_PIANO_LASTACCESS_CONVERSION: 3606;
   REQUEST_METHOD_EPIC_GET_TOKEN: 3701;
   REQUEST_METHOD_EPIC_GET_PATIENT: 3702;
   REQUEST_METHOD_EPIC_MATCH_PATIENT: 3703;
