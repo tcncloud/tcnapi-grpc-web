@@ -9176,6 +9176,50 @@ export namespace CreateTourPatternRes {
   }
 }
 
+export class GetTourPatternDiagnosticsReq extends jspb.Message {
+  hasTourPattern(): boolean;
+  clearTourPattern(): void;
+  getTourPattern(): TourPattern | undefined;
+  setTourPattern(value?: TourPattern): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTourPatternDiagnosticsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTourPatternDiagnosticsReq): GetTourPatternDiagnosticsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetTourPatternDiagnosticsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTourPatternDiagnosticsReq;
+  static deserializeBinaryFromReader(message: GetTourPatternDiagnosticsReq, reader: jspb.BinaryReader): GetTourPatternDiagnosticsReq;
+}
+
+export namespace GetTourPatternDiagnosticsReq {
+  export type AsObject = {
+    tourPattern?: TourPattern.AsObject,
+  }
+}
+
+export class GetTourPatternDiagnosticsRes extends jspb.Message {
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTourPatternDiagnosticsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTourPatternDiagnosticsRes): GetTourPatternDiagnosticsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetTourPatternDiagnosticsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTourPatternDiagnosticsRes;
+  static deserializeBinaryFromReader(message: GetTourPatternDiagnosticsRes, reader: jspb.BinaryReader): GetTourPatternDiagnosticsRes;
+}
+
+export namespace GetTourPatternDiagnosticsRes {
+  export type AsObject = {
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
 export class UpsertTourPatternWithMembersReq extends jspb.Message {
   hasTourPattern(): boolean;
   clearTourPattern(): void;
@@ -9204,6 +9248,11 @@ export class UpsertTourPatternWithMembersRes extends jspb.Message {
   getTourPattern(): TourPattern | undefined;
   setTourPattern(value?: TourPattern): void;
 
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpsertTourPatternWithMembersRes.AsObject;
   static toObject(includeInstance: boolean, msg: UpsertTourPatternWithMembersRes): UpsertTourPatternWithMembersRes.AsObject;
@@ -9217,6 +9266,7 @@ export class UpsertTourPatternWithMembersRes extends jspb.Message {
 export namespace UpsertTourPatternWithMembersRes {
   export type AsObject = {
     tourPattern?: TourPattern.AsObject,
+    diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
 
