@@ -4583,7 +4583,8 @@ proto.api.v1alpha1.newsroom.NewsArticleImage.toObject = function(includeInstance
     newArticleSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
     content: jspb.Message.getFieldWithDefault(msg, 3, ""),
     downloadUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    imageReferenceId: jspb.Message.getFieldWithDefault(msg, 5, "")
+    imageReferenceId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    imageType: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -4639,6 +4640,10 @@ proto.api.v1alpha1.newsroom.NewsArticleImage.deserializeBinaryFromReader = funct
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setImageReferenceId(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageType(value);
       break;
     default:
       reader.skipField();
@@ -4701,6 +4706,13 @@ proto.api.v1alpha1.newsroom.NewsArticleImage.serializeBinaryToWriter = function(
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getImageType();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -4794,6 +4806,24 @@ proto.api.v1alpha1.newsroom.NewsArticleImage.prototype.getImageReferenceId = fun
  */
 proto.api.v1alpha1.newsroom.NewsArticleImage.prototype.setImageReferenceId = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string image_type = 6;
+ * @return {string}
+ */
+proto.api.v1alpha1.newsroom.NewsArticleImage.prototype.getImageType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.newsroom.NewsArticleImage} returns this
+ */
+proto.api.v1alpha1.newsroom.NewsArticleImage.prototype.setImageType = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

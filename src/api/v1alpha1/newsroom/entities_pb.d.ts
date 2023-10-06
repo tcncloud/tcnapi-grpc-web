@@ -586,6 +586,9 @@ export class NewsArticleImage extends jspb.Message {
   getImageReferenceId(): string;
   setImageReferenceId(value: string): void;
 
+  getImageType(): string;
+  setImageType(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NewsArticleImage.AsObject;
   static toObject(includeInstance: boolean, msg: NewsArticleImage): NewsArticleImage.AsObject;
@@ -603,6 +606,7 @@ export namespace NewsArticleImage {
     content: string,
     downloadUrl: string,
     imageReferenceId: string,
+    imageType: string,
   }
 }
 
