@@ -78990,7 +78990,7 @@ proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes.SidMapping.prototype.
  */
 proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes.SidMapping.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentCollectionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    agentCollectionSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     wfmAgentSidsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
@@ -79029,7 +79029,7 @@ proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes.SidMapping.deserializ
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAgentCollectionSid(value);
       break;
     case 2:
@@ -79068,8 +79068,8 @@ proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes.SidMapping.prototype.
 proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes.SidMapping.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAgentCollectionSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -79086,19 +79086,19 @@ proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes.SidMapping.serializeB
 
 /**
  * optional int64 agent_collection_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes.SidMapping.prototype.getAgentCollectionSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes.SidMapping} returns this
  */
 proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes.SidMapping.prototype.setAgentCollectionSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 

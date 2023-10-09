@@ -9988,8 +9988,8 @@ export namespace ListTourAgentCollectionWFMAgentsRes {
   }
 
   export class SidMapping extends jspb.Message {
-    getAgentCollectionSid(): number;
-    setAgentCollectionSid(value: number): void;
+    getAgentCollectionSid(): string;
+    setAgentCollectionSid(value: string): void;
 
     clearWfmAgentSidsList(): void;
     getWfmAgentSidsList(): Array<number>;
@@ -10008,7 +10008,7 @@ export namespace ListTourAgentCollectionWFMAgentsRes {
 
   export namespace SidMapping {
     export type AsObject = {
-      agentCollectionSid: number,
+      agentCollectionSid: string,
       wfmAgentSidsList: Array<number>,
     }
   }
