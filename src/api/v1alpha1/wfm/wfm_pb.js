@@ -9001,7 +9001,7 @@ proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.wfm.SkillProfileGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillProfileGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    skillProfileGroupSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -9048,7 +9048,7 @@ proto.api.v1alpha1.wfm.SkillProfileGroup.deserializeBinaryFromReader = function(
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setSkillProfileGroupSid(value);
       break;
     case 2:
@@ -9120,8 +9120,8 @@ proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.serializeBinary = function() 
 proto.api.v1alpha1.wfm.SkillProfileGroup.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSkillProfileGroupSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -9195,19 +9195,19 @@ proto.api.v1alpha1.wfm.SkillProfileGroup.serializeBinaryToWriter = function(mess
 
 /**
  * optional int64 skill_profile_group_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.getSkillProfileGroupSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.SkillProfileGroup} returns this
  */
 proto.api.v1alpha1.wfm.SkillProfileGroup.prototype.setSkillProfileGroupSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -16256,7 +16256,7 @@ proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.prototype.toObject = function(
  */
 proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillProfileGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    skillProfileGroupSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -16294,7 +16294,7 @@ proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setSkillProfileGroupSid(value);
       break;
     default:
@@ -16327,8 +16327,8 @@ proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.prototype.serializeBinary = fu
 proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSkillProfileGroupSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -16338,19 +16338,19 @@ proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.serializeBinaryToWriter = func
 
 /**
  * optional int64 skill_profile_group_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.prototype.getSkillProfileGroupSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes} returns this
  */
 proto.api.v1alpha1.wfm.CreateSkillProfileGroupRes.prototype.setSkillProfileGroupSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -16683,7 +16683,7 @@ proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      var values = /** @type {!Array<string>} */ (reader.isDelimited() ? reader.readPackedInt64String() : [reader.readInt64String()]);
       for (var i = 0; i < values.length; i++) {
         msg.addSkillProfileGroupSids(values[i]);
       }
@@ -16719,7 +16719,7 @@ proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.serializeBinaryToWriter = funct
   var f = undefined;
   f = message.getSkillProfileGroupSidsList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writePackedInt64String(
       1,
       f
     );
@@ -16729,15 +16729,15 @@ proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.serializeBinaryToWriter = funct
 
 /**
  * repeated int64 skill_profile_group_sids = 1;
- * @return {!Array<number>}
+ * @return {!Array<string>}
  */
 proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.getSkillProfileGroupSidsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq} returns this
  */
 proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.setSkillProfileGroupSidsList = function(value) {
@@ -16746,7 +16746,7 @@ proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.setSkillProfileGroupS
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq} returns this
  */
@@ -16963,7 +16963,7 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.toObject
  */
 proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillProfileGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    skillProfileGroupSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     skillProfileSidsToAssociateList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     skillProfileSidsToDisassociateList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
@@ -17003,7 +17003,7 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setSkillProfileGroupSid(value);
       break;
     case 2:
@@ -17048,8 +17048,8 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.serializ
 proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSkillProfileGroupSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -17073,19 +17073,19 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.serializeBinaryToW
 
 /**
  * optional int64 skill_profile_group_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.getSkillProfileGroupSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq} returns this
  */
 proto.api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq.prototype.setSkillProfileGroupSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -25915,7 +25915,7 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.deserial
       msg.setExcludeSkillProfilesWithManualAverages(value);
       break;
     case 4:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      var values = /** @type {!Array<string>} */ (reader.isDelimited() ? reader.readPackedInt64String() : [reader.readInt64String()]);
       for (var i = 0; i < values.length; i++) {
         msg.addSkillProfileGroupSids(values[i]);
       }
@@ -25973,7 +25973,7 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.serializ
   }
   f = message.getSkillProfileGroupSidsList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writePackedInt64String(
       4,
       f
     );
@@ -26075,15 +26075,15 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.prototyp
 
 /**
  * repeated int64 skill_profile_group_sids = 4;
- * @return {!Array<number>}
+ * @return {!Array<string>}
  */
 proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.prototype.getSkillProfileGroupSidsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 4));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq} returns this
  */
 proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.prototype.setSkillProfileGroupSidsList = function(value) {
@@ -26092,7 +26092,7 @@ proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq.prototyp
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.wfm.UpdateSkillProfileAveragesUsingHistoricalDataReq} returns this
  */
@@ -71838,8 +71838,8 @@ proto.api.v1alpha1.wfm.TourShiftSegmentConfig.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.wfm.TourShiftSegmentConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourShiftSegmentConfigSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    tourShiftInstanceConfigSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    tourShiftSegmentConfigSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+    tourShiftInstanceConfigSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
     startMinuteInShift: jspb.Message.getFieldWithDefault(msg, 3, 0),
     widthInMinutes: jspb.Message.getFieldWithDefault(msg, 4, 0),
     schedulingActivitySid: jspb.Message.getFieldWithDefault(msg, 5, 0)
@@ -71880,11 +71880,11 @@ proto.api.v1alpha1.wfm.TourShiftSegmentConfig.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourShiftSegmentConfigSid(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourShiftInstanceConfigSid(value);
       break;
     case 3:
@@ -71929,15 +71929,15 @@ proto.api.v1alpha1.wfm.TourShiftSegmentConfig.prototype.serializeBinary = functi
 proto.api.v1alpha1.wfm.TourShiftSegmentConfig.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourShiftSegmentConfigSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
   }
   f = message.getTourShiftInstanceConfigSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       2,
       f
     );
@@ -71968,37 +71968,37 @@ proto.api.v1alpha1.wfm.TourShiftSegmentConfig.serializeBinaryToWriter = function
 
 /**
  * optional int64 tour_shift_segment_config_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.TourShiftSegmentConfig.prototype.getTourShiftSegmentConfigSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.TourShiftSegmentConfig} returns this
  */
 proto.api.v1alpha1.wfm.TourShiftSegmentConfig.prototype.setTourShiftSegmentConfigSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
 /**
  * optional int64 tour_shift_instance_config_sid = 2;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.TourShiftSegmentConfig.prototype.getTourShiftInstanceConfigSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.TourShiftSegmentConfig} returns this
  */
 proto.api.v1alpha1.wfm.TourShiftSegmentConfig.prototype.setTourShiftInstanceConfigSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringIntField(this, 2, value);
 };
 
 
@@ -72095,8 +72095,8 @@ proto.api.v1alpha1.wfm.TourShiftInstanceConfig.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.wfm.TourShiftInstanceConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourShiftInstanceConfigSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    tourWeekPatternSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    tourShiftInstanceConfigSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+    tourWeekPatternSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
     startMinuteInWeek: jspb.Message.getFieldWithDefault(msg, 3, 0),
     widthInMinutes: jspb.Message.getFieldWithDefault(msg, 4, 0),
     memberTourShiftSegmentConfigsList: jspb.Message.toObjectList(msg.getMemberTourShiftSegmentConfigsList(),
@@ -72138,11 +72138,11 @@ proto.api.v1alpha1.wfm.TourShiftInstanceConfig.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourShiftInstanceConfigSid(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourWeekPatternSid(value);
       break;
     case 3:
@@ -72188,15 +72188,15 @@ proto.api.v1alpha1.wfm.TourShiftInstanceConfig.prototype.serializeBinary = funct
 proto.api.v1alpha1.wfm.TourShiftInstanceConfig.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourShiftInstanceConfigSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
   }
   f = message.getTourWeekPatternSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       2,
       f
     );
@@ -72228,37 +72228,37 @@ proto.api.v1alpha1.wfm.TourShiftInstanceConfig.serializeBinaryToWriter = functio
 
 /**
  * optional int64 tour_shift_instance_config_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.TourShiftInstanceConfig.prototype.getTourShiftInstanceConfigSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.TourShiftInstanceConfig} returns this
  */
 proto.api.v1alpha1.wfm.TourShiftInstanceConfig.prototype.setTourShiftInstanceConfigSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
 /**
  * optional int64 tour_week_pattern_sid = 2;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.TourShiftInstanceConfig.prototype.getTourWeekPatternSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.TourShiftInstanceConfig} returns this
  */
 proto.api.v1alpha1.wfm.TourShiftInstanceConfig.prototype.setTourWeekPatternSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringIntField(this, 2, value);
 };
 
 
@@ -72375,8 +72375,8 @@ proto.api.v1alpha1.wfm.TourWeekPattern.prototype.toObject = function(opt_include
  */
 proto.api.v1alpha1.wfm.TourWeekPattern.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourWeekPatternSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    tourWeekPatternSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
     weekPatternNumber: jspb.Message.getFieldWithDefault(msg, 3, 0),
     memberTourShiftInstanceConfigsList: jspb.Message.toObjectList(msg.getMemberTourShiftInstanceConfigsList(),
     proto.api.v1alpha1.wfm.TourShiftInstanceConfig.toObject, includeInstance)
@@ -72417,11 +72417,11 @@ proto.api.v1alpha1.wfm.TourWeekPattern.deserializeBinaryFromReader = function(ms
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourWeekPatternSid(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourPatternSid(value);
       break;
     case 3:
@@ -72463,15 +72463,15 @@ proto.api.v1alpha1.wfm.TourWeekPattern.prototype.serializeBinary = function() {
 proto.api.v1alpha1.wfm.TourWeekPattern.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourWeekPatternSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
   }
   f = message.getTourPatternSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       2,
       f
     );
@@ -72496,37 +72496,37 @@ proto.api.v1alpha1.wfm.TourWeekPattern.serializeBinaryToWriter = function(messag
 
 /**
  * optional int64 tour_week_pattern_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.TourWeekPattern.prototype.getTourWeekPatternSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.TourWeekPattern} returns this
  */
 proto.api.v1alpha1.wfm.TourWeekPattern.prototype.setTourWeekPatternSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
 /**
  * optional int64 tour_pattern_sid = 2;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.TourWeekPattern.prototype.getTourPatternSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.TourWeekPattern} returns this
  */
 proto.api.v1alpha1.wfm.TourWeekPattern.prototype.setTourPatternSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringIntField(this, 2, value);
 };
 
 
@@ -72625,8 +72625,8 @@ proto.api.v1alpha1.wfm.TourAgentCollection.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.wfm.TourAgentCollection.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourAgentCollectionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    tourAgentCollectionSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
     minAgentsToSchedule: jspb.Message.getFieldWithDefault(msg, 3, 0),
     maxAgentsToSchedule: jspb.Message.getFieldWithDefault(msg, 4, 0),
     firstWeekPatternNumber: jspb.Message.getFieldWithDefault(msg, 5, 0),
@@ -72669,11 +72669,11 @@ proto.api.v1alpha1.wfm.TourAgentCollection.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourAgentCollectionSid(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourPatternSid(value);
       break;
     case 3:
@@ -72728,15 +72728,15 @@ proto.api.v1alpha1.wfm.TourAgentCollection.prototype.serializeBinary = function(
 proto.api.v1alpha1.wfm.TourAgentCollection.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourAgentCollectionSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
   }
   f = message.getTourPatternSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       2,
       f
     );
@@ -72781,37 +72781,37 @@ proto.api.v1alpha1.wfm.TourAgentCollection.serializeBinaryToWriter = function(me
 
 /**
  * optional int64 tour_agent_collection_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.TourAgentCollection.prototype.getTourAgentCollectionSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.TourAgentCollection} returns this
  */
 proto.api.v1alpha1.wfm.TourAgentCollection.prototype.setTourAgentCollectionSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
 /**
  * optional int64 tour_pattern_sid = 2;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.TourAgentCollection.prototype.getTourPatternSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.TourAgentCollection} returns this
  */
 proto.api.v1alpha1.wfm.TourAgentCollection.prototype.setTourPatternSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringIntField(this, 2, value);
 };
 
 
@@ -72963,7 +72963,7 @@ proto.api.v1alpha1.wfm.TourPattern.prototype.toObject = function(opt_includeInst
  */
 proto.api.v1alpha1.wfm.TourPattern.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     shiftTemplateSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     memberTourWeekPatternsList: jspb.Message.toObjectList(msg.getMemberTourWeekPatternsList(),
     proto.api.v1alpha1.wfm.TourWeekPattern.toObject, includeInstance),
@@ -73006,7 +73006,7 @@ proto.api.v1alpha1.wfm.TourPattern.deserializeBinaryFromReader = function(msg, r
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourPatternSid(value);
       break;
     case 2:
@@ -73053,8 +73053,8 @@ proto.api.v1alpha1.wfm.TourPattern.prototype.serializeBinary = function() {
 proto.api.v1alpha1.wfm.TourPattern.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourPatternSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -73087,19 +73087,19 @@ proto.api.v1alpha1.wfm.TourPattern.serializeBinaryToWriter = function(message, w
 
 /**
  * optional int64 tour_pattern_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.TourPattern.prototype.getTourPatternSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.TourPattern} returns this
  */
 proto.api.v1alpha1.wfm.TourPattern.prototype.setTourPatternSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -73359,7 +73359,7 @@ proto.api.v1alpha1.wfm.CreateTourPatternRes.prototype.toObject = function(opt_in
  */
 proto.api.v1alpha1.wfm.CreateTourPatternRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -73397,7 +73397,7 @@ proto.api.v1alpha1.wfm.CreateTourPatternRes.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourPatternSid(value);
       break;
     default:
@@ -73430,8 +73430,8 @@ proto.api.v1alpha1.wfm.CreateTourPatternRes.prototype.serializeBinary = function
 proto.api.v1alpha1.wfm.CreateTourPatternRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourPatternSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -73441,19 +73441,19 @@ proto.api.v1alpha1.wfm.CreateTourPatternRes.serializeBinaryToWriter = function(m
 
 /**
  * optional int64 tour_pattern_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.CreateTourPatternRes.prototype.getTourPatternSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.CreateTourPatternRes} returns this
  */
 proto.api.v1alpha1.wfm.CreateTourPatternRes.prototype.setTourPatternSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -74072,7 +74072,7 @@ proto.api.v1alpha1.wfm.DeleteTourPatternReq.prototype.toObject = function(opt_in
  */
 proto.api.v1alpha1.wfm.DeleteTourPatternReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -74110,7 +74110,7 @@ proto.api.v1alpha1.wfm.DeleteTourPatternReq.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourPatternSid(value);
       break;
     default:
@@ -74143,8 +74143,8 @@ proto.api.v1alpha1.wfm.DeleteTourPatternReq.prototype.serializeBinary = function
 proto.api.v1alpha1.wfm.DeleteTourPatternReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourPatternSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -74154,19 +74154,19 @@ proto.api.v1alpha1.wfm.DeleteTourPatternReq.serializeBinaryToWriter = function(m
 
 /**
  * optional int64 tour_pattern_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.DeleteTourPatternReq.prototype.getTourPatternSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.DeleteTourPatternReq} returns this
  */
 proto.api.v1alpha1.wfm.DeleteTourPatternReq.prototype.setTourPatternSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -74303,7 +74303,7 @@ proto.api.v1alpha1.wfm.CreateTourWeekPatternReq.prototype.toObject = function(op
  */
 proto.api.v1alpha1.wfm.CreateTourWeekPatternReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -74341,7 +74341,7 @@ proto.api.v1alpha1.wfm.CreateTourWeekPatternReq.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourPatternSid(value);
       break;
     default:
@@ -74374,8 +74374,8 @@ proto.api.v1alpha1.wfm.CreateTourWeekPatternReq.prototype.serializeBinary = func
 proto.api.v1alpha1.wfm.CreateTourWeekPatternReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourPatternSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -74385,19 +74385,19 @@ proto.api.v1alpha1.wfm.CreateTourWeekPatternReq.serializeBinaryToWriter = functi
 
 /**
  * optional int64 tour_pattern_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.CreateTourWeekPatternReq.prototype.getTourPatternSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.CreateTourWeekPatternReq} returns this
  */
 proto.api.v1alpha1.wfm.CreateTourWeekPatternReq.prototype.setTourPatternSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -74433,7 +74433,7 @@ proto.api.v1alpha1.wfm.CreateTourWeekPatternRes.prototype.toObject = function(op
  */
 proto.api.v1alpha1.wfm.CreateTourWeekPatternRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourWeekPatternSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    tourWeekPatternSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -74471,7 +74471,7 @@ proto.api.v1alpha1.wfm.CreateTourWeekPatternRes.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourWeekPatternSid(value);
       break;
     default:
@@ -74504,8 +74504,8 @@ proto.api.v1alpha1.wfm.CreateTourWeekPatternRes.prototype.serializeBinary = func
 proto.api.v1alpha1.wfm.CreateTourWeekPatternRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourWeekPatternSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -74515,19 +74515,19 @@ proto.api.v1alpha1.wfm.CreateTourWeekPatternRes.serializeBinaryToWriter = functi
 
 /**
  * optional int64 tour_week_pattern_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.CreateTourWeekPatternRes.prototype.getTourWeekPatternSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.CreateTourWeekPatternRes} returns this
  */
 proto.api.v1alpha1.wfm.CreateTourWeekPatternRes.prototype.setTourWeekPatternSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -74563,7 +74563,7 @@ proto.api.v1alpha1.wfm.ListTourWeekPatternsReq.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.wfm.ListTourWeekPatternsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -74601,7 +74601,7 @@ proto.api.v1alpha1.wfm.ListTourWeekPatternsReq.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourPatternSid(value);
       break;
     default:
@@ -74634,8 +74634,8 @@ proto.api.v1alpha1.wfm.ListTourWeekPatternsReq.prototype.serializeBinary = funct
 proto.api.v1alpha1.wfm.ListTourWeekPatternsReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourPatternSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -74645,19 +74645,19 @@ proto.api.v1alpha1.wfm.ListTourWeekPatternsReq.serializeBinaryToWriter = functio
 
 /**
  * optional int64 tour_pattern_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.ListTourWeekPatternsReq.prototype.getTourPatternSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.ListTourWeekPatternsReq} returns this
  */
 proto.api.v1alpha1.wfm.ListTourWeekPatternsReq.prototype.setTourPatternSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -74898,7 +74898,7 @@ proto.api.v1alpha1.wfm.DeleteTourWeekPatternsReq.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      var values = /** @type {!Array<string>} */ (reader.isDelimited() ? reader.readPackedInt64String() : [reader.readInt64String()]);
       for (var i = 0; i < values.length; i++) {
         msg.addTourWeekPatternSids(values[i]);
       }
@@ -74934,7 +74934,7 @@ proto.api.v1alpha1.wfm.DeleteTourWeekPatternsReq.serializeBinaryToWriter = funct
   var f = undefined;
   f = message.getTourWeekPatternSidsList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writePackedInt64String(
       1,
       f
     );
@@ -74944,15 +74944,15 @@ proto.api.v1alpha1.wfm.DeleteTourWeekPatternsReq.serializeBinaryToWriter = funct
 
 /**
  * repeated int64 tour_week_pattern_sids = 1;
- * @return {!Array<number>}
+ * @return {!Array<string>}
  */
 proto.api.v1alpha1.wfm.DeleteTourWeekPatternsReq.prototype.getTourWeekPatternSidsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.api.v1alpha1.wfm.DeleteTourWeekPatternsReq} returns this
  */
 proto.api.v1alpha1.wfm.DeleteTourWeekPatternsReq.prototype.setTourWeekPatternSidsList = function(value) {
@@ -74961,7 +74961,7 @@ proto.api.v1alpha1.wfm.DeleteTourWeekPatternsReq.prototype.setTourWeekPatternSid
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.wfm.DeleteTourWeekPatternsReq} returns this
  */
@@ -75263,7 +75263,7 @@ proto.api.v1alpha1.wfm.CreateTourShiftInstanceConfigRes.prototype.toObject = fun
  */
 proto.api.v1alpha1.wfm.CreateTourShiftInstanceConfigRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourShiftInstanceConfigSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    tourShiftInstanceConfigSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -75301,7 +75301,7 @@ proto.api.v1alpha1.wfm.CreateTourShiftInstanceConfigRes.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourShiftInstanceConfigSid(value);
       break;
     default:
@@ -75334,8 +75334,8 @@ proto.api.v1alpha1.wfm.CreateTourShiftInstanceConfigRes.prototype.serializeBinar
 proto.api.v1alpha1.wfm.CreateTourShiftInstanceConfigRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourShiftInstanceConfigSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -75345,19 +75345,19 @@ proto.api.v1alpha1.wfm.CreateTourShiftInstanceConfigRes.serializeBinaryToWriter 
 
 /**
  * optional int64 tour_shift_instance_config_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.CreateTourShiftInstanceConfigRes.prototype.getTourShiftInstanceConfigSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.CreateTourShiftInstanceConfigRes} returns this
  */
 proto.api.v1alpha1.wfm.CreateTourShiftInstanceConfigRes.prototype.setTourShiftInstanceConfigSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -75690,7 +75690,7 @@ proto.api.v1alpha1.wfm.ListTourShiftInstanceConfigsReq.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      var values = /** @type {!Array<string>} */ (reader.isDelimited() ? reader.readPackedInt64String() : [reader.readInt64String()]);
       for (var i = 0; i < values.length; i++) {
         msg.addTourWeekPatternSids(values[i]);
       }
@@ -75726,7 +75726,7 @@ proto.api.v1alpha1.wfm.ListTourShiftInstanceConfigsReq.serializeBinaryToWriter =
   var f = undefined;
   f = message.getTourWeekPatternSidsList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writePackedInt64String(
       1,
       f
     );
@@ -75736,15 +75736,15 @@ proto.api.v1alpha1.wfm.ListTourShiftInstanceConfigsReq.serializeBinaryToWriter =
 
 /**
  * repeated int64 tour_week_pattern_sids = 1;
- * @return {!Array<number>}
+ * @return {!Array<string>}
  */
 proto.api.v1alpha1.wfm.ListTourShiftInstanceConfigsReq.prototype.getTourWeekPatternSidsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.api.v1alpha1.wfm.ListTourShiftInstanceConfigsReq} returns this
  */
 proto.api.v1alpha1.wfm.ListTourShiftInstanceConfigsReq.prototype.setTourWeekPatternSidsList = function(value) {
@@ -75753,7 +75753,7 @@ proto.api.v1alpha1.wfm.ListTourShiftInstanceConfigsReq.prototype.setTourWeekPatt
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.wfm.ListTourShiftInstanceConfigsReq} returns this
  */
@@ -76008,7 +76008,7 @@ proto.api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsReq.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      var values = /** @type {!Array<string>} */ (reader.isDelimited() ? reader.readPackedInt64String() : [reader.readInt64String()]);
       for (var i = 0; i < values.length; i++) {
         msg.addTourShiftInstanceConfigSids(values[i]);
       }
@@ -76044,7 +76044,7 @@ proto.api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsReq.serializeBinaryToWriter
   var f = undefined;
   f = message.getTourShiftInstanceConfigSidsList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writePackedInt64String(
       1,
       f
     );
@@ -76054,15 +76054,15 @@ proto.api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsReq.serializeBinaryToWriter
 
 /**
  * repeated int64 tour_shift_instance_config_sids = 1;
- * @return {!Array<number>}
+ * @return {!Array<string>}
  */
 proto.api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsReq.prototype.getTourShiftInstanceConfigSidsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsReq} returns this
  */
 proto.api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsReq.prototype.setTourShiftInstanceConfigSidsList = function(value) {
@@ -76071,7 +76071,7 @@ proto.api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsReq.prototype.setTourShiftI
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsReq} returns this
  */
@@ -76373,7 +76373,7 @@ proto.api.v1alpha1.wfm.CreateTourShiftSegmentConfigRes.prototype.toObject = func
  */
 proto.api.v1alpha1.wfm.CreateTourShiftSegmentConfigRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourShiftSegmentConfigSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    tourShiftSegmentConfigSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -76411,7 +76411,7 @@ proto.api.v1alpha1.wfm.CreateTourShiftSegmentConfigRes.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourShiftSegmentConfigSid(value);
       break;
     default:
@@ -76444,8 +76444,8 @@ proto.api.v1alpha1.wfm.CreateTourShiftSegmentConfigRes.prototype.serializeBinary
 proto.api.v1alpha1.wfm.CreateTourShiftSegmentConfigRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourShiftSegmentConfigSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -76455,19 +76455,19 @@ proto.api.v1alpha1.wfm.CreateTourShiftSegmentConfigRes.serializeBinaryToWriter =
 
 /**
  * optional int64 tour_shift_segment_config_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.CreateTourShiftSegmentConfigRes.prototype.getTourShiftSegmentConfigSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.CreateTourShiftSegmentConfigRes} returns this
  */
 proto.api.v1alpha1.wfm.CreateTourShiftSegmentConfigRes.prototype.setTourShiftSegmentConfigSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -76800,7 +76800,7 @@ proto.api.v1alpha1.wfm.ListTourShiftSegmentConfigsReq.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      var values = /** @type {!Array<string>} */ (reader.isDelimited() ? reader.readPackedInt64String() : [reader.readInt64String()]);
       for (var i = 0; i < values.length; i++) {
         msg.addTourShiftInstanceConfigSids(values[i]);
       }
@@ -76836,7 +76836,7 @@ proto.api.v1alpha1.wfm.ListTourShiftSegmentConfigsReq.serializeBinaryToWriter = 
   var f = undefined;
   f = message.getTourShiftInstanceConfigSidsList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writePackedInt64String(
       1,
       f
     );
@@ -76846,15 +76846,15 @@ proto.api.v1alpha1.wfm.ListTourShiftSegmentConfigsReq.serializeBinaryToWriter = 
 
 /**
  * repeated int64 tour_shift_instance_config_sids = 1;
- * @return {!Array<number>}
+ * @return {!Array<string>}
  */
 proto.api.v1alpha1.wfm.ListTourShiftSegmentConfigsReq.prototype.getTourShiftInstanceConfigSidsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.api.v1alpha1.wfm.ListTourShiftSegmentConfigsReq} returns this
  */
 proto.api.v1alpha1.wfm.ListTourShiftSegmentConfigsReq.prototype.setTourShiftInstanceConfigSidsList = function(value) {
@@ -76863,7 +76863,7 @@ proto.api.v1alpha1.wfm.ListTourShiftSegmentConfigsReq.prototype.setTourShiftInst
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.wfm.ListTourShiftSegmentConfigsReq} returns this
  */
@@ -77118,7 +77118,7 @@ proto.api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsReq.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      var values = /** @type {!Array<string>} */ (reader.isDelimited() ? reader.readPackedInt64String() : [reader.readInt64String()]);
       for (var i = 0; i < values.length; i++) {
         msg.addTourShiftSegmentConfigSids(values[i]);
       }
@@ -77154,7 +77154,7 @@ proto.api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsReq.serializeBinaryToWriter 
   var f = undefined;
   f = message.getTourShiftSegmentConfigSidsList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writePackedInt64String(
       1,
       f
     );
@@ -77164,15 +77164,15 @@ proto.api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsReq.serializeBinaryToWriter 
 
 /**
  * repeated int64 tour_shift_segment_config_sids = 1;
- * @return {!Array<number>}
+ * @return {!Array<string>}
  */
 proto.api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsReq.prototype.getTourShiftSegmentConfigSidsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsReq} returns this
  */
 proto.api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsReq.prototype.setTourShiftSegmentConfigSidsList = function(value) {
@@ -77181,7 +77181,7 @@ proto.api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsReq.prototype.setTourShiftSe
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsReq} returns this
  */
@@ -77483,7 +77483,7 @@ proto.api.v1alpha1.wfm.CreateTourAgentCollectionRes.prototype.toObject = functio
  */
 proto.api.v1alpha1.wfm.CreateTourAgentCollectionRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourAgentCollectionSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    tourAgentCollectionSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -77521,7 +77521,7 @@ proto.api.v1alpha1.wfm.CreateTourAgentCollectionRes.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourAgentCollectionSid(value);
       break;
     default:
@@ -77554,8 +77554,8 @@ proto.api.v1alpha1.wfm.CreateTourAgentCollectionRes.prototype.serializeBinary = 
 proto.api.v1alpha1.wfm.CreateTourAgentCollectionRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourAgentCollectionSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -77565,19 +77565,19 @@ proto.api.v1alpha1.wfm.CreateTourAgentCollectionRes.serializeBinaryToWriter = fu
 
 /**
  * optional int64 tour_agent_collection_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.CreateTourAgentCollectionRes.prototype.getTourAgentCollectionSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.CreateTourAgentCollectionRes} returns this
  */
 proto.api.v1alpha1.wfm.CreateTourAgentCollectionRes.prototype.setTourAgentCollectionSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -77865,7 +77865,7 @@ proto.api.v1alpha1.wfm.ListTourAgentCollectionsReq.prototype.toObject = function
  */
 proto.api.v1alpha1.wfm.ListTourAgentCollectionsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    tourPatternSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -77903,7 +77903,7 @@ proto.api.v1alpha1.wfm.ListTourAgentCollectionsReq.deserializeBinaryFromReader =
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourPatternSid(value);
       break;
     default:
@@ -77936,8 +77936,8 @@ proto.api.v1alpha1.wfm.ListTourAgentCollectionsReq.prototype.serializeBinary = f
 proto.api.v1alpha1.wfm.ListTourAgentCollectionsReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTourPatternSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -77947,19 +77947,19 @@ proto.api.v1alpha1.wfm.ListTourAgentCollectionsReq.serializeBinaryToWriter = fun
 
 /**
  * optional int64 tour_pattern_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.ListTourAgentCollectionsReq.prototype.getTourPatternSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.ListTourAgentCollectionsReq} returns this
  */
 proto.api.v1alpha1.wfm.ListTourAgentCollectionsReq.prototype.setTourPatternSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -78200,7 +78200,7 @@ proto.api.v1alpha1.wfm.DeleteTourAgentCollectionsReq.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      var values = /** @type {!Array<string>} */ (reader.isDelimited() ? reader.readPackedInt64String() : [reader.readInt64String()]);
       for (var i = 0; i < values.length; i++) {
         msg.addTourAgentCollectionSids(values[i]);
       }
@@ -78236,7 +78236,7 @@ proto.api.v1alpha1.wfm.DeleteTourAgentCollectionsReq.serializeBinaryToWriter = f
   var f = undefined;
   f = message.getTourAgentCollectionSidsList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writePackedInt64String(
       1,
       f
     );
@@ -78246,15 +78246,15 @@ proto.api.v1alpha1.wfm.DeleteTourAgentCollectionsReq.serializeBinaryToWriter = f
 
 /**
  * repeated int64 tour_agent_collection_sids = 1;
- * @return {!Array<number>}
+ * @return {!Array<string>}
  */
 proto.api.v1alpha1.wfm.DeleteTourAgentCollectionsReq.prototype.getTourAgentCollectionSidsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.api.v1alpha1.wfm.DeleteTourAgentCollectionsReq} returns this
  */
 proto.api.v1alpha1.wfm.DeleteTourAgentCollectionsReq.prototype.setTourAgentCollectionSidsList = function(value) {
@@ -78263,7 +78263,7 @@ proto.api.v1alpha1.wfm.DeleteTourAgentCollectionsReq.prototype.setTourAgentColle
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.wfm.DeleteTourAgentCollectionsReq} returns this
  */
@@ -78422,7 +78422,7 @@ proto.api.v1alpha1.wfm.CreateTourAgentCollectionWFMAgentsReq.prototype.toObject 
 proto.api.v1alpha1.wfm.CreateTourAgentCollectionWFMAgentsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     wfmAgentSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    tourAgentCollectionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    tourAgentCollectionSid: jspb.Message.getFieldWithDefault(msg, 2, "0")
   };
 
   if (includeInstance) {
@@ -78466,7 +78466,7 @@ proto.api.v1alpha1.wfm.CreateTourAgentCollectionWFMAgentsReq.deserializeBinaryFr
       }
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourAgentCollectionSid(value);
       break;
     default:
@@ -78506,8 +78506,8 @@ proto.api.v1alpha1.wfm.CreateTourAgentCollectionWFMAgentsReq.serializeBinaryToWr
     );
   }
   f = message.getTourAgentCollectionSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       2,
       f
     );
@@ -78554,19 +78554,19 @@ proto.api.v1alpha1.wfm.CreateTourAgentCollectionWFMAgentsReq.prototype.clearWfmA
 
 /**
  * optional int64 tour_agent_collection_sid = 2;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.CreateTourAgentCollectionWFMAgentsReq.prototype.getTourAgentCollectionSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.CreateTourAgentCollectionWFMAgentsReq} returns this
  */
 proto.api.v1alpha1.wfm.CreateTourAgentCollectionWFMAgentsReq.prototype.setTourAgentCollectionSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringIntField(this, 2, value);
 };
 
 
@@ -78748,7 +78748,7 @@ proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsReq.deserializeBinaryFrom
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      var values = /** @type {!Array<string>} */ (reader.isDelimited() ? reader.readPackedInt64String() : [reader.readInt64String()]);
       for (var i = 0; i < values.length; i++) {
         msg.addTourAgentCollectionSids(values[i]);
       }
@@ -78784,7 +78784,7 @@ proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsReq.serializeBinaryToWrit
   var f = undefined;
   f = message.getTourAgentCollectionSidsList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writePackedInt64String(
       1,
       f
     );
@@ -78794,15 +78794,15 @@ proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsReq.serializeBinaryToWrit
 
 /**
  * repeated int64 tour_agent_collection_sids = 1;
- * @return {!Array<number>}
+ * @return {!Array<string>}
  */
 proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsReq.prototype.getTourAgentCollectionSidsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsReq} returns this
  */
 proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsReq.prototype.setTourAgentCollectionSidsList = function(value) {
@@ -78811,7 +78811,7 @@ proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsReq.prototype.setTourAgen
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsReq} returns this
  */
@@ -79217,7 +79217,7 @@ proto.api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsReq.prototype.toObject 
 proto.api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     wfmAgentSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    tourAgentCollectionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    tourAgentCollectionSid: jspb.Message.getFieldWithDefault(msg, 2, "0")
   };
 
   if (includeInstance) {
@@ -79261,7 +79261,7 @@ proto.api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsReq.deserializeBinaryFr
       }
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTourAgentCollectionSid(value);
       break;
     default:
@@ -79301,8 +79301,8 @@ proto.api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsReq.serializeBinaryToWr
     );
   }
   f = message.getTourAgentCollectionSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       2,
       f
     );
@@ -79349,19 +79349,19 @@ proto.api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsReq.prototype.clearWfmA
 
 /**
  * optional int64 tour_agent_collection_sid = 2;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsReq.prototype.getTourAgentCollectionSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsReq} returns this
  */
 proto.api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsReq.prototype.setTourAgentCollectionSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringIntField(this, 2, value);
 };
 
 
