@@ -1233,6 +1233,9 @@ export class ListSkillProfileGroupsReq extends jspb.Message {
   setSkillProfileGroupSidsList(value: Array<number>): void;
   addSkillProfileGroupSids(value: number, index?: number): number;
 
+  getIncludeInactive(): boolean;
+  setIncludeInactive(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSkillProfileGroupsReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListSkillProfileGroupsReq): ListSkillProfileGroupsReq.AsObject;
@@ -1246,6 +1249,7 @@ export class ListSkillProfileGroupsReq extends jspb.Message {
 export namespace ListSkillProfileGroupsReq {
   export type AsObject = {
     skillProfileGroupSidsList: Array<number>,
+    includeInactive: boolean,
   }
 }
 

@@ -16696,7 +16696,8 @@ proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.toObject = function(o
  */
 proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillProfileGroupSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+    skillProfileGroupSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    includeInactive: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -16739,6 +16740,10 @@ proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.deserializeBinaryFromReader = f
         msg.addSkillProfileGroupSids(values[i]);
       }
       break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIncludeInactive(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -16772,6 +16777,13 @@ proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.serializeBinaryToWriter = funct
   if (f.length > 0) {
     writer.writePackedInt64(
       1,
+      f
+    );
+  }
+  f = message.getIncludeInactive();
+  if (f) {
+    writer.writeBool(
+      2,
       f
     );
   }
@@ -16812,6 +16824,24 @@ proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.addSkillProfileGroupS
  */
 proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.clearSkillProfileGroupSidsList = function() {
   return this.setSkillProfileGroupSidsList([]);
+};
+
+
+/**
+ * optional bool include_inactive = 2;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.getIncludeInactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq} returns this
+ */
+proto.api.v1alpha1.wfm.ListSkillProfileGroupsReq.prototype.setIncludeInactive = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
