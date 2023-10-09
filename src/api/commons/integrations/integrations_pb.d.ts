@@ -1165,6 +1165,16 @@ export class ExecuteFlow extends jspb.Message {
   getJourneyLatest(): ExecuteJourneyLatest | undefined;
   setJourneyLatest(value?: ExecuteJourneyLatest): void;
 
+  hasJourneyList(): boolean;
+  clearJourneyList(): void;
+  getJourneyList(): ExecuteJourneyList | undefined;
+  setJourneyList(value?: ExecuteJourneyList): void;
+
+  hasJourneyUpdate(): boolean;
+  clearJourneyUpdate(): void;
+  getJourneyUpdate(): ExecuteJourneyUpdate | undefined;
+  setJourneyUpdate(value?: ExecuteJourneyUpdate): void;
+
   hasAthenahealthGetPatients(): boolean;
   clearAthenahealthGetPatients(): void;
   getAthenahealthGetPatients(): ExecuteAthenahealthGetPatients | undefined;
@@ -1713,6 +1723,8 @@ export namespace ExecuteFlow {
     vantivCreditSale?: ExecuteVantivCreditSale.AsObject,
     vantivAchSale?: ExecuteVantivAchSale.AsObject,
     journeyLatest?: ExecuteJourneyLatest.AsObject,
+    journeyList?: ExecuteJourneyList.AsObject,
+    journeyUpdate?: ExecuteJourneyUpdate.AsObject,
     athenahealthGetPatients?: ExecuteAthenahealthGetPatients.AsObject,
     athenahealthGetPatientsWithId?: ExecuteAthenahealthGetPatientsWithId.AsObject,
     athenahealthCcPayment?: ExecuteAthenahealthCcPayment.AsObject,
@@ -1911,6 +1923,8 @@ export namespace ExecuteFlow {
     VANTIV_CREDIT_SALE = 2301,
     VANTIV_ACH_SALE = 2302,
     JOURNEY_LATEST = 2401,
+    JOURNEY_LIST = 2402,
+    JOURNEY_UPDATE = 2403,
     ATHENAHEALTH_GET_PATIENTS = 2501,
     ATHENAHEALTH_GET_PATIENTS_WITH_ID = 2502,
     ATHENAHEALTH_CC_PAYMENT = 2503,
@@ -4232,6 +4246,38 @@ export namespace ExecuteJourneyLatest {
   }
 }
 
+export class ExecuteJourneyList extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteJourneyList.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteJourneyList): ExecuteJourneyList.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteJourneyList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteJourneyList;
+  static deserializeBinaryFromReader(message: ExecuteJourneyList, reader: jspb.BinaryReader): ExecuteJourneyList;
+}
+
+export namespace ExecuteJourneyList {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteJourneyUpdate extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteJourneyUpdate.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteJourneyUpdate): ExecuteJourneyUpdate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteJourneyUpdate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteJourneyUpdate;
+  static deserializeBinaryFromReader(message: ExecuteJourneyUpdate, reader: jspb.BinaryReader): ExecuteJourneyUpdate;
+}
+
+export namespace ExecuteJourneyUpdate {
+  export type AsObject = {
+  }
+}
+
 export class ExecuteAthenahealthGetPatients extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteAthenahealthGetPatients.AsObject;
@@ -5748,6 +5794,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_VANTIV_CREDITSALE: 2301;
   REQUEST_METHOD_VANTIV_ACHSALE: 2302;
   REQUEST_METHOD_JOURNEY_LATEST: 2401;
+  REQUEST_METHOD_JOURNEY_LIST: 2402;
+  REQUEST_METHOD_JOURNEY_UPDATE: 2403;
   REQUEST_METHOD_ATHENAHEALTH_GETPATIENTS: 2501;
   REQUEST_METHOD_ATHENAHEALTH_GETPATIENTSWITHID: 2502;
   REQUEST_METHOD_ATHENAHEALTH_CCPAYMENT: 2503;
