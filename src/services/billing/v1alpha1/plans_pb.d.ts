@@ -53,6 +53,52 @@ export namespace CreateBillingPlanResponse {
   }
 }
 
+export class CreateDefaultBillingPlanRequest extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  hasBillingPlan(): boolean;
+  clearBillingPlan(): void;
+  getBillingPlan(): services_billing_entities_v1alpha1_plan_pb.BillingPlan | undefined;
+  setBillingPlan(value?: services_billing_entities_v1alpha1_plan_pb.BillingPlan): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDefaultBillingPlanRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDefaultBillingPlanRequest): CreateDefaultBillingPlanRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateDefaultBillingPlanRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDefaultBillingPlanRequest;
+  static deserializeBinaryFromReader(message: CreateDefaultBillingPlanRequest, reader: jspb.BinaryReader): CreateDefaultBillingPlanRequest;
+}
+
+export namespace CreateDefaultBillingPlanRequest {
+  export type AsObject = {
+    billingPlanId: string,
+    billingPlan?: services_billing_entities_v1alpha1_plan_pb.BillingPlan.AsObject,
+  }
+}
+
+export class CreateDefaultBillingPlanResponse extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDefaultBillingPlanResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDefaultBillingPlanResponse): CreateDefaultBillingPlanResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateDefaultBillingPlanResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDefaultBillingPlanResponse;
+  static deserializeBinaryFromReader(message: CreateDefaultBillingPlanResponse, reader: jspb.BinaryReader): CreateDefaultBillingPlanResponse;
+}
+
+export namespace CreateDefaultBillingPlanResponse {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
 export class DeleteBillingPlanRequest extends jspb.Message {
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;
@@ -89,9 +135,50 @@ export namespace DeleteBillingPlanResponse {
   }
 }
 
+export class DeleteDefaultBillingPlanRequest extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteDefaultBillingPlanRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteDefaultBillingPlanRequest): DeleteDefaultBillingPlanRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteDefaultBillingPlanRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteDefaultBillingPlanRequest;
+  static deserializeBinaryFromReader(message: DeleteDefaultBillingPlanRequest, reader: jspb.BinaryReader): DeleteDefaultBillingPlanRequest;
+}
+
+export namespace DeleteDefaultBillingPlanRequest {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
+export class DeleteDefaultBillingPlanResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteDefaultBillingPlanResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteDefaultBillingPlanResponse): DeleteDefaultBillingPlanResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteDefaultBillingPlanResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteDefaultBillingPlanResponse;
+  static deserializeBinaryFromReader(message: DeleteDefaultBillingPlanResponse, reader: jspb.BinaryReader): DeleteDefaultBillingPlanResponse;
+}
+
+export namespace DeleteDefaultBillingPlanResponse {
+  export type AsObject = {
+  }
+}
+
 export class GetActiveBillingPlanRequest extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
+
+  hasEffectiveTime(): boolean;
+  clearEffectiveTime(): void;
+  getEffectiveTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEffectiveTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetActiveBillingPlanRequest.AsObject;
@@ -106,6 +193,7 @@ export class GetActiveBillingPlanRequest extends jspb.Message {
 export namespace GetActiveBillingPlanRequest {
   export type AsObject = {
     orgId: string,
+    effectiveTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -114,11 +202,6 @@ export class GetActiveBillingPlanResponse extends jspb.Message {
   clearBillingPlan(): void;
   getBillingPlan(): services_billing_entities_v1alpha1_plan_pb.BillingPlan | undefined;
   setBillingPlan(value?: services_billing_entities_v1alpha1_plan_pb.BillingPlan): void;
-
-  hasEffectiveTime(): boolean;
-  clearEffectiveTime(): void;
-  getEffectiveTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setEffectiveTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetActiveBillingPlanResponse.AsObject;
@@ -133,7 +216,6 @@ export class GetActiveBillingPlanResponse extends jspb.Message {
 export namespace GetActiveBillingPlanResponse {
   export type AsObject = {
     billingPlan?: services_billing_entities_v1alpha1_plan_pb.BillingPlan.AsObject,
-    effectiveTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -174,44 +256,6 @@ export class GetBillingPlanResponse extends jspb.Message {
 }
 
 export namespace GetBillingPlanResponse {
-  export type AsObject = {
-    billingPlan?: services_billing_entities_v1alpha1_plan_pb.BillingPlan.AsObject,
-  }
-}
-
-export class GetDefaultBillingPlanRequest extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetDefaultBillingPlanRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetDefaultBillingPlanRequest): GetDefaultBillingPlanRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetDefaultBillingPlanRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetDefaultBillingPlanRequest;
-  static deserializeBinaryFromReader(message: GetDefaultBillingPlanRequest, reader: jspb.BinaryReader): GetDefaultBillingPlanRequest;
-}
-
-export namespace GetDefaultBillingPlanRequest {
-  export type AsObject = {
-  }
-}
-
-export class GetDefaultBillingPlanResponse extends jspb.Message {
-  hasBillingPlan(): boolean;
-  clearBillingPlan(): void;
-  getBillingPlan(): services_billing_entities_v1alpha1_plan_pb.BillingPlan | undefined;
-  setBillingPlan(value?: services_billing_entities_v1alpha1_plan_pb.BillingPlan): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetDefaultBillingPlanResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetDefaultBillingPlanResponse): GetDefaultBillingPlanResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetDefaultBillingPlanResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetDefaultBillingPlanResponse;
-  static deserializeBinaryFromReader(message: GetDefaultBillingPlanResponse, reader: jspb.BinaryReader): GetDefaultBillingPlanResponse;
-}
-
-export namespace GetDefaultBillingPlanResponse {
   export type AsObject = {
     billingPlan?: services_billing_entities_v1alpha1_plan_pb.BillingPlan.AsObject,
   }
@@ -334,6 +378,9 @@ export namespace UpdateBillingPlanResponse {
 }
 
 export class UpdateDefaultBillingPlanRequest extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
   hasBillingPlan(): boolean;
   clearBillingPlan(): void;
   getBillingPlan(): services_billing_entities_v1alpha1_plan_pb.BillingPlan | undefined;
@@ -356,6 +403,7 @@ export class UpdateDefaultBillingPlanRequest extends jspb.Message {
 
 export namespace UpdateDefaultBillingPlanRequest {
   export type AsObject = {
+    billingPlanId: string,
     billingPlan?: services_billing_entities_v1alpha1_plan_pb.BillingPlan.AsObject,
     updateFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }

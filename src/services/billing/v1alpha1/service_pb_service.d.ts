@@ -2,29 +2,10 @@
 // file: services/billing/v1alpha1/service.proto
 
 import * as services_billing_v1alpha1_service_pb from "../../../services/billing/v1alpha1/service_pb";
-import * as services_billing_v1alpha1_groups_pb from "../../../services/billing/v1alpha1/groups_pb";
 import * as services_billing_v1alpha1_invoices_pb from "../../../services/billing/v1alpha1/invoices_pb";
 import * as services_billing_v1alpha1_plans_pb from "../../../services/billing/v1alpha1/plans_pb";
 import * as services_billing_v1alpha1_rates_pb from "../../../services/billing/v1alpha1/rates_pb";
 import {grpc} from "@improbable-eng/grpc-web";
-
-type BillingServiceBulkDeleteRateDefinitions = {
-  readonly methodName: string;
-  readonly service: typeof BillingService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_billing_v1alpha1_rates_pb.BulkDeleteRateDefinitionsRequest;
-  readonly responseType: typeof services_billing_v1alpha1_rates_pb.BulkDeleteRateDefinitionsResponse;
-};
-
-type BillingServiceBulkUpdateRateDefinitions = {
-  readonly methodName: string;
-  readonly service: typeof BillingService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_billing_v1alpha1_rates_pb.BulkUpdateRateDefinitionsRequest;
-  readonly responseType: typeof services_billing_v1alpha1_rates_pb.BulkUpdateRateDefinitionsResponse;
-};
 
 type BillingServiceCreateBillingPlan = {
   readonly methodName: string;
@@ -33,6 +14,24 @@ type BillingServiceCreateBillingPlan = {
   readonly responseStream: false;
   readonly requestType: typeof services_billing_v1alpha1_plans_pb.CreateBillingPlanRequest;
   readonly responseType: typeof services_billing_v1alpha1_plans_pb.CreateBillingPlanResponse;
+};
+
+type BillingServiceCreateDefaultBillingPlan = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_plans_pb.CreateDefaultBillingPlanRequest;
+  readonly responseType: typeof services_billing_v1alpha1_plans_pb.CreateDefaultBillingPlanResponse;
+};
+
+type BillingServiceCreateDefaultRateDefinition = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_rates_pb.CreateDefaultRateDefinitionRequest;
+  readonly responseType: typeof services_billing_v1alpha1_rates_pb.CreateDefaultRateDefinitionResponse;
 };
 
 type BillingServiceCreateInvoice = {
@@ -53,15 +52,6 @@ type BillingServiceCreateRateDefinition = {
   readonly responseType: typeof services_billing_v1alpha1_rates_pb.CreateRateDefinitionResponse;
 };
 
-type BillingServiceCreateRateDefinitionGroup = {
-  readonly methodName: string;
-  readonly service: typeof BillingService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_billing_v1alpha1_groups_pb.CreateRateDefinitionGroupRequest;
-  readonly responseType: typeof services_billing_v1alpha1_groups_pb.CreateRateDefinitionGroupResponse;
-};
-
 type BillingServiceDeleteBillingPlan = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -69,6 +59,24 @@ type BillingServiceDeleteBillingPlan = {
   readonly responseStream: false;
   readonly requestType: typeof services_billing_v1alpha1_plans_pb.DeleteBillingPlanRequest;
   readonly responseType: typeof services_billing_v1alpha1_plans_pb.DeleteBillingPlanResponse;
+};
+
+type BillingServiceDeleteDefaultBillingPlan = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_plans_pb.DeleteDefaultBillingPlanRequest;
+  readonly responseType: typeof services_billing_v1alpha1_plans_pb.DeleteDefaultBillingPlanResponse;
+};
+
+type BillingServiceDeleteDefaultRateDefinition = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_rates_pb.DeleteDefaultRateDefinitionRequest;
+  readonly responseType: typeof services_billing_v1alpha1_rates_pb.DeleteDefaultRateDefinitionResponse;
 };
 
 type BillingServiceDeleteInvoice = {
@@ -87,15 +95,6 @@ type BillingServiceDeleteRateDefinition = {
   readonly responseStream: false;
   readonly requestType: typeof services_billing_v1alpha1_rates_pb.DeleteRateDefinitionRequest;
   readonly responseType: typeof services_billing_v1alpha1_rates_pb.DeleteRateDefinitionResponse;
-};
-
-type BillingServiceDeleteRateDefinitionGroup = {
-  readonly methodName: string;
-  readonly service: typeof BillingService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_billing_v1alpha1_groups_pb.DeleteRateDefinitionGroupRequest;
-  readonly responseType: typeof services_billing_v1alpha1_groups_pb.DeleteRateDefinitionGroupResponse;
 };
 
 type BillingServiceExportInvoice = {
@@ -125,15 +124,6 @@ type BillingServiceGetBillingPlan = {
   readonly responseType: typeof services_billing_v1alpha1_plans_pb.GetBillingPlanResponse;
 };
 
-type BillingServiceGetDefaultBillingPlan = {
-  readonly methodName: string;
-  readonly service: typeof BillingService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_billing_v1alpha1_plans_pb.GetDefaultBillingPlanRequest;
-  readonly responseType: typeof services_billing_v1alpha1_plans_pb.GetDefaultBillingPlanResponse;
-};
-
 type BillingServiceGetInvoice = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -150,15 +140,6 @@ type BillingServiceGetRateDefinition = {
   readonly responseStream: false;
   readonly requestType: typeof services_billing_v1alpha1_rates_pb.GetRateDefinitionRequest;
   readonly responseType: typeof services_billing_v1alpha1_rates_pb.GetRateDefinitionResponse;
-};
-
-type BillingServiceGetRateDefinitionGroup = {
-  readonly methodName: string;
-  readonly service: typeof BillingService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_billing_v1alpha1_groups_pb.GetRateDefinitionGroupRequest;
-  readonly responseType: typeof services_billing_v1alpha1_groups_pb.GetRateDefinitionGroupResponse;
 };
 
 type BillingServiceListBillingPlans = {
@@ -188,15 +169,6 @@ type BillingServiceListRateDefinitions = {
   readonly responseType: typeof services_billing_v1alpha1_rates_pb.ListRateDefinitionsResponse;
 };
 
-type BillingServiceListRateDefinitionGroups = {
-  readonly methodName: string;
-  readonly service: typeof BillingService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_billing_v1alpha1_groups_pb.ListRateDefinitionGroupsRequest;
-  readonly responseType: typeof services_billing_v1alpha1_groups_pb.ListRateDefinitionGroupsResponse;
-};
-
 type BillingServiceUpdateBillingPlan = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -213,6 +185,15 @@ type BillingServiceUpdateDefaultBillingPlan = {
   readonly responseStream: false;
   readonly requestType: typeof services_billing_v1alpha1_plans_pb.UpdateDefaultBillingPlanRequest;
   readonly responseType: typeof services_billing_v1alpha1_plans_pb.UpdateDefaultBillingPlanResponse;
+};
+
+type BillingServiceUpdateDefaultRateDefinition = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_rates_pb.UpdateDefaultRateDefinitionRequest;
+  readonly responseType: typeof services_billing_v1alpha1_rates_pb.UpdateDefaultRateDefinitionResponse;
 };
 
 type BillingServiceUpdateInvoice = {
@@ -233,43 +214,31 @@ type BillingServiceUpdateRateDefinition = {
   readonly responseType: typeof services_billing_v1alpha1_rates_pb.UpdateRateDefinitionResponse;
 };
 
-type BillingServiceUpdateRateDefinitionGroup = {
-  readonly methodName: string;
-  readonly service: typeof BillingService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_billing_v1alpha1_groups_pb.UpdateRateDefinitionGroupRequest;
-  readonly responseType: typeof services_billing_v1alpha1_groups_pb.UpdateRateDefinitionGroupResponse;
-};
-
 export class BillingService {
   static readonly serviceName: string;
-  static readonly BulkDeleteRateDefinitions: BillingServiceBulkDeleteRateDefinitions;
-  static readonly BulkUpdateRateDefinitions: BillingServiceBulkUpdateRateDefinitions;
   static readonly CreateBillingPlan: BillingServiceCreateBillingPlan;
+  static readonly CreateDefaultBillingPlan: BillingServiceCreateDefaultBillingPlan;
+  static readonly CreateDefaultRateDefinition: BillingServiceCreateDefaultRateDefinition;
   static readonly CreateInvoice: BillingServiceCreateInvoice;
   static readonly CreateRateDefinition: BillingServiceCreateRateDefinition;
-  static readonly CreateRateDefinitionGroup: BillingServiceCreateRateDefinitionGroup;
   static readonly DeleteBillingPlan: BillingServiceDeleteBillingPlan;
+  static readonly DeleteDefaultBillingPlan: BillingServiceDeleteDefaultBillingPlan;
+  static readonly DeleteDefaultRateDefinition: BillingServiceDeleteDefaultRateDefinition;
   static readonly DeleteInvoice: BillingServiceDeleteInvoice;
   static readonly DeleteRateDefinition: BillingServiceDeleteRateDefinition;
-  static readonly DeleteRateDefinitionGroup: BillingServiceDeleteRateDefinitionGroup;
   static readonly ExportInvoice: BillingServiceExportInvoice;
   static readonly GetActiveBillingPlan: BillingServiceGetActiveBillingPlan;
   static readonly GetBillingPlan: BillingServiceGetBillingPlan;
-  static readonly GetDefaultBillingPlan: BillingServiceGetDefaultBillingPlan;
   static readonly GetInvoice: BillingServiceGetInvoice;
   static readonly GetRateDefinition: BillingServiceGetRateDefinition;
-  static readonly GetRateDefinitionGroup: BillingServiceGetRateDefinitionGroup;
   static readonly ListBillingPlans: BillingServiceListBillingPlans;
   static readonly ListInvoices: BillingServiceListInvoices;
   static readonly ListRateDefinitions: BillingServiceListRateDefinitions;
-  static readonly ListRateDefinitionGroups: BillingServiceListRateDefinitionGroups;
   static readonly UpdateBillingPlan: BillingServiceUpdateBillingPlan;
   static readonly UpdateDefaultBillingPlan: BillingServiceUpdateDefaultBillingPlan;
+  static readonly UpdateDefaultRateDefinition: BillingServiceUpdateDefaultRateDefinition;
   static readonly UpdateInvoice: BillingServiceUpdateInvoice;
   static readonly UpdateRateDefinition: BillingServiceUpdateRateDefinition;
-  static readonly UpdateRateDefinitionGroup: BillingServiceUpdateRateDefinitionGroup;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -304,24 +273,6 @@ export class BillingServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
-  bulkDeleteRateDefinitions(
-    requestMessage: services_billing_v1alpha1_rates_pb.BulkDeleteRateDefinitionsRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.BulkDeleteRateDefinitionsResponse|null) => void
-  ): UnaryResponse;
-  bulkDeleteRateDefinitions(
-    requestMessage: services_billing_v1alpha1_rates_pb.BulkDeleteRateDefinitionsRequest,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.BulkDeleteRateDefinitionsResponse|null) => void
-  ): UnaryResponse;
-  bulkUpdateRateDefinitions(
-    requestMessage: services_billing_v1alpha1_rates_pb.BulkUpdateRateDefinitionsRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.BulkUpdateRateDefinitionsResponse|null) => void
-  ): UnaryResponse;
-  bulkUpdateRateDefinitions(
-    requestMessage: services_billing_v1alpha1_rates_pb.BulkUpdateRateDefinitionsRequest,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.BulkUpdateRateDefinitionsResponse|null) => void
-  ): UnaryResponse;
   createBillingPlan(
     requestMessage: services_billing_v1alpha1_plans_pb.CreateBillingPlanRequest,
     metadata: grpc.Metadata,
@@ -330,6 +281,24 @@ export class BillingServiceClient {
   createBillingPlan(
     requestMessage: services_billing_v1alpha1_plans_pb.CreateBillingPlanRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.CreateBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  createDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.CreateDefaultBillingPlanRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.CreateDefaultBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  createDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.CreateDefaultBillingPlanRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.CreateDefaultBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  createDefaultRateDefinition(
+    requestMessage: services_billing_v1alpha1_rates_pb.CreateDefaultRateDefinitionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.CreateDefaultRateDefinitionResponse|null) => void
+  ): UnaryResponse;
+  createDefaultRateDefinition(
+    requestMessage: services_billing_v1alpha1_rates_pb.CreateDefaultRateDefinitionRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.CreateDefaultRateDefinitionResponse|null) => void
   ): UnaryResponse;
   createInvoice(
     requestMessage: services_billing_v1alpha1_invoices_pb.CreateInvoiceRequest,
@@ -349,15 +318,6 @@ export class BillingServiceClient {
     requestMessage: services_billing_v1alpha1_rates_pb.CreateRateDefinitionRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.CreateRateDefinitionResponse|null) => void
   ): UnaryResponse;
-  createRateDefinitionGroup(
-    requestMessage: services_billing_v1alpha1_groups_pb.CreateRateDefinitionGroupRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_groups_pb.CreateRateDefinitionGroupResponse|null) => void
-  ): UnaryResponse;
-  createRateDefinitionGroup(
-    requestMessage: services_billing_v1alpha1_groups_pb.CreateRateDefinitionGroupRequest,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_groups_pb.CreateRateDefinitionGroupResponse|null) => void
-  ): UnaryResponse;
   deleteBillingPlan(
     requestMessage: services_billing_v1alpha1_plans_pb.DeleteBillingPlanRequest,
     metadata: grpc.Metadata,
@@ -366,6 +326,24 @@ export class BillingServiceClient {
   deleteBillingPlan(
     requestMessage: services_billing_v1alpha1_plans_pb.DeleteBillingPlanRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.DeleteBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  deleteDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.DeleteDefaultBillingPlanRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.DeleteDefaultBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  deleteDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.DeleteDefaultBillingPlanRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.DeleteDefaultBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  deleteDefaultRateDefinition(
+    requestMessage: services_billing_v1alpha1_rates_pb.DeleteDefaultRateDefinitionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.DeleteDefaultRateDefinitionResponse|null) => void
+  ): UnaryResponse;
+  deleteDefaultRateDefinition(
+    requestMessage: services_billing_v1alpha1_rates_pb.DeleteDefaultRateDefinitionRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.DeleteDefaultRateDefinitionResponse|null) => void
   ): UnaryResponse;
   deleteInvoice(
     requestMessage: services_billing_v1alpha1_invoices_pb.DeleteInvoiceRequest,
@@ -384,15 +362,6 @@ export class BillingServiceClient {
   deleteRateDefinition(
     requestMessage: services_billing_v1alpha1_rates_pb.DeleteRateDefinitionRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.DeleteRateDefinitionResponse|null) => void
-  ): UnaryResponse;
-  deleteRateDefinitionGroup(
-    requestMessage: services_billing_v1alpha1_groups_pb.DeleteRateDefinitionGroupRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_groups_pb.DeleteRateDefinitionGroupResponse|null) => void
-  ): UnaryResponse;
-  deleteRateDefinitionGroup(
-    requestMessage: services_billing_v1alpha1_groups_pb.DeleteRateDefinitionGroupRequest,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_groups_pb.DeleteRateDefinitionGroupResponse|null) => void
   ): UnaryResponse;
   exportInvoice(
     requestMessage: services_billing_v1alpha1_invoices_pb.ExportInvoiceRequest,
@@ -421,15 +390,6 @@ export class BillingServiceClient {
     requestMessage: services_billing_v1alpha1_plans_pb.GetBillingPlanRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.GetBillingPlanResponse|null) => void
   ): UnaryResponse;
-  getDefaultBillingPlan(
-    requestMessage: services_billing_v1alpha1_plans_pb.GetDefaultBillingPlanRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.GetDefaultBillingPlanResponse|null) => void
-  ): UnaryResponse;
-  getDefaultBillingPlan(
-    requestMessage: services_billing_v1alpha1_plans_pb.GetDefaultBillingPlanRequest,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.GetDefaultBillingPlanResponse|null) => void
-  ): UnaryResponse;
   getInvoice(
     requestMessage: services_billing_v1alpha1_invoices_pb.GetInvoiceRequest,
     metadata: grpc.Metadata,
@@ -447,15 +407,6 @@ export class BillingServiceClient {
   getRateDefinition(
     requestMessage: services_billing_v1alpha1_rates_pb.GetRateDefinitionRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.GetRateDefinitionResponse|null) => void
-  ): UnaryResponse;
-  getRateDefinitionGroup(
-    requestMessage: services_billing_v1alpha1_groups_pb.GetRateDefinitionGroupRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_groups_pb.GetRateDefinitionGroupResponse|null) => void
-  ): UnaryResponse;
-  getRateDefinitionGroup(
-    requestMessage: services_billing_v1alpha1_groups_pb.GetRateDefinitionGroupRequest,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_groups_pb.GetRateDefinitionGroupResponse|null) => void
   ): UnaryResponse;
   listBillingPlans(
     requestMessage: services_billing_v1alpha1_plans_pb.ListBillingPlansRequest,
@@ -484,15 +435,6 @@ export class BillingServiceClient {
     requestMessage: services_billing_v1alpha1_rates_pb.ListRateDefinitionsRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.ListRateDefinitionsResponse|null) => void
   ): UnaryResponse;
-  listRateDefinitionGroups(
-    requestMessage: services_billing_v1alpha1_groups_pb.ListRateDefinitionGroupsRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_groups_pb.ListRateDefinitionGroupsResponse|null) => void
-  ): UnaryResponse;
-  listRateDefinitionGroups(
-    requestMessage: services_billing_v1alpha1_groups_pb.ListRateDefinitionGroupsRequest,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_groups_pb.ListRateDefinitionGroupsResponse|null) => void
-  ): UnaryResponse;
   updateBillingPlan(
     requestMessage: services_billing_v1alpha1_plans_pb.UpdateBillingPlanRequest,
     metadata: grpc.Metadata,
@@ -511,6 +453,15 @@ export class BillingServiceClient {
     requestMessage: services_billing_v1alpha1_plans_pb.UpdateDefaultBillingPlanRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.UpdateDefaultBillingPlanResponse|null) => void
   ): UnaryResponse;
+  updateDefaultRateDefinition(
+    requestMessage: services_billing_v1alpha1_rates_pb.UpdateDefaultRateDefinitionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.UpdateDefaultRateDefinitionResponse|null) => void
+  ): UnaryResponse;
+  updateDefaultRateDefinition(
+    requestMessage: services_billing_v1alpha1_rates_pb.UpdateDefaultRateDefinitionRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.UpdateDefaultRateDefinitionResponse|null) => void
+  ): UnaryResponse;
   updateInvoice(
     requestMessage: services_billing_v1alpha1_invoices_pb.UpdateInvoiceRequest,
     metadata: grpc.Metadata,
@@ -528,15 +479,6 @@ export class BillingServiceClient {
   updateRateDefinition(
     requestMessage: services_billing_v1alpha1_rates_pb.UpdateRateDefinitionRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.UpdateRateDefinitionResponse|null) => void
-  ): UnaryResponse;
-  updateRateDefinitionGroup(
-    requestMessage: services_billing_v1alpha1_groups_pb.UpdateRateDefinitionGroupRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_groups_pb.UpdateRateDefinitionGroupResponse|null) => void
-  ): UnaryResponse;
-  updateRateDefinitionGroup(
-    requestMessage: services_billing_v1alpha1_groups_pb.UpdateRateDefinitionGroupRequest,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_groups_pb.UpdateRateDefinitionGroupResponse|null) => void
   ): UnaryResponse;
 }
 

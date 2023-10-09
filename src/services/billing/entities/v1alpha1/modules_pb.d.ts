@@ -25,21 +25,21 @@ export namespace BasicConfig {
 }
 
 export class BasicAmountConfig extends jspb.Message {
-  getAmount(): number;
-  setAmount(value: number): void;
+  getUnitSize(): number;
+  setUnitSize(value: number): void;
 
   getRate(): number;
   setRate(value: number): void;
 
-  hasMinIncrement(): boolean;
-  clearMinIncrement(): void;
-  getMinIncrement(): google_protobuf_wrappers_pb.Int64Value | undefined;
-  setMinIncrement(value?: google_protobuf_wrappers_pb.Int64Value): void;
+  hasMinUnits(): boolean;
+  clearMinUnits(): void;
+  getMinUnits(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setMinUnits(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
-  hasMaxIncrement(): boolean;
-  clearMaxIncrement(): void;
-  getMaxIncrement(): google_protobuf_wrappers_pb.Int64Value | undefined;
-  setMaxIncrement(value?: google_protobuf_wrappers_pb.Int64Value): void;
+  hasMaxUnits(): boolean;
+  clearMaxUnits(): void;
+  getMaxUnits(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setMaxUnits(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BasicAmountConfig.AsObject;
@@ -53,10 +53,10 @@ export class BasicAmountConfig extends jspb.Message {
 
 export namespace BasicAmountConfig {
   export type AsObject = {
-    amount: number,
+    unitSize: number,
     rate: number,
-    minIncrement?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-    maxIncrement?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    minUnits?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    maxUnits?: google_protobuf_wrappers_pb.Int64Value.AsObject,
   }
 }
 

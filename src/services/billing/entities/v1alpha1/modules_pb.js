@@ -229,10 +229,10 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.toObject = 
  */
 proto.services.billing.entities.v1alpha1.BasicAmountConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    amount: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    unitSize: jspb.Message.getFieldWithDefault(msg, 1, 0),
     rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    minIncrement: (f = msg.getMinIncrement()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    maxIncrement: (f = msg.getMaxIncrement()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+    minUnits: (f = msg.getMinUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    maxUnits: (f = msg.getMaxUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -271,7 +271,7 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.deserializeBinaryFrom
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setAmount(value);
+      msg.setUnitSize(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readDouble());
@@ -280,12 +280,12 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.deserializeBinaryFrom
     case 3:
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
-      msg.setMinIncrement(value);
+      msg.setMinUnits(value);
       break;
     case 4:
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
-      msg.setMaxIncrement(value);
+      msg.setMaxUnits(value);
       break;
     default:
       reader.skipField();
@@ -316,7 +316,7 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.serializeBi
  */
 proto.services.billing.entities.v1alpha1.BasicAmountConfig.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAmount();
+  f = message.getUnitSize();
   if (f !== 0) {
     writer.writeInt64(
       1,
@@ -330,7 +330,7 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.serializeBinaryToWrit
       f
     );
   }
-  f = message.getMinIncrement();
+  f = message.getMinUnits();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -338,7 +338,7 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.serializeBinaryToWrit
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
   }
-  f = message.getMaxIncrement();
+  f = message.getMaxUnits();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -350,10 +350,10 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.serializeBinaryToWrit
 
 
 /**
- * optional int64 amount = 1;
+ * optional int64 unit_size = 1;
  * @return {number}
  */
-proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.getAmount = function() {
+proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.getUnitSize = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -362,7 +362,7 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.getAmount =
  * @param {number} value
  * @return {!proto.services.billing.entities.v1alpha1.BasicAmountConfig} returns this
  */
-proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.setAmount = function(value) {
+proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.setUnitSize = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -386,10 +386,10 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.setRate = f
 
 
 /**
- * optional google.protobuf.Int64Value min_increment = 3;
+ * optional google.protobuf.Int64Value min_units = 3;
  * @return {?proto.google.protobuf.Int64Value}
  */
-proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.getMinIncrement = function() {
+proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.getMinUnits = function() {
   return /** @type{?proto.google.protobuf.Int64Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 3));
 };
@@ -399,7 +399,7 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.getMinIncre
  * @param {?proto.google.protobuf.Int64Value|undefined} value
  * @return {!proto.services.billing.entities.v1alpha1.BasicAmountConfig} returns this
 */
-proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.setMinIncrement = function(value) {
+proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.setMinUnits = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -408,8 +408,8 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.setMinIncre
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha1.BasicAmountConfig} returns this
  */
-proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.clearMinIncrement = function() {
-  return this.setMinIncrement(undefined);
+proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.clearMinUnits = function() {
+  return this.setMinUnits(undefined);
 };
 
 
@@ -417,16 +417,16 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.clearMinInc
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.hasMinIncrement = function() {
+proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.hasMinUnits = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional google.protobuf.Int64Value max_increment = 4;
+ * optional google.protobuf.Int64Value max_units = 4;
  * @return {?proto.google.protobuf.Int64Value}
  */
-proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.getMaxIncrement = function() {
+proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.getMaxUnits = function() {
   return /** @type{?proto.google.protobuf.Int64Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 4));
 };
@@ -436,7 +436,7 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.getMaxIncre
  * @param {?proto.google.protobuf.Int64Value|undefined} value
  * @return {!proto.services.billing.entities.v1alpha1.BasicAmountConfig} returns this
 */
-proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.setMaxIncrement = function(value) {
+proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.setMaxUnits = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -445,8 +445,8 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.setMaxIncre
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha1.BasicAmountConfig} returns this
  */
-proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.clearMaxIncrement = function() {
-  return this.setMaxIncrement(undefined);
+proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.clearMaxUnits = function() {
+  return this.setMaxUnits(undefined);
 };
 
 
@@ -454,7 +454,7 @@ proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.clearMaxInc
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.hasMaxIncrement = function() {
+proto.services.billing.entities.v1alpha1.BasicAmountConfig.prototype.hasMaxUnits = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 

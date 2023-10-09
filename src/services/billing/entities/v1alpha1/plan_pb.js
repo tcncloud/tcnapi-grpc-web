@@ -53,7 +53,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.services.billing.entities.v1alpha1.BillingPlan.repeatedFields_ = [6];
+proto.services.billing.entities.v1alpha1.BillingPlan.repeatedFields_ = [7];
 
 
 
@@ -91,7 +91,8 @@ proto.services.billing.entities.v1alpha1.BillingPlan.toObject = function(include
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    rateDefinitionIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+    deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    rateDefinitionIdsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -153,6 +154,11 @@ proto.services.billing.entities.v1alpha1.BillingPlan.deserializeBinaryFromReader
       msg.setEndTime(value);
       break;
     case 6:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setDeleteTime(value);
+      break;
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.addRateDefinitionIds(value);
       break;
@@ -224,10 +230,18 @@ proto.services.billing.entities.v1alpha1.BillingPlan.serializeBinaryToWriter = f
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
+  f = message.getDeleteTime();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
   f = message.getRateDefinitionIdsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      6,
+      7,
       f
     );
   }
@@ -401,11 +415,48 @@ proto.services.billing.entities.v1alpha1.BillingPlan.prototype.hasEndTime = func
 
 
 /**
- * repeated string rate_definition_ids = 6;
+ * optional google.protobuf.Timestamp delete_time = 6;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.services.billing.entities.v1alpha1.BillingPlan.prototype.getDeleteTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha1.BillingPlan} returns this
+*/
+proto.services.billing.entities.v1alpha1.BillingPlan.prototype.setDeleteTime = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha1.BillingPlan} returns this
+ */
+proto.services.billing.entities.v1alpha1.BillingPlan.prototype.clearDeleteTime = function() {
+  return this.setDeleteTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha1.BillingPlan.prototype.hasDeleteTime = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * repeated string rate_definition_ids = 7;
  * @return {!Array<string>}
  */
 proto.services.billing.entities.v1alpha1.BillingPlan.prototype.getRateDefinitionIdsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
 };
 
 
@@ -414,7 +465,7 @@ proto.services.billing.entities.v1alpha1.BillingPlan.prototype.getRateDefinition
  * @return {!proto.services.billing.entities.v1alpha1.BillingPlan} returns this
  */
 proto.services.billing.entities.v1alpha1.BillingPlan.prototype.setRateDefinitionIdsList = function(value) {
-  return jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
@@ -424,7 +475,7 @@ proto.services.billing.entities.v1alpha1.BillingPlan.prototype.setRateDefinition
  * @return {!proto.services.billing.entities.v1alpha1.BillingPlan} returns this
  */
 proto.services.billing.entities.v1alpha1.BillingPlan.prototype.addRateDefinitionIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 

@@ -29,6 +29,11 @@ export class BillingPlan extends jspb.Message {
   getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasDeleteTime(): boolean;
+  clearDeleteTime(): void;
+  getDeleteTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDeleteTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   clearRateDefinitionIdsList(): void;
   getRateDefinitionIdsList(): Array<string>;
   setRateDefinitionIdsList(value: Array<string>): void;
@@ -51,6 +56,7 @@ export namespace BillingPlan {
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     rateDefinitionIdsList: Array<string>,
   }
 }

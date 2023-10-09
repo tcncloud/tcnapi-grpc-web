@@ -6,43 +6,7 @@ import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/
 import * as services_billing_entities_v1alpha1_rates_pb from "../../../services/billing/entities/v1alpha1/rates_pb";
 import * as services_billing_v1alpha1_core_pb from "../../../services/billing/v1alpha1/core_pb";
 
-export class BulkDeleteRateDefinitionsRequest extends jspb.Message {
-  getRateDefinitionId(): string;
-  setRateDefinitionId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BulkDeleteRateDefinitionsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: BulkDeleteRateDefinitionsRequest): BulkDeleteRateDefinitionsRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BulkDeleteRateDefinitionsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BulkDeleteRateDefinitionsRequest;
-  static deserializeBinaryFromReader(message: BulkDeleteRateDefinitionsRequest, reader: jspb.BinaryReader): BulkDeleteRateDefinitionsRequest;
-}
-
-export namespace BulkDeleteRateDefinitionsRequest {
-  export type AsObject = {
-    rateDefinitionId: string,
-  }
-}
-
-export class BulkDeleteRateDefinitionsResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BulkDeleteRateDefinitionsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: BulkDeleteRateDefinitionsResponse): BulkDeleteRateDefinitionsResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BulkDeleteRateDefinitionsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BulkDeleteRateDefinitionsResponse;
-  static deserializeBinaryFromReader(message: BulkDeleteRateDefinitionsResponse, reader: jspb.BinaryReader): BulkDeleteRateDefinitionsResponse;
-}
-
-export namespace BulkDeleteRateDefinitionsResponse {
-  export type AsObject = {
-  }
-}
-
-export class BulkUpdateRateDefinitionsRequest extends jspb.Message {
+export class CreateDefaultRateDefinitionRequest extends jspb.Message {
   getRateDefinitionId(): string;
   setRateDefinitionId(value: string): void;
 
@@ -51,42 +15,40 @@ export class BulkUpdateRateDefinitionsRequest extends jspb.Message {
   getRateDefinition(): services_billing_entities_v1alpha1_rates_pb.RateDefinition | undefined;
   setRateDefinition(value?: services_billing_entities_v1alpha1_rates_pb.RateDefinition): void;
 
-  hasUpdateFields(): boolean;
-  clearUpdateFields(): void;
-  getUpdateFields(): google_protobuf_field_mask_pb.FieldMask | undefined;
-  setUpdateFields(value?: google_protobuf_field_mask_pb.FieldMask): void;
-
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BulkUpdateRateDefinitionsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: BulkUpdateRateDefinitionsRequest): BulkUpdateRateDefinitionsRequest.AsObject;
+  toObject(includeInstance?: boolean): CreateDefaultRateDefinitionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDefaultRateDefinitionRequest): CreateDefaultRateDefinitionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BulkUpdateRateDefinitionsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BulkUpdateRateDefinitionsRequest;
-  static deserializeBinaryFromReader(message: BulkUpdateRateDefinitionsRequest, reader: jspb.BinaryReader): BulkUpdateRateDefinitionsRequest;
+  static serializeBinaryToWriter(message: CreateDefaultRateDefinitionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDefaultRateDefinitionRequest;
+  static deserializeBinaryFromReader(message: CreateDefaultRateDefinitionRequest, reader: jspb.BinaryReader): CreateDefaultRateDefinitionRequest;
 }
 
-export namespace BulkUpdateRateDefinitionsRequest {
+export namespace CreateDefaultRateDefinitionRequest {
   export type AsObject = {
     rateDefinitionId: string,
     rateDefinition?: services_billing_entities_v1alpha1_rates_pb.RateDefinition.AsObject,
-    updateFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
-export class BulkUpdateRateDefinitionsResponse extends jspb.Message {
+export class CreateDefaultRateDefinitionResponse extends jspb.Message {
+  getRateDefinitionId(): string;
+  setRateDefinitionId(value: string): void;
+
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BulkUpdateRateDefinitionsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: BulkUpdateRateDefinitionsResponse): BulkUpdateRateDefinitionsResponse.AsObject;
+  toObject(includeInstance?: boolean): CreateDefaultRateDefinitionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDefaultRateDefinitionResponse): CreateDefaultRateDefinitionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BulkUpdateRateDefinitionsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BulkUpdateRateDefinitionsResponse;
-  static deserializeBinaryFromReader(message: BulkUpdateRateDefinitionsResponse, reader: jspb.BinaryReader): BulkUpdateRateDefinitionsResponse;
+  static serializeBinaryToWriter(message: CreateDefaultRateDefinitionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDefaultRateDefinitionResponse;
+  static deserializeBinaryFromReader(message: CreateDefaultRateDefinitionResponse, reader: jspb.BinaryReader): CreateDefaultRateDefinitionResponse;
 }
 
-export namespace BulkUpdateRateDefinitionsResponse {
+export namespace CreateDefaultRateDefinitionResponse {
   export type AsObject = {
+    rateDefinitionId: string,
   }
 }
 
@@ -133,6 +95,42 @@ export class CreateRateDefinitionResponse extends jspb.Message {
 export namespace CreateRateDefinitionResponse {
   export type AsObject = {
     rateDefinitionId: string,
+  }
+}
+
+export class DeleteDefaultRateDefinitionRequest extends jspb.Message {
+  getRateDefinitionId(): string;
+  setRateDefinitionId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteDefaultRateDefinitionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteDefaultRateDefinitionRequest): DeleteDefaultRateDefinitionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteDefaultRateDefinitionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteDefaultRateDefinitionRequest;
+  static deserializeBinaryFromReader(message: DeleteDefaultRateDefinitionRequest, reader: jspb.BinaryReader): DeleteDefaultRateDefinitionRequest;
+}
+
+export namespace DeleteDefaultRateDefinitionRequest {
+  export type AsObject = {
+    rateDefinitionId: string,
+  }
+}
+
+export class DeleteDefaultRateDefinitionResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteDefaultRateDefinitionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteDefaultRateDefinitionResponse): DeleteDefaultRateDefinitionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteDefaultRateDefinitionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteDefaultRateDefinitionResponse;
+  static deserializeBinaryFromReader(message: DeleteDefaultRateDefinitionResponse, reader: jspb.BinaryReader): DeleteDefaultRateDefinitionResponse;
+}
+
+export namespace DeleteDefaultRateDefinitionResponse {
+  export type AsObject = {
   }
 }
 
@@ -279,6 +277,54 @@ export namespace ListRateDefinitionsResponse {
   export type AsObject = {
     rateDefinitionsList: Array<services_billing_entities_v1alpha1_rates_pb.RateDefinition.AsObject>,
     token: string,
+  }
+}
+
+export class UpdateDefaultRateDefinitionRequest extends jspb.Message {
+  getRateDefinitionId(): string;
+  setRateDefinitionId(value: string): void;
+
+  hasRateDefinition(): boolean;
+  clearRateDefinition(): void;
+  getRateDefinition(): services_billing_entities_v1alpha1_rates_pb.RateDefinition | undefined;
+  setRateDefinition(value?: services_billing_entities_v1alpha1_rates_pb.RateDefinition): void;
+
+  hasUpdateFields(): boolean;
+  clearUpdateFields(): void;
+  getUpdateFields(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateFields(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateDefaultRateDefinitionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateDefaultRateDefinitionRequest): UpdateDefaultRateDefinitionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateDefaultRateDefinitionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateDefaultRateDefinitionRequest;
+  static deserializeBinaryFromReader(message: UpdateDefaultRateDefinitionRequest, reader: jspb.BinaryReader): UpdateDefaultRateDefinitionRequest;
+}
+
+export namespace UpdateDefaultRateDefinitionRequest {
+  export type AsObject = {
+    rateDefinitionId: string,
+    rateDefinition?: services_billing_entities_v1alpha1_rates_pb.RateDefinition.AsObject,
+    updateFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class UpdateDefaultRateDefinitionResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateDefaultRateDefinitionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateDefaultRateDefinitionResponse): UpdateDefaultRateDefinitionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateDefaultRateDefinitionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateDefaultRateDefinitionResponse;
+  static deserializeBinaryFromReader(message: UpdateDefaultRateDefinitionResponse, reader: jspb.BinaryReader): UpdateDefaultRateDefinitionResponse;
+}
+
+export namespace UpdateDefaultRateDefinitionResponse {
+  export type AsObject = {
   }
 }
 

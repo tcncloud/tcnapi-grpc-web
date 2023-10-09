@@ -25,8 +25,6 @@ var annotations_authz_pb = require('../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
-var services_billing_v1alpha1_groups_pb = require('../../../services/billing/v1alpha1/groups_pb.js');
-goog.object.extend(proto, services_billing_v1alpha1_groups_pb);
 var services_billing_v1alpha1_invoices_pb = require('../../../services/billing/v1alpha1/invoices_pb.js');
 goog.object.extend(proto, services_billing_v1alpha1_invoices_pb);
 var services_billing_v1alpha1_plans_pb = require('../../../services/billing/v1alpha1/plans_pb.js');

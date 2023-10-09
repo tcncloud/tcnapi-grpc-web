@@ -2,7 +2,6 @@
 // file: services/billing/v1alpha1/service.proto
 
 var services_billing_v1alpha1_service_pb = require("../../../services/billing/v1alpha1/service_pb");
-var services_billing_v1alpha1_groups_pb = require("../../../services/billing/v1alpha1/groups_pb");
 var services_billing_v1alpha1_invoices_pb = require("../../../services/billing/v1alpha1/invoices_pb");
 var services_billing_v1alpha1_plans_pb = require("../../../services/billing/v1alpha1/plans_pb");
 var services_billing_v1alpha1_rates_pb = require("../../../services/billing/v1alpha1/rates_pb");
@@ -14,24 +13,6 @@ var BillingService = (function () {
   return BillingService;
 }());
 
-BillingService.BulkDeleteRateDefinitions = {
-  methodName: "BulkDeleteRateDefinitions",
-  service: BillingService,
-  requestStream: false,
-  responseStream: false,
-  requestType: services_billing_v1alpha1_rates_pb.BulkDeleteRateDefinitionsRequest,
-  responseType: services_billing_v1alpha1_rates_pb.BulkDeleteRateDefinitionsResponse
-};
-
-BillingService.BulkUpdateRateDefinitions = {
-  methodName: "BulkUpdateRateDefinitions",
-  service: BillingService,
-  requestStream: false,
-  responseStream: false,
-  requestType: services_billing_v1alpha1_rates_pb.BulkUpdateRateDefinitionsRequest,
-  responseType: services_billing_v1alpha1_rates_pb.BulkUpdateRateDefinitionsResponse
-};
-
 BillingService.CreateBillingPlan = {
   methodName: "CreateBillingPlan",
   service: BillingService,
@@ -39,6 +20,24 @@ BillingService.CreateBillingPlan = {
   responseStream: false,
   requestType: services_billing_v1alpha1_plans_pb.CreateBillingPlanRequest,
   responseType: services_billing_v1alpha1_plans_pb.CreateBillingPlanResponse
+};
+
+BillingService.CreateDefaultBillingPlan = {
+  methodName: "CreateDefaultBillingPlan",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha1_plans_pb.CreateDefaultBillingPlanRequest,
+  responseType: services_billing_v1alpha1_plans_pb.CreateDefaultBillingPlanResponse
+};
+
+BillingService.CreateDefaultRateDefinition = {
+  methodName: "CreateDefaultRateDefinition",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha1_rates_pb.CreateDefaultRateDefinitionRequest,
+  responseType: services_billing_v1alpha1_rates_pb.CreateDefaultRateDefinitionResponse
 };
 
 BillingService.CreateInvoice = {
@@ -59,15 +58,6 @@ BillingService.CreateRateDefinition = {
   responseType: services_billing_v1alpha1_rates_pb.CreateRateDefinitionResponse
 };
 
-BillingService.CreateRateDefinitionGroup = {
-  methodName: "CreateRateDefinitionGroup",
-  service: BillingService,
-  requestStream: false,
-  responseStream: false,
-  requestType: services_billing_v1alpha1_groups_pb.CreateRateDefinitionGroupRequest,
-  responseType: services_billing_v1alpha1_groups_pb.CreateRateDefinitionGroupResponse
-};
-
 BillingService.DeleteBillingPlan = {
   methodName: "DeleteBillingPlan",
   service: BillingService,
@@ -75,6 +65,24 @@ BillingService.DeleteBillingPlan = {
   responseStream: false,
   requestType: services_billing_v1alpha1_plans_pb.DeleteBillingPlanRequest,
   responseType: services_billing_v1alpha1_plans_pb.DeleteBillingPlanResponse
+};
+
+BillingService.DeleteDefaultBillingPlan = {
+  methodName: "DeleteDefaultBillingPlan",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha1_plans_pb.DeleteDefaultBillingPlanRequest,
+  responseType: services_billing_v1alpha1_plans_pb.DeleteDefaultBillingPlanResponse
+};
+
+BillingService.DeleteDefaultRateDefinition = {
+  methodName: "DeleteDefaultRateDefinition",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha1_rates_pb.DeleteDefaultRateDefinitionRequest,
+  responseType: services_billing_v1alpha1_rates_pb.DeleteDefaultRateDefinitionResponse
 };
 
 BillingService.DeleteInvoice = {
@@ -93,15 +101,6 @@ BillingService.DeleteRateDefinition = {
   responseStream: false,
   requestType: services_billing_v1alpha1_rates_pb.DeleteRateDefinitionRequest,
   responseType: services_billing_v1alpha1_rates_pb.DeleteRateDefinitionResponse
-};
-
-BillingService.DeleteRateDefinitionGroup = {
-  methodName: "DeleteRateDefinitionGroup",
-  service: BillingService,
-  requestStream: false,
-  responseStream: false,
-  requestType: services_billing_v1alpha1_groups_pb.DeleteRateDefinitionGroupRequest,
-  responseType: services_billing_v1alpha1_groups_pb.DeleteRateDefinitionGroupResponse
 };
 
 BillingService.ExportInvoice = {
@@ -131,15 +130,6 @@ BillingService.GetBillingPlan = {
   responseType: services_billing_v1alpha1_plans_pb.GetBillingPlanResponse
 };
 
-BillingService.GetDefaultBillingPlan = {
-  methodName: "GetDefaultBillingPlan",
-  service: BillingService,
-  requestStream: false,
-  responseStream: false,
-  requestType: services_billing_v1alpha1_plans_pb.GetDefaultBillingPlanRequest,
-  responseType: services_billing_v1alpha1_plans_pb.GetDefaultBillingPlanResponse
-};
-
 BillingService.GetInvoice = {
   methodName: "GetInvoice",
   service: BillingService,
@@ -156,15 +146,6 @@ BillingService.GetRateDefinition = {
   responseStream: false,
   requestType: services_billing_v1alpha1_rates_pb.GetRateDefinitionRequest,
   responseType: services_billing_v1alpha1_rates_pb.GetRateDefinitionResponse
-};
-
-BillingService.GetRateDefinitionGroup = {
-  methodName: "GetRateDefinitionGroup",
-  service: BillingService,
-  requestStream: false,
-  responseStream: false,
-  requestType: services_billing_v1alpha1_groups_pb.GetRateDefinitionGroupRequest,
-  responseType: services_billing_v1alpha1_groups_pb.GetRateDefinitionGroupResponse
 };
 
 BillingService.ListBillingPlans = {
@@ -194,15 +175,6 @@ BillingService.ListRateDefinitions = {
   responseType: services_billing_v1alpha1_rates_pb.ListRateDefinitionsResponse
 };
 
-BillingService.ListRateDefinitionGroups = {
-  methodName: "ListRateDefinitionGroups",
-  service: BillingService,
-  requestStream: false,
-  responseStream: false,
-  requestType: services_billing_v1alpha1_groups_pb.ListRateDefinitionGroupsRequest,
-  responseType: services_billing_v1alpha1_groups_pb.ListRateDefinitionGroupsResponse
-};
-
 BillingService.UpdateBillingPlan = {
   methodName: "UpdateBillingPlan",
   service: BillingService,
@@ -219,6 +191,15 @@ BillingService.UpdateDefaultBillingPlan = {
   responseStream: false,
   requestType: services_billing_v1alpha1_plans_pb.UpdateDefaultBillingPlanRequest,
   responseType: services_billing_v1alpha1_plans_pb.UpdateDefaultBillingPlanResponse
+};
+
+BillingService.UpdateDefaultRateDefinition = {
+  methodName: "UpdateDefaultRateDefinition",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha1_rates_pb.UpdateDefaultRateDefinitionRequest,
+  responseType: services_billing_v1alpha1_rates_pb.UpdateDefaultRateDefinitionResponse
 };
 
 BillingService.UpdateInvoice = {
@@ -239,15 +220,6 @@ BillingService.UpdateRateDefinition = {
   responseType: services_billing_v1alpha1_rates_pb.UpdateRateDefinitionResponse
 };
 
-BillingService.UpdateRateDefinitionGroup = {
-  methodName: "UpdateRateDefinitionGroup",
-  service: BillingService,
-  requestStream: false,
-  responseStream: false,
-  requestType: services_billing_v1alpha1_groups_pb.UpdateRateDefinitionGroupRequest,
-  responseType: services_billing_v1alpha1_groups_pb.UpdateRateDefinitionGroupResponse
-};
-
 exports.BillingService = BillingService;
 
 function BillingServiceClient(serviceHost, options) {
@@ -255,73 +227,73 @@ function BillingServiceClient(serviceHost, options) {
   this.options = options || {};
 }
 
-BillingServiceClient.prototype.bulkDeleteRateDefinitions = function bulkDeleteRateDefinitions(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(BillingService.BulkDeleteRateDefinitions, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-BillingServiceClient.prototype.bulkUpdateRateDefinitions = function bulkUpdateRateDefinitions(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(BillingService.BulkUpdateRateDefinitions, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
 BillingServiceClient.prototype.createBillingPlan = function createBillingPlan(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(BillingService.CreateBillingPlan, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.createDefaultBillingPlan = function createDefaultBillingPlan(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.CreateDefaultBillingPlan, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.createDefaultRateDefinition = function createDefaultRateDefinition(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.CreateDefaultRateDefinition, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -410,11 +382,11 @@ BillingServiceClient.prototype.createRateDefinition = function createRateDefinit
   };
 };
 
-BillingServiceClient.prototype.createRateDefinitionGroup = function createRateDefinitionGroup(requestMessage, metadata, callback) {
+BillingServiceClient.prototype.deleteBillingPlan = function deleteBillingPlan(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(BillingService.CreateRateDefinitionGroup, {
+  var client = grpc.unary(BillingService.DeleteBillingPlan, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -441,11 +413,42 @@ BillingServiceClient.prototype.createRateDefinitionGroup = function createRateDe
   };
 };
 
-BillingServiceClient.prototype.deleteBillingPlan = function deleteBillingPlan(requestMessage, metadata, callback) {
+BillingServiceClient.prototype.deleteDefaultBillingPlan = function deleteDefaultBillingPlan(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(BillingService.DeleteBillingPlan, {
+  var client = grpc.unary(BillingService.DeleteDefaultBillingPlan, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.deleteDefaultRateDefinition = function deleteDefaultRateDefinition(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.DeleteDefaultRateDefinition, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -508,37 +511,6 @@ BillingServiceClient.prototype.deleteRateDefinition = function deleteRateDefinit
     callback = arguments[1];
   }
   var client = grpc.unary(BillingService.DeleteRateDefinition, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-BillingServiceClient.prototype.deleteRateDefinitionGroup = function deleteRateDefinitionGroup(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(BillingService.DeleteRateDefinitionGroup, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -658,37 +630,6 @@ BillingServiceClient.prototype.getBillingPlan = function getBillingPlan(requestM
   };
 };
 
-BillingServiceClient.prototype.getDefaultBillingPlan = function getDefaultBillingPlan(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(BillingService.GetDefaultBillingPlan, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
 BillingServiceClient.prototype.getInvoice = function getInvoice(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -725,37 +666,6 @@ BillingServiceClient.prototype.getRateDefinition = function getRateDefinition(re
     callback = arguments[1];
   }
   var client = grpc.unary(BillingService.GetRateDefinition, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-BillingServiceClient.prototype.getRateDefinitionGroup = function getRateDefinitionGroup(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(BillingService.GetRateDefinitionGroup, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -875,37 +785,6 @@ BillingServiceClient.prototype.listRateDefinitions = function listRateDefinition
   };
 };
 
-BillingServiceClient.prototype.listRateDefinitionGroups = function listRateDefinitionGroups(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(BillingService.ListRateDefinitionGroups, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
 BillingServiceClient.prototype.updateBillingPlan = function updateBillingPlan(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -968,6 +847,37 @@ BillingServiceClient.prototype.updateDefaultBillingPlan = function updateDefault
   };
 };
 
+BillingServiceClient.prototype.updateDefaultRateDefinition = function updateDefaultRateDefinition(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.UpdateDefaultRateDefinition, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 BillingServiceClient.prototype.updateInvoice = function updateInvoice(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -1004,37 +914,6 @@ BillingServiceClient.prototype.updateRateDefinition = function updateRateDefinit
     callback = arguments[1];
   }
   var client = grpc.unary(BillingService.UpdateRateDefinition, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-BillingServiceClient.prototype.updateRateDefinitionGroup = function updateRateDefinitionGroup(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(BillingService.UpdateRateDefinitionGroup, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
