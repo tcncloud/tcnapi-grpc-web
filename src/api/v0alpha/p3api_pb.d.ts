@@ -6422,56 +6422,6 @@ export namespace CreateContactFieldDescriptionRes {
   }
 }
 
-export class UpdateContactFieldDescriptionReq extends jspb.Message {
-  getContactFieldDescriptionSid(): number;
-  setContactFieldDescriptionSid(value: number): void;
-
-  getFieldName(): string;
-  setFieldName(value: string): void;
-
-  getIsPhone(): boolean;
-  setIsPhone(value: boolean): void;
-
-  hasDisplayFormatString(): boolean;
-  clearDisplayFormatString(): void;
-  getDisplayFormatString(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setDisplayFormatString(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateContactFieldDescriptionReq.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateContactFieldDescriptionReq): UpdateContactFieldDescriptionReq.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateContactFieldDescriptionReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateContactFieldDescriptionReq;
-  static deserializeBinaryFromReader(message: UpdateContactFieldDescriptionReq, reader: jspb.BinaryReader): UpdateContactFieldDescriptionReq;
-}
-
-export namespace UpdateContactFieldDescriptionReq {
-  export type AsObject = {
-    contactFieldDescriptionSid: number,
-    fieldName: string,
-    isPhone: boolean,
-    displayFormatString?: google_protobuf_wrappers_pb.StringValue.AsObject,
-  }
-}
-
-export class UpdateContactFieldDescriptionRes extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateContactFieldDescriptionRes.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateContactFieldDescriptionRes): UpdateContactFieldDescriptionRes.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateContactFieldDescriptionRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateContactFieldDescriptionRes;
-  static deserializeBinaryFromReader(message: UpdateContactFieldDescriptionRes, reader: jspb.BinaryReader): UpdateContactFieldDescriptionRes;
-}
-
-export namespace UpdateContactFieldDescriptionRes {
-  export type AsObject = {
-  }
-}
-
 export class DeleteContactFieldDescriptionReq extends jspb.Message {
   getContactFieldDescriptionSid(): number;
   setContactFieldDescriptionSid(value: number): void;
