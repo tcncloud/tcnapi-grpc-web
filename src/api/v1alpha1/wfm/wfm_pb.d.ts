@@ -130,8 +130,8 @@ export namespace SkillProfile {
 }
 
 export class SkillProfileGroup extends jspb.Message {
-  getSkillProfileGroupSid(): number;
-  setSkillProfileGroupSid(value: number): void;
+  getSkillProfileGroupSid(): string;
+  setSkillProfileGroupSid(value: string): void;
 
   getName(): string;
   setName(value: string): void;
@@ -164,6 +164,11 @@ export class SkillProfileGroup extends jspb.Message {
   setSkillProfileSidsList(value: Array<number>): void;
   addSkillProfileSids(value: number, index?: number): number;
 
+  hasDatetimeSetToInactive(): boolean;
+  clearDatetimeSetToInactive(): void;
+  getDatetimeSetToInactive(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDatetimeSetToInactive(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SkillProfileGroup.AsObject;
   static toObject(includeInstance: boolean, msg: SkillProfileGroup): SkillProfileGroup.AsObject;
@@ -176,7 +181,7 @@ export class SkillProfileGroup extends jspb.Message {
 
 export namespace SkillProfileGroup {
   export type AsObject = {
-    skillProfileGroupSid: number,
+    skillProfileGroupSid: string,
     name: string,
     description: string,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -186,6 +191,7 @@ export namespace SkillProfileGroup {
     averageTimeToAbortInSeconds: number,
     areAveragesManual: boolean,
     skillProfileSidsList: Array<number>,
+    datetimeSetToInactive?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -1164,8 +1170,8 @@ export namespace CreateSkillProfileGroupReq {
 }
 
 export class CreateSkillProfileGroupRes extends jspb.Message {
-  getSkillProfileGroupSid(): number;
-  setSkillProfileGroupSid(value: number): void;
+  getSkillProfileGroupSid(): string;
+  setSkillProfileGroupSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateSkillProfileGroupRes.AsObject;
@@ -1179,7 +1185,7 @@ export class CreateSkillProfileGroupRes extends jspb.Message {
 
 export namespace CreateSkillProfileGroupRes {
   export type AsObject = {
-    skillProfileGroupSid: number,
+    skillProfileGroupSid: string,
   }
 }
 
@@ -1223,9 +1229,12 @@ export namespace UpdateSkillProfileGroupRes {
 
 export class ListSkillProfileGroupsReq extends jspb.Message {
   clearSkillProfileGroupSidsList(): void;
-  getSkillProfileGroupSidsList(): Array<number>;
-  setSkillProfileGroupSidsList(value: Array<number>): void;
-  addSkillProfileGroupSids(value: number, index?: number): number;
+  getSkillProfileGroupSidsList(): Array<string>;
+  setSkillProfileGroupSidsList(value: Array<string>): void;
+  addSkillProfileGroupSids(value: string, index?: number): string;
+
+  getIncludeInactive(): boolean;
+  setIncludeInactive(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSkillProfileGroupsReq.AsObject;
@@ -1239,7 +1248,8 @@ export class ListSkillProfileGroupsReq extends jspb.Message {
 
 export namespace ListSkillProfileGroupsReq {
   export type AsObject = {
-    skillProfileGroupSidsList: Array<number>,
+    skillProfileGroupSidsList: Array<string>,
+    includeInactive: boolean,
   }
 }
 
@@ -1266,8 +1276,8 @@ export namespace ListSkillProfileGroupsRes {
 }
 
 export class UpdateSkillProfileGroupAssociationsReq extends jspb.Message {
-  getSkillProfileGroupSid(): number;
-  setSkillProfileGroupSid(value: number): void;
+  getSkillProfileGroupSid(): string;
+  setSkillProfileGroupSid(value: string): void;
 
   clearSkillProfileSidsToAssociateList(): void;
   getSkillProfileSidsToAssociateList(): Array<number>;
@@ -1291,7 +1301,7 @@ export class UpdateSkillProfileGroupAssociationsReq extends jspb.Message {
 
 export namespace UpdateSkillProfileGroupAssociationsReq {
   export type AsObject = {
-    skillProfileGroupSid: number,
+    skillProfileGroupSid: string,
     skillProfileSidsToAssociateList: Array<number>,
     skillProfileSidsToDisassociateList: Array<number>,
   }
@@ -2567,9 +2577,9 @@ export class UpdateSkillProfileAveragesUsingHistoricalDataReq extends jspb.Messa
   setExcludeSkillProfilesWithManualAverages(value: boolean): void;
 
   clearSkillProfileGroupSidsList(): void;
-  getSkillProfileGroupSidsList(): Array<number>;
-  setSkillProfileGroupSidsList(value: Array<number>): void;
-  addSkillProfileGroupSids(value: number, index?: number): number;
+  getSkillProfileGroupSidsList(): Array<string>;
+  setSkillProfileGroupSidsList(value: Array<string>): void;
+  addSkillProfileGroupSids(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateSkillProfileAveragesUsingHistoricalDataReq.AsObject;
@@ -2586,7 +2596,7 @@ export namespace UpdateSkillProfileAveragesUsingHistoricalDataReq {
     skillProfileSidsList: Array<number>,
     datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     excludeSkillProfilesWithManualAverages: boolean,
-    skillProfileGroupSidsList: Array<number>,
+    skillProfileGroupSidsList: Array<string>,
   }
 }
 
@@ -8947,11 +8957,11 @@ export namespace ListRequiredCallsIntervalsRes {
 }
 
 export class TourShiftSegmentConfig extends jspb.Message {
-  getTourShiftSegmentConfigSid(): number;
-  setTourShiftSegmentConfigSid(value: number): void;
+  getTourShiftSegmentConfigSid(): string;
+  setTourShiftSegmentConfigSid(value: string): void;
 
-  getTourShiftInstanceConfigSid(): number;
-  setTourShiftInstanceConfigSid(value: number): void;
+  getTourShiftInstanceConfigSid(): string;
+  setTourShiftInstanceConfigSid(value: string): void;
 
   getStartMinuteInShift(): number;
   setStartMinuteInShift(value: number): void;
@@ -8974,8 +8984,8 @@ export class TourShiftSegmentConfig extends jspb.Message {
 
 export namespace TourShiftSegmentConfig {
   export type AsObject = {
-    tourShiftSegmentConfigSid: number,
-    tourShiftInstanceConfigSid: number,
+    tourShiftSegmentConfigSid: string,
+    tourShiftInstanceConfigSid: string,
     startMinuteInShift: number,
     widthInMinutes: number,
     schedulingActivitySid: number,
@@ -8983,11 +8993,11 @@ export namespace TourShiftSegmentConfig {
 }
 
 export class TourShiftInstanceConfig extends jspb.Message {
-  getTourShiftInstanceConfigSid(): number;
-  setTourShiftInstanceConfigSid(value: number): void;
+  getTourShiftInstanceConfigSid(): string;
+  setTourShiftInstanceConfigSid(value: string): void;
 
-  getTourWeekPatternSid(): number;
-  setTourWeekPatternSid(value: number): void;
+  getTourWeekPatternSid(): string;
+  setTourWeekPatternSid(value: string): void;
 
   getStartMinuteInWeek(): number;
   setStartMinuteInWeek(value: number): void;
@@ -9012,8 +9022,8 @@ export class TourShiftInstanceConfig extends jspb.Message {
 
 export namespace TourShiftInstanceConfig {
   export type AsObject = {
-    tourShiftInstanceConfigSid: number,
-    tourWeekPatternSid: number,
+    tourShiftInstanceConfigSid: string,
+    tourWeekPatternSid: string,
     startMinuteInWeek: number,
     widthInMinutes: number,
     memberTourShiftSegmentConfigsList: Array<TourShiftSegmentConfig.AsObject>,
@@ -9021,11 +9031,11 @@ export namespace TourShiftInstanceConfig {
 }
 
 export class TourWeekPattern extends jspb.Message {
-  getTourWeekPatternSid(): number;
-  setTourWeekPatternSid(value: number): void;
+  getTourWeekPatternSid(): string;
+  setTourWeekPatternSid(value: string): void;
 
-  getTourPatternSid(): number;
-  setTourPatternSid(value: number): void;
+  getTourPatternSid(): string;
+  setTourPatternSid(value: string): void;
 
   getWeekPatternNumber(): number;
   setWeekPatternNumber(value: number): void;
@@ -9047,19 +9057,19 @@ export class TourWeekPattern extends jspb.Message {
 
 export namespace TourWeekPattern {
   export type AsObject = {
-    tourWeekPatternSid: number,
-    tourPatternSid: number,
+    tourWeekPatternSid: string,
+    tourPatternSid: string,
     weekPatternNumber: number,
     memberTourShiftInstanceConfigsList: Array<TourShiftInstanceConfig.AsObject>,
   }
 }
 
 export class TourAgentCollection extends jspb.Message {
-  getTourAgentCollectionSid(): number;
-  setTourAgentCollectionSid(value: number): void;
+  getTourAgentCollectionSid(): string;
+  setTourAgentCollectionSid(value: string): void;
 
-  getTourPatternSid(): number;
-  setTourPatternSid(value: number): void;
+  getTourPatternSid(): string;
+  setTourPatternSid(value: string): void;
 
   getMinAgentsToSchedule(): number;
   setMinAgentsToSchedule(value: number): void;
@@ -9090,8 +9100,8 @@ export class TourAgentCollection extends jspb.Message {
 
 export namespace TourAgentCollection {
   export type AsObject = {
-    tourAgentCollectionSid: number,
-    tourPatternSid: number,
+    tourAgentCollectionSid: string,
+    tourPatternSid: string,
     minAgentsToSchedule: number,
     maxAgentsToSchedule: number,
     firstWeekPatternNumber: number,
@@ -9101,8 +9111,8 @@ export namespace TourAgentCollection {
 }
 
 export class TourPattern extends jspb.Message {
-  getTourPatternSid(): number;
-  setTourPatternSid(value: number): void;
+  getTourPatternSid(): string;
+  setTourPatternSid(value: string): void;
 
   getShiftTemplateSid(): number;
   setShiftTemplateSid(value: number): void;
@@ -9129,7 +9139,7 @@ export class TourPattern extends jspb.Message {
 
 export namespace TourPattern {
   export type AsObject = {
-    tourPatternSid: number,
+    tourPatternSid: string,
     shiftTemplateSid: number,
     memberTourWeekPatternsList: Array<TourWeekPattern.AsObject>,
     memberTourAgentCollectionsList: Array<TourAgentCollection.AsObject>,
@@ -9157,8 +9167,8 @@ export namespace CreateTourPatternReq {
 }
 
 export class CreateTourPatternRes extends jspb.Message {
-  getTourPatternSid(): number;
-  setTourPatternSid(value: number): void;
+  getTourPatternSid(): string;
+  setTourPatternSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTourPatternRes.AsObject;
@@ -9172,7 +9182,51 @@ export class CreateTourPatternRes extends jspb.Message {
 
 export namespace CreateTourPatternRes {
   export type AsObject = {
-    tourPatternSid: number,
+    tourPatternSid: string,
+  }
+}
+
+export class GetTourPatternDiagnosticsReq extends jspb.Message {
+  hasTourPattern(): boolean;
+  clearTourPattern(): void;
+  getTourPattern(): TourPattern | undefined;
+  setTourPattern(value?: TourPattern): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTourPatternDiagnosticsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTourPatternDiagnosticsReq): GetTourPatternDiagnosticsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetTourPatternDiagnosticsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTourPatternDiagnosticsReq;
+  static deserializeBinaryFromReader(message: GetTourPatternDiagnosticsReq, reader: jspb.BinaryReader): GetTourPatternDiagnosticsReq;
+}
+
+export namespace GetTourPatternDiagnosticsReq {
+  export type AsObject = {
+    tourPattern?: TourPattern.AsObject,
+  }
+}
+
+export class GetTourPatternDiagnosticsRes extends jspb.Message {
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTourPatternDiagnosticsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTourPatternDiagnosticsRes): GetTourPatternDiagnosticsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetTourPatternDiagnosticsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTourPatternDiagnosticsRes;
+  static deserializeBinaryFromReader(message: GetTourPatternDiagnosticsRes, reader: jspb.BinaryReader): GetTourPatternDiagnosticsRes;
+}
+
+export namespace GetTourPatternDiagnosticsRes {
+  export type AsObject = {
+    diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
 
@@ -9204,6 +9258,11 @@ export class UpsertTourPatternWithMembersRes extends jspb.Message {
   getTourPattern(): TourPattern | undefined;
   setTourPattern(value?: TourPattern): void;
 
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpsertTourPatternWithMembersRes.AsObject;
   static toObject(includeInstance: boolean, msg: UpsertTourPatternWithMembersRes): UpsertTourPatternWithMembersRes.AsObject;
@@ -9217,6 +9276,7 @@ export class UpsertTourPatternWithMembersRes extends jspb.Message {
 export namespace UpsertTourPatternWithMembersRes {
   export type AsObject = {
     tourPattern?: TourPattern.AsObject,
+    diagnosticsList: Array<Diagnostic.AsObject>,
   }
 }
 
@@ -9263,8 +9323,8 @@ export namespace GetTourPatternRes {
 }
 
 export class DeleteTourPatternReq extends jspb.Message {
-  getTourPatternSid(): number;
-  setTourPatternSid(value: number): void;
+  getTourPatternSid(): string;
+  setTourPatternSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteTourPatternReq.AsObject;
@@ -9278,7 +9338,7 @@ export class DeleteTourPatternReq extends jspb.Message {
 
 export namespace DeleteTourPatternReq {
   export type AsObject = {
-    tourPatternSid: number,
+    tourPatternSid: string,
   }
 }
 
@@ -9299,8 +9359,8 @@ export namespace DeleteTourPatternRes {
 }
 
 export class CreateTourWeekPatternReq extends jspb.Message {
-  getTourPatternSid(): number;
-  setTourPatternSid(value: number): void;
+  getTourPatternSid(): string;
+  setTourPatternSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTourWeekPatternReq.AsObject;
@@ -9314,13 +9374,13 @@ export class CreateTourWeekPatternReq extends jspb.Message {
 
 export namespace CreateTourWeekPatternReq {
   export type AsObject = {
-    tourPatternSid: number,
+    tourPatternSid: string,
   }
 }
 
 export class CreateTourWeekPatternRes extends jspb.Message {
-  getTourWeekPatternSid(): number;
-  setTourWeekPatternSid(value: number): void;
+  getTourWeekPatternSid(): string;
+  setTourWeekPatternSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTourWeekPatternRes.AsObject;
@@ -9334,13 +9394,13 @@ export class CreateTourWeekPatternRes extends jspb.Message {
 
 export namespace CreateTourWeekPatternRes {
   export type AsObject = {
-    tourWeekPatternSid: number,
+    tourWeekPatternSid: string,
   }
 }
 
 export class ListTourWeekPatternsReq extends jspb.Message {
-  getTourPatternSid(): number;
-  setTourPatternSid(value: number): void;
+  getTourPatternSid(): string;
+  setTourPatternSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTourWeekPatternsReq.AsObject;
@@ -9354,7 +9414,7 @@ export class ListTourWeekPatternsReq extends jspb.Message {
 
 export namespace ListTourWeekPatternsReq {
   export type AsObject = {
-    tourPatternSid: number,
+    tourPatternSid: string,
   }
 }
 
@@ -9382,9 +9442,9 @@ export namespace ListTourWeekPatternsRes {
 
 export class DeleteTourWeekPatternsReq extends jspb.Message {
   clearTourWeekPatternSidsList(): void;
-  getTourWeekPatternSidsList(): Array<number>;
-  setTourWeekPatternSidsList(value: Array<number>): void;
-  addTourWeekPatternSids(value: number, index?: number): number;
+  getTourWeekPatternSidsList(): Array<string>;
+  setTourWeekPatternSidsList(value: Array<string>): void;
+  addTourWeekPatternSids(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteTourWeekPatternsReq.AsObject;
@@ -9398,7 +9458,7 @@ export class DeleteTourWeekPatternsReq extends jspb.Message {
 
 export namespace DeleteTourWeekPatternsReq {
   export type AsObject = {
-    tourWeekPatternSidsList: Array<number>,
+    tourWeekPatternSidsList: Array<string>,
   }
 }
 
@@ -9441,8 +9501,8 @@ export namespace CreateTourShiftInstanceConfigReq {
 }
 
 export class CreateTourShiftInstanceConfigRes extends jspb.Message {
-  getTourShiftInstanceConfigSid(): number;
-  setTourShiftInstanceConfigSid(value: number): void;
+  getTourShiftInstanceConfigSid(): string;
+  setTourShiftInstanceConfigSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTourShiftInstanceConfigRes.AsObject;
@@ -9456,7 +9516,7 @@ export class CreateTourShiftInstanceConfigRes extends jspb.Message {
 
 export namespace CreateTourShiftInstanceConfigRes {
   export type AsObject = {
-    tourShiftInstanceConfigSid: number,
+    tourShiftInstanceConfigSid: string,
   }
 }
 
@@ -9500,9 +9560,9 @@ export namespace UpdateTourShiftInstanceConfigRes {
 
 export class ListTourShiftInstanceConfigsReq extends jspb.Message {
   clearTourWeekPatternSidsList(): void;
-  getTourWeekPatternSidsList(): Array<number>;
-  setTourWeekPatternSidsList(value: Array<number>): void;
-  addTourWeekPatternSids(value: number, index?: number): number;
+  getTourWeekPatternSidsList(): Array<string>;
+  setTourWeekPatternSidsList(value: Array<string>): void;
+  addTourWeekPatternSids(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTourShiftInstanceConfigsReq.AsObject;
@@ -9516,7 +9576,7 @@ export class ListTourShiftInstanceConfigsReq extends jspb.Message {
 
 export namespace ListTourShiftInstanceConfigsReq {
   export type AsObject = {
-    tourWeekPatternSidsList: Array<number>,
+    tourWeekPatternSidsList: Array<string>,
   }
 }
 
@@ -9544,9 +9604,9 @@ export namespace ListTourShiftInstanceConfigsRes {
 
 export class DeleteTourShiftInstanceConfigsReq extends jspb.Message {
   clearTourShiftInstanceConfigSidsList(): void;
-  getTourShiftInstanceConfigSidsList(): Array<number>;
-  setTourShiftInstanceConfigSidsList(value: Array<number>): void;
-  addTourShiftInstanceConfigSids(value: number, index?: number): number;
+  getTourShiftInstanceConfigSidsList(): Array<string>;
+  setTourShiftInstanceConfigSidsList(value: Array<string>): void;
+  addTourShiftInstanceConfigSids(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteTourShiftInstanceConfigsReq.AsObject;
@@ -9560,7 +9620,7 @@ export class DeleteTourShiftInstanceConfigsReq extends jspb.Message {
 
 export namespace DeleteTourShiftInstanceConfigsReq {
   export type AsObject = {
-    tourShiftInstanceConfigSidsList: Array<number>,
+    tourShiftInstanceConfigSidsList: Array<string>,
   }
 }
 
@@ -9603,8 +9663,8 @@ export namespace CreateTourShiftSegmentConfigReq {
 }
 
 export class CreateTourShiftSegmentConfigRes extends jspb.Message {
-  getTourShiftSegmentConfigSid(): number;
-  setTourShiftSegmentConfigSid(value: number): void;
+  getTourShiftSegmentConfigSid(): string;
+  setTourShiftSegmentConfigSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTourShiftSegmentConfigRes.AsObject;
@@ -9618,7 +9678,7 @@ export class CreateTourShiftSegmentConfigRes extends jspb.Message {
 
 export namespace CreateTourShiftSegmentConfigRes {
   export type AsObject = {
-    tourShiftSegmentConfigSid: number,
+    tourShiftSegmentConfigSid: string,
   }
 }
 
@@ -9662,9 +9722,9 @@ export namespace UpdateTourShiftSegmentConfigRes {
 
 export class ListTourShiftSegmentConfigsReq extends jspb.Message {
   clearTourShiftInstanceConfigSidsList(): void;
-  getTourShiftInstanceConfigSidsList(): Array<number>;
-  setTourShiftInstanceConfigSidsList(value: Array<number>): void;
-  addTourShiftInstanceConfigSids(value: number, index?: number): number;
+  getTourShiftInstanceConfigSidsList(): Array<string>;
+  setTourShiftInstanceConfigSidsList(value: Array<string>): void;
+  addTourShiftInstanceConfigSids(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTourShiftSegmentConfigsReq.AsObject;
@@ -9678,7 +9738,7 @@ export class ListTourShiftSegmentConfigsReq extends jspb.Message {
 
 export namespace ListTourShiftSegmentConfigsReq {
   export type AsObject = {
-    tourShiftInstanceConfigSidsList: Array<number>,
+    tourShiftInstanceConfigSidsList: Array<string>,
   }
 }
 
@@ -9706,9 +9766,9 @@ export namespace ListTourShiftSegmentConfigsRes {
 
 export class DeleteTourShiftSegmentConfigsReq extends jspb.Message {
   clearTourShiftSegmentConfigSidsList(): void;
-  getTourShiftSegmentConfigSidsList(): Array<number>;
-  setTourShiftSegmentConfigSidsList(value: Array<number>): void;
-  addTourShiftSegmentConfigSids(value: number, index?: number): number;
+  getTourShiftSegmentConfigSidsList(): Array<string>;
+  setTourShiftSegmentConfigSidsList(value: Array<string>): void;
+  addTourShiftSegmentConfigSids(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteTourShiftSegmentConfigsReq.AsObject;
@@ -9722,7 +9782,7 @@ export class DeleteTourShiftSegmentConfigsReq extends jspb.Message {
 
 export namespace DeleteTourShiftSegmentConfigsReq {
   export type AsObject = {
-    tourShiftSegmentConfigSidsList: Array<number>,
+    tourShiftSegmentConfigSidsList: Array<string>,
   }
 }
 
@@ -9765,8 +9825,8 @@ export namespace CreateTourAgentCollectionReq {
 }
 
 export class CreateTourAgentCollectionRes extends jspb.Message {
-  getTourAgentCollectionSid(): number;
-  setTourAgentCollectionSid(value: number): void;
+  getTourAgentCollectionSid(): string;
+  setTourAgentCollectionSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTourAgentCollectionRes.AsObject;
@@ -9780,7 +9840,7 @@ export class CreateTourAgentCollectionRes extends jspb.Message {
 
 export namespace CreateTourAgentCollectionRes {
   export type AsObject = {
-    tourAgentCollectionSid: number,
+    tourAgentCollectionSid: string,
   }
 }
 
@@ -9823,8 +9883,8 @@ export namespace UpdateTourAgentCollectionRes {
 }
 
 export class ListTourAgentCollectionsReq extends jspb.Message {
-  getTourPatternSid(): number;
-  setTourPatternSid(value: number): void;
+  getTourPatternSid(): string;
+  setTourPatternSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTourAgentCollectionsReq.AsObject;
@@ -9838,7 +9898,7 @@ export class ListTourAgentCollectionsReq extends jspb.Message {
 
 export namespace ListTourAgentCollectionsReq {
   export type AsObject = {
-    tourPatternSid: number,
+    tourPatternSid: string,
   }
 }
 
@@ -9866,9 +9926,9 @@ export namespace ListTourAgentCollectionsRes {
 
 export class DeleteTourAgentCollectionsReq extends jspb.Message {
   clearTourAgentCollectionSidsList(): void;
-  getTourAgentCollectionSidsList(): Array<number>;
-  setTourAgentCollectionSidsList(value: Array<number>): void;
-  addTourAgentCollectionSids(value: number, index?: number): number;
+  getTourAgentCollectionSidsList(): Array<string>;
+  setTourAgentCollectionSidsList(value: Array<string>): void;
+  addTourAgentCollectionSids(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteTourAgentCollectionsReq.AsObject;
@@ -9882,7 +9942,7 @@ export class DeleteTourAgentCollectionsReq extends jspb.Message {
 
 export namespace DeleteTourAgentCollectionsReq {
   export type AsObject = {
-    tourAgentCollectionSidsList: Array<number>,
+    tourAgentCollectionSidsList: Array<string>,
   }
 }
 
@@ -9908,8 +9968,8 @@ export class CreateTourAgentCollectionWFMAgentsReq extends jspb.Message {
   setWfmAgentSidsList(value: Array<number>): void;
   addWfmAgentSids(value: number, index?: number): number;
 
-  getTourAgentCollectionSid(): number;
-  setTourAgentCollectionSid(value: number): void;
+  getTourAgentCollectionSid(): string;
+  setTourAgentCollectionSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTourAgentCollectionWFMAgentsReq.AsObject;
@@ -9924,7 +9984,7 @@ export class CreateTourAgentCollectionWFMAgentsReq extends jspb.Message {
 export namespace CreateTourAgentCollectionWFMAgentsReq {
   export type AsObject = {
     wfmAgentSidsList: Array<number>,
-    tourAgentCollectionSid: number,
+    tourAgentCollectionSid: string,
   }
 }
 
@@ -9946,9 +10006,9 @@ export namespace CreateTourAgentCollectionWFMAgentsRes {
 
 export class ListTourAgentCollectionWFMAgentsReq extends jspb.Message {
   clearTourAgentCollectionSidsList(): void;
-  getTourAgentCollectionSidsList(): Array<number>;
-  setTourAgentCollectionSidsList(value: Array<number>): void;
-  addTourAgentCollectionSids(value: number, index?: number): number;
+  getTourAgentCollectionSidsList(): Array<string>;
+  setTourAgentCollectionSidsList(value: Array<string>): void;
+  addTourAgentCollectionSids(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTourAgentCollectionWFMAgentsReq.AsObject;
@@ -9962,7 +10022,7 @@ export class ListTourAgentCollectionWFMAgentsReq extends jspb.Message {
 
 export namespace ListTourAgentCollectionWFMAgentsReq {
   export type AsObject = {
-    tourAgentCollectionSidsList: Array<number>,
+    tourAgentCollectionSidsList: Array<string>,
   }
 }
 
@@ -9988,8 +10048,8 @@ export namespace ListTourAgentCollectionWFMAgentsRes {
   }
 
   export class SidMapping extends jspb.Message {
-    getAgentCollectionSid(): number;
-    setAgentCollectionSid(value: number): void;
+    getAgentCollectionSid(): string;
+    setAgentCollectionSid(value: string): void;
 
     clearWfmAgentSidsList(): void;
     getWfmAgentSidsList(): Array<number>;
@@ -10008,7 +10068,7 @@ export namespace ListTourAgentCollectionWFMAgentsRes {
 
   export namespace SidMapping {
     export type AsObject = {
-      agentCollectionSid: number,
+      agentCollectionSid: string,
       wfmAgentSidsList: Array<number>,
     }
   }
@@ -10020,8 +10080,8 @@ export class DeleteTourAgentCollectionWFMAgentsReq extends jspb.Message {
   setWfmAgentSidsList(value: Array<number>): void;
   addWfmAgentSids(value: number, index?: number): number;
 
-  getTourAgentCollectionSid(): number;
-  setTourAgentCollectionSid(value: number): void;
+  getTourAgentCollectionSid(): string;
+  setTourAgentCollectionSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteTourAgentCollectionWFMAgentsReq.AsObject;
@@ -10036,7 +10096,7 @@ export class DeleteTourAgentCollectionWFMAgentsReq extends jspb.Message {
 export namespace DeleteTourAgentCollectionWFMAgentsReq {
   export type AsObject = {
     wfmAgentSidsList: Array<number>,
-    tourAgentCollectionSid: number,
+    tourAgentCollectionSid: string,
   }
 }
 
