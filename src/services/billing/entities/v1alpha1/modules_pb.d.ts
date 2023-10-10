@@ -24,7 +24,7 @@ export namespace BasicConfig {
   }
 }
 
-export class BasicAmountConfig extends jspb.Message {
+export class BasicUnitConfig extends jspb.Message {
   getUnitSize(): number;
   setUnitSize(value: number): void;
 
@@ -42,16 +42,16 @@ export class BasicAmountConfig extends jspb.Message {
   setMaxUnits(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BasicAmountConfig.AsObject;
-  static toObject(includeInstance: boolean, msg: BasicAmountConfig): BasicAmountConfig.AsObject;
+  toObject(includeInstance?: boolean): BasicUnitConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: BasicUnitConfig): BasicUnitConfig.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BasicAmountConfig, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BasicAmountConfig;
-  static deserializeBinaryFromReader(message: BasicAmountConfig, reader: jspb.BinaryReader): BasicAmountConfig;
+  static serializeBinaryToWriter(message: BasicUnitConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BasicUnitConfig;
+  static deserializeBinaryFromReader(message: BasicUnitConfig, reader: jspb.BinaryReader): BasicUnitConfig;
 }
 
-export namespace BasicAmountConfig {
+export namespace BasicUnitConfig {
   export type AsObject = {
     unitSize: number,
     rate: number,

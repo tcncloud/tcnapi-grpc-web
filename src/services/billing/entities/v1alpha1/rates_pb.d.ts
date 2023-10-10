@@ -95,8 +95,8 @@ export class RateDefinitionConfig extends jspb.Message {
 
   hasAgentTextMessageEmailSizeConfig(): boolean;
   clearAgentTextMessageEmailSizeConfig(): void;
-  getAgentTextMessageEmailSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig | undefined;
-  setAgentTextMessageEmailSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig): void;
+  getAgentTextMessageEmailSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig | undefined;
+  setAgentTextMessageEmailSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig): void;
 
   hasAgentTextMessageSmsConfig(): boolean;
   clearAgentTextMessageSmsConfig(): void;
@@ -110,8 +110,8 @@ export class RateDefinitionConfig extends jspb.Message {
 
   hasTaskMessageSentEmailSizeConfig(): boolean;
   clearTaskMessageSentEmailSizeConfig(): void;
-  getTaskMessageSentEmailSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig | undefined;
-  setTaskMessageSentEmailSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig): void;
+  getTaskMessageSentEmailSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig | undefined;
+  setTaskMessageSentEmailSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig): void;
 
   hasTaskMessageSentSmsConfig(): boolean;
   clearTaskMessageSentSmsConfig(): void;
@@ -135,8 +135,8 @@ export class RateDefinitionConfig extends jspb.Message {
 
   hasManagerTextMessageEmailSizeConfig(): boolean;
   clearManagerTextMessageEmailSizeConfig(): void;
-  getManagerTextMessageEmailSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig | undefined;
-  setManagerTextMessageEmailSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig): void;
+  getManagerTextMessageEmailSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig | undefined;
+  setManagerTextMessageEmailSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig): void;
 
   hasManagerTextMessageSmsConfig(): boolean;
   clearManagerTextMessageSmsConfig(): void;
@@ -155,8 +155,8 @@ export class RateDefinitionConfig extends jspb.Message {
 
   hasCustomerTextMessageEmailSizeConfig(): boolean;
   clearCustomerTextMessageEmailSizeConfig(): void;
-  getCustomerTextMessageEmailSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig | undefined;
-  setCustomerTextMessageEmailSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig): void;
+  getCustomerTextMessageEmailSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig | undefined;
+  setCustomerTextMessageEmailSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig): void;
 
   hasCustomerTextMessageSmsConfig(): boolean;
   clearCustomerTextMessageSmsConfig(): void;
@@ -165,18 +165,18 @@ export class RateDefinitionConfig extends jspb.Message {
 
   hasAgentTextMessageChatSizeConfig(): boolean;
   clearAgentTextMessageChatSizeConfig(): void;
-  getAgentTextMessageChatSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig | undefined;
-  setAgentTextMessageChatSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig): void;
+  getAgentTextMessageChatSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig | undefined;
+  setAgentTextMessageChatSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig): void;
 
   hasManagerTextMessageChatSizeConfig(): boolean;
   clearManagerTextMessageChatSizeConfig(): void;
-  getManagerTextMessageChatSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig | undefined;
-  setManagerTextMessageChatSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig): void;
+  getManagerTextMessageChatSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig | undefined;
+  setManagerTextMessageChatSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig): void;
 
   hasCustomerTextMessageChatSizeConfig(): boolean;
   clearCustomerTextMessageChatSizeConfig(): void;
-  getCustomerTextMessageChatSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig | undefined;
-  setCustomerTextMessageChatSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig): void;
+  getCustomerTextMessageChatSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig | undefined;
+  setCustomerTextMessageChatSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig): void;
 
   hasConnectedInboxCreatedConfig(): boolean;
   clearConnectedInboxCreatedConfig(): void;
@@ -185,23 +185,23 @@ export class RateDefinitionConfig extends jspb.Message {
 
   hasAgentTextMessageSmsSizeConfig(): boolean;
   clearAgentTextMessageSmsSizeConfig(): void;
-  getAgentTextMessageSmsSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig | undefined;
-  setAgentTextMessageSmsSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig): void;
+  getAgentTextMessageSmsSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig | undefined;
+  setAgentTextMessageSmsSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig): void;
 
   hasManagerTextMessageSmsSizeConfig(): boolean;
   clearManagerTextMessageSmsSizeConfig(): void;
-  getManagerTextMessageSmsSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig | undefined;
-  setManagerTextMessageSmsSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig): void;
+  getManagerTextMessageSmsSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig | undefined;
+  setManagerTextMessageSmsSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig): void;
 
   hasCustomerTextMessageSmsSizeConfig(): boolean;
   clearCustomerTextMessageSmsSizeConfig(): void;
-  getCustomerTextMessageSmsSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig | undefined;
-  setCustomerTextMessageSmsSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig): void;
+  getCustomerTextMessageSmsSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig | undefined;
+  setCustomerTextMessageSmsSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig): void;
 
   hasTaskMessageSentSmsSizeConfig(): boolean;
   clearTaskMessageSentSmsSizeConfig(): void;
-  getTaskMessageSentSmsSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig | undefined;
-  setTaskMessageSentSmsSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig): void;
+  getTaskMessageSentSmsSizeConfig(): services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig | undefined;
+  setTaskMessageSentSmsSizeConfig(value?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig): void;
 
   hasAgentChatMessageUnitsConfig(): boolean;
   clearAgentChatMessageUnitsConfig(): void;
@@ -289,28 +289,28 @@ export namespace RateDefinitionConfig {
     agentSeatsConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
     agentTextMessageChatConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
     agentTextMessageEmailMessageConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
-    agentTextMessageEmailSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig.AsObject,
+    agentTextMessageEmailSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig.AsObject,
     agentTextMessageSmsConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
     taskMessageSentEmailMessageConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
-    taskMessageSentEmailSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig.AsObject,
+    taskMessageSentEmailSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig.AsObject,
     taskMessageSentSmsConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
     connectedInboxPollConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
     managerTextMessageChatConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
     managerTextMessageEmailMessageConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
-    managerTextMessageEmailSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig.AsObject,
+    managerTextMessageEmailSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig.AsObject,
     managerTextMessageSmsConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
     customerTextMessageChatConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
     customerTextMessageEmailMessageConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
-    customerTextMessageEmailSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig.AsObject,
+    customerTextMessageEmailSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig.AsObject,
     customerTextMessageSmsConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
-    agentTextMessageChatSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig.AsObject,
-    managerTextMessageChatSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig.AsObject,
-    customerTextMessageChatSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig.AsObject,
+    agentTextMessageChatSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig.AsObject,
+    managerTextMessageChatSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig.AsObject,
+    customerTextMessageChatSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig.AsObject,
     connectedInboxCreatedConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
-    agentTextMessageSmsSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig.AsObject,
-    managerTextMessageSmsSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig.AsObject,
-    customerTextMessageSmsSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig.AsObject,
-    taskMessageSentSmsSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicAmountConfig.AsObject,
+    agentTextMessageSmsSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig.AsObject,
+    managerTextMessageSmsSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig.AsObject,
+    customerTextMessageSmsSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig.AsObject,
+    taskMessageSentSmsSizeConfig?: services_billing_entities_v1alpha1_modules_pb.BasicUnitConfig.AsObject,
     agentChatMessageUnitsConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
     agentEmailMessageUnitsConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
     agentSmsMessageUnitsConfig?: services_billing_entities_v1alpha1_modules_pb.BasicConfig.AsObject,
