@@ -2955,6 +2955,11 @@ export class PluginInstance extends jspb.Message {
   getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
   setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
+  clearDisplayMethodsList(): void;
+  getDisplayMethodsList(): Array<api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]>;
+  setDisplayMethodsList(value: Array<api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]>): void;
+  addDisplayMethods(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap], index?: number): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PluginInstance.AsObject;
   static toObject(includeInstance: boolean, msg: PluginInstance): PluginInstance.AsObject;
@@ -2975,6 +2980,7 @@ export namespace PluginInstance {
     metadata?: Values.AsObject,
     lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
+    displayMethodsList: Array<api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]>,
   }
 }
 

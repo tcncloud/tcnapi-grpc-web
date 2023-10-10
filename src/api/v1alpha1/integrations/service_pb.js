@@ -2076,7 +2076,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.integrations.PluginInstance = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.integrations.PluginInstance.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.integrations.PluginInstance, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -23108,6 +23108,13 @@ proto.api.v1alpha1.integrations.PluginInstanceId.prototype.setId = function(valu
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.integrations.PluginInstance.repeatedFields_ = [13];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -23146,7 +23153,8 @@ proto.api.v1alpha1.integrations.PluginInstance.toObject = function(includeInstan
     data: (f = msg.getData()) && proto.api.v1alpha1.integrations.Values.toObject(includeInstance, f),
     metadata: (f = msg.getMetadata()) && proto.api.v1alpha1.integrations.Values.toObject(includeInstance, f),
     lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    methodId: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    methodId: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    displayMethodsList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -23217,6 +23225,12 @@ proto.api.v1alpha1.integrations.PluginInstance.deserializeBinaryFromReader = fun
     case 12:
       var value = /** @type {!proto.api.commons.integrations.RequestMethod} */ (reader.readEnum());
       msg.setMethodId(value);
+      break;
+    case 13:
+      var values = /** @type {!Array<!proto.api.commons.integrations.RequestMethod>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addDisplayMethods(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -23303,6 +23317,13 @@ proto.api.v1alpha1.integrations.PluginInstance.serializeBinaryToWriter = functio
   if (f !== 0.0) {
     writer.writeEnum(
       12,
+      f
+    );
+  }
+  f = message.getDisplayMethodsList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      13,
       f
     );
   }
@@ -23507,6 +23528,43 @@ proto.api.v1alpha1.integrations.PluginInstance.prototype.getMethodId = function(
  */
 proto.api.v1alpha1.integrations.PluginInstance.prototype.setMethodId = function(value) {
   return jspb.Message.setProto3EnumField(this, 12, value);
+};
+
+
+/**
+ * repeated api.commons.integrations.RequestMethod display_methods = 13;
+ * @return {!Array<!proto.api.commons.integrations.RequestMethod>}
+ */
+proto.api.v1alpha1.integrations.PluginInstance.prototype.getDisplayMethodsList = function() {
+  return /** @type {!Array<!proto.api.commons.integrations.RequestMethod>} */ (jspb.Message.getRepeatedField(this, 13));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.integrations.RequestMethod>} value
+ * @return {!proto.api.v1alpha1.integrations.PluginInstance} returns this
+ */
+proto.api.v1alpha1.integrations.PluginInstance.prototype.setDisplayMethodsList = function(value) {
+  return jspb.Message.setField(this, 13, value || []);
+};
+
+
+/**
+ * @param {!proto.api.commons.integrations.RequestMethod} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.integrations.PluginInstance} returns this
+ */
+proto.api.v1alpha1.integrations.PluginInstance.prototype.addDisplayMethods = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 13, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.integrations.PluginInstance} returns this
+ */
+proto.api.v1alpha1.integrations.PluginInstance.prototype.clearDisplayMethodsList = function() {
+  return this.setDisplayMethodsList([]);
 };
 
 
