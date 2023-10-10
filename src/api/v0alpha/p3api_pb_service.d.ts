@@ -643,6 +643,15 @@ type P3ApiCreateContactFieldDescription = {
   readonly responseType: typeof api_v0alpha_p3api_pb.CreateContactFieldDescriptionRes;
 };
 
+type P3ApiUpdateContactFieldDescription = {
+  readonly methodName: string;
+  readonly service: typeof P3Api;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_p3api_pb.UpdateContactFieldDescriptionReq;
+  readonly responseType: typeof api_v0alpha_p3api_pb.UpdateContactFieldDescriptionRes;
+};
+
 type P3ApiDeleteContactFieldDescription = {
   readonly methodName: string;
   readonly service: typeof P3Api;
@@ -950,6 +959,7 @@ export class P3Api {
   static readonly GetContactGroupDetails: P3ApiGetContactGroupDetails;
   static readonly GetContactGroupSize: P3ApiGetContactGroupSize;
   static readonly CreateContactFieldDescription: P3ApiCreateContactFieldDescription;
+  static readonly UpdateContactFieldDescription: P3ApiUpdateContactFieldDescription;
   static readonly DeleteContactFieldDescription: P3ApiDeleteContactFieldDescription;
   static readonly ListContactFieldDescriptions: P3ApiListContactFieldDescriptions;
   static readonly ListContactFieldDescriptionsByCGSid: P3ApiListContactFieldDescriptionsByCGSid;
@@ -1640,6 +1650,15 @@ export class P3ApiClient {
   createContactFieldDescription(
     requestMessage: api_v0alpha_p3api_pb.CreateContactFieldDescriptionReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_p3api_pb.CreateContactFieldDescriptionRes|null) => void
+  ): UnaryResponse;
+  updateContactFieldDescription(
+    requestMessage: api_v0alpha_p3api_pb.UpdateContactFieldDescriptionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_p3api_pb.UpdateContactFieldDescriptionRes|null) => void
+  ): UnaryResponse;
+  updateContactFieldDescription(
+    requestMessage: api_v0alpha_p3api_pb.UpdateContactFieldDescriptionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_p3api_pb.UpdateContactFieldDescriptionRes|null) => void
   ): UnaryResponse;
   deleteContactFieldDescription(
     requestMessage: api_v0alpha_p3api_pb.DeleteContactFieldDescriptionReq,
