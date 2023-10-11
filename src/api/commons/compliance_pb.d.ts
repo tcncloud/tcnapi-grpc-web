@@ -244,6 +244,11 @@ export class FrequencyExp extends jspb.Message {
   setCheckingEntitiesList(value: Array<EntityExp>): void;
   addCheckingEntities(value?: EntityExp, index?: number): EntityExp;
 
+  hasMatching(): boolean;
+  clearMatching(): void;
+  getMatching(): MatchingMod | undefined;
+  setMatching(value?: MatchingMod): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FrequencyExp.AsObject;
   static toObject(includeInstance: boolean, msg: FrequencyExp): FrequencyExp.AsObject;
@@ -262,6 +267,76 @@ export namespace FrequencyExp {
     dispositions?: DispositionMod.AsObject,
     fieldNames?: FieldNamesMod.AsObject,
     checkingEntitiesList: Array<EntityExp.AsObject>,
+    matching?: MatchingMod.AsObject,
+  }
+}
+
+export class MatchingMod extends jspb.Message {
+  clearAndList(): void;
+  getAndList(): Array<MatchingMod>;
+  setAndList(value: Array<MatchingMod>): void;
+  addAnd(value?: MatchingMod, index?: number): MatchingMod;
+
+  clearOrList(): void;
+  getOrList(): Array<MatchingMod>;
+  setOrList(value: Array<MatchingMod>): void;
+  addOr(value?: MatchingMod, index?: number): MatchingMod;
+
+  hasMod(): boolean;
+  clearMod(): void;
+  getMod(): MatchingEntity | undefined;
+  setMod(value?: MatchingEntity): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MatchingMod.AsObject;
+  static toObject(includeInstance: boolean, msg: MatchingMod): MatchingMod.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MatchingMod, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MatchingMod;
+  static deserializeBinaryFromReader(message: MatchingMod, reader: jspb.BinaryReader): MatchingMod;
+}
+
+export namespace MatchingMod {
+  export type AsObject = {
+    andList: Array<MatchingMod.AsObject>,
+    orList: Array<MatchingMod.AsObject>,
+    mod?: MatchingEntity.AsObject,
+  }
+}
+
+export class MatchingEntity extends jspb.Message {
+  hasResults(): boolean;
+  clearResults(): void;
+  getResults(): ResultsMod | undefined;
+  setResults(value?: ResultsMod): void;
+
+  hasDispositions(): boolean;
+  clearDispositions(): void;
+  getDispositions(): DispositionMod | undefined;
+  setDispositions(value?: DispositionMod): void;
+
+  getEntityCase(): MatchingEntity.EntityCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MatchingEntity.AsObject;
+  static toObject(includeInstance: boolean, msg: MatchingEntity): MatchingEntity.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MatchingEntity, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MatchingEntity;
+  static deserializeBinaryFromReader(message: MatchingEntity, reader: jspb.BinaryReader): MatchingEntity;
+}
+
+export namespace MatchingEntity {
+  export type AsObject = {
+    results?: ResultsMod.AsObject,
+    dispositions?: DispositionMod.AsObject,
+  }
+
+  export enum EntityCase {
+    ENTITY_NOT_SET = 0,
+    RESULTS = 1,
+    DISPOSITIONS = 2,
   }
 }
 
