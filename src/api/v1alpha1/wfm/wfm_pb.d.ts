@@ -164,6 +164,11 @@ export class SkillProfileGroup extends jspb.Message {
   setSkillProfileSidsList(value: Array<number>): void;
   addSkillProfileSids(value: number, index?: number): number;
 
+  hasDatetimeSetToInactive(): boolean;
+  clearDatetimeSetToInactive(): void;
+  getDatetimeSetToInactive(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDatetimeSetToInactive(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SkillProfileGroup.AsObject;
   static toObject(includeInstance: boolean, msg: SkillProfileGroup): SkillProfileGroup.AsObject;
@@ -186,6 +191,7 @@ export namespace SkillProfileGroup {
     averageTimeToAbortInSeconds: number,
     areAveragesManual: boolean,
     skillProfileSidsList: Array<number>,
+    datetimeSetToInactive?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -1227,6 +1233,9 @@ export class ListSkillProfileGroupsReq extends jspb.Message {
   setSkillProfileGroupSidsList(value: Array<string>): void;
   addSkillProfileGroupSids(value: string, index?: number): string;
 
+  getIncludeInactive(): boolean;
+  setIncludeInactive(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSkillProfileGroupsReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListSkillProfileGroupsReq): ListSkillProfileGroupsReq.AsObject;
@@ -1240,6 +1249,7 @@ export class ListSkillProfileGroupsReq extends jspb.Message {
 export namespace ListSkillProfileGroupsReq {
   export type AsObject = {
     skillProfileGroupSidsList: Array<string>,
+    includeInactive: boolean,
   }
 }
 
