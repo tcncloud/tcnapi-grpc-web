@@ -13,6 +13,12 @@ export class CreateNewsArticleRequest extends jspb.Message {
   getContent(): string;
   setContent(value: string): void;
 
+  getAuthor(): string;
+  setAuthor(value: string): void;
+
+  getImageReferenceId(): string;
+  setImageReferenceId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateNewsArticleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateNewsArticleRequest): CreateNewsArticleRequest.AsObject;
@@ -27,6 +33,8 @@ export namespace CreateNewsArticleRequest {
   export type AsObject = {
     title: string,
     content: string,
+    author: string,
+    imageReferenceId: string,
   }
 }
 
@@ -217,6 +225,12 @@ export class NewsArticleDetails extends jspb.Message {
   getLastEdited(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLastEdited(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getAuthor(): string;
+  setAuthor(value: string): void;
+
+  getImageReferenceId(): string;
+  setImageReferenceId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NewsArticleDetails.AsObject;
   static toObject(includeInstance: boolean, msg: NewsArticleDetails): NewsArticleDetails.AsObject;
@@ -235,6 +249,8 @@ export namespace NewsArticleDetails {
     status: api_commons_newsroom_pb.ArticleStatusMap[keyof api_commons_newsroom_pb.ArticleStatusMap],
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    author: string,
+    imageReferenceId: string,
   }
 }
 
@@ -575,6 +591,12 @@ export class NewsArticleImage extends jspb.Message {
   getDownloadUrl(): string;
   setDownloadUrl(value: string): void;
 
+  getImageReferenceId(): string;
+  setImageReferenceId(value: string): void;
+
+  getImageType(): string;
+  setImageType(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NewsArticleImage.AsObject;
   static toObject(includeInstance: boolean, msg: NewsArticleImage): NewsArticleImage.AsObject;
@@ -591,6 +613,8 @@ export namespace NewsArticleImage {
     newArticleSid: string,
     content: string,
     downloadUrl: string,
+    imageReferenceId: string,
+    imageType: string,
   }
 }
 
