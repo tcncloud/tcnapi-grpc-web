@@ -2903,7 +2903,9 @@ proto.api.commons.org.AuthenticationPreferences.toObject = function(includeInsta
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     authorizationViaIp: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     allowedIpsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
-    agentApiKey: jspb.Message.getFieldWithDefault(msg, 12, "")
+    agentApiKey: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    enable2fa: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
+    blockUnverifiedUsers: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -2955,6 +2957,14 @@ proto.api.commons.org.AuthenticationPreferences.deserializeBinaryFromReader = fu
     case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setAgentApiKey(value);
+      break;
+    case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnable2fa(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setBlockUnverifiedUsers(value);
       break;
     default:
       reader.skipField();
@@ -3010,6 +3020,20 @@ proto.api.commons.org.AuthenticationPreferences.serializeBinaryToWriter = functi
   if (f.length > 0) {
     writer.writeString(
       12,
+      f
+    );
+  }
+  f = message.getEnable2fa();
+  if (f) {
+    writer.writeBool(
+      13,
+      f
+    );
+  }
+  f = message.getBlockUnverifiedUsers();
+  if (f) {
+    writer.writeBool(
+      14,
       f
     );
   }
@@ -3104,6 +3128,42 @@ proto.api.commons.org.AuthenticationPreferences.prototype.getAgentApiKey = funct
  */
 proto.api.commons.org.AuthenticationPreferences.prototype.setAgentApiKey = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional bool enable_2fa = 13;
+ * @return {boolean}
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.getEnable2fa = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.org.AuthenticationPreferences} returns this
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.setEnable2fa = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 13, value);
+};
+
+
+/**
+ * optional bool block_unverified_users = 14;
+ * @return {boolean}
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.getBlockUnverifiedUsers = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.org.AuthenticationPreferences} returns this
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.setBlockUnverifiedUsers = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 

@@ -285,6 +285,26 @@ export class AuditEvent extends jspb.Message {
   getOmnichannelPaymentLinkSentEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent | undefined;
   setOmnichannelPaymentLinkSentEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent): void;
 
+  hasOmnichannelManualApproveTaskAcceptedEvent(): boolean;
+  clearOmnichannelManualApproveTaskAcceptedEvent(): void;
+  getOmnichannelManualApproveTaskAcceptedEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskAcceptedEvent | undefined;
+  setOmnichannelManualApproveTaskAcceptedEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskAcceptedEvent): void;
+
+  hasOmnichannelManualApproveTaskRejectedEvent(): boolean;
+  clearOmnichannelManualApproveTaskRejectedEvent(): void;
+  getOmnichannelManualApproveTaskRejectedEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRejectedEvent | undefined;
+  setOmnichannelManualApproveTaskRejectedEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRejectedEvent): void;
+
+  hasOmnichannelManualApproveTaskTimeoutEvent(): boolean;
+  clearOmnichannelManualApproveTaskTimeoutEvent(): void;
+  getOmnichannelManualApproveTaskTimeoutEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskTimeoutEvent | undefined;
+  setOmnichannelManualApproveTaskTimeoutEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskTimeoutEvent): void;
+
+  hasOmnichannelManualApproveTaskRequeueEvent(): boolean;
+  clearOmnichannelManualApproveTaskRequeueEvent(): void;
+  getOmnichannelManualApproveTaskRequeueEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent | undefined;
+  setOmnichannelManualApproveTaskRequeueEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent): void;
+
   hasAsmAgentLoginEvent(): boolean;
   clearAsmAgentLoginEvent(): void;
   getAsmAgentLoginEvent(): api_commons_audit_asm_events_pb.AsmAgentLoginEvent | undefined;
@@ -544,6 +564,10 @@ export namespace AuditEvent {
     omnichannelCustomerMessageUnitsEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelCustomerMessageUnitsEvent.AsObject,
     omnichannelSystemMessageUnitsEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelSystemMessageUnitsEvent.AsObject,
     omnichannelPaymentLinkSentEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelPaymentLinkSentEvent.AsObject,
+    omnichannelManualApproveTaskAcceptedEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskAcceptedEvent.AsObject,
+    omnichannelManualApproveTaskRejectedEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRejectedEvent.AsObject,
+    omnichannelManualApproveTaskTimeoutEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskTimeoutEvent.AsObject,
+    omnichannelManualApproveTaskRequeueEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.AsObject,
     asmAgentLoginEvent?: api_commons_audit_asm_events_pb.AsmAgentLoginEvent.AsObject,
     asmOpenVoiceEvent?: api_commons_audit_asm_events_pb.AsmOpenVoiceEvent.AsObject,
     asmOpenOmniAgentEvent?: api_commons_audit_asm_events_pb.AsmOpenOmniAgentEvent.AsObject,
@@ -636,6 +660,10 @@ export namespace AuditEvent {
     OMNICHANNEL_CUSTOMER_MESSAGE_UNITS_EVENT = 355,
     OMNICHANNEL_SYSTEM_MESSAGE_UNITS_EVENT = 356,
     OMNICHANNEL_PAYMENT_LINK_SENT_EVENT = 357,
+    OMNICHANNEL_MANUAL_APPROVE_TASK_ACCEPTED_EVENT = 358,
+    OMNICHANNEL_MANUAL_APPROVE_TASK_REJECTED_EVENT = 359,
+    OMNICHANNEL_MANUAL_APPROVE_TASK_TIMEOUT_EVENT = 360,
+    OMNICHANNEL_MANUAL_APPROVE_TASK_REQUEUE_EVENT = 361,
     ASM_AGENT_LOGIN_EVENT = 400,
     ASM_OPEN_VOICE_EVENT = 401,
     ASM_OPEN_OMNI_AGENT_EVENT = 402,
