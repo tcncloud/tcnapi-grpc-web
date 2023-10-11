@@ -63,6 +63,11 @@ export class OmniCampaign extends jspb.Message {
   getShortenUrl(): boolean;
   setShortenUrl(value: boolean): void;
 
+  hasComplianceConfig(): boolean;
+  clearComplianceConfig(): void;
+  getComplianceConfig(): OmniComplianceConfig | undefined;
+  setComplianceConfig(value?: OmniComplianceConfig): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaign.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCampaign): OmniCampaign.AsObject;
@@ -88,6 +93,7 @@ export namespace OmniCampaign {
     modulesList: Array<OmniCampaignModule.AsObject>,
     timeZone?: api_commons_org_pb.TimeZoneWrapper.AsObject,
     shortenUrl: boolean,
+    complianceConfig?: OmniComplianceConfig.AsObject,
   }
 }
 
@@ -2479,35 +2485,35 @@ export namespace Signature {
   }
 }
 
-export class OmniProjectComplianceSettings extends jspb.Message {
+export class OmniProjectComplianceConfig extends jspb.Message {
   hasEmail(): boolean;
   clearEmail(): void;
-  getEmail(): OmniComplianceSettings | undefined;
-  setEmail(value?: OmniComplianceSettings): void;
+  getEmail(): OmniComplianceConfig | undefined;
+  setEmail(value?: OmniComplianceConfig): void;
 
   hasSms(): boolean;
   clearSms(): void;
-  getSms(): OmniComplianceSettings | undefined;
-  setSms(value?: OmniComplianceSettings): void;
+  getSms(): OmniComplianceConfig | undefined;
+  setSms(value?: OmniComplianceConfig): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OmniProjectComplianceSettings.AsObject;
-  static toObject(includeInstance: boolean, msg: OmniProjectComplianceSettings): OmniProjectComplianceSettings.AsObject;
+  toObject(includeInstance?: boolean): OmniProjectComplianceConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniProjectComplianceConfig): OmniProjectComplianceConfig.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OmniProjectComplianceSettings, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OmniProjectComplianceSettings;
-  static deserializeBinaryFromReader(message: OmniProjectComplianceSettings, reader: jspb.BinaryReader): OmniProjectComplianceSettings;
+  static serializeBinaryToWriter(message: OmniProjectComplianceConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniProjectComplianceConfig;
+  static deserializeBinaryFromReader(message: OmniProjectComplianceConfig, reader: jspb.BinaryReader): OmniProjectComplianceConfig;
 }
 
-export namespace OmniProjectComplianceSettings {
+export namespace OmniProjectComplianceConfig {
   export type AsObject = {
-    email?: OmniComplianceSettings.AsObject,
-    sms?: OmniComplianceSettings.AsObject,
+    email?: OmniComplianceConfig.AsObject,
+    sms?: OmniComplianceConfig.AsObject,
   }
 }
 
-export class OmniComplianceConfig extends jspb.Message {
+export class OmniComplianceAction extends jspb.Message {
   clearKeywordsList(): void;
   getKeywordsList(): Array<string>;
   setKeywordsList(value: Array<string>): void;
@@ -2515,6 +2521,52 @@ export class OmniComplianceConfig extends jspb.Message {
 
   getConfirmationMessage(): string;
   setConfirmationMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniComplianceAction.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniComplianceAction): OmniComplianceAction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniComplianceAction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniComplianceAction;
+  static deserializeBinaryFromReader(message: OmniComplianceAction, reader: jspb.BinaryReader): OmniComplianceAction;
+}
+
+export namespace OmniComplianceAction {
+  export type AsObject = {
+    keywordsList: Array<string>,
+    confirmationMessage: string,
+  }
+}
+
+export class OmniComplianceConfig extends jspb.Message {
+  hasOptIn(): boolean;
+  clearOptIn(): void;
+  getOptIn(): OmniComplianceAction | undefined;
+  setOptIn(value?: OmniComplianceAction): void;
+
+  hasOptOut(): boolean;
+  clearOptOut(): void;
+  getOptOut(): OmniComplianceAction | undefined;
+  setOptOut(value?: OmniComplianceAction): void;
+
+  hasHelp(): boolean;
+  clearHelp(): void;
+  getHelp(): OmniComplianceAction | undefined;
+  setHelp(value?: OmniComplianceAction): void;
+
+  hasInformation(): boolean;
+  clearInformation(): void;
+  getInformation(): OmniComplianceAction | undefined;
+  setInformation(value?: OmniComplianceAction): void;
+
+  getScrubListId(): string;
+  setScrubListId(value: string): void;
+
+  hasRuleSetId(): boolean;
+  clearRuleSetId(): void;
+  getRuleSetId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setRuleSetId(value?: google_protobuf_wrappers_pb.StringValue): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniComplianceConfig.AsObject;
@@ -2528,56 +2580,10 @@ export class OmniComplianceConfig extends jspb.Message {
 
 export namespace OmniComplianceConfig {
   export type AsObject = {
-    keywordsList: Array<string>,
-    confirmationMessage: string,
-  }
-}
-
-export class OmniComplianceSettings extends jspb.Message {
-  hasOptIn(): boolean;
-  clearOptIn(): void;
-  getOptIn(): OmniComplianceConfig | undefined;
-  setOptIn(value?: OmniComplianceConfig): void;
-
-  hasOptOut(): boolean;
-  clearOptOut(): void;
-  getOptOut(): OmniComplianceConfig | undefined;
-  setOptOut(value?: OmniComplianceConfig): void;
-
-  hasHelp(): boolean;
-  clearHelp(): void;
-  getHelp(): OmniComplianceConfig | undefined;
-  setHelp(value?: OmniComplianceConfig): void;
-
-  hasInformation(): boolean;
-  clearInformation(): void;
-  getInformation(): OmniComplianceConfig | undefined;
-  setInformation(value?: OmniComplianceConfig): void;
-
-  getScrubListId(): string;
-  setScrubListId(value: string): void;
-
-  hasRuleSetId(): boolean;
-  clearRuleSetId(): void;
-  getRuleSetId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setRuleSetId(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OmniComplianceSettings.AsObject;
-  static toObject(includeInstance: boolean, msg: OmniComplianceSettings): OmniComplianceSettings.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OmniComplianceSettings, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OmniComplianceSettings;
-  static deserializeBinaryFromReader(message: OmniComplianceSettings, reader: jspb.BinaryReader): OmniComplianceSettings;
-}
-
-export namespace OmniComplianceSettings {
-  export type AsObject = {
-    optIn?: OmniComplianceConfig.AsObject,
-    optOut?: OmniComplianceConfig.AsObject,
-    help?: OmniComplianceConfig.AsObject,
-    information?: OmniComplianceConfig.AsObject,
+    optIn?: OmniComplianceAction.AsObject,
+    optOut?: OmniComplianceAction.AsObject,
+    help?: OmniComplianceAction.AsObject,
+    information?: OmniComplianceAction.AsObject,
     scrubListId: string,
     ruleSetId?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
