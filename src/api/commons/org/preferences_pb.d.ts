@@ -293,6 +293,12 @@ export class AuthenticationPreferences extends jspb.Message {
   getAgentApiKey(): string;
   setAgentApiKey(value: string): void;
 
+  getEnable2fa(): boolean;
+  setEnable2fa(value: boolean): void;
+
+  getBlockUnverifiedUsers(): boolean;
+  setBlockUnverifiedUsers(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuthenticationPreferences.AsObject;
   static toObject(includeInstance: boolean, msg: AuthenticationPreferences): AuthenticationPreferences.AsObject;
@@ -309,6 +315,8 @@ export namespace AuthenticationPreferences {
     authorizationViaIp: boolean,
     allowedIpsList: Array<string>,
     agentApiKey: string,
+    enable2fa: boolean,
+    blockUnverifiedUsers: boolean,
   }
 }
 
