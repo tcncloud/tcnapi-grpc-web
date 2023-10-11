@@ -1521,3 +1521,123 @@ export namespace OmnichannelPaymentLinkSentEvent {
   }
 }
 
+export class OmnichannelManualApproveTaskAcceptedEvent extends jspb.Message {
+  hasTask(): boolean;
+  clearTask(): void;
+  getTask(): api_commons_omnichannel_pb.OmniTask | undefined;
+  setTask(value?: api_commons_omnichannel_pb.OmniTask): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getAsmSessionSid(): number;
+  setAsmSessionSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmnichannelManualApproveTaskAcceptedEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: OmnichannelManualApproveTaskAcceptedEvent): OmnichannelManualApproveTaskAcceptedEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmnichannelManualApproveTaskAcceptedEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmnichannelManualApproveTaskAcceptedEvent;
+  static deserializeBinaryFromReader(message: OmnichannelManualApproveTaskAcceptedEvent, reader: jspb.BinaryReader): OmnichannelManualApproveTaskAcceptedEvent;
+}
+
+export namespace OmnichannelManualApproveTaskAcceptedEvent {
+  export type AsObject = {
+    task?: api_commons_omnichannel_pb.OmniTask.AsObject,
+    userId: string,
+    asmSessionSid: number,
+  }
+}
+
+export class OmnichannelManualApproveTaskRejectedEvent extends jspb.Message {
+  hasTask(): boolean;
+  clearTask(): void;
+  getTask(): api_commons_omnichannel_pb.OmniTask | undefined;
+  setTask(value?: api_commons_omnichannel_pb.OmniTask): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getAsmSessionSid(): number;
+  setAsmSessionSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmnichannelManualApproveTaskRejectedEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: OmnichannelManualApproveTaskRejectedEvent): OmnichannelManualApproveTaskRejectedEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmnichannelManualApproveTaskRejectedEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmnichannelManualApproveTaskRejectedEvent;
+  static deserializeBinaryFromReader(message: OmnichannelManualApproveTaskRejectedEvent, reader: jspb.BinaryReader): OmnichannelManualApproveTaskRejectedEvent;
+}
+
+export namespace OmnichannelManualApproveTaskRejectedEvent {
+  export type AsObject = {
+    task?: api_commons_omnichannel_pb.OmniTask.AsObject,
+    userId: string,
+    asmSessionSid: number,
+  }
+}
+
+export class OmnichannelManualApproveTaskTimeoutEvent extends jspb.Message {
+  hasTask(): boolean;
+  clearTask(): void;
+  getTask(): api_commons_omnichannel_pb.OmniTask | undefined;
+  setTask(value?: api_commons_omnichannel_pb.OmniTask): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getAsmSessionSid(): number;
+  setAsmSessionSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmnichannelManualApproveTaskTimeoutEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: OmnichannelManualApproveTaskTimeoutEvent): OmnichannelManualApproveTaskTimeoutEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmnichannelManualApproveTaskTimeoutEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmnichannelManualApproveTaskTimeoutEvent;
+  static deserializeBinaryFromReader(message: OmnichannelManualApproveTaskTimeoutEvent, reader: jspb.BinaryReader): OmnichannelManualApproveTaskTimeoutEvent;
+}
+
+export namespace OmnichannelManualApproveTaskTimeoutEvent {
+  export type AsObject = {
+    task?: api_commons_omnichannel_pb.OmniTask.AsObject,
+    userId: string,
+    asmSessionSid: number,
+  }
+}
+
+export class OmnichannelManualApproveTaskRequeueEvent extends jspb.Message {
+  hasTask(): boolean;
+  clearTask(): void;
+  getTask(): api_commons_omnichannel_pb.OmniTask | undefined;
+  setTask(value?: api_commons_omnichannel_pb.OmniTask): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getAsmSessionSid(): number;
+  setAsmSessionSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmnichannelManualApproveTaskRequeueEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: OmnichannelManualApproveTaskRequeueEvent): OmnichannelManualApproveTaskRequeueEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmnichannelManualApproveTaskRequeueEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmnichannelManualApproveTaskRequeueEvent;
+  static deserializeBinaryFromReader(message: OmnichannelManualApproveTaskRequeueEvent, reader: jspb.BinaryReader): OmnichannelManualApproveTaskRequeueEvent;
+}
+
+export namespace OmnichannelManualApproveTaskRequeueEvent {
+  export type AsObject = {
+    task?: api_commons_omnichannel_pb.OmniTask.AsObject,
+    userId: string,
+    asmSessionSid: number,
+  }
+}
+
