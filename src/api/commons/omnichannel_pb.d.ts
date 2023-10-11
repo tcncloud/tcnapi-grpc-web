@@ -2479,6 +2479,110 @@ export namespace Signature {
   }
 }
 
+export class OmniProjectComplianceSettings extends jspb.Message {
+  hasEmail(): boolean;
+  clearEmail(): void;
+  getEmail(): OmniComplianceSettings | undefined;
+  setEmail(value?: OmniComplianceSettings): void;
+
+  hasSms(): boolean;
+  clearSms(): void;
+  getSms(): OmniComplianceSettings | undefined;
+  setSms(value?: OmniComplianceSettings): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniProjectComplianceSettings.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniProjectComplianceSettings): OmniProjectComplianceSettings.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniProjectComplianceSettings, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniProjectComplianceSettings;
+  static deserializeBinaryFromReader(message: OmniProjectComplianceSettings, reader: jspb.BinaryReader): OmniProjectComplianceSettings;
+}
+
+export namespace OmniProjectComplianceSettings {
+  export type AsObject = {
+    email?: OmniComplianceSettings.AsObject,
+    sms?: OmniComplianceSettings.AsObject,
+  }
+}
+
+export class OmniComplianceConfig extends jspb.Message {
+  clearKeywordsList(): void;
+  getKeywordsList(): Array<string>;
+  setKeywordsList(value: Array<string>): void;
+  addKeywords(value: string, index?: number): string;
+
+  getConfirmationMessage(): string;
+  setConfirmationMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniComplianceConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniComplianceConfig): OmniComplianceConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniComplianceConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniComplianceConfig;
+  static deserializeBinaryFromReader(message: OmniComplianceConfig, reader: jspb.BinaryReader): OmniComplianceConfig;
+}
+
+export namespace OmniComplianceConfig {
+  export type AsObject = {
+    keywordsList: Array<string>,
+    confirmationMessage: string,
+  }
+}
+
+export class OmniComplianceSettings extends jspb.Message {
+  hasOptIn(): boolean;
+  clearOptIn(): void;
+  getOptIn(): OmniComplianceConfig | undefined;
+  setOptIn(value?: OmniComplianceConfig): void;
+
+  hasOptOut(): boolean;
+  clearOptOut(): void;
+  getOptOut(): OmniComplianceConfig | undefined;
+  setOptOut(value?: OmniComplianceConfig): void;
+
+  hasHelp(): boolean;
+  clearHelp(): void;
+  getHelp(): OmniComplianceConfig | undefined;
+  setHelp(value?: OmniComplianceConfig): void;
+
+  hasInformation(): boolean;
+  clearInformation(): void;
+  getInformation(): OmniComplianceConfig | undefined;
+  setInformation(value?: OmniComplianceConfig): void;
+
+  getScrubListId(): string;
+  setScrubListId(value: string): void;
+
+  hasRuleSetId(): boolean;
+  clearRuleSetId(): void;
+  getRuleSetId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setRuleSetId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniComplianceSettings.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniComplianceSettings): OmniComplianceSettings.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniComplianceSettings, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniComplianceSettings;
+  static deserializeBinaryFromReader(message: OmniComplianceSettings, reader: jspb.BinaryReader): OmniComplianceSettings;
+}
+
+export namespace OmniComplianceSettings {
+  export type AsObject = {
+    optIn?: OmniComplianceConfig.AsObject,
+    optOut?: OmniComplianceConfig.AsObject,
+    help?: OmniComplianceConfig.AsObject,
+    information?: OmniComplianceConfig.AsObject,
+    scrubListId: string,
+    ruleSetId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
 export interface SmsNumberTypeMap {
   SMS_SHORT_CODE_TYPE: 0;
   SMS_ALPHANUMERIC_TYPE: 1;
