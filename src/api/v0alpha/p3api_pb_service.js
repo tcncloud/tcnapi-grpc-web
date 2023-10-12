@@ -649,6 +649,15 @@ P3Api.CreateContactFieldDescription = {
   responseType: api_v0alpha_p3api_pb.CreateContactFieldDescriptionRes
 };
 
+P3Api.UpdateContactFieldDescription = {
+  methodName: "UpdateContactFieldDescription",
+  service: P3Api,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_p3api_pb.UpdateContactFieldDescriptionReq,
+  responseType: api_v0alpha_p3api_pb.UpdateContactFieldDescriptionRes
+};
+
 P3Api.DeleteContactFieldDescription = {
   methodName: "DeleteContactFieldDescription",
   service: P3Api,
@@ -3073,6 +3082,37 @@ P3ApiClient.prototype.createContactFieldDescription = function createContactFiel
     callback = arguments[1];
   }
   var client = grpc.unary(P3Api.CreateContactFieldDescription, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+P3ApiClient.prototype.updateContactFieldDescription = function updateContactFieldDescription(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(P3Api.UpdateContactFieldDescription, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
