@@ -41,6 +41,9 @@ export class LearningOpportunity extends jspb.Message {
   getStatus(): LearningOpportunityStatusMap[keyof LearningOpportunityStatusMap];
   setStatus(value: LearningOpportunityStatusMap[keyof LearningOpportunityStatusMap]): void;
 
+  getOrigin(): LearningOpportunityOriginMap[keyof LearningOpportunityOriginMap];
+  setOrigin(value: LearningOpportunityOriginMap[keyof LearningOpportunityOriginMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LearningOpportunity.AsObject;
   static toObject(includeInstance: boolean, msg: LearningOpportunity): LearningOpportunity.AsObject;
@@ -64,6 +67,7 @@ export namespace LearningOpportunity {
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     title: string,
     status: LearningOpportunityStatusMap[keyof LearningOpportunityStatusMap],
+    origin: LearningOpportunityOriginMap[keyof LearningOpportunityOriginMap],
   }
 }
 
@@ -97,4 +101,15 @@ export interface LearningOpportunityStatusMap {
 }
 
 export const LearningOpportunityStatus: LearningOpportunityStatusMap;
+
+export interface LearningOpportunityOriginMap {
+  UNDEFINED: 0;
+  QUALITY_EVALUATION: 1;
+  AUTO_EVALUATION: 2;
+  FLAG_EVALUATION: 3;
+  CONVERSATION: 4;
+  FLAGGED_CONVERSATION: 5;
+}
+
+export const LearningOpportunityOrigin: LearningOpportunityOriginMap;
 
