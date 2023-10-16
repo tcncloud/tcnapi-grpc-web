@@ -2488,6 +2488,11 @@ export class Project extends jspb.Message {
   getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasComplianceConfig(): boolean;
+  clearComplianceConfig(): void;
+  getComplianceConfig(): api_commons_omnichannel_pb.OmniProjectComplianceConfig | undefined;
+  setComplianceConfig(value?: api_commons_omnichannel_pb.OmniProjectComplianceConfig): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Project.AsObject;
   static toObject(includeInstance: boolean, msg: Project): Project.AsObject;
@@ -2505,6 +2510,7 @@ export namespace Project {
     description: string,
     status: api_commons_omnichannel_pb.ProjectStatusMap[keyof api_commons_omnichannel_pb.ProjectStatusMap],
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    complianceConfig?: api_commons_omnichannel_pb.OmniProjectComplianceConfig.AsObject,
   }
 }
 
