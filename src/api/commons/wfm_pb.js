@@ -4446,7 +4446,7 @@ proto.api.commons.SchedulingResultMetric.prototype.toObject = function(opt_inclu
 proto.api.commons.SchedulingResultMetric.toObject = function(includeInstance, msg) {
   var f, obj = {
     totalInternalIntervals: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    totalIntervalIntervalsWithFteRequired: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    totalIntervalsWithFteRequired: jspb.Message.getFieldWithDefault(msg, 2, 0),
     totalIntervalsWithFtesRemaining: jspb.Message.getFieldWithDefault(msg, 3, 0),
     coverage: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
     rootMeanSquare: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
@@ -4493,7 +4493,7 @@ proto.api.commons.SchedulingResultMetric.deserializeBinaryFromReader = function(
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalIntervalIntervalsWithFteRequired(value);
+      msg.setTotalIntervalsWithFteRequired(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
@@ -4547,7 +4547,7 @@ proto.api.commons.SchedulingResultMetric.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getTotalIntervalIntervalsWithFteRequired();
+  f = message.getTotalIntervalsWithFteRequired();
   if (f !== 0) {
     writer.writeInt32(
       2,
@@ -4604,10 +4604,10 @@ proto.api.commons.SchedulingResultMetric.prototype.setTotalInternalIntervals = f
 
 
 /**
- * optional int32 total_interval_intervals_with_fte_required = 2;
+ * optional int32 total_intervals_with_fte_required = 2;
  * @return {number}
  */
-proto.api.commons.SchedulingResultMetric.prototype.getTotalIntervalIntervalsWithFteRequired = function() {
+proto.api.commons.SchedulingResultMetric.prototype.getTotalIntervalsWithFteRequired = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -4616,7 +4616,7 @@ proto.api.commons.SchedulingResultMetric.prototype.getTotalIntervalIntervalsWith
  * @param {number} value
  * @return {!proto.api.commons.SchedulingResultMetric} returns this
  */
-proto.api.commons.SchedulingResultMetric.prototype.setTotalIntervalIntervalsWithFteRequired = function(value) {
+proto.api.commons.SchedulingResultMetric.prototype.setTotalIntervalsWithFteRequired = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 

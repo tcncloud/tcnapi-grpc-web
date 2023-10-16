@@ -588,8 +588,8 @@ export class SchedulingResultMetric extends jspb.Message {
   getTotalInternalIntervals(): number;
   setTotalInternalIntervals(value: number): void;
 
-  getTotalIntervalIntervalsWithFteRequired(): number;
-  setTotalIntervalIntervalsWithFteRequired(value: number): void;
+  getTotalIntervalsWithFteRequired(): number;
+  setTotalIntervalsWithFteRequired(value: number): void;
 
   getTotalIntervalsWithFtesRemaining(): number;
   setTotalIntervalsWithFtesRemaining(value: number): void;
@@ -616,7 +616,7 @@ export class SchedulingResultMetric extends jspb.Message {
 export namespace SchedulingResultMetric {
   export type AsObject = {
     totalInternalIntervals: number,
-    totalIntervalIntervalsWithFteRequired: number,
+    totalIntervalsWithFteRequired: number,
     totalIntervalsWithFtesRemaining: number,
     coverage: number,
     rootMeanSquare: number,

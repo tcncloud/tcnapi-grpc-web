@@ -61717,7 +61717,7 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleRes.toObject = function(includeInstance
     draftSchedule: (f = msg.getDraftSchedule()) && proto.api.v1alpha1.wfm.DraftSchedule.toObject(includeInstance, f),
     diagnosticsList: jspb.Message.toObjectList(msg.getDiagnosticsList(),
     proto.api.v1alpha1.wfm.Diagnostic.toObject, includeInstance),
-    schedulingResultingMetric: (f = msg.getSchedulingResultingMetric()) && api_commons_wfm_pb.SchedulingResultMetric.toObject(includeInstance, f)
+    schedulingResultMetric: (f = msg.getSchedulingResultMetric()) && api_commons_wfm_pb.SchedulingResultMetric.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -61767,7 +61767,7 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleRes.deserializeBinaryFromReader = funct
     case 3:
       var value = new api_commons_wfm_pb.SchedulingResultMetric;
       reader.readMessage(value,api_commons_wfm_pb.SchedulingResultMetric.deserializeBinaryFromReader);
-      msg.setSchedulingResultingMetric(value);
+      msg.setSchedulingResultMetric(value);
       break;
     default:
       reader.skipField();
@@ -61814,7 +61814,7 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleRes.serializeBinaryToWriter = function(
       proto.api.v1alpha1.wfm.Diagnostic.serializeBinaryToWriter
     );
   }
-  f = message.getSchedulingResultingMetric();
+  f = message.getSchedulingResultMetric();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -61901,10 +61901,10 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleRes.prototype.clearDiagnosticsList = fu
 
 
 /**
- * optional api.commons.SchedulingResultMetric scheduling_resulting_metric = 3;
+ * optional api.commons.SchedulingResultMetric scheduling_result_metric = 3;
  * @return {?proto.api.commons.SchedulingResultMetric}
  */
-proto.api.v1alpha1.wfm.BuildDraftScheduleRes.prototype.getSchedulingResultingMetric = function() {
+proto.api.v1alpha1.wfm.BuildDraftScheduleRes.prototype.getSchedulingResultMetric = function() {
   return /** @type{?proto.api.commons.SchedulingResultMetric} */ (
     jspb.Message.getWrapperField(this, api_commons_wfm_pb.SchedulingResultMetric, 3));
 };
@@ -61914,7 +61914,7 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleRes.prototype.getSchedulingResultingMet
  * @param {?proto.api.commons.SchedulingResultMetric|undefined} value
  * @return {!proto.api.v1alpha1.wfm.BuildDraftScheduleRes} returns this
 */
-proto.api.v1alpha1.wfm.BuildDraftScheduleRes.prototype.setSchedulingResultingMetric = function(value) {
+proto.api.v1alpha1.wfm.BuildDraftScheduleRes.prototype.setSchedulingResultMetric = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -61923,8 +61923,8 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleRes.prototype.setSchedulingResultingMet
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.wfm.BuildDraftScheduleRes} returns this
  */
-proto.api.v1alpha1.wfm.BuildDraftScheduleRes.prototype.clearSchedulingResultingMetric = function() {
-  return this.setSchedulingResultingMetric(undefined);
+proto.api.v1alpha1.wfm.BuildDraftScheduleRes.prototype.clearSchedulingResultMetric = function() {
+  return this.setSchedulingResultMetric(undefined);
 };
 
 
@@ -61932,7 +61932,7 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleRes.prototype.clearSchedulingResultingM
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.wfm.BuildDraftScheduleRes.prototype.hasSchedulingResultingMetric = function() {
+proto.api.v1alpha1.wfm.BuildDraftScheduleRes.prototype.hasSchedulingResultMetric = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

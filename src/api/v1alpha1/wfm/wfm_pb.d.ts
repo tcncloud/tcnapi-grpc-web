@@ -7553,10 +7553,10 @@ export class BuildDraftScheduleRes extends jspb.Message {
   setDiagnosticsList(value: Array<Diagnostic>): void;
   addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
 
-  hasSchedulingResultingMetric(): boolean;
-  clearSchedulingResultingMetric(): void;
-  getSchedulingResultingMetric(): api_commons_wfm_pb.SchedulingResultMetric | undefined;
-  setSchedulingResultingMetric(value?: api_commons_wfm_pb.SchedulingResultMetric): void;
+  hasSchedulingResultMetric(): boolean;
+  clearSchedulingResultMetric(): void;
+  getSchedulingResultMetric(): api_commons_wfm_pb.SchedulingResultMetric | undefined;
+  setSchedulingResultMetric(value?: api_commons_wfm_pb.SchedulingResultMetric): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildDraftScheduleRes.AsObject;
@@ -7572,7 +7572,7 @@ export namespace BuildDraftScheduleRes {
   export type AsObject = {
     draftSchedule?: DraftSchedule.AsObject,
     diagnosticsList: Array<Diagnostic.AsObject>,
-    schedulingResultingMetric?: api_commons_wfm_pb.SchedulingResultMetric.AsObject,
+    schedulingResultMetric?: api_commons_wfm_pb.SchedulingResultMetric.AsObject,
   }
 }
 
