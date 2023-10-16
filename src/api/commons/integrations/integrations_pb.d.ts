@@ -1605,6 +1605,11 @@ export class ExecuteFlow extends jspb.Message {
   getNavigaCreatePayment(): ExecuteNavigaCreatePayment | undefined;
   setNavigaCreatePayment(value?: ExecuteNavigaCreatePayment): void;
 
+  hasNavigaChangeBilling(): boolean;
+  clearNavigaChangeBilling(): void;
+  getNavigaChangeBilling(): ExecuteNavigaChangeBilling | undefined;
+  setNavigaChangeBilling(value?: ExecuteNavigaChangeBilling): void;
+
   hasPaynsecondsTokenizeCard(): boolean;
   clearPaynsecondsTokenizeCard(): void;
   getPaynsecondsTokenizeCard(): ExecutePaynsecondsTokenizeCard | undefined;
@@ -1821,6 +1826,7 @@ export namespace ExecuteFlow {
     priocommerceAchPayment?: ExecutePriocommerceAchPayment.AsObject,
     priocommerceCcPayment?: ExecutePriocommerceCcPayment.AsObject,
     navigaCreatePayment?: ExecuteNavigaCreatePayment.AsObject,
+    navigaChangeBilling?: ExecuteNavigaChangeBilling.AsObject,
     paynsecondsTokenizeCard?: ExecutePaynsecondsTokenizeCard.AsObject,
   }
 
@@ -2023,6 +2029,7 @@ export namespace ExecuteFlow {
     PRIOCOMMERCE_ACH_PAYMENT = 3901,
     PRIOCOMMERCE_CC_PAYMENT = 3902,
     NAVIGA_CREATE_PAYMENT = 4001,
+    NAVIGA_CHANGE_BILLING = 4002,
     PAYNSECONDS_TOKENIZE_CARD = 4101,
   }
 }
@@ -5668,6 +5675,22 @@ export namespace ExecuteNavigaCreatePayment {
   }
 }
 
+export class ExecuteNavigaChangeBilling extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaChangeBilling.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaChangeBilling): ExecuteNavigaChangeBilling.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaChangeBilling, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaChangeBilling;
+  static deserializeBinaryFromReader(message: ExecuteNavigaChangeBilling, reader: jspb.BinaryReader): ExecuteNavigaChangeBilling;
+}
+
+export namespace ExecuteNavigaChangeBilling {
+  export type AsObject = {
+  }
+}
+
 export class ExecutePaynsecondsTokenizeCard extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecutePaynsecondsTokenizeCard.AsObject;
@@ -5930,6 +5953,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_PRIOCOMMERCE_ACH_PAYMENT: 3901;
   REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT: 3902;
   REQUEST_METHOD_NAVIGA_CREATE_PAYMENT: 4001;
+  REQUEST_METHOD_NAVIGA_CHANGE_BILLING: 4002;
   REQUEST_METHOD_PAYNSECONDS_TOKENIZE_CARD: 4101;
 }
 
