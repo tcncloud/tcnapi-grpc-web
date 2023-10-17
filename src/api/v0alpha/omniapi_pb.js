@@ -19377,7 +19377,8 @@ proto.api.v0alpha.CreateProjectReq.prototype.toObject = function(opt_includeInst
 proto.api.v0alpha.CreateProjectReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 2, "")
+    description: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    complianceConfig: (f = msg.getComplianceConfig()) && api_commons_omnichannel_pb.OmniProjectComplianceConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -19422,6 +19423,11 @@ proto.api.v0alpha.CreateProjectReq.deserializeBinaryFromReader = function(msg, r
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
+    case 3:
+      var value = new api_commons_omnichannel_pb.OmniProjectComplianceConfig;
+      reader.readMessage(value,api_commons_omnichannel_pb.OmniProjectComplianceConfig.deserializeBinaryFromReader);
+      msg.setComplianceConfig(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -19465,6 +19471,14 @@ proto.api.v0alpha.CreateProjectReq.serializeBinaryToWriter = function(message, w
       f
     );
   }
+  f = message.getComplianceConfig();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      api_commons_omnichannel_pb.OmniProjectComplianceConfig.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -19501,6 +19515,43 @@ proto.api.v0alpha.CreateProjectReq.prototype.getDescription = function() {
  */
 proto.api.v0alpha.CreateProjectReq.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional api.commons.OmniProjectComplianceConfig compliance_config = 3;
+ * @return {?proto.api.commons.OmniProjectComplianceConfig}
+ */
+proto.api.v0alpha.CreateProjectReq.prototype.getComplianceConfig = function() {
+  return /** @type{?proto.api.commons.OmniProjectComplianceConfig} */ (
+    jspb.Message.getWrapperField(this, api_commons_omnichannel_pb.OmniProjectComplianceConfig, 3));
+};
+
+
+/**
+ * @param {?proto.api.commons.OmniProjectComplianceConfig|undefined} value
+ * @return {!proto.api.v0alpha.CreateProjectReq} returns this
+*/
+proto.api.v0alpha.CreateProjectReq.prototype.setComplianceConfig = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v0alpha.CreateProjectReq} returns this
+ */
+proto.api.v0alpha.CreateProjectReq.prototype.clearComplianceConfig = function() {
+  return this.setComplianceConfig(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.CreateProjectReq.prototype.hasComplianceConfig = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
