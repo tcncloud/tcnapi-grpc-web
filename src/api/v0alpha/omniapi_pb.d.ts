@@ -2427,6 +2427,11 @@ export class CreateProjectReq extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
+  hasComplianceConfig(): boolean;
+  clearComplianceConfig(): void;
+  getComplianceConfig(): api_commons_omnichannel_pb.OmniProjectComplianceConfig | undefined;
+  setComplianceConfig(value?: api_commons_omnichannel_pb.OmniProjectComplianceConfig): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateProjectReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateProjectReq): CreateProjectReq.AsObject;
@@ -2441,6 +2446,7 @@ export namespace CreateProjectReq {
   export type AsObject = {
     name: string,
     description: string,
+    complianceConfig?: api_commons_omnichannel_pb.OmniProjectComplianceConfig.AsObject,
   }
 }
 
