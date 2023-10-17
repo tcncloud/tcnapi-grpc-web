@@ -584,6 +584,46 @@ export namespace SkillProfileCategory {
   export const CategoryType: CategoryTypeMap;
 }
 
+export class SchedulingResultMetric extends jspb.Message {
+  getTotalInternalIntervals(): number;
+  setTotalInternalIntervals(value: number): void;
+
+  getTotalIntervalsWithFteRequired(): number;
+  setTotalIntervalsWithFteRequired(value: number): void;
+
+  getTotalIntervalsWithFtesRemaining(): number;
+  setTotalIntervalsWithFtesRemaining(value: number): void;
+
+  getCoverage(): number;
+  setCoverage(value: number): void;
+
+  getRootMeanSquare(): number;
+  setRootMeanSquare(value: number): void;
+
+  getHasResult(): boolean;
+  setHasResult(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SchedulingResultMetric.AsObject;
+  static toObject(includeInstance: boolean, msg: SchedulingResultMetric): SchedulingResultMetric.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SchedulingResultMetric, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SchedulingResultMetric;
+  static deserializeBinaryFromReader(message: SchedulingResultMetric, reader: jspb.BinaryReader): SchedulingResultMetric;
+}
+
+export namespace SchedulingResultMetric {
+  export type AsObject = {
+    totalInternalIntervals: number,
+    totalIntervalsWithFteRequired: number,
+    totalIntervalsWithFtesRemaining: number,
+    coverage: number,
+    rootMeanSquare: number,
+    hasResult: boolean,
+  }
+}
+
 export interface RegressionForecasterModelTypesMap {
   RANDOM_FOREST: 0;
   ADABOOST: 1;
@@ -633,6 +673,12 @@ export interface ConfigEntityTypeMap {
   SCHEDULING_ACTIVITY: 12;
   SKILL_PROFICIENCY: 13;
   SCHEDULE_SCENARIO: 14;
+  SKILL: 15;
+  TOUR_PATTERN: 16;
+  TOUR_WEEK_PATTERN: 17;
+  TOUR_SHIFT_INSTANCE_CONFIG: 18;
+  TOUR_SHIFT_SEGMENT_CONFIG: 19;
+  TOUR_AGENT_COLLECTION: 20;
 }
 
 export const ConfigEntityType: ConfigEntityTypeMap;
