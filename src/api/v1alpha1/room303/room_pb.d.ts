@@ -18,11 +18,6 @@ export class CreateRoomRequest extends jspb.Message {
   setMembersList(value: Array<string>): void;
   addMembers(value: string, index?: number): string;
 
-  hasConfig(): boolean;
-  clearConfig(): void;
-  getConfig(): api_commons_room303_pb.RoomConfig | undefined;
-  setConfig(value?: api_commons_room303_pb.RoomConfig): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRoomRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateRoomRequest): CreateRoomRequest.AsObject;
@@ -38,7 +33,6 @@ export namespace CreateRoomRequest {
     name: string,
     type: api_commons_room303_pb.RoomTypeMap[keyof api_commons_room303_pb.RoomTypeMap],
     membersList: Array<string>,
-    config?: api_commons_room303_pb.RoomConfig.AsObject,
   }
 }
 
@@ -247,6 +241,100 @@ export namespace UpdateRoomConfigRequest {
     roomId: string,
     config?: api_commons_room303_pb.RoomConfig.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class UpdateGlobalConfigRequest extends jspb.Message {
+  hasConfig(): boolean;
+  clearConfig(): void;
+  getConfig(): api_commons_room303_pb.GlobalConfig | undefined;
+  setConfig(value?: api_commons_room303_pb.GlobalConfig): void;
+
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateGlobalConfigRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateGlobalConfigRequest): UpdateGlobalConfigRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateGlobalConfigRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateGlobalConfigRequest;
+  static deserializeBinaryFromReader(message: UpdateGlobalConfigRequest, reader: jspb.BinaryReader): UpdateGlobalConfigRequest;
+}
+
+export namespace UpdateGlobalConfigRequest {
+  export type AsObject = {
+    config?: api_commons_room303_pb.GlobalConfig.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class UpdateGlobalConfigResponse extends jspb.Message {
+  hasConfig(): boolean;
+  clearConfig(): void;
+  getConfig(): api_commons_room303_pb.GlobalConfig | undefined;
+  setConfig(value?: api_commons_room303_pb.GlobalConfig): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateGlobalConfigResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateGlobalConfigResponse): UpdateGlobalConfigResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateGlobalConfigResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateGlobalConfigResponse;
+  static deserializeBinaryFromReader(message: UpdateGlobalConfigResponse, reader: jspb.BinaryReader): UpdateGlobalConfigResponse;
+}
+
+export namespace UpdateGlobalConfigResponse {
+  export type AsObject = {
+    config?: api_commons_room303_pb.GlobalConfig.AsObject,
+  }
+}
+
+export class GetGlobalConfigRequest extends jspb.Message {
+  hasConfig(): boolean;
+  clearConfig(): void;
+  getConfig(): api_commons_room303_pb.GlobalConfig | undefined;
+  setConfig(value?: api_commons_room303_pb.GlobalConfig): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetGlobalConfigRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetGlobalConfigRequest): GetGlobalConfigRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetGlobalConfigRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetGlobalConfigRequest;
+  static deserializeBinaryFromReader(message: GetGlobalConfigRequest, reader: jspb.BinaryReader): GetGlobalConfigRequest;
+}
+
+export namespace GetGlobalConfigRequest {
+  export type AsObject = {
+    config?: api_commons_room303_pb.GlobalConfig.AsObject,
+  }
+}
+
+export class GetGlobalConfigResponse extends jspb.Message {
+  hasConfig(): boolean;
+  clearConfig(): void;
+  getConfig(): api_commons_room303_pb.GlobalConfig | undefined;
+  setConfig(value?: api_commons_room303_pb.GlobalConfig): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetGlobalConfigResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetGlobalConfigResponse): GetGlobalConfigResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetGlobalConfigResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetGlobalConfigResponse;
+  static deserializeBinaryFromReader(message: GetGlobalConfigResponse, reader: jspb.BinaryReader): GetGlobalConfigResponse;
+}
+
+export namespace GetGlobalConfigResponse {
+  export type AsObject = {
+    config?: api_commons_room303_pb.GlobalConfig.AsObject,
   }
 }
 

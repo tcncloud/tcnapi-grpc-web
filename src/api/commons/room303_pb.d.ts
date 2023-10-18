@@ -258,6 +258,38 @@ export namespace RoomConfig {
   }
 }
 
+export class GlobalConfig extends jspb.Message {
+  getCreateRoom(): ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap];
+  setCreateRoom(value: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap]): void;
+
+  getJoinExistingRooms(): ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap];
+  setJoinExistingRooms(value: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap]): void;
+
+  getSendMessageToSupervisors(): ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap];
+  setSendMessageToSupervisors(value: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap]): void;
+
+  getSendMessageToNonSupervisors(): ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap];
+  setSendMessageToNonSupervisors(value: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GlobalConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: GlobalConfig): GlobalConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GlobalConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GlobalConfig;
+  static deserializeBinaryFromReader(message: GlobalConfig, reader: jspb.BinaryReader): GlobalConfig;
+}
+
+export namespace GlobalConfig {
+  export type AsObject = {
+    createRoom: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap],
+    joinExistingRooms: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap],
+    sendMessageToSupervisors: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap],
+    sendMessageToNonSupervisors: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap],
+  }
+}
+
 export interface RoomTypeMap {
   ROOM_TYPE_DIRECT: 0;
   ROOM_TYPE_MULTI: 1;
@@ -281,4 +313,12 @@ export interface RoomStatusMap {
 }
 
 export const RoomStatus: RoomStatusMap;
+
+export interface ConfigPermissionOptionsMap {
+  LIMITED: 0;
+  ROOM303_MEMBER: 1;
+  ROOM303_SUPERVISOR: 2;
+}
+
+export const ConfigPermissionOptions: ConfigPermissionOptionsMap;
 
