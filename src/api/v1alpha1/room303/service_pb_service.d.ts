@@ -197,15 +197,6 @@ type Room303APIListUsersNames = {
   readonly responseType: typeof api_v1alpha1_room303_room_pb.ListUsersNamesResponse;
 };
 
-type Room303APIEditRoomConfig = {
-  readonly methodName: string;
-  readonly service: typeof Room303API;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_room303_room_pb.EditRoomConfigRequest;
-  readonly responseType: typeof api_commons_room303_pb.Room;
-};
-
 export class Room303API {
   static readonly serviceName: string;
   static readonly AddRoomMember: Room303APIAddRoomMember;
@@ -229,7 +220,6 @@ export class Room303API {
   static readonly ListRoomsForMember: Room303APIListRoomsForMember;
   static readonly ArchiveRoom: Room303APIArchiveRoom;
   static readonly ListUsersNames: Room303APIListUsersNames;
-  static readonly EditRoomConfig: Room303APIEditRoomConfig;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -437,14 +427,5 @@ export class Room303APIClient {
     callback: (error: ServiceError|null, responseMessage: api_commons_room303_pb.Room|null) => void
   ): UnaryResponse;
   listUsersNames(requestMessage: api_v1alpha1_room303_room_pb.ListUsersNamesRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_room303_room_pb.ListUsersNamesResponse>;
-  editRoomConfig(
-    requestMessage: api_v1alpha1_room303_room_pb.EditRoomConfigRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_commons_room303_pb.Room|null) => void
-  ): UnaryResponse;
-  editRoomConfig(
-    requestMessage: api_v1alpha1_room303_room_pb.EditRoomConfigRequest,
-    callback: (error: ServiceError|null, responseMessage: api_commons_room303_pb.Room|null) => void
-  ): UnaryResponse;
 }
 
