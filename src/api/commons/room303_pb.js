@@ -678,7 +678,8 @@ proto.api.commons.Room.toObject = function(includeInstance, msg) {
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     status: jspb.Message.getFieldWithDefault(msg, 7, 0),
     id: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    displayName: jspb.Message.getFieldWithDefault(msg, 9, "")
+    displayName: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    config: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -748,6 +749,10 @@ proto.api.commons.Room.deserializeBinaryFromReader = function(msg, reader) {
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setDisplayName(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConfig(value);
       break;
     default:
       reader.skipField();
@@ -833,6 +838,13 @@ proto.api.commons.Room.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getConfig();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -1018,6 +1030,24 @@ proto.api.commons.Room.prototype.getDisplayName = function() {
  */
 proto.api.commons.Room.prototype.setDisplayName = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string config = 10;
+ * @return {string}
+ */
+proto.api.commons.Room.prototype.getConfig = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.Room} returns this
+ */
+proto.api.commons.Room.prototype.setConfig = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 

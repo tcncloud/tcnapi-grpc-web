@@ -203,6 +203,15 @@ Room303API.ListUsersNames = {
   responseType: api_v1alpha1_room303_room_pb.ListUsersNamesResponse
 };
 
+Room303API.EditRoomConfig = {
+  methodName: "EditRoomConfig",
+  service: Room303API,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_room303_room_pb.EditRoomConfigRequest,
+  responseType: api_commons_room303_pb.Room
+};
+
 exports.Room303API = Room303API;
 
 function Room303APIClient(serviceHost, options) {
@@ -872,6 +881,37 @@ Room303APIClient.prototype.listUsersNames = function listUsersNames(requestMessa
     },
     cancel: function () {
       listeners = null;
+      client.close();
+    }
+  };
+};
+
+Room303APIClient.prototype.editRoomConfig = function editRoomConfig(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Room303API.EditRoomConfig, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
       client.close();
     }
   };

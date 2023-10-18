@@ -17,6 +17,9 @@ export class CreateRoomRequest extends jspb.Message {
   setMembersList(value: Array<string>): void;
   addMembers(value: string, index?: number): string;
 
+  getConfig(): string;
+  setConfig(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRoomRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateRoomRequest): CreateRoomRequest.AsObject;
@@ -32,6 +35,7 @@ export namespace CreateRoomRequest {
     name: string,
     type: api_commons_room303_pb.RoomTypeMap[keyof api_commons_room303_pb.RoomTypeMap],
     membersList: Array<string>,
+    config: string,
   }
 }
 
@@ -208,6 +212,30 @@ export namespace UserDetails {
     userName: string,
     firstName: string,
     lastName: string,
+  }
+}
+
+export class EditRoomConfigRequest extends jspb.Message {
+  getRoomId(): string;
+  setRoomId(value: string): void;
+
+  getConfig(): string;
+  setConfig(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EditRoomConfigRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EditRoomConfigRequest): EditRoomConfigRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EditRoomConfigRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EditRoomConfigRequest;
+  static deserializeBinaryFromReader(message: EditRoomConfigRequest, reader: jspb.BinaryReader): EditRoomConfigRequest;
+}
+
+export namespace EditRoomConfigRequest {
+  export type AsObject = {
+    roomId: string,
+    config: string,
   }
 }
 

@@ -103,6 +103,9 @@ export class Room extends jspb.Message {
   getDisplayName(): string;
   setDisplayName(value: string): void;
 
+  getConfig(): string;
+  setConfig(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Room.AsObject;
   static toObject(includeInstance: boolean, msg: Room): Room.AsObject;
@@ -123,6 +126,7 @@ export namespace Room {
     status: RoomStatusMap[keyof RoomStatusMap],
     id: string,
     displayName: string,
+    config: string,
   }
 }
 
