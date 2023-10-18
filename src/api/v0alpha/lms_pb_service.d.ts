@@ -500,6 +500,15 @@ type LMSUpdateCjsSecureSearchCriteria = {
   readonly responseType: typeof google_protobuf_empty_pb.Empty;
 };
 
+type LMSTestByteField = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.TestingBytes;
+  readonly responseType: typeof google_protobuf_empty_pb.Empty;
+};
+
 type LMSGetQueuedEventsStatusByElementId = {
   readonly methodName: string;
   readonly service: typeof LMS;
@@ -566,6 +575,7 @@ export class LMS {
   static readonly GetCjsSecureSearchCriteria: LMSGetCjsSecureSearchCriteria;
   static readonly CreateCjsSecureSearchCriteria: LMSCreateCjsSecureSearchCriteria;
   static readonly UpdateCjsSecureSearchCriteria: LMSUpdateCjsSecureSearchCriteria;
+  static readonly TestByteField: LMSTestByteField;
   static readonly GetQueuedEventsStatusByElementId: LMSGetQueuedEventsStatusByElementId;
 }
 
@@ -1046,6 +1056,15 @@ export class LMSClient {
   ): UnaryResponse;
   updateCjsSecureSearchCriteria(
     requestMessage: api_v0alpha_lms_pb.CjsSecureSearchCriteria,
+    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
+  ): UnaryResponse;
+  testByteField(
+    requestMessage: api_v0alpha_lms_pb.TestingBytes,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
+  ): UnaryResponse;
+  testByteField(
+    requestMessage: api_v0alpha_lms_pb.TestingBytes,
     callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
   ): UnaryResponse;
   getQueuedEventsStatusByElementId(

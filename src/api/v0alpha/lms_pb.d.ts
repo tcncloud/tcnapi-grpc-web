@@ -7212,6 +7212,28 @@ export namespace EntityURL {
   }
 }
 
+export class TestingBytes extends jspb.Message {
+  getTest(): Uint8Array | string;
+  getTest_asU8(): Uint8Array;
+  getTest_asB64(): string;
+  setTest(value: Uint8Array | string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TestingBytes.AsObject;
+  static toObject(includeInstance: boolean, msg: TestingBytes): TestingBytes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TestingBytes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TestingBytes;
+  static deserializeBinaryFromReader(message: TestingBytes, reader: jspb.BinaryReader): TestingBytes;
+}
+
+export namespace TestingBytes {
+  export type AsObject = {
+    test: Uint8Array | string,
+  }
+}
+
 export interface TimeUnitMap {
   DEFAULT: 0;
   TIME_WEEKS: 1;
