@@ -103,6 +103,11 @@ export class Room extends jspb.Message {
   getDisplayName(): string;
   setDisplayName(value: string): void;
 
+  hasConfig(): boolean;
+  clearConfig(): void;
+  getConfig(): RoomConfig | undefined;
+  setConfig(value?: RoomConfig): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Room.AsObject;
   static toObject(includeInstance: boolean, msg: Room): Room.AsObject;
@@ -123,6 +128,7 @@ export namespace Room {
     status: RoomStatusMap[keyof RoomStatusMap],
     id: string,
     displayName: string,
+    config?: RoomConfig.AsObject,
   }
 }
 
@@ -209,6 +215,46 @@ export namespace MessageStat {
   export type AsObject = {
     roomId: string,
     unreadMessages: number,
+  }
+}
+
+export class RoomConfig extends jspb.Message {
+  getReadMessages(): string;
+  setReadMessages(value: string): void;
+
+  getSendMessage(): string;
+  setSendMessage(value: string): void;
+
+  getAddMember(): string;
+  setAddMember(value: string): void;
+
+  getRemoveMember(): string;
+  setRemoveMember(value: string): void;
+
+  getPromoteToAdmin(): string;
+  setPromoteToAdmin(value: string): void;
+
+  getArchive(): string;
+  setArchive(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RoomConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: RoomConfig): RoomConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RoomConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RoomConfig;
+  static deserializeBinaryFromReader(message: RoomConfig, reader: jspb.BinaryReader): RoomConfig;
+}
+
+export namespace RoomConfig {
+  export type AsObject = {
+    readMessages: string,
+    sendMessage: string,
+    addMember: string,
+    removeMember: string,
+    promoteToAdmin: string,
+    archive: string,
   }
 }
 
