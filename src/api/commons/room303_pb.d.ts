@@ -218,58 +218,18 @@ export namespace MessageStat {
   }
 }
 
-export class RoomConfig extends jspb.Message {
-  getReadMessages(): string;
-  setReadMessages(value: string): void;
-
-  getSendMessage(): string;
-  setSendMessage(value: string): void;
-
-  getAddMember(): string;
-  setAddMember(value: string): void;
-
-  getRemoveMember(): string;
-  setRemoveMember(value: string): void;
-
-  getPromoteToAdmin(): string;
-  setPromoteToAdmin(value: string): void;
-
-  getArchive(): string;
-  setArchive(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RoomConfig.AsObject;
-  static toObject(includeInstance: boolean, msg: RoomConfig): RoomConfig.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: RoomConfig, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RoomConfig;
-  static deserializeBinaryFromReader(message: RoomConfig, reader: jspb.BinaryReader): RoomConfig;
-}
-
-export namespace RoomConfig {
-  export type AsObject = {
-    readMessages: string,
-    sendMessage: string,
-    addMember: string,
-    removeMember: string,
-    promoteToAdmin: string,
-    archive: string,
-  }
-}
-
 export class GlobalConfig extends jspb.Message {
-  getCreateRoom(): ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap];
-  setCreateRoom(value: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap]): void;
+  getCreateRoom(): ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap];
+  setCreateRoom(value: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap]): void;
 
-  getJoinExistingRooms(): ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap];
-  setJoinExistingRooms(value: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap]): void;
+  getJoinExistingRoom(): ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap];
+  setJoinExistingRoom(value: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap]): void;
 
-  getSendMessageToSupervisors(): ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap];
-  setSendMessageToSupervisors(value: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap]): void;
+  getSendMessageToSupervisor(): ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap];
+  setSendMessageToSupervisor(value: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap]): void;
 
-  getSendMessageToNonSupervisors(): ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap];
-  setSendMessageToNonSupervisors(value: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap]): void;
+  getSendMessageToNonSupervisor(): ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap];
+  setSendMessageToNonSupervisor(value: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GlobalConfig.AsObject;
@@ -283,10 +243,50 @@ export class GlobalConfig extends jspb.Message {
 
 export namespace GlobalConfig {
   export type AsObject = {
-    createRoom: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap],
-    joinExistingRooms: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap],
-    sendMessageToSupervisors: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap],
-    sendMessageToNonSupervisors: ConfigPermissionOptionsMap[keyof ConfigPermissionOptionsMap],
+    createRoom: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap],
+    joinExistingRoom: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap],
+    sendMessageToSupervisor: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap],
+    sendMessageToNonSupervisor: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap],
+  }
+}
+
+export class RoomConfig extends jspb.Message {
+  getAddUser(): ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap];
+  setAddUser(value: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap]): void;
+
+  getRemoveUser(): ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap];
+  setRemoveUser(value: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap]): void;
+
+  getPromoteToAdmin(): ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap];
+  setPromoteToAdmin(value: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap]): void;
+
+  getReadMessages(): ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap];
+  setReadMessages(value: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap]): void;
+
+  getSendMessage(): ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap];
+  setSendMessage(value: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap]): void;
+
+  getArchiveRoom(): ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap];
+  setArchiveRoom(value: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RoomConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: RoomConfig): RoomConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RoomConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RoomConfig;
+  static deserializeBinaryFromReader(message: RoomConfig, reader: jspb.BinaryReader): RoomConfig;
+}
+
+export namespace RoomConfig {
+  export type AsObject = {
+    addUser: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap],
+    removeUser: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap],
+    promoteToAdmin: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap],
+    readMessages: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap],
+    sendMessage: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap],
+    archiveRoom: ConfigPermissionEnumMap[keyof ConfigPermissionEnumMap],
   }
 }
 
@@ -314,11 +314,11 @@ export interface RoomStatusMap {
 
 export const RoomStatus: RoomStatusMap;
 
-export interface ConfigPermissionOptionsMap {
+export interface ConfigPermissionEnumMap {
   LIMITED: 0;
   ROOM303_MEMBER: 1;
   ROOM303_SUPERVISOR: 2;
 }
 
-export const ConfigPermissionOptions: ConfigPermissionOptionsMap;
+export const ConfigPermissionEnum: ConfigPermissionEnumMap;
 
