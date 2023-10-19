@@ -55752,7 +55752,7 @@ proto.api.v0alpha.TestingBytes.prototype.toObject = function(opt_includeInstance
  */
 proto.api.v0alpha.TestingBytes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    test: msg.getTest_asB64()
+    test: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -55790,7 +55790,7 @@ proto.api.v0alpha.TestingBytes.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      var value = /** @type {string} */ (reader.readString());
       msg.setTest(value);
       break;
     default:
@@ -55822,9 +55822,9 @@ proto.api.v0alpha.TestingBytes.prototype.serializeBinary = function() {
  */
 proto.api.v0alpha.TestingBytes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTest_asU8();
+  f = message.getTest();
   if (f.length > 0) {
-    writer.writeBytes(
+    writer.writeString(
       1,
       f
     );
@@ -55833,7 +55833,7 @@ proto.api.v0alpha.TestingBytes.serializeBinaryToWriter = function(message, write
 
 
 /**
- * optional bytes test = 1;
+ * optional string test = 1;
  * @return {string}
  */
 proto.api.v0alpha.TestingBytes.prototype.getTest = function() {
@@ -55842,35 +55842,11 @@ proto.api.v0alpha.TestingBytes.prototype.getTest = function() {
 
 
 /**
- * optional bytes test = 1;
- * This is a type-conversion wrapper around `getTest()`
- * @return {string}
- */
-proto.api.v0alpha.TestingBytes.prototype.getTest_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getTest()));
-};
-
-
-/**
- * optional bytes test = 1;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getTest()`
- * @return {!Uint8Array}
- */
-proto.api.v0alpha.TestingBytes.prototype.getTest_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getTest()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
+ * @param {string} value
  * @return {!proto.api.v0alpha.TestingBytes} returns this
  */
 proto.api.v0alpha.TestingBytes.prototype.setTest = function(value) {
-  return jspb.Message.setProto3BytesField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

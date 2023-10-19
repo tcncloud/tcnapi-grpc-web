@@ -7213,10 +7213,8 @@ export namespace EntityURL {
 }
 
 export class TestingBytes extends jspb.Message {
-  getTest(): Uint8Array | string;
-  getTest_asU8(): Uint8Array;
-  getTest_asB64(): string;
-  setTest(value: Uint8Array | string): void;
+  getTest(): string;
+  setTest(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestingBytes.AsObject;
@@ -7230,7 +7228,7 @@ export class TestingBytes extends jspb.Message {
 
 export namespace TestingBytes {
   export type AsObject = {
-    test: Uint8Array | string,
+    test: string,
   }
 }
 
