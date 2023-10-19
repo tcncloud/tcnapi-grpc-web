@@ -295,11 +295,6 @@ export namespace UpdateGlobalConfigResponse {
 }
 
 export class GetGlobalConfigRequest extends jspb.Message {
-  hasConfig(): boolean;
-  clearConfig(): void;
-  getConfig(): api_commons_room303_pb.GlobalConfig | undefined;
-  setConfig(value?: api_commons_room303_pb.GlobalConfig): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetGlobalConfigRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetGlobalConfigRequest): GetGlobalConfigRequest.AsObject;
@@ -312,7 +307,6 @@ export class GetGlobalConfigRequest extends jspb.Message {
 
 export namespace GetGlobalConfigRequest {
   export type AsObject = {
-    config?: api_commons_room303_pb.GlobalConfig.AsObject,
   }
 }
 

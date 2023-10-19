@@ -2360,7 +2360,7 @@ proto.api.v1alpha1.room303.GetGlobalConfigRequest.prototype.toObject = function(
  */
 proto.api.v1alpha1.room303.GetGlobalConfigRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    config: (f = msg.getConfig()) && api_commons_room303_pb.GlobalConfig.toObject(includeInstance, f)
+
   };
 
   if (includeInstance) {
@@ -2397,11 +2397,6 @@ proto.api.v1alpha1.room303.GetGlobalConfigRequest.deserializeBinaryFromReader = 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new api_commons_room303_pb.GlobalConfig;
-      reader.readMessage(value,api_commons_room303_pb.GlobalConfig.deserializeBinaryFromReader);
-      msg.setConfig(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2431,51 +2426,6 @@ proto.api.v1alpha1.room303.GetGlobalConfigRequest.prototype.serializeBinary = fu
  */
 proto.api.v1alpha1.room303.GetGlobalConfigRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getConfig();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      api_commons_room303_pb.GlobalConfig.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional api.commons.GlobalConfig config = 1;
- * @return {?proto.api.commons.GlobalConfig}
- */
-proto.api.v1alpha1.room303.GetGlobalConfigRequest.prototype.getConfig = function() {
-  return /** @type{?proto.api.commons.GlobalConfig} */ (
-    jspb.Message.getWrapperField(this, api_commons_room303_pb.GlobalConfig, 1));
-};
-
-
-/**
- * @param {?proto.api.commons.GlobalConfig|undefined} value
- * @return {!proto.api.v1alpha1.room303.GetGlobalConfigRequest} returns this
-*/
-proto.api.v1alpha1.room303.GetGlobalConfigRequest.prototype.setConfig = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.room303.GetGlobalConfigRequest} returns this
- */
-proto.api.v1alpha1.room303.GetGlobalConfigRequest.prototype.clearConfig = function() {
-  return this.setConfig(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v1alpha1.room303.GetGlobalConfigRequest.prototype.hasConfig = function() {
-  return jspb.Message.getField(this, 1) != null;
 };
 
 
