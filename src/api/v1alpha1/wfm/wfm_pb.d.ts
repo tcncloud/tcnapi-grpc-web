@@ -4851,10 +4851,8 @@ export class BuildShiftTemplateDiagnosticsReq extends jspb.Message {
   getScheduleScenarioSid(): number;
   setScheduleScenarioSid(value: number): void;
 
-  hasParentProgramNode(): boolean;
-  clearParentProgramNode(): void;
-  getParentProgramNode(): ProgramNode | undefined;
-  setParentProgramNode(value?: ProgramNode): void;
+  getParentProgramNodeSid(): number;
+  setParentProgramNodeSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildShiftTemplateDiagnosticsReq.AsObject;
@@ -4870,7 +4868,7 @@ export namespace BuildShiftTemplateDiagnosticsReq {
   export type AsObject = {
     shiftTemplateSid: number,
     scheduleScenarioSid: number,
-    parentProgramNode?: ProgramNode.AsObject,
+    parentProgramNodeSid: number,
   }
 }
 
