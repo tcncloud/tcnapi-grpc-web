@@ -42386,7 +42386,8 @@ proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.prototype.toObject = fun
 proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     shiftTemplateSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    parentProgramNode: (f = msg.getParentProgramNode()) && proto.api.v1alpha1.wfm.ProgramNode.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -42431,6 +42432,11 @@ proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.deserializeBinaryFromRea
       var value = /** @type {number} */ (reader.readInt64());
       msg.setScheduleScenarioSid(value);
       break;
+    case 3:
+      var value = new proto.api.v1alpha1.wfm.ProgramNode;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ProgramNode.deserializeBinaryFromReader);
+      msg.setParentProgramNode(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -42474,6 +42480,14 @@ proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.serializeBinaryToWriter 
       f
     );
   }
+  f = message.getParentProgramNode();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.api.v1alpha1.wfm.ProgramNode.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -42510,6 +42524,43 @@ proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.prototype.getScheduleSce
  */
 proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.prototype.setScheduleScenarioSid = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional ProgramNode parent_program_node = 3;
+ * @return {?proto.api.v1alpha1.wfm.ProgramNode}
+ */
+proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.prototype.getParentProgramNode = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.ProgramNode} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.ProgramNode, 3));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.ProgramNode|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq} returns this
+*/
+proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.prototype.setParentProgramNode = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq} returns this
+ */
+proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.prototype.clearParentProgramNode = function() {
+  return this.setParentProgramNode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.prototype.hasParentProgramNode = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
