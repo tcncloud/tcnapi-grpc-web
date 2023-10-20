@@ -237,6 +237,15 @@ Tickets.ChangeTicketStatus = {
   responseType: api_v1alpha1_tickets_ticket_pb.ChangeTicketStatusResponse
 };
 
+Tickets.CreateTicketTemplate = {
+  methodName: "CreateTicketTemplate",
+  service: Tickets,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_tickets_ticket_pb.CreateTicketTemplateRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.CreateTicketTemplateResponse
+};
+
 exports.Tickets = Tickets;
 
 function TicketsClient(serviceHost, options) {
@@ -993,6 +1002,37 @@ TicketsClient.prototype.changeTicketStatus = function changeTicketStatus(request
     callback = arguments[1];
   }
   var client = grpc.unary(Tickets.ChangeTicketStatus, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TicketsClient.prototype.createTicketTemplate = function createTicketTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Tickets.CreateTicketTemplate, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

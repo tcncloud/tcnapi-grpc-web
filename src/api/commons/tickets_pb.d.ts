@@ -120,6 +120,218 @@ export namespace Ticket {
   }
 }
 
+export class TemplateCondition extends jspb.Message {
+  getIsMandatory(): boolean;
+  setIsMandatory(value: boolean): void;
+
+  getIsEditable(): boolean;
+  setIsEditable(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TemplateCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: TemplateCondition): TemplateCondition.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TemplateCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TemplateCondition;
+  static deserializeBinaryFromReader(message: TemplateCondition, reader: jspb.BinaryReader): TemplateCondition;
+}
+
+export namespace TemplateCondition {
+  export type AsObject = {
+    isMandatory: boolean,
+    isEditable: boolean,
+  }
+}
+
+export class TicketTemplate extends jspb.Message {
+  getTicketTemplateId(): string;
+  setTicketTemplateId(value: string): void;
+
+  getTemplateName(): string;
+  setTemplateName(value: string): void;
+
+  hasTeplateStartDate(): boolean;
+  clearTeplateStartDate(): void;
+  getTeplateStartDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTeplateStartDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasTeplateEndDate(): boolean;
+  clearTeplateEndDate(): void;
+  getTeplateEndDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTeplateEndDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getTicketTitle(): string;
+  setTicketTitle(value: string): void;
+
+  getTicketDescription(): string;
+  setTicketDescription(value: string): void;
+
+  hasTitleCondition(): boolean;
+  clearTitleCondition(): void;
+  getTitleCondition(): TemplateCondition | undefined;
+  setTitleCondition(value?: TemplateCondition): void;
+
+  hasDescriptionCondition(): boolean;
+  clearDescriptionCondition(): void;
+  getDescriptionCondition(): TemplateCondition | undefined;
+  setDescriptionCondition(value?: TemplateCondition): void;
+
+  clearTicketAssigneeList(): void;
+  getTicketAssigneeList(): Array<string>;
+  setTicketAssigneeList(value: Array<string>): void;
+  addTicketAssignee(value: string, index?: number): string;
+
+  hasAssigneeCondition(): boolean;
+  clearAssigneeCondition(): void;
+  getAssigneeCondition(): TemplateCondition | undefined;
+  setAssigneeCondition(value?: TemplateCondition): void;
+
+  clearTicketSlaList(): void;
+  getTicketSlaList(): Array<Sla>;
+  setTicketSlaList(value: Array<Sla>): void;
+  addTicketSla(value?: Sla, index?: number): Sla;
+
+  hasTicketSlaCondition(): boolean;
+  clearTicketSlaCondition(): void;
+  getTicketSlaCondition(): TemplateCondition | undefined;
+  setTicketSlaCondition(value?: TemplateCondition): void;
+
+  getActionType(): string;
+  setActionType(value: string): void;
+
+  clearActionSkillsList(): void;
+  getActionSkillsList(): Array<Skills>;
+  setActionSkillsList(value: Array<Skills>): void;
+  addActionSkills(value?: Skills, index?: number): Skills;
+
+  hasActionSkillsCondition(): boolean;
+  clearActionSkillsCondition(): void;
+  getActionSkillsCondition(): TemplateCondition | undefined;
+  setActionSkillsCondition(value?: TemplateCondition): void;
+
+  hasActionStartDate(): boolean;
+  clearActionStartDate(): void;
+  getActionStartDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setActionStartDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasActionStartDateCondition(): boolean;
+  clearActionStartDateCondition(): void;
+  getActionStartDateCondition(): TemplateCondition | undefined;
+  setActionStartDateCondition(value?: TemplateCondition): void;
+
+  hasActionExpiryDate(): boolean;
+  clearActionExpiryDate(): void;
+  getActionExpiryDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setActionExpiryDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasActionExpiryDateCondition(): boolean;
+  clearActionExpiryDateCondition(): void;
+  getActionExpiryDateCondition(): TemplateCondition | undefined;
+  setActionExpiryDateCondition(value?: TemplateCondition): void;
+
+  clearActionSlaList(): void;
+  getActionSlaList(): Array<Sla>;
+  setActionSlaList(value: Array<Sla>): void;
+  addActionSla(value?: Sla, index?: number): Sla;
+
+  hasActionSlaCondition(): boolean;
+  clearActionSlaCondition(): void;
+  getActionSlaCondition(): TemplateCondition | undefined;
+  setActionSlaCondition(value?: TemplateCondition): void;
+
+  getIsValid(): boolean;
+  setIsValid(value: boolean): void;
+
+  hasCallbackDefault(): boolean;
+  clearCallbackDefault(): void;
+  getCallbackDefault(): TicketCallbackTemplate | undefined;
+  setCallbackDefault(value?: TicketCallbackTemplate): void;
+
+  getCreatedById(): string;
+  setCreatedById(value: string): void;
+
+  hasCreatedDate(): boolean;
+  clearCreatedDate(): void;
+  getCreatedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketTemplate.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketTemplate): TicketTemplate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketTemplate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketTemplate;
+  static deserializeBinaryFromReader(message: TicketTemplate, reader: jspb.BinaryReader): TicketTemplate;
+}
+
+export namespace TicketTemplate {
+  export type AsObject = {
+    ticketTemplateId: string,
+    templateName: string,
+    teplateStartDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    teplateEndDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    ticketTitle: string,
+    ticketDescription: string,
+    titleCondition?: TemplateCondition.AsObject,
+    descriptionCondition?: TemplateCondition.AsObject,
+    ticketAssigneeList: Array<string>,
+    assigneeCondition?: TemplateCondition.AsObject,
+    ticketSlaList: Array<Sla.AsObject>,
+    ticketSlaCondition?: TemplateCondition.AsObject,
+    actionType: string,
+    actionSkillsList: Array<Skills.AsObject>,
+    actionSkillsCondition?: TemplateCondition.AsObject,
+    actionStartDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    actionStartDateCondition?: TemplateCondition.AsObject,
+    actionExpiryDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    actionExpiryDateCondition?: TemplateCondition.AsObject,
+    actionSlaList: Array<Sla.AsObject>,
+    actionSlaCondition?: TemplateCondition.AsObject,
+    isValid: boolean,
+    callbackDefault?: TicketCallbackTemplate.AsObject,
+    createdById: string,
+    createdDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class TicketCallbackTemplate extends jspb.Message {
+  getCallerId(): string;
+  setCallerId(value: string): void;
+
+  hasCallerIdCondition(): boolean;
+  clearCallerIdCondition(): void;
+  getCallerIdCondition(): TemplateCondition | undefined;
+  setCallerIdCondition(value?: TemplateCondition): void;
+
+  getCountryCode(): string;
+  setCountryCode(value: string): void;
+
+  hasCountryCodeCondition(): boolean;
+  clearCountryCodeCondition(): void;
+  getCountryCodeCondition(): TemplateCondition | undefined;
+  setCountryCodeCondition(value?: TemplateCondition): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketCallbackTemplate.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketCallbackTemplate): TicketCallbackTemplate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketCallbackTemplate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketCallbackTemplate;
+  static deserializeBinaryFromReader(message: TicketCallbackTemplate, reader: jspb.BinaryReader): TicketCallbackTemplate;
+}
+
+export namespace TicketCallbackTemplate {
+  export type AsObject = {
+    callerId: string,
+    callerIdCondition?: TemplateCondition.AsObject,
+    countryCode: string,
+    countryCodeCondition?: TemplateCondition.AsObject,
+  }
+}
+
 export class Duration extends jspb.Message {
   getValue(): string;
   setValue(value: string): void;

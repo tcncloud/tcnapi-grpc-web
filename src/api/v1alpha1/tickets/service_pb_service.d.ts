@@ -231,6 +231,15 @@ type TicketsChangeTicketStatus = {
   readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.ChangeTicketStatusResponse;
 };
 
+type TicketsCreateTicketTemplate = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.CreateTicketTemplateRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.CreateTicketTemplateResponse;
+};
+
 export class Tickets {
   static readonly serviceName: string;
   static readonly CreateTicket: TicketsCreateTicket;
@@ -258,6 +267,7 @@ export class Tickets {
   static readonly AssignTicketAction: TicketsAssignTicketAction;
   static readonly CreateTicketAction: TicketsCreateTicketAction;
   static readonly ChangeTicketStatus: TicketsChangeTicketStatus;
+  static readonly CreateTicketTemplate: TicketsCreateTicketTemplate;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -516,6 +526,15 @@ export class TicketsClient {
   changeTicketStatus(
     requestMessage: api_v1alpha1_tickets_ticket_pb.ChangeTicketStatusRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ChangeTicketStatusResponse|null) => void
+  ): UnaryResponse;
+  createTicketTemplate(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.CreateTicketTemplateRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.CreateTicketTemplateResponse|null) => void
+  ): UnaryResponse;
+  createTicketTemplate(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.CreateTicketTemplateRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.CreateTicketTemplateResponse|null) => void
   ): UnaryResponse;
 }
 
