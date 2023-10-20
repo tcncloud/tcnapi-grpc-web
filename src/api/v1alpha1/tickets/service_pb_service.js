@@ -255,6 +255,24 @@ Tickets.EditTicketTemplate = {
   responseType: api_v1alpha1_tickets_ticket_pb.EditTicketTemplateResponse
 };
 
+Tickets.ListTicketTemplate = {
+  methodName: "ListTicketTemplate",
+  service: Tickets,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_tickets_ticket_pb.ListTicketTemplateRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.ListTicketTemplateResponse
+};
+
+Tickets.AssignTicketTemplate = {
+  methodName: "AssignTicketTemplate",
+  service: Tickets,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_tickets_ticket_pb.AssignProjectTemplateRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.AssignProjectTemplateResponse
+};
+
 exports.Tickets = Tickets;
 
 function TicketsClient(serviceHost, options) {
@@ -1073,6 +1091,68 @@ TicketsClient.prototype.editTicketTemplate = function editTicketTemplate(request
     callback = arguments[1];
   }
   var client = grpc.unary(Tickets.EditTicketTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TicketsClient.prototype.listTicketTemplate = function listTicketTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Tickets.ListTicketTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TicketsClient.prototype.assignTicketTemplate = function assignTicketTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Tickets.AssignTicketTemplate, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

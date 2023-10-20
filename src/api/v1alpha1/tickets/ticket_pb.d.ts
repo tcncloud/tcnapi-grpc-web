@@ -210,6 +210,86 @@ export namespace EditTicketTemplateResponse {
   }
 }
 
+export class ListTicketTemplateRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTicketTemplateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTicketTemplateRequest): ListTicketTemplateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTicketTemplateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTicketTemplateRequest;
+  static deserializeBinaryFromReader(message: ListTicketTemplateRequest, reader: jspb.BinaryReader): ListTicketTemplateRequest;
+}
+
+export namespace ListTicketTemplateRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListTicketTemplateResponse extends jspb.Message {
+  hasEnabledTemplates(): boolean;
+  clearEnabledTemplates(): void;
+  getEnabledTemplates(): api_commons_tickets_pb.ListTemplate | undefined;
+  setEnabledTemplates(value?: api_commons_tickets_pb.ListTemplate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTicketTemplateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTicketTemplateResponse): ListTicketTemplateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTicketTemplateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTicketTemplateResponse;
+  static deserializeBinaryFromReader(message: ListTicketTemplateResponse, reader: jspb.BinaryReader): ListTicketTemplateResponse;
+}
+
+export namespace ListTicketTemplateResponse {
+  export type AsObject = {
+    enabledTemplates?: api_commons_tickets_pb.ListTemplate.AsObject,
+  }
+}
+
+export class AssignProjectTemplateRequest extends jspb.Message {
+  hasProjectTemplate(): boolean;
+  clearProjectTemplate(): void;
+  getProjectTemplate(): api_commons_tickets_pb.AssignProjectTemplate | undefined;
+  setProjectTemplate(value?: api_commons_tickets_pb.AssignProjectTemplate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignProjectTemplateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignProjectTemplateRequest): AssignProjectTemplateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignProjectTemplateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignProjectTemplateRequest;
+  static deserializeBinaryFromReader(message: AssignProjectTemplateRequest, reader: jspb.BinaryReader): AssignProjectTemplateRequest;
+}
+
+export namespace AssignProjectTemplateRequest {
+  export type AsObject = {
+    projectTemplate?: api_commons_tickets_pb.AssignProjectTemplate.AsObject,
+  }
+}
+
+export class AssignProjectTemplateResponse extends jspb.Message {
+  getIsAssigned(): boolean;
+  setIsAssigned(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignProjectTemplateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignProjectTemplateResponse): AssignProjectTemplateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignProjectTemplateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignProjectTemplateResponse;
+  static deserializeBinaryFromReader(message: AssignProjectTemplateResponse, reader: jspb.BinaryReader): AssignProjectTemplateResponse;
+}
+
+export namespace AssignProjectTemplateResponse {
+  export type AsObject = {
+    isAssigned: boolean,
+  }
+}
+
 export class CreateTicketRes extends jspb.Message {
   hasTicket(): boolean;
   clearTicket(): void;

@@ -249,6 +249,24 @@ type TicketsEditTicketTemplate = {
   readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.EditTicketTemplateResponse;
 };
 
+type TicketsListTicketTemplate = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.ListTicketTemplateRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.ListTicketTemplateResponse;
+};
+
+type TicketsAssignTicketTemplate = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.AssignProjectTemplateRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.AssignProjectTemplateResponse;
+};
+
 export class Tickets {
   static readonly serviceName: string;
   static readonly CreateTicket: TicketsCreateTicket;
@@ -278,6 +296,8 @@ export class Tickets {
   static readonly ChangeTicketStatus: TicketsChangeTicketStatus;
   static readonly CreateTicketTemplate: TicketsCreateTicketTemplate;
   static readonly EditTicketTemplate: TicketsEditTicketTemplate;
+  static readonly ListTicketTemplate: TicketsListTicketTemplate;
+  static readonly AssignTicketTemplate: TicketsAssignTicketTemplate;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -554,6 +574,24 @@ export class TicketsClient {
   editTicketTemplate(
     requestMessage: api_v1alpha1_tickets_ticket_pb.EditTicketTemplateRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.EditTicketTemplateResponse|null) => void
+  ): UnaryResponse;
+  listTicketTemplate(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListTicketTemplateRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListTicketTemplateResponse|null) => void
+  ): UnaryResponse;
+  listTicketTemplate(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListTicketTemplateRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListTicketTemplateResponse|null) => void
+  ): UnaryResponse;
+  assignTicketTemplate(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.AssignProjectTemplateRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.AssignProjectTemplateResponse|null) => void
+  ): UnaryResponse;
+  assignTicketTemplate(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.AssignProjectTemplateRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.AssignProjectTemplateResponse|null) => void
   ): UnaryResponse;
 }
 
