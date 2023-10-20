@@ -46,6 +46,15 @@ Integrations.GetIntegrationTransactionReportData = {
   responseType: api_v1alpha1_integrations_service_pb.GetIntegrationTransactionReportDataRes
 };
 
+Integrations.SearchPastTransactions = {
+  methodName: "SearchPastTransactions",
+  service: Integrations,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_integrations_service_pb.SearchPastTransactionsRequest,
+  responseType: api_v1alpha1_integrations_service_pb.SearchPastTransactionsResponse
+};
+
 Integrations.GetAggregatedMetadata = {
   methodName: "GetAggregatedMetadata",
   service: Integrations,
@@ -340,6 +349,37 @@ IntegrationsClient.prototype.getIntegrationTransactionReportData = function getI
     callback = arguments[1];
   }
   var client = grpc.unary(Integrations.GetIntegrationTransactionReportData, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+IntegrationsClient.prototype.searchPastTransactions = function searchPastTransactions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Integrations.SearchPastTransactions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
