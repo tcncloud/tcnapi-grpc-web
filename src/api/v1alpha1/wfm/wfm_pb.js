@@ -42386,8 +42386,7 @@ proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.prototype.toObject = fun
 proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     shiftTemplateSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    parentProgramNodeSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -42432,10 +42431,6 @@ proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.deserializeBinaryFromRea
       var value = /** @type {number} */ (reader.readInt64());
       msg.setScheduleScenarioSid(value);
       break;
-    case 3:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setParentProgramNodeSid(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -42479,13 +42474,6 @@ proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.serializeBinaryToWriter 
       f
     );
   }
-  f = message.getParentProgramNodeSid();
-  if (f !== 0) {
-    writer.writeInt64(
-      3,
-      f
-    );
-  }
 };
 
 
@@ -42522,24 +42510,6 @@ proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.prototype.getScheduleSce
  */
 proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.prototype.setScheduleScenarioSid = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
-};
-
-
-/**
- * optional int64 parent_program_node_sid = 3;
- * @return {number}
- */
-proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.prototype.getParentProgramNodeSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq} returns this
- */
-proto.api.v1alpha1.wfm.BuildShiftTemplateDiagnosticsReq.prototype.setParentProgramNodeSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
