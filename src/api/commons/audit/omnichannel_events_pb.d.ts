@@ -15,11 +15,6 @@ export class OmnichannelCreateProjectEvent extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  hasComplianceConfig(): boolean;
-  clearComplianceConfig(): void;
-  getComplianceConfig(): api_commons_omnichannel_pb.OmniProjectComplianceConfig | undefined;
-  setComplianceConfig(value?: api_commons_omnichannel_pb.OmniProjectComplianceConfig): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelCreateProjectEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelCreateProjectEvent): OmnichannelCreateProjectEvent.AsObject;
@@ -35,7 +30,6 @@ export namespace OmnichannelCreateProjectEvent {
     clientSid: number,
     name: string,
     description: string,
-    complianceConfig?: api_commons_omnichannel_pb.OmniProjectComplianceConfig.AsObject,
   }
 }
 
