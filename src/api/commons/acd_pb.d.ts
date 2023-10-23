@@ -58,9 +58,6 @@ export class CallerSid extends jspb.Message {
   getTenantSid(): number;
   setTenantSid(value: number): void;
 
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CallerSid.AsObject;
   static toObject(includeInstance: boolean, msg: CallerSid): CallerSid.AsObject;
@@ -76,7 +73,6 @@ export namespace CallerSid {
     callerSid: number,
     type: CallType.EnumMap[keyof CallType.EnumMap],
     tenantSid: number,
-    orgId: string,
   }
 }
 

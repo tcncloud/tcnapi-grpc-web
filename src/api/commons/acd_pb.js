@@ -780,8 +780,7 @@ proto.api.commons.CallerSid.toObject = function(includeInstance, msg) {
   var f, obj = {
     callerSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     type: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    tenantSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    orgId: jspb.Message.getFieldWithDefault(msg, 4, "")
+    tenantSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -830,10 +829,6 @@ proto.api.commons.CallerSid.deserializeBinaryFromReader = function(msg, reader) 
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTenantSid(value);
       break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrgId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -881,13 +876,6 @@ proto.api.commons.CallerSid.serializeBinaryToWriter = function(message, writer) 
   if (f !== 0) {
     writer.writeInt64(
       3,
-      f
-    );
-  }
-  f = message.getOrgId();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
       f
     );
   }
@@ -945,24 +933,6 @@ proto.api.commons.CallerSid.prototype.getTenantSid = function() {
  */
 proto.api.commons.CallerSid.prototype.setTenantSid = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
-};
-
-
-/**
- * optional string org_id = 4;
- * @return {string}
- */
-proto.api.commons.CallerSid.prototype.getOrgId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.CallerSid} returns this
- */
-proto.api.commons.CallerSid.prototype.setOrgId = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
