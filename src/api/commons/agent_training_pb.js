@@ -115,7 +115,7 @@ proto.api.commons.LearningOpportunity.toObject = function(includeInstance, msg) 
     title: jspb.Message.getFieldWithDefault(msg, 12, ""),
     status: jspb.Message.getFieldWithDefault(msg, 13, 0),
     origin: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    reviewerUserId: jspb.Message.getFieldWithDefault(msg, 15, "")
+    creatorUserId: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -203,7 +203,7 @@ proto.api.commons.LearningOpportunity.deserializeBinaryFromReader = function(msg
       break;
     case 15:
       var value = /** @type {string} */ (reader.readString());
-      msg.setReviewerUserId(value);
+      msg.setCreatorUserId(value);
       break;
     default:
       reader.skipField();
@@ -319,7 +319,7 @@ proto.api.commons.LearningOpportunity.serializeBinaryToWriter = function(message
       f
     );
   }
-  f = message.getReviewerUserId();
+  f = message.getCreatorUserId();
   if (f.length > 0) {
     writer.writeString(
       15,
@@ -565,10 +565,10 @@ proto.api.commons.LearningOpportunity.prototype.setOrigin = function(value) {
 
 
 /**
- * optional string reviewer_user_id = 15;
+ * optional string creator_user_id = 15;
  * @return {string}
  */
-proto.api.commons.LearningOpportunity.prototype.getReviewerUserId = function() {
+proto.api.commons.LearningOpportunity.prototype.getCreatorUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
@@ -577,7 +577,7 @@ proto.api.commons.LearningOpportunity.prototype.getReviewerUserId = function() {
  * @param {string} value
  * @return {!proto.api.commons.LearningOpportunity} returns this
  */
-proto.api.commons.LearningOpportunity.prototype.setReviewerUserId = function(value) {
+proto.api.commons.LearningOpportunity.prototype.setCreatorUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 15, value);
 };
 

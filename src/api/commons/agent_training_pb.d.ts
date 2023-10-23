@@ -44,8 +44,8 @@ export class LearningOpportunity extends jspb.Message {
   getOrigin(): LearningOpportunityOriginMap[keyof LearningOpportunityOriginMap];
   setOrigin(value: LearningOpportunityOriginMap[keyof LearningOpportunityOriginMap]): void;
 
-  getReviewerUserId(): string;
-  setReviewerUserId(value: string): void;
+  getCreatorUserId(): string;
+  setCreatorUserId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LearningOpportunity.AsObject;
@@ -71,7 +71,7 @@ export namespace LearningOpportunity {
     title: string,
     status: LearningOpportunityStatusMap[keyof LearningOpportunityStatusMap],
     origin: LearningOpportunityOriginMap[keyof LearningOpportunityOriginMap],
-    reviewerUserId: string,
+    creatorUserId: string,
   }
 }
 
