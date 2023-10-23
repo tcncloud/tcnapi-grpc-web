@@ -213,6 +213,24 @@ type OmniApiGetAvailableHeaders = {
   readonly responseType: typeof api_v0alpha_omniapi_pb.GetAvailableHeadersRes;
 };
 
+type OmniApiApproveTask = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.ApproveTaskRequest;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.ApproveTaskResponse;
+};
+
+type OmniApiGetNextQueuedTask = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.GetNextQueuedTaskRequest;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.GetNextQueuedTaskResponse;
+};
+
 type OmniApiGetTask = {
   readonly methodName: string;
   readonly service: typeof OmniApi;
@@ -229,6 +247,24 @@ type OmniApiListTasks = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_omniapi_pb.ListTasksReq;
   readonly responseType: typeof api_v0alpha_omniapi_pb.ListTasksRes;
+};
+
+type OmniApiRejectTask = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.RejectTaskRequest;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.RejectTaskResponse;
+};
+
+type OmniApiRequeueTask = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.RequeueTaskRequest;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.RequeueTaskResponse;
 };
 
 type OmniApiCreateConnectedInbox = {
@@ -616,8 +652,12 @@ export class OmniApi {
   static readonly ManagerListConversations: OmniApiManagerListConversations;
   static readonly ListContactLists: OmniApiListContactLists;
   static readonly GetAvailableHeaders: OmniApiGetAvailableHeaders;
+  static readonly ApproveTask: OmniApiApproveTask;
+  static readonly GetNextQueuedTask: OmniApiGetNextQueuedTask;
   static readonly GetTask: OmniApiGetTask;
   static readonly ListTasks: OmniApiListTasks;
+  static readonly RejectTask: OmniApiRejectTask;
+  static readonly RequeueTask: OmniApiRequeueTask;
   static readonly CreateConnectedInbox: OmniApiCreateConnectedInbox;
   static readonly DeleteConnectedInboxBySid: OmniApiDeleteConnectedInboxBySid;
   static readonly GetConnectedInboxBySid: OmniApiGetConnectedInboxBySid;
@@ -883,6 +923,24 @@ export class OmniApiClient {
     requestMessage: api_v0alpha_omniapi_pb.GetAvailableHeadersReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.GetAvailableHeadersRes|null) => void
   ): UnaryResponse;
+  approveTask(
+    requestMessage: api_v0alpha_omniapi_pb.ApproveTaskRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ApproveTaskResponse|null) => void
+  ): UnaryResponse;
+  approveTask(
+    requestMessage: api_v0alpha_omniapi_pb.ApproveTaskRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ApproveTaskResponse|null) => void
+  ): UnaryResponse;
+  getNextQueuedTask(
+    requestMessage: api_v0alpha_omniapi_pb.GetNextQueuedTaskRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.GetNextQueuedTaskResponse|null) => void
+  ): UnaryResponse;
+  getNextQueuedTask(
+    requestMessage: api_v0alpha_omniapi_pb.GetNextQueuedTaskRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.GetNextQueuedTaskResponse|null) => void
+  ): UnaryResponse;
   getTask(
     requestMessage: api_v0alpha_omniapi_pb.GetTaskReq,
     metadata: grpc.Metadata,
@@ -900,6 +958,24 @@ export class OmniApiClient {
   listTasks(
     requestMessage: api_v0alpha_omniapi_pb.ListTasksReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListTasksRes|null) => void
+  ): UnaryResponse;
+  rejectTask(
+    requestMessage: api_v0alpha_omniapi_pb.RejectTaskRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.RejectTaskResponse|null) => void
+  ): UnaryResponse;
+  rejectTask(
+    requestMessage: api_v0alpha_omniapi_pb.RejectTaskRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.RejectTaskResponse|null) => void
+  ): UnaryResponse;
+  requeueTask(
+    requestMessage: api_v0alpha_omniapi_pb.RequeueTaskRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.RequeueTaskResponse|null) => void
+  ): UnaryResponse;
+  requeueTask(
+    requestMessage: api_v0alpha_omniapi_pb.RequeueTaskRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.RequeueTaskResponse|null) => void
   ): UnaryResponse;
   createConnectedInbox(
     requestMessage: api_commons_omnichannel_pb.ConnectedInbox,
