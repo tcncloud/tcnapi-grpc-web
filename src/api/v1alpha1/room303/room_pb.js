@@ -27,6 +27,8 @@ var api_commons_user_pb = require('../../../api/commons/user_pb.js');
 goog.object.extend(proto, api_commons_user_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.api.v1alpha1.room303.ArchiveRoomRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.room303.CreateRoomRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.room303.GetGlobalConfigRequest', null, global);
@@ -2209,7 +2211,9 @@ proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    config: (f = msg.getConfig()) && api_commons_room303_pb.GlobalConfig.toObject(includeInstance, f)
+    config: (f = msg.getConfig()) && api_commons_room303_pb.GlobalConfig.toObject(includeInstance, f),
+    editedBy: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2251,6 +2255,15 @@ proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.deserializeBinaryFromReade
       reader.readMessage(value,api_commons_room303_pb.GlobalConfig.deserializeBinaryFromReader);
       msg.setConfig(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEditedBy(value);
+      break;
+    case 3:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setLastEdited(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2286,6 +2299,21 @@ proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.serializeBinaryToWriter = 
       1,
       f,
       api_commons_room303_pb.GlobalConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getEditedBy();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getLastEdited();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -2325,6 +2353,61 @@ proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.prototype.clearConfig = fu
  */
 proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.prototype.hasConfig = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string edited_by = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.prototype.getEditedBy = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.room303.UpdateGlobalConfigResponse} returns this
+ */
+proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.prototype.setEditedBy = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp last_edited = 3;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.prototype.getLastEdited = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.room303.UpdateGlobalConfigResponse} returns this
+*/
+proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.prototype.setLastEdited = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.room303.UpdateGlobalConfigResponse} returns this
+ */
+proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.prototype.clearLastEdited = function() {
+  return this.setLastEdited(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.prototype.hasLastEdited = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -2461,7 +2544,9 @@ proto.api.v1alpha1.room303.GetGlobalConfigResponse.prototype.toObject = function
  */
 proto.api.v1alpha1.room303.GetGlobalConfigResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    config: (f = msg.getConfig()) && api_commons_room303_pb.GlobalConfig.toObject(includeInstance, f)
+    config: (f = msg.getConfig()) && api_commons_room303_pb.GlobalConfig.toObject(includeInstance, f),
+    editedBy: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2503,6 +2588,15 @@ proto.api.v1alpha1.room303.GetGlobalConfigResponse.deserializeBinaryFromReader =
       reader.readMessage(value,api_commons_room303_pb.GlobalConfig.deserializeBinaryFromReader);
       msg.setConfig(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEditedBy(value);
+      break;
+    case 3:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setLastEdited(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2538,6 +2632,21 @@ proto.api.v1alpha1.room303.GetGlobalConfigResponse.serializeBinaryToWriter = fun
       1,
       f,
       api_commons_room303_pb.GlobalConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getEditedBy();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getLastEdited();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -2577,6 +2686,61 @@ proto.api.v1alpha1.room303.GetGlobalConfigResponse.prototype.clearConfig = funct
  */
 proto.api.v1alpha1.room303.GetGlobalConfigResponse.prototype.hasConfig = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string edited_by = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.room303.GetGlobalConfigResponse.prototype.getEditedBy = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.room303.GetGlobalConfigResponse} returns this
+ */
+proto.api.v1alpha1.room303.GetGlobalConfigResponse.prototype.setEditedBy = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp last_edited = 3;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.room303.GetGlobalConfigResponse.prototype.getLastEdited = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.room303.GetGlobalConfigResponse} returns this
+*/
+proto.api.v1alpha1.room303.GetGlobalConfigResponse.prototype.setLastEdited = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.room303.GetGlobalConfigResponse} returns this
+ */
+proto.api.v1alpha1.room303.GetGlobalConfigResponse.prototype.clearLastEdited = function() {
+  return this.setLastEdited(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.room303.GetGlobalConfigResponse.prototype.hasLastEdited = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as api_commons_room303_pb from "../../../api/commons/room303_pb";
 import * as api_commons_user_pb from "../../../api/commons/user_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class CreateRoomRequest extends jspb.Message {
   getName(): string;
@@ -278,6 +279,14 @@ export class UpdateGlobalConfigResponse extends jspb.Message {
   getConfig(): api_commons_room303_pb.GlobalConfig | undefined;
   setConfig(value?: api_commons_room303_pb.GlobalConfig): void;
 
+  getEditedBy(): string;
+  setEditedBy(value: string): void;
+
+  hasLastEdited(): boolean;
+  clearLastEdited(): void;
+  getLastEdited(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastEdited(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateGlobalConfigResponse.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateGlobalConfigResponse): UpdateGlobalConfigResponse.AsObject;
@@ -291,6 +300,8 @@ export class UpdateGlobalConfigResponse extends jspb.Message {
 export namespace UpdateGlobalConfigResponse {
   export type AsObject = {
     config?: api_commons_room303_pb.GlobalConfig.AsObject,
+    editedBy: string,
+    lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -316,6 +327,14 @@ export class GetGlobalConfigResponse extends jspb.Message {
   getConfig(): api_commons_room303_pb.GlobalConfig | undefined;
   setConfig(value?: api_commons_room303_pb.GlobalConfig): void;
 
+  getEditedBy(): string;
+  setEditedBy(value: string): void;
+
+  hasLastEdited(): boolean;
+  clearLastEdited(): void;
+  getLastEdited(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastEdited(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetGlobalConfigResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetGlobalConfigResponse): GetGlobalConfigResponse.AsObject;
@@ -329,6 +348,8 @@ export class GetGlobalConfigResponse extends jspb.Message {
 export namespace GetGlobalConfigResponse {
   export type AsObject = {
     config?: api_commons_room303_pb.GlobalConfig.AsObject,
+    editedBy: string,
+    lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
