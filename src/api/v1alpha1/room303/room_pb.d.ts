@@ -274,13 +274,18 @@ export namespace UpdateGlobalConfigRequest {
 }
 
 export class UpdateGlobalConfigResponse extends jspb.Message {
+  getEditedBy(): string;
+  setEditedBy(value: string): void;
+
   hasConfig(): boolean;
   clearConfig(): void;
   getConfig(): api_commons_room303_pb.GlobalConfig | undefined;
   setConfig(value?: api_commons_room303_pb.GlobalConfig): void;
 
-  getEditedBy(): string;
-  setEditedBy(value: string): void;
+  hasDateCreated(): boolean;
+  clearDateCreated(): void;
+  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   hasLastEdited(): boolean;
   clearLastEdited(): void;
@@ -299,8 +304,9 @@ export class UpdateGlobalConfigResponse extends jspb.Message {
 
 export namespace UpdateGlobalConfigResponse {
   export type AsObject = {
-    config?: api_commons_room303_pb.GlobalConfig.AsObject,
     editedBy: string,
+    config?: api_commons_room303_pb.GlobalConfig.AsObject,
+    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
@@ -322,13 +328,18 @@ export namespace GetGlobalConfigRequest {
 }
 
 export class GetGlobalConfigResponse extends jspb.Message {
+  getEditedBy(): string;
+  setEditedBy(value: string): void;
+
   hasConfig(): boolean;
   clearConfig(): void;
   getConfig(): api_commons_room303_pb.GlobalConfig | undefined;
   setConfig(value?: api_commons_room303_pb.GlobalConfig): void;
 
-  getEditedBy(): string;
-  setEditedBy(value: string): void;
+  hasDateCreated(): boolean;
+  clearDateCreated(): void;
+  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   hasLastEdited(): boolean;
   clearLastEdited(): void;
@@ -347,8 +358,9 @@ export class GetGlobalConfigResponse extends jspb.Message {
 
 export namespace GetGlobalConfigResponse {
   export type AsObject = {
-    config?: api_commons_room303_pb.GlobalConfig.AsObject,
     editedBy: string,
+    config?: api_commons_room303_pb.GlobalConfig.AsObject,
+    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }

@@ -1480,6 +1480,86 @@ export namespace HeaderGroup {
   }
 }
 
+export class ApproveTaskRequest extends jspb.Message {
+  getTaskSid(): string;
+  setTaskSid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApproveTaskRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ApproveTaskRequest): ApproveTaskRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ApproveTaskRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApproveTaskRequest;
+  static deserializeBinaryFromReader(message: ApproveTaskRequest, reader: jspb.BinaryReader): ApproveTaskRequest;
+}
+
+export namespace ApproveTaskRequest {
+  export type AsObject = {
+    taskSid: string,
+  }
+}
+
+export class ApproveTaskResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApproveTaskResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ApproveTaskResponse): ApproveTaskResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ApproveTaskResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApproveTaskResponse;
+  static deserializeBinaryFromReader(message: ApproveTaskResponse, reader: jspb.BinaryReader): ApproveTaskResponse;
+}
+
+export namespace ApproveTaskResponse {
+  export type AsObject = {
+  }
+}
+
+export class GetNextQueuedTaskRequest extends jspb.Message {
+  hasSkills(): boolean;
+  clearSkills(): void;
+  getSkills(): api_commons_omnichannel_pb.OmniConversationSkills | undefined;
+  setSkills(value?: api_commons_omnichannel_pb.OmniConversationSkills): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetNextQueuedTaskRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetNextQueuedTaskRequest): GetNextQueuedTaskRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetNextQueuedTaskRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetNextQueuedTaskRequest;
+  static deserializeBinaryFromReader(message: GetNextQueuedTaskRequest, reader: jspb.BinaryReader): GetNextQueuedTaskRequest;
+}
+
+export namespace GetNextQueuedTaskRequest {
+  export type AsObject = {
+    skills?: api_commons_omnichannel_pb.OmniConversationSkills.AsObject,
+  }
+}
+
+export class GetNextQueuedTaskResponse extends jspb.Message {
+  hasTask(): boolean;
+  clearTask(): void;
+  getTask(): api_commons_omnichannel_pb.OmniTask | undefined;
+  setTask(value?: api_commons_omnichannel_pb.OmniTask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetNextQueuedTaskResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetNextQueuedTaskResponse): GetNextQueuedTaskResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetNextQueuedTaskResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetNextQueuedTaskResponse;
+  static deserializeBinaryFromReader(message: GetNextQueuedTaskResponse, reader: jspb.BinaryReader): GetNextQueuedTaskResponse;
+}
+
+export namespace GetNextQueuedTaskResponse {
+  export type AsObject = {
+    task?: api_commons_omnichannel_pb.OmniTask.AsObject,
+  }
+}
+
 export class GetTaskReq extends jspb.Message {
   hasFieldMask(): boolean;
   clearFieldMask(): void;
@@ -1619,6 +1699,78 @@ export namespace ListTasksRes {
   export type AsObject = {
     nextPageToken: string,
     tasksList: Array<api_commons_omnichannel_pb.OmniTask.AsObject>,
+  }
+}
+
+export class RejectTaskRequest extends jspb.Message {
+  getTaskSid(): string;
+  setTaskSid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RejectTaskRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RejectTaskRequest): RejectTaskRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RejectTaskRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RejectTaskRequest;
+  static deserializeBinaryFromReader(message: RejectTaskRequest, reader: jspb.BinaryReader): RejectTaskRequest;
+}
+
+export namespace RejectTaskRequest {
+  export type AsObject = {
+    taskSid: string,
+  }
+}
+
+export class RejectTaskResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RejectTaskResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RejectTaskResponse): RejectTaskResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RejectTaskResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RejectTaskResponse;
+  static deserializeBinaryFromReader(message: RejectTaskResponse, reader: jspb.BinaryReader): RejectTaskResponse;
+}
+
+export namespace RejectTaskResponse {
+  export type AsObject = {
+  }
+}
+
+export class RequeueTaskRequest extends jspb.Message {
+  getTaskSid(): string;
+  setTaskSid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RequeueTaskRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RequeueTaskRequest): RequeueTaskRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RequeueTaskRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RequeueTaskRequest;
+  static deserializeBinaryFromReader(message: RequeueTaskRequest, reader: jspb.BinaryReader): RequeueTaskRequest;
+}
+
+export namespace RequeueTaskRequest {
+  export type AsObject = {
+    taskSid: string,
+  }
+}
+
+export class RequeueTaskResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RequeueTaskResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RequeueTaskResponse): RequeueTaskResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RequeueTaskResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RequeueTaskResponse;
+  static deserializeBinaryFromReader(message: RequeueTaskResponse, reader: jspb.BinaryReader): RequeueTaskResponse;
+}
+
+export namespace RequeueTaskResponse {
+  export type AsObject = {
   }
 }
 
