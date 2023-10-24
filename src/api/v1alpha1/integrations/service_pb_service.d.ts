@@ -40,6 +40,15 @@ type IntegrationsGetIntegrationTransactionReportData = {
   readonly responseType: typeof api_v1alpha1_integrations_service_pb.GetIntegrationTransactionReportDataRes;
 };
 
+type IntegrationsSearchPastTransactions = {
+  readonly methodName: string;
+  readonly service: typeof Integrations;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrations_service_pb.SearchPastTransactionsRequest;
+  readonly responseType: typeof api_v1alpha1_integrations_service_pb.SearchPastTransactionsResponse;
+};
+
 type IntegrationsGetAggregatedMetadata = {
   readonly methodName: string;
   readonly service: typeof Integrations;
@@ -235,6 +244,7 @@ export class Integrations {
   static readonly GetIntegrationTransaction: IntegrationsGetIntegrationTransaction;
   static readonly GetIntegrationTransactionReport: IntegrationsGetIntegrationTransactionReport;
   static readonly GetIntegrationTransactionReportData: IntegrationsGetIntegrationTransactionReportData;
+  static readonly SearchPastTransactions: IntegrationsSearchPastTransactions;
   static readonly GetAggregatedMetadata: IntegrationsGetAggregatedMetadata;
   static readonly GetPortalLinksByDateRange: IntegrationsGetPortalLinksByDateRange;
   static readonly CreateIntegrationConfig: IntegrationsCreateIntegrationConfig;
@@ -325,6 +335,15 @@ export class IntegrationsClient {
   getIntegrationTransactionReportData(
     requestMessage: api_v1alpha1_integrations_service_pb.GetIntegrationTransactionReportDataReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.GetIntegrationTransactionReportDataRes|null) => void
+  ): UnaryResponse;
+  searchPastTransactions(
+    requestMessage: api_v1alpha1_integrations_service_pb.SearchPastTransactionsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.SearchPastTransactionsResponse|null) => void
+  ): UnaryResponse;
+  searchPastTransactions(
+    requestMessage: api_v1alpha1_integrations_service_pb.SearchPastTransactionsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.SearchPastTransactionsResponse|null) => void
   ): UnaryResponse;
   getAggregatedMetadata(
     requestMessage: api_v1alpha1_integrations_service_pb.GetAggregatedMetadataReq,

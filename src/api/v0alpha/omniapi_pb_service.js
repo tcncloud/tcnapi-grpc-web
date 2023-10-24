@@ -219,6 +219,24 @@ OmniApi.GetAvailableHeaders = {
   responseType: api_v0alpha_omniapi_pb.GetAvailableHeadersRes
 };
 
+OmniApi.ApproveTask = {
+  methodName: "ApproveTask",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.ApproveTaskRequest,
+  responseType: api_v0alpha_omniapi_pb.ApproveTaskResponse
+};
+
+OmniApi.GetNextQueuedTask = {
+  methodName: "GetNextQueuedTask",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.GetNextQueuedTaskRequest,
+  responseType: api_v0alpha_omniapi_pb.GetNextQueuedTaskResponse
+};
+
 OmniApi.GetTask = {
   methodName: "GetTask",
   service: OmniApi,
@@ -235,6 +253,24 @@ OmniApi.ListTasks = {
   responseStream: false,
   requestType: api_v0alpha_omniapi_pb.ListTasksReq,
   responseType: api_v0alpha_omniapi_pb.ListTasksRes
+};
+
+OmniApi.RejectTask = {
+  methodName: "RejectTask",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.RejectTaskRequest,
+  responseType: api_v0alpha_omniapi_pb.RejectTaskResponse
+};
+
+OmniApi.RequeueTask = {
+  methodName: "RequeueTask",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.RequeueTaskRequest,
+  responseType: api_v0alpha_omniapi_pb.RequeueTaskResponse
 };
 
 OmniApi.CreateConnectedInbox = {
@@ -1333,6 +1369,68 @@ OmniApiClient.prototype.getAvailableHeaders = function getAvailableHeaders(reque
   };
 };
 
+OmniApiClient.prototype.approveTask = function approveTask(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.ApproveTask, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.getNextQueuedTask = function getNextQueuedTask(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.GetNextQueuedTask, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OmniApiClient.prototype.getTask = function getTask(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -1369,6 +1467,68 @@ OmniApiClient.prototype.listTasks = function listTasks(requestMessage, metadata,
     callback = arguments[1];
   }
   var client = grpc.unary(OmniApi.ListTasks, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.rejectTask = function rejectTask(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.RejectTask, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.requeueTask = function requeueTask(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.RequeueTask, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

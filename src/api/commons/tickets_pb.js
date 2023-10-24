@@ -1641,8 +1641,8 @@ proto.api.commons.TicketTemplate.toObject = function(includeInstance, msg) {
   var f, obj = {
     ticketTemplateId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     templateName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    teplateStartDate: (f = msg.getTeplateStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    teplateEndDate: (f = msg.getTeplateEndDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    templateStartDate: (f = msg.getTemplateStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    templateEndDate: (f = msg.getTemplateEndDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     ticketTitle: jspb.Message.getFieldWithDefault(msg, 5, ""),
     ticketDescription: jspb.Message.getFieldWithDefault(msg, 6, ""),
     titleCondition: (f = msg.getTitleCondition()) && proto.api.commons.TemplateCondition.toObject(includeInstance, f),
@@ -1651,22 +1651,19 @@ proto.api.commons.TicketTemplate.toObject = function(includeInstance, msg) {
     assigneeCondition: (f = msg.getAssigneeCondition()) && proto.api.commons.TemplateCondition.toObject(includeInstance, f),
     ticketSlaList: jspb.Message.toObjectList(msg.getTicketSlaList(),
     proto.api.commons.Sla.toObject, includeInstance),
-    ticketSlaCondition: (f = msg.getTicketSlaCondition()) && proto.api.commons.TemplateCondition.toObject(includeInstance, f),
     actionType: jspb.Message.getFieldWithDefault(msg, 13, ""),
     actionSkillsList: jspb.Message.toObjectList(msg.getActionSkillsList(),
     proto.api.commons.Skills.toObject, includeInstance),
     actionSkillsCondition: (f = msg.getActionSkillsCondition()) && proto.api.commons.TemplateCondition.toObject(includeInstance, f),
-    actionStartDate: (f = msg.getActionStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    actionStartDateCondition: (f = msg.getActionStartDateCondition()) && proto.api.commons.TemplateCondition.toObject(includeInstance, f),
     actionExpiryDate: (f = msg.getActionExpiryDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     actionExpiryDateCondition: (f = msg.getActionExpiryDateCondition()) && proto.api.commons.TemplateCondition.toObject(includeInstance, f),
     actionSlaList: jspb.Message.toObjectList(msg.getActionSlaList(),
     proto.api.commons.Sla.toObject, includeInstance),
-    actionSlaCondition: (f = msg.getActionSlaCondition()) && proto.api.commons.TemplateCondition.toObject(includeInstance, f),
     isValid: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
     callbackDefault: (f = msg.getCallbackDefault()) && proto.api.commons.TicketCallbackTemplate.toObject(includeInstance, f),
     createdById: jspb.Message.getFieldWithDefault(msg, 24, ""),
-    createdDate: (f = msg.getCreatedDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    createdDate: (f = msg.getCreatedDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    ticketCallbackTemplateCondition: (f = msg.getTicketCallbackTemplateCondition()) && proto.api.commons.TemplateCondition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1714,12 +1711,12 @@ proto.api.commons.TicketTemplate.deserializeBinaryFromReader = function(msg, rea
     case 3:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setTeplateStartDate(value);
+      msg.setTemplateStartDate(value);
       break;
     case 4:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setTeplateEndDate(value);
+      msg.setTemplateEndDate(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -1753,11 +1750,6 @@ proto.api.commons.TicketTemplate.deserializeBinaryFromReader = function(msg, rea
       reader.readMessage(value,proto.api.commons.Sla.deserializeBinaryFromReader);
       msg.addTicketSla(value);
       break;
-    case 12:
-      var value = new proto.api.commons.TemplateCondition;
-      reader.readMessage(value,proto.api.commons.TemplateCondition.deserializeBinaryFromReader);
-      msg.setTicketSlaCondition(value);
-      break;
     case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setActionType(value);
@@ -1771,16 +1763,6 @@ proto.api.commons.TicketTemplate.deserializeBinaryFromReader = function(msg, rea
       var value = new proto.api.commons.TemplateCondition;
       reader.readMessage(value,proto.api.commons.TemplateCondition.deserializeBinaryFromReader);
       msg.setActionSkillsCondition(value);
-      break;
-    case 16:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setActionStartDate(value);
-      break;
-    case 17:
-      var value = new proto.api.commons.TemplateCondition;
-      reader.readMessage(value,proto.api.commons.TemplateCondition.deserializeBinaryFromReader);
-      msg.setActionStartDateCondition(value);
       break;
     case 18:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -1796,11 +1778,6 @@ proto.api.commons.TicketTemplate.deserializeBinaryFromReader = function(msg, rea
       var value = new proto.api.commons.Sla;
       reader.readMessage(value,proto.api.commons.Sla.deserializeBinaryFromReader);
       msg.addActionSla(value);
-      break;
-    case 21:
-      var value = new proto.api.commons.TemplateCondition;
-      reader.readMessage(value,proto.api.commons.TemplateCondition.deserializeBinaryFromReader);
-      msg.setActionSlaCondition(value);
       break;
     case 22:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -1819,6 +1796,11 @@ proto.api.commons.TicketTemplate.deserializeBinaryFromReader = function(msg, rea
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreatedDate(value);
+      break;
+    case 26:
+      var value = new proto.api.commons.TemplateCondition;
+      reader.readMessage(value,proto.api.commons.TemplateCondition.deserializeBinaryFromReader);
+      msg.setTicketCallbackTemplateCondition(value);
       break;
     default:
       reader.skipField();
@@ -1863,7 +1845,7 @@ proto.api.commons.TicketTemplate.serializeBinaryToWriter = function(message, wri
       f
     );
   }
-  f = message.getTeplateStartDate();
+  f = message.getTemplateStartDate();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -1871,7 +1853,7 @@ proto.api.commons.TicketTemplate.serializeBinaryToWriter = function(message, wri
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getTeplateEndDate();
+  f = message.getTemplateEndDate();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -1932,14 +1914,6 @@ proto.api.commons.TicketTemplate.serializeBinaryToWriter = function(message, wri
       proto.api.commons.Sla.serializeBinaryToWriter
     );
   }
-  f = message.getTicketSlaCondition();
-  if (f != null) {
-    writer.writeMessage(
-      12,
-      f,
-      proto.api.commons.TemplateCondition.serializeBinaryToWriter
-    );
-  }
   f = message.getActionType();
   if (f.length > 0) {
     writer.writeString(
@@ -1959,22 +1933,6 @@ proto.api.commons.TicketTemplate.serializeBinaryToWriter = function(message, wri
   if (f != null) {
     writer.writeMessage(
       15,
-      f,
-      proto.api.commons.TemplateCondition.serializeBinaryToWriter
-    );
-  }
-  f = message.getActionStartDate();
-  if (f != null) {
-    writer.writeMessage(
-      16,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getActionStartDateCondition();
-  if (f != null) {
-    writer.writeMessage(
-      17,
       f,
       proto.api.commons.TemplateCondition.serializeBinaryToWriter
     );
@@ -2001,14 +1959,6 @@ proto.api.commons.TicketTemplate.serializeBinaryToWriter = function(message, wri
       20,
       f,
       proto.api.commons.Sla.serializeBinaryToWriter
-    );
-  }
-  f = message.getActionSlaCondition();
-  if (f != null) {
-    writer.writeMessage(
-      21,
-      f,
-      proto.api.commons.TemplateCondition.serializeBinaryToWriter
     );
   }
   f = message.getIsValid();
@@ -2039,6 +1989,14 @@ proto.api.commons.TicketTemplate.serializeBinaryToWriter = function(message, wri
       25,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getTicketCallbackTemplateCondition();
+  if (f != null) {
+    writer.writeMessage(
+      26,
+      f,
+      proto.api.commons.TemplateCondition.serializeBinaryToWriter
     );
   }
 };
@@ -2081,10 +2039,10 @@ proto.api.commons.TicketTemplate.prototype.setTemplateName = function(value) {
 
 
 /**
- * optional google.protobuf.Timestamp teplate_start_date = 3;
+ * optional google.protobuf.Timestamp template_start_date = 3;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.api.commons.TicketTemplate.prototype.getTeplateStartDate = function() {
+proto.api.commons.TicketTemplate.prototype.getTemplateStartDate = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
 };
@@ -2094,7 +2052,7 @@ proto.api.commons.TicketTemplate.prototype.getTeplateStartDate = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.api.commons.TicketTemplate} returns this
 */
-proto.api.commons.TicketTemplate.prototype.setTeplateStartDate = function(value) {
+proto.api.commons.TicketTemplate.prototype.setTemplateStartDate = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -2103,8 +2061,8 @@ proto.api.commons.TicketTemplate.prototype.setTeplateStartDate = function(value)
  * Clears the message field making it undefined.
  * @return {!proto.api.commons.TicketTemplate} returns this
  */
-proto.api.commons.TicketTemplate.prototype.clearTeplateStartDate = function() {
-  return this.setTeplateStartDate(undefined);
+proto.api.commons.TicketTemplate.prototype.clearTemplateStartDate = function() {
+  return this.setTemplateStartDate(undefined);
 };
 
 
@@ -2112,16 +2070,16 @@ proto.api.commons.TicketTemplate.prototype.clearTeplateStartDate = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.TicketTemplate.prototype.hasTeplateStartDate = function() {
+proto.api.commons.TicketTemplate.prototype.hasTemplateStartDate = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp teplate_end_date = 4;
+ * optional google.protobuf.Timestamp template_end_date = 4;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.api.commons.TicketTemplate.prototype.getTeplateEndDate = function() {
+proto.api.commons.TicketTemplate.prototype.getTemplateEndDate = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
 };
@@ -2131,7 +2089,7 @@ proto.api.commons.TicketTemplate.prototype.getTeplateEndDate = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.api.commons.TicketTemplate} returns this
 */
-proto.api.commons.TicketTemplate.prototype.setTeplateEndDate = function(value) {
+proto.api.commons.TicketTemplate.prototype.setTemplateEndDate = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -2140,8 +2098,8 @@ proto.api.commons.TicketTemplate.prototype.setTeplateEndDate = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.api.commons.TicketTemplate} returns this
  */
-proto.api.commons.TicketTemplate.prototype.clearTeplateEndDate = function() {
-  return this.setTeplateEndDate(undefined);
+proto.api.commons.TicketTemplate.prototype.clearTemplateEndDate = function() {
+  return this.setTemplateEndDate(undefined);
 };
 
 
@@ -2149,7 +2107,7 @@ proto.api.commons.TicketTemplate.prototype.clearTeplateEndDate = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.TicketTemplate.prototype.hasTeplateEndDate = function() {
+proto.api.commons.TicketTemplate.prototype.hasTemplateEndDate = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -2377,43 +2335,6 @@ proto.api.commons.TicketTemplate.prototype.clearTicketSlaList = function() {
 
 
 /**
- * optional TemplateCondition ticket_sla_condition = 12;
- * @return {?proto.api.commons.TemplateCondition}
- */
-proto.api.commons.TicketTemplate.prototype.getTicketSlaCondition = function() {
-  return /** @type{?proto.api.commons.TemplateCondition} */ (
-    jspb.Message.getWrapperField(this, proto.api.commons.TemplateCondition, 12));
-};
-
-
-/**
- * @param {?proto.api.commons.TemplateCondition|undefined} value
- * @return {!proto.api.commons.TicketTemplate} returns this
-*/
-proto.api.commons.TicketTemplate.prototype.setTicketSlaCondition = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.TicketTemplate} returns this
- */
-proto.api.commons.TicketTemplate.prototype.clearTicketSlaCondition = function() {
-  return this.setTicketSlaCondition(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.TicketTemplate.prototype.hasTicketSlaCondition = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
  * optional string action_type = 13;
  * @return {string}
  */
@@ -2503,80 +2424,6 @@ proto.api.commons.TicketTemplate.prototype.clearActionSkillsCondition = function
  */
 proto.api.commons.TicketTemplate.prototype.hasActionSkillsCondition = function() {
   return jspb.Message.getField(this, 15) != null;
-};
-
-
-/**
- * optional google.protobuf.Timestamp action_start_date = 16;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.api.commons.TicketTemplate.prototype.getActionStartDate = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 16));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.commons.TicketTemplate} returns this
-*/
-proto.api.commons.TicketTemplate.prototype.setActionStartDate = function(value) {
-  return jspb.Message.setWrapperField(this, 16, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.TicketTemplate} returns this
- */
-proto.api.commons.TicketTemplate.prototype.clearActionStartDate = function() {
-  return this.setActionStartDate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.TicketTemplate.prototype.hasActionStartDate = function() {
-  return jspb.Message.getField(this, 16) != null;
-};
-
-
-/**
- * optional TemplateCondition action_start_date_condition = 17;
- * @return {?proto.api.commons.TemplateCondition}
- */
-proto.api.commons.TicketTemplate.prototype.getActionStartDateCondition = function() {
-  return /** @type{?proto.api.commons.TemplateCondition} */ (
-    jspb.Message.getWrapperField(this, proto.api.commons.TemplateCondition, 17));
-};
-
-
-/**
- * @param {?proto.api.commons.TemplateCondition|undefined} value
- * @return {!proto.api.commons.TicketTemplate} returns this
-*/
-proto.api.commons.TicketTemplate.prototype.setActionStartDateCondition = function(value) {
-  return jspb.Message.setWrapperField(this, 17, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.TicketTemplate} returns this
- */
-proto.api.commons.TicketTemplate.prototype.clearActionStartDateCondition = function() {
-  return this.setActionStartDateCondition(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.TicketTemplate.prototype.hasActionStartDateCondition = function() {
-  return jspb.Message.getField(this, 17) != null;
 };
 
 
@@ -2693,43 +2540,6 @@ proto.api.commons.TicketTemplate.prototype.clearActionSlaList = function() {
 
 
 /**
- * optional TemplateCondition action_sla_condition = 21;
- * @return {?proto.api.commons.TemplateCondition}
- */
-proto.api.commons.TicketTemplate.prototype.getActionSlaCondition = function() {
-  return /** @type{?proto.api.commons.TemplateCondition} */ (
-    jspb.Message.getWrapperField(this, proto.api.commons.TemplateCondition, 21));
-};
-
-
-/**
- * @param {?proto.api.commons.TemplateCondition|undefined} value
- * @return {!proto.api.commons.TicketTemplate} returns this
-*/
-proto.api.commons.TicketTemplate.prototype.setActionSlaCondition = function(value) {
-  return jspb.Message.setWrapperField(this, 21, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.TicketTemplate} returns this
- */
-proto.api.commons.TicketTemplate.prototype.clearActionSlaCondition = function() {
-  return this.setActionSlaCondition(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.TicketTemplate.prototype.hasActionSlaCondition = function() {
-  return jspb.Message.getField(this, 21) != null;
-};
-
-
-/**
  * optional bool is_valid = 22;
  * @return {boolean}
  */
@@ -2839,6 +2649,43 @@ proto.api.commons.TicketTemplate.prototype.hasCreatedDate = function() {
 };
 
 
+/**
+ * optional TemplateCondition ticket_callback_template_condition = 26;
+ * @return {?proto.api.commons.TemplateCondition}
+ */
+proto.api.commons.TicketTemplate.prototype.getTicketCallbackTemplateCondition = function() {
+  return /** @type{?proto.api.commons.TemplateCondition} */ (
+    jspb.Message.getWrapperField(this, proto.api.commons.TemplateCondition, 26));
+};
+
+
+/**
+ * @param {?proto.api.commons.TemplateCondition|undefined} value
+ * @return {!proto.api.commons.TicketTemplate} returns this
+*/
+proto.api.commons.TicketTemplate.prototype.setTicketCallbackTemplateCondition = function(value) {
+  return jspb.Message.setWrapperField(this, 26, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.TicketTemplate} returns this
+ */
+proto.api.commons.TicketTemplate.prototype.clearTicketCallbackTemplateCondition = function() {
+  return this.setTicketCallbackTemplateCondition(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.TicketTemplate.prototype.hasTicketCallbackTemplateCondition = function() {
+  return jspb.Message.getField(this, 26) != null;
+};
+
+
 
 
 
@@ -2872,9 +2719,7 @@ proto.api.commons.TicketCallbackTemplate.prototype.toObject = function(opt_inclu
 proto.api.commons.TicketCallbackTemplate.toObject = function(includeInstance, msg) {
   var f, obj = {
     callerId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    callerIdCondition: (f = msg.getCallerIdCondition()) && proto.api.commons.TemplateCondition.toObject(includeInstance, f),
-    countryCode: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    countryCodeCondition: (f = msg.getCountryCodeCondition()) && proto.api.commons.TemplateCondition.toObject(includeInstance, f)
+    countryCode: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2916,18 +2761,8 @@ proto.api.commons.TicketCallbackTemplate.deserializeBinaryFromReader = function(
       msg.setCallerId(value);
       break;
     case 2:
-      var value = new proto.api.commons.TemplateCondition;
-      reader.readMessage(value,proto.api.commons.TemplateCondition.deserializeBinaryFromReader);
-      msg.setCallerIdCondition(value);
-      break;
-    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setCountryCode(value);
-      break;
-    case 4:
-      var value = new proto.api.commons.TemplateCondition;
-      reader.readMessage(value,proto.api.commons.TemplateCondition.deserializeBinaryFromReader);
-      msg.setCountryCodeCondition(value);
       break;
     default:
       reader.skipField();
@@ -2965,27 +2800,11 @@ proto.api.commons.TicketCallbackTemplate.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getCallerIdCondition();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      proto.api.commons.TemplateCondition.serializeBinaryToWriter
-    );
-  }
   f = message.getCountryCode();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
-    );
-  }
-  f = message.getCountryCodeCondition();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      proto.api.commons.TemplateCondition.serializeBinaryToWriter
     );
   }
 };
@@ -3010,48 +2829,11 @@ proto.api.commons.TicketCallbackTemplate.prototype.setCallerId = function(value)
 
 
 /**
- * optional TemplateCondition caller_id_condition = 2;
- * @return {?proto.api.commons.TemplateCondition}
- */
-proto.api.commons.TicketCallbackTemplate.prototype.getCallerIdCondition = function() {
-  return /** @type{?proto.api.commons.TemplateCondition} */ (
-    jspb.Message.getWrapperField(this, proto.api.commons.TemplateCondition, 2));
-};
-
-
-/**
- * @param {?proto.api.commons.TemplateCondition|undefined} value
- * @return {!proto.api.commons.TicketCallbackTemplate} returns this
-*/
-proto.api.commons.TicketCallbackTemplate.prototype.setCallerIdCondition = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.TicketCallbackTemplate} returns this
- */
-proto.api.commons.TicketCallbackTemplate.prototype.clearCallerIdCondition = function() {
-  return this.setCallerIdCondition(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.TicketCallbackTemplate.prototype.hasCallerIdCondition = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string country_code = 3;
+ * optional string country_code = 2;
  * @return {string}
  */
 proto.api.commons.TicketCallbackTemplate.prototype.getCountryCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -3060,44 +2842,7 @@ proto.api.commons.TicketCallbackTemplate.prototype.getCountryCode = function() {
  * @return {!proto.api.commons.TicketCallbackTemplate} returns this
  */
 proto.api.commons.TicketCallbackTemplate.prototype.setCountryCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional TemplateCondition country_code_condition = 4;
- * @return {?proto.api.commons.TemplateCondition}
- */
-proto.api.commons.TicketCallbackTemplate.prototype.getCountryCodeCondition = function() {
-  return /** @type{?proto.api.commons.TemplateCondition} */ (
-    jspb.Message.getWrapperField(this, proto.api.commons.TemplateCondition, 4));
-};
-
-
-/**
- * @param {?proto.api.commons.TemplateCondition|undefined} value
- * @return {!proto.api.commons.TicketCallbackTemplate} returns this
-*/
-proto.api.commons.TicketCallbackTemplate.prototype.setCountryCodeCondition = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.TicketCallbackTemplate} returns this
- */
-proto.api.commons.TicketCallbackTemplate.prototype.clearCountryCodeCondition = function() {
-  return this.setCountryCodeCondition(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.TicketCallbackTemplate.prototype.hasCountryCodeCondition = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -3140,7 +2885,8 @@ proto.api.commons.ListTemplate.toObject = function(includeInstance, msg) {
     actionType: jspb.Message.getFieldWithDefault(msg, 5, ""),
     isValid: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     createdById: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    createdDate: (f = msg.getCreatedDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    createdDate: (f = msg.getCreatedDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    projectTitle: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -3209,6 +2955,10 @@ proto.api.commons.ListTemplate.deserializeBinaryFromReader = function(msg, reade
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreatedDate(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProjectTitle(value);
       break;
     default:
       reader.skipField();
@@ -3294,6 +3044,13 @@ proto.api.commons.ListTemplate.serializeBinaryToWriter = function(message, write
       8,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getProjectTitle();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
     );
   }
 };
@@ -3462,6 +3219,24 @@ proto.api.commons.ListTemplate.prototype.hasCreatedDate = function() {
 };
 
 
+/**
+ * optional string project_title = 9;
+ * @return {string}
+ */
+proto.api.commons.ListTemplate.prototype.getProjectTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.ListTemplate} returns this
+ */
+proto.api.commons.ListTemplate.prototype.setProjectTitle = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
 
 
 
@@ -3498,7 +3273,8 @@ proto.api.commons.AssignProjectTemplate.toObject = function(includeInstance, msg
     templateName: jspb.Message.getFieldWithDefault(msg, 2, ""),
     projectSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
     projectCode: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    actionType: jspb.Message.getFieldWithDefault(msg, 5, "")
+    actionType: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    projectTitle: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -3554,6 +3330,10 @@ proto.api.commons.AssignProjectTemplate.deserializeBinaryFromReader = function(m
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setActionType(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProjectTitle(value);
       break;
     default:
       reader.skipField();
@@ -3616,6 +3396,13 @@ proto.api.commons.AssignProjectTemplate.serializeBinaryToWriter = function(messa
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getProjectTitle();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -3709,6 +3496,24 @@ proto.api.commons.AssignProjectTemplate.prototype.getActionType = function() {
  */
 proto.api.commons.AssignProjectTemplate.prototype.setActionType = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string project_title = 6;
+ * @return {string}
+ */
+proto.api.commons.AssignProjectTemplate.prototype.getProjectTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.AssignProjectTemplate} returns this
+ */
+proto.api.commons.AssignProjectTemplate.prototype.setProjectTitle = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

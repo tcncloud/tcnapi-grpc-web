@@ -1115,7 +1115,8 @@ proto.api.commons.audit.OmnichannelCreateProjectEvent.toObject = function(includ
   var f, obj = {
     clientSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    complianceConfig: (f = msg.getComplianceConfig()) && api_commons_omnichannel_pb.OmniProjectComplianceConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1163,6 +1164,11 @@ proto.api.commons.audit.OmnichannelCreateProjectEvent.deserializeBinaryFromReade
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
+      break;
+    case 4:
+      var value = new api_commons_omnichannel_pb.OmniProjectComplianceConfig;
+      reader.readMessage(value,api_commons_omnichannel_pb.OmniProjectComplianceConfig.deserializeBinaryFromReader);
+      msg.setComplianceConfig(value);
       break;
     default:
       reader.skipField();
@@ -1212,6 +1218,14 @@ proto.api.commons.audit.OmnichannelCreateProjectEvent.serializeBinaryToWriter = 
     writer.writeString(
       3,
       f
+    );
+  }
+  f = message.getComplianceConfig();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      api_commons_omnichannel_pb.OmniProjectComplianceConfig.serializeBinaryToWriter
     );
   }
 };
@@ -1268,6 +1282,43 @@ proto.api.commons.audit.OmnichannelCreateProjectEvent.prototype.getDescription =
  */
 proto.api.commons.audit.OmnichannelCreateProjectEvent.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional api.commons.OmniProjectComplianceConfig compliance_config = 4;
+ * @return {?proto.api.commons.OmniProjectComplianceConfig}
+ */
+proto.api.commons.audit.OmnichannelCreateProjectEvent.prototype.getComplianceConfig = function() {
+  return /** @type{?proto.api.commons.OmniProjectComplianceConfig} */ (
+    jspb.Message.getWrapperField(this, api_commons_omnichannel_pb.OmniProjectComplianceConfig, 4));
+};
+
+
+/**
+ * @param {?proto.api.commons.OmniProjectComplianceConfig|undefined} value
+ * @return {!proto.api.commons.audit.OmnichannelCreateProjectEvent} returns this
+*/
+proto.api.commons.audit.OmnichannelCreateProjectEvent.prototype.setComplianceConfig = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.OmnichannelCreateProjectEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelCreateProjectEvent.prototype.clearComplianceConfig = function() {
+  return this.setComplianceConfig(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.OmnichannelCreateProjectEvent.prototype.hasComplianceConfig = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

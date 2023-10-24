@@ -227,10 +227,10 @@ export namespace ListTicketTemplateRequest {
 }
 
 export class ListTicketTemplateResponse extends jspb.Message {
-  hasEnabledTemplates(): boolean;
-  clearEnabledTemplates(): void;
-  getEnabledTemplates(): api_commons_tickets_pb.ListTemplate | undefined;
-  setEnabledTemplates(value?: api_commons_tickets_pb.ListTemplate): void;
+  clearEnabledTemplatesList(): void;
+  getEnabledTemplatesList(): Array<api_commons_tickets_pb.ListTemplate>;
+  setEnabledTemplatesList(value: Array<api_commons_tickets_pb.ListTemplate>): void;
+  addEnabledTemplates(value?: api_commons_tickets_pb.ListTemplate, index?: number): api_commons_tickets_pb.ListTemplate;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTicketTemplateResponse.AsObject;
@@ -244,15 +244,15 @@ export class ListTicketTemplateResponse extends jspb.Message {
 
 export namespace ListTicketTemplateResponse {
   export type AsObject = {
-    enabledTemplates?: api_commons_tickets_pb.ListTemplate.AsObject,
+    enabledTemplatesList: Array<api_commons_tickets_pb.ListTemplate.AsObject>,
   }
 }
 
 export class AssignProjectTemplateRequest extends jspb.Message {
-  hasProjectTemplate(): boolean;
-  clearProjectTemplate(): void;
-  getProjectTemplate(): api_commons_tickets_pb.AssignProjectTemplate | undefined;
-  setProjectTemplate(value?: api_commons_tickets_pb.AssignProjectTemplate): void;
+  clearProjectTemplateList(): void;
+  getProjectTemplateList(): Array<api_commons_tickets_pb.AssignProjectTemplate>;
+  setProjectTemplateList(value: Array<api_commons_tickets_pb.AssignProjectTemplate>): void;
+  addProjectTemplate(value?: api_commons_tickets_pb.AssignProjectTemplate, index?: number): api_commons_tickets_pb.AssignProjectTemplate;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AssignProjectTemplateRequest.AsObject;
@@ -266,7 +266,7 @@ export class AssignProjectTemplateRequest extends jspb.Message {
 
 export namespace AssignProjectTemplateRequest {
   export type AsObject = {
-    projectTemplate?: api_commons_tickets_pb.AssignProjectTemplate.AsObject,
+    projectTemplateList: Array<api_commons_tickets_pb.AssignProjectTemplate.AsObject>,
   }
 }
 
