@@ -114,7 +114,8 @@ proto.api.commons.LearningOpportunity.toObject = function(includeInstance, msg) 
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     title: jspb.Message.getFieldWithDefault(msg, 12, ""),
     status: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    origin: jspb.Message.getFieldWithDefault(msg, 14, 0)
+    origin: jspb.Message.getFieldWithDefault(msg, 14, 0),
+    creatorUserId: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -199,6 +200,10 @@ proto.api.commons.LearningOpportunity.deserializeBinaryFromReader = function(msg
     case 14:
       var value = /** @type {!proto.api.commons.LearningOpportunityOrigin} */ (reader.readEnum());
       msg.setOrigin(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCreatorUserId(value);
       break;
     default:
       reader.skipField();
@@ -311,6 +316,13 @@ proto.api.commons.LearningOpportunity.serializeBinaryToWriter = function(message
   if (f !== 0.0) {
     writer.writeEnum(
       14,
+      f
+    );
+  }
+  f = message.getCreatorUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
       f
     );
   }
@@ -549,6 +561,24 @@ proto.api.commons.LearningOpportunity.prototype.getOrigin = function() {
  */
 proto.api.commons.LearningOpportunity.prototype.setOrigin = function(value) {
   return jspb.Message.setProto3EnumField(this, 14, value);
+};
+
+
+/**
+ * optional string creator_user_id = 15;
+ * @return {string}
+ */
+proto.api.commons.LearningOpportunity.prototype.getCreatorUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.LearningOpportunity} returns this
+ */
+proto.api.commons.LearningOpportunity.prototype.setCreatorUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
 };
 
 

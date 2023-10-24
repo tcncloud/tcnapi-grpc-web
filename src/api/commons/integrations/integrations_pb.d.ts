@@ -1465,6 +1465,11 @@ export class ExecuteFlow extends jspb.Message {
   getShift4CcPayment(): ExecuteShift4CcPayments | undefined;
   setShift4CcPayment(value?: ExecuteShift4CcPayments): void;
 
+  hasShift4AccessToken(): boolean;
+  clearShift4AccessToken(): void;
+  getShift4AccessToken(): ExecuteShift4CcPayments | undefined;
+  setShift4AccessToken(value?: ExecuteShift4CcPayments): void;
+
   hasPoscorpAccesstoken(): boolean;
   clearPoscorpAccesstoken(): void;
   getPoscorpAccesstoken(): ExecutePoscorpAccesstoken | undefined;
@@ -1798,6 +1803,7 @@ export namespace ExecuteFlow {
     i2cTransactionHistory?: ExecuteI2cTransactionHistory.AsObject,
     opayoCcPayment?: ExecuteOpayoCcPayments.AsObject,
     shift4CcPayment?: ExecuteShift4CcPayments.AsObject,
+    shift4AccessToken?: ExecuteShift4CcPayments.AsObject,
     poscorpAccesstoken?: ExecutePoscorpAccesstoken.AsObject,
     poscorpLookupGuarantor?: ExecutePoscorpLookupGuarantor.AsObject,
     poscorpUpdatePaymentStatus?: ExecutePoscorpUpdatePaymentStatus.AsObject,
@@ -2001,6 +2007,7 @@ export namespace ExecuteFlow {
     I2C_TRANSACTION_HISTORY = 3210,
     OPAYO_CC_PAYMENT = 3301,
     SHIFT4_CC_PAYMENT = 3401,
+    SHIFT4_ACCESS_TOKEN = 3402,
     POSCORP_ACCESSTOKEN = 3501,
     POSCORP_LOOKUP_GUARANTOR = 3502,
     POSCORP_UPDATE_PAYMENT_STATUS = 3503,
@@ -5227,6 +5234,22 @@ export namespace ExecuteShift4CcPayments {
   }
 }
 
+export class ExecuteShift4AccessToken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteShift4AccessToken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteShift4AccessToken): ExecuteShift4AccessToken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteShift4AccessToken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteShift4AccessToken;
+  static deserializeBinaryFromReader(message: ExecuteShift4AccessToken, reader: jspb.BinaryReader): ExecuteShift4AccessToken;
+}
+
+export namespace ExecuteShift4AccessToken {
+  export type AsObject = {
+  }
+}
+
 export class ExecutePoscorpAccesstoken extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecutePoscorpAccesstoken.AsObject;
@@ -5925,6 +5948,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_I2C_TRANSACTION_HISTORY: 3210;
   REQUEST_METHOD_OPAYO_CCPAYMENTS: 3301;
   REQUEST_METHOD_SHIFT4_CCPAYMENTS: 3401;
+  REQUEST_METHOD_SHIFT4_ACCESSTOKEN: 3402;
   REQUEST_METHOD_POSCORP_ACCESSTOKEN: 3501;
   REQUEST_METHOD_POSCORP_LOOKUP_GUARANTOR: 3502;
   REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS: 3503;

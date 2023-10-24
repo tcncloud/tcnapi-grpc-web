@@ -203,6 +203,33 @@ Room303API.ListUsersNames = {
   responseType: api_v1alpha1_room303_room_pb.ListUsersNamesResponse
 };
 
+Room303API.UpdateRoomConfig = {
+  methodName: "UpdateRoomConfig",
+  service: Room303API,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_room303_room_pb.UpdateRoomConfigRequest,
+  responseType: api_commons_room303_pb.Room
+};
+
+Room303API.UpdateGlobalConfig = {
+  methodName: "UpdateGlobalConfig",
+  service: Room303API,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_room303_room_pb.UpdateGlobalConfigRequest,
+  responseType: api_v1alpha1_room303_room_pb.UpdateGlobalConfigResponse
+};
+
+Room303API.GetGlobalConfig = {
+  methodName: "GetGlobalConfig",
+  service: Room303API,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_room303_room_pb.GetGlobalConfigRequest,
+  responseType: api_v1alpha1_room303_room_pb.GetGlobalConfigResponse
+};
+
 exports.Room303API = Room303API;
 
 function Room303APIClient(serviceHost, options) {
@@ -872,6 +899,99 @@ Room303APIClient.prototype.listUsersNames = function listUsersNames(requestMessa
     },
     cancel: function () {
       listeners = null;
+      client.close();
+    }
+  };
+};
+
+Room303APIClient.prototype.updateRoomConfig = function updateRoomConfig(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Room303API.UpdateRoomConfig, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+Room303APIClient.prototype.updateGlobalConfig = function updateGlobalConfig(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Room303API.UpdateGlobalConfig, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+Room303APIClient.prototype.getGlobalConfig = function getGlobalConfig(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Room303API.GetGlobalConfig, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
       client.close();
     }
   };
