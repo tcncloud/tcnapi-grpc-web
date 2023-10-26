@@ -9,7 +9,6 @@ import * as api_commons_lms_pb from "../../api/commons/lms_pb";
 import * as api_commons_perms_pb from "../../api/commons/perms_pb";
 import * as api_commons_types_pb from "../../api/commons/types_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
-import * as google_api_httpbody_pb from "../../google/api/httpbody_pb";
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
@@ -7210,28 +7209,6 @@ export namespace EntityURL {
   export type AsObject = {
     entityType: EpicEntityTypeMap[keyof EpicEntityTypeMap],
     url: string,
-  }
-}
-
-export class SampleRequest extends jspb.Message {
-  hasHttpBody(): boolean;
-  clearHttpBody(): void;
-  getHttpBody(): google_api_httpbody_pb.HttpBody | undefined;
-  setHttpBody(value?: google_api_httpbody_pb.HttpBody): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SampleRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: SampleRequest): SampleRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SampleRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SampleRequest;
-  static deserializeBinaryFromReader(message: SampleRequest, reader: jspb.BinaryReader): SampleRequest;
-}
-
-export namespace SampleRequest {
-  export type AsObject = {
-    httpBody?: google_api_httpbody_pb.HttpBody.AsObject,
   }
 }
 
