@@ -506,6 +506,15 @@ LMS.UpdateCjsSecureSearchCriteria = {
   responseType: google_protobuf_empty_pb.Empty
 };
 
+LMS.SampleEndpoint = {
+  methodName: "SampleEndpoint",
+  service: LMS,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.SampleRequest,
+  responseType: google_protobuf_empty_pb.Empty
+};
+
 LMS.GetQueuedEventsStatusByElementId = {
   methodName: "GetQueuedEventsStatusByElementId",
   service: LMS,
@@ -2251,6 +2260,37 @@ LMSClient.prototype.updateCjsSecureSearchCriteria = function updateCjsSecureSear
     callback = arguments[1];
   }
   var client = grpc.unary(LMS.UpdateCjsSecureSearchCriteria, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.sampleEndpoint = function sampleEndpoint(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LMS.SampleEndpoint, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
