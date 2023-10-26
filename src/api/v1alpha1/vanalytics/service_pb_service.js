@@ -280,6 +280,42 @@ Vanalytics.CreateCorrection = {
   responseType: api_v1alpha1_vanalytics_correction_pb.CreateCorrectionResponse
 };
 
+Vanalytics.GetCorrection = {
+  methodName: "GetCorrection",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_vanalytics_correction_pb.GetCorrectionRequest,
+  responseType: api_v1alpha1_vanalytics_correction_pb.Correction
+};
+
+Vanalytics.DeleteCorrection = {
+  methodName: "DeleteCorrection",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_vanalytics_correction_pb.DeleteCorrectionRequest,
+  responseType: api_v1alpha1_vanalytics_correction_pb.DeleteCorrectionResponse
+};
+
+Vanalytics.ListCorrections = {
+  methodName: "ListCorrections",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_vanalytics_correction_pb.ListCorrectionsRequest,
+  responseType: api_v1alpha1_vanalytics_correction_pb.ListCorrectionsResponse
+};
+
+Vanalytics.UpdateCorrection = {
+  methodName: "UpdateCorrection",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_vanalytics_correction_pb.UpdateCorrectionRequest,
+  responseType: api_v1alpha1_vanalytics_correction_pb.UpdateCorrectionResponse
+};
+
 exports.Vanalytics = Vanalytics;
 
 function VanalyticsClient(serviceHost, options) {
@@ -1160,6 +1196,130 @@ VanalyticsClient.prototype.createCorrection = function createCorrection(requestM
     callback = arguments[1];
   }
   var client = grpc.unary(Vanalytics.CreateCorrection, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.getCorrection = function getCorrection(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.GetCorrection, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.deleteCorrection = function deleteCorrection(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.DeleteCorrection, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.listCorrections = function listCorrections(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.ListCorrections, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.updateCorrection = function updateCorrection(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.UpdateCorrection, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

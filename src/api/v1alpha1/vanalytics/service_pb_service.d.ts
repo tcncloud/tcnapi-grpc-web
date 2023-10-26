@@ -274,6 +274,42 @@ type VanalyticsCreateCorrection = {
   readonly responseType: typeof api_v1alpha1_vanalytics_correction_pb.CreateCorrectionResponse;
 };
 
+type VanalyticsGetCorrection = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_vanalytics_correction_pb.GetCorrectionRequest;
+  readonly responseType: typeof api_v1alpha1_vanalytics_correction_pb.Correction;
+};
+
+type VanalyticsDeleteCorrection = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_vanalytics_correction_pb.DeleteCorrectionRequest;
+  readonly responseType: typeof api_v1alpha1_vanalytics_correction_pb.DeleteCorrectionResponse;
+};
+
+type VanalyticsListCorrections = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_vanalytics_correction_pb.ListCorrectionsRequest;
+  readonly responseType: typeof api_v1alpha1_vanalytics_correction_pb.ListCorrectionsResponse;
+};
+
+type VanalyticsUpdateCorrection = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_vanalytics_correction_pb.UpdateCorrectionRequest;
+  readonly responseType: typeof api_v1alpha1_vanalytics_correction_pb.UpdateCorrectionResponse;
+};
+
 export class Vanalytics {
   static readonly serviceName: string;
   static readonly Audit: VanalyticsAudit;
@@ -305,6 +341,10 @@ export class Vanalytics {
   static readonly ListFlagSnapshots: VanalyticsListFlagSnapshots;
   static readonly ListFlagTranscriptFilters: VanalyticsListFlagTranscriptFilters;
   static readonly CreateCorrection: VanalyticsCreateCorrection;
+  static readonly GetCorrection: VanalyticsGetCorrection;
+  static readonly DeleteCorrection: VanalyticsDeleteCorrection;
+  static readonly ListCorrections: VanalyticsListCorrections;
+  static readonly UpdateCorrection: VanalyticsUpdateCorrection;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -599,6 +639,42 @@ export class VanalyticsClient {
   createCorrection(
     requestMessage: api_v1alpha1_vanalytics_correction_pb.CreateCorrectionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_correction_pb.CreateCorrectionResponse|null) => void
+  ): UnaryResponse;
+  getCorrection(
+    requestMessage: api_v1alpha1_vanalytics_correction_pb.GetCorrectionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_correction_pb.Correction|null) => void
+  ): UnaryResponse;
+  getCorrection(
+    requestMessage: api_v1alpha1_vanalytics_correction_pb.GetCorrectionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_correction_pb.Correction|null) => void
+  ): UnaryResponse;
+  deleteCorrection(
+    requestMessage: api_v1alpha1_vanalytics_correction_pb.DeleteCorrectionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_correction_pb.DeleteCorrectionResponse|null) => void
+  ): UnaryResponse;
+  deleteCorrection(
+    requestMessage: api_v1alpha1_vanalytics_correction_pb.DeleteCorrectionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_correction_pb.DeleteCorrectionResponse|null) => void
+  ): UnaryResponse;
+  listCorrections(
+    requestMessage: api_v1alpha1_vanalytics_correction_pb.ListCorrectionsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_correction_pb.ListCorrectionsResponse|null) => void
+  ): UnaryResponse;
+  listCorrections(
+    requestMessage: api_v1alpha1_vanalytics_correction_pb.ListCorrectionsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_correction_pb.ListCorrectionsResponse|null) => void
+  ): UnaryResponse;
+  updateCorrection(
+    requestMessage: api_v1alpha1_vanalytics_correction_pb.UpdateCorrectionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_correction_pb.UpdateCorrectionResponse|null) => void
+  ): UnaryResponse;
+  updateCorrection(
+    requestMessage: api_v1alpha1_vanalytics_correction_pb.UpdateCorrectionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_correction_pb.UpdateCorrectionResponse|null) => void
   ): UnaryResponse;
 }
 
