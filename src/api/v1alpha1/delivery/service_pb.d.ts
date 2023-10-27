@@ -2351,8 +2351,8 @@ export namespace SMSTransport {
 }
 
 export class AESEncryptionRef extends jspb.Message {
-  getAesSid(): number;
-  setAesSid(value: number): void;
+  getAesSid(): string;
+  setAesSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AESEncryptionRef.AsObject;
@@ -2366,13 +2366,13 @@ export class AESEncryptionRef extends jspb.Message {
 
 export namespace AESEncryptionRef {
   export type AsObject = {
-    aesSid: number,
+    aesSid: string,
   }
 }
 
 export class PGPEncryptionRef extends jspb.Message {
-  getPgpSid(): number;
-  setPgpSid(value: number): void;
+  getPgpSid(): string;
+  setPgpSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PGPEncryptionRef.AsObject;
@@ -2386,13 +2386,13 @@ export class PGPEncryptionRef extends jspb.Message {
 
 export namespace PGPEncryptionRef {
   export type AsObject = {
-    pgpSid: number,
+    pgpSid: string,
   }
 }
 
 export class PasswordRef extends jspb.Message {
-  getPasswordSid(): number;
-  setPasswordSid(value: number): void;
+  getPasswordSid(): string;
+  setPasswordSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PasswordRef.AsObject;
@@ -2406,13 +2406,13 @@ export class PasswordRef extends jspb.Message {
 
 export namespace PasswordRef {
   export type AsObject = {
-    passwordSid: number,
+    passwordSid: string,
   }
 }
 
 export class SSHKeyRef extends jspb.Message {
-  getSshKeySid(): number;
-  setSshKeySid(value: number): void;
+  getSshKeySid(): string;
+  setSshKeySid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SSHKeyRef.AsObject;
@@ -2426,7 +2426,7 @@ export class SSHKeyRef extends jspb.Message {
 
 export namespace SSHKeyRef {
   export type AsObject = {
-    sshKeySid: number,
+    sshKeySid: string,
   }
 }
 

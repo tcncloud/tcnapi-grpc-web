@@ -18459,7 +18459,7 @@ proto.api.v1alpha1.delivery.AESEncryptionRef.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.delivery.AESEncryptionRef.toObject = function(includeInstance, msg) {
   var f, obj = {
-    aesSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    aesSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -18497,7 +18497,7 @@ proto.api.v1alpha1.delivery.AESEncryptionRef.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAesSid(value);
       break;
     default:
@@ -18530,8 +18530,8 @@ proto.api.v1alpha1.delivery.AESEncryptionRef.prototype.serializeBinary = functio
 proto.api.v1alpha1.delivery.AESEncryptionRef.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAesSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -18541,19 +18541,19 @@ proto.api.v1alpha1.delivery.AESEncryptionRef.serializeBinaryToWriter = function(
 
 /**
  * optional int64 aes_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.delivery.AESEncryptionRef.prototype.getAesSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.delivery.AESEncryptionRef} returns this
  */
 proto.api.v1alpha1.delivery.AESEncryptionRef.prototype.setAesSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -18589,7 +18589,7 @@ proto.api.v1alpha1.delivery.PGPEncryptionRef.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.delivery.PGPEncryptionRef.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pgpSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    pgpSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -18627,7 +18627,7 @@ proto.api.v1alpha1.delivery.PGPEncryptionRef.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setPgpSid(value);
       break;
     default:
@@ -18660,8 +18660,8 @@ proto.api.v1alpha1.delivery.PGPEncryptionRef.prototype.serializeBinary = functio
 proto.api.v1alpha1.delivery.PGPEncryptionRef.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getPgpSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -18671,19 +18671,19 @@ proto.api.v1alpha1.delivery.PGPEncryptionRef.serializeBinaryToWriter = function(
 
 /**
  * optional int64 pgp_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.delivery.PGPEncryptionRef.prototype.getPgpSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.delivery.PGPEncryptionRef} returns this
  */
 proto.api.v1alpha1.delivery.PGPEncryptionRef.prototype.setPgpSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -18719,7 +18719,7 @@ proto.api.v1alpha1.delivery.PasswordRef.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.delivery.PasswordRef.toObject = function(includeInstance, msg) {
   var f, obj = {
-    passwordSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    passwordSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -18757,7 +18757,7 @@ proto.api.v1alpha1.delivery.PasswordRef.deserializeBinaryFromReader = function(m
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setPasswordSid(value);
       break;
     default:
@@ -18790,8 +18790,8 @@ proto.api.v1alpha1.delivery.PasswordRef.prototype.serializeBinary = function() {
 proto.api.v1alpha1.delivery.PasswordRef.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getPasswordSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -18801,19 +18801,19 @@ proto.api.v1alpha1.delivery.PasswordRef.serializeBinaryToWriter = function(messa
 
 /**
  * optional int64 password_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.delivery.PasswordRef.prototype.getPasswordSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.delivery.PasswordRef} returns this
  */
 proto.api.v1alpha1.delivery.PasswordRef.prototype.setPasswordSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -18849,7 +18849,7 @@ proto.api.v1alpha1.delivery.SSHKeyRef.prototype.toObject = function(opt_includeI
  */
 proto.api.v1alpha1.delivery.SSHKeyRef.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sshKeySid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    sshKeySid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -18887,7 +18887,7 @@ proto.api.v1alpha1.delivery.SSHKeyRef.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setSshKeySid(value);
       break;
     default:
@@ -18920,8 +18920,8 @@ proto.api.v1alpha1.delivery.SSHKeyRef.prototype.serializeBinary = function() {
 proto.api.v1alpha1.delivery.SSHKeyRef.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSshKeySid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -18931,19 +18931,19 @@ proto.api.v1alpha1.delivery.SSHKeyRef.serializeBinaryToWriter = function(message
 
 /**
  * optional int64 ssh_key_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.delivery.SSHKeyRef.prototype.getSshKeySid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.delivery.SSHKeyRef} returns this
  */
 proto.api.v1alpha1.delivery.SSHKeyRef.prototype.setSshKeySid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
