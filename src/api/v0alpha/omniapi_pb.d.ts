@@ -1522,8 +1522,6 @@ export class GetNextQueuedTaskRequest extends jspb.Message {
   getSkills(): api_commons_omnichannel_pb.OmniConversationSkills | undefined;
   setSkills(value?: api_commons_omnichannel_pb.OmniConversationSkills): void;
 
-  getAgentSkillsMap(): jspb.Map<string, number>;
-  clearAgentSkillsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetNextQueuedTaskRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetNextQueuedTaskRequest): GetNextQueuedTaskRequest.AsObject;
@@ -1537,7 +1535,6 @@ export class GetNextQueuedTaskRequest extends jspb.Message {
 export namespace GetNextQueuedTaskRequest {
   export type AsObject = {
     skills?: api_commons_omnichannel_pb.OmniConversationSkills.AsObject,
-    agentSkillsMap: Array<[string, number]>,
   }
 }
 
