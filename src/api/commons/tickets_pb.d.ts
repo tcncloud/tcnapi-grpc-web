@@ -151,16 +151,6 @@ export class TicketTemplate extends jspb.Message {
   getTemplateName(): string;
   setTemplateName(value: string): void;
 
-  hasTemplateStartDate(): boolean;
-  clearTemplateStartDate(): void;
-  getTemplateStartDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setTemplateStartDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  hasTemplateEndDate(): boolean;
-  clearTemplateEndDate(): void;
-  getTemplateEndDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setTemplateEndDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
   getTicketTitle(): string;
   setTicketTitle(value: string): void;
 
@@ -255,8 +245,6 @@ export namespace TicketTemplate {
   export type AsObject = {
     ticketTemplateId: string,
     templateName: string,
-    templateStartDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    templateEndDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     ticketTitle: string,
     ticketDescription: string,
     titleCondition?: TemplateCondition.AsObject,

@@ -1641,8 +1641,6 @@ proto.api.commons.TicketTemplate.toObject = function(includeInstance, msg) {
   var f, obj = {
     ticketTemplateId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     templateName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    templateStartDate: (f = msg.getTemplateStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    templateEndDate: (f = msg.getTemplateEndDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     ticketTitle: jspb.Message.getFieldWithDefault(msg, 5, ""),
     ticketDescription: jspb.Message.getFieldWithDefault(msg, 6, ""),
     titleCondition: (f = msg.getTitleCondition()) && proto.api.commons.TemplateCondition.toObject(includeInstance, f),
@@ -1707,16 +1705,6 @@ proto.api.commons.TicketTemplate.deserializeBinaryFromReader = function(msg, rea
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setTemplateName(value);
-      break;
-    case 3:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setTemplateStartDate(value);
-      break;
-    case 4:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setTemplateEndDate(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -1843,22 +1831,6 @@ proto.api.commons.TicketTemplate.serializeBinaryToWriter = function(message, wri
     writer.writeString(
       2,
       f
-    );
-  }
-  f = message.getTemplateStartDate();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getTemplateEndDate();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
   f = message.getTicketTitle();
@@ -2035,80 +2007,6 @@ proto.api.commons.TicketTemplate.prototype.getTemplateName = function() {
  */
 proto.api.commons.TicketTemplate.prototype.setTemplateName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional google.protobuf.Timestamp template_start_date = 3;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.api.commons.TicketTemplate.prototype.getTemplateStartDate = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.commons.TicketTemplate} returns this
-*/
-proto.api.commons.TicketTemplate.prototype.setTemplateStartDate = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.TicketTemplate} returns this
- */
-proto.api.commons.TicketTemplate.prototype.clearTemplateStartDate = function() {
-  return this.setTemplateStartDate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.TicketTemplate.prototype.hasTemplateStartDate = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional google.protobuf.Timestamp template_end_date = 4;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.api.commons.TicketTemplate.prototype.getTemplateEndDate = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.commons.TicketTemplate} returns this
-*/
-proto.api.commons.TicketTemplate.prototype.setTemplateEndDate = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.TicketTemplate} returns this
- */
-proto.api.commons.TicketTemplate.prototype.clearTemplateEndDate = function() {
-  return this.setTemplateEndDate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.TicketTemplate.prototype.hasTemplateEndDate = function() {
-  return jspb.Message.getField(this, 4) != null;
 };
 
 
