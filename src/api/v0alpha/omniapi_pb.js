@@ -13456,7 +13456,8 @@ proto.api.v0alpha.GetNextQueuedTaskRequest.prototype.toObject = function(opt_inc
  */
 proto.api.v0alpha.GetNextQueuedTaskRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skills: (f = msg.getSkills()) && api_commons_omnichannel_pb.OmniConversationSkills.toObject(includeInstance, f)
+    skills: (f = msg.getSkills()) && api_commons_omnichannel_pb.OmniConversationSkills.toObject(includeInstance, f),
+    agentSkillsMap: (f = msg.getAgentSkillsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -13498,6 +13499,12 @@ proto.api.v0alpha.GetNextQueuedTaskRequest.deserializeBinaryFromReader = functio
       reader.readMessage(value,api_commons_omnichannel_pb.OmniConversationSkills.deserializeBinaryFromReader);
       msg.setSkills(value);
       break;
+    case 2:
+      var value = msg.getAgentSkillsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt64, null, "", 0);
+         });
+      break;
     default:
       reader.skipField();
       break;
@@ -13534,6 +13541,10 @@ proto.api.v0alpha.GetNextQueuedTaskRequest.serializeBinaryToWriter = function(me
       f,
       api_commons_omnichannel_pb.OmniConversationSkills.serializeBinaryToWriter
     );
+  }
+  f = message.getAgentSkillsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt64);
   }
 };
 
@@ -13572,6 +13583,29 @@ proto.api.v0alpha.GetNextQueuedTaskRequest.prototype.clearSkills = function() {
  */
 proto.api.v0alpha.GetNextQueuedTaskRequest.prototype.hasSkills = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * map<string, int64> agent_skills = 2;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.api.v0alpha.GetNextQueuedTaskRequest.prototype.getAgentSkillsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.api.v0alpha.GetNextQueuedTaskRequest} returns this
+ */
+proto.api.v0alpha.GetNextQueuedTaskRequest.prototype.clearAgentSkillsMap = function() {
+  this.getAgentSkillsMap().clear();
+  return this;
 };
 
 

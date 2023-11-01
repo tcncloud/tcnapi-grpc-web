@@ -8210,6 +8210,60 @@ export namespace CreateShiftInstanceV2Res {
   }
 }
 
+export class SplitShiftInstanceReq extends jspb.Message {
+  getShiftInstanceSid(): number;
+  setShiftInstanceSid(value: number): void;
+
+  hasTimeToSplit(): boolean;
+  clearTimeToSplit(): void;
+  getTimeToSplit(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimeToSplit(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SplitShiftInstanceReq.AsObject;
+  static toObject(includeInstance: boolean, msg: SplitShiftInstanceReq): SplitShiftInstanceReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SplitShiftInstanceReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SplitShiftInstanceReq;
+  static deserializeBinaryFromReader(message: SplitShiftInstanceReq, reader: jspb.BinaryReader): SplitShiftInstanceReq;
+}
+
+export namespace SplitShiftInstanceReq {
+  export type AsObject = {
+    shiftInstanceSid: number,
+    timeToSplit?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class SplitShiftInstanceRes extends jspb.Message {
+  clearShiftInstancesList(): void;
+  getShiftInstancesList(): Array<ShiftInstance>;
+  setShiftInstancesList(value: Array<ShiftInstance>): void;
+  addShiftInstances(value?: ShiftInstance, index?: number): ShiftInstance;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SplitShiftInstanceRes.AsObject;
+  static toObject(includeInstance: boolean, msg: SplitShiftInstanceRes): SplitShiftInstanceRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SplitShiftInstanceRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SplitShiftInstanceRes;
+  static deserializeBinaryFromReader(message: SplitShiftInstanceRes, reader: jspb.BinaryReader): SplitShiftInstanceRes;
+}
+
+export namespace SplitShiftInstanceRes {
+  export type AsObject = {
+    shiftInstancesList: Array<ShiftInstance.AsObject>,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
 export class SwapShiftInstancesReq extends jspb.Message {
   getWfmAgentSid1(): number;
   setWfmAgentSid1(value: number): void;

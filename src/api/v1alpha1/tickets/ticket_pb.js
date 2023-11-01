@@ -283,7 +283,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.tickets.AssignProjectTemplateRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.v1alpha1.tickets.AssignProjectTemplateRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -3096,13 +3096,6 @@ proto.api.v1alpha1.tickets.ListTicketTemplateResponse.prototype.clearEnabledTemp
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.repeatedFields_ = [1];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -3134,8 +3127,7 @@ proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    projectTemplateList: jspb.Message.toObjectList(msg.getProjectTemplateList(),
-    api_commons_tickets_pb.AssignProjectTemplate.toObject, includeInstance)
+    projectTemplate: (f = msg.getProjectTemplate()) && api_commons_tickets_pb.AssignProjectTemplate.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3175,7 +3167,7 @@ proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.deserializeBinaryFromRea
     case 1:
       var value = new api_commons_tickets_pb.AssignProjectTemplate;
       reader.readMessage(value,api_commons_tickets_pb.AssignProjectTemplate.deserializeBinaryFromReader);
-      msg.addProjectTemplate(value);
+      msg.setProjectTemplate(value);
       break;
     default:
       reader.skipField();
@@ -3206,9 +3198,9 @@ proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.serializeBinar
  */
 proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getProjectTemplateList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getProjectTemplate();
+  if (f != null) {
+    writer.writeMessage(
       1,
       f,
       api_commons_tickets_pb.AssignProjectTemplate.serializeBinaryToWriter
@@ -3218,40 +3210,39 @@ proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.serializeBinaryToWriter 
 
 
 /**
- * repeated api.commons.AssignProjectTemplate project_template = 1;
- * @return {!Array<!proto.api.commons.AssignProjectTemplate>}
+ * optional api.commons.AssignProjectTemplate project_template = 1;
+ * @return {?proto.api.commons.AssignProjectTemplate}
  */
-proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.getProjectTemplateList = function() {
-  return /** @type{!Array<!proto.api.commons.AssignProjectTemplate>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_tickets_pb.AssignProjectTemplate, 1));
+proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.getProjectTemplate = function() {
+  return /** @type{?proto.api.commons.AssignProjectTemplate} */ (
+    jspb.Message.getWrapperField(this, api_commons_tickets_pb.AssignProjectTemplate, 1));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.AssignProjectTemplate>} value
+ * @param {?proto.api.commons.AssignProjectTemplate|undefined} value
  * @return {!proto.api.v1alpha1.tickets.AssignProjectTemplateRequest} returns this
 */
-proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.setProjectTemplateList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.setProjectTemplate = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.api.commons.AssignProjectTemplate=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.commons.AssignProjectTemplate}
- */
-proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.addProjectTemplate = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.commons.AssignProjectTemplate, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.tickets.AssignProjectTemplateRequest} returns this
  */
-proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.clearProjectTemplateList = function() {
-  return this.setProjectTemplateList([]);
+proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.clearProjectTemplate = function() {
+  return this.setProjectTemplate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.hasProjectTemplate = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

@@ -263,10 +263,10 @@ export namespace ListTicketTemplateResponse {
 }
 
 export class AssignProjectTemplateRequest extends jspb.Message {
-  clearProjectTemplateList(): void;
-  getProjectTemplateList(): Array<api_commons_tickets_pb.AssignProjectTemplate>;
-  setProjectTemplateList(value: Array<api_commons_tickets_pb.AssignProjectTemplate>): void;
-  addProjectTemplate(value?: api_commons_tickets_pb.AssignProjectTemplate, index?: number): api_commons_tickets_pb.AssignProjectTemplate;
+  hasProjectTemplate(): boolean;
+  clearProjectTemplate(): void;
+  getProjectTemplate(): api_commons_tickets_pb.AssignProjectTemplate | undefined;
+  setProjectTemplate(value?: api_commons_tickets_pb.AssignProjectTemplate): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AssignProjectTemplateRequest.AsObject;
@@ -280,7 +280,7 @@ export class AssignProjectTemplateRequest extends jspb.Message {
 
 export namespace AssignProjectTemplateRequest {
   export type AsObject = {
-    projectTemplateList: Array<api_commons_tickets_pb.AssignProjectTemplate.AsObject>,
+    projectTemplate?: api_commons_tickets_pb.AssignProjectTemplate.AsObject,
   }
 }
 
