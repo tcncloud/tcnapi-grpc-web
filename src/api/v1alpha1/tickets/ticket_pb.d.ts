@@ -211,6 +211,17 @@ export namespace EditTicketTemplateResponse {
 }
 
 export class ListTicketTemplateRequest extends jspb.Message {
+  getTicketTemplateId(): number;
+  setTicketTemplateId(value: number): void;
+
+  getProjectId(): number;
+  setProjectId(value: number): void;
+
+  hasRequestMask(): boolean;
+  clearRequestMask(): void;
+  getRequestMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setRequestMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTicketTemplateRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListTicketTemplateRequest): ListTicketTemplateRequest.AsObject;
@@ -223,6 +234,9 @@ export class ListTicketTemplateRequest extends jspb.Message {
 
 export namespace ListTicketTemplateRequest {
   export type AsObject = {
+    ticketTemplateId: number,
+    projectId: number,
+    requestMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 

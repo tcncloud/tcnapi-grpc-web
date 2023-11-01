@@ -2756,7 +2756,9 @@ proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.tickets.ListTicketTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    ticketTemplateId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    requestMask: (f = msg.getRequestMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2793,6 +2795,19 @@ proto.api.v1alpha1.tickets.ListTicketTemplateRequest.deserializeBinaryFromReader
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTicketTemplateId(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setProjectId(value);
+      break;
+    case 3:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setRequestMask(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2822,6 +2837,101 @@ proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.serializeBinary =
  */
 proto.api.v1alpha1.tickets.ListTicketTemplateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getTicketTemplateId();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getProjectId();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
+  f = message.getRequestMask();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional int64 ticket_template_id = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.getTicketTemplateId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.tickets.ListTicketTemplateRequest} returns this
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.setTicketTemplateId = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional int64 project_id = 2;
+ * @return {number}
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.getProjectId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.tickets.ListTicketTemplateRequest} returns this
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.setProjectId = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional google.protobuf.FieldMask request_mask = 3;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.getRequestMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.tickets.ListTicketTemplateRequest} returns this
+*/
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.setRequestMask = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.tickets.ListTicketTemplateRequest} returns this
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.clearRequestMask = function() {
+  return this.setRequestMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.hasRequestMask = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
