@@ -187,17 +187,14 @@ export class ListTemplate extends jspb.Message {
   getTemplateName(): string;
   setTemplateName(value: string): void;
 
-  getProjectSid(): string;
-  setProjectSid(value: string): void;
+  getProjectId(): string;
+  setProjectId(value: string): void;
 
   getProjectCode(): string;
   setProjectCode(value: string): void;
 
-  getActionType(): string;
-  setActionType(value: string): void;
-
-  getIsValid(): boolean;
-  setIsValid(value: boolean): void;
+  getIsActive(): boolean;
+  setIsActive(value: boolean): void;
 
   getCreatedById(): string;
   setCreatedById(value: string): void;
@@ -224,10 +221,9 @@ export namespace ListTemplate {
   export type AsObject = {
     ticketTemplateId: string,
     templateName: string,
-    projectSid: string,
+    projectId: string,
     projectCode: string,
-    actionType: string,
-    isValid: boolean,
+    isActive: boolean,
     createdById: string,
     createdDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     projectTitle: string,

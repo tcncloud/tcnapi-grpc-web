@@ -1872,10 +1872,9 @@ proto.api.commons.ListTemplate.toObject = function(includeInstance, msg) {
   var f, obj = {
     ticketTemplateId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     templateName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    projectSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
+    projectId: jspb.Message.getFieldWithDefault(msg, 3, "0"),
     projectCode: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    actionType: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    isValid: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     createdById: jspb.Message.getFieldWithDefault(msg, 7, ""),
     createdDate: (f = msg.getCreatedDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     projectTitle: jspb.Message.getFieldWithDefault(msg, 9, "")
@@ -1925,19 +1924,15 @@ proto.api.commons.ListTemplate.deserializeBinaryFromReader = function(msg, reade
       break;
     case 3:
       var value = /** @type {string} */ (reader.readInt64String());
-      msg.setProjectSid(value);
+      msg.setProjectId(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setProjectCode(value);
       break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setActionType(value);
-      break;
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsValid(value);
+      msg.setIsActive(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
@@ -1995,7 +1990,7 @@ proto.api.commons.ListTemplate.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getProjectSid();
+  f = message.getProjectId();
   if (parseInt(f, 10) !== 0) {
     writer.writeInt64String(
       3,
@@ -2009,14 +2004,7 @@ proto.api.commons.ListTemplate.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getActionType();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = message.getIsValid();
+  f = message.getIsActive();
   if (f) {
     writer.writeBool(
       6,
@@ -2085,10 +2073,10 @@ proto.api.commons.ListTemplate.prototype.setTemplateName = function(value) {
 
 
 /**
- * optional int64 project_sid = 3;
+ * optional int64 project_id = 3;
  * @return {string}
  */
-proto.api.commons.ListTemplate.prototype.getProjectSid = function() {
+proto.api.commons.ListTemplate.prototype.getProjectId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, "0"));
 };
 
@@ -2097,7 +2085,7 @@ proto.api.commons.ListTemplate.prototype.getProjectSid = function() {
  * @param {string} value
  * @return {!proto.api.commons.ListTemplate} returns this
  */
-proto.api.commons.ListTemplate.prototype.setProjectSid = function(value) {
+proto.api.commons.ListTemplate.prototype.setProjectId = function(value) {
   return jspb.Message.setProto3StringIntField(this, 3, value);
 };
 
@@ -2121,28 +2109,10 @@ proto.api.commons.ListTemplate.prototype.setProjectCode = function(value) {
 
 
 /**
- * optional string action_type = 5;
- * @return {string}
- */
-proto.api.commons.ListTemplate.prototype.getActionType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.ListTemplate} returns this
- */
-proto.api.commons.ListTemplate.prototype.setActionType = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional bool is_valid = 6;
+ * optional bool is_active = 6;
  * @return {boolean}
  */
-proto.api.commons.ListTemplate.prototype.getIsValid = function() {
+proto.api.commons.ListTemplate.prototype.getIsActive = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
@@ -2151,7 +2121,7 @@ proto.api.commons.ListTemplate.prototype.getIsValid = function() {
  * @param {boolean} value
  * @return {!proto.api.commons.ListTemplate} returns this
  */
-proto.api.commons.ListTemplate.prototype.setIsValid = function(value) {
+proto.api.commons.ListTemplate.prototype.setIsActive = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
