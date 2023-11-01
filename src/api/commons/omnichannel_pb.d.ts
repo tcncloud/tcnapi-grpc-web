@@ -2604,6 +2604,7 @@ export interface SmsNumberProviderMap {
   PLIVO_PROVIDER: 3;
   APEIRON_PROVIDER: 4;
   AUSBURST_SMS_PROVIDER: 5;
+  MEDIASAT_SMS_PROVIDER: 6;
 }
 
 export const SmsNumberProvider: SmsNumberProviderMap;
