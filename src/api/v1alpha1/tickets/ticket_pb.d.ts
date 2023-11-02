@@ -114,6 +114,196 @@ export namespace CreateTicketReq {
   }
 }
 
+export class CreateTicketTemplateRequest extends jspb.Message {
+  hasTicketTemplate(): boolean;
+  clearTicketTemplate(): void;
+  getTicketTemplate(): api_commons_tickets_pb.TicketTemplate | undefined;
+  setTicketTemplate(value?: api_commons_tickets_pb.TicketTemplate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTicketTemplateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTicketTemplateRequest): CreateTicketTemplateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTicketTemplateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTicketTemplateRequest;
+  static deserializeBinaryFromReader(message: CreateTicketTemplateRequest, reader: jspb.BinaryReader): CreateTicketTemplateRequest;
+}
+
+export namespace CreateTicketTemplateRequest {
+  export type AsObject = {
+    ticketTemplate?: api_commons_tickets_pb.TicketTemplate.AsObject,
+  }
+}
+
+export class CreateTicketTemplateResponse extends jspb.Message {
+  hasTicketTemplate(): boolean;
+  clearTicketTemplate(): void;
+  getTicketTemplate(): api_commons_tickets_pb.TicketTemplate | undefined;
+  setTicketTemplate(value?: api_commons_tickets_pb.TicketTemplate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTicketTemplateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTicketTemplateResponse): CreateTicketTemplateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTicketTemplateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTicketTemplateResponse;
+  static deserializeBinaryFromReader(message: CreateTicketTemplateResponse, reader: jspb.BinaryReader): CreateTicketTemplateResponse;
+}
+
+export namespace CreateTicketTemplateResponse {
+  export type AsObject = {
+    ticketTemplate?: api_commons_tickets_pb.TicketTemplate.AsObject,
+  }
+}
+
+export class EditTicketTemplateRequest extends jspb.Message {
+  getTicketTemplateId(): string;
+  setTicketTemplateId(value: string): void;
+
+  hasEditValue(): boolean;
+  clearEditValue(): void;
+  getEditValue(): api_commons_tickets_pb.TicketTemplate | undefined;
+  setEditValue(value?: api_commons_tickets_pb.TicketTemplate): void;
+
+  hasEditedFieldsMask(): boolean;
+  clearEditedFieldsMask(): void;
+  getEditedFieldsMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setEditedFieldsMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EditTicketTemplateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EditTicketTemplateRequest): EditTicketTemplateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EditTicketTemplateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EditTicketTemplateRequest;
+  static deserializeBinaryFromReader(message: EditTicketTemplateRequest, reader: jspb.BinaryReader): EditTicketTemplateRequest;
+}
+
+export namespace EditTicketTemplateRequest {
+  export type AsObject = {
+    ticketTemplateId: string,
+    editValue?: api_commons_tickets_pb.TicketTemplate.AsObject,
+    editedFieldsMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class EditTicketTemplateResponse extends jspb.Message {
+  getIsEdited(): boolean;
+  setIsEdited(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EditTicketTemplateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EditTicketTemplateResponse): EditTicketTemplateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EditTicketTemplateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EditTicketTemplateResponse;
+  static deserializeBinaryFromReader(message: EditTicketTemplateResponse, reader: jspb.BinaryReader): EditTicketTemplateResponse;
+}
+
+export namespace EditTicketTemplateResponse {
+  export type AsObject = {
+    isEdited: boolean,
+  }
+}
+
+export class ListTicketTemplateRequest extends jspb.Message {
+  getTicketTemplateId(): number;
+  setTicketTemplateId(value: number): void;
+
+  getProjectId(): number;
+  setProjectId(value: number): void;
+
+  hasRequestMask(): boolean;
+  clearRequestMask(): void;
+  getRequestMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setRequestMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTicketTemplateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTicketTemplateRequest): ListTicketTemplateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTicketTemplateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTicketTemplateRequest;
+  static deserializeBinaryFromReader(message: ListTicketTemplateRequest, reader: jspb.BinaryReader): ListTicketTemplateRequest;
+}
+
+export namespace ListTicketTemplateRequest {
+  export type AsObject = {
+    ticketTemplateId: number,
+    projectId: number,
+    requestMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class ListTicketTemplateResponse extends jspb.Message {
+  clearEnabledTemplatesList(): void;
+  getEnabledTemplatesList(): Array<api_commons_tickets_pb.ListTemplate>;
+  setEnabledTemplatesList(value: Array<api_commons_tickets_pb.ListTemplate>): void;
+  addEnabledTemplates(value?: api_commons_tickets_pb.ListTemplate, index?: number): api_commons_tickets_pb.ListTemplate;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTicketTemplateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTicketTemplateResponse): ListTicketTemplateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTicketTemplateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTicketTemplateResponse;
+  static deserializeBinaryFromReader(message: ListTicketTemplateResponse, reader: jspb.BinaryReader): ListTicketTemplateResponse;
+}
+
+export namespace ListTicketTemplateResponse {
+  export type AsObject = {
+    enabledTemplatesList: Array<api_commons_tickets_pb.ListTemplate.AsObject>,
+  }
+}
+
+export class AssignProjectTemplateRequest extends jspb.Message {
+  hasProjectTemplate(): boolean;
+  clearProjectTemplate(): void;
+  getProjectTemplate(): api_commons_tickets_pb.AssignProjectTemplate | undefined;
+  setProjectTemplate(value?: api_commons_tickets_pb.AssignProjectTemplate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignProjectTemplateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignProjectTemplateRequest): AssignProjectTemplateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignProjectTemplateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignProjectTemplateRequest;
+  static deserializeBinaryFromReader(message: AssignProjectTemplateRequest, reader: jspb.BinaryReader): AssignProjectTemplateRequest;
+}
+
+export namespace AssignProjectTemplateRequest {
+  export type AsObject = {
+    projectTemplate?: api_commons_tickets_pb.AssignProjectTemplate.AsObject,
+  }
+}
+
+export class AssignProjectTemplateResponse extends jspb.Message {
+  getIsAssigned(): boolean;
+  setIsAssigned(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignProjectTemplateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignProjectTemplateResponse): AssignProjectTemplateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignProjectTemplateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignProjectTemplateResponse;
+  static deserializeBinaryFromReader(message: AssignProjectTemplateResponse, reader: jspb.BinaryReader): AssignProjectTemplateResponse;
+}
+
+export namespace AssignProjectTemplateResponse {
+  export type AsObject = {
+    isAssigned: boolean,
+  }
+}
+
 export class CreateTicketRes extends jspb.Message {
   hasTicket(): boolean;
   clearTicket(): void;
