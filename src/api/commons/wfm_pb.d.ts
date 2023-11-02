@@ -624,6 +624,30 @@ export namespace SchedulingResultMetric {
   }
 }
 
+export class ClientHistoryCache extends jspb.Message {
+  getState(): HistoryCacheStateMap[keyof HistoryCacheStateMap];
+  setState(value: HistoryCacheStateMap[keyof HistoryCacheStateMap]): void;
+
+  getProgressPercentage(): number;
+  setProgressPercentage(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ClientHistoryCache.AsObject;
+  static toObject(includeInstance: boolean, msg: ClientHistoryCache): ClientHistoryCache.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ClientHistoryCache, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ClientHistoryCache;
+  static deserializeBinaryFromReader(message: ClientHistoryCache, reader: jspb.BinaryReader): ClientHistoryCache;
+}
+
+export namespace ClientHistoryCache {
+  export type AsObject = {
+    state: HistoryCacheStateMap[keyof HistoryCacheStateMap],
+    progressPercentage: number,
+  }
+}
+
 export interface RegressionForecasterModelTypesMap {
   RANDOM_FOREST: 0;
   ADABOOST: 1;
@@ -862,4 +886,13 @@ export interface BitmapTypeMap {
 }
 
 export const BitmapType: BitmapTypeMap;
+
+export interface HistoryCacheStateMap {
+  NOT_LOADED: 0;
+  LOADING: 1;
+  LOADING_COMPLETE: 2;
+  LOADING_FAILED: 3;
+}
+
+export const HistoryCacheState: HistoryCacheStateMap;
 
