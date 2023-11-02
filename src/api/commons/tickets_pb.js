@@ -4975,7 +4975,7 @@ proto.api.commons.TemplateDescription.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.TemplateDescription.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ticketTemplateId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    ticketTemplateId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     templateName: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -5014,7 +5014,7 @@ proto.api.commons.TemplateDescription.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTicketTemplateId(value);
       break;
     case 2:
@@ -5051,8 +5051,8 @@ proto.api.commons.TemplateDescription.prototype.serializeBinary = function() {
 proto.api.commons.TemplateDescription.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTicketTemplateId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -5069,19 +5069,19 @@ proto.api.commons.TemplateDescription.serializeBinaryToWriter = function(message
 
 /**
  * optional int64 ticket_template_id = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.TemplateDescription.prototype.getTicketTemplateId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.TemplateDescription} returns this
  */
 proto.api.commons.TemplateDescription.prototype.setTicketTemplateId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 

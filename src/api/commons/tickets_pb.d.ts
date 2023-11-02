@@ -613,8 +613,8 @@ export namespace TicketProject {
 }
 
 export class TemplateDescription extends jspb.Message {
-  getTicketTemplateId(): number;
-  setTicketTemplateId(value: number): void;
+  getTicketTemplateId(): string;
+  setTicketTemplateId(value: string): void;
 
   getTemplateName(): string;
   setTemplateName(value: string): void;
@@ -631,7 +631,7 @@ export class TemplateDescription extends jspb.Message {
 
 export namespace TemplateDescription {
   export type AsObject = {
-    ticketTemplateId: number,
+    ticketTemplateId: string,
     templateName: string,
   }
 }
