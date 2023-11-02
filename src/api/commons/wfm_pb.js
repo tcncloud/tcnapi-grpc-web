@@ -27,7 +27,7 @@ goog.exportSymbol('proto.api.commons.AvailabilityOption', null, global);
 goog.exportSymbol('proto.api.commons.BitmapType', null, global);
 goog.exportSymbol('proto.api.commons.CallProfileGroupAvgs', null, global);
 goog.exportSymbol('proto.api.commons.CallProfileGroupCalls', null, global);
-goog.exportSymbol('proto.api.commons.ClientHistoryCache', null, global);
+goog.exportSymbol('proto.api.commons.ClientHistoryCacheInfo', null, global);
 goog.exportSymbol('proto.api.commons.ConfigEntityType', null, global);
 goog.exportSymbol('proto.api.commons.ConfigRelationshipType', null, global);
 goog.exportSymbol('proto.api.commons.ConstraintRuleType', null, global);
@@ -366,16 +366,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.commons.ClientHistoryCache = function(opt_data) {
+proto.api.commons.ClientHistoryCacheInfo = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.commons.ClientHistoryCache, jspb.Message);
+goog.inherits(proto.api.commons.ClientHistoryCacheInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.commons.ClientHistoryCache.displayName = 'proto.api.commons.ClientHistoryCache';
+  proto.api.commons.ClientHistoryCacheInfo.displayName = 'proto.api.commons.ClientHistoryCacheInfo';
 }
 
 
@@ -4732,8 +4732,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.commons.ClientHistoryCache.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.commons.ClientHistoryCache.toObject(opt_includeInstance, this);
+proto.api.commons.ClientHistoryCacheInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.commons.ClientHistoryCacheInfo.toObject(opt_includeInstance, this);
 };
 
 
@@ -4742,11 +4742,11 @@ proto.api.commons.ClientHistoryCache.prototype.toObject = function(opt_includeIn
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.commons.ClientHistoryCache} msg The msg instance to transform.
+ * @param {!proto.api.commons.ClientHistoryCacheInfo} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.commons.ClientHistoryCache.toObject = function(includeInstance, msg) {
+proto.api.commons.ClientHistoryCacheInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     state: jspb.Message.getFieldWithDefault(msg, 1, 0),
     progressPercentage: jspb.Message.getFieldWithDefault(msg, 2, 0)
@@ -4763,23 +4763,23 @@ proto.api.commons.ClientHistoryCache.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.commons.ClientHistoryCache}
+ * @return {!proto.api.commons.ClientHistoryCacheInfo}
  */
-proto.api.commons.ClientHistoryCache.deserializeBinary = function(bytes) {
+proto.api.commons.ClientHistoryCacheInfo.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.commons.ClientHistoryCache;
-  return proto.api.commons.ClientHistoryCache.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.commons.ClientHistoryCacheInfo;
+  return proto.api.commons.ClientHistoryCacheInfo.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.commons.ClientHistoryCache} msg The message object to deserialize into.
+ * @param {!proto.api.commons.ClientHistoryCacheInfo} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.commons.ClientHistoryCache}
+ * @return {!proto.api.commons.ClientHistoryCacheInfo}
  */
-proto.api.commons.ClientHistoryCache.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.commons.ClientHistoryCacheInfo.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4807,9 +4807,9 @@ proto.api.commons.ClientHistoryCache.deserializeBinaryFromReader = function(msg,
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.commons.ClientHistoryCache.prototype.serializeBinary = function() {
+proto.api.commons.ClientHistoryCacheInfo.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.commons.ClientHistoryCache.serializeBinaryToWriter(this, writer);
+  proto.api.commons.ClientHistoryCacheInfo.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4817,11 +4817,11 @@ proto.api.commons.ClientHistoryCache.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.commons.ClientHistoryCache} message
+ * @param {!proto.api.commons.ClientHistoryCacheInfo} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.commons.ClientHistoryCache.serializeBinaryToWriter = function(message, writer) {
+proto.api.commons.ClientHistoryCacheInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getState();
   if (f !== 0.0) {
@@ -4844,16 +4844,16 @@ proto.api.commons.ClientHistoryCache.serializeBinaryToWriter = function(message,
  * optional HistoryCacheState state = 1;
  * @return {!proto.api.commons.HistoryCacheState}
  */
-proto.api.commons.ClientHistoryCache.prototype.getState = function() {
+proto.api.commons.ClientHistoryCacheInfo.prototype.getState = function() {
   return /** @type {!proto.api.commons.HistoryCacheState} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {!proto.api.commons.HistoryCacheState} value
- * @return {!proto.api.commons.ClientHistoryCache} returns this
+ * @return {!proto.api.commons.ClientHistoryCacheInfo} returns this
  */
-proto.api.commons.ClientHistoryCache.prototype.setState = function(value) {
+proto.api.commons.ClientHistoryCacheInfo.prototype.setState = function(value) {
   return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
@@ -4862,16 +4862,16 @@ proto.api.commons.ClientHistoryCache.prototype.setState = function(value) {
  * optional int32 progress_percentage = 2;
  * @return {number}
  */
-proto.api.commons.ClientHistoryCache.prototype.getProgressPercentage = function() {
+proto.api.commons.ClientHistoryCacheInfo.prototype.getProgressPercentage = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.commons.ClientHistoryCache} returns this
+ * @return {!proto.api.commons.ClientHistoryCacheInfo} returns this
  */
-proto.api.commons.ClientHistoryCache.prototype.setProgressPercentage = function(value) {
+proto.api.commons.ClientHistoryCacheInfo.prototype.setProgressPercentage = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 

@@ -624,7 +624,7 @@ export namespace SchedulingResultMetric {
   }
 }
 
-export class ClientHistoryCache extends jspb.Message {
+export class ClientHistoryCacheInfo extends jspb.Message {
   getState(): HistoryCacheStateMap[keyof HistoryCacheStateMap];
   setState(value: HistoryCacheStateMap[keyof HistoryCacheStateMap]): void;
 
@@ -632,16 +632,16 @@ export class ClientHistoryCache extends jspb.Message {
   setProgressPercentage(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ClientHistoryCache.AsObject;
-  static toObject(includeInstance: boolean, msg: ClientHistoryCache): ClientHistoryCache.AsObject;
+  toObject(includeInstance?: boolean): ClientHistoryCacheInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ClientHistoryCacheInfo): ClientHistoryCacheInfo.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ClientHistoryCache, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ClientHistoryCache;
-  static deserializeBinaryFromReader(message: ClientHistoryCache, reader: jspb.BinaryReader): ClientHistoryCache;
+  static serializeBinaryToWriter(message: ClientHistoryCacheInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ClientHistoryCacheInfo;
+  static deserializeBinaryFromReader(message: ClientHistoryCacheInfo, reader: jspb.BinaryReader): ClientHistoryCacheInfo;
 }
 
-export namespace ClientHistoryCache {
+export namespace ClientHistoryCacheInfo {
   export type AsObject = {
     state: HistoryCacheStateMap[keyof HistoryCacheStateMap],
     progressPercentage: number,
