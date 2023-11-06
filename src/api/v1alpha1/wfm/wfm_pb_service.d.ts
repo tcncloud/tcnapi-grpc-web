@@ -1201,6 +1201,15 @@ type WFMGetTourPattern = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternRes;
 };
 
+type WFMGetTourPatternWithMembers = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersRes;
+};
+
 type WFMDeleteTourPattern = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1516,6 +1525,7 @@ export class WFM {
   static readonly GetTourPatternDiagnostics: WFMGetTourPatternDiagnostics;
   static readonly UpsertTourPatternWithMembers: WFMUpsertTourPatternWithMembers;
   static readonly GetTourPattern: WFMGetTourPattern;
+  static readonly GetTourPatternWithMembers: WFMGetTourPatternWithMembers;
   static readonly DeleteTourPattern: WFMDeleteTourPattern;
   static readonly CreateTourWeekPattern: WFMCreateTourWeekPattern;
   static readonly ListTourWeekPatterns: WFMListTourWeekPatterns;
@@ -2718,6 +2728,15 @@ export class WFMClient {
   getTourPattern(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternRes|null) => void
+  ): UnaryResponse;
+  getTourPatternWithMembers(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersRes|null) => void
+  ): UnaryResponse;
+  getTourPatternWithMembers(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersRes|null) => void
   ): UnaryResponse;
   deleteTourPattern(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourPatternReq,

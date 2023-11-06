@@ -9394,6 +9394,48 @@ export namespace GetTourPatternRes {
   }
 }
 
+export class GetTourPatternWithMembersReq extends jspb.Message {
+  getShiftTemplateSid(): number;
+  setShiftTemplateSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTourPatternWithMembersReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTourPatternWithMembersReq): GetTourPatternWithMembersReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetTourPatternWithMembersReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTourPatternWithMembersReq;
+  static deserializeBinaryFromReader(message: GetTourPatternWithMembersReq, reader: jspb.BinaryReader): GetTourPatternWithMembersReq;
+}
+
+export namespace GetTourPatternWithMembersReq {
+  export type AsObject = {
+    shiftTemplateSid: number,
+  }
+}
+
+export class GetTourPatternWithMembersRes extends jspb.Message {
+  hasTourPattern(): boolean;
+  clearTourPattern(): void;
+  getTourPattern(): TourPattern | undefined;
+  setTourPattern(value?: TourPattern): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTourPatternWithMembersRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTourPatternWithMembersRes): GetTourPatternWithMembersRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetTourPatternWithMembersRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTourPatternWithMembersRes;
+  static deserializeBinaryFromReader(message: GetTourPatternWithMembersRes, reader: jspb.BinaryReader): GetTourPatternWithMembersRes;
+}
+
+export namespace GetTourPatternWithMembersRes {
+  export type AsObject = {
+    tourPattern?: TourPattern.AsObject,
+  }
+}
+
 export class DeleteTourPatternReq extends jspb.Message {
   getTourPatternSid(): string;
   setTourPatternSid(value: string): void;
