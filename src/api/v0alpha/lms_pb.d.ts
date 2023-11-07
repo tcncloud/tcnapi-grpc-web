@@ -7089,6 +7089,14 @@ export class EpicEntrypoint extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): void;
 
+  clearFieldsList(): void;
+  getFieldsList(): Array<Field>;
+  setFieldsList(value: Array<Field>): void;
+  addFields(value?: Field, index?: number): Field;
+
+  getRawJson(): boolean;
+  setRawJson(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EpicEntrypoint.AsObject;
   static toObject(includeInstance: boolean, msg: EpicEntrypoint): EpicEntrypoint.AsObject;
@@ -7112,6 +7120,8 @@ export namespace EpicEntrypoint {
     flushDuringCheck: boolean,
     timezone: string,
     enabled: boolean,
+    fieldsList: Array<Field.AsObject>,
+    rawJson: boolean,
   }
 }
 
@@ -7232,6 +7242,26 @@ export class SampleRequest extends jspb.Message {
 export namespace SampleRequest {
   export type AsObject = {
     httpBody?: google_api_httpbody_pb.HttpBody.AsObject,
+  }
+}
+
+export class EHREntityType extends jspb.Message {
+  getEpicEntity(): EpicEntityTypeMap[keyof EpicEntityTypeMap];
+  setEpicEntity(value: EpicEntityTypeMap[keyof EpicEntityTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EHREntityType.AsObject;
+  static toObject(includeInstance: boolean, msg: EHREntityType): EHREntityType.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EHREntityType, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EHREntityType;
+  static deserializeBinaryFromReader(message: EHREntityType, reader: jspb.BinaryReader): EHREntityType;
+}
+
+export namespace EHREntityType {
+  export type AsObject = {
+    epicEntity: EpicEntityTypeMap[keyof EpicEntityTypeMap],
   }
 }
 
