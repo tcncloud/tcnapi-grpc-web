@@ -17016,7 +17016,8 @@ proto.api.commons.OmniTaskState.toObject = function(includeInstance, msg) {
     proto.api.commons.OmniTaskState.Entry.toObject, includeInstance),
     sourcesList: jspb.Message.toObjectList(msg.getSourcesList(),
     proto.api.commons.OmniTaskState.Entry.toObject, includeInstance),
-    ruleSet: (f = msg.getRuleSet()) && proto.api.commons.ComplianceRuleSet.toObject(includeInstance, f)
+    ruleSet: (f = msg.getRuleSet()) && proto.api.commons.ComplianceRuleSet.toObject(includeInstance, f),
+    scrubListId: (f = msg.getScrubListId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17067,6 +17068,11 @@ proto.api.commons.OmniTaskState.deserializeBinaryFromReader = function(msg, read
       var value = new proto.api.commons.ComplianceRuleSet;
       reader.readMessage(value,proto.api.commons.ComplianceRuleSet.deserializeBinaryFromReader);
       msg.setRuleSet(value);
+      break;
+    case 4:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setScrubListId(value);
       break;
     default:
       reader.skipField();
@@ -17119,6 +17125,14 @@ proto.api.commons.OmniTaskState.serializeBinaryToWriter = function(message, writ
       3,
       f,
       proto.api.commons.ComplianceRuleSet.serializeBinaryToWriter
+    );
+  }
+  f = message.getScrubListId();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
@@ -17445,6 +17459,43 @@ proto.api.commons.OmniTaskState.prototype.clearRuleSet = function() {
  */
 proto.api.commons.OmniTaskState.prototype.hasRuleSet = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue scrub_list_id = 4;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.api.commons.OmniTaskState.prototype.getScrubListId = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.StringValue|undefined} value
+ * @return {!proto.api.commons.OmniTaskState} returns this
+*/
+proto.api.commons.OmniTaskState.prototype.setScrubListId = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.OmniTaskState} returns this
+ */
+proto.api.commons.OmniTaskState.prototype.clearScrubListId = function() {
+  return this.setScrubListId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.OmniTaskState.prototype.hasScrubListId = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
