@@ -699,44 +699,6 @@ export namespace HistoricalDataInterval {
   }
 }
 
-export class GetClientHistoryCacheInfoReq extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetClientHistoryCacheInfoReq.AsObject;
-  static toObject(includeInstance: boolean, msg: GetClientHistoryCacheInfoReq): GetClientHistoryCacheInfoReq.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetClientHistoryCacheInfoReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetClientHistoryCacheInfoReq;
-  static deserializeBinaryFromReader(message: GetClientHistoryCacheInfoReq, reader: jspb.BinaryReader): GetClientHistoryCacheInfoReq;
-}
-
-export namespace GetClientHistoryCacheInfoReq {
-  export type AsObject = {
-  }
-}
-
-export class GetClientHistoryCacheInfoRes extends jspb.Message {
-  hasCacheInfo(): boolean;
-  clearCacheInfo(): void;
-  getCacheInfo(): api_commons_wfm_pb.ClientHistoryCacheInfo | undefined;
-  setCacheInfo(value?: api_commons_wfm_pb.ClientHistoryCacheInfo): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetClientHistoryCacheInfoRes.AsObject;
-  static toObject(includeInstance: boolean, msg: GetClientHistoryCacheInfoRes): GetClientHistoryCacheInfoRes.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetClientHistoryCacheInfoRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetClientHistoryCacheInfoRes;
-  static deserializeBinaryFromReader(message: GetClientHistoryCacheInfoRes, reader: jspb.BinaryReader): GetClientHistoryCacheInfoRes;
-}
-
-export namespace GetClientHistoryCacheInfoRes {
-  export type AsObject = {
-    cacheInfo?: api_commons_wfm_pb.ClientHistoryCacheInfo.AsObject,
-  }
-}
-
 export class ListHistoricalDataReq extends jspb.Message {
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;
