@@ -2123,11 +2123,6 @@ export class OmniTaskState extends jspb.Message {
   getRuleSet(): ComplianceRuleSet | undefined;
   setRuleSet(value?: ComplianceRuleSet): void;
 
-  hasScrubListId(): boolean;
-  clearScrubListId(): void;
-  getScrubListId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setScrubListId(value?: google_protobuf_wrappers_pb.StringValue): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniTaskState.AsObject;
   static toObject(includeInstance: boolean, msg: OmniTaskState): OmniTaskState.AsObject;
@@ -2143,7 +2138,6 @@ export namespace OmniTaskState {
     destinationsList: Array<OmniTaskState.Entry.AsObject>,
     sourcesList: Array<OmniTaskState.Entry.AsObject>,
     ruleSet?: ComplianceRuleSet.AsObject,
-    scrubListId?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 
   export class Entry extends jspb.Message {
