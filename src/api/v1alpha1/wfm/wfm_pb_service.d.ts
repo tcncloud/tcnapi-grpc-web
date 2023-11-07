@@ -76,6 +76,15 @@ type WFMGetForecastingParameters = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetForecastingParametersRes;
 };
 
+type WFMGetClientHistoryCacheInfo = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoRes;
+};
+
 type WFMListHistoricalData = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1391,6 +1400,7 @@ export class WFM {
   static readonly GetLastSkillProfileResyncDate: WFMGetLastSkillProfileResyncDate;
   static readonly UpsertForecastingParameters: WFMUpsertForecastingParameters;
   static readonly GetForecastingParameters: WFMGetForecastingParameters;
+  static readonly GetClientHistoryCacheInfo: WFMGetClientHistoryCacheInfo;
   static readonly ListHistoricalData: WFMListHistoricalData;
   static readonly UpsertHistoricalDataDelta: WFMUpsertHistoricalDataDelta;
   static readonly UpsertHistoricalDataDeltas: WFMUpsertHistoricalDataDeltas;
@@ -1641,6 +1651,15 @@ export class WFMClient {
   getForecastingParameters(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetForecastingParametersReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetForecastingParametersRes|null) => void
+  ): UnaryResponse;
+  getClientHistoryCacheInfo(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoRes|null) => void
+  ): UnaryResponse;
+  getClientHistoryCacheInfo(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoRes|null) => void
   ): UnaryResponse;
   listHistoricalData(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListHistoricalDataReq,
