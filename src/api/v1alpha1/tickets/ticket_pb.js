@@ -9048,7 +9048,8 @@ proto.api.v1alpha1.tickets.User.toObject = function(includeInstance, msg) {
   var f, obj = {
     userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     firstName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    lastName: jspb.Message.getFieldWithDefault(msg, 3, "")
+    lastName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -9097,6 +9098,10 @@ proto.api.v1alpha1.tickets.User.deserializeBinaryFromReader = function(msg, read
       var value = /** @type {string} */ (reader.readString());
       msg.setLastName(value);
       break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsActive(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -9144,6 +9149,13 @@ proto.api.v1alpha1.tickets.User.serializeBinaryToWriter = function(message, writ
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getIsActive();
+  if (f) {
+    writer.writeBool(
+      4,
       f
     );
   }
@@ -9201,6 +9213,24 @@ proto.api.v1alpha1.tickets.User.prototype.getLastName = function() {
  */
 proto.api.v1alpha1.tickets.User.prototype.setLastName = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional bool is_active = 4;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.tickets.User.prototype.getIsActive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.tickets.User} returns this
+ */
+proto.api.v1alpha1.tickets.User.prototype.setIsActive = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
