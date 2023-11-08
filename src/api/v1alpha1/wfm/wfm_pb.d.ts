@@ -4045,6 +4045,50 @@ export namespace CreateAgentGroupRes {
   }
 }
 
+export class ListAgentScheduleGroupsRequest extends jspb.Message {
+  hasEntity(): boolean;
+  clearEntity(): void;
+  getEntity(): ParentEntity | undefined;
+  setEntity(value?: ParentEntity): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentScheduleGroupsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentScheduleGroupsRequest): ListAgentScheduleGroupsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentScheduleGroupsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentScheduleGroupsRequest;
+  static deserializeBinaryFromReader(message: ListAgentScheduleGroupsRequest, reader: jspb.BinaryReader): ListAgentScheduleGroupsRequest;
+}
+
+export namespace ListAgentScheduleGroupsRequest {
+  export type AsObject = {
+    entity?: ParentEntity.AsObject,
+  }
+}
+
+export class ListAgentScheduleGroupsResponse extends jspb.Message {
+  clearAgentGroupsList(): void;
+  getAgentGroupsList(): Array<AgentGroup>;
+  setAgentGroupsList(value: Array<AgentGroup>): void;
+  addAgentGroups(value?: AgentGroup, index?: number): AgentGroup;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentScheduleGroupsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentScheduleGroupsResponse): ListAgentScheduleGroupsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentScheduleGroupsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentScheduleGroupsResponse;
+  static deserializeBinaryFromReader(message: ListAgentScheduleGroupsResponse, reader: jspb.BinaryReader): ListAgentScheduleGroupsResponse;
+}
+
+export namespace ListAgentScheduleGroupsResponse {
+  export type AsObject = {
+    agentGroupsList: Array<AgentGroup.AsObject>,
+  }
+}
+
 export class UpdateAgentGroupReq extends jspb.Message {
   hasAgentGroup(): boolean;
   clearAgentGroup(): void;

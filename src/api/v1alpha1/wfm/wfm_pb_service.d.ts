@@ -571,6 +571,15 @@ type WFMCreateAgentGroup = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAgentGroupRes;
 };
 
+type WFMListAgentScheduleGroups = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsResponse;
+};
+
 type WFMUpdateAgentGroup = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1464,6 +1473,7 @@ export class WFM {
   static readonly ListNonSkillActivityAssociations: WFMListNonSkillActivityAssociations;
   static readonly ListCandidateSchedulingActivities: WFMListCandidateSchedulingActivities;
   static readonly CreateAgentGroup: WFMCreateAgentGroup;
+  static readonly ListAgentScheduleGroups: WFMListAgentScheduleGroups;
   static readonly UpdateAgentGroup: WFMUpdateAgentGroup;
   static readonly UpdateWFMAgent: WFMUpdateWFMAgent;
   static readonly ListAllWFMAgents: WFMListAllWFMAgents;
@@ -2108,6 +2118,15 @@ export class WFMClient {
   createAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentGroupReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentGroupRes|null) => void
+  ): UnaryResponse;
+  listAgentScheduleGroups(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsResponse|null) => void
+  ): UnaryResponse;
+  listAgentScheduleGroups(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsResponse|null) => void
   ): UnaryResponse;
   updateAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAgentGroupReq,

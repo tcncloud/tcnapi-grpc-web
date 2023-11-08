@@ -509,6 +509,15 @@ type LMSSampleEndpoint = {
   readonly responseType: typeof google_protobuf_empty_pb.Empty;
 };
 
+type LMSGetAvailableEHRFields = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.EHREntityType;
+  readonly responseType: typeof api_v0alpha_lms_pb.Fields;
+};
+
 type LMSGetQueuedEventsStatusByElementId = {
   readonly methodName: string;
   readonly service: typeof LMS;
@@ -576,6 +585,7 @@ export class LMS {
   static readonly CreateCjsSecureSearchCriteria: LMSCreateCjsSecureSearchCriteria;
   static readonly UpdateCjsSecureSearchCriteria: LMSUpdateCjsSecureSearchCriteria;
   static readonly SampleEndpoint: LMSSampleEndpoint;
+  static readonly GetAvailableEHRFields: LMSGetAvailableEHRFields;
   static readonly GetQueuedEventsStatusByElementId: LMSGetQueuedEventsStatusByElementId;
 }
 
@@ -1066,6 +1076,15 @@ export class LMSClient {
   sampleEndpoint(
     requestMessage: api_v0alpha_lms_pb.SampleRequest,
     callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
+  ): UnaryResponse;
+  getAvailableEHRFields(
+    requestMessage: api_v0alpha_lms_pb.EHREntityType,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.Fields|null) => void
+  ): UnaryResponse;
+  getAvailableEHRFields(
+    requestMessage: api_v0alpha_lms_pb.EHREntityType,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.Fields|null) => void
   ): UnaryResponse;
   getQueuedEventsStatusByElementId(
     requestMessage: api_v0alpha_lms_pb.ElementPK,

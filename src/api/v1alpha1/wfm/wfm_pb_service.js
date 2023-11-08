@@ -577,6 +577,15 @@ WFM.CreateAgentGroup = {
   responseType: api_v1alpha1_wfm_wfm_pb.CreateAgentGroupRes
 };
 
+WFM.ListAgentScheduleGroups = {
+  methodName: "ListAgentScheduleGroups",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsResponse
+};
+
 WFM.UpdateAgentGroup = {
   methodName: "UpdateAgentGroup",
   service: WFM,
@@ -3387,6 +3396,37 @@ WFMClient.prototype.createAgentGroup = function createAgentGroup(requestMessage,
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.CreateAgentGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listAgentScheduleGroups = function listAgentScheduleGroups(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListAgentScheduleGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
