@@ -76,6 +76,15 @@ type WFMGetForecastingParameters = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetForecastingParametersRes;
 };
 
+type WFMGetClientHistoryCacheInfo = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoRes;
+};
+
 type WFMListHistoricalData = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -560,6 +569,15 @@ type WFMCreateAgentGroup = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateAgentGroupReq;
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAgentGroupRes;
+};
+
+type WFMListAgentScheduleGroups = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsResponse;
 };
 
 type WFMUpdateAgentGroup = {
@@ -1201,6 +1219,15 @@ type WFMGetTourPattern = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternRes;
 };
 
+type WFMGetTourPatternWithMembers = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersRes;
+};
+
 type WFMDeleteTourPattern = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1391,6 +1418,7 @@ export class WFM {
   static readonly GetLastSkillProfileResyncDate: WFMGetLastSkillProfileResyncDate;
   static readonly UpsertForecastingParameters: WFMUpsertForecastingParameters;
   static readonly GetForecastingParameters: WFMGetForecastingParameters;
+  static readonly GetClientHistoryCacheInfo: WFMGetClientHistoryCacheInfo;
   static readonly ListHistoricalData: WFMListHistoricalData;
   static readonly UpsertHistoricalDataDelta: WFMUpsertHistoricalDataDelta;
   static readonly UpsertHistoricalDataDeltas: WFMUpsertHistoricalDataDeltas;
@@ -1445,6 +1473,7 @@ export class WFM {
   static readonly ListNonSkillActivityAssociations: WFMListNonSkillActivityAssociations;
   static readonly ListCandidateSchedulingActivities: WFMListCandidateSchedulingActivities;
   static readonly CreateAgentGroup: WFMCreateAgentGroup;
+  static readonly ListAgentScheduleGroups: WFMListAgentScheduleGroups;
   static readonly UpdateAgentGroup: WFMUpdateAgentGroup;
   static readonly UpdateWFMAgent: WFMUpdateWFMAgent;
   static readonly ListAllWFMAgents: WFMListAllWFMAgents;
@@ -1516,6 +1545,7 @@ export class WFM {
   static readonly GetTourPatternDiagnostics: WFMGetTourPatternDiagnostics;
   static readonly UpsertTourPatternWithMembers: WFMUpsertTourPatternWithMembers;
   static readonly GetTourPattern: WFMGetTourPattern;
+  static readonly GetTourPatternWithMembers: WFMGetTourPatternWithMembers;
   static readonly DeleteTourPattern: WFMDeleteTourPattern;
   static readonly CreateTourWeekPattern: WFMCreateTourWeekPattern;
   static readonly ListTourWeekPatterns: WFMListTourWeekPatterns;
@@ -1641,6 +1671,15 @@ export class WFMClient {
   getForecastingParameters(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetForecastingParametersReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetForecastingParametersRes|null) => void
+  ): UnaryResponse;
+  getClientHistoryCacheInfo(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoRes|null) => void
+  ): UnaryResponse;
+  getClientHistoryCacheInfo(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoRes|null) => void
   ): UnaryResponse;
   listHistoricalData(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListHistoricalDataReq,
@@ -2080,6 +2119,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentGroupReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentGroupRes|null) => void
   ): UnaryResponse;
+  listAgentScheduleGroups(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsResponse|null) => void
+  ): UnaryResponse;
+  listAgentScheduleGroups(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsResponse|null) => void
+  ): UnaryResponse;
   updateAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAgentGroupReq,
     metadata: grpc.Metadata,
@@ -2718,6 +2766,15 @@ export class WFMClient {
   getTourPattern(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternRes|null) => void
+  ): UnaryResponse;
+  getTourPatternWithMembers(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersRes|null) => void
+  ): UnaryResponse;
+  getTourPatternWithMembers(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersRes|null) => void
   ): UnaryResponse;
   deleteTourPattern(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourPatternReq,

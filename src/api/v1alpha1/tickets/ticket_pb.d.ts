@@ -1134,6 +1134,9 @@ export class User extends jspb.Message {
   getLastName(): string;
   setLastName(value: string): void;
 
+  getIsActive(): boolean;
+  setIsActive(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): User.AsObject;
   static toObject(includeInstance: boolean, msg: User): User.AsObject;
@@ -1149,6 +1152,7 @@ export namespace User {
     userId: string,
     firstName: string,
     lastName: string,
+    isActive: boolean,
   }
 }
 
