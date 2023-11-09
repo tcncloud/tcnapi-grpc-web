@@ -34,6 +34,29 @@ export class ProcessOutboundCallReq extends jspb.Message {
   getCallerId(): string;
   setCallerId(value: string): void;
 
+  getClientSid(): number;
+  setClientSid(value: number): void;
+
+  hasCommType(): boolean;
+  clearCommType(): void;
+  getCommType(): api_commons_communication_pb.CommType | undefined;
+  setCommType(value?: api_commons_communication_pb.CommType): void;
+
+  getCallType(): string;
+  setCallType(value: string): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getRegionId(): string;
+  setRegionId(value: string): void;
+
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  getZipCode(): string;
+  setZipCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessOutboundCallReq.AsObject;
   static toObject(includeInstance: boolean, msg: ProcessOutboundCallReq): ProcessOutboundCallReq.AsObject;
@@ -53,6 +76,13 @@ export namespace ProcessOutboundCallReq {
     sourceId: number,
     sourceField: string,
     callerId: string,
+    clientSid: number,
+    commType?: api_commons_communication_pb.CommType.AsObject,
+    callType: string,
+    orgId: string,
+    regionId: string,
+    email: string,
+    zipCode: string,
   }
 }
 
