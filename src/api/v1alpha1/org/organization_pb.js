@@ -5246,7 +5246,9 @@ proto.api.v1alpha1.org.ListArchivedOrganizationsResponse.OrganizationDetails.toO
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     billingId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     addDate: (f = msg.getAddDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastScheduledDate: (f = msg.getLastScheduledDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    lastScheduledDate: (f = msg.getLastScheduledDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    clientSid: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    regionId: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -5304,6 +5306,14 @@ proto.api.v1alpha1.org.ListArchivedOrganizationsResponse.OrganizationDetails.des
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setLastScheduledDate(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setClientSid(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRegionId(value);
       break;
     default:
       reader.skipField();
@@ -5369,6 +5379,20 @@ proto.api.v1alpha1.org.ListArchivedOrganizationsResponse.OrganizationDetails.ser
       5,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getClientSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      6,
+      f
+    );
+  }
+  f = message.getRegionId();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
     );
   }
 };
@@ -5499,6 +5523,42 @@ proto.api.v1alpha1.org.ListArchivedOrganizationsResponse.OrganizationDetails.pro
  */
 proto.api.v1alpha1.org.ListArchivedOrganizationsResponse.OrganizationDetails.prototype.hasLastScheduledDate = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional int64 client_sid = 6;
+ * @return {number}
+ */
+proto.api.v1alpha1.org.ListArchivedOrganizationsResponse.OrganizationDetails.prototype.getClientSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.org.ListArchivedOrganizationsResponse.OrganizationDetails} returns this
+ */
+proto.api.v1alpha1.org.ListArchivedOrganizationsResponse.OrganizationDetails.prototype.setClientSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional string region_id = 7;
+ * @return {string}
+ */
+proto.api.v1alpha1.org.ListArchivedOrganizationsResponse.OrganizationDetails.prototype.getRegionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.org.ListArchivedOrganizationsResponse.OrganizationDetails} returns this
+ */
+proto.api.v1alpha1.org.ListArchivedOrganizationsResponse.OrganizationDetails.prototype.setRegionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
