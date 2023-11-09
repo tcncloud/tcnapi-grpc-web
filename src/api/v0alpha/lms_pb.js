@@ -35,8 +35,6 @@ var api_commons_types_pb = require('../../api/commons/types_pb.js');
 goog.object.extend(proto, api_commons_types_pb);
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
-var google_api_httpbody_pb = require('../../google/api/httpbody_pb.js');
-goog.object.extend(proto, google_api_httpbody_pb);
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 goog.object.extend(proto, google_protobuf_duration_pb);
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
@@ -55859,7 +55857,7 @@ proto.api.v0alpha.SampleRequest.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.v0alpha.SampleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    httpBody: (f = msg.getHttpBody()) && google_api_httpbody_pb.HttpBody.toObject(includeInstance, f)
+
   };
 
   if (includeInstance) {
@@ -55896,11 +55894,6 @@ proto.api.v0alpha.SampleRequest.deserializeBinaryFromReader = function(msg, read
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
-      var value = new google_api_httpbody_pb.HttpBody;
-      reader.readMessage(value,google_api_httpbody_pb.HttpBody.deserializeBinaryFromReader);
-      msg.setHttpBody(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -55930,51 +55923,6 @@ proto.api.v0alpha.SampleRequest.prototype.serializeBinary = function() {
  */
 proto.api.v0alpha.SampleRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getHttpBody();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      google_api_httpbody_pb.HttpBody.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional google.api.HttpBody http_body = 2;
- * @return {?proto.google.api.HttpBody}
- */
-proto.api.v0alpha.SampleRequest.prototype.getHttpBody = function() {
-  return /** @type{?proto.google.api.HttpBody} */ (
-    jspb.Message.getWrapperField(this, google_api_httpbody_pb.HttpBody, 2));
-};
-
-
-/**
- * @param {?proto.google.api.HttpBody|undefined} value
- * @return {!proto.api.v0alpha.SampleRequest} returns this
-*/
-proto.api.v0alpha.SampleRequest.prototype.setHttpBody = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v0alpha.SampleRequest} returns this
- */
-proto.api.v0alpha.SampleRequest.prototype.clearHttpBody = function() {
-  return this.setHttpBody(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v0alpha.SampleRequest.prototype.hasHttpBody = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
