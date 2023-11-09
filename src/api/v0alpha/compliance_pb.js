@@ -2499,7 +2499,14 @@ proto.api.v0alpha.ProcessOutboundCallReq.toObject = function(includeInstance, ms
     callMetadataMap: (f = msg.getCallMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
     sourceId: jspb.Message.getFieldWithDefault(msg, 5, 0),
     sourceField: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    callerId: jspb.Message.getFieldWithDefault(msg, 7, "")
+    callerId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    clientSid: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    commType: (f = msg.getCommType()) && api_commons_communication_pb.CommType.toObject(includeInstance, f),
+    callType: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    orgId: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    regionId: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    email: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    zipCode: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
 
   if (includeInstance) {
@@ -2565,6 +2572,35 @@ proto.api.v0alpha.ProcessOutboundCallReq.deserializeBinaryFromReader = function(
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setCallerId(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setClientSid(value);
+      break;
+    case 9:
+      var value = new api_commons_communication_pb.CommType;
+      reader.readMessage(value,api_commons_communication_pb.CommType.deserializeBinaryFromReader);
+      msg.setCommType(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCallType(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgId(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRegionId(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEmail(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setZipCode(value);
       break;
     default:
       reader.skipField();
@@ -2638,6 +2674,56 @@ proto.api.v0alpha.ProcessOutboundCallReq.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getClientSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      8,
+      f
+    );
+  }
+  f = message.getCommType();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      api_commons_communication_pb.CommType.serializeBinaryToWriter
+    );
+  }
+  f = message.getCallType();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = message.getOrgId();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = message.getRegionId();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getEmail();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
+  f = message.getZipCode();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
       f
     );
   }
@@ -2772,6 +2858,151 @@ proto.api.v0alpha.ProcessOutboundCallReq.prototype.getCallerId = function() {
  */
 proto.api.v0alpha.ProcessOutboundCallReq.prototype.setCallerId = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional int64 client_sid = 8;
+ * @return {number}
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.getClientSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v0alpha.ProcessOutboundCallReq} returns this
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.setClientSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional api.commons.CommType comm_type = 9;
+ * @return {?proto.api.commons.CommType}
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.getCommType = function() {
+  return /** @type{?proto.api.commons.CommType} */ (
+    jspb.Message.getWrapperField(this, api_commons_communication_pb.CommType, 9));
+};
+
+
+/**
+ * @param {?proto.api.commons.CommType|undefined} value
+ * @return {!proto.api.v0alpha.ProcessOutboundCallReq} returns this
+*/
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.setCommType = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v0alpha.ProcessOutboundCallReq} returns this
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.clearCommType = function() {
+  return this.setCommType(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.hasCommType = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string call_type = 10;
+ * @return {string}
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.getCallType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ProcessOutboundCallReq} returns this
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.setCallType = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string org_id = 11;
+ * @return {string}
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.getOrgId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ProcessOutboundCallReq} returns this
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.setOrgId = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional string region_id = 12;
+ * @return {string}
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.getRegionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ProcessOutboundCallReq} returns this
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.setRegionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string email = 13;
+ * @return {string}
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.getEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ProcessOutboundCallReq} returns this
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.setEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional string zip_code = 14;
+ * @return {string}
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.getZipCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ProcessOutboundCallReq} returns this
+ */
+proto.api.v0alpha.ProcessOutboundCallReq.prototype.setZipCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
