@@ -2246,7 +2246,8 @@ proto.api.commons.RoomConfig.prototype.setArchiveRoom = function(value) {
 proto.api.commons.RoomType = {
   ROOM_TYPE_DIRECT: 0,
   ROOM_TYPE_MULTI: 1,
-  ROOM_TYPE_SYSTEM: 2
+  ROOM_TYPE_SYSTEM: 2,
+  ROOM_TYPE_GLOBAL_SYSTEM: 3
 };
 
 /**
