@@ -21,6 +21,11 @@ export class UserSubscription extends jspb.Message {
   getRoom303(): UserSubscription.Room303 | undefined;
   setRoom303(value?: UserSubscription.Room303): void;
 
+  hasDelivery(): boolean;
+  clearDelivery(): void;
+  getDelivery(): UserSubscription.Delivery | undefined;
+  setDelivery(value?: UserSubscription.Delivery): void;
+
   clearFiltersList(): void;
   getFiltersList(): Array<api_commons_notifications_pb.FieldValueFilter>;
   setFiltersList(value: Array<api_commons_notifications_pb.FieldValueFilter>): void;
@@ -46,6 +51,7 @@ export namespace UserSubscription {
     eventType: api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap],
     userId: string,
     room303?: UserSubscription.Room303.AsObject,
+    delivery?: UserSubscription.Delivery.AsObject,
     filtersList: Array<api_commons_notifications_pb.FieldValueFilter.AsObject>,
     version: number,
   }
@@ -70,9 +76,30 @@ export namespace UserSubscription {
     }
   }
 
+  export class Delivery extends jspb.Message {
+    getTransferConfigName(): string;
+    setTransferConfigName(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Delivery.AsObject;
+    static toObject(includeInstance: boolean, msg: Delivery): Delivery.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Delivery, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Delivery;
+    static deserializeBinaryFromReader(message: Delivery, reader: jspb.BinaryReader): Delivery;
+  }
+
+  export namespace Delivery {
+    export type AsObject = {
+      transferConfigName: string,
+    }
+  }
+
   export enum DeliverMethodCase {
     DELIVER_METHOD_NOT_SET = 0,
     ROOM303 = 100,
+    DELIVERY = 200,
   }
 }
 

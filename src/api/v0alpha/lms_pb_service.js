@@ -236,6 +236,24 @@ LMS.ProcessElement = {
   responseType: google_protobuf_empty_pb.Empty
 };
 
+LMS.ProcessList = {
+  methodName: "ProcessList",
+  service: LMS,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.ProcessListRequest,
+  responseType: api_v0alpha_lms_pb.ProcessListResponse
+};
+
+LMS.StreamList = {
+  methodName: "StreamList",
+  service: LMS,
+  requestStream: true,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.StreamListRequest,
+  responseType: api_v0alpha_lms_pb.StreamListResponse
+};
+
 LMS.GetAvailableFields = {
   methodName: "GetAvailableFields",
   service: LMS,
@@ -486,6 +504,24 @@ LMS.UpdateCjsSecureSearchCriteria = {
   responseStream: false,
   requestType: api_v0alpha_lms_pb.CjsSecureSearchCriteria,
   responseType: google_protobuf_empty_pb.Empty
+};
+
+LMS.SampleEndpoint = {
+  methodName: "SampleEndpoint",
+  service: LMS,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.SampleRequest,
+  responseType: google_protobuf_empty_pb.Empty
+};
+
+LMS.GetAvailableEHRFields = {
+  methodName: "GetAvailableEHRFields",
+  service: LMS,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.EHREntityType,
+  responseType: api_v0alpha_lms_pb.Fields
 };
 
 LMS.GetQueuedEventsStatusByElementId = {
@@ -1306,6 +1342,78 @@ LMSClient.prototype.processElement = function processElement(requestMessage, met
   return {
     cancel: function () {
       callback = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.processList = function processList(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LMS.ProcessList, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.streamList = function streamList(metadata) {
+  var listeners = {
+    end: [],
+    status: []
+  };
+  var client = grpc.client(LMS.StreamList, {
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport
+  });
+  client.onEnd(function (status, statusMessage, trailers) {
+    listeners.status.forEach(function (handler) {
+      handler({ code: status, details: statusMessage, metadata: trailers });
+    });
+    listeners.end.forEach(function (handler) {
+      handler({ code: status, details: statusMessage, metadata: trailers });
+    });
+    listeners = null;
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    write: function (requestMessage) {
+      if (!client.started) {
+        client.start(metadata);
+      }
+      client.send(requestMessage);
+      return this;
+    },
+    end: function () {
+      client.finishSend();
+    },
+    cancel: function () {
+      listeners = null;
       client.close();
     }
   };
@@ -2161,6 +2269,68 @@ LMSClient.prototype.updateCjsSecureSearchCriteria = function updateCjsSecureSear
     callback = arguments[1];
   }
   var client = grpc.unary(LMS.UpdateCjsSecureSearchCriteria, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.sampleEndpoint = function sampleEndpoint(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LMS.SampleEndpoint, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.getAvailableEHRFields = function getAvailableEHRFields(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LMS.GetAvailableEHRFields, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

@@ -230,6 +230,24 @@ type LMSProcessElement = {
   readonly responseType: typeof google_protobuf_empty_pb.Empty;
 };
 
+type LMSProcessList = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.ProcessListRequest;
+  readonly responseType: typeof api_v0alpha_lms_pb.ProcessListResponse;
+};
+
+type LMSStreamList = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: true;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.StreamListRequest;
+  readonly responseType: typeof api_v0alpha_lms_pb.StreamListResponse;
+};
+
 type LMSGetAvailableFields = {
   readonly methodName: string;
   readonly service: typeof LMS;
@@ -482,6 +500,24 @@ type LMSUpdateCjsSecureSearchCriteria = {
   readonly responseType: typeof google_protobuf_empty_pb.Empty;
 };
 
+type LMSSampleEndpoint = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.SampleRequest;
+  readonly responseType: typeof google_protobuf_empty_pb.Empty;
+};
+
+type LMSGetAvailableEHRFields = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.EHREntityType;
+  readonly responseType: typeof api_v0alpha_lms_pb.Fields;
+};
+
 type LMSGetQueuedEventsStatusByElementId = {
   readonly methodName: string;
   readonly service: typeof LMS;
@@ -518,6 +554,8 @@ export class LMS {
   static readonly CopyPipelineUpstream: LMSCopyPipelineUpstream;
   static readonly CopyPipelineDownstream: LMSCopyPipelineDownstream;
   static readonly ProcessElement: LMSProcessElement;
+  static readonly ProcessList: LMSProcessList;
+  static readonly StreamList: LMSStreamList;
   static readonly GetAvailableFields: LMSGetAvailableFields;
   static readonly ListNewEvents: LMSListNewEvents;
   static readonly ViewQueue: LMSViewQueue;
@@ -546,6 +584,8 @@ export class LMS {
   static readonly GetCjsSecureSearchCriteria: LMSGetCjsSecureSearchCriteria;
   static readonly CreateCjsSecureSearchCriteria: LMSCreateCjsSecureSearchCriteria;
   static readonly UpdateCjsSecureSearchCriteria: LMSUpdateCjsSecureSearchCriteria;
+  static readonly SampleEndpoint: LMSSampleEndpoint;
+  static readonly GetAvailableEHRFields: LMSGetAvailableEHRFields;
   static readonly GetQueuedEventsStatusByElementId: LMSGetQueuedEventsStatusByElementId;
 }
 
@@ -774,6 +814,16 @@ export class LMSClient {
     requestMessage: api_v0alpha_lms_pb.ProcessElementReq,
     callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
   ): UnaryResponse;
+  processList(
+    requestMessage: api_v0alpha_lms_pb.ProcessListRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ProcessListResponse|null) => void
+  ): UnaryResponse;
+  processList(
+    requestMessage: api_v0alpha_lms_pb.ProcessListRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ProcessListResponse|null) => void
+  ): UnaryResponse;
+  streamList(metadata?: grpc.Metadata): RequestStream<api_v0alpha_lms_pb.StreamListRequest>;
   getAvailableFields(
     requestMessage: google_protobuf_empty_pb.Empty,
     metadata: grpc.Metadata,
@@ -1017,6 +1067,24 @@ export class LMSClient {
   updateCjsSecureSearchCriteria(
     requestMessage: api_v0alpha_lms_pb.CjsSecureSearchCriteria,
     callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
+  ): UnaryResponse;
+  sampleEndpoint(
+    requestMessage: api_v0alpha_lms_pb.SampleRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
+  ): UnaryResponse;
+  sampleEndpoint(
+    requestMessage: api_v0alpha_lms_pb.SampleRequest,
+    callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
+  ): UnaryResponse;
+  getAvailableEHRFields(
+    requestMessage: api_v0alpha_lms_pb.EHREntityType,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.Fields|null) => void
+  ): UnaryResponse;
+  getAvailableEHRFields(
+    requestMessage: api_v0alpha_lms_pb.EHREntityType,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.Fields|null) => void
   ): UnaryResponse;
   getQueuedEventsStatusByElementId(
     requestMessage: api_v0alpha_lms_pb.ElementPK,

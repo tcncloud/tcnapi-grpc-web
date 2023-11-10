@@ -79,6 +79,11 @@ export class Ticket extends jspb.Message {
   setTicketAssigneeList(value: Array<string>): void;
   addTicketAssignee(value: string, index?: number): string;
 
+  clearTicketParticipantList(): void;
+  getTicketParticipantList(): Array<string>;
+  setTicketParticipantList(value: Array<string>): void;
+  addTicketParticipant(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ticket.AsObject;
   static toObject(includeInstance: boolean, msg: Ticket): Ticket.AsObject;
@@ -111,6 +116,147 @@ export namespace Ticket {
     ticketActionList: Array<TicketAction.AsObject>,
     ticketStatus: TicketStatusMap[keyof TicketStatusMap],
     ticketAssigneeList: Array<string>,
+    ticketParticipantList: Array<string>,
+  }
+}
+
+export class TicketTemplate extends jspb.Message {
+  getTicketTemplateId(): number;
+  setTicketTemplateId(value: number): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getTemplate(): string;
+  setTemplate(value: string): void;
+
+  getTemplateEntityVersion(): string;
+  setTemplateEntityVersion(value: string): void;
+
+  getTemplateName(): string;
+  setTemplateName(value: string): void;
+
+  getCreatedById(): string;
+  setCreatedById(value: string): void;
+
+  getModifiedBy(): string;
+  setModifiedBy(value: string): void;
+
+  hasCreatedDate(): boolean;
+  clearCreatedDate(): void;
+  getCreatedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasModifiedDate(): boolean;
+  clearModifiedDate(): void;
+  getModifiedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getIsActive(): boolean;
+  setIsActive(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketTemplate.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketTemplate): TicketTemplate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketTemplate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketTemplate;
+  static deserializeBinaryFromReader(message: TicketTemplate, reader: jspb.BinaryReader): TicketTemplate;
+}
+
+export namespace TicketTemplate {
+  export type AsObject = {
+    ticketTemplateId: number,
+    orgId: string,
+    template: string,
+    templateEntityVersion: string,
+    templateName: string,
+    createdById: string,
+    modifiedBy: string,
+    createdDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    isActive: boolean,
+  }
+}
+
+export class ListTemplate extends jspb.Message {
+  getTicketTemplateId(): string;
+  setTicketTemplateId(value: string): void;
+
+  getTemplateName(): string;
+  setTemplateName(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  getTemplate(): string;
+  setTemplate(value: string): void;
+
+  getTemplateEntityVersion(): string;
+  setTemplateEntityVersion(value: string): void;
+
+  getIsActive(): boolean;
+  setIsActive(value: boolean): void;
+
+  getCreatedById(): string;
+  setCreatedById(value: string): void;
+
+  hasCreatedDate(): boolean;
+  clearCreatedDate(): void;
+  getCreatedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getProjectTitle(): string;
+  setProjectTitle(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTemplate.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTemplate): ListTemplate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTemplate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTemplate;
+  static deserializeBinaryFromReader(message: ListTemplate, reader: jspb.BinaryReader): ListTemplate;
+}
+
+export namespace ListTemplate {
+  export type AsObject = {
+    ticketTemplateId: string,
+    templateName: string,
+    projectId: string,
+    template: string,
+    templateEntityVersion: string,
+    isActive: boolean,
+    createdById: string,
+    createdDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    projectTitle: string,
+  }
+}
+
+export class AssignProjectTemplate extends jspb.Message {
+  clearTicketTemplateIdList(): void;
+  getTicketTemplateIdList(): Array<string>;
+  setTicketTemplateIdList(value: Array<string>): void;
+  addTicketTemplateId(value: string, index?: number): string;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignProjectTemplate.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignProjectTemplate): AssignProjectTemplate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignProjectTemplate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignProjectTemplate;
+  static deserializeBinaryFromReader(message: AssignProjectTemplate, reader: jspb.BinaryReader): AssignProjectTemplate;
+}
+
+export namespace AssignProjectTemplate {
+  export type AsObject = {
+    ticketTemplateIdList: Array<string>,
+    projectId: string,
   }
 }
 
@@ -176,6 +322,9 @@ export class TicketAction extends jspb.Message {
   setActionSlaIdList(value: Array<Sla>): void;
   addActionSlaId(value?: Sla, index?: number): Sla;
 
+  getWorkDoneBy(): string;
+  setWorkDoneBy(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketAction.AsObject;
   static toObject(includeInstance: boolean, msg: TicketAction): TicketAction.AsObject;
@@ -197,6 +346,7 @@ export namespace TicketAction {
     state: number,
     actionSkillsList: Array<string>,
     actionSlaIdList: Array<Sla.AsObject>,
+    workDoneBy: string,
   }
 }
 
@@ -212,6 +362,9 @@ export class CallbackContext extends jspb.Message {
 
   getCallerName(): string;
   setCallerName(value: string): void;
+
+  getCallerCountryCode(): string;
+  setCallerCountryCode(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CallbackContext.AsObject;
@@ -229,6 +382,7 @@ export namespace CallbackContext {
     phoneNo: string,
     countryCode: string,
     callerName: string,
+    callerCountryCode: string,
   }
 }
 
@@ -431,6 +585,11 @@ export class TicketProject extends jspb.Message {
   getIsActive(): boolean;
   setIsActive(value: boolean): void;
 
+  clearTemplateDescList(): void;
+  getTemplateDescList(): Array<TemplateDescription>;
+  setTemplateDescList(value: Array<TemplateDescription>): void;
+  addTemplateDesc(value?: TemplateDescription, index?: number): TemplateDescription;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketProject.AsObject;
   static toObject(includeInstance: boolean, msg: TicketProject): TicketProject.AsObject;
@@ -449,6 +608,31 @@ export namespace TicketProject {
     projectCode: string,
     projectTitle: string,
     isActive: boolean,
+    templateDescList: Array<TemplateDescription.AsObject>,
+  }
+}
+
+export class TemplateDescription extends jspb.Message {
+  getTicketTemplateId(): string;
+  setTicketTemplateId(value: string): void;
+
+  getTemplateName(): string;
+  setTemplateName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TemplateDescription.AsObject;
+  static toObject(includeInstance: boolean, msg: TemplateDescription): TemplateDescription.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TemplateDescription, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TemplateDescription;
+  static deserializeBinaryFromReader(message: TemplateDescription, reader: jspb.BinaryReader): TemplateDescription;
+}
+
+export namespace TemplateDescription {
+  export type AsObject = {
+    ticketTemplateId: string,
+    templateName: string,
   }
 }
 

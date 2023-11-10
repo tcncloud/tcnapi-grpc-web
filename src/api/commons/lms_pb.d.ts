@@ -308,6 +308,7 @@ export interface RecordTypeMap {
   RECORD_TYPE_FULL_NAME: 21;
   RECORD_TYPE_ACCOUNT_NUMBER: 22;
   RECORD_TYPE_STRUCT_VALUE: 23;
+  RECORD_TYPE_EHR_DETAILS: 24;
 }
 
 export const RecordType: RecordTypeMap;
@@ -333,6 +334,7 @@ export interface FieldTypeMap {
   FIELD_TYPE_ACCOUNT_NUMBER: 18;
   FIELD_TYPE_ERROR: 19;
   FIELD_TYPE_STRUCT_VALUE: 20;
+  FIELD_TYPE_EHR_DETAILS: 21;
 }
 
 export const FieldType: FieldTypeMap;
@@ -494,6 +496,7 @@ export interface EventStateMap {
   EVENT_STATE_CHECK: 2;
   EVENT_STATE_PROCESS: 3;
   EVENT_STATE_CLEANUP: 4;
+  EVENT_STATE_FINISHED: 5;
 }
 
 export const EventState: EventStateMap;

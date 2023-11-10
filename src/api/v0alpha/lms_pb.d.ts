@@ -366,6 +366,98 @@ export namespace ProcessElementReq {
   }
 }
 
+export class ProcessListRequest extends jspb.Message {
+  getElementId(): string;
+  setElementId(value: string): void;
+
+  getList(): Uint8Array | string;
+  getList_asU8(): Uint8Array;
+  getList_asB64(): string;
+  setList(value: Uint8Array | string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProcessListRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ProcessListRequest): ProcessListRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProcessListRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProcessListRequest;
+  static deserializeBinaryFromReader(message: ProcessListRequest, reader: jspb.BinaryReader): ProcessListRequest;
+}
+
+export namespace ProcessListRequest {
+  export type AsObject = {
+    elementId: string,
+    list: Uint8Array | string,
+  }
+}
+
+export class ProcessListResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProcessListResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ProcessListResponse): ProcessListResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProcessListResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProcessListResponse;
+  static deserializeBinaryFromReader(message: ProcessListResponse, reader: jspb.BinaryReader): ProcessListResponse;
+}
+
+export namespace ProcessListResponse {
+  export type AsObject = {
+  }
+}
+
+export class StreamListRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getRegionId(): string;
+  setRegionId(value: string): void;
+
+  getElementId(): string;
+  setElementId(value: string): void;
+
+  getChunk(): Uint8Array | string;
+  getChunk_asU8(): Uint8Array;
+  getChunk_asB64(): string;
+  setChunk(value: Uint8Array | string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StreamListRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: StreamListRequest): StreamListRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: StreamListRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StreamListRequest;
+  static deserializeBinaryFromReader(message: StreamListRequest, reader: jspb.BinaryReader): StreamListRequest;
+}
+
+export namespace StreamListRequest {
+  export type AsObject = {
+    orgId: string,
+    regionId: string,
+    elementId: string,
+    chunk: Uint8Array | string,
+  }
+}
+
+export class StreamListResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StreamListResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: StreamListResponse): StreamListResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: StreamListResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StreamListResponse;
+  static deserializeBinaryFromReader(message: StreamListResponse, reader: jspb.BinaryReader): StreamListResponse;
+}
+
+export namespace StreamListResponse {
+  export type AsObject = {
+  }
+}
+
 export class ListAvailableFieldsByElementIdReq extends jspb.Message {
   getElementId(): string;
   setElementId(value: string): void;
@@ -6990,6 +7082,20 @@ export class EpicEntrypoint extends jspb.Message {
   getFlushDuringCheck(): boolean;
   setFlushDuringCheck(value: boolean): void;
 
+  getTimezone(): string;
+  setTimezone(value: string): void;
+
+  getEnabled(): boolean;
+  setEnabled(value: boolean): void;
+
+  clearFieldsList(): void;
+  getFieldsList(): Array<Field>;
+  setFieldsList(value: Array<Field>): void;
+  addFields(value?: Field, index?: number): Field;
+
+  getRawJson(): boolean;
+  setRawJson(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EpicEntrypoint.AsObject;
   static toObject(includeInstance: boolean, msg: EpicEntrypoint): EpicEntrypoint.AsObject;
@@ -7011,6 +7117,10 @@ export namespace EpicEntrypoint {
     flushPageCount: number,
     flushMinuteCount: number,
     flushDuringCheck: boolean,
+    timezone: string,
+    enabled: boolean,
+    fieldsList: Array<Field.AsObject>,
+    rawJson: boolean,
   }
 }
 
@@ -7109,6 +7219,42 @@ export namespace EntityURL {
   export type AsObject = {
     entityType: EpicEntityTypeMap[keyof EpicEntityTypeMap],
     url: string,
+  }
+}
+
+export class SampleRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SampleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SampleRequest): SampleRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SampleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SampleRequest;
+  static deserializeBinaryFromReader(message: SampleRequest, reader: jspb.BinaryReader): SampleRequest;
+}
+
+export namespace SampleRequest {
+  export type AsObject = {
+  }
+}
+
+export class EHREntityType extends jspb.Message {
+  getEpicEntity(): EpicEntityTypeMap[keyof EpicEntityTypeMap];
+  setEpicEntity(value: EpicEntityTypeMap[keyof EpicEntityTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EHREntityType.AsObject;
+  static toObject(includeInstance: boolean, msg: EHREntityType): EHREntityType.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EHREntityType, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EHREntityType;
+  static deserializeBinaryFromReader(message: EHREntityType, reader: jspb.BinaryReader): EHREntityType;
+}
+
+export namespace EHREntityType {
+  export type AsObject = {
+    epicEntity: EpicEntityTypeMap[keyof EpicEntityTypeMap],
   }
 }
 

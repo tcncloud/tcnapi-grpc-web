@@ -76,6 +76,15 @@ type WFMGetForecastingParameters = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetForecastingParametersRes;
 };
 
+type WFMGetClientHistoryCacheInfo = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoRes;
+};
+
 type WFMListHistoricalData = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -121,6 +130,15 @@ type WFMBuildCallProfileTemplateForSkillProfile = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateForSkillProfileRes;
 };
 
+type WFMBuildCallProfileTemplate = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateRes;
+};
+
 type WFMCreateInactiveSkillProfileMapping = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -146,6 +164,42 @@ type WFMDisconnectInactiveSkillProfileMapping = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingReq;
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingRes;
+};
+
+type WFMCreateSkillProfileGroup = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupRes;
+};
+
+type WFMUpdateSkillProfileGroup = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupRes;
+};
+
+type WFMListSkillProfileGroups = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsRes;
+};
+
+type WFMUpdateSkillProfileGroupAssociations = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsRes;
 };
 
 type WFMDeleteHistoricalDataDeltas = {
@@ -253,6 +307,15 @@ type WFMListForecastIntervalsForSkillProfile = {
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsForSkillProfileReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CallDataByInterval;
+};
+
+type WFMListForecastIntervals = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: true;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsReq;
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CallDataByInterval;
 };
 
@@ -418,6 +481,15 @@ type WFMUpdateProgramNode = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeRes;
 };
 
+type WFMListProgramNodesBySid = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidRes;
+};
+
 type WFMCreateConstraintRule = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -499,6 +571,15 @@ type WFMCreateAgentGroup = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAgentGroupRes;
 };
 
+type WFMListAgentScheduleGroups = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsResponse;
+};
+
 type WFMUpdateAgentGroup = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -542,6 +623,15 @@ type WFMListUngroupedWFMAgents = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsReq;
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsRes;
+};
+
+type WFMListWFMAgentSids = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes;
 };
 
 type WFMListWFMAgentsAssociatedWithAgentGroup = {
@@ -967,6 +1057,15 @@ type WFMCreateShiftInstanceV2 = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateShiftInstanceV2Res;
 };
 
+type WFMSplitShiftInstance = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.SplitShiftInstanceReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.SplitShiftInstanceRes;
+};
+
 type WFMSwapShiftInstances = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1048,6 +1147,24 @@ type WFMDeleteSchedulingTarget = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteSchedulingTargetRes;
 };
 
+type WFMGetDefaultSchedulingTarget = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetRes;
+};
+
+type WFMSetDefaultSchedulingTarget = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetRes;
+};
+
 type WFMGetPerformanceMetrics = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1066,6 +1183,231 @@ type WFMListRequiredCallsIntervals = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListRequiredCallsIntervalsRes;
 };
 
+type WFMCreateTourPattern = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourPatternReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourPatternRes;
+};
+
+type WFMGetTourPatternDiagnostics = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternDiagnosticsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternDiagnosticsRes;
+};
+
+type WFMUpsertTourPatternWithMembers = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersRes;
+};
+
+type WFMGetTourPattern = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternRes;
+};
+
+type WFMGetTourPatternWithMembers = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersRes;
+};
+
+type WFMDeleteTourPattern = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourPatternReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourPatternRes;
+};
+
+type WFMCreateTourWeekPattern = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternRes;
+};
+
+type WFMListTourWeekPatterns = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsRes;
+};
+
+type WFMDeleteTourWeekPatterns = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsRes;
+};
+
+type WFMCreateTourShiftInstanceConfig = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigRes;
+};
+
+type WFMUpdateTourShiftInstanceConfig = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigRes;
+};
+
+type WFMListTourShiftInstanceConfigs = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsRes;
+};
+
+type WFMDeleteTourShiftInstanceConfigs = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsRes;
+};
+
+type WFMCreateTourShiftSegmentConfig = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigRes;
+};
+
+type WFMUpdateTourShiftSegmentConfig = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigRes;
+};
+
+type WFMListTourShiftSegmentConfigs = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsRes;
+};
+
+type WFMDeleteTourShiftSegmentConfigs = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsRes;
+};
+
+type WFMCreateTourAgentCollection = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionRes;
+};
+
+type WFMUpdateTourAgentCollection = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionRes;
+};
+
+type WFMListTourAgentCollections = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsRes;
+};
+
+type WFMDeleteTourAgentCollections = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsRes;
+};
+
+type WFMCreateTourAgentCollectionWFMAgents = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsRes;
+};
+
+type WFMListTourAgentCollectionWFMAgents = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsRes;
+};
+
+type WFMDeleteTourAgentCollectionWFMAgents = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsRes;
+};
+
+type WFMGenerateTourWeekPatterns = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsRes;
+};
+
 export class WFM {
   static readonly serviceName: string;
   static readonly ListSkillProfiles: WFMListSkillProfiles;
@@ -1076,14 +1418,20 @@ export class WFM {
   static readonly GetLastSkillProfileResyncDate: WFMGetLastSkillProfileResyncDate;
   static readonly UpsertForecastingParameters: WFMUpsertForecastingParameters;
   static readonly GetForecastingParameters: WFMGetForecastingParameters;
+  static readonly GetClientHistoryCacheInfo: WFMGetClientHistoryCacheInfo;
   static readonly ListHistoricalData: WFMListHistoricalData;
   static readonly UpsertHistoricalDataDelta: WFMUpsertHistoricalDataDelta;
   static readonly UpsertHistoricalDataDeltas: WFMUpsertHistoricalDataDeltas;
   static readonly ListSkills: WFMListSkills;
   static readonly BuildCallProfileTemplateForSkillProfile: WFMBuildCallProfileTemplateForSkillProfile;
+  static readonly BuildCallProfileTemplate: WFMBuildCallProfileTemplate;
   static readonly CreateInactiveSkillProfileMapping: WFMCreateInactiveSkillProfileMapping;
   static readonly GetAvailableRegressionForecasterModelTypes: WFMGetAvailableRegressionForecasterModelTypes;
   static readonly DisconnectInactiveSkillProfileMapping: WFMDisconnectInactiveSkillProfileMapping;
+  static readonly CreateSkillProfileGroup: WFMCreateSkillProfileGroup;
+  static readonly UpdateSkillProfileGroup: WFMUpdateSkillProfileGroup;
+  static readonly ListSkillProfileGroups: WFMListSkillProfileGroups;
+  static readonly UpdateSkillProfileGroupAssociations: WFMUpdateSkillProfileGroupAssociations;
   static readonly DeleteHistoricalDataDeltas: WFMDeleteHistoricalDataDeltas;
   static readonly ListTopSkillProfiles: WFMListTopSkillProfiles;
   static readonly GetSkillProfilesCount: WFMGetSkillProfilesCount;
@@ -1096,6 +1444,7 @@ export class WFM {
   static readonly DeleteRegressionTemplate: WFMDeleteRegressionTemplate;
   static readonly ListRegressionTemplates: WFMListRegressionTemplates;
   static readonly ListForecastIntervalsForSkillProfile: WFMListForecastIntervalsForSkillProfile;
+  static readonly ListForecastIntervals: WFMListForecastIntervals;
   static readonly BuildRegressionForecastByInterval: WFMBuildRegressionForecastByInterval;
   static readonly BuildRegressionForecastByIntervalWithStats: WFMBuildRegressionForecastByIntervalWithStats;
   static readonly ListCallProfileTemplates: WFMListCallProfileTemplates;
@@ -1114,6 +1463,7 @@ export class WFM {
   static readonly UpdateLocationNode: WFMUpdateLocationNode;
   static readonly CreateProgramNode: WFMCreateProgramNode;
   static readonly UpdateProgramNode: WFMUpdateProgramNode;
+  static readonly ListProgramNodesBySid: WFMListProgramNodesBySid;
   static readonly CreateConstraintRule: WFMCreateConstraintRule;
   static readonly UpdateConstraintRule: WFMUpdateConstraintRule;
   static readonly DeleteConstraintRule: WFMDeleteConstraintRule;
@@ -1123,11 +1473,13 @@ export class WFM {
   static readonly ListNonSkillActivityAssociations: WFMListNonSkillActivityAssociations;
   static readonly ListCandidateSchedulingActivities: WFMListCandidateSchedulingActivities;
   static readonly CreateAgentGroup: WFMCreateAgentGroup;
+  static readonly ListAgentScheduleGroups: WFMListAgentScheduleGroups;
   static readonly UpdateAgentGroup: WFMUpdateAgentGroup;
   static readonly UpdateWFMAgent: WFMUpdateWFMAgent;
   static readonly ListAllWFMAgents: WFMListAllWFMAgents;
   static readonly ListCandidateWFMAgents: WFMListCandidateWFMAgents;
   static readonly ListUngroupedWFMAgents: WFMListUngroupedWFMAgents;
+  static readonly ListWFMAgentSids: WFMListWFMAgentSids;
   static readonly ListWFMAgentsAssociatedWithAgentGroup: WFMListWFMAgentsAssociatedWithAgentGroup;
   static readonly CreateWFMAgentMemberships: WFMCreateWFMAgentMemberships;
   static readonly DeleteWFMAgentMemberships: WFMDeleteWFMAgentMemberships;
@@ -1175,6 +1527,7 @@ export class WFM {
   static readonly CopyScheduleToSchedule: WFMCopyScheduleToSchedule;
   static readonly CreateShiftInstance: WFMCreateShiftInstance;
   static readonly CreateShiftInstanceV2: WFMCreateShiftInstanceV2;
+  static readonly SplitShiftInstance: WFMSplitShiftInstance;
   static readonly SwapShiftInstances: WFMSwapShiftInstances;
   static readonly UpdateShiftInstance: WFMUpdateShiftInstance;
   static readonly UpdateShiftInstanceV2: WFMUpdateShiftInstanceV2;
@@ -1184,8 +1537,35 @@ export class WFM {
   static readonly SetSchedulingTarget: WFMSetSchedulingTarget;
   static readonly GetSchedulingTarget: WFMGetSchedulingTarget;
   static readonly DeleteSchedulingTarget: WFMDeleteSchedulingTarget;
+  static readonly GetDefaultSchedulingTarget: WFMGetDefaultSchedulingTarget;
+  static readonly SetDefaultSchedulingTarget: WFMSetDefaultSchedulingTarget;
   static readonly GetPerformanceMetrics: WFMGetPerformanceMetrics;
   static readonly ListRequiredCallsIntervals: WFMListRequiredCallsIntervals;
+  static readonly CreateTourPattern: WFMCreateTourPattern;
+  static readonly GetTourPatternDiagnostics: WFMGetTourPatternDiagnostics;
+  static readonly UpsertTourPatternWithMembers: WFMUpsertTourPatternWithMembers;
+  static readonly GetTourPattern: WFMGetTourPattern;
+  static readonly GetTourPatternWithMembers: WFMGetTourPatternWithMembers;
+  static readonly DeleteTourPattern: WFMDeleteTourPattern;
+  static readonly CreateTourWeekPattern: WFMCreateTourWeekPattern;
+  static readonly ListTourWeekPatterns: WFMListTourWeekPatterns;
+  static readonly DeleteTourWeekPatterns: WFMDeleteTourWeekPatterns;
+  static readonly CreateTourShiftInstanceConfig: WFMCreateTourShiftInstanceConfig;
+  static readonly UpdateTourShiftInstanceConfig: WFMUpdateTourShiftInstanceConfig;
+  static readonly ListTourShiftInstanceConfigs: WFMListTourShiftInstanceConfigs;
+  static readonly DeleteTourShiftInstanceConfigs: WFMDeleteTourShiftInstanceConfigs;
+  static readonly CreateTourShiftSegmentConfig: WFMCreateTourShiftSegmentConfig;
+  static readonly UpdateTourShiftSegmentConfig: WFMUpdateTourShiftSegmentConfig;
+  static readonly ListTourShiftSegmentConfigs: WFMListTourShiftSegmentConfigs;
+  static readonly DeleteTourShiftSegmentConfigs: WFMDeleteTourShiftSegmentConfigs;
+  static readonly CreateTourAgentCollection: WFMCreateTourAgentCollection;
+  static readonly UpdateTourAgentCollection: WFMUpdateTourAgentCollection;
+  static readonly ListTourAgentCollections: WFMListTourAgentCollections;
+  static readonly DeleteTourAgentCollections: WFMDeleteTourAgentCollections;
+  static readonly CreateTourAgentCollectionWFMAgents: WFMCreateTourAgentCollectionWFMAgents;
+  static readonly ListTourAgentCollectionWFMAgents: WFMListTourAgentCollectionWFMAgents;
+  static readonly DeleteTourAgentCollectionWFMAgents: WFMDeleteTourAgentCollectionWFMAgents;
+  static readonly GenerateTourWeekPatterns: WFMGenerateTourWeekPatterns;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1292,6 +1672,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetForecastingParametersReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetForecastingParametersRes|null) => void
   ): UnaryResponse;
+  getClientHistoryCacheInfo(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoRes|null) => void
+  ): UnaryResponse;
+  getClientHistoryCacheInfo(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoRes|null) => void
+  ): UnaryResponse;
   listHistoricalData(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListHistoricalDataReq,
     metadata: grpc.Metadata,
@@ -1337,6 +1726,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateForSkillProfileReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateForSkillProfileRes|null) => void
   ): UnaryResponse;
+  buildCallProfileTemplate(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateRes|null) => void
+  ): UnaryResponse;
+  buildCallProfileTemplate(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateRes|null) => void
+  ): UnaryResponse;
   createInactiveSkillProfileMapping(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateInactiveSkillProfileMappingReq,
     metadata: grpc.Metadata,
@@ -1363,6 +1761,42 @@ export class WFMClient {
   disconnectInactiveSkillProfileMapping(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingRes|null) => void
+  ): UnaryResponse;
+  createSkillProfileGroup(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupRes|null) => void
+  ): UnaryResponse;
+  createSkillProfileGroup(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupRes|null) => void
+  ): UnaryResponse;
+  updateSkillProfileGroup(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupRes|null) => void
+  ): UnaryResponse;
+  updateSkillProfileGroup(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupRes|null) => void
+  ): UnaryResponse;
+  listSkillProfileGroups(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsRes|null) => void
+  ): UnaryResponse;
+  listSkillProfileGroups(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsRes|null) => void
+  ): UnaryResponse;
+  updateSkillProfileGroupAssociations(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsRes|null) => void
+  ): UnaryResponse;
+  updateSkillProfileGroupAssociations(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsRes|null) => void
   ): UnaryResponse;
   deleteHistoricalDataDeltas(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteHistoricalDataDeltasReq,
@@ -1448,6 +1882,7 @@ export class WFMClient {
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRegressionTemplatesRes|null) => void
   ): UnaryResponse;
   listForecastIntervalsForSkillProfile(requestMessage: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsForSkillProfileReq, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_wfm_wfm_pb.CallDataByInterval>;
+  listForecastIntervals(requestMessage: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsReq, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_wfm_wfm_pb.CallDataByInterval>;
   buildRegressionForecastByInterval(requestMessage: api_v1alpha1_wfm_wfm_pb.BuildRegressionForecastByIntervalReq, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_wfm_wfm_pb.CallDataByInterval>;
   buildRegressionForecastByIntervalWithStats(requestMessage: api_v1alpha1_wfm_wfm_pb.BuildRegressionForecastByIntervalWithStatsReq, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_wfm_wfm_pb.BuildRegressionForecastByIntervalWithStatsRes>;
   listCallProfileTemplates(
@@ -1594,6 +2029,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeRes|null) => void
   ): UnaryResponse;
+  listProgramNodesBySid(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidRes|null) => void
+  ): UnaryResponse;
+  listProgramNodesBySid(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidRes|null) => void
+  ): UnaryResponse;
   createConstraintRule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateConstraintRuleReq,
     metadata: grpc.Metadata,
@@ -1675,6 +2119,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentGroupReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentGroupRes|null) => void
   ): UnaryResponse;
+  listAgentScheduleGroups(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsResponse|null) => void
+  ): UnaryResponse;
+  listAgentScheduleGroups(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsResponse|null) => void
+  ): UnaryResponse;
   updateAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAgentGroupReq,
     metadata: grpc.Metadata,
@@ -1719,6 +2172,15 @@ export class WFMClient {
   listUngroupedWFMAgents(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  listWFMAgentSids(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes|null) => void
+  ): UnaryResponse;
+  listWFMAgentSids(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes|null) => void
   ): UnaryResponse;
   listWFMAgentsAssociatedWithAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentsAssociatedWithAgentGroupReq,
@@ -2143,6 +2605,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateShiftInstanceV2Req,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateShiftInstanceV2Res|null) => void
   ): UnaryResponse;
+  splitShiftInstance(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SplitShiftInstanceReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SplitShiftInstanceRes|null) => void
+  ): UnaryResponse;
+  splitShiftInstance(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SplitShiftInstanceReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SplitShiftInstanceRes|null) => void
+  ): UnaryResponse;
   swapShiftInstances(
     requestMessage: api_v1alpha1_wfm_wfm_pb.SwapShiftInstancesReq,
     metadata: grpc.Metadata,
@@ -2224,6 +2695,24 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingTargetReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingTargetRes|null) => void
   ): UnaryResponse;
+  getDefaultSchedulingTarget(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetRes|null) => void
+  ): UnaryResponse;
+  getDefaultSchedulingTarget(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetRes|null) => void
+  ): UnaryResponse;
+  setDefaultSchedulingTarget(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetRes|null) => void
+  ): UnaryResponse;
+  setDefaultSchedulingTarget(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetRes|null) => void
+  ): UnaryResponse;
   getPerformanceMetrics(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetPerformanceMetricsReq,
     metadata: grpc.Metadata,
@@ -2241,6 +2730,231 @@ export class WFMClient {
   listRequiredCallsIntervals(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListRequiredCallsIntervalsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRequiredCallsIntervalsRes|null) => void
+  ): UnaryResponse;
+  createTourPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourPatternReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourPatternRes|null) => void
+  ): UnaryResponse;
+  createTourPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourPatternReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourPatternRes|null) => void
+  ): UnaryResponse;
+  getTourPatternDiagnostics(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternDiagnosticsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternDiagnosticsRes|null) => void
+  ): UnaryResponse;
+  getTourPatternDiagnostics(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternDiagnosticsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternDiagnosticsRes|null) => void
+  ): UnaryResponse;
+  upsertTourPatternWithMembers(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersRes|null) => void
+  ): UnaryResponse;
+  upsertTourPatternWithMembers(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersRes|null) => void
+  ): UnaryResponse;
+  getTourPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternRes|null) => void
+  ): UnaryResponse;
+  getTourPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternRes|null) => void
+  ): UnaryResponse;
+  getTourPatternWithMembers(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersRes|null) => void
+  ): UnaryResponse;
+  getTourPatternWithMembers(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersRes|null) => void
+  ): UnaryResponse;
+  deleteTourPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourPatternReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourPatternRes|null) => void
+  ): UnaryResponse;
+  deleteTourPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourPatternReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourPatternRes|null) => void
+  ): UnaryResponse;
+  createTourWeekPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternRes|null) => void
+  ): UnaryResponse;
+  createTourWeekPattern(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternRes|null) => void
+  ): UnaryResponse;
+  listTourWeekPatterns(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsRes|null) => void
+  ): UnaryResponse;
+  listTourWeekPatterns(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsRes|null) => void
+  ): UnaryResponse;
+  deleteTourWeekPatterns(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsRes|null) => void
+  ): UnaryResponse;
+  deleteTourWeekPatterns(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsRes|null) => void
+  ): UnaryResponse;
+  createTourShiftInstanceConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigRes|null) => void
+  ): UnaryResponse;
+  createTourShiftInstanceConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigRes|null) => void
+  ): UnaryResponse;
+  updateTourShiftInstanceConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigRes|null) => void
+  ): UnaryResponse;
+  updateTourShiftInstanceConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigRes|null) => void
+  ): UnaryResponse;
+  listTourShiftInstanceConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsRes|null) => void
+  ): UnaryResponse;
+  listTourShiftInstanceConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsRes|null) => void
+  ): UnaryResponse;
+  deleteTourShiftInstanceConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsRes|null) => void
+  ): UnaryResponse;
+  deleteTourShiftInstanceConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsRes|null) => void
+  ): UnaryResponse;
+  createTourShiftSegmentConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigRes|null) => void
+  ): UnaryResponse;
+  createTourShiftSegmentConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigRes|null) => void
+  ): UnaryResponse;
+  updateTourShiftSegmentConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigRes|null) => void
+  ): UnaryResponse;
+  updateTourShiftSegmentConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigRes|null) => void
+  ): UnaryResponse;
+  listTourShiftSegmentConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsRes|null) => void
+  ): UnaryResponse;
+  listTourShiftSegmentConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsRes|null) => void
+  ): UnaryResponse;
+  deleteTourShiftSegmentConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsRes|null) => void
+  ): UnaryResponse;
+  deleteTourShiftSegmentConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsRes|null) => void
+  ): UnaryResponse;
+  createTourAgentCollection(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionRes|null) => void
+  ): UnaryResponse;
+  createTourAgentCollection(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionRes|null) => void
+  ): UnaryResponse;
+  updateTourAgentCollection(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionRes|null) => void
+  ): UnaryResponse;
+  updateTourAgentCollection(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionRes|null) => void
+  ): UnaryResponse;
+  listTourAgentCollections(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsRes|null) => void
+  ): UnaryResponse;
+  listTourAgentCollections(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsRes|null) => void
+  ): UnaryResponse;
+  deleteTourAgentCollections(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsRes|null) => void
+  ): UnaryResponse;
+  deleteTourAgentCollections(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsRes|null) => void
+  ): UnaryResponse;
+  createTourAgentCollectionWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  createTourAgentCollectionWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  listTourAgentCollectionWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  listTourAgentCollectionWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  deleteTourAgentCollectionWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  deleteTourAgentCollectionWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  generateTourWeekPatterns(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsRes|null) => void
+  ): UnaryResponse;
+  generateTourWeekPatterns(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsRes|null) => void
   ): UnaryResponse;
 }
 

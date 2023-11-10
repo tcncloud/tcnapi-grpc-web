@@ -584,6 +584,70 @@ export namespace SkillProfileCategory {
   export const CategoryType: CategoryTypeMap;
 }
 
+export class SchedulingResultMetric extends jspb.Message {
+  getTotalInternalIntervals(): number;
+  setTotalInternalIntervals(value: number): void;
+
+  getTotalIntervalsWithFteRequired(): number;
+  setTotalIntervalsWithFteRequired(value: number): void;
+
+  getTotalIntervalsWithFtesRemaining(): number;
+  setTotalIntervalsWithFtesRemaining(value: number): void;
+
+  getCoverage(): number;
+  setCoverage(value: number): void;
+
+  getRootMeanSquare(): number;
+  setRootMeanSquare(value: number): void;
+
+  getHasResult(): boolean;
+  setHasResult(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SchedulingResultMetric.AsObject;
+  static toObject(includeInstance: boolean, msg: SchedulingResultMetric): SchedulingResultMetric.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SchedulingResultMetric, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SchedulingResultMetric;
+  static deserializeBinaryFromReader(message: SchedulingResultMetric, reader: jspb.BinaryReader): SchedulingResultMetric;
+}
+
+export namespace SchedulingResultMetric {
+  export type AsObject = {
+    totalInternalIntervals: number,
+    totalIntervalsWithFteRequired: number,
+    totalIntervalsWithFtesRemaining: number,
+    coverage: number,
+    rootMeanSquare: number,
+    hasResult: boolean,
+  }
+}
+
+export class ClientHistoryCacheInfo extends jspb.Message {
+  getState(): HistoryCacheStateMap[keyof HistoryCacheStateMap];
+  setState(value: HistoryCacheStateMap[keyof HistoryCacheStateMap]): void;
+
+  getProgressPercentage(): number;
+  setProgressPercentage(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ClientHistoryCacheInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ClientHistoryCacheInfo): ClientHistoryCacheInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ClientHistoryCacheInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ClientHistoryCacheInfo;
+  static deserializeBinaryFromReader(message: ClientHistoryCacheInfo, reader: jspb.BinaryReader): ClientHistoryCacheInfo;
+}
+
+export namespace ClientHistoryCacheInfo {
+  export type AsObject = {
+    state: HistoryCacheStateMap[keyof HistoryCacheStateMap],
+    progressPercentage: number,
+  }
+}
+
 export interface RegressionForecasterModelTypesMap {
   RANDOM_FOREST: 0;
   ADABOOST: 1;
@@ -633,6 +697,12 @@ export interface ConfigEntityTypeMap {
   SCHEDULING_ACTIVITY: 12;
   SKILL_PROFICIENCY: 13;
   SCHEDULE_SCENARIO: 14;
+  SKILL: 15;
+  TOUR_PATTERN: 16;
+  TOUR_WEEK_PATTERN: 17;
+  TOUR_SHIFT_INSTANCE_CONFIG: 18;
+  TOUR_SHIFT_SEGMENT_CONFIG: 19;
+  TOUR_AGENT_COLLECTION: 20;
 }
 
 export const ConfigEntityType: ConfigEntityTypeMap;
@@ -755,6 +825,23 @@ export interface DiagnosticCodeMap {
   CONSTRAINT_WITH_LARGER_PERIOD_PER_SMALL_PERIOD_NOT_ALLOWED: 47;
   CONSTRAINT_MIN_MAX_OFF_TIME_FOR_SHIFTS_NOT_ALLOWED: 48;
   CONSTRAINT_CANNOT_HAVE_CONSECUTIVE_TIME_PER_MULTIPLE_SHIFTS: 49;
+  CANNOT_GENERATE_TOUR_PATTERNS_FOR_NON_TOUR_SHIFT_TEMPLATE: 50;
+  TOUR_PATTERNS_NEEDED_TO_SCHEDULE_TOUR: 51;
+  SHIFT_TEMPLATE_ACTIVITY_PLACEMENT_MIN_MAX_MUST_BE_MULTIPLE_OF_5_MINUTES: 52;
+  NO_SHIFT_TEMPLATE_ACTIVITY_PLACEMENT_SEQUENCES_MATCH_SHIFT_MIN_MAX_WIDTH: 53;
+  INVALID_TOUR_PATTERN: 54;
+  INVALID_TOUR_AGENT_COLLECTION: 55;
+  INVALID_TOUR_SHIFT_INSTANCE_CONFIG: 56;
+  INVALID_TOUR_SHIFT_SEGMENT_CONFIG: 57;
+  TOUR_SHIFT_SEGMENT_CONFIG_OVERLAP: 58;
+  TOUR_SHIFT_SEGMENT_CONFIG_DOES_NOT_FIT: 59;
+  TOUR_SHIFT_INSTANCE_CONFIG_OVERLAP: 60;
+  WEEK_PATTERN_NUMBERS_NOT_UNIQUE_IN_TOUR_WEEK_PATTERNS: 61;
+  WFM_AGENT_SIDS_NOT_UNIQUE_IN_TOUR_AGENT_COLLECTIONS: 62;
+  FIST_WEEK_PATTERN_NUMBERS_NOT_UNIQUE_IN_TOUR_AGENT_COLLECTIONS: 63;
+  FIRST_WEEK_PATTERN_NUMBERS_NOT_FOUND_IN_TOUR_WEEK_PATTERNS: 64;
+  SHIFT_TEMPLATE_HAS_NO_ASSOCIATED_SCHEDULING_AGENT_GROUPS: 65;
+  ATTEMPT_TO_BUILD_SCHEDULES_FOR_INVALID_PARENT_NODE: 66;
 }
 
 export const DiagnosticCode: DiagnosticCodeMap;
@@ -799,4 +886,13 @@ export interface BitmapTypeMap {
 }
 
 export const BitmapType: BitmapTypeMap;
+
+export interface HistoryCacheStateMap {
+  NOT_LOADED: 0;
+  LOADING: 1;
+  LOADING_COMPLETE: 2;
+  LOADING_FAILED: 3;
+}
+
+export const HistoryCacheState: HistoryCacheStateMap;
 

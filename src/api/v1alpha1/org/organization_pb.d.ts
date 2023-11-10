@@ -693,6 +693,12 @@ export namespace ListArchivedOrganizationsResponse {
     getLastScheduledDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setLastScheduledDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+    getClientSid(): number;
+    setClientSid(value: number): void;
+
+    getRegionId(): string;
+    setRegionId(value: string): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): OrganizationDetails.AsObject;
     static toObject(includeInstance: boolean, msg: OrganizationDetails): OrganizationDetails.AsObject;
@@ -710,6 +716,8 @@ export namespace ListArchivedOrganizationsResponse {
       billingId: string,
       addDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       lastScheduledDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      clientSid: number,
+      regionId: string,
     }
   }
 }

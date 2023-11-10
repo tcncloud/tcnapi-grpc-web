@@ -1165,6 +1165,16 @@ export class ExecuteFlow extends jspb.Message {
   getJourneyLatest(): ExecuteJourneyLatest | undefined;
   setJourneyLatest(value?: ExecuteJourneyLatest): void;
 
+  hasJourneyList(): boolean;
+  clearJourneyList(): void;
+  getJourneyList(): ExecuteJourneyList | undefined;
+  setJourneyList(value?: ExecuteJourneyList): void;
+
+  hasJourneyUpdate(): boolean;
+  clearJourneyUpdate(): void;
+  getJourneyUpdate(): ExecuteJourneyUpdate | undefined;
+  setJourneyUpdate(value?: ExecuteJourneyUpdate): void;
+
   hasAthenahealthGetPatients(): boolean;
   clearAthenahealthGetPatients(): void;
   getAthenahealthGetPatients(): ExecuteAthenahealthGetPatients | undefined;
@@ -1455,6 +1465,11 @@ export class ExecuteFlow extends jspb.Message {
   getShift4CcPayment(): ExecuteShift4CcPayments | undefined;
   setShift4CcPayment(value?: ExecuteShift4CcPayments): void;
 
+  hasShift4AccessToken(): boolean;
+  clearShift4AccessToken(): void;
+  getShift4AccessToken(): ExecuteShift4CcPayments | undefined;
+  setShift4AccessToken(value?: ExecuteShift4CcPayments): void;
+
   hasPoscorpAccesstoken(): boolean;
   clearPoscorpAccesstoken(): void;
   getPoscorpAccesstoken(): ExecutePoscorpAccesstoken | undefined;
@@ -1479,6 +1494,26 @@ export class ExecuteFlow extends jspb.Message {
   clearPianoUpdateUser(): void;
   getPianoUpdateUser(): ExecutePianoUpdateUser | undefined;
   setPianoUpdateUser(value?: ExecutePianoUpdateUser): void;
+
+  hasPianoUpdateSubscription(): boolean;
+  clearPianoUpdateSubscription(): void;
+  getPianoUpdateSubscription(): ExecutePianoUpdateSubscription | undefined;
+  setPianoUpdateSubscription(value?: ExecutePianoUpdateSubscription): void;
+
+  hasPianoGetPayment(): boolean;
+  clearPianoGetPayment(): void;
+  getPianoGetPayment(): ExecutePianoGetPayment | undefined;
+  setPianoGetPayment(value?: ExecutePianoGetPayment): void;
+
+  hasPianoListSubscription(): boolean;
+  clearPianoListSubscription(): void;
+  getPianoListSubscription(): ExecutePianoListSubscription | undefined;
+  setPianoListSubscription(value?: ExecutePianoListSubscription): void;
+
+  hasPianoLastaccessConversion(): boolean;
+  clearPianoLastaccessConversion(): void;
+  getPianoLastaccessConversion(): ExecutePianoLastAccessConversion | undefined;
+  setPianoLastaccessConversion(value?: ExecutePianoLastAccessConversion): void;
 
   hasEpicGetToken(): boolean;
   clearEpicGetToken(): void;
@@ -1569,6 +1604,21 @@ export class ExecuteFlow extends jspb.Message {
   clearPriocommerceCcPayment(): void;
   getPriocommerceCcPayment(): ExecutePriocommerceCcPayment | undefined;
   setPriocommerceCcPayment(value?: ExecutePriocommerceCcPayment): void;
+
+  hasNavigaCreatePayment(): boolean;
+  clearNavigaCreatePayment(): void;
+  getNavigaCreatePayment(): ExecuteNavigaCreatePayment | undefined;
+  setNavigaCreatePayment(value?: ExecuteNavigaCreatePayment): void;
+
+  hasNavigaChangeBilling(): boolean;
+  clearNavigaChangeBilling(): void;
+  getNavigaChangeBilling(): ExecuteNavigaChangeBilling | undefined;
+  setNavigaChangeBilling(value?: ExecuteNavigaChangeBilling): void;
+
+  hasPaynsecondsTokenizeCard(): boolean;
+  clearPaynsecondsTokenizeCard(): void;
+  getPaynsecondsTokenizeCard(): ExecutePaynsecondsTokenizeCard | undefined;
+  setPaynsecondsTokenizeCard(value?: ExecutePaynsecondsTokenizeCard): void;
 
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
@@ -1693,6 +1743,8 @@ export namespace ExecuteFlow {
     vantivCreditSale?: ExecuteVantivCreditSale.AsObject,
     vantivAchSale?: ExecuteVantivAchSale.AsObject,
     journeyLatest?: ExecuteJourneyLatest.AsObject,
+    journeyList?: ExecuteJourneyList.AsObject,
+    journeyUpdate?: ExecuteJourneyUpdate.AsObject,
     athenahealthGetPatients?: ExecuteAthenahealthGetPatients.AsObject,
     athenahealthGetPatientsWithId?: ExecuteAthenahealthGetPatientsWithId.AsObject,
     athenahealthCcPayment?: ExecuteAthenahealthCcPayment.AsObject,
@@ -1751,11 +1803,16 @@ export namespace ExecuteFlow {
     i2cTransactionHistory?: ExecuteI2cTransactionHistory.AsObject,
     opayoCcPayment?: ExecuteOpayoCcPayments.AsObject,
     shift4CcPayment?: ExecuteShift4CcPayments.AsObject,
+    shift4AccessToken?: ExecuteShift4CcPayments.AsObject,
     poscorpAccesstoken?: ExecutePoscorpAccesstoken.AsObject,
     poscorpLookupGuarantor?: ExecutePoscorpLookupGuarantor.AsObject,
     poscorpUpdatePaymentStatus?: ExecutePoscorpUpdatePaymentStatus.AsObject,
     pianoGetUser?: ExecutePianoGetUser.AsObject,
     pianoUpdateUser?: ExecutePianoUpdateUser.AsObject,
+    pianoUpdateSubscription?: ExecutePianoUpdateSubscription.AsObject,
+    pianoGetPayment?: ExecutePianoGetPayment.AsObject,
+    pianoListSubscription?: ExecutePianoListSubscription.AsObject,
+    pianoLastaccessConversion?: ExecutePianoLastAccessConversion.AsObject,
     epicGetToken?: ExecuteEpicGetToken.AsObject,
     epicGetPatient?: ExecuteEpicGetPatient.AsObject,
     epicMatchPatient?: ExecuteEpicMatchPatient.AsObject,
@@ -1774,6 +1831,9 @@ export namespace ExecuteFlow {
     newzwarePhoneLookupMulti?: ExecuteNewzwarePhoneLookupMulti.AsObject,
     priocommerceAchPayment?: ExecutePriocommerceAchPayment.AsObject,
     priocommerceCcPayment?: ExecutePriocommerceCcPayment.AsObject,
+    navigaCreatePayment?: ExecuteNavigaCreatePayment.AsObject,
+    navigaChangeBilling?: ExecuteNavigaChangeBilling.AsObject,
+    paynsecondsTokenizeCard?: ExecutePaynsecondsTokenizeCard.AsObject,
   }
 
   export enum ValueCase {
@@ -1887,6 +1947,8 @@ export namespace ExecuteFlow {
     VANTIV_CREDIT_SALE = 2301,
     VANTIV_ACH_SALE = 2302,
     JOURNEY_LATEST = 2401,
+    JOURNEY_LIST = 2402,
+    JOURNEY_UPDATE = 2403,
     ATHENAHEALTH_GET_PATIENTS = 2501,
     ATHENAHEALTH_GET_PATIENTS_WITH_ID = 2502,
     ATHENAHEALTH_CC_PAYMENT = 2503,
@@ -1945,11 +2007,16 @@ export namespace ExecuteFlow {
     I2C_TRANSACTION_HISTORY = 3210,
     OPAYO_CC_PAYMENT = 3301,
     SHIFT4_CC_PAYMENT = 3401,
+    SHIFT4_ACCESS_TOKEN = 3402,
     POSCORP_ACCESSTOKEN = 3501,
     POSCORP_LOOKUP_GUARANTOR = 3502,
     POSCORP_UPDATE_PAYMENT_STATUS = 3503,
     PIANO_GET_USER = 3601,
     PIANO_UPDATE_USER = 3602,
+    PIANO_UPDATE_SUBSCRIPTION = 3603,
+    PIANO_GET_PAYMENT = 3604,
+    PIANO_LIST_SUBSCRIPTION = 3605,
+    PIANO_LASTACCESS_CONVERSION = 3606,
     EPIC_GET_TOKEN = 3701,
     EPIC_GET_PATIENT = 3702,
     EPIC_MATCH_PATIENT = 3703,
@@ -1968,6 +2035,9 @@ export namespace ExecuteFlow {
     NEWZWARE_PHONE_LOOKUP_MULTI = 3809,
     PRIOCOMMERCE_ACH_PAYMENT = 3901,
     PRIOCOMMERCE_CC_PAYMENT = 3902,
+    NAVIGA_CREATE_PAYMENT = 4001,
+    NAVIGA_CHANGE_BILLING = 4002,
+    PAYNSECONDS_TOKENIZE_CARD = 4101,
   }
 }
 
@@ -2245,6 +2315,9 @@ export namespace VerificationNewzwareAccountInquiry {
 }
 
 export class PaymentExperianCC extends jspb.Message {
+  getUseInvoiceAccountNumber(): boolean;
+  setUseInvoiceAccountNumber(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PaymentExperianCC.AsObject;
   static toObject(includeInstance: boolean, msg: PaymentExperianCC): PaymentExperianCC.AsObject;
@@ -2257,10 +2330,14 @@ export class PaymentExperianCC extends jspb.Message {
 
 export namespace PaymentExperianCC {
   export type AsObject = {
+    useInvoiceAccountNumber: boolean,
   }
 }
 
 export class PaymentExperianACH extends jspb.Message {
+  getUseInvoiceAccountNumber(): boolean;
+  setUseInvoiceAccountNumber(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PaymentExperianACH.AsObject;
   static toObject(includeInstance: boolean, msg: PaymentExperianACH): PaymentExperianACH.AsObject;
@@ -2273,6 +2350,7 @@ export class PaymentExperianACH extends jspb.Message {
 
 export namespace PaymentExperianACH {
   export type AsObject = {
+    useInvoiceAccountNumber: boolean,
   }
 }
 
@@ -4196,6 +4274,38 @@ export namespace ExecuteJourneyLatest {
   }
 }
 
+export class ExecuteJourneyList extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteJourneyList.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteJourneyList): ExecuteJourneyList.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteJourneyList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteJourneyList;
+  static deserializeBinaryFromReader(message: ExecuteJourneyList, reader: jspb.BinaryReader): ExecuteJourneyList;
+}
+
+export namespace ExecuteJourneyList {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteJourneyUpdate extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteJourneyUpdate.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteJourneyUpdate): ExecuteJourneyUpdate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteJourneyUpdate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteJourneyUpdate;
+  static deserializeBinaryFromReader(message: ExecuteJourneyUpdate, reader: jspb.BinaryReader): ExecuteJourneyUpdate;
+}
+
+export namespace ExecuteJourneyUpdate {
+  export type AsObject = {
+  }
+}
+
 export class ExecuteAthenahealthGetPatients extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteAthenahealthGetPatients.AsObject;
@@ -5124,6 +5234,22 @@ export namespace ExecuteShift4CcPayments {
   }
 }
 
+export class ExecuteShift4AccessToken extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteShift4AccessToken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteShift4AccessToken): ExecuteShift4AccessToken.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteShift4AccessToken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteShift4AccessToken;
+  static deserializeBinaryFromReader(message: ExecuteShift4AccessToken, reader: jspb.BinaryReader): ExecuteShift4AccessToken;
+}
+
+export namespace ExecuteShift4AccessToken {
+  export type AsObject = {
+  }
+}
+
 export class ExecutePoscorpAccesstoken extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecutePoscorpAccesstoken.AsObject;
@@ -5200,6 +5326,70 @@ export class ExecutePianoUpdateUser extends jspb.Message {
 }
 
 export namespace ExecutePianoUpdateUser {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePianoUpdateSubscription extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePianoUpdateSubscription.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePianoUpdateSubscription): ExecutePianoUpdateSubscription.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePianoUpdateSubscription, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePianoUpdateSubscription;
+  static deserializeBinaryFromReader(message: ExecutePianoUpdateSubscription, reader: jspb.BinaryReader): ExecutePianoUpdateSubscription;
+}
+
+export namespace ExecutePianoUpdateSubscription {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePianoGetPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePianoGetPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePianoGetPayment): ExecutePianoGetPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePianoGetPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePianoGetPayment;
+  static deserializeBinaryFromReader(message: ExecutePianoGetPayment, reader: jspb.BinaryReader): ExecutePianoGetPayment;
+}
+
+export namespace ExecutePianoGetPayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePianoListSubscription extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePianoListSubscription.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePianoListSubscription): ExecutePianoListSubscription.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePianoListSubscription, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePianoListSubscription;
+  static deserializeBinaryFromReader(message: ExecutePianoListSubscription, reader: jspb.BinaryReader): ExecutePianoListSubscription;
+}
+
+export namespace ExecutePianoListSubscription {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePianoLastAccessConversion extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePianoLastAccessConversion.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePianoLastAccessConversion): ExecutePianoLastAccessConversion.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePianoLastAccessConversion, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePianoLastAccessConversion;
+  static deserializeBinaryFromReader(message: ExecutePianoLastAccessConversion, reader: jspb.BinaryReader): ExecutePianoLastAccessConversion;
+}
+
+export namespace ExecutePianoLastAccessConversion {
   export type AsObject = {
   }
 }
@@ -5492,6 +5682,54 @@ export namespace ExecutePriocommerceCcPayment {
   }
 }
 
+export class ExecuteNavigaCreatePayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaCreatePayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaCreatePayment): ExecuteNavigaCreatePayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaCreatePayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaCreatePayment;
+  static deserializeBinaryFromReader(message: ExecuteNavigaCreatePayment, reader: jspb.BinaryReader): ExecuteNavigaCreatePayment;
+}
+
+export namespace ExecuteNavigaCreatePayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaChangeBilling extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaChangeBilling.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaChangeBilling): ExecuteNavigaChangeBilling.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaChangeBilling, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaChangeBilling;
+  static deserializeBinaryFromReader(message: ExecuteNavigaChangeBilling, reader: jspb.BinaryReader): ExecuteNavigaChangeBilling;
+}
+
+export namespace ExecuteNavigaChangeBilling {
+  export type AsObject = {
+  }
+}
+
+export class ExecutePaynsecondsTokenizeCard extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecutePaynsecondsTokenizeCard.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecutePaynsecondsTokenizeCard): ExecutePaynsecondsTokenizeCard.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecutePaynsecondsTokenizeCard, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecutePaynsecondsTokenizeCard;
+  static deserializeBinaryFromReader(message: ExecutePaynsecondsTokenizeCard, reader: jspb.BinaryReader): ExecutePaynsecondsTokenizeCard;
+}
+
+export namespace ExecutePaynsecondsTokenizeCard {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -5533,6 +5771,8 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_EPIC: 3700;
   INTEGRATION_TYPE_NEWZWARE: 3800;
   INTEGRATION_TYPE_PRIOCOMMERCE: 3900;
+  INTEGRATION_TYPE_NAVIGA: 4000;
+  INTEGRATION_TYPE_PAYNSECONDS: 4100;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -5648,6 +5888,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_VANTIV_CREDITSALE: 2301;
   REQUEST_METHOD_VANTIV_ACHSALE: 2302;
   REQUEST_METHOD_JOURNEY_LATEST: 2401;
+  REQUEST_METHOD_JOURNEY_LIST: 2402;
+  REQUEST_METHOD_JOURNEY_UPDATE: 2403;
   REQUEST_METHOD_ATHENAHEALTH_GETPATIENTS: 2501;
   REQUEST_METHOD_ATHENAHEALTH_GETPATIENTSWITHID: 2502;
   REQUEST_METHOD_ATHENAHEALTH_CCPAYMENT: 2503;
@@ -5706,11 +5948,16 @@ export interface RequestMethodMap {
   REQUEST_METHOD_I2C_TRANSACTION_HISTORY: 3210;
   REQUEST_METHOD_OPAYO_CCPAYMENTS: 3301;
   REQUEST_METHOD_SHIFT4_CCPAYMENTS: 3401;
+  REQUEST_METHOD_SHIFT4_ACCESSTOKEN: 3402;
   REQUEST_METHOD_POSCORP_ACCESSTOKEN: 3501;
   REQUEST_METHOD_POSCORP_LOOKUP_GUARANTOR: 3502;
   REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS: 3503;
   REQUEST_METHOD_PIANO_GET_USER: 3601;
   REQUEST_METHOD_PIANO_UPDATE_USER: 3602;
+  REQUEST_METHOD_PIANO_UPDATE_SUBSCRIPTION: 3603;
+  REQUEST_METHOD_PIANO_GET_PAYMENT: 3604;
+  REQUEST_METHOD_PIANO_LIST_SUBSCRIPTION: 3605;
+  REQUEST_METHOD_PIANO_LASTACCESS_CONVERSION: 3606;
   REQUEST_METHOD_EPIC_GET_TOKEN: 3701;
   REQUEST_METHOD_EPIC_GET_PATIENT: 3702;
   REQUEST_METHOD_EPIC_MATCH_PATIENT: 3703;
@@ -5729,6 +5976,9 @@ export interface RequestMethodMap {
   REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP_MULTI: 3809;
   REQUEST_METHOD_PRIOCOMMERCE_ACH_PAYMENT: 3901;
   REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT: 3902;
+  REQUEST_METHOD_NAVIGA_CREATE_PAYMENT: 4001;
+  REQUEST_METHOD_NAVIGA_CHANGE_BILLING: 4002;
+  REQUEST_METHOD_PAYNSECONDS_TOKENIZE_CARD: 4101;
 }
 
 export const RequestMethod: RequestMethodMap;

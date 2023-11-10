@@ -237,6 +237,97 @@ export namespace ProcessRes {
   }
 }
 
+export class SearchPastTransactionsRequest extends jspb.Message {
+  getPluginInstanceId(): string;
+  setPluginInstanceId(value: string): void;
+
+  getIntId(): api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap];
+  setIntId(value: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap]): void;
+
+  getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
+
+  getMatchFieldsMap(): jspb.Map<string, string>;
+  clearMatchFieldsMap(): void;
+  getLimit(): number;
+  setLimit(value: number): void;
+
+  hasSearchBefore(): boolean;
+  clearSearchBefore(): void;
+  getSearchBefore(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setSearchBefore(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchPastTransactionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SearchPastTransactionsRequest): SearchPastTransactionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SearchPastTransactionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SearchPastTransactionsRequest;
+  static deserializeBinaryFromReader(message: SearchPastTransactionsRequest, reader: jspb.BinaryReader): SearchPastTransactionsRequest;
+}
+
+export namespace SearchPastTransactionsRequest {
+  export type AsObject = {
+    pluginInstanceId: string,
+    intId: api_commons_integrations_integrations_pb.IntegrationTypeMap[keyof api_commons_integrations_integrations_pb.IntegrationTypeMap],
+    methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
+    matchFieldsMap: Array<[string, string]>,
+    limit: number,
+    searchBefore?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class SearchPastTransactionsResponse extends jspb.Message {
+  clearValuesList(): void;
+  getValuesList(): Array<PastTxEntity>;
+  setValuesList(value: Array<PastTxEntity>): void;
+  addValues(value?: PastTxEntity, index?: number): PastTxEntity;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchPastTransactionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SearchPastTransactionsResponse): SearchPastTransactionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SearchPastTransactionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SearchPastTransactionsResponse;
+  static deserializeBinaryFromReader(message: SearchPastTransactionsResponse, reader: jspb.BinaryReader): SearchPastTransactionsResponse;
+}
+
+export namespace SearchPastTransactionsResponse {
+  export type AsObject = {
+    valuesList: Array<PastTxEntity.AsObject>,
+  }
+}
+
+export class PastTxEntity extends jspb.Message {
+  getReqMap(): jspb.Map<string, string>;
+  clearReqMap(): void;
+  getResMap(): jspb.Map<string, string>;
+  clearResMap(): void;
+  hasCreatedOn(): boolean;
+  clearCreatedOn(): void;
+  getCreatedOn(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedOn(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PastTxEntity.AsObject;
+  static toObject(includeInstance: boolean, msg: PastTxEntity): PastTxEntity.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PastTxEntity, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PastTxEntity;
+  static deserializeBinaryFromReader(message: PastTxEntity, reader: jspb.BinaryReader): PastTxEntity;
+}
+
+export namespace PastTxEntity {
+  export type AsObject = {
+    reqMap: Array<[string, string]>,
+    resMap: Array<[string, string]>,
+    createdOn?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export class ListIntegrationsForOrgReq extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListIntegrationsForOrgReq.AsObject;
@@ -2955,6 +3046,11 @@ export class PluginInstance extends jspb.Message {
   getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
   setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
 
+  clearDisplayMethodsList(): void;
+  getDisplayMethodsList(): Array<api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]>;
+  setDisplayMethodsList(value: Array<api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]>): void;
+  addDisplayMethods(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap], index?: number): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PluginInstance.AsObject;
   static toObject(includeInstance: boolean, msg: PluginInstance): PluginInstance.AsObject;
@@ -2975,6 +3071,7 @@ export namespace PluginInstance {
     metadata?: Values.AsObject,
     lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
+    displayMethodsList: Array<api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]>,
   }
 }
 

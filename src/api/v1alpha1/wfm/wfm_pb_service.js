@@ -82,6 +82,15 @@ WFM.GetForecastingParameters = {
   responseType: api_v1alpha1_wfm_wfm_pb.GetForecastingParametersRes
 };
 
+WFM.GetClientHistoryCacheInfo = {
+  methodName: "GetClientHistoryCacheInfo",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.GetClientHistoryCacheInfoRes
+};
+
 WFM.ListHistoricalData = {
   methodName: "ListHistoricalData",
   service: WFM,
@@ -127,6 +136,15 @@ WFM.BuildCallProfileTemplateForSkillProfile = {
   responseType: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateForSkillProfileRes
 };
 
+WFM.BuildCallProfileTemplate = {
+  methodName: "BuildCallProfileTemplate",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.BuildCallProfileTemplateRes
+};
+
 WFM.CreateInactiveSkillProfileMapping = {
   methodName: "CreateInactiveSkillProfileMapping",
   service: WFM,
@@ -152,6 +170,42 @@ WFM.DisconnectInactiveSkillProfileMapping = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingReq,
   responseType: api_v1alpha1_wfm_wfm_pb.DisconnectInactiveSkillProfileMappingRes
+};
+
+WFM.CreateSkillProfileGroup = {
+  methodName: "CreateSkillProfileGroup",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateSkillProfileGroupRes
+};
+
+WFM.UpdateSkillProfileGroup = {
+  methodName: "UpdateSkillProfileGroup",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupRes
+};
+
+WFM.ListSkillProfileGroups = {
+  methodName: "ListSkillProfileGroups",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListSkillProfileGroupsRes
+};
+
+WFM.UpdateSkillProfileGroupAssociations = {
+  methodName: "UpdateSkillProfileGroupAssociations",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdateSkillProfileGroupAssociationsRes
 };
 
 WFM.DeleteHistoricalDataDeltas = {
@@ -259,6 +313,15 @@ WFM.ListForecastIntervalsForSkillProfile = {
   requestStream: false,
   responseStream: true,
   requestType: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsForSkillProfileReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.CallDataByInterval
+};
+
+WFM.ListForecastIntervals = {
+  methodName: "ListForecastIntervals",
+  service: WFM,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListForecastIntervalsReq,
   responseType: api_v1alpha1_wfm_wfm_pb.CallDataByInterval
 };
 
@@ -424,6 +487,15 @@ WFM.UpdateProgramNode = {
   responseType: api_v1alpha1_wfm_wfm_pb.UpdateProgramNodeRes
 };
 
+WFM.ListProgramNodesBySid = {
+  methodName: "ListProgramNodesBySid",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListProgramNodesBySidRes
+};
+
 WFM.CreateConstraintRule = {
   methodName: "CreateConstraintRule",
   service: WFM,
@@ -505,6 +577,15 @@ WFM.CreateAgentGroup = {
   responseType: api_v1alpha1_wfm_wfm_pb.CreateAgentGroupRes
 };
 
+WFM.ListAgentScheduleGroups = {
+  methodName: "ListAgentScheduleGroups",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListAgentScheduleGroupsResponse
+};
+
 WFM.UpdateAgentGroup = {
   methodName: "UpdateAgentGroup",
   service: WFM,
@@ -548,6 +629,15 @@ WFM.ListUngroupedWFMAgents = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsReq,
   responseType: api_v1alpha1_wfm_wfm_pb.ListUngroupedWFMAgentsRes
+};
+
+WFM.ListWFMAgentSids = {
+  methodName: "ListWFMAgentSids",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes
 };
 
 WFM.ListWFMAgentsAssociatedWithAgentGroup = {
@@ -973,6 +1063,15 @@ WFM.CreateShiftInstanceV2 = {
   responseType: api_v1alpha1_wfm_wfm_pb.CreateShiftInstanceV2Res
 };
 
+WFM.SplitShiftInstance = {
+  methodName: "SplitShiftInstance",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.SplitShiftInstanceReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.SplitShiftInstanceRes
+};
+
 WFM.SwapShiftInstances = {
   methodName: "SwapShiftInstances",
   service: WFM,
@@ -1054,6 +1153,24 @@ WFM.DeleteSchedulingTarget = {
   responseType: api_v1alpha1_wfm_wfm_pb.DeleteSchedulingTargetRes
 };
 
+WFM.GetDefaultSchedulingTarget = {
+  methodName: "GetDefaultSchedulingTarget",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.GetDefaultSchedulingTargetRes
+};
+
+WFM.SetDefaultSchedulingTarget = {
+  methodName: "SetDefaultSchedulingTarget",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.SetDefaultSchedulingTargetRes
+};
+
 WFM.GetPerformanceMetrics = {
   methodName: "GetPerformanceMetrics",
   service: WFM,
@@ -1070,6 +1187,231 @@ WFM.ListRequiredCallsIntervals = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.ListRequiredCallsIntervalsReq,
   responseType: api_v1alpha1_wfm_wfm_pb.ListRequiredCallsIntervalsRes
+};
+
+WFM.CreateTourPattern = {
+  methodName: "CreateTourPattern",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateTourPatternReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateTourPatternRes
+};
+
+WFM.GetTourPatternDiagnostics = {
+  methodName: "GetTourPatternDiagnostics",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.GetTourPatternDiagnosticsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.GetTourPatternDiagnosticsRes
+};
+
+WFM.UpsertTourPatternWithMembers = {
+  methodName: "UpsertTourPatternWithMembers",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpsertTourPatternWithMembersRes
+};
+
+WFM.GetTourPattern = {
+  methodName: "GetTourPattern",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.GetTourPatternReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.GetTourPatternRes
+};
+
+WFM.GetTourPatternWithMembers = {
+  methodName: "GetTourPatternWithMembers",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.GetTourPatternWithMembersRes
+};
+
+WFM.DeleteTourPattern = {
+  methodName: "DeleteTourPattern",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.DeleteTourPatternReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.DeleteTourPatternRes
+};
+
+WFM.CreateTourWeekPattern = {
+  methodName: "CreateTourWeekPattern",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateTourWeekPatternRes
+};
+
+WFM.ListTourWeekPatterns = {
+  methodName: "ListTourWeekPatterns",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListTourWeekPatternsRes
+};
+
+WFM.DeleteTourWeekPatterns = {
+  methodName: "DeleteTourWeekPatterns",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.DeleteTourWeekPatternsRes
+};
+
+WFM.CreateTourShiftInstanceConfig = {
+  methodName: "CreateTourShiftInstanceConfig",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateTourShiftInstanceConfigRes
+};
+
+WFM.UpdateTourShiftInstanceConfig = {
+  methodName: "UpdateTourShiftInstanceConfig",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftInstanceConfigRes
+};
+
+WFM.ListTourShiftInstanceConfigs = {
+  methodName: "ListTourShiftInstanceConfigs",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListTourShiftInstanceConfigsRes
+};
+
+WFM.DeleteTourShiftInstanceConfigs = {
+  methodName: "DeleteTourShiftInstanceConfigs",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftInstanceConfigsRes
+};
+
+WFM.CreateTourShiftSegmentConfig = {
+  methodName: "CreateTourShiftSegmentConfig",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateTourShiftSegmentConfigRes
+};
+
+WFM.UpdateTourShiftSegmentConfig = {
+  methodName: "UpdateTourShiftSegmentConfig",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdateTourShiftSegmentConfigRes
+};
+
+WFM.ListTourShiftSegmentConfigs = {
+  methodName: "ListTourShiftSegmentConfigs",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListTourShiftSegmentConfigsRes
+};
+
+WFM.DeleteTourShiftSegmentConfigs = {
+  methodName: "DeleteTourShiftSegmentConfigs",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.DeleteTourShiftSegmentConfigsRes
+};
+
+WFM.CreateTourAgentCollection = {
+  methodName: "CreateTourAgentCollection",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionRes
+};
+
+WFM.UpdateTourAgentCollection = {
+  methodName: "UpdateTourAgentCollection",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdateTourAgentCollectionRes
+};
+
+WFM.ListTourAgentCollections = {
+  methodName: "ListTourAgentCollections",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionsRes
+};
+
+WFM.DeleteTourAgentCollections = {
+  methodName: "DeleteTourAgentCollections",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionsRes
+};
+
+WFM.CreateTourAgentCollectionWFMAgents = {
+  methodName: "CreateTourAgentCollectionWFMAgents",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateTourAgentCollectionWFMAgentsRes
+};
+
+WFM.ListTourAgentCollectionWFMAgents = {
+  methodName: "ListTourAgentCollectionWFMAgents",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListTourAgentCollectionWFMAgentsRes
+};
+
+WFM.DeleteTourAgentCollectionWFMAgents = {
+  methodName: "DeleteTourAgentCollectionWFMAgents",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.DeleteTourAgentCollectionWFMAgentsRes
+};
+
+WFM.GenerateTourWeekPatterns = {
+  methodName: "GenerateTourWeekPatterns",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsReq,
+  responseType: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsRes
 };
 
 exports.WFM = WFM;
@@ -1327,6 +1669,37 @@ WFMClient.prototype.getForecastingParameters = function getForecastingParameters
   };
 };
 
+WFMClient.prototype.getClientHistoryCacheInfo = function getClientHistoryCacheInfo(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.GetClientHistoryCacheInfo, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.listHistoricalData = function listHistoricalData(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -1482,6 +1855,37 @@ WFMClient.prototype.buildCallProfileTemplateForSkillProfile = function buildCall
   };
 };
 
+WFMClient.prototype.buildCallProfileTemplate = function buildCallProfileTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.BuildCallProfileTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.createInactiveSkillProfileMapping = function createInactiveSkillProfileMapping(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -1549,6 +1953,130 @@ WFMClient.prototype.disconnectInactiveSkillProfileMapping = function disconnectI
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.DisconnectInactiveSkillProfileMapping, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createSkillProfileGroup = function createSkillProfileGroup(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateSkillProfileGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.updateSkillProfileGroup = function updateSkillProfileGroup(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdateSkillProfileGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listSkillProfileGroups = function listSkillProfileGroups(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListSkillProfileGroups, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.updateSkillProfileGroupAssociations = function updateSkillProfileGroupAssociations(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdateSkillProfileGroupAssociations, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1939,6 +2467,45 @@ WFMClient.prototype.listForecastIntervalsForSkillProfile = function listForecast
     status: []
   };
   var client = grpc.invoke(WFM.ListForecastIntervalsForSkillProfile, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listForecastIntervals = function listForecastIntervals(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(WFM.ListForecastIntervals, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2545,6 +3112,37 @@ WFMClient.prototype.updateProgramNode = function updateProgramNode(requestMessag
   };
 };
 
+WFMClient.prototype.listProgramNodesBySid = function listProgramNodesBySid(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListProgramNodesBySid, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.createConstraintRule = function createConstraintRule(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -2824,6 +3422,37 @@ WFMClient.prototype.createAgentGroup = function createAgentGroup(requestMessage,
   };
 };
 
+WFMClient.prototype.listAgentScheduleGroups = function listAgentScheduleGroups(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListAgentScheduleGroups, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.updateAgentGroup = function updateAgentGroup(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -2953,6 +3582,37 @@ WFMClient.prototype.listUngroupedWFMAgents = function listUngroupedWFMAgents(req
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.ListUngroupedWFMAgents, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listWFMAgentSids = function listWFMAgentSids(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListWFMAgentSids, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -4436,6 +5096,37 @@ WFMClient.prototype.createShiftInstanceV2 = function createShiftInstanceV2(reque
   };
 };
 
+WFMClient.prototype.splitShiftInstance = function splitShiftInstance(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.SplitShiftInstance, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.swapShiftInstances = function swapShiftInstances(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -4715,6 +5406,68 @@ WFMClient.prototype.deleteSchedulingTarget = function deleteSchedulingTarget(req
   };
 };
 
+WFMClient.prototype.getDefaultSchedulingTarget = function getDefaultSchedulingTarget(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.GetDefaultSchedulingTarget, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.setDefaultSchedulingTarget = function setDefaultSchedulingTarget(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.SetDefaultSchedulingTarget, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.getPerformanceMetrics = function getPerformanceMetrics(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -4751,6 +5504,781 @@ WFMClient.prototype.listRequiredCallsIntervals = function listRequiredCallsInter
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.ListRequiredCallsIntervals, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createTourPattern = function createTourPattern(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateTourPattern, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.getTourPatternDiagnostics = function getTourPatternDiagnostics(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.GetTourPatternDiagnostics, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.upsertTourPatternWithMembers = function upsertTourPatternWithMembers(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpsertTourPatternWithMembers, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.getTourPattern = function getTourPattern(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.GetTourPattern, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.getTourPatternWithMembers = function getTourPatternWithMembers(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.GetTourPatternWithMembers, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.deleteTourPattern = function deleteTourPattern(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.DeleteTourPattern, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createTourWeekPattern = function createTourWeekPattern(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateTourWeekPattern, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listTourWeekPatterns = function listTourWeekPatterns(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListTourWeekPatterns, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.deleteTourWeekPatterns = function deleteTourWeekPatterns(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.DeleteTourWeekPatterns, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createTourShiftInstanceConfig = function createTourShiftInstanceConfig(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateTourShiftInstanceConfig, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.updateTourShiftInstanceConfig = function updateTourShiftInstanceConfig(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdateTourShiftInstanceConfig, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listTourShiftInstanceConfigs = function listTourShiftInstanceConfigs(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListTourShiftInstanceConfigs, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.deleteTourShiftInstanceConfigs = function deleteTourShiftInstanceConfigs(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.DeleteTourShiftInstanceConfigs, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createTourShiftSegmentConfig = function createTourShiftSegmentConfig(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateTourShiftSegmentConfig, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.updateTourShiftSegmentConfig = function updateTourShiftSegmentConfig(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdateTourShiftSegmentConfig, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listTourShiftSegmentConfigs = function listTourShiftSegmentConfigs(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListTourShiftSegmentConfigs, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.deleteTourShiftSegmentConfigs = function deleteTourShiftSegmentConfigs(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.DeleteTourShiftSegmentConfigs, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createTourAgentCollection = function createTourAgentCollection(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateTourAgentCollection, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.updateTourAgentCollection = function updateTourAgentCollection(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdateTourAgentCollection, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listTourAgentCollections = function listTourAgentCollections(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListTourAgentCollections, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.deleteTourAgentCollections = function deleteTourAgentCollections(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.DeleteTourAgentCollections, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createTourAgentCollectionWFMAgents = function createTourAgentCollectionWFMAgents(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateTourAgentCollectionWFMAgents, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listTourAgentCollectionWFMAgents = function listTourAgentCollectionWFMAgents(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListTourAgentCollectionWFMAgents, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.deleteTourAgentCollectionWFMAgents = function deleteTourAgentCollectionWFMAgents(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.DeleteTourAgentCollectionWFMAgents, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.generateTourWeekPatterns = function generateTourWeekPatterns(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.GenerateTourWeekPatterns, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

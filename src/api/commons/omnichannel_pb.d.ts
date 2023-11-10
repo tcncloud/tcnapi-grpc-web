@@ -7,6 +7,7 @@ import * as api_commons_enums_pb from "../../api/commons/enums_pb";
 import * as api_commons_lms_pb from "../../api/commons/lms_pb";
 import * as api_commons_org_pb from "../../api/commons/org_pb";
 import * as api_commons_types_pb from "../../api/commons/types_pb";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
@@ -62,6 +63,11 @@ export class OmniCampaign extends jspb.Message {
   getShortenUrl(): boolean;
   setShortenUrl(value: boolean): void;
 
+  hasComplianceConfig(): boolean;
+  clearComplianceConfig(): void;
+  getComplianceConfig(): OmniComplianceConfig | undefined;
+  setComplianceConfig(value?: OmniComplianceConfig): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaign.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCampaign): OmniCampaign.AsObject;
@@ -87,6 +93,7 @@ export namespace OmniCampaign {
     modulesList: Array<OmniCampaignModule.AsObject>,
     timeZone?: api_commons_org_pb.TimeZoneWrapper.AsObject,
     shortenUrl: boolean,
+    complianceConfig?: OmniComplianceConfig.AsObject,
   }
 }
 
@@ -318,6 +325,11 @@ export class OmniCampaignModuleConfig extends jspb.Message {
   getFlowId(): api_commons_types_pb.Int64Id | undefined;
   setFlowId(value?: api_commons_types_pb.Int64Id): void;
 
+  hasSkills(): boolean;
+  clearSkills(): void;
+  getSkills(): OmniConversationSkills | undefined;
+  setSkills(value?: OmniConversationSkills): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaignModuleConfig.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCampaignModuleConfig): OmniCampaignModuleConfig.AsObject;
@@ -349,6 +361,7 @@ export namespace OmniCampaignModuleConfig {
     complianceRuleSetId?: google_protobuf_wrappers_pb.StringValue.AsObject,
     paymentPortalIdsList: Array<string>,
     flowId?: api_commons_types_pb.Int64Id.AsObject,
+    skills?: OmniConversationSkills.AsObject,
   }
 }
 
@@ -2004,6 +2017,11 @@ export class OmniTask extends jspb.Message {
   getScheduledTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setScheduledTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasTaskConfig(): boolean;
+  clearTaskConfig(): void;
+  getTaskConfig(): OmniTaskConfig | undefined;
+  setTaskConfig(value?: OmniTaskConfig): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniTask.AsObject;
   static toObject(includeInstance: boolean, msg: OmniTask): OmniTask.AsObject;
@@ -2029,6 +2047,7 @@ export namespace OmniTask {
     name: string,
     statusMessage?: google_protobuf_wrappers_pb.StringValue.AsObject,
     scheduledTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    taskConfig?: OmniTaskConfig.AsObject,
   }
 
   export class Details extends jspb.Message {
@@ -2054,6 +2073,40 @@ export namespace OmniTask {
   }
 }
 
+export class OmniTaskConfig extends jspb.Message {
+  hasSkills(): boolean;
+  clearSkills(): void;
+  getSkills(): OmniConversationSkills | undefined;
+  setSkills(value?: OmniConversationSkills): void;
+
+  hasAbsoluteTimeoutDuration(): boolean;
+  clearAbsoluteTimeoutDuration(): void;
+  getAbsoluteTimeoutDuration(): google_protobuf_duration_pb.Duration | undefined;
+  setAbsoluteTimeoutDuration(value?: google_protobuf_duration_pb.Duration): void;
+
+  hasAgentTimeoutDuration(): boolean;
+  clearAgentTimeoutDuration(): void;
+  getAgentTimeoutDuration(): google_protobuf_duration_pb.Duration | undefined;
+  setAgentTimeoutDuration(value?: google_protobuf_duration_pb.Duration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniTaskConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniTaskConfig): OmniTaskConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniTaskConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniTaskConfig;
+  static deserializeBinaryFromReader(message: OmniTaskConfig, reader: jspb.BinaryReader): OmniTaskConfig;
+}
+
+export namespace OmniTaskConfig {
+  export type AsObject = {
+    skills?: OmniConversationSkills.AsObject,
+    absoluteTimeoutDuration?: google_protobuf_duration_pb.Duration.AsObject,
+    agentTimeoutDuration?: google_protobuf_duration_pb.Duration.AsObject,
+  }
+}
+
 export class OmniTaskState extends jspb.Message {
   clearDestinationsList(): void;
   getDestinationsList(): Array<OmniTaskState.Entry>;
@@ -2070,6 +2123,11 @@ export class OmniTaskState extends jspb.Message {
   getRuleSet(): ComplianceRuleSet | undefined;
   setRuleSet(value?: ComplianceRuleSet): void;
 
+  hasScrubListId(): boolean;
+  clearScrubListId(): void;
+  getScrubListId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setScrubListId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniTaskState.AsObject;
   static toObject(includeInstance: boolean, msg: OmniTaskState): OmniTaskState.AsObject;
@@ -2085,6 +2143,7 @@ export namespace OmniTaskState {
     destinationsList: Array<OmniTaskState.Entry.AsObject>,
     sourcesList: Array<OmniTaskState.Entry.AsObject>,
     ruleSet?: ComplianceRuleSet.AsObject,
+    scrubListId?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 
   export class Entry extends jspb.Message {
@@ -2432,6 +2491,110 @@ export namespace Signature {
   }
 }
 
+export class OmniProjectComplianceConfig extends jspb.Message {
+  hasEmail(): boolean;
+  clearEmail(): void;
+  getEmail(): OmniComplianceConfig | undefined;
+  setEmail(value?: OmniComplianceConfig): void;
+
+  hasSms(): boolean;
+  clearSms(): void;
+  getSms(): OmniComplianceConfig | undefined;
+  setSms(value?: OmniComplianceConfig): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniProjectComplianceConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniProjectComplianceConfig): OmniProjectComplianceConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniProjectComplianceConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniProjectComplianceConfig;
+  static deserializeBinaryFromReader(message: OmniProjectComplianceConfig, reader: jspb.BinaryReader): OmniProjectComplianceConfig;
+}
+
+export namespace OmniProjectComplianceConfig {
+  export type AsObject = {
+    email?: OmniComplianceConfig.AsObject,
+    sms?: OmniComplianceConfig.AsObject,
+  }
+}
+
+export class OmniComplianceAction extends jspb.Message {
+  clearKeywordsList(): void;
+  getKeywordsList(): Array<string>;
+  setKeywordsList(value: Array<string>): void;
+  addKeywords(value: string, index?: number): string;
+
+  getConfirmationMessage(): string;
+  setConfirmationMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniComplianceAction.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniComplianceAction): OmniComplianceAction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniComplianceAction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniComplianceAction;
+  static deserializeBinaryFromReader(message: OmniComplianceAction, reader: jspb.BinaryReader): OmniComplianceAction;
+}
+
+export namespace OmniComplianceAction {
+  export type AsObject = {
+    keywordsList: Array<string>,
+    confirmationMessage: string,
+  }
+}
+
+export class OmniComplianceConfig extends jspb.Message {
+  hasOptIn(): boolean;
+  clearOptIn(): void;
+  getOptIn(): OmniComplianceAction | undefined;
+  setOptIn(value?: OmniComplianceAction): void;
+
+  hasOptOut(): boolean;
+  clearOptOut(): void;
+  getOptOut(): OmniComplianceAction | undefined;
+  setOptOut(value?: OmniComplianceAction): void;
+
+  hasHelp(): boolean;
+  clearHelp(): void;
+  getHelp(): OmniComplianceAction | undefined;
+  setHelp(value?: OmniComplianceAction): void;
+
+  hasInformation(): boolean;
+  clearInformation(): void;
+  getInformation(): OmniComplianceAction | undefined;
+  setInformation(value?: OmniComplianceAction): void;
+
+  getScrubListId(): string;
+  setScrubListId(value: string): void;
+
+  hasRuleSetId(): boolean;
+  clearRuleSetId(): void;
+  getRuleSetId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setRuleSetId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniComplianceConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniComplianceConfig): OmniComplianceConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniComplianceConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniComplianceConfig;
+  static deserializeBinaryFromReader(message: OmniComplianceConfig, reader: jspb.BinaryReader): OmniComplianceConfig;
+}
+
+export namespace OmniComplianceConfig {
+  export type AsObject = {
+    optIn?: OmniComplianceAction.AsObject,
+    optOut?: OmniComplianceAction.AsObject,
+    help?: OmniComplianceAction.AsObject,
+    information?: OmniComplianceAction.AsObject,
+    scrubListId: string,
+    ruleSetId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
 export interface SmsNumberTypeMap {
   SMS_SHORT_CODE_TYPE: 0;
   SMS_ALPHANUMERIC_TYPE: 1;
@@ -2447,6 +2610,7 @@ export interface SmsNumberProviderMap {
   PLIVO_PROVIDER: 3;
   APEIRON_PROVIDER: 4;
   AUSBURST_SMS_PROVIDER: 5;
+  MEDIASAT_SMS_PROVIDER: 6;
 }
 
 export const SmsNumberProvider: SmsNumberProviderMap;
@@ -2454,6 +2618,7 @@ export const SmsNumberProvider: SmsNumberProviderMap;
 export interface OmniCampaignModuleTypeMap {
   MODULE_TYPE_INBOUND: 0;
   MODULE_TYPE_OUTBOUND: 1;
+  MODULE_TYPE_MANUAL_APPROVAL: 2;
 }
 
 export const OmniCampaignModuleType: OmniCampaignModuleTypeMap;
@@ -2574,6 +2739,8 @@ export const OmniConversationResult: OmniConversationResultMap;
 
 export interface OmniTaskStatusMap {
   OMNI_TASK_WAITING: 0;
+  OMNI_TASK_WAITING_FOR_QUEUE: 1;
+  OMNI_TASK_WAITING_FOR_APPROVAL: 2;
   OMNI_TASK_SENDING: 100;
   OMNI_TASK_SENDING_FAILED: 110;
   OMNI_TASK_SENDING_INCOMPLETE: 111;
