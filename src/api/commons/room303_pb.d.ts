@@ -294,6 +294,7 @@ export interface RoomTypeMap {
   ROOM_TYPE_DIRECT: 0;
   ROOM_TYPE_MULTI: 1;
   ROOM_TYPE_SYSTEM: 2;
+  ROOM_TYPE_NEWS: 3;
 }
 
 export const RoomType: RoomTypeMap;
