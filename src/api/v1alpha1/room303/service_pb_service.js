@@ -230,15 +230,6 @@ Room303API.GetGlobalConfig = {
   responseType: api_v1alpha1_room303_room_pb.GetGlobalConfigResponse
 };
 
-Room303API.CreateNewsRoom = {
-  methodName: "CreateNewsRoom",
-  service: Room303API,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_room303_room_pb.CreateNewsRoomRequest,
-  responseType: api_commons_room303_pb.Room
-};
-
 exports.Room303API = Room303API;
 
 function Room303APIClient(serviceHost, options) {
@@ -980,37 +971,6 @@ Room303APIClient.prototype.getGlobalConfig = function getGlobalConfig(requestMes
     callback = arguments[1];
   }
   var client = grpc.unary(Room303API.GetGlobalConfig, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-Room303APIClient.prototype.createNewsRoom = function createNewsRoom(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Room303API.CreateNewsRoom, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

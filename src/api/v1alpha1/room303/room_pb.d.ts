@@ -365,19 +365,3 @@ export namespace GetGlobalConfigResponse {
   }
 }
 
-export class CreateNewsRoomRequest extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateNewsRoomRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateNewsRoomRequest): CreateNewsRoomRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateNewsRoomRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateNewsRoomRequest;
-  static deserializeBinaryFromReader(message: CreateNewsRoomRequest, reader: jspb.BinaryReader): CreateNewsRoomRequest;
-}
-
-export namespace CreateNewsRoomRequest {
-  export type AsObject = {
-  }
-}
-
