@@ -7,6 +7,24 @@ import * as services_billing_v1alpha1_plans_pb from "../../../services/billing/v
 import * as services_billing_v1alpha1_rates_pb from "../../../services/billing/v1alpha1/rates_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
+type BillingServiceCommitBillingPlan = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_plans_pb.CommitBillingPlanRequest;
+  readonly responseType: typeof services_billing_v1alpha1_plans_pb.CommitBillingPlanResponse;
+};
+
+type BillingServiceCommitDefaultBillingPlan = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_plans_pb.CommitDefaultBillingPlanRequest;
+  readonly responseType: typeof services_billing_v1alpha1_plans_pb.CommitDefaultBillingPlanResponse;
+};
+
 type BillingServiceCreateBillingPlan = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -216,6 +234,8 @@ type BillingServiceUpdateRateDefinition = {
 
 export class BillingService {
   static readonly serviceName: string;
+  static readonly CommitBillingPlan: BillingServiceCommitBillingPlan;
+  static readonly CommitDefaultBillingPlan: BillingServiceCommitDefaultBillingPlan;
   static readonly CreateBillingPlan: BillingServiceCreateBillingPlan;
   static readonly CreateDefaultBillingPlan: BillingServiceCreateDefaultBillingPlan;
   static readonly CreateDefaultRateDefinition: BillingServiceCreateDefaultRateDefinition;
@@ -273,6 +293,24 @@ export class BillingServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
+  commitBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.CommitBillingPlanRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.CommitBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  commitBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.CommitBillingPlanRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.CommitBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  commitDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.CommitDefaultBillingPlanRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.CommitDefaultBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  commitDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.CommitDefaultBillingPlanRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.CommitDefaultBillingPlanResponse|null) => void
+  ): UnaryResponse;
   createBillingPlan(
     requestMessage: services_billing_v1alpha1_plans_pb.CreateBillingPlanRequest,
     metadata: grpc.Metadata,

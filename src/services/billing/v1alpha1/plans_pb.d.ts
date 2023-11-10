@@ -7,6 +7,78 @@ import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/t
 import * as services_billing_entities_v1alpha1_plan_pb from "../../../services/billing/entities/v1alpha1/plan_pb";
 import * as services_billing_v1alpha1_core_pb from "../../../services/billing/v1alpha1/core_pb";
 
+export class CommitBillingPlanRequest extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CommitBillingPlanRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CommitBillingPlanRequest): CommitBillingPlanRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CommitBillingPlanRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CommitBillingPlanRequest;
+  static deserializeBinaryFromReader(message: CommitBillingPlanRequest, reader: jspb.BinaryReader): CommitBillingPlanRequest;
+}
+
+export namespace CommitBillingPlanRequest {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
+export class CommitBillingPlanResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CommitBillingPlanResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CommitBillingPlanResponse): CommitBillingPlanResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CommitBillingPlanResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CommitBillingPlanResponse;
+  static deserializeBinaryFromReader(message: CommitBillingPlanResponse, reader: jspb.BinaryReader): CommitBillingPlanResponse;
+}
+
+export namespace CommitBillingPlanResponse {
+  export type AsObject = {
+  }
+}
+
+export class CommitDefaultBillingPlanRequest extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CommitDefaultBillingPlanRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CommitDefaultBillingPlanRequest): CommitDefaultBillingPlanRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CommitDefaultBillingPlanRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CommitDefaultBillingPlanRequest;
+  static deserializeBinaryFromReader(message: CommitDefaultBillingPlanRequest, reader: jspb.BinaryReader): CommitDefaultBillingPlanRequest;
+}
+
+export namespace CommitDefaultBillingPlanRequest {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
+export class CommitDefaultBillingPlanResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CommitDefaultBillingPlanResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CommitDefaultBillingPlanResponse): CommitDefaultBillingPlanResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CommitDefaultBillingPlanResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CommitDefaultBillingPlanResponse;
+  static deserializeBinaryFromReader(message: CommitDefaultBillingPlanResponse, reader: jspb.BinaryReader): CommitDefaultBillingPlanResponse;
+}
+
+export namespace CommitDefaultBillingPlanResponse {
+  export type AsObject = {
+  }
+}
+
 export class CreateBillingPlanRequest extends jspb.Message {
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;

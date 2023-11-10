@@ -13,6 +13,24 @@ var BillingService = (function () {
   return BillingService;
 }());
 
+BillingService.CommitBillingPlan = {
+  methodName: "CommitBillingPlan",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha1_plans_pb.CommitBillingPlanRequest,
+  responseType: services_billing_v1alpha1_plans_pb.CommitBillingPlanResponse
+};
+
+BillingService.CommitDefaultBillingPlan = {
+  methodName: "CommitDefaultBillingPlan",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha1_plans_pb.CommitDefaultBillingPlanRequest,
+  responseType: services_billing_v1alpha1_plans_pb.CommitDefaultBillingPlanResponse
+};
+
 BillingService.CreateBillingPlan = {
   methodName: "CreateBillingPlan",
   service: BillingService,
@@ -226,6 +244,68 @@ function BillingServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
+
+BillingServiceClient.prototype.commitBillingPlan = function commitBillingPlan(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.CommitBillingPlan, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.commitDefaultBillingPlan = function commitDefaultBillingPlan(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.CommitDefaultBillingPlan, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
 
 BillingServiceClient.prototype.createBillingPlan = function createBillingPlan(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
