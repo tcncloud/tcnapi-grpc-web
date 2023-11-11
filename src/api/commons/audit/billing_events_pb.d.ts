@@ -60,10 +60,8 @@ export namespace BillingCreateInvoiceEvent {
 }
 
 export class BillingCreateRateDefinitionEvent extends jspb.Message {
-  hasRateDefinition(): boolean;
-  clearRateDefinition(): void;
-  getRateDefinition(): services_billing_entities_v1alpha1_rates_pb.RateDefinition | undefined;
-  setRateDefinition(value?: services_billing_entities_v1alpha1_rates_pb.RateDefinition): void;
+  getRateDefinitionId(): string;
+  setRateDefinitionId(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -80,7 +78,7 @@ export class BillingCreateRateDefinitionEvent extends jspb.Message {
 
 export namespace BillingCreateRateDefinitionEvent {
   export type AsObject = {
-    rateDefinition?: services_billing_entities_v1alpha1_rates_pb.RateDefinition.AsObject,
+    rateDefinitionId: string,
     userId: string,
   }
 }
@@ -138,10 +136,8 @@ export namespace BillingDeleteInvoiceEvent {
 }
 
 export class BillingDeleteRateDefinitionEvent extends jspb.Message {
-  hasRateDefinitionId(): boolean;
-  clearRateDefinitionId(): void;
-  getRateDefinitionId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setRateDefinitionId(value?: google_protobuf_wrappers_pb.StringValue): void;
+  getRateDefinitionId(): string;
+  setRateDefinitionId(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -158,7 +154,7 @@ export class BillingDeleteRateDefinitionEvent extends jspb.Message {
 
 export namespace BillingDeleteRateDefinitionEvent {
   export type AsObject = {
-    rateDefinitionId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    rateDefinitionId: string,
     userId: string,
   }
 }
@@ -242,10 +238,8 @@ export namespace BillingUpdateInvoiceEvent {
 }
 
 export class BillingUpdateRateDefinitionEvent extends jspb.Message {
-  hasRateDefinition(): boolean;
-  clearRateDefinition(): void;
-  getRateDefinition(): services_billing_entities_v1alpha1_rates_pb.RateDefinition | undefined;
-  setRateDefinition(value?: services_billing_entities_v1alpha1_rates_pb.RateDefinition): void;
+  getRateDefinitionId(): string;
+  setRateDefinitionId(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -262,7 +256,7 @@ export class BillingUpdateRateDefinitionEvent extends jspb.Message {
 
 export namespace BillingUpdateRateDefinitionEvent {
   export type AsObject = {
-    rateDefinition?: services_billing_entities_v1alpha1_rates_pb.RateDefinition.AsObject,
+    rateDefinitionId: string,
     userId: string,
   }
 }

@@ -643,7 +643,7 @@ proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.toObject = fu
  */
 proto.api.commons.audit.BillingCreateRateDefinitionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject(includeInstance, f),
+    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -682,9 +682,8 @@ proto.api.commons.audit.BillingCreateRateDefinitionEvent.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new services_billing_entities_v1alpha1_rates_pb.RateDefinition;
-      reader.readMessage(value,services_billing_entities_v1alpha1_rates_pb.RateDefinition.deserializeBinaryFromReader);
-      msg.setRateDefinition(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRateDefinitionId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -719,12 +718,11 @@ proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.serializeBina
  */
 proto.api.commons.audit.BillingCreateRateDefinitionEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRateDefinition();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getRateDefinitionId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      services_billing_entities_v1alpha1_rates_pb.RateDefinition.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUserId();
@@ -738,39 +736,20 @@ proto.api.commons.audit.BillingCreateRateDefinitionEvent.serializeBinaryToWriter
 
 
 /**
- * optional services.billing.entities.v1alpha1.RateDefinition rate_definition = 1;
- * @return {?proto.services.billing.entities.v1alpha1.RateDefinition}
+ * optional string rate_definition_id = 1;
+ * @return {string}
  */
-proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.getRateDefinition = function() {
-  return /** @type{?proto.services.billing.entities.v1alpha1.RateDefinition} */ (
-    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_rates_pb.RateDefinition, 1));
+proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.getRateDefinitionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.services.billing.entities.v1alpha1.RateDefinition|undefined} value
- * @return {!proto.api.commons.audit.BillingCreateRateDefinitionEvent} returns this
-*/
-proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.setRateDefinition = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.api.commons.audit.BillingCreateRateDefinitionEvent} returns this
  */
-proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.clearRateDefinition = function() {
-  return this.setRateDefinition(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.hasRateDefinition = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.setRateDefinitionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1186,7 +1165,7 @@ proto.api.commons.audit.BillingDeleteRateDefinitionEvent.prototype.toObject = fu
  */
 proto.api.commons.audit.BillingDeleteRateDefinitionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: (f = msg.getRateDefinitionId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1225,8 +1204,7 @@ proto.api.commons.audit.BillingDeleteRateDefinitionEvent.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new google_protobuf_wrappers_pb.StringValue;
-      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setRateDefinitionId(value);
       break;
     case 2:
@@ -1263,11 +1241,10 @@ proto.api.commons.audit.BillingDeleteRateDefinitionEvent.prototype.serializeBina
 proto.api.commons.audit.BillingDeleteRateDefinitionEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getRateDefinitionId();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUserId();
@@ -1281,39 +1258,20 @@ proto.api.commons.audit.BillingDeleteRateDefinitionEvent.serializeBinaryToWriter
 
 
 /**
- * optional google.protobuf.StringValue rate_definition_id = 1;
- * @return {?proto.google.protobuf.StringValue}
+ * optional string rate_definition_id = 1;
+ * @return {string}
  */
 proto.api.commons.audit.BillingDeleteRateDefinitionEvent.prototype.getRateDefinitionId = function() {
-  return /** @type{?proto.google.protobuf.StringValue} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 1));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.google.protobuf.StringValue|undefined} value
+ * @param {string} value
  * @return {!proto.api.commons.audit.BillingDeleteRateDefinitionEvent} returns this
-*/
+ */
 proto.api.commons.audit.BillingDeleteRateDefinitionEvent.prototype.setRateDefinitionId = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.BillingDeleteRateDefinitionEvent} returns this
- */
-proto.api.commons.audit.BillingDeleteRateDefinitionEvent.prototype.clearRateDefinitionId = function() {
-  return this.setRateDefinitionId(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.BillingDeleteRateDefinitionEvent.prototype.hasRateDefinitionId = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1910,7 +1868,7 @@ proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.toObject = fu
  */
 proto.api.commons.audit.BillingUpdateRateDefinitionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject(includeInstance, f),
+    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1949,9 +1907,8 @@ proto.api.commons.audit.BillingUpdateRateDefinitionEvent.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new services_billing_entities_v1alpha1_rates_pb.RateDefinition;
-      reader.readMessage(value,services_billing_entities_v1alpha1_rates_pb.RateDefinition.deserializeBinaryFromReader);
-      msg.setRateDefinition(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRateDefinitionId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1986,12 +1943,11 @@ proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.serializeBina
  */
 proto.api.commons.audit.BillingUpdateRateDefinitionEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRateDefinition();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getRateDefinitionId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      services_billing_entities_v1alpha1_rates_pb.RateDefinition.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUserId();
@@ -2005,39 +1961,20 @@ proto.api.commons.audit.BillingUpdateRateDefinitionEvent.serializeBinaryToWriter
 
 
 /**
- * optional services.billing.entities.v1alpha1.RateDefinition rate_definition = 1;
- * @return {?proto.services.billing.entities.v1alpha1.RateDefinition}
+ * optional string rate_definition_id = 1;
+ * @return {string}
  */
-proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.getRateDefinition = function() {
-  return /** @type{?proto.services.billing.entities.v1alpha1.RateDefinition} */ (
-    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_rates_pb.RateDefinition, 1));
+proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.getRateDefinitionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.services.billing.entities.v1alpha1.RateDefinition|undefined} value
- * @return {!proto.api.commons.audit.BillingUpdateRateDefinitionEvent} returns this
-*/
-proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.setRateDefinition = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.api.commons.audit.BillingUpdateRateDefinitionEvent} returns this
  */
-proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.clearRateDefinition = function() {
-  return this.setRateDefinition(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.hasRateDefinition = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.setRateDefinitionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
