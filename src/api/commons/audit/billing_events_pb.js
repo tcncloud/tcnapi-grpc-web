@@ -21,14 +21,6 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
-goog.object.extend(proto, google_protobuf_wrappers_pb);
-var services_billing_entities_v1alpha1_invoice_pb = require('../../../services/billing/entities/v1alpha1/invoice_pb.js');
-goog.object.extend(proto, services_billing_entities_v1alpha1_invoice_pb);
-var services_billing_entities_v1alpha1_plan_pb = require('../../../services/billing/entities/v1alpha1/plan_pb.js');
-goog.object.extend(proto, services_billing_entities_v1alpha1_plan_pb);
-var services_billing_entities_v1alpha1_rates_pb = require('../../../services/billing/entities/v1alpha1/rates_pb.js');
-goog.object.extend(proto, services_billing_entities_v1alpha1_rates_pb);
 goog.exportSymbol('proto.api.commons.audit.BillingCreateBillingPlanEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.BillingCreateInvoiceEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.BillingCreateRateDefinitionEvent', null, global);
@@ -281,7 +273,7 @@ proto.api.commons.audit.BillingCreateBillingPlanEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.BillingCreateBillingPlanEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlan: (f = msg.getBillingPlan()) && services_billing_entities_v1alpha1_plan_pb.BillingPlan.toObject(includeInstance, f),
+    billingPlan: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -320,8 +312,7 @@ proto.api.commons.audit.BillingCreateBillingPlanEvent.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new services_billing_entities_v1alpha1_plan_pb.BillingPlan;
-      reader.readMessage(value,services_billing_entities_v1alpha1_plan_pb.BillingPlan.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setBillingPlan(value);
       break;
     case 2:
@@ -358,11 +349,10 @@ proto.api.commons.audit.BillingCreateBillingPlanEvent.prototype.serializeBinary 
 proto.api.commons.audit.BillingCreateBillingPlanEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getBillingPlan();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      services_billing_entities_v1alpha1_plan_pb.BillingPlan.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUserId();
@@ -376,39 +366,20 @@ proto.api.commons.audit.BillingCreateBillingPlanEvent.serializeBinaryToWriter = 
 
 
 /**
- * optional services.billing.entities.v1alpha1.BillingPlan billing_plan = 1;
- * @return {?proto.services.billing.entities.v1alpha1.BillingPlan}
+ * optional string billing_plan = 1;
+ * @return {string}
  */
 proto.api.commons.audit.BillingCreateBillingPlanEvent.prototype.getBillingPlan = function() {
-  return /** @type{?proto.services.billing.entities.v1alpha1.BillingPlan} */ (
-    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_plan_pb.BillingPlan, 1));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.services.billing.entities.v1alpha1.BillingPlan|undefined} value
+ * @param {string} value
  * @return {!proto.api.commons.audit.BillingCreateBillingPlanEvent} returns this
-*/
+ */
 proto.api.commons.audit.BillingCreateBillingPlanEvent.prototype.setBillingPlan = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.BillingCreateBillingPlanEvent} returns this
- */
-proto.api.commons.audit.BillingCreateBillingPlanEvent.prototype.clearBillingPlan = function() {
-  return this.setBillingPlan(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.BillingCreateBillingPlanEvent.prototype.hasBillingPlan = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -462,7 +433,7 @@ proto.api.commons.audit.BillingCreateInvoiceEvent.prototype.toObject = function(
  */
 proto.api.commons.audit.BillingCreateInvoiceEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f),
+    invoice: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -501,8 +472,7 @@ proto.api.commons.audit.BillingCreateInvoiceEvent.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new services_billing_entities_v1alpha1_invoice_pb.Invoice;
-      reader.readMessage(value,services_billing_entities_v1alpha1_invoice_pb.Invoice.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setInvoice(value);
       break;
     case 2:
@@ -539,11 +509,10 @@ proto.api.commons.audit.BillingCreateInvoiceEvent.prototype.serializeBinary = fu
 proto.api.commons.audit.BillingCreateInvoiceEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getInvoice();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      services_billing_entities_v1alpha1_invoice_pb.Invoice.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUserId();
@@ -557,39 +526,20 @@ proto.api.commons.audit.BillingCreateInvoiceEvent.serializeBinaryToWriter = func
 
 
 /**
- * optional services.billing.entities.v1alpha1.Invoice invoice = 1;
- * @return {?proto.services.billing.entities.v1alpha1.Invoice}
+ * optional string invoice = 1;
+ * @return {string}
  */
 proto.api.commons.audit.BillingCreateInvoiceEvent.prototype.getInvoice = function() {
-  return /** @type{?proto.services.billing.entities.v1alpha1.Invoice} */ (
-    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_invoice_pb.Invoice, 1));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.services.billing.entities.v1alpha1.Invoice|undefined} value
+ * @param {string} value
  * @return {!proto.api.commons.audit.BillingCreateInvoiceEvent} returns this
-*/
+ */
 proto.api.commons.audit.BillingCreateInvoiceEvent.prototype.setInvoice = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.BillingCreateInvoiceEvent} returns this
- */
-proto.api.commons.audit.BillingCreateInvoiceEvent.prototype.clearInvoice = function() {
-  return this.setInvoice(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.BillingCreateInvoiceEvent.prototype.hasInvoice = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -643,7 +593,7 @@ proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.toObject = fu
  */
 proto.api.commons.audit.BillingCreateRateDefinitionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    rateDefinition: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -683,7 +633,7 @@ proto.api.commons.audit.BillingCreateRateDefinitionEvent.deserializeBinaryFromRe
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRateDefinitionId(value);
+      msg.setRateDefinition(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -718,7 +668,7 @@ proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.serializeBina
  */
 proto.api.commons.audit.BillingCreateRateDefinitionEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRateDefinitionId();
+  f = message.getRateDefinition();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -736,10 +686,10 @@ proto.api.commons.audit.BillingCreateRateDefinitionEvent.serializeBinaryToWriter
 
 
 /**
- * optional string rate_definition_id = 1;
+ * optional string rate_definition = 1;
  * @return {string}
  */
-proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.getRateDefinitionId = function() {
+proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.getRateDefinition = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -748,7 +698,7 @@ proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.getRateDefini
  * @param {string} value
  * @return {!proto.api.commons.audit.BillingCreateRateDefinitionEvent} returns this
  */
-proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.setRateDefinitionId = function(value) {
+proto.api.commons.audit.BillingCreateRateDefinitionEvent.prototype.setRateDefinition = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -803,7 +753,7 @@ proto.api.commons.audit.BillingDeleteBillingPlanEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.BillingDeleteBillingPlanEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanId: (f = msg.getBillingPlanId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    billingPlan: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -842,9 +792,8 @@ proto.api.commons.audit.BillingDeleteBillingPlanEvent.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new google_protobuf_wrappers_pb.StringValue;
-      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
-      msg.setBillingPlanId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBillingPlan(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -879,12 +828,11 @@ proto.api.commons.audit.BillingDeleteBillingPlanEvent.prototype.serializeBinary 
  */
 proto.api.commons.audit.BillingDeleteBillingPlanEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getBillingPlanId();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getBillingPlan();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUserId();
@@ -898,39 +846,20 @@ proto.api.commons.audit.BillingDeleteBillingPlanEvent.serializeBinaryToWriter = 
 
 
 /**
- * optional google.protobuf.StringValue billing_plan_id = 1;
- * @return {?proto.google.protobuf.StringValue}
+ * optional string billing_plan = 1;
+ * @return {string}
  */
-proto.api.commons.audit.BillingDeleteBillingPlanEvent.prototype.getBillingPlanId = function() {
-  return /** @type{?proto.google.protobuf.StringValue} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 1));
+proto.api.commons.audit.BillingDeleteBillingPlanEvent.prototype.getBillingPlan = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.google.protobuf.StringValue|undefined} value
- * @return {!proto.api.commons.audit.BillingDeleteBillingPlanEvent} returns this
-*/
-proto.api.commons.audit.BillingDeleteBillingPlanEvent.prototype.setBillingPlanId = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.api.commons.audit.BillingDeleteBillingPlanEvent} returns this
  */
-proto.api.commons.audit.BillingDeleteBillingPlanEvent.prototype.clearBillingPlanId = function() {
-  return this.setBillingPlanId(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.BillingDeleteBillingPlanEvent.prototype.hasBillingPlanId = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.api.commons.audit.BillingDeleteBillingPlanEvent.prototype.setBillingPlan = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -984,7 +913,7 @@ proto.api.commons.audit.BillingDeleteInvoiceEvent.prototype.toObject = function(
  */
 proto.api.commons.audit.BillingDeleteInvoiceEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoiceId: (f = msg.getInvoiceId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    invoice: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1023,9 +952,8 @@ proto.api.commons.audit.BillingDeleteInvoiceEvent.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new google_protobuf_wrappers_pb.StringValue;
-      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
-      msg.setInvoiceId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInvoice(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1060,12 +988,11 @@ proto.api.commons.audit.BillingDeleteInvoiceEvent.prototype.serializeBinary = fu
  */
 proto.api.commons.audit.BillingDeleteInvoiceEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getInvoiceId();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getInvoice();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUserId();
@@ -1079,39 +1006,20 @@ proto.api.commons.audit.BillingDeleteInvoiceEvent.serializeBinaryToWriter = func
 
 
 /**
- * optional google.protobuf.StringValue invoice_id = 1;
- * @return {?proto.google.protobuf.StringValue}
+ * optional string invoice = 1;
+ * @return {string}
  */
-proto.api.commons.audit.BillingDeleteInvoiceEvent.prototype.getInvoiceId = function() {
-  return /** @type{?proto.google.protobuf.StringValue} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 1));
+proto.api.commons.audit.BillingDeleteInvoiceEvent.prototype.getInvoice = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.google.protobuf.StringValue|undefined} value
- * @return {!proto.api.commons.audit.BillingDeleteInvoiceEvent} returns this
-*/
-proto.api.commons.audit.BillingDeleteInvoiceEvent.prototype.setInvoiceId = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.api.commons.audit.BillingDeleteInvoiceEvent} returns this
  */
-proto.api.commons.audit.BillingDeleteInvoiceEvent.prototype.clearInvoiceId = function() {
-  return this.setInvoiceId(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.BillingDeleteInvoiceEvent.prototype.hasInvoiceId = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.api.commons.audit.BillingDeleteInvoiceEvent.prototype.setInvoice = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1165,7 +1073,7 @@ proto.api.commons.audit.BillingDeleteRateDefinitionEvent.prototype.toObject = fu
  */
 proto.api.commons.audit.BillingDeleteRateDefinitionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    rateDefinition: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1205,7 +1113,7 @@ proto.api.commons.audit.BillingDeleteRateDefinitionEvent.deserializeBinaryFromRe
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRateDefinitionId(value);
+      msg.setRateDefinition(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1240,7 +1148,7 @@ proto.api.commons.audit.BillingDeleteRateDefinitionEvent.prototype.serializeBina
  */
 proto.api.commons.audit.BillingDeleteRateDefinitionEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRateDefinitionId();
+  f = message.getRateDefinition();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1258,10 +1166,10 @@ proto.api.commons.audit.BillingDeleteRateDefinitionEvent.serializeBinaryToWriter
 
 
 /**
- * optional string rate_definition_id = 1;
+ * optional string rate_definition = 1;
  * @return {string}
  */
-proto.api.commons.audit.BillingDeleteRateDefinitionEvent.prototype.getRateDefinitionId = function() {
+proto.api.commons.audit.BillingDeleteRateDefinitionEvent.prototype.getRateDefinition = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1270,7 +1178,7 @@ proto.api.commons.audit.BillingDeleteRateDefinitionEvent.prototype.getRateDefini
  * @param {string} value
  * @return {!proto.api.commons.audit.BillingDeleteRateDefinitionEvent} returns this
  */
-proto.api.commons.audit.BillingDeleteRateDefinitionEvent.prototype.setRateDefinitionId = function(value) {
+proto.api.commons.audit.BillingDeleteRateDefinitionEvent.prototype.setRateDefinition = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1325,7 +1233,7 @@ proto.api.commons.audit.BillingExportInvoiceEvent.prototype.toObject = function(
  */
 proto.api.commons.audit.BillingExportInvoiceEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f),
+    invoice: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1364,8 +1272,7 @@ proto.api.commons.audit.BillingExportInvoiceEvent.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new services_billing_entities_v1alpha1_invoice_pb.Invoice;
-      reader.readMessage(value,services_billing_entities_v1alpha1_invoice_pb.Invoice.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setInvoice(value);
       break;
     case 2:
@@ -1402,11 +1309,10 @@ proto.api.commons.audit.BillingExportInvoiceEvent.prototype.serializeBinary = fu
 proto.api.commons.audit.BillingExportInvoiceEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getInvoice();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      services_billing_entities_v1alpha1_invoice_pb.Invoice.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUserId();
@@ -1420,39 +1326,20 @@ proto.api.commons.audit.BillingExportInvoiceEvent.serializeBinaryToWriter = func
 
 
 /**
- * optional services.billing.entities.v1alpha1.Invoice invoice = 1;
- * @return {?proto.services.billing.entities.v1alpha1.Invoice}
+ * optional string invoice = 1;
+ * @return {string}
  */
 proto.api.commons.audit.BillingExportInvoiceEvent.prototype.getInvoice = function() {
-  return /** @type{?proto.services.billing.entities.v1alpha1.Invoice} */ (
-    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_invoice_pb.Invoice, 1));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.services.billing.entities.v1alpha1.Invoice|undefined} value
+ * @param {string} value
  * @return {!proto.api.commons.audit.BillingExportInvoiceEvent} returns this
-*/
+ */
 proto.api.commons.audit.BillingExportInvoiceEvent.prototype.setInvoice = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.BillingExportInvoiceEvent} returns this
- */
-proto.api.commons.audit.BillingExportInvoiceEvent.prototype.clearInvoice = function() {
-  return this.setInvoice(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.BillingExportInvoiceEvent.prototype.hasInvoice = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1506,7 +1393,7 @@ proto.api.commons.audit.BillingUpdateBillingPlanEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.BillingUpdateBillingPlanEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlan: (f = msg.getBillingPlan()) && services_billing_entities_v1alpha1_plan_pb.BillingPlan.toObject(includeInstance, f),
+    billingPlan: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1545,8 +1432,7 @@ proto.api.commons.audit.BillingUpdateBillingPlanEvent.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new services_billing_entities_v1alpha1_plan_pb.BillingPlan;
-      reader.readMessage(value,services_billing_entities_v1alpha1_plan_pb.BillingPlan.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setBillingPlan(value);
       break;
     case 2:
@@ -1583,11 +1469,10 @@ proto.api.commons.audit.BillingUpdateBillingPlanEvent.prototype.serializeBinary 
 proto.api.commons.audit.BillingUpdateBillingPlanEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getBillingPlan();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      services_billing_entities_v1alpha1_plan_pb.BillingPlan.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUserId();
@@ -1601,39 +1486,20 @@ proto.api.commons.audit.BillingUpdateBillingPlanEvent.serializeBinaryToWriter = 
 
 
 /**
- * optional services.billing.entities.v1alpha1.BillingPlan billing_plan = 1;
- * @return {?proto.services.billing.entities.v1alpha1.BillingPlan}
+ * optional string billing_plan = 1;
+ * @return {string}
  */
 proto.api.commons.audit.BillingUpdateBillingPlanEvent.prototype.getBillingPlan = function() {
-  return /** @type{?proto.services.billing.entities.v1alpha1.BillingPlan} */ (
-    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_plan_pb.BillingPlan, 1));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.services.billing.entities.v1alpha1.BillingPlan|undefined} value
+ * @param {string} value
  * @return {!proto.api.commons.audit.BillingUpdateBillingPlanEvent} returns this
-*/
+ */
 proto.api.commons.audit.BillingUpdateBillingPlanEvent.prototype.setBillingPlan = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.BillingUpdateBillingPlanEvent} returns this
- */
-proto.api.commons.audit.BillingUpdateBillingPlanEvent.prototype.clearBillingPlan = function() {
-  return this.setBillingPlan(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.BillingUpdateBillingPlanEvent.prototype.hasBillingPlan = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1687,7 +1553,7 @@ proto.api.commons.audit.BillingUpdateInvoiceEvent.prototype.toObject = function(
  */
 proto.api.commons.audit.BillingUpdateInvoiceEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f),
+    invoice: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1726,8 +1592,7 @@ proto.api.commons.audit.BillingUpdateInvoiceEvent.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new services_billing_entities_v1alpha1_invoice_pb.Invoice;
-      reader.readMessage(value,services_billing_entities_v1alpha1_invoice_pb.Invoice.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setInvoice(value);
       break;
     case 2:
@@ -1764,11 +1629,10 @@ proto.api.commons.audit.BillingUpdateInvoiceEvent.prototype.serializeBinary = fu
 proto.api.commons.audit.BillingUpdateInvoiceEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getInvoice();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      services_billing_entities_v1alpha1_invoice_pb.Invoice.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUserId();
@@ -1782,39 +1646,20 @@ proto.api.commons.audit.BillingUpdateInvoiceEvent.serializeBinaryToWriter = func
 
 
 /**
- * optional services.billing.entities.v1alpha1.Invoice invoice = 1;
- * @return {?proto.services.billing.entities.v1alpha1.Invoice}
+ * optional string invoice = 1;
+ * @return {string}
  */
 proto.api.commons.audit.BillingUpdateInvoiceEvent.prototype.getInvoice = function() {
-  return /** @type{?proto.services.billing.entities.v1alpha1.Invoice} */ (
-    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_invoice_pb.Invoice, 1));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.services.billing.entities.v1alpha1.Invoice|undefined} value
+ * @param {string} value
  * @return {!proto.api.commons.audit.BillingUpdateInvoiceEvent} returns this
-*/
+ */
 proto.api.commons.audit.BillingUpdateInvoiceEvent.prototype.setInvoice = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.BillingUpdateInvoiceEvent} returns this
- */
-proto.api.commons.audit.BillingUpdateInvoiceEvent.prototype.clearInvoice = function() {
-  return this.setInvoice(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.BillingUpdateInvoiceEvent.prototype.hasInvoice = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1868,7 +1713,7 @@ proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.toObject = fu
  */
 proto.api.commons.audit.BillingUpdateRateDefinitionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    rateDefinition: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1908,7 +1753,7 @@ proto.api.commons.audit.BillingUpdateRateDefinitionEvent.deserializeBinaryFromRe
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRateDefinitionId(value);
+      msg.setRateDefinition(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1943,7 +1788,7 @@ proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.serializeBina
  */
 proto.api.commons.audit.BillingUpdateRateDefinitionEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRateDefinitionId();
+  f = message.getRateDefinition();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1961,10 +1806,10 @@ proto.api.commons.audit.BillingUpdateRateDefinitionEvent.serializeBinaryToWriter
 
 
 /**
- * optional string rate_definition_id = 1;
+ * optional string rate_definition = 1;
  * @return {string}
  */
-proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.getRateDefinitionId = function() {
+proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.getRateDefinition = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1973,7 +1818,7 @@ proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.getRateDefini
  * @param {string} value
  * @return {!proto.api.commons.audit.BillingUpdateRateDefinitionEvent} returns this
  */
-proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.setRateDefinitionId = function(value) {
+proto.api.commons.audit.BillingUpdateRateDefinitionEvent.prototype.setRateDefinition = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

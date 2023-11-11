@@ -2,16 +2,10 @@
 // file: api/commons/audit/billing_events.proto
 
 import * as jspb from "google-protobuf";
-import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
-import * as services_billing_entities_v1alpha1_invoice_pb from "../../../services/billing/entities/v1alpha1/invoice_pb";
-import * as services_billing_entities_v1alpha1_plan_pb from "../../../services/billing/entities/v1alpha1/plan_pb";
-import * as services_billing_entities_v1alpha1_rates_pb from "../../../services/billing/entities/v1alpha1/rates_pb";
 
 export class BillingCreateBillingPlanEvent extends jspb.Message {
-  hasBillingPlan(): boolean;
-  clearBillingPlan(): void;
-  getBillingPlan(): services_billing_entities_v1alpha1_plan_pb.BillingPlan | undefined;
-  setBillingPlan(value?: services_billing_entities_v1alpha1_plan_pb.BillingPlan): void;
+  getBillingPlan(): string;
+  setBillingPlan(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -28,16 +22,14 @@ export class BillingCreateBillingPlanEvent extends jspb.Message {
 
 export namespace BillingCreateBillingPlanEvent {
   export type AsObject = {
-    billingPlan?: services_billing_entities_v1alpha1_plan_pb.BillingPlan.AsObject,
+    billingPlan: string,
     userId: string,
   }
 }
 
 export class BillingCreateInvoiceEvent extends jspb.Message {
-  hasInvoice(): boolean;
-  clearInvoice(): void;
-  getInvoice(): services_billing_entities_v1alpha1_invoice_pb.Invoice | undefined;
-  setInvoice(value?: services_billing_entities_v1alpha1_invoice_pb.Invoice): void;
+  getInvoice(): string;
+  setInvoice(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -54,14 +46,14 @@ export class BillingCreateInvoiceEvent extends jspb.Message {
 
 export namespace BillingCreateInvoiceEvent {
   export type AsObject = {
-    invoice?: services_billing_entities_v1alpha1_invoice_pb.Invoice.AsObject,
+    invoice: string,
     userId: string,
   }
 }
 
 export class BillingCreateRateDefinitionEvent extends jspb.Message {
-  getRateDefinitionId(): string;
-  setRateDefinitionId(value: string): void;
+  getRateDefinition(): string;
+  setRateDefinition(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -78,16 +70,14 @@ export class BillingCreateRateDefinitionEvent extends jspb.Message {
 
 export namespace BillingCreateRateDefinitionEvent {
   export type AsObject = {
-    rateDefinitionId: string,
+    rateDefinition: string,
     userId: string,
   }
 }
 
 export class BillingDeleteBillingPlanEvent extends jspb.Message {
-  hasBillingPlanId(): boolean;
-  clearBillingPlanId(): void;
-  getBillingPlanId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setBillingPlanId(value?: google_protobuf_wrappers_pb.StringValue): void;
+  getBillingPlan(): string;
+  setBillingPlan(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -104,16 +94,14 @@ export class BillingDeleteBillingPlanEvent extends jspb.Message {
 
 export namespace BillingDeleteBillingPlanEvent {
   export type AsObject = {
-    billingPlanId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    billingPlan: string,
     userId: string,
   }
 }
 
 export class BillingDeleteInvoiceEvent extends jspb.Message {
-  hasInvoiceId(): boolean;
-  clearInvoiceId(): void;
-  getInvoiceId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setInvoiceId(value?: google_protobuf_wrappers_pb.StringValue): void;
+  getInvoice(): string;
+  setInvoice(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -130,14 +118,14 @@ export class BillingDeleteInvoiceEvent extends jspb.Message {
 
 export namespace BillingDeleteInvoiceEvent {
   export type AsObject = {
-    invoiceId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    invoice: string,
     userId: string,
   }
 }
 
 export class BillingDeleteRateDefinitionEvent extends jspb.Message {
-  getRateDefinitionId(): string;
-  setRateDefinitionId(value: string): void;
+  getRateDefinition(): string;
+  setRateDefinition(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -154,16 +142,14 @@ export class BillingDeleteRateDefinitionEvent extends jspb.Message {
 
 export namespace BillingDeleteRateDefinitionEvent {
   export type AsObject = {
-    rateDefinitionId: string,
+    rateDefinition: string,
     userId: string,
   }
 }
 
 export class BillingExportInvoiceEvent extends jspb.Message {
-  hasInvoice(): boolean;
-  clearInvoice(): void;
-  getInvoice(): services_billing_entities_v1alpha1_invoice_pb.Invoice | undefined;
-  setInvoice(value?: services_billing_entities_v1alpha1_invoice_pb.Invoice): void;
+  getInvoice(): string;
+  setInvoice(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -180,16 +166,14 @@ export class BillingExportInvoiceEvent extends jspb.Message {
 
 export namespace BillingExportInvoiceEvent {
   export type AsObject = {
-    invoice?: services_billing_entities_v1alpha1_invoice_pb.Invoice.AsObject,
+    invoice: string,
     userId: string,
   }
 }
 
 export class BillingUpdateBillingPlanEvent extends jspb.Message {
-  hasBillingPlan(): boolean;
-  clearBillingPlan(): void;
-  getBillingPlan(): services_billing_entities_v1alpha1_plan_pb.BillingPlan | undefined;
-  setBillingPlan(value?: services_billing_entities_v1alpha1_plan_pb.BillingPlan): void;
+  getBillingPlan(): string;
+  setBillingPlan(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -206,16 +190,14 @@ export class BillingUpdateBillingPlanEvent extends jspb.Message {
 
 export namespace BillingUpdateBillingPlanEvent {
   export type AsObject = {
-    billingPlan?: services_billing_entities_v1alpha1_plan_pb.BillingPlan.AsObject,
+    billingPlan: string,
     userId: string,
   }
 }
 
 export class BillingUpdateInvoiceEvent extends jspb.Message {
-  hasInvoice(): boolean;
-  clearInvoice(): void;
-  getInvoice(): services_billing_entities_v1alpha1_invoice_pb.Invoice | undefined;
-  setInvoice(value?: services_billing_entities_v1alpha1_invoice_pb.Invoice): void;
+  getInvoice(): string;
+  setInvoice(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -232,14 +214,14 @@ export class BillingUpdateInvoiceEvent extends jspb.Message {
 
 export namespace BillingUpdateInvoiceEvent {
   export type AsObject = {
-    invoice?: services_billing_entities_v1alpha1_invoice_pb.Invoice.AsObject,
+    invoice: string,
     userId: string,
   }
 }
 
 export class BillingUpdateRateDefinitionEvent extends jspb.Message {
-  getRateDefinitionId(): string;
-  setRateDefinitionId(value: string): void;
+  getRateDefinition(): string;
+  setRateDefinition(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -256,7 +238,7 @@ export class BillingUpdateRateDefinitionEvent extends jspb.Message {
 
 export namespace BillingUpdateRateDefinitionEvent {
   export type AsObject = {
-    rateDefinitionId: string,
+    rateDefinition: string,
     userId: string,
   }
 }
