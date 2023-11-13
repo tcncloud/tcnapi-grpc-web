@@ -4300,7 +4300,7 @@ proto.api.commons.SkillProfileCategory.prototype.toObject = function(opt_include
  */
 proto.api.commons.SkillProfileCategory.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillProfileCategorySid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+    skillProfileCategorySid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     skillProfileCategoryType: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
@@ -4339,7 +4339,7 @@ proto.api.commons.SkillProfileCategory.deserializeBinaryFromReader = function(ms
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setSkillProfileCategorySid(value);
       break;
     case 2:
@@ -4376,8 +4376,8 @@ proto.api.commons.SkillProfileCategory.prototype.serializeBinary = function() {
 proto.api.commons.SkillProfileCategory.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSkillProfileCategorySid();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -4402,19 +4402,19 @@ proto.api.commons.SkillProfileCategory.CategoryType = {
 
 /**
  * optional int64 skill_profile_category_sid = 1;
- * @return {string}
+ * @return {number}
  */
 proto.api.commons.SkillProfileCategory.prototype.getSkillProfileCategorySid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.commons.SkillProfileCategory} returns this
  */
 proto.api.commons.SkillProfileCategory.prototype.setSkillProfileCategorySid = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
