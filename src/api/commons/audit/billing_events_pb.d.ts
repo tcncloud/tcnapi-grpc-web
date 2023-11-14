@@ -3,6 +3,30 @@
 
 import * as jspb from "google-protobuf";
 
+export class BillingCommitBillingPlanEvent extends jspb.Message {
+  getBillingPlan(): string;
+  setBillingPlan(value: string): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BillingCommitBillingPlanEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: BillingCommitBillingPlanEvent): BillingCommitBillingPlanEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BillingCommitBillingPlanEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BillingCommitBillingPlanEvent;
+  static deserializeBinaryFromReader(message: BillingCommitBillingPlanEvent, reader: jspb.BinaryReader): BillingCommitBillingPlanEvent;
+}
+
+export namespace BillingCommitBillingPlanEvent {
+  export type AsObject = {
+    billingPlan: string,
+    userId: string,
+  }
+}
+
 export class BillingCreateBillingPlanEvent extends jspb.Message {
   getBillingPlan(): string;
   setBillingPlan(value: string): void;

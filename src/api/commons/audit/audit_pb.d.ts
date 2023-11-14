@@ -496,6 +496,11 @@ export class AuditEvent extends jspb.Message {
   getLmsPipelineFailureEvent(): api_commons_audit_lms_events_pb.LMSPipelineFailureEvent | undefined;
   setLmsPipelineFailureEvent(value?: api_commons_audit_lms_events_pb.LMSPipelineFailureEvent): void;
 
+  hasBillingCommitBillingPlanEvent(): boolean;
+  clearBillingCommitBillingPlanEvent(): void;
+  getBillingCommitBillingPlanEvent(): api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent | undefined;
+  setBillingCommitBillingPlanEvent(value?: api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent): void;
+
   hasBillingCreateBillingPlanEvent(): boolean;
   clearBillingCreateBillingPlanEvent(): void;
   getBillingCreateBillingPlanEvent(): api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent | undefined;
@@ -657,6 +662,7 @@ export namespace AuditEvent {
     complianceRndQueryCachedEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
     agentTrainingCreateLearningOpportunityEvent?: api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent.AsObject,
     lmsPipelineFailureEvent?: api_commons_audit_lms_events_pb.LMSPipelineFailureEvent.AsObject,
+    billingCommitBillingPlanEvent?: api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent.AsObject,
     billingCreateBillingPlanEvent?: api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent.AsObject,
     billingCreateInvoiceEvent?: api_commons_audit_billing_events_pb.BillingCreateInvoiceEvent.AsObject,
     billingCreateRateDefinitionEvent?: api_commons_audit_billing_events_pb.BillingCreateRateDefinitionEvent.AsObject,
@@ -763,16 +769,17 @@ export namespace AuditEvent {
     COMPLIANCE_RND_QUERY_CACHED_EVENT = 701,
     AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800,
     LMS_PIPELINE_FAILURE_EVENT = 900,
-    BILLING_CREATE_BILLING_PLAN_EVENT = 1000,
-    BILLING_CREATE_INVOICE_EVENT = 1001,
-    BILLING_CREATE_RATE_DEFINITION_EVENT = 1002,
-    BILLING_DELETE_BILLING_PLAN_EVENT = 1003,
-    BILLING_DELETE_INVOICE_EVENT = 1004,
-    BILLING_DELETE_RATE_DEFINITION_EVENT = 1005,
-    BILLING_EXPORT_INVOICE_EVENT = 1006,
-    BILLING_UPDATE_BILLING_PLAN_EVENT = 1007,
-    BILLING_UPDATE_INVOICE_EVENT = 1008,
-    BILLING_UPDATE_RATE_DEFINITION_EVENT = 1009,
+    BILLING_COMMIT_BILLING_PLAN_EVENT = 1000,
+    BILLING_CREATE_BILLING_PLAN_EVENT = 1001,
+    BILLING_CREATE_INVOICE_EVENT = 1002,
+    BILLING_CREATE_RATE_DEFINITION_EVENT = 1003,
+    BILLING_DELETE_BILLING_PLAN_EVENT = 1004,
+    BILLING_DELETE_INVOICE_EVENT = 1005,
+    BILLING_DELETE_RATE_DEFINITION_EVENT = 1006,
+    BILLING_EXPORT_INVOICE_EVENT = 1007,
+    BILLING_UPDATE_BILLING_PLAN_EVENT = 1008,
+    BILLING_UPDATE_INVOICE_EVENT = 1009,
+    BILLING_UPDATE_RATE_DEFINITION_EVENT = 1010,
   }
 }
 

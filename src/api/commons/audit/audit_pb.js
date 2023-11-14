@@ -77,7 +77,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010]];
 
 /**
  * @enum {number}
@@ -176,16 +176,17 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   COMPLIANCE_RND_QUERY_CACHED_EVENT: 701,
   AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT: 800,
   LMS_PIPELINE_FAILURE_EVENT: 900,
-  BILLING_CREATE_BILLING_PLAN_EVENT: 1000,
-  BILLING_CREATE_INVOICE_EVENT: 1001,
-  BILLING_CREATE_RATE_DEFINITION_EVENT: 1002,
-  BILLING_DELETE_BILLING_PLAN_EVENT: 1003,
-  BILLING_DELETE_INVOICE_EVENT: 1004,
-  BILLING_DELETE_RATE_DEFINITION_EVENT: 1005,
-  BILLING_EXPORT_INVOICE_EVENT: 1006,
-  BILLING_UPDATE_BILLING_PLAN_EVENT: 1007,
-  BILLING_UPDATE_INVOICE_EVENT: 1008,
-  BILLING_UPDATE_RATE_DEFINITION_EVENT: 1009
+  BILLING_COMMIT_BILLING_PLAN_EVENT: 1000,
+  BILLING_CREATE_BILLING_PLAN_EVENT: 1001,
+  BILLING_CREATE_INVOICE_EVENT: 1002,
+  BILLING_CREATE_RATE_DEFINITION_EVENT: 1003,
+  BILLING_DELETE_BILLING_PLAN_EVENT: 1004,
+  BILLING_DELETE_INVOICE_EVENT: 1005,
+  BILLING_DELETE_RATE_DEFINITION_EVENT: 1006,
+  BILLING_EXPORT_INVOICE_EVENT: 1007,
+  BILLING_UPDATE_BILLING_PLAN_EVENT: 1008,
+  BILLING_UPDATE_INVOICE_EVENT: 1009,
+  BILLING_UPDATE_RATE_DEFINITION_EVENT: 1010
 };
 
 /**
@@ -324,6 +325,7 @@ proto.api.commons.audit.AuditEvent.toObject = function(includeInstance, msg) {
     complianceRndQueryCachedEvent: (f = msg.getComplianceRndQueryCachedEvent()) && api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.toObject(includeInstance, f),
     agentTrainingCreateLearningOpportunityEvent: (f = msg.getAgentTrainingCreateLearningOpportunityEvent()) && api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent.toObject(includeInstance, f),
     lmsPipelineFailureEvent: (f = msg.getLmsPipelineFailureEvent()) && api_commons_audit_lms_events_pb.LMSPipelineFailureEvent.toObject(includeInstance, f),
+    billingCommitBillingPlanEvent: (f = msg.getBillingCommitBillingPlanEvent()) && api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent.toObject(includeInstance, f),
     billingCreateBillingPlanEvent: (f = msg.getBillingCreateBillingPlanEvent()) && api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent.toObject(includeInstance, f),
     billingCreateInvoiceEvent: (f = msg.getBillingCreateInvoiceEvent()) && api_commons_audit_billing_events_pb.BillingCreateInvoiceEvent.toObject(includeInstance, f),
     billingCreateRateDefinitionEvent: (f = msg.getBillingCreateRateDefinitionEvent()) && api_commons_audit_billing_events_pb.BillingCreateRateDefinitionEvent.toObject(includeInstance, f),
@@ -856,51 +858,56 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       msg.setLmsPipelineFailureEvent(value);
       break;
     case 1000:
+      var value = new api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent;
+      reader.readMessage(value,api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent.deserializeBinaryFromReader);
+      msg.setBillingCommitBillingPlanEvent(value);
+      break;
+    case 1001:
       var value = new api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent;
       reader.readMessage(value,api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent.deserializeBinaryFromReader);
       msg.setBillingCreateBillingPlanEvent(value);
       break;
-    case 1001:
+    case 1002:
       var value = new api_commons_audit_billing_events_pb.BillingCreateInvoiceEvent;
       reader.readMessage(value,api_commons_audit_billing_events_pb.BillingCreateInvoiceEvent.deserializeBinaryFromReader);
       msg.setBillingCreateInvoiceEvent(value);
       break;
-    case 1002:
+    case 1003:
       var value = new api_commons_audit_billing_events_pb.BillingCreateRateDefinitionEvent;
       reader.readMessage(value,api_commons_audit_billing_events_pb.BillingCreateRateDefinitionEvent.deserializeBinaryFromReader);
       msg.setBillingCreateRateDefinitionEvent(value);
       break;
-    case 1003:
+    case 1004:
       var value = new api_commons_audit_billing_events_pb.BillingDeleteBillingPlanEvent;
       reader.readMessage(value,api_commons_audit_billing_events_pb.BillingDeleteBillingPlanEvent.deserializeBinaryFromReader);
       msg.setBillingDeleteBillingPlanEvent(value);
       break;
-    case 1004:
+    case 1005:
       var value = new api_commons_audit_billing_events_pb.BillingDeleteInvoiceEvent;
       reader.readMessage(value,api_commons_audit_billing_events_pb.BillingDeleteInvoiceEvent.deserializeBinaryFromReader);
       msg.setBillingDeleteInvoiceEvent(value);
       break;
-    case 1005:
+    case 1006:
       var value = new api_commons_audit_billing_events_pb.BillingDeleteRateDefinitionEvent;
       reader.readMessage(value,api_commons_audit_billing_events_pb.BillingDeleteRateDefinitionEvent.deserializeBinaryFromReader);
       msg.setBillingDeleteRateDefinitionEvent(value);
       break;
-    case 1006:
+    case 1007:
       var value = new api_commons_audit_billing_events_pb.BillingExportInvoiceEvent;
       reader.readMessage(value,api_commons_audit_billing_events_pb.BillingExportInvoiceEvent.deserializeBinaryFromReader);
       msg.setBillingExportInvoiceEvent(value);
       break;
-    case 1007:
+    case 1008:
       var value = new api_commons_audit_billing_events_pb.BillingUpdateBillingPlanEvent;
       reader.readMessage(value,api_commons_audit_billing_events_pb.BillingUpdateBillingPlanEvent.deserializeBinaryFromReader);
       msg.setBillingUpdateBillingPlanEvent(value);
       break;
-    case 1008:
+    case 1009:
       var value = new api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent;
       reader.readMessage(value,api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent.deserializeBinaryFromReader);
       msg.setBillingUpdateInvoiceEvent(value);
       break;
-    case 1009:
+    case 1010:
       var value = new api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent;
       reader.readMessage(value,api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent.deserializeBinaryFromReader);
       msg.setBillingUpdateRateDefinitionEvent(value);
@@ -1713,10 +1720,18 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       api_commons_audit_lms_events_pb.LMSPipelineFailureEvent.serializeBinaryToWriter
     );
   }
-  f = message.getBillingCreateBillingPlanEvent();
+  f = message.getBillingCommitBillingPlanEvent();
   if (f != null) {
     writer.writeMessage(
       1000,
+      f,
+      api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getBillingCreateBillingPlanEvent();
+  if (f != null) {
+    writer.writeMessage(
+      1001,
       f,
       api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent.serializeBinaryToWriter
     );
@@ -1724,7 +1739,7 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
   f = message.getBillingCreateInvoiceEvent();
   if (f != null) {
     writer.writeMessage(
-      1001,
+      1002,
       f,
       api_commons_audit_billing_events_pb.BillingCreateInvoiceEvent.serializeBinaryToWriter
     );
@@ -1732,7 +1747,7 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
   f = message.getBillingCreateRateDefinitionEvent();
   if (f != null) {
     writer.writeMessage(
-      1002,
+      1003,
       f,
       api_commons_audit_billing_events_pb.BillingCreateRateDefinitionEvent.serializeBinaryToWriter
     );
@@ -1740,7 +1755,7 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
   f = message.getBillingDeleteBillingPlanEvent();
   if (f != null) {
     writer.writeMessage(
-      1003,
+      1004,
       f,
       api_commons_audit_billing_events_pb.BillingDeleteBillingPlanEvent.serializeBinaryToWriter
     );
@@ -1748,7 +1763,7 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
   f = message.getBillingDeleteInvoiceEvent();
   if (f != null) {
     writer.writeMessage(
-      1004,
+      1005,
       f,
       api_commons_audit_billing_events_pb.BillingDeleteInvoiceEvent.serializeBinaryToWriter
     );
@@ -1756,7 +1771,7 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
   f = message.getBillingDeleteRateDefinitionEvent();
   if (f != null) {
     writer.writeMessage(
-      1005,
+      1006,
       f,
       api_commons_audit_billing_events_pb.BillingDeleteRateDefinitionEvent.serializeBinaryToWriter
     );
@@ -1764,7 +1779,7 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
   f = message.getBillingExportInvoiceEvent();
   if (f != null) {
     writer.writeMessage(
-      1006,
+      1007,
       f,
       api_commons_audit_billing_events_pb.BillingExportInvoiceEvent.serializeBinaryToWriter
     );
@@ -1772,7 +1787,7 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
   f = message.getBillingUpdateBillingPlanEvent();
   if (f != null) {
     writer.writeMessage(
-      1007,
+      1008,
       f,
       api_commons_audit_billing_events_pb.BillingUpdateBillingPlanEvent.serializeBinaryToWriter
     );
@@ -1780,7 +1795,7 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
   f = message.getBillingUpdateInvoiceEvent();
   if (f != null) {
     writer.writeMessage(
-      1008,
+      1009,
       f,
       api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent.serializeBinaryToWriter
     );
@@ -1788,7 +1803,7 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
   f = message.getBillingUpdateRateDefinitionEvent();
   if (f != null) {
     writer.writeMessage(
-      1009,
+      1010,
       f,
       api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent.serializeBinaryToWriter
     );
@@ -5328,12 +5343,49 @@ proto.api.commons.audit.AuditEvent.prototype.hasLmsPipelineFailureEvent = functi
 
 
 /**
- * optional BillingCreateBillingPlanEvent billing_create_billing_plan_event = 1000;
+ * optional BillingCommitBillingPlanEvent billing_commit_billing_plan_event = 1000;
+ * @return {?proto.api.commons.audit.BillingCommitBillingPlanEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getBillingCommitBillingPlanEvent = function() {
+  return /** @type{?proto.api.commons.audit.BillingCommitBillingPlanEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent, 1000));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.BillingCommitBillingPlanEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setBillingCommitBillingPlanEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1000, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearBillingCommitBillingPlanEvent = function() {
+  return this.setBillingCommitBillingPlanEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasBillingCommitBillingPlanEvent = function() {
+  return jspb.Message.getField(this, 1000) != null;
+};
+
+
+/**
+ * optional BillingCreateBillingPlanEvent billing_create_billing_plan_event = 1001;
  * @return {?proto.api.commons.audit.BillingCreateBillingPlanEvent}
  */
 proto.api.commons.audit.AuditEvent.prototype.getBillingCreateBillingPlanEvent = function() {
   return /** @type{?proto.api.commons.audit.BillingCreateBillingPlanEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent, 1000));
+    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent, 1001));
 };
 
 
@@ -5342,7 +5394,7 @@ proto.api.commons.audit.AuditEvent.prototype.getBillingCreateBillingPlanEvent = 
  * @return {!proto.api.commons.audit.AuditEvent} returns this
 */
 proto.api.commons.audit.AuditEvent.prototype.setBillingCreateBillingPlanEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1000, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 1001, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
 };
 
 
@@ -5360,17 +5412,17 @@ proto.api.commons.audit.AuditEvent.prototype.clearBillingCreateBillingPlanEvent 
  * @return {boolean}
  */
 proto.api.commons.audit.AuditEvent.prototype.hasBillingCreateBillingPlanEvent = function() {
-  return jspb.Message.getField(this, 1000) != null;
+  return jspb.Message.getField(this, 1001) != null;
 };
 
 
 /**
- * optional BillingCreateInvoiceEvent billing_create_invoice_event = 1001;
+ * optional BillingCreateInvoiceEvent billing_create_invoice_event = 1002;
  * @return {?proto.api.commons.audit.BillingCreateInvoiceEvent}
  */
 proto.api.commons.audit.AuditEvent.prototype.getBillingCreateInvoiceEvent = function() {
   return /** @type{?proto.api.commons.audit.BillingCreateInvoiceEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingCreateInvoiceEvent, 1001));
+    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingCreateInvoiceEvent, 1002));
 };
 
 
@@ -5379,7 +5431,7 @@ proto.api.commons.audit.AuditEvent.prototype.getBillingCreateInvoiceEvent = func
  * @return {!proto.api.commons.audit.AuditEvent} returns this
 */
 proto.api.commons.audit.AuditEvent.prototype.setBillingCreateInvoiceEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1001, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 1002, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
 };
 
 
@@ -5397,17 +5449,17 @@ proto.api.commons.audit.AuditEvent.prototype.clearBillingCreateInvoiceEvent = fu
  * @return {boolean}
  */
 proto.api.commons.audit.AuditEvent.prototype.hasBillingCreateInvoiceEvent = function() {
-  return jspb.Message.getField(this, 1001) != null;
+  return jspb.Message.getField(this, 1002) != null;
 };
 
 
 /**
- * optional BillingCreateRateDefinitionEvent billing_create_rate_definition_event = 1002;
+ * optional BillingCreateRateDefinitionEvent billing_create_rate_definition_event = 1003;
  * @return {?proto.api.commons.audit.BillingCreateRateDefinitionEvent}
  */
 proto.api.commons.audit.AuditEvent.prototype.getBillingCreateRateDefinitionEvent = function() {
   return /** @type{?proto.api.commons.audit.BillingCreateRateDefinitionEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingCreateRateDefinitionEvent, 1002));
+    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingCreateRateDefinitionEvent, 1003));
 };
 
 
@@ -5416,7 +5468,7 @@ proto.api.commons.audit.AuditEvent.prototype.getBillingCreateRateDefinitionEvent
  * @return {!proto.api.commons.audit.AuditEvent} returns this
 */
 proto.api.commons.audit.AuditEvent.prototype.setBillingCreateRateDefinitionEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1002, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 1003, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
 };
 
 
@@ -5434,17 +5486,17 @@ proto.api.commons.audit.AuditEvent.prototype.clearBillingCreateRateDefinitionEve
  * @return {boolean}
  */
 proto.api.commons.audit.AuditEvent.prototype.hasBillingCreateRateDefinitionEvent = function() {
-  return jspb.Message.getField(this, 1002) != null;
+  return jspb.Message.getField(this, 1003) != null;
 };
 
 
 /**
- * optional BillingDeleteBillingPlanEvent billing_delete_billing_plan_event = 1003;
+ * optional BillingDeleteBillingPlanEvent billing_delete_billing_plan_event = 1004;
  * @return {?proto.api.commons.audit.BillingDeleteBillingPlanEvent}
  */
 proto.api.commons.audit.AuditEvent.prototype.getBillingDeleteBillingPlanEvent = function() {
   return /** @type{?proto.api.commons.audit.BillingDeleteBillingPlanEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingDeleteBillingPlanEvent, 1003));
+    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingDeleteBillingPlanEvent, 1004));
 };
 
 
@@ -5453,7 +5505,7 @@ proto.api.commons.audit.AuditEvent.prototype.getBillingDeleteBillingPlanEvent = 
  * @return {!proto.api.commons.audit.AuditEvent} returns this
 */
 proto.api.commons.audit.AuditEvent.prototype.setBillingDeleteBillingPlanEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1003, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 1004, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
 };
 
 
@@ -5471,17 +5523,17 @@ proto.api.commons.audit.AuditEvent.prototype.clearBillingDeleteBillingPlanEvent 
  * @return {boolean}
  */
 proto.api.commons.audit.AuditEvent.prototype.hasBillingDeleteBillingPlanEvent = function() {
-  return jspb.Message.getField(this, 1003) != null;
+  return jspb.Message.getField(this, 1004) != null;
 };
 
 
 /**
- * optional BillingDeleteInvoiceEvent billing_delete_invoice_event = 1004;
+ * optional BillingDeleteInvoiceEvent billing_delete_invoice_event = 1005;
  * @return {?proto.api.commons.audit.BillingDeleteInvoiceEvent}
  */
 proto.api.commons.audit.AuditEvent.prototype.getBillingDeleteInvoiceEvent = function() {
   return /** @type{?proto.api.commons.audit.BillingDeleteInvoiceEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingDeleteInvoiceEvent, 1004));
+    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingDeleteInvoiceEvent, 1005));
 };
 
 
@@ -5490,7 +5542,7 @@ proto.api.commons.audit.AuditEvent.prototype.getBillingDeleteInvoiceEvent = func
  * @return {!proto.api.commons.audit.AuditEvent} returns this
 */
 proto.api.commons.audit.AuditEvent.prototype.setBillingDeleteInvoiceEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1004, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 1005, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
 };
 
 
@@ -5508,17 +5560,17 @@ proto.api.commons.audit.AuditEvent.prototype.clearBillingDeleteInvoiceEvent = fu
  * @return {boolean}
  */
 proto.api.commons.audit.AuditEvent.prototype.hasBillingDeleteInvoiceEvent = function() {
-  return jspb.Message.getField(this, 1004) != null;
+  return jspb.Message.getField(this, 1005) != null;
 };
 
 
 /**
- * optional BillingDeleteRateDefinitionEvent billing_delete_rate_definition_event = 1005;
+ * optional BillingDeleteRateDefinitionEvent billing_delete_rate_definition_event = 1006;
  * @return {?proto.api.commons.audit.BillingDeleteRateDefinitionEvent}
  */
 proto.api.commons.audit.AuditEvent.prototype.getBillingDeleteRateDefinitionEvent = function() {
   return /** @type{?proto.api.commons.audit.BillingDeleteRateDefinitionEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingDeleteRateDefinitionEvent, 1005));
+    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingDeleteRateDefinitionEvent, 1006));
 };
 
 
@@ -5527,7 +5579,7 @@ proto.api.commons.audit.AuditEvent.prototype.getBillingDeleteRateDefinitionEvent
  * @return {!proto.api.commons.audit.AuditEvent} returns this
 */
 proto.api.commons.audit.AuditEvent.prototype.setBillingDeleteRateDefinitionEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1005, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 1006, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
 };
 
 
@@ -5545,17 +5597,17 @@ proto.api.commons.audit.AuditEvent.prototype.clearBillingDeleteRateDefinitionEve
  * @return {boolean}
  */
 proto.api.commons.audit.AuditEvent.prototype.hasBillingDeleteRateDefinitionEvent = function() {
-  return jspb.Message.getField(this, 1005) != null;
+  return jspb.Message.getField(this, 1006) != null;
 };
 
 
 /**
- * optional BillingExportInvoiceEvent billing_export_invoice_event = 1006;
+ * optional BillingExportInvoiceEvent billing_export_invoice_event = 1007;
  * @return {?proto.api.commons.audit.BillingExportInvoiceEvent}
  */
 proto.api.commons.audit.AuditEvent.prototype.getBillingExportInvoiceEvent = function() {
   return /** @type{?proto.api.commons.audit.BillingExportInvoiceEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingExportInvoiceEvent, 1006));
+    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingExportInvoiceEvent, 1007));
 };
 
 
@@ -5564,7 +5616,7 @@ proto.api.commons.audit.AuditEvent.prototype.getBillingExportInvoiceEvent = func
  * @return {!proto.api.commons.audit.AuditEvent} returns this
 */
 proto.api.commons.audit.AuditEvent.prototype.setBillingExportInvoiceEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1006, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 1007, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
 };
 
 
@@ -5582,17 +5634,17 @@ proto.api.commons.audit.AuditEvent.prototype.clearBillingExportInvoiceEvent = fu
  * @return {boolean}
  */
 proto.api.commons.audit.AuditEvent.prototype.hasBillingExportInvoiceEvent = function() {
-  return jspb.Message.getField(this, 1006) != null;
+  return jspb.Message.getField(this, 1007) != null;
 };
 
 
 /**
- * optional BillingUpdateBillingPlanEvent billing_update_billing_plan_event = 1007;
+ * optional BillingUpdateBillingPlanEvent billing_update_billing_plan_event = 1008;
  * @return {?proto.api.commons.audit.BillingUpdateBillingPlanEvent}
  */
 proto.api.commons.audit.AuditEvent.prototype.getBillingUpdateBillingPlanEvent = function() {
   return /** @type{?proto.api.commons.audit.BillingUpdateBillingPlanEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingUpdateBillingPlanEvent, 1007));
+    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingUpdateBillingPlanEvent, 1008));
 };
 
 
@@ -5601,7 +5653,7 @@ proto.api.commons.audit.AuditEvent.prototype.getBillingUpdateBillingPlanEvent = 
  * @return {!proto.api.commons.audit.AuditEvent} returns this
 */
 proto.api.commons.audit.AuditEvent.prototype.setBillingUpdateBillingPlanEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1007, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 1008, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
 };
 
 
@@ -5619,17 +5671,17 @@ proto.api.commons.audit.AuditEvent.prototype.clearBillingUpdateBillingPlanEvent 
  * @return {boolean}
  */
 proto.api.commons.audit.AuditEvent.prototype.hasBillingUpdateBillingPlanEvent = function() {
-  return jspb.Message.getField(this, 1007) != null;
+  return jspb.Message.getField(this, 1008) != null;
 };
 
 
 /**
- * optional BillingUpdateInvoiceEvent billing_update_invoice_event = 1008;
+ * optional BillingUpdateInvoiceEvent billing_update_invoice_event = 1009;
  * @return {?proto.api.commons.audit.BillingUpdateInvoiceEvent}
  */
 proto.api.commons.audit.AuditEvent.prototype.getBillingUpdateInvoiceEvent = function() {
   return /** @type{?proto.api.commons.audit.BillingUpdateInvoiceEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent, 1008));
+    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent, 1009));
 };
 
 
@@ -5638,7 +5690,7 @@ proto.api.commons.audit.AuditEvent.prototype.getBillingUpdateInvoiceEvent = func
  * @return {!proto.api.commons.audit.AuditEvent} returns this
 */
 proto.api.commons.audit.AuditEvent.prototype.setBillingUpdateInvoiceEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1008, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 1009, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
 };
 
 
@@ -5656,17 +5708,17 @@ proto.api.commons.audit.AuditEvent.prototype.clearBillingUpdateInvoiceEvent = fu
  * @return {boolean}
  */
 proto.api.commons.audit.AuditEvent.prototype.hasBillingUpdateInvoiceEvent = function() {
-  return jspb.Message.getField(this, 1008) != null;
+  return jspb.Message.getField(this, 1009) != null;
 };
 
 
 /**
- * optional BillingUpdateRateDefinitionEvent billing_update_rate_definition_event = 1009;
+ * optional BillingUpdateRateDefinitionEvent billing_update_rate_definition_event = 1010;
  * @return {?proto.api.commons.audit.BillingUpdateRateDefinitionEvent}
  */
 proto.api.commons.audit.AuditEvent.prototype.getBillingUpdateRateDefinitionEvent = function() {
   return /** @type{?proto.api.commons.audit.BillingUpdateRateDefinitionEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent, 1009));
+    jspb.Message.getWrapperField(this, api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent, 1010));
 };
 
 
@@ -5675,7 +5727,7 @@ proto.api.commons.audit.AuditEvent.prototype.getBillingUpdateRateDefinitionEvent
  * @return {!proto.api.commons.audit.AuditEvent} returns this
 */
 proto.api.commons.audit.AuditEvent.prototype.setBillingUpdateRateDefinitionEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1009, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 1010, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
 };
 
 
@@ -5693,7 +5745,7 @@ proto.api.commons.audit.AuditEvent.prototype.clearBillingUpdateRateDefinitionEve
  * @return {boolean}
  */
 proto.api.commons.audit.AuditEvent.prototype.hasBillingUpdateRateDefinitionEvent = function() {
-  return jspb.Message.getField(this, 1009) != null;
+  return jspb.Message.getField(this, 1010) != null;
 };
 
 
