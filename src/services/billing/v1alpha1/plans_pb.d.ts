@@ -247,6 +247,11 @@ export class DuplicateBillingPlanRequest extends jspb.Message {
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;
 
+  hasBillingPlan(): boolean;
+  clearBillingPlan(): void;
+  getBillingPlan(): services_billing_entities_v1alpha1_plan_pb.BillingPlan | undefined;
+  setBillingPlan(value?: services_billing_entities_v1alpha1_plan_pb.BillingPlan): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DuplicateBillingPlanRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DuplicateBillingPlanRequest): DuplicateBillingPlanRequest.AsObject;
@@ -260,6 +265,7 @@ export class DuplicateBillingPlanRequest extends jspb.Message {
 export namespace DuplicateBillingPlanRequest {
   export type AsObject = {
     billingPlanId: string,
+    billingPlan?: services_billing_entities_v1alpha1_plan_pb.BillingPlan.AsObject,
   }
 }
 
@@ -287,6 +293,11 @@ export class DuplicateDefaultBillingPlanRequest extends jspb.Message {
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;
 
+  hasBillingPlan(): boolean;
+  clearBillingPlan(): void;
+  getBillingPlan(): services_billing_entities_v1alpha1_plan_pb.BillingPlan | undefined;
+  setBillingPlan(value?: services_billing_entities_v1alpha1_plan_pb.BillingPlan): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DuplicateDefaultBillingPlanRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DuplicateDefaultBillingPlanRequest): DuplicateDefaultBillingPlanRequest.AsObject;
@@ -300,6 +311,7 @@ export class DuplicateDefaultBillingPlanRequest extends jspb.Message {
 export namespace DuplicateDefaultBillingPlanRequest {
   export type AsObject = {
     billingPlanId: string,
+    billingPlan?: services_billing_entities_v1alpha1_plan_pb.BillingPlan.AsObject,
   }
 }
 

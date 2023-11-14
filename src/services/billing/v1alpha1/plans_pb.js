@@ -2179,7 +2179,8 @@ proto.services.billing.v1alpha1.DuplicateBillingPlanRequest.prototype.toObject =
  */
 proto.services.billing.v1alpha1.DuplicateBillingPlanRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    billingPlan: (f = msg.getBillingPlan()) && services_billing_entities_v1alpha1_plan_pb.BillingPlan.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2220,6 +2221,11 @@ proto.services.billing.v1alpha1.DuplicateBillingPlanRequest.deserializeBinaryFro
       var value = /** @type {string} */ (reader.readString());
       msg.setBillingPlanId(value);
       break;
+    case 2:
+      var value = new services_billing_entities_v1alpha1_plan_pb.BillingPlan;
+      reader.readMessage(value,services_billing_entities_v1alpha1_plan_pb.BillingPlan.deserializeBinaryFromReader);
+      msg.setBillingPlan(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2256,6 +2262,14 @@ proto.services.billing.v1alpha1.DuplicateBillingPlanRequest.serializeBinaryToWri
       f
     );
   }
+  f = message.getBillingPlan();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      services_billing_entities_v1alpha1_plan_pb.BillingPlan.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -2274,6 +2288,43 @@ proto.services.billing.v1alpha1.DuplicateBillingPlanRequest.prototype.getBilling
  */
 proto.services.billing.v1alpha1.DuplicateBillingPlanRequest.prototype.setBillingPlanId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional services.billing.entities.v1alpha1.BillingPlan billing_plan = 2;
+ * @return {?proto.services.billing.entities.v1alpha1.BillingPlan}
+ */
+proto.services.billing.v1alpha1.DuplicateBillingPlanRequest.prototype.getBillingPlan = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha1.BillingPlan} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_plan_pb.BillingPlan, 2));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha1.BillingPlan|undefined} value
+ * @return {!proto.services.billing.v1alpha1.DuplicateBillingPlanRequest} returns this
+*/
+proto.services.billing.v1alpha1.DuplicateBillingPlanRequest.prototype.setBillingPlan = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.v1alpha1.DuplicateBillingPlanRequest} returns this
+ */
+proto.services.billing.v1alpha1.DuplicateBillingPlanRequest.prototype.clearBillingPlan = function() {
+  return this.setBillingPlan(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.v1alpha1.DuplicateBillingPlanRequest.prototype.hasBillingPlan = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -2439,7 +2490,8 @@ proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest.prototype.toO
  */
 proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    billingPlan: (f = msg.getBillingPlan()) && services_billing_entities_v1alpha1_plan_pb.BillingPlan.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2480,6 +2532,11 @@ proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest.deserializeBi
       var value = /** @type {string} */ (reader.readString());
       msg.setBillingPlanId(value);
       break;
+    case 2:
+      var value = new services_billing_entities_v1alpha1_plan_pb.BillingPlan;
+      reader.readMessage(value,services_billing_entities_v1alpha1_plan_pb.BillingPlan.deserializeBinaryFromReader);
+      msg.setBillingPlan(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2516,6 +2573,14 @@ proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest.serializeBina
       f
     );
   }
+  f = message.getBillingPlan();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      services_billing_entities_v1alpha1_plan_pb.BillingPlan.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -2534,6 +2599,43 @@ proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest.prototype.get
  */
 proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest.prototype.setBillingPlanId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional services.billing.entities.v1alpha1.BillingPlan billing_plan = 2;
+ * @return {?proto.services.billing.entities.v1alpha1.BillingPlan}
+ */
+proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest.prototype.getBillingPlan = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha1.BillingPlan} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha1_plan_pb.BillingPlan, 2));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha1.BillingPlan|undefined} value
+ * @return {!proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest} returns this
+*/
+proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest.prototype.setBillingPlan = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest} returns this
+ */
+proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest.prototype.clearBillingPlan = function() {
+  return this.setBillingPlan(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest.prototype.hasBillingPlan = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
