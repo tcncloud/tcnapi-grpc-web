@@ -121,6 +121,24 @@ BillingService.DeleteRateDefinition = {
   responseType: services_billing_v1alpha1_rates_pb.DeleteRateDefinitionResponse
 };
 
+BillingService.DuplicateBillingPlan = {
+  methodName: "DuplicateBillingPlan",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha1_plans_pb.DuplicateBillingPlanRequest,
+  responseType: services_billing_v1alpha1_plans_pb.DuplicateBillingPlanResponse
+};
+
+BillingService.DuplicateDefaultBillingPlan = {
+  methodName: "DuplicateDefaultBillingPlan",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha1_plans_pb.DuplicateDefaultBillingPlanRequest,
+  responseType: services_billing_v1alpha1_plans_pb.DuplicateDefaultBillingPlanResponse
+};
+
 BillingService.ExportInvoice = {
   methodName: "ExportInvoice",
   service: BillingService,
@@ -591,6 +609,68 @@ BillingServiceClient.prototype.deleteRateDefinition = function deleteRateDefinit
     callback = arguments[1];
   }
   var client = grpc.unary(BillingService.DeleteRateDefinition, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.duplicateBillingPlan = function duplicateBillingPlan(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.DuplicateBillingPlan, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.duplicateDefaultBillingPlan = function duplicateDefaultBillingPlan(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.DuplicateDefaultBillingPlan, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

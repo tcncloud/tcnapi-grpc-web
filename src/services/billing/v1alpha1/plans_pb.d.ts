@@ -243,6 +243,86 @@ export namespace DeleteDefaultBillingPlanResponse {
   }
 }
 
+export class DuplicateBillingPlanRequest extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DuplicateBillingPlanRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DuplicateBillingPlanRequest): DuplicateBillingPlanRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DuplicateBillingPlanRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DuplicateBillingPlanRequest;
+  static deserializeBinaryFromReader(message: DuplicateBillingPlanRequest, reader: jspb.BinaryReader): DuplicateBillingPlanRequest;
+}
+
+export namespace DuplicateBillingPlanRequest {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
+export class DuplicateBillingPlanResponse extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DuplicateBillingPlanResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DuplicateBillingPlanResponse): DuplicateBillingPlanResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DuplicateBillingPlanResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DuplicateBillingPlanResponse;
+  static deserializeBinaryFromReader(message: DuplicateBillingPlanResponse, reader: jspb.BinaryReader): DuplicateBillingPlanResponse;
+}
+
+export namespace DuplicateBillingPlanResponse {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
+export class DuplicateDefaultBillingPlanRequest extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DuplicateDefaultBillingPlanRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DuplicateDefaultBillingPlanRequest): DuplicateDefaultBillingPlanRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DuplicateDefaultBillingPlanRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DuplicateDefaultBillingPlanRequest;
+  static deserializeBinaryFromReader(message: DuplicateDefaultBillingPlanRequest, reader: jspb.BinaryReader): DuplicateDefaultBillingPlanRequest;
+}
+
+export namespace DuplicateDefaultBillingPlanRequest {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
+export class DuplicateDefaultBillingPlanResponse extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DuplicateDefaultBillingPlanResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DuplicateDefaultBillingPlanResponse): DuplicateDefaultBillingPlanResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DuplicateDefaultBillingPlanResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DuplicateDefaultBillingPlanResponse;
+  static deserializeBinaryFromReader(message: DuplicateDefaultBillingPlanResponse, reader: jspb.BinaryReader): DuplicateDefaultBillingPlanResponse;
+}
+
+export namespace DuplicateDefaultBillingPlanResponse {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
 export class GetActiveBillingPlanRequest extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;

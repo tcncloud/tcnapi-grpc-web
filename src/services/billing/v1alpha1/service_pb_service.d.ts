@@ -115,6 +115,24 @@ type BillingServiceDeleteRateDefinition = {
   readonly responseType: typeof services_billing_v1alpha1_rates_pb.DeleteRateDefinitionResponse;
 };
 
+type BillingServiceDuplicateBillingPlan = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_plans_pb.DuplicateBillingPlanRequest;
+  readonly responseType: typeof services_billing_v1alpha1_plans_pb.DuplicateBillingPlanResponse;
+};
+
+type BillingServiceDuplicateDefaultBillingPlan = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_plans_pb.DuplicateDefaultBillingPlanRequest;
+  readonly responseType: typeof services_billing_v1alpha1_plans_pb.DuplicateDefaultBillingPlanResponse;
+};
+
 type BillingServiceExportInvoice = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -246,6 +264,8 @@ export class BillingService {
   static readonly DeleteDefaultRateDefinition: BillingServiceDeleteDefaultRateDefinition;
   static readonly DeleteInvoice: BillingServiceDeleteInvoice;
   static readonly DeleteRateDefinition: BillingServiceDeleteRateDefinition;
+  static readonly DuplicateBillingPlan: BillingServiceDuplicateBillingPlan;
+  static readonly DuplicateDefaultBillingPlan: BillingServiceDuplicateDefaultBillingPlan;
   static readonly ExportInvoice: BillingServiceExportInvoice;
   static readonly GetActiveBillingPlan: BillingServiceGetActiveBillingPlan;
   static readonly GetBillingPlan: BillingServiceGetBillingPlan;
@@ -400,6 +420,24 @@ export class BillingServiceClient {
   deleteRateDefinition(
     requestMessage: services_billing_v1alpha1_rates_pb.DeleteRateDefinitionRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.DeleteRateDefinitionResponse|null) => void
+  ): UnaryResponse;
+  duplicateBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.DuplicateBillingPlanRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.DuplicateBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  duplicateBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.DuplicateBillingPlanRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.DuplicateBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  duplicateDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.DuplicateDefaultBillingPlanRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.DuplicateDefaultBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  duplicateDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha1_plans_pb.DuplicateDefaultBillingPlanRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.DuplicateDefaultBillingPlanResponse|null) => void
   ): UnaryResponse;
   exportInvoice(
     requestMessage: services_billing_v1alpha1_invoices_pb.ExportInvoiceRequest,
