@@ -4,8 +4,8 @@
 import * as jspb from "google-protobuf";
 
 export class BillingCommitBillingPlanEvent extends jspb.Message {
-  getBillingPlan(): string;
-  setBillingPlan(value: string): void;
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -22,7 +22,7 @@ export class BillingCommitBillingPlanEvent extends jspb.Message {
 
 export namespace BillingCommitBillingPlanEvent {
   export type AsObject = {
-    billingPlan: string,
+    billingPlanId: string,
     userId: string,
   }
 }
@@ -100,8 +100,8 @@ export namespace BillingCreateRateDefinitionEvent {
 }
 
 export class BillingDeleteBillingPlanEvent extends jspb.Message {
-  getBillingPlan(): string;
-  setBillingPlan(value: string): void;
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -118,14 +118,14 @@ export class BillingDeleteBillingPlanEvent extends jspb.Message {
 
 export namespace BillingDeleteBillingPlanEvent {
   export type AsObject = {
-    billingPlan: string,
+    billingPlanId: string,
     userId: string,
   }
 }
 
 export class BillingDeleteInvoiceEvent extends jspb.Message {
-  getInvoice(): string;
-  setInvoice(value: string): void;
+  getInvoiceId(): string;
+  setInvoiceId(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -142,14 +142,14 @@ export class BillingDeleteInvoiceEvent extends jspb.Message {
 
 export namespace BillingDeleteInvoiceEvent {
   export type AsObject = {
-    invoice: string,
+    invoiceId: string,
     userId: string,
   }
 }
 
 export class BillingDeleteRateDefinitionEvent extends jspb.Message {
-  getRateDefinition(): string;
-  setRateDefinition(value: string): void;
+  getRateDefinitionId(): string;
+  setRateDefinitionId(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -166,14 +166,14 @@ export class BillingDeleteRateDefinitionEvent extends jspb.Message {
 
 export namespace BillingDeleteRateDefinitionEvent {
   export type AsObject = {
-    rateDefinition: string,
+    rateDefinitionId: string,
     userId: string,
   }
 }
 
 export class BillingExportInvoiceEvent extends jspb.Message {
-  getInvoice(): string;
-  setInvoice(value: string): void;
+  getInvoiceId(): string;
+  setInvoiceId(value: string): void;
 
   getUserId(): string;
   setUserId(value: string): void;
@@ -190,7 +190,7 @@ export class BillingExportInvoiceEvent extends jspb.Message {
 
 export namespace BillingExportInvoiceEvent {
   export type AsObject = {
-    invoice: string,
+    invoiceId: string,
     userId: string,
   }
 }
