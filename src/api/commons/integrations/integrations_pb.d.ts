@@ -1550,6 +1550,16 @@ export class ExecuteFlow extends jspb.Message {
   getEpicGetAccount(): ExecuteEpicGetAccount | undefined;
   setEpicGetAccount(value?: ExecuteEpicGetAccount): void;
 
+  hasEpicReceiveCommunication2(): boolean;
+  clearEpicReceiveCommunication2(): void;
+  getEpicReceiveCommunication2(): ExecuteEpicReceiveCommunication2 | undefined;
+  setEpicReceiveCommunication2(value?: ExecuteEpicReceiveCommunication2): void;
+
+  hasEpicReceiveCommunication3(): boolean;
+  clearEpicReceiveCommunication3(): void;
+  getEpicReceiveCommunication3(): ExecuteEpicReceiveCommunication3 | undefined;
+  setEpicReceiveCommunication3(value?: ExecuteEpicReceiveCommunication3): void;
+
   hasNewzwarePhoneLookup(): boolean;
   clearNewzwarePhoneLookup(): void;
   getNewzwarePhoneLookup(): ExecuteNewzwarePhoneLookup | undefined;
@@ -1820,6 +1830,8 @@ export namespace ExecuteFlow {
     epicFindAppointment?: ExecuteEpicFindAppointment.AsObject,
     epicBookAppointment?: ExecuteEpicBookAppointment.AsObject,
     epicGetAccount?: ExecuteEpicGetAccount.AsObject,
+    epicReceiveCommunication2?: ExecuteEpicReceiveCommunication2.AsObject,
+    epicReceiveCommunication3?: ExecuteEpicReceiveCommunication3.AsObject,
     newzwarePhoneLookup?: ExecuteNewzwarePhoneLookup.AsObject,
     newzwareAccountInquiry?: ExecuteNewzwareAccountInquiry.AsObject,
     newzwareCcPayment?: ExecuteNewzwareCcPayment.AsObject,
@@ -2024,6 +2036,8 @@ export namespace ExecuteFlow {
     EPIC_FIND_APPOINTMENT = 3705,
     EPIC_BOOK_APPOINTMENT = 3706,
     EPIC_GET_ACCOUNT = 3707,
+    EPIC_RECEIVE_COMMUNICATION_2 = 3708,
+    EPIC_RECEIVE_COMMUNICATION_3 = 3709,
     NEWZWARE_PHONE_LOOKUP = 3801,
     NEWZWARE_ACCOUNT_INQUIRY = 3802,
     NEWZWARE_CC_PAYMENT = 3803,
@@ -5506,6 +5520,38 @@ export namespace ExecuteEpicGetAccount {
   }
 }
 
+export class ExecuteEpicReceiveCommunication2 extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicReceiveCommunication2.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicReceiveCommunication2): ExecuteEpicReceiveCommunication2.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicReceiveCommunication2, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicReceiveCommunication2;
+  static deserializeBinaryFromReader(message: ExecuteEpicReceiveCommunication2, reader: jspb.BinaryReader): ExecuteEpicReceiveCommunication2;
+}
+
+export namespace ExecuteEpicReceiveCommunication2 {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteEpicReceiveCommunication3 extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicReceiveCommunication3.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicReceiveCommunication3): ExecuteEpicReceiveCommunication3.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicReceiveCommunication3, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicReceiveCommunication3;
+  static deserializeBinaryFromReader(message: ExecuteEpicReceiveCommunication3, reader: jspb.BinaryReader): ExecuteEpicReceiveCommunication3;
+}
+
+export namespace ExecuteEpicReceiveCommunication3 {
+  export type AsObject = {
+  }
+}
+
 export class ExecuteNewzwarePhoneLookup extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteNewzwarePhoneLookup.AsObject;
@@ -5965,6 +6011,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_EPIC_FIND_APPOINTMENT: 3705;
   REQUEST_METHOD_EPIC_BOOK_APPOINTMENT: 3706;
   REQUEST_METHOD_EPIC_GET_ACCOUNT: 3707;
+  REQUEST_METHOD_EPIC_RECEIVE_COMMUNICATION_2: 3708;
+  REQUEST_METHOD_EPIC_RECEIVE_COMMUNICATION_3: 3709;
   REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP: 3801;
   REQUEST_METHOD_NEWZWARE_ACCOUNT_INQUIRY: 3802;
   REQUEST_METHOD_NEWZWARE_CC_PAYMENT: 3803;
