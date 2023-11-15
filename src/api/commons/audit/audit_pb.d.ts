@@ -4,7 +4,6 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_audit_agent_training_events_pb from "../../../api/commons/audit/agent_training_events_pb";
 import * as api_commons_audit_asm_events_pb from "../../../api/commons/audit/asm_events_pb";
-import * as api_commons_audit_billing_events_pb from "../../../api/commons/audit/billing_events_pb";
 import * as api_commons_audit_compliance_events_pb from "../../../api/commons/audit/compliance_events_pb";
 import * as api_commons_audit_event_types_pb from "../../../api/commons/audit/event_types_pb";
 import * as api_commons_audit_events_pb from "../../../api/commons/audit/events_pb";
@@ -496,61 +495,6 @@ export class AuditEvent extends jspb.Message {
   getLmsPipelineFailureEvent(): api_commons_audit_lms_events_pb.LMSPipelineFailureEvent | undefined;
   setLmsPipelineFailureEvent(value?: api_commons_audit_lms_events_pb.LMSPipelineFailureEvent): void;
 
-  hasBillingCommitBillingPlanEvent(): boolean;
-  clearBillingCommitBillingPlanEvent(): void;
-  getBillingCommitBillingPlanEvent(): api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent | undefined;
-  setBillingCommitBillingPlanEvent(value?: api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent): void;
-
-  hasBillingCreateBillingPlanEvent(): boolean;
-  clearBillingCreateBillingPlanEvent(): void;
-  getBillingCreateBillingPlanEvent(): api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent | undefined;
-  setBillingCreateBillingPlanEvent(value?: api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent): void;
-
-  hasBillingCreateInvoiceEvent(): boolean;
-  clearBillingCreateInvoiceEvent(): void;
-  getBillingCreateInvoiceEvent(): api_commons_audit_billing_events_pb.BillingCreateInvoiceEvent | undefined;
-  setBillingCreateInvoiceEvent(value?: api_commons_audit_billing_events_pb.BillingCreateInvoiceEvent): void;
-
-  hasBillingCreateRateDefinitionEvent(): boolean;
-  clearBillingCreateRateDefinitionEvent(): void;
-  getBillingCreateRateDefinitionEvent(): api_commons_audit_billing_events_pb.BillingCreateRateDefinitionEvent | undefined;
-  setBillingCreateRateDefinitionEvent(value?: api_commons_audit_billing_events_pb.BillingCreateRateDefinitionEvent): void;
-
-  hasBillingDeleteBillingPlanEvent(): boolean;
-  clearBillingDeleteBillingPlanEvent(): void;
-  getBillingDeleteBillingPlanEvent(): api_commons_audit_billing_events_pb.BillingDeleteBillingPlanEvent | undefined;
-  setBillingDeleteBillingPlanEvent(value?: api_commons_audit_billing_events_pb.BillingDeleteBillingPlanEvent): void;
-
-  hasBillingDeleteInvoiceEvent(): boolean;
-  clearBillingDeleteInvoiceEvent(): void;
-  getBillingDeleteInvoiceEvent(): api_commons_audit_billing_events_pb.BillingDeleteInvoiceEvent | undefined;
-  setBillingDeleteInvoiceEvent(value?: api_commons_audit_billing_events_pb.BillingDeleteInvoiceEvent): void;
-
-  hasBillingDeleteRateDefinitionEvent(): boolean;
-  clearBillingDeleteRateDefinitionEvent(): void;
-  getBillingDeleteRateDefinitionEvent(): api_commons_audit_billing_events_pb.BillingDeleteRateDefinitionEvent | undefined;
-  setBillingDeleteRateDefinitionEvent(value?: api_commons_audit_billing_events_pb.BillingDeleteRateDefinitionEvent): void;
-
-  hasBillingExportInvoiceEvent(): boolean;
-  clearBillingExportInvoiceEvent(): void;
-  getBillingExportInvoiceEvent(): api_commons_audit_billing_events_pb.BillingExportInvoiceEvent | undefined;
-  setBillingExportInvoiceEvent(value?: api_commons_audit_billing_events_pb.BillingExportInvoiceEvent): void;
-
-  hasBillingUpdateBillingPlanEvent(): boolean;
-  clearBillingUpdateBillingPlanEvent(): void;
-  getBillingUpdateBillingPlanEvent(): api_commons_audit_billing_events_pb.BillingUpdateBillingPlanEvent | undefined;
-  setBillingUpdateBillingPlanEvent(value?: api_commons_audit_billing_events_pb.BillingUpdateBillingPlanEvent): void;
-
-  hasBillingUpdateInvoiceEvent(): boolean;
-  clearBillingUpdateInvoiceEvent(): void;
-  getBillingUpdateInvoiceEvent(): api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent | undefined;
-  setBillingUpdateInvoiceEvent(value?: api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent): void;
-
-  hasBillingUpdateRateDefinitionEvent(): boolean;
-  clearBillingUpdateRateDefinitionEvent(): void;
-  getBillingUpdateRateDefinitionEvent(): api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent | undefined;
-  setBillingUpdateRateDefinitionEvent(value?: api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent): void;
-
   getEventCase(): AuditEvent.EventCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuditEvent.AsObject;
@@ -662,17 +606,6 @@ export namespace AuditEvent {
     complianceRndQueryCachedEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
     agentTrainingCreateLearningOpportunityEvent?: api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent.AsObject,
     lmsPipelineFailureEvent?: api_commons_audit_lms_events_pb.LMSPipelineFailureEvent.AsObject,
-    billingCommitBillingPlanEvent?: api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent.AsObject,
-    billingCreateBillingPlanEvent?: api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent.AsObject,
-    billingCreateInvoiceEvent?: api_commons_audit_billing_events_pb.BillingCreateInvoiceEvent.AsObject,
-    billingCreateRateDefinitionEvent?: api_commons_audit_billing_events_pb.BillingCreateRateDefinitionEvent.AsObject,
-    billingDeleteBillingPlanEvent?: api_commons_audit_billing_events_pb.BillingDeleteBillingPlanEvent.AsObject,
-    billingDeleteInvoiceEvent?: api_commons_audit_billing_events_pb.BillingDeleteInvoiceEvent.AsObject,
-    billingDeleteRateDefinitionEvent?: api_commons_audit_billing_events_pb.BillingDeleteRateDefinitionEvent.AsObject,
-    billingExportInvoiceEvent?: api_commons_audit_billing_events_pb.BillingExportInvoiceEvent.AsObject,
-    billingUpdateBillingPlanEvent?: api_commons_audit_billing_events_pb.BillingUpdateBillingPlanEvent.AsObject,
-    billingUpdateInvoiceEvent?: api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent.AsObject,
-    billingUpdateRateDefinitionEvent?: api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent.AsObject,
   }
 
   export enum EventCase {
@@ -769,17 +702,6 @@ export namespace AuditEvent {
     COMPLIANCE_RND_QUERY_CACHED_EVENT = 701,
     AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800,
     LMS_PIPELINE_FAILURE_EVENT = 900,
-    BILLING_COMMIT_BILLING_PLAN_EVENT = 1000,
-    BILLING_CREATE_BILLING_PLAN_EVENT = 1001,
-    BILLING_CREATE_INVOICE_EVENT = 1002,
-    BILLING_CREATE_RATE_DEFINITION_EVENT = 1003,
-    BILLING_DELETE_BILLING_PLAN_EVENT = 1004,
-    BILLING_DELETE_INVOICE_EVENT = 1005,
-    BILLING_DELETE_RATE_DEFINITION_EVENT = 1006,
-    BILLING_EXPORT_INVOICE_EVENT = 1007,
-    BILLING_UPDATE_BILLING_PLAN_EVENT = 1008,
-    BILLING_UPDATE_INVOICE_EVENT = 1009,
-    BILLING_UPDATE_RATE_DEFINITION_EVENT = 1010,
   }
 }
 
