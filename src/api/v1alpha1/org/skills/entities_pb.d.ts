@@ -183,9 +183,6 @@ export namespace GetSkillGroupResponse {
 }
 
 export class DeleteSkillGroupRequest extends jspb.Message {
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   getSkillGroupId(): string;
   setSkillGroupId(value: string): void;
 
@@ -201,7 +198,6 @@ export class DeleteSkillGroupRequest extends jspb.Message {
 
 export namespace DeleteSkillGroupRequest {
   export type AsObject = {
-    orgId: string,
     skillGroupId: string,
   }
 }
