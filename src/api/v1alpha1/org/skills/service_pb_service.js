@@ -56,22 +56,22 @@ SkillsService.DeleteSkillGroup = {
   responseType: api_v1alpha1_org_skills_entities_pb.DeleteSkillGroupResponse
 };
 
-SkillsService.AssignSkillGroup = {
-  methodName: "AssignSkillGroup",
+SkillsService.AssignSkillGroups = {
+  methodName: "AssignSkillGroups",
   service: SkillsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupRequest,
-  responseType: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupResponse
+  requestType: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsResponse
 };
 
-SkillsService.RevokeSkillGroup = {
-  methodName: "RevokeSkillGroup",
+SkillsService.RevokeSkillGroups = {
+  methodName: "RevokeSkillGroups",
   service: SkillsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupRequest,
-  responseType: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupResponse
+  requestType: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupsRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupsResponse
 };
 
 SkillsService.GetUserSkillGroups = {
@@ -263,11 +263,11 @@ SkillsServiceClient.prototype.deleteSkillGroup = function deleteSkillGroup(reque
   };
 };
 
-SkillsServiceClient.prototype.assignSkillGroup = function assignSkillGroup(requestMessage, metadata, callback) {
+SkillsServiceClient.prototype.assignSkillGroups = function assignSkillGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(SkillsService.AssignSkillGroup, {
+  var client = grpc.unary(SkillsService.AssignSkillGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -294,11 +294,11 @@ SkillsServiceClient.prototype.assignSkillGroup = function assignSkillGroup(reque
   };
 };
 
-SkillsServiceClient.prototype.revokeSkillGroup = function revokeSkillGroup(requestMessage, metadata, callback) {
+SkillsServiceClient.prototype.revokeSkillGroups = function revokeSkillGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(SkillsService.RevokeSkillGroup, {
+  var client = grpc.unary(SkillsService.RevokeSkillGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

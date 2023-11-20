@@ -218,82 +218,86 @@ export namespace DeleteSkillGroupResponse {
   }
 }
 
-export class AssignSkillGroupRequest extends jspb.Message {
-  getSkillGroupId(): string;
-  setSkillGroupId(value: string): void;
+export class AssignSkillGroupsRequest extends jspb.Message {
+  clearSkillGroupIdsList(): void;
+  getSkillGroupIdsList(): Array<string>;
+  setSkillGroupIdsList(value: Array<string>): void;
+  addSkillGroupIds(value: string, index?: number): string;
 
   getUserId(): string;
   setUserId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AssignSkillGroupRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: AssignSkillGroupRequest): AssignSkillGroupRequest.AsObject;
+  toObject(includeInstance?: boolean): AssignSkillGroupsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignSkillGroupsRequest): AssignSkillGroupsRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AssignSkillGroupRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AssignSkillGroupRequest;
-  static deserializeBinaryFromReader(message: AssignSkillGroupRequest, reader: jspb.BinaryReader): AssignSkillGroupRequest;
+  static serializeBinaryToWriter(message: AssignSkillGroupsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignSkillGroupsRequest;
+  static deserializeBinaryFromReader(message: AssignSkillGroupsRequest, reader: jspb.BinaryReader): AssignSkillGroupsRequest;
 }
 
-export namespace AssignSkillGroupRequest {
+export namespace AssignSkillGroupsRequest {
   export type AsObject = {
-    skillGroupId: string,
+    skillGroupIdsList: Array<string>,
     userId: string,
   }
 }
 
-export class AssignSkillGroupResponse extends jspb.Message {
+export class AssignSkillGroupsResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AssignSkillGroupResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: AssignSkillGroupResponse): AssignSkillGroupResponse.AsObject;
+  toObject(includeInstance?: boolean): AssignSkillGroupsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignSkillGroupsResponse): AssignSkillGroupsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AssignSkillGroupResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AssignSkillGroupResponse;
-  static deserializeBinaryFromReader(message: AssignSkillGroupResponse, reader: jspb.BinaryReader): AssignSkillGroupResponse;
+  static serializeBinaryToWriter(message: AssignSkillGroupsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignSkillGroupsResponse;
+  static deserializeBinaryFromReader(message: AssignSkillGroupsResponse, reader: jspb.BinaryReader): AssignSkillGroupsResponse;
 }
 
-export namespace AssignSkillGroupResponse {
+export namespace AssignSkillGroupsResponse {
   export type AsObject = {
   }
 }
 
-export class RevokeSkillGroupRequest extends jspb.Message {
-  getSkillGroupId(): string;
-  setSkillGroupId(value: string): void;
+export class RevokeSkillGroupsRequest extends jspb.Message {
+  clearSkillGroupIdsList(): void;
+  getSkillGroupIdsList(): Array<string>;
+  setSkillGroupIdsList(value: Array<string>): void;
+  addSkillGroupIds(value: string, index?: number): string;
 
   getUserId(): string;
   setUserId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RevokeSkillGroupRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RevokeSkillGroupRequest): RevokeSkillGroupRequest.AsObject;
+  toObject(includeInstance?: boolean): RevokeSkillGroupsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RevokeSkillGroupsRequest): RevokeSkillGroupsRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: RevokeSkillGroupRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RevokeSkillGroupRequest;
-  static deserializeBinaryFromReader(message: RevokeSkillGroupRequest, reader: jspb.BinaryReader): RevokeSkillGroupRequest;
+  static serializeBinaryToWriter(message: RevokeSkillGroupsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RevokeSkillGroupsRequest;
+  static deserializeBinaryFromReader(message: RevokeSkillGroupsRequest, reader: jspb.BinaryReader): RevokeSkillGroupsRequest;
 }
 
-export namespace RevokeSkillGroupRequest {
+export namespace RevokeSkillGroupsRequest {
   export type AsObject = {
-    skillGroupId: string,
+    skillGroupIdsList: Array<string>,
     userId: string,
   }
 }
 
-export class RevokeSkillGroupResponse extends jspb.Message {
+export class RevokeSkillGroupsResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RevokeSkillGroupResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: RevokeSkillGroupResponse): RevokeSkillGroupResponse.AsObject;
+  toObject(includeInstance?: boolean): RevokeSkillGroupsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RevokeSkillGroupsResponse): RevokeSkillGroupsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: RevokeSkillGroupResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RevokeSkillGroupResponse;
-  static deserializeBinaryFromReader(message: RevokeSkillGroupResponse, reader: jspb.BinaryReader): RevokeSkillGroupResponse;
+  static serializeBinaryToWriter(message: RevokeSkillGroupsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RevokeSkillGroupsResponse;
+  static deserializeBinaryFromReader(message: RevokeSkillGroupsResponse, reader: jspb.BinaryReader): RevokeSkillGroupsResponse;
 }
 
-export namespace RevokeSkillGroupResponse {
+export namespace RevokeSkillGroupsResponse {
   export type AsObject = {
   }
 }

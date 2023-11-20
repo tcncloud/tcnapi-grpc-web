@@ -50,22 +50,22 @@ type SkillsServiceDeleteSkillGroup = {
   readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.DeleteSkillGroupResponse;
 };
 
-type SkillsServiceAssignSkillGroup = {
+type SkillsServiceAssignSkillGroups = {
   readonly methodName: string;
   readonly service: typeof SkillsService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_skills_entities_pb.AssignSkillGroupRequest;
-  readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.AssignSkillGroupResponse;
+  readonly requestType: typeof api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsRequest;
+  readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsResponse;
 };
 
-type SkillsServiceRevokeSkillGroup = {
+type SkillsServiceRevokeSkillGroups = {
   readonly methodName: string;
   readonly service: typeof SkillsService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupRequest;
-  readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupResponse;
+  readonly requestType: typeof api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupsRequest;
+  readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupsResponse;
 };
 
 type SkillsServiceGetUserSkillGroups = {
@@ -102,8 +102,8 @@ export class SkillsService {
   static readonly UpdateSkillGroup: SkillsServiceUpdateSkillGroup;
   static readonly GetSkillGroup: SkillsServiceGetSkillGroup;
   static readonly DeleteSkillGroup: SkillsServiceDeleteSkillGroup;
-  static readonly AssignSkillGroup: SkillsServiceAssignSkillGroup;
-  static readonly RevokeSkillGroup: SkillsServiceRevokeSkillGroup;
+  static readonly AssignSkillGroups: SkillsServiceAssignSkillGroups;
+  static readonly RevokeSkillGroups: SkillsServiceRevokeSkillGroups;
   static readonly GetUserSkillGroups: SkillsServiceGetUserSkillGroups;
   static readonly GetUserSkills: SkillsServiceGetUserSkills;
   static readonly GetSkillGroupMembers: SkillsServiceGetSkillGroupMembers;
@@ -186,23 +186,23 @@ export class SkillsServiceClient {
     requestMessage: api_v1alpha1_org_skills_entities_pb.DeleteSkillGroupRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.DeleteSkillGroupResponse|null) => void
   ): UnaryResponse;
-  assignSkillGroup(
-    requestMessage: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupRequest,
+  assignSkillGroups(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsResponse|null) => void
   ): UnaryResponse;
-  assignSkillGroup(
-    requestMessage: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupResponse|null) => void
+  assignSkillGroups(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsResponse|null) => void
   ): UnaryResponse;
-  revokeSkillGroup(
-    requestMessage: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupRequest,
+  revokeSkillGroups(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupsResponse|null) => void
   ): UnaryResponse;
-  revokeSkillGroup(
-    requestMessage: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupResponse|null) => void
+  revokeSkillGroups(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupsResponse|null) => void
   ): UnaryResponse;
   getUserSkillGroups(
     requestMessage: api_v1alpha1_org_skills_entities_pb.GetUserSkillGroupsRequest,
