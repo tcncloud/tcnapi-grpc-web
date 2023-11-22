@@ -862,6 +862,12 @@ export class OmniTextMessage extends jspb.Message {
   getPrimaryAsmSessionSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setPrimaryAsmSessionSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  getType(): WhatsAppMsgTypeMap[keyof WhatsAppMsgTypeMap];
+  setType(value: WhatsAppMsgTypeMap[keyof WhatsAppMsgTypeMap]): void;
+
+  getPreviewUrl(): boolean;
+  setPreviewUrl(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniTextMessage.AsObject;
   static toObject(includeInstance: boolean, msg: OmniTextMessage): OmniTextMessage.AsObject;
@@ -877,6 +883,8 @@ export namespace OmniTextMessage {
     message: string,
     attachmentsList: Array<OmniAttachment.AsObject>,
     primaryAsmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    type: WhatsAppMsgTypeMap[keyof WhatsAppMsgTypeMap],
+    previewUrl: boolean,
   }
 }
 
@@ -2595,216 +2603,6 @@ export namespace OmniComplianceConfig {
   }
 }
 
-export class WhatsAppMessage extends jspb.Message {
-  getMessageSid(): string;
-  setMessageSid(value: string): void;
-
-  hasUserId(): boolean;
-  clearUserId(): void;
-  getUserId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setUserId(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  getType(): WhatsAppTypeMap[keyof WhatsAppTypeMap];
-  setType(value: WhatsAppTypeMap[keyof WhatsAppTypeMap]): void;
-
-  getMessagingProduct(): string;
-  setMessagingProduct(value: string): void;
-
-  getPreviewUrl(): boolean;
-  setPreviewUrl(value: boolean): void;
-
-  hasTextMessage(): boolean;
-  clearTextMessage(): void;
-  getTextMessage(): WhatsAppTextMessage | undefined;
-  setTextMessage(value?: WhatsAppTextMessage): void;
-
-  getSentFrom(): string;
-  setSentFrom(value: string): void;
-
-  getSentTo(): string;
-  setSentTo(value: string): void;
-
-  getChannelType(): ChannelTypeMap[keyof ChannelTypeMap];
-  setChannelType(value: ChannelTypeMap[keyof ChannelTypeMap]): void;
-
-  hasReferenceId(): boolean;
-  clearReferenceId(): void;
-  getReferenceId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setReferenceId(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  getUiReferenceId(): string;
-  setUiReferenceId(value: string): void;
-
-  hasConversationSid(): boolean;
-  clearConversationSid(): void;
-  getConversationSid(): api_commons_types_pb.Int64Id | undefined;
-  setConversationSid(value?: api_commons_types_pb.Int64Id): void;
-
-  getStatus(): OmniMessageStatusMap[keyof OmniMessageStatusMap];
-  setStatus(value: OmniMessageStatusMap[keyof OmniMessageStatusMap]): void;
-
-  hasDateCreated(): boolean;
-  clearDateCreated(): void;
-  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  hasDateModified(): boolean;
-  clearDateModified(): void;
-  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  getCampaignSid(): string;
-  setCampaignSid(value: string): void;
-
-  getSenderType(): OmniSenderTypeMap[keyof OmniSenderTypeMap];
-  setSenderType(value: OmniSenderTypeMap[keyof OmniSenderTypeMap]): void;
-
-  hasStatusMessage(): boolean;
-  clearStatusMessage(): void;
-  getStatusMessage(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setStatusMessage(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): WhatsAppMessage.AsObject;
-  static toObject(includeInstance: boolean, msg: WhatsAppMessage): WhatsAppMessage.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: WhatsAppMessage, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): WhatsAppMessage;
-  static deserializeBinaryFromReader(message: WhatsAppMessage, reader: jspb.BinaryReader): WhatsAppMessage;
-}
-
-export namespace WhatsAppMessage {
-  export type AsObject = {
-    messageSid: string,
-    userId?: google_protobuf_wrappers_pb.StringValue.AsObject,
-    type: WhatsAppTypeMap[keyof WhatsAppTypeMap],
-    messagingProduct: string,
-    previewUrl: boolean,
-    textMessage?: WhatsAppTextMessage.AsObject,
-    sentFrom: string,
-    sentTo: string,
-    channelType: ChannelTypeMap[keyof ChannelTypeMap],
-    referenceId?: google_protobuf_wrappers_pb.StringValue.AsObject,
-    uiReferenceId: string,
-    conversationSid?: api_commons_types_pb.Int64Id.AsObject,
-    status: OmniMessageStatusMap[keyof OmniMessageStatusMap],
-    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    campaignSid: string,
-    senderType: OmniSenderTypeMap[keyof OmniSenderTypeMap],
-    statusMessage?: google_protobuf_wrappers_pb.StringValue.AsObject,
-  }
-}
-
-export class WhatsAppTextMessage extends jspb.Message {
-  getMessage(): string;
-  setMessage(value: string): void;
-
-  clearAttachmentsList(): void;
-  getAttachmentsList(): Array<WhatsAppAttachment>;
-  setAttachmentsList(value: Array<WhatsAppAttachment>): void;
-  addAttachments(value?: WhatsAppAttachment, index?: number): WhatsAppAttachment;
-
-  hasPrimaryAsmSessionSid(): boolean;
-  clearPrimaryAsmSessionSid(): void;
-  getPrimaryAsmSessionSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
-  setPrimaryAsmSessionSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): WhatsAppTextMessage.AsObject;
-  static toObject(includeInstance: boolean, msg: WhatsAppTextMessage): WhatsAppTextMessage.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: WhatsAppTextMessage, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): WhatsAppTextMessage;
-  static deserializeBinaryFromReader(message: WhatsAppTextMessage, reader: jspb.BinaryReader): WhatsAppTextMessage;
-}
-
-export namespace WhatsAppTextMessage {
-  export type AsObject = {
-    message: string,
-    attachmentsList: Array<WhatsAppAttachment.AsObject>,
-    primaryAsmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-  }
-}
-
-export class WhatsAppAttachment extends jspb.Message {
-  getWhatsappAttachmentSid(): string;
-  setWhatsappAttachmentSid(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getFileType(): string;
-  setFileType(value: string): void;
-
-  getFileSize(): number;
-  setFileSize(value: number): void;
-
-  getPath(): string;
-  setPath(value: string): void;
-
-  hasTempId(): boolean;
-  clearTempId(): void;
-  getTempId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setTempId(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  getDownloadUrl(): string;
-  setDownloadUrl(value: string): void;
-
-  hasDateCreated(): boolean;
-  clearDateCreated(): void;
-  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  hasDateModified(): boolean;
-  clearDateModified(): void;
-  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  hasContentId(): boolean;
-  clearContentId(): void;
-  getContentId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setContentId(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  hasWidth(): boolean;
-  clearWidth(): void;
-  getWidth(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setWidth(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  hasHeight(): boolean;
-  clearHeight(): void;
-  getHeight(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setHeight(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): WhatsAppAttachment.AsObject;
-  static toObject(includeInstance: boolean, msg: WhatsAppAttachment): WhatsAppAttachment.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: WhatsAppAttachment, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): WhatsAppAttachment;
-  static deserializeBinaryFromReader(message: WhatsAppAttachment, reader: jspb.BinaryReader): WhatsAppAttachment;
-}
-
-export namespace WhatsAppAttachment {
-  export type AsObject = {
-    whatsappAttachmentSid: string,
-    name: string,
-    fileType: string,
-    fileSize: number,
-    path: string,
-    tempId?: google_protobuf_wrappers_pb.StringValue.AsObject,
-    downloadUrl: string,
-    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    contentId?: google_protobuf_wrappers_pb.StringValue.AsObject,
-    width?: google_protobuf_wrappers_pb.StringValue.AsObject,
-    height?: google_protobuf_wrappers_pb.StringValue.AsObject,
-  }
-}
-
 export interface SmsNumberTypeMap {
   SMS_SHORT_CODE_TYPE: 0;
   SMS_ALPHANUMERIC_TYPE: 1;
@@ -2838,6 +2636,7 @@ export interface ChannelTypeMap {
   CHANNEL_TYPE_SMS: 1;
   CHANNEL_TYPE_CHAT: 2;
   CHANNEL_TYPE_VOICE: 3;
+  CHANNEL_TYPE_WHATSAPP: 4;
 }
 
 export const ChannelType: ChannelTypeMap;
@@ -3034,7 +2833,7 @@ export interface CampaignDirectionMap {
 
 export const CampaignDirection: CampaignDirectionMap;
 
-export interface WhatsAppTypeMap {
+export interface WhatsAppMsgTypeMap {
   WHATSAPP_AUDIO_TYPE: 0;
   WHATSAPP_CONTACT_TYPE: 1;
   WHATSAPP_DOCUMENT_TYPE: 2;
@@ -3046,5 +2845,5 @@ export interface WhatsAppTypeMap {
   WHATSAPP_TEXT_TYPE: 8;
 }
 
-export const WhatsAppType: WhatsAppTypeMap;
+export const WhatsAppMsgType: WhatsAppMsgTypeMap;
 

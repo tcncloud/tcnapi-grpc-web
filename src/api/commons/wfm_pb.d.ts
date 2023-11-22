@@ -554,8 +554,8 @@ export namespace ScheduleSelector {
 }
 
 export class SkillProfileCategory extends jspb.Message {
-  getSkillProfileCategorySid(): number;
-  setSkillProfileCategorySid(value: number): void;
+  getSkillProfileCategorySid(): string;
+  setSkillProfileCategorySid(value: string): void;
 
   getSkillProfileCategoryType(): SkillProfileCategory.CategoryTypeMap[keyof SkillProfileCategory.CategoryTypeMap];
   setSkillProfileCategoryType(value: SkillProfileCategory.CategoryTypeMap[keyof SkillProfileCategory.CategoryTypeMap]): void;
@@ -572,7 +572,7 @@ export class SkillProfileCategory extends jspb.Message {
 
 export namespace SkillProfileCategory {
   export type AsObject = {
-    skillProfileCategorySid: number,
+    skillProfileCategorySid: string,
     skillProfileCategoryType: SkillProfileCategory.CategoryTypeMap[keyof SkillProfileCategory.CategoryTypeMap],
   }
 
