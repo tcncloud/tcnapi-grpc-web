@@ -862,12 +862,6 @@ export class OmniTextMessage extends jspb.Message {
   getPrimaryAsmSessionSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setPrimaryAsmSessionSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
-  getType(): WhatsAppMsgTypeMap[keyof WhatsAppMsgTypeMap];
-  setType(value: WhatsAppMsgTypeMap[keyof WhatsAppMsgTypeMap]): void;
-
-  getPreviewUrl(): boolean;
-  setPreviewUrl(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniTextMessage.AsObject;
   static toObject(includeInstance: boolean, msg: OmniTextMessage): OmniTextMessage.AsObject;
@@ -883,8 +877,6 @@ export namespace OmniTextMessage {
     message: string,
     attachmentsList: Array<OmniAttachment.AsObject>,
     primaryAsmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-    type: WhatsAppMsgTypeMap[keyof WhatsAppMsgTypeMap],
-    previewUrl: boolean,
   }
 }
 
@@ -2832,18 +2824,4 @@ export interface CampaignDirectionMap {
 }
 
 export const CampaignDirection: CampaignDirectionMap;
-
-export interface WhatsAppMsgTypeMap {
-  WHATSAPP_AUDIO_TYPE: 0;
-  WHATSAPP_CONTACT_TYPE: 1;
-  WHATSAPP_DOCUMENT_TYPE: 2;
-  WHATSAPP_IMAGE_TYPE: 3;
-  WHATSAPP_INTERACTIVE_TYPE: 4;
-  WHATSAPP_LOCATION_TYPE: 5;
-  WHATSAPP_STICKER_TYPE: 6;
-  WHATSAPP_TEMPLATE_TYPE: 7;
-  WHATSAPP_TEXT_TYPE: 8;
-}
-
-export const WhatsAppMsgType: WhatsAppMsgTypeMap;
 
