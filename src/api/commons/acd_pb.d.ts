@@ -392,6 +392,8 @@ export namespace AgentCallLogActionKey {
     WARM_CALLER_TRANSFER_INVITE_CALLER_INITIAL: 40;
     WARM_CALLER_TRANSFER_INVITE_CALLER: 41;
     WARM_CALLER_TRANSFER_END: 42;
+    BARGE_IN_START: 43;
+    BARGE_IN_STOP: 44;
   }
 
   export const Enum: EnumMap;
