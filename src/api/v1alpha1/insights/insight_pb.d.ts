@@ -362,6 +362,9 @@ export class GetVfsSchemaResponse extends jspb.Message {
   getVfsDescription(): string;
   setVfsDescription(value: string): void;
 
+  getAliasName(): string;
+  setAliasName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetVfsSchemaResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetVfsSchemaResponse): GetVfsSchemaResponse.AsObject;
@@ -376,6 +379,7 @@ export namespace GetVfsSchemaResponse {
   export type AsObject = {
     fieldsList: Array<GetVfsSchemaResponse.Field.AsObject>,
     vfsDescription: string,
+    aliasName: string,
   }
 
   export class Field extends jspb.Message {
@@ -442,6 +446,44 @@ export class ListVfsesResponse extends jspb.Message {
 export namespace ListVfsesResponse {
   export type AsObject = {
     aliasesList: Array<string>,
+  }
+}
+
+export class ListVfsSchemasRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListVfsSchemasRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListVfsSchemasRequest): ListVfsSchemasRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListVfsSchemasRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListVfsSchemasRequest;
+  static deserializeBinaryFromReader(message: ListVfsSchemasRequest, reader: jspb.BinaryReader): ListVfsSchemasRequest;
+}
+
+export namespace ListVfsSchemasRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListVfsSchemasResponse extends jspb.Message {
+  clearVfsSchemasList(): void;
+  getVfsSchemasList(): Array<GetVfsSchemaResponse>;
+  setVfsSchemasList(value: Array<GetVfsSchemaResponse>): void;
+  addVfsSchemas(value?: GetVfsSchemaResponse, index?: number): GetVfsSchemaResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListVfsSchemasResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListVfsSchemasResponse): ListVfsSchemasResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListVfsSchemasResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListVfsSchemasResponse;
+  static deserializeBinaryFromReader(message: ListVfsSchemasResponse, reader: jspb.BinaryReader): ListVfsSchemasResponse;
+}
+
+export namespace ListVfsSchemasResponse {
+  export type AsObject = {
+    vfsSchemasList: Array<GetVfsSchemaResponse.AsObject>,
   }
 }
 

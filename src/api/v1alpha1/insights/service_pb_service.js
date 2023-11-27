@@ -101,6 +101,15 @@ Insights.ListVfses = {
   responseType: api_v1alpha1_insights_insight_pb.ListVfsesResponse
 };
 
+Insights.ListVfsSchemas = {
+  methodName: "ListVfsSchemas",
+  service: Insights,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_insights_insight_pb.ListVfsSchemasRequest,
+  responseType: api_v1alpha1_insights_insight_pb.ListVfsSchemasResponse
+};
+
 Insights.PublishInsight = {
   methodName: "PublishInsight",
   service: Insights,
@@ -401,6 +410,37 @@ InsightsClient.prototype.listVfses = function listVfses(requestMessage, metadata
     callback = arguments[1];
   }
   var client = grpc.unary(Insights.ListVfses, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.listVfsSchemas = function listVfsSchemas(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Insights.ListVfsSchemas, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
