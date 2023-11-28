@@ -1778,7 +1778,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.delivery.EmailTransport = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.delivery.EmailTransport.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.delivery.EmailTransport, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -17739,6 +17739,13 @@ proto.api.v1alpha1.delivery.SFTPTransport.prototype.setBaseDir = function(value)
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.delivery.EmailTransport.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -17771,7 +17778,8 @@ proto.api.v1alpha1.delivery.EmailTransport.prototype.toObject = function(opt_inc
 proto.api.v1alpha1.delivery.EmailTransport.toObject = function(includeInstance, msg) {
   var f, obj = {
     fromAddress: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    toAddress: jspb.Message.getFieldWithDefault(msg, 2, "")
+    toAddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    ccAddressesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -17816,6 +17824,10 @@ proto.api.v1alpha1.delivery.EmailTransport.deserializeBinaryFromReader = functio
       var value = /** @type {string} */ (reader.readString());
       msg.setToAddress(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addCcAddresses(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -17859,6 +17871,13 @@ proto.api.v1alpha1.delivery.EmailTransport.serializeBinaryToWriter = function(me
       f
     );
   }
+  f = message.getCcAddressesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -17895,6 +17914,43 @@ proto.api.v1alpha1.delivery.EmailTransport.prototype.getToAddress = function() {
  */
 proto.api.v1alpha1.delivery.EmailTransport.prototype.setToAddress = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * repeated string cc_addresses = 3;
+ * @return {!Array<string>}
+ */
+proto.api.v1alpha1.delivery.EmailTransport.prototype.getCcAddressesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v1alpha1.delivery.EmailTransport} returns this
+ */
+proto.api.v1alpha1.delivery.EmailTransport.prototype.setCcAddressesList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.delivery.EmailTransport} returns this
+ */
+proto.api.v1alpha1.delivery.EmailTransport.prototype.addCcAddresses = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.delivery.EmailTransport} returns this
+ */
+proto.api.v1alpha1.delivery.EmailTransport.prototype.clearCcAddressesList = function() {
+  return this.setCcAddressesList([]);
 };
 
 
@@ -18358,7 +18414,8 @@ proto.api.v1alpha1.delivery.SMSTransport.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.delivery.SMSTransport.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    destinationPhone: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    sourcePhone: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -18395,6 +18452,14 @@ proto.api.v1alpha1.delivery.SMSTransport.deserializeBinaryFromReader = function(
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDestinationPhone(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSourcePhone(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -18424,6 +18489,56 @@ proto.api.v1alpha1.delivery.SMSTransport.prototype.serializeBinary = function() 
  */
 proto.api.v1alpha1.delivery.SMSTransport.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getDestinationPhone();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getSourcePhone();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string destination_phone = 1;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.SMSTransport.prototype.getDestinationPhone = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.SMSTransport} returns this
+ */
+proto.api.v1alpha1.delivery.SMSTransport.prototype.setDestinationPhone = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string source_phone = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.SMSTransport.prototype.getSourcePhone = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.SMSTransport} returns this
+ */
+proto.api.v1alpha1.delivery.SMSTransport.prototype.setSourcePhone = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
