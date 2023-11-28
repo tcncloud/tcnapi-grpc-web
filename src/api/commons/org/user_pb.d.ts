@@ -123,6 +123,9 @@ export class User extends jspb.Message {
   getAccountOwner(): boolean;
   setAccountOwner(value: boolean): void;
 
+  getEmailVerified(): boolean;
+  setEmailVerified(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): User.AsObject;
   static toObject(includeInstance: boolean, msg: User): User.AsObject;
@@ -168,6 +171,7 @@ export namespace User {
     skillsList: Array<Skill.AsObject>,
     agent: boolean,
     accountOwner: boolean,
+    emailVerified: boolean,
   }
 
   export class RegionSids extends jspb.Message {
