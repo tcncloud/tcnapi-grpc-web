@@ -2273,7 +2273,8 @@ proto.api.commons.RoomStatus = {
 proto.api.commons.ConfigPermissionEnum = {
   LIMITED: 0,
   ROOM303_MEMBER: 1,
-  ROOM303_SUPERVISOR: 2
+  ROOM303_SUPERVISOR: 2,
+  ROOM303_LIMITED: 3
 };
 
 goog.object.extend(exports, proto.api.commons);

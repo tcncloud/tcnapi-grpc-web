@@ -318,6 +318,7 @@ export interface ConfigPermissionEnumMap {
   LIMITED: 0;
   ROOM303_MEMBER: 1;
   ROOM303_SUPERVISOR: 2;
+  ROOM303_LIMITED: 3;
 }
 
 export const ConfigPermissionEnum: ConfigPermissionEnumMap;
