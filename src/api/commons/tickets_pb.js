@@ -100,7 +100,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.commons.ListTemplate = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.ListTemplate.repeatedFields_, null);
 };
 goog.inherits(proto.api.commons.ListTemplate, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1861,6 +1861,13 @@ proto.api.commons.TicketTemplate.prototype.setIsActive = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.commons.ListTemplate.repeatedFields_ = [10];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1900,7 +1907,8 @@ proto.api.commons.ListTemplate.toObject = function(includeInstance, msg) {
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     createdById: jspb.Message.getFieldWithDefault(msg, 7, ""),
     createdDate: (f = msg.getCreatedDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    projectTitle: jspb.Message.getFieldWithDefault(msg, 9, "")
+    projectTitle: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    assignedProjectList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1973,6 +1981,12 @@ proto.api.commons.ListTemplate.deserializeBinaryFromReader = function(msg, reade
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setProjectTitle(value);
+      break;
+    case 10:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addAssignedProject(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -2064,6 +2078,13 @@ proto.api.commons.ListTemplate.serializeBinaryToWriter = function(message, write
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getAssignedProjectList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      10,
       f
     );
   }
@@ -2248,6 +2269,43 @@ proto.api.commons.ListTemplate.prototype.getProjectTitle = function() {
  */
 proto.api.commons.ListTemplate.prototype.setProjectTitle = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * repeated int64 assigned_project = 10;
+ * @return {!Array<number>}
+ */
+proto.api.commons.ListTemplate.prototype.getAssignedProjectList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 10));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.commons.ListTemplate} returns this
+ */
+proto.api.commons.ListTemplate.prototype.setAssignedProjectList = function(value) {
+  return jspb.Message.setField(this, 10, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.ListTemplate} returns this
+ */
+proto.api.commons.ListTemplate.prototype.addAssignedProject = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 10, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.ListTemplate} returns this
+ */
+proto.api.commons.ListTemplate.prototype.clearAssignedProjectList = function() {
+  return this.setAssignedProjectList([]);
 };
 
 

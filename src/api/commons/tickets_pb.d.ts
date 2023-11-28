@@ -210,6 +210,11 @@ export class ListTemplate extends jspb.Message {
   getProjectTitle(): string;
   setProjectTitle(value: string): void;
 
+  clearAssignedProjectList(): void;
+  getAssignedProjectList(): Array<number>;
+  setAssignedProjectList(value: Array<number>): void;
+  addAssignedProject(value: number, index?: number): number;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTemplate.AsObject;
   static toObject(includeInstance: boolean, msg: ListTemplate): ListTemplate.AsObject;
@@ -231,6 +236,7 @@ export namespace ListTemplate {
     createdById: string,
     createdDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     projectTitle: string,
+    assignedProjectList: Array<number>,
   }
 }
 

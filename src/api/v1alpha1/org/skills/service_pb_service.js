@@ -1,136 +1,118 @@
-// package: api.v1alpha1.insights
-// file: api/v1alpha1/insights/service.proto
+// package: api.v1alpha1.org.skills
+// file: api/v1alpha1/org/skills/service.proto
 
-var api_v1alpha1_insights_service_pb = require("../../../api/v1alpha1/insights/service_pb");
-var api_v1alpha1_insights_insight_pb = require("../../../api/v1alpha1/insights/insight_pb");
+var api_v1alpha1_org_skills_service_pb = require("../../../../api/v1alpha1/org/skills/service_pb");
+var api_v1alpha1_org_skills_entities_pb = require("../../../../api/v1alpha1/org/skills/entities_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var Insights = (function () {
-  function Insights() {}
-  Insights.serviceName = "api.v1alpha1.insights.Insights";
-  return Insights;
+var SkillsService = (function () {
+  function SkillsService() {}
+  SkillsService.serviceName = "api.v1alpha1.org.skills.SkillsService";
+  return SkillsService;
 }());
 
-Insights.CreateInsight = {
-  methodName: "CreateInsight",
-  service: Insights,
+SkillsService.CreateSkillGroup = {
+  methodName: "CreateSkillGroup",
+  service: SkillsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.CreateInsightRequest,
-  responseType: api_v1alpha1_insights_insight_pb.CreateInsightResponse
+  requestType: api_v1alpha1_org_skills_entities_pb.CreateSkillGroupRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.CreateSkillGroupResponse
 };
 
-Insights.ListInsights = {
-  methodName: "ListInsights",
-  service: Insights,
+SkillsService.ListSkillGroups = {
+  methodName: "ListSkillGroups",
+  service: SkillsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.ListInsightsRequest,
-  responseType: api_v1alpha1_insights_insight_pb.ListInsightsResponse
+  requestType: api_v1alpha1_org_skills_entities_pb.ListSkillGroupsRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.ListSkillGroupsResponse
 };
 
-Insights.UpdateInsight = {
-  methodName: "UpdateInsight",
-  service: Insights,
+SkillsService.UpdateSkillGroup = {
+  methodName: "UpdateSkillGroup",
+  service: SkillsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.UpdateInsightRequest,
-  responseType: api_v1alpha1_insights_insight_pb.UpdateInsightResponse
+  requestType: api_v1alpha1_org_skills_entities_pb.UpdateSkillGroupRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.UpdateSkillGroupResponse
 };
 
-Insights.DeleteInsight = {
-  methodName: "DeleteInsight",
-  service: Insights,
+SkillsService.GetSkillGroup = {
+  methodName: "GetSkillGroup",
+  service: SkillsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.DeleteInsightRequest,
-  responseType: api_v1alpha1_insights_insight_pb.DeleteInsightResponse
+  requestType: api_v1alpha1_org_skills_entities_pb.GetSkillGroupRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.GetSkillGroupResponse
 };
 
-Insights.GetInsight = {
-  methodName: "GetInsight",
-  service: Insights,
+SkillsService.DeleteSkillGroup = {
+  methodName: "DeleteSkillGroup",
+  service: SkillsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.GetInsightRequest,
-  responseType: api_v1alpha1_insights_insight_pb.GetInsightResponse
+  requestType: api_v1alpha1_org_skills_entities_pb.DeleteSkillGroupRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.DeleteSkillGroupResponse
 };
 
-Insights.CreateCommonsInsight = {
-  methodName: "CreateCommonsInsight",
-  service: Insights,
+SkillsService.AssignSkillGroups = {
+  methodName: "AssignSkillGroups",
+  service: SkillsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.CreateInsightRequest,
-  responseType: api_v1alpha1_insights_insight_pb.CreateInsightResponse
+  requestType: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsResponse
 };
 
-Insights.UpdateCommonsInsight = {
-  methodName: "UpdateCommonsInsight",
-  service: Insights,
+SkillsService.RevokeSkillGroups = {
+  methodName: "RevokeSkillGroups",
+  service: SkillsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.UpdateInsightRequest,
-  responseType: api_v1alpha1_insights_insight_pb.UpdateInsightResponse
+  requestType: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupsRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupsResponse
 };
 
-Insights.DeleteCommonsInsight = {
-  methodName: "DeleteCommonsInsight",
-  service: Insights,
+SkillsService.GetUserSkillGroups = {
+  methodName: "GetUserSkillGroups",
+  service: SkillsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.DeleteInsightRequest,
-  responseType: api_v1alpha1_insights_insight_pb.DeleteInsightResponse
+  requestType: api_v1alpha1_org_skills_entities_pb.GetUserSkillGroupsRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.GetUserSkillGroupsResponse
 };
 
-Insights.GetVfsSchema = {
-  methodName: "GetVfsSchema",
-  service: Insights,
+SkillsService.GetUserSkills = {
+  methodName: "GetUserSkills",
+  service: SkillsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.GetVfsSchemaRequest,
-  responseType: api_v1alpha1_insights_insight_pb.GetVfsSchemaResponse
+  requestType: api_v1alpha1_org_skills_entities_pb.GetUserSkillsRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.GetUserSkillsResponse
 };
 
-Insights.ListVfses = {
-  methodName: "ListVfses",
-  service: Insights,
+SkillsService.GetSkillGroupMembers = {
+  methodName: "GetSkillGroupMembers",
+  service: SkillsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.ListVfsesRequest,
-  responseType: api_v1alpha1_insights_insight_pb.ListVfsesResponse
+  requestType: api_v1alpha1_org_skills_entities_pb.GetSkillGroupMembersRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.GetSkillGroupMembersResponse
 };
 
-Insights.ListVfsSchemas = {
-  methodName: "ListVfsSchemas",
-  service: Insights,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.ListVfsSchemasRequest,
-  responseType: api_v1alpha1_insights_insight_pb.ListVfsSchemasResponse
-};
+exports.SkillsService = SkillsService;
 
-Insights.PublishInsight = {
-  methodName: "PublishInsight",
-  service: Insights,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.PublishInsightRequest,
-  responseType: api_v1alpha1_insights_insight_pb.PublishInsightResponse
-};
-
-exports.Insights = Insights;
-
-function InsightsClient(serviceHost, options) {
+function SkillsServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-InsightsClient.prototype.createInsight = function createInsight(requestMessage, metadata, callback) {
+SkillsServiceClient.prototype.createSkillGroup = function createSkillGroup(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Insights.CreateInsight, {
+  var client = grpc.unary(SkillsService.CreateSkillGroup, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -157,11 +139,11 @@ InsightsClient.prototype.createInsight = function createInsight(requestMessage, 
   };
 };
 
-InsightsClient.prototype.listInsights = function listInsights(requestMessage, metadata, callback) {
+SkillsServiceClient.prototype.listSkillGroups = function listSkillGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Insights.ListInsights, {
+  var client = grpc.unary(SkillsService.ListSkillGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -188,11 +170,11 @@ InsightsClient.prototype.listInsights = function listInsights(requestMessage, me
   };
 };
 
-InsightsClient.prototype.updateInsight = function updateInsight(requestMessage, metadata, callback) {
+SkillsServiceClient.prototype.updateSkillGroup = function updateSkillGroup(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Insights.UpdateInsight, {
+  var client = grpc.unary(SkillsService.UpdateSkillGroup, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -219,11 +201,11 @@ InsightsClient.prototype.updateInsight = function updateInsight(requestMessage, 
   };
 };
 
-InsightsClient.prototype.deleteInsight = function deleteInsight(requestMessage, metadata, callback) {
+SkillsServiceClient.prototype.getSkillGroup = function getSkillGroup(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Insights.DeleteInsight, {
+  var client = grpc.unary(SkillsService.GetSkillGroup, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -250,11 +232,11 @@ InsightsClient.prototype.deleteInsight = function deleteInsight(requestMessage, 
   };
 };
 
-InsightsClient.prototype.getInsight = function getInsight(requestMessage, metadata, callback) {
+SkillsServiceClient.prototype.deleteSkillGroup = function deleteSkillGroup(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Insights.GetInsight, {
+  var client = grpc.unary(SkillsService.DeleteSkillGroup, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -281,11 +263,11 @@ InsightsClient.prototype.getInsight = function getInsight(requestMessage, metada
   };
 };
 
-InsightsClient.prototype.createCommonsInsight = function createCommonsInsight(requestMessage, metadata, callback) {
+SkillsServiceClient.prototype.assignSkillGroups = function assignSkillGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Insights.CreateCommonsInsight, {
+  var client = grpc.unary(SkillsService.AssignSkillGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -312,11 +294,11 @@ InsightsClient.prototype.createCommonsInsight = function createCommonsInsight(re
   };
 };
 
-InsightsClient.prototype.updateCommonsInsight = function updateCommonsInsight(requestMessage, metadata, callback) {
+SkillsServiceClient.prototype.revokeSkillGroups = function revokeSkillGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Insights.UpdateCommonsInsight, {
+  var client = grpc.unary(SkillsService.RevokeSkillGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -343,11 +325,11 @@ InsightsClient.prototype.updateCommonsInsight = function updateCommonsInsight(re
   };
 };
 
-InsightsClient.prototype.deleteCommonsInsight = function deleteCommonsInsight(requestMessage, metadata, callback) {
+SkillsServiceClient.prototype.getUserSkillGroups = function getUserSkillGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Insights.DeleteCommonsInsight, {
+  var client = grpc.unary(SkillsService.GetUserSkillGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -374,11 +356,11 @@ InsightsClient.prototype.deleteCommonsInsight = function deleteCommonsInsight(re
   };
 };
 
-InsightsClient.prototype.getVfsSchema = function getVfsSchema(requestMessage, metadata, callback) {
+SkillsServiceClient.prototype.getUserSkills = function getUserSkills(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Insights.GetVfsSchema, {
+  var client = grpc.unary(SkillsService.GetUserSkills, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -405,11 +387,11 @@ InsightsClient.prototype.getVfsSchema = function getVfsSchema(requestMessage, me
   };
 };
 
-InsightsClient.prototype.listVfses = function listVfses(requestMessage, metadata, callback) {
+SkillsServiceClient.prototype.getSkillGroupMembers = function getSkillGroupMembers(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Insights.ListVfses, {
+  var client = grpc.unary(SkillsService.GetSkillGroupMembers, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -436,67 +418,5 @@ InsightsClient.prototype.listVfses = function listVfses(requestMessage, metadata
   };
 };
 
-InsightsClient.prototype.listVfsSchemas = function listVfsSchemas(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Insights.ListVfsSchemas, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-InsightsClient.prototype.publishInsight = function publishInsight(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Insights.PublishInsight, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-exports.InsightsClient = InsightsClient;
+exports.SkillsServiceClient = SkillsServiceClient;
 
