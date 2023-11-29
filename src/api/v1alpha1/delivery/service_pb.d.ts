@@ -2250,6 +2250,11 @@ export class EmailTransport extends jspb.Message {
   getToAddress(): string;
   setToAddress(value: string): void;
 
+  clearCcAddressesList(): void;
+  getCcAddressesList(): Array<string>;
+  setCcAddressesList(value: Array<string>): void;
+  addCcAddresses(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EmailTransport.AsObject;
   static toObject(includeInstance: boolean, msg: EmailTransport): EmailTransport.AsObject;
@@ -2264,6 +2269,7 @@ export namespace EmailTransport {
   export type AsObject = {
     fromAddress: string,
     toAddress: string,
+    ccAddressesList: Array<string>,
   }
 }
 
@@ -2335,6 +2341,12 @@ export namespace Room303SystemMessage {
 }
 
 export class SMSTransport extends jspb.Message {
+  getDestinationPhone(): string;
+  setDestinationPhone(value: string): void;
+
+  getSourcePhone(): string;
+  setSourcePhone(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SMSTransport.AsObject;
   static toObject(includeInstance: boolean, msg: SMSTransport): SMSTransport.AsObject;
@@ -2347,6 +2359,8 @@ export class SMSTransport extends jspb.Message {
 
 export namespace SMSTransport {
   export type AsObject = {
+    destinationPhone: string,
+    sourcePhone: string,
   }
 }
 
