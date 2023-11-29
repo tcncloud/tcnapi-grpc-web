@@ -2628,6 +2628,7 @@ export interface ChannelTypeMap {
   CHANNEL_TYPE_SMS: 1;
   CHANNEL_TYPE_CHAT: 2;
   CHANNEL_TYPE_VOICE: 3;
+  CHANNEL_TYPE_WHATSAPP: 4;
 }
 
 export const ChannelType: ChannelTypeMap;
