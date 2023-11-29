@@ -2178,8 +2178,7 @@ proto.api.commons.ProjectDescription.prototype.toObject = function(opt_includeIn
 proto.api.commons.ProjectDescription.toObject = function(includeInstance, msg) {
   var f, obj = {
     projectId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    projectCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    projectTitle: jspb.Message.getFieldWithDefault(msg, 3, "")
+    projectTitle: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2222,10 +2221,6 @@ proto.api.commons.ProjectDescription.deserializeBinaryFromReader = function(msg,
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setProjectCode(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
       msg.setProjectTitle(value);
       break;
     default:
@@ -2264,17 +2259,10 @@ proto.api.commons.ProjectDescription.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getProjectCode();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getProjectTitle();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
@@ -2300,10 +2288,10 @@ proto.api.commons.ProjectDescription.prototype.setProjectId = function(value) {
 
 
 /**
- * optional string project_code = 2;
+ * optional string project_title = 2;
  * @return {string}
  */
-proto.api.commons.ProjectDescription.prototype.getProjectCode = function() {
+proto.api.commons.ProjectDescription.prototype.getProjectTitle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -2312,26 +2300,8 @@ proto.api.commons.ProjectDescription.prototype.getProjectCode = function() {
  * @param {string} value
  * @return {!proto.api.commons.ProjectDescription} returns this
  */
-proto.api.commons.ProjectDescription.prototype.setProjectCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string project_title = 3;
- * @return {string}
- */
-proto.api.commons.ProjectDescription.prototype.getProjectTitle = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.ProjectDescription} returns this
- */
 proto.api.commons.ProjectDescription.prototype.setProjectTitle = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

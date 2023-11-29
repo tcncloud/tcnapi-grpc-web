@@ -2758,7 +2758,9 @@ proto.api.v1alpha1.tickets.ListTicketTemplateRequest.toObject = function(include
   var f, obj = {
     ticketTemplateId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    requestMask: (f = msg.getRequestMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+    requestMask: (f = msg.getRequestMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+    templateId: jspb.Message.getFieldWithDefault(msg, 4, "0"),
+    templateProjectId: jspb.Message.getFieldWithDefault(msg, 5, "0")
   };
 
   if (includeInstance) {
@@ -2807,6 +2809,14 @@ proto.api.v1alpha1.tickets.ListTicketTemplateRequest.deserializeBinaryFromReader
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
       msg.setRequestMask(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setTemplateId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setTemplateProjectId(value);
       break;
     default:
       reader.skipField();
@@ -2857,6 +2867,20 @@ proto.api.v1alpha1.tickets.ListTicketTemplateRequest.serializeBinaryToWriter = f
       3,
       f,
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+  f = message.getTemplateId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      4,
+      f
+    );
+  }
+  f = message.getTemplateProjectId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      5,
+      f
     );
   }
 };
@@ -2932,6 +2956,42 @@ proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.clearRequestMask 
  */
 proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.hasRequestMask = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int64 template_id = 4;
+ * @return {string}
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.getTemplateId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.tickets.ListTicketTemplateRequest} returns this
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.setTemplateId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 4, value);
+};
+
+
+/**
+ * optional int64 template_project_id = 5;
+ * @return {string}
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.getTemplateProjectId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.tickets.ListTicketTemplateRequest} returns this
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.setTemplateProjectId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 5, value);
 };
 
 

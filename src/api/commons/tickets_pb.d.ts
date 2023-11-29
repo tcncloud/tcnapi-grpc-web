@@ -216,9 +216,6 @@ export class ProjectDescription extends jspb.Message {
   getProjectId(): string;
   setProjectId(value: string): void;
 
-  getProjectCode(): string;
-  setProjectCode(value: string): void;
-
   getProjectTitle(): string;
   setProjectTitle(value: string): void;
 
@@ -235,7 +232,6 @@ export class ProjectDescription extends jspb.Message {
 export namespace ProjectDescription {
   export type AsObject = {
     projectId: string,
-    projectCode: string,
     projectTitle: string,
   }
 }
