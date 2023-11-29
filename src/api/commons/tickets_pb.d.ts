@@ -155,6 +155,9 @@ export class TicketTemplate extends jspb.Message {
   getIsActive(): boolean;
   setIsActive(value: boolean): void;
 
+  getTemplateId(): string;
+  setTemplateId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketTemplate.AsObject;
   static toObject(includeInstance: boolean, msg: TicketTemplate): TicketTemplate.AsObject;
@@ -177,6 +180,63 @@ export namespace TicketTemplate {
     createdDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     isActive: boolean,
+    templateId: string,
+  }
+}
+
+export class TicketProjectTemplate extends jspb.Message {
+  hasTicketTemplate(): boolean;
+  clearTicketTemplate(): void;
+  getTicketTemplate(): TicketTemplate | undefined;
+  setTicketTemplate(value?: TicketTemplate): void;
+
+  clearProjectDescriptionList(): void;
+  getProjectDescriptionList(): Array<ProjectDescription>;
+  setProjectDescriptionList(value: Array<ProjectDescription>): void;
+  addProjectDescription(value?: ProjectDescription, index?: number): ProjectDescription;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TicketProjectTemplate.AsObject;
+  static toObject(includeInstance: boolean, msg: TicketProjectTemplate): TicketProjectTemplate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TicketProjectTemplate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TicketProjectTemplate;
+  static deserializeBinaryFromReader(message: TicketProjectTemplate, reader: jspb.BinaryReader): TicketProjectTemplate;
+}
+
+export namespace TicketProjectTemplate {
+  export type AsObject = {
+    ticketTemplate?: TicketTemplate.AsObject,
+    projectDescriptionList: Array<ProjectDescription.AsObject>,
+  }
+}
+
+export class ProjectDescription extends jspb.Message {
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  getProjectCode(): string;
+  setProjectCode(value: string): void;
+
+  getProjectTitle(): string;
+  setProjectTitle(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProjectDescription.AsObject;
+  static toObject(includeInstance: boolean, msg: ProjectDescription): ProjectDescription.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProjectDescription, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProjectDescription;
+  static deserializeBinaryFromReader(message: ProjectDescription, reader: jspb.BinaryReader): ProjectDescription;
+}
+
+export namespace ProjectDescription {
+  export type AsObject = {
+    projectId: string,
+    projectCode: string,
+    projectTitle: string,
   }
 }
 
