@@ -3,6 +3,7 @@
 
 import * as api_v1alpha1_org_service_pb from "../../../api/v1alpha1/org/service_pb";
 import * as api_v1alpha1_org_agent_profile_group_pb from "../../../api/v1alpha1/org/agent_profile_group_pb";
+import * as api_v1alpha1_org_auth_token_pb from "../../../api/v1alpha1/org/auth_token_pb";
 import * as api_v1alpha1_org_huntgroup_pb from "../../../api/v1alpha1/org/huntgroup_pb";
 import * as api_v1alpha1_org_labels_pb from "../../../api/v1alpha1/org/labels_pb";
 import * as api_v1alpha1_org_notifications_pb from "../../../api/v1alpha1/org/notifications_pb";
@@ -869,6 +870,78 @@ type OrgListOrgSubscriptions = {
   readonly responseType: typeof api_v1alpha1_org_notifications_pb.ListOrgSubscriptionsResponse;
 };
 
+type OrgCreateAuthToken = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_token_pb.CreateAuthTokenRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_token_pb.CreateAuthTokenResponse;
+};
+
+type OrgCreateAuthTokenByUserId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_token_pb.CreateAuthTokenByUserIdRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_token_pb.CreateAuthTokenByUserIdResponse;
+};
+
+type OrgListAuthTokens = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_token_pb.ListAuthTokensRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_token_pb.ListAuthTokensResponse;
+};
+
+type OrgListAuthTokensByUserId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_token_pb.ListAuthTokensByUserIdRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_token_pb.ListAuthTokensByUserIdResponse;
+};
+
+type OrgSetAuthTokenExpiration = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationResponse;
+};
+
+type OrgSetAuthTokenExpirationByUserId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationByUserIdRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationByUserIdResponse;
+};
+
+type OrgDeleteAuthToken = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_token_pb.DeleteAuthTokenRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_token_pb.DeleteAuthTokenResponse;
+};
+
+type OrgDeleteAuthTokenByUserId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_token_pb.DeleteAuthTokenByUserIdRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_token_pb.DeleteAuthTokenByUserIdResponse;
+};
+
 type OrgGetHuntGroupSettings = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1488,6 +1561,14 @@ export class Org {
   static readonly ListUserSubscriptions: OrgListUserSubscriptions;
   static readonly ListUserSubscriptionsByUserId: OrgListUserSubscriptionsByUserId;
   static readonly ListOrgSubscriptions: OrgListOrgSubscriptions;
+  static readonly CreateAuthToken: OrgCreateAuthToken;
+  static readonly CreateAuthTokenByUserId: OrgCreateAuthTokenByUserId;
+  static readonly ListAuthTokens: OrgListAuthTokens;
+  static readonly ListAuthTokensByUserId: OrgListAuthTokensByUserId;
+  static readonly SetAuthTokenExpiration: OrgSetAuthTokenExpiration;
+  static readonly SetAuthTokenExpirationByUserId: OrgSetAuthTokenExpirationByUserId;
+  static readonly DeleteAuthToken: OrgDeleteAuthToken;
+  static readonly DeleteAuthTokenByUserId: OrgDeleteAuthTokenByUserId;
   static readonly GetHuntGroupSettings: OrgGetHuntGroupSettings;
   static readonly UpdateHuntGroupSettings: OrgUpdateHuntGroupSettings;
   static readonly ListCallerIdBuckets: OrgListCallerIdBuckets;
@@ -2370,6 +2451,78 @@ export class OrgClient {
   listOrgSubscriptions(
     requestMessage: api_v1alpha1_org_notifications_pb.ListOrgSubscriptionsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_notifications_pb.ListOrgSubscriptionsResponse|null) => void
+  ): UnaryResponse;
+  createAuthToken(
+    requestMessage: api_v1alpha1_org_auth_token_pb.CreateAuthTokenRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.CreateAuthTokenResponse|null) => void
+  ): UnaryResponse;
+  createAuthToken(
+    requestMessage: api_v1alpha1_org_auth_token_pb.CreateAuthTokenRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.CreateAuthTokenResponse|null) => void
+  ): UnaryResponse;
+  createAuthTokenByUserId(
+    requestMessage: api_v1alpha1_org_auth_token_pb.CreateAuthTokenByUserIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.CreateAuthTokenByUserIdResponse|null) => void
+  ): UnaryResponse;
+  createAuthTokenByUserId(
+    requestMessage: api_v1alpha1_org_auth_token_pb.CreateAuthTokenByUserIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.CreateAuthTokenByUserIdResponse|null) => void
+  ): UnaryResponse;
+  listAuthTokens(
+    requestMessage: api_v1alpha1_org_auth_token_pb.ListAuthTokensRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.ListAuthTokensResponse|null) => void
+  ): UnaryResponse;
+  listAuthTokens(
+    requestMessage: api_v1alpha1_org_auth_token_pb.ListAuthTokensRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.ListAuthTokensResponse|null) => void
+  ): UnaryResponse;
+  listAuthTokensByUserId(
+    requestMessage: api_v1alpha1_org_auth_token_pb.ListAuthTokensByUserIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.ListAuthTokensByUserIdResponse|null) => void
+  ): UnaryResponse;
+  listAuthTokensByUserId(
+    requestMessage: api_v1alpha1_org_auth_token_pb.ListAuthTokensByUserIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.ListAuthTokensByUserIdResponse|null) => void
+  ): UnaryResponse;
+  setAuthTokenExpiration(
+    requestMessage: api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationResponse|null) => void
+  ): UnaryResponse;
+  setAuthTokenExpiration(
+    requestMessage: api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationResponse|null) => void
+  ): UnaryResponse;
+  setAuthTokenExpirationByUserId(
+    requestMessage: api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationByUserIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationByUserIdResponse|null) => void
+  ): UnaryResponse;
+  setAuthTokenExpirationByUserId(
+    requestMessage: api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationByUserIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationByUserIdResponse|null) => void
+  ): UnaryResponse;
+  deleteAuthToken(
+    requestMessage: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenResponse|null) => void
+  ): UnaryResponse;
+  deleteAuthToken(
+    requestMessage: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenResponse|null) => void
+  ): UnaryResponse;
+  deleteAuthTokenByUserId(
+    requestMessage: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenByUserIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenByUserIdResponse|null) => void
+  ): UnaryResponse;
+  deleteAuthTokenByUserId(
+    requestMessage: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenByUserIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenByUserIdResponse|null) => void
   ): UnaryResponse;
   getHuntGroupSettings(
     requestMessage: api_v1alpha1_org_huntgroup_pb.GetHuntGroupSettingsRequest,
