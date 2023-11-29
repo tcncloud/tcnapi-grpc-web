@@ -3,6 +3,7 @@
 
 var api_v1alpha1_org_service_pb = require("../../../api/v1alpha1/org/service_pb");
 var api_v1alpha1_org_agent_profile_group_pb = require("../../../api/v1alpha1/org/agent_profile_group_pb");
+var api_v1alpha1_org_auth_token_pb = require("../../../api/v1alpha1/org/auth_token_pb");
 var api_v1alpha1_org_huntgroup_pb = require("../../../api/v1alpha1/org/huntgroup_pb");
 var api_v1alpha1_org_labels_pb = require("../../../api/v1alpha1/org/labels_pb");
 var api_v1alpha1_org_notifications_pb = require("../../../api/v1alpha1/org/notifications_pb");
@@ -873,6 +874,78 @@ Org.ListOrgSubscriptions = {
   responseStream: false,
   requestType: api_v1alpha1_org_notifications_pb.ListOrgSubscriptionsRequest,
   responseType: api_v1alpha1_org_notifications_pb.ListOrgSubscriptionsResponse
+};
+
+Org.CreateAuthToken = {
+  methodName: "CreateAuthToken",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_auth_token_pb.CreateAuthTokenRequest,
+  responseType: api_v1alpha1_org_auth_token_pb.CreateAuthTokenResponse
+};
+
+Org.CreateAuthTokenByUserId = {
+  methodName: "CreateAuthTokenByUserId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_auth_token_pb.CreateAuthTokenByUserIdRequest,
+  responseType: api_v1alpha1_org_auth_token_pb.CreateAuthTokenByUserIdResponse
+};
+
+Org.ListAuthTokens = {
+  methodName: "ListAuthTokens",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_auth_token_pb.ListAuthTokensRequest,
+  responseType: api_v1alpha1_org_auth_token_pb.ListAuthTokensResponse
+};
+
+Org.ListAuthTokensByUserId = {
+  methodName: "ListAuthTokensByUserId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_auth_token_pb.ListAuthTokensByUserIdRequest,
+  responseType: api_v1alpha1_org_auth_token_pb.ListAuthTokensByUserIdResponse
+};
+
+Org.SetAuthTokenExpiration = {
+  methodName: "SetAuthTokenExpiration",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationRequest,
+  responseType: api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationResponse
+};
+
+Org.SetAuthTokenExpirationByUserId = {
+  methodName: "SetAuthTokenExpirationByUserId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationByUserIdRequest,
+  responseType: api_v1alpha1_org_auth_token_pb.SetAuthTokenExpirationByUserIdResponse
+};
+
+Org.DeleteAuthToken = {
+  methodName: "DeleteAuthToken",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenRequest,
+  responseType: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenResponse
+};
+
+Org.DeleteAuthTokenByUserId = {
+  methodName: "DeleteAuthTokenByUserId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenByUserIdRequest,
+  responseType: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenByUserIdResponse
 };
 
 Org.GetHuntGroupSettings = {
@@ -4387,6 +4460,254 @@ OrgClient.prototype.listOrgSubscriptions = function listOrgSubscriptions(request
     callback = arguments[1];
   }
   var client = grpc.unary(Org.ListOrgSubscriptions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.createAuthToken = function createAuthToken(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CreateAuthToken, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.createAuthTokenByUserId = function createAuthTokenByUserId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CreateAuthTokenByUserId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listAuthTokens = function listAuthTokens(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListAuthTokens, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listAuthTokensByUserId = function listAuthTokensByUserId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListAuthTokensByUserId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.setAuthTokenExpiration = function setAuthTokenExpiration(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.SetAuthTokenExpiration, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.setAuthTokenExpirationByUserId = function setAuthTokenExpirationByUserId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.SetAuthTokenExpirationByUserId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.deleteAuthToken = function deleteAuthToken(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.DeleteAuthToken, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.deleteAuthTokenByUserId = function deleteAuthTokenByUserId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.DeleteAuthTokenByUserId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
