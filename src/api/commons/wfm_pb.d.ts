@@ -648,6 +648,26 @@ export namespace ClientHistoryCacheInfo {
   }
 }
 
+export class ErrorTrace extends jspb.Message {
+  getGrpcTraceBin(): string;
+  setGrpcTraceBin(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ErrorTrace.AsObject;
+  static toObject(includeInstance: boolean, msg: ErrorTrace): ErrorTrace.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ErrorTrace, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ErrorTrace;
+  static deserializeBinaryFromReader(message: ErrorTrace, reader: jspb.BinaryReader): ErrorTrace;
+}
+
+export namespace ErrorTrace {
+  export type AsObject = {
+    grpcTraceBin: string,
+  }
+}
+
 export interface RegressionForecasterModelTypesMap {
   RANDOM_FOREST: 0;
   ADABOOST: 1;
