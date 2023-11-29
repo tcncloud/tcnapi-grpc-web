@@ -222,6 +222,12 @@ export class ListTicketTemplateRequest extends jspb.Message {
   getRequestMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setRequestMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
 
+  getTemplateId(): string;
+  setTemplateId(value: string): void;
+
+  getTemplateProjectId(): string;
+  setTemplateProjectId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTicketTemplateRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListTicketTemplateRequest): ListTicketTemplateRequest.AsObject;
@@ -237,6 +243,8 @@ export namespace ListTicketTemplateRequest {
     ticketTemplateId: number,
     projectId: number,
     requestMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    templateId: string,
+    templateProjectId: string,
   }
 }
 
@@ -245,6 +253,11 @@ export class ListTicketTemplateResponse extends jspb.Message {
   getEnabledTemplatesList(): Array<api_commons_tickets_pb.ListTemplate>;
   setEnabledTemplatesList(value: Array<api_commons_tickets_pb.ListTemplate>): void;
   addEnabledTemplates(value?: api_commons_tickets_pb.ListTemplate, index?: number): api_commons_tickets_pb.ListTemplate;
+
+  clearTicketProjectTemplateList(): void;
+  getTicketProjectTemplateList(): Array<api_commons_tickets_pb.TicketProjectTemplate>;
+  setTicketProjectTemplateList(value: Array<api_commons_tickets_pb.TicketProjectTemplate>): void;
+  addTicketProjectTemplate(value?: api_commons_tickets_pb.TicketProjectTemplate, index?: number): api_commons_tickets_pb.TicketProjectTemplate;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTicketTemplateResponse.AsObject;
@@ -259,6 +272,7 @@ export class ListTicketTemplateResponse extends jspb.Message {
 export namespace ListTicketTemplateResponse {
   export type AsObject = {
     enabledTemplatesList: Array<api_commons_tickets_pb.ListTemplate.AsObject>,
+    ticketProjectTemplateList: Array<api_commons_tickets_pb.TicketProjectTemplate.AsObject>,
   }
 }
 
@@ -267,6 +281,14 @@ export class AssignProjectTemplateRequest extends jspb.Message {
   clearProjectTemplate(): void;
   getProjectTemplate(): api_commons_tickets_pb.AssignProjectTemplate | undefined;
   setProjectTemplate(value?: api_commons_tickets_pb.AssignProjectTemplate): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  clearTemplateDescriptionList(): void;
+  getTemplateDescriptionList(): Array<api_commons_tickets_pb.TemplateDescription>;
+  setTemplateDescriptionList(value: Array<api_commons_tickets_pb.TemplateDescription>): void;
+  addTemplateDescription(value?: api_commons_tickets_pb.TemplateDescription, index?: number): api_commons_tickets_pb.TemplateDescription;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AssignProjectTemplateRequest.AsObject;
@@ -281,6 +303,8 @@ export class AssignProjectTemplateRequest extends jspb.Message {
 export namespace AssignProjectTemplateRequest {
   export type AsObject = {
     projectTemplate?: api_commons_tickets_pb.AssignProjectTemplate.AsObject,
+    projectId: string,
+    templateDescriptionList: Array<api_commons_tickets_pb.TemplateDescription.AsObject>,
   }
 }
 

@@ -283,7 +283,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.tickets.AssignProjectTemplateRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.tickets.AssignProjectTemplateRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -2758,7 +2758,9 @@ proto.api.v1alpha1.tickets.ListTicketTemplateRequest.toObject = function(include
   var f, obj = {
     ticketTemplateId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    requestMask: (f = msg.getRequestMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+    requestMask: (f = msg.getRequestMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+    templateId: jspb.Message.getFieldWithDefault(msg, 4, "0"),
+    templateProjectId: jspb.Message.getFieldWithDefault(msg, 5, "0")
   };
 
   if (includeInstance) {
@@ -2807,6 +2809,14 @@ proto.api.v1alpha1.tickets.ListTicketTemplateRequest.deserializeBinaryFromReader
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
       msg.setRequestMask(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setTemplateId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setTemplateProjectId(value);
       break;
     default:
       reader.skipField();
@@ -2857,6 +2867,20 @@ proto.api.v1alpha1.tickets.ListTicketTemplateRequest.serializeBinaryToWriter = f
       3,
       f,
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+  f = message.getTemplateId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      4,
+      f
+    );
+  }
+  f = message.getTemplateProjectId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      5,
+      f
     );
   }
 };
@@ -2935,13 +2959,49 @@ proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.hasRequestMask = 
 };
 
 
+/**
+ * optional int64 template_id = 4;
+ * @return {string}
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.getTemplateId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.tickets.ListTicketTemplateRequest} returns this
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.setTemplateId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 4, value);
+};
+
+
+/**
+ * optional int64 template_project_id = 5;
+ * @return {string}
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.getTemplateProjectId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.tickets.ListTicketTemplateRequest} returns this
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateRequest.prototype.setTemplateProjectId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 5, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.tickets.ListTicketTemplateResponse.repeatedFields_ = [1];
+proto.api.v1alpha1.tickets.ListTicketTemplateResponse.repeatedFields_ = [1,2];
 
 
 
@@ -2975,7 +3035,9 @@ proto.api.v1alpha1.tickets.ListTicketTemplateResponse.prototype.toObject = funct
 proto.api.v1alpha1.tickets.ListTicketTemplateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabledTemplatesList: jspb.Message.toObjectList(msg.getEnabledTemplatesList(),
-    api_commons_tickets_pb.ListTemplate.toObject, includeInstance)
+    api_commons_tickets_pb.ListTemplate.toObject, includeInstance),
+    ticketProjectTemplateList: jspb.Message.toObjectList(msg.getTicketProjectTemplateList(),
+    api_commons_tickets_pb.TicketProjectTemplate.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3017,6 +3079,11 @@ proto.api.v1alpha1.tickets.ListTicketTemplateResponse.deserializeBinaryFromReade
       reader.readMessage(value,api_commons_tickets_pb.ListTemplate.deserializeBinaryFromReader);
       msg.addEnabledTemplates(value);
       break;
+    case 2:
+      var value = new api_commons_tickets_pb.TicketProjectTemplate;
+      reader.readMessage(value,api_commons_tickets_pb.TicketProjectTemplate.deserializeBinaryFromReader);
+      msg.addTicketProjectTemplate(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3052,6 +3119,14 @@ proto.api.v1alpha1.tickets.ListTicketTemplateResponse.serializeBinaryToWriter = 
       1,
       f,
       api_commons_tickets_pb.ListTemplate.serializeBinaryToWriter
+    );
+  }
+  f = message.getTicketProjectTemplateList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      api_commons_tickets_pb.TicketProjectTemplate.serializeBinaryToWriter
     );
   }
 };
@@ -3095,6 +3170,51 @@ proto.api.v1alpha1.tickets.ListTicketTemplateResponse.prototype.clearEnabledTemp
 };
 
 
+/**
+ * repeated api.commons.TicketProjectTemplate ticket_project_template = 2;
+ * @return {!Array<!proto.api.commons.TicketProjectTemplate>}
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateResponse.prototype.getTicketProjectTemplateList = function() {
+  return /** @type{!Array<!proto.api.commons.TicketProjectTemplate>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_commons_tickets_pb.TicketProjectTemplate, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.TicketProjectTemplate>} value
+ * @return {!proto.api.v1alpha1.tickets.ListTicketTemplateResponse} returns this
+*/
+proto.api.v1alpha1.tickets.ListTicketTemplateResponse.prototype.setTicketProjectTemplateList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.TicketProjectTemplate=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.TicketProjectTemplate}
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateResponse.prototype.addTicketProjectTemplate = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.commons.TicketProjectTemplate, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.tickets.ListTicketTemplateResponse} returns this
+ */
+proto.api.v1alpha1.tickets.ListTicketTemplateResponse.prototype.clearTicketProjectTemplateList = function() {
+  return this.setTicketProjectTemplateList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.repeatedFields_ = [3];
 
 
 
@@ -3127,7 +3247,10 @@ proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    projectTemplate: (f = msg.getProjectTemplate()) && api_commons_tickets_pb.AssignProjectTemplate.toObject(includeInstance, f)
+    projectTemplate: (f = msg.getProjectTemplate()) && api_commons_tickets_pb.AssignProjectTemplate.toObject(includeInstance, f),
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+    templateDescriptionList: jspb.Message.toObjectList(msg.getTemplateDescriptionList(),
+    api_commons_tickets_pb.TemplateDescription.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3169,6 +3292,15 @@ proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.deserializeBinaryFromRea
       reader.readMessage(value,api_commons_tickets_pb.AssignProjectTemplate.deserializeBinaryFromReader);
       msg.setProjectTemplate(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setProjectId(value);
+      break;
+    case 3:
+      var value = new api_commons_tickets_pb.TemplateDescription;
+      reader.readMessage(value,api_commons_tickets_pb.TemplateDescription.deserializeBinaryFromReader);
+      msg.addTemplateDescription(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3204,6 +3336,21 @@ proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.serializeBinaryToWriter 
       1,
       f,
       api_commons_tickets_pb.AssignProjectTemplate.serializeBinaryToWriter
+    );
+  }
+  f = message.getProjectId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      2,
+      f
+    );
+  }
+  f = message.getTemplateDescriptionList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      api_commons_tickets_pb.TemplateDescription.serializeBinaryToWriter
     );
   }
 };
@@ -3243,6 +3390,62 @@ proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.clearProjectTe
  */
 proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.hasProjectTemplate = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int64 project_id = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.getProjectId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.tickets.AssignProjectTemplateRequest} returns this
+ */
+proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.setProjectId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 2, value);
+};
+
+
+/**
+ * repeated api.commons.TemplateDescription template_description = 3;
+ * @return {!Array<!proto.api.commons.TemplateDescription>}
+ */
+proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.getTemplateDescriptionList = function() {
+  return /** @type{!Array<!proto.api.commons.TemplateDescription>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_commons_tickets_pb.TemplateDescription, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.TemplateDescription>} value
+ * @return {!proto.api.v1alpha1.tickets.AssignProjectTemplateRequest} returns this
+*/
+proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.setTemplateDescriptionList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.TemplateDescription=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.TemplateDescription}
+ */
+proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.addTemplateDescription = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.api.commons.TemplateDescription, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.tickets.AssignProjectTemplateRequest} returns this
+ */
+proto.api.v1alpha1.tickets.AssignProjectTemplateRequest.prototype.clearTemplateDescriptionList = function() {
+  return this.setTemplateDescriptionList([]);
 };
 
 

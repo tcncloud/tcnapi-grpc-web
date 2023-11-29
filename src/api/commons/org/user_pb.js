@@ -165,7 +165,8 @@ proto.api.commons.org.User.toObject = function(includeInstance, msg) {
     skillsList: jspb.Message.toObjectList(msg.getSkillsList(),
     proto.api.commons.org.Skill.toObject, includeInstance),
     agent: jspb.Message.getBooleanFieldWithDefault(msg, 300, false),
-    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 400, false)
+    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 400, false),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 401, false)
   };
 
   if (includeInstance) {
@@ -340,6 +341,10 @@ proto.api.commons.org.User.deserializeBinaryFromReader = function(msg, reader) {
     case 400:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAccountOwner(value);
+      break;
+    case 401:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     default:
       reader.skipField();
@@ -600,6 +605,13 @@ proto.api.commons.org.User.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       400,
+      f
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      401,
       f
     );
   }
@@ -1564,6 +1576,24 @@ proto.api.commons.org.User.prototype.getAccountOwner = function() {
  */
 proto.api.commons.org.User.prototype.setAccountOwner = function(value) {
   return jspb.Message.setProto3BooleanField(this, 400, value);
+};
+
+
+/**
+ * optional bool email_verified = 401;
+ * @return {boolean}
+ */
+proto.api.commons.org.User.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 401, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.org.User} returns this
+ */
+proto.api.commons.org.User.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 401, value);
 };
 
 
