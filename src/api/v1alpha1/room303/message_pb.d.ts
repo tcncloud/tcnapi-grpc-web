@@ -421,3 +421,83 @@ export namespace BulkMarkMessageReadResponse {
   }
 }
 
+export class ListNewsRoomGlobalMessagesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListNewsRoomGlobalMessagesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListNewsRoomGlobalMessagesRequest): ListNewsRoomGlobalMessagesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListNewsRoomGlobalMessagesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListNewsRoomGlobalMessagesRequest;
+  static deserializeBinaryFromReader(message: ListNewsRoomGlobalMessagesRequest, reader: jspb.BinaryReader): ListNewsRoomGlobalMessagesRequest;
+}
+
+export namespace ListNewsRoomGlobalMessagesRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListNewsRoomGlobalMessagesResponse extends jspb.Message {
+  clearMessagesList(): void;
+  getMessagesList(): Array<api_commons_room303_pb.GlobalSystemMessage>;
+  setMessagesList(value: Array<api_commons_room303_pb.GlobalSystemMessage>): void;
+  addMessages(value?: api_commons_room303_pb.GlobalSystemMessage, index?: number): api_commons_room303_pb.GlobalSystemMessage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListNewsRoomGlobalMessagesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListNewsRoomGlobalMessagesResponse): ListNewsRoomGlobalMessagesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListNewsRoomGlobalMessagesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListNewsRoomGlobalMessagesResponse;
+  static deserializeBinaryFromReader(message: ListNewsRoomGlobalMessagesResponse, reader: jspb.BinaryReader): ListNewsRoomGlobalMessagesResponse;
+}
+
+export namespace ListNewsRoomGlobalMessagesResponse {
+  export type AsObject = {
+    messagesList: Array<api_commons_room303_pb.GlobalSystemMessage.AsObject>,
+  }
+}
+
+export class SendNewsRoomGlobalMessageRequest extends jspb.Message {
+  hasMessage(): boolean;
+  clearMessage(): void;
+  getMessage(): api_commons_room303_pb.GlobalSystemMessage | undefined;
+  setMessage(value?: api_commons_room303_pb.GlobalSystemMessage): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SendNewsRoomGlobalMessageRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SendNewsRoomGlobalMessageRequest): SendNewsRoomGlobalMessageRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SendNewsRoomGlobalMessageRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SendNewsRoomGlobalMessageRequest;
+  static deserializeBinaryFromReader(message: SendNewsRoomGlobalMessageRequest, reader: jspb.BinaryReader): SendNewsRoomGlobalMessageRequest;
+}
+
+export namespace SendNewsRoomGlobalMessageRequest {
+  export type AsObject = {
+    message?: api_commons_room303_pb.GlobalSystemMessage.AsObject,
+  }
+}
+
+export class SendNewsRoomGlobalMessageResponse extends jspb.Message {
+  getRoomId(): string;
+  setRoomId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SendNewsRoomGlobalMessageResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SendNewsRoomGlobalMessageResponse): SendNewsRoomGlobalMessageResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SendNewsRoomGlobalMessageResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SendNewsRoomGlobalMessageResponse;
+  static deserializeBinaryFromReader(message: SendNewsRoomGlobalMessageResponse, reader: jspb.BinaryReader): SendNewsRoomGlobalMessageResponse;
+}
+
+export namespace SendNewsRoomGlobalMessageResponse {
+  export type AsObject = {
+    roomId: string,
+  }
+}
+

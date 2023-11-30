@@ -230,6 +230,24 @@ Room303API.GetGlobalConfig = {
   responseType: api_v1alpha1_room303_room_pb.GetGlobalConfigResponse
 };
 
+Room303API.ListNewsRoomGlobalMessages = {
+  methodName: "ListNewsRoomGlobalMessages",
+  service: Room303API,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_room303_message_pb.ListNewsRoomGlobalMessagesRequest,
+  responseType: api_v1alpha1_room303_message_pb.ListNewsRoomGlobalMessagesResponse
+};
+
+Room303API.SendNewsRoomGlobalMessage = {
+  methodName: "SendNewsRoomGlobalMessage",
+  service: Room303API,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_room303_message_pb.SendNewsRoomGlobalMessageRequest,
+  responseType: api_v1alpha1_room303_message_pb.SendNewsRoomGlobalMessageResponse
+};
+
 exports.Room303API = Room303API;
 
 function Room303APIClient(serviceHost, options) {
@@ -971,6 +989,68 @@ Room303APIClient.prototype.getGlobalConfig = function getGlobalConfig(requestMes
     callback = arguments[1];
   }
   var client = grpc.unary(Room303API.GetGlobalConfig, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+Room303APIClient.prototype.listNewsRoomGlobalMessages = function listNewsRoomGlobalMessages(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Room303API.ListNewsRoomGlobalMessages, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+Room303APIClient.prototype.sendNewsRoomGlobalMessage = function sendNewsRoomGlobalMessage(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Room303API.SendNewsRoomGlobalMessage, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

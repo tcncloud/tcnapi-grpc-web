@@ -224,6 +224,24 @@ type Room303APIGetGlobalConfig = {
   readonly responseType: typeof api_v1alpha1_room303_room_pb.GetGlobalConfigResponse;
 };
 
+type Room303APIListNewsRoomGlobalMessages = {
+  readonly methodName: string;
+  readonly service: typeof Room303API;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_room303_message_pb.ListNewsRoomGlobalMessagesRequest;
+  readonly responseType: typeof api_v1alpha1_room303_message_pb.ListNewsRoomGlobalMessagesResponse;
+};
+
+type Room303APISendNewsRoomGlobalMessage = {
+  readonly methodName: string;
+  readonly service: typeof Room303API;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_room303_message_pb.SendNewsRoomGlobalMessageRequest;
+  readonly responseType: typeof api_v1alpha1_room303_message_pb.SendNewsRoomGlobalMessageResponse;
+};
+
 export class Room303API {
   static readonly serviceName: string;
   static readonly AddRoomMember: Room303APIAddRoomMember;
@@ -250,6 +268,8 @@ export class Room303API {
   static readonly UpdateRoomConfig: Room303APIUpdateRoomConfig;
   static readonly UpdateGlobalConfig: Room303APIUpdateGlobalConfig;
   static readonly GetGlobalConfig: Room303APIGetGlobalConfig;
+  static readonly ListNewsRoomGlobalMessages: Room303APIListNewsRoomGlobalMessages;
+  static readonly SendNewsRoomGlobalMessage: Room303APISendNewsRoomGlobalMessage;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -483,6 +503,24 @@ export class Room303APIClient {
   getGlobalConfig(
     requestMessage: api_v1alpha1_room303_room_pb.GetGlobalConfigRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_room303_room_pb.GetGlobalConfigResponse|null) => void
+  ): UnaryResponse;
+  listNewsRoomGlobalMessages(
+    requestMessage: api_v1alpha1_room303_message_pb.ListNewsRoomGlobalMessagesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_room303_message_pb.ListNewsRoomGlobalMessagesResponse|null) => void
+  ): UnaryResponse;
+  listNewsRoomGlobalMessages(
+    requestMessage: api_v1alpha1_room303_message_pb.ListNewsRoomGlobalMessagesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_room303_message_pb.ListNewsRoomGlobalMessagesResponse|null) => void
+  ): UnaryResponse;
+  sendNewsRoomGlobalMessage(
+    requestMessage: api_v1alpha1_room303_message_pb.SendNewsRoomGlobalMessageRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_room303_message_pb.SendNewsRoomGlobalMessageResponse|null) => void
+  ): UnaryResponse;
+  sendNewsRoomGlobalMessage(
+    requestMessage: api_v1alpha1_room303_message_pb.SendNewsRoomGlobalMessageRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_room303_message_pb.SendNewsRoomGlobalMessageResponse|null) => void
   ): UnaryResponse;
 }
 

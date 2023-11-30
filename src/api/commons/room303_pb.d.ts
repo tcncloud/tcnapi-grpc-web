@@ -290,6 +290,60 @@ export namespace RoomConfig {
   }
 }
 
+export class GlobalSystemMessage extends jspb.Message {
+  getMessageId(): string;
+  setMessageId(value: string): void;
+
+  getRoomId(): string;
+  setRoomId(value: string): void;
+
+  getStatus(): MessageStatusMap[keyof MessageStatusMap];
+  setStatus(value: MessageStatusMap[keyof MessageStatusMap]): void;
+
+  hasReceivedAt(): boolean;
+  clearReceivedAt(): void;
+  getReceivedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setReceivedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasUpdatedAt(): boolean;
+  clearUpdatedAt(): void;
+  getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getPayload(): string;
+  setPayload(value: string): void;
+
+  getUnread(): boolean;
+  setUnread(value: boolean): void;
+
+  hasConfig(): boolean;
+  clearConfig(): void;
+  getConfig(): RoomConfig | undefined;
+  setConfig(value?: RoomConfig): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GlobalSystemMessage.AsObject;
+  static toObject(includeInstance: boolean, msg: GlobalSystemMessage): GlobalSystemMessage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GlobalSystemMessage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GlobalSystemMessage;
+  static deserializeBinaryFromReader(message: GlobalSystemMessage, reader: jspb.BinaryReader): GlobalSystemMessage;
+}
+
+export namespace GlobalSystemMessage {
+  export type AsObject = {
+    messageId: string,
+    roomId: string,
+    status: MessageStatusMap[keyof MessageStatusMap],
+    receivedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    payload: string,
+    unread: boolean,
+    config?: RoomConfig.AsObject,
+  }
+}
+
 export interface RoomTypeMap {
   ROOM_TYPE_DIRECT: 0;
   ROOM_TYPE_MULTI: 1;
