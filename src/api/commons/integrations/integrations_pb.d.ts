@@ -404,6 +404,16 @@ export class PaymentFlow extends jspb.Message {
   getPriocommerceAch(): PaymentPriocommerceAch | undefined;
   setPriocommerceAch(value?: PaymentPriocommerceAch): void;
 
+  hasPaymentvisionCc(): boolean;
+  clearPaymentvisionCc(): void;
+  getPaymentvisionCc(): PaymentVisionCC | undefined;
+  setPaymentvisionCc(value?: PaymentVisionCC): void;
+
+  hasPaymentvisionAch(): boolean;
+  clearPaymentvisionAch(): void;
+  getPaymentvisionAch(): PaymentVisionACH | undefined;
+  setPaymentvisionAch(value?: PaymentVisionACH): void;
+
   clearPaymentFieldsList(): void;
   getPaymentFieldsList(): Array<FieldDefinition>;
   setPaymentFieldsList(value: Array<FieldDefinition>): void;
@@ -436,6 +446,8 @@ export namespace PaymentFlow {
     newzwareAch?: PaymentNewzwareAch.AsObject,
     priocommerceCc?: PaymentPriocommerceCc.AsObject,
     priocommerceAch?: PaymentPriocommerceAch.AsObject,
+    paymentvisionCc?: PaymentVisionCC.AsObject,
+    paymentvisionAch?: PaymentVisionACH.AsObject,
     paymentFieldsList: Array<FieldDefinition.AsObject>,
   }
 
@@ -454,6 +466,8 @@ export namespace PaymentFlow {
     NEWZWARE_ACH = 12,
     PRIOCOMMERCE_CC = 13,
     PRIOCOMMERCE_ACH = 14,
+    PAYMENTVISION_CC = 15,
+    PAYMENTVISION_ACH = 16,
   }
 }
 
@@ -2540,6 +2554,38 @@ export class PaymentPriocommerceAch extends jspb.Message {
 }
 
 export namespace PaymentPriocommerceAch {
+  export type AsObject = {
+  }
+}
+
+export class PaymentVisionCC extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentVisionCC.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentVisionCC): PaymentVisionCC.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentVisionCC, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentVisionCC;
+  static deserializeBinaryFromReader(message: PaymentVisionCC, reader: jspb.BinaryReader): PaymentVisionCC;
+}
+
+export namespace PaymentVisionCC {
+  export type AsObject = {
+  }
+}
+
+export class PaymentVisionACH extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentVisionACH.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentVisionACH): PaymentVisionACH.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentVisionACH, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentVisionACH;
+  static deserializeBinaryFromReader(message: PaymentVisionACH, reader: jspb.BinaryReader): PaymentVisionACH;
+}
+
+export namespace PaymentVisionACH {
   export type AsObject = {
   }
 }
