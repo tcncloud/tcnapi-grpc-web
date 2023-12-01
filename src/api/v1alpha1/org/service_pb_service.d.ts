@@ -348,6 +348,15 @@ type OrgUpdateBusinessPreferences = {
   readonly responseType: typeof api_v1alpha1_org_preferences_pb.UpdateBusinessPreferencesResponse;
 };
 
+type OrgUpdateAdminBusinessPreferences = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesResponse;
+};
+
 type OrgGetScorecardsPreferences = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1503,6 +1512,7 @@ export class Org {
   static readonly UpdateEmailSmsPreferences: OrgUpdateEmailSmsPreferences;
   static readonly GetBusinessPreferences: OrgGetBusinessPreferences;
   static readonly UpdateBusinessPreferences: OrgUpdateBusinessPreferences;
+  static readonly UpdateAdminBusinessPreferences: OrgUpdateAdminBusinessPreferences;
   static readonly GetScorecardsPreferences: OrgGetScorecardsPreferences;
   static readonly UpdateScorecardsPreferences: OrgUpdateScorecardsPreferences;
   static readonly GetVoiceAnalyticsPreferences: OrgGetVoiceAnalyticsPreferences;
@@ -1961,6 +1971,15 @@ export class OrgClient {
   updateBusinessPreferences(
     requestMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessPreferencesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessPreferencesResponse|null) => void
+  ): UnaryResponse;
+  updateAdminBusinessPreferences(
+    requestMessage: api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesResponse|null) => void
+  ): UnaryResponse;
+  updateAdminBusinessPreferences(
+    requestMessage: api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesResponse|null) => void
   ): UnaryResponse;
   getScorecardsPreferences(
     requestMessage: api_v1alpha1_org_preferences_pb.GetScorecardsPreferencesRequest,
