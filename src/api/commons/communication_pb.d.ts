@@ -20,6 +20,11 @@ export class CommType extends jspb.Message {
   getSmsType(): SmsType.EnumMap[keyof SmsType.EnumMap];
   setSmsType(value: SmsType.EnumMap[keyof SmsType.EnumMap]): void;
 
+  hasWhatsappType(): boolean;
+  clearWhatsappType(): void;
+  getWhatsappType(): WhatsAppType.EnumMap[keyof WhatsAppType.EnumMap];
+  setWhatsappType(value: WhatsAppType.EnumMap[keyof WhatsAppType.EnumMap]): void;
+
   getTypeCase(): CommType.TypeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CommType.AsObject;
@@ -36,6 +41,7 @@ export namespace CommType {
     callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
     emailType: EmailType.EnumMap[keyof EmailType.EnumMap],
     smsType: SmsType.EnumMap[keyof SmsType.EnumMap],
+    whatsappType: WhatsAppType.EnumMap[keyof WhatsAppType.EnumMap],
   }
 
   export enum TypeCase {
@@ -43,6 +49,7 @@ export namespace CommType {
     CALL_TYPE = 1,
     EMAIL_TYPE = 2,
     SMS_TYPE = 3,
+    WHATSAPP_TYPE = 4,
   }
 }
 
@@ -80,6 +87,28 @@ export class SmsType extends jspb.Message {
 }
 
 export namespace SmsType {
+  export type AsObject = {
+  }
+
+  export interface EnumMap {
+    OUTBOUND: 0;
+  }
+
+  export const Enum: EnumMap;
+}
+
+export class WhatsAppType extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WhatsAppType.AsObject;
+  static toObject(includeInstance: boolean, msg: WhatsAppType): WhatsAppType.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: WhatsAppType, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WhatsAppType;
+  static deserializeBinaryFromReader(message: WhatsAppType, reader: jspb.BinaryReader): WhatsAppType;
+}
+
+export namespace WhatsAppType {
   export type AsObject = {
   }
 
