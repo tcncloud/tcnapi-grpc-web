@@ -957,6 +957,9 @@ export class CallProfileTemplate extends jspb.Message {
   getDefaultToFixedAveragesForecast(): boolean;
   setDefaultToFixedAveragesForecast(value: boolean): void;
 
+  getTimeZone(): string;
+  setTimeZone(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CallProfileTemplate.AsObject;
   static toObject(includeInstance: boolean, msg: CallProfileTemplate): CallProfileTemplate.AsObject;
@@ -982,6 +985,7 @@ export namespace CallProfileTemplate {
     fixedAverageAfterCallWork: number,
     fixedAverageTimeToAbort: number,
     defaultToFixedAveragesForecast: boolean,
+    timeZone: string,
   }
 }
 
