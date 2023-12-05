@@ -672,6 +672,15 @@ type OrgGetUserPasswordResetLinkByOrgId = {
   readonly responseType: typeof api_v1alpha1_org_user_pb.GetUserPasswordResetLinkByOrgIdResponse;
 };
 
+type OrgCreatePasswordResetLink = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.CreatePasswordResetLinkRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.CreatePasswordResetLinkResponse;
+};
+
 type OrgGetUserLoginInfo = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1548,6 +1557,7 @@ export class Org {
   static readonly GetMyUserPasswordResetLink: OrgGetMyUserPasswordResetLink;
   static readonly GetUserPasswordResetLink: OrgGetUserPasswordResetLink;
   static readonly GetUserPasswordResetLinkByOrgId: OrgGetUserPasswordResetLinkByOrgId;
+  static readonly CreatePasswordResetLink: OrgCreatePasswordResetLink;
   static readonly GetUserLoginInfo: OrgGetUserLoginInfo;
   static readonly GetUserEmailVerified: OrgGetUserEmailVerified;
   static readonly GetUserEmailVerifiedByOrgId: OrgGetUserEmailVerifiedByOrgId;
@@ -2263,6 +2273,15 @@ export class OrgClient {
   getUserPasswordResetLinkByOrgId(
     requestMessage: api_v1alpha1_org_user_pb.GetUserPasswordResetLinkByOrgIdRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.GetUserPasswordResetLinkByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  createPasswordResetLink(
+    requestMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkResponse|null) => void
+  ): UnaryResponse;
+  createPasswordResetLink(
+    requestMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkResponse|null) => void
   ): UnaryResponse;
   getUserLoginInfo(
     requestMessage: api_v1alpha1_org_user_pb.GetUserLoginInfoRequest,
