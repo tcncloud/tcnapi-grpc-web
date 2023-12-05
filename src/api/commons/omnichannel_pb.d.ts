@@ -2355,6 +2355,11 @@ export class ConnectedInbox extends jspb.Message {
   getAuthenticationType(): ConnectedInboxAuthenticationTypeMap[keyof ConnectedInboxAuthenticationTypeMap];
   setAuthenticationType(value: ConnectedInboxAuthenticationTypeMap[keyof ConnectedInboxAuthenticationTypeMap]): void;
 
+  hasOauthReferenceId(): boolean;
+  clearOauthReferenceId(): void;
+  getOauthReferenceId(): ConnectedInboxOAuthConfig | undefined;
+  setOauthReferenceId(value?: ConnectedInboxOAuthConfig): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConnectedInbox.AsObject;
   static toObject(includeInstance: boolean, msg: ConnectedInbox): ConnectedInbox.AsObject;
@@ -2388,6 +2393,39 @@ export namespace ConnectedInbox {
     googleXoauth2AccessToken?: google_protobuf_wrappers_pb.StringValue.AsObject,
     googleXoauth2AccessTokenExpiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     authenticationType: ConnectedInboxAuthenticationTypeMap[keyof ConnectedInboxAuthenticationTypeMap],
+    oauthReferenceId?: ConnectedInboxOAuthConfig.AsObject,
+  }
+}
+
+export class ConnectedInboxOAuthConfig extends jspb.Message {
+  getAccessToken(): string;
+  setAccessToken(value: string): void;
+
+  getRefreshToken(): string;
+  setRefreshToken(value: string): void;
+
+  getExpiresAt(): number;
+  setExpiresAt(value: number): void;
+
+  getReferenceId(): string;
+  setReferenceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConnectedInboxOAuthConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: ConnectedInboxOAuthConfig): ConnectedInboxOAuthConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConnectedInboxOAuthConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConnectedInboxOAuthConfig;
+  static deserializeBinaryFromReader(message: ConnectedInboxOAuthConfig, reader: jspb.BinaryReader): ConnectedInboxOAuthConfig;
+}
+
+export namespace ConnectedInboxOAuthConfig {
+  export type AsObject = {
+    accessToken: string,
+    refreshToken: string,
+    expiresAt: number,
+    referenceId: string,
   }
 }
 
