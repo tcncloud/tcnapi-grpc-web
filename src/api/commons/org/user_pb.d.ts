@@ -235,3 +235,37 @@ export namespace Skill {
   }
 }
 
+export class PasswordResetLink extends jspb.Message {
+  getLinkId(): string;
+  setLinkId(value: string): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  hasExpiration(): boolean;
+  clearExpiration(): void;
+  getExpiration(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiration(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PasswordResetLink.AsObject;
+  static toObject(includeInstance: boolean, msg: PasswordResetLink): PasswordResetLink.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PasswordResetLink, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PasswordResetLink;
+  static deserializeBinaryFromReader(message: PasswordResetLink, reader: jspb.BinaryReader): PasswordResetLink;
+}
+
+export namespace PasswordResetLink {
+  export type AsObject = {
+    linkId: string,
+    userId: string,
+    orgId: string,
+    expiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
