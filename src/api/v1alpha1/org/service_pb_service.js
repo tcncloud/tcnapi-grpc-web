@@ -354,6 +354,15 @@ Org.UpdateBusinessPreferences = {
   responseType: api_v1alpha1_org_preferences_pb.UpdateBusinessPreferencesResponse
 };
 
+Org.UpdateAdminBusinessPreferences = {
+  methodName: "UpdateAdminBusinessPreferences",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesRequest,
+  responseType: api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesResponse
+};
+
 Org.GetScorecardsPreferences = {
   methodName: "GetScorecardsPreferences",
   service: Org,
@@ -667,6 +676,15 @@ Org.GetUserPasswordResetLinkByOrgId = {
   responseStream: false,
   requestType: api_v1alpha1_org_user_pb.GetUserPasswordResetLinkByOrgIdRequest,
   responseType: api_v1alpha1_org_user_pb.GetUserPasswordResetLinkByOrgIdResponse
+};
+
+Org.CreatePasswordResetLink = {
+  methodName: "CreatePasswordResetLink",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.CreatePasswordResetLinkRequest,
+  responseType: api_v1alpha1_org_user_pb.CreatePasswordResetLinkResponse
 };
 
 Org.GetUserLoginInfo = {
@@ -2656,6 +2674,37 @@ OrgClient.prototype.updateBusinessPreferences = function updateBusinessPreferenc
   };
 };
 
+OrgClient.prototype.updateAdminBusinessPreferences = function updateAdminBusinessPreferences(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateAdminBusinessPreferences, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.getScorecardsPreferences = function getScorecardsPreferences(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -3747,6 +3796,37 @@ OrgClient.prototype.getUserPasswordResetLinkByOrgId = function getUserPasswordRe
     callback = arguments[1];
   }
   var client = grpc.unary(Org.GetUserPasswordResetLinkByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.createPasswordResetLink = function createPasswordResetLink(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CreatePasswordResetLink, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

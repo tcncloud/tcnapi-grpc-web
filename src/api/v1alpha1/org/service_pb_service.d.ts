@@ -348,6 +348,15 @@ type OrgUpdateBusinessPreferences = {
   readonly responseType: typeof api_v1alpha1_org_preferences_pb.UpdateBusinessPreferencesResponse;
 };
 
+type OrgUpdateAdminBusinessPreferences = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesResponse;
+};
+
 type OrgGetScorecardsPreferences = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -661,6 +670,15 @@ type OrgGetUserPasswordResetLinkByOrgId = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_org_user_pb.GetUserPasswordResetLinkByOrgIdRequest;
   readonly responseType: typeof api_v1alpha1_org_user_pb.GetUserPasswordResetLinkByOrgIdResponse;
+};
+
+type OrgCreatePasswordResetLink = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.CreatePasswordResetLinkRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.CreatePasswordResetLinkResponse;
 };
 
 type OrgGetUserLoginInfo = {
@@ -1503,6 +1521,7 @@ export class Org {
   static readonly UpdateEmailSmsPreferences: OrgUpdateEmailSmsPreferences;
   static readonly GetBusinessPreferences: OrgGetBusinessPreferences;
   static readonly UpdateBusinessPreferences: OrgUpdateBusinessPreferences;
+  static readonly UpdateAdminBusinessPreferences: OrgUpdateAdminBusinessPreferences;
   static readonly GetScorecardsPreferences: OrgGetScorecardsPreferences;
   static readonly UpdateScorecardsPreferences: OrgUpdateScorecardsPreferences;
   static readonly GetVoiceAnalyticsPreferences: OrgGetVoiceAnalyticsPreferences;
@@ -1538,6 +1557,7 @@ export class Org {
   static readonly GetMyUserPasswordResetLink: OrgGetMyUserPasswordResetLink;
   static readonly GetUserPasswordResetLink: OrgGetUserPasswordResetLink;
   static readonly GetUserPasswordResetLinkByOrgId: OrgGetUserPasswordResetLinkByOrgId;
+  static readonly CreatePasswordResetLink: OrgCreatePasswordResetLink;
   static readonly GetUserLoginInfo: OrgGetUserLoginInfo;
   static readonly GetUserEmailVerified: OrgGetUserEmailVerified;
   static readonly GetUserEmailVerifiedByOrgId: OrgGetUserEmailVerifiedByOrgId;
@@ -1962,6 +1982,15 @@ export class OrgClient {
     requestMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessPreferencesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessPreferencesResponse|null) => void
   ): UnaryResponse;
+  updateAdminBusinessPreferences(
+    requestMessage: api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesResponse|null) => void
+  ): UnaryResponse;
+  updateAdminBusinessPreferences(
+    requestMessage: api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.UpdateAdminBusinessPreferencesResponse|null) => void
+  ): UnaryResponse;
   getScorecardsPreferences(
     requestMessage: api_v1alpha1_org_preferences_pb.GetScorecardsPreferencesRequest,
     metadata: grpc.Metadata,
@@ -2244,6 +2273,15 @@ export class OrgClient {
   getUserPasswordResetLinkByOrgId(
     requestMessage: api_v1alpha1_org_user_pb.GetUserPasswordResetLinkByOrgIdRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.GetUserPasswordResetLinkByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  createPasswordResetLink(
+    requestMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkResponse|null) => void
+  ): UnaryResponse;
+  createPasswordResetLink(
+    requestMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkResponse|null) => void
   ): UnaryResponse;
   getUserLoginInfo(
     requestMessage: api_v1alpha1_org_user_pb.GetUserLoginInfoRequest,

@@ -200,6 +200,11 @@ export class ListCampaignsReq extends jspb.Message {
   getBySmsNumber(): ListCampaignsReq.BySmsNumber | undefined;
   setBySmsNumber(value?: ListCampaignsReq.BySmsNumber): void;
 
+  hasByWhatsappNumber(): boolean;
+  clearByWhatsappNumber(): void;
+  getByWhatsappNumber(): ListCampaignsReq.ByWhatsAppNumber | undefined;
+  setByWhatsappNumber(value?: ListCampaignsReq.ByWhatsAppNumber): void;
+
   getFilterCase(): ListCampaignsReq.FilterCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCampaignsReq.AsObject;
@@ -222,6 +227,7 @@ export namespace ListCampaignsReq {
     byConnectedInbox?: ListCampaignsReq.ByConnectedInbox.AsObject,
     byVerifiedEmail?: ListCampaignsReq.ByVerifiedEmail.AsObject,
     bySmsNumber?: ListCampaignsReq.BySmsNumber.AsObject,
+    byWhatsappNumber?: ListCampaignsReq.ByWhatsAppNumber.AsObject,
   }
 
   export class ByConnectedInbox extends jspb.Message {
@@ -374,6 +380,26 @@ export namespace ListCampaignsReq {
     }
   }
 
+  export class ByWhatsAppNumber extends jspb.Message {
+    getNumber(): string;
+    setNumber(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ByWhatsAppNumber.AsObject;
+    static toObject(includeInstance: boolean, msg: ByWhatsAppNumber): ByWhatsAppNumber.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ByWhatsAppNumber, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ByWhatsAppNumber;
+    static deserializeBinaryFromReader(message: ByWhatsAppNumber, reader: jspb.BinaryReader): ByWhatsAppNumber;
+  }
+
+  export namespace ByWhatsAppNumber {
+    export type AsObject = {
+      number: string,
+    }
+  }
+
   export enum FilterCase {
     FILTER_NOT_SET = 0,
     BY_IDS = 100,
@@ -383,6 +409,7 @@ export namespace ListCampaignsReq {
     BY_CONNECTED_INBOX = 104,
     BY_VERIFIED_EMAIL = 105,
     BY_SMS_NUMBER = 106,
+    BY_WHATSAPP_NUMBER = 107,
   }
 }
 
@@ -3466,6 +3493,44 @@ export namespace OmniSkill {
     name: string,
     description: string,
     type: api_commons_wfm_pb.SkillType.EnumMap[keyof api_commons_wfm_pb.SkillType.EnumMap],
+  }
+}
+
+export class ListWhatsAppNumbersReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListWhatsAppNumbersReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListWhatsAppNumbersReq): ListWhatsAppNumbersReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListWhatsAppNumbersReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListWhatsAppNumbersReq;
+  static deserializeBinaryFromReader(message: ListWhatsAppNumbersReq, reader: jspb.BinaryReader): ListWhatsAppNumbersReq;
+}
+
+export namespace ListWhatsAppNumbersReq {
+  export type AsObject = {
+  }
+}
+
+export class ListWhatsAppNumbersRes extends jspb.Message {
+  clearWhatsappNumbersList(): void;
+  getWhatsappNumbersList(): Array<api_commons_omnichannel_pb.WhatsAppNumber>;
+  setWhatsappNumbersList(value: Array<api_commons_omnichannel_pb.WhatsAppNumber>): void;
+  addWhatsappNumbers(value?: api_commons_omnichannel_pb.WhatsAppNumber, index?: number): api_commons_omnichannel_pb.WhatsAppNumber;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListWhatsAppNumbersRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListWhatsAppNumbersRes): ListWhatsAppNumbersRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListWhatsAppNumbersRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListWhatsAppNumbersRes;
+  static deserializeBinaryFromReader(message: ListWhatsAppNumbersRes, reader: jspb.BinaryReader): ListWhatsAppNumbersRes;
+}
+
+export namespace ListWhatsAppNumbersRes {
+  export type AsObject = {
+    whatsappNumbersList: Array<api_commons_omnichannel_pb.WhatsAppNumber.AsObject>,
   }
 }
 

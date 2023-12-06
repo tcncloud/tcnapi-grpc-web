@@ -1173,6 +1173,54 @@ export namespace UpdateBusinessPreferencesResponse {
   }
 }
 
+export class UpdateAdminBusinessPreferencesRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  hasBusinessPreferences(): boolean;
+  clearBusinessPreferences(): void;
+  getBusinessPreferences(): api_commons_org_preferences_pb.BusinessPreferences | undefined;
+  setBusinessPreferences(value?: api_commons_org_preferences_pb.BusinessPreferences): void;
+
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAdminBusinessPreferencesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAdminBusinessPreferencesRequest): UpdateAdminBusinessPreferencesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAdminBusinessPreferencesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAdminBusinessPreferencesRequest;
+  static deserializeBinaryFromReader(message: UpdateAdminBusinessPreferencesRequest, reader: jspb.BinaryReader): UpdateAdminBusinessPreferencesRequest;
+}
+
+export namespace UpdateAdminBusinessPreferencesRequest {
+  export type AsObject = {
+    orgId: string,
+    businessPreferences?: api_commons_org_preferences_pb.BusinessPreferences.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class UpdateAdminBusinessPreferencesResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAdminBusinessPreferencesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAdminBusinessPreferencesResponse): UpdateAdminBusinessPreferencesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAdminBusinessPreferencesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAdminBusinessPreferencesResponse;
+  static deserializeBinaryFromReader(message: UpdateAdminBusinessPreferencesResponse, reader: jspb.BinaryReader): UpdateAdminBusinessPreferencesResponse;
+}
+
+export namespace UpdateAdminBusinessPreferencesResponse {
+  export type AsObject = {
+  }
+}
+
 export class GetScorecardsPreferencesRequest extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
