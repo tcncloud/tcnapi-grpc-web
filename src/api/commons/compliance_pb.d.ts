@@ -1044,6 +1044,7 @@ export interface EntityMap {
   E_CALL: 1;
   E_EMAIL: 2;
   E_SMS: 3;
+  E_WHATSAPP: 4;
 }
 
 export const Entity: EntityMap;
@@ -1074,6 +1075,7 @@ export interface ContentTypeMap {
   CT_SMS: 2;
   CT_OTHER: 3;
   CT_ACCOUNT_NUMBER: 4;
+  CT_WHATSAPP: 5;
 }
 
 export const ContentType: ContentTypeMap;
@@ -1082,6 +1084,7 @@ export interface ChannelMap {
   CHANNEL_CALL: 0;
   CHANNEL_EMAIL: 1;
   CHANNEL_SMS: 2;
+  CHANNEL_WHATSAPP: 3;
 }
 
 export const Channel: ChannelMap;

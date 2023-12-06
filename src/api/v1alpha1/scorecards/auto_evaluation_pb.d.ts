@@ -81,6 +81,11 @@ export class ListAutoEvaluationsRequest extends jspb.Message {
   getPageToken(): string;
   setPageToken(value: string): void;
 
+  clearRiskLevelsList(): void;
+  getRiskLevelsList(): Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>;
+  setRiskLevelsList(value: Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>): void;
+  addRiskLevels(value: api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap], index?: number): api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAutoEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAutoEvaluationsRequest): ListAutoEvaluationsRequest.AsObject;
@@ -101,6 +106,7 @@ export namespace ListAutoEvaluationsRequest {
     pageSize: number,
     orderBy: string,
     pageToken: string,
+    riskLevelsList: Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>,
   }
 
   export class CallSidFilter extends jspb.Message {

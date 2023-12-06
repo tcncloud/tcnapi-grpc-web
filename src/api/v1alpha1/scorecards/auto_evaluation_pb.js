@@ -508,7 +508,7 @@ proto.api.v1alpha1.scorecards.GetAutoEvaluationResponse.prototype.hasAutoEvaluat
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.repeatedFields_ = [2,5,7];
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.repeatedFields_ = [2,5,7,11];
 
 
 
@@ -548,7 +548,8 @@ proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.toObject = function(inc
     agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
     pageSize: jspb.Message.getFieldWithDefault(msg, 8, 0),
     orderBy: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 10, "")
+    pageToken: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    riskLevelsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -622,6 +623,12 @@ proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.deserializeBinaryFromRe
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setPageToken(value);
+      break;
+    case 11:
+      var values = /** @type {!Array<!proto.api.commons.RiskLevel>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addRiskLevels(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -707,6 +714,13 @@ proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.serializeBinaryToWriter
   if (f.length > 0) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = message.getRiskLevelsList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      11,
       f
     );
   }
@@ -1257,6 +1271,43 @@ proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.getPageToken 
  */
 proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.setPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * repeated api.commons.RiskLevel risk_levels = 11;
+ * @return {!Array<!proto.api.commons.RiskLevel>}
+ */
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.getRiskLevelsList = function() {
+  return /** @type {!Array<!proto.api.commons.RiskLevel>} */ (jspb.Message.getRepeatedField(this, 11));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.RiskLevel>} value
+ * @return {!proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.setRiskLevelsList = function(value) {
+  return jspb.Message.setField(this, 11, value || []);
+};
+
+
+/**
+ * @param {!proto.api.commons.RiskLevel} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.addRiskLevels = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 11, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListAutoEvaluationsRequest.prototype.clearRiskLevelsList = function() {
+  return this.setRiskLevelsList([]);
 };
 
 
