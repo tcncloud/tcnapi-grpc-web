@@ -633,6 +633,15 @@ OmniApi.ListUserSkills = {
   responseType: api_v0alpha_omniapi_pb.ListUserSkillsRes
 };
 
+OmniApi.ListWhatsAppNumbers = {
+  methodName: "ListWhatsAppNumbers",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.ListWhatsAppNumbersReq,
+  responseType: api_v0alpha_omniapi_pb.ListWhatsAppNumbersRes
+};
+
 exports.OmniApi = OmniApi;
 
 function OmniApiClient(serviceHost, options) {
@@ -2769,6 +2778,37 @@ OmniApiClient.prototype.listUserSkills = function listUserSkills(requestMessage,
     callback = arguments[1];
   }
   var client = grpc.unary(OmniApi.ListUserSkills, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.listWhatsAppNumbers = function listWhatsAppNumbers(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.ListWhatsAppNumbers, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

@@ -330,6 +330,11 @@ export class OmniCampaignModuleConfig extends jspb.Message {
   getSkills(): OmniConversationSkills | undefined;
   setSkills(value?: OmniConversationSkills): void;
 
+  hasWhatsappNumber(): boolean;
+  clearWhatsappNumber(): void;
+  getWhatsappNumber(): WhatsAppNumber | undefined;
+  setWhatsappNumber(value?: WhatsAppNumber): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaignModuleConfig.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCampaignModuleConfig): OmniCampaignModuleConfig.AsObject;
@@ -362,6 +367,7 @@ export namespace OmniCampaignModuleConfig {
     paymentPortalIdsList: Array<string>,
     flowId?: api_commons_types_pb.Int64Id.AsObject,
     skills?: OmniConversationSkills.AsObject,
+    whatsappNumber?: WhatsAppNumber.AsObject,
   }
 }
 
@@ -2502,6 +2508,11 @@ export class OmniProjectComplianceConfig extends jspb.Message {
   getSms(): OmniComplianceConfig | undefined;
   setSms(value?: OmniComplianceConfig): void;
 
+  hasWhatsapp(): boolean;
+  clearWhatsapp(): void;
+  getWhatsapp(): OmniComplianceConfig | undefined;
+  setWhatsapp(value?: OmniComplianceConfig): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniProjectComplianceConfig.AsObject;
   static toObject(includeInstance: boolean, msg: OmniProjectComplianceConfig): OmniProjectComplianceConfig.AsObject;
@@ -2516,6 +2527,7 @@ export namespace OmniProjectComplianceConfig {
   export type AsObject = {
     email?: OmniComplianceConfig.AsObject,
     sms?: OmniComplianceConfig.AsObject,
+    whatsapp?: OmniComplianceConfig.AsObject,
   }
 }
 
@@ -2592,6 +2604,38 @@ export namespace OmniComplianceConfig {
     information?: OmniComplianceAction.AsObject,
     scrubListId: string,
     ruleSetId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
+export class WhatsAppNumber extends jspb.Message {
+  getNumber(): string;
+  setNumber(value: string): void;
+
+  getType(): WhatsAppNumberTypeMap[keyof WhatsAppNumberTypeMap];
+  setType(value: WhatsAppNumberTypeMap[keyof WhatsAppNumberTypeMap]): void;
+
+  getProvider(): WhatsAppNumberProviderMap[keyof WhatsAppNumberProviderMap];
+  setProvider(value: WhatsAppNumberProviderMap[keyof WhatsAppNumberProviderMap]): void;
+
+  getCountryCode(): number;
+  setCountryCode(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WhatsAppNumber.AsObject;
+  static toObject(includeInstance: boolean, msg: WhatsAppNumber): WhatsAppNumber.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: WhatsAppNumber, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WhatsAppNumber;
+  static deserializeBinaryFromReader(message: WhatsAppNumber, reader: jspb.BinaryReader): WhatsAppNumber;
+}
+
+export namespace WhatsAppNumber {
+  export type AsObject = {
+    number: string,
+    type: WhatsAppNumberTypeMap[keyof WhatsAppNumberTypeMap],
+    provider: WhatsAppNumberProviderMap[keyof WhatsAppNumberProviderMap],
+    countryCode: number,
   }
 }
 
@@ -2824,4 +2868,20 @@ export interface CampaignDirectionMap {
 }
 
 export const CampaignDirection: CampaignDirectionMap;
+
+export interface WhatsAppNumberTypeMap {
+  WHATSAPP_NUMBER_TYPE: 0;
+  WHATSAPP_ALPHANUMERIC_TYPE: 1;
+  WHATSAPP_SHORT_CODE_TYPE: 2;
+}
+
+export const WhatsAppNumberType: WhatsAppNumberTypeMap;
+
+export interface WhatsAppNumberProviderMap {
+  UNKNOWN_WHATSAPP_PROVIDER: 0;
+  WHATSAPP_SMS_PROVIDER: 1;
+  WHATSAPP_VOICE_PROVIDER: 2;
+}
+
+export const WhatsAppNumberProvider: WhatsAppNumberProviderMap;
 
