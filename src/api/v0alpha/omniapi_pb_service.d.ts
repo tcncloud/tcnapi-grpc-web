@@ -627,15 +627,6 @@ type OmniApiListUserSkills = {
   readonly responseType: typeof api_v0alpha_omniapi_pb.ListUserSkillsRes;
 };
 
-type OmniApiListWhatsAppNumbers = {
-  readonly methodName: string;
-  readonly service: typeof OmniApi;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_omniapi_pb.ListWhatsAppNumbersReq;
-  readonly responseType: typeof api_v0alpha_omniapi_pb.ListWhatsAppNumbersRes;
-};
-
 export class OmniApi {
   static readonly serviceName: string;
   static readonly ArchiveCampaign: OmniApiArchiveCampaign;
@@ -707,7 +698,6 @@ export class OmniApi {
   static readonly ListCannedMessagesByGroupId: OmniApiListCannedMessagesByGroupId;
   static readonly GetCannedMessageGroupById: OmniApiGetCannedMessageGroupById;
   static readonly ListUserSkills: OmniApiListUserSkills;
-  static readonly ListWhatsAppNumbers: OmniApiListWhatsAppNumbers;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1346,15 +1336,6 @@ export class OmniApiClient {
   listUserSkills(
     requestMessage: api_v0alpha_omniapi_pb.ListUserSkillsReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListUserSkillsRes|null) => void
-  ): UnaryResponse;
-  listWhatsAppNumbers(
-    requestMessage: api_v0alpha_omniapi_pb.ListWhatsAppNumbersReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListWhatsAppNumbersRes|null) => void
-  ): UnaryResponse;
-  listWhatsAppNumbers(
-    requestMessage: api_v0alpha_omniapi_pb.ListWhatsAppNumbersReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListWhatsAppNumbersRes|null) => void
   ): UnaryResponse;
 }
 

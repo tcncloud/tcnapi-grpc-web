@@ -401,16 +401,6 @@ export class AutoEvaluation extends jspb.Message {
   getCallLength(): number;
   setCallLength(value: number): void;
 
-  hasScorecardInfo(): boolean;
-  clearScorecardInfo(): void;
-  getScorecardInfo(): AutoEvaluation.ScorecardInfo | undefined;
-  setScorecardInfo(value?: AutoEvaluation.ScorecardInfo): void;
-
-  hasCategoryInfo(): boolean;
-  clearCategoryInfo(): void;
-  getCategoryInfo(): AutoEvaluation.CategoryInfo | undefined;
-  setCategoryInfo(value?: AutoEvaluation.CategoryInfo): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AutoEvaluation.AsObject;
   static toObject(includeInstance: boolean, msg: AutoEvaluation): AutoEvaluation.AsObject;
@@ -435,48 +425,6 @@ export namespace AutoEvaluation {
     expressionMatched: boolean,
     riskLevel: RiskLevelMap[keyof RiskLevelMap],
     callLength: number,
-    scorecardInfo?: AutoEvaluation.ScorecardInfo.AsObject,
-    categoryInfo?: AutoEvaluation.CategoryInfo.AsObject,
-  }
-
-  export class ScorecardInfo extends jspb.Message {
-    getTitle(): string;
-    setTitle(value: string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): ScorecardInfo.AsObject;
-    static toObject(includeInstance: boolean, msg: ScorecardInfo): ScorecardInfo.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: ScorecardInfo, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): ScorecardInfo;
-    static deserializeBinaryFromReader(message: ScorecardInfo, reader: jspb.BinaryReader): ScorecardInfo;
-  }
-
-  export namespace ScorecardInfo {
-    export type AsObject = {
-      title: string,
-    }
-  }
-
-  export class CategoryInfo extends jspb.Message {
-    getTitle(): string;
-    setTitle(value: string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): CategoryInfo.AsObject;
-    static toObject(includeInstance: boolean, msg: CategoryInfo): CategoryInfo.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: CategoryInfo, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): CategoryInfo;
-    static deserializeBinaryFromReader(message: CategoryInfo, reader: jspb.BinaryReader): CategoryInfo;
-  }
-
-  export namespace CategoryInfo {
-    export type AsObject = {
-      title: string,
-    }
   }
 }
 

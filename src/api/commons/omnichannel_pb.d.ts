@@ -330,11 +330,6 @@ export class OmniCampaignModuleConfig extends jspb.Message {
   getSkills(): OmniConversationSkills | undefined;
   setSkills(value?: OmniConversationSkills): void;
 
-  hasWhatsappNumber(): boolean;
-  clearWhatsappNumber(): void;
-  getWhatsappNumber(): WhatsAppNumber | undefined;
-  setWhatsappNumber(value?: WhatsAppNumber): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaignModuleConfig.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCampaignModuleConfig): OmniCampaignModuleConfig.AsObject;
@@ -367,7 +362,6 @@ export namespace OmniCampaignModuleConfig {
     paymentPortalIdsList: Array<string>,
     flowId?: api_commons_types_pb.Int64Id.AsObject,
     skills?: OmniConversationSkills.AsObject,
-    whatsappNumber?: WhatsAppNumber.AsObject,
   }
 }
 
@@ -2361,11 +2355,6 @@ export class ConnectedInbox extends jspb.Message {
   getAuthenticationType(): ConnectedInboxAuthenticationTypeMap[keyof ConnectedInboxAuthenticationTypeMap];
   setAuthenticationType(value: ConnectedInboxAuthenticationTypeMap[keyof ConnectedInboxAuthenticationTypeMap]): void;
 
-  hasOauthReferenceId(): boolean;
-  clearOauthReferenceId(): void;
-  getOauthReferenceId(): ConnectedInboxOAuthConfig | undefined;
-  setOauthReferenceId(value?: ConnectedInboxOAuthConfig): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConnectedInbox.AsObject;
   static toObject(includeInstance: boolean, msg: ConnectedInbox): ConnectedInbox.AsObject;
@@ -2399,39 +2388,6 @@ export namespace ConnectedInbox {
     googleXoauth2AccessToken?: google_protobuf_wrappers_pb.StringValue.AsObject,
     googleXoauth2AccessTokenExpiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     authenticationType: ConnectedInboxAuthenticationTypeMap[keyof ConnectedInboxAuthenticationTypeMap],
-    oauthReferenceId?: ConnectedInboxOAuthConfig.AsObject,
-  }
-}
-
-export class ConnectedInboxOAuthConfig extends jspb.Message {
-  getAccessToken(): string;
-  setAccessToken(value: string): void;
-
-  getRefreshToken(): string;
-  setRefreshToken(value: string): void;
-
-  getExpiresAt(): number;
-  setExpiresAt(value: number): void;
-
-  getReferenceId(): string;
-  setReferenceId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConnectedInboxOAuthConfig.AsObject;
-  static toObject(includeInstance: boolean, msg: ConnectedInboxOAuthConfig): ConnectedInboxOAuthConfig.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ConnectedInboxOAuthConfig, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConnectedInboxOAuthConfig;
-  static deserializeBinaryFromReader(message: ConnectedInboxOAuthConfig, reader: jspb.BinaryReader): ConnectedInboxOAuthConfig;
-}
-
-export namespace ConnectedInboxOAuthConfig {
-  export type AsObject = {
-    accessToken: string,
-    refreshToken: string,
-    expiresAt: number,
-    referenceId: string,
   }
 }
 
@@ -2546,11 +2502,6 @@ export class OmniProjectComplianceConfig extends jspb.Message {
   getSms(): OmniComplianceConfig | undefined;
   setSms(value?: OmniComplianceConfig): void;
 
-  hasWhatsapp(): boolean;
-  clearWhatsapp(): void;
-  getWhatsapp(): OmniComplianceConfig | undefined;
-  setWhatsapp(value?: OmniComplianceConfig): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniProjectComplianceConfig.AsObject;
   static toObject(includeInstance: boolean, msg: OmniProjectComplianceConfig): OmniProjectComplianceConfig.AsObject;
@@ -2565,7 +2516,6 @@ export namespace OmniProjectComplianceConfig {
   export type AsObject = {
     email?: OmniComplianceConfig.AsObject,
     sms?: OmniComplianceConfig.AsObject,
-    whatsapp?: OmniComplianceConfig.AsObject,
   }
 }
 
@@ -2642,34 +2592,6 @@ export namespace OmniComplianceConfig {
     information?: OmniComplianceAction.AsObject,
     scrubListId: string,
     ruleSetId?: google_protobuf_wrappers_pb.StringValue.AsObject,
-  }
-}
-
-export class WhatsAppNumber extends jspb.Message {
-  getNumber(): string;
-  setNumber(value: string): void;
-
-  getProvider(): WhatsAppNumberProviderMap[keyof WhatsAppNumberProviderMap];
-  setProvider(value: WhatsAppNumberProviderMap[keyof WhatsAppNumberProviderMap]): void;
-
-  getCountryCode(): number;
-  setCountryCode(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): WhatsAppNumber.AsObject;
-  static toObject(includeInstance: boolean, msg: WhatsAppNumber): WhatsAppNumber.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: WhatsAppNumber, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): WhatsAppNumber;
-  static deserializeBinaryFromReader(message: WhatsAppNumber, reader: jspb.BinaryReader): WhatsAppNumber;
-}
-
-export namespace WhatsAppNumber {
-  export type AsObject = {
-    number: string,
-    provider: WhatsAppNumberProviderMap[keyof WhatsAppNumberProviderMap],
-    countryCode: number,
   }
 }
 
@@ -2902,11 +2824,4 @@ export interface CampaignDirectionMap {
 }
 
 export const CampaignDirection: CampaignDirectionMap;
-
-export interface WhatsAppNumberProviderMap {
-  UNKNOWN_WHATSAPP_PROVIDER: 0;
-  WHATSAPP_SMS_PROVIDER: 1;
-}
-
-export const WhatsAppNumberProvider: WhatsAppNumberProviderMap;
 
