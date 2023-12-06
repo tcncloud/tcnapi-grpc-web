@@ -57,6 +57,35 @@ export class ListAutoEvaluationsRequest extends jspb.Message {
   getCompletedAt(): api_commons_scorecards_pb.TimeFilter | undefined;
   setCompletedAt(value?: api_commons_scorecards_pb.TimeFilter): void;
 
+  clearCategoryIdsList(): void;
+  getCategoryIdsList(): Array<number>;
+  setCategoryIdsList(value: Array<number>): void;
+  addCategoryIds(value: number, index?: number): number;
+
+  hasCallSid(): boolean;
+  clearCallSid(): void;
+  getCallSid(): ListAutoEvaluationsRequest.CallSidFilter | undefined;
+  setCallSid(value?: ListAutoEvaluationsRequest.CallSidFilter): void;
+
+  clearAgentUserIdsList(): void;
+  getAgentUserIdsList(): Array<string>;
+  setAgentUserIdsList(value: Array<string>): void;
+  addAgentUserIds(value: string, index?: number): string;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
+  clearRiskLevelsList(): void;
+  getRiskLevelsList(): Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>;
+  setRiskLevelsList(value: Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>): void;
+  addRiskLevels(value: api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap], index?: number): api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAutoEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAutoEvaluationsRequest): ListAutoEvaluationsRequest.AsObject;
@@ -71,6 +100,55 @@ export namespace ListAutoEvaluationsRequest {
   export type AsObject = {
     scorecardIdsList: Array<number>,
     completedAt?: api_commons_scorecards_pb.TimeFilter.AsObject,
+    categoryIdsList: Array<number>,
+    callSid?: ListAutoEvaluationsRequest.CallSidFilter.AsObject,
+    agentUserIdsList: Array<string>,
+    pageSize: number,
+    orderBy: string,
+    pageToken: string,
+    riskLevelsList: Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>,
+  }
+
+  export class CallSidFilter extends jspb.Message {
+    clearAnyOfList(): void;
+    getAnyOfList(): Array<number>;
+    setAnyOfList(value: Array<number>): void;
+    addAnyOf(value: number, index?: number): number;
+
+    getEq(): number;
+    setEq(value: number): void;
+
+    getGte(): number;
+    setGte(value: number): void;
+
+    getLte(): number;
+    setLte(value: number): void;
+
+    getGt(): number;
+    setGt(value: number): void;
+
+    getLt(): number;
+    setLt(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CallSidFilter.AsObject;
+    static toObject(includeInstance: boolean, msg: CallSidFilter): CallSidFilter.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CallSidFilter, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CallSidFilter;
+    static deserializeBinaryFromReader(message: CallSidFilter, reader: jspb.BinaryReader): CallSidFilter;
+  }
+
+  export namespace CallSidFilter {
+    export type AsObject = {
+      anyOfList: Array<number>,
+      eq: number,
+      gte: number,
+      lte: number,
+      gt: number,
+      lt: number,
+    }
   }
 }
 
@@ -79,6 +157,9 @@ export class ListAutoEvaluationsResponse extends jspb.Message {
   getAutoEvaluationsList(): Array<api_commons_scorecards_pb.AutoEvaluation>;
   setAutoEvaluationsList(value: Array<api_commons_scorecards_pb.AutoEvaluation>): void;
   addAutoEvaluations(value?: api_commons_scorecards_pb.AutoEvaluation, index?: number): api_commons_scorecards_pb.AutoEvaluation;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAutoEvaluationsResponse.AsObject;
@@ -93,6 +174,7 @@ export class ListAutoEvaluationsResponse extends jspb.Message {
 export namespace ListAutoEvaluationsResponse {
   export type AsObject = {
     autoEvaluationsList: Array<api_commons_scorecards_pb.AutoEvaluation.AsObject>,
+    nextPageToken: string,
   }
 }
 
