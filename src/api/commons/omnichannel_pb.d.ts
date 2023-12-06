@@ -2611,9 +2611,6 @@ export class WhatsAppNumber extends jspb.Message {
   getNumber(): string;
   setNumber(value: string): void;
 
-  getType(): WhatsAppNumberTypeMap[keyof WhatsAppNumberTypeMap];
-  setType(value: WhatsAppNumberTypeMap[keyof WhatsAppNumberTypeMap]): void;
-
   getProvider(): WhatsAppNumberProviderMap[keyof WhatsAppNumberProviderMap];
   setProvider(value: WhatsAppNumberProviderMap[keyof WhatsAppNumberProviderMap]): void;
 
@@ -2633,7 +2630,6 @@ export class WhatsAppNumber extends jspb.Message {
 export namespace WhatsAppNumber {
   export type AsObject = {
     number: string,
-    type: WhatsAppNumberTypeMap[keyof WhatsAppNumberTypeMap],
     provider: WhatsAppNumberProviderMap[keyof WhatsAppNumberProviderMap],
     countryCode: number,
   }
@@ -2869,18 +2865,9 @@ export interface CampaignDirectionMap {
 
 export const CampaignDirection: CampaignDirectionMap;
 
-export interface WhatsAppNumberTypeMap {
-  WHATSAPP_NUMBER_TYPE: 0;
-  WHATSAPP_ALPHANUMERIC_TYPE: 1;
-  WHATSAPP_SHORT_CODE_TYPE: 2;
-}
-
-export const WhatsAppNumberType: WhatsAppNumberTypeMap;
-
 export interface WhatsAppNumberProviderMap {
   UNKNOWN_WHATSAPP_PROVIDER: 0;
   WHATSAPP_SMS_PROVIDER: 1;
-  WHATSAPP_VOICE_PROVIDER: 2;
 }
 
 export const WhatsAppNumberProvider: WhatsAppNumberProviderMap;
