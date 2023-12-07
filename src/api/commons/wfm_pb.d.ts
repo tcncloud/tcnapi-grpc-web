@@ -668,6 +668,34 @@ export namespace ErrorTrace {
   }
 }
 
+export class InitialSetupStatus extends jspb.Message {
+  getState(): InitialSetupStateMap[keyof InitialSetupStateMap];
+  setState(value: InitialSetupStateMap[keyof InitialSetupStateMap]): void;
+
+  getProgressPercentage(): number;
+  setProgressPercentage(value: number): void;
+
+  getMessage(): string;
+  setMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InitialSetupStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: InitialSetupStatus): InitialSetupStatus.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: InitialSetupStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InitialSetupStatus;
+  static deserializeBinaryFromReader(message: InitialSetupStatus, reader: jspb.BinaryReader): InitialSetupStatus;
+}
+
+export namespace InitialSetupStatus {
+  export type AsObject = {
+    state: InitialSetupStateMap[keyof InitialSetupStateMap],
+    progressPercentage: number,
+    message: string,
+  }
+}
+
 export interface RegressionForecasterModelTypesMap {
   RANDOM_FOREST: 0;
   ADABOOST: 1;
@@ -915,4 +943,13 @@ export interface HistoryCacheStateMap {
 }
 
 export const HistoryCacheState: HistoryCacheStateMap;
+
+export interface InitialSetupStateMap {
+  NOT_SETUP: 0;
+  SETTING_UP: 1;
+  SETUP_COMPLETE: 2;
+  FAILURE: 3;
+}
+
+export const InitialSetupState: InitialSetupStateMap;
 

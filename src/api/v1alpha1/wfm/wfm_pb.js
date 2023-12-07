@@ -14690,7 +14690,8 @@ proto.api.v1alpha1.wfm.CallProfileTemplate.toObject = function(includeInstance, 
     fixedAverageHandleTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
     fixedAverageAfterCallWork: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
     fixedAverageTimeToAbort: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0),
-    defaultToFixedAveragesForecast: jspb.Message.getBooleanFieldWithDefault(msg, 13, false)
+    defaultToFixedAveragesForecast: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
+    timeZone: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
 
   if (includeInstance) {
@@ -14784,6 +14785,10 @@ proto.api.v1alpha1.wfm.CallProfileTemplate.deserializeBinaryFromReader = functio
     case 13:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDefaultToFixedAveragesForecast(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTimeZone(value);
       break;
     default:
       reader.skipField();
@@ -14908,6 +14913,13 @@ proto.api.v1alpha1.wfm.CallProfileTemplate.serializeBinaryToWriter = function(me
   if (f) {
     writer.writeBool(
       13,
+      f
+    );
+  }
+  f = message.getTimeZone();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
       f
     );
   }
@@ -15259,6 +15271,24 @@ proto.api.v1alpha1.wfm.CallProfileTemplate.prototype.getDefaultToFixedAveragesFo
  */
 proto.api.v1alpha1.wfm.CallProfileTemplate.prototype.setDefaultToFixedAveragesForecast = function(value) {
   return jspb.Message.setProto3BooleanField(this, 13, value);
+};
+
+
+/**
+ * optional string time_zone = 14;
+ * @return {string}
+ */
+proto.api.v1alpha1.wfm.CallProfileTemplate.prototype.getTimeZone = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.wfm.CallProfileTemplate} returns this
+ */
+proto.api.v1alpha1.wfm.CallProfileTemplate.prototype.setTimeZone = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
