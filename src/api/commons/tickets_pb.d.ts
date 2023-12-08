@@ -387,6 +387,22 @@ export class TicketAction extends jspb.Message {
   getWorkDoneBy(): string;
   setWorkDoneBy(value: string): void;
 
+  hasVoiceContext(): boolean;
+  clearVoiceContext(): void;
+  getVoiceContext(): CallbackContext | undefined;
+  setVoiceContext(value?: CallbackContext): void;
+
+  hasSmsContext(): boolean;
+  clearSmsContext(): void;
+  getSmsContext(): SmsbackContext | undefined;
+  setSmsContext(value?: SmsbackContext): void;
+
+  hasEmailContext(): boolean;
+  clearEmailContext(): void;
+  getEmailContext(): EmailbackContext | undefined;
+  setEmailContext(value?: EmailbackContext): void;
+
+  getContextCase(): TicketAction.ContextCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketAction.AsObject;
   static toObject(includeInstance: boolean, msg: TicketAction): TicketAction.AsObject;
@@ -409,6 +425,16 @@ export namespace TicketAction {
     actionSkillsList: Array<string>,
     actionSlaIdList: Array<Sla.AsObject>,
     workDoneBy: string,
+    voiceContext?: CallbackContext.AsObject,
+    smsContext?: SmsbackContext.AsObject,
+    emailContext?: EmailbackContext.AsObject,
+  }
+
+  export enum ContextCase {
+    CONTEXT_NOT_SET = 0,
+    VOICE_CONTEXT = 12,
+    SMS_CONTEXT = 13,
+    EMAIL_CONTEXT = 14,
   }
 }
 
@@ -445,6 +471,70 @@ export namespace CallbackContext {
     countryCode: string,
     callerName: string,
     callerCountryCode: string,
+  }
+}
+
+export class SmsbackContext extends jspb.Message {
+  getContactName(): string;
+  setContactName(value: string): void;
+
+  getToSms(): string;
+  setToSms(value: string): void;
+
+  getFromSms(): string;
+  setFromSms(value: string): void;
+
+  getToCountryCode(): string;
+  setToCountryCode(value: string): void;
+
+  getFromCountryCode(): string;
+  setFromCountryCode(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SmsbackContext.AsObject;
+  static toObject(includeInstance: boolean, msg: SmsbackContext): SmsbackContext.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SmsbackContext, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SmsbackContext;
+  static deserializeBinaryFromReader(message: SmsbackContext, reader: jspb.BinaryReader): SmsbackContext;
+}
+
+export namespace SmsbackContext {
+  export type AsObject = {
+    contactName: string,
+    toSms: string,
+    fromSms: string,
+    toCountryCode: string,
+    fromCountryCode: string,
+  }
+}
+
+export class EmailbackContext extends jspb.Message {
+  getContactName(): string;
+  setContactName(value: string): void;
+
+  getToEmail(): string;
+  setToEmail(value: string): void;
+
+  getFromEmail(): string;
+  setFromEmail(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EmailbackContext.AsObject;
+  static toObject(includeInstance: boolean, msg: EmailbackContext): EmailbackContext.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EmailbackContext, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EmailbackContext;
+  static deserializeBinaryFromReader(message: EmailbackContext, reader: jspb.BinaryReader): EmailbackContext;
+}
+
+export namespace EmailbackContext {
+  export type AsObject = {
+    contactName: string,
+    toEmail: string,
+    fromEmail: string,
   }
 }
 
