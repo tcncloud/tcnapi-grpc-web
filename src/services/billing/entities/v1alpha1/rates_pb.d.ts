@@ -51,6 +51,9 @@ export class RateDefinition extends jspb.Message {
   getDeleteTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setDeleteTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getMatchingsha(): string;
+  setMatchingsha(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RateDefinition.AsObject;
   static toObject(includeInstance: boolean, msg: RateDefinition): RateDefinition.AsObject;
@@ -74,6 +77,7 @@ export namespace RateDefinition {
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    matchingsha: string,
   }
 }
 
