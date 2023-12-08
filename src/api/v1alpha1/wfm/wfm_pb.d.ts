@@ -993,9 +993,6 @@ export class BuildCallProfileTemplateForSkillProfileReq extends jspb.Message {
   getSkillProfileSid(): number;
   setSkillProfileSid(value: number): void;
 
-  getTimeZone(): string;
-  setTimeZone(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildCallProfileTemplateForSkillProfileReq.AsObject;
   static toObject(includeInstance: boolean, msg: BuildCallProfileTemplateForSkillProfileReq): BuildCallProfileTemplateForSkillProfileReq.AsObject;
@@ -1009,7 +1006,6 @@ export class BuildCallProfileTemplateForSkillProfileReq extends jspb.Message {
 export namespace BuildCallProfileTemplateForSkillProfileReq {
   export type AsObject = {
     skillProfileSid: number,
-    timeZone: string,
   }
 }
 
@@ -1041,9 +1037,6 @@ export class BuildCallProfileTemplateReq extends jspb.Message {
   getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
   setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
 
-  getTimeZone(): string;
-  setTimeZone(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildCallProfileTemplateReq.AsObject;
   static toObject(includeInstance: boolean, msg: BuildCallProfileTemplateReq): BuildCallProfileTemplateReq.AsObject;
@@ -1057,7 +1050,6 @@ export class BuildCallProfileTemplateReq extends jspb.Message {
 export namespace BuildCallProfileTemplateReq {
   export type AsObject = {
     skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
-    timeZone: string,
   }
 }
 

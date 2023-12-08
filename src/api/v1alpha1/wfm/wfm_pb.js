@@ -15324,8 +15324,7 @@ proto.api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileReq.prototype.toOb
  */
 proto.api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillProfileSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    timeZone: jspb.Message.getFieldWithDefault(msg, 2, "")
+    skillProfileSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -15366,10 +15365,6 @@ proto.api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileReq.deserializeBin
       var value = /** @type {number} */ (reader.readInt64());
       msg.setSkillProfileSid(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTimeZone(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -15406,13 +15401,6 @@ proto.api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileReq.serializeBinar
       f
     );
   }
-  f = message.getTimeZone();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -15431,24 +15419,6 @@ proto.api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileReq.prototype.getS
  */
 proto.api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileReq.prototype.setSkillProfileSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-/**
- * optional string time_zone = 2;
- * @return {string}
- */
-proto.api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileReq.prototype.getTimeZone = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileReq} returns this
- */
-proto.api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileReq.prototype.setTimeZone = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -15635,8 +15605,7 @@ proto.api.v1alpha1.wfm.BuildCallProfileTemplateReq.prototype.toObject = function
  */
 proto.api.v1alpha1.wfm.BuildCallProfileTemplateReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f),
-    timeZone: jspb.Message.getFieldWithDefault(msg, 2, "")
+    skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15678,10 +15647,6 @@ proto.api.v1alpha1.wfm.BuildCallProfileTemplateReq.deserializeBinaryFromReader =
       reader.readMessage(value,api_commons_wfm_pb.SkillProfileCategory.deserializeBinaryFromReader);
       msg.setSkillProfileCategory(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTimeZone(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -15717,13 +15682,6 @@ proto.api.v1alpha1.wfm.BuildCallProfileTemplateReq.serializeBinaryToWriter = fun
       1,
       f,
       api_commons_wfm_pb.SkillProfileCategory.serializeBinaryToWriter
-    );
-  }
-  f = message.getTimeZone();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
     );
   }
 };
@@ -15763,24 +15721,6 @@ proto.api.v1alpha1.wfm.BuildCallProfileTemplateReq.prototype.clearSkillProfileCa
  */
 proto.api.v1alpha1.wfm.BuildCallProfileTemplateReq.prototype.hasSkillProfileCategory = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string time_zone = 2;
- * @return {string}
- */
-proto.api.v1alpha1.wfm.BuildCallProfileTemplateReq.prototype.getTimeZone = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.wfm.BuildCallProfileTemplateReq} returns this
- */
-proto.api.v1alpha1.wfm.BuildCallProfileTemplateReq.prototype.setTimeZone = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
