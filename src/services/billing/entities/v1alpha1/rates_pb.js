@@ -117,7 +117,8 @@ proto.services.billing.entities.v1alpha1.RateDefinition.toObject = function(incl
     config: (f = msg.getConfig()) && proto.services.billing.entities.v1alpha1.RateDefinitionConfig.toObject(includeInstance, f),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    matchingSha: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -202,6 +203,10 @@ proto.services.billing.entities.v1alpha1.RateDefinition.deserializeBinaryFromRea
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setDeleteTime(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMatchingSha(value);
       break;
     default:
       reader.skipField();
@@ -312,6 +317,13 @@ proto.services.billing.entities.v1alpha1.RateDefinition.serializeBinaryToWriter 
       11,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getMatchingSha();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
     );
   }
 };
@@ -607,6 +619,24 @@ proto.services.billing.entities.v1alpha1.RateDefinition.prototype.clearDeleteTim
  */
 proto.services.billing.entities.v1alpha1.RateDefinition.prototype.hasDeleteTime = function() {
   return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional string matching_sha = 12;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha1.RateDefinition.prototype.getMatchingSha = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha1.RateDefinition} returns this
+ */
+proto.services.billing.entities.v1alpha1.RateDefinition.prototype.setMatchingSha = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
