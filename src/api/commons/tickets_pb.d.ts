@@ -402,6 +402,11 @@ export class TicketAction extends jspb.Message {
   getEmailContext(): EmailbackContext | undefined;
   setEmailContext(value?: EmailbackContext): void;
 
+  hasActionType(): boolean;
+  clearActionType(): void;
+  getActionType(): ActionType | undefined;
+  setActionType(value?: ActionType): void;
+
   getContextCase(): TicketAction.ContextCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketAction.AsObject;
@@ -428,6 +433,7 @@ export namespace TicketAction {
     voiceContext?: CallbackContext.AsObject,
     smsContext?: SmsbackContext.AsObject,
     emailContext?: EmailbackContext.AsObject,
+    actionType?: ActionType.AsObject,
   }
 
   export enum ContextCase {
@@ -507,6 +513,30 @@ export namespace SmsbackContext {
     fromSms: string,
     toCountryCode: string,
     fromCountryCode: string,
+  }
+}
+
+export class ActionType extends jspb.Message {
+  getActionTypeId(): string;
+  setActionTypeId(value: string): void;
+
+  getActionName(): string;
+  setActionName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ActionType.AsObject;
+  static toObject(includeInstance: boolean, msg: ActionType): ActionType.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ActionType, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ActionType;
+  static deserializeBinaryFromReader(message: ActionType, reader: jspb.BinaryReader): ActionType;
+}
+
+export namespace ActionType {
+  export type AsObject = {
+    actionTypeId: string,
+    actionName: string,
   }
 }
 
