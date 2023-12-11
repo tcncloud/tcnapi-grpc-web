@@ -95,6 +95,15 @@ type SkillsServiceGetSkillGroupMembers = {
   readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.GetSkillGroupMembersResponse;
 };
 
+type SkillsServiceListSkillGroupsMembers = {
+  readonly methodName: string;
+  readonly service: typeof SkillsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_skills_entities_pb.ListSkillGroupsMembersRequest;
+  readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.ListSkillGroupsMembersResponse;
+};
+
 export class SkillsService {
   static readonly serviceName: string;
   static readonly CreateSkillGroup: SkillsServiceCreateSkillGroup;
@@ -107,6 +116,7 @@ export class SkillsService {
   static readonly GetUserSkillGroups: SkillsServiceGetUserSkillGroups;
   static readonly GetUserSkills: SkillsServiceGetUserSkills;
   static readonly GetSkillGroupMembers: SkillsServiceGetSkillGroupMembers;
+  static readonly ListSkillGroupsMembers: SkillsServiceListSkillGroupsMembers;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -230,6 +240,15 @@ export class SkillsServiceClient {
   getSkillGroupMembers(
     requestMessage: api_v1alpha1_org_skills_entities_pb.GetSkillGroupMembersRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.GetSkillGroupMembersResponse|null) => void
+  ): UnaryResponse;
+  listSkillGroupsMembers(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.ListSkillGroupsMembersRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.ListSkillGroupsMembersResponse|null) => void
+  ): UnaryResponse;
+  listSkillGroupsMembers(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.ListSkillGroupsMembersRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.ListSkillGroupsMembersResponse|null) => void
   ): UnaryResponse;
 }
 

@@ -428,3 +428,67 @@ export namespace GetSkillGroupMembersResponse {
   }
 }
 
+export class ListSkillGroupsMembersRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSkillGroupsMembersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSkillGroupsMembersRequest): ListSkillGroupsMembersRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSkillGroupsMembersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSkillGroupsMembersRequest;
+  static deserializeBinaryFromReader(message: ListSkillGroupsMembersRequest, reader: jspb.BinaryReader): ListSkillGroupsMembersRequest;
+}
+
+export namespace ListSkillGroupsMembersRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListSkillGroupsMembersResponse extends jspb.Message {
+  clearSkillGroupMembersList(): void;
+  getSkillGroupMembersList(): Array<SkillGroupMembers>;
+  setSkillGroupMembersList(value: Array<SkillGroupMembers>): void;
+  addSkillGroupMembers(value?: SkillGroupMembers, index?: number): SkillGroupMembers;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSkillGroupsMembersResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSkillGroupsMembersResponse): ListSkillGroupsMembersResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSkillGroupsMembersResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSkillGroupsMembersResponse;
+  static deserializeBinaryFromReader(message: ListSkillGroupsMembersResponse, reader: jspb.BinaryReader): ListSkillGroupsMembersResponse;
+}
+
+export namespace ListSkillGroupsMembersResponse {
+  export type AsObject = {
+    skillGroupMembersList: Array<SkillGroupMembers.AsObject>,
+  }
+}
+
+export class SkillGroupMembers extends jspb.Message {
+  getSkillGroupId(): string;
+  setSkillGroupId(value: string): void;
+
+  clearUserIdsList(): void;
+  getUserIdsList(): Array<string>;
+  setUserIdsList(value: Array<string>): void;
+  addUserIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SkillGroupMembers.AsObject;
+  static toObject(includeInstance: boolean, msg: SkillGroupMembers): SkillGroupMembers.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SkillGroupMembers, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SkillGroupMembers;
+  static deserializeBinaryFromReader(message: SkillGroupMembers, reader: jspb.BinaryReader): SkillGroupMembers;
+}
+
+export namespace SkillGroupMembers {
+  export type AsObject = {
+    skillGroupId: string,
+    userIdsList: Array<string>,
+  }
+}
+
