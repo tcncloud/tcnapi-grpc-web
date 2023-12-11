@@ -350,6 +350,44 @@ export namespace CreateTicketRes {
   }
 }
 
+export class GetActionTypeRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetActionTypeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetActionTypeRequest): GetActionTypeRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetActionTypeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetActionTypeRequest;
+  static deserializeBinaryFromReader(message: GetActionTypeRequest, reader: jspb.BinaryReader): GetActionTypeRequest;
+}
+
+export namespace GetActionTypeRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetActionTypeResponse extends jspb.Message {
+  clearActionTypeList(): void;
+  getActionTypeList(): Array<api_commons_tickets_pb.ActionType>;
+  setActionTypeList(value: Array<api_commons_tickets_pb.ActionType>): void;
+  addActionType(value?: api_commons_tickets_pb.ActionType, index?: number): api_commons_tickets_pb.ActionType;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetActionTypeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetActionTypeResponse): GetActionTypeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetActionTypeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetActionTypeResponse;
+  static deserializeBinaryFromReader(message: GetActionTypeResponse, reader: jspb.BinaryReader): GetActionTypeResponse;
+}
+
+export namespace GetActionTypeResponse {
+  export type AsObject = {
+    actionTypeList: Array<api_commons_tickets_pb.ActionType.AsObject>,
+  }
+}
+
 export class EditTicketReq extends jspb.Message {
   getTicketSid(): string;
   setTicketSid(value: string): void;
