@@ -14,6 +14,15 @@ type AuthConnectionServiceCreateAuthConnection = {
   readonly responseType: typeof api_v1alpha1_org_authconnection_entities_pb.CreateAuthConnectionResponse;
 };
 
+type AuthConnectionServiceListAuthConnectionIds = {
+  readonly methodName: string;
+  readonly service: typeof AuthConnectionService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_authconnection_entities_pb.ListAuthConnectionIdsRequest;
+  readonly responseType: typeof api_v1alpha1_org_authconnection_entities_pb.ListAuthConnectionIdsResponse;
+};
+
 type AuthConnectionServiceGetAuthConnectionSettings = {
   readonly methodName: string;
   readonly service: typeof AuthConnectionService;
@@ -62,6 +71,7 @@ type AuthConnectionServiceUpdateAuthConnectionGroups = {
 export class AuthConnectionService {
   static readonly serviceName: string;
   static readonly CreateAuthConnection: AuthConnectionServiceCreateAuthConnection;
+  static readonly ListAuthConnectionIds: AuthConnectionServiceListAuthConnectionIds;
   static readonly GetAuthConnectionSettings: AuthConnectionServiceGetAuthConnectionSettings;
   static readonly GetAuthConnection: AuthConnectionServiceGetAuthConnection;
   static readonly DeleteAuthConnection: AuthConnectionServiceDeleteAuthConnection;
@@ -109,6 +119,15 @@ export class AuthConnectionServiceClient {
   createAuthConnection(
     requestMessage: api_v1alpha1_org_authconnection_entities_pb.CreateAuthConnectionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_authconnection_entities_pb.CreateAuthConnectionResponse|null) => void
+  ): UnaryResponse;
+  listAuthConnectionIds(
+    requestMessage: api_v1alpha1_org_authconnection_entities_pb.ListAuthConnectionIdsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_authconnection_entities_pb.ListAuthConnectionIdsResponse|null) => void
+  ): UnaryResponse;
+  listAuthConnectionIds(
+    requestMessage: api_v1alpha1_org_authconnection_entities_pb.ListAuthConnectionIdsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_authconnection_entities_pb.ListAuthConnectionIdsResponse|null) => void
   ): UnaryResponse;
   getAuthConnectionSettings(
     requestMessage: api_v1alpha1_org_authconnection_entities_pb.GetAuthConnectionSettingsRequest,

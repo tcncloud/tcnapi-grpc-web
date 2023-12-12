@@ -283,3 +283,41 @@ export namespace UpdateAuthConnectionGroupsResponse {
   }
 }
 
+export class ListAuthConnectionIdsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAuthConnectionIdsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAuthConnectionIdsRequest): ListAuthConnectionIdsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAuthConnectionIdsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAuthConnectionIdsRequest;
+  static deserializeBinaryFromReader(message: ListAuthConnectionIdsRequest, reader: jspb.BinaryReader): ListAuthConnectionIdsRequest;
+}
+
+export namespace ListAuthConnectionIdsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListAuthConnectionIdsResponse extends jspb.Message {
+  clearAuthConnetionIdsList(): void;
+  getAuthConnetionIdsList(): Array<string>;
+  setAuthConnetionIdsList(value: Array<string>): void;
+  addAuthConnetionIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAuthConnectionIdsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAuthConnectionIdsResponse): ListAuthConnectionIdsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAuthConnectionIdsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAuthConnectionIdsResponse;
+  static deserializeBinaryFromReader(message: ListAuthConnectionIdsResponse, reader: jspb.BinaryReader): ListAuthConnectionIdsResponse;
+}
+
+export namespace ListAuthConnectionIdsResponse {
+  export type AsObject = {
+    authConnetionIdsList: Array<string>,
+  }
+}
+
