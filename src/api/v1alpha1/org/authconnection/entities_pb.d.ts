@@ -300,10 +300,10 @@ export namespace ListAuthConnectionIdsRequest {
 }
 
 export class ListAuthConnectionIdsResponse extends jspb.Message {
-  clearAuthConnetionIdsList(): void;
-  getAuthConnetionIdsList(): Array<string>;
-  setAuthConnetionIdsList(value: Array<string>): void;
-  addAuthConnetionIds(value: string, index?: number): string;
+  clearConnectionsList(): void;
+  getConnectionsList(): Array<ListAuthConnectionIdsResponse.Connection>;
+  setConnectionsList(value: Array<ListAuthConnectionIdsResponse.Connection>): void;
+  addConnections(value?: ListAuthConnectionIdsResponse.Connection, index?: number): ListAuthConnectionIdsResponse.Connection;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAuthConnectionIdsResponse.AsObject;
@@ -317,7 +317,31 @@ export class ListAuthConnectionIdsResponse extends jspb.Message {
 
 export namespace ListAuthConnectionIdsResponse {
   export type AsObject = {
-    authConnetionIdsList: Array<string>,
+    connectionsList: Array<ListAuthConnectionIdsResponse.Connection.AsObject>,
+  }
+
+  export class Connection extends jspb.Message {
+    getAuthConnectionId(): string;
+    setAuthConnectionId(value: string): void;
+
+    getName(): string;
+    setName(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Connection.AsObject;
+    static toObject(includeInstance: boolean, msg: Connection): Connection.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Connection, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Connection;
+    static deserializeBinaryFromReader(message: Connection, reader: jspb.BinaryReader): Connection;
+  }
+
+  export namespace Connection {
+    export type AsObject = {
+      authConnectionId: string,
+      name: string,
+    }
   }
 }
 
