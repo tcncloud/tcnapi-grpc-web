@@ -9,6 +9,44 @@ import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
+export class PerformInitialClientSetupRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PerformInitialClientSetupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PerformInitialClientSetupRequest): PerformInitialClientSetupRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PerformInitialClientSetupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PerformInitialClientSetupRequest;
+  static deserializeBinaryFromReader(message: PerformInitialClientSetupRequest, reader: jspb.BinaryReader): PerformInitialClientSetupRequest;
+}
+
+export namespace PerformInitialClientSetupRequest {
+  export type AsObject = {
+  }
+}
+
+export class PerformInitialClientSetupResponse extends jspb.Message {
+  hasSetupStatus(): boolean;
+  clearSetupStatus(): void;
+  getSetupStatus(): api_commons_wfm_pb.InitialSetupStatus | undefined;
+  setSetupStatus(value?: api_commons_wfm_pb.InitialSetupStatus): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PerformInitialClientSetupResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PerformInitialClientSetupResponse): PerformInitialClientSetupResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PerformInitialClientSetupResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PerformInitialClientSetupResponse;
+  static deserializeBinaryFromReader(message: PerformInitialClientSetupResponse, reader: jspb.BinaryReader): PerformInitialClientSetupResponse;
+}
+
+export namespace PerformInitialClientSetupResponse {
+  export type AsObject = {
+    setupStatus?: api_commons_wfm_pb.InitialSetupStatus.AsObject,
+  }
+}
+
 export class Skill extends jspb.Message {
   getSkillSid(): number;
   setSkillSid(value: number): void;
