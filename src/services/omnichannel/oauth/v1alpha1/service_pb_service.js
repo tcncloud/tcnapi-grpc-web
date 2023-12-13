@@ -2,7 +2,7 @@
 // file: services/omnichannel/oauth/v1alpha1/service.proto
 
 var services_omnichannel_oauth_v1alpha1_service_pb = require("../../../../services/omnichannel/oauth/v1alpha1/service_pb");
-var services_omnichannel_oauth_entities_v1alpha1_entities_pb = require("../../../../services/omnichannel/oauth/entities/v1alpha1/entities_pb");
+var services_omnichannel_oauth_v1alpha1_entities_pb = require("../../../../services/omnichannel/oauth/v1alpha1/entities_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var OauthService = (function () {
@@ -16,8 +16,8 @@ OauthService.GetConnectedInboxOAuthSpecifications = {
   service: OauthService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_oauth_entities_v1alpha1_entities_pb.GetConnectedInboxOAuthSpecificationsRequest,
-  responseType: services_omnichannel_oauth_entities_v1alpha1_entities_pb.GetConnectedInboxOAuthSpecificationsResponse
+  requestType: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthSpecificationsRequest,
+  responseType: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthSpecificationsResponse
 };
 
 exports.OauthService = OauthService;

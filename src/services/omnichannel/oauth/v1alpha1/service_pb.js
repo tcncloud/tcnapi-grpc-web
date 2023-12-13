@@ -25,5 +25,5 @@ var annotations_authz_pb = require('../../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
 var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
-var services_omnichannel_oauth_entities_v1alpha1_entities_pb = require('../../../../services/omnichannel/oauth/entities/v1alpha1/entities_pb.js');
-goog.object.extend(proto, services_omnichannel_oauth_entities_v1alpha1_entities_pb);
+var services_omnichannel_oauth_v1alpha1_entities_pb = require('../../../../services/omnichannel/oauth/v1alpha1/entities_pb.js');
+goog.object.extend(proto, services_omnichannel_oauth_v1alpha1_entities_pb);

@@ -1,8 +1,8 @@
-// package: services.omnichannel.oauth.entities.v1alpha1
-// file: services/omnichannel/oauth/entities/v1alpha1/entities.proto
+// package: services.omnichannel.oauth.v1alpha1
+// file: services/omnichannel/oauth/v1alpha1/entities.proto
 
 import * as jspb from "google-protobuf";
-import * as api_commons_omnichannel_pb from "../../../../../api/commons/omnichannel_pb";
+import * as api_commons_omnichannel_pb from "../../../../api/commons/omnichannel_pb";
 
 export class GetConnectedInboxOAuthSpecificationsRequest extends jspb.Message {
   getAuthenticationType(): api_commons_omnichannel_pb.ConnectedInboxAuthenticationTypeMap[keyof api_commons_omnichannel_pb.ConnectedInboxAuthenticationTypeMap];
