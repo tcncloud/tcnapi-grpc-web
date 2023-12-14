@@ -717,6 +717,15 @@ type OrgSendUserEmailVerification = {
   readonly responseType: typeof api_v1alpha1_org_user_pb.SendUserEmailVerificationResponse;
 };
 
+type OrgSendUserEmailPasswordReset = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.SendUserEmailPasswordResetRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.SendUserEmailPasswordResetResponse;
+};
+
 type OrgSendUserEmailVerificationByOrgId = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1562,6 +1571,7 @@ export class Org {
   static readonly GetUserEmailVerified: OrgGetUserEmailVerified;
   static readonly GetUserEmailVerifiedByOrgId: OrgGetUserEmailVerifiedByOrgId;
   static readonly SendUserEmailVerification: OrgSendUserEmailVerification;
+  static readonly SendUserEmailPasswordReset: OrgSendUserEmailPasswordReset;
   static readonly SendUserEmailVerificationByOrgId: OrgSendUserEmailVerificationByOrgId;
   static readonly GetUserSessionData: OrgGetUserSessionData;
   static readonly GetAgentProfileGroup: OrgGetAgentProfileGroup;
@@ -2318,6 +2328,15 @@ export class OrgClient {
   sendUserEmailVerification(
     requestMessage: api_v1alpha1_org_user_pb.SendUserEmailVerificationRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.SendUserEmailVerificationResponse|null) => void
+  ): UnaryResponse;
+  sendUserEmailPasswordReset(
+    requestMessage: api_v1alpha1_org_user_pb.SendUserEmailPasswordResetRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.SendUserEmailPasswordResetResponse|null) => void
+  ): UnaryResponse;
+  sendUserEmailPasswordReset(
+    requestMessage: api_v1alpha1_org_user_pb.SendUserEmailPasswordResetRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.SendUserEmailPasswordResetResponse|null) => void
   ): UnaryResponse;
   sendUserEmailVerificationByOrgId(
     requestMessage: api_v1alpha1_org_user_pb.SendUserEmailVerificationByOrgIdRequest,

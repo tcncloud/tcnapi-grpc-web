@@ -1854,6 +1854,42 @@ export namespace GetUserLoginInfoResponse {
   }
 }
 
+export class SendUserEmailPasswordResetRequest extends jspb.Message {
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SendUserEmailPasswordResetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SendUserEmailPasswordResetRequest): SendUserEmailPasswordResetRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SendUserEmailPasswordResetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SendUserEmailPasswordResetRequest;
+  static deserializeBinaryFromReader(message: SendUserEmailPasswordResetRequest, reader: jspb.BinaryReader): SendUserEmailPasswordResetRequest;
+}
+
+export namespace SendUserEmailPasswordResetRequest {
+  export type AsObject = {
+    email: string,
+  }
+}
+
+export class SendUserEmailPasswordResetResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SendUserEmailPasswordResetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SendUserEmailPasswordResetResponse): SendUserEmailPasswordResetResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SendUserEmailPasswordResetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SendUserEmailPasswordResetResponse;
+  static deserializeBinaryFromReader(message: SendUserEmailPasswordResetResponse, reader: jspb.BinaryReader): SendUserEmailPasswordResetResponse;
+}
+
+export namespace SendUserEmailPasswordResetResponse {
+  export type AsObject = {
+  }
+}
+
 export class GetUserEmailVerifiedRequest extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
