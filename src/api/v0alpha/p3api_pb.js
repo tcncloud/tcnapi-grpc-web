@@ -36789,8 +36789,8 @@ proto.api.v0alpha.ManualDialStartReq.toObject = function(includeInstance, msg) {
     simpleCallData: (f = msg.getSimpleCallData()) && api_commons_call_pb.SimpleCallData.toObject(includeInstance, f),
     huntGroupSid: jspb.Message.getFieldWithDefault(msg, 6, 0),
     agentSessionSid: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    bucketid: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    bucketregiondata: jspb.Message.getFieldWithDefault(msg, 9, "")
+    bucketId: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    bucketRegionData: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -36842,11 +36842,11 @@ proto.api.v0alpha.ManualDialStartReq.deserializeBinaryFromReader = function(msg,
       break;
     case 8:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setBucketid(value);
+      msg.setBucketId(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBucketregiondata(value);
+      msg.setBucketRegionData(value);
       break;
     default:
       reader.skipField();
@@ -36899,14 +36899,14 @@ proto.api.v0alpha.ManualDialStartReq.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getBucketid();
+  f = message.getBucketId();
   if (f !== 0) {
     writer.writeInt64(
       8,
       f
     );
   }
-  f = message.getBucketregiondata();
+  f = message.getBucketRegionData();
   if (f.length > 0) {
     writer.writeString(
       9,
@@ -36990,10 +36990,10 @@ proto.api.v0alpha.ManualDialStartReq.prototype.setAgentSessionSid = function(val
 
 
 /**
- * optional int64 bucketId = 8;
+ * optional int64 bucket_id = 8;
  * @return {number}
  */
-proto.api.v0alpha.ManualDialStartReq.prototype.getBucketid = function() {
+proto.api.v0alpha.ManualDialStartReq.prototype.getBucketId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -37002,16 +37002,16 @@ proto.api.v0alpha.ManualDialStartReq.prototype.getBucketid = function() {
  * @param {number} value
  * @return {!proto.api.v0alpha.ManualDialStartReq} returns this
  */
-proto.api.v0alpha.ManualDialStartReq.prototype.setBucketid = function(value) {
+proto.api.v0alpha.ManualDialStartReq.prototype.setBucketId = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
 /**
- * optional string bucketRegionData = 9;
+ * optional string bucket_region_data = 9;
  * @return {string}
  */
-proto.api.v0alpha.ManualDialStartReq.prototype.getBucketregiondata = function() {
+proto.api.v0alpha.ManualDialStartReq.prototype.getBucketRegionData = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -37020,7 +37020,7 @@ proto.api.v0alpha.ManualDialStartReq.prototype.getBucketregiondata = function() 
  * @param {string} value
  * @return {!proto.api.v0alpha.ManualDialStartReq} returns this
  */
-proto.api.v0alpha.ManualDialStartReq.prototype.setBucketregiondata = function(value) {
+proto.api.v0alpha.ManualDialStartReq.prototype.setBucketRegionData = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
 };
 
