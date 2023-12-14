@@ -4327,6 +4327,12 @@ export class ManualDialStartReq extends jspb.Message {
   getAgentSessionSid(): number;
   setAgentSessionSid(value: number): void;
 
+  getBucketid(): number;
+  setBucketid(value: number): void;
+
+  getBucketregiondata(): string;
+  setBucketregiondata(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManualDialStartReq.AsObject;
   static toObject(includeInstance: boolean, msg: ManualDialStartReq): ManualDialStartReq.AsObject;
@@ -4342,6 +4348,8 @@ export namespace ManualDialStartReq {
     simpleCallData?: api_commons_call_pb.SimpleCallData.AsObject,
     huntGroupSid: number,
     agentSessionSid: number,
+    bucketid: number,
+    bucketregiondata: string,
   }
 }
 
