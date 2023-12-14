@@ -94,7 +94,8 @@ proto.services.billing.entities.v1alpha1.BillingPlan.toObject = function(include
     endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     rateDefinitionIdsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
-    status: jspb.Message.getFieldWithDefault(msg, 8, 0)
+    status: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    actualStartTime: (f = msg.getActualStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -167,6 +168,11 @@ proto.services.billing.entities.v1alpha1.BillingPlan.deserializeBinaryFromReader
     case 8:
       var value = /** @type {!proto.services.billing.entities.v1alpha1.BillingPlanStatus} */ (reader.readEnum());
       msg.setStatus(value);
+      break;
+    case 9:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setActualStartTime(value);
       break;
     default:
       reader.skipField();
@@ -256,6 +262,14 @@ proto.services.billing.entities.v1alpha1.BillingPlan.serializeBinaryToWriter = f
     writer.writeEnum(
       8,
       f
+    );
+  }
+  f = message.getActualStartTime();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -516,6 +530,43 @@ proto.services.billing.entities.v1alpha1.BillingPlan.prototype.getStatus = funct
  */
 proto.services.billing.entities.v1alpha1.BillingPlan.prototype.setStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 8, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp actual_start_time = 9;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.services.billing.entities.v1alpha1.BillingPlan.prototype.getActualStartTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha1.BillingPlan} returns this
+*/
+proto.services.billing.entities.v1alpha1.BillingPlan.prototype.setActualStartTime = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha1.BillingPlan} returns this
+ */
+proto.services.billing.entities.v1alpha1.BillingPlan.prototype.clearActualStartTime = function() {
+  return this.setActualStartTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha1.BillingPlan.prototype.hasActualStartTime = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
