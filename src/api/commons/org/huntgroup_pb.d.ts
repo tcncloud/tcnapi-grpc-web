@@ -1839,3 +1839,212 @@ export namespace DataDipConfig {
   }
 }
 
+export class IntegrationLink extends jspb.Message {
+  getIntegrationId(): number;
+  setIntegrationId(value: number): void;
+
+  getParameterSid(): number;
+  setParameterSid(value: number): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getMethodId(): number;
+  setMethodId(value: number): void;
+
+  getOrder(): number;
+  setOrder(value: number): void;
+
+  clearParametersList(): void;
+  getParametersList(): Array<IntegrationLinkParameter>;
+  setParametersList(value: Array<IntegrationLinkParameter>): void;
+  addParameters(value?: IntegrationLinkParameter, index?: number): IntegrationLinkParameter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): IntegrationLink.AsObject;
+  static toObject(includeInstance: boolean, msg: IntegrationLink): IntegrationLink.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: IntegrationLink, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): IntegrationLink;
+  static deserializeBinaryFromReader(message: IntegrationLink, reader: jspb.BinaryReader): IntegrationLink;
+}
+
+export namespace IntegrationLink {
+  export type AsObject = {
+    integrationId: number,
+    parameterSid: number,
+    name: string,
+    description: string,
+    methodId: number,
+    order: number,
+    parametersList: Array<IntegrationLinkParameter.AsObject>,
+  }
+}
+
+export class IntegrationLinkParameter extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): void;
+
+  clearSubParametersList(): void;
+  getSubParametersList(): Array<IntegrationLinkSubParameter>;
+  setSubParametersList(value: Array<IntegrationLinkSubParameter>): void;
+  addSubParameters(value?: IntegrationLinkSubParameter, index?: number): IntegrationLinkSubParameter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): IntegrationLinkParameter.AsObject;
+  static toObject(includeInstance: boolean, msg: IntegrationLinkParameter): IntegrationLinkParameter.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: IntegrationLinkParameter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): IntegrationLinkParameter;
+  static deserializeBinaryFromReader(message: IntegrationLinkParameter, reader: jspb.BinaryReader): IntegrationLinkParameter;
+}
+
+export namespace IntegrationLinkParameter {
+  export type AsObject = {
+    key: string,
+    subParametersList: Array<IntegrationLinkSubParameter.AsObject>,
+  }
+}
+
+export class IntegrationLinkSubParameter extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): void;
+
+  clearPartsList(): void;
+  getPartsList(): Array<IntegrationLinkSubParameterPart>;
+  setPartsList(value: Array<IntegrationLinkSubParameterPart>): void;
+  addParts(value?: IntegrationLinkSubParameterPart, index?: number): IntegrationLinkSubParameterPart;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): IntegrationLinkSubParameter.AsObject;
+  static toObject(includeInstance: boolean, msg: IntegrationLinkSubParameter): IntegrationLinkSubParameter.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: IntegrationLinkSubParameter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): IntegrationLinkSubParameter;
+  static deserializeBinaryFromReader(message: IntegrationLinkSubParameter, reader: jspb.BinaryReader): IntegrationLinkSubParameter;
+}
+
+export namespace IntegrationLinkSubParameter {
+  export type AsObject = {
+    key: string,
+    partsList: Array<IntegrationLinkSubParameterPart.AsObject>,
+  }
+}
+
+export class IntegrationLinkSubParameterPart extends jspb.Message {
+  getContactFieldSid(): number;
+  setContactFieldSid(value: number): void;
+
+  getHelperValue(): string;
+  setHelperValue(value: string): void;
+
+  getParameterSourceType(): ParameterSourceTypeMap[keyof ParameterSourceTypeMap];
+  setParameterSourceType(value: ParameterSourceTypeMap[keyof ParameterSourceTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): IntegrationLinkSubParameterPart.AsObject;
+  static toObject(includeInstance: boolean, msg: IntegrationLinkSubParameterPart): IntegrationLinkSubParameterPart.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: IntegrationLinkSubParameterPart, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): IntegrationLinkSubParameterPart;
+  static deserializeBinaryFromReader(message: IntegrationLinkSubParameterPart, reader: jspb.BinaryReader): IntegrationLinkSubParameterPart;
+}
+
+export namespace IntegrationLinkSubParameterPart {
+  export type AsObject = {
+    contactFieldSid: number,
+    helperValue: string,
+    parameterSourceType: ParameterSourceTypeMap[keyof ParameterSourceTypeMap],
+  }
+}
+
+export interface ParameterSourceTypeMap {
+  PARAMETER_SOURCE_TYPE_UNSPECIFIED: 0;
+  PARAMETER_SOURCE_TYPE_STATIC_TEXT: 1;
+  PARAMETER_SOURCE_TYPE_CFD_ID: 100;
+  PARAMETER_SOURCE_TYPE_AGENT_ID: 200;
+  PARAMETER_SOURCE_TYPE_AGENT_FIRST_NAME: 201;
+  PARAMETER_SOURCE_TYPE_AGENT_LAST_NAME: 202;
+  PARAMETER_SOURCE_TYPE_AGENT_USERNAME: 203;
+  PARAMETER_SOURCE_TYPE_PARTNER_AGENT_ID: 204;
+  PARAMETER_SOURCE_TYPE_HG_ID: 205;
+  PARAMETER_SOURCE_TYPE_HG_NAME: 206;
+  PARAMETER_SOURCE_TYPE_HG_TYPE: 207;
+  PARAMETER_SOURCE_TYPE_CONSUMER_PHONE: 208;
+  PARAMETER_SOURCE_TYPE_CALLER_ID: 209;
+  PARAMETER_SOURCE_TYPE_CALL_ID: 210;
+  PARAMETER_SOURCE_TYPE_GROUP_ID: 211;
+  PARAMETER_SOURCE_TYPE_AGENT_SESSION_ID: 212;
+  PARAMETER_SOURCE_TYPE_DATA_DIP: 300;
+  PARAMETER_SOURCE_TYPE_IVR_DATA: 400;
+  PARAMETER_SOURCE_TYPE_DATA_COLLECT: 500;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_AREA_CODE: 600;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_CARRIER: 601;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_CENTRAL_OFFICE_CODE: 602;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_CITY: 603;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_COUNTRY_CODE: 604;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_SUBSCRIBER_NUMBER: 605;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_ISO_CODE: 606;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_INTERNATIONAL_PREFIX: 607;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_LANGUAGE: 608;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_LATITUDE: 609;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_LONGITUDE: 610;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_MAXIMUM_BLOCK_NUMBER: 611;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_MINIMUM_BLOCK_NUMBER: 612;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_NATIONAL_DESTINATION: 613;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_NATIONAL_PREFIX: 614;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_NUMBER_BLOCK_ID: 615;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_NUMBER_TYPE: 616;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_USES_NDC: 617;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_DAYLIGHT_SAVINGS: 618;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_PREFIX: 619;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_REGION_CODE: 620;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_REGION_NAME: 621;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_SPECIAL_SERVICE_CODE_1: 622;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_SPECIAL_SERVICE_CODE_2: 623;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_SPECIAL_SERVICE_CODE_3: 624;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_SPECIAL_SERVICE_CODE_4: 625;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_TIME_ZONE: 626;
+  PARAMETER_SOURCE_TYPE_PHONE_METADATA_UTC_OFFSET: 627;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_ADMIN_CODE_1: 700;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_ADMIN_CODE_2: 701;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_ADMIN_CODE_3: 702;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_ADMIN_NAME_1: 703;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_ADMIN_NAME_2: 704;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_ADMIN_NAME_3: 705;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_AREA_CODE: 706;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_CITY_NAME: 707;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_CITY_TYPE: 708;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_COUNTRY_CODE: 709;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_ISO_CODE: 710;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_COUNTRY_NAME: 711;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_COUNTRY_FPS_CODE: 712;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_LATITUDE: 713;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_POSITION_ACCURACY: 714;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_LONGITUDE: 715;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_METROPOLITAN_AREA: 716;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_DAYLIGHT_SAVINGS: 717;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_PLACE_NAME: 718;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_POSTAL_CODE: 719;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_POSTAL_CODE_KEY: 720;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_POSTAL_TYPE: 721;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_PROVICE_ABBREVIATION: 722;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_PROVINCE_NAME: 723;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_STATE_FPS_CODE: 724;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_TIME_ZONE: 725;
+  PARAMETER_SOURCE_TYPE_ZIP_METADATA_UTC_OFFSET: 726;
+  PARAMETER_SOURCE_TYPE_CUSTOM_ACCOUNT_DATA: 800;
+  PARAMETER_SOURCE_TYPE_SIP_HEADER_DATA: 900;
+  PARAMETER_SOURCE_TYPE_INTEGRATION_DATA: 1000;
+  PARAMETER_SOURCE_TYPE_JOURNEY_DATA: 1100;
+}
+
+export const ParameterSourceType: ParameterSourceTypeMap;
+

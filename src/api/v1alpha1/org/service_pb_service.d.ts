@@ -1086,6 +1086,15 @@ type OrgDeleteAgentResponseAutoRules = {
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.DeleteAgentResponseAutoRulesResponse;
 };
 
+type OrgListHuntGroupIntegrationLinks = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksResponse;
+};
+
 type OrgCreateTrust = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1603,6 +1612,7 @@ export class Org {
   static readonly CreateAgentResponseAutoRules: OrgCreateAgentResponseAutoRules;
   static readonly UpdateAgentResponseAutoRules: OrgUpdateAgentResponseAutoRules;
   static readonly DeleteAgentResponseAutoRules: OrgDeleteAgentResponseAutoRules;
+  static readonly ListHuntGroupIntegrationLinks: OrgListHuntGroupIntegrationLinks;
   static readonly CreateTrust: OrgCreateTrust;
   static readonly AcceptTrust: OrgAcceptTrust;
   static readonly RejectTrust: OrgRejectTrust;
@@ -2687,6 +2697,15 @@ export class OrgClient {
   deleteAgentResponseAutoRules(
     requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteAgentResponseAutoRulesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteAgentResponseAutoRulesResponse|null) => void
+  ): UnaryResponse;
+  listHuntGroupIntegrationLinks(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksResponse|null) => void
+  ): UnaryResponse;
+  listHuntGroupIntegrationLinks(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksResponse|null) => void
   ): UnaryResponse;
   createTrust(
     requestMessage: api_v1alpha1_org_trusts_pb.CreateTrustRequest,
