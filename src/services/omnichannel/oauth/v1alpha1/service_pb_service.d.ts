@@ -5,18 +5,18 @@ import * as services_omnichannel_oauth_v1alpha1_service_pb from "../../../../ser
 import * as services_omnichannel_oauth_v1alpha1_entities_pb from "../../../../services/omnichannel/oauth/v1alpha1/entities_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type OauthServiceGetConnectedInboxOAuthSpecifications = {
+type OauthServiceGetConnectedInboxOAuthURL = {
   readonly methodName: string;
   readonly service: typeof OauthService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthSpecificationsRequest;
-  readonly responseType: typeof services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthSpecificationsResponse;
+  readonly requestType: typeof services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthURLRequest;
+  readonly responseType: typeof services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthURLResponse;
 };
 
 export class OauthService {
   static readonly serviceName: string;
-  static readonly GetConnectedInboxOAuthSpecifications: OauthServiceGetConnectedInboxOAuthSpecifications;
+  static readonly GetConnectedInboxOAuthURL: OauthServiceGetConnectedInboxOAuthURL;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -51,14 +51,14 @@ export class OauthServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
-  getConnectedInboxOAuthSpecifications(
-    requestMessage: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthSpecificationsRequest,
+  getConnectedInboxOAuthURL(
+    requestMessage: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthURLRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthSpecificationsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthURLResponse|null) => void
   ): UnaryResponse;
-  getConnectedInboxOAuthSpecifications(
-    requestMessage: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthSpecificationsRequest,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthSpecificationsResponse|null) => void
+  getConnectedInboxOAuthURL(
+    requestMessage: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthURLRequest,
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthURLResponse|null) => void
   ): UnaryResponse;
 }
 

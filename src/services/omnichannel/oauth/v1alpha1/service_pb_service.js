@@ -11,13 +11,13 @@ var OauthService = (function () {
   return OauthService;
 }());
 
-OauthService.GetConnectedInboxOAuthSpecifications = {
-  methodName: "GetConnectedInboxOAuthSpecifications",
+OauthService.GetConnectedInboxOAuthURL = {
+  methodName: "GetConnectedInboxOAuthURL",
   service: OauthService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthSpecificationsRequest,
-  responseType: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthSpecificationsResponse
+  requestType: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthURLRequest,
+  responseType: services_omnichannel_oauth_v1alpha1_entities_pb.GetConnectedInboxOAuthURLResponse
 };
 
 exports.OauthService = OauthService;
@@ -27,11 +27,11 @@ function OauthServiceClient(serviceHost, options) {
   this.options = options || {};
 }
 
-OauthServiceClient.prototype.getConnectedInboxOAuthSpecifications = function getConnectedInboxOAuthSpecifications(requestMessage, metadata, callback) {
+OauthServiceClient.prototype.getConnectedInboxOAuthURL = function getConnectedInboxOAuthURL(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(OauthService.GetConnectedInboxOAuthSpecifications, {
+  var client = grpc.unary(OauthService.GetConnectedInboxOAuthURL, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

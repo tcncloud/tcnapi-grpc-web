@@ -4,7 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_omnichannel_pb from "../../../../api/commons/omnichannel_pb";
 
-export class GetConnectedInboxOAuthSpecificationsRequest extends jspb.Message {
+export class GetConnectedInboxOAuthURLRequest extends jspb.Message {
   getAuthenticationType(): api_commons_omnichannel_pb.ConnectedInboxAuthenticationTypeMap[keyof api_commons_omnichannel_pb.ConnectedInboxAuthenticationTypeMap];
   setAuthenticationType(value: api_commons_omnichannel_pb.ConnectedInboxAuthenticationTypeMap[keyof api_commons_omnichannel_pb.ConnectedInboxAuthenticationTypeMap]): void;
 
@@ -12,39 +12,39 @@ export class GetConnectedInboxOAuthSpecificationsRequest extends jspb.Message {
   setReturningRedirectUri(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetConnectedInboxOAuthSpecificationsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetConnectedInboxOAuthSpecificationsRequest): GetConnectedInboxOAuthSpecificationsRequest.AsObject;
+  toObject(includeInstance?: boolean): GetConnectedInboxOAuthURLRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetConnectedInboxOAuthURLRequest): GetConnectedInboxOAuthURLRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetConnectedInboxOAuthSpecificationsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetConnectedInboxOAuthSpecificationsRequest;
-  static deserializeBinaryFromReader(message: GetConnectedInboxOAuthSpecificationsRequest, reader: jspb.BinaryReader): GetConnectedInboxOAuthSpecificationsRequest;
+  static serializeBinaryToWriter(message: GetConnectedInboxOAuthURLRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetConnectedInboxOAuthURLRequest;
+  static deserializeBinaryFromReader(message: GetConnectedInboxOAuthURLRequest, reader: jspb.BinaryReader): GetConnectedInboxOAuthURLRequest;
 }
 
-export namespace GetConnectedInboxOAuthSpecificationsRequest {
+export namespace GetConnectedInboxOAuthURLRequest {
   export type AsObject = {
     authenticationType: api_commons_omnichannel_pb.ConnectedInboxAuthenticationTypeMap[keyof api_commons_omnichannel_pb.ConnectedInboxAuthenticationTypeMap],
     returningRedirectUri: string,
   }
 }
 
-export class GetConnectedInboxOAuthSpecificationsResponse extends jspb.Message {
-  getRedirectUri(): string;
-  setRedirectUri(value: string): void;
+export class GetConnectedInboxOAuthURLResponse extends jspb.Message {
+  getOauthUrl(): string;
+  setOauthUrl(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetConnectedInboxOAuthSpecificationsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetConnectedInboxOAuthSpecificationsResponse): GetConnectedInboxOAuthSpecificationsResponse.AsObject;
+  toObject(includeInstance?: boolean): GetConnectedInboxOAuthURLResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetConnectedInboxOAuthURLResponse): GetConnectedInboxOAuthURLResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetConnectedInboxOAuthSpecificationsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetConnectedInboxOAuthSpecificationsResponse;
-  static deserializeBinaryFromReader(message: GetConnectedInboxOAuthSpecificationsResponse, reader: jspb.BinaryReader): GetConnectedInboxOAuthSpecificationsResponse;
+  static serializeBinaryToWriter(message: GetConnectedInboxOAuthURLResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetConnectedInboxOAuthURLResponse;
+  static deserializeBinaryFromReader(message: GetConnectedInboxOAuthURLResponse, reader: jspb.BinaryReader): GetConnectedInboxOAuthURLResponse;
 }
 
-export namespace GetConnectedInboxOAuthSpecificationsResponse {
+export namespace GetConnectedInboxOAuthURLResponse {
   export type AsObject = {
-    redirectUri: string,
+    oauthUrl: string,
   }
 }
 
