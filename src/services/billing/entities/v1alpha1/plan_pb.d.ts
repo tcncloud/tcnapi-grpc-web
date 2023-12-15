@@ -42,6 +42,11 @@ export class BillingPlan extends jspb.Message {
   getStatus(): BillingPlanStatusMap[keyof BillingPlanStatusMap];
   setStatus(value: BillingPlanStatusMap[keyof BillingPlanStatusMap]): void;
 
+  hasActualStartTime(): boolean;
+  clearActualStartTime(): void;
+  getActualStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setActualStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BillingPlan.AsObject;
   static toObject(includeInstance: boolean, msg: BillingPlan): BillingPlan.AsObject;
@@ -62,6 +67,7 @@ export namespace BillingPlan {
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     rateDefinitionIdsList: Array<string>,
     status: BillingPlanStatusMap[keyof BillingPlanStatusMap],
+    actualStartTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

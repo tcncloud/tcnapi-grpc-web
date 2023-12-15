@@ -681,6 +681,15 @@ type OrgCreatePasswordResetLink = {
   readonly responseType: typeof api_v1alpha1_org_user_pb.CreatePasswordResetLinkResponse;
 };
 
+type OrgCreatePasswordResetLinkByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.CreatePasswordResetLinkByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.CreatePasswordResetLinkByOrgIdResponse;
+};
+
 type OrgGetUserLoginInfo = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -708,6 +717,33 @@ type OrgGetUserEmailVerifiedByOrgId = {
   readonly responseType: typeof api_v1alpha1_org_user_pb.GetUserEmailVerifiedByOrgIdResponse;
 };
 
+type OrgResetMyPassword = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.ResetMyPasswordRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.ResetMyPasswordResponse;
+};
+
+type OrgResetUserPassword = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.ResetUserPasswordRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.ResetUserPasswordResponse;
+};
+
+type OrgResetUserPasswordByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.ResetUserPasswordByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.ResetUserPasswordByOrgIdResponse;
+};
+
 type OrgSendUserEmailVerification = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -724,6 +760,24 @@ type OrgSendUserEmailVerificationByOrgId = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_org_user_pb.SendUserEmailVerificationByOrgIdRequest;
   readonly responseType: typeof api_v1alpha1_org_user_pb.SendUserEmailVerificationByOrgIdResponse;
+};
+
+type OrgSendPasswordReset = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.SendPasswordResetRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.SendPasswordResetResponse;
+};
+
+type OrgSendPasswordResetByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.SendPasswordResetByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.SendPasswordResetByOrgIdResponse;
 };
 
 type OrgGetUserSessionData = {
@@ -1084,6 +1138,15 @@ type OrgDeleteAgentResponseAutoRules = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.DeleteAgentResponseAutoRulesRequest;
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.DeleteAgentResponseAutoRulesResponse;
+};
+
+type OrgListHuntGroupIntegrationLinks = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksResponse;
 };
 
 type OrgCreateTrust = {
@@ -1558,11 +1621,17 @@ export class Org {
   static readonly GetUserPasswordResetLink: OrgGetUserPasswordResetLink;
   static readonly GetUserPasswordResetLinkByOrgId: OrgGetUserPasswordResetLinkByOrgId;
   static readonly CreatePasswordResetLink: OrgCreatePasswordResetLink;
+  static readonly CreatePasswordResetLinkByOrgId: OrgCreatePasswordResetLinkByOrgId;
   static readonly GetUserLoginInfo: OrgGetUserLoginInfo;
   static readonly GetUserEmailVerified: OrgGetUserEmailVerified;
   static readonly GetUserEmailVerifiedByOrgId: OrgGetUserEmailVerifiedByOrgId;
+  static readonly ResetMyPassword: OrgResetMyPassword;
+  static readonly ResetUserPassword: OrgResetUserPassword;
+  static readonly ResetUserPasswordByOrgId: OrgResetUserPasswordByOrgId;
   static readonly SendUserEmailVerification: OrgSendUserEmailVerification;
   static readonly SendUserEmailVerificationByOrgId: OrgSendUserEmailVerificationByOrgId;
+  static readonly SendPasswordReset: OrgSendPasswordReset;
+  static readonly SendPasswordResetByOrgId: OrgSendPasswordResetByOrgId;
   static readonly GetUserSessionData: OrgGetUserSessionData;
   static readonly GetAgentProfileGroup: OrgGetAgentProfileGroup;
   static readonly ListAgentProfileGroups: OrgListAgentProfileGroups;
@@ -1603,6 +1672,7 @@ export class Org {
   static readonly CreateAgentResponseAutoRules: OrgCreateAgentResponseAutoRules;
   static readonly UpdateAgentResponseAutoRules: OrgUpdateAgentResponseAutoRules;
   static readonly DeleteAgentResponseAutoRules: OrgDeleteAgentResponseAutoRules;
+  static readonly ListHuntGroupIntegrationLinks: OrgListHuntGroupIntegrationLinks;
   static readonly CreateTrust: OrgCreateTrust;
   static readonly AcceptTrust: OrgAcceptTrust;
   static readonly RejectTrust: OrgRejectTrust;
@@ -2283,6 +2353,15 @@ export class OrgClient {
     requestMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkResponse|null) => void
   ): UnaryResponse;
+  createPasswordResetLinkByOrgId(
+    requestMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  createPasswordResetLinkByOrgId(
+    requestMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.CreatePasswordResetLinkByOrgIdResponse|null) => void
+  ): UnaryResponse;
   getUserLoginInfo(
     requestMessage: api_v1alpha1_org_user_pb.GetUserLoginInfoRequest,
     metadata: grpc.Metadata,
@@ -2310,6 +2389,33 @@ export class OrgClient {
     requestMessage: api_v1alpha1_org_user_pb.GetUserEmailVerifiedByOrgIdRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.GetUserEmailVerifiedByOrgIdResponse|null) => void
   ): UnaryResponse;
+  resetMyPassword(
+    requestMessage: api_v1alpha1_org_user_pb.ResetMyPasswordRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.ResetMyPasswordResponse|null) => void
+  ): UnaryResponse;
+  resetMyPassword(
+    requestMessage: api_v1alpha1_org_user_pb.ResetMyPasswordRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.ResetMyPasswordResponse|null) => void
+  ): UnaryResponse;
+  resetUserPassword(
+    requestMessage: api_v1alpha1_org_user_pb.ResetUserPasswordRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.ResetUserPasswordResponse|null) => void
+  ): UnaryResponse;
+  resetUserPassword(
+    requestMessage: api_v1alpha1_org_user_pb.ResetUserPasswordRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.ResetUserPasswordResponse|null) => void
+  ): UnaryResponse;
+  resetUserPasswordByOrgId(
+    requestMessage: api_v1alpha1_org_user_pb.ResetUserPasswordByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.ResetUserPasswordByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  resetUserPasswordByOrgId(
+    requestMessage: api_v1alpha1_org_user_pb.ResetUserPasswordByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.ResetUserPasswordByOrgIdResponse|null) => void
+  ): UnaryResponse;
   sendUserEmailVerification(
     requestMessage: api_v1alpha1_org_user_pb.SendUserEmailVerificationRequest,
     metadata: grpc.Metadata,
@@ -2327,6 +2433,24 @@ export class OrgClient {
   sendUserEmailVerificationByOrgId(
     requestMessage: api_v1alpha1_org_user_pb.SendUserEmailVerificationByOrgIdRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.SendUserEmailVerificationByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  sendPasswordReset(
+    requestMessage: api_v1alpha1_org_user_pb.SendPasswordResetRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.SendPasswordResetResponse|null) => void
+  ): UnaryResponse;
+  sendPasswordReset(
+    requestMessage: api_v1alpha1_org_user_pb.SendPasswordResetRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.SendPasswordResetResponse|null) => void
+  ): UnaryResponse;
+  sendPasswordResetByOrgId(
+    requestMessage: api_v1alpha1_org_user_pb.SendPasswordResetByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.SendPasswordResetByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  sendPasswordResetByOrgId(
+    requestMessage: api_v1alpha1_org_user_pb.SendPasswordResetByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.SendPasswordResetByOrgIdResponse|null) => void
   ): UnaryResponse;
   getUserSessionData(
     requestMessage: api_v1alpha1_org_user_pb.GetUserSessionDataRequest,
@@ -2687,6 +2811,15 @@ export class OrgClient {
   deleteAgentResponseAutoRules(
     requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteAgentResponseAutoRulesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteAgentResponseAutoRulesResponse|null) => void
+  ): UnaryResponse;
+  listHuntGroupIntegrationLinks(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksResponse|null) => void
+  ): UnaryResponse;
+  listHuntGroupIntegrationLinks(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksResponse|null) => void
   ): UnaryResponse;
   createTrust(
     requestMessage: api_v1alpha1_org_trusts_pb.CreateTrustRequest,
