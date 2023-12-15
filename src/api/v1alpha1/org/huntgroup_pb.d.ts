@@ -670,3 +670,49 @@ export namespace DeleteAgentResponseAutoRulesResponse {
   }
 }
 
+export class ListHuntGroupIntegrationLinksRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListHuntGroupIntegrationLinksRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListHuntGroupIntegrationLinksRequest): ListHuntGroupIntegrationLinksRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListHuntGroupIntegrationLinksRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListHuntGroupIntegrationLinksRequest;
+  static deserializeBinaryFromReader(message: ListHuntGroupIntegrationLinksRequest, reader: jspb.BinaryReader): ListHuntGroupIntegrationLinksRequest;
+}
+
+export namespace ListHuntGroupIntegrationLinksRequest {
+  export type AsObject = {
+    orgId: string,
+    huntGroupSid: number,
+  }
+}
+
+export class ListHuntGroupIntegrationLinksResponse extends jspb.Message {
+  clearLinksList(): void;
+  getLinksList(): Array<api_commons_org_huntgroup_pb.IntegrationLink>;
+  setLinksList(value: Array<api_commons_org_huntgroup_pb.IntegrationLink>): void;
+  addLinks(value?: api_commons_org_huntgroup_pb.IntegrationLink, index?: number): api_commons_org_huntgroup_pb.IntegrationLink;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListHuntGroupIntegrationLinksResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListHuntGroupIntegrationLinksResponse): ListHuntGroupIntegrationLinksResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListHuntGroupIntegrationLinksResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListHuntGroupIntegrationLinksResponse;
+  static deserializeBinaryFromReader(message: ListHuntGroupIntegrationLinksResponse, reader: jspb.BinaryReader): ListHuntGroupIntegrationLinksResponse;
+}
+
+export namespace ListHuntGroupIntegrationLinksResponse {
+  export type AsObject = {
+    linksList: Array<api_commons_org_huntgroup_pb.IntegrationLink.AsObject>,
+  }
+}
+

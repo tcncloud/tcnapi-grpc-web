@@ -2842,6 +2842,7 @@ export const OmniSenderType: OmniSenderTypeMap;
 export interface ConnectedInboxAuthenticationTypeMap {
   CONNECTED_INBOX_AUTHENTICATION_TYPE_PASSWORD: 0;
   CONNECTED_INBOX_AUTHENTICATION_TYPE_GOOGLE_XOAUTH2: 1;
+  CONNECTED_INBOX_AUTHENTICATION_TYPE_MICROSOFT_365: 2;
 }
 
 export const ConnectedInboxAuthenticationType: ConnectedInboxAuthenticationTypeMap;

@@ -4,6 +4,15 @@
 import * as api_v1alpha1_wfm_wfm_pb from "../../../api/v1alpha1/wfm/wfm_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
+type WFMPerformInitialClientSetup = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.PerformInitialClientSetupRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.PerformInitialClientSetupResponse;
+};
+
 type WFMListSkillProfiles = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1410,6 +1419,7 @@ type WFMGenerateTourWeekPatterns = {
 
 export class WFM {
   static readonly serviceName: string;
+  static readonly PerformInitialClientSetup: WFMPerformInitialClientSetup;
   static readonly ListSkillProfiles: WFMListSkillProfiles;
   static readonly UpdateSkillProfile: WFMUpdateSkillProfile;
   static readonly UpdateSkillProfileProficiencies: WFMUpdateSkillProfileProficiencies;
@@ -1600,6 +1610,15 @@ export class WFMClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
+  performInitialClientSetup(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.PerformInitialClientSetupRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.PerformInitialClientSetupResponse|null) => void
+  ): UnaryResponse;
+  performInitialClientSetup(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.PerformInitialClientSetupRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.PerformInitialClientSetupResponse|null) => void
+  ): UnaryResponse;
   listSkillProfiles(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListSkillProfilesReq,
     metadata: grpc.Metadata,
