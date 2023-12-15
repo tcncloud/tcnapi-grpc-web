@@ -1774,6 +1774,50 @@ export namespace CreatePasswordResetLinkResponse {
   }
 }
 
+export class CreatePasswordResetLinkByOrgIdRequest extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePasswordResetLinkByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePasswordResetLinkByOrgIdRequest): CreatePasswordResetLinkByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreatePasswordResetLinkByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePasswordResetLinkByOrgIdRequest;
+  static deserializeBinaryFromReader(message: CreatePasswordResetLinkByOrgIdRequest, reader: jspb.BinaryReader): CreatePasswordResetLinkByOrgIdRequest;
+}
+
+export namespace CreatePasswordResetLinkByOrgIdRequest {
+  export type AsObject = {
+    userId: string,
+    orgId: string,
+  }
+}
+
+export class CreatePasswordResetLinkByOrgIdResponse extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePasswordResetLinkByOrgIdResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePasswordResetLinkByOrgIdResponse): CreatePasswordResetLinkByOrgIdResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreatePasswordResetLinkByOrgIdResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePasswordResetLinkByOrgIdResponse;
+  static deserializeBinaryFromReader(message: CreatePasswordResetLinkByOrgIdResponse, reader: jspb.BinaryReader): CreatePasswordResetLinkByOrgIdResponse;
+}
+
+export namespace CreatePasswordResetLinkByOrgIdResponse {
+  export type AsObject = {
+    url: string,
+  }
+}
+
 export class GetUserLoginInfoRequest extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
@@ -1851,6 +1895,202 @@ export namespace GetUserLoginInfoResponse {
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     hasBlockedIps: boolean,
+  }
+}
+
+export class SendPasswordResetRequest extends jspb.Message {
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SendPasswordResetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SendPasswordResetRequest): SendPasswordResetRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SendPasswordResetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SendPasswordResetRequest;
+  static deserializeBinaryFromReader(message: SendPasswordResetRequest, reader: jspb.BinaryReader): SendPasswordResetRequest;
+}
+
+export namespace SendPasswordResetRequest {
+  export type AsObject = {
+    email: string,
+  }
+}
+
+export class SendPasswordResetResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SendPasswordResetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SendPasswordResetResponse): SendPasswordResetResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SendPasswordResetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SendPasswordResetResponse;
+  static deserializeBinaryFromReader(message: SendPasswordResetResponse, reader: jspb.BinaryReader): SendPasswordResetResponse;
+}
+
+export namespace SendPasswordResetResponse {
+  export type AsObject = {
+  }
+}
+
+export class SendPasswordResetByOrgIdRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SendPasswordResetByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SendPasswordResetByOrgIdRequest): SendPasswordResetByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SendPasswordResetByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SendPasswordResetByOrgIdRequest;
+  static deserializeBinaryFromReader(message: SendPasswordResetByOrgIdRequest, reader: jspb.BinaryReader): SendPasswordResetByOrgIdRequest;
+}
+
+export namespace SendPasswordResetByOrgIdRequest {
+  export type AsObject = {
+    orgId: string,
+    email: string,
+  }
+}
+
+export class SendPasswordResetByOrgIdResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SendPasswordResetByOrgIdResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SendPasswordResetByOrgIdResponse): SendPasswordResetByOrgIdResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SendPasswordResetByOrgIdResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SendPasswordResetByOrgIdResponse;
+  static deserializeBinaryFromReader(message: SendPasswordResetByOrgIdResponse, reader: jspb.BinaryReader): SendPasswordResetByOrgIdResponse;
+}
+
+export namespace SendPasswordResetByOrgIdResponse {
+  export type AsObject = {
+  }
+}
+
+export class ResetMyPasswordRequest extends jspb.Message {
+  getPassword(): string;
+  setPassword(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResetMyPasswordRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ResetMyPasswordRequest): ResetMyPasswordRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResetMyPasswordRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResetMyPasswordRequest;
+  static deserializeBinaryFromReader(message: ResetMyPasswordRequest, reader: jspb.BinaryReader): ResetMyPasswordRequest;
+}
+
+export namespace ResetMyPasswordRequest {
+  export type AsObject = {
+    password: string,
+  }
+}
+
+export class ResetMyPasswordResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResetMyPasswordResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ResetMyPasswordResponse): ResetMyPasswordResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResetMyPasswordResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResetMyPasswordResponse;
+  static deserializeBinaryFromReader(message: ResetMyPasswordResponse, reader: jspb.BinaryReader): ResetMyPasswordResponse;
+}
+
+export namespace ResetMyPasswordResponse {
+  export type AsObject = {
+  }
+}
+
+export class ResetUserPasswordRequest extends jspb.Message {
+  getPassword(): string;
+  setPassword(value: string): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResetUserPasswordRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ResetUserPasswordRequest): ResetUserPasswordRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResetUserPasswordRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResetUserPasswordRequest;
+  static deserializeBinaryFromReader(message: ResetUserPasswordRequest, reader: jspb.BinaryReader): ResetUserPasswordRequest;
+}
+
+export namespace ResetUserPasswordRequest {
+  export type AsObject = {
+    password: string,
+    userId: string,
+  }
+}
+
+export class ResetUserPasswordResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResetUserPasswordResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ResetUserPasswordResponse): ResetUserPasswordResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResetUserPasswordResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResetUserPasswordResponse;
+  static deserializeBinaryFromReader(message: ResetUserPasswordResponse, reader: jspb.BinaryReader): ResetUserPasswordResponse;
+}
+
+export namespace ResetUserPasswordResponse {
+  export type AsObject = {
+  }
+}
+
+export class ResetUserPasswordByOrgIdRequest extends jspb.Message {
+  getPassword(): string;
+  setPassword(value: string): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResetUserPasswordByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ResetUserPasswordByOrgIdRequest): ResetUserPasswordByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResetUserPasswordByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResetUserPasswordByOrgIdRequest;
+  static deserializeBinaryFromReader(message: ResetUserPasswordByOrgIdRequest, reader: jspb.BinaryReader): ResetUserPasswordByOrgIdRequest;
+}
+
+export namespace ResetUserPasswordByOrgIdRequest {
+  export type AsObject = {
+    password: string,
+    userId: string,
+    orgId: string,
+  }
+}
+
+export class ResetUserPasswordByOrgIdResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResetUserPasswordByOrgIdResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ResetUserPasswordByOrgIdResponse): ResetUserPasswordByOrgIdResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResetUserPasswordByOrgIdResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResetUserPasswordByOrgIdResponse;
+  static deserializeBinaryFromReader(message: ResetUserPasswordByOrgIdResponse, reader: jspb.BinaryReader): ResetUserPasswordByOrgIdResponse;
+}
+
+export namespace ResetUserPasswordByOrgIdResponse {
+  export type AsObject = {
   }
 }
 

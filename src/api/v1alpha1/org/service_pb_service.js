@@ -687,6 +687,15 @@ Org.CreatePasswordResetLink = {
   responseType: api_v1alpha1_org_user_pb.CreatePasswordResetLinkResponse
 };
 
+Org.CreatePasswordResetLinkByOrgId = {
+  methodName: "CreatePasswordResetLinkByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.CreatePasswordResetLinkByOrgIdRequest,
+  responseType: api_v1alpha1_org_user_pb.CreatePasswordResetLinkByOrgIdResponse
+};
+
 Org.GetUserLoginInfo = {
   methodName: "GetUserLoginInfo",
   service: Org,
@@ -714,6 +723,33 @@ Org.GetUserEmailVerifiedByOrgId = {
   responseType: api_v1alpha1_org_user_pb.GetUserEmailVerifiedByOrgIdResponse
 };
 
+Org.ResetMyPassword = {
+  methodName: "ResetMyPassword",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.ResetMyPasswordRequest,
+  responseType: api_v1alpha1_org_user_pb.ResetMyPasswordResponse
+};
+
+Org.ResetUserPassword = {
+  methodName: "ResetUserPassword",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.ResetUserPasswordRequest,
+  responseType: api_v1alpha1_org_user_pb.ResetUserPasswordResponse
+};
+
+Org.ResetUserPasswordByOrgId = {
+  methodName: "ResetUserPasswordByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.ResetUserPasswordByOrgIdRequest,
+  responseType: api_v1alpha1_org_user_pb.ResetUserPasswordByOrgIdResponse
+};
+
 Org.SendUserEmailVerification = {
   methodName: "SendUserEmailVerification",
   service: Org,
@@ -730,6 +766,24 @@ Org.SendUserEmailVerificationByOrgId = {
   responseStream: false,
   requestType: api_v1alpha1_org_user_pb.SendUserEmailVerificationByOrgIdRequest,
   responseType: api_v1alpha1_org_user_pb.SendUserEmailVerificationByOrgIdResponse
+};
+
+Org.SendPasswordReset = {
+  methodName: "SendPasswordReset",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.SendPasswordResetRequest,
+  responseType: api_v1alpha1_org_user_pb.SendPasswordResetResponse
+};
+
+Org.SendPasswordResetByOrgId = {
+  methodName: "SendPasswordResetByOrgId",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.SendPasswordResetByOrgIdRequest,
+  responseType: api_v1alpha1_org_user_pb.SendPasswordResetByOrgIdResponse
 };
 
 Org.GetUserSessionData = {
@@ -3862,6 +3916,37 @@ OrgClient.prototype.createPasswordResetLink = function createPasswordResetLink(r
   };
 };
 
+OrgClient.prototype.createPasswordResetLinkByOrgId = function createPasswordResetLinkByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CreatePasswordResetLinkByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.getUserLoginInfo = function getUserLoginInfo(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -3955,6 +4040,99 @@ OrgClient.prototype.getUserEmailVerifiedByOrgId = function getUserEmailVerifiedB
   };
 };
 
+OrgClient.prototype.resetMyPassword = function resetMyPassword(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ResetMyPassword, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.resetUserPassword = function resetUserPassword(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ResetUserPassword, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.resetUserPasswordByOrgId = function resetUserPasswordByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ResetUserPasswordByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.sendUserEmailVerification = function sendUserEmailVerification(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -3991,6 +4169,68 @@ OrgClient.prototype.sendUserEmailVerificationByOrgId = function sendUserEmailVer
     callback = arguments[1];
   }
   var client = grpc.unary(Org.SendUserEmailVerificationByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.sendPasswordReset = function sendPasswordReset(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.SendPasswordReset, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.sendPasswordResetByOrgId = function sendPasswordResetByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.SendPasswordResetByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
