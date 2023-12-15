@@ -205,11 +205,6 @@ export class ListCampaignsReq extends jspb.Message {
   getByWhatsappNumber(): ListCampaignsReq.ByWhatsAppNumber | undefined;
   setByWhatsappNumber(value?: ListCampaignsReq.ByWhatsAppNumber): void;
 
-  hasByWhatsApp(): boolean;
-  clearByWhatsApp(): void;
-  getByWhatsApp(): ListCampaignsReq.ByWhatsApp | undefined;
-  setByWhatsApp(value?: ListCampaignsReq.ByWhatsApp): void;
-
   getFilterCase(): ListCampaignsReq.FilterCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCampaignsReq.AsObject;
@@ -233,7 +228,6 @@ export namespace ListCampaignsReq {
     byVerifiedEmail?: ListCampaignsReq.ByVerifiedEmail.AsObject,
     bySmsNumber?: ListCampaignsReq.BySmsNumber.AsObject,
     byWhatsappNumber?: ListCampaignsReq.ByWhatsAppNumber.AsObject,
-    byWhatsApp?: ListCampaignsReq.ByWhatsApp.AsObject,
   }
 
   export class ByConnectedInbox extends jspb.Message {
@@ -406,26 +400,6 @@ export namespace ListCampaignsReq {
     }
   }
 
-  export class ByWhatsApp extends jspb.Message {
-    getNumber(): string;
-    setNumber(value: string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): ByWhatsApp.AsObject;
-    static toObject(includeInstance: boolean, msg: ByWhatsApp): ByWhatsApp.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: ByWhatsApp, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): ByWhatsApp;
-    static deserializeBinaryFromReader(message: ByWhatsApp, reader: jspb.BinaryReader): ByWhatsApp;
-  }
-
-  export namespace ByWhatsApp {
-    export type AsObject = {
-      number: string,
-    }
-  }
-
   export enum FilterCase {
     FILTER_NOT_SET = 0,
     BY_IDS = 100,
@@ -436,7 +410,6 @@ export namespace ListCampaignsReq {
     BY_VERIFIED_EMAIL = 105,
     BY_SMS_NUMBER = 106,
     BY_WHATSAPP_NUMBER = 107,
-    BY_WHATS_APP = 108,
   }
 }
 
