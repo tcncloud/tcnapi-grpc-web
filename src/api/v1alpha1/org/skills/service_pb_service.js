@@ -101,6 +101,15 @@ SkillsService.GetSkillGroupMembers = {
   responseType: api_v1alpha1_org_skills_entities_pb.GetSkillGroupMembersResponse
 };
 
+SkillsService.ListSkillGroupsMembers = {
+  methodName: "ListSkillGroupsMembers",
+  service: SkillsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_skills_entities_pb.ListSkillGroupsMembersRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.ListSkillGroupsMembersResponse
+};
+
 exports.SkillsService = SkillsService;
 
 function SkillsServiceClient(serviceHost, options) {
@@ -392,6 +401,37 @@ SkillsServiceClient.prototype.getSkillGroupMembers = function getSkillGroupMembe
     callback = arguments[1];
   }
   var client = grpc.unary(SkillsService.GetSkillGroupMembers, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+SkillsServiceClient.prototype.listSkillGroupsMembers = function listSkillGroupsMembers(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(SkillsService.ListSkillGroupsMembers, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
