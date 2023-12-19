@@ -14587,7 +14587,8 @@ proto.api.commons.org.IntegrationLink.toObject = function(includeInstance, msg) 
     methodId: jspb.Message.getFieldWithDefault(msg, 5, 0),
     order: jspb.Message.getFieldWithDefault(msg, 6, 0),
     parametersList: jspb.Message.toObjectList(msg.getParametersList(),
-    proto.api.commons.org.IntegrationLinkParameter.toObject, includeInstance)
+    proto.api.commons.org.IntegrationLinkParameter.toObject, includeInstance),
+    configurationName: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -14652,6 +14653,10 @@ proto.api.commons.org.IntegrationLink.deserializeBinaryFromReader = function(msg
       var value = new proto.api.commons.org.IntegrationLinkParameter;
       reader.readMessage(value,proto.api.commons.org.IntegrationLinkParameter.deserializeBinaryFromReader);
       msg.addParameters(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConfigurationName(value);
       break;
     default:
       reader.skipField();
@@ -14730,6 +14735,13 @@ proto.api.commons.org.IntegrationLink.serializeBinaryToWriter = function(message
       7,
       f,
       proto.api.commons.org.IntegrationLinkParameter.serializeBinaryToWriter
+    );
+  }
+  f = message.getConfigurationName();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
     );
   }
 };
@@ -14878,6 +14890,24 @@ proto.api.commons.org.IntegrationLink.prototype.addParameters = function(opt_val
  */
 proto.api.commons.org.IntegrationLink.prototype.clearParametersList = function() {
   return this.setParametersList([]);
+};
+
+
+/**
+ * optional string configuration_name = 8;
+ * @return {string}
+ */
+proto.api.commons.org.IntegrationLink.prototype.getConfigurationName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.IntegrationLink} returns this
+ */
+proto.api.commons.org.IntegrationLink.prototype.setConfigurationName = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
