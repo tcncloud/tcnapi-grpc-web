@@ -276,6 +276,15 @@ type TicketsGetAllActionType = {
   readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.GetActionTypeResponse;
 };
 
+type TicketsGetPhoneNumberType = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.GetPhoneNumberTypeRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.GetPhoneNumberTypeResponse;
+};
+
 export class Tickets {
   static readonly serviceName: string;
   static readonly CreateTicket: TicketsCreateTicket;
@@ -308,6 +317,7 @@ export class Tickets {
   static readonly ListTicketTemplate: TicketsListTicketTemplate;
   static readonly AssignTicketTemplate: TicketsAssignTicketTemplate;
   static readonly GetAllActionType: TicketsGetAllActionType;
+  static readonly GetPhoneNumberType: TicketsGetPhoneNumberType;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -611,6 +621,15 @@ export class TicketsClient {
   getAllActionType(
     requestMessage: api_v1alpha1_tickets_ticket_pb.GetActionTypeRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.GetActionTypeResponse|null) => void
+  ): UnaryResponse;
+  getPhoneNumberType(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.GetPhoneNumberTypeRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.GetPhoneNumberTypeResponse|null) => void
+  ): UnaryResponse;
+  getPhoneNumberType(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.GetPhoneNumberTypeRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.GetPhoneNumberTypeResponse|null) => void
   ): UnaryResponse;
 }
 
