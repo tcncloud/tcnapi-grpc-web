@@ -1574,6 +1574,16 @@ export class ExecuteFlow extends jspb.Message {
   getEpicReceiveCommunication3(): ExecuteEpicReceiveCommunication3 | undefined;
   setEpicReceiveCommunication3(value?: ExecuteEpicReceiveCommunication3): void;
 
+  hasEpicPostPatientMadePayment(): boolean;
+  clearEpicPostPatientMadePayment(): void;
+  getEpicPostPatientMadePayment(): ExecuteEpicPostPatientMadePayment | undefined;
+  setEpicPostPatientMadePayment(value?: ExecuteEpicPostPatientMadePayment): void;
+
+  hasEpicGetPatientBillingDetails(): boolean;
+  clearEpicGetPatientBillingDetails(): void;
+  getEpicGetPatientBillingDetails(): ExecuteEpicGetPatientBillingDetails | undefined;
+  setEpicGetPatientBillingDetails(value?: ExecuteEpicGetPatientBillingDetails): void;
+
   hasNewzwarePhoneLookup(): boolean;
   clearNewzwarePhoneLookup(): void;
   getNewzwarePhoneLookup(): ExecuteNewzwarePhoneLookup | undefined;
@@ -1846,6 +1856,8 @@ export namespace ExecuteFlow {
     epicGetAccount?: ExecuteEpicGetAccount.AsObject,
     epicReceiveCommunication2?: ExecuteEpicReceiveCommunication2.AsObject,
     epicReceiveCommunication3?: ExecuteEpicReceiveCommunication3.AsObject,
+    epicPostPatientMadePayment?: ExecuteEpicPostPatientMadePayment.AsObject,
+    epicGetPatientBillingDetails?: ExecuteEpicGetPatientBillingDetails.AsObject,
     newzwarePhoneLookup?: ExecuteNewzwarePhoneLookup.AsObject,
     newzwareAccountInquiry?: ExecuteNewzwareAccountInquiry.AsObject,
     newzwareCcPayment?: ExecuteNewzwareCcPayment.AsObject,
@@ -2052,6 +2064,8 @@ export namespace ExecuteFlow {
     EPIC_GET_ACCOUNT = 3707,
     EPIC_RECEIVE_COMMUNICATION_2 = 3708,
     EPIC_RECEIVE_COMMUNICATION_3 = 3709,
+    EPIC_POST_PATIENT_MADE_PAYMENT = 3710,
+    EPIC_GET_PATIENT_BILLING_DETAILS = 3711,
     NEWZWARE_PHONE_LOOKUP = 3801,
     NEWZWARE_ACCOUNT_INQUIRY = 3802,
     NEWZWARE_CC_PAYMENT = 3803,
@@ -5598,6 +5612,38 @@ export namespace ExecuteEpicReceiveCommunication3 {
   }
 }
 
+export class ExecuteEpicPostPatientMadePayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicPostPatientMadePayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicPostPatientMadePayment): ExecuteEpicPostPatientMadePayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicPostPatientMadePayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicPostPatientMadePayment;
+  static deserializeBinaryFromReader(message: ExecuteEpicPostPatientMadePayment, reader: jspb.BinaryReader): ExecuteEpicPostPatientMadePayment;
+}
+
+export namespace ExecuteEpicPostPatientMadePayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteEpicGetPatientBillingDetails extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicGetPatientBillingDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicGetPatientBillingDetails): ExecuteEpicGetPatientBillingDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicGetPatientBillingDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicGetPatientBillingDetails;
+  static deserializeBinaryFromReader(message: ExecuteEpicGetPatientBillingDetails, reader: jspb.BinaryReader): ExecuteEpicGetPatientBillingDetails;
+}
+
+export namespace ExecuteEpicGetPatientBillingDetails {
+  export type AsObject = {
+  }
+}
+
 export class ExecuteNewzwarePhoneLookup extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteNewzwarePhoneLookup.AsObject;
@@ -6059,6 +6105,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_EPIC_GET_ACCOUNT: 3707;
   REQUEST_METHOD_EPIC_RECEIVE_COMMUNICATION_2: 3708;
   REQUEST_METHOD_EPIC_RECEIVE_COMMUNICATION_3: 3709;
+  REQUEST_METHOD_EPIC_POST_PATIENT_MADE_PAYMENT: 3710;
+  REQUEST_METHOD_EPIC_GET_PATIENT_BILLING_DETAILS: 3711;
   REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP: 3801;
   REQUEST_METHOD_NEWZWARE_ACCOUNT_INQUIRY: 3802;
   REQUEST_METHOD_NEWZWARE_CC_PAYMENT: 3803;
