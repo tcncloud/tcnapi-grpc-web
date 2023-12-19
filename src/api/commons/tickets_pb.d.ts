@@ -1065,3 +1065,11 @@ export interface TicketStatusMap {
 
 export const TicketStatus: TicketStatusMap;
 
+export interface PhoneNumberTypeMap {
+  MOBILE: 0;
+  OTHER: 1;
+  INVALID_ERROR: 2;
+}
+
+export const PhoneNumberType: PhoneNumberTypeMap;
+

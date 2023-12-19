@@ -388,6 +388,46 @@ export namespace GetActionTypeResponse {
   }
 }
 
+export class GetPhoneNumberTypeRequest extends jspb.Message {
+  getPhoneNumber(): string;
+  setPhoneNumber(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetPhoneNumberTypeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPhoneNumberTypeRequest): GetPhoneNumberTypeRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetPhoneNumberTypeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPhoneNumberTypeRequest;
+  static deserializeBinaryFromReader(message: GetPhoneNumberTypeRequest, reader: jspb.BinaryReader): GetPhoneNumberTypeRequest;
+}
+
+export namespace GetPhoneNumberTypeRequest {
+  export type AsObject = {
+    phoneNumber: string,
+  }
+}
+
+export class GetPhoneNumberTypeResponse extends jspb.Message {
+  getPhoneType(): api_commons_tickets_pb.PhoneNumberTypeMap[keyof api_commons_tickets_pb.PhoneNumberTypeMap];
+  setPhoneType(value: api_commons_tickets_pb.PhoneNumberTypeMap[keyof api_commons_tickets_pb.PhoneNumberTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetPhoneNumberTypeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPhoneNumberTypeResponse): GetPhoneNumberTypeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetPhoneNumberTypeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPhoneNumberTypeResponse;
+  static deserializeBinaryFromReader(message: GetPhoneNumberTypeResponse, reader: jspb.BinaryReader): GetPhoneNumberTypeResponse;
+}
+
+export namespace GetPhoneNumberTypeResponse {
+  export type AsObject = {
+    phoneType: api_commons_tickets_pb.PhoneNumberTypeMap[keyof api_commons_tickets_pb.PhoneNumberTypeMap],
+  }
+}
+
 export class EditTicketReq extends jspb.Message {
   getTicketSid(): string;
   setTicketSid(value: string): void;

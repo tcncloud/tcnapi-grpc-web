@@ -36,6 +36,7 @@ goog.exportSymbol('proto.api.commons.EditTicket', null, global);
 goog.exportSymbol('proto.api.commons.EmailbackContext', null, global);
 goog.exportSymbol('proto.api.commons.ListTemplate', null, global);
 goog.exportSymbol('proto.api.commons.Metadata', null, global);
+goog.exportSymbol('proto.api.commons.PhoneNumberType', null, global);
 goog.exportSymbol('proto.api.commons.ProjectDescription', null, global);
 goog.exportSymbol('proto.api.commons.ReplyComment', null, global);
 goog.exportSymbol('proto.api.commons.Skills', null, global);
@@ -8117,6 +8118,15 @@ proto.api.commons.TicketStatus = {
   TICKET_STATUS_NEW: 0,
   TICKET_STATUS_OPEN: 1,
   TICKET_STATUS_CLOSE: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.PhoneNumberType = {
+  MOBILE: 0,
+  OTHER: 1,
+  INVALID_ERROR: 2
 };
 
 goog.object.extend(exports, proto.api.commons);
