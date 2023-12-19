@@ -22,7 +22,6 @@ export interface ApplicationMap {
   APPLICATION_WORK_FORCE_MANAGEMENT: 15;
   APPLICATION_WORKFLOWS: 16;
   APPLICATION_NEWSROOM: 17;
-  APPLICATION_CUSTOMER_SUPPORT: 18;
 }
 
 export const Application: ApplicationMap;
