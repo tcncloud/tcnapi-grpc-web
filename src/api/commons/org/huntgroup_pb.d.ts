@@ -1663,6 +1663,134 @@ export namespace AgentResponseComparitors {
   }
 }
 
+export class ClientInfoDisplayTemplate extends jspb.Message {
+  getTemplateSid(): string;
+  setTemplateSid(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getDisplayAllFields(): boolean;
+  setDisplayAllFields(value: boolean): void;
+
+  hasDialedNumberFieldStyle(): boolean;
+  clearDialedNumberFieldStyle(): void;
+  getDialedNumberFieldStyle(): DialedNumberFieldStyle | undefined;
+  setDialedNumberFieldStyle(value?: DialedNumberFieldStyle): void;
+
+  clearContactFieldStylesList(): void;
+  getContactFieldStylesList(): Array<ContactFieldStyle>;
+  setContactFieldStylesList(value: Array<ContactFieldStyle>): void;
+  addContactFieldStyles(value?: ContactFieldStyle, index?: number): ContactFieldStyle;
+
+  getTemplateCategory(): TemplateCategoryMap[keyof TemplateCategoryMap];
+  setTemplateCategory(value: TemplateCategoryMap[keyof TemplateCategoryMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ClientInfoDisplayTemplate.AsObject;
+  static toObject(includeInstance: boolean, msg: ClientInfoDisplayTemplate): ClientInfoDisplayTemplate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ClientInfoDisplayTemplate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ClientInfoDisplayTemplate;
+  static deserializeBinaryFromReader(message: ClientInfoDisplayTemplate, reader: jspb.BinaryReader): ClientInfoDisplayTemplate;
+}
+
+export namespace ClientInfoDisplayTemplate {
+  export type AsObject = {
+    templateSid: string,
+    name: string,
+    description: string,
+    displayAllFields: boolean,
+    dialedNumberFieldStyle?: DialedNumberFieldStyle.AsObject,
+    contactFieldStylesList: Array<ContactFieldStyle.AsObject>,
+    templateCategory: TemplateCategoryMap[keyof TemplateCategoryMap],
+  }
+}
+
+export class FieldStyle extends jspb.Message {
+  getTextColor(): string;
+  setTextColor(value: string): void;
+
+  getBackgroundColor(): string;
+  setBackgroundColor(value: string): void;
+
+  getAllowAgentCopy(): boolean;
+  setAllowAgentCopy(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FieldStyle.AsObject;
+  static toObject(includeInstance: boolean, msg: FieldStyle): FieldStyle.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FieldStyle, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FieldStyle;
+  static deserializeBinaryFromReader(message: FieldStyle, reader: jspb.BinaryReader): FieldStyle;
+}
+
+export namespace FieldStyle {
+  export type AsObject = {
+    textColor: string,
+    backgroundColor: string,
+    allowAgentCopy: boolean,
+  }
+}
+
+export class ContactFieldStyle extends jspb.Message {
+  getDescriptionId(): number;
+  setDescriptionId(value: number): void;
+
+  hasFieldStyle(): boolean;
+  clearFieldStyle(): void;
+  getFieldStyle(): FieldStyle | undefined;
+  setFieldStyle(value?: FieldStyle): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactFieldStyle.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactFieldStyle): ContactFieldStyle.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContactFieldStyle, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactFieldStyle;
+  static deserializeBinaryFromReader(message: ContactFieldStyle, reader: jspb.BinaryReader): ContactFieldStyle;
+}
+
+export namespace ContactFieldStyle {
+  export type AsObject = {
+    descriptionId: number,
+    fieldStyle?: FieldStyle.AsObject,
+  }
+}
+
+export class DialedNumberFieldStyle extends jspb.Message {
+  hasFieldStyle(): boolean;
+  clearFieldStyle(): void;
+  getFieldStyle(): FieldStyle | undefined;
+  setFieldStyle(value?: FieldStyle): void;
+
+  getDisplayToAgent(): boolean;
+  setDisplayToAgent(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DialedNumberFieldStyle.AsObject;
+  static toObject(includeInstance: boolean, msg: DialedNumberFieldStyle): DialedNumberFieldStyle.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DialedNumberFieldStyle, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DialedNumberFieldStyle;
+  static deserializeBinaryFromReader(message: DialedNumberFieldStyle, reader: jspb.BinaryReader): DialedNumberFieldStyle;
+}
+
+export namespace DialedNumberFieldStyle {
+  export type AsObject = {
+    fieldStyle?: FieldStyle.AsObject,
+    displayToAgent: boolean,
+  }
+}
+
 export class DataDipConfig extends jspb.Message {
   getConfigName(): string;
   setConfigName(value: string): void;
@@ -1968,6 +2096,14 @@ export namespace IntegrationLinkSubParameterPart {
     parameterSourceType: ParameterSourceTypeMap[keyof ParameterSourceTypeMap],
   }
 }
+
+export interface TemplateCategoryMap {
+  TEMPLATE_CATEGORY_UNSPECIFIED: 0;
+  TEMPLATE_CATEGORY_HUNT_GROUP: 1;
+  TEMPLATE_CATEGORY_CAMPAIGN: 2;
+}
+
+export const TemplateCategory: TemplateCategoryMap;
 
 export interface ParameterSourceTypeMap {
   PARAMETER_SOURCE_TYPE_UNSPECIFIED: 0;
