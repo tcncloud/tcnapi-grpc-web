@@ -332,6 +332,7 @@ export namespace AgentSessionLogActionKey {
     BARGE_IN_STOP: 57;
     BARGEINCALLJOINED: 58;
     BARGEINCALLLEFT: 59;
+    EXECUTED_AGENT_INTEGRATIONLINK: 60;
   }
 
   export const Enum: EnumMap;
