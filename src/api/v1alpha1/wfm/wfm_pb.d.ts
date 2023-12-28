@@ -7272,6 +7272,58 @@ export namespace ShiftInstance {
   }
 }
 
+export class ShiftSegmentCallStat extends jspb.Message {
+  getNumCalls(): number;
+  setNumCalls(value: number): void;
+
+  getPercentFit(): number;
+  setPercentFit(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ShiftSegmentCallStat.AsObject;
+  static toObject(includeInstance: boolean, msg: ShiftSegmentCallStat): ShiftSegmentCallStat.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ShiftSegmentCallStat, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ShiftSegmentCallStat;
+  static deserializeBinaryFromReader(message: ShiftSegmentCallStat, reader: jspb.BinaryReader): ShiftSegmentCallStat;
+}
+
+export namespace ShiftSegmentCallStat {
+  export type AsObject = {
+    numCalls: number,
+    percentFit: number,
+  }
+}
+
+export class ShiftSegmentCallStatKeyValue extends jspb.Message {
+  hasKey(): boolean;
+  clearKey(): void;
+  getKey(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setKey(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
+  hasValue(): boolean;
+  clearValue(): void;
+  getValue(): ShiftSegmentCallStat | undefined;
+  setValue(value?: ShiftSegmentCallStat): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ShiftSegmentCallStatKeyValue.AsObject;
+  static toObject(includeInstance: boolean, msg: ShiftSegmentCallStatKeyValue): ShiftSegmentCallStatKeyValue.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ShiftSegmentCallStatKeyValue, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ShiftSegmentCallStatKeyValue;
+  static deserializeBinaryFromReader(message: ShiftSegmentCallStatKeyValue, reader: jspb.BinaryReader): ShiftSegmentCallStatKeyValue;
+}
+
+export namespace ShiftSegmentCallStatKeyValue {
+  export type AsObject = {
+    key?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+    value?: ShiftSegmentCallStat.AsObject,
+  }
+}
+
 export class ShiftSegment extends jspb.Message {
   getShiftSegmentSid(): number;
   setShiftSegmentSid(value: number): void;
@@ -7296,6 +7348,11 @@ export class ShiftSegment extends jspb.Message {
   getSchedulingActivity(): SchedulingActivity | undefined;
   setSchedulingActivity(value?: SchedulingActivity): void;
 
+  clearCallStatsList(): void;
+  getCallStatsList(): Array<ShiftSegmentCallStatKeyValue>;
+  setCallStatsList(value: Array<ShiftSegmentCallStatKeyValue>): void;
+  addCallStats(value?: ShiftSegmentCallStatKeyValue, index?: number): ShiftSegmentCallStatKeyValue;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ShiftSegment.AsObject;
   static toObject(includeInstance: boolean, msg: ShiftSegment): ShiftSegment.AsObject;
@@ -7315,6 +7372,7 @@ export namespace ShiftSegment {
     startMinuteInShift: number,
     schedulingActivitySid: number,
     schedulingActivity?: SchedulingActivity.AsObject,
+    callStatsList: Array<ShiftSegmentCallStatKeyValue.AsObject>,
   }
 }
 
@@ -10415,6 +10473,102 @@ export namespace GenerateTourWeekPatternsRes {
   export type AsObject = {
     tourWeekPatternsList: Array<TourWeekPattern.AsObject>,
     diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
+export class BasicSchedulingResultMetric extends jspb.Message {
+  getTotalInternalIntervals(): number;
+  setTotalInternalIntervals(value: number): void;
+
+  getTotalIntervalsWithFteRequired(): number;
+  setTotalIntervalsWithFteRequired(value: number): void;
+
+  getTotalIntervalsWithFtesRemaining(): number;
+  setTotalIntervalsWithFtesRemaining(value: number): void;
+
+  getCoverage(): number;
+  setCoverage(value: number): void;
+
+  getRootMeanSquare(): number;
+  setRootMeanSquare(value: number): void;
+
+  getHasResult(): boolean;
+  setHasResult(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BasicSchedulingResultMetric.AsObject;
+  static toObject(includeInstance: boolean, msg: BasicSchedulingResultMetric): BasicSchedulingResultMetric.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BasicSchedulingResultMetric, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BasicSchedulingResultMetric;
+  static deserializeBinaryFromReader(message: BasicSchedulingResultMetric, reader: jspb.BinaryReader): BasicSchedulingResultMetric;
+}
+
+export namespace BasicSchedulingResultMetric {
+  export type AsObject = {
+    totalInternalIntervals: number,
+    totalIntervalsWithFteRequired: number,
+    totalIntervalsWithFtesRemaining: number,
+    coverage: number,
+    rootMeanSquare: number,
+    hasResult: boolean,
+  }
+}
+
+export class SchedulingResultMetricKeyValue extends jspb.Message {
+  hasKey(): boolean;
+  clearKey(): void;
+  getKey(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setKey(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
+  hasValue(): boolean;
+  clearValue(): void;
+  getValue(): BasicSchedulingResultMetric | undefined;
+  setValue(value?: BasicSchedulingResultMetric): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SchedulingResultMetricKeyValue.AsObject;
+  static toObject(includeInstance: boolean, msg: SchedulingResultMetricKeyValue): SchedulingResultMetricKeyValue.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SchedulingResultMetricKeyValue, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SchedulingResultMetricKeyValue;
+  static deserializeBinaryFromReader(message: SchedulingResultMetricKeyValue, reader: jspb.BinaryReader): SchedulingResultMetricKeyValue;
+}
+
+export namespace SchedulingResultMetricKeyValue {
+  export type AsObject = {
+    key?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+    value?: BasicSchedulingResultMetric.AsObject,
+  }
+}
+
+export class SchedulingResultMetric extends jspb.Message {
+  hasMetricsAllSkills(): boolean;
+  clearMetricsAllSkills(): void;
+  getMetricsAllSkills(): BasicSchedulingResultMetric | undefined;
+  setMetricsAllSkills(value?: BasicSchedulingResultMetric): void;
+
+  clearMetricsBySkillCollectionList(): void;
+  getMetricsBySkillCollectionList(): Array<SchedulingResultMetricKeyValue>;
+  setMetricsBySkillCollectionList(value: Array<SchedulingResultMetricKeyValue>): void;
+  addMetricsBySkillCollection(value?: SchedulingResultMetricKeyValue, index?: number): SchedulingResultMetricKeyValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SchedulingResultMetric.AsObject;
+  static toObject(includeInstance: boolean, msg: SchedulingResultMetric): SchedulingResultMetric.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SchedulingResultMetric, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SchedulingResultMetric;
+  static deserializeBinaryFromReader(message: SchedulingResultMetric, reader: jspb.BinaryReader): SchedulingResultMetric;
+}
+
+export namespace SchedulingResultMetric {
+  export type AsObject = {
+    metricsAllSkills?: BasicSchedulingResultMetric.AsObject,
+    metricsBySkillCollectionList: Array<SchedulingResultMetricKeyValue.AsObject>,
   }
 }
 
