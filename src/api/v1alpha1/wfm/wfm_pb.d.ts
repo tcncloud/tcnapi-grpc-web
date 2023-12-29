@@ -7124,6 +7124,262 @@ export namespace PerformanceMetric {
   }
 }
 
+export class BasicPerformanceMetricV1 extends jspb.Message {
+  hasDateRange(): boolean;
+  clearDateRange(): void;
+  getDateRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDateRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  getTotalCallsRequired(): number;
+  setTotalCallsRequired(value: number): void;
+
+  getTotalFtesAchieved(): number;
+  setTotalFtesAchieved(value: number): void;
+
+  getNumIntervalsWithRequiredCalls(): number;
+  setNumIntervalsWithRequiredCalls(value: number): void;
+
+  getNumIntervalsWithFtesButNoSchedules(): number;
+  setNumIntervalsWithFtesButNoSchedules(value: number): void;
+
+  getNumIntervalsWithFtesButNoForecastedCalls(): number;
+  setNumIntervalsWithFtesButNoForecastedCalls(value: number): void;
+
+  getTotalUnscheduledCalls(): number;
+  setTotalUnscheduledCalls(value: number): void;
+
+  getTotalUnnecessaryFtes(): number;
+  setTotalUnnecessaryFtes(value: number): void;
+
+  getIntervalWidthInMinutes(): number;
+  setIntervalWidthInMinutes(value: number): void;
+
+  getMetricType(): api_commons_wfm_pb.PerformanceMetricTypeMap[keyof api_commons_wfm_pb.PerformanceMetricTypeMap];
+  setMetricType(value: api_commons_wfm_pb.PerformanceMetricTypeMap[keyof api_commons_wfm_pb.PerformanceMetricTypeMap]): void;
+
+  clearFteIntervalsList(): void;
+  getFteIntervalsList(): Array<FTERequiredVsAchievedInterval>;
+  setFteIntervalsList(value: Array<FTERequiredVsAchievedInterval>): void;
+  addFteIntervals(value?: FTERequiredVsAchievedInterval, index?: number): FTERequiredVsAchievedInterval;
+
+  clearServiceLevelIntervalsList(): void;
+  getServiceLevelIntervalsList(): Array<ServiceLevelInterval>;
+  setServiceLevelIntervalsList(value: Array<ServiceLevelInterval>): void;
+  addServiceLevelIntervals(value?: ServiceLevelInterval, index?: number): ServiceLevelInterval;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BasicPerformanceMetricV1.AsObject;
+  static toObject(includeInstance: boolean, msg: BasicPerformanceMetricV1): BasicPerformanceMetricV1.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BasicPerformanceMetricV1, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BasicPerformanceMetricV1;
+  static deserializeBinaryFromReader(message: BasicPerformanceMetricV1, reader: jspb.BinaryReader): BasicPerformanceMetricV1;
+}
+
+export namespace BasicPerformanceMetricV1 {
+  export type AsObject = {
+    dateRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    totalCallsRequired: number,
+    totalFtesAchieved: number,
+    numIntervalsWithRequiredCalls: number,
+    numIntervalsWithFtesButNoSchedules: number,
+    numIntervalsWithFtesButNoForecastedCalls: number,
+    totalUnscheduledCalls: number,
+    totalUnnecessaryFtes: number,
+    intervalWidthInMinutes: number,
+    metricType: api_commons_wfm_pb.PerformanceMetricTypeMap[keyof api_commons_wfm_pb.PerformanceMetricTypeMap],
+    fteIntervalsList: Array<FTERequiredVsAchievedInterval.AsObject>,
+    serviceLevelIntervalsList: Array<ServiceLevelInterval.AsObject>,
+  }
+}
+
+export class PerformanceMetricV1KeyValue extends jspb.Message {
+  hasKey(): boolean;
+  clearKey(): void;
+  getKey(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setKey(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
+  hasValue(): boolean;
+  clearValue(): void;
+  getValue(): BasicPerformanceMetricV1 | undefined;
+  setValue(value?: BasicPerformanceMetricV1): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PerformanceMetricV1KeyValue.AsObject;
+  static toObject(includeInstance: boolean, msg: PerformanceMetricV1KeyValue): PerformanceMetricV1KeyValue.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PerformanceMetricV1KeyValue, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PerformanceMetricV1KeyValue;
+  static deserializeBinaryFromReader(message: PerformanceMetricV1KeyValue, reader: jspb.BinaryReader): PerformanceMetricV1KeyValue;
+}
+
+export namespace PerformanceMetricV1KeyValue {
+  export type AsObject = {
+    key?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+    value?: BasicPerformanceMetricV1.AsObject,
+  }
+}
+
+export class PerformanceMetricV1 extends jspb.Message {
+  hasMetricsAllSkills(): boolean;
+  clearMetricsAllSkills(): void;
+  getMetricsAllSkills(): BasicPerformanceMetricV1 | undefined;
+  setMetricsAllSkills(value?: BasicPerformanceMetricV1): void;
+
+  clearMetricsBySkillCollectionList(): void;
+  getMetricsBySkillCollectionList(): Array<PerformanceMetricV1KeyValue>;
+  setMetricsBySkillCollectionList(value: Array<PerformanceMetricV1KeyValue>): void;
+  addMetricsBySkillCollection(value?: PerformanceMetricV1KeyValue, index?: number): PerformanceMetricV1KeyValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PerformanceMetricV1.AsObject;
+  static toObject(includeInstance: boolean, msg: PerformanceMetricV1): PerformanceMetricV1.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PerformanceMetricV1, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PerformanceMetricV1;
+  static deserializeBinaryFromReader(message: PerformanceMetricV1, reader: jspb.BinaryReader): PerformanceMetricV1;
+}
+
+export namespace PerformanceMetricV1 {
+  export type AsObject = {
+    metricsAllSkills?: BasicPerformanceMetricV1.AsObject,
+    metricsBySkillCollectionList: Array<PerformanceMetricV1KeyValue.AsObject>,
+  }
+}
+
+export class BasicPerformanceMetricV2 extends jspb.Message {
+  hasDateRange(): boolean;
+  clearDateRange(): void;
+  getDateRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDateRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  getTotalFteIntervalsRequired(): number;
+  setTotalFteIntervalsRequired(value: number): void;
+
+  getTotalFteIntervalsAchieved(): number;
+  setTotalFteIntervalsAchieved(value: number): void;
+
+  getNumIntervalsWithCallFtes(): number;
+  setNumIntervalsWithCallFtes(value: number): void;
+
+  getNumIntervalsWithShiftFtes(): number;
+  setNumIntervalsWithShiftFtes(value: number): void;
+
+  getNumIntervalsWithCallFtesButNoShifts(): number;
+  setNumIntervalsWithCallFtesButNoShifts(value: number): void;
+
+  getNumIntervalsWithShiftsButNoCallFtes(): number;
+  setNumIntervalsWithShiftsButNoCallFtes(value: number): void;
+
+  getTotalUnderscheduledCallFtes(): number;
+  setTotalUnderscheduledCallFtes(value: number): void;
+
+  getTotalOverscheduledCallFtes(): number;
+  setTotalOverscheduledCallFtes(value: number): void;
+
+  getIntervalWidthInMinutes(): number;
+  setIntervalWidthInMinutes(value: number): void;
+
+  getMetricType(): api_commons_wfm_pb.PerformanceMetricTypeMap[keyof api_commons_wfm_pb.PerformanceMetricTypeMap];
+  setMetricType(value: api_commons_wfm_pb.PerformanceMetricTypeMap[keyof api_commons_wfm_pb.PerformanceMetricTypeMap]): void;
+
+  clearFteOccupancyIntervalsList(): void;
+  getFteOccupancyIntervalsList(): Array<FTERequiredVsAchievedOccupancyInterval>;
+  setFteOccupancyIntervalsList(value: Array<FTERequiredVsAchievedOccupancyInterval>): void;
+  addFteOccupancyIntervals(value?: FTERequiredVsAchievedOccupancyInterval, index?: number): FTERequiredVsAchievedOccupancyInterval;
+
+  clearServiceLevelIntervalsList(): void;
+  getServiceLevelIntervalsList(): Array<ServiceLevelInterval>;
+  setServiceLevelIntervalsList(value: Array<ServiceLevelInterval>): void;
+  addServiceLevelIntervals(value?: ServiceLevelInterval, index?: number): ServiceLevelInterval;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BasicPerformanceMetricV2.AsObject;
+  static toObject(includeInstance: boolean, msg: BasicPerformanceMetricV2): BasicPerformanceMetricV2.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BasicPerformanceMetricV2, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BasicPerformanceMetricV2;
+  static deserializeBinaryFromReader(message: BasicPerformanceMetricV2, reader: jspb.BinaryReader): BasicPerformanceMetricV2;
+}
+
+export namespace BasicPerformanceMetricV2 {
+  export type AsObject = {
+    dateRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    totalFteIntervalsRequired: number,
+    totalFteIntervalsAchieved: number,
+    numIntervalsWithCallFtes: number,
+    numIntervalsWithShiftFtes: number,
+    numIntervalsWithCallFtesButNoShifts: number,
+    numIntervalsWithShiftsButNoCallFtes: number,
+    totalUnderscheduledCallFtes: number,
+    totalOverscheduledCallFtes: number,
+    intervalWidthInMinutes: number,
+    metricType: api_commons_wfm_pb.PerformanceMetricTypeMap[keyof api_commons_wfm_pb.PerformanceMetricTypeMap],
+    fteOccupancyIntervalsList: Array<FTERequiredVsAchievedOccupancyInterval.AsObject>,
+    serviceLevelIntervalsList: Array<ServiceLevelInterval.AsObject>,
+  }
+}
+
+export class PerformanceMetricV2KeyValue extends jspb.Message {
+  hasKey(): boolean;
+  clearKey(): void;
+  getKey(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setKey(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
+  hasValue(): boolean;
+  clearValue(): void;
+  getValue(): BasicPerformanceMetricV2 | undefined;
+  setValue(value?: BasicPerformanceMetricV2): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PerformanceMetricV2KeyValue.AsObject;
+  static toObject(includeInstance: boolean, msg: PerformanceMetricV2KeyValue): PerformanceMetricV2KeyValue.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PerformanceMetricV2KeyValue, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PerformanceMetricV2KeyValue;
+  static deserializeBinaryFromReader(message: PerformanceMetricV2KeyValue, reader: jspb.BinaryReader): PerformanceMetricV2KeyValue;
+}
+
+export namespace PerformanceMetricV2KeyValue {
+  export type AsObject = {
+    key?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+    value?: BasicPerformanceMetricV2.AsObject,
+  }
+}
+
+export class PerformanceMetricV2 extends jspb.Message {
+  hasMetricsAllSkills(): boolean;
+  clearMetricsAllSkills(): void;
+  getMetricsAllSkills(): BasicPerformanceMetricV2 | undefined;
+  setMetricsAllSkills(value?: BasicPerformanceMetricV2): void;
+
+  clearMetricsBySkillCollectionList(): void;
+  getMetricsBySkillCollectionList(): Array<PerformanceMetricV2KeyValue>;
+  setMetricsBySkillCollectionList(value: Array<PerformanceMetricV2KeyValue>): void;
+  addMetricsBySkillCollection(value?: PerformanceMetricV2KeyValue, index?: number): PerformanceMetricV2KeyValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PerformanceMetricV2.AsObject;
+  static toObject(includeInstance: boolean, msg: PerformanceMetricV2): PerformanceMetricV2.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PerformanceMetricV2, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PerformanceMetricV2;
+  static deserializeBinaryFromReader(message: PerformanceMetricV2, reader: jspb.BinaryReader): PerformanceMetricV2;
+}
+
+export namespace PerformanceMetricV2 {
+  export type AsObject = {
+    metricsAllSkills?: BasicPerformanceMetricV2.AsObject,
+    metricsBySkillCollectionList: Array<PerformanceMetricV2KeyValue.AsObject>,
+  }
+}
+
 export class ServiceLevelInterval extends jspb.Message {
   hasStartDatetime(): boolean;
   clearStartDatetime(): void;
@@ -7177,6 +7433,36 @@ export namespace FTERequiredVsAchievedInterval {
     startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     requiredCalls: number,
     achievedFtes: number,
+  }
+}
+
+export class FTERequiredVsAchievedOccupancyInterval extends jspb.Message {
+  hasStartDatetime(): boolean;
+  clearStartDatetime(): void;
+  getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getRequiredFteOccupancy(): number;
+  setRequiredFteOccupancy(value: number): void;
+
+  getAchievedFteOccupancy(): number;
+  setAchievedFteOccupancy(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FTERequiredVsAchievedOccupancyInterval.AsObject;
+  static toObject(includeInstance: boolean, msg: FTERequiredVsAchievedOccupancyInterval): FTERequiredVsAchievedOccupancyInterval.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FTERequiredVsAchievedOccupancyInterval, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FTERequiredVsAchievedOccupancyInterval;
+  static deserializeBinaryFromReader(message: FTERequiredVsAchievedOccupancyInterval, reader: jspb.BinaryReader): FTERequiredVsAchievedOccupancyInterval;
+}
+
+export namespace FTERequiredVsAchievedOccupancyInterval {
+  export type AsObject = {
+    startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    requiredFteOccupancy: number,
+    achievedFteOccupancy: number,
   }
 }
 
