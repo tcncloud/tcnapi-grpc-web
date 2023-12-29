@@ -8052,6 +8052,40 @@ export namespace BuildDraftScheduleRes {
   }
 }
 
+export class BuildDraftScheduleV2Res extends jspb.Message {
+  hasDraftSchedule(): boolean;
+  clearDraftSchedule(): void;
+  getDraftSchedule(): DraftSchedule | undefined;
+  setDraftSchedule(value?: DraftSchedule): void;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  hasSchedulingResultMetric(): boolean;
+  clearSchedulingResultMetric(): void;
+  getSchedulingResultMetric(): SchedulingResultMetric | undefined;
+  setSchedulingResultMetric(value?: SchedulingResultMetric): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BuildDraftScheduleV2Res.AsObject;
+  static toObject(includeInstance: boolean, msg: BuildDraftScheduleV2Res): BuildDraftScheduleV2Res.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BuildDraftScheduleV2Res, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BuildDraftScheduleV2Res;
+  static deserializeBinaryFromReader(message: BuildDraftScheduleV2Res, reader: jspb.BinaryReader): BuildDraftScheduleV2Res;
+}
+
+export namespace BuildDraftScheduleV2Res {
+  export type AsObject = {
+    draftSchedule?: DraftSchedule.AsObject,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+    schedulingResultMetric?: SchedulingResultMetric.AsObject,
+  }
+}
+
 export class PublishDraftScheduleReq extends jspb.Message {
   getDraftScheduleSid(): number;
   setDraftScheduleSid(value: number): void;
