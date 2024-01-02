@@ -10418,3 +10418,71 @@ export namespace GenerateTourWeekPatternsRes {
   }
 }
 
+export class RemoveAgentFromScheduleRequest extends jspb.Message {
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  getWfmAgentSid(): number;
+  setWfmAgentSid(value: number): void;
+
+  hasScheduleSelector(): boolean;
+  clearScheduleSelector(): void;
+  getScheduleSelector(): api_commons_wfm_pb.ScheduleSelector | undefined;
+  setScheduleSelector(value?: api_commons_wfm_pb.ScheduleSelector): void;
+
+  hasNodeSelector(): boolean;
+  clearNodeSelector(): void;
+  getNodeSelector(): ParentEntity | undefined;
+  setNodeSelector(value?: ParentEntity): void;
+
+  getScheduleScenarioSid(): number;
+  setScheduleScenarioSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveAgentFromScheduleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveAgentFromScheduleRequest): RemoveAgentFromScheduleRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveAgentFromScheduleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveAgentFromScheduleRequest;
+  static deserializeBinaryFromReader(message: RemoveAgentFromScheduleRequest, reader: jspb.BinaryReader): RemoveAgentFromScheduleRequest;
+}
+
+export namespace RemoveAgentFromScheduleRequest {
+  export type AsObject = {
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    wfmAgentSid: number,
+    scheduleSelector?: api_commons_wfm_pb.ScheduleSelector.AsObject,
+    nodeSelector?: ParentEntity.AsObject,
+    scheduleScenarioSid: number,
+  }
+}
+
+export class RemoveAgentFromScheduleResponse extends jspb.Message {
+  getUnassignedWfmAgentSid(): number;
+  setUnassignedWfmAgentSid(value: number): void;
+
+  clearUpdatedShiftsList(): void;
+  getUpdatedShiftsList(): Array<ShiftInstance>;
+  setUpdatedShiftsList(value: Array<ShiftInstance>): void;
+  addUpdatedShifts(value?: ShiftInstance, index?: number): ShiftInstance;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveAgentFromScheduleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveAgentFromScheduleResponse): RemoveAgentFromScheduleResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveAgentFromScheduleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveAgentFromScheduleResponse;
+  static deserializeBinaryFromReader(message: RemoveAgentFromScheduleResponse, reader: jspb.BinaryReader): RemoveAgentFromScheduleResponse;
+}
+
+export namespace RemoveAgentFromScheduleResponse {
+  export type AsObject = {
+    unassignedWfmAgentSid: number,
+    updatedShiftsList: Array<ShiftInstance.AsObject>,
+  }
+}
+

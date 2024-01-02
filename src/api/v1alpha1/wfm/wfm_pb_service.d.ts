@@ -1417,6 +1417,15 @@ type WFMGenerateTourWeekPatterns = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsRes;
 };
 
+type WFMRemoveAgentFromSchedule = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse;
+};
+
 export class WFM {
   static readonly serviceName: string;
   static readonly PerformInitialClientSetup: WFMPerformInitialClientSetup;
@@ -1576,6 +1585,7 @@ export class WFM {
   static readonly ListTourAgentCollectionWFMAgents: WFMListTourAgentCollectionWFMAgents;
   static readonly DeleteTourAgentCollectionWFMAgents: WFMDeleteTourAgentCollectionWFMAgents;
   static readonly GenerateTourWeekPatterns: WFMGenerateTourWeekPatterns;
+  static readonly RemoveAgentFromSchedule: WFMRemoveAgentFromSchedule;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -2974,6 +2984,15 @@ export class WFMClient {
   generateTourWeekPatterns(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsRes|null) => void
+  ): UnaryResponse;
+  removeAgentFromSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse|null) => void
+  ): UnaryResponse;
+  removeAgentFromSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse|null) => void
   ): UnaryResponse;
 }
 
