@@ -492,3 +492,45 @@ export namespace SkillGroupMembers {
   }
 }
 
+export class AssignUsersRequest extends jspb.Message {
+  getSkillGroupId(): string;
+  setSkillGroupId(value: string): void;
+
+  clearUserIdsList(): void;
+  getUserIdsList(): Array<string>;
+  setUserIdsList(value: Array<string>): void;
+  addUserIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignUsersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignUsersRequest): AssignUsersRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignUsersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignUsersRequest;
+  static deserializeBinaryFromReader(message: AssignUsersRequest, reader: jspb.BinaryReader): AssignUsersRequest;
+}
+
+export namespace AssignUsersRequest {
+  export type AsObject = {
+    skillGroupId: string,
+    userIdsList: Array<string>,
+  }
+}
+
+export class AssignUsersResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignUsersResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignUsersResponse): AssignUsersResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignUsersResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignUsersResponse;
+  static deserializeBinaryFromReader(message: AssignUsersResponse, reader: jspb.BinaryReader): AssignUsersResponse;
+}
+
+export namespace AssignUsersResponse {
+  export type AsObject = {
+  }
+}
+
