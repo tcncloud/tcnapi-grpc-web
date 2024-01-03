@@ -7565,6 +7565,11 @@ export class ShiftSegmentCallStat extends jspb.Message {
   getPercentFit(): number;
   setPercentFit(value: number): void;
 
+  hasSkillCollection(): boolean;
+  clearSkillCollection(): void;
+  getSkillCollection(): api_commons_wfm_pb.SkillProfileCategory | undefined;
+  setSkillCollection(value?: api_commons_wfm_pb.SkillProfileCategory): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ShiftSegmentCallStat.AsObject;
   static toObject(includeInstance: boolean, msg: ShiftSegmentCallStat): ShiftSegmentCallStat.AsObject;
@@ -7579,34 +7584,7 @@ export namespace ShiftSegmentCallStat {
   export type AsObject = {
     numCalls: number,
     percentFit: number,
-  }
-}
-
-export class ShiftSegmentCallStatKeyValue extends jspb.Message {
-  hasKey(): boolean;
-  clearKey(): void;
-  getKey(): api_commons_wfm_pb.SkillProfileCategory | undefined;
-  setKey(value?: api_commons_wfm_pb.SkillProfileCategory): void;
-
-  hasValue(): boolean;
-  clearValue(): void;
-  getValue(): ShiftSegmentCallStat | undefined;
-  setValue(value?: ShiftSegmentCallStat): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ShiftSegmentCallStatKeyValue.AsObject;
-  static toObject(includeInstance: boolean, msg: ShiftSegmentCallStatKeyValue): ShiftSegmentCallStatKeyValue.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ShiftSegmentCallStatKeyValue, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ShiftSegmentCallStatKeyValue;
-  static deserializeBinaryFromReader(message: ShiftSegmentCallStatKeyValue, reader: jspb.BinaryReader): ShiftSegmentCallStatKeyValue;
-}
-
-export namespace ShiftSegmentCallStatKeyValue {
-  export type AsObject = {
-    key?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
-    value?: ShiftSegmentCallStat.AsObject,
+    skillCollection?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
   }
 }
 
@@ -7634,10 +7612,10 @@ export class ShiftSegment extends jspb.Message {
   getSchedulingActivity(): SchedulingActivity | undefined;
   setSchedulingActivity(value?: SchedulingActivity): void;
 
-  clearCallStatsList(): void;
-  getCallStatsList(): Array<ShiftSegmentCallStatKeyValue>;
-  setCallStatsList(value: Array<ShiftSegmentCallStatKeyValue>): void;
-  addCallStats(value?: ShiftSegmentCallStatKeyValue, index?: number): ShiftSegmentCallStatKeyValue;
+  clearCallStatsBySkillCollectionList(): void;
+  getCallStatsBySkillCollectionList(): Array<ShiftSegmentCallStat>;
+  setCallStatsBySkillCollectionList(value: Array<ShiftSegmentCallStat>): void;
+  addCallStatsBySkillCollection(value?: ShiftSegmentCallStat, index?: number): ShiftSegmentCallStat;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ShiftSegment.AsObject;
@@ -7658,7 +7636,7 @@ export namespace ShiftSegment {
     startMinuteInShift: number,
     schedulingActivitySid: number,
     schedulingActivity?: SchedulingActivity.AsObject,
-    callStatsList: Array<ShiftSegmentCallStatKeyValue.AsObject>,
+    callStatsBySkillCollectionList: Array<ShiftSegmentCallStat.AsObject>,
   }
 }
 
