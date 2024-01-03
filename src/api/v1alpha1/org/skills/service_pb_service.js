@@ -65,6 +65,15 @@ SkillsService.AssignSkillGroups = {
   responseType: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsResponse
 };
 
+SkillsService.UpdateUsersOnSkillGroup = {
+  methodName: "UpdateUsersOnSkillGroup",
+  service: SkillsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_skills_entities_pb.UpdateUsersOnSkillGroupRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.UpdateUsersOnSkillGroupResponse
+};
+
 SkillsService.RevokeSkillGroups = {
   methodName: "RevokeSkillGroups",
   service: SkillsService,
@@ -277,6 +286,37 @@ SkillsServiceClient.prototype.assignSkillGroups = function assignSkillGroups(req
     callback = arguments[1];
   }
   var client = grpc.unary(SkillsService.AssignSkillGroups, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+SkillsServiceClient.prototype.updateUsersOnSkillGroup = function updateUsersOnSkillGroup(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(SkillsService.UpdateUsersOnSkillGroup, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
