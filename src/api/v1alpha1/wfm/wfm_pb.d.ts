@@ -10418,3 +10418,153 @@ export namespace GenerateTourWeekPatternsRes {
   }
 }
 
+export class ListValidAgentsForReplacementReq extends jspb.Message {
+  getScheduleScenarioSid(): number;
+  setScheduleScenarioSid(value: number): void;
+
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  hasScheduleSelector(): boolean;
+  clearScheduleSelector(): void;
+  getScheduleSelector(): api_commons_wfm_pb.ScheduleSelector | undefined;
+  setScheduleSelector(value?: api_commons_wfm_pb.ScheduleSelector): void;
+
+  hasNodeSelector(): boolean;
+  clearNodeSelector(): void;
+  getNodeSelector(): ParentEntity | undefined;
+  setNodeSelector(value?: ParentEntity): void;
+
+  getWfmAgentSidToReplace(): number;
+  setWfmAgentSidToReplace(value: number): void;
+
+  getSkipSkillProficiencySort(): boolean;
+  setSkipSkillProficiencySort(value: boolean): void;
+
+  getIncludeSkillMismatches(): boolean;
+  setIncludeSkillMismatches(value: boolean): void;
+
+  getSkipForceSameAgentGroups(): boolean;
+  setSkipForceSameAgentGroups(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListValidAgentsForReplacementReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListValidAgentsForReplacementReq): ListValidAgentsForReplacementReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListValidAgentsForReplacementReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListValidAgentsForReplacementReq;
+  static deserializeBinaryFromReader(message: ListValidAgentsForReplacementReq, reader: jspb.BinaryReader): ListValidAgentsForReplacementReq;
+}
+
+export namespace ListValidAgentsForReplacementReq {
+  export type AsObject = {
+    scheduleScenarioSid: number,
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    scheduleSelector?: api_commons_wfm_pb.ScheduleSelector.AsObject,
+    nodeSelector?: ParentEntity.AsObject,
+    wfmAgentSidToReplace: number,
+    skipSkillProficiencySort: boolean,
+    includeSkillMismatches: boolean,
+    skipForceSameAgentGroups: boolean,
+  }
+}
+
+export class ListValidAgentsForReplacementRes extends jspb.Message {
+  clearWfmAgentSidsList(): void;
+  getWfmAgentSidsList(): Array<number>;
+  setWfmAgentSidsList(value: Array<number>): void;
+  addWfmAgentSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListValidAgentsForReplacementRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListValidAgentsForReplacementRes): ListValidAgentsForReplacementRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListValidAgentsForReplacementRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListValidAgentsForReplacementRes;
+  static deserializeBinaryFromReader(message: ListValidAgentsForReplacementRes, reader: jspb.BinaryReader): ListValidAgentsForReplacementRes;
+}
+
+export namespace ListValidAgentsForReplacementRes {
+  export type AsObject = {
+    wfmAgentSidsList: Array<number>,
+  }
+}
+
+export class ReplaceAgentOnScheduleReq extends jspb.Message {
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  hasScheduleSelector(): boolean;
+  clearScheduleSelector(): void;
+  getScheduleSelector(): api_commons_wfm_pb.ScheduleSelector | undefined;
+  setScheduleSelector(value?: api_commons_wfm_pb.ScheduleSelector): void;
+
+  hasNodeSelector(): boolean;
+  clearNodeSelector(): void;
+  getNodeSelector(): ParentEntity | undefined;
+  setNodeSelector(value?: ParentEntity): void;
+
+  getWfmAgentSidToRemove(): number;
+  setWfmAgentSidToRemove(value: number): void;
+
+  getWfmAgentSidToAdd(): number;
+  setWfmAgentSidToAdd(value: number): void;
+
+  getSkipOverlappingShifts(): boolean;
+  setSkipOverlappingShifts(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReplaceAgentOnScheduleReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ReplaceAgentOnScheduleReq): ReplaceAgentOnScheduleReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReplaceAgentOnScheduleReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReplaceAgentOnScheduleReq;
+  static deserializeBinaryFromReader(message: ReplaceAgentOnScheduleReq, reader: jspb.BinaryReader): ReplaceAgentOnScheduleReq;
+}
+
+export namespace ReplaceAgentOnScheduleReq {
+  export type AsObject = {
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    scheduleSelector?: api_commons_wfm_pb.ScheduleSelector.AsObject,
+    nodeSelector?: ParentEntity.AsObject,
+    wfmAgentSidToRemove: number,
+    wfmAgentSidToAdd: number,
+    skipOverlappingShifts: boolean,
+  }
+}
+
+export class ReplaceAgentOnScheduleRes extends jspb.Message {
+  clearUpdatedShiftInstancesList(): void;
+  getUpdatedShiftInstancesList(): Array<ShiftInstance>;
+  setUpdatedShiftInstancesList(value: Array<ShiftInstance>): void;
+  addUpdatedShiftInstances(value?: ShiftInstance, index?: number): ShiftInstance;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReplaceAgentOnScheduleRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ReplaceAgentOnScheduleRes): ReplaceAgentOnScheduleRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReplaceAgentOnScheduleRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReplaceAgentOnScheduleRes;
+  static deserializeBinaryFromReader(message: ReplaceAgentOnScheduleRes, reader: jspb.BinaryReader): ReplaceAgentOnScheduleRes;
+}
+
+export namespace ReplaceAgentOnScheduleRes {
+  export type AsObject = {
+    updatedShiftInstancesList: Array<ShiftInstance.AsObject>,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
