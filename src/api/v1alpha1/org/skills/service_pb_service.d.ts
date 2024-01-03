@@ -59,15 +59,6 @@ type SkillsServiceAssignSkillGroups = {
   readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsResponse;
 };
 
-type SkillsServiceAssignUsers = {
-  readonly methodName: string;
-  readonly service: typeof SkillsService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_skills_entities_pb.AssignUsersRequest;
-  readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.AssignUsersResponse;
-};
-
 type SkillsServiceRevokeSkillGroups = {
   readonly methodName: string;
   readonly service: typeof SkillsService;
@@ -121,7 +112,6 @@ export class SkillsService {
   static readonly GetSkillGroup: SkillsServiceGetSkillGroup;
   static readonly DeleteSkillGroup: SkillsServiceDeleteSkillGroup;
   static readonly AssignSkillGroups: SkillsServiceAssignSkillGroups;
-  static readonly AssignUsers: SkillsServiceAssignUsers;
   static readonly RevokeSkillGroups: SkillsServiceRevokeSkillGroups;
   static readonly GetUserSkillGroups: SkillsServiceGetUserSkillGroups;
   static readonly GetUserSkills: SkillsServiceGetUserSkills;
@@ -214,15 +204,6 @@ export class SkillsServiceClient {
   assignSkillGroups(
     requestMessage: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.AssignSkillGroupsResponse|null) => void
-  ): UnaryResponse;
-  assignUsers(
-    requestMessage: api_v1alpha1_org_skills_entities_pb.AssignUsersRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.AssignUsersResponse|null) => void
-  ): UnaryResponse;
-  assignUsers(
-    requestMessage: api_v1alpha1_org_skills_entities_pb.AssignUsersRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.AssignUsersResponse|null) => void
   ): UnaryResponse;
   revokeSkillGroups(
     requestMessage: api_v1alpha1_org_skills_entities_pb.RevokeSkillGroupsRequest,
