@@ -8556,7 +8556,8 @@ proto.api.v1alpha1.org.ListPublicUsersRequest.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.org.ListPublicUsersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    agentFilter: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    archivedFilter: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -8593,6 +8594,14 @@ proto.api.v1alpha1.org.ListPublicUsersRequest.deserializeBinaryFromReader = func
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAgentFilter(value);
+      break;
+    case 2:
+      var value = /** @type {!proto.api.commons.UserArchivedStateFilter} */ (reader.readEnum());
+      msg.setArchivedFilter(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -8622,6 +8631,56 @@ proto.api.v1alpha1.org.ListPublicUsersRequest.prototype.serializeBinary = functi
  */
 proto.api.v1alpha1.org.ListPublicUsersRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getAgentFilter();
+  if (f) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+  f = message.getArchivedFilter();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bool agent_filter = 1;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.ListPublicUsersRequest.prototype.getAgentFilter = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.ListPublicUsersRequest} returns this
+ */
+proto.api.v1alpha1.org.ListPublicUsersRequest.prototype.setAgentFilter = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 1, value);
+};
+
+
+/**
+ * optional api.commons.UserArchivedStateFilter archived_filter = 2;
+ * @return {!proto.api.commons.UserArchivedStateFilter}
+ */
+proto.api.v1alpha1.org.ListPublicUsersRequest.prototype.getArchivedFilter = function() {
+  return /** @type {!proto.api.commons.UserArchivedStateFilter} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.UserArchivedStateFilter} value
+ * @return {!proto.api.v1alpha1.org.ListPublicUsersRequest} returns this
+ */
+proto.api.v1alpha1.org.ListPublicUsersRequest.prototype.setArchivedFilter = function(value) {
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -8659,7 +8718,8 @@ proto.api.v1alpha1.org.ListPublicUsersResponse.toObject = function(includeInstan
   var f, obj = {
     userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     firstName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    lastName: jspb.Message.getFieldWithDefault(msg, 3, "")
+    lastName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    username: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -8708,6 +8768,10 @@ proto.api.v1alpha1.org.ListPublicUsersResponse.deserializeBinaryFromReader = fun
       var value = /** @type {string} */ (reader.readString());
       msg.setLastName(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -8755,6 +8819,13 @@ proto.api.v1alpha1.org.ListPublicUsersResponse.serializeBinaryToWriter = functio
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getUsername();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -8812,6 +8883,24 @@ proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.getLastName = function(
  */
 proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.setLastName = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string username = 4;
+ * @return {string}
+ */
+proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.org.ListPublicUsersResponse} returns this
+ */
+proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.setUsername = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

@@ -929,6 +929,12 @@ export namespace ListAgentsResponse {
 }
 
 export class ListPublicUsersRequest extends jspb.Message {
+  getAgentFilter(): boolean;
+  setAgentFilter(value: boolean): void;
+
+  getArchivedFilter(): api_commons_user_pb.UserArchivedStateFilterMap[keyof api_commons_user_pb.UserArchivedStateFilterMap];
+  setArchivedFilter(value: api_commons_user_pb.UserArchivedStateFilterMap[keyof api_commons_user_pb.UserArchivedStateFilterMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPublicUsersRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListPublicUsersRequest): ListPublicUsersRequest.AsObject;
@@ -941,6 +947,8 @@ export class ListPublicUsersRequest extends jspb.Message {
 
 export namespace ListPublicUsersRequest {
   export type AsObject = {
+    agentFilter: boolean,
+    archivedFilter: api_commons_user_pb.UserArchivedStateFilterMap[keyof api_commons_user_pb.UserArchivedStateFilterMap],
   }
 }
 
@@ -953,6 +961,9 @@ export class ListPublicUsersResponse extends jspb.Message {
 
   getLastName(): string;
   setLastName(value: string): void;
+
+  getUsername(): string;
+  setUsername(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPublicUsersResponse.AsObject;
@@ -969,6 +980,7 @@ export namespace ListPublicUsersResponse {
     userId: string,
     firstName: string,
     lastName: string,
+    username: string,
   }
 }
 
