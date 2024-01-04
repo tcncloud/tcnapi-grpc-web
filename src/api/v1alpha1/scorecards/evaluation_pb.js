@@ -1874,7 +1874,8 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.toObject = function(include
     completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f),
     categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+    scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+    returnFields: (f = msg.getReturnFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1935,6 +1936,11 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.deserializeBinaryFromReader
       for (var i = 0; i < values.length; i++) {
         msg.addScorecardIds(values[i]);
       }
+      break;
+    case 10:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setReturnFields(value);
       break;
     default:
       reader.skipField();
@@ -1999,6 +2005,14 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.serializeBinaryToWriter = f
     writer.writePackedInt64(
       6,
       f
+    );
+  }
+  f = message.getReturnFields();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
@@ -2186,6 +2200,43 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.addScorecardIds =
  */
 proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.clearScorecardIdsList = function() {
   return this.setScorecardIdsList([]);
+};
+
+
+/**
+ * optional google.protobuf.FieldMask return_fields = 10;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.getReturnFields = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 10));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.scorecards.ListEvaluationsRequest} returns this
+*/
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.setReturnFields = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.scorecards.ListEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.clearReturnFields = function() {
+  return this.setReturnFields(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.hasReturnFields = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
