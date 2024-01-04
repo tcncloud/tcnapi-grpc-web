@@ -251,6 +251,11 @@ export class ListEvaluationsRequest extends jspb.Message {
   setScorecardIdsList(value: Array<number>): void;
   addScorecardIds(value: number, index?: number): number;
 
+  hasReturnFields(): boolean;
+  clearReturnFields(): void;
+  getReturnFields(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setReturnFields(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListEvaluationsRequest): ListEvaluationsRequest.AsObject;
@@ -268,6 +273,7 @@ export namespace ListEvaluationsRequest {
     categoryIdsList: Array<number>,
     agentUserIdsList: Array<string>,
     scorecardIdsList: Array<number>,
+    returnFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 

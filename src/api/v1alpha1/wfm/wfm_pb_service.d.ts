@@ -1417,6 +1417,24 @@ type WFMGenerateTourWeekPatterns = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsRes;
 };
 
+type WFMListValidAgentsForReplacement = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListValidAgentsForReplacementReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListValidAgentsForReplacementRes;
+};
+
+type WFMReplaceAgentOnSchedule = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnScheduleRes;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnScheduleRes;
+};
+
 type WFMRemoveAgentFromSchedule = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1585,6 +1603,8 @@ export class WFM {
   static readonly ListTourAgentCollectionWFMAgents: WFMListTourAgentCollectionWFMAgents;
   static readonly DeleteTourAgentCollectionWFMAgents: WFMDeleteTourAgentCollectionWFMAgents;
   static readonly GenerateTourWeekPatterns: WFMGenerateTourWeekPatterns;
+  static readonly ListValidAgentsForReplacement: WFMListValidAgentsForReplacement;
+  static readonly ReplaceAgentOnSchedule: WFMReplaceAgentOnSchedule;
   static readonly RemoveAgentFromSchedule: WFMRemoveAgentFromSchedule;
 }
 
@@ -2984,6 +3004,24 @@ export class WFMClient {
   generateTourWeekPatterns(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GenerateTourWeekPatternsRes|null) => void
+  ): UnaryResponse;
+  listValidAgentsForReplacement(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListValidAgentsForReplacementReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListValidAgentsForReplacementRes|null) => void
+  ): UnaryResponse;
+  listValidAgentsForReplacement(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListValidAgentsForReplacementReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListValidAgentsForReplacementRes|null) => void
+  ): UnaryResponse;
+  replaceAgentOnSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnScheduleRes,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnScheduleRes|null) => void
+  ): UnaryResponse;
+  replaceAgentOnSchedule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnScheduleRes,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ReplaceAgentOnScheduleRes|null) => void
   ): UnaryResponse;
   removeAgentFromSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleRequest,
