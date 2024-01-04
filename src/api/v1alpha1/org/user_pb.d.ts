@@ -928,6 +928,54 @@ export namespace ListAgentsResponse {
   }
 }
 
+export class ListPublicUsersRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPublicUsersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPublicUsersRequest): ListPublicUsersRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPublicUsersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPublicUsersRequest;
+  static deserializeBinaryFromReader(message: ListPublicUsersRequest, reader: jspb.BinaryReader): ListPublicUsersRequest;
+}
+
+export namespace ListPublicUsersRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListPublicUsersResponse extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getFirstName(): string;
+  setFirstName(value: string): void;
+
+  getLastName(): string;
+  setLastName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPublicUsersResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPublicUsersResponse): ListPublicUsersResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPublicUsersResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPublicUsersResponse;
+  static deserializeBinaryFromReader(message: ListPublicUsersResponse, reader: jspb.BinaryReader): ListPublicUsersResponse;
+}
+
+export namespace ListPublicUsersResponse {
+  export type AsObject = {
+    userId: string,
+    orgId: string,
+    firstName: string,
+    lastName: string,
+  }
+}
+
 export class ListUsersRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUsersRequest.AsObject;

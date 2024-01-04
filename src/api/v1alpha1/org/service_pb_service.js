@@ -570,6 +570,15 @@ Org.ListAgents = {
   responseType: api_v1alpha1_org_user_pb.ListAgentsResponse
 };
 
+Org.ListPublicUsers = {
+  methodName: "ListPublicUsers",
+  service: Org,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_org_user_pb.ListPublicUsersRequest,
+  responseType: api_v1alpha1_org_user_pb.ListPublicUsersResponse
+};
+
 Org.ListUsers = {
   methodName: "ListUsers",
   service: Org,
@@ -3457,6 +3466,45 @@ OrgClient.prototype.listAgents = function listAgents(requestMessage, metadata) {
     status: []
   };
   var client = grpc.invoke(Org.ListAgents, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listPublicUsers = function listPublicUsers(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(Org.ListPublicUsers, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
