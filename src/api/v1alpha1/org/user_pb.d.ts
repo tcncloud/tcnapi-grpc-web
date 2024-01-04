@@ -948,9 +948,6 @@ export class ListPublicUsersResponse extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   getFirstName(): string;
   setFirstName(value: string): void;
 
@@ -970,7 +967,6 @@ export class ListPublicUsersResponse extends jspb.Message {
 export namespace ListPublicUsersResponse {
   export type AsObject = {
     userId: string,
-    orgId: string,
     firstName: string,
     lastName: string,
   }

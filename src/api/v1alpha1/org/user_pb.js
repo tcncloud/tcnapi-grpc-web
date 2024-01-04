@@ -8658,9 +8658,8 @@ proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.toObject = function(opt
 proto.api.v1alpha1.org.ListPublicUsersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    lastName: jspb.Message.getFieldWithDefault(msg, 4, "")
+    firstName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    lastName: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -8703,13 +8702,9 @@ proto.api.v1alpha1.org.ListPublicUsersResponse.deserializeBinaryFromReader = fun
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOrgId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
       msg.setFirstName(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setLastName(value);
       break;
@@ -8749,24 +8744,17 @@ proto.api.v1alpha1.org.ListPublicUsersResponse.serializeBinaryToWriter = functio
       f
     );
   }
-  f = message.getOrgId();
+  f = message.getFirstName();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getFirstName();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getLastName();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      3,
       f
     );
   }
@@ -8792,10 +8780,10 @@ proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.setUserId = function(va
 
 
 /**
- * optional string org_id = 2;
+ * optional string first_name = 2;
  * @return {string}
  */
-proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.getOrgId = function() {
+proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.getFirstName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -8804,16 +8792,16 @@ proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.getOrgId = function() {
  * @param {string} value
  * @return {!proto.api.v1alpha1.org.ListPublicUsersResponse} returns this
  */
-proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.setOrgId = function(value) {
+proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.setFirstName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string first_name = 3;
+ * optional string last_name = 3;
  * @return {string}
  */
-proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.getFirstName = function() {
+proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.getLastName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -8822,26 +8810,8 @@ proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.getFirstName = function
  * @param {string} value
  * @return {!proto.api.v1alpha1.org.ListPublicUsersResponse} returns this
  */
-proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.setFirstName = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string last_name = 4;
- * @return {string}
- */
-proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.getLastName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.org.ListPublicUsersResponse} returns this
- */
 proto.api.v1alpha1.org.ListPublicUsersResponse.prototype.setLastName = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
