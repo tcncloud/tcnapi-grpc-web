@@ -584,52 +584,6 @@ export namespace SkillProfileCategory {
   export const CategoryType: CategoryTypeMap;
 }
 
-export class SchedulingResultMetricForSkillCollection extends jspb.Message {
-  getTotalInternalIntervals(): number;
-  setTotalInternalIntervals(value: number): void;
-
-  getTotalIntervalsWithFteRequired(): number;
-  setTotalIntervalsWithFteRequired(value: number): void;
-
-  getTotalIntervalsWithFtesRemaining(): number;
-  setTotalIntervalsWithFtesRemaining(value: number): void;
-
-  getCoverage(): number;
-  setCoverage(value: number): void;
-
-  getRootMeanSquare(): number;
-  setRootMeanSquare(value: number): void;
-
-  getHasResult(): boolean;
-  setHasResult(value: boolean): void;
-
-  hasSkillCollection(): boolean;
-  clearSkillCollection(): void;
-  getSkillCollection(): SkillProfileCategory | undefined;
-  setSkillCollection(value?: SkillProfileCategory): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SchedulingResultMetricForSkillCollection.AsObject;
-  static toObject(includeInstance: boolean, msg: SchedulingResultMetricForSkillCollection): SchedulingResultMetricForSkillCollection.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SchedulingResultMetricForSkillCollection, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SchedulingResultMetricForSkillCollection;
-  static deserializeBinaryFromReader(message: SchedulingResultMetricForSkillCollection, reader: jspb.BinaryReader): SchedulingResultMetricForSkillCollection;
-}
-
-export namespace SchedulingResultMetricForSkillCollection {
-  export type AsObject = {
-    totalInternalIntervals: number,
-    totalIntervalsWithFteRequired: number,
-    totalIntervalsWithFtesRemaining: number,
-    coverage: number,
-    rootMeanSquare: number,
-    hasResult: boolean,
-    skillCollection?: SkillProfileCategory.AsObject,
-  }
-}
-
 export class SchedulingResultMetric extends jspb.Message {
   getTotalInternalIntervals(): number;
   setTotalInternalIntervals(value: number): void;
@@ -649,11 +603,6 @@ export class SchedulingResultMetric extends jspb.Message {
   getHasResult(): boolean;
   setHasResult(value: boolean): void;
 
-  clearMetricsBySkillCollectionList(): void;
-  getMetricsBySkillCollectionList(): Array<SchedulingResultMetricForSkillCollection>;
-  setMetricsBySkillCollectionList(value: Array<SchedulingResultMetricForSkillCollection>): void;
-  addMetricsBySkillCollection(value?: SchedulingResultMetricForSkillCollection, index?: number): SchedulingResultMetricForSkillCollection;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SchedulingResultMetric.AsObject;
   static toObject(includeInstance: boolean, msg: SchedulingResultMetric): SchedulingResultMetric.AsObject;
@@ -672,7 +621,6 @@ export namespace SchedulingResultMetric {
     coverage: number,
     rootMeanSquare: number,
     hasResult: boolean,
-    metricsBySkillCollectionList: Array<SchedulingResultMetricForSkillCollection.AsObject>,
   }
 }
 
