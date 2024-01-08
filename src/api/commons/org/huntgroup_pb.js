@@ -13387,7 +13387,8 @@ proto.api.commons.org.ClientInfoDisplayTemplate.toObject = function(includeInsta
     dialedNumberFieldStyle: (f = msg.getDialedNumberFieldStyle()) && proto.api.commons.org.DialedNumberFieldStyle.toObject(includeInstance, f),
     contactFieldStylesList: jspb.Message.toObjectList(msg.getContactFieldStylesList(),
     proto.api.commons.org.ContactFieldStyle.toObject, includeInstance),
-    templateCategory: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    templateCategory: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    clientInfoDisplayTemplateSid: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -13453,6 +13454,10 @@ proto.api.commons.org.ClientInfoDisplayTemplate.deserializeBinaryFromReader = fu
     case 7:
       var value = /** @type {!proto.api.commons.org.TemplateCategory} */ (reader.readEnum());
       msg.setTemplateCategory(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setClientInfoDisplayTemplateSid(value);
       break;
     default:
       reader.skipField();
@@ -13531,6 +13536,13 @@ proto.api.commons.org.ClientInfoDisplayTemplate.serializeBinaryToWriter = functi
   if (f !== 0.0) {
     writer.writeEnum(
       7,
+      f
+    );
+  }
+  f = message.getClientInfoDisplayTemplateSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      8,
       f
     );
   }
@@ -13699,6 +13711,24 @@ proto.api.commons.org.ClientInfoDisplayTemplate.prototype.getTemplateCategory = 
  */
 proto.api.commons.org.ClientInfoDisplayTemplate.prototype.setTemplateCategory = function(value) {
   return jspb.Message.setProto3EnumField(this, 7, value);
+};
+
+
+/**
+ * optional int64 client_info_display_template_sid = 8;
+ * @return {number}
+ */
+proto.api.commons.org.ClientInfoDisplayTemplate.prototype.getClientInfoDisplayTemplateSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.org.ClientInfoDisplayTemplate} returns this
+ */
+proto.api.commons.org.ClientInfoDisplayTemplate.prototype.setClientInfoDisplayTemplateSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
