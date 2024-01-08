@@ -647,8 +647,8 @@ OmniApi.CreateWhatsAppNumber = {
   service: OmniApi,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_omniapi_pb.CreateWhatsAppNumberReq,
-  responseType: api_v0alpha_omniapi_pb.CreateWhatsAppNumberRes
+  requestType: api_v0alpha_omniapi_pb.CreateWhatsAppNumberRequest,
+  responseType: api_v0alpha_omniapi_pb.CreateWhatsAppNumberResponse
 };
 
 OmniApi.UpdateWhatsAppNumber = {
@@ -656,8 +656,8 @@ OmniApi.UpdateWhatsAppNumber = {
   service: OmniApi,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_omniapi_pb.UpdateWhatsAppNumberReq,
-  responseType: api_v0alpha_omniapi_pb.UpdateWhatsAppNumberRes
+  requestType: api_v0alpha_omniapi_pb.UpdateWhatsAppNumberRequest,
+  responseType: api_v0alpha_omniapi_pb.UpdateWhatsAppNumberResponse
 };
 
 exports.OmniApi = OmniApi;
