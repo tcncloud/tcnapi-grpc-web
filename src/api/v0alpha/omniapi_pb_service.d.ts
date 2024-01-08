@@ -636,6 +636,24 @@ type OmniApiListWhatsAppNumbers = {
   readonly responseType: typeof api_v0alpha_omniapi_pb.ListWhatsAppNumbersRes;
 };
 
+type OmniApiCreateWhatsAppNumber = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.CreateWhatsAppNumberReq;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.CreateWhatsAppNumberRes;
+};
+
+type OmniApiUpdateWhatsAppNumber = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.UpdateWhatsAppNumberReq;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.UpdateWhatsAppNumberRes;
+};
+
 export class OmniApi {
   static readonly serviceName: string;
   static readonly ArchiveCampaign: OmniApiArchiveCampaign;
@@ -708,6 +726,8 @@ export class OmniApi {
   static readonly GetCannedMessageGroupById: OmniApiGetCannedMessageGroupById;
   static readonly ListUserSkills: OmniApiListUserSkills;
   static readonly ListWhatsAppNumbers: OmniApiListWhatsAppNumbers;
+  static readonly CreateWhatsAppNumber: OmniApiCreateWhatsAppNumber;
+  static readonly UpdateWhatsAppNumber: OmniApiUpdateWhatsAppNumber;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1355,6 +1375,24 @@ export class OmniApiClient {
   listWhatsAppNumbers(
     requestMessage: api_v0alpha_omniapi_pb.ListWhatsAppNumbersReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.ListWhatsAppNumbersRes|null) => void
+  ): UnaryResponse;
+  createWhatsAppNumber(
+    requestMessage: api_v0alpha_omniapi_pb.CreateWhatsAppNumberReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CreateWhatsAppNumberRes|null) => void
+  ): UnaryResponse;
+  createWhatsAppNumber(
+    requestMessage: api_v0alpha_omniapi_pb.CreateWhatsAppNumberReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CreateWhatsAppNumberRes|null) => void
+  ): UnaryResponse;
+  updateWhatsAppNumber(
+    requestMessage: api_v0alpha_omniapi_pb.UpdateWhatsAppNumberReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.UpdateWhatsAppNumberRes|null) => void
+  ): UnaryResponse;
+  updateWhatsAppNumber(
+    requestMessage: api_v0alpha_omniapi_pb.UpdateWhatsAppNumberReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.UpdateWhatsAppNumberRes|null) => void
   ): UnaryResponse;
 }
 

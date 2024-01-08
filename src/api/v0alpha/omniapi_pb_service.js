@@ -642,6 +642,24 @@ OmniApi.ListWhatsAppNumbers = {
   responseType: api_v0alpha_omniapi_pb.ListWhatsAppNumbersRes
 };
 
+OmniApi.CreateWhatsAppNumber = {
+  methodName: "CreateWhatsAppNumber",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.CreateWhatsAppNumberReq,
+  responseType: api_v0alpha_omniapi_pb.CreateWhatsAppNumberRes
+};
+
+OmniApi.UpdateWhatsAppNumber = {
+  methodName: "UpdateWhatsAppNumber",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.UpdateWhatsAppNumberReq,
+  responseType: api_v0alpha_omniapi_pb.UpdateWhatsAppNumberRes
+};
+
 exports.OmniApi = OmniApi;
 
 function OmniApiClient(serviceHost, options) {
@@ -2809,6 +2827,68 @@ OmniApiClient.prototype.listWhatsAppNumbers = function listWhatsAppNumbers(reque
     callback = arguments[1];
   }
   var client = grpc.unary(OmniApi.ListWhatsAppNumbers, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.createWhatsAppNumber = function createWhatsAppNumber(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.CreateWhatsAppNumber, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.updateWhatsAppNumber = function updateWhatsAppNumber(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.UpdateWhatsAppNumber, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
