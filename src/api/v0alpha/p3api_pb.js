@@ -20027,7 +20027,7 @@ proto.api.v0alpha.GetHuntGroupAgentSettingsReq.prototype.setHuntGroupSid = funct
  * @private {!Array<number>}
  * @const
  */
-proto.api.v0alpha.HuntGroupAgentSettings.repeatedFields_ = [20,26,29,33,35];
+proto.api.v0alpha.HuntGroupAgentSettings.repeatedFields_ = [20,26,29,33];
 
 
 
@@ -20091,9 +20091,7 @@ proto.api.v0alpha.HuntGroupAgentSettings.toObject = function(includeInstance, ms
     initialAgentStatus: jspb.Message.getFieldWithDefault(msg, 30, 0),
     displayWebLinks: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
     displaySkills: jspb.Message.getBooleanFieldWithDefault(msg, 32, false),
-    interruptPeeringList: (f = jspb.Message.getRepeatedField(msg, 33)) == null ? undefined : f,
-    displayIntegrationDataMap: jspb.Message.getBooleanFieldWithDefault(msg, 34, false),
-    limitIntegrationDataMapList: (f = jspb.Message.getRepeatedField(msg, 35)) == null ? undefined : f
+    interruptPeeringList: (f = jspb.Message.getRepeatedField(msg, 33)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -20269,14 +20267,6 @@ proto.api.v0alpha.HuntGroupAgentSettings.deserializeBinaryFromReader = function(
       for (var i = 0; i < values.length; i++) {
         msg.addInterruptPeering(values[i]);
       }
-      break;
-    case 34:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDisplayIntegrationDataMap(value);
-      break;
-    case 35:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addLimitIntegrationDataMap(value);
       break;
     default:
       reader.skipField();
@@ -20535,20 +20525,6 @@ proto.api.v0alpha.HuntGroupAgentSettings.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writePackedEnum(
       33,
-      f
-    );
-  }
-  f = message.getDisplayIntegrationDataMap();
-  if (f) {
-    writer.writeBool(
-      34,
-      f
-    );
-  }
-  f = message.getLimitIntegrationDataMapList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      35,
       f
     );
   }
@@ -21434,61 +21410,6 @@ proto.api.v0alpha.HuntGroupAgentSettings.prototype.addInterruptPeering = functio
  */
 proto.api.v0alpha.HuntGroupAgentSettings.prototype.clearInterruptPeeringList = function() {
   return this.setInterruptPeeringList([]);
-};
-
-
-/**
- * optional bool display_integration_data_map = 34;
- * @return {boolean}
- */
-proto.api.v0alpha.HuntGroupAgentSettings.prototype.getDisplayIntegrationDataMap = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 34, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v0alpha.HuntGroupAgentSettings} returns this
- */
-proto.api.v0alpha.HuntGroupAgentSettings.prototype.setDisplayIntegrationDataMap = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 34, value);
-};
-
-
-/**
- * repeated string limit_integration_data_map = 35;
- * @return {!Array<string>}
- */
-proto.api.v0alpha.HuntGroupAgentSettings.prototype.getLimitIntegrationDataMapList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 35));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.api.v0alpha.HuntGroupAgentSettings} returns this
- */
-proto.api.v0alpha.HuntGroupAgentSettings.prototype.setLimitIntegrationDataMapList = function(value) {
-  return jspb.Message.setField(this, 35, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.api.v0alpha.HuntGroupAgentSettings} returns this
- */
-proto.api.v0alpha.HuntGroupAgentSettings.prototype.addLimitIntegrationDataMap = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 35, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v0alpha.HuntGroupAgentSettings} returns this
- */
-proto.api.v0alpha.HuntGroupAgentSettings.prototype.clearLimitIntegrationDataMapList = function() {
-  return this.setLimitIntegrationDataMapList([]);
 };
 
 
