@@ -13157,7 +13157,8 @@ proto.api.v1alpha1.delivery.EmailDestination.toObject = function(includeInstance
   var f, obj = {
     toAddr: jspb.Message.getFieldWithDefault(msg, 1, ""),
     ccAddrsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    fromAddr: jspb.Message.getFieldWithDefault(msg, 3, "")
+    fromAddr: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    toAddrs: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -13206,6 +13207,10 @@ proto.api.v1alpha1.delivery.EmailDestination.deserializeBinaryFromReader = funct
       var value = /** @type {string} */ (reader.readString());
       msg.setFromAddr(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setToAddrs(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -13253,6 +13258,13 @@ proto.api.v1alpha1.delivery.EmailDestination.serializeBinaryToWriter = function(
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getToAddrs();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -13329,6 +13341,24 @@ proto.api.v1alpha1.delivery.EmailDestination.prototype.getFromAddr = function() 
  */
 proto.api.v1alpha1.delivery.EmailDestination.prototype.setFromAddr = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string to_addrs = 4;
+ * @return {string}
+ */
+proto.api.v1alpha1.delivery.EmailDestination.prototype.getToAddrs = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.delivery.EmailDestination} returns this
+ */
+proto.api.v1alpha1.delivery.EmailDestination.prototype.setToAddrs = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
