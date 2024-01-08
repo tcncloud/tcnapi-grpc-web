@@ -1155,13 +1155,13 @@ Org.ListHuntGroupWebLinks = {
   responseType: api_v1alpha1_org_huntgroup_pb.ListHuntGroupWebLinksResponse
 };
 
-Org.CopyHuntGroupWebLink = {
-  methodName: "CopyHuntGroupWebLink",
+Org.AssignHuntGroupWebLink = {
+  methodName: "AssignHuntGroupWebLink",
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkRequest,
-  responseType: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkResponse
+  requestType: api_v1alpha1_org_huntgroup_pb.AssignHuntGroupWebLinkRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.AssignHuntGroupWebLinkResponse
 };
 
 Org.UpdateHuntGroupWebLinks = {
@@ -5555,11 +5555,11 @@ OrgClient.prototype.listHuntGroupWebLinks = function listHuntGroupWebLinks(reque
   };
 };
 
-OrgClient.prototype.copyHuntGroupWebLink = function copyHuntGroupWebLink(requestMessage, metadata, callback) {
+OrgClient.prototype.assignHuntGroupWebLink = function assignHuntGroupWebLink(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.CopyHuntGroupWebLink, {
+  var client = grpc.unary(Org.AssignHuntGroupWebLink, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

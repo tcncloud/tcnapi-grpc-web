@@ -1149,13 +1149,13 @@ type OrgListHuntGroupWebLinks = {
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupWebLinksResponse;
 };
 
-type OrgCopyHuntGroupWebLink = {
+type OrgAssignHuntGroupWebLink = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkRequest;
-  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkResponse;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.AssignHuntGroupWebLinkRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.AssignHuntGroupWebLinkResponse;
 };
 
 type OrgUpdateHuntGroupWebLinks = {
@@ -1700,7 +1700,7 @@ export class Org {
   static readonly UpdateAgentResponseAutoRules: OrgUpdateAgentResponseAutoRules;
   static readonly DeleteAgentResponseAutoRules: OrgDeleteAgentResponseAutoRules;
   static readonly ListHuntGroupWebLinks: OrgListHuntGroupWebLinks;
-  static readonly CopyHuntGroupWebLink: OrgCopyHuntGroupWebLink;
+  static readonly AssignHuntGroupWebLink: OrgAssignHuntGroupWebLink;
   static readonly UpdateHuntGroupWebLinks: OrgUpdateHuntGroupWebLinks;
   static readonly ListHuntGroupIntegrationLinks: OrgListHuntGroupIntegrationLinks;
   static readonly CreateTrust: OrgCreateTrust;
@@ -2851,14 +2851,14 @@ export class OrgClient {
     requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupWebLinksRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupWebLinksResponse|null) => void
   ): UnaryResponse;
-  copyHuntGroupWebLink(
-    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkRequest,
+  assignHuntGroupWebLink(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.AssignHuntGroupWebLinkRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.AssignHuntGroupWebLinkResponse|null) => void
   ): UnaryResponse;
-  copyHuntGroupWebLink(
-    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkResponse|null) => void
+  assignHuntGroupWebLink(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.AssignHuntGroupWebLinkRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.AssignHuntGroupWebLinkResponse|null) => void
   ): UnaryResponse;
   updateHuntGroupWebLinks(
     requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupWebLinksRequest,
