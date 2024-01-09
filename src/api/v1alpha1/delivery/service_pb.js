@@ -17793,7 +17793,7 @@ proto.api.v1alpha1.delivery.SFTPTransport.prototype.setBaseDir = function(value)
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.delivery.EmailTransport.repeatedFields_ = [3,4];
+proto.api.v1alpha1.delivery.EmailTransport.repeatedFields_ = [3];
 
 
 
@@ -17828,8 +17828,7 @@ proto.api.v1alpha1.delivery.EmailTransport.toObject = function(includeInstance, 
   var f, obj = {
     fromAddress: jspb.Message.getFieldWithDefault(msg, 1, ""),
     toAddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    ccAddressesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    toAddressesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+    ccAddressesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -17878,10 +17877,6 @@ proto.api.v1alpha1.delivery.EmailTransport.deserializeBinaryFromReader = functio
       var value = /** @type {string} */ (reader.readString());
       msg.addCcAddresses(value);
       break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addToAddresses(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -17929,13 +17924,6 @@ proto.api.v1alpha1.delivery.EmailTransport.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writeRepeatedString(
       3,
-      f
-    );
-  }
-  f = message.getToAddressesList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      4,
       f
     );
   }
@@ -18012,43 +18000,6 @@ proto.api.v1alpha1.delivery.EmailTransport.prototype.addCcAddresses = function(v
  */
 proto.api.v1alpha1.delivery.EmailTransport.prototype.clearCcAddressesList = function() {
   return this.setCcAddressesList([]);
-};
-
-
-/**
- * repeated string to_addresses = 4;
- * @return {!Array<string>}
- */
-proto.api.v1alpha1.delivery.EmailTransport.prototype.getToAddressesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.api.v1alpha1.delivery.EmailTransport} returns this
- */
-proto.api.v1alpha1.delivery.EmailTransport.prototype.setToAddressesList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.delivery.EmailTransport} returns this
- */
-proto.api.v1alpha1.delivery.EmailTransport.prototype.addToAddresses = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.delivery.EmailTransport} returns this
- */
-proto.api.v1alpha1.delivery.EmailTransport.prototype.clearToAddressesList = function() {
-  return this.setToAddressesList([]);
 };
 
 
