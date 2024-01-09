@@ -2058,6 +2058,14 @@ export class HuntGroupAgentSettings extends jspb.Message {
   setInterruptPeeringList(value: Array<api_commons_p3api_pb.InterruptedPeeringStatusMap[keyof api_commons_p3api_pb.InterruptedPeeringStatusMap]>): void;
   addInterruptPeering(value: api_commons_p3api_pb.InterruptedPeeringStatusMap[keyof api_commons_p3api_pb.InterruptedPeeringStatusMap], index?: number): api_commons_p3api_pb.InterruptedPeeringStatusMap[keyof api_commons_p3api_pb.InterruptedPeeringStatusMap];
 
+  getDisplayIntegrationDataMap(): boolean;
+  setDisplayIntegrationDataMap(value: boolean): void;
+
+  clearLimitIntegrationDataMapList(): void;
+  getLimitIntegrationDataMapList(): Array<string>;
+  setLimitIntegrationDataMapList(value: Array<string>): void;
+  addLimitIntegrationDataMap(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HuntGroupAgentSettings.AsObject;
   static toObject(includeInstance: boolean, msg: HuntGroupAgentSettings): HuntGroupAgentSettings.AsObject;
@@ -2101,6 +2109,8 @@ export namespace HuntGroupAgentSettings {
     displayWebLinks: boolean,
     displaySkills: boolean,
     interruptPeeringList: Array<api_commons_p3api_pb.InterruptedPeeringStatusMap[keyof api_commons_p3api_pb.InterruptedPeeringStatusMap]>,
+    displayIntegrationDataMap: boolean,
+    limitIntegrationDataMapList: Array<string>,
   }
 }
 
