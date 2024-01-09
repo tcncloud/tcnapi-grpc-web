@@ -1586,8 +1586,10 @@ export class EmailDestination extends jspb.Message {
   getFromAddr(): string;
   setFromAddr(value: string): void;
 
-  getToAddrs(): string;
-  setToAddrs(value: string): void;
+  clearToAddrsList(): void;
+  getToAddrsList(): Array<string>;
+  setToAddrsList(value: Array<string>): void;
+  addToAddrs(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EmailDestination.AsObject;
@@ -1604,7 +1606,7 @@ export namespace EmailDestination {
     toAddr: string,
     ccAddrsList: Array<string>,
     fromAddr: string,
-    toAddrs: string,
+    toAddrsList: Array<string>,
   }
 }
 

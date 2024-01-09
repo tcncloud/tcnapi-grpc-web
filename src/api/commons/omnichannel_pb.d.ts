@@ -2655,6 +2655,22 @@ export class WhatsAppNumber extends jspb.Message {
   getCountryCode(): number;
   setCountryCode(value: number): void;
 
+  getWhatsappNumberSid(): string;
+  setWhatsappNumberSid(value: string): void;
+
+  getDisplayName(): string;
+  setDisplayName(value: string): void;
+
+  hasDateCreated(): boolean;
+  clearDateCreated(): void;
+  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasDateModified(): boolean;
+  clearDateModified(): void;
+  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WhatsAppNumber.AsObject;
   static toObject(includeInstance: boolean, msg: WhatsAppNumber): WhatsAppNumber.AsObject;
@@ -2670,6 +2686,10 @@ export namespace WhatsAppNumber {
     number: string,
     provider: WhatsAppNumberProviderMap[keyof WhatsAppNumberProviderMap],
     countryCode: number,
+    whatsappNumberSid: string,
+    displayName: string,
+    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -2697,6 +2717,7 @@ export interface OmniCampaignModuleTypeMap {
   MODULE_TYPE_INBOUND: 0;
   MODULE_TYPE_OUTBOUND: 1;
   MODULE_TYPE_MANUAL_APPROVAL: 2;
+  MODULE_TYPE_MANUAL: 3;
 }
 
 export const OmniCampaignModuleType: OmniCampaignModuleTypeMap;

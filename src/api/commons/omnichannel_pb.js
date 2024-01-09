@@ -21058,7 +21058,11 @@ proto.api.commons.WhatsAppNumber.toObject = function(includeInstance, msg) {
   var f, obj = {
     number: jspb.Message.getFieldWithDefault(msg, 1, ""),
     provider: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    countryCode: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    countryCode: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    whatsappNumberSid: jspb.Message.getFieldWithDefault(msg, 4, "0"),
+    displayName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -21106,6 +21110,24 @@ proto.api.commons.WhatsAppNumber.deserializeBinaryFromReader = function(msg, rea
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCountryCode(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setWhatsappNumberSid(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDisplayName(value);
+      break;
+    case 6:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setDateCreated(value);
+      break;
+    case 7:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setDateModified(value);
       break;
     default:
       reader.skipField();
@@ -21155,6 +21177,36 @@ proto.api.commons.WhatsAppNumber.serializeBinaryToWriter = function(message, wri
     writer.writeInt32(
       3,
       f
+    );
+  }
+  f = message.getWhatsappNumberSid();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      4,
+      f
+    );
+  }
+  f = message.getDisplayName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getDateCreated();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getDateModified();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -21215,6 +21267,116 @@ proto.api.commons.WhatsAppNumber.prototype.setCountryCode = function(value) {
 
 
 /**
+ * optional int64 whatsapp_number_sid = 4;
+ * @return {string}
+ */
+proto.api.commons.WhatsAppNumber.prototype.getWhatsappNumberSid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.WhatsAppNumber} returns this
+ */
+proto.api.commons.WhatsAppNumber.prototype.setWhatsappNumberSid = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 4, value);
+};
+
+
+/**
+ * optional string display_name = 5;
+ * @return {string}
+ */
+proto.api.commons.WhatsAppNumber.prototype.getDisplayName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.WhatsAppNumber} returns this
+ */
+proto.api.commons.WhatsAppNumber.prototype.setDisplayName = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp date_created = 6;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.commons.WhatsAppNumber.prototype.getDateCreated = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.commons.WhatsAppNumber} returns this
+*/
+proto.api.commons.WhatsAppNumber.prototype.setDateCreated = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.WhatsAppNumber} returns this
+ */
+proto.api.commons.WhatsAppNumber.prototype.clearDateCreated = function() {
+  return this.setDateCreated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.WhatsAppNumber.prototype.hasDateCreated = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp date_modified = 7;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.commons.WhatsAppNumber.prototype.getDateModified = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.commons.WhatsAppNumber} returns this
+*/
+proto.api.commons.WhatsAppNumber.prototype.setDateModified = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.WhatsAppNumber} returns this
+ */
+proto.api.commons.WhatsAppNumber.prototype.clearDateModified = function() {
+  return this.setDateModified(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.WhatsAppNumber.prototype.hasDateModified = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * @enum {number}
  */
 proto.api.commons.SmsNumberType = {
@@ -21242,7 +21404,8 @@ proto.api.commons.SmsNumberProvider = {
 proto.api.commons.OmniCampaignModuleType = {
   MODULE_TYPE_INBOUND: 0,
   MODULE_TYPE_OUTBOUND: 1,
-  MODULE_TYPE_MANUAL_APPROVAL: 2
+  MODULE_TYPE_MANUAL_APPROVAL: 2,
+  MODULE_TYPE_MANUAL: 3
 };
 
 /**

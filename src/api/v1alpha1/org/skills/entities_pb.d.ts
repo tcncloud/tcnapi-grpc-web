@@ -492,3 +492,45 @@ export namespace SkillGroupMembers {
   }
 }
 
+export class UpdateUsersOnSkillGroupRequest extends jspb.Message {
+  getSkillGroupId(): string;
+  setSkillGroupId(value: string): void;
+
+  clearUserIdsList(): void;
+  getUserIdsList(): Array<string>;
+  setUserIdsList(value: Array<string>): void;
+  addUserIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateUsersOnSkillGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateUsersOnSkillGroupRequest): UpdateUsersOnSkillGroupRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateUsersOnSkillGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateUsersOnSkillGroupRequest;
+  static deserializeBinaryFromReader(message: UpdateUsersOnSkillGroupRequest, reader: jspb.BinaryReader): UpdateUsersOnSkillGroupRequest;
+}
+
+export namespace UpdateUsersOnSkillGroupRequest {
+  export type AsObject = {
+    skillGroupId: string,
+    userIdsList: Array<string>,
+  }
+}
+
+export class UpdateUsersOnSkillGroupResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateUsersOnSkillGroupResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateUsersOnSkillGroupResponse): UpdateUsersOnSkillGroupResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateUsersOnSkillGroupResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateUsersOnSkillGroupResponse;
+  static deserializeBinaryFromReader(message: UpdateUsersOnSkillGroupResponse, reader: jspb.BinaryReader): UpdateUsersOnSkillGroupResponse;
+}
+
+export namespace UpdateUsersOnSkillGroupResponse {
+  export type AsObject = {
+  }
+}
+
