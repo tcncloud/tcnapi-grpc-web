@@ -1140,6 +1140,33 @@ type OrgDeleteAgentResponseAutoRules = {
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.DeleteAgentResponseAutoRulesResponse;
 };
 
+type OrgListHuntGroupWebLinks = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupWebLinksRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupWebLinksResponse;
+};
+
+type OrgCopyHuntGroupWebLink = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkResponse;
+};
+
+type OrgUpdateHuntGroupWebLinks = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupWebLinksRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupWebLinksResponse;
+};
+
 type OrgListHuntGroupIntegrationLinks = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1672,6 +1699,9 @@ export class Org {
   static readonly CreateAgentResponseAutoRules: OrgCreateAgentResponseAutoRules;
   static readonly UpdateAgentResponseAutoRules: OrgUpdateAgentResponseAutoRules;
   static readonly DeleteAgentResponseAutoRules: OrgDeleteAgentResponseAutoRules;
+  static readonly ListHuntGroupWebLinks: OrgListHuntGroupWebLinks;
+  static readonly CopyHuntGroupWebLink: OrgCopyHuntGroupWebLink;
+  static readonly UpdateHuntGroupWebLinks: OrgUpdateHuntGroupWebLinks;
   static readonly ListHuntGroupIntegrationLinks: OrgListHuntGroupIntegrationLinks;
   static readonly CreateTrust: OrgCreateTrust;
   static readonly AcceptTrust: OrgAcceptTrust;
@@ -2811,6 +2841,33 @@ export class OrgClient {
   deleteAgentResponseAutoRules(
     requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteAgentResponseAutoRulesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteAgentResponseAutoRulesResponse|null) => void
+  ): UnaryResponse;
+  listHuntGroupWebLinks(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupWebLinksRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupWebLinksResponse|null) => void
+  ): UnaryResponse;
+  listHuntGroupWebLinks(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupWebLinksRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupWebLinksResponse|null) => void
+  ): UnaryResponse;
+  copyHuntGroupWebLink(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkResponse|null) => void
+  ): UnaryResponse;
+  copyHuntGroupWebLink(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkResponse|null) => void
+  ): UnaryResponse;
+  updateHuntGroupWebLinks(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupWebLinksRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupWebLinksResponse|null) => void
+  ): UnaryResponse;
+  updateHuntGroupWebLinks(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupWebLinksRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupWebLinksResponse|null) => void
   ): UnaryResponse;
   listHuntGroupIntegrationLinks(
     requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksRequest,

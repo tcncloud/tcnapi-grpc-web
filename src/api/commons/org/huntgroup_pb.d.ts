@@ -1791,6 +1791,104 @@ export namespace DialedNumberFieldStyle {
   }
 }
 
+export class WebLink extends jspb.Message {
+  getWebLinkSid(): number;
+  setWebLinkSid(value: number): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getLinkType(): WebLinkTypeMap[keyof WebLinkTypeMap];
+  setLinkType(value: WebLinkTypeMap[keyof WebLinkTypeMap]): void;
+
+  getOrder(): number;
+  setOrder(value: number): void;
+
+  clearBaseUrlList(): void;
+  getBaseUrlList(): Array<WebLinkComponent>;
+  setBaseUrlList(value: Array<WebLinkComponent>): void;
+  addBaseUrl(value?: WebLinkComponent, index?: number): WebLinkComponent;
+
+  clearParametersList(): void;
+  getParametersList(): Array<WebLinkParameter>;
+  setParametersList(value: Array<WebLinkParameter>): void;
+  addParameters(value?: WebLinkParameter, index?: number): WebLinkParameter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WebLink.AsObject;
+  static toObject(includeInstance: boolean, msg: WebLink): WebLink.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: WebLink, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WebLink;
+  static deserializeBinaryFromReader(message: WebLink, reader: jspb.BinaryReader): WebLink;
+}
+
+export namespace WebLink {
+  export type AsObject = {
+    webLinkSid: number,
+    name: string,
+    description: string,
+    linkType: WebLinkTypeMap[keyof WebLinkTypeMap],
+    order: number,
+    baseUrlList: Array<WebLinkComponent.AsObject>,
+    parametersList: Array<WebLinkParameter.AsObject>,
+  }
+}
+
+export class WebLinkComponent extends jspb.Message {
+  getKeyType(): WebLinkComponentKeyTypeMap[keyof WebLinkComponentKeyTypeMap];
+  setKeyType(value: WebLinkComponentKeyTypeMap[keyof WebLinkComponentKeyTypeMap]): void;
+
+  getValue(): string;
+  setValue(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WebLinkComponent.AsObject;
+  static toObject(includeInstance: boolean, msg: WebLinkComponent): WebLinkComponent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: WebLinkComponent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WebLinkComponent;
+  static deserializeBinaryFromReader(message: WebLinkComponent, reader: jspb.BinaryReader): WebLinkComponent;
+}
+
+export namespace WebLinkComponent {
+  export type AsObject = {
+    keyType: WebLinkComponentKeyTypeMap[keyof WebLinkComponentKeyTypeMap],
+    value: string,
+  }
+}
+
+export class WebLinkParameter extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): void;
+
+  clearComponentsList(): void;
+  getComponentsList(): Array<WebLinkComponent>;
+  setComponentsList(value: Array<WebLinkComponent>): void;
+  addComponents(value?: WebLinkComponent, index?: number): WebLinkComponent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WebLinkParameter.AsObject;
+  static toObject(includeInstance: boolean, msg: WebLinkParameter): WebLinkParameter.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: WebLinkParameter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WebLinkParameter;
+  static deserializeBinaryFromReader(message: WebLinkParameter, reader: jspb.BinaryReader): WebLinkParameter;
+}
+
+export namespace WebLinkParameter {
+  export type AsObject = {
+    key: string,
+    componentsList: Array<WebLinkComponent.AsObject>,
+  }
+}
+
 export class DataDipConfig extends jspb.Message {
   getConfigName(): string;
   setConfigName(value: string): void;
@@ -2104,6 +2202,32 @@ export interface TemplateCategoryMap {
 }
 
 export const TemplateCategory: TemplateCategoryMap;
+
+export interface WebLinkTypeMap {
+  WEB_LINK_TYPE_UNSPECIFIED: 0;
+  WEB_LINK_STANDARD: 1;
+  WEB_LINK_JAVASCRIPT: 2;
+}
+
+export const WebLinkType: WebLinkTypeMap;
+
+export interface WebLinkComponentKeyTypeMap {
+  WEB_LINK_COMPONENT_KEY_TYPE_UNSPECIFIED: 0;
+  WEB_LINK_COMPONENT_KEY_TYPE_STATIC_TEXT: 1;
+  WEB_LINK_COMPONENT_KEY_TYPE_TTS_FIELD: 2;
+  WEB_LINK_COMPONENT_KEY_TYPE_AGENT_INFO: 3;
+  WEB_LINK_COMPONENT_KEY_TYPE_DATA_DIP: 4;
+  WEB_LINK_COMPONENT_KEY_TYPE_IVR_DATA: 5;
+  WEB_LINK_COMPONENT_KEY_TYPE_DATA_COLLECT: 6;
+  WEB_LINK_COMPONENT_KEY_TYPE_PHONE_METADATA: 7;
+  WEB_LINK_COMPONENT_KEY_TYPE_ZIP_POSTAL_METADATA: 8;
+  WEB_LINK_COMPONENT_KEY_TYPE_CUSTOM_ACCOUNT_DATA_KEY: 9;
+  WEB_LINK_COMPONENT_KEY_TYPE_SIP_HEADER_DATA: 10;
+  WEB_LINK_COMPONENT_KEY_TYPE_INTEGRATION_DATA: 11;
+  WEB_LINK_COMPONENT_KEY_TYPE_JOURNEY_DATA: 12;
+}
+
+export const WebLinkComponentKeyType: WebLinkComponentKeyTypeMap;
 
 export interface ParameterSourceTypeMap {
   PARAMETER_SOURCE_TYPE_UNSPECIFIED: 0;

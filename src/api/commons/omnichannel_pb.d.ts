@@ -2717,6 +2717,7 @@ export interface OmniCampaignModuleTypeMap {
   MODULE_TYPE_INBOUND: 0;
   MODULE_TYPE_OUTBOUND: 1;
   MODULE_TYPE_MANUAL_APPROVAL: 2;
+  MODULE_TYPE_MANUAL: 3;
 }
 
 export const OmniCampaignModuleType: OmniCampaignModuleTypeMap;

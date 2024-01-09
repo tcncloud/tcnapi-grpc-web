@@ -1146,6 +1146,33 @@ Org.DeleteAgentResponseAutoRules = {
   responseType: api_v1alpha1_org_huntgroup_pb.DeleteAgentResponseAutoRulesResponse
 };
 
+Org.ListHuntGroupWebLinks = {
+  methodName: "ListHuntGroupWebLinks",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.ListHuntGroupWebLinksRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.ListHuntGroupWebLinksResponse
+};
+
+Org.CopyHuntGroupWebLink = {
+  methodName: "CopyHuntGroupWebLink",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupWebLinkResponse
+};
+
+Org.UpdateHuntGroupWebLinks = {
+  methodName: "UpdateHuntGroupWebLinks",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupWebLinksRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupWebLinksResponse
+};
+
 Org.ListHuntGroupIntegrationLinks = {
   methodName: "ListHuntGroupIntegrationLinks",
   service: Org,
@@ -5471,6 +5498,99 @@ OrgClient.prototype.deleteAgentResponseAutoRules = function deleteAgentResponseA
     callback = arguments[1];
   }
   var client = grpc.unary(Org.DeleteAgentResponseAutoRules, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listHuntGroupWebLinks = function listHuntGroupWebLinks(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListHuntGroupWebLinks, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.copyHuntGroupWebLink = function copyHuntGroupWebLink(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CopyHuntGroupWebLink, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.updateHuntGroupWebLinks = function updateHuntGroupWebLinks(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateHuntGroupWebLinks, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

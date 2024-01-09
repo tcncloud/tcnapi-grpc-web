@@ -840,6 +840,136 @@ export namespace DeleteHuntGroupClientInfoDisplayTemplateResponse {
   }
 }
 
+export class ListHuntGroupWebLinksRequest extends jspb.Message {
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListHuntGroupWebLinksRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListHuntGroupWebLinksRequest): ListHuntGroupWebLinksRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListHuntGroupWebLinksRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListHuntGroupWebLinksRequest;
+  static deserializeBinaryFromReader(message: ListHuntGroupWebLinksRequest, reader: jspb.BinaryReader): ListHuntGroupWebLinksRequest;
+}
+
+export namespace ListHuntGroupWebLinksRequest {
+  export type AsObject = {
+    huntGroupSid: number,
+  }
+}
+
+export class ListHuntGroupWebLinksResponse extends jspb.Message {
+  clearWebLinksList(): void;
+  getWebLinksList(): Array<api_commons_org_huntgroup_pb.WebLink>;
+  setWebLinksList(value: Array<api_commons_org_huntgroup_pb.WebLink>): void;
+  addWebLinks(value?: api_commons_org_huntgroup_pb.WebLink, index?: number): api_commons_org_huntgroup_pb.WebLink;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListHuntGroupWebLinksResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListHuntGroupWebLinksResponse): ListHuntGroupWebLinksResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListHuntGroupWebLinksResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListHuntGroupWebLinksResponse;
+  static deserializeBinaryFromReader(message: ListHuntGroupWebLinksResponse, reader: jspb.BinaryReader): ListHuntGroupWebLinksResponse;
+}
+
+export namespace ListHuntGroupWebLinksResponse {
+  export type AsObject = {
+    webLinksList: Array<api_commons_org_huntgroup_pb.WebLink.AsObject>,
+  }
+}
+
+export class CopyHuntGroupWebLinkRequest extends jspb.Message {
+  getFromHuntGroupSid(): number;
+  setFromHuntGroupSid(value: number): void;
+
+  getToHuntGroupSid(): number;
+  setToHuntGroupSid(value: number): void;
+
+  hasWebLink(): boolean;
+  clearWebLink(): void;
+  getWebLink(): api_commons_org_huntgroup_pb.WebLink | undefined;
+  setWebLink(value?: api_commons_org_huntgroup_pb.WebLink): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyHuntGroupWebLinkRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyHuntGroupWebLinkRequest): CopyHuntGroupWebLinkRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyHuntGroupWebLinkRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyHuntGroupWebLinkRequest;
+  static deserializeBinaryFromReader(message: CopyHuntGroupWebLinkRequest, reader: jspb.BinaryReader): CopyHuntGroupWebLinkRequest;
+}
+
+export namespace CopyHuntGroupWebLinkRequest {
+  export type AsObject = {
+    fromHuntGroupSid: number,
+    toHuntGroupSid: number,
+    webLink?: api_commons_org_huntgroup_pb.WebLink.AsObject,
+  }
+}
+
+export class CopyHuntGroupWebLinkResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyHuntGroupWebLinkResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyHuntGroupWebLinkResponse): CopyHuntGroupWebLinkResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyHuntGroupWebLinkResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyHuntGroupWebLinkResponse;
+  static deserializeBinaryFromReader(message: CopyHuntGroupWebLinkResponse, reader: jspb.BinaryReader): CopyHuntGroupWebLinkResponse;
+}
+
+export namespace CopyHuntGroupWebLinkResponse {
+  export type AsObject = {
+  }
+}
+
+export class UpdateHuntGroupWebLinksRequest extends jspb.Message {
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
+  clearWebLinksList(): void;
+  getWebLinksList(): Array<api_commons_org_huntgroup_pb.WebLink>;
+  setWebLinksList(value: Array<api_commons_org_huntgroup_pb.WebLink>): void;
+  addWebLinks(value?: api_commons_org_huntgroup_pb.WebLink, index?: number): api_commons_org_huntgroup_pb.WebLink;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateHuntGroupWebLinksRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateHuntGroupWebLinksRequest): UpdateHuntGroupWebLinksRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateHuntGroupWebLinksRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateHuntGroupWebLinksRequest;
+  static deserializeBinaryFromReader(message: UpdateHuntGroupWebLinksRequest, reader: jspb.BinaryReader): UpdateHuntGroupWebLinksRequest;
+}
+
+export namespace UpdateHuntGroupWebLinksRequest {
+  export type AsObject = {
+    huntGroupSid: number,
+    webLinksList: Array<api_commons_org_huntgroup_pb.WebLink.AsObject>,
+  }
+}
+
+export class UpdateHuntGroupWebLinksResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateHuntGroupWebLinksResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateHuntGroupWebLinksResponse): UpdateHuntGroupWebLinksResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateHuntGroupWebLinksResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateHuntGroupWebLinksResponse;
+  static deserializeBinaryFromReader(message: UpdateHuntGroupWebLinksResponse, reader: jspb.BinaryReader): UpdateHuntGroupWebLinksResponse;
+}
+
+export namespace UpdateHuntGroupWebLinksResponse {
+  export type AsObject = {
+  }
+}
+
 export class ListHuntGroupIntegrationLinksRequest extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
