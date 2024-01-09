@@ -3561,3 +3561,97 @@ export namespace ListWhatsAppNumbersRes {
   }
 }
 
+export class CreateWhatsAppNumberRequest extends jspb.Message {
+  hasWhatsappNumber(): boolean;
+  clearWhatsappNumber(): void;
+  getWhatsappNumber(): api_commons_omnichannel_pb.WhatsAppNumber | undefined;
+  setWhatsappNumber(value?: api_commons_omnichannel_pb.WhatsAppNumber): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateWhatsAppNumberRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateWhatsAppNumberRequest): CreateWhatsAppNumberRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateWhatsAppNumberRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateWhatsAppNumberRequest;
+  static deserializeBinaryFromReader(message: CreateWhatsAppNumberRequest, reader: jspb.BinaryReader): CreateWhatsAppNumberRequest;
+}
+
+export namespace CreateWhatsAppNumberRequest {
+  export type AsObject = {
+    whatsappNumber?: api_commons_omnichannel_pb.WhatsAppNumber.AsObject,
+  }
+}
+
+export class CreateWhatsAppNumberResponse extends jspb.Message {
+  hasWhatsappNumber(): boolean;
+  clearWhatsappNumber(): void;
+  getWhatsappNumber(): api_commons_omnichannel_pb.WhatsAppNumber | undefined;
+  setWhatsappNumber(value?: api_commons_omnichannel_pb.WhatsAppNumber): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateWhatsAppNumberResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateWhatsAppNumberResponse): CreateWhatsAppNumberResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateWhatsAppNumberResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateWhatsAppNumberResponse;
+  static deserializeBinaryFromReader(message: CreateWhatsAppNumberResponse, reader: jspb.BinaryReader): CreateWhatsAppNumberResponse;
+}
+
+export namespace CreateWhatsAppNumberResponse {
+  export type AsObject = {
+    whatsappNumber?: api_commons_omnichannel_pb.WhatsAppNumber.AsObject,
+  }
+}
+
+export class UpdateWhatsAppNumberRequest extends jspb.Message {
+  hasWhatsappNumber(): boolean;
+  clearWhatsappNumber(): void;
+  getWhatsappNumber(): api_commons_omnichannel_pb.WhatsAppNumber | undefined;
+  setWhatsappNumber(value?: api_commons_omnichannel_pb.WhatsAppNumber): void;
+
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateWhatsAppNumberRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateWhatsAppNumberRequest): UpdateWhatsAppNumberRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateWhatsAppNumberRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateWhatsAppNumberRequest;
+  static deserializeBinaryFromReader(message: UpdateWhatsAppNumberRequest, reader: jspb.BinaryReader): UpdateWhatsAppNumberRequest;
+}
+
+export namespace UpdateWhatsAppNumberRequest {
+  export type AsObject = {
+    whatsappNumber?: api_commons_omnichannel_pb.WhatsAppNumber.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class UpdateWhatsAppNumberResponse extends jspb.Message {
+  hasWhatsappNumber(): boolean;
+  clearWhatsappNumber(): void;
+  getWhatsappNumber(): api_commons_omnichannel_pb.WhatsAppNumber | undefined;
+  setWhatsappNumber(value?: api_commons_omnichannel_pb.WhatsAppNumber): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateWhatsAppNumberResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateWhatsAppNumberResponse): UpdateWhatsAppNumberResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateWhatsAppNumberResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateWhatsAppNumberResponse;
+  static deserializeBinaryFromReader(message: UpdateWhatsAppNumberResponse, reader: jspb.BinaryReader): UpdateWhatsAppNumberResponse;
+}
+
+export namespace UpdateWhatsAppNumberResponse {
+  export type AsObject = {
+    whatsappNumber?: api_commons_omnichannel_pb.WhatsAppNumber.AsObject,
+  }
+}
+
