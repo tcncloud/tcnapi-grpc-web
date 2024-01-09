@@ -928,6 +928,62 @@ export namespace ListAgentsResponse {
   }
 }
 
+export class ListPublicUsersRequest extends jspb.Message {
+  getAgentFilter(): boolean;
+  setAgentFilter(value: boolean): void;
+
+  getArchivedFilter(): api_commons_user_pb.UserArchivedStateFilterMap[keyof api_commons_user_pb.UserArchivedStateFilterMap];
+  setArchivedFilter(value: api_commons_user_pb.UserArchivedStateFilterMap[keyof api_commons_user_pb.UserArchivedStateFilterMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPublicUsersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPublicUsersRequest): ListPublicUsersRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPublicUsersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPublicUsersRequest;
+  static deserializeBinaryFromReader(message: ListPublicUsersRequest, reader: jspb.BinaryReader): ListPublicUsersRequest;
+}
+
+export namespace ListPublicUsersRequest {
+  export type AsObject = {
+    agentFilter: boolean,
+    archivedFilter: api_commons_user_pb.UserArchivedStateFilterMap[keyof api_commons_user_pb.UserArchivedStateFilterMap],
+  }
+}
+
+export class ListPublicUsersResponse extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getFirstName(): string;
+  setFirstName(value: string): void;
+
+  getLastName(): string;
+  setLastName(value: string): void;
+
+  getUsername(): string;
+  setUsername(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPublicUsersResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPublicUsersResponse): ListPublicUsersResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPublicUsersResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPublicUsersResponse;
+  static deserializeBinaryFromReader(message: ListPublicUsersResponse, reader: jspb.BinaryReader): ListPublicUsersResponse;
+}
+
+export namespace ListPublicUsersResponse {
+  export type AsObject = {
+    userId: string,
+    firstName: string,
+    lastName: string,
+    username: string,
+  }
+}
+
 export class ListUsersRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUsersRequest.AsObject;

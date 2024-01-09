@@ -564,6 +564,15 @@ type OrgListAgents = {
   readonly responseType: typeof api_v1alpha1_org_user_pb.ListAgentsResponse;
 };
 
+type OrgListPublicUsers = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: true;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.ListPublicUsersRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.ListPublicUsersResponse;
+};
+
 type OrgListUsers = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1671,6 +1680,7 @@ export class Org {
   static readonly GetUser: OrgGetUser;
   static readonly GetUserByOrgId: OrgGetUserByOrgId;
   static readonly ListAgents: OrgListAgents;
+  static readonly ListPublicUsers: OrgListPublicUsers;
   static readonly ListUsers: OrgListUsers;
   static readonly ListUsersByOrgId: OrgListUsersByOrgId;
   static readonly ListUsersByRegion: OrgListUsersByRegion;
@@ -2330,6 +2340,7 @@ export class OrgClient {
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.GetUserByOrgIdResponse|null) => void
   ): UnaryResponse;
   listAgents(requestMessage: api_v1alpha1_org_user_pb.ListAgentsRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_org_user_pb.ListAgentsResponse>;
+  listPublicUsers(requestMessage: api_v1alpha1_org_user_pb.ListPublicUsersRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_org_user_pb.ListPublicUsersResponse>;
   listUsers(requestMessage: api_v1alpha1_org_user_pb.ListUsersRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_org_user_pb.ListUsersResponse>;
   listUsersByOrgId(requestMessage: api_v1alpha1_org_user_pb.ListUsersByOrgIdRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_org_user_pb.ListUsersByOrgIdResponse>;
   listUsersByRegion(requestMessage: api_v1alpha1_org_user_pb.ListUsersByRegionRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_org_user_pb.ListUsersByRegionResponse>;
