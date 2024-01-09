@@ -1689,6 +1689,9 @@ export class ClientInfoDisplayTemplate extends jspb.Message {
   getTemplateCategory(): TemplateCategoryMap[keyof TemplateCategoryMap];
   setTemplateCategory(value: TemplateCategoryMap[keyof TemplateCategoryMap]): void;
 
+  getClientInfoDisplayTemplateSid(): number;
+  setClientInfoDisplayTemplateSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ClientInfoDisplayTemplate.AsObject;
   static toObject(includeInstance: boolean, msg: ClientInfoDisplayTemplate): ClientInfoDisplayTemplate.AsObject;
@@ -1708,6 +1711,7 @@ export namespace ClientInfoDisplayTemplate {
     dialedNumberFieldStyle?: DialedNumberFieldStyle.AsObject,
     contactFieldStylesList: Array<ContactFieldStyle.AsObject>,
     templateCategory: TemplateCategoryMap[keyof TemplateCategoryMap],
+    clientInfoDisplayTemplateSid: number,
   }
 }
 
