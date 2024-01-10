@@ -12,24 +12,6 @@ var Vanalytics = (function () {
   return Vanalytics;
 }());
 
-Vanalytics.CreateTranscript = {
-  methodName: "CreateTranscript",
-  service: Vanalytics,
-  requestStream: false,
-  responseStream: false,
-  requestType: wfo_vanalytics_v2_transcript_pb.CreateTranscriptRequest,
-  responseType: wfo_vanalytics_v2_transcript_pb.CreateTranscriptResponse
-};
-
-Vanalytics.UpdateTranscript = {
-  methodName: "UpdateTranscript",
-  service: Vanalytics,
-  requestStream: false,
-  responseStream: false,
-  requestType: wfo_vanalytics_v2_transcript_pb.UpdateTranscriptRequest,
-  responseType: wfo_vanalytics_v2_transcript_pb.UpdateTranscriptResponse
-};
-
 Vanalytics.SearchTranscripts = {
   methodName: "SearchTranscripts",
   service: Vanalytics,
@@ -54,68 +36,6 @@ function VanalyticsClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
-
-VanalyticsClient.prototype.createTranscript = function createTranscript(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Vanalytics.CreateTranscript, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-VanalyticsClient.prototype.updateTranscript = function updateTranscript(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Vanalytics.UpdateTranscript, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
 
 VanalyticsClient.prototype.searchTranscripts = function searchTranscripts(requestMessage, metadata, callback) {
   if (arguments.length === 2) {

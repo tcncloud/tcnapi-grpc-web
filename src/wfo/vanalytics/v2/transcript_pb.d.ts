@@ -423,86 +423,7 @@ export namespace Call {
   }
 }
 
-export class CreateTranscriptRequest extends jspb.Message {
-  hasTranscript(): boolean;
-  clearTranscript(): void;
-  getTranscript(): Transcript | undefined;
-  setTranscript(value?: Transcript): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateTranscriptRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateTranscriptRequest): CreateTranscriptRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateTranscriptRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateTranscriptRequest;
-  static deserializeBinaryFromReader(message: CreateTranscriptRequest, reader: jspb.BinaryReader): CreateTranscriptRequest;
-}
-
-export namespace CreateTranscriptRequest {
-  export type AsObject = {
-    transcript?: Transcript.AsObject,
-  }
-}
-
-export class CreateTranscriptResponse extends jspb.Message {
-  hasTranscript(): boolean;
-  clearTranscript(): void;
-  getTranscript(): Transcript | undefined;
-  setTranscript(value?: Transcript): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateTranscriptResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateTranscriptResponse): CreateTranscriptResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateTranscriptResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateTranscriptResponse;
-  static deserializeBinaryFromReader(message: CreateTranscriptResponse, reader: jspb.BinaryReader): CreateTranscriptResponse;
-}
-
-export namespace CreateTranscriptResponse {
-  export type AsObject = {
-    transcript?: Transcript.AsObject,
-  }
-}
-
-export class UpdateTranscriptRequest extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateTranscriptRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateTranscriptRequest): UpdateTranscriptRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateTranscriptRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateTranscriptRequest;
-  static deserializeBinaryFromReader(message: UpdateTranscriptRequest, reader: jspb.BinaryReader): UpdateTranscriptRequest;
-}
-
-export namespace UpdateTranscriptRequest {
-  export type AsObject = {
-  }
-}
-
-export class UpdateTranscriptResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateTranscriptResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateTranscriptResponse): UpdateTranscriptResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateTranscriptResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateTranscriptResponse;
-  static deserializeBinaryFromReader(message: UpdateTranscriptResponse, reader: jspb.BinaryReader): UpdateTranscriptResponse;
-}
-
-export namespace UpdateTranscriptResponse {
-  export type AsObject = {
-  }
-}
-
 export class SearchTranscriptsRequest extends jspb.Message {
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   getPageSize(): number;
   setPageSize(value: number): void;
 
@@ -534,34 +455,11 @@ export class SearchTranscriptsRequest extends jspb.Message {
 
 export namespace SearchTranscriptsRequest {
   export type AsObject = {
-    orgId: string,
     pageSize: number,
     orderBy: string,
     readMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
     boolQuery?: TranscriptBoolQuery.AsObject,
     pageToken: string,
-  }
-}
-
-export class SearchTranscriptsPageToken extends jspb.Message {
-  clearSearchAfterList(): void;
-  getSearchAfterList(): Array<string>;
-  setSearchAfterList(value: Array<string>): void;
-  addSearchAfter(value: string, index?: number): string;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SearchTranscriptsPageToken.AsObject;
-  static toObject(includeInstance: boolean, msg: SearchTranscriptsPageToken): SearchTranscriptsPageToken.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SearchTranscriptsPageToken, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SearchTranscriptsPageToken;
-  static deserializeBinaryFromReader(message: SearchTranscriptsPageToken, reader: jspb.BinaryReader): SearchTranscriptsPageToken;
-}
-
-export namespace SearchTranscriptsPageToken {
-  export type AsObject = {
-    searchAfterList: Array<string>,
   }
 }
 

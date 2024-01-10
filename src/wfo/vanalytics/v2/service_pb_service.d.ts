@@ -6,24 +6,6 @@ import * as wfo_vanalytics_v2_filter_pb from "../../../wfo/vanalytics/v2/filter_
 import * as wfo_vanalytics_v2_transcript_pb from "../../../wfo/vanalytics/v2/transcript_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type VanalyticsCreateTranscript = {
-  readonly methodName: string;
-  readonly service: typeof Vanalytics;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof wfo_vanalytics_v2_transcript_pb.CreateTranscriptRequest;
-  readonly responseType: typeof wfo_vanalytics_v2_transcript_pb.CreateTranscriptResponse;
-};
-
-type VanalyticsUpdateTranscript = {
-  readonly methodName: string;
-  readonly service: typeof Vanalytics;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof wfo_vanalytics_v2_transcript_pb.UpdateTranscriptRequest;
-  readonly responseType: typeof wfo_vanalytics_v2_transcript_pb.UpdateTranscriptResponse;
-};
-
 type VanalyticsSearchTranscripts = {
   readonly methodName: string;
   readonly service: typeof Vanalytics;
@@ -44,8 +26,6 @@ type VanalyticsCreateFilter = {
 
 export class Vanalytics {
   static readonly serviceName: string;
-  static readonly CreateTranscript: VanalyticsCreateTranscript;
-  static readonly UpdateTranscript: VanalyticsUpdateTranscript;
   static readonly SearchTranscripts: VanalyticsSearchTranscripts;
   static readonly CreateFilter: VanalyticsCreateFilter;
 }
@@ -82,24 +62,6 @@ export class VanalyticsClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
-  createTranscript(
-    requestMessage: wfo_vanalytics_v2_transcript_pb.CreateTranscriptRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.CreateTranscriptResponse|null) => void
-  ): UnaryResponse;
-  createTranscript(
-    requestMessage: wfo_vanalytics_v2_transcript_pb.CreateTranscriptRequest,
-    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.CreateTranscriptResponse|null) => void
-  ): UnaryResponse;
-  updateTranscript(
-    requestMessage: wfo_vanalytics_v2_transcript_pb.UpdateTranscriptRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.UpdateTranscriptResponse|null) => void
-  ): UnaryResponse;
-  updateTranscript(
-    requestMessage: wfo_vanalytics_v2_transcript_pb.UpdateTranscriptRequest,
-    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.UpdateTranscriptResponse|null) => void
-  ): UnaryResponse;
   searchTranscripts(
     requestMessage: wfo_vanalytics_v2_transcript_pb.SearchTranscriptsRequest,
     metadata: grpc.Metadata,
