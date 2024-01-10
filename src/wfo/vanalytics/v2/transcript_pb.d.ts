@@ -17,9 +17,6 @@ export class Transcript extends jspb.Message {
   getSms(): Sms | undefined;
   setSms(value?: Sms): void;
 
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   getChannel(): ChannelMap[keyof ChannelMap];
   setChannel(value: ChannelMap[keyof ChannelMap]): void;
 
@@ -61,7 +58,6 @@ export namespace Transcript {
   export type AsObject = {
     call?: Call.AsObject,
     sms?: Sms.AsObject,
-    orgId: string,
     channel: ChannelMap[keyof ChannelMap],
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,

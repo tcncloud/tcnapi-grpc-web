@@ -819,7 +819,6 @@ proto.wfo.vanalytics.v2.Transcript.toObject = function(includeInstance, msg) {
   var f, obj = {
     call: (f = msg.getCall()) && proto.wfo.vanalytics.v2.Call.toObject(includeInstance, f),
     sms: (f = msg.getSms()) && proto.wfo.vanalytics.v2.Sms.toObject(includeInstance, f),
-    orgId: jspb.Message.getFieldWithDefault(msg, 11, ""),
     channel: jspb.Message.getFieldWithDefault(msg, 12, 0),
     startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -871,10 +870,6 @@ proto.wfo.vanalytics.v2.Transcript.deserializeBinaryFromReader = function(msg, r
       var value = new proto.wfo.vanalytics.v2.Sms;
       reader.readMessage(value,proto.wfo.vanalytics.v2.Sms.deserializeBinaryFromReader);
       msg.setSms(value);
-      break;
-    case 11:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrgId(value);
       break;
     case 12:
       var value = /** @type {!proto.wfo.vanalytics.v2.Channel} */ (reader.readEnum());
@@ -947,13 +942,6 @@ proto.wfo.vanalytics.v2.Transcript.serializeBinaryToWriter = function(message, w
       2,
       f,
       proto.wfo.vanalytics.v2.Sms.serializeBinaryToWriter
-    );
-  }
-  f = message.getOrgId();
-  if (f.length > 0) {
-    writer.writeString(
-      11,
-      f
     );
   }
   f = message.getChannel();
@@ -1076,24 +1064,6 @@ proto.wfo.vanalytics.v2.Transcript.prototype.clearSms = function() {
  */
 proto.wfo.vanalytics.v2.Transcript.prototype.hasSms = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string org_id = 11;
- * @return {string}
- */
-proto.wfo.vanalytics.v2.Transcript.prototype.getOrgId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.wfo.vanalytics.v2.Transcript} returns this
- */
-proto.wfo.vanalytics.v2.Transcript.prototype.setOrgId = function(value) {
-  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
