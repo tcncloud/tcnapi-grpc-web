@@ -821,7 +821,6 @@ proto.wfo.vanalytics.v2.Transcript.toObject = function(includeInstance, msg) {
     sms: (f = msg.getSms()) && proto.wfo.vanalytics.v2.Sms.toObject(includeInstance, f),
     channel: jspb.Message.getFieldWithDefault(msg, 12, 0),
     startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     flagSummary: (f = msg.getFlagSummary()) && proto.wfo.vanalytics.v2.FlagSummary.toObject(includeInstance, f),
     transcriptSid: jspb.Message.getFieldWithDefault(msg, 17, 0)
@@ -879,11 +878,6 @@ proto.wfo.vanalytics.v2.Transcript.deserializeBinaryFromReader = function(msg, r
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setStartTime(value);
-      break;
-    case 14:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setCreateTime(value);
       break;
     case 15:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -955,14 +949,6 @@ proto.wfo.vanalytics.v2.Transcript.serializeBinaryToWriter = function(message, w
   if (f != null) {
     writer.writeMessage(
       13,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getCreateTime();
-  if (f != null) {
-    writer.writeMessage(
-      14,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -1119,43 +1105,6 @@ proto.wfo.vanalytics.v2.Transcript.prototype.clearStartTime = function() {
  */
 proto.wfo.vanalytics.v2.Transcript.prototype.hasStartTime = function() {
   return jspb.Message.getField(this, 13) != null;
-};
-
-
-/**
- * optional google.protobuf.Timestamp create_time = 14;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.wfo.vanalytics.v2.Transcript.prototype.getCreateTime = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 14));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.wfo.vanalytics.v2.Transcript} returns this
-*/
-proto.wfo.vanalytics.v2.Transcript.prototype.setCreateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 14, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.wfo.vanalytics.v2.Transcript} returns this
- */
-proto.wfo.vanalytics.v2.Transcript.prototype.clearCreateTime = function() {
-  return this.setCreateTime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.wfo.vanalytics.v2.Transcript.prototype.hasCreateTime = function() {
-  return jspb.Message.getField(this, 14) != null;
 };
 
 

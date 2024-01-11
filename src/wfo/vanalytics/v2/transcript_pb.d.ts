@@ -25,11 +25,6 @@ export class Transcript extends jspb.Message {
   getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  hasCreateTime(): boolean;
-  clearCreateTime(): void;
-  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
   hasDeleteTime(): boolean;
   clearDeleteTime(): void;
   getDeleteTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -60,7 +55,6 @@ export namespace Transcript {
     sms?: Sms.AsObject,
     channel: ChannelMap[keyof ChannelMap],
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     flagSummary?: FlagSummary.AsObject,
     transcriptSid: number,
