@@ -490,12 +490,6 @@ export namespace SearchTranscriptsResponse {
     getTranscript(): Transcript | undefined;
     setTranscript(value?: Transcript): void;
 
-    getIndex(): string;
-    setIndex(value: string): void;
-
-    getVersion(): number;
-    setVersion(value: number): void;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Hit.AsObject;
     static toObject(includeInstance: boolean, msg: Hit): Hit.AsObject;
@@ -509,8 +503,6 @@ export namespace SearchTranscriptsResponse {
   export namespace Hit {
     export type AsObject = {
       transcript?: Transcript.AsObject,
-      index: string,
-      version: number,
     }
   }
 }

@@ -4201,9 +4201,7 @@ proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.prototype.toObject = funct
  */
 proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcript: (f = msg.getTranscript()) && proto.wfo.vanalytics.v2.Transcript.toObject(includeInstance, f),
-    index: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    transcript: (f = msg.getTranscript()) && proto.wfo.vanalytics.v2.Transcript.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4245,14 +4243,6 @@ proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.deserializeBinaryFromReade
       reader.readMessage(value,proto.wfo.vanalytics.v2.Transcript.deserializeBinaryFromReader);
       msg.setTranscript(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setIndex(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setVersion(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -4288,20 +4278,6 @@ proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.serializeBinaryToWriter = 
       1,
       f,
       proto.wfo.vanalytics.v2.Transcript.serializeBinaryToWriter
-    );
-  }
-  f = message.getIndex();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getVersion();
-  if (f !== 0) {
-    writer.writeInt64(
-      3,
-      f
     );
   }
 };
@@ -4341,42 +4317,6 @@ proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.prototype.clearTranscript 
  */
 proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.prototype.hasTranscript = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string index = 2;
- * @return {string}
- */
-proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.prototype.getIndex = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit} returns this
- */
-proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.prototype.setIndex = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional int64 version = 3;
- * @return {number}
- */
-proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.prototype.getVersion = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit} returns this
- */
-proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.prototype.setVersion = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
