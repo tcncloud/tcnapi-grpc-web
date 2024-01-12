@@ -1227,6 +1227,33 @@ Org.DeleteHuntGroupClientInfoDisplayTemplate = {
   responseType: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupClientInfoDisplayTemplateResponse
 };
 
+Org.ListAgentTriggers = {
+  methodName: "ListAgentTriggers",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.ListAgentTriggersRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.ListAgentTriggersResponse
+};
+
+Org.CopyAgentTrigger = {
+  methodName: "CopyAgentTrigger",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.CopyAgentTriggerRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.CopyAgentTriggerResponse
+};
+
+Org.UpdateAgentTriggers = {
+  methodName: "UpdateAgentTriggers",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersResponse
+};
+
 Org.CreateTrust = {
   methodName: "CreateTrust",
   service: Org,
@@ -5830,6 +5857,99 @@ OrgClient.prototype.deleteHuntGroupClientInfoDisplayTemplate = function deleteHu
     callback = arguments[1];
   }
   var client = grpc.unary(Org.DeleteHuntGroupClientInfoDisplayTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listAgentTriggers = function listAgentTriggers(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListAgentTriggers, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.copyAgentTrigger = function copyAgentTrigger(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CopyAgentTrigger, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.updateAgentTriggers = function updateAgentTriggers(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateAgentTriggers, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
