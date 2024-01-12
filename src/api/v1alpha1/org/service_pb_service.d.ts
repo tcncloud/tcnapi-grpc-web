@@ -1221,6 +1221,33 @@ type OrgDeleteHuntGroupClientInfoDisplayTemplate = {
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupClientInfoDisplayTemplateResponse;
 };
 
+type OrgListAgentTriggers = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.ListAgentTriggersRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListAgentTriggersResponse;
+};
+
+type OrgCopyAgentTrigger = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CopyAgentTriggerRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CopyAgentTriggerResponse;
+};
+
+type OrgUpdateAgentTriggers = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersResponse;
+};
+
 type OrgCreateTrust = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1753,6 +1780,9 @@ export class Org {
   static readonly CreateHuntGroupClientInfoDisplayTemplate: OrgCreateHuntGroupClientInfoDisplayTemplate;
   static readonly UpdateHuntGroupClientInfoDisplayTemplate: OrgUpdateHuntGroupClientInfoDisplayTemplate;
   static readonly DeleteHuntGroupClientInfoDisplayTemplate: OrgDeleteHuntGroupClientInfoDisplayTemplate;
+  static readonly ListAgentTriggers: OrgListAgentTriggers;
+  static readonly CopyAgentTrigger: OrgCopyAgentTrigger;
+  static readonly UpdateAgentTriggers: OrgUpdateAgentTriggers;
   static readonly CreateTrust: OrgCreateTrust;
   static readonly AcceptTrust: OrgAcceptTrust;
   static readonly RejectTrust: OrgRejectTrust;
@@ -2964,6 +2994,33 @@ export class OrgClient {
   deleteHuntGroupClientInfoDisplayTemplate(
     requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupClientInfoDisplayTemplateRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupClientInfoDisplayTemplateResponse|null) => void
+  ): UnaryResponse;
+  listAgentTriggers(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListAgentTriggersRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListAgentTriggersResponse|null) => void
+  ): UnaryResponse;
+  listAgentTriggers(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListAgentTriggersRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListAgentTriggersResponse|null) => void
+  ): UnaryResponse;
+  copyAgentTrigger(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyAgentTriggerRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyAgentTriggerResponse|null) => void
+  ): UnaryResponse;
+  copyAgentTrigger(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyAgentTriggerRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyAgentTriggerResponse|null) => void
+  ): UnaryResponse;
+  updateAgentTriggers(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersResponse|null) => void
+  ): UnaryResponse;
+  updateAgentTriggers(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersResponse|null) => void
   ): UnaryResponse;
   createTrust(
     requestMessage: api_v1alpha1_org_trusts_pb.CreateTrustRequest,

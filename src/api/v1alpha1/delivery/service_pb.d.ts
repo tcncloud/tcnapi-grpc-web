@@ -2261,6 +2261,11 @@ export class EmailTransport extends jspb.Message {
   setCcAddressesList(value: Array<string>): void;
   addCcAddresses(value: string, index?: number): string;
 
+  clearToAddressesList(): void;
+  getToAddressesList(): Array<string>;
+  setToAddressesList(value: Array<string>): void;
+  addToAddresses(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EmailTransport.AsObject;
   static toObject(includeInstance: boolean, msg: EmailTransport): EmailTransport.AsObject;
@@ -2276,6 +2281,7 @@ export namespace EmailTransport {
     fromAddress: string,
     toAddress: string,
     ccAddressesList: Array<string>,
+    toAddressesList: Array<string>,
   }
 }
 
