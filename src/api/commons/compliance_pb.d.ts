@@ -542,6 +542,18 @@ export class PluginExp extends jspb.Message {
   getDateLastContact(): string;
   setDateLastContact(value: string): void;
 
+  getLu(): string;
+  setLu(value: string): void;
+
+  getAccount(): string;
+  setAccount(value: string): void;
+
+  getMaster(): string;
+  setMaster(value: string): void;
+
+  getClient(): string;
+  setClient(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PluginExp.AsObject;
   static toObject(includeInstance: boolean, msg: PluginExp): PluginExp.AsObject;
@@ -565,6 +577,10 @@ export namespace PluginExp {
     topic: string,
     absentAction: ConsentAbsentActionMap[keyof ConsentAbsentActionMap],
     dateLastContact: string,
+    lu: string,
+    account: string,
+    master: string,
+    client: string,
   }
 }
 
@@ -1094,6 +1110,7 @@ export interface PluginTypeMap {
   GRYPHON: 1;
   TCN_CONSENT: 2;
   RND: 3;
+  MRS_COMPLIANCE: 4;
 }
 
 export const PluginType: PluginTypeMap;
