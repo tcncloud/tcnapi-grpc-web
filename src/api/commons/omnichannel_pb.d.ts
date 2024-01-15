@@ -2709,7 +2709,6 @@ export interface SmsNumberProviderMap {
   APEIRON_PROVIDER: 4;
   AUSBURST_SMS_PROVIDER: 5;
   MEDIASAT_SMS_PROVIDER: 6;
-  TEXTLOCAL_SMS_PROVIDER: 7;
 }
 
 export const SmsNumberProvider: SmsNumberProviderMap;
