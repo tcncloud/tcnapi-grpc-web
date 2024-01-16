@@ -4054,6 +4054,14 @@ export class DeDupCriteria extends jspb.Message {
   setFieldsList(value: Array<FieldIndex>): void;
   addFields(value?: FieldIndex, index?: number): FieldIndex;
 
+  hasUnless(): boolean;
+  clearUnless(): void;
+  getUnless(): FilterCheck | undefined;
+  setUnless(value?: FilterCheck): void;
+
+  getDisjunctKeys(): boolean;
+  setDisjunctKeys(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeDupCriteria.AsObject;
   static toObject(includeInstance: boolean, msg: DeDupCriteria): DeDupCriteria.AsObject;
@@ -4068,6 +4076,8 @@ export namespace DeDupCriteria {
   export type AsObject = {
     action: api_commons_lms_pb.DeDupActionsMap[keyof api_commons_lms_pb.DeDupActionsMap],
     fieldsList: Array<FieldIndex.AsObject>,
+    unless?: FilterCheck.AsObject,
+    disjunctKeys: boolean,
   }
 }
 
