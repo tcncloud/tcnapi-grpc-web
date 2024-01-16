@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class Transcript extends jspb.Message {
   hasCall(): boolean;
@@ -433,6 +434,11 @@ export class SearchTranscriptsRequest extends jspb.Message {
   getPageToken(): string;
   setPageToken(value: string): void;
 
+  hasHighlight(): boolean;
+  clearHighlight(): void;
+  getHighlight(): Highlight | undefined;
+  setHighlight(value?: Highlight): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchTranscriptsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SearchTranscriptsRequest): SearchTranscriptsRequest.AsObject;
@@ -450,6 +456,31 @@ export namespace SearchTranscriptsRequest {
     readMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
     boolQuery?: TranscriptBoolQuery.AsObject,
     pageToken: string,
+    highlight?: Highlight.AsObject,
+  }
+}
+
+export class Highlight extends jspb.Message {
+  getPrefix(): string;
+  setPrefix(value: string): void;
+
+  getSuffix(): string;
+  setSuffix(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Highlight.AsObject;
+  static toObject(includeInstance: boolean, msg: Highlight): Highlight.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Highlight, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Highlight;
+  static deserializeBinaryFromReader(message: Highlight, reader: jspb.BinaryReader): Highlight;
+}
+
+export namespace Highlight {
+  export type AsObject = {
+    prefix: string,
+    suffix: string,
   }
 }
 
@@ -640,6 +671,16 @@ export namespace TranscriptQuery {
     getCallSid(): TranscriptQuery.Call.CallSid | undefined;
     setCallSid(value?: TranscriptQuery.Call.CallSid): void;
 
+    hasAudioTime(): boolean;
+    clearAudioTime(): void;
+    getAudioTime(): TranscriptQuery.Call.AudioTime | undefined;
+    setAudioTime(value?: TranscriptQuery.Call.AudioTime): void;
+
+    hasCallType(): boolean;
+    clearCallType(): void;
+    getCallType(): TranscriptQuery.Call.CallType | undefined;
+    setCallType(value?: TranscriptQuery.Call.CallType): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Call.AsObject;
     static toObject(includeInstance: boolean, msg: Call): Call.AsObject;
@@ -653,6 +694,30 @@ export namespace TranscriptQuery {
   export namespace Call {
     export type AsObject = {
       callSid?: TranscriptQuery.Call.CallSid.AsObject,
+      audioTime?: TranscriptQuery.Call.AudioTime.AsObject,
+      callType?: TranscriptQuery.Call.CallType.AsObject,
+    }
+
+    export class CallType extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>;
+      setAnyList(value: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>): void;
+      addAny(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap], index?: number): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): CallType.AsObject;
+      static toObject(includeInstance: boolean, msg: CallType): CallType.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: CallType, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): CallType;
+      static deserializeBinaryFromReader(message: CallType, reader: jspb.BinaryReader): CallType;
+    }
+
+    export namespace CallType {
+      export type AsObject = {
+        anyList: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>,
+      }
     }
 
     export class CallSid extends jspb.Message {
@@ -674,6 +739,46 @@ export namespace TranscriptQuery {
     export namespace CallSid {
       export type AsObject = {
         anyList: Array<number>,
+      }
+    }
+
+    export class AudioTime extends jspb.Message {
+      hasGte(): boolean;
+      clearGte(): void;
+      getGte(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setGte(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      hasLte(): boolean;
+      clearLte(): void;
+      getLte(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setLte(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      hasGt(): boolean;
+      clearGt(): void;
+      getGt(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setGt(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      hasLt(): boolean;
+      clearLt(): void;
+      getLt(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setLt(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): AudioTime.AsObject;
+      static toObject(includeInstance: boolean, msg: AudioTime): AudioTime.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: AudioTime, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): AudioTime;
+      static deserializeBinaryFromReader(message: AudioTime, reader: jspb.BinaryReader): AudioTime;
+    }
+
+    export namespace AudioTime {
+      export type AsObject = {
+        gte?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+        lte?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+        gt?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+        lt?: google_protobuf_wrappers_pb.Int32Value.AsObject,
       }
     }
   }

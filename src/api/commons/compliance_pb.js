@@ -4268,7 +4268,11 @@ proto.api.commons.PluginExp.toObject = function(includeInstance, msg) {
     contentField: jspb.Message.getFieldWithDefault(msg, 8, ""),
     topic: jspb.Message.getFieldWithDefault(msg, 9, ""),
     absentAction: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    dateLastContact: jspb.Message.getFieldWithDefault(msg, 10, "")
+    dateLastContact: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    lu: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    account: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    master: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    client: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -4348,6 +4352,22 @@ proto.api.commons.PluginExp.deserializeBinaryFromReader = function(msg, reader) 
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setDateLastContact(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLu(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAccount(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMaster(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setClient(value);
       break;
     default:
       reader.skipField();
@@ -4452,6 +4472,34 @@ proto.api.commons.PluginExp.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = message.getLu();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getAccount();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
+  f = message.getMaster();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
+  f = message.getClient();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
       f
     );
   }
@@ -4653,6 +4701,78 @@ proto.api.commons.PluginExp.prototype.getDateLastContact = function() {
  */
 proto.api.commons.PluginExp.prototype.setDateLastContact = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string lu = 12;
+ * @return {string}
+ */
+proto.api.commons.PluginExp.prototype.getLu = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.PluginExp} returns this
+ */
+proto.api.commons.PluginExp.prototype.setLu = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string account = 13;
+ * @return {string}
+ */
+proto.api.commons.PluginExp.prototype.getAccount = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.PluginExp} returns this
+ */
+proto.api.commons.PluginExp.prototype.setAccount = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional string master = 14;
+ * @return {string}
+ */
+proto.api.commons.PluginExp.prototype.getMaster = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.PluginExp} returns this
+ */
+proto.api.commons.PluginExp.prototype.setMaster = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional string client = 15;
+ * @return {string}
+ */
+proto.api.commons.PluginExp.prototype.getClient = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.PluginExp} returns this
+ */
+proto.api.commons.PluginExp.prototype.setClient = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
 };
 
 
@@ -8063,7 +8183,8 @@ proto.api.commons.PluginType = {
   UNKNOWN_PLUGIN: 0,
   GRYPHON: 1,
   TCN_CONSENT: 2,
-  RND: 3
+  RND: 3,
+  MRS_COMPLIANCE: 4
 };
 
 /**

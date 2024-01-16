@@ -965,6 +965,11 @@ export class ListPublicUsersResponse extends jspb.Message {
   getUsername(): string;
   setUsername(value: string): void;
 
+  clearUsersList(): void;
+  getUsersList(): Array<ListPublicUsersResponse.User>;
+  setUsersList(value: Array<ListPublicUsersResponse.User>): void;
+  addUsers(value?: ListPublicUsersResponse.User, index?: number): ListPublicUsersResponse.User;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPublicUsersResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListPublicUsersResponse): ListPublicUsersResponse.AsObject;
@@ -981,6 +986,39 @@ export namespace ListPublicUsersResponse {
     firstName: string,
     lastName: string,
     username: string,
+    usersList: Array<ListPublicUsersResponse.User.AsObject>,
+  }
+
+  export class User extends jspb.Message {
+    getUserId(): string;
+    setUserId(value: string): void;
+
+    getFirstName(): string;
+    setFirstName(value: string): void;
+
+    getLastName(): string;
+    setLastName(value: string): void;
+
+    getUsername(): string;
+    setUsername(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): User.AsObject;
+    static toObject(includeInstance: boolean, msg: User): User.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: User, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): User;
+    static deserializeBinaryFromReader(message: User, reader: jspb.BinaryReader): User;
+  }
+
+  export namespace User {
+    export type AsObject = {
+      userId: string,
+      firstName: string,
+      lastName: string,
+      username: string,
+    }
   }
 }
 

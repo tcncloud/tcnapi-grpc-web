@@ -3419,6 +3419,9 @@ export class P3ExportProcess extends jspb.Message {
   getPassword(): string;
   setPassword(value: string): void;
 
+  getAccessToken(): string;
+  setAccessToken(value: string): void;
+
   getCountry(): string;
   setCountry(value: string): void;
 
@@ -3574,6 +3577,7 @@ export namespace P3ExportProcess {
     contactListPrefix: string,
     username: string,
     password: string,
+    accessToken: string,
     country: string,
     dupePolicy: api_commons_lms_pb.DuplicatePolicyTypeMap[keyof api_commons_lms_pb.DuplicatePolicyTypeMap],
     absentPolicy: api_commons_lms_pb.AbsentPolicyTypeMap[keyof api_commons_lms_pb.AbsentPolicyTypeMap],

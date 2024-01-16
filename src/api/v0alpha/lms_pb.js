@@ -28661,6 +28661,7 @@ proto.api.v0alpha.P3ExportProcess.toObject = function(includeInstance, msg) {
     contactListPrefix: jspb.Message.getFieldWithDefault(msg, 2, ""),
     username: jspb.Message.getFieldWithDefault(msg, 3, ""),
     password: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    accessToken: jspb.Message.getFieldWithDefault(msg, 49, ""),
     country: jspb.Message.getFieldWithDefault(msg, 5, ""),
     dupePolicy: jspb.Message.getFieldWithDefault(msg, 6, 0),
     absentPolicy: jspb.Message.getFieldWithDefault(msg, 7, 0),
@@ -28756,6 +28757,10 @@ proto.api.v0alpha.P3ExportProcess.deserializeBinaryFromReader = function(msg, re
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setPassword(value);
+      break;
+    case 49:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAccessToken(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -28990,6 +28995,13 @@ proto.api.v0alpha.P3ExportProcess.serializeBinaryToWriter = function(message, wr
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getAccessToken();
+  if (f.length > 0) {
+    writer.writeString(
+      49,
       f
     );
   }
@@ -29389,6 +29401,24 @@ proto.api.v0alpha.P3ExportProcess.prototype.getPassword = function() {
  */
 proto.api.v0alpha.P3ExportProcess.prototype.setPassword = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string access_token = 49;
+ * @return {string}
+ */
+proto.api.v0alpha.P3ExportProcess.prototype.getAccessToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 49, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.P3ExportProcess} returns this
+ */
+proto.api.v0alpha.P3ExportProcess.prototype.setAccessToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 49, value);
 };
 
 
