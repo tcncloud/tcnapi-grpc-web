@@ -244,6 +244,15 @@ DeliveryApi.UpdateEncryption = {
   responseType: api_v1alpha1_delivery_service_pb.UpdateEncryptionRes
 };
 
+DeliveryApi.ListSMSNumbers = {
+  methodName: "ListSMSNumbers",
+  service: DeliveryApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_delivery_service_pb.ListSMSNumbersReq,
+  responseType: api_v1alpha1_delivery_service_pb.ListSMSNumbersRes
+};
+
 exports.DeliveryApi = DeliveryApi;
 
 function DeliveryApiClient(serviceHost, options) {
@@ -1031,6 +1040,37 @@ DeliveryApiClient.prototype.updateEncryption = function updateEncryption(request
     callback = arguments[1];
   }
   var client = grpc.unary(DeliveryApi.UpdateEncryption, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DeliveryApiClient.prototype.listSMSNumbers = function listSMSNumbers(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DeliveryApi.ListSMSNumbers, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

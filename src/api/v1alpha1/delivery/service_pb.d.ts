@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../../annotations/authz_pb";
 import * as api_commons_delivery_pb from "../../../api/commons/delivery_pb";
+import * as api_commons_omnichannel_pb from "../../../api/commons/omnichannel_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
@@ -2516,6 +2517,44 @@ export namespace Encryption {
     ENCRYPTION_NOT_SET = 0,
     PGP_KEY_PAIR = 5,
     AES_PASSWORD = 6,
+  }
+}
+
+export class ListSMSNumbersReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSMSNumbersReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSMSNumbersReq): ListSMSNumbersReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSMSNumbersReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSMSNumbersReq;
+  static deserializeBinaryFromReader(message: ListSMSNumbersReq, reader: jspb.BinaryReader): ListSMSNumbersReq;
+}
+
+export namespace ListSMSNumbersReq {
+  export type AsObject = {
+  }
+}
+
+export class ListSMSNumbersRes extends jspb.Message {
+  clearSmsNumbersList(): void;
+  getSmsNumbersList(): Array<api_commons_omnichannel_pb.SmsNumber>;
+  setSmsNumbersList(value: Array<api_commons_omnichannel_pb.SmsNumber>): void;
+  addSmsNumbers(value?: api_commons_omnichannel_pb.SmsNumber, index?: number): api_commons_omnichannel_pb.SmsNumber;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSMSNumbersRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSMSNumbersRes): ListSMSNumbersRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSMSNumbersRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSMSNumbersRes;
+  static deserializeBinaryFromReader(message: ListSMSNumbersRes, reader: jspb.BinaryReader): ListSMSNumbersRes;
+}
+
+export namespace ListSMSNumbersRes {
+  export type AsObject = {
+    smsNumbersList: Array<api_commons_omnichannel_pb.SmsNumber.AsObject>,
   }
 }
 
