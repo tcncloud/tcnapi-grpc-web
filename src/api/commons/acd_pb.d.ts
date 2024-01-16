@@ -580,22 +580,6 @@ export class TransferMember extends jspb.Message {
   getMemberType(): TransferMemberTypeMap[keyof TransferMemberTypeMap];
   setMemberType(value: TransferMemberTypeMap[keyof TransferMemberTypeMap]): void;
 
-  hasAgentSession(): boolean;
-  clearAgentSession(): void;
-  getAgentSession(): AgentSession | undefined;
-  setAgentSession(value?: AgentSession): void;
-
-  hasCallerSid(): boolean;
-  clearCallerSid(): void;
-  getCallerSid(): CallerSid | undefined;
-  setCallerSid(value?: CallerSid): void;
-
-  hasOutboundId(): boolean;
-  clearOutboundId(): void;
-  getOutboundId(): string;
-  setOutboundId(value: string): void;
-
-  getLocatableDataCase(): TransferMember.LocatableDataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TransferMember.AsObject;
   static toObject(includeInstance: boolean, msg: TransferMember): TransferMember.AsObject;
@@ -611,16 +595,6 @@ export namespace TransferMember {
     identifier: string,
     displayLabel: string,
     memberType: TransferMemberTypeMap[keyof TransferMemberTypeMap],
-    agentSession?: AgentSession.AsObject,
-    callerSid?: CallerSid.AsObject,
-    outboundId: string,
-  }
-
-  export enum LocatableDataCase {
-    LOCATABLE_DATA_NOT_SET = 0,
-    AGENT_SESSION = 100,
-    CALLER_SID = 101,
-    OUTBOUND_ID = 102,
   }
 }
 
