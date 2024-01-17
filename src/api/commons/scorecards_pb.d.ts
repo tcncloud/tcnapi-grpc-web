@@ -240,6 +240,9 @@ export class EvaluationSection extends jspb.Message {
   setAutoEvaluationQuestionsList(value: Array<AutoEvaluationQuestion>): void;
   addAutoEvaluationQuestions(value?: AutoEvaluationQuestion, index?: number): AutoEvaluationQuestion;
 
+  getSkipped(): boolean;
+  setSkipped(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EvaluationSection.AsObject;
   static toObject(includeInstance: boolean, msg: EvaluationSection): EvaluationSection.AsObject;
@@ -262,6 +265,7 @@ export namespace EvaluationSection {
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     evaluationQuestionsList: Array<EvaluationQuestion.AsObject>,
     autoEvaluationQuestionsList: Array<AutoEvaluationQuestion.AsObject>,
+    skipped: boolean,
   }
 }
 
