@@ -19,6 +19,11 @@ export class PersistedWorkflowDefinition extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
+  clearLabelsList(): void;
+  getLabelsList(): Array<string>;
+  setLabelsList(value: Array<string>): void;
+  addLabels(value: string, index?: number): string;
+
   getDescription(): string;
   setDescription(value: string): void;
 
@@ -54,6 +59,7 @@ export namespace PersistedWorkflowDefinition {
     orgId: string,
     application: string,
     name: string,
+    labelsList: Array<string>,
     description: string,
     definition: string,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -233,6 +239,48 @@ export class UpdateWorkflowDefinitionResponse extends jspb.Message {
 }
 
 export namespace UpdateWorkflowDefinitionResponse {
+  export type AsObject = {
+    workflowDefinition?: PersistedWorkflowDefinition.AsObject,
+  }
+}
+
+export class DeleteWorkflowDefinitionRequest extends jspb.Message {
+  getWorkflowDefinitionId(): string;
+  setWorkflowDefinitionId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteWorkflowDefinitionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteWorkflowDefinitionRequest): DeleteWorkflowDefinitionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteWorkflowDefinitionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteWorkflowDefinitionRequest;
+  static deserializeBinaryFromReader(message: DeleteWorkflowDefinitionRequest, reader: jspb.BinaryReader): DeleteWorkflowDefinitionRequest;
+}
+
+export namespace DeleteWorkflowDefinitionRequest {
+  export type AsObject = {
+    workflowDefinitionId: string,
+  }
+}
+
+export class DeleteWorkflowDefinitionResponse extends jspb.Message {
+  hasWorkflowDefinition(): boolean;
+  clearWorkflowDefinition(): void;
+  getWorkflowDefinition(): PersistedWorkflowDefinition | undefined;
+  setWorkflowDefinition(value?: PersistedWorkflowDefinition): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteWorkflowDefinitionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteWorkflowDefinitionResponse): DeleteWorkflowDefinitionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteWorkflowDefinitionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteWorkflowDefinitionResponse;
+  static deserializeBinaryFromReader(message: DeleteWorkflowDefinitionResponse, reader: jspb.BinaryReader): DeleteWorkflowDefinitionResponse;
+}
+
+export namespace DeleteWorkflowDefinitionResponse {
   export type AsObject = {
     workflowDefinition?: PersistedWorkflowDefinition.AsObject,
   }
