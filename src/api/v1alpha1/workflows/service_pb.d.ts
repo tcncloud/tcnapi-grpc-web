@@ -161,6 +161,11 @@ export class ListWorkflowDefinitionsRequest extends jspb.Message {
   getApplication(): string;
   setApplication(value: string): void;
 
+  clearLabelsList(): void;
+  getLabelsList(): Array<string>;
+  setLabelsList(value: Array<string>): void;
+  addLabels(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListWorkflowDefinitionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListWorkflowDefinitionsRequest): ListWorkflowDefinitionsRequest.AsObject;
@@ -175,6 +180,7 @@ export namespace ListWorkflowDefinitionsRequest {
   export type AsObject = {
     orgId: string,
     application: string,
+    labelsList: Array<string>,
   }
 }
 
