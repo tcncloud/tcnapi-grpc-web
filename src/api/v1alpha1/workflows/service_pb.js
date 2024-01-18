@@ -156,7 +156,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1365,6 +1365,13 @@ proto.api.v1alpha1.workflows.GetWorkflowDefinitionResponse.prototype.hasWorkflow
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1397,7 +1404,8 @@ proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.prototype.toObject =
 proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    application: jspb.Message.getFieldWithDefault(msg, 2, "")
+    application: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    labelsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1442,6 +1450,10 @@ proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.deserializeBinaryFro
       var value = /** @type {string} */ (reader.readString());
       msg.setApplication(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addLabels(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1485,6 +1497,13 @@ proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.serializeBinaryToWri
       f
     );
   }
+  f = message.getLabelsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -1521,6 +1540,43 @@ proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.prototype.getApplica
  */
 proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.prototype.setApplication = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * repeated string labels = 3;
+ * @return {!Array<string>}
+ */
+proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.prototype.getLabelsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest} returns this
+ */
+proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.prototype.setLabelsList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest} returns this
+ */
+proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.prototype.addLabels = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest} returns this
+ */
+proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.prototype.clearLabelsList = function() {
+  return this.setLabelsList([]);
 };
 
 
