@@ -40,11 +40,6 @@ export class PersistedWorkflowDefinition extends jspb.Message {
   getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  hasDeleteTime(): boolean;
-  clearDeleteTime(): void;
-  getDeleteTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDeleteTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
   getExtra(): string;
   setExtra(value: string): void;
 
@@ -69,7 +64,6 @@ export namespace PersistedWorkflowDefinition {
     definition: string,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     extra: string,
   }
 }
