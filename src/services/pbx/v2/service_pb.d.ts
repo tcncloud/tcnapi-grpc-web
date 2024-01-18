@@ -1,0 +1,500 @@
+// package: services.pbx.v2
+// file: services/pbx/v2/service.proto
+
+import * as jspb from "google-protobuf";
+import * as annotations_authz_pb from "../../../annotations/authz_pb";
+import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
+import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
+
+export class PBXUser extends jspb.Message {
+  getPbxUserId(): string;
+  setPbxUserId(value: string): void;
+
+  getOrgUserId(): string;
+  setOrgUserId(value: string): void;
+
+  clearSipAccountIdsList(): void;
+  getSipAccountIdsList(): Array<string>;
+  setSipAccountIdsList(value: Array<string>): void;
+  addSipAccountIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PBXUser.AsObject;
+  static toObject(includeInstance: boolean, msg: PBXUser): PBXUser.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PBXUser, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PBXUser;
+  static deserializeBinaryFromReader(message: PBXUser, reader: jspb.BinaryReader): PBXUser;
+}
+
+export namespace PBXUser {
+  export type AsObject = {
+    pbxUserId: string,
+    orgUserId: string,
+    sipAccountIdsList: Array<string>,
+  }
+}
+
+export class SIPAccount extends jspb.Message {
+  getSipId(): string;
+  setSipId(value: string): void;
+
+  getIsActive(): boolean;
+  setIsActive(value: boolean): void;
+
+  getExtension$(): string;
+  setExtension$(value: string): void;
+
+  clearRingGroupIdsList(): void;
+  getRingGroupIdsList(): Array<string>;
+  setRingGroupIdsList(value: Array<string>): void;
+  addRingGroupIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SIPAccount.AsObject;
+  static toObject(includeInstance: boolean, msg: SIPAccount): SIPAccount.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SIPAccount, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SIPAccount;
+  static deserializeBinaryFromReader(message: SIPAccount, reader: jspb.BinaryReader): SIPAccount;
+}
+
+export namespace SIPAccount {
+  export type AsObject = {
+    sipId: string,
+    isActive: boolean,
+    extension: string,
+    ringGroupIdsList: Array<string>,
+  }
+}
+
+export class RingGroup extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getExtension$(): string;
+  setExtension$(value: string): void;
+
+  getRingStrategy(): RingStrategyMap[keyof RingStrategyMap];
+  setRingStrategy(value: RingStrategyMap[keyof RingStrategyMap]): void;
+
+  clearSipAccountIdsList(): void;
+  getSipAccountIdsList(): Array<string>;
+  setSipAccountIdsList(value: Array<string>): void;
+  addSipAccountIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RingGroup.AsObject;
+  static toObject(includeInstance: boolean, msg: RingGroup): RingGroup.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RingGroup, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RingGroup;
+  static deserializeBinaryFromReader(message: RingGroup, reader: jspb.BinaryReader): RingGroup;
+}
+
+export namespace RingGroup {
+  export type AsObject = {
+    id: string,
+    name: string,
+    description: string,
+    extension: string,
+    ringStrategy: RingStrategyMap[keyof RingStrategyMap],
+    sipAccountIdsList: Array<string>,
+  }
+}
+
+export class ListPBXUsersRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPBXUsersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPBXUsersRequest): ListPBXUsersRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPBXUsersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPBXUsersRequest;
+  static deserializeBinaryFromReader(message: ListPBXUsersRequest, reader: jspb.BinaryReader): ListPBXUsersRequest;
+}
+
+export namespace ListPBXUsersRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListPBXUsersResponse extends jspb.Message {
+  clearUsersList(): void;
+  getUsersList(): Array<PBXUser>;
+  setUsersList(value: Array<PBXUser>): void;
+  addUsers(value?: PBXUser, index?: number): PBXUser;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPBXUsersResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPBXUsersResponse): ListPBXUsersResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPBXUsersResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPBXUsersResponse;
+  static deserializeBinaryFromReader(message: ListPBXUsersResponse, reader: jspb.BinaryReader): ListPBXUsersResponse;
+}
+
+export namespace ListPBXUsersResponse {
+  export type AsObject = {
+    usersList: Array<PBXUser.AsObject>,
+  }
+}
+
+export class GetPBXUserRequest extends jspb.Message {
+  getPbxUserId(): string;
+  setPbxUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetPBXUserRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPBXUserRequest): GetPBXUserRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetPBXUserRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPBXUserRequest;
+  static deserializeBinaryFromReader(message: GetPBXUserRequest, reader: jspb.BinaryReader): GetPBXUserRequest;
+}
+
+export namespace GetPBXUserRequest {
+  export type AsObject = {
+    pbxUserId: string,
+  }
+}
+
+export class GetPBXUserResponse extends jspb.Message {
+  hasUser(): boolean;
+  clearUser(): void;
+  getUser(): PBXUser | undefined;
+  setUser(value?: PBXUser): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetPBXUserResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPBXUserResponse): GetPBXUserResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetPBXUserResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPBXUserResponse;
+  static deserializeBinaryFromReader(message: GetPBXUserResponse, reader: jspb.BinaryReader): GetPBXUserResponse;
+}
+
+export namespace GetPBXUserResponse {
+  export type AsObject = {
+    user?: PBXUser.AsObject,
+  }
+}
+
+export class ListRingGroupsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListRingGroupsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListRingGroupsRequest): ListRingGroupsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListRingGroupsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListRingGroupsRequest;
+  static deserializeBinaryFromReader(message: ListRingGroupsRequest, reader: jspb.BinaryReader): ListRingGroupsRequest;
+}
+
+export namespace ListRingGroupsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListRingGroupsResponse extends jspb.Message {
+  clearGroupsList(): void;
+  getGroupsList(): Array<RingGroup>;
+  setGroupsList(value: Array<RingGroup>): void;
+  addGroups(value?: RingGroup, index?: number): RingGroup;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListRingGroupsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListRingGroupsResponse): ListRingGroupsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListRingGroupsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListRingGroupsResponse;
+  static deserializeBinaryFromReader(message: ListRingGroupsResponse, reader: jspb.BinaryReader): ListRingGroupsResponse;
+}
+
+export namespace ListRingGroupsResponse {
+  export type AsObject = {
+    groupsList: Array<RingGroup.AsObject>,
+  }
+}
+
+export class GetRingGroupRequest extends jspb.Message {
+  getRingGroupId(): string;
+  setRingGroupId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetRingGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetRingGroupRequest): GetRingGroupRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetRingGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetRingGroupRequest;
+  static deserializeBinaryFromReader(message: GetRingGroupRequest, reader: jspb.BinaryReader): GetRingGroupRequest;
+}
+
+export namespace GetRingGroupRequest {
+  export type AsObject = {
+    ringGroupId: string,
+  }
+}
+
+export class GetRingGroupResponse extends jspb.Message {
+  hasGroup(): boolean;
+  clearGroup(): void;
+  getGroup(): RingGroup | undefined;
+  setGroup(value?: RingGroup): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetRingGroupResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetRingGroupResponse): GetRingGroupResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetRingGroupResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetRingGroupResponse;
+  static deserializeBinaryFromReader(message: GetRingGroupResponse, reader: jspb.BinaryReader): GetRingGroupResponse;
+}
+
+export namespace GetRingGroupResponse {
+  export type AsObject = {
+    group?: RingGroup.AsObject,
+  }
+}
+
+export class UpdateSIPAccountRequest extends jspb.Message {
+  hasSipAccount(): boolean;
+  clearSipAccount(): void;
+  getSipAccount(): SIPAccount | undefined;
+  setSipAccount(value?: SIPAccount): void;
+
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): void;
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSIPAccountRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSIPAccountRequest): UpdateSIPAccountRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSIPAccountRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSIPAccountRequest;
+  static deserializeBinaryFromReader(message: UpdateSIPAccountRequest, reader: jspb.BinaryReader): UpdateSIPAccountRequest;
+}
+
+export namespace UpdateSIPAccountRequest {
+  export type AsObject = {
+    sipAccount?: SIPAccount.AsObject,
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class UpdateSIPAccountResponse extends jspb.Message {
+  hasSipAccount(): boolean;
+  clearSipAccount(): void;
+  getSipAccount(): SIPAccount | undefined;
+  setSipAccount(value?: SIPAccount): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSIPAccountResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSIPAccountResponse): UpdateSIPAccountResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSIPAccountResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSIPAccountResponse;
+  static deserializeBinaryFromReader(message: UpdateSIPAccountResponse, reader: jspb.BinaryReader): UpdateSIPAccountResponse;
+}
+
+export namespace UpdateSIPAccountResponse {
+  export type AsObject = {
+    sipAccount?: SIPAccount.AsObject,
+  }
+}
+
+export class UpdateRingGroupRequest extends jspb.Message {
+  hasGroup(): boolean;
+  clearGroup(): void;
+  getGroup(): RingGroup | undefined;
+  setGroup(value?: RingGroup): void;
+
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): void;
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateRingGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateRingGroupRequest): UpdateRingGroupRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateRingGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateRingGroupRequest;
+  static deserializeBinaryFromReader(message: UpdateRingGroupRequest, reader: jspb.BinaryReader): UpdateRingGroupRequest;
+}
+
+export namespace UpdateRingGroupRequest {
+  export type AsObject = {
+    group?: RingGroup.AsObject,
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class UpdateRingGroupResponse extends jspb.Message {
+  hasGroup(): boolean;
+  clearGroup(): void;
+  getGroup(): RingGroup | undefined;
+  setGroup(value?: RingGroup): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateRingGroupResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateRingGroupResponse): UpdateRingGroupResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateRingGroupResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateRingGroupResponse;
+  static deserializeBinaryFromReader(message: UpdateRingGroupResponse, reader: jspb.BinaryReader): UpdateRingGroupResponse;
+}
+
+export namespace UpdateRingGroupResponse {
+  export type AsObject = {
+    group?: RingGroup.AsObject,
+  }
+}
+
+export class AssignRandomExtensionRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignRandomExtensionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignRandomExtensionRequest): AssignRandomExtensionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignRandomExtensionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignRandomExtensionRequest;
+  static deserializeBinaryFromReader(message: AssignRandomExtensionRequest, reader: jspb.BinaryReader): AssignRandomExtensionRequest;
+}
+
+export namespace AssignRandomExtensionRequest {
+  export type AsObject = {
+  }
+}
+
+export class AssignRandomExtensionResponse extends jspb.Message {
+  getExtension$(): string;
+  setExtension$(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignRandomExtensionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignRandomExtensionResponse): AssignRandomExtensionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignRandomExtensionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignRandomExtensionResponse;
+  static deserializeBinaryFromReader(message: AssignRandomExtensionResponse, reader: jspb.BinaryReader): AssignRandomExtensionResponse;
+}
+
+export namespace AssignRandomExtensionResponse {
+  export type AsObject = {
+    extension: string,
+  }
+}
+
+export class CreateRingGroupRequest extends jspb.Message {
+  hasGroup(): boolean;
+  clearGroup(): void;
+  getGroup(): RingGroup | undefined;
+  setGroup(value?: RingGroup): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateRingGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateRingGroupRequest): CreateRingGroupRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateRingGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateRingGroupRequest;
+  static deserializeBinaryFromReader(message: CreateRingGroupRequest, reader: jspb.BinaryReader): CreateRingGroupRequest;
+}
+
+export namespace CreateRingGroupRequest {
+  export type AsObject = {
+    group?: RingGroup.AsObject,
+  }
+}
+
+export class CreateRingGroupResponse extends jspb.Message {
+  hasGroup(): boolean;
+  clearGroup(): void;
+  getGroup(): RingGroup | undefined;
+  setGroup(value?: RingGroup): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateRingGroupResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateRingGroupResponse): CreateRingGroupResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateRingGroupResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateRingGroupResponse;
+  static deserializeBinaryFromReader(message: CreateRingGroupResponse, reader: jspb.BinaryReader): CreateRingGroupResponse;
+}
+
+export namespace CreateRingGroupResponse {
+  export type AsObject = {
+    group?: RingGroup.AsObject,
+  }
+}
+
+export class DeleteRingGroupRequest extends jspb.Message {
+  getGroupId(): string;
+  setGroupId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteRingGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteRingGroupRequest): DeleteRingGroupRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteRingGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteRingGroupRequest;
+  static deserializeBinaryFromReader(message: DeleteRingGroupRequest, reader: jspb.BinaryReader): DeleteRingGroupRequest;
+}
+
+export namespace DeleteRingGroupRequest {
+  export type AsObject = {
+    groupId: string,
+  }
+}
+
+export class DeleteRingGroupResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteRingGroupResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteRingGroupResponse): DeleteRingGroupResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteRingGroupResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteRingGroupResponse;
+  static deserializeBinaryFromReader(message: DeleteRingGroupResponse, reader: jspb.BinaryReader): DeleteRingGroupResponse;
+}
+
+export namespace DeleteRingGroupResponse {
+  export type AsObject = {
+  }
+}
+
+export interface RingStrategyMap {
+  RING_STRATEGY_UNSPECIFIED: 0;
+  RING_STRATEGY_RING_ALL: 1;
+  RING_STRATEGY_ROUND_ROBIN: 2;
+  RING_STRATEGY_RANDOM: 3;
+  RING_STRATEGY_ORDERED: 4;
+}
+
+export const RingStrategy: RingStrategyMap;
+
