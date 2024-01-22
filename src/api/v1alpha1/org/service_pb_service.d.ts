@@ -1041,6 +1041,42 @@ type OrgUpdateHuntGroupSettings = {
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupSettingsResponse;
 };
 
+type OrgCreateHuntGroup = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CreateHuntGroupRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CreateHuntGroupResponse;
+};
+
+type OrgUpdateHuntGroupGeneralDetails = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupGeneralDetailsRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupGeneralDetailsResponse;
+};
+
+type OrgDeleteHuntGroup = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupResponse;
+};
+
+type OrgGetHuntGroupDetails = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.GetHuntGroupDetailsRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.GetHuntGroupDetailsResponse;
+};
+
 type OrgListCallerIdBuckets = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1760,6 +1796,10 @@ export class Org {
   static readonly DeleteAuthTokenByUserId: OrgDeleteAuthTokenByUserId;
   static readonly GetHuntGroupSettings: OrgGetHuntGroupSettings;
   static readonly UpdateHuntGroupSettings: OrgUpdateHuntGroupSettings;
+  static readonly CreateHuntGroup: OrgCreateHuntGroup;
+  static readonly UpdateHuntGroupGeneralDetails: OrgUpdateHuntGroupGeneralDetails;
+  static readonly DeleteHuntGroup: OrgDeleteHuntGroup;
+  static readonly GetHuntGroupDetails: OrgGetHuntGroupDetails;
   static readonly ListCallerIdBuckets: OrgListCallerIdBuckets;
   static readonly GetDataDipTemplate: OrgGetDataDipTemplate;
   static readonly ListDataDipTemplates: OrgListDataDipTemplates;
@@ -2814,6 +2854,42 @@ export class OrgClient {
   updateHuntGroupSettings(
     requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupSettingsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupSettingsResponse|null) => void
+  ): UnaryResponse;
+  createHuntGroup(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupResponse|null) => void
+  ): UnaryResponse;
+  createHuntGroup(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupResponse|null) => void
+  ): UnaryResponse;
+  updateHuntGroupGeneralDetails(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupGeneralDetailsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupGeneralDetailsResponse|null) => void
+  ): UnaryResponse;
+  updateHuntGroupGeneralDetails(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupGeneralDetailsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupGeneralDetailsResponse|null) => void
+  ): UnaryResponse;
+  deleteHuntGroup(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupResponse|null) => void
+  ): UnaryResponse;
+  deleteHuntGroup(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupResponse|null) => void
+  ): UnaryResponse;
+  getHuntGroupDetails(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.GetHuntGroupDetailsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.GetHuntGroupDetailsResponse|null) => void
+  ): UnaryResponse;
+  getHuntGroupDetails(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.GetHuntGroupDetailsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.GetHuntGroupDetailsResponse|null) => void
   ): UnaryResponse;
   listCallerIdBuckets(
     requestMessage: api_v1alpha1_org_huntgroup_pb.ListCallerIdBucketsRequest,

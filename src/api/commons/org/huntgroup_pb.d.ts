@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_country_pb from "../../../api/commons/country_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class HuntGroupSettings extends jspb.Message {
   hasGeneralSettings(): boolean;
@@ -569,6 +570,210 @@ export namespace GeneralSettings {
     export type AsObject = {
       manualDial: boolean,
       previewDial: boolean,
+    }
+  }
+}
+
+export class HuntGroupDetails extends jspb.Message {
+  hasGeneralDetails(): boolean;
+  clearGeneralDetails(): void;
+  getGeneralDetails(): HuntGroupDetails.GeneralDetails | undefined;
+  setGeneralDetails(value?: HuntGroupDetails.GeneralDetails): void;
+
+  hasTemplateDetails(): boolean;
+  clearTemplateDetails(): void;
+  getTemplateDetails(): HuntGroupDetails.ClientInfoDisplayTemplateDetails | undefined;
+  setTemplateDetails(value?: HuntGroupDetails.ClientInfoDisplayTemplateDetails): void;
+
+  clearWebLinkDetailsList(): void;
+  getWebLinkDetailsList(): Array<HuntGroupDetails.WebLinkDetails>;
+  setWebLinkDetailsList(value: Array<HuntGroupDetails.WebLinkDetails>): void;
+  addWebLinkDetails(value?: HuntGroupDetails.WebLinkDetails, index?: number): HuntGroupDetails.WebLinkDetails;
+
+  clearTriggerDetailsList(): void;
+  getTriggerDetailsList(): Array<HuntGroupDetails.TriggerDetails>;
+  setTriggerDetailsList(value: Array<HuntGroupDetails.TriggerDetails>): void;
+  addTriggerDetails(value?: HuntGroupDetails.TriggerDetails, index?: number): HuntGroupDetails.TriggerDetails;
+
+  clearIntegrationLinkDetailsList(): void;
+  getIntegrationLinkDetailsList(): Array<HuntGroupDetails.IntegrationLinkDetails>;
+  setIntegrationLinkDetailsList(value: Array<HuntGroupDetails.IntegrationLinkDetails>): void;
+  addIntegrationLinkDetails(value?: HuntGroupDetails.IntegrationLinkDetails, index?: number): HuntGroupDetails.IntegrationLinkDetails;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HuntGroupDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: HuntGroupDetails): HuntGroupDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HuntGroupDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HuntGroupDetails;
+  static deserializeBinaryFromReader(message: HuntGroupDetails, reader: jspb.BinaryReader): HuntGroupDetails;
+}
+
+export namespace HuntGroupDetails {
+  export type AsObject = {
+    generalDetails?: HuntGroupDetails.GeneralDetails.AsObject,
+    templateDetails?: HuntGroupDetails.ClientInfoDisplayTemplateDetails.AsObject,
+    webLinkDetailsList: Array<HuntGroupDetails.WebLinkDetails.AsObject>,
+    triggerDetailsList: Array<HuntGroupDetails.TriggerDetails.AsObject>,
+    integrationLinkDetailsList: Array<HuntGroupDetails.IntegrationLinkDetails.AsObject>,
+  }
+
+  export class GeneralDetails extends jspb.Message {
+    getName(): string;
+    setName(value: string): void;
+
+    getDescription(): string;
+    setDescription(value: string): void;
+
+    getType(): HuntGroupTypeMap[keyof HuntGroupTypeMap];
+    setType(value: HuntGroupTypeMap[keyof HuntGroupTypeMap]): void;
+
+    hasModifyDate(): boolean;
+    clearModifyDate(): void;
+    getModifyDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setModifyDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    getAgentCount(): number;
+    setAgentCount(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): GeneralDetails.AsObject;
+    static toObject(includeInstance: boolean, msg: GeneralDetails): GeneralDetails.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: GeneralDetails, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): GeneralDetails;
+    static deserializeBinaryFromReader(message: GeneralDetails, reader: jspb.BinaryReader): GeneralDetails;
+  }
+
+  export namespace GeneralDetails {
+    export type AsObject = {
+      name: string,
+      description: string,
+      type: HuntGroupTypeMap[keyof HuntGroupTypeMap],
+      modifyDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      agentCount: number,
+    }
+  }
+
+  export class ClientInfoDisplayTemplateDetails extends jspb.Message {
+    getName(): string;
+    setName(value: string): void;
+
+    getDescription(): string;
+    setDescription(value: string): void;
+
+    getDisplayAllFields(): boolean;
+    setDisplayAllFields(value: boolean): void;
+
+    getDefinedFieldCount(): number;
+    setDefinedFieldCount(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ClientInfoDisplayTemplateDetails.AsObject;
+    static toObject(includeInstance: boolean, msg: ClientInfoDisplayTemplateDetails): ClientInfoDisplayTemplateDetails.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ClientInfoDisplayTemplateDetails, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ClientInfoDisplayTemplateDetails;
+    static deserializeBinaryFromReader(message: ClientInfoDisplayTemplateDetails, reader: jspb.BinaryReader): ClientInfoDisplayTemplateDetails;
+  }
+
+  export namespace ClientInfoDisplayTemplateDetails {
+    export type AsObject = {
+      name: string,
+      description: string,
+      displayAllFields: boolean,
+      definedFieldCount: number,
+    }
+  }
+
+  export class WebLinkDetails extends jspb.Message {
+    getName(): string;
+    setName(value: string): void;
+
+    getDescription(): string;
+    setDescription(value: string): void;
+
+    getBaseUrl(): string;
+    setBaseUrl(value: string): void;
+
+    getParameterCount(): number;
+    setParameterCount(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): WebLinkDetails.AsObject;
+    static toObject(includeInstance: boolean, msg: WebLinkDetails): WebLinkDetails.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: WebLinkDetails, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): WebLinkDetails;
+    static deserializeBinaryFromReader(message: WebLinkDetails, reader: jspb.BinaryReader): WebLinkDetails;
+  }
+
+  export namespace WebLinkDetails {
+    export type AsObject = {
+      name: string,
+      description: string,
+      baseUrl: string,
+      parameterCount: number,
+    }
+  }
+
+  export class TriggerDetails extends jspb.Message {
+    getDescription(): string;
+    setDescription(value: string): void;
+
+    getStatus(): AgentStatusMap[keyof AgentStatusMap];
+    setStatus(value: AgentStatusMap[keyof AgentStatusMap]): void;
+
+    getDuration(): number;
+    setDuration(value: number): void;
+
+    getAction(): TriggerActionMap[keyof TriggerActionMap];
+    setAction(value: TriggerActionMap[keyof TriggerActionMap]): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TriggerDetails.AsObject;
+    static toObject(includeInstance: boolean, msg: TriggerDetails): TriggerDetails.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TriggerDetails, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TriggerDetails;
+    static deserializeBinaryFromReader(message: TriggerDetails, reader: jspb.BinaryReader): TriggerDetails;
+  }
+
+  export namespace TriggerDetails {
+    export type AsObject = {
+      description: string,
+      status: AgentStatusMap[keyof AgentStatusMap],
+      duration: number,
+      action: TriggerActionMap[keyof TriggerActionMap],
+    }
+  }
+
+  export class IntegrationLinkDetails extends jspb.Message {
+    getName(): string;
+    setName(value: string): void;
+
+    getDescription(): string;
+    setDescription(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): IntegrationLinkDetails.AsObject;
+    static toObject(includeInstance: boolean, msg: IntegrationLinkDetails): IntegrationLinkDetails.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: IntegrationLinkDetails, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): IntegrationLinkDetails;
+    static deserializeBinaryFromReader(message: IntegrationLinkDetails, reader: jspb.BinaryReader): IntegrationLinkDetails;
+  }
+
+  export namespace IntegrationLinkDetails {
+    export type AsObject = {
+      name: string,
+      description: string,
     }
   }
 }
@@ -2377,6 +2582,14 @@ export namespace TriggerActionOption {
     integrationLinkSid: number,
   }
 }
+
+export interface HuntGroupTypeMap {
+  HUNT_GROUP_TYPE_UNSPECIFIED: 0;
+  HUNT_GROUP_TYPE_CONNECTED: 1;
+  HUNT_GROUP_TYPE_SOFTPHONE: 2;
+}
+
+export const HuntGroupType: HuntGroupTypeMap;
 
 export interface TemplateCategoryMap {
   TEMPLATE_CATEGORY_UNSPECIFIED: 0;

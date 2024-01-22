@@ -174,6 +174,180 @@ export namespace UpdateHuntGroupSettingsResponse {
   }
 }
 
+export class CreateHuntGroupRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getType(): api_commons_org_huntgroup_pb.HuntGroupTypeMap[keyof api_commons_org_huntgroup_pb.HuntGroupTypeMap];
+  setType(value: api_commons_org_huntgroup_pb.HuntGroupTypeMap[keyof api_commons_org_huntgroup_pb.HuntGroupTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateHuntGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateHuntGroupRequest): CreateHuntGroupRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateHuntGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateHuntGroupRequest;
+  static deserializeBinaryFromReader(message: CreateHuntGroupRequest, reader: jspb.BinaryReader): CreateHuntGroupRequest;
+}
+
+export namespace CreateHuntGroupRequest {
+  export type AsObject = {
+    name: string,
+    description: string,
+    type: api_commons_org_huntgroup_pb.HuntGroupTypeMap[keyof api_commons_org_huntgroup_pb.HuntGroupTypeMap],
+  }
+}
+
+export class CreateHuntGroupResponse extends jspb.Message {
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateHuntGroupResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateHuntGroupResponse): CreateHuntGroupResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateHuntGroupResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateHuntGroupResponse;
+  static deserializeBinaryFromReader(message: CreateHuntGroupResponse, reader: jspb.BinaryReader): CreateHuntGroupResponse;
+}
+
+export namespace CreateHuntGroupResponse {
+  export type AsObject = {
+    huntGroupSid: number,
+  }
+}
+
+export class UpdateHuntGroupGeneralDetailsRequest extends jspb.Message {
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getType(): api_commons_org_huntgroup_pb.HuntGroupTypeMap[keyof api_commons_org_huntgroup_pb.HuntGroupTypeMap];
+  setType(value: api_commons_org_huntgroup_pb.HuntGroupTypeMap[keyof api_commons_org_huntgroup_pb.HuntGroupTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateHuntGroupGeneralDetailsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateHuntGroupGeneralDetailsRequest): UpdateHuntGroupGeneralDetailsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateHuntGroupGeneralDetailsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateHuntGroupGeneralDetailsRequest;
+  static deserializeBinaryFromReader(message: UpdateHuntGroupGeneralDetailsRequest, reader: jspb.BinaryReader): UpdateHuntGroupGeneralDetailsRequest;
+}
+
+export namespace UpdateHuntGroupGeneralDetailsRequest {
+  export type AsObject = {
+    huntGroupSid: number,
+    name: string,
+    description: string,
+    type: api_commons_org_huntgroup_pb.HuntGroupTypeMap[keyof api_commons_org_huntgroup_pb.HuntGroupTypeMap],
+  }
+}
+
+export class UpdateHuntGroupGeneralDetailsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateHuntGroupGeneralDetailsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateHuntGroupGeneralDetailsResponse): UpdateHuntGroupGeneralDetailsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateHuntGroupGeneralDetailsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateHuntGroupGeneralDetailsResponse;
+  static deserializeBinaryFromReader(message: UpdateHuntGroupGeneralDetailsResponse, reader: jspb.BinaryReader): UpdateHuntGroupGeneralDetailsResponse;
+}
+
+export namespace UpdateHuntGroupGeneralDetailsResponse {
+  export type AsObject = {
+  }
+}
+
+export class DeleteHuntGroupRequest extends jspb.Message {
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteHuntGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteHuntGroupRequest): DeleteHuntGroupRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteHuntGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteHuntGroupRequest;
+  static deserializeBinaryFromReader(message: DeleteHuntGroupRequest, reader: jspb.BinaryReader): DeleteHuntGroupRequest;
+}
+
+export namespace DeleteHuntGroupRequest {
+  export type AsObject = {
+    huntGroupSid: number,
+  }
+}
+
+export class DeleteHuntGroupResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteHuntGroupResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteHuntGroupResponse): DeleteHuntGroupResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteHuntGroupResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteHuntGroupResponse;
+  static deserializeBinaryFromReader(message: DeleteHuntGroupResponse, reader: jspb.BinaryReader): DeleteHuntGroupResponse;
+}
+
+export namespace DeleteHuntGroupResponse {
+  export type AsObject = {
+  }
+}
+
+export class GetHuntGroupDetailsRequest extends jspb.Message {
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetHuntGroupDetailsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetHuntGroupDetailsRequest): GetHuntGroupDetailsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetHuntGroupDetailsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetHuntGroupDetailsRequest;
+  static deserializeBinaryFromReader(message: GetHuntGroupDetailsRequest, reader: jspb.BinaryReader): GetHuntGroupDetailsRequest;
+}
+
+export namespace GetHuntGroupDetailsRequest {
+  export type AsObject = {
+    huntGroupSid: number,
+  }
+}
+
+export class GetHuntGroupDetailsResponse extends jspb.Message {
+  hasHuntGroupDetails(): boolean;
+  clearHuntGroupDetails(): void;
+  getHuntGroupDetails(): api_commons_org_huntgroup_pb.HuntGroupDetails | undefined;
+  setHuntGroupDetails(value?: api_commons_org_huntgroup_pb.HuntGroupDetails): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetHuntGroupDetailsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetHuntGroupDetailsResponse): GetHuntGroupDetailsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetHuntGroupDetailsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetHuntGroupDetailsResponse;
+  static deserializeBinaryFromReader(message: GetHuntGroupDetailsResponse, reader: jspb.BinaryReader): GetHuntGroupDetailsResponse;
+}
+
+export namespace GetHuntGroupDetailsResponse {
+  export type AsObject = {
+    huntGroupDetails?: api_commons_org_huntgroup_pb.HuntGroupDetails.AsObject,
+  }
+}
+
 export class ListCallerIdBucketsRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCallerIdBucketsRequest.AsObject;
