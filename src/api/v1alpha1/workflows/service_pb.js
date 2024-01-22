@@ -361,6 +361,7 @@ proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject = function(inc
     definition: jspb.Message.getFieldWithDefault(msg, 6, ""),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     extra: jspb.Message.getFieldWithDefault(msg, 100, "")
   };
 
@@ -435,6 +436,11 @@ proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.deserializeBinaryFromRe
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateTime(value);
+      break;
+    case 10:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setDeleteTime(value);
       break;
     case 100:
       var value = /** @type {string} */ (reader.readString());
@@ -530,6 +536,14 @@ proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.serializeBinaryToWriter
   if (f != null) {
     writer.writeMessage(
       8,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeleteTime();
+  if (f != null) {
+    writer.writeMessage(
+      10,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -760,6 +774,43 @@ proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.prototype.clearUpdateTi
  */
 proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.prototype.hasUpdateTime = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp delete_time = 10;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.prototype.getDeleteTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 10));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.workflows.PersistedWorkflowDefinition} returns this
+*/
+proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.prototype.setDeleteTime = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.workflows.PersistedWorkflowDefinition} returns this
+ */
+proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.prototype.clearDeleteTime = function() {
+  return this.setDeleteTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.prototype.hasDeleteTime = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
