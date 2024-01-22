@@ -2014,7 +2014,8 @@ proto.api.commons.EvaluationSection.toObject = function(includeInstance, msg) {
     evaluationQuestionsList: jspb.Message.toObjectList(msg.getEvaluationQuestionsList(),
     proto.api.commons.EvaluationQuestion.toObject, includeInstance),
     autoEvaluationQuestionsList: jspb.Message.toObjectList(msg.getAutoEvaluationQuestionsList(),
-    proto.api.commons.AutoEvaluationQuestion.toObject, includeInstance)
+    proto.api.commons.AutoEvaluationQuestion.toObject, includeInstance),
+    skipped: jspb.Message.getBooleanFieldWithDefault(msg, 12, false)
   };
 
   if (includeInstance) {
@@ -2094,6 +2095,10 @@ proto.api.commons.EvaluationSection.deserializeBinaryFromReader = function(msg, 
       var value = new proto.api.commons.AutoEvaluationQuestion;
       reader.readMessage(value,proto.api.commons.AutoEvaluationQuestion.deserializeBinaryFromReader);
       msg.addAutoEvaluationQuestions(value);
+      break;
+    case 12:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSkipped(value);
       break;
     default:
       reader.skipField();
@@ -2196,6 +2201,13 @@ proto.api.commons.EvaluationSection.serializeBinaryToWriter = function(message, 
       11,
       f,
       proto.api.commons.AutoEvaluationQuestion.serializeBinaryToWriter
+    );
+  }
+  f = message.getSkipped();
+  if (f) {
+    writer.writeBool(
+      12,
+      f
     );
   }
 };
@@ -2456,6 +2468,24 @@ proto.api.commons.EvaluationSection.prototype.addAutoEvaluationQuestions = funct
  */
 proto.api.commons.EvaluationSection.prototype.clearAutoEvaluationQuestionsList = function() {
   return this.setAutoEvaluationQuestionsList([]);
+};
+
+
+/**
+ * optional bool skipped = 12;
+ * @return {boolean}
+ */
+proto.api.commons.EvaluationSection.prototype.getSkipped = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.EvaluationSection} returns this
+ */
+proto.api.commons.EvaluationSection.prototype.setSkipped = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
