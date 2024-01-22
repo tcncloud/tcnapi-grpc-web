@@ -238,24 +238,6 @@ type IntegrationsListIntegrationTemplatesByConfig = {
   readonly responseType: typeof api_v1alpha1_integrations_service_pb.ListIntegrationTemplatesByConfigRes;
 };
 
-type IntegrationsCallEpicPatient = {
-  readonly methodName: string;
-  readonly service: typeof Integrations;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_integrations_service_pb.CallEpicPatientReq;
-  readonly responseType: typeof api_v1alpha1_integrations_service_pb.CallEpicPatientRes;
-};
-
-type IntegrationsHangUpEpicPatientCall = {
-  readonly methodName: string;
-  readonly service: typeof Integrations;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_integrations_service_pb.HangUpEpicPatientCallReq;
-  readonly responseType: typeof api_v1alpha1_integrations_service_pb.Empty;
-};
-
 export class Integrations {
   static readonly serviceName: string;
   static readonly Process: IntegrationsProcess;
@@ -284,8 +266,6 @@ export class Integrations {
   static readonly CreatePaymentPortalLinks: IntegrationsCreatePaymentPortalLinks;
   static readonly Summary: IntegrationsSummary;
   static readonly ListIntegrationTemplatesByConfig: IntegrationsListIntegrationTemplatesByConfig;
-  static readonly CallEpicPatient: IntegrationsCallEpicPatient;
-  static readonly HangUpEpicPatientCall: IntegrationsHangUpEpicPatientCall;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -553,24 +533,6 @@ export class IntegrationsClient {
   listIntegrationTemplatesByConfig(
     requestMessage: api_v1alpha1_integrations_service_pb.ListIntegrationTemplatesByConfigReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.ListIntegrationTemplatesByConfigRes|null) => void
-  ): UnaryResponse;
-  callEpicPatient(
-    requestMessage: api_v1alpha1_integrations_service_pb.CallEpicPatientReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.CallEpicPatientRes|null) => void
-  ): UnaryResponse;
-  callEpicPatient(
-    requestMessage: api_v1alpha1_integrations_service_pb.CallEpicPatientReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.CallEpicPatientRes|null) => void
-  ): UnaryResponse;
-  hangUpEpicPatientCall(
-    requestMessage: api_v1alpha1_integrations_service_pb.HangUpEpicPatientCallReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.Empty|null) => void
-  ): UnaryResponse;
-  hangUpEpicPatientCall(
-    requestMessage: api_v1alpha1_integrations_service_pb.HangUpEpicPatientCallReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.Empty|null) => void
   ): UnaryResponse;
 }
 
