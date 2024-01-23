@@ -1047,6 +1047,42 @@ Org.UpdateHuntGroupSettings = {
   responseType: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupSettingsResponse
 };
 
+Org.CreateHuntGroup = {
+  methodName: "CreateHuntGroup",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupResponse
+};
+
+Org.UpdateHuntGroupGeneralDetails = {
+  methodName: "UpdateHuntGroupGeneralDetails",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupGeneralDetailsRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupGeneralDetailsResponse
+};
+
+Org.DeleteHuntGroup = {
+  methodName: "DeleteHuntGroup",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupResponse
+};
+
+Org.GetHuntGroupDetails = {
+  methodName: "GetHuntGroupDetails",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.GetHuntGroupDetailsRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.GetHuntGroupDetailsResponse
+};
+
 Org.ListCallerIdBuckets = {
   methodName: "ListCallerIdBuckets",
   service: Org,
@@ -5237,6 +5273,130 @@ OrgClient.prototype.updateHuntGroupSettings = function updateHuntGroupSettings(r
     callback = arguments[1];
   }
   var client = grpc.unary(Org.UpdateHuntGroupSettings, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.createHuntGroup = function createHuntGroup(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CreateHuntGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.updateHuntGroupGeneralDetails = function updateHuntGroupGeneralDetails(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateHuntGroupGeneralDetails, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.deleteHuntGroup = function deleteHuntGroup(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.DeleteHuntGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.getHuntGroupDetails = function getHuntGroupDetails(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetHuntGroupDetails, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
