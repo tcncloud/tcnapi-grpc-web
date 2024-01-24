@@ -2621,3 +2621,49 @@ export namespace Refresh2FALockoutResponse {
   }
 }
 
+export class Refresh2FALockoutByOrgIdRequest extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Refresh2FALockoutByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: Refresh2FALockoutByOrgIdRequest): Refresh2FALockoutByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Refresh2FALockoutByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Refresh2FALockoutByOrgIdRequest;
+  static deserializeBinaryFromReader(message: Refresh2FALockoutByOrgIdRequest, reader: jspb.BinaryReader): Refresh2FALockoutByOrgIdRequest;
+}
+
+export namespace Refresh2FALockoutByOrgIdRequest {
+  export type AsObject = {
+    userId: string,
+    orgId: string,
+  }
+}
+
+export class Refresh2FALockoutByOrgIdResponse extends jspb.Message {
+  hasTimeout(): boolean;
+  clearTimeout(): void;
+  getTimeout(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimeout(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Refresh2FALockoutByOrgIdResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: Refresh2FALockoutByOrgIdResponse): Refresh2FALockoutByOrgIdResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Refresh2FALockoutByOrgIdResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Refresh2FALockoutByOrgIdResponse;
+  static deserializeBinaryFromReader(message: Refresh2FALockoutByOrgIdResponse, reader: jspb.BinaryReader): Refresh2FALockoutByOrgIdResponse;
+}
+
+export namespace Refresh2FALockoutByOrgIdResponse {
+  export type AsObject = {
+    timeout?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
