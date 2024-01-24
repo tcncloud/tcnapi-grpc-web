@@ -126,6 +126,11 @@ export class User extends jspb.Message {
   getEmailVerified(): boolean;
   setEmailVerified(value: boolean): void;
 
+  hasMfaInfo(): boolean;
+  clearMfaInfo(): void;
+  getMfaInfo(): UserMfaInfo | undefined;
+  setMfaInfo(value?: UserMfaInfo): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): User.AsObject;
   static toObject(includeInstance: boolean, msg: User): User.AsObject;
@@ -172,6 +177,7 @@ export namespace User {
     agent: boolean,
     accountOwner: boolean,
     emailVerified: boolean,
+    mfaInfo?: UserMfaInfo.AsObject,
   }
 
   export class RegionSids extends jspb.Message {
@@ -200,6 +206,115 @@ export namespace User {
       agentSid: number,
       clientSid: number,
     }
+  }
+}
+
+export class UserMfaInfo extends jspb.Message {
+  getMfaEnabled(): boolean;
+  setMfaEnabled(value: boolean): void;
+
+  getMfaLockedOut(): boolean;
+  setMfaLockedOut(value: boolean): void;
+
+  hasNone(): boolean;
+  clearNone(): void;
+  getNone(): UserMfaInfo.NoneSelected | undefined;
+  setNone(value?: UserMfaInfo.NoneSelected): void;
+
+  hasOtp(): boolean;
+  clearOtp(): void;
+  getOtp(): UserMfaInfo.OtpType | undefined;
+  setOtp(value?: UserMfaInfo.OtpType): void;
+
+  getMfaTypeCase(): UserMfaInfo.MfaTypeCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UserMfaInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: UserMfaInfo): UserMfaInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UserMfaInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserMfaInfo;
+  static deserializeBinaryFromReader(message: UserMfaInfo, reader: jspb.BinaryReader): UserMfaInfo;
+}
+
+export namespace UserMfaInfo {
+  export type AsObject = {
+    mfaEnabled: boolean,
+    mfaLockedOut: boolean,
+    none?: UserMfaInfo.NoneSelected.AsObject,
+    otp?: UserMfaInfo.OtpType.AsObject,
+  }
+
+  export class NoneSelected extends jspb.Message {
+    hasTimeout(): boolean;
+    clearTimeout(): void;
+    getTimeout(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setTimeout(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): NoneSelected.AsObject;
+    static toObject(includeInstance: boolean, msg: NoneSelected): NoneSelected.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: NoneSelected, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): NoneSelected;
+    static deserializeBinaryFromReader(message: NoneSelected, reader: jspb.BinaryReader): NoneSelected;
+  }
+
+  export namespace NoneSelected {
+    export type AsObject = {
+      timeout?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+  }
+
+  export class OtpType extends jspb.Message {
+    hasEmail(): boolean;
+    clearEmail(): void;
+    getEmail(): UserMfaInfo.OtpType.EmailDeliveryMethod | undefined;
+    setEmail(value?: UserMfaInfo.OtpType.EmailDeliveryMethod): void;
+
+    getDeliveryMethodCase(): OtpType.DeliveryMethodCase;
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): OtpType.AsObject;
+    static toObject(includeInstance: boolean, msg: OtpType): OtpType.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: OtpType, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): OtpType;
+    static deserializeBinaryFromReader(message: OtpType, reader: jspb.BinaryReader): OtpType;
+  }
+
+  export namespace OtpType {
+    export type AsObject = {
+      email?: UserMfaInfo.OtpType.EmailDeliveryMethod.AsObject,
+    }
+
+    export class EmailDeliveryMethod extends jspb.Message {
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): EmailDeliveryMethod.AsObject;
+      static toObject(includeInstance: boolean, msg: EmailDeliveryMethod): EmailDeliveryMethod.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: EmailDeliveryMethod, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): EmailDeliveryMethod;
+      static deserializeBinaryFromReader(message: EmailDeliveryMethod, reader: jspb.BinaryReader): EmailDeliveryMethod;
+    }
+
+    export namespace EmailDeliveryMethod {
+      export type AsObject = {
+      }
+    }
+
+    export enum DeliveryMethodCase {
+      DELIVERY_METHOD_NOT_SET = 0,
+      EMAIL = 1,
+    }
+  }
+
+  export enum MfaTypeCase {
+    MFA_TYPE_NOT_SET = 0,
+    NONE = 10,
+    OTP = 11,
   }
 }
 

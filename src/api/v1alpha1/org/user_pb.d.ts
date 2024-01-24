@@ -2579,3 +2579,45 @@ export namespace GetUserSessionDataResponse {
   }
 }
 
+export class Refresh2FALockoutRequest extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Refresh2FALockoutRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: Refresh2FALockoutRequest): Refresh2FALockoutRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Refresh2FALockoutRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Refresh2FALockoutRequest;
+  static deserializeBinaryFromReader(message: Refresh2FALockoutRequest, reader: jspb.BinaryReader): Refresh2FALockoutRequest;
+}
+
+export namespace Refresh2FALockoutRequest {
+  export type AsObject = {
+    userId: string,
+  }
+}
+
+export class Refresh2FALockoutResponse extends jspb.Message {
+  hasTimeout(): boolean;
+  clearTimeout(): void;
+  getTimeout(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimeout(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Refresh2FALockoutResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: Refresh2FALockoutResponse): Refresh2FALockoutResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Refresh2FALockoutResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Refresh2FALockoutResponse;
+  static deserializeBinaryFromReader(message: Refresh2FALockoutResponse, reader: jspb.BinaryReader): Refresh2FALockoutResponse;
+}
+
+export namespace Refresh2FALockoutResponse {
+  export type AsObject = {
+    timeout?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+

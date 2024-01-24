@@ -1680,6 +1680,15 @@ type OrgRevokeUsersP3PermissionGroup = {
   readonly responseType: typeof api_v1alpha1_org_p3_permissions_pb.RevokeUsersP3PermissionGroupResponse;
 };
 
+type OrgRefresh2FALockout = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.Refresh2FALockoutRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.Refresh2FALockoutResponse;
+};
+
 export class Org {
   static readonly serviceName: string;
   static readonly CreateOrganization: OrgCreateOrganization;
@@ -1867,6 +1876,7 @@ export class Org {
   static readonly DeleteP3PermissionGroup: OrgDeleteP3PermissionGroup;
   static readonly AssignUsersP3PermissionGroup: OrgAssignUsersP3PermissionGroup;
   static readonly RevokeUsersP3PermissionGroup: OrgRevokeUsersP3PermissionGroup;
+  static readonly Refresh2FALockout: OrgRefresh2FALockout;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3493,6 +3503,15 @@ export class OrgClient {
   revokeUsersP3PermissionGroup(
     requestMessage: api_v1alpha1_org_p3_permissions_pb.RevokeUsersP3PermissionGroupRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_p3_permissions_pb.RevokeUsersP3PermissionGroupResponse|null) => void
+  ): UnaryResponse;
+  refresh2FALockout(
+    requestMessage: api_v1alpha1_org_user_pb.Refresh2FALockoutRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.Refresh2FALockoutResponse|null) => void
+  ): UnaryResponse;
+  refresh2FALockout(
+    requestMessage: api_v1alpha1_org_user_pb.Refresh2FALockoutRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.Refresh2FALockoutResponse|null) => void
   ): UnaryResponse;
 }
 
