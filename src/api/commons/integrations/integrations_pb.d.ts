@@ -1584,6 +1584,16 @@ export class ExecuteFlow extends jspb.Message {
   getEpicGetPatientBillingDetails(): ExecuteEpicGetPatientBillingDetails | undefined;
   setEpicGetPatientBillingDetails(value?: ExecuteEpicGetPatientBillingDetails): void;
 
+  hasEpicCallPatient(): boolean;
+  clearEpicCallPatient(): void;
+  getEpicCallPatient(): ExecuteEpicCallPatient | undefined;
+  setEpicCallPatient(value?: ExecuteEpicCallPatient): void;
+
+  hasEpicHangupCall(): boolean;
+  clearEpicHangupCall(): void;
+  getEpicHangupCall(): ExecuteEpicHangupCall | undefined;
+  setEpicHangupCall(value?: ExecuteEpicHangupCall): void;
+
   hasNewzwarePhoneLookup(): boolean;
   clearNewzwarePhoneLookup(): void;
   getNewzwarePhoneLookup(): ExecuteNewzwarePhoneLookup | undefined;
@@ -1858,6 +1868,8 @@ export namespace ExecuteFlow {
     epicReceiveCommunication3?: ExecuteEpicReceiveCommunication3.AsObject,
     epicPostPatientMadePayment?: ExecuteEpicPostPatientMadePayment.AsObject,
     epicGetPatientBillingDetails?: ExecuteEpicGetPatientBillingDetails.AsObject,
+    epicCallPatient?: ExecuteEpicCallPatient.AsObject,
+    epicHangupCall?: ExecuteEpicHangupCall.AsObject,
     newzwarePhoneLookup?: ExecuteNewzwarePhoneLookup.AsObject,
     newzwareAccountInquiry?: ExecuteNewzwareAccountInquiry.AsObject,
     newzwareCcPayment?: ExecuteNewzwareCcPayment.AsObject,
@@ -2066,6 +2078,8 @@ export namespace ExecuteFlow {
     EPIC_RECEIVE_COMMUNICATION_3 = 3709,
     EPIC_POST_PATIENT_MADE_PAYMENT = 3710,
     EPIC_GET_PATIENT_BILLING_DETAILS = 3711,
+    EPIC_CALL_PATIENT = 3712,
+    EPIC_HANGUP_CALL = 3713,
     NEWZWARE_PHONE_LOOKUP = 3801,
     NEWZWARE_ACCOUNT_INQUIRY = 3802,
     NEWZWARE_CC_PAYMENT = 3803,
@@ -5644,6 +5658,38 @@ export namespace ExecuteEpicGetPatientBillingDetails {
   }
 }
 
+export class ExecuteEpicCallPatient extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicCallPatient.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicCallPatient): ExecuteEpicCallPatient.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicCallPatient, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicCallPatient;
+  static deserializeBinaryFromReader(message: ExecuteEpicCallPatient, reader: jspb.BinaryReader): ExecuteEpicCallPatient;
+}
+
+export namespace ExecuteEpicCallPatient {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteEpicHangupCall extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicHangupCall.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicHangupCall): ExecuteEpicHangupCall.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicHangupCall, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicHangupCall;
+  static deserializeBinaryFromReader(message: ExecuteEpicHangupCall, reader: jspb.BinaryReader): ExecuteEpicHangupCall;
+}
+
+export namespace ExecuteEpicHangupCall {
+  export type AsObject = {
+  }
+}
+
 export class ExecuteNewzwarePhoneLookup extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteNewzwarePhoneLookup.AsObject;
@@ -6107,6 +6153,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_EPIC_RECEIVE_COMMUNICATION_3: 3709;
   REQUEST_METHOD_EPIC_POST_PATIENT_MADE_PAYMENT: 3710;
   REQUEST_METHOD_EPIC_GET_PATIENT_BILLING_DETAILS: 3711;
+  REQUEST_METHOD_EPIC_CALL_PATIENT: 3712;
+  REQUEST_METHOD_EPIC_HANGUP_CALL: 3713;
   REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP: 3801;
   REQUEST_METHOD_NEWZWARE_ACCOUNT_INQUIRY: 3802;
   REQUEST_METHOD_NEWZWARE_CC_PAYMENT: 3803;
