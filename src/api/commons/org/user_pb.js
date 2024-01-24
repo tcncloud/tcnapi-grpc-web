@@ -1769,15 +1769,15 @@ proto.api.commons.org.User.prototype.hasMfaInfo = function() {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.org.UserMfaInfo.oneofGroups_ = [[10,11]];
+proto.api.commons.org.UserMfaInfo.oneofGroups_ = [[1,2]];
 
 /**
  * @enum {number}
  */
 proto.api.commons.org.UserMfaInfo.MfaTypeCase = {
   MFA_TYPE_NOT_SET: 0,
-  NONE: 10,
-  OTP: 11
+  NONE: 1,
+  OTP: 2
 };
 
 /**
@@ -1818,8 +1818,6 @@ proto.api.commons.org.UserMfaInfo.prototype.toObject = function(opt_includeInsta
  */
 proto.api.commons.org.UserMfaInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    mfaEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    mfaLockedOut: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
     none: (f = msg.getNone()) && proto.api.commons.org.UserMfaInfo.NoneSelected.toObject(includeInstance, f),
     otp: (f = msg.getOtp()) && proto.api.commons.org.UserMfaInfo.OtpType.toObject(includeInstance, f)
   };
@@ -1859,19 +1857,11 @@ proto.api.commons.org.UserMfaInfo.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setMfaEnabled(value);
-      break;
-    case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setMfaLockedOut(value);
-      break;
-    case 10:
       var value = new proto.api.commons.org.UserMfaInfo.NoneSelected;
       reader.readMessage(value,proto.api.commons.org.UserMfaInfo.NoneSelected.deserializeBinaryFromReader);
       msg.setNone(value);
       break;
-    case 11:
+    case 2:
       var value = new proto.api.commons.org.UserMfaInfo.OtpType;
       reader.readMessage(value,proto.api.commons.org.UserMfaInfo.OtpType.deserializeBinaryFromReader);
       msg.setOtp(value);
@@ -1905,24 +1895,10 @@ proto.api.commons.org.UserMfaInfo.prototype.serializeBinary = function() {
  */
 proto.api.commons.org.UserMfaInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMfaEnabled();
-  if (f) {
-    writer.writeBool(
-      1,
-      f
-    );
-  }
-  f = message.getMfaLockedOut();
-  if (f) {
-    writer.writeBool(
-      2,
-      f
-    );
-  }
   f = message.getNone();
   if (f != null) {
     writer.writeMessage(
-      10,
+      1,
       f,
       proto.api.commons.org.UserMfaInfo.NoneSelected.serializeBinaryToWriter
     );
@@ -1930,7 +1906,7 @@ proto.api.commons.org.UserMfaInfo.serializeBinaryToWriter = function(message, wr
   f = message.getOtp();
   if (f != null) {
     writer.writeMessage(
-      11,
+      2,
       f,
       proto.api.commons.org.UserMfaInfo.OtpType.serializeBinaryToWriter
     );
@@ -2367,48 +2343,12 @@ proto.api.commons.org.UserMfaInfo.OtpType.prototype.hasEmail = function() {
 
 
 /**
- * optional bool mfa_enabled = 1;
- * @return {boolean}
- */
-proto.api.commons.org.UserMfaInfo.prototype.getMfaEnabled = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.commons.org.UserMfaInfo} returns this
- */
-proto.api.commons.org.UserMfaInfo.prototype.setMfaEnabled = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 1, value);
-};
-
-
-/**
- * optional bool mfa_locked_out = 2;
- * @return {boolean}
- */
-proto.api.commons.org.UserMfaInfo.prototype.getMfaLockedOut = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.commons.org.UserMfaInfo} returns this
- */
-proto.api.commons.org.UserMfaInfo.prototype.setMfaLockedOut = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 2, value);
-};
-
-
-/**
- * optional NoneSelected none = 10;
+ * optional NoneSelected none = 1;
  * @return {?proto.api.commons.org.UserMfaInfo.NoneSelected}
  */
 proto.api.commons.org.UserMfaInfo.prototype.getNone = function() {
   return /** @type{?proto.api.commons.org.UserMfaInfo.NoneSelected} */ (
-    jspb.Message.getWrapperField(this, proto.api.commons.org.UserMfaInfo.NoneSelected, 10));
+    jspb.Message.getWrapperField(this, proto.api.commons.org.UserMfaInfo.NoneSelected, 1));
 };
 
 
@@ -2417,7 +2357,7 @@ proto.api.commons.org.UserMfaInfo.prototype.getNone = function() {
  * @return {!proto.api.commons.org.UserMfaInfo} returns this
 */
 proto.api.commons.org.UserMfaInfo.prototype.setNone = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 10, proto.api.commons.org.UserMfaInfo.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 1, proto.api.commons.org.UserMfaInfo.oneofGroups_[0], value);
 };
 
 
@@ -2435,17 +2375,17 @@ proto.api.commons.org.UserMfaInfo.prototype.clearNone = function() {
  * @return {boolean}
  */
 proto.api.commons.org.UserMfaInfo.prototype.hasNone = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional OtpType otp = 11;
+ * optional OtpType otp = 2;
  * @return {?proto.api.commons.org.UserMfaInfo.OtpType}
  */
 proto.api.commons.org.UserMfaInfo.prototype.getOtp = function() {
   return /** @type{?proto.api.commons.org.UserMfaInfo.OtpType} */ (
-    jspb.Message.getWrapperField(this, proto.api.commons.org.UserMfaInfo.OtpType, 11));
+    jspb.Message.getWrapperField(this, proto.api.commons.org.UserMfaInfo.OtpType, 2));
 };
 
 
@@ -2454,7 +2394,7 @@ proto.api.commons.org.UserMfaInfo.prototype.getOtp = function() {
  * @return {!proto.api.commons.org.UserMfaInfo} returns this
 */
 proto.api.commons.org.UserMfaInfo.prototype.setOtp = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 11, proto.api.commons.org.UserMfaInfo.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 2, proto.api.commons.org.UserMfaInfo.oneofGroups_[0], value);
 };
 
 
@@ -2472,7 +2412,7 @@ proto.api.commons.org.UserMfaInfo.prototype.clearOtp = function() {
  * @return {boolean}
  */
 proto.api.commons.org.UserMfaInfo.prototype.hasOtp = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

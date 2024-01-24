@@ -210,12 +210,6 @@ export namespace User {
 }
 
 export class UserMfaInfo extends jspb.Message {
-  getMfaEnabled(): boolean;
-  setMfaEnabled(value: boolean): void;
-
-  getMfaLockedOut(): boolean;
-  setMfaLockedOut(value: boolean): void;
-
   hasNone(): boolean;
   clearNone(): void;
   getNone(): UserMfaInfo.NoneSelected | undefined;
@@ -239,8 +233,6 @@ export class UserMfaInfo extends jspb.Message {
 
 export namespace UserMfaInfo {
   export type AsObject = {
-    mfaEnabled: boolean,
-    mfaLockedOut: boolean,
     none?: UserMfaInfo.NoneSelected.AsObject,
     otp?: UserMfaInfo.OtpType.AsObject,
   }
@@ -313,8 +305,8 @@ export namespace UserMfaInfo {
 
   export enum MfaTypeCase {
     MFA_TYPE_NOT_SET = 0,
-    NONE = 10,
-    OTP = 11,
+    NONE = 1,
+    OTP = 2,
   }
 }
 
