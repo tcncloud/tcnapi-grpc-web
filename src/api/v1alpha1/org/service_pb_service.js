@@ -1713,13 +1713,22 @@ Org.SetMfaType = {
   responseType: api_v1alpha1_org_user_pb.SetMfaTypeResponse
 };
 
-Org.EnableMfa = {
-  methodName: "EnableMfa",
+Org.EnableUserMfa = {
+  methodName: "EnableUserMfa",
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_user_pb.EnableMfaRequest,
-  responseType: api_v1alpha1_org_user_pb.EnableMfaResponse
+  requestType: api_v1alpha1_org_user_pb.EnableUserMfaRequest,
+  responseType: api_v1alpha1_org_user_pb.EnableUserMfaResponse
+};
+
+Org.EnableMyUserMfa = {
+  methodName: "EnableMyUserMfa",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.EnableMyUserMfaRequest,
+  responseType: api_v1alpha1_org_user_pb.EnableMyUserMfaResponse
 };
 
 Org.GetUserMfaInfo = {
@@ -7647,11 +7656,42 @@ OrgClient.prototype.setMfaType = function setMfaType(requestMessage, metadata, c
   };
 };
 
-OrgClient.prototype.enableMfa = function enableMfa(requestMessage, metadata, callback) {
+OrgClient.prototype.enableUserMfa = function enableUserMfa(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.EnableMfa, {
+  var client = grpc.unary(Org.EnableUserMfa, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.enableMyUserMfa = function enableMyUserMfa(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.EnableMyUserMfa, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

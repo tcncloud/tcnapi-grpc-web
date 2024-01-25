@@ -2711,7 +2711,7 @@ export namespace SetMfaTypeResponse {
   }
 }
 
-export class EnableMfaRequest extends jspb.Message {
+export class EnableUserMfaRequest extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
@@ -2719,34 +2719,66 @@ export class EnableMfaRequest extends jspb.Message {
   setEnabled(value: boolean): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EnableMfaRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: EnableMfaRequest): EnableMfaRequest.AsObject;
+  toObject(includeInstance?: boolean): EnableUserMfaRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableUserMfaRequest): EnableUserMfaRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: EnableMfaRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EnableMfaRequest;
-  static deserializeBinaryFromReader(message: EnableMfaRequest, reader: jspb.BinaryReader): EnableMfaRequest;
+  static serializeBinaryToWriter(message: EnableUserMfaRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableUserMfaRequest;
+  static deserializeBinaryFromReader(message: EnableUserMfaRequest, reader: jspb.BinaryReader): EnableUserMfaRequest;
 }
 
-export namespace EnableMfaRequest {
+export namespace EnableUserMfaRequest {
   export type AsObject = {
     userId: string,
     enabled: boolean,
   }
 }
 
-export class EnableMfaResponse extends jspb.Message {
+export class EnableUserMfaResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EnableMfaResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: EnableMfaResponse): EnableMfaResponse.AsObject;
+  toObject(includeInstance?: boolean): EnableUserMfaResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableUserMfaResponse): EnableUserMfaResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: EnableMfaResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EnableMfaResponse;
-  static deserializeBinaryFromReader(message: EnableMfaResponse, reader: jspb.BinaryReader): EnableMfaResponse;
+  static serializeBinaryToWriter(message: EnableUserMfaResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableUserMfaResponse;
+  static deserializeBinaryFromReader(message: EnableUserMfaResponse, reader: jspb.BinaryReader): EnableUserMfaResponse;
 }
 
-export namespace EnableMfaResponse {
+export namespace EnableUserMfaResponse {
+  export type AsObject = {
+  }
+}
+
+export class EnableMyUserMfaRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnableMyUserMfaRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableMyUserMfaRequest): EnableMyUserMfaRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EnableMyUserMfaRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableMyUserMfaRequest;
+  static deserializeBinaryFromReader(message: EnableMyUserMfaRequest, reader: jspb.BinaryReader): EnableMyUserMfaRequest;
+}
+
+export namespace EnableMyUserMfaRequest {
+  export type AsObject = {
+  }
+}
+
+export class EnableMyUserMfaResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnableMyUserMfaResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableMyUserMfaResponse): EnableMyUserMfaResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EnableMyUserMfaResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableMyUserMfaResponse;
+  static deserializeBinaryFromReader(message: EnableMyUserMfaResponse, reader: jspb.BinaryReader): EnableMyUserMfaResponse;
+}
+
+export namespace EnableMyUserMfaResponse {
   export type AsObject = {
   }
 }
