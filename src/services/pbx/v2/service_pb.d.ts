@@ -51,6 +51,9 @@ export class SIPAccount extends jspb.Message {
   setRingGroupIdsList(value: Array<string>): void;
   addRingGroupIds(value: string, index?: number): string;
 
+  getOrgUserId(): string;
+  setOrgUserId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SIPAccount.AsObject;
   static toObject(includeInstance: boolean, msg: SIPAccount): SIPAccount.AsObject;
@@ -67,6 +70,7 @@ export namespace SIPAccount {
     isActive: boolean,
     extension: string,
     ringGroupIdsList: Array<string>,
+    orgUserId: string,
   }
 }
 
@@ -147,6 +151,82 @@ export class ListPBXUsersResponse extends jspb.Message {
 export namespace ListPBXUsersResponse {
   export type AsObject = {
     usersList: Array<PBXUser.AsObject>,
+  }
+}
+
+export class ListSIPAccountsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSIPAccountsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSIPAccountsRequest): ListSIPAccountsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSIPAccountsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSIPAccountsRequest;
+  static deserializeBinaryFromReader(message: ListSIPAccountsRequest, reader: jspb.BinaryReader): ListSIPAccountsRequest;
+}
+
+export namespace ListSIPAccountsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListSIPAccountsResponse extends jspb.Message {
+  clearUsersList(): void;
+  getUsersList(): Array<PBXUser>;
+  setUsersList(value: Array<PBXUser>): void;
+  addUsers(value?: PBXUser, index?: number): PBXUser;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSIPAccountsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSIPAccountsResponse): ListSIPAccountsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSIPAccountsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSIPAccountsResponse;
+  static deserializeBinaryFromReader(message: ListSIPAccountsResponse, reader: jspb.BinaryReader): ListSIPAccountsResponse;
+}
+
+export namespace ListSIPAccountsResponse {
+  export type AsObject = {
+    usersList: Array<PBXUser.AsObject>,
+  }
+}
+
+export class GetSIPAccountRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetSIPAccountRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetSIPAccountRequest): GetSIPAccountRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetSIPAccountRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetSIPAccountRequest;
+  static deserializeBinaryFromReader(message: GetSIPAccountRequest, reader: jspb.BinaryReader): GetSIPAccountRequest;
+}
+
+export namespace GetSIPAccountRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetSIPAccountResponse extends jspb.Message {
+  clearUsersList(): void;
+  getUsersList(): Array<SIPAccount>;
+  setUsersList(value: Array<SIPAccount>): void;
+  addUsers(value?: SIPAccount, index?: number): SIPAccount;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetSIPAccountResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetSIPAccountResponse): GetSIPAccountResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetSIPAccountResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetSIPAccountResponse;
+  static deserializeBinaryFromReader(message: GetSIPAccountResponse, reader: jspb.BinaryReader): GetSIPAccountResponse;
+}
+
+export namespace GetSIPAccountResponse {
+  export type AsObject = {
+    usersList: Array<SIPAccount.AsObject>,
   }
 }
 

@@ -40,6 +40,24 @@ type PBXServiceGetRingGroup = {
   readonly responseType: typeof services_pbx_v2_service_pb.GetRingGroupResponse;
 };
 
+type PBXServiceGetSIPAccount = {
+  readonly methodName: string;
+  readonly service: typeof PBXService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_pbx_v2_service_pb.GetSIPAccountRequest;
+  readonly responseType: typeof services_pbx_v2_service_pb.GetSIPAccountResponse;
+};
+
+type PBXServiceListSIPAccounts = {
+  readonly methodName: string;
+  readonly service: typeof PBXService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_pbx_v2_service_pb.ListSIPAccountsRequest;
+  readonly responseType: typeof services_pbx_v2_service_pb.ListSIPAccountsResponse;
+};
+
 type PBXServiceUpdateSIPAccount = {
   readonly methodName: string;
   readonly service: typeof PBXService;
@@ -91,6 +109,8 @@ export class PBXService {
   static readonly GetPBXUser: PBXServiceGetPBXUser;
   static readonly ListRingGroups: PBXServiceListRingGroups;
   static readonly GetRingGroup: PBXServiceGetRingGroup;
+  static readonly GetSIPAccount: PBXServiceGetSIPAccount;
+  static readonly ListSIPAccounts: PBXServiceListSIPAccounts;
   static readonly UpdateSIPAccount: PBXServiceUpdateSIPAccount;
   static readonly UpdateRingGroup: PBXServiceUpdateRingGroup;
   static readonly CreateRingGroup: PBXServiceCreateRingGroup;
@@ -165,6 +185,24 @@ export class PBXServiceClient {
   getRingGroup(
     requestMessage: services_pbx_v2_service_pb.GetRingGroupRequest,
     callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.GetRingGroupResponse|null) => void
+  ): UnaryResponse;
+  getSIPAccount(
+    requestMessage: services_pbx_v2_service_pb.GetSIPAccountRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.GetSIPAccountResponse|null) => void
+  ): UnaryResponse;
+  getSIPAccount(
+    requestMessage: services_pbx_v2_service_pb.GetSIPAccountRequest,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.GetSIPAccountResponse|null) => void
+  ): UnaryResponse;
+  listSIPAccounts(
+    requestMessage: services_pbx_v2_service_pb.ListSIPAccountsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.ListSIPAccountsResponse|null) => void
+  ): UnaryResponse;
+  listSIPAccounts(
+    requestMessage: services_pbx_v2_service_pb.ListSIPAccountsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.ListSIPAccountsResponse|null) => void
   ): UnaryResponse;
   updateSIPAccount(
     requestMessage: services_pbx_v2_service_pb.UpdateSIPAccountRequest,

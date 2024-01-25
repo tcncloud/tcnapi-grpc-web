@@ -46,6 +46,24 @@ PBXService.GetRingGroup = {
   responseType: services_pbx_v2_service_pb.GetRingGroupResponse
 };
 
+PBXService.GetSIPAccount = {
+  methodName: "GetSIPAccount",
+  service: PBXService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_pbx_v2_service_pb.GetSIPAccountRequest,
+  responseType: services_pbx_v2_service_pb.GetSIPAccountResponse
+};
+
+PBXService.ListSIPAccounts = {
+  methodName: "ListSIPAccounts",
+  service: PBXService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_pbx_v2_service_pb.ListSIPAccountsRequest,
+  responseType: services_pbx_v2_service_pb.ListSIPAccountsResponse
+};
+
 PBXService.UpdateSIPAccount = {
   methodName: "UpdateSIPAccount",
   service: PBXService,
@@ -196,6 +214,68 @@ PBXServiceClient.prototype.getRingGroup = function getRingGroup(requestMessage, 
     callback = arguments[1];
   }
   var client = grpc.unary(PBXService.GetRingGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+PBXServiceClient.prototype.getSIPAccount = function getSIPAccount(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(PBXService.GetSIPAccount, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+PBXServiceClient.prototype.listSIPAccounts = function listSIPAccounts(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(PBXService.ListSIPAccounts, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
