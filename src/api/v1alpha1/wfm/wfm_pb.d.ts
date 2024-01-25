@@ -8650,6 +8650,60 @@ export namespace CreateShiftInstanceV2Res {
   }
 }
 
+export class CreateShiftInstanceWithSegmentsRequest extends jspb.Message {
+  hasShiftInstance(): boolean;
+  clearShiftInstance(): void;
+  getShiftInstance(): ShiftInstance | undefined;
+  setShiftInstance(value?: ShiftInstance): void;
+
+  getIgnoreDiagnosticsErrors(): boolean;
+  setIgnoreDiagnosticsErrors(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateShiftInstanceWithSegmentsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateShiftInstanceWithSegmentsRequest): CreateShiftInstanceWithSegmentsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateShiftInstanceWithSegmentsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateShiftInstanceWithSegmentsRequest;
+  static deserializeBinaryFromReader(message: CreateShiftInstanceWithSegmentsRequest, reader: jspb.BinaryReader): CreateShiftInstanceWithSegmentsRequest;
+}
+
+export namespace CreateShiftInstanceWithSegmentsRequest {
+  export type AsObject = {
+    shiftInstance?: ShiftInstance.AsObject,
+    ignoreDiagnosticsErrors: boolean,
+  }
+}
+
+export class CreateShiftInstanceWithSegmentsResponse extends jspb.Message {
+  hasShiftInstance(): boolean;
+  clearShiftInstance(): void;
+  getShiftInstance(): ShiftInstance | undefined;
+  setShiftInstance(value?: ShiftInstance): void;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateShiftInstanceWithSegmentsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateShiftInstanceWithSegmentsResponse): CreateShiftInstanceWithSegmentsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateShiftInstanceWithSegmentsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateShiftInstanceWithSegmentsResponse;
+  static deserializeBinaryFromReader(message: CreateShiftInstanceWithSegmentsResponse, reader: jspb.BinaryReader): CreateShiftInstanceWithSegmentsResponse;
+}
+
+export namespace CreateShiftInstanceWithSegmentsResponse {
+  export type AsObject = {
+    shiftInstance?: ShiftInstance.AsObject,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
 export class SplitShiftInstanceReq extends jspb.Message {
   getShiftInstanceSid(): number;
   setShiftInstanceSid(value: number): void;

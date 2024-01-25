@@ -1066,6 +1066,15 @@ type WFMCreateShiftInstanceV2 = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateShiftInstanceV2Res;
 };
 
+type WFMCreateShiftInstanceWithSegments = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateShiftInstanceWithSegmentsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateShiftInstanceWithSegmentsResponse;
+};
+
 type WFMSplitShiftInstance = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1573,6 +1582,7 @@ export class WFM {
   static readonly CopyScheduleToSchedule: WFMCopyScheduleToSchedule;
   static readonly CreateShiftInstance: WFMCreateShiftInstance;
   static readonly CreateShiftInstanceV2: WFMCreateShiftInstanceV2;
+  static readonly CreateShiftInstanceWithSegments: WFMCreateShiftInstanceWithSegments;
   static readonly SplitShiftInstance: WFMSplitShiftInstance;
   static readonly SwapShiftInstances: WFMSwapShiftInstances;
   static readonly UpdateShiftInstance: WFMUpdateShiftInstance;
@@ -2663,6 +2673,15 @@ export class WFMClient {
   createShiftInstanceV2(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateShiftInstanceV2Req,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateShiftInstanceV2Res|null) => void
+  ): UnaryResponse;
+  createShiftInstanceWithSegments(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateShiftInstanceWithSegmentsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateShiftInstanceWithSegmentsResponse|null) => void
+  ): UnaryResponse;
+  createShiftInstanceWithSegments(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateShiftInstanceWithSegmentsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateShiftInstanceWithSegmentsResponse|null) => void
   ): UnaryResponse;
   splitShiftInstance(
     requestMessage: api_v1alpha1_wfm_wfm_pb.SplitShiftInstanceReq,
