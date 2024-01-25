@@ -1698,6 +1698,42 @@ type OrgRefreshMfaLockoutByOrgId = {
   readonly responseType: typeof api_v1alpha1_org_user_pb.RefreshMfaLockoutByOrgIdResponse;
 };
 
+type OrgSetMfaType = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.SetMfaTypeRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.SetMfaTypeResponse;
+};
+
+type OrgEnableMfa = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.EnableMfaRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.EnableMfaResponse;
+};
+
+type OrgGetUserMfaInfo = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.GetUserMfaInfoRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.GetUserMfaInfoResponse;
+};
+
+type OrgGetMyUserMfaInfo = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.GetMyUserMfaInfoRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.GetMyUserMfaInfoResponse;
+};
+
 export class Org {
   static readonly serviceName: string;
   static readonly CreateOrganization: OrgCreateOrganization;
@@ -1887,6 +1923,10 @@ export class Org {
   static readonly RevokeUsersP3PermissionGroup: OrgRevokeUsersP3PermissionGroup;
   static readonly RefreshMfaLockout: OrgRefreshMfaLockout;
   static readonly RefreshMfaLockoutByOrgId: OrgRefreshMfaLockoutByOrgId;
+  static readonly SetMfaType: OrgSetMfaType;
+  static readonly EnableMfa: OrgEnableMfa;
+  static readonly GetUserMfaInfo: OrgGetUserMfaInfo;
+  static readonly GetMyUserMfaInfo: OrgGetMyUserMfaInfo;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3531,6 +3571,42 @@ export class OrgClient {
   refreshMfaLockoutByOrgId(
     requestMessage: api_v1alpha1_org_user_pb.RefreshMfaLockoutByOrgIdRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.RefreshMfaLockoutByOrgIdResponse|null) => void
+  ): UnaryResponse;
+  setMfaType(
+    requestMessage: api_v1alpha1_org_user_pb.SetMfaTypeRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.SetMfaTypeResponse|null) => void
+  ): UnaryResponse;
+  setMfaType(
+    requestMessage: api_v1alpha1_org_user_pb.SetMfaTypeRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.SetMfaTypeResponse|null) => void
+  ): UnaryResponse;
+  enableMfa(
+    requestMessage: api_v1alpha1_org_user_pb.EnableMfaRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.EnableMfaResponse|null) => void
+  ): UnaryResponse;
+  enableMfa(
+    requestMessage: api_v1alpha1_org_user_pb.EnableMfaRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.EnableMfaResponse|null) => void
+  ): UnaryResponse;
+  getUserMfaInfo(
+    requestMessage: api_v1alpha1_org_user_pb.GetUserMfaInfoRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.GetUserMfaInfoResponse|null) => void
+  ): UnaryResponse;
+  getUserMfaInfo(
+    requestMessage: api_v1alpha1_org_user_pb.GetUserMfaInfoRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.GetUserMfaInfoResponse|null) => void
+  ): UnaryResponse;
+  getMyUserMfaInfo(
+    requestMessage: api_v1alpha1_org_user_pb.GetMyUserMfaInfoRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.GetMyUserMfaInfoResponse|null) => void
+  ): UnaryResponse;
+  getMyUserMfaInfo(
+    requestMessage: api_v1alpha1_org_user_pb.GetMyUserMfaInfoRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.GetMyUserMfaInfoResponse|null) => void
   ): UnaryResponse;
 }
 

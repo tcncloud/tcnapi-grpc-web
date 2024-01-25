@@ -1704,6 +1704,42 @@ Org.RefreshMfaLockoutByOrgId = {
   responseType: api_v1alpha1_org_user_pb.RefreshMfaLockoutByOrgIdResponse
 };
 
+Org.SetMfaType = {
+  methodName: "SetMfaType",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.SetMfaTypeRequest,
+  responseType: api_v1alpha1_org_user_pb.SetMfaTypeResponse
+};
+
+Org.EnableMfa = {
+  methodName: "EnableMfa",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.EnableMfaRequest,
+  responseType: api_v1alpha1_org_user_pb.EnableMfaResponse
+};
+
+Org.GetUserMfaInfo = {
+  methodName: "GetUserMfaInfo",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.GetUserMfaInfoRequest,
+  responseType: api_v1alpha1_org_user_pb.GetUserMfaInfoResponse
+};
+
+Org.GetMyUserMfaInfo = {
+  methodName: "GetMyUserMfaInfo",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.GetMyUserMfaInfoRequest,
+  responseType: api_v1alpha1_org_user_pb.GetMyUserMfaInfoResponse
+};
+
 exports.Org = Org;
 
 function OrgClient(serviceHost, options) {
@@ -7554,6 +7590,130 @@ OrgClient.prototype.refreshMfaLockoutByOrgId = function refreshMfaLockoutByOrgId
     callback = arguments[1];
   }
   var client = grpc.unary(Org.RefreshMfaLockoutByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.setMfaType = function setMfaType(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.SetMfaType, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.enableMfa = function enableMfa(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.EnableMfa, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.getUserMfaInfo = function getUserMfaInfo(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetUserMfaInfo, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.getMyUserMfaInfo = function getMyUserMfaInfo(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetMyUserMfaInfo, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
