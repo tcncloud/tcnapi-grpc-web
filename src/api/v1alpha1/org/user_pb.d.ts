@@ -2388,6 +2388,9 @@ export class GetUserSessionDataResponse extends jspb.Message {
   setLabelsList(value: Array<api_commons_org_labels_pb.Label>): void;
   addLabels(value?: api_commons_org_labels_pb.Label, index?: number): api_commons_org_labels_pb.Label;
 
+  getOrgAllowed2fa(): boolean;
+  setOrgAllowed2fa(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserSessionDataResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserSessionDataResponse): GetUserSessionDataResponse.AsObject;
@@ -2405,6 +2408,7 @@ export namespace GetUserSessionDataResponse {
     p3PermissionsList: Array<api_commons_perms_pb.PermissionMap[keyof api_commons_perms_pb.PermissionMap]>,
     permissionGroupsList: Array<api_commons_org_permissions_pb.PermissionGroup.AsObject>,
     labelsList: Array<api_commons_org_labels_pb.Label.AsObject>,
+    orgAllowed2fa: boolean,
   }
 
   export class User extends jspb.Message {
@@ -2507,6 +2511,11 @@ export namespace GetUserSessionDataResponse {
     getAccountOwner(): boolean;
     setAccountOwner(value: boolean): void;
 
+    hasMfaTimestamp(): boolean;
+    clearMfaTimestamp(): void;
+    getMfaTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setMfaTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): User.AsObject;
     static toObject(includeInstance: boolean, msg: User): User.AsObject;
@@ -2547,6 +2556,7 @@ export namespace GetUserSessionDataResponse {
       agentProfileGroupId: string,
       agent: boolean,
       accountOwner: boolean,
+      mfaTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
 
     export class RegionSids extends jspb.Message {

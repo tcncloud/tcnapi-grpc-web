@@ -18500,7 +18500,8 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.toObject = function(includeIns
     permissionGroupsList: jspb.Message.toObjectList(msg.getPermissionGroupsList(),
     api_commons_org_permissions_pb.PermissionGroup.toObject, includeInstance),
     labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
-    api_commons_org_labels_pb.Label.toObject, includeInstance)
+    api_commons_org_labels_pb.Label.toObject, includeInstance),
+    orgAllowed2fa: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -18561,6 +18562,10 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.deserializeBinaryFromReader = 
       var value = new api_commons_org_labels_pb.Label;
       reader.readMessage(value,api_commons_org_labels_pb.Label.deserializeBinaryFromReader);
       msg.addLabels(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setOrgAllowed2fa(value);
       break;
     default:
       reader.skipField();
@@ -18627,6 +18632,13 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.serializeBinaryToWriter = func
       5,
       f,
       api_commons_org_labels_pb.Label.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrgAllowed2fa();
+  if (f) {
+    writer.writeBool(
+      6,
+      f
     );
   }
 };
@@ -18698,7 +18710,8 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.toObject = function(inclu
     userCallerId: jspb.Message.getFieldWithDefault(msg, 29, ""),
     agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 30, ""),
     agent: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
-    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 32, false)
+    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 32, false),
+    mfaTimestamp: (f = msg.getMfaTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -18852,6 +18865,11 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.deserializeBinaryFromRead
     case 32:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAccountOwner(value);
+      break;
+    case 33:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setMfaTimestamp(value);
       break;
     default:
       reader.skipField();
@@ -19077,6 +19095,14 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.serializeBinaryToWriter =
     writer.writeBool(
       32,
       f
+    );
+  }
+  f = message.getMfaTimestamp();
+  if (f != null) {
+    writer.writeMessage(
+      33,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -19934,6 +19960,43 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.setAccountOwner
 
 
 /**
+ * optional google.protobuf.Timestamp mfa_timestamp = 33;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.getMfaTimestamp = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 33));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse.User} returns this
+*/
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.setMfaTimestamp = function(value) {
+  return jspb.Message.setWrapperField(this, 33, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse.User} returns this
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.clearMfaTimestamp = function() {
+  return this.setMfaTimestamp(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.hasMfaTimestamp = function() {
+  return jspb.Message.getField(this, 33) != null;
+};
+
+
+/**
  * optional User user = 1;
  * @return {?proto.api.v1alpha1.org.GetUserSessionDataResponse.User}
  */
@@ -20098,6 +20161,24 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.addLabels = function
  */
 proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.clearLabelsList = function() {
   return this.setLabelsList([]);
+};
+
+
+/**
+ * optional bool org_allowed_2fa = 6;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.getOrgAllowed2fa = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse} returns this
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.setOrgAllowed2fa = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
