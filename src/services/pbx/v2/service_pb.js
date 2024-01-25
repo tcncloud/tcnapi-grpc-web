@@ -1777,8 +1777,8 @@ proto.services.pbx.v2.ListSIPAccountsResponse.prototype.toObject = function(opt_
  */
 proto.services.pbx.v2.ListSIPAccountsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    usersList: jspb.Message.toObjectList(msg.getUsersList(),
-    proto.services.pbx.v2.PBXUser.toObject, includeInstance)
+    sipAccountsList: jspb.Message.toObjectList(msg.getSipAccountsList(),
+    proto.services.pbx.v2.SIPAccount.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1816,9 +1816,9 @@ proto.services.pbx.v2.ListSIPAccountsResponse.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.services.pbx.v2.PBXUser;
-      reader.readMessage(value,proto.services.pbx.v2.PBXUser.deserializeBinaryFromReader);
-      msg.addUsers(value);
+      var value = new proto.services.pbx.v2.SIPAccount;
+      reader.readMessage(value,proto.services.pbx.v2.SIPAccount.deserializeBinaryFromReader);
+      msg.addSipAccounts(value);
       break;
     default:
       reader.skipField();
@@ -1849,43 +1849,43 @@ proto.services.pbx.v2.ListSIPAccountsResponse.prototype.serializeBinary = functi
  */
 proto.services.pbx.v2.ListSIPAccountsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getUsersList();
+  f = message.getSipAccountsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.services.pbx.v2.PBXUser.serializeBinaryToWriter
+      proto.services.pbx.v2.SIPAccount.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated PBXUser users = 1;
- * @return {!Array<!proto.services.pbx.v2.PBXUser>}
+ * repeated SIPAccount sip_accounts = 1;
+ * @return {!Array<!proto.services.pbx.v2.SIPAccount>}
  */
-proto.services.pbx.v2.ListSIPAccountsResponse.prototype.getUsersList = function() {
-  return /** @type{!Array<!proto.services.pbx.v2.PBXUser>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.services.pbx.v2.PBXUser, 1));
+proto.services.pbx.v2.ListSIPAccountsResponse.prototype.getSipAccountsList = function() {
+  return /** @type{!Array<!proto.services.pbx.v2.SIPAccount>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.services.pbx.v2.SIPAccount, 1));
 };
 
 
 /**
- * @param {!Array<!proto.services.pbx.v2.PBXUser>} value
+ * @param {!Array<!proto.services.pbx.v2.SIPAccount>} value
  * @return {!proto.services.pbx.v2.ListSIPAccountsResponse} returns this
 */
-proto.services.pbx.v2.ListSIPAccountsResponse.prototype.setUsersList = function(value) {
+proto.services.pbx.v2.ListSIPAccountsResponse.prototype.setSipAccountsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.services.pbx.v2.PBXUser=} opt_value
+ * @param {!proto.services.pbx.v2.SIPAccount=} opt_value
  * @param {number=} opt_index
- * @return {!proto.services.pbx.v2.PBXUser}
+ * @return {!proto.services.pbx.v2.SIPAccount}
  */
-proto.services.pbx.v2.ListSIPAccountsResponse.prototype.addUsers = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.services.pbx.v2.PBXUser, opt_index);
+proto.services.pbx.v2.ListSIPAccountsResponse.prototype.addSipAccounts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.services.pbx.v2.SIPAccount, opt_index);
 };
 
 
@@ -1893,8 +1893,8 @@ proto.services.pbx.v2.ListSIPAccountsResponse.prototype.addUsers = function(opt_
  * Clears the list making it empty but non-null.
  * @return {!proto.services.pbx.v2.ListSIPAccountsResponse} returns this
  */
-proto.services.pbx.v2.ListSIPAccountsResponse.prototype.clearUsersList = function() {
-  return this.setUsersList([]);
+proto.services.pbx.v2.ListSIPAccountsResponse.prototype.clearSipAccountsList = function() {
+  return this.setSipAccountsList([]);
 };
 
 
@@ -2038,7 +2038,7 @@ proto.services.pbx.v2.GetSIPAccountResponse.prototype.toObject = function(opt_in
  */
 proto.services.pbx.v2.GetSIPAccountResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    usersList: jspb.Message.toObjectList(msg.getUsersList(),
+    sipAccountList: jspb.Message.toObjectList(msg.getSipAccountList(),
     proto.services.pbx.v2.SIPAccount.toObject, includeInstance)
   };
 
@@ -2079,7 +2079,7 @@ proto.services.pbx.v2.GetSIPAccountResponse.deserializeBinaryFromReader = functi
     case 1:
       var value = new proto.services.pbx.v2.SIPAccount;
       reader.readMessage(value,proto.services.pbx.v2.SIPAccount.deserializeBinaryFromReader);
-      msg.addUsers(value);
+      msg.addSipAccount(value);
       break;
     default:
       reader.skipField();
@@ -2110,7 +2110,7 @@ proto.services.pbx.v2.GetSIPAccountResponse.prototype.serializeBinary = function
  */
 proto.services.pbx.v2.GetSIPAccountResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getUsersList();
+  f = message.getSipAccountList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -2122,10 +2122,10 @@ proto.services.pbx.v2.GetSIPAccountResponse.serializeBinaryToWriter = function(m
 
 
 /**
- * repeated SIPAccount users = 1;
+ * repeated SIPAccount sip_account = 1;
  * @return {!Array<!proto.services.pbx.v2.SIPAccount>}
  */
-proto.services.pbx.v2.GetSIPAccountResponse.prototype.getUsersList = function() {
+proto.services.pbx.v2.GetSIPAccountResponse.prototype.getSipAccountList = function() {
   return /** @type{!Array<!proto.services.pbx.v2.SIPAccount>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.services.pbx.v2.SIPAccount, 1));
 };
@@ -2135,7 +2135,7 @@ proto.services.pbx.v2.GetSIPAccountResponse.prototype.getUsersList = function() 
  * @param {!Array<!proto.services.pbx.v2.SIPAccount>} value
  * @return {!proto.services.pbx.v2.GetSIPAccountResponse} returns this
 */
-proto.services.pbx.v2.GetSIPAccountResponse.prototype.setUsersList = function(value) {
+proto.services.pbx.v2.GetSIPAccountResponse.prototype.setSipAccountList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -2145,7 +2145,7 @@ proto.services.pbx.v2.GetSIPAccountResponse.prototype.setUsersList = function(va
  * @param {number=} opt_index
  * @return {!proto.services.pbx.v2.SIPAccount}
  */
-proto.services.pbx.v2.GetSIPAccountResponse.prototype.addUsers = function(opt_value, opt_index) {
+proto.services.pbx.v2.GetSIPAccountResponse.prototype.addSipAccount = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.services.pbx.v2.SIPAccount, opt_index);
 };
 
@@ -2154,8 +2154,8 @@ proto.services.pbx.v2.GetSIPAccountResponse.prototype.addUsers = function(opt_va
  * Clears the list making it empty but non-null.
  * @return {!proto.services.pbx.v2.GetSIPAccountResponse} returns this
  */
-proto.services.pbx.v2.GetSIPAccountResponse.prototype.clearUsersList = function() {
-  return this.setUsersList([]);
+proto.services.pbx.v2.GetSIPAccountResponse.prototype.clearSipAccountList = function() {
+  return this.setSipAccountList([]);
 };
 
 

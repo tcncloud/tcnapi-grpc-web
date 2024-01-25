@@ -171,10 +171,10 @@ export namespace ListSIPAccountsRequest {
 }
 
 export class ListSIPAccountsResponse extends jspb.Message {
-  clearUsersList(): void;
-  getUsersList(): Array<PBXUser>;
-  setUsersList(value: Array<PBXUser>): void;
-  addUsers(value?: PBXUser, index?: number): PBXUser;
+  clearSipAccountsList(): void;
+  getSipAccountsList(): Array<SIPAccount>;
+  setSipAccountsList(value: Array<SIPAccount>): void;
+  addSipAccounts(value?: SIPAccount, index?: number): SIPAccount;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSIPAccountsResponse.AsObject;
@@ -188,7 +188,7 @@ export class ListSIPAccountsResponse extends jspb.Message {
 
 export namespace ListSIPAccountsResponse {
   export type AsObject = {
-    usersList: Array<PBXUser.AsObject>,
+    sipAccountsList: Array<SIPAccount.AsObject>,
   }
 }
 
@@ -209,10 +209,10 @@ export namespace GetSIPAccountRequest {
 }
 
 export class GetSIPAccountResponse extends jspb.Message {
-  clearUsersList(): void;
-  getUsersList(): Array<SIPAccount>;
-  setUsersList(value: Array<SIPAccount>): void;
-  addUsers(value?: SIPAccount, index?: number): SIPAccount;
+  clearSipAccountList(): void;
+  getSipAccountList(): Array<SIPAccount>;
+  setSipAccountList(value: Array<SIPAccount>): void;
+  addSipAccount(value?: SIPAccount, index?: number): SIPAccount;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetSIPAccountResponse.AsObject;
@@ -226,7 +226,7 @@ export class GetSIPAccountResponse extends jspb.Message {
 
 export namespace GetSIPAccountResponse {
   export type AsObject = {
-    usersList: Array<SIPAccount.AsObject>,
+    sipAccountList: Array<SIPAccount.AsObject>,
   }
 }
 
