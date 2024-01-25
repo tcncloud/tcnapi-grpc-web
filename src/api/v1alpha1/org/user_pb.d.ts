@@ -2388,8 +2388,8 @@ export class GetUserSessionDataResponse extends jspb.Message {
   setLabelsList(value: Array<api_commons_org_labels_pb.Label>): void;
   addLabels(value?: api_commons_org_labels_pb.Label, index?: number): api_commons_org_labels_pb.Label;
 
-  getOrgAllowed2fa(): boolean;
-  setOrgAllowed2fa(value: boolean): void;
+  getOrgAllowedMfa(): boolean;
+  setOrgAllowedMfa(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserSessionDataResponse.AsObject;
@@ -2408,7 +2408,7 @@ export namespace GetUserSessionDataResponse {
     p3PermissionsList: Array<api_commons_perms_pb.PermissionMap[keyof api_commons_perms_pb.PermissionMap]>,
     permissionGroupsList: Array<api_commons_org_permissions_pb.PermissionGroup.AsObject>,
     labelsList: Array<api_commons_org_labels_pb.Label.AsObject>,
-    orgAllowed2fa: boolean,
+    orgAllowedMfa: boolean,
   }
 
   export class User extends jspb.Message {

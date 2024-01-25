@@ -18501,7 +18501,7 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.toObject = function(includeIns
     api_commons_org_permissions_pb.PermissionGroup.toObject, includeInstance),
     labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
     api_commons_org_labels_pb.Label.toObject, includeInstance),
-    orgAllowed2fa: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+    orgAllowedMfa: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -18565,7 +18565,7 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.deserializeBinaryFromReader = 
       break;
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOrgAllowed2fa(value);
+      msg.setOrgAllowedMfa(value);
       break;
     default:
       reader.skipField();
@@ -18634,7 +18634,7 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.serializeBinaryToWriter = func
       api_commons_org_labels_pb.Label.serializeBinaryToWriter
     );
   }
-  f = message.getOrgAllowed2fa();
+  f = message.getOrgAllowedMfa();
   if (f) {
     writer.writeBool(
       6,
@@ -20165,10 +20165,10 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.clearLabelsList = fu
 
 
 /**
- * optional bool org_allowed_2fa = 6;
+ * optional bool org_allowed_mfa = 6;
  * @return {boolean}
  */
-proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.getOrgAllowed2fa = function() {
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.getOrgAllowedMfa = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
@@ -20177,7 +20177,7 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.getOrgAllowed2fa = f
  * @param {boolean} value
  * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse} returns this
  */
-proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.setOrgAllowed2fa = function(value) {
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.setOrgAllowedMfa = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
