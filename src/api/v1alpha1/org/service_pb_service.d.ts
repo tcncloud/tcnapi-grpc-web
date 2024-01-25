@@ -1680,22 +1680,22 @@ type OrgRevokeUsersP3PermissionGroup = {
   readonly responseType: typeof api_v1alpha1_org_p3_permissions_pb.RevokeUsersP3PermissionGroupResponse;
 };
 
-type OrgRefresh2FALockout = {
+type OrgRefreshMfaLockout = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_user_pb.Refresh2FALockoutRequest;
-  readonly responseType: typeof api_v1alpha1_org_user_pb.Refresh2FALockoutResponse;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.RefreshMfaLockoutRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.RefreshMfaLockoutResponse;
 };
 
-type OrgRefresh2FALockoutByOrgId = {
+type OrgRefreshMfaLockoutByOrgId = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_user_pb.Refresh2FALockoutByOrgIdRequest;
-  readonly responseType: typeof api_v1alpha1_org_user_pb.Refresh2FALockoutByOrgIdResponse;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.RefreshMfaLockoutByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.RefreshMfaLockoutByOrgIdResponse;
 };
 
 export class Org {
@@ -1885,8 +1885,8 @@ export class Org {
   static readonly DeleteP3PermissionGroup: OrgDeleteP3PermissionGroup;
   static readonly AssignUsersP3PermissionGroup: OrgAssignUsersP3PermissionGroup;
   static readonly RevokeUsersP3PermissionGroup: OrgRevokeUsersP3PermissionGroup;
-  static readonly Refresh2FALockout: OrgRefresh2FALockout;
-  static readonly Refresh2FALockoutByOrgId: OrgRefresh2FALockoutByOrgId;
+  static readonly RefreshMfaLockout: OrgRefreshMfaLockout;
+  static readonly RefreshMfaLockoutByOrgId: OrgRefreshMfaLockoutByOrgId;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3514,23 +3514,23 @@ export class OrgClient {
     requestMessage: api_v1alpha1_org_p3_permissions_pb.RevokeUsersP3PermissionGroupRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_p3_permissions_pb.RevokeUsersP3PermissionGroupResponse|null) => void
   ): UnaryResponse;
-  refresh2FALockout(
-    requestMessage: api_v1alpha1_org_user_pb.Refresh2FALockoutRequest,
+  refreshMfaLockout(
+    requestMessage: api_v1alpha1_org_user_pb.RefreshMfaLockoutRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.Refresh2FALockoutResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.RefreshMfaLockoutResponse|null) => void
   ): UnaryResponse;
-  refresh2FALockout(
-    requestMessage: api_v1alpha1_org_user_pb.Refresh2FALockoutRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.Refresh2FALockoutResponse|null) => void
+  refreshMfaLockout(
+    requestMessage: api_v1alpha1_org_user_pb.RefreshMfaLockoutRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.RefreshMfaLockoutResponse|null) => void
   ): UnaryResponse;
-  refresh2FALockoutByOrgId(
-    requestMessage: api_v1alpha1_org_user_pb.Refresh2FALockoutByOrgIdRequest,
+  refreshMfaLockoutByOrgId(
+    requestMessage: api_v1alpha1_org_user_pb.RefreshMfaLockoutByOrgIdRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.Refresh2FALockoutByOrgIdResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.RefreshMfaLockoutByOrgIdResponse|null) => void
   ): UnaryResponse;
-  refresh2FALockoutByOrgId(
-    requestMessage: api_v1alpha1_org_user_pb.Refresh2FALockoutByOrgIdRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.Refresh2FALockoutByOrgIdResponse|null) => void
+  refreshMfaLockoutByOrgId(
+    requestMessage: api_v1alpha1_org_user_pb.RefreshMfaLockoutByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.RefreshMfaLockoutByOrgIdResponse|null) => void
   ): UnaryResponse;
 }
 

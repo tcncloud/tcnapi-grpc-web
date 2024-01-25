@@ -1686,22 +1686,22 @@ Org.RevokeUsersP3PermissionGroup = {
   responseType: api_v1alpha1_org_p3_permissions_pb.RevokeUsersP3PermissionGroupResponse
 };
 
-Org.Refresh2FALockout = {
-  methodName: "Refresh2FALockout",
+Org.RefreshMfaLockout = {
+  methodName: "RefreshMfaLockout",
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_user_pb.Refresh2FALockoutRequest,
-  responseType: api_v1alpha1_org_user_pb.Refresh2FALockoutResponse
+  requestType: api_v1alpha1_org_user_pb.RefreshMfaLockoutRequest,
+  responseType: api_v1alpha1_org_user_pb.RefreshMfaLockoutResponse
 };
 
-Org.Refresh2FALockoutByOrgId = {
-  methodName: "Refresh2FALockoutByOrgId",
+Org.RefreshMfaLockoutByOrgId = {
+  methodName: "RefreshMfaLockoutByOrgId",
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_user_pb.Refresh2FALockoutByOrgIdRequest,
-  responseType: api_v1alpha1_org_user_pb.Refresh2FALockoutByOrgIdResponse
+  requestType: api_v1alpha1_org_user_pb.RefreshMfaLockoutByOrgIdRequest,
+  responseType: api_v1alpha1_org_user_pb.RefreshMfaLockoutByOrgIdResponse
 };
 
 exports.Org = Org;
@@ -7518,11 +7518,11 @@ OrgClient.prototype.revokeUsersP3PermissionGroup = function revokeUsersP3Permiss
   };
 };
 
-OrgClient.prototype.refresh2FALockout = function refresh2FALockout(requestMessage, metadata, callback) {
+OrgClient.prototype.refreshMfaLockout = function refreshMfaLockout(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.Refresh2FALockout, {
+  var client = grpc.unary(Org.RefreshMfaLockout, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -7549,11 +7549,11 @@ OrgClient.prototype.refresh2FALockout = function refresh2FALockout(requestMessag
   };
 };
 
-OrgClient.prototype.refresh2FALockoutByOrgId = function refresh2FALockoutByOrgId(requestMessage, metadata, callback) {
+OrgClient.prototype.refreshMfaLockoutByOrgId = function refreshMfaLockoutByOrgId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.Refresh2FALockoutByOrgId, {
+  var client = grpc.unary(Org.RefreshMfaLockoutByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
