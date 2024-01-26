@@ -204,6 +204,9 @@ export namespace User {
 }
 
 export class MfaInfo extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   getUserId(): string;
   setUserId(value: string): void;
 
@@ -233,6 +236,7 @@ export class MfaInfo extends jspb.Message {
 
 export namespace MfaInfo {
   export type AsObject = {
+    orgId: string,
     userId: string,
     mfaEnabled: boolean,
     none?: MfaInfo.NoneSelected.AsObject,
@@ -307,8 +311,8 @@ export namespace MfaInfo {
 
   export enum MfaTypeCase {
     MFA_TYPE_NOT_SET = 0,
-    NONE = 3,
-    OTP = 4,
+    NONE = 10,
+    OTP = 11,
   }
 }
 
