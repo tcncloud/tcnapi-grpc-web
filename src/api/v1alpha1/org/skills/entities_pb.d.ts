@@ -218,6 +218,42 @@ export namespace DeleteSkillGroupResponse {
   }
 }
 
+export class RemoveSkillFromAllGroupsRequest extends jspb.Message {
+  getSkillSid(): number;
+  setSkillSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveSkillFromAllGroupsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveSkillFromAllGroupsRequest): RemoveSkillFromAllGroupsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveSkillFromAllGroupsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveSkillFromAllGroupsRequest;
+  static deserializeBinaryFromReader(message: RemoveSkillFromAllGroupsRequest, reader: jspb.BinaryReader): RemoveSkillFromAllGroupsRequest;
+}
+
+export namespace RemoveSkillFromAllGroupsRequest {
+  export type AsObject = {
+    skillSid: number,
+  }
+}
+
+export class RemoveSkillFromAllGroupsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveSkillFromAllGroupsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveSkillFromAllGroupsResponse): RemoveSkillFromAllGroupsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveSkillFromAllGroupsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveSkillFromAllGroupsResponse;
+  static deserializeBinaryFromReader(message: RemoveSkillFromAllGroupsResponse, reader: jspb.BinaryReader): RemoveSkillFromAllGroupsResponse;
+}
+
+export namespace RemoveSkillFromAllGroupsResponse {
+  export type AsObject = {
+  }
+}
+
 export class AssignSkillGroupsRequest extends jspb.Message {
   clearSkillGroupIdsList(): void;
   getSkillGroupIdsList(): Array<string>;
