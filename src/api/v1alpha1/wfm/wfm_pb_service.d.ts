@@ -1111,6 +1111,15 @@ type WFMUpdateShiftInstanceV2 = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceV2Res;
 };
 
+type WFMUpdateShiftInstanceWithSegments = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceWithSegmentsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceWithSegmentsResponse;
+};
+
 type WFMCopyShiftInstancesToSchedule = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1587,6 +1596,7 @@ export class WFM {
   static readonly SwapShiftInstances: WFMSwapShiftInstances;
   static readonly UpdateShiftInstance: WFMUpdateShiftInstance;
   static readonly UpdateShiftInstanceV2: WFMUpdateShiftInstanceV2;
+  static readonly UpdateShiftInstanceWithSegments: WFMUpdateShiftInstanceWithSegments;
   static readonly CopyShiftInstancesToSchedule: WFMCopyShiftInstancesToSchedule;
   static readonly ListShiftInstanceSidsForAgent: WFMListShiftInstanceSidsForAgent;
   static readonly ListShiftSegmentsByShiftInstanceSids: WFMListShiftSegmentsByShiftInstanceSids;
@@ -2718,6 +2728,15 @@ export class WFMClient {
   updateShiftInstanceV2(
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceV2Req,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceV2Res|null) => void
+  ): UnaryResponse;
+  updateShiftInstanceWithSegments(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceWithSegmentsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceWithSegmentsResponse|null) => void
+  ): UnaryResponse;
+  updateShiftInstanceWithSegments(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceWithSegmentsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateShiftInstanceWithSegmentsResponse|null) => void
   ): UnaryResponse;
   copyShiftInstancesToSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CopyShiftInstancesToScheduleReq,

@@ -8956,6 +8956,60 @@ export namespace UpdateShiftInstanceV2Res {
   }
 }
 
+export class UpdateShiftInstanceWithSegmentsRequest extends jspb.Message {
+  hasShiftInstance(): boolean;
+  clearShiftInstance(): void;
+  getShiftInstance(): ShiftInstance | undefined;
+  setShiftInstance(value?: ShiftInstance): void;
+
+  getIgnoreDiagnosticsErrors(): boolean;
+  setIgnoreDiagnosticsErrors(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateShiftInstanceWithSegmentsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateShiftInstanceWithSegmentsRequest): UpdateShiftInstanceWithSegmentsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateShiftInstanceWithSegmentsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateShiftInstanceWithSegmentsRequest;
+  static deserializeBinaryFromReader(message: UpdateShiftInstanceWithSegmentsRequest, reader: jspb.BinaryReader): UpdateShiftInstanceWithSegmentsRequest;
+}
+
+export namespace UpdateShiftInstanceWithSegmentsRequest {
+  export type AsObject = {
+    shiftInstance?: ShiftInstance.AsObject,
+    ignoreDiagnosticsErrors: boolean,
+  }
+}
+
+export class UpdateShiftInstanceWithSegmentsResponse extends jspb.Message {
+  hasShiftInstance(): boolean;
+  clearShiftInstance(): void;
+  getShiftInstance(): ShiftInstance | undefined;
+  setShiftInstance(value?: ShiftInstance): void;
+
+  clearDiagnosticsList(): void;
+  getDiagnosticsList(): Array<Diagnostic>;
+  setDiagnosticsList(value: Array<Diagnostic>): void;
+  addDiagnostics(value?: Diagnostic, index?: number): Diagnostic;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateShiftInstanceWithSegmentsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateShiftInstanceWithSegmentsResponse): UpdateShiftInstanceWithSegmentsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateShiftInstanceWithSegmentsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateShiftInstanceWithSegmentsResponse;
+  static deserializeBinaryFromReader(message: UpdateShiftInstanceWithSegmentsResponse, reader: jspb.BinaryReader): UpdateShiftInstanceWithSegmentsResponse;
+}
+
+export namespace UpdateShiftInstanceWithSegmentsResponse {
+  export type AsObject = {
+    shiftInstance?: ShiftInstance.AsObject,
+    diagnosticsList: Array<Diagnostic.AsObject>,
+  }
+}
+
 export class CopyShiftInstancesToScheduleReq extends jspb.Message {
   hasDestinationSchedule(): boolean;
   clearDestinationSchedule(): void;
