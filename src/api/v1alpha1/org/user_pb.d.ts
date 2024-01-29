@@ -2388,6 +2388,9 @@ export class GetUserSessionDataResponse extends jspb.Message {
   setLabelsList(value: Array<api_commons_org_labels_pb.Label>): void;
   addLabels(value?: api_commons_org_labels_pb.Label, index?: number): api_commons_org_labels_pb.Label;
 
+  getOrgAllowedMfa(): boolean;
+  setOrgAllowedMfa(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserSessionDataResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserSessionDataResponse): GetUserSessionDataResponse.AsObject;
@@ -2405,6 +2408,7 @@ export namespace GetUserSessionDataResponse {
     p3PermissionsList: Array<api_commons_perms_pb.PermissionMap[keyof api_commons_perms_pb.PermissionMap]>,
     permissionGroupsList: Array<api_commons_org_permissions_pb.PermissionGroup.AsObject>,
     labelsList: Array<api_commons_org_labels_pb.Label.AsObject>,
+    orgAllowedMfa: boolean,
   }
 
   export class User extends jspb.Message {
@@ -2507,6 +2511,11 @@ export namespace GetUserSessionDataResponse {
     getAccountOwner(): boolean;
     setAccountOwner(value: boolean): void;
 
+    hasMfaTimestamp(): boolean;
+    clearMfaTimestamp(): void;
+    getMfaTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setMfaTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): User.AsObject;
     static toObject(includeInstance: boolean, msg: User): User.AsObject;
@@ -2547,6 +2556,7 @@ export namespace GetUserSessionDataResponse {
       agentProfileGroupId: string,
       agent: boolean,
       accountOwner: boolean,
+      mfaTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
 
     export class RegionSids extends jspb.Message {
@@ -2576,6 +2586,338 @@ export namespace GetUserSessionDataResponse {
         clientSid: number,
       }
     }
+  }
+}
+
+export class RefreshMfaLockoutRequest extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RefreshMfaLockoutRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RefreshMfaLockoutRequest): RefreshMfaLockoutRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RefreshMfaLockoutRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RefreshMfaLockoutRequest;
+  static deserializeBinaryFromReader(message: RefreshMfaLockoutRequest, reader: jspb.BinaryReader): RefreshMfaLockoutRequest;
+}
+
+export namespace RefreshMfaLockoutRequest {
+  export type AsObject = {
+    userId: string,
+  }
+}
+
+export class RefreshMfaLockoutResponse extends jspb.Message {
+  hasTimeout(): boolean;
+  clearTimeout(): void;
+  getTimeout(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimeout(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RefreshMfaLockoutResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RefreshMfaLockoutResponse): RefreshMfaLockoutResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RefreshMfaLockoutResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RefreshMfaLockoutResponse;
+  static deserializeBinaryFromReader(message: RefreshMfaLockoutResponse, reader: jspb.BinaryReader): RefreshMfaLockoutResponse;
+}
+
+export namespace RefreshMfaLockoutResponse {
+  export type AsObject = {
+    timeout?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class RefreshMfaLockoutByOrgIdRequest extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RefreshMfaLockoutByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RefreshMfaLockoutByOrgIdRequest): RefreshMfaLockoutByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RefreshMfaLockoutByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RefreshMfaLockoutByOrgIdRequest;
+  static deserializeBinaryFromReader(message: RefreshMfaLockoutByOrgIdRequest, reader: jspb.BinaryReader): RefreshMfaLockoutByOrgIdRequest;
+}
+
+export namespace RefreshMfaLockoutByOrgIdRequest {
+  export type AsObject = {
+    userId: string,
+    orgId: string,
+  }
+}
+
+export class RefreshMfaLockoutByOrgIdResponse extends jspb.Message {
+  hasTimeout(): boolean;
+  clearTimeout(): void;
+  getTimeout(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimeout(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RefreshMfaLockoutByOrgIdResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RefreshMfaLockoutByOrgIdResponse): RefreshMfaLockoutByOrgIdResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RefreshMfaLockoutByOrgIdResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RefreshMfaLockoutByOrgIdResponse;
+  static deserializeBinaryFromReader(message: RefreshMfaLockoutByOrgIdResponse, reader: jspb.BinaryReader): RefreshMfaLockoutByOrgIdResponse;
+}
+
+export namespace RefreshMfaLockoutByOrgIdResponse {
+  export type AsObject = {
+    timeout?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class SetMfaTypeRequest extends jspb.Message {
+  hasOtp(): boolean;
+  clearOtp(): void;
+  getOtp(): api_commons_org_user_pb.MfaInfo.OtpType | undefined;
+  setOtp(value?: api_commons_org_user_pb.MfaInfo.OtpType): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getMfaTypeCase(): SetMfaTypeRequest.MfaTypeCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetMfaTypeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetMfaTypeRequest): SetMfaTypeRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetMfaTypeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetMfaTypeRequest;
+  static deserializeBinaryFromReader(message: SetMfaTypeRequest, reader: jspb.BinaryReader): SetMfaTypeRequest;
+}
+
+export namespace SetMfaTypeRequest {
+  export type AsObject = {
+    otp?: api_commons_org_user_pb.MfaInfo.OtpType.AsObject,
+    userId: string,
+  }
+
+  export enum MfaTypeCase {
+    MFA_TYPE_NOT_SET = 0,
+    OTP = 1,
+  }
+}
+
+export class SetMfaTypeResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetMfaTypeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetMfaTypeResponse): SetMfaTypeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetMfaTypeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetMfaTypeResponse;
+  static deserializeBinaryFromReader(message: SetMfaTypeResponse, reader: jspb.BinaryReader): SetMfaTypeResponse;
+}
+
+export namespace SetMfaTypeResponse {
+  export type AsObject = {
+  }
+}
+
+export class SetMyMfaTypeRequest extends jspb.Message {
+  hasOtp(): boolean;
+  clearOtp(): void;
+  getOtp(): api_commons_org_user_pb.MfaInfo.OtpType | undefined;
+  setOtp(value?: api_commons_org_user_pb.MfaInfo.OtpType): void;
+
+  getMfaTypeCase(): SetMyMfaTypeRequest.MfaTypeCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetMyMfaTypeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetMyMfaTypeRequest): SetMyMfaTypeRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetMyMfaTypeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetMyMfaTypeRequest;
+  static deserializeBinaryFromReader(message: SetMyMfaTypeRequest, reader: jspb.BinaryReader): SetMyMfaTypeRequest;
+}
+
+export namespace SetMyMfaTypeRequest {
+  export type AsObject = {
+    otp?: api_commons_org_user_pb.MfaInfo.OtpType.AsObject,
+  }
+
+  export enum MfaTypeCase {
+    MFA_TYPE_NOT_SET = 0,
+    OTP = 1,
+  }
+}
+
+export class SetMyMfaTypeResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetMyMfaTypeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetMyMfaTypeResponse): SetMyMfaTypeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetMyMfaTypeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetMyMfaTypeResponse;
+  static deserializeBinaryFromReader(message: SetMyMfaTypeResponse, reader: jspb.BinaryReader): SetMyMfaTypeResponse;
+}
+
+export namespace SetMyMfaTypeResponse {
+  export type AsObject = {
+  }
+}
+
+export class EnableUserMfaRequest extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getEnabled(): boolean;
+  setEnabled(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnableUserMfaRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableUserMfaRequest): EnableUserMfaRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EnableUserMfaRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableUserMfaRequest;
+  static deserializeBinaryFromReader(message: EnableUserMfaRequest, reader: jspb.BinaryReader): EnableUserMfaRequest;
+}
+
+export namespace EnableUserMfaRequest {
+  export type AsObject = {
+    userId: string,
+    enabled: boolean,
+  }
+}
+
+export class EnableUserMfaResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnableUserMfaResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableUserMfaResponse): EnableUserMfaResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EnableUserMfaResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableUserMfaResponse;
+  static deserializeBinaryFromReader(message: EnableUserMfaResponse, reader: jspb.BinaryReader): EnableUserMfaResponse;
+}
+
+export namespace EnableUserMfaResponse {
+  export type AsObject = {
+  }
+}
+
+export class EnableMyUserMfaRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnableMyUserMfaRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableMyUserMfaRequest): EnableMyUserMfaRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EnableMyUserMfaRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableMyUserMfaRequest;
+  static deserializeBinaryFromReader(message: EnableMyUserMfaRequest, reader: jspb.BinaryReader): EnableMyUserMfaRequest;
+}
+
+export namespace EnableMyUserMfaRequest {
+  export type AsObject = {
+  }
+}
+
+export class EnableMyUserMfaResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnableMyUserMfaResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableMyUserMfaResponse): EnableMyUserMfaResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EnableMyUserMfaResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableMyUserMfaResponse;
+  static deserializeBinaryFromReader(message: EnableMyUserMfaResponse, reader: jspb.BinaryReader): EnableMyUserMfaResponse;
+}
+
+export namespace EnableMyUserMfaResponse {
+  export type AsObject = {
+  }
+}
+
+export class GetUserMfaInfoRequest extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetUserMfaInfoRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetUserMfaInfoRequest): GetUserMfaInfoRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetUserMfaInfoRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetUserMfaInfoRequest;
+  static deserializeBinaryFromReader(message: GetUserMfaInfoRequest, reader: jspb.BinaryReader): GetUserMfaInfoRequest;
+}
+
+export namespace GetUserMfaInfoRequest {
+  export type AsObject = {
+    userId: string,
+  }
+}
+
+export class GetUserMfaInfoResponse extends jspb.Message {
+  hasInfo(): boolean;
+  clearInfo(): void;
+  getInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+  setInfo(value?: api_commons_org_user_pb.MfaInfo): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetUserMfaInfoResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetUserMfaInfoResponse): GetUserMfaInfoResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetUserMfaInfoResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetUserMfaInfoResponse;
+  static deserializeBinaryFromReader(message: GetUserMfaInfoResponse, reader: jspb.BinaryReader): GetUserMfaInfoResponse;
+}
+
+export namespace GetUserMfaInfoResponse {
+  export type AsObject = {
+    info?: api_commons_org_user_pb.MfaInfo.AsObject,
+  }
+}
+
+export class GetMyUserMfaInfoRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetMyUserMfaInfoRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetMyUserMfaInfoRequest): GetMyUserMfaInfoRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetMyUserMfaInfoRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetMyUserMfaInfoRequest;
+  static deserializeBinaryFromReader(message: GetMyUserMfaInfoRequest, reader: jspb.BinaryReader): GetMyUserMfaInfoRequest;
+}
+
+export namespace GetMyUserMfaInfoRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetMyUserMfaInfoResponse extends jspb.Message {
+  hasInfo(): boolean;
+  clearInfo(): void;
+  getInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+  setInfo(value?: api_commons_org_user_pb.MfaInfo): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetMyUserMfaInfoResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetMyUserMfaInfoResponse): GetMyUserMfaInfoResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetMyUserMfaInfoResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetMyUserMfaInfoResponse;
+  static deserializeBinaryFromReader(message: GetMyUserMfaInfoResponse, reader: jspb.BinaryReader): GetMyUserMfaInfoResponse;
+}
+
+export namespace GetMyUserMfaInfoResponse {
+  export type AsObject = {
+    info?: api_commons_org_user_pb.MfaInfo.AsObject,
   }
 }
 
