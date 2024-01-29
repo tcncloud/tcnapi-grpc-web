@@ -1713,6 +1713,15 @@ Org.SetMfaType = {
   responseType: api_v1alpha1_org_user_pb.SetMfaTypeResponse
 };
 
+Org.SetMyMfaType = {
+  methodName: "SetMyMfaType",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.SetMyMfaTypeRequest,
+  responseType: api_v1alpha1_org_user_pb.SetMyMfaTypeResponse
+};
+
 Org.EnableUserMfa = {
   methodName: "EnableUserMfa",
   service: Org,
@@ -7630,6 +7639,37 @@ OrgClient.prototype.setMfaType = function setMfaType(requestMessage, metadata, c
     callback = arguments[1];
   }
   var client = grpc.unary(Org.SetMfaType, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.setMyMfaType = function setMyMfaType(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.SetMyMfaType, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
