@@ -1707,15 +1707,6 @@ type OrgSetMfaType = {
   readonly responseType: typeof api_v1alpha1_org_user_pb.SetMfaTypeResponse;
 };
 
-type OrgSetMyMfaType = {
-  readonly methodName: string;
-  readonly service: typeof Org;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_user_pb.SetMyMfaTypeRequest;
-  readonly responseType: typeof api_v1alpha1_org_user_pb.SetMyMfaTypeResponse;
-};
-
 type OrgEnableUserMfa = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1942,7 +1933,6 @@ export class Org {
   static readonly RefreshMfaLockout: OrgRefreshMfaLockout;
   static readonly RefreshMfaLockoutByOrgId: OrgRefreshMfaLockoutByOrgId;
   static readonly SetMfaType: OrgSetMfaType;
-  static readonly SetMyMfaType: OrgSetMyMfaType;
   static readonly EnableUserMfa: OrgEnableUserMfa;
   static readonly EnableMyUserMfa: OrgEnableMyUserMfa;
   static readonly GetUserMfaInfo: OrgGetUserMfaInfo;
@@ -3600,15 +3590,6 @@ export class OrgClient {
   setMfaType(
     requestMessage: api_v1alpha1_org_user_pb.SetMfaTypeRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.SetMfaTypeResponse|null) => void
-  ): UnaryResponse;
-  setMyMfaType(
-    requestMessage: api_v1alpha1_org_user_pb.SetMyMfaTypeRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.SetMyMfaTypeResponse|null) => void
-  ): UnaryResponse;
-  setMyMfaType(
-    requestMessage: api_v1alpha1_org_user_pb.SetMyMfaTypeRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.SetMyMfaTypeResponse|null) => void
   ): UnaryResponse;
   enableUserMfa(
     requestMessage: api_v1alpha1_org_user_pb.EnableUserMfaRequest,

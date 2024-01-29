@@ -2683,9 +2683,6 @@ export class SetMfaTypeRequest extends jspb.Message {
   getOtp(): api_commons_org_user_pb.MfaInfo.OtpType | undefined;
   setOtp(value?: api_commons_org_user_pb.MfaInfo.OtpType): void;
 
-  getUserId(): string;
-  setUserId(value: string): void;
-
   getMfaTypeCase(): SetMfaTypeRequest.MfaTypeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetMfaTypeRequest.AsObject;
@@ -2700,7 +2697,6 @@ export class SetMfaTypeRequest extends jspb.Message {
 export namespace SetMfaTypeRequest {
   export type AsObject = {
     otp?: api_commons_org_user_pb.MfaInfo.OtpType.AsObject,
-    userId: string,
   }
 
   export enum MfaTypeCase {
@@ -2721,50 +2717,6 @@ export class SetMfaTypeResponse extends jspb.Message {
 }
 
 export namespace SetMfaTypeResponse {
-  export type AsObject = {
-  }
-}
-
-export class SetMyMfaTypeRequest extends jspb.Message {
-  hasOtp(): boolean;
-  clearOtp(): void;
-  getOtp(): api_commons_org_user_pb.MfaInfo.OtpType | undefined;
-  setOtp(value?: api_commons_org_user_pb.MfaInfo.OtpType): void;
-
-  getMfaTypeCase(): SetMyMfaTypeRequest.MfaTypeCase;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SetMyMfaTypeRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: SetMyMfaTypeRequest): SetMyMfaTypeRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SetMyMfaTypeRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SetMyMfaTypeRequest;
-  static deserializeBinaryFromReader(message: SetMyMfaTypeRequest, reader: jspb.BinaryReader): SetMyMfaTypeRequest;
-}
-
-export namespace SetMyMfaTypeRequest {
-  export type AsObject = {
-    otp?: api_commons_org_user_pb.MfaInfo.OtpType.AsObject,
-  }
-
-  export enum MfaTypeCase {
-    MFA_TYPE_NOT_SET = 0,
-    OTP = 1,
-  }
-}
-
-export class SetMyMfaTypeResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SetMyMfaTypeResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: SetMyMfaTypeResponse): SetMyMfaTypeResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SetMyMfaTypeResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SetMyMfaTypeResponse;
-  static deserializeBinaryFromReader(message: SetMyMfaTypeResponse, reader: jspb.BinaryReader): SetMyMfaTypeResponse;
-}
-
-export namespace SetMyMfaTypeResponse {
   export type AsObject = {
   }
 }
