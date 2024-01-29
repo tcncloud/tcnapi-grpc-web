@@ -92,9 +92,6 @@ export class ContentRes extends jspb.Message {
   getTitle(): string;
   setTitle(value: string): void;
 
-  getTotalViewCount(): number;
-  setTotalViewCount(value: number): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContentRes.AsObject;
   static toObject(includeInstance: boolean, msg: ContentRes): ContentRes.AsObject;
@@ -111,7 +108,6 @@ export namespace ContentRes {
     lastEditedTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     imagesList: Array<LearnImage.AsObject>,
     title: string,
-    totalViewCount: number,
   }
 }
 

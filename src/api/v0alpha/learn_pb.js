@@ -1138,8 +1138,7 @@ proto.api.v0alpha.ContentRes.toObject = function(includeInstance, msg) {
     lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     imagesList: jspb.Message.toObjectList(msg.getImagesList(),
     proto.api.v0alpha.LearnImage.toObject, includeInstance),
-    title: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    totalViewCount: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    title: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1193,10 +1192,6 @@ proto.api.v0alpha.ContentRes.deserializeBinaryFromReader = function(msg, reader)
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setTitle(value);
-      break;
-    case 5:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setTotalViewCount(value);
       break;
     default:
       reader.skipField();
@@ -1254,13 +1249,6 @@ proto.api.v0alpha.ContentRes.serializeBinaryToWriter = function(message, writer)
   if (f.length > 0) {
     writer.writeString(
       4,
-      f
-    );
-  }
-  f = message.getTotalViewCount();
-  if (f !== 0) {
-    writer.writeInt64(
-      5,
       f
     );
   }
@@ -1375,24 +1363,6 @@ proto.api.v0alpha.ContentRes.prototype.getTitle = function() {
  */
 proto.api.v0alpha.ContentRes.prototype.setTitle = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional int64 total_view_count = 5;
- * @return {number}
- */
-proto.api.v0alpha.ContentRes.prototype.getTotalViewCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v0alpha.ContentRes} returns this
- */
-proto.api.v0alpha.ContentRes.prototype.setTotalViewCount = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
