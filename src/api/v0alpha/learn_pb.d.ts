@@ -95,6 +95,9 @@ export class ContentRes extends jspb.Message {
   getTotalViewCount(): number;
   setTotalViewCount(value: number): void;
 
+  getLastEditedUser(): string;
+  setLastEditedUser(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContentRes.AsObject;
   static toObject(includeInstance: boolean, msg: ContentRes): ContentRes.AsObject;
@@ -112,6 +115,7 @@ export namespace ContentRes {
     imagesList: Array<LearnImage.AsObject>,
     title: string,
     totalViewCount: number,
+    lastEditedUser: string,
   }
 }
 
