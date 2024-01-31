@@ -27,6 +27,8 @@ var api_v1alpha1_bireportgenerator_entities_pb = require('../../../api/v1alpha1/
 goog.object.extend(proto, api_v1alpha1_bireportgenerator_entities_pb);
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
+var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
+goog.object.extend(proto, google_protobuf_field_mask_pb);
 goog.exportSymbol('proto.api.v1alpha1.bireportgenerator.CreateReportJobRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.bireportgenerator.CreateReportJobResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.bireportgenerator.DeleteReportJobRequest', null, global);
@@ -842,7 +844,8 @@ proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest.prototype.toObject =
  */
 proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f)
+    reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f),
+    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -884,6 +887,11 @@ proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest.deserializeBinaryFro
       reader.readMessage(value,api_v1alpha1_bireportgenerator_entities_pb.ReportJob.deserializeBinaryFromReader);
       msg.setReportJob(value);
       break;
+    case 2:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setUpdateMask(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -919,6 +927,14 @@ proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest.serializeBinaryToWri
       1,
       f,
       api_v1alpha1_bireportgenerator_entities_pb.ReportJob.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpdateMask();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
@@ -958,6 +974,43 @@ proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest.prototype.clearRepor
  */
 proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest.prototype.hasReportJob = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldMask update_mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest.prototype.getUpdateMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest} returns this
+*/
+proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest.prototype.setUpdateMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest.prototype.clearUpdateMask = function() {
+  return this.setUpdateMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest.prototype.hasUpdateMask = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
