@@ -3629,7 +3629,8 @@ proto.api.v1alpha1.org.GetMyUserResponse.toObject = function(includeInstance, ms
     agentProfileGroup: (f = msg.getAgentProfileGroup()) && proto.api.v1alpha1.org.GetMyUserResponse.AgentProfileGroup.toObject(includeInstance, f),
     trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
     api_commons_org_trusts_pb.Trust.toObject, includeInstance),
-    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 12, false)
+    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -3724,6 +3725,10 @@ proto.api.v1alpha1.org.GetMyUserResponse.deserializeBinaryFromReader = function(
     case 12:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAccountOwner(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     default:
       reader.skipField();
@@ -3849,6 +3854,13 @@ proto.api.v1alpha1.org.GetMyUserResponse.serializeBinaryToWriter = function(mess
   if (f) {
     writer.writeBool(
       12,
+      f
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      14,
       f
     );
   }
@@ -4546,6 +4558,24 @@ proto.api.v1alpha1.org.GetMyUserResponse.prototype.setAccountOwner = function(va
 };
 
 
+/**
+ * optional bool email_verified = 14;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetMyUserResponse.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.GetMyUserResponse} returns this
+ */
+proto.api.v1alpha1.org.GetMyUserResponse.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 14, value);
+};
+
+
 
 
 
@@ -4747,7 +4777,8 @@ proto.api.v1alpha1.org.GetUserResponse.toObject = function(includeInstance, msg)
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     lastUpdated: (f = msg.getLastUpdated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     passwordResetRequired: jspb.Message.getBooleanFieldWithDefault(msg, 28, false),
-    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 29, false)
+    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 29, false),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 30, false)
   };
 
   if (includeInstance) {
@@ -4909,6 +4940,10 @@ proto.api.v1alpha1.org.GetUserResponse.deserializeBinaryFromReader = function(ms
     case 29:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAccountOwner(value);
+      break;
+    case 30:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     default:
       reader.skipField();
@@ -5149,6 +5184,13 @@ proto.api.v1alpha1.org.GetUserResponse.serializeBinaryToWriter = function(messag
   if (f) {
     writer.writeBool(
       29,
+      f
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      30,
       f
     );
   }
@@ -6229,6 +6271,24 @@ proto.api.v1alpha1.org.GetUserResponse.prototype.setAccountOwner = function(valu
 };
 
 
+/**
+ * optional bool email_verified = 30;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetUserResponse.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 30, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.GetUserResponse} returns this
+ */
+proto.api.v1alpha1.org.GetUserResponse.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 30, value);
+};
+
+
 
 
 
@@ -6444,7 +6504,8 @@ proto.api.v1alpha1.org.GetUserByOrgIdResponse.toObject = function(includeInstanc
     agentProfileGroup: (f = msg.getAgentProfileGroup()) && proto.api.v1alpha1.org.GetUserByOrgIdResponse.AgentProfileGroup.toObject(includeInstance, f),
     trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
     api_commons_org_trusts_pb.Trust.toObject, includeInstance),
-    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 22, false)
+    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 23, false)
   };
 
   if (includeInstance) {
@@ -6539,6 +6600,10 @@ proto.api.v1alpha1.org.GetUserByOrgIdResponse.deserializeBinaryFromReader = func
     case 22:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAccountOwner(value);
+      break;
+    case 23:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     default:
       reader.skipField();
@@ -6664,6 +6729,13 @@ proto.api.v1alpha1.org.GetUserByOrgIdResponse.serializeBinaryToWriter = function
   if (f) {
     writer.writeBool(
       22,
+      f
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      23,
       f
     );
   }
@@ -7358,6 +7430,24 @@ proto.api.v1alpha1.org.GetUserByOrgIdResponse.prototype.getAccountOwner = functi
  */
 proto.api.v1alpha1.org.GetUserByOrgIdResponse.prototype.setAccountOwner = function(value) {
   return jspb.Message.setProto3BooleanField(this, 22, value);
+};
+
+
+/**
+ * optional bool email_verified = 23;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetUserByOrgIdResponse.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 23, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.GetUserByOrgIdResponse} returns this
+ */
+proto.api.v1alpha1.org.GetUserByOrgIdResponse.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 23, value);
 };
 
 

@@ -266,6 +266,9 @@ export class GetMyUserResponse extends jspb.Message {
   getAccountOwner(): boolean;
   setAccountOwner(value: boolean): void;
 
+  getEmailVerified(): boolean;
+  setEmailVerified(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetMyUserResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetMyUserResponse): GetMyUserResponse.AsObject;
@@ -291,6 +294,7 @@ export namespace GetMyUserResponse {
     agentProfileGroup?: GetMyUserResponse.AgentProfileGroup.AsObject,
     trustsList: Array<api_commons_org_trusts_pb.Trust.AsObject>,
     accountOwner: boolean,
+    emailVerified: boolean,
   }
 
   export class HuntGroup extends jspb.Message {
@@ -474,6 +478,9 @@ export class GetUserResponse extends jspb.Message {
   getAccountOwner(): boolean;
   setAccountOwner(value: boolean): void;
 
+  getEmailVerified(): boolean;
+  setEmailVerified(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserResponse): GetUserResponse.AsObject;
@@ -515,6 +522,7 @@ export namespace GetUserResponse {
     lastUpdated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     passwordResetRequired: boolean,
     accountOwner: boolean,
+    emailVerified: boolean,
   }
 
   export class HuntGroup extends jspb.Message {
@@ -644,6 +652,9 @@ export class GetUserByOrgIdResponse extends jspb.Message {
   getAccountOwner(): boolean;
   setAccountOwner(value: boolean): void;
 
+  getEmailVerified(): boolean;
+  setEmailVerified(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserByOrgIdResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserByOrgIdResponse): GetUserByOrgIdResponse.AsObject;
@@ -669,6 +680,7 @@ export namespace GetUserByOrgIdResponse {
     agentProfileGroup?: GetUserByOrgIdResponse.AgentProfileGroup.AsObject,
     trustsList: Array<api_commons_org_trusts_pb.Trust.AsObject>,
     accountOwner: boolean,
+    emailVerified: boolean,
   }
 
   export class HuntGroup extends jspb.Message {
