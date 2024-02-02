@@ -705,3 +705,123 @@ export namespace DeleteLearnPagesRes {
   }
 }
 
+export class CreateEditVersionReq extends jspb.Message {
+  getSrcVersion(): string;
+  setSrcVersion(value: string): void;
+
+  getDestVersion(): string;
+  setDestVersion(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateEditVersionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateEditVersionReq): CreateEditVersionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateEditVersionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateEditVersionReq;
+  static deserializeBinaryFromReader(message: CreateEditVersionReq, reader: jspb.BinaryReader): CreateEditVersionReq;
+}
+
+export namespace CreateEditVersionReq {
+  export type AsObject = {
+    srcVersion: string,
+    destVersion: string,
+  }
+}
+
+export class CreateEditVersionRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateEditVersionRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateEditVersionRes): CreateEditVersionRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateEditVersionRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateEditVersionRes;
+  static deserializeBinaryFromReader(message: CreateEditVersionRes, reader: jspb.BinaryReader): CreateEditVersionRes;
+}
+
+export namespace CreateEditVersionRes {
+  export type AsObject = {
+  }
+}
+
+export class PublishVersionReq extends jspb.Message {
+  getPublishVersion(): string;
+  setPublishVersion(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PublishVersionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: PublishVersionReq): PublishVersionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PublishVersionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PublishVersionReq;
+  static deserializeBinaryFromReader(message: PublishVersionReq, reader: jspb.BinaryReader): PublishVersionReq;
+}
+
+export namespace PublishVersionReq {
+  export type AsObject = {
+    publishVersion: string,
+  }
+}
+
+export class PublishVersionRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PublishVersionRes.AsObject;
+  static toObject(includeInstance: boolean, msg: PublishVersionRes): PublishVersionRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PublishVersionRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PublishVersionRes;
+  static deserializeBinaryFromReader(message: PublishVersionRes, reader: jspb.BinaryReader): PublishVersionRes;
+}
+
+export namespace PublishVersionRes {
+  export type AsObject = {
+  }
+}
+
+export class ReviewVersionReq extends jspb.Message {
+  getCurrentVersion(): string;
+  setCurrentVersion(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewVersionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewVersionReq): ReviewVersionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReviewVersionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewVersionReq;
+  static deserializeBinaryFromReader(message: ReviewVersionReq, reader: jspb.BinaryReader): ReviewVersionReq;
+}
+
+export namespace ReviewVersionReq {
+  export type AsObject = {
+    currentVersion: string,
+  }
+}
+
+export class ReviewVersionRes extends jspb.Message {
+  getDownloadUrl(): string;
+  setDownloadUrl(value: string): void;
+
+  getContents(): string;
+  setContents(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewVersionRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewVersionRes): ReviewVersionRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReviewVersionRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewVersionRes;
+  static deserializeBinaryFromReader(message: ReviewVersionRes, reader: jspb.BinaryReader): ReviewVersionRes;
+}
+
+export namespace ReviewVersionRes {
+  export type AsObject = {
+    downloadUrl: string,
+    contents: string,
+  }
+}
+
