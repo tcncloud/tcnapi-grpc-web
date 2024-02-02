@@ -139,15 +139,6 @@ type LearnPublishVersion = {
   readonly responseType: typeof api_v0alpha_learn_pb.PublishVersionRes;
 };
 
-type LearnReviewVersion = {
-  readonly methodName: string;
-  readonly service: typeof Learn;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_learn_pb.ReviewVersionReq;
-  readonly responseType: typeof api_v0alpha_learn_pb.ReviewVersionRes;
-};
-
 export class Learn {
   static readonly serviceName: string;
   static readonly Exist: LearnExist;
@@ -165,7 +156,6 @@ export class Learn {
   static readonly DeleteLearnPages: LearnDeleteLearnPages;
   static readonly CreateEditVersion: LearnCreateEditVersion;
   static readonly PublishVersion: LearnPublishVersion;
-  static readonly ReviewVersion: LearnReviewVersion;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -326,15 +316,6 @@ export class LearnClient {
   publishVersion(
     requestMessage: api_v0alpha_learn_pb.PublishVersionReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.PublishVersionRes|null) => void
-  ): UnaryResponse;
-  reviewVersion(
-    requestMessage: api_v0alpha_learn_pb.ReviewVersionReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.ReviewVersionRes|null) => void
-  ): UnaryResponse;
-  reviewVersion(
-    requestMessage: api_v0alpha_learn_pb.ReviewVersionReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.ReviewVersionRes|null) => void
   ): UnaryResponse;
 }
 
