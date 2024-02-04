@@ -1141,7 +1141,8 @@ proto.api.v0alpha.ContentRes.toObject = function(includeInstance, msg) {
     imagesList: jspb.Message.toObjectList(msg.getImagesList(),
     proto.api.v0alpha.LearnImage.toObject, includeInstance),
     title: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    totalViewCount: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    totalViewCount: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    lastEditedUser: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -1199,6 +1200,10 @@ proto.api.v0alpha.ContentRes.deserializeBinaryFromReader = function(msg, reader)
     case 5:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTotalViewCount(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLastEditedUser(value);
       break;
     default:
       reader.skipField();
@@ -1263,6 +1268,13 @@ proto.api.v0alpha.ContentRes.serializeBinaryToWriter = function(message, writer)
   if (f !== 0) {
     writer.writeInt64(
       5,
+      f
+    );
+  }
+  f = message.getLastEditedUser();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -1395,6 +1407,24 @@ proto.api.v0alpha.ContentRes.prototype.getTotalViewCount = function() {
  */
 proto.api.v0alpha.ContentRes.prototype.setTotalViewCount = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional string last_edited_user = 6;
+ * @return {string}
+ */
+proto.api.v0alpha.ContentRes.prototype.getLastEditedUser = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ContentRes} returns this
+ */
+proto.api.v0alpha.ContentRes.prototype.setLastEditedUser = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
