@@ -127,6 +127,24 @@ Learn.DeleteLearnPages = {
   responseType: api_v0alpha_learn_pb.DeleteLearnPagesRes
 };
 
+Learn.CreateEditVersion = {
+  methodName: "CreateEditVersion",
+  service: Learn,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_learn_pb.CreateEditVersionReq,
+  responseType: api_v0alpha_learn_pb.CreateEditVersionRes
+};
+
+Learn.PublishVersion = {
+  methodName: "PublishVersion",
+  service: Learn,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_learn_pb.PublishVersionReq,
+  responseType: api_v0alpha_learn_pb.PublishVersionRes
+};
+
 exports.Learn = Learn;
 
 function LearnClient(serviceHost, options) {
@@ -519,6 +537,68 @@ LearnClient.prototype.deleteLearnPages = function deleteLearnPages(requestMessag
     callback = arguments[1];
   }
   var client = grpc.unary(Learn.DeleteLearnPages, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.createEditVersion = function createEditVersion(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Learn.CreateEditVersion, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.publishVersion = function publishVersion(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Learn.PublishVersion, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
