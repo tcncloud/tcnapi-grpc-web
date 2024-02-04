@@ -47,17 +47,6 @@ export class LearningOpportunity extends jspb.Message {
   getCreatorUserId(): string;
   setCreatorUserId(value: string): void;
 
-  hasEvaluationId(): boolean;
-  clearEvaluationId(): void;
-  getEvaluationId(): number;
-  setEvaluationId(value: number): void;
-
-  hasAutoEvaluationId(): boolean;
-  clearAutoEvaluationId(): void;
-  getAutoEvaluationId(): number;
-  setAutoEvaluationId(value: number): void;
-
-  getOriginIdentifierCase(): LearningOpportunity.OriginIdentifierCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LearningOpportunity.AsObject;
   static toObject(includeInstance: boolean, msg: LearningOpportunity): LearningOpportunity.AsObject;
@@ -83,14 +72,6 @@ export namespace LearningOpportunity {
     status: LearningOpportunityStatusMap[keyof LearningOpportunityStatusMap],
     origin: LearningOpportunityOriginMap[keyof LearningOpportunityOriginMap],
     creatorUserId: string,
-    evaluationId: number,
-    autoEvaluationId: number,
-  }
-
-  export enum OriginIdentifierCase {
-    ORIGIN_IDENTIFIER_NOT_SET = 0,
-    EVALUATION_ID = 16,
-    AUTO_EVALUATION_ID = 17,
   }
 }
 
