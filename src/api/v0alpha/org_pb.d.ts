@@ -1227,6 +1227,9 @@ export class UserDetails extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): void;
 
+  getEmailVerified(): boolean;
+  setEmailVerified(value: boolean): void;
+
   clearTrustsList(): void;
   getTrustsList(): Array<api_commons_org_trusts_pb.Trust>;
   setTrustsList(value: Array<api_commons_org_trusts_pb.Trust>): void;
@@ -1274,6 +1277,7 @@ export namespace UserDetails {
     delegated: boolean,
     timeZoneOverride?: api_commons_org_pb.TimeZoneWrapper.AsObject,
     email: string,
+    emailVerified: boolean,
     trustsList: Array<api_commons_org_trusts_pb.Trust.AsObject>,
   }
 }
