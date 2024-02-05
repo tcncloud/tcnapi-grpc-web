@@ -12,6 +12,8 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var globalThis = require("../../../global.js");
+var proto = globalThis.proto;
 var goog = jspb;
 var global =
     (typeof globalThis !== 'undefined' && globalThis) ||
@@ -146,7 +148,9 @@ proto.api.commons.audit.EventType = {
   EVENT_TYPE_BILLING_EXPORT_INVOICE: 1007,
   EVENT_TYPE_BILLING_UPDATE_BILLING_PLAN: 1008,
   EVENT_TYPE_BILLING_UPDATE_INVOICE: 1009,
-  EVENT_TYPE_BILLING_UPDATE_RATE_DEFINITION: 1010
+  EVENT_TYPE_BILLING_UPDATE_RATE_DEFINITION: 1010,
+  EVENT_TYPE_DELIVERY_FAILURE: 1100,
+  EVENT_TYPE_DELIVERY_SUCCESS: 1101
 };
 
 goog.object.extend(exports, proto.api.commons.audit);

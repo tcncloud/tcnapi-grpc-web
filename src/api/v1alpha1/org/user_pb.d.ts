@@ -266,6 +266,9 @@ export class GetMyUserResponse extends jspb.Message {
   getAccountOwner(): boolean;
   setAccountOwner(value: boolean): void;
 
+  getEmailVerified(): boolean;
+  setEmailVerified(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetMyUserResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetMyUserResponse): GetMyUserResponse.AsObject;
@@ -291,6 +294,7 @@ export namespace GetMyUserResponse {
     agentProfileGroup?: GetMyUserResponse.AgentProfileGroup.AsObject,
     trustsList: Array<api_commons_org_trusts_pb.Trust.AsObject>,
     accountOwner: boolean,
+    emailVerified: boolean,
   }
 
   export class HuntGroup extends jspb.Message {
@@ -474,6 +478,9 @@ export class GetUserResponse extends jspb.Message {
   getAccountOwner(): boolean;
   setAccountOwner(value: boolean): void;
 
+  getEmailVerified(): boolean;
+  setEmailVerified(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserResponse): GetUserResponse.AsObject;
@@ -515,6 +522,7 @@ export namespace GetUserResponse {
     lastUpdated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     passwordResetRequired: boolean,
     accountOwner: boolean,
+    emailVerified: boolean,
   }
 
   export class HuntGroup extends jspb.Message {
@@ -644,6 +652,9 @@ export class GetUserByOrgIdResponse extends jspb.Message {
   getAccountOwner(): boolean;
   setAccountOwner(value: boolean): void;
 
+  getEmailVerified(): boolean;
+  setEmailVerified(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserByOrgIdResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserByOrgIdResponse): GetUserByOrgIdResponse.AsObject;
@@ -669,6 +680,7 @@ export namespace GetUserByOrgIdResponse {
     agentProfileGroup?: GetUserByOrgIdResponse.AgentProfileGroup.AsObject,
     trustsList: Array<api_commons_org_trusts_pb.Trust.AsObject>,
     accountOwner: boolean,
+    emailVerified: boolean,
   }
 
   export class HuntGroup extends jspb.Message {
@@ -2678,15 +2690,11 @@ export namespace RefreshMfaLockoutByOrgIdResponse {
 }
 
 export class SetMfaTypeRequest extends jspb.Message {
-  hasOtp(): boolean;
-  clearOtp(): void;
-  getOtp(): api_commons_org_user_pb.MfaInfo.OtpType | undefined;
-  setOtp(value?: api_commons_org_user_pb.MfaInfo.OtpType): void;
+  hasInfo(): boolean;
+  clearInfo(): void;
+  getInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+  setInfo(value?: api_commons_org_user_pb.MfaInfo): void;
 
-  getUserId(): string;
-  setUserId(value: string): void;
-
-  getMfaTypeCase(): SetMfaTypeRequest.MfaTypeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetMfaTypeRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SetMfaTypeRequest): SetMfaTypeRequest.AsObject;
@@ -2699,13 +2707,7 @@ export class SetMfaTypeRequest extends jspb.Message {
 
 export namespace SetMfaTypeRequest {
   export type AsObject = {
-    otp?: api_commons_org_user_pb.MfaInfo.OtpType.AsObject,
-    userId: string,
-  }
-
-  export enum MfaTypeCase {
-    MFA_TYPE_NOT_SET = 0,
-    OTP = 1,
+    info?: api_commons_org_user_pb.MfaInfo.AsObject,
   }
 }
 
@@ -2726,12 +2728,11 @@ export namespace SetMfaTypeResponse {
 }
 
 export class SetMyMfaTypeRequest extends jspb.Message {
-  hasOtp(): boolean;
-  clearOtp(): void;
-  getOtp(): api_commons_org_user_pb.MfaInfo.OtpType | undefined;
-  setOtp(value?: api_commons_org_user_pb.MfaInfo.OtpType): void;
+  hasInfo(): boolean;
+  clearInfo(): void;
+  getInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+  setInfo(value?: api_commons_org_user_pb.MfaInfo): void;
 
-  getMfaTypeCase(): SetMyMfaTypeRequest.MfaTypeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetMyMfaTypeRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SetMyMfaTypeRequest): SetMyMfaTypeRequest.AsObject;
@@ -2744,12 +2745,7 @@ export class SetMyMfaTypeRequest extends jspb.Message {
 
 export namespace SetMyMfaTypeRequest {
   export type AsObject = {
-    otp?: api_commons_org_user_pb.MfaInfo.OtpType.AsObject,
-  }
-
-  export enum MfaTypeCase {
-    MFA_TYPE_NOT_SET = 0,
-    OTP = 1,
+    info?: api_commons_org_user_pb.MfaInfo.AsObject,
   }
 }
 

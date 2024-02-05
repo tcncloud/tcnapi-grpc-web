@@ -12,6 +12,8 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var globalThis = require("../../../global.js");
+var proto = globalThis.proto;
 var goog = jspb;
 var global =
     (typeof globalThis !== 'undefined' && globalThis) ||
@@ -119,10 +121,8 @@ goog.exportSymbol('proto.api.v1alpha1.org.SendUserEmailVerificationByOrgIdRespon
 goog.exportSymbol('proto.api.v1alpha1.org.SendUserEmailVerificationRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.SendUserEmailVerificationResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.SetMfaTypeRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.SetMfaTypeRequest.MfaTypeCase', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.SetMfaTypeResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.SetMyMfaTypeRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.org.SetMyMfaTypeRequest.MfaTypeCase', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.SetMyMfaTypeResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.UpdateMyUserRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.UpdateMyUserResponse', null, global);
@@ -1890,7 +1890,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.org.SetMfaTypeRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.api.v1alpha1.org.SetMfaTypeRequest.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.v1alpha1.org.SetMfaTypeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1932,7 +1932,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.org.SetMyMfaTypeRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.api.v1alpha1.org.SetMyMfaTypeRequest.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.v1alpha1.org.SetMyMfaTypeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -3627,7 +3627,8 @@ proto.api.v1alpha1.org.GetMyUserResponse.toObject = function(includeInstance, ms
     agentProfileGroup: (f = msg.getAgentProfileGroup()) && proto.api.v1alpha1.org.GetMyUserResponse.AgentProfileGroup.toObject(includeInstance, f),
     trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
     api_commons_org_trusts_pb.Trust.toObject, includeInstance),
-    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 12, false)
+    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -3722,6 +3723,10 @@ proto.api.v1alpha1.org.GetMyUserResponse.deserializeBinaryFromReader = function(
     case 12:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAccountOwner(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     default:
       reader.skipField();
@@ -3847,6 +3852,13 @@ proto.api.v1alpha1.org.GetMyUserResponse.serializeBinaryToWriter = function(mess
   if (f) {
     writer.writeBool(
       12,
+      f
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      14,
       f
     );
   }
@@ -4544,6 +4556,24 @@ proto.api.v1alpha1.org.GetMyUserResponse.prototype.setAccountOwner = function(va
 };
 
 
+/**
+ * optional bool email_verified = 14;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetMyUserResponse.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.GetMyUserResponse} returns this
+ */
+proto.api.v1alpha1.org.GetMyUserResponse.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 14, value);
+};
+
+
 
 
 
@@ -4745,7 +4775,8 @@ proto.api.v1alpha1.org.GetUserResponse.toObject = function(includeInstance, msg)
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     lastUpdated: (f = msg.getLastUpdated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     passwordResetRequired: jspb.Message.getBooleanFieldWithDefault(msg, 28, false),
-    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 29, false)
+    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 29, false),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 30, false)
   };
 
   if (includeInstance) {
@@ -4907,6 +4938,10 @@ proto.api.v1alpha1.org.GetUserResponse.deserializeBinaryFromReader = function(ms
     case 29:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAccountOwner(value);
+      break;
+    case 30:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     default:
       reader.skipField();
@@ -5147,6 +5182,13 @@ proto.api.v1alpha1.org.GetUserResponse.serializeBinaryToWriter = function(messag
   if (f) {
     writer.writeBool(
       29,
+      f
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      30,
       f
     );
   }
@@ -6227,6 +6269,24 @@ proto.api.v1alpha1.org.GetUserResponse.prototype.setAccountOwner = function(valu
 };
 
 
+/**
+ * optional bool email_verified = 30;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetUserResponse.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 30, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.GetUserResponse} returns this
+ */
+proto.api.v1alpha1.org.GetUserResponse.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 30, value);
+};
+
+
 
 
 
@@ -6442,7 +6502,8 @@ proto.api.v1alpha1.org.GetUserByOrgIdResponse.toObject = function(includeInstanc
     agentProfileGroup: (f = msg.getAgentProfileGroup()) && proto.api.v1alpha1.org.GetUserByOrgIdResponse.AgentProfileGroup.toObject(includeInstance, f),
     trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
     api_commons_org_trusts_pb.Trust.toObject, includeInstance),
-    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 22, false)
+    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 23, false)
   };
 
   if (includeInstance) {
@@ -6537,6 +6598,10 @@ proto.api.v1alpha1.org.GetUserByOrgIdResponse.deserializeBinaryFromReader = func
     case 22:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAccountOwner(value);
+      break;
+    case 23:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     default:
       reader.skipField();
@@ -6662,6 +6727,13 @@ proto.api.v1alpha1.org.GetUserByOrgIdResponse.serializeBinaryToWriter = function
   if (f) {
     writer.writeBool(
       22,
+      f
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      23,
       f
     );
   }
@@ -7356,6 +7428,24 @@ proto.api.v1alpha1.org.GetUserByOrgIdResponse.prototype.getAccountOwner = functi
  */
 proto.api.v1alpha1.org.GetUserByOrgIdResponse.prototype.setAccountOwner = function(value) {
   return jspb.Message.setProto3BooleanField(this, 22, value);
+};
+
+
+/**
+ * optional bool email_verified = 23;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetUserByOrgIdResponse.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 23, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.GetUserByOrgIdResponse} returns this
+ */
+proto.api.v1alpha1.org.GetUserByOrgIdResponse.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 23, value);
 };
 
 
@@ -21129,31 +21219,6 @@ proto.api.v1alpha1.org.RefreshMfaLockoutByOrgIdResponse.prototype.hasTimeout = f
 
 
 
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.api.v1alpha1.org.SetMfaTypeRequest.oneofGroups_ = [[1]];
-
-/**
- * @enum {number}
- */
-proto.api.v1alpha1.org.SetMfaTypeRequest.MfaTypeCase = {
-  MFA_TYPE_NOT_SET: 0,
-  OTP: 1
-};
-
-/**
- * @return {proto.api.v1alpha1.org.SetMfaTypeRequest.MfaTypeCase}
- */
-proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.getMfaTypeCase = function() {
-  return /** @type {proto.api.v1alpha1.org.SetMfaTypeRequest.MfaTypeCase} */(jspb.Message.computeOneofCase(this, proto.api.v1alpha1.org.SetMfaTypeRequest.oneofGroups_[0]));
-};
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -21185,8 +21250,7 @@ proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.org.SetMfaTypeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    otp: (f = msg.getOtp()) && api_commons_org_user_pb.MfaInfo.OtpType.toObject(includeInstance, f),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    info: (f = msg.getInfo()) && api_commons_org_user_pb.MfaInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -21223,14 +21287,10 @@ proto.api.v1alpha1.org.SetMfaTypeRequest.deserializeBinaryFromReader = function(
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new api_commons_org_user_pb.MfaInfo.OtpType;
-      reader.readMessage(value,api_commons_org_user_pb.MfaInfo.OtpType.deserializeBinaryFromReader);
-      msg.setOtp(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUserId(value);
+    case 3:
+      var value = new api_commons_org_user_pb.MfaInfo;
+      reader.readMessage(value,api_commons_org_user_pb.MfaInfo.deserializeBinaryFromReader);
+      msg.setInfo(value);
       break;
     default:
       reader.skipField();
@@ -21261,40 +21321,33 @@ proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.serializeBinary = function() 
  */
 proto.api.v1alpha1.org.SetMfaTypeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOtp();
+  f = message.getInfo();
   if (f != null) {
     writer.writeMessage(
-      1,
+      3,
       f,
-      api_commons_org_user_pb.MfaInfo.OtpType.serializeBinaryToWriter
-    );
-  }
-  f = message.getUserId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
+      api_commons_org_user_pb.MfaInfo.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional api.commons.org.MfaInfo.OtpType otp = 1;
- * @return {?proto.api.commons.org.MfaInfo.OtpType}
+ * optional api.commons.org.MfaInfo info = 3;
+ * @return {?proto.api.commons.org.MfaInfo}
  */
-proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.getOtp = function() {
-  return /** @type{?proto.api.commons.org.MfaInfo.OtpType} */ (
-    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo.OtpType, 1));
+proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.getInfo = function() {
+  return /** @type{?proto.api.commons.org.MfaInfo} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo, 3));
 };
 
 
 /**
- * @param {?proto.api.commons.org.MfaInfo.OtpType|undefined} value
+ * @param {?proto.api.commons.org.MfaInfo|undefined} value
  * @return {!proto.api.v1alpha1.org.SetMfaTypeRequest} returns this
 */
-proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.setOtp = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1, proto.api.v1alpha1.org.SetMfaTypeRequest.oneofGroups_[0], value);
+proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.setInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -21302,8 +21355,8 @@ proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.setOtp = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.org.SetMfaTypeRequest} returns this
  */
-proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.clearOtp = function() {
-  return this.setOtp(undefined);
+proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.clearInfo = function() {
+  return this.setInfo(undefined);
 };
 
 
@@ -21311,26 +21364,8 @@ proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.clearOtp = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.hasOtp = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string user_id = 2;
- * @return {string}
- */
-proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.org.SetMfaTypeRequest} returns this
- */
-proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.setUserId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.api.v1alpha1.org.SetMfaTypeRequest.prototype.hasInfo = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -21436,31 +21471,6 @@ proto.api.v1alpha1.org.SetMfaTypeResponse.serializeBinaryToWriter = function(mes
 
 
 
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.api.v1alpha1.org.SetMyMfaTypeRequest.oneofGroups_ = [[1]];
-
-/**
- * @enum {number}
- */
-proto.api.v1alpha1.org.SetMyMfaTypeRequest.MfaTypeCase = {
-  MFA_TYPE_NOT_SET: 0,
-  OTP: 1
-};
-
-/**
- * @return {proto.api.v1alpha1.org.SetMyMfaTypeRequest.MfaTypeCase}
- */
-proto.api.v1alpha1.org.SetMyMfaTypeRequest.prototype.getMfaTypeCase = function() {
-  return /** @type {proto.api.v1alpha1.org.SetMyMfaTypeRequest.MfaTypeCase} */(jspb.Message.computeOneofCase(this, proto.api.v1alpha1.org.SetMyMfaTypeRequest.oneofGroups_[0]));
-};
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -21492,7 +21502,7 @@ proto.api.v1alpha1.org.SetMyMfaTypeRequest.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.org.SetMyMfaTypeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    otp: (f = msg.getOtp()) && api_commons_org_user_pb.MfaInfo.OtpType.toObject(includeInstance, f)
+    info: (f = msg.getInfo()) && api_commons_org_user_pb.MfaInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -21529,10 +21539,10 @@ proto.api.v1alpha1.org.SetMyMfaTypeRequest.deserializeBinaryFromReader = functio
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new api_commons_org_user_pb.MfaInfo.OtpType;
-      reader.readMessage(value,api_commons_org_user_pb.MfaInfo.OtpType.deserializeBinaryFromReader);
-      msg.setOtp(value);
+    case 2:
+      var value = new api_commons_org_user_pb.MfaInfo;
+      reader.readMessage(value,api_commons_org_user_pb.MfaInfo.deserializeBinaryFromReader);
+      msg.setInfo(value);
       break;
     default:
       reader.skipField();
@@ -21563,33 +21573,33 @@ proto.api.v1alpha1.org.SetMyMfaTypeRequest.prototype.serializeBinary = function(
  */
 proto.api.v1alpha1.org.SetMyMfaTypeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOtp();
+  f = message.getInfo();
   if (f != null) {
     writer.writeMessage(
-      1,
+      2,
       f,
-      api_commons_org_user_pb.MfaInfo.OtpType.serializeBinaryToWriter
+      api_commons_org_user_pb.MfaInfo.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional api.commons.org.MfaInfo.OtpType otp = 1;
- * @return {?proto.api.commons.org.MfaInfo.OtpType}
+ * optional api.commons.org.MfaInfo info = 2;
+ * @return {?proto.api.commons.org.MfaInfo}
  */
-proto.api.v1alpha1.org.SetMyMfaTypeRequest.prototype.getOtp = function() {
-  return /** @type{?proto.api.commons.org.MfaInfo.OtpType} */ (
-    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo.OtpType, 1));
+proto.api.v1alpha1.org.SetMyMfaTypeRequest.prototype.getInfo = function() {
+  return /** @type{?proto.api.commons.org.MfaInfo} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo, 2));
 };
 
 
 /**
- * @param {?proto.api.commons.org.MfaInfo.OtpType|undefined} value
+ * @param {?proto.api.commons.org.MfaInfo|undefined} value
  * @return {!proto.api.v1alpha1.org.SetMyMfaTypeRequest} returns this
 */
-proto.api.v1alpha1.org.SetMyMfaTypeRequest.prototype.setOtp = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1, proto.api.v1alpha1.org.SetMyMfaTypeRequest.oneofGroups_[0], value);
+proto.api.v1alpha1.org.SetMyMfaTypeRequest.prototype.setInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -21597,8 +21607,8 @@ proto.api.v1alpha1.org.SetMyMfaTypeRequest.prototype.setOtp = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.org.SetMyMfaTypeRequest} returns this
  */
-proto.api.v1alpha1.org.SetMyMfaTypeRequest.prototype.clearOtp = function() {
-  return this.setOtp(undefined);
+proto.api.v1alpha1.org.SetMyMfaTypeRequest.prototype.clearInfo = function() {
+  return this.setInfo(undefined);
 };
 
 
@@ -21606,8 +21616,8 @@ proto.api.v1alpha1.org.SetMyMfaTypeRequest.prototype.clearOtp = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.org.SetMyMfaTypeRequest.prototype.hasOtp = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.api.v1alpha1.org.SetMyMfaTypeRequest.prototype.hasInfo = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
