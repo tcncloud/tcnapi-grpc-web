@@ -5086,7 +5086,7 @@ proto.api.v1alpha1.org.skills.GetAgentSkillsRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.org.skills.GetAgentSkillsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    huntGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+
   };
 
   if (includeInstance) {
@@ -5123,10 +5123,6 @@ proto.api.v1alpha1.org.skills.GetAgentSkillsRequest.deserializeBinaryFromReader 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setHuntGroupSid(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -5156,31 +5152,6 @@ proto.api.v1alpha1.org.skills.GetAgentSkillsRequest.prototype.serializeBinary = 
  */
 proto.api.v1alpha1.org.skills.GetAgentSkillsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getHuntGroupSid();
-  if (f !== 0) {
-    writer.writeInt64(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional int64 hunt_group_sid = 1;
- * @return {number}
- */
-proto.api.v1alpha1.org.skills.GetAgentSkillsRequest.prototype.getHuntGroupSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.org.skills.GetAgentSkillsRequest} returns this
- */
-proto.api.v1alpha1.org.skills.GetAgentSkillsRequest.prototype.setHuntGroupSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 

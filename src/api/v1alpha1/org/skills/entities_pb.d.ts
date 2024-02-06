@@ -637,9 +637,6 @@ export namespace ListSkillsForCurrentAgentResponse {
 }
 
 export class GetAgentSkillsRequest extends jspb.Message {
-  getHuntGroupSid(): number;
-  setHuntGroupSid(value: number): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAgentSkillsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetAgentSkillsRequest): GetAgentSkillsRequest.AsObject;
@@ -652,7 +649,6 @@ export class GetAgentSkillsRequest extends jspb.Message {
 
 export namespace GetAgentSkillsRequest {
   export type AsObject = {
-    huntGroupSid: number,
   }
 }
 
