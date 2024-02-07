@@ -3244,3 +3244,119 @@ export namespace ProcessConsentListDeleteUploadMeta {
   }
 }
 
+export class Row extends jspb.Message {
+  getDate(): string;
+  setDate(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getYear(): string;
+  setYear(value: string): void;
+
+  getMonth(): string;
+  setMonth(value: string): void;
+
+  getDay(): string;
+  setDay(value: string): void;
+
+  getWeekday(): string;
+  setWeekday(value: string): void;
+
+  clearTypesList(): void;
+  getTypesList(): Array<string>;
+  setTypesList(value: Array<string>): void;
+  addTypes(value: string, index?: number): string;
+
+  getIsObserved(): string;
+  setIsObserved(value: string): void;
+
+  getCountry(): string;
+  setCountry(value: string): void;
+
+  clearStatesList(): void;
+  getStatesList(): Array<string>;
+  setStatesList(value: Array<string>): void;
+  addStates(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Row.AsObject;
+  static toObject(includeInstance: boolean, msg: Row): Row.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Row, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Row;
+  static deserializeBinaryFromReader(message: Row, reader: jspb.BinaryReader): Row;
+}
+
+export namespace Row {
+  export type AsObject = {
+    date: string,
+    name: string,
+    year: string,
+    month: string,
+    day: string,
+    weekday: string,
+    typesList: Array<string>,
+    isObserved: string,
+    country: string,
+    statesList: Array<string>,
+  }
+}
+
+export class Query extends jspb.Message {
+  getDate(): string;
+  setDate(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getYear(): string;
+  setYear(value: string): void;
+
+  getMonth(): string;
+  setMonth(value: string): void;
+
+  getDay(): string;
+  setDay(value: string): void;
+
+  getWeekday(): string;
+  setWeekday(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  getIsObserved(): string;
+  setIsObserved(value: string): void;
+
+  getCountry(): string;
+  setCountry(value: string): void;
+
+  getState(): string;
+  setState(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Query.AsObject;
+  static toObject(includeInstance: boolean, msg: Query): Query.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Query, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Query;
+  static deserializeBinaryFromReader(message: Query, reader: jspb.BinaryReader): Query;
+}
+
+export namespace Query {
+  export type AsObject = {
+    date: string,
+    name: string,
+    year: string,
+    month: string,
+    day: string,
+    weekday: string,
+    type: string,
+    isObserved: string,
+    country: string,
+    state: string,
+  }
+}
+

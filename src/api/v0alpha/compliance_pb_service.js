@@ -570,6 +570,15 @@ Compliance.ProcessOutboundCall = {
   responseType: api_v0alpha_compliance_pb.ProcessRes
 };
 
+Compliance.QueryHolidays = {
+  methodName: "QueryHolidays",
+  service: Compliance,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v0alpha_compliance_pb.Query,
+  responseType: api_v0alpha_compliance_pb.Row
+};
+
 exports.Compliance = Compliance;
 
 function ComplianceClient(serviceHost, options) {
@@ -2502,6 +2511,45 @@ ComplianceClient.prototype.processOutboundCall = function processOutboundCall(re
   return {
     cancel: function () {
       callback = null;
+      client.close();
+    }
+  };
+};
+
+ComplianceClient.prototype.queryHolidays = function queryHolidays(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(Compliance.QueryHolidays, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
       client.close();
     }
   };
