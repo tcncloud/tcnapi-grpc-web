@@ -10,8 +10,8 @@ type IdpServiceCreateClient = {
   readonly service: typeof IdpService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_idp_entities_pb.CreateClientReq;
-  readonly responseType: typeof api_v1alpha1_org_idp_entities_pb.CreateClientResp;
+  readonly requestType: typeof api_v1alpha1_org_idp_entities_pb.CreateClientRequest;
+  readonly responseType: typeof api_v1alpha1_org_idp_entities_pb.CreateClientResponse;
 };
 
 type IdpServiceUpdateClient = {
@@ -19,8 +19,8 @@ type IdpServiceUpdateClient = {
   readonly service: typeof IdpService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_idp_entities_pb.UpdateClientReq;
-  readonly responseType: typeof api_v1alpha1_org_idp_entities_pb.UpdateClientResp;
+  readonly requestType: typeof api_v1alpha1_org_idp_entities_pb.UpdateClientRequest;
+  readonly responseType: typeof api_v1alpha1_org_idp_entities_pb.UpdateClientResponse;
 };
 
 type IdpServiceDeleteClient = {
@@ -28,8 +28,8 @@ type IdpServiceDeleteClient = {
   readonly service: typeof IdpService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_idp_entities_pb.DeleteClientReq;
-  readonly responseType: typeof api_v1alpha1_org_idp_entities_pb.DeleteClientResp;
+  readonly requestType: typeof api_v1alpha1_org_idp_entities_pb.DeleteClientRequest;
+  readonly responseType: typeof api_v1alpha1_org_idp_entities_pb.DeleteClientResponse;
 };
 
 type IdpServiceListClients = {
@@ -37,8 +37,8 @@ type IdpServiceListClients = {
   readonly service: typeof IdpService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_idp_entities_pb.ListClientsReq;
-  readonly responseType: typeof api_v1alpha1_org_idp_entities_pb.ListClientsResp;
+  readonly requestType: typeof api_v1alpha1_org_idp_entities_pb.ListClientsRequest;
+  readonly responseType: typeof api_v1alpha1_org_idp_entities_pb.ListClientsResponse;
 };
 
 export class IdpService {
@@ -82,40 +82,40 @@ export class IdpServiceClient {
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
   createClient(
-    requestMessage: api_v1alpha1_org_idp_entities_pb.CreateClientReq,
+    requestMessage: api_v1alpha1_org_idp_entities_pb.CreateClientRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.CreateClientResp|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.CreateClientResponse|null) => void
   ): UnaryResponse;
   createClient(
-    requestMessage: api_v1alpha1_org_idp_entities_pb.CreateClientReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.CreateClientResp|null) => void
+    requestMessage: api_v1alpha1_org_idp_entities_pb.CreateClientRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.CreateClientResponse|null) => void
   ): UnaryResponse;
   updateClient(
-    requestMessage: api_v1alpha1_org_idp_entities_pb.UpdateClientReq,
+    requestMessage: api_v1alpha1_org_idp_entities_pb.UpdateClientRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.UpdateClientResp|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.UpdateClientResponse|null) => void
   ): UnaryResponse;
   updateClient(
-    requestMessage: api_v1alpha1_org_idp_entities_pb.UpdateClientReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.UpdateClientResp|null) => void
+    requestMessage: api_v1alpha1_org_idp_entities_pb.UpdateClientRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.UpdateClientResponse|null) => void
   ): UnaryResponse;
   deleteClient(
-    requestMessage: api_v1alpha1_org_idp_entities_pb.DeleteClientReq,
+    requestMessage: api_v1alpha1_org_idp_entities_pb.DeleteClientRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.DeleteClientResp|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.DeleteClientResponse|null) => void
   ): UnaryResponse;
   deleteClient(
-    requestMessage: api_v1alpha1_org_idp_entities_pb.DeleteClientReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.DeleteClientResp|null) => void
+    requestMessage: api_v1alpha1_org_idp_entities_pb.DeleteClientRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.DeleteClientResponse|null) => void
   ): UnaryResponse;
   listClients(
-    requestMessage: api_v1alpha1_org_idp_entities_pb.ListClientsReq,
+    requestMessage: api_v1alpha1_org_idp_entities_pb.ListClientsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.ListClientsResp|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.ListClientsResponse|null) => void
   ): UnaryResponse;
   listClients(
-    requestMessage: api_v1alpha1_org_idp_entities_pb.ListClientsReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.ListClientsResp|null) => void
+    requestMessage: api_v1alpha1_org_idp_entities_pb.ListClientsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_idp_entities_pb.ListClientsResponse|null) => void
   ): UnaryResponse;
 }
 

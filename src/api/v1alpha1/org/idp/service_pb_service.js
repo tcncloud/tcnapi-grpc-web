@@ -16,8 +16,8 @@ IdpService.CreateClient = {
   service: IdpService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_idp_entities_pb.CreateClientReq,
-  responseType: api_v1alpha1_org_idp_entities_pb.CreateClientResp
+  requestType: api_v1alpha1_org_idp_entities_pb.CreateClientRequest,
+  responseType: api_v1alpha1_org_idp_entities_pb.CreateClientResponse
 };
 
 IdpService.UpdateClient = {
@@ -25,8 +25,8 @@ IdpService.UpdateClient = {
   service: IdpService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_idp_entities_pb.UpdateClientReq,
-  responseType: api_v1alpha1_org_idp_entities_pb.UpdateClientResp
+  requestType: api_v1alpha1_org_idp_entities_pb.UpdateClientRequest,
+  responseType: api_v1alpha1_org_idp_entities_pb.UpdateClientResponse
 };
 
 IdpService.DeleteClient = {
@@ -34,8 +34,8 @@ IdpService.DeleteClient = {
   service: IdpService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_idp_entities_pb.DeleteClientReq,
-  responseType: api_v1alpha1_org_idp_entities_pb.DeleteClientResp
+  requestType: api_v1alpha1_org_idp_entities_pb.DeleteClientRequest,
+  responseType: api_v1alpha1_org_idp_entities_pb.DeleteClientResponse
 };
 
 IdpService.ListClients = {
@@ -43,8 +43,8 @@ IdpService.ListClients = {
   service: IdpService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_idp_entities_pb.ListClientsReq,
-  responseType: api_v1alpha1_org_idp_entities_pb.ListClientsResp
+  requestType: api_v1alpha1_org_idp_entities_pb.ListClientsRequest,
+  responseType: api_v1alpha1_org_idp_entities_pb.ListClientsResponse
 };
 
 exports.IdpService = IdpService;
