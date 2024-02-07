@@ -3244,6 +3244,28 @@ export namespace ProcessConsentListDeleteUploadMeta {
   }
 }
 
+export class QueryHolidaysResponse extends jspb.Message {
+  clearRowsList(): void;
+  getRowsList(): Array<Row>;
+  setRowsList(value: Array<Row>): void;
+  addRows(value?: Row, index?: number): Row;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): QueryHolidaysResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: QueryHolidaysResponse): QueryHolidaysResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: QueryHolidaysResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): QueryHolidaysResponse;
+  static deserializeBinaryFromReader(message: QueryHolidaysResponse, reader: jspb.BinaryReader): QueryHolidaysResponse;
+}
+
+export namespace QueryHolidaysResponse {
+  export type AsObject = {
+    rowsList: Array<Row.AsObject>,
+  }
+}
+
 export class Row extends jspb.Message {
   getDate(): string;
   setDate(value: string): void;

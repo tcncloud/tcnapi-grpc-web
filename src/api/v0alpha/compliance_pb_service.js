@@ -574,9 +574,9 @@ Compliance.QueryHolidays = {
   methodName: "QueryHolidays",
   service: Compliance,
   requestStream: false,
-  responseStream: true,
+  responseStream: false,
   requestType: api_v0alpha_compliance_pb.Query,
-  responseType: api_v0alpha_compliance_pb.Row
+  responseType: api_v0alpha_compliance_pb.QueryHolidaysResponse
 };
 
 exports.Compliance = Compliance;
@@ -2516,40 +2516,32 @@ ComplianceClient.prototype.processOutboundCall = function processOutboundCall(re
   };
 };
 
-ComplianceClient.prototype.queryHolidays = function queryHolidays(requestMessage, metadata) {
-  var listeners = {
-    data: [],
-    end: [],
-    status: []
-  };
-  var client = grpc.invoke(Compliance.QueryHolidays, {
+ComplianceClient.prototype.queryHolidays = function queryHolidays(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Compliance.QueryHolidays, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
     transport: this.options.transport,
     debug: this.options.debug,
-    onMessage: function (responseMessage) {
-      listeners.data.forEach(function (handler) {
-        handler(responseMessage);
-      });
-    },
-    onEnd: function (status, statusMessage, trailers) {
-      listeners.status.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners.end.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners = null;
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
     }
   });
   return {
-    on: function (type, handler) {
-      listeners[type].push(handler);
-      return this;
-    },
     cancel: function () {
-      listeners = null;
+      callback = null;
       client.close();
     }
   };
