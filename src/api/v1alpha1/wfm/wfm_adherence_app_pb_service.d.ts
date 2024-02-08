@@ -1,4 +1,4 @@
-// package: api.v1alph1.wfm
+// package: api.v1alpha1.wfm
 // file: api/v1alpha1/wfm/wfm_adherence_app.proto
 
 import * as api_v1alpha1_wfm_wfm_adherence_app_pb from "../../../api/v1alpha1/wfm/wfm_adherence_app_pb";
