@@ -570,3 +570,104 @@ export namespace UpdateUsersOnSkillGroupResponse {
   }
 }
 
+export class ListSkillsForCurrentAgentRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSkillsForCurrentAgentRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSkillsForCurrentAgentRequest): ListSkillsForCurrentAgentRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSkillsForCurrentAgentRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSkillsForCurrentAgentRequest;
+  static deserializeBinaryFromReader(message: ListSkillsForCurrentAgentRequest, reader: jspb.BinaryReader): ListSkillsForCurrentAgentRequest;
+}
+
+export namespace ListSkillsForCurrentAgentRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListSkillsForCurrentAgentResponse extends jspb.Message {
+  clearSkillsList(): void;
+  getSkillsList(): Array<ListSkillsForCurrentAgentResponse.AgentSkill>;
+  setSkillsList(value: Array<ListSkillsForCurrentAgentResponse.AgentSkill>): void;
+  addSkills(value?: ListSkillsForCurrentAgentResponse.AgentSkill, index?: number): ListSkillsForCurrentAgentResponse.AgentSkill;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSkillsForCurrentAgentResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSkillsForCurrentAgentResponse): ListSkillsForCurrentAgentResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSkillsForCurrentAgentResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSkillsForCurrentAgentResponse;
+  static deserializeBinaryFromReader(message: ListSkillsForCurrentAgentResponse, reader: jspb.BinaryReader): ListSkillsForCurrentAgentResponse;
+}
+
+export namespace ListSkillsForCurrentAgentResponse {
+  export type AsObject = {
+    skillsList: Array<ListSkillsForCurrentAgentResponse.AgentSkill.AsObject>,
+  }
+
+  export class AgentSkill extends jspb.Message {
+    getAgentSkillSid(): number;
+    setAgentSkillSid(value: number): void;
+
+    getName(): string;
+    setName(value: string): void;
+
+    getDescription(): string;
+    setDescription(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AgentSkill.AsObject;
+    static toObject(includeInstance: boolean, msg: AgentSkill): AgentSkill.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AgentSkill, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AgentSkill;
+    static deserializeBinaryFromReader(message: AgentSkill, reader: jspb.BinaryReader): AgentSkill;
+  }
+
+  export namespace AgentSkill {
+    export type AsObject = {
+      agentSkillSid: number,
+      name: string,
+      description: string,
+    }
+  }
+}
+
+export class GetAgentSkillsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAgentSkillsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAgentSkillsRequest): GetAgentSkillsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAgentSkillsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAgentSkillsRequest;
+  static deserializeBinaryFromReader(message: GetAgentSkillsRequest, reader: jspb.BinaryReader): GetAgentSkillsRequest;
+}
+
+export namespace GetAgentSkillsRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetAgentSkillsResponse extends jspb.Message {
+  getSkillsMap(): jspb.Map<string, number>;
+  clearSkillsMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAgentSkillsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAgentSkillsResponse): GetAgentSkillsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAgentSkillsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAgentSkillsResponse;
+  static deserializeBinaryFromReader(message: GetAgentSkillsResponse, reader: jspb.BinaryReader): GetAgentSkillsResponse;
+}
+
+export namespace GetAgentSkillsResponse {
+  export type AsObject = {
+    skillsMap: Array<[string, number]>,
+  }
+}
+

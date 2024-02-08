@@ -575,7 +575,7 @@ Compliance.QueryHolidays = {
   service: Compliance,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.Query,
+  requestType: api_v0alpha_compliance_pb.QueryHolidaysRequest,
   responseType: api_v0alpha_compliance_pb.QueryHolidaysResponse
 };
 

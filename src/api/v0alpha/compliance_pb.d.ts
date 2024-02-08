@@ -3246,9 +3246,9 @@ export namespace ProcessConsentListDeleteUploadMeta {
 
 export class QueryHolidaysResponse extends jspb.Message {
   clearRowsList(): void;
-  getRowsList(): Array<Row>;
-  setRowsList(value: Array<Row>): void;
-  addRows(value?: Row, index?: number): Row;
+  getRowsList(): Array<HolidayData>;
+  setRowsList(value: Array<HolidayData>): void;
+  addRows(value?: HolidayData, index?: number): HolidayData;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryHolidaysResponse.AsObject;
@@ -3262,11 +3262,11 @@ export class QueryHolidaysResponse extends jspb.Message {
 
 export namespace QueryHolidaysResponse {
   export type AsObject = {
-    rowsList: Array<Row.AsObject>,
+    rowsList: Array<HolidayData.AsObject>,
   }
 }
 
-export class Row extends jspb.Message {
+export class HolidayData extends jspb.Message {
   getDate(): string;
   setDate(value: string): void;
 
@@ -3302,16 +3302,16 @@ export class Row extends jspb.Message {
   addStates(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Row.AsObject;
-  static toObject(includeInstance: boolean, msg: Row): Row.AsObject;
+  toObject(includeInstance?: boolean): HolidayData.AsObject;
+  static toObject(includeInstance: boolean, msg: HolidayData): HolidayData.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Row, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Row;
-  static deserializeBinaryFromReader(message: Row, reader: jspb.BinaryReader): Row;
+  static serializeBinaryToWriter(message: HolidayData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HolidayData;
+  static deserializeBinaryFromReader(message: HolidayData, reader: jspb.BinaryReader): HolidayData;
 }
 
-export namespace Row {
+export namespace HolidayData {
   export type AsObject = {
     date: string,
     name: string,
@@ -3326,7 +3326,7 @@ export namespace Row {
   }
 }
 
-export class Query extends jspb.Message {
+export class QueryHolidaysRequest extends jspb.Message {
   getDate(): string;
   setDate(value: string): void;
 
@@ -3358,16 +3358,16 @@ export class Query extends jspb.Message {
   setState(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Query.AsObject;
-  static toObject(includeInstance: boolean, msg: Query): Query.AsObject;
+  toObject(includeInstance?: boolean): QueryHolidaysRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: QueryHolidaysRequest): QueryHolidaysRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Query, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Query;
-  static deserializeBinaryFromReader(message: Query, reader: jspb.BinaryReader): Query;
+  static serializeBinaryToWriter(message: QueryHolidaysRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): QueryHolidaysRequest;
+  static deserializeBinaryFromReader(message: QueryHolidaysRequest, reader: jspb.BinaryReader): QueryHolidaysRequest;
 }
 
-export namespace Query {
+export namespace QueryHolidaysRequest {
   export type AsObject = {
     date: string,
     name: string,
