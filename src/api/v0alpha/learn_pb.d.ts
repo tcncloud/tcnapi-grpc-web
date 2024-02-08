@@ -785,3 +785,105 @@ export namespace PublishVersionRes {
   }
 }
 
+export class ContentByVersionReq extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  getLocale(): string;
+  setLocale(value: string): void;
+
+  getVersion(): string;
+  setVersion(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContentByVersionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ContentByVersionReq): ContentByVersionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContentByVersionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContentByVersionReq;
+  static deserializeBinaryFromReader(message: ContentByVersionReq, reader: jspb.BinaryReader): ContentByVersionReq;
+}
+
+export namespace ContentByVersionReq {
+  export type AsObject = {
+    url: string,
+    locale: string,
+    version: string,
+  }
+}
+
+export class UpdateByVersionReq extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  getLocale(): string;
+  setLocale(value: string): void;
+
+  getContent(): string;
+  setContent(value: string): void;
+
+  getVersion(): string;
+  setVersion(value: string): void;
+
+  getMessage(): string;
+  setMessage(value: string): void;
+
+  getTitle(): string;
+  setTitle(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateByVersionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateByVersionReq): UpdateByVersionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateByVersionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateByVersionReq;
+  static deserializeBinaryFromReader(message: UpdateByVersionReq, reader: jspb.BinaryReader): UpdateByVersionReq;
+}
+
+export namespace UpdateByVersionReq {
+  export type AsObject = {
+    url: string,
+    locale: string,
+    content: string,
+    version: string,
+    message: string,
+    title: string,
+  }
+}
+
+export class SearchContentByVersionReq extends jspb.Message {
+  getSearchContent(): string;
+  setSearchContent(value: string): void;
+
+  getLocale(): string;
+  setLocale(value: string): void;
+
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  getVersion(): string;
+  setVersion(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchContentByVersionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: SearchContentByVersionReq): SearchContentByVersionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SearchContentByVersionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SearchContentByVersionReq;
+  static deserializeBinaryFromReader(message: SearchContentByVersionReq, reader: jspb.BinaryReader): SearchContentByVersionReq;
+}
+
+export namespace SearchContentByVersionReq {
+  export type AsObject = {
+    searchContent: string,
+    locale: string,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    version: string,
+  }
+}
+

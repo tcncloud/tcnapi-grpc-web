@@ -12,10 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../../global.js");
-var proto = localGlobalThis.proto;
+var globalThis = require("../../../global.js");
+var proto = globalThis.proto;
 var goog = jspb;
-var global = localGlobalThis || 
+var global =
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
