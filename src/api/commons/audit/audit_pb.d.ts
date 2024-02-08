@@ -6,6 +6,7 @@ import * as api_commons_audit_agent_training_events_pb from "../../../api/common
 import * as api_commons_audit_asm_events_pb from "../../../api/commons/audit/asm_events_pb";
 import * as api_commons_audit_billing_events_pb from "../../../api/commons/audit/billing_events_pb";
 import * as api_commons_audit_compliance_events_pb from "../../../api/commons/audit/compliance_events_pb";
+import * as api_commons_audit_delivery_events_pb from "../../../api/commons/audit/delivery_events_pb";
 import * as api_commons_audit_event_types_pb from "../../../api/commons/audit/event_types_pb";
 import * as api_commons_audit_events_pb from "../../../api/commons/audit/events_pb";
 import * as api_commons_audit_lms_events_pb from "../../../api/commons/audit/lms_events_pb";
@@ -551,6 +552,16 @@ export class AuditEvent extends jspb.Message {
   getBillingUpdateRateDefinitionEvent(): api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent | undefined;
   setBillingUpdateRateDefinitionEvent(value?: api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent): void;
 
+  hasDeliveryFailureEvent(): boolean;
+  clearDeliveryFailureEvent(): void;
+  getDeliveryFailureEvent(): api_commons_audit_delivery_events_pb.DeliveryFailureEvent | undefined;
+  setDeliveryFailureEvent(value?: api_commons_audit_delivery_events_pb.DeliveryFailureEvent): void;
+
+  hasDeliverySuccessEvent(): boolean;
+  clearDeliverySuccessEvent(): void;
+  getDeliverySuccessEvent(): api_commons_audit_delivery_events_pb.DeliverySuccessEvent | undefined;
+  setDeliverySuccessEvent(value?: api_commons_audit_delivery_events_pb.DeliverySuccessEvent): void;
+
   getEventCase(): AuditEvent.EventCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuditEvent.AsObject;
@@ -673,6 +684,8 @@ export namespace AuditEvent {
     billingUpdateBillingPlanEvent?: api_commons_audit_billing_events_pb.BillingUpdateBillingPlanEvent.AsObject,
     billingUpdateInvoiceEvent?: api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent.AsObject,
     billingUpdateRateDefinitionEvent?: api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent.AsObject,
+    deliveryFailureEvent?: api_commons_audit_delivery_events_pb.DeliveryFailureEvent.AsObject,
+    deliverySuccessEvent?: api_commons_audit_delivery_events_pb.DeliverySuccessEvent.AsObject,
   }
 
   export enum EventCase {
@@ -780,6 +793,8 @@ export namespace AuditEvent {
     BILLING_UPDATE_BILLING_PLAN_EVENT = 1008,
     BILLING_UPDATE_INVOICE_EVENT = 1009,
     BILLING_UPDATE_RATE_DEFINITION_EVENT = 1010,
+    DELIVERY_FAILURE_EVENT = 1100,
+    DELIVERY_SUCCESS_EVENT = 1101,
   }
 }
 

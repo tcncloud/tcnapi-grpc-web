@@ -12,10 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var globalThis = require("../../../global.js");
-var proto = globalThis.proto;
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -128,6 +128,12 @@ proto.api.commons.audit.EventType = {
   TICKET_PARTICIPANT_EVENT: 606,
   TICKET_CREATE_COMMENT_EVENT: 607,
   TICKET_REPLY_COMMENT_EVENT: 608,
+  TICKET_TEMPLATE_CREATE_EVENT: 609,
+  TICKET_TEMPLATE_EDIT_EVENT: 610,
+  TICKET_TEMPLATE_CLOSE_EVENT: 611,
+  TICKET_TEMPLATE_ASSIGN_EVENT: 612,
+  TICKET_TEMPLATE_STATE_CHANGE_EVENT: 613,
+  TICKET_PROJECT_STATE_CHANGE_EVENT: 614,
   COMPLIANCE_RND_QUERY_EVENT: 700,
   COMPLIANCE_RND_QUERY_CACHED_EVENT: 701,
   AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT: 800,
@@ -142,7 +148,9 @@ proto.api.commons.audit.EventType = {
   EVENT_TYPE_BILLING_EXPORT_INVOICE: 1007,
   EVENT_TYPE_BILLING_UPDATE_BILLING_PLAN: 1008,
   EVENT_TYPE_BILLING_UPDATE_INVOICE: 1009,
-  EVENT_TYPE_BILLING_UPDATE_RATE_DEFINITION: 1010
+  EVENT_TYPE_BILLING_UPDATE_RATE_DEFINITION: 1010,
+  EVENT_TYPE_DELIVERY_FAILURE: 1100,
+  EVENT_TYPE_DELIVERY_SUCCESS: 1101
 };
 
 goog.object.extend(exports, proto.api.commons.audit);

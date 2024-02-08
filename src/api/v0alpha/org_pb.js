@@ -12,10 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var globalThis = require("../../global.js");
-var proto = globalThis.proto;
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -20304,6 +20304,7 @@ proto.api.v0alpha.UserDetails.toObject = function(includeInstance, msg) {
     delegated: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
     timeZoneOverride: (f = msg.getTimeZoneOverride()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
     email: jspb.Message.getFieldWithDefault(msg, 34, ""),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 36, false),
     trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
     api_commons_org_trusts_pb.Trust.toObject, includeInstance)
   };
@@ -20467,6 +20468,10 @@ proto.api.v0alpha.UserDetails.deserializeBinaryFromReader = function(msg, reader
     case 34:
       var value = /** @type {string} */ (reader.readString());
       msg.setEmail(value);
+      break;
+    case 36:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     case 200:
       var value = new api_commons_org_trusts_pb.Trust;
@@ -20715,6 +20720,13 @@ proto.api.v0alpha.UserDetails.serializeBinaryToWriter = function(message, writer
   if (f.length > 0) {
     writer.writeString(
       34,
+      f
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      36,
       f
     );
   }
@@ -21440,6 +21452,24 @@ proto.api.v0alpha.UserDetails.prototype.getEmail = function() {
  */
 proto.api.v0alpha.UserDetails.prototype.setEmail = function(value) {
   return jspb.Message.setProto3StringField(this, 34, value);
+};
+
+
+/**
+ * optional bool email_verified = 36;
+ * @return {boolean}
+ */
+proto.api.v0alpha.UserDetails.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 36, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.UserDetails} returns this
+ */
+proto.api.v0alpha.UserDetails.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 36, value);
 };
 
 
