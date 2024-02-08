@@ -20,14 +20,8 @@ export class IdpClient extends jspb.Message {
   setTrustedPeersList(value: Array<string>): void;
   addTrustedPeers(value: string, index?: number): string;
 
-  getPublic(): boolean;
-  setPublic(value: boolean): void;
-
   getName(): string;
   setName(value: string): void;
-
-  getLogoUrl(): string;
-  setLogoUrl(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IdpClient.AsObject;
@@ -45,9 +39,7 @@ export namespace IdpClient {
     secret: string,
     redirectUrisList: Array<string>,
     trustedPeersList: Array<string>,
-    pb_public: boolean,
     name: string,
-    logoUrl: string,
   }
 }
 

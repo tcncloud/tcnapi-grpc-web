@@ -88,9 +88,7 @@ proto.api.commons.org.IdpClient.toObject = function(includeInstance, msg) {
     secret: jspb.Message.getFieldWithDefault(msg, 2, ""),
     redirectUrisList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     trustedPeersList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    pb_public: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    name: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    logoUrl: jspb.Message.getFieldWithDefault(msg, 7, "")
+    name: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -144,16 +142,8 @@ proto.api.commons.org.IdpClient.deserializeBinaryFromReader = function(msg, read
       msg.addTrustedPeers(value);
       break;
     case 5:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setPublic(value);
-      break;
-    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLogoUrl(value);
       break;
     default:
       reader.skipField();
@@ -212,24 +202,10 @@ proto.api.commons.org.IdpClient.serializeBinaryToWriter = function(message, writ
       f
     );
   }
-  f = message.getPublic();
-  if (f) {
-    writer.writeBool(
-      5,
-      f
-    );
-  }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
-      6,
-      f
-    );
-  }
-  f = message.getLogoUrl();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
+      5,
       f
     );
   }
@@ -347,29 +323,11 @@ proto.api.commons.org.IdpClient.prototype.clearTrustedPeersList = function() {
 
 
 /**
- * optional bool public = 5;
- * @return {boolean}
- */
-proto.api.commons.org.IdpClient.prototype.getPublic = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.commons.org.IdpClient} returns this
- */
-proto.api.commons.org.IdpClient.prototype.setPublic = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 5, value);
-};
-
-
-/**
- * optional string name = 6;
+ * optional string name = 5;
  * @return {string}
  */
 proto.api.commons.org.IdpClient.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -378,25 +336,7 @@ proto.api.commons.org.IdpClient.prototype.getName = function() {
  * @return {!proto.api.commons.org.IdpClient} returns this
  */
 proto.api.commons.org.IdpClient.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional string logo_url = 7;
- * @return {string}
- */
-proto.api.commons.org.IdpClient.prototype.getLogoUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.org.IdpClient} returns this
- */
-proto.api.commons.org.IdpClient.prototype.setLogoUrl = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
