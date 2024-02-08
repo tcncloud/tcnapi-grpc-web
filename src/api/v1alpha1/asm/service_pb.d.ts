@@ -21,6 +21,9 @@ export class CreateSessionReq extends jspb.Message {
   getSubsessionType(): api_commons_asm_pb.AsmSubsessionTypeMap[keyof api_commons_asm_pb.AsmSubsessionTypeMap];
   setSubsessionType(value: api_commons_asm_pb.AsmSubsessionTypeMap[keyof api_commons_asm_pb.AsmSubsessionTypeMap]): void;
 
+  getEnableVoice(): boolean;
+  setEnableVoice(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateSessionReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateSessionReq): CreateSessionReq.AsObject;
@@ -36,6 +39,7 @@ export namespace CreateSessionReq {
     huntGroupSid: number,
     skillsMap: Array<[string, number]>,
     subsessionType: api_commons_asm_pb.AsmSubsessionTypeMap[keyof api_commons_asm_pb.AsmSubsessionTypeMap],
+    enableVoice: boolean,
   }
 }
 
@@ -50,6 +54,9 @@ export class CreateSessionRes extends jspb.Message {
   clearVoiceRegistration(): void;
   getVoiceRegistration(): VoiceRegistration | undefined;
   setVoiceRegistration(value?: VoiceRegistration): void;
+
+  getEnableVoice(): boolean;
+  setEnableVoice(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateSessionRes.AsObject;
@@ -66,6 +73,7 @@ export namespace CreateSessionRes {
     asmSessionSid: number,
     voiceSessionSid: number,
     voiceRegistration?: VoiceRegistration.AsObject,
+    enableVoice: boolean,
   }
 }
 

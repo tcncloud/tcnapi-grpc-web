@@ -823,7 +823,8 @@ proto.api.v1alpha1.asm.CreateSessionReq.toObject = function(includeInstance, msg
   var f, obj = {
     huntGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : [],
-    subsessionType: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    subsessionType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    enableVoice: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -874,6 +875,10 @@ proto.api.v1alpha1.asm.CreateSessionReq.deserializeBinaryFromReader = function(m
       var value = /** @type {!proto.api.commons.AsmSubsessionType} */ (reader.readEnum());
       msg.setSubsessionType(value);
       break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnableVoice(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -918,6 +923,13 @@ proto.api.v1alpha1.asm.CreateSessionReq.serializeBinaryToWriter = function(messa
   if (f !== 0.0) {
     writer.writeEnum(
       3,
+      f
+    );
+  }
+  f = message.getEnableVoice();
+  if (f) {
+    writer.writeBool(
+      4,
       f
     );
   }
@@ -983,6 +995,24 @@ proto.api.v1alpha1.asm.CreateSessionReq.prototype.setSubsessionType = function(v
 };
 
 
+/**
+ * optional bool enable_voice = 4;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.asm.CreateSessionReq.prototype.getEnableVoice = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.asm.CreateSessionReq} returns this
+ */
+proto.api.v1alpha1.asm.CreateSessionReq.prototype.setEnableVoice = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
 
 
 
@@ -1017,7 +1047,8 @@ proto.api.v1alpha1.asm.CreateSessionRes.toObject = function(includeInstance, msg
   var f, obj = {
     asmSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    voiceRegistration: (f = msg.getVoiceRegistration()) && proto.api.v1alpha1.asm.VoiceRegistration.toObject(includeInstance, f)
+    voiceRegistration: (f = msg.getVoiceRegistration()) && proto.api.v1alpha1.asm.VoiceRegistration.toObject(includeInstance, f),
+    enableVoice: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -1066,6 +1097,10 @@ proto.api.v1alpha1.asm.CreateSessionRes.deserializeBinaryFromReader = function(m
       var value = new proto.api.v1alpha1.asm.VoiceRegistration;
       reader.readMessage(value,proto.api.v1alpha1.asm.VoiceRegistration.deserializeBinaryFromReader);
       msg.setVoiceRegistration(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnableVoice(value);
       break;
     default:
       reader.skipField();
@@ -1116,6 +1151,13 @@ proto.api.v1alpha1.asm.CreateSessionRes.serializeBinaryToWriter = function(messa
       3,
       f,
       proto.api.v1alpha1.asm.VoiceRegistration.serializeBinaryToWriter
+    );
+  }
+  f = message.getEnableVoice();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
     );
   }
 };
@@ -1191,6 +1233,24 @@ proto.api.v1alpha1.asm.CreateSessionRes.prototype.clearVoiceRegistration = funct
  */
 proto.api.v1alpha1.asm.CreateSessionRes.prototype.hasVoiceRegistration = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool enable_voice = 4;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.asm.CreateSessionRes.prototype.getEnableVoice = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.asm.CreateSessionRes} returns this
+ */
+proto.api.v1alpha1.asm.CreateSessionRes.prototype.setEnableVoice = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
