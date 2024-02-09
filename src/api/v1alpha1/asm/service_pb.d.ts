@@ -55,9 +55,6 @@ export class CreateSessionRes extends jspb.Message {
   getVoiceRegistration(): VoiceRegistration | undefined;
   setVoiceRegistration(value?: VoiceRegistration): void;
 
-  getEnableVoice(): boolean;
-  setEnableVoice(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateSessionRes.AsObject;
   static toObject(includeInstance: boolean, msg: CreateSessionRes): CreateSessionRes.AsObject;
@@ -73,7 +70,6 @@ export namespace CreateSessionRes {
     asmSessionSid: number,
     voiceSessionSid: number,
     voiceRegistration?: VoiceRegistration.AsObject,
-    enableVoice: boolean,
   }
 }
 
