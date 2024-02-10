@@ -3655,3 +3655,47 @@ export namespace UpdateWhatsAppNumberResponse {
   }
 }
 
+export class CreateManualTaskReq extends jspb.Message {
+  getCampaignSid(): string;
+  setCampaignSid(value: string): void;
+
+  getCampaignModuleSid(): string;
+  setCampaignModuleSid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateManualTaskReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateManualTaskReq): CreateManualTaskReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateManualTaskReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateManualTaskReq;
+  static deserializeBinaryFromReader(message: CreateManualTaskReq, reader: jspb.BinaryReader): CreateManualTaskReq;
+}
+
+export namespace CreateManualTaskReq {
+  export type AsObject = {
+    campaignSid: string,
+    campaignModuleSid: string,
+  }
+}
+
+export class CreateManualTaskRes extends jspb.Message {
+  getReferenceId(): string;
+  setReferenceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateManualTaskRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateManualTaskRes): CreateManualTaskRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateManualTaskRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateManualTaskRes;
+  static deserializeBinaryFromReader(message: CreateManualTaskRes, reader: jspb.BinaryReader): CreateManualTaskRes;
+}
+
+export namespace CreateManualTaskRes {
+  export type AsObject = {
+    referenceId: string,
+  }
+}
+

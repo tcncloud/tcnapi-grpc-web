@@ -654,6 +654,15 @@ type OmniApiUpdateWhatsAppNumber = {
   readonly responseType: typeof api_v0alpha_omniapi_pb.UpdateWhatsAppNumberResponse;
 };
 
+type OmniApiCreateManualTask = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.CreateManualTaskReq;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.CreateManualTaskRes;
+};
+
 export class OmniApi {
   static readonly serviceName: string;
   static readonly ArchiveCampaign: OmniApiArchiveCampaign;
@@ -728,6 +737,7 @@ export class OmniApi {
   static readonly ListWhatsAppNumbers: OmniApiListWhatsAppNumbers;
   static readonly CreateWhatsAppNumber: OmniApiCreateWhatsAppNumber;
   static readonly UpdateWhatsAppNumber: OmniApiUpdateWhatsAppNumber;
+  static readonly CreateManualTask: OmniApiCreateManualTask;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1393,6 +1403,15 @@ export class OmniApiClient {
   updateWhatsAppNumber(
     requestMessage: api_v0alpha_omniapi_pb.UpdateWhatsAppNumberRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.UpdateWhatsAppNumberResponse|null) => void
+  ): UnaryResponse;
+  createManualTask(
+    requestMessage: api_v0alpha_omniapi_pb.CreateManualTaskReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CreateManualTaskRes|null) => void
+  ): UnaryResponse;
+  createManualTask(
+    requestMessage: api_v0alpha_omniapi_pb.CreateManualTaskReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.CreateManualTaskRes|null) => void
   ): UnaryResponse;
 }
 
