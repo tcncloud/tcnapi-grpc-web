@@ -1691,3 +1691,115 @@ export namespace AdminClientPreferences {
   }
 }
 
+export class BusinessHours extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getId(): string;
+  setId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  clearRangesList(): void;
+  getRangesList(): Array<Range>;
+  setRangesList(value: Array<Range>): void;
+  addRanges(value?: Range, index?: number): Range;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BusinessHours.AsObject;
+  static toObject(includeInstance: boolean, msg: BusinessHours): BusinessHours.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BusinessHours, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BusinessHours;
+  static deserializeBinaryFromReader(message: BusinessHours, reader: jspb.BinaryReader): BusinessHours;
+}
+
+export namespace BusinessHours {
+  export type AsObject = {
+    orgId: string,
+    id: string,
+    name: string,
+    description: string,
+    rangesList: Array<Range.AsObject>,
+  }
+}
+
+export class Range extends jspb.Message {
+  getStartHour(): number;
+  setStartHour(value: number): void;
+
+  getStartMinute(): number;
+  setStartMinute(value: number): void;
+
+  getEndHour(): number;
+  setEndHour(value: number): void;
+
+  getEndMinute(): number;
+  setEndMinute(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Range.AsObject;
+  static toObject(includeInstance: boolean, msg: Range): Range.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Range, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Range;
+  static deserializeBinaryFromReader(message: Range, reader: jspb.BinaryReader): Range;
+}
+
+export namespace Range {
+  export type AsObject = {
+    startHour: number,
+    startMinute: number,
+    endHour: number,
+    endMinute: number,
+  }
+}
+
+export class CreateBusinessHoursRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  hasBusinessHours(): boolean;
+  clearBusinessHours(): void;
+  getBusinessHours(): BusinessHours | undefined;
+  setBusinessHours(value?: BusinessHours): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateBusinessHoursRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateBusinessHoursRequest): CreateBusinessHoursRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateBusinessHoursRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateBusinessHoursRequest;
+  static deserializeBinaryFromReader(message: CreateBusinessHoursRequest, reader: jspb.BinaryReader): CreateBusinessHoursRequest;
+}
+
+export namespace CreateBusinessHoursRequest {
+  export type AsObject = {
+    orgId: string,
+    businessHours?: BusinessHours.AsObject,
+  }
+}
+
+export class CreateBusinessHoursResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateBusinessHoursResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateBusinessHoursResponse): CreateBusinessHoursResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateBusinessHoursResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateBusinessHoursResponse;
+  static deserializeBinaryFromReader(message: CreateBusinessHoursResponse, reader: jspb.BinaryReader): CreateBusinessHoursResponse;
+}
+
+export namespace CreateBusinessHoursResponse {
+  export type AsObject = {
+  }
+}
+
