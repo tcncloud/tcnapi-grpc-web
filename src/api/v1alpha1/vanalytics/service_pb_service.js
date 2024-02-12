@@ -11,6 +11,7 @@ var api_v1alpha1_vanalytics_flag_snapshot_pb = require("../../../api/v1alpha1/va
 var api_v1alpha1_vanalytics_flag_transcript_pb = require("../../../api/v1alpha1/vanalytics/flag_transcript_pb");
 var api_v1alpha1_vanalytics_flag_transcript_filter_pb = require("../../../api/v1alpha1/vanalytics/flag_transcript_filter_pb");
 var api_v1alpha1_vanalytics_transcript_pb = require("../../../api/v1alpha1/vanalytics/transcript_pb");
+var api_v1alpha1_vanalytics_transcript_summary_pb = require("../../../api/v1alpha1/vanalytics/transcript_summary_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var Vanalytics = (function () {
@@ -89,6 +90,15 @@ Vanalytics.ListAgentResponseValues = {
   responseStream: false,
   requestType: api_v1alpha1_vanalytics_transcript_pb.ListAgentResponseValuesRequest,
   responseType: api_v1alpha1_vanalytics_transcript_pb.ListAgentResponseValuesResponse
+};
+
+Vanalytics.GetTranscriptSummary = {
+  methodName: "GetTranscriptSummary",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_vanalytics_transcript_summary_pb.GetTranscriptSummaryRequest,
+  responseType: api_v1alpha1_vanalytics_transcript_summary_pb.GetTranscriptSummaryResponse
 };
 
 Vanalytics.CreateFilter = {
@@ -545,6 +555,37 @@ VanalyticsClient.prototype.listAgentResponseValues = function listAgentResponseV
     callback = arguments[1];
   }
   var client = grpc.unary(Vanalytics.ListAgentResponseValues, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.getTranscriptSummary = function getTranscriptSummary(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.GetTranscriptSummary, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

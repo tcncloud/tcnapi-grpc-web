@@ -12,6 +12,7 @@ import * as api_v1alpha1_vanalytics_flag_snapshot_pb from "../../../api/v1alpha1
 import * as api_v1alpha1_vanalytics_flag_transcript_pb from "../../../api/v1alpha1/vanalytics/flag_transcript_pb";
 import * as api_v1alpha1_vanalytics_flag_transcript_filter_pb from "../../../api/v1alpha1/vanalytics/flag_transcript_filter_pb";
 import * as api_v1alpha1_vanalytics_transcript_pb from "../../../api/v1alpha1/vanalytics/transcript_pb";
+import * as api_v1alpha1_vanalytics_transcript_summary_pb from "../../../api/v1alpha1/vanalytics/transcript_summary_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
