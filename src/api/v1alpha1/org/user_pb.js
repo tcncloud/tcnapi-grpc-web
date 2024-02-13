@@ -714,7 +714,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.org.ListUsersByOrgIdRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.org.ListUsersByOrgIdRequest.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.org.ListUsersByOrgIdRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -10410,6 +10410,13 @@ proto.api.v1alpha1.org.ListUsersResponse.prototype.clearUsersList = function() {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.org.ListUsersByOrgIdRequest.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -10442,7 +10449,8 @@ proto.api.v1alpha1.org.ListUsersByOrgIdRequest.prototype.toObject = function(opt
 proto.api.v1alpha1.org.ListUsersByOrgIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    archivedFilter: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    archivedFilter: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    permissionFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10487,6 +10495,12 @@ proto.api.v1alpha1.org.ListUsersByOrgIdRequest.deserializeBinaryFromReader = fun
       var value = /** @type {!proto.api.commons.UserArchivedStateFilter} */ (reader.readEnum());
       msg.setArchivedFilter(value);
       break;
+    case 3:
+      var values = /** @type {!Array<!proto.api.commons.Permission>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addPermissionFilter(values[i]);
+      }
+      break;
     default:
       reader.skipField();
       break;
@@ -10530,6 +10544,13 @@ proto.api.v1alpha1.org.ListUsersByOrgIdRequest.serializeBinaryToWriter = functio
       f
     );
   }
+  f = message.getPermissionFilterList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -10566,6 +10587,43 @@ proto.api.v1alpha1.org.ListUsersByOrgIdRequest.prototype.getArchivedFilter = fun
  */
 proto.api.v1alpha1.org.ListUsersByOrgIdRequest.prototype.setArchivedFilter = function(value) {
   return jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+/**
+ * repeated api.commons.Permission permission_filter = 3;
+ * @return {!Array<!proto.api.commons.Permission>}
+ */
+proto.api.v1alpha1.org.ListUsersByOrgIdRequest.prototype.getPermissionFilterList = function() {
+  return /** @type {!Array<!proto.api.commons.Permission>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.Permission>} value
+ * @return {!proto.api.v1alpha1.org.ListUsersByOrgIdRequest} returns this
+ */
+proto.api.v1alpha1.org.ListUsersByOrgIdRequest.prototype.setPermissionFilterList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {!proto.api.commons.Permission} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.org.ListUsersByOrgIdRequest} returns this
+ */
+proto.api.v1alpha1.org.ListUsersByOrgIdRequest.prototype.addPermissionFilter = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.org.ListUsersByOrgIdRequest} returns this
+ */
+proto.api.v1alpha1.org.ListUsersByOrgIdRequest.prototype.clearPermissionFilterList = function() {
+  return this.setPermissionFilterList([]);
 };
 
 

@@ -1145,6 +1145,11 @@ export class ListUsersByOrgIdRequest extends jspb.Message {
   getArchivedFilter(): api_commons_user_pb.UserArchivedStateFilterMap[keyof api_commons_user_pb.UserArchivedStateFilterMap];
   setArchivedFilter(value: api_commons_user_pb.UserArchivedStateFilterMap[keyof api_commons_user_pb.UserArchivedStateFilterMap]): void;
 
+  clearPermissionFilterList(): void;
+  getPermissionFilterList(): Array<api_commons_perms_pb.PermissionMap[keyof api_commons_perms_pb.PermissionMap]>;
+  setPermissionFilterList(value: Array<api_commons_perms_pb.PermissionMap[keyof api_commons_perms_pb.PermissionMap]>): void;
+  addPermissionFilter(value: api_commons_perms_pb.PermissionMap[keyof api_commons_perms_pb.PermissionMap], index?: number): api_commons_perms_pb.PermissionMap[keyof api_commons_perms_pb.PermissionMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUsersByOrgIdRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListUsersByOrgIdRequest): ListUsersByOrgIdRequest.AsObject;
@@ -1159,6 +1164,7 @@ export namespace ListUsersByOrgIdRequest {
   export type AsObject = {
     orgId: string,
     archivedFilter: api_commons_user_pb.UserArchivedStateFilterMap[keyof api_commons_user_pb.UserArchivedStateFilterMap],
+    permissionFilterList: Array<api_commons_perms_pb.PermissionMap[keyof api_commons_perms_pb.PermissionMap]>,
   }
 }
 
