@@ -47,6 +47,8 @@ var api_commons_org_agent_profile_group_pb = require('../../api/commons/org/agen
 goog.object.extend(proto, api_commons_org_agent_profile_group_pb);
 var api_commons_org_trusts_pb = require('../../api/commons/org/trusts_pb.js');
 goog.object.extend(proto, api_commons_org_trusts_pb);
+var api_commons_org_user_pb = require('../../api/commons/org/user_pb.js');
+goog.object.extend(proto, api_commons_org_user_pb);
 var api_commons_org_preferences_pb = require('../../api/commons/org_preferences_pb.js');
 goog.object.extend(proto, api_commons_org_preferences_pb);
 var api_commons_perms_pb = require('../../api/commons/perms_pb.js');
@@ -16034,7 +16036,9 @@ proto.api.v0alpha.UserDescription.toObject = function(includeInstance, msg) {
     huntGroupSid: jspb.Message.getFieldWithDefault(msg, 169, 0),
     huntGroupName: jspb.Message.getFieldWithDefault(msg, 170, ""),
     trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
-    api_commons_org_trusts_pb.Trust.toObject, includeInstance)
+    api_commons_org_trusts_pb.Trust.toObject, includeInstance),
+    mfaInfo: (f = msg.getMfaInfo()) && api_commons_org_user_pb.MfaInfo.toObject(includeInstance, f),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 202, false)
   };
 
   if (includeInstance) {
@@ -16188,6 +16192,15 @@ proto.api.v0alpha.UserDescription.deserializeBinaryFromReader = function(msg, re
       var value = new api_commons_org_trusts_pb.Trust;
       reader.readMessage(value,api_commons_org_trusts_pb.Trust.deserializeBinaryFromReader);
       msg.addTrusts(value);
+      break;
+    case 201:
+      var value = new api_commons_org_user_pb.MfaInfo;
+      reader.readMessage(value,api_commons_org_user_pb.MfaInfo.deserializeBinaryFromReader);
+      msg.setMfaInfo(value);
+      break;
+    case 202:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     default:
       reader.skipField();
@@ -16418,6 +16431,21 @@ proto.api.v0alpha.UserDescription.serializeBinaryToWriter = function(message, wr
       200,
       f,
       api_commons_org_trusts_pb.Trust.serializeBinaryToWriter
+    );
+  }
+  f = message.getMfaInfo();
+  if (f != null) {
+    writer.writeMessage(
+      201,
+      f,
+      api_commons_org_user_pb.MfaInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      202,
+      f
     );
   }
 };
@@ -17079,6 +17107,61 @@ proto.api.v0alpha.UserDescription.prototype.addTrusts = function(opt_value, opt_
  */
 proto.api.v0alpha.UserDescription.prototype.clearTrustsList = function() {
   return this.setTrustsList([]);
+};
+
+
+/**
+ * optional api.commons.org.MfaInfo mfa_info = 201;
+ * @return {?proto.api.commons.org.MfaInfo}
+ */
+proto.api.v0alpha.UserDescription.prototype.getMfaInfo = function() {
+  return /** @type{?proto.api.commons.org.MfaInfo} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo, 201));
+};
+
+
+/**
+ * @param {?proto.api.commons.org.MfaInfo|undefined} value
+ * @return {!proto.api.v0alpha.UserDescription} returns this
+*/
+proto.api.v0alpha.UserDescription.prototype.setMfaInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 201, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v0alpha.UserDescription} returns this
+ */
+proto.api.v0alpha.UserDescription.prototype.clearMfaInfo = function() {
+  return this.setMfaInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.UserDescription.prototype.hasMfaInfo = function() {
+  return jspb.Message.getField(this, 201) != null;
+};
+
+
+/**
+ * optional bool email_verified = 202;
+ * @return {boolean}
+ */
+proto.api.v0alpha.UserDescription.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 202, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.UserDescription} returns this
+ */
+proto.api.v0alpha.UserDescription.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 202, value);
 };
 
 
