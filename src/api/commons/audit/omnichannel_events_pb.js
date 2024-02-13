@@ -5751,7 +5751,8 @@ proto.api.commons.audit.OmnichannelCloseConversationEvent.toObject = function(in
     message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
     conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
     asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    userId: jspb.Message.getFieldWithDefault(msg, 4, "")
+    userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    transcriptPath: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -5806,6 +5807,10 @@ proto.api.commons.audit.OmnichannelCloseConversationEvent.deserializeBinaryFromR
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTranscriptPath(value);
       break;
     default:
       reader.skipField();
@@ -5864,6 +5869,13 @@ proto.api.commons.audit.OmnichannelCloseConversationEvent.serializeBinaryToWrite
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getTranscriptPath();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -5996,6 +6008,24 @@ proto.api.commons.audit.OmnichannelCloseConversationEvent.prototype.getUserId = 
  */
 proto.api.commons.audit.OmnichannelCloseConversationEvent.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string transcript_path = 5;
+ * @return {string}
+ */
+proto.api.commons.audit.OmnichannelCloseConversationEvent.prototype.getTranscriptPath = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.audit.OmnichannelCloseConversationEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelCloseConversationEvent.prototype.setTranscriptPath = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
