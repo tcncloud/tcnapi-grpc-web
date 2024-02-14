@@ -11,6 +11,7 @@ import * as api_v1alpha1_vanalytics_flag_snapshot_pb from "../../../api/v1alpha1
 import * as api_v1alpha1_vanalytics_flag_transcript_pb from "../../../api/v1alpha1/vanalytics/flag_transcript_pb";
 import * as api_v1alpha1_vanalytics_flag_transcript_filter_pb from "../../../api/v1alpha1/vanalytics/flag_transcript_filter_pb";
 import * as api_v1alpha1_vanalytics_transcript_pb from "../../../api/v1alpha1/vanalytics/transcript_pb";
+import * as api_v1alpha1_vanalytics_transcript_summary_pb from "../../../api/v1alpha1/vanalytics/transcript_summary_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type VanalyticsAudit = {
@@ -83,6 +84,15 @@ type VanalyticsListAgentResponseValues = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_vanalytics_transcript_pb.ListAgentResponseValuesRequest;
   readonly responseType: typeof api_v1alpha1_vanalytics_transcript_pb.ListAgentResponseValuesResponse;
+};
+
+type VanalyticsGetTranscriptSummary = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_vanalytics_transcript_summary_pb.GetTranscriptSummaryRequest;
+  readonly responseType: typeof api_v1alpha1_vanalytics_transcript_summary_pb.GetTranscriptSummaryResponse;
 };
 
 type VanalyticsCreateFilter = {
@@ -320,6 +330,7 @@ export class Vanalytics {
   static readonly BulkDeleteTranscripts: VanalyticsBulkDeleteTranscripts;
   static readonly BulkRestoreTranscripts: VanalyticsBulkRestoreTranscripts;
   static readonly ListAgentResponseValues: VanalyticsListAgentResponseValues;
+  static readonly GetTranscriptSummary: VanalyticsGetTranscriptSummary;
   static readonly CreateFilter: VanalyticsCreateFilter;
   static readonly ListFilters: VanalyticsListFilters;
   static readonly UpdateFilter: VanalyticsUpdateFilter;
@@ -450,6 +461,15 @@ export class VanalyticsClient {
   listAgentResponseValues(
     requestMessage: api_v1alpha1_vanalytics_transcript_pb.ListAgentResponseValuesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_transcript_pb.ListAgentResponseValuesResponse|null) => void
+  ): UnaryResponse;
+  getTranscriptSummary(
+    requestMessage: api_v1alpha1_vanalytics_transcript_summary_pb.GetTranscriptSummaryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_transcript_summary_pb.GetTranscriptSummaryResponse|null) => void
+  ): UnaryResponse;
+  getTranscriptSummary(
+    requestMessage: api_v1alpha1_vanalytics_transcript_summary_pb.GetTranscriptSummaryRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_transcript_summary_pb.GetTranscriptSummaryResponse|null) => void
   ): UnaryResponse;
   createFilter(
     requestMessage: api_v1alpha1_vanalytics_filter_pb.CreateFilterRequest,
