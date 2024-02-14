@@ -1111,6 +1111,14 @@ export namespace ListUsersResponse {
     setTrustIdsList(value: Array<string>): void;
     addTrustIds(value: string, index?: number): string;
 
+    hasMfaInfo(): boolean;
+    clearMfaInfo(): void;
+    getMfaInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+    setMfaInfo(value?: api_commons_org_user_pb.MfaInfo): void;
+
+    getEmailVerified(): boolean;
+    setEmailVerified(value: boolean): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UserDetails.AsObject;
     static toObject(includeInstance: boolean, msg: UserDetails): UserDetails.AsObject;
@@ -1134,6 +1142,8 @@ export namespace ListUsersResponse {
       accountOwner: boolean,
       agent: boolean,
       trustIdsList: Array<string>,
+      mfaInfo?: api_commons_org_user_pb.MfaInfo.AsObject,
+      emailVerified: boolean,
     }
   }
 }
@@ -1226,6 +1236,14 @@ export namespace ListUsersByOrgIdResponse {
     setTrustIdsList(value: Array<string>): void;
     addTrustIds(value: string, index?: number): string;
 
+    hasMfaInfo(): boolean;
+    clearMfaInfo(): void;
+    getMfaInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+    setMfaInfo(value?: api_commons_org_user_pb.MfaInfo): void;
+
+    getEmailVerified(): boolean;
+    setEmailVerified(value: boolean): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UserDetails.AsObject;
     static toObject(includeInstance: boolean, msg: UserDetails): UserDetails.AsObject;
@@ -1250,6 +1268,8 @@ export namespace ListUsersByOrgIdResponse {
       accountOwner: boolean,
       agent: boolean,
       trustIdsList: Array<string>,
+      mfaInfo?: api_commons_org_user_pb.MfaInfo.AsObject,
+      emailVerified: boolean,
     }
   }
 }
@@ -1343,6 +1363,14 @@ export namespace ListUsersByRegionResponse {
     setTrustIdsList(value: Array<string>): void;
     addTrustIds(value: string, index?: number): string;
 
+    hasMfaInfo(): boolean;
+    clearMfaInfo(): void;
+    getMfaInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+    setMfaInfo(value?: api_commons_org_user_pb.MfaInfo): void;
+
+    getEmailVerified(): boolean;
+    setEmailVerified(value: boolean): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UserDetails.AsObject;
     static toObject(includeInstance: boolean, msg: UserDetails): UserDetails.AsObject;
@@ -1366,6 +1394,8 @@ export namespace ListUsersByRegionResponse {
       accountOwner: boolean,
       agent: boolean,
       trustIdsList: Array<string>,
+      mfaInfo?: api_commons_org_user_pb.MfaInfo.AsObject,
+      emailVerified: boolean,
     }
   }
 }

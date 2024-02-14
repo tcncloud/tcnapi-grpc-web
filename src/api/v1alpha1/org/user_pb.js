@@ -9923,7 +9923,9 @@ proto.api.v1alpha1.org.ListUsersResponse.UserDetails.toObject = function(include
     api_commons_org_labels_pb.Label.toObject, includeInstance),
     accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     agent: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
-    trustIdsList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f
+    trustIdsList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f,
+    mfaInfo: (f = msg.getMfaInfo()) && api_commons_org_user_pb.MfaInfo.toObject(includeInstance, f),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 15, false)
   };
 
   if (includeInstance) {
@@ -10004,6 +10006,15 @@ proto.api.v1alpha1.org.ListUsersResponse.UserDetails.deserializeBinaryFromReader
     case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.addTrustIds(value);
+      break;
+    case 14:
+      var value = new api_commons_org_user_pb.MfaInfo;
+      reader.readMessage(value,api_commons_org_user_pb.MfaInfo.deserializeBinaryFromReader);
+      msg.setMfaInfo(value);
+      break;
+    case 15:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     default:
       reader.skipField();
@@ -10109,6 +10120,21 @@ proto.api.v1alpha1.org.ListUsersResponse.UserDetails.serializeBinaryToWriter = f
   if (f.length > 0) {
     writer.writeRepeatedString(
       13,
+      f
+    );
+  }
+  f = message.getMfaInfo();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      api_commons_org_user_pb.MfaInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      15,
       f
     );
   }
@@ -10368,6 +10394,61 @@ proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.addTrustIds = fun
  */
 proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.clearTrustIdsList = function() {
   return this.setTrustIdsList([]);
+};
+
+
+/**
+ * optional api.commons.org.MfaInfo mfa_info = 14;
+ * @return {?proto.api.commons.org.MfaInfo}
+ */
+proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.getMfaInfo = function() {
+  return /** @type{?proto.api.commons.org.MfaInfo} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo, 14));
+};
+
+
+/**
+ * @param {?proto.api.commons.org.MfaInfo|undefined} value
+ * @return {!proto.api.v1alpha1.org.ListUsersResponse.UserDetails} returns this
+*/
+proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.setMfaInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 14, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.ListUsersResponse.UserDetails} returns this
+ */
+proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.clearMfaInfo = function() {
+  return this.setMfaInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.hasMfaInfo = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional bool email_verified = 15;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.ListUsersResponse.UserDetails} returns this
+ */
+proto.api.v1alpha1.org.ListUsersResponse.UserDetails.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 
@@ -10742,7 +10823,9 @@ proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.toObject = function(
     api_commons_org_labels_pb.Label.toObject, includeInstance),
     accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     agent: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    trustIdsList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f
+    trustIdsList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
+    mfaInfo: (f = msg.getMfaInfo()) && api_commons_org_user_pb.MfaInfo.toObject(includeInstance, f),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 15, false)
   };
 
   if (includeInstance) {
@@ -10827,6 +10910,15 @@ proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.deserializeBinaryFro
     case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.addTrustIds(value);
+      break;
+    case 14:
+      var value = new api_commons_org_user_pb.MfaInfo;
+      reader.readMessage(value,api_commons_org_user_pb.MfaInfo.deserializeBinaryFromReader);
+      msg.setMfaInfo(value);
+      break;
+    case 15:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     default:
       reader.skipField();
@@ -10939,6 +11031,21 @@ proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.serializeBinaryToWri
   if (f.length > 0) {
     writer.writeRepeatedString(
       12,
+      f
+    );
+  }
+  f = message.getMfaInfo();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      api_commons_org_user_pb.MfaInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      15,
       f
     );
   }
@@ -11216,6 +11323,61 @@ proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.addTrustId
  */
 proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.clearTrustIdsList = function() {
   return this.setTrustIdsList([]);
+};
+
+
+/**
+ * optional api.commons.org.MfaInfo mfa_info = 14;
+ * @return {?proto.api.commons.org.MfaInfo}
+ */
+proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.getMfaInfo = function() {
+  return /** @type{?proto.api.commons.org.MfaInfo} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo, 14));
+};
+
+
+/**
+ * @param {?proto.api.commons.org.MfaInfo|undefined} value
+ * @return {!proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails} returns this
+*/
+proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.setMfaInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 14, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails} returns this
+ */
+proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.clearMfaInfo = function() {
+  return this.setMfaInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.hasMfaInfo = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional bool email_verified = 15;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails} returns this
+ */
+proto.api.v1alpha1.org.ListUsersByOrgIdResponse.UserDetails.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 
@@ -11619,7 +11781,9 @@ proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.toObject = function
     api_commons_org_labels_pb.Label.toObject, includeInstance),
     accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     agent: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
-    trustIdsList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f
+    trustIdsList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f,
+    mfaInfo: (f = msg.getMfaInfo()) && api_commons_org_user_pb.MfaInfo.toObject(includeInstance, f),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 15, false)
   };
 
   if (includeInstance) {
@@ -11700,6 +11864,15 @@ proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.deserializeBinaryFr
     case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.addTrustIds(value);
+      break;
+    case 14:
+      var value = new api_commons_org_user_pb.MfaInfo;
+      reader.readMessage(value,api_commons_org_user_pb.MfaInfo.deserializeBinaryFromReader);
+      msg.setMfaInfo(value);
+      break;
+    case 15:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     default:
       reader.skipField();
@@ -11805,6 +11978,21 @@ proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.serializeBinaryToWr
   if (f.length > 0) {
     writer.writeRepeatedString(
       13,
+      f
+    );
+  }
+  f = message.getMfaInfo();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      api_commons_org_user_pb.MfaInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      15,
       f
     );
   }
@@ -12064,6 +12252,61 @@ proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.addTrustI
  */
 proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.clearTrustIdsList = function() {
   return this.setTrustIdsList([]);
+};
+
+
+/**
+ * optional api.commons.org.MfaInfo mfa_info = 14;
+ * @return {?proto.api.commons.org.MfaInfo}
+ */
+proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.getMfaInfo = function() {
+  return /** @type{?proto.api.commons.org.MfaInfo} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo, 14));
+};
+
+
+/**
+ * @param {?proto.api.commons.org.MfaInfo|undefined} value
+ * @return {!proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails} returns this
+*/
+proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.setMfaInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 14, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails} returns this
+ */
+proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.clearMfaInfo = function() {
+  return this.setMfaInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.hasMfaInfo = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional bool email_verified = 15;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails} returns this
+ */
+proto.api.v1alpha1.org.ListUsersByRegionResponse.UserDetails.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 
