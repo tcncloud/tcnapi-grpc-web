@@ -23,6 +23,8 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_v1alpha1_vanalytics_dncl_list_pb = require('../../../api/v1alpha1/vanalytics/dncl_list_pb.js');
+goog.object.extend(proto, api_v1alpha1_vanalytics_dncl_list_pb);
 var api_v1alpha1_vanalytics_filter_pb = require('../../../api/v1alpha1/vanalytics/filter_pb.js');
 goog.object.extend(proto, api_v1alpha1_vanalytics_filter_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
@@ -1965,7 +1967,7 @@ proto.api.v1alpha1.vanalytics.GetFlagRequest.prototype.hasFlagSid = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.vanalytics.Flag.repeatedFields_ = [8];
+proto.api.v1alpha1.vanalytics.Flag.repeatedFields_ = [8,12];
 
 
 
@@ -2008,7 +2010,9 @@ proto.api.v1alpha1.vanalytics.Flag.toObject = function(includeInstance, msg) {
     api_v1alpha1_vanalytics_filter_pb.Filter.toObject, includeInstance),
     mustReview: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     mustNotify: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    boolExpr: (f = msg.getBoolExpr()) && proto.api.v1alpha1.vanalytics.Flag.BoolExpr.toObject(includeInstance, f)
+    boolExpr: (f = msg.getBoolExpr()) && proto.api.v1alpha1.vanalytics.Flag.BoolExpr.toObject(includeInstance, f),
+    dnclListList: jspb.Message.toObjectList(msg.getDnclListList(),
+    api_v1alpha1_vanalytics_dncl_list_pb.DnclList.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2086,6 +2090,11 @@ proto.api.v1alpha1.vanalytics.Flag.deserializeBinaryFromReader = function(msg, r
       var value = new proto.api.v1alpha1.vanalytics.Flag.BoolExpr;
       reader.readMessage(value,proto.api.v1alpha1.vanalytics.Flag.BoolExpr.deserializeBinaryFromReader);
       msg.setBoolExpr(value);
+      break;
+    case 12:
+      var value = new api_v1alpha1_vanalytics_dncl_list_pb.DnclList;
+      reader.readMessage(value,api_v1alpha1_vanalytics_dncl_list_pb.DnclList.deserializeBinaryFromReader);
+      msg.addDnclList(value);
       break;
     default:
       reader.skipField();
@@ -2186,6 +2195,14 @@ proto.api.v1alpha1.vanalytics.Flag.serializeBinaryToWriter = function(message, w
       11,
       f,
       proto.api.v1alpha1.vanalytics.Flag.BoolExpr.serializeBinaryToWriter
+    );
+  }
+  f = message.getDnclListList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      12,
+      f,
+      api_v1alpha1_vanalytics_dncl_list_pb.DnclList.serializeBinaryToWriter
     );
   }
 };
@@ -2852,6 +2869,44 @@ proto.api.v1alpha1.vanalytics.Flag.prototype.clearBoolExpr = function() {
  */
 proto.api.v1alpha1.vanalytics.Flag.prototype.hasBoolExpr = function() {
   return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * repeated DnclList dncl_list = 12;
+ * @return {!Array<!proto.api.v1alpha1.vanalytics.DnclList>}
+ */
+proto.api.v1alpha1.vanalytics.Flag.prototype.getDnclListList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.vanalytics.DnclList>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_vanalytics_dncl_list_pb.DnclList, 12));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.vanalytics.DnclList>} value
+ * @return {!proto.api.v1alpha1.vanalytics.Flag} returns this
+*/
+proto.api.v1alpha1.vanalytics.Flag.prototype.setDnclListList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 12, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.vanalytics.DnclList=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.vanalytics.DnclList}
+ */
+proto.api.v1alpha1.vanalytics.Flag.prototype.addDnclList = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.api.v1alpha1.vanalytics.DnclList, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.vanalytics.Flag} returns this
+ */
+proto.api.v1alpha1.vanalytics.Flag.prototype.clearDnclListList = function() {
+  return this.setDnclListList([]);
 };
 
 
