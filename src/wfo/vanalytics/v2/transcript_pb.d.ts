@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
@@ -296,6 +297,9 @@ export namespace Sms {
     setSegmentsList(value: Array<Sms.Segment>): void;
     addSegments(value?: Sms.Segment, index?: number): Sms.Segment;
 
+    getUserId(): string;
+    setUserId(value: string): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Thread.AsObject;
     static toObject(includeInstance: boolean, msg: Thread): Thread.AsObject;
@@ -310,12 +314,18 @@ export namespace Sms {
     export type AsObject = {
       id: number,
       segmentsList: Array<Sms.Segment.AsObject>,
+      userId: string,
     }
   }
 
   export class Segment extends jspb.Message {
     getText(): string;
     setText(value: string): void;
+
+    hasOffset(): boolean;
+    clearOffset(): void;
+    getOffset(): google_protobuf_duration_pb.Duration | undefined;
+    setOffset(value?: google_protobuf_duration_pb.Duration): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Segment.AsObject;
@@ -330,6 +340,7 @@ export namespace Sms {
   export namespace Segment {
     export type AsObject = {
       text: string,
+      offset?: google_protobuf_duration_pb.Duration.AsObject,
     }
   }
 }
@@ -349,6 +360,27 @@ export class Call extends jspb.Message {
   setThreadsList(value: Array<Call.Thread>): void;
   addThreads(value?: Call.Thread, index?: number): Call.Thread;
 
+  hasSilence(): boolean;
+  clearSilence(): void;
+  getSilence(): Call.Silence | undefined;
+  setSilence(value?: Call.Silence): void;
+
+  hasTalkOver(): boolean;
+  clearTalkOver(): void;
+  getTalkOver(): Call.TalkOver | undefined;
+  setTalkOver(value?: Call.TalkOver): void;
+
+  hasTalkTime(): boolean;
+  clearTalkTime(): void;
+  getTalkTime(): google_protobuf_duration_pb.Duration | undefined;
+  setTalkTime(value?: google_protobuf_duration_pb.Duration): void;
+
+  getCallerId(): string;
+  setCallerId(value: string): void;
+
+  getGroupName(): string;
+  setGroupName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Call.AsObject;
   static toObject(includeInstance: boolean, msg: Call): Call.AsObject;
@@ -365,6 +397,11 @@ export namespace Call {
     callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
     audioTime: number,
     threadsList: Array<Call.Thread.AsObject>,
+    silence?: Call.Silence.AsObject,
+    talkOver?: Call.TalkOver.AsObject,
+    talkTime?: google_protobuf_duration_pb.Duration.AsObject,
+    callerId: string,
+    groupName: string,
   }
 
   export class Thread extends jspb.Message {
@@ -375,6 +412,9 @@ export namespace Call {
     getSegmentsList(): Array<Call.Segment>;
     setSegmentsList(value: Array<Call.Segment>): void;
     addSegments(value?: Call.Segment, index?: number): Call.Segment;
+
+    getUserId(): string;
+    setUserId(value: string): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Thread.AsObject;
@@ -390,12 +430,18 @@ export namespace Call {
     export type AsObject = {
       id: number,
       segmentsList: Array<Call.Segment.AsObject>,
+      userId: string,
     }
   }
 
   export class Segment extends jspb.Message {
     getText(): string;
     setText(value: string): void;
+
+    hasOffset(): boolean;
+    clearOffset(): void;
+    getOffset(): google_protobuf_duration_pb.Duration | undefined;
+    setOffset(value?: google_protobuf_duration_pb.Duration): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Segment.AsObject;
@@ -410,6 +456,175 @@ export namespace Call {
   export namespace Segment {
     export type AsObject = {
       text: string,
+      offset?: google_protobuf_duration_pb.Duration.AsObject,
+    }
+  }
+
+  export class TalkOver extends jspb.Message {
+    hasDuration(): boolean;
+    clearDuration(): void;
+    getDuration(): Call.TalkOver.Duration | undefined;
+    setDuration(value?: Call.TalkOver.Duration): void;
+
+    hasOccurrence(): boolean;
+    clearOccurrence(): void;
+    getOccurrence(): Call.TalkOver.Occurrence | undefined;
+    setOccurrence(value?: Call.TalkOver.Occurrence): void;
+
+    getThreshold(): number;
+    setThreshold(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TalkOver.AsObject;
+    static toObject(includeInstance: boolean, msg: TalkOver): TalkOver.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TalkOver, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TalkOver;
+    static deserializeBinaryFromReader(message: TalkOver, reader: jspb.BinaryReader): TalkOver;
+  }
+
+  export namespace TalkOver {
+    export type AsObject = {
+      duration?: Call.TalkOver.Duration.AsObject,
+      occurrence?: Call.TalkOver.Occurrence.AsObject,
+      threshold: number,
+    }
+
+    export class Duration extends jspb.Message {
+      hasTotal(): boolean;
+      clearTotal(): void;
+      getTotal(): google_protobuf_duration_pb.Duration | undefined;
+      setTotal(value?: google_protobuf_duration_pb.Duration): void;
+
+      hasMax(): boolean;
+      clearMax(): void;
+      getMax(): google_protobuf_duration_pb.Duration | undefined;
+      setMax(value?: google_protobuf_duration_pb.Duration): void;
+
+      getPercentage(): number;
+      setPercentage(value: number): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Duration.AsObject;
+      static toObject(includeInstance: boolean, msg: Duration): Duration.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Duration, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Duration;
+      static deserializeBinaryFromReader(message: Duration, reader: jspb.BinaryReader): Duration;
+    }
+
+    export namespace Duration {
+      export type AsObject = {
+        total?: google_protobuf_duration_pb.Duration.AsObject,
+        max?: google_protobuf_duration_pb.Duration.AsObject,
+        percentage: number,
+      }
+    }
+
+    export class Occurrence extends jspb.Message {
+      getTotal(): number;
+      setTotal(value: number): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Occurrence.AsObject;
+      static toObject(includeInstance: boolean, msg: Occurrence): Occurrence.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Occurrence, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Occurrence;
+      static deserializeBinaryFromReader(message: Occurrence, reader: jspb.BinaryReader): Occurrence;
+    }
+
+    export namespace Occurrence {
+      export type AsObject = {
+        total: number,
+      }
+    }
+  }
+
+  export class Silence extends jspb.Message {
+    hasDuration(): boolean;
+    clearDuration(): void;
+    getDuration(): Call.Silence.Duration | undefined;
+    setDuration(value?: Call.Silence.Duration): void;
+
+    hasOccurrence(): boolean;
+    clearOccurrence(): void;
+    getOccurrence(): Call.Silence.Occurrence | undefined;
+    setOccurrence(value?: Call.Silence.Occurrence): void;
+
+    getThreshold(): number;
+    setThreshold(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Silence.AsObject;
+    static toObject(includeInstance: boolean, msg: Silence): Silence.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Silence, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Silence;
+    static deserializeBinaryFromReader(message: Silence, reader: jspb.BinaryReader): Silence;
+  }
+
+  export namespace Silence {
+    export type AsObject = {
+      duration?: Call.Silence.Duration.AsObject,
+      occurrence?: Call.Silence.Occurrence.AsObject,
+      threshold: number,
+    }
+
+    export class Duration extends jspb.Message {
+      hasTotal(): boolean;
+      clearTotal(): void;
+      getTotal(): google_protobuf_duration_pb.Duration | undefined;
+      setTotal(value?: google_protobuf_duration_pb.Duration): void;
+
+      hasMax(): boolean;
+      clearMax(): void;
+      getMax(): google_protobuf_duration_pb.Duration | undefined;
+      setMax(value?: google_protobuf_duration_pb.Duration): void;
+
+      getPercentage(): number;
+      setPercentage(value: number): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Duration.AsObject;
+      static toObject(includeInstance: boolean, msg: Duration): Duration.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Duration, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Duration;
+      static deserializeBinaryFromReader(message: Duration, reader: jspb.BinaryReader): Duration;
+    }
+
+    export namespace Duration {
+      export type AsObject = {
+        total?: google_protobuf_duration_pb.Duration.AsObject,
+        max?: google_protobuf_duration_pb.Duration.AsObject,
+        percentage: number,
+      }
+    }
+
+    export class Occurrence extends jspb.Message {
+      getTotal(): number;
+      setTotal(value: number): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Occurrence.AsObject;
+      static toObject(includeInstance: boolean, msg: Occurrence): Occurrence.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Occurrence, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Occurrence;
+      static deserializeBinaryFromReader(message: Occurrence, reader: jspb.BinaryReader): Occurrence;
+    }
+
+    export namespace Occurrence {
+      export type AsObject = {
+        total: number,
+      }
     }
   }
 }
@@ -575,6 +790,21 @@ export class TranscriptQuery extends jspb.Message {
   getThreads(): TranscriptQuery.Threads | undefined;
   setThreads(value?: TranscriptQuery.Threads): void;
 
+  hasFlagSummary(): boolean;
+  clearFlagSummary(): void;
+  getFlagSummary(): TranscriptQuery.FlagSummary | undefined;
+  setFlagSummary(value?: TranscriptQuery.FlagSummary): void;
+
+  hasStartTime(): boolean;
+  clearStartTime(): void;
+  getStartTime(): TranscriptQuery.StartTime | undefined;
+  setStartTime(value?: TranscriptQuery.StartTime): void;
+
+  hasDeleteTime(): boolean;
+  clearDeleteTime(): void;
+  getDeleteTime(): TranscriptQuery.DeleteTime | undefined;
+  setDeleteTime(value?: TranscriptQuery.DeleteTime): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TranscriptQuery.AsObject;
   static toObject(includeInstance: boolean, msg: TranscriptQuery): TranscriptQuery.AsObject;
@@ -591,6 +821,9 @@ export namespace TranscriptQuery {
     channel?: TranscriptQuery.Channel.AsObject,
     metadata?: TranscriptQuery.Metadata.AsObject,
     threads?: TranscriptQuery.Threads.AsObject,
+    flagSummary?: TranscriptQuery.FlagSummary.AsObject,
+    startTime?: TranscriptQuery.StartTime.AsObject,
+    deleteTime?: TranscriptQuery.DeleteTime.AsObject,
   }
 
   export class TranscriptSid extends jspb.Message {
@@ -681,6 +914,31 @@ export namespace TranscriptQuery {
     getCallType(): TranscriptQuery.Call.CallType | undefined;
     setCallType(value?: TranscriptQuery.Call.CallType): void;
 
+    hasSilence(): boolean;
+    clearSilence(): void;
+    getSilence(): TranscriptQuery.Call.Silence | undefined;
+    setSilence(value?: TranscriptQuery.Call.Silence): void;
+
+    hasTalkOver(): boolean;
+    clearTalkOver(): void;
+    getTalkOver(): TranscriptQuery.Call.TalkOver | undefined;
+    setTalkOver(value?: TranscriptQuery.Call.TalkOver): void;
+
+    hasTalkTime(): boolean;
+    clearTalkTime(): void;
+    getTalkTime(): TranscriptQuery.Call.TalkTime | undefined;
+    setTalkTime(value?: TranscriptQuery.Call.TalkTime): void;
+
+    hasCallerId(): boolean;
+    clearCallerId(): void;
+    getCallerId(): TranscriptQuery.Call.CallerId | undefined;
+    setCallerId(value?: TranscriptQuery.Call.CallerId): void;
+
+    hasGroupName(): boolean;
+    clearGroupName(): void;
+    getGroupName(): TranscriptQuery.Call.GroupName | undefined;
+    setGroupName(value?: TranscriptQuery.Call.GroupName): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Call.AsObject;
     static toObject(includeInstance: boolean, msg: Call): Call.AsObject;
@@ -696,6 +954,11 @@ export namespace TranscriptQuery {
       callSid?: TranscriptQuery.Call.CallSid.AsObject,
       audioTime?: TranscriptQuery.Call.AudioTime.AsObject,
       callType?: TranscriptQuery.Call.CallType.AsObject,
+      silence?: TranscriptQuery.Call.Silence.AsObject,
+      talkOver?: TranscriptQuery.Call.TalkOver.AsObject,
+      talkTime?: TranscriptQuery.Call.TalkTime.AsObject,
+      callerId?: TranscriptQuery.Call.CallerId.AsObject,
+      groupName?: TranscriptQuery.Call.GroupName.AsObject,
     }
 
     export class CallType extends jspb.Message {
@@ -720,6 +983,28 @@ export namespace TranscriptQuery {
       }
     }
 
+    export class GroupName extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): GroupName.AsObject;
+      static toObject(includeInstance: boolean, msg: GroupName): GroupName.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: GroupName, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): GroupName;
+      static deserializeBinaryFromReader(message: GroupName, reader: jspb.BinaryReader): GroupName;
+    }
+
+    export namespace GroupName {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
+    }
+
     export class CallSid extends jspb.Message {
       clearAnyList(): void;
       getAnyList(): Array<number>;
@@ -739,6 +1024,28 @@ export namespace TranscriptQuery {
     export namespace CallSid {
       export type AsObject = {
         anyList: Array<number>,
+      }
+    }
+
+    export class CallerId extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): CallerId.AsObject;
+      static toObject(includeInstance: boolean, msg: CallerId): CallerId.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: CallerId, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): CallerId;
+      static deserializeBinaryFromReader(message: CallerId, reader: jspb.BinaryReader): CallerId;
+    }
+
+    export namespace CallerId {
+      export type AsObject = {
+        anyList: Array<string>,
       }
     }
 
@@ -779,6 +1086,446 @@ export namespace TranscriptQuery {
         lte?: google_protobuf_wrappers_pb.Int32Value.AsObject,
         gt?: google_protobuf_wrappers_pb.Int32Value.AsObject,
         lt?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+      }
+    }
+
+    export class TalkTime extends jspb.Message {
+      hasGte(): boolean;
+      clearGte(): void;
+      getGte(): google_protobuf_duration_pb.Duration | undefined;
+      setGte(value?: google_protobuf_duration_pb.Duration): void;
+
+      hasLte(): boolean;
+      clearLte(): void;
+      getLte(): google_protobuf_duration_pb.Duration | undefined;
+      setLte(value?: google_protobuf_duration_pb.Duration): void;
+
+      hasGt(): boolean;
+      clearGt(): void;
+      getGt(): google_protobuf_duration_pb.Duration | undefined;
+      setGt(value?: google_protobuf_duration_pb.Duration): void;
+
+      hasLt(): boolean;
+      clearLt(): void;
+      getLt(): google_protobuf_duration_pb.Duration | undefined;
+      setLt(value?: google_protobuf_duration_pb.Duration): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): TalkTime.AsObject;
+      static toObject(includeInstance: boolean, msg: TalkTime): TalkTime.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: TalkTime, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): TalkTime;
+      static deserializeBinaryFromReader(message: TalkTime, reader: jspb.BinaryReader): TalkTime;
+    }
+
+    export namespace TalkTime {
+      export type AsObject = {
+        gte?: google_protobuf_duration_pb.Duration.AsObject,
+        lte?: google_protobuf_duration_pb.Duration.AsObject,
+        gt?: google_protobuf_duration_pb.Duration.AsObject,
+        lt?: google_protobuf_duration_pb.Duration.AsObject,
+      }
+    }
+
+    export class TalkOver extends jspb.Message {
+      hasDurationTotal(): boolean;
+      clearDurationTotal(): void;
+      getDurationTotal(): TranscriptQuery.Call.TalkOver.DurationTotal | undefined;
+      setDurationTotal(value?: TranscriptQuery.Call.TalkOver.DurationTotal): void;
+
+      hasDurationMax(): boolean;
+      clearDurationMax(): void;
+      getDurationMax(): TranscriptQuery.Call.TalkOver.DurationMax | undefined;
+      setDurationMax(value?: TranscriptQuery.Call.TalkOver.DurationMax): void;
+
+      hasOccurrenceTotal(): boolean;
+      clearOccurrenceTotal(): void;
+      getOccurrenceTotal(): TranscriptQuery.Call.TalkOver.OccurrenceTotal | undefined;
+      setOccurrenceTotal(value?: TranscriptQuery.Call.TalkOver.OccurrenceTotal): void;
+
+      hasDurationPercentage(): boolean;
+      clearDurationPercentage(): void;
+      getDurationPercentage(): TranscriptQuery.Call.TalkOver.DurationPercentage | undefined;
+      setDurationPercentage(value?: TranscriptQuery.Call.TalkOver.DurationPercentage): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): TalkOver.AsObject;
+      static toObject(includeInstance: boolean, msg: TalkOver): TalkOver.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: TalkOver, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): TalkOver;
+      static deserializeBinaryFromReader(message: TalkOver, reader: jspb.BinaryReader): TalkOver;
+    }
+
+    export namespace TalkOver {
+      export type AsObject = {
+        durationTotal?: TranscriptQuery.Call.TalkOver.DurationTotal.AsObject,
+        durationMax?: TranscriptQuery.Call.TalkOver.DurationMax.AsObject,
+        occurrenceTotal?: TranscriptQuery.Call.TalkOver.OccurrenceTotal.AsObject,
+        durationPercentage?: TranscriptQuery.Call.TalkOver.DurationPercentage.AsObject,
+      }
+
+      export class DurationTotal extends jspb.Message {
+        hasGte(): boolean;
+        clearGte(): void;
+        getGte(): google_protobuf_duration_pb.Duration | undefined;
+        setGte(value?: google_protobuf_duration_pb.Duration): void;
+
+        hasLte(): boolean;
+        clearLte(): void;
+        getLte(): google_protobuf_duration_pb.Duration | undefined;
+        setLte(value?: google_protobuf_duration_pb.Duration): void;
+
+        hasGt(): boolean;
+        clearGt(): void;
+        getGt(): google_protobuf_duration_pb.Duration | undefined;
+        setGt(value?: google_protobuf_duration_pb.Duration): void;
+
+        hasLt(): boolean;
+        clearLt(): void;
+        getLt(): google_protobuf_duration_pb.Duration | undefined;
+        setLt(value?: google_protobuf_duration_pb.Duration): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): DurationTotal.AsObject;
+        static toObject(includeInstance: boolean, msg: DurationTotal): DurationTotal.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: DurationTotal, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): DurationTotal;
+        static deserializeBinaryFromReader(message: DurationTotal, reader: jspb.BinaryReader): DurationTotal;
+      }
+
+      export namespace DurationTotal {
+        export type AsObject = {
+          gte?: google_protobuf_duration_pb.Duration.AsObject,
+          lte?: google_protobuf_duration_pb.Duration.AsObject,
+          gt?: google_protobuf_duration_pb.Duration.AsObject,
+          lt?: google_protobuf_duration_pb.Duration.AsObject,
+        }
+      }
+
+      export class DurationMax extends jspb.Message {
+        hasGte(): boolean;
+        clearGte(): void;
+        getGte(): google_protobuf_duration_pb.Duration | undefined;
+        setGte(value?: google_protobuf_duration_pb.Duration): void;
+
+        hasLte(): boolean;
+        clearLte(): void;
+        getLte(): google_protobuf_duration_pb.Duration | undefined;
+        setLte(value?: google_protobuf_duration_pb.Duration): void;
+
+        hasGt(): boolean;
+        clearGt(): void;
+        getGt(): google_protobuf_duration_pb.Duration | undefined;
+        setGt(value?: google_protobuf_duration_pb.Duration): void;
+
+        hasLt(): boolean;
+        clearLt(): void;
+        getLt(): google_protobuf_duration_pb.Duration | undefined;
+        setLt(value?: google_protobuf_duration_pb.Duration): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): DurationMax.AsObject;
+        static toObject(includeInstance: boolean, msg: DurationMax): DurationMax.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: DurationMax, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): DurationMax;
+        static deserializeBinaryFromReader(message: DurationMax, reader: jspb.BinaryReader): DurationMax;
+      }
+
+      export namespace DurationMax {
+        export type AsObject = {
+          gte?: google_protobuf_duration_pb.Duration.AsObject,
+          lte?: google_protobuf_duration_pb.Duration.AsObject,
+          gt?: google_protobuf_duration_pb.Duration.AsObject,
+          lt?: google_protobuf_duration_pb.Duration.AsObject,
+        }
+      }
+
+      export class OccurrenceTotal extends jspb.Message {
+        hasGte(): boolean;
+        clearGte(): void;
+        getGte(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setGte(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        hasLte(): boolean;
+        clearLte(): void;
+        getLte(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setLte(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        hasGt(): boolean;
+        clearGt(): void;
+        getGt(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setGt(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        hasLt(): boolean;
+        clearLt(): void;
+        getLt(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setLt(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): OccurrenceTotal.AsObject;
+        static toObject(includeInstance: boolean, msg: OccurrenceTotal): OccurrenceTotal.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: OccurrenceTotal, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): OccurrenceTotal;
+        static deserializeBinaryFromReader(message: OccurrenceTotal, reader: jspb.BinaryReader): OccurrenceTotal;
+      }
+
+      export namespace OccurrenceTotal {
+        export type AsObject = {
+          gte?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+          lte?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+          gt?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+          lt?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+        }
+      }
+
+      export class DurationPercentage extends jspb.Message {
+        hasGte(): boolean;
+        clearGte(): void;
+        getGte(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setGte(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        hasLte(): boolean;
+        clearLte(): void;
+        getLte(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setLte(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        hasGt(): boolean;
+        clearGt(): void;
+        getGt(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setGt(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        hasLt(): boolean;
+        clearLt(): void;
+        getLt(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setLt(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): DurationPercentage.AsObject;
+        static toObject(includeInstance: boolean, msg: DurationPercentage): DurationPercentage.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: DurationPercentage, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): DurationPercentage;
+        static deserializeBinaryFromReader(message: DurationPercentage, reader: jspb.BinaryReader): DurationPercentage;
+      }
+
+      export namespace DurationPercentage {
+        export type AsObject = {
+          gte?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+          lte?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+          gt?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+          lt?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+        }
+      }
+    }
+
+    export class Silence extends jspb.Message {
+      hasDurationTotal(): boolean;
+      clearDurationTotal(): void;
+      getDurationTotal(): TranscriptQuery.Call.Silence.DurationTotal | undefined;
+      setDurationTotal(value?: TranscriptQuery.Call.Silence.DurationTotal): void;
+
+      hasDurationMax(): boolean;
+      clearDurationMax(): void;
+      getDurationMax(): TranscriptQuery.Call.Silence.DurationMax | undefined;
+      setDurationMax(value?: TranscriptQuery.Call.Silence.DurationMax): void;
+
+      hasOccurrenceTotal(): boolean;
+      clearOccurrenceTotal(): void;
+      getOccurrenceTotal(): TranscriptQuery.Call.Silence.OccurrenceTotal | undefined;
+      setOccurrenceTotal(value?: TranscriptQuery.Call.Silence.OccurrenceTotal): void;
+
+      hasDurationPercentage(): boolean;
+      clearDurationPercentage(): void;
+      getDurationPercentage(): TranscriptQuery.Call.Silence.DurationPercentage | undefined;
+      setDurationPercentage(value?: TranscriptQuery.Call.Silence.DurationPercentage): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Silence.AsObject;
+      static toObject(includeInstance: boolean, msg: Silence): Silence.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Silence, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Silence;
+      static deserializeBinaryFromReader(message: Silence, reader: jspb.BinaryReader): Silence;
+    }
+
+    export namespace Silence {
+      export type AsObject = {
+        durationTotal?: TranscriptQuery.Call.Silence.DurationTotal.AsObject,
+        durationMax?: TranscriptQuery.Call.Silence.DurationMax.AsObject,
+        occurrenceTotal?: TranscriptQuery.Call.Silence.OccurrenceTotal.AsObject,
+        durationPercentage?: TranscriptQuery.Call.Silence.DurationPercentage.AsObject,
+      }
+
+      export class DurationTotal extends jspb.Message {
+        hasGte(): boolean;
+        clearGte(): void;
+        getGte(): google_protobuf_duration_pb.Duration | undefined;
+        setGte(value?: google_protobuf_duration_pb.Duration): void;
+
+        hasLte(): boolean;
+        clearLte(): void;
+        getLte(): google_protobuf_duration_pb.Duration | undefined;
+        setLte(value?: google_protobuf_duration_pb.Duration): void;
+
+        hasGt(): boolean;
+        clearGt(): void;
+        getGt(): google_protobuf_duration_pb.Duration | undefined;
+        setGt(value?: google_protobuf_duration_pb.Duration): void;
+
+        hasLt(): boolean;
+        clearLt(): void;
+        getLt(): google_protobuf_duration_pb.Duration | undefined;
+        setLt(value?: google_protobuf_duration_pb.Duration): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): DurationTotal.AsObject;
+        static toObject(includeInstance: boolean, msg: DurationTotal): DurationTotal.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: DurationTotal, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): DurationTotal;
+        static deserializeBinaryFromReader(message: DurationTotal, reader: jspb.BinaryReader): DurationTotal;
+      }
+
+      export namespace DurationTotal {
+        export type AsObject = {
+          gte?: google_protobuf_duration_pb.Duration.AsObject,
+          lte?: google_protobuf_duration_pb.Duration.AsObject,
+          gt?: google_protobuf_duration_pb.Duration.AsObject,
+          lt?: google_protobuf_duration_pb.Duration.AsObject,
+        }
+      }
+
+      export class DurationMax extends jspb.Message {
+        hasGte(): boolean;
+        clearGte(): void;
+        getGte(): google_protobuf_duration_pb.Duration | undefined;
+        setGte(value?: google_protobuf_duration_pb.Duration): void;
+
+        hasLte(): boolean;
+        clearLte(): void;
+        getLte(): google_protobuf_duration_pb.Duration | undefined;
+        setLte(value?: google_protobuf_duration_pb.Duration): void;
+
+        hasGt(): boolean;
+        clearGt(): void;
+        getGt(): google_protobuf_duration_pb.Duration | undefined;
+        setGt(value?: google_protobuf_duration_pb.Duration): void;
+
+        hasLt(): boolean;
+        clearLt(): void;
+        getLt(): google_protobuf_duration_pb.Duration | undefined;
+        setLt(value?: google_protobuf_duration_pb.Duration): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): DurationMax.AsObject;
+        static toObject(includeInstance: boolean, msg: DurationMax): DurationMax.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: DurationMax, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): DurationMax;
+        static deserializeBinaryFromReader(message: DurationMax, reader: jspb.BinaryReader): DurationMax;
+      }
+
+      export namespace DurationMax {
+        export type AsObject = {
+          gte?: google_protobuf_duration_pb.Duration.AsObject,
+          lte?: google_protobuf_duration_pb.Duration.AsObject,
+          gt?: google_protobuf_duration_pb.Duration.AsObject,
+          lt?: google_protobuf_duration_pb.Duration.AsObject,
+        }
+      }
+
+      export class OccurrenceTotal extends jspb.Message {
+        hasGte(): boolean;
+        clearGte(): void;
+        getGte(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setGte(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        hasLte(): boolean;
+        clearLte(): void;
+        getLte(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setLte(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        hasGt(): boolean;
+        clearGt(): void;
+        getGt(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setGt(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        hasLt(): boolean;
+        clearLt(): void;
+        getLt(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setLt(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): OccurrenceTotal.AsObject;
+        static toObject(includeInstance: boolean, msg: OccurrenceTotal): OccurrenceTotal.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: OccurrenceTotal, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): OccurrenceTotal;
+        static deserializeBinaryFromReader(message: OccurrenceTotal, reader: jspb.BinaryReader): OccurrenceTotal;
+      }
+
+      export namespace OccurrenceTotal {
+        export type AsObject = {
+          gte?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+          lte?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+          gt?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+          lt?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+        }
+      }
+
+      export class DurationPercentage extends jspb.Message {
+        hasGte(): boolean;
+        clearGte(): void;
+        getGte(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setGte(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        hasLte(): boolean;
+        clearLte(): void;
+        getLte(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setLte(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        hasGt(): boolean;
+        clearGt(): void;
+        getGt(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setGt(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        hasLt(): boolean;
+        clearLt(): void;
+        getLt(): google_protobuf_wrappers_pb.UInt32Value | undefined;
+        setLt(value?: google_protobuf_wrappers_pb.UInt32Value): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): DurationPercentage.AsObject;
+        static toObject(includeInstance: boolean, msg: DurationPercentage): DurationPercentage.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: DurationPercentage, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): DurationPercentage;
+        static deserializeBinaryFromReader(message: DurationPercentage, reader: jspb.BinaryReader): DurationPercentage;
+      }
+
+      export namespace DurationPercentage {
+        export type AsObject = {
+          gte?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+          lte?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+          gt?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+          lt?: google_protobuf_wrappers_pb.UInt32Value.AsObject,
+        }
       }
     }
   }
@@ -828,6 +1575,16 @@ export namespace TranscriptQuery {
   }
 
   export class Threads extends jspb.Message {
+    clearAndList(): void;
+    getAndList(): Array<TranscriptQuery.Threads>;
+    setAndList(value: Array<TranscriptQuery.Threads>): void;
+    addAnd(value?: TranscriptQuery.Threads, index?: number): TranscriptQuery.Threads;
+
+    clearOrList(): void;
+    getOrList(): Array<TranscriptQuery.Threads>;
+    setOrList(value: Array<TranscriptQuery.Threads>): void;
+    addOr(value?: TranscriptQuery.Threads, index?: number): TranscriptQuery.Threads;
+
     hasId(): boolean;
     clearId(): void;
     getId(): TranscriptQuery.Threads.Id | undefined;
@@ -837,6 +1594,11 @@ export namespace TranscriptQuery {
     clearText(): void;
     getText(): TranscriptQuery.Threads.Text | undefined;
     setText(value?: TranscriptQuery.Threads.Text): void;
+
+    hasUserId(): boolean;
+    clearUserId(): void;
+    getUserId(): TranscriptQuery.Threads.UserId | undefined;
+    setUserId(value?: TranscriptQuery.Threads.UserId): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Threads.AsObject;
@@ -850,8 +1612,33 @@ export namespace TranscriptQuery {
 
   export namespace Threads {
     export type AsObject = {
+      andList: Array<TranscriptQuery.Threads.AsObject>,
+      orList: Array<TranscriptQuery.Threads.AsObject>,
       id?: TranscriptQuery.Threads.Id.AsObject,
       text?: TranscriptQuery.Threads.Text.AsObject,
+      userId?: TranscriptQuery.Threads.UserId.AsObject,
+    }
+
+    export class UserId extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): UserId.AsObject;
+      static toObject(includeInstance: boolean, msg: UserId): UserId.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: UserId, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): UserId;
+      static deserializeBinaryFromReader(message: UserId, reader: jspb.BinaryReader): UserId;
+    }
+
+    export namespace UserId {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
     }
 
     export class Id extends jspb.Message {
@@ -887,6 +1674,14 @@ export namespace TranscriptQuery {
       getSpanNear(): SpanNear | undefined;
       setSpanNear(value?: SpanNear): void;
 
+      hasTimespan(): boolean;
+      clearTimespan(): void;
+      getTimespan(): TranscriptQuery.Threads.Text.Timespan | undefined;
+      setTimespan(value?: TranscriptQuery.Threads.Text.Timespan): void;
+
+      getNot(): boolean;
+      setNot(value: boolean): void;
+
       serializeBinary(): Uint8Array;
       toObject(includeInstance?: boolean): Text.AsObject;
       static toObject(includeInstance: boolean, msg: Text): Text.AsObject;
@@ -901,7 +1696,319 @@ export namespace TranscriptQuery {
       export type AsObject = {
         match?: Match.AsObject,
         spanNear?: SpanNear.AsObject,
+        timespan?: TranscriptQuery.Threads.Text.Timespan.AsObject,
+        not: boolean,
       }
+
+      export class Timespan extends jspb.Message {
+        hasHead(): boolean;
+        clearHead(): void;
+        getHead(): google_protobuf_duration_pb.Duration | undefined;
+        setHead(value?: google_protobuf_duration_pb.Duration): void;
+
+        hasTail(): boolean;
+        clearTail(): void;
+        getTail(): google_protobuf_duration_pb.Duration | undefined;
+        setTail(value?: google_protobuf_duration_pb.Duration): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): Timespan.AsObject;
+        static toObject(includeInstance: boolean, msg: Timespan): Timespan.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: Timespan, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): Timespan;
+        static deserializeBinaryFromReader(message: Timespan, reader: jspb.BinaryReader): Timespan;
+      }
+
+      export namespace Timespan {
+        export type AsObject = {
+          head?: google_protobuf_duration_pb.Duration.AsObject,
+          tail?: google_protobuf_duration_pb.Duration.AsObject,
+        }
+      }
+    }
+  }
+
+  export class FlagSummary extends jspb.Message {
+    hasNeedReview(): boolean;
+    clearNeedReview(): void;
+    getNeedReview(): TranscriptQuery.FlagSummary.NeedReview | undefined;
+    setNeedReview(value?: TranscriptQuery.FlagSummary.NeedReview): void;
+
+    hasReviewStatus(): boolean;
+    clearReviewStatus(): void;
+    getReviewStatus(): TranscriptQuery.FlagSummary.ReviewStatus | undefined;
+    setReviewStatus(value?: TranscriptQuery.FlagSummary.ReviewStatus): void;
+
+    hasFlags(): boolean;
+    clearFlags(): void;
+    getFlags(): TranscriptQuery.FlagSummary.Flags | undefined;
+    setFlags(value?: TranscriptQuery.FlagSummary.Flags): void;
+
+    hasCount(): boolean;
+    clearCount(): void;
+    getCount(): TranscriptQuery.FlagSummary.Count | undefined;
+    setCount(value?: TranscriptQuery.FlagSummary.Count): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): FlagSummary.AsObject;
+    static toObject(includeInstance: boolean, msg: FlagSummary): FlagSummary.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: FlagSummary, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): FlagSummary;
+    static deserializeBinaryFromReader(message: FlagSummary, reader: jspb.BinaryReader): FlagSummary;
+  }
+
+  export namespace FlagSummary {
+    export type AsObject = {
+      needReview?: TranscriptQuery.FlagSummary.NeedReview.AsObject,
+      reviewStatus?: TranscriptQuery.FlagSummary.ReviewStatus.AsObject,
+      flags?: TranscriptQuery.FlagSummary.Flags.AsObject,
+      count?: TranscriptQuery.FlagSummary.Count.AsObject,
+    }
+
+    export class NeedReview extends jspb.Message {
+      hasFlagSids(): boolean;
+      clearFlagSids(): void;
+      getFlagSids(): TranscriptQuery.FlagSummary.NeedReview.FlagSids | undefined;
+      setFlagSids(value?: TranscriptQuery.FlagSummary.NeedReview.FlagSids): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): NeedReview.AsObject;
+      static toObject(includeInstance: boolean, msg: NeedReview): NeedReview.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: NeedReview, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): NeedReview;
+      static deserializeBinaryFromReader(message: NeedReview, reader: jspb.BinaryReader): NeedReview;
+    }
+
+    export namespace NeedReview {
+      export type AsObject = {
+        flagSids?: TranscriptQuery.FlagSummary.NeedReview.FlagSids.AsObject,
+      }
+
+      export class FlagSids extends jspb.Message {
+        clearAnyList(): void;
+        getAnyList(): Array<number>;
+        setAnyList(value: Array<number>): void;
+        addAny(value: number, index?: number): number;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): FlagSids.AsObject;
+        static toObject(includeInstance: boolean, msg: FlagSids): FlagSids.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: FlagSids, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): FlagSids;
+        static deserializeBinaryFromReader(message: FlagSids, reader: jspb.BinaryReader): FlagSids;
+      }
+
+      export namespace FlagSids {
+        export type AsObject = {
+          anyList: Array<number>,
+        }
+      }
+    }
+
+    export class ReviewStatus extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<ReviewStatusMap[keyof ReviewStatusMap]>;
+      setAnyList(value: Array<ReviewStatusMap[keyof ReviewStatusMap]>): void;
+      addAny(value: ReviewStatusMap[keyof ReviewStatusMap], index?: number): ReviewStatusMap[keyof ReviewStatusMap];
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): ReviewStatus.AsObject;
+      static toObject(includeInstance: boolean, msg: ReviewStatus): ReviewStatus.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: ReviewStatus, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): ReviewStatus;
+      static deserializeBinaryFromReader(message: ReviewStatus, reader: jspb.BinaryReader): ReviewStatus;
+    }
+
+    export namespace ReviewStatus {
+      export type AsObject = {
+        anyList: Array<ReviewStatusMap[keyof ReviewStatusMap]>,
+      }
+    }
+
+    export class Flags extends jspb.Message {
+      hasFlagSid(): boolean;
+      clearFlagSid(): void;
+      getFlagSid(): TranscriptQuery.FlagSummary.Flags.FlagSid | undefined;
+      setFlagSid(value?: TranscriptQuery.FlagSummary.Flags.FlagSid): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Flags.AsObject;
+      static toObject(includeInstance: boolean, msg: Flags): Flags.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Flags, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Flags;
+      static deserializeBinaryFromReader(message: Flags, reader: jspb.BinaryReader): Flags;
+    }
+
+    export namespace Flags {
+      export type AsObject = {
+        flagSid?: TranscriptQuery.FlagSummary.Flags.FlagSid.AsObject,
+      }
+
+      export class FlagSid extends jspb.Message {
+        clearAnyList(): void;
+        getAnyList(): Array<number>;
+        setAnyList(value: Array<number>): void;
+        addAny(value: number, index?: number): number;
+
+        clearAllList(): void;
+        getAllList(): Array<number>;
+        setAllList(value: Array<number>): void;
+        addAll(value: number, index?: number): number;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): FlagSid.AsObject;
+        static toObject(includeInstance: boolean, msg: FlagSid): FlagSid.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: FlagSid, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): FlagSid;
+        static deserializeBinaryFromReader(message: FlagSid, reader: jspb.BinaryReader): FlagSid;
+      }
+
+      export namespace FlagSid {
+        export type AsObject = {
+          anyList: Array<number>,
+          allList: Array<number>,
+        }
+      }
+    }
+
+    export class Count extends jspb.Message {
+      hasGte(): boolean;
+      clearGte(): void;
+      getGte(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setGte(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      hasLte(): boolean;
+      clearLte(): void;
+      getLte(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setLte(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      hasGt(): boolean;
+      clearGt(): void;
+      getGt(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setGt(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      hasLt(): boolean;
+      clearLt(): void;
+      getLt(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setLt(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      hasEq(): boolean;
+      clearEq(): void;
+      getEq(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setEq(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Count.AsObject;
+      static toObject(includeInstance: boolean, msg: Count): Count.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Count, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Count;
+      static deserializeBinaryFromReader(message: Count, reader: jspb.BinaryReader): Count;
+    }
+
+    export namespace Count {
+      export type AsObject = {
+        gte?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+        lte?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+        gt?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+        lt?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+        eq?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+      }
+    }
+  }
+
+  export class StartTime extends jspb.Message {
+    hasGte(): boolean;
+    clearGte(): void;
+    getGte(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setGte(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    hasLte(): boolean;
+    clearLte(): void;
+    getLte(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setLte(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    hasGt(): boolean;
+    clearGt(): void;
+    getGt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setGt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    hasLt(): boolean;
+    clearLt(): void;
+    getLt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setLt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): StartTime.AsObject;
+    static toObject(includeInstance: boolean, msg: StartTime): StartTime.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: StartTime, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): StartTime;
+    static deserializeBinaryFromReader(message: StartTime, reader: jspb.BinaryReader): StartTime;
+  }
+
+  export namespace StartTime {
+    export type AsObject = {
+      gte?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      lte?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      gt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      lt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+  }
+
+  export class DeleteTime extends jspb.Message {
+    hasGte(): boolean;
+    clearGte(): void;
+    getGte(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setGte(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    hasLte(): boolean;
+    clearLte(): void;
+    getLte(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setLte(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    hasGt(): boolean;
+    clearGt(): void;
+    getGt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setGt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    hasLt(): boolean;
+    clearLt(): void;
+    getLt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setLt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): DeleteTime.AsObject;
+    static toObject(includeInstance: boolean, msg: DeleteTime): DeleteTime.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: DeleteTime, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): DeleteTime;
+    static deserializeBinaryFromReader(message: DeleteTime, reader: jspb.BinaryReader): DeleteTime;
+  }
+
+  export namespace DeleteTime {
+    export type AsObject = {
+      gte?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      lte?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      gt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      lt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
   }
 }

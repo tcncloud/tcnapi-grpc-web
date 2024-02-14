@@ -3662,6 +3662,11 @@ export class CreateManualTaskReq extends jspb.Message {
   getCampaignModuleSid(): string;
   setCampaignModuleSid(value: string): void;
 
+  hasTaskData(): boolean;
+  clearTaskData(): void;
+  getTaskData(): api_commons_omnichannel_pb.OmniTask | undefined;
+  setTaskData(value?: api_commons_omnichannel_pb.OmniTask): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateManualTaskReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateManualTaskReq): CreateManualTaskReq.AsObject;
@@ -3676,6 +3681,7 @@ export namespace CreateManualTaskReq {
   export type AsObject = {
     campaignSid: string,
     campaignModuleSid: string,
+    taskData?: api_commons_omnichannel_pb.OmniTask.AsObject,
   }
 }
 

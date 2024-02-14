@@ -28373,7 +28373,8 @@ proto.api.v0alpha.CreateManualTaskReq.prototype.toObject = function(opt_includeI
 proto.api.v0alpha.CreateManualTaskReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 2, "0")
+    campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+    taskData: (f = msg.getTaskData()) && api_commons_omnichannel_pb.OmniTask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -28418,6 +28419,11 @@ proto.api.v0alpha.CreateManualTaskReq.deserializeBinaryFromReader = function(msg
       var value = /** @type {string} */ (reader.readInt64String());
       msg.setCampaignModuleSid(value);
       break;
+    case 3:
+      var value = new api_commons_omnichannel_pb.OmniTask;
+      reader.readMessage(value,api_commons_omnichannel_pb.OmniTask.deserializeBinaryFromReader);
+      msg.setTaskData(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -28461,6 +28467,14 @@ proto.api.v0alpha.CreateManualTaskReq.serializeBinaryToWriter = function(message
       f
     );
   }
+  f = message.getTaskData();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      api_commons_omnichannel_pb.OmniTask.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -28497,6 +28511,43 @@ proto.api.v0alpha.CreateManualTaskReq.prototype.getCampaignModuleSid = function(
  */
 proto.api.v0alpha.CreateManualTaskReq.prototype.setCampaignModuleSid = function(value) {
   return jspb.Message.setProto3StringIntField(this, 2, value);
+};
+
+
+/**
+ * optional api.commons.OmniTask task_data = 3;
+ * @return {?proto.api.commons.OmniTask}
+ */
+proto.api.v0alpha.CreateManualTaskReq.prototype.getTaskData = function() {
+  return /** @type{?proto.api.commons.OmniTask} */ (
+    jspb.Message.getWrapperField(this, api_commons_omnichannel_pb.OmniTask, 3));
+};
+
+
+/**
+ * @param {?proto.api.commons.OmniTask|undefined} value
+ * @return {!proto.api.v0alpha.CreateManualTaskReq} returns this
+*/
+proto.api.v0alpha.CreateManualTaskReq.prototype.setTaskData = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v0alpha.CreateManualTaskReq} returns this
+ */
+proto.api.v0alpha.CreateManualTaskReq.prototype.clearTaskData = function() {
+  return this.setTaskData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.CreateManualTaskReq.prototype.hasTaskData = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

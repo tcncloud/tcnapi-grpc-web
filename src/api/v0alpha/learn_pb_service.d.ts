@@ -139,6 +139,33 @@ type LearnPublishVersion = {
   readonly responseType: typeof api_v0alpha_learn_pb.PublishVersionRes;
 };
 
+type LearnContentByVersion = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_learn_pb.ContentByVersionReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.ContentRes;
+};
+
+type LearnUpdateByVersion = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_learn_pb.UpdateByVersionReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.UpdateRes;
+};
+
+type LearnListSearchResultsByVersion = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: false;
+  readonly responseStream: true;
+  readonly requestType: typeof api_v0alpha_learn_pb.SearchContentByVersionReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.SearchRes;
+};
+
 export class Learn {
   static readonly serviceName: string;
   static readonly Exist: LearnExist;
@@ -156,6 +183,9 @@ export class Learn {
   static readonly DeleteLearnPages: LearnDeleteLearnPages;
   static readonly CreateEditVersion: LearnCreateEditVersion;
   static readonly PublishVersion: LearnPublishVersion;
+  static readonly ContentByVersion: LearnContentByVersion;
+  static readonly UpdateByVersion: LearnUpdateByVersion;
+  static readonly ListSearchResultsByVersion: LearnListSearchResultsByVersion;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -317,5 +347,24 @@ export class LearnClient {
     requestMessage: api_v0alpha_learn_pb.PublishVersionReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.PublishVersionRes|null) => void
   ): UnaryResponse;
+  contentByVersion(
+    requestMessage: api_v0alpha_learn_pb.ContentByVersionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.ContentRes|null) => void
+  ): UnaryResponse;
+  contentByVersion(
+    requestMessage: api_v0alpha_learn_pb.ContentByVersionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.ContentRes|null) => void
+  ): UnaryResponse;
+  updateByVersion(
+    requestMessage: api_v0alpha_learn_pb.UpdateByVersionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.UpdateRes|null) => void
+  ): UnaryResponse;
+  updateByVersion(
+    requestMessage: api_v0alpha_learn_pb.UpdateByVersionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.UpdateRes|null) => void
+  ): UnaryResponse;
+  listSearchResultsByVersion(requestMessage: api_v0alpha_learn_pb.SearchContentByVersionReq, metadata?: grpc.Metadata): ResponseStream<api_v0alpha_learn_pb.SearchRes>;
 }
 
