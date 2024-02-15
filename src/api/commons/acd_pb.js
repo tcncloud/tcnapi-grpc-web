@@ -2328,7 +2328,7 @@ proto.api.commons.ReplaceConfig.Enum = {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.TransferMember.oneofGroups_ = [[100,101,102]];
+proto.api.commons.TransferMember.oneofGroups_ = [[100,101,102,103,104]];
 
 /**
  * @enum {number}
@@ -2337,7 +2337,9 @@ proto.api.commons.TransferMember.LocatableDataCase = {
   LOCATABLE_DATA_NOT_SET: 0,
   AGENT_SESSION: 100,
   CALLER_SID: 101,
-  OUTBOUND_ID: 102
+  OUTBOUND_ID: 102,
+  CALLER_ID: 103,
+  DESTINATION_NUMBER: 104
 };
 
 /**
@@ -2383,7 +2385,9 @@ proto.api.commons.TransferMember.toObject = function(includeInstance, msg) {
     memberType: jspb.Message.getFieldWithDefault(msg, 3, 0),
     agentSession: (f = msg.getAgentSession()) && proto.api.commons.AgentSession.toObject(includeInstance, f),
     callerSid: (f = msg.getCallerSid()) && proto.api.commons.CallerSid.toObject(includeInstance, f),
-    outboundId: jspb.Message.getFieldWithDefault(msg, 102, "")
+    outboundId: jspb.Message.getFieldWithDefault(msg, 102, ""),
+    callerId: jspb.Message.getFieldWithDefault(msg, 103, ""),
+    destinationNumber: jspb.Message.getFieldWithDefault(msg, 104, "")
   };
 
   if (includeInstance) {
@@ -2445,6 +2449,14 @@ proto.api.commons.TransferMember.deserializeBinaryFromReader = function(msg, rea
     case 102:
       var value = /** @type {string} */ (reader.readString());
       msg.setOutboundId(value);
+      break;
+    case 103:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCallerId(value);
+      break;
+    case 104:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDestinationNumber(value);
       break;
     default:
       reader.skipField();
@@ -2516,6 +2528,20 @@ proto.api.commons.TransferMember.serializeBinaryToWriter = function(message, wri
   if (f != null) {
     writer.writeString(
       102,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 103));
+  if (f != null) {
+    writer.writeString(
+      103,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 104));
+  if (f != null) {
+    writer.writeString(
+      104,
       f
     );
   }
@@ -2683,6 +2709,78 @@ proto.api.commons.TransferMember.prototype.clearOutboundId = function() {
  */
 proto.api.commons.TransferMember.prototype.hasOutboundId = function() {
   return jspb.Message.getField(this, 102) != null;
+};
+
+
+/**
+ * optional string caller_id = 103;
+ * @return {string}
+ */
+proto.api.commons.TransferMember.prototype.getCallerId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 103, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.TransferMember} returns this
+ */
+proto.api.commons.TransferMember.prototype.setCallerId = function(value) {
+  return jspb.Message.setOneofField(this, 103, proto.api.commons.TransferMember.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.commons.TransferMember} returns this
+ */
+proto.api.commons.TransferMember.prototype.clearCallerId = function() {
+  return jspb.Message.setOneofField(this, 103, proto.api.commons.TransferMember.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.TransferMember.prototype.hasCallerId = function() {
+  return jspb.Message.getField(this, 103) != null;
+};
+
+
+/**
+ * optional string destination_number = 104;
+ * @return {string}
+ */
+proto.api.commons.TransferMember.prototype.getDestinationNumber = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 104, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.TransferMember} returns this
+ */
+proto.api.commons.TransferMember.prototype.setDestinationNumber = function(value) {
+  return jspb.Message.setOneofField(this, 104, proto.api.commons.TransferMember.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.commons.TransferMember} returns this
+ */
+proto.api.commons.TransferMember.prototype.clearDestinationNumber = function() {
+  return jspb.Message.setOneofField(this, 104, proto.api.commons.TransferMember.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.TransferMember.prototype.hasDestinationNumber = function() {
+  return jspb.Message.getField(this, 104) != null;
 };
 
 

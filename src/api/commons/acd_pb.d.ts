@@ -595,6 +595,16 @@ export class TransferMember extends jspb.Message {
   getOutboundId(): string;
   setOutboundId(value: string): void;
 
+  hasCallerId(): boolean;
+  clearCallerId(): void;
+  getCallerId(): string;
+  setCallerId(value: string): void;
+
+  hasDestinationNumber(): boolean;
+  clearDestinationNumber(): void;
+  getDestinationNumber(): string;
+  setDestinationNumber(value: string): void;
+
   getLocatableDataCase(): TransferMember.LocatableDataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TransferMember.AsObject;
@@ -614,6 +624,8 @@ export namespace TransferMember {
     agentSession?: AgentSession.AsObject,
     callerSid?: CallerSid.AsObject,
     outboundId: string,
+    callerId: string,
+    destinationNumber: string,
   }
 
   export enum LocatableDataCase {
@@ -621,6 +633,8 @@ export namespace TransferMember {
     AGENT_SESSION = 100,
     CALLER_SID = 101,
     OUTBOUND_ID = 102,
+    CALLER_ID = 103,
+    DESTINATION_NUMBER = 104,
   }
 }
 
