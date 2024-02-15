@@ -1897,6 +1897,9 @@ export class ClientInfoDisplayTemplate extends jspb.Message {
   getClientInfoDisplayTemplateSid(): number;
   setClientInfoDisplayTemplateSid(value: number): void;
 
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ClientInfoDisplayTemplate.AsObject;
   static toObject(includeInstance: boolean, msg: ClientInfoDisplayTemplate): ClientInfoDisplayTemplate.AsObject;
@@ -1917,6 +1920,7 @@ export namespace ClientInfoDisplayTemplate {
     contactFieldStylesList: Array<ContactFieldStyle.AsObject>,
     templateCategory: TemplateCategoryMap[keyof TemplateCategoryMap],
     clientInfoDisplayTemplateSid: number,
+    huntGroupSid: number,
   }
 }
 

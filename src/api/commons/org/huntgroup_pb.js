@@ -15367,7 +15367,8 @@ proto.api.commons.org.ClientInfoDisplayTemplate.toObject = function(includeInsta
     contactFieldStylesList: jspb.Message.toObjectList(msg.getContactFieldStylesList(),
     proto.api.commons.org.ContactFieldStyle.toObject, includeInstance),
     templateCategory: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    clientInfoDisplayTemplateSid: jspb.Message.getFieldWithDefault(msg, 8, 0)
+    clientInfoDisplayTemplateSid: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    huntGroupSid: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -15437,6 +15438,10 @@ proto.api.commons.org.ClientInfoDisplayTemplate.deserializeBinaryFromReader = fu
     case 8:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setClientInfoDisplayTemplateSid(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setHuntGroupSid(value);
       break;
     default:
       reader.skipField();
@@ -15522,6 +15527,13 @@ proto.api.commons.org.ClientInfoDisplayTemplate.serializeBinaryToWriter = functi
   if (f !== 0) {
     writer.writeInt64(
       8,
+      f
+    );
+  }
+  f = message.getHuntGroupSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      9,
       f
     );
   }
@@ -15708,6 +15720,24 @@ proto.api.commons.org.ClientInfoDisplayTemplate.prototype.getClientInfoDisplayTe
  */
 proto.api.commons.org.ClientInfoDisplayTemplate.prototype.setClientInfoDisplayTemplateSid = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional int64 hunt_group_sid = 9;
+ * @return {number}
+ */
+proto.api.commons.org.ClientInfoDisplayTemplate.prototype.getHuntGroupSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.org.ClientInfoDisplayTemplate} returns this
+ */
+proto.api.commons.org.ClientInfoDisplayTemplate.prototype.setHuntGroupSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
