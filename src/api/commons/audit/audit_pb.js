@@ -12,10 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var globalThis = require("../../../global.js");
-var proto = globalThis.proto;
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -81,7 +81,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1100,1101]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1100,1101]];
 
 /**
  * @enum {number}
@@ -142,6 +142,7 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   OMNICHANNEL_MANUAL_APPROVE_TASK_REJECTED_EVENT: 359,
   OMNICHANNEL_MANUAL_APPROVE_TASK_TIMEOUT_EVENT: 360,
   OMNICHANNEL_MANUAL_APPROVE_TASK_REQUEUE_EVENT: 361,
+  OMNICHANNEL_TRANSCRIPT_SAVED_EVENT: 362,
   ASM_AGENT_LOGIN_EVENT: 400,
   ASM_OPEN_VOICE_EVENT: 401,
   ASM_OPEN_OMNI_AGENT_EVENT: 402,
@@ -293,6 +294,7 @@ proto.api.commons.audit.AuditEvent.toObject = function(includeInstance, msg) {
     omnichannelManualApproveTaskRejectedEvent: (f = msg.getOmnichannelManualApproveTaskRejectedEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRejectedEvent.toObject(includeInstance, f),
     omnichannelManualApproveTaskTimeoutEvent: (f = msg.getOmnichannelManualApproveTaskTimeoutEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskTimeoutEvent.toObject(includeInstance, f),
     omnichannelManualApproveTaskRequeueEvent: (f = msg.getOmnichannelManualApproveTaskRequeueEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.toObject(includeInstance, f),
+    omnichannelTranscriptSavedEvent: (f = msg.getOmnichannelTranscriptSavedEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent.toObject(includeInstance, f),
     asmAgentLoginEvent: (f = msg.getAsmAgentLoginEvent()) && api_commons_audit_asm_events_pb.AsmAgentLoginEvent.toObject(includeInstance, f),
     asmOpenVoiceEvent: (f = msg.getAsmOpenVoiceEvent()) && api_commons_audit_asm_events_pb.AsmOpenVoiceEvent.toObject(includeInstance, f),
     asmOpenOmniAgentEvent: (f = msg.getAsmOpenOmniAgentEvent()) && api_commons_audit_asm_events_pb.AsmOpenOmniAgentEvent.toObject(includeInstance, f),
@@ -674,6 +676,11 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent;
       reader.readMessage(value,api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.deserializeBinaryFromReader);
       msg.setOmnichannelManualApproveTaskRequeueEvent(value);
+      break;
+    case 362:
+      var value = new api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent;
+      reader.readMessage(value,api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent.deserializeBinaryFromReader);
+      msg.setOmnichannelTranscriptSavedEvent(value);
       break;
     case 400:
       var value = new api_commons_audit_asm_events_pb.AsmAgentLoginEvent;
@@ -1432,6 +1439,14 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       361,
       f,
       api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getOmnichannelTranscriptSavedEvent();
+  if (f != null) {
+    writer.writeMessage(
+      362,
+      f,
+      api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent.serializeBinaryToWriter
     );
   }
   f = message.getAsmAgentLoginEvent();
@@ -3967,6 +3982,43 @@ proto.api.commons.audit.AuditEvent.prototype.clearOmnichannelManualApproveTaskRe
  */
 proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelManualApproveTaskRequeueEvent = function() {
   return jspb.Message.getField(this, 361) != null;
+};
+
+
+/**
+ * optional OmnichannelTranscriptSavedEvent omnichannel_transcript_saved_event = 362;
+ * @return {?proto.api.commons.audit.OmnichannelTranscriptSavedEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getOmnichannelTranscriptSavedEvent = function() {
+  return /** @type{?proto.api.commons.audit.OmnichannelTranscriptSavedEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent, 362));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.OmnichannelTranscriptSavedEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setOmnichannelTranscriptSavedEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 362, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearOmnichannelTranscriptSavedEvent = function() {
+  return this.setOmnichannelTranscriptSavedEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelTranscriptSavedEvent = function() {
+  return jspb.Message.getField(this, 362) != null;
 };
 
 

@@ -12,10 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var globalThis = require("../../../global.js");
-var proto = globalThis.proto;
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -86,6 +86,7 @@ proto.api.commons.audit.EventType = {
   OMNICHANNEL_MANUAL_APPROVE_TASK_REJECTED: 359,
   OMNICHANNEL_MANUAL_APPROVE_TASK_TIMEOUT: 360,
   OMNICHANNEL_MANUAL_APPROVE_TASK_REQUEUE: 361,
+  OMNICHANNEL_TRANSCRIPT_SAVED: 362,
   ASM_AGENT_LOGIN: 400,
   ASM_OPEN_VOICE: 401,
   ASM_OPEN_OMNI_AGENT: 402,

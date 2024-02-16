@@ -122,6 +122,24 @@ type SkillsServiceListSkillGroupsMembers = {
   readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.ListSkillGroupsMembersResponse;
 };
 
+type SkillsServiceGetAgentSkills = {
+  readonly methodName: string;
+  readonly service: typeof SkillsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_skills_entities_pb.GetAgentSkillsRequest;
+  readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.GetAgentSkillsResponse;
+};
+
+type SkillsServiceListSkillsForCurrentAgent = {
+  readonly methodName: string;
+  readonly service: typeof SkillsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_skills_entities_pb.ListSkillsForCurrentAgentRequest;
+  readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.ListSkillsForCurrentAgentResponse;
+};
+
 export class SkillsService {
   static readonly serviceName: string;
   static readonly CreateSkillGroup: SkillsServiceCreateSkillGroup;
@@ -137,6 +155,8 @@ export class SkillsService {
   static readonly GetUserSkills: SkillsServiceGetUserSkills;
   static readonly GetSkillGroupMembers: SkillsServiceGetSkillGroupMembers;
   static readonly ListSkillGroupsMembers: SkillsServiceListSkillGroupsMembers;
+  static readonly GetAgentSkills: SkillsServiceGetAgentSkills;
+  static readonly ListSkillsForCurrentAgent: SkillsServiceListSkillsForCurrentAgent;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -287,6 +307,24 @@ export class SkillsServiceClient {
   listSkillGroupsMembers(
     requestMessage: api_v1alpha1_org_skills_entities_pb.ListSkillGroupsMembersRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.ListSkillGroupsMembersResponse|null) => void
+  ): UnaryResponse;
+  getAgentSkills(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.GetAgentSkillsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.GetAgentSkillsResponse|null) => void
+  ): UnaryResponse;
+  getAgentSkills(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.GetAgentSkillsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.GetAgentSkillsResponse|null) => void
+  ): UnaryResponse;
+  listSkillsForCurrentAgent(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.ListSkillsForCurrentAgentRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.ListSkillsForCurrentAgentResponse|null) => void
+  ): UnaryResponse;
+  listSkillsForCurrentAgent(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.ListSkillsForCurrentAgentRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.ListSkillsForCurrentAgentResponse|null) => void
   ): UnaryResponse;
 }
 

@@ -12,10 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var globalThis = require("../../../global.js");
-var proto = globalThis.proto;
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -23,6 +23,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_v1alpha1_vanalytics_dncl_list_pb = require('../../../api/v1alpha1/vanalytics/dncl_list_pb.js');
+goog.object.extend(proto, api_v1alpha1_vanalytics_dncl_list_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -85,7 +87,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.vanalytics.FlagSnapshot = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.vanalytics.FlagSnapshot.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.vanalytics.FlagSnapshot, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -657,6 +659,13 @@ proto.api.v1alpha1.vanalytics.ListFlagSnapshotsResponse.prototype.clearFlagSnaps
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.vanalytics.FlagSnapshot.repeatedFields_ = [13];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -698,7 +707,9 @@ proto.api.v1alpha1.vanalytics.FlagSnapshot.toObject = function(includeInstance, 
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     mustReview: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     mustNotify: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    boolExpr: (f = msg.getBoolExpr()) && proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.toObject(includeInstance, f)
+    boolExpr: (f = msg.getBoolExpr()) && proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.toObject(includeInstance, f),
+    dnclListList: jspb.Message.toObjectList(msg.getDnclListList(),
+    api_v1alpha1_vanalytics_dncl_list_pb.DnclList.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -780,6 +791,11 @@ proto.api.v1alpha1.vanalytics.FlagSnapshot.deserializeBinaryFromReader = functio
       var value = new proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr;
       reader.readMessage(value,proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.deserializeBinaryFromReader);
       msg.setBoolExpr(value);
+      break;
+    case 13:
+      var value = new api_v1alpha1_vanalytics_dncl_list_pb.DnclList;
+      reader.readMessage(value,api_v1alpha1_vanalytics_dncl_list_pb.DnclList.deserializeBinaryFromReader);
+      msg.addDnclList(value);
       break;
     default:
       reader.skipField();
@@ -887,6 +903,14 @@ proto.api.v1alpha1.vanalytics.FlagSnapshot.serializeBinaryToWriter = function(me
       12,
       f,
       proto.api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.serializeBinaryToWriter
+    );
+  }
+  f = message.getDnclListList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      13,
+      f,
+      api_v1alpha1_vanalytics_dncl_list_pb.DnclList.serializeBinaryToWriter
     );
   }
 };
@@ -1570,6 +1594,44 @@ proto.api.v1alpha1.vanalytics.FlagSnapshot.prototype.clearBoolExpr = function() 
  */
 proto.api.v1alpha1.vanalytics.FlagSnapshot.prototype.hasBoolExpr = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * repeated DnclList dncl_list = 13;
+ * @return {!Array<!proto.api.v1alpha1.vanalytics.DnclList>}
+ */
+proto.api.v1alpha1.vanalytics.FlagSnapshot.prototype.getDnclListList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.vanalytics.DnclList>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_vanalytics_dncl_list_pb.DnclList, 13));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.vanalytics.DnclList>} value
+ * @return {!proto.api.v1alpha1.vanalytics.FlagSnapshot} returns this
+*/
+proto.api.v1alpha1.vanalytics.FlagSnapshot.prototype.setDnclListList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 13, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.vanalytics.DnclList=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.vanalytics.DnclList}
+ */
+proto.api.v1alpha1.vanalytics.FlagSnapshot.prototype.addDnclList = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.api.v1alpha1.vanalytics.DnclList, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.vanalytics.FlagSnapshot} returns this
+ */
+proto.api.v1alpha1.vanalytics.FlagSnapshot.prototype.clearDnclListList = function() {
+  return this.setDnclListList([]);
 };
 
 

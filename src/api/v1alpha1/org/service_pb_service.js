@@ -1290,6 +1290,42 @@ Org.UpdateAgentTriggers = {
   responseType: api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersResponse
 };
 
+Org.GetHuntGroupScript = {
+  methodName: "GetHuntGroupScript",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.GetHuntGroupScriptRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.GetHuntGroupScriptResponse
+};
+
+Org.CreateHuntGroupScript = {
+  methodName: "CreateHuntGroupScript",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupScriptRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupScriptResponse
+};
+
+Org.UpdateHuntGroupScript = {
+  methodName: "UpdateHuntGroupScript",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupScriptRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupScriptResponse
+};
+
+Org.DeleteHuntGroupScript = {
+  methodName: "DeleteHuntGroupScript",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptResponse
+};
+
 Org.CreateTrust = {
   methodName: "CreateTrust",
   service: Org,
@@ -6182,6 +6218,130 @@ OrgClient.prototype.updateAgentTriggers = function updateAgentTriggers(requestMe
     callback = arguments[1];
   }
   var client = grpc.unary(Org.UpdateAgentTriggers, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.getHuntGroupScript = function getHuntGroupScript(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetHuntGroupScript, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.createHuntGroupScript = function createHuntGroupScript(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CreateHuntGroupScript, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.updateHuntGroupScript = function updateHuntGroupScript(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateHuntGroupScript, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.deleteHuntGroupScript = function deleteHuntGroupScript(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.DeleteHuntGroupScript, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

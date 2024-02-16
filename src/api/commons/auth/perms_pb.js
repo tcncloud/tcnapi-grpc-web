@@ -12,10 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var globalThis = require("../../../global.js");
-var proto = globalThis.proto;
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -102,6 +102,7 @@ proto.api.commons.auth.Permission = {
   PERMISSION_INTEGRATIONS_VIEW: 1300,
   PERMISSION_INTEGRATIONS_PAYMENT: 1301,
   PERMISSION_INTEGRATIONS_JOURNEY: 1302,
+  PERMISSIONS_INTEGRATIONS_KEY_CREATION: 1310,
   PERMISSION_WFM: 1500,
   PERMISSION_AGENT_PORTAL: 1501,
   PERMISSION_SCORECARDS: 1600,
