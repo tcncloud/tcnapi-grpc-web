@@ -2720,7 +2720,6 @@ export interface SmsNumberProviderMap {
   AUSBURST_SMS_PROVIDER: 5;
   MEDIASAT_SMS_PROVIDER: 6;
   TEXTLOCAL_SMS_PROVIDER: 7;
-  SMARTPING_SMS_PROVIDER: 8;
 }
 
 export const SmsNumberProvider: SmsNumberProviderMap;
