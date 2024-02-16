@@ -1788,6 +1788,51 @@ type OrgGetMyUserMfaInfo = {
   readonly responseType: typeof api_v1alpha1_org_user_pb.GetMyUserMfaInfoResponse;
 };
 
+type OrgCreateBusinessHours = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.CreateBusinessHoursRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.CreateBusinessHoursResponse;
+};
+
+type OrgUpdateBusinessHours = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.UpdateBusinessHoursRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse;
+};
+
+type OrgDeleteBusinessHours = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.DeleteBusinessHoursRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.DeleteBusinessHoursResponse;
+};
+
+type OrgListBusinessHours = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.ListBusinessHoursRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.ListBusinessHoursResponse;
+};
+
+type OrgGetBusinessHours = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.GetBusinessHoursRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.GetBusinessHoursResponse;
+};
+
 export class Org {
   static readonly serviceName: string;
   static readonly CreateOrganization: OrgCreateOrganization;
@@ -1987,6 +2032,11 @@ export class Org {
   static readonly EnableMyUserMfa: OrgEnableMyUserMfa;
   static readonly GetUserMfaInfo: OrgGetUserMfaInfo;
   static readonly GetMyUserMfaInfo: OrgGetMyUserMfaInfo;
+  static readonly CreateBusinessHours: OrgCreateBusinessHours;
+  static readonly UpdateBusinessHours: OrgUpdateBusinessHours;
+  static readonly DeleteBusinessHours: OrgDeleteBusinessHours;
+  static readonly ListBusinessHours: OrgListBusinessHours;
+  static readonly GetBusinessHours: OrgGetBusinessHours;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3721,6 +3771,51 @@ export class OrgClient {
   getMyUserMfaInfo(
     requestMessage: api_v1alpha1_org_user_pb.GetMyUserMfaInfoRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.GetMyUserMfaInfoResponse|null) => void
+  ): UnaryResponse;
+  createBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.CreateBusinessHoursRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.CreateBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  createBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.CreateBusinessHoursRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.CreateBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  updateBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  updateBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  deleteBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.DeleteBusinessHoursRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.DeleteBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  deleteBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.DeleteBusinessHoursRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.DeleteBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  listBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.ListBusinessHoursRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.ListBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  listBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.ListBusinessHoursRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.ListBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  getBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.GetBusinessHoursRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.GetBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  getBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.GetBusinessHoursRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.GetBusinessHoursResponse|null) => void
   ): UnaryResponse;
 }
 
