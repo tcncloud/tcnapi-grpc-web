@@ -1257,6 +1257,33 @@ type OrgDeleteHuntGroupClientInfoDisplayTemplate = {
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupClientInfoDisplayTemplateResponse;
 };
 
+type OrgCopyHuntGroupClientInfoDisplayTemplate = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateResponse;
+};
+
+type OrgCreateCampaignClientInfoDisplayTemplate = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateResponse;
+};
+
+type OrgListHuntGroupsWithClientInfoTemplateData = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataResponse;
+};
+
 type OrgListAgentTriggers = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1928,6 +1955,9 @@ export class Org {
   static readonly CreateHuntGroupClientInfoDisplayTemplate: OrgCreateHuntGroupClientInfoDisplayTemplate;
   static readonly UpdateHuntGroupClientInfoDisplayTemplate: OrgUpdateHuntGroupClientInfoDisplayTemplate;
   static readonly DeleteHuntGroupClientInfoDisplayTemplate: OrgDeleteHuntGroupClientInfoDisplayTemplate;
+  static readonly CopyHuntGroupClientInfoDisplayTemplate: OrgCopyHuntGroupClientInfoDisplayTemplate;
+  static readonly CreateCampaignClientInfoDisplayTemplate: OrgCreateCampaignClientInfoDisplayTemplate;
+  static readonly ListHuntGroupsWithClientInfoTemplateData: OrgListHuntGroupsWithClientInfoTemplateData;
   static readonly ListAgentTriggers: OrgListAgentTriggers;
   static readonly CopyAgentTrigger: OrgCopyAgentTrigger;
   static readonly UpdateAgentTriggers: OrgUpdateAgentTriggers;
@@ -3190,6 +3220,33 @@ export class OrgClient {
   deleteHuntGroupClientInfoDisplayTemplate(
     requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupClientInfoDisplayTemplateRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupClientInfoDisplayTemplateResponse|null) => void
+  ): UnaryResponse;
+  copyHuntGroupClientInfoDisplayTemplate(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateResponse|null) => void
+  ): UnaryResponse;
+  copyHuntGroupClientInfoDisplayTemplate(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateResponse|null) => void
+  ): UnaryResponse;
+  createCampaignClientInfoDisplayTemplate(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateResponse|null) => void
+  ): UnaryResponse;
+  createCampaignClientInfoDisplayTemplate(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateResponse|null) => void
+  ): UnaryResponse;
+  listHuntGroupsWithClientInfoTemplateData(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataResponse|null) => void
+  ): UnaryResponse;
+  listHuntGroupsWithClientInfoTemplateData(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataResponse|null) => void
   ): UnaryResponse;
   listAgentTriggers(
     requestMessage: api_v1alpha1_org_huntgroup_pb.ListAgentTriggersRequest,
