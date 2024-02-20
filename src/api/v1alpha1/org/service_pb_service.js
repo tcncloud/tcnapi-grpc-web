@@ -1263,6 +1263,33 @@ Org.DeleteHuntGroupClientInfoDisplayTemplate = {
   responseType: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupClientInfoDisplayTemplateResponse
 };
 
+Org.CopyHuntGroupClientInfoDisplayTemplate = {
+  methodName: "CopyHuntGroupClientInfoDisplayTemplate",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateResponse
+};
+
+Org.CreateCampaignClientInfoDisplayTemplate = {
+  methodName: "CreateCampaignClientInfoDisplayTemplate",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateResponse
+};
+
+Org.ListHuntGroupsWithClientInfoTemplateData = {
+  methodName: "ListHuntGroupsWithClientInfoTemplateData",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataResponse
+};
+
 Org.ListAgentTriggers = {
   methodName: "ListAgentTriggers",
   service: Org,
@@ -6125,6 +6152,99 @@ OrgClient.prototype.deleteHuntGroupClientInfoDisplayTemplate = function deleteHu
     callback = arguments[1];
   }
   var client = grpc.unary(Org.DeleteHuntGroupClientInfoDisplayTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.copyHuntGroupClientInfoDisplayTemplate = function copyHuntGroupClientInfoDisplayTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CopyHuntGroupClientInfoDisplayTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.createCampaignClientInfoDisplayTemplate = function createCampaignClientInfoDisplayTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CreateCampaignClientInfoDisplayTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listHuntGroupsWithClientInfoTemplateData = function listHuntGroupsWithClientInfoTemplateData(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListHuntGroupsWithClientInfoTemplateData, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

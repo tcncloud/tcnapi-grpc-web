@@ -1897,6 +1897,9 @@ export class ClientInfoDisplayTemplate extends jspb.Message {
   getClientInfoDisplayTemplateSid(): number;
   setClientInfoDisplayTemplateSid(value: number): void;
 
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ClientInfoDisplayTemplate.AsObject;
   static toObject(includeInstance: boolean, msg: ClientInfoDisplayTemplate): ClientInfoDisplayTemplate.AsObject;
@@ -1917,6 +1920,7 @@ export namespace ClientInfoDisplayTemplate {
     contactFieldStylesList: Array<ContactFieldStyle.AsObject>,
     templateCategory: TemplateCategoryMap[keyof TemplateCategoryMap],
     clientInfoDisplayTemplateSid: number,
+    huntGroupSid: number,
   }
 }
 
@@ -1997,6 +2001,62 @@ export namespace DialedNumberFieldStyle {
   export type AsObject = {
     fieldStyle?: FieldStyle.AsObject,
     displayToAgent: boolean,
+  }
+}
+
+export class HuntGroupWithClientInfoTemplateData extends jspb.Message {
+  hasHuntGroup(): boolean;
+  clearHuntGroup(): void;
+  getHuntGroup(): HuntGroupWithClientInfoTemplateData.HuntGroup | undefined;
+  setHuntGroup(value?: HuntGroupWithClientInfoTemplateData.HuntGroup): void;
+
+  hasTemplate(): boolean;
+  clearTemplate(): void;
+  getTemplate(): ClientInfoDisplayTemplate | undefined;
+  setTemplate(value?: ClientInfoDisplayTemplate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HuntGroupWithClientInfoTemplateData.AsObject;
+  static toObject(includeInstance: boolean, msg: HuntGroupWithClientInfoTemplateData): HuntGroupWithClientInfoTemplateData.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HuntGroupWithClientInfoTemplateData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HuntGroupWithClientInfoTemplateData;
+  static deserializeBinaryFromReader(message: HuntGroupWithClientInfoTemplateData, reader: jspb.BinaryReader): HuntGroupWithClientInfoTemplateData;
+}
+
+export namespace HuntGroupWithClientInfoTemplateData {
+  export type AsObject = {
+    huntGroup?: HuntGroupWithClientInfoTemplateData.HuntGroup.AsObject,
+    template?: ClientInfoDisplayTemplate.AsObject,
+  }
+
+  export class HuntGroup extends jspb.Message {
+    getClientSid(): number;
+    setClientSid(value: number): void;
+
+    getHuntGroupSid(): number;
+    setHuntGroupSid(value: number): void;
+
+    getHuntGroupName(): string;
+    setHuntGroupName(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): HuntGroup.AsObject;
+    static toObject(includeInstance: boolean, msg: HuntGroup): HuntGroup.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: HuntGroup, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): HuntGroup;
+    static deserializeBinaryFromReader(message: HuntGroup, reader: jspb.BinaryReader): HuntGroup;
+  }
+
+  export namespace HuntGroup {
+    export type AsObject = {
+      clientSid: number,
+      huntGroupSid: number,
+      huntGroupName: string,
+    }
   }
 }
 
