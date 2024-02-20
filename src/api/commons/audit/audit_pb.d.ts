@@ -502,6 +502,16 @@ export class AuditEvent extends jspb.Message {
   getLmsPipelineFailureEvent(): api_commons_audit_lms_events_pb.LMSPipelineFailureEvent | undefined;
   setLmsPipelineFailureEvent(value?: api_commons_audit_lms_events_pb.LMSPipelineFailureEvent): void;
 
+  hasLmsPipelineNoOutputEvent(): boolean;
+  clearLmsPipelineNoOutputEvent(): void;
+  getLmsPipelineNoOutputEvent(): api_commons_audit_lms_events_pb.LMSPipelineNoOutputEvent | undefined;
+  setLmsPipelineNoOutputEvent(value?: api_commons_audit_lms_events_pb.LMSPipelineNoOutputEvent): void;
+
+  hasLmsPipelineSuccessfulEvent(): boolean;
+  clearLmsPipelineSuccessfulEvent(): void;
+  getLmsPipelineSuccessfulEvent(): api_commons_audit_lms_events_pb.LMSPipelineSuccessfulEvent | undefined;
+  setLmsPipelineSuccessfulEvent(value?: api_commons_audit_lms_events_pb.LMSPipelineSuccessfulEvent): void;
+
   hasBillingCommitBillingPlanEvent(): boolean;
   clearBillingCommitBillingPlanEvent(): void;
   getBillingCommitBillingPlanEvent(): api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent | undefined;
@@ -679,6 +689,8 @@ export namespace AuditEvent {
     complianceRndQueryCachedEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
     agentTrainingCreateLearningOpportunityEvent?: api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent.AsObject,
     lmsPipelineFailureEvent?: api_commons_audit_lms_events_pb.LMSPipelineFailureEvent.AsObject,
+    lmsPipelineNoOutputEvent?: api_commons_audit_lms_events_pb.LMSPipelineNoOutputEvent.AsObject,
+    lmsPipelineSuccessfulEvent?: api_commons_audit_lms_events_pb.LMSPipelineSuccessfulEvent.AsObject,
     billingCommitBillingPlanEvent?: api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent.AsObject,
     billingCreateBillingPlanEvent?: api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent.AsObject,
     billingCreateInvoiceEvent?: api_commons_audit_billing_events_pb.BillingCreateInvoiceEvent.AsObject,
@@ -789,6 +801,8 @@ export namespace AuditEvent {
     COMPLIANCE_RND_QUERY_CACHED_EVENT = 701,
     AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800,
     LMS_PIPELINE_FAILURE_EVENT = 900,
+    LMS_PIPELINE_NO_OUTPUT_EVENT = 901,
+    LMS_PIPELINE_SUCCESSFUL_EVENT = 902,
     BILLING_COMMIT_BILLING_PLAN_EVENT = 1000,
     BILLING_CREATE_BILLING_PLAN_EVENT = 1001,
     BILLING_CREATE_INVOICE_EVENT = 1002,
