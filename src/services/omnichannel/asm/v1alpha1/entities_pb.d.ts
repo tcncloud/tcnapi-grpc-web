@@ -2,7 +2,6 @@
 // file: services/omnichannel/asm/v1alpha1/entities.proto
 
 import * as jspb from "google-protobuf";
-import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as services_omnichannel_asm_entities_v1alpha1_session_pb from "../../../../services/omnichannel/asm/entities/v1alpha1/session_pb";
 
 export class CreateSessionRequest extends jspb.Message {

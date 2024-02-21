@@ -23,8 +23,6 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-goog.object.extend(proto, google_protobuf_timestamp_pb);
 var services_omnichannel_asm_entities_v1alpha1_session_pb = require('../../../../services/omnichannel/asm/entities/v1alpha1/session_pb.js');
 goog.object.extend(proto, services_omnichannel_asm_entities_v1alpha1_session_pb);
 goog.exportSymbol('proto.services.omnichannel.asm.v1alpha1.CreateSessionRequest', null, global);
