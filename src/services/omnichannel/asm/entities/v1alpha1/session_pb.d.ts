@@ -114,18 +114,18 @@ export namespace VoiceRegistration {
   }
 }
 
-export class ListAsmUserDetails extends jspb.Message {
+export class AsmUserDetails extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListAsmUserDetails.AsObject;
-  static toObject(includeInstance: boolean, msg: ListAsmUserDetails): ListAsmUserDetails.AsObject;
+  toObject(includeInstance?: boolean): AsmUserDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: AsmUserDetails): AsmUserDetails.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListAsmUserDetails, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListAsmUserDetails;
-  static deserializeBinaryFromReader(message: ListAsmUserDetails, reader: jspb.BinaryReader): ListAsmUserDetails;
+  static serializeBinaryToWriter(message: AsmUserDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AsmUserDetails;
+  static deserializeBinaryFromReader(message: AsmUserDetails, reader: jspb.BinaryReader): AsmUserDetails;
 }
 
-export namespace ListAsmUserDetails {
+export namespace AsmUserDetails {
   export type AsObject = {
   }
 }

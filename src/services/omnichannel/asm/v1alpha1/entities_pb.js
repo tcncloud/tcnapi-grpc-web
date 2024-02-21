@@ -1824,7 +1824,7 @@ proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.prototype.toO
 proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     sessionsList: jspb.Message.toObjectList(msg.getSessionsList(),
-    services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails.toObject, includeInstance)
+    services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1862,8 +1862,8 @@ proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.deserializeBi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails;
-      reader.readMessage(value,services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails.deserializeBinaryFromReader);
+      var value = new services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails;
+      reader.readMessage(value,services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.deserializeBinaryFromReader);
       msg.addSessions(value);
       break;
     default:
@@ -1900,24 +1900,24 @@ proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.serializeBina
     writer.writeRepeatedMessage(
       1,
       f,
-      services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails.serializeBinaryToWriter
+      services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails sessions = 1;
- * @return {!Array<!proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails>}
+ * repeated services.omnichannel.asm.entities.v1alpha1.AsmUserDetails sessions = 1;
+ * @return {!Array<!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails>}
  */
 proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.prototype.getSessionsList = function() {
-  return /** @type{!Array<!proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails>} */ (
-    jspb.Message.getRepeatedWrapperField(this, services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails, 1));
+  return /** @type{!Array<!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails>} */ (
+    jspb.Message.getRepeatedWrapperField(this, services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails, 1));
 };
 
 
 /**
- * @param {!Array<!proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails>} value
+ * @param {!Array<!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails>} value
  * @return {!proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse} returns this
 */
 proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.prototype.setSessionsList = function(value) {
@@ -1926,12 +1926,12 @@ proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.prototype.set
 
 
 /**
- * @param {!proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails=} opt_value
+ * @param {!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails=} opt_value
  * @param {number=} opt_index
- * @return {!proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails}
+ * @return {!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails}
  */
 proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.prototype.addSessions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails, opt_index);
 };
 
 

@@ -230,9 +230,9 @@ export namespace ListAsmUserDetailsRequest {
 
 export class ListAsmUserDetailsResponse extends jspb.Message {
   clearSessionsList(): void;
-  getSessionsList(): Array<services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails>;
-  setSessionsList(value: Array<services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails>): void;
-  addSessions(value?: services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails, index?: number): services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails;
+  getSessionsList(): Array<services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails>;
+  setSessionsList(value: Array<services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails>): void;
+  addSessions(value?: services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails, index?: number): services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAsmUserDetailsResponse.AsObject;
@@ -246,7 +246,7 @@ export class ListAsmUserDetailsResponse extends jspb.Message {
 
 export namespace ListAsmUserDetailsResponse {
   export type AsObject = {
-    sessionsList: Array<services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails.AsObject>,
+    sessionsList: Array<services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.AsObject>,
   }
 }
 

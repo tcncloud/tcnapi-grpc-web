@@ -26,7 +26,7 @@ var global = localGlobalThis ||
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.services.omnichannel.asm.entities.v1alpha1.AsmSession', null, global);
-goog.exportSymbol('proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails', null, global);
+goog.exportSymbol('proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails', null, global);
 goog.exportSymbol('proto.services.omnichannel.asm.entities.v1alpha1.VoiceRegistration', null, global);
 goog.exportSymbol('proto.services.omnichannel.asm.entities.v1alpha1.VoiceSession', null, global);
 /**
@@ -102,16 +102,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails = function(opt_data) {
+proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails, jspb.Message);
+goog.inherits(proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.displayName = 'proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails';
+  proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.displayName = 'proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails';
 }
 
 
@@ -924,8 +924,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.prototype.toObject = function(opt_includeInstance) {
-  return proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.toObject(opt_includeInstance, this);
+proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.toObject = function(opt_includeInstance) {
+  return proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.toObject(opt_includeInstance, this);
 };
 
 
@@ -934,11 +934,11 @@ proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.prototype.to
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails} msg The msg instance to transform.
+ * @param {!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.toObject = function(includeInstance, msg) {
+proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -954,23 +954,23 @@ proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.toObject = f
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails}
+ * @return {!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails}
  */
-proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.deserializeBinary = function(bytes) {
+proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails;
-  return proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails;
+  return proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails} msg The message object to deserialize into.
+ * @param {!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails}
+ * @return {!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails}
  */
-proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.deserializeBinaryFromReader = function(msg, reader) {
+proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -990,9 +990,9 @@ proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.deserializeB
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.prototype.serializeBinary = function() {
+proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.serializeBinaryToWriter(this, writer);
+  proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1000,11 +1000,11 @@ proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.prototype.se
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails} message
+ * @param {!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails.serializeBinaryToWriter = function(message, writer) {
+proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
