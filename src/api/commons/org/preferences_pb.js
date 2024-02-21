@@ -12880,7 +12880,7 @@ proto.api.commons.org.AdminClientPreferences.prototype.clearAllowedCountriesList
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.org.BusinessHours.repeatedFields_ = [5];
+proto.api.commons.org.BusinessHours.repeatedFields_ = [5,6,7,8,9,10,11,12];
 
 
 
@@ -12918,6 +12918,20 @@ proto.api.commons.org.BusinessHours.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
     rangesList: jspb.Message.toObjectList(msg.getRangesList(),
+    proto.api.commons.org.Range.toObject, includeInstance),
+    sundayRangesList: jspb.Message.toObjectList(msg.getSundayRangesList(),
+    proto.api.commons.org.Range.toObject, includeInstance),
+    mondayRangesList: jspb.Message.toObjectList(msg.getMondayRangesList(),
+    proto.api.commons.org.Range.toObject, includeInstance),
+    tuesdayRangesList: jspb.Message.toObjectList(msg.getTuesdayRangesList(),
+    proto.api.commons.org.Range.toObject, includeInstance),
+    wednesdayRangesList: jspb.Message.toObjectList(msg.getWednesdayRangesList(),
+    proto.api.commons.org.Range.toObject, includeInstance),
+    thursdayRangesList: jspb.Message.toObjectList(msg.getThursdayRangesList(),
+    proto.api.commons.org.Range.toObject, includeInstance),
+    fridayRangesList: jspb.Message.toObjectList(msg.getFridayRangesList(),
+    proto.api.commons.org.Range.toObject, includeInstance),
+    saturdayRangesList: jspb.Message.toObjectList(msg.getSaturdayRangesList(),
     proto.api.commons.org.Range.toObject, includeInstance)
   };
 
@@ -12975,6 +12989,41 @@ proto.api.commons.org.BusinessHours.deserializeBinaryFromReader = function(msg, 
       var value = new proto.api.commons.org.Range;
       reader.readMessage(value,proto.api.commons.org.Range.deserializeBinaryFromReader);
       msg.addRanges(value);
+      break;
+    case 6:
+      var value = new proto.api.commons.org.Range;
+      reader.readMessage(value,proto.api.commons.org.Range.deserializeBinaryFromReader);
+      msg.addSundayRanges(value);
+      break;
+    case 7:
+      var value = new proto.api.commons.org.Range;
+      reader.readMessage(value,proto.api.commons.org.Range.deserializeBinaryFromReader);
+      msg.addMondayRanges(value);
+      break;
+    case 8:
+      var value = new proto.api.commons.org.Range;
+      reader.readMessage(value,proto.api.commons.org.Range.deserializeBinaryFromReader);
+      msg.addTuesdayRanges(value);
+      break;
+    case 9:
+      var value = new proto.api.commons.org.Range;
+      reader.readMessage(value,proto.api.commons.org.Range.deserializeBinaryFromReader);
+      msg.addWednesdayRanges(value);
+      break;
+    case 10:
+      var value = new proto.api.commons.org.Range;
+      reader.readMessage(value,proto.api.commons.org.Range.deserializeBinaryFromReader);
+      msg.addThursdayRanges(value);
+      break;
+    case 11:
+      var value = new proto.api.commons.org.Range;
+      reader.readMessage(value,proto.api.commons.org.Range.deserializeBinaryFromReader);
+      msg.addFridayRanges(value);
+      break;
+    case 12:
+      var value = new proto.api.commons.org.Range;
+      reader.readMessage(value,proto.api.commons.org.Range.deserializeBinaryFromReader);
+      msg.addSaturdayRanges(value);
       break;
     default:
       reader.skipField();
@@ -13037,6 +13086,62 @@ proto.api.commons.org.BusinessHours.serializeBinaryToWriter = function(message, 
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       5,
+      f,
+      proto.api.commons.org.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getSundayRangesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
+      f,
+      proto.api.commons.org.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getMondayRangesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      7,
+      f,
+      proto.api.commons.org.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getTuesdayRangesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      8,
+      f,
+      proto.api.commons.org.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getWednesdayRangesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      9,
+      f,
+      proto.api.commons.org.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getThursdayRangesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      10,
+      f,
+      proto.api.commons.org.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getFridayRangesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      11,
+      f,
+      proto.api.commons.org.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getSaturdayRangesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      12,
       f,
       proto.api.commons.org.Range.serializeBinaryToWriter
     );
@@ -13151,6 +13256,272 @@ proto.api.commons.org.BusinessHours.prototype.addRanges = function(opt_value, op
  */
 proto.api.commons.org.BusinessHours.prototype.clearRangesList = function() {
   return this.setRangesList([]);
+};
+
+
+/**
+ * repeated Range sunday_ranges = 6;
+ * @return {!Array<!proto.api.commons.org.Range>}
+ */
+proto.api.commons.org.BusinessHours.prototype.getSundayRangesList = function() {
+  return /** @type{!Array<!proto.api.commons.org.Range>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.org.Range, 6));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.org.Range>} value
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+*/
+proto.api.commons.org.BusinessHours.prototype.setSundayRangesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.org.Range=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.org.Range}
+ */
+proto.api.commons.org.BusinessHours.prototype.addSundayRanges = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.api.commons.org.Range, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+ */
+proto.api.commons.org.BusinessHours.prototype.clearSundayRangesList = function() {
+  return this.setSundayRangesList([]);
+};
+
+
+/**
+ * repeated Range monday_ranges = 7;
+ * @return {!Array<!proto.api.commons.org.Range>}
+ */
+proto.api.commons.org.BusinessHours.prototype.getMondayRangesList = function() {
+  return /** @type{!Array<!proto.api.commons.org.Range>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.org.Range, 7));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.org.Range>} value
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+*/
+proto.api.commons.org.BusinessHours.prototype.setMondayRangesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.org.Range=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.org.Range}
+ */
+proto.api.commons.org.BusinessHours.prototype.addMondayRanges = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.api.commons.org.Range, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+ */
+proto.api.commons.org.BusinessHours.prototype.clearMondayRangesList = function() {
+  return this.setMondayRangesList([]);
+};
+
+
+/**
+ * repeated Range tuesday_ranges = 8;
+ * @return {!Array<!proto.api.commons.org.Range>}
+ */
+proto.api.commons.org.BusinessHours.prototype.getTuesdayRangesList = function() {
+  return /** @type{!Array<!proto.api.commons.org.Range>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.org.Range, 8));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.org.Range>} value
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+*/
+proto.api.commons.org.BusinessHours.prototype.setTuesdayRangesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.org.Range=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.org.Range}
+ */
+proto.api.commons.org.BusinessHours.prototype.addTuesdayRanges = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.api.commons.org.Range, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+ */
+proto.api.commons.org.BusinessHours.prototype.clearTuesdayRangesList = function() {
+  return this.setTuesdayRangesList([]);
+};
+
+
+/**
+ * repeated Range wednesday_ranges = 9;
+ * @return {!Array<!proto.api.commons.org.Range>}
+ */
+proto.api.commons.org.BusinessHours.prototype.getWednesdayRangesList = function() {
+  return /** @type{!Array<!proto.api.commons.org.Range>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.org.Range, 9));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.org.Range>} value
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+*/
+proto.api.commons.org.BusinessHours.prototype.setWednesdayRangesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.org.Range=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.org.Range}
+ */
+proto.api.commons.org.BusinessHours.prototype.addWednesdayRanges = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.commons.org.Range, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+ */
+proto.api.commons.org.BusinessHours.prototype.clearWednesdayRangesList = function() {
+  return this.setWednesdayRangesList([]);
+};
+
+
+/**
+ * repeated Range thursday_ranges = 10;
+ * @return {!Array<!proto.api.commons.org.Range>}
+ */
+proto.api.commons.org.BusinessHours.prototype.getThursdayRangesList = function() {
+  return /** @type{!Array<!proto.api.commons.org.Range>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.org.Range, 10));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.org.Range>} value
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+*/
+proto.api.commons.org.BusinessHours.prototype.setThursdayRangesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.org.Range=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.org.Range}
+ */
+proto.api.commons.org.BusinessHours.prototype.addThursdayRanges = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.api.commons.org.Range, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+ */
+proto.api.commons.org.BusinessHours.prototype.clearThursdayRangesList = function() {
+  return this.setThursdayRangesList([]);
+};
+
+
+/**
+ * repeated Range friday_ranges = 11;
+ * @return {!Array<!proto.api.commons.org.Range>}
+ */
+proto.api.commons.org.BusinessHours.prototype.getFridayRangesList = function() {
+  return /** @type{!Array<!proto.api.commons.org.Range>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.org.Range, 11));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.org.Range>} value
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+*/
+proto.api.commons.org.BusinessHours.prototype.setFridayRangesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.org.Range=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.org.Range}
+ */
+proto.api.commons.org.BusinessHours.prototype.addFridayRanges = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.api.commons.org.Range, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+ */
+proto.api.commons.org.BusinessHours.prototype.clearFridayRangesList = function() {
+  return this.setFridayRangesList([]);
+};
+
+
+/**
+ * repeated Range saturday_ranges = 12;
+ * @return {!Array<!proto.api.commons.org.Range>}
+ */
+proto.api.commons.org.BusinessHours.prototype.getSaturdayRangesList = function() {
+  return /** @type{!Array<!proto.api.commons.org.Range>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.org.Range, 12));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.org.Range>} value
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+*/
+proto.api.commons.org.BusinessHours.prototype.setSaturdayRangesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 12, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.org.Range=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.org.Range}
+ */
+proto.api.commons.org.BusinessHours.prototype.addSaturdayRanges = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.api.commons.org.Range, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.org.BusinessHours} returns this
+ */
+proto.api.commons.org.BusinessHours.prototype.clearSaturdayRangesList = function() {
+  return this.setSaturdayRangesList([]);
 };
 
 

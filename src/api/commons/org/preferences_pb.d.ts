@@ -1709,6 +1709,41 @@ export class BusinessHours extends jspb.Message {
   setRangesList(value: Array<Range>): void;
   addRanges(value?: Range, index?: number): Range;
 
+  clearSundayRangesList(): void;
+  getSundayRangesList(): Array<Range>;
+  setSundayRangesList(value: Array<Range>): void;
+  addSundayRanges(value?: Range, index?: number): Range;
+
+  clearMondayRangesList(): void;
+  getMondayRangesList(): Array<Range>;
+  setMondayRangesList(value: Array<Range>): void;
+  addMondayRanges(value?: Range, index?: number): Range;
+
+  clearTuesdayRangesList(): void;
+  getTuesdayRangesList(): Array<Range>;
+  setTuesdayRangesList(value: Array<Range>): void;
+  addTuesdayRanges(value?: Range, index?: number): Range;
+
+  clearWednesdayRangesList(): void;
+  getWednesdayRangesList(): Array<Range>;
+  setWednesdayRangesList(value: Array<Range>): void;
+  addWednesdayRanges(value?: Range, index?: number): Range;
+
+  clearThursdayRangesList(): void;
+  getThursdayRangesList(): Array<Range>;
+  setThursdayRangesList(value: Array<Range>): void;
+  addThursdayRanges(value?: Range, index?: number): Range;
+
+  clearFridayRangesList(): void;
+  getFridayRangesList(): Array<Range>;
+  setFridayRangesList(value: Array<Range>): void;
+  addFridayRanges(value?: Range, index?: number): Range;
+
+  clearSaturdayRangesList(): void;
+  getSaturdayRangesList(): Array<Range>;
+  setSaturdayRangesList(value: Array<Range>): void;
+  addSaturdayRanges(value?: Range, index?: number): Range;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BusinessHours.AsObject;
   static toObject(includeInstance: boolean, msg: BusinessHours): BusinessHours.AsObject;
@@ -1726,6 +1761,13 @@ export namespace BusinessHours {
     name: string,
     description: string,
     rangesList: Array<Range.AsObject>,
+    sundayRangesList: Array<Range.AsObject>,
+    mondayRangesList: Array<Range.AsObject>,
+    tuesdayRangesList: Array<Range.AsObject>,
+    wednesdayRangesList: Array<Range.AsObject>,
+    thursdayRangesList: Array<Range.AsObject>,
+    fridayRangesList: Array<Range.AsObject>,
+    saturdayRangesList: Array<Range.AsObject>,
   }
 }
 
