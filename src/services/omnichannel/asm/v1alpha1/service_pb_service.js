@@ -16,8 +16,8 @@ AsmService.CreateSession = {
   service: AsmService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionReq,
-  responseType: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionRes
+  requestType: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionRequest,
+  responseType: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionResponse
 };
 
 AsmService.EndSession = {
@@ -25,8 +25,8 @@ AsmService.EndSession = {
   service: AsmService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionReq,
-  responseType: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionRes
+  requestType: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionRequest,
+  responseType: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionResponse
 };
 
 AsmService.GetCurrentSession = {
@@ -34,8 +34,8 @@ AsmService.GetCurrentSession = {
   service: AsmService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionReq,
-  responseType: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionRes
+  requestType: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionRequest,
+  responseType: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionResponse
 };
 
 AsmService.EnableVoice = {
@@ -43,8 +43,8 @@ AsmService.EnableVoice = {
   service: AsmService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceReq,
-  responseType: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceRes
+  requestType: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceRequest,
+  responseType: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceResponse
 };
 
 AsmService.DisableVoice = {
@@ -52,8 +52,8 @@ AsmService.DisableVoice = {
   service: AsmService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceReq,
-  responseType: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceRes
+  requestType: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceRequest,
+  responseType: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceResponse
 };
 
 AsmService.ListAsmUserDetails = {
@@ -61,8 +61,8 @@ AsmService.ListAsmUserDetails = {
   service: AsmService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsReq,
-  responseType: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsRes
+  requestType: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsRequest,
+  responseType: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsResponse
 };
 
 exports.AsmService = AsmService;

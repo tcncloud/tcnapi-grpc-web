@@ -10,8 +10,8 @@ type AsmServiceCreateSession = {
   readonly service: typeof AsmService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionReq;
-  readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionRes;
+  readonly requestType: typeof services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionRequest;
+  readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionResponse;
 };
 
 type AsmServiceEndSession = {
@@ -19,8 +19,8 @@ type AsmServiceEndSession = {
   readonly service: typeof AsmService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_omnichannel_asm_v1alpha1_entities_pb.EndSessionReq;
-  readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.EndSessionRes;
+  readonly requestType: typeof services_omnichannel_asm_v1alpha1_entities_pb.EndSessionRequest;
+  readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.EndSessionResponse;
 };
 
 type AsmServiceGetCurrentSession = {
@@ -28,8 +28,8 @@ type AsmServiceGetCurrentSession = {
   readonly service: typeof AsmService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionReq;
-  readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionRes;
+  readonly requestType: typeof services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionRequest;
+  readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionResponse;
 };
 
 type AsmServiceEnableVoice = {
@@ -37,8 +37,8 @@ type AsmServiceEnableVoice = {
   readonly service: typeof AsmService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceReq;
-  readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceRes;
+  readonly requestType: typeof services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceRequest;
+  readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceResponse;
 };
 
 type AsmServiceDisableVoice = {
@@ -46,8 +46,8 @@ type AsmServiceDisableVoice = {
   readonly service: typeof AsmService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceReq;
-  readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceRes;
+  readonly requestType: typeof services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceRequest;
+  readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceResponse;
 };
 
 type AsmServiceListAsmUserDetails = {
@@ -55,8 +55,8 @@ type AsmServiceListAsmUserDetails = {
   readonly service: typeof AsmService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsReq;
-  readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsRes;
+  readonly requestType: typeof services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsRequest;
+  readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsResponse;
 };
 
 export class AsmService {
@@ -102,58 +102,58 @@ export class AsmServiceClient {
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
   createSession(
-    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionReq,
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionResponse|null) => void
   ): UnaryResponse;
   createSession(
-    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionReq,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionRes|null) => void
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionRequest,
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionResponse|null) => void
   ): UnaryResponse;
   endSession(
-    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionReq,
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionResponse|null) => void
   ): UnaryResponse;
   endSession(
-    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionReq,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionRes|null) => void
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionRequest,
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionResponse|null) => void
   ): UnaryResponse;
   getCurrentSession(
-    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionReq,
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionResponse|null) => void
   ): UnaryResponse;
   getCurrentSession(
-    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionReq,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionRes|null) => void
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionRequest,
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionResponse|null) => void
   ): UnaryResponse;
   enableVoice(
-    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceReq,
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceResponse|null) => void
   ): UnaryResponse;
   enableVoice(
-    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceReq,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceRes|null) => void
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceRequest,
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceResponse|null) => void
   ): UnaryResponse;
   disableVoice(
-    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceReq,
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceResponse|null) => void
   ): UnaryResponse;
   disableVoice(
-    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceReq,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceRes|null) => void
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceRequest,
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceResponse|null) => void
   ): UnaryResponse;
   listAsmUserDetails(
-    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsReq,
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsResponse|null) => void
   ): UnaryResponse;
   listAsmUserDetails(
-    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsReq,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsRes|null) => void
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsResponse|null) => void
   ): UnaryResponse;
 }
 

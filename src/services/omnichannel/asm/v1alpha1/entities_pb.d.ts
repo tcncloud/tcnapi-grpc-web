@@ -5,45 +5,45 @@ import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as services_omnichannel_asm_entities_v1alpha1_session_pb from "../../../../services/omnichannel/asm/entities/v1alpha1/session_pb";
 
-export class CreateSessionReq extends jspb.Message {
+export class CreateSessionRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateSessionReq.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateSessionReq): CreateSessionReq.AsObject;
+  toObject(includeInstance?: boolean): CreateSessionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSessionRequest): CreateSessionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateSessionReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateSessionReq;
-  static deserializeBinaryFromReader(message: CreateSessionReq, reader: jspb.BinaryReader): CreateSessionReq;
+  static serializeBinaryToWriter(message: CreateSessionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSessionRequest;
+  static deserializeBinaryFromReader(message: CreateSessionRequest, reader: jspb.BinaryReader): CreateSessionRequest;
 }
 
-export namespace CreateSessionReq {
+export namespace CreateSessionRequest {
   export type AsObject = {
   }
 }
 
-export class CreateSessionRes extends jspb.Message {
+export class CreateSessionResponse extends jspb.Message {
   hasAsmSession(): boolean;
   clearAsmSession(): void;
   getAsmSession(): services_omnichannel_asm_entities_v1alpha1_session_pb.AsmSession | undefined;
   setAsmSession(value?: services_omnichannel_asm_entities_v1alpha1_session_pb.AsmSession): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateSessionRes.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateSessionRes): CreateSessionRes.AsObject;
+  toObject(includeInstance?: boolean): CreateSessionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSessionResponse): CreateSessionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateSessionRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateSessionRes;
-  static deserializeBinaryFromReader(message: CreateSessionRes, reader: jspb.BinaryReader): CreateSessionRes;
+  static serializeBinaryToWriter(message: CreateSessionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSessionResponse;
+  static deserializeBinaryFromReader(message: CreateSessionResponse, reader: jspb.BinaryReader): CreateSessionResponse;
 }
 
-export namespace CreateSessionRes {
+export namespace CreateSessionResponse {
   export type AsObject = {
     asmSession?: services_omnichannel_asm_entities_v1alpha1_session_pb.AsmSession.AsObject,
   }
 }
 
-export class EndSessionReq extends jspb.Message {
+export class EndSessionRequest extends jspb.Message {
   getAsmSessionSid(): number;
   setAsmSessionSid(value: number): void;
 
@@ -51,77 +51,77 @@ export class EndSessionReq extends jspb.Message {
   setReason(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EndSessionReq.AsObject;
-  static toObject(includeInstance: boolean, msg: EndSessionReq): EndSessionReq.AsObject;
+  toObject(includeInstance?: boolean): EndSessionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EndSessionRequest): EndSessionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: EndSessionReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EndSessionReq;
-  static deserializeBinaryFromReader(message: EndSessionReq, reader: jspb.BinaryReader): EndSessionReq;
+  static serializeBinaryToWriter(message: EndSessionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EndSessionRequest;
+  static deserializeBinaryFromReader(message: EndSessionRequest, reader: jspb.BinaryReader): EndSessionRequest;
 }
 
-export namespace EndSessionReq {
+export namespace EndSessionRequest {
   export type AsObject = {
     asmSessionSid: number,
     reason: string,
   }
 }
 
-export class EndSessionRes extends jspb.Message {
+export class EndSessionResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EndSessionRes.AsObject;
-  static toObject(includeInstance: boolean, msg: EndSessionRes): EndSessionRes.AsObject;
+  toObject(includeInstance?: boolean): EndSessionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EndSessionResponse): EndSessionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: EndSessionRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EndSessionRes;
-  static deserializeBinaryFromReader(message: EndSessionRes, reader: jspb.BinaryReader): EndSessionRes;
+  static serializeBinaryToWriter(message: EndSessionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EndSessionResponse;
+  static deserializeBinaryFromReader(message: EndSessionResponse, reader: jspb.BinaryReader): EndSessionResponse;
 }
 
-export namespace EndSessionRes {
+export namespace EndSessionResponse {
   export type AsObject = {
   }
 }
 
-export class GetCurrentSessionReq extends jspb.Message {
+export class GetCurrentSessionRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetCurrentSessionReq.AsObject;
-  static toObject(includeInstance: boolean, msg: GetCurrentSessionReq): GetCurrentSessionReq.AsObject;
+  toObject(includeInstance?: boolean): GetCurrentSessionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetCurrentSessionRequest): GetCurrentSessionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetCurrentSessionReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetCurrentSessionReq;
-  static deserializeBinaryFromReader(message: GetCurrentSessionReq, reader: jspb.BinaryReader): GetCurrentSessionReq;
+  static serializeBinaryToWriter(message: GetCurrentSessionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetCurrentSessionRequest;
+  static deserializeBinaryFromReader(message: GetCurrentSessionRequest, reader: jspb.BinaryReader): GetCurrentSessionRequest;
 }
 
-export namespace GetCurrentSessionReq {
+export namespace GetCurrentSessionRequest {
   export type AsObject = {
   }
 }
 
-export class GetCurrentSessionRes extends jspb.Message {
+export class GetCurrentSessionResponse extends jspb.Message {
   hasAsmSession(): boolean;
   clearAsmSession(): void;
   getAsmSession(): services_omnichannel_asm_entities_v1alpha1_session_pb.AsmSession | undefined;
   setAsmSession(value?: services_omnichannel_asm_entities_v1alpha1_session_pb.AsmSession): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetCurrentSessionRes.AsObject;
-  static toObject(includeInstance: boolean, msg: GetCurrentSessionRes): GetCurrentSessionRes.AsObject;
+  toObject(includeInstance?: boolean): GetCurrentSessionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetCurrentSessionResponse): GetCurrentSessionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetCurrentSessionRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetCurrentSessionRes;
-  static deserializeBinaryFromReader(message: GetCurrentSessionRes, reader: jspb.BinaryReader): GetCurrentSessionRes;
+  static serializeBinaryToWriter(message: GetCurrentSessionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetCurrentSessionResponse;
+  static deserializeBinaryFromReader(message: GetCurrentSessionResponse, reader: jspb.BinaryReader): GetCurrentSessionResponse;
 }
 
-export namespace GetCurrentSessionRes {
+export namespace GetCurrentSessionResponse {
   export type AsObject = {
     asmSession?: services_omnichannel_asm_entities_v1alpha1_session_pb.AsmSession.AsObject,
   }
 }
 
-export class EnableVoiceReq extends jspb.Message {
+export class EnableVoiceRequest extends jspb.Message {
   getAsmSessionSid(): number;
   setAsmSessionSid(value: number): void;
 
@@ -131,16 +131,16 @@ export class EnableVoiceReq extends jspb.Message {
   getSkillsMap(): jspb.Map<string, number>;
   clearSkillsMap(): void;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EnableVoiceReq.AsObject;
-  static toObject(includeInstance: boolean, msg: EnableVoiceReq): EnableVoiceReq.AsObject;
+  toObject(includeInstance?: boolean): EnableVoiceRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableVoiceRequest): EnableVoiceRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: EnableVoiceReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EnableVoiceReq;
-  static deserializeBinaryFromReader(message: EnableVoiceReq, reader: jspb.BinaryReader): EnableVoiceReq;
+  static serializeBinaryToWriter(message: EnableVoiceRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableVoiceRequest;
+  static deserializeBinaryFromReader(message: EnableVoiceRequest, reader: jspb.BinaryReader): EnableVoiceRequest;
 }
 
-export namespace EnableVoiceReq {
+export namespace EnableVoiceRequest {
   export type AsObject = {
     asmSessionSid: number,
     huntGroupSid: number,
@@ -148,7 +148,7 @@ export namespace EnableVoiceReq {
   }
 }
 
-export class EnableVoiceRes extends jspb.Message {
+export class EnableVoiceResponse extends jspb.Message {
   hasVoiceSession(): boolean;
   clearVoiceSession(): void;
   getVoiceSession(): services_omnichannel_asm_entities_v1alpha1_session_pb.VoiceSession | undefined;
@@ -160,91 +160,91 @@ export class EnableVoiceRes extends jspb.Message {
   setVoiceRegistration(value?: services_omnichannel_asm_entities_v1alpha1_session_pb.VoiceRegistration): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EnableVoiceRes.AsObject;
-  static toObject(includeInstance: boolean, msg: EnableVoiceRes): EnableVoiceRes.AsObject;
+  toObject(includeInstance?: boolean): EnableVoiceResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableVoiceResponse): EnableVoiceResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: EnableVoiceRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EnableVoiceRes;
-  static deserializeBinaryFromReader(message: EnableVoiceRes, reader: jspb.BinaryReader): EnableVoiceRes;
+  static serializeBinaryToWriter(message: EnableVoiceResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableVoiceResponse;
+  static deserializeBinaryFromReader(message: EnableVoiceResponse, reader: jspb.BinaryReader): EnableVoiceResponse;
 }
 
-export namespace EnableVoiceRes {
+export namespace EnableVoiceResponse {
   export type AsObject = {
     voiceSession?: services_omnichannel_asm_entities_v1alpha1_session_pb.VoiceSession.AsObject,
     voiceRegistration?: services_omnichannel_asm_entities_v1alpha1_session_pb.VoiceRegistration.AsObject,
   }
 }
 
-export class DisableVoiceReq extends jspb.Message {
+export class DisableVoiceRequest extends jspb.Message {
   getAsmSessionSid(): number;
   setAsmSessionSid(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DisableVoiceReq.AsObject;
-  static toObject(includeInstance: boolean, msg: DisableVoiceReq): DisableVoiceReq.AsObject;
+  toObject(includeInstance?: boolean): DisableVoiceRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DisableVoiceRequest): DisableVoiceRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DisableVoiceReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DisableVoiceReq;
-  static deserializeBinaryFromReader(message: DisableVoiceReq, reader: jspb.BinaryReader): DisableVoiceReq;
+  static serializeBinaryToWriter(message: DisableVoiceRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DisableVoiceRequest;
+  static deserializeBinaryFromReader(message: DisableVoiceRequest, reader: jspb.BinaryReader): DisableVoiceRequest;
 }
 
-export namespace DisableVoiceReq {
+export namespace DisableVoiceRequest {
   export type AsObject = {
     asmSessionSid: number,
   }
 }
 
-export class DisableVoiceRes extends jspb.Message {
+export class DisableVoiceResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DisableVoiceRes.AsObject;
-  static toObject(includeInstance: boolean, msg: DisableVoiceRes): DisableVoiceRes.AsObject;
+  toObject(includeInstance?: boolean): DisableVoiceResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DisableVoiceResponse): DisableVoiceResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DisableVoiceRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DisableVoiceRes;
-  static deserializeBinaryFromReader(message: DisableVoiceRes, reader: jspb.BinaryReader): DisableVoiceRes;
+  static serializeBinaryToWriter(message: DisableVoiceResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DisableVoiceResponse;
+  static deserializeBinaryFromReader(message: DisableVoiceResponse, reader: jspb.BinaryReader): DisableVoiceResponse;
 }
 
-export namespace DisableVoiceRes {
+export namespace DisableVoiceResponse {
   export type AsObject = {
   }
 }
 
-export class ListAsmUserDetailsReq extends jspb.Message {
+export class ListAsmUserDetailsRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListAsmUserDetailsReq.AsObject;
-  static toObject(includeInstance: boolean, msg: ListAsmUserDetailsReq): ListAsmUserDetailsReq.AsObject;
+  toObject(includeInstance?: boolean): ListAsmUserDetailsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAsmUserDetailsRequest): ListAsmUserDetailsRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListAsmUserDetailsReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListAsmUserDetailsReq;
-  static deserializeBinaryFromReader(message: ListAsmUserDetailsReq, reader: jspb.BinaryReader): ListAsmUserDetailsReq;
+  static serializeBinaryToWriter(message: ListAsmUserDetailsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAsmUserDetailsRequest;
+  static deserializeBinaryFromReader(message: ListAsmUserDetailsRequest, reader: jspb.BinaryReader): ListAsmUserDetailsRequest;
 }
 
-export namespace ListAsmUserDetailsReq {
+export namespace ListAsmUserDetailsRequest {
   export type AsObject = {
   }
 }
 
-export class ListAsmUserDetailsRes extends jspb.Message {
+export class ListAsmUserDetailsResponse extends jspb.Message {
   clearSessionsList(): void;
   getSessionsList(): Array<services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails>;
   setSessionsList(value: Array<services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails>): void;
   addSessions(value?: services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails, index?: number): services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListAsmUserDetailsRes.AsObject;
-  static toObject(includeInstance: boolean, msg: ListAsmUserDetailsRes): ListAsmUserDetailsRes.AsObject;
+  toObject(includeInstance?: boolean): ListAsmUserDetailsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAsmUserDetailsResponse): ListAsmUserDetailsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListAsmUserDetailsRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListAsmUserDetailsRes;
-  static deserializeBinaryFromReader(message: ListAsmUserDetailsRes, reader: jspb.BinaryReader): ListAsmUserDetailsRes;
+  static serializeBinaryToWriter(message: ListAsmUserDetailsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAsmUserDetailsResponse;
+  static deserializeBinaryFromReader(message: ListAsmUserDetailsResponse, reader: jspb.BinaryReader): ListAsmUserDetailsResponse;
 }
 
-export namespace ListAsmUserDetailsRes {
+export namespace ListAsmUserDetailsResponse {
   export type AsObject = {
     sessionsList: Array<services_omnichannel_asm_entities_v1alpha1_session_pb.ListAsmUserDetails.AsObject>,
   }
