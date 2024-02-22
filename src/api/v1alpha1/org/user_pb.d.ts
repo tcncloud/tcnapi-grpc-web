@@ -854,6 +854,14 @@ export namespace ListAgentsResponse {
     getEmail(): string;
     setEmail(value: string): void;
 
+    getEmailVerified(): boolean;
+    setEmailVerified(value: boolean): void;
+
+    hasMfaInfo(): boolean;
+    clearMfaInfo(): void;
+    getMfaInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+    setMfaInfo(value?: api_commons_org_user_pb.MfaInfo): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AgentDetails.AsObject;
     static toObject(includeInstance: boolean, msg: AgentDetails): AgentDetails.AsObject;
@@ -888,6 +896,8 @@ export namespace ListAgentsResponse {
       agent: boolean,
       timeZoneOverride?: api_commons_org_pb.TimeZoneWrapper.AsObject,
       email: string,
+      emailVerified: boolean,
+      mfaInfo?: api_commons_org_user_pb.MfaInfo.AsObject,
     }
 
     export class HuntGroup extends jspb.Message {

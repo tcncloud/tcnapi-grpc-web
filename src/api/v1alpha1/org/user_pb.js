@@ -7735,7 +7735,9 @@ proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.toObject = function(inclu
     agentProfileGroup: (f = msg.getAgentProfileGroup()) && proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.AgentProfileGroup.toObject(includeInstance, f),
     agent: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
     timeZoneOverride: (f = msg.getTimeZoneOverride()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
-    email: jspb.Message.getFieldWithDefault(msg, 22, "")
+    email: jspb.Message.getFieldWithDefault(msg, 22, ""),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 23, false),
+    mfaInfo: (f = msg.getMfaInfo()) && api_commons_org_user_pb.MfaInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7867,6 +7869,15 @@ proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.deserializeBinaryFromRead
     case 22:
       var value = /** @type {string} */ (reader.readString());
       msg.setEmail(value);
+      break;
+    case 23:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
+      break;
+    case 24:
+      var value = new api_commons_org_user_pb.MfaInfo;
+      reader.readMessage(value,api_commons_org_user_pb.MfaInfo.deserializeBinaryFromReader);
+      msg.setMfaInfo(value);
       break;
     default:
       reader.skipField();
@@ -8057,6 +8068,21 @@ proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.serializeBinaryToWriter =
     writer.writeString(
       22,
       f
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      23,
+      f
+    );
+  }
+  f = message.getMfaInfo();
+  if (f != null) {
+    writer.writeMessage(
+      24,
+      f,
+      api_commons_org_user_pb.MfaInfo.serializeBinaryToWriter
     );
   }
 };
@@ -8949,6 +8975,61 @@ proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.getEmail = func
  */
 proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.setEmail = function(value) {
   return jspb.Message.setProto3StringField(this, 22, value);
+};
+
+
+/**
+ * optional bool email_verified = 23;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 23, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails} returns this
+ */
+proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 23, value);
+};
+
+
+/**
+ * optional api.commons.org.MfaInfo mfa_info = 24;
+ * @return {?proto.api.commons.org.MfaInfo}
+ */
+proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.getMfaInfo = function() {
+  return /** @type{?proto.api.commons.org.MfaInfo} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo, 24));
+};
+
+
+/**
+ * @param {?proto.api.commons.org.MfaInfo|undefined} value
+ * @return {!proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails} returns this
+*/
+proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.setMfaInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 24, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails} returns this
+ */
+proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.clearMfaInfo = function() {
+  return this.setMfaInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.ListAgentsResponse.AgentDetails.prototype.hasMfaInfo = function() {
+  return jspb.Message.getField(this, 24) != null;
 };
 
 
