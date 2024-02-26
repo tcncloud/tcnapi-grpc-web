@@ -1471,31 +1471,31 @@ type WFMRemoveAgentFromSchedule = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse;
 };
 
-type WFMHelloWorldAdmin = {
+type WFMHelloWorldAdherenceAdmin = {
   readonly methodName: string;
   readonly service: typeof WFM;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldAdminRequest;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldAdminResponse;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceAdminRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceAdminResponse;
 };
 
-type WFMHelloWorldManager = {
+type WFMHelloWorldAdherenceManager = {
   readonly methodName: string;
   readonly service: typeof WFM;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldManagerRequest;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldManagerResponse;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceManagerRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceManagerResponse;
 };
 
-type WFMHelloWorldMonitor = {
+type WFMHelloWorldAdherenceMonitor = {
   readonly methodName: string;
   readonly service: typeof WFM;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorRequest;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorResponse;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceMonitorRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceMonitorResponse;
 };
 
 export class WFM {
@@ -1663,9 +1663,9 @@ export class WFM {
   static readonly ReplaceAgentOnSchedule: WFMReplaceAgentOnSchedule;
   static readonly ReplaceAgentOnScheduleV1: WFMReplaceAgentOnScheduleV1;
   static readonly RemoveAgentFromSchedule: WFMRemoveAgentFromSchedule;
-  static readonly HelloWorldAdmin: WFMHelloWorldAdmin;
-  static readonly HelloWorldManager: WFMHelloWorldManager;
-  static readonly HelloWorldMonitor: WFMHelloWorldMonitor;
+  static readonly HelloWorldAdherenceAdmin: WFMHelloWorldAdherenceAdmin;
+  static readonly HelloWorldAdherenceManager: WFMHelloWorldAdherenceManager;
+  static readonly HelloWorldAdherenceMonitor: WFMHelloWorldAdherenceMonitor;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3119,32 +3119,32 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse|null) => void
   ): UnaryResponse;
-  helloWorldAdmin(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdminRequest,
+  helloWorldAdherenceAdmin(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceAdminRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdminResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceAdminResponse|null) => void
   ): UnaryResponse;
-  helloWorldAdmin(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdminRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdminResponse|null) => void
+  helloWorldAdherenceAdmin(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceAdminRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceAdminResponse|null) => void
   ): UnaryResponse;
-  helloWorldManager(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldManagerRequest,
+  helloWorldAdherenceManager(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceManagerRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldManagerResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceManagerResponse|null) => void
   ): UnaryResponse;
-  helloWorldManager(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldManagerRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldManagerResponse|null) => void
+  helloWorldAdherenceManager(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceManagerRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceManagerResponse|null) => void
   ): UnaryResponse;
-  helloWorldMonitor(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorRequest,
+  helloWorldAdherenceMonitor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceMonitorRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceMonitorResponse|null) => void
   ): UnaryResponse;
-  helloWorldMonitor(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorResponse|null) => void
+  helloWorldAdherenceMonitor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceMonitorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceMonitorResponse|null) => void
   ): UnaryResponse;
 }
 

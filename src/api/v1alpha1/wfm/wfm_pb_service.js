@@ -1477,31 +1477,31 @@ WFM.RemoveAgentFromSchedule = {
   responseType: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse
 };
 
-WFM.HelloWorldAdmin = {
-  methodName: "HelloWorldAdmin",
+WFM.HelloWorldAdherenceAdmin = {
+  methodName: "HelloWorldAdherenceAdmin",
   service: WFM,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdminRequest,
-  responseType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdminResponse
+  requestType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceAdminRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceAdminResponse
 };
 
-WFM.HelloWorldManager = {
-  methodName: "HelloWorldManager",
+WFM.HelloWorldAdherenceManager = {
+  methodName: "HelloWorldAdherenceManager",
   service: WFM,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.HelloWorldManagerRequest,
-  responseType: api_v1alpha1_wfm_wfm_pb.HelloWorldManagerResponse
+  requestType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceManagerRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceManagerResponse
 };
 
-WFM.HelloWorldMonitor = {
-  methodName: "HelloWorldMonitor",
+WFM.HelloWorldAdherenceMonitor = {
+  methodName: "HelloWorldAdherenceMonitor",
   service: WFM,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorRequest,
-  responseType: api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorResponse
+  requestType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceMonitorRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceMonitorResponse
 };
 
 exports.WFM = WFM;
@@ -6612,11 +6612,11 @@ WFMClient.prototype.removeAgentFromSchedule = function removeAgentFromSchedule(r
   };
 };
 
-WFMClient.prototype.helloWorldAdmin = function helloWorldAdmin(requestMessage, metadata, callback) {
+WFMClient.prototype.helloWorldAdherenceAdmin = function helloWorldAdherenceAdmin(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WFM.HelloWorldAdmin, {
+  var client = grpc.unary(WFM.HelloWorldAdherenceAdmin, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -6643,11 +6643,11 @@ WFMClient.prototype.helloWorldAdmin = function helloWorldAdmin(requestMessage, m
   };
 };
 
-WFMClient.prototype.helloWorldManager = function helloWorldManager(requestMessage, metadata, callback) {
+WFMClient.prototype.helloWorldAdherenceManager = function helloWorldAdherenceManager(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WFM.HelloWorldManager, {
+  var client = grpc.unary(WFM.HelloWorldAdherenceManager, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -6674,11 +6674,11 @@ WFMClient.prototype.helloWorldManager = function helloWorldManager(requestMessag
   };
 };
 
-WFMClient.prototype.helloWorldMonitor = function helloWorldMonitor(requestMessage, metadata, callback) {
+WFMClient.prototype.helloWorldAdherenceMonitor = function helloWorldAdherenceMonitor(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WFM.HelloWorldMonitor, {
+  var client = grpc.unary(WFM.HelloWorldAdherenceMonitor, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
