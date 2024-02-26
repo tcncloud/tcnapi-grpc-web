@@ -11052,3 +11052,111 @@ export namespace ReplaceAgentOnScheduleRes {
   }
 }
 
+export class HelloWorldAdminRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HelloWorldAdminRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: HelloWorldAdminRequest): HelloWorldAdminRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HelloWorldAdminRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HelloWorldAdminRequest;
+  static deserializeBinaryFromReader(message: HelloWorldAdminRequest, reader: jspb.BinaryReader): HelloWorldAdminRequest;
+}
+
+export namespace HelloWorldAdminRequest {
+  export type AsObject = {
+  }
+}
+
+export class HelloWorldAdminResponse extends jspb.Message {
+  getHelloMessage(): string;
+  setHelloMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HelloWorldAdminResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: HelloWorldAdminResponse): HelloWorldAdminResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HelloWorldAdminResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HelloWorldAdminResponse;
+  static deserializeBinaryFromReader(message: HelloWorldAdminResponse, reader: jspb.BinaryReader): HelloWorldAdminResponse;
+}
+
+export namespace HelloWorldAdminResponse {
+  export type AsObject = {
+    helloMessage: string,
+  }
+}
+
+export class HelloWorldManagerRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HelloWorldManagerRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: HelloWorldManagerRequest): HelloWorldManagerRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HelloWorldManagerRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HelloWorldManagerRequest;
+  static deserializeBinaryFromReader(message: HelloWorldManagerRequest, reader: jspb.BinaryReader): HelloWorldManagerRequest;
+}
+
+export namespace HelloWorldManagerRequest {
+  export type AsObject = {
+  }
+}
+
+export class HelloWorldManagerResponse extends jspb.Message {
+  getHelloMessage(): string;
+  setHelloMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HelloWorldManagerResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: HelloWorldManagerResponse): HelloWorldManagerResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HelloWorldManagerResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HelloWorldManagerResponse;
+  static deserializeBinaryFromReader(message: HelloWorldManagerResponse, reader: jspb.BinaryReader): HelloWorldManagerResponse;
+}
+
+export namespace HelloWorldManagerResponse {
+  export type AsObject = {
+    helloMessage: string,
+  }
+}
+
+export class HelloWorldMonitorRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HelloWorldMonitorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: HelloWorldMonitorRequest): HelloWorldMonitorRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HelloWorldMonitorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HelloWorldMonitorRequest;
+  static deserializeBinaryFromReader(message: HelloWorldMonitorRequest, reader: jspb.BinaryReader): HelloWorldMonitorRequest;
+}
+
+export namespace HelloWorldMonitorRequest {
+  export type AsObject = {
+  }
+}
+
+export class HelloWorldMonitorResponse extends jspb.Message {
+  getHelloMessage(): string;
+  setHelloMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HelloWorldMonitorResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: HelloWorldMonitorResponse): HelloWorldMonitorResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HelloWorldMonitorResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HelloWorldMonitorResponse;
+  static deserializeBinaryFromReader(message: HelloWorldMonitorResponse, reader: jspb.BinaryReader): HelloWorldMonitorResponse;
+}
+
+export namespace HelloWorldMonitorResponse {
+  export type AsObject = {
+    helloMessage: string,
+  }
+}
+

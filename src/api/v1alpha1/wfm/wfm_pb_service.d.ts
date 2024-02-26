@@ -1471,6 +1471,33 @@ type WFMRemoveAgentFromSchedule = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse;
 };
 
+type WFMHelloWorldAdmin = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldAdminRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldAdminResponse;
+};
+
+type WFMHelloWorldManager = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldManagerRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldManagerResponse;
+};
+
+type WFMHelloWorldMonitor = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorResponse;
+};
+
 export class WFM {
   static readonly serviceName: string;
   static readonly PerformInitialClientSetup: WFMPerformInitialClientSetup;
@@ -1636,6 +1663,9 @@ export class WFM {
   static readonly ReplaceAgentOnSchedule: WFMReplaceAgentOnSchedule;
   static readonly ReplaceAgentOnScheduleV1: WFMReplaceAgentOnScheduleV1;
   static readonly RemoveAgentFromSchedule: WFMRemoveAgentFromSchedule;
+  static readonly HelloWorldAdmin: WFMHelloWorldAdmin;
+  static readonly HelloWorldManager: WFMHelloWorldManager;
+  static readonly HelloWorldMonitor: WFMHelloWorldMonitor;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3088,6 +3118,33 @@ export class WFMClient {
   removeAgentFromSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse|null) => void
+  ): UnaryResponse;
+  helloWorldAdmin(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdminRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdminResponse|null) => void
+  ): UnaryResponse;
+  helloWorldAdmin(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdminRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldAdminResponse|null) => void
+  ): UnaryResponse;
+  helloWorldManager(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldManagerRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldManagerResponse|null) => void
+  ): UnaryResponse;
+  helloWorldManager(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldManagerRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldManagerResponse|null) => void
+  ): UnaryResponse;
+  helloWorldMonitor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorResponse|null) => void
+  ): UnaryResponse;
+  helloWorldMonitor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldMonitorResponse|null) => void
   ): UnaryResponse;
 }
 
