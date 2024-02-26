@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_bireportgenerator_pb from "../../../api/commons/bireportgenerator_pb";
 import * as api_commons_enums_pb from "../../../api/commons/enums_pb";
+import * as api_commons_org_pb from "../../../api/commons/org_pb";
 
 export class ReportJob extends jspb.Message {
   getReportJobId(): string;
@@ -55,6 +56,14 @@ export class ReportJob extends jspb.Message {
   getSendEmptyReport(): boolean;
   setSendEmptyReport(value: boolean): void;
 
+  getDashboardResourceId(): string;
+  setDashboardResourceId(value: string): void;
+
+  hasTimeZoneWrapper(): boolean;
+  clearTimeZoneWrapper(): void;
+  getTimeZoneWrapper(): api_commons_org_pb.TimeZoneWrapper | undefined;
+  setTimeZoneWrapper(value?: api_commons_org_pb.TimeZoneWrapper): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportJob.AsObject;
   static toObject(includeInstance: boolean, msg: ReportJob): ReportJob.AsObject;
@@ -80,6 +89,8 @@ export namespace ReportJob {
     deliveryOptions?: api_commons_bireportgenerator_pb.DeliveryOptions.AsObject,
     isActive: boolean,
     sendEmptyReport: boolean,
+    dashboardResourceId: string,
+    timeZoneWrapper?: api_commons_org_pb.TimeZoneWrapper.AsObject,
   }
 }
 
