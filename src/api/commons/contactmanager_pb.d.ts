@@ -5,11 +5,11 @@ import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class ContactManagerEntry extends jspb.Message {
-  getContactManagerEntryId(): number;
-  setContactManagerEntryId(value: number): void;
+  getContactManagerEntryId(): string;
+  setContactManagerEntryId(value: string): void;
 
-  getContactManagerEntryListId(): number;
-  setContactManagerEntryListId(value: number): void;
+  getContactManagerEntryListId(): string;
+  setContactManagerEntryListId(value: string): void;
 
   getKey(): string;
   setKey(value: string): void;
@@ -37,8 +37,8 @@ export class ContactManagerEntry extends jspb.Message {
 
 export namespace ContactManagerEntry {
   export type AsObject = {
-    contactManagerEntryId: number,
-    contactManagerEntryListId: number,
+    contactManagerEntryId: string,
+    contactManagerEntryListId: string,
     key: string,
     value: string,
     type: string,
@@ -47,8 +47,8 @@ export namespace ContactManagerEntry {
 }
 
 export class ContactManagerList extends jspb.Message {
-  getContactManagerListId(): number;
-  setContactManagerListId(value: number): void;
+  getContactManagerListId(): string;
+  setContactManagerListId(value: string): void;
 
   getOrgId(): string;
   setOrgId(value: string): void;
@@ -67,8 +67,8 @@ export class ContactManagerList extends jspb.Message {
   setListDetailsList(value: Array<string>): void;
   addListDetails(value: string, index?: number): string;
 
-  getTtl(): number;
-  setTtl(value: number): void;
+  getTtl(): string;
+  setTtl(value: string): void;
 
   hasDateCreated(): boolean;
   clearDateCreated(): void;
@@ -87,13 +87,13 @@ export class ContactManagerList extends jspb.Message {
 
 export namespace ContactManagerList {
   export type AsObject = {
-    contactManagerListId: number,
+    contactManagerListId: string,
     orgId: string,
     projectId: string,
     fileName: string,
     description: string,
     listDetailsList: Array<string>,
-    ttl: number,
+    ttl: string,
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }

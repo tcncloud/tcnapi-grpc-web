@@ -59,8 +59,8 @@ export namespace GetContactListResponse {
 }
 
 export class ListContactEntryListRequest extends jspb.Message {
-  getContactManagerListId(): number;
-  setContactManagerListId(value: number): void;
+  getContactManagerListId(): string;
+  setContactManagerListId(value: string): void;
 
   getOrgId(): string;
   setOrgId(value: string): void;
@@ -80,7 +80,7 @@ export class ListContactEntryListRequest extends jspb.Message {
 
 export namespace ListContactEntryListRequest {
   export type AsObject = {
-    contactManagerListId: number,
+    contactManagerListId: string,
     orgId: string,
     projectId: string,
   }
@@ -109,8 +109,8 @@ export namespace ListContactEntryListResponse {
 }
 
 export class GetEncContactEntryRequest extends jspb.Message {
-  getContactManagerEntryId(): number;
-  setContactManagerEntryId(value: number): void;
+  getContactManagerEntryId(): string;
+  setContactManagerEntryId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetEncContactEntryRequest.AsObject;
@@ -124,7 +124,7 @@ export class GetEncContactEntryRequest extends jspb.Message {
 
 export namespace GetEncContactEntryRequest {
   export type AsObject = {
-    contactManagerEntryId: number,
+    contactManagerEntryId: string,
   }
 }
 

@@ -101,8 +101,8 @@ proto.api.commons.ContactManagerEntry.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.ContactManagerEntry.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    contactManagerEntryListId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+    contactManagerEntryListId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
     key: jspb.Message.getFieldWithDefault(msg, 3, ""),
     value: jspb.Message.getFieldWithDefault(msg, 4, ""),
     type: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -144,11 +144,11 @@ proto.api.commons.ContactManagerEntry.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setContactManagerEntryId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setContactManagerEntryListId(value);
       break;
     case 3:
@@ -198,15 +198,15 @@ proto.api.commons.ContactManagerEntry.prototype.serializeBinary = function() {
 proto.api.commons.ContactManagerEntry.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getContactManagerEntryId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
   }
   f = message.getContactManagerEntryListId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       2,
       f
     );
@@ -245,37 +245,37 @@ proto.api.commons.ContactManagerEntry.serializeBinaryToWriter = function(message
 
 /**
  * optional int64 contact_manager_entry_id = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.ContactManagerEntry.prototype.getContactManagerEntryId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.ContactManagerEntry} returns this
  */
 proto.api.commons.ContactManagerEntry.prototype.setContactManagerEntryId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
 /**
  * optional int64 contact_manager_entry_list_id = 2;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.ContactManagerEntry.prototype.getContactManagerEntryListId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.ContactManagerEntry} returns this
  */
 proto.api.commons.ContactManagerEntry.prototype.setContactManagerEntryListId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringIntField(this, 2, value);
 };
 
 
@@ -409,13 +409,13 @@ proto.api.commons.ContactManagerList.prototype.toObject = function(opt_includeIn
  */
 proto.api.commons.ContactManagerList.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    projectId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 3, "0"),
     fileName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
     listDetailsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    ttl: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    ttl: jspb.Message.getFieldWithDefault(msg, 7, "0"),
     dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
@@ -454,7 +454,7 @@ proto.api.commons.ContactManagerList.deserializeBinaryFromReader = function(msg,
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setContactManagerListId(value);
       break;
     case 2:
@@ -462,7 +462,7 @@ proto.api.commons.ContactManagerList.deserializeBinaryFromReader = function(msg,
       msg.setOrgId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setProjectId(value);
       break;
     case 4:
@@ -478,7 +478,7 @@ proto.api.commons.ContactManagerList.deserializeBinaryFromReader = function(msg,
       msg.addListDetails(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTtl(value);
       break;
     case 8:
@@ -516,8 +516,8 @@ proto.api.commons.ContactManagerList.prototype.serializeBinary = function() {
 proto.api.commons.ContactManagerList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getContactManagerListId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -530,8 +530,8 @@ proto.api.commons.ContactManagerList.serializeBinaryToWriter = function(message,
     );
   }
   f = message.getProjectId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       3,
       f
     );
@@ -558,8 +558,8 @@ proto.api.commons.ContactManagerList.serializeBinaryToWriter = function(message,
     );
   }
   f = message.getTtl();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       7,
       f
     );
@@ -577,19 +577,19 @@ proto.api.commons.ContactManagerList.serializeBinaryToWriter = function(message,
 
 /**
  * optional int64 contact_manager_list_id = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.ContactManagerList.prototype.getContactManagerListId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.ContactManagerList} returns this
  */
 proto.api.commons.ContactManagerList.prototype.setContactManagerListId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -612,11 +612,11 @@ proto.api.commons.ContactManagerList.prototype.setOrgId = function(value) {
 
 
 /**
- * optional string project_id = 3;
+ * optional int64 project_id = 3;
  * @return {string}
  */
 proto.api.commons.ContactManagerList.prototype.getProjectId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, "0"));
 };
 
 
@@ -625,7 +625,7 @@ proto.api.commons.ContactManagerList.prototype.getProjectId = function() {
  * @return {!proto.api.commons.ContactManagerList} returns this
  */
 proto.api.commons.ContactManagerList.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringIntField(this, 3, value);
 };
 
 
@@ -704,19 +704,19 @@ proto.api.commons.ContactManagerList.prototype.clearListDetailsList = function()
 
 /**
  * optional int64 ttl = 7;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.ContactManagerList.prototype.getTtl = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.ContactManagerList} returns this
  */
 proto.api.commons.ContactManagerList.prototype.setTtl = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+  return jspb.Message.setProto3StringIntField(this, 7, value);
 };
 
 
