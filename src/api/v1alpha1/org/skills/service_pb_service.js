@@ -56,6 +56,15 @@ SkillsService.DeleteSkillGroup = {
   responseType: api_v1alpha1_org_skills_entities_pb.DeleteSkillGroupResponse
 };
 
+SkillsService.RemoveSkillFromAllGroups = {
+  methodName: "RemoveSkillFromAllGroups",
+  service: SkillsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_skills_entities_pb.RemoveSkillFromAllGroupsRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.RemoveSkillFromAllGroupsResponse
+};
+
 SkillsService.AssignSkillGroups = {
   methodName: "AssignSkillGroups",
   service: SkillsService,
@@ -117,6 +126,24 @@ SkillsService.ListSkillGroupsMembers = {
   responseStream: false,
   requestType: api_v1alpha1_org_skills_entities_pb.ListSkillGroupsMembersRequest,
   responseType: api_v1alpha1_org_skills_entities_pb.ListSkillGroupsMembersResponse
+};
+
+SkillsService.GetAgentSkills = {
+  methodName: "GetAgentSkills",
+  service: SkillsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_skills_entities_pb.GetAgentSkillsRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.GetAgentSkillsResponse
+};
+
+SkillsService.ListSkillsForCurrentAgent = {
+  methodName: "ListSkillsForCurrentAgent",
+  service: SkillsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_skills_entities_pb.ListSkillsForCurrentAgentRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.ListSkillsForCurrentAgentResponse
 };
 
 exports.SkillsService = SkillsService;
@@ -255,6 +282,37 @@ SkillsServiceClient.prototype.deleteSkillGroup = function deleteSkillGroup(reque
     callback = arguments[1];
   }
   var client = grpc.unary(SkillsService.DeleteSkillGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+SkillsServiceClient.prototype.removeSkillFromAllGroups = function removeSkillFromAllGroups(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(SkillsService.RemoveSkillFromAllGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -472,6 +530,68 @@ SkillsServiceClient.prototype.listSkillGroupsMembers = function listSkillGroupsM
     callback = arguments[1];
   }
   var client = grpc.unary(SkillsService.ListSkillGroupsMembers, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+SkillsServiceClient.prototype.getAgentSkills = function getAgentSkills(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(SkillsService.GetAgentSkills, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+SkillsServiceClient.prototype.listSkillsForCurrentAgent = function listSkillsForCurrentAgent(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(SkillsService.ListSkillsForCurrentAgent, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

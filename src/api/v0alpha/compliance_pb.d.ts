@@ -3244,3 +3244,141 @@ export namespace ProcessConsentListDeleteUploadMeta {
   }
 }
 
+export class QueryHolidaysResponse extends jspb.Message {
+  clearRowsList(): void;
+  getRowsList(): Array<HolidayData>;
+  setRowsList(value: Array<HolidayData>): void;
+  addRows(value?: HolidayData, index?: number): HolidayData;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): QueryHolidaysResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: QueryHolidaysResponse): QueryHolidaysResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: QueryHolidaysResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): QueryHolidaysResponse;
+  static deserializeBinaryFromReader(message: QueryHolidaysResponse, reader: jspb.BinaryReader): QueryHolidaysResponse;
+}
+
+export namespace QueryHolidaysResponse {
+  export type AsObject = {
+    rowsList: Array<HolidayData.AsObject>,
+  }
+}
+
+export class HolidayData extends jspb.Message {
+  getDate(): string;
+  setDate(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getYear(): string;
+  setYear(value: string): void;
+
+  getMonth(): string;
+  setMonth(value: string): void;
+
+  getDay(): string;
+  setDay(value: string): void;
+
+  getWeekday(): string;
+  setWeekday(value: string): void;
+
+  clearTypesList(): void;
+  getTypesList(): Array<string>;
+  setTypesList(value: Array<string>): void;
+  addTypes(value: string, index?: number): string;
+
+  getIsObserved(): string;
+  setIsObserved(value: string): void;
+
+  getCountry(): string;
+  setCountry(value: string): void;
+
+  clearStatesList(): void;
+  getStatesList(): Array<string>;
+  setStatesList(value: Array<string>): void;
+  addStates(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HolidayData.AsObject;
+  static toObject(includeInstance: boolean, msg: HolidayData): HolidayData.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HolidayData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HolidayData;
+  static deserializeBinaryFromReader(message: HolidayData, reader: jspb.BinaryReader): HolidayData;
+}
+
+export namespace HolidayData {
+  export type AsObject = {
+    date: string,
+    name: string,
+    year: string,
+    month: string,
+    day: string,
+    weekday: string,
+    typesList: Array<string>,
+    isObserved: string,
+    country: string,
+    statesList: Array<string>,
+  }
+}
+
+export class QueryHolidaysRequest extends jspb.Message {
+  getDate(): string;
+  setDate(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getYear(): string;
+  setYear(value: string): void;
+
+  getMonth(): string;
+  setMonth(value: string): void;
+
+  getDay(): string;
+  setDay(value: string): void;
+
+  getWeekday(): string;
+  setWeekday(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  getIsObserved(): string;
+  setIsObserved(value: string): void;
+
+  getCountry(): string;
+  setCountry(value: string): void;
+
+  getState(): string;
+  setState(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): QueryHolidaysRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: QueryHolidaysRequest): QueryHolidaysRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: QueryHolidaysRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): QueryHolidaysRequest;
+  static deserializeBinaryFromReader(message: QueryHolidaysRequest, reader: jspb.BinaryReader): QueryHolidaysRequest;
+}
+
+export namespace QueryHolidaysRequest {
+  export type AsObject = {
+    date: string,
+    name: string,
+    year: string,
+    month: string,
+    day: string,
+    weekday: string,
+    type: string,
+    isObserved: string,
+    country: string,
+    state: string,
+  }
+}
+

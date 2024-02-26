@@ -127,6 +127,51 @@ Learn.DeleteLearnPages = {
   responseType: api_v0alpha_learn_pb.DeleteLearnPagesRes
 };
 
+Learn.CreateEditVersion = {
+  methodName: "CreateEditVersion",
+  service: Learn,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_learn_pb.CreateEditVersionReq,
+  responseType: api_v0alpha_learn_pb.CreateEditVersionRes
+};
+
+Learn.PublishVersion = {
+  methodName: "PublishVersion",
+  service: Learn,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_learn_pb.PublishVersionReq,
+  responseType: api_v0alpha_learn_pb.PublishVersionRes
+};
+
+Learn.ContentByVersion = {
+  methodName: "ContentByVersion",
+  service: Learn,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_learn_pb.ContentByVersionReq,
+  responseType: api_v0alpha_learn_pb.ContentRes
+};
+
+Learn.UpdateByVersion = {
+  methodName: "UpdateByVersion",
+  service: Learn,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_learn_pb.UpdateByVersionReq,
+  responseType: api_v0alpha_learn_pb.UpdateRes
+};
+
+Learn.ListSearchResultsByVersion = {
+  methodName: "ListSearchResultsByVersion",
+  service: Learn,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v0alpha_learn_pb.SearchContentByVersionReq,
+  responseType: api_v0alpha_learn_pb.SearchRes
+};
+
 exports.Learn = Learn;
 
 function LearnClient(serviceHost, options) {
@@ -540,6 +585,169 @@ LearnClient.prototype.deleteLearnPages = function deleteLearnPages(requestMessag
   return {
     cancel: function () {
       callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.createEditVersion = function createEditVersion(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Learn.CreateEditVersion, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.publishVersion = function publishVersion(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Learn.PublishVersion, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.contentByVersion = function contentByVersion(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Learn.ContentByVersion, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.updateByVersion = function updateByVersion(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Learn.UpdateByVersion, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.listSearchResultsByVersion = function listSearchResultsByVersion(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(Learn.ListSearchResultsByVersion, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
       client.close();
     }
   };

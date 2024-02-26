@@ -35,3 +35,67 @@ export namespace LMSPipelineFailureEvent {
   }
 }
 
+export class LMSPipelineNoOutputEvent extends jspb.Message {
+  getElementId(): string;
+  setElementId(value: string): void;
+
+  getElementName(): string;
+  setElementName(value: string): void;
+
+  getFileName(): string;
+  setFileName(value: string): void;
+
+  getEventMessage(): string;
+  setEventMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LMSPipelineNoOutputEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: LMSPipelineNoOutputEvent): LMSPipelineNoOutputEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LMSPipelineNoOutputEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LMSPipelineNoOutputEvent;
+  static deserializeBinaryFromReader(message: LMSPipelineNoOutputEvent, reader: jspb.BinaryReader): LMSPipelineNoOutputEvent;
+}
+
+export namespace LMSPipelineNoOutputEvent {
+  export type AsObject = {
+    elementId: string,
+    elementName: string,
+    fileName: string,
+    eventMessage: string,
+  }
+}
+
+export class LMSPipelineSuccessfulEvent extends jspb.Message {
+  getElementId(): string;
+  setElementId(value: string): void;
+
+  getElementName(): string;
+  setElementName(value: string): void;
+
+  getFileName(): string;
+  setFileName(value: string): void;
+
+  getEventMessage(): string;
+  setEventMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LMSPipelineSuccessfulEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: LMSPipelineSuccessfulEvent): LMSPipelineSuccessfulEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LMSPipelineSuccessfulEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LMSPipelineSuccessfulEvent;
+  static deserializeBinaryFromReader(message: LMSPipelineSuccessfulEvent, reader: jspb.BinaryReader): LMSPipelineSuccessfulEvent;
+}
+
+export namespace LMSPipelineSuccessfulEvent {
+  export type AsObject = {
+    elementId: string,
+    elementName: string,
+    fileName: string,
+    eventMessage: string,
+  }
+}
+

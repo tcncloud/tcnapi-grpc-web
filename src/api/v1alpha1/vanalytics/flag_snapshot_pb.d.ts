@@ -2,6 +2,7 @@
 // file: api/v1alpha1/vanalytics/flag_snapshot.proto
 
 import * as jspb from "google-protobuf";
+import * as api_v1alpha1_vanalytics_dncl_list_pb from "../../../api/v1alpha1/vanalytics/dncl_list_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -113,6 +114,11 @@ export class FlagSnapshot extends jspb.Message {
   getBoolExpr(): FlagSnapshot.BoolExpr | undefined;
   setBoolExpr(value?: FlagSnapshot.BoolExpr): void;
 
+  clearDnclListList(): void;
+  getDnclListList(): Array<api_v1alpha1_vanalytics_dncl_list_pb.DnclList>;
+  setDnclListList(value: Array<api_v1alpha1_vanalytics_dncl_list_pb.DnclList>): void;
+  addDnclList(value?: api_v1alpha1_vanalytics_dncl_list_pb.DnclList, index?: number): api_v1alpha1_vanalytics_dncl_list_pb.DnclList;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FlagSnapshot.AsObject;
   static toObject(includeInstance: boolean, msg: FlagSnapshot): FlagSnapshot.AsObject;
@@ -136,6 +142,7 @@ export namespace FlagSnapshot {
     mustReview: boolean,
     mustNotify: boolean,
     boolExpr?: FlagSnapshot.BoolExpr.AsObject,
+    dnclListList: Array<api_v1alpha1_vanalytics_dncl_list_pb.DnclList.AsObject>,
   }
 
   export class BoolExpr extends jspb.Message {

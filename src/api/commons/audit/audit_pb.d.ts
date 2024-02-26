@@ -6,6 +6,7 @@ import * as api_commons_audit_agent_training_events_pb from "../../../api/common
 import * as api_commons_audit_asm_events_pb from "../../../api/commons/audit/asm_events_pb";
 import * as api_commons_audit_billing_events_pb from "../../../api/commons/audit/billing_events_pb";
 import * as api_commons_audit_compliance_events_pb from "../../../api/commons/audit/compliance_events_pb";
+import * as api_commons_audit_delivery_events_pb from "../../../api/commons/audit/delivery_events_pb";
 import * as api_commons_audit_event_types_pb from "../../../api/commons/audit/event_types_pb";
 import * as api_commons_audit_events_pb from "../../../api/commons/audit/events_pb";
 import * as api_commons_audit_lms_events_pb from "../../../api/commons/audit/lms_events_pb";
@@ -306,6 +307,11 @@ export class AuditEvent extends jspb.Message {
   getOmnichannelManualApproveTaskRequeueEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent | undefined;
   setOmnichannelManualApproveTaskRequeueEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent): void;
 
+  hasOmnichannelTranscriptSavedEvent(): boolean;
+  clearOmnichannelTranscriptSavedEvent(): void;
+  getOmnichannelTranscriptSavedEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent | undefined;
+  setOmnichannelTranscriptSavedEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent): void;
+
   hasAsmAgentLoginEvent(): boolean;
   clearAsmAgentLoginEvent(): void;
   getAsmAgentLoginEvent(): api_commons_audit_asm_events_pb.AsmAgentLoginEvent | undefined;
@@ -496,6 +502,16 @@ export class AuditEvent extends jspb.Message {
   getLmsPipelineFailureEvent(): api_commons_audit_lms_events_pb.LMSPipelineFailureEvent | undefined;
   setLmsPipelineFailureEvent(value?: api_commons_audit_lms_events_pb.LMSPipelineFailureEvent): void;
 
+  hasLmsPipelineNoOutputEvent(): boolean;
+  clearLmsPipelineNoOutputEvent(): void;
+  getLmsPipelineNoOutputEvent(): api_commons_audit_lms_events_pb.LMSPipelineNoOutputEvent | undefined;
+  setLmsPipelineNoOutputEvent(value?: api_commons_audit_lms_events_pb.LMSPipelineNoOutputEvent): void;
+
+  hasLmsPipelineSuccessfulEvent(): boolean;
+  clearLmsPipelineSuccessfulEvent(): void;
+  getLmsPipelineSuccessfulEvent(): api_commons_audit_lms_events_pb.LMSPipelineSuccessfulEvent | undefined;
+  setLmsPipelineSuccessfulEvent(value?: api_commons_audit_lms_events_pb.LMSPipelineSuccessfulEvent): void;
+
   hasBillingCommitBillingPlanEvent(): boolean;
   clearBillingCommitBillingPlanEvent(): void;
   getBillingCommitBillingPlanEvent(): api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent | undefined;
@@ -550,6 +566,16 @@ export class AuditEvent extends jspb.Message {
   clearBillingUpdateRateDefinitionEvent(): void;
   getBillingUpdateRateDefinitionEvent(): api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent | undefined;
   setBillingUpdateRateDefinitionEvent(value?: api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent): void;
+
+  hasDeliveryFailureEvent(): boolean;
+  clearDeliveryFailureEvent(): void;
+  getDeliveryFailureEvent(): api_commons_audit_delivery_events_pb.DeliveryFailureEvent | undefined;
+  setDeliveryFailureEvent(value?: api_commons_audit_delivery_events_pb.DeliveryFailureEvent): void;
+
+  hasDeliverySuccessEvent(): boolean;
+  clearDeliverySuccessEvent(): void;
+  getDeliverySuccessEvent(): api_commons_audit_delivery_events_pb.DeliverySuccessEvent | undefined;
+  setDeliverySuccessEvent(value?: api_commons_audit_delivery_events_pb.DeliverySuccessEvent): void;
 
   getEventCase(): AuditEvent.EventCase;
   serializeBinary(): Uint8Array;
@@ -624,6 +650,7 @@ export namespace AuditEvent {
     omnichannelManualApproveTaskRejectedEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRejectedEvent.AsObject,
     omnichannelManualApproveTaskTimeoutEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskTimeoutEvent.AsObject,
     omnichannelManualApproveTaskRequeueEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.AsObject,
+    omnichannelTranscriptSavedEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent.AsObject,
     asmAgentLoginEvent?: api_commons_audit_asm_events_pb.AsmAgentLoginEvent.AsObject,
     asmOpenVoiceEvent?: api_commons_audit_asm_events_pb.AsmOpenVoiceEvent.AsObject,
     asmOpenOmniAgentEvent?: api_commons_audit_asm_events_pb.AsmOpenOmniAgentEvent.AsObject,
@@ -662,6 +689,8 @@ export namespace AuditEvent {
     complianceRndQueryCachedEvent?: api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.AsObject,
     agentTrainingCreateLearningOpportunityEvent?: api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent.AsObject,
     lmsPipelineFailureEvent?: api_commons_audit_lms_events_pb.LMSPipelineFailureEvent.AsObject,
+    lmsPipelineNoOutputEvent?: api_commons_audit_lms_events_pb.LMSPipelineNoOutputEvent.AsObject,
+    lmsPipelineSuccessfulEvent?: api_commons_audit_lms_events_pb.LMSPipelineSuccessfulEvent.AsObject,
     billingCommitBillingPlanEvent?: api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent.AsObject,
     billingCreateBillingPlanEvent?: api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent.AsObject,
     billingCreateInvoiceEvent?: api_commons_audit_billing_events_pb.BillingCreateInvoiceEvent.AsObject,
@@ -673,6 +702,8 @@ export namespace AuditEvent {
     billingUpdateBillingPlanEvent?: api_commons_audit_billing_events_pb.BillingUpdateBillingPlanEvent.AsObject,
     billingUpdateInvoiceEvent?: api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent.AsObject,
     billingUpdateRateDefinitionEvent?: api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent.AsObject,
+    deliveryFailureEvent?: api_commons_audit_delivery_events_pb.DeliveryFailureEvent.AsObject,
+    deliverySuccessEvent?: api_commons_audit_delivery_events_pb.DeliverySuccessEvent.AsObject,
   }
 
   export enum EventCase {
@@ -731,6 +762,7 @@ export namespace AuditEvent {
     OMNICHANNEL_MANUAL_APPROVE_TASK_REJECTED_EVENT = 359,
     OMNICHANNEL_MANUAL_APPROVE_TASK_TIMEOUT_EVENT = 360,
     OMNICHANNEL_MANUAL_APPROVE_TASK_REQUEUE_EVENT = 361,
+    OMNICHANNEL_TRANSCRIPT_SAVED_EVENT = 362,
     ASM_AGENT_LOGIN_EVENT = 400,
     ASM_OPEN_VOICE_EVENT = 401,
     ASM_OPEN_OMNI_AGENT_EVENT = 402,
@@ -769,6 +801,8 @@ export namespace AuditEvent {
     COMPLIANCE_RND_QUERY_CACHED_EVENT = 701,
     AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800,
     LMS_PIPELINE_FAILURE_EVENT = 900,
+    LMS_PIPELINE_NO_OUTPUT_EVENT = 901,
+    LMS_PIPELINE_SUCCESSFUL_EVENT = 902,
     BILLING_COMMIT_BILLING_PLAN_EVENT = 1000,
     BILLING_CREATE_BILLING_PLAN_EVENT = 1001,
     BILLING_CREATE_INVOICE_EVENT = 1002,
@@ -780,6 +814,8 @@ export namespace AuditEvent {
     BILLING_UPDATE_BILLING_PLAN_EVENT = 1008,
     BILLING_UPDATE_INVOICE_EVENT = 1009,
     BILLING_UPDATE_RATE_DEFINITION_EVENT = 1010,
+    DELIVERY_FAILURE_EVENT = 1100,
+    DELIVERY_SUCCESS_EVENT = 1101,
   }
 }
 

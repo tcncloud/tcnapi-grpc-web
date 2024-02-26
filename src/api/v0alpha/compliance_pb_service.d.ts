@@ -564,6 +564,15 @@ type ComplianceProcessOutboundCall = {
   readonly responseType: typeof api_v0alpha_compliance_pb.ProcessRes;
 };
 
+type ComplianceQueryHolidays = {
+  readonly methodName: string;
+  readonly service: typeof Compliance;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_compliance_pb.QueryHolidaysRequest;
+  readonly responseType: typeof api_v0alpha_compliance_pb.QueryHolidaysResponse;
+};
+
 export class Compliance {
   static readonly serviceName: string;
   static readonly RuleAutoComplete: ComplianceRuleAutoComplete;
@@ -628,6 +637,7 @@ export class Compliance {
   static readonly DeleteConsentTopic: ComplianceDeleteConsentTopic;
   static readonly UpdateConsentTopic: ComplianceUpdateConsentTopic;
   static readonly ProcessOutboundCall: ComplianceProcessOutboundCall;
+  static readonly QueryHolidays: ComplianceQueryHolidays;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1211,6 +1221,15 @@ export class ComplianceClient {
   processOutboundCall(
     requestMessage: api_v0alpha_compliance_pb.ProcessOutboundCallReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_compliance_pb.ProcessRes|null) => void
+  ): UnaryResponse;
+  queryHolidays(
+    requestMessage: api_v0alpha_compliance_pb.QueryHolidaysRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_compliance_pb.QueryHolidaysResponse|null) => void
+  ): UnaryResponse;
+  queryHolidays(
+    requestMessage: api_v0alpha_compliance_pb.QueryHolidaysRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_compliance_pb.QueryHolidaysResponse|null) => void
   ): UnaryResponse;
 }
 

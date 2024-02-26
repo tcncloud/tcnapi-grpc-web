@@ -12,8 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -33,16 +35,22 @@ goog.exportSymbol('proto.api.v1alpha1.org.CopyDataDipTemplateRequest', null, glo
 goog.exportSymbol('proto.api.v1alpha1.org.CopyDataDipTemplateResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.CopyDataDipTemplateToOrganizationRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.CopyDataDipTemplateToOrganizationResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.CopyHuntGroupWebLinkRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.CopyHuntGroupWebLinkResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.CreateAgentResponseAutoRulesRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.CreateAgentResponseAutoRulesResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.CreateDataDipTemplateRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.CreateDataDipTemplateResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.CreateHuntGroupClientInfoDisplayTemplateRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.CreateHuntGroupClientInfoDisplayTemplateResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.CreateHuntGroupRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.CreateHuntGroupResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.CreateHuntGroupScriptRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.CreateHuntGroupScriptResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.DeleteAgentResponseAutoRulesRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.DeleteAgentResponseAutoRulesResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.DeleteDataDipTemplateRequest', null, global);
@@ -51,12 +59,16 @@ goog.exportSymbol('proto.api.v1alpha1.org.DeleteHuntGroupClientInfoDisplayTempla
 goog.exportSymbol('proto.api.v1alpha1.org.DeleteHuntGroupClientInfoDisplayTemplateResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.DeleteHuntGroupRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.DeleteHuntGroupResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.GetDataDipTemplateRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.GetDataDipTemplateResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.GetHuntGroupClientInfoDisplayTemplateRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.GetHuntGroupClientInfoDisplayTemplateResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.GetHuntGroupDetailsRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.GetHuntGroupDetailsResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.GetHuntGroupScriptRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.GetHuntGroupScriptResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.GetHuntGroupSettingsRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.GetHuntGroupSettingsResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.ListAgentResponseAutoRulesRequest', null, global);
@@ -71,6 +83,9 @@ goog.exportSymbol('proto.api.v1alpha1.org.ListHuntGroupIntegrationLinksRequest',
 goog.exportSymbol('proto.api.v1alpha1.org.ListHuntGroupIntegrationLinksResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.ListHuntGroupWebLinksRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.ListHuntGroupWebLinksResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.Filter', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.UpdateAgentResponseAutoRulesRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.UpdateAgentResponseAutoRulesResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.UpdateAgentTriggersRequest', null, global);
@@ -81,6 +96,8 @@ goog.exportSymbol('proto.api.v1alpha1.org.UpdateHuntGroupClientInfoDisplayTempla
 goog.exportSymbol('proto.api.v1alpha1.org.UpdateHuntGroupClientInfoDisplayTemplateResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.UpdateHuntGroupGeneralDetailsRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.UpdateHuntGroupGeneralDetailsResponse', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.UpdateHuntGroupSettingsRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.UpdateHuntGroupSettingsResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.UpdateHuntGroupWebLinksRequest', null, global);
@@ -1019,6 +1036,132 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.displayName = 'proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse.displayName = 'proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.displayName = 'proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse.displayName = 'proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.displayName = 'proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.displayName = 'proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.api.v1alpha1.org.ListHuntGroupWebLinksRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1302,6 +1445,174 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.api.v1alpha1.org.UpdateAgentTriggersResponse.displayName = 'proto.api.v1alpha1.org.UpdateAgentTriggersResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.org.GetHuntGroupScriptRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.GetHuntGroupScriptRequest.displayName = 'proto.api.v1alpha1.org.GetHuntGroupScriptRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.org.GetHuntGroupScriptResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.GetHuntGroupScriptResponse.displayName = 'proto.api.v1alpha1.org.GetHuntGroupScriptResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.org.CreateHuntGroupScriptRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.displayName = 'proto.api.v1alpha1.org.CreateHuntGroupScriptRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.org.CreateHuntGroupScriptResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.CreateHuntGroupScriptResponse.displayName = 'proto.api.v1alpha1.org.CreateHuntGroupScriptResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.displayName = 'proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse.displayName = 'proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.displayName = 'proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse.displayName = 'proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse';
 }
 
 
@@ -8207,6 +8518,869 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    toHuntGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    template: (f = msg.getTemplate()) && api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest}
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest;
+  return proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest}
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setToHuntGroupSid(value);
+      break;
+    case 2:
+      var value = new api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate;
+      reader.readMessage(value,api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.deserializeBinaryFromReader);
+      msg.setTemplate(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getToHuntGroupSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getTemplate();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional int64 to_hunt_group_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.prototype.getToHuntGroupSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest} returns this
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.prototype.setToHuntGroupSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional api.commons.org.ClientInfoDisplayTemplate template = 2;
+ * @return {?proto.api.commons.org.ClientInfoDisplayTemplate}
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.prototype.getTemplate = function() {
+  return /** @type{?proto.api.commons.org.ClientInfoDisplayTemplate} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate, 2));
+};
+
+
+/**
+ * @param {?proto.api.commons.org.ClientInfoDisplayTemplate|undefined} value
+ * @return {!proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest} returns this
+*/
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.prototype.setTemplate = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest} returns this
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.prototype.clearTemplate = function() {
+  return this.setTemplate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest.prototype.hasTemplate = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse}
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse;
+  return proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse}
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    template: (f = msg.getTemplate()) && api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest}
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest;
+  return proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest}
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate;
+      reader.readMessage(value,api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.deserializeBinaryFromReader);
+      msg.setTemplate(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getTemplate();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional api.commons.org.ClientInfoDisplayTemplate template = 1;
+ * @return {?proto.api.commons.org.ClientInfoDisplayTemplate}
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.prototype.getTemplate = function() {
+  return /** @type{?proto.api.commons.org.ClientInfoDisplayTemplate} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_huntgroup_pb.ClientInfoDisplayTemplate, 1));
+};
+
+
+/**
+ * @param {?proto.api.commons.org.ClientInfoDisplayTemplate|undefined} value
+ * @return {!proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest} returns this
+*/
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.prototype.setTemplate = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest} returns this
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.prototype.clearTemplate = function() {
+  return this.setTemplate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest.prototype.hasTemplate = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    templateSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse}
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse;
+  return proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse}
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTemplateSid(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getTemplateSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 template_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse.prototype.getTemplateSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse} returns this
+ */
+proto.api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse.prototype.setTemplateSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    filter: jspb.Message.getFieldWithDefault(msg, 1, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest}
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest;
+  return proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest}
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.Filter} */ (reader.readEnum());
+      msg.setFilter(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getFilter();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * @enum {number}
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.Filter = {
+  FILTER_UNSPECIFIED: 0,
+  FILTER_ALL: 1,
+  FILTER_HUNT_GROUPS_WITH_TEMPLATE: 2,
+  FILTER_HUNT_GROUPS_WITHOUT_TEMPLATE: 3
+};
+
+/**
+ * optional Filter filter = 1;
+ * @return {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.Filter}
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.prototype.getFilter = function() {
+  return /** @type {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.Filter} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.Filter} value
+ * @return {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest} returns this
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.prototype.setFilter = function(value) {
+  return jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    huntGroupsWithTemplateDataList: jspb.Message.toObjectList(msg.getHuntGroupsWithTemplateDataList(),
+    api_commons_org_huntgroup_pb.HuntGroupWithClientInfoTemplateData.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse}
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse;
+  return proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse}
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new api_commons_org_huntgroup_pb.HuntGroupWithClientInfoTemplateData;
+      reader.readMessage(value,api_commons_org_huntgroup_pb.HuntGroupWithClientInfoTemplateData.deserializeBinaryFromReader);
+      msg.addHuntGroupsWithTemplateData(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getHuntGroupsWithTemplateDataList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      api_commons_org_huntgroup_pb.HuntGroupWithClientInfoTemplateData.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated api.commons.org.HuntGroupWithClientInfoTemplateData hunt_groups_with_template_data = 1;
+ * @return {!Array<!proto.api.commons.org.HuntGroupWithClientInfoTemplateData>}
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.prototype.getHuntGroupsWithTemplateDataList = function() {
+  return /** @type{!Array<!proto.api.commons.org.HuntGroupWithClientInfoTemplateData>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_commons_org_huntgroup_pb.HuntGroupWithClientInfoTemplateData, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.org.HuntGroupWithClientInfoTemplateData>} value
+ * @return {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse} returns this
+*/
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.prototype.setHuntGroupsWithTemplateDataList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.org.HuntGroupWithClientInfoTemplateData=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.org.HuntGroupWithClientInfoTemplateData}
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.prototype.addHuntGroupsWithTemplateData = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.commons.org.HuntGroupWithClientInfoTemplateData, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse} returns this
+ */
+proto.api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse.prototype.clearHuntGroupsWithTemplateDataList = function() {
+  return this.setHuntGroupsWithTemplateDataList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
 proto.api.v1alpha1.org.ListHuntGroupWebLinksRequest.prototype.toObject = function(opt_includeInstance) {
   return proto.api.v1alpha1.org.ListHuntGroupWebLinksRequest.toObject(opt_includeInstance, this);
 };
@@ -10293,6 +11467,1112 @@ proto.api.v1alpha1.org.UpdateAgentTriggersResponse.prototype.serializeBinary = f
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.v1alpha1.org.UpdateAgentTriggersResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.GetHuntGroupScriptRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.GetHuntGroupScriptRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    huntGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.GetHuntGroupScriptRequest}
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.GetHuntGroupScriptRequest;
+  return proto.api.v1alpha1.org.GetHuntGroupScriptRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.GetHuntGroupScriptRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.GetHuntGroupScriptRequest}
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setHuntGroupSid(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.GetHuntGroupScriptRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.GetHuntGroupScriptRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getHuntGroupSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 hunt_group_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptRequest.prototype.getHuntGroupSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.org.GetHuntGroupScriptRequest} returns this
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptRequest.prototype.setHuntGroupSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.GetHuntGroupScriptResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.GetHuntGroupScriptResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    huntGroupScript: (f = msg.getHuntGroupScript()) && api_commons_org_huntgroup_pb.HuntGroupScript.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.GetHuntGroupScriptResponse}
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.GetHuntGroupScriptResponse;
+  return proto.api.v1alpha1.org.GetHuntGroupScriptResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.GetHuntGroupScriptResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.GetHuntGroupScriptResponse}
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new api_commons_org_huntgroup_pb.HuntGroupScript;
+      reader.readMessage(value,api_commons_org_huntgroup_pb.HuntGroupScript.deserializeBinaryFromReader);
+      msg.setHuntGroupScript(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.GetHuntGroupScriptResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.GetHuntGroupScriptResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getHuntGroupScript();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      api_commons_org_huntgroup_pb.HuntGroupScript.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional api.commons.org.HuntGroupScript hunt_group_script = 1;
+ * @return {?proto.api.commons.org.HuntGroupScript}
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptResponse.prototype.getHuntGroupScript = function() {
+  return /** @type{?proto.api.commons.org.HuntGroupScript} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_huntgroup_pb.HuntGroupScript, 1));
+};
+
+
+/**
+ * @param {?proto.api.commons.org.HuntGroupScript|undefined} value
+ * @return {!proto.api.v1alpha1.org.GetHuntGroupScriptResponse} returns this
+*/
+proto.api.v1alpha1.org.GetHuntGroupScriptResponse.prototype.setHuntGroupScript = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.GetHuntGroupScriptResponse} returns this
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptResponse.prototype.clearHuntGroupScript = function() {
+  return this.setHuntGroupScript(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetHuntGroupScriptResponse.prototype.hasHuntGroupScript = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.CreateHuntGroupScriptRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    huntGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    huntGroupScript: (f = msg.getHuntGroupScript()) && api_commons_org_huntgroup_pb.HuntGroupScript.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.CreateHuntGroupScriptRequest}
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.CreateHuntGroupScriptRequest;
+  return proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.CreateHuntGroupScriptRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.CreateHuntGroupScriptRequest}
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setHuntGroupSid(value);
+      break;
+    case 2:
+      var value = new api_commons_org_huntgroup_pb.HuntGroupScript;
+      reader.readMessage(value,api_commons_org_huntgroup_pb.HuntGroupScript.deserializeBinaryFromReader);
+      msg.setHuntGroupScript(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.CreateHuntGroupScriptRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getHuntGroupSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getHuntGroupScript();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      api_commons_org_huntgroup_pb.HuntGroupScript.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional int64 hunt_group_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.prototype.getHuntGroupSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.org.CreateHuntGroupScriptRequest} returns this
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.prototype.setHuntGroupSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional api.commons.org.HuntGroupScript hunt_group_script = 2;
+ * @return {?proto.api.commons.org.HuntGroupScript}
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.prototype.getHuntGroupScript = function() {
+  return /** @type{?proto.api.commons.org.HuntGroupScript} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_huntgroup_pb.HuntGroupScript, 2));
+};
+
+
+/**
+ * @param {?proto.api.commons.org.HuntGroupScript|undefined} value
+ * @return {!proto.api.v1alpha1.org.CreateHuntGroupScriptRequest} returns this
+*/
+proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.prototype.setHuntGroupScript = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.CreateHuntGroupScriptRequest} returns this
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.prototype.clearHuntGroupScript = function() {
+  return this.setHuntGroupScript(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptRequest.prototype.hasHuntGroupScript = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.CreateHuntGroupScriptResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.CreateHuntGroupScriptResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.CreateHuntGroupScriptResponse}
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.CreateHuntGroupScriptResponse;
+  return proto.api.v1alpha1.org.CreateHuntGroupScriptResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.CreateHuntGroupScriptResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.CreateHuntGroupScriptResponse}
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.CreateHuntGroupScriptResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.CreateHuntGroupScriptResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.CreateHuntGroupScriptResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    huntGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    huntGroupScript: (f = msg.getHuntGroupScript()) && api_commons_org_huntgroup_pb.HuntGroupScript.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest}
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest;
+  return proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest}
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setHuntGroupSid(value);
+      break;
+    case 2:
+      var value = new api_commons_org_huntgroup_pb.HuntGroupScript;
+      reader.readMessage(value,api_commons_org_huntgroup_pb.HuntGroupScript.deserializeBinaryFromReader);
+      msg.setHuntGroupScript(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getHuntGroupSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getHuntGroupScript();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      api_commons_org_huntgroup_pb.HuntGroupScript.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional int64 hunt_group_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.prototype.getHuntGroupSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest} returns this
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.prototype.setHuntGroupSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional api.commons.org.HuntGroupScript hunt_group_script = 2;
+ * @return {?proto.api.commons.org.HuntGroupScript}
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.prototype.getHuntGroupScript = function() {
+  return /** @type{?proto.api.commons.org.HuntGroupScript} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_huntgroup_pb.HuntGroupScript, 2));
+};
+
+
+/**
+ * @param {?proto.api.commons.org.HuntGroupScript|undefined} value
+ * @return {!proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest} returns this
+*/
+proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.prototype.setHuntGroupScript = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest} returns this
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.prototype.clearHuntGroupScript = function() {
+  return this.setHuntGroupScript(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptRequest.prototype.hasHuntGroupScript = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse}
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse;
+  return proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse}
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.UpdateHuntGroupScriptResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    huntGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    scriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest}
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest;
+  return proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest}
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setHuntGroupSid(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setScriptSid(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getHuntGroupSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getScriptSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 hunt_group_sid = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.prototype.getHuntGroupSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest} returns this
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.prototype.setHuntGroupSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional int64 script_sid = 2;
+ * @return {number}
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.prototype.getScriptSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest} returns this
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptRequest.prototype.setScriptSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse}
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse;
+  return proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse}
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1alpha1.org.DeleteHuntGroupScriptResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 

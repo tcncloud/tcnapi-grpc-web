@@ -12,8 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -27,6 +29,7 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.api.commons.CallIdentifier', null, global);
 goog.exportSymbol('proto.api.commons.LearningOpportunity', null, global);
+goog.exportSymbol('proto.api.commons.LearningOpportunity.OriginIdentifierCase', null, global);
 goog.exportSymbol('proto.api.commons.LearningOpportunityOrigin', null, global);
 goog.exportSymbol('proto.api.commons.LearningOpportunityStatus', null, global);
 /**
@@ -40,7 +43,7 @@ goog.exportSymbol('proto.api.commons.LearningOpportunityStatus', null, global);
  * @constructor
  */
 proto.api.commons.LearningOpportunity = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.api.commons.LearningOpportunity.oneofGroups_);
 };
 goog.inherits(proto.api.commons.LearningOpportunity, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -71,6 +74,32 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.api.commons.CallIdentifier.displayName = 'proto.api.commons.CallIdentifier';
 }
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.api.commons.LearningOpportunity.oneofGroups_ = [[16,17]];
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.LearningOpportunity.OriginIdentifierCase = {
+  ORIGIN_IDENTIFIER_NOT_SET: 0,
+  EVALUATION_ID: 16,
+  AUTO_EVALUATION_ID: 17
+};
+
+/**
+ * @return {proto.api.commons.LearningOpportunity.OriginIdentifierCase}
+ */
+proto.api.commons.LearningOpportunity.prototype.getOriginIdentifierCase = function() {
+  return /** @type {proto.api.commons.LearningOpportunity.OriginIdentifierCase} */(jspb.Message.computeOneofCase(this, proto.api.commons.LearningOpportunity.oneofGroups_[0]));
+};
 
 
 
@@ -115,7 +144,9 @@ proto.api.commons.LearningOpportunity.toObject = function(includeInstance, msg) 
     title: jspb.Message.getFieldWithDefault(msg, 12, ""),
     status: jspb.Message.getFieldWithDefault(msg, 13, 0),
     origin: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    creatorUserId: jspb.Message.getFieldWithDefault(msg, 15, "")
+    creatorUserId: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    evaluationId: jspb.Message.getFieldWithDefault(msg, 16, 0),
+    autoEvaluationId: jspb.Message.getFieldWithDefault(msg, 17, 0)
   };
 
   if (includeInstance) {
@@ -204,6 +235,14 @@ proto.api.commons.LearningOpportunity.deserializeBinaryFromReader = function(msg
     case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setCreatorUserId(value);
+      break;
+    case 16:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setEvaluationId(value);
+      break;
+    case 17:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setAutoEvaluationId(value);
       break;
     default:
       reader.skipField();
@@ -323,6 +362,20 @@ proto.api.commons.LearningOpportunity.serializeBinaryToWriter = function(message
   if (f.length > 0) {
     writer.writeString(
       15,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
+    writer.writeInt64(
+      16,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 17));
+  if (f != null) {
+    writer.writeInt64(
+      17,
       f
     );
   }
@@ -579,6 +632,78 @@ proto.api.commons.LearningOpportunity.prototype.getCreatorUserId = function() {
  */
 proto.api.commons.LearningOpportunity.prototype.setCreatorUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * optional int64 evaluation_id = 16;
+ * @return {number}
+ */
+proto.api.commons.LearningOpportunity.prototype.getEvaluationId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.LearningOpportunity} returns this
+ */
+proto.api.commons.LearningOpportunity.prototype.setEvaluationId = function(value) {
+  return jspb.Message.setOneofField(this, 16, proto.api.commons.LearningOpportunity.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.commons.LearningOpportunity} returns this
+ */
+proto.api.commons.LearningOpportunity.prototype.clearEvaluationId = function() {
+  return jspb.Message.setOneofField(this, 16, proto.api.commons.LearningOpportunity.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.LearningOpportunity.prototype.hasEvaluationId = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional int64 auto_evaluation_id = 17;
+ * @return {number}
+ */
+proto.api.commons.LearningOpportunity.prototype.getAutoEvaluationId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.LearningOpportunity} returns this
+ */
+proto.api.commons.LearningOpportunity.prototype.setAutoEvaluationId = function(value) {
+  return jspb.Message.setOneofField(this, 17, proto.api.commons.LearningOpportunity.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.commons.LearningOpportunity} returns this
+ */
+proto.api.commons.LearningOpportunity.prototype.clearAutoEvaluationId = function() {
+  return jspb.Message.setOneofField(this, 17, proto.api.commons.LearningOpportunity.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.LearningOpportunity.prototype.hasAutoEvaluationId = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 

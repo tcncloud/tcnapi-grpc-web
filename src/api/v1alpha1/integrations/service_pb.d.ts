@@ -3274,3 +3274,51 @@ export namespace HangUpEpicPatientCallReq {
   }
 }
 
+export class GenerateEpicKeyPairReq extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getServer(): string;
+  setServer(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateEpicKeyPairReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateEpicKeyPairReq): GenerateEpicKeyPairReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateEpicKeyPairReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateEpicKeyPairReq;
+  static deserializeBinaryFromReader(message: GenerateEpicKeyPairReq, reader: jspb.BinaryReader): GenerateEpicKeyPairReq;
+}
+
+export namespace GenerateEpicKeyPairReq {
+  export type AsObject = {
+    orgId: string,
+    server: string,
+  }
+}
+
+export class GenerateEpicKeyPairRes extends jspb.Message {
+  getProductionPublicKey(): string;
+  setProductionPublicKey(value: string): void;
+
+  getNonProductionPublicKey(): string;
+  setNonProductionPublicKey(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateEpicKeyPairRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateEpicKeyPairRes): GenerateEpicKeyPairRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateEpicKeyPairRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateEpicKeyPairRes;
+  static deserializeBinaryFromReader(message: GenerateEpicKeyPairRes, reader: jspb.BinaryReader): GenerateEpicKeyPairRes;
+}
+
+export namespace GenerateEpicKeyPairRes {
+  export type AsObject = {
+    productionPublicKey: string,
+    nonProductionPublicKey: string,
+  }
+}
+

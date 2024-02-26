@@ -12,8 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -41,6 +43,8 @@ var api_v1alpha1_vanalytics_flag_transcript_filter_pb = require('../../../api/v1
 goog.object.extend(proto, api_v1alpha1_vanalytics_flag_transcript_filter_pb);
 var api_v1alpha1_vanalytics_transcript_pb = require('../../../api/v1alpha1/vanalytics/transcript_pb.js');
 goog.object.extend(proto, api_v1alpha1_vanalytics_transcript_pb);
+var api_v1alpha1_vanalytics_transcript_summary_pb = require('../../../api/v1alpha1/vanalytics/transcript_summary_pb.js');
+goog.object.extend(proto, api_v1alpha1_vanalytics_transcript_summary_pb);
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
