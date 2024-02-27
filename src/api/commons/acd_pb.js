@@ -784,9 +784,7 @@ proto.api.commons.CallerSid.toObject = function(includeInstance, msg) {
     callerSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     type: jspb.Message.getFieldWithDefault(msg, 2, 0),
     tenantSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    orgId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    callerId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    destinationNumber: jspb.Message.getFieldWithDefault(msg, 6, "")
+    orgId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -838,14 +836,6 @@ proto.api.commons.CallerSid.deserializeBinaryFromReader = function(msg, reader) 
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setOrgId(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCallerId(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDestinationNumber(value);
       break;
     default:
       reader.skipField();
@@ -901,20 +891,6 @@ proto.api.commons.CallerSid.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       4,
-      f
-    );
-  }
-  f = message.getCallerId();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = message.getDestinationNumber();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
       f
     );
   }
@@ -990,42 +966,6 @@ proto.api.commons.CallerSid.prototype.getOrgId = function() {
  */
 proto.api.commons.CallerSid.prototype.setOrgId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string caller_id = 5;
- * @return {string}
- */
-proto.api.commons.CallerSid.prototype.getCallerId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.CallerSid} returns this
- */
-proto.api.commons.CallerSid.prototype.setCallerId = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional string destination_number = 6;
- * @return {string}
- */
-proto.api.commons.CallerSid.prototype.getDestinationNumber = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.CallerSid} returns this
- */
-proto.api.commons.CallerSid.prototype.setDestinationNumber = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
