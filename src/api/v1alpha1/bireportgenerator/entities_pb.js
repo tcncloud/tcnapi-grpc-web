@@ -104,7 +104,8 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.toObject = function(includeInstan
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
     sendEmptyReport: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
     dashboardResourceId: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    timeZoneWrapper: (f = msg.getTimeZoneWrapper()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f)
+    timeZoneWrapper: (f = msg.getTimeZoneWrapper()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
+    hideCsvFooter: jspb.Message.getBooleanFieldWithDefault(msg, 16, false)
   };
 
   if (includeInstance) {
@@ -207,6 +208,10 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.deserializeBinaryFromReader = fun
       var value = new api_commons_org_pb.TimeZoneWrapper;
       reader.readMessage(value,api_commons_org_pb.TimeZoneWrapper.deserializeBinaryFromReader);
       msg.setTimeZoneWrapper(value);
+      break;
+    case 16:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setHideCsvFooter(value);
       break;
     default:
       reader.skipField();
@@ -345,6 +350,13 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.serializeBinaryToWriter = functio
       15,
       f,
       api_commons_org_pb.TimeZoneWrapper.serializeBinaryToWriter
+    );
+  }
+  f = message.getHideCsvFooter();
+  if (f) {
+    writer.writeBool(
+      16,
+      f
     );
   }
 };
@@ -731,6 +743,24 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.clearTimeZoneWrapper = 
  */
 proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.hasTimeZoneWrapper = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional bool hide_csv_footer = 16;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.getHideCsvFooter = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportJob} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.setHideCsvFooter = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 16, value);
 };
 
 

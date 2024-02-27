@@ -64,6 +64,9 @@ export class ReportJob extends jspb.Message {
   getTimeZoneWrapper(): api_commons_org_pb.TimeZoneWrapper | undefined;
   setTimeZoneWrapper(value?: api_commons_org_pb.TimeZoneWrapper): void;
 
+  getHideCsvFooter(): boolean;
+  setHideCsvFooter(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportJob.AsObject;
   static toObject(includeInstance: boolean, msg: ReportJob): ReportJob.AsObject;
@@ -91,6 +94,7 @@ export namespace ReportJob {
     sendEmptyReport: boolean,
     dashboardResourceId: string,
     timeZoneWrapper?: api_commons_org_pb.TimeZoneWrapper.AsObject,
+    hideCsvFooter: boolean,
   }
 }
 
