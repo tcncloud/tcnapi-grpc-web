@@ -11052,109 +11052,37 @@ export namespace ReplaceAgentOnScheduleRes {
   }
 }
 
-export class HelloWorldAdherenceAdminRequest extends jspb.Message {
+export class HelloWorldWFMAdherenceRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HelloWorldAdherenceAdminRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: HelloWorldAdherenceAdminRequest): HelloWorldAdherenceAdminRequest.AsObject;
+  toObject(includeInstance?: boolean): HelloWorldWFMAdherenceRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: HelloWorldWFMAdherenceRequest): HelloWorldWFMAdherenceRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: HelloWorldAdherenceAdminRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HelloWorldAdherenceAdminRequest;
-  static deserializeBinaryFromReader(message: HelloWorldAdherenceAdminRequest, reader: jspb.BinaryReader): HelloWorldAdherenceAdminRequest;
+  static serializeBinaryToWriter(message: HelloWorldWFMAdherenceRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HelloWorldWFMAdherenceRequest;
+  static deserializeBinaryFromReader(message: HelloWorldWFMAdherenceRequest, reader: jspb.BinaryReader): HelloWorldWFMAdherenceRequest;
 }
 
-export namespace HelloWorldAdherenceAdminRequest {
+export namespace HelloWorldWFMAdherenceRequest {
   export type AsObject = {
   }
 }
 
-export class HelloWorldAdherenceAdminResponse extends jspb.Message {
+export class HelloWorldWFMAdherenceResponse extends jspb.Message {
   getHelloMessage(): string;
   setHelloMessage(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HelloWorldAdherenceAdminResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: HelloWorldAdherenceAdminResponse): HelloWorldAdherenceAdminResponse.AsObject;
+  toObject(includeInstance?: boolean): HelloWorldWFMAdherenceResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: HelloWorldWFMAdherenceResponse): HelloWorldWFMAdherenceResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: HelloWorldAdherenceAdminResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HelloWorldAdherenceAdminResponse;
-  static deserializeBinaryFromReader(message: HelloWorldAdherenceAdminResponse, reader: jspb.BinaryReader): HelloWorldAdherenceAdminResponse;
+  static serializeBinaryToWriter(message: HelloWorldWFMAdherenceResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HelloWorldWFMAdherenceResponse;
+  static deserializeBinaryFromReader(message: HelloWorldWFMAdherenceResponse, reader: jspb.BinaryReader): HelloWorldWFMAdherenceResponse;
 }
 
-export namespace HelloWorldAdherenceAdminResponse {
-  export type AsObject = {
-    helloMessage: string,
-  }
-}
-
-export class HelloWorldAdherenceManagerRequest extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HelloWorldAdherenceManagerRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: HelloWorldAdherenceManagerRequest): HelloWorldAdherenceManagerRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: HelloWorldAdherenceManagerRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HelloWorldAdherenceManagerRequest;
-  static deserializeBinaryFromReader(message: HelloWorldAdherenceManagerRequest, reader: jspb.BinaryReader): HelloWorldAdherenceManagerRequest;
-}
-
-export namespace HelloWorldAdherenceManagerRequest {
-  export type AsObject = {
-  }
-}
-
-export class HelloWorldAdherenceManagerResponse extends jspb.Message {
-  getHelloMessage(): string;
-  setHelloMessage(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HelloWorldAdherenceManagerResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: HelloWorldAdherenceManagerResponse): HelloWorldAdherenceManagerResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: HelloWorldAdherenceManagerResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HelloWorldAdherenceManagerResponse;
-  static deserializeBinaryFromReader(message: HelloWorldAdherenceManagerResponse, reader: jspb.BinaryReader): HelloWorldAdherenceManagerResponse;
-}
-
-export namespace HelloWorldAdherenceManagerResponse {
-  export type AsObject = {
-    helloMessage: string,
-  }
-}
-
-export class HelloWorldAdherenceMonitorRequest extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HelloWorldAdherenceMonitorRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: HelloWorldAdherenceMonitorRequest): HelloWorldAdherenceMonitorRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: HelloWorldAdherenceMonitorRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HelloWorldAdherenceMonitorRequest;
-  static deserializeBinaryFromReader(message: HelloWorldAdherenceMonitorRequest, reader: jspb.BinaryReader): HelloWorldAdherenceMonitorRequest;
-}
-
-export namespace HelloWorldAdherenceMonitorRequest {
-  export type AsObject = {
-  }
-}
-
-export class HelloWorldAdherenceMonitorResponse extends jspb.Message {
-  getHelloMessage(): string;
-  setHelloMessage(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HelloWorldAdherenceMonitorResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: HelloWorldAdherenceMonitorResponse): HelloWorldAdherenceMonitorResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: HelloWorldAdherenceMonitorResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HelloWorldAdherenceMonitorResponse;
-  static deserializeBinaryFromReader(message: HelloWorldAdherenceMonitorResponse, reader: jspb.BinaryReader): HelloWorldAdherenceMonitorResponse;
-}
-
-export namespace HelloWorldAdherenceMonitorResponse {
+export namespace HelloWorldWFMAdherenceResponse {
   export type AsObject = {
     helloMessage: string,
   }

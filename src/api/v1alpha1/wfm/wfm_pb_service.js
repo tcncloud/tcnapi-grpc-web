@@ -1477,31 +1477,13 @@ WFM.RemoveAgentFromSchedule = {
   responseType: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse
 };
 
-WFM.HelloWorldAdherenceAdmin = {
-  methodName: "HelloWorldAdherenceAdmin",
+WFM.HelloWorldWFMAdherence = {
+  methodName: "HelloWorldWFMAdherence",
   service: WFM,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceAdminRequest,
-  responseType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceAdminResponse
-};
-
-WFM.HelloWorldAdherenceManager = {
-  methodName: "HelloWorldAdherenceManager",
-  service: WFM,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceManagerRequest,
-  responseType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceManagerResponse
-};
-
-WFM.HelloWorldAdherenceMonitor = {
-  methodName: "HelloWorldAdherenceMonitor",
-  service: WFM,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceMonitorRequest,
-  responseType: api_v1alpha1_wfm_wfm_pb.HelloWorldAdherenceMonitorResponse
+  requestType: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse
 };
 
 exports.WFM = WFM;
@@ -6612,73 +6594,11 @@ WFMClient.prototype.removeAgentFromSchedule = function removeAgentFromSchedule(r
   };
 };
 
-WFMClient.prototype.helloWorldAdherenceAdmin = function helloWorldAdherenceAdmin(requestMessage, metadata, callback) {
+WFMClient.prototype.helloWorldWFMAdherence = function helloWorldWFMAdherence(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WFM.HelloWorldAdherenceAdmin, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-WFMClient.prototype.helloWorldAdherenceManager = function helloWorldAdherenceManager(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(WFM.HelloWorldAdherenceManager, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-WFMClient.prototype.helloWorldAdherenceMonitor = function helloWorldAdherenceMonitor(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(WFM.HelloWorldAdherenceMonitor, {
+  var client = grpc.unary(WFM.HelloWorldWFMAdherence, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
