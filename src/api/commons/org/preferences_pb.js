@@ -1065,7 +1065,9 @@ proto.api.commons.org.OrganizationPreferences.toObject = function(includeInstanc
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     defaultCountry: jspb.Message.getFieldWithDefault(msg, 10, 0),
     timeZone: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    displayLanguage: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    displayLanguage: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    operatorDisplayLanguage: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    operatorScriptDirection: jspb.Message.getFieldWithDefault(msg, 14, 0)
   };
 
   if (includeInstance) {
@@ -1117,6 +1119,14 @@ proto.api.commons.org.OrganizationPreferences.deserializeBinaryFromReader = func
     case 12:
       var value = /** @type {!proto.api.commons.DisplayLanguage} */ (reader.readEnum());
       msg.setDisplayLanguage(value);
+      break;
+    case 13:
+      var value = /** @type {!proto.api.commons.OperatorDisplayLanguage} */ (reader.readEnum());
+      msg.setOperatorDisplayLanguage(value);
+      break;
+    case 14:
+      var value = /** @type {!proto.api.commons.OperatorScriptDirection} */ (reader.readEnum());
+      msg.setOperatorScriptDirection(value);
       break;
     default:
       reader.skipField();
@@ -1172,6 +1182,20 @@ proto.api.commons.org.OrganizationPreferences.serializeBinaryToWriter = function
   if (f !== 0.0) {
     writer.writeEnum(
       12,
+      f
+    );
+  }
+  f = message.getOperatorDisplayLanguage();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      13,
+      f
+    );
+  }
+  f = message.getOperatorScriptDirection();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      14,
       f
     );
   }
@@ -1247,6 +1271,42 @@ proto.api.commons.org.OrganizationPreferences.prototype.getDisplayLanguage = fun
  */
 proto.api.commons.org.OrganizationPreferences.prototype.setDisplayLanguage = function(value) {
   return jspb.Message.setProto3EnumField(this, 12, value);
+};
+
+
+/**
+ * optional api.commons.OperatorDisplayLanguage operator_display_language = 13;
+ * @return {!proto.api.commons.OperatorDisplayLanguage}
+ */
+proto.api.commons.org.OrganizationPreferences.prototype.getOperatorDisplayLanguage = function() {
+  return /** @type {!proto.api.commons.OperatorDisplayLanguage} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.OperatorDisplayLanguage} value
+ * @return {!proto.api.commons.org.OrganizationPreferences} returns this
+ */
+proto.api.commons.org.OrganizationPreferences.prototype.setOperatorDisplayLanguage = function(value) {
+  return jspb.Message.setProto3EnumField(this, 13, value);
+};
+
+
+/**
+ * optional api.commons.OperatorScriptDirection operator_script_direction = 14;
+ * @return {!proto.api.commons.OperatorScriptDirection}
+ */
+proto.api.commons.org.OrganizationPreferences.prototype.getOperatorScriptDirection = function() {
+  return /** @type {!proto.api.commons.OperatorScriptDirection} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.OperatorScriptDirection} value
+ * @return {!proto.api.commons.org.OrganizationPreferences} returns this
+ */
+proto.api.commons.org.OrganizationPreferences.prototype.setOperatorScriptDirection = function(value) {
+  return jspb.Message.setProto3EnumField(this, 14, value);
 };
 
 

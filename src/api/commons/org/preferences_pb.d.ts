@@ -21,6 +21,12 @@ export class OrganizationPreferences extends jspb.Message {
   getDisplayLanguage(): api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap];
   setDisplayLanguage(value: api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap]): void;
 
+  getOperatorDisplayLanguage(): api_commons_org_pb.OperatorDisplayLanguageMap[keyof api_commons_org_pb.OperatorDisplayLanguageMap];
+  setOperatorDisplayLanguage(value: api_commons_org_pb.OperatorDisplayLanguageMap[keyof api_commons_org_pb.OperatorDisplayLanguageMap]): void;
+
+  getOperatorScriptDirection(): api_commons_org_pb.OperatorScriptDirectionMap[keyof api_commons_org_pb.OperatorScriptDirectionMap];
+  setOperatorScriptDirection(value: api_commons_org_pb.OperatorScriptDirectionMap[keyof api_commons_org_pb.OperatorScriptDirectionMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrganizationPreferences.AsObject;
   static toObject(includeInstance: boolean, msg: OrganizationPreferences): OrganizationPreferences.AsObject;
@@ -37,6 +43,8 @@ export namespace OrganizationPreferences {
     defaultCountry: api_commons_country_pb.CountryMap[keyof api_commons_country_pb.CountryMap],
     timeZone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
     displayLanguage: api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap],
+    operatorDisplayLanguage: api_commons_org_pb.OperatorDisplayLanguageMap[keyof api_commons_org_pb.OperatorDisplayLanguageMap],
+    operatorScriptDirection: api_commons_org_pb.OperatorScriptDirectionMap[keyof api_commons_org_pb.OperatorScriptDirectionMap],
   }
 }
 

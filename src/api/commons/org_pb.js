@@ -53,6 +53,8 @@ goog.exportSymbol('proto.api.commons.ManualDialDataDipIntegration', null, global
 goog.exportSymbol('proto.api.commons.ManualDialDataDipScope', null, global);
 goog.exportSymbol('proto.api.commons.ManualDialTimeZoneValidation', null, global);
 goog.exportSymbol('proto.api.commons.OperatorApplications', null, global);
+goog.exportSymbol('proto.api.commons.OperatorDisplayLanguage', null, global);
+goog.exportSymbol('proto.api.commons.OperatorScriptDirection', null, global);
 goog.exportSymbol('proto.api.commons.OrganizationArchivedStateFilter', null, global);
 goog.exportSymbol('proto.api.commons.PhoneFieldOption', null, global);
 goog.exportSymbol('proto.api.commons.PhonePostalDisplayOptions', null, global);
@@ -427,6 +429,26 @@ proto.api.commons.DisplayLanguage = {
   DISPLAY_LANGUAGE_FRENCH_CANADA: 1,
   DISPLAY_LANGUAGE_PORTUGUESE: 2,
   DISPLAY_LANGUAGE_ENGLISH: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.OperatorDisplayLanguage = {
+  OPERATOR_DISPLAY_LANGUAGE_UNSPECIFIED: 0,
+  OPERATOR_DISPLAY_LANGUAGE_SPANISH: 1,
+  OPERATOR_DISPLAY_LANGUAGE_FRENCH_CANADA: 2,
+  OPERATOR_DISPLAY_LANGUAGE_PORTUGUESE: 3,
+  OPERATOR_DISPLAY_LANGUAGE_ENGLISH: 4
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.OperatorScriptDirection = {
+  OPERATOR_SCRIPT_DIRECTION_UNSPECIFIED: 0,
+  OPERATOR_SCRIPT_DIRECTION_LEFT_TO_RIGHT: 1,
+  OPERATOR_SCRIPT_DIRECTION_RIGHT_TO_LEFT: 2
 };
 
 /**
