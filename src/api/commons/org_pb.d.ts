@@ -101,24 +101,6 @@ export interface DisplayLanguageMap {
 
 export const DisplayLanguage: DisplayLanguageMap;
 
-export interface OperatorDisplayLanguageMap {
-  OPERATOR_DISPLAY_LANGUAGE_UNSPECIFIED: 0;
-  OPERATOR_DISPLAY_LANGUAGE_SPANISH: 1;
-  OPERATOR_DISPLAY_LANGUAGE_FRENCH_CANADA: 2;
-  OPERATOR_DISPLAY_LANGUAGE_PORTUGUESE: 3;
-  OPERATOR_DISPLAY_LANGUAGE_ENGLISH: 4;
-}
-
-export const OperatorDisplayLanguage: OperatorDisplayLanguageMap;
-
-export interface OperatorScriptDirectionMap {
-  OPERATOR_SCRIPT_DIRECTION_UNSPECIFIED: 0;
-  OPERATOR_SCRIPT_DIRECTION_LEFT_TO_RIGHT: 1;
-  OPERATOR_SCRIPT_DIRECTION_RIGHT_TO_LEFT: 2;
-}
-
-export const OperatorScriptDirection: OperatorScriptDirectionMap;
-
 export interface DefaultDuplicateHandlingMap {
   DEFAULT_DUPLICATE_HANDLING_KEEP_RECORD_AND_DISCARD_NUMBER: 0;
   DEFAULT_DUPLICATE_HANDLING_DISCARD_RECORD: 1;

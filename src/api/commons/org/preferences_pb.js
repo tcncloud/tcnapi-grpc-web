@@ -1066,8 +1066,8 @@ proto.api.commons.org.OrganizationPreferences.toObject = function(includeInstanc
     defaultCountry: jspb.Message.getFieldWithDefault(msg, 10, 0),
     timeZone: jspb.Message.getFieldWithDefault(msg, 11, 0),
     displayLanguage: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    operatorDisplayLanguage: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    operatorScriptDirection: jspb.Message.getFieldWithDefault(msg, 14, 0)
+    operatorDisplayLanguage: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    scriptDirectionRtl: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -1121,12 +1121,12 @@ proto.api.commons.org.OrganizationPreferences.deserializeBinaryFromReader = func
       msg.setDisplayLanguage(value);
       break;
     case 13:
-      var value = /** @type {!proto.api.commons.OperatorDisplayLanguage} */ (reader.readEnum());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOperatorDisplayLanguage(value);
       break;
     case 14:
-      var value = /** @type {!proto.api.commons.OperatorScriptDirection} */ (reader.readEnum());
-      msg.setOperatorScriptDirection(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setScriptDirectionRtl(value);
       break;
     default:
       reader.skipField();
@@ -1186,15 +1186,15 @@ proto.api.commons.org.OrganizationPreferences.serializeBinaryToWriter = function
     );
   }
   f = message.getOperatorDisplayLanguage();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  if (f.length > 0) {
+    writer.writeString(
       13,
       f
     );
   }
-  f = message.getOperatorScriptDirection();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  f = message.getScriptDirectionRtl();
+  if (f) {
+    writer.writeBool(
       14,
       f
     );
@@ -1275,38 +1275,38 @@ proto.api.commons.org.OrganizationPreferences.prototype.setDisplayLanguage = fun
 
 
 /**
- * optional api.commons.OperatorDisplayLanguage operator_display_language = 13;
- * @return {!proto.api.commons.OperatorDisplayLanguage}
+ * optional string operator_display_language = 13;
+ * @return {string}
  */
 proto.api.commons.org.OrganizationPreferences.prototype.getOperatorDisplayLanguage = function() {
-  return /** @type {!proto.api.commons.OperatorDisplayLanguage} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
 
 /**
- * @param {!proto.api.commons.OperatorDisplayLanguage} value
+ * @param {string} value
  * @return {!proto.api.commons.org.OrganizationPreferences} returns this
  */
 proto.api.commons.org.OrganizationPreferences.prototype.setOperatorDisplayLanguage = function(value) {
-  return jspb.Message.setProto3EnumField(this, 13, value);
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
 /**
- * optional api.commons.OperatorScriptDirection operator_script_direction = 14;
- * @return {!proto.api.commons.OperatorScriptDirection}
+ * optional bool script_direction_RTL = 14;
+ * @return {boolean}
  */
-proto.api.commons.org.OrganizationPreferences.prototype.getOperatorScriptDirection = function() {
-  return /** @type {!proto.api.commons.OperatorScriptDirection} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+proto.api.commons.org.OrganizationPreferences.prototype.getScriptDirectionRtl = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
 
 /**
- * @param {!proto.api.commons.OperatorScriptDirection} value
+ * @param {boolean} value
  * @return {!proto.api.commons.org.OrganizationPreferences} returns this
  */
-proto.api.commons.org.OrganizationPreferences.prototype.setOperatorScriptDirection = function(value) {
-  return jspb.Message.setProto3EnumField(this, 14, value);
+proto.api.commons.org.OrganizationPreferences.prototype.setScriptDirectionRtl = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
