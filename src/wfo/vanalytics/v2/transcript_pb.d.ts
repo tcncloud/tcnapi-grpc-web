@@ -877,58 +877,58 @@ export namespace TranscriptQuery {
   export class Phone extends jspb.Message {
     hasCc(): boolean;
     clearCc(): void;
-    getCc(): TranscriptQuery.Cc | undefined;
-    setCc(value?: TranscriptQuery.Cc): void;
+    getCc(): TranscriptQuery.Phone.Cc | undefined;
+    setCc(value?: TranscriptQuery.Phone.Cc): void;
 
     hasNdc(): boolean;
     clearNdc(): void;
-    getNdc(): TranscriptQuery.Ndc | undefined;
-    setNdc(value?: TranscriptQuery.Ndc): void;
+    getNdc(): TranscriptQuery.Phone.Ndc | undefined;
+    setNdc(value?: TranscriptQuery.Phone.Ndc): void;
 
     hasPrefix(): boolean;
     clearPrefix(): void;
-    getPrefix(): TranscriptQuery.Prefix | undefined;
-    setPrefix(value?: TranscriptQuery.Prefix): void;
+    getPrefix(): TranscriptQuery.Phone.Prefix | undefined;
+    setPrefix(value?: TranscriptQuery.Phone.Prefix): void;
 
     hasCity(): boolean;
     clearCity(): void;
-    getCity(): TranscriptQuery.City | undefined;
-    setCity(value?: TranscriptQuery.City): void;
+    getCity(): TranscriptQuery.Phone.City | undefined;
+    setCity(value?: TranscriptQuery.Phone.City): void;
 
     hasIso2(): boolean;
     clearIso2(): void;
-    getIso2(): TranscriptQuery.Iso2 | undefined;
-    setIso2(value?: TranscriptQuery.Iso2): void;
+    getIso2(): TranscriptQuery.Phone.Iso2 | undefined;
+    setIso2(value?: TranscriptQuery.Phone.Iso2): void;
 
     hasRegionCode(): boolean;
     clearRegionCode(): void;
-    getRegionCode(): TranscriptQuery.RegionCode | undefined;
-    setRegionCode(value?: TranscriptQuery.RegionCode): void;
+    getRegionCode(): TranscriptQuery.Phone.RegionCode | undefined;
+    setRegionCode(value?: TranscriptQuery.Phone.RegionCode): void;
 
     hasRegionName(): boolean;
     clearRegionName(): void;
-    getRegionName(): TranscriptQuery.RegionName | undefined;
-    setRegionName(value?: TranscriptQuery.RegionName): void;
+    getRegionName(): TranscriptQuery.Phone.RegionName | undefined;
+    setRegionName(value?: TranscriptQuery.Phone.RegionName): void;
 
     hasTimeZone(): boolean;
     clearTimeZone(): void;
-    getTimeZone(): TranscriptQuery.TimeZone | undefined;
-    setTimeZone(value?: TranscriptQuery.TimeZone): void;
+    getTimeZone(): TranscriptQuery.Phone.TimeZone | undefined;
+    setTimeZone(value?: TranscriptQuery.Phone.TimeZone): void;
 
     hasType(): boolean;
     clearType(): void;
-    getType(): TranscriptQuery.Type | undefined;
-    setType(value?: TranscriptQuery.Type): void;
+    getType(): TranscriptQuery.Phone.Type | undefined;
+    setType(value?: TranscriptQuery.Phone.Type): void;
 
     hasUtc(): boolean;
     clearUtc(): void;
-    getUtc(): TranscriptQuery.Utc | undefined;
-    setUtc(value?: TranscriptQuery.Utc): void;
+    getUtc(): TranscriptQuery.Phone.Utc | undefined;
+    setUtc(value?: TranscriptQuery.Phone.Utc): void;
 
     hasLocation(): boolean;
     clearLocation(): void;
-    getLocation(): TranscriptQuery.Location | undefined;
-    setLocation(value?: TranscriptQuery.Location): void;
+    getLocation(): TranscriptQuery.Phone.Location | undefined;
+    setLocation(value?: TranscriptQuery.Phone.Location): void;
 
     hasRaw(): boolean;
     clearRaw(): void;
@@ -947,18 +947,288 @@ export namespace TranscriptQuery {
 
   export namespace Phone {
     export type AsObject = {
-      cc?: TranscriptQuery.Cc.AsObject,
-      ndc?: TranscriptQuery.Ndc.AsObject,
-      prefix?: TranscriptQuery.Prefix.AsObject,
-      city?: TranscriptQuery.City.AsObject,
-      iso2?: TranscriptQuery.Iso2.AsObject,
-      regionCode?: TranscriptQuery.RegionCode.AsObject,
-      regionName?: TranscriptQuery.RegionName.AsObject,
-      timeZone?: TranscriptQuery.TimeZone.AsObject,
-      type?: TranscriptQuery.Type.AsObject,
-      utc?: TranscriptQuery.Utc.AsObject,
-      location?: TranscriptQuery.Location.AsObject,
+      cc?: TranscriptQuery.Phone.Cc.AsObject,
+      ndc?: TranscriptQuery.Phone.Ndc.AsObject,
+      prefix?: TranscriptQuery.Phone.Prefix.AsObject,
+      city?: TranscriptQuery.Phone.City.AsObject,
+      iso2?: TranscriptQuery.Phone.Iso2.AsObject,
+      regionCode?: TranscriptQuery.Phone.RegionCode.AsObject,
+      regionName?: TranscriptQuery.Phone.RegionName.AsObject,
+      timeZone?: TranscriptQuery.Phone.TimeZone.AsObject,
+      type?: TranscriptQuery.Phone.Type.AsObject,
+      utc?: TranscriptQuery.Phone.Utc.AsObject,
+      location?: TranscriptQuery.Phone.Location.AsObject,
       raw?: TranscriptQuery.Phone.Raw.AsObject,
+    }
+
+    export class Cc extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Cc.AsObject;
+      static toObject(includeInstance: boolean, msg: Cc): Cc.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Cc, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Cc;
+      static deserializeBinaryFromReader(message: Cc, reader: jspb.BinaryReader): Cc;
+    }
+
+    export namespace Cc {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
+    }
+
+    export class Ndc extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Ndc.AsObject;
+      static toObject(includeInstance: boolean, msg: Ndc): Ndc.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Ndc, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Ndc;
+      static deserializeBinaryFromReader(message: Ndc, reader: jspb.BinaryReader): Ndc;
+    }
+
+    export namespace Ndc {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
+    }
+
+    export class Prefix extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Prefix.AsObject;
+      static toObject(includeInstance: boolean, msg: Prefix): Prefix.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Prefix, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Prefix;
+      static deserializeBinaryFromReader(message: Prefix, reader: jspb.BinaryReader): Prefix;
+    }
+
+    export namespace Prefix {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
+    }
+
+    export class City extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): City.AsObject;
+      static toObject(includeInstance: boolean, msg: City): City.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: City, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): City;
+      static deserializeBinaryFromReader(message: City, reader: jspb.BinaryReader): City;
+    }
+
+    export namespace City {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
+    }
+
+    export class Iso2 extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Iso2.AsObject;
+      static toObject(includeInstance: boolean, msg: Iso2): Iso2.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Iso2, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Iso2;
+      static deserializeBinaryFromReader(message: Iso2, reader: jspb.BinaryReader): Iso2;
+    }
+
+    export namespace Iso2 {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
+    }
+
+    export class RegionCode extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): RegionCode.AsObject;
+      static toObject(includeInstance: boolean, msg: RegionCode): RegionCode.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: RegionCode, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): RegionCode;
+      static deserializeBinaryFromReader(message: RegionCode, reader: jspb.BinaryReader): RegionCode;
+    }
+
+    export namespace RegionCode {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
+    }
+
+    export class RegionName extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): RegionName.AsObject;
+      static toObject(includeInstance: boolean, msg: RegionName): RegionName.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: RegionName, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): RegionName;
+      static deserializeBinaryFromReader(message: RegionName, reader: jspb.BinaryReader): RegionName;
+    }
+
+    export namespace RegionName {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
+    }
+
+    export class TimeZone extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): TimeZone.AsObject;
+      static toObject(includeInstance: boolean, msg: TimeZone): TimeZone.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: TimeZone, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): TimeZone;
+      static deserializeBinaryFromReader(message: TimeZone, reader: jspb.BinaryReader): TimeZone;
+    }
+
+    export namespace TimeZone {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
+    }
+
+    export class Type extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Type.AsObject;
+      static toObject(includeInstance: boolean, msg: Type): Type.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Type, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Type;
+      static deserializeBinaryFromReader(message: Type, reader: jspb.BinaryReader): Type;
+    }
+
+    export namespace Type {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
+    }
+
+    export class Utc extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<number>;
+      setAnyList(value: Array<number>): void;
+      addAny(value: number, index?: number): number;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Utc.AsObject;
+      static toObject(includeInstance: boolean, msg: Utc): Utc.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Utc, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Utc;
+      static deserializeBinaryFromReader(message: Utc, reader: jspb.BinaryReader): Utc;
+    }
+
+    export namespace Utc {
+      export type AsObject = {
+        anyList: Array<number>,
+      }
+    }
+
+    export class Location extends jspb.Message {
+      hasZipCodeProximity(): boolean;
+      clearZipCodeProximity(): void;
+      getZipCodeProximity(): TranscriptQuery.Phone.Location.ZipCodeProximity | undefined;
+      setZipCodeProximity(value?: TranscriptQuery.Phone.Location.ZipCodeProximity): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Location.AsObject;
+      static toObject(includeInstance: boolean, msg: Location): Location.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Location, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Location;
+      static deserializeBinaryFromReader(message: Location, reader: jspb.BinaryReader): Location;
+    }
+
+    export namespace Location {
+      export type AsObject = {
+        zipCodeProximity?: TranscriptQuery.Phone.Location.ZipCodeProximity.AsObject,
+      }
+
+      export class ZipCodeProximity extends jspb.Message {
+        getCountryCode(): string;
+        setCountryCode(value: string): void;
+
+        getZipCode(): string;
+        setZipCode(value: string): void;
+
+        getDistance(): string;
+        setDistance(value: string): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): ZipCodeProximity.AsObject;
+        static toObject(includeInstance: boolean, msg: ZipCodeProximity): ZipCodeProximity.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: ZipCodeProximity, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): ZipCodeProximity;
+        static deserializeBinaryFromReader(message: ZipCodeProximity, reader: jspb.BinaryReader): ZipCodeProximity;
+      }
+
+      export namespace ZipCodeProximity {
+        export type AsObject = {
+          countryCode: string,
+          zipCode: string,
+          distance: string,
+        }
+      }
     }
 
     export class Raw extends jspb.Message {
@@ -980,276 +1250,6 @@ export namespace TranscriptQuery {
     export namespace Raw {
       export type AsObject = {
         anyList: Array<string>,
-      }
-    }
-  }
-
-  export class Cc extends jspb.Message {
-    clearAnyList(): void;
-    getAnyList(): Array<string>;
-    setAnyList(value: Array<string>): void;
-    addAny(value: string, index?: number): string;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Cc.AsObject;
-    static toObject(includeInstance: boolean, msg: Cc): Cc.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Cc, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Cc;
-    static deserializeBinaryFromReader(message: Cc, reader: jspb.BinaryReader): Cc;
-  }
-
-  export namespace Cc {
-    export type AsObject = {
-      anyList: Array<string>,
-    }
-  }
-
-  export class Ndc extends jspb.Message {
-    clearAnyList(): void;
-    getAnyList(): Array<string>;
-    setAnyList(value: Array<string>): void;
-    addAny(value: string, index?: number): string;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Ndc.AsObject;
-    static toObject(includeInstance: boolean, msg: Ndc): Ndc.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Ndc, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Ndc;
-    static deserializeBinaryFromReader(message: Ndc, reader: jspb.BinaryReader): Ndc;
-  }
-
-  export namespace Ndc {
-    export type AsObject = {
-      anyList: Array<string>,
-    }
-  }
-
-  export class Prefix extends jspb.Message {
-    clearAnyList(): void;
-    getAnyList(): Array<string>;
-    setAnyList(value: Array<string>): void;
-    addAny(value: string, index?: number): string;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Prefix.AsObject;
-    static toObject(includeInstance: boolean, msg: Prefix): Prefix.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Prefix, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Prefix;
-    static deserializeBinaryFromReader(message: Prefix, reader: jspb.BinaryReader): Prefix;
-  }
-
-  export namespace Prefix {
-    export type AsObject = {
-      anyList: Array<string>,
-    }
-  }
-
-  export class City extends jspb.Message {
-    clearAnyList(): void;
-    getAnyList(): Array<string>;
-    setAnyList(value: Array<string>): void;
-    addAny(value: string, index?: number): string;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): City.AsObject;
-    static toObject(includeInstance: boolean, msg: City): City.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: City, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): City;
-    static deserializeBinaryFromReader(message: City, reader: jspb.BinaryReader): City;
-  }
-
-  export namespace City {
-    export type AsObject = {
-      anyList: Array<string>,
-    }
-  }
-
-  export class Iso2 extends jspb.Message {
-    clearAnyList(): void;
-    getAnyList(): Array<string>;
-    setAnyList(value: Array<string>): void;
-    addAny(value: string, index?: number): string;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Iso2.AsObject;
-    static toObject(includeInstance: boolean, msg: Iso2): Iso2.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Iso2, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Iso2;
-    static deserializeBinaryFromReader(message: Iso2, reader: jspb.BinaryReader): Iso2;
-  }
-
-  export namespace Iso2 {
-    export type AsObject = {
-      anyList: Array<string>,
-    }
-  }
-
-  export class RegionCode extends jspb.Message {
-    clearAnyList(): void;
-    getAnyList(): Array<string>;
-    setAnyList(value: Array<string>): void;
-    addAny(value: string, index?: number): string;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): RegionCode.AsObject;
-    static toObject(includeInstance: boolean, msg: RegionCode): RegionCode.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: RegionCode, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): RegionCode;
-    static deserializeBinaryFromReader(message: RegionCode, reader: jspb.BinaryReader): RegionCode;
-  }
-
-  export namespace RegionCode {
-    export type AsObject = {
-      anyList: Array<string>,
-    }
-  }
-
-  export class RegionName extends jspb.Message {
-    clearAnyList(): void;
-    getAnyList(): Array<string>;
-    setAnyList(value: Array<string>): void;
-    addAny(value: string, index?: number): string;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): RegionName.AsObject;
-    static toObject(includeInstance: boolean, msg: RegionName): RegionName.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: RegionName, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): RegionName;
-    static deserializeBinaryFromReader(message: RegionName, reader: jspb.BinaryReader): RegionName;
-  }
-
-  export namespace RegionName {
-    export type AsObject = {
-      anyList: Array<string>,
-    }
-  }
-
-  export class TimeZone extends jspb.Message {
-    clearAnyList(): void;
-    getAnyList(): Array<string>;
-    setAnyList(value: Array<string>): void;
-    addAny(value: string, index?: number): string;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): TimeZone.AsObject;
-    static toObject(includeInstance: boolean, msg: TimeZone): TimeZone.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: TimeZone, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): TimeZone;
-    static deserializeBinaryFromReader(message: TimeZone, reader: jspb.BinaryReader): TimeZone;
-  }
-
-  export namespace TimeZone {
-    export type AsObject = {
-      anyList: Array<string>,
-    }
-  }
-
-  export class Type extends jspb.Message {
-    clearAnyList(): void;
-    getAnyList(): Array<string>;
-    setAnyList(value: Array<string>): void;
-    addAny(value: string, index?: number): string;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Type.AsObject;
-    static toObject(includeInstance: boolean, msg: Type): Type.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Type, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Type;
-    static deserializeBinaryFromReader(message: Type, reader: jspb.BinaryReader): Type;
-  }
-
-  export namespace Type {
-    export type AsObject = {
-      anyList: Array<string>,
-    }
-  }
-
-  export class Utc extends jspb.Message {
-    clearAnyList(): void;
-    getAnyList(): Array<number>;
-    setAnyList(value: Array<number>): void;
-    addAny(value: number, index?: number): number;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Utc.AsObject;
-    static toObject(includeInstance: boolean, msg: Utc): Utc.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Utc, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Utc;
-    static deserializeBinaryFromReader(message: Utc, reader: jspb.BinaryReader): Utc;
-  }
-
-  export namespace Utc {
-    export type AsObject = {
-      anyList: Array<number>,
-    }
-  }
-
-  export class Location extends jspb.Message {
-    hasZipCodeProximity(): boolean;
-    clearZipCodeProximity(): void;
-    getZipCodeProximity(): TranscriptQuery.Location.ZipCodeProximity | undefined;
-    setZipCodeProximity(value?: TranscriptQuery.Location.ZipCodeProximity): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Location.AsObject;
-    static toObject(includeInstance: boolean, msg: Location): Location.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Location, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Location;
-    static deserializeBinaryFromReader(message: Location, reader: jspb.BinaryReader): Location;
-  }
-
-  export namespace Location {
-    export type AsObject = {
-      zipCodeProximity?: TranscriptQuery.Location.ZipCodeProximity.AsObject,
-    }
-
-    export class ZipCodeProximity extends jspb.Message {
-      getCountryCode(): string;
-      setCountryCode(value: string): void;
-
-      getZipCode(): string;
-      setZipCode(value: string): void;
-
-      getDistance(): string;
-      setDistance(value: string): void;
-
-      serializeBinary(): Uint8Array;
-      toObject(includeInstance?: boolean): ZipCodeProximity.AsObject;
-      static toObject(includeInstance: boolean, msg: ZipCodeProximity): ZipCodeProximity.AsObject;
-      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-      static serializeBinaryToWriter(message: ZipCodeProximity, writer: jspb.BinaryWriter): void;
-      static deserializeBinary(bytes: Uint8Array): ZipCodeProximity;
-      static deserializeBinaryFromReader(message: ZipCodeProximity, reader: jspb.BinaryReader): ZipCodeProximity;
-    }
-
-    export namespace ZipCodeProximity {
-      export type AsObject = {
-        countryCode: string,
-        zipCode: string,
-        distance: string,
       }
     }
   }
