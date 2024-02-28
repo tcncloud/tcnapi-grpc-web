@@ -19269,7 +19269,8 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.toObject = function(includeIns
     api_commons_org_permissions_pb.PermissionGroup.toObject, includeInstance),
     labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
     api_commons_org_labels_pb.Label.toObject, includeInstance),
-    orgAllowedMfa: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+    orgAllowedMfa: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    orgCurrency: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -19334,6 +19335,10 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.deserializeBinaryFromReader = 
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setOrgAllowedMfa(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgCurrency(value);
       break;
     default:
       reader.skipField();
@@ -19406,6 +19411,13 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.serializeBinaryToWriter = func
   if (f) {
     writer.writeBool(
       6,
+      f
+    );
+  }
+  f = message.getOrgCurrency();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
       f
     );
   }
@@ -20947,6 +20959,24 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.getOrgAllowedMfa = f
  */
 proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.setOrgAllowedMfa = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+/**
+ * optional string org_currency = 15;
+ * @return {string}
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.getOrgCurrency = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse} returns this
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.setOrgCurrency = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
 };
 
 

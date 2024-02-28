@@ -2443,6 +2443,9 @@ export class GetUserSessionDataResponse extends jspb.Message {
   getOrgAllowedMfa(): boolean;
   setOrgAllowedMfa(value: boolean): void;
 
+  getOrgCurrency(): string;
+  setOrgCurrency(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserSessionDataResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserSessionDataResponse): GetUserSessionDataResponse.AsObject;
@@ -2461,6 +2464,7 @@ export namespace GetUserSessionDataResponse {
     permissionGroupsList: Array<api_commons_org_permissions_pb.PermissionGroup.AsObject>,
     labelsList: Array<api_commons_org_labels_pb.Label.AsObject>,
     orgAllowedMfa: boolean,
+    orgCurrency: string,
   }
 
   export class User extends jspb.Message {
