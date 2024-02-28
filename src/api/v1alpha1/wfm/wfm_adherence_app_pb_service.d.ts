@@ -4,8 +4,18 @@
 import * as api_v1alpha1_wfm_wfm_adherence_app_pb from "../../../api/v1alpha1/wfm/wfm_adherence_app_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
+type WfmAdherenceAppServiceHelloWorldWFMAdherence = {
+  readonly methodName: string;
+  readonly service: typeof WfmAdherenceAppService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_adherence_app_pb.HelloWorldWFMAdherenceRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_adherence_app_pb.HelloWorldWFMAdherenceResponse;
+};
+
 export class WfmAdherenceAppService {
   static readonly serviceName: string;
+  static readonly HelloWorldWFMAdherence: WfmAdherenceAppServiceHelloWorldWFMAdherence;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -40,5 +50,14 @@ export class WfmAdherenceAppServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
+  helloWorldWFMAdherence(
+    requestMessage: api_v1alpha1_wfm_wfm_adherence_app_pb.HelloWorldWFMAdherenceRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_adherence_app_pb.HelloWorldWFMAdherenceResponse|null) => void
+  ): UnaryResponse;
+  helloWorldWFMAdherence(
+    requestMessage: api_v1alpha1_wfm_wfm_adherence_app_pb.HelloWorldWFMAdherenceRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_adherence_app_pb.HelloWorldWFMAdherenceResponse|null) => void
+  ): UnaryResponse;
 }
 

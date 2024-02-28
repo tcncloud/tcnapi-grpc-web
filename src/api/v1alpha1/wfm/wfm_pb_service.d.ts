@@ -1471,15 +1471,6 @@ type WFMRemoveAgentFromSchedule = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse;
 };
 
-type WFMHelloWorldWFMAdherence = {
-  readonly methodName: string;
-  readonly service: typeof WFM;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceRequest;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse;
-};
-
 export class WFM {
   static readonly serviceName: string;
   static readonly PerformInitialClientSetup: WFMPerformInitialClientSetup;
@@ -1645,7 +1636,6 @@ export class WFM {
   static readonly ReplaceAgentOnSchedule: WFMReplaceAgentOnSchedule;
   static readonly ReplaceAgentOnScheduleV1: WFMReplaceAgentOnScheduleV1;
   static readonly RemoveAgentFromSchedule: WFMRemoveAgentFromSchedule;
-  static readonly HelloWorldWFMAdherence: WFMHelloWorldWFMAdherence;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3098,15 +3088,6 @@ export class WFMClient {
   removeAgentFromSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse|null) => void
-  ): UnaryResponse;
-  helloWorldWFMAdherence(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse|null) => void
-  ): UnaryResponse;
-  helloWorldWFMAdherence(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse|null) => void
   ): UnaryResponse;
 }
 
