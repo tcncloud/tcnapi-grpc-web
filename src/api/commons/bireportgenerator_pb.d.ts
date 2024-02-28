@@ -158,6 +158,9 @@ export class DeliveryOptions extends jspb.Message {
   setFailureNotificationEmailsList(value: Array<string>): void;
   addFailureNotificationEmails(value: string, index?: number): string;
 
+  getFailureNotificationTransferConfigSid(): number;
+  setFailureNotificationTransferConfigSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeliveryOptions.AsObject;
   static toObject(includeInstance: boolean, msg: DeliveryOptions): DeliveryOptions.AsObject;
@@ -172,6 +175,7 @@ export namespace DeliveryOptions {
   export type AsObject = {
     transferConfigSid: number,
     failureNotificationEmailsList: Array<string>,
+    failureNotificationTransferConfigSid: number,
   }
 }
 

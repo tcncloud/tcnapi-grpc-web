@@ -1231,7 +1231,8 @@ proto.api.commons.DeliveryOptions.prototype.toObject = function(opt_includeInsta
 proto.api.commons.DeliveryOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
     transferConfigSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    failureNotificationEmailsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    failureNotificationEmailsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    failureNotificationTransferConfigSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1276,6 +1277,10 @@ proto.api.commons.DeliveryOptions.deserializeBinaryFromReader = function(msg, re
       var value = /** @type {string} */ (reader.readString());
       msg.addFailureNotificationEmails(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setFailureNotificationTransferConfigSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1316,6 +1321,13 @@ proto.api.commons.DeliveryOptions.serializeBinaryToWriter = function(message, wr
   if (f.length > 0) {
     writer.writeRepeatedString(
       2,
+      f
+    );
+  }
+  f = message.getFailureNotificationTransferConfigSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      3,
       f
     );
   }
@@ -1374,6 +1386,24 @@ proto.api.commons.DeliveryOptions.prototype.addFailureNotificationEmails = funct
  */
 proto.api.commons.DeliveryOptions.prototype.clearFailureNotificationEmailsList = function() {
   return this.setFailureNotificationEmailsList([]);
+};
+
+
+/**
+ * optional int64 failure_notification_transfer_config_sid = 3;
+ * @return {number}
+ */
+proto.api.commons.DeliveryOptions.prototype.getFailureNotificationTransferConfigSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.DeliveryOptions} returns this
+ */
+proto.api.commons.DeliveryOptions.prototype.setFailureNotificationTransferConfigSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
