@@ -1067,7 +1067,7 @@ proto.api.commons.org.OrganizationPreferences.toObject = function(includeInstanc
     timeZone: jspb.Message.getFieldWithDefault(msg, 11, 0),
     displayLanguage: jspb.Message.getFieldWithDefault(msg, 12, 0),
     operatorDisplayLanguage: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    useScriptDirectionRtl: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
+    useScriptDirectionRigthToLeft: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -1126,7 +1126,7 @@ proto.api.commons.org.OrganizationPreferences.deserializeBinaryFromReader = func
       break;
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setUseScriptDirectionRtl(value);
+      msg.setUseScriptDirectionRigthToLeft(value);
       break;
     default:
       reader.skipField();
@@ -1192,7 +1192,7 @@ proto.api.commons.org.OrganizationPreferences.serializeBinaryToWriter = function
       f
     );
   }
-  f = message.getUseScriptDirectionRtl();
+  f = message.getUseScriptDirectionRigthToLeft();
   if (f) {
     writer.writeBool(
       14,
@@ -1293,10 +1293,10 @@ proto.api.commons.org.OrganizationPreferences.prototype.setOperatorDisplayLangua
 
 
 /**
- * optional bool use_script_direction_RTL = 14;
+ * optional bool use_script_direction_rigth_to_left = 14;
  * @return {boolean}
  */
-proto.api.commons.org.OrganizationPreferences.prototype.getUseScriptDirectionRtl = function() {
+proto.api.commons.org.OrganizationPreferences.prototype.getUseScriptDirectionRigthToLeft = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
@@ -1305,7 +1305,7 @@ proto.api.commons.org.OrganizationPreferences.prototype.getUseScriptDirectionRtl
  * @param {boolean} value
  * @return {!proto.api.commons.org.OrganizationPreferences} returns this
  */
-proto.api.commons.org.OrganizationPreferences.prototype.setUseScriptDirectionRtl = function(value) {
+proto.api.commons.org.OrganizationPreferences.prototype.setUseScriptDirectionRigthToLeft = function(value) {
   return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
