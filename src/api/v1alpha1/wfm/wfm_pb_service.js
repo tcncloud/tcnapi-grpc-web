@@ -1477,6 +1477,15 @@ WFM.RemoveAgentFromSchedule = {
   responseType: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse
 };
 
+WFM.HelloWorldWFMAdherence = {
+  methodName: "HelloWorldWFMAdherence",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse
+};
+
 exports.WFM = WFM;
 
 function WFMClient(serviceHost, options) {
@@ -6559,6 +6568,37 @@ WFMClient.prototype.removeAgentFromSchedule = function removeAgentFromSchedule(r
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.RemoveAgentFromSchedule, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.helloWorldWFMAdherence = function helloWorldWFMAdherence(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.HelloWorldWFMAdherence, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
