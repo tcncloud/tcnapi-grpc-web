@@ -1067,7 +1067,8 @@ proto.api.commons.org.OrganizationPreferences.toObject = function(includeInstanc
     timeZone: jspb.Message.getFieldWithDefault(msg, 11, 0),
     displayLanguage: jspb.Message.getFieldWithDefault(msg, 12, 0),
     operatorDisplayLanguage: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    useScriptDirectionRigthToLeft: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
+    useScriptDirectionRightToLeft: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    defaultCurrency: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -1126,7 +1127,11 @@ proto.api.commons.org.OrganizationPreferences.deserializeBinaryFromReader = func
       break;
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setUseScriptDirectionRigthToLeft(value);
+      msg.setUseScriptDirectionRightToLeft(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDefaultCurrency(value);
       break;
     default:
       reader.skipField();
@@ -1192,10 +1197,17 @@ proto.api.commons.org.OrganizationPreferences.serializeBinaryToWriter = function
       f
     );
   }
-  f = message.getUseScriptDirectionRigthToLeft();
+  f = message.getUseScriptDirectionRightToLeft();
   if (f) {
     writer.writeBool(
       14,
+      f
+    );
+  }
+  f = message.getDefaultCurrency();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
       f
     );
   }
@@ -1293,10 +1305,10 @@ proto.api.commons.org.OrganizationPreferences.prototype.setOperatorDisplayLangua
 
 
 /**
- * optional bool use_script_direction_rigth_to_left = 14;
+ * optional bool use_script_direction_right_to_left = 14;
  * @return {boolean}
  */
-proto.api.commons.org.OrganizationPreferences.prototype.getUseScriptDirectionRigthToLeft = function() {
+proto.api.commons.org.OrganizationPreferences.prototype.getUseScriptDirectionRightToLeft = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
@@ -1305,8 +1317,26 @@ proto.api.commons.org.OrganizationPreferences.prototype.getUseScriptDirectionRig
  * @param {boolean} value
  * @return {!proto.api.commons.org.OrganizationPreferences} returns this
  */
-proto.api.commons.org.OrganizationPreferences.prototype.setUseScriptDirectionRigthToLeft = function(value) {
+proto.api.commons.org.OrganizationPreferences.prototype.setUseScriptDirectionRightToLeft = function(value) {
   return jspb.Message.setProto3BooleanField(this, 14, value);
+};
+
+
+/**
+ * optional string default_currency = 15;
+ * @return {string}
+ */
+proto.api.commons.org.OrganizationPreferences.prototype.getDefaultCurrency = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.OrganizationPreferences} returns this
+ */
+proto.api.commons.org.OrganizationPreferences.prototype.setDefaultCurrency = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
 };
 
 

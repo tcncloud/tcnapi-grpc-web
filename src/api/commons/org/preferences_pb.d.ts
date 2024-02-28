@@ -24,8 +24,11 @@ export class OrganizationPreferences extends jspb.Message {
   getOperatorDisplayLanguage(): string;
   setOperatorDisplayLanguage(value: string): void;
 
-  getUseScriptDirectionRigthToLeft(): boolean;
-  setUseScriptDirectionRigthToLeft(value: boolean): void;
+  getUseScriptDirectionRightToLeft(): boolean;
+  setUseScriptDirectionRightToLeft(value: boolean): void;
+
+  getDefaultCurrency(): string;
+  setDefaultCurrency(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrganizationPreferences.AsObject;
@@ -44,7 +47,8 @@ export namespace OrganizationPreferences {
     timeZone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
     displayLanguage: api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap],
     operatorDisplayLanguage: string,
-    useScriptDirectionRigthToLeft: boolean,
+    useScriptDirectionRightToLeft: boolean,
+    defaultCurrency: string,
   }
 }
 
