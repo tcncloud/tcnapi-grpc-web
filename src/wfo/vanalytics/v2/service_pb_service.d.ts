@@ -2,6 +2,7 @@
 // file: wfo/vanalytics/v2/service.proto
 
 import * as wfo_vanalytics_v2_service_pb from "../../../wfo/vanalytics/v2/service_pb";
+import * as wfo_vanalytics_v2_correction_pb from "../../../wfo/vanalytics/v2/correction_pb";
 import * as wfo_vanalytics_v2_transcript_pb from "../../../wfo/vanalytics/v2/transcript_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
@@ -14,9 +15,19 @@ type VanalyticsSearchTranscripts = {
   readonly responseType: typeof wfo_vanalytics_v2_transcript_pb.SearchTranscriptsResponse;
 };
 
+type VanalyticsCreateCorrection = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wfo_vanalytics_v2_correction_pb.CreateCorrectionRequest;
+  readonly responseType: typeof wfo_vanalytics_v2_correction_pb.CreateCorrectionResponse;
+};
+
 export class Vanalytics {
   static readonly serviceName: string;
   static readonly SearchTranscripts: VanalyticsSearchTranscripts;
+  static readonly CreateCorrection: VanalyticsCreateCorrection;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -59,6 +70,15 @@ export class VanalyticsClient {
   searchTranscripts(
     requestMessage: wfo_vanalytics_v2_transcript_pb.SearchTranscriptsRequest,
     callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.SearchTranscriptsResponse|null) => void
+  ): UnaryResponse;
+  createCorrection(
+    requestMessage: wfo_vanalytics_v2_correction_pb.CreateCorrectionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_correction_pb.CreateCorrectionResponse|null) => void
+  ): UnaryResponse;
+  createCorrection(
+    requestMessage: wfo_vanalytics_v2_correction_pb.CreateCorrectionRequest,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_correction_pb.CreateCorrectionResponse|null) => void
   ): UnaryResponse;
 }
 

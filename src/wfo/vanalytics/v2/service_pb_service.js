@@ -2,6 +2,7 @@
 // file: wfo/vanalytics/v2/service.proto
 
 var wfo_vanalytics_v2_service_pb = require("../../../wfo/vanalytics/v2/service_pb");
+var wfo_vanalytics_v2_correction_pb = require("../../../wfo/vanalytics/v2/correction_pb");
 var wfo_vanalytics_v2_transcript_pb = require("../../../wfo/vanalytics/v2/transcript_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
@@ -20,6 +21,15 @@ Vanalytics.SearchTranscripts = {
   responseType: wfo_vanalytics_v2_transcript_pb.SearchTranscriptsResponse
 };
 
+Vanalytics.CreateCorrection = {
+  methodName: "CreateCorrection",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: wfo_vanalytics_v2_correction_pb.CreateCorrectionRequest,
+  responseType: wfo_vanalytics_v2_correction_pb.CreateCorrectionResponse
+};
+
 exports.Vanalytics = Vanalytics;
 
 function VanalyticsClient(serviceHost, options) {
@@ -32,6 +42,37 @@ VanalyticsClient.prototype.searchTranscripts = function searchTranscripts(reques
     callback = arguments[1];
   }
   var client = grpc.unary(Vanalytics.SearchTranscripts, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.createCorrection = function createCorrection(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.CreateCorrection, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
