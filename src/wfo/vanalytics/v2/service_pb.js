@@ -29,5 +29,13 @@ var google_api_annotations_pb = require('../../../google/api/annotations_pb.js')
 goog.object.extend(proto, google_api_annotations_pb);
 var wfo_vanalytics_v2_correction_pb = require('../../../wfo/vanalytics/v2/correction_pb.js');
 goog.object.extend(proto, wfo_vanalytics_v2_correction_pb);
+var wfo_vanalytics_v2_flag_pb = require('../../../wfo/vanalytics/v2/flag_pb.js');
+goog.object.extend(proto, wfo_vanalytics_v2_flag_pb);
+var wfo_vanalytics_v2_flag_review_pb = require('../../../wfo/vanalytics/v2/flag_review_pb.js');
+goog.object.extend(proto, wfo_vanalytics_v2_flag_review_pb);
+var wfo_vanalytics_v2_flag_snapshot_pb = require('../../../wfo/vanalytics/v2/flag_snapshot_pb.js');
+goog.object.extend(proto, wfo_vanalytics_v2_flag_snapshot_pb);
+var wfo_vanalytics_v2_flag_transcript_pb = require('../../../wfo/vanalytics/v2/flag_transcript_pb.js');
+goog.object.extend(proto, wfo_vanalytics_v2_flag_transcript_pb);
 var wfo_vanalytics_v2_transcript_pb = require('../../../wfo/vanalytics/v2/transcript_pb.js');
 goog.object.extend(proto, wfo_vanalytics_v2_transcript_pb);
