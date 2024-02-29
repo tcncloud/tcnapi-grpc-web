@@ -33,6 +33,8 @@ var api_commons_org_trusts_pb = require('../../../api/commons/org/trusts_pb.js')
 goog.object.extend(proto, api_commons_org_trusts_pb);
 var api_commons_org_user_pb = require('../../../api/commons/org/user_pb.js');
 goog.object.extend(proto, api_commons_org_user_pb);
+var api_commons_org_preferences_pb = require('../../../api/commons/org_preferences_pb.js');
+goog.object.extend(proto, api_commons_org_preferences_pb);
 var api_commons_perms_pb = require('../../../api/commons/perms_pb.js');
 goog.object.extend(proto, api_commons_perms_pb);
 var api_commons_user_pb = require('../../../api/commons/user_pb.js');
@@ -19270,7 +19272,7 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.toObject = function(includeIns
     labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
     api_commons_org_labels_pb.Label.toObject, includeInstance),
     orgAllowedMfa: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    orgCurrency: jspb.Message.getFieldWithDefault(msg, 15, "")
+    localePreferences: (f = msg.getLocalePreferences()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -19336,9 +19338,10 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.deserializeBinaryFromReader = 
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setOrgAllowedMfa(value);
       break;
-    case 15:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrgCurrency(value);
+    case 7:
+      var value = new api_commons_org_preferences_pb.LocalePreferences;
+      reader.readMessage(value,api_commons_org_preferences_pb.LocalePreferences.deserializeBinaryFromReader);
+      msg.setLocalePreferences(value);
       break;
     default:
       reader.skipField();
@@ -19414,11 +19417,12 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.serializeBinaryToWriter = func
       f
     );
   }
-  f = message.getOrgCurrency();
-  if (f.length > 0) {
-    writer.writeString(
-      15,
-      f
+  f = message.getLocalePreferences();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      api_commons_org_preferences_pb.LocalePreferences.serializeBinaryToWriter
     );
   }
 };
@@ -20963,20 +20967,39 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.setOrgAllowedMfa = f
 
 
 /**
- * optional string org_currency = 15;
- * @return {string}
+ * optional api.commons.LocalePreferences locale_preferences = 7;
+ * @return {?proto.api.commons.LocalePreferences}
  */
-proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.getOrgCurrency = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.getLocalePreferences = function() {
+  return /** @type{?proto.api.commons.LocalePreferences} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_preferences_pb.LocalePreferences, 7));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.api.commons.LocalePreferences|undefined} value
+ * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse} returns this
+*/
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.setLocalePreferences = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse} returns this
  */
-proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.setOrgCurrency = function(value) {
-  return jspb.Message.setProto3StringField(this, 15, value);
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.clearLocalePreferences = function() {
+  return this.setLocalePreferences(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.hasLocalePreferences = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

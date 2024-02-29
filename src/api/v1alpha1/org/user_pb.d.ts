@@ -7,6 +7,7 @@ import * as api_commons_org_labels_pb from "../../../api/commons/org/labels_pb";
 import * as api_commons_org_permissions_pb from "../../../api/commons/org/permissions_pb";
 import * as api_commons_org_trusts_pb from "../../../api/commons/org/trusts_pb";
 import * as api_commons_org_user_pb from "../../../api/commons/org/user_pb";
+import * as api_commons_org_preferences_pb from "../../../api/commons/org_preferences_pb";
 import * as api_commons_perms_pb from "../../../api/commons/perms_pb";
 import * as api_commons_user_pb from "../../../api/commons/user_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
@@ -2443,8 +2444,10 @@ export class GetUserSessionDataResponse extends jspb.Message {
   getOrgAllowedMfa(): boolean;
   setOrgAllowedMfa(value: boolean): void;
 
-  getOrgCurrency(): string;
-  setOrgCurrency(value: string): void;
+  hasLocalePreferences(): boolean;
+  clearLocalePreferences(): void;
+  getLocalePreferences(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferences(value?: api_commons_org_preferences_pb.LocalePreferences): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserSessionDataResponse.AsObject;
@@ -2464,7 +2467,7 @@ export namespace GetUserSessionDataResponse {
     permissionGroupsList: Array<api_commons_org_permissions_pb.PermissionGroup.AsObject>,
     labelsList: Array<api_commons_org_labels_pb.Label.AsObject>,
     orgAllowedMfa: boolean,
-    orgCurrency: string,
+    localePreferences?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
   }
 
   export class User extends jspb.Message {
