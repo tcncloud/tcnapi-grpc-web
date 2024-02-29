@@ -3,6 +3,34 @@
 
 import * as jspb from "google-protobuf";
 
+export class LocalePreferences extends jspb.Message {
+  getLanguageTag(): string;
+  setLanguageTag(value: string): void;
+
+  getUseScriptDirectionRightToLeft(): boolean;
+  setUseScriptDirectionRightToLeft(value: boolean): void;
+
+  getDefaultCurrency(): string;
+  setDefaultCurrency(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LocalePreferences.AsObject;
+  static toObject(includeInstance: boolean, msg: LocalePreferences): LocalePreferences.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LocalePreferences, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LocalePreferences;
+  static deserializeBinaryFromReader(message: LocalePreferences, reader: jspb.BinaryReader): LocalePreferences;
+}
+
+export namespace LocalePreferences {
+  export type AsObject = {
+    languageTag: string,
+    useScriptDirectionRightToLeft: boolean,
+    defaultCurrency: string,
+  }
+}
+
 export interface BroadcastTemplateOrderingMap {
   BY_NAME_ASC: 0;
   BY_NAME_DESC: 1;

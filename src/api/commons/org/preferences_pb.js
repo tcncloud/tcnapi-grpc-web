@@ -1065,7 +1065,8 @@ proto.api.commons.org.OrganizationPreferences.toObject = function(includeInstanc
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     defaultCountry: jspb.Message.getFieldWithDefault(msg, 10, 0),
     timeZone: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    displayLanguage: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    displayLanguage: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    localePreferences: (f = msg.getLocalePreferences()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1117,6 +1118,11 @@ proto.api.commons.org.OrganizationPreferences.deserializeBinaryFromReader = func
     case 12:
       var value = /** @type {!proto.api.commons.DisplayLanguage} */ (reader.readEnum());
       msg.setDisplayLanguage(value);
+      break;
+    case 13:
+      var value = new api_commons_org_preferences_pb.LocalePreferences;
+      reader.readMessage(value,api_commons_org_preferences_pb.LocalePreferences.deserializeBinaryFromReader);
+      msg.setLocalePreferences(value);
       break;
     default:
       reader.skipField();
@@ -1173,6 +1179,14 @@ proto.api.commons.org.OrganizationPreferences.serializeBinaryToWriter = function
     writer.writeEnum(
       12,
       f
+    );
+  }
+  f = message.getLocalePreferences();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      api_commons_org_preferences_pb.LocalePreferences.serializeBinaryToWriter
     );
   }
 };
@@ -1247,6 +1261,43 @@ proto.api.commons.org.OrganizationPreferences.prototype.getDisplayLanguage = fun
  */
 proto.api.commons.org.OrganizationPreferences.prototype.setDisplayLanguage = function(value) {
   return jspb.Message.setProto3EnumField(this, 12, value);
+};
+
+
+/**
+ * optional api.commons.LocalePreferences locale_preferences = 13;
+ * @return {?proto.api.commons.LocalePreferences}
+ */
+proto.api.commons.org.OrganizationPreferences.prototype.getLocalePreferences = function() {
+  return /** @type{?proto.api.commons.LocalePreferences} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_preferences_pb.LocalePreferences, 13));
+};
+
+
+/**
+ * @param {?proto.api.commons.LocalePreferences|undefined} value
+ * @return {!proto.api.commons.org.OrganizationPreferences} returns this
+*/
+proto.api.commons.org.OrganizationPreferences.prototype.setLocalePreferences = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.org.OrganizationPreferences} returns this
+ */
+proto.api.commons.org.OrganizationPreferences.prototype.clearLocalePreferences = function() {
+  return this.setLocalePreferences(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.org.OrganizationPreferences.prototype.hasLocalePreferences = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
