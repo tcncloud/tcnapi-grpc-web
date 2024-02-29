@@ -887,3 +887,71 @@ export namespace SearchContentByVersionReq {
   }
 }
 
+export class ReviewFileVersionsReq extends jspb.Message {
+  getFirstUrl(): string;
+  setFirstUrl(value: string): void;
+
+  getSecondUrl(): string;
+  setSecondUrl(value: string): void;
+
+  getLocale(): string;
+  setLocale(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewFileVersionsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewFileVersionsReq): ReviewFileVersionsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReviewFileVersionsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewFileVersionsReq;
+  static deserializeBinaryFromReader(message: ReviewFileVersionsReq, reader: jspb.BinaryReader): ReviewFileVersionsReq;
+}
+
+export namespace ReviewFileVersionsReq {
+  export type AsObject = {
+    firstUrl: string,
+    secondUrl: string,
+    locale: string,
+  }
+}
+
+export class ReviewFileVersionsRes extends jspb.Message {
+  getFirstContent(): string;
+  setFirstContent(value: string): void;
+
+  clearFirstContentImagesList(): void;
+  getFirstContentImagesList(): Array<LearnImage>;
+  setFirstContentImagesList(value: Array<LearnImage>): void;
+  addFirstContentImages(value?: LearnImage, index?: number): LearnImage;
+
+  getSecondContent(): string;
+  setSecondContent(value: string): void;
+
+  clearSecondContentImagesList(): void;
+  getSecondContentImagesList(): Array<LearnImage>;
+  setSecondContentImagesList(value: Array<LearnImage>): void;
+  addSecondContentImages(value?: LearnImage, index?: number): LearnImage;
+
+  getDiffContent(): string;
+  setDiffContent(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewFileVersionsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewFileVersionsRes): ReviewFileVersionsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReviewFileVersionsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewFileVersionsRes;
+  static deserializeBinaryFromReader(message: ReviewFileVersionsRes, reader: jspb.BinaryReader): ReviewFileVersionsRes;
+}
+
+export namespace ReviewFileVersionsRes {
+  export type AsObject = {
+    firstContent: string,
+    firstContentImagesList: Array<LearnImage.AsObject>,
+    secondContent: string,
+    secondContentImagesList: Array<LearnImage.AsObject>,
+    diffContent: string,
+  }
+}
+
