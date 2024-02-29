@@ -6918,7 +6918,7 @@ proto.api.v0alpha.ReviewFileVersionsReq.prototype.toObject = function(opt_includ
 proto.api.v0alpha.ReviewFileVersionsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     url: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    compareWithUrl: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    version: jspb.Message.getFieldWithDefault(msg, 2, ""),
     locale: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -6962,7 +6962,7 @@ proto.api.v0alpha.ReviewFileVersionsReq.deserializeBinaryFromReader = function(m
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCompareWithUrl(value);
+      msg.setVersion(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -7004,7 +7004,7 @@ proto.api.v0alpha.ReviewFileVersionsReq.serializeBinaryToWriter = function(messa
       f
     );
   }
-  f = message.getCompareWithUrl();
+  f = message.getVersion();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -7040,10 +7040,10 @@ proto.api.v0alpha.ReviewFileVersionsReq.prototype.setUrl = function(value) {
 
 
 /**
- * optional string compare_with_url = 2;
+ * optional string version = 2;
  * @return {string}
  */
-proto.api.v0alpha.ReviewFileVersionsReq.prototype.getCompareWithUrl = function() {
+proto.api.v0alpha.ReviewFileVersionsReq.prototype.getVersion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -7052,7 +7052,7 @@ proto.api.v0alpha.ReviewFileVersionsReq.prototype.getCompareWithUrl = function()
  * @param {string} value
  * @return {!proto.api.v0alpha.ReviewFileVersionsReq} returns this
  */
-proto.api.v0alpha.ReviewFileVersionsReq.prototype.setCompareWithUrl = function(value) {
+proto.api.v0alpha.ReviewFileVersionsReq.prototype.setVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 

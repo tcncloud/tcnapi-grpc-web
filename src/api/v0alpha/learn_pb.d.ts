@@ -891,8 +891,8 @@ export class ReviewFileVersionsReq extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): void;
 
-  getCompareWithUrl(): string;
-  setCompareWithUrl(value: string): void;
+  getVersion(): string;
+  setVersion(value: string): void;
 
   getLocale(): string;
   setLocale(value: string): void;
@@ -910,7 +910,7 @@ export class ReviewFileVersionsReq extends jspb.Message {
 export namespace ReviewFileVersionsReq {
   export type AsObject = {
     url: string,
-    compareWithUrl: string,
+    version: string,
     locale: string,
   }
 }
