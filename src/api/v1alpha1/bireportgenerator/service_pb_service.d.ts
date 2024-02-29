@@ -49,15 +49,6 @@ type BIReportGeneratorServiceGetReportJob = {
   readonly responseType: typeof api_v1alpha1_bireportgenerator_service_pb.GetReportJobResponse;
 };
 
-type BIReportGeneratorServiceGenerateReport = {
-  readonly methodName: string;
-  readonly service: typeof BIReportGeneratorService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_bireportgenerator_service_pb.GenerateReportRequest;
-  readonly responseType: typeof api_v1alpha1_bireportgenerator_service_pb.GenerateReportResponse;
-};
-
 export class BIReportGeneratorService {
   static readonly serviceName: string;
   static readonly CreateReportJob: BIReportGeneratorServiceCreateReportJob;
@@ -65,7 +56,6 @@ export class BIReportGeneratorService {
   static readonly UpdateReportJob: BIReportGeneratorServiceUpdateReportJob;
   static readonly DeleteReportJob: BIReportGeneratorServiceDeleteReportJob;
   static readonly GetReportJob: BIReportGeneratorServiceGetReportJob;
-  static readonly GenerateReport: BIReportGeneratorServiceGenerateReport;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -144,15 +134,6 @@ export class BIReportGeneratorServiceClient {
   getReportJob(
     requestMessage: api_v1alpha1_bireportgenerator_service_pb.GetReportJobRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_bireportgenerator_service_pb.GetReportJobResponse|null) => void
-  ): UnaryResponse;
-  generateReport(
-    requestMessage: api_v1alpha1_bireportgenerator_service_pb.GenerateReportRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_bireportgenerator_service_pb.GenerateReportResponse|null) => void
-  ): UnaryResponse;
-  generateReport(
-    requestMessage: api_v1alpha1_bireportgenerator_service_pb.GenerateReportRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_bireportgenerator_service_pb.GenerateReportResponse|null) => void
   ): UnaryResponse;
 }
 

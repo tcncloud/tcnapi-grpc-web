@@ -417,11 +417,6 @@ export class PanelSource extends jspb.Message {
   getLegacyInsightId(): string;
   setLegacyInsightId(value: string): void;
 
-  hasInsightResourceId(): boolean;
-  clearInsightResourceId(): void;
-  getInsightResourceId(): string;
-  setInsightResourceId(value: string): void;
-
   getPanelTypeCase(): PanelSource.PanelTypeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PanelSource.AsObject;
@@ -437,14 +432,12 @@ export namespace PanelSource {
   export type AsObject = {
     insightId: string,
     legacyInsightId: string,
-    insightResourceId: string,
   }
 
   export enum PanelTypeCase {
     PANEL_TYPE_NOT_SET = 0,
     INSIGHT_ID = 1,
     LEGACY_INSIGHT_ID = 2,
-    INSIGHT_RESOURCE_ID = 3,
   }
 }
 
