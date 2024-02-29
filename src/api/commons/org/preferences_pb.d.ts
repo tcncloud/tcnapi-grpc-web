@@ -21,14 +21,10 @@ export class OrganizationPreferences extends jspb.Message {
   getDisplayLanguage(): api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap];
   setDisplayLanguage(value: api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap]): void;
 
-  getOperatorDisplayLanguage(): string;
-  setOperatorDisplayLanguage(value: string): void;
-
-  getUseScriptDirectionRightToLeft(): boolean;
-  setUseScriptDirectionRightToLeft(value: boolean): void;
-
-  getDefaultCurrency(): string;
-  setDefaultCurrency(value: string): void;
+  hasLocalePreferences(): boolean;
+  clearLocalePreferences(): void;
+  getLocalePreferences(): LocalePreferences | undefined;
+  setLocalePreferences(value?: LocalePreferences): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrganizationPreferences.AsObject;
@@ -46,7 +42,33 @@ export namespace OrganizationPreferences {
     defaultCountry: api_commons_country_pb.CountryMap[keyof api_commons_country_pb.CountryMap],
     timeZone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
     displayLanguage: api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap],
-    operatorDisplayLanguage: string,
+    localePreferences?: LocalePreferences.AsObject,
+  }
+}
+
+export class LocalePreferences extends jspb.Message {
+  getLanguageTag(): string;
+  setLanguageTag(value: string): void;
+
+  getUseScriptDirectionRightToLeft(): boolean;
+  setUseScriptDirectionRightToLeft(value: boolean): void;
+
+  getDefaultCurrency(): string;
+  setDefaultCurrency(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LocalePreferences.AsObject;
+  static toObject(includeInstance: boolean, msg: LocalePreferences): LocalePreferences.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LocalePreferences, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LocalePreferences;
+  static deserializeBinaryFromReader(message: LocalePreferences, reader: jspb.BinaryReader): LocalePreferences;
+}
+
+export namespace LocalePreferences {
+  export type AsObject = {
+    languageTag: string,
     useScriptDirectionRightToLeft: boolean,
     defaultCurrency: string,
   }
