@@ -217,3 +217,41 @@ export namespace GetReportJobResponse {
   }
 }
 
+export class GenerateReportRequest extends jspb.Message {
+  hasReportJob(): boolean;
+  clearReportJob(): void;
+  getReportJob(): api_v1alpha1_bireportgenerator_entities_pb.ReportJob | undefined;
+  setReportJob(value?: api_v1alpha1_bireportgenerator_entities_pb.ReportJob): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateReportRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateReportRequest): GenerateReportRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateReportRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateReportRequest;
+  static deserializeBinaryFromReader(message: GenerateReportRequest, reader: jspb.BinaryReader): GenerateReportRequest;
+}
+
+export namespace GenerateReportRequest {
+  export type AsObject = {
+    reportJob?: api_v1alpha1_bireportgenerator_entities_pb.ReportJob.AsObject,
+  }
+}
+
+export class GenerateReportResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateReportResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateReportResponse): GenerateReportResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateReportResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateReportResponse;
+  static deserializeBinaryFromReader(message: GenerateReportResponse, reader: jspb.BinaryReader): GenerateReportResponse;
+}
+
+export namespace GenerateReportResponse {
+  export type AsObject = {
+  }
+}
+
