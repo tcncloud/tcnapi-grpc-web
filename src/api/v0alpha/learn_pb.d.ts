@@ -888,11 +888,11 @@ export namespace SearchContentByVersionReq {
 }
 
 export class ReviewFileVersionsReq extends jspb.Message {
-  getFirstUrl(): string;
-  setFirstUrl(value: string): void;
+  getUrl(): string;
+  setUrl(value: string): void;
 
-  getSecondUrl(): string;
-  setSecondUrl(value: string): void;
+  getCompareWithUrl(): string;
+  setCompareWithUrl(value: string): void;
 
   getLocale(): string;
   setLocale(value: string): void;
@@ -909,31 +909,23 @@ export class ReviewFileVersionsReq extends jspb.Message {
 
 export namespace ReviewFileVersionsReq {
   export type AsObject = {
-    firstUrl: string,
-    secondUrl: string,
+    url: string,
+    compareWithUrl: string,
     locale: string,
   }
 }
 
 export class ReviewFileVersionsRes extends jspb.Message {
-  getFirstContent(): string;
-  setFirstContent(value: string): void;
-
-  clearFirstContentImagesList(): void;
-  getFirstContentImagesList(): Array<LearnImage>;
-  setFirstContentImagesList(value: Array<LearnImage>): void;
-  addFirstContentImages(value?: LearnImage, index?: number): LearnImage;
-
-  getSecondContent(): string;
-  setSecondContent(value: string): void;
-
-  clearSecondContentImagesList(): void;
-  getSecondContentImagesList(): Array<LearnImage>;
-  setSecondContentImagesList(value: Array<LearnImage>): void;
-  addSecondContentImages(value?: LearnImage, index?: number): LearnImage;
+  getContent(): string;
+  setContent(value: string): void;
 
   getDiffContent(): string;
   setDiffContent(value: string): void;
+
+  clearImagesList(): void;
+  getImagesList(): Array<LearnImage>;
+  setImagesList(value: Array<LearnImage>): void;
+  addImages(value?: LearnImage, index?: number): LearnImage;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReviewFileVersionsRes.AsObject;
@@ -947,11 +939,9 @@ export class ReviewFileVersionsRes extends jspb.Message {
 
 export namespace ReviewFileVersionsRes {
   export type AsObject = {
-    firstContent: string,
-    firstContentImagesList: Array<LearnImage.AsObject>,
-    secondContent: string,
-    secondContentImagesList: Array<LearnImage.AsObject>,
+    content: string,
     diffContent: string,
+    imagesList: Array<LearnImage.AsObject>,
   }
 }
 

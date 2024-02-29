@@ -6917,8 +6917,8 @@ proto.api.v0alpha.ReviewFileVersionsReq.prototype.toObject = function(opt_includ
  */
 proto.api.v0alpha.ReviewFileVersionsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    firstUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    secondUrl: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    url: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    compareWithUrl: jspb.Message.getFieldWithDefault(msg, 2, ""),
     locale: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -6958,11 +6958,11 @@ proto.api.v0alpha.ReviewFileVersionsReq.deserializeBinaryFromReader = function(m
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFirstUrl(value);
+      msg.setUrl(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSecondUrl(value);
+      msg.setCompareWithUrl(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -6997,14 +6997,14 @@ proto.api.v0alpha.ReviewFileVersionsReq.prototype.serializeBinary = function() {
  */
 proto.api.v0alpha.ReviewFileVersionsReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFirstUrl();
+  f = message.getUrl();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getSecondUrl();
+  f = message.getCompareWithUrl();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -7022,10 +7022,10 @@ proto.api.v0alpha.ReviewFileVersionsReq.serializeBinaryToWriter = function(messa
 
 
 /**
- * optional string first_url = 1;
+ * optional string url = 1;
  * @return {string}
  */
-proto.api.v0alpha.ReviewFileVersionsReq.prototype.getFirstUrl = function() {
+proto.api.v0alpha.ReviewFileVersionsReq.prototype.getUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -7034,16 +7034,16 @@ proto.api.v0alpha.ReviewFileVersionsReq.prototype.getFirstUrl = function() {
  * @param {string} value
  * @return {!proto.api.v0alpha.ReviewFileVersionsReq} returns this
  */
-proto.api.v0alpha.ReviewFileVersionsReq.prototype.setFirstUrl = function(value) {
+proto.api.v0alpha.ReviewFileVersionsReq.prototype.setUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string second_url = 2;
+ * optional string compare_with_url = 2;
  * @return {string}
  */
-proto.api.v0alpha.ReviewFileVersionsReq.prototype.getSecondUrl = function() {
+proto.api.v0alpha.ReviewFileVersionsReq.prototype.getCompareWithUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -7052,7 +7052,7 @@ proto.api.v0alpha.ReviewFileVersionsReq.prototype.getSecondUrl = function() {
  * @param {string} value
  * @return {!proto.api.v0alpha.ReviewFileVersionsReq} returns this
  */
-proto.api.v0alpha.ReviewFileVersionsReq.prototype.setSecondUrl = function(value) {
+proto.api.v0alpha.ReviewFileVersionsReq.prototype.setCompareWithUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -7081,7 +7081,7 @@ proto.api.v0alpha.ReviewFileVersionsReq.prototype.setLocale = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.v0alpha.ReviewFileVersionsRes.repeatedFields_ = [2,4];
+proto.api.v0alpha.ReviewFileVersionsRes.repeatedFields_ = [3];
 
 
 
@@ -7114,13 +7114,10 @@ proto.api.v0alpha.ReviewFileVersionsRes.prototype.toObject = function(opt_includ
  */
 proto.api.v0alpha.ReviewFileVersionsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    firstContent: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    firstContentImagesList: jspb.Message.toObjectList(msg.getFirstContentImagesList(),
-    proto.api.v0alpha.LearnImage.toObject, includeInstance),
-    secondContent: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    secondContentImagesList: jspb.Message.toObjectList(msg.getSecondContentImagesList(),
-    proto.api.v0alpha.LearnImage.toObject, includeInstance),
-    diffContent: jspb.Message.getFieldWithDefault(msg, 5, "")
+    content: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    diffContent: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    imagesList: jspb.Message.toObjectList(msg.getImagesList(),
+    proto.api.v0alpha.LearnImage.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -7159,25 +7156,16 @@ proto.api.v0alpha.ReviewFileVersionsRes.deserializeBinaryFromReader = function(m
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFirstContent(value);
+      msg.setContent(value);
       break;
     case 2:
-      var value = new proto.api.v0alpha.LearnImage;
-      reader.readMessage(value,proto.api.v0alpha.LearnImage.deserializeBinaryFromReader);
-      msg.addFirstContentImages(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSecondContent(value);
-      break;
-    case 4:
-      var value = new proto.api.v0alpha.LearnImage;
-      reader.readMessage(value,proto.api.v0alpha.LearnImage.deserializeBinaryFromReader);
-      msg.addSecondContentImages(value);
-      break;
-    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setDiffContent(value);
+      break;
+    case 3:
+      var value = new proto.api.v0alpha.LearnImage;
+      reader.readMessage(value,proto.api.v0alpha.LearnImage.deserializeBinaryFromReader);
+      msg.addImages(value);
       break;
     default:
       reader.skipField();
@@ -7208,51 +7196,36 @@ proto.api.v0alpha.ReviewFileVersionsRes.prototype.serializeBinary = function() {
  */
 proto.api.v0alpha.ReviewFileVersionsRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFirstContent();
+  f = message.getContent();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getFirstContentImagesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      2,
-      f,
-      proto.api.v0alpha.LearnImage.serializeBinaryToWriter
-    );
-  }
-  f = message.getSecondContent();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getSecondContentImagesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      4,
-      f,
-      proto.api.v0alpha.LearnImage.serializeBinaryToWriter
-    );
-  }
   f = message.getDiffContent();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      2,
       f
+    );
+  }
+  f = message.getImagesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      proto.api.v0alpha.LearnImage.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string first_content = 1;
+ * optional string content = 1;
  * @return {string}
  */
-proto.api.v0alpha.ReviewFileVersionsRes.prototype.getFirstContent = function() {
+proto.api.v0alpha.ReviewFileVersionsRes.prototype.getContent = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -7261,111 +7234,17 @@ proto.api.v0alpha.ReviewFileVersionsRes.prototype.getFirstContent = function() {
  * @param {string} value
  * @return {!proto.api.v0alpha.ReviewFileVersionsRes} returns this
  */
-proto.api.v0alpha.ReviewFileVersionsRes.prototype.setFirstContent = function(value) {
+proto.api.v0alpha.ReviewFileVersionsRes.prototype.setContent = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * repeated LearnImage first_content_images = 2;
- * @return {!Array<!proto.api.v0alpha.LearnImage>}
- */
-proto.api.v0alpha.ReviewFileVersionsRes.prototype.getFirstContentImagesList = function() {
-  return /** @type{!Array<!proto.api.v0alpha.LearnImage>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.v0alpha.LearnImage, 2));
-};
-
-
-/**
- * @param {!Array<!proto.api.v0alpha.LearnImage>} value
- * @return {!proto.api.v0alpha.ReviewFileVersionsRes} returns this
-*/
-proto.api.v0alpha.ReviewFileVersionsRes.prototype.setFirstContentImagesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
-};
-
-
-/**
- * @param {!proto.api.v0alpha.LearnImage=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.v0alpha.LearnImage}
- */
-proto.api.v0alpha.ReviewFileVersionsRes.prototype.addFirstContentImages = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v0alpha.LearnImage, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v0alpha.ReviewFileVersionsRes} returns this
- */
-proto.api.v0alpha.ReviewFileVersionsRes.prototype.clearFirstContentImagesList = function() {
-  return this.setFirstContentImagesList([]);
-};
-
-
-/**
- * optional string second_content = 3;
- * @return {string}
- */
-proto.api.v0alpha.ReviewFileVersionsRes.prototype.getSecondContent = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v0alpha.ReviewFileVersionsRes} returns this
- */
-proto.api.v0alpha.ReviewFileVersionsRes.prototype.setSecondContent = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * repeated LearnImage second_content_images = 4;
- * @return {!Array<!proto.api.v0alpha.LearnImage>}
- */
-proto.api.v0alpha.ReviewFileVersionsRes.prototype.getSecondContentImagesList = function() {
-  return /** @type{!Array<!proto.api.v0alpha.LearnImage>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.v0alpha.LearnImage, 4));
-};
-
-
-/**
- * @param {!Array<!proto.api.v0alpha.LearnImage>} value
- * @return {!proto.api.v0alpha.ReviewFileVersionsRes} returns this
-*/
-proto.api.v0alpha.ReviewFileVersionsRes.prototype.setSecondContentImagesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.api.v0alpha.LearnImage=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.v0alpha.LearnImage}
- */
-proto.api.v0alpha.ReviewFileVersionsRes.prototype.addSecondContentImages = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.api.v0alpha.LearnImage, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v0alpha.ReviewFileVersionsRes} returns this
- */
-proto.api.v0alpha.ReviewFileVersionsRes.prototype.clearSecondContentImagesList = function() {
-  return this.setSecondContentImagesList([]);
-};
-
-
-/**
- * optional string diff_content = 5;
+ * optional string diff_content = 2;
  * @return {string}
  */
 proto.api.v0alpha.ReviewFileVersionsRes.prototype.getDiffContent = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -7374,7 +7253,45 @@ proto.api.v0alpha.ReviewFileVersionsRes.prototype.getDiffContent = function() {
  * @return {!proto.api.v0alpha.ReviewFileVersionsRes} returns this
  */
 proto.api.v0alpha.ReviewFileVersionsRes.prototype.setDiffContent = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * repeated LearnImage images = 3;
+ * @return {!Array<!proto.api.v0alpha.LearnImage>}
+ */
+proto.api.v0alpha.ReviewFileVersionsRes.prototype.getImagesList = function() {
+  return /** @type{!Array<!proto.api.v0alpha.LearnImage>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v0alpha.LearnImage, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v0alpha.LearnImage>} value
+ * @return {!proto.api.v0alpha.ReviewFileVersionsRes} returns this
+*/
+proto.api.v0alpha.ReviewFileVersionsRes.prototype.setImagesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.api.v0alpha.LearnImage=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v0alpha.LearnImage}
+ */
+proto.api.v0alpha.ReviewFileVersionsRes.prototype.addImages = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.api.v0alpha.LearnImage, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v0alpha.ReviewFileVersionsRes} returns this
+ */
+proto.api.v0alpha.ReviewFileVersionsRes.prototype.clearImagesList = function() {
+  return this.setImagesList([]);
 };
 
 
