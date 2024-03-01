@@ -21,6 +21,11 @@ export class OrganizationPreferences extends jspb.Message {
   getDisplayLanguage(): api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap];
   setDisplayLanguage(value: api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap]): void;
 
+  hasLocalePreferences(): boolean;
+  clearLocalePreferences(): void;
+  getLocalePreferences(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferences(value?: api_commons_org_preferences_pb.LocalePreferences): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrganizationPreferences.AsObject;
   static toObject(includeInstance: boolean, msg: OrganizationPreferences): OrganizationPreferences.AsObject;
@@ -37,6 +42,7 @@ export namespace OrganizationPreferences {
     defaultCountry: api_commons_country_pb.CountryMap[keyof api_commons_country_pb.CountryMap],
     timeZone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
     displayLanguage: api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap],
+    localePreferences?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
   }
 }
 

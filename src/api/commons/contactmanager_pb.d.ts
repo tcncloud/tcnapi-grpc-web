@@ -98,3 +98,27 @@ export namespace ContactManagerList {
   }
 }
 
+export class ContactManagerEntryVal extends jspb.Message {
+  getType(): string;
+  setType(value: string): void;
+
+  getValue(): string;
+  setValue(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactManagerEntryVal.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactManagerEntryVal): ContactManagerEntryVal.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContactManagerEntryVal, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactManagerEntryVal;
+  static deserializeBinaryFromReader(message: ContactManagerEntryVal, reader: jspb.BinaryReader): ContactManagerEntryVal;
+}
+
+export namespace ContactManagerEntryVal {
+  export type AsObject = {
+    type: string,
+    value: string,
+  }
+}
+

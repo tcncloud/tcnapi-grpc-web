@@ -150,3 +150,53 @@ export namespace GetEncContactEntryResponse {
   }
 }
 
+export class GetKYCEncContactEntryRequest extends jspb.Message {
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  clearEntryValList(): void;
+  getEntryValList(): Array<api_commons_contactmanager_pb.ContactManagerEntryVal>;
+  setEntryValList(value: Array<api_commons_contactmanager_pb.ContactManagerEntryVal>): void;
+  addEntryVal(value?: api_commons_contactmanager_pb.ContactManagerEntryVal, index?: number): api_commons_contactmanager_pb.ContactManagerEntryVal;
+
+  getMinKycLimit(): number;
+  setMinKycLimit(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetKYCEncContactEntryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetKYCEncContactEntryRequest): GetKYCEncContactEntryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetKYCEncContactEntryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetKYCEncContactEntryRequest;
+  static deserializeBinaryFromReader(message: GetKYCEncContactEntryRequest, reader: jspb.BinaryReader): GetKYCEncContactEntryRequest;
+}
+
+export namespace GetKYCEncContactEntryRequest {
+  export type AsObject = {
+    projectId: string,
+    entryValList: Array<api_commons_contactmanager_pb.ContactManagerEntryVal.AsObject>,
+    minKycLimit: number,
+  }
+}
+
+export class GetKYCEncContactEntryResponse extends jspb.Message {
+  getVerified(): boolean;
+  setVerified(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetKYCEncContactEntryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetKYCEncContactEntryResponse): GetKYCEncContactEntryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetKYCEncContactEntryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetKYCEncContactEntryResponse;
+  static deserializeBinaryFromReader(message: GetKYCEncContactEntryResponse, reader: jspb.BinaryReader): GetKYCEncContactEntryResponse;
+}
+
+export namespace GetKYCEncContactEntryResponse {
+  export type AsObject = {
+    verified: boolean,
+  }
+}
+

@@ -38,6 +38,15 @@ ContactManager.GetEncContactEntry = {
   responseType: api_v1alpha1_contactmanager_contactmanager_pb.GetEncContactEntryResponse
 };
 
+ContactManager.GetKYCEncContactEntry = {
+  methodName: "GetKYCEncContactEntry",
+  service: ContactManager,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_contactmanager_contactmanager_pb.GetKYCEncContactEntryRequest,
+  responseType: api_v1alpha1_contactmanager_contactmanager_pb.GetKYCEncContactEntryResponse
+};
+
 exports.ContactManager = ContactManager;
 
 function ContactManagerClient(serviceHost, options) {
@@ -112,6 +121,37 @@ ContactManagerClient.prototype.getEncContactEntry = function getEncContactEntry(
     callback = arguments[1];
   }
   var client = grpc.unary(ContactManager.GetEncContactEntry, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ContactManagerClient.prototype.getKYCEncContactEntry = function getKYCEncContactEntry(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ContactManager.GetKYCEncContactEntry, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
