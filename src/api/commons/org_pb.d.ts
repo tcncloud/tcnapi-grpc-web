@@ -350,6 +350,7 @@ export interface OperatorApplicationsMap {
   TICKETS_APP: 31;
   AGENT_BETA_APP: 32;
   NEWSROOM_APP: 33;
+  CONTACTMANAGER_APP: 34;
 }
 
 export const OperatorApplications: OperatorApplicationsMap;
