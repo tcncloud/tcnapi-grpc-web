@@ -175,6 +175,15 @@ type LearnReviewFileVersions = {
   readonly responseType: typeof api_v0alpha_learn_pb.ReviewFileVersionsRes;
 };
 
+type LearnReviewVersion = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_learn_pb.ReviewVersionReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.ReviewVersionRes;
+};
+
 export class Learn {
   static readonly serviceName: string;
   static readonly Exist: LearnExist;
@@ -196,6 +205,7 @@ export class Learn {
   static readonly UpdateByVersion: LearnUpdateByVersion;
   static readonly ListSearchResultsByVersion: LearnListSearchResultsByVersion;
   static readonly ReviewFileVersions: LearnReviewFileVersions;
+  static readonly ReviewVersion: LearnReviewVersion;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -384,6 +394,15 @@ export class LearnClient {
   reviewFileVersions(
     requestMessage: api_v0alpha_learn_pb.ReviewFileVersionsReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.ReviewFileVersionsRes|null) => void
+  ): UnaryResponse;
+  reviewVersion(
+    requestMessage: api_v0alpha_learn_pb.ReviewVersionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.ReviewVersionRes|null) => void
+  ): UnaryResponse;
+  reviewVersion(
+    requestMessage: api_v0alpha_learn_pb.ReviewVersionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.ReviewVersionRes|null) => void
   ): UnaryResponse;
 }
 

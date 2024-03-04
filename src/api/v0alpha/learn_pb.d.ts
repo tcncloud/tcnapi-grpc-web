@@ -945,3 +945,51 @@ export namespace ReviewFileVersionsRes {
   }
 }
 
+export class ReviewVersionReq extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  getVersion(): string;
+  setVersion(value: string): void;
+
+  getLocale(): string;
+  setLocale(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewVersionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewVersionReq): ReviewVersionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReviewVersionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewVersionReq;
+  static deserializeBinaryFromReader(message: ReviewVersionReq, reader: jspb.BinaryReader): ReviewVersionReq;
+}
+
+export namespace ReviewVersionReq {
+  export type AsObject = {
+    url: string,
+    version: string,
+    locale: string,
+  }
+}
+
+export class ReviewVersionRes extends jspb.Message {
+  getDiffFileNames(): string;
+  setDiffFileNames(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewVersionRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewVersionRes): ReviewVersionRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReviewVersionRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewVersionRes;
+  static deserializeBinaryFromReader(message: ReviewVersionRes, reader: jspb.BinaryReader): ReviewVersionRes;
+}
+
+export namespace ReviewVersionRes {
+  export type AsObject = {
+    diffFileNames: string,
+  }
+}
+
