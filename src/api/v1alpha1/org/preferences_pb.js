@@ -4355,6 +4355,7 @@ proto.api.v1alpha1.org.UpdateAuthenticationPreferencesRequest.prototype.toObject
 proto.api.v1alpha1.org.UpdateAuthenticationPreferencesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     authenticationPreferences: (f = msg.getAuthenticationPreferences()) && api_commons_org_preferences_pb.AuthenticationPreferences.toObject(includeInstance, f),
+    duoClientSecret: jspb.Message.getFieldWithDefault(msg, 5, ""),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -4397,6 +4398,10 @@ proto.api.v1alpha1.org.UpdateAuthenticationPreferencesRequest.deserializeBinaryF
       reader.readMessage(value,api_commons_org_preferences_pb.AuthenticationPreferences.deserializeBinaryFromReader);
       msg.setAuthenticationPreferences(value);
       break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDuoClientSecret(value);
+      break;
     case 10:
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
@@ -4437,6 +4442,13 @@ proto.api.v1alpha1.org.UpdateAuthenticationPreferencesRequest.serializeBinaryToW
       1,
       f,
       api_commons_org_preferences_pb.AuthenticationPreferences.serializeBinaryToWriter
+    );
+  }
+  f = message.getDuoClientSecret();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
     );
   }
   f = message.getFieldMask();
@@ -4484,6 +4496,24 @@ proto.api.v1alpha1.org.UpdateAuthenticationPreferencesRequest.prototype.clearAut
  */
 proto.api.v1alpha1.org.UpdateAuthenticationPreferencesRequest.prototype.hasAuthenticationPreferences = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string duo_client_secret = 5;
+ * @return {string}
+ */
+proto.api.v1alpha1.org.UpdateAuthenticationPreferencesRequest.prototype.getDuoClientSecret = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.org.UpdateAuthenticationPreferencesRequest} returns this
+ */
+proto.api.v1alpha1.org.UpdateAuthenticationPreferencesRequest.prototype.setDuoClientSecret = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

@@ -319,6 +319,9 @@ export class UpdateAuthenticationPreferencesRequest extends jspb.Message {
   getAuthenticationPreferences(): api_commons_org_preferences_pb.AuthenticationPreferences | undefined;
   setAuthenticationPreferences(value?: api_commons_org_preferences_pb.AuthenticationPreferences): void;
 
+  getDuoClientSecret(): string;
+  setDuoClientSecret(value: string): void;
+
   hasFieldMask(): boolean;
   clearFieldMask(): void;
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
@@ -337,6 +340,7 @@ export class UpdateAuthenticationPreferencesRequest extends jspb.Message {
 export namespace UpdateAuthenticationPreferencesRequest {
   export type AsObject = {
     authenticationPreferences?: api_commons_org_preferences_pb.AuthenticationPreferences.AsObject,
+    duoClientSecret: string,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
