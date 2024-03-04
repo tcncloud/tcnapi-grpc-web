@@ -946,6 +946,9 @@ export namespace ReviewFileVersionsRes {
 }
 
 export class ReviewVersionReq extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
   getVersion(): string;
   setVersion(value: string): void;
 
@@ -964,6 +967,7 @@ export class ReviewVersionReq extends jspb.Message {
 
 export namespace ReviewVersionReq {
   export type AsObject = {
+    url: string,
     version: string,
     locale: string,
   }

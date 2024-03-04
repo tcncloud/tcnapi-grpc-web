@@ -7371,8 +7371,9 @@ proto.api.v0alpha.ReviewVersionReq.prototype.toObject = function(opt_includeInst
  */
 proto.api.v0alpha.ReviewVersionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    version: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    locale: jspb.Message.getFieldWithDefault(msg, 2, "")
+    url: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    version: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    locale: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -7411,9 +7412,13 @@ proto.api.v0alpha.ReviewVersionReq.deserializeBinaryFromReader = function(msg, r
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setVersion(value);
+      msg.setUrl(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setVersion(value);
+      break;
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setLocale(value);
       break;
@@ -7446,17 +7451,24 @@ proto.api.v0alpha.ReviewVersionReq.prototype.serializeBinary = function() {
  */
 proto.api.v0alpha.ReviewVersionReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getVersion();
+  f = message.getUrl();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getLocale();
+  f = message.getVersion();
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getLocale();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -7464,10 +7476,10 @@ proto.api.v0alpha.ReviewVersionReq.serializeBinaryToWriter = function(message, w
 
 
 /**
- * optional string version = 1;
+ * optional string url = 1;
  * @return {string}
  */
-proto.api.v0alpha.ReviewVersionReq.prototype.getVersion = function() {
+proto.api.v0alpha.ReviewVersionReq.prototype.getUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -7476,16 +7488,16 @@ proto.api.v0alpha.ReviewVersionReq.prototype.getVersion = function() {
  * @param {string} value
  * @return {!proto.api.v0alpha.ReviewVersionReq} returns this
  */
-proto.api.v0alpha.ReviewVersionReq.prototype.setVersion = function(value) {
+proto.api.v0alpha.ReviewVersionReq.prototype.setUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string locale = 2;
+ * optional string version = 2;
  * @return {string}
  */
-proto.api.v0alpha.ReviewVersionReq.prototype.getLocale = function() {
+proto.api.v0alpha.ReviewVersionReq.prototype.getVersion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -7494,8 +7506,26 @@ proto.api.v0alpha.ReviewVersionReq.prototype.getLocale = function() {
  * @param {string} value
  * @return {!proto.api.v0alpha.ReviewVersionReq} returns this
  */
-proto.api.v0alpha.ReviewVersionReq.prototype.setLocale = function(value) {
+proto.api.v0alpha.ReviewVersionReq.prototype.setVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string locale = 3;
+ * @return {string}
+ */
+proto.api.v0alpha.ReviewVersionReq.prototype.getLocale = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ReviewVersionReq} returns this
+ */
+proto.api.v0alpha.ReviewVersionReq.prototype.setLocale = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
