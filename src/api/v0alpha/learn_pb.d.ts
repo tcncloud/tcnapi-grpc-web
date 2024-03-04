@@ -946,9 +946,6 @@ export namespace ReviewFileVersionsRes {
 }
 
 export class ReviewVersionReq extends jspb.Message {
-  getUrl(): string;
-  setUrl(value: string): void;
-
   getVersion(): string;
   setVersion(value: string): void;
 
@@ -967,13 +964,15 @@ export class ReviewVersionReq extends jspb.Message {
 
 export namespace ReviewVersionReq {
   export type AsObject = {
-    url: string,
     version: string,
     locale: string,
   }
 }
 
 export class ReviewVersionRes extends jspb.Message {
+  getDiffUrls(): string;
+  setDiffUrls(value: string): void;
+
   getDiffFileNames(): string;
   setDiffFileNames(value: string): void;
 
@@ -989,6 +988,7 @@ export class ReviewVersionRes extends jspb.Message {
 
 export namespace ReviewVersionRes {
   export type AsObject = {
+    diffUrls: string,
     diffFileNames: string,
   }
 }

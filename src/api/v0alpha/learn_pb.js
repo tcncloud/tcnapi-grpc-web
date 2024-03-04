@@ -7371,9 +7371,8 @@ proto.api.v0alpha.ReviewVersionReq.prototype.toObject = function(opt_includeInst
  */
 proto.api.v0alpha.ReviewVersionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    locale: jspb.Message.getFieldWithDefault(msg, 3, "")
+    version: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    locale: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -7412,13 +7411,9 @@ proto.api.v0alpha.ReviewVersionReq.deserializeBinaryFromReader = function(msg, r
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUrl(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
       msg.setVersion(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setLocale(value);
       break;
@@ -7451,24 +7446,17 @@ proto.api.v0alpha.ReviewVersionReq.prototype.serializeBinary = function() {
  */
 proto.api.v0alpha.ReviewVersionReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getUrl();
+  f = message.getVersion();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getVersion();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getLocale();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
@@ -7476,10 +7464,10 @@ proto.api.v0alpha.ReviewVersionReq.serializeBinaryToWriter = function(message, w
 
 
 /**
- * optional string url = 1;
+ * optional string version = 1;
  * @return {string}
  */
-proto.api.v0alpha.ReviewVersionReq.prototype.getUrl = function() {
+proto.api.v0alpha.ReviewVersionReq.prototype.getVersion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -7488,16 +7476,16 @@ proto.api.v0alpha.ReviewVersionReq.prototype.getUrl = function() {
  * @param {string} value
  * @return {!proto.api.v0alpha.ReviewVersionReq} returns this
  */
-proto.api.v0alpha.ReviewVersionReq.prototype.setUrl = function(value) {
+proto.api.v0alpha.ReviewVersionReq.prototype.setVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string version = 2;
+ * optional string locale = 2;
  * @return {string}
  */
-proto.api.v0alpha.ReviewVersionReq.prototype.getVersion = function() {
+proto.api.v0alpha.ReviewVersionReq.prototype.getLocale = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -7506,26 +7494,8 @@ proto.api.v0alpha.ReviewVersionReq.prototype.getVersion = function() {
  * @param {string} value
  * @return {!proto.api.v0alpha.ReviewVersionReq} returns this
  */
-proto.api.v0alpha.ReviewVersionReq.prototype.setVersion = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string locale = 3;
- * @return {string}
- */
-proto.api.v0alpha.ReviewVersionReq.prototype.getLocale = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v0alpha.ReviewVersionReq} returns this
- */
 proto.api.v0alpha.ReviewVersionReq.prototype.setLocale = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -7561,7 +7531,8 @@ proto.api.v0alpha.ReviewVersionRes.prototype.toObject = function(opt_includeInst
  */
 proto.api.v0alpha.ReviewVersionRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    diffFileNames: jspb.Message.getFieldWithDefault(msg, 1, "")
+    diffUrls: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    diffFileNames: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -7600,6 +7571,10 @@ proto.api.v0alpha.ReviewVersionRes.deserializeBinaryFromReader = function(msg, r
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
+      msg.setDiffUrls(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
       msg.setDiffFileNames(value);
       break;
     default:
@@ -7631,10 +7606,17 @@ proto.api.v0alpha.ReviewVersionRes.prototype.serializeBinary = function() {
  */
 proto.api.v0alpha.ReviewVersionRes.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDiffFileNames();
+  f = message.getDiffUrls();
   if (f.length > 0) {
     writer.writeString(
       1,
+      f
+    );
+  }
+  f = message.getDiffFileNames();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
       f
     );
   }
@@ -7642,10 +7624,10 @@ proto.api.v0alpha.ReviewVersionRes.serializeBinaryToWriter = function(message, w
 
 
 /**
- * optional string diff_file_names = 1;
+ * optional string diff_urls = 1;
  * @return {string}
  */
-proto.api.v0alpha.ReviewVersionRes.prototype.getDiffFileNames = function() {
+proto.api.v0alpha.ReviewVersionRes.prototype.getDiffUrls = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -7654,8 +7636,26 @@ proto.api.v0alpha.ReviewVersionRes.prototype.getDiffFileNames = function() {
  * @param {string} value
  * @return {!proto.api.v0alpha.ReviewVersionRes} returns this
  */
-proto.api.v0alpha.ReviewVersionRes.prototype.setDiffFileNames = function(value) {
+proto.api.v0alpha.ReviewVersionRes.prototype.setDiffUrls = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string diff_file_names = 2;
+ * @return {string}
+ */
+proto.api.v0alpha.ReviewVersionRes.prototype.getDiffFileNames = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ReviewVersionRes} returns this
+ */
+proto.api.v0alpha.ReviewVersionRes.prototype.setDiffFileNames = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
