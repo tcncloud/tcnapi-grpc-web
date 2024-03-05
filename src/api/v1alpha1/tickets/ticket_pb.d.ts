@@ -580,8 +580,8 @@ export class ListAvailableAgentTicketsRequest extends jspb.Message {
 
   hasAvailableFilter(): boolean;
   clearAvailableFilter(): void;
-  getAvailableFilter(): api_commons_tickets_pb.AvailableTicketsFilter | undefined;
-  setAvailableFilter(value?: api_commons_tickets_pb.AvailableTicketsFilter): void;
+  getAvailableFilter(): AvailableTicketsFilter | undefined;
+  setAvailableFilter(value?: AvailableTicketsFilter): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAvailableAgentTicketsRequest.AsObject;
@@ -596,7 +596,33 @@ export class ListAvailableAgentTicketsRequest extends jspb.Message {
 export namespace ListAvailableAgentTicketsRequest {
   export type AsObject = {
     selectFieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    availableFilter?: api_commons_tickets_pb.AvailableTicketsFilter.AsObject,
+    availableFilter?: AvailableTicketsFilter.AsObject,
+  }
+}
+
+export class AvailableTicketsFilter extends jspb.Message {
+  clearAgentSkillIdList(): void;
+  getAgentSkillIdList(): Array<string>;
+  setAgentSkillIdList(value: Array<string>): void;
+  addAgentSkillId(value: string, index?: number): string;
+
+  getAgentViewLimit(): number;
+  setAgentViewLimit(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AvailableTicketsFilter.AsObject;
+  static toObject(includeInstance: boolean, msg: AvailableTicketsFilter): AvailableTicketsFilter.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AvailableTicketsFilter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AvailableTicketsFilter;
+  static deserializeBinaryFromReader(message: AvailableTicketsFilter, reader: jspb.BinaryReader): AvailableTicketsFilter;
+}
+
+export namespace AvailableTicketsFilter {
+  export type AsObject = {
+    agentSkillIdList: Array<string>,
+    agentViewLimit: number,
   }
 }
 

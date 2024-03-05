@@ -1046,32 +1046,6 @@ export namespace EditAttribute {
   }
 }
 
-export class AvailableTicketsFilter extends jspb.Message {
-  clearAgentSkillIdList(): void;
-  getAgentSkillIdList(): Array<string>;
-  setAgentSkillIdList(value: Array<string>): void;
-  addAgentSkillId(value: string, index?: number): string;
-
-  getAgentViewLimit(): number;
-  setAgentViewLimit(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AvailableTicketsFilter.AsObject;
-  static toObject(includeInstance: boolean, msg: AvailableTicketsFilter): AvailableTicketsFilter.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AvailableTicketsFilter, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AvailableTicketsFilter;
-  static deserializeBinaryFromReader(message: AvailableTicketsFilter, reader: jspb.BinaryReader): AvailableTicketsFilter;
-}
-
-export namespace AvailableTicketsFilter {
-  export type AsObject = {
-    agentSkillIdList: Array<string>,
-    agentViewLimit: number,
-  }
-}
-
 export interface TimeScaleMap {
   TIME_SCALE_MINUTE: 0;
   TIME_SCALE_HOUR: 1;
