@@ -200,3 +200,45 @@ export namespace GetKYCEncContactEntryResponse {
   }
 }
 
+export class GetKYCKeysRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetKYCKeysRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetKYCKeysRequest): GetKYCKeysRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetKYCKeysRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetKYCKeysRequest;
+  static deserializeBinaryFromReader(message: GetKYCKeysRequest, reader: jspb.BinaryReader): GetKYCKeysRequest;
+}
+
+export namespace GetKYCKeysRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetKYCKeysResponse extends jspb.Message {
+  clearEntryValList(): void;
+  getEntryValList(): Array<api_commons_contactmanager_pb.ContactManagerEntryVal>;
+  setEntryValList(value: Array<api_commons_contactmanager_pb.ContactManagerEntryVal>): void;
+  addEntryVal(value?: api_commons_contactmanager_pb.ContactManagerEntryVal, index?: number): api_commons_contactmanager_pb.ContactManagerEntryVal;
+
+  getMinKycLimit(): number;
+  setMinKycLimit(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetKYCKeysResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetKYCKeysResponse): GetKYCKeysResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetKYCKeysResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetKYCKeysResponse;
+  static deserializeBinaryFromReader(message: GetKYCKeysResponse, reader: jspb.BinaryReader): GetKYCKeysResponse;
+}
+
+export namespace GetKYCKeysResponse {
+  export type AsObject = {
+    entryValList: Array<api_commons_contactmanager_pb.ContactManagerEntryVal.AsObject>,
+    minKycLimit: number,
+  }
+}
+
