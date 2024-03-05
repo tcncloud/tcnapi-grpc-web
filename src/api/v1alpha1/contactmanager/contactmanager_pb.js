@@ -1816,7 +1816,7 @@ proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entryValList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    entryTypeList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     kycLimit: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
@@ -1856,7 +1856,7 @@ proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.deserializeBinaryFromReader
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.addEntryVal(value);
+      msg.addEntryType(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
@@ -1891,7 +1891,7 @@ proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.serializeBinary =
  */
 proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getEntryValList();
+  f = message.getEntryTypeList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
@@ -1909,10 +1909,10 @@ proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.serializeBinaryToWriter = f
 
 
 /**
- * repeated string entry_val = 1;
+ * repeated string entry_type = 1;
  * @return {!Array<string>}
  */
-proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.getEntryValList = function() {
+proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.getEntryTypeList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
@@ -1921,7 +1921,7 @@ proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.getEntryValList =
  * @param {!Array<string>} value
  * @return {!proto.api.v1alpha1.contactmanager.GetKYCKeysResponse} returns this
  */
-proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.setEntryValList = function(value) {
+proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.setEntryTypeList = function(value) {
   return jspb.Message.setField(this, 1, value || []);
 };
 
@@ -1931,7 +1931,7 @@ proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.setEntryValList =
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.contactmanager.GetKYCKeysResponse} returns this
  */
-proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.addEntryVal = function(value, opt_index) {
+proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.addEntryType = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
@@ -1940,8 +1940,8 @@ proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.addEntryVal = fun
  * Clears the list making it empty but non-null.
  * @return {!proto.api.v1alpha1.contactmanager.GetKYCKeysResponse} returns this
  */
-proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.clearEntryValList = function() {
-  return this.setEntryValList([]);
+proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.clearEntryTypeList = function() {
+  return this.setEntryTypeList([]);
 };
 
 

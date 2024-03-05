@@ -217,10 +217,10 @@ export namespace GetKYCKeysRequest {
 }
 
 export class GetKYCKeysResponse extends jspb.Message {
-  clearEntryValList(): void;
-  getEntryValList(): Array<string>;
-  setEntryValList(value: Array<string>): void;
-  addEntryVal(value: string, index?: number): string;
+  clearEntryTypeList(): void;
+  getEntryTypeList(): Array<string>;
+  setEntryTypeList(value: Array<string>): void;
+  addEntryType(value: string, index?: number): string;
 
   getKycLimit(): number;
   setKycLimit(value: number): void;
@@ -237,7 +237,7 @@ export class GetKYCKeysResponse extends jspb.Message {
 
 export namespace GetKYCKeysResponse {
   export type AsObject = {
-    entryValList: Array<string>,
+    entryTypeList: Array<string>,
     kycLimit: number,
   }
 }
