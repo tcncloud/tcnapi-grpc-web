@@ -573,6 +573,17 @@ export namespace ListAvailableAgentTicketsResponse {
 }
 
 export class ListAvailableAgentTicketsRequest extends jspb.Message {
+  hasSelectFieldMask(): boolean;
+  clearSelectFieldMask(): void;
+  getSelectFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setSelectFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  hasAvailableFilter(): boolean;
+  clearAvailableFilter(): void;
+  getAvailableFilter(): api_commons_tickets_pb.AvailableTicketsFilter | undefined;
+  setAvailableFilter(value?: api_commons_tickets_pb.AvailableTicketsFilter): void;
+
+  getTicketListTypeCase(): ListAvailableAgentTicketsRequest.TicketListTypeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAvailableAgentTicketsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAvailableAgentTicketsRequest): ListAvailableAgentTicketsRequest.AsObject;
@@ -585,6 +596,13 @@ export class ListAvailableAgentTicketsRequest extends jspb.Message {
 
 export namespace ListAvailableAgentTicketsRequest {
   export type AsObject = {
+    selectFieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    availableFilter?: api_commons_tickets_pb.AvailableTicketsFilter.AsObject,
+  }
+
+  export enum TicketListTypeCase {
+    TICKET_LIST_TYPE_NOT_SET = 0,
+    AVAILABLE_FILTER = 2,
   }
 }
 

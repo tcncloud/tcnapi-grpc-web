@@ -66,6 +66,7 @@ goog.exportSymbol('proto.api.v1alpha1.tickets.GetPhoneNumberTypeResponse', null,
 goog.exportSymbol('proto.api.v1alpha1.tickets.ListAllocatedTicketReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.ListAllocatedTicketRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest', null, global);
+goog.exportSymbol('proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.TicketListTypeCase', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.ListSkillsRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.ListSkillsResponse', null, global);
@@ -562,7 +563,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.oneofGroups_);
 };
 goog.inherits(proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -5364,6 +5365,31 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.clearTick
 
 
 
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.oneofGroups_ = [[2]];
+
+/**
+ * @enum {number}
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.TicketListTypeCase = {
+  TICKET_LIST_TYPE_NOT_SET: 0,
+  AVAILABLE_FILTER: 2
+};
+
+/**
+ * @return {proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.TicketListTypeCase}
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.getTicketListTypeCase = function() {
+  return /** @type {proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.TicketListTypeCase} */(jspb.Message.computeOneofCase(this, proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.oneofGroups_[0]));
+};
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -5395,7 +5421,8 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.toObject =
  */
 proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    selectFieldMask: (f = msg.getSelectFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+    availableFilter: (f = msg.getAvailableFilter()) && api_commons_tickets_pb.AvailableTicketsFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5432,6 +5459,16 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setSelectFieldMask(value);
+      break;
+    case 2:
+      var value = new api_commons_tickets_pb.AvailableTicketsFilter;
+      reader.readMessage(value,api_commons_tickets_pb.AvailableTicketsFilter.deserializeBinaryFromReader);
+      msg.setAvailableFilter(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5461,6 +5498,96 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.serializeB
  */
 proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getSelectFieldMask();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+  f = message.getAvailableFilter();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      api_commons_tickets_pb.AvailableTicketsFilter.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.FieldMask select_field_mask = 1;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.getSelectFieldMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 1));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest} returns this
+*/
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.setSelectFieldMask = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest} returns this
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.clearSelectFieldMask = function() {
+  return this.setSelectFieldMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.hasSelectFieldMask = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional api.commons.AvailableTicketsFilter available_filter = 2;
+ * @return {?proto.api.commons.AvailableTicketsFilter}
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.getAvailableFilter = function() {
+  return /** @type{?proto.api.commons.AvailableTicketsFilter} */ (
+    jspb.Message.getWrapperField(this, api_commons_tickets_pb.AvailableTicketsFilter, 2));
+};
+
+
+/**
+ * @param {?proto.api.commons.AvailableTicketsFilter|undefined} value
+ * @return {!proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest} returns this
+*/
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.setAvailableFilter = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 2, proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest} returns this
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.clearAvailableFilter = function() {
+  return this.setAvailableFilter(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.hasAvailableFilter = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
