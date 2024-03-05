@@ -175,6 +175,42 @@ export namespace DeliveryOptions {
   }
 }
 
+export class CronExpression extends jspb.Message {
+  getRepeatMinutes(): string;
+  setRepeatMinutes(value: string): void;
+
+  getHoursOfDay(): string;
+  setHoursOfDay(value: string): void;
+
+  getDaysOfMonth(): string;
+  setDaysOfMonth(value: string): void;
+
+  getMonthsOfYear(): string;
+  setMonthsOfYear(value: string): void;
+
+  getDayOfWeek(): string;
+  setDayOfWeek(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronExpression.AsObject;
+  static toObject(includeInstance: boolean, msg: CronExpression): CronExpression.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CronExpression, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronExpression;
+  static deserializeBinaryFromReader(message: CronExpression, reader: jspb.BinaryReader): CronExpression;
+}
+
+export namespace CronExpression {
+  export type AsObject = {
+    repeatMinutes: string,
+    hoursOfDay: string,
+    daysOfMonth: string,
+    monthsOfYear: string,
+    dayOfWeek: string,
+  }
+}
+
 export interface RepeatFrequencyMap {
   REPEAT_FREQUENCY_UNSPECIFIED: 0;
   REPEAT_FREQUENCY_ON_HOUR: 1;

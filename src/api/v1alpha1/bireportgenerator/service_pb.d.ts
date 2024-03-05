@@ -223,6 +223,9 @@ export class GenerateReportRequest extends jspb.Message {
   getReportJob(): api_v1alpha1_bireportgenerator_entities_pb.ReportJob | undefined;
   setReportJob(value?: api_v1alpha1_bireportgenerator_entities_pb.ReportJob): void;
 
+  getReportJobId(): string;
+  setReportJobId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenerateReportRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GenerateReportRequest): GenerateReportRequest.AsObject;
@@ -236,6 +239,7 @@ export class GenerateReportRequest extends jspb.Message {
 export namespace GenerateReportRequest {
   export type AsObject = {
     reportJob?: api_v1alpha1_bireportgenerator_entities_pb.ReportJob.AsObject,
+    reportJobId: string,
   }
 }
 
