@@ -1755,8 +1755,7 @@ proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.prototype.toObject = 
  */
 proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f),
-    reportJobId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1798,10 +1797,6 @@ proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.deserializeBinaryFrom
       reader.readMessage(value,api_v1alpha1_bireportgenerator_entities_pb.ReportJob.deserializeBinaryFromReader);
       msg.setReportJob(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setReportJobId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1837,13 +1832,6 @@ proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.serializeBinaryToWrit
       1,
       f,
       api_v1alpha1_bireportgenerator_entities_pb.ReportJob.serializeBinaryToWriter
-    );
-  }
-  f = message.getReportJobId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
     );
   }
 };
@@ -1883,24 +1871,6 @@ proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.prototype.clearReport
  */
 proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.prototype.hasReportJob = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string report_job_id = 2;
- * @return {string}
- */
-proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.prototype.getReportJobId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.bireportgenerator.GenerateReportRequest} returns this
- */
-proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.prototype.setReportJobId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
