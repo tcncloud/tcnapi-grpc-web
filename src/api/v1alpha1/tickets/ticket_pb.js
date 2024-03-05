@@ -66,7 +66,6 @@ goog.exportSymbol('proto.api.v1alpha1.tickets.GetPhoneNumberTypeResponse', null,
 goog.exportSymbol('proto.api.v1alpha1.tickets.ListAllocatedTicketReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.ListAllocatedTicketRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest', null, global);
-goog.exportSymbol('proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.TicketListTypeCase', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.ListSkillsRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.ListSkillsResponse', null, global);
@@ -563,7 +562,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -5365,31 +5364,6 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsResponse.prototype.clearTick
 
 
 
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.oneofGroups_ = [[2]];
-
-/**
- * @enum {number}
- */
-proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.TicketListTypeCase = {
-  TICKET_LIST_TYPE_NOT_SET: 0,
-  AVAILABLE_FILTER: 2
-};
-
-/**
- * @return {proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.TicketListTypeCase}
- */
-proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.getTicketListTypeCase = function() {
-  return /** @type {proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.TicketListTypeCase} */(jspb.Message.computeOneofCase(this, proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.oneofGroups_[0]));
-};
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -5569,7 +5543,7 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.getAvailab
  * @return {!proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest} returns this
 */
 proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.setAvailableFilter = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 2, proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.oneofGroups_[0], value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
