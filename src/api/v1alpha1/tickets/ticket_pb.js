@@ -5418,7 +5418,8 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.toObject =
 proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     selectFieldMask: (f = msg.getSelectFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    availableFilter: (f = msg.getAvailableFilter()) && proto.api.v1alpha1.tickets.AvailableTicketsFilter.toObject(includeInstance, f)
+    availableFilter: (f = msg.getAvailableFilter()) && proto.api.v1alpha1.tickets.AvailableTicketsFilter.toObject(includeInstance, f),
+    agentViewLimit: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -5465,6 +5466,10 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.deserializeBinaryFro
       reader.readMessage(value,proto.api.v1alpha1.tickets.AvailableTicketsFilter.deserializeBinaryFromReader);
       msg.setAvailableFilter(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setAgentViewLimit(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5508,6 +5513,13 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.serializeBinaryToWri
       2,
       f,
       proto.api.v1alpha1.tickets.AvailableTicketsFilter.serializeBinaryToWriter
+    );
+  }
+  f = message.getAgentViewLimit();
+  if (f !== 0) {
+    writer.writeInt64(
+      3,
+      f
     );
   }
 };
@@ -5587,6 +5599,24 @@ proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.hasAvailab
 };
 
 
+/**
+ * optional int64 agent_view_limit = 3;
+ * @return {number}
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.getAgentViewLimit = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest} returns this
+ */
+proto.api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.prototype.setAgentViewLimit = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -5626,8 +5656,7 @@ proto.api.v1alpha1.tickets.AvailableTicketsFilter.prototype.toObject = function(
  */
 proto.api.v1alpha1.tickets.AvailableTicketsFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentSkillIdList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    agentViewLimit: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    agentSkillIdList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5668,10 +5697,6 @@ proto.api.v1alpha1.tickets.AvailableTicketsFilter.deserializeBinaryFromReader = 
       var value = /** @type {string} */ (reader.readString());
       msg.addAgentSkillId(value);
       break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setAgentViewLimit(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -5705,13 +5730,6 @@ proto.api.v1alpha1.tickets.AvailableTicketsFilter.serializeBinaryToWriter = func
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
-      f
-    );
-  }
-  f = message.getAgentViewLimit();
-  if (f !== 0) {
-    writer.writeInt64(
-      2,
       f
     );
   }
@@ -5752,24 +5770,6 @@ proto.api.v1alpha1.tickets.AvailableTicketsFilter.prototype.addAgentSkillId = fu
  */
 proto.api.v1alpha1.tickets.AvailableTicketsFilter.prototype.clearAgentSkillIdList = function() {
   return this.setAgentSkillIdList([]);
-};
-
-
-/**
- * optional int64 agent_view_limit = 2;
- * @return {number}
- */
-proto.api.v1alpha1.tickets.AvailableTicketsFilter.prototype.getAgentViewLimit = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.tickets.AvailableTicketsFilter} returns this
- */
-proto.api.v1alpha1.tickets.AvailableTicketsFilter.prototype.setAgentViewLimit = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 

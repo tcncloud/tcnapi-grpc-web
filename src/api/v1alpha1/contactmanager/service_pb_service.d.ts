@@ -41,12 +41,22 @@ type ContactManagerGetKYCEncContactEntry = {
   readonly responseType: typeof api_v1alpha1_contactmanager_contactmanager_pb.GetKYCEncContactEntryResponse;
 };
 
+type ContactManagerGetKYCKeys = {
+  readonly methodName: string;
+  readonly service: typeof ContactManager;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_contactmanager_contactmanager_pb.GetKYCKeysRequest;
+  readonly responseType: typeof api_v1alpha1_contactmanager_contactmanager_pb.GetKYCKeysResponse;
+};
+
 export class ContactManager {
   static readonly serviceName: string;
   static readonly GetContactList: ContactManagerGetContactList;
   static readonly ListContactEntryList: ContactManagerListContactEntryList;
   static readonly GetEncContactEntry: ContactManagerGetEncContactEntry;
   static readonly GetKYCEncContactEntry: ContactManagerGetKYCEncContactEntry;
+  static readonly GetKYCKeys: ContactManagerGetKYCKeys;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -116,6 +126,15 @@ export class ContactManagerClient {
   getKYCEncContactEntry(
     requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetKYCEncContactEntryRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetKYCEncContactEntryResponse|null) => void
+  ): UnaryResponse;
+  getKYCKeys(
+    requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetKYCKeysRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetKYCKeysResponse|null) => void
+  ): UnaryResponse;
+  getKYCKeys(
+    requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetKYCKeysRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetKYCKeysResponse|null) => void
   ): UnaryResponse;
 }
 

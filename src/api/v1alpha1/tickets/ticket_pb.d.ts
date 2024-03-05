@@ -583,6 +583,9 @@ export class ListAvailableAgentTicketsRequest extends jspb.Message {
   getAvailableFilter(): AvailableTicketsFilter | undefined;
   setAvailableFilter(value?: AvailableTicketsFilter): void;
 
+  getAgentViewLimit(): number;
+  setAgentViewLimit(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAvailableAgentTicketsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAvailableAgentTicketsRequest): ListAvailableAgentTicketsRequest.AsObject;
@@ -597,6 +600,7 @@ export namespace ListAvailableAgentTicketsRequest {
   export type AsObject = {
     selectFieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
     availableFilter?: AvailableTicketsFilter.AsObject,
+    agentViewLimit: number,
   }
 }
 
@@ -605,9 +609,6 @@ export class AvailableTicketsFilter extends jspb.Message {
   getAgentSkillIdList(): Array<string>;
   setAgentSkillIdList(value: Array<string>): void;
   addAgentSkillId(value: string, index?: number): string;
-
-  getAgentViewLimit(): number;
-  setAgentViewLimit(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AvailableTicketsFilter.AsObject;
@@ -622,7 +623,6 @@ export class AvailableTicketsFilter extends jspb.Message {
 export namespace AvailableTicketsFilter {
   export type AsObject = {
     agentSkillIdList: Array<string>,
-    agentViewLimit: number,
   }
 }
 
