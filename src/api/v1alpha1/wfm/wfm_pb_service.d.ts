@@ -643,6 +643,15 @@ type WFMListWFMAgentSids = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes;
 };
 
+type WFMListUnassignedWFMAgents = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRes;
+};
+
 type WFMListWFMAgentsAssociatedWithAgentGroup = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1553,6 +1562,7 @@ export class WFM {
   static readonly ListCandidateWFMAgents: WFMListCandidateWFMAgents;
   static readonly ListUngroupedWFMAgents: WFMListUngroupedWFMAgents;
   static readonly ListWFMAgentSids: WFMListWFMAgentSids;
+  static readonly ListUnassignedWFMAgents: WFMListUnassignedWFMAgents;
   static readonly ListWFMAgentsAssociatedWithAgentGroup: WFMListWFMAgentsAssociatedWithAgentGroup;
   static readonly CreateWFMAgentMemberships: WFMCreateWFMAgentMemberships;
   static readonly DeleteWFMAgentMemberships: WFMDeleteWFMAgentMemberships;
@@ -2270,6 +2280,15 @@ export class WFMClient {
   listWFMAgentSids(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes|null) => void
+  ): UnaryResponse;
+  listUnassignedWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRes|null) => void
+  ): UnaryResponse;
+  listUnassignedWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRes|null) => void
   ): UnaryResponse;
   listWFMAgentsAssociatedWithAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentsAssociatedWithAgentGroupReq,
