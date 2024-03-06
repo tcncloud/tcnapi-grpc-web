@@ -602,6 +602,11 @@ export class OmniMessage extends jspb.Message {
   getStatusMessage(): google_protobuf_wrappers_pb.StringValue | undefined;
   setStatusMessage(value?: google_protobuf_wrappers_pb.StringValue): void;
 
+  hasSentBcc(): boolean;
+  clearSentBcc(): void;
+  getSentBcc(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setSentBcc(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniMessage.AsObject;
   static toObject(includeInstance: boolean, msg: OmniMessage): OmniMessage.AsObject;
@@ -630,6 +635,7 @@ export namespace OmniMessage {
     subject?: google_protobuf_wrappers_pb.StringValue.AsObject,
     senderType: OmniSenderTypeMap[keyof OmniSenderTypeMap],
     statusMessage?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    sentBcc?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 

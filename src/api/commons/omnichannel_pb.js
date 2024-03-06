@@ -5544,7 +5544,8 @@ proto.api.commons.OmniMessage.toObject = function(includeInstance, msg) {
     campaignSid: jspb.Message.getFieldWithDefault(msg, 17, "0"),
     subject: (f = msg.getSubject()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     senderType: jspb.Message.getFieldWithDefault(msg, 21, 0),
-    statusMessage: (f = msg.getStatusMessage()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+    statusMessage: (f = msg.getStatusMessage()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    sentBcc: (f = msg.getSentBcc()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5652,6 +5653,11 @@ proto.api.commons.OmniMessage.deserializeBinaryFromReader = function(msg, reader
       var value = new google_protobuf_wrappers_pb.StringValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setStatusMessage(value);
+      break;
+    case 23:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setSentBcc(value);
       break;
     default:
       reader.skipField();
@@ -5798,6 +5804,14 @@ proto.api.commons.OmniMessage.serializeBinaryToWriter = function(message, writer
   if (f != null) {
     writer.writeMessage(
       22,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getSentBcc();
+  if (f != null) {
+    writer.writeMessage(
+      23,
       f,
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
@@ -6242,6 +6256,43 @@ proto.api.commons.OmniMessage.prototype.clearStatusMessage = function() {
  */
 proto.api.commons.OmniMessage.prototype.hasStatusMessage = function() {
   return jspb.Message.getField(this, 22) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue sent_bcc = 23;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.api.commons.OmniMessage.prototype.getSentBcc = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 23));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.StringValue|undefined} value
+ * @return {!proto.api.commons.OmniMessage} returns this
+*/
+proto.api.commons.OmniMessage.prototype.setSentBcc = function(value) {
+  return jspb.Message.setWrapperField(this, 23, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.OmniMessage} returns this
+ */
+proto.api.commons.OmniMessage.prototype.clearSentBcc = function() {
+  return this.setSentBcc(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.OmniMessage.prototype.hasSentBcc = function() {
+  return jspb.Message.getField(this, 23) != null;
 };
 
 
