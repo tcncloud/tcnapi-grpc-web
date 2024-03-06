@@ -57,7 +57,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.annotations.perms.Tcn.repeatedFields_ = [4];
+proto.annotations.perms.Tcn.repeatedFields_ = [4,5];
 
 
 
@@ -93,7 +93,9 @@ proto.annotations.perms.Tcn.toObject = function(includeInstance, msg) {
     wip: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     app: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     card: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    featuresList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+    featuresList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    defaultPermissionGroupsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    blacklisted: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -145,6 +147,16 @@ proto.annotations.perms.Tcn.deserializeBinaryFromReader = function(msg, reader) 
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.addFeatures(value);
+      break;
+    case 5:
+      var values = /** @type {!Array<!proto.annotations.perms.DefaultPermissionGroup>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addDefaultPermissionGroups(values[i]);
+      }
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setBlacklisted(value);
       break;
     default:
       reader.skipField();
@@ -200,6 +212,20 @@ proto.annotations.perms.Tcn.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeRepeatedString(
       4,
+      f
+    );
+  }
+  f = message.getDefaultPermissionGroupsList();
+  if (f.length > 0) {
+    writer.writeRepeatedEnum(
+      5,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeBool(
+      6,
       f
     );
   }
@@ -348,6 +374,79 @@ proto.annotations.perms.Tcn.prototype.addFeatures = function(value, opt_index) {
  */
 proto.annotations.perms.Tcn.prototype.clearFeaturesList = function() {
   return this.setFeaturesList([]);
+};
+
+
+/**
+ * repeated DefaultPermissionGroup default_permission_groups = 5;
+ * @return {!Array<!proto.annotations.perms.DefaultPermissionGroup>}
+ */
+proto.annotations.perms.Tcn.prototype.getDefaultPermissionGroupsList = function() {
+  return /** @type {!Array<!proto.annotations.perms.DefaultPermissionGroup>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.annotations.perms.DefaultPermissionGroup>} value
+ * @return {!proto.annotations.perms.Tcn} returns this
+ */
+proto.annotations.perms.Tcn.prototype.setDefaultPermissionGroupsList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {!proto.annotations.perms.DefaultPermissionGroup} value
+ * @param {number=} opt_index
+ * @return {!proto.annotations.perms.Tcn} returns this
+ */
+proto.annotations.perms.Tcn.prototype.addDefaultPermissionGroups = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.annotations.perms.Tcn} returns this
+ */
+proto.annotations.perms.Tcn.prototype.clearDefaultPermissionGroupsList = function() {
+  return this.setDefaultPermissionGroupsList([]);
+};
+
+
+/**
+ * optional bool blacklisted = 6;
+ * @return {boolean}
+ */
+proto.annotations.perms.Tcn.prototype.getBlacklisted = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.annotations.perms.Tcn} returns this
+ */
+proto.annotations.perms.Tcn.prototype.setBlacklisted = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.annotations.perms.Tcn} returns this
+ */
+proto.annotations.perms.Tcn.prototype.clearBlacklisted = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.annotations.perms.Tcn.prototype.hasBlacklisted = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

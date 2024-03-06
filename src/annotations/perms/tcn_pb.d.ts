@@ -26,6 +26,16 @@ export class Tcn extends jspb.Message {
   setFeaturesList(value: Array<string>): void;
   addFeatures(value: string, index?: number): string;
 
+  clearDefaultPermissionGroupsList(): void;
+  getDefaultPermissionGroupsList(): Array<DefaultPermissionGroupMap[keyof DefaultPermissionGroupMap]>;
+  setDefaultPermissionGroupsList(value: Array<DefaultPermissionGroupMap[keyof DefaultPermissionGroupMap]>): void;
+  addDefaultPermissionGroups(value: DefaultPermissionGroupMap[keyof DefaultPermissionGroupMap], index?: number): DefaultPermissionGroupMap[keyof DefaultPermissionGroupMap];
+
+  hasBlacklisted(): boolean;
+  clearBlacklisted(): void;
+  getBlacklisted(): boolean | undefined;
+  setBlacklisted(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Tcn.AsObject;
   static toObject(includeInstance: boolean, msg: Tcn): Tcn.AsObject;
@@ -42,6 +52,8 @@ export namespace Tcn {
     app?: annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap],
     card?: annotations_perms_license_pb.CardMap[keyof annotations_perms_license_pb.CardMap],
     featuresList: Array<string>,
+    defaultPermissionGroupsList: Array<DefaultPermissionGroupMap[keyof DefaultPermissionGroupMap]>,
+    blacklisted?: boolean,
   }
 }
 
