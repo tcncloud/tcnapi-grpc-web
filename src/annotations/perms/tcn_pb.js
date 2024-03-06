@@ -27,6 +27,7 @@ var annotations_perms_license_pb = require('../../annotations/perms/license_pb.j
 goog.object.extend(proto, annotations_perms_license_pb);
 var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
 goog.object.extend(proto, google_protobuf_descriptor_pb);
+goog.exportSymbol('proto.annotations.perms.DefaultPermissionGroup', null, global);
 goog.exportSymbol('proto.annotations.perms.Tcn', null, global);
 goog.exportSymbol('proto.annotations.perms.options', null, global);
 /**
@@ -349,6 +350,17 @@ proto.annotations.perms.Tcn.prototype.clearFeaturesList = function() {
   return this.setFeaturesList([]);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.annotations.perms.DefaultPermissionGroup = {
+  ACCOUNT_OWNER_GROUP: 0,
+  SUPER_USER_GROUP: 1,
+  USER_GROUP: 2,
+  MONITOR_GROUP: 3,
+  AGENT_GROUP: 4
+};
 
 
 /**

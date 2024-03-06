@@ -47,3 +47,13 @@ export namespace Tcn {
 
   export const options: jspb.ExtensionFieldInfo<Tcn>;
 
+export interface DefaultPermissionGroupMap {
+  ACCOUNT_OWNER_GROUP: 0;
+  SUPER_USER_GROUP: 1;
+  USER_GROUP: 2;
+  MONITOR_GROUP: 3;
+  AGENT_GROUP: 4;
+}
+
+export const DefaultPermissionGroup: DefaultPermissionGroupMap;
+
