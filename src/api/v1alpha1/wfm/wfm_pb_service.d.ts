@@ -648,8 +648,8 @@ type WFMListUnassignedWFMAgents = {
   readonly service: typeof WFM;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsReq;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRes;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsResponse;
 };
 
 type WFMRemoveAgentFromOrg = {
@@ -2292,13 +2292,13 @@ export class WFMClient {
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes|null) => void
   ): UnaryResponse;
   listUnassignedWFMAgents(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsReq,
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsResponse|null) => void
   ): UnaryResponse;
   listUnassignedWFMAgents(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRes|null) => void
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsResponse|null) => void
   ): UnaryResponse;
   removeAgentFromOrg(
     requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromOrgRequest,

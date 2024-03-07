@@ -654,8 +654,8 @@ WFM.ListUnassignedWFMAgents = {
   service: WFM,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsReq,
-  responseType: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRes
+  requestType: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsResponse
 };
 
 WFM.RemoveAgentFromOrg = {
