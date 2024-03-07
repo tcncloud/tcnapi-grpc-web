@@ -598,6 +598,15 @@ type WFMUpdateAgentGroup = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAgentGroupRes;
 };
 
+type WFMCreateUnassignedWFMAgent = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentResponse;
+};
+
 type WFMUpdateWFMAgent = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1566,6 +1575,7 @@ export class WFM {
   static readonly CreateAgentGroup: WFMCreateAgentGroup;
   static readonly ListAgentScheduleGroups: WFMListAgentScheduleGroups;
   static readonly UpdateAgentGroup: WFMUpdateAgentGroup;
+  static readonly CreateUnassignedWFMAgent: WFMCreateUnassignedWFMAgent;
   static readonly UpdateWFMAgent: WFMUpdateWFMAgent;
   static readonly ListAllWFMAgents: WFMListAllWFMAgents;
   static readonly ListCandidateWFMAgents: WFMListCandidateWFMAgents;
@@ -2245,6 +2255,15 @@ export class WFMClient {
   updateAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAgentGroupReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAgentGroupRes|null) => void
+  ): UnaryResponse;
+  createUnassignedWFMAgent(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentResponse|null) => void
+  ): UnaryResponse;
+  createUnassignedWFMAgent(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentResponse|null) => void
   ): UnaryResponse;
   updateWFMAgent(
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateWFMAgentReq,
