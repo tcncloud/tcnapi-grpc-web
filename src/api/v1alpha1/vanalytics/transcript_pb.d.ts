@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
 import * as api_v1alpha1_vanalytics_aclpb_aclpb_pb from "../../../api/v1alpha1/vanalytics/aclpb/aclpb_pb";
 import * as api_v1alpha1_vanalytics_expr_pb from "../../../api/v1alpha1/vanalytics/expr_pb";
+import * as api_v1alpha1_vanalytics_transcript_summary_pb from "../../../api/v1alpha1/vanalytics/transcript_summary_pb";
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
@@ -2041,6 +2042,11 @@ export class Transcript extends jspb.Message {
 
   getAgentResponseMap(): jspb.Map<string, AgentResponse>;
   clearAgentResponseMap(): void;
+  hasSummary(): boolean;
+  clearSummary(): void;
+  getSummary(): api_v1alpha1_vanalytics_transcript_summary_pb.TranscriptSummary | undefined;
+  setSummary(value?: api_v1alpha1_vanalytics_transcript_summary_pb.TranscriptSummary): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Transcript.AsObject;
   static toObject(includeInstance: boolean, msg: Transcript): Transcript.AsObject;
@@ -2072,6 +2078,7 @@ export namespace Transcript {
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     numberFormat: string,
     agentResponseMap: Array<[string, AgentResponse.AsObject]>,
+    summary?: api_v1alpha1_vanalytics_transcript_summary_pb.TranscriptSummary.AsObject,
   }
 }
 
