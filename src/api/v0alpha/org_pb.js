@@ -12,8 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -45,6 +47,8 @@ var api_commons_org_agent_profile_group_pb = require('../../api/commons/org/agen
 goog.object.extend(proto, api_commons_org_agent_profile_group_pb);
 var api_commons_org_trusts_pb = require('../../api/commons/org/trusts_pb.js');
 goog.object.extend(proto, api_commons_org_trusts_pb);
+var api_commons_org_user_pb = require('../../api/commons/org/user_pb.js');
+goog.object.extend(proto, api_commons_org_user_pb);
 var api_commons_org_preferences_pb = require('../../api/commons/org_preferences_pb.js');
 goog.object.extend(proto, api_commons_org_preferences_pb);
 var api_commons_perms_pb = require('../../api/commons/perms_pb.js');
@@ -16032,7 +16036,9 @@ proto.api.v0alpha.UserDescription.toObject = function(includeInstance, msg) {
     huntGroupSid: jspb.Message.getFieldWithDefault(msg, 169, 0),
     huntGroupName: jspb.Message.getFieldWithDefault(msg, 170, ""),
     trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
-    api_commons_org_trusts_pb.Trust.toObject, includeInstance)
+    api_commons_org_trusts_pb.Trust.toObject, includeInstance),
+    mfaInfo: (f = msg.getMfaInfo()) && api_commons_org_user_pb.MfaInfo.toObject(includeInstance, f),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 202, false)
   };
 
   if (includeInstance) {
@@ -16186,6 +16192,15 @@ proto.api.v0alpha.UserDescription.deserializeBinaryFromReader = function(msg, re
       var value = new api_commons_org_trusts_pb.Trust;
       reader.readMessage(value,api_commons_org_trusts_pb.Trust.deserializeBinaryFromReader);
       msg.addTrusts(value);
+      break;
+    case 201:
+      var value = new api_commons_org_user_pb.MfaInfo;
+      reader.readMessage(value,api_commons_org_user_pb.MfaInfo.deserializeBinaryFromReader);
+      msg.setMfaInfo(value);
+      break;
+    case 202:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     default:
       reader.skipField();
@@ -16416,6 +16431,21 @@ proto.api.v0alpha.UserDescription.serializeBinaryToWriter = function(message, wr
       200,
       f,
       api_commons_org_trusts_pb.Trust.serializeBinaryToWriter
+    );
+  }
+  f = message.getMfaInfo();
+  if (f != null) {
+    writer.writeMessage(
+      201,
+      f,
+      api_commons_org_user_pb.MfaInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      202,
+      f
     );
   }
 };
@@ -17077,6 +17107,61 @@ proto.api.v0alpha.UserDescription.prototype.addTrusts = function(opt_value, opt_
  */
 proto.api.v0alpha.UserDescription.prototype.clearTrustsList = function() {
   return this.setTrustsList([]);
+};
+
+
+/**
+ * optional api.commons.org.MfaInfo mfa_info = 201;
+ * @return {?proto.api.commons.org.MfaInfo}
+ */
+proto.api.v0alpha.UserDescription.prototype.getMfaInfo = function() {
+  return /** @type{?proto.api.commons.org.MfaInfo} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo, 201));
+};
+
+
+/**
+ * @param {?proto.api.commons.org.MfaInfo|undefined} value
+ * @return {!proto.api.v0alpha.UserDescription} returns this
+*/
+proto.api.v0alpha.UserDescription.prototype.setMfaInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 201, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v0alpha.UserDescription} returns this
+ */
+proto.api.v0alpha.UserDescription.prototype.clearMfaInfo = function() {
+  return this.setMfaInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.UserDescription.prototype.hasMfaInfo = function() {
+  return jspb.Message.getField(this, 201) != null;
+};
+
+
+/**
+ * optional bool email_verified = 202;
+ * @return {boolean}
+ */
+proto.api.v0alpha.UserDescription.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 202, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.UserDescription} returns this
+ */
+proto.api.v0alpha.UserDescription.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 202, value);
 };
 
 
@@ -20302,6 +20387,7 @@ proto.api.v0alpha.UserDetails.toObject = function(includeInstance, msg) {
     delegated: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
     timeZoneOverride: (f = msg.getTimeZoneOverride()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
     email: jspb.Message.getFieldWithDefault(msg, 34, ""),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 36, false),
     trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
     api_commons_org_trusts_pb.Trust.toObject, includeInstance)
   };
@@ -20465,6 +20551,10 @@ proto.api.v0alpha.UserDetails.deserializeBinaryFromReader = function(msg, reader
     case 34:
       var value = /** @type {string} */ (reader.readString());
       msg.setEmail(value);
+      break;
+    case 36:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailVerified(value);
       break;
     case 200:
       var value = new api_commons_org_trusts_pb.Trust;
@@ -20713,6 +20803,13 @@ proto.api.v0alpha.UserDetails.serializeBinaryToWriter = function(message, writer
   if (f.length > 0) {
     writer.writeString(
       34,
+      f
+    );
+  }
+  f = message.getEmailVerified();
+  if (f) {
+    writer.writeBool(
+      36,
       f
     );
   }
@@ -21438,6 +21535,24 @@ proto.api.v0alpha.UserDetails.prototype.getEmail = function() {
  */
 proto.api.v0alpha.UserDetails.prototype.setEmail = function(value) {
   return jspb.Message.setProto3StringField(this, 34, value);
+};
+
+
+/**
+ * optional bool email_verified = 36;
+ * @return {boolean}
+ */
+proto.api.v0alpha.UserDetails.prototype.getEmailVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 36, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.UserDetails} returns this
+ */
+proto.api.v0alpha.UserDetails.prototype.setEmailVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 36, value);
 };
 
 
@@ -42722,7 +42837,8 @@ proto.api.v0alpha.OrganizationPreferences.toObject = function(includeInstance, m
     allowedCountriesList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
     defaultCountry: jspb.Message.getFieldWithDefault(msg, 11, 0),
     timeZone: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    displayLanguage: jspb.Message.getFieldWithDefault(msg, 13, 0)
+    displayLanguage: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    localePreferences: (f = msg.getLocalePreferences()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -42776,6 +42892,11 @@ proto.api.v0alpha.OrganizationPreferences.deserializeBinaryFromReader = function
     case 13:
       var value = /** @type {!proto.api.commons.DisplayLanguage} */ (reader.readEnum());
       msg.setDisplayLanguage(value);
+      break;
+    case 14:
+      var value = new api_commons_org_preferences_pb.LocalePreferences;
+      reader.readMessage(value,api_commons_org_preferences_pb.LocalePreferences.deserializeBinaryFromReader);
+      msg.setLocalePreferences(value);
       break;
     default:
       reader.skipField();
@@ -42832,6 +42953,14 @@ proto.api.v0alpha.OrganizationPreferences.serializeBinaryToWriter = function(mes
     writer.writeEnum(
       13,
       f
+    );
+  }
+  f = message.getLocalePreferences();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      api_commons_org_preferences_pb.LocalePreferences.serializeBinaryToWriter
     );
   }
 };
@@ -42925,6 +43054,43 @@ proto.api.v0alpha.OrganizationPreferences.prototype.getDisplayLanguage = functio
  */
 proto.api.v0alpha.OrganizationPreferences.prototype.setDisplayLanguage = function(value) {
   return jspb.Message.setProto3EnumField(this, 13, value);
+};
+
+
+/**
+ * optional api.commons.LocalePreferences locale_preferences = 14;
+ * @return {?proto.api.commons.LocalePreferences}
+ */
+proto.api.v0alpha.OrganizationPreferences.prototype.getLocalePreferences = function() {
+  return /** @type{?proto.api.commons.LocalePreferences} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_preferences_pb.LocalePreferences, 14));
+};
+
+
+/**
+ * @param {?proto.api.commons.LocalePreferences|undefined} value
+ * @return {!proto.api.v0alpha.OrganizationPreferences} returns this
+*/
+proto.api.v0alpha.OrganizationPreferences.prototype.setLocalePreferences = function(value) {
+  return jspb.Message.setWrapperField(this, 14, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v0alpha.OrganizationPreferences} returns this
+ */
+proto.api.v0alpha.OrganizationPreferences.prototype.clearLocalePreferences = function() {
+  return this.setLocalePreferences(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.OrganizationPreferences.prototype.hasLocalePreferences = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 

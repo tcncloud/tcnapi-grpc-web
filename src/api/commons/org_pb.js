@@ -12,8 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -689,7 +691,8 @@ proto.api.commons.OperatorApplications = {
   PERFORMANCE_MANAGEMENT_APP: 23,
   TICKETS_APP: 31,
   AGENT_BETA_APP: 32,
-  NEWSROOM_APP: 33
+  NEWSROOM_APP: 33,
+  CONTACTMANAGER_APP: 34
 };
 
 /**

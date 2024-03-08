@@ -12,8 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -16850,7 +16852,9 @@ proto.api.commons.OmniTaskConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
     skills: (f = msg.getSkills()) && proto.api.commons.OmniConversationSkills.toObject(includeInstance, f),
     absoluteTimeoutDuration: (f = msg.getAbsoluteTimeoutDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    agentTimeoutDuration: (f = msg.getAgentTimeoutDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+    agentTimeoutDuration: (f = msg.getAgentTimeoutDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+    subject: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    message: (f = msg.getMessage()) && proto.api.commons.OmniMessagePayload.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16901,6 +16905,15 @@ proto.api.commons.OmniTaskConfig.deserializeBinaryFromReader = function(msg, rea
       var value = new google_protobuf_duration_pb.Duration;
       reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
       msg.setAgentTimeoutDuration(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubject(value);
+      break;
+    case 5:
+      var value = new proto.api.commons.OmniMessagePayload;
+      reader.readMessage(value,proto.api.commons.OmniMessagePayload.deserializeBinaryFromReader);
+      msg.setMessage(value);
       break;
     default:
       reader.skipField();
@@ -16953,6 +16966,21 @@ proto.api.commons.OmniTaskConfig.serializeBinaryToWriter = function(message, wri
       3,
       f,
       google_protobuf_duration_pb.Duration.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubject();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getMessage();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.api.commons.OmniMessagePayload.serializeBinaryToWriter
     );
   }
 };
@@ -17066,6 +17094,61 @@ proto.api.commons.OmniTaskConfig.prototype.clearAgentTimeoutDuration = function(
  */
 proto.api.commons.OmniTaskConfig.prototype.hasAgentTimeoutDuration = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string subject = 4;
+ * @return {string}
+ */
+proto.api.commons.OmniTaskConfig.prototype.getSubject = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.OmniTaskConfig} returns this
+ */
+proto.api.commons.OmniTaskConfig.prototype.setSubject = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional OmniMessagePayload message = 5;
+ * @return {?proto.api.commons.OmniMessagePayload}
+ */
+proto.api.commons.OmniTaskConfig.prototype.getMessage = function() {
+  return /** @type{?proto.api.commons.OmniMessagePayload} */ (
+    jspb.Message.getWrapperField(this, proto.api.commons.OmniMessagePayload, 5));
+};
+
+
+/**
+ * @param {?proto.api.commons.OmniMessagePayload|undefined} value
+ * @return {!proto.api.commons.OmniTaskConfig} returns this
+*/
+proto.api.commons.OmniTaskConfig.prototype.setMessage = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.OmniTaskConfig} returns this
+ */
+proto.api.commons.OmniTaskConfig.prototype.clearMessage = function() {
+  return this.setMessage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.OmniTaskConfig.prototype.hasMessage = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -21396,7 +21479,8 @@ proto.api.commons.SmsNumberProvider = {
   APEIRON_PROVIDER: 4,
   AUSBURST_SMS_PROVIDER: 5,
   MEDIASAT_SMS_PROVIDER: 6,
-  TEXTLOCAL_SMS_PROVIDER: 7
+  TEXTLOCAL_SMS_PROVIDER: 7,
+  SMARTPING_SMS_PROVIDER: 8
 };
 
 /**

@@ -660,6 +660,15 @@ OmniApi.UpdateWhatsAppNumber = {
   responseType: api_v0alpha_omniapi_pb.UpdateWhatsAppNumberResponse
 };
 
+OmniApi.CreateManualTask = {
+  methodName: "CreateManualTask",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.CreateManualTaskReq,
+  responseType: api_v0alpha_omniapi_pb.CreateManualTaskRes
+};
+
 exports.OmniApi = OmniApi;
 
 function OmniApiClient(serviceHost, options) {
@@ -2889,6 +2898,37 @@ OmniApiClient.prototype.updateWhatsAppNumber = function updateWhatsAppNumber(req
     callback = arguments[1];
   }
   var client = grpc.unary(OmniApi.UpdateWhatsAppNumber, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.createManualTask = function createManualTask(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.CreateManualTask, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

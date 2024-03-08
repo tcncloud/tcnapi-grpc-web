@@ -319,6 +319,9 @@ export class UpdateAuthenticationPreferencesRequest extends jspb.Message {
   getAuthenticationPreferences(): api_commons_org_preferences_pb.AuthenticationPreferences | undefined;
   setAuthenticationPreferences(value?: api_commons_org_preferences_pb.AuthenticationPreferences): void;
 
+  getDuoClientSecret(): string;
+  setDuoClientSecret(value: string): void;
+
   hasFieldMask(): boolean;
   clearFieldMask(): void;
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
@@ -337,6 +340,7 @@ export class UpdateAuthenticationPreferencesRequest extends jspb.Message {
 export namespace UpdateAuthenticationPreferencesRequest {
   export type AsObject = {
     authenticationPreferences?: api_commons_org_preferences_pb.AuthenticationPreferences.AsObject,
+    duoClientSecret: string,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -1932,6 +1936,202 @@ export class ClearEmailUnsubscribeAcknowledgementResponse extends jspb.Message {
 
 export namespace ClearEmailUnsubscribeAcknowledgementResponse {
   export type AsObject = {
+  }
+}
+
+export class CreateBusinessHoursRequest extends jspb.Message {
+  hasBusinessHours(): boolean;
+  clearBusinessHours(): void;
+  getBusinessHours(): api_commons_org_preferences_pb.BusinessHours | undefined;
+  setBusinessHours(value?: api_commons_org_preferences_pb.BusinessHours): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateBusinessHoursRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateBusinessHoursRequest): CreateBusinessHoursRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateBusinessHoursRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateBusinessHoursRequest;
+  static deserializeBinaryFromReader(message: CreateBusinessHoursRequest, reader: jspb.BinaryReader): CreateBusinessHoursRequest;
+}
+
+export namespace CreateBusinessHoursRequest {
+  export type AsObject = {
+    businessHours?: api_commons_org_preferences_pb.BusinessHours.AsObject,
+  }
+}
+
+export class CreateBusinessHoursResponse extends jspb.Message {
+  getBusinessHoursId(): string;
+  setBusinessHoursId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateBusinessHoursResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateBusinessHoursResponse): CreateBusinessHoursResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateBusinessHoursResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateBusinessHoursResponse;
+  static deserializeBinaryFromReader(message: CreateBusinessHoursResponse, reader: jspb.BinaryReader): CreateBusinessHoursResponse;
+}
+
+export namespace CreateBusinessHoursResponse {
+  export type AsObject = {
+    businessHoursId: string,
+  }
+}
+
+export class UpdateBusinessHoursRequest extends jspb.Message {
+  hasBusinessHours(): boolean;
+  clearBusinessHours(): void;
+  getBusinessHours(): api_commons_org_preferences_pb.BusinessHours | undefined;
+  setBusinessHours(value?: api_commons_org_preferences_pb.BusinessHours): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateBusinessHoursRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateBusinessHoursRequest): UpdateBusinessHoursRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateBusinessHoursRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateBusinessHoursRequest;
+  static deserializeBinaryFromReader(message: UpdateBusinessHoursRequest, reader: jspb.BinaryReader): UpdateBusinessHoursRequest;
+}
+
+export namespace UpdateBusinessHoursRequest {
+  export type AsObject = {
+    businessHours?: api_commons_org_preferences_pb.BusinessHours.AsObject,
+  }
+}
+
+export class UpdateBusinessHoursResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateBusinessHoursResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateBusinessHoursResponse): UpdateBusinessHoursResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateBusinessHoursResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateBusinessHoursResponse;
+  static deserializeBinaryFromReader(message: UpdateBusinessHoursResponse, reader: jspb.BinaryReader): UpdateBusinessHoursResponse;
+}
+
+export namespace UpdateBusinessHoursResponse {
+  export type AsObject = {
+  }
+}
+
+export class DeleteBusinessHoursRequest extends jspb.Message {
+  getBusinessHoursId(): string;
+  setBusinessHoursId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteBusinessHoursRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteBusinessHoursRequest): DeleteBusinessHoursRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteBusinessHoursRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteBusinessHoursRequest;
+  static deserializeBinaryFromReader(message: DeleteBusinessHoursRequest, reader: jspb.BinaryReader): DeleteBusinessHoursRequest;
+}
+
+export namespace DeleteBusinessHoursRequest {
+  export type AsObject = {
+    businessHoursId: string,
+  }
+}
+
+export class DeleteBusinessHoursResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteBusinessHoursResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteBusinessHoursResponse): DeleteBusinessHoursResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteBusinessHoursResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteBusinessHoursResponse;
+  static deserializeBinaryFromReader(message: DeleteBusinessHoursResponse, reader: jspb.BinaryReader): DeleteBusinessHoursResponse;
+}
+
+export namespace DeleteBusinessHoursResponse {
+  export type AsObject = {
+  }
+}
+
+export class ListBusinessHoursRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListBusinessHoursRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListBusinessHoursRequest): ListBusinessHoursRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListBusinessHoursRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListBusinessHoursRequest;
+  static deserializeBinaryFromReader(message: ListBusinessHoursRequest, reader: jspb.BinaryReader): ListBusinessHoursRequest;
+}
+
+export namespace ListBusinessHoursRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListBusinessHoursResponse extends jspb.Message {
+  clearBusinessHoursListsList(): void;
+  getBusinessHoursListsList(): Array<api_commons_org_preferences_pb.BusinessHours>;
+  setBusinessHoursListsList(value: Array<api_commons_org_preferences_pb.BusinessHours>): void;
+  addBusinessHoursLists(value?: api_commons_org_preferences_pb.BusinessHours, index?: number): api_commons_org_preferences_pb.BusinessHours;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListBusinessHoursResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListBusinessHoursResponse): ListBusinessHoursResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListBusinessHoursResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListBusinessHoursResponse;
+  static deserializeBinaryFromReader(message: ListBusinessHoursResponse, reader: jspb.BinaryReader): ListBusinessHoursResponse;
+}
+
+export namespace ListBusinessHoursResponse {
+  export type AsObject = {
+    businessHoursListsList: Array<api_commons_org_preferences_pb.BusinessHours.AsObject>,
+  }
+}
+
+export class GetBusinessHoursRequest extends jspb.Message {
+  getBusinessHoursId(): string;
+  setBusinessHoursId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetBusinessHoursRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetBusinessHoursRequest): GetBusinessHoursRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetBusinessHoursRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetBusinessHoursRequest;
+  static deserializeBinaryFromReader(message: GetBusinessHoursRequest, reader: jspb.BinaryReader): GetBusinessHoursRequest;
+}
+
+export namespace GetBusinessHoursRequest {
+  export type AsObject = {
+    businessHoursId: string,
+  }
+}
+
+export class GetBusinessHoursResponse extends jspb.Message {
+  hasBusinessHours(): boolean;
+  clearBusinessHours(): void;
+  getBusinessHours(): api_commons_org_preferences_pb.BusinessHours | undefined;
+  setBusinessHours(value?: api_commons_org_preferences_pb.BusinessHours): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetBusinessHoursResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetBusinessHoursResponse): GetBusinessHoursResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetBusinessHoursResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetBusinessHoursResponse;
+  static deserializeBinaryFromReader(message: GetBusinessHoursResponse, reader: jspb.BinaryReader): GetBusinessHoursResponse;
+}
+
+export namespace GetBusinessHoursResponse {
+  export type AsObject = {
+    businessHours?: api_commons_org_preferences_pb.BusinessHours.AsObject,
   }
 }
 

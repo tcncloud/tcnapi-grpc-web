@@ -210,6 +210,11 @@ export class ListCampaignsReq extends jspb.Message {
   getByWhatsApp(): ListCampaignsReq.ByWhatsApp | undefined;
   setByWhatsApp(value?: ListCampaignsReq.ByWhatsApp): void;
 
+  hasByModuleType(): boolean;
+  clearByModuleType(): void;
+  getByModuleType(): ListCampaignsReq.ByModuleType | undefined;
+  setByModuleType(value?: ListCampaignsReq.ByModuleType): void;
+
   getFilterCase(): ListCampaignsReq.FilterCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCampaignsReq.AsObject;
@@ -234,6 +239,7 @@ export namespace ListCampaignsReq {
     bySmsNumber?: ListCampaignsReq.BySmsNumber.AsObject,
     byWhatsappNumber?: ListCampaignsReq.ByWhatsAppNumber.AsObject,
     byWhatsApp?: ListCampaignsReq.ByWhatsApp.AsObject,
+    byModuleType?: ListCampaignsReq.ByModuleType.AsObject,
   }
 
   export class ByConnectedInbox extends jspb.Message {
@@ -426,6 +432,34 @@ export namespace ListCampaignsReq {
     }
   }
 
+  export class ByModuleType extends jspb.Message {
+    clearModuleTypeList(): void;
+    getModuleTypeList(): Array<api_commons_omnichannel_pb.OmniCampaignModuleTypeMap[keyof api_commons_omnichannel_pb.OmniCampaignModuleTypeMap]>;
+    setModuleTypeList(value: Array<api_commons_omnichannel_pb.OmniCampaignModuleTypeMap[keyof api_commons_omnichannel_pb.OmniCampaignModuleTypeMap]>): void;
+    addModuleType(value: api_commons_omnichannel_pb.OmniCampaignModuleTypeMap[keyof api_commons_omnichannel_pb.OmniCampaignModuleTypeMap], index?: number): api_commons_omnichannel_pb.OmniCampaignModuleTypeMap[keyof api_commons_omnichannel_pb.OmniCampaignModuleTypeMap];
+
+    clearChannelTypeList(): void;
+    getChannelTypeList(): Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>;
+    setChannelTypeList(value: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>): void;
+    addChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap], index?: number): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ByModuleType.AsObject;
+    static toObject(includeInstance: boolean, msg: ByModuleType): ByModuleType.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ByModuleType, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ByModuleType;
+    static deserializeBinaryFromReader(message: ByModuleType, reader: jspb.BinaryReader): ByModuleType;
+  }
+
+  export namespace ByModuleType {
+    export type AsObject = {
+      moduleTypeList: Array<api_commons_omnichannel_pb.OmniCampaignModuleTypeMap[keyof api_commons_omnichannel_pb.OmniCampaignModuleTypeMap]>,
+      channelTypeList: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>,
+    }
+  }
+
   export enum FilterCase {
     FILTER_NOT_SET = 0,
     BY_IDS = 100,
@@ -437,6 +471,7 @@ export namespace ListCampaignsReq {
     BY_SMS_NUMBER = 106,
     BY_WHATSAPP_NUMBER = 107,
     BY_WHATS_APP = 108,
+    BY_MODULE_TYPE = 109,
   }
 }
 
@@ -3652,6 +3687,56 @@ export class UpdateWhatsAppNumberResponse extends jspb.Message {
 export namespace UpdateWhatsAppNumberResponse {
   export type AsObject = {
     whatsappNumber?: api_commons_omnichannel_pb.WhatsAppNumber.AsObject,
+  }
+}
+
+export class CreateManualTaskReq extends jspb.Message {
+  getCampaignSid(): string;
+  setCampaignSid(value: string): void;
+
+  getCampaignModuleSid(): string;
+  setCampaignModuleSid(value: string): void;
+
+  hasTaskData(): boolean;
+  clearTaskData(): void;
+  getTaskData(): api_commons_omnichannel_pb.OmniTask | undefined;
+  setTaskData(value?: api_commons_omnichannel_pb.OmniTask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateManualTaskReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateManualTaskReq): CreateManualTaskReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateManualTaskReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateManualTaskReq;
+  static deserializeBinaryFromReader(message: CreateManualTaskReq, reader: jspb.BinaryReader): CreateManualTaskReq;
+}
+
+export namespace CreateManualTaskReq {
+  export type AsObject = {
+    campaignSid: string,
+    campaignModuleSid: string,
+    taskData?: api_commons_omnichannel_pb.OmniTask.AsObject,
+  }
+}
+
+export class CreateManualTaskRes extends jspb.Message {
+  getReferenceId(): string;
+  setReferenceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateManualTaskRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateManualTaskRes): CreateManualTaskRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateManualTaskRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateManualTaskRes;
+  static deserializeBinaryFromReader(message: CreateManualTaskRes, reader: jspb.BinaryReader): CreateManualTaskRes;
+}
+
+export namespace CreateManualTaskRes {
+  export type AsObject = {
+    referenceId: string,
   }
 }
 

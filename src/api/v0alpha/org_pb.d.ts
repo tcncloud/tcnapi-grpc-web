@@ -14,6 +14,7 @@ import * as api_commons_omnichannel_pb from "../../api/commons/omnichannel_pb";
 import * as api_commons_org_pb from "../../api/commons/org_pb";
 import * as api_commons_org_agent_profile_group_pb from "../../api/commons/org/agent_profile_group_pb";
 import * as api_commons_org_trusts_pb from "../../api/commons/org/trusts_pb";
+import * as api_commons_org_user_pb from "../../api/commons/org/user_pb";
 import * as api_commons_org_preferences_pb from "../../api/commons/org_preferences_pb";
 import * as api_commons_perms_pb from "../../api/commons/perms_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
@@ -611,6 +612,14 @@ export class UserDescription extends jspb.Message {
   setTrustsList(value: Array<api_commons_org_trusts_pb.Trust>): void;
   addTrusts(value?: api_commons_org_trusts_pb.Trust, index?: number): api_commons_org_trusts_pb.Trust;
 
+  hasMfaInfo(): boolean;
+  clearMfaInfo(): void;
+  getMfaInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+  setMfaInfo(value?: api_commons_org_user_pb.MfaInfo): void;
+
+  getEmailVerified(): boolean;
+  setEmailVerified(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserDescription.AsObject;
   static toObject(includeInstance: boolean, msg: UserDescription): UserDescription.AsObject;
@@ -651,6 +660,8 @@ export namespace UserDescription {
     huntGroupSid: number,
     huntGroupName: string,
     trustsList: Array<api_commons_org_trusts_pb.Trust.AsObject>,
+    mfaInfo?: api_commons_org_user_pb.MfaInfo.AsObject,
+    emailVerified: boolean,
   }
 }
 
@@ -1227,6 +1238,9 @@ export class UserDetails extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): void;
 
+  getEmailVerified(): boolean;
+  setEmailVerified(value: boolean): void;
+
   clearTrustsList(): void;
   getTrustsList(): Array<api_commons_org_trusts_pb.Trust>;
   setTrustsList(value: Array<api_commons_org_trusts_pb.Trust>): void;
@@ -1274,6 +1288,7 @@ export namespace UserDetails {
     delegated: boolean,
     timeZoneOverride?: api_commons_org_pb.TimeZoneWrapper.AsObject,
     email: string,
+    emailVerified: boolean,
     trustsList: Array<api_commons_org_trusts_pb.Trust.AsObject>,
   }
 }
@@ -4327,6 +4342,11 @@ export class OrganizationPreferences extends jspb.Message {
   getDisplayLanguage(): api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap];
   setDisplayLanguage(value: api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap]): void;
 
+  hasLocalePreferences(): boolean;
+  clearLocalePreferences(): void;
+  getLocalePreferences(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferences(value?: api_commons_org_preferences_pb.LocalePreferences): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrganizationPreferences.AsObject;
   static toObject(includeInstance: boolean, msg: OrganizationPreferences): OrganizationPreferences.AsObject;
@@ -4343,6 +4363,7 @@ export namespace OrganizationPreferences {
     defaultCountry: api_commons_country_pb.CountryMap[keyof api_commons_country_pb.CountryMap],
     timeZone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
     displayLanguage: api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap],
+    localePreferences?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
   }
 }
 

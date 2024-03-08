@@ -12,8 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -3397,7 +3399,7 @@ proto.api.v0alpha.DashboardPanel.prototype.setColumnStart = function(value) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.v0alpha.PanelSource.oneofGroups_ = [[1,2]];
+proto.api.v0alpha.PanelSource.oneofGroups_ = [[1,2,3]];
 
 /**
  * @enum {number}
@@ -3405,7 +3407,8 @@ proto.api.v0alpha.PanelSource.oneofGroups_ = [[1,2]];
 proto.api.v0alpha.PanelSource.PanelTypeCase = {
   PANEL_TYPE_NOT_SET: 0,
   INSIGHT_ID: 1,
-  LEGACY_INSIGHT_ID: 2
+  LEGACY_INSIGHT_ID: 2,
+  INSIGHT_RESOURCE_ID: 3
 };
 
 /**
@@ -3447,7 +3450,8 @@ proto.api.v0alpha.PanelSource.prototype.toObject = function(opt_includeInstance)
 proto.api.v0alpha.PanelSource.toObject = function(includeInstance, msg) {
   var f, obj = {
     insightId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    legacyInsightId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    legacyInsightId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    insightResourceId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -3492,6 +3496,10 @@ proto.api.v0alpha.PanelSource.deserializeBinaryFromReader = function(msg, reader
       var value = /** @type {string} */ (reader.readString());
       msg.setLegacyInsightId(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInsightResourceId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3532,6 +3540,13 @@ proto.api.v0alpha.PanelSource.serializeBinaryToWriter = function(message, writer
   if (f != null) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -3607,6 +3622,42 @@ proto.api.v0alpha.PanelSource.prototype.clearLegacyInsightId = function() {
  */
 proto.api.v0alpha.PanelSource.prototype.hasLegacyInsightId = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string insight_resource_id = 3;
+ * @return {string}
+ */
+proto.api.v0alpha.PanelSource.prototype.getInsightResourceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.PanelSource} returns this
+ */
+proto.api.v0alpha.PanelSource.prototype.setInsightResourceId = function(value) {
+  return jspb.Message.setOneofField(this, 3, proto.api.v0alpha.PanelSource.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.v0alpha.PanelSource} returns this
+ */
+proto.api.v0alpha.PanelSource.prototype.clearInsightResourceId = function() {
+  return jspb.Message.setOneofField(this, 3, proto.api.v0alpha.PanelSource.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.PanelSource.prototype.hasInsightResourceId = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

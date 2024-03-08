@@ -2,6 +2,7 @@
 // file: api/v1alpha1/vanalytics/flag.proto
 
 import * as jspb from "google-protobuf";
+import * as api_v1alpha1_vanalytics_dncl_list_pb from "../../../api/v1alpha1/vanalytics/dncl_list_pb";
 import * as api_v1alpha1_vanalytics_filter_pb from "../../../api/v1alpha1/vanalytics/filter_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 
@@ -281,6 +282,11 @@ export class Flag extends jspb.Message {
   getBoolExpr(): Flag.BoolExpr | undefined;
   setBoolExpr(value?: Flag.BoolExpr): void;
 
+  clearDnclListList(): void;
+  getDnclListList(): Array<api_v1alpha1_vanalytics_dncl_list_pb.DnclList>;
+  setDnclListList(value: Array<api_v1alpha1_vanalytics_dncl_list_pb.DnclList>): void;
+  addDnclList(value?: api_v1alpha1_vanalytics_dncl_list_pb.DnclList, index?: number): api_v1alpha1_vanalytics_dncl_list_pb.DnclList;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Flag.AsObject;
   static toObject(includeInstance: boolean, msg: Flag): Flag.AsObject;
@@ -303,6 +309,7 @@ export namespace Flag {
     mustReview: boolean,
     mustNotify: boolean,
     boolExpr?: Flag.BoolExpr.AsObject,
+    dnclListList: Array<api_v1alpha1_vanalytics_dncl_list_pb.DnclList.AsObject>,
   }
 
   export class BoolExpr extends jspb.Message {

@@ -21,6 +21,11 @@ export class OrganizationPreferences extends jspb.Message {
   getDisplayLanguage(): api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap];
   setDisplayLanguage(value: api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap]): void;
 
+  hasLocalePreferences(): boolean;
+  clearLocalePreferences(): void;
+  getLocalePreferences(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferences(value?: api_commons_org_preferences_pb.LocalePreferences): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrganizationPreferences.AsObject;
   static toObject(includeInstance: boolean, msg: OrganizationPreferences): OrganizationPreferences.AsObject;
@@ -37,6 +42,7 @@ export namespace OrganizationPreferences {
     defaultCountry: api_commons_country_pb.CountryMap[keyof api_commons_country_pb.CountryMap],
     timeZone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
     displayLanguage: api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap],
+    localePreferences?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
   }
 }
 
@@ -299,6 +305,16 @@ export class AuthenticationPreferences extends jspb.Message {
   getBlockUnverifiedUsers(): boolean;
   setBlockUnverifiedUsers(value: boolean): void;
 
+  hasEmailMfaSettings(): boolean;
+  clearEmailMfaSettings(): void;
+  getEmailMfaSettings(): AuthenticationPreferences.EmailMfaSettings | undefined;
+  setEmailMfaSettings(value?: AuthenticationPreferences.EmailMfaSettings): void;
+
+  hasDuoMfaSettings(): boolean;
+  clearDuoMfaSettings(): void;
+  getDuoMfaSettings(): AuthenticationPreferences.DuoMfaSettings | undefined;
+  setDuoMfaSettings(value?: AuthenticationPreferences.DuoMfaSettings): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuthenticationPreferences.AsObject;
   static toObject(includeInstance: boolean, msg: AuthenticationPreferences): AuthenticationPreferences.AsObject;
@@ -317,6 +333,56 @@ export namespace AuthenticationPreferences {
     agentApiKey: string,
     enable2fa: boolean,
     blockUnverifiedUsers: boolean,
+    emailMfaSettings?: AuthenticationPreferences.EmailMfaSettings.AsObject,
+    duoMfaSettings?: AuthenticationPreferences.DuoMfaSettings.AsObject,
+  }
+
+  export class DuoMfaSettings extends jspb.Message {
+    getDuoClientId(): string;
+    setDuoClientId(value: string): void;
+
+    getDuoApiHost(): string;
+    setDuoApiHost(value: string): void;
+
+    getEnabled(): boolean;
+    setEnabled(value: boolean): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): DuoMfaSettings.AsObject;
+    static toObject(includeInstance: boolean, msg: DuoMfaSettings): DuoMfaSettings.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: DuoMfaSettings, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): DuoMfaSettings;
+    static deserializeBinaryFromReader(message: DuoMfaSettings, reader: jspb.BinaryReader): DuoMfaSettings;
+  }
+
+  export namespace DuoMfaSettings {
+    export type AsObject = {
+      duoClientId: string,
+      duoApiHost: string,
+      enabled: boolean,
+    }
+  }
+
+  export class EmailMfaSettings extends jspb.Message {
+    getEnabled(): boolean;
+    setEnabled(value: boolean): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): EmailMfaSettings.AsObject;
+    static toObject(includeInstance: boolean, msg: EmailMfaSettings): EmailMfaSettings.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: EmailMfaSettings, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): EmailMfaSettings;
+    static deserializeBinaryFromReader(message: EmailMfaSettings, reader: jspb.BinaryReader): EmailMfaSettings;
+  }
+
+  export namespace EmailMfaSettings {
+    export type AsObject = {
+      enabled: boolean,
+    }
   }
 }
 
@@ -1688,6 +1754,76 @@ export namespace AdminClientPreferences {
     callbacksServiceId: string,
     agentScreenRecording: boolean,
     allowedCountriesList: Array<api_commons_country_pb.CountryMap[keyof api_commons_country_pb.CountryMap]>,
+  }
+}
+
+export class BusinessHours extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getId(): string;
+  setId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  clearRangesList(): void;
+  getRangesList(): Array<Range>;
+  setRangesList(value: Array<Range>): void;
+  addRanges(value?: Range, index?: number): Range;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BusinessHours.AsObject;
+  static toObject(includeInstance: boolean, msg: BusinessHours): BusinessHours.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BusinessHours, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BusinessHours;
+  static deserializeBinaryFromReader(message: BusinessHours, reader: jspb.BinaryReader): BusinessHours;
+}
+
+export namespace BusinessHours {
+  export type AsObject = {
+    orgId: string,
+    id: string,
+    name: string,
+    description: string,
+    rangesList: Array<Range.AsObject>,
+  }
+}
+
+export class Range extends jspb.Message {
+  getStartHour(): number;
+  setStartHour(value: number): void;
+
+  getStartMinute(): number;
+  setStartMinute(value: number): void;
+
+  getEndHour(): number;
+  setEndHour(value: number): void;
+
+  getEndMinute(): number;
+  setEndMinute(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Range.AsObject;
+  static toObject(includeInstance: boolean, msg: Range): Range.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Range, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Range;
+  static deserializeBinaryFromReader(message: Range, reader: jspb.BinaryReader): Range;
+}
+
+export namespace Range {
+  export type AsObject = {
+    startHour: number,
+    startMinute: number,
+    endHour: number,
+    endMinute: number,
   }
 }
 

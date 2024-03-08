@@ -1263,6 +1263,33 @@ Org.DeleteHuntGroupClientInfoDisplayTemplate = {
   responseType: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupClientInfoDisplayTemplateResponse
 };
 
+Org.CopyHuntGroupClientInfoDisplayTemplate = {
+  methodName: "CopyHuntGroupClientInfoDisplayTemplate",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateResponse
+};
+
+Org.CreateCampaignClientInfoDisplayTemplate = {
+  methodName: "CreateCampaignClientInfoDisplayTemplate",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateResponse
+};
+
+Org.ListHuntGroupsWithClientInfoTemplateData = {
+  methodName: "ListHuntGroupsWithClientInfoTemplateData",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataResponse
+};
+
 Org.ListAgentTriggers = {
   methodName: "ListAgentTriggers",
   service: Org,
@@ -1288,6 +1315,42 @@ Org.UpdateAgentTriggers = {
   responseStream: false,
   requestType: api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersRequest,
   responseType: api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersResponse
+};
+
+Org.GetHuntGroupScript = {
+  methodName: "GetHuntGroupScript",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.GetHuntGroupScriptRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.GetHuntGroupScriptResponse
+};
+
+Org.CreateHuntGroupScript = {
+  methodName: "CreateHuntGroupScript",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupScriptRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupScriptResponse
+};
+
+Org.UpdateHuntGroupScript = {
+  methodName: "UpdateHuntGroupScript",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupScriptRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupScriptResponse
+};
+
+Org.DeleteHuntGroupScript = {
+  methodName: "DeleteHuntGroupScript",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptResponse
 };
 
 Org.CreateTrust = {
@@ -1756,6 +1819,51 @@ Org.GetMyUserMfaInfo = {
   responseStream: false,
   requestType: api_v1alpha1_org_user_pb.GetMyUserMfaInfoRequest,
   responseType: api_v1alpha1_org_user_pb.GetMyUserMfaInfoResponse
+};
+
+Org.CreateBusinessHours = {
+  methodName: "CreateBusinessHours",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_preferences_pb.CreateBusinessHoursRequest,
+  responseType: api_v1alpha1_org_preferences_pb.CreateBusinessHoursResponse
+};
+
+Org.UpdateBusinessHours = {
+  methodName: "UpdateBusinessHours",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursRequest,
+  responseType: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse
+};
+
+Org.DeleteBusinessHours = {
+  methodName: "DeleteBusinessHours",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_preferences_pb.DeleteBusinessHoursRequest,
+  responseType: api_v1alpha1_org_preferences_pb.DeleteBusinessHoursResponse
+};
+
+Org.ListBusinessHours = {
+  methodName: "ListBusinessHours",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_preferences_pb.ListBusinessHoursRequest,
+  responseType: api_v1alpha1_org_preferences_pb.ListBusinessHoursResponse
+};
+
+Org.GetBusinessHours = {
+  methodName: "GetBusinessHours",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_preferences_pb.GetBusinessHoursRequest,
+  responseType: api_v1alpha1_org_preferences_pb.GetBusinessHoursResponse
 };
 
 exports.Org = Org;
@@ -6115,6 +6223,99 @@ OrgClient.prototype.deleteHuntGroupClientInfoDisplayTemplate = function deleteHu
   };
 };
 
+OrgClient.prototype.copyHuntGroupClientInfoDisplayTemplate = function copyHuntGroupClientInfoDisplayTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CopyHuntGroupClientInfoDisplayTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.createCampaignClientInfoDisplayTemplate = function createCampaignClientInfoDisplayTemplate(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CreateCampaignClientInfoDisplayTemplate, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listHuntGroupsWithClientInfoTemplateData = function listHuntGroupsWithClientInfoTemplateData(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListHuntGroupsWithClientInfoTemplateData, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 OrgClient.prototype.listAgentTriggers = function listAgentTriggers(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -6182,6 +6383,130 @@ OrgClient.prototype.updateAgentTriggers = function updateAgentTriggers(requestMe
     callback = arguments[1];
   }
   var client = grpc.unary(Org.UpdateAgentTriggers, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.getHuntGroupScript = function getHuntGroupScript(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetHuntGroupScript, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.createHuntGroupScript = function createHuntGroupScript(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CreateHuntGroupScript, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.updateHuntGroupScript = function updateHuntGroupScript(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateHuntGroupScript, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.deleteHuntGroupScript = function deleteHuntGroupScript(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.DeleteHuntGroupScript, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -7794,6 +8119,161 @@ OrgClient.prototype.getMyUserMfaInfo = function getMyUserMfaInfo(requestMessage,
     callback = arguments[1];
   }
   var client = grpc.unary(Org.GetMyUserMfaInfo, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.createBusinessHours = function createBusinessHours(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CreateBusinessHours, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.updateBusinessHours = function updateBusinessHours(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateBusinessHours, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.deleteBusinessHours = function deleteBusinessHours(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.DeleteBusinessHours, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listBusinessHours = function listBusinessHours(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListBusinessHours, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.getBusinessHours = function getBusinessHours(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetBusinessHours, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

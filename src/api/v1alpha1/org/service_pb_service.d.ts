@@ -1257,6 +1257,33 @@ type OrgDeleteHuntGroupClientInfoDisplayTemplate = {
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupClientInfoDisplayTemplateResponse;
 };
 
+type OrgCopyHuntGroupClientInfoDisplayTemplate = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateResponse;
+};
+
+type OrgCreateCampaignClientInfoDisplayTemplate = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateResponse;
+};
+
+type OrgListHuntGroupsWithClientInfoTemplateData = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataResponse;
+};
+
 type OrgListAgentTriggers = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1282,6 +1309,42 @@ type OrgUpdateAgentTriggers = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersRequest;
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersResponse;
+};
+
+type OrgGetHuntGroupScript = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.GetHuntGroupScriptRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.GetHuntGroupScriptResponse;
+};
+
+type OrgCreateHuntGroupScript = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CreateHuntGroupScriptRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CreateHuntGroupScriptResponse;
+};
+
+type OrgUpdateHuntGroupScript = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupScriptRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupScriptResponse;
+};
+
+type OrgDeleteHuntGroupScript = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptResponse;
 };
 
 type OrgCreateTrust = {
@@ -1752,6 +1815,51 @@ type OrgGetMyUserMfaInfo = {
   readonly responseType: typeof api_v1alpha1_org_user_pb.GetMyUserMfaInfoResponse;
 };
 
+type OrgCreateBusinessHours = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.CreateBusinessHoursRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.CreateBusinessHoursResponse;
+};
+
+type OrgUpdateBusinessHours = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.UpdateBusinessHoursRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse;
+};
+
+type OrgDeleteBusinessHours = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.DeleteBusinessHoursRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.DeleteBusinessHoursResponse;
+};
+
+type OrgListBusinessHours = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.ListBusinessHoursRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.ListBusinessHoursResponse;
+};
+
+type OrgGetBusinessHours = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.GetBusinessHoursRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.GetBusinessHoursResponse;
+};
+
 export class Org {
   static readonly serviceName: string;
   static readonly CreateOrganization: OrgCreateOrganization;
@@ -1892,9 +2000,16 @@ export class Org {
   static readonly CreateHuntGroupClientInfoDisplayTemplate: OrgCreateHuntGroupClientInfoDisplayTemplate;
   static readonly UpdateHuntGroupClientInfoDisplayTemplate: OrgUpdateHuntGroupClientInfoDisplayTemplate;
   static readonly DeleteHuntGroupClientInfoDisplayTemplate: OrgDeleteHuntGroupClientInfoDisplayTemplate;
+  static readonly CopyHuntGroupClientInfoDisplayTemplate: OrgCopyHuntGroupClientInfoDisplayTemplate;
+  static readonly CreateCampaignClientInfoDisplayTemplate: OrgCreateCampaignClientInfoDisplayTemplate;
+  static readonly ListHuntGroupsWithClientInfoTemplateData: OrgListHuntGroupsWithClientInfoTemplateData;
   static readonly ListAgentTriggers: OrgListAgentTriggers;
   static readonly CopyAgentTrigger: OrgCopyAgentTrigger;
   static readonly UpdateAgentTriggers: OrgUpdateAgentTriggers;
+  static readonly GetHuntGroupScript: OrgGetHuntGroupScript;
+  static readonly CreateHuntGroupScript: OrgCreateHuntGroupScript;
+  static readonly UpdateHuntGroupScript: OrgUpdateHuntGroupScript;
+  static readonly DeleteHuntGroupScript: OrgDeleteHuntGroupScript;
   static readonly CreateTrust: OrgCreateTrust;
   static readonly AcceptTrust: OrgAcceptTrust;
   static readonly RejectTrust: OrgRejectTrust;
@@ -1947,6 +2062,11 @@ export class Org {
   static readonly EnableMyUserMfa: OrgEnableMyUserMfa;
   static readonly GetUserMfaInfo: OrgGetUserMfaInfo;
   static readonly GetMyUserMfaInfo: OrgGetMyUserMfaInfo;
+  static readonly CreateBusinessHours: OrgCreateBusinessHours;
+  static readonly UpdateBusinessHours: OrgUpdateBusinessHours;
+  static readonly DeleteBusinessHours: OrgDeleteBusinessHours;
+  static readonly ListBusinessHours: OrgListBusinessHours;
+  static readonly GetBusinessHours: OrgGetBusinessHours;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3151,6 +3271,33 @@ export class OrgClient {
     requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupClientInfoDisplayTemplateRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupClientInfoDisplayTemplateResponse|null) => void
   ): UnaryResponse;
+  copyHuntGroupClientInfoDisplayTemplate(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateResponse|null) => void
+  ): UnaryResponse;
+  copyHuntGroupClientInfoDisplayTemplate(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupClientInfoDisplayTemplateResponse|null) => void
+  ): UnaryResponse;
+  createCampaignClientInfoDisplayTemplate(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateResponse|null) => void
+  ): UnaryResponse;
+  createCampaignClientInfoDisplayTemplate(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CreateCampaignClientInfoDisplayTemplateResponse|null) => void
+  ): UnaryResponse;
+  listHuntGroupsWithClientInfoTemplateData(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataResponse|null) => void
+  ): UnaryResponse;
+  listHuntGroupsWithClientInfoTemplateData(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupsWithClientInfoTemplateDataResponse|null) => void
+  ): UnaryResponse;
   listAgentTriggers(
     requestMessage: api_v1alpha1_org_huntgroup_pb.ListAgentTriggersRequest,
     metadata: grpc.Metadata,
@@ -3177,6 +3324,42 @@ export class OrgClient {
   updateAgentTriggers(
     requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersResponse|null) => void
+  ): UnaryResponse;
+  getHuntGroupScript(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.GetHuntGroupScriptRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.GetHuntGroupScriptResponse|null) => void
+  ): UnaryResponse;
+  getHuntGroupScript(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.GetHuntGroupScriptRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.GetHuntGroupScriptResponse|null) => void
+  ): UnaryResponse;
+  createHuntGroupScript(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupScriptRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupScriptResponse|null) => void
+  ): UnaryResponse;
+  createHuntGroupScript(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupScriptRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CreateHuntGroupScriptResponse|null) => void
+  ): UnaryResponse;
+  updateHuntGroupScript(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupScriptRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupScriptResponse|null) => void
+  ): UnaryResponse;
+  updateHuntGroupScript(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupScriptRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateHuntGroupScriptResponse|null) => void
+  ): UnaryResponse;
+  deleteHuntGroupScript(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptResponse|null) => void
+  ): UnaryResponse;
+  deleteHuntGroupScript(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptResponse|null) => void
   ): UnaryResponse;
   createTrust(
     requestMessage: api_v1alpha1_org_trusts_pb.CreateTrustRequest,
@@ -3645,6 +3828,51 @@ export class OrgClient {
   getMyUserMfaInfo(
     requestMessage: api_v1alpha1_org_user_pb.GetMyUserMfaInfoRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.GetMyUserMfaInfoResponse|null) => void
+  ): UnaryResponse;
+  createBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.CreateBusinessHoursRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.CreateBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  createBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.CreateBusinessHoursRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.CreateBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  updateBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  updateBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  deleteBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.DeleteBusinessHoursRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.DeleteBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  deleteBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.DeleteBusinessHoursRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.DeleteBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  listBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.ListBusinessHoursRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.ListBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  listBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.ListBusinessHoursRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.ListBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  getBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.GetBusinessHoursRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.GetBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  getBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.GetBusinessHoursRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.GetBusinessHoursResponse|null) => void
   ): UnaryResponse;
 }
 

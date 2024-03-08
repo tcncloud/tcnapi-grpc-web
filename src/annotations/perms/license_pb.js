@@ -12,8 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -44,7 +46,8 @@ proto.annotations.perms.Application = {
   APPLICATION_VOICE_ANALYTICS: 14,
   APPLICATION_WORK_FORCE_MANAGEMENT: 15,
   APPLICATION_WORKFLOWS: 16,
-  APPLICATION_NEWSROOM: 17
+  APPLICATION_NEWSROOM: 17,
+  APPLICATION_CONTACTMANAGER: 18
 };
 
 /**

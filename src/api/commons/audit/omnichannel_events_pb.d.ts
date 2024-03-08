@@ -677,6 +677,30 @@ export namespace OmnichannelCloseConversationEvent {
   }
 }
 
+export class OmnichannelTranscriptSavedEvent extends jspb.Message {
+  getConversationSid(): number;
+  setConversationSid(value: number): void;
+
+  getTranscriptPath(): string;
+  setTranscriptPath(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmnichannelTranscriptSavedEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: OmnichannelTranscriptSavedEvent): OmnichannelTranscriptSavedEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmnichannelTranscriptSavedEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmnichannelTranscriptSavedEvent;
+  static deserializeBinaryFromReader(message: OmnichannelTranscriptSavedEvent, reader: jspb.BinaryReader): OmnichannelTranscriptSavedEvent;
+}
+
+export namespace OmnichannelTranscriptSavedEvent {
+  export type AsObject = {
+    conversationSid: number,
+    transcriptPath: string,
+  }
+}
+
 export class OmnichannelUpdateCampaignEvent extends jspb.Message {
   getCampaignSid(): string;
   setCampaignSid(value: string): void;

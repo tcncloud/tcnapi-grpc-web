@@ -193,6 +193,9 @@ export namespace ListSIPAccountsResponse {
 }
 
 export class GetSIPAccountRequest extends jspb.Message {
+  getSipAccountId(): string;
+  setSipAccountId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetSIPAccountRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetSIPAccountRequest): GetSIPAccountRequest.AsObject;
@@ -205,6 +208,7 @@ export class GetSIPAccountRequest extends jspb.Message {
 
 export namespace GetSIPAccountRequest {
   export type AsObject = {
+    sipAccountId: string,
   }
 }
 

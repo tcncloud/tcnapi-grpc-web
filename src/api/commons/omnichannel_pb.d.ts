@@ -2095,6 +2095,14 @@ export class OmniTaskConfig extends jspb.Message {
   getAgentTimeoutDuration(): google_protobuf_duration_pb.Duration | undefined;
   setAgentTimeoutDuration(value?: google_protobuf_duration_pb.Duration): void;
 
+  getSubject(): string;
+  setSubject(value: string): void;
+
+  hasMessage(): boolean;
+  clearMessage(): void;
+  getMessage(): OmniMessagePayload | undefined;
+  setMessage(value?: OmniMessagePayload): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniTaskConfig.AsObject;
   static toObject(includeInstance: boolean, msg: OmniTaskConfig): OmniTaskConfig.AsObject;
@@ -2110,6 +2118,8 @@ export namespace OmniTaskConfig {
     skills?: OmniConversationSkills.AsObject,
     absoluteTimeoutDuration?: google_protobuf_duration_pb.Duration.AsObject,
     agentTimeoutDuration?: google_protobuf_duration_pb.Duration.AsObject,
+    subject: string,
+    message?: OmniMessagePayload.AsObject,
   }
 }
 
@@ -2710,6 +2720,7 @@ export interface SmsNumberProviderMap {
   AUSBURST_SMS_PROVIDER: 5;
   MEDIASAT_SMS_PROVIDER: 6;
   TEXTLOCAL_SMS_PROVIDER: 7;
+  SMARTPING_SMS_PROVIDER: 8;
 }
 
 export const SmsNumberProvider: SmsNumberProviderMap;

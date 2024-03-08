@@ -7,6 +7,7 @@ import * as api_commons_org_labels_pb from "../../../api/commons/org/labels_pb";
 import * as api_commons_org_permissions_pb from "../../../api/commons/org/permissions_pb";
 import * as api_commons_org_trusts_pb from "../../../api/commons/org/trusts_pb";
 import * as api_commons_org_user_pb from "../../../api/commons/org/user_pb";
+import * as api_commons_org_preferences_pb from "../../../api/commons/org_preferences_pb";
 import * as api_commons_perms_pb from "../../../api/commons/perms_pb";
 import * as api_commons_user_pb from "../../../api/commons/user_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
@@ -266,6 +267,9 @@ export class GetMyUserResponse extends jspb.Message {
   getAccountOwner(): boolean;
   setAccountOwner(value: boolean): void;
 
+  getEmailVerified(): boolean;
+  setEmailVerified(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetMyUserResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetMyUserResponse): GetMyUserResponse.AsObject;
@@ -291,6 +295,7 @@ export namespace GetMyUserResponse {
     agentProfileGroup?: GetMyUserResponse.AgentProfileGroup.AsObject,
     trustsList: Array<api_commons_org_trusts_pb.Trust.AsObject>,
     accountOwner: boolean,
+    emailVerified: boolean,
   }
 
   export class HuntGroup extends jspb.Message {
@@ -474,6 +479,9 @@ export class GetUserResponse extends jspb.Message {
   getAccountOwner(): boolean;
   setAccountOwner(value: boolean): void;
 
+  getEmailVerified(): boolean;
+  setEmailVerified(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserResponse): GetUserResponse.AsObject;
@@ -515,6 +523,7 @@ export namespace GetUserResponse {
     lastUpdated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     passwordResetRequired: boolean,
     accountOwner: boolean,
+    emailVerified: boolean,
   }
 
   export class HuntGroup extends jspb.Message {
@@ -644,6 +653,9 @@ export class GetUserByOrgIdResponse extends jspb.Message {
   getAccountOwner(): boolean;
   setAccountOwner(value: boolean): void;
 
+  getEmailVerified(): boolean;
+  setEmailVerified(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserByOrgIdResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserByOrgIdResponse): GetUserByOrgIdResponse.AsObject;
@@ -669,6 +681,7 @@ export namespace GetUserByOrgIdResponse {
     agentProfileGroup?: GetUserByOrgIdResponse.AgentProfileGroup.AsObject,
     trustsList: Array<api_commons_org_trusts_pb.Trust.AsObject>,
     accountOwner: boolean,
+    emailVerified: boolean,
   }
 
   export class HuntGroup extends jspb.Message {
@@ -842,6 +855,14 @@ export namespace ListAgentsResponse {
     getEmail(): string;
     setEmail(value: string): void;
 
+    getEmailVerified(): boolean;
+    setEmailVerified(value: boolean): void;
+
+    hasMfaInfo(): boolean;
+    clearMfaInfo(): void;
+    getMfaInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+    setMfaInfo(value?: api_commons_org_user_pb.MfaInfo): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AgentDetails.AsObject;
     static toObject(includeInstance: boolean, msg: AgentDetails): AgentDetails.AsObject;
@@ -876,6 +897,8 @@ export namespace ListAgentsResponse {
       agent: boolean,
       timeZoneOverride?: api_commons_org_pb.TimeZoneWrapper.AsObject,
       email: string,
+      emailVerified: boolean,
+      mfaInfo?: api_commons_org_user_pb.MfaInfo.AsObject,
     }
 
     export class HuntGroup extends jspb.Message {
@@ -1099,6 +1122,14 @@ export namespace ListUsersResponse {
     setTrustIdsList(value: Array<string>): void;
     addTrustIds(value: string, index?: number): string;
 
+    hasMfaInfo(): boolean;
+    clearMfaInfo(): void;
+    getMfaInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+    setMfaInfo(value?: api_commons_org_user_pb.MfaInfo): void;
+
+    getEmailVerified(): boolean;
+    setEmailVerified(value: boolean): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UserDetails.AsObject;
     static toObject(includeInstance: boolean, msg: UserDetails): UserDetails.AsObject;
@@ -1122,6 +1153,8 @@ export namespace ListUsersResponse {
       accountOwner: boolean,
       agent: boolean,
       trustIdsList: Array<string>,
+      mfaInfo?: api_commons_org_user_pb.MfaInfo.AsObject,
+      emailVerified: boolean,
     }
   }
 }
@@ -1214,6 +1247,14 @@ export namespace ListUsersByOrgIdResponse {
     setTrustIdsList(value: Array<string>): void;
     addTrustIds(value: string, index?: number): string;
 
+    hasMfaInfo(): boolean;
+    clearMfaInfo(): void;
+    getMfaInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+    setMfaInfo(value?: api_commons_org_user_pb.MfaInfo): void;
+
+    getEmailVerified(): boolean;
+    setEmailVerified(value: boolean): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UserDetails.AsObject;
     static toObject(includeInstance: boolean, msg: UserDetails): UserDetails.AsObject;
@@ -1238,6 +1279,8 @@ export namespace ListUsersByOrgIdResponse {
       accountOwner: boolean,
       agent: boolean,
       trustIdsList: Array<string>,
+      mfaInfo?: api_commons_org_user_pb.MfaInfo.AsObject,
+      emailVerified: boolean,
     }
   }
 }
@@ -1331,6 +1374,14 @@ export namespace ListUsersByRegionResponse {
     setTrustIdsList(value: Array<string>): void;
     addTrustIds(value: string, index?: number): string;
 
+    hasMfaInfo(): boolean;
+    clearMfaInfo(): void;
+    getMfaInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+    setMfaInfo(value?: api_commons_org_user_pb.MfaInfo): void;
+
+    getEmailVerified(): boolean;
+    setEmailVerified(value: boolean): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UserDetails.AsObject;
     static toObject(includeInstance: boolean, msg: UserDetails): UserDetails.AsObject;
@@ -1354,6 +1405,8 @@ export namespace ListUsersByRegionResponse {
       accountOwner: boolean,
       agent: boolean,
       trustIdsList: Array<string>,
+      mfaInfo?: api_commons_org_user_pb.MfaInfo.AsObject,
+      emailVerified: boolean,
     }
   }
 }
@@ -2391,6 +2444,11 @@ export class GetUserSessionDataResponse extends jspb.Message {
   getOrgAllowedMfa(): boolean;
   setOrgAllowedMfa(value: boolean): void;
 
+  hasLocalePreferences(): boolean;
+  clearLocalePreferences(): void;
+  getLocalePreferences(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferences(value?: api_commons_org_preferences_pb.LocalePreferences): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserSessionDataResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserSessionDataResponse): GetUserSessionDataResponse.AsObject;
@@ -2409,6 +2467,7 @@ export namespace GetUserSessionDataResponse {
     permissionGroupsList: Array<api_commons_org_permissions_pb.PermissionGroup.AsObject>,
     labelsList: Array<api_commons_org_labels_pb.Label.AsObject>,
     orgAllowedMfa: boolean,
+    localePreferences?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
   }
 
   export class User extends jspb.Message {
@@ -2678,15 +2737,11 @@ export namespace RefreshMfaLockoutByOrgIdResponse {
 }
 
 export class SetMfaTypeRequest extends jspb.Message {
-  hasOtp(): boolean;
-  clearOtp(): void;
-  getOtp(): api_commons_org_user_pb.MfaInfo.OtpType | undefined;
-  setOtp(value?: api_commons_org_user_pb.MfaInfo.OtpType): void;
+  hasInfo(): boolean;
+  clearInfo(): void;
+  getInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+  setInfo(value?: api_commons_org_user_pb.MfaInfo): void;
 
-  getUserId(): string;
-  setUserId(value: string): void;
-
-  getMfaTypeCase(): SetMfaTypeRequest.MfaTypeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetMfaTypeRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SetMfaTypeRequest): SetMfaTypeRequest.AsObject;
@@ -2699,13 +2754,7 @@ export class SetMfaTypeRequest extends jspb.Message {
 
 export namespace SetMfaTypeRequest {
   export type AsObject = {
-    otp?: api_commons_org_user_pb.MfaInfo.OtpType.AsObject,
-    userId: string,
-  }
-
-  export enum MfaTypeCase {
-    MFA_TYPE_NOT_SET = 0,
-    OTP = 1,
+    info?: api_commons_org_user_pb.MfaInfo.AsObject,
   }
 }
 
@@ -2726,12 +2775,11 @@ export namespace SetMfaTypeResponse {
 }
 
 export class SetMyMfaTypeRequest extends jspb.Message {
-  hasOtp(): boolean;
-  clearOtp(): void;
-  getOtp(): api_commons_org_user_pb.MfaInfo.OtpType | undefined;
-  setOtp(value?: api_commons_org_user_pb.MfaInfo.OtpType): void;
+  hasInfo(): boolean;
+  clearInfo(): void;
+  getInfo(): api_commons_org_user_pb.MfaInfo | undefined;
+  setInfo(value?: api_commons_org_user_pb.MfaInfo): void;
 
-  getMfaTypeCase(): SetMyMfaTypeRequest.MfaTypeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetMyMfaTypeRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SetMyMfaTypeRequest): SetMyMfaTypeRequest.AsObject;
@@ -2744,12 +2792,7 @@ export class SetMyMfaTypeRequest extends jspb.Message {
 
 export namespace SetMyMfaTypeRequest {
   export type AsObject = {
-    otp?: api_commons_org_user_pb.MfaInfo.OtpType.AsObject,
-  }
-
-  export enum MfaTypeCase {
-    MFA_TYPE_NOT_SET = 0,
-    OTP = 1,
+    info?: api_commons_org_user_pb.MfaInfo.AsObject,
   }
 }
 

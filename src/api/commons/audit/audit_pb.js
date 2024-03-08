@@ -12,8 +12,10 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
+var localGlobalThis = require("../../../global.js");
+var proto = localGlobalThis.proto;
 var goog = jspb;
-var global =
+var global = localGlobalThis || 
     (typeof globalThis !== 'undefined' && globalThis) ||
     (typeof window !== 'undefined' && window) ||
     (typeof global !== 'undefined' && global) ||
@@ -29,6 +31,8 @@ var api_commons_audit_billing_events_pb = require('../../../api/commons/audit/bi
 goog.object.extend(proto, api_commons_audit_billing_events_pb);
 var api_commons_audit_compliance_events_pb = require('../../../api/commons/audit/compliance_events_pb.js');
 goog.object.extend(proto, api_commons_audit_compliance_events_pb);
+var api_commons_audit_delivery_events_pb = require('../../../api/commons/audit/delivery_events_pb.js');
+goog.object.extend(proto, api_commons_audit_delivery_events_pb);
 var api_commons_audit_event_types_pb = require('../../../api/commons/audit/event_types_pb.js');
 goog.object.extend(proto, api_commons_audit_event_types_pb);
 var api_commons_audit_events_pb = require('../../../api/commons/audit/events_pb.js');
@@ -77,7 +81,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1100,1101]];
 
 /**
  * @enum {number}
@@ -138,6 +142,7 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   OMNICHANNEL_MANUAL_APPROVE_TASK_REJECTED_EVENT: 359,
   OMNICHANNEL_MANUAL_APPROVE_TASK_TIMEOUT_EVENT: 360,
   OMNICHANNEL_MANUAL_APPROVE_TASK_REQUEUE_EVENT: 361,
+  OMNICHANNEL_TRANSCRIPT_SAVED_EVENT: 362,
   ASM_AGENT_LOGIN_EVENT: 400,
   ASM_OPEN_VOICE_EVENT: 401,
   ASM_OPEN_OMNI_AGENT_EVENT: 402,
@@ -176,6 +181,8 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   COMPLIANCE_RND_QUERY_CACHED_EVENT: 701,
   AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT: 800,
   LMS_PIPELINE_FAILURE_EVENT: 900,
+  LMS_PIPELINE_NO_OUTPUT_EVENT: 901,
+  LMS_PIPELINE_SUCCESSFUL_EVENT: 902,
   BILLING_COMMIT_BILLING_PLAN_EVENT: 1000,
   BILLING_CREATE_BILLING_PLAN_EVENT: 1001,
   BILLING_CREATE_INVOICE_EVENT: 1002,
@@ -186,7 +193,9 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   BILLING_EXPORT_INVOICE_EVENT: 1007,
   BILLING_UPDATE_BILLING_PLAN_EVENT: 1008,
   BILLING_UPDATE_INVOICE_EVENT: 1009,
-  BILLING_UPDATE_RATE_DEFINITION_EVENT: 1010
+  BILLING_UPDATE_RATE_DEFINITION_EVENT: 1010,
+  DELIVERY_FAILURE_EVENT: 1100,
+  DELIVERY_SUCCESS_EVENT: 1101
 };
 
 /**
@@ -287,6 +296,7 @@ proto.api.commons.audit.AuditEvent.toObject = function(includeInstance, msg) {
     omnichannelManualApproveTaskRejectedEvent: (f = msg.getOmnichannelManualApproveTaskRejectedEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRejectedEvent.toObject(includeInstance, f),
     omnichannelManualApproveTaskTimeoutEvent: (f = msg.getOmnichannelManualApproveTaskTimeoutEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskTimeoutEvent.toObject(includeInstance, f),
     omnichannelManualApproveTaskRequeueEvent: (f = msg.getOmnichannelManualApproveTaskRequeueEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.toObject(includeInstance, f),
+    omnichannelTranscriptSavedEvent: (f = msg.getOmnichannelTranscriptSavedEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent.toObject(includeInstance, f),
     asmAgentLoginEvent: (f = msg.getAsmAgentLoginEvent()) && api_commons_audit_asm_events_pb.AsmAgentLoginEvent.toObject(includeInstance, f),
     asmOpenVoiceEvent: (f = msg.getAsmOpenVoiceEvent()) && api_commons_audit_asm_events_pb.AsmOpenVoiceEvent.toObject(includeInstance, f),
     asmOpenOmniAgentEvent: (f = msg.getAsmOpenOmniAgentEvent()) && api_commons_audit_asm_events_pb.AsmOpenOmniAgentEvent.toObject(includeInstance, f),
@@ -325,6 +335,8 @@ proto.api.commons.audit.AuditEvent.toObject = function(includeInstance, msg) {
     complianceRndQueryCachedEvent: (f = msg.getComplianceRndQueryCachedEvent()) && api_commons_audit_compliance_events_pb.ComplianceRndQueryEvent.toObject(includeInstance, f),
     agentTrainingCreateLearningOpportunityEvent: (f = msg.getAgentTrainingCreateLearningOpportunityEvent()) && api_commons_audit_agent_training_events_pb.AgentTrainingCreateLearningOpportunityEvent.toObject(includeInstance, f),
     lmsPipelineFailureEvent: (f = msg.getLmsPipelineFailureEvent()) && api_commons_audit_lms_events_pb.LMSPipelineFailureEvent.toObject(includeInstance, f),
+    lmsPipelineNoOutputEvent: (f = msg.getLmsPipelineNoOutputEvent()) && api_commons_audit_lms_events_pb.LMSPipelineNoOutputEvent.toObject(includeInstance, f),
+    lmsPipelineSuccessfulEvent: (f = msg.getLmsPipelineSuccessfulEvent()) && api_commons_audit_lms_events_pb.LMSPipelineSuccessfulEvent.toObject(includeInstance, f),
     billingCommitBillingPlanEvent: (f = msg.getBillingCommitBillingPlanEvent()) && api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent.toObject(includeInstance, f),
     billingCreateBillingPlanEvent: (f = msg.getBillingCreateBillingPlanEvent()) && api_commons_audit_billing_events_pb.BillingCreateBillingPlanEvent.toObject(includeInstance, f),
     billingCreateInvoiceEvent: (f = msg.getBillingCreateInvoiceEvent()) && api_commons_audit_billing_events_pb.BillingCreateInvoiceEvent.toObject(includeInstance, f),
@@ -335,7 +347,9 @@ proto.api.commons.audit.AuditEvent.toObject = function(includeInstance, msg) {
     billingExportInvoiceEvent: (f = msg.getBillingExportInvoiceEvent()) && api_commons_audit_billing_events_pb.BillingExportInvoiceEvent.toObject(includeInstance, f),
     billingUpdateBillingPlanEvent: (f = msg.getBillingUpdateBillingPlanEvent()) && api_commons_audit_billing_events_pb.BillingUpdateBillingPlanEvent.toObject(includeInstance, f),
     billingUpdateInvoiceEvent: (f = msg.getBillingUpdateInvoiceEvent()) && api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent.toObject(includeInstance, f),
-    billingUpdateRateDefinitionEvent: (f = msg.getBillingUpdateRateDefinitionEvent()) && api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent.toObject(includeInstance, f)
+    billingUpdateRateDefinitionEvent: (f = msg.getBillingUpdateRateDefinitionEvent()) && api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent.toObject(includeInstance, f),
+    deliveryFailureEvent: (f = msg.getDeliveryFailureEvent()) && api_commons_audit_delivery_events_pb.DeliveryFailureEvent.toObject(includeInstance, f),
+    deliverySuccessEvent: (f = msg.getDeliverySuccessEvent()) && api_commons_audit_delivery_events_pb.DeliverySuccessEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -667,6 +681,11 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       reader.readMessage(value,api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.deserializeBinaryFromReader);
       msg.setOmnichannelManualApproveTaskRequeueEvent(value);
       break;
+    case 362:
+      var value = new api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent;
+      reader.readMessage(value,api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent.deserializeBinaryFromReader);
+      msg.setOmnichannelTranscriptSavedEvent(value);
+      break;
     case 400:
       var value = new api_commons_audit_asm_events_pb.AsmAgentLoginEvent;
       reader.readMessage(value,api_commons_audit_asm_events_pb.AsmAgentLoginEvent.deserializeBinaryFromReader);
@@ -857,6 +876,16 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       reader.readMessage(value,api_commons_audit_lms_events_pb.LMSPipelineFailureEvent.deserializeBinaryFromReader);
       msg.setLmsPipelineFailureEvent(value);
       break;
+    case 901:
+      var value = new api_commons_audit_lms_events_pb.LMSPipelineNoOutputEvent;
+      reader.readMessage(value,api_commons_audit_lms_events_pb.LMSPipelineNoOutputEvent.deserializeBinaryFromReader);
+      msg.setLmsPipelineNoOutputEvent(value);
+      break;
+    case 902:
+      var value = new api_commons_audit_lms_events_pb.LMSPipelineSuccessfulEvent;
+      reader.readMessage(value,api_commons_audit_lms_events_pb.LMSPipelineSuccessfulEvent.deserializeBinaryFromReader);
+      msg.setLmsPipelineSuccessfulEvent(value);
+      break;
     case 1000:
       var value = new api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent;
       reader.readMessage(value,api_commons_audit_billing_events_pb.BillingCommitBillingPlanEvent.deserializeBinaryFromReader);
@@ -911,6 +940,16 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent;
       reader.readMessage(value,api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent.deserializeBinaryFromReader);
       msg.setBillingUpdateRateDefinitionEvent(value);
+      break;
+    case 1100:
+      var value = new api_commons_audit_delivery_events_pb.DeliveryFailureEvent;
+      reader.readMessage(value,api_commons_audit_delivery_events_pb.DeliveryFailureEvent.deserializeBinaryFromReader);
+      msg.setDeliveryFailureEvent(value);
+      break;
+    case 1101:
+      var value = new api_commons_audit_delivery_events_pb.DeliverySuccessEvent;
+      reader.readMessage(value,api_commons_audit_delivery_events_pb.DeliverySuccessEvent.deserializeBinaryFromReader);
+      msg.setDeliverySuccessEvent(value);
       break;
     default:
       reader.skipField();
@@ -1416,6 +1455,14 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.serializeBinaryToWriter
     );
   }
+  f = message.getOmnichannelTranscriptSavedEvent();
+  if (f != null) {
+    writer.writeMessage(
+      362,
+      f,
+      api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent.serializeBinaryToWriter
+    );
+  }
   f = message.getAsmAgentLoginEvent();
   if (f != null) {
     writer.writeMessage(
@@ -1720,6 +1767,22 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       api_commons_audit_lms_events_pb.LMSPipelineFailureEvent.serializeBinaryToWriter
     );
   }
+  f = message.getLmsPipelineNoOutputEvent();
+  if (f != null) {
+    writer.writeMessage(
+      901,
+      f,
+      api_commons_audit_lms_events_pb.LMSPipelineNoOutputEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getLmsPipelineSuccessfulEvent();
+  if (f != null) {
+    writer.writeMessage(
+      902,
+      f,
+      api_commons_audit_lms_events_pb.LMSPipelineSuccessfulEvent.serializeBinaryToWriter
+    );
+  }
   f = message.getBillingCommitBillingPlanEvent();
   if (f != null) {
     writer.writeMessage(
@@ -1806,6 +1869,22 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       1010,
       f,
       api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeliveryFailureEvent();
+  if (f != null) {
+    writer.writeMessage(
+      1100,
+      f,
+      api_commons_audit_delivery_events_pb.DeliveryFailureEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeliverySuccessEvent();
+  if (f != null) {
+    writer.writeMessage(
+      1101,
+      f,
+      api_commons_audit_delivery_events_pb.DeliverySuccessEvent.serializeBinaryToWriter
     );
   }
 };
@@ -3937,6 +4016,43 @@ proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelManualApproveTaskRequ
 
 
 /**
+ * optional OmnichannelTranscriptSavedEvent omnichannel_transcript_saved_event = 362;
+ * @return {?proto.api.commons.audit.OmnichannelTranscriptSavedEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getOmnichannelTranscriptSavedEvent = function() {
+  return /** @type{?proto.api.commons.audit.OmnichannelTranscriptSavedEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent, 362));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.OmnichannelTranscriptSavedEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setOmnichannelTranscriptSavedEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 362, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearOmnichannelTranscriptSavedEvent = function() {
+  return this.setOmnichannelTranscriptSavedEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelTranscriptSavedEvent = function() {
+  return jspb.Message.getField(this, 362) != null;
+};
+
+
+/**
  * optional AsmAgentLoginEvent asm_agent_login_event = 400;
  * @return {?proto.api.commons.audit.AsmAgentLoginEvent}
  */
@@ -5343,6 +5459,80 @@ proto.api.commons.audit.AuditEvent.prototype.hasLmsPipelineFailureEvent = functi
 
 
 /**
+ * optional LMSPipelineNoOutputEvent lms_pipeline_no_output_event = 901;
+ * @return {?proto.api.commons.audit.LMSPipelineNoOutputEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getLmsPipelineNoOutputEvent = function() {
+  return /** @type{?proto.api.commons.audit.LMSPipelineNoOutputEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_lms_events_pb.LMSPipelineNoOutputEvent, 901));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.LMSPipelineNoOutputEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setLmsPipelineNoOutputEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 901, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearLmsPipelineNoOutputEvent = function() {
+  return this.setLmsPipelineNoOutputEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasLmsPipelineNoOutputEvent = function() {
+  return jspb.Message.getField(this, 901) != null;
+};
+
+
+/**
+ * optional LMSPipelineSuccessfulEvent lms_pipeline_successful_event = 902;
+ * @return {?proto.api.commons.audit.LMSPipelineSuccessfulEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getLmsPipelineSuccessfulEvent = function() {
+  return /** @type{?proto.api.commons.audit.LMSPipelineSuccessfulEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_lms_events_pb.LMSPipelineSuccessfulEvent, 902));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.LMSPipelineSuccessfulEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setLmsPipelineSuccessfulEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 902, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearLmsPipelineSuccessfulEvent = function() {
+  return this.setLmsPipelineSuccessfulEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasLmsPipelineSuccessfulEvent = function() {
+  return jspb.Message.getField(this, 902) != null;
+};
+
+
+/**
  * optional BillingCommitBillingPlanEvent billing_commit_billing_plan_event = 1000;
  * @return {?proto.api.commons.audit.BillingCommitBillingPlanEvent}
  */
@@ -5746,6 +5936,80 @@ proto.api.commons.audit.AuditEvent.prototype.clearBillingUpdateRateDefinitionEve
  */
 proto.api.commons.audit.AuditEvent.prototype.hasBillingUpdateRateDefinitionEvent = function() {
   return jspb.Message.getField(this, 1010) != null;
+};
+
+
+/**
+ * optional DeliveryFailureEvent delivery_failure_event = 1100;
+ * @return {?proto.api.commons.audit.DeliveryFailureEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getDeliveryFailureEvent = function() {
+  return /** @type{?proto.api.commons.audit.DeliveryFailureEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_delivery_events_pb.DeliveryFailureEvent, 1100));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.DeliveryFailureEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setDeliveryFailureEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1100, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearDeliveryFailureEvent = function() {
+  return this.setDeliveryFailureEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasDeliveryFailureEvent = function() {
+  return jspb.Message.getField(this, 1100) != null;
+};
+
+
+/**
+ * optional DeliverySuccessEvent delivery_success_event = 1101;
+ * @return {?proto.api.commons.audit.DeliverySuccessEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getDeliverySuccessEvent = function() {
+  return /** @type{?proto.api.commons.audit.DeliverySuccessEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_delivery_events_pb.DeliverySuccessEvent, 1101));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.DeliverySuccessEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setDeliverySuccessEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1101, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearDeliverySuccessEvent = function() {
+  return this.setDeliverySuccessEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasDeliverySuccessEvent = function() {
+  return jspb.Message.getField(this, 1101) != null;
 };
 
 
