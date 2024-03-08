@@ -661,15 +661,6 @@ type WFMListUnassignedWFMAgents = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsResponse;
 };
 
-type WFMRemoveAgentFromOrg = {
-  readonly methodName: string;
-  readonly service: typeof WFM;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromOrgRequest;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromOrgResponse;
-};
-
 type WFMListWFMAgentsAssociatedWithAgentGroup = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1582,7 +1573,6 @@ export class WFM {
   static readonly ListUngroupedWFMAgents: WFMListUngroupedWFMAgents;
   static readonly ListWFMAgentSids: WFMListWFMAgentSids;
   static readonly ListUnassignedWFMAgents: WFMListUnassignedWFMAgents;
-  static readonly RemoveAgentFromOrg: WFMRemoveAgentFromOrg;
   static readonly ListWFMAgentsAssociatedWithAgentGroup: WFMListWFMAgentsAssociatedWithAgentGroup;
   static readonly CreateWFMAgentMemberships: WFMCreateWFMAgentMemberships;
   static readonly DeleteWFMAgentMemberships: WFMDeleteWFMAgentMemberships;
@@ -2318,15 +2308,6 @@ export class WFMClient {
   listUnassignedWFMAgents(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsResponse|null) => void
-  ): UnaryResponse;
-  removeAgentFromOrg(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromOrgRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromOrgResponse|null) => void
-  ): UnaryResponse;
-  removeAgentFromOrg(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromOrgRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromOrgResponse|null) => void
   ): UnaryResponse;
   listWFMAgentsAssociatedWithAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentsAssociatedWithAgentGroupReq,
