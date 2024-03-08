@@ -4720,6 +4720,46 @@ export namespace DeleteWFMAgentsMembershipsRes {
   }
 }
 
+export class RemoveAgentFromOrgRequest extends jspb.Message {
+  getWfmAgentSidToRemove(): number;
+  setWfmAgentSidToRemove(value: number): void;
+
+  getReplaceWithNewUnassignedAgent(): boolean;
+  setReplaceWithNewUnassignedAgent(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveAgentFromOrgRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveAgentFromOrgRequest): RemoveAgentFromOrgRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveAgentFromOrgRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveAgentFromOrgRequest;
+  static deserializeBinaryFromReader(message: RemoveAgentFromOrgRequest, reader: jspb.BinaryReader): RemoveAgentFromOrgRequest;
+}
+
+export namespace RemoveAgentFromOrgRequest {
+  export type AsObject = {
+    wfmAgentSidToRemove: number,
+    replaceWithNewUnassignedAgent: boolean,
+  }
+}
+
+export class RemoveAgentFromOrgResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveAgentFromOrgResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveAgentFromOrgResponse): RemoveAgentFromOrgResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveAgentFromOrgResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveAgentFromOrgResponse;
+  static deserializeBinaryFromReader(message: RemoveAgentFromOrgResponse, reader: jspb.BinaryReader): RemoveAgentFromOrgResponse;
+}
+
+export namespace RemoveAgentFromOrgResponse {
+  export type AsObject = {
+  }
+}
+
 export class DOWPlacement extends jspb.Message {
   getStartMinute(): number;
   setStartMinute(value: number): void;

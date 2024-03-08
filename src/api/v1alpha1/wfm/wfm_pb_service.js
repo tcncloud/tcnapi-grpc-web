@@ -685,6 +685,15 @@ WFM.DeleteWFMAgentsMemberships = {
   responseType: api_v1alpha1_wfm_wfm_pb.DeleteWFMAgentsMembershipsRes
 };
 
+WFM.RemoveAgentFromOrg = {
+  methodName: "RemoveAgentFromOrg",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromOrgRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromOrgResponse
+};
+
 WFM.BuildAgentDiagnostics = {
   methodName: "BuildAgentDiagnostics",
   service: WFM,
@@ -3840,6 +3849,37 @@ WFMClient.prototype.deleteWFMAgentsMemberships = function deleteWFMAgentsMembers
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.DeleteWFMAgentsMemberships, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.removeAgentFromOrg = function removeAgentFromOrg(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.RemoveAgentFromOrg, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
