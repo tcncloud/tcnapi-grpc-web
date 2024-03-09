@@ -598,6 +598,15 @@ type WFMUpdateAgentGroup = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAgentGroupRes;
 };
 
+type WFMCreateUnassignedWFMAgent = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentResponse;
+};
+
 type WFMUpdateWFMAgent = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -641,6 +650,15 @@ type WFMListWFMAgentSids = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq;
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes;
+};
+
+type WFMListUnassignedWFMAgents = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsResponse;
 };
 
 type WFMListWFMAgentsAssociatedWithAgentGroup = {
@@ -1548,11 +1566,13 @@ export class WFM {
   static readonly CreateAgentGroup: WFMCreateAgentGroup;
   static readonly ListAgentScheduleGroups: WFMListAgentScheduleGroups;
   static readonly UpdateAgentGroup: WFMUpdateAgentGroup;
+  static readonly CreateUnassignedWFMAgent: WFMCreateUnassignedWFMAgent;
   static readonly UpdateWFMAgent: WFMUpdateWFMAgent;
   static readonly ListAllWFMAgents: WFMListAllWFMAgents;
   static readonly ListCandidateWFMAgents: WFMListCandidateWFMAgents;
   static readonly ListUngroupedWFMAgents: WFMListUngroupedWFMAgents;
   static readonly ListWFMAgentSids: WFMListWFMAgentSids;
+  static readonly ListUnassignedWFMAgents: WFMListUnassignedWFMAgents;
   static readonly ListWFMAgentsAssociatedWithAgentGroup: WFMListWFMAgentsAssociatedWithAgentGroup;
   static readonly CreateWFMAgentMemberships: WFMCreateWFMAgentMemberships;
   static readonly DeleteWFMAgentMemberships: WFMDeleteWFMAgentMemberships;
@@ -2226,6 +2246,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAgentGroupReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAgentGroupRes|null) => void
   ): UnaryResponse;
+  createUnassignedWFMAgent(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentResponse|null) => void
+  ): UnaryResponse;
+  createUnassignedWFMAgent(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentResponse|null) => void
+  ): UnaryResponse;
   updateWFMAgent(
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateWFMAgentReq,
     metadata: grpc.Metadata,
@@ -2270,6 +2299,15 @@ export class WFMClient {
   listWFMAgentSids(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes|null) => void
+  ): UnaryResponse;
+  listUnassignedWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsResponse|null) => void
+  ): UnaryResponse;
+  listUnassignedWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsResponse|null) => void
   ): UnaryResponse;
   listWFMAgentsAssociatedWithAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentsAssociatedWithAgentGroupReq,

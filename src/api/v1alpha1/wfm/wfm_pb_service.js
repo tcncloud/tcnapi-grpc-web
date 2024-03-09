@@ -604,6 +604,15 @@ WFM.UpdateAgentGroup = {
   responseType: api_v1alpha1_wfm_wfm_pb.UpdateAgentGroupRes
 };
 
+WFM.CreateUnassignedWFMAgent = {
+  methodName: "CreateUnassignedWFMAgent",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentResponse
+};
+
 WFM.UpdateWFMAgent = {
   methodName: "UpdateWFMAgent",
   service: WFM,
@@ -647,6 +656,15 @@ WFM.ListWFMAgentSids = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq,
   responseType: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes
+};
+
+WFM.ListUnassignedWFMAgents = {
+  methodName: "ListUnassignedWFMAgents",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsResponse
 };
 
 WFM.ListWFMAgentsAssociatedWithAgentGroup = {
@@ -3587,6 +3605,37 @@ WFMClient.prototype.updateAgentGroup = function updateAgentGroup(requestMessage,
   };
 };
 
+WFMClient.prototype.createUnassignedWFMAgent = function createUnassignedWFMAgent(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateUnassignedWFMAgent, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.updateWFMAgent = function updateWFMAgent(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -3716,6 +3765,37 @@ WFMClient.prototype.listWFMAgentSids = function listWFMAgentSids(requestMessage,
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.ListWFMAgentSids, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listUnassignedWFMAgents = function listUnassignedWFMAgents(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListUnassignedWFMAgents, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
