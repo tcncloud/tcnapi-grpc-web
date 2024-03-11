@@ -10879,7 +10879,7 @@ proto.api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse.prototype.toObject =
  */
 proto.api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    integrationLinkSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+
   };
 
   if (includeInstance) {
@@ -10916,10 +10916,6 @@ proto.api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setIntegrationLinkSid(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -10949,31 +10945,6 @@ proto.api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse.prototype.serializeB
  */
 proto.api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getIntegrationLinkSid();
-  if (f !== 0) {
-    writer.writeInt64(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional int64 integration_link_sid = 1;
- * @return {number}
- */
-proto.api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse.prototype.getIntegrationLinkSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse} returns this
- */
-proto.api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse.prototype.setIntegrationLinkSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 

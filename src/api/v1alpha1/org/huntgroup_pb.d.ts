@@ -1352,9 +1352,6 @@ export namespace CopyHuntGroupIntegrationLinkRequest {
 }
 
 export class CopyHuntGroupIntegrationLinkResponse extends jspb.Message {
-  getIntegrationLinkSid(): number;
-  setIntegrationLinkSid(value: number): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CopyHuntGroupIntegrationLinkResponse.AsObject;
   static toObject(includeInstance: boolean, msg: CopyHuntGroupIntegrationLinkResponse): CopyHuntGroupIntegrationLinkResponse.AsObject;
@@ -1367,7 +1364,6 @@ export class CopyHuntGroupIntegrationLinkResponse extends jspb.Message {
 
 export namespace CopyHuntGroupIntegrationLinkResponse {
   export type AsObject = {
-    integrationLinkSid: number,
   }
 }
 
