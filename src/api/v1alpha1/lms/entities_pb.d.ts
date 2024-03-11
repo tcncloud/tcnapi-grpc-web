@@ -1,5 +1,5 @@
-// package: protos.lms.v2
-// file: api/v1alpha2/lms/entities.proto
+// package: api.v1alpha1.lms
+// file: api/v1alpha1/lms/entities.proto
 
 import * as jspb from "google-protobuf";
 import * as api_v0alpha_lms_pb from "../../../api/v0alpha/lms_pb";
@@ -330,6 +330,62 @@ export class OptsParquet extends jspb.Message {
 
 export namespace OptsParquet {
   export type AsObject = {
+  }
+}
+
+export class NewTemplate extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getFilename(): string;
+  setFilename(value: string): void;
+
+  getData(): Uint8Array | string;
+  getData_asU8(): Uint8Array;
+  getData_asB64(): string;
+  setData(value: Uint8Array | string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NewTemplate.AsObject;
+  static toObject(includeInstance: boolean, msg: NewTemplate): NewTemplate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: NewTemplate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NewTemplate;
+  static deserializeBinaryFromReader(message: NewTemplate, reader: jspb.BinaryReader): NewTemplate;
+}
+
+export namespace NewTemplate {
+  export type AsObject = {
+    orgId: string,
+    filename: string,
+    data: Uint8Array | string,
+  }
+}
+
+export class ExistingTemplate extends jspb.Message {
+  getFileTemplateId(): string;
+  setFileTemplateId(value: string): void;
+
+  hasParseOpts(): boolean;
+  clearParseOpts(): void;
+  getParseOpts(): ParseOpts | undefined;
+  setParseOpts(value?: ParseOpts): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExistingTemplate.AsObject;
+  static toObject(includeInstance: boolean, msg: ExistingTemplate): ExistingTemplate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExistingTemplate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExistingTemplate;
+  static deserializeBinaryFromReader(message: ExistingTemplate, reader: jspb.BinaryReader): ExistingTemplate;
+}
+
+export namespace ExistingTemplate {
+  export type AsObject = {
+    fileTemplateId: string,
+    parseOpts?: ParseOpts.AsObject,
   }
 }
 
