@@ -7110,12 +7110,6 @@ export class EpicEntrypoint extends jspb.Message {
   getRawJson(): boolean;
   setRawJson(value: boolean): void;
 
-  getNonProd(): boolean;
-  setNonProd(value: boolean): void;
-
-  getAuthServer(): string;
-  setAuthServer(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EpicEntrypoint.AsObject;
   static toObject(includeInstance: boolean, msg: EpicEntrypoint): EpicEntrypoint.AsObject;
@@ -7141,8 +7135,6 @@ export namespace EpicEntrypoint {
     enabled: boolean,
     fieldsList: Array<Field.AsObject>,
     rawJson: boolean,
-    nonProd: boolean,
-    authServer: string,
   }
 }
 
