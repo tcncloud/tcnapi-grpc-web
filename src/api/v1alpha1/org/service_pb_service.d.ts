@@ -1221,6 +1221,15 @@ type OrgListHuntGroupIntegrationLinks = {
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksResponse;
 };
 
+type OrgCopyHuntGroupIntegrationLink = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CopyHuntGroupIntegrationLinkRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CopyHuntGroupIntegrationLinkResponse;
+};
+
 type OrgGetHuntGroupClientInfoDisplayTemplate = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1996,6 +2005,7 @@ export class Org {
   static readonly CopyHuntGroupWebLink: OrgCopyHuntGroupWebLink;
   static readonly UpdateHuntGroupWebLinks: OrgUpdateHuntGroupWebLinks;
   static readonly ListHuntGroupIntegrationLinks: OrgListHuntGroupIntegrationLinks;
+  static readonly CopyHuntGroupIntegrationLink: OrgCopyHuntGroupIntegrationLink;
   static readonly GetHuntGroupClientInfoDisplayTemplate: OrgGetHuntGroupClientInfoDisplayTemplate;
   static readonly CreateHuntGroupClientInfoDisplayTemplate: OrgCreateHuntGroupClientInfoDisplayTemplate;
   static readonly UpdateHuntGroupClientInfoDisplayTemplate: OrgUpdateHuntGroupClientInfoDisplayTemplate;
@@ -3234,6 +3244,15 @@ export class OrgClient {
   listHuntGroupIntegrationLinks(
     requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupIntegrationLinksResponse|null) => void
+  ): UnaryResponse;
+  copyHuntGroupIntegrationLink(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupIntegrationLinkRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupIntegrationLinkResponse|null) => void
+  ): UnaryResponse;
+  copyHuntGroupIntegrationLink(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupIntegrationLinkRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyHuntGroupIntegrationLinkResponse|null) => void
   ): UnaryResponse;
   getHuntGroupClientInfoDisplayTemplate(
     requestMessage: api_v1alpha1_org_huntgroup_pb.GetHuntGroupClientInfoDisplayTemplateRequest,

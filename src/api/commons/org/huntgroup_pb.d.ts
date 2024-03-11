@@ -2361,6 +2361,9 @@ export class IntegrationLink extends jspb.Message {
   getConfigurationName(): string;
   setConfigurationName(value: string): void;
 
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IntegrationLink.AsObject;
   static toObject(includeInstance: boolean, msg: IntegrationLink): IntegrationLink.AsObject;
@@ -2381,6 +2384,7 @@ export namespace IntegrationLink {
     order: number,
     parametersList: Array<IntegrationLinkParameter.AsObject>,
     configurationName: string,
+    huntGroupSid: number,
   }
 }
 
