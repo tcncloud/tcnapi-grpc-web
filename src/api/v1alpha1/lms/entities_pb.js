@@ -741,7 +741,7 @@ proto.api.v1alpha1.lms.FileTemplate.prototype.toObject = function(opt_includeIns
 proto.api.v1alpha1.lms.FileTemplate.toObject = function(includeInstance, msg) {
   var f, obj = {
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 2, 0),
     filename: jspb.Message.getFieldWithDefault(msg, 3, ""),
     fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
     proto.api.v1alpha1.lms.Field.toObject, includeInstance),
@@ -788,7 +788,7 @@ proto.api.v1alpha1.lms.FileTemplate.deserializeBinaryFromReader = function(msg, 
       msg.setOrgId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setFileTemplateId(value);
       break;
     case 3:
@@ -846,8 +846,8 @@ proto.api.v1alpha1.lms.FileTemplate.serializeBinaryToWriter = function(message, 
     );
   }
   f = message.getFileTemplateId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt64(
       2,
       f
     );
@@ -904,20 +904,20 @@ proto.api.v1alpha1.lms.FileTemplate.prototype.setOrgId = function(value) {
 
 
 /**
- * optional string file_template_id = 2;
- * @return {string}
+ * optional int64 file_template_id = 2;
+ * @return {number}
  */
 proto.api.v1alpha1.lms.FileTemplate.prototype.getFileTemplateId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.lms.FileTemplate} returns this
  */
 proto.api.v1alpha1.lms.FileTemplate.prototype.setFileTemplateId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -2840,7 +2840,7 @@ proto.api.v1alpha1.lms.ExistingTemplate.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.lms.ExistingTemplate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.lms.ParseOpts.toObject(includeInstance, f)
   };
 
@@ -2879,7 +2879,7 @@ proto.api.v1alpha1.lms.ExistingTemplate.deserializeBinaryFromReader = function(m
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setFileTemplateId(value);
       break;
     case 2:
@@ -2917,8 +2917,8 @@ proto.api.v1alpha1.lms.ExistingTemplate.prototype.serializeBinary = function() {
 proto.api.v1alpha1.lms.ExistingTemplate.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFileTemplateId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -2935,20 +2935,20 @@ proto.api.v1alpha1.lms.ExistingTemplate.serializeBinaryToWriter = function(messa
 
 
 /**
- * optional string file_template_id = 1;
- * @return {string}
+ * optional int64 file_template_id = 1;
+ * @return {number}
  */
 proto.api.v1alpha1.lms.ExistingTemplate.prototype.getFileTemplateId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.lms.ExistingTemplate} returns this
  */
 proto.api.v1alpha1.lms.ExistingTemplate.prototype.setFileTemplateId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 

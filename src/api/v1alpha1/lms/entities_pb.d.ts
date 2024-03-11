@@ -65,8 +65,8 @@ export class FileTemplate extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
-  getFileTemplateId(): string;
-  setFileTemplateId(value: string): void;
+  getFileTemplateId(): number;
+  setFileTemplateId(value: number): void;
 
   getFilename(): string;
   setFilename(value: string): void;
@@ -97,7 +97,7 @@ export class FileTemplate extends jspb.Message {
 export namespace FileTemplate {
   export type AsObject = {
     orgId: string,
-    fileTemplateId: string,
+    fileTemplateId: number,
     filename: string,
     fieldsList: Array<Field.AsObject>,
     parseOpts?: ParseOpts.AsObject,
@@ -364,8 +364,8 @@ export namespace NewTemplate {
 }
 
 export class ExistingTemplate extends jspb.Message {
-  getFileTemplateId(): string;
-  setFileTemplateId(value: string): void;
+  getFileTemplateId(): number;
+  setFileTemplateId(value: number): void;
 
   hasParseOpts(): boolean;
   clearParseOpts(): void;
@@ -384,7 +384,7 @@ export class ExistingTemplate extends jspb.Message {
 
 export namespace ExistingTemplate {
   export type AsObject = {
-    fileTemplateId: string,
+    fileTemplateId: number,
     parseOpts?: ParseOpts.AsObject,
   }
 }
