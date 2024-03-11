@@ -54681,7 +54681,9 @@ proto.api.v0alpha.EpicEntrypoint.toObject = function(includeInstance, msg) {
     enabled: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
     fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
     proto.api.v0alpha.Field.toObject, includeInstance),
-    rawJson: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
+    rawJson: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    nonProd: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
+    authServer: jspb.Message.getFieldWithDefault(msg, 16, "")
   };
 
   if (includeInstance) {
@@ -54773,6 +54775,14 @@ proto.api.v0alpha.EpicEntrypoint.deserializeBinaryFromReader = function(msg, rea
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRawJson(value);
+      break;
+    case 15:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setNonProd(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAuthServer(value);
       break;
     default:
       reader.skipField();
@@ -54893,6 +54903,20 @@ proto.api.v0alpha.EpicEntrypoint.serializeBinaryToWriter = function(message, wri
   if (f) {
     writer.writeBool(
       14,
+      f
+    );
+  }
+  f = message.getNonProd();
+  if (f) {
+    writer.writeBool(
+      15,
+      f
+    );
+  }
+  f = message.getAuthServer();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
       f
     );
   }
@@ -55188,6 +55212,42 @@ proto.api.v0alpha.EpicEntrypoint.prototype.getRawJson = function() {
  */
 proto.api.v0alpha.EpicEntrypoint.prototype.setRawJson = function(value) {
   return jspb.Message.setProto3BooleanField(this, 14, value);
+};
+
+
+/**
+ * optional bool non_prod = 15;
+ * @return {boolean}
+ */
+proto.api.v0alpha.EpicEntrypoint.prototype.getNonProd = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.EpicEntrypoint} returns this
+ */
+proto.api.v0alpha.EpicEntrypoint.prototype.setNonProd = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 15, value);
+};
+
+
+/**
+ * optional string auth_server = 16;
+ * @return {string}
+ */
+proto.api.v0alpha.EpicEntrypoint.prototype.getAuthServer = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.EpicEntrypoint} returns this
+ */
+proto.api.v0alpha.EpicEntrypoint.prototype.setAuthServer = function(value) {
+  return jspb.Message.setProto3StringField(this, 16, value);
 };
 
 
