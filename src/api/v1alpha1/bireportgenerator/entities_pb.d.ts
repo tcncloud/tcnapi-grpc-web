@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as api_commons_bireportgenerator_pb from "../../../api/commons/bireportgenerator_pb";
 import * as api_commons_enums_pb from "../../../api/commons/enums_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
+import * as api_commons_types_pb from "../../../api/commons/types_pb";
 
 export class ReportJob extends jspb.Message {
   getReportJobId(): string;
@@ -67,6 +68,14 @@ export class ReportJob extends jspb.Message {
   getHideCsvFooter(): boolean;
   setHideCsvFooter(value: boolean): void;
 
+  getTransferConfigSid(): number;
+  setTransferConfigSid(value: number): void;
+
+  hasCronExpression(): boolean;
+  clearCronExpression(): void;
+  getCronExpression(): api_commons_types_pb.CronExpression | undefined;
+  setCronExpression(value?: api_commons_types_pb.CronExpression): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportJob.AsObject;
   static toObject(includeInstance: boolean, msg: ReportJob): ReportJob.AsObject;
@@ -95,6 +104,8 @@ export namespace ReportJob {
     dashboardResourceId: string,
     timeZoneWrapper?: api_commons_org_pb.TimeZoneWrapper.AsObject,
     hideCsvFooter: boolean,
+    transferConfigSid: number,
+    cronExpression?: api_commons_types_pb.CronExpression.AsObject,
   }
 }
 

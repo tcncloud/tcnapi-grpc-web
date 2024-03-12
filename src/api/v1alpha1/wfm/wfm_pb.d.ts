@@ -4241,6 +4241,52 @@ export namespace WFMAgent {
   }
 }
 
+export class CreateUnassignedWFMAgentRequest extends jspb.Message {
+  hasWfmAgentSidToCopyAgentGroupAssociations(): boolean;
+  clearWfmAgentSidToCopyAgentGroupAssociations(): void;
+  getWfmAgentSidToCopyAgentGroupAssociations(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setWfmAgentSidToCopyAgentGroupAssociations(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateUnassignedWFMAgentRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateUnassignedWFMAgentRequest): CreateUnassignedWFMAgentRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateUnassignedWFMAgentRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateUnassignedWFMAgentRequest;
+  static deserializeBinaryFromReader(message: CreateUnassignedWFMAgentRequest, reader: jspb.BinaryReader): CreateUnassignedWFMAgentRequest;
+}
+
+export namespace CreateUnassignedWFMAgentRequest {
+  export type AsObject = {
+    wfmAgentSidToCopyAgentGroupAssociations?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    name: string,
+  }
+}
+
+export class CreateUnassignedWFMAgentResponse extends jspb.Message {
+  getWfmAgentSid(): number;
+  setWfmAgentSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateUnassignedWFMAgentResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateUnassignedWFMAgentResponse): CreateUnassignedWFMAgentResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateUnassignedWFMAgentResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateUnassignedWFMAgentResponse;
+  static deserializeBinaryFromReader(message: CreateUnassignedWFMAgentResponse, reader: jspb.BinaryReader): CreateUnassignedWFMAgentResponse;
+}
+
+export namespace CreateUnassignedWFMAgentResponse {
+  export type AsObject = {
+    wfmAgentSid: number,
+  }
+}
+
 export class UpdateWFMAgentReq extends jspb.Message {
   hasWfmAgent(): boolean;
   clearWfmAgent(): void;
@@ -4496,6 +4542,44 @@ export namespace ListWFMAgentSidsRes {
   }
 }
 
+export class ListUnassignedWFMAgentsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListUnassignedWFMAgentsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUnassignedWFMAgentsRequest): ListUnassignedWFMAgentsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListUnassignedWFMAgentsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUnassignedWFMAgentsRequest;
+  static deserializeBinaryFromReader(message: ListUnassignedWFMAgentsRequest, reader: jspb.BinaryReader): ListUnassignedWFMAgentsRequest;
+}
+
+export namespace ListUnassignedWFMAgentsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListUnassignedWFMAgentsResponse extends jspb.Message {
+  clearWfmAgentsList(): void;
+  getWfmAgentsList(): Array<WFMAgent>;
+  setWfmAgentsList(value: Array<WFMAgent>): void;
+  addWfmAgents(value?: WFMAgent, index?: number): WFMAgent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListUnassignedWFMAgentsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUnassignedWFMAgentsResponse): ListUnassignedWFMAgentsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListUnassignedWFMAgentsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUnassignedWFMAgentsResponse;
+  static deserializeBinaryFromReader(message: ListUnassignedWFMAgentsResponse, reader: jspb.BinaryReader): ListUnassignedWFMAgentsResponse;
+}
+
+export namespace ListUnassignedWFMAgentsResponse {
+  export type AsObject = {
+    wfmAgentsList: Array<WFMAgent.AsObject>,
+  }
+}
+
 export class ListWFMAgentsAssociatedWithAgentGroupReq extends jspb.Message {
   getAgentGroupSid(): number;
   setAgentGroupSid(value: number): void;
@@ -4720,7 +4804,7 @@ export namespace DeleteWFMAgentsMembershipsRes {
   }
 }
 
-export class RemoveAgentFromOrgRequest extends jspb.Message {
+export class RemoveAgentFromFutureShiftsRequest extends jspb.Message {
   getWfmAgentSidToRemove(): number;
   setWfmAgentSidToRemove(value: number): void;
 
@@ -4728,35 +4812,41 @@ export class RemoveAgentFromOrgRequest extends jspb.Message {
   setReplaceWithNewUnassignedAgent(value: boolean): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RemoveAgentFromOrgRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RemoveAgentFromOrgRequest): RemoveAgentFromOrgRequest.AsObject;
+  toObject(includeInstance?: boolean): RemoveAgentFromFutureShiftsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveAgentFromFutureShiftsRequest): RemoveAgentFromFutureShiftsRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: RemoveAgentFromOrgRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RemoveAgentFromOrgRequest;
-  static deserializeBinaryFromReader(message: RemoveAgentFromOrgRequest, reader: jspb.BinaryReader): RemoveAgentFromOrgRequest;
+  static serializeBinaryToWriter(message: RemoveAgentFromFutureShiftsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveAgentFromFutureShiftsRequest;
+  static deserializeBinaryFromReader(message: RemoveAgentFromFutureShiftsRequest, reader: jspb.BinaryReader): RemoveAgentFromFutureShiftsRequest;
 }
 
-export namespace RemoveAgentFromOrgRequest {
+export namespace RemoveAgentFromFutureShiftsRequest {
   export type AsObject = {
     wfmAgentSidToRemove: number,
     replaceWithNewUnassignedAgent: boolean,
   }
 }
 
-export class RemoveAgentFromOrgResponse extends jspb.Message {
+export class RemoveAgentFromFutureShiftsResponse extends jspb.Message {
+  hasUnassignedAgentSid(): boolean;
+  clearUnassignedAgentSid(): void;
+  getUnassignedAgentSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setUnassignedAgentSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RemoveAgentFromOrgResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: RemoveAgentFromOrgResponse): RemoveAgentFromOrgResponse.AsObject;
+  toObject(includeInstance?: boolean): RemoveAgentFromFutureShiftsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveAgentFromFutureShiftsResponse): RemoveAgentFromFutureShiftsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: RemoveAgentFromOrgResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RemoveAgentFromOrgResponse;
-  static deserializeBinaryFromReader(message: RemoveAgentFromOrgResponse, reader: jspb.BinaryReader): RemoveAgentFromOrgResponse;
+  static serializeBinaryToWriter(message: RemoveAgentFromFutureShiftsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveAgentFromFutureShiftsResponse;
+  static deserializeBinaryFromReader(message: RemoveAgentFromFutureShiftsResponse, reader: jspb.BinaryReader): RemoveAgentFromFutureShiftsResponse;
 }
 
-export namespace RemoveAgentFromOrgResponse {
+export namespace RemoveAgentFromFutureShiftsResponse {
   export type AsObject = {
+    unassignedAgentSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
   }
 }
 
@@ -9260,6 +9350,9 @@ export class GetPerformanceMetricsReq extends jspb.Message {
   getIntervalWidthInMinutes(): number;
   setIntervalWidthInMinutes(value: number): void;
 
+  getResyncCallStats(): boolean;
+  setResyncCallStats(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPerformanceMetricsReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetPerformanceMetricsReq): GetPerformanceMetricsReq.AsObject;
@@ -9277,6 +9370,7 @@ export namespace GetPerformanceMetricsReq {
     datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     metricParamsList: Array<PerformanceMetricParameter.AsObject>,
     intervalWidthInMinutes: number,
+    resyncCallStats: boolean,
   }
 }
 
