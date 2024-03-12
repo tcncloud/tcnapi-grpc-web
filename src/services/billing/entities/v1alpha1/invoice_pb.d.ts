@@ -38,6 +38,9 @@ export class Invoice extends jspb.Message {
   getUrl(): google_protobuf_wrappers_pb.StringValue | undefined;
   setUrl(value?: google_protobuf_wrappers_pb.StringValue): void;
 
+  getClientId(): string;
+  setClientId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Invoice.AsObject;
   static toObject(includeInstance: boolean, msg: Invoice): Invoice.AsObject;
@@ -57,6 +60,7 @@ export namespace Invoice {
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     itemsList: Array<InvoiceItem.AsObject>,
     url?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    clientId: string,
   }
 }
 
@@ -80,6 +84,19 @@ export class InvoiceItem extends jspb.Message {
   getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  hasDate(): boolean;
+  clearDate(): void;
+  getDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  clearColumnsList(): void;
+  getColumnsList(): Array<InvoiceItemColumn>;
+  setColumnsList(value: Array<InvoiceItemColumn>): void;
+  addColumns(value?: InvoiceItemColumn, index?: number): InvoiceItemColumn;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InvoiceItem.AsObject;
   static toObject(includeInstance: boolean, msg: InvoiceItem): InvoiceItem.AsObject;
@@ -97,6 +114,33 @@ export namespace InvoiceItem {
     price: number,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    description: string,
+    date?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    columnsList: Array<InvoiceItemColumn.AsObject>,
+  }
+}
+
+export class InvoiceItemColumn extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getValue(): number;
+  setValue(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InvoiceItemColumn.AsObject;
+  static toObject(includeInstance: boolean, msg: InvoiceItemColumn): InvoiceItemColumn.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: InvoiceItemColumn, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InvoiceItemColumn;
+  static deserializeBinaryFromReader(message: InvoiceItemColumn, reader: jspb.BinaryReader): InvoiceItemColumn;
+}
+
+export namespace InvoiceItemColumn {
+  export type AsObject = {
+    name: string,
+    value: number,
   }
 }
 
