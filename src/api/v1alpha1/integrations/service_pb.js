@@ -2296,7 +2296,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -25848,6 +25848,13 @@ proto.api.v1alpha1.integrations.HangUpEpicPatientCallReq.prototype.setEpiccallid
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -25880,7 +25887,7 @@ proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq.prototype.toObject = func
 proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    server: jspb.Message.getFieldWithDefault(msg, 2, "")
+    serversList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -25921,9 +25928,9 @@ proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq.deserializeBinaryFromRead
       var value = /** @type {string} */ (reader.readString());
       msg.setOrgId(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setServer(value);
+      msg.addServers(value);
       break;
     default:
       reader.skipField();
@@ -25961,10 +25968,10 @@ proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq.serializeBinaryToWriter =
       f
     );
   }
-  f = message.getServer();
+  f = message.getServersList();
   if (f.length > 0) {
-    writer.writeString(
-      2,
+    writer.writeRepeatedString(
+      3,
       f
     );
   }
@@ -25990,20 +25997,39 @@ proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq.prototype.setOrgId = func
 
 
 /**
- * optional string server = 2;
- * @return {string}
+ * repeated string servers = 3;
+ * @return {!Array<string>}
  */
-proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq.prototype.getServer = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq.prototype.getServersList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq} returns this
+ */
+proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq.prototype.setServersList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
 };
 
 
 /**
  * @param {string} value
+ * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq} returns this
  */
-proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq.prototype.setServer = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq.prototype.addServers = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq} returns this
+ */
+proto.api.v1alpha1.integrations.GenerateEpicKeyPairReq.prototype.clearServersList = function() {
+  return this.setServersList([]);
 };
 
 
