@@ -4804,6 +4804,52 @@ export namespace DeleteWFMAgentsMembershipsRes {
   }
 }
 
+export class RemoveAgentFromFutureShiftsRequest extends jspb.Message {
+  getWfmAgentSidToRemove(): number;
+  setWfmAgentSidToRemove(value: number): void;
+
+  getReplaceWithNewUnassignedAgent(): boolean;
+  setReplaceWithNewUnassignedAgent(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveAgentFromFutureShiftsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveAgentFromFutureShiftsRequest): RemoveAgentFromFutureShiftsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveAgentFromFutureShiftsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveAgentFromFutureShiftsRequest;
+  static deserializeBinaryFromReader(message: RemoveAgentFromFutureShiftsRequest, reader: jspb.BinaryReader): RemoveAgentFromFutureShiftsRequest;
+}
+
+export namespace RemoveAgentFromFutureShiftsRequest {
+  export type AsObject = {
+    wfmAgentSidToRemove: number,
+    replaceWithNewUnassignedAgent: boolean,
+  }
+}
+
+export class RemoveAgentFromFutureShiftsResponse extends jspb.Message {
+  hasUnassignedAgentSid(): boolean;
+  clearUnassignedAgentSid(): void;
+  getUnassignedAgentSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setUnassignedAgentSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveAgentFromFutureShiftsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveAgentFromFutureShiftsResponse): RemoveAgentFromFutureShiftsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveAgentFromFutureShiftsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveAgentFromFutureShiftsResponse;
+  static deserializeBinaryFromReader(message: RemoveAgentFromFutureShiftsResponse, reader: jspb.BinaryReader): RemoveAgentFromFutureShiftsResponse;
+}
+
+export namespace RemoveAgentFromFutureShiftsResponse {
+  export type AsObject = {
+    unassignedAgentSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+  }
+}
+
 export class DOWPlacement extends jspb.Message {
   getStartMinute(): number;
   setStartMinute(value: number): void;
@@ -9304,6 +9350,9 @@ export class GetPerformanceMetricsReq extends jspb.Message {
   getIntervalWidthInMinutes(): number;
   setIntervalWidthInMinutes(value: number): void;
 
+  getResyncCallStats(): boolean;
+  setResyncCallStats(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPerformanceMetricsReq.AsObject;
   static toObject(includeInstance: boolean, msg: GetPerformanceMetricsReq): GetPerformanceMetricsReq.AsObject;
@@ -9321,6 +9370,7 @@ export namespace GetPerformanceMetricsReq {
     datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     metricParamsList: Array<PerformanceMetricParameter.AsObject>,
     intervalWidthInMinutes: number,
+    resyncCallStats: boolean,
   }
 }
 

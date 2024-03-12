@@ -697,6 +697,15 @@ type WFMDeleteWFMAgentsMemberships = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteWFMAgentsMembershipsRes;
 };
 
+type WFMRemoveAgentFromFutureShifts = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromFutureShiftsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromFutureShiftsResponse;
+};
+
 type WFMBuildAgentDiagnostics = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1577,6 +1586,7 @@ export class WFM {
   static readonly CreateWFMAgentMemberships: WFMCreateWFMAgentMemberships;
   static readonly DeleteWFMAgentMemberships: WFMDeleteWFMAgentMemberships;
   static readonly DeleteWFMAgentsMemberships: WFMDeleteWFMAgentsMemberships;
+  static readonly RemoveAgentFromFutureShifts: WFMRemoveAgentFromFutureShifts;
   static readonly BuildAgentDiagnostics: WFMBuildAgentDiagnostics;
   static readonly CreateShiftTemplate: WFMCreateShiftTemplate;
   static readonly UpdateShiftTemplate: WFMUpdateShiftTemplate;
@@ -2344,6 +2354,15 @@ export class WFMClient {
   deleteWFMAgentsMemberships(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteWFMAgentsMembershipsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteWFMAgentsMembershipsRes|null) => void
+  ): UnaryResponse;
+  removeAgentFromFutureShifts(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromFutureShiftsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromFutureShiftsResponse|null) => void
+  ): UnaryResponse;
+  removeAgentFromFutureShifts(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromFutureShiftsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromFutureShiftsResponse|null) => void
   ): UnaryResponse;
   buildAgentDiagnostics(
     requestMessage: api_v1alpha1_wfm_wfm_pb.BuildAgentDiagnosticsReq,
