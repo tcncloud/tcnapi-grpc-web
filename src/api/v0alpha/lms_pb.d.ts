@@ -1873,6 +1873,11 @@ export class Process extends jspb.Message {
   getEpicEntryPoint(): EpicEntrypoint | undefined;
   setEpicEntryPoint(value?: EpicEntrypoint): void;
 
+  hasContactManagerSink(): boolean;
+  clearContactManagerSink(): void;
+  getContactManagerSink(): ContactManagerSink | undefined;
+  setContactManagerSink(value?: ContactManagerSink): void;
+
   getProcCase(): Process.ProcCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Process.AsObject;
@@ -1922,6 +1927,7 @@ export namespace Process {
     webExchangeProcess?: WebExchangeProcess.AsObject,
     split?: SplitCriteria.AsObject,
     epicEntryPoint?: EpicEntrypoint.AsObject,
+    contactManagerSink?: ContactManagerSink.AsObject,
   }
 
   export enum ProcCase {
@@ -1961,6 +1967,7 @@ export namespace Process {
     WEB_EXCHANGE_PROCESS = 74,
     SPLIT = 75,
     EPIC_ENTRY_POINT = 76,
+    CONTACT_MANAGER_SINK = 77,
   }
 }
 
@@ -5602,6 +5609,44 @@ export namespace ReshapeAction {
     PAD = 52,
     TRIM = 53,
     EXTRACT = 54,
+  }
+}
+
+export class ContactManagerSink extends jspb.Message {
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  getContactListName(): string;
+  setContactListName(value: string): void;
+
+  getContactListDescription(): string;
+  setContactListDescription(value: string): void;
+
+  getTtl(): number;
+  setTtl(value: number): void;
+
+  clearFieldsList(): void;
+  getFieldsList(): Array<string>;
+  setFieldsList(value: Array<string>): void;
+  addFields(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactManagerSink.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactManagerSink): ContactManagerSink.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContactManagerSink, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactManagerSink;
+  static deserializeBinaryFromReader(message: ContactManagerSink, reader: jspb.BinaryReader): ContactManagerSink;
+}
+
+export namespace ContactManagerSink {
+  export type AsObject = {
+    projectId: string,
+    contactListName: string,
+    contactListDescription: string,
+    ttl: number,
+    fieldsList: Array<string>,
   }
 }
 
