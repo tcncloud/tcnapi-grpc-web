@@ -42949,7 +42949,7 @@ proto.api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse.deserializeBinaryFrom
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 3:
+    case 1:
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setUnassignedAgentSid(value);
@@ -42986,7 +42986,7 @@ proto.api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse.serializeBinaryToWrit
   f = message.getUnassignedAgentSid();
   if (f != null) {
     writer.writeMessage(
-      3,
+      1,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
@@ -42995,12 +42995,12 @@ proto.api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse.serializeBinaryToWrit
 
 
 /**
- * optional google.protobuf.Int64Value unassigned_agent_sid = 3;
+ * optional google.protobuf.Int64Value unassigned_agent_sid = 1;
  * @return {?proto.google.protobuf.Int64Value}
  */
 proto.api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse.prototype.getUnassignedAgentSid = function() {
   return /** @type{?proto.google.protobuf.Int64Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 3));
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 1));
 };
 
 
@@ -43009,7 +43009,7 @@ proto.api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse.prototype.getUnassign
  * @return {!proto.api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse} returns this
 */
 proto.api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse.prototype.setUnassignedAgentSid = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -43027,7 +43027,7 @@ proto.api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse.prototype.clearUnassi
  * @return {boolean}
  */
 proto.api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse.prototype.hasUnassignedAgentSid = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
