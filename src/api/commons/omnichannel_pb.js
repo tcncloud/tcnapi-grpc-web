@@ -1479,7 +1479,8 @@ proto.api.commons.OmniCampaign.toObject = function(includeInstance, msg) {
     proto.api.commons.OmniCampaignModule.toObject, includeInstance),
     timeZone: (f = msg.getTimeZone()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
     shortenUrl: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-    complianceConfig: (f = msg.getComplianceConfig()) && proto.api.commons.OmniComplianceConfig.toObject(includeInstance, f)
+    complianceConfig: (f = msg.getComplianceConfig()) && proto.api.commons.OmniComplianceConfig.toObject(includeInstance, f),
+    contentId: (f = msg.getContentId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1578,6 +1579,11 @@ proto.api.commons.OmniCampaign.deserializeBinaryFromReader = function(msg, reade
       var value = new proto.api.commons.OmniComplianceConfig;
       reader.readMessage(value,proto.api.commons.OmniComplianceConfig.deserializeBinaryFromReader);
       msg.setComplianceConfig(value);
+      break;
+    case 15:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setContentId(value);
       break;
     default:
       reader.skipField();
@@ -1711,6 +1717,14 @@ proto.api.commons.OmniCampaign.serializeBinaryToWriter = function(message, write
       14,
       f,
       proto.api.commons.OmniComplianceConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getContentId();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
@@ -2099,6 +2113,43 @@ proto.api.commons.OmniCampaign.prototype.clearComplianceConfig = function() {
  */
 proto.api.commons.OmniCampaign.prototype.hasComplianceConfig = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue content_id = 15;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.api.commons.OmniCampaign.prototype.getContentId = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 15));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.StringValue|undefined} value
+ * @return {!proto.api.commons.OmniCampaign} returns this
+*/
+proto.api.commons.OmniCampaign.prototype.setContentId = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.OmniCampaign} returns this
+ */
+proto.api.commons.OmniCampaign.prototype.clearContentId = function() {
+  return this.setContentId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.OmniCampaign.prototype.hasContentId = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
