@@ -68,11 +68,6 @@ export class OmniCampaign extends jspb.Message {
   getComplianceConfig(): OmniComplianceConfig | undefined;
   setComplianceConfig(value?: OmniComplianceConfig): void;
 
-  hasContentId(): boolean;
-  clearContentId(): void;
-  getContentId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setContentId(value?: google_protobuf_wrappers_pb.StringValue): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaign.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCampaign): OmniCampaign.AsObject;
@@ -99,7 +94,6 @@ export namespace OmniCampaign {
     timeZone?: api_commons_org_pb.TimeZoneWrapper.AsObject,
     shortenUrl: boolean,
     complianceConfig?: OmniComplianceConfig.AsObject,
-    contentId?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 
@@ -341,6 +335,11 @@ export class OmniCampaignModuleConfig extends jspb.Message {
   getWhatsappNumber(): WhatsAppNumber | undefined;
   setWhatsappNumber(value?: WhatsAppNumber): void;
 
+  hasContentId(): boolean;
+  clearContentId(): void;
+  getContentId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setContentId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaignModuleConfig.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCampaignModuleConfig): OmniCampaignModuleConfig.AsObject;
@@ -374,6 +373,7 @@ export namespace OmniCampaignModuleConfig {
     flowId?: api_commons_types_pb.Int64Id.AsObject,
     skills?: OmniConversationSkills.AsObject,
     whatsappNumber?: WhatsAppNumber.AsObject,
+    contentId?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 
