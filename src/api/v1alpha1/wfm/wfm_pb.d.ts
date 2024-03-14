@@ -4718,6 +4718,46 @@ export namespace CreateWFMAgentMembershipsRes {
   }
 }
 
+export class CopyWFMAgentMembershipsRequest extends jspb.Message {
+  getOriginatingWfmAgentSids(): number;
+  setOriginatingWfmAgentSids(value: number): void;
+
+  getTargetWfmAgentSid(): number;
+  setTargetWfmAgentSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyWFMAgentMembershipsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyWFMAgentMembershipsRequest): CopyWFMAgentMembershipsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyWFMAgentMembershipsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyWFMAgentMembershipsRequest;
+  static deserializeBinaryFromReader(message: CopyWFMAgentMembershipsRequest, reader: jspb.BinaryReader): CopyWFMAgentMembershipsRequest;
+}
+
+export namespace CopyWFMAgentMembershipsRequest {
+  export type AsObject = {
+    originatingWfmAgentSids: number,
+    targetWfmAgentSid: number,
+  }
+}
+
+export class CopyWFMAgentMembershipsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyWFMAgentMembershipsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyWFMAgentMembershipsResponse): CopyWFMAgentMembershipsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyWFMAgentMembershipsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyWFMAgentMembershipsResponse;
+  static deserializeBinaryFromReader(message: CopyWFMAgentMembershipsResponse, reader: jspb.BinaryReader): CopyWFMAgentMembershipsResponse;
+}
+
+export namespace CopyWFMAgentMembershipsResponse {
+  export type AsObject = {
+  }
+}
+
 export class DeleteWFMAgentMembershipsReq extends jspb.Message {
   clearWfmAgentSidsList(): void;
   getWfmAgentSidsList(): Array<number>;
