@@ -42197,7 +42197,7 @@ proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    originatingWfmAgentSids: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    originatingWfmAgentSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     targetWfmAgentSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
@@ -42237,7 +42237,7 @@ proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest.deserializeBinaryFromReade
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setOriginatingWfmAgentSids(value);
+      msg.setOriginatingWfmAgentSid(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
@@ -42272,7 +42272,7 @@ proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest.prototype.serializeBinary 
  */
 proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOriginatingWfmAgentSids();
+  f = message.getOriginatingWfmAgentSid();
   if (f !== 0) {
     writer.writeInt64(
       1,
@@ -42290,10 +42290,10 @@ proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest.serializeBinaryToWriter = 
 
 
 /**
- * optional int64 originating_wfm_agent_sids = 1;
+ * optional int64 originating_wfm_agent_sid = 1;
  * @return {number}
  */
-proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest.prototype.getOriginatingWfmAgentSids = function() {
+proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest.prototype.getOriginatingWfmAgentSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -42302,7 +42302,7 @@ proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest.prototype.getOriginatingWf
  * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest} returns this
  */
-proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest.prototype.setOriginatingWfmAgentSids = function(value) {
+proto.api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest.prototype.setOriginatingWfmAgentSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 

@@ -4719,8 +4719,8 @@ export namespace CreateWFMAgentMembershipsRes {
 }
 
 export class CopyWFMAgentMembershipsRequest extends jspb.Message {
-  getOriginatingWfmAgentSids(): number;
-  setOriginatingWfmAgentSids(value: number): void;
+  getOriginatingWfmAgentSid(): number;
+  setOriginatingWfmAgentSid(value: number): void;
 
   getTargetWfmAgentSid(): number;
   setTargetWfmAgentSid(value: number): void;
@@ -4737,7 +4737,7 @@ export class CopyWFMAgentMembershipsRequest extends jspb.Message {
 
 export namespace CopyWFMAgentMembershipsRequest {
   export type AsObject = {
-    originatingWfmAgentSids: number,
+    originatingWfmAgentSid: number,
     targetWfmAgentSid: number,
   }
 }
