@@ -335,10 +335,10 @@ export class OmniCampaignModuleConfig extends jspb.Message {
   getWhatsappNumber(): WhatsAppNumber | undefined;
   setWhatsappNumber(value?: WhatsAppNumber): void;
 
-  hasContentId(): boolean;
-  clearContentId(): void;
-  getContentId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setContentId(value?: google_protobuf_wrappers_pb.StringValue): void;
+  hasProviderMetadata(): boolean;
+  clearProviderMetadata(): void;
+  getProviderMetadata(): OmniProviderMetadata | undefined;
+  setProviderMetadata(value?: OmniProviderMetadata): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaignModuleConfig.AsObject;
@@ -373,7 +373,7 @@ export namespace OmniCampaignModuleConfig {
     flowId?: api_commons_types_pb.Int64Id.AsObject,
     skills?: OmniConversationSkills.AsObject,
     whatsappNumber?: WhatsAppNumber.AsObject,
-    contentId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    providerMetadata?: OmniProviderMetadata.AsObject,
   }
 }
 
@@ -2706,6 +2706,25 @@ export namespace WhatsAppNumber {
     displayName: string,
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class OmniProviderMetadata extends jspb.Message {
+  getProviderMetadataMap(): jspb.Map<string, string>;
+  clearProviderMetadataMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniProviderMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniProviderMetadata): OmniProviderMetadata.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniProviderMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniProviderMetadata;
+  static deserializeBinaryFromReader(message: OmniProviderMetadata, reader: jspb.BinaryReader): OmniProviderMetadata;
+}
+
+export namespace OmniProviderMetadata {
+  export type AsObject = {
+    providerMetadataMap: Array<[string, string]>,
   }
 }
 
