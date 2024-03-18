@@ -2964,3 +2964,47 @@ export namespace GetMyUserMfaInfoResponse {
   }
 }
 
+export class GetMyAllowedMfaMethodsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetMyAllowedMfaMethodsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetMyAllowedMfaMethodsRequest): GetMyAllowedMfaMethodsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetMyAllowedMfaMethodsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetMyAllowedMfaMethodsRequest;
+  static deserializeBinaryFromReader(message: GetMyAllowedMfaMethodsRequest, reader: jspb.BinaryReader): GetMyAllowedMfaMethodsRequest;
+}
+
+export namespace GetMyAllowedMfaMethodsRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetMyAllowedMfaMethodsResponse extends jspb.Message {
+  getMfaEnabled(): boolean;
+  setMfaEnabled(value: boolean): void;
+
+  getEmailEnabled(): boolean;
+  setEmailEnabled(value: boolean): void;
+
+  getDuoEnabled(): boolean;
+  setDuoEnabled(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetMyAllowedMfaMethodsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetMyAllowedMfaMethodsResponse): GetMyAllowedMfaMethodsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetMyAllowedMfaMethodsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetMyAllowedMfaMethodsResponse;
+  static deserializeBinaryFromReader(message: GetMyAllowedMfaMethodsResponse, reader: jspb.BinaryReader): GetMyAllowedMfaMethodsResponse;
+}
+
+export namespace GetMyAllowedMfaMethodsResponse {
+  export type AsObject = {
+    mfaEnabled: boolean,
+    emailEnabled: boolean,
+    duoEnabled: boolean,
+  }
+}
+
