@@ -19524,7 +19524,6 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.toObject = function(inclu
     callerIdsList: (f = jspb.Message.getRepeatedField(msg, 15)) == null ? undefined : f,
     linkbackNumbersList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
     authUserId: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    enableMfa: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
     firstName: jspb.Message.getFieldWithDefault(msg, 19, ""),
     lastName: jspb.Message.getFieldWithDefault(msg, 20, ""),
     created: (f = msg.getCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -19629,10 +19628,6 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.deserializeBinaryFromRead
     case 17:
       var value = /** @type {string} */ (reader.readString());
       msg.setAuthUserId(value);
-      break;
-    case 18:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEnableMfa(value);
       break;
     case 19:
       var value = /** @type {string} */ (reader.readString());
@@ -19813,13 +19808,6 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.serializeBinaryToWriter =
   if (f.length > 0) {
     writer.writeString(
       17,
-      f
-    );
-  }
-  f = message.getEnableMfa();
-  if (f) {
-    writer.writeBool(
-      18,
       f
     );
   }
@@ -20400,24 +20388,6 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.getAuthUserId =
  */
 proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.setAuthUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 17, value);
-};
-
-
-/**
- * optional bool enable_mfa = 18;
- * @return {boolean}
- */
-proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.getEnableMfa = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse.User} returns this
- */
-proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.setEnableMfa = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 18, value);
 };
 
 

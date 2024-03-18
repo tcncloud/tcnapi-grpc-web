@@ -2513,9 +2513,6 @@ export namespace GetUserSessionDataResponse {
     getAuthUserId(): string;
     setAuthUserId(value: string): void;
 
-    getEnableMfa(): boolean;
-    setEnableMfa(value: boolean): void;
-
     getFirstName(): string;
     setFirstName(value: string): void;
 
@@ -2600,7 +2597,6 @@ export namespace GetUserSessionDataResponse {
       callerIdsList: Array<string>,
       linkbackNumbersList: Array<string>,
       authUserId: string,
-      enableMfa: boolean,
       firstName: string,
       lastName: string,
       created?: google_protobuf_timestamp_pb.Timestamp.AsObject,
