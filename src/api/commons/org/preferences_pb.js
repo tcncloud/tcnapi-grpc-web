@@ -13445,7 +13445,7 @@ proto.api.commons.org.AdminClientPreferences.prototype.clearAllowedCountriesList
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.org.BusinessHours.repeatedFields_ = [5,9];
+proto.api.commons.org.BusinessHours.repeatedFields_ = [9];
 
 
 
@@ -13479,11 +13479,7 @@ proto.api.commons.org.BusinessHours.prototype.toObject = function(opt_includeIns
 proto.api.commons.org.BusinessHours.toObject = function(includeInstance, msg) {
   var f, obj = {
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    rangesList: jspb.Message.toObjectList(msg.getRangesList(),
-    proto.api.commons.org.Range.toObject, includeInstance),
     businessHoursId: jspb.Message.getFieldWithDefault(msg, 6, ""),
     businessHoursName: jspb.Message.getFieldWithDefault(msg, 7, ""),
     timezone: jspb.Message.getFieldWithDefault(msg, 8, 0),
@@ -13530,22 +13526,9 @@ proto.api.commons.org.BusinessHours.deserializeBinaryFromReader = function(msg, 
       var value = /** @type {string} */ (reader.readString());
       msg.setOrgId(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
-      break;
-    case 5:
-      var value = new proto.api.commons.org.Range;
-      reader.readMessage(value,proto.api.commons.org.Range.deserializeBinaryFromReader);
-      msg.addRanges(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -13605,33 +13588,11 @@ proto.api.commons.org.BusinessHours.serializeBinaryToWriter = function(message, 
       f
     );
   }
-  f = message.getId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getDescription();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
-    );
-  }
-  f = message.getRangesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      5,
-      f,
-      proto.api.commons.org.Range.serializeBinaryToWriter
     );
   }
   f = message.getBusinessHoursId();
@@ -13693,42 +13654,6 @@ proto.api.commons.org.BusinessHours.prototype.setOrgId = function(value) {
 
 
 /**
- * optional string id = 2;
- * @return {string}
- */
-proto.api.commons.org.BusinessHours.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.org.BusinessHours} returns this
- */
-proto.api.commons.org.BusinessHours.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string name = 3;
- * @return {string}
- */
-proto.api.commons.org.BusinessHours.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.org.BusinessHours} returns this
- */
-proto.api.commons.org.BusinessHours.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
  * optional string description = 4;
  * @return {string}
  */
@@ -13743,44 +13668,6 @@ proto.api.commons.org.BusinessHours.prototype.getDescription = function() {
  */
 proto.api.commons.org.BusinessHours.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * repeated Range ranges = 5;
- * @return {!Array<!proto.api.commons.org.Range>}
- */
-proto.api.commons.org.BusinessHours.prototype.getRangesList = function() {
-  return /** @type{!Array<!proto.api.commons.org.Range>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.org.Range, 5));
-};
-
-
-/**
- * @param {!Array<!proto.api.commons.org.Range>} value
- * @return {!proto.api.commons.org.BusinessHours} returns this
-*/
-proto.api.commons.org.BusinessHours.prototype.setRangesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
-};
-
-
-/**
- * @param {!proto.api.commons.org.Range=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.commons.org.Range}
- */
-proto.api.commons.org.BusinessHours.prototype.addRanges = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.api.commons.org.Range, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.commons.org.BusinessHours} returns this
- */
-proto.api.commons.org.BusinessHours.prototype.clearRangesList = function() {
-  return this.setRangesList([]);
 };
 
 
