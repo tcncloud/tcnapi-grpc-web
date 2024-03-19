@@ -17020,7 +17020,7 @@ proto.api.v1alpha1.org.SetBusinessHoursResponse.prototype.toObject = function(op
  */
 proto.api.v1alpha1.org.SetBusinessHoursResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    businessHorusId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -17059,7 +17059,7 @@ proto.api.v1alpha1.org.SetBusinessHoursResponse.deserializeBinaryFromReader = fu
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBusinessHorusId(value);
+      msg.setBusinessHoursId(value);
       break;
     default:
       reader.skipField();
@@ -17090,7 +17090,7 @@ proto.api.v1alpha1.org.SetBusinessHoursResponse.prototype.serializeBinary = func
  */
 proto.api.v1alpha1.org.SetBusinessHoursResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getBusinessHorusId();
+  f = message.getBusinessHoursId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -17101,10 +17101,10 @@ proto.api.v1alpha1.org.SetBusinessHoursResponse.serializeBinaryToWriter = functi
 
 
 /**
- * optional string business_horus_id = 1;
+ * optional string business_hours_id = 1;
  * @return {string}
  */
-proto.api.v1alpha1.org.SetBusinessHoursResponse.prototype.getBusinessHorusId = function() {
+proto.api.v1alpha1.org.SetBusinessHoursResponse.prototype.getBusinessHoursId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -17113,7 +17113,7 @@ proto.api.v1alpha1.org.SetBusinessHoursResponse.prototype.getBusinessHorusId = f
  * @param {string} value
  * @return {!proto.api.v1alpha1.org.SetBusinessHoursResponse} returns this
  */
-proto.api.v1alpha1.org.SetBusinessHoursResponse.prototype.setBusinessHorusId = function(value) {
+proto.api.v1alpha1.org.SetBusinessHoursResponse.prototype.setBusinessHoursId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

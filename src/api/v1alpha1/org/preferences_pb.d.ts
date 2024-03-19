@@ -2135,8 +2135,8 @@ export namespace SetBusinessHoursRequest {
 }
 
 export class SetBusinessHoursResponse extends jspb.Message {
-  getBusinessHorusId(): string;
-  setBusinessHorusId(value: string): void;
+  getBusinessHoursId(): string;
+  setBusinessHoursId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetBusinessHoursResponse.AsObject;
@@ -2150,7 +2150,7 @@ export class SetBusinessHoursResponse extends jspb.Message {
 
 export namespace SetBusinessHoursResponse {
   export type AsObject = {
-    businessHorusId: string,
+    businessHoursId: string,
   }
 }
 
