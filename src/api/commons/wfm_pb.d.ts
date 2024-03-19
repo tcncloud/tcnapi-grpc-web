@@ -748,6 +748,82 @@ export namespace InitialSetupStatus {
   }
 }
 
+export class AgentStateSegment extends jspb.Message {
+  getOrderInRts(): number;
+  setOrderInRts(value: number): void;
+
+  getState(): AgentRTMStateMap[keyof AgentRTMStateMap];
+  setState(value: AgentRTMStateMap[keyof AgentRTMStateMap]): void;
+
+  getWidthInMinutes(): number;
+  setWidthInMinutes(value: number): void;
+
+  getAgentStateSegmentSid(): number;
+  setAgentStateSegmentSid(value: number): void;
+
+  getAgentStateSequenceSid(): number;
+  setAgentStateSequenceSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AgentStateSegment.AsObject;
+  static toObject(includeInstance: boolean, msg: AgentStateSegment): AgentStateSegment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AgentStateSegment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AgentStateSegment;
+  static deserializeBinaryFromReader(message: AgentStateSegment, reader: jspb.BinaryReader): AgentStateSegment;
+}
+
+export namespace AgentStateSegment {
+  export type AsObject = {
+    orderInRts: number,
+    state: AgentRTMStateMap[keyof AgentRTMStateMap],
+    widthInMinutes: number,
+    agentStateSegmentSid: number,
+    agentStateSequenceSid: number,
+  }
+}
+
+export class AgentStateSequence extends jspb.Message {
+  getWfmAgentSid(): number;
+  setWfmAgentSid(value: number): void;
+
+  hasStartDatetime(): boolean;
+  clearStartDatetime(): void;
+  getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  clearStateSegmentsList(): void;
+  getStateSegmentsList(): Array<AgentStateSegment>;
+  setStateSegmentsList(value: Array<AgentStateSegment>): void;
+  addStateSegments(value?: AgentStateSegment, index?: number): AgentStateSegment;
+
+  getTotalWidthInMinutes(): number;
+  setTotalWidthInMinutes(value: number): void;
+
+  getAgentStateSequenceSid(): number;
+  setAgentStateSequenceSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AgentStateSequence.AsObject;
+  static toObject(includeInstance: boolean, msg: AgentStateSequence): AgentStateSequence.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AgentStateSequence, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AgentStateSequence;
+  static deserializeBinaryFromReader(message: AgentStateSequence, reader: jspb.BinaryReader): AgentStateSequence;
+}
+
+export namespace AgentStateSequence {
+  export type AsObject = {
+    wfmAgentSid: number,
+    startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    stateSegmentsList: Array<AgentStateSegment.AsObject>,
+    totalWidthInMinutes: number,
+    agentStateSequenceSid: number,
+  }
+}
+
 export interface RegressionForecasterModelTypesMap {
   RANDOM_FOREST: 0;
   ADABOOST: 1;
@@ -1004,4 +1080,18 @@ export interface InitialSetupStateMap {
 }
 
 export const InitialSetupState: InitialSetupStateMap;
+
+export interface AgentRTMStateMap {
+  LOGGED_IN: 0;
+  ACD_INBOUND_CALL: 1;
+  DIRECT_OUTBOUND_CALL: 2;
+  CALL_ON_HOLD: 3;
+  OUTBOUND_CALL: 4;
+  INBOUND_CALL: 5;
+  TRANSFER: 6;
+  CONFERENCE: 7;
+  READY: 8;
+}
+
+export const AgentRTMState: AgentRTMStateMap;
 

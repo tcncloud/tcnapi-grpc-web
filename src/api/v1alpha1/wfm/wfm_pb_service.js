@@ -1522,6 +1522,15 @@ WFM.HelloWorldWFMAdherence = {
   responseType: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse
 };
 
+WFM.ListAgentStatesForDay = {
+  methodName: "ListAgentStatesForDay",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayResponse
+};
+
 exports.WFM = WFM;
 
 function WFMClient(serviceHost, options) {
@@ -6759,6 +6768,37 @@ WFMClient.prototype.helloWorldWFMAdherence = function helloWorldWFMAdherence(req
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.HelloWorldWFMAdherence, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listAgentStatesForDay = function listAgentStatesForDay(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListAgentStatesForDay, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
