@@ -1763,19 +1763,8 @@ export class BusinessHours extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
-  getId(): string;
-  setId(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
   getDescription(): string;
   setDescription(value: string): void;
-
-  clearRangesList(): void;
-  getRangesList(): Array<Range>;
-  setRangesList(value: Array<Range>): void;
-  addRanges(value?: Range, index?: number): Range;
 
   getBusinessHoursId(): string;
   setBusinessHoursId(value: string): void;
@@ -1809,10 +1798,7 @@ export class BusinessHours extends jspb.Message {
 export namespace BusinessHours {
   export type AsObject = {
     orgId: string,
-    id: string,
-    name: string,
     description: string,
-    rangesList: Array<Range.AsObject>,
     businessHoursId: string,
     businessHoursName: string,
     timezone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
