@@ -17673,7 +17673,8 @@ proto.api.v1alpha1.org.UpdateBusinessHoursInfoRequest.toObject = function(includ
     businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     businessHoursName: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    timezone: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    timezone: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17725,6 +17726,11 @@ proto.api.v1alpha1.org.UpdateBusinessHoursInfoRequest.deserializeBinaryFromReade
     case 4:
       var value = /** @type {!proto.api.commons.TimeZone} */ (reader.readEnum());
       msg.setTimezone(value);
+      break;
+    case 5:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setFieldMask(value);
       break;
     default:
       reader.skipField();
@@ -17781,6 +17787,14 @@ proto.api.v1alpha1.org.UpdateBusinessHoursInfoRequest.serializeBinaryToWriter = 
     writer.writeEnum(
       4,
       f
+    );
+  }
+  f = message.getFieldMask();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
@@ -17855,6 +17869,43 @@ proto.api.v1alpha1.org.UpdateBusinessHoursInfoRequest.prototype.getTimezone = fu
  */
 proto.api.v1alpha1.org.UpdateBusinessHoursInfoRequest.prototype.setTimezone = function(value) {
   return jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.FieldMask field_mask = 5;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.org.UpdateBusinessHoursInfoRequest.prototype.getFieldMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.org.UpdateBusinessHoursInfoRequest} returns this
+*/
+proto.api.v1alpha1.org.UpdateBusinessHoursInfoRequest.prototype.setFieldMask = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.UpdateBusinessHoursInfoRequest} returns this
+ */
+proto.api.v1alpha1.org.UpdateBusinessHoursInfoRequest.prototype.clearFieldMask = function() {
+  return this.setFieldMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.UpdateBusinessHoursInfoRequest.prototype.hasFieldMask = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

@@ -2251,6 +2251,11 @@ export class UpdateBusinessHoursInfoRequest extends jspb.Message {
   getTimezone(): api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap];
   setTimezone(value: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap]): void;
 
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateBusinessHoursInfoRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateBusinessHoursInfoRequest): UpdateBusinessHoursInfoRequest.AsObject;
@@ -2267,6 +2272,7 @@ export namespace UpdateBusinessHoursInfoRequest {
     businessHoursName: string,
     description: string,
     timezone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
