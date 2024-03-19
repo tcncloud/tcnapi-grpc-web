@@ -25,6 +25,8 @@ var global = localGlobalThis ||
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
+var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
+goog.object.extend(proto, google_protobuf_wrappers_pb);
 goog.exportSymbol('proto.api.commons.ConfigPermissionEnum', null, global);
 goog.exportSymbol('proto.api.commons.GlobalConfig', null, global);
 goog.exportSymbol('proto.api.commons.Member', null, global);
@@ -727,7 +729,7 @@ proto.api.commons.Room.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 8, ""),
     displayName: jspb.Message.getFieldWithDefault(msg, 9, ""),
     config: (f = msg.getConfig()) && proto.api.commons.RoomConfig.toObject(includeInstance, f),
-    permissionGroupId: jspb.Message.getFieldWithDefault(msg, 11, "")
+    permissionGroupId: (f = msg.getPermissionGroupId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -804,7 +806,8 @@ proto.api.commons.Room.deserializeBinaryFromReader = function(msg, reader) {
       msg.setConfig(value);
       break;
     case 11:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setPermissionGroupId(value);
       break;
     default:
@@ -903,10 +906,11 @@ proto.api.commons.Room.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getPermissionGroupId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       11,
-      f
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
@@ -1132,20 +1136,39 @@ proto.api.commons.Room.prototype.hasConfig = function() {
 
 
 /**
- * optional string permission_group_id = 11;
- * @return {string}
+ * optional google.protobuf.StringValue permission_group_id = 11;
+ * @return {?proto.google.protobuf.StringValue}
  */
 proto.api.commons.Room.prototype.getPermissionGroupId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 11));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.google.protobuf.StringValue|undefined} value
+ * @return {!proto.api.commons.Room} returns this
+*/
+proto.api.commons.Room.prototype.setPermissionGroupId = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.api.commons.Room} returns this
  */
-proto.api.commons.Room.prototype.setPermissionGroupId = function(value) {
-  return jspb.Message.setProto3StringField(this, 11, value);
+proto.api.commons.Room.prototype.clearPermissionGroupId = function() {
+  return this.setPermissionGroupId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.Room.prototype.hasPermissionGroupId = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
