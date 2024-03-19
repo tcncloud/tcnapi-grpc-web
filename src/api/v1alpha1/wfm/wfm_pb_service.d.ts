@@ -679,6 +679,15 @@ type WFMCreateWFMAgentMemberships = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateWFMAgentMembershipsRes;
 };
 
+type WFMCopyWFMAgentMemberships = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CopyWFMAgentMembershipsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CopyWFMAgentMembershipsResponse;
+};
+
 type WFMDeleteWFMAgentMemberships = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1584,6 +1593,7 @@ export class WFM {
   static readonly ListUnassignedWFMAgents: WFMListUnassignedWFMAgents;
   static readonly ListWFMAgentsAssociatedWithAgentGroup: WFMListWFMAgentsAssociatedWithAgentGroup;
   static readonly CreateWFMAgentMemberships: WFMCreateWFMAgentMemberships;
+  static readonly CopyWFMAgentMemberships: WFMCopyWFMAgentMemberships;
   static readonly DeleteWFMAgentMemberships: WFMDeleteWFMAgentMemberships;
   static readonly DeleteWFMAgentsMemberships: WFMDeleteWFMAgentsMemberships;
   static readonly RemoveAgentFromFutureShifts: WFMRemoveAgentFromFutureShifts;
@@ -2336,6 +2346,15 @@ export class WFMClient {
   createWFMAgentMemberships(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateWFMAgentMembershipsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateWFMAgentMembershipsRes|null) => void
+  ): UnaryResponse;
+  copyWFMAgentMemberships(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CopyWFMAgentMembershipsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CopyWFMAgentMembershipsResponse|null) => void
+  ): UnaryResponse;
+  copyWFMAgentMemberships(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CopyWFMAgentMembershipsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CopyWFMAgentMembershipsResponse|null) => void
   ): UnaryResponse;
   deleteWFMAgentMemberships(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteWFMAgentMembershipsReq,
