@@ -99,6 +99,9 @@ export class License extends jspb.Message {
   setCardsList(value: Array<License.Card>): void;
   addCards(value?: License.Card, index?: number): License.Card;
 
+  getName(): string;
+  setName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): License.AsObject;
   static toObject(includeInstance: boolean, msg: License): License.AsObject;
@@ -113,6 +116,7 @@ export namespace License {
   export type AsObject = {
     app: annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap],
     cardsList: Array<License.Card.AsObject>,
+    name: string,
   }
 
   export class Card extends jspb.Message {
