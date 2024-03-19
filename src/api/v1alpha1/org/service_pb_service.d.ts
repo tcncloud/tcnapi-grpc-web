@@ -573,6 +573,15 @@ type OrgDeleteBusinessHours = {
   readonly responseType: typeof api_v1alpha1_org_preferences_pb.DeleteBusinessHoursResponse;
 };
 
+type OrgEvaluateBusinessHours = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.EvaluateBusinessHoursRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.EvaluateBusinessHoursResponse;
+};
+
 type OrgCreateUser = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1960,6 +1969,7 @@ export class Org {
   static readonly RemoveIntervalFromBusinessHours: OrgRemoveIntervalFromBusinessHours;
   static readonly UpdateBusinessHoursInfo: OrgUpdateBusinessHoursInfo;
   static readonly DeleteBusinessHours: OrgDeleteBusinessHours;
+  static readonly EvaluateBusinessHours: OrgEvaluateBusinessHours;
   static readonly CreateUser: OrgCreateUser;
   static readonly CreateDelegatedUser: OrgCreateDelegatedUser;
   static readonly GetMyUser: OrgGetMyUser;
@@ -2666,6 +2676,15 @@ export class OrgClient {
   deleteBusinessHours(
     requestMessage: api_v1alpha1_org_preferences_pb.DeleteBusinessHoursRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.DeleteBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  evaluateBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.EvaluateBusinessHoursRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.EvaluateBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  evaluateBusinessHours(
+    requestMessage: api_v1alpha1_org_preferences_pb.EvaluateBusinessHoursRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.EvaluateBusinessHoursResponse|null) => void
   ): UnaryResponse;
   createUser(
     requestMessage: api_v1alpha1_org_user_pb.CreateUserRequest,

@@ -579,6 +579,15 @@ Org.DeleteBusinessHours = {
   responseType: api_v1alpha1_org_preferences_pb.DeleteBusinessHoursResponse
 };
 
+Org.EvaluateBusinessHours = {
+  methodName: "EvaluateBusinessHours",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_preferences_pb.EvaluateBusinessHoursRequest,
+  responseType: api_v1alpha1_org_preferences_pb.EvaluateBusinessHoursResponse
+};
+
 Org.CreateUser = {
   methodName: "CreateUser",
   service: Org,
@@ -3837,6 +3846,37 @@ OrgClient.prototype.deleteBusinessHours = function deleteBusinessHours(requestMe
     callback = arguments[1];
   }
   var client = grpc.unary(Org.DeleteBusinessHours, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.evaluateBusinessHours = function evaluateBusinessHours(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.EvaluateBusinessHours, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

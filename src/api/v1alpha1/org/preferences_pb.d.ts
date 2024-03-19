@@ -2328,3 +2328,43 @@ export namespace DeleteBusinessHoursResponse {
   }
 }
 
+export class EvaluateBusinessHoursRequest extends jspb.Message {
+  getBusinessHoursId(): string;
+  setBusinessHoursId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EvaluateBusinessHoursRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EvaluateBusinessHoursRequest): EvaluateBusinessHoursRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EvaluateBusinessHoursRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EvaluateBusinessHoursRequest;
+  static deserializeBinaryFromReader(message: EvaluateBusinessHoursRequest, reader: jspb.BinaryReader): EvaluateBusinessHoursRequest;
+}
+
+export namespace EvaluateBusinessHoursRequest {
+  export type AsObject = {
+    businessHoursId: string,
+  }
+}
+
+export class EvaluateBusinessHoursResponse extends jspb.Message {
+  getWithinRange(): boolean;
+  setWithinRange(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EvaluateBusinessHoursResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EvaluateBusinessHoursResponse): EvaluateBusinessHoursResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EvaluateBusinessHoursResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EvaluateBusinessHoursResponse;
+  static deserializeBinaryFromReader(message: EvaluateBusinessHoursResponse, reader: jspb.BinaryReader): EvaluateBusinessHoursResponse;
+}
+
+export namespace EvaluateBusinessHoursResponse {
+  export type AsObject = {
+    withinRange: boolean,
+  }
+}
+
