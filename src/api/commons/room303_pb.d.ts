@@ -108,6 +108,9 @@ export class Room extends jspb.Message {
   getConfig(): RoomConfig | undefined;
   setConfig(value?: RoomConfig): void;
 
+  getPermissionGroupId(): string;
+  setPermissionGroupId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Room.AsObject;
   static toObject(includeInstance: boolean, msg: Room): Room.AsObject;
@@ -129,6 +132,7 @@ export namespace Room {
     id: string,
     displayName: string,
     config?: RoomConfig.AsObject,
+    permissionGroupId: string,
   }
 }
 

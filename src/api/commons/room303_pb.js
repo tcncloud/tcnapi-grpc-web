@@ -726,7 +726,8 @@ proto.api.commons.Room.toObject = function(includeInstance, msg) {
     status: jspb.Message.getFieldWithDefault(msg, 7, 0),
     id: jspb.Message.getFieldWithDefault(msg, 8, ""),
     displayName: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    config: (f = msg.getConfig()) && proto.api.commons.RoomConfig.toObject(includeInstance, f)
+    config: (f = msg.getConfig()) && proto.api.commons.RoomConfig.toObject(includeInstance, f),
+    permissionGroupId: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -801,6 +802,10 @@ proto.api.commons.Room.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.api.commons.RoomConfig;
       reader.readMessage(value,proto.api.commons.RoomConfig.deserializeBinaryFromReader);
       msg.setConfig(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPermissionGroupId(value);
       break;
     default:
       reader.skipField();
@@ -895,6 +900,13 @@ proto.api.commons.Room.serializeBinaryToWriter = function(message, writer) {
       10,
       f,
       proto.api.commons.RoomConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getPermissionGroupId();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
     );
   }
 };
@@ -1116,6 +1128,24 @@ proto.api.commons.Room.prototype.clearConfig = function() {
  */
 proto.api.commons.Room.prototype.hasConfig = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional string permission_group_id = 11;
+ * @return {string}
+ */
+proto.api.commons.Room.prototype.getPermissionGroupId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.Room} returns this
+ */
+proto.api.commons.Room.prototype.setPermissionGroupId = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
