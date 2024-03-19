@@ -3206,7 +3206,8 @@ proto.api.commons.OmniCampaignModuleConfig.toObject = function(includeInstance, 
     paymentPortalIdsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
     flowId: (f = msg.getFlowId()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
     skills: (f = msg.getSkills()) && proto.api.commons.OmniConversationSkills.toObject(includeInstance, f),
-    whatsappNumber: (f = msg.getWhatsappNumber()) && proto.api.commons.WhatsAppNumber.toObject(includeInstance, f)
+    whatsappNumber: (f = msg.getWhatsappNumber()) && proto.api.commons.WhatsAppNumber.toObject(includeInstance, f),
+    providerMetadataMap: (f = msg.getProviderMetadataMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -3346,6 +3347,12 @@ proto.api.commons.OmniCampaignModuleConfig.deserializeBinaryFromReader = functio
       var value = new proto.api.commons.WhatsAppNumber;
       reader.readMessage(value,proto.api.commons.WhatsAppNumber.deserializeBinaryFromReader);
       msg.setWhatsappNumber(value);
+      break;
+    case 23:
+      var value = msg.getProviderMetadataMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
       break;
     default:
       reader.skipField();
@@ -3542,6 +3549,10 @@ proto.api.commons.OmniCampaignModuleConfig.serializeBinaryToWriter = function(me
       f,
       proto.api.commons.WhatsAppNumber.serializeBinaryToWriter
     );
+  }
+  f = message.getProviderMetadataMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(23, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -4322,6 +4333,29 @@ proto.api.commons.OmniCampaignModuleConfig.prototype.clearWhatsappNumber = funct
  */
 proto.api.commons.OmniCampaignModuleConfig.prototype.hasWhatsappNumber = function() {
   return jspb.Message.getField(this, 22) != null;
+};
+
+
+/**
+ * map<string, string> provider_metadata = 23;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.api.commons.OmniCampaignModuleConfig.prototype.getProviderMetadataMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 23, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.api.commons.OmniCampaignModuleConfig} returns this
+ */
+proto.api.commons.OmniCampaignModuleConfig.prototype.clearProviderMetadataMap = function() {
+  this.getProviderMetadataMap().clear();
+  return this;
 };
 
 
