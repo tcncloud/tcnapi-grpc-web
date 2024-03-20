@@ -2,6 +2,7 @@
 // file: services/billing/v1alpha1/service.proto
 
 import * as services_billing_v1alpha1_service_pb from "../../../services/billing/v1alpha1/service_pb";
+import * as services_billing_v1alpha1_history_pb from "../../../services/billing/v1alpha1/history_pb";
 import * as services_billing_v1alpha1_invoices_pb from "../../../services/billing/v1alpha1/invoices_pb";
 import * as services_billing_v1alpha1_plans_pb from "../../../services/billing/v1alpha1/plans_pb";
 import * as services_billing_v1alpha1_rates_pb from "../../../services/billing/v1alpha1/rates_pb";
@@ -178,6 +179,15 @@ type BillingServiceGetRateDefinition = {
   readonly responseType: typeof services_billing_v1alpha1_rates_pb.GetRateDefinitionResponse;
 };
 
+type BillingServiceGetRateHistory = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_history_pb.GetRateHistoryRequest;
+  readonly responseType: typeof services_billing_v1alpha1_history_pb.GetRateHistoryResponse;
+};
+
 type BillingServiceListBillingPlans = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -185,6 +195,15 @@ type BillingServiceListBillingPlans = {
   readonly responseStream: false;
   readonly requestType: typeof services_billing_v1alpha1_plans_pb.ListBillingPlansRequest;
   readonly responseType: typeof services_billing_v1alpha1_plans_pb.ListBillingPlansResponse;
+};
+
+type BillingServiceListHistoricalRateDefinitions = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsRequest;
+  readonly responseType: typeof services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsResponse;
 };
 
 type BillingServiceListInvoices = {
@@ -271,7 +290,9 @@ export class BillingService {
   static readonly GetBillingPlan: BillingServiceGetBillingPlan;
   static readonly GetInvoice: BillingServiceGetInvoice;
   static readonly GetRateDefinition: BillingServiceGetRateDefinition;
+  static readonly GetRateHistory: BillingServiceGetRateHistory;
   static readonly ListBillingPlans: BillingServiceListBillingPlans;
+  static readonly ListHistoricalRateDefinitions: BillingServiceListHistoricalRateDefinitions;
   static readonly ListInvoices: BillingServiceListInvoices;
   static readonly ListRateDefinitions: BillingServiceListRateDefinitions;
   static readonly UpdateBillingPlan: BillingServiceUpdateBillingPlan;
@@ -484,6 +505,15 @@ export class BillingServiceClient {
     requestMessage: services_billing_v1alpha1_rates_pb.GetRateDefinitionRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.GetRateDefinitionResponse|null) => void
   ): UnaryResponse;
+  getRateHistory(
+    requestMessage: services_billing_v1alpha1_history_pb.GetRateHistoryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_history_pb.GetRateHistoryResponse|null) => void
+  ): UnaryResponse;
+  getRateHistory(
+    requestMessage: services_billing_v1alpha1_history_pb.GetRateHistoryRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_history_pb.GetRateHistoryResponse|null) => void
+  ): UnaryResponse;
   listBillingPlans(
     requestMessage: services_billing_v1alpha1_plans_pb.ListBillingPlansRequest,
     metadata: grpc.Metadata,
@@ -492,6 +522,15 @@ export class BillingServiceClient {
   listBillingPlans(
     requestMessage: services_billing_v1alpha1_plans_pb.ListBillingPlansRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.ListBillingPlansResponse|null) => void
+  ): UnaryResponse;
+  listHistoricalRateDefinitions(
+    requestMessage: services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsResponse|null) => void
+  ): UnaryResponse;
+  listHistoricalRateDefinitions(
+    requestMessage: services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsResponse|null) => void
   ): UnaryResponse;
   listInvoices(
     requestMessage: services_billing_v1alpha1_invoices_pb.ListInvoicesRequest,

@@ -2,7 +2,10 @@
 // file: services/billing/v1alpha1/rates.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_audit_event_types_pb from "../../../api/commons/audit/event_types_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
+import * as services_billing_entities_v1alpha1_history_pb from "../../../services/billing/entities/v1alpha1/history_pb";
+import * as services_billing_entities_v1alpha1_matching_pb from "../../../services/billing/entities/v1alpha1/matching_pb";
 import * as services_billing_entities_v1alpha1_rates_pb from "../../../services/billing/entities/v1alpha1/rates_pb";
 import * as services_billing_v1alpha1_core_pb from "../../../services/billing/v1alpha1/core_pb";
 
@@ -209,6 +212,68 @@ export class GetRateDefinitionResponse extends jspb.Message {
 export namespace GetRateDefinitionResponse {
   export type AsObject = {
     rateDefinition?: services_billing_entities_v1alpha1_rates_pb.RateDefinition.AsObject,
+  }
+}
+
+export class ListHistoricalRateDefinitionsRequest extends jspb.Message {
+  hasHistoryItem(): boolean;
+  clearHistoryItem(): void;
+  getHistoryItem(): services_billing_entities_v1alpha1_history_pb.RateHistoryItem | undefined;
+  setHistoryItem(value?: services_billing_entities_v1alpha1_history_pb.RateHistoryItem): void;
+
+  clearEventTypesList(): void;
+  getEventTypesList(): Array<api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap]>;
+  setEventTypesList(value: Array<api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap]>): void;
+  addEventTypes(value: api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap], index?: number): api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap];
+
+  clearConfigTypesList(): void;
+  getConfigTypesList(): Array<services_billing_entities_v1alpha1_rates_pb.RateDefinitionConfigTypeMap[keyof services_billing_entities_v1alpha1_rates_pb.RateDefinitionConfigTypeMap]>;
+  setConfigTypesList(value: Array<services_billing_entities_v1alpha1_rates_pb.RateDefinitionConfigTypeMap[keyof services_billing_entities_v1alpha1_rates_pb.RateDefinitionConfigTypeMap]>): void;
+  addConfigTypes(value: services_billing_entities_v1alpha1_rates_pb.RateDefinitionConfigTypeMap[keyof services_billing_entities_v1alpha1_rates_pb.RateDefinitionConfigTypeMap], index?: number): services_billing_entities_v1alpha1_rates_pb.RateDefinitionConfigTypeMap[keyof services_billing_entities_v1alpha1_rates_pb.RateDefinitionConfigTypeMap];
+
+  clearMatchingRulesList(): void;
+  getMatchingRulesList(): Array<services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap[keyof services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap]>;
+  setMatchingRulesList(value: Array<services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap[keyof services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap]>): void;
+  addMatchingRules(value: services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap[keyof services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap], index?: number): services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap[keyof services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap];
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListHistoricalRateDefinitionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListHistoricalRateDefinitionsRequest): ListHistoricalRateDefinitionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListHistoricalRateDefinitionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListHistoricalRateDefinitionsRequest;
+  static deserializeBinaryFromReader(message: ListHistoricalRateDefinitionsRequest, reader: jspb.BinaryReader): ListHistoricalRateDefinitionsRequest;
+}
+
+export namespace ListHistoricalRateDefinitionsRequest {
+  export type AsObject = {
+    historyItem?: services_billing_entities_v1alpha1_history_pb.RateHistoryItem.AsObject,
+    eventTypesList: Array<api_commons_audit_event_types_pb.EventTypeMap[keyof api_commons_audit_event_types_pb.EventTypeMap]>,
+    configTypesList: Array<services_billing_entities_v1alpha1_rates_pb.RateDefinitionConfigTypeMap[keyof services_billing_entities_v1alpha1_rates_pb.RateDefinitionConfigTypeMap]>,
+    matchingRulesList: Array<services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap[keyof services_billing_entities_v1alpha1_matching_pb.MatchingRuleMap]>,
+  }
+}
+
+export class ListHistoricalRateDefinitionsResponse extends jspb.Message {
+  clearRateDefinitionsList(): void;
+  getRateDefinitionsList(): Array<services_billing_entities_v1alpha1_rates_pb.RateDefinition>;
+  setRateDefinitionsList(value: Array<services_billing_entities_v1alpha1_rates_pb.RateDefinition>): void;
+  addRateDefinitions(value?: services_billing_entities_v1alpha1_rates_pb.RateDefinition, index?: number): services_billing_entities_v1alpha1_rates_pb.RateDefinition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListHistoricalRateDefinitionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListHistoricalRateDefinitionsResponse): ListHistoricalRateDefinitionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListHistoricalRateDefinitionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListHistoricalRateDefinitionsResponse;
+  static deserializeBinaryFromReader(message: ListHistoricalRateDefinitionsResponse, reader: jspb.BinaryReader): ListHistoricalRateDefinitionsResponse;
+}
+
+export namespace ListHistoricalRateDefinitionsResponse {
+  export type AsObject = {
+    rateDefinitionsList: Array<services_billing_entities_v1alpha1_rates_pb.RateDefinition.AsObject>,
   }
 }
 
