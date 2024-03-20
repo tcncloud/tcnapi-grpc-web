@@ -510,6 +510,15 @@ type ComplianceProcessConsentUpload = {
   readonly responseType: typeof google_longrunning_operations_pb.Operation;
 };
 
+type ComplianceExportConsentList = {
+  readonly methodName: string;
+  readonly service: typeof Compliance;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_compliance_pb.ExportConsentListRequest;
+  readonly responseType: typeof api_v0alpha_compliance_pb.ExportConsentListResponse;
+};
+
 type ComplianceListConsentTopics = {
   readonly methodName: string;
   readonly service: typeof Compliance;
@@ -631,6 +640,7 @@ export class Compliance {
   static readonly ListConsentProfiles: ComplianceListConsentProfiles;
   static readonly GetConsentUploadUrl: ComplianceGetConsentUploadUrl;
   static readonly ProcessConsentUpload: ComplianceProcessConsentUpload;
+  static readonly ExportConsentList: ComplianceExportConsentList;
   static readonly ListConsentTopics: ComplianceListConsentTopics;
   static readonly GetConsentTopic: ComplianceGetConsentTopic;
   static readonly CreateConsentTopic: ComplianceCreateConsentTopic;
@@ -1167,6 +1177,15 @@ export class ComplianceClient {
   processConsentUpload(
     requestMessage: api_v0alpha_compliance_pb.ProcessConsentUploadReq,
     callback: (error: ServiceError|null, responseMessage: google_longrunning_operations_pb.Operation|null) => void
+  ): UnaryResponse;
+  exportConsentList(
+    requestMessage: api_v0alpha_compliance_pb.ExportConsentListRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_compliance_pb.ExportConsentListResponse|null) => void
+  ): UnaryResponse;
+  exportConsentList(
+    requestMessage: api_v0alpha_compliance_pb.ExportConsentListRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_compliance_pb.ExportConsentListResponse|null) => void
   ): UnaryResponse;
   listConsentTopics(
     requestMessage: api_v0alpha_compliance_pb.ListConsentTopicsReq,

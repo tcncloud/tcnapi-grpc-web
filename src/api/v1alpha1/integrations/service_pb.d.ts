@@ -3278,8 +3278,10 @@ export class GenerateEpicKeyPairReq extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
-  getServer(): string;
-  setServer(value: string): void;
+  clearServersList(): void;
+  getServersList(): Array<string>;
+  setServersList(value: Array<string>): void;
+  addServers(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenerateEpicKeyPairReq.AsObject;
@@ -3294,7 +3296,7 @@ export class GenerateEpicKeyPairReq extends jspb.Message {
 export namespace GenerateEpicKeyPairReq {
   export type AsObject = {
     orgId: string,
-    server: string,
+    serversList: Array<string>,
   }
 }
 

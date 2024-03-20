@@ -1594,6 +1594,16 @@ export class ExecuteFlow extends jspb.Message {
   getEpicHangupCall(): ExecuteEpicHangupCall | undefined;
   setEpicHangupCall(value?: ExecuteEpicHangupCall): void;
 
+  hasEpicGetAccountAccessIdentifiers(): boolean;
+  clearEpicGetAccountAccessIdentifiers(): void;
+  getEpicGetAccountAccessIdentifiers(): ExecuteEpicGetAccountAccessIdentifiers | undefined;
+  setEpicGetAccountAccessIdentifiers(value?: ExecuteEpicGetAccountAccessIdentifiers): void;
+
+  hasEpicGetAccountBillingSummary(): boolean;
+  clearEpicGetAccountBillingSummary(): void;
+  getEpicGetAccountBillingSummary(): ExecuteEpicGetAccountBillingSummary | undefined;
+  setEpicGetAccountBillingSummary(value?: ExecuteEpicGetAccountBillingSummary): void;
+
   hasNewzwarePhoneLookup(): boolean;
   clearNewzwarePhoneLookup(): void;
   getNewzwarePhoneLookup(): ExecuteNewzwarePhoneLookup | undefined;
@@ -1870,6 +1880,8 @@ export namespace ExecuteFlow {
     epicGetPatientBillingDetails?: ExecuteEpicGetPatientBillingDetails.AsObject,
     epicCallPatient?: ExecuteEpicCallPatient.AsObject,
     epicHangupCall?: ExecuteEpicHangupCall.AsObject,
+    epicGetAccountAccessIdentifiers?: ExecuteEpicGetAccountAccessIdentifiers.AsObject,
+    epicGetAccountBillingSummary?: ExecuteEpicGetAccountBillingSummary.AsObject,
     newzwarePhoneLookup?: ExecuteNewzwarePhoneLookup.AsObject,
     newzwareAccountInquiry?: ExecuteNewzwareAccountInquiry.AsObject,
     newzwareCcPayment?: ExecuteNewzwareCcPayment.AsObject,
@@ -2080,6 +2092,8 @@ export namespace ExecuteFlow {
     EPIC_GET_PATIENT_BILLING_DETAILS = 3711,
     EPIC_CALL_PATIENT = 3712,
     EPIC_HANGUP_CALL = 3713,
+    EPIC_GET_ACCOUNT_ACCESS_IDENTIFIERS = 3714,
+    EPIC_GET_ACCOUNT_BILLING_SUMMARY = 3715,
     NEWZWARE_PHONE_LOOKUP = 3801,
     NEWZWARE_ACCOUNT_INQUIRY = 3802,
     NEWZWARE_CC_PAYMENT = 3803,
@@ -5690,6 +5704,38 @@ export namespace ExecuteEpicHangupCall {
   }
 }
 
+export class ExecuteEpicGetAccountAccessIdentifiers extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicGetAccountAccessIdentifiers.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicGetAccountAccessIdentifiers): ExecuteEpicGetAccountAccessIdentifiers.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicGetAccountAccessIdentifiers, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicGetAccountAccessIdentifiers;
+  static deserializeBinaryFromReader(message: ExecuteEpicGetAccountAccessIdentifiers, reader: jspb.BinaryReader): ExecuteEpicGetAccountAccessIdentifiers;
+}
+
+export namespace ExecuteEpicGetAccountAccessIdentifiers {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteEpicGetAccountBillingSummary extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteEpicGetAccountBillingSummary.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteEpicGetAccountBillingSummary): ExecuteEpicGetAccountBillingSummary.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteEpicGetAccountBillingSummary, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteEpicGetAccountBillingSummary;
+  static deserializeBinaryFromReader(message: ExecuteEpicGetAccountBillingSummary, reader: jspb.BinaryReader): ExecuteEpicGetAccountBillingSummary;
+}
+
+export namespace ExecuteEpicGetAccountBillingSummary {
+  export type AsObject = {
+  }
+}
+
 export class ExecuteNewzwarePhoneLookup extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteNewzwarePhoneLookup.AsObject;
@@ -6155,6 +6201,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_EPIC_GET_PATIENT_BILLING_DETAILS: 3711;
   REQUEST_METHOD_EPIC_CALL_PATIENT: 3712;
   REQUEST_METHOD_EPIC_HANGUP_CALL: 3713;
+  REQUEST_METHOD_EPIC_GET_ACCOUNT_ACCESS_IDENTIFIERS: 3714;
+  REQUEST_METHOD_EPIC_GET_ACCOUNT_BILLING_SUMMARY: 3715;
   REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP: 3801;
   REQUEST_METHOD_NEWZWARE_ACCOUNT_INQUIRY: 3802;
   REQUEST_METHOD_NEWZWARE_CC_PAYMENT: 3803;

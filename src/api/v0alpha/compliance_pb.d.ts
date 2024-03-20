@@ -3382,3 +3382,43 @@ export namespace QueryHolidaysRequest {
   }
 }
 
+export class ExportConsentListRequest extends jspb.Message {
+  getConsentProfileId(): string;
+  setConsentProfileId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExportConsentListRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ExportConsentListRequest): ExportConsentListRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExportConsentListRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExportConsentListRequest;
+  static deserializeBinaryFromReader(message: ExportConsentListRequest, reader: jspb.BinaryReader): ExportConsentListRequest;
+}
+
+export namespace ExportConsentListRequest {
+  export type AsObject = {
+    consentProfileId: string,
+  }
+}
+
+export class ExportConsentListResponse extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExportConsentListResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ExportConsentListResponse): ExportConsentListResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExportConsentListResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExportConsentListResponse;
+  static deserializeBinaryFromReader(message: ExportConsentListResponse, reader: jspb.BinaryReader): ExportConsentListResponse;
+}
+
+export namespace ExportConsentListResponse {
+  export type AsObject = {
+    url: string,
+  }
+}
+

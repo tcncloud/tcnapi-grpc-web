@@ -4,9 +4,11 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_ana_pb from "../../../api/commons/ana_pb";
 import * as api_commons_country_pb from "../../../api/commons/country_pb";
+import * as api_commons_enums_pb from "../../../api/commons/enums_pb";
 import * as api_commons_lms_pb from "../../../api/commons/lms_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as api_commons_org_preferences_pb from "../../../api/commons/org_preferences_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class OrganizationPreferences extends jspb.Message {
   getOrgId(): string;
@@ -1761,19 +1763,27 @@ export class BusinessHours extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
-  getId(): string;
-  setId(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
   getDescription(): string;
   setDescription(value: string): void;
 
-  clearRangesList(): void;
-  getRangesList(): Array<Range>;
-  setRangesList(value: Array<Range>): void;
-  addRanges(value?: Range, index?: number): Range;
+  getBusinessHoursId(): string;
+  setBusinessHoursId(value: string): void;
+
+  getBusinessHoursName(): string;
+  setBusinessHoursName(value: string): void;
+
+  getTimezone(): api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap];
+  setTimezone(value: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap]): void;
+
+  clearDayIntervalsList(): void;
+  getDayIntervalsList(): Array<DayInterval>;
+  setDayIntervalsList(value: Array<DayInterval>): void;
+  addDayIntervals(value?: DayInterval, index?: number): DayInterval;
+
+  hasLastUpdated(): boolean;
+  clearLastUpdated(): void;
+  getLastUpdated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastUpdated(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BusinessHours.AsObject;
@@ -1788,10 +1798,12 @@ export class BusinessHours extends jspb.Message {
 export namespace BusinessHours {
   export type AsObject = {
     orgId: string,
-    id: string,
-    name: string,
     description: string,
-    rangesList: Array<Range.AsObject>,
+    businessHoursId: string,
+    businessHoursName: string,
+    timezone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
+    dayIntervalsList: Array<DayInterval.AsObject>,
+    lastUpdated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -1824,6 +1836,62 @@ export namespace Range {
     startMinute: number,
     endHour: number,
     endMinute: number,
+  }
+}
+
+export class TimeOfDay extends jspb.Message {
+  getHour(): number;
+  setHour(value: number): void;
+
+  getMinute(): number;
+  setMinute(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeOfDay.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeOfDay): TimeOfDay.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TimeOfDay, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeOfDay;
+  static deserializeBinaryFromReader(message: TimeOfDay, reader: jspb.BinaryReader): TimeOfDay;
+}
+
+export namespace TimeOfDay {
+  export type AsObject = {
+    hour: number,
+    minute: number,
+  }
+}
+
+export class DayInterval extends jspb.Message {
+  getDay(): api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap];
+  setDay(value: api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap]): void;
+
+  hasStart(): boolean;
+  clearStart(): void;
+  getStart(): TimeOfDay | undefined;
+  setStart(value?: TimeOfDay): void;
+
+  hasEnd(): boolean;
+  clearEnd(): void;
+  getEnd(): TimeOfDay | undefined;
+  setEnd(value?: TimeOfDay): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DayInterval.AsObject;
+  static toObject(includeInstance: boolean, msg: DayInterval): DayInterval.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DayInterval, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DayInterval;
+  static deserializeBinaryFromReader(message: DayInterval, reader: jspb.BinaryReader): DayInterval;
+}
+
+export namespace DayInterval {
+  export type AsObject = {
+    day: api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap],
+    start?: TimeOfDay.AsObject,
+    end?: TimeOfDay.AsObject,
   }
 }
 

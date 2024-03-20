@@ -516,6 +516,15 @@ Compliance.ProcessConsentUpload = {
   responseType: google_longrunning_operations_pb.Operation
 };
 
+Compliance.ExportConsentList = {
+  methodName: "ExportConsentList",
+  service: Compliance,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_compliance_pb.ExportConsentListRequest,
+  responseType: api_v0alpha_compliance_pb.ExportConsentListResponse
+};
+
 Compliance.ListConsentTopics = {
   methodName: "ListConsentTopics",
   service: Compliance,
@@ -2304,6 +2313,37 @@ ComplianceClient.prototype.processConsentUpload = function processConsentUpload(
     callback = arguments[1];
   }
   var client = grpc.unary(Compliance.ProcessConsentUpload, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ComplianceClient.prototype.exportConsentList = function exportConsentList(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Compliance.ExportConsentList, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
