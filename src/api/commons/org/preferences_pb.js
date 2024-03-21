@@ -3097,7 +3097,7 @@ proto.api.commons.org.AuthenticationPreferences.toObject = function(includeInsta
     blockUnverifiedUsers: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
     emailMfaSettings: (f = msg.getEmailMfaSettings()) && proto.api.commons.org.AuthenticationPreferences.EmailMfaSettings.toObject(includeInstance, f),
     duoMfaSettings: (f = msg.getDuoMfaSettings()) && proto.api.commons.org.AuthenticationPreferences.DuoMfaSettings.toObject(includeInstance, f),
-    enableForcePasswordResetInterval: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
+    allowForcePasswordResetInterval: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
     passwordResetDayInterval: jspb.Message.getFieldWithDefault(msg, 18, 0)
   };
 
@@ -3171,7 +3171,7 @@ proto.api.commons.org.AuthenticationPreferences.deserializeBinaryFromReader = fu
       break;
     case 17:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEnableForcePasswordResetInterval(value);
+      msg.setAllowForcePasswordResetInterval(value);
       break;
     case 18:
       var value = /** @type {number} */ (reader.readInt32());
@@ -3264,7 +3264,7 @@ proto.api.commons.org.AuthenticationPreferences.serializeBinaryToWriter = functi
       proto.api.commons.org.AuthenticationPreferences.DuoMfaSettings.serializeBinaryToWriter
     );
   }
-  f = message.getEnableForcePasswordResetInterval();
+  f = message.getAllowForcePasswordResetInterval();
   if (f) {
     writer.writeBool(
       17,
@@ -3803,10 +3803,10 @@ proto.api.commons.org.AuthenticationPreferences.prototype.hasDuoMfaSettings = fu
 
 
 /**
- * optional bool enable_force_password_reset_interval = 17;
+ * optional bool allow_force_password_reset_interval = 17;
  * @return {boolean}
  */
-proto.api.commons.org.AuthenticationPreferences.prototype.getEnableForcePasswordResetInterval = function() {
+proto.api.commons.org.AuthenticationPreferences.prototype.getAllowForcePasswordResetInterval = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
 };
 
@@ -3815,7 +3815,7 @@ proto.api.commons.org.AuthenticationPreferences.prototype.getEnableForcePassword
  * @param {boolean} value
  * @return {!proto.api.commons.org.AuthenticationPreferences} returns this
  */
-proto.api.commons.org.AuthenticationPreferences.prototype.setEnableForcePasswordResetInterval = function(value) {
+proto.api.commons.org.AuthenticationPreferences.prototype.setAllowForcePasswordResetInterval = function(value) {
   return jspb.Message.setProto3BooleanField(this, 17, value);
 };
 
