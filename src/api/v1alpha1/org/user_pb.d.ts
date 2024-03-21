@@ -2572,6 +2572,11 @@ export namespace GetUserSessionDataResponse {
     getMfaTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setMfaTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+    hasPasswordResetDate(): boolean;
+    clearPasswordResetDate(): void;
+    getPasswordResetDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setPasswordResetDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): User.AsObject;
     static toObject(includeInstance: boolean, msg: User): User.AsObject;
@@ -2612,6 +2617,7 @@ export namespace GetUserSessionDataResponse {
       agent: boolean,
       accountOwner: boolean,
       mfaTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      passwordResetDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
 
     export class RegionSids extends jspb.Message {
