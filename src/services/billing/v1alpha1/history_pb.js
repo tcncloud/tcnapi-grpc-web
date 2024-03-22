@@ -23,8 +23,14 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_commons_audit_event_types_pb = require('../../../api/commons/audit/event_types_pb.js');
+goog.object.extend(proto, api_commons_audit_event_types_pb);
 var services_billing_entities_v1alpha1_history_pb = require('../../../services/billing/entities/v1alpha1/history_pb.js');
 goog.object.extend(proto, services_billing_entities_v1alpha1_history_pb);
+var services_billing_entities_v1alpha1_matching_pb = require('../../../services/billing/entities/v1alpha1/matching_pb.js');
+goog.object.extend(proto, services_billing_entities_v1alpha1_matching_pb);
+var services_billing_entities_v1alpha1_rates_pb = require('../../../services/billing/entities/v1alpha1/rates_pb.js');
+goog.object.extend(proto, services_billing_entities_v1alpha1_rates_pb);
 goog.exportSymbol('proto.services.billing.v1alpha1.GetRateHistoryRequest', null, global);
 goog.exportSymbol('proto.services.billing.v1alpha1.GetRateHistoryResponse', null, global);
 /**
@@ -38,7 +44,7 @@ goog.exportSymbol('proto.services.billing.v1alpha1.GetRateHistoryResponse', null
  * @constructor
  */
 proto.services.billing.v1alpha1.GetRateHistoryRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.services.billing.v1alpha1.GetRateHistoryRequest.repeatedFields_, null);
 };
 goog.inherits(proto.services.billing.v1alpha1.GetRateHistoryRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -69,6 +75,13 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.services.billing.v1alpha1.GetRateHistoryResponse.displayName = 'proto.services.billing.v1alpha1.GetRateHistoryResponse';
 }
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.repeatedFields_ = [2,3,4,5];
 
 
 
@@ -101,7 +114,11 @@ proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.toObject = funct
  */
 proto.services.billing.v1alpha1.GetRateHistoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    eventTypesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    configTypesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    matchingRulesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    matchingShasList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -142,6 +159,28 @@ proto.services.billing.v1alpha1.GetRateHistoryRequest.deserializeBinaryFromReade
       var value = /** @type {string} */ (reader.readString());
       msg.setOrgId(value);
       break;
+    case 2:
+      var values = /** @type {!Array<!proto.api.commons.audit.EventType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addEventTypes(values[i]);
+      }
+      break;
+    case 3:
+      var values = /** @type {!Array<!proto.services.billing.entities.v1alpha1.RateDefinitionConfigType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addConfigTypes(values[i]);
+      }
+      break;
+    case 4:
+      var values = /** @type {!Array<!proto.services.billing.entities.v1alpha1.MatchingRule>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addMatchingRules(values[i]);
+      }
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addMatchingShas(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -178,6 +217,34 @@ proto.services.billing.v1alpha1.GetRateHistoryRequest.serializeBinaryToWriter = 
       f
     );
   }
+  f = message.getEventTypesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      2,
+      f
+    );
+  }
+  f = message.getConfigTypesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      3,
+      f
+    );
+  }
+  f = message.getMatchingRulesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      4,
+      f
+    );
+  }
+  f = message.getMatchingShasList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      5,
+      f
+    );
+  }
 };
 
 
@@ -196,6 +263,154 @@ proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.getOrgId = funct
  */
 proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.setOrgId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * repeated api.commons.audit.EventType event_types = 2;
+ * @return {!Array<!proto.api.commons.audit.EventType>}
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.getEventTypesList = function() {
+  return /** @type {!Array<!proto.api.commons.audit.EventType>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.audit.EventType>} value
+ * @return {!proto.services.billing.v1alpha1.GetRateHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.setEventTypesList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {!proto.api.commons.audit.EventType} value
+ * @param {number=} opt_index
+ * @return {!proto.services.billing.v1alpha1.GetRateHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.addEventTypes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.services.billing.v1alpha1.GetRateHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.clearEventTypesList = function() {
+  return this.setEventTypesList([]);
+};
+
+
+/**
+ * repeated services.billing.entities.v1alpha1.RateDefinitionConfigType config_types = 3;
+ * @return {!Array<!proto.services.billing.entities.v1alpha1.RateDefinitionConfigType>}
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.getConfigTypesList = function() {
+  return /** @type {!Array<!proto.services.billing.entities.v1alpha1.RateDefinitionConfigType>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.services.billing.entities.v1alpha1.RateDefinitionConfigType>} value
+ * @return {!proto.services.billing.v1alpha1.GetRateHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.setConfigTypesList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {!proto.services.billing.entities.v1alpha1.RateDefinitionConfigType} value
+ * @param {number=} opt_index
+ * @return {!proto.services.billing.v1alpha1.GetRateHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.addConfigTypes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.services.billing.v1alpha1.GetRateHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.clearConfigTypesList = function() {
+  return this.setConfigTypesList([]);
+};
+
+
+/**
+ * repeated services.billing.entities.v1alpha1.MatchingRule matching_rules = 4;
+ * @return {!Array<!proto.services.billing.entities.v1alpha1.MatchingRule>}
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.getMatchingRulesList = function() {
+  return /** @type {!Array<!proto.services.billing.entities.v1alpha1.MatchingRule>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.services.billing.entities.v1alpha1.MatchingRule>} value
+ * @return {!proto.services.billing.v1alpha1.GetRateHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.setMatchingRulesList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {!proto.services.billing.entities.v1alpha1.MatchingRule} value
+ * @param {number=} opt_index
+ * @return {!proto.services.billing.v1alpha1.GetRateHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.addMatchingRules = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.services.billing.v1alpha1.GetRateHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.clearMatchingRulesList = function() {
+  return this.setMatchingRulesList([]);
+};
+
+
+/**
+ * repeated string matching_shas = 5;
+ * @return {!Array<string>}
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.getMatchingShasList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.services.billing.v1alpha1.GetRateHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.setMatchingShasList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.services.billing.v1alpha1.GetRateHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.addMatchingShas = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.services.billing.v1alpha1.GetRateHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetRateHistoryRequest.prototype.clearMatchingShasList = function() {
+  return this.setMatchingShasList([]);
 };
 
 

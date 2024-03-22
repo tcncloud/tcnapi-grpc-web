@@ -203,15 +203,6 @@ BillingService.ListBillingPlans = {
   responseType: services_billing_v1alpha1_plans_pb.ListBillingPlansResponse
 };
 
-BillingService.ListHistoricalRateDefinitions = {
-  methodName: "ListHistoricalRateDefinitions",
-  service: BillingService,
-  requestStream: false,
-  responseStream: false,
-  requestType: services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsRequest,
-  responseType: services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsResponse
-};
-
 BillingService.ListInvoices = {
   methodName: "ListInvoices",
   service: BillingService,
@@ -907,37 +898,6 @@ BillingServiceClient.prototype.listBillingPlans = function listBillingPlans(requ
     callback = arguments[1];
   }
   var client = grpc.unary(BillingService.ListBillingPlans, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-BillingServiceClient.prototype.listHistoricalRateDefinitions = function listHistoricalRateDefinitions(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(BillingService.ListHistoricalRateDefinitions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

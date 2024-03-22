@@ -197,15 +197,6 @@ type BillingServiceListBillingPlans = {
   readonly responseType: typeof services_billing_v1alpha1_plans_pb.ListBillingPlansResponse;
 };
 
-type BillingServiceListHistoricalRateDefinitions = {
-  readonly methodName: string;
-  readonly service: typeof BillingService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsRequest;
-  readonly responseType: typeof services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsResponse;
-};
-
 type BillingServiceListInvoices = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -292,7 +283,6 @@ export class BillingService {
   static readonly GetRateDefinition: BillingServiceGetRateDefinition;
   static readonly GetRateHistory: BillingServiceGetRateHistory;
   static readonly ListBillingPlans: BillingServiceListBillingPlans;
-  static readonly ListHistoricalRateDefinitions: BillingServiceListHistoricalRateDefinitions;
   static readonly ListInvoices: BillingServiceListInvoices;
   static readonly ListRateDefinitions: BillingServiceListRateDefinitions;
   static readonly UpdateBillingPlan: BillingServiceUpdateBillingPlan;
@@ -522,15 +512,6 @@ export class BillingServiceClient {
   listBillingPlans(
     requestMessage: services_billing_v1alpha1_plans_pb.ListBillingPlansRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.ListBillingPlansResponse|null) => void
-  ): UnaryResponse;
-  listHistoricalRateDefinitions(
-    requestMessage: services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsResponse|null) => void
-  ): UnaryResponse;
-  listHistoricalRateDefinitions(
-    requestMessage: services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsRequest,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_rates_pb.ListHistoricalRateDefinitionsResponse|null) => void
   ): UnaryResponse;
   listInvoices(
     requestMessage: services_billing_v1alpha1_invoices_pb.ListInvoicesRequest,
