@@ -774,6 +774,11 @@ export class ExecuteFlow extends jspb.Message {
   getCircproLawGetCustomers(): ExecuteCircproLawGetCustomers | undefined;
   setCircproLawGetCustomers(value?: ExecuteCircproLawGetCustomers): void;
 
+  hasCircproLawGetPaymentTypes(): boolean;
+  clearCircproLawGetPaymentTypes(): void;
+  getCircproLawGetPaymentTypes(): ExecuteCircproLawGetPaymentTypes | undefined;
+  setCircproLawGetPaymentTypes(value?: ExecuteCircproLawGetPaymentTypes): void;
+
   hasAuthorizenetChargeCreditCard(): boolean;
   clearAuthorizenetChargeCreditCard(): void;
   getAuthorizenetChargeCreditCard(): ExecuteAuthorizenetChargeCreditCard | undefined;
@@ -1716,6 +1721,7 @@ export namespace ExecuteFlow {
     circproLawImmediatePayment?: ExecuteCircproLawImmediatePayment.AsObject,
     circproLawUpdateDataWithPac?: ExecuteCircproLawUpdateDataWithPac.AsObject,
     circproLawGetCustomers?: ExecuteCircproLawGetCustomers.AsObject,
+    circproLawGetPaymentTypes?: ExecuteCircproLawGetPaymentTypes.AsObject,
     authorizenetChargeCreditCard?: ExecuteAuthorizenetChargeCreditCard.AsObject,
     authorizenetDebitBankAccount?: ExecuteAuthorizenetDebitBankAccount.AsObject,
     authorizenetCreateCustomerPaymentProfile?: ExecuteAuthorizenetCreateCustomerPaymentProfile.AsObject,
@@ -1928,6 +1934,7 @@ export namespace ExecuteFlow {
     CIRCPRO_LAW_IMMEDIATE_PAYMENT = 412,
     CIRCPRO_LAW_UPDATE_DATA_WITH_PAC = 413,
     CIRCPRO_LAW_GET_CUSTOMERS = 414,
+    CIRCPRO_LAW_GET_PAYMENT_TYPES = 415,
     AUTHORIZENET_CHARGE_CREDIT_CARD = 501,
     AUTHORIZENET_DEBIT_BANK_ACCOUNT = 502,
     AUTHORIZENET_CREATE_CUSTOMER_PAYMENT_PROFILE = 503,
@@ -3076,6 +3083,22 @@ export class ExecuteCircproLawGetCustomers extends jspb.Message {
 }
 
 export namespace ExecuteCircproLawGetCustomers {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteCircproLawGetPaymentTypes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteCircproLawGetPaymentTypes.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteCircproLawGetPaymentTypes): ExecuteCircproLawGetPaymentTypes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteCircproLawGetPaymentTypes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteCircproLawGetPaymentTypes;
+  static deserializeBinaryFromReader(message: ExecuteCircproLawGetPaymentTypes, reader: jspb.BinaryReader): ExecuteCircproLawGetPaymentTypes;
+}
+
+export namespace ExecuteCircproLawGetPaymentTypes {
   export type AsObject = {
   }
 }
@@ -6037,6 +6060,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_CIRCPRO_LAW_IMMEDIATEPAYMENT: 412;
   REQUEST_METHOD_CIRCPRO_LAW_UPDATEDATAWITHPAC: 413;
   REQUEST_METHOD_CIRCPRO_LAW_GETCUSTOMERS: 414;
+  REQUEST_METHOD_CIRCPRO_LAW_GET_PAYMENT_TYPES: 415;
   REQUEST_METHOD_AUTHORIZENET_CHARGECREDITCARD: 501;
   REQUEST_METHOD_AUTHORIZENET_DEBITBANKACCOUNT: 502;
   REQUEST_METHOD_AUTHORIZENET_CREATECUSTOMERPAYMENTPROFILE: 503;
