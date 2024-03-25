@@ -3185,7 +3185,9 @@ proto.api.commons.org.AuthenticationPreferences.toObject = function(includeInsta
     enable2fa: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
     blockUnverifiedUsers: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
     emailMfaSettings: (f = msg.getEmailMfaSettings()) && proto.api.commons.org.AuthenticationPreferences.EmailMfaSettings.toObject(includeInstance, f),
-    duoMfaSettings: (f = msg.getDuoMfaSettings()) && proto.api.commons.org.AuthenticationPreferences.DuoMfaSettings.toObject(includeInstance, f)
+    duoMfaSettings: (f = msg.getDuoMfaSettings()) && proto.api.commons.org.AuthenticationPreferences.DuoMfaSettings.toObject(includeInstance, f),
+    allowForcePasswordResetInterval: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
+    passwordResetDayInterval: jspb.Message.getFieldWithDefault(msg, 18, 0)
   };
 
   if (includeInstance) {
@@ -3255,6 +3257,14 @@ proto.api.commons.org.AuthenticationPreferences.deserializeBinaryFromReader = fu
       var value = new proto.api.commons.org.AuthenticationPreferences.DuoMfaSettings;
       reader.readMessage(value,proto.api.commons.org.AuthenticationPreferences.DuoMfaSettings.deserializeBinaryFromReader);
       msg.setDuoMfaSettings(value);
+      break;
+    case 17:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAllowForcePasswordResetInterval(value);
+      break;
+    case 18:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPasswordResetDayInterval(value);
       break;
     default:
       reader.skipField();
@@ -3341,6 +3351,20 @@ proto.api.commons.org.AuthenticationPreferences.serializeBinaryToWriter = functi
       16,
       f,
       proto.api.commons.org.AuthenticationPreferences.DuoMfaSettings.serializeBinaryToWriter
+    );
+  }
+  f = message.getAllowForcePasswordResetInterval();
+  if (f) {
+    writer.writeBool(
+      17,
+      f
+    );
+  }
+  f = message.getPasswordResetDayInterval();
+  if (f !== 0) {
+    writer.writeInt32(
+      18,
+      f
     );
   }
 };
@@ -3864,6 +3888,42 @@ proto.api.commons.org.AuthenticationPreferences.prototype.clearDuoMfaSettings = 
  */
 proto.api.commons.org.AuthenticationPreferences.prototype.hasDuoMfaSettings = function() {
   return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional bool allow_force_password_reset_interval = 17;
+ * @return {boolean}
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.getAllowForcePasswordResetInterval = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.org.AuthenticationPreferences} returns this
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.setAllowForcePasswordResetInterval = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 17, value);
+};
+
+
+/**
+ * optional int32 password_reset_day_interval = 18;
+ * @return {number}
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.getPasswordResetDayInterval = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.org.AuthenticationPreferences} returns this
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.setPasswordResetDayInterval = function(value) {
+  return jspb.Message.setProto3IntField(this, 18, value);
 };
 
 
