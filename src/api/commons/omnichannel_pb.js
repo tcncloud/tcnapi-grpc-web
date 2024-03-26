@@ -16888,7 +16888,8 @@ proto.api.commons.OmniTaskConfig.toObject = function(includeInstance, msg) {
     absoluteTimeoutDuration: (f = msg.getAbsoluteTimeoutDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
     agentTimeoutDuration: (f = msg.getAgentTimeoutDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
     subject: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    message: (f = msg.getMessage()) && proto.api.commons.OmniMessagePayload.toObject(includeInstance, f)
+    message: (f = msg.getMessage()) && proto.api.commons.OmniMessagePayload.toObject(includeInstance, f),
+    userId: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -16948,6 +16949,10 @@ proto.api.commons.OmniTaskConfig.deserializeBinaryFromReader = function(msg, rea
       var value = new proto.api.commons.OmniMessagePayload;
       reader.readMessage(value,proto.api.commons.OmniMessagePayload.deserializeBinaryFromReader);
       msg.setMessage(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
       break;
     default:
       reader.skipField();
@@ -17015,6 +17020,13 @@ proto.api.commons.OmniTaskConfig.serializeBinaryToWriter = function(message, wri
       5,
       f,
       proto.api.commons.OmniMessagePayload.serializeBinaryToWriter
+    );
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
     );
   }
 };
@@ -17183,6 +17195,24 @@ proto.api.commons.OmniTaskConfig.prototype.clearMessage = function() {
  */
 proto.api.commons.OmniTaskConfig.prototype.hasMessage = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string user_id = 6;
+ * @return {string}
+ */
+proto.api.commons.OmniTaskConfig.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.OmniTaskConfig} returns this
+ */
+proto.api.commons.OmniTaskConfig.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
