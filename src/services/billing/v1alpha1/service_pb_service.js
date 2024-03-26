@@ -2,7 +2,6 @@
 // file: services/billing/v1alpha1/service.proto
 
 var services_billing_v1alpha1_service_pb = require("../../../services/billing/v1alpha1/service_pb");
-var services_billing_v1alpha1_history_pb = require("../../../services/billing/v1alpha1/history_pb");
 var services_billing_v1alpha1_invoices_pb = require("../../../services/billing/v1alpha1/invoices_pb");
 var services_billing_v1alpha1_plans_pb = require("../../../services/billing/v1alpha1/plans_pb");
 var services_billing_v1alpha1_rates_pb = require("../../../services/billing/v1alpha1/rates_pb");
@@ -167,6 +166,15 @@ BillingService.GetBillingPlan = {
   responseType: services_billing_v1alpha1_plans_pb.GetBillingPlanResponse
 };
 
+BillingService.GetBillingPlanHistory = {
+  methodName: "GetBillingPlanHistory",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha1_plans_pb.GetBillingPlanHistoryRequest,
+  responseType: services_billing_v1alpha1_plans_pb.GetBillingPlanHistoryResponse
+};
+
 BillingService.GetInvoice = {
   methodName: "GetInvoice",
   service: BillingService,
@@ -183,15 +191,6 @@ BillingService.GetRateDefinition = {
   responseStream: false,
   requestType: services_billing_v1alpha1_rates_pb.GetRateDefinitionRequest,
   responseType: services_billing_v1alpha1_rates_pb.GetRateDefinitionResponse
-};
-
-BillingService.GetRateHistory = {
-  methodName: "GetRateHistory",
-  service: BillingService,
-  requestStream: false,
-  responseStream: false,
-  requestType: services_billing_v1alpha1_history_pb.GetRateHistoryRequest,
-  responseType: services_billing_v1alpha1_history_pb.GetRateHistoryResponse
 };
 
 BillingService.ListBillingPlans = {
@@ -800,6 +799,37 @@ BillingServiceClient.prototype.getBillingPlan = function getBillingPlan(requestM
   };
 };
 
+BillingServiceClient.prototype.getBillingPlanHistory = function getBillingPlanHistory(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.GetBillingPlanHistory, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 BillingServiceClient.prototype.getInvoice = function getInvoice(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -836,37 +866,6 @@ BillingServiceClient.prototype.getRateDefinition = function getRateDefinition(re
     callback = arguments[1];
   }
   var client = grpc.unary(BillingService.GetRateDefinition, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-BillingServiceClient.prototype.getRateHistory = function getRateHistory(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(BillingService.GetRateHistory, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
