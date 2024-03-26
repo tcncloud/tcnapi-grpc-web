@@ -160,6 +160,15 @@ type BillingServiceGetBillingPlan = {
   readonly responseType: typeof services_billing_v1alpha1_plans_pb.GetBillingPlanResponse;
 };
 
+type BillingServiceGetBillingPlanHistory = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha1_plans_pb.GetBillingPlanHistoryRequest;
+  readonly responseType: typeof services_billing_v1alpha1_plans_pb.GetBillingPlanHistoryResponse;
+};
+
 type BillingServiceGetInvoice = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -269,6 +278,7 @@ export class BillingService {
   static readonly ExportInvoice: BillingServiceExportInvoice;
   static readonly GetActiveBillingPlan: BillingServiceGetActiveBillingPlan;
   static readonly GetBillingPlan: BillingServiceGetBillingPlan;
+  static readonly GetBillingPlanHistory: BillingServiceGetBillingPlanHistory;
   static readonly GetInvoice: BillingServiceGetInvoice;
   static readonly GetRateDefinition: BillingServiceGetRateDefinition;
   static readonly ListBillingPlans: BillingServiceListBillingPlans;
@@ -465,6 +475,15 @@ export class BillingServiceClient {
   getBillingPlan(
     requestMessage: services_billing_v1alpha1_plans_pb.GetBillingPlanRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.GetBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  getBillingPlanHistory(
+    requestMessage: services_billing_v1alpha1_plans_pb.GetBillingPlanHistoryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.GetBillingPlanHistoryResponse|null) => void
+  ): UnaryResponse;
+  getBillingPlanHistory(
+    requestMessage: services_billing_v1alpha1_plans_pb.GetBillingPlanHistoryRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha1_plans_pb.GetBillingPlanHistoryResponse|null) => void
   ): UnaryResponse;
   getInvoice(
     requestMessage: services_billing_v1alpha1_invoices_pb.GetInvoiceRequest,
