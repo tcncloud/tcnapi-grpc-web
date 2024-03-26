@@ -2003,6 +2003,9 @@ export class ProgrammedDates extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
+  getTimezone(): api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap];
+  setTimezone(value: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap]): void;
+
   clearDaysList(): void;
   getDaysList(): Array<ProgrammedDay>;
   setDaysList(value: Array<ProgrammedDay>): void;
@@ -2029,6 +2032,7 @@ export namespace ProgrammedDates {
     programmedDatesId: string,
     programmedDatesName: string,
     description: string,
+    timezone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
     daysList: Array<ProgrammedDay.AsObject>,
     lastUpdated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
