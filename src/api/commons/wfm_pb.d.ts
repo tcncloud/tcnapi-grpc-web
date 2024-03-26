@@ -1005,3 +1005,18 @@ export interface InitialSetupStateMap {
 
 export const InitialSetupState: InitialSetupStateMap;
 
+export interface RealTimeManagementStateMap {
+  UNSPECIFIED: 0;
+  LOGGED_IN: 1;
+  CALL_ON_HOLD: 4;
+  OUTBOUND_CALL: 5;
+  TRANSFER: 7;
+  CONFERENCE: 8;
+  READY: 9;
+  NOT_READY: 10;
+  WRAP_UP: 11;
+  LOGGED_OUT: 13;
+}
+
+export const RealTimeManagementState: RealTimeManagementStateMap;
+
