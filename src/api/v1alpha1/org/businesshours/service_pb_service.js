@@ -11,6 +11,15 @@ var BusinessHoursService = (function () {
   return BusinessHoursService;
 }());
 
+BusinessHoursService.ListBusinessHours = {
+  methodName: "ListBusinessHours",
+  service: BusinessHoursService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_businesshours_entities_pb.ListBusinessHoursRequest,
+  responseType: api_v1alpha1_org_businesshours_entities_pb.ListBusinessHoursResponse
+};
+
 BusinessHoursService.GetBusinessHours = {
   methodName: "GetBusinessHours",
   service: BusinessHoursService,
@@ -80,6 +89,37 @@ function BusinessHoursServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
+
+BusinessHoursServiceClient.prototype.listBusinessHours = function listBusinessHours(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BusinessHoursService.ListBusinessHours, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
 
 BusinessHoursServiceClient.prototype.getBusinessHours = function getBusinessHours(requestMessage, metadata, callback) {
   if (arguments.length === 2) {

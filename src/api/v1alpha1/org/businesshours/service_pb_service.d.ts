@@ -5,6 +5,15 @@ import * as api_v1alpha1_org_businesshours_service_pb from "../../../../api/v1al
 import * as api_v1alpha1_org_businesshours_entities_pb from "../../../../api/v1alpha1/org/businesshours/entities_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
+type BusinessHoursServiceListBusinessHours = {
+  readonly methodName: string;
+  readonly service: typeof BusinessHoursService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_businesshours_entities_pb.ListBusinessHoursRequest;
+  readonly responseType: typeof api_v1alpha1_org_businesshours_entities_pb.ListBusinessHoursResponse;
+};
+
 type BusinessHoursServiceGetBusinessHours = {
   readonly methodName: string;
   readonly service: typeof BusinessHoursService;
@@ -70,6 +79,7 @@ type BusinessHoursServiceEvaluateBusinessHours = {
 
 export class BusinessHoursService {
   static readonly serviceName: string;
+  static readonly ListBusinessHours: BusinessHoursServiceListBusinessHours;
   static readonly GetBusinessHours: BusinessHoursServiceGetBusinessHours;
   static readonly SetBusinessHours: BusinessHoursServiceSetBusinessHours;
   static readonly AddIntervalToBusinessHours: BusinessHoursServiceAddIntervalToBusinessHours;
@@ -111,6 +121,15 @@ export class BusinessHoursServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
+  listBusinessHours(
+    requestMessage: api_v1alpha1_org_businesshours_entities_pb.ListBusinessHoursRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_businesshours_entities_pb.ListBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  listBusinessHours(
+    requestMessage: api_v1alpha1_org_businesshours_entities_pb.ListBusinessHoursRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_businesshours_entities_pb.ListBusinessHoursResponse|null) => void
+  ): UnaryResponse;
   getBusinessHours(
     requestMessage: api_v1alpha1_org_businesshours_entities_pb.GetBusinessHoursRequest,
     metadata: grpc.Metadata,
