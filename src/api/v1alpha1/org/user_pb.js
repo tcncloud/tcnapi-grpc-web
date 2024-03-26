@@ -19538,7 +19538,8 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.toObject = function(inclu
     agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 30, ""),
     agent: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
     accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 32, false),
-    mfaTimestamp: (f = msg.getMfaTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    mfaTimestamp: (f = msg.getMfaTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    passwordResetDate: (f = msg.getPasswordResetDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -19693,6 +19694,11 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.deserializeBinaryFromRead
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setMfaTimestamp(value);
+      break;
+    case 34:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setPasswordResetDate(value);
       break;
     default:
       reader.skipField();
@@ -19917,6 +19923,14 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.serializeBinaryToWriter =
   if (f != null) {
     writer.writeMessage(
       33,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getPasswordResetDate();
+  if (f != null) {
+    writer.writeMessage(
+      34,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -20791,6 +20805,43 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.clearMfaTimesta
  */
 proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.hasMfaTimestamp = function() {
   return jspb.Message.getField(this, 33) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp password_reset_date = 34;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.getPasswordResetDate = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 34));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse.User} returns this
+*/
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.setPasswordResetDate = function(value) {
+  return jspb.Message.setWrapperField(this, 34, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse.User} returns this
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.clearPasswordResetDate = function() {
+  return this.setPasswordResetDate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.hasPasswordResetDate = function() {
+  return jspb.Message.getField(this, 34) != null;
 };
 
 
