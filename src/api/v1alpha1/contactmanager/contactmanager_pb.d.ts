@@ -162,6 +162,11 @@ export class GetKYCEncContactEntryRequest extends jspb.Message {
   getMinKycLimit(): number;
   setMinKycLimit(value: number): void;
 
+  clearKycResponseList(): void;
+  getKycResponseList(): Array<ContactManagerEntryVal>;
+  setKycResponseList(value: Array<ContactManagerEntryVal>): void;
+  addKycResponse(value?: ContactManagerEntryVal, index?: number): ContactManagerEntryVal;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetKYCEncContactEntryRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetKYCEncContactEntryRequest): GetKYCEncContactEntryRequest.AsObject;
@@ -177,12 +182,18 @@ export namespace GetKYCEncContactEntryRequest {
     projectId: string,
     entryValList: Array<api_commons_contactmanager_pb.ContactManagerEntryVal.AsObject>,
     minKycLimit: number,
+    kycResponseList: Array<ContactManagerEntryVal.AsObject>,
   }
 }
 
 export class GetKYCEncContactEntryResponse extends jspb.Message {
   getVerified(): boolean;
   setVerified(value: boolean): void;
+
+  clearContactEntryList(): void;
+  getContactEntryList(): Array<ContactManagerEntry>;
+  setContactEntryList(value: Array<ContactManagerEntry>): void;
+  addContactEntry(value?: ContactManagerEntry, index?: number): ContactManagerEntry;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetKYCEncContactEntryResponse.AsObject;
@@ -197,6 +208,7 @@ export class GetKYCEncContactEntryResponse extends jspb.Message {
 export namespace GetKYCEncContactEntryResponse {
   export type AsObject = {
     verified: boolean,
+    contactEntryList: Array<ContactManagerEntry.AsObject>,
   }
 }
 
