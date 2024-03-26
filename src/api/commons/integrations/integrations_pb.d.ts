@@ -1094,6 +1094,16 @@ export class ExecuteFlow extends jspb.Message {
   getExperianStellaAuth(): ExecuteExperianStellaAuth | undefined;
   setExperianStellaAuth(value?: ExecuteExperianStellaAuth): void;
 
+  hasExperianStellaCardEntryTokenization(): boolean;
+  clearExperianStellaCardEntryTokenization(): void;
+  getExperianStellaCardEntryTokenization(): ExecuteExperianStellaCardEntryTokenization | undefined;
+  setExperianStellaCardEntryTokenization(value?: ExecuteExperianStellaCardEntryTokenization): void;
+
+  hasExperianStellaPaymentPlansByPatient(): boolean;
+  clearExperianStellaPaymentPlansByPatient(): void;
+  getExperianStellaPaymentPlansByPatient(): ExecuteExperianStellaPaymentPlansByPatient | undefined;
+  setExperianStellaPaymentPlansByPatient(value?: ExecuteExperianStellaPaymentPlansByPatient): void;
+
   hasNewscycleLogin(): boolean;
   clearNewscycleLogin(): void;
   getNewscycleLogin(): ExecuteNewscycleLogin | undefined;
@@ -1780,6 +1790,8 @@ export namespace ExecuteFlow {
     experianStellaAddUsaEpayToken?: ExecuteExperianStellaAddusaepaytoken.AsObject,
     experianStellaPaymentPlans?: ExecuteExperianStellaPaymentPlans.AsObject,
     experianStellaAuth?: ExecuteExperianStellaAuth.AsObject,
+    experianStellaCardEntryTokenization?: ExecuteExperianStellaCardEntryTokenization.AsObject,
+    experianStellaPaymentPlansByPatient?: ExecuteExperianStellaPaymentPlansByPatient.AsObject,
     newscycleLogin?: ExecuteNewscycleLogin.AsObject,
     newscycleSearchPage?: ExecuteNewscycleSearchPage.AsObject,
     newscycleBillingInfo?: ExecuteNewscycleBillingInfo.AsObject,
@@ -1992,6 +2004,8 @@ export namespace ExecuteFlow {
     EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN = 2011,
     EXPERIAN_STELLA_PAYMENT_PLANS = 2012,
     EXPERIAN_STELLA_AUTH = 2013,
+    EXPERIAN_STELLA_CARD_ENTRY_TOKENIZATION = 2014,
+    EXPERIAN_STELLA_PAYMENT_PLANS_BY_PATIENT = 2015,
     NEWSCYCLE_LOGIN = 2101,
     NEWSCYCLE_SEARCH_PAGE = 2102,
     NEWSCYCLE_BILLING_INFO = 2103,
@@ -4104,6 +4118,38 @@ export namespace ExecuteExperianStellaAuth {
   }
 }
 
+export class ExecuteExperianStellaCardEntryTokenization extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaCardEntryTokenization.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaCardEntryTokenization): ExecuteExperianStellaCardEntryTokenization.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaCardEntryTokenization, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaCardEntryTokenization;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaCardEntryTokenization, reader: jspb.BinaryReader): ExecuteExperianStellaCardEntryTokenization;
+}
+
+export namespace ExecuteExperianStellaCardEntryTokenization {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteExperianStellaPaymentPlansByPatient extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteExperianStellaPaymentPlansByPatient.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteExperianStellaPaymentPlansByPatient): ExecuteExperianStellaPaymentPlansByPatient.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteExperianStellaPaymentPlansByPatient, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteExperianStellaPaymentPlansByPatient;
+  static deserializeBinaryFromReader(message: ExecuteExperianStellaPaymentPlansByPatient, reader: jspb.BinaryReader): ExecuteExperianStellaPaymentPlansByPatient;
+}
+
+export namespace ExecuteExperianStellaPaymentPlansByPatient {
+  export type AsObject = {
+  }
+}
+
 export class ExecuteNewscycleLogin extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteNewscycleLogin.AsObject;
@@ -6101,6 +6147,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN: 2011;
   REQUEST_METHOD_EXPERIAN_STELLA_PAYMENT_PLANS: 2012;
   REQUEST_METHOD_EXPERIAN_STELLA_AUTH: 2013;
+  REQUEST_METHOD_EXPERIAN_STELLA_CARD_ENTRY_TOKENIZATION: 2014;
+  REQUEST_METHOD_EXPERIAN_STELLA_PAYMENT_PLANS_BY_PATIENT: 2015;
   REQUEST_METHOD_NEWSCYCLE_LOGIN: 2101;
   REQUEST_METHOD_NEWSCYCLE_SEARCHPAGE: 2102;
   REQUEST_METHOD_NEWSCYCLE_BILLINGINFO: 2103;
