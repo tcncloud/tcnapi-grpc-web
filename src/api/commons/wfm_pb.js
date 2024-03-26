@@ -25,7 +25,6 @@ var global = localGlobalThis ||
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('proto.api.commons.AgentRTMState', null, global);
 goog.exportSymbol('proto.api.commons.AgentStateSegment', null, global);
 goog.exportSymbol('proto.api.commons.AgentStateSequence', null, global);
 goog.exportSymbol('proto.api.commons.AvailabilityOption', null, global);
@@ -59,6 +58,7 @@ goog.exportSymbol('proto.api.commons.ProfileDOW', null, global);
 goog.exportSymbol('proto.api.commons.ProfileMOY', null, global);
 goog.exportSymbol('proto.api.commons.ProfileTOD', null, global);
 goog.exportSymbol('proto.api.commons.ProfileWOMS', null, global);
+goog.exportSymbol('proto.api.commons.RealTimeManagementState', null, global);
 goog.exportSymbol('proto.api.commons.RegressionForecasterAvgsProcessingType', null, global);
 goog.exportSymbol('proto.api.commons.RegressionForecasterModelTypes', null, global);
 goog.exportSymbol('proto.api.commons.ScheduleSelector', null, global);
@@ -460,7 +460,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.commons.AgentStateSegment = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.AgentStateSegment.repeatedFields_, null);
 };
 goog.inherits(proto.api.commons.AgentStateSegment, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -5702,6 +5702,13 @@ proto.api.commons.InitialSetupStatus.prototype.setMessage = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.commons.AgentStateSegment.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -5734,10 +5741,8 @@ proto.api.commons.AgentStateSegment.prototype.toObject = function(opt_includeIns
 proto.api.commons.AgentStateSegment.toObject = function(includeInstance, msg) {
   var f, obj = {
     orderInRts: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    state: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    widthInMinutes: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    agentStateSegmentSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    agentStateSequenceSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    statesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    widthInMinutes: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -5779,20 +5784,14 @@ proto.api.commons.AgentStateSegment.deserializeBinaryFromReader = function(msg, 
       msg.setOrderInRts(value);
       break;
     case 2:
-      var value = /** @type {!proto.api.commons.AgentRTMState} */ (reader.readEnum());
-      msg.setState(value);
+      var values = /** @type {!Array<!proto.api.commons.RealTimeManagementState>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addStates(values[i]);
+      }
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setWidthInMinutes(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setAgentStateSegmentSid(value);
-      break;
-    case 5:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setAgentStateSequenceSid(value);
       break;
     default:
       reader.skipField();
@@ -5830,9 +5829,9 @@ proto.api.commons.AgentStateSegment.serializeBinaryToWriter = function(message, 
       f
     );
   }
-  f = message.getState();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  f = message.getStatesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
       2,
       f
     );
@@ -5841,20 +5840,6 @@ proto.api.commons.AgentStateSegment.serializeBinaryToWriter = function(message, 
   if (f !== 0) {
     writer.writeInt32(
       3,
-      f
-    );
-  }
-  f = message.getAgentStateSegmentSid();
-  if (f !== 0) {
-    writer.writeInt64(
-      4,
-      f
-    );
-  }
-  f = message.getAgentStateSequenceSid();
-  if (f !== 0) {
-    writer.writeInt64(
-      5,
       f
     );
   }
@@ -5880,20 +5865,39 @@ proto.api.commons.AgentStateSegment.prototype.setOrderInRts = function(value) {
 
 
 /**
- * optional AgentRTMState state = 2;
- * @return {!proto.api.commons.AgentRTMState}
+ * repeated RealTimeManagementState states = 2;
+ * @return {!Array<!proto.api.commons.RealTimeManagementState>}
  */
-proto.api.commons.AgentStateSegment.prototype.getState = function() {
-  return /** @type {!proto.api.commons.AgentRTMState} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+proto.api.commons.AgentStateSegment.prototype.getStatesList = function() {
+  return /** @type {!Array<!proto.api.commons.RealTimeManagementState>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
- * @param {!proto.api.commons.AgentRTMState} value
+ * @param {!Array<!proto.api.commons.RealTimeManagementState>} value
  * @return {!proto.api.commons.AgentStateSegment} returns this
  */
-proto.api.commons.AgentStateSegment.prototype.setState = function(value) {
-  return jspb.Message.setProto3EnumField(this, 2, value);
+proto.api.commons.AgentStateSegment.prototype.setStatesList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {!proto.api.commons.RealTimeManagementState} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.AgentStateSegment} returns this
+ */
+proto.api.commons.AgentStateSegment.prototype.addStates = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.AgentStateSegment} returns this
+ */
+proto.api.commons.AgentStateSegment.prototype.clearStatesList = function() {
+  return this.setStatesList([]);
 };
 
 
@@ -5912,42 +5916,6 @@ proto.api.commons.AgentStateSegment.prototype.getWidthInMinutes = function() {
  */
 proto.api.commons.AgentStateSegment.prototype.setWidthInMinutes = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
-};
-
-
-/**
- * optional int64 agent_state_segment_sid = 4;
- * @return {number}
- */
-proto.api.commons.AgentStateSegment.prototype.getAgentStateSegmentSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.commons.AgentStateSegment} returns this
- */
-proto.api.commons.AgentStateSegment.prototype.setAgentStateSegmentSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
-};
-
-
-/**
- * optional int64 agent_state_sequence_sid = 5;
- * @return {number}
- */
-proto.api.commons.AgentStateSegment.prototype.getAgentStateSequenceSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.commons.AgentStateSegment} returns this
- */
-proto.api.commons.AgentStateSegment.prototype.setAgentStateSequenceSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -5993,9 +5961,7 @@ proto.api.commons.AgentStateSequence.toObject = function(includeInstance, msg) {
     wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     stateSegmentsList: jspb.Message.toObjectList(msg.getStateSegmentsList(),
-    proto.api.commons.AgentStateSegment.toObject, includeInstance),
-    totalWidthInMinutes: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    agentStateSequenceSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    proto.api.commons.AgentStateSegment.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -6045,14 +6011,6 @@ proto.api.commons.AgentStateSequence.deserializeBinaryFromReader = function(msg,
       var value = new proto.api.commons.AgentStateSegment;
       reader.readMessage(value,proto.api.commons.AgentStateSegment.deserializeBinaryFromReader);
       msg.addStateSegments(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalWidthInMinutes(value);
-      break;
-    case 5:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setAgentStateSequenceSid(value);
       break;
     default:
       reader.skipField();
@@ -6104,20 +6062,6 @@ proto.api.commons.AgentStateSequence.serializeBinaryToWriter = function(message,
       3,
       f,
       proto.api.commons.AgentStateSegment.serializeBinaryToWriter
-    );
-  }
-  f = message.getTotalWidthInMinutes();
-  if (f !== 0) {
-    writer.writeInt32(
-      4,
-      f
-    );
-  }
-  f = message.getAgentStateSequenceSid();
-  if (f !== 0) {
-    writer.writeInt64(
-      5,
-      f
     );
   }
 };
@@ -6213,42 +6157,6 @@ proto.api.commons.AgentStateSequence.prototype.addStateSegments = function(opt_v
  */
 proto.api.commons.AgentStateSequence.prototype.clearStateSegmentsList = function() {
   return this.setStateSegmentsList([]);
-};
-
-
-/**
- * optional int32 total_width_in_minutes = 4;
- * @return {number}
- */
-proto.api.commons.AgentStateSequence.prototype.getTotalWidthInMinutes = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.commons.AgentStateSequence} returns this
- */
-proto.api.commons.AgentStateSequence.prototype.setTotalWidthInMinutes = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
-};
-
-
-/**
- * optional int64 agent_state_sequence_sid = 5;
- * @return {number}
- */
-proto.api.commons.AgentStateSequence.prototype.getAgentStateSequenceSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.commons.AgentStateSequence} returns this
- */
-proto.api.commons.AgentStateSequence.prototype.setAgentStateSequenceSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -6531,16 +6439,17 @@ proto.api.commons.InitialSetupState = {
 /**
  * @enum {number}
  */
-proto.api.commons.AgentRTMState = {
-  LOGGED_IN: 0,
-  ACD_INBOUND_CALL: 1,
-  DIRECT_OUTBOUND_CALL: 2,
-  CALL_ON_HOLD: 3,
-  OUTBOUND_CALL: 4,
-  INBOUND_CALL: 5,
-  TRANSFER: 6,
-  CONFERENCE: 7,
-  READY: 8
+proto.api.commons.RealTimeManagementState = {
+  UNSPECIFIED: 0,
+  LOGGED_IN: 1,
+  CALL_ON_HOLD: 4,
+  OUTBOUND_CALL: 5,
+  TRANSFER: 7,
+  CONFERENCE: 8,
+  READY: 9,
+  NOT_READY: 10,
+  WRAP_UP: 11,
+  LOGGED_OUT: 13
 };
 
 goog.object.extend(exports, proto.api.commons);

@@ -752,17 +752,13 @@ export class AgentStateSegment extends jspb.Message {
   getOrderInRts(): number;
   setOrderInRts(value: number): void;
 
-  getState(): AgentRTMStateMap[keyof AgentRTMStateMap];
-  setState(value: AgentRTMStateMap[keyof AgentRTMStateMap]): void;
+  clearStatesList(): void;
+  getStatesList(): Array<RealTimeManagementStateMap[keyof RealTimeManagementStateMap]>;
+  setStatesList(value: Array<RealTimeManagementStateMap[keyof RealTimeManagementStateMap]>): void;
+  addStates(value: RealTimeManagementStateMap[keyof RealTimeManagementStateMap], index?: number): RealTimeManagementStateMap[keyof RealTimeManagementStateMap];
 
   getWidthInMinutes(): number;
   setWidthInMinutes(value: number): void;
-
-  getAgentStateSegmentSid(): number;
-  setAgentStateSegmentSid(value: number): void;
-
-  getAgentStateSequenceSid(): number;
-  setAgentStateSequenceSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AgentStateSegment.AsObject;
@@ -777,10 +773,8 @@ export class AgentStateSegment extends jspb.Message {
 export namespace AgentStateSegment {
   export type AsObject = {
     orderInRts: number,
-    state: AgentRTMStateMap[keyof AgentRTMStateMap],
+    statesList: Array<RealTimeManagementStateMap[keyof RealTimeManagementStateMap]>,
     widthInMinutes: number,
-    agentStateSegmentSid: number,
-    agentStateSequenceSid: number,
   }
 }
 
@@ -798,12 +792,6 @@ export class AgentStateSequence extends jspb.Message {
   setStateSegmentsList(value: Array<AgentStateSegment>): void;
   addStateSegments(value?: AgentStateSegment, index?: number): AgentStateSegment;
 
-  getTotalWidthInMinutes(): number;
-  setTotalWidthInMinutes(value: number): void;
-
-  getAgentStateSequenceSid(): number;
-  setAgentStateSequenceSid(value: number): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AgentStateSequence.AsObject;
   static toObject(includeInstance: boolean, msg: AgentStateSequence): AgentStateSequence.AsObject;
@@ -819,8 +807,6 @@ export namespace AgentStateSequence {
     wfmAgentSid: number,
     startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     stateSegmentsList: Array<AgentStateSegment.AsObject>,
-    totalWidthInMinutes: number,
-    agentStateSequenceSid: number,
   }
 }
 
@@ -1081,17 +1067,18 @@ export interface InitialSetupStateMap {
 
 export const InitialSetupState: InitialSetupStateMap;
 
-export interface AgentRTMStateMap {
-  LOGGED_IN: 0;
-  ACD_INBOUND_CALL: 1;
-  DIRECT_OUTBOUND_CALL: 2;
-  CALL_ON_HOLD: 3;
-  OUTBOUND_CALL: 4;
-  INBOUND_CALL: 5;
-  TRANSFER: 6;
-  CONFERENCE: 7;
-  READY: 8;
+export interface RealTimeManagementStateMap {
+  UNSPECIFIED: 0;
+  LOGGED_IN: 1;
+  CALL_ON_HOLD: 4;
+  OUTBOUND_CALL: 5;
+  TRANSFER: 7;
+  CONFERENCE: 8;
+  READY: 9;
+  NOT_READY: 10;
+  WRAP_UP: 11;
+  LOGGED_OUT: 13;
 }
 
-export const AgentRTMState: AgentRTMStateMap;
+export const RealTimeManagementState: RealTimeManagementStateMap;
 
