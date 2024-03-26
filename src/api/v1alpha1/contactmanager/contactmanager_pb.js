@@ -200,7 +200,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1332,7 +1332,7 @@ proto.api.v1alpha1.contactmanager.GetEncContactEntryResponse.prototype.clearCont
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest.repeatedFields_ = [2];
+proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest.repeatedFields_ = [2,4];
 
 
 
@@ -1368,7 +1368,9 @@ proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest.toObject = functi
     projectId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     entryValList: jspb.Message.toObjectList(msg.getEntryValList(),
     api_commons_contactmanager_pb.ContactManagerEntryVal.toObject, includeInstance),
-    minKycLimit: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    minKycLimit: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    kycResponseList: jspb.Message.toObjectList(msg.getKycResponseList(),
+    proto.api.v1alpha1.contactmanager.ContactManagerEntryVal.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1417,6 +1419,11 @@ proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest.deserializeBinary
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setMinKycLimit(value);
+      break;
+    case 4:
+      var value = new proto.api.v1alpha1.contactmanager.ContactManagerEntryVal;
+      reader.readMessage(value,proto.api.v1alpha1.contactmanager.ContactManagerEntryVal.deserializeBinaryFromReader);
+      msg.addKycResponse(value);
       break;
     default:
       reader.skipField();
@@ -1467,6 +1474,14 @@ proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest.serializeBinaryTo
     writer.writeInt64(
       3,
       f
+    );
+  }
+  f = message.getKycResponseList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      proto.api.v1alpha1.contactmanager.ContactManagerEntryVal.serializeBinaryToWriter
     );
   }
 };
@@ -1546,6 +1561,51 @@ proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest.prototype.setMinK
 };
 
 
+/**
+ * repeated ContactManagerEntryVal kyc_response = 4;
+ * @return {!Array<!proto.api.v1alpha1.contactmanager.ContactManagerEntryVal>}
+ */
+proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest.prototype.getKycResponseList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.contactmanager.ContactManagerEntryVal>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.contactmanager.ContactManagerEntryVal, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.contactmanager.ContactManagerEntryVal>} value
+ * @return {!proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest} returns this
+*/
+proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest.prototype.setKycResponseList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.contactmanager.ContactManagerEntryVal=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntryVal}
+ */
+proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest.prototype.addKycResponse = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.api.v1alpha1.contactmanager.ContactManagerEntryVal, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest.prototype.clearKycResponseList = function() {
+  return this.setKycResponseList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.repeatedFields_ = [2];
 
 
 
@@ -1578,7 +1638,9 @@ proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.prototype.toObje
  */
 proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    verified: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+    verified: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    contactEntryList: jspb.Message.toObjectList(msg.getContactEntryList(),
+    proto.api.v1alpha1.contactmanager.ContactManagerEntry.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1619,6 +1681,11 @@ proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.deserializeBinar
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setVerified(value);
       break;
+    case 2:
+      var value = new proto.api.v1alpha1.contactmanager.ContactManagerEntry;
+      reader.readMessage(value,proto.api.v1alpha1.contactmanager.ContactManagerEntry.deserializeBinaryFromReader);
+      msg.addContactEntry(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1655,6 +1722,14 @@ proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.serializeBinaryT
       f
     );
   }
+  f = message.getContactEntryList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.api.v1alpha1.contactmanager.ContactManagerEntry.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -1673,6 +1748,44 @@ proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.prototype.getVer
  */
 proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.prototype.setVerified = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
+};
+
+
+/**
+ * repeated ContactManagerEntry contact_entry = 2;
+ * @return {!Array<!proto.api.v1alpha1.contactmanager.ContactManagerEntry>}
+ */
+proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.prototype.getContactEntryList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.contactmanager.ContactManagerEntry>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.contactmanager.ContactManagerEntry, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.contactmanager.ContactManagerEntry>} value
+ * @return {!proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse} returns this
+*/
+proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.prototype.setContactEntryList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.contactmanager.ContactManagerEntry=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry}
+ */
+proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.prototype.addContactEntry = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.contactmanager.ContactManagerEntry, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse} returns this
+ */
+proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.prototype.clearContactEntryList = function() {
+  return this.setContactEntryList([]);
 };
 
 
