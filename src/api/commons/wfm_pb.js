@@ -56,6 +56,7 @@ goog.exportSymbol('proto.api.commons.ProfileDOW', null, global);
 goog.exportSymbol('proto.api.commons.ProfileMOY', null, global);
 goog.exportSymbol('proto.api.commons.ProfileTOD', null, global);
 goog.exportSymbol('proto.api.commons.ProfileWOMS', null, global);
+goog.exportSymbol('proto.api.commons.RealTimeManagementState', null, global);
 goog.exportSymbol('proto.api.commons.RegressionForecasterAvgsProcessingType', null, global);
 goog.exportSymbol('proto.api.commons.RegressionForecasterModelTypes', null, global);
 goog.exportSymbol('proto.api.commons.ScheduleSelector', null, global);
@@ -5930,6 +5931,22 @@ proto.api.commons.InitialSetupState = {
   SETTING_UP: 1,
   SETUP_COMPLETE: 2,
   FAILURE: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.RealTimeManagementState = {
+  UNSPECIFIED: 0,
+  LOGGED_IN: 1,
+  CALL_ON_HOLD: 4,
+  OUTBOUND_CALL: 5,
+  TRANSFER: 7,
+  CONFERENCE: 8,
+  READY: 9,
+  NOT_READY: 10,
+  WRAP_UP: 11,
+  LOGGED_OUT: 13
 };
 
 goog.object.extend(exports, proto.api.commons);
