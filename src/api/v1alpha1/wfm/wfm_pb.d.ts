@@ -11262,3 +11262,53 @@ export namespace HelloWorldWFMAdherenceResponse {
   }
 }
 
+export class ListAgentStatesForDayRequest extends jspb.Message {
+  hasStartDatetime(): boolean;
+  clearStartDatetime(): void;
+  getStartDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasEndDatetime(): boolean;
+  clearEndDatetime(): void;
+  getEndDatetime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndDatetime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentStatesForDayRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentStatesForDayRequest): ListAgentStatesForDayRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentStatesForDayRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentStatesForDayRequest;
+  static deserializeBinaryFromReader(message: ListAgentStatesForDayRequest, reader: jspb.BinaryReader): ListAgentStatesForDayRequest;
+}
+
+export namespace ListAgentStatesForDayRequest {
+  export type AsObject = {
+    startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class ListAgentStatesForDayResponse extends jspb.Message {
+  clearAgentStatesList(): void;
+  getAgentStatesList(): Array<api_commons_wfm_pb.AgentStateSequence>;
+  setAgentStatesList(value: Array<api_commons_wfm_pb.AgentStateSequence>): void;
+  addAgentStates(value?: api_commons_wfm_pb.AgentStateSequence, index?: number): api_commons_wfm_pb.AgentStateSequence;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentStatesForDayResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentStatesForDayResponse): ListAgentStatesForDayResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentStatesForDayResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentStatesForDayResponse;
+  static deserializeBinaryFromReader(message: ListAgentStatesForDayResponse, reader: jspb.BinaryReader): ListAgentStatesForDayResponse;
+}
+
+export namespace ListAgentStatesForDayResponse {
+  export type AsObject = {
+    agentStatesList: Array<api_commons_wfm_pb.AgentStateSequence.AsObject>,
+  }
+}
+

@@ -1516,6 +1516,15 @@ type WFMHelloWorldWFMAdherence = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse;
 };
 
+type WFMListAgentStatesForDay = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayResponse;
+};
+
 export class WFM {
   static readonly serviceName: string;
   static readonly PerformInitialClientSetup: WFMPerformInitialClientSetup;
@@ -1686,6 +1695,7 @@ export class WFM {
   static readonly ReplaceAgentOnScheduleV1: WFMReplaceAgentOnScheduleV1;
   static readonly RemoveAgentFromSchedule: WFMRemoveAgentFromSchedule;
   static readonly HelloWorldWFMAdherence: WFMHelloWorldWFMAdherence;
+  static readonly ListAgentStatesForDay: WFMListAgentStatesForDay;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3183,6 +3193,15 @@ export class WFMClient {
   helloWorldWFMAdherence(
     requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse|null) => void
+  ): UnaryResponse;
+  listAgentStatesForDay(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayResponse|null) => void
+  ): UnaryResponse;
+  listAgentStatesForDay(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayResponse|null) => void
   ): UnaryResponse;
 }
 
