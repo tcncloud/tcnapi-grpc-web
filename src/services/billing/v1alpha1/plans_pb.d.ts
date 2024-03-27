@@ -434,6 +434,16 @@ export class GetBillingPlanHistoryRequest extends jspb.Message {
   setGroupIdsList(value: Array<string>): void;
   addGroupIds(value: string, index?: number): string;
 
+  hasStartTime(): boolean;
+  clearStartTime(): void;
+  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasEndTime(): boolean;
+  clearEndTime(): void;
+  getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetBillingPlanHistoryRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetBillingPlanHistoryRequest): GetBillingPlanHistoryRequest.AsObject;
@@ -448,6 +458,8 @@ export namespace GetBillingPlanHistoryRequest {
   export type AsObject = {
     orgId: string,
     groupIdsList: Array<string>,
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
