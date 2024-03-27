@@ -97,9 +97,6 @@ export class InvoiceItem extends jspb.Message {
   setColumnsList(value: Array<InvoiceItemColumn>): void;
   addColumns(value?: InvoiceItemColumn, index?: number): InvoiceItemColumn;
 
-  getClientId(): string;
-  setClientId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InvoiceItem.AsObject;
   static toObject(includeInstance: boolean, msg: InvoiceItem): InvoiceItem.AsObject;
@@ -120,7 +117,6 @@ export namespace InvoiceItem {
     description: string,
     date?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     columnsList: Array<InvoiceItemColumn.AsObject>,
-    clientId: string,
   }
 }
 
@@ -130,9 +126,6 @@ export class InvoiceItemColumn extends jspb.Message {
 
   getValue(): number;
   setValue(value: number): void;
-
-  getColumnValue(): string;
-  setColumnValue(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InvoiceItemColumn.AsObject;
@@ -148,7 +141,6 @@ export namespace InvoiceItemColumn {
   export type AsObject = {
     name: string,
     value: number,
-    columnValue: string,
   }
 }
 
