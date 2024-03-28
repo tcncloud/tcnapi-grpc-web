@@ -42,6 +42,11 @@ export class GetContactListResponse extends jspb.Message {
   setContactListList(value: Array<api_commons_contactmanager_pb.ContactManagerList>): void;
   addContactList(value?: api_commons_contactmanager_pb.ContactManagerList, index?: number): api_commons_contactmanager_pb.ContactManagerList;
 
+  clearContactManagerListList(): void;
+  getContactManagerListList(): Array<ContactManagerList>;
+  setContactManagerListList(value: Array<ContactManagerList>): void;
+  addContactManagerList(value?: ContactManagerList, index?: number): ContactManagerList;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetContactListResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetContactListResponse): GetContactListResponse.AsObject;
@@ -55,6 +60,7 @@ export class GetContactListResponse extends jspb.Message {
 export namespace GetContactListResponse {
   export type AsObject = {
     contactListList: Array<api_commons_contactmanager_pb.ContactManagerList.AsObject>,
+    contactManagerListList: Array<ContactManagerList.AsObject>,
   }
 }
 
@@ -92,6 +98,11 @@ export class ListContactEntryListResponse extends jspb.Message {
   setContactEntryList(value: Array<api_commons_contactmanager_pb.ContactManagerEntry>): void;
   addContactEntry(value?: api_commons_contactmanager_pb.ContactManagerEntry, index?: number): api_commons_contactmanager_pb.ContactManagerEntry;
 
+  clearContactManagerEntryList(): void;
+  getContactManagerEntryList(): Array<ContactManagerEntry>;
+  setContactManagerEntryList(value: Array<ContactManagerEntry>): void;
+  addContactManagerEntry(value?: ContactManagerEntry, index?: number): ContactManagerEntry;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContactEntryListResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListContactEntryListResponse): ListContactEntryListResponse.AsObject;
@@ -105,6 +116,7 @@ export class ListContactEntryListResponse extends jspb.Message {
 export namespace ListContactEntryListResponse {
   export type AsObject = {
     contactEntryList: Array<api_commons_contactmanager_pb.ContactManagerEntry.AsObject>,
+    contactManagerEntryList: Array<ContactManagerEntry.AsObject>,
   }
 }
 
@@ -134,6 +146,11 @@ export class GetEncContactEntryResponse extends jspb.Message {
   setContactEntryList(value: Array<api_commons_contactmanager_pb.ContactManagerEntry>): void;
   addContactEntry(value?: api_commons_contactmanager_pb.ContactManagerEntry, index?: number): api_commons_contactmanager_pb.ContactManagerEntry;
 
+  clearContactManagerEntryList(): void;
+  getContactManagerEntryList(): Array<ContactManagerEntry>;
+  setContactManagerEntryList(value: Array<ContactManagerEntry>): void;
+  addContactManagerEntry(value?: ContactManagerEntry, index?: number): ContactManagerEntry;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetEncContactEntryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetEncContactEntryResponse): GetEncContactEntryResponse.AsObject;
@@ -147,6 +164,7 @@ export class GetEncContactEntryResponse extends jspb.Message {
 export namespace GetEncContactEntryResponse {
   export type AsObject = {
     contactEntryList: Array<api_commons_contactmanager_pb.ContactManagerEntry.AsObject>,
+    contactManagerEntryList: Array<ContactManagerEntry.AsObject>,
   }
 }
 
