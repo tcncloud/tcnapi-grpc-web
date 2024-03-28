@@ -6,6 +6,7 @@ import * as api_commons_room303_pb from "../../../api/commons/room303_pb";
 import * as api_commons_user_pb from "../../../api/commons/user_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class CreateRoomRequest extends jspb.Message {
   getName(): string;
@@ -18,6 +19,11 @@ export class CreateRoomRequest extends jspb.Message {
   getMembersList(): Array<string>;
   setMembersList(value: Array<string>): void;
   addMembers(value: string, index?: number): string;
+
+  hasPermissionGroupId(): boolean;
+  clearPermissionGroupId(): void;
+  getPermissionGroupId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setPermissionGroupId(value?: google_protobuf_wrappers_pb.StringValue): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRoomRequest.AsObject;
@@ -34,6 +40,7 @@ export namespace CreateRoomRequest {
     name: string,
     type: api_commons_room303_pb.RoomTypeMap[keyof api_commons_room303_pb.RoomTypeMap],
     membersList: Array<string>,
+    permissionGroupId?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 

@@ -31,6 +31,8 @@ var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/fie
 goog.object.extend(proto, google_protobuf_field_mask_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
+var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
+goog.object.extend(proto, google_protobuf_wrappers_pb);
 goog.exportSymbol('proto.api.v1alpha1.room303.ArchiveRoomRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.room303.CreateRoomRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.room303.GetGlobalConfigRequest', null, global);
@@ -402,7 +404,8 @@ proto.api.v1alpha1.room303.CreateRoomRequest.toObject = function(includeInstance
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     type: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    membersList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+    membersList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    permissionGroupId: (f = msg.getPermissionGroupId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -450,6 +453,11 @@ proto.api.v1alpha1.room303.CreateRoomRequest.deserializeBinaryFromReader = funct
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.addMembers(value);
+      break;
+    case 4:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setPermissionGroupId(value);
       break;
     default:
       reader.skipField();
@@ -499,6 +507,14 @@ proto.api.v1alpha1.room303.CreateRoomRequest.serializeBinaryToWriter = function(
     writer.writeRepeatedString(
       3,
       f
+    );
+  }
+  f = message.getPermissionGroupId();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
@@ -574,6 +590,43 @@ proto.api.v1alpha1.room303.CreateRoomRequest.prototype.addMembers = function(val
  */
 proto.api.v1alpha1.room303.CreateRoomRequest.prototype.clearMembersList = function() {
   return this.setMembersList([]);
+};
+
+
+/**
+ * optional google.protobuf.StringValue permission_group_id = 4;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.api.v1alpha1.room303.CreateRoomRequest.prototype.getPermissionGroupId = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.StringValue|undefined} value
+ * @return {!proto.api.v1alpha1.room303.CreateRoomRequest} returns this
+*/
+proto.api.v1alpha1.room303.CreateRoomRequest.prototype.setPermissionGroupId = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.room303.CreateRoomRequest} returns this
+ */
+proto.api.v1alpha1.room303.CreateRoomRequest.prototype.clearPermissionGroupId = function() {
+  return this.setPermissionGroupId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.room303.CreateRoomRequest.prototype.hasPermissionGroupId = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
