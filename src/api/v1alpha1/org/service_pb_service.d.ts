@@ -1932,6 +1932,15 @@ type OrgUpdateBusinessHours = {
   readonly responseType: typeof api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse;
 };
 
+type OrgUpdateGroupedUserIPRestrictions = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.UpdateGroupedUserIPRestrictionsRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.UpdateGroupedUserIPRestrictionsResponse;
+};
+
 export class Org {
   static readonly serviceName: string;
   static readonly CreateOrganization: OrgCreateOrganization;
@@ -2147,6 +2156,7 @@ export class Org {
   static readonly GetMyAllowedMfaMethods: OrgGetMyAllowedMfaMethods;
   static readonly CreateBusinessHours: OrgCreateBusinessHours;
   static readonly UpdateBusinessHours: OrgUpdateBusinessHours;
+  static readonly UpdateGroupedUserIPRestrictions: OrgUpdateGroupedUserIPRestrictions;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -4025,6 +4035,15 @@ export class OrgClient {
   updateBusinessHours(
     requestMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  updateGroupedUserIPRestrictions(
+    requestMessage: api_v1alpha1_org_user_pb.UpdateGroupedUserIPRestrictionsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.UpdateGroupedUserIPRestrictionsResponse|null) => void
+  ): UnaryResponse;
+  updateGroupedUserIPRestrictions(
+    requestMessage: api_v1alpha1_org_user_pb.UpdateGroupedUserIPRestrictionsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.UpdateGroupedUserIPRestrictionsResponse|null) => void
   ): UnaryResponse;
 }
 

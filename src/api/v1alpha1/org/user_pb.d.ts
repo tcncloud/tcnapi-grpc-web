@@ -3010,3 +3010,47 @@ export namespace GetMyAllowedMfaMethodsResponse {
   }
 }
 
+export class UpdateGroupedUserIPRestrictionsRequest extends jspb.Message {
+  clearIpsList(): void;
+  getIpsList(): Array<string>;
+  setIpsList(value: Array<string>): void;
+  addIps(value: string, index?: number): string;
+
+  clearUserIdsList(): void;
+  getUserIdsList(): Array<string>;
+  setUserIdsList(value: Array<string>): void;
+  addUserIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateGroupedUserIPRestrictionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateGroupedUserIPRestrictionsRequest): UpdateGroupedUserIPRestrictionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateGroupedUserIPRestrictionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateGroupedUserIPRestrictionsRequest;
+  static deserializeBinaryFromReader(message: UpdateGroupedUserIPRestrictionsRequest, reader: jspb.BinaryReader): UpdateGroupedUserIPRestrictionsRequest;
+}
+
+export namespace UpdateGroupedUserIPRestrictionsRequest {
+  export type AsObject = {
+    ipsList: Array<string>,
+    userIdsList: Array<string>,
+  }
+}
+
+export class UpdateGroupedUserIPRestrictionsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateGroupedUserIPRestrictionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateGroupedUserIPRestrictionsResponse): UpdateGroupedUserIPRestrictionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateGroupedUserIPRestrictionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateGroupedUserIPRestrictionsResponse;
+  static deserializeBinaryFromReader(message: UpdateGroupedUserIPRestrictionsResponse, reader: jspb.BinaryReader): UpdateGroupedUserIPRestrictionsResponse;
+}
+
+export namespace UpdateGroupedUserIPRestrictionsResponse {
+  export type AsObject = {
+  }
+}
+
