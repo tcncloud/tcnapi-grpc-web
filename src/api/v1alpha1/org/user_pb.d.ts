@@ -3011,15 +3011,15 @@ export namespace GetMyAllowedMfaMethodsResponse {
 }
 
 export class AddGroupedUserIPRestrictionsRequest extends jspb.Message {
-  clearIpsList(): void;
-  getIpsList(): Array<string>;
-  setIpsList(value: Array<string>): void;
-  addIps(value: string, index?: number): string;
-
   clearUserIdsList(): void;
   getUserIdsList(): Array<string>;
   setUserIdsList(value: Array<string>): void;
   addUserIds(value: string, index?: number): string;
+
+  clearIpsList(): void;
+  getIpsList(): Array<string>;
+  setIpsList(value: Array<string>): void;
+  addIps(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddGroupedUserIPRestrictionsRequest.AsObject;
@@ -3033,8 +3033,8 @@ export class AddGroupedUserIPRestrictionsRequest extends jspb.Message {
 
 export namespace AddGroupedUserIPRestrictionsRequest {
   export type AsObject = {
-    ipsList: Array<string>,
     userIdsList: Array<string>,
+    ipsList: Array<string>,
   }
 }
 
@@ -3055,15 +3055,15 @@ export namespace AddGroupedUserIPRestrictionsResponse {
 }
 
 export class RemoveGroupedUserIPRestrictionsRequest extends jspb.Message {
-  clearIpsList(): void;
-  getIpsList(): Array<string>;
-  setIpsList(value: Array<string>): void;
-  addIps(value: string, index?: number): string;
-
   clearUserIdsList(): void;
   getUserIdsList(): Array<string>;
   setUserIdsList(value: Array<string>): void;
   addUserIds(value: string, index?: number): string;
+
+  clearIpsList(): void;
+  getIpsList(): Array<string>;
+  setIpsList(value: Array<string>): void;
+  addIps(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RemoveGroupedUserIPRestrictionsRequest.AsObject;
@@ -3077,8 +3077,8 @@ export class RemoveGroupedUserIPRestrictionsRequest extends jspb.Message {
 
 export namespace RemoveGroupedUserIPRestrictionsRequest {
   export type AsObject = {
-    ipsList: Array<string>,
     userIdsList: Array<string>,
+    ipsList: Array<string>,
   }
 }
 

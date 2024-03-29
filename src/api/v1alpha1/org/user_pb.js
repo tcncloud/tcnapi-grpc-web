@@ -23578,8 +23578,8 @@ proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.toObject = 
  */
 proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ipsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    userIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    userIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    ipsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -23618,11 +23618,11 @@ proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.deserializeBinaryFrom
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.addIps(value);
+      msg.addUserIds(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.addUserIds(value);
+      msg.addIps(value);
       break;
     default:
       reader.skipField();
@@ -23653,14 +23653,14 @@ proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.serializeBi
  */
 proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getIpsList();
+  f = message.getUserIdsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
       f
     );
   }
-  f = message.getUserIdsList();
+  f = message.getIpsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       2,
@@ -23671,10 +23671,10 @@ proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.serializeBinaryToWrit
 
 
 /**
- * repeated string ips = 1;
+ * repeated string user_ids = 1;
  * @return {!Array<string>}
  */
-proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.getIpsList = function() {
+proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.getUserIdsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
@@ -23683,7 +23683,7 @@ proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.getIpsList 
  * @param {!Array<string>} value
  * @return {!proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest} returns this
  */
-proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.setIpsList = function(value) {
+proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.setUserIdsList = function(value) {
   return jspb.Message.setField(this, 1, value || []);
 };
 
@@ -23693,45 +23693,8 @@ proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.setIpsList 
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest} returns this
  */
-proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.addIps = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest} returns this
- */
-proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.clearIpsList = function() {
-  return this.setIpsList([]);
-};
-
-
-/**
- * repeated string user_ids = 2;
- * @return {!Array<string>}
- */
-proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.getUserIdsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest} returns this
- */
-proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.setUserIdsList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest} returns this
- */
 proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.addUserIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
 
@@ -23741,6 +23704,43 @@ proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.addUserIds 
  */
 proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.clearUserIdsList = function() {
   return this.setUserIdsList([]);
+};
+
+
+/**
+ * repeated string ips = 2;
+ * @return {!Array<string>}
+ */
+proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.getIpsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest} returns this
+ */
+proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.setIpsList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest} returns this
+ */
+proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.addIps = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest} returns this
+ */
+proto.api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest.prototype.clearIpsList = function() {
+  return this.setIpsList([]);
 };
 
 
@@ -23884,8 +23884,8 @@ proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.toObject
  */
 proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ipsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    userIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    userIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    ipsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -23924,11 +23924,11 @@ proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.deserializeBinaryF
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.addIps(value);
+      msg.addUserIds(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.addUserIds(value);
+      msg.addIps(value);
       break;
     default:
       reader.skipField();
@@ -23959,14 +23959,14 @@ proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.serializ
  */
 proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getIpsList();
+  f = message.getUserIdsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
       f
     );
   }
-  f = message.getUserIdsList();
+  f = message.getIpsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       2,
@@ -23977,10 +23977,10 @@ proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.serializeBinaryToW
 
 
 /**
- * repeated string ips = 1;
+ * repeated string user_ids = 1;
  * @return {!Array<string>}
  */
-proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.getIpsList = function() {
+proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.getUserIdsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
@@ -23989,7 +23989,7 @@ proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.getIpsLi
  * @param {!Array<string>} value
  * @return {!proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest} returns this
  */
-proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.setIpsList = function(value) {
+proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.setUserIdsList = function(value) {
   return jspb.Message.setField(this, 1, value || []);
 };
 
@@ -23999,45 +23999,8 @@ proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.setIpsLi
  * @param {number=} opt_index
  * @return {!proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest} returns this
  */
-proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.addIps = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest} returns this
- */
-proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.clearIpsList = function() {
-  return this.setIpsList([]);
-};
-
-
-/**
- * repeated string user_ids = 2;
- * @return {!Array<string>}
- */
-proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.getUserIdsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest} returns this
- */
-proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.setUserIdsList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest} returns this
- */
 proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.addUserIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
 
@@ -24047,6 +24010,43 @@ proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.addUserI
  */
 proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.clearUserIdsList = function() {
   return this.setUserIdsList([]);
+};
+
+
+/**
+ * repeated string ips = 2;
+ * @return {!Array<string>}
+ */
+proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.getIpsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest} returns this
+ */
+proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.setIpsList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest} returns this
+ */
+proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.addIps = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest} returns this
+ */
+proto.api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest.prototype.clearIpsList = function() {
+  return this.setIpsList([]);
 };
 
 
