@@ -1932,13 +1932,22 @@ type OrgUpdateBusinessHours = {
   readonly responseType: typeof api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse;
 };
 
-type OrgUpdateGroupedUserIPRestrictions = {
+type OrgAddGroupedUserIPRestrictions = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_user_pb.UpdateGroupedUserIPRestrictionsRequest;
-  readonly responseType: typeof api_v1alpha1_org_user_pb.UpdateGroupedUserIPRestrictionsResponse;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.AddGroupedUserIPRestrictionsRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.AddGroupedUserIPRestrictionsResponse;
+};
+
+type OrgRemoveGroupedUserIPRestrictions = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.RemoveGroupedUserIPRestrictionsRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.RemoveGroupedUserIPRestrictionsResponse;
 };
 
 export class Org {
@@ -2156,7 +2165,8 @@ export class Org {
   static readonly GetMyAllowedMfaMethods: OrgGetMyAllowedMfaMethods;
   static readonly CreateBusinessHours: OrgCreateBusinessHours;
   static readonly UpdateBusinessHours: OrgUpdateBusinessHours;
-  static readonly UpdateGroupedUserIPRestrictions: OrgUpdateGroupedUserIPRestrictions;
+  static readonly AddGroupedUserIPRestrictions: OrgAddGroupedUserIPRestrictions;
+  static readonly RemoveGroupedUserIPRestrictions: OrgRemoveGroupedUserIPRestrictions;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -4036,14 +4046,23 @@ export class OrgClient {
     requestMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse|null) => void
   ): UnaryResponse;
-  updateGroupedUserIPRestrictions(
-    requestMessage: api_v1alpha1_org_user_pb.UpdateGroupedUserIPRestrictionsRequest,
+  addGroupedUserIPRestrictions(
+    requestMessage: api_v1alpha1_org_user_pb.AddGroupedUserIPRestrictionsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.UpdateGroupedUserIPRestrictionsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.AddGroupedUserIPRestrictionsResponse|null) => void
   ): UnaryResponse;
-  updateGroupedUserIPRestrictions(
-    requestMessage: api_v1alpha1_org_user_pb.UpdateGroupedUserIPRestrictionsRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.UpdateGroupedUserIPRestrictionsResponse|null) => void
+  addGroupedUserIPRestrictions(
+    requestMessage: api_v1alpha1_org_user_pb.AddGroupedUserIPRestrictionsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.AddGroupedUserIPRestrictionsResponse|null) => void
+  ): UnaryResponse;
+  removeGroupedUserIPRestrictions(
+    requestMessage: api_v1alpha1_org_user_pb.RemoveGroupedUserIPRestrictionsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.RemoveGroupedUserIPRestrictionsResponse|null) => void
+  ): UnaryResponse;
+  removeGroupedUserIPRestrictions(
+    requestMessage: api_v1alpha1_org_user_pb.RemoveGroupedUserIPRestrictionsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.RemoveGroupedUserIPRestrictionsResponse|null) => void
   ): UnaryResponse;
 }
 
