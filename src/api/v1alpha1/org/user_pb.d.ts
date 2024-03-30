@@ -3010,3 +3010,91 @@ export namespace GetMyAllowedMfaMethodsResponse {
   }
 }
 
+export class AddGroupedUserIPRestrictionsRequest extends jspb.Message {
+  clearUserIdsList(): void;
+  getUserIdsList(): Array<string>;
+  setUserIdsList(value: Array<string>): void;
+  addUserIds(value: string, index?: number): string;
+
+  clearIpsList(): void;
+  getIpsList(): Array<string>;
+  setIpsList(value: Array<string>): void;
+  addIps(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddGroupedUserIPRestrictionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AddGroupedUserIPRestrictionsRequest): AddGroupedUserIPRestrictionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddGroupedUserIPRestrictionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddGroupedUserIPRestrictionsRequest;
+  static deserializeBinaryFromReader(message: AddGroupedUserIPRestrictionsRequest, reader: jspb.BinaryReader): AddGroupedUserIPRestrictionsRequest;
+}
+
+export namespace AddGroupedUserIPRestrictionsRequest {
+  export type AsObject = {
+    userIdsList: Array<string>,
+    ipsList: Array<string>,
+  }
+}
+
+export class AddGroupedUserIPRestrictionsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddGroupedUserIPRestrictionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AddGroupedUserIPRestrictionsResponse): AddGroupedUserIPRestrictionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddGroupedUserIPRestrictionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddGroupedUserIPRestrictionsResponse;
+  static deserializeBinaryFromReader(message: AddGroupedUserIPRestrictionsResponse, reader: jspb.BinaryReader): AddGroupedUserIPRestrictionsResponse;
+}
+
+export namespace AddGroupedUserIPRestrictionsResponse {
+  export type AsObject = {
+  }
+}
+
+export class RemoveGroupedUserIPRestrictionsRequest extends jspb.Message {
+  clearUserIdsList(): void;
+  getUserIdsList(): Array<string>;
+  setUserIdsList(value: Array<string>): void;
+  addUserIds(value: string, index?: number): string;
+
+  clearIpsList(): void;
+  getIpsList(): Array<string>;
+  setIpsList(value: Array<string>): void;
+  addIps(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveGroupedUserIPRestrictionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveGroupedUserIPRestrictionsRequest): RemoveGroupedUserIPRestrictionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveGroupedUserIPRestrictionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveGroupedUserIPRestrictionsRequest;
+  static deserializeBinaryFromReader(message: RemoveGroupedUserIPRestrictionsRequest, reader: jspb.BinaryReader): RemoveGroupedUserIPRestrictionsRequest;
+}
+
+export namespace RemoveGroupedUserIPRestrictionsRequest {
+  export type AsObject = {
+    userIdsList: Array<string>,
+    ipsList: Array<string>,
+  }
+}
+
+export class RemoveGroupedUserIPRestrictionsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveGroupedUserIPRestrictionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveGroupedUserIPRestrictionsResponse): RemoveGroupedUserIPRestrictionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveGroupedUserIPRestrictionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveGroupedUserIPRestrictionsResponse;
+  static deserializeBinaryFromReader(message: RemoveGroupedUserIPRestrictionsResponse, reader: jspb.BinaryReader): RemoveGroupedUserIPRestrictionsResponse;
+}
+
+export namespace RemoveGroupedUserIPRestrictionsResponse {
+  export type AsObject = {
+  }
+}
+

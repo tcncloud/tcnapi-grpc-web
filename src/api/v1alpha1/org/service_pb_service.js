@@ -1938,6 +1938,24 @@ Org.UpdateBusinessHours = {
   responseType: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse
 };
 
+Org.AddGroupedUserIPRestrictions = {
+  methodName: "AddGroupedUserIPRestrictions",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.AddGroupedUserIPRestrictionsRequest,
+  responseType: api_v1alpha1_org_user_pb.AddGroupedUserIPRestrictionsResponse
+};
+
+Org.RemoveGroupedUserIPRestrictions = {
+  methodName: "RemoveGroupedUserIPRestrictions",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.RemoveGroupedUserIPRestrictionsRequest,
+  responseType: api_v1alpha1_org_user_pb.RemoveGroupedUserIPRestrictionsResponse
+};
+
 exports.Org = Org;
 
 function OrgClient(serviceHost, options) {
@@ -8594,6 +8612,68 @@ OrgClient.prototype.updateBusinessHours = function updateBusinessHours(requestMe
     callback = arguments[1];
   }
   var client = grpc.unary(Org.UpdateBusinessHours, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.addGroupedUserIPRestrictions = function addGroupedUserIPRestrictions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.AddGroupedUserIPRestrictions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.removeGroupedUserIPRestrictions = function removeGroupedUserIPRestrictions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.RemoveGroupedUserIPRestrictions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

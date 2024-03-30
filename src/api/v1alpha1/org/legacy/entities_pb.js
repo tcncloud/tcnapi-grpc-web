@@ -42262,7 +42262,8 @@ proto.api.v1alpha1.org.legacy.AuthenticationPreferences.toObject = function(incl
   var f, obj = {
     authorizationViaIp: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     allowedIpsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
-    agentApiKey: jspb.Message.getFieldWithDefault(msg, 12, "")
+    agentApiKey: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    userAuthorizationViaIp: jspb.Message.getBooleanFieldWithDefault(msg, 13, false)
   };
 
   if (includeInstance) {
@@ -42311,6 +42312,10 @@ proto.api.v1alpha1.org.legacy.AuthenticationPreferences.deserializeBinaryFromRea
       var value = /** @type {string} */ (reader.readString());
       msg.setAgentApiKey(value);
       break;
+    case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUserAuthorizationViaIp(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -42358,6 +42363,13 @@ proto.api.v1alpha1.org.legacy.AuthenticationPreferences.serializeBinaryToWriter 
   if (f.length > 0) {
     writer.writeString(
       12,
+      f
+    );
+  }
+  f = message.getUserAuthorizationViaIp();
+  if (f) {
+    writer.writeBool(
+      13,
       f
     );
   }
@@ -42434,6 +42446,24 @@ proto.api.v1alpha1.org.legacy.AuthenticationPreferences.prototype.getAgentApiKey
  */
 proto.api.v1alpha1.org.legacy.AuthenticationPreferences.prototype.setAgentApiKey = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional bool user_authorization_via_ip = 13;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.legacy.AuthenticationPreferences.prototype.getUserAuthorizationViaIp = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.legacy.AuthenticationPreferences} returns this
+ */
+proto.api.v1alpha1.org.legacy.AuthenticationPreferences.prototype.setUserAuthorizationViaIp = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
