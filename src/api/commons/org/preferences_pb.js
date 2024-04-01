@@ -3187,7 +3187,8 @@ proto.api.commons.org.AuthenticationPreferences.toObject = function(includeInsta
     emailMfaSettings: (f = msg.getEmailMfaSettings()) && proto.api.commons.org.AuthenticationPreferences.EmailMfaSettings.toObject(includeInstance, f),
     duoMfaSettings: (f = msg.getDuoMfaSettings()) && proto.api.commons.org.AuthenticationPreferences.DuoMfaSettings.toObject(includeInstance, f),
     allowForcePasswordResetInterval: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
-    passwordResetDayInterval: jspb.Message.getFieldWithDefault(msg, 18, 0)
+    passwordResetDayInterval: jspb.Message.getFieldWithDefault(msg, 18, 0),
+    userAuthorizationViaIp: jspb.Message.getBooleanFieldWithDefault(msg, 19, false)
   };
 
   if (includeInstance) {
@@ -3265,6 +3266,10 @@ proto.api.commons.org.AuthenticationPreferences.deserializeBinaryFromReader = fu
     case 18:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPasswordResetDayInterval(value);
+      break;
+    case 19:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUserAuthorizationViaIp(value);
       break;
     default:
       reader.skipField();
@@ -3364,6 +3369,13 @@ proto.api.commons.org.AuthenticationPreferences.serializeBinaryToWriter = functi
   if (f !== 0) {
     writer.writeInt32(
       18,
+      f
+    );
+  }
+  f = message.getUserAuthorizationViaIp();
+  if (f) {
+    writer.writeBool(
+      19,
       f
     );
   }
@@ -3924,6 +3936,24 @@ proto.api.commons.org.AuthenticationPreferences.prototype.getPasswordResetDayInt
  */
 proto.api.commons.org.AuthenticationPreferences.prototype.setPasswordResetDayInterval = function(value) {
   return jspb.Message.setProto3IntField(this, 18, value);
+};
+
+
+/**
+ * optional bool user_authorization_via_ip = 19;
+ * @return {boolean}
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.getUserAuthorizationViaIp = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.org.AuthenticationPreferences} returns this
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.setUserAuthorizationViaIp = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 19, value);
 };
 
 
