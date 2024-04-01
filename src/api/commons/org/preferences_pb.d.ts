@@ -323,6 +323,9 @@ export class AuthenticationPreferences extends jspb.Message {
   getPasswordResetDayInterval(): number;
   setPasswordResetDayInterval(value: number): void;
 
+  getUserAuthorizationViaIp(): boolean;
+  setUserAuthorizationViaIp(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuthenticationPreferences.AsObject;
   static toObject(includeInstance: boolean, msg: AuthenticationPreferences): AuthenticationPreferences.AsObject;
@@ -345,6 +348,7 @@ export namespace AuthenticationPreferences {
     duoMfaSettings?: AuthenticationPreferences.DuoMfaSettings.AsObject,
     allowForcePasswordResetInterval: boolean,
     passwordResetDayInterval: number,
+    userAuthorizationViaIp: boolean,
   }
 
   export class DuoMfaSettings extends jspb.Message {
