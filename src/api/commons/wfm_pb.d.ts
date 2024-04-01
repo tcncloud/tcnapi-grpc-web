@@ -760,6 +760,9 @@ export class AgentStateSegment extends jspb.Message {
   getWidthInMinutes(): number;
   setWidthInMinutes(value: number): void;
 
+  getWidthInSeconds(): number;
+  setWidthInSeconds(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AgentStateSegment.AsObject;
   static toObject(includeInstance: boolean, msg: AgentStateSegment): AgentStateSegment.AsObject;
@@ -775,6 +778,7 @@ export namespace AgentStateSegment {
     orderInRts: number,
     statesList: Array<RealTimeManagementStateMap[keyof RealTimeManagementStateMap]>,
     widthInMinutes: number,
+    widthInSeconds: number,
   }
 }
 
