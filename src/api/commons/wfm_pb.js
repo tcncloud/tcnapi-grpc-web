@@ -5742,7 +5742,8 @@ proto.api.commons.AgentStateSegment.toObject = function(includeInstance, msg) {
   var f, obj = {
     orderInRts: jspb.Message.getFieldWithDefault(msg, 1, 0),
     statesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    widthInMinutes: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    widthInMinutes: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    widthInSeconds: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -5793,6 +5794,10 @@ proto.api.commons.AgentStateSegment.deserializeBinaryFromReader = function(msg, 
       var value = /** @type {number} */ (reader.readInt32());
       msg.setWidthInMinutes(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setWidthInSeconds(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5840,6 +5845,13 @@ proto.api.commons.AgentStateSegment.serializeBinaryToWriter = function(message, 
   if (f !== 0) {
     writer.writeInt32(
       3,
+      f
+    );
+  }
+  f = message.getWidthInSeconds();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
       f
     );
   }
@@ -5916,6 +5928,24 @@ proto.api.commons.AgentStateSegment.prototype.getWidthInMinutes = function() {
  */
 proto.api.commons.AgentStateSegment.prototype.setWidthInMinutes = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional int32 width_in_seconds = 4;
+ * @return {number}
+ */
+proto.api.commons.AgentStateSegment.prototype.getWidthInSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.AgentStateSegment} returns this
+ */
+proto.api.commons.AgentStateSegment.prototype.setWidthInSeconds = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
