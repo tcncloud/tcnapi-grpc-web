@@ -224,6 +224,15 @@ type Room303APIGetGlobalConfig = {
   readonly responseType: typeof api_v1alpha1_room303_room_pb.GetGlobalConfigResponse;
 };
 
+type Room303APIUpdateRoom = {
+  readonly methodName: string;
+  readonly service: typeof Room303API;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_room303_room_pb.UpdateRoomRequest;
+  readonly responseType: typeof api_commons_room303_pb.Room;
+};
+
 export class Room303API {
   static readonly serviceName: string;
   static readonly AddRoomMember: Room303APIAddRoomMember;
@@ -250,6 +259,7 @@ export class Room303API {
   static readonly UpdateRoomConfig: Room303APIUpdateRoomConfig;
   static readonly UpdateGlobalConfig: Room303APIUpdateGlobalConfig;
   static readonly GetGlobalConfig: Room303APIGetGlobalConfig;
+  static readonly UpdateRoom: Room303APIUpdateRoom;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -483,6 +493,15 @@ export class Room303APIClient {
   getGlobalConfig(
     requestMessage: api_v1alpha1_room303_room_pb.GetGlobalConfigRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_room303_room_pb.GetGlobalConfigResponse|null) => void
+  ): UnaryResponse;
+  updateRoom(
+    requestMessage: api_v1alpha1_room303_room_pb.UpdateRoomRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_commons_room303_pb.Room|null) => void
+  ): UnaryResponse;
+  updateRoom(
+    requestMessage: api_v1alpha1_room303_room_pb.UpdateRoomRequest,
+    callback: (error: ServiceError|null, responseMessage: api_commons_room303_pb.Room|null) => void
   ): UnaryResponse;
 }
 
