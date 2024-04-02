@@ -2401,7 +2401,7 @@ proto.api.v1alpha1.org.observedholidays.DeleteObservedHolidaysResponse.prototype
  */
 proto.api.v1alpha1.org.observedholidays.DeleteObservedHolidaysResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2438,6 +2438,10 @@ proto.api.v1alpha1.org.observedholidays.DeleteObservedHolidaysResponse.deseriali
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setObservedHolidaysId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2467,6 +2471,31 @@ proto.api.v1alpha1.org.observedholidays.DeleteObservedHolidaysResponse.prototype
  */
 proto.api.v1alpha1.org.observedholidays.DeleteObservedHolidaysResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getObservedHolidaysId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string observed_holidays_id = 1;
+ * @return {string}
+ */
+proto.api.v1alpha1.org.observedholidays.DeleteObservedHolidaysResponse.prototype.getObservedHolidaysId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.org.observedholidays.DeleteObservedHolidaysResponse} returns this
+ */
+proto.api.v1alpha1.org.observedholidays.DeleteObservedHolidaysResponse.prototype.setObservedHolidaysId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

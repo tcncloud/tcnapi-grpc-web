@@ -299,6 +299,9 @@ export namespace DeleteObservedHolidaysRequest {
 }
 
 export class DeleteObservedHolidaysResponse extends jspb.Message {
+  getObservedHolidaysId(): string;
+  setObservedHolidaysId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteObservedHolidaysResponse.AsObject;
   static toObject(includeInstance: boolean, msg: DeleteObservedHolidaysResponse): DeleteObservedHolidaysResponse.AsObject;
@@ -311,6 +314,7 @@ export class DeleteObservedHolidaysResponse extends jspb.Message {
 
 export namespace DeleteObservedHolidaysResponse {
   export type AsObject = {
+    observedHolidaysId: string,
   }
 }
 
