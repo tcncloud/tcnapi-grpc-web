@@ -3468,7 +3468,9 @@ proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.prototype.toObject 
 proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    groupIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    groupIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3513,6 +3515,16 @@ proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.deserializeBinaryFr
       var value = /** @type {string} */ (reader.readString());
       msg.addGroupIds(value);
       break;
+    case 3:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setStartTime(value);
+      break;
+    case 4:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setEndTime(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3554,6 +3566,22 @@ proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.serializeBinaryToWr
     writer.writeRepeatedString(
       2,
       f
+    );
+  }
+  f = message.getStartTime();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getEndTime();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -3611,6 +3639,80 @@ proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.prototype.addGroupI
  */
 proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.prototype.clearGroupIdsList = function() {
   return this.setGroupIdsList([]);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp start_time = 3;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.prototype.getStartTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest} returns this
+*/
+proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.prototype.setStartTime = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.prototype.clearStartTime = function() {
+  return this.setStartTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.prototype.hasStartTime = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp end_time = 4;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.prototype.getEndTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest} returns this
+*/
+proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.prototype.setEndTime = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest} returns this
+ */
+proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.prototype.clearEndTime = function() {
+  return this.setEndTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.v1alpha1.GetBillingPlanHistoryRequest.prototype.hasEndTime = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
