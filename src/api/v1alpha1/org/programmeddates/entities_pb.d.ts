@@ -2,6 +2,7 @@
 // file: api/v1alpha1/org/programmeddates/entities.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_org_pb from "../../../../api/commons/org_pb";
 import * as api_commons_org_preferences_pb from "../../../../api/commons/org/preferences_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 
@@ -92,10 +93,13 @@ export class SetProgrammedDatesRequest extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  clearDatesList(): void;
-  getDatesList(): Array<api_commons_org_preferences_pb.ProgrammedDates>;
-  setDatesList(value: Array<api_commons_org_preferences_pb.ProgrammedDates>): void;
-  addDates(value?: api_commons_org_preferences_pb.ProgrammedDates, index?: number): api_commons_org_preferences_pb.ProgrammedDates;
+  getTimezone(): api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap];
+  setTimezone(value: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap]): void;
+
+  clearDaysList(): void;
+  getDaysList(): Array<api_commons_org_preferences_pb.ProgrammedDay>;
+  setDaysList(value: Array<api_commons_org_preferences_pb.ProgrammedDay>): void;
+  addDays(value?: api_commons_org_preferences_pb.ProgrammedDay, index?: number): api_commons_org_preferences_pb.ProgrammedDay;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetProgrammedDatesRequest.AsObject;
@@ -111,7 +115,8 @@ export namespace SetProgrammedDatesRequest {
   export type AsObject = {
     programmedDatesName: string,
     description: string,
-    datesList: Array<api_commons_org_preferences_pb.ProgrammedDates.AsObject>,
+    timezone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
+    daysList: Array<api_commons_org_preferences_pb.ProgrammedDay.AsObject>,
   }
 }
 
@@ -229,6 +234,9 @@ export class UpdateProgrammedDatesInfoRequest extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
+  getTimezone(): api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap];
+  setTimezone(value: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap]): void;
+
   hasFieldMask(): boolean;
   clearFieldMask(): void;
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
@@ -249,6 +257,7 @@ export namespace UpdateProgrammedDatesInfoRequest {
     programmedDatesId: string,
     programmedDatesName: string,
     description: string,
+    timezone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

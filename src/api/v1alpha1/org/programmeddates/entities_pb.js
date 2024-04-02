@@ -23,6 +23,8 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_commons_org_pb = require('../../../../api/commons/org_pb.js');
+goog.object.extend(proto, api_commons_org_pb);
 var api_commons_org_preferences_pb = require('../../../../api/commons/org/preferences_pb.js');
 goog.object.extend(proto, api_commons_org_preferences_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
@@ -936,7 +938,7 @@ proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.prototype.clea
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.repeatedFields_ = [3];
+proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.repeatedFields_ = [4];
 
 
 
@@ -971,8 +973,9 @@ proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.toObject = func
   var f, obj = {
     programmedDatesName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     description: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    datesList: jspb.Message.toObjectList(msg.getDatesList(),
-    api_commons_org_preferences_pb.ProgrammedDates.toObject, includeInstance)
+    timezone: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    daysList: jspb.Message.toObjectList(msg.getDaysList(),
+    api_commons_org_preferences_pb.ProgrammedDay.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1018,9 +1021,13 @@ proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.deserializeBina
       msg.setDescription(value);
       break;
     case 3:
-      var value = new api_commons_org_preferences_pb.ProgrammedDates;
-      reader.readMessage(value,api_commons_org_preferences_pb.ProgrammedDates.deserializeBinaryFromReader);
-      msg.addDates(value);
+      var value = /** @type {!proto.api.commons.TimeZone} */ (reader.readEnum());
+      msg.setTimezone(value);
+      break;
+    case 4:
+      var value = new api_commons_org_preferences_pb.ProgrammedDay;
+      reader.readMessage(value,api_commons_org_preferences_pb.ProgrammedDay.deserializeBinaryFromReader);
+      msg.addDays(value);
       break;
     default:
       reader.skipField();
@@ -1065,12 +1072,19 @@ proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.serializeBinary
       f
     );
   }
-  f = message.getDatesList();
+  f = message.getTimezone();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
+      f
+    );
+  }
+  f = message.getDaysList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      4,
       f,
-      api_commons_org_preferences_pb.ProgrammedDates.serializeBinaryToWriter
+      api_commons_org_preferences_pb.ProgrammedDay.serializeBinaryToWriter
     );
   }
 };
@@ -1113,31 +1127,49 @@ proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.prototype.setDe
 
 
 /**
- * repeated api.commons.org.ProgrammedDates dates = 3;
- * @return {!Array<!proto.api.commons.org.ProgrammedDates>}
+ * optional api.commons.TimeZone timezone = 3;
+ * @return {!proto.api.commons.TimeZone}
  */
-proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.prototype.getDatesList = function() {
-  return /** @type{!Array<!proto.api.commons.org.ProgrammedDates>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_org_preferences_pb.ProgrammedDates, 3));
+proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.prototype.getTimezone = function() {
+  return /** @type {!proto.api.commons.TimeZone} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.org.ProgrammedDates>} value
+ * @param {!proto.api.commons.TimeZone} value
+ * @return {!proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest} returns this
+ */
+proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.prototype.setTimezone = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * repeated api.commons.org.ProgrammedDay days = 4;
+ * @return {!Array<!proto.api.commons.org.ProgrammedDay>}
+ */
+proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.prototype.getDaysList = function() {
+  return /** @type{!Array<!proto.api.commons.org.ProgrammedDay>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_commons_org_preferences_pb.ProgrammedDay, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.org.ProgrammedDay>} value
  * @return {!proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest} returns this
 */
-proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.prototype.setDatesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.prototype.setDaysList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
 /**
- * @param {!proto.api.commons.org.ProgrammedDates=} opt_value
+ * @param {!proto.api.commons.org.ProgrammedDay=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.commons.org.ProgrammedDates}
+ * @return {!proto.api.commons.org.ProgrammedDay}
  */
-proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.prototype.addDates = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.api.commons.org.ProgrammedDates, opt_index);
+proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.prototype.addDays = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.api.commons.org.ProgrammedDay, opt_index);
 };
 
 
@@ -1145,8 +1177,8 @@ proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.prototype.addDa
  * Clears the list making it empty but non-null.
  * @return {!proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest} returns this
  */
-proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.prototype.clearDatesList = function() {
-  return this.setDatesList([]);
+proto.api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest.prototype.clearDaysList = function() {
+  return this.setDaysList([]);
 };
 
 
@@ -1879,6 +1911,7 @@ proto.api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest.toObject
     programmedDatesId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     programmedDatesName: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    timezone: jspb.Message.getFieldWithDefault(msg, 4, 0),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1929,6 +1962,10 @@ proto.api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest.deserial
       msg.setDescription(value);
       break;
     case 4:
+      var value = /** @type {!proto.api.commons.TimeZone} */ (reader.readEnum());
+      msg.setTimezone(value);
+      break;
+    case 5:
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
       msg.setFieldMask(value);
@@ -1983,10 +2020,17 @@ proto.api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest.serializ
       f
     );
   }
+  f = message.getTimezone();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
+      f
+    );
+  }
   f = message.getFieldMask();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
@@ -2049,12 +2093,30 @@ proto.api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest.prototyp
 
 
 /**
- * optional google.protobuf.FieldMask field_mask = 4;
+ * optional api.commons.TimeZone timezone = 4;
+ * @return {!proto.api.commons.TimeZone}
+ */
+proto.api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest.prototype.getTimezone = function() {
+  return /** @type {!proto.api.commons.TimeZone} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.TimeZone} value
+ * @return {!proto.api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest} returns this
+ */
+proto.api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest.prototype.setTimezone = function(value) {
+  return jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.FieldMask field_mask = 5;
  * @return {?proto.google.protobuf.FieldMask}
  */
 proto.api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest.prototype.getFieldMask = function() {
   return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 4));
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 5));
 };
 
 
@@ -2063,7 +2125,7 @@ proto.api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest.prototyp
  * @return {!proto.api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest} returns this
 */
 proto.api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest.prototype.setFieldMask = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -2081,7 +2143,7 @@ proto.api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest.prototyp
  * @return {boolean}
  */
 proto.api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest.prototype.hasFieldMask = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
