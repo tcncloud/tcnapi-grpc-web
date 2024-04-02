@@ -119,7 +119,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -773,13 +773,6 @@ proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesRequest.prototype.setPr
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.repeatedFields_ = [1];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -811,8 +804,7 @@ proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.prototype.toOb
  */
 proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    datesList: jspb.Message.toObjectList(msg.getDatesList(),
-    api_commons_org_preferences_pb.ProgrammedDates.toObject, includeInstance)
+    programmedDates: (f = msg.getProgrammedDates()) && api_commons_org_preferences_pb.ProgrammedDates.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -852,7 +844,7 @@ proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.deserializeBin
     case 1:
       var value = new api_commons_org_preferences_pb.ProgrammedDates;
       reader.readMessage(value,api_commons_org_preferences_pb.ProgrammedDates.deserializeBinaryFromReader);
-      msg.addDates(value);
+      msg.setProgrammedDates(value);
       break;
     default:
       reader.skipField();
@@ -883,9 +875,9 @@ proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.prototype.seri
  */
 proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDatesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getProgrammedDates();
+  if (f != null) {
+    writer.writeMessage(
       1,
       f,
       api_commons_org_preferences_pb.ProgrammedDates.serializeBinaryToWriter
@@ -895,40 +887,39 @@ proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.serializeBinar
 
 
 /**
- * repeated api.commons.org.ProgrammedDates dates = 1;
- * @return {!Array<!proto.api.commons.org.ProgrammedDates>}
+ * optional api.commons.org.ProgrammedDates programmed_dates = 1;
+ * @return {?proto.api.commons.org.ProgrammedDates}
  */
-proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.prototype.getDatesList = function() {
-  return /** @type{!Array<!proto.api.commons.org.ProgrammedDates>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_org_preferences_pb.ProgrammedDates, 1));
+proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.prototype.getProgrammedDates = function() {
+  return /** @type{?proto.api.commons.org.ProgrammedDates} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_preferences_pb.ProgrammedDates, 1));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.org.ProgrammedDates>} value
+ * @param {?proto.api.commons.org.ProgrammedDates|undefined} value
  * @return {!proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse} returns this
 */
-proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.prototype.setDatesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.prototype.setProgrammedDates = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.api.commons.org.ProgrammedDates=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.commons.org.ProgrammedDates}
- */
-proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.prototype.addDates = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.commons.org.ProgrammedDates, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse} returns this
  */
-proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.prototype.clearDatesList = function() {
-  return this.setDatesList([]);
+proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.prototype.clearProgrammedDates = function() {
+  return this.setProgrammedDates(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse.prototype.hasProgrammedDates = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -2641,7 +2632,7 @@ proto.api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesResponse.prototype
  */
 proto.api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    dateMatched: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -2678,6 +2669,10 @@ proto.api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesResponse.deseriali
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDateMatched(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2707,6 +2702,31 @@ proto.api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesResponse.prototype
  */
 proto.api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getDateMatched();
+  if (f) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bool date_matched = 1;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesResponse.prototype.getDateMatched = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesResponse} returns this
+ */
+proto.api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesResponse.prototype.setDateMatched = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 

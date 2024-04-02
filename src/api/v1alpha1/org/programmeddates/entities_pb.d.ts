@@ -65,10 +65,10 @@ export namespace GetProgrammedDatesRequest {
 }
 
 export class GetProgrammedDatesResponse extends jspb.Message {
-  clearDatesList(): void;
-  getDatesList(): Array<api_commons_org_preferences_pb.ProgrammedDates>;
-  setDatesList(value: Array<api_commons_org_preferences_pb.ProgrammedDates>): void;
-  addDates(value?: api_commons_org_preferences_pb.ProgrammedDates, index?: number): api_commons_org_preferences_pb.ProgrammedDates;
+  hasProgrammedDates(): boolean;
+  clearProgrammedDates(): void;
+  getProgrammedDates(): api_commons_org_preferences_pb.ProgrammedDates | undefined;
+  setProgrammedDates(value?: api_commons_org_preferences_pb.ProgrammedDates): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetProgrammedDatesResponse.AsObject;
@@ -82,7 +82,7 @@ export class GetProgrammedDatesResponse extends jspb.Message {
 
 export namespace GetProgrammedDatesResponse {
   export type AsObject = {
-    datesList: Array<api_commons_org_preferences_pb.ProgrammedDates.AsObject>,
+    programmedDates?: api_commons_org_preferences_pb.ProgrammedDates.AsObject,
   }
 }
 
@@ -335,6 +335,9 @@ export namespace EvaluateProgrammedDatesRequest {
 }
 
 export class EvaluateProgrammedDatesResponse extends jspb.Message {
+  getDateMatched(): boolean;
+  setDateMatched(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EvaluateProgrammedDatesResponse.AsObject;
   static toObject(includeInstance: boolean, msg: EvaluateProgrammedDatesResponse): EvaluateProgrammedDatesResponse.AsObject;
@@ -347,6 +350,7 @@ export class EvaluateProgrammedDatesResponse extends jspb.Message {
 
 export namespace EvaluateProgrammedDatesResponse {
   export type AsObject = {
+    dateMatched: boolean,
   }
 }
 
