@@ -2292,6 +2292,11 @@ export class Room303Transport extends jspb.Message {
   getSystemMessage(): Room303SystemMessage | undefined;
   setSystemMessage(value?: Room303SystemMessage): void;
 
+  hasSystemMessages(): boolean;
+  clearSystemMessages(): void;
+  getSystemMessages(): Room303SystemMessages | undefined;
+  setSystemMessages(value?: Room303SystemMessages): void;
+
   getTransportCase(): Room303Transport.TransportCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Room303Transport.AsObject;
@@ -2306,11 +2311,13 @@ export class Room303Transport extends jspb.Message {
 export namespace Room303Transport {
   export type AsObject = {
     systemMessage?: Room303SystemMessage.AsObject,
+    systemMessages?: Room303SystemMessages.AsObject,
   }
 
   export enum TransportCase {
     TRANSPORT_NOT_SET = 0,
     SYSTEM_MESSAGE = 1,
+    SYSTEM_MESSAGES = 2,
   }
 }
 
@@ -2350,6 +2357,28 @@ export namespace Room303SystemMessage {
     USER_NOT_SET = 0,
     USERNAME = 2,
     USER_ID = 3,
+  }
+}
+
+export class Room303SystemMessages extends jspb.Message {
+  clearSystemMessagesList(): void;
+  getSystemMessagesList(): Array<Room303SystemMessage>;
+  setSystemMessagesList(value: Array<Room303SystemMessage>): void;
+  addSystemMessages(value?: Room303SystemMessage, index?: number): Room303SystemMessage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Room303SystemMessages.AsObject;
+  static toObject(includeInstance: boolean, msg: Room303SystemMessages): Room303SystemMessages.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Room303SystemMessages, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Room303SystemMessages;
+  static deserializeBinaryFromReader(message: Room303SystemMessages, reader: jspb.BinaryReader): Room303SystemMessages;
+}
+
+export namespace Room303SystemMessages {
+  export type AsObject = {
+    systemMessagesList: Array<Room303SystemMessage.AsObject>,
   }
 }
 

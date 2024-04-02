@@ -126,6 +126,11 @@ export class User extends jspb.Message {
   getEmailVerified(): boolean;
   setEmailVerified(value: boolean): void;
 
+  clearWhitelistedIpsList(): void;
+  getWhitelistedIpsList(): Array<string>;
+  setWhitelistedIpsList(value: Array<string>): void;
+  addWhitelistedIps(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): User.AsObject;
   static toObject(includeInstance: boolean, msg: User): User.AsObject;
@@ -172,6 +177,7 @@ export namespace User {
     agent: boolean,
     accountOwner: boolean,
     emailVerified: boolean,
+    whitelistedIpsList: Array<string>,
   }
 
   export class RegionSids extends jspb.Message {

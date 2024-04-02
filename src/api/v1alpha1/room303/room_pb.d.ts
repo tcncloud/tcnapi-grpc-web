@@ -6,6 +6,7 @@ import * as api_commons_room303_pb from "../../../api/commons/room303_pb";
 import * as api_commons_user_pb from "../../../api/commons/user_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class CreateRoomRequest extends jspb.Message {
   getName(): string;
@@ -18,6 +19,11 @@ export class CreateRoomRequest extends jspb.Message {
   getMembersList(): Array<string>;
   setMembersList(value: Array<string>): void;
   addMembers(value: string, index?: number): string;
+
+  hasPermissionGroupId(): boolean;
+  clearPermissionGroupId(): void;
+  getPermissionGroupId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setPermissionGroupId(value?: google_protobuf_wrappers_pb.StringValue): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRoomRequest.AsObject;
@@ -34,6 +40,7 @@ export namespace CreateRoomRequest {
     name: string,
     type: api_commons_room303_pb.RoomTypeMap[keyof api_commons_room303_pb.RoomTypeMap],
     membersList: Array<string>,
+    permissionGroupId?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 
@@ -362,6 +369,34 @@ export namespace GetGlobalConfigResponse {
     config?: api_commons_room303_pb.GlobalConfig.AsObject,
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class UpdateRoomRequest extends jspb.Message {
+  hasRoom(): boolean;
+  clearRoom(): void;
+  getRoom(): api_commons_room303_pb.Room | undefined;
+  setRoom(value?: api_commons_room303_pb.Room): void;
+
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateRoomRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateRoomRequest): UpdateRoomRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateRoomRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateRoomRequest;
+  static deserializeBinaryFromReader(message: UpdateRoomRequest, reader: jspb.BinaryReader): UpdateRoomRequest;
+}
+
+export namespace UpdateRoomRequest {
+  export type AsObject = {
+    room?: api_commons_room303_pb.Room.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 

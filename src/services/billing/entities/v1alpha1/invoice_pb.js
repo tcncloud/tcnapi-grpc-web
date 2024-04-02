@@ -596,7 +596,8 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.toObject = function(include
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
     date: (f = msg.getDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
-    proto.services.billing.entities.v1alpha1.InvoiceItemColumn.toObject, includeInstance)
+    proto.services.billing.entities.v1alpha1.InvoiceItemColumn.toObject, includeInstance),
+    clientId: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -668,6 +669,10 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.deserializeBinaryFromReader
       var value = new proto.services.billing.entities.v1alpha1.InvoiceItemColumn;
       reader.readMessage(value,proto.services.billing.entities.v1alpha1.InvoiceItemColumn.deserializeBinaryFromReader);
       msg.addColumns(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setClientId(value);
       break;
     default:
       reader.skipField();
@@ -756,6 +761,13 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.serializeBinaryToWriter = f
       8,
       f,
       proto.services.billing.entities.v1alpha1.InvoiceItemColumn.serializeBinaryToWriter
+    );
+  }
+  f = message.getClientId();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
     );
   }
 };
@@ -982,6 +994,24 @@ proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.clearColumnsList 
 };
 
 
+/**
+ * optional string client_id = 9;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.getClientId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha1.InvoiceItem} returns this
+ */
+proto.services.billing.entities.v1alpha1.InvoiceItem.prototype.setClientId = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
 
 
 
@@ -1015,7 +1045,8 @@ proto.services.billing.entities.v1alpha1.InvoiceItemColumn.prototype.toObject = 
 proto.services.billing.entities.v1alpha1.InvoiceItemColumn.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    value: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    columnValue: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1060,6 +1091,10 @@ proto.services.billing.entities.v1alpha1.InvoiceItemColumn.deserializeBinaryFrom
       var value = /** @type {number} */ (reader.readInt64());
       msg.setValue(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setColumnValue(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1103,6 +1138,13 @@ proto.services.billing.entities.v1alpha1.InvoiceItemColumn.serializeBinaryToWrit
       f
     );
   }
+  f = message.getColumnValue();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -1139,6 +1181,24 @@ proto.services.billing.entities.v1alpha1.InvoiceItemColumn.prototype.getValue = 
  */
 proto.services.billing.entities.v1alpha1.InvoiceItemColumn.prototype.setValue = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional string column_value = 3;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha1.InvoiceItemColumn.prototype.getColumnValue = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha1.InvoiceItemColumn} returns this
+ */
+proto.services.billing.entities.v1alpha1.InvoiceItemColumn.prototype.setColumnValue = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

@@ -2042,3 +2042,86 @@ export namespace ProgrammedDates {
   }
 }
 
+export class ObservedHolidays extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getObservedHolidaysId(): string;
+  setObservedHolidaysId(value: string): void;
+
+  getObservedHolidaysName(): string;
+  setObservedHolidaysName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getTimezone(): api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap];
+  setTimezone(value: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap]): void;
+
+  clearDaysList(): void;
+  getDaysList(): Array<ObservedHoliday>;
+  setDaysList(value: Array<ObservedHoliday>): void;
+  addDays(value?: ObservedHoliday, index?: number): ObservedHoliday;
+
+  hasLastUpdated(): boolean;
+  clearLastUpdated(): void;
+  getLastUpdated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastUpdated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ObservedHolidays.AsObject;
+  static toObject(includeInstance: boolean, msg: ObservedHolidays): ObservedHolidays.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ObservedHolidays, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObservedHolidays;
+  static deserializeBinaryFromReader(message: ObservedHolidays, reader: jspb.BinaryReader): ObservedHolidays;
+}
+
+export namespace ObservedHolidays {
+  export type AsObject = {
+    orgId: string,
+    observedHolidaysId: string,
+    observedHolidaysName: string,
+    description: string,
+    timezone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
+    daysList: Array<ObservedHoliday.AsObject>,
+    lastUpdated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class ObservedHoliday extends jspb.Message {
+  hasDay(): boolean;
+  clearDay(): void;
+  getDay(): MonthDayDate | undefined;
+  setDay(value?: MonthDayDate): void;
+
+  hasHoliday(): boolean;
+  clearHoliday(): void;
+  getHoliday(): CountryHoliday | undefined;
+  setHoliday(value?: CountryHoliday): void;
+
+  getDaytypeCase(): ObservedHoliday.DaytypeCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ObservedHoliday.AsObject;
+  static toObject(includeInstance: boolean, msg: ObservedHoliday): ObservedHoliday.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ObservedHoliday, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObservedHoliday;
+  static deserializeBinaryFromReader(message: ObservedHoliday, reader: jspb.BinaryReader): ObservedHoliday;
+}
+
+export namespace ObservedHoliday {
+  export type AsObject = {
+    day?: MonthDayDate.AsObject,
+    holiday?: CountryHoliday.AsObject,
+  }
+
+  export enum DaytypeCase {
+    DAYTYPE_NOT_SET = 0,
+    DAY = 1,
+    HOLIDAY = 2,
+  }
+}
+

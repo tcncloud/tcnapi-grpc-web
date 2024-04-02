@@ -235,7 +235,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.org.User.repeatedFields_ = [115,116,200,209,208];
+proto.api.commons.org.User.repeatedFields_ = [115,116,200,209,208,402];
 
 
 
@@ -302,7 +302,8 @@ proto.api.commons.org.User.toObject = function(includeInstance, msg) {
     proto.api.commons.org.Skill.toObject, includeInstance),
     agent: jspb.Message.getBooleanFieldWithDefault(msg, 300, false),
     accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 400, false),
-    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 401, false)
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 401, false),
+    whitelistedIpsList: (f = jspb.Message.getRepeatedField(msg, 402)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -481,6 +482,10 @@ proto.api.commons.org.User.deserializeBinaryFromReader = function(msg, reader) {
     case 401:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEmailVerified(value);
+      break;
+    case 402:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addWhitelistedIps(value);
       break;
     default:
       reader.skipField();
@@ -748,6 +753,13 @@ proto.api.commons.org.User.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       401,
+      f
+    );
+  }
+  f = message.getWhitelistedIpsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      402,
       f
     );
   }
@@ -1730,6 +1742,43 @@ proto.api.commons.org.User.prototype.getEmailVerified = function() {
  */
 proto.api.commons.org.User.prototype.setEmailVerified = function(value) {
   return jspb.Message.setProto3BooleanField(this, 401, value);
+};
+
+
+/**
+ * repeated string whitelisted_ips = 402;
+ * @return {!Array<string>}
+ */
+proto.api.commons.org.User.prototype.getWhitelistedIpsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 402));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.commons.org.User} returns this
+ */
+proto.api.commons.org.User.prototype.setWhitelistedIpsList = function(value) {
+  return jspb.Message.setField(this, 402, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.org.User} returns this
+ */
+proto.api.commons.org.User.prototype.addWhitelistedIps = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 402, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.org.User} returns this
+ */
+proto.api.commons.org.User.prototype.clearWhitelistedIpsList = function() {
+  return this.setWhitelistedIpsList([]);
 };
 
 

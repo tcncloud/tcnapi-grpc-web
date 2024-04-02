@@ -1,100 +1,100 @@
-// package: api.v1alpha1.org.programmeddates
-// file: api/v1alpha1/org/programmeddates/service.proto
+// package: api.v1alpha1.org.observedholidays
+// file: api/v1alpha1/org/observedholidays/service.proto
 
-var api_v1alpha1_org_programmeddates_service_pb = require("../../../../api/v1alpha1/org/programmeddates/service_pb");
-var api_v1alpha1_org_programmeddates_entities_pb = require("../../../../api/v1alpha1/org/programmeddates/entities_pb");
+var api_v1alpha1_org_observedholidays_service_pb = require("../../../../api/v1alpha1/org/observedholidays/service_pb");
+var api_v1alpha1_org_observedholidays_entities_pb = require("../../../../api/v1alpha1/org/observedholidays/entities_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var ProgrammedDatesService = (function () {
-  function ProgrammedDatesService() {}
-  ProgrammedDatesService.serviceName = "api.v1alpha1.org.programmeddates.ProgrammedDatesService";
-  return ProgrammedDatesService;
+var ObservedHolidaysService = (function () {
+  function ObservedHolidaysService() {}
+  ObservedHolidaysService.serviceName = "api.v1alpha1.org.observedholidays.ObservedHolidaysService";
+  return ObservedHolidaysService;
 }());
 
-ProgrammedDatesService.ListProgrammedDates = {
-  methodName: "ListProgrammedDates",
-  service: ProgrammedDatesService,
+ObservedHolidaysService.ListObservedHolidays = {
+  methodName: "ListObservedHolidays",
+  service: ObservedHolidaysService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_programmeddates_entities_pb.ListProgrammedDatesRequest,
-  responseType: api_v1alpha1_org_programmeddates_entities_pb.ListProgrammedDatesResponse
+  requestType: api_v1alpha1_org_observedholidays_entities_pb.ListObservedHolidaysRequest,
+  responseType: api_v1alpha1_org_observedholidays_entities_pb.ListObservedHolidaysResponse
 };
 
-ProgrammedDatesService.GetProgrammedDates = {
-  methodName: "GetProgrammedDates",
-  service: ProgrammedDatesService,
+ObservedHolidaysService.GetObservedHolidays = {
+  methodName: "GetObservedHolidays",
+  service: ObservedHolidaysService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_programmeddates_entities_pb.GetProgrammedDatesRequest,
-  responseType: api_v1alpha1_org_programmeddates_entities_pb.GetProgrammedDatesResponse
+  requestType: api_v1alpha1_org_observedholidays_entities_pb.GetObservedHolidaysRequest,
+  responseType: api_v1alpha1_org_observedholidays_entities_pb.GetObservedHolidaysResponse
 };
 
-ProgrammedDatesService.SetProgrammedDates = {
-  methodName: "SetProgrammedDates",
-  service: ProgrammedDatesService,
+ObservedHolidaysService.SetObservedHolidays = {
+  methodName: "SetObservedHolidays",
+  service: ObservedHolidaysService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_programmeddates_entities_pb.SetProgrammedDatesRequest,
-  responseType: api_v1alpha1_org_programmeddates_entities_pb.SetProgrammedDatesResponse
+  requestType: api_v1alpha1_org_observedholidays_entities_pb.SetObservedHolidaysRequest,
+  responseType: api_v1alpha1_org_observedholidays_entities_pb.SetObservedHolidaysResponse
 };
 
-ProgrammedDatesService.AddToProgrammedDates = {
-  methodName: "AddToProgrammedDates",
-  service: ProgrammedDatesService,
+ObservedHolidaysService.AddToObservedHolidays = {
+  methodName: "AddToObservedHolidays",
+  service: ObservedHolidaysService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_programmeddates_entities_pb.AddToProgrammedDatesRequest,
-  responseType: api_v1alpha1_org_programmeddates_entities_pb.AddToProgrammedDatesResponse
+  requestType: api_v1alpha1_org_observedholidays_entities_pb.AddToObservedHolidaysRequest,
+  responseType: api_v1alpha1_org_observedholidays_entities_pb.AddToObservedHolidaysResponse
 };
 
-ProgrammedDatesService.RemoveFromProgrammedDates = {
-  methodName: "RemoveFromProgrammedDates",
-  service: ProgrammedDatesService,
+ObservedHolidaysService.RemoveObservedHolidays = {
+  methodName: "RemoveObservedHolidays",
+  service: ObservedHolidaysService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_programmeddates_entities_pb.RemoveFromProgrammedDatesRequest,
-  responseType: api_v1alpha1_org_programmeddates_entities_pb.RemoveFromProgrammedDatesResponse
+  requestType: api_v1alpha1_org_observedholidays_entities_pb.RemoveFromObservedHolidaysRequest,
+  responseType: api_v1alpha1_org_observedholidays_entities_pb.RemoveFromObservedHolidaysResponse
 };
 
-ProgrammedDatesService.UpdateProgrammedDatesInfo = {
-  methodName: "UpdateProgrammedDatesInfo",
-  service: ProgrammedDatesService,
+ObservedHolidaysService.UpdateObservedHolidaysInfo = {
+  methodName: "UpdateObservedHolidaysInfo",
+  service: ObservedHolidaysService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_programmeddates_entities_pb.UpdateProgrammedDatesInfoRequest,
-  responseType: api_v1alpha1_org_programmeddates_entities_pb.UpdateProgrammedDatesInfoResponse
+  requestType: api_v1alpha1_org_observedholidays_entities_pb.UpdateObservedHolidaysInfoRequest,
+  responseType: api_v1alpha1_org_observedholidays_entities_pb.UpdateObservedHolidaysInfoResponse
 };
 
-ProgrammedDatesService.DeleteProgrammedDates = {
-  methodName: "DeleteProgrammedDates",
-  service: ProgrammedDatesService,
+ObservedHolidaysService.DeleteObservedHolidays = {
+  methodName: "DeleteObservedHolidays",
+  service: ObservedHolidaysService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_programmeddates_entities_pb.DeleteProgrammedDatesRequest,
-  responseType: api_v1alpha1_org_programmeddates_entities_pb.DeleteProgrammedDatesResponse
+  requestType: api_v1alpha1_org_observedholidays_entities_pb.DeleteObservedHolidaysRequest,
+  responseType: api_v1alpha1_org_observedholidays_entities_pb.DeleteObservedHolidaysResponse
 };
 
-ProgrammedDatesService.EvaluateProgrammedDates = {
-  methodName: "EvaluateProgrammedDates",
-  service: ProgrammedDatesService,
+ObservedHolidaysService.EvaluateObservedHolidays = {
+  methodName: "EvaluateObservedHolidays",
+  service: ObservedHolidaysService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_programmeddates_entities_pb.EvaluateProgrammedDatesRequest,
-  responseType: api_v1alpha1_org_programmeddates_entities_pb.EvaluateProgrammedDatesResponse
+  requestType: api_v1alpha1_org_observedholidays_entities_pb.EvaluateObservedHolidaysRequest,
+  responseType: api_v1alpha1_org_observedholidays_entities_pb.EvaluateObservedHolidaysResponse
 };
 
-exports.ProgrammedDatesService = ProgrammedDatesService;
+exports.ObservedHolidaysService = ObservedHolidaysService;
 
-function ProgrammedDatesServiceClient(serviceHost, options) {
+function ObservedHolidaysServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-ProgrammedDatesServiceClient.prototype.listProgrammedDates = function listProgrammedDates(requestMessage, metadata, callback) {
+ObservedHolidaysServiceClient.prototype.listObservedHolidays = function listObservedHolidays(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ProgrammedDatesService.ListProgrammedDates, {
+  var client = grpc.unary(ObservedHolidaysService.ListObservedHolidays, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -121,11 +121,11 @@ ProgrammedDatesServiceClient.prototype.listProgrammedDates = function listProgra
   };
 };
 
-ProgrammedDatesServiceClient.prototype.getProgrammedDates = function getProgrammedDates(requestMessage, metadata, callback) {
+ObservedHolidaysServiceClient.prototype.getObservedHolidays = function getObservedHolidays(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ProgrammedDatesService.GetProgrammedDates, {
+  var client = grpc.unary(ObservedHolidaysService.GetObservedHolidays, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -152,11 +152,11 @@ ProgrammedDatesServiceClient.prototype.getProgrammedDates = function getProgramm
   };
 };
 
-ProgrammedDatesServiceClient.prototype.setProgrammedDates = function setProgrammedDates(requestMessage, metadata, callback) {
+ObservedHolidaysServiceClient.prototype.setObservedHolidays = function setObservedHolidays(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ProgrammedDatesService.SetProgrammedDates, {
+  var client = grpc.unary(ObservedHolidaysService.SetObservedHolidays, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -183,11 +183,11 @@ ProgrammedDatesServiceClient.prototype.setProgrammedDates = function setProgramm
   };
 };
 
-ProgrammedDatesServiceClient.prototype.addToProgrammedDates = function addToProgrammedDates(requestMessage, metadata, callback) {
+ObservedHolidaysServiceClient.prototype.addToObservedHolidays = function addToObservedHolidays(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ProgrammedDatesService.AddToProgrammedDates, {
+  var client = grpc.unary(ObservedHolidaysService.AddToObservedHolidays, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -214,11 +214,11 @@ ProgrammedDatesServiceClient.prototype.addToProgrammedDates = function addToProg
   };
 };
 
-ProgrammedDatesServiceClient.prototype.removeFromProgrammedDates = function removeFromProgrammedDates(requestMessage, metadata, callback) {
+ObservedHolidaysServiceClient.prototype.removeObservedHolidays = function removeObservedHolidays(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ProgrammedDatesService.RemoveFromProgrammedDates, {
+  var client = grpc.unary(ObservedHolidaysService.RemoveObservedHolidays, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -245,11 +245,11 @@ ProgrammedDatesServiceClient.prototype.removeFromProgrammedDates = function remo
   };
 };
 
-ProgrammedDatesServiceClient.prototype.updateProgrammedDatesInfo = function updateProgrammedDatesInfo(requestMessage, metadata, callback) {
+ObservedHolidaysServiceClient.prototype.updateObservedHolidaysInfo = function updateObservedHolidaysInfo(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ProgrammedDatesService.UpdateProgrammedDatesInfo, {
+  var client = grpc.unary(ObservedHolidaysService.UpdateObservedHolidaysInfo, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -276,11 +276,11 @@ ProgrammedDatesServiceClient.prototype.updateProgrammedDatesInfo = function upda
   };
 };
 
-ProgrammedDatesServiceClient.prototype.deleteProgrammedDates = function deleteProgrammedDates(requestMessage, metadata, callback) {
+ObservedHolidaysServiceClient.prototype.deleteObservedHolidays = function deleteObservedHolidays(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ProgrammedDatesService.DeleteProgrammedDates, {
+  var client = grpc.unary(ObservedHolidaysService.DeleteObservedHolidays, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -307,11 +307,11 @@ ProgrammedDatesServiceClient.prototype.deleteProgrammedDates = function deletePr
   };
 };
 
-ProgrammedDatesServiceClient.prototype.evaluateProgrammedDates = function evaluateProgrammedDates(requestMessage, metadata, callback) {
+ObservedHolidaysServiceClient.prototype.evaluateObservedHolidays = function evaluateObservedHolidays(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ProgrammedDatesService.EvaluateProgrammedDates, {
+  var client = grpc.unary(ObservedHolidaysService.EvaluateObservedHolidays, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -338,5 +338,5 @@ ProgrammedDatesServiceClient.prototype.evaluateProgrammedDates = function evalua
   };
 };
 
-exports.ProgrammedDatesServiceClient = ProgrammedDatesServiceClient;
+exports.ObservedHolidaysServiceClient = ObservedHolidaysServiceClient;
 
