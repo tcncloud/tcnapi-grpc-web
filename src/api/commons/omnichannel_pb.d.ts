@@ -2595,6 +2595,9 @@ export class OmniComplianceAction extends jspb.Message {
   getConfirmationMessage(): string;
   setConfirmationMessage(value: string): void;
 
+  getFuzzyMatch(): boolean;
+  setFuzzyMatch(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniComplianceAction.AsObject;
   static toObject(includeInstance: boolean, msg: OmniComplianceAction): OmniComplianceAction.AsObject;
@@ -2609,6 +2612,7 @@ export namespace OmniComplianceAction {
   export type AsObject = {
     keywordsList: Array<string>,
     confirmationMessage: string,
+    fuzzyMatch: boolean,
   }
 }
 
