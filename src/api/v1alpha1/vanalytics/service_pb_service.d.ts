@@ -221,6 +221,15 @@ type VanalyticsCreateFlagTranscript = {
   readonly responseType: typeof api_v1alpha1_vanalytics_flag_transcript_pb.CreateFlagTranscriptResponse;
 };
 
+type VanalyticsDeleteFlagTranscript = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptRequest;
+  readonly responseType: typeof api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptResponse;
+};
+
 type VanalyticsSearchFlagTranscripts = {
   readonly methodName: string;
   readonly service: typeof Vanalytics;
@@ -345,6 +354,7 @@ export class Vanalytics {
   static readonly BulkCreateFlagReview: VanalyticsBulkCreateFlagReview;
   static readonly ListFlagReviews: VanalyticsListFlagReviews;
   static readonly CreateFlagTranscript: VanalyticsCreateFlagTranscript;
+  static readonly DeleteFlagTranscript: VanalyticsDeleteFlagTranscript;
   static readonly SearchFlagTranscripts: VanalyticsSearchFlagTranscripts;
   static readonly CreateFlagFilter: VanalyticsCreateFlagFilter;
   static readonly ListFlagFilters: VanalyticsListFlagFilters;
@@ -596,6 +606,15 @@ export class VanalyticsClient {
   createFlagTranscript(
     requestMessage: api_v1alpha1_vanalytics_flag_transcript_pb.CreateFlagTranscriptRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_flag_transcript_pb.CreateFlagTranscriptResponse|null) => void
+  ): UnaryResponse;
+  deleteFlagTranscript(
+    requestMessage: api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptResponse|null) => void
+  ): UnaryResponse;
+  deleteFlagTranscript(
+    requestMessage: api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptResponse|null) => void
   ): UnaryResponse;
   searchFlagTranscripts(
     requestMessage: api_v1alpha1_vanalytics_flag_transcript_pb.SearchFlagTranscriptsRequest,
