@@ -20640,8 +20640,7 @@ proto.api.commons.OmniComplianceAction.prototype.toObject = function(opt_include
 proto.api.commons.OmniComplianceAction.toObject = function(includeInstance, msg) {
   var f, obj = {
     keywordsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    confirmationMessage: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fuzzyMatch: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+    confirmationMessage: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -20686,10 +20685,6 @@ proto.api.commons.OmniComplianceAction.deserializeBinaryFromReader = function(ms
       var value = /** @type {string} */ (reader.readString());
       msg.setConfirmationMessage(value);
       break;
-    case 3:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setFuzzyMatch(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -20730,13 +20725,6 @@ proto.api.commons.OmniComplianceAction.serializeBinaryToWriter = function(messag
   if (f.length > 0) {
     writer.writeString(
       2,
-      f
-    );
-  }
-  f = message.getFuzzyMatch();
-  if (f) {
-    writer.writeBool(
-      3,
       f
     );
   }
@@ -20795,24 +20783,6 @@ proto.api.commons.OmniComplianceAction.prototype.getConfirmationMessage = functi
  */
 proto.api.commons.OmniComplianceAction.prototype.setConfirmationMessage = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional bool fuzzy_match = 3;
- * @return {boolean}
- */
-proto.api.commons.OmniComplianceAction.prototype.getFuzzyMatch = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.commons.OmniComplianceAction} returns this
- */
-proto.api.commons.OmniComplianceAction.prototype.setFuzzyMatch = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
