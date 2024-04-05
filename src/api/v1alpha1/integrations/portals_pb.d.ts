@@ -1363,8 +1363,8 @@ export class FlowDefinition extends jspb.Message {
 
   hasTemplate(): boolean;
   clearTemplate(): void;
-  getTemplate(): Template | undefined;
-  setTemplate(value?: Template): void;
+  getTemplate(): api_v1alpha1_integrations_service_pb.Template | undefined;
+  setTemplate(value?: api_v1alpha1_integrations_service_pb.Template): void;
 
   clearOptsList(): void;
   getOptsList(): Array<api_commons_integrations_integrations_pb.FieldDefinition>;
@@ -1392,36 +1392,8 @@ export namespace FlowDefinition {
     linkFieldsList: Array<api_commons_integrations_integrations_pb.FieldDefinition.AsObject>,
     prevFieldsList: Array<api_commons_integrations_integrations_pb.FieldDefinition.AsObject>,
     formFieldsList: Array<api_commons_integrations_integrations_pb.FieldDefinition.AsObject>,
-    template?: Template.AsObject,
+    template?: api_v1alpha1_integrations_service_pb.Template.AsObject,
     optsList: Array<api_commons_integrations_integrations_pb.FieldDefinition.AsObject>,
-  }
-}
-
-export class Template extends jspb.Message {
-  hasInvoiceTemplate(): boolean;
-  clearInvoiceTemplate(): void;
-  getInvoiceTemplate(): api_commons_integrations_integrations_pb.Invoices | undefined;
-  setInvoiceTemplate(value?: api_commons_integrations_integrations_pb.Invoices): void;
-
-  getValCase(): Template.ValCase;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Template.AsObject;
-  static toObject(includeInstance: boolean, msg: Template): Template.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Template, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Template;
-  static deserializeBinaryFromReader(message: Template, reader: jspb.BinaryReader): Template;
-}
-
-export namespace Template {
-  export type AsObject = {
-    invoiceTemplate?: api_commons_integrations_integrations_pb.Invoices.AsObject,
-  }
-
-  export enum ValCase {
-    VAL_NOT_SET = 0,
-    INVOICE_TEMPLATE = 1,
   }
 }
 

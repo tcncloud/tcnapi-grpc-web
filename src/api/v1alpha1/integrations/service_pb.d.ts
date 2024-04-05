@@ -2834,6 +2834,14 @@ export class Portal extends jspb.Message {
   getLastEdited(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLastEdited(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getDefinitionName(): string;
+  setDefinitionName(value: string): void;
+
+  clearStepsList(): void;
+  getStepsList(): Array<FlowChoices>;
+  setStepsList(value: Array<FlowChoices>): void;
+  addSteps(value?: FlowChoices, index?: number): FlowChoices;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Portal.AsObject;
   static toObject(includeInstance: boolean, msg: Portal): Portal.AsObject;
@@ -2853,6 +2861,8 @@ export namespace Portal {
     pluginInstIdsList: Array<string>,
     ptype?: PortalType.AsObject,
     lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    definitionName: string,
+    stepsList: Array<FlowChoices.AsObject>,
   }
 }
 
@@ -3321,6 +3331,147 @@ export namespace GenerateEpicKeyPairRes {
   export type AsObject = {
     productionPublicKey: string,
     nonProductionPublicKey: string,
+  }
+}
+
+export class FlowChoices extends jspb.Message {
+  clearChoicesList(): void;
+  getChoicesList(): Array<Flow2>;
+  setChoicesList(value: Array<Flow2>): void;
+  addChoices(value?: Flow2, index?: number): Flow2;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FlowChoices.AsObject;
+  static toObject(includeInstance: boolean, msg: FlowChoices): FlowChoices.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FlowChoices, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FlowChoices;
+  static deserializeBinaryFromReader(message: FlowChoices, reader: jspb.BinaryReader): FlowChoices;
+}
+
+export namespace FlowChoices {
+  export type AsObject = {
+    choicesList: Array<Flow2.AsObject>,
+  }
+}
+
+export class Flow2 extends jspb.Message {
+  getPluginInstanceId(): string;
+  setPluginInstanceId(value: string): void;
+
+  clearStepsList(): void;
+  getStepsList(): Array<Action>;
+  setStepsList(value: Array<Action>): void;
+  addSteps(value?: Action, index?: number): Action;
+
+  hasTemplate(): boolean;
+  clearTemplate(): void;
+  getTemplate(): Template | undefined;
+  setTemplate(value?: Template): void;
+
+  clearFormFieldsList(): void;
+  getFormFieldsList(): Array<api_commons_integrations_integrations_pb.FieldDefinition>;
+  setFormFieldsList(value: Array<api_commons_integrations_integrations_pb.FieldDefinition>): void;
+  addFormFields(value?: api_commons_integrations_integrations_pb.FieldDefinition, index?: number): api_commons_integrations_integrations_pb.FieldDefinition;
+
+  getOptsMap(): jspb.Map<string, string>;
+  clearOptsMap(): void;
+  getHeaderText(): string;
+  setHeaderText(value: string): void;
+
+  getFooterText(): string;
+  setFooterText(value: string): void;
+
+  getDemoMode(): boolean;
+  setDemoMode(value: boolean): void;
+
+  clearDemoFailConditionsList(): void;
+  getDemoFailConditionsList(): Array<Condition>;
+  setDemoFailConditionsList(value: Array<Condition>): void;
+  addDemoFailConditions(value?: Condition, index?: number): Condition;
+
+  clearDemoPassConditionsList(): void;
+  getDemoPassConditionsList(): Array<Condition>;
+  setDemoPassConditionsList(value: Array<Condition>): void;
+  addDemoPassConditions(value?: Condition, index?: number): Condition;
+
+  getDemoResultsMap(): jspb.Map<string, string>;
+  clearDemoResultsMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Flow2.AsObject;
+  static toObject(includeInstance: boolean, msg: Flow2): Flow2.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Flow2, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Flow2;
+  static deserializeBinaryFromReader(message: Flow2, reader: jspb.BinaryReader): Flow2;
+}
+
+export namespace Flow2 {
+  export type AsObject = {
+    pluginInstanceId: string,
+    stepsList: Array<Action.AsObject>,
+    template?: Template.AsObject,
+    formFieldsList: Array<api_commons_integrations_integrations_pb.FieldDefinition.AsObject>,
+    optsMap: Array<[string, string]>,
+    headerText: string,
+    footerText: string,
+    demoMode: boolean,
+    demoFailConditionsList: Array<Condition.AsObject>,
+    demoPassConditionsList: Array<Condition.AsObject>,
+    demoResultsMap: Array<[string, string]>,
+  }
+}
+
+export class Action extends jspb.Message {
+  getFlowDefinitionName(): string;
+  setFlowDefinitionName(value: string): void;
+
+  getRenameMap(): jspb.Map<string, string>;
+  clearRenameMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Action.AsObject;
+  static toObject(includeInstance: boolean, msg: Action): Action.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Action, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Action;
+  static deserializeBinaryFromReader(message: Action, reader: jspb.BinaryReader): Action;
+}
+
+export namespace Action {
+  export type AsObject = {
+    flowDefinitionName: string,
+    renameMap: Array<[string, string]>,
+  }
+}
+
+export class Template extends jspb.Message {
+  hasInvoiceTemplate(): boolean;
+  clearInvoiceTemplate(): void;
+  getInvoiceTemplate(): api_commons_integrations_integrations_pb.Invoices | undefined;
+  setInvoiceTemplate(value?: api_commons_integrations_integrations_pb.Invoices): void;
+
+  getValCase(): Template.ValCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Template.AsObject;
+  static toObject(includeInstance: boolean, msg: Template): Template.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Template, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Template;
+  static deserializeBinaryFromReader(message: Template, reader: jspb.BinaryReader): Template;
+}
+
+export namespace Template {
+  export type AsObject = {
+    invoiceTemplate?: api_commons_integrations_integrations_pb.Invoices.AsObject,
+  }
+
+  export enum ValCase {
+    VAL_NOT_SET = 0,
+    INVOICE_TEMPLATE = 1,
   }
 }
 
