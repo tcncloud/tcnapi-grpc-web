@@ -212,6 +212,24 @@ type PortalManagerApiListAvailablePaymentFields = {
   readonly responseType: typeof api_v1alpha1_integrations_portals_pb.ListAvailablePaymentFieldsRes;
 };
 
+type PortalManagerApiListPortalTypes = {
+  readonly methodName: string;
+  readonly service: typeof PortalManagerApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrations_portals_pb.ListPortalTypesReq;
+  readonly responseType: typeof api_v1alpha1_integrations_portals_pb.ListPortalTypesResponse;
+};
+
+type PortalManagerApiListFlows = {
+  readonly methodName: string;
+  readonly service: typeof PortalManagerApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrations_portals_pb.ListFlowsReq;
+  readonly responseType: typeof api_v1alpha1_integrations_portals_pb.ListFlowsResponse;
+};
+
 export class PortalManagerApi {
   static readonly serviceName: string;
   static readonly UpsertPortalConfig: PortalManagerApiUpsertPortalConfig;
@@ -237,6 +255,8 @@ export class PortalManagerApi {
   static readonly ListFlowFieldNames: PortalManagerApiListFlowFieldNames;
   static readonly ListAvailableVerificationFields: PortalManagerApiListAvailableVerificationFields;
   static readonly ListAvailablePaymentFields: PortalManagerApiListAvailablePaymentFields;
+  static readonly ListPortalTypes: PortalManagerApiListPortalTypes;
+  static readonly ListFlows: PortalManagerApiListFlows;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -477,6 +497,24 @@ export class PortalManagerApiClient {
   listAvailablePaymentFields(
     requestMessage: api_v1alpha1_integrations_portals_pb.ListAvailablePaymentFieldsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListAvailablePaymentFieldsRes|null) => void
+  ): UnaryResponse;
+  listPortalTypes(
+    requestMessage: api_v1alpha1_integrations_portals_pb.ListPortalTypesReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListPortalTypesResponse|null) => void
+  ): UnaryResponse;
+  listPortalTypes(
+    requestMessage: api_v1alpha1_integrations_portals_pb.ListPortalTypesReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListPortalTypesResponse|null) => void
+  ): UnaryResponse;
+  listFlows(
+    requestMessage: api_v1alpha1_integrations_portals_pb.ListFlowsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListFlowsResponse|null) => void
+  ): UnaryResponse;
+  listFlows(
+    requestMessage: api_v1alpha1_integrations_portals_pb.ListFlowsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListFlowsResponse|null) => void
   ): UnaryResponse;
 }
 
