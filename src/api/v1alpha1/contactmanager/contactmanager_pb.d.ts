@@ -391,9 +391,6 @@ export namespace ContactManagerEntryVal {
 }
 
 export class AddContactEntryRequest extends jspb.Message {
-  getProjectId(): string;
-  setProjectId(value: string): void;
-
   getContactManagerListId(): string;
   setContactManagerListId(value: string): void;
 
@@ -414,7 +411,6 @@ export class AddContactEntryRequest extends jspb.Message {
 
 export namespace AddContactEntryRequest {
   export type AsObject = {
-    projectId: string,
     contactManagerListId: string,
     entryList: Array<Entry.AsObject>,
   }
