@@ -191,48 +191,6 @@ export namespace ListInsightsResponse {
   }
 }
 
-export class ListOrgInsightsRequest extends jspb.Message {
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListOrgInsightsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListOrgInsightsRequest): ListOrgInsightsRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListOrgInsightsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListOrgInsightsRequest;
-  static deserializeBinaryFromReader(message: ListOrgInsightsRequest, reader: jspb.BinaryReader): ListOrgInsightsRequest;
-}
-
-export namespace ListOrgInsightsRequest {
-  export type AsObject = {
-    orgId: string,
-  }
-}
-
-export class ListOrgInsightsResponse extends jspb.Message {
-  clearInsightsList(): void;
-  getInsightsList(): Array<Insight>;
-  setInsightsList(value: Array<Insight>): void;
-  addInsights(value?: Insight, index?: number): Insight;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListOrgInsightsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListOrgInsightsResponse): ListOrgInsightsResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListOrgInsightsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListOrgInsightsResponse;
-  static deserializeBinaryFromReader(message: ListOrgInsightsResponse, reader: jspb.BinaryReader): ListOrgInsightsResponse;
-}
-
-export namespace ListOrgInsightsResponse {
-  export type AsObject = {
-    insightsList: Array<Insight.AsObject>,
-  }
-}
-
 export class UpdateInsightRequest extends jspb.Message {
   hasInsight(): boolean;
   clearInsight(): void;
