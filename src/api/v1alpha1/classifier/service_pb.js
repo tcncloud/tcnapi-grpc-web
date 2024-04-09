@@ -23,8 +23,8 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var api_commons_classifier_pb = require('../../../api/commons/classifier_pb.js');
-goog.object.extend(proto, api_commons_classifier_pb);
+var api_v1alpha1_classifier_entities_pb = require('../../../api/v1alpha1/classifier/entities_pb.js');
+goog.object.extend(proto, api_v1alpha1_classifier_entities_pb);
 goog.exportSymbol('proto.api.v1alpha1.classifier.DeleteFileTemplateRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.classifier.DeleteFileTemplateResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.classifier.GetFileTemplateRequest', null, global);
@@ -465,7 +465,7 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.toObject = 
 proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.toObject = function(includeInstance, msg) {
   var f, obj = {
     fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    hints: (f = msg.getHints()) && api_commons_classifier_pb.ParseHints.toObject(includeInstance, f)
+    hints: (f = msg.getHints()) && api_v1alpha1_classifier_entities_pb.ParseHints.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -507,8 +507,8 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.deserializeBinaryFrom
       msg.setFileTemplateId(value);
       break;
     case 2:
-      var value = new api_commons_classifier_pb.ParseHints;
-      reader.readMessage(value,api_commons_classifier_pb.ParseHints.deserializeBinaryFromReader);
+      var value = new api_v1alpha1_classifier_entities_pb.ParseHints;
+      reader.readMessage(value,api_v1alpha1_classifier_entities_pb.ParseHints.deserializeBinaryFromReader);
       msg.setHints(value);
       break;
     default:
@@ -552,7 +552,7 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.serializeBinaryToWrit
     writer.writeMessage(
       2,
       f,
-      api_commons_classifier_pb.ParseHints.serializeBinaryToWriter
+      api_v1alpha1_classifier_entities_pb.ParseHints.serializeBinaryToWriter
     );
   }
 };
@@ -577,17 +577,17 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.setFileTemp
 
 
 /**
- * optional api.commons.ParseHints hints = 2;
- * @return {?proto.api.commons.ParseHints}
+ * optional ParseHints hints = 2;
+ * @return {?proto.api.v1alpha1.classifier.ParseHints}
  */
 proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.getHints = function() {
-  return /** @type{?proto.api.commons.ParseHints} */ (
-    jspb.Message.getWrapperField(this, api_commons_classifier_pb.ParseHints, 2));
+  return /** @type{?proto.api.v1alpha1.classifier.ParseHints} */ (
+    jspb.Message.getWrapperField(this, api_v1alpha1_classifier_entities_pb.ParseHints, 2));
 };
 
 
 /**
- * @param {?proto.api.commons.ParseHints|undefined} value
+ * @param {?proto.api.v1alpha1.classifier.ParseHints|undefined} value
  * @return {!proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile} returns this
 */
 proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.setHints = function(value) {
@@ -760,7 +760,7 @@ proto.api.v1alpha1.classifier.ParseFileResponse.prototype.toObject = function(op
  */
 proto.api.v1alpha1.classifier.ParseFileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: (f = msg.getFileTemplate()) && api_commons_classifier_pb.FileTemplate.toObject(includeInstance, f)
+    fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_classifier_entities_pb.FileTemplate.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -798,8 +798,8 @@ proto.api.v1alpha1.classifier.ParseFileResponse.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new api_commons_classifier_pb.FileTemplate;
-      reader.readMessage(value,api_commons_classifier_pb.FileTemplate.deserializeBinaryFromReader);
+      var value = new api_v1alpha1_classifier_entities_pb.FileTemplate;
+      reader.readMessage(value,api_v1alpha1_classifier_entities_pb.FileTemplate.deserializeBinaryFromReader);
       msg.setFileTemplate(value);
       break;
     default:
@@ -836,24 +836,24 @@ proto.api.v1alpha1.classifier.ParseFileResponse.serializeBinaryToWriter = functi
     writer.writeMessage(
       1,
       f,
-      api_commons_classifier_pb.FileTemplate.serializeBinaryToWriter
+      api_v1alpha1_classifier_entities_pb.FileTemplate.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional api.commons.FileTemplate file_template = 1;
- * @return {?proto.api.commons.FileTemplate}
+ * optional FileTemplate file_template = 1;
+ * @return {?proto.api.v1alpha1.classifier.FileTemplate}
  */
 proto.api.v1alpha1.classifier.ParseFileResponse.prototype.getFileTemplate = function() {
-  return /** @type{?proto.api.commons.FileTemplate} */ (
-    jspb.Message.getWrapperField(this, api_commons_classifier_pb.FileTemplate, 1));
+  return /** @type{?proto.api.v1alpha1.classifier.FileTemplate} */ (
+    jspb.Message.getWrapperField(this, api_v1alpha1_classifier_entities_pb.FileTemplate, 1));
 };
 
 
 /**
- * @param {?proto.api.commons.FileTemplate|undefined} value
+ * @param {?proto.api.v1alpha1.classifier.FileTemplate|undefined} value
  * @return {!proto.api.v1alpha1.classifier.ParseFileResponse} returns this
 */
 proto.api.v1alpha1.classifier.ParseFileResponse.prototype.setFileTemplate = function(value) {
@@ -911,7 +911,7 @@ proto.api.v1alpha1.classifier.UpdateFileTemplateRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.classifier.UpdateFileTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: (f = msg.getFileTemplate()) && api_commons_classifier_pb.FileTemplate.toObject(includeInstance, f)
+    fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_classifier_entities_pb.FileTemplate.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -949,8 +949,8 @@ proto.api.v1alpha1.classifier.UpdateFileTemplateRequest.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new api_commons_classifier_pb.FileTemplate;
-      reader.readMessage(value,api_commons_classifier_pb.FileTemplate.deserializeBinaryFromReader);
+      var value = new api_v1alpha1_classifier_entities_pb.FileTemplate;
+      reader.readMessage(value,api_v1alpha1_classifier_entities_pb.FileTemplate.deserializeBinaryFromReader);
       msg.setFileTemplate(value);
       break;
     default:
@@ -987,24 +987,24 @@ proto.api.v1alpha1.classifier.UpdateFileTemplateRequest.serializeBinaryToWriter 
     writer.writeMessage(
       1,
       f,
-      api_commons_classifier_pb.FileTemplate.serializeBinaryToWriter
+      api_v1alpha1_classifier_entities_pb.FileTemplate.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional api.commons.FileTemplate file_template = 1;
- * @return {?proto.api.commons.FileTemplate}
+ * optional FileTemplate file_template = 1;
+ * @return {?proto.api.v1alpha1.classifier.FileTemplate}
  */
 proto.api.v1alpha1.classifier.UpdateFileTemplateRequest.prototype.getFileTemplate = function() {
-  return /** @type{?proto.api.commons.FileTemplate} */ (
-    jspb.Message.getWrapperField(this, api_commons_classifier_pb.FileTemplate, 1));
+  return /** @type{?proto.api.v1alpha1.classifier.FileTemplate} */ (
+    jspb.Message.getWrapperField(this, api_v1alpha1_classifier_entities_pb.FileTemplate, 1));
 };
 
 
 /**
- * @param {?proto.api.commons.FileTemplate|undefined} value
+ * @param {?proto.api.v1alpha1.classifier.FileTemplate|undefined} value
  * @return {!proto.api.v1alpha1.classifier.UpdateFileTemplateRequest} returns this
 */
 proto.api.v1alpha1.classifier.UpdateFileTemplateRequest.prototype.setFileTemplate = function(value) {
@@ -1592,7 +1592,7 @@ proto.api.v1alpha1.classifier.ListFileTemplatesResponse.prototype.toObject = fun
 proto.api.v1alpha1.classifier.ListFileTemplatesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     fileTemplatesList: jspb.Message.toObjectList(msg.getFileTemplatesList(),
-    api_commons_classifier_pb.FileTemplate.toObject, includeInstance)
+    api_v1alpha1_classifier_entities_pb.FileTemplate.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1630,8 +1630,8 @@ proto.api.v1alpha1.classifier.ListFileTemplatesResponse.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new api_commons_classifier_pb.FileTemplate;
-      reader.readMessage(value,api_commons_classifier_pb.FileTemplate.deserializeBinaryFromReader);
+      var value = new api_v1alpha1_classifier_entities_pb.FileTemplate;
+      reader.readMessage(value,api_v1alpha1_classifier_entities_pb.FileTemplate.deserializeBinaryFromReader);
       msg.addFileTemplates(value);
       break;
     default:
@@ -1668,24 +1668,24 @@ proto.api.v1alpha1.classifier.ListFileTemplatesResponse.serializeBinaryToWriter 
     writer.writeRepeatedMessage(
       1,
       f,
-      api_commons_classifier_pb.FileTemplate.serializeBinaryToWriter
+      api_v1alpha1_classifier_entities_pb.FileTemplate.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated api.commons.FileTemplate file_templates = 1;
- * @return {!Array<!proto.api.commons.FileTemplate>}
+ * repeated FileTemplate file_templates = 1;
+ * @return {!Array<!proto.api.v1alpha1.classifier.FileTemplate>}
  */
 proto.api.v1alpha1.classifier.ListFileTemplatesResponse.prototype.getFileTemplatesList = function() {
-  return /** @type{!Array<!proto.api.commons.FileTemplate>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_classifier_pb.FileTemplate, 1));
+  return /** @type{!Array<!proto.api.v1alpha1.classifier.FileTemplate>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_classifier_entities_pb.FileTemplate, 1));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.FileTemplate>} value
+ * @param {!Array<!proto.api.v1alpha1.classifier.FileTemplate>} value
  * @return {!proto.api.v1alpha1.classifier.ListFileTemplatesResponse} returns this
 */
 proto.api.v1alpha1.classifier.ListFileTemplatesResponse.prototype.setFileTemplatesList = function(value) {
@@ -1694,12 +1694,12 @@ proto.api.v1alpha1.classifier.ListFileTemplatesResponse.prototype.setFileTemplat
 
 
 /**
- * @param {!proto.api.commons.FileTemplate=} opt_value
+ * @param {!proto.api.v1alpha1.classifier.FileTemplate=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.commons.FileTemplate}
+ * @return {!proto.api.v1alpha1.classifier.FileTemplate}
  */
 proto.api.v1alpha1.classifier.ListFileTemplatesResponse.prototype.addFileTemplates = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.commons.FileTemplate, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.classifier.FileTemplate, opt_index);
 };
 
 
@@ -1874,7 +1874,7 @@ proto.api.v1alpha1.classifier.GetFileTemplateResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.classifier.GetFileTemplateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: (f = msg.getFileTemplate()) && api_commons_classifier_pb.FileTemplate.toObject(includeInstance, f)
+    fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_classifier_entities_pb.FileTemplate.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1912,8 +1912,8 @@ proto.api.v1alpha1.classifier.GetFileTemplateResponse.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new api_commons_classifier_pb.FileTemplate;
-      reader.readMessage(value,api_commons_classifier_pb.FileTemplate.deserializeBinaryFromReader);
+      var value = new api_v1alpha1_classifier_entities_pb.FileTemplate;
+      reader.readMessage(value,api_v1alpha1_classifier_entities_pb.FileTemplate.deserializeBinaryFromReader);
       msg.setFileTemplate(value);
       break;
     default:
@@ -1950,24 +1950,24 @@ proto.api.v1alpha1.classifier.GetFileTemplateResponse.serializeBinaryToWriter = 
     writer.writeMessage(
       1,
       f,
-      api_commons_classifier_pb.FileTemplate.serializeBinaryToWriter
+      api_v1alpha1_classifier_entities_pb.FileTemplate.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional api.commons.FileTemplate file_template = 1;
- * @return {?proto.api.commons.FileTemplate}
+ * optional FileTemplate file_template = 1;
+ * @return {?proto.api.v1alpha1.classifier.FileTemplate}
  */
 proto.api.v1alpha1.classifier.GetFileTemplateResponse.prototype.getFileTemplate = function() {
-  return /** @type{?proto.api.commons.FileTemplate} */ (
-    jspb.Message.getWrapperField(this, api_commons_classifier_pb.FileTemplate, 1));
+  return /** @type{?proto.api.v1alpha1.classifier.FileTemplate} */ (
+    jspb.Message.getWrapperField(this, api_v1alpha1_classifier_entities_pb.FileTemplate, 1));
 };
 
 
 /**
- * @param {?proto.api.commons.FileTemplate|undefined} value
+ * @param {?proto.api.v1alpha1.classifier.FileTemplate|undefined} value
  * @return {!proto.api.v1alpha1.classifier.GetFileTemplateResponse} returns this
 */
 proto.api.v1alpha1.classifier.GetFileTemplateResponse.prototype.setFileTemplate = function(value) {

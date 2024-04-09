@@ -2,7 +2,7 @@
 // file: api/v1alpha1/classifier/service.proto
 
 import * as jspb from "google-protobuf";
-import * as api_commons_classifier_pb from "../../../api/commons/classifier_pb";
+import * as api_v1alpha1_classifier_entities_pb from "../../../api/v1alpha1/classifier/entities_pb";
 
 export class ParseFileRequest extends jspb.Message {
   hasRawData(): boolean;
@@ -44,8 +44,8 @@ export namespace ParseFileRequest {
 
     hasHints(): boolean;
     clearHints(): void;
-    getHints(): api_commons_classifier_pb.ParseHints | undefined;
-    setHints(value?: api_commons_classifier_pb.ParseHints): void;
+    getHints(): api_v1alpha1_classifier_entities_pb.ParseHints | undefined;
+    setHints(value?: api_v1alpha1_classifier_entities_pb.ParseHints): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ReParseFile.AsObject;
@@ -60,7 +60,7 @@ export namespace ParseFileRequest {
   export namespace ReParseFile {
     export type AsObject = {
       fileTemplateId: number,
-      hints?: api_commons_classifier_pb.ParseHints.AsObject,
+      hints?: api_v1alpha1_classifier_entities_pb.ParseHints.AsObject,
     }
   }
 
@@ -74,8 +74,8 @@ export namespace ParseFileRequest {
 export class ParseFileResponse extends jspb.Message {
   hasFileTemplate(): boolean;
   clearFileTemplate(): void;
-  getFileTemplate(): api_commons_classifier_pb.FileTemplate | undefined;
-  setFileTemplate(value?: api_commons_classifier_pb.FileTemplate): void;
+  getFileTemplate(): api_v1alpha1_classifier_entities_pb.FileTemplate | undefined;
+  setFileTemplate(value?: api_v1alpha1_classifier_entities_pb.FileTemplate): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ParseFileResponse.AsObject;
@@ -89,15 +89,15 @@ export class ParseFileResponse extends jspb.Message {
 
 export namespace ParseFileResponse {
   export type AsObject = {
-    fileTemplate?: api_commons_classifier_pb.FileTemplate.AsObject,
+    fileTemplate?: api_v1alpha1_classifier_entities_pb.FileTemplate.AsObject,
   }
 }
 
 export class UpdateFileTemplateRequest extends jspb.Message {
   hasFileTemplate(): boolean;
   clearFileTemplate(): void;
-  getFileTemplate(): api_commons_classifier_pb.FileTemplate | undefined;
-  setFileTemplate(value?: api_commons_classifier_pb.FileTemplate): void;
+  getFileTemplate(): api_v1alpha1_classifier_entities_pb.FileTemplate | undefined;
+  setFileTemplate(value?: api_v1alpha1_classifier_entities_pb.FileTemplate): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateFileTemplateRequest.AsObject;
@@ -111,7 +111,7 @@ export class UpdateFileTemplateRequest extends jspb.Message {
 
 export namespace UpdateFileTemplateRequest {
   export type AsObject = {
-    fileTemplate?: api_commons_classifier_pb.FileTemplate.AsObject,
+    fileTemplate?: api_v1alpha1_classifier_entities_pb.FileTemplate.AsObject,
   }
 }
 
@@ -197,9 +197,9 @@ export namespace ListFileTemplatesRequest {
 
 export class ListFileTemplatesResponse extends jspb.Message {
   clearFileTemplatesList(): void;
-  getFileTemplatesList(): Array<api_commons_classifier_pb.FileTemplate>;
-  setFileTemplatesList(value: Array<api_commons_classifier_pb.FileTemplate>): void;
-  addFileTemplates(value?: api_commons_classifier_pb.FileTemplate, index?: number): api_commons_classifier_pb.FileTemplate;
+  getFileTemplatesList(): Array<api_v1alpha1_classifier_entities_pb.FileTemplate>;
+  setFileTemplatesList(value: Array<api_v1alpha1_classifier_entities_pb.FileTemplate>): void;
+  addFileTemplates(value?: api_v1alpha1_classifier_entities_pb.FileTemplate, index?: number): api_v1alpha1_classifier_entities_pb.FileTemplate;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFileTemplatesResponse.AsObject;
@@ -213,7 +213,7 @@ export class ListFileTemplatesResponse extends jspb.Message {
 
 export namespace ListFileTemplatesResponse {
   export type AsObject = {
-    fileTemplatesList: Array<api_commons_classifier_pb.FileTemplate.AsObject>,
+    fileTemplatesList: Array<api_v1alpha1_classifier_entities_pb.FileTemplate.AsObject>,
   }
 }
 
@@ -240,8 +240,8 @@ export namespace GetFileTemplateRequest {
 export class GetFileTemplateResponse extends jspb.Message {
   hasFileTemplate(): boolean;
   clearFileTemplate(): void;
-  getFileTemplate(): api_commons_classifier_pb.FileTemplate | undefined;
-  setFileTemplate(value?: api_commons_classifier_pb.FileTemplate): void;
+  getFileTemplate(): api_v1alpha1_classifier_entities_pb.FileTemplate | undefined;
+  setFileTemplate(value?: api_v1alpha1_classifier_entities_pb.FileTemplate): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetFileTemplateResponse.AsObject;
@@ -255,7 +255,7 @@ export class GetFileTemplateResponse extends jspb.Message {
 
 export namespace GetFileTemplateResponse {
   export type AsObject = {
-    fileTemplate?: api_commons_classifier_pb.FileTemplate.AsObject,
+    fileTemplate?: api_v1alpha1_classifier_entities_pb.FileTemplate.AsObject,
   }
 }
 
