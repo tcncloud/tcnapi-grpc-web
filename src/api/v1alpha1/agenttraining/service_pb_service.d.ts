@@ -68,6 +68,24 @@ type AgentTrainingServiceGetLearningOpportunity = {
   readonly responseType: typeof api_v1alpha1_agenttraining_learning_opportunity_pb.GetLearningOpportunityResponse;
 };
 
+type AgentTrainingServiceListLearningOpportunitiesByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof AgentTrainingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_agenttraining_learning_opportunity_pb.ListLearningOpportunitiesByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_agenttraining_learning_opportunity_pb.ListLearningOpportunitiesResponse;
+};
+
+type AgentTrainingServiceDeleteLearningOpportunityByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof AgentTrainingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_agenttraining_learning_opportunity_pb.DeleteLearningOpportunityByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_agenttraining_learning_opportunity_pb.DeleteLearningOpportunityResponse;
+};
+
 export class AgentTrainingService {
   static readonly serviceName: string;
   static readonly CreateLearningOpportunity: AgentTrainingServiceCreateLearningOpportunity;
@@ -77,6 +95,8 @@ export class AgentTrainingService {
   static readonly UpdateLearningOpportunity: AgentTrainingServiceUpdateLearningOpportunity;
   static readonly DeleteLearningOpportunity: AgentTrainingServiceDeleteLearningOpportunity;
   static readonly GetLearningOpportunity: AgentTrainingServiceGetLearningOpportunity;
+  static readonly ListLearningOpportunitiesByOrgId: AgentTrainingServiceListLearningOpportunitiesByOrgId;
+  static readonly DeleteLearningOpportunityByOrgId: AgentTrainingServiceDeleteLearningOpportunityByOrgId;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -173,6 +193,24 @@ export class AgentTrainingServiceClient {
   getLearningOpportunity(
     requestMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.GetLearningOpportunityRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.GetLearningOpportunityResponse|null) => void
+  ): UnaryResponse;
+  listLearningOpportunitiesByOrgId(
+    requestMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.ListLearningOpportunitiesByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.ListLearningOpportunitiesResponse|null) => void
+  ): UnaryResponse;
+  listLearningOpportunitiesByOrgId(
+    requestMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.ListLearningOpportunitiesByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.ListLearningOpportunitiesResponse|null) => void
+  ): UnaryResponse;
+  deleteLearningOpportunityByOrgId(
+    requestMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.DeleteLearningOpportunityByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.DeleteLearningOpportunityResponse|null) => void
+  ): UnaryResponse;
+  deleteLearningOpportunityByOrgId(
+    requestMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.DeleteLearningOpportunityByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.DeleteLearningOpportunityResponse|null) => void
   ): UnaryResponse;
 }
 

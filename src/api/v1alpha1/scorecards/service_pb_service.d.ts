@@ -427,6 +427,51 @@ type ScorecardsPreviewEvaluationScore = {
   readonly responseType: typeof api_v1alpha1_scorecards_evaluation_pb.PreviewEvaluationScoreResponse;
 };
 
+type ScorecardsListEvaluationsByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_evaluation_pb.ListEvaluationsByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_evaluation_pb.ListEvaluationsResponse;
+};
+
+type ScorecardsListAutoEvaluationsByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsResponse;
+};
+
+type ScorecardsDeleteEvaluationByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_evaluation_pb.DeleteEvaluationByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_evaluation_pb.DeleteEvaluationResponse;
+};
+
+type ScorecardsDeleteAutoEvaluationByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_auto_evaluation_pb.DeleteAutoEvaluationByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_auto_evaluation_pb.DeleteAutoEvaluationResponse;
+};
+
+type ScorecardsListScorecardsByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_scorecard_pb.ListScorecardsByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_scorecard_pb.ListScorecardsResponse;
+};
+
 export class Scorecards {
   static readonly serviceName: string;
   static readonly CreateScorecard: ScorecardsCreateScorecard;
@@ -475,6 +520,11 @@ export class Scorecards {
   static readonly StreamAutoEvaluations: ScorecardsStreamAutoEvaluations;
   static readonly DeleteAutoEvaluation: ScorecardsDeleteAutoEvaluation;
   static readonly PreviewEvaluationScore: ScorecardsPreviewEvaluationScore;
+  static readonly ListEvaluationsByOrgId: ScorecardsListEvaluationsByOrgId;
+  static readonly ListAutoEvaluationsByOrgId: ScorecardsListAutoEvaluationsByOrgId;
+  static readonly DeleteEvaluationByOrgId: ScorecardsDeleteEvaluationByOrgId;
+  static readonly DeleteAutoEvaluationByOrgId: ScorecardsDeleteAutoEvaluationByOrgId;
+  static readonly ListScorecardsByOrgId: ScorecardsListScorecardsByOrgId;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -914,6 +964,51 @@ export class ScorecardsClient {
   previewEvaluationScore(
     requestMessage: api_v1alpha1_scorecards_evaluation_pb.PreviewEvaluationScoreRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.PreviewEvaluationScoreResponse|null) => void
+  ): UnaryResponse;
+  listEvaluationsByOrgId(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.ListEvaluationsByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.ListEvaluationsResponse|null) => void
+  ): UnaryResponse;
+  listEvaluationsByOrgId(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.ListEvaluationsByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.ListEvaluationsResponse|null) => void
+  ): UnaryResponse;
+  listAutoEvaluationsByOrgId(
+    requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsResponse|null) => void
+  ): UnaryResponse;
+  listAutoEvaluationsByOrgId(
+    requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsResponse|null) => void
+  ): UnaryResponse;
+  deleteEvaluationByOrgId(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.DeleteEvaluationByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.DeleteEvaluationResponse|null) => void
+  ): UnaryResponse;
+  deleteEvaluationByOrgId(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.DeleteEvaluationByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.DeleteEvaluationResponse|null) => void
+  ): UnaryResponse;
+  deleteAutoEvaluationByOrgId(
+    requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.DeleteAutoEvaluationByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.DeleteAutoEvaluationResponse|null) => void
+  ): UnaryResponse;
+  deleteAutoEvaluationByOrgId(
+    requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.DeleteAutoEvaluationByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.DeleteAutoEvaluationResponse|null) => void
+  ): UnaryResponse;
+  listScorecardsByOrgId(
+    requestMessage: api_v1alpha1_scorecards_scorecard_pb.ListScorecardsByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_scorecard_pb.ListScorecardsResponse|null) => void
+  ): UnaryResponse;
+  listScorecardsByOrgId(
+    requestMessage: api_v1alpha1_scorecards_scorecard_pb.ListScorecardsByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_scorecard_pb.ListScorecardsResponse|null) => void
   ): UnaryResponse;
 }
 

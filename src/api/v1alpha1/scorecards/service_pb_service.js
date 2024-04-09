@@ -433,6 +433,51 @@ Scorecards.PreviewEvaluationScore = {
   responseType: api_v1alpha1_scorecards_evaluation_pb.PreviewEvaluationScoreResponse
 };
 
+Scorecards.ListEvaluationsByOrgId = {
+  methodName: "ListEvaluationsByOrgId",
+  service: Scorecards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_scorecards_evaluation_pb.ListEvaluationsByOrgIdRequest,
+  responseType: api_v1alpha1_scorecards_evaluation_pb.ListEvaluationsResponse
+};
+
+Scorecards.ListAutoEvaluationsByOrgId = {
+  methodName: "ListAutoEvaluationsByOrgId",
+  service: Scorecards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsByOrgIdRequest,
+  responseType: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsResponse
+};
+
+Scorecards.DeleteEvaluationByOrgId = {
+  methodName: "DeleteEvaluationByOrgId",
+  service: Scorecards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_scorecards_evaluation_pb.DeleteEvaluationByOrgIdRequest,
+  responseType: api_v1alpha1_scorecards_evaluation_pb.DeleteEvaluationResponse
+};
+
+Scorecards.DeleteAutoEvaluationByOrgId = {
+  methodName: "DeleteAutoEvaluationByOrgId",
+  service: Scorecards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_scorecards_auto_evaluation_pb.DeleteAutoEvaluationByOrgIdRequest,
+  responseType: api_v1alpha1_scorecards_auto_evaluation_pb.DeleteAutoEvaluationResponse
+};
+
+Scorecards.ListScorecardsByOrgId = {
+  methodName: "ListScorecardsByOrgId",
+  service: Scorecards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_scorecards_scorecard_pb.ListScorecardsByOrgIdRequest,
+  responseType: api_v1alpha1_scorecards_scorecard_pb.ListScorecardsResponse
+};
+
 exports.Scorecards = Scorecards;
 
 function ScorecardsClient(serviceHost, options) {
@@ -1848,6 +1893,161 @@ ScorecardsClient.prototype.previewEvaluationScore = function previewEvaluationSc
     callback = arguments[1];
   }
   var client = grpc.unary(Scorecards.PreviewEvaluationScore, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ScorecardsClient.prototype.listEvaluationsByOrgId = function listEvaluationsByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Scorecards.ListEvaluationsByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ScorecardsClient.prototype.listAutoEvaluationsByOrgId = function listAutoEvaluationsByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Scorecards.ListAutoEvaluationsByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ScorecardsClient.prototype.deleteEvaluationByOrgId = function deleteEvaluationByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Scorecards.DeleteEvaluationByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ScorecardsClient.prototype.deleteAutoEvaluationByOrgId = function deleteAutoEvaluationByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Scorecards.DeleteAutoEvaluationByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ScorecardsClient.prototype.listScorecardsByOrgId = function listScorecardsByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Scorecards.ListScorecardsByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

@@ -270,3 +270,137 @@ export namespace StreamAutoEvaluationsResponse {
   }
 }
 
+export class ListAutoEvaluationsByOrgIdRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  clearScorecardIdsList(): void;
+  getScorecardIdsList(): Array<number>;
+  setScorecardIdsList(value: Array<number>): void;
+  addScorecardIds(value: number, index?: number): number;
+
+  hasCompletedAt(): boolean;
+  clearCompletedAt(): void;
+  getCompletedAt(): api_commons_scorecards_pb.TimeFilter | undefined;
+  setCompletedAt(value?: api_commons_scorecards_pb.TimeFilter): void;
+
+  clearCategoryIdsList(): void;
+  getCategoryIdsList(): Array<number>;
+  setCategoryIdsList(value: Array<number>): void;
+  addCategoryIds(value: number, index?: number): number;
+
+  hasCallSid(): boolean;
+  clearCallSid(): void;
+  getCallSid(): ListAutoEvaluationsByOrgIdRequest.CallSidFilter | undefined;
+  setCallSid(value?: ListAutoEvaluationsByOrgIdRequest.CallSidFilter): void;
+
+  clearAgentUserIdsList(): void;
+  getAgentUserIdsList(): Array<string>;
+  setAgentUserIdsList(value: Array<string>): void;
+  addAgentUserIds(value: string, index?: number): string;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
+  clearRiskLevelsList(): void;
+  getRiskLevelsList(): Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>;
+  setRiskLevelsList(value: Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>): void;
+  addRiskLevels(value: api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap], index?: number): api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap];
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAutoEvaluationsByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAutoEvaluationsByOrgIdRequest): ListAutoEvaluationsByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAutoEvaluationsByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAutoEvaluationsByOrgIdRequest;
+  static deserializeBinaryFromReader(message: ListAutoEvaluationsByOrgIdRequest, reader: jspb.BinaryReader): ListAutoEvaluationsByOrgIdRequest;
+}
+
+export namespace ListAutoEvaluationsByOrgIdRequest {
+  export type AsObject = {
+    orgId: string,
+    scorecardIdsList: Array<number>,
+    completedAt?: api_commons_scorecards_pb.TimeFilter.AsObject,
+    categoryIdsList: Array<number>,
+    callSid?: ListAutoEvaluationsByOrgIdRequest.CallSidFilter.AsObject,
+    agentUserIdsList: Array<string>,
+    pageSize: number,
+    orderBy: string,
+    pageToken: string,
+    riskLevelsList: Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>,
+  }
+
+  export class CallSidFilter extends jspb.Message {
+    clearAnyOfList(): void;
+    getAnyOfList(): Array<number>;
+    setAnyOfList(value: Array<number>): void;
+    addAnyOf(value: number, index?: number): number;
+
+    getEq(): number;
+    setEq(value: number): void;
+
+    getGte(): number;
+    setGte(value: number): void;
+
+    getLte(): number;
+    setLte(value: number): void;
+
+    getGt(): number;
+    setGt(value: number): void;
+
+    getLt(): number;
+    setLt(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CallSidFilter.AsObject;
+    static toObject(includeInstance: boolean, msg: CallSidFilter): CallSidFilter.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CallSidFilter, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CallSidFilter;
+    static deserializeBinaryFromReader(message: CallSidFilter, reader: jspb.BinaryReader): CallSidFilter;
+  }
+
+  export namespace CallSidFilter {
+    export type AsObject = {
+      anyOfList: Array<number>,
+      eq: number,
+      gte: number,
+      lte: number,
+      gt: number,
+      lt: number,
+    }
+  }
+}
+
+export class DeleteAutoEvaluationByOrgIdRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getAutoEvaluationId(): number;
+  setAutoEvaluationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAutoEvaluationByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAutoEvaluationByOrgIdRequest): DeleteAutoEvaluationByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAutoEvaluationByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAutoEvaluationByOrgIdRequest;
+  static deserializeBinaryFromReader(message: DeleteAutoEvaluationByOrgIdRequest, reader: jspb.BinaryReader): DeleteAutoEvaluationByOrgIdRequest;
+}
+
+export namespace DeleteAutoEvaluationByOrgIdRequest {
+  export type AsObject = {
+    orgId: string,
+    autoEvaluationId: number,
+  }
+}
+
