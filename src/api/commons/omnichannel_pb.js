@@ -11094,7 +11094,7 @@ proto.api.commons.OmniDataMessage.prototype.toObject = function(opt_includeInsta
 proto.api.commons.OmniDataMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
     message: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    messageId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    messageSid: jspb.Message.getFieldWithDefault(msg, 2, "0")
   };
 
   if (includeInstance) {
@@ -11136,8 +11136,8 @@ proto.api.commons.OmniDataMessage.deserializeBinaryFromReader = function(msg, re
       msg.setMessage(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessageId(value);
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setMessageSid(value);
       break;
     default:
       reader.skipField();
@@ -11175,9 +11175,9 @@ proto.api.commons.OmniDataMessage.serializeBinaryToWriter = function(message, wr
       f
     );
   }
-  f = message.getMessageId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getMessageSid();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       2,
       f
     );
@@ -11204,11 +11204,11 @@ proto.api.commons.OmniDataMessage.prototype.setMessage = function(value) {
 
 
 /**
- * optional string message_id = 2;
+ * optional int64 message_sid = 2;
  * @return {string}
  */
-proto.api.commons.OmniDataMessage.prototype.getMessageId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.api.commons.OmniDataMessage.prototype.getMessageSid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
 };
 
 
@@ -11216,8 +11216,8 @@ proto.api.commons.OmniDataMessage.prototype.getMessageId = function() {
  * @param {string} value
  * @return {!proto.api.commons.OmniDataMessage} returns this
  */
-proto.api.commons.OmniDataMessage.prototype.setMessageId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.api.commons.OmniDataMessage.prototype.setMessageSid = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 2, value);
 };
 
 

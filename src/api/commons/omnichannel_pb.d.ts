@@ -1308,8 +1308,8 @@ export class OmniDataMessage extends jspb.Message {
   getMessage(): string;
   setMessage(value: string): void;
 
-  getMessageId(): string;
-  setMessageId(value: string): void;
+  getMessageSid(): string;
+  setMessageSid(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniDataMessage.AsObject;
@@ -1324,7 +1324,7 @@ export class OmniDataMessage extends jspb.Message {
 export namespace OmniDataMessage {
   export type AsObject = {
     message: string,
-    messageId: string,
+    messageSid: string,
   }
 }
 
