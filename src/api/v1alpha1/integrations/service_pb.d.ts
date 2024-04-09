@@ -2837,10 +2837,10 @@ export class Portal extends jspb.Message {
   getDefinitionName(): string;
   setDefinitionName(value: string): void;
 
-  clearStepsList(): void;
-  getStepsList(): Array<FlowChoices>;
-  setStepsList(value: Array<FlowChoices>): void;
-  addSteps(value?: FlowChoices, index?: number): FlowChoices;
+  hasPortalSteps(): boolean;
+  clearPortalSteps(): void;
+  getPortalSteps(): Steps | undefined;
+  setPortalSteps(value?: Steps): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Portal.AsObject;
@@ -2862,6 +2862,28 @@ export namespace Portal {
     ptype?: PortalType.AsObject,
     lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     definitionName: string,
+    portalSteps?: Steps.AsObject,
+  }
+}
+
+export class Steps extends jspb.Message {
+  clearStepsList(): void;
+  getStepsList(): Array<FlowChoices>;
+  setStepsList(value: Array<FlowChoices>): void;
+  addSteps(value?: FlowChoices, index?: number): FlowChoices;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Steps.AsObject;
+  static toObject(includeInstance: boolean, msg: Steps): Steps.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Steps, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Steps;
+  static deserializeBinaryFromReader(message: Steps, reader: jspb.BinaryReader): Steps;
+}
+
+export namespace Steps {
+  export type AsObject = {
     stepsList: Array<FlowChoices.AsObject>,
   }
 }
