@@ -50,6 +50,9 @@ export namespace CreateFlagTranscriptResponse {
 }
 
 export class DeleteFlagTranscriptRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   clearTranscriptSidsList(): void;
   getTranscriptSidsList(): Array<number>;
   setTranscriptSidsList(value: Array<number>): void;
@@ -67,6 +70,7 @@ export class DeleteFlagTranscriptRequest extends jspb.Message {
 
 export namespace DeleteFlagTranscriptRequest {
   export type AsObject = {
+    orgId: string,
     transcriptSidsList: Array<number>,
   }
 }

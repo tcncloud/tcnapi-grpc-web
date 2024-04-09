@@ -564,7 +564,7 @@ proto.api.v1alpha1.vanalytics.CreateFlagTranscriptResponse.serializeBinaryToWrit
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.repeatedFields_ = [1];
+proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.repeatedFields_ = [2];
 
 
 
@@ -597,7 +597,8 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.toObject = f
  */
 proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -635,6 +636,10 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgId(value);
+      break;
+    case 2:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
       for (var i = 0; i < values.length; i++) {
         msg.addTranscriptSids(values[i]);
@@ -669,10 +674,17 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.serializeBin
  */
 proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getOrgId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getTranscriptSidsList();
   if (f.length > 0) {
     writer.writePackedInt64(
-      1,
+      2,
       f
     );
   }
@@ -680,11 +692,29 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.serializeBinaryToWrite
 
 
 /**
- * repeated int64 transcript_sids = 1;
+ * optional string org_id = 1;
+ * @return {string}
+ */
+proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.getOrgId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest} returns this
+ */
+proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.setOrgId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * repeated int64 transcript_sids = 2;
  * @return {!Array<number>}
  */
 proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.getTranscriptSidsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
@@ -693,7 +723,7 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.getTranscrip
  * @return {!proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest} returns this
  */
 proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.setTranscriptSidsList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
@@ -703,7 +733,7 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.setTranscrip
  * @return {!proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest} returns this
  */
 proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.addTranscriptSids = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
