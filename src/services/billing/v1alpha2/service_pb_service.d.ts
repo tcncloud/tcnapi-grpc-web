@@ -69,6 +69,15 @@ type BillingServiceGetRateHistory = {
   readonly responseType: typeof services_billing_v1alpha2_rates_pb.GetRateHistoryResponse;
 };
 
+type BillingServiceListActiveRateDefinitions = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha2_rates_pb.ListActiveRateDefinitionsRequest;
+  readonly responseType: typeof services_billing_v1alpha2_rates_pb.ListActiveRateDefinitionsResponse;
+};
+
 type BillingServiceListRateDefinitions = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -105,6 +114,7 @@ export class BillingService {
   static readonly ExportInvoice: BillingServiceExportInvoice;
   static readonly GetRateDefinition: BillingServiceGetRateDefinition;
   static readonly GetRateHistory: BillingServiceGetRateHistory;
+  static readonly ListActiveRateDefinitions: BillingServiceListActiveRateDefinitions;
   static readonly ListRateDefinitions: BillingServiceListRateDefinitions;
   static readonly UpdateDefaultRateDefinition: BillingServiceUpdateDefaultRateDefinition;
   static readonly UpdateRateDefinition: BillingServiceUpdateRateDefinition;
@@ -204,6 +214,15 @@ export class BillingServiceClient {
   getRateHistory(
     requestMessage: services_billing_v1alpha2_rates_pb.GetRateHistoryRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha2_rates_pb.GetRateHistoryResponse|null) => void
+  ): UnaryResponse;
+  listActiveRateDefinitions(
+    requestMessage: services_billing_v1alpha2_rates_pb.ListActiveRateDefinitionsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha2_rates_pb.ListActiveRateDefinitionsResponse|null) => void
+  ): UnaryResponse;
+  listActiveRateDefinitions(
+    requestMessage: services_billing_v1alpha2_rates_pb.ListActiveRateDefinitionsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha2_rates_pb.ListActiveRateDefinitionsResponse|null) => void
   ): UnaryResponse;
   listRateDefinitions(
     requestMessage: services_billing_v1alpha2_rates_pb.ListRateDefinitionsRequest,

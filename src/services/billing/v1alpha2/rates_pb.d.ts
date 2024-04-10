@@ -273,6 +273,74 @@ export namespace GetRateHistoryResponse {
   }
 }
 
+export class ListActiveRateDefinitionsRequest extends jspb.Message {
+  getRateDefinitionId(): string;
+  setRateDefinitionId(value: string): void;
+
+  getFilter(): string;
+  setFilter(value: string): void;
+
+  hasFields(): boolean;
+  clearFields(): void;
+  getFields(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFields(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  clearSortList(): void;
+  getSortList(): Array<services_billing_v1alpha2_core_pb.Sort>;
+  setSortList(value: Array<services_billing_v1alpha2_core_pb.Sort>): void;
+  addSort(value?: services_billing_v1alpha2_core_pb.Sort, index?: number): services_billing_v1alpha2_core_pb.Sort;
+
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): services_billing_v1alpha2_core_pb.Page | undefined;
+  setPage(value?: services_billing_v1alpha2_core_pb.Page): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListActiveRateDefinitionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListActiveRateDefinitionsRequest): ListActiveRateDefinitionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListActiveRateDefinitionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListActiveRateDefinitionsRequest;
+  static deserializeBinaryFromReader(message: ListActiveRateDefinitionsRequest, reader: jspb.BinaryReader): ListActiveRateDefinitionsRequest;
+}
+
+export namespace ListActiveRateDefinitionsRequest {
+  export type AsObject = {
+    rateDefinitionId: string,
+    filter: string,
+    fields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    sortList: Array<services_billing_v1alpha2_core_pb.Sort.AsObject>,
+    page?: services_billing_v1alpha2_core_pb.Page.AsObject,
+  }
+}
+
+export class ListActiveRateDefinitionsResponse extends jspb.Message {
+  clearRateDefinitionsList(): void;
+  getRateDefinitionsList(): Array<services_billing_entities_v1alpha2_rates_pb.RateDefinition>;
+  setRateDefinitionsList(value: Array<services_billing_entities_v1alpha2_rates_pb.RateDefinition>): void;
+  addRateDefinitions(value?: services_billing_entities_v1alpha2_rates_pb.RateDefinition, index?: number): services_billing_entities_v1alpha2_rates_pb.RateDefinition;
+
+  getToken(): string;
+  setToken(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListActiveRateDefinitionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListActiveRateDefinitionsResponse): ListActiveRateDefinitionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListActiveRateDefinitionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListActiveRateDefinitionsResponse;
+  static deserializeBinaryFromReader(message: ListActiveRateDefinitionsResponse, reader: jspb.BinaryReader): ListActiveRateDefinitionsResponse;
+}
+
+export namespace ListActiveRateDefinitionsResponse {
+  export type AsObject = {
+    rateDefinitionsList: Array<services_billing_entities_v1alpha2_rates_pb.RateDefinition.AsObject>,
+    token: string,
+  }
+}
+
 export class ListRateDefinitionsRequest extends jspb.Message {
   getRateDefinitionId(): string;
   setRateDefinitionId(value: string): void;
