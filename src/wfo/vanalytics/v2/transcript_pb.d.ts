@@ -429,6 +429,9 @@ export class Call extends jspb.Message {
   getPhone(): Call.Phone | undefined;
   setPhone(value?: Call.Phone): void;
 
+  getAudioBytes(): number;
+  setAudioBytes(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Call.AsObject;
   static toObject(includeInstance: boolean, msg: Call): Call.AsObject;
@@ -455,6 +458,7 @@ export namespace Call {
     numberFormat: string,
     agentCallLog?: wfo_vanalytics_v2_agent_call_log_pb.AgentCallLog.AsObject,
     phone?: Call.Phone.AsObject,
+    audioBytes: number,
   }
 
   export class Phone extends jspb.Message {

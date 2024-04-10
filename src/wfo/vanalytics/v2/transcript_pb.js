@@ -4679,7 +4679,8 @@ proto.wfo.vanalytics.v2.Call.toObject = function(includeInstance, msg) {
     huntGroupSidsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
     numberFormat: jspb.Message.getFieldWithDefault(msg, 12, ""),
     agentCallLog: (f = msg.getAgentCallLog()) && wfo_vanalytics_v2_agent_call_log_pb.AgentCallLog.toObject(includeInstance, f),
-    phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.Call.Phone.toObject(includeInstance, f)
+    phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.Call.Phone.toObject(includeInstance, f),
+    audioBytes: jspb.Message.getFieldWithDefault(msg, 16, 0)
   };
 
   if (includeInstance) {
@@ -4781,6 +4782,10 @@ proto.wfo.vanalytics.v2.Call.deserializeBinaryFromReader = function(msg, reader)
       var value = new proto.wfo.vanalytics.v2.Call.Phone;
       reader.readMessage(value,proto.wfo.vanalytics.v2.Call.Phone.deserializeBinaryFromReader);
       msg.setPhone(value);
+      break;
+    case 16:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setAudioBytes(value);
       break;
     default:
       reader.skipField();
@@ -4910,6 +4915,13 @@ proto.wfo.vanalytics.v2.Call.serializeBinaryToWriter = function(message, writer)
       14,
       f,
       proto.wfo.vanalytics.v2.Call.Phone.serializeBinaryToWriter
+    );
+  }
+  f = message.getAudioBytes();
+  if (f !== 0) {
+    writer.writeInt64(
+      16,
+      f
     );
   }
 };
@@ -7178,6 +7190,24 @@ proto.wfo.vanalytics.v2.Call.prototype.clearPhone = function() {
  */
 proto.wfo.vanalytics.v2.Call.prototype.hasPhone = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional int64 audio_bytes = 16;
+ * @return {number}
+ */
+proto.wfo.vanalytics.v2.Call.prototype.getAudioBytes = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.wfo.vanalytics.v2.Call} returns this
+ */
+proto.wfo.vanalytics.v2.Call.prototype.setAudioBytes = function(value) {
+  return jspb.Message.setProto3IntField(this, 16, value);
 };
 
 
