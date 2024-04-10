@@ -1956,6 +1956,15 @@ Org.RemoveGroupedUserIPRestrictions = {
   responseType: api_v1alpha1_org_user_pb.RemoveGroupedUserIPRestrictionsResponse
 };
 
+Org.ListUsersAllowedIps = {
+  methodName: "ListUsersAllowedIps",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_user_pb.ListUsersAllowedIpsRequest,
+  responseType: api_v1alpha1_org_user_pb.ListUsersAllowedIpsResponse
+};
+
 exports.Org = Org;
 
 function OrgClient(serviceHost, options) {
@@ -8674,6 +8683,37 @@ OrgClient.prototype.removeGroupedUserIPRestrictions = function removeGroupedUser
     callback = arguments[1];
   }
   var client = grpc.unary(Org.RemoveGroupedUserIPRestrictions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listUsersAllowedIps = function listUsersAllowedIps(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListUsersAllowedIps, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
