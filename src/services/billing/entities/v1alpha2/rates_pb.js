@@ -956,7 +956,7 @@ proto.services.billing.entities.v1alpha2.RateDefinition.prototype.setGroupId = f
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_ = [[1000,1500,1501,1600,1601,1610,1611,1620,1621,1700,1701,1710,1711,1720,1721,1800,1801,1810,1811,1820,1821,1900,1901,1910,1911,1920,1921,2000,2001]];
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_ = [[1000,1500,1501,1600,1601,1602,1610,1611,1612,1620,1621,1622,1700,1701,1702,1710,1711,1712,1720,1721,1722,1800,1801,1802,1810,1811,1812,1820,1821,1822,1900,1901,1902,1910,1911,1912,1920,1921,1922,2000,2001]];
 
 /**
  * @enum {number}
@@ -966,30 +966,42 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.ConfigCase = {
   AGENT_SEATS: 1000,
   CONNECTED_INBOX_POLL: 1500,
   CONNECTED_INBOX_CREATED: 1501,
-  AGENT_MESSAGE_CHAT_CONFIG: 1600,
+  AGENT_MESSAGE_CHAT: 1600,
   AGENT_MESSAGE_CHAT_SIZE: 1601,
-  AGENT_MESSAGE_EMAIL_CONFIG: 1610,
+  AGENT_MESSAGE_CHAT_UNITS: 1602,
+  AGENT_MESSAGE_EMAIL: 1610,
   AGENT_MESSAGE_EMAIL_SIZE: 1611,
-  AGENT_MESSAGE_SMS_CONFIG: 1620,
+  AGENT_MESSAGE_EMAIL_UNITS: 1612,
+  AGENT_MESSAGE_SMS: 1620,
   AGENT_MESSAGE_SMS_SIZE: 1621,
-  MANAGER_MESSAGE_CHAT_CONFIG: 1700,
+  AGENT_MESSAGE_SMS_UNITS: 1622,
+  MANAGER_MESSAGE_CHAT: 1700,
   MANAGER_MESSAGE_CHAT_SIZE: 1701,
-  MANAGER_MESSAGE_EMAIL_CONFIG: 1710,
+  MANAGER_MESSAGE_CHAT_UNITS: 1702,
+  MANAGER_MESSAGE_EMAIL: 1710,
   MANAGER_MESSAGE_EMAIL_SIZE: 1711,
-  MANAGER_MESSAGE_SMS_CONFIG: 1720,
+  MANAGER_MESSAGE_EMAIL_UNITS: 1712,
+  MANAGER_MESSAGE_SMS: 1720,
   MANAGER_MESSAGE_SMS_SIZE: 1721,
-  SYSTEM_MESSAGE_CHAT_CONFIG: 1800,
+  MANAGER_MESSAGE_SMS_UNITS: 1722,
+  SYSTEM_MESSAGE_CHAT: 1800,
   SYSTEM_MESSAGE_CHAT_SIZE: 1801,
-  SYSTEM_MESSAGE_EMAIL_CONFIG: 1810,
+  SYSTEM_MESSAGE_CHAT_UNITS: 1802,
+  SYSTEM_MESSAGE_EMAIL: 1810,
   SYSTEM_MESSAGE_EMAIL_SIZE: 1811,
-  SYSTEM_MESSAGE_SMS_CONFIG: 1820,
+  SYSTEM_MESSAGE_EMAIL_UNITS: 1812,
+  SYSTEM_MESSAGE_SMS: 1820,
   SYSTEM_MESSAGE_SMS_SIZE: 1821,
-  CUSTOMER_MESSAGE_CHAT_CONFIG: 1900,
+  SYSTEM_MESSAGE_SMS_UNITS: 1822,
+  CUSTOMER_MESSAGE_CHAT: 1900,
   CUSTOMER_MESSAGE_CHAT_SIZE: 1901,
-  CUSTOMER_MESSAGE_EMAIL_CONFIG: 1910,
+  CUSTOMER_MESSAGE_CHAT_UNITS: 1902,
+  CUSTOMER_MESSAGE_EMAIL: 1910,
   CUSTOMER_MESSAGE_EMAIL_SIZE: 1911,
-  CUSTOMER_MESSAGE_SMS_CONFIG: 1920,
+  CUSTOMER_MESSAGE_EMAIL_UNITS: 1912,
+  CUSTOMER_MESSAGE_SMS: 1920,
   CUSTOMER_MESSAGE_SMS_SIZE: 1921,
+  CUSTOMER_MESSAGE_SMS_UNITS: 1922,
   COMPLIANCE_RND_QUERY: 2000,
   COMPLIANCE_RND_QUERY_CACHED: 2001
 };
@@ -1035,30 +1047,42 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.toObject = functio
     agentSeats: (f = msg.getAgentSeats()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     connectedInboxPoll: (f = msg.getConnectedInboxPoll()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     connectedInboxCreated: (f = msg.getConnectedInboxCreated()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
-    agentMessageChatConfig: (f = msg.getAgentMessageChatConfig()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    agentMessageChat: (f = msg.getAgentMessageChat()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     agentMessageChatSize: (f = msg.getAgentMessageChatSize()) && services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    agentMessageEmailConfig: (f = msg.getAgentMessageEmailConfig()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    agentMessageChatUnits: (f = msg.getAgentMessageChatUnits()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    agentMessageEmail: (f = msg.getAgentMessageEmail()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     agentMessageEmailSize: (f = msg.getAgentMessageEmailSize()) && services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    agentMessageSmsConfig: (f = msg.getAgentMessageSmsConfig()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    agentMessageEmailUnits: (f = msg.getAgentMessageEmailUnits()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    agentMessageSms: (f = msg.getAgentMessageSms()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     agentMessageSmsSize: (f = msg.getAgentMessageSmsSize()) && services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    managerMessageChatConfig: (f = msg.getManagerMessageChatConfig()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    agentMessageSmsUnits: (f = msg.getAgentMessageSmsUnits()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    managerMessageChat: (f = msg.getManagerMessageChat()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     managerMessageChatSize: (f = msg.getManagerMessageChatSize()) && services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    managerMessageEmailConfig: (f = msg.getManagerMessageEmailConfig()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    managerMessageChatUnits: (f = msg.getManagerMessageChatUnits()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    managerMessageEmail: (f = msg.getManagerMessageEmail()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     managerMessageEmailSize: (f = msg.getManagerMessageEmailSize()) && services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    managerMessageSmsConfig: (f = msg.getManagerMessageSmsConfig()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    managerMessageEmailUnits: (f = msg.getManagerMessageEmailUnits()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    managerMessageSms: (f = msg.getManagerMessageSms()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     managerMessageSmsSize: (f = msg.getManagerMessageSmsSize()) && services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    systemMessageChatConfig: (f = msg.getSystemMessageChatConfig()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    managerMessageSmsUnits: (f = msg.getManagerMessageSmsUnits()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    systemMessageChat: (f = msg.getSystemMessageChat()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     systemMessageChatSize: (f = msg.getSystemMessageChatSize()) && services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    systemMessageEmailConfig: (f = msg.getSystemMessageEmailConfig()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    systemMessageChatUnits: (f = msg.getSystemMessageChatUnits()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    systemMessageEmail: (f = msg.getSystemMessageEmail()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     systemMessageEmailSize: (f = msg.getSystemMessageEmailSize()) && services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    systemMessageSmsConfig: (f = msg.getSystemMessageSmsConfig()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    systemMessageEmailUnits: (f = msg.getSystemMessageEmailUnits()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    systemMessageSms: (f = msg.getSystemMessageSms()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     systemMessageSmsSize: (f = msg.getSystemMessageSmsSize()) && services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    customerMessageChatConfig: (f = msg.getCustomerMessageChatConfig()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    systemMessageSmsUnits: (f = msg.getSystemMessageSmsUnits()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    customerMessageChat: (f = msg.getCustomerMessageChat()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     customerMessageChatSize: (f = msg.getCustomerMessageChatSize()) && services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    customerMessageEmailConfig: (f = msg.getCustomerMessageEmailConfig()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    customerMessageChatUnits: (f = msg.getCustomerMessageChatUnits()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    customerMessageEmail: (f = msg.getCustomerMessageEmail()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     customerMessageEmailSize: (f = msg.getCustomerMessageEmailSize()) && services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    customerMessageSmsConfig: (f = msg.getCustomerMessageSmsConfig()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    customerMessageEmailUnits: (f = msg.getCustomerMessageEmailUnits()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
+    customerMessageSms: (f = msg.getCustomerMessageSms()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     customerMessageSmsSize: (f = msg.getCustomerMessageSmsSize()) && services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+    customerMessageSmsUnits: (f = msg.getCustomerMessageSmsUnits()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     complianceRndQuery: (f = msg.getComplianceRndQuery()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f),
     complianceRndQueryCached: (f = msg.getComplianceRndQueryCached()) && services_billing_entities_v1alpha2_modules_pb.BasicConfig.toObject(includeInstance, f)
   };
@@ -1115,122 +1139,182 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.deserializeBinaryF
     case 1600:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
-      msg.setAgentMessageChatConfig(value);
+      msg.setAgentMessageChat(value);
       break;
     case 1601:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.deserializeBinaryFromReader);
       msg.setAgentMessageChatSize(value);
       break;
+    case 1602:
+      var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setAgentMessageChatUnits(value);
+      break;
     case 1610:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
-      msg.setAgentMessageEmailConfig(value);
+      msg.setAgentMessageEmail(value);
       break;
     case 1611:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.deserializeBinaryFromReader);
       msg.setAgentMessageEmailSize(value);
       break;
+    case 1612:
+      var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setAgentMessageEmailUnits(value);
+      break;
     case 1620:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
-      msg.setAgentMessageSmsConfig(value);
+      msg.setAgentMessageSms(value);
       break;
     case 1621:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.deserializeBinaryFromReader);
       msg.setAgentMessageSmsSize(value);
       break;
+    case 1622:
+      var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setAgentMessageSmsUnits(value);
+      break;
     case 1700:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
-      msg.setManagerMessageChatConfig(value);
+      msg.setManagerMessageChat(value);
       break;
     case 1701:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.deserializeBinaryFromReader);
       msg.setManagerMessageChatSize(value);
       break;
+    case 1702:
+      var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setManagerMessageChatUnits(value);
+      break;
     case 1710:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
-      msg.setManagerMessageEmailConfig(value);
+      msg.setManagerMessageEmail(value);
       break;
     case 1711:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.deserializeBinaryFromReader);
       msg.setManagerMessageEmailSize(value);
       break;
+    case 1712:
+      var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setManagerMessageEmailUnits(value);
+      break;
     case 1720:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
-      msg.setManagerMessageSmsConfig(value);
+      msg.setManagerMessageSms(value);
       break;
     case 1721:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.deserializeBinaryFromReader);
       msg.setManagerMessageSmsSize(value);
       break;
+    case 1722:
+      var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setManagerMessageSmsUnits(value);
+      break;
     case 1800:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
-      msg.setSystemMessageChatConfig(value);
+      msg.setSystemMessageChat(value);
       break;
     case 1801:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.deserializeBinaryFromReader);
       msg.setSystemMessageChatSize(value);
       break;
+    case 1802:
+      var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setSystemMessageChatUnits(value);
+      break;
     case 1810:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
-      msg.setSystemMessageEmailConfig(value);
+      msg.setSystemMessageEmail(value);
       break;
     case 1811:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.deserializeBinaryFromReader);
       msg.setSystemMessageEmailSize(value);
       break;
+    case 1812:
+      var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setSystemMessageEmailUnits(value);
+      break;
     case 1820:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
-      msg.setSystemMessageSmsConfig(value);
+      msg.setSystemMessageSms(value);
       break;
     case 1821:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.deserializeBinaryFromReader);
       msg.setSystemMessageSmsSize(value);
       break;
+    case 1822:
+      var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setSystemMessageSmsUnits(value);
+      break;
     case 1900:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
-      msg.setCustomerMessageChatConfig(value);
+      msg.setCustomerMessageChat(value);
       break;
     case 1901:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.deserializeBinaryFromReader);
       msg.setCustomerMessageChatSize(value);
       break;
+    case 1902:
+      var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setCustomerMessageChatUnits(value);
+      break;
     case 1910:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
-      msg.setCustomerMessageEmailConfig(value);
+      msg.setCustomerMessageEmail(value);
       break;
     case 1911:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.deserializeBinaryFromReader);
       msg.setCustomerMessageEmailSize(value);
       break;
+    case 1912:
+      var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setCustomerMessageEmailUnits(value);
+      break;
     case 1920:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
-      msg.setCustomerMessageSmsConfig(value);
+      msg.setCustomerMessageSms(value);
       break;
     case 1921:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.deserializeBinaryFromReader);
       msg.setCustomerMessageSmsSize(value);
+      break;
+    case 1922:
+      var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha2_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setCustomerMessageSmsUnits(value);
       break;
     case 2000:
       var value = new services_billing_entities_v1alpha2_modules_pb.BasicConfig;
@@ -1295,7 +1379,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.serializeBinaryToW
       services_billing_entities_v1alpha2_modules_pb.BasicConfig.serializeBinaryToWriter
     );
   }
-  f = message.getAgentMessageChatConfig();
+  f = message.getAgentMessageChat();
   if (f != null) {
     writer.writeMessage(
       1600,
@@ -1311,7 +1395,15 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.serializeBinaryToW
       services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getAgentMessageEmailConfig();
+  f = message.getAgentMessageChatUnits();
+  if (f != null) {
+    writer.writeMessage(
+      1602,
+      f,
+      services_billing_entities_v1alpha2_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getAgentMessageEmail();
   if (f != null) {
     writer.writeMessage(
       1610,
@@ -1327,7 +1419,15 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.serializeBinaryToW
       services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getAgentMessageSmsConfig();
+  f = message.getAgentMessageEmailUnits();
+  if (f != null) {
+    writer.writeMessage(
+      1612,
+      f,
+      services_billing_entities_v1alpha2_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getAgentMessageSms();
   if (f != null) {
     writer.writeMessage(
       1620,
@@ -1343,7 +1443,15 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.serializeBinaryToW
       services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getManagerMessageChatConfig();
+  f = message.getAgentMessageSmsUnits();
+  if (f != null) {
+    writer.writeMessage(
+      1622,
+      f,
+      services_billing_entities_v1alpha2_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getManagerMessageChat();
   if (f != null) {
     writer.writeMessage(
       1700,
@@ -1359,7 +1467,15 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.serializeBinaryToW
       services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getManagerMessageEmailConfig();
+  f = message.getManagerMessageChatUnits();
+  if (f != null) {
+    writer.writeMessage(
+      1702,
+      f,
+      services_billing_entities_v1alpha2_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getManagerMessageEmail();
   if (f != null) {
     writer.writeMessage(
       1710,
@@ -1375,7 +1491,15 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.serializeBinaryToW
       services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getManagerMessageSmsConfig();
+  f = message.getManagerMessageEmailUnits();
+  if (f != null) {
+    writer.writeMessage(
+      1712,
+      f,
+      services_billing_entities_v1alpha2_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getManagerMessageSms();
   if (f != null) {
     writer.writeMessage(
       1720,
@@ -1391,7 +1515,15 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.serializeBinaryToW
       services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getSystemMessageChatConfig();
+  f = message.getManagerMessageSmsUnits();
+  if (f != null) {
+    writer.writeMessage(
+      1722,
+      f,
+      services_billing_entities_v1alpha2_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getSystemMessageChat();
   if (f != null) {
     writer.writeMessage(
       1800,
@@ -1407,7 +1539,15 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.serializeBinaryToW
       services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getSystemMessageEmailConfig();
+  f = message.getSystemMessageChatUnits();
+  if (f != null) {
+    writer.writeMessage(
+      1802,
+      f,
+      services_billing_entities_v1alpha2_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getSystemMessageEmail();
   if (f != null) {
     writer.writeMessage(
       1810,
@@ -1423,7 +1563,15 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.serializeBinaryToW
       services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getSystemMessageSmsConfig();
+  f = message.getSystemMessageEmailUnits();
+  if (f != null) {
+    writer.writeMessage(
+      1812,
+      f,
+      services_billing_entities_v1alpha2_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getSystemMessageSms();
   if (f != null) {
     writer.writeMessage(
       1820,
@@ -1439,7 +1587,15 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.serializeBinaryToW
       services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getCustomerMessageChatConfig();
+  f = message.getSystemMessageSmsUnits();
+  if (f != null) {
+    writer.writeMessage(
+      1822,
+      f,
+      services_billing_entities_v1alpha2_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerMessageChat();
   if (f != null) {
     writer.writeMessage(
       1900,
@@ -1455,7 +1611,15 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.serializeBinaryToW
       services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getCustomerMessageEmailConfig();
+  f = message.getCustomerMessageChatUnits();
+  if (f != null) {
+    writer.writeMessage(
+      1902,
+      f,
+      services_billing_entities_v1alpha2_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerMessageEmail();
   if (f != null) {
     writer.writeMessage(
       1910,
@@ -1471,7 +1635,15 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.serializeBinaryToW
       services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getCustomerMessageSmsConfig();
+  f = message.getCustomerMessageEmailUnits();
+  if (f != null) {
+    writer.writeMessage(
+      1912,
+      f,
+      services_billing_entities_v1alpha2_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerMessageSms();
   if (f != null) {
     writer.writeMessage(
       1920,
@@ -1485,6 +1657,14 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.serializeBinaryToW
       1921,
       f,
       services_billing_entities_v1alpha2_modules_pb.BasicUnitConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomerMessageSmsUnits();
+  if (f != null) {
+    writer.writeMessage(
+      1922,
+      f,
+      services_billing_entities_v1alpha2_modules_pb.BasicConfig.serializeBinaryToWriter
     );
   }
   f = message.getComplianceRndQuery();
@@ -1618,10 +1798,10 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasConne
 
 
 /**
- * optional BasicConfig agent_message_chat_config = 1600;
+ * optional BasicConfig agent_message_chat = 1600;
  * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getAgentMessageChatConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getAgentMessageChat = function() {
   return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1600));
 };
@@ -1631,7 +1811,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getAgent
  * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
 */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setAgentMessageChatConfig = function(value) {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setAgentMessageChat = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1600, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
 };
 
@@ -1640,8 +1820,8 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setAgent
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearAgentMessageChatConfig = function() {
-  return this.setAgentMessageChatConfig(undefined);
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearAgentMessageChat = function() {
+  return this.setAgentMessageChat(undefined);
 };
 
 
@@ -1649,7 +1829,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearAge
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasAgentMessageChatConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasAgentMessageChat = function() {
   return jspb.Message.getField(this, 1600) != null;
 };
 
@@ -1692,10 +1872,47 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasAgent
 
 
 /**
- * optional BasicConfig agent_message_email_config = 1610;
+ * optional BasicConfig agent_message_chat_units = 1602;
  * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getAgentMessageEmailConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getAgentMessageChatUnits = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1602));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setAgentMessageChatUnits = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1602, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearAgentMessageChatUnits = function() {
+  return this.setAgentMessageChatUnits(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasAgentMessageChatUnits = function() {
+  return jspb.Message.getField(this, 1602) != null;
+};
+
+
+/**
+ * optional BasicConfig agent_message_email = 1610;
+ * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getAgentMessageEmail = function() {
   return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1610));
 };
@@ -1705,7 +1922,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getAgent
  * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
 */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setAgentMessageEmailConfig = function(value) {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setAgentMessageEmail = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1610, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
 };
 
@@ -1714,8 +1931,8 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setAgent
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearAgentMessageEmailConfig = function() {
-  return this.setAgentMessageEmailConfig(undefined);
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearAgentMessageEmail = function() {
+  return this.setAgentMessageEmail(undefined);
 };
 
 
@@ -1723,7 +1940,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearAge
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasAgentMessageEmailConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasAgentMessageEmail = function() {
   return jspb.Message.getField(this, 1610) != null;
 };
 
@@ -1766,10 +1983,47 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasAgent
 
 
 /**
- * optional BasicConfig agent_message_sms_config = 1620;
+ * optional BasicConfig agent_message_email_units = 1612;
  * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getAgentMessageSmsConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getAgentMessageEmailUnits = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1612));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setAgentMessageEmailUnits = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1612, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearAgentMessageEmailUnits = function() {
+  return this.setAgentMessageEmailUnits(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasAgentMessageEmailUnits = function() {
+  return jspb.Message.getField(this, 1612) != null;
+};
+
+
+/**
+ * optional BasicConfig agent_message_sms = 1620;
+ * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getAgentMessageSms = function() {
   return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1620));
 };
@@ -1779,7 +2033,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getAgent
  * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
 */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setAgentMessageSmsConfig = function(value) {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setAgentMessageSms = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1620, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
 };
 
@@ -1788,8 +2042,8 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setAgent
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearAgentMessageSmsConfig = function() {
-  return this.setAgentMessageSmsConfig(undefined);
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearAgentMessageSms = function() {
+  return this.setAgentMessageSms(undefined);
 };
 
 
@@ -1797,7 +2051,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearAge
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasAgentMessageSmsConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasAgentMessageSms = function() {
   return jspb.Message.getField(this, 1620) != null;
 };
 
@@ -1840,10 +2094,47 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasAgent
 
 
 /**
- * optional BasicConfig manager_message_chat_config = 1700;
+ * optional BasicConfig agent_message_sms_units = 1622;
  * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getManagerMessageChatConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getAgentMessageSmsUnits = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1622));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setAgentMessageSmsUnits = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1622, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearAgentMessageSmsUnits = function() {
+  return this.setAgentMessageSmsUnits(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasAgentMessageSmsUnits = function() {
+  return jspb.Message.getField(this, 1622) != null;
+};
+
+
+/**
+ * optional BasicConfig manager_message_chat = 1700;
+ * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getManagerMessageChat = function() {
   return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1700));
 };
@@ -1853,7 +2144,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getManag
  * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
 */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setManagerMessageChatConfig = function(value) {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setManagerMessageChat = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1700, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
 };
 
@@ -1862,8 +2153,8 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setManag
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearManagerMessageChatConfig = function() {
-  return this.setManagerMessageChatConfig(undefined);
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearManagerMessageChat = function() {
+  return this.setManagerMessageChat(undefined);
 };
 
 
@@ -1871,7 +2162,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearMan
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasManagerMessageChatConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasManagerMessageChat = function() {
   return jspb.Message.getField(this, 1700) != null;
 };
 
@@ -1914,10 +2205,47 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasManag
 
 
 /**
- * optional BasicConfig manager_message_email_config = 1710;
+ * optional BasicConfig manager_message_chat_units = 1702;
  * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getManagerMessageEmailConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getManagerMessageChatUnits = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1702));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setManagerMessageChatUnits = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1702, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearManagerMessageChatUnits = function() {
+  return this.setManagerMessageChatUnits(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasManagerMessageChatUnits = function() {
+  return jspb.Message.getField(this, 1702) != null;
+};
+
+
+/**
+ * optional BasicConfig manager_message_email = 1710;
+ * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getManagerMessageEmail = function() {
   return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1710));
 };
@@ -1927,7 +2255,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getManag
  * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
 */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setManagerMessageEmailConfig = function(value) {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setManagerMessageEmail = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1710, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
 };
 
@@ -1936,8 +2264,8 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setManag
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearManagerMessageEmailConfig = function() {
-  return this.setManagerMessageEmailConfig(undefined);
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearManagerMessageEmail = function() {
+  return this.setManagerMessageEmail(undefined);
 };
 
 
@@ -1945,7 +2273,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearMan
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasManagerMessageEmailConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasManagerMessageEmail = function() {
   return jspb.Message.getField(this, 1710) != null;
 };
 
@@ -1988,10 +2316,47 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasManag
 
 
 /**
- * optional BasicConfig manager_message_sms_config = 1720;
+ * optional BasicConfig manager_message_email_units = 1712;
  * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getManagerMessageSmsConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getManagerMessageEmailUnits = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1712));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setManagerMessageEmailUnits = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1712, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearManagerMessageEmailUnits = function() {
+  return this.setManagerMessageEmailUnits(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasManagerMessageEmailUnits = function() {
+  return jspb.Message.getField(this, 1712) != null;
+};
+
+
+/**
+ * optional BasicConfig manager_message_sms = 1720;
+ * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getManagerMessageSms = function() {
   return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1720));
 };
@@ -2001,7 +2366,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getManag
  * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
 */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setManagerMessageSmsConfig = function(value) {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setManagerMessageSms = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1720, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
 };
 
@@ -2010,8 +2375,8 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setManag
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearManagerMessageSmsConfig = function() {
-  return this.setManagerMessageSmsConfig(undefined);
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearManagerMessageSms = function() {
+  return this.setManagerMessageSms(undefined);
 };
 
 
@@ -2019,7 +2384,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearMan
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasManagerMessageSmsConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasManagerMessageSms = function() {
   return jspb.Message.getField(this, 1720) != null;
 };
 
@@ -2062,10 +2427,47 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasManag
 
 
 /**
- * optional BasicConfig system_message_chat_config = 1800;
+ * optional BasicConfig manager_message_sms_units = 1722;
  * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getSystemMessageChatConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getManagerMessageSmsUnits = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1722));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setManagerMessageSmsUnits = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1722, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearManagerMessageSmsUnits = function() {
+  return this.setManagerMessageSmsUnits(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasManagerMessageSmsUnits = function() {
+  return jspb.Message.getField(this, 1722) != null;
+};
+
+
+/**
+ * optional BasicConfig system_message_chat = 1800;
+ * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getSystemMessageChat = function() {
   return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1800));
 };
@@ -2075,7 +2477,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getSyste
  * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
 */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setSystemMessageChatConfig = function(value) {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setSystemMessageChat = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1800, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
 };
 
@@ -2084,8 +2486,8 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setSyste
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearSystemMessageChatConfig = function() {
-  return this.setSystemMessageChatConfig(undefined);
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearSystemMessageChat = function() {
+  return this.setSystemMessageChat(undefined);
 };
 
 
@@ -2093,7 +2495,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearSys
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasSystemMessageChatConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasSystemMessageChat = function() {
   return jspb.Message.getField(this, 1800) != null;
 };
 
@@ -2136,10 +2538,47 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasSyste
 
 
 /**
- * optional BasicConfig system_message_email_config = 1810;
+ * optional BasicConfig system_message_chat_units = 1802;
  * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getSystemMessageEmailConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getSystemMessageChatUnits = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1802));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setSystemMessageChatUnits = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1802, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearSystemMessageChatUnits = function() {
+  return this.setSystemMessageChatUnits(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasSystemMessageChatUnits = function() {
+  return jspb.Message.getField(this, 1802) != null;
+};
+
+
+/**
+ * optional BasicConfig system_message_email = 1810;
+ * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getSystemMessageEmail = function() {
   return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1810));
 };
@@ -2149,7 +2588,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getSyste
  * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
 */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setSystemMessageEmailConfig = function(value) {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setSystemMessageEmail = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1810, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
 };
 
@@ -2158,8 +2597,8 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setSyste
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearSystemMessageEmailConfig = function() {
-  return this.setSystemMessageEmailConfig(undefined);
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearSystemMessageEmail = function() {
+  return this.setSystemMessageEmail(undefined);
 };
 
 
@@ -2167,7 +2606,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearSys
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasSystemMessageEmailConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasSystemMessageEmail = function() {
   return jspb.Message.getField(this, 1810) != null;
 };
 
@@ -2210,10 +2649,47 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasSyste
 
 
 /**
- * optional BasicConfig system_message_sms_config = 1820;
+ * optional BasicConfig system_message_email_units = 1812;
  * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getSystemMessageSmsConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getSystemMessageEmailUnits = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1812));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setSystemMessageEmailUnits = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1812, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearSystemMessageEmailUnits = function() {
+  return this.setSystemMessageEmailUnits(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasSystemMessageEmailUnits = function() {
+  return jspb.Message.getField(this, 1812) != null;
+};
+
+
+/**
+ * optional BasicConfig system_message_sms = 1820;
+ * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getSystemMessageSms = function() {
   return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1820));
 };
@@ -2223,7 +2699,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getSyste
  * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
 */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setSystemMessageSmsConfig = function(value) {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setSystemMessageSms = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1820, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
 };
 
@@ -2232,8 +2708,8 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setSyste
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearSystemMessageSmsConfig = function() {
-  return this.setSystemMessageSmsConfig(undefined);
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearSystemMessageSms = function() {
+  return this.setSystemMessageSms(undefined);
 };
 
 
@@ -2241,7 +2717,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearSys
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasSystemMessageSmsConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasSystemMessageSms = function() {
   return jspb.Message.getField(this, 1820) != null;
 };
 
@@ -2284,10 +2760,47 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasSyste
 
 
 /**
- * optional BasicConfig customer_message_chat_config = 1900;
+ * optional BasicConfig system_message_sms_units = 1822;
  * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getCustomerMessageChatConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getSystemMessageSmsUnits = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1822));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setSystemMessageSmsUnits = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1822, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearSystemMessageSmsUnits = function() {
+  return this.setSystemMessageSmsUnits(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasSystemMessageSmsUnits = function() {
+  return jspb.Message.getField(this, 1822) != null;
+};
+
+
+/**
+ * optional BasicConfig customer_message_chat = 1900;
+ * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getCustomerMessageChat = function() {
   return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1900));
 };
@@ -2297,7 +2810,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getCusto
  * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
 */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setCustomerMessageChatConfig = function(value) {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setCustomerMessageChat = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1900, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
 };
 
@@ -2306,8 +2819,8 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setCusto
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearCustomerMessageChatConfig = function() {
-  return this.setCustomerMessageChatConfig(undefined);
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearCustomerMessageChat = function() {
+  return this.setCustomerMessageChat(undefined);
 };
 
 
@@ -2315,7 +2828,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearCus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasCustomerMessageChatConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasCustomerMessageChat = function() {
   return jspb.Message.getField(this, 1900) != null;
 };
 
@@ -2358,10 +2871,47 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasCusto
 
 
 /**
- * optional BasicConfig customer_message_email_config = 1910;
+ * optional BasicConfig customer_message_chat_units = 1902;
  * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getCustomerMessageEmailConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getCustomerMessageChatUnits = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1902));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setCustomerMessageChatUnits = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1902, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearCustomerMessageChatUnits = function() {
+  return this.setCustomerMessageChatUnits(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasCustomerMessageChatUnits = function() {
+  return jspb.Message.getField(this, 1902) != null;
+};
+
+
+/**
+ * optional BasicConfig customer_message_email = 1910;
+ * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getCustomerMessageEmail = function() {
   return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1910));
 };
@@ -2371,7 +2921,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getCusto
  * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
 */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setCustomerMessageEmailConfig = function(value) {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setCustomerMessageEmail = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1910, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
 };
 
@@ -2380,8 +2930,8 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setCusto
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearCustomerMessageEmailConfig = function() {
-  return this.setCustomerMessageEmailConfig(undefined);
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearCustomerMessageEmail = function() {
+  return this.setCustomerMessageEmail(undefined);
 };
 
 
@@ -2389,7 +2939,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearCus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasCustomerMessageEmailConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasCustomerMessageEmail = function() {
   return jspb.Message.getField(this, 1910) != null;
 };
 
@@ -2432,10 +2982,47 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasCusto
 
 
 /**
- * optional BasicConfig customer_message_sms_config = 1920;
+ * optional BasicConfig customer_message_email_units = 1912;
  * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getCustomerMessageSmsConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getCustomerMessageEmailUnits = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1912));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setCustomerMessageEmailUnits = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1912, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearCustomerMessageEmailUnits = function() {
+  return this.setCustomerMessageEmailUnits(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasCustomerMessageEmailUnits = function() {
+  return jspb.Message.getField(this, 1912) != null;
+};
+
+
+/**
+ * optional BasicConfig customer_message_sms = 1920;
+ * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getCustomerMessageSms = function() {
   return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1920));
 };
@@ -2445,7 +3032,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getCusto
  * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
 */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setCustomerMessageSmsConfig = function(value) {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setCustomerMessageSms = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1920, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
 };
 
@@ -2454,8 +3041,8 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setCusto
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearCustomerMessageSmsConfig = function() {
-  return this.setCustomerMessageSmsConfig(undefined);
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearCustomerMessageSms = function() {
+  return this.setCustomerMessageSms(undefined);
 };
 
 
@@ -2463,7 +3050,7 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearCus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasCustomerMessageSmsConfig = function() {
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasCustomerMessageSms = function() {
   return jspb.Message.getField(this, 1920) != null;
 };
 
@@ -2502,6 +3089,43 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearCus
  */
 proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasCustomerMessageSmsSize = function() {
   return jspb.Message.getField(this, 1921) != null;
+};
+
+
+/**
+ * optional BasicConfig customer_message_sms_units = 1922;
+ * @return {?proto.services.billing.entities.v1alpha2.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.getCustomerMessageSmsUnits = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha2.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha2_modules_pb.BasicConfig, 1922));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha2.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.setCustomerMessageSmsUnits = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1922, proto.services.billing.entities.v1alpha2.RateDefinitionConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinitionConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.clearCustomerMessageSmsUnits = function() {
+  return this.setCustomerMessageSmsUnits(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinitionConfig.prototype.hasCustomerMessageSmsUnits = function() {
+  return jspb.Message.getField(this, 1922) != null;
 };
 
 
@@ -2590,28 +3214,40 @@ proto.services.billing.entities.v1alpha2.RateDefinitionConfigType = {
   RATE_DEFINITION_CONFIG_TYPE_OMNI_CONNECTED_INBOX_CREATED: 1501,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_CHAT: 1600,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_CHAT_SIZE: 1601,
+  RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_CHAT_UNITS: 1602,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_EMAIL: 1610,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_EMAIL_SIZE: 1611,
+  RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_EMAIL_UNITS: 1612,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_SMS: 1620,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_SMS_SIZE: 1621,
+  RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_SMS_UNITS: 1622,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_CHAT: 1700,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_CHAT_SIZE: 1701,
+  RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_CHAT_UNITS: 1702,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_EMAIL: 1710,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_EMAIL_SIZE: 1711,
+  RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_EMAIL_UNITS: 1712,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_SMS: 1720,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_SMS_SIZE: 1721,
+  RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_SMS_UNITS: 1722,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_CHAT: 1800,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_CHAT_SIZE: 1801,
+  RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_CHAT_UNITS: 1802,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_EMAIL: 1810,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_EMAIL_SIZE: 1811,
+  RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_EMAIL_UNITS: 1812,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_SMS: 1820,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_SMS_SIZE: 1821,
+  RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_SMS_UNITS: 1822,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_CHAT: 1900,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_CHAT_SIZE: 1901,
+  RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_CHAT_UNITS: 1902,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_EMAIL: 1910,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_EMAIL_SIZE: 1911,
+  RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_EMAIL_UNITS: 1912,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_SMS: 1920,
   RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_SMS_SIZE: 1921,
+  RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_SMS_UNITS: 1922,
   RATE_DEFINITION_CONFIG_TYPE_COMPLIANCE_RND_QUERY: 2000,
   RATE_DEFINITION_CONFIG_TYPE_COMPLIANCE_RND_QUERY_CACHED: 2001
 };
