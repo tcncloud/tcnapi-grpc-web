@@ -51,6 +51,15 @@ type BillingServiceDeleteDefaultRateDefinition = {
   readonly responseType: typeof services_billing_v1alpha2_rates_pb.DeleteDefaultRateDefinitionResponse;
 };
 
+type BillingServiceDeleteDefaultRateDefinitions = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha2_rates_pb.DeleteDefaultRateDefinitionsRequest;
+  readonly responseType: typeof services_billing_v1alpha2_rates_pb.DeleteDefaultRateDefinitionsResponse;
+};
+
 type BillingServiceDeleteRateDefinition = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -58,6 +67,15 @@ type BillingServiceDeleteRateDefinition = {
   readonly responseStream: false;
   readonly requestType: typeof services_billing_v1alpha2_rates_pb.DeleteRateDefinitionRequest;
   readonly responseType: typeof services_billing_v1alpha2_rates_pb.DeleteRateDefinitionResponse;
+};
+
+type BillingServiceDeleteRateDefinitions = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha2_rates_pb.DeleteRateDefinitionsRequest;
+  readonly responseType: typeof services_billing_v1alpha2_rates_pb.DeleteRateDefinitionsResponse;
 };
 
 type BillingServiceExportInvoice = {
@@ -130,7 +148,9 @@ export class BillingService {
   static readonly CreateRateDefinition: BillingServiceCreateRateDefinition;
   static readonly CreateRateDefinitions: BillingServiceCreateRateDefinitions;
   static readonly DeleteDefaultRateDefinition: BillingServiceDeleteDefaultRateDefinition;
+  static readonly DeleteDefaultRateDefinitions: BillingServiceDeleteDefaultRateDefinitions;
   static readonly DeleteRateDefinition: BillingServiceDeleteRateDefinition;
+  static readonly DeleteRateDefinitions: BillingServiceDeleteRateDefinitions;
   static readonly ExportInvoice: BillingServiceExportInvoice;
   static readonly GetRateDefinition: BillingServiceGetRateDefinition;
   static readonly GetRateHistory: BillingServiceGetRateHistory;
@@ -217,6 +237,15 @@ export class BillingServiceClient {
     requestMessage: services_billing_v1alpha2_rates_pb.DeleteDefaultRateDefinitionRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha2_rates_pb.DeleteDefaultRateDefinitionResponse|null) => void
   ): UnaryResponse;
+  deleteDefaultRateDefinitions(
+    requestMessage: services_billing_v1alpha2_rates_pb.DeleteDefaultRateDefinitionsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha2_rates_pb.DeleteDefaultRateDefinitionsResponse|null) => void
+  ): UnaryResponse;
+  deleteDefaultRateDefinitions(
+    requestMessage: services_billing_v1alpha2_rates_pb.DeleteDefaultRateDefinitionsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha2_rates_pb.DeleteDefaultRateDefinitionsResponse|null) => void
+  ): UnaryResponse;
   deleteRateDefinition(
     requestMessage: services_billing_v1alpha2_rates_pb.DeleteRateDefinitionRequest,
     metadata: grpc.Metadata,
@@ -225,6 +254,15 @@ export class BillingServiceClient {
   deleteRateDefinition(
     requestMessage: services_billing_v1alpha2_rates_pb.DeleteRateDefinitionRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha2_rates_pb.DeleteRateDefinitionResponse|null) => void
+  ): UnaryResponse;
+  deleteRateDefinitions(
+    requestMessage: services_billing_v1alpha2_rates_pb.DeleteRateDefinitionsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha2_rates_pb.DeleteRateDefinitionsResponse|null) => void
+  ): UnaryResponse;
+  deleteRateDefinitions(
+    requestMessage: services_billing_v1alpha2_rates_pb.DeleteRateDefinitionsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha2_rates_pb.DeleteRateDefinitionsResponse|null) => void
   ): UnaryResponse;
   exportInvoice(
     requestMessage: services_billing_v1alpha2_invoices_pb.ExportInvoiceRequest,

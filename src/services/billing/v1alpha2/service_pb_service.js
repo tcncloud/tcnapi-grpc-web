@@ -57,6 +57,15 @@ BillingService.DeleteDefaultRateDefinition = {
   responseType: services_billing_v1alpha2_rates_pb.DeleteDefaultRateDefinitionResponse
 };
 
+BillingService.DeleteDefaultRateDefinitions = {
+  methodName: "DeleteDefaultRateDefinitions",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha2_rates_pb.DeleteDefaultRateDefinitionsRequest,
+  responseType: services_billing_v1alpha2_rates_pb.DeleteDefaultRateDefinitionsResponse
+};
+
 BillingService.DeleteRateDefinition = {
   methodName: "DeleteRateDefinition",
   service: BillingService,
@@ -64,6 +73,15 @@ BillingService.DeleteRateDefinition = {
   responseStream: false,
   requestType: services_billing_v1alpha2_rates_pb.DeleteRateDefinitionRequest,
   responseType: services_billing_v1alpha2_rates_pb.DeleteRateDefinitionResponse
+};
+
+BillingService.DeleteRateDefinitions = {
+  methodName: "DeleteRateDefinitions",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha2_rates_pb.DeleteRateDefinitionsRequest,
+  responseType: services_billing_v1alpha2_rates_pb.DeleteRateDefinitionsResponse
 };
 
 BillingService.ExportInvoice = {
@@ -291,11 +309,73 @@ BillingServiceClient.prototype.deleteDefaultRateDefinition = function deleteDefa
   };
 };
 
+BillingServiceClient.prototype.deleteDefaultRateDefinitions = function deleteDefaultRateDefinitions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.DeleteDefaultRateDefinitions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 BillingServiceClient.prototype.deleteRateDefinition = function deleteRateDefinition(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(BillingService.DeleteRateDefinition, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.deleteRateDefinitions = function deleteRateDefinitions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.DeleteRateDefinitions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

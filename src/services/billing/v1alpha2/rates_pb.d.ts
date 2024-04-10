@@ -223,6 +223,44 @@ export namespace DeleteDefaultRateDefinitionResponse {
   }
 }
 
+export class DeleteDefaultRateDefinitionsRequest extends jspb.Message {
+  clearRateDefinitionIdsList(): void;
+  getRateDefinitionIdsList(): Array<string>;
+  setRateDefinitionIdsList(value: Array<string>): void;
+  addRateDefinitionIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteDefaultRateDefinitionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteDefaultRateDefinitionsRequest): DeleteDefaultRateDefinitionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteDefaultRateDefinitionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteDefaultRateDefinitionsRequest;
+  static deserializeBinaryFromReader(message: DeleteDefaultRateDefinitionsRequest, reader: jspb.BinaryReader): DeleteDefaultRateDefinitionsRequest;
+}
+
+export namespace DeleteDefaultRateDefinitionsRequest {
+  export type AsObject = {
+    rateDefinitionIdsList: Array<string>,
+  }
+}
+
+export class DeleteDefaultRateDefinitionsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteDefaultRateDefinitionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteDefaultRateDefinitionsResponse): DeleteDefaultRateDefinitionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteDefaultRateDefinitionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteDefaultRateDefinitionsResponse;
+  static deserializeBinaryFromReader(message: DeleteDefaultRateDefinitionsResponse, reader: jspb.BinaryReader): DeleteDefaultRateDefinitionsResponse;
+}
+
+export namespace DeleteDefaultRateDefinitionsResponse {
+  export type AsObject = {
+  }
+}
+
 export class DeleteRateDefinitionRequest extends jspb.Message {
   getRateDefinitionId(): string;
   setRateDefinitionId(value: string): void;
@@ -255,6 +293,44 @@ export class DeleteRateDefinitionResponse extends jspb.Message {
 }
 
 export namespace DeleteRateDefinitionResponse {
+  export type AsObject = {
+  }
+}
+
+export class DeleteRateDefinitionsRequest extends jspb.Message {
+  clearRateDefinitionIdsList(): void;
+  getRateDefinitionIdsList(): Array<string>;
+  setRateDefinitionIdsList(value: Array<string>): void;
+  addRateDefinitionIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteRateDefinitionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteRateDefinitionsRequest): DeleteRateDefinitionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteRateDefinitionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteRateDefinitionsRequest;
+  static deserializeBinaryFromReader(message: DeleteRateDefinitionsRequest, reader: jspb.BinaryReader): DeleteRateDefinitionsRequest;
+}
+
+export namespace DeleteRateDefinitionsRequest {
+  export type AsObject = {
+    rateDefinitionIdsList: Array<string>,
+  }
+}
+
+export class DeleteRateDefinitionsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteRateDefinitionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteRateDefinitionsResponse): DeleteRateDefinitionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteRateDefinitionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteRateDefinitionsResponse;
+  static deserializeBinaryFromReader(message: DeleteRateDefinitionsResponse, reader: jspb.BinaryReader): DeleteRateDefinitionsResponse;
+}
+
+export namespace DeleteRateDefinitionsResponse {
   export type AsObject = {
   }
 }
