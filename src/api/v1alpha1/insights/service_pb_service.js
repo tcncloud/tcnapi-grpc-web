@@ -29,6 +29,15 @@ Insights.ListInsights = {
   responseType: api_v1alpha1_insights_insight_pb.ListInsightsResponse
 };
 
+Insights.ListOrgInsights = {
+  methodName: "ListOrgInsights",
+  service: Insights,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_insights_insight_pb.ListOrgInsightsRequest,
+  responseType: api_v1alpha1_insights_insight_pb.ListOrgInsightsResponse
+};
+
 Insights.UpdateInsight = {
   methodName: "UpdateInsight",
   service: Insights,
@@ -162,6 +171,37 @@ InsightsClient.prototype.listInsights = function listInsights(requestMessage, me
     callback = arguments[1];
   }
   var client = grpc.unary(Insights.ListInsights, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.listOrgInsights = function listOrgInsights(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Insights.ListOrgInsights, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

@@ -74,24 +74,6 @@ AgentTrainingService.GetLearningOpportunity = {
   responseType: api_v1alpha1_agenttraining_learning_opportunity_pb.GetLearningOpportunityResponse
 };
 
-AgentTrainingService.ListLearningOpportunitiesByOrgId = {
-  methodName: "ListLearningOpportunitiesByOrgId",
-  service: AgentTrainingService,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_agenttraining_learning_opportunity_pb.ListLearningOpportunitiesByOrgIdRequest,
-  responseType: api_v1alpha1_agenttraining_learning_opportunity_pb.ListLearningOpportunitiesResponse
-};
-
-AgentTrainingService.DeleteLearningOpportunityByOrgId = {
-  methodName: "DeleteLearningOpportunityByOrgId",
-  service: AgentTrainingService,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_agenttraining_learning_opportunity_pb.DeleteLearningOpportunityByOrgIdRequest,
-  responseType: api_v1alpha1_agenttraining_learning_opportunity_pb.DeleteLearningOpportunityResponse
-};
-
 exports.AgentTrainingService = AgentTrainingService;
 
 function AgentTrainingServiceClient(serviceHost, options) {
@@ -290,68 +272,6 @@ AgentTrainingServiceClient.prototype.getLearningOpportunity = function getLearni
     callback = arguments[1];
   }
   var client = grpc.unary(AgentTrainingService.GetLearningOpportunity, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-AgentTrainingServiceClient.prototype.listLearningOpportunitiesByOrgId = function listLearningOpportunitiesByOrgId(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(AgentTrainingService.ListLearningOpportunitiesByOrgId, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-AgentTrainingServiceClient.prototype.deleteLearningOpportunityByOrgId = function deleteLearningOpportunityByOrgId(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(AgentTrainingService.DeleteLearningOpportunityByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
