@@ -227,15 +227,6 @@ Vanalytics.CreateFlagTranscript = {
   responseType: api_v1alpha1_vanalytics_flag_transcript_pb.CreateFlagTranscriptResponse
 };
 
-Vanalytics.DeleteFlagTranscript = {
-  methodName: "DeleteFlagTranscript",
-  service: Vanalytics,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptRequest,
-  responseType: api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptResponse
-};
-
 Vanalytics.SearchFlagTranscripts = {
   methodName: "SearchFlagTranscripts",
   service: Vanalytics,
@@ -1029,37 +1020,6 @@ VanalyticsClient.prototype.createFlagTranscript = function createFlagTranscript(
     callback = arguments[1];
   }
   var client = grpc.unary(Vanalytics.CreateFlagTranscript, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-VanalyticsClient.prototype.deleteFlagTranscript = function deleteFlagTranscript(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Vanalytics.DeleteFlagTranscript, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
