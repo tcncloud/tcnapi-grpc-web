@@ -1251,9 +1251,9 @@ export namespace ListFlowsReq {
 
 export class ListFlowsResponse extends jspb.Message {
   clearValuesList(): void;
-  getValuesList(): Array<FlowDefinition>;
-  setValuesList(value: Array<FlowDefinition>): void;
-  addValues(value?: FlowDefinition, index?: number): FlowDefinition;
+  getValuesList(): Array<WorkflowDefinition>;
+  setValuesList(value: Array<WorkflowDefinition>): void;
+  addValues(value?: WorkflowDefinition, index?: number): WorkflowDefinition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFlowsResponse.AsObject;
@@ -1267,18 +1267,18 @@ export class ListFlowsResponse extends jspb.Message {
 
 export namespace ListFlowsResponse {
   export type AsObject = {
-    valuesList: Array<FlowDefinition.AsObject>,
+    valuesList: Array<WorkflowDefinition.AsObject>,
   }
 }
 
 export class PortalDefinition extends jspb.Message {
-  getDefintionName(): string;
-  setDefintionName(value: string): void;
+  getDefinitionName(): string;
+  setDefinitionName(value: string): void;
 
-  clearStepsList(): void;
-  getStepsList(): Array<FlowRequirement>;
-  setStepsList(value: Array<FlowRequirement>): void;
-  addSteps(value?: FlowRequirement, index?: number): FlowRequirement;
+  clearWorkflowRequirementsList(): void;
+  getWorkflowRequirementsList(): Array<WorkflowRequirement>;
+  setWorkflowRequirementsList(value: Array<WorkflowRequirement>): void;
+  addWorkflowRequirements(value?: WorkflowRequirement, index?: number): WorkflowRequirement;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PortalDefinition.AsObject;
@@ -1292,12 +1292,12 @@ export class PortalDefinition extends jspb.Message {
 
 export namespace PortalDefinition {
   export type AsObject = {
-    defintionName: string,
-    stepsList: Array<FlowRequirement.AsObject>,
+    definitionName: string,
+    workflowRequirementsList: Array<WorkflowRequirement.AsObject>,
   }
 }
 
-export class FlowRequirement extends jspb.Message {
+export class WorkflowRequirement extends jspb.Message {
   getMaxChoices(): number;
   setMaxChoices(value: number): void;
 
@@ -1305,23 +1305,23 @@ export class FlowRequirement extends jspb.Message {
   setFlowType(value: api_commons_integrations_integrations_pb.FlowTypeMap[keyof api_commons_integrations_integrations_pb.FlowTypeMap]): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FlowRequirement.AsObject;
-  static toObject(includeInstance: boolean, msg: FlowRequirement): FlowRequirement.AsObject;
+  toObject(includeInstance?: boolean): WorkflowRequirement.AsObject;
+  static toObject(includeInstance: boolean, msg: WorkflowRequirement): WorkflowRequirement.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: FlowRequirement, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FlowRequirement;
-  static deserializeBinaryFromReader(message: FlowRequirement, reader: jspb.BinaryReader): FlowRequirement;
+  static serializeBinaryToWriter(message: WorkflowRequirement, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WorkflowRequirement;
+  static deserializeBinaryFromReader(message: WorkflowRequirement, reader: jspb.BinaryReader): WorkflowRequirement;
 }
 
-export namespace FlowRequirement {
+export namespace WorkflowRequirement {
   export type AsObject = {
     maxChoices: number,
     flowType: api_commons_integrations_integrations_pb.FlowTypeMap[keyof api_commons_integrations_integrations_pb.FlowTypeMap],
   }
 }
 
-export class FlowDefinition extends jspb.Message {
+export class WorkflowDefinition extends jspb.Message {
   getFlowType(): api_commons_integrations_integrations_pb.FlowTypeMap[keyof api_commons_integrations_integrations_pb.FlowTypeMap];
   setFlowType(value: api_commons_integrations_integrations_pb.FlowTypeMap[keyof api_commons_integrations_integrations_pb.FlowTypeMap]): void;
 
@@ -1372,16 +1372,16 @@ export class FlowDefinition extends jspb.Message {
   addOpts(value?: api_commons_integrations_integrations_pb.FieldDefinition, index?: number): api_commons_integrations_integrations_pb.FieldDefinition;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FlowDefinition.AsObject;
-  static toObject(includeInstance: boolean, msg: FlowDefinition): FlowDefinition.AsObject;
+  toObject(includeInstance?: boolean): WorkflowDefinition.AsObject;
+  static toObject(includeInstance: boolean, msg: WorkflowDefinition): WorkflowDefinition.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: FlowDefinition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FlowDefinition;
-  static deserializeBinaryFromReader(message: FlowDefinition, reader: jspb.BinaryReader): FlowDefinition;
+  static serializeBinaryToWriter(message: WorkflowDefinition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WorkflowDefinition;
+  static deserializeBinaryFromReader(message: WorkflowDefinition, reader: jspb.BinaryReader): WorkflowDefinition;
 }
 
-export namespace FlowDefinition {
+export namespace WorkflowDefinition {
   export type AsObject = {
     flowType: api_commons_integrations_integrations_pb.FlowTypeMap[keyof api_commons_integrations_integrations_pb.FlowTypeMap],
     definitionName: string,
