@@ -53,6 +53,50 @@ export namespace CreateDefaultRateDefinitionResponse {
   }
 }
 
+export class CreateDefaultRateDefinitionsRequest extends jspb.Message {
+  clearRatesList(): void;
+  getRatesList(): Array<CreateDefaultRateDefinitionRequest>;
+  setRatesList(value: Array<CreateDefaultRateDefinitionRequest>): void;
+  addRates(value?: CreateDefaultRateDefinitionRequest, index?: number): CreateDefaultRateDefinitionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDefaultRateDefinitionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDefaultRateDefinitionsRequest): CreateDefaultRateDefinitionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateDefaultRateDefinitionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDefaultRateDefinitionsRequest;
+  static deserializeBinaryFromReader(message: CreateDefaultRateDefinitionsRequest, reader: jspb.BinaryReader): CreateDefaultRateDefinitionsRequest;
+}
+
+export namespace CreateDefaultRateDefinitionsRequest {
+  export type AsObject = {
+    ratesList: Array<CreateDefaultRateDefinitionRequest.AsObject>,
+  }
+}
+
+export class CreateDefaultRateDefinitionsResponse extends jspb.Message {
+  clearRatesList(): void;
+  getRatesList(): Array<CreateDefaultRateDefinitionResponse>;
+  setRatesList(value: Array<CreateDefaultRateDefinitionResponse>): void;
+  addRates(value?: CreateDefaultRateDefinitionResponse, index?: number): CreateDefaultRateDefinitionResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDefaultRateDefinitionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDefaultRateDefinitionsResponse): CreateDefaultRateDefinitionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateDefaultRateDefinitionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDefaultRateDefinitionsResponse;
+  static deserializeBinaryFromReader(message: CreateDefaultRateDefinitionsResponse, reader: jspb.BinaryReader): CreateDefaultRateDefinitionsResponse;
+}
+
+export namespace CreateDefaultRateDefinitionsResponse {
+  export type AsObject = {
+    ratesList: Array<CreateDefaultRateDefinitionResponse.AsObject>,
+  }
+}
+
 export class CreateRateDefinitionRequest extends jspb.Message {
   getRateDefinitionId(): string;
   setRateDefinitionId(value: string): void;
@@ -96,6 +140,50 @@ export class CreateRateDefinitionResponse extends jspb.Message {
 export namespace CreateRateDefinitionResponse {
   export type AsObject = {
     rateDefinitionId: string,
+  }
+}
+
+export class CreateRateDefinitionsRequest extends jspb.Message {
+  clearRatesList(): void;
+  getRatesList(): Array<CreateRateDefinitionRequest>;
+  setRatesList(value: Array<CreateRateDefinitionRequest>): void;
+  addRates(value?: CreateRateDefinitionRequest, index?: number): CreateRateDefinitionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateRateDefinitionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateRateDefinitionsRequest): CreateRateDefinitionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateRateDefinitionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateRateDefinitionsRequest;
+  static deserializeBinaryFromReader(message: CreateRateDefinitionsRequest, reader: jspb.BinaryReader): CreateRateDefinitionsRequest;
+}
+
+export namespace CreateRateDefinitionsRequest {
+  export type AsObject = {
+    ratesList: Array<CreateRateDefinitionRequest.AsObject>,
+  }
+}
+
+export class CreateRateDefinitionsResponse extends jspb.Message {
+  clearRatesList(): void;
+  getRatesList(): Array<CreateRateDefinitionResponse>;
+  setRatesList(value: Array<CreateRateDefinitionResponse>): void;
+  addRates(value?: CreateRateDefinitionResponse, index?: number): CreateRateDefinitionResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateRateDefinitionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateRateDefinitionsResponse): CreateRateDefinitionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateRateDefinitionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateRateDefinitionsResponse;
+  static deserializeBinaryFromReader(message: CreateRateDefinitionsResponse, reader: jspb.BinaryReader): CreateRateDefinitionsResponse;
+}
+
+export namespace CreateRateDefinitionsResponse {
+  export type AsObject = {
+    ratesList: Array<CreateRateDefinitionResponse.AsObject>,
   }
 }
 

@@ -21,6 +21,15 @@ BillingService.CreateDefaultRateDefinition = {
   responseType: services_billing_v1alpha2_rates_pb.CreateDefaultRateDefinitionResponse
 };
 
+BillingService.CreateDefaultRateDefinitions = {
+  methodName: "CreateDefaultRateDefinitions",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha2_rates_pb.CreateDefaultRateDefinitionsRequest,
+  responseType: services_billing_v1alpha2_rates_pb.CreateDefaultRateDefinitionsResponse
+};
+
 BillingService.CreateRateDefinition = {
   methodName: "CreateRateDefinition",
   service: BillingService,
@@ -28,6 +37,15 @@ BillingService.CreateRateDefinition = {
   responseStream: false,
   requestType: services_billing_v1alpha2_rates_pb.CreateRateDefinitionRequest,
   responseType: services_billing_v1alpha2_rates_pb.CreateRateDefinitionResponse
+};
+
+BillingService.CreateRateDefinitions = {
+  methodName: "CreateRateDefinitions",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha2_rates_pb.CreateRateDefinitionsRequest,
+  responseType: services_billing_v1alpha2_rates_pb.CreateRateDefinitionsResponse
 };
 
 BillingService.DeleteDefaultRateDefinition = {
@@ -149,11 +167,73 @@ BillingServiceClient.prototype.createDefaultRateDefinition = function createDefa
   };
 };
 
+BillingServiceClient.prototype.createDefaultRateDefinitions = function createDefaultRateDefinitions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.CreateDefaultRateDefinitions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 BillingServiceClient.prototype.createRateDefinition = function createRateDefinition(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(BillingService.CreateRateDefinition, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.createRateDefinitions = function createRateDefinitions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.CreateRateDefinitions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
