@@ -1373,9 +1373,6 @@ export class UpdateHuntGroupIntegrationLinksRequest extends jspb.Message {
   setLinksList(value: Array<api_commons_org_huntgroup_pb.IntegrationLink>): void;
   addLinks(value?: api_commons_org_huntgroup_pb.IntegrationLink, index?: number): api_commons_org_huntgroup_pb.IntegrationLink;
 
-  getHuntGroupSid(): number;
-  setHuntGroupSid(value: number): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateHuntGroupIntegrationLinksRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateHuntGroupIntegrationLinksRequest): UpdateHuntGroupIntegrationLinksRequest.AsObject;
@@ -1389,7 +1386,6 @@ export class UpdateHuntGroupIntegrationLinksRequest extends jspb.Message {
 export namespace UpdateHuntGroupIntegrationLinksRequest {
   export type AsObject = {
     linksList: Array<api_commons_org_huntgroup_pb.IntegrationLink.AsObject>,
-    huntGroupSid: number,
   }
 }
 

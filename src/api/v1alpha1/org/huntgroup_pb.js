@@ -10988,8 +10988,7 @@ proto.api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest.prototype.toObject
 proto.api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     linksList: jspb.Message.toObjectList(msg.getLinksList(),
-    api_commons_org_huntgroup_pb.IntegrationLink.toObject, includeInstance),
-    huntGroupSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    api_commons_org_huntgroup_pb.IntegrationLink.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -11031,10 +11030,6 @@ proto.api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest.deserializeBinaryF
       reader.readMessage(value,api_commons_org_huntgroup_pb.IntegrationLink.deserializeBinaryFromReader);
       msg.addLinks(value);
       break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setHuntGroupSid(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -11070,13 +11065,6 @@ proto.api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest.serializeBinaryToW
       1,
       f,
       api_commons_org_huntgroup_pb.IntegrationLink.serializeBinaryToWriter
-    );
-  }
-  f = message.getHuntGroupSid();
-  if (f !== 0) {
-    writer.writeInt64(
-      2,
-      f
     );
   }
 };
@@ -11117,24 +11105,6 @@ proto.api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest.prototype.addLinks
  */
 proto.api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest.prototype.clearLinksList = function() {
   return this.setLinksList([]);
-};
-
-
-/**
- * optional int64 hunt_group_sid = 2;
- * @return {number}
- */
-proto.api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest.prototype.getHuntGroupSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest} returns this
- */
-proto.api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest.prototype.setHuntGroupSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
