@@ -221,13 +221,13 @@ type PortalManagerApiListPortalTypes = {
   readonly responseType: typeof api_v1alpha1_integrations_portals_pb.ListPortalTypesResponse;
 };
 
-type PortalManagerApiListFlows = {
+type PortalManagerApiListPortalWorkflows = {
   readonly methodName: string;
   readonly service: typeof PortalManagerApi;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_integrations_portals_pb.ListFlowsReq;
-  readonly responseType: typeof api_v1alpha1_integrations_portals_pb.ListFlowsResponse;
+  readonly requestType: typeof api_v1alpha1_integrations_portals_pb.ListPortalWorkflowsReq;
+  readonly responseType: typeof api_v1alpha1_integrations_portals_pb.ListPortalWorkflowsResponse;
 };
 
 export class PortalManagerApi {
@@ -256,7 +256,7 @@ export class PortalManagerApi {
   static readonly ListAvailableVerificationFields: PortalManagerApiListAvailableVerificationFields;
   static readonly ListAvailablePaymentFields: PortalManagerApiListAvailablePaymentFields;
   static readonly ListPortalTypes: PortalManagerApiListPortalTypes;
-  static readonly ListFlows: PortalManagerApiListFlows;
+  static readonly ListPortalWorkflows: PortalManagerApiListPortalWorkflows;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -507,14 +507,14 @@ export class PortalManagerApiClient {
     requestMessage: api_v1alpha1_integrations_portals_pb.ListPortalTypesReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListPortalTypesResponse|null) => void
   ): UnaryResponse;
-  listFlows(
-    requestMessage: api_v1alpha1_integrations_portals_pb.ListFlowsReq,
+  listPortalWorkflows(
+    requestMessage: api_v1alpha1_integrations_portals_pb.ListPortalWorkflowsReq,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListFlowsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListPortalWorkflowsResponse|null) => void
   ): UnaryResponse;
-  listFlows(
-    requestMessage: api_v1alpha1_integrations_portals_pb.ListFlowsReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListFlowsResponse|null) => void
+  listPortalWorkflows(
+    requestMessage: api_v1alpha1_integrations_portals_pb.ListPortalWorkflowsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListPortalWorkflowsResponse|null) => void
   ): UnaryResponse;
 }
 

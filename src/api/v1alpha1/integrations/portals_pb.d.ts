@@ -1233,39 +1233,39 @@ export namespace ListPortalTypesResponse {
   }
 }
 
-export class ListFlowsReq extends jspb.Message {
+export class ListPortalWorkflowsReq extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListFlowsReq.AsObject;
-  static toObject(includeInstance: boolean, msg: ListFlowsReq): ListFlowsReq.AsObject;
+  toObject(includeInstance?: boolean): ListPortalWorkflowsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPortalWorkflowsReq): ListPortalWorkflowsReq.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListFlowsReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListFlowsReq;
-  static deserializeBinaryFromReader(message: ListFlowsReq, reader: jspb.BinaryReader): ListFlowsReq;
+  static serializeBinaryToWriter(message: ListPortalWorkflowsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPortalWorkflowsReq;
+  static deserializeBinaryFromReader(message: ListPortalWorkflowsReq, reader: jspb.BinaryReader): ListPortalWorkflowsReq;
 }
 
-export namespace ListFlowsReq {
+export namespace ListPortalWorkflowsReq {
   export type AsObject = {
   }
 }
 
-export class ListFlowsResponse extends jspb.Message {
+export class ListPortalWorkflowsResponse extends jspb.Message {
   clearValuesList(): void;
   getValuesList(): Array<WorkflowDefinition>;
   setValuesList(value: Array<WorkflowDefinition>): void;
   addValues(value?: WorkflowDefinition, index?: number): WorkflowDefinition;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListFlowsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListFlowsResponse): ListFlowsResponse.AsObject;
+  toObject(includeInstance?: boolean): ListPortalWorkflowsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPortalWorkflowsResponse): ListPortalWorkflowsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListFlowsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListFlowsResponse;
-  static deserializeBinaryFromReader(message: ListFlowsResponse, reader: jspb.BinaryReader): ListFlowsResponse;
+  static serializeBinaryToWriter(message: ListPortalWorkflowsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPortalWorkflowsResponse;
+  static deserializeBinaryFromReader(message: ListPortalWorkflowsResponse, reader: jspb.BinaryReader): ListPortalWorkflowsResponse;
 }
 
-export namespace ListFlowsResponse {
+export namespace ListPortalWorkflowsResponse {
   export type AsObject = {
     valuesList: Array<WorkflowDefinition.AsObject>,
   }

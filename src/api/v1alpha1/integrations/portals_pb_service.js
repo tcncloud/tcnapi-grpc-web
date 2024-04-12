@@ -227,13 +227,13 @@ PortalManagerApi.ListPortalTypes = {
   responseType: api_v1alpha1_integrations_portals_pb.ListPortalTypesResponse
 };
 
-PortalManagerApi.ListFlows = {
-  methodName: "ListFlows",
+PortalManagerApi.ListPortalWorkflows = {
+  methodName: "ListPortalWorkflows",
   service: PortalManagerApi,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_integrations_portals_pb.ListFlowsReq,
-  responseType: api_v1alpha1_integrations_portals_pb.ListFlowsResponse
+  requestType: api_v1alpha1_integrations_portals_pb.ListPortalWorkflowsReq,
+  responseType: api_v1alpha1_integrations_portals_pb.ListPortalWorkflowsResponse
 };
 
 exports.PortalManagerApi = PortalManagerApi;
@@ -987,11 +987,11 @@ PortalManagerApiClient.prototype.listPortalTypes = function listPortalTypes(requ
   };
 };
 
-PortalManagerApiClient.prototype.listFlows = function listFlows(requestMessage, metadata, callback) {
+PortalManagerApiClient.prototype.listPortalWorkflows = function listPortalWorkflows(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(PortalManagerApi.ListFlows, {
+  var client = grpc.unary(PortalManagerApi.ListPortalWorkflows, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
