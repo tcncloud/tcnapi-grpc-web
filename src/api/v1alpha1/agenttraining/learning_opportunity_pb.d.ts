@@ -344,3 +344,71 @@ export namespace GetLearningOpportunityResponse {
   }
 }
 
+export class ListLearningOpportunitiesByOrgIdRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  clearCallIdentifiersList(): void;
+  getCallIdentifiersList(): Array<api_commons_agent_training_pb.CallIdentifier>;
+  setCallIdentifiersList(value: Array<api_commons_agent_training_pb.CallIdentifier>): void;
+  addCallIdentifiers(value?: api_commons_agent_training_pb.CallIdentifier, index?: number): api_commons_agent_training_pb.CallIdentifier;
+
+  clearTranscriptSidsList(): void;
+  getTranscriptSidsList(): Array<number>;
+  setTranscriptSidsList(value: Array<number>): void;
+  addTranscriptSids(value: number, index?: number): number;
+
+  clearAgentUserIdsList(): void;
+  getAgentUserIdsList(): Array<string>;
+  setAgentUserIdsList(value: Array<string>): void;
+  addAgentUserIds(value: string, index?: number): string;
+
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): void;
+  getCreatedAt(): api_commons_scorecards_pb.TimeFilter | undefined;
+  setCreatedAt(value?: api_commons_scorecards_pb.TimeFilter): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListLearningOpportunitiesByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListLearningOpportunitiesByOrgIdRequest): ListLearningOpportunitiesByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListLearningOpportunitiesByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListLearningOpportunitiesByOrgIdRequest;
+  static deserializeBinaryFromReader(message: ListLearningOpportunitiesByOrgIdRequest, reader: jspb.BinaryReader): ListLearningOpportunitiesByOrgIdRequest;
+}
+
+export namespace ListLearningOpportunitiesByOrgIdRequest {
+  export type AsObject = {
+    orgId: string,
+    callIdentifiersList: Array<api_commons_agent_training_pb.CallIdentifier.AsObject>,
+    transcriptSidsList: Array<number>,
+    agentUserIdsList: Array<string>,
+    createdAt?: api_commons_scorecards_pb.TimeFilter.AsObject,
+  }
+}
+
+export class DeleteLearningOpportunityByOrgIdRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getLearningOpportunityId(): number;
+  setLearningOpportunityId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteLearningOpportunityByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteLearningOpportunityByOrgIdRequest): DeleteLearningOpportunityByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteLearningOpportunityByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteLearningOpportunityByOrgIdRequest;
+  static deserializeBinaryFromReader(message: DeleteLearningOpportunityByOrgIdRequest, reader: jspb.BinaryReader): DeleteLearningOpportunityByOrgIdRequest;
+}
+
+export namespace DeleteLearningOpportunityByOrgIdRequest {
+  export type AsObject = {
+    orgId: string,
+    learningOpportunityId: number,
+  }
+}
+
