@@ -273,6 +273,15 @@ export class Sms extends jspb.Message {
   setThreadsList(value: Array<Sms.Thread>): void;
   addThreads(value?: Sms.Thread, index?: number): Sms.Thread;
 
+  getCallerId(): string;
+  setCallerId(value: string): void;
+
+  getCampaignSid(): number;
+  setCampaignSid(value: number): void;
+
+  getConversationBytes(): number;
+  setConversationBytes(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Sms.AsObject;
   static toObject(includeInstance: boolean, msg: Sms): Sms.AsObject;
@@ -287,6 +296,9 @@ export namespace Sms {
   export type AsObject = {
     conversationSid: number,
     threadsList: Array<Sms.Thread.AsObject>,
+    callerId: string,
+    campaignSid: number,
+    conversationBytes: number,
   }
 
   export class Thread extends jspb.Message {

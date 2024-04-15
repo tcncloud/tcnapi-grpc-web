@@ -3827,7 +3827,10 @@ proto.wfo.vanalytics.v2.Sms.toObject = function(includeInstance, msg) {
   var f, obj = {
     conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     threadsList: jspb.Message.toObjectList(msg.getThreadsList(),
-    proto.wfo.vanalytics.v2.Sms.Thread.toObject, includeInstance)
+    proto.wfo.vanalytics.v2.Sms.Thread.toObject, includeInstance),
+    callerId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    campaignSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    conversationBytes: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -3873,6 +3876,18 @@ proto.wfo.vanalytics.v2.Sms.deserializeBinaryFromReader = function(msg, reader) 
       reader.readMessage(value,proto.wfo.vanalytics.v2.Sms.Thread.deserializeBinaryFromReader);
       msg.addThreads(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCallerId(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setCampaignSid(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setConversationBytes(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3915,6 +3930,27 @@ proto.wfo.vanalytics.v2.Sms.serializeBinaryToWriter = function(message, writer) 
       2,
       f,
       proto.wfo.vanalytics.v2.Sms.Thread.serializeBinaryToWriter
+    );
+  }
+  f = message.getCallerId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getCampaignSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      5,
+      f
+    );
+  }
+  f = message.getConversationBytes();
+  if (f !== 0) {
+    writer.writeInt64(
+      6,
+      f
     );
   }
 };
@@ -4374,6 +4410,60 @@ proto.wfo.vanalytics.v2.Sms.prototype.addThreads = function(opt_value, opt_index
  */
 proto.wfo.vanalytics.v2.Sms.prototype.clearThreadsList = function() {
   return this.setThreadsList([]);
+};
+
+
+/**
+ * optional string caller_id = 4;
+ * @return {string}
+ */
+proto.wfo.vanalytics.v2.Sms.prototype.getCallerId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wfo.vanalytics.v2.Sms} returns this
+ */
+proto.wfo.vanalytics.v2.Sms.prototype.setCallerId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional int64 campaign_sid = 5;
+ * @return {number}
+ */
+proto.wfo.vanalytics.v2.Sms.prototype.getCampaignSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.wfo.vanalytics.v2.Sms} returns this
+ */
+proto.wfo.vanalytics.v2.Sms.prototype.setCampaignSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional int64 conversation_bytes = 6;
+ * @return {number}
+ */
+proto.wfo.vanalytics.v2.Sms.prototype.getConversationBytes = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.wfo.vanalytics.v2.Sms} returns this
+ */
+proto.wfo.vanalytics.v2.Sms.prototype.setConversationBytes = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
