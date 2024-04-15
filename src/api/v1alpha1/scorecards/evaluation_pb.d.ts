@@ -349,3 +349,83 @@ export namespace PreviewEvaluationScoreResponse {
   }
 }
 
+export class ListEvaluationsByOrgIdRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  clearScorerIdList(): void;
+  getScorerIdList(): Array<string>;
+  setScorerIdList(value: Array<string>): void;
+  addScorerId(value: string, index?: number): string;
+
+  hasCompletedAt(): boolean;
+  clearCompletedAt(): void;
+  getCompletedAt(): api_commons_scorecards_pb.TimeFilter | undefined;
+  setCompletedAt(value?: api_commons_scorecards_pb.TimeFilter): void;
+
+  clearCategoryIdsList(): void;
+  getCategoryIdsList(): Array<number>;
+  setCategoryIdsList(value: Array<number>): void;
+  addCategoryIds(value: number, index?: number): number;
+
+  clearAgentUserIdsList(): void;
+  getAgentUserIdsList(): Array<string>;
+  setAgentUserIdsList(value: Array<string>): void;
+  addAgentUserIds(value: string, index?: number): string;
+
+  clearScorecardIdsList(): void;
+  getScorecardIdsList(): Array<number>;
+  setScorecardIdsList(value: Array<number>): void;
+  addScorecardIds(value: number, index?: number): number;
+
+  hasReturnFields(): boolean;
+  clearReturnFields(): void;
+  getReturnFields(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setReturnFields(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListEvaluationsByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListEvaluationsByOrgIdRequest): ListEvaluationsByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListEvaluationsByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListEvaluationsByOrgIdRequest;
+  static deserializeBinaryFromReader(message: ListEvaluationsByOrgIdRequest, reader: jspb.BinaryReader): ListEvaluationsByOrgIdRequest;
+}
+
+export namespace ListEvaluationsByOrgIdRequest {
+  export type AsObject = {
+    orgId: string,
+    scorerIdList: Array<string>,
+    completedAt?: api_commons_scorecards_pb.TimeFilter.AsObject,
+    categoryIdsList: Array<number>,
+    agentUserIdsList: Array<string>,
+    scorecardIdsList: Array<number>,
+    returnFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class DeleteEvaluationByOrgIdRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getEvaluationId(): number;
+  setEvaluationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteEvaluationByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteEvaluationByOrgIdRequest): DeleteEvaluationByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteEvaluationByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteEvaluationByOrgIdRequest;
+  static deserializeBinaryFromReader(message: DeleteEvaluationByOrgIdRequest, reader: jspb.BinaryReader): DeleteEvaluationByOrgIdRequest;
+}
+
+export namespace DeleteEvaluationByOrgIdRequest {
+  export type AsObject = {
+    orgId: string,
+    evaluationId: number,
+  }
+}
+
