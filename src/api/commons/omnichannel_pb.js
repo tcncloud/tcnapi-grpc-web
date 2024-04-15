@@ -65,6 +65,7 @@ goog.exportSymbol('proto.api.commons.CustomerCollectedDataItem', null, global);
 goog.exportSymbol('proto.api.commons.Disposition', null, global);
 goog.exportSymbol('proto.api.commons.GetQueuesDetailsRes', null, global);
 goog.exportSymbol('proto.api.commons.GetQueuesDetailsRes.QueueDetails', null, global);
+goog.exportSymbol('proto.api.commons.MessageFormat', null, global);
 goog.exportSymbol('proto.api.commons.OmniAssignConversation', null, global);
 goog.exportSymbol('proto.api.commons.OmniAttachment', null, global);
 goog.exportSymbol('proto.api.commons.OmniAttachmentUploadURL', null, global);
@@ -6629,7 +6630,8 @@ proto.api.commons.AgentChatWidgetMessage.toObject = function(includeInstance, ms
     dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     uiReferenceId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     userInformation: (f = msg.getUserInformation()) && proto.api.commons.OmniConversationUserInformation.toObject(includeInstance, f),
-    senderType: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    senderType: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    messageFormat: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -6692,6 +6694,10 @@ proto.api.commons.AgentChatWidgetMessage.deserializeBinaryFromReader = function(
     case 6:
       var value = /** @type {!proto.api.commons.OmniSenderType} */ (reader.readEnum());
       msg.setSenderType(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.api.commons.MessageFormat} */ (reader.readEnum());
+      msg.setMessageFormat(value);
       break;
     default:
       reader.skipField();
@@ -6764,6 +6770,13 @@ proto.api.commons.AgentChatWidgetMessage.serializeBinaryToWriter = function(mess
   if (f !== 0.0) {
     writer.writeEnum(
       6,
+      f
+    );
+  }
+  f = message.getMessageFormat();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
       f
     );
   }
@@ -6932,6 +6945,24 @@ proto.api.commons.AgentChatWidgetMessage.prototype.getSenderType = function() {
  */
 proto.api.commons.AgentChatWidgetMessage.prototype.setSenderType = function(value) {
   return jspb.Message.setProto3EnumField(this, 6, value);
+};
+
+
+/**
+ * optional MessageFormat message_format = 7;
+ * @return {!proto.api.commons.MessageFormat}
+ */
+proto.api.commons.AgentChatWidgetMessage.prototype.getMessageFormat = function() {
+  return /** @type {!proto.api.commons.MessageFormat} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.MessageFormat} value
+ * @return {!proto.api.commons.AgentChatWidgetMessage} returns this
+ */
+proto.api.commons.AgentChatWidgetMessage.prototype.setMessageFormat = function(value) {
+  return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 
@@ -21676,6 +21707,15 @@ proto.api.commons.AgentConversationAssignmentStatus = {
 proto.api.commons.AgentConversationAssignmentType = {
   PRIMARY_AGENT: 0,
   SECONDARY_AGENT: 1
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.MessageFormat = {
+  MESSAGE_FORMAT_UNSPECIFIED: 0,
+  MESSAGE_FORMAT_HTML: 1,
+  MESSAGE_FORMAT_HTML_FORM: 2
 };
 
 /**

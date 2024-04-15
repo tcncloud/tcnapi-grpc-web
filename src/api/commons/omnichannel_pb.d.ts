@@ -703,6 +703,9 @@ export class AgentChatWidgetMessage extends jspb.Message {
   getSenderType(): OmniSenderTypeMap[keyof OmniSenderTypeMap];
   setSenderType(value: OmniSenderTypeMap[keyof OmniSenderTypeMap]): void;
 
+  getMessageFormat(): MessageFormatMap[keyof MessageFormatMap];
+  setMessageFormat(value: MessageFormatMap[keyof MessageFormatMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AgentChatWidgetMessage.AsObject;
   static toObject(includeInstance: boolean, msg: AgentChatWidgetMessage): AgentChatWidgetMessage.AsObject;
@@ -721,6 +724,7 @@ export namespace AgentChatWidgetMessage {
     uiReferenceId: string,
     userInformation?: OmniConversationUserInformation.AsObject,
     senderType: OmniSenderTypeMap[keyof OmniSenderTypeMap],
+    messageFormat: MessageFormatMap[keyof MessageFormatMap],
   }
 }
 
@@ -2827,6 +2831,14 @@ export interface AgentConversationAssignmentTypeMap {
 }
 
 export const AgentConversationAssignmentType: AgentConversationAssignmentTypeMap;
+
+export interface MessageFormatMap {
+  MESSAGE_FORMAT_UNSPECIFIED: 0;
+  MESSAGE_FORMAT_HTML: 1;
+  MESSAGE_FORMAT_HTML_FORM: 2;
+}
+
+export const MessageFormat: MessageFormatMap;
 
 export interface OmniMessageStatusMap {
   OMNI_MESSAGE_CREATED: 0;
