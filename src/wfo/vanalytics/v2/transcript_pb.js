@@ -3829,8 +3829,7 @@ proto.wfo.vanalytics.v2.Sms.toObject = function(includeInstance, msg) {
     threadsList: jspb.Message.toObjectList(msg.getThreadsList(),
     proto.wfo.vanalytics.v2.Sms.Thread.toObject, includeInstance),
     callerId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    conversationBytes: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    campaignSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -3883,10 +3882,6 @@ proto.wfo.vanalytics.v2.Sms.deserializeBinaryFromReader = function(msg, reader) 
     case 5:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setCampaignSid(value);
-      break;
-    case 6:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setConversationBytes(value);
       break;
     default:
       reader.skipField();
@@ -3943,13 +3938,6 @@ proto.wfo.vanalytics.v2.Sms.serializeBinaryToWriter = function(message, writer) 
   if (f !== 0) {
     writer.writeInt64(
       5,
-      f
-    );
-  }
-  f = message.getConversationBytes();
-  if (f !== 0) {
-    writer.writeInt64(
-      6,
       f
     );
   }
@@ -4446,24 +4434,6 @@ proto.wfo.vanalytics.v2.Sms.prototype.getCampaignSid = function() {
  */
 proto.wfo.vanalytics.v2.Sms.prototype.setCampaignSid = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
-};
-
-
-/**
- * optional int64 conversation_bytes = 6;
- * @return {number}
- */
-proto.wfo.vanalytics.v2.Sms.prototype.getConversationBytes = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.wfo.vanalytics.v2.Sms} returns this
- */
-proto.wfo.vanalytics.v2.Sms.prototype.setConversationBytes = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
