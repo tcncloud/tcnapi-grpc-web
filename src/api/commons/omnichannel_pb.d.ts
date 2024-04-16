@@ -703,6 +703,9 @@ export class AgentChatWidgetMessage extends jspb.Message {
   getSenderType(): OmniSenderTypeMap[keyof OmniSenderTypeMap];
   setSenderType(value: OmniSenderTypeMap[keyof OmniSenderTypeMap]): void;
 
+  getMessageFormat(): MessageFormatMap[keyof MessageFormatMap];
+  setMessageFormat(value: MessageFormatMap[keyof MessageFormatMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AgentChatWidgetMessage.AsObject;
   static toObject(includeInstance: boolean, msg: AgentChatWidgetMessage): AgentChatWidgetMessage.AsObject;
@@ -721,6 +724,7 @@ export namespace AgentChatWidgetMessage {
     uiReferenceId: string,
     userInformation?: OmniConversationUserInformation.AsObject,
     senderType: OmniSenderTypeMap[keyof OmniSenderTypeMap],
+    messageFormat: MessageFormatMap[keyof MessageFormatMap],
   }
 }
 
@@ -805,6 +809,11 @@ export class OmniMessagePayload extends jspb.Message {
   getCannedMessage(): OmniCannedMessage | undefined;
   setCannedMessage(value?: OmniCannedMessage): void;
 
+  hasDataMessage(): boolean;
+  clearDataMessage(): void;
+  getDataMessage(): OmniDataMessage | undefined;
+  setDataMessage(value?: OmniDataMessage): void;
+
   getPayloadCase(): OmniMessagePayload.PayloadCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniMessagePayload.AsObject;
@@ -834,6 +843,7 @@ export namespace OmniMessagePayload {
     requestQueueInformation?: OmniRequestQueueInformation.AsObject,
     offLoadedTextMessage?: OmniOffLoadedTextMessage.AsObject,
     cannedMessage?: OmniCannedMessage.AsObject,
+    dataMessage?: OmniDataMessage.AsObject,
   }
 
   export enum PayloadCase {
@@ -854,6 +864,7 @@ export namespace OmniMessagePayload {
     REQUEST_QUEUE_INFORMATION = 113,
     OFF_LOADED_TEXT_MESSAGE = 114,
     CANNED_MESSAGE = 115,
+    DATA_MESSAGE = 116,
   }
 }
 
@@ -1294,6 +1305,30 @@ export class OmniCannedMessage extends jspb.Message {
 export namespace OmniCannedMessage {
   export type AsObject = {
     cannedMessageId: string,
+  }
+}
+
+export class OmniDataMessage extends jspb.Message {
+  getMessage(): string;
+  setMessage(value: string): void;
+
+  getMessageSid(): string;
+  setMessageSid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniDataMessage.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniDataMessage): OmniDataMessage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniDataMessage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniDataMessage;
+  static deserializeBinaryFromReader(message: OmniDataMessage, reader: jspb.BinaryReader): OmniDataMessage;
+}
+
+export namespace OmniDataMessage {
+  export type AsObject = {
+    message: string,
+    messageSid: string,
   }
 }
 
@@ -2827,6 +2862,14 @@ export interface AgentConversationAssignmentTypeMap {
 }
 
 export const AgentConversationAssignmentType: AgentConversationAssignmentTypeMap;
+
+export interface MessageFormatMap {
+  MESSAGE_FORMAT_UNSPECIFIED: 0;
+  MESSAGE_FORMAT_HTML: 1;
+  MESSAGE_FORMAT_HTML_FORM: 2;
+}
+
+export const MessageFormat: MessageFormatMap;
 
 export interface OmniMessageStatusMap {
   OMNI_MESSAGE_CREATED: 0;

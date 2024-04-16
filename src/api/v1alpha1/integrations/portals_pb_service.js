@@ -218,6 +218,24 @@ PortalManagerApi.ListAvailablePaymentFields = {
   responseType: api_v1alpha1_integrations_portals_pb.ListAvailablePaymentFieldsRes
 };
 
+PortalManagerApi.ListPortalTypes = {
+  methodName: "ListPortalTypes",
+  service: PortalManagerApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_integrations_portals_pb.ListPortalTypesReq,
+  responseType: api_v1alpha1_integrations_portals_pb.ListPortalTypesResponse
+};
+
+PortalManagerApi.ListPortalWorkflows = {
+  methodName: "ListPortalWorkflows",
+  service: PortalManagerApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_integrations_portals_pb.ListPortalWorkflowsReq,
+  responseType: api_v1alpha1_integrations_portals_pb.ListPortalWorkflowsResponse
+};
+
 exports.PortalManagerApi = PortalManagerApi;
 
 function PortalManagerApiClient(serviceHost, options) {
@@ -912,6 +930,68 @@ PortalManagerApiClient.prototype.listAvailablePaymentFields = function listAvail
     callback = arguments[1];
   }
   var client = grpc.unary(PortalManagerApi.ListAvailablePaymentFields, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+PortalManagerApiClient.prototype.listPortalTypes = function listPortalTypes(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(PortalManagerApi.ListPortalTypes, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+PortalManagerApiClient.prototype.listPortalWorkflows = function listPortalWorkflows(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(PortalManagerApi.ListPortalWorkflows, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
