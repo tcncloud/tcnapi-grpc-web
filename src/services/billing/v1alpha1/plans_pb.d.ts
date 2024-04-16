@@ -425,6 +425,66 @@ export namespace GetBillingPlanResponse {
   }
 }
 
+export class GetBillingPlanHistoryRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  clearGroupIdsList(): void;
+  getGroupIdsList(): Array<string>;
+  setGroupIdsList(value: Array<string>): void;
+  addGroupIds(value: string, index?: number): string;
+
+  hasStartTime(): boolean;
+  clearStartTime(): void;
+  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasEndTime(): boolean;
+  clearEndTime(): void;
+  getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetBillingPlanHistoryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetBillingPlanHistoryRequest): GetBillingPlanHistoryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetBillingPlanHistoryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetBillingPlanHistoryRequest;
+  static deserializeBinaryFromReader(message: GetBillingPlanHistoryRequest, reader: jspb.BinaryReader): GetBillingPlanHistoryRequest;
+}
+
+export namespace GetBillingPlanHistoryRequest {
+  export type AsObject = {
+    orgId: string,
+    groupIdsList: Array<string>,
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class GetBillingPlanHistoryResponse extends jspb.Message {
+  clearHistoryList(): void;
+  getHistoryList(): Array<services_billing_entities_v1alpha1_plan_pb.BillingPlanSnapshot>;
+  setHistoryList(value: Array<services_billing_entities_v1alpha1_plan_pb.BillingPlanSnapshot>): void;
+  addHistory(value?: services_billing_entities_v1alpha1_plan_pb.BillingPlanSnapshot, index?: number): services_billing_entities_v1alpha1_plan_pb.BillingPlanSnapshot;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetBillingPlanHistoryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetBillingPlanHistoryResponse): GetBillingPlanHistoryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetBillingPlanHistoryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetBillingPlanHistoryResponse;
+  static deserializeBinaryFromReader(message: GetBillingPlanHistoryResponse, reader: jspb.BinaryReader): GetBillingPlanHistoryResponse;
+}
+
+export namespace GetBillingPlanHistoryResponse {
+  export type AsObject = {
+    historyList: Array<services_billing_entities_v1alpha1_plan_pb.BillingPlanSnapshot.AsObject>,
+  }
+}
+
 export class ListBillingPlansRequest extends jspb.Message {
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;

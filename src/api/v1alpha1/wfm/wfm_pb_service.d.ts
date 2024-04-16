@@ -598,6 +598,15 @@ type WFMUpdateAgentGroup = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAgentGroupRes;
 };
 
+type WFMCreateUnassignedWFMAgent = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentResponse;
+};
+
 type WFMUpdateWFMAgent = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -643,6 +652,15 @@ type WFMListWFMAgentSids = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes;
 };
 
+type WFMListUnassignedWFMAgents = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsResponse;
+};
+
 type WFMListWFMAgentsAssociatedWithAgentGroup = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -661,6 +679,15 @@ type WFMCreateWFMAgentMemberships = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateWFMAgentMembershipsRes;
 };
 
+type WFMCopyWFMAgentMemberships = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CopyWFMAgentMembershipsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CopyWFMAgentMembershipsResponse;
+};
+
 type WFMDeleteWFMAgentMemberships = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -677,6 +704,15 @@ type WFMDeleteWFMAgentsMemberships = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteWFMAgentsMembershipsReq;
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteWFMAgentsMembershipsRes;
+};
+
+type WFMRemoveAgentFromFutureShifts = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromFutureShiftsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromFutureShiftsResponse;
 };
 
 type WFMBuildAgentDiagnostics = {
@@ -1480,6 +1516,15 @@ type WFMHelloWorldWFMAdherence = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse;
 };
 
+type WFMListAgentStatesForDay = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayResponse;
+};
+
 export class WFM {
   static readonly serviceName: string;
   static readonly PerformInitialClientSetup: WFMPerformInitialClientSetup;
@@ -1548,15 +1593,19 @@ export class WFM {
   static readonly CreateAgentGroup: WFMCreateAgentGroup;
   static readonly ListAgentScheduleGroups: WFMListAgentScheduleGroups;
   static readonly UpdateAgentGroup: WFMUpdateAgentGroup;
+  static readonly CreateUnassignedWFMAgent: WFMCreateUnassignedWFMAgent;
   static readonly UpdateWFMAgent: WFMUpdateWFMAgent;
   static readonly ListAllWFMAgents: WFMListAllWFMAgents;
   static readonly ListCandidateWFMAgents: WFMListCandidateWFMAgents;
   static readonly ListUngroupedWFMAgents: WFMListUngroupedWFMAgents;
   static readonly ListWFMAgentSids: WFMListWFMAgentSids;
+  static readonly ListUnassignedWFMAgents: WFMListUnassignedWFMAgents;
   static readonly ListWFMAgentsAssociatedWithAgentGroup: WFMListWFMAgentsAssociatedWithAgentGroup;
   static readonly CreateWFMAgentMemberships: WFMCreateWFMAgentMemberships;
+  static readonly CopyWFMAgentMemberships: WFMCopyWFMAgentMemberships;
   static readonly DeleteWFMAgentMemberships: WFMDeleteWFMAgentMemberships;
   static readonly DeleteWFMAgentsMemberships: WFMDeleteWFMAgentsMemberships;
+  static readonly RemoveAgentFromFutureShifts: WFMRemoveAgentFromFutureShifts;
   static readonly BuildAgentDiagnostics: WFMBuildAgentDiagnostics;
   static readonly CreateShiftTemplate: WFMCreateShiftTemplate;
   static readonly UpdateShiftTemplate: WFMUpdateShiftTemplate;
@@ -1646,6 +1695,7 @@ export class WFM {
   static readonly ReplaceAgentOnScheduleV1: WFMReplaceAgentOnScheduleV1;
   static readonly RemoveAgentFromSchedule: WFMRemoveAgentFromSchedule;
   static readonly HelloWorldWFMAdherence: WFMHelloWorldWFMAdherence;
+  static readonly ListAgentStatesForDay: WFMListAgentStatesForDay;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -2226,6 +2276,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAgentGroupReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAgentGroupRes|null) => void
   ): UnaryResponse;
+  createUnassignedWFMAgent(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentResponse|null) => void
+  ): UnaryResponse;
+  createUnassignedWFMAgent(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateUnassignedWFMAgentResponse|null) => void
+  ): UnaryResponse;
   updateWFMAgent(
     requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateWFMAgentReq,
     metadata: grpc.Metadata,
@@ -2271,6 +2330,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentSidsRes|null) => void
   ): UnaryResponse;
+  listUnassignedWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsResponse|null) => void
+  ): UnaryResponse;
+  listUnassignedWFMAgents(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListUnassignedWFMAgentsResponse|null) => void
+  ): UnaryResponse;
   listWFMAgentsAssociatedWithAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListWFMAgentsAssociatedWithAgentGroupReq,
     metadata: grpc.Metadata,
@@ -2289,6 +2357,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateWFMAgentMembershipsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateWFMAgentMembershipsRes|null) => void
   ): UnaryResponse;
+  copyWFMAgentMemberships(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CopyWFMAgentMembershipsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CopyWFMAgentMembershipsResponse|null) => void
+  ): UnaryResponse;
+  copyWFMAgentMemberships(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CopyWFMAgentMembershipsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CopyWFMAgentMembershipsResponse|null) => void
+  ): UnaryResponse;
   deleteWFMAgentMemberships(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteWFMAgentMembershipsReq,
     metadata: grpc.Metadata,
@@ -2306,6 +2383,15 @@ export class WFMClient {
   deleteWFMAgentsMemberships(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteWFMAgentsMembershipsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteWFMAgentsMembershipsRes|null) => void
+  ): UnaryResponse;
+  removeAgentFromFutureShifts(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromFutureShiftsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromFutureShiftsResponse|null) => void
+  ): UnaryResponse;
+  removeAgentFromFutureShifts(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromFutureShiftsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromFutureShiftsResponse|null) => void
   ): UnaryResponse;
   buildAgentDiagnostics(
     requestMessage: api_v1alpha1_wfm_wfm_pb.BuildAgentDiagnosticsReq,
@@ -3107,6 +3193,15 @@ export class WFMClient {
   helloWorldWFMAdherence(
     requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceResponse|null) => void
+  ): UnaryResponse;
+  listAgentStatesForDay(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayResponse|null) => void
+  ): UnaryResponse;
+  listAgentStatesForDay(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayResponse|null) => void
   ): UnaryResponse;
 }
 

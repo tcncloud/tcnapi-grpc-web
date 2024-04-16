@@ -25,6 +25,8 @@ var global = localGlobalThis ||
 
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 var services_billing_entities_v1alpha1_invoice_pb = require('../../../services/billing/entities/v1alpha1/invoice_pb.js');
 goog.object.extend(proto, services_billing_entities_v1alpha1_invoice_pb);
 var services_billing_v1alpha1_core_pb = require('../../../services/billing/v1alpha1/core_pb.js');
@@ -869,7 +871,8 @@ proto.services.billing.v1alpha1.ExportInvoiceRequest.prototype.toObject = functi
 proto.services.billing.v1alpha1.ExportInvoiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    format: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    format: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    invoiceDate: (f = msg.getInvoiceDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -914,6 +917,11 @@ proto.services.billing.v1alpha1.ExportInvoiceRequest.deserializeBinaryFromReader
       var value = /** @type {!proto.services.billing.v1alpha1.InvoiceFormat} */ (reader.readEnum());
       msg.setFormat(value);
       break;
+    case 3:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setInvoiceDate(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -957,6 +965,14 @@ proto.services.billing.v1alpha1.ExportInvoiceRequest.serializeBinaryToWriter = f
       f
     );
   }
+  f = message.getInvoiceDate();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -993,6 +1009,43 @@ proto.services.billing.v1alpha1.ExportInvoiceRequest.prototype.getFormat = funct
  */
 proto.services.billing.v1alpha1.ExportInvoiceRequest.prototype.setFormat = function(value) {
   return jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp invoice_date = 3;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.services.billing.v1alpha1.ExportInvoiceRequest.prototype.getInvoiceDate = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.services.billing.v1alpha1.ExportInvoiceRequest} returns this
+*/
+proto.services.billing.v1alpha1.ExportInvoiceRequest.prototype.setInvoiceDate = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.v1alpha1.ExportInvoiceRequest} returns this
+ */
+proto.services.billing.v1alpha1.ExportInvoiceRequest.prototype.clearInvoiceDate = function() {
+  return this.setInvoiceDate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.v1alpha1.ExportInvoiceRequest.prototype.hasInvoiceDate = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

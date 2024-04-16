@@ -256,3 +256,53 @@ export namespace GetScorecardResponse {
   }
 }
 
+export class ListScorecardsByOrgIdRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  clearAuthorIdsList(): void;
+  getAuthorIdsList(): Array<string>;
+  setAuthorIdsList(value: Array<string>): void;
+  addAuthorIds(value: string, index?: number): string;
+
+  clearCategoryIdsList(): void;
+  getCategoryIdsList(): Array<number>;
+  setCategoryIdsList(value: Array<number>): void;
+  addCategoryIds(value: number, index?: number): number;
+
+  clearStatesList(): void;
+  getStatesList(): Array<api_commons_scorecards_pb.ScorecardStateMap[keyof api_commons_scorecards_pb.ScorecardStateMap]>;
+  setStatesList(value: Array<api_commons_scorecards_pb.ScorecardStateMap[keyof api_commons_scorecards_pb.ScorecardStateMap]>): void;
+  addStates(value: api_commons_scorecards_pb.ScorecardStateMap[keyof api_commons_scorecards_pb.ScorecardStateMap], index?: number): api_commons_scorecards_pb.ScorecardStateMap[keyof api_commons_scorecards_pb.ScorecardStateMap];
+
+  clearEvaluationTypesList(): void;
+  getEvaluationTypesList(): Array<api_commons_scorecards_pb.EvaluationTypeMap[keyof api_commons_scorecards_pb.EvaluationTypeMap]>;
+  setEvaluationTypesList(value: Array<api_commons_scorecards_pb.EvaluationTypeMap[keyof api_commons_scorecards_pb.EvaluationTypeMap]>): void;
+  addEvaluationTypes(value: api_commons_scorecards_pb.EvaluationTypeMap[keyof api_commons_scorecards_pb.EvaluationTypeMap], index?: number): api_commons_scorecards_pb.EvaluationTypeMap[keyof api_commons_scorecards_pb.EvaluationTypeMap];
+
+  clearCallTypesList(): void;
+  getCallTypesList(): Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>;
+  setCallTypesList(value: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>): void;
+  addCallTypes(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap], index?: number): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListScorecardsByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListScorecardsByOrgIdRequest): ListScorecardsByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListScorecardsByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListScorecardsByOrgIdRequest;
+  static deserializeBinaryFromReader(message: ListScorecardsByOrgIdRequest, reader: jspb.BinaryReader): ListScorecardsByOrgIdRequest;
+}
+
+export namespace ListScorecardsByOrgIdRequest {
+  export type AsObject = {
+    orgId: string,
+    authorIdsList: Array<string>,
+    categoryIdsList: Array<number>,
+    statesList: Array<api_commons_scorecards_pb.ScorecardStateMap[keyof api_commons_scorecards_pb.ScorecardStateMap]>,
+    evaluationTypesList: Array<api_commons_scorecards_pb.EvaluationTypeMap[keyof api_commons_scorecards_pb.EvaluationTypeMap]>,
+    callTypesList: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>,
+  }
+}
+

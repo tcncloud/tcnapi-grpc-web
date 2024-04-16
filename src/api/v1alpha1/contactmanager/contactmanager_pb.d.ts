@@ -42,6 +42,11 @@ export class GetContactListResponse extends jspb.Message {
   setContactListList(value: Array<api_commons_contactmanager_pb.ContactManagerList>): void;
   addContactList(value?: api_commons_contactmanager_pb.ContactManagerList, index?: number): api_commons_contactmanager_pb.ContactManagerList;
 
+  clearContactManagerListList(): void;
+  getContactManagerListList(): Array<ContactManagerList>;
+  setContactManagerListList(value: Array<ContactManagerList>): void;
+  addContactManagerList(value?: ContactManagerList, index?: number): ContactManagerList;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetContactListResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetContactListResponse): GetContactListResponse.AsObject;
@@ -55,6 +60,7 @@ export class GetContactListResponse extends jspb.Message {
 export namespace GetContactListResponse {
   export type AsObject = {
     contactListList: Array<api_commons_contactmanager_pb.ContactManagerList.AsObject>,
+    contactManagerListList: Array<ContactManagerList.AsObject>,
   }
 }
 
@@ -92,6 +98,11 @@ export class ListContactEntryListResponse extends jspb.Message {
   setContactEntryList(value: Array<api_commons_contactmanager_pb.ContactManagerEntry>): void;
   addContactEntry(value?: api_commons_contactmanager_pb.ContactManagerEntry, index?: number): api_commons_contactmanager_pb.ContactManagerEntry;
 
+  clearContactManagerEntryList(): void;
+  getContactManagerEntryList(): Array<ContactManagerEntry>;
+  setContactManagerEntryList(value: Array<ContactManagerEntry>): void;
+  addContactManagerEntry(value?: ContactManagerEntry, index?: number): ContactManagerEntry;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContactEntryListResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListContactEntryListResponse): ListContactEntryListResponse.AsObject;
@@ -105,6 +116,7 @@ export class ListContactEntryListResponse extends jspb.Message {
 export namespace ListContactEntryListResponse {
   export type AsObject = {
     contactEntryList: Array<api_commons_contactmanager_pb.ContactManagerEntry.AsObject>,
+    contactManagerEntryList: Array<ContactManagerEntry.AsObject>,
   }
 }
 
@@ -134,6 +146,11 @@ export class GetEncContactEntryResponse extends jspb.Message {
   setContactEntryList(value: Array<api_commons_contactmanager_pb.ContactManagerEntry>): void;
   addContactEntry(value?: api_commons_contactmanager_pb.ContactManagerEntry, index?: number): api_commons_contactmanager_pb.ContactManagerEntry;
 
+  clearContactManagerEntryList(): void;
+  getContactManagerEntryList(): Array<ContactManagerEntry>;
+  setContactManagerEntryList(value: Array<ContactManagerEntry>): void;
+  addContactManagerEntry(value?: ContactManagerEntry, index?: number): ContactManagerEntry;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetEncContactEntryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetEncContactEntryResponse): GetEncContactEntryResponse.AsObject;
@@ -147,6 +164,7 @@ export class GetEncContactEntryResponse extends jspb.Message {
 export namespace GetEncContactEntryResponse {
   export type AsObject = {
     contactEntryList: Array<api_commons_contactmanager_pb.ContactManagerEntry.AsObject>,
+    contactManagerEntryList: Array<ContactManagerEntry.AsObject>,
   }
 }
 
@@ -161,6 +179,11 @@ export class GetKYCEncContactEntryRequest extends jspb.Message {
 
   getMinKycLimit(): number;
   setMinKycLimit(value: number): void;
+
+  clearKycResponseList(): void;
+  getKycResponseList(): Array<ContactManagerEntryVal>;
+  setKycResponseList(value: Array<ContactManagerEntryVal>): void;
+  addKycResponse(value?: ContactManagerEntryVal, index?: number): ContactManagerEntryVal;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetKYCEncContactEntryRequest.AsObject;
@@ -177,12 +200,18 @@ export namespace GetKYCEncContactEntryRequest {
     projectId: string,
     entryValList: Array<api_commons_contactmanager_pb.ContactManagerEntryVal.AsObject>,
     minKycLimit: number,
+    kycResponseList: Array<ContactManagerEntryVal.AsObject>,
   }
 }
 
 export class GetKYCEncContactEntryResponse extends jspb.Message {
   getVerified(): boolean;
   setVerified(value: boolean): void;
+
+  clearContactEntryList(): void;
+  getContactEntryList(): Array<ContactManagerEntry>;
+  setContactEntryList(value: Array<ContactManagerEntry>): void;
+  addContactEntry(value?: ContactManagerEntry, index?: number): ContactManagerEntry;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetKYCEncContactEntryResponse.AsObject;
@@ -197,6 +226,7 @@ export class GetKYCEncContactEntryResponse extends jspb.Message {
 export namespace GetKYCEncContactEntryResponse {
   export type AsObject = {
     verified: boolean,
+    contactEntryList: Array<ContactManagerEntry.AsObject>,
   }
 }
 
@@ -357,6 +387,80 @@ export namespace ContactManagerEntryVal {
   export type AsObject = {
     type: string,
     value: string,
+  }
+}
+
+export class AddContactEntryRequest extends jspb.Message {
+  getContactManagerListId(): string;
+  setContactManagerListId(value: string): void;
+
+  clearEntryList(): void;
+  getEntryList(): Array<Entry>;
+  setEntryList(value: Array<Entry>): void;
+  addEntry(value?: Entry, index?: number): Entry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddContactEntryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AddContactEntryRequest): AddContactEntryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddContactEntryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddContactEntryRequest;
+  static deserializeBinaryFromReader(message: AddContactEntryRequest, reader: jspb.BinaryReader): AddContactEntryRequest;
+}
+
+export namespace AddContactEntryRequest {
+  export type AsObject = {
+    contactManagerListId: string,
+    entryList: Array<Entry.AsObject>,
+  }
+}
+
+export class Entry extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getValue(): string;
+  setValue(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Entry.AsObject;
+  static toObject(includeInstance: boolean, msg: Entry): Entry.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Entry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Entry;
+  static deserializeBinaryFromReader(message: Entry, reader: jspb.BinaryReader): Entry;
+}
+
+export namespace Entry {
+  export type AsObject = {
+    name: string,
+    value: string,
+    type: string,
+  }
+}
+
+export class AddContactEntryResponse extends jspb.Message {
+  getContactId(): string;
+  setContactId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddContactEntryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AddContactEntryResponse): AddContactEntryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddContactEntryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddContactEntryResponse;
+  static deserializeBinaryFromReader(message: AddContactEntryResponse, reader: jspb.BinaryReader): AddContactEntryResponse;
+}
+
+export namespace AddContactEntryResponse {
+  export type AsObject = {
+    contactId: string,
   }
 }
 

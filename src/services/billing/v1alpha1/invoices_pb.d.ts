@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as services_billing_entities_v1alpha1_invoice_pb from "../../../services/billing/entities/v1alpha1/invoice_pb";
 import * as services_billing_v1alpha1_core_pb from "../../../services/billing/v1alpha1/core_pb";
 
@@ -95,6 +96,11 @@ export class ExportInvoiceRequest extends jspb.Message {
   getFormat(): InvoiceFormatMap[keyof InvoiceFormatMap];
   setFormat(value: InvoiceFormatMap[keyof InvoiceFormatMap]): void;
 
+  hasInvoiceDate(): boolean;
+  clearInvoiceDate(): void;
+  getInvoiceDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setInvoiceDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExportInvoiceRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ExportInvoiceRequest): ExportInvoiceRequest.AsObject;
@@ -109,6 +115,7 @@ export namespace ExportInvoiceRequest {
   export type AsObject = {
     invoiceId: string,
     format: InvoiceFormatMap[keyof InvoiceFormatMap],
+    invoiceDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

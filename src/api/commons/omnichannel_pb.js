@@ -3206,7 +3206,8 @@ proto.api.commons.OmniCampaignModuleConfig.toObject = function(includeInstance, 
     paymentPortalIdsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
     flowId: (f = msg.getFlowId()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
     skills: (f = msg.getSkills()) && proto.api.commons.OmniConversationSkills.toObject(includeInstance, f),
-    whatsappNumber: (f = msg.getWhatsappNumber()) && proto.api.commons.WhatsAppNumber.toObject(includeInstance, f)
+    whatsappNumber: (f = msg.getWhatsappNumber()) && proto.api.commons.WhatsAppNumber.toObject(includeInstance, f),
+    providerMetadataMap: (f = msg.getProviderMetadataMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -3346,6 +3347,12 @@ proto.api.commons.OmniCampaignModuleConfig.deserializeBinaryFromReader = functio
       var value = new proto.api.commons.WhatsAppNumber;
       reader.readMessage(value,proto.api.commons.WhatsAppNumber.deserializeBinaryFromReader);
       msg.setWhatsappNumber(value);
+      break;
+    case 23:
+      var value = msg.getProviderMetadataMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
       break;
     default:
       reader.skipField();
@@ -3542,6 +3549,10 @@ proto.api.commons.OmniCampaignModuleConfig.serializeBinaryToWriter = function(me
       f,
       proto.api.commons.WhatsAppNumber.serializeBinaryToWriter
     );
+  }
+  f = message.getProviderMetadataMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(23, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -4322,6 +4333,29 @@ proto.api.commons.OmniCampaignModuleConfig.prototype.clearWhatsappNumber = funct
  */
 proto.api.commons.OmniCampaignModuleConfig.prototype.hasWhatsappNumber = function() {
   return jspb.Message.getField(this, 22) != null;
+};
+
+
+/**
+ * map<string, string> provider_metadata = 23;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.api.commons.OmniCampaignModuleConfig.prototype.getProviderMetadataMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 23, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.api.commons.OmniCampaignModuleConfig} returns this
+ */
+proto.api.commons.OmniCampaignModuleConfig.prototype.clearProviderMetadataMap = function() {
+  this.getProviderMetadataMap().clear();
+  return this;
 };
 
 
@@ -16854,7 +16888,8 @@ proto.api.commons.OmniTaskConfig.toObject = function(includeInstance, msg) {
     absoluteTimeoutDuration: (f = msg.getAbsoluteTimeoutDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
     agentTimeoutDuration: (f = msg.getAgentTimeoutDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
     subject: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    message: (f = msg.getMessage()) && proto.api.commons.OmniMessagePayload.toObject(includeInstance, f)
+    message: (f = msg.getMessage()) && proto.api.commons.OmniMessagePayload.toObject(includeInstance, f),
+    userId: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -16914,6 +16949,10 @@ proto.api.commons.OmniTaskConfig.deserializeBinaryFromReader = function(msg, rea
       var value = new proto.api.commons.OmniMessagePayload;
       reader.readMessage(value,proto.api.commons.OmniMessagePayload.deserializeBinaryFromReader);
       msg.setMessage(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
       break;
     default:
       reader.skipField();
@@ -16981,6 +17020,13 @@ proto.api.commons.OmniTaskConfig.serializeBinaryToWriter = function(message, wri
       5,
       f,
       proto.api.commons.OmniMessagePayload.serializeBinaryToWriter
+    );
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
     );
   }
 };
@@ -17149,6 +17195,24 @@ proto.api.commons.OmniTaskConfig.prototype.clearMessage = function() {
  */
 proto.api.commons.OmniTaskConfig.prototype.hasMessage = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string user_id = 6;
+ * @return {string}
+ */
+proto.api.commons.OmniTaskConfig.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.OmniTaskConfig} returns this
+ */
+proto.api.commons.OmniTaskConfig.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -20576,7 +20640,8 @@ proto.api.commons.OmniComplianceAction.prototype.toObject = function(opt_include
 proto.api.commons.OmniComplianceAction.toObject = function(includeInstance, msg) {
   var f, obj = {
     keywordsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    confirmationMessage: jspb.Message.getFieldWithDefault(msg, 2, "")
+    confirmationMessage: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    isFuzzyMatch: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -20621,6 +20686,10 @@ proto.api.commons.OmniComplianceAction.deserializeBinaryFromReader = function(ms
       var value = /** @type {string} */ (reader.readString());
       msg.setConfirmationMessage(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsFuzzyMatch(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -20661,6 +20730,13 @@ proto.api.commons.OmniComplianceAction.serializeBinaryToWriter = function(messag
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getIsFuzzyMatch();
+  if (f) {
+    writer.writeBool(
+      3,
       f
     );
   }
@@ -20719,6 +20795,24 @@ proto.api.commons.OmniComplianceAction.prototype.getConfirmationMessage = functi
  */
 proto.api.commons.OmniComplianceAction.prototype.setConfirmationMessage = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bool is_fuzzy_match = 3;
+ * @return {boolean}
+ */
+proto.api.commons.OmniComplianceAction.prototype.getIsFuzzyMatch = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.OmniComplianceAction} returns this
+ */
+proto.api.commons.OmniComplianceAction.prototype.setIsFuzzyMatch = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 

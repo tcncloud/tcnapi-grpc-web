@@ -27,7 +27,6 @@ var annotations_perms_license_pb = require('../../annotations/perms/license_pb.j
 goog.object.extend(proto, annotations_perms_license_pb);
 var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
 goog.object.extend(proto, google_protobuf_descriptor_pb);
-goog.exportSymbol('proto.annotations.perms.DefaultPermissionGroup', null, global);
 goog.exportSymbol('proto.annotations.perms.Tcn', null, global);
 goog.exportSymbol('proto.annotations.perms.options', null, global);
 /**
@@ -57,7 +56,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.annotations.perms.Tcn.repeatedFields_ = [4,5];
+proto.annotations.perms.Tcn.repeatedFields_ = [4];
 
 
 
@@ -94,8 +93,7 @@ proto.annotations.perms.Tcn.toObject = function(includeInstance, msg) {
     app: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     card: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     featuresList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    defaultPermissionGroupsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    blacklisted: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
+    blacklisted: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -149,12 +147,6 @@ proto.annotations.perms.Tcn.deserializeBinaryFromReader = function(msg, reader) 
       msg.addFeatures(value);
       break;
     case 5:
-      var values = /** @type {!Array<!proto.annotations.perms.DefaultPermissionGroup>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addDefaultPermissionGroups(values[i]);
-      }
-      break;
-    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setBlacklisted(value);
       break;
@@ -215,17 +207,10 @@ proto.annotations.perms.Tcn.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getDefaultPermissionGroupsList();
-  if (f.length > 0) {
-    writer.writeRepeatedEnum(
-      5,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeBool(
-      6,
+      5,
       f
     );
   }
@@ -378,48 +363,11 @@ proto.annotations.perms.Tcn.prototype.clearFeaturesList = function() {
 
 
 /**
- * repeated DefaultPermissionGroup default_permission_groups = 5;
- * @return {!Array<!proto.annotations.perms.DefaultPermissionGroup>}
- */
-proto.annotations.perms.Tcn.prototype.getDefaultPermissionGroupsList = function() {
-  return /** @type {!Array<!proto.annotations.perms.DefaultPermissionGroup>} */ (jspb.Message.getRepeatedField(this, 5));
-};
-
-
-/**
- * @param {!Array<!proto.annotations.perms.DefaultPermissionGroup>} value
- * @return {!proto.annotations.perms.Tcn} returns this
- */
-proto.annotations.perms.Tcn.prototype.setDefaultPermissionGroupsList = function(value) {
-  return jspb.Message.setField(this, 5, value || []);
-};
-
-
-/**
- * @param {!proto.annotations.perms.DefaultPermissionGroup} value
- * @param {number=} opt_index
- * @return {!proto.annotations.perms.Tcn} returns this
- */
-proto.annotations.perms.Tcn.prototype.addDefaultPermissionGroups = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.annotations.perms.Tcn} returns this
- */
-proto.annotations.perms.Tcn.prototype.clearDefaultPermissionGroupsList = function() {
-  return this.setDefaultPermissionGroupsList([]);
-};
-
-
-/**
- * optional bool blacklisted = 6;
+ * optional bool blacklisted = 5;
  * @return {boolean}
  */
 proto.annotations.perms.Tcn.prototype.getBlacklisted = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
@@ -428,7 +376,7 @@ proto.annotations.perms.Tcn.prototype.getBlacklisted = function() {
  * @return {!proto.annotations.perms.Tcn} returns this
  */
 proto.annotations.perms.Tcn.prototype.setBlacklisted = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
@@ -437,7 +385,7 @@ proto.annotations.perms.Tcn.prototype.setBlacklisted = function(value) {
  * @return {!proto.annotations.perms.Tcn} returns this
  */
 proto.annotations.perms.Tcn.prototype.clearBlacklisted = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -446,20 +394,9 @@ proto.annotations.perms.Tcn.prototype.clearBlacklisted = function() {
  * @return {boolean}
  */
 proto.annotations.perms.Tcn.prototype.hasBlacklisted = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
-
-/**
- * @enum {number}
- */
-proto.annotations.perms.DefaultPermissionGroup = {
-  ACCOUNT_OWNER_GROUP: 0,
-  SUPER_USER_GROUP: 1,
-  USER_GROUP: 2,
-  MONITOR_GROUP: 3,
-  AGENT_GROUP: 4
-};
 
 
 /**

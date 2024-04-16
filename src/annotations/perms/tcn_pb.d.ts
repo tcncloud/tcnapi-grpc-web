@@ -26,11 +26,6 @@ export class Tcn extends jspb.Message {
   setFeaturesList(value: Array<string>): void;
   addFeatures(value: string, index?: number): string;
 
-  clearDefaultPermissionGroupsList(): void;
-  getDefaultPermissionGroupsList(): Array<DefaultPermissionGroupMap[keyof DefaultPermissionGroupMap]>;
-  setDefaultPermissionGroupsList(value: Array<DefaultPermissionGroupMap[keyof DefaultPermissionGroupMap]>): void;
-  addDefaultPermissionGroups(value: DefaultPermissionGroupMap[keyof DefaultPermissionGroupMap], index?: number): DefaultPermissionGroupMap[keyof DefaultPermissionGroupMap];
-
   hasBlacklisted(): boolean;
   clearBlacklisted(): void;
   getBlacklisted(): boolean | undefined;
@@ -52,20 +47,9 @@ export namespace Tcn {
     app?: annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap],
     card?: annotations_perms_license_pb.CardMap[keyof annotations_perms_license_pb.CardMap],
     featuresList: Array<string>,
-    defaultPermissionGroupsList: Array<DefaultPermissionGroupMap[keyof DefaultPermissionGroupMap]>,
     blacklisted?: boolean,
   }
 }
 
   export const options: jspb.ExtensionFieldInfo<Tcn>;
-
-export interface DefaultPermissionGroupMap {
-  ACCOUNT_OWNER_GROUP: 0;
-  SUPER_USER_GROUP: 1;
-  USER_GROUP: 2;
-  MONITOR_GROUP: 3;
-  AGENT_GROUP: 4;
-}
-
-export const DefaultPermissionGroup: DefaultPermissionGroupMap;
 

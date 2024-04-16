@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class UserSid extends jspb.Message {
   getUserId(): string;
@@ -108,6 +109,11 @@ export class Room extends jspb.Message {
   getConfig(): RoomConfig | undefined;
   setConfig(value?: RoomConfig): void;
 
+  hasPermissionGroupId(): boolean;
+  clearPermissionGroupId(): void;
+  getPermissionGroupId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setPermissionGroupId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Room.AsObject;
   static toObject(includeInstance: boolean, msg: Room): Room.AsObject;
@@ -129,6 +135,7 @@ export namespace Room {
     id: string,
     displayName: string,
     config?: RoomConfig.AsObject,
+    permissionGroupId?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 

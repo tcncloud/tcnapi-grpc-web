@@ -335,6 +335,8 @@ export class OmniCampaignModuleConfig extends jspb.Message {
   getWhatsappNumber(): WhatsAppNumber | undefined;
   setWhatsappNumber(value?: WhatsAppNumber): void;
 
+  getProviderMetadataMap(): jspb.Map<string, string>;
+  clearProviderMetadataMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaignModuleConfig.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCampaignModuleConfig): OmniCampaignModuleConfig.AsObject;
@@ -368,6 +370,7 @@ export namespace OmniCampaignModuleConfig {
     flowId?: api_commons_types_pb.Int64Id.AsObject,
     skills?: OmniConversationSkills.AsObject,
     whatsappNumber?: WhatsAppNumber.AsObject,
+    providerMetadataMap: Array<[string, string]>,
   }
 }
 
@@ -2103,6 +2106,9 @@ export class OmniTaskConfig extends jspb.Message {
   getMessage(): OmniMessagePayload | undefined;
   setMessage(value?: OmniMessagePayload): void;
 
+  getUserId(): string;
+  setUserId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniTaskConfig.AsObject;
   static toObject(includeInstance: boolean, msg: OmniTaskConfig): OmniTaskConfig.AsObject;
@@ -2120,6 +2126,7 @@ export namespace OmniTaskConfig {
     agentTimeoutDuration?: google_protobuf_duration_pb.Duration.AsObject,
     subject: string,
     message?: OmniMessagePayload.AsObject,
+    userId: string,
   }
 }
 
@@ -2588,6 +2595,9 @@ export class OmniComplianceAction extends jspb.Message {
   getConfirmationMessage(): string;
   setConfirmationMessage(value: string): void;
 
+  getIsFuzzyMatch(): boolean;
+  setIsFuzzyMatch(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniComplianceAction.AsObject;
   static toObject(includeInstance: boolean, msg: OmniComplianceAction): OmniComplianceAction.AsObject;
@@ -2602,6 +2612,7 @@ export namespace OmniComplianceAction {
   export type AsObject = {
     keywordsList: Array<string>,
     confirmationMessage: string,
+    isFuzzyMatch: boolean,
   }
 }
 

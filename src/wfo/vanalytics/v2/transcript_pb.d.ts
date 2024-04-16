@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
+import * as api_commons_vanalytics_pb from "../../../api/commons/vanalytics_pb";
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
@@ -273,6 +274,11 @@ export class Sms extends jspb.Message {
   setThreadsList(value: Array<Sms.Thread>): void;
   addThreads(value?: Sms.Thread, index?: number): Sms.Thread;
 
+  hasPhone(): boolean;
+  clearPhone(): void;
+  getPhone(): Sms.Phone | undefined;
+  setPhone(value?: Sms.Phone): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Sms.AsObject;
   static toObject(includeInstance: boolean, msg: Sms): Sms.AsObject;
@@ -287,6 +293,27 @@ export namespace Sms {
   export type AsObject = {
     conversationSid: number,
     threadsList: Array<Sms.Thread.AsObject>,
+    phone?: Sms.Phone.AsObject,
+  }
+
+  export class Phone extends jspb.Message {
+    getRaw(): string;
+    setRaw(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Phone.AsObject;
+    static toObject(includeInstance: boolean, msg: Phone): Phone.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Phone, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Phone;
+    static deserializeBinaryFromReader(message: Phone, reader: jspb.BinaryReader): Phone;
+  }
+
+  export namespace Phone {
+    export type AsObject = {
+      raw: string,
+    }
   }
 
   export class Thread extends jspb.Message {
@@ -397,6 +424,14 @@ export class Call extends jspb.Message {
   getAgentCallLog(): wfo_vanalytics_v2_agent_call_log_pb.AgentCallLog | undefined;
   setAgentCallLog(value?: wfo_vanalytics_v2_agent_call_log_pb.AgentCallLog): void;
 
+  hasPhone(): boolean;
+  clearPhone(): void;
+  getPhone(): Call.Phone | undefined;
+  setPhone(value?: Call.Phone): void;
+
+  getAudioBytes(): number;
+  setAudioBytes(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Call.AsObject;
   static toObject(includeInstance: boolean, msg: Call): Call.AsObject;
@@ -422,6 +457,28 @@ export namespace Call {
     huntGroupSidsList: Array<number>,
     numberFormat: string,
     agentCallLog?: wfo_vanalytics_v2_agent_call_log_pb.AgentCallLog.AsObject,
+    phone?: Call.Phone.AsObject,
+    audioBytes: number,
+  }
+
+  export class Phone extends jspb.Message {
+    getRaw(): string;
+    setRaw(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Phone.AsObject;
+    static toObject(includeInstance: boolean, msg: Phone): Phone.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Phone, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Phone;
+    static deserializeBinaryFromReader(message: Phone, reader: jspb.BinaryReader): Phone;
+  }
+
+  export namespace Phone {
+    export type AsObject = {
+      raw: string,
+    }
   }
 
   export class AgentResponse extends jspb.Message {
@@ -2583,6 +2640,11 @@ export namespace TranscriptQuery {
     getLt(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setLt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+    hasMoment(): boolean;
+    clearMoment(): void;
+    getMoment(): Moment | undefined;
+    setMoment(value?: Moment): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): StartTime.AsObject;
     static toObject(includeInstance: boolean, msg: StartTime): StartTime.AsObject;
@@ -2599,6 +2661,7 @@ export namespace TranscriptQuery {
       lte?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       gt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       lt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      moment?: Moment.AsObject,
     }
   }
 
@@ -2640,6 +2703,30 @@ export namespace TranscriptQuery {
       gt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       lt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
+  }
+}
+
+export class Moment extends jspb.Message {
+  getTimeZone(): string;
+  setTimeZone(value: string): void;
+
+  getInterval(): api_commons_vanalytics_pb.IntervalMap[keyof api_commons_vanalytics_pb.IntervalMap];
+  setInterval(value: api_commons_vanalytics_pb.IntervalMap[keyof api_commons_vanalytics_pb.IntervalMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Moment.AsObject;
+  static toObject(includeInstance: boolean, msg: Moment): Moment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Moment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Moment;
+  static deserializeBinaryFromReader(message: Moment, reader: jspb.BinaryReader): Moment;
+}
+
+export namespace Moment {
+  export type AsObject = {
+    timeZone: string,
+    interval: api_commons_vanalytics_pb.IntervalMap[keyof api_commons_vanalytics_pb.IntervalMap],
   }
 }
 
