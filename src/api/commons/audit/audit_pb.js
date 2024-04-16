@@ -31,6 +31,8 @@ var api_commons_audit_billing_events_pb = require('../../../api/commons/audit/bi
 goog.object.extend(proto, api_commons_audit_billing_events_pb);
 var api_commons_audit_compliance_events_pb = require('../../../api/commons/audit/compliance_events_pb.js');
 goog.object.extend(proto, api_commons_audit_compliance_events_pb);
+var api_commons_audit_contactmanager_events_pb = require('../../../api/commons/audit/contactmanager_events_pb.js');
+goog.object.extend(proto, api_commons_audit_contactmanager_events_pb);
 var api_commons_audit_delivery_events_pb = require('../../../api/commons/audit/delivery_events_pb.js');
 goog.object.extend(proto, api_commons_audit_delivery_events_pb);
 var api_commons_audit_event_types_pb = require('../../../api/commons/audit/event_types_pb.js');
@@ -81,7 +83,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1100,1101]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1100,1101,1200,1201,1202,1203]];
 
 /**
  * @enum {number}
@@ -195,7 +197,11 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   BILLING_UPDATE_INVOICE_EVENT: 1009,
   BILLING_UPDATE_RATE_DEFINITION_EVENT: 1010,
   DELIVERY_FAILURE_EVENT: 1100,
-  DELIVERY_SUCCESS_EVENT: 1101
+  DELIVERY_SUCCESS_EVENT: 1101,
+  CONTACT_MANAGER_ENTRY_ADD_EVENT: 1200,
+  CONTACT_MANAGER_ENTRY_GET_ENC_EVENT: 1201,
+  CONTACT_MANAGER_DELETE_EVENT: 1202,
+  CONTACT_MANAGER_KYC_EVENT: 1203
 };
 
 /**
@@ -349,7 +355,11 @@ proto.api.commons.audit.AuditEvent.toObject = function(includeInstance, msg) {
     billingUpdateInvoiceEvent: (f = msg.getBillingUpdateInvoiceEvent()) && api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent.toObject(includeInstance, f),
     billingUpdateRateDefinitionEvent: (f = msg.getBillingUpdateRateDefinitionEvent()) && api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent.toObject(includeInstance, f),
     deliveryFailureEvent: (f = msg.getDeliveryFailureEvent()) && api_commons_audit_delivery_events_pb.DeliveryFailureEvent.toObject(includeInstance, f),
-    deliverySuccessEvent: (f = msg.getDeliverySuccessEvent()) && api_commons_audit_delivery_events_pb.DeliverySuccessEvent.toObject(includeInstance, f)
+    deliverySuccessEvent: (f = msg.getDeliverySuccessEvent()) && api_commons_audit_delivery_events_pb.DeliverySuccessEvent.toObject(includeInstance, f),
+    contactManagerEntryAddEvent: (f = msg.getContactManagerEntryAddEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerEntryAddEvent.toObject(includeInstance, f),
+    contactManagerEntryGetEncEvent: (f = msg.getContactManagerEntryGetEncEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerEntryGetEncEvent.toObject(includeInstance, f),
+    contactManagerDeleteEvent: (f = msg.getContactManagerDeleteEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.toObject(includeInstance, f),
+    contactManagerKycEvent: (f = msg.getContactManagerKycEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -950,6 +960,26 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_delivery_events_pb.DeliverySuccessEvent;
       reader.readMessage(value,api_commons_audit_delivery_events_pb.DeliverySuccessEvent.deserializeBinaryFromReader);
       msg.setDeliverySuccessEvent(value);
+      break;
+    case 1200:
+      var value = new api_commons_audit_contactmanager_events_pb.ContactManagerEntryAddEvent;
+      reader.readMessage(value,api_commons_audit_contactmanager_events_pb.ContactManagerEntryAddEvent.deserializeBinaryFromReader);
+      msg.setContactManagerEntryAddEvent(value);
+      break;
+    case 1201:
+      var value = new api_commons_audit_contactmanager_events_pb.ContactManagerEntryGetEncEvent;
+      reader.readMessage(value,api_commons_audit_contactmanager_events_pb.ContactManagerEntryGetEncEvent.deserializeBinaryFromReader);
+      msg.setContactManagerEntryGetEncEvent(value);
+      break;
+    case 1202:
+      var value = new api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent;
+      reader.readMessage(value,api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.deserializeBinaryFromReader);
+      msg.setContactManagerDeleteEvent(value);
+      break;
+    case 1203:
+      var value = new api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent;
+      reader.readMessage(value,api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.deserializeBinaryFromReader);
+      msg.setContactManagerKycEvent(value);
       break;
     default:
       reader.skipField();
@@ -1885,6 +1915,38 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       1101,
       f,
       api_commons_audit_delivery_events_pb.DeliverySuccessEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getContactManagerEntryAddEvent();
+  if (f != null) {
+    writer.writeMessage(
+      1200,
+      f,
+      api_commons_audit_contactmanager_events_pb.ContactManagerEntryAddEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getContactManagerEntryGetEncEvent();
+  if (f != null) {
+    writer.writeMessage(
+      1201,
+      f,
+      api_commons_audit_contactmanager_events_pb.ContactManagerEntryGetEncEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getContactManagerDeleteEvent();
+  if (f != null) {
+    writer.writeMessage(
+      1202,
+      f,
+      api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getContactManagerKycEvent();
+  if (f != null) {
+    writer.writeMessage(
+      1203,
+      f,
+      api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.serializeBinaryToWriter
     );
   }
 };
@@ -6010,6 +6072,154 @@ proto.api.commons.audit.AuditEvent.prototype.clearDeliverySuccessEvent = functio
  */
 proto.api.commons.audit.AuditEvent.prototype.hasDeliverySuccessEvent = function() {
   return jspb.Message.getField(this, 1101) != null;
+};
+
+
+/**
+ * optional ContactManagerEntryAddEvent contact_manager_entry_add_event = 1200;
+ * @return {?proto.api.commons.audit.ContactManagerEntryAddEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getContactManagerEntryAddEvent = function() {
+  return /** @type{?proto.api.commons.audit.ContactManagerEntryAddEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_contactmanager_events_pb.ContactManagerEntryAddEvent, 1200));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.ContactManagerEntryAddEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setContactManagerEntryAddEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1200, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearContactManagerEntryAddEvent = function() {
+  return this.setContactManagerEntryAddEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasContactManagerEntryAddEvent = function() {
+  return jspb.Message.getField(this, 1200) != null;
+};
+
+
+/**
+ * optional ContactManagerEntryGetEncEvent contact_manager_entry_get_enc_event = 1201;
+ * @return {?proto.api.commons.audit.ContactManagerEntryGetEncEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getContactManagerEntryGetEncEvent = function() {
+  return /** @type{?proto.api.commons.audit.ContactManagerEntryGetEncEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_contactmanager_events_pb.ContactManagerEntryGetEncEvent, 1201));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.ContactManagerEntryGetEncEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setContactManagerEntryGetEncEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1201, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearContactManagerEntryGetEncEvent = function() {
+  return this.setContactManagerEntryGetEncEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasContactManagerEntryGetEncEvent = function() {
+  return jspb.Message.getField(this, 1201) != null;
+};
+
+
+/**
+ * optional ContactManagerDeleteEvent contact_manager_delete_event = 1202;
+ * @return {?proto.api.commons.audit.ContactManagerDeleteEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getContactManagerDeleteEvent = function() {
+  return /** @type{?proto.api.commons.audit.ContactManagerDeleteEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent, 1202));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.ContactManagerDeleteEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setContactManagerDeleteEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1202, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearContactManagerDeleteEvent = function() {
+  return this.setContactManagerDeleteEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasContactManagerDeleteEvent = function() {
+  return jspb.Message.getField(this, 1202) != null;
+};
+
+
+/**
+ * optional ContactManagerKycEvent contact_manager_kyc_event = 1203;
+ * @return {?proto.api.commons.audit.ContactManagerKycEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getContactManagerKycEvent = function() {
+  return /** @type{?proto.api.commons.audit.ContactManagerKycEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent, 1203));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.ContactManagerKycEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setContactManagerKycEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1203, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearContactManagerKycEvent = function() {
+  return this.setContactManagerKycEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasContactManagerKycEvent = function() {
+  return jspb.Message.getField(this, 1203) != null;
 };
 
 

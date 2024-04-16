@@ -343,6 +343,9 @@ export class ContactManagerList extends jspb.Message {
   getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getIsDeleted(): boolean;
+  setIsDeleted(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerList.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerList): ContactManagerList.AsObject;
@@ -363,6 +366,7 @@ export namespace ContactManagerList {
     listDetailsList: Array<string>,
     ttl: string,
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    isDeleted: boolean,
   }
 }
 
