@@ -404,7 +404,9 @@ proto.services.billing.entities.v1alpha2.RateDefinition.toObject = function(incl
     deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     effectiveTime: (f = msg.getEffectiveTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     config: (f = msg.getConfig()) && proto.services.billing.entities.v1alpha2.RateDefinitionConfig.toObject(includeInstance, f),
-    groupId: jspb.Message.getFieldWithDefault(msg, 12, "")
+    groupId: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    configSha: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    threadId: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
 
   if (includeInstance) {
@@ -494,6 +496,14 @@ proto.services.billing.entities.v1alpha2.RateDefinition.deserializeBinaryFromRea
     case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setGroupId(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConfigSha(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setThreadId(value);
       break;
     default:
       reader.skipField();
@@ -611,6 +621,20 @@ proto.services.billing.entities.v1alpha2.RateDefinition.serializeBinaryToWriter 
   if (f.length > 0) {
     writer.writeString(
       12,
+      f
+    );
+  }
+  f = message.getConfigSha();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
+  f = message.getThreadId();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
       f
     );
   }
@@ -944,6 +968,42 @@ proto.services.billing.entities.v1alpha2.RateDefinition.prototype.getGroupId = f
  */
 proto.services.billing.entities.v1alpha2.RateDefinition.prototype.setGroupId = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string config_sha = 13;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinition.prototype.getConfigSha = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinition} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinition.prototype.setConfigSha = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional string thread_id = 14;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha2.RateDefinition.prototype.getThreadId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateDefinition} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateDefinition.prototype.setThreadId = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
