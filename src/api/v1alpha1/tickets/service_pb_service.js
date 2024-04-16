@@ -291,6 +291,33 @@ Tickets.GetPhoneNumberType = {
   responseType: api_v1alpha1_tickets_ticket_pb.GetPhoneNumberTypeResponse
 };
 
+Tickets.AddEntityRef = {
+  methodName: "AddEntityRef",
+  service: Tickets,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_tickets_ticket_pb.AddEntityRefRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.AddEntityRefResponse
+};
+
+Tickets.ListTicketsByEntityRef = {
+  methodName: "ListTicketsByEntityRef",
+  service: Tickets,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_tickets_ticket_pb.ListTicketsByEntityRefRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.ListTicketsByEntityRefResponse
+};
+
+Tickets.ListEntityRefsByTicket = {
+  methodName: "ListEntityRefsByTicket",
+  service: Tickets,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_tickets_ticket_pb.ListEntityRefsByTicketRequest,
+  responseType: api_v1alpha1_tickets_ticket_pb.ListEntityRefsByTicketResponse
+};
+
 exports.Tickets = Tickets;
 
 function TicketsClient(serviceHost, options) {
@@ -1233,6 +1260,99 @@ TicketsClient.prototype.getPhoneNumberType = function getPhoneNumberType(request
     callback = arguments[1];
   }
   var client = grpc.unary(Tickets.GetPhoneNumberType, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TicketsClient.prototype.addEntityRef = function addEntityRef(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Tickets.AddEntityRef, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TicketsClient.prototype.listTicketsByEntityRef = function listTicketsByEntityRef(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Tickets.ListTicketsByEntityRef, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TicketsClient.prototype.listEntityRefsByTicket = function listEntityRefsByTicket(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Tickets.ListEntityRefsByTicket, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

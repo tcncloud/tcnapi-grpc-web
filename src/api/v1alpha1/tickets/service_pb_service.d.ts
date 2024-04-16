@@ -285,6 +285,33 @@ type TicketsGetPhoneNumberType = {
   readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.GetPhoneNumberTypeResponse;
 };
 
+type TicketsAddEntityRef = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.AddEntityRefRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.AddEntityRefResponse;
+};
+
+type TicketsListTicketsByEntityRef = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.ListTicketsByEntityRefRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.ListTicketsByEntityRefResponse;
+};
+
+type TicketsListEntityRefsByTicket = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.ListEntityRefsByTicketRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.ListEntityRefsByTicketResponse;
+};
+
 export class Tickets {
   static readonly serviceName: string;
   static readonly CreateTicket: TicketsCreateTicket;
@@ -318,6 +345,9 @@ export class Tickets {
   static readonly AssignTicketTemplate: TicketsAssignTicketTemplate;
   static readonly GetAllActionType: TicketsGetAllActionType;
   static readonly GetPhoneNumberType: TicketsGetPhoneNumberType;
+  static readonly AddEntityRef: TicketsAddEntityRef;
+  static readonly ListTicketsByEntityRef: TicketsListTicketsByEntityRef;
+  static readonly ListEntityRefsByTicket: TicketsListEntityRefsByTicket;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -630,6 +660,33 @@ export class TicketsClient {
   getPhoneNumberType(
     requestMessage: api_v1alpha1_tickets_ticket_pb.GetPhoneNumberTypeRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.GetPhoneNumberTypeResponse|null) => void
+  ): UnaryResponse;
+  addEntityRef(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.AddEntityRefRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.AddEntityRefResponse|null) => void
+  ): UnaryResponse;
+  addEntityRef(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.AddEntityRefRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.AddEntityRefResponse|null) => void
+  ): UnaryResponse;
+  listTicketsByEntityRef(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListTicketsByEntityRefRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListTicketsByEntityRefResponse|null) => void
+  ): UnaryResponse;
+  listTicketsByEntityRef(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListTicketsByEntityRefRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListTicketsByEntityRefResponse|null) => void
+  ): UnaryResponse;
+  listEntityRefsByTicket(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListEntityRefsByTicketRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListEntityRefsByTicketResponse|null) => void
+  ): UnaryResponse;
+  listEntityRefsByTicket(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListEntityRefsByTicketRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListEntityRefsByTicketResponse|null) => void
   ): UnaryResponse;
 }
 
