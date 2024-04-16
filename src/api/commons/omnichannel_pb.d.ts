@@ -337,6 +337,12 @@ export class OmniCampaignModuleConfig extends jspb.Message {
 
   getProviderMetadataMap(): jspb.Map<string, string>;
   clearProviderMetadataMap(): void;
+  getCountryCode(): number;
+  setCountryCode(value: number): void;
+
+  getPostalCodeField(): string;
+  setPostalCodeField(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaignModuleConfig.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCampaignModuleConfig): OmniCampaignModuleConfig.AsObject;
@@ -371,6 +377,8 @@ export namespace OmniCampaignModuleConfig {
     skills?: OmniConversationSkills.AsObject,
     whatsappNumber?: WhatsAppNumber.AsObject,
     providerMetadataMap: Array<[string, string]>,
+    countryCode: number,
+    postalCodeField: string,
   }
 }
 
