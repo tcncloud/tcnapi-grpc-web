@@ -3230,7 +3230,9 @@ proto.api.commons.OmniCampaignModuleConfig.toObject = function(includeInstance, 
     flowId: (f = msg.getFlowId()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
     skills: (f = msg.getSkills()) && proto.api.commons.OmniConversationSkills.toObject(includeInstance, f),
     whatsappNumber: (f = msg.getWhatsappNumber()) && proto.api.commons.WhatsAppNumber.toObject(includeInstance, f),
-    providerMetadataMap: (f = msg.getProviderMetadataMap()) ? f.toObject(includeInstance, undefined) : []
+    providerMetadataMap: (f = msg.getProviderMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
+    countryCode: jspb.Message.getFieldWithDefault(msg, 24, 0),
+    postalCodeField: jspb.Message.getFieldWithDefault(msg, 25, "")
   };
 
   if (includeInstance) {
@@ -3376,6 +3378,14 @@ proto.api.commons.OmniCampaignModuleConfig.deserializeBinaryFromReader = functio
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
+      break;
+    case 24:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setCountryCode(value);
+      break;
+    case 25:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPostalCodeField(value);
       break;
     default:
       reader.skipField();
@@ -3576,6 +3586,20 @@ proto.api.commons.OmniCampaignModuleConfig.serializeBinaryToWriter = function(me
   f = message.getProviderMetadataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(23, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getCountryCode();
+  if (f !== 0) {
+    writer.writeInt32(
+      24,
+      f
+    );
+  }
+  f = message.getPostalCodeField();
+  if (f.length > 0) {
+    writer.writeString(
+      25,
+      f
+    );
   }
 };
 
@@ -4379,6 +4403,42 @@ proto.api.commons.OmniCampaignModuleConfig.prototype.getProviderMetadataMap = fu
 proto.api.commons.OmniCampaignModuleConfig.prototype.clearProviderMetadataMap = function() {
   this.getProviderMetadataMap().clear();
   return this;
+};
+
+
+/**
+ * optional int32 country_code = 24;
+ * @return {number}
+ */
+proto.api.commons.OmniCampaignModuleConfig.prototype.getCountryCode = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 24, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.OmniCampaignModuleConfig} returns this
+ */
+proto.api.commons.OmniCampaignModuleConfig.prototype.setCountryCode = function(value) {
+  return jspb.Message.setProto3IntField(this, 24, value);
+};
+
+
+/**
+ * optional string postal_code_field = 25;
+ * @return {string}
+ */
+proto.api.commons.OmniCampaignModuleConfig.prototype.getPostalCodeField = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.OmniCampaignModuleConfig} returns this
+ */
+proto.api.commons.OmniCampaignModuleConfig.prototype.setPostalCodeField = function(value) {
+  return jspb.Message.setProto3StringField(this, 25, value);
 };
 
 
