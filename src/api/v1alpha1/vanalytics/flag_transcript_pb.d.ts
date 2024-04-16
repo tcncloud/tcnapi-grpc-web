@@ -49,6 +49,48 @@ export namespace CreateFlagTranscriptResponse {
   }
 }
 
+export class DeleteFlagTranscriptRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  clearTranscriptSidsList(): void;
+  getTranscriptSidsList(): Array<number>;
+  setTranscriptSidsList(value: Array<number>): void;
+  addTranscriptSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteFlagTranscriptRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteFlagTranscriptRequest): DeleteFlagTranscriptRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteFlagTranscriptRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteFlagTranscriptRequest;
+  static deserializeBinaryFromReader(message: DeleteFlagTranscriptRequest, reader: jspb.BinaryReader): DeleteFlagTranscriptRequest;
+}
+
+export namespace DeleteFlagTranscriptRequest {
+  export type AsObject = {
+    orgId: string,
+    transcriptSidsList: Array<number>,
+  }
+}
+
+export class DeleteFlagTranscriptResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteFlagTranscriptResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteFlagTranscriptResponse): DeleteFlagTranscriptResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteFlagTranscriptResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteFlagTranscriptResponse;
+  static deserializeBinaryFromReader(message: DeleteFlagTranscriptResponse, reader: jspb.BinaryReader): DeleteFlagTranscriptResponse;
+}
+
+export namespace DeleteFlagTranscriptResponse {
+  export type AsObject = {
+  }
+}
+
 export class SearchFlagTranscriptsRequest extends jspb.Message {
   getPageSize(): number;
   setPageSize(value: number): void;
