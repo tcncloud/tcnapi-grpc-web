@@ -3896,7 +3896,9 @@ proto.wfo.vanalytics.v2.Sms.toObject = function(includeInstance, msg) {
     conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     threadsList: jspb.Message.toObjectList(msg.getThreadsList(),
     proto.wfo.vanalytics.v2.Sms.Thread.toObject, includeInstance),
-    phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.Sms.Phone.toObject(includeInstance, f)
+    phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.Sms.Phone.toObject(includeInstance, f),
+    callerId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    campaignSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -3946,6 +3948,14 @@ proto.wfo.vanalytics.v2.Sms.deserializeBinaryFromReader = function(msg, reader) 
       var value = new proto.wfo.vanalytics.v2.Sms.Phone;
       reader.readMessage(value,proto.wfo.vanalytics.v2.Sms.Phone.deserializeBinaryFromReader);
       msg.setPhone(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCallerId(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setCampaignSid(value);
       break;
     default:
       reader.skipField();
@@ -3997,6 +4007,20 @@ proto.wfo.vanalytics.v2.Sms.serializeBinaryToWriter = function(message, writer) 
       3,
       f,
       proto.wfo.vanalytics.v2.Sms.Phone.serializeBinaryToWriter
+    );
+  }
+  f = message.getCallerId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getCampaignSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      5,
+      f
     );
   }
 };
@@ -4623,6 +4647,42 @@ proto.wfo.vanalytics.v2.Sms.prototype.clearPhone = function() {
  */
 proto.wfo.vanalytics.v2.Sms.prototype.hasPhone = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string caller_id = 4;
+ * @return {string}
+ */
+proto.wfo.vanalytics.v2.Sms.prototype.getCallerId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wfo.vanalytics.v2.Sms} returns this
+ */
+proto.wfo.vanalytics.v2.Sms.prototype.setCallerId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional int64 campaign_sid = 5;
+ * @return {number}
+ */
+proto.wfo.vanalytics.v2.Sms.prototype.getCampaignSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.wfo.vanalytics.v2.Sms} returns this
+ */
+proto.wfo.vanalytics.v2.Sms.prototype.setCampaignSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 

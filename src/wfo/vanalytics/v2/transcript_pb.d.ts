@@ -279,6 +279,12 @@ export class Sms extends jspb.Message {
   getPhone(): Sms.Phone | undefined;
   setPhone(value?: Sms.Phone): void;
 
+  getCallerId(): string;
+  setCallerId(value: string): void;
+
+  getCampaignSid(): number;
+  setCampaignSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Sms.AsObject;
   static toObject(includeInstance: boolean, msg: Sms): Sms.AsObject;
@@ -294,6 +300,8 @@ export namespace Sms {
     conversationSid: number,
     threadsList: Array<Sms.Thread.AsObject>,
     phone?: Sms.Phone.AsObject,
+    callerId: string,
+    campaignSid: number,
   }
 
   export class Phone extends jspb.Message {
