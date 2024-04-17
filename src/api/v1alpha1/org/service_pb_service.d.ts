@@ -1950,6 +1950,15 @@ type OrgRemoveGroupedUserIPRestrictions = {
   readonly responseType: typeof api_v1alpha1_org_user_pb.RemoveGroupedUserIPRestrictionsResponse;
 };
 
+type OrgListUsersAllowedIps = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.ListUsersAllowedIpsRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.ListUsersAllowedIpsResponse;
+};
+
 export class Org {
   static readonly serviceName: string;
   static readonly CreateOrganization: OrgCreateOrganization;
@@ -2167,6 +2176,7 @@ export class Org {
   static readonly UpdateBusinessHours: OrgUpdateBusinessHours;
   static readonly AddGroupedUserIPRestrictions: OrgAddGroupedUserIPRestrictions;
   static readonly RemoveGroupedUserIPRestrictions: OrgRemoveGroupedUserIPRestrictions;
+  static readonly ListUsersAllowedIps: OrgListUsersAllowedIps;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -4063,6 +4073,15 @@ export class OrgClient {
   removeGroupedUserIPRestrictions(
     requestMessage: api_v1alpha1_org_user_pb.RemoveGroupedUserIPRestrictionsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.RemoveGroupedUserIPRestrictionsResponse|null) => void
+  ): UnaryResponse;
+  listUsersAllowedIps(
+    requestMessage: api_v1alpha1_org_user_pb.ListUsersAllowedIpsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.ListUsersAllowedIpsResponse|null) => void
+  ): UnaryResponse;
+  listUsersAllowedIps(
+    requestMessage: api_v1alpha1_org_user_pb.ListUsersAllowedIpsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.ListUsersAllowedIpsResponse|null) => void
   ): UnaryResponse;
 }
 
