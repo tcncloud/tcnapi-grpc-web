@@ -2648,7 +2648,8 @@ proto.api.v1alpha1.contactmanager.ContactManagerList.toObject = function(include
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
     listDetailsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
     ttl: jspb.Message.getFieldWithDefault(msg, 7, "0"),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -2717,6 +2718,10 @@ proto.api.v1alpha1.contactmanager.ContactManagerList.deserializeBinaryFromReader
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setDateCreated(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsDeleted(value);
       break;
     default:
       reader.skipField();
@@ -2802,6 +2807,13 @@ proto.api.v1alpha1.contactmanager.ContactManagerList.serializeBinaryToWriter = f
       8,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getIsDeleted();
+  if (f) {
+    writer.writeBool(
+      9,
+      f
     );
   }
 };
@@ -2986,6 +2998,24 @@ proto.api.v1alpha1.contactmanager.ContactManagerList.prototype.clearDateCreated 
  */
 proto.api.v1alpha1.contactmanager.ContactManagerList.prototype.hasDateCreated = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional bool is_deleted = 9;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerList.prototype.getIsDeleted = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerList} returns this
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerList.prototype.setIsDeleted = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
