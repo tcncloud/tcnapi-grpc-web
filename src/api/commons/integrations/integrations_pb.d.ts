@@ -1699,6 +1699,11 @@ export class ExecuteFlow extends jspb.Message {
   getPaynsecondsTokenizeCard(): ExecutePaynsecondsTokenizeCard | undefined;
   setPaynsecondsTokenizeCard(value?: ExecutePaynsecondsTokenizeCard): void;
 
+  hasSutherlandrevPaymentConnect(): boolean;
+  clearSutherlandrevPaymentConnect(): void;
+  getSutherlandrevPaymentConnect(): ExecuteSutherlandrevPaymentConnect | undefined;
+  setSutherlandrevPaymentConnect(value?: ExecuteSutherlandrevPaymentConnect): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -1926,6 +1931,7 @@ export namespace ExecuteFlow {
     navigaCreatePayment?: ExecuteNavigaCreatePayment.AsObject,
     navigaChangeBilling?: ExecuteNavigaChangeBilling.AsObject,
     paynsecondsTokenizeCard?: ExecutePaynsecondsTokenizeCard.AsObject,
+    sutherlandrevPaymentConnect?: ExecuteSutherlandrevPaymentConnect.AsObject,
   }
 
   export enum ValueCase {
@@ -2143,6 +2149,7 @@ export namespace ExecuteFlow {
     NAVIGA_CREATE_PAYMENT = 4001,
     NAVIGA_CHANGE_BILLING = 4002,
     PAYNSECONDS_TOKENIZE_CARD = 4101,
+    SUTHERLANDREV_PAYMENT_CONNECT = 4201,
   }
 }
 
@@ -6075,6 +6082,22 @@ export namespace ExecutePaynsecondsTokenizeCard {
   }
 }
 
+export class ExecuteSutherlandrevPaymentConnect extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteSutherlandrevPaymentConnect.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSutherlandrevPaymentConnect): ExecuteSutherlandrevPaymentConnect.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteSutherlandrevPaymentConnect, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSutherlandrevPaymentConnect;
+  static deserializeBinaryFromReader(message: ExecuteSutherlandrevPaymentConnect, reader: jspb.BinaryReader): ExecuteSutherlandrevPaymentConnect;
+}
+
+export namespace ExecuteSutherlandrevPaymentConnect {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -6118,6 +6141,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_PRIOCOMMERCE: 3900;
   INTEGRATION_TYPE_NAVIGA: 4000;
   INTEGRATION_TYPE_PAYNSECONDS: 4100;
+  INTEGRATION_TYPE_SUTHERLANDREV: 4200;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -6337,6 +6361,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_NAVIGA_CREATE_PAYMENT: 4001;
   REQUEST_METHOD_NAVIGA_CHANGE_BILLING: 4002;
   REQUEST_METHOD_PAYNSECONDS_TOKENIZE_CARD: 4101;
+  REQUEST_METHOD_SUTHERLANDREV_PAYMENT_CONNECT: 4201;
 }
 
 export const RequestMethod: RequestMethodMap;
