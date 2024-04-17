@@ -4,9 +4,11 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_ana_pb from "../../../api/commons/ana_pb";
 import * as api_commons_country_pb from "../../../api/commons/country_pb";
+import * as api_commons_enums_pb from "../../../api/commons/enums_pb";
 import * as api_commons_lms_pb from "../../../api/commons/lms_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as api_commons_org_preferences_pb from "../../../api/commons/org_preferences_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class OrganizationPreferences extends jspb.Message {
   getOrgId(): string;
@@ -20,6 +22,11 @@ export class OrganizationPreferences extends jspb.Message {
 
   getDisplayLanguage(): api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap];
   setDisplayLanguage(value: api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap]): void;
+
+  hasLocalePreferences(): boolean;
+  clearLocalePreferences(): void;
+  getLocalePreferences(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferences(value?: api_commons_org_preferences_pb.LocalePreferences): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrganizationPreferences.AsObject;
@@ -37,6 +44,7 @@ export namespace OrganizationPreferences {
     defaultCountry: api_commons_country_pb.CountryMap[keyof api_commons_country_pb.CountryMap],
     timeZone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
     displayLanguage: api_commons_org_pb.DisplayLanguageMap[keyof api_commons_org_pb.DisplayLanguageMap],
+    localePreferences?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
   }
 }
 
@@ -299,6 +307,25 @@ export class AuthenticationPreferences extends jspb.Message {
   getBlockUnverifiedUsers(): boolean;
   setBlockUnverifiedUsers(value: boolean): void;
 
+  hasEmailMfaSettings(): boolean;
+  clearEmailMfaSettings(): void;
+  getEmailMfaSettings(): AuthenticationPreferences.EmailMfaSettings | undefined;
+  setEmailMfaSettings(value?: AuthenticationPreferences.EmailMfaSettings): void;
+
+  hasDuoMfaSettings(): boolean;
+  clearDuoMfaSettings(): void;
+  getDuoMfaSettings(): AuthenticationPreferences.DuoMfaSettings | undefined;
+  setDuoMfaSettings(value?: AuthenticationPreferences.DuoMfaSettings): void;
+
+  getAllowForcePasswordResetInterval(): boolean;
+  setAllowForcePasswordResetInterval(value: boolean): void;
+
+  getPasswordResetDayInterval(): number;
+  setPasswordResetDayInterval(value: number): void;
+
+  getUserAuthorizationViaIp(): boolean;
+  setUserAuthorizationViaIp(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuthenticationPreferences.AsObject;
   static toObject(includeInstance: boolean, msg: AuthenticationPreferences): AuthenticationPreferences.AsObject;
@@ -317,6 +344,59 @@ export namespace AuthenticationPreferences {
     agentApiKey: string,
     enable2fa: boolean,
     blockUnverifiedUsers: boolean,
+    emailMfaSettings?: AuthenticationPreferences.EmailMfaSettings.AsObject,
+    duoMfaSettings?: AuthenticationPreferences.DuoMfaSettings.AsObject,
+    allowForcePasswordResetInterval: boolean,
+    passwordResetDayInterval: number,
+    userAuthorizationViaIp: boolean,
+  }
+
+  export class DuoMfaSettings extends jspb.Message {
+    getDuoClientId(): string;
+    setDuoClientId(value: string): void;
+
+    getDuoApiHost(): string;
+    setDuoApiHost(value: string): void;
+
+    getEnabled(): boolean;
+    setEnabled(value: boolean): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): DuoMfaSettings.AsObject;
+    static toObject(includeInstance: boolean, msg: DuoMfaSettings): DuoMfaSettings.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: DuoMfaSettings, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): DuoMfaSettings;
+    static deserializeBinaryFromReader(message: DuoMfaSettings, reader: jspb.BinaryReader): DuoMfaSettings;
+  }
+
+  export namespace DuoMfaSettings {
+    export type AsObject = {
+      duoClientId: string,
+      duoApiHost: string,
+      enabled: boolean,
+    }
+  }
+
+  export class EmailMfaSettings extends jspb.Message {
+    getEnabled(): boolean;
+    setEnabled(value: boolean): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): EmailMfaSettings.AsObject;
+    static toObject(includeInstance: boolean, msg: EmailMfaSettings): EmailMfaSettings.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: EmailMfaSettings, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): EmailMfaSettings;
+    static deserializeBinaryFromReader(message: EmailMfaSettings, reader: jspb.BinaryReader): EmailMfaSettings;
+  }
+
+  export namespace EmailMfaSettings {
+    export type AsObject = {
+      enabled: boolean,
+    }
   }
 }
 
@@ -1695,19 +1775,27 @@ export class BusinessHours extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
-  getId(): string;
-  setId(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
   getDescription(): string;
   setDescription(value: string): void;
 
-  clearRangesList(): void;
-  getRangesList(): Array<Range>;
-  setRangesList(value: Array<Range>): void;
-  addRanges(value?: Range, index?: number): Range;
+  getBusinessHoursId(): string;
+  setBusinessHoursId(value: string): void;
+
+  getBusinessHoursName(): string;
+  setBusinessHoursName(value: string): void;
+
+  getTimezone(): api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap];
+  setTimezone(value: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap]): void;
+
+  clearDayIntervalsList(): void;
+  getDayIntervalsList(): Array<DayInterval>;
+  setDayIntervalsList(value: Array<DayInterval>): void;
+  addDayIntervals(value?: DayInterval, index?: number): DayInterval;
+
+  hasLastUpdated(): boolean;
+  clearLastUpdated(): void;
+  getLastUpdated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastUpdated(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BusinessHours.AsObject;
@@ -1722,10 +1810,12 @@ export class BusinessHours extends jspb.Message {
 export namespace BusinessHours {
   export type AsObject = {
     orgId: string,
-    id: string,
-    name: string,
     description: string,
-    rangesList: Array<Range.AsObject>,
+    businessHoursId: string,
+    businessHoursName: string,
+    timezone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
+    dayIntervalsList: Array<DayInterval.AsObject>,
+    lastUpdated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -1758,6 +1848,280 @@ export namespace Range {
     startMinute: number,
     endHour: number,
     endMinute: number,
+  }
+}
+
+export class TimeOfDay extends jspb.Message {
+  getHour(): number;
+  setHour(value: number): void;
+
+  getMinute(): number;
+  setMinute(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeOfDay.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeOfDay): TimeOfDay.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TimeOfDay, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeOfDay;
+  static deserializeBinaryFromReader(message: TimeOfDay, reader: jspb.BinaryReader): TimeOfDay;
+}
+
+export namespace TimeOfDay {
+  export type AsObject = {
+    hour: number,
+    minute: number,
+  }
+}
+
+export class DayInterval extends jspb.Message {
+  getDay(): api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap];
+  setDay(value: api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap]): void;
+
+  hasStart(): boolean;
+  clearStart(): void;
+  getStart(): TimeOfDay | undefined;
+  setStart(value?: TimeOfDay): void;
+
+  hasEnd(): boolean;
+  clearEnd(): void;
+  getEnd(): TimeOfDay | undefined;
+  setEnd(value?: TimeOfDay): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DayInterval.AsObject;
+  static toObject(includeInstance: boolean, msg: DayInterval): DayInterval.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DayInterval, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DayInterval;
+  static deserializeBinaryFromReader(message: DayInterval, reader: jspb.BinaryReader): DayInterval;
+}
+
+export namespace DayInterval {
+  export type AsObject = {
+    day: api_commons_enums_pb.Weekday.EnumMap[keyof api_commons_enums_pb.Weekday.EnumMap],
+    start?: TimeOfDay.AsObject,
+    end?: TimeOfDay.AsObject,
+  }
+}
+
+export class MonthDayDate extends jspb.Message {
+  getDateName(): string;
+  setDateName(value: string): void;
+
+  getMonth(): api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap];
+  setMonth(value: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap]): void;
+
+  getDayOfMonth(): number;
+  setDayOfMonth(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MonthDayDate.AsObject;
+  static toObject(includeInstance: boolean, msg: MonthDayDate): MonthDayDate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MonthDayDate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MonthDayDate;
+  static deserializeBinaryFromReader(message: MonthDayDate, reader: jspb.BinaryReader): MonthDayDate;
+}
+
+export namespace MonthDayDate {
+  export type AsObject = {
+    dateName: string,
+    month: api_commons_enums_pb.MonthMap[keyof api_commons_enums_pb.MonthMap],
+    dayOfMonth: number,
+  }
+}
+
+export class CountryHoliday extends jspb.Message {
+  getHolidayName(): string;
+  setHolidayName(value: string): void;
+
+  getCountry(): api_commons_country_pb.CountryMap[keyof api_commons_country_pb.CountryMap];
+  setCountry(value: api_commons_country_pb.CountryMap[keyof api_commons_country_pb.CountryMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CountryHoliday.AsObject;
+  static toObject(includeInstance: boolean, msg: CountryHoliday): CountryHoliday.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CountryHoliday, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CountryHoliday;
+  static deserializeBinaryFromReader(message: CountryHoliday, reader: jspb.BinaryReader): CountryHoliday;
+}
+
+export namespace CountryHoliday {
+  export type AsObject = {
+    holidayName: string,
+    country: api_commons_country_pb.CountryMap[keyof api_commons_country_pb.CountryMap],
+  }
+}
+
+export class ProgrammedDay extends jspb.Message {
+  hasDay(): boolean;
+  clearDay(): void;
+  getDay(): MonthDayDate | undefined;
+  setDay(value?: MonthDayDate): void;
+
+  hasHoliday(): boolean;
+  clearHoliday(): void;
+  getHoliday(): CountryHoliday | undefined;
+  setHoliday(value?: CountryHoliday): void;
+
+  getDaytypeCase(): ProgrammedDay.DaytypeCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProgrammedDay.AsObject;
+  static toObject(includeInstance: boolean, msg: ProgrammedDay): ProgrammedDay.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProgrammedDay, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProgrammedDay;
+  static deserializeBinaryFromReader(message: ProgrammedDay, reader: jspb.BinaryReader): ProgrammedDay;
+}
+
+export namespace ProgrammedDay {
+  export type AsObject = {
+    day?: MonthDayDate.AsObject,
+    holiday?: CountryHoliday.AsObject,
+  }
+
+  export enum DaytypeCase {
+    DAYTYPE_NOT_SET = 0,
+    DAY = 1,
+    HOLIDAY = 2,
+  }
+}
+
+export class ProgrammedDates extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getProgrammedDatesId(): string;
+  setProgrammedDatesId(value: string): void;
+
+  getProgrammedDatesName(): string;
+  setProgrammedDatesName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getTimezone(): api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap];
+  setTimezone(value: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap]): void;
+
+  clearDaysList(): void;
+  getDaysList(): Array<ProgrammedDay>;
+  setDaysList(value: Array<ProgrammedDay>): void;
+  addDays(value?: ProgrammedDay, index?: number): ProgrammedDay;
+
+  hasLastUpdated(): boolean;
+  clearLastUpdated(): void;
+  getLastUpdated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastUpdated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProgrammedDates.AsObject;
+  static toObject(includeInstance: boolean, msg: ProgrammedDates): ProgrammedDates.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProgrammedDates, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProgrammedDates;
+  static deserializeBinaryFromReader(message: ProgrammedDates, reader: jspb.BinaryReader): ProgrammedDates;
+}
+
+export namespace ProgrammedDates {
+  export type AsObject = {
+    orgId: string,
+    programmedDatesId: string,
+    programmedDatesName: string,
+    description: string,
+    timezone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
+    daysList: Array<ProgrammedDay.AsObject>,
+    lastUpdated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class ObservedHolidays extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getObservedHolidaysId(): string;
+  setObservedHolidaysId(value: string): void;
+
+  getObservedHolidaysName(): string;
+  setObservedHolidaysName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getTimezone(): api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap];
+  setTimezone(value: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap]): void;
+
+  clearDaysList(): void;
+  getDaysList(): Array<ObservedHoliday>;
+  setDaysList(value: Array<ObservedHoliday>): void;
+  addDays(value?: ObservedHoliday, index?: number): ObservedHoliday;
+
+  hasLastUpdated(): boolean;
+  clearLastUpdated(): void;
+  getLastUpdated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastUpdated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ObservedHolidays.AsObject;
+  static toObject(includeInstance: boolean, msg: ObservedHolidays): ObservedHolidays.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ObservedHolidays, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObservedHolidays;
+  static deserializeBinaryFromReader(message: ObservedHolidays, reader: jspb.BinaryReader): ObservedHolidays;
+}
+
+export namespace ObservedHolidays {
+  export type AsObject = {
+    orgId: string,
+    observedHolidaysId: string,
+    observedHolidaysName: string,
+    description: string,
+    timezone: api_commons_org_pb.TimeZoneMap[keyof api_commons_org_pb.TimeZoneMap],
+    daysList: Array<ObservedHoliday.AsObject>,
+    lastUpdated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class ObservedHoliday extends jspb.Message {
+  hasDay(): boolean;
+  clearDay(): void;
+  getDay(): MonthDayDate | undefined;
+  setDay(value?: MonthDayDate): void;
+
+  hasHoliday(): boolean;
+  clearHoliday(): void;
+  getHoliday(): CountryHoliday | undefined;
+  setHoliday(value?: CountryHoliday): void;
+
+  getDaytypeCase(): ObservedHoliday.DaytypeCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ObservedHoliday.AsObject;
+  static toObject(includeInstance: boolean, msg: ObservedHoliday): ObservedHoliday.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ObservedHoliday, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObservedHoliday;
+  static deserializeBinaryFromReader(message: ObservedHoliday, reader: jspb.BinaryReader): ObservedHoliday;
+}
+
+export namespace ObservedHoliday {
+  export type AsObject = {
+    day?: MonthDayDate.AsObject,
+    holiday?: CountryHoliday.AsObject,
+  }
+
+  export enum DaytypeCase {
+    DAYTYPE_NOT_SET = 0,
+    DAY = 1,
+    HOLIDAY = 2,
   }
 }
 

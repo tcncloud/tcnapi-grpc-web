@@ -796,7 +796,8 @@ proto.api.commons.org.License.toObject = function(includeInstance, msg) {
   var f, obj = {
     app: jspb.Message.getFieldWithDefault(msg, 1, 0),
     cardsList: jspb.Message.toObjectList(msg.getCardsList(),
-    proto.api.commons.org.License.Card.toObject, includeInstance)
+    proto.api.commons.org.License.Card.toObject, includeInstance),
+    name: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -842,6 +843,10 @@ proto.api.commons.org.License.deserializeBinaryFromReader = function(msg, reader
       reader.readMessage(value,proto.api.commons.org.License.Card.deserializeBinaryFromReader);
       msg.addCards(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -884,6 +889,13 @@ proto.api.commons.org.License.serializeBinaryToWriter = function(message, writer
       2,
       f,
       proto.api.commons.org.License.Card.serializeBinaryToWriter
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -930,7 +942,8 @@ proto.api.commons.org.License.Card.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
     permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
-    proto.api.commons.org.License.Permission.toObject, includeInstance)
+    proto.api.commons.org.License.Permission.toObject, includeInstance),
+    name: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -976,6 +989,10 @@ proto.api.commons.org.License.Card.deserializeBinaryFromReader = function(msg, r
       reader.readMessage(value,proto.api.commons.org.License.Permission.deserializeBinaryFromReader);
       msg.addPermissions(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1018,6 +1035,13 @@ proto.api.commons.org.License.Card.serializeBinaryToWriter = function(message, w
       2,
       f,
       proto.api.commons.org.License.Permission.serializeBinaryToWriter
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -1079,6 +1103,24 @@ proto.api.commons.org.License.Card.prototype.clearPermissionsList = function() {
 };
 
 
+/**
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.api.commons.org.License.Card.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.License.Card} returns this
+ */
+proto.api.commons.org.License.Card.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -1120,7 +1162,8 @@ proto.api.commons.org.License.Permission.toObject = function(includeInstance, ms
   var f, obj = {
     permission: jspb.Message.getFieldWithDefault(msg, 1, 0),
     enabled: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    featuresList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+    featuresList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    name: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1169,6 +1212,10 @@ proto.api.commons.org.License.Permission.deserializeBinaryFromReader = function(
       var value = /** @type {string} */ (reader.readString());
       msg.addFeatures(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1216,6 +1263,13 @@ proto.api.commons.org.License.Permission.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeRepeatedString(
       3,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -1296,6 +1350,24 @@ proto.api.commons.org.License.Permission.prototype.clearFeaturesList = function(
 
 
 /**
+ * optional string name = 4;
+ * @return {string}
+ */
+proto.api.commons.org.License.Permission.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.License.Permission} returns this
+ */
+proto.api.commons.org.License.Permission.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
  * optional annotations.perms.Application app = 1;
  * @return {!proto.annotations.perms.Application}
  */
@@ -1348,6 +1420,24 @@ proto.api.commons.org.License.prototype.addCards = function(opt_value, opt_index
  */
 proto.api.commons.org.License.prototype.clearCardsList = function() {
   return this.setCardsList([]);
+};
+
+
+/**
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.api.commons.org.License.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.License} returns this
+ */
+proto.api.commons.org.License.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

@@ -4422,6 +4422,9 @@ export class AuthenticationPreferences extends jspb.Message {
   getAgentApiKey(): string;
   setAgentApiKey(value: string): void;
 
+  getUserAuthorizationViaIp(): boolean;
+  setUserAuthorizationViaIp(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuthenticationPreferences.AsObject;
   static toObject(includeInstance: boolean, msg: AuthenticationPreferences): AuthenticationPreferences.AsObject;
@@ -4437,6 +4440,7 @@ export namespace AuthenticationPreferences {
     authorizationViaIp: boolean,
     allowedIpsList: Array<string>,
     agentApiKey: string,
+    userAuthorizationViaIp: boolean,
   }
 }
 

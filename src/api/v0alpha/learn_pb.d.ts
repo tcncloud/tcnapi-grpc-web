@@ -887,3 +887,109 @@ export namespace SearchContentByVersionReq {
   }
 }
 
+export class ReviewFileVersionsReq extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  getVersion(): string;
+  setVersion(value: string): void;
+
+  getLocale(): string;
+  setLocale(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewFileVersionsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewFileVersionsReq): ReviewFileVersionsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReviewFileVersionsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewFileVersionsReq;
+  static deserializeBinaryFromReader(message: ReviewFileVersionsReq, reader: jspb.BinaryReader): ReviewFileVersionsReq;
+}
+
+export namespace ReviewFileVersionsReq {
+  export type AsObject = {
+    url: string,
+    version: string,
+    locale: string,
+  }
+}
+
+export class ReviewFileVersionsRes extends jspb.Message {
+  getContent(): string;
+  setContent(value: string): void;
+
+  getDiffContent(): string;
+  setDiffContent(value: string): void;
+
+  clearImagesList(): void;
+  getImagesList(): Array<LearnImage>;
+  setImagesList(value: Array<LearnImage>): void;
+  addImages(value?: LearnImage, index?: number): LearnImage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewFileVersionsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewFileVersionsRes): ReviewFileVersionsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReviewFileVersionsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewFileVersionsRes;
+  static deserializeBinaryFromReader(message: ReviewFileVersionsRes, reader: jspb.BinaryReader): ReviewFileVersionsRes;
+}
+
+export namespace ReviewFileVersionsRes {
+  export type AsObject = {
+    content: string,
+    diffContent: string,
+    imagesList: Array<LearnImage.AsObject>,
+  }
+}
+
+export class ReviewVersionReq extends jspb.Message {
+  getVersion(): string;
+  setVersion(value: string): void;
+
+  getLocale(): string;
+  setLocale(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewVersionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewVersionReq): ReviewVersionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReviewVersionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewVersionReq;
+  static deserializeBinaryFromReader(message: ReviewVersionReq, reader: jspb.BinaryReader): ReviewVersionReq;
+}
+
+export namespace ReviewVersionReq {
+  export type AsObject = {
+    version: string,
+    locale: string,
+  }
+}
+
+export class ReviewVersionRes extends jspb.Message {
+  getDiffUrls(): string;
+  setDiffUrls(value: string): void;
+
+  getDiffFileNames(): string;
+  setDiffFileNames(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewVersionRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewVersionRes): ReviewVersionRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReviewVersionRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewVersionRes;
+  static deserializeBinaryFromReader(message: ReviewVersionRes, reader: jspb.BinaryReader): ReviewVersionRes;
+}
+
+export namespace ReviewVersionRes {
+  export type AsObject = {
+    diffUrls: string,
+    diffFileNames: string,
+  }
+}
+

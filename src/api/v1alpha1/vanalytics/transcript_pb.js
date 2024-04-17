@@ -29,6 +29,8 @@ var api_v1alpha1_vanalytics_aclpb_aclpb_pb = require('../../../api/v1alpha1/vana
 goog.object.extend(proto, api_v1alpha1_vanalytics_aclpb_aclpb_pb);
 var api_v1alpha1_vanalytics_expr_pb = require('../../../api/v1alpha1/vanalytics/expr_pb.js');
 goog.object.extend(proto, api_v1alpha1_vanalytics_expr_pb);
+var api_v1alpha1_vanalytics_transcript_summary_pb = require('../../../api/v1alpha1/vanalytics/transcript_summary_pb.js');
+goog.object.extend(proto, api_v1alpha1_vanalytics_transcript_summary_pb);
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 goog.object.extend(proto, google_protobuf_duration_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
@@ -16325,7 +16327,8 @@ proto.api.v1alpha1.vanalytics.Transcript.toObject = function(includeInstance, ms
     flagSummary: (f = msg.getFlagSummary()) && proto.api.v1alpha1.vanalytics.FlagSummary.toObject(includeInstance, f),
     deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     numberFormat: jspb.Message.getFieldWithDefault(msg, 21, ""),
-    agentResponseMap: (f = msg.getAgentResponseMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.vanalytics.AgentResponse.toObject) : []
+    agentResponseMap: (f = msg.getAgentResponseMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.vanalytics.AgentResponse.toObject) : [],
+    summary: (f = msg.getSummary()) && api_v1alpha1_vanalytics_transcript_summary_pb.TranscriptSummary.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16447,6 +16450,11 @@ proto.api.v1alpha1.vanalytics.Transcript.deserializeBinaryFromReader = function(
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.api.v1alpha1.vanalytics.AgentResponse.deserializeBinaryFromReader, "", new proto.api.v1alpha1.vanalytics.AgentResponse());
          });
+      break;
+    case 24:
+      var value = new api_v1alpha1_vanalytics_transcript_summary_pb.TranscriptSummary;
+      reader.readMessage(value,api_v1alpha1_vanalytics_transcript_summary_pb.TranscriptSummary.deserializeBinaryFromReader);
+      msg.setSummary(value);
       break;
     default:
       reader.skipField();
@@ -16614,6 +16622,14 @@ proto.api.v1alpha1.vanalytics.Transcript.serializeBinaryToWriter = function(mess
   f = message.getAgentResponseMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(22, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.api.v1alpha1.vanalytics.AgentResponse.serializeBinaryToWriter);
+  }
+  f = message.getSummary();
+  if (f != null) {
+    writer.writeMessage(
+      24,
+      f,
+      api_v1alpha1_vanalytics_transcript_summary_pb.TranscriptSummary.serializeBinaryToWriter
+    );
   }
 };
 
@@ -17115,6 +17131,43 @@ proto.api.v1alpha1.vanalytics.Transcript.prototype.getAgentResponseMap = functio
 proto.api.v1alpha1.vanalytics.Transcript.prototype.clearAgentResponseMap = function() {
   this.getAgentResponseMap().clear();
   return this;
+};
+
+
+/**
+ * optional TranscriptSummary summary = 24;
+ * @return {?proto.api.v1alpha1.vanalytics.TranscriptSummary}
+ */
+proto.api.v1alpha1.vanalytics.Transcript.prototype.getSummary = function() {
+  return /** @type{?proto.api.v1alpha1.vanalytics.TranscriptSummary} */ (
+    jspb.Message.getWrapperField(this, api_v1alpha1_vanalytics_transcript_summary_pb.TranscriptSummary, 24));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.vanalytics.TranscriptSummary|undefined} value
+ * @return {!proto.api.v1alpha1.vanalytics.Transcript} returns this
+*/
+proto.api.v1alpha1.vanalytics.Transcript.prototype.setSummary = function(value) {
+  return jspb.Message.setWrapperField(this, 24, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.vanalytics.Transcript} returns this
+ */
+proto.api.v1alpha1.vanalytics.Transcript.prototype.clearSummary = function() {
+  return this.setSummary(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.vanalytics.Transcript.prototype.hasSummary = function() {
+  return jspb.Message.getField(this, 24) != null;
 };
 
 

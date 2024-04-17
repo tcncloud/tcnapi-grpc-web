@@ -18778,7 +18778,8 @@ proto.api.commons.org.IntegrationLink.toObject = function(includeInstance, msg) 
     order: jspb.Message.getFieldWithDefault(msg, 6, 0),
     parametersList: jspb.Message.toObjectList(msg.getParametersList(),
     proto.api.commons.org.IntegrationLinkParameter.toObject, includeInstance),
-    configurationName: jspb.Message.getFieldWithDefault(msg, 8, "")
+    configurationName: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    huntGroupSid: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -18847,6 +18848,10 @@ proto.api.commons.org.IntegrationLink.deserializeBinaryFromReader = function(msg
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setConfigurationName(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setHuntGroupSid(value);
       break;
     default:
       reader.skipField();
@@ -18931,6 +18936,13 @@ proto.api.commons.org.IntegrationLink.serializeBinaryToWriter = function(message
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getHuntGroupSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      9,
       f
     );
   }
@@ -19098,6 +19110,24 @@ proto.api.commons.org.IntegrationLink.prototype.getConfigurationName = function(
  */
 proto.api.commons.org.IntegrationLink.prototype.setConfigurationName = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional int64 hunt_group_sid = 9;
+ * @return {number}
+ */
+proto.api.commons.org.IntegrationLink.prototype.getHuntGroupSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.org.IntegrationLink} returns this
+ */
+proto.api.commons.org.IntegrationLink.prototype.setHuntGroupSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 

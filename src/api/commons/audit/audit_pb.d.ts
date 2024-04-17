@@ -6,6 +6,7 @@ import * as api_commons_audit_agent_training_events_pb from "../../../api/common
 import * as api_commons_audit_asm_events_pb from "../../../api/commons/audit/asm_events_pb";
 import * as api_commons_audit_billing_events_pb from "../../../api/commons/audit/billing_events_pb";
 import * as api_commons_audit_compliance_events_pb from "../../../api/commons/audit/compliance_events_pb";
+import * as api_commons_audit_contactmanager_events_pb from "../../../api/commons/audit/contactmanager_events_pb";
 import * as api_commons_audit_delivery_events_pb from "../../../api/commons/audit/delivery_events_pb";
 import * as api_commons_audit_event_types_pb from "../../../api/commons/audit/event_types_pb";
 import * as api_commons_audit_events_pb from "../../../api/commons/audit/events_pb";
@@ -577,6 +578,26 @@ export class AuditEvent extends jspb.Message {
   getDeliverySuccessEvent(): api_commons_audit_delivery_events_pb.DeliverySuccessEvent | undefined;
   setDeliverySuccessEvent(value?: api_commons_audit_delivery_events_pb.DeliverySuccessEvent): void;
 
+  hasContactManagerEntryAddEvent(): boolean;
+  clearContactManagerEntryAddEvent(): void;
+  getContactManagerEntryAddEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerEntryAddEvent | undefined;
+  setContactManagerEntryAddEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerEntryAddEvent): void;
+
+  hasContactManagerEntryGetEncEvent(): boolean;
+  clearContactManagerEntryGetEncEvent(): void;
+  getContactManagerEntryGetEncEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerEntryGetEncEvent | undefined;
+  setContactManagerEntryGetEncEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerEntryGetEncEvent): void;
+
+  hasContactManagerDeleteEvent(): boolean;
+  clearContactManagerDeleteEvent(): void;
+  getContactManagerDeleteEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent | undefined;
+  setContactManagerDeleteEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent): void;
+
+  hasContactManagerKycEvent(): boolean;
+  clearContactManagerKycEvent(): void;
+  getContactManagerKycEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent | undefined;
+  setContactManagerKycEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent): void;
+
   getEventCase(): AuditEvent.EventCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuditEvent.AsObject;
@@ -704,6 +725,10 @@ export namespace AuditEvent {
     billingUpdateRateDefinitionEvent?: api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent.AsObject,
     deliveryFailureEvent?: api_commons_audit_delivery_events_pb.DeliveryFailureEvent.AsObject,
     deliverySuccessEvent?: api_commons_audit_delivery_events_pb.DeliverySuccessEvent.AsObject,
+    contactManagerEntryAddEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerEntryAddEvent.AsObject,
+    contactManagerEntryGetEncEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerEntryGetEncEvent.AsObject,
+    contactManagerDeleteEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.AsObject,
+    contactManagerKycEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.AsObject,
   }
 
   export enum EventCase {
@@ -816,6 +841,10 @@ export namespace AuditEvent {
     BILLING_UPDATE_RATE_DEFINITION_EVENT = 1010,
     DELIVERY_FAILURE_EVENT = 1100,
     DELIVERY_SUCCESS_EVENT = 1101,
+    CONTACT_MANAGER_ENTRY_ADD_EVENT = 1200,
+    CONTACT_MANAGER_ENTRY_GET_ENC_EVENT = 1201,
+    CONTACT_MANAGER_DELETE_EVENT = 1202,
+    CONTACT_MANAGER_KYC_EVENT = 1203,
   }
 }
 

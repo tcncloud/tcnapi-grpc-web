@@ -126,6 +126,11 @@ export class User extends jspb.Message {
   getEmailVerified(): boolean;
   setEmailVerified(value: boolean): void;
 
+  clearWhitelistedIpsList(): void;
+  getWhitelistedIpsList(): Array<string>;
+  setWhitelistedIpsList(value: Array<string>): void;
+  addWhitelistedIps(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): User.AsObject;
   static toObject(includeInstance: boolean, msg: User): User.AsObject;
@@ -172,6 +177,7 @@ export namespace User {
     agent: boolean,
     accountOwner: boolean,
     emailVerified: boolean,
+    whitelistedIpsList: Array<string>,
   }
 
   export class RegionSids extends jspb.Message {
@@ -223,6 +229,11 @@ export class MfaInfo extends jspb.Message {
   getOtp(): MfaInfo.OtpType | undefined;
   setOtp(value?: MfaInfo.OtpType): void;
 
+  hasDuo(): boolean;
+  clearDuo(): void;
+  getDuo(): MfaInfo.Duo | undefined;
+  setDuo(value?: MfaInfo.Duo): void;
+
   getMfaTypeCase(): MfaInfo.MfaTypeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MfaInfo.AsObject;
@@ -241,6 +252,7 @@ export namespace MfaInfo {
     mfaEnabled: boolean,
     none?: MfaInfo.NoneSelected.AsObject,
     otp?: MfaInfo.OtpType.AsObject,
+    duo?: MfaInfo.Duo.AsObject,
   }
 
   export class NoneSelected extends jspb.Message {
@@ -309,10 +321,31 @@ export namespace MfaInfo {
     }
   }
 
+  export class Duo extends jspb.Message {
+    getDuoUsername(): string;
+    setDuoUsername(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Duo.AsObject;
+    static toObject(includeInstance: boolean, msg: Duo): Duo.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Duo, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Duo;
+    static deserializeBinaryFromReader(message: Duo, reader: jspb.BinaryReader): Duo;
+  }
+
+  export namespace Duo {
+    export type AsObject = {
+      duoUsername: string,
+    }
+  }
+
   export enum MfaTypeCase {
     MFA_TYPE_NOT_SET = 0,
     NONE = 10,
     OTP = 11,
+    DUO = 12,
   }
 }
 
