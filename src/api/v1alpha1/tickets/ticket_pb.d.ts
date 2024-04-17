@@ -1476,3 +1476,157 @@ export namespace ChangeTicketStatusResponse {
   }
 }
 
+export class AddEntityRefRequest extends jspb.Message {
+  hasEntityRef(): boolean;
+  clearEntityRef(): void;
+  getEntityRef(): EntityRef | undefined;
+  setEntityRef(value?: EntityRef): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddEntityRefRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AddEntityRefRequest): AddEntityRefRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddEntityRefRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddEntityRefRequest;
+  static deserializeBinaryFromReader(message: AddEntityRefRequest, reader: jspb.BinaryReader): AddEntityRefRequest;
+}
+
+export namespace AddEntityRefRequest {
+  export type AsObject = {
+    entityRef?: EntityRef.AsObject,
+  }
+}
+
+export class AddEntityRefResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddEntityRefResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AddEntityRefResponse): AddEntityRefResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddEntityRefResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddEntityRefResponse;
+  static deserializeBinaryFromReader(message: AddEntityRefResponse, reader: jspb.BinaryReader): AddEntityRefResponse;
+}
+
+export namespace AddEntityRefResponse {
+  export type AsObject = {
+  }
+}
+
+export class ListEntityRefsByTicketRequest extends jspb.Message {
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListEntityRefsByTicketRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListEntityRefsByTicketRequest): ListEntityRefsByTicketRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListEntityRefsByTicketRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListEntityRefsByTicketRequest;
+  static deserializeBinaryFromReader(message: ListEntityRefsByTicketRequest, reader: jspb.BinaryReader): ListEntityRefsByTicketRequest;
+}
+
+export namespace ListEntityRefsByTicketRequest {
+  export type AsObject = {
+    ticketCode: string,
+  }
+}
+
+export class ListEntityRefsByTicketResponse extends jspb.Message {
+  clearEntityRefList(): void;
+  getEntityRefList(): Array<EntityRef>;
+  setEntityRefList(value: Array<EntityRef>): void;
+  addEntityRef(value?: EntityRef, index?: number): EntityRef;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListEntityRefsByTicketResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListEntityRefsByTicketResponse): ListEntityRefsByTicketResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListEntityRefsByTicketResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListEntityRefsByTicketResponse;
+  static deserializeBinaryFromReader(message: ListEntityRefsByTicketResponse, reader: jspb.BinaryReader): ListEntityRefsByTicketResponse;
+}
+
+export namespace ListEntityRefsByTicketResponse {
+  export type AsObject = {
+    entityRefList: Array<EntityRef.AsObject>,
+  }
+}
+
+export class ListTicketsByEntityRefRequest extends jspb.Message {
+  getUri(): string;
+  setUri(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTicketsByEntityRefRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTicketsByEntityRefRequest): ListTicketsByEntityRefRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTicketsByEntityRefRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTicketsByEntityRefRequest;
+  static deserializeBinaryFromReader(message: ListTicketsByEntityRefRequest, reader: jspb.BinaryReader): ListTicketsByEntityRefRequest;
+}
+
+export namespace ListTicketsByEntityRefRequest {
+  export type AsObject = {
+    uri: string,
+  }
+}
+
+export class ListTicketsByEntityRefResponse extends jspb.Message {
+  clearTicketsList(): void;
+  getTicketsList(): Array<api_commons_tickets_pb.Ticket>;
+  setTicketsList(value: Array<api_commons_tickets_pb.Ticket>): void;
+  addTickets(value?: api_commons_tickets_pb.Ticket, index?: number): api_commons_tickets_pb.Ticket;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTicketsByEntityRefResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTicketsByEntityRefResponse): ListTicketsByEntityRefResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTicketsByEntityRefResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTicketsByEntityRefResponse;
+  static deserializeBinaryFromReader(message: ListTicketsByEntityRefResponse, reader: jspb.BinaryReader): ListTicketsByEntityRefResponse;
+}
+
+export namespace ListTicketsByEntityRefResponse {
+  export type AsObject = {
+    ticketsList: Array<api_commons_tickets_pb.Ticket.AsObject>,
+  }
+}
+
+export class EntityRef extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getRegionId(): string;
+  setRegionId(value: string): void;
+
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
+  getUri(): string;
+  setUri(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EntityRef.AsObject;
+  static toObject(includeInstance: boolean, msg: EntityRef): EntityRef.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EntityRef, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EntityRef;
+  static deserializeBinaryFromReader(message: EntityRef, reader: jspb.BinaryReader): EntityRef;
+}
+
+export namespace EntityRef {
+  export type AsObject = {
+    orgId: string,
+    regionId: string,
+    ticketCode: string,
+    uri: string,
+  }
+}
+
