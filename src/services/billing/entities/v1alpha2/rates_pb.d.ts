@@ -90,6 +90,12 @@ export class RateDefinition extends jspb.Message {
   getGroupId(): string;
   setGroupId(value: string): void;
 
+  getConfigSha(): string;
+  setConfigSha(value: string): void;
+
+  getThreadId(): string;
+  setThreadId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RateDefinition.AsObject;
   static toObject(includeInstance: boolean, msg: RateDefinition): RateDefinition.AsObject;
@@ -114,6 +120,8 @@ export namespace RateDefinition {
     effectiveTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     config?: RateDefinitionConfig.AsObject,
     groupId: string,
+    configSha: string,
+    threadId: string,
   }
 }
 

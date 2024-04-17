@@ -103,7 +103,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.commons.audit.ContactManagerKycEvent = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.audit.ContactManagerKycEvent.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.commons.audit.ContactManagerKycEvent, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -246,9 +246,7 @@ proto.api.commons.audit.ContactManagerEntryGetEncEvent.prototype.toObject = func
  */
 proto.api.commons.audit.ContactManagerEntryGetEncEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    createdById: jspb.Message.getFieldWithDefault(msg, 3, "")
+
   };
 
   if (includeInstance) {
@@ -285,18 +283,6 @@ proto.api.commons.audit.ContactManagerEntryGetEncEvent.deserializeBinaryFromRead
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setContactManagerListId(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setContactManagerEntryId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCreatedById(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -326,81 +312,6 @@ proto.api.commons.audit.ContactManagerEntryGetEncEvent.prototype.serializeBinary
  */
 proto.api.commons.audit.ContactManagerEntryGetEncEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getContactManagerListId();
-  if (f !== 0) {
-    writer.writeInt64(
-      1,
-      f
-    );
-  }
-  f = message.getContactManagerEntryId();
-  if (f !== 0) {
-    writer.writeInt64(
-      2,
-      f
-    );
-  }
-  f = message.getCreatedById();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-};
-
-
-/**
- * optional int64 contact_manager_list_id = 1;
- * @return {number}
- */
-proto.api.commons.audit.ContactManagerEntryGetEncEvent.prototype.getContactManagerListId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.commons.audit.ContactManagerEntryGetEncEvent} returns this
- */
-proto.api.commons.audit.ContactManagerEntryGetEncEvent.prototype.setContactManagerListId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-/**
- * optional int64 contact_manager_entry_id = 2;
- * @return {number}
- */
-proto.api.commons.audit.ContactManagerEntryGetEncEvent.prototype.getContactManagerEntryId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.commons.audit.ContactManagerEntryGetEncEvent} returns this
- */
-proto.api.commons.audit.ContactManagerEntryGetEncEvent.prototype.setContactManagerEntryId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
-};
-
-
-/**
- * optional string created_by_id = 3;
- * @return {string}
- */
-proto.api.commons.audit.ContactManagerEntryGetEncEvent.prototype.getCreatedById = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.audit.ContactManagerEntryGetEncEvent} returns this
- */
-proto.api.commons.audit.ContactManagerEntryGetEncEvent.prototype.setCreatedById = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -436,8 +347,7 @@ proto.api.commons.audit.ContactManagerDeleteEvent.prototype.toObject = function(
  */
 proto.api.commons.audit.ContactManagerDeleteEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    deletedBy: jspb.Message.getFieldWithDefault(msg, 2, "")
+
   };
 
   if (includeInstance) {
@@ -474,14 +384,6 @@ proto.api.commons.audit.ContactManagerDeleteEvent.deserializeBinaryFromReader = 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setContactManagerListId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDeletedBy(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -511,66 +413,9 @@ proto.api.commons.audit.ContactManagerDeleteEvent.prototype.serializeBinary = fu
  */
 proto.api.commons.audit.ContactManagerDeleteEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getContactManagerListId();
-  if (f !== 0) {
-    writer.writeInt64(
-      1,
-      f
-    );
-  }
-  f = message.getDeletedBy();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
-/**
- * optional int64 contact_manager_list_id = 1;
- * @return {number}
- */
-proto.api.commons.audit.ContactManagerDeleteEvent.prototype.getContactManagerListId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.commons.audit.ContactManagerDeleteEvent} returns this
- */
-proto.api.commons.audit.ContactManagerDeleteEvent.prototype.setContactManagerListId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-/**
- * optional string deleted_by = 2;
- * @return {string}
- */
-proto.api.commons.audit.ContactManagerDeleteEvent.prototype.getDeletedBy = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.audit.ContactManagerDeleteEvent} returns this
- */
-proto.api.commons.audit.ContactManagerDeleteEvent.prototype.setDeletedBy = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.commons.audit.ContactManagerKycEvent.repeatedFields_ = [2];
 
 
 
@@ -603,12 +448,7 @@ proto.api.commons.audit.ContactManagerKycEvent.prototype.toObject = function(opt
  */
 proto.api.commons.audit.ContactManagerKycEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    kycDetailsList: jspb.Message.toObjectList(msg.getKycDetailsList(),
-    api_v1alpha1_contactmanager_contactmanager_pb.ContactManagerEntryVal.toObject, includeInstance),
-    projectId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    createdById: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    isEncrypted: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+
   };
 
   if (includeInstance) {
@@ -645,27 +485,6 @@ proto.api.commons.audit.ContactManagerKycEvent.deserializeBinaryFromReader = fun
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setContactManagerListId(value);
-      break;
-    case 2:
-      var value = new api_v1alpha1_contactmanager_contactmanager_pb.ContactManagerEntryVal;
-      reader.readMessage(value,api_v1alpha1_contactmanager_contactmanager_pb.ContactManagerEntryVal.deserializeBinaryFromReader);
-      msg.addKycDetails(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setProjectId(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCreatedById(value);
-      break;
-    case 5:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsEncrypted(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -695,152 +514,6 @@ proto.api.commons.audit.ContactManagerKycEvent.prototype.serializeBinary = funct
  */
 proto.api.commons.audit.ContactManagerKycEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getContactManagerListId();
-  if (f !== 0) {
-    writer.writeInt64(
-      1,
-      f
-    );
-  }
-  f = message.getKycDetailsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      2,
-      f,
-      api_v1alpha1_contactmanager_contactmanager_pb.ContactManagerEntryVal.serializeBinaryToWriter
-    );
-  }
-  f = message.getProjectId();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getCreatedById();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getIsEncrypted();
-  if (f) {
-    writer.writeBool(
-      5,
-      f
-    );
-  }
-};
-
-
-/**
- * optional int64 contact_manager_list_id = 1;
- * @return {number}
- */
-proto.api.commons.audit.ContactManagerKycEvent.prototype.getContactManagerListId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.commons.audit.ContactManagerKycEvent} returns this
- */
-proto.api.commons.audit.ContactManagerKycEvent.prototype.setContactManagerListId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-/**
- * repeated api.v1alpha1.contactmanager.ContactManagerEntryVal kyc_details = 2;
- * @return {!Array<!proto.api.v1alpha1.contactmanager.ContactManagerEntryVal>}
- */
-proto.api.commons.audit.ContactManagerKycEvent.prototype.getKycDetailsList = function() {
-  return /** @type{!Array<!proto.api.v1alpha1.contactmanager.ContactManagerEntryVal>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_contactmanager_contactmanager_pb.ContactManagerEntryVal, 2));
-};
-
-
-/**
- * @param {!Array<!proto.api.v1alpha1.contactmanager.ContactManagerEntryVal>} value
- * @return {!proto.api.commons.audit.ContactManagerKycEvent} returns this
-*/
-proto.api.commons.audit.ContactManagerKycEvent.prototype.setKycDetailsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
-};
-
-
-/**
- * @param {!proto.api.v1alpha1.contactmanager.ContactManagerEntryVal=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntryVal}
- */
-proto.api.commons.audit.ContactManagerKycEvent.prototype.addKycDetails = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.contactmanager.ContactManagerEntryVal, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.commons.audit.ContactManagerKycEvent} returns this
- */
-proto.api.commons.audit.ContactManagerKycEvent.prototype.clearKycDetailsList = function() {
-  return this.setKycDetailsList([]);
-};
-
-
-/**
- * optional string project_id = 3;
- * @return {string}
- */
-proto.api.commons.audit.ContactManagerKycEvent.prototype.getProjectId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.audit.ContactManagerKycEvent} returns this
- */
-proto.api.commons.audit.ContactManagerKycEvent.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string created_by_id = 4;
- * @return {string}
- */
-proto.api.commons.audit.ContactManagerKycEvent.prototype.getCreatedById = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.audit.ContactManagerKycEvent} returns this
- */
-proto.api.commons.audit.ContactManagerKycEvent.prototype.setCreatedById = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional bool is_encrypted = 5;
- * @return {boolean}
- */
-proto.api.commons.audit.ContactManagerKycEvent.prototype.getIsEncrypted = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.commons.audit.ContactManagerKycEvent} returns this
- */
-proto.api.commons.audit.ContactManagerKycEvent.prototype.setIsEncrypted = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 

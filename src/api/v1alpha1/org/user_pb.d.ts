@@ -3098,3 +3098,66 @@ export namespace RemoveGroupedUserIPRestrictionsResponse {
   }
 }
 
+export class ListUsersAllowedIpsRequest extends jspb.Message {
+  clearUserIdsList(): void;
+  getUserIdsList(): Array<string>;
+  setUserIdsList(value: Array<string>): void;
+  addUserIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListUsersAllowedIpsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUsersAllowedIpsRequest): ListUsersAllowedIpsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListUsersAllowedIpsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUsersAllowedIpsRequest;
+  static deserializeBinaryFromReader(message: ListUsersAllowedIpsRequest, reader: jspb.BinaryReader): ListUsersAllowedIpsRequest;
+}
+
+export namespace ListUsersAllowedIpsRequest {
+  export type AsObject = {
+    userIdsList: Array<string>,
+  }
+}
+
+export class ListUsersAllowedIpsResponse extends jspb.Message {
+  getUserAllowedIpsMapMap(): jspb.Map<string, ListUsersAllowedIpsResponse.AllowedIps>;
+  clearUserAllowedIpsMapMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListUsersAllowedIpsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUsersAllowedIpsResponse): ListUsersAllowedIpsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListUsersAllowedIpsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUsersAllowedIpsResponse;
+  static deserializeBinaryFromReader(message: ListUsersAllowedIpsResponse, reader: jspb.BinaryReader): ListUsersAllowedIpsResponse;
+}
+
+export namespace ListUsersAllowedIpsResponse {
+  export type AsObject = {
+    userAllowedIpsMapMap: Array<[string, ListUsersAllowedIpsResponse.AllowedIps.AsObject]>,
+  }
+
+  export class AllowedIps extends jspb.Message {
+    clearIpsList(): void;
+    getIpsList(): Array<string>;
+    setIpsList(value: Array<string>): void;
+    addIps(value: string, index?: number): string;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AllowedIps.AsObject;
+    static toObject(includeInstance: boolean, msg: AllowedIps): AllowedIps.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AllowedIps, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AllowedIps;
+    static deserializeBinaryFromReader(message: AllowedIps, reader: jspb.BinaryReader): AllowedIps;
+  }
+
+  export namespace AllowedIps {
+    export type AsObject = {
+      ipsList: Array<string>,
+    }
+  }
+}
+
