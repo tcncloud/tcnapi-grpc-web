@@ -11896,7 +11896,7 @@ proto.api.v1alpha1.tickets.AddEntityRefResponse.prototype.toObject = function(op
  */
 proto.api.v1alpha1.tickets.AddEntityRefResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    isAdded: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+
   };
 
   if (includeInstance) {
@@ -11933,10 +11933,6 @@ proto.api.v1alpha1.tickets.AddEntityRefResponse.deserializeBinaryFromReader = fu
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsAdded(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -11966,31 +11962,6 @@ proto.api.v1alpha1.tickets.AddEntityRefResponse.prototype.serializeBinary = func
  */
 proto.api.v1alpha1.tickets.AddEntityRefResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getIsAdded();
-  if (f) {
-    writer.writeBool(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional bool is_added = 1;
- * @return {boolean}
- */
-proto.api.v1alpha1.tickets.AddEntityRefResponse.prototype.getIsAdded = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v1alpha1.tickets.AddEntityRefResponse} returns this
- */
-proto.api.v1alpha1.tickets.AddEntityRefResponse.prototype.setIsAdded = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
@@ -12316,7 +12287,7 @@ proto.api.v1alpha1.tickets.ListTicketsByEntityRefRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.tickets.ListTicketsByEntityRefRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entityRefId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    uri: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -12354,8 +12325,8 @@ proto.api.v1alpha1.tickets.ListTicketsByEntityRefRequest.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setEntityRefId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUri(value);
       break;
     default:
       reader.skipField();
@@ -12386,9 +12357,9 @@ proto.api.v1alpha1.tickets.ListTicketsByEntityRefRequest.prototype.serializeBina
  */
 proto.api.v1alpha1.tickets.ListTicketsByEntityRefRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getEntityRefId();
-  if (f !== 0) {
-    writer.writeInt64(
+  f = message.getUri();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -12397,20 +12368,20 @@ proto.api.v1alpha1.tickets.ListTicketsByEntityRefRequest.serializeBinaryToWriter
 
 
 /**
- * optional int64 entity_ref_id = 1;
- * @return {number}
+ * optional string uri = 1;
+ * @return {string}
  */
-proto.api.v1alpha1.tickets.ListTicketsByEntityRefRequest.prototype.getEntityRefId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.api.v1alpha1.tickets.ListTicketsByEntityRefRequest.prototype.getUri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.tickets.ListTicketsByEntityRefRequest} returns this
  */
-proto.api.v1alpha1.tickets.ListTicketsByEntityRefRequest.prototype.setEntityRefId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.api.v1alpha1.tickets.ListTicketsByEntityRefRequest.prototype.setUri = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -12609,8 +12580,7 @@ proto.api.v1alpha1.tickets.EntityRef.toObject = function(includeInstance, msg) {
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     regionId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     ticketCode: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    uri: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    deleted: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+    uri: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -12662,10 +12632,6 @@ proto.api.v1alpha1.tickets.EntityRef.deserializeBinaryFromReader = function(msg,
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setUri(value);
-      break;
-    case 5:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDeleted(value);
       break;
     default:
       reader.skipField();
@@ -12721,13 +12687,6 @@ proto.api.v1alpha1.tickets.EntityRef.serializeBinaryToWriter = function(message,
   if (f.length > 0) {
     writer.writeString(
       4,
-      f
-    );
-  }
-  f = message.getDeleted();
-  if (f) {
-    writer.writeBool(
-      5,
       f
     );
   }
@@ -12803,24 +12762,6 @@ proto.api.v1alpha1.tickets.EntityRef.prototype.getUri = function() {
  */
 proto.api.v1alpha1.tickets.EntityRef.prototype.setUri = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional bool deleted = 5;
- * @return {boolean}
- */
-proto.api.v1alpha1.tickets.EntityRef.prototype.getDeleted = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v1alpha1.tickets.EntityRef} returns this
- */
-proto.api.v1alpha1.tickets.EntityRef.prototype.setDeleted = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 

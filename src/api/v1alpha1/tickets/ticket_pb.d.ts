@@ -1499,9 +1499,6 @@ export namespace AddEntityRefRequest {
 }
 
 export class AddEntityRefResponse extends jspb.Message {
-  getIsAdded(): boolean;
-  setIsAdded(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddEntityRefResponse.AsObject;
   static toObject(includeInstance: boolean, msg: AddEntityRefResponse): AddEntityRefResponse.AsObject;
@@ -1514,7 +1511,6 @@ export class AddEntityRefResponse extends jspb.Message {
 
 export namespace AddEntityRefResponse {
   export type AsObject = {
-    isAdded: boolean,
   }
 }
 
@@ -1561,8 +1557,8 @@ export namespace ListEntityRefsByTicketResponse {
 }
 
 export class ListTicketsByEntityRefRequest extends jspb.Message {
-  getEntityRefId(): number;
-  setEntityRefId(value: number): void;
+  getUri(): string;
+  setUri(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTicketsByEntityRefRequest.AsObject;
@@ -1576,7 +1572,7 @@ export class ListTicketsByEntityRefRequest extends jspb.Message {
 
 export namespace ListTicketsByEntityRefRequest {
   export type AsObject = {
-    entityRefId: number,
+    uri: string,
   }
 }
 
@@ -1615,9 +1611,6 @@ export class EntityRef extends jspb.Message {
   getUri(): string;
   setUri(value: string): void;
 
-  getDeleted(): boolean;
-  setDeleted(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EntityRef.AsObject;
   static toObject(includeInstance: boolean, msg: EntityRef): EntityRef.AsObject;
@@ -1634,7 +1627,6 @@ export namespace EntityRef {
     regionId: string,
     ticketCode: string,
     uri: string,
-    deleted: boolean,
   }
 }
 
