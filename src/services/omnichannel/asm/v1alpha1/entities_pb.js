@@ -1788,7 +1788,7 @@ proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsRequest.serializeBinar
  * @private {!Array<number>}
  * @const
  */
-proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.repeatedFields_ = [1];
+proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.repeatedFields_ = [1,2];
 
 
 
@@ -1822,6 +1822,8 @@ proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.prototype.toO
 proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     sessionsList: jspb.Message.toObjectList(msg.getSessionsList(),
+    services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.toObject, includeInstance),
+    asmUserDetailsList: jspb.Message.toObjectList(msg.getAsmUserDetailsList(),
     services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.toObject, includeInstance)
   };
 
@@ -1864,6 +1866,11 @@ proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.deserializeBi
       reader.readMessage(value,services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.deserializeBinaryFromReader);
       msg.addSessions(value);
       break;
+    case 2:
+      var value = new services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails;
+      reader.readMessage(value,services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.deserializeBinaryFromReader);
+      msg.addAsmUserDetails(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1897,6 +1904,14 @@ proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.serializeBina
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
+      f,
+      services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.serializeBinaryToWriter
+    );
+  }
+  f = message.getAsmUserDetailsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
       f,
       services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.serializeBinaryToWriter
     );
@@ -1939,6 +1954,44 @@ proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.prototype.add
  */
 proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.prototype.clearSessionsList = function() {
   return this.setSessionsList([]);
+};
+
+
+/**
+ * repeated services.omnichannel.asm.entities.v1alpha1.AsmUserDetails asm_user_details = 2;
+ * @return {!Array<!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails>}
+ */
+proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.prototype.getAsmUserDetailsList = function() {
+  return /** @type{!Array<!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails>} */ (
+    jspb.Message.getRepeatedWrapperField(this, services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails>} value
+ * @return {!proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse} returns this
+*/
+proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.prototype.setAsmUserDetailsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails}
+ */
+proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.prototype.addAsmUserDetails = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse} returns this
+ */
+proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.prototype.clearAsmUserDetailsList = function() {
+  return this.setAsmUserDetailsList([]);
 };
 
 
