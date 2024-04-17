@@ -3,6 +3,7 @@
 
 import * as wfo_vanalytics_v2_service_pb from "../../../wfo/vanalytics/v2/service_pb";
 import * as wfo_vanalytics_v2_filter_pb from "../../../wfo/vanalytics/v2/filter_pb";
+import * as wfo_vanalytics_v2_flag_transcript_filter_pb from "../../../wfo/vanalytics/v2/flag_transcript_filter_pb";
 import * as wfo_vanalytics_v2_transcript_pb from "../../../wfo/vanalytics/v2/transcript_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
@@ -60,6 +61,15 @@ type VanalyticsGetFilter = {
   readonly responseType: typeof wfo_vanalytics_v2_filter_pb.Filter;
 };
 
+type VanalyticsListFlagTranscriptFilters = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wfo_vanalytics_v2_flag_transcript_filter_pb.ListFlagTranscriptFiltersRequest;
+  readonly responseType: typeof wfo_vanalytics_v2_flag_transcript_filter_pb.ListFlagTranscriptFiltersResponse;
+};
+
 export class Vanalytics {
   static readonly serviceName: string;
   static readonly SearchTranscripts: VanalyticsSearchTranscripts;
@@ -68,6 +78,7 @@ export class Vanalytics {
   static readonly UpdateFilter: VanalyticsUpdateFilter;
   static readonly DeleteFilter: VanalyticsDeleteFilter;
   static readonly GetFilter: VanalyticsGetFilter;
+  static readonly ListFlagTranscriptFilters: VanalyticsListFlagTranscriptFilters;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -155,6 +166,15 @@ export class VanalyticsClient {
   getFilter(
     requestMessage: wfo_vanalytics_v2_filter_pb.GetFilterRequest,
     callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_filter_pb.Filter|null) => void
+  ): UnaryResponse;
+  listFlagTranscriptFilters(
+    requestMessage: wfo_vanalytics_v2_flag_transcript_filter_pb.ListFlagTranscriptFiltersRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_flag_transcript_filter_pb.ListFlagTranscriptFiltersResponse|null) => void
+  ): UnaryResponse;
+  listFlagTranscriptFilters(
+    requestMessage: wfo_vanalytics_v2_flag_transcript_filter_pb.ListFlagTranscriptFiltersRequest,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_flag_transcript_filter_pb.ListFlagTranscriptFiltersResponse|null) => void
   ): UnaryResponse;
 }
 

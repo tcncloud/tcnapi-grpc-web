@@ -3,6 +3,7 @@
 
 var wfo_vanalytics_v2_service_pb = require("../../../wfo/vanalytics/v2/service_pb");
 var wfo_vanalytics_v2_filter_pb = require("../../../wfo/vanalytics/v2/filter_pb");
+var wfo_vanalytics_v2_flag_transcript_filter_pb = require("../../../wfo/vanalytics/v2/flag_transcript_filter_pb");
 var wfo_vanalytics_v2_transcript_pb = require("../../../wfo/vanalytics/v2/transcript_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
@@ -64,6 +65,15 @@ Vanalytics.GetFilter = {
   responseStream: false,
   requestType: wfo_vanalytics_v2_filter_pb.GetFilterRequest,
   responseType: wfo_vanalytics_v2_filter_pb.Filter
+};
+
+Vanalytics.ListFlagTranscriptFilters = {
+  methodName: "ListFlagTranscriptFilters",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: wfo_vanalytics_v2_flag_transcript_filter_pb.ListFlagTranscriptFiltersRequest,
+  responseType: wfo_vanalytics_v2_flag_transcript_filter_pb.ListFlagTranscriptFiltersResponse
 };
 
 exports.Vanalytics = Vanalytics;
@@ -233,6 +243,37 @@ VanalyticsClient.prototype.getFilter = function getFilter(requestMessage, metada
     callback = arguments[1];
   }
   var client = grpc.unary(Vanalytics.GetFilter, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.listFlagTranscriptFilters = function listFlagTranscriptFilters(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.ListFlagTranscriptFilters, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

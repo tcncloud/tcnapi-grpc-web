@@ -2834,6 +2834,14 @@ export class Portal extends jspb.Message {
   getLastEdited(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLastEdited(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getDefinitionName(): string;
+  setDefinitionName(value: string): void;
+
+  hasPortalSegments(): boolean;
+  clearPortalSegments(): void;
+  getPortalSegments(): PortalSegments | undefined;
+  setPortalSegments(value?: PortalSegments): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Portal.AsObject;
   static toObject(includeInstance: boolean, msg: Portal): Portal.AsObject;
@@ -2853,6 +2861,30 @@ export namespace Portal {
     pluginInstIdsList: Array<string>,
     ptype?: PortalType.AsObject,
     lastEdited?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    definitionName: string,
+    portalSegments?: PortalSegments.AsObject,
+  }
+}
+
+export class PortalSegments extends jspb.Message {
+  clearPortalSegmentsList(): void;
+  getPortalSegmentsList(): Array<PortalSegment>;
+  setPortalSegmentsList(value: Array<PortalSegment>): void;
+  addPortalSegments(value?: PortalSegment, index?: number): PortalSegment;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PortalSegments.AsObject;
+  static toObject(includeInstance: boolean, msg: PortalSegments): PortalSegments.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PortalSegments, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PortalSegments;
+  static deserializeBinaryFromReader(message: PortalSegments, reader: jspb.BinaryReader): PortalSegments;
+}
+
+export namespace PortalSegments {
+  export type AsObject = {
+    portalSegmentsList: Array<PortalSegment.AsObject>,
   }
 }
 
@@ -3321,6 +3353,147 @@ export namespace GenerateEpicKeyPairRes {
   export type AsObject = {
     productionPublicKey: string,
     nonProductionPublicKey: string,
+  }
+}
+
+export class PortalSegment extends jspb.Message {
+  clearWorkflowChoicesList(): void;
+  getWorkflowChoicesList(): Array<PortalWorkflow>;
+  setWorkflowChoicesList(value: Array<PortalWorkflow>): void;
+  addWorkflowChoices(value?: PortalWorkflow, index?: number): PortalWorkflow;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PortalSegment.AsObject;
+  static toObject(includeInstance: boolean, msg: PortalSegment): PortalSegment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PortalSegment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PortalSegment;
+  static deserializeBinaryFromReader(message: PortalSegment, reader: jspb.BinaryReader): PortalSegment;
+}
+
+export namespace PortalSegment {
+  export type AsObject = {
+    workflowChoicesList: Array<PortalWorkflow.AsObject>,
+  }
+}
+
+export class PortalWorkflow extends jspb.Message {
+  getPluginInstanceId(): string;
+  setPluginInstanceId(value: string): void;
+
+  clearActionsList(): void;
+  getActionsList(): Array<Action>;
+  setActionsList(value: Array<Action>): void;
+  addActions(value?: Action, index?: number): Action;
+
+  hasTemplate(): boolean;
+  clearTemplate(): void;
+  getTemplate(): Template | undefined;
+  setTemplate(value?: Template): void;
+
+  clearFormFieldsList(): void;
+  getFormFieldsList(): Array<api_commons_integrations_integrations_pb.FieldDefinition>;
+  setFormFieldsList(value: Array<api_commons_integrations_integrations_pb.FieldDefinition>): void;
+  addFormFields(value?: api_commons_integrations_integrations_pb.FieldDefinition, index?: number): api_commons_integrations_integrations_pb.FieldDefinition;
+
+  getOptsMap(): jspb.Map<string, string>;
+  clearOptsMap(): void;
+  getHeaderText(): string;
+  setHeaderText(value: string): void;
+
+  getFooterText(): string;
+  setFooterText(value: string): void;
+
+  getDemoMode(): boolean;
+  setDemoMode(value: boolean): void;
+
+  clearDemoFailConditionsList(): void;
+  getDemoFailConditionsList(): Array<Condition>;
+  setDemoFailConditionsList(value: Array<Condition>): void;
+  addDemoFailConditions(value?: Condition, index?: number): Condition;
+
+  clearDemoPassConditionsList(): void;
+  getDemoPassConditionsList(): Array<Condition>;
+  setDemoPassConditionsList(value: Array<Condition>): void;
+  addDemoPassConditions(value?: Condition, index?: number): Condition;
+
+  getDemoResultsMap(): jspb.Map<string, string>;
+  clearDemoResultsMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PortalWorkflow.AsObject;
+  static toObject(includeInstance: boolean, msg: PortalWorkflow): PortalWorkflow.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PortalWorkflow, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PortalWorkflow;
+  static deserializeBinaryFromReader(message: PortalWorkflow, reader: jspb.BinaryReader): PortalWorkflow;
+}
+
+export namespace PortalWorkflow {
+  export type AsObject = {
+    pluginInstanceId: string,
+    actionsList: Array<Action.AsObject>,
+    template?: Template.AsObject,
+    formFieldsList: Array<api_commons_integrations_integrations_pb.FieldDefinition.AsObject>,
+    optsMap: Array<[string, string]>,
+    headerText: string,
+    footerText: string,
+    demoMode: boolean,
+    demoFailConditionsList: Array<Condition.AsObject>,
+    demoPassConditionsList: Array<Condition.AsObject>,
+    demoResultsMap: Array<[string, string]>,
+  }
+}
+
+export class Action extends jspb.Message {
+  getWorkflowDefinitionName(): string;
+  setWorkflowDefinitionName(value: string): void;
+
+  getRenameMap(): jspb.Map<string, string>;
+  clearRenameMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Action.AsObject;
+  static toObject(includeInstance: boolean, msg: Action): Action.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Action, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Action;
+  static deserializeBinaryFromReader(message: Action, reader: jspb.BinaryReader): Action;
+}
+
+export namespace Action {
+  export type AsObject = {
+    workflowDefinitionName: string,
+    renameMap: Array<[string, string]>,
+  }
+}
+
+export class Template extends jspb.Message {
+  hasInvoiceTemplate(): boolean;
+  clearInvoiceTemplate(): void;
+  getInvoiceTemplate(): api_commons_integrations_integrations_pb.Invoices | undefined;
+  setInvoiceTemplate(value?: api_commons_integrations_integrations_pb.Invoices): void;
+
+  getValCase(): Template.ValCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Template.AsObject;
+  static toObject(includeInstance: boolean, msg: Template): Template.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Template, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Template;
+  static deserializeBinaryFromReader(message: Template, reader: jspb.BinaryReader): Template;
+}
+
+export namespace Template {
+  export type AsObject = {
+    invoiceTemplate?: api_commons_integrations_integrations_pb.Invoices.AsObject,
+  }
+
+  export enum ValCase {
+    VAL_NOT_SET = 0,
+    INVOICE_TEMPLATE = 1,
   }
 }
 
