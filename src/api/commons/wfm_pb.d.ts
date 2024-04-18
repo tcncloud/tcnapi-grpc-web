@@ -814,6 +814,38 @@ export namespace AgentStateSequence {
   }
 }
 
+export class RgbaColor extends jspb.Message {
+  getRed(): number;
+  setRed(value: number): void;
+
+  getGreen(): number;
+  setGreen(value: number): void;
+
+  getBlue(): number;
+  setBlue(value: number): void;
+
+  getAlpha(): number;
+  setAlpha(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RgbaColor.AsObject;
+  static toObject(includeInstance: boolean, msg: RgbaColor): RgbaColor.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RgbaColor, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RgbaColor;
+  static deserializeBinaryFromReader(message: RgbaColor, reader: jspb.BinaryReader): RgbaColor;
+}
+
+export namespace RgbaColor {
+  export type AsObject = {
+    red: number,
+    green: number,
+    blue: number,
+    alpha: number,
+  }
+}
+
 export interface RegressionForecasterModelTypesMap {
   RANDOM_FOREST: 0;
   ADABOOST: 1;

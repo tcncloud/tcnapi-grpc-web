@@ -23,3 +23,5 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_commons_wfm_pb = require('../../../api/commons/wfm_pb.js');
+goog.object.extend(proto, api_commons_wfm_pb);

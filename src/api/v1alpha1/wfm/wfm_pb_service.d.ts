@@ -1525,6 +1525,24 @@ type WFMListAgentStatesForDay = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayResponse;
 };
 
+type WFMListRealTimeManagementStates = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStatesRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStatesResponse;
+};
+
+type WFMListRealTimeManagementStateColors = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsResponse;
+};
+
 export class WFM {
   static readonly serviceName: string;
   static readonly PerformInitialClientSetup: WFMPerformInitialClientSetup;
@@ -1696,6 +1714,8 @@ export class WFM {
   static readonly RemoveAgentFromSchedule: WFMRemoveAgentFromSchedule;
   static readonly HelloWorldWFMAdherence: WFMHelloWorldWFMAdherence;
   static readonly ListAgentStatesForDay: WFMListAgentStatesForDay;
+  static readonly ListRealTimeManagementStates: WFMListRealTimeManagementStates;
+  static readonly ListRealTimeManagementStateColors: WFMListRealTimeManagementStateColors;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3202,6 +3222,24 @@ export class WFMClient {
   listAgentStatesForDay(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentStatesForDayResponse|null) => void
+  ): UnaryResponse;
+  listRealTimeManagementStates(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStatesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStatesResponse|null) => void
+  ): UnaryResponse;
+  listRealTimeManagementStates(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStatesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStatesResponse|null) => void
+  ): UnaryResponse;
+  listRealTimeManagementStateColors(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsResponse|null) => void
+  ): UnaryResponse;
+  listRealTimeManagementStateColors(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsResponse|null) => void
   ): UnaryResponse;
 }
 
