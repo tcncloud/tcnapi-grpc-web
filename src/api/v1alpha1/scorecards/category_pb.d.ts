@@ -396,11 +396,6 @@ export class ListCategoriesByOrgIdRequest extends jspb.Message {
   setSkillProfilesList(value: Array<number>): void;
   addSkillProfiles(value: number, index?: number): number;
 
-  clearCallTypesList(): void;
-  getCallTypesList(): Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>;
-  setCallTypesList(value: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>): void;
-  addCallTypes(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap], index?: number): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
-
   getCategoryType(): ListCategoriesByOrgIdRequest.CategoryTypeMap[keyof ListCategoriesByOrgIdRequest.CategoryTypeMap];
   setCategoryType(value: ListCategoriesByOrgIdRequest.CategoryTypeMap[keyof ListCategoriesByOrgIdRequest.CategoryTypeMap]): void;
 
@@ -419,7 +414,6 @@ export namespace ListCategoriesByOrgIdRequest {
     orgId: string,
     authorIdsList: Array<string>,
     skillProfilesList: Array<number>,
-    callTypesList: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>,
     categoryType: ListCategoriesByOrgIdRequest.CategoryTypeMap[keyof ListCategoriesByOrgIdRequest.CategoryTypeMap],
   }
 

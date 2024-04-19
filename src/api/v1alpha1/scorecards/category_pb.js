@@ -2985,7 +2985,7 @@ proto.api.v1alpha1.scorecards.SampleAgentCall.prototype.setAgentUserId = functio
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.repeatedFields_ = [2,3,4];
+proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.repeatedFields_ = [2,3];
 
 
 
@@ -3021,8 +3021,7 @@ proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.toObject = function(i
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     authorIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     skillProfilesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    callTypesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    categoryType: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    categoryType: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -3074,12 +3073,6 @@ proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.deserializeBinaryFrom
       }
       break;
     case 4:
-      var values = /** @type {!Array<!proto.api.commons.CallType.Enum>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addCallTypes(values[i]);
-      }
-      break;
-    case 5:
       var value = /** @type {!proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.CategoryType} */ (reader.readEnum());
       msg.setCategoryType(value);
       break;
@@ -3133,17 +3126,10 @@ proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.serializeBinaryToWrit
       f
     );
   }
-  f = message.getCallTypesList();
-  if (f.length > 0) {
-    writer.writePackedEnum(
-      4,
-      f
-    );
-  }
   f = message.getCategoryType();
   if (f !== 0.0) {
     writer.writeEnum(
-      5,
+      4,
       f
     );
   }
@@ -3252,48 +3238,11 @@ proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.prototype.clearSkillP
 
 
 /**
- * repeated api.commons.CallType.Enum call_types = 4;
- * @return {!Array<!proto.api.commons.CallType.Enum>}
- */
-proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.prototype.getCallTypesList = function() {
-  return /** @type {!Array<!proto.api.commons.CallType.Enum>} */ (jspb.Message.getRepeatedField(this, 4));
-};
-
-
-/**
- * @param {!Array<!proto.api.commons.CallType.Enum>} value
- * @return {!proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest} returns this
- */
-proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.prototype.setCallTypesList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
-};
-
-
-/**
- * @param {!proto.api.commons.CallType.Enum} value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest} returns this
- */
-proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.prototype.addCallTypes = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest} returns this
- */
-proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.prototype.clearCallTypesList = function() {
-  return this.setCallTypesList([]);
-};
-
-
-/**
- * optional CategoryType category_type = 5;
+ * optional CategoryType category_type = 4;
  * @return {!proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.CategoryType}
  */
 proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.prototype.getCategoryType = function() {
-  return /** @type {!proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.CategoryType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.CategoryType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -3302,7 +3251,7 @@ proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.prototype.getCategory
  * @return {!proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest} returns this
  */
 proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.prototype.setCategoryType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
