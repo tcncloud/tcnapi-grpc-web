@@ -3,6 +3,7 @@
 
 import * as wfo_vanalytics_v2_service_pb from "../../../wfo/vanalytics/v2/service_pb";
 import * as wfo_vanalytics_v2_filter_pb from "../../../wfo/vanalytics/v2/filter_pb";
+import * as wfo_vanalytics_v2_flag_filter_pb from "../../../wfo/vanalytics/v2/flag_filter_pb";
 import * as wfo_vanalytics_v2_flag_transcript_filter_pb from "../../../wfo/vanalytics/v2/flag_transcript_filter_pb";
 import * as wfo_vanalytics_v2_transcript_pb from "../../../wfo/vanalytics/v2/transcript_pb";
 import {grpc} from "@improbable-eng/grpc-web";
@@ -70,6 +71,15 @@ type VanalyticsListFlagTranscriptFilters = {
   readonly responseType: typeof wfo_vanalytics_v2_flag_transcript_filter_pb.ListFlagTranscriptFiltersResponse;
 };
 
+type VanalyticsListFlagFilters = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wfo_vanalytics_v2_flag_filter_pb.ListFlagFiltersRequest;
+  readonly responseType: typeof wfo_vanalytics_v2_flag_filter_pb.ListFlagFiltersResponse;
+};
+
 export class Vanalytics {
   static readonly serviceName: string;
   static readonly SearchTranscripts: VanalyticsSearchTranscripts;
@@ -79,6 +89,7 @@ export class Vanalytics {
   static readonly DeleteFilter: VanalyticsDeleteFilter;
   static readonly GetFilter: VanalyticsGetFilter;
   static readonly ListFlagTranscriptFilters: VanalyticsListFlagTranscriptFilters;
+  static readonly ListFlagFilters: VanalyticsListFlagFilters;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -175,6 +186,15 @@ export class VanalyticsClient {
   listFlagTranscriptFilters(
     requestMessage: wfo_vanalytics_v2_flag_transcript_filter_pb.ListFlagTranscriptFiltersRequest,
     callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_flag_transcript_filter_pb.ListFlagTranscriptFiltersResponse|null) => void
+  ): UnaryResponse;
+  listFlagFilters(
+    requestMessage: wfo_vanalytics_v2_flag_filter_pb.ListFlagFiltersRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_flag_filter_pb.ListFlagFiltersResponse|null) => void
+  ): UnaryResponse;
+  listFlagFilters(
+    requestMessage: wfo_vanalytics_v2_flag_filter_pb.ListFlagFiltersRequest,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_flag_filter_pb.ListFlagFiltersResponse|null) => void
   ): UnaryResponse;
 }
 
