@@ -15,19 +15,19 @@ type VanalyticsSupportDeleteFlagTranscript = {
   readonly responseType: typeof api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptResponse;
 };
 
-type VanalyticsSupportSearchByOrgId = {
+type VanalyticsSupportListFlaggedTranscriptsByOrgId = {
   readonly methodName: string;
   readonly service: typeof VanalyticsSupport;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_vanalytics_transcript_pb.SearchByOrgIdRequest;
+  readonly requestType: typeof api_v1alpha1_vanalytics_transcript_pb.ListFlaggedTranscriptsByOrgIdRequest;
   readonly responseType: typeof api_v1alpha1_vanalytics_transcript_pb.SearchResponse;
 };
 
 export class VanalyticsSupport {
   static readonly serviceName: string;
   static readonly DeleteFlagTranscript: VanalyticsSupportDeleteFlagTranscript;
-  static readonly SearchByOrgId: VanalyticsSupportSearchByOrgId;
+  static readonly ListFlaggedTranscriptsByOrgId: VanalyticsSupportListFlaggedTranscriptsByOrgId;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -71,13 +71,13 @@ export class VanalyticsSupportClient {
     requestMessage: api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptResponse|null) => void
   ): UnaryResponse;
-  searchByOrgId(
-    requestMessage: api_v1alpha1_vanalytics_transcript_pb.SearchByOrgIdRequest,
+  listFlaggedTranscriptsByOrgId(
+    requestMessage: api_v1alpha1_vanalytics_transcript_pb.ListFlaggedTranscriptsByOrgIdRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_transcript_pb.SearchResponse|null) => void
   ): UnaryResponse;
-  searchByOrgId(
-    requestMessage: api_v1alpha1_vanalytics_transcript_pb.SearchByOrgIdRequest,
+  listFlaggedTranscriptsByOrgId(
+    requestMessage: api_v1alpha1_vanalytics_transcript_pb.ListFlaggedTranscriptsByOrgIdRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_transcript_pb.SearchResponse|null) => void
   ): UnaryResponse;
 }

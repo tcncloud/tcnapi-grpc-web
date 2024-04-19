@@ -2692,29 +2692,247 @@ export namespace AgentResponse {
   }
 }
 
-export class SearchByOrgIdRequest extends jspb.Message {
+export class ListFlaggedTranscriptsByOrgIdRequest extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
-  hasRequest(): boolean;
-  clearRequest(): void;
-  getRequest(): SearchRequest | undefined;
-  setRequest(value?: SearchRequest): void;
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  hasSort(): boolean;
+  clearSort(): void;
+  getSort(): Sort | undefined;
+  setSort(value?: Sort): void;
+
+  hasTranscriptMask(): boolean;
+  clearTranscriptMask(): void;
+  getTranscriptMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setTranscriptMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  hasFlagSummary(): boolean;
+  clearFlagSummary(): void;
+  getFlagSummary(): ListFlaggedTranscriptsByOrgIdRequest.FlagSummary | undefined;
+  setFlagSummary(value?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SearchByOrgIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: SearchByOrgIdRequest): SearchByOrgIdRequest.AsObject;
+  toObject(includeInstance?: boolean): ListFlaggedTranscriptsByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFlaggedTranscriptsByOrgIdRequest): ListFlaggedTranscriptsByOrgIdRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SearchByOrgIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SearchByOrgIdRequest;
-  static deserializeBinaryFromReader(message: SearchByOrgIdRequest, reader: jspb.BinaryReader): SearchByOrgIdRequest;
+  static serializeBinaryToWriter(message: ListFlaggedTranscriptsByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFlaggedTranscriptsByOrgIdRequest;
+  static deserializeBinaryFromReader(message: ListFlaggedTranscriptsByOrgIdRequest, reader: jspb.BinaryReader): ListFlaggedTranscriptsByOrgIdRequest;
 }
 
-export namespace SearchByOrgIdRequest {
+export namespace ListFlaggedTranscriptsByOrgIdRequest {
   export type AsObject = {
     orgId: string,
-    request?: SearchRequest.AsObject,
+    pageSize: number,
+    sort?: Sort.AsObject,
+    transcriptMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    flagSummary?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.AsObject,
+  }
+
+  export class FlagSummary extends jspb.Message {
+    hasNeedReview(): boolean;
+    clearNeedReview(): void;
+    getNeedReview(): ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.NeedReview | undefined;
+    setNeedReview(value?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.NeedReview): void;
+
+    hasReviewStatus(): boolean;
+    clearReviewStatus(): void;
+    getReviewStatus(): ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.ReviewStatus | undefined;
+    setReviewStatus(value?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.ReviewStatus): void;
+
+    hasFlags(): boolean;
+    clearFlags(): void;
+    getFlags(): ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Flags | undefined;
+    setFlags(value?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Flags): void;
+
+    hasCount(): boolean;
+    clearCount(): void;
+    getCount(): ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Count | undefined;
+    setCount(value?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Count): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): FlagSummary.AsObject;
+    static toObject(includeInstance: boolean, msg: FlagSummary): FlagSummary.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: FlagSummary, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): FlagSummary;
+    static deserializeBinaryFromReader(message: FlagSummary, reader: jspb.BinaryReader): FlagSummary;
+  }
+
+  export namespace FlagSummary {
+    export type AsObject = {
+      needReview?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.NeedReview.AsObject,
+      reviewStatus?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.ReviewStatus.AsObject,
+      flags?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Flags.AsObject,
+      count?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Count.AsObject,
+    }
+
+    export class NeedReview extends jspb.Message {
+      hasFlagSids(): boolean;
+      clearFlagSids(): void;
+      getFlagSids(): ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.NeedReview.FlagSids | undefined;
+      setFlagSids(value?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.NeedReview.FlagSids): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): NeedReview.AsObject;
+      static toObject(includeInstance: boolean, msg: NeedReview): NeedReview.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: NeedReview, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): NeedReview;
+      static deserializeBinaryFromReader(message: NeedReview, reader: jspb.BinaryReader): NeedReview;
+    }
+
+    export namespace NeedReview {
+      export type AsObject = {
+        flagSids?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.NeedReview.FlagSids.AsObject,
+      }
+
+      export class FlagSids extends jspb.Message {
+        clearAnyList(): void;
+        getAnyList(): Array<number>;
+        setAnyList(value: Array<number>): void;
+        addAny(value: number, index?: number): number;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): FlagSids.AsObject;
+        static toObject(includeInstance: boolean, msg: FlagSids): FlagSids.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: FlagSids, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): FlagSids;
+        static deserializeBinaryFromReader(message: FlagSids, reader: jspb.BinaryReader): FlagSids;
+      }
+
+      export namespace FlagSids {
+        export type AsObject = {
+          anyList: Array<number>,
+        }
+      }
+    }
+
+    export class ReviewStatus extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<TranscriptReviewStatusMap[keyof TranscriptReviewStatusMap]>;
+      setAnyList(value: Array<TranscriptReviewStatusMap[keyof TranscriptReviewStatusMap]>): void;
+      addAny(value: TranscriptReviewStatusMap[keyof TranscriptReviewStatusMap], index?: number): TranscriptReviewStatusMap[keyof TranscriptReviewStatusMap];
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): ReviewStatus.AsObject;
+      static toObject(includeInstance: boolean, msg: ReviewStatus): ReviewStatus.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: ReviewStatus, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): ReviewStatus;
+      static deserializeBinaryFromReader(message: ReviewStatus, reader: jspb.BinaryReader): ReviewStatus;
+    }
+
+    export namespace ReviewStatus {
+      export type AsObject = {
+        anyList: Array<TranscriptReviewStatusMap[keyof TranscriptReviewStatusMap]>,
+      }
+    }
+
+    export class Flags extends jspb.Message {
+      hasFlagSid(): boolean;
+      clearFlagSid(): void;
+      getFlagSid(): ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Flags.FlagSid | undefined;
+      setFlagSid(value?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Flags.FlagSid): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Flags.AsObject;
+      static toObject(includeInstance: boolean, msg: Flags): Flags.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Flags, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Flags;
+      static deserializeBinaryFromReader(message: Flags, reader: jspb.BinaryReader): Flags;
+    }
+
+    export namespace Flags {
+      export type AsObject = {
+        flagSid?: ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Flags.FlagSid.AsObject,
+      }
+
+      export class FlagSid extends jspb.Message {
+        clearAnyList(): void;
+        getAnyList(): Array<number>;
+        setAnyList(value: Array<number>): void;
+        addAny(value: number, index?: number): number;
+
+        clearAllList(): void;
+        getAllList(): Array<number>;
+        setAllList(value: Array<number>): void;
+        addAll(value: number, index?: number): number;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): FlagSid.AsObject;
+        static toObject(includeInstance: boolean, msg: FlagSid): FlagSid.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: FlagSid, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): FlagSid;
+        static deserializeBinaryFromReader(message: FlagSid, reader: jspb.BinaryReader): FlagSid;
+      }
+
+      export namespace FlagSid {
+        export type AsObject = {
+          anyList: Array<number>,
+          allList: Array<number>,
+        }
+      }
+    }
+
+    export class Count extends jspb.Message {
+      hasGte(): boolean;
+      clearGte(): void;
+      getGte(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setGte(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      hasLte(): boolean;
+      clearLte(): void;
+      getLte(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setLte(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      hasGt(): boolean;
+      clearGt(): void;
+      getGt(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setGt(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      hasLt(): boolean;
+      clearLt(): void;
+      getLt(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setLt(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      hasEq(): boolean;
+      clearEq(): void;
+      getEq(): google_protobuf_wrappers_pb.Int32Value | undefined;
+      setEq(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Count.AsObject;
+      static toObject(includeInstance: boolean, msg: Count): Count.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Count, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Count;
+      static deserializeBinaryFromReader(message: Count, reader: jspb.BinaryReader): Count;
+    }
+
+    export namespace Count {
+      export type AsObject = {
+        gte?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+        lte?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+        gt?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+        lt?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+        eq?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+      }
+    }
   }
 }
 

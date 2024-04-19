@@ -21,12 +21,12 @@ VanalyticsSupport.DeleteFlagTranscript = {
   responseType: api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptResponse
 };
 
-VanalyticsSupport.SearchByOrgId = {
-  methodName: "SearchByOrgId",
+VanalyticsSupport.ListFlaggedTranscriptsByOrgId = {
+  methodName: "ListFlaggedTranscriptsByOrgId",
   service: VanalyticsSupport,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_vanalytics_transcript_pb.SearchByOrgIdRequest,
+  requestType: api_v1alpha1_vanalytics_transcript_pb.ListFlaggedTranscriptsByOrgIdRequest,
   responseType: api_v1alpha1_vanalytics_transcript_pb.SearchResponse
 };
 
@@ -68,11 +68,11 @@ VanalyticsSupportClient.prototype.deleteFlagTranscript = function deleteFlagTran
   };
 };
 
-VanalyticsSupportClient.prototype.searchByOrgId = function searchByOrgId(requestMessage, metadata, callback) {
+VanalyticsSupportClient.prototype.listFlaggedTranscriptsByOrgId = function listFlaggedTranscriptsByOrgId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(VanalyticsSupport.SearchByOrgId, {
+  var client = grpc.unary(VanalyticsSupport.ListFlaggedTranscriptsByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
