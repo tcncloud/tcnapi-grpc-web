@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as wfo_vanalytics_v2_dncl_list_pb from "../../../wfo/vanalytics/v2/dncl_list_pb";
+import * as wfo_vanalytics_v2_filter_pb from "../../../wfo/vanalytics/v2/filter_pb";
 
 export class CreateFlagRequest extends jspb.Message {
   hasFlag(): boolean;
@@ -265,6 +266,11 @@ export class Flag extends jspb.Message {
   getVersion(): number;
   setVersion(value: number): void;
 
+  clearFiltersList(): void;
+  getFiltersList(): Array<wfo_vanalytics_v2_filter_pb.Filter>;
+  setFiltersList(value: Array<wfo_vanalytics_v2_filter_pb.Filter>): void;
+  addFilters(value?: wfo_vanalytics_v2_filter_pb.Filter, index?: number): wfo_vanalytics_v2_filter_pb.Filter;
+
   getMustReview(): boolean;
   setMustReview(value: boolean): void;
 
@@ -299,6 +305,7 @@ export namespace Flag {
     notifyGroupId: string,
     priority: number,
     version: number,
+    filtersList: Array<wfo_vanalytics_v2_filter_pb.Filter.AsObject>,
     mustReview: boolean,
     mustNotify: boolean,
     boolExpr?: Flag.BoolExpr.AsObject,
