@@ -1401,6 +1401,15 @@ type OrgUpdateAgentTriggers = {
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersResponse;
 };
 
+type OrgListHuntGroupScripts = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsResponse;
+};
+
 type OrgGetHuntGroupScript = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -1435,6 +1444,24 @@ type OrgDeleteHuntGroupScript = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptRequest;
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptResponse;
+};
+
+type OrgAssignHuntGroupScript = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.AssignHuntGroupScriptRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.AssignHuntGroupScriptResponse;
+};
+
+type OrgUnassignHuntGroupScript = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.UnassignHuntGroupScriptRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.UnassignHuntGroupScriptResponse;
 };
 
 type OrgCreateTrust = {
@@ -2115,10 +2142,13 @@ export class Org {
   static readonly ListAgentTriggers: OrgListAgentTriggers;
   static readonly CopyAgentTrigger: OrgCopyAgentTrigger;
   static readonly UpdateAgentTriggers: OrgUpdateAgentTriggers;
+  static readonly ListHuntGroupScripts: OrgListHuntGroupScripts;
   static readonly GetHuntGroupScript: OrgGetHuntGroupScript;
   static readonly CreateHuntGroupScript: OrgCreateHuntGroupScript;
   static readonly UpdateHuntGroupScript: OrgUpdateHuntGroupScript;
   static readonly DeleteHuntGroupScript: OrgDeleteHuntGroupScript;
+  static readonly AssignHuntGroupScript: OrgAssignHuntGroupScript;
+  static readonly UnassignHuntGroupScript: OrgUnassignHuntGroupScript;
   static readonly CreateTrust: OrgCreateTrust;
   static readonly AcceptTrust: OrgAcceptTrust;
   static readonly RejectTrust: OrgRejectTrust;
@@ -3525,6 +3555,15 @@ export class OrgClient {
     requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateAgentTriggersResponse|null) => void
   ): UnaryResponse;
+  listHuntGroupScripts(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsResponse|null) => void
+  ): UnaryResponse;
+  listHuntGroupScripts(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsResponse|null) => void
+  ): UnaryResponse;
   getHuntGroupScript(
     requestMessage: api_v1alpha1_org_huntgroup_pb.GetHuntGroupScriptRequest,
     metadata: grpc.Metadata,
@@ -3560,6 +3599,24 @@ export class OrgClient {
   deleteHuntGroupScript(
     requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptResponse|null) => void
+  ): UnaryResponse;
+  assignHuntGroupScript(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.AssignHuntGroupScriptRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.AssignHuntGroupScriptResponse|null) => void
+  ): UnaryResponse;
+  assignHuntGroupScript(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.AssignHuntGroupScriptRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.AssignHuntGroupScriptResponse|null) => void
+  ): UnaryResponse;
+  unassignHuntGroupScript(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UnassignHuntGroupScriptRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UnassignHuntGroupScriptResponse|null) => void
+  ): UnaryResponse;
+  unassignHuntGroupScript(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UnassignHuntGroupScriptRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UnassignHuntGroupScriptResponse|null) => void
   ): UnaryResponse;
   createTrust(
     requestMessage: api_v1alpha1_org_trusts_pb.CreateTrustRequest,

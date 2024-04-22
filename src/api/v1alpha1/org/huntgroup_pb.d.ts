@@ -1539,9 +1539,90 @@ export namespace UpdateAgentTriggersResponse {
   }
 }
 
+export class HuntGroupScriptDetails extends jspb.Message {
+  hasScript(): boolean;
+  clearScript(): void;
+  getScript(): api_commons_org_huntgroup_pb.HuntGroupScript | undefined;
+  setScript(value?: api_commons_org_huntgroup_pb.HuntGroupScript): void;
+
+  clearHuntGroupSidsList(): void;
+  getHuntGroupSidsList(): Array<number>;
+  setHuntGroupSidsList(value: Array<number>): void;
+  addHuntGroupSids(value: number, index?: number): number;
+
+  clearOutboundBroadcastTemplateSidsList(): void;
+  getOutboundBroadcastTemplateSidsList(): Array<number>;
+  setOutboundBroadcastTemplateSidsList(value: Array<number>): void;
+  addOutboundBroadcastTemplateSids(value: number, index?: number): number;
+
+  clearInboundBroadcastTemplateSidsList(): void;
+  getInboundBroadcastTemplateSidsList(): Array<number>;
+  setInboundBroadcastTemplateSidsList(value: Array<number>): void;
+  addInboundBroadcastTemplateSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HuntGroupScriptDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: HuntGroupScriptDetails): HuntGroupScriptDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HuntGroupScriptDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HuntGroupScriptDetails;
+  static deserializeBinaryFromReader(message: HuntGroupScriptDetails, reader: jspb.BinaryReader): HuntGroupScriptDetails;
+}
+
+export namespace HuntGroupScriptDetails {
+  export type AsObject = {
+    script?: api_commons_org_huntgroup_pb.HuntGroupScript.AsObject,
+    huntGroupSidsList: Array<number>,
+    outboundBroadcastTemplateSidsList: Array<number>,
+    inboundBroadcastTemplateSidsList: Array<number>,
+  }
+}
+
+export class ListHuntGroupScriptsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListHuntGroupScriptsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListHuntGroupScriptsRequest): ListHuntGroupScriptsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListHuntGroupScriptsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListHuntGroupScriptsRequest;
+  static deserializeBinaryFromReader(message: ListHuntGroupScriptsRequest, reader: jspb.BinaryReader): ListHuntGroupScriptsRequest;
+}
+
+export namespace ListHuntGroupScriptsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListHuntGroupScriptsResponse extends jspb.Message {
+  clearScriptsList(): void;
+  getScriptsList(): Array<api_commons_org_huntgroup_pb.HuntGroupScript>;
+  setScriptsList(value: Array<api_commons_org_huntgroup_pb.HuntGroupScript>): void;
+  addScripts(value?: api_commons_org_huntgroup_pb.HuntGroupScript, index?: number): api_commons_org_huntgroup_pb.HuntGroupScript;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListHuntGroupScriptsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListHuntGroupScriptsResponse): ListHuntGroupScriptsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListHuntGroupScriptsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListHuntGroupScriptsResponse;
+  static deserializeBinaryFromReader(message: ListHuntGroupScriptsResponse, reader: jspb.BinaryReader): ListHuntGroupScriptsResponse;
+}
+
+export namespace ListHuntGroupScriptsResponse {
+  export type AsObject = {
+    scriptsList: Array<api_commons_org_huntgroup_pb.HuntGroupScript.AsObject>,
+  }
+}
+
 export class GetHuntGroupScriptRequest extends jspb.Message {
   getHuntGroupSid(): number;
   setHuntGroupSid(value: number): void;
+
+  getScriptSid(): number;
+  setScriptSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetHuntGroupScriptRequest.AsObject;
@@ -1556,6 +1637,7 @@ export class GetHuntGroupScriptRequest extends jspb.Message {
 export namespace GetHuntGroupScriptRequest {
   export type AsObject = {
     huntGroupSid: number,
+    scriptSid: number,
   }
 }
 
@@ -1564,6 +1646,11 @@ export class GetHuntGroupScriptResponse extends jspb.Message {
   clearHuntGroupScript(): void;
   getHuntGroupScript(): api_commons_org_huntgroup_pb.HuntGroupScript | undefined;
   setHuntGroupScript(value?: api_commons_org_huntgroup_pb.HuntGroupScript): void;
+
+  hasScriptDetails(): boolean;
+  clearScriptDetails(): void;
+  getScriptDetails(): HuntGroupScriptDetails | undefined;
+  setScriptDetails(value?: HuntGroupScriptDetails): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetHuntGroupScriptResponse.AsObject;
@@ -1578,6 +1665,7 @@ export class GetHuntGroupScriptResponse extends jspb.Message {
 export namespace GetHuntGroupScriptResponse {
   export type AsObject = {
     huntGroupScript?: api_commons_org_huntgroup_pb.HuntGroupScript.AsObject,
+    scriptDetails?: HuntGroupScriptDetails.AsObject,
   }
 }
 
@@ -1632,6 +1720,9 @@ export class UpdateHuntGroupScriptRequest extends jspb.Message {
   getHuntGroupScript(): api_commons_org_huntgroup_pb.HuntGroupScript | undefined;
   setHuntGroupScript(value?: api_commons_org_huntgroup_pb.HuntGroupScript): void;
 
+  getScriptSid(): number;
+  setScriptSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateHuntGroupScriptRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateHuntGroupScriptRequest): UpdateHuntGroupScriptRequest.AsObject;
@@ -1646,6 +1737,7 @@ export namespace UpdateHuntGroupScriptRequest {
   export type AsObject = {
     huntGroupSid: number,
     huntGroupScript?: api_commons_org_huntgroup_pb.HuntGroupScript.AsObject,
+    scriptSid: number,
   }
 }
 
@@ -1701,6 +1793,86 @@ export class DeleteHuntGroupScriptResponse extends jspb.Message {
 }
 
 export namespace DeleteHuntGroupScriptResponse {
+  export type AsObject = {
+  }
+}
+
+export class AssignHuntGroupScriptRequest extends jspb.Message {
+  getScriptSid(): number;
+  setScriptSid(value: number): void;
+
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignHuntGroupScriptRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignHuntGroupScriptRequest): AssignHuntGroupScriptRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignHuntGroupScriptRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignHuntGroupScriptRequest;
+  static deserializeBinaryFromReader(message: AssignHuntGroupScriptRequest, reader: jspb.BinaryReader): AssignHuntGroupScriptRequest;
+}
+
+export namespace AssignHuntGroupScriptRequest {
+  export type AsObject = {
+    scriptSid: number,
+    huntGroupSid: number,
+  }
+}
+
+export class AssignHuntGroupScriptResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignHuntGroupScriptResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignHuntGroupScriptResponse): AssignHuntGroupScriptResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignHuntGroupScriptResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignHuntGroupScriptResponse;
+  static deserializeBinaryFromReader(message: AssignHuntGroupScriptResponse, reader: jspb.BinaryReader): AssignHuntGroupScriptResponse;
+}
+
+export namespace AssignHuntGroupScriptResponse {
+  export type AsObject = {
+  }
+}
+
+export class UnassignHuntGroupScriptRequest extends jspb.Message {
+  getScriptSid(): number;
+  setScriptSid(value: number): void;
+
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UnassignHuntGroupScriptRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UnassignHuntGroupScriptRequest): UnassignHuntGroupScriptRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UnassignHuntGroupScriptRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UnassignHuntGroupScriptRequest;
+  static deserializeBinaryFromReader(message: UnassignHuntGroupScriptRequest, reader: jspb.BinaryReader): UnassignHuntGroupScriptRequest;
+}
+
+export namespace UnassignHuntGroupScriptRequest {
+  export type AsObject = {
+    scriptSid: number,
+    huntGroupSid: number,
+  }
+}
+
+export class UnassignHuntGroupScriptResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UnassignHuntGroupScriptResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UnassignHuntGroupScriptResponse): UnassignHuntGroupScriptResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UnassignHuntGroupScriptResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UnassignHuntGroupScriptResponse;
+  static deserializeBinaryFromReader(message: UnassignHuntGroupScriptResponse, reader: jspb.BinaryReader): UnassignHuntGroupScriptResponse;
+}
+
+export namespace UnassignHuntGroupScriptResponse {
   export type AsObject = {
   }
 }
