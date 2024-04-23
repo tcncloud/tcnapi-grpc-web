@@ -2,9 +2,11 @@
 // file: api/v1alpha1/org/huntgroup.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_broadcasts_pb from "../../../api/commons/broadcasts_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
 import * as api_commons_org_huntgroup_pb from "../../../api/commons/org/huntgroup_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class GetHuntGroupSettingsRequest extends jspb.Message {
   getHuntGroupSid(): number;
@@ -687,6 +689,78 @@ export class CopyDataDipTemplateToOrganizationResponse extends jspb.Message {
 
 export namespace CopyDataDipTemplateToOrganizationResponse {
   export type AsObject = {
+  }
+}
+
+export class ListBroadcastTemplateGeneralDetailsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListBroadcastTemplateGeneralDetailsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListBroadcastTemplateGeneralDetailsRequest): ListBroadcastTemplateGeneralDetailsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListBroadcastTemplateGeneralDetailsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListBroadcastTemplateGeneralDetailsRequest;
+  static deserializeBinaryFromReader(message: ListBroadcastTemplateGeneralDetailsRequest, reader: jspb.BinaryReader): ListBroadcastTemplateGeneralDetailsRequest;
+}
+
+export namespace ListBroadcastTemplateGeneralDetailsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListBroadcastTemplateGeneralDetailsResponse extends jspb.Message {
+  clearTemplatesList(): void;
+  getTemplatesList(): Array<ListBroadcastTemplateGeneralDetailsResponse.Data>;
+  setTemplatesList(value: Array<ListBroadcastTemplateGeneralDetailsResponse.Data>): void;
+  addTemplates(value?: ListBroadcastTemplateGeneralDetailsResponse.Data, index?: number): ListBroadcastTemplateGeneralDetailsResponse.Data;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListBroadcastTemplateGeneralDetailsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListBroadcastTemplateGeneralDetailsResponse): ListBroadcastTemplateGeneralDetailsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListBroadcastTemplateGeneralDetailsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListBroadcastTemplateGeneralDetailsResponse;
+  static deserializeBinaryFromReader(message: ListBroadcastTemplateGeneralDetailsResponse, reader: jspb.BinaryReader): ListBroadcastTemplateGeneralDetailsResponse;
+}
+
+export namespace ListBroadcastTemplateGeneralDetailsResponse {
+  export type AsObject = {
+    templatesList: Array<ListBroadcastTemplateGeneralDetailsResponse.Data.AsObject>,
+  }
+
+  export class Data extends jspb.Message {
+    getTemplateSid(): number;
+    setTemplateSid(value: number): void;
+
+    getName(): string;
+    setName(value: string): void;
+
+    getBroadcastType(): api_commons_broadcasts_pb.BroadcastTypeMap[keyof api_commons_broadcasts_pb.BroadcastTypeMap];
+    setBroadcastType(value: api_commons_broadcasts_pb.BroadcastTypeMap[keyof api_commons_broadcasts_pb.BroadcastTypeMap]): void;
+
+    hasLastScheduledDate(): boolean;
+    clearLastScheduledDate(): void;
+    getLastScheduledDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setLastScheduledDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Data.AsObject;
+    static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Data, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Data;
+    static deserializeBinaryFromReader(message: Data, reader: jspb.BinaryReader): Data;
+  }
+
+  export namespace Data {
+    export type AsObject = {
+      templateSid: number,
+      name: string,
+      broadcastType: api_commons_broadcasts_pb.BroadcastTypeMap[keyof api_commons_broadcasts_pb.BroadcastTypeMap],
+      lastScheduledDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
   }
 }
 
@@ -1609,8 +1683,8 @@ export class GetHuntGroupScriptResponse extends jspb.Message {
 
   hasScriptDetails(): boolean;
   clearScriptDetails(): void;
-  getScriptDetails(): api_commons_org_huntgroup_pb.HuntGroupScriptDetails | undefined;
-  setScriptDetails(value?: api_commons_org_huntgroup_pb.HuntGroupScriptDetails): void;
+  getScriptDetails(): GetHuntGroupScriptResponse.HuntGroupScriptDetails | undefined;
+  setScriptDetails(value?: GetHuntGroupScriptResponse.HuntGroupScriptDetails): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetHuntGroupScriptResponse.AsObject;
@@ -1625,7 +1699,47 @@ export class GetHuntGroupScriptResponse extends jspb.Message {
 export namespace GetHuntGroupScriptResponse {
   export type AsObject = {
     huntGroupScript?: api_commons_org_huntgroup_pb.HuntGroupScript.AsObject,
-    scriptDetails?: api_commons_org_huntgroup_pb.HuntGroupScriptDetails.AsObject,
+    scriptDetails?: GetHuntGroupScriptResponse.HuntGroupScriptDetails.AsObject,
+  }
+
+  export class HuntGroupScriptDetails extends jspb.Message {
+    hasScript(): boolean;
+    clearScript(): void;
+    getScript(): api_commons_org_huntgroup_pb.HuntGroupScript | undefined;
+    setScript(value?: api_commons_org_huntgroup_pb.HuntGroupScript): void;
+
+    clearHuntGroupSidsList(): void;
+    getHuntGroupSidsList(): Array<number>;
+    setHuntGroupSidsList(value: Array<number>): void;
+    addHuntGroupSids(value: number, index?: number): number;
+
+    clearOutboundBroadcastTemplateSidsList(): void;
+    getOutboundBroadcastTemplateSidsList(): Array<number>;
+    setOutboundBroadcastTemplateSidsList(value: Array<number>): void;
+    addOutboundBroadcastTemplateSids(value: number, index?: number): number;
+
+    clearInboundBroadcastTemplateSidsList(): void;
+    getInboundBroadcastTemplateSidsList(): Array<number>;
+    setInboundBroadcastTemplateSidsList(value: Array<number>): void;
+    addInboundBroadcastTemplateSids(value: number, index?: number): number;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): HuntGroupScriptDetails.AsObject;
+    static toObject(includeInstance: boolean, msg: HuntGroupScriptDetails): HuntGroupScriptDetails.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: HuntGroupScriptDetails, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): HuntGroupScriptDetails;
+    static deserializeBinaryFromReader(message: HuntGroupScriptDetails, reader: jspb.BinaryReader): HuntGroupScriptDetails;
+  }
+
+  export namespace HuntGroupScriptDetails {
+    export type AsObject = {
+      script?: api_commons_org_huntgroup_pb.HuntGroupScript.AsObject,
+      huntGroupSidsList: Array<number>,
+      outboundBroadcastTemplateSidsList: Array<number>,
+      inboundBroadcastTemplateSidsList: Array<number>,
+    }
   }
 }
 

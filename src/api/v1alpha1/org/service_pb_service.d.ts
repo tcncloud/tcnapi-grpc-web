@@ -1221,6 +1221,15 @@ type OrgCopyDataDipTemplateToOrganization = {
   readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateToOrganizationResponse;
 };
 
+type OrgListBroadcastTemplateGeneralDetails = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.ListBroadcastTemplateGeneralDetailsRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListBroadcastTemplateGeneralDetailsResponse;
+};
+
 type OrgListAgentResponseAutoRules = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -2122,6 +2131,7 @@ export class Org {
   static readonly DeleteDataDipTemplate: OrgDeleteDataDipTemplate;
   static readonly CopyDataDipTemplate: OrgCopyDataDipTemplate;
   static readonly CopyDataDipTemplateToOrganization: OrgCopyDataDipTemplateToOrganization;
+  static readonly ListBroadcastTemplateGeneralDetails: OrgListBroadcastTemplateGeneralDetails;
   static readonly ListAgentResponseAutoRules: OrgListAgentResponseAutoRules;
   static readonly CreateAgentResponseAutoRules: OrgCreateAgentResponseAutoRules;
   static readonly UpdateAgentResponseAutoRules: OrgUpdateAgentResponseAutoRules;
@@ -3374,6 +3384,15 @@ export class OrgClient {
   copyDataDipTemplateToOrganization(
     requestMessage: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateToOrganizationRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateToOrganizationResponse|null) => void
+  ): UnaryResponse;
+  listBroadcastTemplateGeneralDetails(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListBroadcastTemplateGeneralDetailsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListBroadcastTemplateGeneralDetailsResponse|null) => void
+  ): UnaryResponse;
+  listBroadcastTemplateGeneralDetails(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListBroadcastTemplateGeneralDetailsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListBroadcastTemplateGeneralDetailsResponse|null) => void
   ): UnaryResponse;
   listAgentResponseAutoRules(
     requestMessage: api_v1alpha1_org_huntgroup_pb.ListAgentResponseAutoRulesRequest,
