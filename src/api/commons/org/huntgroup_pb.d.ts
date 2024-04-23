@@ -2941,6 +2941,46 @@ export namespace SimpleCompareExpression {
   }
 }
 
+export class HuntGroupScriptDetails extends jspb.Message {
+  hasScript(): boolean;
+  clearScript(): void;
+  getScript(): HuntGroupScript | undefined;
+  setScript(value?: HuntGroupScript): void;
+
+  clearHuntGroupSidsList(): void;
+  getHuntGroupSidsList(): Array<number>;
+  setHuntGroupSidsList(value: Array<number>): void;
+  addHuntGroupSids(value: number, index?: number): number;
+
+  clearOutboundBroadcastTemplateSidsList(): void;
+  getOutboundBroadcastTemplateSidsList(): Array<number>;
+  setOutboundBroadcastTemplateSidsList(value: Array<number>): void;
+  addOutboundBroadcastTemplateSids(value: number, index?: number): number;
+
+  clearInboundBroadcastTemplateSidsList(): void;
+  getInboundBroadcastTemplateSidsList(): Array<number>;
+  setInboundBroadcastTemplateSidsList(value: Array<number>): void;
+  addInboundBroadcastTemplateSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HuntGroupScriptDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: HuntGroupScriptDetails): HuntGroupScriptDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HuntGroupScriptDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HuntGroupScriptDetails;
+  static deserializeBinaryFromReader(message: HuntGroupScriptDetails, reader: jspb.BinaryReader): HuntGroupScriptDetails;
+}
+
+export namespace HuntGroupScriptDetails {
+  export type AsObject = {
+    script?: HuntGroupScript.AsObject,
+    huntGroupSidsList: Array<number>,
+    outboundBroadcastTemplateSidsList: Array<number>,
+    inboundBroadcastTemplateSidsList: Array<number>,
+  }
+}
+
 export interface HuntGroupTypeMap {
   HUNT_GROUP_TYPE_UNSPECIFIED: 0;
   HUNT_GROUP_TYPE_CONNECTED: 1;
