@@ -480,15 +480,6 @@ Org.UpdateAdminClientPreferences = {
   responseType: api_v1alpha1_org_preferences_pb.UpdateAdminClientPreferencesResponse
 };
 
-Org.ListBroadcastTemplateGeneralDetails = {
-  methodName: "ListBroadcastTemplateGeneralDetails",
-  service: Org,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_org_preferences_pb.ListBroadcastTemplateGeneralDetailsRequest,
-  responseType: api_v1alpha1_org_preferences_pb.ListBroadcastTemplateGeneralDetailsResponse
-};
-
 Org.AcceptLinkbackRecordingTerms = {
   methodName: "AcceptLinkbackRecordingTerms",
   service: Org,
@@ -1234,6 +1225,15 @@ Org.CopyDataDipTemplateToOrganization = {
   responseStream: false,
   requestType: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateToOrganizationRequest,
   responseType: api_v1alpha1_org_huntgroup_pb.CopyDataDipTemplateToOrganizationResponse
+};
+
+Org.ListBroadcastTemplateGeneralDetails = {
+  methodName: "ListBroadcastTemplateGeneralDetails",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.ListBroadcastTemplateGeneralDetailsRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.ListBroadcastTemplateGeneralDetailsResponse
 };
 
 Org.ListAgentResponseAutoRules = {
@@ -3568,37 +3568,6 @@ OrgClient.prototype.updateAdminClientPreferences = function updateAdminClientPre
     callback = arguments[1];
   }
   var client = grpc.unary(Org.UpdateAdminClientPreferences, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-OrgClient.prototype.listBroadcastTemplateGeneralDetails = function listBroadcastTemplateGeneralDetails(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Org.ListBroadcastTemplateGeneralDetails, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -6212,6 +6181,37 @@ OrgClient.prototype.copyDataDipTemplateToOrganization = function copyDataDipTemp
     callback = arguments[1];
   }
   var client = grpc.unary(Org.CopyDataDipTemplateToOrganization, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listBroadcastTemplateGeneralDetails = function listBroadcastTemplateGeneralDetails(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListBroadcastTemplateGeneralDetails, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
