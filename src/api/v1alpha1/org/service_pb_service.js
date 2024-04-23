@@ -1452,22 +1452,22 @@ Org.DeleteHuntGroupScript = {
   responseType: api_v1alpha1_org_huntgroup_pb.DeleteHuntGroupScriptResponse
 };
 
-Org.AssignHuntGroupScript = {
-  methodName: "AssignHuntGroupScript",
+Org.AssignScriptToHuntGroups = {
+  methodName: "AssignScriptToHuntGroups",
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_huntgroup_pb.AssignHuntGroupScriptRequest,
-  responseType: api_v1alpha1_org_huntgroup_pb.AssignHuntGroupScriptResponse
+  requestType: api_v1alpha1_org_huntgroup_pb.AssignScriptToHuntGroupsRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.AssignScriptToHuntGroupsResponse
 };
 
-Org.UnassignHuntGroupScript = {
-  methodName: "UnassignHuntGroupScript",
+Org.UnassignScriptFromHuntGroups = {
+  methodName: "UnassignScriptFromHuntGroups",
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_huntgroup_pb.UnassignHuntGroupScriptRequest,
-  responseType: api_v1alpha1_org_huntgroup_pb.UnassignHuntGroupScriptResponse
+  requestType: api_v1alpha1_org_huntgroup_pb.UnassignScriptFromHuntGroupsRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.UnassignScriptFromHuntGroupsResponse
 };
 
 Org.CreateTrust = {
@@ -7000,11 +7000,11 @@ OrgClient.prototype.deleteHuntGroupScript = function deleteHuntGroupScript(reque
   };
 };
 
-OrgClient.prototype.assignHuntGroupScript = function assignHuntGroupScript(requestMessage, metadata, callback) {
+OrgClient.prototype.assignScriptToHuntGroups = function assignScriptToHuntGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.AssignHuntGroupScript, {
+  var client = grpc.unary(Org.AssignScriptToHuntGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -7031,11 +7031,11 @@ OrgClient.prototype.assignHuntGroupScript = function assignHuntGroupScript(reque
   };
 };
 
-OrgClient.prototype.unassignHuntGroupScript = function unassignHuntGroupScript(requestMessage, metadata, callback) {
+OrgClient.prototype.unassignScriptFromHuntGroups = function unassignScriptFromHuntGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.UnassignHuntGroupScript, {
+  var client = grpc.unary(Org.UnassignScriptFromHuntGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
