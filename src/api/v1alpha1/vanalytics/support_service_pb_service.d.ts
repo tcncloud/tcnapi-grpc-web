@@ -3,6 +3,7 @@
 
 import * as api_v1alpha1_vanalytics_support_service_pb from "../../../api/v1alpha1/vanalytics/support_service_pb";
 import * as api_v1alpha1_vanalytics_flag_transcript_pb from "../../../api/v1alpha1/vanalytics/flag_transcript_pb";
+import * as api_v1alpha1_vanalytics_transcript_pb from "../../../api/v1alpha1/vanalytics/transcript_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type VanalyticsSupportDeleteFlagTranscript = {
@@ -14,9 +15,19 @@ type VanalyticsSupportDeleteFlagTranscript = {
   readonly responseType: typeof api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptResponse;
 };
 
+type VanalyticsSupportSearchByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof VanalyticsSupport;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_vanalytics_transcript_pb.SearchByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_vanalytics_transcript_pb.SearchResponse;
+};
+
 export class VanalyticsSupport {
   static readonly serviceName: string;
   static readonly DeleteFlagTranscript: VanalyticsSupportDeleteFlagTranscript;
+  static readonly SearchByOrgId: VanalyticsSupportSearchByOrgId;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -59,6 +70,15 @@ export class VanalyticsSupportClient {
   deleteFlagTranscript(
     requestMessage: api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_flag_transcript_pb.DeleteFlagTranscriptResponse|null) => void
+  ): UnaryResponse;
+  searchByOrgId(
+    requestMessage: api_v1alpha1_vanalytics_transcript_pb.SearchByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_transcript_pb.SearchResponse|null) => void
+  ): UnaryResponse;
+  searchByOrgId(
+    requestMessage: api_v1alpha1_vanalytics_transcript_pb.SearchByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_vanalytics_transcript_pb.SearchResponse|null) => void
   ): UnaryResponse;
 }
 
