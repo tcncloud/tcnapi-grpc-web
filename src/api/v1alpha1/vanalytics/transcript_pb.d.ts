@@ -2692,7 +2692,7 @@ export namespace AgentResponse {
   }
 }
 
-export class ListFlaggedTranscriptsByOrgIdRequest extends jspb.Message {
+export class SearchByOrgIdRequest extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;
 
@@ -2715,16 +2715,16 @@ export class ListFlaggedTranscriptsByOrgIdRequest extends jspb.Message {
   setFlagSummary(value?: SearchQuery.FlagSummary): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListFlaggedTranscriptsByOrgIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListFlaggedTranscriptsByOrgIdRequest): ListFlaggedTranscriptsByOrgIdRequest.AsObject;
+  toObject(includeInstance?: boolean): SearchByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SearchByOrgIdRequest): SearchByOrgIdRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListFlaggedTranscriptsByOrgIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListFlaggedTranscriptsByOrgIdRequest;
-  static deserializeBinaryFromReader(message: ListFlaggedTranscriptsByOrgIdRequest, reader: jspb.BinaryReader): ListFlaggedTranscriptsByOrgIdRequest;
+  static serializeBinaryToWriter(message: SearchByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SearchByOrgIdRequest;
+  static deserializeBinaryFromReader(message: SearchByOrgIdRequest, reader: jspb.BinaryReader): SearchByOrgIdRequest;
 }
 
-export namespace ListFlaggedTranscriptsByOrgIdRequest {
+export namespace SearchByOrgIdRequest {
   export type AsObject = {
     orgId: string,
     pageSize: number,

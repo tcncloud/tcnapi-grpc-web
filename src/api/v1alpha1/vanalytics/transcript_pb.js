@@ -53,10 +53,10 @@ goog.exportSymbol('proto.api.v1alpha1.vanalytics.FlagSummary.NeedReview', null, 
 goog.exportSymbol('proto.api.v1alpha1.vanalytics.FlagSummary.Review', null, global);
 goog.exportSymbol('proto.api.v1alpha1.vanalytics.ListAgentResponseValuesRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.vanalytics.ListAgentResponseValuesResponse', null, global);
-goog.exportSymbol('proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.vanalytics.ListTranscriptGroupNamesRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.vanalytics.ListTranscriptGroupNamesResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.vanalytics.Result', null, global);
+goog.exportSymbol('proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.vanalytics.SearchQuery', null, global);
 goog.exportSymbol('proto.api.v1alpha1.vanalytics.SearchQuery.AgentCallLog', null, global);
 goog.exportSymbol('proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse', null, global);
@@ -1877,16 +1877,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest = function(opt_data) {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest, jspb.Message);
+goog.inherits(proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.displayName = 'proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest';
+  proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.displayName = 'proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest';
 }
 
 
@@ -21603,8 +21603,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.toObject(opt_includeInstance, this);
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -21613,11 +21613,11 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.toO
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.toObject = function(includeInstance, msg) {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
@@ -21637,23 +21637,23 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.toObject = fu
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest}
+ * @return {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest}
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.deserializeBinary = function(bytes) {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest;
-  return proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest;
+  return proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest}
+ * @return {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest}
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -21696,9 +21696,9 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.deserializeBi
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.serializeBinary = function() {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -21706,11 +21706,11 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.ser
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest} message
+ * @param {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrgId();
   if (f.length > 0) {
@@ -21757,16 +21757,16 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.serializeBina
  * optional string org_id = 1;
  * @return {string}
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.getOrgId = function() {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.getOrgId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest} returns this
+ * @return {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest} returns this
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.setOrgId = function(value) {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.setOrgId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -21775,16 +21775,16 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.set
  * optional uint32 page_size = 2;
  * @return {number}
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.getPageSize = function() {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.getPageSize = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest} returns this
+ * @return {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest} returns this
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.setPageSize = function(value) {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.setPageSize = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -21793,7 +21793,7 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.set
  * optional Sort sort = 3;
  * @return {?proto.api.v1alpha1.vanalytics.Sort}
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.getSort = function() {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.getSort = function() {
   return /** @type{?proto.api.v1alpha1.vanalytics.Sort} */ (
     jspb.Message.getWrapperField(this, proto.api.v1alpha1.vanalytics.Sort, 3));
 };
@@ -21801,18 +21801,18 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.get
 
 /**
  * @param {?proto.api.v1alpha1.vanalytics.Sort|undefined} value
- * @return {!proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest} returns this
+ * @return {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest} returns this
 */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.setSort = function(value) {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.setSort = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest} returns this
+ * @return {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest} returns this
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.clearSort = function() {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.clearSort = function() {
   return this.setSort(undefined);
 };
 
@@ -21821,7 +21821,7 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.cle
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.hasSort = function() {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.hasSort = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -21830,7 +21830,7 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.has
  * optional google.protobuf.FieldMask transcript_mask = 4;
  * @return {?proto.google.protobuf.FieldMask}
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.getTranscriptMask = function() {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.getTranscriptMask = function() {
   return /** @type{?proto.google.protobuf.FieldMask} */ (
     jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 4));
 };
@@ -21838,18 +21838,18 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.get
 
 /**
  * @param {?proto.google.protobuf.FieldMask|undefined} value
- * @return {!proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest} returns this
+ * @return {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest} returns this
 */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.setTranscriptMask = function(value) {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.setTranscriptMask = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest} returns this
+ * @return {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest} returns this
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.clearTranscriptMask = function() {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.clearTranscriptMask = function() {
   return this.setTranscriptMask(undefined);
 };
 
@@ -21858,7 +21858,7 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.cle
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.hasTranscriptMask = function() {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.hasTranscriptMask = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -21867,7 +21867,7 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.has
  * optional SearchQuery.FlagSummary flag_summary = 5;
  * @return {?proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary}
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.getFlagSummary = function() {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.getFlagSummary = function() {
   return /** @type{?proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary} */ (
     jspb.Message.getWrapperField(this, proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary, 5));
 };
@@ -21875,18 +21875,18 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.get
 
 /**
  * @param {?proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary|undefined} value
- * @return {!proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest} returns this
+ * @return {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest} returns this
 */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.setFlagSummary = function(value) {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.setFlagSummary = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest} returns this
+ * @return {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest} returns this
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.clearFlagSummary = function() {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.clearFlagSummary = function() {
   return this.setFlagSummary(undefined);
 };
 
@@ -21895,7 +21895,7 @@ proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.cle
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.prototype.hasFlagSummary = function() {
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.hasFlagSummary = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
