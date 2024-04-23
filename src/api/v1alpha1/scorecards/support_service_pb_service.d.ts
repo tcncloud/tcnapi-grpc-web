@@ -3,6 +3,7 @@
 
 import * as api_v1alpha1_scorecards_support_service_pb from "../../../api/v1alpha1/scorecards/support_service_pb";
 import * as api_v1alpha1_scorecards_auto_evaluation_pb from "../../../api/v1alpha1/scorecards/auto_evaluation_pb";
+import * as api_v1alpha1_scorecards_category_pb from "../../../api/v1alpha1/scorecards/category_pb";
 import * as api_v1alpha1_scorecards_evaluation_pb from "../../../api/v1alpha1/scorecards/evaluation_pb";
 import * as api_v1alpha1_scorecards_scorecard_pb from "../../../api/v1alpha1/scorecards/scorecard_pb";
 import {grpc} from "@improbable-eng/grpc-web";
@@ -52,6 +53,15 @@ type ScorecardsSupportListScorecardsByOrgId = {
   readonly responseType: typeof api_v1alpha1_scorecards_scorecard_pb.ListScorecardsResponse;
 };
 
+type ScorecardsSupportListCategoriesByOrgId = {
+  readonly methodName: string;
+  readonly service: typeof ScorecardsSupport;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_category_pb.ListCategoriesByOrgIdRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_category_pb.ListCategoriesResponse;
+};
+
 export class ScorecardsSupport {
   static readonly serviceName: string;
   static readonly ListEvaluationsByOrgId: ScorecardsSupportListEvaluationsByOrgId;
@@ -59,6 +69,7 @@ export class ScorecardsSupport {
   static readonly DeleteEvaluationByOrgId: ScorecardsSupportDeleteEvaluationByOrgId;
   static readonly DeleteAutoEvaluationByOrgId: ScorecardsSupportDeleteAutoEvaluationByOrgId;
   static readonly ListScorecardsByOrgId: ScorecardsSupportListScorecardsByOrgId;
+  static readonly ListCategoriesByOrgId: ScorecardsSupportListCategoriesByOrgId;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -137,6 +148,15 @@ export class ScorecardsSupportClient {
   listScorecardsByOrgId(
     requestMessage: api_v1alpha1_scorecards_scorecard_pb.ListScorecardsByOrgIdRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_scorecard_pb.ListScorecardsResponse|null) => void
+  ): UnaryResponse;
+  listCategoriesByOrgId(
+    requestMessage: api_v1alpha1_scorecards_category_pb.ListCategoriesByOrgIdRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_category_pb.ListCategoriesResponse|null) => void
+  ): UnaryResponse;
+  listCategoriesByOrgId(
+    requestMessage: api_v1alpha1_scorecards_category_pb.ListCategoriesByOrgIdRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_category_pb.ListCategoriesResponse|null) => void
   ): UnaryResponse;
 }
 

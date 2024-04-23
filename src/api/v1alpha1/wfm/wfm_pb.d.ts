@@ -11226,6 +11226,38 @@ export namespace ReplaceAgentOnScheduleRes {
   }
 }
 
+export class RgbaColor extends jspb.Message {
+  getRed(): number;
+  setRed(value: number): void;
+
+  getGreen(): number;
+  setGreen(value: number): void;
+
+  getBlue(): number;
+  setBlue(value: number): void;
+
+  getAlpha(): number;
+  setAlpha(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RgbaColor.AsObject;
+  static toObject(includeInstance: boolean, msg: RgbaColor): RgbaColor.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RgbaColor, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RgbaColor;
+  static deserializeBinaryFromReader(message: RgbaColor, reader: jspb.BinaryReader): RgbaColor;
+}
+
+export namespace RgbaColor {
+  export type AsObject = {
+    red: number,
+    green: number,
+    blue: number,
+    alpha: number,
+  }
+}
+
 export class HelloWorldWFMAdherenceRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HelloWorldWFMAdherenceRequest.AsObject;
@@ -11356,8 +11388,8 @@ export class RealTimeManagementStateColor extends jspb.Message {
 
   hasColor(): boolean;
   clearColor(): void;
-  getColor(): api_commons_wfm_pb.RgbaColor | undefined;
-  setColor(value?: api_commons_wfm_pb.RgbaColor): void;
+  getColor(): RgbaColor | undefined;
+  setColor(value?: RgbaColor): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RealTimeManagementStateColor.AsObject;
@@ -11372,7 +11404,7 @@ export class RealTimeManagementStateColor extends jspb.Message {
 export namespace RealTimeManagementStateColor {
   export type AsObject = {
     state: api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap],
-    color?: api_commons_wfm_pb.RgbaColor.AsObject,
+    color?: RgbaColor.AsObject,
   }
 }
 

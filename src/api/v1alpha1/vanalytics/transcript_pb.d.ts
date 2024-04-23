@@ -2692,6 +2692,48 @@ export namespace AgentResponse {
   }
 }
 
+export class SearchByOrgIdRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  hasSort(): boolean;
+  clearSort(): void;
+  getSort(): Sort | undefined;
+  setSort(value?: Sort): void;
+
+  hasTranscriptMask(): boolean;
+  clearTranscriptMask(): void;
+  getTranscriptMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setTranscriptMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  hasFlagSummary(): boolean;
+  clearFlagSummary(): void;
+  getFlagSummary(): SearchQuery.FlagSummary | undefined;
+  setFlagSummary(value?: SearchQuery.FlagSummary): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SearchByOrgIdRequest): SearchByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SearchByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SearchByOrgIdRequest;
+  static deserializeBinaryFromReader(message: SearchByOrgIdRequest, reader: jspb.BinaryReader): SearchByOrgIdRequest;
+}
+
+export namespace SearchByOrgIdRequest {
+  export type AsObject = {
+    orgId: string,
+    pageSize: number,
+    sort?: Sort.AsObject,
+    transcriptMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    flagSummary?: SearchQuery.FlagSummary.AsObject,
+  }
+}
+
 export interface TranscriptReviewStatusMap {
   TRANSCRIPT_REVIEW_STATUS_TODO: 0;
   TRANSCRIPT_REVIEW_STATUS_DONE: 1;
