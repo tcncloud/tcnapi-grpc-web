@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class AsmSession extends jspb.Message {
   getAsmSessionSid(): number;
@@ -115,6 +116,47 @@ export namespace VoiceRegistration {
 }
 
 export class AsmUserDetails extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getAgentSid(): number;
+  setAgentSid(value: number): void;
+
+  getAgentStatus(): StatusStateMap[keyof StatusStateMap];
+  setAgentStatus(value: StatusStateMap[keyof StatusStateMap]): void;
+
+  getAgentProfileGroupName(): string;
+  setAgentProfileGroupName(value: string): void;
+
+  getCurrentConversationSid(): string;
+  setCurrentConversationSid(value: string): void;
+
+  getAverageCustomerWaitTimeSeconds(): number;
+  setAverageCustomerWaitTimeSeconds(value: number): void;
+
+  getAverageTimeToRespondSeconds(): number;
+  setAverageTimeToRespondSeconds(value: number): void;
+
+  hasLastEventTime(): boolean;
+  clearLastEventTime(): void;
+  getLastEventTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastEventTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getSkillsMap(): jspb.Map<string, number>;
+  clearSkillsMap(): void;
+  hasAsmSessionSid(): boolean;
+  clearAsmSessionSid(): void;
+  getAsmSessionSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setAsmSessionSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  clearEventsList(): void;
+  getEventsList(): Array<DashboardAgentResponseEvent>;
+  setEventsList(value: Array<DashboardAgentResponseEvent>): void;
+  addEvents(value?: DashboardAgentResponseEvent, index?: number): DashboardAgentResponseEvent;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AsmUserDetails.AsObject;
   static toObject(includeInstance: boolean, msg: AsmUserDetails): AsmUserDetails.AsObject;
@@ -127,6 +169,57 @@ export class AsmUserDetails extends jspb.Message {
 
 export namespace AsmUserDetails {
   export type AsObject = {
+    userId: string,
+    name: string,
+    agentSid: number,
+    agentStatus: StatusStateMap[keyof StatusStateMap],
+    agentProfileGroupName: string,
+    currentConversationSid: string,
+    averageCustomerWaitTimeSeconds: number,
+    averageTimeToRespondSeconds: number,
+    lastEventTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    skillsMap: Array<[string, number]>,
+    asmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    eventsList: Array<DashboardAgentResponseEvent.AsObject>,
   }
 }
+
+export class DashboardAgentResponseEvent extends jspb.Message {
+  getResponseTimeSeconds(): number;
+  setResponseTimeSeconds(value: number): void;
+
+  hasTime(): boolean;
+  clearTime(): void;
+  getTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getIsInitialAgentMessage(): boolean;
+  setIsInitialAgentMessage(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DashboardAgentResponseEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: DashboardAgentResponseEvent): DashboardAgentResponseEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DashboardAgentResponseEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DashboardAgentResponseEvent;
+  static deserializeBinaryFromReader(message: DashboardAgentResponseEvent, reader: jspb.BinaryReader): DashboardAgentResponseEvent;
+}
+
+export namespace DashboardAgentResponseEvent {
+  export type AsObject = {
+    responseTimeSeconds: number,
+    time?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    isInitialAgentMessage: boolean,
+  }
+}
+
+export interface StatusStateMap {
+  STATUS_STATE_UNKNOWN: 0;
+  WAITING: 1;
+  IDLE: 2;
+  CONVERSATION_OPEN: 3;
+}
+
+export const StatusState: StatusStateMap;
 
