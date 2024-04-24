@@ -2936,6 +2936,48 @@ export namespace SpanFuzzy {
   }
 }
 
+export class BulkDeleteTranscriptsRequest extends jspb.Message {
+  hasQuery(): boolean;
+  clearQuery(): void;
+  getQuery(): TranscriptQuery | undefined;
+  setQuery(value?: TranscriptQuery): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkDeleteTranscriptsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkDeleteTranscriptsRequest): BulkDeleteTranscriptsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkDeleteTranscriptsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkDeleteTranscriptsRequest;
+  static deserializeBinaryFromReader(message: BulkDeleteTranscriptsRequest, reader: jspb.BinaryReader): BulkDeleteTranscriptsRequest;
+}
+
+export namespace BulkDeleteTranscriptsRequest {
+  export type AsObject = {
+    query?: TranscriptQuery.AsObject,
+  }
+}
+
+export class BulkDeleteTranscriptsResponse extends jspb.Message {
+  getTotal(): number;
+  setTotal(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkDeleteTranscriptsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkDeleteTranscriptsResponse): BulkDeleteTranscriptsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkDeleteTranscriptsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkDeleteTranscriptsResponse;
+  static deserializeBinaryFromReader(message: BulkDeleteTranscriptsResponse, reader: jspb.BinaryReader): BulkDeleteTranscriptsResponse;
+}
+
+export namespace BulkDeleteTranscriptsResponse {
+  export type AsObject = {
+    total: number,
+  }
+}
+
 export interface ChannelMap {
   CHANNEL_CALL: 0;
   CHANNEL_SMS: 1;
