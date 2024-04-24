@@ -27,6 +27,8 @@ var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/fie
 goog.object.extend(proto, google_protobuf_field_mask_pb);
 var wfo_vanalytics_v2_dncl_list_pb = require('../../../wfo/vanalytics/v2/dncl_list_pb.js');
 goog.object.extend(proto, wfo_vanalytics_v2_dncl_list_pb);
+var wfo_vanalytics_v2_filter_pb = require('../../../wfo/vanalytics/v2/filter_pb.js');
+goog.object.extend(proto, wfo_vanalytics_v2_filter_pb);
 goog.exportSymbol('proto.wfo.vanalytics.v2.CreateFlagRequest', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.DeleteFlagRequest', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.DeleteFlagResponse', null, global);
@@ -1965,7 +1967,7 @@ proto.wfo.vanalytics.v2.GetFlagRequest.prototype.hasFlagSid = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.wfo.vanalytics.v2.Flag.repeatedFields_ = [12];
+proto.wfo.vanalytics.v2.Flag.repeatedFields_ = [8,12];
 
 
 
@@ -2004,6 +2006,8 @@ proto.wfo.vanalytics.v2.Flag.toObject = function(includeInstance, msg) {
     notifyGroupId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     priority: jspb.Message.getFieldWithDefault(msg, 6, 0),
     version: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
+    wfo_vanalytics_v2_filter_pb.Filter.toObject, includeInstance),
     mustReview: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     mustNotify: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     boolExpr: (f = msg.getBoolExpr()) && proto.wfo.vanalytics.v2.Flag.BoolExpr.toObject(includeInstance, f),
@@ -2068,6 +2072,11 @@ proto.wfo.vanalytics.v2.Flag.deserializeBinaryFromReader = function(msg, reader)
     case 7:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setVersion(value);
+      break;
+    case 8:
+      var value = new wfo_vanalytics_v2_filter_pb.Filter;
+      reader.readMessage(value,wfo_vanalytics_v2_filter_pb.Filter.deserializeBinaryFromReader);
+      msg.addFilters(value);
       break;
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -2156,6 +2165,14 @@ proto.wfo.vanalytics.v2.Flag.serializeBinaryToWriter = function(message, writer)
     writer.writeInt64(
       7,
       f
+    );
+  }
+  f = message.getFiltersList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      8,
+      f,
+      wfo_vanalytics_v2_filter_pb.Filter.serializeBinaryToWriter
     );
   }
   f = message.getMustReview();
@@ -2741,6 +2758,44 @@ proto.wfo.vanalytics.v2.Flag.prototype.getVersion = function() {
  */
 proto.wfo.vanalytics.v2.Flag.prototype.setVersion = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * repeated Filter filters = 8;
+ * @return {!Array<!proto.wfo.vanalytics.v2.Filter>}
+ */
+proto.wfo.vanalytics.v2.Flag.prototype.getFiltersList = function() {
+  return /** @type{!Array<!proto.wfo.vanalytics.v2.Filter>} */ (
+    jspb.Message.getRepeatedWrapperField(this, wfo_vanalytics_v2_filter_pb.Filter, 8));
+};
+
+
+/**
+ * @param {!Array<!proto.wfo.vanalytics.v2.Filter>} value
+ * @return {!proto.wfo.vanalytics.v2.Flag} returns this
+*/
+proto.wfo.vanalytics.v2.Flag.prototype.setFiltersList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+};
+
+
+/**
+ * @param {!proto.wfo.vanalytics.v2.Filter=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.wfo.vanalytics.v2.Filter}
+ */
+proto.wfo.vanalytics.v2.Flag.prototype.addFilters = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.wfo.vanalytics.v2.Filter, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.wfo.vanalytics.v2.Flag} returns this
+ */
+proto.wfo.vanalytics.v2.Flag.prototype.clearFiltersList = function() {
+  return this.setFiltersList([]);
 };
 
 

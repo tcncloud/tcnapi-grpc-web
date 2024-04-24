@@ -382,3 +382,47 @@ export namespace SampleAgentCall {
   }
 }
 
+export class ListCategoriesByOrgIdRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  clearAuthorIdsList(): void;
+  getAuthorIdsList(): Array<string>;
+  setAuthorIdsList(value: Array<string>): void;
+  addAuthorIds(value: string, index?: number): string;
+
+  clearSkillProfilesList(): void;
+  getSkillProfilesList(): Array<number>;
+  setSkillProfilesList(value: Array<number>): void;
+  addSkillProfiles(value: number, index?: number): number;
+
+  getCategoryType(): ListCategoriesByOrgIdRequest.CategoryTypeMap[keyof ListCategoriesByOrgIdRequest.CategoryTypeMap];
+  setCategoryType(value: ListCategoriesByOrgIdRequest.CategoryTypeMap[keyof ListCategoriesByOrgIdRequest.CategoryTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListCategoriesByOrgIdRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListCategoriesByOrgIdRequest): ListCategoriesByOrgIdRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListCategoriesByOrgIdRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListCategoriesByOrgIdRequest;
+  static deserializeBinaryFromReader(message: ListCategoriesByOrgIdRequest, reader: jspb.BinaryReader): ListCategoriesByOrgIdRequest;
+}
+
+export namespace ListCategoriesByOrgIdRequest {
+  export type AsObject = {
+    orgId: string,
+    authorIdsList: Array<string>,
+    skillProfilesList: Array<number>,
+    categoryType: ListCategoriesByOrgIdRequest.CategoryTypeMap[keyof ListCategoriesByOrgIdRequest.CategoryTypeMap],
+  }
+
+  export interface CategoryTypeMap {
+    ANY: 0;
+    SYSTEM: 1;
+    USER: 2;
+  }
+
+  export const CategoryType: CategoryTypeMap;
+}
+
