@@ -274,6 +274,15 @@ type ScorecardsDeleteEvaluation = {
   readonly responseType: typeof api_v1alpha1_scorecards_evaluation_pb.DeleteEvaluationResponse;
 };
 
+type ScorecardsRestoreEvaluation = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationResponse;
+};
+
 type ScorecardsScoreEvaluation = {
   readonly methodName: string;
   readonly service: typeof Scorecards;
@@ -458,6 +467,7 @@ export class Scorecards {
   static readonly DeleteQuestionCategory: ScorecardsDeleteQuestionCategory;
   static readonly CreateEvaluation: ScorecardsCreateEvaluation;
   static readonly DeleteEvaluation: ScorecardsDeleteEvaluation;
+  static readonly RestoreEvaluation: ScorecardsRestoreEvaluation;
   static readonly ScoreEvaluation: ScorecardsScoreEvaluation;
   static readonly UpdateEvaluation: ScorecardsUpdateEvaluation;
   static readonly GetEvaluation: ScorecardsGetEvaluation;
@@ -769,6 +779,15 @@ export class ScorecardsClient {
   deleteEvaluation(
     requestMessage: api_v1alpha1_scorecards_evaluation_pb.DeleteEvaluationRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.DeleteEvaluationResponse|null) => void
+  ): UnaryResponse;
+  restoreEvaluation(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationResponse|null) => void
+  ): UnaryResponse;
+  restoreEvaluation(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationResponse|null) => void
   ): UnaryResponse;
   scoreEvaluation(
     requestMessage: api_v1alpha1_scorecards_evaluation_pb.ScoreEvaluationRequest,
