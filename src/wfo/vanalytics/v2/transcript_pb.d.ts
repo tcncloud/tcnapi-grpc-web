@@ -550,6 +550,11 @@ export namespace Call {
     getOffset(): google_protobuf_duration_pb.Duration | undefined;
     setOffset(value?: google_protobuf_duration_pb.Duration): void;
 
+    hasDuration(): boolean;
+    clearDuration(): void;
+    getDuration(): google_protobuf_duration_pb.Duration | undefined;
+    setDuration(value?: google_protobuf_duration_pb.Duration): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Segment.AsObject;
     static toObject(includeInstance: boolean, msg: Segment): Segment.AsObject;
@@ -564,6 +569,7 @@ export namespace Call {
     export type AsObject = {
       text: string,
       offset?: google_protobuf_duration_pb.Duration.AsObject,
+      duration?: google_protobuf_duration_pb.Duration.AsObject,
     }
   }
 

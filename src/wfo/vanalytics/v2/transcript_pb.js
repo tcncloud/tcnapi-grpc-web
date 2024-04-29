@@ -5570,7 +5570,8 @@ proto.wfo.vanalytics.v2.Call.Segment.prototype.toObject = function(opt_includeIn
 proto.wfo.vanalytics.v2.Call.Segment.toObject = function(includeInstance, msg) {
   var f, obj = {
     text: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    offset: (f = msg.getOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+    offset: (f = msg.getOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+    duration: (f = msg.getDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5616,6 +5617,11 @@ proto.wfo.vanalytics.v2.Call.Segment.deserializeBinaryFromReader = function(msg,
       reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
       msg.setOffset(value);
       break;
+    case 3:
+      var value = new google_protobuf_duration_pb.Duration;
+      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
+      msg.setDuration(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5656,6 +5662,14 @@ proto.wfo.vanalytics.v2.Call.Segment.serializeBinaryToWriter = function(message,
   if (f != null) {
     writer.writeMessage(
       2,
+      f,
+      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
+    );
+  }
+  f = message.getDuration();
+  if (f != null) {
+    writer.writeMessage(
+      3,
       f,
       google_protobuf_duration_pb.Duration.serializeBinaryToWriter
     );
@@ -5715,6 +5729,43 @@ proto.wfo.vanalytics.v2.Call.Segment.prototype.clearOffset = function() {
  */
 proto.wfo.vanalytics.v2.Call.Segment.prototype.hasOffset = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.Duration duration = 3;
+ * @return {?proto.google.protobuf.Duration}
+ */
+proto.wfo.vanalytics.v2.Call.Segment.prototype.getDuration = function() {
+  return /** @type{?proto.google.protobuf.Duration} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Duration|undefined} value
+ * @return {!proto.wfo.vanalytics.v2.Call.Segment} returns this
+*/
+proto.wfo.vanalytics.v2.Call.Segment.prototype.setDuration = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wfo.vanalytics.v2.Call.Segment} returns this
+ */
+proto.wfo.vanalytics.v2.Call.Segment.prototype.clearDuration = function() {
+  return this.setDuration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wfo.vanalytics.v2.Call.Segment.prototype.hasDuration = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
