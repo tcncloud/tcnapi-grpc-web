@@ -1425,6 +1425,15 @@ Org.ListHuntGroupScripts = {
   responseType: api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsResponse
 };
 
+Org.ListOrgHuntGroupScripts = {
+  methodName: "ListOrgHuntGroupScripts",
+  service: Org,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsResponse
+};
+
 Org.GetHuntGroupScript = {
   methodName: "GetHuntGroupScript",
   service: Org,
@@ -6929,6 +6938,45 @@ OrgClient.prototype.listHuntGroupScripts = function listHuntGroupScripts(request
   return {
     cancel: function () {
       callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listOrgHuntGroupScripts = function listOrgHuntGroupScripts(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(Org.ListOrgHuntGroupScripts, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
       client.close();
     }
   };
