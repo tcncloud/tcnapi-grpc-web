@@ -1651,6 +1651,44 @@ export namespace ListHuntGroupScriptsResponse {
   }
 }
 
+export class ListOrgHuntGroupScriptsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListOrgHuntGroupScriptsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListOrgHuntGroupScriptsRequest): ListOrgHuntGroupScriptsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListOrgHuntGroupScriptsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListOrgHuntGroupScriptsRequest;
+  static deserializeBinaryFromReader(message: ListOrgHuntGroupScriptsRequest, reader: jspb.BinaryReader): ListOrgHuntGroupScriptsRequest;
+}
+
+export namespace ListOrgHuntGroupScriptsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListOrgHuntGroupScriptsResponse extends jspb.Message {
+  clearScriptsList(): void;
+  getScriptsList(): Array<api_commons_org_huntgroup_pb.HuntGroupScript>;
+  setScriptsList(value: Array<api_commons_org_huntgroup_pb.HuntGroupScript>): void;
+  addScripts(value?: api_commons_org_huntgroup_pb.HuntGroupScript, index?: number): api_commons_org_huntgroup_pb.HuntGroupScript;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListOrgHuntGroupScriptsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListOrgHuntGroupScriptsResponse): ListOrgHuntGroupScriptsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListOrgHuntGroupScriptsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListOrgHuntGroupScriptsResponse;
+  static deserializeBinaryFromReader(message: ListOrgHuntGroupScriptsResponse, reader: jspb.BinaryReader): ListOrgHuntGroupScriptsResponse;
+}
+
+export namespace ListOrgHuntGroupScriptsResponse {
+  export type AsObject = {
+    scriptsList: Array<api_commons_org_huntgroup_pb.HuntGroupScript.AsObject>,
+  }
+}
+
 export class GetHuntGroupScriptRequest extends jspb.Message {
   getHuntGroupSid(): number;
   setHuntGroupSid(value: number): void;
