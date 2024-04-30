@@ -829,13 +829,13 @@ WFM.GetOpenTimesBitmaps = {
   responseType: api_v1alpha1_wfm_wfm_pb.GetOpenTimesBitmapsRes
 };
 
-WFM.GetOpenCloseTimesForDateRange = {
-  methodName: "GetOpenCloseTimesForDateRange",
+WFM.ListOpenDateRangesForNodeOpenTimesBitmaps = {
+  methodName: "ListOpenDateRangesForNodeOpenTimesBitmaps",
   service: WFM,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.GetOpenCloseTimesForDateRangeRequest,
-  responseType: api_v1alpha1_wfm_wfm_pb.GetOpenCloseTimesForDateRangeResponse
+  requestType: api_v1alpha1_wfm_wfm_pb.ListOpenDateRangesForNodeOpenTimesBitmapsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListOpenDateRangesForNodeOpenTimesBitmapsResponse
 };
 
 WFM.CreateAgentAvailabilityPattern = {
@@ -4434,11 +4434,11 @@ WFMClient.prototype.getOpenTimesBitmaps = function getOpenTimesBitmaps(requestMe
   };
 };
 
-WFMClient.prototype.getOpenCloseTimesForDateRange = function getOpenCloseTimesForDateRange(requestMessage, metadata, callback) {
+WFMClient.prototype.listOpenDateRangesForNodeOpenTimesBitmaps = function listOpenDateRangesForNodeOpenTimesBitmaps(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WFM.GetOpenCloseTimesForDateRange, {
+  var client = grpc.unary(WFM.ListOpenDateRangesForNodeOpenTimesBitmaps, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

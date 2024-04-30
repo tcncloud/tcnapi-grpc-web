@@ -5702,7 +5702,7 @@ export namespace GetOpenTimesBitmapsRes {
   }
 }
 
-export class GetOpenCloseTimesForDateRangeRequest extends jspb.Message {
+export class ListOpenDateRangesForNodeOpenTimesBitmapsRequest extends jspb.Message {
   hasDatetimeRange(): boolean;
   clearDatetimeRange(): void;
   getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
@@ -5717,16 +5717,16 @@ export class GetOpenCloseTimesForDateRangeRequest extends jspb.Message {
   setScheduleScenarioSid(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetOpenCloseTimesForDateRangeRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetOpenCloseTimesForDateRangeRequest): GetOpenCloseTimesForDateRangeRequest.AsObject;
+  toObject(includeInstance?: boolean): ListOpenDateRangesForNodeOpenTimesBitmapsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListOpenDateRangesForNodeOpenTimesBitmapsRequest): ListOpenDateRangesForNodeOpenTimesBitmapsRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetOpenCloseTimesForDateRangeRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetOpenCloseTimesForDateRangeRequest;
-  static deserializeBinaryFromReader(message: GetOpenCloseTimesForDateRangeRequest, reader: jspb.BinaryReader): GetOpenCloseTimesForDateRangeRequest;
+  static serializeBinaryToWriter(message: ListOpenDateRangesForNodeOpenTimesBitmapsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListOpenDateRangesForNodeOpenTimesBitmapsRequest;
+  static deserializeBinaryFromReader(message: ListOpenDateRangesForNodeOpenTimesBitmapsRequest, reader: jspb.BinaryReader): ListOpenDateRangesForNodeOpenTimesBitmapsRequest;
 }
 
-export namespace GetOpenCloseTimesForDateRangeRequest {
+export namespace ListOpenDateRangesForNodeOpenTimesBitmapsRequest {
   export type AsObject = {
     datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     nodeSelector?: ParentEntity.AsObject,
@@ -5734,23 +5734,23 @@ export namespace GetOpenCloseTimesForDateRangeRequest {
   }
 }
 
-export class GetOpenCloseTimesForDateRangeResponse extends jspb.Message {
+export class ListOpenDateRangesForNodeOpenTimesBitmapsResponse extends jspb.Message {
   clearOpenCloseRangesList(): void;
   getOpenCloseRangesList(): Array<api_commons_wfm_pb.DatetimeRange>;
   setOpenCloseRangesList(value: Array<api_commons_wfm_pb.DatetimeRange>): void;
   addOpenCloseRanges(value?: api_commons_wfm_pb.DatetimeRange, index?: number): api_commons_wfm_pb.DatetimeRange;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetOpenCloseTimesForDateRangeResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetOpenCloseTimesForDateRangeResponse): GetOpenCloseTimesForDateRangeResponse.AsObject;
+  toObject(includeInstance?: boolean): ListOpenDateRangesForNodeOpenTimesBitmapsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListOpenDateRangesForNodeOpenTimesBitmapsResponse): ListOpenDateRangesForNodeOpenTimesBitmapsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetOpenCloseTimesForDateRangeResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetOpenCloseTimesForDateRangeResponse;
-  static deserializeBinaryFromReader(message: GetOpenCloseTimesForDateRangeResponse, reader: jspb.BinaryReader): GetOpenCloseTimesForDateRangeResponse;
+  static serializeBinaryToWriter(message: ListOpenDateRangesForNodeOpenTimesBitmapsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListOpenDateRangesForNodeOpenTimesBitmapsResponse;
+  static deserializeBinaryFromReader(message: ListOpenDateRangesForNodeOpenTimesBitmapsResponse, reader: jspb.BinaryReader): ListOpenDateRangesForNodeOpenTimesBitmapsResponse;
 }
 
-export namespace GetOpenCloseTimesForDateRangeResponse {
+export namespace ListOpenDateRangesForNodeOpenTimesBitmapsResponse {
   export type AsObject = {
     openCloseRangesList: Array<api_commons_wfm_pb.DatetimeRange.AsObject>,
   }
