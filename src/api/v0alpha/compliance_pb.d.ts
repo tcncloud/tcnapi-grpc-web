@@ -158,6 +158,9 @@ export class CreateScrubListReq extends jspb.Message {
   setScrubEntryDetailsList(value: Array<api_commons_compliance_pb.ScrubEntryDetails>): void;
   addScrubEntryDetails(value?: api_commons_compliance_pb.ScrubEntryDetails, index?: number): api_commons_compliance_pb.ScrubEntryDetails;
 
+  getDurable(): boolean;
+  setDurable(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateScrubListReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateScrubListReq): CreateScrubListReq.AsObject;
@@ -175,6 +178,7 @@ export namespace CreateScrubListReq {
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
     countryCode: string,
     scrubEntryDetailsList: Array<api_commons_compliance_pb.ScrubEntryDetails.AsObject>,
+    durable: boolean,
   }
 }
 
