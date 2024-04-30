@@ -1424,8 +1424,8 @@ type OrgListOrgHuntGroupScripts = {
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: true;
-  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.ListOrgHuntGroupScriptsRequest;
-  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListOrgHuntGroupScriptsResponse;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsResponse;
 };
 
 type OrgGetHuntGroupScript = {
@@ -3593,7 +3593,7 @@ export class OrgClient {
     requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsResponse|null) => void
   ): UnaryResponse;
-  listOrgHuntGroupScripts(requestMessage: api_v1alpha1_org_huntgroup_pb.ListOrgHuntGroupScriptsRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_org_huntgroup_pb.ListOrgHuntGroupScriptsResponse>;
+  listOrgHuntGroupScripts(requestMessage: api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsResponse>;
   getHuntGroupScript(
     requestMessage: api_v1alpha1_org_huntgroup_pb.GetHuntGroupScriptRequest,
     metadata: grpc.Metadata,

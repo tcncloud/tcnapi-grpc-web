@@ -1430,8 +1430,8 @@ Org.ListOrgHuntGroupScripts = {
   service: Org,
   requestStream: false,
   responseStream: true,
-  requestType: api_v1alpha1_org_huntgroup_pb.ListOrgHuntGroupScriptsRequest,
-  responseType: api_v1alpha1_org_huntgroup_pb.ListOrgHuntGroupScriptsResponse
+  requestType: api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.ListHuntGroupScriptsResponse
 };
 
 Org.GetHuntGroupScript = {
