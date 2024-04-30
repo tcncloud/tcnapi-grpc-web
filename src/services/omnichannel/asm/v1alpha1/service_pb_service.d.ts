@@ -59,6 +59,15 @@ type AsmServiceListAsmUserDetails = {
   readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsResponse;
 };
 
+type AsmServicePushEvents = {
+  readonly methodName: string;
+  readonly service: typeof AsmService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_omnichannel_asm_v1alpha1_entities_pb.PushEventsRequest;
+  readonly responseType: typeof services_omnichannel_asm_v1alpha1_entities_pb.PushEventResponse;
+};
+
 export class AsmService {
   static readonly serviceName: string;
   static readonly CreateSession: AsmServiceCreateSession;
@@ -67,6 +76,7 @@ export class AsmService {
   static readonly EnableVoice: AsmServiceEnableVoice;
   static readonly DisableVoice: AsmServiceDisableVoice;
   static readonly ListAsmUserDetails: AsmServiceListAsmUserDetails;
+  static readonly PushEvents: AsmServicePushEvents;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -154,6 +164,15 @@ export class AsmServiceClient {
   listAsmUserDetails(
     requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsRequest,
     callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsResponse|null) => void
+  ): UnaryResponse;
+  pushEvents(
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.PushEventsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.PushEventResponse|null) => void
+  ): UnaryResponse;
+  pushEvents(
+    requestMessage: services_omnichannel_asm_v1alpha1_entities_pb.PushEventsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_asm_v1alpha1_entities_pb.PushEventResponse|null) => void
   ): UnaryResponse;
 }
 
