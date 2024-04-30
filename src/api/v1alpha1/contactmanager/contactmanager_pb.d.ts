@@ -468,3 +468,81 @@ export namespace AddContactEntryResponse {
   }
 }
 
+export class EditContactEntryRequest extends jspb.Message {
+  getContactManagerListId(): number;
+  setContactManagerListId(value: number): void;
+
+  getContactManagerEntryId(): number;
+  setContactManagerEntryId(value: number): void;
+
+  clearEditedEntryList(): void;
+  getEditedEntryList(): Array<EditedEntry>;
+  setEditedEntryList(value: Array<EditedEntry>): void;
+  addEditedEntry(value?: EditedEntry, index?: number): EditedEntry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EditContactEntryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EditContactEntryRequest): EditContactEntryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EditContactEntryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EditContactEntryRequest;
+  static deserializeBinaryFromReader(message: EditContactEntryRequest, reader: jspb.BinaryReader): EditContactEntryRequest;
+}
+
+export namespace EditContactEntryRequest {
+  export type AsObject = {
+    contactManagerListId: number,
+    contactManagerEntryId: number,
+    editedEntryList: Array<EditedEntry.AsObject>,
+  }
+}
+
+export class EditedEntry extends jspb.Message {
+  getContactManagerEntryListId(): number;
+  setContactManagerEntryListId(value: number): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getValue(): string;
+  setValue(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EditedEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: EditedEntry): EditedEntry.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EditedEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EditedEntry;
+  static deserializeBinaryFromReader(message: EditedEntry, reader: jspb.BinaryReader): EditedEntry;
+}
+
+export namespace EditedEntry {
+  export type AsObject = {
+    contactManagerEntryListId: number,
+    name: string,
+    value: string,
+    type: string,
+  }
+}
+
+export class EditContactEntryResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EditContactEntryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EditContactEntryResponse): EditContactEntryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EditContactEntryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EditContactEntryResponse;
+  static deserializeBinaryFromReader(message: EditContactEntryResponse, reader: jspb.BinaryReader): EditContactEntryResponse;
+}
+
+export namespace EditContactEntryResponse {
+  export type AsObject = {
+  }
+}
+
