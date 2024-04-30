@@ -1966,7 +1966,7 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.toObject = function(include
     agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
     returnFields: (f = msg.getReturnFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    includeDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
+    isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
   };
 
   if (includeInstance) {
@@ -2035,7 +2035,7 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.deserializeBinaryFromReader
       break;
     case 11:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIncludeDeleted(value);
+      msg.setIsDeleted(value);
       break;
     default:
       reader.skipField();
@@ -2110,7 +2110,7 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.serializeBinaryToWriter = f
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
-  f = message.getIncludeDeleted();
+  f = message.getIsDeleted();
   if (f) {
     writer.writeBool(
       11,
@@ -2343,10 +2343,10 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.hasReturnFields =
 
 
 /**
- * optional bool include_deleted = 11;
+ * optional bool is_deleted = 11;
  * @return {boolean}
  */
-proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.getIncludeDeleted = function() {
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.getIsDeleted = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
 };
 
@@ -2355,7 +2355,7 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.getIncludeDeleted
  * @param {boolean} value
  * @return {!proto.api.v1alpha1.scorecards.ListEvaluationsRequest} returns this
  */
-proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.setIncludeDeleted = function(value) {
+proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.setIsDeleted = function(value) {
   return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 

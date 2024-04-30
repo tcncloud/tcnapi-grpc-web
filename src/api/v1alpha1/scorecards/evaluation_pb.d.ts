@@ -256,8 +256,8 @@ export class ListEvaluationsRequest extends jspb.Message {
   getReturnFields(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setReturnFields(value?: google_protobuf_field_mask_pb.FieldMask): void;
 
-  getIncludeDeleted(): boolean;
-  setIncludeDeleted(value: boolean): void;
+  getIsDeleted(): boolean;
+  setIsDeleted(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEvaluationsRequest.AsObject;
@@ -277,7 +277,7 @@ export namespace ListEvaluationsRequest {
     agentUserIdsList: Array<string>,
     scorecardIdsList: Array<number>,
     returnFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    includeDeleted: boolean,
+    isDeleted: boolean,
   }
 }
 
