@@ -823,6 +823,15 @@ type WFMGetOpenTimesBitmaps = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetOpenTimesBitmapsRes;
 };
 
+type WFMListOpenDateRangesForNodeOpenTimesBitmaps = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListOpenDateRangesForNodeOpenTimesBitmapsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListOpenDateRangesForNodeOpenTimesBitmapsResponse;
+};
+
 type WFMCreateAgentAvailabilityPattern = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1636,6 +1645,7 @@ export class WFM {
   static readonly UpdateOpenTimesPattern: WFMUpdateOpenTimesPattern;
   static readonly DeleteOpenTimesPattern: WFMDeleteOpenTimesPattern;
   static readonly GetOpenTimesBitmaps: WFMGetOpenTimesBitmaps;
+  static readonly ListOpenDateRangesForNodeOpenTimesBitmaps: WFMListOpenDateRangesForNodeOpenTimesBitmaps;
   static readonly CreateAgentAvailabilityPattern: WFMCreateAgentAvailabilityPattern;
   static readonly UpdateAgentAvailabilityPattern: WFMUpdateAgentAvailabilityPattern;
   static readonly DeleteAgentAvailabilityPattern: WFMDeleteAgentAvailabilityPattern;
@@ -2520,6 +2530,15 @@ export class WFMClient {
   getOpenTimesBitmaps(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetOpenTimesBitmapsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetOpenTimesBitmapsRes|null) => void
+  ): UnaryResponse;
+  listOpenDateRangesForNodeOpenTimesBitmaps(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListOpenDateRangesForNodeOpenTimesBitmapsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListOpenDateRangesForNodeOpenTimesBitmapsResponse|null) => void
+  ): UnaryResponse;
+  listOpenDateRangesForNodeOpenTimesBitmaps(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListOpenDateRangesForNodeOpenTimesBitmapsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListOpenDateRangesForNodeOpenTimesBitmapsResponse|null) => void
   ): UnaryResponse;
   createAgentAvailabilityPattern(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentAvailabilityPatternReq,
