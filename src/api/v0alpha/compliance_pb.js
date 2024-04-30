@@ -3542,7 +3542,8 @@ proto.api.v0alpha.CreateScrubListReq.toObject = function(includeInstance, msg) {
     contentType: jspb.Message.getFieldWithDefault(msg, 11, 0),
     countryCode: jspb.Message.getFieldWithDefault(msg, 12, ""),
     scrubEntryDetailsList: jspb.Message.toObjectList(msg.getScrubEntryDetailsList(),
-    api_commons_compliance_pb.ScrubEntryDetails.toObject, includeInstance)
+    api_commons_compliance_pb.ScrubEntryDetails.toObject, includeInstance),
+    durable: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -3599,6 +3600,10 @@ proto.api.v0alpha.CreateScrubListReq.deserializeBinaryFromReader = function(msg,
       var value = new api_commons_compliance_pb.ScrubEntryDetails;
       reader.readMessage(value,api_commons_compliance_pb.ScrubEntryDetails.deserializeBinaryFromReader);
       msg.addScrubEntryDetails(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDurable(value);
       break;
     default:
       reader.skipField();
@@ -3663,6 +3668,13 @@ proto.api.v0alpha.CreateScrubListReq.serializeBinaryToWriter = function(message,
       13,
       f,
       api_commons_compliance_pb.ScrubEntryDetails.serializeBinaryToWriter
+    );
+  }
+  f = message.getDurable();
+  if (f) {
+    writer.writeBool(
+      14,
+      f
     );
   }
 };
@@ -3794,6 +3806,24 @@ proto.api.v0alpha.CreateScrubListReq.prototype.addScrubEntryDetails = function(o
  */
 proto.api.v0alpha.CreateScrubListReq.prototype.clearScrubEntryDetailsList = function() {
   return this.setScrubEntryDetailsList([]);
+};
+
+
+/**
+ * optional bool durable = 14;
+ * @return {boolean}
+ */
+proto.api.v0alpha.CreateScrubListReq.prototype.getDurable = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.CreateScrubListReq} returns this
+ */
+proto.api.v0alpha.CreateScrubListReq.prototype.setDurable = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 

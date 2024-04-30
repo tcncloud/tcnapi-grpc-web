@@ -985,7 +985,7 @@ proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.toObject = funct
     asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     eventsList: jspb.Message.toObjectList(msg.getEventsList(),
     proto.services.omnichannel.asm.entities.v1alpha1.DashboardAgentResponseEvent.toObject, includeInstance),
-    loginTome: (f = msg.getLoginTome()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    loginTime: (f = msg.getLoginTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1078,7 +1078,7 @@ proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.deserializeBinar
     case 13:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setLoginTome(value);
+      msg.setLoginTime(value);
       break;
     default:
       reader.skipField();
@@ -1193,7 +1193,7 @@ proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.serializeBinaryT
       proto.services.omnichannel.asm.entities.v1alpha1.DashboardAgentResponseEvent.serializeBinaryToWriter
     );
   }
-  f = message.getLoginTome();
+  f = message.getLoginTime();
   if (f != null) {
     writer.writeMessage(
       13,
@@ -1484,10 +1484,10 @@ proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.clearE
 
 
 /**
- * optional google.protobuf.Timestamp login_tome = 13;
+ * optional google.protobuf.Timestamp login_time = 13;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.getLoginTome = function() {
+proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.getLoginTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 13));
 };
@@ -1497,7 +1497,7 @@ proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.getLog
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails} returns this
 */
-proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.setLoginTome = function(value) {
+proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.setLoginTime = function(value) {
   return jspb.Message.setWrapperField(this, 13, value);
 };
 
@@ -1506,8 +1506,8 @@ proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.setLog
  * Clears the message field making it undefined.
  * @return {!proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails} returns this
  */
-proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.clearLoginTome = function() {
-  return this.setLoginTome(undefined);
+proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.clearLoginTime = function() {
+  return this.setLoginTime(undefined);
 };
 
 
@@ -1515,7 +1515,7 @@ proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.clearL
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.hasLoginTome = function() {
+proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.hasLoginTime = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
