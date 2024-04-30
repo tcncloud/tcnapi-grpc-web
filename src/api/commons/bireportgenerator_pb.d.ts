@@ -175,6 +175,30 @@ export namespace DeliveryOptions {
   }
 }
 
+export class FilenamePart extends jspb.Message {
+  getType(): FilenamePartTypeMap[keyof FilenamePartTypeMap];
+  setType(value: FilenamePartTypeMap[keyof FilenamePartTypeMap]): void;
+
+  getStaticText(): string;
+  setStaticText(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FilenamePart.AsObject;
+  static toObject(includeInstance: boolean, msg: FilenamePart): FilenamePart.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FilenamePart, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FilenamePart;
+  static deserializeBinaryFromReader(message: FilenamePart, reader: jspb.BinaryReader): FilenamePart;
+}
+
+export namespace FilenamePart {
+  export type AsObject = {
+    type: FilenamePartTypeMap[keyof FilenamePartTypeMap],
+    staticText: string,
+  }
+}
+
 export interface RepeatFrequencyMap {
   REPEAT_FREQUENCY_UNSPECIFIED: 0;
   REPEAT_FREQUENCY_ON_HOUR: 1;
@@ -239,4 +263,18 @@ export interface TimePeriodMap {
 }
 
 export const TimePeriod: TimePeriodMap;
+
+export interface FilenamePartTypeMap {
+  FILENAME_PART_TYPE_UNSPECIFIED: 0;
+  FILENAME_PART_TYPE_DASHBOARD_NAME: 1;
+  FILENAME_PART_TYPE_JOB_NAME: 2;
+  FILENAME_PART_TYPE_INSIGHT_NAME: 3;
+  FILENAME_PART_TYPE_DATE_TIME_FILTER_TEXT: 4;
+  FILENAME_PART_TYPE_START_DATE_TIME: 5;
+  FILENAME_PART_TYPE_END_DATE_TIME: 6;
+  FILENAME_PART_TYPE_REPORT_DATE_TIME: 7;
+  FILENAME_PART_TYPE_STATIC_TEXT: 8;
+}
+
+export const FilenamePartType: FilenamePartTypeMap;
 

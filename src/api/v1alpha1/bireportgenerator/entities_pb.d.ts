@@ -76,6 +76,11 @@ export class ReportJob extends jspb.Message {
   getCronExpression(): api_commons_types_pb.CronExpression | undefined;
   setCronExpression(value?: api_commons_types_pb.CronExpression): void;
 
+  clearFilenamePartsList(): void;
+  getFilenamePartsList(): Array<api_commons_bireportgenerator_pb.FilenamePart>;
+  setFilenamePartsList(value: Array<api_commons_bireportgenerator_pb.FilenamePart>): void;
+  addFilenameParts(value?: api_commons_bireportgenerator_pb.FilenamePart, index?: number): api_commons_bireportgenerator_pb.FilenamePart;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportJob.AsObject;
   static toObject(includeInstance: boolean, msg: ReportJob): ReportJob.AsObject;
@@ -106,6 +111,7 @@ export namespace ReportJob {
     hideCsvFooter: boolean,
     transferConfigSid: number,
     cronExpression?: api_commons_types_pb.CronExpression.AsObject,
+    filenamePartsList: Array<api_commons_bireportgenerator_pb.FilenamePart.AsObject>,
   }
 }
 

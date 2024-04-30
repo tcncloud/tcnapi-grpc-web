@@ -59,7 +59,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.bireportgenerator.ReportJob.repeatedFields_ = [9];
+proto.api.v1alpha1.bireportgenerator.ReportJob.repeatedFields_ = [9,19];
 
 
 
@@ -109,7 +109,9 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.toObject = function(includeInstan
     timeZoneWrapper: (f = msg.getTimeZoneWrapper()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
     hideCsvFooter: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
     transferConfigSid: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    cronExpression: (f = msg.getCronExpression()) && api_commons_types_pb.CronExpression.toObject(includeInstance, f)
+    cronExpression: (f = msg.getCronExpression()) && api_commons_types_pb.CronExpression.toObject(includeInstance, f),
+    filenamePartsList: jspb.Message.toObjectList(msg.getFilenamePartsList(),
+    api_commons_bireportgenerator_pb.FilenamePart.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -225,6 +227,11 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.deserializeBinaryFromReader = fun
       var value = new api_commons_types_pb.CronExpression;
       reader.readMessage(value,api_commons_types_pb.CronExpression.deserializeBinaryFromReader);
       msg.setCronExpression(value);
+      break;
+    case 19:
+      var value = new api_commons_bireportgenerator_pb.FilenamePart;
+      reader.readMessage(value,api_commons_bireportgenerator_pb.FilenamePart.deserializeBinaryFromReader);
+      msg.addFilenameParts(value);
       break;
     default:
       reader.skipField();
@@ -385,6 +392,14 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.serializeBinaryToWriter = functio
       18,
       f,
       api_commons_types_pb.CronExpression.serializeBinaryToWriter
+    );
+  }
+  f = message.getFilenamePartsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      19,
+      f,
+      api_commons_bireportgenerator_pb.FilenamePart.serializeBinaryToWriter
     );
   }
 };
@@ -844,6 +859,44 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.clearCronExpression = f
  */
 proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.hasCronExpression = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * repeated api.commons.FilenamePart filename_parts = 19;
+ * @return {!Array<!proto.api.commons.FilenamePart>}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.getFilenamePartsList = function() {
+  return /** @type{!Array<!proto.api.commons.FilenamePart>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_commons_bireportgenerator_pb.FilenamePart, 19));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.FilenamePart>} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportJob} returns this
+*/
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.setFilenamePartsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 19, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.FilenamePart=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.FilenamePart}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.addFilenameParts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 19, opt_value, proto.api.commons.FilenamePart, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportJob} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.clearFilenamePartsList = function() {
+  return this.setFilenamePartsList([]);
 };
 
 
