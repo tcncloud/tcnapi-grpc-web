@@ -190,6 +190,15 @@ Learn.ReviewVersion = {
   responseType: api_v0alpha_learn_pb.ReviewVersionRes
 };
 
+Learn.ExportManyStream = {
+  methodName: "ExportManyStream",
+  service: Learn,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v0alpha_learn_pb.ExportManyReq,
+  responseType: api_v0alpha_learn_pb.ExportRes
+};
+
 exports.Learn = Learn;
 
 function LearnClient(serviceHost, options) {
@@ -828,6 +837,45 @@ LearnClient.prototype.reviewVersion = function reviewVersion(requestMessage, met
   return {
     cancel: function () {
       callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.exportManyStream = function exportManyStream(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(Learn.ExportManyStream, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
       client.close();
     }
   };
