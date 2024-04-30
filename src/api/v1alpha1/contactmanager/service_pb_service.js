@@ -65,6 +65,15 @@ ContactManager.AddContactEntry = {
   responseType: api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryResponse
 };
 
+ContactManager.EditContactEntry = {
+  methodName: "EditContactEntry",
+  service: ContactManager,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryRequest,
+  responseType: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryResponse
+};
+
 exports.ContactManager = ContactManager;
 
 function ContactManagerClient(serviceHost, options) {
@@ -232,6 +241,37 @@ ContactManagerClient.prototype.addContactEntry = function addContactEntry(reques
     callback = arguments[1];
   }
   var client = grpc.unary(ContactManager.AddContactEntry, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ContactManagerClient.prototype.editContactEntry = function editContactEntry(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ContactManager.EditContactEntry, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

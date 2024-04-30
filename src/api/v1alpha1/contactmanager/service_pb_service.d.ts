@@ -59,6 +59,15 @@ type ContactManagerAddContactEntry = {
   readonly responseType: typeof api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryResponse;
 };
 
+type ContactManagerEditContactEntry = {
+  readonly methodName: string;
+  readonly service: typeof ContactManager;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryRequest;
+  readonly responseType: typeof api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryResponse;
+};
+
 export class ContactManager {
   static readonly serviceName: string;
   static readonly GetContactList: ContactManagerGetContactList;
@@ -67,6 +76,7 @@ export class ContactManager {
   static readonly GetKYCEncContactEntry: ContactManagerGetKYCEncContactEntry;
   static readonly GetKYCKeys: ContactManagerGetKYCKeys;
   static readonly AddContactEntry: ContactManagerAddContactEntry;
+  static readonly EditContactEntry: ContactManagerEditContactEntry;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -154,6 +164,15 @@ export class ContactManagerClient {
   addContactEntry(
     requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryResponse|null) => void
+  ): UnaryResponse;
+  editContactEntry(
+    requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryResponse|null) => void
+  ): UnaryResponse;
+  editContactEntry(
+    requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryResponse|null) => void
   ): UnaryResponse;
 }
 
