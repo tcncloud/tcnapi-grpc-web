@@ -199,6 +199,32 @@ export namespace FilenamePart {
   }
 }
 
+export class TransferOptions extends jspb.Message {
+  getTransferConfigSid(): string;
+  setTransferConfigSid(value: string): void;
+
+  clearFilenamePartsList(): void;
+  getFilenamePartsList(): Array<FilenamePart>;
+  setFilenamePartsList(value: Array<FilenamePart>): void;
+  addFilenameParts(value?: FilenamePart, index?: number): FilenamePart;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TransferOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: TransferOptions): TransferOptions.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TransferOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TransferOptions;
+  static deserializeBinaryFromReader(message: TransferOptions, reader: jspb.BinaryReader): TransferOptions;
+}
+
+export namespace TransferOptions {
+  export type AsObject = {
+    transferConfigSid: string,
+    filenamePartsList: Array<FilenamePart.AsObject>,
+  }
+}
+
 export interface RepeatFrequencyMap {
   REPEAT_FREQUENCY_UNSPECIFIED: 0;
   REPEAT_FREQUENCY_ON_HOUR: 1;

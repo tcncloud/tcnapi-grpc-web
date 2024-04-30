@@ -59,7 +59,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.bireportgenerator.ReportJob.repeatedFields_ = [9,19];
+proto.api.v1alpha1.bireportgenerator.ReportJob.repeatedFields_ = [9];
 
 
 
@@ -110,8 +110,7 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.toObject = function(includeInstan
     hideCsvFooter: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
     transferConfigSid: jspb.Message.getFieldWithDefault(msg, 17, 0),
     cronExpression: (f = msg.getCronExpression()) && api_commons_types_pb.CronExpression.toObject(includeInstance, f),
-    filenamePartsList: jspb.Message.toObjectList(msg.getFilenamePartsList(),
-    api_commons_bireportgenerator_pb.FilenamePart.toObject, includeInstance)
+    transferOptions: (f = msg.getTransferOptions()) && api_commons_bireportgenerator_pb.TransferOptions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -229,9 +228,9 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.deserializeBinaryFromReader = fun
       msg.setCronExpression(value);
       break;
     case 19:
-      var value = new api_commons_bireportgenerator_pb.FilenamePart;
-      reader.readMessage(value,api_commons_bireportgenerator_pb.FilenamePart.deserializeBinaryFromReader);
-      msg.addFilenameParts(value);
+      var value = new api_commons_bireportgenerator_pb.TransferOptions;
+      reader.readMessage(value,api_commons_bireportgenerator_pb.TransferOptions.deserializeBinaryFromReader);
+      msg.setTransferOptions(value);
       break;
     default:
       reader.skipField();
@@ -394,12 +393,12 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.serializeBinaryToWriter = functio
       api_commons_types_pb.CronExpression.serializeBinaryToWriter
     );
   }
-  f = message.getFilenamePartsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getTransferOptions();
+  if (f != null) {
+    writer.writeMessage(
       19,
       f,
-      api_commons_bireportgenerator_pb.FilenamePart.serializeBinaryToWriter
+      api_commons_bireportgenerator_pb.TransferOptions.serializeBinaryToWriter
     );
   }
 };
@@ -863,40 +862,39 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.hasCronExpression = fun
 
 
 /**
- * repeated api.commons.FilenamePart filename_parts = 19;
- * @return {!Array<!proto.api.commons.FilenamePart>}
+ * optional api.commons.TransferOptions transfer_options = 19;
+ * @return {?proto.api.commons.TransferOptions}
  */
-proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.getFilenamePartsList = function() {
-  return /** @type{!Array<!proto.api.commons.FilenamePart>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_bireportgenerator_pb.FilenamePart, 19));
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.getTransferOptions = function() {
+  return /** @type{?proto.api.commons.TransferOptions} */ (
+    jspb.Message.getWrapperField(this, api_commons_bireportgenerator_pb.TransferOptions, 19));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.FilenamePart>} value
+ * @param {?proto.api.commons.TransferOptions|undefined} value
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportJob} returns this
 */
-proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.setFilenamePartsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 19, value);
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.setTransferOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 19, value);
 };
 
 
 /**
- * @param {!proto.api.commons.FilenamePart=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.commons.FilenamePart}
- */
-proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.addFilenameParts = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 19, opt_value, proto.api.commons.FilenamePart, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.bireportgenerator.ReportJob} returns this
  */
-proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.clearFilenamePartsList = function() {
-  return this.setFilenamePartsList([]);
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.clearTransferOptions = function() {
+  return this.setTransferOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.hasTransferOptions = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 

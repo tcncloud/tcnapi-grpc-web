@@ -737,3 +737,87 @@ export namespace RemovePermissionFromAllPermissionGroupsResponse {
   }
 }
 
+export class AssignLabelsRequest extends jspb.Message {
+  clearLabelIdsList(): void;
+  getLabelIdsList(): Array<string>;
+  setLabelIdsList(value: Array<string>): void;
+  addLabelIds(value: string, index?: number): string;
+
+  getPermissionGroupId(): string;
+  setPermissionGroupId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignLabelsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignLabelsRequest): AssignLabelsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignLabelsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignLabelsRequest;
+  static deserializeBinaryFromReader(message: AssignLabelsRequest, reader: jspb.BinaryReader): AssignLabelsRequest;
+}
+
+export namespace AssignLabelsRequest {
+  export type AsObject = {
+    labelIdsList: Array<string>,
+    permissionGroupId: string,
+  }
+}
+
+export class AssignLabelsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignLabelsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignLabelsResponse): AssignLabelsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignLabelsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignLabelsResponse;
+  static deserializeBinaryFromReader(message: AssignLabelsResponse, reader: jspb.BinaryReader): AssignLabelsResponse;
+}
+
+export namespace AssignLabelsResponse {
+  export type AsObject = {
+  }
+}
+
+export class RevokeLabelsRequest extends jspb.Message {
+  clearLabelIdsList(): void;
+  getLabelIdsList(): Array<string>;
+  setLabelIdsList(value: Array<string>): void;
+  addLabelIds(value: string, index?: number): string;
+
+  getPermissionGroupId(): string;
+  setPermissionGroupId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RevokeLabelsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RevokeLabelsRequest): RevokeLabelsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RevokeLabelsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RevokeLabelsRequest;
+  static deserializeBinaryFromReader(message: RevokeLabelsRequest, reader: jspb.BinaryReader): RevokeLabelsRequest;
+}
+
+export namespace RevokeLabelsRequest {
+  export type AsObject = {
+    labelIdsList: Array<string>,
+    permissionGroupId: string,
+  }
+}
+
+export class RevokeLabelsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RevokeLabelsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RevokeLabelsResponse): RevokeLabelsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RevokeLabelsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RevokeLabelsResponse;
+  static deserializeBinaryFromReader(message: RevokeLabelsResponse, reader: jspb.BinaryReader): RevokeLabelsResponse;
+}
+
+export namespace RevokeLabelsResponse {
+  export type AsObject = {
+  }
+}
+

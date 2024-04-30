@@ -1,91 +1,91 @@
-// package: services.omnichannel.asm.v1alpha1
-// file: services/omnichannel/asm/v1alpha1/service.proto
+// package: api.v1alpha1.org.labels
+// file: api/v1alpha1/org/labels/service.proto
 
-var services_omnichannel_asm_v1alpha1_service_pb = require("../../../../services/omnichannel/asm/v1alpha1/service_pb");
-var services_omnichannel_asm_v1alpha1_entities_pb = require("../../../../services/omnichannel/asm/v1alpha1/entities_pb");
+var api_v1alpha1_org_labels_service_pb = require("../../../../api/v1alpha1/org/labels/service_pb");
+var api_v1alpha1_org_labels_entities_pb = require("../../../../api/v1alpha1/org/labels/entities_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var AsmService = (function () {
-  function AsmService() {}
-  AsmService.serviceName = "services.omnichannel.asm.v1alpha1.AsmService";
-  return AsmService;
+var LabelsService = (function () {
+  function LabelsService() {}
+  LabelsService.serviceName = "api.v1alpha1.org.labels.LabelsService";
+  return LabelsService;
 }());
 
-AsmService.CreateSession = {
-  methodName: "CreateSession",
-  service: AsmService,
+LabelsService.CreateLabel = {
+  methodName: "CreateLabel",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionRequest,
-  responseType: services_omnichannel_asm_v1alpha1_entities_pb.CreateSessionResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.CreateLabelRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.CreateLabelResponse
 };
 
-AsmService.EndSession = {
-  methodName: "EndSession",
-  service: AsmService,
+LabelsService.GetLabel = {
+  methodName: "GetLabel",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionRequest,
-  responseType: services_omnichannel_asm_v1alpha1_entities_pb.EndSessionResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.GetLabelRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.GetLabelResponse
 };
 
-AsmService.GetCurrentSession = {
-  methodName: "GetCurrentSession",
-  service: AsmService,
+LabelsService.UpdateLabel = {
+  methodName: "UpdateLabel",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionRequest,
-  responseType: services_omnichannel_asm_v1alpha1_entities_pb.GetCurrentSessionResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.UpdateLabelRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.UpdateLabelResponse
 };
 
-AsmService.EnableVoice = {
-  methodName: "EnableVoice",
-  service: AsmService,
+LabelsService.ListLabels = {
+  methodName: "ListLabels",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceRequest,
-  responseType: services_omnichannel_asm_v1alpha1_entities_pb.EnableVoiceResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.ListLabelsRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.ListLabelsResponse
 };
 
-AsmService.DisableVoice = {
-  methodName: "DisableVoice",
-  service: AsmService,
+LabelsService.DeleteLabel = {
+  methodName: "DeleteLabel",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceRequest,
-  responseType: services_omnichannel_asm_v1alpha1_entities_pb.DisableVoiceResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.DeleteLabelRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.DeleteLabelResponse
 };
 
-AsmService.ListAsmUserDetails = {
-  methodName: "ListAsmUserDetails",
-  service: AsmService,
+LabelsService.AttachLabel = {
+  methodName: "AttachLabel",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsRequest,
-  responseType: services_omnichannel_asm_v1alpha1_entities_pb.ListAsmUserDetailsResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.AttachLabelRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.AttachLabelResponse
 };
 
-AsmService.PushEvents = {
-  methodName: "PushEvents",
-  service: AsmService,
+LabelsService.GetLabeledEntityMap = {
+  methodName: "GetLabeledEntityMap",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_asm_v1alpha1_entities_pb.PushEventsRequest,
-  responseType: services_omnichannel_asm_v1alpha1_entities_pb.PushEventResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.GetLabeledEntityMapRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.GetLabeledEntityMapResponse
 };
 
-exports.AsmService = AsmService;
+exports.LabelsService = LabelsService;
 
-function AsmServiceClient(serviceHost, options) {
+function LabelsServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-AsmServiceClient.prototype.createSession = function createSession(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.createLabel = function createLabel(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AsmService.CreateSession, {
+  var client = grpc.unary(LabelsService.CreateLabel, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -112,11 +112,11 @@ AsmServiceClient.prototype.createSession = function createSession(requestMessage
   };
 };
 
-AsmServiceClient.prototype.endSession = function endSession(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.getLabel = function getLabel(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AsmService.EndSession, {
+  var client = grpc.unary(LabelsService.GetLabel, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -143,11 +143,11 @@ AsmServiceClient.prototype.endSession = function endSession(requestMessage, meta
   };
 };
 
-AsmServiceClient.prototype.getCurrentSession = function getCurrentSession(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.updateLabel = function updateLabel(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AsmService.GetCurrentSession, {
+  var client = grpc.unary(LabelsService.UpdateLabel, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -174,11 +174,11 @@ AsmServiceClient.prototype.getCurrentSession = function getCurrentSession(reques
   };
 };
 
-AsmServiceClient.prototype.enableVoice = function enableVoice(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.listLabels = function listLabels(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AsmService.EnableVoice, {
+  var client = grpc.unary(LabelsService.ListLabels, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -205,11 +205,11 @@ AsmServiceClient.prototype.enableVoice = function enableVoice(requestMessage, me
   };
 };
 
-AsmServiceClient.prototype.disableVoice = function disableVoice(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.deleteLabel = function deleteLabel(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AsmService.DisableVoice, {
+  var client = grpc.unary(LabelsService.DeleteLabel, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -236,11 +236,11 @@ AsmServiceClient.prototype.disableVoice = function disableVoice(requestMessage, 
   };
 };
 
-AsmServiceClient.prototype.listAsmUserDetails = function listAsmUserDetails(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.attachLabel = function attachLabel(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AsmService.ListAsmUserDetails, {
+  var client = grpc.unary(LabelsService.AttachLabel, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -267,11 +267,11 @@ AsmServiceClient.prototype.listAsmUserDetails = function listAsmUserDetails(requ
   };
 };
 
-AsmServiceClient.prototype.pushEvents = function pushEvents(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.getLabeledEntityMap = function getLabeledEntityMap(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AsmService.PushEvents, {
+  var client = grpc.unary(LabelsService.GetLabeledEntityMap, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -298,5 +298,5 @@ AsmServiceClient.prototype.pushEvents = function pushEvents(requestMessage, meta
   };
 };
 
-exports.AsmServiceClient = AsmServiceClient;
+exports.LabelsServiceClient = LabelsServiceClient;
 

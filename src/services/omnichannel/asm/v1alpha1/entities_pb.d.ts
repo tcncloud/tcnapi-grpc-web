@@ -2,6 +2,7 @@
 // file: services/omnichannel/asm/v1alpha1/entities.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_event_pb from "../../../../api/commons/event_pb";
 import * as services_omnichannel_asm_entities_v1alpha1_session_pb from "../../../../services/omnichannel/asm/entities/v1alpha1/session_pb";
 
 export class CreateSessionRequest extends jspb.Message {
@@ -252,6 +253,48 @@ export namespace ListAsmUserDetailsResponse {
   export type AsObject = {
     sessionsList: Array<services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.AsObject>,
     asmUserDetailsList: Array<services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.AsObject>,
+  }
+}
+
+export class PushEventsRequest extends jspb.Message {
+  getAmsSessionSid(): number;
+  setAmsSessionSid(value: number): void;
+
+  clearAsmEventsList(): void;
+  getAsmEventsList(): Array<api_commons_event_pb.AsmEvent>;
+  setAsmEventsList(value: Array<api_commons_event_pb.AsmEvent>): void;
+  addAsmEvents(value?: api_commons_event_pb.AsmEvent, index?: number): api_commons_event_pb.AsmEvent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PushEventsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PushEventsRequest): PushEventsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PushEventsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PushEventsRequest;
+  static deserializeBinaryFromReader(message: PushEventsRequest, reader: jspb.BinaryReader): PushEventsRequest;
+}
+
+export namespace PushEventsRequest {
+  export type AsObject = {
+    amsSessionSid: number,
+    asmEventsList: Array<api_commons_event_pb.AsmEvent.AsObject>,
+  }
+}
+
+export class PushEventResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PushEventResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PushEventResponse): PushEventResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PushEventResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PushEventResponse;
+  static deserializeBinaryFromReader(message: PushEventResponse, reader: jspb.BinaryReader): PushEventResponse;
+}
+
+export namespace PushEventResponse {
+  export type AsObject = {
   }
 }
 

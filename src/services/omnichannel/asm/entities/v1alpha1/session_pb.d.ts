@@ -157,6 +157,11 @@ export class AsmUserDetails extends jspb.Message {
   setEventsList(value: Array<DashboardAgentResponseEvent>): void;
   addEvents(value?: DashboardAgentResponseEvent, index?: number): DashboardAgentResponseEvent;
 
+  hasLoginTime(): boolean;
+  clearLoginTime(): void;
+  getLoginTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLoginTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AsmUserDetails.AsObject;
   static toObject(includeInstance: boolean, msg: AsmUserDetails): AsmUserDetails.AsObject;
@@ -181,6 +186,7 @@ export namespace AsmUserDetails {
     skillsMap: Array<[string, number]>,
     asmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     eventsList: Array<DashboardAgentResponseEvent.AsObject>,
+    loginTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

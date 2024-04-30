@@ -1,4 +1,4 @@
-// source: api/commons/labels.proto
+// source: api/v1alpha1/org/labels/service.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -12,7 +12,7 @@
 // @ts-nocheck
 
 var jspb = require('google-protobuf');
-var localGlobalThis = require("../../global.js");
+var localGlobalThis = require("../../../../global.js");
 var proto = localGlobalThis.proto;
 var goog = jspb;
 var global = localGlobalThis || 
@@ -23,23 +23,9 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-goog.exportSymbol('proto.api.commons.EntityType', null, global);
-goog.exportSymbol('proto.api.commons.LabeledEntity', null, global);
-/**
- * @enum {number}
- */
-proto.api.commons.EntityType = {
-  ENTITY_TYPE_INVALID: 0,
-  ENTITY_TYPE_USER: 1,
-  ENTITY_TYPE_LMS_PIPELINE: 2
-};
-
-/**
- * @enum {number}
- */
-proto.api.commons.LabeledEntity = {
-  LABELED_ENTITY_UNSPECIFIED: 0,
-  LABELED_ENTITY_SKILL_GROUP: 1
-};
-
-goog.object.extend(exports, proto.api.commons);
+var annotations_authz_pb = require('../../../../annotations/authz_pb.js');
+goog.object.extend(proto, annotations_authz_pb);
+var api_v1alpha1_org_labels_entities_pb = require('../../../../api/v1alpha1/org/labels/entities_pb.js');
+goog.object.extend(proto, api_v1alpha1_org_labels_entities_pb);
+var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
+goog.object.extend(proto, google_api_annotations_pb);

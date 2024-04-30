@@ -234,7 +234,9 @@ proto.services.billing.entities.v1alpha2.BasicUnitConfig.toObject = function(inc
     unitSize: jspb.Message.getFieldWithDefault(msg, 1, 0),
     rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
     minUnits: (f = msg.getMinUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    maxUnits: (f = msg.getMaxUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+    maxUnits: (f = msg.getMaxUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    minUnitsPerCycle: (f = msg.getMinUnitsPerCycle()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    maxUnitsPerCycle: (f = msg.getMaxUnitsPerCycle()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -288,6 +290,16 @@ proto.services.billing.entities.v1alpha2.BasicUnitConfig.deserializeBinaryFromRe
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setMaxUnits(value);
+      break;
+    case 5:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setMinUnitsPerCycle(value);
+      break;
+    case 6:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setMaxUnitsPerCycle(value);
       break;
     default:
       reader.skipField();
@@ -344,6 +356,22 @@ proto.services.billing.entities.v1alpha2.BasicUnitConfig.serializeBinaryToWriter
   if (f != null) {
     writer.writeMessage(
       4,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getMinUnitsPerCycle();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getMaxUnitsPerCycle();
+  if (f != null) {
+    writer.writeMessage(
+      6,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
@@ -458,6 +486,80 @@ proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.clearMaxUnits
  */
 proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.hasMaxUnits = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value min_units_per_cycle = 5;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.getMinUnitsPerCycle = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Int64Value|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.BasicUnitConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.setMinUnitsPerCycle = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.BasicUnitConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.clearMinUnitsPerCycle = function() {
+  return this.setMinUnitsPerCycle(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.hasMinUnitsPerCycle = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value max_units_per_cycle = 6;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.getMaxUnitsPerCycle = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Int64Value|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.BasicUnitConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.setMaxUnitsPerCycle = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.BasicUnitConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.clearMaxUnitsPerCycle = function() {
+  return this.setMaxUnitsPerCycle(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.hasMaxUnitsPerCycle = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

@@ -5661,7 +5661,8 @@ proto.api.commons.OmniMessage.toObject = function(includeInstance, msg) {
     campaignSid: jspb.Message.getFieldWithDefault(msg, 17, "0"),
     subject: (f = msg.getSubject()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     senderType: jspb.Message.getFieldWithDefault(msg, 21, 0),
-    statusMessage: (f = msg.getStatusMessage()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+    statusMessage: (f = msg.getStatusMessage()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    messageFormat: jspb.Message.getFieldWithDefault(msg, 23, 0)
   };
 
   if (includeInstance) {
@@ -5769,6 +5770,10 @@ proto.api.commons.OmniMessage.deserializeBinaryFromReader = function(msg, reader
       var value = new google_protobuf_wrappers_pb.StringValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setStatusMessage(value);
+      break;
+    case 23:
+      var value = /** @type {!proto.api.commons.MessageFormat} */ (reader.readEnum());
+      msg.setMessageFormat(value);
       break;
     default:
       reader.skipField();
@@ -5917,6 +5922,13 @@ proto.api.commons.OmniMessage.serializeBinaryToWriter = function(message, writer
       22,
       f,
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getMessageFormat();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      23,
+      f
     );
   }
 };
@@ -6359,6 +6371,24 @@ proto.api.commons.OmniMessage.prototype.clearStatusMessage = function() {
  */
 proto.api.commons.OmniMessage.prototype.hasStatusMessage = function() {
   return jspb.Message.getField(this, 22) != null;
+};
+
+
+/**
+ * optional MessageFormat message_format = 23;
+ * @return {!proto.api.commons.MessageFormat}
+ */
+proto.api.commons.OmniMessage.prototype.getMessageFormat = function() {
+  return /** @type {!proto.api.commons.MessageFormat} */ (jspb.Message.getFieldWithDefault(this, 23, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.MessageFormat} value
+ * @return {!proto.api.commons.OmniMessage} returns this
+ */
+proto.api.commons.OmniMessage.prototype.setMessageFormat = function(value) {
+  return jspb.Message.setProto3EnumField(this, 23, value);
 };
 
 
