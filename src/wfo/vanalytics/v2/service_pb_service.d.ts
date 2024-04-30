@@ -17,15 +17,6 @@ type VanalyticsSearchTranscripts = {
   readonly responseType: typeof wfo_vanalytics_v2_transcript_pb.SearchTranscriptsResponse;
 };
 
-type VanalyticsBulkDeleteTranscripts = {
-  readonly methodName: string;
-  readonly service: typeof Vanalytics;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsRequest;
-  readonly responseType: typeof wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsResponse;
-};
-
 type VanalyticsCreateFilter = {
   readonly methodName: string;
   readonly service: typeof Vanalytics;
@@ -92,7 +83,6 @@ type VanalyticsListFlagFilters = {
 export class Vanalytics {
   static readonly serviceName: string;
   static readonly SearchTranscripts: VanalyticsSearchTranscripts;
-  static readonly BulkDeleteTranscripts: VanalyticsBulkDeleteTranscripts;
   static readonly CreateFilter: VanalyticsCreateFilter;
   static readonly ListFilters: VanalyticsListFilters;
   static readonly UpdateFilter: VanalyticsUpdateFilter;
@@ -142,15 +132,6 @@ export class VanalyticsClient {
   searchTranscripts(
     requestMessage: wfo_vanalytics_v2_transcript_pb.SearchTranscriptsRequest,
     callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.SearchTranscriptsResponse|null) => void
-  ): UnaryResponse;
-  bulkDeleteTranscripts(
-    requestMessage: wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsResponse|null) => void
-  ): UnaryResponse;
-  bulkDeleteTranscripts(
-    requestMessage: wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsRequest,
-    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsResponse|null) => void
   ): UnaryResponse;
   createFilter(
     requestMessage: wfo_vanalytics_v2_filter_pb.CreateFilterRequest,

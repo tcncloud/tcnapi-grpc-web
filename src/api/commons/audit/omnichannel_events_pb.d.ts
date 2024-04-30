@@ -684,11 +684,6 @@ export class OmnichannelTranscriptSavedEvent extends jspb.Message {
   getTranscriptPath(): string;
   setTranscriptPath(value: string): void;
 
-  hasConversation(): boolean;
-  clearConversation(): void;
-  getConversation(): api_commons_omnichannel_pb.OmniConversation | undefined;
-  setConversation(value?: api_commons_omnichannel_pb.OmniConversation): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelTranscriptSavedEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelTranscriptSavedEvent): OmnichannelTranscriptSavedEvent.AsObject;
@@ -703,7 +698,6 @@ export namespace OmnichannelTranscriptSavedEvent {
   export type AsObject = {
     conversationSid: number,
     transcriptPath: string,
-    conversation?: api_commons_omnichannel_pb.OmniConversation.AsObject,
   }
 }
 

@@ -256,9 +256,6 @@ export class ListEvaluationsRequest extends jspb.Message {
   getReturnFields(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setReturnFields(value?: google_protobuf_field_mask_pb.FieldMask): void;
 
-  getIsDeleted(): boolean;
-  setIsDeleted(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListEvaluationsRequest): ListEvaluationsRequest.AsObject;
@@ -277,7 +274,6 @@ export namespace ListEvaluationsRequest {
     agentUserIdsList: Array<string>,
     scorecardIdsList: Array<number>,
     returnFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    isDeleted: boolean,
   }
 }
 
@@ -430,52 +426,6 @@ export namespace DeleteEvaluationByOrgIdRequest {
   export type AsObject = {
     orgId: string,
     evaluationId: number,
-  }
-}
-
-export class RestoreEvaluationRequest extends jspb.Message {
-  getEvaluationId(): number;
-  setEvaluationId(value: number): void;
-
-  getUserId(): string;
-  setUserId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RestoreEvaluationRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RestoreEvaluationRequest): RestoreEvaluationRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: RestoreEvaluationRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RestoreEvaluationRequest;
-  static deserializeBinaryFromReader(message: RestoreEvaluationRequest, reader: jspb.BinaryReader): RestoreEvaluationRequest;
-}
-
-export namespace RestoreEvaluationRequest {
-  export type AsObject = {
-    evaluationId: number,
-    userId: string,
-  }
-}
-
-export class RestoreEvaluationResponse extends jspb.Message {
-  hasEvaluation(): boolean;
-  clearEvaluation(): void;
-  getEvaluation(): api_commons_scorecards_pb.Evaluation | undefined;
-  setEvaluation(value?: api_commons_scorecards_pb.Evaluation): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RestoreEvaluationResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: RestoreEvaluationResponse): RestoreEvaluationResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: RestoreEvaluationResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RestoreEvaluationResponse;
-  static deserializeBinaryFromReader(message: RestoreEvaluationResponse, reader: jspb.BinaryReader): RestoreEvaluationResponse;
-}
-
-export namespace RestoreEvaluationResponse {
-  export type AsObject = {
-    evaluation?: api_commons_scorecards_pb.Evaluation.AsObject,
   }
 }
 

@@ -550,11 +550,6 @@ export namespace Call {
     getOffset(): google_protobuf_duration_pb.Duration | undefined;
     setOffset(value?: google_protobuf_duration_pb.Duration): void;
 
-    hasDuration(): boolean;
-    clearDuration(): void;
-    getDuration(): google_protobuf_duration_pb.Duration | undefined;
-    setDuration(value?: google_protobuf_duration_pb.Duration): void;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Segment.AsObject;
     static toObject(includeInstance: boolean, msg: Segment): Segment.AsObject;
@@ -569,7 +564,6 @@ export namespace Call {
     export type AsObject = {
       text: string,
       offset?: google_protobuf_duration_pb.Duration.AsObject,
-      duration?: google_protobuf_duration_pb.Duration.AsObject,
     }
   }
 
@@ -2939,48 +2933,6 @@ export namespace SpanFuzzy {
     FUZZINESS_NOT_SET = 0,
     FUZZINESS_AUTO = 10,
     FUZZINESS_VALUE = 11,
-  }
-}
-
-export class BulkDeleteTranscriptsRequest extends jspb.Message {
-  hasQuery(): boolean;
-  clearQuery(): void;
-  getQuery(): TranscriptQuery | undefined;
-  setQuery(value?: TranscriptQuery): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BulkDeleteTranscriptsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: BulkDeleteTranscriptsRequest): BulkDeleteTranscriptsRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BulkDeleteTranscriptsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BulkDeleteTranscriptsRequest;
-  static deserializeBinaryFromReader(message: BulkDeleteTranscriptsRequest, reader: jspb.BinaryReader): BulkDeleteTranscriptsRequest;
-}
-
-export namespace BulkDeleteTranscriptsRequest {
-  export type AsObject = {
-    query?: TranscriptQuery.AsObject,
-  }
-}
-
-export class BulkDeleteTranscriptsResponse extends jspb.Message {
-  getTotal(): number;
-  setTotal(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BulkDeleteTranscriptsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: BulkDeleteTranscriptsResponse): BulkDeleteTranscriptsResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BulkDeleteTranscriptsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BulkDeleteTranscriptsResponse;
-  static deserializeBinaryFromReader(message: BulkDeleteTranscriptsResponse, reader: jspb.BinaryReader): BulkDeleteTranscriptsResponse;
-}
-
-export namespace BulkDeleteTranscriptsResponse {
-  export type AsObject = {
-    total: number,
   }
 }
 

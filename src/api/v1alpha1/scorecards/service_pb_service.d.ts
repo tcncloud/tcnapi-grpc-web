@@ -427,15 +427,6 @@ type ScorecardsPreviewEvaluationScore = {
   readonly responseType: typeof api_v1alpha1_scorecards_evaluation_pb.PreviewEvaluationScoreResponse;
 };
 
-type ScorecardsRestoreEvaluation = {
-  readonly methodName: string;
-  readonly service: typeof Scorecards;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationRequest;
-  readonly responseType: typeof api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationResponse;
-};
-
 export class Scorecards {
   static readonly serviceName: string;
   static readonly CreateScorecard: ScorecardsCreateScorecard;
@@ -484,7 +475,6 @@ export class Scorecards {
   static readonly StreamAutoEvaluations: ScorecardsStreamAutoEvaluations;
   static readonly DeleteAutoEvaluation: ScorecardsDeleteAutoEvaluation;
   static readonly PreviewEvaluationScore: ScorecardsPreviewEvaluationScore;
-  static readonly RestoreEvaluation: ScorecardsRestoreEvaluation;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -924,15 +914,6 @@ export class ScorecardsClient {
   previewEvaluationScore(
     requestMessage: api_v1alpha1_scorecards_evaluation_pb.PreviewEvaluationScoreRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.PreviewEvaluationScoreResponse|null) => void
-  ): UnaryResponse;
-  restoreEvaluation(
-    requestMessage: api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationResponse|null) => void
-  ): UnaryResponse;
-  restoreEvaluation(
-    requestMessage: api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationResponse|null) => void
   ): UnaryResponse;
 }
 

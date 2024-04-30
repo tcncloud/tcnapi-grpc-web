@@ -6054,8 +6054,7 @@ proto.api.commons.audit.OmnichannelTranscriptSavedEvent.prototype.toObject = fun
 proto.api.commons.audit.OmnichannelTranscriptSavedEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
     conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    transcriptPath: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+    transcriptPath: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -6100,11 +6099,6 @@ proto.api.commons.audit.OmnichannelTranscriptSavedEvent.deserializeBinaryFromRea
       var value = /** @type {string} */ (reader.readString());
       msg.setTranscriptPath(value);
       break;
-    case 3:
-      var value = new api_commons_omnichannel_pb.OmniConversation;
-      reader.readMessage(value,api_commons_omnichannel_pb.OmniConversation.deserializeBinaryFromReader);
-      msg.setConversation(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -6148,14 +6142,6 @@ proto.api.commons.audit.OmnichannelTranscriptSavedEvent.serializeBinaryToWriter 
       f
     );
   }
-  f = message.getConversation();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      api_commons_omnichannel_pb.OmniConversation.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -6192,43 +6178,6 @@ proto.api.commons.audit.OmnichannelTranscriptSavedEvent.prototype.getTranscriptP
  */
 proto.api.commons.audit.OmnichannelTranscriptSavedEvent.prototype.setTranscriptPath = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional api.commons.OmniConversation conversation = 3;
- * @return {?proto.api.commons.OmniConversation}
- */
-proto.api.commons.audit.OmnichannelTranscriptSavedEvent.prototype.getConversation = function() {
-  return /** @type{?proto.api.commons.OmniConversation} */ (
-    jspb.Message.getWrapperField(this, api_commons_omnichannel_pb.OmniConversation, 3));
-};
-
-
-/**
- * @param {?proto.api.commons.OmniConversation|undefined} value
- * @return {!proto.api.commons.audit.OmnichannelTranscriptSavedEvent} returns this
-*/
-proto.api.commons.audit.OmnichannelTranscriptSavedEvent.prototype.setConversation = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.OmnichannelTranscriptSavedEvent} returns this
- */
-proto.api.commons.audit.OmnichannelTranscriptSavedEvent.prototype.clearConversation = function() {
-  return this.setConversation(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.OmnichannelTranscriptSavedEvent.prototype.hasConversation = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 
