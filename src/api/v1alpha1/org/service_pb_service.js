@@ -1731,6 +1731,24 @@ Org.RevokeUsersPermissionGroup = {
   responseType: api_v1alpha1_org_permissions_pb.RevokeUsersPermissionGroupResponse
 };
 
+Org.AssignLabels = {
+  methodName: "AssignLabels",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_permissions_pb.AssignLabelsRequest,
+  responseType: api_v1alpha1_org_permissions_pb.AssignLabelsResponse
+};
+
+Org.RevokeLabels = {
+  methodName: "RevokeLabels",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_permissions_pb.RevokeLabelsRequest,
+  responseType: api_v1alpha1_org_permissions_pb.RevokeLabelsResponse
+};
+
 Org.AssignAccountOwnerPermissionToUser = {
   methodName: "AssignAccountOwnerPermissionToUser",
   service: Org,
@@ -7944,6 +7962,68 @@ OrgClient.prototype.revokeUsersPermissionGroup = function revokeUsersPermissionG
     callback = arguments[1];
   }
   var client = grpc.unary(Org.RevokeUsersPermissionGroup, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.assignLabels = function assignLabels(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.AssignLabels, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.revokeLabels = function revokeLabels(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.RevokeLabels, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
