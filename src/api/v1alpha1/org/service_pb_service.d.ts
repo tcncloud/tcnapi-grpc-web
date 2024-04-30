@@ -1725,6 +1725,24 @@ type OrgRevokeUsersPermissionGroup = {
   readonly responseType: typeof api_v1alpha1_org_permissions_pb.RevokeUsersPermissionGroupResponse;
 };
 
+type OrgAssignLabels = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_permissions_pb.AssignLabelsRequest;
+  readonly responseType: typeof api_v1alpha1_org_permissions_pb.AssignLabelsResponse;
+};
+
+type OrgRevokeLabels = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_permissions_pb.RevokeLabelsRequest;
+  readonly responseType: typeof api_v1alpha1_org_permissions_pb.RevokeLabelsResponse;
+};
+
 type OrgAssignAccountOwnerPermissionToUser = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -2187,6 +2205,8 @@ export class Org {
   static readonly ListPermissionGroupsByOrgId: OrgListPermissionGroupsByOrgId;
   static readonly AssignUsersPermissionGroup: OrgAssignUsersPermissionGroup;
   static readonly RevokeUsersPermissionGroup: OrgRevokeUsersPermissionGroup;
+  static readonly AssignLabels: OrgAssignLabels;
+  static readonly RevokeLabels: OrgRevokeLabels;
   static readonly AssignAccountOwnerPermissionToUser: OrgAssignAccountOwnerPermissionToUser;
   static readonly RevokeAccountOwnerPermissionFromUser: OrgRevokeAccountOwnerPermissionFromUser;
   static readonly InitDefaultPermissionGroups: OrgInitDefaultPermissionGroups;
@@ -3888,6 +3908,24 @@ export class OrgClient {
   revokeUsersPermissionGroup(
     requestMessage: api_v1alpha1_org_permissions_pb.RevokeUsersPermissionGroupRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_permissions_pb.RevokeUsersPermissionGroupResponse|null) => void
+  ): UnaryResponse;
+  assignLabels(
+    requestMessage: api_v1alpha1_org_permissions_pb.AssignLabelsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_permissions_pb.AssignLabelsResponse|null) => void
+  ): UnaryResponse;
+  assignLabels(
+    requestMessage: api_v1alpha1_org_permissions_pb.AssignLabelsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_permissions_pb.AssignLabelsResponse|null) => void
+  ): UnaryResponse;
+  revokeLabels(
+    requestMessage: api_v1alpha1_org_permissions_pb.RevokeLabelsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_permissions_pb.RevokeLabelsResponse|null) => void
+  ): UnaryResponse;
+  revokeLabels(
+    requestMessage: api_v1alpha1_org_permissions_pb.RevokeLabelsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_permissions_pb.RevokeLabelsResponse|null) => void
   ): UnaryResponse;
   assignAccountOwnerPermissionToUser(
     requestMessage: api_v1alpha1_org_permissions_pb.AssignAccountOwnerPermissionToUserRequest,
