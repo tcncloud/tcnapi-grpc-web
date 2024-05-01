@@ -109,7 +109,8 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.toObject = function(includeInstan
     timeZoneWrapper: (f = msg.getTimeZoneWrapper()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
     hideCsvFooter: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
     transferConfigSid: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    cronExpression: (f = msg.getCronExpression()) && api_commons_types_pb.CronExpression.toObject(includeInstance, f)
+    cronExpression: (f = msg.getCronExpression()) && api_commons_types_pb.CronExpression.toObject(includeInstance, f),
+    transferOptions: (f = msg.getTransferOptions()) && api_commons_bireportgenerator_pb.TransferOptions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -225,6 +226,11 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.deserializeBinaryFromReader = fun
       var value = new api_commons_types_pb.CronExpression;
       reader.readMessage(value,api_commons_types_pb.CronExpression.deserializeBinaryFromReader);
       msg.setCronExpression(value);
+      break;
+    case 19:
+      var value = new api_commons_bireportgenerator_pb.TransferOptions;
+      reader.readMessage(value,api_commons_bireportgenerator_pb.TransferOptions.deserializeBinaryFromReader);
+      msg.setTransferOptions(value);
       break;
     default:
       reader.skipField();
@@ -385,6 +391,14 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.serializeBinaryToWriter = functio
       18,
       f,
       api_commons_types_pb.CronExpression.serializeBinaryToWriter
+    );
+  }
+  f = message.getTransferOptions();
+  if (f != null) {
+    writer.writeMessage(
+      19,
+      f,
+      api_commons_bireportgenerator_pb.TransferOptions.serializeBinaryToWriter
     );
   }
 };
@@ -844,6 +858,43 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.clearCronExpression = f
  */
 proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.hasCronExpression = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional api.commons.TransferOptions transfer_options = 19;
+ * @return {?proto.api.commons.TransferOptions}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.getTransferOptions = function() {
+  return /** @type{?proto.api.commons.TransferOptions} */ (
+    jspb.Message.getWrapperField(this, api_commons_bireportgenerator_pb.TransferOptions, 19));
+};
+
+
+/**
+ * @param {?proto.api.commons.TransferOptions|undefined} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportJob} returns this
+*/
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.setTransferOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 19, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.bireportgenerator.ReportJob} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.clearTransferOptions = function() {
+  return this.setTransferOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.hasTransferOptions = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 
