@@ -236,7 +236,8 @@ proto.services.billing.entities.v1alpha2.BasicUnitConfig.toObject = function(inc
     minUnits: (f = msg.getMinUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     maxUnits: (f = msg.getMaxUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     minUnitsPerCycle: (f = msg.getMinUnitsPerCycle()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    maxUnitsPerCycle: (f = msg.getMaxUnitsPerCycle()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+    maxUnitsPerCycle: (f = msg.getMaxUnitsPerCycle()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    unitSizePerCycle: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -300,6 +301,10 @@ proto.services.billing.entities.v1alpha2.BasicUnitConfig.deserializeBinaryFromRe
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setMaxUnitsPerCycle(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setUnitSizePerCycle(value);
       break;
     default:
       reader.skipField();
@@ -374,6 +379,13 @@ proto.services.billing.entities.v1alpha2.BasicUnitConfig.serializeBinaryToWriter
       6,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getUnitSizePerCycle();
+  if (f !== 0) {
+    writer.writeInt64(
+      7,
+      f
     );
   }
 };
@@ -560,6 +572,24 @@ proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.clearMaxUnits
  */
 proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.hasMaxUnitsPerCycle = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional int64 unit_size_per_cycle = 7;
+ * @return {number}
+ */
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.getUnitSizePerCycle = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.services.billing.entities.v1alpha2.BasicUnitConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.setUnitSizePerCycle = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
