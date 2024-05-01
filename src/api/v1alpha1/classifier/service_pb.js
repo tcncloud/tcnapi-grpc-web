@@ -465,7 +465,8 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.toObject = 
 proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.toObject = function(includeInstance, msg) {
   var f, obj = {
     fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    hints: (f = msg.getHints()) && api_v1alpha1_classifier_entities_pb.ParseHints.toObject(includeInstance, f)
+    hints: (f = msg.getHints()) && api_v1alpha1_classifier_entities_pb.ParseHints.toObject(includeInstance, f),
+    renameFieldsMap: (f = msg.getRenameFieldsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -511,6 +512,12 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.deserializeBinaryFrom
       reader.readMessage(value,api_v1alpha1_classifier_entities_pb.ParseHints.deserializeBinaryFromReader);
       msg.setHints(value);
       break;
+    case 6:
+      var value = msg.getRenameFieldsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
+      break;
     default:
       reader.skipField();
       break;
@@ -554,6 +561,10 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.serializeBinaryToWrit
       f,
       api_v1alpha1_classifier_entities_pb.ParseHints.serializeBinaryToWriter
     );
+  }
+  f = message.getRenameFieldsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -610,6 +621,29 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.clearHints 
  */
 proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.hasHints = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * map<string, string> rename_fields = 6;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.getRenameFieldsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile} returns this
+ */
+proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.clearRenameFieldsMap = function() {
+  this.getRenameFieldsMap().clear();
+  return this;
 };
 
 
