@@ -20,8 +20,6 @@ export class ParseFileRequest extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getRenameFieldsMap(): jspb.Map<string, string>;
-  clearRenameFieldsMap(): void;
   getOptCase(): ParseFileRequest.OptCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ParseFileRequest.AsObject;
@@ -38,7 +36,6 @@ export namespace ParseFileRequest {
     rawData: Uint8Array | string,
     reparseFile?: ParseFileRequest.ReParseFile.AsObject,
     name: string,
-    renameFieldsMap: Array<[string, string]>,
   }
 
   export class ReParseFile extends jspb.Message {

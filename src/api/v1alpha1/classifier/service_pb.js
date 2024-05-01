@@ -328,8 +328,7 @@ proto.api.v1alpha1.classifier.ParseFileRequest.toObject = function(includeInstan
   var f, obj = {
     rawData: msg.getRawData_asB64(),
     reparseFile: (f = msg.getReparseFile()) && proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    renameFieldsMap: (f = msg.getRenameFieldsMap()) ? f.toObject(includeInstance, undefined) : []
+    name: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -378,12 +377,6 @@ proto.api.v1alpha1.classifier.ParseFileRequest.deserializeBinaryFromReader = fun
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
-      break;
-    case 6:
-      var value = msg.getRenameFieldsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
       break;
     default:
       reader.skipField();
@@ -435,10 +428,6 @@ proto.api.v1alpha1.classifier.ParseFileRequest.serializeBinaryToWriter = functio
       5,
       f
     );
-  }
-  f = message.getRenameFieldsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -736,29 +725,6 @@ proto.api.v1alpha1.classifier.ParseFileRequest.prototype.getName = function() {
  */
 proto.api.v1alpha1.classifier.ParseFileRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * map<string, string> rename_fields = 6;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.api.v1alpha1.classifier.ParseFileRequest.prototype.getRenameFieldsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.api.v1alpha1.classifier.ParseFileRequest} returns this
- */
-proto.api.v1alpha1.classifier.ParseFileRequest.prototype.clearRenameFieldsMap = function() {
-  this.getRenameFieldsMap().clear();
-  return this;
 };
 
 
