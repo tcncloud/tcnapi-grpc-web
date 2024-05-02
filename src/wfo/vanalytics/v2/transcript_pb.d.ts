@@ -266,8 +266,8 @@ export namespace FlagSummary {
 }
 
 export class Sms extends jspb.Message {
-  getConversationSid(): number;
-  setConversationSid(value: number): void;
+  getConversationSid(): string;
+  setConversationSid(value: string): void;
 
   clearThreadsList(): void;
   getThreadsList(): Array<Sms.Thread>;
@@ -297,7 +297,7 @@ export class Sms extends jspb.Message {
 
 export namespace Sms {
   export type AsObject = {
-    conversationSid: number,
+    conversationSid: string,
     threadsList: Array<Sms.Thread.AsObject>,
     phone?: Sms.Phone.AsObject,
     callerId: string,
@@ -2254,9 +2254,9 @@ export namespace TranscriptQuery {
 
     export class ConversationSid extends jspb.Message {
       clearAnyList(): void;
-      getAnyList(): Array<number>;
-      setAnyList(value: Array<number>): void;
-      addAny(value: number, index?: number): number;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
 
       serializeBinary(): Uint8Array;
       toObject(includeInstance?: boolean): ConversationSid.AsObject;
@@ -2270,7 +2270,7 @@ export namespace TranscriptQuery {
 
     export namespace ConversationSid {
       export type AsObject = {
-        anyList: Array<number>,
+        anyList: Array<string>,
       }
     }
   }

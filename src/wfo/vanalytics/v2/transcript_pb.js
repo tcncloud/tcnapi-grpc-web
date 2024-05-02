@@ -3937,7 +3937,7 @@ proto.wfo.vanalytics.v2.Sms.prototype.toObject = function(opt_includeInstance) {
  */
 proto.wfo.vanalytics.v2.Sms.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     threadsList: jspb.Message.toObjectList(msg.getThreadsList(),
     proto.wfo.vanalytics.v2.Sms.Thread.toObject, includeInstance),
     phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.Sms.Phone.toObject(includeInstance, f),
@@ -3980,7 +3980,7 @@ proto.wfo.vanalytics.v2.Sms.deserializeBinaryFromReader = function(msg, reader) 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setConversationSid(value);
       break;
     case 2:
@@ -4031,8 +4031,8 @@ proto.wfo.vanalytics.v2.Sms.prototype.serializeBinary = function() {
 proto.wfo.vanalytics.v2.Sms.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getConversationSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -4603,19 +4603,19 @@ proto.wfo.vanalytics.v2.Sms.Segment.prototype.hasOffset = function() {
 
 /**
  * optional int64 conversation_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.wfo.vanalytics.v2.Sms.prototype.getConversationSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.wfo.vanalytics.v2.Sms} returns this
  */
 proto.wfo.vanalytics.v2.Sms.prototype.setConversationSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -18389,7 +18389,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      var values = /** @type {!Array<string>} */ (reader.isDelimited() ? reader.readPackedInt64String() : [reader.readInt64String()]);
       for (var i = 0; i < values.length; i++) {
         msg.addAny(values[i]);
       }
@@ -18425,7 +18425,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid.serializeBinaryToWri
   var f = undefined;
   f = message.getAnyList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writePackedInt64String(
       1,
       f
     );
@@ -18435,15 +18435,15 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid.serializeBinaryToWri
 
 /**
  * repeated int64 any = 1;
- * @return {!Array<number>}
+ * @return {!Array<string>}
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid.prototype.getAnyList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid} returns this
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid.prototype.setAnyList = function(value) {
@@ -18452,7 +18452,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid.prototype.setAnyList
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid} returns this
  */
