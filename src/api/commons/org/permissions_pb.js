@@ -145,7 +145,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.org.PermissionGroup.repeatedFields_ = [5,7];
+proto.api.commons.org.PermissionGroup.repeatedFields_ = [5];
 
 
 
@@ -183,8 +183,7 @@ proto.api.commons.org.PermissionGroup.toObject = function(includeInstance, msg) 
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
     permissionsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    readOnly: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    labelIdsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    readOnly: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -246,10 +245,6 @@ proto.api.commons.org.PermissionGroup.deserializeBinaryFromReader = function(msg
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setReadOnly(value);
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addLabelIds(value);
       break;
     default:
       reader.skipField();
@@ -319,13 +314,6 @@ proto.api.commons.org.PermissionGroup.serializeBinaryToWriter = function(message
   if (f) {
     writer.writeBool(
       6,
-      f
-    );
-  }
-  f = message.getLabelIdsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      7,
       f
     );
   }
@@ -456,43 +444,6 @@ proto.api.commons.org.PermissionGroup.prototype.getReadOnly = function() {
  */
 proto.api.commons.org.PermissionGroup.prototype.setReadOnly = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
-};
-
-
-/**
- * repeated string label_ids = 7;
- * @return {!Array<string>}
- */
-proto.api.commons.org.PermissionGroup.prototype.getLabelIdsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.api.commons.org.PermissionGroup} returns this
- */
-proto.api.commons.org.PermissionGroup.prototype.setLabelIdsList = function(value) {
-  return jspb.Message.setField(this, 7, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.api.commons.org.PermissionGroup} returns this
- */
-proto.api.commons.org.PermissionGroup.prototype.addLabelIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.commons.org.PermissionGroup} returns this
- */
-proto.api.commons.org.PermissionGroup.prototype.clearLabelIdsList = function() {
-  return this.setLabelIdsList([]);
 };
 
 
