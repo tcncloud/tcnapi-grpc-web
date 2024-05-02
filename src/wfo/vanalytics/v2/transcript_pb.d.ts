@@ -9,6 +9,7 @@ import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 import * as wfo_vanalytics_v2_agent_call_log_pb from "../../../wfo/vanalytics/v2/agent_call_log_pb";
+import * as wfo_vanalytics_v2_transcript_summary_pb from "../../../wfo/vanalytics/v2/transcript_summary_pb";
 
 export class Transcript extends jspb.Message {
   hasCall(): boolean;
@@ -42,6 +43,11 @@ export class Transcript extends jspb.Message {
   getTranscriptSid(): number;
   setTranscriptSid(value: number): void;
 
+  hasSummary(): boolean;
+  clearSummary(): void;
+  getSummary(): wfo_vanalytics_v2_transcript_summary_pb.TranscriptSummary | undefined;
+  setSummary(value?: wfo_vanalytics_v2_transcript_summary_pb.TranscriptSummary): void;
+
   getMetadataCase(): Transcript.MetadataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Transcript.AsObject;
@@ -62,6 +68,7 @@ export namespace Transcript {
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     flagSummary?: FlagSummary.AsObject,
     transcriptSid: number,
+    summary?: wfo_vanalytics_v2_transcript_summary_pb.TranscriptSummary.AsObject,
   }
 
   export enum MetadataCase {
@@ -550,6 +557,11 @@ export namespace Call {
     getOffset(): google_protobuf_duration_pb.Duration | undefined;
     setOffset(value?: google_protobuf_duration_pb.Duration): void;
 
+    hasDuration(): boolean;
+    clearDuration(): void;
+    getDuration(): google_protobuf_duration_pb.Duration | undefined;
+    setDuration(value?: google_protobuf_duration_pb.Duration): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Segment.AsObject;
     static toObject(includeInstance: boolean, msg: Segment): Segment.AsObject;
@@ -564,6 +576,7 @@ export namespace Call {
     export type AsObject = {
       text: string,
       offset?: google_protobuf_duration_pb.Duration.AsObject,
+      duration?: google_protobuf_duration_pb.Duration.AsObject,
     }
   }
 
@@ -2933,6 +2946,190 @@ export namespace SpanFuzzy {
     FUZZINESS_NOT_SET = 0,
     FUZZINESS_AUTO = 10,
     FUZZINESS_VALUE = 11,
+  }
+}
+
+export class BulkDeleteTranscriptsRequest extends jspb.Message {
+  hasQuery(): boolean;
+  clearQuery(): void;
+  getQuery(): TranscriptQuery | undefined;
+  setQuery(value?: TranscriptQuery): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkDeleteTranscriptsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkDeleteTranscriptsRequest): BulkDeleteTranscriptsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkDeleteTranscriptsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkDeleteTranscriptsRequest;
+  static deserializeBinaryFromReader(message: BulkDeleteTranscriptsRequest, reader: jspb.BinaryReader): BulkDeleteTranscriptsRequest;
+}
+
+export namespace BulkDeleteTranscriptsRequest {
+  export type AsObject = {
+    query?: TranscriptQuery.AsObject,
+  }
+}
+
+export class BulkDeleteTranscriptsResponse extends jspb.Message {
+  getTotal(): number;
+  setTotal(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkDeleteTranscriptsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkDeleteTranscriptsResponse): BulkDeleteTranscriptsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkDeleteTranscriptsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkDeleteTranscriptsResponse;
+  static deserializeBinaryFromReader(message: BulkDeleteTranscriptsResponse, reader: jspb.BinaryReader): BulkDeleteTranscriptsResponse;
+}
+
+export namespace BulkDeleteTranscriptsResponse {
+  export type AsObject = {
+    total: number,
+  }
+}
+
+export class BulkRestoreTranscriptsRequest extends jspb.Message {
+  hasQuery(): boolean;
+  clearQuery(): void;
+  getQuery(): TranscriptQuery | undefined;
+  setQuery(value?: TranscriptQuery): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkRestoreTranscriptsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkRestoreTranscriptsRequest): BulkRestoreTranscriptsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkRestoreTranscriptsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkRestoreTranscriptsRequest;
+  static deserializeBinaryFromReader(message: BulkRestoreTranscriptsRequest, reader: jspb.BinaryReader): BulkRestoreTranscriptsRequest;
+}
+
+export namespace BulkRestoreTranscriptsRequest {
+  export type AsObject = {
+    query?: TranscriptQuery.AsObject,
+  }
+}
+
+export class BulkRestoreTranscriptsResponse extends jspb.Message {
+  getTotal(): number;
+  setTotal(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkRestoreTranscriptsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkRestoreTranscriptsResponse): BulkRestoreTranscriptsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkRestoreTranscriptsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkRestoreTranscriptsResponse;
+  static deserializeBinaryFromReader(message: BulkRestoreTranscriptsResponse, reader: jspb.BinaryReader): BulkRestoreTranscriptsResponse;
+}
+
+export namespace BulkRestoreTranscriptsResponse {
+  export type AsObject = {
+    total: number,
+  }
+}
+
+export class ListTranscriptGroupNamesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTranscriptGroupNamesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTranscriptGroupNamesRequest): ListTranscriptGroupNamesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTranscriptGroupNamesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTranscriptGroupNamesRequest;
+  static deserializeBinaryFromReader(message: ListTranscriptGroupNamesRequest, reader: jspb.BinaryReader): ListTranscriptGroupNamesRequest;
+}
+
+export namespace ListTranscriptGroupNamesRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListTranscriptGroupNamesResponse extends jspb.Message {
+  clearGroupNamesList(): void;
+  getGroupNamesList(): Array<TranscriptGroupName>;
+  setGroupNamesList(value: Array<TranscriptGroupName>): void;
+  addGroupNames(value?: TranscriptGroupName, index?: number): TranscriptGroupName;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTranscriptGroupNamesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTranscriptGroupNamesResponse): ListTranscriptGroupNamesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTranscriptGroupNamesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTranscriptGroupNamesResponse;
+  static deserializeBinaryFromReader(message: ListTranscriptGroupNamesResponse, reader: jspb.BinaryReader): ListTranscriptGroupNamesResponse;
+}
+
+export namespace ListTranscriptGroupNamesResponse {
+  export type AsObject = {
+    groupNamesList: Array<TranscriptGroupName.AsObject>,
+  }
+}
+
+export class TranscriptGroupName extends jspb.Message {
+  getValue(): string;
+  setValue(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TranscriptGroupName.AsObject;
+  static toObject(includeInstance: boolean, msg: TranscriptGroupName): TranscriptGroupName.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TranscriptGroupName, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TranscriptGroupName;
+  static deserializeBinaryFromReader(message: TranscriptGroupName, reader: jspb.BinaryReader): TranscriptGroupName;
+}
+
+export namespace TranscriptGroupName {
+  export type AsObject = {
+    value: string,
+  }
+}
+
+export class ListAgentResponseValuesRequest extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentResponseValuesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentResponseValuesRequest): ListAgentResponseValuesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentResponseValuesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentResponseValuesRequest;
+  static deserializeBinaryFromReader(message: ListAgentResponseValuesRequest, reader: jspb.BinaryReader): ListAgentResponseValuesRequest;
+}
+
+export namespace ListAgentResponseValuesRequest {
+  export type AsObject = {
+    key: string,
+  }
+}
+
+export class ListAgentResponseValuesResponse extends jspb.Message {
+  clearValuesList(): void;
+  getValuesList(): Array<string>;
+  setValuesList(value: Array<string>): void;
+  addValues(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentResponseValuesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentResponseValuesResponse): ListAgentResponseValuesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentResponseValuesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentResponseValuesResponse;
+  static deserializeBinaryFromReader(message: ListAgentResponseValuesResponse, reader: jspb.BinaryReader): ListAgentResponseValuesResponse;
+}
+
+export namespace ListAgentResponseValuesResponse {
+  export type AsObject = {
+    valuesList: Array<string>,
   }
 }
 

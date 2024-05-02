@@ -1,91 +1,91 @@
-// package: api.v1alpha1.contactmanager
-// file: api/v1alpha1/contactmanager/service.proto
+// package: api.v1alpha1.org.labels
+// file: api/v1alpha1/org/labels/service.proto
 
-var api_v1alpha1_contactmanager_service_pb = require("../../../api/v1alpha1/contactmanager/service_pb");
-var api_v1alpha1_contactmanager_contactmanager_pb = require("../../../api/v1alpha1/contactmanager/contactmanager_pb");
+var api_v1alpha1_org_labels_service_pb = require("../../../../api/v1alpha1/org/labels/service_pb");
+var api_v1alpha1_org_labels_entities_pb = require("../../../../api/v1alpha1/org/labels/entities_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var ContactManager = (function () {
-  function ContactManager() {}
-  ContactManager.serviceName = "api.v1alpha1.contactmanager.ContactManager";
-  return ContactManager;
+var LabelsService = (function () {
+  function LabelsService() {}
+  LabelsService.serviceName = "api.v1alpha1.org.labels.LabelsService";
+  return LabelsService;
 }());
 
-ContactManager.GetContactList = {
-  methodName: "GetContactList",
-  service: ContactManager,
+LabelsService.CreateLabel = {
+  methodName: "CreateLabel",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_contactmanager_contactmanager_pb.GetContactListRequest,
-  responseType: api_v1alpha1_contactmanager_contactmanager_pb.GetContactListResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.CreateLabelRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.CreateLabelResponse
 };
 
-ContactManager.ListContactEntryList = {
-  methodName: "ListContactEntryList",
-  service: ContactManager,
+LabelsService.GetLabel = {
+  methodName: "GetLabel",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_contactmanager_contactmanager_pb.ListContactEntryListRequest,
-  responseType: api_v1alpha1_contactmanager_contactmanager_pb.ListContactEntryListResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.GetLabelRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.GetLabelResponse
 };
 
-ContactManager.GetEncContactEntry = {
-  methodName: "GetEncContactEntry",
-  service: ContactManager,
+LabelsService.UpdateLabel = {
+  methodName: "UpdateLabel",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_contactmanager_contactmanager_pb.GetEncContactEntryRequest,
-  responseType: api_v1alpha1_contactmanager_contactmanager_pb.GetEncContactEntryResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.UpdateLabelRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.UpdateLabelResponse
 };
 
-ContactManager.GetKYCEncContactEntry = {
-  methodName: "GetKYCEncContactEntry",
-  service: ContactManager,
+LabelsService.ListLabels = {
+  methodName: "ListLabels",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_contactmanager_contactmanager_pb.GetKYCEncContactEntryRequest,
-  responseType: api_v1alpha1_contactmanager_contactmanager_pb.GetKYCEncContactEntryResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.ListLabelsRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.ListLabelsResponse
 };
 
-ContactManager.GetKYCKeys = {
-  methodName: "GetKYCKeys",
-  service: ContactManager,
+LabelsService.DeleteLabel = {
+  methodName: "DeleteLabel",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_contactmanager_contactmanager_pb.GetKYCKeysRequest,
-  responseType: api_v1alpha1_contactmanager_contactmanager_pb.GetKYCKeysResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.DeleteLabelRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.DeleteLabelResponse
 };
 
-ContactManager.AddContactEntry = {
-  methodName: "AddContactEntry",
-  service: ContactManager,
+LabelsService.AttachLabel = {
+  methodName: "AttachLabel",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryRequest,
-  responseType: api_v1alpha1_contactmanager_contactmanager_pb.AddContactEntryResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.AttachLabelRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.AttachLabelResponse
 };
 
-ContactManager.EditContactEntry = {
-  methodName: "EditContactEntry",
-  service: ContactManager,
+LabelsService.GetLabeledEntityMap = {
+  methodName: "GetLabeledEntityMap",
+  service: LabelsService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryRequest,
-  responseType: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryResponse
+  requestType: api_v1alpha1_org_labels_entities_pb.GetLabeledEntityMapRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.GetLabeledEntityMapResponse
 };
 
-exports.ContactManager = ContactManager;
+exports.LabelsService = LabelsService;
 
-function ContactManagerClient(serviceHost, options) {
+function LabelsServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-ContactManagerClient.prototype.getContactList = function getContactList(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.createLabel = function createLabel(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ContactManager.GetContactList, {
+  var client = grpc.unary(LabelsService.CreateLabel, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -112,11 +112,11 @@ ContactManagerClient.prototype.getContactList = function getContactList(requestM
   };
 };
 
-ContactManagerClient.prototype.listContactEntryList = function listContactEntryList(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.getLabel = function getLabel(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ContactManager.ListContactEntryList, {
+  var client = grpc.unary(LabelsService.GetLabel, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -143,11 +143,11 @@ ContactManagerClient.prototype.listContactEntryList = function listContactEntryL
   };
 };
 
-ContactManagerClient.prototype.getEncContactEntry = function getEncContactEntry(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.updateLabel = function updateLabel(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ContactManager.GetEncContactEntry, {
+  var client = grpc.unary(LabelsService.UpdateLabel, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -174,11 +174,11 @@ ContactManagerClient.prototype.getEncContactEntry = function getEncContactEntry(
   };
 };
 
-ContactManagerClient.prototype.getKYCEncContactEntry = function getKYCEncContactEntry(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.listLabels = function listLabels(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ContactManager.GetKYCEncContactEntry, {
+  var client = grpc.unary(LabelsService.ListLabels, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -205,11 +205,11 @@ ContactManagerClient.prototype.getKYCEncContactEntry = function getKYCEncContact
   };
 };
 
-ContactManagerClient.prototype.getKYCKeys = function getKYCKeys(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.deleteLabel = function deleteLabel(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ContactManager.GetKYCKeys, {
+  var client = grpc.unary(LabelsService.DeleteLabel, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -236,11 +236,11 @@ ContactManagerClient.prototype.getKYCKeys = function getKYCKeys(requestMessage, 
   };
 };
 
-ContactManagerClient.prototype.addContactEntry = function addContactEntry(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.attachLabel = function attachLabel(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ContactManager.AddContactEntry, {
+  var client = grpc.unary(LabelsService.AttachLabel, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -267,11 +267,11 @@ ContactManagerClient.prototype.addContactEntry = function addContactEntry(reques
   };
 };
 
-ContactManagerClient.prototype.editContactEntry = function editContactEntry(requestMessage, metadata, callback) {
+LabelsServiceClient.prototype.getLabeledEntityMap = function getLabeledEntityMap(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ContactManager.EditContactEntry, {
+  var client = grpc.unary(LabelsService.GetLabeledEntityMap, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -298,5 +298,5 @@ ContactManagerClient.prototype.editContactEntry = function editContactEntry(requ
   };
 };
 
-exports.ContactManagerClient = ContactManagerClient;
+exports.LabelsServiceClient = LabelsServiceClient;
 

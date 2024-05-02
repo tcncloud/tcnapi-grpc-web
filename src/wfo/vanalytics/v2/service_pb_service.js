@@ -11,6 +11,7 @@ var wfo_vanalytics_v2_flag_snapshot_pb = require("../../../wfo/vanalytics/v2/fla
 var wfo_vanalytics_v2_flag_transcript_pb = require("../../../wfo/vanalytics/v2/flag_transcript_pb");
 var wfo_vanalytics_v2_flag_transcript_filter_pb = require("../../../wfo/vanalytics/v2/flag_transcript_filter_pb");
 var wfo_vanalytics_v2_transcript_pb = require("../../../wfo/vanalytics/v2/transcript_pb");
+var wfo_vanalytics_v2_transcript_summary_pb = require("../../../wfo/vanalytics/v2/transcript_summary_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var Vanalytics = (function () {
@@ -19,6 +20,33 @@ var Vanalytics = (function () {
   return Vanalytics;
 }());
 
+Vanalytics.Audit = {
+  methodName: "Audit",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: wfo_vanalytics_v2_service_pb.AuditRequest,
+  responseType: wfo_vanalytics_v2_service_pb.AuditResponse
+};
+
+Vanalytics.GetRecordingUrl = {
+  methodName: "GetRecordingUrl",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: wfo_vanalytics_v2_service_pb.GetRecordingUrlRequest,
+  responseType: wfo_vanalytics_v2_service_pb.GetRecordingUrlResponse
+};
+
+Vanalytics.ListBillingSpan = {
+  methodName: "ListBillingSpan",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: wfo_vanalytics_v2_service_pb.ListBillingSpanRequest,
+  responseType: wfo_vanalytics_v2_service_pb.ListBillingSpanResponse
+};
+
 Vanalytics.SearchTranscripts = {
   methodName: "SearchTranscripts",
   service: Vanalytics,
@@ -26,6 +54,51 @@ Vanalytics.SearchTranscripts = {
   responseStream: false,
   requestType: wfo_vanalytics_v2_transcript_pb.SearchTranscriptsRequest,
   responseType: wfo_vanalytics_v2_transcript_pb.SearchTranscriptsResponse
+};
+
+Vanalytics.BulkDeleteTranscripts = {
+  methodName: "BulkDeleteTranscripts",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsRequest,
+  responseType: wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsResponse
+};
+
+Vanalytics.BulkRestoreTranscripts = {
+  methodName: "BulkRestoreTranscripts",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: wfo_vanalytics_v2_transcript_pb.BulkRestoreTranscriptsRequest,
+  responseType: wfo_vanalytics_v2_transcript_pb.BulkRestoreTranscriptsResponse
+};
+
+Vanalytics.ListTranscriptGroupNames = {
+  methodName: "ListTranscriptGroupNames",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: wfo_vanalytics_v2_transcript_pb.ListTranscriptGroupNamesRequest,
+  responseType: wfo_vanalytics_v2_transcript_pb.ListTranscriptGroupNamesResponse
+};
+
+Vanalytics.ListAgentResponseValues = {
+  methodName: "ListAgentResponseValues",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: wfo_vanalytics_v2_transcript_pb.ListAgentResponseValuesRequest,
+  responseType: wfo_vanalytics_v2_transcript_pb.ListAgentResponseValuesResponse
+};
+
+Vanalytics.GetTranscriptSummary = {
+  methodName: "GetTranscriptSummary",
+  service: Vanalytics,
+  requestStream: false,
+  responseStream: false,
+  requestType: wfo_vanalytics_v2_transcript_summary_pb.GetTranscriptSummaryRequest,
+  responseType: wfo_vanalytics_v2_transcript_summary_pb.GetTranscriptSummaryResponse
 };
 
 Vanalytics.CreateFilter = {
@@ -242,11 +315,259 @@ function VanalyticsClient(serviceHost, options) {
   this.options = options || {};
 }
 
+VanalyticsClient.prototype.audit = function audit(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.Audit, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.getRecordingUrl = function getRecordingUrl(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.GetRecordingUrl, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.listBillingSpan = function listBillingSpan(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.ListBillingSpan, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 VanalyticsClient.prototype.searchTranscripts = function searchTranscripts(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(Vanalytics.SearchTranscripts, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.bulkDeleteTranscripts = function bulkDeleteTranscripts(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.BulkDeleteTranscripts, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.bulkRestoreTranscripts = function bulkRestoreTranscripts(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.BulkRestoreTranscripts, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.listTranscriptGroupNames = function listTranscriptGroupNames(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.ListTranscriptGroupNames, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.listAgentResponseValues = function listAgentResponseValues(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.ListAgentResponseValues, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+VanalyticsClient.prototype.getTranscriptSummary = function getTranscriptSummary(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Vanalytics.GetTranscriptSummary, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

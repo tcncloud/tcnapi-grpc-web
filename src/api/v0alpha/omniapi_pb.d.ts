@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../annotations/authz_pb";
+import * as api_commons_lms_pb from "../../api/commons/lms_pb";
 import * as api_commons_omnichannel_pb from "../../api/commons/omnichannel_pb";
 import * as api_commons_types_pb from "../../api/commons/types_pb";
 import * as api_commons_wfm_pb from "../../api/commons/wfm_pb";
@@ -1543,6 +1544,30 @@ export namespace GetAvailableHeadersRes {
   }
 }
 
+export class Header extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getType(): api_commons_lms_pb.FieldTypeMap[keyof api_commons_lms_pb.FieldTypeMap];
+  setType(value: api_commons_lms_pb.FieldTypeMap[keyof api_commons_lms_pb.FieldTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Header.AsObject;
+  static toObject(includeInstance: boolean, msg: Header): Header.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Header, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Header;
+  static deserializeBinaryFromReader(message: Header, reader: jspb.BinaryReader): Header;
+}
+
+export namespace Header {
+  export type AsObject = {
+    name: string,
+    type: api_commons_lms_pb.FieldTypeMap[keyof api_commons_lms_pb.FieldTypeMap],
+  }
+}
+
 export class HeaderGroup extends jspb.Message {
   getName(): string;
   setName(value: string): void;
@@ -1551,6 +1576,11 @@ export class HeaderGroup extends jspb.Message {
   getHeadersList(): Array<string>;
   setHeadersList(value: Array<string>): void;
   addHeaders(value: string, index?: number): string;
+
+  clearListHeadersList(): void;
+  getListHeadersList(): Array<Header>;
+  setListHeadersList(value: Array<Header>): void;
+  addListHeaders(value?: Header, index?: number): Header;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HeaderGroup.AsObject;
@@ -1566,6 +1596,7 @@ export namespace HeaderGroup {
   export type AsObject = {
     name: string,
     headersList: Array<string>,
+    listHeadersList: Array<Header.AsObject>,
   }
 }
 

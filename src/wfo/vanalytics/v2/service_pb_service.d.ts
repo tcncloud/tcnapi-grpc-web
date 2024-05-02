@@ -11,7 +11,35 @@ import * as wfo_vanalytics_v2_flag_snapshot_pb from "../../../wfo/vanalytics/v2/
 import * as wfo_vanalytics_v2_flag_transcript_pb from "../../../wfo/vanalytics/v2/flag_transcript_pb";
 import * as wfo_vanalytics_v2_flag_transcript_filter_pb from "../../../wfo/vanalytics/v2/flag_transcript_filter_pb";
 import * as wfo_vanalytics_v2_transcript_pb from "../../../wfo/vanalytics/v2/transcript_pb";
+import * as wfo_vanalytics_v2_transcript_summary_pb from "../../../wfo/vanalytics/v2/transcript_summary_pb";
 import {grpc} from "@improbable-eng/grpc-web";
+
+type VanalyticsAudit = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wfo_vanalytics_v2_service_pb.AuditRequest;
+  readonly responseType: typeof wfo_vanalytics_v2_service_pb.AuditResponse;
+};
+
+type VanalyticsGetRecordingUrl = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wfo_vanalytics_v2_service_pb.GetRecordingUrlRequest;
+  readonly responseType: typeof wfo_vanalytics_v2_service_pb.GetRecordingUrlResponse;
+};
+
+type VanalyticsListBillingSpan = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wfo_vanalytics_v2_service_pb.ListBillingSpanRequest;
+  readonly responseType: typeof wfo_vanalytics_v2_service_pb.ListBillingSpanResponse;
+};
 
 type VanalyticsSearchTranscripts = {
   readonly methodName: string;
@@ -20,6 +48,51 @@ type VanalyticsSearchTranscripts = {
   readonly responseStream: false;
   readonly requestType: typeof wfo_vanalytics_v2_transcript_pb.SearchTranscriptsRequest;
   readonly responseType: typeof wfo_vanalytics_v2_transcript_pb.SearchTranscriptsResponse;
+};
+
+type VanalyticsBulkDeleteTranscripts = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsRequest;
+  readonly responseType: typeof wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsResponse;
+};
+
+type VanalyticsBulkRestoreTranscripts = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wfo_vanalytics_v2_transcript_pb.BulkRestoreTranscriptsRequest;
+  readonly responseType: typeof wfo_vanalytics_v2_transcript_pb.BulkRestoreTranscriptsResponse;
+};
+
+type VanalyticsListTranscriptGroupNames = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wfo_vanalytics_v2_transcript_pb.ListTranscriptGroupNamesRequest;
+  readonly responseType: typeof wfo_vanalytics_v2_transcript_pb.ListTranscriptGroupNamesResponse;
+};
+
+type VanalyticsListAgentResponseValues = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wfo_vanalytics_v2_transcript_pb.ListAgentResponseValuesRequest;
+  readonly responseType: typeof wfo_vanalytics_v2_transcript_pb.ListAgentResponseValuesResponse;
+};
+
+type VanalyticsGetTranscriptSummary = {
+  readonly methodName: string;
+  readonly service: typeof Vanalytics;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wfo_vanalytics_v2_transcript_summary_pb.GetTranscriptSummaryRequest;
+  readonly responseType: typeof wfo_vanalytics_v2_transcript_summary_pb.GetTranscriptSummaryResponse;
 };
 
 type VanalyticsCreateFilter = {
@@ -231,7 +304,15 @@ type VanalyticsUpdateCorrection = {
 
 export class Vanalytics {
   static readonly serviceName: string;
+  static readonly Audit: VanalyticsAudit;
+  static readonly GetRecordingUrl: VanalyticsGetRecordingUrl;
+  static readonly ListBillingSpan: VanalyticsListBillingSpan;
   static readonly SearchTranscripts: VanalyticsSearchTranscripts;
+  static readonly BulkDeleteTranscripts: VanalyticsBulkDeleteTranscripts;
+  static readonly BulkRestoreTranscripts: VanalyticsBulkRestoreTranscripts;
+  static readonly ListTranscriptGroupNames: VanalyticsListTranscriptGroupNames;
+  static readonly ListAgentResponseValues: VanalyticsListAgentResponseValues;
+  static readonly GetTranscriptSummary: VanalyticsGetTranscriptSummary;
   static readonly CreateFilter: VanalyticsCreateFilter;
   static readonly ListFilters: VanalyticsListFilters;
   static readonly UpdateFilter: VanalyticsUpdateFilter;
@@ -289,6 +370,33 @@ export class VanalyticsClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
+  audit(
+    requestMessage: wfo_vanalytics_v2_service_pb.AuditRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_service_pb.AuditResponse|null) => void
+  ): UnaryResponse;
+  audit(
+    requestMessage: wfo_vanalytics_v2_service_pb.AuditRequest,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_service_pb.AuditResponse|null) => void
+  ): UnaryResponse;
+  getRecordingUrl(
+    requestMessage: wfo_vanalytics_v2_service_pb.GetRecordingUrlRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_service_pb.GetRecordingUrlResponse|null) => void
+  ): UnaryResponse;
+  getRecordingUrl(
+    requestMessage: wfo_vanalytics_v2_service_pb.GetRecordingUrlRequest,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_service_pb.GetRecordingUrlResponse|null) => void
+  ): UnaryResponse;
+  listBillingSpan(
+    requestMessage: wfo_vanalytics_v2_service_pb.ListBillingSpanRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_service_pb.ListBillingSpanResponse|null) => void
+  ): UnaryResponse;
+  listBillingSpan(
+    requestMessage: wfo_vanalytics_v2_service_pb.ListBillingSpanRequest,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_service_pb.ListBillingSpanResponse|null) => void
+  ): UnaryResponse;
   searchTranscripts(
     requestMessage: wfo_vanalytics_v2_transcript_pb.SearchTranscriptsRequest,
     metadata: grpc.Metadata,
@@ -297,6 +405,51 @@ export class VanalyticsClient {
   searchTranscripts(
     requestMessage: wfo_vanalytics_v2_transcript_pb.SearchTranscriptsRequest,
     callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.SearchTranscriptsResponse|null) => void
+  ): UnaryResponse;
+  bulkDeleteTranscripts(
+    requestMessage: wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsResponse|null) => void
+  ): UnaryResponse;
+  bulkDeleteTranscripts(
+    requestMessage: wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsRequest,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.BulkDeleteTranscriptsResponse|null) => void
+  ): UnaryResponse;
+  bulkRestoreTranscripts(
+    requestMessage: wfo_vanalytics_v2_transcript_pb.BulkRestoreTranscriptsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.BulkRestoreTranscriptsResponse|null) => void
+  ): UnaryResponse;
+  bulkRestoreTranscripts(
+    requestMessage: wfo_vanalytics_v2_transcript_pb.BulkRestoreTranscriptsRequest,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.BulkRestoreTranscriptsResponse|null) => void
+  ): UnaryResponse;
+  listTranscriptGroupNames(
+    requestMessage: wfo_vanalytics_v2_transcript_pb.ListTranscriptGroupNamesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.ListTranscriptGroupNamesResponse|null) => void
+  ): UnaryResponse;
+  listTranscriptGroupNames(
+    requestMessage: wfo_vanalytics_v2_transcript_pb.ListTranscriptGroupNamesRequest,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.ListTranscriptGroupNamesResponse|null) => void
+  ): UnaryResponse;
+  listAgentResponseValues(
+    requestMessage: wfo_vanalytics_v2_transcript_pb.ListAgentResponseValuesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.ListAgentResponseValuesResponse|null) => void
+  ): UnaryResponse;
+  listAgentResponseValues(
+    requestMessage: wfo_vanalytics_v2_transcript_pb.ListAgentResponseValuesRequest,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_pb.ListAgentResponseValuesResponse|null) => void
+  ): UnaryResponse;
+  getTranscriptSummary(
+    requestMessage: wfo_vanalytics_v2_transcript_summary_pb.GetTranscriptSummaryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_summary_pb.GetTranscriptSummaryResponse|null) => void
+  ): UnaryResponse;
+  getTranscriptSummary(
+    requestMessage: wfo_vanalytics_v2_transcript_summary_pb.GetTranscriptSummaryRequest,
+    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_transcript_summary_pb.GetTranscriptSummaryResponse|null) => void
   ): UnaryResponse;
   createFilter(
     requestMessage: wfo_vanalytics_v2_filter_pb.CreateFilterRequest,

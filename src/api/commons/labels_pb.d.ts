@@ -11,3 +11,10 @@ export interface EntityTypeMap {
 
 export const EntityType: EntityTypeMap;
 
+export interface LabeledEntityMap {
+  LABELED_ENTITY_UNSPECIFIED: 0;
+  LABELED_ENTITY_SKILL_GROUP: 1;
+}
+
+export const LabeledEntity: LabeledEntityMap;
+

@@ -41,6 +41,16 @@ export class BasicUnitConfig extends jspb.Message {
   getMaxUnits(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setMaxUnits(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  hasMinUnitsPerCycle(): boolean;
+  clearMinUnitsPerCycle(): void;
+  getMinUnitsPerCycle(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setMinUnitsPerCycle(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  hasMaxUnitsPerCycle(): boolean;
+  clearMaxUnitsPerCycle(): void;
+  getMaxUnitsPerCycle(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setMaxUnitsPerCycle(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BasicUnitConfig.AsObject;
   static toObject(includeInstance: boolean, msg: BasicUnitConfig): BasicUnitConfig.AsObject;
@@ -57,6 +67,8 @@ export namespace BasicUnitConfig {
     rate: number,
     minUnits?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     maxUnits?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    minUnitsPerCycle?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    maxUnitsPerCycle?: google_protobuf_wrappers_pb.Int64Value.AsObject,
   }
 }
 
