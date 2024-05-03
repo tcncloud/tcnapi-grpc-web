@@ -91,7 +91,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -685,13 +685,6 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.clearRename
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.repeatedFields_ = [9];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -724,8 +717,7 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.toObject
 proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.toObject = function(includeInstance, msg) {
   var f, obj = {
     rawData: msg.getRawData_asB64(),
-    hasHeader: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    headerList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f
+    hasHeader: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -770,10 +762,6 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.deserializeBinaryF
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setHasHeader(value);
       break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addHeader(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -814,13 +802,6 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.serializeBinaryToW
   if (f) {
     writer.writeBool(
       8,
-      f
-    );
-  }
-  f = message.getHeaderList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      9,
       f
     );
   }
@@ -884,43 +865,6 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.getHasHe
  */
 proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.setHasHeader = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
-};
-
-
-/**
- * repeated string header = 9;
- * @return {!Array<string>}
- */
-proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.getHeaderList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints} returns this
- */
-proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.setHeaderList = function(value) {
-  return jspb.Message.setField(this, 9, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints} returns this
- */
-proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.addHeader = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints} returns this
- */
-proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.clearHeaderList = function() {
-  return this.setHeaderList([]);
 };
 
 

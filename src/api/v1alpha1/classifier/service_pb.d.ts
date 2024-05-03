@@ -82,11 +82,6 @@ export namespace ParseFileRequest {
     getHasHeader(): boolean;
     setHasHeader(value: boolean): void;
 
-    clearHeaderList(): void;
-    getHeaderList(): Array<string>;
-    setHeaderList(value: Array<string>): void;
-    addHeader(value: string, index?: number): string;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ParseWithHints.AsObject;
     static toObject(includeInstance: boolean, msg: ParseWithHints): ParseWithHints.AsObject;
@@ -101,7 +96,6 @@ export namespace ParseFileRequest {
     export type AsObject = {
       rawData: Uint8Array | string,
       hasHeader: boolean,
-      headerList: Array<string>,
     }
   }
 
