@@ -265,6 +265,9 @@ export namespace OptsJsonL {
 export class OptsFixed extends jspb.Message {
   getPositionsMap(): jspb.Map<string, OptsFixed.FieldOpts>;
   clearPositionsMap(): void;
+  getHasHeader(): boolean;
+  setHasHeader(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OptsFixed.AsObject;
   static toObject(includeInstance: boolean, msg: OptsFixed): OptsFixed.AsObject;
@@ -278,6 +281,7 @@ export class OptsFixed extends jspb.Message {
 export namespace OptsFixed {
   export type AsObject = {
     positionsMap: Array<[string, OptsFixed.FieldOpts.AsObject]>,
+    hasHeader: boolean,
   }
 
   export class FieldOpts extends jspb.Message {

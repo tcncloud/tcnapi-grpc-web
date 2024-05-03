@@ -2145,7 +2145,8 @@ proto.api.v1alpha1.classifier.OptsFixed.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.classifier.OptsFixed.toObject = function(includeInstance, msg) {
   var f, obj = {
-    positionsMap: (f = msg.getPositionsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.classifier.OptsFixed.FieldOpts.toObject) : []
+    positionsMap: (f = msg.getPositionsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.classifier.OptsFixed.FieldOpts.toObject) : [],
+    hasHeader: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -2188,6 +2189,10 @@ proto.api.v1alpha1.classifier.OptsFixed.deserializeBinaryFromReader = function(m
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.api.v1alpha1.classifier.OptsFixed.FieldOpts.deserializeBinaryFromReader, "", new proto.api.v1alpha1.classifier.OptsFixed.FieldOpts());
          });
       break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setHasHeader(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2220,6 +2225,13 @@ proto.api.v1alpha1.classifier.OptsFixed.serializeBinaryToWriter = function(messa
   f = message.getPositionsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.api.v1alpha1.classifier.OptsFixed.FieldOpts.serializeBinaryToWriter);
+  }
+  f = message.getHasHeader();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
   }
 };
 
@@ -2404,6 +2416,24 @@ proto.api.v1alpha1.classifier.OptsFixed.prototype.getPositionsMap = function(opt
 proto.api.v1alpha1.classifier.OptsFixed.prototype.clearPositionsMap = function() {
   this.getPositionsMap().clear();
   return this;
+};
+
+
+/**
+ * optional bool has_header = 2;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.classifier.OptsFixed.prototype.getHasHeader = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.classifier.OptsFixed} returns this
+ */
+proto.api.v1alpha1.classifier.OptsFixed.prototype.setHasHeader = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
