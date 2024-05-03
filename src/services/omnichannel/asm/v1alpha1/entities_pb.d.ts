@@ -265,6 +265,9 @@ export class PushEventsRequest extends jspb.Message {
   setAsmEventsList(value: Array<api_commons_event_pb.AsmEvent>): void;
   addAsmEvents(value?: api_commons_event_pb.AsmEvent, index?: number): api_commons_event_pb.AsmEvent;
 
+  getAsmSessionSid(): number;
+  setAsmSessionSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PushEventsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PushEventsRequest): PushEventsRequest.AsObject;
@@ -279,6 +282,7 @@ export namespace PushEventsRequest {
   export type AsObject = {
     amsSessionSid: number,
     asmEventsList: Array<api_commons_event_pb.AsmEvent.AsObject>,
+    asmSessionSid: number,
   }
 }
 
