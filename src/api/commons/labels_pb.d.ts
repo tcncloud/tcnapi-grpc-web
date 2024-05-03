@@ -14,6 +14,7 @@ export const EntityType: EntityTypeMap;
 export interface LabeledEntityMap {
   LABELED_ENTITY_UNSPECIFIED: 0;
   LABELED_ENTITY_SKILL_GROUP: 1;
+  LABELED_ENTITY_USER: 2;
 }
 
 export const LabeledEntity: LabeledEntityMap;
