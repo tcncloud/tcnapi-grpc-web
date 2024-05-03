@@ -239,15 +239,6 @@ type VanalyticsCreateFlagTranscript = {
   readonly responseType: typeof wfo_vanalytics_v2_flag_transcript_pb.CreateFlagTranscriptResponse;
 };
 
-type VanalyticsSearchFlagTranscripts = {
-  readonly methodName: string;
-  readonly service: typeof Vanalytics;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof wfo_vanalytics_v2_flag_transcript_pb.SearchFlagTranscriptsRequest;
-  readonly responseType: typeof wfo_vanalytics_v2_flag_transcript_pb.SearchFlagTranscriptsResponse;
-};
-
 type VanalyticsListFlagSnapshots = {
   readonly methodName: string;
   readonly service: typeof Vanalytics;
@@ -329,7 +320,6 @@ export class Vanalytics {
   static readonly BulkCreateFlagReview: VanalyticsBulkCreateFlagReview;
   static readonly ListFlagReviews: VanalyticsListFlagReviews;
   static readonly CreateFlagTranscript: VanalyticsCreateFlagTranscript;
-  static readonly SearchFlagTranscripts: VanalyticsSearchFlagTranscripts;
   static readonly ListFlagSnapshots: VanalyticsListFlagSnapshots;
   static readonly CreateCorrection: VanalyticsCreateCorrection;
   static readonly GetCorrection: VanalyticsGetCorrection;
@@ -594,15 +584,6 @@ export class VanalyticsClient {
   createFlagTranscript(
     requestMessage: wfo_vanalytics_v2_flag_transcript_pb.CreateFlagTranscriptRequest,
     callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_flag_transcript_pb.CreateFlagTranscriptResponse|null) => void
-  ): UnaryResponse;
-  searchFlagTranscripts(
-    requestMessage: wfo_vanalytics_v2_flag_transcript_pb.SearchFlagTranscriptsRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_flag_transcript_pb.SearchFlagTranscriptsResponse|null) => void
-  ): UnaryResponse;
-  searchFlagTranscripts(
-    requestMessage: wfo_vanalytics_v2_flag_transcript_pb.SearchFlagTranscriptsRequest,
-    callback: (error: ServiceError|null, responseMessage: wfo_vanalytics_v2_flag_transcript_pb.SearchFlagTranscriptsResponse|null) => void
   ): UnaryResponse;
   listFlagSnapshots(
     requestMessage: wfo_vanalytics_v2_flag_snapshot_pb.ListFlagSnapshotsRequest,
