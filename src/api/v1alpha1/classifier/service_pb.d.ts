@@ -53,8 +53,6 @@ export namespace ParseFileRequest {
     getHints(): api_v1alpha1_classifier_entities_pb.ParseHints | undefined;
     setHints(value?: api_v1alpha1_classifier_entities_pb.ParseHints): void;
 
-    getRenameFieldsMap(): jspb.Map<string, string>;
-    clearRenameFieldsMap(): void;
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ReParseFile.AsObject;
     static toObject(includeInstance: boolean, msg: ReParseFile): ReParseFile.AsObject;
@@ -69,7 +67,6 @@ export namespace ParseFileRequest {
     export type AsObject = {
       fileTemplateId: number,
       hints?: api_v1alpha1_classifier_entities_pb.ParseHints.AsObject,
-      renameFieldsMap: Array<[string, string]>,
     }
   }
 
@@ -79,8 +76,10 @@ export namespace ParseFileRequest {
     getRawData_asB64(): string;
     setRawData(value: Uint8Array | string): void;
 
-    getHasHeader(): boolean;
-    setHasHeader(value: boolean): void;
+    hasHints(): boolean;
+    clearHints(): void;
+    getHints(): api_v1alpha1_classifier_entities_pb.ParseHints | undefined;
+    setHints(value?: api_v1alpha1_classifier_entities_pb.ParseHints): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ParseWithHints.AsObject;
@@ -95,7 +94,7 @@ export namespace ParseFileRequest {
   export namespace ParseWithHints {
     export type AsObject = {
       rawData: Uint8Array | string,
-      hasHeader: boolean,
+      hints?: api_v1alpha1_classifier_entities_pb.ParseHints.AsObject,
     }
   }
 

@@ -502,8 +502,7 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.toObject = 
 proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.toObject = function(includeInstance, msg) {
   var f, obj = {
     fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    hints: (f = msg.getHints()) && api_v1alpha1_classifier_entities_pb.ParseHints.toObject(includeInstance, f),
-    renameFieldsMap: (f = msg.getRenameFieldsMap()) ? f.toObject(includeInstance, undefined) : []
+    hints: (f = msg.getHints()) && api_v1alpha1_classifier_entities_pb.ParseHints.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -549,12 +548,6 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.deserializeBinaryFrom
       reader.readMessage(value,api_v1alpha1_classifier_entities_pb.ParseHints.deserializeBinaryFromReader);
       msg.setHints(value);
       break;
-    case 6:
-      var value = msg.getRenameFieldsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
     default:
       reader.skipField();
       break;
@@ -598,10 +591,6 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.serializeBinaryToWrit
       f,
       api_v1alpha1_classifier_entities_pb.ParseHints.serializeBinaryToWriter
     );
-  }
-  f = message.getRenameFieldsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -661,29 +650,6 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.hasHints = 
 };
 
 
-/**
- * map<string, string> rename_fields = 6;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.getRenameFieldsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile} returns this
- */
-proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.clearRenameFieldsMap = function() {
-  this.getRenameFieldsMap().clear();
-  return this;
-};
-
-
 
 
 
@@ -717,7 +683,7 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.toObject
 proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.toObject = function(includeInstance, msg) {
   var f, obj = {
     rawData: msg.getRawData_asB64(),
-    hasHeader: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+    hints: (f = msg.getHints()) && api_v1alpha1_classifier_entities_pb.ParseHints.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -759,8 +725,9 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.deserializeBinaryF
       msg.setRawData(value);
       break;
     case 8:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setHasHeader(value);
+      var value = new api_v1alpha1_classifier_entities_pb.ParseHints;
+      reader.readMessage(value,api_v1alpha1_classifier_entities_pb.ParseHints.deserializeBinaryFromReader);
+      msg.setHints(value);
       break;
     default:
       reader.skipField();
@@ -798,11 +765,12 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.serializeBinaryToW
       f
     );
   }
-  f = message.getHasHeader();
-  if (f) {
-    writer.writeBool(
+  f = message.getHints();
+  if (f != null) {
+    writer.writeMessage(
       8,
-      f
+      f,
+      api_v1alpha1_classifier_entities_pb.ParseHints.serializeBinaryToWriter
     );
   }
 };
@@ -851,20 +819,39 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.setRawDa
 
 
 /**
- * optional bool has_header = 8;
- * @return {boolean}
+ * optional ParseHints hints = 8;
+ * @return {?proto.api.v1alpha1.classifier.ParseHints}
  */
-proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.getHasHeader = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.getHints = function() {
+  return /** @type{?proto.api.v1alpha1.classifier.ParseHints} */ (
+    jspb.Message.getWrapperField(this, api_v1alpha1_classifier_entities_pb.ParseHints, 8));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {?proto.api.v1alpha1.classifier.ParseHints|undefined} value
+ * @return {!proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints} returns this
+*/
+proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.setHints = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints} returns this
  */
-proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.setHasHeader = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 8, value);
+proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.clearHints = function() {
+  return this.setHints(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.hasHints = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

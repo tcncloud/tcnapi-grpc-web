@@ -26,34 +26,6 @@ export namespace ClassifierEntityTypes {
   }
 }
 
-export class ParseHints extends jspb.Message {
-  hasParseOpts(): boolean;
-  clearParseOpts(): void;
-  getParseOpts(): ParseOpts | undefined;
-  setParseOpts(value?: ParseOpts): void;
-
-  hasConstraints(): boolean;
-  clearConstraints(): void;
-  getConstraints(): Constraints | undefined;
-  setConstraints(value?: Constraints): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ParseHints.AsObject;
-  static toObject(includeInstance: boolean, msg: ParseHints): ParseHints.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ParseHints, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ParseHints;
-  static deserializeBinaryFromReader(message: ParseHints, reader: jspb.BinaryReader): ParseHints;
-}
-
-export namespace ParseHints {
-  export type AsObject = {
-    parseOpts?: ParseOpts.AsObject,
-    constraints?: Constraints.AsObject,
-  }
-}
-
 export class FileTemplate extends jspb.Message {
   getFileTemplateId(): number;
   setFileTemplateId(value: number): void;
@@ -70,6 +42,11 @@ export class FileTemplate extends jspb.Message {
   clearParseOpts(): void;
   getParseOpts(): ParseOpts | undefined;
   setParseOpts(value?: ParseOpts): void;
+
+  hasOpts(): boolean;
+  clearOpts(): void;
+  getOpts(): Opts | undefined;
+  setOpts(value?: Opts): void;
 
   hasConstraints(): boolean;
   clearConstraints(): void;
@@ -95,6 +72,7 @@ export namespace FileTemplate {
     filename: string,
     fieldsList: Array<FileTemplate.Field.AsObject>,
     parseOpts?: ParseOpts.AsObject,
+    opts?: Opts.AsObject,
     constraints?: Constraints.AsObject,
     foid: number,
   }
@@ -133,6 +111,34 @@ export namespace FileTemplate {
       format: string,
       rawValue: string,
     }
+  }
+}
+
+export class Opts extends jspb.Message {
+  getDateFormatsMap(): jspb.Map<string, string>;
+  clearDateFormatsMap(): void;
+  getRenameFieldsMap(): jspb.Map<string, string>;
+  clearRenameFieldsMap(): void;
+  hasTypeOpts(): boolean;
+  clearTypeOpts(): void;
+  getTypeOpts(): ParseOpts | undefined;
+  setTypeOpts(value?: ParseOpts): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Opts.AsObject;
+  static toObject(includeInstance: boolean, msg: Opts): Opts.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Opts, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Opts;
+  static deserializeBinaryFromReader(message: Opts, reader: jspb.BinaryReader): Opts;
+}
+
+export namespace Opts {
+  export type AsObject = {
+    dateFormatsMap: Array<[string, string]>,
+    renameFieldsMap: Array<[string, string]>,
+    typeOpts?: ParseOpts.AsObject,
   }
 }
 
@@ -344,6 +350,40 @@ export namespace Constraints {
   export type AsObject = {
     forbidMap: Array<[string, ClassifierEntityTypes.AsObject]>,
     allowMap: Array<[string, ClassifierEntityTypes.AsObject]>,
+  }
+}
+
+export class ParseHints extends jspb.Message {
+  hasParseOpts(): boolean;
+  clearParseOpts(): void;
+  getParseOpts(): ParseOpts | undefined;
+  setParseOpts(value?: ParseOpts): void;
+
+  hasConstraints(): boolean;
+  clearConstraints(): void;
+  getConstraints(): Constraints | undefined;
+  setConstraints(value?: Constraints): void;
+
+  hasOpts(): boolean;
+  clearOpts(): void;
+  getOpts(): Opts | undefined;
+  setOpts(value?: Opts): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ParseHints.AsObject;
+  static toObject(includeInstance: boolean, msg: ParseHints): ParseHints.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ParseHints, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ParseHints;
+  static deserializeBinaryFromReader(message: ParseHints, reader: jspb.BinaryReader): ParseHints;
+}
+
+export namespace ParseHints {
+  export type AsObject = {
+    parseOpts?: ParseOpts.AsObject,
+    constraints?: Constraints.AsObject,
+    opts?: Opts.AsObject,
   }
 }
 
