@@ -82,10 +82,8 @@ export namespace ParseFileRequest {
     getRawData_asB64(): string;
     setRawData(value: Uint8Array | string): void;
 
-    hasOpts(): boolean;
-    clearOpts(): void;
-    getOpts(): api_v1alpha1_classifier_entities_pb.Opts | undefined;
-    setOpts(value?: api_v1alpha1_classifier_entities_pb.Opts): void;
+    getHasHeader(): boolean;
+    setHasHeader(value: boolean): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ParseWithHints.AsObject;
@@ -100,7 +98,7 @@ export namespace ParseFileRequest {
   export namespace ParseWithHints {
     export type AsObject = {
       rawData: Uint8Array | string,
-      opts?: api_v1alpha1_classifier_entities_pb.Opts.AsObject,
+      hasHeader: boolean,
     }
   }
 
