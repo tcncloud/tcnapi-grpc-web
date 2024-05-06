@@ -119,10 +119,10 @@ export class Opts extends jspb.Message {
   clearDateFormatsMap(): void;
   getRenameFieldsMap(): jspb.Map<string, string>;
   clearRenameFieldsMap(): void;
-  hasTypeOpts(): boolean;
-  clearTypeOpts(): void;
-  getTypeOpts(): ParseOpts | undefined;
-  setTypeOpts(value?: ParseOpts): void;
+  hasParseOpts(): boolean;
+  clearParseOpts(): void;
+  getParseOpts(): ParseOpts | undefined;
+  setParseOpts(value?: ParseOpts): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Opts.AsObject;
@@ -138,7 +138,7 @@ export namespace Opts {
   export type AsObject = {
     dateFormatsMap: Array<[string, string]>,
     renameFieldsMap: Array<[string, string]>,
-    typeOpts?: ParseOpts.AsObject,
+    parseOpts?: ParseOpts.AsObject,
   }
 }
 
