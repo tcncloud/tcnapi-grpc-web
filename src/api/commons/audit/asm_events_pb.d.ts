@@ -155,13 +155,8 @@ export class AsmAgentStateChangedEvent extends jspb.Message {
   getOldStatus(): api_commons_asm_pb.StatusStateMap[keyof api_commons_asm_pb.StatusStateMap];
   setOldStatus(value: api_commons_asm_pb.StatusStateMap[keyof api_commons_asm_pb.StatusStateMap]): void;
 
-  hasLastStateChangeTime(): boolean;
-  clearLastStateChangeTime(): void;
-  getLastStateChangeTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setLastStateChangeTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  getLastStateDuration(): number;
-  setLastStateDuration(value: number): void;
+  getOldStatusDuration(): number;
+  setOldStatusDuration(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AsmAgentStateChangedEvent.AsObject;
@@ -179,8 +174,7 @@ export namespace AsmAgentStateChangedEvent {
     asmSessionSid: number,
     newStatus: api_commons_asm_pb.StatusStateMap[keyof api_commons_asm_pb.StatusStateMap],
     oldStatus: api_commons_asm_pb.StatusStateMap[keyof api_commons_asm_pb.StatusStateMap],
-    lastStateChangeTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    lastStateDuration: number,
+    oldStatusDuration: number,
   }
 }
 
