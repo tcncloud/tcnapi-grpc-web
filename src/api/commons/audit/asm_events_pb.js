@@ -27,6 +27,8 @@ var api_commons_asm_pb = require('../../../api/commons/asm_pb.js');
 goog.object.extend(proto, api_commons_asm_pb);
 var api_commons_omnichannel_pb = require('../../../api/commons/omnichannel_pb.js');
 goog.object.extend(proto, api_commons_omnichannel_pb);
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.api.commons.audit.AsmActivateConversationEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.AsmAgentLoginEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.AsmAgentLogoutEvent', null, global);
@@ -1214,7 +1216,9 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.toObject = function(includeIns
     userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     newStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    oldStatus: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    oldStatus: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    lastStateChangeTime: (f = msg.getLastStateChangeTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    lastStateDuration: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -1266,6 +1270,15 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.deserializeBinaryFromReader = 
     case 4:
       var value = /** @type {!proto.api.commons.StatusState} */ (reader.readEnum());
       msg.setOldStatus(value);
+      break;
+    case 5:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setLastStateChangeTime(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setLastStateDuration(value);
       break;
     default:
       reader.skipField();
@@ -1321,6 +1334,21 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.serializeBinaryToWriter = func
   if (f !== 0.0) {
     writer.writeEnum(
       4,
+      f
+    );
+  }
+  f = message.getLastStateChangeTime();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getLastStateDuration();
+  if (f !== 0) {
+    writer.writeInt64(
+      6,
       f
     );
   }
@@ -1396,6 +1424,61 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.getOldStatus = funct
  */
 proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.setOldStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp last_state_change_time = 5;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.getLastStateChangeTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.commons.audit.AsmAgentStateChangedEvent} returns this
+*/
+proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.setLastStateChangeTime = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AsmAgentStateChangedEvent} returns this
+ */
+proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.clearLastStateChangeTime = function() {
+  return this.setLastStateChangeTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.hasLastStateChangeTime = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional int64 last_state_duration = 6;
+ * @return {number}
+ */
+proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.getLastStateDuration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.audit.AsmAgentStateChangedEvent} returns this
+ */
+proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.setLastStateDuration = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
