@@ -53,6 +53,11 @@ export namespace ParseFileRequest {
     getHints(): api_v1alpha1_classifier_entities_pb.ParseHints | undefined;
     setHints(value?: api_v1alpha1_classifier_entities_pb.ParseHints): void;
 
+    hasOpts(): boolean;
+    clearOpts(): void;
+    getOpts(): api_v1alpha1_classifier_entities_pb.Opts | undefined;
+    setOpts(value?: api_v1alpha1_classifier_entities_pb.Opts): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ReParseFile.AsObject;
     static toObject(includeInstance: boolean, msg: ReParseFile): ReParseFile.AsObject;
@@ -67,6 +72,7 @@ export namespace ParseFileRequest {
     export type AsObject = {
       fileTemplateId: number,
       hints?: api_v1alpha1_classifier_entities_pb.ParseHints.AsObject,
+      opts?: api_v1alpha1_classifier_entities_pb.Opts.AsObject,
     }
   }
 
@@ -76,10 +82,10 @@ export namespace ParseFileRequest {
     getRawData_asB64(): string;
     setRawData(value: Uint8Array | string): void;
 
-    hasHints(): boolean;
-    clearHints(): void;
-    getHints(): api_v1alpha1_classifier_entities_pb.ParseHints | undefined;
-    setHints(value?: api_v1alpha1_classifier_entities_pb.ParseHints): void;
+    hasOpts(): boolean;
+    clearOpts(): void;
+    getOpts(): api_v1alpha1_classifier_entities_pb.Opts | undefined;
+    setOpts(value?: api_v1alpha1_classifier_entities_pb.Opts): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ParseWithHints.AsObject;
@@ -94,7 +100,7 @@ export namespace ParseFileRequest {
   export namespace ParseWithHints {
     export type AsObject = {
       rawData: Uint8Array | string,
-      hints?: api_v1alpha1_classifier_entities_pb.ParseHints.AsObject,
+      opts?: api_v1alpha1_classifier_entities_pb.Opts.AsObject,
     }
   }
 

@@ -43,11 +43,6 @@ export class FileTemplate extends jspb.Message {
   getParseOpts(): ParseOpts | undefined;
   setParseOpts(value?: ParseOpts): void;
 
-  hasOpts(): boolean;
-  clearOpts(): void;
-  getOpts(): Opts | undefined;
-  setOpts(value?: Opts): void;
-
   hasConstraints(): boolean;
   clearConstraints(): void;
   getConstraints(): Constraints | undefined;
@@ -55,6 +50,11 @@ export class FileTemplate extends jspb.Message {
 
   getFoid(): number;
   setFoid(value: number): void;
+
+  hasOpts(): boolean;
+  clearOpts(): void;
+  getOpts(): Opts | undefined;
+  setOpts(value?: Opts): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FileTemplate.AsObject;
@@ -72,9 +72,9 @@ export namespace FileTemplate {
     filename: string,
     fieldsList: Array<FileTemplate.Field.AsObject>,
     parseOpts?: ParseOpts.AsObject,
-    opts?: Opts.AsObject,
     constraints?: Constraints.AsObject,
     foid: number,
+    opts?: Opts.AsObject,
   }
 
   export class Field extends jspb.Message {
@@ -124,6 +124,11 @@ export class Opts extends jspb.Message {
   getParseOpts(): ParseOpts | undefined;
   setParseOpts(value?: ParseOpts): void;
 
+  hasConstraints(): boolean;
+  clearConstraints(): void;
+  getConstraints(): Constraints | undefined;
+  setConstraints(value?: Constraints): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Opts.AsObject;
   static toObject(includeInstance: boolean, msg: Opts): Opts.AsObject;
@@ -139,6 +144,7 @@ export namespace Opts {
     dateFormatsMap: Array<[string, string]>,
     renameFieldsMap: Array<[string, string]>,
     parseOpts?: ParseOpts.AsObject,
+    constraints?: Constraints.AsObject,
   }
 }
 
@@ -364,11 +370,6 @@ export class ParseHints extends jspb.Message {
   getConstraints(): Constraints | undefined;
   setConstraints(value?: Constraints): void;
 
-  hasOpts(): boolean;
-  clearOpts(): void;
-  getOpts(): Opts | undefined;
-  setOpts(value?: Opts): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ParseHints.AsObject;
   static toObject(includeInstance: boolean, msg: ParseHints): ParseHints.AsObject;
@@ -383,7 +384,6 @@ export namespace ParseHints {
   export type AsObject = {
     parseOpts?: ParseOpts.AsObject,
     constraints?: Constraints.AsObject,
-    opts?: Opts.AsObject,
   }
 }
 

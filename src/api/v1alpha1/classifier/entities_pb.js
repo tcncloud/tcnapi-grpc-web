@@ -514,9 +514,9 @@ proto.api.v1alpha1.classifier.FileTemplate.toObject = function(includeInstance, 
     fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
     proto.api.v1alpha1.classifier.FileTemplate.Field.toObject, includeInstance),
     parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.classifier.ParseOpts.toObject(includeInstance, f),
-    opts: (f = msg.getOpts()) && proto.api.v1alpha1.classifier.Opts.toObject(includeInstance, f),
     constraints: (f = msg.getConstraints()) && proto.api.v1alpha1.classifier.Constraints.toObject(includeInstance, f),
-    foid: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    foid: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    opts: (f = msg.getOpts()) && proto.api.v1alpha1.classifier.Opts.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -571,11 +571,6 @@ proto.api.v1alpha1.classifier.FileTemplate.deserializeBinaryFromReader = functio
       reader.readMessage(value,proto.api.v1alpha1.classifier.ParseOpts.deserializeBinaryFromReader);
       msg.setParseOpts(value);
       break;
-    case 7:
-      var value = new proto.api.v1alpha1.classifier.Opts;
-      reader.readMessage(value,proto.api.v1alpha1.classifier.Opts.deserializeBinaryFromReader);
-      msg.setOpts(value);
-      break;
     case 5:
       var value = new proto.api.v1alpha1.classifier.Constraints;
       reader.readMessage(value,proto.api.v1alpha1.classifier.Constraints.deserializeBinaryFromReader);
@@ -584,6 +579,11 @@ proto.api.v1alpha1.classifier.FileTemplate.deserializeBinaryFromReader = functio
     case 6:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setFoid(value);
+      break;
+    case 7:
+      var value = new proto.api.v1alpha1.classifier.Opts;
+      reader.readMessage(value,proto.api.v1alpha1.classifier.Opts.deserializeBinaryFromReader);
+      msg.setOpts(value);
       break;
     default:
       reader.skipField();
@@ -644,14 +644,6 @@ proto.api.v1alpha1.classifier.FileTemplate.serializeBinaryToWriter = function(me
       proto.api.v1alpha1.classifier.ParseOpts.serializeBinaryToWriter
     );
   }
-  f = message.getOpts();
-  if (f != null) {
-    writer.writeMessage(
-      7,
-      f,
-      proto.api.v1alpha1.classifier.Opts.serializeBinaryToWriter
-    );
-  }
   f = message.getConstraints();
   if (f != null) {
     writer.writeMessage(
@@ -665,6 +657,14 @@ proto.api.v1alpha1.classifier.FileTemplate.serializeBinaryToWriter = function(me
     writer.writeInt64(
       6,
       f
+    );
+  }
+  f = message.getOpts();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.api.v1alpha1.classifier.Opts.serializeBinaryToWriter
     );
   }
 };
@@ -1032,43 +1032,6 @@ proto.api.v1alpha1.classifier.FileTemplate.prototype.hasParseOpts = function() {
 
 
 /**
- * optional Opts opts = 7;
- * @return {?proto.api.v1alpha1.classifier.Opts}
- */
-proto.api.v1alpha1.classifier.FileTemplate.prototype.getOpts = function() {
-  return /** @type{?proto.api.v1alpha1.classifier.Opts} */ (
-    jspb.Message.getWrapperField(this, proto.api.v1alpha1.classifier.Opts, 7));
-};
-
-
-/**
- * @param {?proto.api.v1alpha1.classifier.Opts|undefined} value
- * @return {!proto.api.v1alpha1.classifier.FileTemplate} returns this
-*/
-proto.api.v1alpha1.classifier.FileTemplate.prototype.setOpts = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.classifier.FileTemplate} returns this
- */
-proto.api.v1alpha1.classifier.FileTemplate.prototype.clearOpts = function() {
-  return this.setOpts(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v1alpha1.classifier.FileTemplate.prototype.hasOpts = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
  * optional Constraints constraints = 5;
  * @return {?proto.api.v1alpha1.classifier.Constraints}
  */
@@ -1123,6 +1086,43 @@ proto.api.v1alpha1.classifier.FileTemplate.prototype.setFoid = function(value) {
 };
 
 
+/**
+ * optional Opts opts = 7;
+ * @return {?proto.api.v1alpha1.classifier.Opts}
+ */
+proto.api.v1alpha1.classifier.FileTemplate.prototype.getOpts = function() {
+  return /** @type{?proto.api.v1alpha1.classifier.Opts} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.classifier.Opts, 7));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.classifier.Opts|undefined} value
+ * @return {!proto.api.v1alpha1.classifier.FileTemplate} returns this
+*/
+proto.api.v1alpha1.classifier.FileTemplate.prototype.setOpts = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.classifier.FileTemplate} returns this
+ */
+proto.api.v1alpha1.classifier.FileTemplate.prototype.clearOpts = function() {
+  return this.setOpts(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.classifier.FileTemplate.prototype.hasOpts = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
 
 
 
@@ -1157,7 +1157,8 @@ proto.api.v1alpha1.classifier.Opts.toObject = function(includeInstance, msg) {
   var f, obj = {
     dateFormatsMap: (f = msg.getDateFormatsMap()) ? f.toObject(includeInstance, undefined) : [],
     renameFieldsMap: (f = msg.getRenameFieldsMap()) ? f.toObject(includeInstance, undefined) : [],
-    parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.classifier.ParseOpts.toObject(includeInstance, f)
+    parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.classifier.ParseOpts.toObject(includeInstance, f),
+    constraints: (f = msg.getConstraints()) && proto.api.v1alpha1.classifier.Constraints.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1211,6 +1212,11 @@ proto.api.v1alpha1.classifier.Opts.deserializeBinaryFromReader = function(msg, r
       reader.readMessage(value,proto.api.v1alpha1.classifier.ParseOpts.deserializeBinaryFromReader);
       msg.setParseOpts(value);
       break;
+    case 4:
+      var value = new proto.api.v1alpha1.classifier.Constraints;
+      reader.readMessage(value,proto.api.v1alpha1.classifier.Constraints.deserializeBinaryFromReader);
+      msg.setConstraints(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1254,6 +1260,14 @@ proto.api.v1alpha1.classifier.Opts.serializeBinaryToWriter = function(message, w
       3,
       f,
       proto.api.v1alpha1.classifier.ParseOpts.serializeBinaryToWriter
+    );
+  }
+  f = message.getConstraints();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.api.v1alpha1.classifier.Constraints.serializeBinaryToWriter
     );
   }
 };
@@ -1339,6 +1353,43 @@ proto.api.v1alpha1.classifier.Opts.prototype.clearParseOpts = function() {
  */
 proto.api.v1alpha1.classifier.Opts.prototype.hasParseOpts = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional Constraints constraints = 4;
+ * @return {?proto.api.v1alpha1.classifier.Constraints}
+ */
+proto.api.v1alpha1.classifier.Opts.prototype.getConstraints = function() {
+  return /** @type{?proto.api.v1alpha1.classifier.Constraints} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.classifier.Constraints, 4));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.classifier.Constraints|undefined} value
+ * @return {!proto.api.v1alpha1.classifier.Opts} returns this
+*/
+proto.api.v1alpha1.classifier.Opts.prototype.setConstraints = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.classifier.Opts} returns this
+ */
+proto.api.v1alpha1.classifier.Opts.prototype.clearConstraints = function() {
+  return this.setConstraints(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.classifier.Opts.prototype.hasConstraints = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -2829,8 +2880,7 @@ proto.api.v1alpha1.classifier.ParseHints.prototype.toObject = function(opt_inclu
 proto.api.v1alpha1.classifier.ParseHints.toObject = function(includeInstance, msg) {
   var f, obj = {
     parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.classifier.ParseOpts.toObject(includeInstance, f),
-    constraints: (f = msg.getConstraints()) && proto.api.v1alpha1.classifier.Constraints.toObject(includeInstance, f),
-    opts: (f = msg.getOpts()) && proto.api.v1alpha1.classifier.Opts.toObject(includeInstance, f)
+    constraints: (f = msg.getConstraints()) && proto.api.v1alpha1.classifier.Constraints.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2877,11 +2927,6 @@ proto.api.v1alpha1.classifier.ParseHints.deserializeBinaryFromReader = function(
       reader.readMessage(value,proto.api.v1alpha1.classifier.Constraints.deserializeBinaryFromReader);
       msg.setConstraints(value);
       break;
-    case 3:
-      var value = new proto.api.v1alpha1.classifier.Opts;
-      reader.readMessage(value,proto.api.v1alpha1.classifier.Opts.deserializeBinaryFromReader);
-      msg.setOpts(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2925,14 +2970,6 @@ proto.api.v1alpha1.classifier.ParseHints.serializeBinaryToWriter = function(mess
       2,
       f,
       proto.api.v1alpha1.classifier.Constraints.serializeBinaryToWriter
-    );
-  }
-  f = message.getOpts();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      proto.api.v1alpha1.classifier.Opts.serializeBinaryToWriter
     );
   }
 };
@@ -3009,43 +3046,6 @@ proto.api.v1alpha1.classifier.ParseHints.prototype.clearConstraints = function()
  */
 proto.api.v1alpha1.classifier.ParseHints.prototype.hasConstraints = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional Opts opts = 3;
- * @return {?proto.api.v1alpha1.classifier.Opts}
- */
-proto.api.v1alpha1.classifier.ParseHints.prototype.getOpts = function() {
-  return /** @type{?proto.api.v1alpha1.classifier.Opts} */ (
-    jspb.Message.getWrapperField(this, proto.api.v1alpha1.classifier.Opts, 3));
-};
-
-
-/**
- * @param {?proto.api.v1alpha1.classifier.Opts|undefined} value
- * @return {!proto.api.v1alpha1.classifier.ParseHints} returns this
-*/
-proto.api.v1alpha1.classifier.ParseHints.prototype.setOpts = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.classifier.ParseHints} returns this
- */
-proto.api.v1alpha1.classifier.ParseHints.prototype.clearOpts = function() {
-  return this.setOpts(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v1alpha1.classifier.ParseHints.prototype.hasOpts = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 
