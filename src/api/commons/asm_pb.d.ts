@@ -219,9 +219,6 @@ export class ManagerStreamAgentStateRes extends jspb.Message {
   getHeartBeat(): KeepAlive | undefined;
   setHeartBeat(value?: KeepAlive): void;
 
-  getUuid(): string;
-  setUuid(value: string): void;
-
   getManagerAgentStateCase(): ManagerStreamAgentStateRes.ManagerAgentStateCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManagerStreamAgentStateRes.AsObject;
@@ -237,7 +234,6 @@ export namespace ManagerStreamAgentStateRes {
   export type AsObject = {
     state?: api_commons_acd_pb.AgentState.AsObject,
     heartBeat?: KeepAlive.AsObject,
-    uuid: string,
   }
 
   export enum ManagerAgentStateCase {

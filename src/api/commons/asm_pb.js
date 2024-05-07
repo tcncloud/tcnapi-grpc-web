@@ -1748,8 +1748,7 @@ proto.api.commons.ManagerStreamAgentStateRes.prototype.toObject = function(opt_i
 proto.api.commons.ManagerStreamAgentStateRes.toObject = function(includeInstance, msg) {
   var f, obj = {
     state: (f = msg.getState()) && api_commons_acd_pb.AgentState.toObject(includeInstance, f),
-    heartBeat: (f = msg.getHeartBeat()) && proto.api.commons.KeepAlive.toObject(includeInstance, f),
-    uuid: jspb.Message.getFieldWithDefault(msg, 3, "")
+    heartBeat: (f = msg.getHeartBeat()) && proto.api.commons.KeepAlive.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1796,10 +1795,6 @@ proto.api.commons.ManagerStreamAgentStateRes.deserializeBinaryFromReader = funct
       reader.readMessage(value,proto.api.commons.KeepAlive.deserializeBinaryFromReader);
       msg.setHeartBeat(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUuid(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1843,13 +1838,6 @@ proto.api.commons.ManagerStreamAgentStateRes.serializeBinaryToWriter = function(
       2,
       f,
       proto.api.commons.KeepAlive.serializeBinaryToWriter
-    );
-  }
-  f = message.getUuid();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
     );
   }
 };
@@ -1926,24 +1914,6 @@ proto.api.commons.ManagerStreamAgentStateRes.prototype.clearHeartBeat = function
  */
 proto.api.commons.ManagerStreamAgentStateRes.prototype.hasHeartBeat = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string uuid = 3;
- * @return {string}
- */
-proto.api.commons.ManagerStreamAgentStateRes.prototype.getUuid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.commons.ManagerStreamAgentStateRes} returns this
- */
-proto.api.commons.ManagerStreamAgentStateRes.prototype.setUuid = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
