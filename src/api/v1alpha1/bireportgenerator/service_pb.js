@@ -31,6 +31,8 @@ var google_api_annotations_pb = require('../../../google/api/annotations_pb.js')
 goog.object.extend(proto, google_api_annotations_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.api.v1alpha1.bireportgenerator.CreateReportJobRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.bireportgenerator.CreateReportJobResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.bireportgenerator.DeleteReportJobRequest', null, global);
@@ -1755,7 +1757,8 @@ proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.prototype.toObject = 
  */
 proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f)
+    reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f),
+    sendAsOfDate: (f = msg.getSendAsOfDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1797,6 +1800,11 @@ proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.deserializeBinaryFrom
       reader.readMessage(value,api_v1alpha1_bireportgenerator_entities_pb.ReportJob.deserializeBinaryFromReader);
       msg.setReportJob(value);
       break;
+    case 2:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setSendAsOfDate(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1832,6 +1840,14 @@ proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.serializeBinaryToWrit
       1,
       f,
       api_v1alpha1_bireportgenerator_entities_pb.ReportJob.serializeBinaryToWriter
+    );
+  }
+  f = message.getSendAsOfDate();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -1871,6 +1887,43 @@ proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.prototype.clearReport
  */
 proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.prototype.hasReportJob = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp send_as_of_date = 2;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.prototype.getSendAsOfDate = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.bireportgenerator.GenerateReportRequest} returns this
+*/
+proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.prototype.setSendAsOfDate = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.bireportgenerator.GenerateReportRequest} returns this
+ */
+proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.prototype.clearSendAsOfDate = function() {
+  return this.setSendAsOfDate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.prototype.hasSendAsOfDate = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

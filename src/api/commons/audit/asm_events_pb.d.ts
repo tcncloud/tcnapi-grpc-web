@@ -155,8 +155,8 @@ export class AsmAgentStateChangedEvent extends jspb.Message {
   getOldStatus(): api_commons_asm_pb.StatusStateMap[keyof api_commons_asm_pb.StatusStateMap];
   setOldStatus(value: api_commons_asm_pb.StatusStateMap[keyof api_commons_asm_pb.StatusStateMap]): void;
 
-  getOldStatusDuration(): number;
-  setOldStatusDuration(value: number): void;
+  getOldStatusDurationMilliseconds(): number;
+  setOldStatusDurationMilliseconds(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AsmAgentStateChangedEvent.AsObject;
@@ -174,7 +174,7 @@ export namespace AsmAgentStateChangedEvent {
     asmSessionSid: number,
     newStatus: api_commons_asm_pb.StatusStateMap[keyof api_commons_asm_pb.StatusStateMap],
     oldStatus: api_commons_asm_pb.StatusStateMap[keyof api_commons_asm_pb.StatusStateMap],
-    oldStatusDuration: number,
+    oldStatusDurationMilliseconds: number,
   }
 }
 

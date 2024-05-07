@@ -65,6 +65,15 @@ LabelsService.AttachLabel = {
   responseType: api_v1alpha1_org_labels_entities_pb.AttachLabelResponse
 };
 
+LabelsService.DetachLabel = {
+  methodName: "DetachLabel",
+  service: LabelsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_labels_entities_pb.DetachLabelRequest,
+  responseType: api_v1alpha1_org_labels_entities_pb.DetachLabelResponse
+};
+
 LabelsService.GetLabeledEntityMap = {
   methodName: "GetLabeledEntityMap",
   service: LabelsService,
@@ -241,6 +250,37 @@ LabelsServiceClient.prototype.attachLabel = function attachLabel(requestMessage,
     callback = arguments[1];
   }
   var client = grpc.unary(LabelsService.AttachLabel, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LabelsServiceClient.prototype.detachLabel = function detachLabel(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LabelsService.DetachLabel, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

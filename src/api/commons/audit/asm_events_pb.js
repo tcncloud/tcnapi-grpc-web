@@ -1217,7 +1217,7 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.toObject = function(includeIns
     asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     newStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
     oldStatus: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    oldStatusDuration: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    oldStatusDurationMilliseconds: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -1272,7 +1272,7 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.deserializeBinaryFromReader = 
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setOldStatusDuration(value);
+      msg.setOldStatusDurationMilliseconds(value);
       break;
     default:
       reader.skipField();
@@ -1331,7 +1331,7 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.serializeBinaryToWriter = func
       f
     );
   }
-  f = message.getOldStatusDuration();
+  f = message.getOldStatusDurationMilliseconds();
   if (f !== 0) {
     writer.writeInt64(
       5,
@@ -1414,10 +1414,10 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.setOldStatus = funct
 
 
 /**
- * optional int64 old_status_duration = 5;
+ * optional int64 old_status_duration_milliseconds = 5;
  * @return {number}
  */
-proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.getOldStatusDuration = function() {
+proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.getOldStatusDurationMilliseconds = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -1426,7 +1426,7 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.getOldStatusDuration
  * @param {number} value
  * @return {!proto.api.commons.audit.AsmAgentStateChangedEvent} returns this
  */
-proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.setOldStatusDuration = function(value) {
+proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.setOldStatusDurationMilliseconds = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 

@@ -59,6 +59,15 @@ type LabelsServiceAttachLabel = {
   readonly responseType: typeof api_v1alpha1_org_labels_entities_pb.AttachLabelResponse;
 };
 
+type LabelsServiceDetachLabel = {
+  readonly methodName: string;
+  readonly service: typeof LabelsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_labels_entities_pb.DetachLabelRequest;
+  readonly responseType: typeof api_v1alpha1_org_labels_entities_pb.DetachLabelResponse;
+};
+
 type LabelsServiceGetLabeledEntityMap = {
   readonly methodName: string;
   readonly service: typeof LabelsService;
@@ -76,6 +85,7 @@ export class LabelsService {
   static readonly ListLabels: LabelsServiceListLabels;
   static readonly DeleteLabel: LabelsServiceDeleteLabel;
   static readonly AttachLabel: LabelsServiceAttachLabel;
+  static readonly DetachLabel: LabelsServiceDetachLabel;
   static readonly GetLabeledEntityMap: LabelsServiceGetLabeledEntityMap;
 }
 
@@ -164,6 +174,15 @@ export class LabelsServiceClient {
   attachLabel(
     requestMessage: api_v1alpha1_org_labels_entities_pb.AttachLabelRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_labels_entities_pb.AttachLabelResponse|null) => void
+  ): UnaryResponse;
+  detachLabel(
+    requestMessage: api_v1alpha1_org_labels_entities_pb.DetachLabelRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_labels_entities_pb.DetachLabelResponse|null) => void
+  ): UnaryResponse;
+  detachLabel(
+    requestMessage: api_v1alpha1_org_labels_entities_pb.DetachLabelRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_labels_entities_pb.DetachLabelResponse|null) => void
   ): UnaryResponse;
   getLabeledEntityMap(
     requestMessage: api_v1alpha1_org_labels_entities_pb.GetLabeledEntityMapRequest,
