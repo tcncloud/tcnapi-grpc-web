@@ -258,6 +258,50 @@ export namespace AttachLabelResponse {
   }
 }
 
+export class DetachLabelRequest extends jspb.Message {
+  getLabelId(): string;
+  setLabelId(value: string): void;
+
+  getEntityId(): string;
+  setEntityId(value: string): void;
+
+  getEntityType(): api_commons_labels_pb.LabeledEntityMap[keyof api_commons_labels_pb.LabeledEntityMap];
+  setEntityType(value: api_commons_labels_pb.LabeledEntityMap[keyof api_commons_labels_pb.LabeledEntityMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DetachLabelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DetachLabelRequest): DetachLabelRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DetachLabelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DetachLabelRequest;
+  static deserializeBinaryFromReader(message: DetachLabelRequest, reader: jspb.BinaryReader): DetachLabelRequest;
+}
+
+export namespace DetachLabelRequest {
+  export type AsObject = {
+    labelId: string,
+    entityId: string,
+    entityType: api_commons_labels_pb.LabeledEntityMap[keyof api_commons_labels_pb.LabeledEntityMap],
+  }
+}
+
+export class DetachLabelResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DetachLabelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DetachLabelResponse): DetachLabelResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DetachLabelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DetachLabelResponse;
+  static deserializeBinaryFromReader(message: DetachLabelResponse, reader: jspb.BinaryReader): DetachLabelResponse;
+}
+
+export namespace DetachLabelResponse {
+  export type AsObject = {
+  }
+}
+
 export class GetLabeledEntityMapRequest extends jspb.Message {
   getEntityType(): api_commons_labels_pb.LabeledEntityMap[keyof api_commons_labels_pb.LabeledEntityMap];
   setEntityType(value: api_commons_labels_pb.LabeledEntityMap[keyof api_commons_labels_pb.LabeledEntityMap]): void;

@@ -959,6 +959,7 @@ proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.toObject = function(includeInstanc
     proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.toObject, includeInstance),
     orList: jspb.Message.toObjectList(msg.getOrList(),
     proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.toObject, includeInstance),
+    filter: (f = msg.getFilter()) && proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.Filter.toObject(includeInstance, f),
     not: (f = msg.getNot()) && proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.toObject(includeInstance, f)
   };
 
@@ -1005,6 +1006,11 @@ proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.deserializeBinaryFromReader = func
       var value = new proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr;
       reader.readMessage(value,proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.deserializeBinaryFromReader);
       msg.addOr(value);
+      break;
+    case 3:
+      var value = new proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.Filter;
+      reader.readMessage(value,proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.Filter.deserializeBinaryFromReader);
+      msg.setFilter(value);
       break;
     case 4:
       var value = new proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr;
@@ -1054,6 +1060,14 @@ proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.serializeBinaryToWriter = function
       2,
       f,
       proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.serializeBinaryToWriter
+    );
+  }
+  f = message.getFilter();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.Filter.serializeBinaryToWriter
     );
   }
   f = message.getNot();
@@ -1270,6 +1284,43 @@ proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.prototype.addOr = function(opt_val
  */
 proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.prototype.clearOrList = function() {
   return this.setOrList([]);
+};
+
+
+/**
+ * optional Filter filter = 3;
+ * @return {?proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.Filter}
+ */
+proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.prototype.getFilter = function() {
+  return /** @type{?proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.Filter} */ (
+    jspb.Message.getWrapperField(this, proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.Filter, 3));
+};
+
+
+/**
+ * @param {?proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.Filter|undefined} value
+ * @return {!proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr} returns this
+*/
+proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.prototype.setFilter = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr} returns this
+ */
+proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.prototype.clearFilter = function() {
+  return this.setFilter(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wfo.vanalytics.v2.FlagSnapshot.BoolExpr.prototype.hasFilter = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

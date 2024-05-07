@@ -6,6 +6,7 @@ import * as annotations_authz_pb from "../../../annotations/authz_pb";
 import * as api_v1alpha1_bireportgenerator_entities_pb from "../../../api/v1alpha1/bireportgenerator/entities_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class CreateReportJobRequest extends jspb.Message {
   hasReportJob(): boolean;
@@ -223,6 +224,11 @@ export class GenerateReportRequest extends jspb.Message {
   getReportJob(): api_v1alpha1_bireportgenerator_entities_pb.ReportJob | undefined;
   setReportJob(value?: api_v1alpha1_bireportgenerator_entities_pb.ReportJob): void;
 
+  hasSendAsOfDate(): boolean;
+  clearSendAsOfDate(): void;
+  getSendAsOfDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setSendAsOfDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenerateReportRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GenerateReportRequest): GenerateReportRequest.AsObject;
@@ -236,6 +242,7 @@ export class GenerateReportRequest extends jspb.Message {
 export namespace GenerateReportRequest {
   export type AsObject = {
     reportJob?: api_v1alpha1_bireportgenerator_entities_pb.ReportJob.AsObject,
+    sendAsOfDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

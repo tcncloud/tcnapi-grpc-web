@@ -734,7 +734,7 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.toObject
 proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.toObject = function(includeInstance, msg) {
   var f, obj = {
     rawData: msg.getRawData_asB64(),
-    hasHeader: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+    opts: (f = msg.getOpts()) && api_v1alpha1_classifier_entities_pb.Opts.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -776,8 +776,9 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.deserializeBinaryF
       msg.setRawData(value);
       break;
     case 8:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setHasHeader(value);
+      var value = new api_v1alpha1_classifier_entities_pb.Opts;
+      reader.readMessage(value,api_v1alpha1_classifier_entities_pb.Opts.deserializeBinaryFromReader);
+      msg.setOpts(value);
       break;
     default:
       reader.skipField();
@@ -815,11 +816,12 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.serializeBinaryToW
       f
     );
   }
-  f = message.getHasHeader();
-  if (f) {
-    writer.writeBool(
+  f = message.getOpts();
+  if (f != null) {
+    writer.writeMessage(
       8,
-      f
+      f,
+      api_v1alpha1_classifier_entities_pb.Opts.serializeBinaryToWriter
     );
   }
 };
@@ -868,20 +870,39 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.setRawDa
 
 
 /**
- * optional bool has_header = 8;
- * @return {boolean}
+ * optional Opts opts = 8;
+ * @return {?proto.api.v1alpha1.classifier.Opts}
  */
-proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.getHasHeader = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.getOpts = function() {
+  return /** @type{?proto.api.v1alpha1.classifier.Opts} */ (
+    jspb.Message.getWrapperField(this, api_v1alpha1_classifier_entities_pb.Opts, 8));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {?proto.api.v1alpha1.classifier.Opts|undefined} value
+ * @return {!proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints} returns this
+*/
+proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.setOpts = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints} returns this
  */
-proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.setHasHeader = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 8, value);
+proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.clearOpts = function() {
+  return this.setOpts(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.hasOpts = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

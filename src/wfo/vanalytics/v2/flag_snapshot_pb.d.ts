@@ -156,6 +156,11 @@ export namespace FlagSnapshot {
     setOrList(value: Array<FlagSnapshot.BoolExpr>): void;
     addOr(value?: FlagSnapshot.BoolExpr, index?: number): FlagSnapshot.BoolExpr;
 
+    hasFilter(): boolean;
+    clearFilter(): void;
+    getFilter(): FlagSnapshot.BoolExpr.Filter | undefined;
+    setFilter(value?: FlagSnapshot.BoolExpr.Filter): void;
+
     hasNot(): boolean;
     clearNot(): void;
     getNot(): FlagSnapshot.BoolExpr | undefined;
@@ -175,6 +180,7 @@ export namespace FlagSnapshot {
     export type AsObject = {
       andList: Array<FlagSnapshot.BoolExpr.AsObject>,
       orList: Array<FlagSnapshot.BoolExpr.AsObject>,
+      filter?: FlagSnapshot.BoolExpr.Filter.AsObject,
       not?: FlagSnapshot.BoolExpr.AsObject,
     }
 
