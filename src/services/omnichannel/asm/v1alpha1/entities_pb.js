@@ -2082,7 +2082,8 @@ proto.services.omnichannel.asm.v1alpha1.PushEventsRequest.toObject = function(in
   var f, obj = {
     amsSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     asmEventsList: jspb.Message.toObjectList(msg.getAsmEventsList(),
-    api_commons_event_pb.AsmEvent.toObject, includeInstance)
+    api_commons_event_pb.AsmEvent.toObject, includeInstance),
+    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2128,6 +2129,10 @@ proto.services.omnichannel.asm.v1alpha1.PushEventsRequest.deserializeBinaryFromR
       reader.readMessage(value,api_commons_event_pb.AsmEvent.deserializeBinaryFromReader);
       msg.addAsmEvents(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setAsmSessionSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2170,6 +2175,13 @@ proto.services.omnichannel.asm.v1alpha1.PushEventsRequest.serializeBinaryToWrite
       2,
       f,
       api_commons_event_pb.AsmEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getAsmSessionSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      3,
+      f
     );
   }
 };
@@ -2228,6 +2240,24 @@ proto.services.omnichannel.asm.v1alpha1.PushEventsRequest.prototype.addAsmEvents
  */
 proto.services.omnichannel.asm.v1alpha1.PushEventsRequest.prototype.clearAsmEventsList = function() {
   return this.setAsmEventsList([]);
+};
+
+
+/**
+ * optional int64 asm_session_sid = 3;
+ * @return {number}
+ */
+proto.services.omnichannel.asm.v1alpha1.PushEventsRequest.prototype.getAsmSessionSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.services.omnichannel.asm.v1alpha1.PushEventsRequest} returns this
+ */
+proto.services.omnichannel.asm.v1alpha1.PushEventsRequest.prototype.setAsmSessionSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
