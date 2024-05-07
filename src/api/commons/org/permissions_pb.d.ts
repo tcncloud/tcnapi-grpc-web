@@ -27,6 +27,11 @@ export class PermissionGroup extends jspb.Message {
   getReadOnly(): boolean;
   setReadOnly(value: boolean): void;
 
+  clearLabelIdsList(): void;
+  getLabelIdsList(): Array<string>;
+  setLabelIdsList(value: Array<string>): void;
+  addLabelIds(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PermissionGroup.AsObject;
   static toObject(includeInstance: boolean, msg: PermissionGroup): PermissionGroup.AsObject;
@@ -45,6 +50,7 @@ export namespace PermissionGroup {
     description: string,
     permissionsList: Array<api_commons_auth_perms_pb.PermissionMap[keyof api_commons_auth_perms_pb.PermissionMap]>,
     readOnly: boolean,
+    labelIdsList: Array<string>,
   }
 }
 

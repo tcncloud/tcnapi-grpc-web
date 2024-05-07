@@ -1704,6 +1704,16 @@ export class ExecuteFlow extends jspb.Message {
   getSutherlandrevPaymentConnect(): ExecuteSutherlandrevPaymentConnect | undefined;
   setSutherlandrevPaymentConnect(value?: ExecuteSutherlandrevPaymentConnect): void;
 
+  hasDebugEcho(): boolean;
+  clearDebugEcho(): void;
+  getDebugEcho(): ExecuteDebugEcho | undefined;
+  setDebugEcho(value?: ExecuteDebugEcho): void;
+
+  hasDebugValidate(): boolean;
+  clearDebugValidate(): void;
+  getDebugValidate(): ExecuteDebugValidate | undefined;
+  setDebugValidate(value?: ExecuteDebugValidate): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -1932,6 +1942,8 @@ export namespace ExecuteFlow {
     navigaChangeBilling?: ExecuteNavigaChangeBilling.AsObject,
     paynsecondsTokenizeCard?: ExecutePaynsecondsTokenizeCard.AsObject,
     sutherlandrevPaymentConnect?: ExecuteSutherlandrevPaymentConnect.AsObject,
+    debugEcho?: ExecuteDebugEcho.AsObject,
+    debugValidate?: ExecuteDebugValidate.AsObject,
   }
 
   export enum ValueCase {
@@ -2150,6 +2162,8 @@ export namespace ExecuteFlow {
     NAVIGA_CHANGE_BILLING = 4002,
     PAYNSECONDS_TOKENIZE_CARD = 4101,
     SUTHERLANDREV_PAYMENT_CONNECT = 4201,
+    DEBUG_ECHO = 5001,
+    DEBUG_VALIDATE = 5002,
   }
 }
 
@@ -6094,6 +6108,38 @@ export class ExecuteSutherlandrevPaymentConnect extends jspb.Message {
 }
 
 export namespace ExecuteSutherlandrevPaymentConnect {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteDebugEcho extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteDebugEcho.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteDebugEcho): ExecuteDebugEcho.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteDebugEcho, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteDebugEcho;
+  static deserializeBinaryFromReader(message: ExecuteDebugEcho, reader: jspb.BinaryReader): ExecuteDebugEcho;
+}
+
+export namespace ExecuteDebugEcho {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteDebugValidate extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteDebugValidate.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteDebugValidate): ExecuteDebugValidate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteDebugValidate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteDebugValidate;
+  static deserializeBinaryFromReader(message: ExecuteDebugValidate, reader: jspb.BinaryReader): ExecuteDebugValidate;
+}
+
+export namespace ExecuteDebugValidate {
   export type AsObject = {
   }
 }
