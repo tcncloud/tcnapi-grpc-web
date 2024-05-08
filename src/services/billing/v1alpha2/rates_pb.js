@@ -1311,8 +1311,7 @@ proto.services.billing.v1alpha2.CreateRateDefinitionRequest.prototype.toObject =
 proto.services.billing.v1alpha2.CreateRateDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha2_rates_pb.RateDefinition.toObject(includeInstance, f),
-    defaultRateDefinitionId: jspb.Message.getFieldWithDefault(msg, 3, "")
+    rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha2_rates_pb.RateDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1358,10 +1357,6 @@ proto.services.billing.v1alpha2.CreateRateDefinitionRequest.deserializeBinaryFro
       reader.readMessage(value,services_billing_entities_v1alpha2_rates_pb.RateDefinition.deserializeBinaryFromReader);
       msg.setRateDefinition(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDefaultRateDefinitionId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1404,13 +1399,6 @@ proto.services.billing.v1alpha2.CreateRateDefinitionRequest.serializeBinaryToWri
       2,
       f,
       services_billing_entities_v1alpha2_rates_pb.RateDefinition.serializeBinaryToWriter
-    );
-  }
-  f = message.getDefaultRateDefinitionId();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
     );
   }
 };
@@ -1468,24 +1456,6 @@ proto.services.billing.v1alpha2.CreateRateDefinitionRequest.prototype.clearRateD
  */
 proto.services.billing.v1alpha2.CreateRateDefinitionRequest.prototype.hasRateDefinition = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string default_rate_definition_id = 3;
- * @return {string}
- */
-proto.services.billing.v1alpha2.CreateRateDefinitionRequest.prototype.getDefaultRateDefinitionId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.services.billing.v1alpha2.CreateRateDefinitionRequest} returns this
- */
-proto.services.billing.v1alpha2.CreateRateDefinitionRequest.prototype.setDefaultRateDefinitionId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
