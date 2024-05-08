@@ -4001,7 +4001,8 @@ proto.api.commons.AgentState.toObject = function(includeInstance, msg) {
     userId: jspb.Message.getFieldWithDefault(msg, 16, ""),
     agentSid: jspb.Message.getFieldWithDefault(msg, 17, 0),
     asmSessionSid: jspb.Message.getFieldWithDefault(msg, 18, 0),
-    agentIsMuted: jspb.Message.getBooleanFieldWithDefault(msg, 19, false)
+    agentIsMuted: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
+    uuid: jspb.Message.getFieldWithDefault(msg, 20, "")
   };
 
   if (includeInstance) {
@@ -4110,6 +4111,10 @@ proto.api.commons.AgentState.deserializeBinaryFromReader = function(msg, reader)
     case 19:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAgentIsMuted(value);
+      break;
+    case 20:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUuid(value);
       break;
     default:
       reader.skipField();
@@ -4264,6 +4269,13 @@ proto.api.commons.AgentState.serializeBinaryToWriter = function(message, writer)
   if (f) {
     writer.writeBool(
       19,
+      f
+    );
+  }
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      20,
       f
     );
   }
@@ -4611,6 +4623,24 @@ proto.api.commons.AgentState.prototype.getAgentIsMuted = function() {
  */
 proto.api.commons.AgentState.prototype.setAgentIsMuted = function(value) {
   return jspb.Message.setProto3BooleanField(this, 19, value);
+};
+
+
+/**
+ * optional string uuid = 20;
+ * @return {string}
+ */
+proto.api.commons.AgentState.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.AgentState} returns this
+ */
+proto.api.commons.AgentState.prototype.setUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 20, value);
 };
 
 

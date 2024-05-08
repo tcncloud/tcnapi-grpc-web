@@ -855,6 +855,9 @@ export class AgentState extends jspb.Message {
   getAgentIsMuted(): boolean;
   setAgentIsMuted(value: boolean): void;
 
+  getUuid(): string;
+  setUuid(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AgentState.AsObject;
   static toObject(includeInstance: boolean, msg: AgentState): AgentState.AsObject;
@@ -885,6 +888,7 @@ export namespace AgentState {
     agentSid: number,
     asmSessionSid: number,
     agentIsMuted: boolean,
+    uuid: string,
   }
 }
 

@@ -27,6 +27,8 @@ var api_commons_asm_pb = require('../../../api/commons/asm_pb.js');
 goog.object.extend(proto, api_commons_asm_pb);
 var api_commons_omnichannel_pb = require('../../../api/commons/omnichannel_pb.js');
 goog.object.extend(proto, api_commons_omnichannel_pb);
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.api.commons.audit.AsmActivateConversationEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.AsmAgentLoginEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.AsmAgentLogoutEvent', null, global);
@@ -1214,7 +1216,8 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.toObject = function(includeIns
     userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     newStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    oldStatus: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    oldStatus: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    oldStatusDurationMilliseconds: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -1266,6 +1269,10 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.deserializeBinaryFromReader = 
     case 4:
       var value = /** @type {!proto.api.commons.StatusState} */ (reader.readEnum());
       msg.setOldStatus(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setOldStatusDurationMilliseconds(value);
       break;
     default:
       reader.skipField();
@@ -1321,6 +1328,13 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.serializeBinaryToWriter = func
   if (f !== 0.0) {
     writer.writeEnum(
       4,
+      f
+    );
+  }
+  f = message.getOldStatusDurationMilliseconds();
+  if (f !== 0) {
+    writer.writeInt64(
+      5,
       f
     );
   }
@@ -1396,6 +1410,24 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.getOldStatus = funct
  */
 proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.setOldStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+/**
+ * optional int64 old_status_duration_milliseconds = 5;
+ * @return {number}
+ */
+proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.getOldStatusDurationMilliseconds = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.audit.AsmAgentStateChangedEvent} returns this
+ */
+proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.setOldStatusDurationMilliseconds = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 

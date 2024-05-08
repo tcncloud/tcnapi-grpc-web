@@ -17,6 +17,11 @@ export class ParseFileRequest extends jspb.Message {
   getReparseFile(): ParseFileRequest.ReParseFile | undefined;
   setReparseFile(value?: ParseFileRequest.ReParseFile): void;
 
+  hasParseWithHints(): boolean;
+  clearParseWithHints(): void;
+  getParseWithHints(): ParseFileRequest.ParseWithHints | undefined;
+  setParseWithHints(value?: ParseFileRequest.ParseWithHints): void;
+
   getName(): string;
   setName(value: string): void;
 
@@ -35,6 +40,7 @@ export namespace ParseFileRequest {
   export type AsObject = {
     rawData: Uint8Array | string,
     reparseFile?: ParseFileRequest.ReParseFile.AsObject,
+    parseWithHints?: ParseFileRequest.ParseWithHints.AsObject,
     name: string,
   }
 
@@ -46,6 +52,11 @@ export namespace ParseFileRequest {
     clearHints(): void;
     getHints(): api_v1alpha1_classifier_entities_pb.ParseHints | undefined;
     setHints(value?: api_v1alpha1_classifier_entities_pb.ParseHints): void;
+
+    hasOpts(): boolean;
+    clearOpts(): void;
+    getOpts(): api_v1alpha1_classifier_entities_pb.Opts | undefined;
+    setOpts(value?: api_v1alpha1_classifier_entities_pb.Opts): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ReParseFile.AsObject;
@@ -61,6 +72,35 @@ export namespace ParseFileRequest {
     export type AsObject = {
       fileTemplateId: number,
       hints?: api_v1alpha1_classifier_entities_pb.ParseHints.AsObject,
+      opts?: api_v1alpha1_classifier_entities_pb.Opts.AsObject,
+    }
+  }
+
+  export class ParseWithHints extends jspb.Message {
+    getRawData(): Uint8Array | string;
+    getRawData_asU8(): Uint8Array;
+    getRawData_asB64(): string;
+    setRawData(value: Uint8Array | string): void;
+
+    hasOpts(): boolean;
+    clearOpts(): void;
+    getOpts(): api_v1alpha1_classifier_entities_pb.Opts | undefined;
+    setOpts(value?: api_v1alpha1_classifier_entities_pb.Opts): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ParseWithHints.AsObject;
+    static toObject(includeInstance: boolean, msg: ParseWithHints): ParseWithHints.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ParseWithHints, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ParseWithHints;
+    static deserializeBinaryFromReader(message: ParseWithHints, reader: jspb.BinaryReader): ParseWithHints;
+  }
+
+  export namespace ParseWithHints {
+    export type AsObject = {
+      rawData: Uint8Array | string,
+      opts?: api_v1alpha1_classifier_entities_pb.Opts.AsObject,
     }
   }
 
@@ -68,6 +108,7 @@ export namespace ParseFileRequest {
     OPT_NOT_SET = 0,
     RAW_DATA = 3,
     REPARSE_FILE = 4,
+    PARSE_WITH_HINTS = 6,
   }
 }
 
