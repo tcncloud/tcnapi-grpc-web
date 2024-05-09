@@ -7742,6 +7742,9 @@ export class ShiftInstance extends jspb.Message {
   getShiftTemplate(): ShiftTemplate | undefined;
   setShiftTemplate(value?: ShiftTemplate): void;
 
+  getPlannedShrinkagePercent(): number;
+  setPlannedShrinkagePercent(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ShiftInstance.AsObject;
   static toObject(includeInstance: boolean, msg: ShiftInstance): ShiftInstance.AsObject;
@@ -7765,6 +7768,7 @@ export namespace ShiftInstance {
     scheduleType: api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap],
     shiftSegmentsList: Array<ShiftSegment.AsObject>,
     shiftTemplate?: ShiftTemplate.AsObject,
+    plannedShrinkagePercent: number,
   }
 }
 

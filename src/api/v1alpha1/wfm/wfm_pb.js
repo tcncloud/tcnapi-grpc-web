@@ -63866,7 +63866,8 @@ proto.api.v1alpha1.wfm.ShiftInstance.toObject = function(includeInstance, msg) {
     scheduleType: jspb.Message.getFieldWithDefault(msg, 9, 0),
     shiftSegmentsList: jspb.Message.toObjectList(msg.getShiftSegmentsList(),
     proto.api.v1alpha1.wfm.ShiftSegment.toObject, includeInstance),
-    shiftTemplate: (f = msg.getShiftTemplate()) && proto.api.v1alpha1.wfm.ShiftTemplate.toObject(includeInstance, f)
+    shiftTemplate: (f = msg.getShiftTemplate()) && proto.api.v1alpha1.wfm.ShiftTemplate.toObject(includeInstance, f),
+    plannedShrinkagePercent: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0)
   };
 
   if (includeInstance) {
@@ -63949,6 +63950,10 @@ proto.api.v1alpha1.wfm.ShiftInstance.deserializeBinaryFromReader = function(msg,
       var value = new proto.api.v1alpha1.wfm.ShiftTemplate;
       reader.readMessage(value,proto.api.v1alpha1.wfm.ShiftTemplate.deserializeBinaryFromReader);
       msg.setShiftTemplate(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setPlannedShrinkagePercent(value);
       break;
     default:
       reader.skipField();
@@ -64057,6 +64062,13 @@ proto.api.v1alpha1.wfm.ShiftInstance.serializeBinaryToWriter = function(message,
       11,
       f,
       proto.api.v1alpha1.wfm.ShiftTemplate.serializeBinaryToWriter
+    );
+  }
+  f = message.getPlannedShrinkagePercent();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      12,
+      f
     );
   }
 };
@@ -64315,6 +64327,24 @@ proto.api.v1alpha1.wfm.ShiftInstance.prototype.clearShiftTemplate = function() {
  */
 proto.api.v1alpha1.wfm.ShiftInstance.prototype.hasShiftTemplate = function() {
   return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional float planned_shrinkage_percent = 12;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.ShiftInstance.prototype.getPlannedShrinkagePercent = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.ShiftInstance} returns this
+ */
+proto.api.v1alpha1.wfm.ShiftInstance.prototype.setPlannedShrinkagePercent = function(value) {
+  return jspb.Message.setProto3FloatField(this, 12, value);
 };
 
 
