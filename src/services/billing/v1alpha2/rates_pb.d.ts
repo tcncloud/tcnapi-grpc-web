@@ -106,6 +106,9 @@ export class CreateRateDefinitionRequest extends jspb.Message {
   getRateDefinition(): services_billing_entities_v1alpha2_rates_pb.RateDefinition | undefined;
   setRateDefinition(value?: services_billing_entities_v1alpha2_rates_pb.RateDefinition): void;
 
+  getDefaultRateDefinitionId(): string;
+  setDefaultRateDefinitionId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRateDefinitionRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateRateDefinitionRequest): CreateRateDefinitionRequest.AsObject;
@@ -120,6 +123,7 @@ export namespace CreateRateDefinitionRequest {
   export type AsObject = {
     rateDefinitionId: string,
     rateDefinition?: services_billing_entities_v1alpha2_rates_pb.RateDefinition.AsObject,
+    defaultRateDefinitionId: string,
   }
 }
 
