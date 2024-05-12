@@ -8182,6 +8182,9 @@ export class BuildDraftScheduleReq extends jspb.Message {
   getIncludeActivity(): boolean;
   setIncludeActivity(value: boolean): void;
 
+  getAutoGenerateAgents(): boolean;
+  setAutoGenerateAgents(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildDraftScheduleReq.AsObject;
   static toObject(includeInstance: boolean, msg: BuildDraftScheduleReq): BuildDraftScheduleReq.AsObject;
@@ -8203,6 +8206,7 @@ export namespace BuildDraftScheduleReq {
     includeShiftSegments: boolean,
     includeSchedulingActivity: boolean,
     includeActivity: boolean,
+    autoGenerateAgents: boolean,
   }
 }
 
