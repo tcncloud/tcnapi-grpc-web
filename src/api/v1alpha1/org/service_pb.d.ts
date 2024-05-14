@@ -12,7 +12,6 @@ import * as api_v1alpha1_org_organization_pb from "../../../api/v1alpha1/org/org
 import * as api_v1alpha1_org_p3_permissions_pb from "../../../api/v1alpha1/org/p3_permissions_pb";
 import * as api_v1alpha1_org_permissions_pb from "../../../api/v1alpha1/org/permissions_pb";
 import * as api_v1alpha1_org_preferences_pb from "../../../api/v1alpha1/org/preferences_pb";
-import * as api_v1alpha1_org_response_evaluator_pb from "../../../api/v1alpha1/org/response_evaluator_pb";
 import * as api_v1alpha1_org_trusts_pb from "../../../api/v1alpha1/org/trusts_pb";
 import * as api_v1alpha1_org_user_pb from "../../../api/v1alpha1/org/user_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";

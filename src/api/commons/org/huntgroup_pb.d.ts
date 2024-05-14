@@ -2941,6 +2941,42 @@ export namespace SimpleCompareExpression {
   }
 }
 
+export class ResponseEvaluator extends jspb.Message {
+  getResponseEvaluatorId(): string;
+  setResponseEvaluatorId(value: string): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getRegularExpression(): string;
+  setRegularExpression(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResponseEvaluator.AsObject;
+  static toObject(includeInstance: boolean, msg: ResponseEvaluator): ResponseEvaluator.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResponseEvaluator, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResponseEvaluator;
+  static deserializeBinaryFromReader(message: ResponseEvaluator, reader: jspb.BinaryReader): ResponseEvaluator;
+}
+
+export namespace ResponseEvaluator {
+  export type AsObject = {
+    responseEvaluatorId: string,
+    orgId: string,
+    name: string,
+    description: string,
+    regularExpression: string,
+  }
+}
+
 export interface HuntGroupTypeMap {
   HUNT_GROUP_TYPE_UNSPECIFIED: 0;
   HUNT_GROUP_TYPE_CONNECTED: 1;

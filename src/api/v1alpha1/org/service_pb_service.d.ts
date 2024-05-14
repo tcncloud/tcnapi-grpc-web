@@ -11,7 +11,6 @@ import * as api_v1alpha1_org_organization_pb from "../../../api/v1alpha1/org/org
 import * as api_v1alpha1_org_p3_permissions_pb from "../../../api/v1alpha1/org/p3_permissions_pb";
 import * as api_v1alpha1_org_permissions_pb from "../../../api/v1alpha1/org/permissions_pb";
 import * as api_v1alpha1_org_preferences_pb from "../../../api/v1alpha1/org/preferences_pb";
-import * as api_v1alpha1_org_response_evaluator_pb from "../../../api/v1alpha1/org/response_evaluator_pb";
 import * as api_v1alpha1_org_trusts_pb from "../../../api/v1alpha1/org/trusts_pb";
 import * as api_v1alpha1_org_user_pb from "../../../api/v1alpha1/org/user_pb";
 import {grpc} from "@improbable-eng/grpc-web";
@@ -2028,8 +2027,8 @@ type OrgListResponseEvaluators = {
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_response_evaluator_pb.ListResponseEvaluatorsRequest;
-  readonly responseType: typeof api_v1alpha1_org_response_evaluator_pb.ListResponseEvaluatorsResponse;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsResponse;
 };
 
 type OrgGetResponseEvaluator = {
@@ -2037,8 +2036,8 @@ type OrgGetResponseEvaluator = {
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_response_evaluator_pb.GetResponseEvaluatorRequest;
-  readonly responseType: typeof api_v1alpha1_org_response_evaluator_pb.GetResponseEvaluatorResponse;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorResponse;
 };
 
 type OrgCreateResponseEvaluator = {
@@ -2046,8 +2045,8 @@ type OrgCreateResponseEvaluator = {
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_response_evaluator_pb.CreateResponseEvaluatorRequest;
-  readonly responseType: typeof api_v1alpha1_org_response_evaluator_pb.CreateResponseEvaluatorResponse;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorResponse;
 };
 
 type OrgUpdateResponseEvaluator = {
@@ -2055,8 +2054,8 @@ type OrgUpdateResponseEvaluator = {
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_response_evaluator_pb.UpdateResponseEvaluatorRequest;
-  readonly responseType: typeof api_v1alpha1_org_response_evaluator_pb.UpdateResponseEvaluatorResponse;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorResponse;
 };
 
 type OrgDeleteResponseEvaluator = {
@@ -2064,8 +2063,8 @@ type OrgDeleteResponseEvaluator = {
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_response_evaluator_pb.DeleteResponseEvaluatorRequest;
-  readonly responseType: typeof api_v1alpha1_org_response_evaluator_pb.DeleteResponseEvaluatorResponse;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorResponse;
 };
 
 export class Org {
@@ -4260,49 +4259,49 @@ export class OrgClient {
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.ListUsersAllowedIpsResponse|null) => void
   ): UnaryResponse;
   listResponseEvaluators(
-    requestMessage: api_v1alpha1_org_response_evaluator_pb.ListResponseEvaluatorsRequest,
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_response_evaluator_pb.ListResponseEvaluatorsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsResponse|null) => void
   ): UnaryResponse;
   listResponseEvaluators(
-    requestMessage: api_v1alpha1_org_response_evaluator_pb.ListResponseEvaluatorsRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_response_evaluator_pb.ListResponseEvaluatorsResponse|null) => void
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsResponse|null) => void
   ): UnaryResponse;
   getResponseEvaluator(
-    requestMessage: api_v1alpha1_org_response_evaluator_pb.GetResponseEvaluatorRequest,
+    requestMessage: api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_response_evaluator_pb.GetResponseEvaluatorResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorResponse|null) => void
   ): UnaryResponse;
   getResponseEvaluator(
-    requestMessage: api_v1alpha1_org_response_evaluator_pb.GetResponseEvaluatorRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_response_evaluator_pb.GetResponseEvaluatorResponse|null) => void
+    requestMessage: api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorResponse|null) => void
   ): UnaryResponse;
   createResponseEvaluator(
-    requestMessage: api_v1alpha1_org_response_evaluator_pb.CreateResponseEvaluatorRequest,
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_response_evaluator_pb.CreateResponseEvaluatorResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorResponse|null) => void
   ): UnaryResponse;
   createResponseEvaluator(
-    requestMessage: api_v1alpha1_org_response_evaluator_pb.CreateResponseEvaluatorRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_response_evaluator_pb.CreateResponseEvaluatorResponse|null) => void
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorResponse|null) => void
   ): UnaryResponse;
   updateResponseEvaluator(
-    requestMessage: api_v1alpha1_org_response_evaluator_pb.UpdateResponseEvaluatorRequest,
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_response_evaluator_pb.UpdateResponseEvaluatorResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorResponse|null) => void
   ): UnaryResponse;
   updateResponseEvaluator(
-    requestMessage: api_v1alpha1_org_response_evaluator_pb.UpdateResponseEvaluatorRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_response_evaluator_pb.UpdateResponseEvaluatorResponse|null) => void
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorResponse|null) => void
   ): UnaryResponse;
   deleteResponseEvaluator(
-    requestMessage: api_v1alpha1_org_response_evaluator_pb.DeleteResponseEvaluatorRequest,
+    requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_response_evaluator_pb.DeleteResponseEvaluatorResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorResponse|null) => void
   ): UnaryResponse;
   deleteResponseEvaluator(
-    requestMessage: api_v1alpha1_org_response_evaluator_pb.DeleteResponseEvaluatorRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_response_evaluator_pb.DeleteResponseEvaluatorResponse|null) => void
+    requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorResponse|null) => void
   ): UnaryResponse;
 }
 

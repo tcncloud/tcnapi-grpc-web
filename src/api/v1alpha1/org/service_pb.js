@@ -43,8 +43,6 @@ var api_v1alpha1_org_permissions_pb = require('../../../api/v1alpha1/org/permiss
 goog.object.extend(proto, api_v1alpha1_org_permissions_pb);
 var api_v1alpha1_org_preferences_pb = require('../../../api/v1alpha1/org/preferences_pb.js');
 goog.object.extend(proto, api_v1alpha1_org_preferences_pb);
-var api_v1alpha1_org_response_evaluator_pb = require('../../../api/v1alpha1/org/response_evaluator_pb.js');
-goog.object.extend(proto, api_v1alpha1_org_response_evaluator_pb);
 var api_v1alpha1_org_trusts_pb = require('../../../api/v1alpha1/org/trusts_pb.js');
 goog.object.extend(proto, api_v1alpha1_org_trusts_pb);
 var api_v1alpha1_org_user_pb = require('../../../api/v1alpha1/org/user_pb.js');

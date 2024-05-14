@@ -11,7 +11,6 @@ var api_v1alpha1_org_organization_pb = require("../../../api/v1alpha1/org/organi
 var api_v1alpha1_org_p3_permissions_pb = require("../../../api/v1alpha1/org/p3_permissions_pb");
 var api_v1alpha1_org_permissions_pb = require("../../../api/v1alpha1/org/permissions_pb");
 var api_v1alpha1_org_preferences_pb = require("../../../api/v1alpha1/org/preferences_pb");
-var api_v1alpha1_org_response_evaluator_pb = require("../../../api/v1alpha1/org/response_evaluator_pb");
 var api_v1alpha1_org_trusts_pb = require("../../../api/v1alpha1/org/trusts_pb");
 var api_v1alpha1_org_user_pb = require("../../../api/v1alpha1/org/user_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
@@ -2034,8 +2033,8 @@ Org.ListResponseEvaluators = {
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_response_evaluator_pb.ListResponseEvaluatorsRequest,
-  responseType: api_v1alpha1_org_response_evaluator_pb.ListResponseEvaluatorsResponse
+  requestType: api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsResponse
 };
 
 Org.GetResponseEvaluator = {
@@ -2043,8 +2042,8 @@ Org.GetResponseEvaluator = {
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_response_evaluator_pb.GetResponseEvaluatorRequest,
-  responseType: api_v1alpha1_org_response_evaluator_pb.GetResponseEvaluatorResponse
+  requestType: api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorResponse
 };
 
 Org.CreateResponseEvaluator = {
@@ -2052,8 +2051,8 @@ Org.CreateResponseEvaluator = {
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_response_evaluator_pb.CreateResponseEvaluatorRequest,
-  responseType: api_v1alpha1_org_response_evaluator_pb.CreateResponseEvaluatorResponse
+  requestType: api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorResponse
 };
 
 Org.UpdateResponseEvaluator = {
@@ -2061,8 +2060,8 @@ Org.UpdateResponseEvaluator = {
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_response_evaluator_pb.UpdateResponseEvaluatorRequest,
-  responseType: api_v1alpha1_org_response_evaluator_pb.UpdateResponseEvaluatorResponse
+  requestType: api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorResponse
 };
 
 Org.DeleteResponseEvaluator = {
@@ -2070,8 +2069,8 @@ Org.DeleteResponseEvaluator = {
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_response_evaluator_pb.DeleteResponseEvaluatorRequest,
-  responseType: api_v1alpha1_org_response_evaluator_pb.DeleteResponseEvaluatorResponse
+  requestType: api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorResponse
 };
 
 exports.Org = Org;
