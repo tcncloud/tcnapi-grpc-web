@@ -67,6 +67,11 @@ export class InvoiceItem extends jspb.Message {
   setColumnsList(value: Array<InvoiceItemColumn>): void;
   addColumns(value?: InvoiceItemColumn, index?: number): InvoiceItemColumn;
 
+  hasRatedAmount(): boolean;
+  clearRatedAmount(): void;
+  getRatedAmount(): google_type_decimal_pb.Decimal | undefined;
+  setRatedAmount(value?: google_type_decimal_pb.Decimal): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InvoiceItem.AsObject;
   static toObject(includeInstance: boolean, msg: InvoiceItem): InvoiceItem.AsObject;
@@ -85,6 +90,7 @@ export namespace InvoiceItem {
     date?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     price: number,
     columnsList: Array<InvoiceItemColumn.AsObject>,
+    ratedAmount?: google_type_decimal_pb.Decimal.AsObject,
   }
 }
 

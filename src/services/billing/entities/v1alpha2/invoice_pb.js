@@ -433,7 +433,8 @@ proto.services.billing.entities.v1alpha2.InvoiceItem.toObject = function(include
     date: (f = msg.getDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     price: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
     columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
-    proto.services.billing.entities.v1alpha2.InvoiceItemColumn.toObject, includeInstance)
+    proto.services.billing.entities.v1alpha2.InvoiceItemColumn.toObject, includeInstance),
+    ratedAmount: (f = msg.getRatedAmount()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -495,6 +496,11 @@ proto.services.billing.entities.v1alpha2.InvoiceItem.deserializeBinaryFromReader
       var value = new proto.services.billing.entities.v1alpha2.InvoiceItemColumn;
       reader.readMessage(value,proto.services.billing.entities.v1alpha2.InvoiceItemColumn.deserializeBinaryFromReader);
       msg.addColumns(value);
+      break;
+    case 7:
+      var value = new google_type_decimal_pb.Decimal;
+      reader.readMessage(value,google_type_decimal_pb.Decimal.deserializeBinaryFromReader);
+      msg.setRatedAmount(value);
       break;
     default:
       reader.skipField();
@@ -567,6 +573,14 @@ proto.services.billing.entities.v1alpha2.InvoiceItem.serializeBinaryToWriter = f
       6,
       f,
       proto.services.billing.entities.v1alpha2.InvoiceItemColumn.serializeBinaryToWriter
+    );
+  }
+  f = message.getRatedAmount();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      google_type_decimal_pb.Decimal.serializeBinaryToWriter
     );
   }
 };
@@ -716,6 +730,43 @@ proto.services.billing.entities.v1alpha2.InvoiceItem.prototype.addColumns = func
  */
 proto.services.billing.entities.v1alpha2.InvoiceItem.prototype.clearColumnsList = function() {
   return this.setColumnsList([]);
+};
+
+
+/**
+ * optional google.type.Decimal rated_amount = 7;
+ * @return {?proto.google.type.Decimal}
+ */
+proto.services.billing.entities.v1alpha2.InvoiceItem.prototype.getRatedAmount = function() {
+  return /** @type{?proto.google.type.Decimal} */ (
+    jspb.Message.getWrapperField(this, google_type_decimal_pb.Decimal, 7));
+};
+
+
+/**
+ * @param {?proto.google.type.Decimal|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.InvoiceItem} returns this
+*/
+proto.services.billing.entities.v1alpha2.InvoiceItem.prototype.setRatedAmount = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.InvoiceItem} returns this
+ */
+proto.services.billing.entities.v1alpha2.InvoiceItem.prototype.clearRatedAmount = function() {
+  return this.setRatedAmount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.InvoiceItem.prototype.hasRatedAmount = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
