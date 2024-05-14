@@ -60,6 +60,9 @@ export class HuntGroup extends jspb.Message {
   getAgentCount(): number;
   setAgentCount(value: number): void;
 
+  getHuntGroupSkillCount(): number;
+  setHuntGroupSkillCount(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HuntGroup.AsObject;
   static toObject(includeInstance: boolean, msg: HuntGroup): HuntGroup.AsObject;
@@ -79,6 +82,7 @@ export namespace HuntGroup {
     modifyDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     type: api_commons_acd_pb.HuntGroupType.EnumMap[keyof api_commons_acd_pb.HuntGroupType.EnumMap],
     agentCount: number,
+    huntGroupSkillCount: number,
   }
 }
 
