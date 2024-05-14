@@ -6367,7 +6367,7 @@ proto.api.v0alpha.HuntGroup.toObject = function(includeInstance, msg) {
     modifyDate: (f = msg.getModifyDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     type: jspb.Message.getFieldWithDefault(msg, 6, 0),
     agentCount: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    huntGroupSkillCount: jspb.Message.getFieldWithDefault(msg, 8, 0)
+    huntGroupSkillAgentCount: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -6436,7 +6436,7 @@ proto.api.v0alpha.HuntGroup.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 8:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setHuntGroupSkillCount(value);
+      msg.setHuntGroupSkillAgentCount(value);
       break;
     default:
       reader.skipField();
@@ -6518,7 +6518,7 @@ proto.api.v0alpha.HuntGroup.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getHuntGroupSkillCount();
+  f = message.getHuntGroupSkillAgentCount();
   if (f !== 0) {
     writer.writeInt64(
       8,
@@ -6693,10 +6693,10 @@ proto.api.v0alpha.HuntGroup.prototype.setAgentCount = function(value) {
 
 
 /**
- * optional int64 hunt_group_skill_count = 8;
+ * optional int64 hunt_group_skill_agent_count = 8;
  * @return {number}
  */
-proto.api.v0alpha.HuntGroup.prototype.getHuntGroupSkillCount = function() {
+proto.api.v0alpha.HuntGroup.prototype.getHuntGroupSkillAgentCount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -6705,7 +6705,7 @@ proto.api.v0alpha.HuntGroup.prototype.getHuntGroupSkillCount = function() {
  * @param {number} value
  * @return {!proto.api.v0alpha.HuntGroup} returns this
  */
-proto.api.v0alpha.HuntGroup.prototype.setHuntGroupSkillCount = function(value) {
+proto.api.v0alpha.HuntGroup.prototype.setHuntGroupSkillAgentCount = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
 
