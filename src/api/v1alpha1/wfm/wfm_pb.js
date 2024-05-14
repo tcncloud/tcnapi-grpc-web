@@ -67088,7 +67088,8 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleReq.toObject = function(includeInstance
     includeShiftTemplate: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     includeShiftSegments: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     includeSchedulingActivity: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    includeActivity: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
+    includeActivity: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    autoGenerateAgents: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -67162,6 +67163,10 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleReq.deserializeBinaryFromReader = funct
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIncludeActivity(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAutoGenerateAgents(value);
       break;
     default:
       reader.skipField();
@@ -67254,6 +67259,13 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleReq.serializeBinaryToWriter = function(
   if (f) {
     writer.writeBool(
       9,
+      f
+    );
+  }
+  f = message.getAutoGenerateAgents();
+  if (f) {
+    writer.writeBool(
+      10,
       f
     );
   }
@@ -67457,6 +67469,24 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.getIncludeActivity = func
  */
 proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.setIncludeActivity = function(value) {
   return jspb.Message.setProto3BooleanField(this, 9, value);
+};
+
+
+/**
+ * optional bool auto_generate_agents = 10;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.getAutoGenerateAgents = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.BuildDraftScheduleReq} returns this
+ */
+proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.setAutoGenerateAgents = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
