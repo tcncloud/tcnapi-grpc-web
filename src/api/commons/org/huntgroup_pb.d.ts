@@ -600,6 +600,11 @@ export class HuntGroupDetails extends jspb.Message {
   setIntegrationLinkDetailsList(value: Array<HuntGroupDetails.IntegrationLinkDetails>): void;
   addIntegrationLinkDetails(value?: HuntGroupDetails.IntegrationLinkDetails, index?: number): HuntGroupDetails.IntegrationLinkDetails;
 
+  hasScriptDetails(): boolean;
+  clearScriptDetails(): void;
+  getScriptDetails(): HuntGroupDetails.ScriptDetails | undefined;
+  setScriptDetails(value?: HuntGroupDetails.ScriptDetails): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HuntGroupDetails.AsObject;
   static toObject(includeInstance: boolean, msg: HuntGroupDetails): HuntGroupDetails.AsObject;
@@ -617,6 +622,7 @@ export namespace HuntGroupDetails {
     webLinkDetailsList: Array<HuntGroupDetails.WebLinkDetails.AsObject>,
     triggerDetailsList: Array<HuntGroupDetails.TriggerDetails.AsObject>,
     integrationLinkDetailsList: Array<HuntGroupDetails.IntegrationLinkDetails.AsObject>,
+    scriptDetails?: HuntGroupDetails.ScriptDetails.AsObject,
   }
 
   export class GeneralDetails extends jspb.Message {
@@ -774,6 +780,46 @@ export namespace HuntGroupDetails {
     export type AsObject = {
       name: string,
       description: string,
+    }
+  }
+
+  export class ScriptDetails extends jspb.Message {
+    getScriptSid(): number;
+    setScriptSid(value: number): void;
+
+    getName(): string;
+    setName(value: string): void;
+
+    getDescription(): string;
+    setDescription(value: string): void;
+
+    getActCount(): number;
+    setActCount(value: number): void;
+
+    getDispositionCount(): number;
+    setDispositionCount(value: number): void;
+
+    getVerbiageCount(): number;
+    setVerbiageCount(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ScriptDetails.AsObject;
+    static toObject(includeInstance: boolean, msg: ScriptDetails): ScriptDetails.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ScriptDetails, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ScriptDetails;
+    static deserializeBinaryFromReader(message: ScriptDetails, reader: jspb.BinaryReader): ScriptDetails;
+  }
+
+  export namespace ScriptDetails {
+    export type AsObject = {
+      scriptSid: number,
+      name: string,
+      description: string,
+      actCount: number,
+      dispositionCount: number,
+      verbiageCount: number,
     }
   }
 }
