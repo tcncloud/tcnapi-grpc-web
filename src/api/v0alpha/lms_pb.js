@@ -44277,8 +44277,8 @@ proto.api.v0alpha.ContactManagerSink.toObject = function(includeInstance, msg) {
     projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     contactListName: jspb.Message.getFieldWithDefault(msg, 3, ""),
     contactListDescription: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    fieldsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-    lifetime: (f = msg.getLifetime()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+    ttl: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    fieldsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -44327,14 +44327,13 @@ proto.api.v0alpha.ContactManagerSink.deserializeBinaryFromReader = function(msg,
       var value = /** @type {string} */ (reader.readString());
       msg.setContactListDescription(value);
       break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTtl(value);
+      break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.addFields(value);
-      break;
-    case 9:
-      var value = new google_protobuf_duration_pb.Duration;
-      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
-      msg.setLifetime(value);
       break;
     default:
       reader.skipField();
@@ -44386,19 +44385,18 @@ proto.api.v0alpha.ContactManagerSink.serializeBinaryToWriter = function(message,
       f
     );
   }
+  f = message.getTtl();
+  if (f !== 0) {
+    writer.writeInt64(
+      7,
+      f
+    );
+  }
   f = message.getFieldsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       8,
       f
-    );
-  }
-  f = message.getLifetime();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
     );
   }
 };
@@ -44459,6 +44457,24 @@ proto.api.v0alpha.ContactManagerSink.prototype.setContactListDescription = funct
 
 
 /**
+ * optional int64 ttl = 7;
+ * @return {number}
+ */
+proto.api.v0alpha.ContactManagerSink.prototype.getTtl = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v0alpha.ContactManagerSink} returns this
+ */
+proto.api.v0alpha.ContactManagerSink.prototype.setTtl = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
  * repeated string fields = 8;
  * @return {!Array<string>}
  */
@@ -44492,43 +44508,6 @@ proto.api.v0alpha.ContactManagerSink.prototype.addFields = function(value, opt_i
  */
 proto.api.v0alpha.ContactManagerSink.prototype.clearFieldsList = function() {
   return this.setFieldsList([]);
-};
-
-
-/**
- * optional google.protobuf.Duration lifetime = 9;
- * @return {?proto.google.protobuf.Duration}
- */
-proto.api.v0alpha.ContactManagerSink.prototype.getLifetime = function() {
-  return /** @type{?proto.google.protobuf.Duration} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 9));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Duration|undefined} value
- * @return {!proto.api.v0alpha.ContactManagerSink} returns this
-*/
-proto.api.v0alpha.ContactManagerSink.prototype.setLifetime = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v0alpha.ContactManagerSink} returns this
- */
-proto.api.v0alpha.ContactManagerSink.prototype.clearLifetime = function() {
-  return this.setLifetime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v0alpha.ContactManagerSink.prototype.hasLifetime = function() {
-  return jspb.Message.getField(this, 9) != null;
 };
 
 
