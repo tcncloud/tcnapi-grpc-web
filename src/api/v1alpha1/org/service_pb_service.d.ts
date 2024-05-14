@@ -2022,6 +2022,51 @@ type OrgListUsersAllowedIps = {
   readonly responseType: typeof api_v1alpha1_org_user_pb.ListUsersAllowedIpsResponse;
 };
 
+type OrgListResponseEvaluators = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsResponse;
+};
+
+type OrgGetResponseEvaluator = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorResponse;
+};
+
+type OrgCreateResponseEvaluator = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorResponse;
+};
+
+type OrgUpdateResponseEvaluator = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorResponse;
+};
+
+type OrgDeleteResponseEvaluator = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorRequest;
+  readonly responseType: typeof api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorResponse;
+};
+
 export class Org {
   static readonly serviceName: string;
   static readonly CreateOrganization: OrgCreateOrganization;
@@ -2247,6 +2292,11 @@ export class Org {
   static readonly AddGroupedUserIPRestrictions: OrgAddGroupedUserIPRestrictions;
   static readonly RemoveGroupedUserIPRestrictions: OrgRemoveGroupedUserIPRestrictions;
   static readonly ListUsersAllowedIps: OrgListUsersAllowedIps;
+  static readonly ListResponseEvaluators: OrgListResponseEvaluators;
+  static readonly GetResponseEvaluator: OrgGetResponseEvaluator;
+  static readonly CreateResponseEvaluator: OrgCreateResponseEvaluator;
+  static readonly UpdateResponseEvaluator: OrgUpdateResponseEvaluator;
+  static readonly DeleteResponseEvaluator: OrgDeleteResponseEvaluator;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -4207,6 +4257,51 @@ export class OrgClient {
   listUsersAllowedIps(
     requestMessage: api_v1alpha1_org_user_pb.ListUsersAllowedIpsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.ListUsersAllowedIpsResponse|null) => void
+  ): UnaryResponse;
+  listResponseEvaluators(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsResponse|null) => void
+  ): UnaryResponse;
+  listResponseEvaluators(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsResponse|null) => void
+  ): UnaryResponse;
+  getResponseEvaluator(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorResponse|null) => void
+  ): UnaryResponse;
+  getResponseEvaluator(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorResponse|null) => void
+  ): UnaryResponse;
+  createResponseEvaluator(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorResponse|null) => void
+  ): UnaryResponse;
+  createResponseEvaluator(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorResponse|null) => void
+  ): UnaryResponse;
+  updateResponseEvaluator(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorResponse|null) => void
+  ): UnaryResponse;
+  updateResponseEvaluator(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorResponse|null) => void
+  ): UnaryResponse;
+  deleteResponseEvaluator(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorResponse|null) => void
+  ): UnaryResponse;
+  deleteResponseEvaluator(
+    requestMessage: api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorResponse|null) => void
   ): UnaryResponse;
 }
 

@@ -2028,6 +2028,51 @@ Org.ListUsersAllowedIps = {
   responseType: api_v1alpha1_org_user_pb.ListUsersAllowedIpsResponse
 };
 
+Org.ListResponseEvaluators = {
+  methodName: "ListResponseEvaluators",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.ListResponseEvaluatorsResponse
+};
+
+Org.GetResponseEvaluator = {
+  methodName: "GetResponseEvaluator",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.GetResponseEvaluatorResponse
+};
+
+Org.CreateResponseEvaluator = {
+  methodName: "CreateResponseEvaluator",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.CreateResponseEvaluatorResponse
+};
+
+Org.UpdateResponseEvaluator = {
+  methodName: "UpdateResponseEvaluator",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.UpdateResponseEvaluatorResponse
+};
+
+Org.DeleteResponseEvaluator = {
+  methodName: "DeleteResponseEvaluator",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorRequest,
+  responseType: api_v1alpha1_org_huntgroup_pb.DeleteResponseEvaluatorResponse
+};
+
 exports.Org = Org;
 
 function OrgClient(serviceHost, options) {
@@ -9002,6 +9047,161 @@ OrgClient.prototype.listUsersAllowedIps = function listUsersAllowedIps(requestMe
     callback = arguments[1];
   }
   var client = grpc.unary(Org.ListUsersAllowedIps, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.listResponseEvaluators = function listResponseEvaluators(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.ListResponseEvaluators, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.getResponseEvaluator = function getResponseEvaluator(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetResponseEvaluator, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.createResponseEvaluator = function createResponseEvaluator(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.CreateResponseEvaluator, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.updateResponseEvaluator = function updateResponseEvaluator(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.UpdateResponseEvaluator, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.deleteResponseEvaluator = function deleteResponseEvaluator(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.DeleteResponseEvaluator, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
