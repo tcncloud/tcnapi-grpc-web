@@ -11,13 +11,13 @@ var TasksService = (function () {
   return TasksService;
 }());
 
-TasksService.CancelTask = {
-  methodName: "CancelTask",
+TasksService.CancelTasks = {
+  methodName: "CancelTasks",
   service: TasksService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTaskRequest,
-  responseType: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTaskResponse
+  requestType: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTasksRequest,
+  responseType: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTasksResponse
 };
 
 exports.TasksService = TasksService;
@@ -27,11 +27,11 @@ function TasksServiceClient(serviceHost, options) {
   this.options = options || {};
 }
 
-TasksServiceClient.prototype.cancelTask = function cancelTask(requestMessage, metadata, callback) {
+TasksServiceClient.prototype.cancelTasks = function cancelTasks(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(TasksService.CancelTask, {
+  var client = grpc.unary(TasksService.CancelTasks, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

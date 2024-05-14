@@ -5,18 +5,18 @@ import * as services_omnichannel_tasks_v1alpha1_service_pb from "../../../../ser
 import * as services_omnichannel_tasks_v1alpha1_entities_pb from "../../../../services/omnichannel/tasks/v1alpha1/entities_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type TasksServiceCancelTask = {
+type TasksServiceCancelTasks = {
   readonly methodName: string;
   readonly service: typeof TasksService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_omnichannel_tasks_v1alpha1_entities_pb.CancelTaskRequest;
-  readonly responseType: typeof services_omnichannel_tasks_v1alpha1_entities_pb.CancelTaskResponse;
+  readonly requestType: typeof services_omnichannel_tasks_v1alpha1_entities_pb.CancelTasksRequest;
+  readonly responseType: typeof services_omnichannel_tasks_v1alpha1_entities_pb.CancelTasksResponse;
 };
 
 export class TasksService {
   static readonly serviceName: string;
-  static readonly CancelTask: TasksServiceCancelTask;
+  static readonly CancelTasks: TasksServiceCancelTasks;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -51,14 +51,14 @@ export class TasksServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
-  cancelTask(
-    requestMessage: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTaskRequest,
+  cancelTasks(
+    requestMessage: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTasksRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTaskResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTasksResponse|null) => void
   ): UnaryResponse;
-  cancelTask(
-    requestMessage: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTaskRequest,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTaskResponse|null) => void
+  cancelTasks(
+    requestMessage: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTasksRequest,
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTasksResponse|null) => void
   ): UnaryResponse;
 }
 

@@ -4,38 +4,40 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_omnichannel_pb from "../../../../api/commons/omnichannel_pb";
 
-export class CancelTaskRequest extends jspb.Message {
-  getTaskSid(): string;
-  setTaskSid(value: string): void;
+export class CancelTasksRequest extends jspb.Message {
+  clearTaskSidList(): void;
+  getTaskSidList(): Array<string>;
+  setTaskSidList(value: Array<string>): void;
+  addTaskSid(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CancelTaskRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CancelTaskRequest): CancelTaskRequest.AsObject;
+  toObject(includeInstance?: boolean): CancelTasksRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CancelTasksRequest): CancelTasksRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CancelTaskRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CancelTaskRequest;
-  static deserializeBinaryFromReader(message: CancelTaskRequest, reader: jspb.BinaryReader): CancelTaskRequest;
+  static serializeBinaryToWriter(message: CancelTasksRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CancelTasksRequest;
+  static deserializeBinaryFromReader(message: CancelTasksRequest, reader: jspb.BinaryReader): CancelTasksRequest;
 }
 
-export namespace CancelTaskRequest {
+export namespace CancelTasksRequest {
   export type AsObject = {
-    taskSid: string,
+    taskSidList: Array<string>,
   }
 }
 
-export class CancelTaskResponse extends jspb.Message {
+export class CancelTasksResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CancelTaskResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CancelTaskResponse): CancelTaskResponse.AsObject;
+  toObject(includeInstance?: boolean): CancelTasksResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CancelTasksResponse): CancelTasksResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CancelTaskResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CancelTaskResponse;
-  static deserializeBinaryFromReader(message: CancelTaskResponse, reader: jspb.BinaryReader): CancelTaskResponse;
+  static serializeBinaryToWriter(message: CancelTasksResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CancelTasksResponse;
+  static deserializeBinaryFromReader(message: CancelTasksResponse, reader: jspb.BinaryReader): CancelTasksResponse;
 }
 
-export namespace CancelTaskResponse {
+export namespace CancelTasksResponse {
   export type AsObject = {
   }
 }

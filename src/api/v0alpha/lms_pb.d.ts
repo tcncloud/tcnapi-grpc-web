@@ -5622,13 +5622,18 @@ export class ContactManagerSink extends jspb.Message {
   getContactListDescription(): string;
   setContactListDescription(value: string): void;
 
-  getTtl(): number;
-  setTtl(value: number): void;
-
   clearFieldsList(): void;
   getFieldsList(): Array<string>;
   setFieldsList(value: Array<string>): void;
   addFields(value: string, index?: number): string;
+
+  getTtl(): number;
+  setTtl(value: number): void;
+
+  hasLifetime(): boolean;
+  clearLifetime(): void;
+  getLifetime(): google_protobuf_duration_pb.Duration | undefined;
+  setLifetime(value?: google_protobuf_duration_pb.Duration): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerSink.AsObject;
@@ -5645,8 +5650,9 @@ export namespace ContactManagerSink {
     projectId: string,
     contactListName: string,
     contactListDescription: string,
-    ttl: number,
     fieldsList: Array<string>,
+    ttl: number,
+    lifetime?: google_protobuf_duration_pb.Duration.AsObject,
   }
 }
 
