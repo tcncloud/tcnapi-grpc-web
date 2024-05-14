@@ -3,10 +3,16 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
+import * as google_type_decimal_pb from "../../../../google/type/decimal_pb";
 
 export class BasicConfig extends jspb.Message {
   getRate(): number;
   setRate(value: number): void;
+
+  hasRateDecimal(): boolean;
+  clearRateDecimal(): void;
+  getRateDecimal(): google_type_decimal_pb.Decimal | undefined;
+  setRateDecimal(value?: google_type_decimal_pb.Decimal): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BasicConfig.AsObject;
@@ -21,6 +27,7 @@ export class BasicConfig extends jspb.Message {
 export namespace BasicConfig {
   export type AsObject = {
     rate: number,
+    rateDecimal?: google_type_decimal_pb.Decimal.AsObject,
   }
 }
 
@@ -51,6 +58,11 @@ export class BasicUnitConfig extends jspb.Message {
   getMaxUnitsPerCycle(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setMaxUnitsPerCycle(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  hasRateDecimal(): boolean;
+  clearRateDecimal(): void;
+  getRateDecimal(): google_type_decimal_pb.Decimal | undefined;
+  setRateDecimal(value?: google_type_decimal_pb.Decimal): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BasicUnitConfig.AsObject;
   static toObject(includeInstance: boolean, msg: BasicUnitConfig): BasicUnitConfig.AsObject;
@@ -69,6 +81,7 @@ export namespace BasicUnitConfig {
     maxUnits?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     minUnitsPerCycle?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     maxUnitsPerCycle?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    rateDecimal?: google_type_decimal_pb.Decimal.AsObject,
   }
 }
 

@@ -27,6 +27,8 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 goog.object.extend(proto, google_protobuf_wrappers_pb);
+var google_type_decimal_pb = require('../../../../google/type/decimal_pb.js');
+goog.object.extend(proto, google_type_decimal_pb);
 goog.exportSymbol('proto.services.billing.entities.v1alpha2.Invoice', null, global);
 goog.exportSymbol('proto.services.billing.entities.v1alpha2.InvoiceItem', null, global);
 goog.exportSymbol('proto.services.billing.entities.v1alpha2.InvoiceItemColumn', null, global);
