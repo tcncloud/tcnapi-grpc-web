@@ -25,6 +25,8 @@ var global = localGlobalThis ||
 
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 goog.object.extend(proto, google_protobuf_wrappers_pb);
+var google_type_decimal_pb = require('../../../../google/type/decimal_pb.js');
+goog.object.extend(proto, google_type_decimal_pb);
 goog.exportSymbol('proto.services.billing.entities.v1alpha2.BasicConfig', null, global);
 goog.exportSymbol('proto.services.billing.entities.v1alpha2.BasicUnitConfig', null, global);
 /**
@@ -101,7 +103,8 @@ proto.services.billing.entities.v1alpha2.BasicConfig.prototype.toObject = functi
  */
 proto.services.billing.entities.v1alpha2.BasicConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0)
+    rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+    rateDecimal: (f = msg.getRateDecimal()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -142,6 +145,11 @@ proto.services.billing.entities.v1alpha2.BasicConfig.deserializeBinaryFromReader
       var value = /** @type {number} */ (reader.readDouble());
       msg.setRate(value);
       break;
+    case 2:
+      var value = new google_type_decimal_pb.Decimal;
+      reader.readMessage(value,google_type_decimal_pb.Decimal.deserializeBinaryFromReader);
+      msg.setRateDecimal(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -178,6 +186,14 @@ proto.services.billing.entities.v1alpha2.BasicConfig.serializeBinaryToWriter = f
       f
     );
   }
+  f = message.getRateDecimal();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_type_decimal_pb.Decimal.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -196,6 +212,43 @@ proto.services.billing.entities.v1alpha2.BasicConfig.prototype.getRate = functio
  */
 proto.services.billing.entities.v1alpha2.BasicConfig.prototype.setRate = function(value) {
   return jspb.Message.setProto3FloatField(this, 1, value);
+};
+
+
+/**
+ * optional google.type.Decimal rate_decimal = 2;
+ * @return {?proto.google.type.Decimal}
+ */
+proto.services.billing.entities.v1alpha2.BasicConfig.prototype.getRateDecimal = function() {
+  return /** @type{?proto.google.type.Decimal} */ (
+    jspb.Message.getWrapperField(this, google_type_decimal_pb.Decimal, 2));
+};
+
+
+/**
+ * @param {?proto.google.type.Decimal|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.BasicConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.BasicConfig.prototype.setRateDecimal = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.BasicConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.BasicConfig.prototype.clearRateDecimal = function() {
+  return this.setRateDecimal(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.BasicConfig.prototype.hasRateDecimal = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -236,7 +289,8 @@ proto.services.billing.entities.v1alpha2.BasicUnitConfig.toObject = function(inc
     minUnits: (f = msg.getMinUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     maxUnits: (f = msg.getMaxUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     minUnitsPerCycle: (f = msg.getMinUnitsPerCycle()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    maxUnitsPerCycle: (f = msg.getMaxUnitsPerCycle()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+    maxUnitsPerCycle: (f = msg.getMaxUnitsPerCycle()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    rateDecimal: (f = msg.getRateDecimal()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -300,6 +354,11 @@ proto.services.billing.entities.v1alpha2.BasicUnitConfig.deserializeBinaryFromRe
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setMaxUnitsPerCycle(value);
+      break;
+    case 7:
+      var value = new google_type_decimal_pb.Decimal;
+      reader.readMessage(value,google_type_decimal_pb.Decimal.deserializeBinaryFromReader);
+      msg.setRateDecimal(value);
       break;
     default:
       reader.skipField();
@@ -374,6 +433,14 @@ proto.services.billing.entities.v1alpha2.BasicUnitConfig.serializeBinaryToWriter
       6,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getRateDecimal();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      google_type_decimal_pb.Decimal.serializeBinaryToWriter
     );
   }
 };
@@ -560,6 +627,43 @@ proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.clearMaxUnits
  */
 proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.hasMaxUnitsPerCycle = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional google.type.Decimal rate_decimal = 7;
+ * @return {?proto.google.type.Decimal}
+ */
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.getRateDecimal = function() {
+  return /** @type{?proto.google.type.Decimal} */ (
+    jspb.Message.getWrapperField(this, google_type_decimal_pb.Decimal, 7));
+};
+
+
+/**
+ * @param {?proto.google.type.Decimal|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha2.BasicUnitConfig} returns this
+*/
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.setRateDecimal = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha2.BasicUnitConfig} returns this
+ */
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.clearRateDecimal = function() {
+  return this.setRateDecimal(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.hasRateDecimal = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
