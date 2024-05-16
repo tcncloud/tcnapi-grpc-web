@@ -1460,11 +1460,6 @@ export namespace TranscriptQuery {
     getAgentCallLog(): wfo_vanalytics_v2_agent_call_log_pb.AgentCallLogQuery | undefined;
     setAgentCallLog(value?: wfo_vanalytics_v2_agent_call_log_pb.AgentCallLogQuery): void;
 
-    hasAudioBytes(): boolean;
-    clearAudioBytes(): void;
-    getAudioBytes(): TranscriptQuery.Call.AudioBytes | undefined;
-    setAudioBytes(value?: TranscriptQuery.Call.AudioBytes): void;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Call.AsObject;
     static toObject(includeInstance: boolean, msg: Call): Call.AsObject;
@@ -1488,47 +1483,6 @@ export namespace TranscriptQuery {
       agentResponse?: TranscriptQuery.Call.AgentResponse.AsObject,
       huntGroupSids?: TranscriptQuery.Call.HuntGroupSids.AsObject,
       agentCallLog?: wfo_vanalytics_v2_agent_call_log_pb.AgentCallLogQuery.AsObject,
-      audioBytes?: TranscriptQuery.Call.AudioBytes.AsObject,
-    }
-
-    export class AudioBytes extends jspb.Message {
-      hasGte(): boolean;
-      clearGte(): void;
-      getGte(): google_protobuf_wrappers_pb.Int64Value | undefined;
-      setGte(value?: google_protobuf_wrappers_pb.Int64Value): void;
-
-      hasLte(): boolean;
-      clearLte(): void;
-      getLte(): google_protobuf_wrappers_pb.Int64Value | undefined;
-      setLte(value?: google_protobuf_wrappers_pb.Int64Value): void;
-
-      hasGt(): boolean;
-      clearGt(): void;
-      getGt(): google_protobuf_wrappers_pb.Int64Value | undefined;
-      setGt(value?: google_protobuf_wrappers_pb.Int64Value): void;
-
-      hasLt(): boolean;
-      clearLt(): void;
-      getLt(): google_protobuf_wrappers_pb.Int64Value | undefined;
-      setLt(value?: google_protobuf_wrappers_pb.Int64Value): void;
-
-      serializeBinary(): Uint8Array;
-      toObject(includeInstance?: boolean): AudioBytes.AsObject;
-      static toObject(includeInstance: boolean, msg: AudioBytes): AudioBytes.AsObject;
-      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-      static serializeBinaryToWriter(message: AudioBytes, writer: jspb.BinaryWriter): void;
-      static deserializeBinary(bytes: Uint8Array): AudioBytes;
-      static deserializeBinaryFromReader(message: AudioBytes, reader: jspb.BinaryReader): AudioBytes;
-    }
-
-    export namespace AudioBytes {
-      export type AsObject = {
-        gte?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-        lte?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-        gt?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-        lt?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-      }
     }
 
     export class HuntGroupSids extends jspb.Message {
