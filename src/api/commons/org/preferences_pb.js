@@ -3233,8 +3233,7 @@ proto.api.commons.org.AuthenticationPreferences.toObject = function(includeInsta
     duoMfaSettings: (f = msg.getDuoMfaSettings()) && proto.api.commons.org.AuthenticationPreferences.DuoMfaSettings.toObject(includeInstance, f),
     allowForcePasswordResetInterval: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
     passwordResetDayInterval: jspb.Message.getFieldWithDefault(msg, 18, 0),
-    userAuthorizationViaIp: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
-    forceSsoProvider: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
+    userAuthorizationViaIp: jspb.Message.getBooleanFieldWithDefault(msg, 19, false)
   };
 
   if (includeInstance) {
@@ -3316,10 +3315,6 @@ proto.api.commons.org.AuthenticationPreferences.deserializeBinaryFromReader = fu
     case 19:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setUserAuthorizationViaIp(value);
-      break;
-    case 20:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setForceSsoProvider(value);
       break;
     default:
       reader.skipField();
@@ -3426,13 +3421,6 @@ proto.api.commons.org.AuthenticationPreferences.serializeBinaryToWriter = functi
   if (f) {
     writer.writeBool(
       19,
-      f
-    );
-  }
-  f = message.getForceSsoProvider();
-  if (f) {
-    writer.writeBool(
-      20,
       f
     );
   }
@@ -4011,24 +3999,6 @@ proto.api.commons.org.AuthenticationPreferences.prototype.getUserAuthorizationVi
  */
 proto.api.commons.org.AuthenticationPreferences.prototype.setUserAuthorizationViaIp = function(value) {
   return jspb.Message.setProto3BooleanField(this, 19, value);
-};
-
-
-/**
- * optional bool force_sso_provider = 20;
- * @return {boolean}
- */
-proto.api.commons.org.AuthenticationPreferences.prototype.getForceSsoProvider = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.commons.org.AuthenticationPreferences} returns this
- */
-proto.api.commons.org.AuthenticationPreferences.prototype.setForceSsoProvider = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 20, value);
 };
 
 
