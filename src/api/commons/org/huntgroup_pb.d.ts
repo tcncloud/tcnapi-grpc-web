@@ -2991,6 +2991,9 @@ export class ResponseEvaluator extends jspb.Message {
   getResponseEvaluatorId(): string;
   setResponseEvaluatorId(value: string): void;
 
+  getResponseEvaluatorSid(): number;
+  setResponseEvaluatorSid(value: number): void;
+
   getOrgId(): string;
   setOrgId(value: string): void;
 
@@ -3016,6 +3019,7 @@ export class ResponseEvaluator extends jspb.Message {
 export namespace ResponseEvaluator {
   export type AsObject = {
     responseEvaluatorId: string,
+    responseEvaluatorSid: number,
     orgId: string,
     name: string,
     description: string,
