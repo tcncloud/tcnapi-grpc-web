@@ -976,18 +976,6 @@ export namespace ListPublicUsersRequest {
 }
 
 export class ListPublicUsersResponse extends jspb.Message {
-  getUserId(): string;
-  setUserId(value: string): void;
-
-  getFirstName(): string;
-  setFirstName(value: string): void;
-
-  getLastName(): string;
-  setLastName(value: string): void;
-
-  getUsername(): string;
-  setUsername(value: string): void;
-
   clearUsersList(): void;
   getUsersList(): Array<ListPublicUsersResponse.User>;
   setUsersList(value: Array<ListPublicUsersResponse.User>): void;
@@ -1005,10 +993,6 @@ export class ListPublicUsersResponse extends jspb.Message {
 
 export namespace ListPublicUsersResponse {
   export type AsObject = {
-    userId: string,
-    firstName: string,
-    lastName: string,
-    username: string,
     usersList: Array<ListPublicUsersResponse.User.AsObject>,
   }
 
@@ -1879,11 +1863,6 @@ export class CreatePasswordResetLinkRequest extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
-  hasExpiration(): boolean;
-  clearExpiration(): void;
-  getExpiration(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setExpiration(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreatePasswordResetLinkRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreatePasswordResetLinkRequest): CreatePasswordResetLinkRequest.AsObject;
@@ -1897,7 +1876,6 @@ export class CreatePasswordResetLinkRequest extends jspb.Message {
 export namespace CreatePasswordResetLinkRequest {
   export type AsObject = {
     userId: string,
-    expiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

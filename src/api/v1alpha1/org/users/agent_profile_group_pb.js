@@ -639,7 +639,7 @@ proto.api.v1alpha1.org.users.UpdateAgentProfileGroupRequest.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = new api_commons_org_agent_profile_group_pb.AgentProfileGroup;
       reader.readMessage(value,api_commons_org_agent_profile_group_pb.AgentProfileGroup.deserializeBinaryFromReader);
       msg.setAgentProfileGroup(value);
@@ -676,7 +676,7 @@ proto.api.v1alpha1.org.users.UpdateAgentProfileGroupRequest.serializeBinaryToWri
   f = message.getAgentProfileGroup();
   if (f != null) {
     writer.writeMessage(
-      2,
+      1,
       f,
       api_commons_org_agent_profile_group_pb.AgentProfileGroup.serializeBinaryToWriter
     );
@@ -685,12 +685,12 @@ proto.api.v1alpha1.org.users.UpdateAgentProfileGroupRequest.serializeBinaryToWri
 
 
 /**
- * optional api.commons.org.AgentProfileGroup agent_profile_group = 2;
+ * optional api.commons.org.AgentProfileGroup agent_profile_group = 1;
  * @return {?proto.api.commons.org.AgentProfileGroup}
  */
 proto.api.v1alpha1.org.users.UpdateAgentProfileGroupRequest.prototype.getAgentProfileGroup = function() {
   return /** @type{?proto.api.commons.org.AgentProfileGroup} */ (
-    jspb.Message.getWrapperField(this, api_commons_org_agent_profile_group_pb.AgentProfileGroup, 2));
+    jspb.Message.getWrapperField(this, api_commons_org_agent_profile_group_pb.AgentProfileGroup, 1));
 };
 
 
@@ -699,7 +699,7 @@ proto.api.v1alpha1.org.users.UpdateAgentProfileGroupRequest.prototype.getAgentPr
  * @return {!proto.api.v1alpha1.org.users.UpdateAgentProfileGroupRequest} returns this
 */
 proto.api.v1alpha1.org.users.UpdateAgentProfileGroupRequest.prototype.setAgentProfileGroup = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -717,7 +717,7 @@ proto.api.v1alpha1.org.users.UpdateAgentProfileGroupRequest.prototype.clearAgent
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.UpdateAgentProfileGroupRequest.prototype.hasAgentProfileGroup = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -1152,7 +1152,7 @@ proto.api.v1alpha1.org.users.CreateAgentProfileGroupRequest.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = new api_commons_org_agent_profile_group_pb.AgentProfileGroup;
       reader.readMessage(value,api_commons_org_agent_profile_group_pb.AgentProfileGroup.deserializeBinaryFromReader);
       msg.setAgentProfileGroup(value);
@@ -1189,7 +1189,7 @@ proto.api.v1alpha1.org.users.CreateAgentProfileGroupRequest.serializeBinaryToWri
   f = message.getAgentProfileGroup();
   if (f != null) {
     writer.writeMessage(
-      2,
+      1,
       f,
       api_commons_org_agent_profile_group_pb.AgentProfileGroup.serializeBinaryToWriter
     );
@@ -1198,12 +1198,12 @@ proto.api.v1alpha1.org.users.CreateAgentProfileGroupRequest.serializeBinaryToWri
 
 
 /**
- * optional api.commons.org.AgentProfileGroup agent_profile_group = 2;
+ * optional api.commons.org.AgentProfileGroup agent_profile_group = 1;
  * @return {?proto.api.commons.org.AgentProfileGroup}
  */
 proto.api.v1alpha1.org.users.CreateAgentProfileGroupRequest.prototype.getAgentProfileGroup = function() {
   return /** @type{?proto.api.commons.org.AgentProfileGroup} */ (
-    jspb.Message.getWrapperField(this, api_commons_org_agent_profile_group_pb.AgentProfileGroup, 2));
+    jspb.Message.getWrapperField(this, api_commons_org_agent_profile_group_pb.AgentProfileGroup, 1));
 };
 
 
@@ -1212,7 +1212,7 @@ proto.api.v1alpha1.org.users.CreateAgentProfileGroupRequest.prototype.getAgentPr
  * @return {!proto.api.v1alpha1.org.users.CreateAgentProfileGroupRequest} returns this
 */
 proto.api.v1alpha1.org.users.CreateAgentProfileGroupRequest.prototype.setAgentProfileGroup = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -1230,7 +1230,7 @@ proto.api.v1alpha1.org.users.CreateAgentProfileGroupRequest.prototype.clearAgent
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.CreateAgentProfileGroupRequest.prototype.hasAgentProfileGroup = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -1396,7 +1396,7 @@ proto.api.v1alpha1.org.users.DeleteAgentProfileGroupRequest.prototype.toObject =
  */
 proto.api.v1alpha1.org.users.DeleteAgentProfileGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1433,7 +1433,7 @@ proto.api.v1alpha1.org.users.DeleteAgentProfileGroupRequest.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setAgentProfileGroupId(value);
       break;
@@ -1469,7 +1469,7 @@ proto.api.v1alpha1.org.users.DeleteAgentProfileGroupRequest.serializeBinaryToWri
   f = message.getAgentProfileGroupId();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      1,
       f
     );
   }
@@ -1477,11 +1477,11 @@ proto.api.v1alpha1.org.users.DeleteAgentProfileGroupRequest.serializeBinaryToWri
 
 
 /**
- * optional string agent_profile_group_id = 2;
+ * optional string agent_profile_group_id = 1;
  * @return {string}
  */
 proto.api.v1alpha1.org.users.DeleteAgentProfileGroupRequest.prototype.getAgentProfileGroupId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1490,7 +1490,7 @@ proto.api.v1alpha1.org.users.DeleteAgentProfileGroupRequest.prototype.getAgentPr
  * @return {!proto.api.v1alpha1.org.users.DeleteAgentProfileGroupRequest} returns this
  */
 proto.api.v1alpha1.org.users.DeleteAgentProfileGroupRequest.prototype.setAgentProfileGroupId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1601,7 +1601,7 @@ proto.api.v1alpha1.org.users.DeleteAgentProfileGroupResponse.serializeBinaryToWr
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.repeatedFields_ = [3];
+proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.repeatedFields_ = [2];
 
 
 
@@ -1634,8 +1634,8 @@ proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.prototype.toObject 
  */
 proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    userIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    userIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1672,11 +1672,11 @@ proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.deserializeBinaryFr
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setAgentProfileGroupId(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.addUserIds(value);
       break;
@@ -1712,14 +1712,14 @@ proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.serializeBinaryToWr
   f = message.getAgentProfileGroupId();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      1,
       f
     );
   }
   f = message.getUserIdsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      3,
+      2,
       f
     );
   }
@@ -1727,11 +1727,11 @@ proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.serializeBinaryToWr
 
 
 /**
- * optional string agent_profile_group_id = 2;
+ * optional string agent_profile_group_id = 1;
  * @return {string}
  */
 proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.prototype.getAgentProfileGroupId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1740,16 +1740,16 @@ proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.prototype.getAgentP
  * @return {!proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest} returns this
  */
 proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.prototype.setAgentProfileGroupId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * repeated string user_ids = 3;
+ * repeated string user_ids = 2;
  * @return {!Array<string>}
  */
 proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.prototype.getUserIdsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
@@ -1758,7 +1758,7 @@ proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.prototype.getUserId
  * @return {!proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest} returns this
  */
 proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.prototype.setUserIdsList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
@@ -1768,7 +1768,7 @@ proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.prototype.setUserId
  * @return {!proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest} returns this
  */
 proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.prototype.addUserIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 

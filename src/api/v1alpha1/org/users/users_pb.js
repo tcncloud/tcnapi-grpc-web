@@ -9437,7 +9437,7 @@ proto.api.v1alpha1.org.users.ListPublicUsersRequest.prototype.setArchivedFilter 
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.org.users.ListPublicUsersResponse.repeatedFields_ = [5];
+proto.api.v1alpha1.org.users.ListPublicUsersResponse.repeatedFields_ = [1];
 
 
 
@@ -9470,10 +9470,6 @@ proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.org.users.ListPublicUsersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    firstName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    lastName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    username: jspb.Message.getFieldWithDefault(msg, 4, ""),
     usersList: jspb.Message.toObjectList(msg.getUsersList(),
     proto.api.v1alpha1.org.users.ListPublicUsersResponse.User.toObject, includeInstance)
   };
@@ -9513,22 +9509,6 @@ proto.api.v1alpha1.org.users.ListPublicUsersResponse.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUserId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFirstName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLastName(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUsername(value);
-      break;
-    case 5:
       var value = new proto.api.v1alpha1.org.users.ListPublicUsersResponse.User;
       reader.readMessage(value,proto.api.v1alpha1.org.users.ListPublicUsersResponse.User.deserializeBinaryFromReader);
       msg.addUsers(value);
@@ -9562,38 +9542,10 @@ proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.serializeBinary =
  */
 proto.api.v1alpha1.org.users.ListPublicUsersResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getUserId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getFirstName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLastName();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getUsername();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
   f = message.getUsersList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      5,
+      1,
       f,
       proto.api.v1alpha1.org.users.ListPublicUsersResponse.User.serializeBinaryToWriter
     );
@@ -9822,84 +9774,12 @@ proto.api.v1alpha1.org.users.ListPublicUsersResponse.User.prototype.setUsername 
 
 
 /**
- * optional string user_id = 1;
- * @return {string}
- */
-proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.org.users.ListPublicUsersResponse} returns this
- */
-proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.setUserId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string first_name = 2;
- * @return {string}
- */
-proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.getFirstName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.org.users.ListPublicUsersResponse} returns this
- */
-proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.setFirstName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string last_name = 3;
- * @return {string}
- */
-proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.getLastName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.org.users.ListPublicUsersResponse} returns this
- */
-proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.setLastName = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string username = 4;
- * @return {string}
- */
-proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.getUsername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.org.users.ListPublicUsersResponse} returns this
- */
-proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.setUsername = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * repeated User users = 5;
+ * repeated User users = 1;
  * @return {!Array<!proto.api.v1alpha1.org.users.ListPublicUsersResponse.User>}
  */
 proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.getUsersList = function() {
   return /** @type{!Array<!proto.api.v1alpha1.org.users.ListPublicUsersResponse.User>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.org.users.ListPublicUsersResponse.User, 5));
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.org.users.ListPublicUsersResponse.User, 1));
 };
 
 
@@ -9908,7 +9788,7 @@ proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.getUsersList = fu
  * @return {!proto.api.v1alpha1.org.users.ListPublicUsersResponse} returns this
 */
 proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.setUsersList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -9918,7 +9798,7 @@ proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.setUsersList = fu
  * @return {!proto.api.v1alpha1.org.users.ListPublicUsersResponse.User}
  */
 proto.api.v1alpha1.org.users.ListPublicUsersResponse.prototype.addUsers = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.api.v1alpha1.org.users.ListPublicUsersResponse.User, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.org.users.ListPublicUsersResponse.User, opt_index);
 };
 
 
@@ -15852,8 +15732,7 @@ proto.api.v1alpha1.org.users.CreatePasswordResetLinkRequest.prototype.toObject =
  */
 proto.api.v1alpha1.org.users.CreatePasswordResetLinkRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    expiration: (f = msg.getExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    userId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -15894,11 +15773,6 @@ proto.api.v1alpha1.org.users.CreatePasswordResetLinkRequest.deserializeBinaryFro
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
       break;
-    case 2:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setExpiration(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -15935,14 +15809,6 @@ proto.api.v1alpha1.org.users.CreatePasswordResetLinkRequest.serializeBinaryToWri
       f
     );
   }
-  f = message.getExpiration();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -15961,43 +15827,6 @@ proto.api.v1alpha1.org.users.CreatePasswordResetLinkRequest.prototype.getUserId 
  */
 proto.api.v1alpha1.org.users.CreatePasswordResetLinkRequest.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional google.protobuf.Timestamp expiration = 2;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.api.v1alpha1.org.users.CreatePasswordResetLinkRequest.prototype.getExpiration = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.v1alpha1.org.users.CreatePasswordResetLinkRequest} returns this
-*/
-proto.api.v1alpha1.org.users.CreatePasswordResetLinkRequest.prototype.setExpiration = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.org.users.CreatePasswordResetLinkRequest} returns this
- */
-proto.api.v1alpha1.org.users.CreatePasswordResetLinkRequest.prototype.clearExpiration = function() {
-  return this.setExpiration(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v1alpha1.org.users.CreatePasswordResetLinkRequest.prototype.hasExpiration = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
