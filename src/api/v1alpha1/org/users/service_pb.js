@@ -25,7 +25,13 @@ var global = localGlobalThis ||
 
 var annotations_authz_pb = require('../../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
-var api_v1alpha1_org_skills_entities_pb = require('../../../../api/v1alpha1/org/skills/entities_pb.js');
-goog.object.extend(proto, api_v1alpha1_org_skills_entities_pb);
+var api_v1alpha1_org_users_agent_profile_group_pb = require('../../../../api/v1alpha1/org/users/agent_profile_group_pb.js');
+goog.object.extend(proto, api_v1alpha1_org_users_agent_profile_group_pb);
+var api_v1alpha1_org_users_auth_token_pb = require('../../../../api/v1alpha1/org/users/auth_token_pb.js');
+goog.object.extend(proto, api_v1alpha1_org_users_auth_token_pb);
+var api_v1alpha1_org_users_notifications_pb = require('../../../../api/v1alpha1/org/users/notifications_pb.js');
+goog.object.extend(proto, api_v1alpha1_org_users_notifications_pb);
+var api_v1alpha1_org_users_users_pb = require('../../../../api/v1alpha1/org/users/users_pb.js');
+goog.object.extend(proto, api_v1alpha1_org_users_users_pb);
 var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
