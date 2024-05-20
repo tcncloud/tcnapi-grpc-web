@@ -201,6 +201,15 @@ Compliance.ProcessScrubListUpload = {
   responseType: google_longrunning_operations_pb.Operation
 };
 
+Compliance.ScrubListDownload = {
+  methodName: "ScrubListDownload",
+  service: Compliance,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_compliance_pb.ScrubListDownloadRequest,
+  responseType: google_longrunning_operations_pb.Operation
+};
+
 Compliance.ProcessScrubListDeleteUpload = {
   methodName: "ProcessScrubListDeleteUpload",
   service: Compliance,
@@ -468,6 +477,15 @@ Compliance.ProcessConsentListDeleteUpload = {
   requestStream: false,
   responseStream: false,
   requestType: api_v0alpha_compliance_pb.ProcessConsentListDeleteUploadReq,
+  responseType: google_longrunning_operations_pb.Operation
+};
+
+Compliance.ConsentListDownload = {
+  methodName: "ConsentListDownload",
+  service: Compliance,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_compliance_pb.ConsentListDownloadRequest,
   responseType: google_longrunning_operations_pb.Operation
 };
 
@@ -1228,6 +1246,37 @@ ComplianceClient.prototype.processScrubListUpload = function processScrubListUpl
     callback = arguments[1];
   }
   var client = grpc.unary(Compliance.ProcessScrubListUpload, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ComplianceClient.prototype.scrubListDownload = function scrubListDownload(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Compliance.ScrubListDownload, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2158,6 +2207,37 @@ ComplianceClient.prototype.processConsentListDeleteUpload = function processCons
     callback = arguments[1];
   }
   var client = grpc.unary(Compliance.ProcessConsentListDeleteUpload, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ComplianceClient.prototype.consentListDownload = function consentListDownload(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Compliance.ConsentListDownload, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
