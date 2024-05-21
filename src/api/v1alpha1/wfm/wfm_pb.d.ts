@@ -2804,6 +2804,11 @@ export class CallCenterNode extends jspb.Message {
   getOriginSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setOriginSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  hasShrinkage(): boolean;
+  clearShrinkage(): void;
+  getShrinkage(): google_protobuf_wrappers_pb.FloatValue | undefined;
+  setShrinkage(value?: google_protobuf_wrappers_pb.FloatValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CallCenterNode.AsObject;
   static toObject(includeInstance: boolean, msg: CallCenterNode): CallCenterNode.AsObject;
@@ -2829,6 +2834,7 @@ export namespace CallCenterNode {
     memberConstraintRulesList: Array<ConstraintRule.AsObject>,
     memberAgentGroupsList: Array<AgentGroup.AsObject>,
     originSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    shrinkage?: google_protobuf_wrappers_pb.FloatValue.AsObject,
   }
 }
 
@@ -2929,6 +2935,11 @@ export class ClientNode extends jspb.Message {
   getOriginSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setOriginSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  hasShrinkage(): boolean;
+  clearShrinkage(): void;
+  getShrinkage(): google_protobuf_wrappers_pb.FloatValue | undefined;
+  setShrinkage(value?: google_protobuf_wrappers_pb.FloatValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ClientNode.AsObject;
   static toObject(includeInstance: boolean, msg: ClientNode): ClientNode.AsObject;
@@ -2955,6 +2966,7 @@ export namespace ClientNode {
     memberConstraintRulesList: Array<ConstraintRule.AsObject>,
     memberAgentGroupsList: Array<AgentGroup.AsObject>,
     originSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    shrinkage?: google_protobuf_wrappers_pb.FloatValue.AsObject,
   }
 }
 
@@ -3103,6 +3115,11 @@ export class LocationNode extends jspb.Message {
   getOriginSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setOriginSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  hasShrinkage(): boolean;
+  clearShrinkage(): void;
+  getShrinkage(): google_protobuf_wrappers_pb.FloatValue | undefined;
+  setShrinkage(value?: google_protobuf_wrappers_pb.FloatValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LocationNode.AsObject;
   static toObject(includeInstance: boolean, msg: LocationNode): LocationNode.AsObject;
@@ -3131,6 +3148,7 @@ export namespace LocationNode {
     memberConstraintRulesList: Array<ConstraintRule.AsObject>,
     memberAgentGroupsList: Array<AgentGroup.AsObject>,
     originSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    shrinkage?: google_protobuf_wrappers_pb.FloatValue.AsObject,
   }
 }
 
@@ -3286,6 +3304,11 @@ export class ProgramNode extends jspb.Message {
   getSkillProfileCategory(): api_commons_wfm_pb.SkillProfileCategory | undefined;
   setSkillProfileCategory(value?: api_commons_wfm_pb.SkillProfileCategory): void;
 
+  hasShrinkage(): boolean;
+  clearShrinkage(): void;
+  getShrinkage(): google_protobuf_wrappers_pb.FloatValue | undefined;
+  setShrinkage(value?: google_protobuf_wrappers_pb.FloatValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProgramNode.AsObject;
   static toObject(includeInstance: boolean, msg: ProgramNode): ProgramNode.AsObject;
@@ -3315,6 +3338,7 @@ export namespace ProgramNode {
     memberSkillProficienciesList: Array<SkillProficiency.AsObject>,
     originSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     skillProfileCategory?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+    shrinkage?: google_protobuf_wrappers_pb.FloatValue.AsObject,
   }
 }
 
@@ -7742,6 +7766,9 @@ export class ShiftInstance extends jspb.Message {
   getShiftTemplate(): ShiftTemplate | undefined;
   setShiftTemplate(value?: ShiftTemplate): void;
 
+  getPlannedShrinkagePercent(): number;
+  setPlannedShrinkagePercent(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ShiftInstance.AsObject;
   static toObject(includeInstance: boolean, msg: ShiftInstance): ShiftInstance.AsObject;
@@ -7765,6 +7792,7 @@ export namespace ShiftInstance {
     scheduleType: api_commons_wfm_pb.ScheduleTypeMap[keyof api_commons_wfm_pb.ScheduleTypeMap],
     shiftSegmentsList: Array<ShiftSegment.AsObject>,
     shiftTemplate?: ShiftTemplate.AsObject,
+    plannedShrinkagePercent: number,
   }
 }
 

@@ -10040,7 +10040,7 @@ proto.api.v1alpha1.org.users.ListUsersResponse.serializeBinaryToWriter = functio
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.repeatedFields_ = [9,10,13];
+proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.repeatedFields_ = [8,9,12];
 
 
 
@@ -10079,14 +10079,14 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.toObject = function(i
     lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     username: jspb.Message.getFieldWithDefault(msg, 5, ""),
     loginDisabled: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    permissionGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
+    permissionGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
     labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
     api_commons_org_labels_pb.Label.toObject, includeInstance),
-    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    agent: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
-    trustIdsList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f,
+    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    agent: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    trustIdsList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
     mfaInfo: (f = msg.getMfaInfo()) && api_commons_org_user_pb.MfaInfo.toObject(includeInstance, f),
-    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 15, false)
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -10147,33 +10147,33 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.deserializeBinaryFrom
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setLoginDisabled(value);
       break;
-    case 9:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.addPermissionGroupIds(value);
       break;
-    case 10:
+    case 9:
       var value = new api_commons_org_labels_pb.Label;
       reader.readMessage(value,api_commons_org_labels_pb.Label.deserializeBinaryFromReader);
       msg.addLabels(value);
       break;
-    case 11:
+    case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAccountOwner(value);
       break;
-    case 12:
+    case 11:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAgent(value);
       break;
-    case 13:
+    case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.addTrustIds(value);
       break;
-    case 14:
+    case 13:
       var value = new api_commons_org_user_pb.MfaInfo;
       reader.readMessage(value,api_commons_org_user_pb.MfaInfo.deserializeBinaryFromReader);
       msg.setMfaInfo(value);
       break;
-    case 15:
+    case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEmailVerified(value);
       break;
@@ -10251,14 +10251,14 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.serializeBinaryToWrit
   f = message.getPermissionGroupIdsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      9,
+      8,
       f
     );
   }
   f = message.getLabelsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      10,
+      9,
       f,
       api_commons_org_labels_pb.Label.serializeBinaryToWriter
     );
@@ -10266,28 +10266,28 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.serializeBinaryToWrit
   f = message.getAccountOwner();
   if (f) {
     writer.writeBool(
-      11,
+      10,
       f
     );
   }
   f = message.getAgent();
   if (f) {
     writer.writeBool(
-      12,
+      11,
       f
     );
   }
   f = message.getTrustIdsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      13,
+      12,
       f
     );
   }
   f = message.getMfaInfo();
   if (f != null) {
     writer.writeMessage(
-      14,
+      13,
       f,
       api_commons_org_user_pb.MfaInfo.serializeBinaryToWriter
     );
@@ -10295,7 +10295,7 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.serializeBinaryToWrit
   f = message.getEmailVerified();
   if (f) {
     writer.writeBool(
-      15,
+      14,
       f
     );
   }
@@ -10411,11 +10411,11 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.setLoginDis
 
 
 /**
- * repeated string permission_group_ids = 9;
+ * repeated string permission_group_ids = 8;
  * @return {!Array<string>}
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getPermissionGroupIdsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
 };
 
 
@@ -10424,7 +10424,7 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getPermissi
  * @return {!proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.setPermissionGroupIdsList = function(value) {
-  return jspb.Message.setField(this, 9, value || []);
+  return jspb.Message.setField(this, 8, value || []);
 };
 
 
@@ -10434,7 +10434,7 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.setPermissi
  * @return {!proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.addPermissionGroupIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
 };
 
 
@@ -10448,12 +10448,12 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.clearPermis
 
 
 /**
- * repeated api.commons.org.Label labels = 10;
+ * repeated api.commons.org.Label labels = 9;
  * @return {!Array<!proto.api.commons.org.Label>}
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getLabelsList = function() {
   return /** @type{!Array<!proto.api.commons.org.Label>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_org_labels_pb.Label, 10));
+    jspb.Message.getRepeatedWrapperField(this, api_commons_org_labels_pb.Label, 9));
 };
 
 
@@ -10462,7 +10462,7 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getLabelsLi
  * @return {!proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails} returns this
 */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.setLabelsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -10472,7 +10472,7 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.setLabelsLi
  * @return {!proto.api.commons.org.Label}
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.addLabels = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.api.commons.org.Label, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.commons.org.Label, opt_index);
 };
 
 
@@ -10486,11 +10486,11 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.clearLabels
 
 
 /**
- * optional bool account_owner = 11;
+ * optional bool account_owner = 10;
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getAccountOwner = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
 
@@ -10499,16 +10499,16 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getAccountO
  * @return {!proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.setAccountOwner = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 11, value);
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
 /**
- * optional bool agent = 12;
+ * optional bool agent = 11;
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getAgent = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
 };
 
 
@@ -10517,16 +10517,16 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getAgent = 
  * @return {!proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.setAgent = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 12, value);
+  return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
 /**
- * repeated string trust_ids = 13;
+ * repeated string trust_ids = 12;
  * @return {!Array<string>}
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getTrustIdsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 13));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 12));
 };
 
 
@@ -10535,7 +10535,7 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getTrustIds
  * @return {!proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.setTrustIdsList = function(value) {
-  return jspb.Message.setField(this, 13, value || []);
+  return jspb.Message.setField(this, 12, value || []);
 };
 
 
@@ -10545,7 +10545,7 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.setTrustIds
  * @return {!proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.addTrustIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 13, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 12, value, opt_index);
 };
 
 
@@ -10559,12 +10559,12 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.clearTrustI
 
 
 /**
- * optional api.commons.org.MfaInfo mfa_info = 14;
+ * optional api.commons.org.MfaInfo mfa_info = 13;
  * @return {?proto.api.commons.org.MfaInfo}
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getMfaInfo = function() {
   return /** @type{?proto.api.commons.org.MfaInfo} */ (
-    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo, 14));
+    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo, 13));
 };
 
 
@@ -10573,7 +10573,7 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getMfaInfo 
  * @return {!proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails} returns this
 */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.setMfaInfo = function(value) {
-  return jspb.Message.setWrapperField(this, 14, value);
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -10591,16 +10591,16 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.clearMfaInf
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.hasMfaInfo = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional bool email_verified = 15;
+ * optional bool email_verified = 14;
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getEmailVerified = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
 
@@ -10609,7 +10609,7 @@ proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.getEmailVer
  * @return {!proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersResponse.UserDetails.prototype.setEmailVerified = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 15, value);
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
@@ -11898,7 +11898,7 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.serializeBinaryToWriter =
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.repeatedFields_ = [9,10,13];
+proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.repeatedFields_ = [8,9,12];
 
 
 
@@ -11937,14 +11937,14 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.toObject = fu
     lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     username: jspb.Message.getFieldWithDefault(msg, 5, ""),
     loginDisabled: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    permissionGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
+    permissionGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
     labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
     api_commons_org_labels_pb.Label.toObject, includeInstance),
-    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    agent: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
-    trustIdsList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f,
+    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    agent: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    trustIdsList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
     mfaInfo: (f = msg.getMfaInfo()) && api_commons_org_user_pb.MfaInfo.toObject(includeInstance, f),
-    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 15, false)
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -12005,33 +12005,33 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.deserializeBi
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setLoginDisabled(value);
       break;
-    case 9:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.addPermissionGroupIds(value);
       break;
-    case 10:
+    case 9:
       var value = new api_commons_org_labels_pb.Label;
       reader.readMessage(value,api_commons_org_labels_pb.Label.deserializeBinaryFromReader);
       msg.addLabels(value);
       break;
-    case 11:
+    case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAccountOwner(value);
       break;
-    case 12:
+    case 11:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAgent(value);
       break;
-    case 13:
+    case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.addTrustIds(value);
       break;
-    case 14:
+    case 13:
       var value = new api_commons_org_user_pb.MfaInfo;
       reader.readMessage(value,api_commons_org_user_pb.MfaInfo.deserializeBinaryFromReader);
       msg.setMfaInfo(value);
       break;
-    case 15:
+    case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEmailVerified(value);
       break;
@@ -12109,14 +12109,14 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.serializeBina
   f = message.getPermissionGroupIdsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      9,
+      8,
       f
     );
   }
   f = message.getLabelsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      10,
+      9,
       f,
       api_commons_org_labels_pb.Label.serializeBinaryToWriter
     );
@@ -12124,28 +12124,28 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.serializeBina
   f = message.getAccountOwner();
   if (f) {
     writer.writeBool(
-      11,
+      10,
       f
     );
   }
   f = message.getAgent();
   if (f) {
     writer.writeBool(
-      12,
+      11,
       f
     );
   }
   f = message.getTrustIdsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      13,
+      12,
       f
     );
   }
   f = message.getMfaInfo();
   if (f != null) {
     writer.writeMessage(
-      14,
+      13,
       f,
       api_commons_org_user_pb.MfaInfo.serializeBinaryToWriter
     );
@@ -12153,7 +12153,7 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.serializeBina
   f = message.getEmailVerified();
   if (f) {
     writer.writeBool(
-      15,
+      14,
       f
     );
   }
@@ -12269,11 +12269,11 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.set
 
 
 /**
- * repeated string permission_group_ids = 9;
+ * repeated string permission_group_ids = 8;
  * @return {!Array<string>}
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.getPermissionGroupIdsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
 };
 
 
@@ -12282,7 +12282,7 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.get
  * @return {!proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.setPermissionGroupIdsList = function(value) {
-  return jspb.Message.setField(this, 9, value || []);
+  return jspb.Message.setField(this, 8, value || []);
 };
 
 
@@ -12292,7 +12292,7 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.set
  * @return {!proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.addPermissionGroupIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
 };
 
 
@@ -12306,12 +12306,12 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.cle
 
 
 /**
- * repeated api.commons.org.Label labels = 10;
+ * repeated api.commons.org.Label labels = 9;
  * @return {!Array<!proto.api.commons.org.Label>}
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.getLabelsList = function() {
   return /** @type{!Array<!proto.api.commons.org.Label>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_org_labels_pb.Label, 10));
+    jspb.Message.getRepeatedWrapperField(this, api_commons_org_labels_pb.Label, 9));
 };
 
 
@@ -12320,7 +12320,7 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.get
  * @return {!proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails} returns this
 */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.setLabelsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -12330,7 +12330,7 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.set
  * @return {!proto.api.commons.org.Label}
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.addLabels = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.api.commons.org.Label, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.commons.org.Label, opt_index);
 };
 
 
@@ -12344,11 +12344,11 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.cle
 
 
 /**
- * optional bool account_owner = 11;
+ * optional bool account_owner = 10;
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.getAccountOwner = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
 
@@ -12357,16 +12357,16 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.get
  * @return {!proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.setAccountOwner = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 11, value);
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
 /**
- * optional bool agent = 12;
+ * optional bool agent = 11;
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.getAgent = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
 };
 
 
@@ -12375,16 +12375,16 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.get
  * @return {!proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.setAgent = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 12, value);
+  return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
 /**
- * repeated string trust_ids = 13;
+ * repeated string trust_ids = 12;
  * @return {!Array<string>}
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.getTrustIdsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 13));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 12));
 };
 
 
@@ -12393,7 +12393,7 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.get
  * @return {!proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.setTrustIdsList = function(value) {
-  return jspb.Message.setField(this, 13, value || []);
+  return jspb.Message.setField(this, 12, value || []);
 };
 
 
@@ -12403,7 +12403,7 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.set
  * @return {!proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.addTrustIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 13, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 12, value, opt_index);
 };
 
 
@@ -12417,12 +12417,12 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.cle
 
 
 /**
- * optional api.commons.org.MfaInfo mfa_info = 14;
+ * optional api.commons.org.MfaInfo mfa_info = 13;
  * @return {?proto.api.commons.org.MfaInfo}
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.getMfaInfo = function() {
   return /** @type{?proto.api.commons.org.MfaInfo} */ (
-    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo, 14));
+    jspb.Message.getWrapperField(this, api_commons_org_user_pb.MfaInfo, 13));
 };
 
 
@@ -12431,7 +12431,7 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.get
  * @return {!proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails} returns this
 */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.setMfaInfo = function(value) {
-  return jspb.Message.setWrapperField(this, 14, value);
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -12449,16 +12449,16 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.cle
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.hasMfaInfo = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional bool email_verified = 15;
+ * optional bool email_verified = 14;
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.getEmailVerified = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
 
@@ -12467,7 +12467,7 @@ proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.get
  * @return {!proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails} returns this
  */
 proto.api.v1alpha1.org.users.ListUsersByRegionResponse.UserDetails.prototype.setEmailVerified = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 15, value);
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
@@ -19498,7 +19498,7 @@ proto.api.v1alpha1.org.users.GetUserSessionDataResponse.User.toObject = function
     orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     username: jspb.Message.getFieldWithDefault(msg, 3, ""),
     p3PermissionGroupId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    partnerAgentId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    partnerAgentId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     regionSidMapMap: (f = msg.getRegionSidMapMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.org.users.GetUserSessionDataResponse.User.RegionSids.toObject) : [],
     defaultRegion: jspb.Message.getFieldWithDefault(msg, 11, ""),
     apiKey: jspb.Message.getFieldWithDefault(msg, 12, ""),
@@ -19575,7 +19575,7 @@ proto.api.v1alpha1.org.users.GetUserSessionDataResponse.User.deserializeBinaryFr
       var value = /** @type {string} */ (reader.readString());
       msg.setP3PermissionGroupId(value);
       break;
-    case 8:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setPartnerAgentId(value);
       break;
@@ -19743,7 +19743,7 @@ proto.api.v1alpha1.org.users.GetUserSessionDataResponse.User.serializeBinaryToWr
   f = message.getPartnerAgentId();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      5,
       f
     );
   }
@@ -20184,11 +20184,11 @@ proto.api.v1alpha1.org.users.GetUserSessionDataResponse.User.prototype.setP3Perm
 
 
 /**
- * optional string partner_agent_id = 8;
+ * optional string partner_agent_id = 5;
  * @return {string}
  */
 proto.api.v1alpha1.org.users.GetUserSessionDataResponse.User.prototype.getPartnerAgentId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -20197,7 +20197,7 @@ proto.api.v1alpha1.org.users.GetUserSessionDataResponse.User.prototype.getPartne
  * @return {!proto.api.v1alpha1.org.users.GetUserSessionDataResponse.User} returns this
  */
 proto.api.v1alpha1.org.users.GetUserSessionDataResponse.User.prototype.setPartnerAgentId = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
