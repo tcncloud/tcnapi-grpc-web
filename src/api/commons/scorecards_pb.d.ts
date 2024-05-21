@@ -150,6 +150,9 @@ export class Evaluation extends jspb.Message {
   setCustomFieldsList(value: Array<Evaluation.CustomField>): void;
   addCustomFields(value?: Evaluation.CustomField, index?: number): Evaluation.CustomField;
 
+  getDeletedBy(): string;
+  setDeletedBy(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Evaluation.AsObject;
   static toObject(includeInstance: boolean, msg: Evaluation): Evaluation.AsObject;
@@ -174,6 +177,7 @@ export namespace Evaluation {
     callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
     transcriptSid: number,
     customFieldsList: Array<Evaluation.CustomField.AsObject>,
+    deletedBy: string,
   }
 
   export class CustomField extends jspb.Message {
