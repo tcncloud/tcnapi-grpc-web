@@ -77,6 +77,24 @@ type LabelsServiceGetLabeledEntityMap = {
   readonly responseType: typeof api_v1alpha1_org_labels_entities_pb.GetLabeledEntityMapResponse;
 };
 
+type LabelsServiceAssignLabels = {
+  readonly methodName: string;
+  readonly service: typeof LabelsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_labels_entities_pb.AssignLabelsRequest;
+  readonly responseType: typeof api_v1alpha1_org_labels_entities_pb.AssignLabelsResponse;
+};
+
+type LabelsServiceRevokeLabels = {
+  readonly methodName: string;
+  readonly service: typeof LabelsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_labels_entities_pb.RevokeLabelsRequest;
+  readonly responseType: typeof api_v1alpha1_org_labels_entities_pb.RevokeLabelsResponse;
+};
+
 export class LabelsService {
   static readonly serviceName: string;
   static readonly CreateLabel: LabelsServiceCreateLabel;
@@ -87,6 +105,8 @@ export class LabelsService {
   static readonly AttachLabel: LabelsServiceAttachLabel;
   static readonly DetachLabel: LabelsServiceDetachLabel;
   static readonly GetLabeledEntityMap: LabelsServiceGetLabeledEntityMap;
+  static readonly AssignLabels: LabelsServiceAssignLabels;
+  static readonly RevokeLabels: LabelsServiceRevokeLabels;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -192,6 +212,24 @@ export class LabelsServiceClient {
   getLabeledEntityMap(
     requestMessage: api_v1alpha1_org_labels_entities_pb.GetLabeledEntityMapRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_labels_entities_pb.GetLabeledEntityMapResponse|null) => void
+  ): UnaryResponse;
+  assignLabels(
+    requestMessage: api_v1alpha1_org_labels_entities_pb.AssignLabelsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_labels_entities_pb.AssignLabelsResponse|null) => void
+  ): UnaryResponse;
+  assignLabels(
+    requestMessage: api_v1alpha1_org_labels_entities_pb.AssignLabelsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_labels_entities_pb.AssignLabelsResponse|null) => void
+  ): UnaryResponse;
+  revokeLabels(
+    requestMessage: api_v1alpha1_org_labels_entities_pb.RevokeLabelsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_labels_entities_pb.RevokeLabelsResponse|null) => void
+  ): UnaryResponse;
+  revokeLabels(
+    requestMessage: api_v1alpha1_org_labels_entities_pb.RevokeLabelsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_labels_entities_pb.RevokeLabelsResponse|null) => void
   ): UnaryResponse;
 }
 
