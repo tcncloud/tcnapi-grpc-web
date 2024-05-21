@@ -2924,6 +2924,7 @@ export interface OmniTaskStatusMap {
   OMNI_TASK_SENDING_INCOMPLETE: 111;
   OMNI_TASK_SENT: 120;
   OMNI_TASK_RECEIVED: 130;
+  OMNI_TASK_CANCELLED: 140;
 }
 
 export const OmniTaskStatus: OmniTaskStatusMap;

@@ -265,6 +265,15 @@ type IntegrationsGenerateEpicKeyPairs = {
   readonly responseType: typeof api_v1alpha1_integrations_service_pb.GenerateEpicKeyPairRes;
 };
 
+type IntegrationsPopulateIntegrationLink = {
+  readonly methodName: string;
+  readonly service: typeof Integrations;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrations_service_pb.PopulateIntegrationLinkReq;
+  readonly responseType: typeof api_v1alpha1_integrations_service_pb.PopulateIntegrationLinkRes;
+};
+
 export class Integrations {
   static readonly serviceName: string;
   static readonly Process: IntegrationsProcess;
@@ -296,6 +305,7 @@ export class Integrations {
   static readonly CallEpicPatient: IntegrationsCallEpicPatient;
   static readonly HangUpEpicPatientCall: IntegrationsHangUpEpicPatientCall;
   static readonly GenerateEpicKeyPairs: IntegrationsGenerateEpicKeyPairs;
+  static readonly PopulateIntegrationLink: IntegrationsPopulateIntegrationLink;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -590,6 +600,15 @@ export class IntegrationsClient {
   generateEpicKeyPairs(
     requestMessage: api_v1alpha1_integrations_service_pb.GenerateEpicKeyPairReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.GenerateEpicKeyPairRes|null) => void
+  ): UnaryResponse;
+  populateIntegrationLink(
+    requestMessage: api_v1alpha1_integrations_service_pb.PopulateIntegrationLinkReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.PopulateIntegrationLinkRes|null) => void
+  ): UnaryResponse;
+  populateIntegrationLink(
+    requestMessage: api_v1alpha1_integrations_service_pb.PopulateIntegrationLinkReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.PopulateIntegrationLinkRes|null) => void
   ): UnaryResponse;
 }
 

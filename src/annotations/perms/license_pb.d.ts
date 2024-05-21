@@ -39,6 +39,7 @@ export interface CardMap {
   CARD_SOUNDBOARD: 8;
   CARD_SUBSCRIPTIONS: 9;
   CARD_PBX_MANAGER: 10;
+  CARD_AGENT_SCRIPTS: 11;
 }
 
 export const Card: CardMap;

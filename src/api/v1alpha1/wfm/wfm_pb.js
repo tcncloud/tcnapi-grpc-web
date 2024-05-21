@@ -28289,7 +28289,8 @@ proto.api.v1alpha1.wfm.CallCenterNode.toObject = function(includeInstance, msg) 
     proto.api.v1alpha1.wfm.ConstraintRule.toObject, includeInstance),
     memberAgentGroupsList: jspb.Message.toObjectList(msg.getMemberAgentGroupsList(),
     proto.api.v1alpha1.wfm.AgentGroup.toObject, includeInstance),
-    originSid: (f = msg.getOriginSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+    originSid: (f = msg.getOriginSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    shrinkage: (f = msg.getShrinkage()) && google_protobuf_wrappers_pb.FloatValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -28385,6 +28386,11 @@ proto.api.v1alpha1.wfm.CallCenterNode.deserializeBinaryFromReader = function(msg
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setOriginSid(value);
+      break;
+    case 14:
+      var value = new google_protobuf_wrappers_pb.FloatValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.FloatValue.deserializeBinaryFromReader);
+      msg.setShrinkage(value);
       break;
     default:
       reader.skipField();
@@ -28512,6 +28518,14 @@ proto.api.v1alpha1.wfm.CallCenterNode.serializeBinaryToWriter = function(message
       13,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getShrinkage();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      google_protobuf_wrappers_pb.FloatValue.serializeBinaryToWriter
     );
   }
 };
@@ -28909,6 +28923,43 @@ proto.api.v1alpha1.wfm.CallCenterNode.prototype.hasOriginSid = function() {
 };
 
 
+/**
+ * optional google.protobuf.FloatValue shrinkage = 14;
+ * @return {?proto.google.protobuf.FloatValue}
+ */
+proto.api.v1alpha1.wfm.CallCenterNode.prototype.getShrinkage = function() {
+  return /** @type{?proto.google.protobuf.FloatValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.FloatValue, 14));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FloatValue|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.CallCenterNode} returns this
+*/
+proto.api.v1alpha1.wfm.CallCenterNode.prototype.setShrinkage = function(value) {
+  return jspb.Message.setWrapperField(this, 14, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.CallCenterNode} returns this
+ */
+proto.api.v1alpha1.wfm.CallCenterNode.prototype.clearShrinkage = function() {
+  return this.setShrinkage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.CallCenterNode.prototype.hasShrinkage = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
 
 
 
@@ -29219,7 +29270,8 @@ proto.api.v1alpha1.wfm.ClientNode.toObject = function(includeInstance, msg) {
     proto.api.v1alpha1.wfm.ConstraintRule.toObject, includeInstance),
     memberAgentGroupsList: jspb.Message.toObjectList(msg.getMemberAgentGroupsList(),
     proto.api.v1alpha1.wfm.AgentGroup.toObject, includeInstance),
-    originSid: (f = msg.getOriginSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+    originSid: (f = msg.getOriginSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    shrinkage: (f = msg.getShrinkage()) && google_protobuf_wrappers_pb.FloatValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -29319,6 +29371,11 @@ proto.api.v1alpha1.wfm.ClientNode.deserializeBinaryFromReader = function(msg, re
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setOriginSid(value);
+      break;
+    case 15:
+      var value = new google_protobuf_wrappers_pb.FloatValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.FloatValue.deserializeBinaryFromReader);
+      msg.setShrinkage(value);
       break;
     default:
       reader.skipField();
@@ -29453,6 +29510,14 @@ proto.api.v1alpha1.wfm.ClientNode.serializeBinaryToWriter = function(message, wr
       14,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getShrinkage();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      google_protobuf_wrappers_pb.FloatValue.serializeBinaryToWriter
     );
   }
 };
@@ -29865,6 +29930,43 @@ proto.api.v1alpha1.wfm.ClientNode.prototype.clearOriginSid = function() {
  */
 proto.api.v1alpha1.wfm.ClientNode.prototype.hasOriginSid = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional google.protobuf.FloatValue shrinkage = 15;
+ * @return {?proto.google.protobuf.FloatValue}
+ */
+proto.api.v1alpha1.wfm.ClientNode.prototype.getShrinkage = function() {
+  return /** @type{?proto.google.protobuf.FloatValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.FloatValue, 15));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FloatValue|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.ClientNode} returns this
+*/
+proto.api.v1alpha1.wfm.ClientNode.prototype.setShrinkage = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.ClientNode} returns this
+ */
+proto.api.v1alpha1.wfm.ClientNode.prototype.clearShrinkage = function() {
+  return this.setShrinkage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ClientNode.prototype.hasShrinkage = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
@@ -30461,7 +30563,8 @@ proto.api.v1alpha1.wfm.LocationNode.toObject = function(includeInstance, msg) {
     proto.api.v1alpha1.wfm.ConstraintRule.toObject, includeInstance),
     memberAgentGroupsList: jspb.Message.toObjectList(msg.getMemberAgentGroupsList(),
     proto.api.v1alpha1.wfm.AgentGroup.toObject, includeInstance),
-    originSid: (f = msg.getOriginSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+    originSid: (f = msg.getOriginSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    shrinkage: (f = msg.getShrinkage()) && google_protobuf_wrappers_pb.FloatValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -30569,6 +30672,11 @@ proto.api.v1alpha1.wfm.LocationNode.deserializeBinaryFromReader = function(msg, 
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setOriginSid(value);
+      break;
+    case 17:
+      var value = new google_protobuf_wrappers_pb.FloatValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.FloatValue.deserializeBinaryFromReader);
+      msg.setShrinkage(value);
       break;
     default:
       reader.skipField();
@@ -30717,6 +30825,14 @@ proto.api.v1alpha1.wfm.LocationNode.serializeBinaryToWriter = function(message, 
       16,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getShrinkage();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      google_protobuf_wrappers_pb.FloatValue.serializeBinaryToWriter
     );
   }
 };
@@ -31165,6 +31281,43 @@ proto.api.v1alpha1.wfm.LocationNode.prototype.clearOriginSid = function() {
  */
 proto.api.v1alpha1.wfm.LocationNode.prototype.hasOriginSid = function() {
   return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional google.protobuf.FloatValue shrinkage = 17;
+ * @return {?proto.google.protobuf.FloatValue}
+ */
+proto.api.v1alpha1.wfm.LocationNode.prototype.getShrinkage = function() {
+  return /** @type{?proto.google.protobuf.FloatValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.FloatValue, 17));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FloatValue|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.LocationNode} returns this
+*/
+proto.api.v1alpha1.wfm.LocationNode.prototype.setShrinkage = function(value) {
+  return jspb.Message.setWrapperField(this, 17, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.LocationNode} returns this
+ */
+proto.api.v1alpha1.wfm.LocationNode.prototype.clearShrinkage = function() {
+  return this.setShrinkage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.LocationNode.prototype.hasShrinkage = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
@@ -31763,7 +31916,8 @@ proto.api.v1alpha1.wfm.ProgramNode.toObject = function(includeInstance, msg) {
     memberSkillProficienciesList: jspb.Message.toObjectList(msg.getMemberSkillProficienciesList(),
     proto.api.v1alpha1.wfm.SkillProficiency.toObject, includeInstance),
     originSid: (f = msg.getOriginSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f)
+    skillProfileCategory: (f = msg.getSkillProfileCategory()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f),
+    shrinkage: (f = msg.getShrinkage()) && google_protobuf_wrappers_pb.FloatValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -31877,6 +32031,11 @@ proto.api.v1alpha1.wfm.ProgramNode.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_wfm_pb.SkillProfileCategory;
       reader.readMessage(value,api_commons_wfm_pb.SkillProfileCategory.deserializeBinaryFromReader);
       msg.setSkillProfileCategory(value);
+      break;
+    case 18:
+      var value = new google_protobuf_wrappers_pb.FloatValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.FloatValue.deserializeBinaryFromReader);
+      msg.setShrinkage(value);
       break;
     default:
       reader.skipField();
@@ -32034,6 +32193,14 @@ proto.api.v1alpha1.wfm.ProgramNode.serializeBinaryToWriter = function(message, w
       17,
       f,
       api_commons_wfm_pb.SkillProfileCategory.serializeBinaryToWriter
+    );
+  }
+  f = message.getShrinkage();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      google_protobuf_wrappers_pb.FloatValue.serializeBinaryToWriter
     );
   }
 };
@@ -32539,6 +32706,43 @@ proto.api.v1alpha1.wfm.ProgramNode.prototype.clearSkillProfileCategory = functio
  */
 proto.api.v1alpha1.wfm.ProgramNode.prototype.hasSkillProfileCategory = function() {
   return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional google.protobuf.FloatValue shrinkage = 18;
+ * @return {?proto.google.protobuf.FloatValue}
+ */
+proto.api.v1alpha1.wfm.ProgramNode.prototype.getShrinkage = function() {
+  return /** @type{?proto.google.protobuf.FloatValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.FloatValue, 18));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FloatValue|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.ProgramNode} returns this
+*/
+proto.api.v1alpha1.wfm.ProgramNode.prototype.setShrinkage = function(value) {
+  return jspb.Message.setWrapperField(this, 18, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.ProgramNode} returns this
+ */
+proto.api.v1alpha1.wfm.ProgramNode.prototype.clearShrinkage = function() {
+  return this.setShrinkage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ProgramNode.prototype.hasShrinkage = function() {
+  return jspb.Message.getField(this, 18) != null;
 };
 
 
@@ -67118,7 +67322,8 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleReq.toObject = function(includeInstance
     includeShiftTemplate: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     includeShiftSegments: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     includeSchedulingActivity: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    includeActivity: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
+    includeActivity: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    autoGenerateAgents: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -67192,6 +67397,10 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleReq.deserializeBinaryFromReader = funct
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIncludeActivity(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAutoGenerateAgents(value);
       break;
     default:
       reader.skipField();
@@ -67284,6 +67493,13 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleReq.serializeBinaryToWriter = function(
   if (f) {
     writer.writeBool(
       9,
+      f
+    );
+  }
+  f = message.getAutoGenerateAgents();
+  if (f) {
+    writer.writeBool(
+      10,
       f
     );
   }
@@ -67487,6 +67703,24 @@ proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.getIncludeActivity = func
  */
 proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.setIncludeActivity = function(value) {
   return jspb.Message.setProto3BooleanField(this, 9, value);
+};
+
+
+/**
+ * optional bool auto_generate_agents = 10;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.getAutoGenerateAgents = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.BuildDraftScheduleReq} returns this
+ */
+proto.api.v1alpha1.wfm.BuildDraftScheduleReq.prototype.setAutoGenerateAgents = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 

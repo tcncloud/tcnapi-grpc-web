@@ -6366,7 +6366,8 @@ proto.api.v0alpha.HuntGroup.toObject = function(includeInstance, msg) {
     description: (f = msg.getDescription()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     modifyDate: (f = msg.getModifyDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     type: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    agentCount: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    agentCount: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    huntGroupSkillAgentCount: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -6432,6 +6433,10 @@ proto.api.v0alpha.HuntGroup.deserializeBinaryFromReader = function(msg, reader) 
     case 7:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setAgentCount(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setHuntGroupSkillAgentCount(value);
       break;
     default:
       reader.skipField();
@@ -6510,6 +6515,13 @@ proto.api.v0alpha.HuntGroup.serializeBinaryToWriter = function(message, writer) 
   if (f !== 0) {
     writer.writeInt64(
       7,
+      f
+    );
+  }
+  f = message.getHuntGroupSkillAgentCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      8,
       f
     );
   }
@@ -6677,6 +6689,24 @@ proto.api.v0alpha.HuntGroup.prototype.getAgentCount = function() {
  */
 proto.api.v0alpha.HuntGroup.prototype.setAgentCount = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional int64 hunt_group_skill_agent_count = 8;
+ * @return {number}
+ */
+proto.api.v0alpha.HuntGroup.prototype.getHuntGroupSkillAgentCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v0alpha.HuntGroup} returns this
+ */
+proto.api.v0alpha.HuntGroup.prototype.setHuntGroupSkillAgentCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 

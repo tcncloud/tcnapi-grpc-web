@@ -1955,3 +1955,207 @@ export namespace UnassignScriptFromHuntGroupsResponse {
   }
 }
 
+export class ListResponseEvaluatorsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListResponseEvaluatorsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListResponseEvaluatorsRequest): ListResponseEvaluatorsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListResponseEvaluatorsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListResponseEvaluatorsRequest;
+  static deserializeBinaryFromReader(message: ListResponseEvaluatorsRequest, reader: jspb.BinaryReader): ListResponseEvaluatorsRequest;
+}
+
+export namespace ListResponseEvaluatorsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListResponseEvaluatorsResponse extends jspb.Message {
+  clearEvaluatorsList(): void;
+  getEvaluatorsList(): Array<api_commons_org_huntgroup_pb.ResponseEvaluator>;
+  setEvaluatorsList(value: Array<api_commons_org_huntgroup_pb.ResponseEvaluator>): void;
+  addEvaluators(value?: api_commons_org_huntgroup_pb.ResponseEvaluator, index?: number): api_commons_org_huntgroup_pb.ResponseEvaluator;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListResponseEvaluatorsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListResponseEvaluatorsResponse): ListResponseEvaluatorsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListResponseEvaluatorsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListResponseEvaluatorsResponse;
+  static deserializeBinaryFromReader(message: ListResponseEvaluatorsResponse, reader: jspb.BinaryReader): ListResponseEvaluatorsResponse;
+}
+
+export namespace ListResponseEvaluatorsResponse {
+  export type AsObject = {
+    evaluatorsList: Array<api_commons_org_huntgroup_pb.ResponseEvaluator.AsObject>,
+  }
+}
+
+export class GetResponseEvaluatorRequest extends jspb.Message {
+  getEvaluatorId(): string;
+  setEvaluatorId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetResponseEvaluatorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetResponseEvaluatorRequest): GetResponseEvaluatorRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetResponseEvaluatorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetResponseEvaluatorRequest;
+  static deserializeBinaryFromReader(message: GetResponseEvaluatorRequest, reader: jspb.BinaryReader): GetResponseEvaluatorRequest;
+}
+
+export namespace GetResponseEvaluatorRequest {
+  export type AsObject = {
+    evaluatorId: string,
+  }
+}
+
+export class GetResponseEvaluatorResponse extends jspb.Message {
+  hasEvaluator(): boolean;
+  clearEvaluator(): void;
+  getEvaluator(): api_commons_org_huntgroup_pb.ResponseEvaluator | undefined;
+  setEvaluator(value?: api_commons_org_huntgroup_pb.ResponseEvaluator): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetResponseEvaluatorResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetResponseEvaluatorResponse): GetResponseEvaluatorResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetResponseEvaluatorResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetResponseEvaluatorResponse;
+  static deserializeBinaryFromReader(message: GetResponseEvaluatorResponse, reader: jspb.BinaryReader): GetResponseEvaluatorResponse;
+}
+
+export namespace GetResponseEvaluatorResponse {
+  export type AsObject = {
+    evaluator?: api_commons_org_huntgroup_pb.ResponseEvaluator.AsObject,
+  }
+}
+
+export class CreateResponseEvaluatorRequest extends jspb.Message {
+  hasEvaluator(): boolean;
+  clearEvaluator(): void;
+  getEvaluator(): api_commons_org_huntgroup_pb.ResponseEvaluator | undefined;
+  setEvaluator(value?: api_commons_org_huntgroup_pb.ResponseEvaluator): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateResponseEvaluatorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateResponseEvaluatorRequest): CreateResponseEvaluatorRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateResponseEvaluatorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateResponseEvaluatorRequest;
+  static deserializeBinaryFromReader(message: CreateResponseEvaluatorRequest, reader: jspb.BinaryReader): CreateResponseEvaluatorRequest;
+}
+
+export namespace CreateResponseEvaluatorRequest {
+  export type AsObject = {
+    evaluator?: api_commons_org_huntgroup_pb.ResponseEvaluator.AsObject,
+  }
+}
+
+export class CreateResponseEvaluatorResponse extends jspb.Message {
+  hasEvaluator(): boolean;
+  clearEvaluator(): void;
+  getEvaluator(): api_commons_org_huntgroup_pb.ResponseEvaluator | undefined;
+  setEvaluator(value?: api_commons_org_huntgroup_pb.ResponseEvaluator): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateResponseEvaluatorResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateResponseEvaluatorResponse): CreateResponseEvaluatorResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateResponseEvaluatorResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateResponseEvaluatorResponse;
+  static deserializeBinaryFromReader(message: CreateResponseEvaluatorResponse, reader: jspb.BinaryReader): CreateResponseEvaluatorResponse;
+}
+
+export namespace CreateResponseEvaluatorResponse {
+  export type AsObject = {
+    evaluator?: api_commons_org_huntgroup_pb.ResponseEvaluator.AsObject,
+  }
+}
+
+export class UpdateResponseEvaluatorRequest extends jspb.Message {
+  hasEvaluator(): boolean;
+  clearEvaluator(): void;
+  getEvaluator(): api_commons_org_huntgroup_pb.ResponseEvaluator | undefined;
+  setEvaluator(value?: api_commons_org_huntgroup_pb.ResponseEvaluator): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateResponseEvaluatorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateResponseEvaluatorRequest): UpdateResponseEvaluatorRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateResponseEvaluatorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateResponseEvaluatorRequest;
+  static deserializeBinaryFromReader(message: UpdateResponseEvaluatorRequest, reader: jspb.BinaryReader): UpdateResponseEvaluatorRequest;
+}
+
+export namespace UpdateResponseEvaluatorRequest {
+  export type AsObject = {
+    evaluator?: api_commons_org_huntgroup_pb.ResponseEvaluator.AsObject,
+  }
+}
+
+export class UpdateResponseEvaluatorResponse extends jspb.Message {
+  hasEvaluator(): boolean;
+  clearEvaluator(): void;
+  getEvaluator(): api_commons_org_huntgroup_pb.ResponseEvaluator | undefined;
+  setEvaluator(value?: api_commons_org_huntgroup_pb.ResponseEvaluator): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateResponseEvaluatorResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateResponseEvaluatorResponse): UpdateResponseEvaluatorResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateResponseEvaluatorResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateResponseEvaluatorResponse;
+  static deserializeBinaryFromReader(message: UpdateResponseEvaluatorResponse, reader: jspb.BinaryReader): UpdateResponseEvaluatorResponse;
+}
+
+export namespace UpdateResponseEvaluatorResponse {
+  export type AsObject = {
+    evaluator?: api_commons_org_huntgroup_pb.ResponseEvaluator.AsObject,
+  }
+}
+
+export class DeleteResponseEvaluatorRequest extends jspb.Message {
+  getEvaluatorId(): string;
+  setEvaluatorId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteResponseEvaluatorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteResponseEvaluatorRequest): DeleteResponseEvaluatorRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteResponseEvaluatorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteResponseEvaluatorRequest;
+  static deserializeBinaryFromReader(message: DeleteResponseEvaluatorRequest, reader: jspb.BinaryReader): DeleteResponseEvaluatorRequest;
+}
+
+export namespace DeleteResponseEvaluatorRequest {
+  export type AsObject = {
+    evaluatorId: string,
+  }
+}
+
+export class DeleteResponseEvaluatorResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteResponseEvaluatorResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteResponseEvaluatorResponse): DeleteResponseEvaluatorResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteResponseEvaluatorResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteResponseEvaluatorResponse;
+  static deserializeBinaryFromReader(message: DeleteResponseEvaluatorResponse, reader: jspb.BinaryReader): DeleteResponseEvaluatorResponse;
+}
+
+export namespace DeleteResponseEvaluatorResponse {
+  export type AsObject = {
+  }
+}
+

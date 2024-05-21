@@ -3,7 +3,9 @@
 
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../../annotations/authz_pb";
+import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
 import * as api_commons_integrations_integrations_pb from "../../../api/commons/integrations/integrations_pb";
+import * as api_commons_org_huntgroup_pb from "../../../api/commons/org/huntgroup_pb";
 import * as api_commons_perms_pb from "../../../api/commons/perms_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
@@ -3494,6 +3496,70 @@ export namespace Template {
   export enum ValCase {
     VAL_NOT_SET = 0,
     INVOICE_TEMPLATE = 1,
+  }
+}
+
+export class PopulateIntegrationLinkReq extends jspb.Message {
+  getClientSid(): number;
+  setClientSid(value: number): void;
+
+  getAgentSid(): number;
+  setAgentSid(value: number): void;
+
+  getCallSid(): number;
+  setCallSid(value: number): void;
+
+  getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+  setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
+  getScheduledCallbackId(): string;
+  setScheduledCallbackId(value: string): void;
+
+  hasIntegrationLink(): boolean;
+  clearIntegrationLink(): void;
+  getIntegrationLink(): api_commons_org_huntgroup_pb.IntegrationLink | undefined;
+  setIntegrationLink(value?: api_commons_org_huntgroup_pb.IntegrationLink): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PopulateIntegrationLinkReq.AsObject;
+  static toObject(includeInstance: boolean, msg: PopulateIntegrationLinkReq): PopulateIntegrationLinkReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PopulateIntegrationLinkReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PopulateIntegrationLinkReq;
+  static deserializeBinaryFromReader(message: PopulateIntegrationLinkReq, reader: jspb.BinaryReader): PopulateIntegrationLinkReq;
+}
+
+export namespace PopulateIntegrationLinkReq {
+  export type AsObject = {
+    clientSid: number,
+    agentSid: number,
+    callSid: number,
+    callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+    scheduledCallbackId: string,
+    integrationLink?: api_commons_org_huntgroup_pb.IntegrationLink.AsObject,
+  }
+}
+
+export class PopulateIntegrationLinkRes extends jspb.Message {
+  hasIntegrationLink(): boolean;
+  clearIntegrationLink(): void;
+  getIntegrationLink(): api_commons_org_huntgroup_pb.IntegrationLink | undefined;
+  setIntegrationLink(value?: api_commons_org_huntgroup_pb.IntegrationLink): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PopulateIntegrationLinkRes.AsObject;
+  static toObject(includeInstance: boolean, msg: PopulateIntegrationLinkRes): PopulateIntegrationLinkRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PopulateIntegrationLinkRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PopulateIntegrationLinkRes;
+  static deserializeBinaryFromReader(message: PopulateIntegrationLinkRes, reader: jspb.BinaryReader): PopulateIntegrationLinkRes;
+}
+
+export namespace PopulateIntegrationLinkRes {
+  export type AsObject = {
+    integrationLink?: api_commons_org_huntgroup_pb.IntegrationLink.AsObject,
   }
 }
 
