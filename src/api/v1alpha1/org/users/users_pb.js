@@ -6653,7 +6653,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdRequest.prototype.setOrgId = function
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.repeatedFields_ = [6,7,8,21];
+proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.repeatedFields_ = [7,8,9,12];
 
 
 
@@ -6688,9 +6688,9 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.toObject = function(includeI
   var f, obj = {
     userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    username: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    delegated: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    orgName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    username: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    delegated: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    orgName: jspb.Message.getFieldWithDefault(msg, 5, ""),
     huntGroup: (f = msg.getHuntGroup()) && proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.HuntGroup.toObject(includeInstance, f),
     labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
     api_commons_org_labels_pb.Label.toObject, includeInstance),
@@ -6702,8 +6702,8 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.toObject = function(includeI
     agentProfileGroup: (f = msg.getAgentProfileGroup()) && proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.AgentProfileGroup.toObject(includeInstance, f),
     trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
     api_commons_org_trusts_pb.Trust.toObject, includeInstance),
-    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
-    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 23, false)
+    accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -6748,58 +6748,58 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.deserializeBinaryFromReader 
       var value = /** @type {string} */ (reader.readString());
       msg.setOrgId(value);
       break;
-    case 13:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setUsername(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDelegated(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setOrgName(value);
       break;
-    case 5:
+    case 6:
       var value = new proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.HuntGroup;
       reader.readMessage(value,proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.HuntGroup.deserializeBinaryFromReader);
       msg.setHuntGroup(value);
       break;
-    case 6:
+    case 7:
       var value = new api_commons_org_labels_pb.Label;
       reader.readMessage(value,api_commons_org_labels_pb.Label.deserializeBinaryFromReader);
       msg.addLabels(value);
       break;
-    case 7:
+    case 8:
       var value = new api_commons_org_user_pb.Skill;
       reader.readMessage(value,api_commons_org_user_pb.Skill.deserializeBinaryFromReader);
       msg.addSkills(value);
       break;
-    case 8:
+    case 9:
       var value = new api_commons_org_permissions_pb.PermissionGroup;
       reader.readMessage(value,api_commons_org_permissions_pb.PermissionGroup.deserializeBinaryFromReader);
       msg.addPermissionGroups(value);
       break;
-    case 9:
+    case 10:
       var value = new api_commons_org_permissions_pb.P3PermissionGroup;
       reader.readMessage(value,api_commons_org_permissions_pb.P3PermissionGroup.deserializeBinaryFromReader);
       msg.setP3PermissionGroup(value);
       break;
-    case 10:
+    case 11:
       var value = new proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.AgentProfileGroup;
       reader.readMessage(value,proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.AgentProfileGroup.deserializeBinaryFromReader);
       msg.setAgentProfileGroup(value);
       break;
-    case 21:
+    case 12:
       var value = new api_commons_org_trusts_pb.Trust;
       reader.readMessage(value,api_commons_org_trusts_pb.Trust.deserializeBinaryFromReader);
       msg.addTrusts(value);
       break;
-    case 22:
+    case 13:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAccountOwner(value);
       break;
-    case 23:
+    case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEmailVerified(value);
       break;
@@ -6849,28 +6849,28 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.serializeBinaryToWriter = fu
   f = message.getUsername();
   if (f.length > 0) {
     writer.writeString(
-      13,
+      3,
       f
     );
   }
   f = message.getDelegated();
   if (f) {
     writer.writeBool(
-      3,
+      4,
       f
     );
   }
   f = message.getOrgName();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      5,
       f
     );
   }
   f = message.getHuntGroup();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.HuntGroup.serializeBinaryToWriter
     );
@@ -6878,7 +6878,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.serializeBinaryToWriter = fu
   f = message.getLabelsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      7,
       f,
       api_commons_org_labels_pb.Label.serializeBinaryToWriter
     );
@@ -6886,7 +6886,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.serializeBinaryToWriter = fu
   f = message.getSkillsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      8,
       f,
       api_commons_org_user_pb.Skill.serializeBinaryToWriter
     );
@@ -6894,7 +6894,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.serializeBinaryToWriter = fu
   f = message.getPermissionGroupsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      8,
+      9,
       f,
       api_commons_org_permissions_pb.PermissionGroup.serializeBinaryToWriter
     );
@@ -6902,7 +6902,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.serializeBinaryToWriter = fu
   f = message.getP3PermissionGroup();
   if (f != null) {
     writer.writeMessage(
-      9,
+      10,
       f,
       api_commons_org_permissions_pb.P3PermissionGroup.serializeBinaryToWriter
     );
@@ -6910,7 +6910,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.serializeBinaryToWriter = fu
   f = message.getAgentProfileGroup();
   if (f != null) {
     writer.writeMessage(
-      10,
+      11,
       f,
       proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.AgentProfileGroup.serializeBinaryToWriter
     );
@@ -6918,7 +6918,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.serializeBinaryToWriter = fu
   f = message.getTrustsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      21,
+      12,
       f,
       api_commons_org_trusts_pb.Trust.serializeBinaryToWriter
     );
@@ -6926,14 +6926,14 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.serializeBinaryToWriter = fu
   f = message.getAccountOwner();
   if (f) {
     writer.writeBool(
-      22,
+      13,
       f
     );
   }
   f = message.getEmailVerified();
   if (f) {
     writer.writeBool(
-      23,
+      14,
       f
     );
   }
@@ -7297,11 +7297,11 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setOrgId = functio
 
 
 /**
- * optional string username = 13;
+ * optional string username = 3;
  * @return {string}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getUsername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -7310,16 +7310,16 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getUsername = func
  * @return {!proto.api.v1alpha1.org.users.GetUserByOrgIdResponse} returns this
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setUsername = function(value) {
-  return jspb.Message.setProto3StringField(this, 13, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional bool delegated = 3;
+ * optional bool delegated = 4;
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getDelegated = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
 
@@ -7328,16 +7328,16 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getDelegated = fun
  * @return {!proto.api.v1alpha1.org.users.GetUserByOrgIdResponse} returns this
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setDelegated = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
 /**
- * optional string org_name = 4;
+ * optional string org_name = 5;
  * @return {string}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getOrgName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -7346,17 +7346,17 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getOrgName = funct
  * @return {!proto.api.v1alpha1.org.users.GetUserByOrgIdResponse} returns this
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setOrgName = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional HuntGroup hunt_group = 5;
+ * optional HuntGroup hunt_group = 6;
  * @return {?proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.HuntGroup}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getHuntGroup = function() {
   return /** @type{?proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.HuntGroup} */ (
-    jspb.Message.getWrapperField(this, proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.HuntGroup, 5));
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.HuntGroup, 6));
 };
 
 
@@ -7365,7 +7365,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getHuntGroup = fun
  * @return {!proto.api.v1alpha1.org.users.GetUserByOrgIdResponse} returns this
 */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setHuntGroup = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -7383,17 +7383,17 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.clearHuntGroup = f
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.hasHuntGroup = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * repeated api.commons.org.Label labels = 6;
+ * repeated api.commons.org.Label labels = 7;
  * @return {!Array<!proto.api.commons.org.Label>}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getLabelsList = function() {
   return /** @type{!Array<!proto.api.commons.org.Label>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_org_labels_pb.Label, 6));
+    jspb.Message.getRepeatedWrapperField(this, api_commons_org_labels_pb.Label, 7));
 };
 
 
@@ -7402,7 +7402,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getLabelsList = fu
  * @return {!proto.api.v1alpha1.org.users.GetUserByOrgIdResponse} returns this
 */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setLabelsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -7412,7 +7412,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setLabelsList = fu
  * @return {!proto.api.commons.org.Label}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.addLabels = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.api.commons.org.Label, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.api.commons.org.Label, opt_index);
 };
 
 
@@ -7426,12 +7426,12 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.clearLabelsList = 
 
 
 /**
- * repeated api.commons.org.Skill skills = 7;
+ * repeated api.commons.org.Skill skills = 8;
  * @return {!Array<!proto.api.commons.org.Skill>}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getSkillsList = function() {
   return /** @type{!Array<!proto.api.commons.org.Skill>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_org_user_pb.Skill, 7));
+    jspb.Message.getRepeatedWrapperField(this, api_commons_org_user_pb.Skill, 8));
 };
 
 
@@ -7440,7 +7440,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getSkillsList = fu
  * @return {!proto.api.v1alpha1.org.users.GetUserByOrgIdResponse} returns this
 */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setSkillsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -7450,7 +7450,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setSkillsList = fu
  * @return {!proto.api.commons.org.Skill}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.addSkills = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.api.commons.org.Skill, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.api.commons.org.Skill, opt_index);
 };
 
 
@@ -7464,12 +7464,12 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.clearSkillsList = 
 
 
 /**
- * repeated api.commons.org.PermissionGroup permission_groups = 8;
+ * repeated api.commons.org.PermissionGroup permission_groups = 9;
  * @return {!Array<!proto.api.commons.org.PermissionGroup>}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getPermissionGroupsList = function() {
   return /** @type{!Array<!proto.api.commons.org.PermissionGroup>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_org_permissions_pb.PermissionGroup, 8));
+    jspb.Message.getRepeatedWrapperField(this, api_commons_org_permissions_pb.PermissionGroup, 9));
 };
 
 
@@ -7478,7 +7478,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getPermissionGroup
  * @return {!proto.api.v1alpha1.org.users.GetUserByOrgIdResponse} returns this
 */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setPermissionGroupsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -7488,7 +7488,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setPermissionGroup
  * @return {!proto.api.commons.org.PermissionGroup}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.addPermissionGroups = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.api.commons.org.PermissionGroup, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.commons.org.PermissionGroup, opt_index);
 };
 
 
@@ -7502,12 +7502,12 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.clearPermissionGro
 
 
 /**
- * optional api.commons.org.P3PermissionGroup p3_permission_group = 9;
+ * optional api.commons.org.P3PermissionGroup p3_permission_group = 10;
  * @return {?proto.api.commons.org.P3PermissionGroup}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getP3PermissionGroup = function() {
   return /** @type{?proto.api.commons.org.P3PermissionGroup} */ (
-    jspb.Message.getWrapperField(this, api_commons_org_permissions_pb.P3PermissionGroup, 9));
+    jspb.Message.getWrapperField(this, api_commons_org_permissions_pb.P3PermissionGroup, 10));
 };
 
 
@@ -7516,7 +7516,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getP3PermissionGro
  * @return {!proto.api.v1alpha1.org.users.GetUserByOrgIdResponse} returns this
 */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setP3PermissionGroup = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -7534,17 +7534,17 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.clearP3PermissionG
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.hasP3PermissionGroup = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional AgentProfileGroup agent_profile_group = 10;
+ * optional AgentProfileGroup agent_profile_group = 11;
  * @return {?proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.AgentProfileGroup}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getAgentProfileGroup = function() {
   return /** @type{?proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.AgentProfileGroup} */ (
-    jspb.Message.getWrapperField(this, proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.AgentProfileGroup, 10));
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.AgentProfileGroup, 11));
 };
 
 
@@ -7553,7 +7553,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getAgentProfileGro
  * @return {!proto.api.v1alpha1.org.users.GetUserByOrgIdResponse} returns this
 */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setAgentProfileGroup = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -7571,17 +7571,17 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.clearAgentProfileG
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.hasAgentProfileGroup = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * repeated api.commons.org.Trust trusts = 21;
+ * repeated api.commons.org.Trust trusts = 12;
  * @return {!Array<!proto.api.commons.org.Trust>}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getTrustsList = function() {
   return /** @type{!Array<!proto.api.commons.org.Trust>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_org_trusts_pb.Trust, 21));
+    jspb.Message.getRepeatedWrapperField(this, api_commons_org_trusts_pb.Trust, 12));
 };
 
 
@@ -7590,7 +7590,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getTrustsList = fu
  * @return {!proto.api.v1alpha1.org.users.GetUserByOrgIdResponse} returns this
 */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setTrustsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 21, value);
+  return jspb.Message.setRepeatedWrapperField(this, 12, value);
 };
 
 
@@ -7600,7 +7600,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setTrustsList = fu
  * @return {!proto.api.commons.org.Trust}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.addTrusts = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 21, opt_value, proto.api.commons.org.Trust, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.api.commons.org.Trust, opt_index);
 };
 
 
@@ -7614,11 +7614,11 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.clearTrustsList = 
 
 
 /**
- * optional bool account_owner = 22;
+ * optional bool account_owner = 13;
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getAccountOwner = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 22, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
 };
 
 
@@ -7627,16 +7627,16 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getAccountOwner = 
  * @return {!proto.api.v1alpha1.org.users.GetUserByOrgIdResponse} returns this
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setAccountOwner = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 22, value);
+  return jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
 /**
- * optional bool email_verified = 23;
+ * optional bool email_verified = 14;
  * @return {boolean}
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getEmailVerified = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 23, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
 
@@ -7645,7 +7645,7 @@ proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.getEmailVerified =
  * @return {!proto.api.v1alpha1.org.users.GetUserByOrgIdResponse} returns this
  */
 proto.api.v1alpha1.org.users.GetUserByOrgIdResponse.prototype.setEmailVerified = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 23, value);
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 

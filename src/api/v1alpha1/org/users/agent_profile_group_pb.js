@@ -321,7 +321,7 @@ proto.api.v1alpha1.org.users.GetAgentProfileGroupRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.org.users.GetAgentProfileGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -358,7 +358,7 @@ proto.api.v1alpha1.org.users.GetAgentProfileGroupRequest.deserializeBinaryFromRe
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setAgentProfileGroupId(value);
       break;
@@ -394,7 +394,7 @@ proto.api.v1alpha1.org.users.GetAgentProfileGroupRequest.serializeBinaryToWriter
   f = message.getAgentProfileGroupId();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      1,
       f
     );
   }
@@ -402,11 +402,11 @@ proto.api.v1alpha1.org.users.GetAgentProfileGroupRequest.serializeBinaryToWriter
 
 
 /**
- * optional string agent_profile_group_id = 2;
+ * optional string agent_profile_group_id = 1;
  * @return {string}
  */
 proto.api.v1alpha1.org.users.GetAgentProfileGroupRequest.prototype.getAgentProfileGroupId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -415,7 +415,7 @@ proto.api.v1alpha1.org.users.GetAgentProfileGroupRequest.prototype.getAgentProfi
  * @return {!proto.api.v1alpha1.org.users.GetAgentProfileGroupRequest} returns this
  */
 proto.api.v1alpha1.org.users.GetAgentProfileGroupRequest.prototype.setAgentProfileGroupId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
