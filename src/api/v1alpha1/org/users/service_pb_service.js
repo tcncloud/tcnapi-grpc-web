@@ -1,623 +1,643 @@
-// package: api.v0alpha
-// file: api/v0alpha/compliance.proto
+// package: api.v1alpha1.org.users
+// file: api/v1alpha1/org/users/service.proto
 
-var api_v0alpha_compliance_pb = require("../../api/v0alpha/compliance_pb");
-var google_longrunning_operations_pb = require("../../google/longrunning/operations_pb");
-var google_protobuf_empty_pb = require("google-protobuf/google/protobuf/empty_pb");
+var api_v1alpha1_org_users_service_pb = require("../../../../api/v1alpha1/org/users/service_pb");
+var api_v1alpha1_org_users_agent_profile_group_pb = require("../../../../api/v1alpha1/org/users/agent_profile_group_pb");
+var api_v1alpha1_org_users_auth_token_pb = require("../../../../api/v1alpha1/org/users/auth_token_pb");
+var api_v1alpha1_org_users_notifications_pb = require("../../../../api/v1alpha1/org/users/notifications_pb");
+var api_v1alpha1_org_users_users_pb = require("../../../../api/v1alpha1/org/users/users_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var Compliance = (function () {
-  function Compliance() {}
-  Compliance.serviceName = "api.v0alpha.Compliance";
-  return Compliance;
+var UsersService = (function () {
+  function UsersService() {}
+  UsersService.serviceName = "api.v1alpha1.org.users.UsersService";
+  return UsersService;
 }());
 
-Compliance.RuleAutoComplete = {
-  methodName: "RuleAutoComplete",
-  service: Compliance,
+UsersService.CreateUser = {
+  methodName: "CreateUser",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.RuleAutoCompleteReq,
-  responseType: api_v0alpha_compliance_pb.RuleAutoCompleteRes
+  requestType: api_v1alpha1_org_users_users_pb.CreateUserRequest,
+  responseType: api_v1alpha1_org_users_users_pb.CreateUserResponse
 };
 
-Compliance.CheckRuleSet = {
-  methodName: "CheckRuleSet",
-  service: Compliance,
+UsersService.CreateDelegatedUser = {
+  methodName: "CreateDelegatedUser",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.CheckRuleSetReq,
-  responseType: api_v0alpha_compliance_pb.CheckRuleSetRes
+  requestType: api_v1alpha1_org_users_users_pb.CreateDelegatedUserRequest,
+  responseType: api_v1alpha1_org_users_users_pb.CreateDelegatedUserResponse
 };
 
-Compliance.AssignRuleSet = {
-  methodName: "AssignRuleSet",
-  service: Compliance,
+UsersService.GetMyUser = {
+  methodName: "GetMyUser",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.AssignRuleSetReq,
-  responseType: api_v0alpha_compliance_pb.AssignRuleSetRes
+  requestType: api_v1alpha1_org_users_users_pb.GetMyUserRequest,
+  responseType: api_v1alpha1_org_users_users_pb.GetMyUserResponse
 };
 
-Compliance.ListRuleSets = {
-  methodName: "ListRuleSets",
-  service: Compliance,
+UsersService.GetUser = {
+  methodName: "GetUser",
+  service: UsersService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_users_users_pb.GetUserRequest,
+  responseType: api_v1alpha1_org_users_users_pb.GetUserResponse
+};
+
+UsersService.GetUserByOrgId = {
+  methodName: "GetUserByOrgId",
+  service: UsersService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_users_users_pb.GetUserByOrgIdRequest,
+  responseType: api_v1alpha1_org_users_users_pb.GetUserByOrgIdResponse
+};
+
+UsersService.ListAgents = {
+  methodName: "ListAgents",
+  service: UsersService,
   requestStream: false,
   responseStream: true,
-  requestType: api_v0alpha_compliance_pb.ListRuleSetsReq,
-  responseType: api_v0alpha_compliance_pb.ListRuleSetsRes
+  requestType: api_v1alpha1_org_users_users_pb.ListAgentsRequest,
+  responseType: api_v1alpha1_org_users_users_pb.ListAgentsResponse
 };
 
-Compliance.GetRuleSet = {
-  methodName: "GetRuleSet",
-  service: Compliance,
+UsersService.ListPublicUsers = {
+  methodName: "ListPublicUsers",
+  service: UsersService,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_org_users_users_pb.ListPublicUsersRequest,
+  responseType: api_v1alpha1_org_users_users_pb.ListPublicUsersResponse
+};
+
+UsersService.ListUsers = {
+  methodName: "ListUsers",
+  service: UsersService,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_org_users_users_pb.ListUsersRequest,
+  responseType: api_v1alpha1_org_users_users_pb.ListUsersResponse
+};
+
+UsersService.ListUsersByOrgId = {
+  methodName: "ListUsersByOrgId",
+  service: UsersService,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_org_users_users_pb.ListUsersByOrgIdRequest,
+  responseType: api_v1alpha1_org_users_users_pb.ListUsersByOrgIdResponse
+};
+
+UsersService.ListUsersByRegion = {
+  methodName: "ListUsersByRegion",
+  service: UsersService,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_org_users_users_pb.ListUsersByRegionRequest,
+  responseType: api_v1alpha1_org_users_users_pb.ListUsersByRegionResponse
+};
+
+UsersService.UpdateMyUser = {
+  methodName: "UpdateMyUser",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetRuleSetReq,
-  responseType: api_v0alpha_compliance_pb.RuleSet
+  requestType: api_v1alpha1_org_users_users_pb.UpdateMyUserRequest,
+  responseType: api_v1alpha1_org_users_users_pb.UpdateMyUserResponse
 };
 
-Compliance.GetRuleSetByName = {
-  methodName: "GetRuleSetByName",
-  service: Compliance,
+UsersService.UpdateUser = {
+  methodName: "UpdateUser",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetRuleSetByNameReq,
-  responseType: api_v0alpha_compliance_pb.RuleSet
+  requestType: api_v1alpha1_org_users_users_pb.UpdateUserRequest,
+  responseType: api_v1alpha1_org_users_users_pb.UpdateUserResponse
 };
 
-Compliance.CreateRuleSet = {
-  methodName: "CreateRuleSet",
-  service: Compliance,
+UsersService.UpdateUserLabels = {
+  methodName: "UpdateUserLabels",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.CreateRuleSetReq,
-  responseType: api_v0alpha_compliance_pb.RuleSet
+  requestType: api_v1alpha1_org_users_users_pb.UpdateUserLabelsRequest,
+  responseType: api_v1alpha1_org_users_users_pb.UpdateUserLabelsResponse
 };
 
-Compliance.RenameRuleSet = {
-  methodName: "RenameRuleSet",
-  service: Compliance,
+UsersService.UpdateUserCallerId = {
+  methodName: "UpdateUserCallerId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.RenameRuleSetReq,
-  responseType: api_v0alpha_compliance_pb.RenameRuleSetRes
+  requestType: api_v1alpha1_org_users_users_pb.UpdateUserCallerIdRequest,
+  responseType: api_v1alpha1_org_users_users_pb.UpdateUserCallerIdResponse
 };
 
-Compliance.EnableRuleSet = {
-  methodName: "EnableRuleSet",
-  service: Compliance,
+UsersService.UpdateUserDisabled = {
+  methodName: "UpdateUserDisabled",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.EnableRuleSetReq,
-  responseType: api_v0alpha_compliance_pb.EnableRuleSetRes
+  requestType: api_v1alpha1_org_users_users_pb.UpdateUserDisabledRequest,
+  responseType: api_v1alpha1_org_users_users_pb.UpdateUserDisabledResponse
 };
 
-Compliance.DisableRuleSet = {
-  methodName: "DisableRuleSet",
-  service: Compliance,
+UsersService.UpdateUserDisabledByOrgId = {
+  methodName: "UpdateUserDisabledByOrgId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.DisableRuleSetReq,
-  responseType: api_v0alpha_compliance_pb.DisableRuleSetRes
+  requestType: api_v1alpha1_org_users_users_pb.UpdateUserDisabledByOrgIdRequest,
+  responseType: api_v1alpha1_org_users_users_pb.UpdateUserDisabledByOrgIdResponse
 };
 
-Compliance.CreateScrubList = {
-  methodName: "CreateScrubList",
-  service: Compliance,
+UsersService.GetMyUserPasswordResetLink = {
+  methodName: "GetMyUserPasswordResetLink",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.CreateScrubListReq,
-  responseType: api_v0alpha_compliance_pb.ScrubListRes
+  requestType: api_v1alpha1_org_users_users_pb.GetMyUserPasswordResetLinkRequest,
+  responseType: api_v1alpha1_org_users_users_pb.GetMyUserPasswordResetLinkResponse
 };
 
-Compliance.AddScrubListEntries = {
-  methodName: "AddScrubListEntries",
-  service: Compliance,
+UsersService.GetUserPasswordResetLink = {
+  methodName: "GetUserPasswordResetLink",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.AddScrubListEntriesReq,
-  responseType: api_v0alpha_compliance_pb.ScrubListRes
+  requestType: api_v1alpha1_org_users_users_pb.GetUserPasswordResetLinkRequest,
+  responseType: api_v1alpha1_org_users_users_pb.GetUserPasswordResetLinkResponse
 };
 
-Compliance.UpdateScrubEntry = {
-  methodName: "UpdateScrubEntry",
-  service: Compliance,
+UsersService.GetUserPasswordResetLinkByOrgId = {
+  methodName: "GetUserPasswordResetLinkByOrgId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.UpdateScrubEntryReq,
-  responseType: api_v0alpha_compliance_pb.UpdateScrubEntryRes
+  requestType: api_v1alpha1_org_users_users_pb.GetUserPasswordResetLinkByOrgIdRequest,
+  responseType: api_v1alpha1_org_users_users_pb.GetUserPasswordResetLinkByOrgIdResponse
 };
 
-Compliance.DeleteScrubListEntries = {
-  methodName: "DeleteScrubListEntries",
-  service: Compliance,
+UsersService.CreatePasswordResetLink = {
+  methodName: "CreatePasswordResetLink",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.DeleteScrubListEntriesReq,
-  responseType: api_v0alpha_compliance_pb.ScrubListRes
+  requestType: api_v1alpha1_org_users_users_pb.CreatePasswordResetLinkRequest,
+  responseType: api_v1alpha1_org_users_users_pb.CreatePasswordResetLinkResponse
 };
 
-Compliance.GetScrubList = {
-  methodName: "GetScrubList",
-  service: Compliance,
+UsersService.CreatePasswordResetLinkByOrgId = {
+  methodName: "CreatePasswordResetLinkByOrgId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetScrubListReq,
-  responseType: api_v0alpha_compliance_pb.ScrubListRes
+  requestType: api_v1alpha1_org_users_users_pb.CreatePasswordResetLinkByOrgIdRequest,
+  responseType: api_v1alpha1_org_users_users_pb.CreatePasswordResetLinkByOrgIdResponse
 };
 
-Compliance.DeleteScrubList = {
-  methodName: "DeleteScrubList",
-  service: Compliance,
+UsersService.GetUserLoginInfo = {
+  methodName: "GetUserLoginInfo",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.DeleteScrubListReq,
-  responseType: api_v0alpha_compliance_pb.ScrubListRes
+  requestType: api_v1alpha1_org_users_users_pb.GetUserLoginInfoRequest,
+  responseType: api_v1alpha1_org_users_users_pb.GetUserLoginInfoResponse
 };
 
-Compliance.GetDefaultRules = {
-  methodName: "GetDefaultRules",
-  service: Compliance,
+UsersService.GetUserEmailVerified = {
+  methodName: "GetUserEmailVerified",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetDefaultRulesReq,
-  responseType: api_v0alpha_compliance_pb.GetDefaultRulesRes
+  requestType: api_v1alpha1_org_users_users_pb.GetUserEmailVerifiedRequest,
+  responseType: api_v1alpha1_org_users_users_pb.GetUserEmailVerifiedResponse
 };
 
-Compliance.GetScrubLists = {
-  methodName: "GetScrubLists",
-  service: Compliance,
+UsersService.GetUserEmailVerifiedByOrgId = {
+  methodName: "GetUserEmailVerifiedByOrgId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetScrubListsReq,
-  responseType: api_v0alpha_compliance_pb.ScrubListsRes
+  requestType: api_v1alpha1_org_users_users_pb.GetUserEmailVerifiedByOrgIdRequest,
+  responseType: api_v1alpha1_org_users_users_pb.GetUserEmailVerifiedByOrgIdResponse
 };
 
-Compliance.SearchScrubList = {
-  methodName: "SearchScrubList",
-  service: Compliance,
+UsersService.ResetMyPassword = {
+  methodName: "ResetMyPassword",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.SearchScrubListReq,
-  responseType: api_v0alpha_compliance_pb.ScrubList
+  requestType: api_v1alpha1_org_users_users_pb.ResetMyPasswordRequest,
+  responseType: api_v1alpha1_org_users_users_pb.ResetMyPasswordResponse
 };
 
-Compliance.GetScrubListUploadUrl = {
-  methodName: "GetScrubListUploadUrl",
-  service: Compliance,
+UsersService.ResetUserPassword = {
+  methodName: "ResetUserPassword",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetScrubListUploadUrlReq,
-  responseType: api_v0alpha_compliance_pb.GetScrubListUploadUrlRes
+  requestType: api_v1alpha1_org_users_users_pb.ResetUserPasswordRequest,
+  responseType: api_v1alpha1_org_users_users_pb.ResetUserPasswordResponse
 };
 
-Compliance.ProcessScrubListUpload = {
-  methodName: "ProcessScrubListUpload",
-  service: Compliance,
+UsersService.ResetUserPasswordByOrgId = {
+  methodName: "ResetUserPasswordByOrgId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ProcessScrubListUploadReq,
-  responseType: google_longrunning_operations_pb.Operation
+  requestType: api_v1alpha1_org_users_users_pb.ResetUserPasswordByOrgIdRequest,
+  responseType: api_v1alpha1_org_users_users_pb.ResetUserPasswordByOrgIdResponse
 };
 
-Compliance.ScrubListDownload = {
-  methodName: "ScrubListDownload",
-  service: Compliance,
+UsersService.SendUserEmailVerification = {
+  methodName: "SendUserEmailVerification",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ScrubListDownloadRequest,
-  responseType: google_longrunning_operations_pb.Operation
+  requestType: api_v1alpha1_org_users_users_pb.SendUserEmailVerificationRequest,
+  responseType: api_v1alpha1_org_users_users_pb.SendUserEmailVerificationResponse
 };
 
-Compliance.ProcessScrubListDeleteUpload = {
-  methodName: "ProcessScrubListDeleteUpload",
-  service: Compliance,
+UsersService.SendUserEmailVerificationByOrgId = {
+  methodName: "SendUserEmailVerificationByOrgId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ProcessScrubListDeleteUploadReq,
-  responseType: google_longrunning_operations_pb.Operation
+  requestType: api_v1alpha1_org_users_users_pb.SendUserEmailVerificationByOrgIdRequest,
+  responseType: api_v1alpha1_org_users_users_pb.SendUserEmailVerificationByOrgIdResponse
 };
 
-Compliance.ExportScrubList = {
-  methodName: "ExportScrubList",
-  service: Compliance,
+UsersService.SendPasswordReset = {
+  methodName: "SendPasswordReset",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ExportScrubListReq,
-  responseType: api_v0alpha_compliance_pb.ExportScrubListRes
+  requestType: api_v1alpha1_org_users_users_pb.SendPasswordResetRequest,
+  responseType: api_v1alpha1_org_users_users_pb.SendPasswordResetResponse
 };
 
-Compliance.PurgeScrubList = {
-  methodName: "PurgeScrubList",
-  service: Compliance,
+UsersService.SendPasswordResetByOrgId = {
+  methodName: "SendPasswordResetByOrgId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.PurgeScrubListReq,
-  responseType: api_v0alpha_compliance_pb.PurgeScrubListRes
+  requestType: api_v1alpha1_org_users_users_pb.SendPasswordResetByOrgIdRequest,
+  responseType: api_v1alpha1_org_users_users_pb.SendPasswordResetByOrgIdResponse
 };
 
-Compliance.CreateScenario = {
-  methodName: "CreateScenario",
-  service: Compliance,
+UsersService.GetUserSessionData = {
+  methodName: "GetUserSessionData",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.CreateScenarioReq,
-  responseType: api_v0alpha_compliance_pb.CreateScenarioRes
+  requestType: api_v1alpha1_org_users_users_pb.GetUserSessionDataRequest,
+  responseType: api_v1alpha1_org_users_users_pb.GetUserSessionDataResponse
 };
 
-Compliance.GetScenario = {
-  methodName: "GetScenario",
-  service: Compliance,
+UsersService.GetAgentProfileGroup = {
+  methodName: "GetAgentProfileGroup",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetScenarioReq,
-  responseType: api_v0alpha_compliance_pb.GetScenarioRes
+  requestType: api_v1alpha1_org_users_agent_profile_group_pb.GetAgentProfileGroupRequest,
+  responseType: api_v1alpha1_org_users_agent_profile_group_pb.GetAgentProfileGroupResponse
 };
 
-Compliance.UpdateScenario = {
-  methodName: "UpdateScenario",
-  service: Compliance,
+UsersService.ListAgentProfileGroups = {
+  methodName: "ListAgentProfileGroups",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.UpdateScenarioReq,
-  responseType: api_v0alpha_compliance_pb.UpdateScenarioRes
+  requestType: api_v1alpha1_org_users_agent_profile_group_pb.ListAgentProfileGroupsRequest,
+  responseType: api_v1alpha1_org_users_agent_profile_group_pb.ListAgentProfileGroupsResponse
 };
 
-Compliance.DeleteScenario = {
-  methodName: "DeleteScenario",
-  service: Compliance,
+UsersService.UpdateAgentProfileGroup = {
+  methodName: "UpdateAgentProfileGroup",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.DeleteScenarioReq,
-  responseType: api_v0alpha_compliance_pb.DeleteScenarioRes
+  requestType: api_v1alpha1_org_users_agent_profile_group_pb.UpdateAgentProfileGroupRequest,
+  responseType: api_v1alpha1_org_users_agent_profile_group_pb.UpdateAgentProfileGroupResponse
 };
 
-Compliance.RunAssignedScenarios = {
-  methodName: "RunAssignedScenarios",
-  service: Compliance,
+UsersService.CreateAgentProfileGroup = {
+  methodName: "CreateAgentProfileGroup",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.RunAssignedScenariosReq,
-  responseType: api_v0alpha_compliance_pb.RunAssignedScenariosRes
+  requestType: api_v1alpha1_org_users_agent_profile_group_pb.CreateAgentProfileGroupRequest,
+  responseType: api_v1alpha1_org_users_agent_profile_group_pb.CreateAgentProfileGroupResponse
 };
 
-Compliance.ListAllScenarios = {
-  methodName: "ListAllScenarios",
-  service: Compliance,
+UsersService.DeleteAgentProfileGroup = {
+  methodName: "DeleteAgentProfileGroup",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ListAllScenariosReq,
-  responseType: api_v0alpha_compliance_pb.ListAllScenariosRes
+  requestType: api_v1alpha1_org_users_agent_profile_group_pb.DeleteAgentProfileGroupRequest,
+  responseType: api_v1alpha1_org_users_agent_profile_group_pb.DeleteAgentProfileGroupResponse
 };
 
-Compliance.ListUnassignedScenarios = {
-  methodName: "ListUnassignedScenarios",
-  service: Compliance,
+UsersService.AssignAgentProfileGroups = {
+  methodName: "AssignAgentProfileGroups",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ListUnassignedScenariosReq,
-  responseType: api_v0alpha_compliance_pb.ListUnassignedScenariosRes
+  requestType: api_v1alpha1_org_users_agent_profile_group_pb.AssignAgentProfileGroupsRequest,
+  responseType: api_v1alpha1_org_users_agent_profile_group_pb.AssignAgentProfileGroupsResponse
 };
 
-Compliance.ListAssignedRuleSets = {
-  methodName: "ListAssignedRuleSets",
-  service: Compliance,
+UsersService.AddUserSubscription = {
+  methodName: "AddUserSubscription",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ListAssignedRuleSetsReq,
-  responseType: api_v0alpha_compliance_pb.ListAssignedRuleSetsRes
+  requestType: api_v1alpha1_org_users_notifications_pb.AddUserSubscriptionRequest,
+  responseType: api_v1alpha1_org_users_notifications_pb.AddUserSubscriptionResponse
 };
 
-Compliance.ListAssignedScenarios = {
-  methodName: "ListAssignedScenarios",
-  service: Compliance,
+UsersService.AddUserSubscriptionByUserId = {
+  methodName: "AddUserSubscriptionByUserId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ListAssignedScenariosReq,
-  responseType: api_v0alpha_compliance_pb.ListAssignedScenariosRes
+  requestType: api_v1alpha1_org_users_notifications_pb.AddUserSubscriptionByUserIdRequest,
+  responseType: api_v1alpha1_org_users_notifications_pb.AddUserSubscriptionByUserIdResponse
 };
 
-Compliance.AssignScenario = {
-  methodName: "AssignScenario",
-  service: Compliance,
+UsersService.GetUserSubscription = {
+  methodName: "GetUserSubscription",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.AssignScenarioReq,
-  responseType: google_protobuf_empty_pb.Empty
+  requestType: api_v1alpha1_org_users_notifications_pb.GetUserSubscriptionRequest,
+  responseType: api_v1alpha1_org_users_notifications_pb.GetUserSubscriptionResponse
 };
 
-Compliance.UnassignScenario = {
-  methodName: "UnassignScenario",
-  service: Compliance,
+UsersService.GetUserSubscriptionByUserId = {
+  methodName: "GetUserSubscriptionByUserId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.UnassignScenarioReq,
-  responseType: google_protobuf_empty_pb.Empty
+  requestType: api_v1alpha1_org_users_notifications_pb.GetUserSubscriptionByUserIdRequest,
+  responseType: api_v1alpha1_org_users_notifications_pb.GetUserSubscriptionByUserIdResponse
 };
 
-Compliance.EnableScenario = {
-  methodName: "EnableScenario",
-  service: Compliance,
+UsersService.UpdateUserSubscription = {
+  methodName: "UpdateUserSubscription",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.EnableScenarioReq,
-  responseType: google_protobuf_empty_pb.Empty
+  requestType: api_v1alpha1_org_users_notifications_pb.UpdateUserSubscriptionRequest,
+  responseType: api_v1alpha1_org_users_notifications_pb.UpdateUserSubscriptionResponse
 };
 
-Compliance.DisableScenario = {
-  methodName: "DisableScenario",
-  service: Compliance,
+UsersService.UpdateUserSubscriptionByUserId = {
+  methodName: "UpdateUserSubscriptionByUserId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.DisableScenarioReq,
-  responseType: google_protobuf_empty_pb.Empty
+  requestType: api_v1alpha1_org_users_notifications_pb.UpdateUserSubscriptionByUserIdRequest,
+  responseType: api_v1alpha1_org_users_notifications_pb.UpdateUserSubscriptionByUserIdResponse
 };
 
-Compliance.GetFieldNames = {
-  methodName: "GetFieldNames",
-  service: Compliance,
+UsersService.RemoveUserSubscription = {
+  methodName: "RemoveUserSubscription",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetFieldNamesReq,
-  responseType: api_v0alpha_compliance_pb.FieldNames
+  requestType: api_v1alpha1_org_users_notifications_pb.RemoveUserSubscriptionRequest,
+  responseType: api_v1alpha1_org_users_notifications_pb.RemoveUserSubscriptionResponse
 };
 
-Compliance.GetResultDescriptions = {
-  methodName: "GetResultDescriptions",
-  service: Compliance,
+UsersService.RemoveUserSubscriptionByUserId = {
+  methodName: "RemoveUserSubscriptionByUserId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetResultDescriptionsReq,
-  responseType: api_v0alpha_compliance_pb.FieldNames
+  requestType: api_v1alpha1_org_users_notifications_pb.RemoveUserSubscriptionByUserIdRequest,
+  responseType: api_v1alpha1_org_users_notifications_pb.RemoveUserSubscriptionByUserIdResponse
 };
 
-Compliance.CreateConsentProfile = {
-  methodName: "CreateConsentProfile",
-  service: Compliance,
+UsersService.ListUserSubscriptions = {
+  methodName: "ListUserSubscriptions",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.CreateConsentProfileReq,
-  responseType: api_v0alpha_compliance_pb.CreateConsentProfileRes
+  requestType: api_v1alpha1_org_users_notifications_pb.ListUserSubscriptionsRequest,
+  responseType: api_v1alpha1_org_users_notifications_pb.ListUserSubscriptionsResponse
 };
 
-Compliance.CreateConsent = {
-  methodName: "CreateConsent",
-  service: Compliance,
+UsersService.ListUserSubscriptionsByUserId = {
+  methodName: "ListUserSubscriptionsByUserId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.CreateConsentReq,
-  responseType: api_v0alpha_compliance_pb.CreateConsentRes
+  requestType: api_v1alpha1_org_users_notifications_pb.ListUserSubscriptionsByUserIdRequest,
+  responseType: api_v1alpha1_org_users_notifications_pb.ListUserSubscriptionsByUserIdResponse
 };
 
-Compliance.GetConsentProfile = {
-  methodName: "GetConsentProfile",
-  service: Compliance,
+UsersService.ListOrgSubscriptions = {
+  methodName: "ListOrgSubscriptions",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetConsentProfileReq,
-  responseType: api_v0alpha_compliance_pb.ConsentProfile
+  requestType: api_v1alpha1_org_users_notifications_pb.ListOrgSubscriptionsRequest,
+  responseType: api_v1alpha1_org_users_notifications_pb.ListOrgSubscriptionsResponse
 };
 
-Compliance.GetConsent = {
-  methodName: "GetConsent",
-  service: Compliance,
+UsersService.CreateAuthToken = {
+  methodName: "CreateAuthToken",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetConsentReq,
-  responseType: api_v0alpha_compliance_pb.Consent
+  requestType: api_v1alpha1_org_users_auth_token_pb.CreateAuthTokenRequest,
+  responseType: api_v1alpha1_org_users_auth_token_pb.CreateAuthTokenResponse
 };
 
-Compliance.GetConsentByProfileAndContent = {
-  methodName: "GetConsentByProfileAndContent",
-  service: Compliance,
+UsersService.CreateAuthTokenByUserId = {
+  methodName: "CreateAuthTokenByUserId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetConsentByProfileAndContentReq,
-  responseType: api_v0alpha_compliance_pb.GetConsentByProfileAndContentRes
+  requestType: api_v1alpha1_org_users_auth_token_pb.CreateAuthTokenByUserIdRequest,
+  responseType: api_v1alpha1_org_users_auth_token_pb.CreateAuthTokenByUserIdResponse
 };
 
-Compliance.GetConsentByContent = {
-  methodName: "GetConsentByContent",
-  service: Compliance,
+UsersService.ListAuthTokens = {
+  methodName: "ListAuthTokens",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetConsentByContentReq,
-  responseType: api_v0alpha_compliance_pb.GetConsentByContentRes
+  requestType: api_v1alpha1_org_users_auth_token_pb.ListAuthTokensRequest,
+  responseType: api_v1alpha1_org_users_auth_token_pb.ListAuthTokensResponse
 };
 
-Compliance.SearchConsentByContent = {
-  methodName: "SearchConsentByContent",
-  service: Compliance,
+UsersService.ListAuthTokensByUserId = {
+  methodName: "ListAuthTokensByUserId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.SearchConsentByContentReq,
-  responseType: api_v0alpha_compliance_pb.SearchConsentByContentRes
+  requestType: api_v1alpha1_org_users_auth_token_pb.ListAuthTokensByUserIdRequest,
+  responseType: api_v1alpha1_org_users_auth_token_pb.ListAuthTokensByUserIdResponse
 };
 
-Compliance.UpdateConsent = {
-  methodName: "UpdateConsent",
-  service: Compliance,
+UsersService.SetAuthTokenExpiration = {
+  methodName: "SetAuthTokenExpiration",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.UpdateConsentReq,
-  responseType: google_protobuf_empty_pb.Empty
+  requestType: api_v1alpha1_org_users_auth_token_pb.SetAuthTokenExpirationRequest,
+  responseType: api_v1alpha1_org_users_auth_token_pb.SetAuthTokenExpirationResponse
 };
 
-Compliance.ExpireConsent = {
-  methodName: "ExpireConsent",
-  service: Compliance,
+UsersService.SetAuthTokenExpirationByUserId = {
+  methodName: "SetAuthTokenExpirationByUserId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ExpireConsentReq,
-  responseType: google_protobuf_empty_pb.Empty
+  requestType: api_v1alpha1_org_users_auth_token_pb.SetAuthTokenExpirationByUserIdRequest,
+  responseType: api_v1alpha1_org_users_auth_token_pb.SetAuthTokenExpirationByUserIdResponse
 };
 
-Compliance.RevokeConsent = {
-  methodName: "RevokeConsent",
-  service: Compliance,
+UsersService.DeleteAuthToken = {
+  methodName: "DeleteAuthToken",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.RevokeConsentReq,
-  responseType: google_protobuf_empty_pb.Empty
+  requestType: api_v1alpha1_org_users_auth_token_pb.DeleteAuthTokenRequest,
+  responseType: api_v1alpha1_org_users_auth_token_pb.DeleteAuthTokenResponse
 };
 
-Compliance.DeleteConsent = {
-  methodName: "DeleteConsent",
-  service: Compliance,
+UsersService.DeleteAuthTokenByUserId = {
+  methodName: "DeleteAuthTokenByUserId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.DeleteConsentReq,
-  responseType: google_protobuf_empty_pb.Empty
+  requestType: api_v1alpha1_org_users_auth_token_pb.DeleteAuthTokenByUserIdRequest,
+  responseType: api_v1alpha1_org_users_auth_token_pb.DeleteAuthTokenByUserIdResponse
 };
 
-Compliance.ProcessConsentListDeleteUpload = {
-  methodName: "ProcessConsentListDeleteUpload",
-  service: Compliance,
+UsersService.RefreshMfaLockout = {
+  methodName: "RefreshMfaLockout",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ProcessConsentListDeleteUploadReq,
-  responseType: google_longrunning_operations_pb.Operation
+  requestType: api_v1alpha1_org_users_users_pb.RefreshMfaLockoutRequest,
+  responseType: api_v1alpha1_org_users_users_pb.RefreshMfaLockoutResponse
 };
 
-Compliance.ConsentListDownload = {
-  methodName: "ConsentListDownload",
-  service: Compliance,
+UsersService.RefreshMfaLockoutByOrgId = {
+  methodName: "RefreshMfaLockoutByOrgId",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ConsentListDownloadRequest,
-  responseType: google_longrunning_operations_pb.Operation
+  requestType: api_v1alpha1_org_users_users_pb.RefreshMfaLockoutByOrgIdRequest,
+  responseType: api_v1alpha1_org_users_users_pb.RefreshMfaLockoutByOrgIdResponse
 };
 
-Compliance.EnableConsentProfile = {
-  methodName: "EnableConsentProfile",
-  service: Compliance,
+UsersService.SetMfaType = {
+  methodName: "SetMfaType",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.EnableConsentProfileReq,
-  responseType: google_protobuf_empty_pb.Empty
+  requestType: api_v1alpha1_org_users_users_pb.SetMfaTypeRequest,
+  responseType: api_v1alpha1_org_users_users_pb.SetMfaTypeResponse
 };
 
-Compliance.DisableConsentProfile = {
-  methodName: "DisableConsentProfile",
-  service: Compliance,
+UsersService.SetMyMfaType = {
+  methodName: "SetMyMfaType",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.DisableConsentProfileReq,
-  responseType: google_protobuf_empty_pb.Empty
+  requestType: api_v1alpha1_org_users_users_pb.SetMyMfaTypeRequest,
+  responseType: api_v1alpha1_org_users_users_pb.SetMyMfaTypeResponse
 };
 
-Compliance.ListConsentProfiles = {
-  methodName: "ListConsentProfiles",
-  service: Compliance,
+UsersService.EnableUserMfa = {
+  methodName: "EnableUserMfa",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ListConsentProfilesReq,
-  responseType: api_v0alpha_compliance_pb.ListConsentProfilesRes
+  requestType: api_v1alpha1_org_users_users_pb.EnableUserMfaRequest,
+  responseType: api_v1alpha1_org_users_users_pb.EnableUserMfaResponse
 };
 
-Compliance.GetConsentUploadUrl = {
-  methodName: "GetConsentUploadUrl",
-  service: Compliance,
+UsersService.EnableMyUserMfa = {
+  methodName: "EnableMyUserMfa",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetConsentUploadUrlReq,
-  responseType: api_v0alpha_compliance_pb.GetConsentUploadUrlRes
+  requestType: api_v1alpha1_org_users_users_pb.EnableMyUserMfaRequest,
+  responseType: api_v1alpha1_org_users_users_pb.EnableMyUserMfaResponse
 };
 
-Compliance.ProcessConsentUpload = {
-  methodName: "ProcessConsentUpload",
-  service: Compliance,
+UsersService.GetUserMfaInfo = {
+  methodName: "GetUserMfaInfo",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ProcessConsentUploadReq,
-  responseType: google_longrunning_operations_pb.Operation
+  requestType: api_v1alpha1_org_users_users_pb.GetUserMfaInfoRequest,
+  responseType: api_v1alpha1_org_users_users_pb.GetUserMfaInfoResponse
 };
 
-Compliance.ExportConsentList = {
-  methodName: "ExportConsentList",
-  service: Compliance,
+UsersService.GetMyUserMfaInfo = {
+  methodName: "GetMyUserMfaInfo",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ExportConsentListRequest,
-  responseType: api_v0alpha_compliance_pb.ExportConsentListResponse
+  requestType: api_v1alpha1_org_users_users_pb.GetMyUserMfaInfoRequest,
+  responseType: api_v1alpha1_org_users_users_pb.GetMyUserMfaInfoResponse
 };
 
-Compliance.ListConsentTopics = {
-  methodName: "ListConsentTopics",
-  service: Compliance,
+UsersService.AddGroupedUserIPRestrictions = {
+  methodName: "AddGroupedUserIPRestrictions",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ListConsentTopicsReq,
-  responseType: api_v0alpha_compliance_pb.ListConsentTopicsRes
+  requestType: api_v1alpha1_org_users_users_pb.AddGroupedUserIPRestrictionsRequest,
+  responseType: api_v1alpha1_org_users_users_pb.AddGroupedUserIPRestrictionsResponse
 };
 
-Compliance.GetConsentTopic = {
-  methodName: "GetConsentTopic",
-  service: Compliance,
+UsersService.RemoveGroupedUserIPRestrictions = {
+  methodName: "RemoveGroupedUserIPRestrictions",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.GetConsentTopicReq,
-  responseType: api_v0alpha_compliance_pb.ConsentTopic
+  requestType: api_v1alpha1_org_users_users_pb.RemoveGroupedUserIPRestrictionsRequest,
+  responseType: api_v1alpha1_org_users_users_pb.RemoveGroupedUserIPRestrictionsResponse
 };
 
-Compliance.CreateConsentTopic = {
-  methodName: "CreateConsentTopic",
-  service: Compliance,
+UsersService.ListUsersAllowedIps = {
+  methodName: "ListUsersAllowedIps",
+  service: UsersService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ConsentTopic,
-  responseType: api_v0alpha_compliance_pb.Empty
+  requestType: api_v1alpha1_org_users_users_pb.ListUsersAllowedIpsRequest,
+  responseType: api_v1alpha1_org_users_users_pb.ListUsersAllowedIpsResponse
 };
 
-Compliance.DeleteConsentTopic = {
-  methodName: "DeleteConsentTopic",
-  service: Compliance,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ConsentTopic,
-  responseType: api_v0alpha_compliance_pb.Empty
-};
+exports.UsersService = UsersService;
 
-Compliance.UpdateConsentTopic = {
-  methodName: "UpdateConsentTopic",
-  service: Compliance,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_compliance_pb.UpdateConsentTopicReq,
-  responseType: api_v0alpha_compliance_pb.Empty
-};
-
-Compliance.ProcessOutboundCall = {
-  methodName: "ProcessOutboundCall",
-  service: Compliance,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_compliance_pb.ProcessOutboundCallReq,
-  responseType: api_v0alpha_compliance_pb.ProcessRes
-};
-
-Compliance.QueryHolidays = {
-  methodName: "QueryHolidays",
-  service: Compliance,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_compliance_pb.QueryHolidaysRequest,
-  responseType: api_v0alpha_compliance_pb.QueryHolidaysResponse
-};
-
-exports.Compliance = Compliance;
-
-function ComplianceClient(serviceHost, options) {
+function UsersServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-ComplianceClient.prototype.ruleAutoComplete = function ruleAutoComplete(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.createUser = function createUser(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.RuleAutoComplete, {
+  var client = grpc.unary(UsersService.CreateUser, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -644,11 +664,11 @@ ComplianceClient.prototype.ruleAutoComplete = function ruleAutoComplete(requestM
   };
 };
 
-ComplianceClient.prototype.checkRuleSet = function checkRuleSet(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.createDelegatedUser = function createDelegatedUser(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.CheckRuleSet, {
+  var client = grpc.unary(UsersService.CreateDelegatedUser, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -675,11 +695,11 @@ ComplianceClient.prototype.checkRuleSet = function checkRuleSet(requestMessage, 
   };
 };
 
-ComplianceClient.prototype.assignRuleSet = function assignRuleSet(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.getMyUser = function getMyUser(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.AssignRuleSet, {
+  var client = grpc.unary(UsersService.GetMyUser, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -706,13 +726,75 @@ ComplianceClient.prototype.assignRuleSet = function assignRuleSet(requestMessage
   };
 };
 
-ComplianceClient.prototype.listRuleSets = function listRuleSets(requestMessage, metadata) {
+UsersServiceClient.prototype.getUser = function getUser(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(UsersService.GetUser, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+UsersServiceClient.prototype.getUserByOrgId = function getUserByOrgId(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(UsersService.GetUserByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+UsersServiceClient.prototype.listAgents = function listAgents(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(Compliance.ListRuleSets, {
+  var client = grpc.invoke(UsersService.ListAgents, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -745,11 +827,167 @@ ComplianceClient.prototype.listRuleSets = function listRuleSets(requestMessage, 
   };
 };
 
-ComplianceClient.prototype.getRuleSet = function getRuleSet(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.listPublicUsers = function listPublicUsers(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(UsersService.ListPublicUsers, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
+UsersServiceClient.prototype.listUsers = function listUsers(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(UsersService.ListUsers, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
+UsersServiceClient.prototype.listUsersByOrgId = function listUsersByOrgId(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(UsersService.ListUsersByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
+UsersServiceClient.prototype.listUsersByRegion = function listUsersByRegion(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(UsersService.ListUsersByRegion, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
+UsersServiceClient.prototype.updateMyUser = function updateMyUser(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetRuleSet, {
+  var client = grpc.unary(UsersService.UpdateMyUser, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -776,11 +1014,11 @@ ComplianceClient.prototype.getRuleSet = function getRuleSet(requestMessage, meta
   };
 };
 
-ComplianceClient.prototype.getRuleSetByName = function getRuleSetByName(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.updateUser = function updateUser(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetRuleSetByName, {
+  var client = grpc.unary(UsersService.UpdateUser, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -807,11 +1045,11 @@ ComplianceClient.prototype.getRuleSetByName = function getRuleSetByName(requestM
   };
 };
 
-ComplianceClient.prototype.createRuleSet = function createRuleSet(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.updateUserLabels = function updateUserLabels(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.CreateRuleSet, {
+  var client = grpc.unary(UsersService.UpdateUserLabels, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -838,11 +1076,11 @@ ComplianceClient.prototype.createRuleSet = function createRuleSet(requestMessage
   };
 };
 
-ComplianceClient.prototype.renameRuleSet = function renameRuleSet(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.updateUserCallerId = function updateUserCallerId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.RenameRuleSet, {
+  var client = grpc.unary(UsersService.UpdateUserCallerId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -869,11 +1107,11 @@ ComplianceClient.prototype.renameRuleSet = function renameRuleSet(requestMessage
   };
 };
 
-ComplianceClient.prototype.enableRuleSet = function enableRuleSet(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.updateUserDisabled = function updateUserDisabled(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.EnableRuleSet, {
+  var client = grpc.unary(UsersService.UpdateUserDisabled, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -900,11 +1138,11 @@ ComplianceClient.prototype.enableRuleSet = function enableRuleSet(requestMessage
   };
 };
 
-ComplianceClient.prototype.disableRuleSet = function disableRuleSet(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.updateUserDisabledByOrgId = function updateUserDisabledByOrgId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.DisableRuleSet, {
+  var client = grpc.unary(UsersService.UpdateUserDisabledByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -931,11 +1169,11 @@ ComplianceClient.prototype.disableRuleSet = function disableRuleSet(requestMessa
   };
 };
 
-ComplianceClient.prototype.createScrubList = function createScrubList(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.getMyUserPasswordResetLink = function getMyUserPasswordResetLink(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.CreateScrubList, {
+  var client = grpc.unary(UsersService.GetMyUserPasswordResetLink, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -962,11 +1200,11 @@ ComplianceClient.prototype.createScrubList = function createScrubList(requestMes
   };
 };
 
-ComplianceClient.prototype.addScrubListEntries = function addScrubListEntries(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.getUserPasswordResetLink = function getUserPasswordResetLink(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.AddScrubListEntries, {
+  var client = grpc.unary(UsersService.GetUserPasswordResetLink, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -993,11 +1231,11 @@ ComplianceClient.prototype.addScrubListEntries = function addScrubListEntries(re
   };
 };
 
-ComplianceClient.prototype.updateScrubEntry = function updateScrubEntry(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.getUserPasswordResetLinkByOrgId = function getUserPasswordResetLinkByOrgId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.UpdateScrubEntry, {
+  var client = grpc.unary(UsersService.GetUserPasswordResetLinkByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1024,11 +1262,11 @@ ComplianceClient.prototype.updateScrubEntry = function updateScrubEntry(requestM
   };
 };
 
-ComplianceClient.prototype.deleteScrubListEntries = function deleteScrubListEntries(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.createPasswordResetLink = function createPasswordResetLink(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.DeleteScrubListEntries, {
+  var client = grpc.unary(UsersService.CreatePasswordResetLink, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1055,11 +1293,11 @@ ComplianceClient.prototype.deleteScrubListEntries = function deleteScrubListEntr
   };
 };
 
-ComplianceClient.prototype.getScrubList = function getScrubList(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.createPasswordResetLinkByOrgId = function createPasswordResetLinkByOrgId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetScrubList, {
+  var client = grpc.unary(UsersService.CreatePasswordResetLinkByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1086,11 +1324,11 @@ ComplianceClient.prototype.getScrubList = function getScrubList(requestMessage, 
   };
 };
 
-ComplianceClient.prototype.deleteScrubList = function deleteScrubList(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.getUserLoginInfo = function getUserLoginInfo(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.DeleteScrubList, {
+  var client = grpc.unary(UsersService.GetUserLoginInfo, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1117,11 +1355,11 @@ ComplianceClient.prototype.deleteScrubList = function deleteScrubList(requestMes
   };
 };
 
-ComplianceClient.prototype.getDefaultRules = function getDefaultRules(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.getUserEmailVerified = function getUserEmailVerified(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetDefaultRules, {
+  var client = grpc.unary(UsersService.GetUserEmailVerified, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1148,11 +1386,11 @@ ComplianceClient.prototype.getDefaultRules = function getDefaultRules(requestMes
   };
 };
 
-ComplianceClient.prototype.getScrubLists = function getScrubLists(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.getUserEmailVerifiedByOrgId = function getUserEmailVerifiedByOrgId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetScrubLists, {
+  var client = grpc.unary(UsersService.GetUserEmailVerifiedByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1179,11 +1417,11 @@ ComplianceClient.prototype.getScrubLists = function getScrubLists(requestMessage
   };
 };
 
-ComplianceClient.prototype.searchScrubList = function searchScrubList(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.resetMyPassword = function resetMyPassword(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.SearchScrubList, {
+  var client = grpc.unary(UsersService.ResetMyPassword, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1210,11 +1448,11 @@ ComplianceClient.prototype.searchScrubList = function searchScrubList(requestMes
   };
 };
 
-ComplianceClient.prototype.getScrubListUploadUrl = function getScrubListUploadUrl(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.resetUserPassword = function resetUserPassword(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetScrubListUploadUrl, {
+  var client = grpc.unary(UsersService.ResetUserPassword, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1241,11 +1479,11 @@ ComplianceClient.prototype.getScrubListUploadUrl = function getScrubListUploadUr
   };
 };
 
-ComplianceClient.prototype.processScrubListUpload = function processScrubListUpload(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.resetUserPasswordByOrgId = function resetUserPasswordByOrgId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ProcessScrubListUpload, {
+  var client = grpc.unary(UsersService.ResetUserPasswordByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1272,11 +1510,11 @@ ComplianceClient.prototype.processScrubListUpload = function processScrubListUpl
   };
 };
 
-ComplianceClient.prototype.scrubListDownload = function scrubListDownload(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.sendUserEmailVerification = function sendUserEmailVerification(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ScrubListDownload, {
+  var client = grpc.unary(UsersService.SendUserEmailVerification, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1303,11 +1541,11 @@ ComplianceClient.prototype.scrubListDownload = function scrubListDownload(reques
   };
 };
 
-ComplianceClient.prototype.processScrubListDeleteUpload = function processScrubListDeleteUpload(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.sendUserEmailVerificationByOrgId = function sendUserEmailVerificationByOrgId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ProcessScrubListDeleteUpload, {
+  var client = grpc.unary(UsersService.SendUserEmailVerificationByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1334,11 +1572,11 @@ ComplianceClient.prototype.processScrubListDeleteUpload = function processScrubL
   };
 };
 
-ComplianceClient.prototype.exportScrubList = function exportScrubList(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.sendPasswordReset = function sendPasswordReset(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ExportScrubList, {
+  var client = grpc.unary(UsersService.SendPasswordReset, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1365,11 +1603,11 @@ ComplianceClient.prototype.exportScrubList = function exportScrubList(requestMes
   };
 };
 
-ComplianceClient.prototype.purgeScrubList = function purgeScrubList(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.sendPasswordResetByOrgId = function sendPasswordResetByOrgId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.PurgeScrubList, {
+  var client = grpc.unary(UsersService.SendPasswordResetByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1396,11 +1634,11 @@ ComplianceClient.prototype.purgeScrubList = function purgeScrubList(requestMessa
   };
 };
 
-ComplianceClient.prototype.createScenario = function createScenario(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.getUserSessionData = function getUserSessionData(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.CreateScenario, {
+  var client = grpc.unary(UsersService.GetUserSessionData, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1427,11 +1665,11 @@ ComplianceClient.prototype.createScenario = function createScenario(requestMessa
   };
 };
 
-ComplianceClient.prototype.getScenario = function getScenario(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.getAgentProfileGroup = function getAgentProfileGroup(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetScenario, {
+  var client = grpc.unary(UsersService.GetAgentProfileGroup, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1458,11 +1696,11 @@ ComplianceClient.prototype.getScenario = function getScenario(requestMessage, me
   };
 };
 
-ComplianceClient.prototype.updateScenario = function updateScenario(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.listAgentProfileGroups = function listAgentProfileGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.UpdateScenario, {
+  var client = grpc.unary(UsersService.ListAgentProfileGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1489,11 +1727,11 @@ ComplianceClient.prototype.updateScenario = function updateScenario(requestMessa
   };
 };
 
-ComplianceClient.prototype.deleteScenario = function deleteScenario(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.updateAgentProfileGroup = function updateAgentProfileGroup(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.DeleteScenario, {
+  var client = grpc.unary(UsersService.UpdateAgentProfileGroup, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1520,11 +1758,11 @@ ComplianceClient.prototype.deleteScenario = function deleteScenario(requestMessa
   };
 };
 
-ComplianceClient.prototype.runAssignedScenarios = function runAssignedScenarios(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.createAgentProfileGroup = function createAgentProfileGroup(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.RunAssignedScenarios, {
+  var client = grpc.unary(UsersService.CreateAgentProfileGroup, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1551,11 +1789,11 @@ ComplianceClient.prototype.runAssignedScenarios = function runAssignedScenarios(
   };
 };
 
-ComplianceClient.prototype.listAllScenarios = function listAllScenarios(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.deleteAgentProfileGroup = function deleteAgentProfileGroup(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ListAllScenarios, {
+  var client = grpc.unary(UsersService.DeleteAgentProfileGroup, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1582,11 +1820,11 @@ ComplianceClient.prototype.listAllScenarios = function listAllScenarios(requestM
   };
 };
 
-ComplianceClient.prototype.listUnassignedScenarios = function listUnassignedScenarios(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.assignAgentProfileGroups = function assignAgentProfileGroups(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ListUnassignedScenarios, {
+  var client = grpc.unary(UsersService.AssignAgentProfileGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1613,11 +1851,11 @@ ComplianceClient.prototype.listUnassignedScenarios = function listUnassignedScen
   };
 };
 
-ComplianceClient.prototype.listAssignedRuleSets = function listAssignedRuleSets(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.addUserSubscription = function addUserSubscription(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ListAssignedRuleSets, {
+  var client = grpc.unary(UsersService.AddUserSubscription, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1644,11 +1882,11 @@ ComplianceClient.prototype.listAssignedRuleSets = function listAssignedRuleSets(
   };
 };
 
-ComplianceClient.prototype.listAssignedScenarios = function listAssignedScenarios(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.addUserSubscriptionByUserId = function addUserSubscriptionByUserId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ListAssignedScenarios, {
+  var client = grpc.unary(UsersService.AddUserSubscriptionByUserId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1675,11 +1913,11 @@ ComplianceClient.prototype.listAssignedScenarios = function listAssignedScenario
   };
 };
 
-ComplianceClient.prototype.assignScenario = function assignScenario(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.getUserSubscription = function getUserSubscription(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.AssignScenario, {
+  var client = grpc.unary(UsersService.GetUserSubscription, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1706,11 +1944,11 @@ ComplianceClient.prototype.assignScenario = function assignScenario(requestMessa
   };
 };
 
-ComplianceClient.prototype.unassignScenario = function unassignScenario(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.getUserSubscriptionByUserId = function getUserSubscriptionByUserId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.UnassignScenario, {
+  var client = grpc.unary(UsersService.GetUserSubscriptionByUserId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1737,11 +1975,11 @@ ComplianceClient.prototype.unassignScenario = function unassignScenario(requestM
   };
 };
 
-ComplianceClient.prototype.enableScenario = function enableScenario(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.updateUserSubscription = function updateUserSubscription(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.EnableScenario, {
+  var client = grpc.unary(UsersService.UpdateUserSubscription, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1768,11 +2006,11 @@ ComplianceClient.prototype.enableScenario = function enableScenario(requestMessa
   };
 };
 
-ComplianceClient.prototype.disableScenario = function disableScenario(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.updateUserSubscriptionByUserId = function updateUserSubscriptionByUserId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.DisableScenario, {
+  var client = grpc.unary(UsersService.UpdateUserSubscriptionByUserId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1799,11 +2037,11 @@ ComplianceClient.prototype.disableScenario = function disableScenario(requestMes
   };
 };
 
-ComplianceClient.prototype.getFieldNames = function getFieldNames(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.removeUserSubscription = function removeUserSubscription(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetFieldNames, {
+  var client = grpc.unary(UsersService.RemoveUserSubscription, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1830,11 +2068,11 @@ ComplianceClient.prototype.getFieldNames = function getFieldNames(requestMessage
   };
 };
 
-ComplianceClient.prototype.getResultDescriptions = function getResultDescriptions(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.removeUserSubscriptionByUserId = function removeUserSubscriptionByUserId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetResultDescriptions, {
+  var client = grpc.unary(UsersService.RemoveUserSubscriptionByUserId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1861,11 +2099,11 @@ ComplianceClient.prototype.getResultDescriptions = function getResultDescription
   };
 };
 
-ComplianceClient.prototype.createConsentProfile = function createConsentProfile(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.listUserSubscriptions = function listUserSubscriptions(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.CreateConsentProfile, {
+  var client = grpc.unary(UsersService.ListUserSubscriptions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1892,11 +2130,11 @@ ComplianceClient.prototype.createConsentProfile = function createConsentProfile(
   };
 };
 
-ComplianceClient.prototype.createConsent = function createConsent(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.listUserSubscriptionsByUserId = function listUserSubscriptionsByUserId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.CreateConsent, {
+  var client = grpc.unary(UsersService.ListUserSubscriptionsByUserId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1923,11 +2161,11 @@ ComplianceClient.prototype.createConsent = function createConsent(requestMessage
   };
 };
 
-ComplianceClient.prototype.getConsentProfile = function getConsentProfile(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.listOrgSubscriptions = function listOrgSubscriptions(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetConsentProfile, {
+  var client = grpc.unary(UsersService.ListOrgSubscriptions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1954,11 +2192,11 @@ ComplianceClient.prototype.getConsentProfile = function getConsentProfile(reques
   };
 };
 
-ComplianceClient.prototype.getConsent = function getConsent(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.createAuthToken = function createAuthToken(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetConsent, {
+  var client = grpc.unary(UsersService.CreateAuthToken, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1985,11 +2223,11 @@ ComplianceClient.prototype.getConsent = function getConsent(requestMessage, meta
   };
 };
 
-ComplianceClient.prototype.getConsentByProfileAndContent = function getConsentByProfileAndContent(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.createAuthTokenByUserId = function createAuthTokenByUserId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetConsentByProfileAndContent, {
+  var client = grpc.unary(UsersService.CreateAuthTokenByUserId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2016,11 +2254,11 @@ ComplianceClient.prototype.getConsentByProfileAndContent = function getConsentBy
   };
 };
 
-ComplianceClient.prototype.getConsentByContent = function getConsentByContent(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.listAuthTokens = function listAuthTokens(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetConsentByContent, {
+  var client = grpc.unary(UsersService.ListAuthTokens, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2047,11 +2285,11 @@ ComplianceClient.prototype.getConsentByContent = function getConsentByContent(re
   };
 };
 
-ComplianceClient.prototype.searchConsentByContent = function searchConsentByContent(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.listAuthTokensByUserId = function listAuthTokensByUserId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.SearchConsentByContent, {
+  var client = grpc.unary(UsersService.ListAuthTokensByUserId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2078,11 +2316,11 @@ ComplianceClient.prototype.searchConsentByContent = function searchConsentByCont
   };
 };
 
-ComplianceClient.prototype.updateConsent = function updateConsent(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.setAuthTokenExpiration = function setAuthTokenExpiration(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.UpdateConsent, {
+  var client = grpc.unary(UsersService.SetAuthTokenExpiration, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2109,11 +2347,11 @@ ComplianceClient.prototype.updateConsent = function updateConsent(requestMessage
   };
 };
 
-ComplianceClient.prototype.expireConsent = function expireConsent(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.setAuthTokenExpirationByUserId = function setAuthTokenExpirationByUserId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ExpireConsent, {
+  var client = grpc.unary(UsersService.SetAuthTokenExpirationByUserId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2140,11 +2378,11 @@ ComplianceClient.prototype.expireConsent = function expireConsent(requestMessage
   };
 };
 
-ComplianceClient.prototype.revokeConsent = function revokeConsent(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.deleteAuthToken = function deleteAuthToken(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.RevokeConsent, {
+  var client = grpc.unary(UsersService.DeleteAuthToken, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2171,11 +2409,11 @@ ComplianceClient.prototype.revokeConsent = function revokeConsent(requestMessage
   };
 };
 
-ComplianceClient.prototype.deleteConsent = function deleteConsent(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.deleteAuthTokenByUserId = function deleteAuthTokenByUserId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.DeleteConsent, {
+  var client = grpc.unary(UsersService.DeleteAuthTokenByUserId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2202,11 +2440,11 @@ ComplianceClient.prototype.deleteConsent = function deleteConsent(requestMessage
   };
 };
 
-ComplianceClient.prototype.processConsentListDeleteUpload = function processConsentListDeleteUpload(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.refreshMfaLockout = function refreshMfaLockout(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ProcessConsentListDeleteUpload, {
+  var client = grpc.unary(UsersService.RefreshMfaLockout, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2233,11 +2471,11 @@ ComplianceClient.prototype.processConsentListDeleteUpload = function processCons
   };
 };
 
-ComplianceClient.prototype.consentListDownload = function consentListDownload(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.refreshMfaLockoutByOrgId = function refreshMfaLockoutByOrgId(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ConsentListDownload, {
+  var client = grpc.unary(UsersService.RefreshMfaLockoutByOrgId, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2264,11 +2502,11 @@ ComplianceClient.prototype.consentListDownload = function consentListDownload(re
   };
 };
 
-ComplianceClient.prototype.enableConsentProfile = function enableConsentProfile(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.setMfaType = function setMfaType(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.EnableConsentProfile, {
+  var client = grpc.unary(UsersService.SetMfaType, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2295,11 +2533,11 @@ ComplianceClient.prototype.enableConsentProfile = function enableConsentProfile(
   };
 };
 
-ComplianceClient.prototype.disableConsentProfile = function disableConsentProfile(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.setMyMfaType = function setMyMfaType(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.DisableConsentProfile, {
+  var client = grpc.unary(UsersService.SetMyMfaType, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2326,11 +2564,11 @@ ComplianceClient.prototype.disableConsentProfile = function disableConsentProfil
   };
 };
 
-ComplianceClient.prototype.listConsentProfiles = function listConsentProfiles(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.enableUserMfa = function enableUserMfa(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ListConsentProfiles, {
+  var client = grpc.unary(UsersService.EnableUserMfa, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2357,11 +2595,11 @@ ComplianceClient.prototype.listConsentProfiles = function listConsentProfiles(re
   };
 };
 
-ComplianceClient.prototype.getConsentUploadUrl = function getConsentUploadUrl(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.enableMyUserMfa = function enableMyUserMfa(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetConsentUploadUrl, {
+  var client = grpc.unary(UsersService.EnableMyUserMfa, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2388,11 +2626,11 @@ ComplianceClient.prototype.getConsentUploadUrl = function getConsentUploadUrl(re
   };
 };
 
-ComplianceClient.prototype.processConsentUpload = function processConsentUpload(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.getUserMfaInfo = function getUserMfaInfo(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ProcessConsentUpload, {
+  var client = grpc.unary(UsersService.GetUserMfaInfo, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2419,11 +2657,11 @@ ComplianceClient.prototype.processConsentUpload = function processConsentUpload(
   };
 };
 
-ComplianceClient.prototype.exportConsentList = function exportConsentList(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.getMyUserMfaInfo = function getMyUserMfaInfo(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ExportConsentList, {
+  var client = grpc.unary(UsersService.GetMyUserMfaInfo, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2450,11 +2688,11 @@ ComplianceClient.prototype.exportConsentList = function exportConsentList(reques
   };
 };
 
-ComplianceClient.prototype.listConsentTopics = function listConsentTopics(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.addGroupedUserIPRestrictions = function addGroupedUserIPRestrictions(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.ListConsentTopics, {
+  var client = grpc.unary(UsersService.AddGroupedUserIPRestrictions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2481,11 +2719,11 @@ ComplianceClient.prototype.listConsentTopics = function listConsentTopics(reques
   };
 };
 
-ComplianceClient.prototype.getConsentTopic = function getConsentTopic(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.removeGroupedUserIPRestrictions = function removeGroupedUserIPRestrictions(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.GetConsentTopic, {
+  var client = grpc.unary(UsersService.RemoveGroupedUserIPRestrictions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2512,11 +2750,11 @@ ComplianceClient.prototype.getConsentTopic = function getConsentTopic(requestMes
   };
 };
 
-ComplianceClient.prototype.createConsentTopic = function createConsentTopic(requestMessage, metadata, callback) {
+UsersServiceClient.prototype.listUsersAllowedIps = function listUsersAllowedIps(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Compliance.CreateConsentTopic, {
+  var client = grpc.unary(UsersService.ListUsersAllowedIps, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2543,129 +2781,5 @@ ComplianceClient.prototype.createConsentTopic = function createConsentTopic(requ
   };
 };
 
-ComplianceClient.prototype.deleteConsentTopic = function deleteConsentTopic(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Compliance.DeleteConsentTopic, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-ComplianceClient.prototype.updateConsentTopic = function updateConsentTopic(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Compliance.UpdateConsentTopic, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-ComplianceClient.prototype.processOutboundCall = function processOutboundCall(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Compliance.ProcessOutboundCall, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-ComplianceClient.prototype.queryHolidays = function queryHolidays(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Compliance.QueryHolidays, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-exports.ComplianceClient = ComplianceClient;
+exports.UsersServiceClient = UsersServiceClient;
 

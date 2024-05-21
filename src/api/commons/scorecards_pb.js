@@ -1324,7 +1324,8 @@ proto.api.commons.Evaluation.toObject = function(includeInstance, msg) {
     callType: jspb.Message.getFieldWithDefault(msg, 14, 0),
     transcriptSid: jspb.Message.getFieldWithDefault(msg, 15, 0),
     customFieldsList: jspb.Message.toObjectList(msg.getCustomFieldsList(),
-    proto.api.commons.Evaluation.CustomField.toObject, includeInstance)
+    proto.api.commons.Evaluation.CustomField.toObject, includeInstance),
+    deletedBy: jspb.Message.getFieldWithDefault(msg, 18, "")
   };
 
   if (includeInstance) {
@@ -1411,6 +1412,10 @@ proto.api.commons.Evaluation.deserializeBinaryFromReader = function(msg, reader)
       var value = new proto.api.commons.Evaluation.CustomField;
       reader.readMessage(value,proto.api.commons.Evaluation.CustomField.deserializeBinaryFromReader);
       msg.addCustomFields(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDeletedBy(value);
       break;
     default:
       reader.skipField();
@@ -1526,6 +1531,13 @@ proto.api.commons.Evaluation.serializeBinaryToWriter = function(message, writer)
       17,
       f,
       proto.api.commons.Evaluation.CustomField.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeletedBy();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
+      f
     );
   }
 };
@@ -1963,6 +1975,24 @@ proto.api.commons.Evaluation.prototype.addCustomFields = function(opt_value, opt
  */
 proto.api.commons.Evaluation.prototype.clearCustomFieldsList = function() {
   return this.setCustomFieldsList([]);
+};
+
+
+/**
+ * optional string deleted_by = 18;
+ * @return {string}
+ */
+proto.api.commons.Evaluation.prototype.getDeletedBy = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.Evaluation} returns this
+ */
+proto.api.commons.Evaluation.prototype.setDeletedBy = function(value) {
+  return jspb.Message.setProto3StringField(this, 18, value);
 };
 
 

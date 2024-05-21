@@ -195,6 +195,15 @@ type ComplianceProcessScrubListUpload = {
   readonly responseType: typeof google_longrunning_operations_pb.Operation;
 };
 
+type ComplianceScrubListDownload = {
+  readonly methodName: string;
+  readonly service: typeof Compliance;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_compliance_pb.ScrubListDownloadRequest;
+  readonly responseType: typeof google_longrunning_operations_pb.Operation;
+};
+
 type ComplianceProcessScrubListDeleteUpload = {
   readonly methodName: string;
   readonly service: typeof Compliance;
@@ -465,6 +474,15 @@ type ComplianceProcessConsentListDeleteUpload = {
   readonly responseType: typeof google_longrunning_operations_pb.Operation;
 };
 
+type ComplianceConsentListDownload = {
+  readonly methodName: string;
+  readonly service: typeof Compliance;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_compliance_pb.ConsentListDownloadRequest;
+  readonly responseType: typeof google_longrunning_operations_pb.Operation;
+};
+
 type ComplianceEnableConsentProfile = {
   readonly methodName: string;
   readonly service: typeof Compliance;
@@ -605,6 +623,7 @@ export class Compliance {
   static readonly SearchScrubList: ComplianceSearchScrubList;
   static readonly GetScrubListUploadUrl: ComplianceGetScrubListUploadUrl;
   static readonly ProcessScrubListUpload: ComplianceProcessScrubListUpload;
+  static readonly ScrubListDownload: ComplianceScrubListDownload;
   static readonly ProcessScrubListDeleteUpload: ComplianceProcessScrubListDeleteUpload;
   static readonly ExportScrubList: ComplianceExportScrubList;
   static readonly PurgeScrubList: CompliancePurgeScrubList;
@@ -635,6 +654,7 @@ export class Compliance {
   static readonly RevokeConsent: ComplianceRevokeConsent;
   static readonly DeleteConsent: ComplianceDeleteConsent;
   static readonly ProcessConsentListDeleteUpload: ComplianceProcessConsentListDeleteUpload;
+  static readonly ConsentListDownload: ComplianceConsentListDownload;
   static readonly EnableConsentProfile: ComplianceEnableConsentProfile;
   static readonly DisableConsentProfile: ComplianceDisableConsentProfile;
   static readonly ListConsentProfiles: ComplianceListConsentProfiles;
@@ -863,6 +883,15 @@ export class ComplianceClient {
     requestMessage: api_v0alpha_compliance_pb.ProcessScrubListUploadReq,
     callback: (error: ServiceError|null, responseMessage: google_longrunning_operations_pb.Operation|null) => void
   ): UnaryResponse;
+  scrubListDownload(
+    requestMessage: api_v0alpha_compliance_pb.ScrubListDownloadRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: google_longrunning_operations_pb.Operation|null) => void
+  ): UnaryResponse;
+  scrubListDownload(
+    requestMessage: api_v0alpha_compliance_pb.ScrubListDownloadRequest,
+    callback: (error: ServiceError|null, responseMessage: google_longrunning_operations_pb.Operation|null) => void
+  ): UnaryResponse;
   processScrubListDeleteUpload(
     requestMessage: api_v0alpha_compliance_pb.ProcessScrubListDeleteUploadReq,
     metadata: grpc.Metadata,
@@ -1131,6 +1160,15 @@ export class ComplianceClient {
   ): UnaryResponse;
   processConsentListDeleteUpload(
     requestMessage: api_v0alpha_compliance_pb.ProcessConsentListDeleteUploadReq,
+    callback: (error: ServiceError|null, responseMessage: google_longrunning_operations_pb.Operation|null) => void
+  ): UnaryResponse;
+  consentListDownload(
+    requestMessage: api_v0alpha_compliance_pb.ConsentListDownloadRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: google_longrunning_operations_pb.Operation|null) => void
+  ): UnaryResponse;
+  consentListDownload(
+    requestMessage: api_v0alpha_compliance_pb.ConsentListDownloadRequest,
     callback: (error: ServiceError|null, responseMessage: google_longrunning_operations_pb.Operation|null) => void
   ): UnaryResponse;
   enableConsentProfile(

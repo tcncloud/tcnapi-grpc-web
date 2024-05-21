@@ -3426,3 +3426,43 @@ export namespace ExportConsentListResponse {
   }
 }
 
+export class ScrubListDownloadRequest extends jspb.Message {
+  getListId(): string;
+  setListId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ScrubListDownloadRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ScrubListDownloadRequest): ScrubListDownloadRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ScrubListDownloadRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ScrubListDownloadRequest;
+  static deserializeBinaryFromReader(message: ScrubListDownloadRequest, reader: jspb.BinaryReader): ScrubListDownloadRequest;
+}
+
+export namespace ScrubListDownloadRequest {
+  export type AsObject = {
+    listId: string,
+  }
+}
+
+export class ConsentListDownloadRequest extends jspb.Message {
+  getConsentProfileId(): string;
+  setConsentProfileId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConsentListDownloadRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsentListDownloadRequest): ConsentListDownloadRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConsentListDownloadRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsentListDownloadRequest;
+  static deserializeBinaryFromReader(message: ConsentListDownloadRequest, reader: jspb.BinaryReader): ConsentListDownloadRequest;
+}
+
+export namespace ConsentListDownloadRequest {
+  export type AsObject = {
+    consentProfileId: string,
+  }
+}
+
