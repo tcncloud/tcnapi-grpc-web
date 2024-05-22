@@ -3381,9 +3381,6 @@ export namespace PortalSegment {
 }
 
 export class PortalWorkflow extends jspb.Message {
-  getPluginInstanceId(): string;
-  setPluginInstanceId(value: string): void;
-
   clearActionsList(): void;
   getActionsList(): Array<Action>;
   setActionsList(value: Array<Action>): void;
@@ -3434,7 +3431,6 @@ export class PortalWorkflow extends jspb.Message {
 
 export namespace PortalWorkflow {
   export type AsObject = {
-    pluginInstanceId: string,
     actionsList: Array<Action.AsObject>,
     template?: Template.AsObject,
     formFieldsList: Array<api_commons_integrations_integrations_pb.FieldDefinition.AsObject>,
@@ -3452,8 +3448,13 @@ export class Action extends jspb.Message {
   getWorkflowDefinitionName(): string;
   setWorkflowDefinitionName(value: string): void;
 
-  getRenameMap(): jspb.Map<string, string>;
-  clearRenameMap(): void;
+  getPluginInstanceId(): string;
+  setPluginInstanceId(value: string): void;
+
+  getRestructureBeforeMap(): jspb.Map<string, string>;
+  clearRestructureBeforeMap(): void;
+  getRestructureAfterMap(): jspb.Map<string, string>;
+  clearRestructureAfterMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Action.AsObject;
   static toObject(includeInstance: boolean, msg: Action): Action.AsObject;
@@ -3467,7 +3468,9 @@ export class Action extends jspb.Message {
 export namespace Action {
   export type AsObject = {
     workflowDefinitionName: string,
-    renameMap: Array<[string, string]>,
+    pluginInstanceId: string,
+    restructureBeforeMap: Array<[string, string]>,
+    restructureAfterMap: Array<[string, string]>,
   }
 }
 
