@@ -434,7 +434,8 @@ proto.services.billing.entities.v1alpha2.InvoiceItem.toObject = function(include
     price: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
     columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
     proto.services.billing.entities.v1alpha2.InvoiceItemColumn.toObject, includeInstance),
-    ratedAmount: (f = msg.getRatedAmount()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f)
+    ratedAmount: (f = msg.getRatedAmount()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f),
+    productId: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -501,6 +502,10 @@ proto.services.billing.entities.v1alpha2.InvoiceItem.deserializeBinaryFromReader
       var value = new google_type_decimal_pb.Decimal;
       reader.readMessage(value,google_type_decimal_pb.Decimal.deserializeBinaryFromReader);
       msg.setRatedAmount(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProductId(value);
       break;
     default:
       reader.skipField();
@@ -581,6 +586,13 @@ proto.services.billing.entities.v1alpha2.InvoiceItem.serializeBinaryToWriter = f
       7,
       f,
       google_type_decimal_pb.Decimal.serializeBinaryToWriter
+    );
+  }
+  f = message.getProductId();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
     );
   }
 };
@@ -767,6 +779,24 @@ proto.services.billing.entities.v1alpha2.InvoiceItem.prototype.clearRatedAmount 
  */
 proto.services.billing.entities.v1alpha2.InvoiceItem.prototype.hasRatedAmount = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string product_id = 8;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha2.InvoiceItem.prototype.getProductId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha2.InvoiceItem} returns this
+ */
+proto.services.billing.entities.v1alpha2.InvoiceItem.prototype.setProductId = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
