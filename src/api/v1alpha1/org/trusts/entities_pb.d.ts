@@ -187,6 +187,36 @@ export namespace GetTrustResponse {
   }
 }
 
+export class ListTrustsResponsePayload extends jspb.Message {
+  hasTrust(): boolean;
+  clearTrust(): void;
+  getTrust(): api_commons_org_trusts_pb.Trust | undefined;
+  setTrust(value?: api_commons_org_trusts_pb.Trust): void;
+
+  getGrantorName(): string;
+  setGrantorName(value: string): void;
+
+  getGranteeName(): string;
+  setGranteeName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTrustsResponsePayload.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTrustsResponsePayload): ListTrustsResponsePayload.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTrustsResponsePayload, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTrustsResponsePayload;
+  static deserializeBinaryFromReader(message: ListTrustsResponsePayload, reader: jspb.BinaryReader): ListTrustsResponsePayload;
+}
+
+export namespace ListTrustsResponsePayload {
+  export type AsObject = {
+    trust?: api_commons_org_trusts_pb.Trust.AsObject,
+    grantorName: string,
+    granteeName: string,
+  }
+}
+
 export class ListIncomingTrustsRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListIncomingTrustsRequest.AsObject;
@@ -205,9 +235,9 @@ export namespace ListIncomingTrustsRequest {
 
 export class ListIncomingTrustsResponse extends jspb.Message {
   clearTrustsList(): void;
-  getTrustsList(): Array<ListIncomingTrustsResponse.Payload>;
-  setTrustsList(value: Array<ListIncomingTrustsResponse.Payload>): void;
-  addTrusts(value?: ListIncomingTrustsResponse.Payload, index?: number): ListIncomingTrustsResponse.Payload;
+  getTrustsList(): Array<ListTrustsResponsePayload>;
+  setTrustsList(value: Array<ListTrustsResponsePayload>): void;
+  addTrusts(value?: ListTrustsResponsePayload, index?: number): ListTrustsResponsePayload;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListIncomingTrustsResponse.AsObject;
@@ -221,37 +251,7 @@ export class ListIncomingTrustsResponse extends jspb.Message {
 
 export namespace ListIncomingTrustsResponse {
   export type AsObject = {
-    trustsList: Array<ListIncomingTrustsResponse.Payload.AsObject>,
-  }
-
-  export class Payload extends jspb.Message {
-    hasTrust(): boolean;
-    clearTrust(): void;
-    getTrust(): api_commons_org_trusts_pb.Trust | undefined;
-    setTrust(value?: api_commons_org_trusts_pb.Trust): void;
-
-    getGrantorName(): string;
-    setGrantorName(value: string): void;
-
-    getGranteeName(): string;
-    setGranteeName(value: string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Payload.AsObject;
-    static toObject(includeInstance: boolean, msg: Payload): Payload.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Payload, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Payload;
-    static deserializeBinaryFromReader(message: Payload, reader: jspb.BinaryReader): Payload;
-  }
-
-  export namespace Payload {
-    export type AsObject = {
-      trust?: api_commons_org_trusts_pb.Trust.AsObject,
-      grantorName: string,
-      granteeName: string,
-    }
+    trustsList: Array<ListTrustsResponsePayload.AsObject>,
   }
 }
 
@@ -273,9 +273,9 @@ export namespace ListGivenTrustsRequest {
 
 export class ListGivenTrustsResponse extends jspb.Message {
   clearTrustsList(): void;
-  getTrustsList(): Array<ListGivenTrustsResponse.Payload>;
-  setTrustsList(value: Array<ListGivenTrustsResponse.Payload>): void;
-  addTrusts(value?: ListGivenTrustsResponse.Payload, index?: number): ListGivenTrustsResponse.Payload;
+  getTrustsList(): Array<ListTrustsResponsePayload>;
+  setTrustsList(value: Array<ListTrustsResponsePayload>): void;
+  addTrusts(value?: ListTrustsResponsePayload, index?: number): ListTrustsResponsePayload;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListGivenTrustsResponse.AsObject;
@@ -289,37 +289,7 @@ export class ListGivenTrustsResponse extends jspb.Message {
 
 export namespace ListGivenTrustsResponse {
   export type AsObject = {
-    trustsList: Array<ListGivenTrustsResponse.Payload.AsObject>,
-  }
-
-  export class Payload extends jspb.Message {
-    hasTrust(): boolean;
-    clearTrust(): void;
-    getTrust(): api_commons_org_trusts_pb.Trust | undefined;
-    setTrust(value?: api_commons_org_trusts_pb.Trust): void;
-
-    getGrantorName(): string;
-    setGrantorName(value: string): void;
-
-    getGranteeName(): string;
-    setGranteeName(value: string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Payload.AsObject;
-    static toObject(includeInstance: boolean, msg: Payload): Payload.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Payload, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Payload;
-    static deserializeBinaryFromReader(message: Payload, reader: jspb.BinaryReader): Payload;
-  }
-
-  export namespace Payload {
-    export type AsObject = {
-      trust?: api_commons_org_trusts_pb.Trust.AsObject,
-      grantorName: string,
-      granteeName: string,
-    }
+    trustsList: Array<ListTrustsResponsePayload.AsObject>,
   }
 }
 
@@ -341,9 +311,9 @@ export namespace ListAssignableTrustsRequest {
 
 export class ListAssignableTrustsResponse extends jspb.Message {
   clearTrustsList(): void;
-  getTrustsList(): Array<ListAssignableTrustsResponse.Payload>;
-  setTrustsList(value: Array<ListAssignableTrustsResponse.Payload>): void;
-  addTrusts(value?: ListAssignableTrustsResponse.Payload, index?: number): ListAssignableTrustsResponse.Payload;
+  getTrustsList(): Array<ListTrustsResponsePayload>;
+  setTrustsList(value: Array<ListTrustsResponsePayload>): void;
+  addTrusts(value?: ListTrustsResponsePayload, index?: number): ListTrustsResponsePayload;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAssignableTrustsResponse.AsObject;
@@ -357,37 +327,7 @@ export class ListAssignableTrustsResponse extends jspb.Message {
 
 export namespace ListAssignableTrustsResponse {
   export type AsObject = {
-    trustsList: Array<ListAssignableTrustsResponse.Payload.AsObject>,
-  }
-
-  export class Payload extends jspb.Message {
-    hasTrust(): boolean;
-    clearTrust(): void;
-    getTrust(): api_commons_org_trusts_pb.Trust | undefined;
-    setTrust(value?: api_commons_org_trusts_pb.Trust): void;
-
-    getGrantorName(): string;
-    setGrantorName(value: string): void;
-
-    getGranteeName(): string;
-    setGranteeName(value: string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Payload.AsObject;
-    static toObject(includeInstance: boolean, msg: Payload): Payload.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Payload, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Payload;
-    static deserializeBinaryFromReader(message: Payload, reader: jspb.BinaryReader): Payload;
-  }
-
-  export namespace Payload {
-    export type AsObject = {
-      trust?: api_commons_org_trusts_pb.Trust.AsObject,
-      grantorName: string,
-      granteeName: string,
-    }
+    trustsList: Array<ListTrustsResponsePayload.AsObject>,
   }
 }
 
