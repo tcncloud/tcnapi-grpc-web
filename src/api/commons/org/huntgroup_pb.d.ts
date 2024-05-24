@@ -117,9 +117,6 @@ export class GeneralSettings extends jspb.Message {
   getEnableEnvisionScreenRecording(): boolean;
   setEnableEnvisionScreenRecording(value: boolean): void;
 
-  getAgentScreenRecording(): boolean;
-  setAgentScreenRecording(value: boolean): void;
-
   getEnableAgentSimpleHold(): boolean;
   setEnableAgentSimpleHold(value: boolean): void;
 
@@ -255,7 +252,6 @@ export namespace GeneralSettings {
     callRecordingDelay: number,
     enablePauseRecordingOnHold: boolean,
     enableEnvisionScreenRecording: boolean,
-    agentScreenRecording: boolean,
     enableAgentSimpleHold: boolean,
     enableAgentMultiAccept: boolean,
     pauseAgentAfterMultiAccept: boolean,
