@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as api_commons_org_pb from "../../../../api/commons/org_pb";
 import * as api_commons_org_preferences_pb from "../../../../api/commons/org/preferences_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class ListObservedHolidaysRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
@@ -342,6 +343,11 @@ export class EvaluateObservedHolidaysResponse extends jspb.Message {
   getDateMatched(): boolean;
   setDateMatched(value: boolean): void;
 
+  hasEfficacyTimestamp(): boolean;
+  clearEfficacyTimestamp(): void;
+  getEfficacyTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEfficacyTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EvaluateObservedHolidaysResponse.AsObject;
   static toObject(includeInstance: boolean, msg: EvaluateObservedHolidaysResponse): EvaluateObservedHolidaysResponse.AsObject;
@@ -355,6 +361,7 @@ export class EvaluateObservedHolidaysResponse extends jspb.Message {
 export namespace EvaluateObservedHolidaysResponse {
   export type AsObject = {
     dateMatched: boolean,
+    efficacyTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
