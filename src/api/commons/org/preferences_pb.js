@@ -1162,7 +1162,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.commons.org.CountryHoliday = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.org.CountryHoliday.repeatedFields_, null);
 };
 goog.inherits(proto.api.commons.org.CountryHoliday, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -14857,6 +14857,13 @@ proto.api.commons.org.MonthDayDate.prototype.setDayOfMonth = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.commons.org.CountryHoliday.repeatedFields_ = [4,5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -14889,7 +14896,10 @@ proto.api.commons.org.CountryHoliday.prototype.toObject = function(opt_includeIn
 proto.api.commons.org.CountryHoliday.toObject = function(includeInstance, msg) {
   var f, obj = {
     holidayName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    country: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    country: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    countryName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    typeList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    stateList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14934,6 +14944,18 @@ proto.api.commons.org.CountryHoliday.deserializeBinaryFromReader = function(msg,
       var value = /** @type {!proto.api.commons.Country} */ (reader.readEnum());
       msg.setCountry(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCountryName(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addType(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addState(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -14977,6 +14999,27 @@ proto.api.commons.org.CountryHoliday.serializeBinaryToWriter = function(message,
       f
     );
   }
+  f = message.getCountryName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getTypeList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
+      f
+    );
+  }
+  f = message.getStateList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      5,
+      f
+    );
+  }
 };
 
 
@@ -15013,6 +15056,98 @@ proto.api.commons.org.CountryHoliday.prototype.getCountry = function() {
  */
 proto.api.commons.org.CountryHoliday.prototype.setCountry = function(value) {
   return jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+/**
+ * optional string country_name = 3;
+ * @return {string}
+ */
+proto.api.commons.org.CountryHoliday.prototype.getCountryName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.CountryHoliday} returns this
+ */
+proto.api.commons.org.CountryHoliday.prototype.setCountryName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * repeated string type = 4;
+ * @return {!Array<string>}
+ */
+proto.api.commons.org.CountryHoliday.prototype.getTypeList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.commons.org.CountryHoliday} returns this
+ */
+proto.api.commons.org.CountryHoliday.prototype.setTypeList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.org.CountryHoliday} returns this
+ */
+proto.api.commons.org.CountryHoliday.prototype.addType = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.org.CountryHoliday} returns this
+ */
+proto.api.commons.org.CountryHoliday.prototype.clearTypeList = function() {
+  return this.setTypeList([]);
+};
+
+
+/**
+ * repeated string state = 5;
+ * @return {!Array<string>}
+ */
+proto.api.commons.org.CountryHoliday.prototype.getStateList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.commons.org.CountryHoliday} returns this
+ */
+proto.api.commons.org.CountryHoliday.prototype.setStateList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.org.CountryHoliday} returns this
+ */
+proto.api.commons.org.CountryHoliday.prototype.addState = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.org.CountryHoliday} returns this
+ */
+proto.api.commons.org.CountryHoliday.prototype.clearStateList = function() {
+  return this.setStateList([]);
 };
 
 
