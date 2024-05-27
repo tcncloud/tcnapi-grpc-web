@@ -544,6 +544,64 @@ export namespace ListAllocatedTicketReq {
   }
 }
 
+export class ListAgentTicketsResponse extends jspb.Message {
+  clearTicketList(): void;
+  getTicketList(): Array<api_commons_tickets_pb.Ticket>;
+  setTicketList(value: Array<api_commons_tickets_pb.Ticket>): void;
+  addTicket(value?: api_commons_tickets_pb.Ticket, index?: number): api_commons_tickets_pb.Ticket;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentTicketsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentTicketsResponse): ListAgentTicketsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentTicketsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentTicketsResponse;
+  static deserializeBinaryFromReader(message: ListAgentTicketsResponse, reader: jspb.BinaryReader): ListAgentTicketsResponse;
+}
+
+export namespace ListAgentTicketsResponse {
+  export type AsObject = {
+    ticketList: Array<api_commons_tickets_pb.Ticket.AsObject>,
+  }
+}
+
+export class ListAgentTicketsRequest extends jspb.Message {
+  hasSelectFieldMask(): boolean;
+  clearSelectFieldMask(): void;
+  getSelectFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setSelectFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  hasFilterMasks(): boolean;
+  clearFilterMasks(): void;
+  getFilterMasks(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFilterMasks(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  getParticipantId(): string;
+  setParticipantId(value: string): void;
+
+  getAgentViewLimit(): number;
+  setAgentViewLimit(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAgentTicketsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentTicketsRequest): ListAgentTicketsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAgentTicketsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentTicketsRequest;
+  static deserializeBinaryFromReader(message: ListAgentTicketsRequest, reader: jspb.BinaryReader): ListAgentTicketsRequest;
+}
+
+export namespace ListAgentTicketsRequest {
+  export type AsObject = {
+    selectFieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    filterMasks?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    participantId: string,
+    agentViewLimit: number,
+  }
+}
+
 export class ListAvailableAgentTicketsResponse extends jspb.Message {
   clearTicketSidList(): void;
   getTicketSidList(): Array<string>;
