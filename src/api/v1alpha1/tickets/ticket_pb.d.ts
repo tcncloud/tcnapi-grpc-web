@@ -572,10 +572,10 @@ export class ListAgentTicketsRequest extends jspb.Message {
   getSelectFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setSelectFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
 
-  hasFilterMasks(): boolean;
-  clearFilterMasks(): void;
-  getFilterMasks(): google_protobuf_field_mask_pb.FieldMask | undefined;
-  setFilterMasks(value?: google_protobuf_field_mask_pb.FieldMask): void;
+  hasFilterMask(): boolean;
+  clearFilterMask(): void;
+  getFilterMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFilterMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
 
   getParticipantId(): string;
   setParticipantId(value: string): void;
@@ -596,7 +596,7 @@ export class ListAgentTicketsRequest extends jspb.Message {
 export namespace ListAgentTicketsRequest {
   export type AsObject = {
     selectFieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    filterMasks?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    filterMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
     participantId: string,
     agentViewLimit: number,
   }

@@ -5565,7 +5565,7 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.toObject = function
 proto.api.v1alpha1.tickets.ListAgentTicketsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     selectFieldMask: (f = msg.getSelectFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    filterMasks: (f = msg.getFilterMasks()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+    filterMask: (f = msg.getFilterMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
     participantId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     agentViewLimit: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
@@ -5612,7 +5612,7 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.deserializeBinaryFromReader =
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFilterMasks(value);
+      msg.setFilterMask(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -5659,7 +5659,7 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.serializeBinaryToWriter = fun
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
-  f = message.getFilterMasks();
+  f = message.getFilterMask();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -5722,10 +5722,10 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.hasSelectFieldMask 
 
 
 /**
- * optional google.protobuf.FieldMask filter_masks = 2;
+ * optional google.protobuf.FieldMask filter_mask = 2;
  * @return {?proto.google.protobuf.FieldMask}
  */
-proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.getFilterMasks = function() {
+proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.getFilterMask = function() {
   return /** @type{?proto.google.protobuf.FieldMask} */ (
     jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
 };
@@ -5735,7 +5735,7 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.getFilterMasks = fu
  * @param {?proto.google.protobuf.FieldMask|undefined} value
  * @return {!proto.api.v1alpha1.tickets.ListAgentTicketsRequest} returns this
 */
-proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.setFilterMasks = function(value) {
+proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.setFilterMask = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -5744,8 +5744,8 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.setFilterMasks = fu
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.tickets.ListAgentTicketsRequest} returns this
  */
-proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.clearFilterMasks = function() {
-  return this.setFilterMasks(undefined);
+proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.clearFilterMask = function() {
+  return this.setFilterMask(undefined);
 };
 
 
@@ -5753,7 +5753,7 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.clearFilterMasks = 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.hasFilterMasks = function() {
+proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.hasFilterMask = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
