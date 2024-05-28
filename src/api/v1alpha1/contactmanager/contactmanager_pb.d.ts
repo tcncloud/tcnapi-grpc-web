@@ -37,11 +37,6 @@ export namespace GetContactListRequest {
 }
 
 export class GetContactListResponse extends jspb.Message {
-  clearContactListList(): void;
-  getContactListList(): Array<api_commons_contactmanager_pb.ContactManagerList>;
-  setContactListList(value: Array<api_commons_contactmanager_pb.ContactManagerList>): void;
-  addContactList(value?: api_commons_contactmanager_pb.ContactManagerList, index?: number): api_commons_contactmanager_pb.ContactManagerList;
-
   clearContactManagerListList(): void;
   getContactManagerListList(): Array<ContactManagerList>;
   setContactManagerListList(value: Array<ContactManagerList>): void;
@@ -59,7 +54,6 @@ export class GetContactListResponse extends jspb.Message {
 
 export namespace GetContactListResponse {
   export type AsObject = {
-    contactListList: Array<api_commons_contactmanager_pb.ContactManagerList.AsObject>,
     contactManagerListList: Array<ContactManagerList.AsObject>,
   }
 }
@@ -93,11 +87,6 @@ export namespace ListContactEntryListRequest {
 }
 
 export class ListContactEntryListResponse extends jspb.Message {
-  clearContactEntryList(): void;
-  getContactEntryList(): Array<api_commons_contactmanager_pb.ContactManagerEntry>;
-  setContactEntryList(value: Array<api_commons_contactmanager_pb.ContactManagerEntry>): void;
-  addContactEntry(value?: api_commons_contactmanager_pb.ContactManagerEntry, index?: number): api_commons_contactmanager_pb.ContactManagerEntry;
-
   clearContactManagerEntryList(): void;
   getContactManagerEntryList(): Array<ContactManagerEntry>;
   setContactManagerEntryList(value: Array<ContactManagerEntry>): void;
@@ -115,7 +104,6 @@ export class ListContactEntryListResponse extends jspb.Message {
 
 export namespace ListContactEntryListResponse {
   export type AsObject = {
-    contactEntryList: Array<api_commons_contactmanager_pb.ContactManagerEntry.AsObject>,
     contactManagerEntryList: Array<ContactManagerEntry.AsObject>,
   }
 }
@@ -141,11 +129,6 @@ export namespace GetEncContactEntryRequest {
 }
 
 export class GetEncContactEntryResponse extends jspb.Message {
-  clearContactEntryList(): void;
-  getContactEntryList(): Array<api_commons_contactmanager_pb.ContactManagerEntry>;
-  setContactEntryList(value: Array<api_commons_contactmanager_pb.ContactManagerEntry>): void;
-  addContactEntry(value?: api_commons_contactmanager_pb.ContactManagerEntry, index?: number): api_commons_contactmanager_pb.ContactManagerEntry;
-
   clearContactManagerEntryList(): void;
   getContactManagerEntryList(): Array<ContactManagerEntry>;
   setContactManagerEntryList(value: Array<ContactManagerEntry>): void;
@@ -163,7 +146,6 @@ export class GetEncContactEntryResponse extends jspb.Message {
 
 export namespace GetEncContactEntryResponse {
   export type AsObject = {
-    contactEntryList: Array<api_commons_contactmanager_pb.ContactManagerEntry.AsObject>,
     contactManagerEntryList: Array<ContactManagerEntry.AsObject>,
   }
 }
@@ -171,14 +153,6 @@ export namespace GetEncContactEntryResponse {
 export class GetKYCEncContactEntryRequest extends jspb.Message {
   getProjectId(): string;
   setProjectId(value: string): void;
-
-  clearEntryValList(): void;
-  getEntryValList(): Array<api_commons_contactmanager_pb.ContactManagerEntryVal>;
-  setEntryValList(value: Array<api_commons_contactmanager_pb.ContactManagerEntryVal>): void;
-  addEntryVal(value?: api_commons_contactmanager_pb.ContactManagerEntryVal, index?: number): api_commons_contactmanager_pb.ContactManagerEntryVal;
-
-  getMinKycLimit(): number;
-  setMinKycLimit(value: number): void;
 
   clearKycResponseList(): void;
   getKycResponseList(): Array<ContactManagerEntryVal>;
@@ -198,8 +172,6 @@ export class GetKYCEncContactEntryRequest extends jspb.Message {
 export namespace GetKYCEncContactEntryRequest {
   export type AsObject = {
     projectId: string,
-    entryValList: Array<api_commons_contactmanager_pb.ContactManagerEntryVal.AsObject>,
-    minKycLimit: number,
     kycResponseList: Array<ContactManagerEntryVal.AsObject>,
   }
 }
@@ -231,6 +203,9 @@ export namespace GetKYCEncContactEntryResponse {
 }
 
 export class GetKYCKeysRequest extends jspb.Message {
+  getProjectSid(): string;
+  setProjectSid(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetKYCKeysRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetKYCKeysRequest): GetKYCKeysRequest.AsObject;
@@ -243,6 +218,7 @@ export class GetKYCKeysRequest extends jspb.Message {
 
 export namespace GetKYCKeysRequest {
   export type AsObject = {
+    projectSid: string,
   }
 }
 
@@ -251,9 +227,6 @@ export class GetKYCKeysResponse extends jspb.Message {
   getEntryTypeList(): Array<string>;
   setEntryTypeList(value: Array<string>): void;
   addEntryType(value: string, index?: number): string;
-
-  getKycLimit(): number;
-  setKycLimit(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetKYCKeysResponse.AsObject;
@@ -268,7 +241,6 @@ export class GetKYCKeysResponse extends jspb.Message {
 export namespace GetKYCKeysResponse {
   export type AsObject = {
     entryTypeList: Array<string>,
-    kycLimit: number,
   }
 }
 
