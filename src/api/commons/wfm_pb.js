@@ -51,6 +51,7 @@ goog.exportSymbol('proto.api.commons.HistoryCacheState', null, global);
 goog.exportSymbol('proto.api.commons.InitialSetupState', null, global);
 goog.exportSymbol('proto.api.commons.InitialSetupStatus', null, global);
 goog.exportSymbol('proto.api.commons.LeaveRequest', null, global);
+goog.exportSymbol('proto.api.commons.LeaveRequestStatus', null, global);
 goog.exportSymbol('proto.api.commons.OpenTimesOption', null, global);
 goog.exportSymbol('proto.api.commons.OptionTypes', null, global);
 goog.exportSymbol('proto.api.commons.OptionTypes.DesiredOptionCase', null, global);
@@ -62,7 +63,6 @@ goog.exportSymbol('proto.api.commons.ProfileWOMS', null, global);
 goog.exportSymbol('proto.api.commons.RealTimeManagementState', null, global);
 goog.exportSymbol('proto.api.commons.RegressionForecasterAvgsProcessingType', null, global);
 goog.exportSymbol('proto.api.commons.RegressionForecasterModelTypes', null, global);
-goog.exportSymbol('proto.api.commons.RequestStatus', null, global);
 goog.exportSymbol('proto.api.commons.ScheduleSelector', null, global);
 goog.exportSymbol('proto.api.commons.ScheduleShouldInclude', null, global);
 goog.exportSymbol('proto.api.commons.ScheduleType', null, global);
@@ -6308,7 +6308,7 @@ proto.api.commons.LeaveRequest.deserializeBinaryFromReader = function(msg, reade
       msg.setWfmAgentSid(value);
       break;
     case 3:
-      var value = /** @type {!proto.api.commons.RequestStatus} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.LeaveRequestStatus} */ (reader.readEnum());
       msg.setRequestStatus(value);
       break;
     case 4:
@@ -6486,16 +6486,16 @@ proto.api.commons.LeaveRequest.prototype.setWfmAgentSid = function(value) {
 
 
 /**
- * optional RequestStatus request_status = 3;
- * @return {!proto.api.commons.RequestStatus}
+ * optional LeaveRequestStatus request_status = 3;
+ * @return {!proto.api.commons.LeaveRequestStatus}
  */
 proto.api.commons.LeaveRequest.prototype.getRequestStatus = function() {
-  return /** @type {!proto.api.commons.RequestStatus} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {!proto.api.commons.LeaveRequestStatus} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.RequestStatus} value
+ * @param {!proto.api.commons.LeaveRequestStatus} value
  * @return {!proto.api.commons.LeaveRequest} returns this
  */
 proto.api.commons.LeaveRequest.prototype.setRequestStatus = function(value) {
@@ -7005,7 +7005,7 @@ proto.api.commons.RealTimeManagementState = {
 /**
  * @enum {number}
  */
-proto.api.commons.RequestStatus = {
+proto.api.commons.LeaveRequestStatus = {
   UNSPECIFIED_STATUS: 0,
   PENDING_REQUEST: 1,
   APPROVED_REQUEST: 2,

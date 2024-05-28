@@ -821,8 +821,8 @@ export class LeaveRequest extends jspb.Message {
   getWfmAgentSid(): number;
   setWfmAgentSid(value: number): void;
 
-  getRequestStatus(): RequestStatusMap[keyof RequestStatusMap];
-  setRequestStatus(value: RequestStatusMap[keyof RequestStatusMap]): void;
+  getRequestStatus(): LeaveRequestStatusMap[keyof LeaveRequestStatusMap];
+  setRequestStatus(value: LeaveRequestStatusMap[keyof LeaveRequestStatusMap]): void;
 
   getRequestComment(): string;
   setRequestComment(value: string): void;
@@ -867,7 +867,7 @@ export namespace LeaveRequest {
   export type AsObject = {
     leaveRequestId: number,
     wfmAgentSid: number,
-    requestStatus: RequestStatusMap[keyof RequestStatusMap],
+    requestStatus: LeaveRequestStatusMap[keyof LeaveRequestStatusMap],
     requestComment: string,
     responseComment: string,
     requestedDatetimeRangesList: Array<DatetimeRange.AsObject>,
@@ -1154,7 +1154,7 @@ export interface RealTimeManagementStateMap {
 
 export const RealTimeManagementState: RealTimeManagementStateMap;
 
-export interface RequestStatusMap {
+export interface LeaveRequestStatusMap {
   UNSPECIFIED_STATUS: 0;
   PENDING_REQUEST: 1;
   APPROVED_REQUEST: 2;
@@ -1162,5 +1162,5 @@ export interface RequestStatusMap {
   CANCELLED_REQUEST: 4;
 }
 
-export const RequestStatus: RequestStatusMap;
+export const LeaveRequestStatus: LeaveRequestStatusMap;
 
