@@ -5566,8 +5566,7 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.toObject = function(includeIn
   var f, obj = {
     selectFieldMask: (f = msg.getSelectFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
     filterMask: (f = msg.getFilterMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    participantId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    agentViewLimit: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    participantId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5618,10 +5617,6 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.deserializeBinaryFromReader =
       var value = /** @type {string} */ (reader.readString());
       msg.setParticipantId(value);
       break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setAgentViewLimit(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -5671,13 +5666,6 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.serializeBinaryToWriter = fun
   if (f.length > 0) {
     writer.writeString(
       3,
-      f
-    );
-  }
-  f = message.getAgentViewLimit();
-  if (f !== 0) {
-    writer.writeInt64(
-      4,
       f
     );
   }
@@ -5773,24 +5761,6 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.getParticipantId = 
  */
 proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.setParticipantId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional int64 agent_view_limit = 4;
- * @return {number}
- */
-proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.getAgentViewLimit = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.tickets.ListAgentTicketsRequest} returns this
- */
-proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.setAgentViewLimit = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
