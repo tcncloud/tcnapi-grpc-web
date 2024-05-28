@@ -14898,8 +14898,8 @@ proto.api.commons.org.CountryHoliday.toObject = function(includeInstance, msg) {
     holidayName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     country: jspb.Message.getFieldWithDefault(msg, 2, 0),
     countryName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    typeList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    stateList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+    typesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    statesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14950,11 +14950,11 @@ proto.api.commons.org.CountryHoliday.deserializeBinaryFromReader = function(msg,
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.addType(value);
+      msg.addTypes(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.addState(value);
+      msg.addStates(value);
       break;
     default:
       reader.skipField();
@@ -15006,14 +15006,14 @@ proto.api.commons.org.CountryHoliday.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getTypeList();
+  f = message.getTypesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       4,
       f
     );
   }
-  f = message.getStateList();
+  f = message.getStatesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       5,
@@ -15078,10 +15078,10 @@ proto.api.commons.org.CountryHoliday.prototype.setCountryName = function(value) 
 
 
 /**
- * repeated string type = 4;
+ * repeated string types = 4;
  * @return {!Array<string>}
  */
-proto.api.commons.org.CountryHoliday.prototype.getTypeList = function() {
+proto.api.commons.org.CountryHoliday.prototype.getTypesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
 };
 
@@ -15090,7 +15090,7 @@ proto.api.commons.org.CountryHoliday.prototype.getTypeList = function() {
  * @param {!Array<string>} value
  * @return {!proto.api.commons.org.CountryHoliday} returns this
  */
-proto.api.commons.org.CountryHoliday.prototype.setTypeList = function(value) {
+proto.api.commons.org.CountryHoliday.prototype.setTypesList = function(value) {
   return jspb.Message.setField(this, 4, value || []);
 };
 
@@ -15100,7 +15100,7 @@ proto.api.commons.org.CountryHoliday.prototype.setTypeList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.api.commons.org.CountryHoliday} returns this
  */
-proto.api.commons.org.CountryHoliday.prototype.addType = function(value, opt_index) {
+proto.api.commons.org.CountryHoliday.prototype.addTypes = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
 };
 
@@ -15109,16 +15109,16 @@ proto.api.commons.org.CountryHoliday.prototype.addType = function(value, opt_ind
  * Clears the list making it empty but non-null.
  * @return {!proto.api.commons.org.CountryHoliday} returns this
  */
-proto.api.commons.org.CountryHoliday.prototype.clearTypeList = function() {
-  return this.setTypeList([]);
+proto.api.commons.org.CountryHoliday.prototype.clearTypesList = function() {
+  return this.setTypesList([]);
 };
 
 
 /**
- * repeated string state = 5;
+ * repeated string states = 5;
  * @return {!Array<string>}
  */
-proto.api.commons.org.CountryHoliday.prototype.getStateList = function() {
+proto.api.commons.org.CountryHoliday.prototype.getStatesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
@@ -15127,7 +15127,7 @@ proto.api.commons.org.CountryHoliday.prototype.getStateList = function() {
  * @param {!Array<string>} value
  * @return {!proto.api.commons.org.CountryHoliday} returns this
  */
-proto.api.commons.org.CountryHoliday.prototype.setStateList = function(value) {
+proto.api.commons.org.CountryHoliday.prototype.setStatesList = function(value) {
   return jspb.Message.setField(this, 5, value || []);
 };
 
@@ -15137,7 +15137,7 @@ proto.api.commons.org.CountryHoliday.prototype.setStateList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.api.commons.org.CountryHoliday} returns this
  */
-proto.api.commons.org.CountryHoliday.prototype.addState = function(value, opt_index) {
+proto.api.commons.org.CountryHoliday.prototype.addStates = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
@@ -15146,8 +15146,8 @@ proto.api.commons.org.CountryHoliday.prototype.addState = function(value, opt_in
  * Clears the list making it empty but non-null.
  * @return {!proto.api.commons.org.CountryHoliday} returns this
  */
-proto.api.commons.org.CountryHoliday.prototype.clearStateList = function() {
-  return this.setStateList([]);
+proto.api.commons.org.CountryHoliday.prototype.clearStatesList = function() {
+  return this.setStatesList([]);
 };
 
 

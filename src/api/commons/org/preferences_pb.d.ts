@@ -1949,15 +1949,15 @@ export class CountryHoliday extends jspb.Message {
   getCountryName(): string;
   setCountryName(value: string): void;
 
-  clearTypeList(): void;
-  getTypeList(): Array<string>;
-  setTypeList(value: Array<string>): void;
-  addType(value: string, index?: number): string;
+  clearTypesList(): void;
+  getTypesList(): Array<string>;
+  setTypesList(value: Array<string>): void;
+  addTypes(value: string, index?: number): string;
 
-  clearStateList(): void;
-  getStateList(): Array<string>;
-  setStateList(value: Array<string>): void;
-  addState(value: string, index?: number): string;
+  clearStatesList(): void;
+  getStatesList(): Array<string>;
+  setStatesList(value: Array<string>): void;
+  addStates(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CountryHoliday.AsObject;
@@ -1974,8 +1974,8 @@ export namespace CountryHoliday {
     holidayName: string,
     country: api_commons_country_pb.CountryMap[keyof api_commons_country_pb.CountryMap],
     countryName: string,
-    typeList: Array<string>,
-    stateList: Array<string>,
+    typesList: Array<string>,
+    statesList: Array<string>,
   }
 }
 
