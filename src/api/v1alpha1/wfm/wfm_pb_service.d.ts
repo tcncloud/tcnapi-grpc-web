@@ -1516,6 +1516,24 @@ type WFMRemoveAgentFromSchedule = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse;
 };
 
+type WFMCreateLeaveRequest = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestResponse;
+};
+
+type WFMListLeaveRequests = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsResponse;
+};
+
 type WFMHelloWorldWFMAdherence = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1722,6 +1740,8 @@ export class WFM {
   static readonly ReplaceAgentOnSchedule: WFMReplaceAgentOnSchedule;
   static readonly ReplaceAgentOnScheduleV1: WFMReplaceAgentOnScheduleV1;
   static readonly RemoveAgentFromSchedule: WFMRemoveAgentFromSchedule;
+  static readonly CreateLeaveRequest: WFMCreateLeaveRequest;
+  static readonly ListLeaveRequests: WFMListLeaveRequests;
   static readonly HelloWorldWFMAdherence: WFMHelloWorldWFMAdherence;
   static readonly ListAgentStatesForDay: WFMListAgentStatesForDay;
   static readonly ListRealTimeManagementStates: WFMListRealTimeManagementStates;
@@ -3223,6 +3243,24 @@ export class WFMClient {
   removeAgentFromSchedule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse|null) => void
+  ): UnaryResponse;
+  createLeaveRequest(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestResponse|null) => void
+  ): UnaryResponse;
+  createLeaveRequest(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestResponse|null) => void
+  ): UnaryResponse;
+  listLeaveRequests(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsResponse|null) => void
+  ): UnaryResponse;
+  listLeaveRequests(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsResponse|null) => void
   ): UnaryResponse;
   helloWorldWFMAdherence(
     requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceRequest,

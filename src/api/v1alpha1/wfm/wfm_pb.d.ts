@@ -11536,3 +11536,109 @@ export namespace ListRealTimeManagementStateColorsResponse {
   }
 }
 
+export class CreateLeaveRequestRequest extends jspb.Message {
+  clearRequestedDatetimeRangesList(): void;
+  getRequestedDatetimeRangesList(): Array<api_commons_wfm_pb.DatetimeRange>;
+  setRequestedDatetimeRangesList(value: Array<api_commons_wfm_pb.DatetimeRange>): void;
+  addRequestedDatetimeRanges(value?: api_commons_wfm_pb.DatetimeRange, index?: number): api_commons_wfm_pb.DatetimeRange;
+
+  getRequestComment(): string;
+  setRequestComment(value: string): void;
+
+  getWfmAgentSid(): number;
+  setWfmAgentSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateLeaveRequestRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateLeaveRequestRequest): CreateLeaveRequestRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateLeaveRequestRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateLeaveRequestRequest;
+  static deserializeBinaryFromReader(message: CreateLeaveRequestRequest, reader: jspb.BinaryReader): CreateLeaveRequestRequest;
+}
+
+export namespace CreateLeaveRequestRequest {
+  export type AsObject = {
+    requestedDatetimeRangesList: Array<api_commons_wfm_pb.DatetimeRange.AsObject>,
+    requestComment: string,
+    wfmAgentSid: number,
+  }
+}
+
+export class CreateLeaveRequestResponse extends jspb.Message {
+  hasLeaveRequest(): boolean;
+  clearLeaveRequest(): void;
+  getLeaveRequest(): api_commons_wfm_pb.LeaveRequest | undefined;
+  setLeaveRequest(value?: api_commons_wfm_pb.LeaveRequest): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateLeaveRequestResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateLeaveRequestResponse): CreateLeaveRequestResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateLeaveRequestResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateLeaveRequestResponse;
+  static deserializeBinaryFromReader(message: CreateLeaveRequestResponse, reader: jspb.BinaryReader): CreateLeaveRequestResponse;
+}
+
+export namespace CreateLeaveRequestResponse {
+  export type AsObject = {
+    leaveRequest?: api_commons_wfm_pb.LeaveRequest.AsObject,
+  }
+}
+
+export class ListLeaveRequestsRequest extends jspb.Message {
+  clearWfmAgentSidsList(): void;
+  getWfmAgentSidsList(): Array<number>;
+  setWfmAgentSidsList(value: Array<number>): void;
+  addWfmAgentSids(value: number, index?: number): number;
+
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  getIncludeArchived(): boolean;
+  setIncludeArchived(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListLeaveRequestsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListLeaveRequestsRequest): ListLeaveRequestsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListLeaveRequestsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListLeaveRequestsRequest;
+  static deserializeBinaryFromReader(message: ListLeaveRequestsRequest, reader: jspb.BinaryReader): ListLeaveRequestsRequest;
+}
+
+export namespace ListLeaveRequestsRequest {
+  export type AsObject = {
+    wfmAgentSidsList: Array<number>,
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    includeArchived: boolean,
+  }
+}
+
+export class ListLeaveRequestsResponse extends jspb.Message {
+  clearLeaveRequestsList(): void;
+  getLeaveRequestsList(): Array<api_commons_wfm_pb.LeaveRequest>;
+  setLeaveRequestsList(value: Array<api_commons_wfm_pb.LeaveRequest>): void;
+  addLeaveRequests(value?: api_commons_wfm_pb.LeaveRequest, index?: number): api_commons_wfm_pb.LeaveRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListLeaveRequestsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListLeaveRequestsResponse): ListLeaveRequestsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListLeaveRequestsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListLeaveRequestsResponse;
+  static deserializeBinaryFromReader(message: ListLeaveRequestsResponse, reader: jspb.BinaryReader): ListLeaveRequestsResponse;
+}
+
+export namespace ListLeaveRequestsResponse {
+  export type AsObject = {
+    leaveRequestsList: Array<api_commons_wfm_pb.LeaveRequest.AsObject>,
+  }
+}
+

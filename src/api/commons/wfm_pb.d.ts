@@ -814,6 +814,70 @@ export namespace AgentStateSequence {
   }
 }
 
+export class LeaveRequest extends jspb.Message {
+  getLeaveRequestId(): number;
+  setLeaveRequestId(value: number): void;
+
+  getWfmAgentSid(): number;
+  setWfmAgentSid(value: number): void;
+
+  getRequestStatus(): RequestStatusMap[keyof RequestStatusMap];
+  setRequestStatus(value: RequestStatusMap[keyof RequestStatusMap]): void;
+
+  getRequestComment(): string;
+  setRequestComment(value: string): void;
+
+  getResponseComment(): string;
+  setResponseComment(value: string): void;
+
+  clearRequestDatetimeRangesList(): void;
+  getRequestDatetimeRangesList(): Array<DatetimeRange>;
+  setRequestDatetimeRangesList(value: Array<DatetimeRange>): void;
+  addRequestDatetimeRanges(value?: DatetimeRange, index?: number): DatetimeRange;
+
+  hasCreatedTime(): boolean;
+  clearCreatedTime(): void;
+  getCreatedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasArchivedTime(): boolean;
+  clearArchivedTime(): void;
+  getArchivedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setArchivedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasResolvedTime(): boolean;
+  clearResolvedTime(): void;
+  getResolvedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setResolvedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getResolvedByUserId(): string;
+  setResolvedByUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LeaveRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: LeaveRequest): LeaveRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LeaveRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LeaveRequest;
+  static deserializeBinaryFromReader(message: LeaveRequest, reader: jspb.BinaryReader): LeaveRequest;
+}
+
+export namespace LeaveRequest {
+  export type AsObject = {
+    leaveRequestId: number,
+    wfmAgentSid: number,
+    requestStatus: RequestStatusMap[keyof RequestStatusMap],
+    requestComment: string,
+    responseComment: string,
+    requestDatetimeRangesList: Array<DatetimeRange.AsObject>,
+    createdTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    archivedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    resolvedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    resolvedByUserId: string,
+  }
+}
+
 export interface RegressionForecasterModelTypesMap {
   RANDOM_FOREST: 0;
   ADABOOST: 1;
@@ -1089,4 +1153,14 @@ export interface RealTimeManagementStateMap {
 }
 
 export const RealTimeManagementState: RealTimeManagementStateMap;
+
+export interface RequestStatusMap {
+  UNSPECIFIED_STATUS: 0;
+  PENDING_REQUEST: 1;
+  APPROVED_REQUEST: 2;
+  DENIED_REQUEST: 3;
+  CANCELLED_REQUEST: 4;
+}
+
+export const RequestStatus: RequestStatusMap;
 
