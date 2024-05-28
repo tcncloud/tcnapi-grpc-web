@@ -814,15 +814,15 @@ export namespace AgentStateSequence {
   }
 }
 
-export class LeaveRequest extends jspb.Message {
+export class AgentTimeOff extends jspb.Message {
   getLeaveRequestId(): number;
   setLeaveRequestId(value: number): void;
 
   getWfmAgentSid(): number;
   setWfmAgentSid(value: number): void;
 
-  getRequestStatus(): LeaveRequestStatusMap[keyof LeaveRequestStatusMap];
-  setRequestStatus(value: LeaveRequestStatusMap[keyof LeaveRequestStatusMap]): void;
+  getRequestStatus(): AgentTimeOffStatusMap[keyof AgentTimeOffStatusMap];
+  setRequestStatus(value: AgentTimeOffStatusMap[keyof AgentTimeOffStatusMap]): void;
 
   getRequestComment(): string;
   setRequestComment(value: string): void;
@@ -854,20 +854,20 @@ export class LeaveRequest extends jspb.Message {
   setResolvedByUserId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LeaveRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: LeaveRequest): LeaveRequest.AsObject;
+  toObject(includeInstance?: boolean): AgentTimeOff.AsObject;
+  static toObject(includeInstance: boolean, msg: AgentTimeOff): AgentTimeOff.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: LeaveRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LeaveRequest;
-  static deserializeBinaryFromReader(message: LeaveRequest, reader: jspb.BinaryReader): LeaveRequest;
+  static serializeBinaryToWriter(message: AgentTimeOff, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AgentTimeOff;
+  static deserializeBinaryFromReader(message: AgentTimeOff, reader: jspb.BinaryReader): AgentTimeOff;
 }
 
-export namespace LeaveRequest {
+export namespace AgentTimeOff {
   export type AsObject = {
     leaveRequestId: number,
     wfmAgentSid: number,
-    requestStatus: LeaveRequestStatusMap[keyof LeaveRequestStatusMap],
+    requestStatus: AgentTimeOffStatusMap[keyof AgentTimeOffStatusMap],
     requestComment: string,
     responseComment: string,
     requestedDatetimeRangesList: Array<DatetimeRange.AsObject>,
@@ -1154,7 +1154,7 @@ export interface RealTimeManagementStateMap {
 
 export const RealTimeManagementState: RealTimeManagementStateMap;
 
-export interface LeaveRequestStatusMap {
+export interface AgentTimeOffStatusMap {
   UNSPECIFIED_STATUS: 0;
   PENDING_REQUEST: 1;
   APPROVED_REQUEST: 2;
@@ -1162,5 +1162,5 @@ export interface LeaveRequestStatusMap {
   CANCELLED_REQUEST: 4;
 }
 
-export const LeaveRequestStatus: LeaveRequestStatusMap;
+export const AgentTimeOffStatus: AgentTimeOffStatusMap;
 

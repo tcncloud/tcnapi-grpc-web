@@ -1516,22 +1516,22 @@ type WFMRemoveAgentFromSchedule = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse;
 };
 
-type WFMCreateLeaveRequest = {
+type WFMCreateAgentTimeOff = {
   readonly methodName: string;
   readonly service: typeof WFM;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestRequest;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestResponse;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateAgentTimeOffRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAgentTimeOffResponse;
 };
 
-type WFMListLeaveRequests = {
+type WFMListAgentTimeOffs = {
   readonly methodName: string;
   readonly service: typeof WFM;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsRequest;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsResponse;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentTimeOffsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentTimeOffsResponse;
 };
 
 type WFMHelloWorldWFMAdherence = {
@@ -1740,8 +1740,8 @@ export class WFM {
   static readonly ReplaceAgentOnSchedule: WFMReplaceAgentOnSchedule;
   static readonly ReplaceAgentOnScheduleV1: WFMReplaceAgentOnScheduleV1;
   static readonly RemoveAgentFromSchedule: WFMRemoveAgentFromSchedule;
-  static readonly CreateLeaveRequest: WFMCreateLeaveRequest;
-  static readonly ListLeaveRequests: WFMListLeaveRequests;
+  static readonly CreateAgentTimeOff: WFMCreateAgentTimeOff;
+  static readonly ListAgentTimeOffs: WFMListAgentTimeOffs;
   static readonly HelloWorldWFMAdherence: WFMHelloWorldWFMAdherence;
   static readonly ListAgentStatesForDay: WFMListAgentStatesForDay;
   static readonly ListRealTimeManagementStates: WFMListRealTimeManagementStates;
@@ -3244,23 +3244,23 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse|null) => void
   ): UnaryResponse;
-  createLeaveRequest(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestRequest,
+  createAgentTimeOff(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentTimeOffRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentTimeOffResponse|null) => void
   ): UnaryResponse;
-  createLeaveRequest(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestResponse|null) => void
+  createAgentTimeOff(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentTimeOffRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentTimeOffResponse|null) => void
   ): UnaryResponse;
-  listLeaveRequests(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsRequest,
+  listAgentTimeOffs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentTimeOffsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentTimeOffsResponse|null) => void
   ): UnaryResponse;
-  listLeaveRequests(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsResponse|null) => void
+  listAgentTimeOffs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentTimeOffsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentTimeOffsResponse|null) => void
   ): UnaryResponse;
   helloWorldWFMAdherence(
     requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceRequest,

@@ -1522,22 +1522,22 @@ WFM.RemoveAgentFromSchedule = {
   responseType: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse
 };
 
-WFM.CreateLeaveRequest = {
-  methodName: "CreateLeaveRequest",
+WFM.CreateAgentTimeOff = {
+  methodName: "CreateAgentTimeOff",
   service: WFM,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestRequest,
-  responseType: api_v1alpha1_wfm_wfm_pb.CreateLeaveRequestResponse
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateAgentTimeOffRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateAgentTimeOffResponse
 };
 
-WFM.ListLeaveRequests = {
-  methodName: "ListLeaveRequests",
+WFM.ListAgentTimeOffs = {
+  methodName: "ListAgentTimeOffs",
   service: WFM,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsRequest,
-  responseType: api_v1alpha1_wfm_wfm_pb.ListLeaveRequestsResponse
+  requestType: api_v1alpha1_wfm_wfm_pb.ListAgentTimeOffsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListAgentTimeOffsResponse
 };
 
 WFM.HelloWorldWFMAdherence = {
@@ -6839,11 +6839,11 @@ WFMClient.prototype.removeAgentFromSchedule = function removeAgentFromSchedule(r
   };
 };
 
-WFMClient.prototype.createLeaveRequest = function createLeaveRequest(requestMessage, metadata, callback) {
+WFMClient.prototype.createAgentTimeOff = function createAgentTimeOff(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WFM.CreateLeaveRequest, {
+  var client = grpc.unary(WFM.CreateAgentTimeOff, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -6870,11 +6870,11 @@ WFMClient.prototype.createLeaveRequest = function createLeaveRequest(requestMess
   };
 };
 
-WFMClient.prototype.listLeaveRequests = function listLeaveRequests(requestMessage, metadata, callback) {
+WFMClient.prototype.listAgentTimeOffs = function listAgentTimeOffs(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WFM.ListLeaveRequests, {
+  var client = grpc.unary(WFM.ListAgentTimeOffs, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
