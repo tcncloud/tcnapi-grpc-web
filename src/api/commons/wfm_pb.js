@@ -7006,11 +7006,11 @@ proto.api.commons.RealTimeManagementState = {
  * @enum {number}
  */
 proto.api.commons.AgentLeavePetitionStatus = {
-  UNSPECIFIED_STATUS: 0,
-  PENDING_REQUEST: 1,
-  APPROVED_REQUEST: 2,
-  DENIED_REQUEST: 3,
-  CANCELLED_REQUEST: 4
+  UNSPECIFIED_PETITION_STATUS: 0,
+  PENDING_PETITION: 1,
+  APPROVED_PETITION: 2,
+  DENIED_PETITION: 3,
+  CANCELLED_PETITION: 4
 };
 
 goog.object.extend(exports, proto.api.commons);
