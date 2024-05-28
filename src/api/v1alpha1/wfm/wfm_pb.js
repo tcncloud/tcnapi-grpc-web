@@ -74437,7 +74437,8 @@ proto.api.v1alpha1.wfm.UpdateShiftInstanceV2Req.toObject = function(includeInsta
     startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     widthInMinutes: jspb.Message.getFieldWithDefault(msg, 3, 0),
     wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    isLocked: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+    isLocked: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    plannedShrinkagePercent: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0)
   };
 
   if (includeInstance) {
@@ -74494,6 +74495,10 @@ proto.api.v1alpha1.wfm.UpdateShiftInstanceV2Req.deserializeBinaryFromReader = fu
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsLocked(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setPlannedShrinkagePercent(value);
       break;
     default:
       reader.skipField();
@@ -74557,6 +74562,13 @@ proto.api.v1alpha1.wfm.UpdateShiftInstanceV2Req.serializeBinaryToWriter = functi
   if (f) {
     writer.writeBool(
       5,
+      f
+    );
+  }
+  f = message.getPlannedShrinkagePercent();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      6,
       f
     );
   }
@@ -74669,6 +74681,24 @@ proto.api.v1alpha1.wfm.UpdateShiftInstanceV2Req.prototype.getIsLocked = function
  */
 proto.api.v1alpha1.wfm.UpdateShiftInstanceV2Req.prototype.setIsLocked = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * optional float planned_shrinkage_percent = 6;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.UpdateShiftInstanceV2Req.prototype.getPlannedShrinkagePercent = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.UpdateShiftInstanceV2Req} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateShiftInstanceV2Req.prototype.setPlannedShrinkagePercent = function(value) {
+  return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 

@@ -9164,6 +9164,9 @@ export class UpdateShiftInstanceV2Req extends jspb.Message {
   getIsLocked(): boolean;
   setIsLocked(value: boolean): void;
 
+  getPlannedShrinkagePercent(): number;
+  setPlannedShrinkagePercent(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateShiftInstanceV2Req.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateShiftInstanceV2Req): UpdateShiftInstanceV2Req.AsObject;
@@ -9181,6 +9184,7 @@ export namespace UpdateShiftInstanceV2Req {
     widthInMinutes: number,
     wfmAgentSid: number,
     isLocked: boolean,
+    plannedShrinkagePercent: number,
   }
 }
 
