@@ -1,4 +1,4 @@
-// package: api.v1alpha1.org
+// package: api.v1alpha1.org.organizations
 // file: api/v1alpha1/org/organizations/service.proto
 
 import * as jspb from "google-protobuf";

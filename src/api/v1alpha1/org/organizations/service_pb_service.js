@@ -1,4 +1,4 @@
-// package: api.v1alpha1.org
+// package: api.v1alpha1.org.organizations
 // file: api/v1alpha1/org/organizations/service.proto
 
 var api_v1alpha1_org_organizations_service_pb = require("../../../../api/v1alpha1/org/organizations/service_pb");
@@ -8,7 +8,7 @@ var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var OrganizationsService = (function () {
   function OrganizationsService() {}
-  OrganizationsService.serviceName = "api.v1alpha1.org.OrganizationsService";
+  OrganizationsService.serviceName = "api.v1alpha1.org.organizations.OrganizationsService";
   return OrganizationsService;
 }());
 

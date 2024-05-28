@@ -1,4 +1,4 @@
-// package: api.v1alpha1.org
+// package: api.v1alpha1.org.organizations
 // file: api/v1alpha1/org/organizations/service.proto
 
 import * as api_v1alpha1_org_organizations_service_pb from "../../../../api/v1alpha1/org/organizations/service_pb";
