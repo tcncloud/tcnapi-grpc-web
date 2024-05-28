@@ -11567,10 +11567,10 @@ export namespace CreateAgentTimeOffRequest {
 }
 
 export class CreateAgentTimeOffResponse extends jspb.Message {
-  hasLeaveRequest(): boolean;
-  clearLeaveRequest(): void;
-  getLeaveRequest(): api_commons_wfm_pb.AgentTimeOff | undefined;
-  setLeaveRequest(value?: api_commons_wfm_pb.AgentTimeOff): void;
+  hasAgentTimeOffRequest(): boolean;
+  clearAgentTimeOffRequest(): void;
+  getAgentTimeOffRequest(): api_commons_wfm_pb.AgentTimeOff | undefined;
+  setAgentTimeOffRequest(value?: api_commons_wfm_pb.AgentTimeOff): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAgentTimeOffResponse.AsObject;
@@ -11584,7 +11584,7 @@ export class CreateAgentTimeOffResponse extends jspb.Message {
 
 export namespace CreateAgentTimeOffResponse {
   export type AsObject = {
-    leaveRequest?: api_commons_wfm_pb.AgentTimeOff.AsObject,
+    agentTimeOffRequest?: api_commons_wfm_pb.AgentTimeOff.AsObject,
   }
 }
 
@@ -11621,10 +11621,10 @@ export namespace ListAgentTimeOffsRequest {
 }
 
 export class ListAgentTimeOffsResponse extends jspb.Message {
-  clearLeaveRequestsList(): void;
-  getLeaveRequestsList(): Array<api_commons_wfm_pb.AgentTimeOff>;
-  setLeaveRequestsList(value: Array<api_commons_wfm_pb.AgentTimeOff>): void;
-  addLeaveRequests(value?: api_commons_wfm_pb.AgentTimeOff, index?: number): api_commons_wfm_pb.AgentTimeOff;
+  clearAgentTimeOffRequestsList(): void;
+  getAgentTimeOffRequestsList(): Array<api_commons_wfm_pb.AgentTimeOff>;
+  setAgentTimeOffRequestsList(value: Array<api_commons_wfm_pb.AgentTimeOff>): void;
+  addAgentTimeOffRequests(value?: api_commons_wfm_pb.AgentTimeOff, index?: number): api_commons_wfm_pb.AgentTimeOff;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAgentTimeOffsResponse.AsObject;
@@ -11638,7 +11638,7 @@ export class ListAgentTimeOffsResponse extends jspb.Message {
 
 export namespace ListAgentTimeOffsResponse {
   export type AsObject = {
-    leaveRequestsList: Array<api_commons_wfm_pb.AgentTimeOff.AsObject>,
+    agentTimeOffRequestsList: Array<api_commons_wfm_pb.AgentTimeOff.AsObject>,
   }
 }
 

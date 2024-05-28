@@ -815,8 +815,8 @@ export namespace AgentStateSequence {
 }
 
 export class AgentTimeOff extends jspb.Message {
-  getLeaveRequestId(): number;
-  setLeaveRequestId(value: number): void;
+  getAgentTimeOffRequestId(): number;
+  setAgentTimeOffRequestId(value: number): void;
 
   getWfmAgentSid(): number;
   setWfmAgentSid(value: number): void;
@@ -865,7 +865,7 @@ export class AgentTimeOff extends jspb.Message {
 
 export namespace AgentTimeOff {
   export type AsObject = {
-    leaveRequestId: number,
+    agentTimeOffRequestId: number,
     wfmAgentSid: number,
     requestStatus: AgentTimeOffStatusMap[keyof AgentTimeOffStatusMap],
     requestComment: string,

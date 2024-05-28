@@ -6252,7 +6252,7 @@ proto.api.commons.AgentTimeOff.prototype.toObject = function(opt_includeInstance
  */
 proto.api.commons.AgentTimeOff.toObject = function(includeInstance, msg) {
   var f, obj = {
-    leaveRequestId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    agentTimeOffRequestId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     requestStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
     requestComment: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -6301,7 +6301,7 @@ proto.api.commons.AgentTimeOff.deserializeBinaryFromReader = function(msg, reade
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setLeaveRequestId(value);
+      msg.setAgentTimeOffRequestId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
@@ -6372,7 +6372,7 @@ proto.api.commons.AgentTimeOff.prototype.serializeBinary = function() {
  */
 proto.api.commons.AgentTimeOff.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLeaveRequestId();
+  f = message.getAgentTimeOffRequestId();
   if (f !== 0) {
     writer.writeInt64(
       1,
@@ -6450,10 +6450,10 @@ proto.api.commons.AgentTimeOff.serializeBinaryToWriter = function(message, write
 
 
 /**
- * optional int64 leave_request_id = 1;
+ * optional int64 agent_time_off_request_id = 1;
  * @return {number}
  */
-proto.api.commons.AgentTimeOff.prototype.getLeaveRequestId = function() {
+proto.api.commons.AgentTimeOff.prototype.getAgentTimeOffRequestId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -6462,7 +6462,7 @@ proto.api.commons.AgentTimeOff.prototype.getLeaveRequestId = function() {
  * @param {number} value
  * @return {!proto.api.commons.AgentTimeOff} returns this
  */
-proto.api.commons.AgentTimeOff.prototype.setLeaveRequestId = function(value) {
+proto.api.commons.AgentTimeOff.prototype.setAgentTimeOffRequestId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 

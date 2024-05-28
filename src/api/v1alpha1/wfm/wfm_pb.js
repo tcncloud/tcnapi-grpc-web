@@ -91560,7 +91560,7 @@ proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.prototype.toObject = function(
  */
 proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    leaveRequest: (f = msg.getLeaveRequest()) && api_commons_wfm_pb.AgentTimeOff.toObject(includeInstance, f)
+    agentTimeOffRequest: (f = msg.getAgentTimeOffRequest()) && api_commons_wfm_pb.AgentTimeOff.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -91600,7 +91600,7 @@ proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.deserializeBinaryFromReader = 
     case 1:
       var value = new api_commons_wfm_pb.AgentTimeOff;
       reader.readMessage(value,api_commons_wfm_pb.AgentTimeOff.deserializeBinaryFromReader);
-      msg.setLeaveRequest(value);
+      msg.setAgentTimeOffRequest(value);
       break;
     default:
       reader.skipField();
@@ -91631,7 +91631,7 @@ proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.prototype.serializeBinary = fu
  */
 proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLeaveRequest();
+  f = message.getAgentTimeOffRequest();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -91643,10 +91643,10 @@ proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.serializeBinaryToWriter = func
 
 
 /**
- * optional api.commons.AgentTimeOff leave_request = 1;
+ * optional api.commons.AgentTimeOff agent_time_off_request = 1;
  * @return {?proto.api.commons.AgentTimeOff}
  */
-proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.prototype.getLeaveRequest = function() {
+proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.prototype.getAgentTimeOffRequest = function() {
   return /** @type{?proto.api.commons.AgentTimeOff} */ (
     jspb.Message.getWrapperField(this, api_commons_wfm_pb.AgentTimeOff, 1));
 };
@@ -91656,7 +91656,7 @@ proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.prototype.getLeaveRequest = fu
  * @param {?proto.api.commons.AgentTimeOff|undefined} value
  * @return {!proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse} returns this
 */
-proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.prototype.setLeaveRequest = function(value) {
+proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.prototype.setAgentTimeOffRequest = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -91665,8 +91665,8 @@ proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.prototype.setLeaveRequest = fu
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse} returns this
  */
-proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.prototype.clearLeaveRequest = function() {
-  return this.setLeaveRequest(undefined);
+proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.prototype.clearAgentTimeOffRequest = function() {
+  return this.setAgentTimeOffRequest(undefined);
 };
 
 
@@ -91674,7 +91674,7 @@ proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.prototype.clearLeaveRequest = 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.prototype.hasLeaveRequest = function() {
+proto.api.v1alpha1.wfm.CreateAgentTimeOffResponse.prototype.hasAgentTimeOffRequest = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -91957,7 +91957,7 @@ proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.prototype.toObject = function(o
  */
 proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    leaveRequestsList: jspb.Message.toObjectList(msg.getLeaveRequestsList(),
+    agentTimeOffRequestsList: jspb.Message.toObjectList(msg.getAgentTimeOffRequestsList(),
     api_commons_wfm_pb.AgentTimeOff.toObject, includeInstance)
   };
 
@@ -91998,7 +91998,7 @@ proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.deserializeBinaryFromReader = f
     case 1:
       var value = new api_commons_wfm_pb.AgentTimeOff;
       reader.readMessage(value,api_commons_wfm_pb.AgentTimeOff.deserializeBinaryFromReader);
-      msg.addLeaveRequests(value);
+      msg.addAgentTimeOffRequests(value);
       break;
     default:
       reader.skipField();
@@ -92029,7 +92029,7 @@ proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.prototype.serializeBinary = fun
  */
 proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLeaveRequestsList();
+  f = message.getAgentTimeOffRequestsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -92041,10 +92041,10 @@ proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.serializeBinaryToWriter = funct
 
 
 /**
- * repeated api.commons.AgentTimeOff leave_requests = 1;
+ * repeated api.commons.AgentTimeOff agent_time_off_requests = 1;
  * @return {!Array<!proto.api.commons.AgentTimeOff>}
  */
-proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.prototype.getLeaveRequestsList = function() {
+proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.prototype.getAgentTimeOffRequestsList = function() {
   return /** @type{!Array<!proto.api.commons.AgentTimeOff>} */ (
     jspb.Message.getRepeatedWrapperField(this, api_commons_wfm_pb.AgentTimeOff, 1));
 };
@@ -92054,7 +92054,7 @@ proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.prototype.getLeaveRequestsList 
  * @param {!Array<!proto.api.commons.AgentTimeOff>} value
  * @return {!proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse} returns this
 */
-proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.prototype.setLeaveRequestsList = function(value) {
+proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.prototype.setAgentTimeOffRequestsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -92064,7 +92064,7 @@ proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.prototype.setLeaveRequestsList 
  * @param {number=} opt_index
  * @return {!proto.api.commons.AgentTimeOff}
  */
-proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.prototype.addLeaveRequests = function(opt_value, opt_index) {
+proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.prototype.addAgentTimeOffRequests = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.commons.AgentTimeOff, opt_index);
 };
 
@@ -92073,8 +92073,8 @@ proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.prototype.addLeaveRequests = fu
  * Clears the list making it empty but non-null.
  * @return {!proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse} returns this
  */
-proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.prototype.clearLeaveRequestsList = function() {
-  return this.setLeaveRequestsList([]);
+proto.api.v1alpha1.wfm.ListAgentTimeOffsResponse.prototype.clearAgentTimeOffRequestsList = function() {
+  return this.setAgentTimeOffRequestsList([]);
 };
 
 
