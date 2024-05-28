@@ -814,15 +814,15 @@ export namespace AgentStateSequence {
   }
 }
 
-export class AgentTimeOff extends jspb.Message {
-  getAgentTimeOffRequestId(): number;
-  setAgentTimeOffRequestId(value: number): void;
+export class AgentLeavePetition extends jspb.Message {
+  getAgentLeavePetitionId(): number;
+  setAgentLeavePetitionId(value: number): void;
 
   getWfmAgentSid(): number;
   setWfmAgentSid(value: number): void;
 
-  getRequestStatus(): AgentTimeOffStatusMap[keyof AgentTimeOffStatusMap];
-  setRequestStatus(value: AgentTimeOffStatusMap[keyof AgentTimeOffStatusMap]): void;
+  getPetitionStatus(): AgentLeavePetitionStatusMap[keyof AgentLeavePetitionStatusMap];
+  setPetitionStatus(value: AgentLeavePetitionStatusMap[keyof AgentLeavePetitionStatusMap]): void;
 
   getRequestComment(): string;
   setRequestComment(value: string): void;
@@ -854,20 +854,20 @@ export class AgentTimeOff extends jspb.Message {
   setResolvedByUserId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AgentTimeOff.AsObject;
-  static toObject(includeInstance: boolean, msg: AgentTimeOff): AgentTimeOff.AsObject;
+  toObject(includeInstance?: boolean): AgentLeavePetition.AsObject;
+  static toObject(includeInstance: boolean, msg: AgentLeavePetition): AgentLeavePetition.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AgentTimeOff, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AgentTimeOff;
-  static deserializeBinaryFromReader(message: AgentTimeOff, reader: jspb.BinaryReader): AgentTimeOff;
+  static serializeBinaryToWriter(message: AgentLeavePetition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AgentLeavePetition;
+  static deserializeBinaryFromReader(message: AgentLeavePetition, reader: jspb.BinaryReader): AgentLeavePetition;
 }
 
-export namespace AgentTimeOff {
+export namespace AgentLeavePetition {
   export type AsObject = {
-    agentTimeOffRequestId: number,
+    agentLeavePetitionId: number,
     wfmAgentSid: number,
-    requestStatus: AgentTimeOffStatusMap[keyof AgentTimeOffStatusMap],
+    petitionStatus: AgentLeavePetitionStatusMap[keyof AgentLeavePetitionStatusMap],
     requestComment: string,
     responseComment: string,
     requestedDatetimeRangesList: Array<DatetimeRange.AsObject>,
@@ -1154,7 +1154,7 @@ export interface RealTimeManagementStateMap {
 
 export const RealTimeManagementState: RealTimeManagementStateMap;
 
-export interface AgentTimeOffStatusMap {
+export interface AgentLeavePetitionStatusMap {
   UNSPECIFIED_STATUS: 0;
   PENDING_REQUEST: 1;
   APPROVED_REQUEST: 2;
@@ -1162,5 +1162,5 @@ export interface AgentTimeOffStatusMap {
   CANCELLED_REQUEST: 4;
 }
 
-export const AgentTimeOffStatus: AgentTimeOffStatusMap;
+export const AgentLeavePetitionStatus: AgentLeavePetitionStatusMap;
 

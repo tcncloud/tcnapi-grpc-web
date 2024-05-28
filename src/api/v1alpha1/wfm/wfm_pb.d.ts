@@ -11536,7 +11536,7 @@ export namespace ListRealTimeManagementStateColorsResponse {
   }
 }
 
-export class CreateAgentTimeOffRequest extends jspb.Message {
+export class CreateAgentLeavePetitionRequest extends jspb.Message {
   clearRequestedDatetimeRangesList(): void;
   getRequestedDatetimeRangesList(): Array<api_commons_wfm_pb.DatetimeRange>;
   setRequestedDatetimeRangesList(value: Array<api_commons_wfm_pb.DatetimeRange>): void;
@@ -11549,16 +11549,16 @@ export class CreateAgentTimeOffRequest extends jspb.Message {
   setWfmAgentSid(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateAgentTimeOffRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateAgentTimeOffRequest): CreateAgentTimeOffRequest.AsObject;
+  toObject(includeInstance?: boolean): CreateAgentLeavePetitionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAgentLeavePetitionRequest): CreateAgentLeavePetitionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateAgentTimeOffRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateAgentTimeOffRequest;
-  static deserializeBinaryFromReader(message: CreateAgentTimeOffRequest, reader: jspb.BinaryReader): CreateAgentTimeOffRequest;
+  static serializeBinaryToWriter(message: CreateAgentLeavePetitionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAgentLeavePetitionRequest;
+  static deserializeBinaryFromReader(message: CreateAgentLeavePetitionRequest, reader: jspb.BinaryReader): CreateAgentLeavePetitionRequest;
 }
 
-export namespace CreateAgentTimeOffRequest {
+export namespace CreateAgentLeavePetitionRequest {
   export type AsObject = {
     requestedDatetimeRangesList: Array<api_commons_wfm_pb.DatetimeRange.AsObject>,
     requestComment: string,
@@ -11566,29 +11566,29 @@ export namespace CreateAgentTimeOffRequest {
   }
 }
 
-export class CreateAgentTimeOffResponse extends jspb.Message {
-  hasAgentTimeOffRequest(): boolean;
-  clearAgentTimeOffRequest(): void;
-  getAgentTimeOffRequest(): api_commons_wfm_pb.AgentTimeOff | undefined;
-  setAgentTimeOffRequest(value?: api_commons_wfm_pb.AgentTimeOff): void;
+export class CreateAgentLeavePetitionResponse extends jspb.Message {
+  hasAgentLeavePetition(): boolean;
+  clearAgentLeavePetition(): void;
+  getAgentLeavePetition(): api_commons_wfm_pb.AgentLeavePetition | undefined;
+  setAgentLeavePetition(value?: api_commons_wfm_pb.AgentLeavePetition): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateAgentTimeOffResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateAgentTimeOffResponse): CreateAgentTimeOffResponse.AsObject;
+  toObject(includeInstance?: boolean): CreateAgentLeavePetitionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAgentLeavePetitionResponse): CreateAgentLeavePetitionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateAgentTimeOffResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateAgentTimeOffResponse;
-  static deserializeBinaryFromReader(message: CreateAgentTimeOffResponse, reader: jspb.BinaryReader): CreateAgentTimeOffResponse;
+  static serializeBinaryToWriter(message: CreateAgentLeavePetitionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAgentLeavePetitionResponse;
+  static deserializeBinaryFromReader(message: CreateAgentLeavePetitionResponse, reader: jspb.BinaryReader): CreateAgentLeavePetitionResponse;
 }
 
-export namespace CreateAgentTimeOffResponse {
+export namespace CreateAgentLeavePetitionResponse {
   export type AsObject = {
-    agentTimeOffRequest?: api_commons_wfm_pb.AgentTimeOff.AsObject,
+    agentLeavePetition?: api_commons_wfm_pb.AgentLeavePetition.AsObject,
   }
 }
 
-export class ListAgentTimeOffsRequest extends jspb.Message {
+export class ListAgentLeavePetitionsRequest extends jspb.Message {
   clearWfmAgentSidsList(): void;
   getWfmAgentSidsList(): Array<number>;
   setWfmAgentSidsList(value: Array<number>): void;
@@ -11603,16 +11603,16 @@ export class ListAgentTimeOffsRequest extends jspb.Message {
   setIncludeArchived(value: boolean): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListAgentTimeOffsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListAgentTimeOffsRequest): ListAgentTimeOffsRequest.AsObject;
+  toObject(includeInstance?: boolean): ListAgentLeavePetitionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentLeavePetitionsRequest): ListAgentLeavePetitionsRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListAgentTimeOffsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListAgentTimeOffsRequest;
-  static deserializeBinaryFromReader(message: ListAgentTimeOffsRequest, reader: jspb.BinaryReader): ListAgentTimeOffsRequest;
+  static serializeBinaryToWriter(message: ListAgentLeavePetitionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentLeavePetitionsRequest;
+  static deserializeBinaryFromReader(message: ListAgentLeavePetitionsRequest, reader: jspb.BinaryReader): ListAgentLeavePetitionsRequest;
 }
 
-export namespace ListAgentTimeOffsRequest {
+export namespace ListAgentLeavePetitionsRequest {
   export type AsObject = {
     wfmAgentSidsList: Array<number>,
     datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
@@ -11620,25 +11620,25 @@ export namespace ListAgentTimeOffsRequest {
   }
 }
 
-export class ListAgentTimeOffsResponse extends jspb.Message {
-  clearAgentTimeOffRequestsList(): void;
-  getAgentTimeOffRequestsList(): Array<api_commons_wfm_pb.AgentTimeOff>;
-  setAgentTimeOffRequestsList(value: Array<api_commons_wfm_pb.AgentTimeOff>): void;
-  addAgentTimeOffRequests(value?: api_commons_wfm_pb.AgentTimeOff, index?: number): api_commons_wfm_pb.AgentTimeOff;
+export class ListAgentLeavePetitionsResponse extends jspb.Message {
+  clearAgentLeavePetitionsList(): void;
+  getAgentLeavePetitionsList(): Array<api_commons_wfm_pb.AgentLeavePetition>;
+  setAgentLeavePetitionsList(value: Array<api_commons_wfm_pb.AgentLeavePetition>): void;
+  addAgentLeavePetitions(value?: api_commons_wfm_pb.AgentLeavePetition, index?: number): api_commons_wfm_pb.AgentLeavePetition;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListAgentTimeOffsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListAgentTimeOffsResponse): ListAgentTimeOffsResponse.AsObject;
+  toObject(includeInstance?: boolean): ListAgentLeavePetitionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAgentLeavePetitionsResponse): ListAgentLeavePetitionsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListAgentTimeOffsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListAgentTimeOffsResponse;
-  static deserializeBinaryFromReader(message: ListAgentTimeOffsResponse, reader: jspb.BinaryReader): ListAgentTimeOffsResponse;
+  static serializeBinaryToWriter(message: ListAgentLeavePetitionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAgentLeavePetitionsResponse;
+  static deserializeBinaryFromReader(message: ListAgentLeavePetitionsResponse, reader: jspb.BinaryReader): ListAgentLeavePetitionsResponse;
 }
 
-export namespace ListAgentTimeOffsResponse {
+export namespace ListAgentLeavePetitionsResponse {
   export type AsObject = {
-    agentTimeOffRequestsList: Array<api_commons_wfm_pb.AgentTimeOff.AsObject>,
+    agentLeavePetitionsList: Array<api_commons_wfm_pb.AgentLeavePetition.AsObject>,
   }
 }
 

@@ -1522,22 +1522,22 @@ WFM.RemoveAgentFromSchedule = {
   responseType: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse
 };
 
-WFM.CreateAgentTimeOff = {
-  methodName: "CreateAgentTimeOff",
+WFM.CreateAgentLeavePetition = {
+  methodName: "CreateAgentLeavePetition",
   service: WFM,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.CreateAgentTimeOffRequest,
-  responseType: api_v1alpha1_wfm_wfm_pb.CreateAgentTimeOffResponse
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateAgentLeavePetitionRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateAgentLeavePetitionResponse
 };
 
-WFM.ListAgentTimeOffs = {
-  methodName: "ListAgentTimeOffs",
+WFM.ListAgentLeavePetitions = {
+  methodName: "ListAgentLeavePetitions",
   service: WFM,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.ListAgentTimeOffsRequest,
-  responseType: api_v1alpha1_wfm_wfm_pb.ListAgentTimeOffsResponse
+  requestType: api_v1alpha1_wfm_wfm_pb.ListAgentLeavePetitionsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListAgentLeavePetitionsResponse
 };
 
 WFM.HelloWorldWFMAdherence = {
@@ -6839,11 +6839,11 @@ WFMClient.prototype.removeAgentFromSchedule = function removeAgentFromSchedule(r
   };
 };
 
-WFMClient.prototype.createAgentTimeOff = function createAgentTimeOff(requestMessage, metadata, callback) {
+WFMClient.prototype.createAgentLeavePetition = function createAgentLeavePetition(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WFM.CreateAgentTimeOff, {
+  var client = grpc.unary(WFM.CreateAgentLeavePetition, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -6870,11 +6870,11 @@ WFMClient.prototype.createAgentTimeOff = function createAgentTimeOff(requestMess
   };
 };
 
-WFMClient.prototype.listAgentTimeOffs = function listAgentTimeOffs(requestMessage, metadata, callback) {
+WFMClient.prototype.listAgentLeavePetitions = function listAgentLeavePetitions(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WFM.ListAgentTimeOffs, {
+  var client = grpc.unary(WFM.ListAgentLeavePetitions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

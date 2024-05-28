@@ -25,10 +25,10 @@ var global = localGlobalThis ||
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
+goog.exportSymbol('proto.api.commons.AgentLeavePetition', null, global);
+goog.exportSymbol('proto.api.commons.AgentLeavePetitionStatus', null, global);
 goog.exportSymbol('proto.api.commons.AgentStateSegment', null, global);
 goog.exportSymbol('proto.api.commons.AgentStateSequence', null, global);
-goog.exportSymbol('proto.api.commons.AgentTimeOff', null, global);
-goog.exportSymbol('proto.api.commons.AgentTimeOffStatus', null, global);
 goog.exportSymbol('proto.api.commons.AvailabilityOption', null, global);
 goog.exportSymbol('proto.api.commons.BitmapType', null, global);
 goog.exportSymbol('proto.api.commons.CallProfileGroupAvgs', null, global);
@@ -503,16 +503,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.commons.AgentTimeOff = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.AgentTimeOff.repeatedFields_, null);
+proto.api.commons.AgentLeavePetition = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.AgentLeavePetition.repeatedFields_, null);
 };
-goog.inherits(proto.api.commons.AgentTimeOff, jspb.Message);
+goog.inherits(proto.api.commons.AgentLeavePetition, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.commons.AgentTimeOff.displayName = 'proto.api.commons.AgentTimeOff';
+  proto.api.commons.AgentLeavePetition.displayName = 'proto.api.commons.AgentLeavePetition';
 }
 
 
@@ -6219,7 +6219,7 @@ proto.api.commons.AgentStateSequence.prototype.clearStateSegmentsList = function
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.AgentTimeOff.repeatedFields_ = [6];
+proto.api.commons.AgentLeavePetition.repeatedFields_ = [6];
 
 
 
@@ -6236,8 +6236,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.commons.AgentTimeOff.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.commons.AgentTimeOff.toObject(opt_includeInstance, this);
+proto.api.commons.AgentLeavePetition.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.commons.AgentLeavePetition.toObject(opt_includeInstance, this);
 };
 
 
@@ -6246,15 +6246,15 @@ proto.api.commons.AgentTimeOff.prototype.toObject = function(opt_includeInstance
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.commons.AgentTimeOff} msg The msg instance to transform.
+ * @param {!proto.api.commons.AgentLeavePetition} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.commons.AgentTimeOff.toObject = function(includeInstance, msg) {
+proto.api.commons.AgentLeavePetition.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentTimeOffRequestId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    agentLeavePetitionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    requestStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    petitionStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
     requestComment: jspb.Message.getFieldWithDefault(msg, 4, ""),
     responseComment: jspb.Message.getFieldWithDefault(msg, 5, ""),
     requestedDatetimeRangesList: jspb.Message.toObjectList(msg.getRequestedDatetimeRangesList(),
@@ -6276,23 +6276,23 @@ proto.api.commons.AgentTimeOff.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.commons.AgentTimeOff}
+ * @return {!proto.api.commons.AgentLeavePetition}
  */
-proto.api.commons.AgentTimeOff.deserializeBinary = function(bytes) {
+proto.api.commons.AgentLeavePetition.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.commons.AgentTimeOff;
-  return proto.api.commons.AgentTimeOff.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.commons.AgentLeavePetition;
+  return proto.api.commons.AgentLeavePetition.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.commons.AgentTimeOff} msg The message object to deserialize into.
+ * @param {!proto.api.commons.AgentLeavePetition} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.commons.AgentTimeOff}
+ * @return {!proto.api.commons.AgentLeavePetition}
  */
-proto.api.commons.AgentTimeOff.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.commons.AgentLeavePetition.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -6301,15 +6301,15 @@ proto.api.commons.AgentTimeOff.deserializeBinaryFromReader = function(msg, reade
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setAgentTimeOffRequestId(value);
+      msg.setAgentLeavePetitionId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setWfmAgentSid(value);
       break;
     case 3:
-      var value = /** @type {!proto.api.commons.AgentTimeOffStatus} */ (reader.readEnum());
-      msg.setRequestStatus(value);
+      var value = /** @type {!proto.api.commons.AgentLeavePetitionStatus} */ (reader.readEnum());
+      msg.setPetitionStatus(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -6356,9 +6356,9 @@ proto.api.commons.AgentTimeOff.deserializeBinaryFromReader = function(msg, reade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.commons.AgentTimeOff.prototype.serializeBinary = function() {
+proto.api.commons.AgentLeavePetition.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.commons.AgentTimeOff.serializeBinaryToWriter(this, writer);
+  proto.api.commons.AgentLeavePetition.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -6366,13 +6366,13 @@ proto.api.commons.AgentTimeOff.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.commons.AgentTimeOff} message
+ * @param {!proto.api.commons.AgentLeavePetition} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.commons.AgentTimeOff.serializeBinaryToWriter = function(message, writer) {
+proto.api.commons.AgentLeavePetition.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAgentTimeOffRequestId();
+  f = message.getAgentLeavePetitionId();
   if (f !== 0) {
     writer.writeInt64(
       1,
@@ -6386,7 +6386,7 @@ proto.api.commons.AgentTimeOff.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getRequestStatus();
+  f = message.getPetitionStatus();
   if (f !== 0.0) {
     writer.writeEnum(
       3,
@@ -6450,19 +6450,19 @@ proto.api.commons.AgentTimeOff.serializeBinaryToWriter = function(message, write
 
 
 /**
- * optional int64 agent_time_off_request_id = 1;
+ * optional int64 agent_leave_petition_id = 1;
  * @return {number}
  */
-proto.api.commons.AgentTimeOff.prototype.getAgentTimeOffRequestId = function() {
+proto.api.commons.AgentLeavePetition.prototype.getAgentLeavePetitionId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
  */
-proto.api.commons.AgentTimeOff.prototype.setAgentTimeOffRequestId = function(value) {
+proto.api.commons.AgentLeavePetition.prototype.setAgentLeavePetitionId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -6471,34 +6471,34 @@ proto.api.commons.AgentTimeOff.prototype.setAgentTimeOffRequestId = function(val
  * optional int64 wfm_agent_sid = 2;
  * @return {number}
  */
-proto.api.commons.AgentTimeOff.prototype.getWfmAgentSid = function() {
+proto.api.commons.AgentLeavePetition.prototype.getWfmAgentSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
  */
-proto.api.commons.AgentTimeOff.prototype.setWfmAgentSid = function(value) {
+proto.api.commons.AgentLeavePetition.prototype.setWfmAgentSid = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional AgentTimeOffStatus request_status = 3;
- * @return {!proto.api.commons.AgentTimeOffStatus}
+ * optional AgentLeavePetitionStatus petition_status = 3;
+ * @return {!proto.api.commons.AgentLeavePetitionStatus}
  */
-proto.api.commons.AgentTimeOff.prototype.getRequestStatus = function() {
-  return /** @type {!proto.api.commons.AgentTimeOffStatus} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+proto.api.commons.AgentLeavePetition.prototype.getPetitionStatus = function() {
+  return /** @type {!proto.api.commons.AgentLeavePetitionStatus} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.AgentTimeOffStatus} value
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @param {!proto.api.commons.AgentLeavePetitionStatus} value
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
  */
-proto.api.commons.AgentTimeOff.prototype.setRequestStatus = function(value) {
+proto.api.commons.AgentLeavePetition.prototype.setPetitionStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
@@ -6507,16 +6507,16 @@ proto.api.commons.AgentTimeOff.prototype.setRequestStatus = function(value) {
  * optional string request_comment = 4;
  * @return {string}
  */
-proto.api.commons.AgentTimeOff.prototype.getRequestComment = function() {
+proto.api.commons.AgentLeavePetition.prototype.getRequestComment = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
  */
-proto.api.commons.AgentTimeOff.prototype.setRequestComment = function(value) {
+proto.api.commons.AgentLeavePetition.prototype.setRequestComment = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -6525,16 +6525,16 @@ proto.api.commons.AgentTimeOff.prototype.setRequestComment = function(value) {
  * optional string response_comment = 5;
  * @return {string}
  */
-proto.api.commons.AgentTimeOff.prototype.getResponseComment = function() {
+proto.api.commons.AgentLeavePetition.prototype.getResponseComment = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
  */
-proto.api.commons.AgentTimeOff.prototype.setResponseComment = function(value) {
+proto.api.commons.AgentLeavePetition.prototype.setResponseComment = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
@@ -6543,7 +6543,7 @@ proto.api.commons.AgentTimeOff.prototype.setResponseComment = function(value) {
  * repeated DatetimeRange requested_datetime_ranges = 6;
  * @return {!Array<!proto.api.commons.DatetimeRange>}
  */
-proto.api.commons.AgentTimeOff.prototype.getRequestedDatetimeRangesList = function() {
+proto.api.commons.AgentLeavePetition.prototype.getRequestedDatetimeRangesList = function() {
   return /** @type{!Array<!proto.api.commons.DatetimeRange>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.api.commons.DatetimeRange, 6));
 };
@@ -6551,9 +6551,9 @@ proto.api.commons.AgentTimeOff.prototype.getRequestedDatetimeRangesList = functi
 
 /**
  * @param {!Array<!proto.api.commons.DatetimeRange>} value
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
 */
-proto.api.commons.AgentTimeOff.prototype.setRequestedDatetimeRangesList = function(value) {
+proto.api.commons.AgentLeavePetition.prototype.setRequestedDatetimeRangesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
@@ -6563,16 +6563,16 @@ proto.api.commons.AgentTimeOff.prototype.setRequestedDatetimeRangesList = functi
  * @param {number=} opt_index
  * @return {!proto.api.commons.DatetimeRange}
  */
-proto.api.commons.AgentTimeOff.prototype.addRequestedDatetimeRanges = function(opt_value, opt_index) {
+proto.api.commons.AgentLeavePetition.prototype.addRequestedDatetimeRanges = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.api.commons.DatetimeRange, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
  */
-proto.api.commons.AgentTimeOff.prototype.clearRequestedDatetimeRangesList = function() {
+proto.api.commons.AgentLeavePetition.prototype.clearRequestedDatetimeRangesList = function() {
   return this.setRequestedDatetimeRangesList([]);
 };
 
@@ -6581,7 +6581,7 @@ proto.api.commons.AgentTimeOff.prototype.clearRequestedDatetimeRangesList = func
  * optional google.protobuf.Timestamp created_time = 7;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.api.commons.AgentTimeOff.prototype.getCreatedTime = function() {
+proto.api.commons.AgentLeavePetition.prototype.getCreatedTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
 };
@@ -6589,18 +6589,18 @@ proto.api.commons.AgentTimeOff.prototype.getCreatedTime = function() {
 
 /**
  * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
 */
-proto.api.commons.AgentTimeOff.prototype.setCreatedTime = function(value) {
+proto.api.commons.AgentLeavePetition.prototype.setCreatedTime = function(value) {
   return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
  */
-proto.api.commons.AgentTimeOff.prototype.clearCreatedTime = function() {
+proto.api.commons.AgentLeavePetition.prototype.clearCreatedTime = function() {
   return this.setCreatedTime(undefined);
 };
 
@@ -6609,7 +6609,7 @@ proto.api.commons.AgentTimeOff.prototype.clearCreatedTime = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.AgentTimeOff.prototype.hasCreatedTime = function() {
+proto.api.commons.AgentLeavePetition.prototype.hasCreatedTime = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -6618,7 +6618,7 @@ proto.api.commons.AgentTimeOff.prototype.hasCreatedTime = function() {
  * optional google.protobuf.Timestamp archived_time = 8;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.api.commons.AgentTimeOff.prototype.getArchivedTime = function() {
+proto.api.commons.AgentLeavePetition.prototype.getArchivedTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
 };
@@ -6626,18 +6626,18 @@ proto.api.commons.AgentTimeOff.prototype.getArchivedTime = function() {
 
 /**
  * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
 */
-proto.api.commons.AgentTimeOff.prototype.setArchivedTime = function(value) {
+proto.api.commons.AgentLeavePetition.prototype.setArchivedTime = function(value) {
   return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
  */
-proto.api.commons.AgentTimeOff.prototype.clearArchivedTime = function() {
+proto.api.commons.AgentLeavePetition.prototype.clearArchivedTime = function() {
   return this.setArchivedTime(undefined);
 };
 
@@ -6646,7 +6646,7 @@ proto.api.commons.AgentTimeOff.prototype.clearArchivedTime = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.AgentTimeOff.prototype.hasArchivedTime = function() {
+proto.api.commons.AgentLeavePetition.prototype.hasArchivedTime = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
@@ -6655,7 +6655,7 @@ proto.api.commons.AgentTimeOff.prototype.hasArchivedTime = function() {
  * optional google.protobuf.Timestamp resolved_time = 9;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.api.commons.AgentTimeOff.prototype.getResolvedTime = function() {
+proto.api.commons.AgentLeavePetition.prototype.getResolvedTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
 };
@@ -6663,18 +6663,18 @@ proto.api.commons.AgentTimeOff.prototype.getResolvedTime = function() {
 
 /**
  * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
 */
-proto.api.commons.AgentTimeOff.prototype.setResolvedTime = function(value) {
+proto.api.commons.AgentLeavePetition.prototype.setResolvedTime = function(value) {
   return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
  */
-proto.api.commons.AgentTimeOff.prototype.clearResolvedTime = function() {
+proto.api.commons.AgentLeavePetition.prototype.clearResolvedTime = function() {
   return this.setResolvedTime(undefined);
 };
 
@@ -6683,7 +6683,7 @@ proto.api.commons.AgentTimeOff.prototype.clearResolvedTime = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.AgentTimeOff.prototype.hasResolvedTime = function() {
+proto.api.commons.AgentLeavePetition.prototype.hasResolvedTime = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
@@ -6692,16 +6692,16 @@ proto.api.commons.AgentTimeOff.prototype.hasResolvedTime = function() {
  * optional string resolved_by_user_id = 10;
  * @return {string}
  */
-proto.api.commons.AgentTimeOff.prototype.getResolvedByUserId = function() {
+proto.api.commons.AgentLeavePetition.prototype.getResolvedByUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.commons.AgentTimeOff} returns this
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
  */
-proto.api.commons.AgentTimeOff.prototype.setResolvedByUserId = function(value) {
+proto.api.commons.AgentLeavePetition.prototype.setResolvedByUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
 };
 
@@ -7005,7 +7005,7 @@ proto.api.commons.RealTimeManagementState = {
 /**
  * @enum {number}
  */
-proto.api.commons.AgentTimeOffStatus = {
+proto.api.commons.AgentLeavePetitionStatus = {
   UNSPECIFIED_STATUS: 0,
   PENDING_REQUEST: 1,
   APPROVED_REQUEST: 2,
