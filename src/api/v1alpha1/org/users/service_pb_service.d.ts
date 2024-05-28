@@ -620,6 +620,24 @@ type UsersServiceListUsersAllowedIps = {
   readonly responseType: typeof api_v1alpha1_org_users_users_pb.ListUsersAllowedIpsResponse;
 };
 
+type UsersServiceListUserDirectories = {
+  readonly methodName: string;
+  readonly service: typeof UsersService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_users_users_pb.ListUserDirectoriesRequest;
+  readonly responseType: typeof api_v1alpha1_org_users_users_pb.ListUserDirectoriesResponse;
+};
+
+type UsersServiceUpdateBulkUsersDisabled = {
+  readonly methodName: string;
+  readonly service: typeof UsersService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_users_users_pb.UpdateBulkUsersDisabledRequest;
+  readonly responseType: typeof api_v1alpha1_org_users_users_pb.UpdateBulkUsersDisabledResponse;
+};
+
 export class UsersService {
   static readonly serviceName: string;
   static readonly CreateUser: UsersServiceCreateUser;
@@ -690,6 +708,8 @@ export class UsersService {
   static readonly AddGroupedUserIPRestrictions: UsersServiceAddGroupedUserIPRestrictions;
   static readonly RemoveGroupedUserIPRestrictions: UsersServiceRemoveGroupedUserIPRestrictions;
   static readonly ListUsersAllowedIps: UsersServiceListUsersAllowedIps;
+  static readonly ListUserDirectories: UsersServiceListUserDirectories;
+  static readonly UpdateBulkUsersDisabled: UsersServiceUpdateBulkUsersDisabled;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1295,6 +1315,24 @@ export class UsersServiceClient {
   listUsersAllowedIps(
     requestMessage: api_v1alpha1_org_users_users_pb.ListUsersAllowedIpsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_users_users_pb.ListUsersAllowedIpsResponse|null) => void
+  ): UnaryResponse;
+  listUserDirectories(
+    requestMessage: api_v1alpha1_org_users_users_pb.ListUserDirectoriesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_users_users_pb.ListUserDirectoriesResponse|null) => void
+  ): UnaryResponse;
+  listUserDirectories(
+    requestMessage: api_v1alpha1_org_users_users_pb.ListUserDirectoriesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_users_users_pb.ListUserDirectoriesResponse|null) => void
+  ): UnaryResponse;
+  updateBulkUsersDisabled(
+    requestMessage: api_v1alpha1_org_users_users_pb.UpdateBulkUsersDisabledRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_users_users_pb.UpdateBulkUsersDisabledResponse|null) => void
+  ): UnaryResponse;
+  updateBulkUsersDisabled(
+    requestMessage: api_v1alpha1_org_users_users_pb.UpdateBulkUsersDisabledRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_users_users_pb.UpdateBulkUsersDisabledResponse|null) => void
   ): UnaryResponse;
 }
 

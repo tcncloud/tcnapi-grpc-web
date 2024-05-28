@@ -626,6 +626,24 @@ UsersService.ListUsersAllowedIps = {
   responseType: api_v1alpha1_org_users_users_pb.ListUsersAllowedIpsResponse
 };
 
+UsersService.ListUserDirectories = {
+  methodName: "ListUserDirectories",
+  service: UsersService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_users_users_pb.ListUserDirectoriesRequest,
+  responseType: api_v1alpha1_org_users_users_pb.ListUserDirectoriesResponse
+};
+
+UsersService.UpdateBulkUsersDisabled = {
+  methodName: "UpdateBulkUsersDisabled",
+  service: UsersService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_users_users_pb.UpdateBulkUsersDisabledRequest,
+  responseType: api_v1alpha1_org_users_users_pb.UpdateBulkUsersDisabledResponse
+};
+
 exports.UsersService = UsersService;
 
 function UsersServiceClient(serviceHost, options) {
@@ -2755,6 +2773,68 @@ UsersServiceClient.prototype.listUsersAllowedIps = function listUsersAllowedIps(
     callback = arguments[1];
   }
   var client = grpc.unary(UsersService.ListUsersAllowedIps, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+UsersServiceClient.prototype.listUserDirectories = function listUserDirectories(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(UsersService.ListUserDirectories, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+UsersServiceClient.prototype.updateBulkUsersDisabled = function updateBulkUsersDisabled(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(UsersService.UpdateBulkUsersDisabled, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

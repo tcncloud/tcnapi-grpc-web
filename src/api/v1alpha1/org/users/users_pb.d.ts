@@ -3139,3 +3139,129 @@ export namespace ListUsersAllowedIpsResponse {
   }
 }
 
+export class UpdateBulkUsersDisabledRequest extends jspb.Message {
+  clearUserIdsList(): void;
+  getUserIdsList(): Array<string>;
+  setUserIdsList(value: Array<string>): void;
+  addUserIds(value: string, index?: number): string;
+
+  getDisable(): boolean;
+  setDisable(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateBulkUsersDisabledRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateBulkUsersDisabledRequest): UpdateBulkUsersDisabledRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateBulkUsersDisabledRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateBulkUsersDisabledRequest;
+  static deserializeBinaryFromReader(message: UpdateBulkUsersDisabledRequest, reader: jspb.BinaryReader): UpdateBulkUsersDisabledRequest;
+}
+
+export namespace UpdateBulkUsersDisabledRequest {
+  export type AsObject = {
+    userIdsList: Array<string>,
+    disable: boolean,
+  }
+}
+
+export class UpdateBulkUsersDisabledResponse extends jspb.Message {
+  clearUpdatedIdsList(): void;
+  getUpdatedIdsList(): Array<string>;
+  setUpdatedIdsList(value: Array<string>): void;
+  addUpdatedIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateBulkUsersDisabledResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateBulkUsersDisabledResponse): UpdateBulkUsersDisabledResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateBulkUsersDisabledResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateBulkUsersDisabledResponse;
+  static deserializeBinaryFromReader(message: UpdateBulkUsersDisabledResponse, reader: jspb.BinaryReader): UpdateBulkUsersDisabledResponse;
+}
+
+export namespace UpdateBulkUsersDisabledResponse {
+  export type AsObject = {
+    updatedIdsList: Array<string>,
+  }
+}
+
+export class UserDirectoryEntry extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getFullName(): string;
+  setFullName(value: string): void;
+
+  getUserName(): string;
+  setUserName(value: string): void;
+
+  getFirstName(): string;
+  setFirstName(value: string): void;
+
+  getLastName(): string;
+  setLastName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UserDirectoryEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: UserDirectoryEntry): UserDirectoryEntry.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UserDirectoryEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserDirectoryEntry;
+  static deserializeBinaryFromReader(message: UserDirectoryEntry, reader: jspb.BinaryReader): UserDirectoryEntry;
+}
+
+export namespace UserDirectoryEntry {
+  export type AsObject = {
+    userId: string,
+    fullName: string,
+    userName: string,
+    firstName: string,
+    lastName: string,
+  }
+}
+
+export class ListUserDirectoriesRequest extends jspb.Message {
+  getAgentsOnly(): boolean;
+  setAgentsOnly(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListUserDirectoriesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUserDirectoriesRequest): ListUserDirectoriesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListUserDirectoriesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUserDirectoriesRequest;
+  static deserializeBinaryFromReader(message: ListUserDirectoriesRequest, reader: jspb.BinaryReader): ListUserDirectoriesRequest;
+}
+
+export namespace ListUserDirectoriesRequest {
+  export type AsObject = {
+    agentsOnly: boolean,
+  }
+}
+
+export class ListUserDirectoriesResponse extends jspb.Message {
+  clearUserDirectoriesList(): void;
+  getUserDirectoriesList(): Array<UserDirectoryEntry>;
+  setUserDirectoriesList(value: Array<UserDirectoryEntry>): void;
+  addUserDirectories(value?: UserDirectoryEntry, index?: number): UserDirectoryEntry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListUserDirectoriesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUserDirectoriesResponse): ListUserDirectoriesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListUserDirectoriesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUserDirectoriesResponse;
+  static deserializeBinaryFromReader(message: ListUserDirectoriesResponse, reader: jspb.BinaryReader): ListUserDirectoriesResponse;
+}
+
+export namespace ListUserDirectoriesResponse {
+  export type AsObject = {
+    userDirectoriesList: Array<UserDirectoryEntry.AsObject>,
+  }
+}
+
