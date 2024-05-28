@@ -91349,7 +91349,7 @@ proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.toObject = function(inclu
   var f, obj = {
     requestedDatetimeRangesList: jspb.Message.toObjectList(msg.getRequestedDatetimeRangesList(),
     api_commons_wfm_pb.DatetimeRange.toObject, includeInstance),
-    requestComment: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    petitionComment: jspb.Message.getFieldWithDefault(msg, 2, ""),
     wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
@@ -91394,7 +91394,7 @@ proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.deserializeBinaryFromRead
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRequestComment(value);
+      msg.setPetitionComment(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
@@ -91437,7 +91437,7 @@ proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.serializeBinaryToWriter =
       api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
     );
   }
-  f = message.getRequestComment();
+  f = message.getPetitionComment();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -91493,10 +91493,10 @@ proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.clearRequestedD
 
 
 /**
- * optional string request_comment = 2;
+ * optional string petition_comment = 2;
  * @return {string}
  */
-proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.getRequestComment = function() {
+proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.getPetitionComment = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -91505,7 +91505,7 @@ proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.getRequestComme
  * @param {string} value
  * @return {!proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest} returns this
  */
-proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.setRequestComment = function(value) {
+proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.setPetitionComment = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 

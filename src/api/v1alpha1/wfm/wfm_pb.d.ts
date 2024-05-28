@@ -11542,8 +11542,8 @@ export class CreateAgentLeavePetitionRequest extends jspb.Message {
   setRequestedDatetimeRangesList(value: Array<api_commons_wfm_pb.DatetimeRange>): void;
   addRequestedDatetimeRanges(value?: api_commons_wfm_pb.DatetimeRange, index?: number): api_commons_wfm_pb.DatetimeRange;
 
-  getRequestComment(): string;
-  setRequestComment(value: string): void;
+  getPetitionComment(): string;
+  setPetitionComment(value: string): void;
 
   getWfmAgentSid(): number;
   setWfmAgentSid(value: number): void;
@@ -11561,7 +11561,7 @@ export class CreateAgentLeavePetitionRequest extends jspb.Message {
 export namespace CreateAgentLeavePetitionRequest {
   export type AsObject = {
     requestedDatetimeRangesList: Array<api_commons_wfm_pb.DatetimeRange.AsObject>,
-    requestComment: string,
+    petitionComment: string,
     wfmAgentSid: number,
   }
 }
