@@ -6257,7 +6257,7 @@ proto.api.commons.LeaveRequest.toObject = function(includeInstance, msg) {
     requestStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
     requestComment: jspb.Message.getFieldWithDefault(msg, 4, ""),
     responseComment: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    requestDatetimeRangesList: jspb.Message.toObjectList(msg.getRequestDatetimeRangesList(),
+    requestedDatetimeRangesList: jspb.Message.toObjectList(msg.getRequestedDatetimeRangesList(),
     proto.api.commons.DatetimeRange.toObject, includeInstance),
     createdTime: (f = msg.getCreatedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     archivedTime: (f = msg.getArchivedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -6322,7 +6322,7 @@ proto.api.commons.LeaveRequest.deserializeBinaryFromReader = function(msg, reade
     case 6:
       var value = new proto.api.commons.DatetimeRange;
       reader.readMessage(value,proto.api.commons.DatetimeRange.deserializeBinaryFromReader);
-      msg.addRequestDatetimeRanges(value);
+      msg.addRequestedDatetimeRanges(value);
       break;
     case 7:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -6407,7 +6407,7 @@ proto.api.commons.LeaveRequest.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getRequestDatetimeRangesList();
+  f = message.getRequestedDatetimeRangesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       6,
@@ -6540,10 +6540,10 @@ proto.api.commons.LeaveRequest.prototype.setResponseComment = function(value) {
 
 
 /**
- * repeated DatetimeRange request_datetime_ranges = 6;
+ * repeated DatetimeRange requested_datetime_ranges = 6;
  * @return {!Array<!proto.api.commons.DatetimeRange>}
  */
-proto.api.commons.LeaveRequest.prototype.getRequestDatetimeRangesList = function() {
+proto.api.commons.LeaveRequest.prototype.getRequestedDatetimeRangesList = function() {
   return /** @type{!Array<!proto.api.commons.DatetimeRange>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.api.commons.DatetimeRange, 6));
 };
@@ -6553,7 +6553,7 @@ proto.api.commons.LeaveRequest.prototype.getRequestDatetimeRangesList = function
  * @param {!Array<!proto.api.commons.DatetimeRange>} value
  * @return {!proto.api.commons.LeaveRequest} returns this
 */
-proto.api.commons.LeaveRequest.prototype.setRequestDatetimeRangesList = function(value) {
+proto.api.commons.LeaveRequest.prototype.setRequestedDatetimeRangesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
@@ -6563,7 +6563,7 @@ proto.api.commons.LeaveRequest.prototype.setRequestDatetimeRangesList = function
  * @param {number=} opt_index
  * @return {!proto.api.commons.DatetimeRange}
  */
-proto.api.commons.LeaveRequest.prototype.addRequestDatetimeRanges = function(opt_value, opt_index) {
+proto.api.commons.LeaveRequest.prototype.addRequestedDatetimeRanges = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.api.commons.DatetimeRange, opt_index);
 };
 
@@ -6572,8 +6572,8 @@ proto.api.commons.LeaveRequest.prototype.addRequestDatetimeRanges = function(opt
  * Clears the list making it empty but non-null.
  * @return {!proto.api.commons.LeaveRequest} returns this
  */
-proto.api.commons.LeaveRequest.prototype.clearRequestDatetimeRangesList = function() {
-  return this.setRequestDatetimeRangesList([]);
+proto.api.commons.LeaveRequest.prototype.clearRequestedDatetimeRangesList = function() {
+  return this.setRequestedDatetimeRangesList([]);
 };
 
 

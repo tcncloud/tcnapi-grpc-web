@@ -830,10 +830,10 @@ export class LeaveRequest extends jspb.Message {
   getResponseComment(): string;
   setResponseComment(value: string): void;
 
-  clearRequestDatetimeRangesList(): void;
-  getRequestDatetimeRangesList(): Array<DatetimeRange>;
-  setRequestDatetimeRangesList(value: Array<DatetimeRange>): void;
-  addRequestDatetimeRanges(value?: DatetimeRange, index?: number): DatetimeRange;
+  clearRequestedDatetimeRangesList(): void;
+  getRequestedDatetimeRangesList(): Array<DatetimeRange>;
+  setRequestedDatetimeRangesList(value: Array<DatetimeRange>): void;
+  addRequestedDatetimeRanges(value?: DatetimeRange, index?: number): DatetimeRange;
 
   hasCreatedTime(): boolean;
   clearCreatedTime(): void;
@@ -870,7 +870,7 @@ export namespace LeaveRequest {
     requestStatus: RequestStatusMap[keyof RequestStatusMap],
     requestComment: string,
     responseComment: string,
-    requestDatetimeRangesList: Array<DatetimeRange.AsObject>,
+    requestedDatetimeRangesList: Array<DatetimeRange.AsObject>,
     createdTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     archivedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     resolvedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
