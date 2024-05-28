@@ -2664,7 +2664,7 @@ proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototy
 proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     dateMatched: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    efficacyTimestamp: (f = msg.getEfficacyTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    resultExpiration: (f = msg.getResultExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2708,7 +2708,7 @@ proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.deseria
     case 2:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setEfficacyTimestamp(value);
+      msg.setResultExpiration(value);
       break;
     default:
       reader.skipField();
@@ -2746,7 +2746,7 @@ proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.seriali
       f
     );
   }
-  f = message.getEfficacyTimestamp();
+  f = message.getResultExpiration();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -2776,10 +2776,10 @@ proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototy
 
 
 /**
- * optional google.protobuf.Timestamp efficacy_timestamp = 2;
+ * optional google.protobuf.Timestamp result_expiration = 2;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototype.getEfficacyTimestamp = function() {
+proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototype.getResultExpiration = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
 };
@@ -2789,7 +2789,7 @@ proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototy
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse} returns this
 */
-proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototype.setEfficacyTimestamp = function(value) {
+proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototype.setResultExpiration = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -2798,8 +2798,8 @@ proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototy
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse} returns this
  */
-proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototype.clearEfficacyTimestamp = function() {
-  return this.setEfficacyTimestamp(undefined);
+proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototype.clearResultExpiration = function() {
+  return this.setResultExpiration(undefined);
 };
 
 
@@ -2807,7 +2807,7 @@ proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototype.hasEfficacyTimestamp = function() {
+proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototype.hasResultExpiration = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 

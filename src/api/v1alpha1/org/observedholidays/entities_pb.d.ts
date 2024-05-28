@@ -343,10 +343,10 @@ export class EvaluateObservedHolidaysResponse extends jspb.Message {
   getDateMatched(): boolean;
   setDateMatched(value: boolean): void;
 
-  hasEfficacyTimestamp(): boolean;
-  clearEfficacyTimestamp(): void;
-  getEfficacyTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setEfficacyTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasResultExpiration(): boolean;
+  clearResultExpiration(): void;
+  getResultExpiration(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setResultExpiration(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EvaluateObservedHolidaysResponse.AsObject;
@@ -361,7 +361,7 @@ export class EvaluateObservedHolidaysResponse extends jspb.Message {
 export namespace EvaluateObservedHolidaysResponse {
   export type AsObject = {
     dateMatched: boolean,
-    efficacyTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    resultExpiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
