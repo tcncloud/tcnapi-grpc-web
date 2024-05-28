@@ -6255,7 +6255,7 @@ proto.api.commons.AgentLeavePetition.toObject = function(includeInstance, msg) {
     agentLeavePetitionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     petitionStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    requestComment: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    petitionComment: jspb.Message.getFieldWithDefault(msg, 4, ""),
     responseComment: jspb.Message.getFieldWithDefault(msg, 5, ""),
     requestedDatetimeRangesList: jspb.Message.toObjectList(msg.getRequestedDatetimeRangesList(),
     proto.api.commons.DatetimeRange.toObject, includeInstance),
@@ -6313,7 +6313,7 @@ proto.api.commons.AgentLeavePetition.deserializeBinaryFromReader = function(msg,
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRequestComment(value);
+      msg.setPetitionComment(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -6393,7 +6393,7 @@ proto.api.commons.AgentLeavePetition.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getRequestComment();
+  f = message.getPetitionComment();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -6504,10 +6504,10 @@ proto.api.commons.AgentLeavePetition.prototype.setPetitionStatus = function(valu
 
 
 /**
- * optional string request_comment = 4;
+ * optional string petition_comment = 4;
  * @return {string}
  */
-proto.api.commons.AgentLeavePetition.prototype.getRequestComment = function() {
+proto.api.commons.AgentLeavePetition.prototype.getPetitionComment = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -6516,7 +6516,7 @@ proto.api.commons.AgentLeavePetition.prototype.getRequestComment = function() {
  * @param {string} value
  * @return {!proto.api.commons.AgentLeavePetition} returns this
  */
-proto.api.commons.AgentLeavePetition.prototype.setRequestComment = function(value) {
+proto.api.commons.AgentLeavePetition.prototype.setPetitionComment = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 

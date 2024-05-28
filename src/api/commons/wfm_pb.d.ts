@@ -824,8 +824,8 @@ export class AgentLeavePetition extends jspb.Message {
   getPetitionStatus(): AgentLeavePetitionStatusMap[keyof AgentLeavePetitionStatusMap];
   setPetitionStatus(value: AgentLeavePetitionStatusMap[keyof AgentLeavePetitionStatusMap]): void;
 
-  getRequestComment(): string;
-  setRequestComment(value: string): void;
+  getPetitionComment(): string;
+  setPetitionComment(value: string): void;
 
   getResponseComment(): string;
   setResponseComment(value: string): void;
@@ -868,7 +868,7 @@ export namespace AgentLeavePetition {
     agentLeavePetitionId: number,
     wfmAgentSid: number,
     petitionStatus: AgentLeavePetitionStatusMap[keyof AgentLeavePetitionStatusMap],
-    requestComment: string,
+    petitionComment: string,
     responseComment: string,
     requestedDatetimeRangesList: Array<DatetimeRange.AsObject>,
     createdTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
