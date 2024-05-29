@@ -41,6 +41,12 @@ export class AuthConnectionSettings extends jspb.Message {
   getType(): ConnectionTypeMap[keyof ConnectionTypeMap];
   setType(value: ConnectionTypeMap[keyof ConnectionTypeMap]): void;
 
+  getResourceUrl(): string;
+  setResourceUrl(value: string): void;
+
+  getGovAzure(): boolean;
+  setGovAzure(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuthConnectionSettings.AsObject;
   static toObject(includeInstance: boolean, msg: AuthConnectionSettings): AuthConnectionSettings.AsObject;
@@ -63,6 +69,8 @@ export namespace AuthConnectionSettings {
     orgId: string,
     name: string,
     type: ConnectionTypeMap[keyof ConnectionTypeMap],
+    resourceUrl: string,
+    govAzure: boolean,
   }
 
   export class SecretExpiration extends jspb.Message {
