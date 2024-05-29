@@ -577,9 +577,6 @@ export class ListAgentTicketsRequest extends jspb.Message {
   getFilterMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFilterMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
 
-  getParticipantId(): string;
-  setParticipantId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAgentTicketsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAgentTicketsRequest): ListAgentTicketsRequest.AsObject;
@@ -594,7 +591,6 @@ export namespace ListAgentTicketsRequest {
   export type AsObject = {
     selectFieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
     filterMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    participantId: string,
   }
 }
 

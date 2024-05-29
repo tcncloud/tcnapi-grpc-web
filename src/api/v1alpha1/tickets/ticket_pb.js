@@ -5565,8 +5565,7 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.toObject = function
 proto.api.v1alpha1.tickets.ListAgentTicketsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     selectFieldMask: (f = msg.getSelectFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    filterMask: (f = msg.getFilterMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    participantId: jspb.Message.getFieldWithDefault(msg, 3, "")
+    filterMask: (f = msg.getFilterMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5613,10 +5612,6 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.deserializeBinaryFromReader =
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
       msg.setFilterMask(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setParticipantId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -5660,13 +5655,6 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.serializeBinaryToWriter = fun
       2,
       f,
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
-    );
-  }
-  f = message.getParticipantId();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
     );
   }
 };
@@ -5743,24 +5731,6 @@ proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.clearFilterMask = f
  */
 proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.hasFilterMask = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string participant_id = 3;
- * @return {string}
- */
-proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.getParticipantId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.tickets.ListAgentTicketsRequest} returns this
- */
-proto.api.v1alpha1.tickets.ListAgentTicketsRequest.prototype.setParticipantId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

@@ -1522,6 +1522,24 @@ WFM.RemoveAgentFromSchedule = {
   responseType: api_v1alpha1_wfm_wfm_pb.RemoveAgentFromScheduleResponse
 };
 
+WFM.CreateAgentLeavePetition = {
+  methodName: "CreateAgentLeavePetition",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateAgentLeavePetitionRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateAgentLeavePetitionResponse
+};
+
+WFM.ListAgentLeavePetitions = {
+  methodName: "ListAgentLeavePetitions",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListAgentLeavePetitionsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListAgentLeavePetitionsResponse
+};
+
 WFM.HelloWorldWFMAdherence = {
   methodName: "HelloWorldWFMAdherence",
   service: WFM,
@@ -6795,6 +6813,68 @@ WFMClient.prototype.removeAgentFromSchedule = function removeAgentFromSchedule(r
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.RemoveAgentFromSchedule, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createAgentLeavePetition = function createAgentLeavePetition(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateAgentLeavePetition, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listAgentLeavePetitions = function listAgentLeavePetitions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListAgentLeavePetitions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
