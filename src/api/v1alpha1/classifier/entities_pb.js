@@ -509,7 +509,7 @@ proto.api.v1alpha1.classifier.FileTemplate.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.classifier.FileTemplate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     filename: jspb.Message.getFieldWithDefault(msg, 2, ""),
     fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
     proto.api.v1alpha1.classifier.FileTemplate.Field.toObject, includeInstance),
@@ -554,7 +554,7 @@ proto.api.v1alpha1.classifier.FileTemplate.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setFileTemplateId(value);
       break;
     case 2:
@@ -615,8 +615,8 @@ proto.api.v1alpha1.classifier.FileTemplate.prototype.serializeBinary = function(
 proto.api.v1alpha1.classifier.FileTemplate.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFileTemplateId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -922,19 +922,19 @@ proto.api.v1alpha1.classifier.FileTemplate.Field.prototype.setRawValue = functio
 
 /**
  * optional int64 file_template_id = 1;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.classifier.FileTemplate.prototype.getFileTemplateId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.classifier.FileTemplate} returns this
  */
 proto.api.v1alpha1.classifier.FileTemplate.prototype.setFileTemplateId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
