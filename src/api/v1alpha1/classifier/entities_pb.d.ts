@@ -27,8 +27,14 @@ export namespace ClassifierEntityTypes {
 }
 
 export class FileTemplate extends jspb.Message {
-  getFileTemplateId(): number;
-  setFileTemplateId(value: number): void;
+  getFileTemplateId(): string;
+  setFileTemplateId(value: string): void;
+
+  getTest1(): string;
+  setTest1(value: string): void;
+
+  getTest2(): number;
+  setTest2(value: number): void;
 
   getFilename(): string;
   setFilename(value: string): void;
@@ -68,7 +74,9 @@ export class FileTemplate extends jspb.Message {
 
 export namespace FileTemplate {
   export type AsObject = {
-    fileTemplateId: number,
+    fileTemplateId: string,
+    test1: string,
+    test2: number,
     filename: string,
     fieldsList: Array<FileTemplate.Field.AsObject>,
     parseOpts?: ParseOpts.AsObject,
