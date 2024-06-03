@@ -72,6 +72,9 @@ export class InvoiceItem extends jspb.Message {
   getRatedAmount(): google_type_decimal_pb.Decimal | undefined;
   setRatedAmount(value?: google_type_decimal_pb.Decimal): void;
 
+  getProductId(): string;
+  setProductId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InvoiceItem.AsObject;
   static toObject(includeInstance: boolean, msg: InvoiceItem): InvoiceItem.AsObject;
@@ -91,6 +94,7 @@ export namespace InvoiceItem {
     price: number,
     columnsList: Array<InvoiceItemColumn.AsObject>,
     ratedAmount?: google_type_decimal_pb.Decimal.AsObject,
+    productId: string,
   }
 }
 

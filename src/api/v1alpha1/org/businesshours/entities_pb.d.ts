@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as api_commons_org_pb from "../../../../api/commons/org_pb";
 import * as api_commons_org_preferences_pb from "../../../../api/commons/org/preferences_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class ListBusinessHoursRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
@@ -338,6 +339,11 @@ export class EvaluateBusinessHoursResponse extends jspb.Message {
   getWithinRange(): boolean;
   setWithinRange(value: boolean): void;
 
+  hasResultExpiration(): boolean;
+  clearResultExpiration(): void;
+  getResultExpiration(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setResultExpiration(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EvaluateBusinessHoursResponse.AsObject;
   static toObject(includeInstance: boolean, msg: EvaluateBusinessHoursResponse): EvaluateBusinessHoursResponse.AsObject;
@@ -351,6 +357,7 @@ export class EvaluateBusinessHoursResponse extends jspb.Message {
 export namespace EvaluateBusinessHoursResponse {
   export type AsObject = {
     withinRange: boolean,
+    resultExpiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

@@ -2313,6 +2313,7 @@ proto.api.commons.org.GeneralSettings.toObject = function(includeInstance, msg) 
     callRecordingDelay: jspb.Message.getFieldWithDefault(msg, 203, 0),
     enablePauseRecordingOnHold: jspb.Message.getBooleanFieldWithDefault(msg, 204, false),
     enableEnvisionScreenRecording: jspb.Message.getBooleanFieldWithDefault(msg, 300, false),
+    agentScreenRecording: jspb.Message.getBooleanFieldWithDefault(msg, 301, false),
     enableAgentSimpleHold: jspb.Message.getBooleanFieldWithDefault(msg, 400, false),
     enableAgentMultiAccept: jspb.Message.getBooleanFieldWithDefault(msg, 401, false),
     pauseAgentAfterMultiAccept: jspb.Message.getBooleanFieldWithDefault(msg, 402, false),
@@ -2442,6 +2443,10 @@ proto.api.commons.org.GeneralSettings.deserializeBinaryFromReader = function(msg
     case 300:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableEnvisionScreenRecording(value);
+      break;
+    case 301:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAgentScreenRecording(value);
       break;
     case 400:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -2708,6 +2713,13 @@ proto.api.commons.org.GeneralSettings.serializeBinaryToWriter = function(message
   if (f) {
     writer.writeBool(
       300,
+      f
+    );
+  }
+  f = message.getAgentScreenRecording();
+  if (f) {
+    writer.writeBool(
+      301,
       f
     );
   }
@@ -5283,6 +5295,24 @@ proto.api.commons.org.GeneralSettings.prototype.getEnableEnvisionScreenRecording
  */
 proto.api.commons.org.GeneralSettings.prototype.setEnableEnvisionScreenRecording = function(value) {
   return jspb.Message.setProto3BooleanField(this, 300, value);
+};
+
+
+/**
+ * optional bool agent_screen_recording = 301;
+ * @return {boolean}
+ */
+proto.api.commons.org.GeneralSettings.prototype.getAgentScreenRecording = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 301, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.org.GeneralSettings} returns this
+ */
+proto.api.commons.org.GeneralSettings.prototype.setAgentScreenRecording = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 301, value);
 };
 
 

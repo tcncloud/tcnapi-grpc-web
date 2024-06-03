@@ -177,6 +177,15 @@ type TicketsListAvailableAgentTickets = {
   readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.ListAvailableAgentTicketsResponse;
 };
 
+type TicketsListAgentTickets = {
+  readonly methodName: string;
+  readonly service: typeof Tickets;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_tickets_ticket_pb.ListAgentTicketsRequest;
+  readonly responseType: typeof api_v1alpha1_tickets_ticket_pb.ListAgentTicketsResponse;
+};
+
 type TicketsListSkills = {
   readonly methodName: string;
   readonly service: typeof Tickets;
@@ -333,6 +342,7 @@ export class Tickets {
   static readonly EditMaskTicket: TicketsEditMaskTicket;
   static readonly ListAllocatedTickets: TicketsListAllocatedTickets;
   static readonly ListAvailableAgentTickets: TicketsListAvailableAgentTickets;
+  static readonly ListAgentTickets: TicketsListAgentTickets;
   static readonly ListSkills: TicketsListSkills;
   static readonly ListUsers: TicketsListUsers;
   static readonly CloseTicketAction: TicketsCloseTicketAction;
@@ -552,6 +562,15 @@ export class TicketsClient {
   listAvailableAgentTickets(
     requestMessage: api_v1alpha1_tickets_ticket_pb.ListAvailableAgentTicketsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListAvailableAgentTicketsResponse|null) => void
+  ): UnaryResponse;
+  listAgentTickets(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListAgentTicketsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListAgentTicketsResponse|null) => void
+  ): UnaryResponse;
+  listAgentTickets(
+    requestMessage: api_v1alpha1_tickets_ticket_pb.ListAgentTicketsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_tickets_ticket_pb.ListAgentTicketsResponse|null) => void
   ): UnaryResponse;
   listSkills(
     requestMessage: api_v1alpha1_tickets_ticket_pb.ListSkillsRequest,

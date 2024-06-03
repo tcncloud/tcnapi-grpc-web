@@ -29,6 +29,8 @@ var api_commons_org_preferences_pb = require('../../../../api/commons/org/prefer
 goog.object.extend(proto, api_commons_org_preferences_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.api.v1alpha1.org.businesshours.AddIntervalToBusinessHoursRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.businesshours.AddIntervalToBusinessHoursResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.org.businesshours.DeleteBusinessHoursRequest', null, global);
@@ -2632,7 +2634,8 @@ proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse.prototype.toO
  */
 proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    withinRange: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+    withinRange: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    resultExpiration: (f = msg.getResultExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2673,6 +2676,11 @@ proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse.deserializeBi
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setWithinRange(value);
       break;
+    case 2:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setResultExpiration(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2709,6 +2717,14 @@ proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse.serializeBina
       f
     );
   }
+  f = message.getResultExpiration();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -2727,6 +2743,43 @@ proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse.prototype.get
  */
 proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse.prototype.setWithinRange = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp result_expiration = 2;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse.prototype.getResultExpiration = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse} returns this
+*/
+proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse.prototype.setResultExpiration = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse} returns this
+ */
+proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse.prototype.clearResultExpiration = function() {
+  return this.setResultExpiration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse.prototype.hasResultExpiration = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

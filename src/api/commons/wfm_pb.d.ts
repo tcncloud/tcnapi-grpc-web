@@ -814,6 +814,70 @@ export namespace AgentStateSequence {
   }
 }
 
+export class AgentLeavePetition extends jspb.Message {
+  getAgentLeavePetitionId(): number;
+  setAgentLeavePetitionId(value: number): void;
+
+  getWfmAgentSid(): number;
+  setWfmAgentSid(value: number): void;
+
+  getPetitionStatus(): AgentLeavePetitionStatusMap[keyof AgentLeavePetitionStatusMap];
+  setPetitionStatus(value: AgentLeavePetitionStatusMap[keyof AgentLeavePetitionStatusMap]): void;
+
+  getPetitionComment(): string;
+  setPetitionComment(value: string): void;
+
+  getResponseComment(): string;
+  setResponseComment(value: string): void;
+
+  clearRequestedDatetimeRangesList(): void;
+  getRequestedDatetimeRangesList(): Array<DatetimeRange>;
+  setRequestedDatetimeRangesList(value: Array<DatetimeRange>): void;
+  addRequestedDatetimeRanges(value?: DatetimeRange, index?: number): DatetimeRange;
+
+  hasCreatedTime(): boolean;
+  clearCreatedTime(): void;
+  getCreatedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasArchivedTime(): boolean;
+  clearArchivedTime(): void;
+  getArchivedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setArchivedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasResolvedTime(): boolean;
+  clearResolvedTime(): void;
+  getResolvedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setResolvedTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getResolvedByUserId(): string;
+  setResolvedByUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AgentLeavePetition.AsObject;
+  static toObject(includeInstance: boolean, msg: AgentLeavePetition): AgentLeavePetition.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AgentLeavePetition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AgentLeavePetition;
+  static deserializeBinaryFromReader(message: AgentLeavePetition, reader: jspb.BinaryReader): AgentLeavePetition;
+}
+
+export namespace AgentLeavePetition {
+  export type AsObject = {
+    agentLeavePetitionId: number,
+    wfmAgentSid: number,
+    petitionStatus: AgentLeavePetitionStatusMap[keyof AgentLeavePetitionStatusMap],
+    petitionComment: string,
+    responseComment: string,
+    requestedDatetimeRangesList: Array<DatetimeRange.AsObject>,
+    createdTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    archivedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    resolvedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    resolvedByUserId: string,
+  }
+}
+
 export interface RegressionForecasterModelTypesMap {
   RANDOM_FOREST: 0;
   ADABOOST: 1;
@@ -1089,4 +1153,14 @@ export interface RealTimeManagementStateMap {
 }
 
 export const RealTimeManagementState: RealTimeManagementStateMap;
+
+export interface AgentLeavePetitionStatusMap {
+  UNSPECIFIED_PETITION_STATUS: 0;
+  PENDING_PETITION: 1;
+  APPROVED_PETITION: 2;
+  DENIED_PETITION: 3;
+  CANCELLED_PETITION: 4;
+}
+
+export const AgentLeavePetitionStatus: AgentLeavePetitionStatusMap;
 
