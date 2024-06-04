@@ -993,40 +993,6 @@ export namespace ReviewVersionRes {
   }
 }
 
-export class ExportManyVersionReq extends jspb.Message {
-  clearUrlList(): void;
-  getUrlList(): Array<string>;
-  setUrlList(value: Array<string>): void;
-  addUrl(value: string, index?: number): string;
-
-  getLocale(): string;
-  setLocale(value: string): void;
-
-  getContent(): string;
-  setContent(value: string): void;
-
-  getVersion(): string;
-  setVersion(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExportManyVersionReq.AsObject;
-  static toObject(includeInstance: boolean, msg: ExportManyVersionReq): ExportManyVersionReq.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExportManyVersionReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExportManyVersionReq;
-  static deserializeBinaryFromReader(message: ExportManyVersionReq, reader: jspb.BinaryReader): ExportManyVersionReq;
-}
-
-export namespace ExportManyVersionReq {
-  export type AsObject = {
-    urlList: Array<string>,
-    locale: string,
-    content: string,
-    version: string,
-  }
-}
-
 export class ListVersionsReq extends jspb.Message {
   getLocale(): string;
   setLocale(value: string): void;

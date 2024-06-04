@@ -202,15 +202,6 @@ type LearnListVersions = {
   readonly responseType: typeof api_v0alpha_learn_pb.ListVersionsRes;
 };
 
-type LearnExportManyVersionStream = {
-  readonly methodName: string;
-  readonly service: typeof Learn;
-  readonly requestStream: false;
-  readonly responseStream: true;
-  readonly requestType: typeof api_v0alpha_learn_pb.ExportManyVersionReq;
-  readonly responseType: typeof api_v0alpha_learn_pb.ExportRes;
-};
-
 export class Learn {
   static readonly serviceName: string;
   static readonly Exist: LearnExist;
@@ -235,7 +226,6 @@ export class Learn {
   static readonly ReviewVersion: LearnReviewVersion;
   static readonly ExportManyStream: LearnExportManyStream;
   static readonly ListVersions: LearnListVersions;
-  static readonly ExportManyVersionStream: LearnExportManyVersionStream;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -444,6 +434,5 @@ export class LearnClient {
     requestMessage: api_v0alpha_learn_pb.ListVersionsReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.ListVersionsRes|null) => void
   ): UnaryResponse;
-  exportManyVersionStream(requestMessage: api_v0alpha_learn_pb.ExportManyVersionReq, metadata?: grpc.Metadata): ResponseStream<api_v0alpha_learn_pb.ExportRes>;
 }
 
