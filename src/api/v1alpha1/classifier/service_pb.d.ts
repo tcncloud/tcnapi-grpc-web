@@ -47,8 +47,8 @@ export namespace ParseFileRequest {
   }
 
   export class ReParseFile extends jspb.Message {
-    getFileTemplateId(): number;
-    setFileTemplateId(value: number): void;
+    getFileTemplateId(): string;
+    setFileTemplateId(value: string): void;
 
     hasHints(): boolean;
     clearHints(): void;
@@ -72,7 +72,7 @@ export namespace ParseFileRequest {
 
   export namespace ReParseFile {
     export type AsObject = {
-      fileTemplateId: number,
+      fileTemplateId: string,
       hints?: api_v1alpha1_classifier_entities_pb.ParseHints.AsObject,
       opts?: api_v1alpha1_classifier_entities_pb.Opts.AsObject,
     }
@@ -175,8 +175,8 @@ export namespace UpdateFileTemplateResponse {
 }
 
 export class DeleteFileTemplateRequest extends jspb.Message {
-  getFileTemplate(): number;
-  setFileTemplate(value: number): void;
+  getFileTemplate(): string;
+  setFileTemplate(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteFileTemplateRequest.AsObject;
@@ -190,7 +190,7 @@ export class DeleteFileTemplateRequest extends jspb.Message {
 
 export namespace DeleteFileTemplateRequest {
   export type AsObject = {
-    fileTemplate: number,
+    fileTemplate: string,
   }
 }
 
@@ -211,8 +211,8 @@ export namespace DeleteFileTemplateResponse {
 }
 
 export class ListFileTemplatesRequest extends jspb.Message {
-  getPrevId(): number;
-  setPrevId(value: number): void;
+  getPrevId(): string;
+  setPrevId(value: string): void;
 
   getAsc(): boolean;
   setAsc(value: boolean): void;
@@ -232,7 +232,7 @@ export class ListFileTemplatesRequest extends jspb.Message {
 
 export namespace ListFileTemplatesRequest {
   export type AsObject = {
-    prevId: number,
+    prevId: string,
     asc: boolean,
     pageSize: number,
   }
@@ -261,8 +261,8 @@ export namespace ListFileTemplatesResponse {
 }
 
 export class GetFileTemplateRequest extends jspb.Message {
-  getFileTemplateId(): number;
-  setFileTemplateId(value: number): void;
+  getFileTemplateId(): string;
+  setFileTemplateId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetFileTemplateRequest.AsObject;
@@ -276,7 +276,7 @@ export class GetFileTemplateRequest extends jspb.Message {
 
 export namespace GetFileTemplateRequest {
   export type AsObject = {
-    fileTemplateId: number,
+    fileTemplateId: string,
   }
 }
 
