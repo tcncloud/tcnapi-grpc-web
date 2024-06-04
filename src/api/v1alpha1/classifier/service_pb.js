@@ -505,7 +505,7 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.toObject = 
  */
 proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     hints: (f = msg.getHints()) && api_v1alpha1_classifier_entities_pb.ParseHints.toObject(includeInstance, f),
     opts: (f = msg.getOpts()) && api_v1alpha1_classifier_entities_pb.Opts.toObject(includeInstance, f)
   };
@@ -545,7 +545,7 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.deserializeBinaryFrom
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setFileTemplateId(value);
       break;
     case 2:
@@ -588,8 +588,8 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.serializeBi
 proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFileTemplateId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -615,19 +615,19 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.serializeBinaryToWrit
 
 /**
  * optional int64 file_template_id = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.getFileTemplateId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile} returns this
  */
 proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.setFileTemplateId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -1497,7 +1497,7 @@ proto.api.v1alpha1.classifier.DeleteFileTemplateRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.classifier.DeleteFileTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    fileTemplate: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -1535,7 +1535,7 @@ proto.api.v1alpha1.classifier.DeleteFileTemplateRequest.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setFileTemplate(value);
       break;
     default:
@@ -1568,8 +1568,8 @@ proto.api.v1alpha1.classifier.DeleteFileTemplateRequest.prototype.serializeBinar
 proto.api.v1alpha1.classifier.DeleteFileTemplateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFileTemplate();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -1579,19 +1579,19 @@ proto.api.v1alpha1.classifier.DeleteFileTemplateRequest.serializeBinaryToWriter 
 
 /**
  * optional int64 file_template = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.classifier.DeleteFileTemplateRequest.prototype.getFileTemplate = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.classifier.DeleteFileTemplateRequest} returns this
  */
 proto.api.v1alpha1.classifier.DeleteFileTemplateRequest.prototype.setFileTemplate = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -1728,7 +1728,7 @@ proto.api.v1alpha1.classifier.ListFileTemplatesRequest.prototype.toObject = func
  */
 proto.api.v1alpha1.classifier.ListFileTemplatesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prevId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    prevId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
     asc: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
     pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
@@ -1768,7 +1768,7 @@ proto.api.v1alpha1.classifier.ListFileTemplatesRequest.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setPrevId(value);
       break;
     case 2:
@@ -1809,8 +1809,8 @@ proto.api.v1alpha1.classifier.ListFileTemplatesRequest.prototype.serializeBinary
 proto.api.v1alpha1.classifier.ListFileTemplatesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getPrevId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -1834,19 +1834,19 @@ proto.api.v1alpha1.classifier.ListFileTemplatesRequest.serializeBinaryToWriter =
 
 /**
  * optional int64 prev_id = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.classifier.ListFileTemplatesRequest.prototype.getPrevId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.classifier.ListFileTemplatesRequest} returns this
  */
 proto.api.v1alpha1.classifier.ListFileTemplatesRequest.prototype.setPrevId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -2078,7 +2078,7 @@ proto.api.v1alpha1.classifier.GetFileTemplateRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.classifier.GetFileTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -2116,7 +2116,7 @@ proto.api.v1alpha1.classifier.GetFileTemplateRequest.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setFileTemplateId(value);
       break;
     default:
@@ -2149,8 +2149,8 @@ proto.api.v1alpha1.classifier.GetFileTemplateRequest.prototype.serializeBinary =
 proto.api.v1alpha1.classifier.GetFileTemplateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFileTemplateId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -2160,19 +2160,19 @@ proto.api.v1alpha1.classifier.GetFileTemplateRequest.serializeBinaryToWriter = f
 
 /**
  * optional int64 file_template_id = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.v1alpha1.classifier.GetFileTemplateRequest.prototype.getFileTemplateId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.classifier.GetFileTemplateRequest} returns this
  */
 proto.api.v1alpha1.classifier.GetFileTemplateRequest.prototype.setFileTemplateId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
