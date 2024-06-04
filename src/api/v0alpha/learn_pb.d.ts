@@ -993,3 +993,79 @@ export namespace ReviewVersionRes {
   }
 }
 
+export class ExportManyVersionReq extends jspb.Message {
+  clearUrlList(): void;
+  getUrlList(): Array<string>;
+  setUrlList(value: Array<string>): void;
+  addUrl(value: string, index?: number): string;
+
+  getLocale(): string;
+  setLocale(value: string): void;
+
+  getContent(): string;
+  setContent(value: string): void;
+
+  getVersion(): string;
+  setVersion(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExportManyVersionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ExportManyVersionReq): ExportManyVersionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExportManyVersionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExportManyVersionReq;
+  static deserializeBinaryFromReader(message: ExportManyVersionReq, reader: jspb.BinaryReader): ExportManyVersionReq;
+}
+
+export namespace ExportManyVersionReq {
+  export type AsObject = {
+    urlList: Array<string>,
+    locale: string,
+    content: string,
+    version: string,
+  }
+}
+
+export class ListVersionsReq extends jspb.Message {
+  getLocale(): string;
+  setLocale(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListVersionsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListVersionsReq): ListVersionsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListVersionsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListVersionsReq;
+  static deserializeBinaryFromReader(message: ListVersionsReq, reader: jspb.BinaryReader): ListVersionsReq;
+}
+
+export namespace ListVersionsReq {
+  export type AsObject = {
+    locale: string,
+  }
+}
+
+export class ListVersionsRes extends jspb.Message {
+  clearVersionsList(): void;
+  getVersionsList(): Array<string>;
+  setVersionsList(value: Array<string>): void;
+  addVersions(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListVersionsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListVersionsRes): ListVersionsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListVersionsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListVersionsRes;
+  static deserializeBinaryFromReader(message: ListVersionsRes, reader: jspb.BinaryReader): ListVersionsRes;
+}
+
+export namespace ListVersionsRes {
+  export type AsObject = {
+    versionsList: Array<string>,
+  }
+}
+

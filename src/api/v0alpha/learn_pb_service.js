@@ -199,6 +199,24 @@ Learn.ExportManyStream = {
   responseType: api_v0alpha_learn_pb.ExportRes
 };
 
+Learn.ListVersions = {
+  methodName: "ListVersions",
+  service: Learn,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_learn_pb.ListVersionsReq,
+  responseType: api_v0alpha_learn_pb.ListVersionsRes
+};
+
+Learn.ExportManyVersionStream = {
+  methodName: "ExportManyVersionStream",
+  service: Learn,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v0alpha_learn_pb.ExportManyVersionReq,
+  responseType: api_v0alpha_learn_pb.ExportRes
+};
+
 exports.Learn = Learn;
 
 function LearnClient(serviceHost, options) {
@@ -849,6 +867,76 @@ LearnClient.prototype.exportManyStream = function exportManyStream(requestMessag
     status: []
   };
   var client = grpc.invoke(Learn.ExportManyStream, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.listVersions = function listVersions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Learn.ListVersions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.exportManyVersionStream = function exportManyVersionStream(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(Learn.ExportManyVersionStream, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
