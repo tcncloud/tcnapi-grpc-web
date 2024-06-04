@@ -370,6 +370,11 @@ export namespace Sms {
     getOffset(): google_protobuf_duration_pb.Duration | undefined;
     setOffset(value?: google_protobuf_duration_pb.Duration): void;
 
+    clearAttachmentsList(): void;
+    getAttachmentsList(): Array<Sms.Segment.Attachment>;
+    setAttachmentsList(value: Array<Sms.Segment.Attachment>): void;
+    addAttachments(value?: Sms.Segment.Attachment, index?: number): Sms.Segment.Attachment;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Segment.AsObject;
     static toObject(includeInstance: boolean, msg: Segment): Segment.AsObject;
@@ -384,6 +389,27 @@ export namespace Sms {
     export type AsObject = {
       text: string,
       offset?: google_protobuf_duration_pb.Duration.AsObject,
+      attachmentsList: Array<Sms.Segment.Attachment.AsObject>,
+    }
+
+    export class Attachment extends jspb.Message {
+      getAttachmentSid(): number;
+      setAttachmentSid(value: number): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Attachment.AsObject;
+      static toObject(includeInstance: boolean, msg: Attachment): Attachment.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Attachment, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Attachment;
+      static deserializeBinaryFromReader(message: Attachment, reader: jspb.BinaryReader): Attachment;
+    }
+
+    export namespace Attachment {
+      export type AsObject = {
+        attachmentSid: number,
+      }
     }
   }
 }
