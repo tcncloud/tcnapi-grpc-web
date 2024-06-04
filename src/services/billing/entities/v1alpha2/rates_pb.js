@@ -141,7 +141,8 @@ proto.services.billing.entities.v1alpha2.RateSnapshot.toObject = function(includ
     startDate: (f = msg.getStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     endDate: (f = msg.getEndDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     ratesList: jspb.Message.toObjectList(msg.getRatesList(),
-    proto.services.billing.entities.v1alpha2.RateDefinition.toObject, includeInstance)
+    proto.services.billing.entities.v1alpha2.RateDefinition.toObject, includeInstance),
+    userId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -192,6 +193,10 @@ proto.services.billing.entities.v1alpha2.RateSnapshot.deserializeBinaryFromReade
       var value = new proto.services.billing.entities.v1alpha2.RateDefinition;
       reader.readMessage(value,proto.services.billing.entities.v1alpha2.RateDefinition.deserializeBinaryFromReader);
       msg.addRates(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
       break;
     default:
       reader.skipField();
@@ -244,6 +249,13 @@ proto.services.billing.entities.v1alpha2.RateSnapshot.serializeBinaryToWriter = 
       3,
       f,
       proto.services.billing.entities.v1alpha2.RateDefinition.serializeBinaryToWriter
+    );
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -358,6 +370,24 @@ proto.services.billing.entities.v1alpha2.RateSnapshot.prototype.addRates = funct
  */
 proto.services.billing.entities.v1alpha2.RateSnapshot.prototype.clearRatesList = function() {
   return this.setRatesList([]);
+};
+
+
+/**
+ * optional string user_id = 4;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha2.RateSnapshot.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha2.RateSnapshot} returns this
+ */
+proto.services.billing.entities.v1alpha2.RateSnapshot.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

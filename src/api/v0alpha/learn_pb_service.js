@@ -199,6 +199,15 @@ Learn.ExportManyStream = {
   responseType: api_v0alpha_learn_pb.ExportRes
 };
 
+Learn.ListVersions = {
+  methodName: "ListVersions",
+  service: Learn,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_learn_pb.ListVersionsReq,
+  responseType: api_v0alpha_learn_pb.ListVersionsRes
+};
+
 exports.Learn = Learn;
 
 function LearnClient(serviceHost, options) {
@@ -876,6 +885,37 @@ LearnClient.prototype.exportManyStream = function exportManyStream(requestMessag
     },
     cancel: function () {
       listeners = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.listVersions = function listVersions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Learn.ListVersions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
       client.close();
     }
   };
