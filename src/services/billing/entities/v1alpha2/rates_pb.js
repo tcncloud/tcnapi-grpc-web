@@ -142,7 +142,7 @@ proto.services.billing.entities.v1alpha2.RateSnapshot.toObject = function(includ
     endDate: (f = msg.getEndDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     ratesList: jspb.Message.toObjectList(msg.getRatesList(),
     proto.services.billing.entities.v1alpha2.RateDefinition.toObject, includeInstance),
-    editedBy: jspb.Message.getFieldWithDefault(msg, 4, "")
+    userId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -196,7 +196,7 @@ proto.services.billing.entities.v1alpha2.RateSnapshot.deserializeBinaryFromReade
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEditedBy(value);
+      msg.setUserId(value);
       break;
     default:
       reader.skipField();
@@ -251,7 +251,7 @@ proto.services.billing.entities.v1alpha2.RateSnapshot.serializeBinaryToWriter = 
       proto.services.billing.entities.v1alpha2.RateDefinition.serializeBinaryToWriter
     );
   }
-  f = message.getEditedBy();
+  f = message.getUserId();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -374,10 +374,10 @@ proto.services.billing.entities.v1alpha2.RateSnapshot.prototype.clearRatesList =
 
 
 /**
- * optional string edited_by = 4;
+ * optional string user_id = 4;
  * @return {string}
  */
-proto.services.billing.entities.v1alpha2.RateSnapshot.prototype.getEditedBy = function() {
+proto.services.billing.entities.v1alpha2.RateSnapshot.prototype.getUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -386,7 +386,7 @@ proto.services.billing.entities.v1alpha2.RateSnapshot.prototype.getEditedBy = fu
  * @param {string} value
  * @return {!proto.services.billing.entities.v1alpha2.RateSnapshot} returns this
  */
-proto.services.billing.entities.v1alpha2.RateSnapshot.prototype.setEditedBy = function(value) {
+proto.services.billing.entities.v1alpha2.RateSnapshot.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 

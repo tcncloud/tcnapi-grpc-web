@@ -230,6 +230,15 @@ type PortalManagerApiListPortalWorkflows = {
   readonly responseType: typeof api_v1alpha1_integrations_portals_pb.ListPortalWorkflowsResponse;
 };
 
+type PortalManagerApiListAllActionDefinitions = {
+  readonly methodName: string;
+  readonly service: typeof PortalManagerApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrations_portals_pb.ListAllActionDefinitionsReq;
+  readonly responseType: typeof api_v1alpha1_integrations_portals_pb.ListAllActionDefinitionsResponse;
+};
+
 export class PortalManagerApi {
   static readonly serviceName: string;
   static readonly UpsertPortalConfig: PortalManagerApiUpsertPortalConfig;
@@ -257,6 +266,7 @@ export class PortalManagerApi {
   static readonly ListAvailablePaymentFields: PortalManagerApiListAvailablePaymentFields;
   static readonly ListPortalTypes: PortalManagerApiListPortalTypes;
   static readonly ListPortalWorkflows: PortalManagerApiListPortalWorkflows;
+  static readonly ListAllActionDefinitions: PortalManagerApiListAllActionDefinitions;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -515,6 +525,15 @@ export class PortalManagerApiClient {
   listPortalWorkflows(
     requestMessage: api_v1alpha1_integrations_portals_pb.ListPortalWorkflowsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListPortalWorkflowsResponse|null) => void
+  ): UnaryResponse;
+  listAllActionDefinitions(
+    requestMessage: api_v1alpha1_integrations_portals_pb.ListAllActionDefinitionsReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListAllActionDefinitionsResponse|null) => void
+  ): UnaryResponse;
+  listAllActionDefinitions(
+    requestMessage: api_v1alpha1_integrations_portals_pb.ListAllActionDefinitionsReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListAllActionDefinitionsResponse|null) => void
   ): UnaryResponse;
 }
 

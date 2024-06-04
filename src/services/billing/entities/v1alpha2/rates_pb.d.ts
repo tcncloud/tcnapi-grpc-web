@@ -23,8 +23,8 @@ export class RateSnapshot extends jspb.Message {
   setRatesList(value: Array<RateDefinition>): void;
   addRates(value?: RateDefinition, index?: number): RateDefinition;
 
-  getEditedBy(): string;
-  setEditedBy(value: string): void;
+  getUserId(): string;
+  setUserId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RateSnapshot.AsObject;
@@ -41,7 +41,7 @@ export namespace RateSnapshot {
     startDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     ratesList: Array<RateDefinition.AsObject>,
-    editedBy: string,
+    userId: string,
   }
 }
 

@@ -141,7 +141,9 @@ proto.api.commons.org.AuthConnectionSettings.toObject = function(includeInstance
     proto.api.commons.org.GroupItem.toObject, includeInstance),
     orgId: jspb.Message.getFieldWithDefault(msg, 8, ""),
     name: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 10, 0)
+    type: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    resourceUrl: jspb.Message.getFieldWithDefault(msg, 100, ""),
+    useGovernmentAzure: jspb.Message.getBooleanFieldWithDefault(msg, 101, false)
   };
 
   if (includeInstance) {
@@ -220,6 +222,14 @@ proto.api.commons.org.AuthConnectionSettings.deserializeBinaryFromReader = funct
     case 10:
       var value = /** @type {!proto.api.commons.org.ConnectionType} */ (reader.readEnum());
       msg.setType(value);
+      break;
+    case 100:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setResourceUrl(value);
+      break;
+    case 101:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUseGovernmentAzure(value);
       break;
     default:
       reader.skipField();
@@ -320,6 +330,20 @@ proto.api.commons.org.AuthConnectionSettings.serializeBinaryToWriter = function(
   if (f !== 0.0) {
     writer.writeEnum(
       10,
+      f
+    );
+  }
+  f = message.getResourceUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      100,
+      f
+    );
+  }
+  f = message.getUseGovernmentAzure();
+  if (f) {
+    writer.writeBool(
+      101,
       f
     );
   }
@@ -712,6 +736,42 @@ proto.api.commons.org.AuthConnectionSettings.prototype.getType = function() {
  */
 proto.api.commons.org.AuthConnectionSettings.prototype.setType = function(value) {
   return jspb.Message.setProto3EnumField(this, 10, value);
+};
+
+
+/**
+ * optional string resource_url = 100;
+ * @return {string}
+ */
+proto.api.commons.org.AuthConnectionSettings.prototype.getResourceUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 100, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.AuthConnectionSettings} returns this
+ */
+proto.api.commons.org.AuthConnectionSettings.prototype.setResourceUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 100, value);
+};
+
+
+/**
+ * optional bool use_government_azure = 101;
+ * @return {boolean}
+ */
+proto.api.commons.org.AuthConnectionSettings.prototype.getUseGovernmentAzure = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 101, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.org.AuthConnectionSettings} returns this
+ */
+proto.api.commons.org.AuthConnectionSettings.prototype.setUseGovernmentAzure = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 101, value);
 };
 
 

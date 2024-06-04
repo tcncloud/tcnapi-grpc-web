@@ -26792,7 +26792,6 @@ proto.api.v1alpha1.integrations.PortalWorkflow.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.integrations.PortalWorkflow.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pluginInstanceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     actionsList: jspb.Message.toObjectList(msg.getActionsList(),
     proto.api.v1alpha1.integrations.Action.toObject, includeInstance),
     template: (f = msg.getTemplate()) && proto.api.v1alpha1.integrations.Template.toObject(includeInstance, f),
@@ -26843,10 +26842,6 @@ proto.api.v1alpha1.integrations.PortalWorkflow.deserializeBinaryFromReader = fun
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPluginInstanceId(value);
-      break;
     case 2:
       var value = new proto.api.v1alpha1.integrations.Action;
       reader.readMessage(value,proto.api.v1alpha1.integrations.Action.deserializeBinaryFromReader);
@@ -26925,13 +26920,6 @@ proto.api.v1alpha1.integrations.PortalWorkflow.prototype.serializeBinary = funct
  */
 proto.api.v1alpha1.integrations.PortalWorkflow.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPluginInstanceId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getActionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -27001,24 +26989,6 @@ proto.api.v1alpha1.integrations.PortalWorkflow.serializeBinaryToWriter = functio
   if (f && f.getLength() > 0) {
     f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-};
-
-
-/**
- * optional string plugin_instance_id = 1;
- * @return {string}
- */
-proto.api.v1alpha1.integrations.PortalWorkflow.prototype.getPluginInstanceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.integrations.PortalWorkflow} returns this
- */
-proto.api.v1alpha1.integrations.PortalWorkflow.prototype.setPluginInstanceId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -27344,7 +27314,9 @@ proto.api.v1alpha1.integrations.Action.prototype.toObject = function(opt_include
 proto.api.v1alpha1.integrations.Action.toObject = function(includeInstance, msg) {
   var f, obj = {
     workflowDefinitionName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    renameMap: (f = msg.getRenameMap()) ? f.toObject(includeInstance, undefined) : []
+    pluginInstanceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    restructureBeforeMap: (f = msg.getRestructureBeforeMap()) ? f.toObject(includeInstance, undefined) : [],
+    restructureAfterMap: (f = msg.getRestructureAfterMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -27385,8 +27357,18 @@ proto.api.v1alpha1.integrations.Action.deserializeBinaryFromReader = function(ms
       var value = /** @type {string} */ (reader.readString());
       msg.setWorkflowDefinitionName(value);
       break;
-    case 4:
-      var value = msg.getRenameMap();
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPluginInstanceId(value);
+      break;
+    case 5:
+      var value = msg.getRestructureBeforeMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
+      break;
+    case 6:
+      var value = msg.getRestructureAfterMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
@@ -27427,9 +27409,20 @@ proto.api.v1alpha1.integrations.Action.serializeBinaryToWriter = function(messag
       f
     );
   }
-  f = message.getRenameMap(true);
+  f = message.getPluginInstanceId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getRestructureBeforeMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getRestructureAfterMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -27453,14 +27446,32 @@ proto.api.v1alpha1.integrations.Action.prototype.setWorkflowDefinitionName = fun
 
 
 /**
- * map<string, string> rename = 4;
+ * optional string plugin_instance_id = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.integrations.Action.prototype.getPluginInstanceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.integrations.Action} returns this
+ */
+proto.api.v1alpha1.integrations.Action.prototype.setPluginInstanceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * map<string, string> restructure_before = 5;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.api.v1alpha1.integrations.Action.prototype.getRenameMap = function(opt_noLazyCreate) {
+proto.api.v1alpha1.integrations.Action.prototype.getRestructureBeforeMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
       null));
 };
 
@@ -27469,8 +27480,31 @@ proto.api.v1alpha1.integrations.Action.prototype.getRenameMap = function(opt_noL
  * Clears values from the map. The map will be non-null.
  * @return {!proto.api.v1alpha1.integrations.Action} returns this
  */
-proto.api.v1alpha1.integrations.Action.prototype.clearRenameMap = function() {
-  this.getRenameMap().clear();
+proto.api.v1alpha1.integrations.Action.prototype.clearRestructureBeforeMap = function() {
+  this.getRestructureBeforeMap().clear();
+  return this;
+};
+
+
+/**
+ * map<string, string> restructure_after = 6;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.api.v1alpha1.integrations.Action.prototype.getRestructureAfterMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.api.v1alpha1.integrations.Action} returns this
+ */
+proto.api.v1alpha1.integrations.Action.prototype.clearRestructureAfterMap = function() {
+  this.getRestructureAfterMap().clear();
   return this;
 };
 
