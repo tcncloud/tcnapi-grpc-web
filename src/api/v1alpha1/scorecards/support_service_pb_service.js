@@ -32,6 +32,24 @@ ScorecardsSupport.ListAutoEvaluationsByOrgId = {
   responseType: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsResponse
 };
 
+ScorecardsSupport.BulkDeleteEvaluations = {
+  methodName: "BulkDeleteEvaluations",
+  service: ScorecardsSupport,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_scorecards_evaluation_pb.BulkDeleteEvaluationsRequest,
+  responseType: api_v1alpha1_scorecards_evaluation_pb.BulkDeleteEvaluationsResponse
+};
+
+ScorecardsSupport.BulkDeleteAutoEvaluations = {
+  methodName: "BulkDeleteAutoEvaluations",
+  service: ScorecardsSupport,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_scorecards_auto_evaluation_pb.BulkDeleteAutoEvaluationsRequest,
+  responseType: api_v1alpha1_scorecards_auto_evaluation_pb.BulkDeleteAutoEvaluationsResponse
+};
+
 ScorecardsSupport.DeleteEvaluationByOrgId = {
   methodName: "DeleteEvaluationByOrgId",
   service: ScorecardsSupport,
@@ -111,6 +129,68 @@ ScorecardsSupportClient.prototype.listAutoEvaluationsByOrgId = function listAuto
     callback = arguments[1];
   }
   var client = grpc.unary(ScorecardsSupport.ListAutoEvaluationsByOrgId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ScorecardsSupportClient.prototype.bulkDeleteEvaluations = function bulkDeleteEvaluations(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ScorecardsSupport.BulkDeleteEvaluations, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ScorecardsSupportClient.prototype.bulkDeleteAutoEvaluations = function bulkDeleteAutoEvaluations(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ScorecardsSupport.BulkDeleteAutoEvaluations, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

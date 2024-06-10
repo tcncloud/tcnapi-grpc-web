@@ -433,6 +433,48 @@ export namespace DeleteEvaluationByOrgIdRequest {
   }
 }
 
+export class BulkDeleteEvaluationsRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  clearEvaluationIdsList(): void;
+  getEvaluationIdsList(): Array<number>;
+  setEvaluationIdsList(value: Array<number>): void;
+  addEvaluationIds(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkDeleteEvaluationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkDeleteEvaluationsRequest): BulkDeleteEvaluationsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkDeleteEvaluationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkDeleteEvaluationsRequest;
+  static deserializeBinaryFromReader(message: BulkDeleteEvaluationsRequest, reader: jspb.BinaryReader): BulkDeleteEvaluationsRequest;
+}
+
+export namespace BulkDeleteEvaluationsRequest {
+  export type AsObject = {
+    orgId: string,
+    evaluationIdsList: Array<number>,
+  }
+}
+
+export class BulkDeleteEvaluationsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkDeleteEvaluationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkDeleteEvaluationsResponse): BulkDeleteEvaluationsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkDeleteEvaluationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkDeleteEvaluationsResponse;
+  static deserializeBinaryFromReader(message: BulkDeleteEvaluationsResponse, reader: jspb.BinaryReader): BulkDeleteEvaluationsResponse;
+}
+
+export namespace BulkDeleteEvaluationsResponse {
+  export type AsObject = {
+  }
+}
+
 export class RestoreEvaluationRequest extends jspb.Message {
   getEvaluationId(): number;
   setEvaluationId(value: number): void;
