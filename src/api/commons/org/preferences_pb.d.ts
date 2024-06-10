@@ -7,6 +7,7 @@ import * as api_commons_country_pb from "../../../api/commons/country_pb";
 import * as api_commons_enums_pb from "../../../api/commons/enums_pb";
 import * as api_commons_lms_pb from "../../../api/commons/lms_pb";
 import * as api_commons_org_pb from "../../../api/commons/org_pb";
+import * as api_commons_org_user_pb from "../../../api/commons/org/user_pb";
 import * as api_commons_org_preferences_pb from "../../../api/commons/org_preferences_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -329,6 +330,9 @@ export class AuthenticationPreferences extends jspb.Message {
   getForceSsoProvider(): boolean;
   setForceSsoProvider(value: boolean): void;
 
+  getAuthenticatorApp(): api_commons_org_user_pb.TotpAuthenticatorTypeMap[keyof api_commons_org_user_pb.TotpAuthenticatorTypeMap];
+  setAuthenticatorApp(value: api_commons_org_user_pb.TotpAuthenticatorTypeMap[keyof api_commons_org_user_pb.TotpAuthenticatorTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuthenticationPreferences.AsObject;
   static toObject(includeInstance: boolean, msg: AuthenticationPreferences): AuthenticationPreferences.AsObject;
@@ -353,6 +357,7 @@ export namespace AuthenticationPreferences {
     passwordResetDayInterval: number,
     userAuthorizationViaIp: boolean,
     forceSsoProvider: boolean,
+    authenticatorApp: api_commons_org_user_pb.TotpAuthenticatorTypeMap[keyof api_commons_org_user_pb.TotpAuthenticatorTypeMap],
   }
 
   export class DuoMfaSettings extends jspb.Message {

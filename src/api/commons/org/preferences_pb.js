@@ -33,6 +33,8 @@ var api_commons_lms_pb = require('../../../api/commons/lms_pb.js');
 goog.object.extend(proto, api_commons_lms_pb);
 var api_commons_org_pb = require('../../../api/commons/org_pb.js');
 goog.object.extend(proto, api_commons_org_pb);
+var api_commons_org_user_pb = require('../../../api/commons/org/user_pb.js');
+goog.object.extend(proto, api_commons_org_user_pb);
 var api_commons_org_preferences_pb = require('../../../api/commons/org_preferences_pb.js');
 goog.object.extend(proto, api_commons_org_preferences_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -3234,7 +3236,8 @@ proto.api.commons.org.AuthenticationPreferences.toObject = function(includeInsta
     allowForcePasswordResetInterval: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
     passwordResetDayInterval: jspb.Message.getFieldWithDefault(msg, 18, 0),
     userAuthorizationViaIp: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
-    forceSsoProvider: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
+    forceSsoProvider: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
+    authenticatorApp: jspb.Message.getFieldWithDefault(msg, 21, 0)
   };
 
   if (includeInstance) {
@@ -3320,6 +3323,10 @@ proto.api.commons.org.AuthenticationPreferences.deserializeBinaryFromReader = fu
     case 20:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setForceSsoProvider(value);
+      break;
+    case 21:
+      var value = /** @type {!proto.api.commons.org.TotpAuthenticatorType} */ (reader.readEnum());
+      msg.setAuthenticatorApp(value);
       break;
     default:
       reader.skipField();
@@ -3433,6 +3440,13 @@ proto.api.commons.org.AuthenticationPreferences.serializeBinaryToWriter = functi
   if (f) {
     writer.writeBool(
       20,
+      f
+    );
+  }
+  f = message.getAuthenticatorApp();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      21,
       f
     );
   }
@@ -4029,6 +4043,24 @@ proto.api.commons.org.AuthenticationPreferences.prototype.getForceSsoProvider = 
  */
 proto.api.commons.org.AuthenticationPreferences.prototype.setForceSsoProvider = function(value) {
   return jspb.Message.setProto3BooleanField(this, 20, value);
+};
+
+
+/**
+ * optional TotpAuthenticatorType authenticator_app = 21;
+ * @return {!proto.api.commons.org.TotpAuthenticatorType}
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.getAuthenticatorApp = function() {
+  return /** @type {!proto.api.commons.org.TotpAuthenticatorType} */ (jspb.Message.getFieldWithDefault(this, 21, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.org.TotpAuthenticatorType} value
+ * @return {!proto.api.commons.org.AuthenticationPreferences} returns this
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.setAuthenticatorApp = function(value) {
+  return jspb.Message.setProto3EnumField(this, 21, value);
 };
 
 
