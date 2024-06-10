@@ -7986,7 +7986,8 @@ proto.api.commons.AutoQuestion.prototype.setRiskLevel = function(value) {
 proto.api.commons.CategoryType = {
   INVALID: 0,
   SKILL_CALLS: 1,
-  MANUAL_DIAL: 2
+  MANUAL_DIAL: 2,
+  SMS: 3
 };
 
 /**

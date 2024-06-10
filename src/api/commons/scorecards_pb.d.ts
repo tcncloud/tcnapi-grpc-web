@@ -1023,6 +1023,7 @@ export interface CategoryTypeMap {
   INVALID: 0;
   SKILL_CALLS: 1;
   MANUAL_DIAL: 2;
+  SMS: 3;
 }
 
 export const CategoryType: CategoryTypeMap;
