@@ -52,7 +52,77 @@ export namespace ContactManagerDeleteEvent {
   }
 }
 
+export class ContactManagerEntryEvent extends jspb.Message {
+  getContactmanagerlistid(): number;
+  setContactmanagerlistid(value: number): void;
+
+  getContactmanagerentryid(): number;
+  setContactmanagerentryid(value: number): void;
+
+  clearContactmanagerentrylistidsList(): void;
+  getContactmanagerentrylistidsList(): Array<number>;
+  setContactmanagerentrylistidsList(value: Array<number>): void;
+  addContactmanagerentrylistids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactManagerEntryEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactManagerEntryEvent): ContactManagerEntryEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContactManagerEntryEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactManagerEntryEvent;
+  static deserializeBinaryFromReader(message: ContactManagerEntryEvent, reader: jspb.BinaryReader): ContactManagerEntryEvent;
+}
+
+export namespace ContactManagerEntryEvent {
+  export type AsObject = {
+    contactmanagerlistid: number,
+    contactmanagerentryid: number,
+    contactmanagerentrylistidsList: Array<number>,
+  }
+}
+
+export class ContactManagerListUploadEvent extends jspb.Message {
+  getContactmanagerlistid(): number;
+  setContactmanagerlistid(value: number): void;
+
+  getNumberofcontactsuploaded(): number;
+  setNumberofcontactsuploaded(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactManagerListUploadEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactManagerListUploadEvent): ContactManagerListUploadEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContactManagerListUploadEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactManagerListUploadEvent;
+  static deserializeBinaryFromReader(message: ContactManagerListUploadEvent, reader: jspb.BinaryReader): ContactManagerListUploadEvent;
+}
+
+export namespace ContactManagerListUploadEvent {
+  export type AsObject = {
+    contactmanagerlistid: number,
+    numberofcontactsuploaded: number,
+  }
+}
+
 export class ContactManagerKycEvent extends jspb.Message {
+  getContactmanagerlistid(): number;
+  setContactmanagerlistid(value: number): void;
+
+  getContactmanagerentryid(): number;
+  setContactmanagerentryid(value: number): void;
+
+  clearTypesList(): void;
+  getTypesList(): Array<string>;
+  setTypesList(value: Array<string>): void;
+  addTypes(value: string, index?: number): string;
+
+  clearContactmanagerentrylistidsList(): void;
+  getContactmanagerentrylistidsList(): Array<number>;
+  setContactmanagerentrylistidsList(value: Array<number>): void;
+  addContactmanagerentrylistids(value: number, index?: number): number;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerKycEvent.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerKycEvent): ContactManagerKycEvent.AsObject;
@@ -65,6 +135,10 @@ export class ContactManagerKycEvent extends jspb.Message {
 
 export namespace ContactManagerKycEvent {
   export type AsObject = {
+    contactmanagerlistid: number,
+    contactmanagerentryid: number,
+    typesList: Array<string>,
+    contactmanagerentrylistidsList: Array<number>,
   }
 }
 
