@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_org_auth_token_pb from "../../../api/commons/org/auth_token_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class CreateAuthTokenRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
@@ -313,6 +314,52 @@ export class DeleteAuthTokenByUserIdResponse extends jspb.Message {
 
 export namespace DeleteAuthTokenByUserIdResponse {
   export type AsObject = {
+  }
+}
+
+export class GetAuthTokenStatusRequest extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAuthTokenStatusRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAuthTokenStatusRequest): GetAuthTokenStatusRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAuthTokenStatusRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAuthTokenStatusRequest;
+  static deserializeBinaryFromReader(message: GetAuthTokenStatusRequest, reader: jspb.BinaryReader): GetAuthTokenStatusRequest;
+}
+
+export namespace GetAuthTokenStatusRequest {
+  export type AsObject = {
+    userId: string,
+  }
+}
+
+export class GetAuthTokenStatusResponse extends jspb.Message {
+  getDisplayPopup(): boolean;
+  setDisplayPopup(value: boolean): void;
+
+  hasExpiration(): boolean;
+  clearExpiration(): void;
+  getExpiration(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiration(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAuthTokenStatusResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAuthTokenStatusResponse): GetAuthTokenStatusResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAuthTokenStatusResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAuthTokenStatusResponse;
+  static deserializeBinaryFromReader(message: GetAuthTokenStatusResponse, reader: jspb.BinaryReader): GetAuthTokenStatusResponse;
+}
+
+export namespace GetAuthTokenStatusResponse {
+  export type AsObject = {
+    displayPopup: boolean,
+    expiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

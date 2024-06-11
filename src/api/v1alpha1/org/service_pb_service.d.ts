@@ -1095,6 +1095,15 @@ type OrgDeleteAuthTokenByUserId = {
   readonly responseType: typeof api_v1alpha1_org_auth_token_pb.DeleteAuthTokenByUserIdResponse;
 };
 
+type OrgGetAuthTokenStatus = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_auth_token_pb.GetAuthTokenStatusRequest;
+  readonly responseType: typeof api_v1alpha1_org_auth_token_pb.GetAuthTokenStatusResponse;
+};
+
 type OrgGetHuntGroupSettings = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -2189,6 +2198,7 @@ export class Org {
   static readonly SetAuthTokenExpirationByUserId: OrgSetAuthTokenExpirationByUserId;
   static readonly DeleteAuthToken: OrgDeleteAuthToken;
   static readonly DeleteAuthTokenByUserId: OrgDeleteAuthTokenByUserId;
+  static readonly GetAuthTokenStatus: OrgGetAuthTokenStatus;
   static readonly GetHuntGroupSettings: OrgGetHuntGroupSettings;
   static readonly UpdateHuntGroupSettings: OrgUpdateHuntGroupSettings;
   static readonly CreateHuntGroup: OrgCreateHuntGroup;
@@ -3338,6 +3348,15 @@ export class OrgClient {
   deleteAuthTokenByUserId(
     requestMessage: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenByUserIdRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenByUserIdResponse|null) => void
+  ): UnaryResponse;
+  getAuthTokenStatus(
+    requestMessage: api_v1alpha1_org_auth_token_pb.GetAuthTokenStatusRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.GetAuthTokenStatusResponse|null) => void
+  ): UnaryResponse;
+  getAuthTokenStatus(
+    requestMessage: api_v1alpha1_org_auth_token_pb.GetAuthTokenStatusRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_auth_token_pb.GetAuthTokenStatusResponse|null) => void
   ): UnaryResponse;
   getHuntGroupSettings(
     requestMessage: api_v1alpha1_org_huntgroup_pb.GetHuntGroupSettingsRequest,

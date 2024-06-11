@@ -1101,6 +1101,15 @@ Org.DeleteAuthTokenByUserId = {
   responseType: api_v1alpha1_org_auth_token_pb.DeleteAuthTokenByUserIdResponse
 };
 
+Org.GetAuthTokenStatus = {
+  methodName: "GetAuthTokenStatus",
+  service: Org,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_auth_token_pb.GetAuthTokenStatusRequest,
+  responseType: api_v1alpha1_org_auth_token_pb.GetAuthTokenStatusResponse
+};
+
 Org.GetHuntGroupSettings = {
   methodName: "GetHuntGroupSettings",
   service: Org,
@@ -5846,6 +5855,37 @@ OrgClient.prototype.deleteAuthTokenByUserId = function deleteAuthTokenByUserId(r
     callback = arguments[1];
   }
   var client = grpc.unary(Org.DeleteAuthTokenByUserId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OrgClient.prototype.getAuthTokenStatus = function getAuthTokenStatus(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Org.GetAuthTokenStatus, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
