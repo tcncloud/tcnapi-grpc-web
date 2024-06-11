@@ -26,6 +26,24 @@ type ScorecardsSupportListAutoEvaluationsByOrgId = {
   readonly responseType: typeof api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsResponse;
 };
 
+type ScorecardsSupportBulkDeleteEvaluations = {
+  readonly methodName: string;
+  readonly service: typeof ScorecardsSupport;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_evaluation_pb.BulkDeleteEvaluationsRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_evaluation_pb.BulkDeleteEvaluationsResponse;
+};
+
+type ScorecardsSupportBulkDeleteAutoEvaluations = {
+  readonly methodName: string;
+  readonly service: typeof ScorecardsSupport;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_auto_evaluation_pb.BulkDeleteAutoEvaluationsRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_auto_evaluation_pb.BulkDeleteAutoEvaluationsResponse;
+};
+
 type ScorecardsSupportDeleteEvaluationByOrgId = {
   readonly methodName: string;
   readonly service: typeof ScorecardsSupport;
@@ -66,6 +84,8 @@ export class ScorecardsSupport {
   static readonly serviceName: string;
   static readonly ListEvaluationsByOrgId: ScorecardsSupportListEvaluationsByOrgId;
   static readonly ListAutoEvaluationsByOrgId: ScorecardsSupportListAutoEvaluationsByOrgId;
+  static readonly BulkDeleteEvaluations: ScorecardsSupportBulkDeleteEvaluations;
+  static readonly BulkDeleteAutoEvaluations: ScorecardsSupportBulkDeleteAutoEvaluations;
   static readonly DeleteEvaluationByOrgId: ScorecardsSupportDeleteEvaluationByOrgId;
   static readonly DeleteAutoEvaluationByOrgId: ScorecardsSupportDeleteAutoEvaluationByOrgId;
   static readonly ListScorecardsByOrgId: ScorecardsSupportListScorecardsByOrgId;
@@ -121,6 +141,24 @@ export class ScorecardsSupportClient {
   listAutoEvaluationsByOrgId(
     requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsByOrgIdRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.ListAutoEvaluationsResponse|null) => void
+  ): UnaryResponse;
+  bulkDeleteEvaluations(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.BulkDeleteEvaluationsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.BulkDeleteEvaluationsResponse|null) => void
+  ): UnaryResponse;
+  bulkDeleteEvaluations(
+    requestMessage: api_v1alpha1_scorecards_evaluation_pb.BulkDeleteEvaluationsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_evaluation_pb.BulkDeleteEvaluationsResponse|null) => void
+  ): UnaryResponse;
+  bulkDeleteAutoEvaluations(
+    requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.BulkDeleteAutoEvaluationsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.BulkDeleteAutoEvaluationsResponse|null) => void
+  ): UnaryResponse;
+  bulkDeleteAutoEvaluations(
+    requestMessage: api_v1alpha1_scorecards_auto_evaluation_pb.BulkDeleteAutoEvaluationsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_auto_evaluation_pb.BulkDeleteAutoEvaluationsResponse|null) => void
   ): UnaryResponse;
   deleteEvaluationByOrgId(
     requestMessage: api_v1alpha1_scorecards_evaluation_pb.DeleteEvaluationByOrgIdRequest,

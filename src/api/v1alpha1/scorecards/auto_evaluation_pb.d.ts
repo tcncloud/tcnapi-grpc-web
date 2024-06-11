@@ -404,3 +404,45 @@ export namespace DeleteAutoEvaluationByOrgIdRequest {
   }
 }
 
+export class BulkDeleteAutoEvaluationsRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  clearAutoEvaluationIdsList(): void;
+  getAutoEvaluationIdsList(): Array<number>;
+  setAutoEvaluationIdsList(value: Array<number>): void;
+  addAutoEvaluationIds(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkDeleteAutoEvaluationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkDeleteAutoEvaluationsRequest): BulkDeleteAutoEvaluationsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkDeleteAutoEvaluationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkDeleteAutoEvaluationsRequest;
+  static deserializeBinaryFromReader(message: BulkDeleteAutoEvaluationsRequest, reader: jspb.BinaryReader): BulkDeleteAutoEvaluationsRequest;
+}
+
+export namespace BulkDeleteAutoEvaluationsRequest {
+  export type AsObject = {
+    orgId: string,
+    autoEvaluationIdsList: Array<number>,
+  }
+}
+
+export class BulkDeleteAutoEvaluationsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkDeleteAutoEvaluationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkDeleteAutoEvaluationsResponse): BulkDeleteAutoEvaluationsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkDeleteAutoEvaluationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkDeleteAutoEvaluationsResponse;
+  static deserializeBinaryFromReader(message: BulkDeleteAutoEvaluationsResponse, reader: jspb.BinaryReader): BulkDeleteAutoEvaluationsResponse;
+}
+
+export namespace BulkDeleteAutoEvaluationsResponse {
+  export type AsObject = {
+  }
+}
+
