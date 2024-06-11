@@ -146,6 +146,33 @@ SkillsService.ListSkillsForCurrentAgent = {
   responseType: api_v1alpha1_org_skills_entities_pb.ListSkillsForCurrentAgentResponse
 };
 
+SkillsService.ListAssignedSkillGroups = {
+  methodName: "ListAssignedSkillGroups",
+  service: SkillsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_skills_entities_pb.ListAssignedSkillGroupsRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.ListAssignedSkillGroupsResponse
+};
+
+SkillsService.AssignOwnSkillGroups = {
+  methodName: "AssignOwnSkillGroups",
+  service: SkillsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_skills_entities_pb.AssignOwnSkillGroupsRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.AssignOwnSkillGroupsResponse
+};
+
+SkillsService.RevokeOwnSkillGroups = {
+  methodName: "RevokeOwnSkillGroups",
+  service: SkillsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_org_skills_entities_pb.RevokeOwnSkillGroupsRequest,
+  responseType: api_v1alpha1_org_skills_entities_pb.RevokeOwnSkillGroupsResponse
+};
+
 exports.SkillsService = SkillsService;
 
 function SkillsServiceClient(serviceHost, options) {
@@ -592,6 +619,99 @@ SkillsServiceClient.prototype.listSkillsForCurrentAgent = function listSkillsFor
     callback = arguments[1];
   }
   var client = grpc.unary(SkillsService.ListSkillsForCurrentAgent, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+SkillsServiceClient.prototype.listAssignedSkillGroups = function listAssignedSkillGroups(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(SkillsService.ListAssignedSkillGroups, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+SkillsServiceClient.prototype.assignOwnSkillGroups = function assignOwnSkillGroups(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(SkillsService.AssignOwnSkillGroups, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+SkillsServiceClient.prototype.revokeOwnSkillGroups = function revokeOwnSkillGroups(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(SkillsService.RevokeOwnSkillGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
