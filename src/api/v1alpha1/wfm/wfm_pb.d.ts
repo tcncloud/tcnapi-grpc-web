@@ -11646,3 +11646,39 @@ export namespace ListAgentLeavePetitionsResponse {
   }
 }
 
+export class ArchiveAgentLeavePetitionRequest extends jspb.Message {
+  getAgentLeavePetitionId(): number;
+  setAgentLeavePetitionId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ArchiveAgentLeavePetitionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ArchiveAgentLeavePetitionRequest): ArchiveAgentLeavePetitionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ArchiveAgentLeavePetitionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ArchiveAgentLeavePetitionRequest;
+  static deserializeBinaryFromReader(message: ArchiveAgentLeavePetitionRequest, reader: jspb.BinaryReader): ArchiveAgentLeavePetitionRequest;
+}
+
+export namespace ArchiveAgentLeavePetitionRequest {
+  export type AsObject = {
+    agentLeavePetitionId: number,
+  }
+}
+
+export class ArchiveAgentLeavePetitionResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ArchiveAgentLeavePetitionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ArchiveAgentLeavePetitionResponse): ArchiveAgentLeavePetitionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ArchiveAgentLeavePetitionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ArchiveAgentLeavePetitionResponse;
+  static deserializeBinaryFromReader(message: ArchiveAgentLeavePetitionResponse, reader: jspb.BinaryReader): ArchiveAgentLeavePetitionResponse;
+}
+
+export namespace ArchiveAgentLeavePetitionResponse {
+  export type AsObject = {
+  }
+}
+
