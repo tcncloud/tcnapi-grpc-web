@@ -140,6 +140,33 @@ type SkillsServiceListSkillsForCurrentAgent = {
   readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.ListSkillsForCurrentAgentResponse;
 };
 
+type SkillsServiceListAssignedSkillGroups = {
+  readonly methodName: string;
+  readonly service: typeof SkillsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_skills_entities_pb.ListAssignedSkillGroupsRequest;
+  readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.ListAssignedSkillGroupsResponse;
+};
+
+type SkillsServiceAssignOwnSkillGroups = {
+  readonly methodName: string;
+  readonly service: typeof SkillsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_skills_entities_pb.AssignOwnSkillGroupsRequest;
+  readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.AssignOwnSkillGroupsResponse;
+};
+
+type SkillsServiceRevokeOwnSkillGroups = {
+  readonly methodName: string;
+  readonly service: typeof SkillsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_skills_entities_pb.RevokeOwnSkillGroupsRequest;
+  readonly responseType: typeof api_v1alpha1_org_skills_entities_pb.RevokeOwnSkillGroupsResponse;
+};
+
 export class SkillsService {
   static readonly serviceName: string;
   static readonly CreateSkillGroup: SkillsServiceCreateSkillGroup;
@@ -157,6 +184,9 @@ export class SkillsService {
   static readonly ListSkillGroupsMembers: SkillsServiceListSkillGroupsMembers;
   static readonly GetAgentSkills: SkillsServiceGetAgentSkills;
   static readonly ListSkillsForCurrentAgent: SkillsServiceListSkillsForCurrentAgent;
+  static readonly ListAssignedSkillGroups: SkillsServiceListAssignedSkillGroups;
+  static readonly AssignOwnSkillGroups: SkillsServiceAssignOwnSkillGroups;
+  static readonly RevokeOwnSkillGroups: SkillsServiceRevokeOwnSkillGroups;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -325,6 +355,33 @@ export class SkillsServiceClient {
   listSkillsForCurrentAgent(
     requestMessage: api_v1alpha1_org_skills_entities_pb.ListSkillsForCurrentAgentRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.ListSkillsForCurrentAgentResponse|null) => void
+  ): UnaryResponse;
+  listAssignedSkillGroups(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.ListAssignedSkillGroupsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.ListAssignedSkillGroupsResponse|null) => void
+  ): UnaryResponse;
+  listAssignedSkillGroups(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.ListAssignedSkillGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.ListAssignedSkillGroupsResponse|null) => void
+  ): UnaryResponse;
+  assignOwnSkillGroups(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.AssignOwnSkillGroupsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.AssignOwnSkillGroupsResponse|null) => void
+  ): UnaryResponse;
+  assignOwnSkillGroups(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.AssignOwnSkillGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.AssignOwnSkillGroupsResponse|null) => void
+  ): UnaryResponse;
+  revokeOwnSkillGroups(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.RevokeOwnSkillGroupsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.RevokeOwnSkillGroupsResponse|null) => void
+  ): UnaryResponse;
+  revokeOwnSkillGroups(
+    requestMessage: api_v1alpha1_org_skills_entities_pb.RevokeOwnSkillGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_skills_entities_pb.RevokeOwnSkillGroupsResponse|null) => void
   ): UnaryResponse;
 }
 
