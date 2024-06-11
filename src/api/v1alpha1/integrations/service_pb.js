@@ -26805,7 +26805,8 @@ proto.api.v1alpha1.integrations.PortalWorkflow.toObject = function(includeInstan
     proto.api.v1alpha1.integrations.Condition.toObject, includeInstance),
     demoPassConditionsList: jspb.Message.toObjectList(msg.getDemoPassConditionsList(),
     proto.api.v1alpha1.integrations.Condition.toObject, includeInstance),
-    demoResultsMap: (f = msg.getDemoResultsMap()) ? f.toObject(includeInstance, undefined) : []
+    demoResultsMap: (f = msg.getDemoResultsMap()) ? f.toObject(includeInstance, undefined) : [],
+    workflowDefinitionName: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -26890,6 +26891,10 @@ proto.api.v1alpha1.integrations.PortalWorkflow.deserializeBinaryFromReader = fun
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkflowDefinitionName(value);
       break;
     default:
       reader.skipField();
@@ -26988,6 +26993,13 @@ proto.api.v1alpha1.integrations.PortalWorkflow.serializeBinaryToWriter = functio
   f = message.getDemoResultsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getWorkflowDefinitionName();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
   }
 };
 
@@ -27281,6 +27293,24 @@ proto.api.v1alpha1.integrations.PortalWorkflow.prototype.clearDemoResultsMap = f
 };
 
 
+/**
+ * optional string workflow_definition_name = 12;
+ * @return {string}
+ */
+proto.api.v1alpha1.integrations.PortalWorkflow.prototype.getWorkflowDefinitionName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.integrations.PortalWorkflow} returns this
+ */
+proto.api.v1alpha1.integrations.PortalWorkflow.prototype.setWorkflowDefinitionName = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
 
 
 
@@ -27313,10 +27343,10 @@ proto.api.v1alpha1.integrations.Action.prototype.toObject = function(opt_include
  */
 proto.api.v1alpha1.integrations.Action.toObject = function(includeInstance, msg) {
   var f, obj = {
-    workflowDefinitionName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     pluginInstanceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     restructureBeforeMap: (f = msg.getRestructureBeforeMap()) ? f.toObject(includeInstance, undefined) : [],
-    restructureAfterMap: (f = msg.getRestructureAfterMap()) ? f.toObject(includeInstance, undefined) : []
+    restructureAfterMap: (f = msg.getRestructureAfterMap()) ? f.toObject(includeInstance, undefined) : [],
+    actionDefinitionName: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -27353,10 +27383,6 @@ proto.api.v1alpha1.integrations.Action.deserializeBinaryFromReader = function(ms
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkflowDefinitionName(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setPluginInstanceId(value);
@@ -27372,6 +27398,10 @@ proto.api.v1alpha1.integrations.Action.deserializeBinaryFromReader = function(ms
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setActionDefinitionName(value);
       break;
     default:
       reader.skipField();
@@ -27402,13 +27432,6 @@ proto.api.v1alpha1.integrations.Action.prototype.serializeBinary = function() {
  */
 proto.api.v1alpha1.integrations.Action.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getWorkflowDefinitionName();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getPluginInstanceId();
   if (f.length > 0) {
     writer.writeString(
@@ -27424,24 +27447,13 @@ proto.api.v1alpha1.integrations.Action.serializeBinaryToWriter = function(messag
   if (f && f.getLength() > 0) {
     f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-};
-
-
-/**
- * optional string workflow_definition_name = 1;
- * @return {string}
- */
-proto.api.v1alpha1.integrations.Action.prototype.getWorkflowDefinitionName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.integrations.Action} returns this
- */
-proto.api.v1alpha1.integrations.Action.prototype.setWorkflowDefinitionName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  f = message.getActionDefinitionName();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
 };
 
 
@@ -27506,6 +27518,24 @@ proto.api.v1alpha1.integrations.Action.prototype.getRestructureAfterMap = functi
 proto.api.v1alpha1.integrations.Action.prototype.clearRestructureAfterMap = function() {
   this.getRestructureAfterMap().clear();
   return this;
+};
+
+
+/**
+ * optional string action_definition_name = 7;
+ * @return {string}
+ */
+proto.api.v1alpha1.integrations.Action.prototype.getActionDefinitionName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.integrations.Action} returns this
+ */
+proto.api.v1alpha1.integrations.Action.prototype.setActionDefinitionName = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
