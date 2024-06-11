@@ -25,6 +25,8 @@ var global = localGlobalThis ||
 
 var api_commons_acd_pb = require('../../../api/commons/acd_pb.js');
 goog.object.extend(proto, api_commons_acd_pb);
+var api_commons_omnichannel_pb = require('../../../api/commons/omnichannel_pb.js');
+goog.object.extend(proto, api_commons_omnichannel_pb);
 var api_commons_vanalytics_pb = require('../../../api/commons/vanalytics_pb.js');
 goog.object.extend(proto, api_commons_vanalytics_pb);
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
@@ -54,7 +56,6 @@ goog.exportSymbol('proto.wfo.vanalytics.v2.Call.TalkOver', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.Call.TalkOver.Duration', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.Call.TalkOver.Occurrence', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.Call.Thread', null, global);
-goog.exportSymbol('proto.wfo.vanalytics.v2.Channel', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.FlagSummary', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.FlagSummary.Filter', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.FlagSummary.Flag', null, global);
@@ -2358,7 +2359,7 @@ proto.wfo.vanalytics.v2.Transcript.deserializeBinaryFromReader = function(msg, r
       msg.setSms(value);
       break;
     case 12:
-      var value = /** @type {!proto.wfo.vanalytics.v2.Channel} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.ChannelType} */ (reader.readEnum());
       msg.setChannel(value);
       break;
     case 13:
@@ -2554,16 +2555,16 @@ proto.wfo.vanalytics.v2.Transcript.prototype.hasSms = function() {
 
 
 /**
- * optional Channel channel = 12;
- * @return {!proto.wfo.vanalytics.v2.Channel}
+ * optional api.commons.ChannelType channel = 12;
+ * @return {!proto.api.commons.ChannelType}
  */
 proto.wfo.vanalytics.v2.Transcript.prototype.getChannel = function() {
-  return /** @type {!proto.wfo.vanalytics.v2.Channel} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+  return /** @type {!proto.api.commons.ChannelType} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
 /**
- * @param {!proto.wfo.vanalytics.v2.Channel} value
+ * @param {!proto.api.commons.ChannelType} value
  * @return {!proto.wfo.vanalytics.v2.Transcript} returns this
  */
 proto.wfo.vanalytics.v2.Transcript.prototype.setChannel = function(value) {
@@ -12020,7 +12021,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Channel.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<!proto.wfo.vanalytics.v2.Channel>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      var values = /** @type {!Array<!proto.api.commons.ChannelType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
       for (var i = 0; i < values.length; i++) {
         msg.addAny(values[i]);
       }
@@ -12065,16 +12066,16 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Channel.serializeBinaryToWriter = functi
 
 
 /**
- * repeated Channel any = 1;
- * @return {!Array<!proto.wfo.vanalytics.v2.Channel>}
+ * repeated api.commons.ChannelType any = 1;
+ * @return {!Array<!proto.api.commons.ChannelType>}
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Channel.prototype.getAnyList = function() {
-  return /** @type {!Array<!proto.wfo.vanalytics.v2.Channel>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<!proto.api.commons.ChannelType>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
- * @param {!Array<!proto.wfo.vanalytics.v2.Channel>} value
+ * @param {!Array<!proto.api.commons.ChannelType>} value
  * @return {!proto.wfo.vanalytics.v2.TranscriptQuery.Channel} returns this
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Channel.prototype.setAnyList = function(value) {
@@ -12083,7 +12084,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Channel.prototype.setAnyList = function(
 
 
 /**
- * @param {!proto.wfo.vanalytics.v2.Channel} value
+ * @param {!proto.api.commons.ChannelType} value
  * @param {number=} opt_index
  * @return {!proto.wfo.vanalytics.v2.TranscriptQuery.Channel} returns this
  */
@@ -25637,14 +25638,6 @@ proto.wfo.vanalytics.v2.ListAgentResponseValuesResponse.prototype.clearValuesLis
   return this.setValuesList([]);
 };
 
-
-/**
- * @enum {number}
- */
-proto.wfo.vanalytics.v2.Channel = {
-  CHANNEL_CALL: 0,
-  CHANNEL_SMS: 1
-};
 
 /**
  * @enum {number}
