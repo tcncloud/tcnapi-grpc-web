@@ -1534,6 +1534,33 @@ type WFMListAgentLeavePetitions = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAgentLeavePetitionsResponse;
 };
 
+type WFMArchiveAgentLeavePetition = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ArchiveAgentLeavePetitionRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ArchiveAgentLeavePetitionResponse;
+};
+
+type WFMResolveAgentLeavePetition = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ResolveAgentLeavePetitionRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ResolveAgentLeavePetitionResponse;
+};
+
+type WFMCancelAgentLeavePetition = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CancelAgentLeavePetitionRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CancelAgentLeavePetitionResponse;
+};
+
 type WFMHelloWorldWFMAdherence = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1742,6 +1769,9 @@ export class WFM {
   static readonly RemoveAgentFromSchedule: WFMRemoveAgentFromSchedule;
   static readonly CreateAgentLeavePetition: WFMCreateAgentLeavePetition;
   static readonly ListAgentLeavePetitions: WFMListAgentLeavePetitions;
+  static readonly ArchiveAgentLeavePetition: WFMArchiveAgentLeavePetition;
+  static readonly ResolveAgentLeavePetition: WFMResolveAgentLeavePetition;
+  static readonly CancelAgentLeavePetition: WFMCancelAgentLeavePetition;
   static readonly HelloWorldWFMAdherence: WFMHelloWorldWFMAdherence;
   static readonly ListAgentStatesForDay: WFMListAgentStatesForDay;
   static readonly ListRealTimeManagementStates: WFMListRealTimeManagementStates;
@@ -3261,6 +3291,33 @@ export class WFMClient {
   listAgentLeavePetitions(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListAgentLeavePetitionsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAgentLeavePetitionsResponse|null) => void
+  ): UnaryResponse;
+  archiveAgentLeavePetition(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ArchiveAgentLeavePetitionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ArchiveAgentLeavePetitionResponse|null) => void
+  ): UnaryResponse;
+  archiveAgentLeavePetition(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ArchiveAgentLeavePetitionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ArchiveAgentLeavePetitionResponse|null) => void
+  ): UnaryResponse;
+  resolveAgentLeavePetition(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ResolveAgentLeavePetitionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ResolveAgentLeavePetitionResponse|null) => void
+  ): UnaryResponse;
+  resolveAgentLeavePetition(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ResolveAgentLeavePetitionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ResolveAgentLeavePetitionResponse|null) => void
+  ): UnaryResponse;
+  cancelAgentLeavePetition(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CancelAgentLeavePetitionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CancelAgentLeavePetitionResponse|null) => void
+  ): UnaryResponse;
+  cancelAgentLeavePetition(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CancelAgentLeavePetitionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CancelAgentLeavePetitionResponse|null) => void
   ): UnaryResponse;
   helloWorldWFMAdherence(
     requestMessage: api_v1alpha1_wfm_wfm_pb.HelloWorldWFMAdherenceRequest,
