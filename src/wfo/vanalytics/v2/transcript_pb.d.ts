@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
+import * as api_commons_omnichannel_pb from "../../../api/commons/omnichannel_pb";
 import * as api_commons_vanalytics_pb from "../../../api/commons/vanalytics_pb";
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
@@ -22,8 +23,8 @@ export class Transcript extends jspb.Message {
   getSms(): Sms | undefined;
   setSms(value?: Sms): void;
 
-  getChannel(): ChannelMap[keyof ChannelMap];
-  setChannel(value: ChannelMap[keyof ChannelMap]): void;
+  getChannel(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
+  setChannel(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
 
   hasStartTime(): boolean;
   clearStartTime(): void;
@@ -63,7 +64,7 @@ export namespace Transcript {
   export type AsObject = {
     call?: Call.AsObject,
     sms?: Sms.AsObject,
-    channel: ChannelMap[keyof ChannelMap],
+    channel: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
     startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     flagSummary?: FlagSummary.AsObject,
@@ -1382,9 +1383,9 @@ export namespace TranscriptQuery {
 
   export class Channel extends jspb.Message {
     clearAnyList(): void;
-    getAnyList(): Array<ChannelMap[keyof ChannelMap]>;
-    setAnyList(value: Array<ChannelMap[keyof ChannelMap]>): void;
-    addAny(value: ChannelMap[keyof ChannelMap], index?: number): ChannelMap[keyof ChannelMap];
+    getAnyList(): Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>;
+    setAnyList(value: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>): void;
+    addAny(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap], index?: number): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Channel.AsObject;
@@ -1398,7 +1399,7 @@ export namespace TranscriptQuery {
 
   export namespace Channel {
     export type AsObject = {
-      anyList: Array<ChannelMap[keyof ChannelMap]>,
+      anyList: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>,
     }
   }
 
@@ -3204,13 +3205,6 @@ export namespace ListAgentResponseValuesResponse {
     valuesList: Array<string>,
   }
 }
-
-export interface ChannelMap {
-  CHANNEL_CALL: 0;
-  CHANNEL_SMS: 1;
-}
-
-export const Channel: ChannelMap;
 
 export interface ReviewStatusMap {
   REVIEW_STATUS_TODO: 0;
