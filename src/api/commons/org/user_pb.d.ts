@@ -234,6 +234,11 @@ export class MfaInfo extends jspb.Message {
   getDuo(): MfaInfo.Duo | undefined;
   setDuo(value?: MfaInfo.Duo): void;
 
+  hasTotp(): boolean;
+  clearTotp(): void;
+  getTotp(): MfaInfo.TotpType | undefined;
+  setTotp(value?: MfaInfo.TotpType): void;
+
   getMfaTypeCase(): MfaInfo.MfaTypeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MfaInfo.AsObject;
@@ -253,6 +258,7 @@ export namespace MfaInfo {
     none?: MfaInfo.NoneSelected.AsObject,
     otp?: MfaInfo.OtpType.AsObject,
     duo?: MfaInfo.Duo.AsObject,
+    totp?: MfaInfo.TotpType.AsObject,
   }
 
   export class NoneSelected extends jspb.Message {
@@ -341,11 +347,32 @@ export namespace MfaInfo {
     }
   }
 
+  export class TotpType extends jspb.Message {
+    getSecretKey(): string;
+    setSecretKey(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TotpType.AsObject;
+    static toObject(includeInstance: boolean, msg: TotpType): TotpType.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TotpType, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TotpType;
+    static deserializeBinaryFromReader(message: TotpType, reader: jspb.BinaryReader): TotpType;
+  }
+
+  export namespace TotpType {
+    export type AsObject = {
+      secretKey: string,
+    }
+  }
+
   export enum MfaTypeCase {
     MFA_TYPE_NOT_SET = 0,
     NONE = 10,
     OTP = 11,
     DUO = 12,
+    TOTP = 13,
   }
 }
 
