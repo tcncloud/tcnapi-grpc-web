@@ -51,6 +51,9 @@ export class TranscriptSummary extends jspb.Message {
   setBulletPointsList(value: Array<string>): void;
   addBulletPoints(value: string, index?: number): string;
 
+  getStatus(): TranscriptSummaryStatusMap[keyof TranscriptSummaryStatusMap];
+  setStatus(value: TranscriptSummaryStatusMap[keyof TranscriptSummaryStatusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TranscriptSummary.AsObject;
   static toObject(includeInstance: boolean, msg: TranscriptSummary): TranscriptSummary.AsObject;
@@ -64,6 +67,17 @@ export class TranscriptSummary extends jspb.Message {
 export namespace TranscriptSummary {
   export type AsObject = {
     bulletPointsList: Array<string>,
+    status: TranscriptSummaryStatusMap[keyof TranscriptSummaryStatusMap],
   }
 }
+
+export interface TranscriptSummaryStatusMap {
+  QUEUED: 0;
+  QUEUED_ERRORED: -1;
+  SUMMARIZED: 1;
+  SUMMARIZED_ERRORED: -2;
+  VISIBLE: 2;
+}
+
+export const TranscriptSummaryStatus: TranscriptSummaryStatusMap;
 
