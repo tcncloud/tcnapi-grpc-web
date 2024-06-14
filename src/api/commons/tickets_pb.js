@@ -3252,7 +3252,8 @@ proto.api.commons.TicketAction.toObject = function(includeInstance, msg) {
     voiceContext: (f = msg.getVoiceContext()) && proto.api.commons.CallbackContext.toObject(includeInstance, f),
     smsContext: (f = msg.getSmsContext()) && proto.api.commons.SmsbackContext.toObject(includeInstance, f),
     emailContext: (f = msg.getEmailContext()) && proto.api.commons.EmailbackContext.toObject(includeInstance, f),
-    actionType: (f = msg.getActionType()) && proto.api.commons.ActionType.toObject(includeInstance, f)
+    actionType: (f = msg.getActionType()) && proto.api.commons.ActionType.toObject(includeInstance, f),
+    ticketCode: jspb.Message.getFieldWithDefault(msg, 16, "")
   };
 
   if (includeInstance) {
@@ -3352,6 +3353,10 @@ proto.api.commons.TicketAction.deserializeBinaryFromReader = function(msg, reade
       var value = new proto.api.commons.ActionType;
       reader.readMessage(value,proto.api.commons.ActionType.deserializeBinaryFromReader);
       msg.setActionType(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTicketCode(value);
       break;
     default:
       reader.skipField();
@@ -3486,6 +3491,13 @@ proto.api.commons.TicketAction.serializeBinaryToWriter = function(message, write
       15,
       f,
       proto.api.commons.ActionType.serializeBinaryToWriter
+    );
+  }
+  f = message.getTicketCode();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
+      f
     );
   }
 };
@@ -3912,6 +3924,24 @@ proto.api.commons.TicketAction.prototype.clearActionType = function() {
  */
 proto.api.commons.TicketAction.prototype.hasActionType = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional string ticket_code = 16;
+ * @return {string}
+ */
+proto.api.commons.TicketAction.prototype.getTicketCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.TicketAction} returns this
+ */
+proto.api.commons.TicketAction.prototype.setTicketCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 16, value);
 };
 
 
@@ -5363,7 +5393,8 @@ proto.api.commons.Comment.toObject = function(includeInstance, msg) {
     comment: jspb.Message.getFieldWithDefault(msg, 3, ""),
     createdById: jspb.Message.getFieldWithDefault(msg, 4, ""),
     createdByName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    createdByDate: (f = msg.getCreatedByDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    createdByDate: (f = msg.getCreatedByDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    ticketCode: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -5424,6 +5455,10 @@ proto.api.commons.Comment.deserializeBinaryFromReader = function(msg, reader) {
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreatedByDate(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTicketCode(value);
       break;
     default:
       reader.skipField();
@@ -5495,6 +5530,13 @@ proto.api.commons.Comment.serializeBinaryToWriter = function(message, writer) {
       6,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getTicketCode();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
     );
   }
 };
@@ -5627,6 +5669,24 @@ proto.api.commons.Comment.prototype.hasCreatedByDate = function() {
 };
 
 
+/**
+ * optional string ticket_code = 7;
+ * @return {string}
+ */
+proto.api.commons.Comment.prototype.getTicketCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.Comment} returns this
+ */
+proto.api.commons.Comment.prototype.setTicketCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
 
 
 
@@ -5663,7 +5723,8 @@ proto.api.commons.CloseTicket.toObject = function(includeInstance, msg) {
     status: jspb.Message.getFieldWithDefault(msg, 2, 0),
     comment: jspb.Message.getFieldWithDefault(msg, 3, ""),
     fromStatus: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    createdById: jspb.Message.getFieldWithDefault(msg, 5, "")
+    createdById: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    ticketCode: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -5719,6 +5780,10 @@ proto.api.commons.CloseTicket.deserializeBinaryFromReader = function(msg, reader
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setCreatedById(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTicketCode(value);
       break;
     default:
       reader.skipField();
@@ -5781,6 +5846,13 @@ proto.api.commons.CloseTicket.serializeBinaryToWriter = function(message, writer
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getTicketCode();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -5874,6 +5946,24 @@ proto.api.commons.CloseTicket.prototype.getCreatedById = function() {
  */
 proto.api.commons.CloseTicket.prototype.setCreatedById = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string ticket_code = 6;
+ * @return {string}
+ */
+proto.api.commons.CloseTicket.prototype.getTicketCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.CloseTicket} returns this
+ */
+proto.api.commons.CloseTicket.prototype.setTicketCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -7004,7 +7094,8 @@ proto.api.commons.ReplyComment.toObject = function(includeInstance, msg) {
     ticketSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
     reply: jspb.Message.getFieldWithDefault(msg, 3, ""),
     createdById: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    createdByDate: (f = msg.getCreatedByDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    createdByDate: (f = msg.getCreatedByDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    ticketCode: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -7061,6 +7152,10 @@ proto.api.commons.ReplyComment.deserializeBinaryFromReader = function(msg, reade
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreatedByDate(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTicketCode(value);
       break;
     default:
       reader.skipField();
@@ -7125,6 +7220,13 @@ proto.api.commons.ReplyComment.serializeBinaryToWriter = function(message, write
       5,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getTicketCode();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
     );
   }
 };
@@ -7236,6 +7338,24 @@ proto.api.commons.ReplyComment.prototype.clearCreatedByDate = function() {
  */
 proto.api.commons.ReplyComment.prototype.hasCreatedByDate = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string ticket_code = 6;
+ * @return {string}
+ */
+proto.api.commons.ReplyComment.prototype.getTicketCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.ReplyComment} returns this
+ */
+proto.api.commons.ReplyComment.prototype.setTicketCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -7407,7 +7527,8 @@ proto.api.commons.TicketAuditLog.toObject = function(includeInstance, msg) {
     ticketSid: jspb.Message.getFieldWithDefault(msg, 4, "0"),
     eventType: jspb.Message.getFieldWithDefault(msg, 5, ""),
     createdById: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    createdByDate: (f = msg.getCreatedByDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    createdByDate: (f = msg.getCreatedByDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    ticketCode: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -7472,6 +7593,10 @@ proto.api.commons.TicketAuditLog.deserializeBinaryFromReader = function(msg, rea
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreatedByDate(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTicketCode(value);
       break;
     default:
       reader.skipField();
@@ -7550,6 +7675,13 @@ proto.api.commons.TicketAuditLog.serializeBinaryToWriter = function(message, wri
       7,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getTicketCode();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
     );
   }
 };
@@ -7700,6 +7832,24 @@ proto.api.commons.TicketAuditLog.prototype.hasCreatedByDate = function() {
 };
 
 
+/**
+ * optional string ticket_code = 8;
+ * @return {string}
+ */
+proto.api.commons.TicketAuditLog.prototype.getTicketCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.TicketAuditLog} returns this
+ */
+proto.api.commons.TicketAuditLog.prototype.setTicketCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
 
 
 
@@ -7733,7 +7883,8 @@ proto.api.commons.EditTicket.prototype.toObject = function(opt_includeInstance) 
 proto.api.commons.EditTicket.toObject = function(includeInstance, msg) {
   var f, obj = {
     ticketSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    editValue: (f = msg.getEditValue()) && proto.api.commons.EditAttribute.toObject(includeInstance, f)
+    editValue: (f = msg.getEditValue()) && proto.api.commons.EditAttribute.toObject(includeInstance, f),
+    ticketCode: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -7779,6 +7930,10 @@ proto.api.commons.EditTicket.deserializeBinaryFromReader = function(msg, reader)
       reader.readMessage(value,proto.api.commons.EditAttribute.deserializeBinaryFromReader);
       msg.setEditValue(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTicketCode(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -7821,6 +7976,13 @@ proto.api.commons.EditTicket.serializeBinaryToWriter = function(message, writer)
       2,
       f,
       proto.api.commons.EditAttribute.serializeBinaryToWriter
+    );
+  }
+  f = message.getTicketCode();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -7878,6 +8040,24 @@ proto.api.commons.EditTicket.prototype.clearEditValue = function() {
  */
 proto.api.commons.EditTicket.prototype.hasEditValue = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string ticket_code = 3;
+ * @return {string}
+ */
+proto.api.commons.EditTicket.prototype.getTicketCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.EditTicket} returns this
+ */
+proto.api.commons.EditTicket.prototype.setTicketCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
