@@ -3161,3 +3161,23 @@ export namespace ListUsersAllowedIpsResponse {
   }
 }
 
+export class Test extends jspb.Message {
+  getMessage(): string;
+  setMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Test.AsObject;
+  static toObject(includeInstance: boolean, msg: Test): Test.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Test, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Test;
+  static deserializeBinaryFromReader(message: Test, reader: jspb.BinaryReader): Test;
+}
+
+export namespace Test {
+  export type AsObject = {
+    message: string,
+  }
+}
+
