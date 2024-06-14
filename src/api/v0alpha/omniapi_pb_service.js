@@ -219,6 +219,24 @@ OmniApi.GetAvailableHeaders = {
   responseType: api_v0alpha_omniapi_pb.GetAvailableHeadersRes
 };
 
+OmniApi.GetOmniExchangeElements = {
+  methodName: "GetOmniExchangeElements",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.GetOmniExchangeElementsRequest,
+  responseType: api_v0alpha_omniapi_pb.GetOmniExchangeElementsResult
+};
+
+OmniApi.GetFieldsForElement = {
+  methodName: "GetFieldsForElement",
+  service: OmniApi,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_omniapi_pb.GetFieldsForElementRequest,
+  responseType: api_v0alpha_omniapi_pb.GetFieldsForElementResult
+};
+
 OmniApi.ApproveTask = {
   methodName: "ApproveTask",
   service: OmniApi,
@@ -1379,6 +1397,68 @@ OmniApiClient.prototype.getAvailableHeaders = function getAvailableHeaders(reque
     callback = arguments[1];
   }
   var client = grpc.unary(OmniApi.GetAvailableHeaders, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.getOmniExchangeElements = function getOmniExchangeElements(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.GetOmniExchangeElements, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+OmniApiClient.prototype.getFieldsForElement = function getFieldsForElement(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(OmniApi.GetFieldsForElement, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
