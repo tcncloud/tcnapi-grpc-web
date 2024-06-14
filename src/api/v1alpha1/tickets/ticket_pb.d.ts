@@ -468,6 +468,9 @@ export class EditMaskTicketReq extends jspb.Message {
   setEditedFieldsMaskList(value: Array<google_protobuf_field_mask_pb.FieldMask>): void;
   addEditedFieldsMask(value?: google_protobuf_field_mask_pb.FieldMask, index?: number): google_protobuf_field_mask_pb.FieldMask;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EditMaskTicketReq.AsObject;
   static toObject(includeInstance: boolean, msg: EditMaskTicketReq): EditMaskTicketReq.AsObject;
@@ -483,6 +486,7 @@ export namespace EditMaskTicketReq {
     ticketSid: string,
     editValue?: api_commons_tickets_pb.Ticket.AsObject,
     editedFieldsMaskList: Array<google_protobuf_field_mask_pb.FieldMask.AsObject>,
+    ticketCode: string,
   }
 }
 
@@ -512,6 +516,11 @@ export class ListAllocatedTicketRes extends jspb.Message {
   setTicketSidList(value: Array<string>): void;
   addTicketSid(value: string, index?: number): string;
 
+  clearTicketCodeList(): void;
+  getTicketCodeList(): Array<string>;
+  setTicketCodeList(value: Array<string>): void;
+  addTicketCode(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAllocatedTicketRes.AsObject;
   static toObject(includeInstance: boolean, msg: ListAllocatedTicketRes): ListAllocatedTicketRes.AsObject;
@@ -525,6 +534,7 @@ export class ListAllocatedTicketRes extends jspb.Message {
 export namespace ListAllocatedTicketRes {
   export type AsObject = {
     ticketSidList: Array<string>,
+    ticketCodeList: Array<string>,
   }
 }
 
@@ -605,6 +615,11 @@ export class ListAvailableAgentTicketsResponse extends jspb.Message {
   setTicketList(value: Array<api_commons_tickets_pb.Ticket>): void;
   addTicket(value?: api_commons_tickets_pb.Ticket, index?: number): api_commons_tickets_pb.Ticket;
 
+  clearTicketCodeList(): void;
+  getTicketCodeList(): Array<string>;
+  setTicketCodeList(value: Array<string>): void;
+  addTicketCode(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAvailableAgentTicketsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListAvailableAgentTicketsResponse): ListAvailableAgentTicketsResponse.AsObject;
@@ -619,6 +634,7 @@ export namespace ListAvailableAgentTicketsResponse {
   export type AsObject = {
     ticketSidList: Array<string>,
     ticketList: Array<api_commons_tickets_pb.Ticket.AsObject>,
+    ticketCodeList: Array<string>,
   }
 }
 
@@ -744,6 +760,9 @@ export class AssignTicketReq extends jspb.Message {
   getAssignedId(): string;
   setAssignedId(value: string): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AssignTicketReq.AsObject;
   static toObject(includeInstance: boolean, msg: AssignTicketReq): AssignTicketReq.AsObject;
@@ -759,6 +778,7 @@ export namespace AssignTicketReq {
     ticketSid: string,
     assigneeList: string,
     assignedId: string,
+    ticketCode: string,
   }
 }
 
@@ -771,6 +791,9 @@ export class AssignTicketRes extends jspb.Message {
 
   getAssignedId(): string;
   setAssignedId(value: string): void;
+
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AssignTicketRes.AsObject;
@@ -787,12 +810,16 @@ export namespace AssignTicketRes {
     ticketSid: string,
     assigneeList: string,
     assignedId: string,
+    ticketCode: string,
   }
 }
 
 export class ViewTicketReq extends jspb.Message {
   getTicketSid(): string;
   setTicketSid(value: string): void;
+
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ViewTicketReq.AsObject;
@@ -807,6 +834,7 @@ export class ViewTicketReq extends jspb.Message {
 export namespace ViewTicketReq {
   export type AsObject = {
     ticketSid: string,
+    ticketCode: string,
   }
 }
 
@@ -851,6 +879,9 @@ export class CreateCommentReq extends jspb.Message {
   getComment(): string;
   setComment(value: string): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateCommentReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateCommentReq): CreateCommentReq.AsObject;
@@ -865,6 +896,7 @@ export namespace CreateCommentReq {
   export type AsObject = {
     ticketSid: string,
     comment: string,
+    ticketCode: string,
   }
 }
 
@@ -900,6 +932,9 @@ export class CloseTicketReq extends jspb.Message {
   getFromStatus(): string;
   setFromStatus(value: string): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CloseTicketReq.AsObject;
   static toObject(includeInstance: boolean, msg: CloseTicketReq): CloseTicketReq.AsObject;
@@ -915,6 +950,7 @@ export namespace CloseTicketReq {
     ticketSid: string,
     comment: string,
     fromStatus: string,
+    ticketCode: string,
   }
 }
 
@@ -1133,6 +1169,9 @@ export class ReplyCommentReq extends jspb.Message {
   getCreatedById(): string;
   setCreatedById(value: string): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReplyCommentReq.AsObject;
   static toObject(includeInstance: boolean, msg: ReplyCommentReq): ReplyCommentReq.AsObject;
@@ -1149,6 +1188,7 @@ export namespace ReplyCommentReq {
     ticketSid: string,
     reply: string,
     createdById: string,
+    ticketCode: string,
   }
 }
 
@@ -1178,6 +1218,9 @@ export class CreateSelfAssignReq extends jspb.Message {
   getTicketSid(): string;
   setTicketSid(value: string): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateSelfAssignReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateSelfAssignReq): CreateSelfAssignReq.AsObject;
@@ -1191,6 +1234,7 @@ export class CreateSelfAssignReq extends jspb.Message {
 export namespace CreateSelfAssignReq {
   export type AsObject = {
     ticketSid: string,
+    ticketCode: string,
   }
 }
 
@@ -1400,6 +1444,9 @@ export class CloseTicketActionRequest extends jspb.Message {
   getComment(): string;
   setComment(value: string): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CloseTicketActionRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CloseTicketActionRequest): CloseTicketActionRequest.AsObject;
@@ -1415,6 +1462,7 @@ export namespace CloseTicketActionRequest {
     ticketActionId: string,
     ticketId: string,
     comment: string,
+    ticketCode: string,
   }
 }
 
@@ -1488,6 +1536,9 @@ export class ChangeTicketStatusRequest extends jspb.Message {
   getTicketStatus(): api_commons_tickets_pb.TicketStatusMap[keyof api_commons_tickets_pb.TicketStatusMap];
   setTicketStatus(value: api_commons_tickets_pb.TicketStatusMap[keyof api_commons_tickets_pb.TicketStatusMap]): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ChangeTicketStatusRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ChangeTicketStatusRequest): ChangeTicketStatusRequest.AsObject;
@@ -1503,6 +1554,7 @@ export namespace ChangeTicketStatusRequest {
     ticketId: string,
     statusId: string,
     ticketStatus: api_commons_tickets_pb.TicketStatusMap[keyof api_commons_tickets_pb.TicketStatusMap],
+    ticketCode: string,
   }
 }
 
