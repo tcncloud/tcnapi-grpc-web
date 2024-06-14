@@ -5721,7 +5721,8 @@ proto.api.v1alpha1.org.skills.AssignOwnSkillGroupsRequest.prototype.toObject = f
  */
 proto.api.v1alpha1.org.skills.AssignOwnSkillGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+    skillGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    newField: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -5762,6 +5763,10 @@ proto.api.v1alpha1.org.skills.AssignOwnSkillGroupsRequest.deserializeBinaryFromR
       var value = /** @type {string} */ (reader.readString());
       msg.addSkillGroupIds(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNewField(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5795,6 +5800,13 @@ proto.api.v1alpha1.org.skills.AssignOwnSkillGroupsRequest.serializeBinaryToWrite
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
+      f
+    );
+  }
+  f = message.getNewField();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
       f
     );
   }
@@ -5835,6 +5847,24 @@ proto.api.v1alpha1.org.skills.AssignOwnSkillGroupsRequest.prototype.addSkillGrou
  */
 proto.api.v1alpha1.org.skills.AssignOwnSkillGroupsRequest.prototype.clearSkillGroupIdsList = function() {
   return this.setSkillGroupIdsList([]);
+};
+
+
+/**
+ * optional string new_field = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.org.skills.AssignOwnSkillGroupsRequest.prototype.getNewField = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.org.skills.AssignOwnSkillGroupsRequest} returns this
+ */
+proto.api.v1alpha1.org.skills.AssignOwnSkillGroupsRequest.prototype.setNewField = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

@@ -715,6 +715,9 @@ export class AssignOwnSkillGroupsRequest extends jspb.Message {
   setSkillGroupIdsList(value: Array<string>): void;
   addSkillGroupIds(value: string, index?: number): string;
 
+  getNewField(): string;
+  setNewField(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AssignOwnSkillGroupsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: AssignOwnSkillGroupsRequest): AssignOwnSkillGroupsRequest.AsObject;
@@ -728,6 +731,7 @@ export class AssignOwnSkillGroupsRequest extends jspb.Message {
 export namespace AssignOwnSkillGroupsRequest {
   export type AsObject = {
     skillGroupIdsList: Array<string>,
+    newField: string,
   }
 }
 
