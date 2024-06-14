@@ -468,6 +468,9 @@ export class EditMaskTicketReq extends jspb.Message {
   setEditedFieldsMaskList(value: Array<google_protobuf_field_mask_pb.FieldMask>): void;
   addEditedFieldsMask(value?: google_protobuf_field_mask_pb.FieldMask, index?: number): google_protobuf_field_mask_pb.FieldMask;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EditMaskTicketReq.AsObject;
   static toObject(includeInstance: boolean, msg: EditMaskTicketReq): EditMaskTicketReq.AsObject;
@@ -483,6 +486,7 @@ export namespace EditMaskTicketReq {
     ticketSid: string,
     editValue?: api_commons_tickets_pb.Ticket.AsObject,
     editedFieldsMaskList: Array<google_protobuf_field_mask_pb.FieldMask.AsObject>,
+    ticketCode: string,
   }
 }
 
@@ -794,6 +798,9 @@ export class ViewTicketReq extends jspb.Message {
   getTicketSid(): string;
   setTicketSid(value: string): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ViewTicketReq.AsObject;
   static toObject(includeInstance: boolean, msg: ViewTicketReq): ViewTicketReq.AsObject;
@@ -807,6 +814,7 @@ export class ViewTicketReq extends jspb.Message {
 export namespace ViewTicketReq {
   export type AsObject = {
     ticketSid: string,
+    ticketCode: string,
   }
 }
 
@@ -851,6 +859,9 @@ export class CreateCommentReq extends jspb.Message {
   getComment(): string;
   setComment(value: string): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateCommentReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateCommentReq): CreateCommentReq.AsObject;
@@ -865,6 +876,7 @@ export namespace CreateCommentReq {
   export type AsObject = {
     ticketSid: string,
     comment: string,
+    ticketCode: string,
   }
 }
 
@@ -900,6 +912,9 @@ export class CloseTicketReq extends jspb.Message {
   getFromStatus(): string;
   setFromStatus(value: string): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CloseTicketReq.AsObject;
   static toObject(includeInstance: boolean, msg: CloseTicketReq): CloseTicketReq.AsObject;
@@ -915,6 +930,7 @@ export namespace CloseTicketReq {
     ticketSid: string,
     comment: string,
     fromStatus: string,
+    ticketCode: string,
   }
 }
 
@@ -1133,6 +1149,9 @@ export class ReplyCommentReq extends jspb.Message {
   getCreatedById(): string;
   setCreatedById(value: string): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReplyCommentReq.AsObject;
   static toObject(includeInstance: boolean, msg: ReplyCommentReq): ReplyCommentReq.AsObject;
@@ -1149,6 +1168,7 @@ export namespace ReplyCommentReq {
     ticketSid: string,
     reply: string,
     createdById: string,
+    ticketCode: string,
   }
 }
 
@@ -1400,6 +1420,9 @@ export class CloseTicketActionRequest extends jspb.Message {
   getComment(): string;
   setComment(value: string): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CloseTicketActionRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CloseTicketActionRequest): CloseTicketActionRequest.AsObject;
@@ -1415,6 +1438,7 @@ export namespace CloseTicketActionRequest {
     ticketActionId: string,
     ticketId: string,
     comment: string,
+    ticketCode: string,
   }
 }
 
