@@ -3165,6 +3165,9 @@ export class Test extends jspb.Message {
   getMessage(): string;
   setMessage(value: string): void;
 
+  getInteger(): number;
+  setInteger(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Test.AsObject;
   static toObject(includeInstance: boolean, msg: Test): Test.AsObject;
@@ -3178,6 +3181,7 @@ export class Test extends jspb.Message {
 export namespace Test {
   export type AsObject = {
     message: string,
+    integer: number,
   }
 }
 

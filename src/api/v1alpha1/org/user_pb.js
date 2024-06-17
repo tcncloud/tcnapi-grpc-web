@@ -24717,7 +24717,8 @@ proto.api.v1alpha1.org.Test.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.v1alpha1.org.Test.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: jspb.Message.getFieldWithDefault(msg, 1, "")
+    message: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    integer: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -24758,6 +24759,10 @@ proto.api.v1alpha1.org.Test.deserializeBinaryFromReader = function(msg, reader) 
       var value = /** @type {string} */ (reader.readString());
       msg.setMessage(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setInteger(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -24794,6 +24799,13 @@ proto.api.v1alpha1.org.Test.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
+  f = message.getInteger();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -24812,6 +24824,24 @@ proto.api.v1alpha1.org.Test.prototype.getMessage = function() {
  */
 proto.api.v1alpha1.org.Test.prototype.setMessage = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int32 integer = 2;
+ * @return {number}
+ */
+proto.api.v1alpha1.org.Test.prototype.getInteger = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.org.Test} returns this
+ */
+proto.api.v1alpha1.org.Test.prototype.setInteger = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
