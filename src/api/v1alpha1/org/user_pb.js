@@ -24406,7 +24406,8 @@ proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.prototype.toObject = function
 proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     userAllowedIpsMapMap: (f = msg.getUserAllowedIpsMapMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps.toObject) : [],
-    newField: jspb.Message.getFieldWithDefault(msg, 2, "")
+    newField: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    newBool: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -24449,9 +24450,13 @@ proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.deserializeBinaryFromReader =
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps.deserializeBinaryFromReader, "", new proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps());
          });
       break;
-    case 2:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setNewField(value);
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setNewBool(value);
       break;
     default:
       reader.skipField();
@@ -24489,7 +24494,14 @@ proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.serializeBinaryToWriter = fun
   f = message.getNewField();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      4,
+      f
+    );
+  }
+  f = message.getNewBool();
+  if (f) {
+    writer.writeBool(
+      3,
       f
     );
   }
@@ -24676,11 +24688,11 @@ proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.prototype.clearUserAllowedIps
 
 
 /**
- * optional string new_field = 2;
+ * optional string new_field = 4;
  * @return {string}
  */
 proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.prototype.getNewField = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -24689,7 +24701,25 @@ proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.prototype.getNewField = funct
  * @return {!proto.api.v1alpha1.org.ListUsersAllowedIpsResponse} returns this
  */
 proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.prototype.setNewField = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional bool new_bool = 3;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.prototype.getNewBool = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.org.ListUsersAllowedIpsResponse} returns this
+ */
+proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.prototype.setNewBool = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 

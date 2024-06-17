@@ -3126,6 +3126,9 @@ export class ListUsersAllowedIpsResponse extends jspb.Message {
   getNewField(): string;
   setNewField(value: string): void;
 
+  getNewBool(): boolean;
+  setNewBool(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUsersAllowedIpsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListUsersAllowedIpsResponse): ListUsersAllowedIpsResponse.AsObject;
@@ -3140,6 +3143,7 @@ export namespace ListUsersAllowedIpsResponse {
   export type AsObject = {
     userAllowedIpsMapMap: Array<[string, ListUsersAllowedIpsResponse.AllowedIps.AsObject]>,
     newField: string,
+    newBool: boolean,
   }
 
   export class AllowedIps extends jspb.Message {
