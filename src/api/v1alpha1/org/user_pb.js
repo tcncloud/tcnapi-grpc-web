@@ -24405,7 +24405,8 @@ proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.prototype.toObject = function
  */
 proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userAllowedIpsMapMap: (f = msg.getUserAllowedIpsMapMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps.toObject) : []
+    userAllowedIpsMapMap: (f = msg.getUserAllowedIpsMapMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps.toObject) : [],
+    newString: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -24448,6 +24449,10 @@ proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.deserializeBinaryFromReader =
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps.deserializeBinaryFromReader, "", new proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps());
          });
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNewString(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -24480,6 +24485,13 @@ proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.serializeBinaryToWriter = fun
   f = message.getUserAllowedIpsMapMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps.serializeBinaryToWriter);
+  }
+  f = message.getNewString();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
   }
 };
 
@@ -24660,6 +24672,24 @@ proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.prototype.getUserAllowedIpsMa
 proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.prototype.clearUserAllowedIpsMapMap = function() {
   this.getUserAllowedIpsMapMap().clear();
   return this;
+};
+
+
+/**
+ * optional string new_string = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.prototype.getNewString = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.org.ListUsersAllowedIpsResponse} returns this
+ */
+proto.api.v1alpha1.org.ListUsersAllowedIpsResponse.prototype.setNewString = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
