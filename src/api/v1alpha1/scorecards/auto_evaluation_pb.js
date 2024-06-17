@@ -323,7 +323,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -3293,7 +3293,8 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.toObjec
 proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    autoEvaluationIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    autoEvaluationIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3340,6 +3341,11 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.deserializeBinary
         msg.addAutoEvaluationIds(values[i]);
       }
       break;
+    case 3:
+      var value = new api_commons_scorecards_pb.TimeFilter;
+      reader.readMessage(value,api_commons_scorecards_pb.TimeFilter.deserializeBinaryFromReader);
+      msg.setCompletedAt(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3381,6 +3387,14 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.serializeBinaryTo
     writer.writePackedInt64(
       2,
       f
+    );
+  }
+  f = message.getCompletedAt();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      api_commons_scorecards_pb.TimeFilter.serializeBinaryToWriter
     );
   }
 };
@@ -3441,6 +3455,50 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.clearAu
 };
 
 
+/**
+ * optional api.commons.TimeFilter completed_at = 3;
+ * @return {?proto.api.commons.TimeFilter}
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.getCompletedAt = function() {
+  return /** @type{?proto.api.commons.TimeFilter} */ (
+    jspb.Message.getWrapperField(this, api_commons_scorecards_pb.TimeFilter, 3));
+};
+
+
+/**
+ * @param {?proto.api.commons.TimeFilter|undefined} value
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
+*/
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.setCompletedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.clearCompletedAt = function() {
+  return this.setCompletedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.hasCompletedAt = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.repeatedFields_ = [1];
 
 
 
@@ -3473,7 +3531,7 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.prototype.toObje
  */
 proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    autoEvaluationIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3510,6 +3568,12 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.deserializeBinar
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addAutoEvaluationIds(values[i]);
+      }
+      break;
     default:
       reader.skipField();
       break;
@@ -3539,6 +3603,50 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.prototype.serial
  */
 proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getAutoEvaluationIdsList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated int64 auto_evaluation_ids = 1;
+ * @return {!Array<number>}
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.prototype.getAutoEvaluationIdsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.prototype.setAutoEvaluationIdsList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.prototype.addAutoEvaluationIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.prototype.clearAutoEvaluationIdsList = function() {
+  return this.setAutoEvaluationIdsList([]);
 };
 
 
