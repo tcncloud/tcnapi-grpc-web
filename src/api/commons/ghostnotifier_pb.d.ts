@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_acd_pb from "../../api/commons/acd_pb";
 import * as api_commons_omnichannel_pb from "../../api/commons/omnichannel_pb";
+import * as api_commons_org_auth_token_pb from "../../api/commons/org/auth_token_pb";
 import * as google_protobuf_any_pb from "google-protobuf/google/protobuf/any_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -46,6 +47,11 @@ export class GhostNotification extends jspb.Message {
   getAgentQueuedCallsNotification(): AgentQueuedCallsNotification | undefined;
   setAgentQueuedCallsNotification(value?: AgentQueuedCallsNotification): void;
 
+  hasAuthTokenNotification(): boolean;
+  clearAuthTokenNotification(): void;
+  getAuthTokenNotification(): api_commons_org_auth_token_pb.AuthTokenNotification | undefined;
+  setAuthTokenNotification(value?: api_commons_org_auth_token_pb.AuthTokenNotification): void;
+
   getPayloadCase(): GhostNotification.PayloadCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GhostNotification.AsObject;
@@ -67,6 +73,7 @@ export namespace GhostNotification {
     directedCallRinging?: api_commons_acd_pb.AgentDirectedCallRingingAlert.AsObject,
     directedCallHangup?: api_commons_acd_pb.AgentDirectedCallHangupAlert.AsObject,
     agentQueuedCallsNotification?: AgentQueuedCallsNotification.AsObject,
+    authTokenNotification?: api_commons_org_auth_token_pb.AuthTokenNotification.AsObject,
   }
 
   export enum PayloadCase {
@@ -78,6 +85,7 @@ export namespace GhostNotification {
     DIRECTED_CALL_RINGING = 7,
     DIRECTED_CALL_HANGUP = 8,
     AGENT_QUEUED_CALLS_NOTIFICATION = 9,
+    AUTH_TOKEN_NOTIFICATION = 10,
   }
 }
 

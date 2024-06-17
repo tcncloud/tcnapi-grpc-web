@@ -38,3 +38,29 @@ export namespace AuthToken {
   }
 }
 
+export class AuthTokenNotification extends jspb.Message {
+  getToken(): string;
+  setToken(value: string): void;
+
+  hasExpiration(): boolean;
+  clearExpiration(): void;
+  getExpiration(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiration(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AuthTokenNotification.AsObject;
+  static toObject(includeInstance: boolean, msg: AuthTokenNotification): AuthTokenNotification.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AuthTokenNotification, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AuthTokenNotification;
+  static deserializeBinaryFromReader(message: AuthTokenNotification, reader: jspb.BinaryReader): AuthTokenNotification;
+}
+
+export namespace AuthTokenNotification {
+  export type AsObject = {
+    token: string,
+    expiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
