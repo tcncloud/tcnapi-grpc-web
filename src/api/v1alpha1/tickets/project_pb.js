@@ -802,7 +802,8 @@ proto.api.v1alpha1.tickets.ListTicketAuditLogReq.prototype.toObject = function(o
  */
 proto.api.v1alpha1.tickets.ListTicketAuditLogReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ticketSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+    ticketSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+    ticketCode: jspb.Message.getFieldWithDefault(msg, 16, "")
   };
 
   if (includeInstance) {
@@ -843,6 +844,10 @@ proto.api.v1alpha1.tickets.ListTicketAuditLogReq.deserializeBinaryFromReader = f
       var value = /** @type {string} */ (reader.readInt64String());
       msg.setTicketSid(value);
       break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTicketCode(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -879,6 +884,13 @@ proto.api.v1alpha1.tickets.ListTicketAuditLogReq.serializeBinaryToWriter = funct
       f
     );
   }
+  f = message.getTicketCode();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
+      f
+    );
+  }
 };
 
 
@@ -897,6 +909,24 @@ proto.api.v1alpha1.tickets.ListTicketAuditLogReq.prototype.getTicketSid = functi
  */
 proto.api.v1alpha1.tickets.ListTicketAuditLogReq.prototype.setTicketSid = function(value) {
   return jspb.Message.setProto3StringIntField(this, 1, value);
+};
+
+
+/**
+ * optional string ticket_code = 16;
+ * @return {string}
+ */
+proto.api.v1alpha1.tickets.ListTicketAuditLogReq.prototype.getTicketCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.tickets.ListTicketAuditLogReq} returns this
+ */
+proto.api.v1alpha1.tickets.ListTicketAuditLogReq.prototype.setTicketCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 16, value);
 };
 
 

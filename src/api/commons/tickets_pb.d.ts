@@ -407,6 +407,9 @@ export class TicketAction extends jspb.Message {
   getActionType(): ActionType | undefined;
   setActionType(value?: ActionType): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   getContextCase(): TicketAction.ContextCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketAction.AsObject;
@@ -434,6 +437,7 @@ export namespace TicketAction {
     smsContext?: SmsbackContext.AsObject,
     emailContext?: EmailbackContext.AsObject,
     actionType?: ActionType.AsObject,
+    ticketCode: string,
   }
 
   export enum ContextCase {
@@ -671,6 +675,9 @@ export class Comment extends jspb.Message {
   getCreatedByDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreatedByDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Comment.AsObject;
   static toObject(includeInstance: boolean, msg: Comment): Comment.AsObject;
@@ -689,6 +696,7 @@ export namespace Comment {
     createdById: string,
     createdByName: string,
     createdByDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    ticketCode: string,
   }
 }
 
@@ -708,6 +716,9 @@ export class CloseTicket extends jspb.Message {
   getCreatedById(): string;
   setCreatedById(value: string): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CloseTicket.AsObject;
   static toObject(includeInstance: boolean, msg: CloseTicket): CloseTicket.AsObject;
@@ -725,6 +736,7 @@ export namespace CloseTicket {
     comment: string,
     fromStatus: number,
     createdById: string,
+    ticketCode: string,
   }
 }
 
@@ -902,6 +914,9 @@ export class ReplyComment extends jspb.Message {
   getCreatedByDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreatedByDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReplyComment.AsObject;
   static toObject(includeInstance: boolean, msg: ReplyComment): ReplyComment.AsObject;
@@ -919,6 +934,7 @@ export namespace ReplyComment {
     reply: string,
     createdById: string,
     createdByDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    ticketCode: string,
   }
 }
 
@@ -966,6 +982,9 @@ export class TicketAuditLog extends jspb.Message {
   getCreatedByDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreatedByDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TicketAuditLog.AsObject;
   static toObject(includeInstance: boolean, msg: TicketAuditLog): TicketAuditLog.AsObject;
@@ -985,6 +1004,7 @@ export namespace TicketAuditLog {
     eventType: string,
     createdById: string,
     createdByDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    ticketCode: string,
   }
 }
 
@@ -996,6 +1016,9 @@ export class EditTicket extends jspb.Message {
   clearEditValue(): void;
   getEditValue(): EditAttribute | undefined;
   setEditValue(value?: EditAttribute): void;
+
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EditTicket.AsObject;
@@ -1011,6 +1034,7 @@ export namespace EditTicket {
   export type AsObject = {
     ticketSid: string,
     editValue?: EditAttribute.AsObject,
+    ticketCode: string,
   }
 }
 

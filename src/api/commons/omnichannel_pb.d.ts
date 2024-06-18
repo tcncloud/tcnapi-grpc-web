@@ -207,6 +207,11 @@ export namespace OmniCampaignModule {
     getFailedTaskCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
     setFailedTaskCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+    hasCanceledTaskCount(): boolean;
+    clearCanceledTaskCount(): void;
+    getCanceledTaskCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
+    setCanceledTaskCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Details.AsObject;
     static toObject(includeInstance: boolean, msg: Details): Details.AsObject;
@@ -225,6 +230,7 @@ export namespace OmniCampaignModule {
       verifiedEmailAddress?: google_protobuf_wrappers_pb.StringValue.AsObject,
       pendingTaskCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
       failedTaskCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+      canceledTaskCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     }
   }
 }

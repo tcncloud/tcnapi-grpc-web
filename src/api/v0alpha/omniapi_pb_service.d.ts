@@ -213,6 +213,24 @@ type OmniApiGetAvailableHeaders = {
   readonly responseType: typeof api_v0alpha_omniapi_pb.GetAvailableHeadersRes;
 };
 
+type OmniApiGetOmniExchangeElements = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.GetOmniExchangeElementsRequest;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.GetOmniExchangeElementsResult;
+};
+
+type OmniApiGetFieldsForElement = {
+  readonly methodName: string;
+  readonly service: typeof OmniApi;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_omniapi_pb.GetFieldsForElementRequest;
+  readonly responseType: typeof api_v0alpha_omniapi_pb.GetFieldsForElementResult;
+};
+
 type OmniApiApproveTask = {
   readonly methodName: string;
   readonly service: typeof OmniApi;
@@ -688,6 +706,8 @@ export class OmniApi {
   static readonly ManagerListConversations: OmniApiManagerListConversations;
   static readonly ListContactLists: OmniApiListContactLists;
   static readonly GetAvailableHeaders: OmniApiGetAvailableHeaders;
+  static readonly GetOmniExchangeElements: OmniApiGetOmniExchangeElements;
+  static readonly GetFieldsForElement: OmniApiGetFieldsForElement;
   static readonly ApproveTask: OmniApiApproveTask;
   static readonly GetNextQueuedTask: OmniApiGetNextQueuedTask;
   static readonly GetTask: OmniApiGetTask;
@@ -962,6 +982,24 @@ export class OmniApiClient {
   getAvailableHeaders(
     requestMessage: api_v0alpha_omniapi_pb.GetAvailableHeadersReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.GetAvailableHeadersRes|null) => void
+  ): UnaryResponse;
+  getOmniExchangeElements(
+    requestMessage: api_v0alpha_omniapi_pb.GetOmniExchangeElementsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.GetOmniExchangeElementsResult|null) => void
+  ): UnaryResponse;
+  getOmniExchangeElements(
+    requestMessage: api_v0alpha_omniapi_pb.GetOmniExchangeElementsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.GetOmniExchangeElementsResult|null) => void
+  ): UnaryResponse;
+  getFieldsForElement(
+    requestMessage: api_v0alpha_omniapi_pb.GetFieldsForElementRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.GetFieldsForElementResult|null) => void
+  ): UnaryResponse;
+  getFieldsForElement(
+    requestMessage: api_v0alpha_omniapi_pb.GetFieldsForElementRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_omniapi_pb.GetFieldsForElementResult|null) => void
   ): UnaryResponse;
   approveTask(
     requestMessage: api_v0alpha_omniapi_pb.ApproveTaskRequest,

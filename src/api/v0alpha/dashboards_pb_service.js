@@ -119,6 +119,33 @@ Dashboards.PublishDashboard = {
   responseType: api_v0alpha_dashboards_pb.PublishDashboardResponse
 };
 
+Dashboards.CreateApplicationDashboard = {
+  methodName: "CreateApplicationDashboard",
+  service: Dashboards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_dashboards_pb.CreateApplicationDashboardRequest,
+  responseType: api_v0alpha_dashboards_pb.CreateApplicationDashboardResponse
+};
+
+Dashboards.ListApplicationsDashboards = {
+  methodName: "ListApplicationsDashboards",
+  service: Dashboards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_dashboards_pb.ListApplicationsDashboardsRequest,
+  responseType: api_v0alpha_dashboards_pb.ListApplicationsDashboardsResponse
+};
+
+Dashboards.DeleteApplicationDashboard = {
+  methodName: "DeleteApplicationDashboard",
+  service: Dashboards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_dashboards_pb.DeleteApplicationDashboardRequest,
+  responseType: api_v0alpha_dashboards_pb.DeleteApplicationDashboardResponse
+};
+
 exports.Dashboards = Dashboards;
 
 function DashboardsClient(serviceHost, options) {
@@ -472,6 +499,99 @@ DashboardsClient.prototype.publishDashboard = function publishDashboard(requestM
     callback = arguments[1];
   }
   var client = grpc.unary(Dashboards.PublishDashboard, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DashboardsClient.prototype.createApplicationDashboard = function createApplicationDashboard(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Dashboards.CreateApplicationDashboard, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DashboardsClient.prototype.listApplicationsDashboards = function listApplicationsDashboards(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Dashboards.ListApplicationsDashboards, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DashboardsClient.prototype.deleteApplicationDashboard = function deleteApplicationDashboard(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Dashboards.DeleteApplicationDashboard, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

@@ -2430,7 +2430,8 @@ proto.api.commons.OmniCampaignModule.Details.toObject = function(includeInstance
     connectedInboxAddress: (f = msg.getConnectedInboxAddress()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     verifiedEmailAddress: (f = msg.getVerifiedEmailAddress()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     pendingTaskCount: (f = msg.getPendingTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    failedTaskCount: (f = msg.getFailedTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+    failedTaskCount: (f = msg.getFailedTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    canceledTaskCount: (f = msg.getCanceledTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2496,6 +2497,11 @@ proto.api.commons.OmniCampaignModule.Details.deserializeBinaryFromReader = funct
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setFailedTaskCount(value);
+      break;
+    case 7:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setCanceledTaskCount(value);
       break;
     default:
       reader.skipField();
@@ -2570,6 +2576,14 @@ proto.api.commons.OmniCampaignModule.Details.serializeBinaryToWriter = function(
   if (f != null) {
     writer.writeMessage(
       6,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getCanceledTaskCount();
+  if (f != null) {
+    writer.writeMessage(
+      7,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
@@ -2796,6 +2810,43 @@ proto.api.commons.OmniCampaignModule.Details.prototype.clearFailedTaskCount = fu
  */
 proto.api.commons.OmniCampaignModule.Details.prototype.hasFailedTaskCount = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value canceled_task_count = 7;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.api.commons.OmniCampaignModule.Details.prototype.getCanceledTaskCount = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 7));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Int64Value|undefined} value
+ * @return {!proto.api.commons.OmniCampaignModule.Details} returns this
+*/
+proto.api.commons.OmniCampaignModule.Details.prototype.setCanceledTaskCount = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.OmniCampaignModule.Details} returns this
+ */
+proto.api.commons.OmniCampaignModule.Details.prototype.clearCanceledTaskCount = function() {
+  return this.setCanceledTaskCount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.OmniCampaignModule.Details.prototype.hasCanceledTaskCount = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

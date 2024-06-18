@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../annotations/authz_pb";
+import * as annotations_perms_license_pb from "../../annotations/perms/license_pb";
 import * as api_commons_org_pb from "../../api/commons/org_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
@@ -812,5 +813,157 @@ export namespace TimeSpan {
   }
 
   export const Interval: IntervalMap;
+}
+
+export class CreateApplicationDashboardRequest extends jspb.Message {
+  getDashboardResourceId(): string;
+  setDashboardResourceId(value: string): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getApplication(): annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap];
+  setApplication(value: annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateApplicationDashboardRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateApplicationDashboardRequest): CreateApplicationDashboardRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateApplicationDashboardRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateApplicationDashboardRequest;
+  static deserializeBinaryFromReader(message: CreateApplicationDashboardRequest, reader: jspb.BinaryReader): CreateApplicationDashboardRequest;
+}
+
+export namespace CreateApplicationDashboardRequest {
+  export type AsObject = {
+    dashboardResourceId: string,
+    orgId: string,
+    application: annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap],
+  }
+}
+
+export class CreateApplicationDashboardResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateApplicationDashboardResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateApplicationDashboardResponse): CreateApplicationDashboardResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateApplicationDashboardResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateApplicationDashboardResponse;
+  static deserializeBinaryFromReader(message: CreateApplicationDashboardResponse, reader: jspb.BinaryReader): CreateApplicationDashboardResponse;
+}
+
+export namespace CreateApplicationDashboardResponse {
+  export type AsObject = {
+  }
+}
+
+export class ListApplicationsDashboardsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListApplicationsDashboardsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListApplicationsDashboardsRequest): ListApplicationsDashboardsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListApplicationsDashboardsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListApplicationsDashboardsRequest;
+  static deserializeBinaryFromReader(message: ListApplicationsDashboardsRequest, reader: jspb.BinaryReader): ListApplicationsDashboardsRequest;
+}
+
+export namespace ListApplicationsDashboardsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ApplicationDashboards extends jspb.Message {
+  getApplication(): annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap];
+  setApplication(value: annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap]): void;
+
+  clearDashboardSummariesList(): void;
+  getDashboardSummariesList(): Array<DashboardSummary>;
+  setDashboardSummariesList(value: Array<DashboardSummary>): void;
+  addDashboardSummaries(value?: DashboardSummary, index?: number): DashboardSummary;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApplicationDashboards.AsObject;
+  static toObject(includeInstance: boolean, msg: ApplicationDashboards): ApplicationDashboards.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ApplicationDashboards, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApplicationDashboards;
+  static deserializeBinaryFromReader(message: ApplicationDashboards, reader: jspb.BinaryReader): ApplicationDashboards;
+}
+
+export namespace ApplicationDashboards {
+  export type AsObject = {
+    application: annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap],
+    dashboardSummariesList: Array<DashboardSummary.AsObject>,
+  }
+}
+
+export class ListApplicationsDashboardsResponse extends jspb.Message {
+  clearApplicationDashboardsList(): void;
+  getApplicationDashboardsList(): Array<ApplicationDashboards>;
+  setApplicationDashboardsList(value: Array<ApplicationDashboards>): void;
+  addApplicationDashboards(value?: ApplicationDashboards, index?: number): ApplicationDashboards;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListApplicationsDashboardsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListApplicationsDashboardsResponse): ListApplicationsDashboardsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListApplicationsDashboardsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListApplicationsDashboardsResponse;
+  static deserializeBinaryFromReader(message: ListApplicationsDashboardsResponse, reader: jspb.BinaryReader): ListApplicationsDashboardsResponse;
+}
+
+export namespace ListApplicationsDashboardsResponse {
+  export type AsObject = {
+    applicationDashboardsList: Array<ApplicationDashboards.AsObject>,
+  }
+}
+
+export class DeleteApplicationDashboardRequest extends jspb.Message {
+  getApplication(): annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap];
+  setApplication(value: annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap]): void;
+
+  getDashboardResourceId(): string;
+  setDashboardResourceId(value: string): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteApplicationDashboardRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteApplicationDashboardRequest): DeleteApplicationDashboardRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteApplicationDashboardRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteApplicationDashboardRequest;
+  static deserializeBinaryFromReader(message: DeleteApplicationDashboardRequest, reader: jspb.BinaryReader): DeleteApplicationDashboardRequest;
+}
+
+export namespace DeleteApplicationDashboardRequest {
+  export type AsObject = {
+    application: annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap],
+    dashboardResourceId: string,
+    orgId: string,
+  }
+}
+
+export class DeleteApplicationDashboardResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteApplicationDashboardResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteApplicationDashboardResponse): DeleteApplicationDashboardResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteApplicationDashboardResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteApplicationDashboardResponse;
+  static deserializeBinaryFromReader(message: DeleteApplicationDashboardResponse, reader: jspb.BinaryReader): DeleteApplicationDashboardResponse;
+}
+
+export namespace DeleteApplicationDashboardResponse {
+  export type AsObject = {
+  }
 }
 

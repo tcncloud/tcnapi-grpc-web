@@ -99,6 +99,9 @@ export class ListTicketAuditLogReq extends jspb.Message {
   getTicketSid(): string;
   setTicketSid(value: string): void;
 
+  getTicketCode(): string;
+  setTicketCode(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTicketAuditLogReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListTicketAuditLogReq): ListTicketAuditLogReq.AsObject;
@@ -112,6 +115,7 @@ export class ListTicketAuditLogReq extends jspb.Message {
 export namespace ListTicketAuditLogReq {
   export type AsObject = {
     ticketSid: string,
+    ticketCode: string,
   }
 }
 

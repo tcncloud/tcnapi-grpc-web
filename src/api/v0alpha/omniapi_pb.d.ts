@@ -1544,6 +1544,112 @@ export namespace GetAvailableHeadersRes {
   }
 }
 
+export class GetOmniExchangeElementsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetOmniExchangeElementsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetOmniExchangeElementsRequest): GetOmniExchangeElementsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetOmniExchangeElementsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetOmniExchangeElementsRequest;
+  static deserializeBinaryFromReader(message: GetOmniExchangeElementsRequest, reader: jspb.BinaryReader): GetOmniExchangeElementsRequest;
+}
+
+export namespace GetOmniExchangeElementsRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetOmniExchangeElementsResult extends jspb.Message {
+  clearHeadersList(): void;
+  getHeadersList(): Array<OmniExchange>;
+  setHeadersList(value: Array<OmniExchange>): void;
+  addHeaders(value?: OmniExchange, index?: number): OmniExchange;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetOmniExchangeElementsResult.AsObject;
+  static toObject(includeInstance: boolean, msg: GetOmniExchangeElementsResult): GetOmniExchangeElementsResult.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetOmniExchangeElementsResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetOmniExchangeElementsResult;
+  static deserializeBinaryFromReader(message: GetOmniExchangeElementsResult, reader: jspb.BinaryReader): GetOmniExchangeElementsResult;
+}
+
+export namespace GetOmniExchangeElementsResult {
+  export type AsObject = {
+    headersList: Array<OmniExchange.AsObject>,
+  }
+}
+
+export class OmniExchange extends jspb.Message {
+  getExchangeId(): string;
+  setExchangeId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniExchange.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniExchange): OmniExchange.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniExchange, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniExchange;
+  static deserializeBinaryFromReader(message: OmniExchange, reader: jspb.BinaryReader): OmniExchange;
+}
+
+export namespace OmniExchange {
+  export type AsObject = {
+    exchangeId: string,
+    name: string,
+  }
+}
+
+export class GetFieldsForElementRequest extends jspb.Message {
+  hasExchange(): boolean;
+  clearExchange(): void;
+  getExchange(): OmniExchange | undefined;
+  setExchange(value?: OmniExchange): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetFieldsForElementRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetFieldsForElementRequest): GetFieldsForElementRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetFieldsForElementRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetFieldsForElementRequest;
+  static deserializeBinaryFromReader(message: GetFieldsForElementRequest, reader: jspb.BinaryReader): GetFieldsForElementRequest;
+}
+
+export namespace GetFieldsForElementRequest {
+  export type AsObject = {
+    exchange?: OmniExchange.AsObject,
+  }
+}
+
+export class GetFieldsForElementResult extends jspb.Message {
+  clearHeadersList(): void;
+  getHeadersList(): Array<Header>;
+  setHeadersList(value: Array<Header>): void;
+  addHeaders(value?: Header, index?: number): Header;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetFieldsForElementResult.AsObject;
+  static toObject(includeInstance: boolean, msg: GetFieldsForElementResult): GetFieldsForElementResult.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetFieldsForElementResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetFieldsForElementResult;
+  static deserializeBinaryFromReader(message: GetFieldsForElementResult, reader: jspb.BinaryReader): GetFieldsForElementResult;
+}
+
+export namespace GetFieldsForElementResult {
+  export type AsObject = {
+    headersList: Array<Header.AsObject>,
+  }
+}
+
 export class Header extends jspb.Message {
   getName(): string;
   setName(value: string): void;
