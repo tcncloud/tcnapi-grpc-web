@@ -44,22 +44,22 @@ type BillingServiceDeleteBillingPlan = {
   readonly responseType: typeof services_billing_v1alpha3_plan_pb.DeleteBillingPlanResponse;
 };
 
-type BillingServiceGetOrgBillingPlan = {
+type BillingServiceGetBillingPlan = {
   readonly methodName: string;
   readonly service: typeof BillingService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_billing_v1alpha3_plan_pb.GetOrgBillingPlanRequest;
-  readonly responseType: typeof services_billing_v1alpha3_plan_pb.GetOrgBillingPlanResponse;
+  readonly requestType: typeof services_billing_v1alpha3_plan_pb.GetBillingPlanRequest;
+  readonly responseType: typeof services_billing_v1alpha3_plan_pb.GetBillingPlanResponse;
 };
 
-type BillingServiceListOrgBillingPlans = {
+type BillingServiceListBillingPlans = {
   readonly methodName: string;
   readonly service: typeof BillingService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_billing_v1alpha3_plan_pb.ListOrgBillingPlansRequest;
-  readonly responseType: typeof services_billing_v1alpha3_plan_pb.ListOrgBillingPlansResponse;
+  readonly requestType: typeof services_billing_v1alpha3_plan_pb.ListBillingPlansRequest;
+  readonly responseType: typeof services_billing_v1alpha3_plan_pb.ListBillingPlansResponse;
 };
 
 type BillingServiceUpdateBillingPlan = {
@@ -230,8 +230,8 @@ export class BillingService {
   static readonly ApplyBillingPlanDraft: BillingServiceApplyBillingPlanDraft;
   static readonly CreateBillingPlan: BillingServiceCreateBillingPlan;
   static readonly DeleteBillingPlan: BillingServiceDeleteBillingPlan;
-  static readonly GetOrgBillingPlan: BillingServiceGetOrgBillingPlan;
-  static readonly ListOrgBillingPlans: BillingServiceListOrgBillingPlans;
+  static readonly GetBillingPlan: BillingServiceGetBillingPlan;
+  static readonly ListBillingPlans: BillingServiceListBillingPlans;
   static readonly UpdateBillingPlan: BillingServiceUpdateBillingPlan;
   static readonly ApplyDefaultBillingPlanDraft: BillingServiceApplyDefaultBillingPlanDraft;
   static readonly CreateDefaultBillingPlan: BillingServiceCreateDefaultBillingPlan;
@@ -320,23 +320,23 @@ export class BillingServiceClient {
     requestMessage: services_billing_v1alpha3_plan_pb.DeleteBillingPlanRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_plan_pb.DeleteBillingPlanResponse|null) => void
   ): UnaryResponse;
-  getOrgBillingPlan(
-    requestMessage: services_billing_v1alpha3_plan_pb.GetOrgBillingPlanRequest,
+  getBillingPlan(
+    requestMessage: services_billing_v1alpha3_plan_pb.GetBillingPlanRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_plan_pb.GetOrgBillingPlanResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_plan_pb.GetBillingPlanResponse|null) => void
   ): UnaryResponse;
-  getOrgBillingPlan(
-    requestMessage: services_billing_v1alpha3_plan_pb.GetOrgBillingPlanRequest,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_plan_pb.GetOrgBillingPlanResponse|null) => void
+  getBillingPlan(
+    requestMessage: services_billing_v1alpha3_plan_pb.GetBillingPlanRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_plan_pb.GetBillingPlanResponse|null) => void
   ): UnaryResponse;
-  listOrgBillingPlans(
-    requestMessage: services_billing_v1alpha3_plan_pb.ListOrgBillingPlansRequest,
+  listBillingPlans(
+    requestMessage: services_billing_v1alpha3_plan_pb.ListBillingPlansRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_plan_pb.ListOrgBillingPlansResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_plan_pb.ListBillingPlansResponse|null) => void
   ): UnaryResponse;
-  listOrgBillingPlans(
-    requestMessage: services_billing_v1alpha3_plan_pb.ListOrgBillingPlansRequest,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_plan_pb.ListOrgBillingPlansResponse|null) => void
+  listBillingPlans(
+    requestMessage: services_billing_v1alpha3_plan_pb.ListBillingPlansRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_plan_pb.ListBillingPlansResponse|null) => void
   ): UnaryResponse;
   updateBillingPlan(
     requestMessage: services_billing_v1alpha3_plan_pb.UpdateBillingPlanRequest,

@@ -4,7 +4,6 @@
 import * as jspb from "google-protobuf";
 import * as api_commons_acd_pb from "../../api/commons/acd_pb";
 import * as api_commons_omnichannel_pb from "../../api/commons/omnichannel_pb";
-import * as api_commons_org_auth_token_pb from "../../api/commons/org/auth_token_pb";
 import * as google_protobuf_any_pb from "google-protobuf/google/protobuf/any_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -47,10 +46,10 @@ export class GhostNotification extends jspb.Message {
   getAgentQueuedCallsNotification(): AgentQueuedCallsNotification | undefined;
   setAgentQueuedCallsNotification(value?: AgentQueuedCallsNotification): void;
 
-  hasAuthTokenExpiration(): boolean;
-  clearAuthTokenExpiration(): void;
-  getAuthTokenExpiration(): api_commons_org_auth_token_pb.AuthTokenExpiration | undefined;
-  setAuthTokenExpiration(value?: api_commons_org_auth_token_pb.AuthTokenExpiration): void;
+  hasAuthTokenExpirationNotification(): boolean;
+  clearAuthTokenExpirationNotification(): void;
+  getAuthTokenExpirationNotification(): AuthTokenExpiration | undefined;
+  setAuthTokenExpirationNotification(value?: AuthTokenExpiration): void;
 
   getPayloadCase(): GhostNotification.PayloadCase;
   serializeBinary(): Uint8Array;
@@ -73,7 +72,7 @@ export namespace GhostNotification {
     directedCallRinging?: api_commons_acd_pb.AgentDirectedCallRingingAlert.AsObject,
     directedCallHangup?: api_commons_acd_pb.AgentDirectedCallHangupAlert.AsObject,
     agentQueuedCallsNotification?: AgentQueuedCallsNotification.AsObject,
-    authTokenExpiration?: api_commons_org_auth_token_pb.AuthTokenExpiration.AsObject,
+    authTokenExpirationNotification?: AuthTokenExpiration.AsObject,
   }
 
   export enum PayloadCase {
@@ -85,7 +84,7 @@ export namespace GhostNotification {
     DIRECTED_CALL_RINGING = 7,
     DIRECTED_CALL_HANGUP = 8,
     AGENT_QUEUED_CALLS_NOTIFICATION = 9,
-    AUTH_TOKEN_EXPIRATION = 10,
+    AUTH_TOKEN_EXPIRATION_NOTIFICATION = 11,
   }
 }
 
@@ -202,6 +201,32 @@ export namespace AgentQueuedCallsNotification {
       agentSpecific: boolean,
       queuedNotificationType: api_commons_acd_pb.QueuedNotificationTypeMap[keyof api_commons_acd_pb.QueuedNotificationTypeMap],
     }
+  }
+}
+
+export class AuthTokenExpiration extends jspb.Message {
+  getToken(): string;
+  setToken(value: string): void;
+
+  hasExpiration(): boolean;
+  clearExpiration(): void;
+  getExpiration(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiration(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AuthTokenExpiration.AsObject;
+  static toObject(includeInstance: boolean, msg: AuthTokenExpiration): AuthTokenExpiration.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AuthTokenExpiration, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AuthTokenExpiration;
+  static deserializeBinaryFromReader(message: AuthTokenExpiration, reader: jspb.BinaryReader): AuthTokenExpiration;
+}
+
+export namespace AuthTokenExpiration {
+  export type AsObject = {
+    token: string,
+    expiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

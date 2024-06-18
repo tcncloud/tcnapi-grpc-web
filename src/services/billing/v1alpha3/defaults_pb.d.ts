@@ -303,8 +303,8 @@ export namespace UpdateDefaultBillingPlanResponse {
 }
 
 export class CreateDefaultRateDefinitionRequest extends jspb.Message {
-  getBillingPlanId(): string;
-  setBillingPlanId(value: string): void;
+  getRateDefinitionId(): string;
+  setRateDefinitionId(value: string): void;
 
   hasRateDefinition(): boolean;
   clearRateDefinition(): void;
@@ -323,7 +323,7 @@ export class CreateDefaultRateDefinitionRequest extends jspb.Message {
 
 export namespace CreateDefaultRateDefinitionRequest {
   export type AsObject = {
-    billingPlanId: string,
+    rateDefinitionId: string,
     rateDefinition?: services_billing_entities_v1alpha3_rates_pb.RateDefinition.AsObject,
   }
 }

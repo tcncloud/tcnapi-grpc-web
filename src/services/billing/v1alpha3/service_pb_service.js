@@ -50,22 +50,22 @@ BillingService.DeleteBillingPlan = {
   responseType: services_billing_v1alpha3_plan_pb.DeleteBillingPlanResponse
 };
 
-BillingService.GetOrgBillingPlan = {
-  methodName: "GetOrgBillingPlan",
+BillingService.GetBillingPlan = {
+  methodName: "GetBillingPlan",
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_plan_pb.GetOrgBillingPlanRequest,
-  responseType: services_billing_v1alpha3_plan_pb.GetOrgBillingPlanResponse
+  requestType: services_billing_v1alpha3_plan_pb.GetBillingPlanRequest,
+  responseType: services_billing_v1alpha3_plan_pb.GetBillingPlanResponse
 };
 
-BillingService.ListOrgBillingPlans = {
-  methodName: "ListOrgBillingPlans",
+BillingService.ListBillingPlans = {
+  methodName: "ListBillingPlans",
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_plan_pb.ListOrgBillingPlansRequest,
-  responseType: services_billing_v1alpha3_plan_pb.ListOrgBillingPlansResponse
+  requestType: services_billing_v1alpha3_plan_pb.ListBillingPlansRequest,
+  responseType: services_billing_v1alpha3_plan_pb.ListBillingPlansResponse
 };
 
 BillingService.UpdateBillingPlan = {
@@ -361,11 +361,11 @@ BillingServiceClient.prototype.deleteBillingPlan = function deleteBillingPlan(re
   };
 };
 
-BillingServiceClient.prototype.getOrgBillingPlan = function getOrgBillingPlan(requestMessage, metadata, callback) {
+BillingServiceClient.prototype.getBillingPlan = function getBillingPlan(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(BillingService.GetOrgBillingPlan, {
+  var client = grpc.unary(BillingService.GetBillingPlan, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -392,11 +392,11 @@ BillingServiceClient.prototype.getOrgBillingPlan = function getOrgBillingPlan(re
   };
 };
 
-BillingServiceClient.prototype.listOrgBillingPlans = function listOrgBillingPlans(requestMessage, metadata, callback) {
+BillingServiceClient.prototype.listBillingPlans = function listBillingPlans(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(BillingService.ListOrgBillingPlans, {
+  var client = grpc.unary(BillingService.ListBillingPlans, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

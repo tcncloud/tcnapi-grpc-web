@@ -66,7 +66,7 @@ export namespace BillingPlan {
 
 export interface BillingPlanTypeMap {
   BILLING_PLAN_TYPE_UNSPECIFIED: 0;
-  BILLING_PLAN_TYPE_TEMPLATE: 1;
+  BILLING_PLAN_TYPE_DEFAULT: 1;
   BILLING_PLAN_TYPE_ORG: 2;
 }
 

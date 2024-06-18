@@ -2610,7 +2610,7 @@ proto.services.billing.v1alpha3.CreateDefaultRateDefinitionRequest.prototype.toO
  */
 proto.services.billing.v1alpha3.CreateDefaultRateDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha3_rates_pb.RateDefinition.toObject(includeInstance, f)
   };
 
@@ -2650,7 +2650,7 @@ proto.services.billing.v1alpha3.CreateDefaultRateDefinitionRequest.deserializeBi
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBillingPlanId(value);
+      msg.setRateDefinitionId(value);
       break;
     case 2:
       var value = new services_billing_entities_v1alpha3_rates_pb.RateDefinition;
@@ -2686,7 +2686,7 @@ proto.services.billing.v1alpha3.CreateDefaultRateDefinitionRequest.prototype.ser
  */
 proto.services.billing.v1alpha3.CreateDefaultRateDefinitionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getBillingPlanId();
+  f = message.getRateDefinitionId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -2705,10 +2705,10 @@ proto.services.billing.v1alpha3.CreateDefaultRateDefinitionRequest.serializeBina
 
 
 /**
- * optional string billing_plan_id = 1;
+ * optional string rate_definition_id = 1;
  * @return {string}
  */
-proto.services.billing.v1alpha3.CreateDefaultRateDefinitionRequest.prototype.getBillingPlanId = function() {
+proto.services.billing.v1alpha3.CreateDefaultRateDefinitionRequest.prototype.getRateDefinitionId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -2717,7 +2717,7 @@ proto.services.billing.v1alpha3.CreateDefaultRateDefinitionRequest.prototype.get
  * @param {string} value
  * @return {!proto.services.billing.v1alpha3.CreateDefaultRateDefinitionRequest} returns this
  */
-proto.services.billing.v1alpha3.CreateDefaultRateDefinitionRequest.prototype.setBillingPlanId = function(value) {
+proto.services.billing.v1alpha3.CreateDefaultRateDefinitionRequest.prototype.setRateDefinitionId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
