@@ -17,6 +17,9 @@ export class FollowAgentReq extends jspb.Message {
   getAsmSessionSid(): number;
   setAsmSessionSid(value: number): void;
 
+  getBogusField1(): number;
+  setBogusField1(value: number): void;
+
   getIdCase(): FollowAgentReq.IdCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FollowAgentReq.AsObject;
@@ -32,6 +35,7 @@ export namespace FollowAgentReq {
   export type AsObject = {
     userId: string,
     asmSessionSid: number,
+    bogusField1: number,
   }
 
   export enum IdCase {
