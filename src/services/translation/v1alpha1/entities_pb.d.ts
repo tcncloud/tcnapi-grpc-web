@@ -10,9 +10,6 @@ export class TranslateTemplateRequest extends jspb.Message {
   getContext(): string;
   setContext(value: string): void;
 
-  getLanguage(): LanguageMap[keyof LanguageMap];
-  setLanguage(value: LanguageMap[keyof LanguageMap]): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TranslateTemplateRequest.AsObject;
   static toObject(includeInstance: boolean, msg: TranslateTemplateRequest): TranslateTemplateRequest.AsObject;
@@ -27,15 +24,14 @@ export namespace TranslateTemplateRequest {
   export type AsObject = {
     template: string,
     context: string,
-    language: LanguageMap[keyof LanguageMap],
   }
 }
 
 export class TranslateTemplateResponse extends jspb.Message {
-  hasTranslation(): boolean;
-  clearTranslation(): void;
-  getTranslation(): Translation | undefined;
-  setTranslation(value?: Translation): void;
+  clearTranslationsList(): void;
+  getTranslationsList(): Array<Translation>;
+  setTranslationsList(value: Array<Translation>): void;
+  addTranslations(value?: Translation, index?: number): Translation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TranslateTemplateResponse.AsObject;
@@ -49,7 +45,7 @@ export class TranslateTemplateResponse extends jspb.Message {
 
 export namespace TranslateTemplateResponse {
   export type AsObject = {
-    translation?: Translation.AsObject,
+    translationsList: Array<Translation.AsObject>,
   }
 }
 
@@ -63,8 +59,8 @@ export class Translation extends jspb.Message {
   getContext(): string;
   setContext(value: string): void;
 
-  getLanguage(): LanguageMap[keyof LanguageMap];
-  setLanguage(value: LanguageMap[keyof LanguageMap]): void;
+  getLanguageTag(): string;
+  setLanguageTag(value: string): void;
 
   getLlmTranslation(): string;
   setLlmTranslation(value: string): void;
@@ -87,52 +83,9 @@ export namespace Translation {
     translationId: string,
     originalTemplate: string,
     context: string,
-    language: LanguageMap[keyof LanguageMap],
+    languageTag: string,
     llmTranslation: string,
     manualTranslation: string,
   }
 }
-
-export interface LanguageMap {
-  LANGUAGE_UNSPECIFIED: 0;
-  AR_SA: 1;
-  CS_CZ: 2;
-  DA_DK: 3;
-  DE_DE: 4;
-  EL_GR: 5;
-  EN_AU: 6;
-  EN_GB: 7;
-  EN_IE: 8;
-  EN_US: 9;
-  EN_ZA: 10;
-  ES_ES: 11;
-  ES_MX: 12;
-  FI_FI: 13;
-  FR_CA: 14;
-  FR_FR: 15;
-  HE_IL: 16;
-  HI_IN: 17;
-  HU_HU: 18;
-  ID_ID: 19;
-  IT_IT: 20;
-  JA_JP: 21;
-  KO_KR: 22;
-  NL_BE: 23;
-  NL_NL: 24;
-  NO_NO: 25;
-  PL_PL: 26;
-  PT_BR: 27;
-  PT_PT: 28;
-  RO_RO: 29;
-  RU_RU: 30;
-  SK_SK: 31;
-  SV_SE: 32;
-  TH_TH: 33;
-  TR_TR: 34;
-  ZH_CN: 35;
-  ZH_HK: 36;
-  ZH_TW: 37;
-}
-
-export const Language: LanguageMap;
 

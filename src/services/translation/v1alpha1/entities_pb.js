@@ -23,7 +23,6 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-goog.exportSymbol('proto.services.translation.v1alpha1.Language', null, global);
 goog.exportSymbol('proto.services.translation.v1alpha1.TranslateTemplateRequest', null, global);
 goog.exportSymbol('proto.services.translation.v1alpha1.TranslateTemplateResponse', null, global);
 goog.exportSymbol('proto.services.translation.v1alpha1.Translation', null, global);
@@ -59,7 +58,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.services.translation.v1alpha1.TranslateTemplateResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.services.translation.v1alpha1.TranslateTemplateResponse.repeatedFields_, null);
 };
 goog.inherits(proto.services.translation.v1alpha1.TranslateTemplateResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -123,8 +122,7 @@ proto.services.translation.v1alpha1.TranslateTemplateRequest.prototype.toObject 
 proto.services.translation.v1alpha1.TranslateTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     template: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    context: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    language: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    context: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -169,10 +167,6 @@ proto.services.translation.v1alpha1.TranslateTemplateRequest.deserializeBinaryFr
       var value = /** @type {string} */ (reader.readString());
       msg.setContext(value);
       break;
-    case 3:
-      var value = /** @type {!proto.services.translation.v1alpha1.Language} */ (reader.readEnum());
-      msg.setLanguage(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -216,13 +210,6 @@ proto.services.translation.v1alpha1.TranslateTemplateRequest.serializeBinaryToWr
       f
     );
   }
-  f = message.getLanguage();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      3,
-      f
-    );
-  }
 };
 
 
@@ -262,24 +249,13 @@ proto.services.translation.v1alpha1.TranslateTemplateRequest.prototype.setContex
 };
 
 
-/**
- * optional Language language = 3;
- * @return {!proto.services.translation.v1alpha1.Language}
- */
-proto.services.translation.v1alpha1.TranslateTemplateRequest.prototype.getLanguage = function() {
-  return /** @type {!proto.services.translation.v1alpha1.Language} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
 
 /**
- * @param {!proto.services.translation.v1alpha1.Language} value
- * @return {!proto.services.translation.v1alpha1.TranslateTemplateRequest} returns this
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
  */
-proto.services.translation.v1alpha1.TranslateTemplateRequest.prototype.setLanguage = function(value) {
-  return jspb.Message.setProto3EnumField(this, 3, value);
-};
-
-
+proto.services.translation.v1alpha1.TranslateTemplateResponse.repeatedFields_ = [1];
 
 
 
@@ -312,7 +288,8 @@ proto.services.translation.v1alpha1.TranslateTemplateResponse.prototype.toObject
  */
 proto.services.translation.v1alpha1.TranslateTemplateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    translation: (f = msg.getTranslation()) && proto.services.translation.v1alpha1.Translation.toObject(includeInstance, f)
+    translationsList: jspb.Message.toObjectList(msg.getTranslationsList(),
+    proto.services.translation.v1alpha1.Translation.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -352,7 +329,7 @@ proto.services.translation.v1alpha1.TranslateTemplateResponse.deserializeBinaryF
     case 1:
       var value = new proto.services.translation.v1alpha1.Translation;
       reader.readMessage(value,proto.services.translation.v1alpha1.Translation.deserializeBinaryFromReader);
-      msg.setTranslation(value);
+      msg.addTranslations(value);
       break;
     default:
       reader.skipField();
@@ -383,9 +360,9 @@ proto.services.translation.v1alpha1.TranslateTemplateResponse.prototype.serializ
  */
 proto.services.translation.v1alpha1.TranslateTemplateResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTranslation();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getTranslationsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       1,
       f,
       proto.services.translation.v1alpha1.Translation.serializeBinaryToWriter
@@ -395,39 +372,40 @@ proto.services.translation.v1alpha1.TranslateTemplateResponse.serializeBinaryToW
 
 
 /**
- * optional Translation translation = 1;
- * @return {?proto.services.translation.v1alpha1.Translation}
+ * repeated Translation translations = 1;
+ * @return {!Array<!proto.services.translation.v1alpha1.Translation>}
  */
-proto.services.translation.v1alpha1.TranslateTemplateResponse.prototype.getTranslation = function() {
-  return /** @type{?proto.services.translation.v1alpha1.Translation} */ (
-    jspb.Message.getWrapperField(this, proto.services.translation.v1alpha1.Translation, 1));
+proto.services.translation.v1alpha1.TranslateTemplateResponse.prototype.getTranslationsList = function() {
+  return /** @type{!Array<!proto.services.translation.v1alpha1.Translation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.services.translation.v1alpha1.Translation, 1));
 };
 
 
 /**
- * @param {?proto.services.translation.v1alpha1.Translation|undefined} value
+ * @param {!Array<!proto.services.translation.v1alpha1.Translation>} value
  * @return {!proto.services.translation.v1alpha1.TranslateTemplateResponse} returns this
 */
-proto.services.translation.v1alpha1.TranslateTemplateResponse.prototype.setTranslation = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+proto.services.translation.v1alpha1.TranslateTemplateResponse.prototype.setTranslationsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.services.translation.v1alpha1.Translation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.services.translation.v1alpha1.Translation}
+ */
+proto.services.translation.v1alpha1.TranslateTemplateResponse.prototype.addTranslations = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.services.translation.v1alpha1.Translation, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.services.translation.v1alpha1.TranslateTemplateResponse} returns this
  */
-proto.services.translation.v1alpha1.TranslateTemplateResponse.prototype.clearTranslation = function() {
-  return this.setTranslation(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.services.translation.v1alpha1.TranslateTemplateResponse.prototype.hasTranslation = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.services.translation.v1alpha1.TranslateTemplateResponse.prototype.clearTranslationsList = function() {
+  return this.setTranslationsList([]);
 };
 
 
@@ -466,7 +444,7 @@ proto.services.translation.v1alpha1.Translation.toObject = function(includeInsta
     translationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     originalTemplate: jspb.Message.getFieldWithDefault(msg, 2, ""),
     context: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    language: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    languageTag: jspb.Message.getFieldWithDefault(msg, 4, ""),
     llmTranslation: jspb.Message.getFieldWithDefault(msg, 5, ""),
     manualTranslation: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
@@ -518,8 +496,8 @@ proto.services.translation.v1alpha1.Translation.deserializeBinaryFromReader = fu
       msg.setContext(value);
       break;
     case 4:
-      var value = /** @type {!proto.services.translation.v1alpha1.Language} */ (reader.readEnum());
-      msg.setLanguage(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLanguageTag(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -579,9 +557,9 @@ proto.services.translation.v1alpha1.Translation.serializeBinaryToWriter = functi
       f
     );
   }
-  f = message.getLanguage();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  f = message.getLanguageTag();
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -658,20 +636,20 @@ proto.services.translation.v1alpha1.Translation.prototype.setContext = function(
 
 
 /**
- * optional Language language = 4;
- * @return {!proto.services.translation.v1alpha1.Language}
+ * optional string language_tag = 4;
+ * @return {string}
  */
-proto.services.translation.v1alpha1.Translation.prototype.getLanguage = function() {
-  return /** @type {!proto.services.translation.v1alpha1.Language} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+proto.services.translation.v1alpha1.Translation.prototype.getLanguageTag = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {!proto.services.translation.v1alpha1.Language} value
+ * @param {string} value
  * @return {!proto.services.translation.v1alpha1.Translation} returns this
  */
-proto.services.translation.v1alpha1.Translation.prototype.setLanguage = function(value) {
-  return jspb.Message.setProto3EnumField(this, 4, value);
+proto.services.translation.v1alpha1.Translation.prototype.setLanguageTag = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -710,49 +688,5 @@ proto.services.translation.v1alpha1.Translation.prototype.setManualTranslation =
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
-
-/**
- * @enum {number}
- */
-proto.services.translation.v1alpha1.Language = {
-  LANGUAGE_UNSPECIFIED: 0,
-  AR_SA: 1,
-  CS_CZ: 2,
-  DA_DK: 3,
-  DE_DE: 4,
-  EL_GR: 5,
-  EN_AU: 6,
-  EN_GB: 7,
-  EN_IE: 8,
-  EN_US: 9,
-  EN_ZA: 10,
-  ES_ES: 11,
-  ES_MX: 12,
-  FI_FI: 13,
-  FR_CA: 14,
-  FR_FR: 15,
-  HE_IL: 16,
-  HI_IN: 17,
-  HU_HU: 18,
-  ID_ID: 19,
-  IT_IT: 20,
-  JA_JP: 21,
-  KO_KR: 22,
-  NL_BE: 23,
-  NL_NL: 24,
-  NO_NO: 25,
-  PL_PL: 26,
-  PT_BR: 27,
-  PT_PT: 28,
-  RO_RO: 29,
-  RU_RU: 30,
-  SK_SK: 31,
-  SV_SE: 32,
-  TH_TH: 33,
-  TR_TR: 34,
-  ZH_CN: 35,
-  ZH_HK: 36,
-  ZH_TW: 37
-};
 
 goog.object.extend(exports, proto.services.translation.v1alpha1);
