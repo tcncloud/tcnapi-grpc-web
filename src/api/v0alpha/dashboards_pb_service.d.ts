@@ -113,6 +113,33 @@ type DashboardsPublishDashboard = {
   readonly responseType: typeof api_v0alpha_dashboards_pb.PublishDashboardResponse;
 };
 
+type DashboardsCreateApplicationDashboard = {
+  readonly methodName: string;
+  readonly service: typeof Dashboards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_dashboards_pb.CreateApplicationDashboardRequest;
+  readonly responseType: typeof api_v0alpha_dashboards_pb.CreateApplicationDashboardResponse;
+};
+
+type DashboardsListApplicationsDashboards = {
+  readonly methodName: string;
+  readonly service: typeof Dashboards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_dashboards_pb.ListApplicationsDashboardsRequest;
+  readonly responseType: typeof api_v0alpha_dashboards_pb.ListApplicationsDashboardsResponse;
+};
+
+type DashboardsDeleteApplicationDashboard = {
+  readonly methodName: string;
+  readonly service: typeof Dashboards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_dashboards_pb.DeleteApplicationDashboardRequest;
+  readonly responseType: typeof api_v0alpha_dashboards_pb.DeleteApplicationDashboardResponse;
+};
+
 export class Dashboards {
   static readonly serviceName: string;
   static readonly CreateDashboard: DashboardsCreateDashboard;
@@ -127,6 +154,9 @@ export class Dashboards {
   static readonly UpdateDashboardView: DashboardsUpdateDashboardView;
   static readonly UpdateDashboardLayout: DashboardsUpdateDashboardLayout;
   static readonly PublishDashboard: DashboardsPublishDashboard;
+  static readonly CreateApplicationDashboard: DashboardsCreateApplicationDashboard;
+  static readonly ListApplicationsDashboards: DashboardsListApplicationsDashboards;
+  static readonly DeleteApplicationDashboard: DashboardsDeleteApplicationDashboard;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -268,6 +298,33 @@ export class DashboardsClient {
   publishDashboard(
     requestMessage: api_v0alpha_dashboards_pb.PublishDashboardRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_dashboards_pb.PublishDashboardResponse|null) => void
+  ): UnaryResponse;
+  createApplicationDashboard(
+    requestMessage: api_v0alpha_dashboards_pb.CreateApplicationDashboardRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_dashboards_pb.CreateApplicationDashboardResponse|null) => void
+  ): UnaryResponse;
+  createApplicationDashboard(
+    requestMessage: api_v0alpha_dashboards_pb.CreateApplicationDashboardRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_dashboards_pb.CreateApplicationDashboardResponse|null) => void
+  ): UnaryResponse;
+  listApplicationsDashboards(
+    requestMessage: api_v0alpha_dashboards_pb.ListApplicationsDashboardsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_dashboards_pb.ListApplicationsDashboardsResponse|null) => void
+  ): UnaryResponse;
+  listApplicationsDashboards(
+    requestMessage: api_v0alpha_dashboards_pb.ListApplicationsDashboardsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_dashboards_pb.ListApplicationsDashboardsResponse|null) => void
+  ): UnaryResponse;
+  deleteApplicationDashboard(
+    requestMessage: api_v0alpha_dashboards_pb.DeleteApplicationDashboardRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_dashboards_pb.DeleteApplicationDashboardResponse|null) => void
+  ): UnaryResponse;
+  deleteApplicationDashboard(
+    requestMessage: api_v0alpha_dashboards_pb.DeleteApplicationDashboardRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_dashboards_pb.DeleteApplicationDashboardResponse|null) => void
   ): UnaryResponse;
 }
 
