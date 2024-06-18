@@ -598,6 +598,21 @@ export class AuditEvent extends jspb.Message {
   getContactManagerKycEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent | undefined;
   setContactManagerKycEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent): void;
 
+  hasContactManagerEntryEditEvent(): boolean;
+  clearContactManagerEntryEditEvent(): void;
+  getContactManagerEntryEditEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerEntryEditEvent | undefined;
+  setContactManagerEntryEditEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerEntryEditEvent): void;
+
+  hasContactManagerListUploadEvent(): boolean;
+  clearContactManagerListUploadEvent(): void;
+  getContactManagerListUploadEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerListUploadEvent | undefined;
+  setContactManagerListUploadEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerListUploadEvent): void;
+
+  hasContactManagerKycVerificationEvent(): boolean;
+  clearContactManagerKycVerificationEvent(): void;
+  getContactManagerKycVerificationEvent(): api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent | undefined;
+  setContactManagerKycVerificationEvent(value?: api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent): void;
+
   getEventCase(): AuditEvent.EventCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuditEvent.AsObject;
@@ -729,6 +744,9 @@ export namespace AuditEvent {
     contactManagerEntryGetEncEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerEntryGetEncEvent.AsObject,
     contactManagerDeleteEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.AsObject,
     contactManagerKycEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.AsObject,
+    contactManagerEntryEditEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerEntryEditEvent.AsObject,
+    contactManagerListUploadEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerListUploadEvent.AsObject,
+    contactManagerKycVerificationEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.AsObject,
   }
 
   export enum EventCase {
@@ -845,6 +863,9 @@ export namespace AuditEvent {
     CONTACT_MANAGER_ENTRY_GET_ENC_EVENT = 1201,
     CONTACT_MANAGER_DELETE_EVENT = 1202,
     CONTACT_MANAGER_KYC_EVENT = 1203,
+    CONTACT_MANAGER_ENTRY_EDIT_EVENT = 1204,
+    CONTACT_MANAGER_LIST_UPLOAD_EVENT = 1205,
+    CONTACT_MANAGER_KYC_VERIFICATION_EVENT = 1206,
   }
 }
 

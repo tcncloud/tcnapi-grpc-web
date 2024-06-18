@@ -5,6 +5,11 @@ import * as jspb from "google-protobuf";
 import * as api_v1alpha1_contactmanager_contactmanager_pb from "../../../api/v1alpha1/contactmanager/contactmanager_pb";
 
 export class ContactManagerEntryAddEvent extends jspb.Message {
+  hasAddevent(): boolean;
+  clearAddevent(): void;
+  getAddevent(): ContactManagerEntryEvent | undefined;
+  setAddevent(value?: ContactManagerEntryEvent): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerEntryAddEvent.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerEntryAddEvent): ContactManagerEntryAddEvent.AsObject;
@@ -17,10 +22,16 @@ export class ContactManagerEntryAddEvent extends jspb.Message {
 
 export namespace ContactManagerEntryAddEvent {
   export type AsObject = {
+    addevent?: ContactManagerEntryEvent.AsObject,
   }
 }
 
 export class ContactManagerEntryGetEncEvent extends jspb.Message {
+  hasViewevent(): boolean;
+  clearViewevent(): void;
+  getViewevent(): ContactManagerEntryEvent | undefined;
+  setViewevent(value?: ContactManagerEntryEvent): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerEntryGetEncEvent.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerEntryGetEncEvent): ContactManagerEntryGetEncEvent.AsObject;
@@ -33,6 +44,29 @@ export class ContactManagerEntryGetEncEvent extends jspb.Message {
 
 export namespace ContactManagerEntryGetEncEvent {
   export type AsObject = {
+    viewevent?: ContactManagerEntryEvent.AsObject,
+  }
+}
+
+export class ContactManagerEntryEditEvent extends jspb.Message {
+  hasEditevent(): boolean;
+  clearEditevent(): void;
+  getEditevent(): ContactManagerEntryEvent | undefined;
+  setEditevent(value?: ContactManagerEntryEvent): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactManagerEntryEditEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactManagerEntryEditEvent): ContactManagerEntryEditEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContactManagerEntryEditEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactManagerEntryEditEvent;
+  static deserializeBinaryFromReader(message: ContactManagerEntryEditEvent, reader: jspb.BinaryReader): ContactManagerEntryEditEvent;
+}
+
+export namespace ContactManagerEntryEditEvent {
+  export type AsObject = {
+    editevent?: ContactManagerEntryEvent.AsObject,
   }
 }
 

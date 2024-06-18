@@ -83,7 +83,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1100,1101,1200,1201,1202,1203]];
+proto.api.commons.audit.AuditEvent.oneofGroups_ = [[100,200,201,202,203,204,300,301,302,303,305,306,307,308,309,310,311,312,313,314,315,322,332,330,331,348,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,349,350,351,352,353,354,355,356,357,358,359,360,361,362,400,401,402,403,404,405,406,407,408,409,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,601,700,701,800,900,901,902,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1100,1101,1200,1201,1202,1203,1204,1205,1206]];
 
 /**
  * @enum {number}
@@ -201,7 +201,10 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   CONTACT_MANAGER_ENTRY_ADD_EVENT: 1200,
   CONTACT_MANAGER_ENTRY_GET_ENC_EVENT: 1201,
   CONTACT_MANAGER_DELETE_EVENT: 1202,
-  CONTACT_MANAGER_KYC_EVENT: 1203
+  CONTACT_MANAGER_KYC_EVENT: 1203,
+  CONTACT_MANAGER_ENTRY_EDIT_EVENT: 1204,
+  CONTACT_MANAGER_LIST_UPLOAD_EVENT: 1205,
+  CONTACT_MANAGER_KYC_VERIFICATION_EVENT: 1206
 };
 
 /**
@@ -359,7 +362,10 @@ proto.api.commons.audit.AuditEvent.toObject = function(includeInstance, msg) {
     contactManagerEntryAddEvent: (f = msg.getContactManagerEntryAddEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerEntryAddEvent.toObject(includeInstance, f),
     contactManagerEntryGetEncEvent: (f = msg.getContactManagerEntryGetEncEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerEntryGetEncEvent.toObject(includeInstance, f),
     contactManagerDeleteEvent: (f = msg.getContactManagerDeleteEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerDeleteEvent.toObject(includeInstance, f),
-    contactManagerKycEvent: (f = msg.getContactManagerKycEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.toObject(includeInstance, f)
+    contactManagerKycEvent: (f = msg.getContactManagerKycEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.toObject(includeInstance, f),
+    contactManagerEntryEditEvent: (f = msg.getContactManagerEntryEditEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerEntryEditEvent.toObject(includeInstance, f),
+    contactManagerListUploadEvent: (f = msg.getContactManagerListUploadEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerListUploadEvent.toObject(includeInstance, f),
+    contactManagerKycVerificationEvent: (f = msg.getContactManagerKycVerificationEvent()) && api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -980,6 +986,21 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       var value = new api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent;
       reader.readMessage(value,api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.deserializeBinaryFromReader);
       msg.setContactManagerKycEvent(value);
+      break;
+    case 1204:
+      var value = new api_commons_audit_contactmanager_events_pb.ContactManagerEntryEditEvent;
+      reader.readMessage(value,api_commons_audit_contactmanager_events_pb.ContactManagerEntryEditEvent.deserializeBinaryFromReader);
+      msg.setContactManagerEntryEditEvent(value);
+      break;
+    case 1205:
+      var value = new api_commons_audit_contactmanager_events_pb.ContactManagerListUploadEvent;
+      reader.readMessage(value,api_commons_audit_contactmanager_events_pb.ContactManagerListUploadEvent.deserializeBinaryFromReader);
+      msg.setContactManagerListUploadEvent(value);
+      break;
+    case 1206:
+      var value = new api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent;
+      reader.readMessage(value,api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.deserializeBinaryFromReader);
+      msg.setContactManagerKycVerificationEvent(value);
       break;
     default:
       reader.skipField();
@@ -1945,6 +1966,30 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
   if (f != null) {
     writer.writeMessage(
       1203,
+      f,
+      api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getContactManagerEntryEditEvent();
+  if (f != null) {
+    writer.writeMessage(
+      1204,
+      f,
+      api_commons_audit_contactmanager_events_pb.ContactManagerEntryEditEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getContactManagerListUploadEvent();
+  if (f != null) {
+    writer.writeMessage(
+      1205,
+      f,
+      api_commons_audit_contactmanager_events_pb.ContactManagerListUploadEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getContactManagerKycVerificationEvent();
+  if (f != null) {
+    writer.writeMessage(
+      1206,
       f,
       api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent.serializeBinaryToWriter
     );
@@ -6220,6 +6265,117 @@ proto.api.commons.audit.AuditEvent.prototype.clearContactManagerKycEvent = funct
  */
 proto.api.commons.audit.AuditEvent.prototype.hasContactManagerKycEvent = function() {
   return jspb.Message.getField(this, 1203) != null;
+};
+
+
+/**
+ * optional ContactManagerEntryEditEvent contact_manager_entry_edit_event = 1204;
+ * @return {?proto.api.commons.audit.ContactManagerEntryEditEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getContactManagerEntryEditEvent = function() {
+  return /** @type{?proto.api.commons.audit.ContactManagerEntryEditEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_contactmanager_events_pb.ContactManagerEntryEditEvent, 1204));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.ContactManagerEntryEditEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setContactManagerEntryEditEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1204, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearContactManagerEntryEditEvent = function() {
+  return this.setContactManagerEntryEditEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasContactManagerEntryEditEvent = function() {
+  return jspb.Message.getField(this, 1204) != null;
+};
+
+
+/**
+ * optional ContactManagerListUploadEvent contact_manager_list_upload_event = 1205;
+ * @return {?proto.api.commons.audit.ContactManagerListUploadEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getContactManagerListUploadEvent = function() {
+  return /** @type{?proto.api.commons.audit.ContactManagerListUploadEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_contactmanager_events_pb.ContactManagerListUploadEvent, 1205));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.ContactManagerListUploadEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setContactManagerListUploadEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1205, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearContactManagerListUploadEvent = function() {
+  return this.setContactManagerListUploadEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasContactManagerListUploadEvent = function() {
+  return jspb.Message.getField(this, 1205) != null;
+};
+
+
+/**
+ * optional ContactManagerKycEvent contact_manager_kyc_verification_event = 1206;
+ * @return {?proto.api.commons.audit.ContactManagerKycEvent}
+ */
+proto.api.commons.audit.AuditEvent.prototype.getContactManagerKycVerificationEvent = function() {
+  return /** @type{?proto.api.commons.audit.ContactManagerKycEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_contactmanager_events_pb.ContactManagerKycEvent, 1206));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.ContactManagerKycEvent|undefined} value
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+*/
+proto.api.commons.audit.AuditEvent.prototype.setContactManagerKycVerificationEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1206, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.AuditEvent} returns this
+ */
+proto.api.commons.audit.AuditEvent.prototype.clearContactManagerKycVerificationEvent = function() {
+  return this.setContactManagerKycVerificationEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.AuditEvent.prototype.hasContactManagerKycVerificationEvent = function() {
+  return jspb.Message.getField(this, 1206) != null;
 };
 
 
