@@ -20,6 +20,9 @@ export class FollowAgentReq extends jspb.Message {
   getBogusField1(): number;
   setBogusField1(value: number): void;
 
+  getBogusField2(): number;
+  setBogusField2(value: number): void;
+
   getIdCase(): FollowAgentReq.IdCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FollowAgentReq.AsObject;
@@ -36,6 +39,7 @@ export namespace FollowAgentReq {
     userId: string,
     asmSessionSid: number,
     bogusField1: number,
+    bogusField2: number,
   }
 
   export enum IdCase {
