@@ -246,7 +246,8 @@ proto.api.v1alpha1.agentsmith.FollowAgentReq.prototype.toObject = function(opt_i
 proto.api.v1alpha1.agentsmith.FollowAgentReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    bogusField1: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -291,6 +292,10 @@ proto.api.v1alpha1.agentsmith.FollowAgentReq.deserializeBinaryFromReader = funct
       var value = /** @type {number} */ (reader.readInt64());
       msg.setAsmSessionSid(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setBogusField1(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -331,6 +336,13 @@ proto.api.v1alpha1.agentsmith.FollowAgentReq.serializeBinaryToWriter = function(
   if (f != null) {
     writer.writeInt64(
       2,
+      f
+    );
+  }
+  f = message.getBogusField1();
+  if (f !== 0) {
+    writer.writeInt64(
+      3,
       f
     );
   }
@@ -406,6 +418,24 @@ proto.api.v1alpha1.agentsmith.FollowAgentReq.prototype.clearAsmSessionSid = func
  */
 proto.api.v1alpha1.agentsmith.FollowAgentReq.prototype.hasAsmSessionSid = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int64 bogus_field1 = 3;
+ * @return {number}
+ */
+proto.api.v1alpha1.agentsmith.FollowAgentReq.prototype.getBogusField1 = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.agentsmith.FollowAgentReq} returns this
+ */
+proto.api.v1alpha1.agentsmith.FollowAgentReq.prototype.setBogusField1 = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
