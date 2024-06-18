@@ -2992,6 +2992,9 @@ export class GetMyAllowedMfaMethodsResponse extends jspb.Message {
   getDuoEnabled(): boolean;
   setDuoEnabled(value: boolean): void;
 
+  getTotpEnabled(): boolean;
+  setTotpEnabled(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetMyAllowedMfaMethodsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetMyAllowedMfaMethodsResponse): GetMyAllowedMfaMethodsResponse.AsObject;
@@ -3007,6 +3010,47 @@ export namespace GetMyAllowedMfaMethodsResponse {
     mfaEnabled: boolean,
     emailEnabled: boolean,
     duoEnabled: boolean,
+    totpEnabled: boolean,
+  }
+}
+
+export class GenerateTOTPSecretRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateTOTPSecretRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateTOTPSecretRequest): GenerateTOTPSecretRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateTOTPSecretRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateTOTPSecretRequest;
+  static deserializeBinaryFromReader(message: GenerateTOTPSecretRequest, reader: jspb.BinaryReader): GenerateTOTPSecretRequest;
+}
+
+export namespace GenerateTOTPSecretRequest {
+  export type AsObject = {
+  }
+}
+
+export class GenerateTOTPSecretResponse extends jspb.Message {
+  getSecretKey(): string;
+  setSecretKey(value: string): void;
+
+  getQrCodeUrl(): string;
+  setQrCodeUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateTOTPSecretResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateTOTPSecretResponse): GenerateTOTPSecretResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateTOTPSecretResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateTOTPSecretResponse;
+  static deserializeBinaryFromReader(message: GenerateTOTPSecretResponse, reader: jspb.BinaryReader): GenerateTOTPSecretResponse;
+}
+
+export namespace GenerateTOTPSecretResponse {
+  export type AsObject = {
+    secretKey: string,
+    qrCodeUrl: string,
   }
 }
 

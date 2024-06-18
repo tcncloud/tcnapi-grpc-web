@@ -3234,7 +3234,8 @@ proto.api.commons.org.AuthenticationPreferences.toObject = function(includeInsta
     allowForcePasswordResetInterval: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
     passwordResetDayInterval: jspb.Message.getFieldWithDefault(msg, 18, 0),
     userAuthorizationViaIp: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
-    forceSsoProvider: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
+    forceSsoProvider: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
+    enableTotp: jspb.Message.getBooleanFieldWithDefault(msg, 21, false)
   };
 
   if (includeInstance) {
@@ -3320,6 +3321,10 @@ proto.api.commons.org.AuthenticationPreferences.deserializeBinaryFromReader = fu
     case 20:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setForceSsoProvider(value);
+      break;
+    case 21:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnableTotp(value);
       break;
     default:
       reader.skipField();
@@ -3433,6 +3438,13 @@ proto.api.commons.org.AuthenticationPreferences.serializeBinaryToWriter = functi
   if (f) {
     writer.writeBool(
       20,
+      f
+    );
+  }
+  f = message.getEnableTotp();
+  if (f) {
+    writer.writeBool(
+      21,
       f
     );
   }
@@ -4029,6 +4041,24 @@ proto.api.commons.org.AuthenticationPreferences.prototype.getForceSsoProvider = 
  */
 proto.api.commons.org.AuthenticationPreferences.prototype.setForceSsoProvider = function(value) {
   return jspb.Message.setProto3BooleanField(this, 20, value);
+};
+
+
+/**
+ * optional bool enable_totp = 21;
+ * @return {boolean}
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.getEnableTotp = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 21, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.org.AuthenticationPreferences} returns this
+ */
+proto.api.commons.org.AuthenticationPreferences.prototype.setEnableTotp = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 21, value);
 };
 
 

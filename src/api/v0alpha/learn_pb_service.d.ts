@@ -202,6 +202,24 @@ type LearnListVersions = {
   readonly responseType: typeof api_v0alpha_learn_pb.ListVersionsRes;
 };
 
+type LearnReviewVersionStream = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: false;
+  readonly responseStream: true;
+  readonly requestType: typeof api_v0alpha_learn_pb.ReviewVersionReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.ReviewVersionRes;
+};
+
+type LearnDeleteVersion = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_learn_pb.DeleteVersionReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.DeleteVersionRes;
+};
+
 export class Learn {
   static readonly serviceName: string;
   static readonly Exist: LearnExist;
@@ -226,6 +244,8 @@ export class Learn {
   static readonly ReviewVersion: LearnReviewVersion;
   static readonly ExportManyStream: LearnExportManyStream;
   static readonly ListVersions: LearnListVersions;
+  static readonly ReviewVersionStream: LearnReviewVersionStream;
+  static readonly DeleteVersion: LearnDeleteVersion;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -433,6 +453,16 @@ export class LearnClient {
   listVersions(
     requestMessage: api_v0alpha_learn_pb.ListVersionsReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.ListVersionsRes|null) => void
+  ): UnaryResponse;
+  reviewVersionStream(requestMessage: api_v0alpha_learn_pb.ReviewVersionReq, metadata?: grpc.Metadata): ResponseStream<api_v0alpha_learn_pb.ReviewVersionRes>;
+  deleteVersion(
+    requestMessage: api_v0alpha_learn_pb.DeleteVersionReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.DeleteVersionRes|null) => void
+  ): UnaryResponse;
+  deleteVersion(
+    requestMessage: api_v0alpha_learn_pb.DeleteVersionReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.DeleteVersionRes|null) => void
   ): UnaryResponse;
 }
 

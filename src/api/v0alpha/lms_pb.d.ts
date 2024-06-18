@@ -1878,6 +1878,11 @@ export class Process extends jspb.Message {
   getContactManagerSink(): ContactManagerSink | undefined;
   setContactManagerSink(value?: ContactManagerSink): void;
 
+  hasSum(): boolean;
+  clearSum(): void;
+  getSum(): SumProcess | undefined;
+  setSum(value?: SumProcess): void;
+
   getProcCase(): Process.ProcCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Process.AsObject;
@@ -1928,6 +1933,7 @@ export namespace Process {
     split?: SplitCriteria.AsObject,
     epicEntryPoint?: EpicEntrypoint.AsObject,
     contactManagerSink?: ContactManagerSink.AsObject,
+    sum?: SumProcess.AsObject,
   }
 
   export enum ProcCase {
@@ -1968,6 +1974,7 @@ export namespace Process {
     SPLIT = 75,
     EPIC_ENTRY_POINT = 76,
     CONTACT_MANAGER_SINK = 77,
+    SUM = 78,
   }
 }
 
@@ -5653,6 +5660,64 @@ export namespace ContactManagerSink {
     fieldsList: Array<string>,
     ttl: number,
     lifetime?: google_protobuf_duration_pb.Duration.AsObject,
+  }
+}
+
+export class SumProcess extends jspb.Message {
+  getField(): string;
+  setField(value: string): void;
+
+  getNewName(): string;
+  setNewName(value: string): void;
+
+  hasGroupBy(): boolean;
+  clearGroupBy(): void;
+  getGroupBy(): GroupBy | undefined;
+  setGroupBy(value?: GroupBy): void;
+
+  hasFilter(): boolean;
+  clearFilter(): void;
+  getFilter(): FilterOperation | undefined;
+  setFilter(value?: FilterOperation): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SumProcess.AsObject;
+  static toObject(includeInstance: boolean, msg: SumProcess): SumProcess.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SumProcess, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SumProcess;
+  static deserializeBinaryFromReader(message: SumProcess, reader: jspb.BinaryReader): SumProcess;
+}
+
+export namespace SumProcess {
+  export type AsObject = {
+    field: string,
+    newName: string,
+    groupBy?: GroupBy.AsObject,
+    filter?: FilterOperation.AsObject,
+  }
+}
+
+export class GroupBy extends jspb.Message {
+  clearFieldsList(): void;
+  getFieldsList(): Array<string>;
+  setFieldsList(value: Array<string>): void;
+  addFields(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GroupBy.AsObject;
+  static toObject(includeInstance: boolean, msg: GroupBy): GroupBy.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GroupBy, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroupBy;
+  static deserializeBinaryFromReader(message: GroupBy, reader: jspb.BinaryReader): GroupBy;
+}
+
+export namespace GroupBy {
+  export type AsObject = {
+    fieldsList: Array<string>,
   }
 }
 

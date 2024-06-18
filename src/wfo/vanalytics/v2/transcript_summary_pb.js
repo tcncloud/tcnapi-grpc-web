@@ -23,6 +23,8 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_commons_vanalytics_pb = require('../../../api/commons/vanalytics_pb.js');
+goog.object.extend(proto, api_commons_vanalytics_pb);
 goog.exportSymbol('proto.wfo.vanalytics.v2.GetTranscriptSummaryRequest', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.GetTranscriptSummaryResponse', null, global);
 goog.exportSymbol('proto.wfo.vanalytics.v2.TranscriptSummary', null, global);
@@ -409,7 +411,8 @@ proto.wfo.vanalytics.v2.TranscriptSummary.prototype.toObject = function(opt_incl
  */
 proto.wfo.vanalytics.v2.TranscriptSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    bulletPointsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+    bulletPointsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    status: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -450,6 +453,10 @@ proto.wfo.vanalytics.v2.TranscriptSummary.deserializeBinaryFromReader = function
       var value = /** @type {string} */ (reader.readString());
       msg.addBulletPoints(value);
       break;
+    case 2:
+      var value = /** @type {!proto.api.commons.TranscriptSummaryStatus} */ (reader.readEnum());
+      msg.setStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -483,6 +490,13 @@ proto.wfo.vanalytics.v2.TranscriptSummary.serializeBinaryToWriter = function(mes
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
       f
     );
   }
@@ -523,6 +537,24 @@ proto.wfo.vanalytics.v2.TranscriptSummary.prototype.addBulletPoints = function(v
  */
 proto.wfo.vanalytics.v2.TranscriptSummary.prototype.clearBulletPointsList = function() {
   return this.setBulletPointsList([]);
+};
+
+
+/**
+ * optional api.commons.TranscriptSummaryStatus status = 2;
+ * @return {!proto.api.commons.TranscriptSummaryStatus}
+ */
+proto.wfo.vanalytics.v2.TranscriptSummary.prototype.getStatus = function() {
+  return /** @type {!proto.api.commons.TranscriptSummaryStatus} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.TranscriptSummaryStatus} value
+ * @return {!proto.wfo.vanalytics.v2.TranscriptSummary} returns this
+ */
+proto.wfo.vanalytics.v2.TranscriptSummary.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 

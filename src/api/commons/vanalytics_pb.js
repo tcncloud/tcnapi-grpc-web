@@ -24,6 +24,7 @@ var global = localGlobalThis ||
     Function('return this')();
 
 goog.exportSymbol('proto.api.commons.Interval', null, global);
+goog.exportSymbol('proto.api.commons.TranscriptSummaryStatus', null, global);
 /**
  * @enum {number}
  */
@@ -39,6 +40,17 @@ proto.api.commons.Interval = {
   LAST_60_DAYS: 8,
   LAST_90_DAYS: 9,
   LAST_180_DAYS: 10
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.TranscriptSummaryStatus = {
+  TRANSCRIPT_SUMMARY_STATUS_QUEUED: 0,
+  TRANSCRIPT_SUMMARY_STATUS_QUEUED_ERRORED: -1,
+  TRANSCRIPT_SUMMARY_STATUS_SUMMARIZED: 1,
+  TRANSCRIPT_SUMMARY_STATUS_SUMMARIZED_ERRORED: -2,
+  TRANSCRIPT_SUMMARY_STATUS_VISIBLE: 2
 };
 
 goog.object.extend(exports, proto.api.commons);

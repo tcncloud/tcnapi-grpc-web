@@ -19,3 +19,13 @@ export interface IntervalMap {
 
 export const Interval: IntervalMap;
 
+export interface TranscriptSummaryStatusMap {
+  TRANSCRIPT_SUMMARY_STATUS_QUEUED: 0;
+  TRANSCRIPT_SUMMARY_STATUS_QUEUED_ERRORED: -1;
+  TRANSCRIPT_SUMMARY_STATUS_SUMMARIZED: 1;
+  TRANSCRIPT_SUMMARY_STATUS_SUMMARIZED_ERRORED: -2;
+  TRANSCRIPT_SUMMARY_STATUS_VISIBLE: 2;
+}
+
+export const TranscriptSummaryStatus: TranscriptSummaryStatusMap;
+

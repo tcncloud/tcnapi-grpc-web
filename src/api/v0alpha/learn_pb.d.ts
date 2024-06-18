@@ -476,6 +476,9 @@ export class StandaloneReq extends jspb.Message {
   getCategory(): string;
   setCategory(value: string): void;
 
+  getVersion(): string;
+  setVersion(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StandaloneReq.AsObject;
   static toObject(includeInstance: boolean, msg: StandaloneReq): StandaloneReq.AsObject;
@@ -490,6 +493,7 @@ export namespace StandaloneReq {
   export type AsObject = {
     locale: string,
     category: string,
+    version: string,
   }
 }
 
@@ -558,6 +562,9 @@ export class DeleteStandaloneReq extends jspb.Message {
   setArticleNamesList(value: Array<string>): void;
   addArticleNames(value: string, index?: number): string;
 
+  getVersion(): string;
+  setVersion(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteStandaloneReq.AsObject;
   static toObject(includeInstance: boolean, msg: DeleteStandaloneReq): DeleteStandaloneReq.AsObject;
@@ -572,6 +579,7 @@ export namespace DeleteStandaloneReq {
   export type AsObject = {
     locale: string,
     articleNamesList: Array<string>,
+    version: string,
   }
 }
 
@@ -595,6 +603,9 @@ export class SnippetReq extends jspb.Message {
   getLocale(): string;
   setLocale(value: string): void;
 
+  getVersion(): string;
+  setVersion(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SnippetReq.AsObject;
   static toObject(includeInstance: boolean, msg: SnippetReq): SnippetReq.AsObject;
@@ -608,6 +619,7 @@ export class SnippetReq extends jspb.Message {
 export namespace SnippetReq {
   export type AsObject = {
     locale: string,
+    version: string,
   }
 }
 
@@ -676,6 +688,9 @@ export class DeleteLearnPagesReq extends jspb.Message {
   setUrlList(value: Array<string>): void;
   addUrl(value: string, index?: number): string;
 
+  getVersion(): string;
+  setVersion(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteLearnPagesReq.AsObject;
   static toObject(includeInstance: boolean, msg: DeleteLearnPagesReq): DeleteLearnPagesReq.AsObject;
@@ -690,6 +705,7 @@ export namespace DeleteLearnPagesReq {
   export type AsObject = {
     locale: string,
     urlList: Array<string>,
+    version: string,
   }
 }
 
@@ -716,6 +732,9 @@ export class CreateEditVersionReq extends jspb.Message {
   getDestVersion(): string;
   setDestVersion(value: string): void;
 
+  getDestVersionName(): string;
+  setDestVersionName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateEditVersionReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateEditVersionReq): CreateEditVersionReq.AsObject;
@@ -730,10 +749,16 @@ export namespace CreateEditVersionReq {
   export type AsObject = {
     srcVersion: string,
     destVersion: string,
+    destVersionName: string,
   }
 }
 
 export class CreateEditVersionRes extends jspb.Message {
+  hasVersionDetails(): boolean;
+  clearVersionDetails(): void;
+  getVersionDetails(): VersionDetails | undefined;
+  setVersionDetails(value?: VersionDetails): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateEditVersionRes.AsObject;
   static toObject(includeInstance: boolean, msg: CreateEditVersionRes): CreateEditVersionRes.AsObject;
@@ -746,6 +771,7 @@ export class CreateEditVersionRes extends jspb.Message {
 
 export namespace CreateEditVersionRes {
   export type AsObject = {
+    versionDetails?: VersionDetails.AsObject,
   }
 }
 
@@ -770,6 +796,11 @@ export namespace PublishVersionReq {
 }
 
 export class PublishVersionRes extends jspb.Message {
+  hasVersionDetails(): boolean;
+  clearVersionDetails(): void;
+  getVersionDetails(): VersionDetails | undefined;
+  setVersionDetails(value?: VersionDetails): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PublishVersionRes.AsObject;
   static toObject(includeInstance: boolean, msg: PublishVersionRes): PublishVersionRes.AsObject;
@@ -782,6 +813,7 @@ export class PublishVersionRes extends jspb.Message {
 
 export namespace PublishVersionRes {
   export type AsObject = {
+    versionDetails?: VersionDetails.AsObject,
   }
 }
 
@@ -976,6 +1008,12 @@ export class ReviewVersionRes extends jspb.Message {
   getDiffFileNames(): string;
   setDiffFileNames(value: string): void;
 
+  getSrcContent(): string;
+  setSrcContent(value: string): void;
+
+  getDestContent(): string;
+  setDestContent(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReviewVersionRes.AsObject;
   static toObject(includeInstance: boolean, msg: ReviewVersionRes): ReviewVersionRes.AsObject;
@@ -990,6 +1028,8 @@ export namespace ReviewVersionRes {
   export type AsObject = {
     diffUrls: string,
     diffFileNames: string,
+    srcContent: string,
+    destContent: string,
   }
 }
 
@@ -1019,6 +1059,11 @@ export class ListVersionsRes extends jspb.Message {
   setVersionsList(value: Array<string>): void;
   addVersions(value: string, index?: number): string;
 
+  clearVersionDetailsList(): void;
+  getVersionDetailsList(): Array<VersionDetails>;
+  setVersionDetailsList(value: Array<VersionDetails>): void;
+  addVersionDetails(value?: VersionDetails, index?: number): VersionDetails;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListVersionsRes.AsObject;
   static toObject(includeInstance: boolean, msg: ListVersionsRes): ListVersionsRes.AsObject;
@@ -1032,6 +1077,87 @@ export class ListVersionsRes extends jspb.Message {
 export namespace ListVersionsRes {
   export type AsObject = {
     versionsList: Array<string>,
+    versionDetailsList: Array<VersionDetails.AsObject>,
+  }
+}
+
+export class VersionDetails extends jspb.Message {
+  getVersion(): string;
+  setVersion(value: string): void;
+
+  getVersionName(): string;
+  setVersionName(value: string): void;
+
+  hasDateCreated(): boolean;
+  clearDateCreated(): void;
+  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasDatePublished(): boolean;
+  clearDatePublished(): void;
+  getDatePublished(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDatePublished(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getStatus(): string;
+  setStatus(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VersionDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: VersionDetails): VersionDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: VersionDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VersionDetails;
+  static deserializeBinaryFromReader(message: VersionDetails, reader: jspb.BinaryReader): VersionDetails;
+}
+
+export namespace VersionDetails {
+  export type AsObject = {
+    version: string,
+    versionName: string,
+    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    datePublished?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    status: string,
+  }
+}
+
+export class DeleteVersionReq extends jspb.Message {
+  getLocale(): string;
+  setLocale(value: string): void;
+
+  getVersion(): string;
+  setVersion(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteVersionReq.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteVersionReq): DeleteVersionReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteVersionReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteVersionReq;
+  static deserializeBinaryFromReader(message: DeleteVersionReq, reader: jspb.BinaryReader): DeleteVersionReq;
+}
+
+export namespace DeleteVersionReq {
+  export type AsObject = {
+    locale: string,
+    version: string,
+  }
+}
+
+export class DeleteVersionRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteVersionRes.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteVersionRes): DeleteVersionRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteVersionRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteVersionRes;
+  static deserializeBinaryFromReader(message: DeleteVersionRes, reader: jspb.BinaryReader): DeleteVersionRes;
+}
+
+export namespace DeleteVersionRes {
+  export type AsObject = {
   }
 }
 

@@ -2,6 +2,7 @@
 // file: wfo/vanalytics/v2/transcript_summary.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_vanalytics_pb from "../../../api/commons/vanalytics_pb";
 
 export class GetTranscriptSummaryRequest extends jspb.Message {
   getTranscriptSid(): number;
@@ -51,6 +52,9 @@ export class TranscriptSummary extends jspb.Message {
   setBulletPointsList(value: Array<string>): void;
   addBulletPoints(value: string, index?: number): string;
 
+  getStatus(): api_commons_vanalytics_pb.TranscriptSummaryStatusMap[keyof api_commons_vanalytics_pb.TranscriptSummaryStatusMap];
+  setStatus(value: api_commons_vanalytics_pb.TranscriptSummaryStatusMap[keyof api_commons_vanalytics_pb.TranscriptSummaryStatusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TranscriptSummary.AsObject;
   static toObject(includeInstance: boolean, msg: TranscriptSummary): TranscriptSummary.AsObject;
@@ -64,6 +68,7 @@ export class TranscriptSummary extends jspb.Message {
 export namespace TranscriptSummary {
   export type AsObject = {
     bulletPointsList: Array<string>,
+    status: api_commons_vanalytics_pb.TranscriptSummaryStatusMap[keyof api_commons_vanalytics_pb.TranscriptSummaryStatusMap],
   }
 }
 
