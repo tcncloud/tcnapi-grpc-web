@@ -442,6 +442,11 @@ export class BulkDeleteEvaluationsRequest extends jspb.Message {
   setEvaluationIdsList(value: Array<number>): void;
   addEvaluationIds(value: number, index?: number): number;
 
+  hasCompletedAt(): boolean;
+  clearCompletedAt(): void;
+  getCompletedAt(): api_commons_scorecards_pb.TimeFilter | undefined;
+  setCompletedAt(value?: api_commons_scorecards_pb.TimeFilter): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BulkDeleteEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: BulkDeleteEvaluationsRequest): BulkDeleteEvaluationsRequest.AsObject;
@@ -456,10 +461,14 @@ export namespace BulkDeleteEvaluationsRequest {
   export type AsObject = {
     orgId: string,
     evaluationIdsList: Array<number>,
+    completedAt?: api_commons_scorecards_pb.TimeFilter.AsObject,
   }
 }
 
 export class BulkDeleteEvaluationsResponse extends jspb.Message {
+  getCount(): number;
+  setCount(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BulkDeleteEvaluationsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: BulkDeleteEvaluationsResponse): BulkDeleteEvaluationsResponse.AsObject;
@@ -472,6 +481,7 @@ export class BulkDeleteEvaluationsResponse extends jspb.Message {
 
 export namespace BulkDeleteEvaluationsResponse {
   export type AsObject = {
+    count: number,
   }
 }
 

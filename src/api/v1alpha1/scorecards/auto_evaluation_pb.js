@@ -3293,7 +3293,8 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.toObjec
 proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    autoEvaluationIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    autoEvaluationIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3340,6 +3341,11 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.deserializeBinary
         msg.addAutoEvaluationIds(values[i]);
       }
       break;
+    case 3:
+      var value = new api_commons_scorecards_pb.TimeFilter;
+      reader.readMessage(value,api_commons_scorecards_pb.TimeFilter.deserializeBinaryFromReader);
+      msg.setCompletedAt(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3381,6 +3387,14 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.serializeBinaryTo
     writer.writePackedInt64(
       2,
       f
+    );
+  }
+  f = message.getCompletedAt();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      api_commons_scorecards_pb.TimeFilter.serializeBinaryToWriter
     );
   }
 };
@@ -3441,6 +3455,43 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.clearAu
 };
 
 
+/**
+ * optional api.commons.TimeFilter completed_at = 3;
+ * @return {?proto.api.commons.TimeFilter}
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.getCompletedAt = function() {
+  return /** @type{?proto.api.commons.TimeFilter} */ (
+    jspb.Message.getWrapperField(this, api_commons_scorecards_pb.TimeFilter, 3));
+};
+
+
+/**
+ * @param {?proto.api.commons.TimeFilter|undefined} value
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
+*/
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.setCompletedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.clearCompletedAt = function() {
+  return this.setCompletedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.hasCompletedAt = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
 
 
 
@@ -3473,7 +3524,7 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.prototype.toObje
  */
 proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    count: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -3510,6 +3561,10 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.deserializeBinar
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setCount(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3539,6 +3594,31 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.prototype.serial
  */
 proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 count = 1;
+ * @return {number}
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.prototype.getCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsResponse.prototype.setCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 

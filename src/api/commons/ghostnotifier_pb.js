@@ -27,6 +27,8 @@ var api_commons_acd_pb = require('../../api/commons/acd_pb.js');
 goog.object.extend(proto, api_commons_acd_pb);
 var api_commons_omnichannel_pb = require('../../api/commons/omnichannel_pb.js');
 goog.object.extend(proto, api_commons_omnichannel_pb);
+var api_commons_org_auth_token_pb = require('../../api/commons/org/auth_token_pb.js');
+goog.object.extend(proto, api_commons_org_auth_token_pb);
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
 goog.object.extend(proto, google_protobuf_any_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -129,7 +131,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.GhostNotification.oneofGroups_ = [[2,3,4,6,7,8,9]];
+proto.api.commons.GhostNotification.oneofGroups_ = [[2,3,4,6,7,8,9,10]];
 
 /**
  * @enum {number}
@@ -142,7 +144,8 @@ proto.api.commons.GhostNotification.PayloadCase = {
   BACKOFFICE_MESSAGE: 6,
   DIRECTED_CALL_RINGING: 7,
   DIRECTED_CALL_HANGUP: 8,
-  AGENT_QUEUED_CALLS_NOTIFICATION: 9
+  AGENT_QUEUED_CALLS_NOTIFICATION: 9,
+  AUTH_TOKEN_EXPIRATION: 10
 };
 
 /**
@@ -190,7 +193,8 @@ proto.api.commons.GhostNotification.toObject = function(includeInstance, msg) {
     backofficeMessage: (f = msg.getBackofficeMessage()) && api_commons_acd_pb.AgentBackofficeMessageAlert.toObject(includeInstance, f),
     directedCallRinging: (f = msg.getDirectedCallRinging()) && api_commons_acd_pb.AgentDirectedCallRingingAlert.toObject(includeInstance, f),
     directedCallHangup: (f = msg.getDirectedCallHangup()) && api_commons_acd_pb.AgentDirectedCallHangupAlert.toObject(includeInstance, f),
-    agentQueuedCallsNotification: (f = msg.getAgentQueuedCallsNotification()) && proto.api.commons.AgentQueuedCallsNotification.toObject(includeInstance, f)
+    agentQueuedCallsNotification: (f = msg.getAgentQueuedCallsNotification()) && proto.api.commons.AgentQueuedCallsNotification.toObject(includeInstance, f),
+    authTokenExpiration: (f = msg.getAuthTokenExpiration()) && api_commons_org_auth_token_pb.AuthTokenExpiration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -265,6 +269,11 @@ proto.api.commons.GhostNotification.deserializeBinaryFromReader = function(msg, 
       var value = new proto.api.commons.AgentQueuedCallsNotification;
       reader.readMessage(value,proto.api.commons.AgentQueuedCallsNotification.deserializeBinaryFromReader);
       msg.setAgentQueuedCallsNotification(value);
+      break;
+    case 10:
+      var value = new api_commons_org_auth_token_pb.AuthTokenExpiration;
+      reader.readMessage(value,api_commons_org_auth_token_pb.AuthTokenExpiration.deserializeBinaryFromReader);
+      msg.setAuthTokenExpiration(value);
       break;
     default:
       reader.skipField();
@@ -356,6 +365,14 @@ proto.api.commons.GhostNotification.serializeBinaryToWriter = function(message, 
       9,
       f,
       proto.api.commons.AgentQueuedCallsNotification.serializeBinaryToWriter
+    );
+  }
+  f = message.getAuthTokenExpiration();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      api_commons_org_auth_token_pb.AuthTokenExpiration.serializeBinaryToWriter
     );
   }
 };
@@ -635,6 +652,43 @@ proto.api.commons.GhostNotification.prototype.clearAgentQueuedCallsNotification 
  */
 proto.api.commons.GhostNotification.prototype.hasAgentQueuedCallsNotification = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional org.AuthTokenExpiration auth_token_expiration = 10;
+ * @return {?proto.api.commons.org.AuthTokenExpiration}
+ */
+proto.api.commons.GhostNotification.prototype.getAuthTokenExpiration = function() {
+  return /** @type{?proto.api.commons.org.AuthTokenExpiration} */ (
+    jspb.Message.getWrapperField(this, api_commons_org_auth_token_pb.AuthTokenExpiration, 10));
+};
+
+
+/**
+ * @param {?proto.api.commons.org.AuthTokenExpiration|undefined} value
+ * @return {!proto.api.commons.GhostNotification} returns this
+*/
+proto.api.commons.GhostNotification.prototype.setAuthTokenExpiration = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 10, proto.api.commons.GhostNotification.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.GhostNotification} returns this
+ */
+proto.api.commons.GhostNotification.prototype.clearAuthTokenExpiration = function() {
+  return this.setAuthTokenExpiration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.GhostNotification.prototype.hasAuthTokenExpiration = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
