@@ -53,8 +53,8 @@ export class Translation extends jspb.Message {
   getTranslationId(): string;
   setTranslationId(value: string): void;
 
-  getOriginalTemplate(): string;
-  setOriginalTemplate(value: string): void;
+  getTemplate(): string;
+  setTemplate(value: string): void;
 
   getContext(): string;
   setContext(value: string): void;
@@ -81,7 +81,7 @@ export class Translation extends jspb.Message {
 export namespace Translation {
   export type AsObject = {
     translationId: string,
-    originalTemplate: string,
+    template: string,
     context: string,
     languageTag: string,
     llmTranslation: string,

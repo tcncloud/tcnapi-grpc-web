@@ -442,7 +442,7 @@ proto.services.translation.v1alpha1.Translation.prototype.toObject = function(op
 proto.services.translation.v1alpha1.Translation.toObject = function(includeInstance, msg) {
   var f, obj = {
     translationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    originalTemplate: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    template: jspb.Message.getFieldWithDefault(msg, 2, ""),
     context: jspb.Message.getFieldWithDefault(msg, 3, ""),
     languageTag: jspb.Message.getFieldWithDefault(msg, 4, ""),
     llmTranslation: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -489,7 +489,7 @@ proto.services.translation.v1alpha1.Translation.deserializeBinaryFromReader = fu
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOriginalTemplate(value);
+      msg.setTemplate(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -543,7 +543,7 @@ proto.services.translation.v1alpha1.Translation.serializeBinaryToWriter = functi
       f
     );
   }
-  f = message.getOriginalTemplate();
+  f = message.getTemplate();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -600,10 +600,10 @@ proto.services.translation.v1alpha1.Translation.prototype.setTranslationId = fun
 
 
 /**
- * optional string original_template = 2;
+ * optional string template = 2;
  * @return {string}
  */
-proto.services.translation.v1alpha1.Translation.prototype.getOriginalTemplate = function() {
+proto.services.translation.v1alpha1.Translation.prototype.getTemplate = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -612,7 +612,7 @@ proto.services.translation.v1alpha1.Translation.prototype.getOriginalTemplate = 
  * @param {string} value
  * @return {!proto.services.translation.v1alpha1.Translation} returns this
  */
-proto.services.translation.v1alpha1.Translation.prototype.setOriginalTemplate = function(value) {
+proto.services.translation.v1alpha1.Translation.prototype.setTemplate = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
