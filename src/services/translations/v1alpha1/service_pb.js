@@ -1,4 +1,4 @@
-// source: services/translation/v1alpha1/service.proto
+// source: services/translations/v1alpha1/service.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -27,5 +27,5 @@ var annotations_authz_pb = require('../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
-var services_translation_v1alpha1_entities_pb = require('../../../services/translation/v1alpha1/entities_pb.js');
-goog.object.extend(proto, services_translation_v1alpha1_entities_pb);
+var services_translations_v1alpha1_entities_pb = require('../../../services/translations/v1alpha1/entities_pb.js');
+goog.object.extend(proto, services_translations_v1alpha1_entities_pb);

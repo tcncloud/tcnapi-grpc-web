@@ -1,5 +1,5 @@
-// package: services.translation.v1alpha1
-// file: services/translation/v1alpha1/entities.proto
+// package: services.translations.v1alpha1
+// file: services/translations/v1alpha1/entities.proto
 
 import * as jspb from "google-protobuf";
 

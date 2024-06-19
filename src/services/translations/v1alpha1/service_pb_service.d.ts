@@ -1,22 +1,22 @@
-// package: services.translation.v1alpha1
-// file: services/translation/v1alpha1/service.proto
+// package: services.translations.v1alpha1
+// file: services/translations/v1alpha1/service.proto
 
-import * as services_translation_v1alpha1_service_pb from "../../../services/translation/v1alpha1/service_pb";
-import * as services_translation_v1alpha1_entities_pb from "../../../services/translation/v1alpha1/entities_pb";
+import * as services_translations_v1alpha1_service_pb from "../../../services/translations/v1alpha1/service_pb";
+import * as services_translations_v1alpha1_entities_pb from "../../../services/translations/v1alpha1/entities_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type TranslationServiceTranslateTemplate = {
+type TranslationsServiceTranslateTemplate = {
   readonly methodName: string;
-  readonly service: typeof TranslationService;
+  readonly service: typeof TranslationsService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_translation_v1alpha1_entities_pb.TranslateTemplateRequest;
-  readonly responseType: typeof services_translation_v1alpha1_entities_pb.TranslateTemplateResponse;
+  readonly requestType: typeof services_translations_v1alpha1_entities_pb.TranslateTemplateRequest;
+  readonly responseType: typeof services_translations_v1alpha1_entities_pb.TranslateTemplateResponse;
 };
 
-export class TranslationService {
+export class TranslationsService {
   static readonly serviceName: string;
-  static readonly TranslateTemplate: TranslationServiceTranslateTemplate;
+  static readonly TranslateTemplate: TranslationsServiceTranslateTemplate;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -47,18 +47,18 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class TranslationServiceClient {
+export class TranslationsServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
   translateTemplate(
-    requestMessage: services_translation_v1alpha1_entities_pb.TranslateTemplateRequest,
+    requestMessage: services_translations_v1alpha1_entities_pb.TranslateTemplateRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_translation_v1alpha1_entities_pb.TranslateTemplateResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.TranslateTemplateResponse|null) => void
   ): UnaryResponse;
   translateTemplate(
-    requestMessage: services_translation_v1alpha1_entities_pb.TranslateTemplateRequest,
-    callback: (error: ServiceError|null, responseMessage: services_translation_v1alpha1_entities_pb.TranslateTemplateResponse|null) => void
+    requestMessage: services_translations_v1alpha1_entities_pb.TranslateTemplateRequest,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.TranslateTemplateResponse|null) => void
   ): UnaryResponse;
 }
 
