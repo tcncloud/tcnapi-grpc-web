@@ -26797,7 +26797,6 @@ proto.api.v1alpha1.integrations.PortalWorkflow.toObject = function(includeInstan
     template: (f = msg.getTemplate()) && proto.api.v1alpha1.integrations.Template.toObject(includeInstance, f),
     formFieldsList: jspb.Message.toObjectList(msg.getFormFieldsList(),
     api_commons_integrations_integrations_pb.FieldDefinition.toObject, includeInstance),
-    optsMap: (f = msg.getOptsMap()) ? f.toObject(includeInstance, undefined) : [],
     headerText: jspb.Message.getFieldWithDefault(msg, 6, ""),
     footerText: jspb.Message.getFieldWithDefault(msg, 7, ""),
     demoMode: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
@@ -26857,12 +26856,6 @@ proto.api.v1alpha1.integrations.PortalWorkflow.deserializeBinaryFromReader = fun
       var value = new api_commons_integrations_integrations_pb.FieldDefinition;
       reader.readMessage(value,api_commons_integrations_integrations_pb.FieldDefinition.deserializeBinaryFromReader);
       msg.addFormFields(value);
-      break;
-    case 5:
-      var value = msg.getOptsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -26948,10 +26941,6 @@ proto.api.v1alpha1.integrations.PortalWorkflow.serializeBinaryToWriter = functio
       f,
       api_commons_integrations_integrations_pb.FieldDefinition.serializeBinaryToWriter
     );
-  }
-  f = message.getOptsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getHeaderText();
   if (f.length > 0) {
@@ -27114,29 +27103,6 @@ proto.api.v1alpha1.integrations.PortalWorkflow.prototype.addFormFields = functio
  */
 proto.api.v1alpha1.integrations.PortalWorkflow.prototype.clearFormFieldsList = function() {
   return this.setFormFieldsList([]);
-};
-
-
-/**
- * map<string, string> opts = 5;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.api.v1alpha1.integrations.PortalWorkflow.prototype.getOptsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.api.v1alpha1.integrations.PortalWorkflow} returns this
- */
-proto.api.v1alpha1.integrations.PortalWorkflow.prototype.clearOptsMap = function() {
-  this.getOptsMap().clear();
-  return this;
 };
 
 
@@ -27346,7 +27312,8 @@ proto.api.v1alpha1.integrations.Action.toObject = function(includeInstance, msg)
     pluginInstanceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     restructureBeforeMap: (f = msg.getRestructureBeforeMap()) ? f.toObject(includeInstance, undefined) : [],
     restructureAfterMap: (f = msg.getRestructureAfterMap()) ? f.toObject(includeInstance, undefined) : [],
-    actionDefinitionName: jspb.Message.getFieldWithDefault(msg, 7, "")
+    actionDefinitionName: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    optsMap: (f = msg.getOptsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -27403,6 +27370,12 @@ proto.api.v1alpha1.integrations.Action.deserializeBinaryFromReader = function(ms
       var value = /** @type {string} */ (reader.readString());
       msg.setActionDefinitionName(value);
       break;
+    case 8:
+      var value = msg.getOptsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
+      break;
     default:
       reader.skipField();
       break;
@@ -27453,6 +27426,10 @@ proto.api.v1alpha1.integrations.Action.serializeBinaryToWriter = function(messag
       7,
       f
     );
+  }
+  f = message.getOptsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -27536,6 +27513,29 @@ proto.api.v1alpha1.integrations.Action.prototype.getActionDefinitionName = funct
  */
 proto.api.v1alpha1.integrations.Action.prototype.setActionDefinitionName = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * map<string, string> opts = 8;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.api.v1alpha1.integrations.Action.prototype.getOptsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 8, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.api.v1alpha1.integrations.Action} returns this
+ */
+proto.api.v1alpha1.integrations.Action.prototype.clearOptsMap = function() {
+  this.getOptsMap().clear();
+  return this;
 };
 
 
