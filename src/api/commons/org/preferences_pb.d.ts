@@ -2149,3 +2149,47 @@ export namespace ObservedHoliday {
   }
 }
 
+export class CertificateInfo extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getHash(): string;
+  setHash(value: string): void;
+
+  hasExpirationDate(): boolean;
+  clearExpirationDate(): void;
+  getExpirationDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpirationDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasCreationDate(): boolean;
+  clearCreationDate(): void;
+  getCreationDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreationDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CertificateInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: CertificateInfo): CertificateInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CertificateInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CertificateInfo;
+  static deserializeBinaryFromReader(message: CertificateInfo, reader: jspb.BinaryReader): CertificateInfo;
+}
+
+export namespace CertificateInfo {
+  export type AsObject = {
+    orgId: string,
+    name: string,
+    description: string,
+    hash: string,
+    expirationDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    creationDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
