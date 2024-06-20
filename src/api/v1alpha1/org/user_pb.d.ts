@@ -3054,6 +3054,42 @@ export namespace GenerateTOTPSecretResponse {
   }
 }
 
+export class RegisterTOTPRequest extends jspb.Message {
+  getCode(): string;
+  setCode(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RegisterTOTPRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RegisterTOTPRequest): RegisterTOTPRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RegisterTOTPRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RegisterTOTPRequest;
+  static deserializeBinaryFromReader(message: RegisterTOTPRequest, reader: jspb.BinaryReader): RegisterTOTPRequest;
+}
+
+export namespace RegisterTOTPRequest {
+  export type AsObject = {
+    code: string,
+  }
+}
+
+export class RegisterTOTPResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RegisterTOTPResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RegisterTOTPResponse): RegisterTOTPResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RegisterTOTPResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RegisterTOTPResponse;
+  static deserializeBinaryFromReader(message: RegisterTOTPResponse, reader: jspb.BinaryReader): RegisterTOTPResponse;
+}
+
+export namespace RegisterTOTPResponse {
+  export type AsObject = {
+  }
+}
+
 export class AddGroupedUserIPRestrictionsRequest extends jspb.Message {
   clearUserIdsList(): void;
   getUserIdsList(): Array<string>;
