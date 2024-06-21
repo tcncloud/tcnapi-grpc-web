@@ -45,6 +45,16 @@ export class PermissionSet extends jspb.Message {
   setPermissionsList(value: Array<api_commons_auth_perms_pb.PermissionMap[keyof api_commons_auth_perms_pb.PermissionMap]>): void;
   addPermissions(value: api_commons_auth_perms_pb.PermissionMap[keyof api_commons_auth_perms_pb.PermissionMap], index?: number): api_commons_auth_perms_pb.PermissionMap[keyof api_commons_auth_perms_pb.PermissionMap];
 
+  hasTaintFieldId(): boolean;
+  clearTaintFieldId(): void;
+  getTaintFieldId(): number | undefined;
+  setTaintFieldId(value: number): void;
+
+  hasTaintFieldValue(): boolean;
+  clearTaintFieldValue(): void;
+  getTaintFieldValue(): number | undefined;
+  setTaintFieldValue(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PermissionSet.AsObject;
   static toObject(includeInstance: boolean, msg: PermissionSet): PermissionSet.AsObject;
@@ -58,6 +68,8 @@ export class PermissionSet extends jspb.Message {
 export namespace PermissionSet {
   export type AsObject = {
     permissionsList: Array<api_commons_auth_perms_pb.PermissionMap[keyof api_commons_auth_perms_pb.PermissionMap]>,
+    taintFieldId?: number,
+    taintFieldValue?: number,
   }
 }
 

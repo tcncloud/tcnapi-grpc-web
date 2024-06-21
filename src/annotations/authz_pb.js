@@ -367,7 +367,9 @@ proto.annotations.PermissionSet.prototype.toObject = function(opt_includeInstanc
  */
 proto.annotations.PermissionSet.toObject = function(includeInstance, msg) {
   var f, obj = {
-    permissionsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+    permissionsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    taintFieldId: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    taintFieldValue: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -410,6 +412,14 @@ proto.annotations.PermissionSet.deserializeBinaryFromReader = function(msg, read
         msg.addPermissions(values[i]);
       }
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTaintFieldId(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTaintFieldValue(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -443,6 +453,20 @@ proto.annotations.PermissionSet.serializeBinaryToWriter = function(message, writ
   if (f.length > 0) {
     writer.writeRepeatedEnum(
       1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt32(
+      3,
       f
     );
   }
@@ -483,6 +507,78 @@ proto.annotations.PermissionSet.prototype.addPermissions = function(value, opt_i
  */
 proto.annotations.PermissionSet.prototype.clearPermissionsList = function() {
   return this.setPermissionsList([]);
+};
+
+
+/**
+ * optional int32 taint_field_id = 2;
+ * @return {number}
+ */
+proto.annotations.PermissionSet.prototype.getTaintFieldId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.annotations.PermissionSet} returns this
+ */
+proto.annotations.PermissionSet.prototype.setTaintFieldId = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.annotations.PermissionSet} returns this
+ */
+proto.annotations.PermissionSet.prototype.clearTaintFieldId = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.annotations.PermissionSet.prototype.hasTaintFieldId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int32 taint_field_value = 3;
+ * @return {number}
+ */
+proto.annotations.PermissionSet.prototype.getTaintFieldValue = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.annotations.PermissionSet} returns this
+ */
+proto.annotations.PermissionSet.prototype.setTaintFieldValue = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.annotations.PermissionSet} returns this
+ */
+proto.annotations.PermissionSet.prototype.clearTaintFieldValue = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.annotations.PermissionSet.prototype.hasTaintFieldValue = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
