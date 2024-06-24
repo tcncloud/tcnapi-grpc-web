@@ -1326,7 +1326,8 @@ proto.api.commons.Evaluation.toObject = function(includeInstance, msg) {
     transcriptSid: jspb.Message.getFieldWithDefault(msg, 15, 0),
     customFieldsList: jspb.Message.toObjectList(msg.getCustomFieldsList(),
     proto.api.commons.Evaluation.CustomField.toObject, includeInstance),
-    deletedBy: jspb.Message.getFieldWithDefault(msg, 18, "")
+    deletedBy: jspb.Message.getFieldWithDefault(msg, 18, ""),
+    isRecoverable: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
   };
 
   if (includeInstance) {
@@ -1422,6 +1423,10 @@ proto.api.commons.Evaluation.deserializeBinaryFromReader = function(msg, reader)
     case 18:
       var value = /** @type {string} */ (reader.readString());
       msg.setDeletedBy(value);
+      break;
+    case 20:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsRecoverable(value);
       break;
     default:
       reader.skipField();
@@ -1551,6 +1556,13 @@ proto.api.commons.Evaluation.serializeBinaryToWriter = function(message, writer)
   if (f.length > 0) {
     writer.writeString(
       18,
+      f
+    );
+  }
+  f = message.getIsRecoverable();
+  if (f) {
+    writer.writeBool(
+      20,
       f
     );
   }
@@ -2044,6 +2056,24 @@ proto.api.commons.Evaluation.prototype.getDeletedBy = function() {
  */
 proto.api.commons.Evaluation.prototype.setDeletedBy = function(value) {
   return jspb.Message.setProto3StringField(this, 18, value);
+};
+
+
+/**
+ * optional bool is_recoverable = 20;
+ * @return {boolean}
+ */
+proto.api.commons.Evaluation.prototype.getIsRecoverable = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.Evaluation} returns this
+ */
+proto.api.commons.Evaluation.prototype.setIsRecoverable = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 20, value);
 };
 
 

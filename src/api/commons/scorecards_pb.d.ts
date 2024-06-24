@@ -158,6 +158,9 @@ export class Evaluation extends jspb.Message {
   getDeletedBy(): string;
   setDeletedBy(value: string): void;
 
+  getIsRecoverable(): boolean;
+  setIsRecoverable(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Evaluation.AsObject;
   static toObject(includeInstance: boolean, msg: Evaluation): Evaluation.AsObject;
@@ -184,6 +187,7 @@ export namespace Evaluation {
     transcriptSid: number,
     customFieldsList: Array<Evaluation.CustomField.AsObject>,
     deletedBy: string,
+    isRecoverable: boolean,
   }
 
   export class CustomField extends jspb.Message {
