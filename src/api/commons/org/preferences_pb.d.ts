@@ -2175,6 +2175,9 @@ export class CertificateInfo extends jspb.Message {
   getCreationDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreationDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getRequestBy(): string;
+  setRequestBy(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CertificateInfo.AsObject;
   static toObject(includeInstance: boolean, msg: CertificateInfo): CertificateInfo.AsObject;
@@ -2194,6 +2197,7 @@ export namespace CertificateInfo {
     hash: string,
     expirationDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     creationDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    requestBy: string,
   }
 }
 

@@ -16419,7 +16419,8 @@ proto.api.commons.org.CertificateInfo.toObject = function(includeInstance, msg) 
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
     hash: jspb.Message.getFieldWithDefault(msg, 5, ""),
     expirationDate: (f = msg.getExpirationDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    creationDate: (f = msg.getCreationDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    creationDate: (f = msg.getCreationDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    requestBy: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -16485,6 +16486,10 @@ proto.api.commons.org.CertificateInfo.deserializeBinaryFromReader = function(msg
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreationDate(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRequestBy(value);
       break;
     default:
       reader.skipField();
@@ -16564,6 +16569,13 @@ proto.api.commons.org.CertificateInfo.serializeBinaryToWriter = function(message
       7,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getRequestBy();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
     );
   }
 };
@@ -16730,6 +16742,24 @@ proto.api.commons.org.CertificateInfo.prototype.clearCreationDate = function() {
  */
 proto.api.commons.org.CertificateInfo.prototype.hasCreationDate = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string request_by = 8;
+ * @return {string}
+ */
+proto.api.commons.org.CertificateInfo.prototype.getRequestBy = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.CertificateInfo} returns this
+ */
+proto.api.commons.org.CertificateInfo.prototype.setRequestBy = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
