@@ -344,6 +344,11 @@ export namespace Sms {
     getUserId(): string;
     setUserId(value: string): void;
 
+    hasSentiment(): boolean;
+    clearSentiment(): void;
+    getSentiment(): Sentiment | undefined;
+    setSentiment(value?: Sentiment): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Thread.AsObject;
     static toObject(includeInstance: boolean, msg: Thread): Thread.AsObject;
@@ -359,6 +364,7 @@ export namespace Sms {
       id: number,
       segmentsList: Array<Sms.Segment.AsObject>,
       userId: string,
+      sentiment?: Sentiment.AsObject,
     }
   }
 
@@ -557,6 +563,11 @@ export namespace Call {
     getUserId(): string;
     setUserId(value: string): void;
 
+    hasSentiment(): boolean;
+    clearSentiment(): void;
+    getSentiment(): Sentiment | undefined;
+    setSentiment(value?: Sentiment): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Thread.AsObject;
     static toObject(includeInstance: boolean, msg: Thread): Thread.AsObject;
@@ -572,6 +583,7 @@ export namespace Call {
       id: number,
       segmentsList: Array<Call.Segment.AsObject>,
       userId: string,
+      sentiment?: Sentiment.AsObject,
     }
   }
 
@@ -772,6 +784,108 @@ export namespace Call {
       export type AsObject = {
         total: number,
       }
+    }
+  }
+}
+
+export class Sentiment extends jspb.Message {
+  hasOverall(): boolean;
+  clearOverall(): void;
+  getOverall(): Sentiment.Estimate | undefined;
+  setOverall(value?: Sentiment.Estimate): void;
+
+  getWorst(): api_commons_vanalytics_pb.TranscriptSentimentToneMap[keyof api_commons_vanalytics_pb.TranscriptSentimentToneMap];
+  setWorst(value: api_commons_vanalytics_pb.TranscriptSentimentToneMap[keyof api_commons_vanalytics_pb.TranscriptSentimentToneMap]): void;
+
+  getDominant(): api_commons_vanalytics_pb.TranscriptSentimentToneMap[keyof api_commons_vanalytics_pb.TranscriptSentimentToneMap];
+  setDominant(value: api_commons_vanalytics_pb.TranscriptSentimentToneMap[keyof api_commons_vanalytics_pb.TranscriptSentimentToneMap]): void;
+
+  getLast(): api_commons_vanalytics_pb.TranscriptSentimentToneMap[keyof api_commons_vanalytics_pb.TranscriptSentimentToneMap];
+  setLast(value: api_commons_vanalytics_pb.TranscriptSentimentToneMap[keyof api_commons_vanalytics_pb.TranscriptSentimentToneMap]): void;
+
+  clearSamplesList(): void;
+  getSamplesList(): Array<Sentiment.Sample>;
+  setSamplesList(value: Array<Sentiment.Sample>): void;
+  addSamples(value?: Sentiment.Sample, index?: number): Sentiment.Sample;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Sentiment.AsObject;
+  static toObject(includeInstance: boolean, msg: Sentiment): Sentiment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Sentiment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Sentiment;
+  static deserializeBinaryFromReader(message: Sentiment, reader: jspb.BinaryReader): Sentiment;
+}
+
+export namespace Sentiment {
+  export type AsObject = {
+    overall?: Sentiment.Estimate.AsObject,
+    worst: api_commons_vanalytics_pb.TranscriptSentimentToneMap[keyof api_commons_vanalytics_pb.TranscriptSentimentToneMap],
+    dominant: api_commons_vanalytics_pb.TranscriptSentimentToneMap[keyof api_commons_vanalytics_pb.TranscriptSentimentToneMap],
+    last: api_commons_vanalytics_pb.TranscriptSentimentToneMap[keyof api_commons_vanalytics_pb.TranscriptSentimentToneMap],
+    samplesList: Array<Sentiment.Sample.AsObject>,
+  }
+
+  export class Sample extends jspb.Message {
+    hasEstimate(): boolean;
+    clearEstimate(): void;
+    getEstimate(): Sentiment.Estimate | undefined;
+    setEstimate(value?: Sentiment.Estimate): void;
+
+    hasOffset(): boolean;
+    clearOffset(): void;
+    getOffset(): google_protobuf_duration_pb.Duration | undefined;
+    setOffset(value?: google_protobuf_duration_pb.Duration): void;
+
+    hasDuration(): boolean;
+    clearDuration(): void;
+    getDuration(): google_protobuf_duration_pb.Duration | undefined;
+    setDuration(value?: google_protobuf_duration_pb.Duration): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Sample.AsObject;
+    static toObject(includeInstance: boolean, msg: Sample): Sample.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Sample, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Sample;
+    static deserializeBinaryFromReader(message: Sample, reader: jspb.BinaryReader): Sample;
+  }
+
+  export namespace Sample {
+    export type AsObject = {
+      estimate?: Sentiment.Estimate.AsObject,
+      offset?: google_protobuf_duration_pb.Duration.AsObject,
+      duration?: google_protobuf_duration_pb.Duration.AsObject,
+    }
+  }
+
+  export class Estimate extends jspb.Message {
+    getPositive(): number;
+    setPositive(value: number): void;
+
+    getNeutral(): number;
+    setNeutral(value: number): void;
+
+    getNegative(): number;
+    setNegative(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Estimate.AsObject;
+    static toObject(includeInstance: boolean, msg: Estimate): Estimate.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Estimate, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Estimate;
+    static deserializeBinaryFromReader(message: Estimate, reader: jspb.BinaryReader): Estimate;
+  }
+
+  export namespace Estimate {
+    export type AsObject = {
+      positive: number,
+      neutral: number,
+      negative: number,
     }
   }
 }
