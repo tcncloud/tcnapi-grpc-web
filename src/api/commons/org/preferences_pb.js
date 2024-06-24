@@ -16413,10 +16413,11 @@ proto.api.commons.org.CertificateInfo.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.org.CertificateInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    hash: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    certificateInfoId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    hash: jspb.Message.getFieldWithDefault(msg, 5, ""),
     expirationDate: (f = msg.getExpirationDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     creationDate: (f = msg.getCreationDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -16457,26 +16458,30 @@ proto.api.commons.org.CertificateInfo.deserializeBinaryFromReader = function(msg
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOrgId(value);
+      msg.setCertificateInfoId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setOrgId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
+      msg.setName(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setHash(value);
+      msg.setDescription(value);
       break;
     case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHash(value);
+      break;
+    case 6:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setExpirationDate(value);
       break;
-    case 6:
+    case 7:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreationDate(value);
@@ -16510,38 +16515,45 @@ proto.api.commons.org.CertificateInfo.prototype.serializeBinary = function() {
  */
 proto.api.commons.org.CertificateInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrgId();
+  f = message.getCertificateInfoId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getName();
+  f = message.getOrgId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getDescription();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getHash();
+  f = message.getDescription();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
+  f = message.getHash();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getExpirationDate();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -16549,7 +16561,7 @@ proto.api.commons.org.CertificateInfo.serializeBinaryToWriter = function(message
   f = message.getCreationDate();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -16558,10 +16570,10 @@ proto.api.commons.org.CertificateInfo.serializeBinaryToWriter = function(message
 
 
 /**
- * optional string org_id = 1;
+ * optional string certificate_info_id = 1;
  * @return {string}
  */
-proto.api.commons.org.CertificateInfo.prototype.getOrgId = function() {
+proto.api.commons.org.CertificateInfo.prototype.getCertificateInfoId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -16570,16 +16582,16 @@ proto.api.commons.org.CertificateInfo.prototype.getOrgId = function() {
  * @param {string} value
  * @return {!proto.api.commons.org.CertificateInfo} returns this
  */
-proto.api.commons.org.CertificateInfo.prototype.setOrgId = function(value) {
+proto.api.commons.org.CertificateInfo.prototype.setCertificateInfoId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string name = 2;
+ * optional string org_id = 2;
  * @return {string}
  */
-proto.api.commons.org.CertificateInfo.prototype.getName = function() {
+proto.api.commons.org.CertificateInfo.prototype.getOrgId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -16588,16 +16600,16 @@ proto.api.commons.org.CertificateInfo.prototype.getName = function() {
  * @param {string} value
  * @return {!proto.api.commons.org.CertificateInfo} returns this
  */
-proto.api.commons.org.CertificateInfo.prototype.setName = function(value) {
+proto.api.commons.org.CertificateInfo.prototype.setOrgId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string description = 3;
+ * optional string name = 3;
  * @return {string}
  */
-proto.api.commons.org.CertificateInfo.prototype.getDescription = function() {
+proto.api.commons.org.CertificateInfo.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -16606,16 +16618,16 @@ proto.api.commons.org.CertificateInfo.prototype.getDescription = function() {
  * @param {string} value
  * @return {!proto.api.commons.org.CertificateInfo} returns this
  */
-proto.api.commons.org.CertificateInfo.prototype.setDescription = function(value) {
+proto.api.commons.org.CertificateInfo.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string hash = 4;
+ * optional string description = 4;
  * @return {string}
  */
-proto.api.commons.org.CertificateInfo.prototype.getHash = function() {
+proto.api.commons.org.CertificateInfo.prototype.getDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -16624,18 +16636,36 @@ proto.api.commons.org.CertificateInfo.prototype.getHash = function() {
  * @param {string} value
  * @return {!proto.api.commons.org.CertificateInfo} returns this
  */
-proto.api.commons.org.CertificateInfo.prototype.setHash = function(value) {
+proto.api.commons.org.CertificateInfo.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp expiration_date = 5;
+ * optional string hash = 5;
+ * @return {string}
+ */
+proto.api.commons.org.CertificateInfo.prototype.getHash = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.CertificateInfo} returns this
+ */
+proto.api.commons.org.CertificateInfo.prototype.setHash = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp expiration_date = 6;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.api.commons.org.CertificateInfo.prototype.getExpirationDate = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
 };
 
 
@@ -16644,7 +16674,7 @@ proto.api.commons.org.CertificateInfo.prototype.getExpirationDate = function() {
  * @return {!proto.api.commons.org.CertificateInfo} returns this
 */
 proto.api.commons.org.CertificateInfo.prototype.setExpirationDate = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -16662,17 +16692,17 @@ proto.api.commons.org.CertificateInfo.prototype.clearExpirationDate = function()
  * @return {boolean}
  */
 proto.api.commons.org.CertificateInfo.prototype.hasExpirationDate = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp creation_date = 6;
+ * optional google.protobuf.Timestamp creation_date = 7;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.api.commons.org.CertificateInfo.prototype.getCreationDate = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
 };
 
 
@@ -16681,7 +16711,7 @@ proto.api.commons.org.CertificateInfo.prototype.getCreationDate = function() {
  * @return {!proto.api.commons.org.CertificateInfo} returns this
 */
 proto.api.commons.org.CertificateInfo.prototype.setCreationDate = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -16699,7 +16729,7 @@ proto.api.commons.org.CertificateInfo.prototype.clearCreationDate = function() {
  * @return {boolean}
  */
 proto.api.commons.org.CertificateInfo.prototype.hasCreationDate = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

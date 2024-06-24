@@ -2150,6 +2150,9 @@ export namespace ObservedHoliday {
 }
 
 export class CertificateInfo extends jspb.Message {
+  getCertificateInfoId(): string;
+  setCertificateInfoId(value: string): void;
+
   getOrgId(): string;
   setOrgId(value: string): void;
 
@@ -2184,6 +2187,7 @@ export class CertificateInfo extends jspb.Message {
 
 export namespace CertificateInfo {
   export type AsObject = {
+    certificateInfoId: string,
     orgId: string,
     name: string,
     description: string,

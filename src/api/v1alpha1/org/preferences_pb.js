@@ -18999,7 +18999,7 @@ proto.api.v1alpha1.org.DeleteCertificateInfoRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.org.DeleteCertificateInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    hash: jspb.Message.getFieldWithDefault(msg, 1, "")
+    certificateInfoId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -19038,7 +19038,7 @@ proto.api.v1alpha1.org.DeleteCertificateInfoRequest.deserializeBinaryFromReader 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setHash(value);
+      msg.setCertificateInfoId(value);
       break;
     default:
       reader.skipField();
@@ -19069,7 +19069,7 @@ proto.api.v1alpha1.org.DeleteCertificateInfoRequest.prototype.serializeBinary = 
  */
 proto.api.v1alpha1.org.DeleteCertificateInfoRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getHash();
+  f = message.getCertificateInfoId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -19080,10 +19080,10 @@ proto.api.v1alpha1.org.DeleteCertificateInfoRequest.serializeBinaryToWriter = fu
 
 
 /**
- * optional string hash = 1;
+ * optional string certificate_info_id = 1;
  * @return {string}
  */
-proto.api.v1alpha1.org.DeleteCertificateInfoRequest.prototype.getHash = function() {
+proto.api.v1alpha1.org.DeleteCertificateInfoRequest.prototype.getCertificateInfoId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -19092,7 +19092,7 @@ proto.api.v1alpha1.org.DeleteCertificateInfoRequest.prototype.getHash = function
  * @param {string} value
  * @return {!proto.api.v1alpha1.org.DeleteCertificateInfoRequest} returns this
  */
-proto.api.v1alpha1.org.DeleteCertificateInfoRequest.prototype.setHash = function(value) {
+proto.api.v1alpha1.org.DeleteCertificateInfoRequest.prototype.setCertificateInfoId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

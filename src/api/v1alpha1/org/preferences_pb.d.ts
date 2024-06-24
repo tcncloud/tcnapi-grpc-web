@@ -2413,8 +2413,8 @@ export namespace CreateCertificateInfoResponse {
 }
 
 export class DeleteCertificateInfoRequest extends jspb.Message {
-  getHash(): string;
-  setHash(value: string): void;
+  getCertificateInfoId(): string;
+  setCertificateInfoId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteCertificateInfoRequest.AsObject;
@@ -2428,7 +2428,7 @@ export class DeleteCertificateInfoRequest extends jspb.Message {
 
 export namespace DeleteCertificateInfoRequest {
   export type AsObject = {
-    hash: string,
+    certificateInfoId: string,
   }
 }
 
