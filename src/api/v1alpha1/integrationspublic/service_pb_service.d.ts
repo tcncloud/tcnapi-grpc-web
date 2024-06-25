@@ -58,15 +58,6 @@ type IntegrationsPublicGetReceipt = {
   readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.GetReceiptRes;
 };
 
-type IntegrationsPublicProcessWorkflow = {
-  readonly methodName: string;
-  readonly service: typeof IntegrationsPublic;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_integrationspublic_service_pb.ProcessWorkflowReq;
-  readonly responseType: typeof api_v1alpha1_integrationspublic_service_pb.ProcessWorkflowRes;
-};
-
 export class IntegrationsPublic {
   static readonly serviceName: string;
   static readonly GetLinkData: IntegrationsPublicGetLinkData;
@@ -75,7 +66,6 @@ export class IntegrationsPublic {
   static readonly GetInvoice: IntegrationsPublicGetInvoice;
   static readonly SubmitPayment: IntegrationsPublicSubmitPayment;
   static readonly GetReceipt: IntegrationsPublicGetReceipt;
-  static readonly ProcessWorkflow: IntegrationsPublicProcessWorkflow;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -163,15 +153,6 @@ export class IntegrationsPublicClient {
   getReceipt(
     requestMessage: api_v1alpha1_integrationspublic_service_pb.GetReceiptReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.GetReceiptRes|null) => void
-  ): UnaryResponse;
-  processWorkflow(
-    requestMessage: api_v1alpha1_integrationspublic_service_pb.ProcessWorkflowReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.ProcessWorkflowRes|null) => void
-  ): UnaryResponse;
-  processWorkflow(
-    requestMessage: api_v1alpha1_integrationspublic_service_pb.ProcessWorkflowReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrationspublic_service_pb.ProcessWorkflowRes|null) => void
   ): UnaryResponse;
 }
 

@@ -3,7 +3,6 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_integrations_integrations_pb from "../../../api/commons/integrations/integrations_pb";
-import * as api_v1alpha1_integrations_service_pb from "../../../api/v1alpha1/integrations/service_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -715,64 +714,6 @@ export namespace GetReceiptRes {
     amountPaid: number,
     amountPaidKey: string,
     paymentFlow?: api_commons_integrations_integrations_pb.PaymentFlow.AsObject,
-  }
-}
-
-export class ProcessWorkflowReq extends jspb.Message {
-  getPortalLinkId(): string;
-  setPortalLinkId(value: string): void;
-
-  getPortalId(): string;
-  setPortalId(value: string): void;
-
-  getSegment(): number;
-  setSegment(value: number): void;
-
-  getChoice(): number;
-  setChoice(value: number): void;
-
-  getParamsMap(): jspb.Map<string, Value>;
-  clearParamsMap(): void;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProcessWorkflowReq.AsObject;
-  static toObject(includeInstance: boolean, msg: ProcessWorkflowReq): ProcessWorkflowReq.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ProcessWorkflowReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProcessWorkflowReq;
-  static deserializeBinaryFromReader(message: ProcessWorkflowReq, reader: jspb.BinaryReader): ProcessWorkflowReq;
-}
-
-export namespace ProcessWorkflowReq {
-  export type AsObject = {
-    portalLinkId: string,
-    portalId: string,
-    segment: number,
-    choice: number,
-    paramsMap: Array<[string, Value.AsObject]>,
-  }
-}
-
-export class ProcessWorkflowRes extends jspb.Message {
-  getSuccess(): boolean;
-  setSuccess(value: boolean): void;
-
-  getDataMap(): jspb.Map<string, Value>;
-  clearDataMap(): void;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProcessWorkflowRes.AsObject;
-  static toObject(includeInstance: boolean, msg: ProcessWorkflowRes): ProcessWorkflowRes.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ProcessWorkflowRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProcessWorkflowRes;
-  static deserializeBinaryFromReader(message: ProcessWorkflowRes, reader: jspb.BinaryReader): ProcessWorkflowRes;
-}
-
-export namespace ProcessWorkflowRes {
-  export type AsObject = {
-    success: boolean,
-    dataMap: Array<[string, Value.AsObject]>,
   }
 }
 

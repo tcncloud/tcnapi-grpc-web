@@ -64,15 +64,6 @@ IntegrationsPublic.GetReceipt = {
   responseType: api_v1alpha1_integrationspublic_service_pb.GetReceiptRes
 };
 
-IntegrationsPublic.ProcessWorkflow = {
-  methodName: "ProcessWorkflow",
-  service: IntegrationsPublic,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_integrationspublic_service_pb.ProcessWorkflowReq,
-  responseType: api_v1alpha1_integrationspublic_service_pb.ProcessWorkflowRes
-};
-
 exports.IntegrationsPublic = IntegrationsPublic;
 
 function IntegrationsPublicClient(serviceHost, options) {
@@ -240,37 +231,6 @@ IntegrationsPublicClient.prototype.getReceipt = function getReceipt(requestMessa
     callback = arguments[1];
   }
   var client = grpc.unary(IntegrationsPublic.GetReceipt, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-IntegrationsPublicClient.prototype.processWorkflow = function processWorkflow(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(IntegrationsPublic.ProcessWorkflow, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
