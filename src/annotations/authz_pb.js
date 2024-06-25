@@ -684,7 +684,7 @@ proto.annotations.Taint.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional int32 id = 1;
+ * required int32 id = 1;
  * @return {number}
  */
 proto.annotations.Taint.prototype.getId = function() {
@@ -720,7 +720,7 @@ proto.annotations.Taint.prototype.hasId = function() {
 
 
 /**
- * optional int32 value = 2;
+ * required int32 value = 2;
  * @return {number}
  */
 proto.annotations.Taint.prototype.getValue = function() {
