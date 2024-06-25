@@ -1986,6 +1986,15 @@ type OrgGenerateTOTPSecret = {
   readonly responseType: typeof api_v1alpha1_org_user_pb.GenerateTOTPSecretResponse;
 };
 
+type OrgVerifyTOTPCode = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.VerifyTOTPCodeRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.VerifyTOTPCodeResponse;
+};
+
 type OrgCreateBusinessHours = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -2297,6 +2306,7 @@ export class Org {
   static readonly GetMyUserMfaInfo: OrgGetMyUserMfaInfo;
   static readonly GetMyAllowedMfaMethods: OrgGetMyAllowedMfaMethods;
   static readonly GenerateTOTPSecret: OrgGenerateTOTPSecret;
+  static readonly VerifyTOTPCode: OrgVerifyTOTPCode;
   static readonly CreateBusinessHours: OrgCreateBusinessHours;
   static readonly UpdateBusinessHours: OrgUpdateBusinessHours;
   static readonly AddGroupedUserIPRestrictions: OrgAddGroupedUserIPRestrictions;
@@ -4231,6 +4241,15 @@ export class OrgClient {
   generateTOTPSecret(
     requestMessage: api_v1alpha1_org_user_pb.GenerateTOTPSecretRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.GenerateTOTPSecretResponse|null) => void
+  ): UnaryResponse;
+  verifyTOTPCode(
+    requestMessage: api_v1alpha1_org_user_pb.VerifyTOTPCodeRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.VerifyTOTPCodeResponse|null) => void
+  ): UnaryResponse;
+  verifyTOTPCode(
+    requestMessage: api_v1alpha1_org_user_pb.VerifyTOTPCodeRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.VerifyTOTPCodeResponse|null) => void
   ): UnaryResponse;
   createBusinessHours(
     requestMessage: api_v1alpha1_org_preferences_pb.CreateBusinessHoursRequest,

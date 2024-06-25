@@ -571,6 +571,15 @@ type WFMListCandidateSchedulingActivities = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListCandidateSchedulingActivitiesRes;
 };
 
+type WFMGetOnCallSchedulingActivity = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityReq;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityRes;
+};
+
 type WFMCreateAgentGroup = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1644,6 +1653,7 @@ export class WFM {
   static readonly ListNonSkillActivities: WFMListNonSkillActivities;
   static readonly ListNonSkillActivityAssociations: WFMListNonSkillActivityAssociations;
   static readonly ListCandidateSchedulingActivities: WFMListCandidateSchedulingActivities;
+  static readonly GetOnCallSchedulingActivity: WFMGetOnCallSchedulingActivity;
   static readonly CreateAgentGroup: WFMCreateAgentGroup;
   static readonly ListAgentScheduleGroups: WFMListAgentScheduleGroups;
   static readonly UpdateAgentGroup: WFMUpdateAgentGroup;
@@ -2308,6 +2318,15 @@ export class WFMClient {
   listCandidateSchedulingActivities(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListCandidateSchedulingActivitiesReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListCandidateSchedulingActivitiesRes|null) => void
+  ): UnaryResponse;
+  getOnCallSchedulingActivity(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityRes|null) => void
+  ): UnaryResponse;
+  getOnCallSchedulingActivity(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityRes|null) => void
   ): UnaryResponse;
   createAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentGroupReq,
