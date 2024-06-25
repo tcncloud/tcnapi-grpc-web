@@ -45,15 +45,10 @@ export class PermissionSet extends jspb.Message {
   setPermissionsList(value: Array<api_commons_auth_perms_pb.PermissionMap[keyof api_commons_auth_perms_pb.PermissionMap]>): void;
   addPermissions(value: api_commons_auth_perms_pb.PermissionMap[keyof api_commons_auth_perms_pb.PermissionMap], index?: number): api_commons_auth_perms_pb.PermissionMap[keyof api_commons_auth_perms_pb.PermissionMap];
 
-  hasTaintFieldId(): boolean;
-  clearTaintFieldId(): void;
-  getTaintFieldId(): number | undefined;
-  setTaintFieldId(value: number): void;
-
-  hasTaintFieldValue(): boolean;
-  clearTaintFieldValue(): void;
-  getTaintFieldValue(): number | undefined;
-  setTaintFieldValue(value: number): void;
+  hasTaint(): boolean;
+  clearTaint(): void;
+  getTaint(): Taint | undefined;
+  setTaint(value?: Taint): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PermissionSet.AsObject;
@@ -68,8 +63,35 @@ export class PermissionSet extends jspb.Message {
 export namespace PermissionSet {
   export type AsObject = {
     permissionsList: Array<api_commons_auth_perms_pb.PermissionMap[keyof api_commons_auth_perms_pb.PermissionMap]>,
-    taintFieldId?: number,
-    taintFieldValue?: number,
+    taint?: Taint.AsObject,
+  }
+}
+
+export class Taint extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): number | undefined;
+  setId(value: number): void;
+
+  hasValue(): boolean;
+  clearValue(): void;
+  getValue(): number | undefined;
+  setValue(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Taint.AsObject;
+  static toObject(includeInstance: boolean, msg: Taint): Taint.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Taint, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Taint;
+  static deserializeBinaryFromReader(message: Taint, reader: jspb.BinaryReader): Taint;
+}
+
+export namespace Taint {
+  export type AsObject = {
+    id?: number,
+    value?: number,
   }
 }
 
