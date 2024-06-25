@@ -2013,6 +2013,33 @@ type OrgUpdateBusinessHours = {
   readonly responseType: typeof api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse;
 };
 
+type OrgCreateCertificateInfo = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.CreateCertificateInfoRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.CreateCertificateInfoResponse;
+};
+
+type OrgDeleteCertificateInfo = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.DeleteCertificateInfoRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.DeleteCertificateInfoResponse;
+};
+
+type OrgListCertificateInfo = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.ListCertificateInfoRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.ListCertificateInfoResponse;
+};
+
 type OrgAddGroupedUserIPRestrictions = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -2309,6 +2336,9 @@ export class Org {
   static readonly VerifyTOTPCode: OrgVerifyTOTPCode;
   static readonly CreateBusinessHours: OrgCreateBusinessHours;
   static readonly UpdateBusinessHours: OrgUpdateBusinessHours;
+  static readonly CreateCertificateInfo: OrgCreateCertificateInfo;
+  static readonly DeleteCertificateInfo: OrgDeleteCertificateInfo;
+  static readonly ListCertificateInfo: OrgListCertificateInfo;
   static readonly AddGroupedUserIPRestrictions: OrgAddGroupedUserIPRestrictions;
   static readonly RemoveGroupedUserIPRestrictions: OrgRemoveGroupedUserIPRestrictions;
   static readonly ListUsersAllowedIps: OrgListUsersAllowedIps;
@@ -4268,6 +4298,33 @@ export class OrgClient {
   updateBusinessHours(
     requestMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.UpdateBusinessHoursResponse|null) => void
+  ): UnaryResponse;
+  createCertificateInfo(
+    requestMessage: api_v1alpha1_org_preferences_pb.CreateCertificateInfoRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.CreateCertificateInfoResponse|null) => void
+  ): UnaryResponse;
+  createCertificateInfo(
+    requestMessage: api_v1alpha1_org_preferences_pb.CreateCertificateInfoRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.CreateCertificateInfoResponse|null) => void
+  ): UnaryResponse;
+  deleteCertificateInfo(
+    requestMessage: api_v1alpha1_org_preferences_pb.DeleteCertificateInfoRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.DeleteCertificateInfoResponse|null) => void
+  ): UnaryResponse;
+  deleteCertificateInfo(
+    requestMessage: api_v1alpha1_org_preferences_pb.DeleteCertificateInfoRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.DeleteCertificateInfoResponse|null) => void
+  ): UnaryResponse;
+  listCertificateInfo(
+    requestMessage: api_v1alpha1_org_preferences_pb.ListCertificateInfoRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.ListCertificateInfoResponse|null) => void
+  ): UnaryResponse;
+  listCertificateInfo(
+    requestMessage: api_v1alpha1_org_preferences_pb.ListCertificateInfoRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.ListCertificateInfoResponse|null) => void
   ): UnaryResponse;
   addGroupedUserIPRestrictions(
     requestMessage: api_v1alpha1_org_user_pb.AddGroupedUserIPRestrictionsRequest,
