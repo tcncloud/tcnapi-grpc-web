@@ -136,6 +136,11 @@ export class Evaluation extends jspb.Message {
   getCompletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCompletedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasDeletedAt(): boolean;
+  clearDeletedAt(): void;
+  getDeletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDeletedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   getAgentUserId(): string;
   setAgentUserId(value: string): void;
 
@@ -152,6 +157,9 @@ export class Evaluation extends jspb.Message {
 
   getDeletedBy(): string;
   setDeletedBy(value: string): void;
+
+  getIsRecoverable(): boolean;
+  setIsRecoverable(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Evaluation.AsObject;
@@ -173,11 +181,13 @@ export namespace Evaluation {
     evaluationState: EvaluationStateMap[keyof EvaluationStateMap],
     evaluationSectionsList: Array<EvaluationSection.AsObject>,
     completedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    deletedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     agentUserId: string,
     callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
     transcriptSid: number,
     customFieldsList: Array<Evaluation.CustomField.AsObject>,
     deletedBy: string,
+    isRecoverable: boolean,
   }
 
   export class CustomField extends jspb.Message {
@@ -870,6 +880,11 @@ export class Scorecard extends jspb.Message {
   setCallTypesList(value: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>): void;
   addCallTypes(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap], index?: number): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
 
+  hasUpdatedAt(): boolean;
+  clearUpdatedAt(): void;
+  getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Scorecard.AsObject;
   static toObject(includeInstance: boolean, msg: Scorecard): Scorecard.AsObject;
@@ -898,6 +913,7 @@ export namespace Scorecard {
     isAdHoc: boolean,
     customFieldKeysList: Array<string>,
     callTypesList: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>,
+    updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

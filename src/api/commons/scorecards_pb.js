@@ -1320,12 +1320,14 @@ proto.api.commons.Evaluation.toObject = function(includeInstance, msg) {
     evaluationSectionsList: jspb.Message.toObjectList(msg.getEvaluationSectionsList(),
     proto.api.commons.EvaluationSection.toObject, includeInstance),
     completedAt: (f = msg.getCompletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    deletedAt: (f = msg.getDeletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     agentUserId: jspb.Message.getFieldWithDefault(msg, 13, ""),
     callType: jspb.Message.getFieldWithDefault(msg, 14, 0),
     transcriptSid: jspb.Message.getFieldWithDefault(msg, 15, 0),
     customFieldsList: jspb.Message.toObjectList(msg.getCustomFieldsList(),
     proto.api.commons.Evaluation.CustomField.toObject, includeInstance),
-    deletedBy: jspb.Message.getFieldWithDefault(msg, 18, "")
+    deletedBy: jspb.Message.getFieldWithDefault(msg, 18, ""),
+    isRecoverable: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
   };
 
   if (includeInstance) {
@@ -1396,6 +1398,11 @@ proto.api.commons.Evaluation.deserializeBinaryFromReader = function(msg, reader)
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCompletedAt(value);
       break;
+    case 12:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setDeletedAt(value);
+      break;
     case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setAgentUserId(value);
@@ -1416,6 +1423,10 @@ proto.api.commons.Evaluation.deserializeBinaryFromReader = function(msg, reader)
     case 18:
       var value = /** @type {string} */ (reader.readString());
       msg.setDeletedBy(value);
+      break;
+    case 20:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsRecoverable(value);
       break;
     default:
       reader.skipField();
@@ -1504,6 +1515,14 @@ proto.api.commons.Evaluation.serializeBinaryToWriter = function(message, writer)
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
+  f = message.getDeletedAt();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
   f = message.getAgentUserId();
   if (f.length > 0) {
     writer.writeString(
@@ -1537,6 +1556,13 @@ proto.api.commons.Evaluation.serializeBinaryToWriter = function(message, writer)
   if (f.length > 0) {
     writer.writeString(
       18,
+      f
+    );
+  }
+  f = message.getIsRecoverable();
+  if (f) {
+    writer.writeBool(
+      20,
       f
     );
   }
@@ -1887,6 +1913,43 @@ proto.api.commons.Evaluation.prototype.hasCompletedAt = function() {
 
 
 /**
+ * optional google.protobuf.Timestamp deleted_at = 12;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.commons.Evaluation.prototype.getDeletedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 12));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.commons.Evaluation} returns this
+*/
+proto.api.commons.Evaluation.prototype.setDeletedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.Evaluation} returns this
+ */
+proto.api.commons.Evaluation.prototype.clearDeletedAt = function() {
+  return this.setDeletedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.Evaluation.prototype.hasDeletedAt = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
  * optional string agent_user_id = 13;
  * @return {string}
  */
@@ -1993,6 +2056,24 @@ proto.api.commons.Evaluation.prototype.getDeletedBy = function() {
  */
 proto.api.commons.Evaluation.prototype.setDeletedBy = function(value) {
   return jspb.Message.setProto3StringField(this, 18, value);
+};
+
+
+/**
+ * optional bool is_recoverable = 20;
+ * @return {boolean}
+ */
+proto.api.commons.Evaluation.prototype.getIsRecoverable = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.Evaluation} returns this
+ */
+proto.api.commons.Evaluation.prototype.setIsRecoverable = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 20, value);
 };
 
 
@@ -6498,7 +6579,8 @@ proto.api.commons.Scorecard.toObject = function(includeInstance, msg) {
     state: jspb.Message.getFieldWithDefault(msg, 15, 0),
     isAdHoc: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
     customFieldKeysList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
-    callTypesList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f
+    callTypesList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
+    updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6602,6 +6684,11 @@ proto.api.commons.Scorecard.deserializeBinaryFromReader = function(msg, reader) 
       for (var i = 0; i < values.length; i++) {
         msg.addCallTypes(values[i]);
       }
+      break;
+    case 21:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setUpdatedAt(value);
       break;
     default:
       reader.skipField();
@@ -6744,6 +6831,14 @@ proto.api.commons.Scorecard.serializeBinaryToWriter = function(message, writer) 
     writer.writePackedEnum(
       20,
       f
+    );
+  }
+  f = message.getUpdatedAt();
+  if (f != null) {
+    writer.writeMessage(
+      21,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -7111,6 +7206,43 @@ proto.api.commons.Scorecard.prototype.addCallTypes = function(value, opt_index) 
  */
 proto.api.commons.Scorecard.prototype.clearCallTypesList = function() {
   return this.setCallTypesList([]);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp updated_at = 21;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.commons.Scorecard.prototype.getUpdatedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 21));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.commons.Scorecard} returns this
+*/
+proto.api.commons.Scorecard.prototype.setUpdatedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 21, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.Scorecard} returns this
+ */
+proto.api.commons.Scorecard.prototype.clearUpdatedAt = function() {
+  return this.setUpdatedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.Scorecard.prototype.hasUpdatedAt = function() {
+  return jspb.Message.getField(this, 21) != null;
 };
 
 

@@ -3396,8 +3396,6 @@ export class PortalWorkflow extends jspb.Message {
   setFormFieldsList(value: Array<api_commons_integrations_integrations_pb.FieldDefinition>): void;
   addFormFields(value?: api_commons_integrations_integrations_pb.FieldDefinition, index?: number): api_commons_integrations_integrations_pb.FieldDefinition;
 
-  getOptsMap(): jspb.Map<string, string>;
-  clearOptsMap(): void;
   getHeaderText(): string;
   setHeaderText(value: string): void;
 
@@ -3437,7 +3435,6 @@ export namespace PortalWorkflow {
     actionsList: Array<Action.AsObject>,
     template?: Template.AsObject,
     formFieldsList: Array<api_commons_integrations_integrations_pb.FieldDefinition.AsObject>,
-    optsMap: Array<[string, string]>,
     headerText: string,
     footerText: string,
     demoMode: boolean,
@@ -3459,6 +3456,8 @@ export class Action extends jspb.Message {
   getActionDefinitionName(): string;
   setActionDefinitionName(value: string): void;
 
+  getOptsMap(): jspb.Map<string, string>;
+  clearOptsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Action.AsObject;
   static toObject(includeInstance: boolean, msg: Action): Action.AsObject;
@@ -3475,6 +3474,7 @@ export namespace Action {
     restructureBeforeMap: Array<[string, string]>,
     restructureAfterMap: Array<[string, string]>,
     actionDefinitionName: string,
+    optsMap: Array<[string, string]>,
   }
 }
 
