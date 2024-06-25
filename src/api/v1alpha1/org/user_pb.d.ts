@@ -3054,42 +3054,6 @@ export namespace GenerateTOTPSecretResponse {
   }
 }
 
-export class VerifyTOTPCodeRequest extends jspb.Message {
-  getCode(): string;
-  setCode(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VerifyTOTPCodeRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: VerifyTOTPCodeRequest): VerifyTOTPCodeRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: VerifyTOTPCodeRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VerifyTOTPCodeRequest;
-  static deserializeBinaryFromReader(message: VerifyTOTPCodeRequest, reader: jspb.BinaryReader): VerifyTOTPCodeRequest;
-}
-
-export namespace VerifyTOTPCodeRequest {
-  export type AsObject = {
-    code: string,
-  }
-}
-
-export class VerifyTOTPCodeResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VerifyTOTPCodeResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: VerifyTOTPCodeResponse): VerifyTOTPCodeResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: VerifyTOTPCodeResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VerifyTOTPCodeResponse;
-  static deserializeBinaryFromReader(message: VerifyTOTPCodeResponse, reader: jspb.BinaryReader): VerifyTOTPCodeResponse;
-}
-
-export namespace VerifyTOTPCodeResponse {
-  export type AsObject = {
-  }
-}
-
 export class AddGroupedUserIPRestrictionsRequest extends jspb.Message {
   clearUserIdsList(): void;
   getUserIdsList(): Array<string>;
