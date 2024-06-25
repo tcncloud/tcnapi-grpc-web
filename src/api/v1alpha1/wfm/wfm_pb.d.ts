@@ -4009,6 +4009,44 @@ export namespace ListCandidateSchedulingActivitiesRes {
   }
 }
 
+export class GetOnCallSchedulingActivityReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetOnCallSchedulingActivityReq.AsObject;
+  static toObject(includeInstance: boolean, msg: GetOnCallSchedulingActivityReq): GetOnCallSchedulingActivityReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetOnCallSchedulingActivityReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetOnCallSchedulingActivityReq;
+  static deserializeBinaryFromReader(message: GetOnCallSchedulingActivityReq, reader: jspb.BinaryReader): GetOnCallSchedulingActivityReq;
+}
+
+export namespace GetOnCallSchedulingActivityReq {
+  export type AsObject = {
+  }
+}
+
+export class GetOnCallSchedulingActivityRes extends jspb.Message {
+  hasOnCallSchedulingActivity(): boolean;
+  clearOnCallSchedulingActivity(): void;
+  getOnCallSchedulingActivity(): SchedulingActivity | undefined;
+  setOnCallSchedulingActivity(value?: SchedulingActivity): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetOnCallSchedulingActivityRes.AsObject;
+  static toObject(includeInstance: boolean, msg: GetOnCallSchedulingActivityRes): GetOnCallSchedulingActivityRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetOnCallSchedulingActivityRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetOnCallSchedulingActivityRes;
+  static deserializeBinaryFromReader(message: GetOnCallSchedulingActivityRes, reader: jspb.BinaryReader): GetOnCallSchedulingActivityRes;
+}
+
+export namespace GetOnCallSchedulingActivityRes {
+  export type AsObject = {
+    onCallSchedulingActivity?: SchedulingActivity.AsObject,
+  }
+}
+
 export class AgentGroup extends jspb.Message {
   getAgentGroupSid(): number;
   setAgentGroupSid(value: number): void;
