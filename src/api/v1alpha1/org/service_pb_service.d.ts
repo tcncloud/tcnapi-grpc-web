@@ -1986,13 +1986,13 @@ type OrgGenerateTOTPSecret = {
   readonly responseType: typeof api_v1alpha1_org_user_pb.GenerateTOTPSecretResponse;
 };
 
-type OrgRegisterTOTP = {
+type OrgVerifyTOTPCode = {
   readonly methodName: string;
   readonly service: typeof Org;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_user_pb.RegisterTOTPRequest;
-  readonly responseType: typeof api_v1alpha1_org_user_pb.RegisterTOTPResponse;
+  readonly requestType: typeof api_v1alpha1_org_user_pb.VerifyTOTPCodeRequest;
+  readonly responseType: typeof api_v1alpha1_org_user_pb.VerifyTOTPCodeResponse;
 };
 
 type OrgCreateBusinessHours = {
@@ -2306,7 +2306,7 @@ export class Org {
   static readonly GetMyUserMfaInfo: OrgGetMyUserMfaInfo;
   static readonly GetMyAllowedMfaMethods: OrgGetMyAllowedMfaMethods;
   static readonly GenerateTOTPSecret: OrgGenerateTOTPSecret;
-  static readonly RegisterTOTP: OrgRegisterTOTP;
+  static readonly VerifyTOTPCode: OrgVerifyTOTPCode;
   static readonly CreateBusinessHours: OrgCreateBusinessHours;
   static readonly UpdateBusinessHours: OrgUpdateBusinessHours;
   static readonly AddGroupedUserIPRestrictions: OrgAddGroupedUserIPRestrictions;
@@ -4242,14 +4242,14 @@ export class OrgClient {
     requestMessage: api_v1alpha1_org_user_pb.GenerateTOTPSecretRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.GenerateTOTPSecretResponse|null) => void
   ): UnaryResponse;
-  registerTOTP(
-    requestMessage: api_v1alpha1_org_user_pb.RegisterTOTPRequest,
+  verifyTOTPCode(
+    requestMessage: api_v1alpha1_org_user_pb.VerifyTOTPCodeRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.RegisterTOTPResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.VerifyTOTPCodeResponse|null) => void
   ): UnaryResponse;
-  registerTOTP(
-    requestMessage: api_v1alpha1_org_user_pb.RegisterTOTPRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.RegisterTOTPResponse|null) => void
+  verifyTOTPCode(
+    requestMessage: api_v1alpha1_org_user_pb.VerifyTOTPCodeRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_user_pb.VerifyTOTPCodeResponse|null) => void
   ): UnaryResponse;
   createBusinessHours(
     requestMessage: api_v1alpha1_org_preferences_pb.CreateBusinessHoursRequest,

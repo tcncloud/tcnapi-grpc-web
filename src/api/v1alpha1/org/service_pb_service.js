@@ -1992,13 +1992,13 @@ Org.GenerateTOTPSecret = {
   responseType: api_v1alpha1_org_user_pb.GenerateTOTPSecretResponse
 };
 
-Org.RegisterTOTP = {
-  methodName: "RegisterTOTP",
+Org.VerifyTOTPCode = {
+  methodName: "VerifyTOTPCode",
   service: Org,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_user_pb.RegisterTOTPRequest,
-  responseType: api_v1alpha1_org_user_pb.RegisterTOTPResponse
+  requestType: api_v1alpha1_org_user_pb.VerifyTOTPCodeRequest,
+  responseType: api_v1alpha1_org_user_pb.VerifyTOTPCodeResponse
 };
 
 Org.CreateBusinessHours = {
@@ -8967,11 +8967,11 @@ OrgClient.prototype.generateTOTPSecret = function generateTOTPSecret(requestMess
   };
 };
 
-OrgClient.prototype.registerTOTP = function registerTOTP(requestMessage, metadata, callback) {
+OrgClient.prototype.verifyTOTPCode = function verifyTOTPCode(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Org.RegisterTOTP, {
+  var client = grpc.unary(Org.VerifyTOTPCode, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
