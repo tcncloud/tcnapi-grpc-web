@@ -16420,7 +16420,8 @@ proto.api.commons.org.CertificateInfo.toObject = function(includeInstance, msg) 
     hash: jspb.Message.getFieldWithDefault(msg, 5, ""),
     expirationDate: (f = msg.getExpirationDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     creationDate: (f = msg.getCreationDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    requestBy: jspb.Message.getFieldWithDefault(msg, 8, "")
+    requestBy: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    deleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -16490,6 +16491,10 @@ proto.api.commons.org.CertificateInfo.deserializeBinaryFromReader = function(msg
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setRequestBy(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDeleted(value);
       break;
     default:
       reader.skipField();
@@ -16575,6 +16580,13 @@ proto.api.commons.org.CertificateInfo.serializeBinaryToWriter = function(message
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getDeleted();
+  if (f) {
+    writer.writeBool(
+      9,
       f
     );
   }
@@ -16760,6 +16772,24 @@ proto.api.commons.org.CertificateInfo.prototype.getRequestBy = function() {
  */
 proto.api.commons.org.CertificateInfo.prototype.setRequestBy = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional bool deleted = 9;
+ * @return {boolean}
+ */
+proto.api.commons.org.CertificateInfo.prototype.getDeleted = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.org.CertificateInfo} returns this
+ */
+proto.api.commons.org.CertificateInfo.prototype.setDeleted = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 

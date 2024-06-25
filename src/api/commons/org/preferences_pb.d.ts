@@ -2178,6 +2178,9 @@ export class CertificateInfo extends jspb.Message {
   getRequestBy(): string;
   setRequestBy(value: string): void;
 
+  getDeleted(): boolean;
+  setDeleted(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CertificateInfo.AsObject;
   static toObject(includeInstance: boolean, msg: CertificateInfo): CertificateInfo.AsObject;
@@ -2198,6 +2201,7 @@ export namespace CertificateInfo {
     expirationDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     creationDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     requestBy: string,
+    deleted: boolean,
   }
 }
 
