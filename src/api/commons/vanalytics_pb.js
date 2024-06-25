@@ -24,7 +24,6 @@ var global = localGlobalThis ||
     Function('return this')();
 
 goog.exportSymbol('proto.api.commons.Interval', null, global);
-goog.exportSymbol('proto.api.commons.TranscriptSentimentTone', null, global);
 goog.exportSymbol('proto.api.commons.TranscriptSummaryStatus', null, global);
 /**
  * @enum {number}
@@ -52,16 +51,6 @@ proto.api.commons.TranscriptSummaryStatus = {
   TRANSCRIPT_SUMMARY_STATUS_SUMMARIZED: 1,
   TRANSCRIPT_SUMMARY_STATUS_SUMMARIZED_ERRORED: -2,
   TRANSCRIPT_SUMMARY_STATUS_VISIBLE: 2
-};
-
-/**
- * @enum {number}
- */
-proto.api.commons.TranscriptSentimentTone = {
-  TRANSCRIPT_SENTIMENT_TONE_UNKNOWN: 0,
-  TRANSCRIPT_SENTIMENT_TONE_NEGATIVE: 1,
-  TRANSCRIPT_SENTIMENT_TONE_NEUTRAL: 2,
-  TRANSCRIPT_SENTIMENT_TONE_POSITIVE: 3
 };
 
 goog.object.extend(exports, proto.api.commons);
