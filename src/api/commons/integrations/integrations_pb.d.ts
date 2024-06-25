@@ -1709,16 +1709,6 @@ export class ExecuteFlow extends jspb.Message {
   getFinviCreateCustomer(): ExecuteFinviCreateCustomer | undefined;
   setFinviCreateCustomer(value?: ExecuteFinviCreateCustomer): void;
 
-  hasFinviCreateTransaction(): boolean;
-  clearFinviCreateTransaction(): void;
-  getFinviCreateTransaction(): ExecuteFinviCreateTransaction | undefined;
-  setFinviCreateTransaction(value?: ExecuteFinviCreateTransaction): void;
-
-  hasFinviProcessNewTransation(): boolean;
-  clearFinviProcessNewTransation(): void;
-  getFinviProcessNewTransation(): ExecuteFinviProcessNewTransaction | undefined;
-  setFinviProcessNewTransation(value?: ExecuteFinviProcessNewTransaction): void;
-
   hasFinviQueryCustomerDetails(): boolean;
   clearFinviQueryCustomerDetails(): void;
   getFinviQueryCustomerDetails(): ExecuteFinviQueryCustomerDetails | undefined;
@@ -2003,8 +1993,6 @@ export namespace ExecuteFlow {
     paynsecondsTokenizeCard?: ExecutePaynsecondsTokenizeCard.AsObject,
     sutherlandrevPaymentConnect?: ExecuteSutherlandrevPaymentConnect.AsObject,
     finviCreateCustomer?: ExecuteFinviCreateCustomer.AsObject,
-    finviCreateTransaction?: ExecuteFinviCreateTransaction.AsObject,
-    finviProcessNewTransation?: ExecuteFinviProcessNewTransaction.AsObject,
     finviQueryCustomerDetails?: ExecuteFinviQueryCustomerDetails.AsObject,
     finviQueryCustomerTokenDetails?: ExecuteFinviQueryCustomerTokenDetails.AsObject,
     finviQueryCustomerTokens?: ExecuteFinviQueryQueryCustomerTokens.AsObject,
@@ -2235,17 +2223,15 @@ export namespace ExecuteFlow {
     PAYNSECONDS_TOKENIZE_CARD = 4101,
     SUTHERLANDREV_PAYMENT_CONNECT = 4201,
     FINVI_CREATE_CUSTOMER = 4301,
-    FINVI_CREATE_TRANSACTION = 4302,
-    FINVI_PROCESS_NEW_TRANSATION = 4303,
-    FINVI_QUERY_CUSTOMER_DETAILS = 4304,
-    FINVI_QUERY_CUSTOMER_TOKEN_DETAILS = 4305,
-    FINVI_QUERY_CUSTOMER_TOKENS = 4306,
-    FINVI_QUERY_CUSTOMER_TRANSACTIONS = 4307,
-    FINVI_QUERY_CUSTOMERS = 4308,
-    FINVI_QUERY_TRANSACTION_DETAILS = 4309,
-    FINVI_QUERY_TRANSACTIONS = 4310,
-    FINVI_REMOVE_CUSTOMER_TOKEN = 4311,
-    FINVI_UPDATE_CUSTOMER = 4312,
+    FINVI_QUERY_CUSTOMER_DETAILS = 4302,
+    FINVI_QUERY_CUSTOMER_TOKEN_DETAILS = 4303,
+    FINVI_QUERY_CUSTOMER_TOKENS = 4304,
+    FINVI_QUERY_CUSTOMER_TRANSACTIONS = 4305,
+    FINVI_QUERY_CUSTOMERS = 4306,
+    FINVI_QUERY_TRANSACTION_DETAILS = 4307,
+    FINVI_QUERY_TRANSACTIONS = 4308,
+    FINVI_REMOVE_CUSTOMER_TOKEN = 4309,
+    FINVI_UPDATE_CUSTOMER = 4310,
     DEBUG_ECHO = 5001,
     DEBUG_VALIDATE = 5002,
   }
@@ -6244,38 +6230,6 @@ export namespace ExecuteFinviCreateCustomer {
   }
 }
 
-export class ExecuteFinviCreateTransaction extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateTransaction.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateTransaction): ExecuteFinviCreateTransaction.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateTransaction, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateTransaction;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateTransaction, reader: jspb.BinaryReader): ExecuteFinviCreateTransaction;
-}
-
-export namespace ExecuteFinviCreateTransaction {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviProcessNewTransaction extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviProcessNewTransaction.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviProcessNewTransaction): ExecuteFinviProcessNewTransaction.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviProcessNewTransaction, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviProcessNewTransaction;
-  static deserializeBinaryFromReader(message: ExecuteFinviProcessNewTransaction, reader: jspb.BinaryReader): ExecuteFinviProcessNewTransaction;
-}
-
-export namespace ExecuteFinviProcessNewTransaction {
-  export type AsObject = {
-  }
-}
-
 export class ExecuteFinviQueryCustomerDetails extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFinviQueryCustomerDetails.AsObject;
@@ -6687,17 +6641,15 @@ export interface RequestMethodMap {
   REQUEST_METHOD_PAYNSECONDS_TOKENIZE_CARD: 4101;
   REQUEST_METHOD_SUTHERLANDREV_PAYMENT_CONNECT: 4201;
   REQUEST_METHOD_FINVI_CREATE_CUSTOMER: 4301;
-  REQUEST_METHOD_FINVI_CREATE_TRANSACTION: 4302;
-  REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSATION: 4303;
-  REQUEST_METHOD_FINVI_QUERY_CUSTOMER_DETAILS: 4304;
-  REQUEST_METHOD_FINVI_QUERY_CUSTOMER_TOKEN_DETAILS: 4305;
-  REQUEST_METHOD_FINVI_QUERY_CUSTOMER_TOKENS: 4306;
-  REQUEST_METHOD_FINVI_QUERY_CUSTOMER_TRANSACTIONS: 4307;
-  REQUEST_METHOD_FINVI_QUERY_CUSTOMERS: 4308;
-  REQUEST_METHOD_FINVI_QUERY_TRANSACTION_DETAILS: 4309;
-  REQUEST_METHOD_FINVI_QUERY_TRANSACTIONS: 4310;
-  REQUEST_METHOD_FINVI_REMOVE_CUSTOMER_TOKEN: 4311;
-  REQUEST_METHOD_FINVI_UPDATE_CUSTOMER: 4312;
+  REQUEST_METHOD_FINVI_QUERY_CUSTOMER_DETAILS: 4302;
+  REQUEST_METHOD_FINVI_QUERY_CUSTOMER_TOKEN_DETAILS: 4303;
+  REQUEST_METHOD_FINVI_QUERY_CUSTOMER_TOKENS: 4304;
+  REQUEST_METHOD_FINVI_QUERY_CUSTOMER_TRANSACTIONS: 4305;
+  REQUEST_METHOD_FINVI_QUERY_CUSTOMERS: 4306;
+  REQUEST_METHOD_FINVI_QUERY_TRANSACTION_DETAILS: 4307;
+  REQUEST_METHOD_FINVI_QUERY_TRANSACTIONS: 4308;
+  REQUEST_METHOD_FINVI_REMOVE_CUSTOMER_TOKEN: 4309;
+  REQUEST_METHOD_FINVI_UPDATE_CUSTOMER: 4310;
   REQUEST_METHOD_DEBUG_ECHO: 5001;
   REQUESET_METHOD_DEBUG_VALIDATE: 5002;
 }
