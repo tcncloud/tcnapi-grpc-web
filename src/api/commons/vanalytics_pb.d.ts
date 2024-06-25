@@ -29,12 +29,3 @@ export interface TranscriptSummaryStatusMap {
 
 export const TranscriptSummaryStatus: TranscriptSummaryStatusMap;
 
-export interface TranscriptSentimentToneMap {
-  TRANSCRIPT_SENTIMENT_TONE_UNKNOWN: 0;
-  TRANSCRIPT_SENTIMENT_TONE_NEGATIVE: 1;
-  TRANSCRIPT_SENTIMENT_TONE_NEUTRAL: 2;
-  TRANSCRIPT_SENTIMENT_TONE_POSITIVE: 3;
-}
-
-export const TranscriptSentimentTone: TranscriptSentimentToneMap;
-
