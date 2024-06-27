@@ -1463,7 +1463,7 @@ proto.api.commons.FilenamePart.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
     staticText: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    dateComponentsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+    datePartsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1510,7 +1510,7 @@ proto.api.commons.FilenamePart.deserializeBinaryFromReader = function(msg, reade
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.addDateComponents(value);
+      msg.addDateParts(value);
       break;
     default:
       reader.skipField();
@@ -1555,7 +1555,7 @@ proto.api.commons.FilenamePart.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getDateComponentsList();
+  f = message.getDatePartsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       3,
@@ -1602,10 +1602,10 @@ proto.api.commons.FilenamePart.prototype.setStaticText = function(value) {
 
 
 /**
- * repeated string date_components = 3;
+ * repeated string date_parts = 3;
  * @return {!Array<string>}
  */
-proto.api.commons.FilenamePart.prototype.getDateComponentsList = function() {
+proto.api.commons.FilenamePart.prototype.getDatePartsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
@@ -1614,7 +1614,7 @@ proto.api.commons.FilenamePart.prototype.getDateComponentsList = function() {
  * @param {!Array<string>} value
  * @return {!proto.api.commons.FilenamePart} returns this
  */
-proto.api.commons.FilenamePart.prototype.setDateComponentsList = function(value) {
+proto.api.commons.FilenamePart.prototype.setDatePartsList = function(value) {
   return jspb.Message.setField(this, 3, value || []);
 };
 
@@ -1624,7 +1624,7 @@ proto.api.commons.FilenamePart.prototype.setDateComponentsList = function(value)
  * @param {number=} opt_index
  * @return {!proto.api.commons.FilenamePart} returns this
  */
-proto.api.commons.FilenamePart.prototype.addDateComponents = function(value, opt_index) {
+proto.api.commons.FilenamePart.prototype.addDateParts = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
@@ -1633,8 +1633,8 @@ proto.api.commons.FilenamePart.prototype.addDateComponents = function(value, opt
  * Clears the list making it empty but non-null.
  * @return {!proto.api.commons.FilenamePart} returns this
  */
-proto.api.commons.FilenamePart.prototype.clearDateComponentsList = function() {
-  return this.setDateComponentsList([]);
+proto.api.commons.FilenamePart.prototype.clearDatePartsList = function() {
+  return this.setDatePartsList([]);
 };
 
 
