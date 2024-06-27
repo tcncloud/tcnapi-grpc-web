@@ -6741,6 +6741,8 @@ export interface ValidationMap {
   VALIDATION_DOB: 302;
   VALIDATION_BOOL: 401;
   VALIDATION_REGEX: 402;
+  VALIDATION_ROUTING: 501;
+  VALIDATION_ACCOUNT: 502;
 }
 
 export const Validation: ValidationMap;
