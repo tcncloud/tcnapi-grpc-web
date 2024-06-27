@@ -274,6 +274,15 @@ type IntegrationsPopulateIntegrationLink = {
   readonly responseType: typeof api_v1alpha1_integrations_service_pb.PopulateIntegrationLinkRes;
 };
 
+type IntegrationsProcessWorkflow = {
+  readonly methodName: string;
+  readonly service: typeof Integrations;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrations_service_pb.ProcessWorkflowReq;
+  readonly responseType: typeof api_v1alpha1_integrations_service_pb.ProcessWorkflowRes;
+};
+
 export class Integrations {
   static readonly serviceName: string;
   static readonly Process: IntegrationsProcess;
@@ -306,6 +315,7 @@ export class Integrations {
   static readonly HangUpEpicPatientCall: IntegrationsHangUpEpicPatientCall;
   static readonly GenerateEpicKeyPairs: IntegrationsGenerateEpicKeyPairs;
   static readonly PopulateIntegrationLink: IntegrationsPopulateIntegrationLink;
+  static readonly ProcessWorkflow: IntegrationsProcessWorkflow;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -609,6 +619,15 @@ export class IntegrationsClient {
   populateIntegrationLink(
     requestMessage: api_v1alpha1_integrations_service_pb.PopulateIntegrationLinkReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.PopulateIntegrationLinkRes|null) => void
+  ): UnaryResponse;
+  processWorkflow(
+    requestMessage: api_v1alpha1_integrations_service_pb.ProcessWorkflowReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.ProcessWorkflowRes|null) => void
+  ): UnaryResponse;
+  processWorkflow(
+    requestMessage: api_v1alpha1_integrations_service_pb.ProcessWorkflowReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.ProcessWorkflowRes|null) => void
   ): UnaryResponse;
 }
 
