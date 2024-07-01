@@ -19,8 +19,8 @@ type TasksServiceCancelAllTasks = {
   readonly service: typeof TasksService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_omnichannel_tasks_v1alpha1_entities_pb.CancelAllTasksRequest;
-  readonly responseType: typeof services_omnichannel_tasks_v1alpha1_entities_pb.CancelAllTasksResponse;
+  readonly requestType: typeof services_omnichannel_tasks_v1alpha1_entities_pb.BulkCancelTasksRequest;
+  readonly responseType: typeof services_omnichannel_tasks_v1alpha1_entities_pb.BulkCancelTasksResponse;
 };
 
 export class TasksService {
@@ -71,13 +71,13 @@ export class TasksServiceClient {
     callback: (error: ServiceError|null, responseMessage: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTasksResponse|null) => void
   ): UnaryResponse;
   cancelAllTasks(
-    requestMessage: services_omnichannel_tasks_v1alpha1_entities_pb.CancelAllTasksRequest,
+    requestMessage: services_omnichannel_tasks_v1alpha1_entities_pb.BulkCancelTasksRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_tasks_v1alpha1_entities_pb.CancelAllTasksResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_tasks_v1alpha1_entities_pb.BulkCancelTasksResponse|null) => void
   ): UnaryResponse;
   cancelAllTasks(
-    requestMessage: services_omnichannel_tasks_v1alpha1_entities_pb.CancelAllTasksRequest,
-    callback: (error: ServiceError|null, responseMessage: services_omnichannel_tasks_v1alpha1_entities_pb.CancelAllTasksResponse|null) => void
+    requestMessage: services_omnichannel_tasks_v1alpha1_entities_pb.BulkCancelTasksRequest,
+    callback: (error: ServiceError|null, responseMessage: services_omnichannel_tasks_v1alpha1_entities_pb.BulkCancelTasksResponse|null) => void
   ): UnaryResponse;
 }
 

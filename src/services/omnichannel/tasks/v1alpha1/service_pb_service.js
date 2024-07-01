@@ -25,8 +25,8 @@ TasksService.CancelAllTasks = {
   service: TasksService,
   requestStream: false,
   responseStream: false,
-  requestType: services_omnichannel_tasks_v1alpha1_entities_pb.CancelAllTasksRequest,
-  responseType: services_omnichannel_tasks_v1alpha1_entities_pb.CancelAllTasksResponse
+  requestType: services_omnichannel_tasks_v1alpha1_entities_pb.BulkCancelTasksRequest,
+  responseType: services_omnichannel_tasks_v1alpha1_entities_pb.BulkCancelTasksResponse
 };
 
 exports.TasksService = TasksService;
