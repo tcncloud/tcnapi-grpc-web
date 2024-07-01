@@ -47,6 +47,15 @@ TranslationsService.TriggerLLMTranslation = {
   responseType: services_translations_v1alpha1_entities_pb.TriggerLLMTranslationResponse
 };
 
+TranslationsService.TriggerLLMTranslations = {
+  methodName: "TriggerLLMTranslations",
+  service: TranslationsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_translations_v1alpha1_entities_pb.TriggerLLMTranslationsRequest,
+  responseType: services_translations_v1alpha1_entities_pb.TriggerLLMTranslationsResponse
+};
+
 TranslationsService.SetSystemMessage = {
   methodName: "SetSystemMessage",
   service: TranslationsService,
@@ -63,6 +72,15 @@ TranslationsService.GetSystemMessage = {
   responseStream: false,
   requestType: services_translations_v1alpha1_entities_pb.GetSystemMessageRequest,
   responseType: services_translations_v1alpha1_entities_pb.GetSystemMessageResponse
+};
+
+TranslationsService.TestSystemMessage = {
+  methodName: "TestSystemMessage",
+  service: TranslationsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_translations_v1alpha1_entities_pb.TestSystemMessageRequest,
+  responseType: services_translations_v1alpha1_entities_pb.TestSystemMessageResponse
 };
 
 exports.TranslationsService = TranslationsService;
@@ -196,6 +214,37 @@ TranslationsServiceClient.prototype.triggerLLMTranslation = function triggerLLMT
   };
 };
 
+TranslationsServiceClient.prototype.triggerLLMTranslations = function triggerLLMTranslations(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(TranslationsService.TriggerLLMTranslations, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 TranslationsServiceClient.prototype.setSystemMessage = function setSystemMessage(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -232,6 +281,37 @@ TranslationsServiceClient.prototype.getSystemMessage = function getSystemMessage
     callback = arguments[1];
   }
   var client = grpc.unary(TranslationsService.GetSystemMessage, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TranslationsServiceClient.prototype.testSystemMessage = function testSystemMessage(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(TranslationsService.TestSystemMessage, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

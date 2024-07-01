@@ -303,3 +303,87 @@ export namespace GetSystemMessageResponse {
   }
 }
 
+export class TestSystemMessageRequest extends jspb.Message {
+  getSystemMessage(): string;
+  setSystemMessage(value: string): void;
+
+  getTemplate(): string;
+  setTemplate(value: string): void;
+
+  getLanguageTag(): string;
+  setLanguageTag(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TestSystemMessageRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: TestSystemMessageRequest): TestSystemMessageRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TestSystemMessageRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TestSystemMessageRequest;
+  static deserializeBinaryFromReader(message: TestSystemMessageRequest, reader: jspb.BinaryReader): TestSystemMessageRequest;
+}
+
+export namespace TestSystemMessageRequest {
+  export type AsObject = {
+    systemMessage: string,
+    template: string,
+    languageTag: string,
+  }
+}
+
+export class TestSystemMessageResponse extends jspb.Message {
+  getTranslation(): string;
+  setTranslation(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TestSystemMessageResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: TestSystemMessageResponse): TestSystemMessageResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TestSystemMessageResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TestSystemMessageResponse;
+  static deserializeBinaryFromReader(message: TestSystemMessageResponse, reader: jspb.BinaryReader): TestSystemMessageResponse;
+}
+
+export namespace TestSystemMessageResponse {
+  export type AsObject = {
+    translation: string,
+  }
+}
+
+export class TriggerLLMTranslationsRequest extends jspb.Message {
+  getContext(): string;
+  setContext(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TriggerLLMTranslationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: TriggerLLMTranslationsRequest): TriggerLLMTranslationsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TriggerLLMTranslationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TriggerLLMTranslationsRequest;
+  static deserializeBinaryFromReader(message: TriggerLLMTranslationsRequest, reader: jspb.BinaryReader): TriggerLLMTranslationsRequest;
+}
+
+export namespace TriggerLLMTranslationsRequest {
+  export type AsObject = {
+    context: string,
+  }
+}
+
+export class TriggerLLMTranslationsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TriggerLLMTranslationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: TriggerLLMTranslationsResponse): TriggerLLMTranslationsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TriggerLLMTranslationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TriggerLLMTranslationsResponse;
+  static deserializeBinaryFromReader(message: TriggerLLMTranslationsResponse, reader: jspb.BinaryReader): TriggerLLMTranslationsResponse;
+}
+
+export namespace TriggerLLMTranslationsResponse {
+  export type AsObject = {
+  }
+}
+
