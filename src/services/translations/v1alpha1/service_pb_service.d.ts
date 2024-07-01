@@ -14,9 +14,59 @@ type TranslationsServiceTranslateTemplate = {
   readonly responseType: typeof services_translations_v1alpha1_entities_pb.TranslateTemplateResponse;
 };
 
+type TranslationsServiceListTranslations = {
+  readonly methodName: string;
+  readonly service: typeof TranslationsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_translations_v1alpha1_entities_pb.ListTranslationsRequest;
+  readonly responseType: typeof services_translations_v1alpha1_entities_pb.ListTranslationsResponse;
+};
+
+type TranslationsServiceUpdateTranslation = {
+  readonly methodName: string;
+  readonly service: typeof TranslationsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_translations_v1alpha1_entities_pb.UpdateTranslationRequest;
+  readonly responseType: typeof services_translations_v1alpha1_entities_pb.UpdateTranslationResponse;
+};
+
+type TranslationsServiceTriggerLLMTranslation = {
+  readonly methodName: string;
+  readonly service: typeof TranslationsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_translations_v1alpha1_entities_pb.TriggerLLMTranslationRequest;
+  readonly responseType: typeof services_translations_v1alpha1_entities_pb.TriggerLLMTranslationResponse;
+};
+
+type TranslationsServiceSetSystemMessage = {
+  readonly methodName: string;
+  readonly service: typeof TranslationsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_translations_v1alpha1_entities_pb.SetSystemMessageRequest;
+  readonly responseType: typeof services_translations_v1alpha1_entities_pb.SetSystemMessageResponse;
+};
+
+type TranslationsServiceGetSystemMessage = {
+  readonly methodName: string;
+  readonly service: typeof TranslationsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_translations_v1alpha1_entities_pb.GetSystemMessageRequest;
+  readonly responseType: typeof services_translations_v1alpha1_entities_pb.GetSystemMessageResponse;
+};
+
 export class TranslationsService {
   static readonly serviceName: string;
   static readonly TranslateTemplate: TranslationsServiceTranslateTemplate;
+  static readonly ListTranslations: TranslationsServiceListTranslations;
+  static readonly UpdateTranslation: TranslationsServiceUpdateTranslation;
+  static readonly TriggerLLMTranslation: TranslationsServiceTriggerLLMTranslation;
+  static readonly SetSystemMessage: TranslationsServiceSetSystemMessage;
+  static readonly GetSystemMessage: TranslationsServiceGetSystemMessage;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -59,6 +109,51 @@ export class TranslationsServiceClient {
   translateTemplate(
     requestMessage: services_translations_v1alpha1_entities_pb.TranslateTemplateRequest,
     callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.TranslateTemplateResponse|null) => void
+  ): UnaryResponse;
+  listTranslations(
+    requestMessage: services_translations_v1alpha1_entities_pb.ListTranslationsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.ListTranslationsResponse|null) => void
+  ): UnaryResponse;
+  listTranslations(
+    requestMessage: services_translations_v1alpha1_entities_pb.ListTranslationsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.ListTranslationsResponse|null) => void
+  ): UnaryResponse;
+  updateTranslation(
+    requestMessage: services_translations_v1alpha1_entities_pb.UpdateTranslationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.UpdateTranslationResponse|null) => void
+  ): UnaryResponse;
+  updateTranslation(
+    requestMessage: services_translations_v1alpha1_entities_pb.UpdateTranslationRequest,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.UpdateTranslationResponse|null) => void
+  ): UnaryResponse;
+  triggerLLMTranslation(
+    requestMessage: services_translations_v1alpha1_entities_pb.TriggerLLMTranslationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.TriggerLLMTranslationResponse|null) => void
+  ): UnaryResponse;
+  triggerLLMTranslation(
+    requestMessage: services_translations_v1alpha1_entities_pb.TriggerLLMTranslationRequest,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.TriggerLLMTranslationResponse|null) => void
+  ): UnaryResponse;
+  setSystemMessage(
+    requestMessage: services_translations_v1alpha1_entities_pb.SetSystemMessageRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.SetSystemMessageResponse|null) => void
+  ): UnaryResponse;
+  setSystemMessage(
+    requestMessage: services_translations_v1alpha1_entities_pb.SetSystemMessageRequest,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.SetSystemMessageResponse|null) => void
+  ): UnaryResponse;
+  getSystemMessage(
+    requestMessage: services_translations_v1alpha1_entities_pb.GetSystemMessageRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.GetSystemMessageResponse|null) => void
+  ): UnaryResponse;
+  getSystemMessage(
+    requestMessage: services_translations_v1alpha1_entities_pb.GetSystemMessageRequest,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.GetSystemMessageResponse|null) => void
   ): UnaryResponse;
 }
 
