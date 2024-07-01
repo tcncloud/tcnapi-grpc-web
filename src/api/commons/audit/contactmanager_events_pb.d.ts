@@ -123,6 +123,12 @@ export class ContactManagerListUploadEvent extends jspb.Message {
   getNumberofcontactsuploaded(): number;
   setNumberofcontactsuploaded(value: number): void;
 
+  getNumberofsuccessfulcontactsuploaded(): number;
+  setNumberofsuccessfulcontactsuploaded(value: number): void;
+
+  getNumberoffailedcontacts(): number;
+  setNumberoffailedcontacts(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerListUploadEvent.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerListUploadEvent): ContactManagerListUploadEvent.AsObject;
@@ -137,6 +143,8 @@ export namespace ContactManagerListUploadEvent {
   export type AsObject = {
     contactmanagerlistid: number,
     numberofcontactsuploaded: number,
+    numberofsuccessfulcontactsuploaded: number,
+    numberoffailedcontacts: number,
   }
 }
 

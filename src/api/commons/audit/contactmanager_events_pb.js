@@ -984,7 +984,9 @@ proto.api.commons.audit.ContactManagerListUploadEvent.prototype.toObject = funct
 proto.api.commons.audit.ContactManagerListUploadEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
     contactmanagerlistid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    numberofcontactsuploaded: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    numberofcontactsuploaded: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    numberofsuccessfulcontactsuploaded: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    numberoffailedcontacts: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1029,6 +1031,14 @@ proto.api.commons.audit.ContactManagerListUploadEvent.deserializeBinaryFromReade
       var value = /** @type {number} */ (reader.readInt64());
       msg.setNumberofcontactsuploaded(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setNumberofsuccessfulcontactsuploaded(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setNumberoffailedcontacts(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1072,6 +1082,20 @@ proto.api.commons.audit.ContactManagerListUploadEvent.serializeBinaryToWriter = 
       f
     );
   }
+  f = message.getNumberofsuccessfulcontactsuploaded();
+  if (f !== 0) {
+    writer.writeInt64(
+      3,
+      f
+    );
+  }
+  f = message.getNumberoffailedcontacts();
+  if (f !== 0) {
+    writer.writeInt64(
+      4,
+      f
+    );
+  }
 };
 
 
@@ -1108,6 +1132,42 @@ proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getNumberofconta
  */
 proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setNumberofcontactsuploaded = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional int64 NumberOfSuccessfulContactsUploaded = 3;
+ * @return {number}
+ */
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getNumberofsuccessfulcontactsuploaded = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.audit.ContactManagerListUploadEvent} returns this
+ */
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setNumberofsuccessfulcontactsuploaded = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional int64 NumberOfFailedContacts = 4;
+ * @return {number}
+ */
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getNumberoffailedcontacts = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.audit.ContactManagerListUploadEvent} returns this
+ */
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setNumberoffailedcontacts = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
