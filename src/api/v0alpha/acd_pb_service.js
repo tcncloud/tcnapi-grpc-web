@@ -532,22 +532,22 @@ Acd.ProcessSecureForm = {
   responseType: api_v0alpha_acd_pb.ProcessSecureFormRes
 };
 
-Acd.CancelSecureFromHandling = {
-  methodName: "CancelSecureFromHandling",
+Acd.CancelSecureFormHandling = {
+  methodName: "CancelSecureFormHandling",
   service: Acd,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_acd_pb.CancelSecureFromHandlingReq,
-  responseType: api_v0alpha_acd_pb.CancelSecureFromHandlingRes
+  requestType: api_v0alpha_acd_pb.CancelSecureFormHandlingReq,
+  responseType: api_v0alpha_acd_pb.CancelSecureFormHandlingRes
 };
 
-Acd.FinishSecureFromHandling = {
-  methodName: "FinishSecureFromHandling",
+Acd.FinishSecureFormHandling = {
+  methodName: "FinishSecureFormHandling",
   service: Acd,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_acd_pb.FinishSecureFromHandlingReq,
-  responseType: api_v0alpha_acd_pb.FinishSecureFromHandlingRes
+  requestType: api_v0alpha_acd_pb.FinishSecureFormHandlingReq,
+  responseType: api_v0alpha_acd_pb.FinishSecureFormHandlingRes
 };
 
 exports.Acd = Acd;
@@ -2371,11 +2371,11 @@ AcdClient.prototype.processSecureForm = function processSecureForm(requestMessag
   };
 };
 
-AcdClient.prototype.cancelSecureFromHandling = function cancelSecureFromHandling(requestMessage, metadata, callback) {
+AcdClient.prototype.cancelSecureFormHandling = function cancelSecureFormHandling(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Acd.CancelSecureFromHandling, {
+  var client = grpc.unary(Acd.CancelSecureFormHandling, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2402,11 +2402,11 @@ AcdClient.prototype.cancelSecureFromHandling = function cancelSecureFromHandling
   };
 };
 
-AcdClient.prototype.finishSecureFromHandling = function finishSecureFromHandling(requestMessage, metadata, callback) {
+AcdClient.prototype.finishSecureFormHandling = function finishSecureFormHandling(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Acd.FinishSecureFromHandling, {
+  var client = grpc.unary(Acd.FinishSecureFormHandling, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

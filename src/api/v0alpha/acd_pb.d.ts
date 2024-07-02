@@ -2462,77 +2462,77 @@ export namespace ProcessSecureFormRes {
   }
 }
 
-export class CancelSecureFromHandlingReq extends jspb.Message {
+export class CancelSecureFormHandlingReq extends jspb.Message {
   getReason(): string;
   setReason(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CancelSecureFromHandlingReq.AsObject;
-  static toObject(includeInstance: boolean, msg: CancelSecureFromHandlingReq): CancelSecureFromHandlingReq.AsObject;
+  toObject(includeInstance?: boolean): CancelSecureFormHandlingReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CancelSecureFormHandlingReq): CancelSecureFormHandlingReq.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CancelSecureFromHandlingReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CancelSecureFromHandlingReq;
-  static deserializeBinaryFromReader(message: CancelSecureFromHandlingReq, reader: jspb.BinaryReader): CancelSecureFromHandlingReq;
+  static serializeBinaryToWriter(message: CancelSecureFormHandlingReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CancelSecureFormHandlingReq;
+  static deserializeBinaryFromReader(message: CancelSecureFormHandlingReq, reader: jspb.BinaryReader): CancelSecureFormHandlingReq;
 }
 
-export namespace CancelSecureFromHandlingReq {
+export namespace CancelSecureFormHandlingReq {
   export type AsObject = {
     reason: string,
   }
 }
 
-export class CancelSecureFromHandlingRes extends jspb.Message {
+export class CancelSecureFormHandlingRes extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CancelSecureFromHandlingRes.AsObject;
-  static toObject(includeInstance: boolean, msg: CancelSecureFromHandlingRes): CancelSecureFromHandlingRes.AsObject;
+  toObject(includeInstance?: boolean): CancelSecureFormHandlingRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CancelSecureFormHandlingRes): CancelSecureFormHandlingRes.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CancelSecureFromHandlingRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CancelSecureFromHandlingRes;
-  static deserializeBinaryFromReader(message: CancelSecureFromHandlingRes, reader: jspb.BinaryReader): CancelSecureFromHandlingRes;
+  static serializeBinaryToWriter(message: CancelSecureFormHandlingRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CancelSecureFormHandlingRes;
+  static deserializeBinaryFromReader(message: CancelSecureFormHandlingRes, reader: jspb.BinaryReader): CancelSecureFormHandlingRes;
 }
 
-export namespace CancelSecureFromHandlingRes {
+export namespace CancelSecureFormHandlingRes {
   export type AsObject = {
   }
 }
 
-export class FinishSecureFromHandlingReq extends jspb.Message {
+export class FinishSecureFormHandlingReq extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): void;
 
   getDataMap(): jspb.Map<string, api_v1alpha1_integrations_service_pb.Value>;
   clearDataMap(): void;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FinishSecureFromHandlingReq.AsObject;
-  static toObject(includeInstance: boolean, msg: FinishSecureFromHandlingReq): FinishSecureFromHandlingReq.AsObject;
+  toObject(includeInstance?: boolean): FinishSecureFormHandlingReq.AsObject;
+  static toObject(includeInstance: boolean, msg: FinishSecureFormHandlingReq): FinishSecureFormHandlingReq.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: FinishSecureFromHandlingReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FinishSecureFromHandlingReq;
-  static deserializeBinaryFromReader(message: FinishSecureFromHandlingReq, reader: jspb.BinaryReader): FinishSecureFromHandlingReq;
+  static serializeBinaryToWriter(message: FinishSecureFormHandlingReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FinishSecureFormHandlingReq;
+  static deserializeBinaryFromReader(message: FinishSecureFormHandlingReq, reader: jspb.BinaryReader): FinishSecureFormHandlingReq;
 }
 
-export namespace FinishSecureFromHandlingReq {
+export namespace FinishSecureFormHandlingReq {
   export type AsObject = {
     email: string,
     dataMap: Array<[string, api_v1alpha1_integrations_service_pb.Value.AsObject]>,
   }
 }
 
-export class FinishSecureFromHandlingRes extends jspb.Message {
+export class FinishSecureFormHandlingRes extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FinishSecureFromHandlingRes.AsObject;
-  static toObject(includeInstance: boolean, msg: FinishSecureFromHandlingRes): FinishSecureFromHandlingRes.AsObject;
+  toObject(includeInstance?: boolean): FinishSecureFormHandlingRes.AsObject;
+  static toObject(includeInstance: boolean, msg: FinishSecureFormHandlingRes): FinishSecureFormHandlingRes.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: FinishSecureFromHandlingRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FinishSecureFromHandlingRes;
-  static deserializeBinaryFromReader(message: FinishSecureFromHandlingRes, reader: jspb.BinaryReader): FinishSecureFromHandlingRes;
+  static serializeBinaryToWriter(message: FinishSecureFormHandlingRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FinishSecureFormHandlingRes;
+  static deserializeBinaryFromReader(message: FinishSecureFormHandlingRes, reader: jspb.BinaryReader): FinishSecureFormHandlingRes;
 }
 
-export namespace FinishSecureFromHandlingRes {
+export namespace FinishSecureFormHandlingRes {
   export type AsObject = {
   }
 }

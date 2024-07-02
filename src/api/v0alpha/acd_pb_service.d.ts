@@ -526,22 +526,22 @@ type AcdProcessSecureForm = {
   readonly responseType: typeof api_v0alpha_acd_pb.ProcessSecureFormRes;
 };
 
-type AcdCancelSecureFromHandling = {
+type AcdCancelSecureFormHandling = {
   readonly methodName: string;
   readonly service: typeof Acd;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_acd_pb.CancelSecureFromHandlingReq;
-  readonly responseType: typeof api_v0alpha_acd_pb.CancelSecureFromHandlingRes;
+  readonly requestType: typeof api_v0alpha_acd_pb.CancelSecureFormHandlingReq;
+  readonly responseType: typeof api_v0alpha_acd_pb.CancelSecureFormHandlingRes;
 };
 
-type AcdFinishSecureFromHandling = {
+type AcdFinishSecureFormHandling = {
   readonly methodName: string;
   readonly service: typeof Acd;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_acd_pb.FinishSecureFromHandlingReq;
-  readonly responseType: typeof api_v0alpha_acd_pb.FinishSecureFromHandlingRes;
+  readonly requestType: typeof api_v0alpha_acd_pb.FinishSecureFormHandlingReq;
+  readonly responseType: typeof api_v0alpha_acd_pb.FinishSecureFormHandlingRes;
 };
 
 export class Acd {
@@ -604,8 +604,8 @@ export class Acd {
   static readonly ResetCallerSecureFormField: AcdResetCallerSecureFormField;
   static readonly ProcessCallerSecureFormField: AcdProcessCallerSecureFormField;
   static readonly ProcessSecureForm: AcdProcessSecureForm;
-  static readonly CancelSecureFromHandling: AcdCancelSecureFromHandling;
-  static readonly FinishSecureFromHandling: AcdFinishSecureFromHandling;
+  static readonly CancelSecureFormHandling: AcdCancelSecureFormHandling;
+  static readonly FinishSecureFormHandling: AcdFinishSecureFormHandling;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1146,23 +1146,23 @@ export class AcdClient {
     requestMessage: api_v0alpha_acd_pb.ProcessSecureFormReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ProcessSecureFormRes|null) => void
   ): UnaryResponse;
-  cancelSecureFromHandling(
-    requestMessage: api_v0alpha_acd_pb.CancelSecureFromHandlingReq,
+  cancelSecureFormHandling(
+    requestMessage: api_v0alpha_acd_pb.CancelSecureFormHandlingReq,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.CancelSecureFromHandlingRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.CancelSecureFormHandlingRes|null) => void
   ): UnaryResponse;
-  cancelSecureFromHandling(
-    requestMessage: api_v0alpha_acd_pb.CancelSecureFromHandlingReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.CancelSecureFromHandlingRes|null) => void
+  cancelSecureFormHandling(
+    requestMessage: api_v0alpha_acd_pb.CancelSecureFormHandlingReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.CancelSecureFormHandlingRes|null) => void
   ): UnaryResponse;
-  finishSecureFromHandling(
-    requestMessage: api_v0alpha_acd_pb.FinishSecureFromHandlingReq,
+  finishSecureFormHandling(
+    requestMessage: api_v0alpha_acd_pb.FinishSecureFormHandlingReq,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.FinishSecureFromHandlingRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.FinishSecureFormHandlingRes|null) => void
   ): UnaryResponse;
-  finishSecureFromHandling(
-    requestMessage: api_v0alpha_acd_pb.FinishSecureFromHandlingReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.FinishSecureFromHandlingRes|null) => void
+  finishSecureFormHandling(
+    requestMessage: api_v0alpha_acd_pb.FinishSecureFormHandlingReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.FinishSecureFormHandlingRes|null) => void
   ): UnaryResponse;
 }
 
