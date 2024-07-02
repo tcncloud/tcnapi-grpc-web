@@ -1465,3 +1465,45 @@ export namespace ActionDefinition {
   }
 }
 
+export class ListPluginsByMethodReq extends jspb.Message {
+  getMethodId(): api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap];
+  setMethodId(value: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPluginsByMethodReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPluginsByMethodReq): ListPluginsByMethodReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPluginsByMethodReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPluginsByMethodReq;
+  static deserializeBinaryFromReader(message: ListPluginsByMethodReq, reader: jspb.BinaryReader): ListPluginsByMethodReq;
+}
+
+export namespace ListPluginsByMethodReq {
+  export type AsObject = {
+    methodId: api_commons_integrations_integrations_pb.RequestMethodMap[keyof api_commons_integrations_integrations_pb.RequestMethodMap],
+  }
+}
+
+export class ListPluginsByMethodRes extends jspb.Message {
+  clearEntitiesList(): void;
+  getEntitiesList(): Array<api_v1alpha1_integrations_service_pb.PluginInstance>;
+  setEntitiesList(value: Array<api_v1alpha1_integrations_service_pb.PluginInstance>): void;
+  addEntities(value?: api_v1alpha1_integrations_service_pb.PluginInstance, index?: number): api_v1alpha1_integrations_service_pb.PluginInstance;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPluginsByMethodRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPluginsByMethodRes): ListPluginsByMethodRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPluginsByMethodRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPluginsByMethodRes;
+  static deserializeBinaryFromReader(message: ListPluginsByMethodRes, reader: jspb.BinaryReader): ListPluginsByMethodRes;
+}
+
+export namespace ListPluginsByMethodRes {
+  export type AsObject = {
+    entitiesList: Array<api_v1alpha1_integrations_service_pb.PluginInstance.AsObject>,
+  }
+}
+
