@@ -472,15 +472,6 @@ type AcdAgentUnmute = {
   readonly responseType: typeof api_v0alpha_acd_pb.AgentUnmuteReply;
 };
 
-type AcdSecureFormHandlingPrepare = {
-  readonly methodName: string;
-  readonly service: typeof Acd;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_acd_pb.SecureFormHandlingPrepareReq;
-  readonly responseType: typeof api_v0alpha_acd_pb.SecureFormHandlingPrepareRes;
-};
-
 type AcdStartSecureForm = {
   readonly methodName: string;
   readonly service: typeof Acd;
@@ -490,31 +481,31 @@ type AcdStartSecureForm = {
   readonly responseType: typeof api_v0alpha_acd_pb.StartSecureFormRes;
 };
 
-type AcdCollectCallerSecureFormField = {
+type AcdCollectSecureFormField = {
   readonly methodName: string;
   readonly service: typeof Acd;
   readonly requestStream: false;
   readonly responseStream: true;
-  readonly requestType: typeof api_v0alpha_acd_pb.CollectCallerSecureFormFieldReq;
-  readonly responseType: typeof api_v0alpha_acd_pb.CollectCallerSecureFormFieldRes;
+  readonly requestType: typeof api_v0alpha_acd_pb.CollectSecureFormFieldReq;
+  readonly responseType: typeof api_v0alpha_acd_pb.CollectSecureFormFieldRes;
 };
 
-type AcdResetCallerSecureFormField = {
+type AcdResetSecureFormField = {
   readonly methodName: string;
   readonly service: typeof Acd;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_acd_pb.ResetCallerSecureFormFieldReq;
-  readonly responseType: typeof api_v0alpha_acd_pb.ResetCallerSecureFormFieldRes;
+  readonly requestType: typeof api_v0alpha_acd_pb.ResetSecureFormFieldReq;
+  readonly responseType: typeof api_v0alpha_acd_pb.ResetSecureFormFieldRes;
 };
 
-type AcdProcessCallerSecureFormField = {
+type AcdAcceptSecureFormField = {
   readonly methodName: string;
   readonly service: typeof Acd;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_acd_pb.ProcessCallerSecureFormFieldReq;
-  readonly responseType: typeof api_v0alpha_acd_pb.ProcessCallerSecureFormFieldRes;
+  readonly requestType: typeof api_v0alpha_acd_pb.AcceptSecureFormFieldReq;
+  readonly responseType: typeof api_v0alpha_acd_pb.AcceptSecureFormFieldRes;
 };
 
 type AcdProcessSecureForm = {
@@ -524,15 +515,6 @@ type AcdProcessSecureForm = {
   readonly responseStream: false;
   readonly requestType: typeof api_v0alpha_acd_pb.ProcessSecureFormReq;
   readonly responseType: typeof api_v0alpha_acd_pb.ProcessSecureFormRes;
-};
-
-type AcdCancelSecureFormHandling = {
-  readonly methodName: string;
-  readonly service: typeof Acd;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_acd_pb.CancelSecureFormHandlingReq;
-  readonly responseType: typeof api_v0alpha_acd_pb.CancelSecureFormHandlingRes;
 };
 
 type AcdFinishSecureFormHandling = {
@@ -598,13 +580,11 @@ export class Acd {
   static readonly PlayDTMF: AcdPlayDTMF;
   static readonly AgentMute: AcdAgentMute;
   static readonly AgentUnmute: AcdAgentUnmute;
-  static readonly SecureFormHandlingPrepare: AcdSecureFormHandlingPrepare;
   static readonly StartSecureForm: AcdStartSecureForm;
-  static readonly CollectCallerSecureFormField: AcdCollectCallerSecureFormField;
-  static readonly ResetCallerSecureFormField: AcdResetCallerSecureFormField;
-  static readonly ProcessCallerSecureFormField: AcdProcessCallerSecureFormField;
+  static readonly CollectSecureFormField: AcdCollectSecureFormField;
+  static readonly ResetSecureFormField: AcdResetSecureFormField;
+  static readonly AcceptSecureFormField: AcdAcceptSecureFormField;
   static readonly ProcessSecureForm: AcdProcessSecureForm;
-  static readonly CancelSecureFormHandling: AcdCancelSecureFormHandling;
   static readonly FinishSecureFormHandling: AcdFinishSecureFormHandling;
 }
 
@@ -1100,15 +1080,6 @@ export class AcdClient {
     requestMessage: api_v0alpha_acd_pb.AgentUnmuteRequest,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.AgentUnmuteReply|null) => void
   ): UnaryResponse;
-  secureFormHandlingPrepare(
-    requestMessage: api_v0alpha_acd_pb.SecureFormHandlingPrepareReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.SecureFormHandlingPrepareRes|null) => void
-  ): UnaryResponse;
-  secureFormHandlingPrepare(
-    requestMessage: api_v0alpha_acd_pb.SecureFormHandlingPrepareReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.SecureFormHandlingPrepareRes|null) => void
-  ): UnaryResponse;
   startSecureForm(
     requestMessage: api_v0alpha_acd_pb.StartSecureFormReq,
     metadata: grpc.Metadata,
@@ -1118,24 +1089,24 @@ export class AcdClient {
     requestMessage: api_v0alpha_acd_pb.StartSecureFormReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.StartSecureFormRes|null) => void
   ): UnaryResponse;
-  collectCallerSecureFormField(requestMessage: api_v0alpha_acd_pb.CollectCallerSecureFormFieldReq, metadata?: grpc.Metadata): ResponseStream<api_v0alpha_acd_pb.CollectCallerSecureFormFieldRes>;
-  resetCallerSecureFormField(
-    requestMessage: api_v0alpha_acd_pb.ResetCallerSecureFormFieldReq,
+  collectSecureFormField(requestMessage: api_v0alpha_acd_pb.CollectSecureFormFieldReq, metadata?: grpc.Metadata): ResponseStream<api_v0alpha_acd_pb.CollectSecureFormFieldRes>;
+  resetSecureFormField(
+    requestMessage: api_v0alpha_acd_pb.ResetSecureFormFieldReq,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ResetCallerSecureFormFieldRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ResetSecureFormFieldRes|null) => void
   ): UnaryResponse;
-  resetCallerSecureFormField(
-    requestMessage: api_v0alpha_acd_pb.ResetCallerSecureFormFieldReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ResetCallerSecureFormFieldRes|null) => void
+  resetSecureFormField(
+    requestMessage: api_v0alpha_acd_pb.ResetSecureFormFieldReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ResetSecureFormFieldRes|null) => void
   ): UnaryResponse;
-  processCallerSecureFormField(
-    requestMessage: api_v0alpha_acd_pb.ProcessCallerSecureFormFieldReq,
+  acceptSecureFormField(
+    requestMessage: api_v0alpha_acd_pb.AcceptSecureFormFieldReq,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ProcessCallerSecureFormFieldRes|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.AcceptSecureFormFieldRes|null) => void
   ): UnaryResponse;
-  processCallerSecureFormField(
-    requestMessage: api_v0alpha_acd_pb.ProcessCallerSecureFormFieldReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ProcessCallerSecureFormFieldRes|null) => void
+  acceptSecureFormField(
+    requestMessage: api_v0alpha_acd_pb.AcceptSecureFormFieldReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.AcceptSecureFormFieldRes|null) => void
   ): UnaryResponse;
   processSecureForm(
     requestMessage: api_v0alpha_acd_pb.ProcessSecureFormReq,
@@ -1145,15 +1116,6 @@ export class AcdClient {
   processSecureForm(
     requestMessage: api_v0alpha_acd_pb.ProcessSecureFormReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ProcessSecureFormRes|null) => void
-  ): UnaryResponse;
-  cancelSecureFormHandling(
-    requestMessage: api_v0alpha_acd_pb.CancelSecureFormHandlingReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.CancelSecureFormHandlingRes|null) => void
-  ): UnaryResponse;
-  cancelSecureFormHandling(
-    requestMessage: api_v0alpha_acd_pb.CancelSecureFormHandlingReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.CancelSecureFormHandlingRes|null) => void
   ): UnaryResponse;
   finishSecureFormHandling(
     requestMessage: api_v0alpha_acd_pb.FinishSecureFormHandlingReq,

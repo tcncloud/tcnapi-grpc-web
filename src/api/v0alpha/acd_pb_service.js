@@ -478,15 +478,6 @@ Acd.AgentUnmute = {
   responseType: api_v0alpha_acd_pb.AgentUnmuteReply
 };
 
-Acd.SecureFormHandlingPrepare = {
-  methodName: "SecureFormHandlingPrepare",
-  service: Acd,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_acd_pb.SecureFormHandlingPrepareReq,
-  responseType: api_v0alpha_acd_pb.SecureFormHandlingPrepareRes
-};
-
 Acd.StartSecureForm = {
   methodName: "StartSecureForm",
   service: Acd,
@@ -496,31 +487,31 @@ Acd.StartSecureForm = {
   responseType: api_v0alpha_acd_pb.StartSecureFormRes
 };
 
-Acd.CollectCallerSecureFormField = {
-  methodName: "CollectCallerSecureFormField",
+Acd.CollectSecureFormField = {
+  methodName: "CollectSecureFormField",
   service: Acd,
   requestStream: false,
   responseStream: true,
-  requestType: api_v0alpha_acd_pb.CollectCallerSecureFormFieldReq,
-  responseType: api_v0alpha_acd_pb.CollectCallerSecureFormFieldRes
+  requestType: api_v0alpha_acd_pb.CollectSecureFormFieldReq,
+  responseType: api_v0alpha_acd_pb.CollectSecureFormFieldRes
 };
 
-Acd.ResetCallerSecureFormField = {
-  methodName: "ResetCallerSecureFormField",
+Acd.ResetSecureFormField = {
+  methodName: "ResetSecureFormField",
   service: Acd,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_acd_pb.ResetCallerSecureFormFieldReq,
-  responseType: api_v0alpha_acd_pb.ResetCallerSecureFormFieldRes
+  requestType: api_v0alpha_acd_pb.ResetSecureFormFieldReq,
+  responseType: api_v0alpha_acd_pb.ResetSecureFormFieldRes
 };
 
-Acd.ProcessCallerSecureFormField = {
-  methodName: "ProcessCallerSecureFormField",
+Acd.AcceptSecureFormField = {
+  methodName: "AcceptSecureFormField",
   service: Acd,
   requestStream: false,
   responseStream: false,
-  requestType: api_v0alpha_acd_pb.ProcessCallerSecureFormFieldReq,
-  responseType: api_v0alpha_acd_pb.ProcessCallerSecureFormFieldRes
+  requestType: api_v0alpha_acd_pb.AcceptSecureFormFieldReq,
+  responseType: api_v0alpha_acd_pb.AcceptSecureFormFieldRes
 };
 
 Acd.ProcessSecureForm = {
@@ -530,15 +521,6 @@ Acd.ProcessSecureForm = {
   responseStream: false,
   requestType: api_v0alpha_acd_pb.ProcessSecureFormReq,
   responseType: api_v0alpha_acd_pb.ProcessSecureFormRes
-};
-
-Acd.CancelSecureFormHandling = {
-  methodName: "CancelSecureFormHandling",
-  service: Acd,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v0alpha_acd_pb.CancelSecureFormHandlingReq,
-  responseType: api_v0alpha_acd_pb.CancelSecureFormHandlingRes
 };
 
 Acd.FinishSecureFormHandling = {
@@ -2177,37 +2159,6 @@ AcdClient.prototype.agentUnmute = function agentUnmute(requestMessage, metadata,
   };
 };
 
-AcdClient.prototype.secureFormHandlingPrepare = function secureFormHandlingPrepare(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Acd.SecureFormHandlingPrepare, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
 AcdClient.prototype.startSecureForm = function startSecureForm(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -2239,13 +2190,13 @@ AcdClient.prototype.startSecureForm = function startSecureForm(requestMessage, m
   };
 };
 
-AcdClient.prototype.collectCallerSecureFormField = function collectCallerSecureFormField(requestMessage, metadata) {
+AcdClient.prototype.collectSecureFormField = function collectSecureFormField(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(Acd.CollectCallerSecureFormField, {
+  var client = grpc.invoke(Acd.CollectSecureFormField, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2278,11 +2229,11 @@ AcdClient.prototype.collectCallerSecureFormField = function collectCallerSecureF
   };
 };
 
-AcdClient.prototype.resetCallerSecureFormField = function resetCallerSecureFormField(requestMessage, metadata, callback) {
+AcdClient.prototype.resetSecureFormField = function resetSecureFormField(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Acd.ResetCallerSecureFormField, {
+  var client = grpc.unary(Acd.ResetSecureFormField, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2309,11 +2260,11 @@ AcdClient.prototype.resetCallerSecureFormField = function resetCallerSecureFormF
   };
 };
 
-AcdClient.prototype.processCallerSecureFormField = function processCallerSecureFormField(requestMessage, metadata, callback) {
+AcdClient.prototype.acceptSecureFormField = function acceptSecureFormField(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Acd.ProcessCallerSecureFormField, {
+  var client = grpc.unary(Acd.AcceptSecureFormField, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2345,37 +2296,6 @@ AcdClient.prototype.processSecureForm = function processSecureForm(requestMessag
     callback = arguments[1];
   }
   var client = grpc.unary(Acd.ProcessSecureForm, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-AcdClient.prototype.cancelSecureFormHandling = function cancelSecureFormHandling(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Acd.CancelSecureFormHandling, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
