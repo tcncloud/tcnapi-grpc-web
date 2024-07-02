@@ -20,8 +20,8 @@ TasksService.CancelTasks = {
   responseType: services_omnichannel_tasks_v1alpha1_entities_pb.CancelTasksResponse
 };
 
-TasksService.CancelAllTasks = {
-  methodName: "CancelAllTasks",
+TasksService.BulkCancelTasks = {
+  methodName: "BulkCancelTasks",
   service: TasksService,
   requestStream: false,
   responseStream: false,
@@ -67,11 +67,11 @@ TasksServiceClient.prototype.cancelTasks = function cancelTasks(requestMessage, 
   };
 };
 
-TasksServiceClient.prototype.cancelAllTasks = function cancelAllTasks(requestMessage, metadata, callback) {
+TasksServiceClient.prototype.bulkCancelTasks = function bulkCancelTasks(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(TasksService.CancelAllTasks, {
+  var client = grpc.unary(TasksService.BulkCancelTasks, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
