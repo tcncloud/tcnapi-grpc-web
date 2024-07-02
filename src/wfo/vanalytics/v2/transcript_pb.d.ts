@@ -1071,6 +1071,11 @@ export class TranscriptQuery extends jspb.Message {
   getPhone(): TranscriptQuery.Phone | undefined;
   setPhone(value?: TranscriptQuery.Phone): void;
 
+  hasChannelType(): boolean;
+  clearChannelType(): void;
+  getChannelType(): TranscriptQuery.Channel | undefined;
+  setChannelType(value?: TranscriptQuery.Channel): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TranscriptQuery.AsObject;
   static toObject(includeInstance: boolean, msg: TranscriptQuery): TranscriptQuery.AsObject;
@@ -1091,6 +1096,7 @@ export namespace TranscriptQuery {
     startTime?: TranscriptQuery.StartTime.AsObject,
     deleteTime?: TranscriptQuery.DeleteTime.AsObject,
     phone?: TranscriptQuery.Phone.AsObject,
+    channelType?: TranscriptQuery.Channel.AsObject,
   }
 
   export class Phone extends jspb.Message {
