@@ -414,6 +414,16 @@ export class PaymentFlow extends jspb.Message {
   getPaymentvisionAch(): PaymentVisionACH | undefined;
   setPaymentvisionAch(value?: PaymentVisionACH): void;
 
+  hasPaymentstellaCc(): boolean;
+  clearPaymentstellaCc(): void;
+  getPaymentstellaCc(): PaymentStellaCc | undefined;
+  setPaymentstellaCc(value?: PaymentStellaCc): void;
+
+  hasPaymentstellaEcheck(): boolean;
+  clearPaymentstellaEcheck(): void;
+  getPaymentstellaEcheck(): PaymentStellaECheck | undefined;
+  setPaymentstellaEcheck(value?: PaymentStellaECheck): void;
+
   clearPaymentFieldsList(): void;
   getPaymentFieldsList(): Array<FieldDefinition>;
   setPaymentFieldsList(value: Array<FieldDefinition>): void;
@@ -448,6 +458,8 @@ export namespace PaymentFlow {
     priocommerceAch?: PaymentPriocommerceAch.AsObject,
     paymentvisionCc?: PaymentVisionCC.AsObject,
     paymentvisionAch?: PaymentVisionACH.AsObject,
+    paymentstellaCc?: PaymentStellaCc.AsObject,
+    paymentstellaEcheck?: PaymentStellaECheck.AsObject,
     paymentFieldsList: Array<FieldDefinition.AsObject>,
   }
 
@@ -468,6 +480,8 @@ export namespace PaymentFlow {
     PRIOCOMMERCE_ACH = 14,
     PAYMENTVISION_CC = 15,
     PAYMENTVISION_ACH = 16,
+    PAYMENTSTELLA_CC = 17,
+    PAYMENTSTELLA_ECHECK = 18,
   }
 }
 
@@ -2754,6 +2768,38 @@ export class PaymentVisionACH extends jspb.Message {
 }
 
 export namespace PaymentVisionACH {
+  export type AsObject = {
+  }
+}
+
+export class PaymentStellaCc extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentStellaCc.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentStellaCc): PaymentStellaCc.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentStellaCc, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentStellaCc;
+  static deserializeBinaryFromReader(message: PaymentStellaCc, reader: jspb.BinaryReader): PaymentStellaCc;
+}
+
+export namespace PaymentStellaCc {
+  export type AsObject = {
+  }
+}
+
+export class PaymentStellaECheck extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentStellaECheck.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentStellaECheck): PaymentStellaECheck.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentStellaECheck, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentStellaECheck;
+  static deserializeBinaryFromReader(message: PaymentStellaECheck, reader: jspb.BinaryReader): PaymentStellaECheck;
+}
+
+export namespace PaymentStellaECheck {
   export type AsObject = {
   }
 }
