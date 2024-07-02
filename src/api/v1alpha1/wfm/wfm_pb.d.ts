@@ -7516,9 +7516,6 @@ export class PerformanceMetricForSkillCollectionV2 extends jspb.Message {
   getTotalFteIntervalsAchieved(): number;
   setTotalFteIntervalsAchieved(value: number): void;
 
-  getTotalProductiveFte(): number;
-  setTotalProductiveFte(value: number): void;
-
   getNumIntervalsWithCallFtes(): number;
   setNumIntervalsWithCallFtes(value: number): void;
 
@@ -7558,6 +7555,15 @@ export class PerformanceMetricForSkillCollectionV2 extends jspb.Message {
   getSkillCollection(): api_commons_wfm_pb.SkillProfileCategory | undefined;
   setSkillCollection(value?: api_commons_wfm_pb.SkillProfileCategory): void;
 
+  getTotalRequiredFte(): number;
+  setTotalRequiredFte(value: number): void;
+
+  getTotalAchievedFte(): number;
+  setTotalAchievedFte(value: number): void;
+
+  getTotalProductiveFte(): number;
+  setTotalProductiveFte(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PerformanceMetricForSkillCollectionV2.AsObject;
   static toObject(includeInstance: boolean, msg: PerformanceMetricForSkillCollectionV2): PerformanceMetricForSkillCollectionV2.AsObject;
@@ -7573,7 +7579,6 @@ export namespace PerformanceMetricForSkillCollectionV2 {
     dateRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     totalFteIntervalsRequired: number,
     totalFteIntervalsAchieved: number,
-    totalProductiveFte: number,
     numIntervalsWithCallFtes: number,
     numIntervalsWithShiftFtes: number,
     numIntervalsWithCallFtesButNoShifts: number,
@@ -7585,6 +7590,9 @@ export namespace PerformanceMetricForSkillCollectionV2 {
     fteOccupancyIntervalsList: Array<FTERequiredVsAchievedOccupancyInterval.AsObject>,
     serviceLevelIntervalsList: Array<ServiceLevelInterval.AsObject>,
     skillCollection?: api_commons_wfm_pb.SkillProfileCategory.AsObject,
+    totalRequiredFte: number,
+    totalAchievedFte: number,
+    totalProductiveFte: number,
   }
 }
 
@@ -7599,9 +7607,6 @@ export class PerformanceMetricV2 extends jspb.Message {
 
   getTotalFteIntervalsAchieved(): number;
   setTotalFteIntervalsAchieved(value: number): void;
-
-  getTotalProductiveFte(): number;
-  setTotalProductiveFte(value: number): void;
 
   getNumIntervalsWithCallFtes(): number;
   setNumIntervalsWithCallFtes(value: number): void;
@@ -7642,6 +7647,15 @@ export class PerformanceMetricV2 extends jspb.Message {
   setMetricsBySkillCollectionList(value: Array<PerformanceMetricForSkillCollectionV2>): void;
   addMetricsBySkillCollection(value?: PerformanceMetricForSkillCollectionV2, index?: number): PerformanceMetricForSkillCollectionV2;
 
+  getTotalRequiredFte(): number;
+  setTotalRequiredFte(value: number): void;
+
+  getTotalAchievedFte(): number;
+  setTotalAchievedFte(value: number): void;
+
+  getTotalProductiveFte(): number;
+  setTotalProductiveFte(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PerformanceMetricV2.AsObject;
   static toObject(includeInstance: boolean, msg: PerformanceMetricV2): PerformanceMetricV2.AsObject;
@@ -7657,7 +7671,6 @@ export namespace PerformanceMetricV2 {
     dateRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     totalFteIntervalsRequired: number,
     totalFteIntervalsAchieved: number,
-    totalProductiveFte: number,
     numIntervalsWithCallFtes: number,
     numIntervalsWithShiftFtes: number,
     numIntervalsWithCallFtesButNoShifts: number,
@@ -7669,6 +7682,9 @@ export namespace PerformanceMetricV2 {
     fteOccupancyIntervalsList: Array<FTERequiredVsAchievedOccupancyInterval.AsObject>,
     serviceLevelIntervalsList: Array<ServiceLevelInterval.AsObject>,
     metricsBySkillCollectionList: Array<PerformanceMetricForSkillCollectionV2.AsObject>,
+    totalRequiredFte: number,
+    totalAchievedFte: number,
+    totalProductiveFte: number,
   }
 }
 
