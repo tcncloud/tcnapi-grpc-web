@@ -136,6 +136,7 @@ export namespace AgentStatus {
     CALLER_TRANSFER_LOST_MERGED_CALLER: 37;
     COLD_OUTBOUND_TRANSFER_STARTED: 38;
     COLD_AGENT_TRANSFER_STARTED: 39;
+    SECURE_FORM_HANDLING: 40;
   }
 
   export const Enum: EnumMap;
@@ -177,6 +178,7 @@ export namespace CallerStatus {
     CALLER_TRANSFER_PEER: 17;
     CALLER_TRANSFER_MERGED_CALLER: 18;
     CALLER_PEERED: 19;
+    SECURE_FORM_HANDLING_COLLECT: 20;
   }
 
   export const Enum: EnumMap;
