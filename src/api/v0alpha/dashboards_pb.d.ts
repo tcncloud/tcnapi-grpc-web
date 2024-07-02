@@ -264,6 +264,9 @@ export class GetDashboardRequest extends jspb.Message {
   getResourceId(): string;
   setResourceId(value: string): void;
 
+  getApplication(): annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap];
+  setApplication(value: annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDashboardRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetDashboardRequest): GetDashboardRequest.AsObject;
@@ -278,6 +281,7 @@ export namespace GetDashboardRequest {
   export type AsObject = {
     dashboardId: string,
     resourceId: string,
+    application: annotations_perms_license_pb.ApplicationMap[keyof annotations_perms_license_pb.ApplicationMap],
   }
 }
 

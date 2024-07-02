@@ -2515,7 +2515,8 @@ proto.api.v0alpha.GetDashboardRequest.prototype.toObject = function(opt_includeI
 proto.api.v0alpha.GetDashboardRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    resourceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    application: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2560,6 +2561,10 @@ proto.api.v0alpha.GetDashboardRequest.deserializeBinaryFromReader = function(msg
       var value = /** @type {string} */ (reader.readString());
       msg.setResourceId(value);
       break;
+    case 3:
+      var value = /** @type {!proto.annotations.perms.Application} */ (reader.readEnum());
+      msg.setApplication(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2603,6 +2608,13 @@ proto.api.v0alpha.GetDashboardRequest.serializeBinaryToWriter = function(message
       f
     );
   }
+  f = message.getApplication();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -2639,6 +2651,24 @@ proto.api.v0alpha.GetDashboardRequest.prototype.getResourceId = function() {
  */
 proto.api.v0alpha.GetDashboardRequest.prototype.setResourceId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional annotations.perms.Application application = 3;
+ * @return {!proto.annotations.perms.Application}
+ */
+proto.api.v0alpha.GetDashboardRequest.prototype.getApplication = function() {
+  return /** @type {!proto.annotations.perms.Application} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.annotations.perms.Application} value
+ * @return {!proto.api.v0alpha.GetDashboardRequest} returns this
+ */
+proto.api.v0alpha.GetDashboardRequest.prototype.setApplication = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
