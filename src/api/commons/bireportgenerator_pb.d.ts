@@ -182,6 +182,11 @@ export class FilenamePart extends jspb.Message {
   getStaticText(): string;
   setStaticText(value: string): void;
 
+  clearDatePartsList(): void;
+  getDatePartsList(): Array<string>;
+  setDatePartsList(value: Array<string>): void;
+  addDateParts(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FilenamePart.AsObject;
   static toObject(includeInstance: boolean, msg: FilenamePart): FilenamePart.AsObject;
@@ -196,6 +201,7 @@ export namespace FilenamePart {
   export type AsObject = {
     type: FilenamePartTypeMap[keyof FilenamePartTypeMap],
     staticText: string,
+    datePartsList: Array<string>,
   }
 }
 

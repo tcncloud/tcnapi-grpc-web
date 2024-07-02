@@ -176,7 +176,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.commons.FilenamePart = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.FilenamePart.repeatedFields_, null);
 };
 goog.inherits(proto.api.commons.FilenamePart, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1423,6 +1423,13 @@ proto.api.commons.DeliveryOptions.prototype.clearFailureNotificationEmailsList =
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.commons.FilenamePart.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1455,7 +1462,8 @@ proto.api.commons.FilenamePart.prototype.toObject = function(opt_includeInstance
 proto.api.commons.FilenamePart.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    staticText: jspb.Message.getFieldWithDefault(msg, 2, "")
+    staticText: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    datePartsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1500,6 +1508,10 @@ proto.api.commons.FilenamePart.deserializeBinaryFromReader = function(msg, reade
       var value = /** @type {string} */ (reader.readString());
       msg.setStaticText(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addDateParts(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1543,6 +1555,13 @@ proto.api.commons.FilenamePart.serializeBinaryToWriter = function(message, write
       f
     );
   }
+  f = message.getDatePartsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -1579,6 +1598,43 @@ proto.api.commons.FilenamePart.prototype.getStaticText = function() {
  */
 proto.api.commons.FilenamePart.prototype.setStaticText = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * repeated string date_parts = 3;
+ * @return {!Array<string>}
+ */
+proto.api.commons.FilenamePart.prototype.getDatePartsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.commons.FilenamePart} returns this
+ */
+proto.api.commons.FilenamePart.prototype.setDatePartsList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.FilenamePart} returns this
+ */
+proto.api.commons.FilenamePart.prototype.addDateParts = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.FilenamePart} returns this
+ */
+proto.api.commons.FilenamePart.prototype.clearDatePartsList = function() {
+  return this.setDatePartsList([]);
 };
 
 
