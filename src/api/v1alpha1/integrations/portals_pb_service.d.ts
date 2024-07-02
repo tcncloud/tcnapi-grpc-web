@@ -239,15 +239,6 @@ type PortalManagerApiListAllActionDefinitions = {
   readonly responseType: typeof api_v1alpha1_integrations_portals_pb.ListAllActionDefinitionsResponse;
 };
 
-type PortalManagerApiListPluginsByMethod = {
-  readonly methodName: string;
-  readonly service: typeof PortalManagerApi;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_integrations_portals_pb.ListPluginsByMethodReq;
-  readonly responseType: typeof api_v1alpha1_integrations_portals_pb.ListPluginsByMethodRes;
-};
-
 export class PortalManagerApi {
   static readonly serviceName: string;
   static readonly UpsertPortalConfig: PortalManagerApiUpsertPortalConfig;
@@ -276,7 +267,6 @@ export class PortalManagerApi {
   static readonly ListPortalTypes: PortalManagerApiListPortalTypes;
   static readonly ListPortalWorkflows: PortalManagerApiListPortalWorkflows;
   static readonly ListAllActionDefinitions: PortalManagerApiListAllActionDefinitions;
-  static readonly ListPluginsByMethod: PortalManagerApiListPluginsByMethod;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -544,15 +534,6 @@ export class PortalManagerApiClient {
   listAllActionDefinitions(
     requestMessage: api_v1alpha1_integrations_portals_pb.ListAllActionDefinitionsReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListAllActionDefinitionsResponse|null) => void
-  ): UnaryResponse;
-  listPluginsByMethod(
-    requestMessage: api_v1alpha1_integrations_portals_pb.ListPluginsByMethodReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListPluginsByMethodRes|null) => void
-  ): UnaryResponse;
-  listPluginsByMethod(
-    requestMessage: api_v1alpha1_integrations_portals_pb.ListPluginsByMethodReq,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_portals_pb.ListPluginsByMethodRes|null) => void
   ): UnaryResponse;
 }
 
