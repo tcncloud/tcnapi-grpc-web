@@ -9754,7 +9754,8 @@ proto.wfo.vanalytics.v2.TranscriptQuery.toObject = function(includeInstance, msg
     flagSummary: (f = msg.getFlagSummary()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.toObject(includeInstance, f),
     startTime: (f = msg.getStartTime()) && proto.wfo.vanalytics.v2.TranscriptQuery.StartTime.toObject(includeInstance, f),
     deleteTime: (f = msg.getDeleteTime()) && proto.wfo.vanalytics.v2.TranscriptQuery.DeleteTime.toObject(includeInstance, f),
-    phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.toObject(includeInstance, f)
+    phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.toObject(includeInstance, f),
+    channelType: (f = msg.getChannelType()) && proto.wfo.vanalytics.v2.TranscriptQuery.Channel.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9830,6 +9831,11 @@ proto.wfo.vanalytics.v2.TranscriptQuery.deserializeBinaryFromReader = function(m
       var value = new proto.wfo.vanalytics.v2.TranscriptQuery.Phone;
       reader.readMessage(value,proto.wfo.vanalytics.v2.TranscriptQuery.Phone.deserializeBinaryFromReader);
       msg.setPhone(value);
+      break;
+    case 9:
+      var value = new proto.wfo.vanalytics.v2.TranscriptQuery.Channel;
+      reader.readMessage(value,proto.wfo.vanalytics.v2.TranscriptQuery.Channel.deserializeBinaryFromReader);
+      msg.setChannelType(value);
       break;
     default:
       reader.skipField();
@@ -9922,6 +9928,14 @@ proto.wfo.vanalytics.v2.TranscriptQuery.serializeBinaryToWriter = function(messa
       8,
       f,
       proto.wfo.vanalytics.v2.TranscriptQuery.Phone.serializeBinaryToWriter
+    );
+  }
+  f = message.getChannelType();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.wfo.vanalytics.v2.TranscriptQuery.Channel.serializeBinaryToWriter
     );
   }
 };
@@ -23819,6 +23833,43 @@ proto.wfo.vanalytics.v2.TranscriptQuery.prototype.clearPhone = function() {
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.prototype.hasPhone = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional Channel channel_type = 9;
+ * @return {?proto.wfo.vanalytics.v2.TranscriptQuery.Channel}
+ */
+proto.wfo.vanalytics.v2.TranscriptQuery.prototype.getChannelType = function() {
+  return /** @type{?proto.wfo.vanalytics.v2.TranscriptQuery.Channel} */ (
+    jspb.Message.getWrapperField(this, proto.wfo.vanalytics.v2.TranscriptQuery.Channel, 9));
+};
+
+
+/**
+ * @param {?proto.wfo.vanalytics.v2.TranscriptQuery.Channel|undefined} value
+ * @return {!proto.wfo.vanalytics.v2.TranscriptQuery} returns this
+*/
+proto.wfo.vanalytics.v2.TranscriptQuery.prototype.setChannelType = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wfo.vanalytics.v2.TranscriptQuery} returns this
+ */
+proto.wfo.vanalytics.v2.TranscriptQuery.prototype.clearChannelType = function() {
+  return this.setChannelType(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wfo.vanalytics.v2.TranscriptQuery.prototype.hasChannelType = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
