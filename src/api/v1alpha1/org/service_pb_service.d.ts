@@ -2031,6 +2031,15 @@ type OrgDeleteCertificateInfo = {
   readonly responseType: typeof api_v1alpha1_org_preferences_pb.DeleteCertificateInfoResponse;
 };
 
+type OrgRevokeCertificateInfo = {
+  readonly methodName: string;
+  readonly service: typeof Org;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_org_preferences_pb.RevokeCertificateInfoRequest;
+  readonly responseType: typeof api_v1alpha1_org_preferences_pb.RevokeCertificateInfoResponse;
+};
+
 type OrgListCertificateInfo = {
   readonly methodName: string;
   readonly service: typeof Org;
@@ -2338,6 +2347,7 @@ export class Org {
   static readonly UpdateBusinessHours: OrgUpdateBusinessHours;
   static readonly CreateCertificateInfo: OrgCreateCertificateInfo;
   static readonly DeleteCertificateInfo: OrgDeleteCertificateInfo;
+  static readonly RevokeCertificateInfo: OrgRevokeCertificateInfo;
   static readonly ListCertificateInfo: OrgListCertificateInfo;
   static readonly AddGroupedUserIPRestrictions: OrgAddGroupedUserIPRestrictions;
   static readonly RemoveGroupedUserIPRestrictions: OrgRemoveGroupedUserIPRestrictions;
@@ -4316,6 +4326,15 @@ export class OrgClient {
   deleteCertificateInfo(
     requestMessage: api_v1alpha1_org_preferences_pb.DeleteCertificateInfoRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.DeleteCertificateInfoResponse|null) => void
+  ): UnaryResponse;
+  revokeCertificateInfo(
+    requestMessage: api_v1alpha1_org_preferences_pb.RevokeCertificateInfoRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.RevokeCertificateInfoResponse|null) => void
+  ): UnaryResponse;
+  revokeCertificateInfo(
+    requestMessage: api_v1alpha1_org_preferences_pb.RevokeCertificateInfoRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_preferences_pb.RevokeCertificateInfoResponse|null) => void
   ): UnaryResponse;
   listCertificateInfo(
     requestMessage: api_v1alpha1_org_preferences_pb.ListCertificateInfoRequest,
