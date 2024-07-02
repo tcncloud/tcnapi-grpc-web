@@ -2448,6 +2448,42 @@ export namespace DeleteCertificateInfoResponse {
   }
 }
 
+export class RevokeCertificateInfoRequest extends jspb.Message {
+  getCertificateInfoId(): string;
+  setCertificateInfoId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RevokeCertificateInfoRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RevokeCertificateInfoRequest): RevokeCertificateInfoRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RevokeCertificateInfoRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RevokeCertificateInfoRequest;
+  static deserializeBinaryFromReader(message: RevokeCertificateInfoRequest, reader: jspb.BinaryReader): RevokeCertificateInfoRequest;
+}
+
+export namespace RevokeCertificateInfoRequest {
+  export type AsObject = {
+    certificateInfoId: string,
+  }
+}
+
+export class RevokeCertificateInfoResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RevokeCertificateInfoResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RevokeCertificateInfoResponse): RevokeCertificateInfoResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RevokeCertificateInfoResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RevokeCertificateInfoResponse;
+  static deserializeBinaryFromReader(message: RevokeCertificateInfoResponse, reader: jspb.BinaryReader): RevokeCertificateInfoResponse;
+}
+
+export namespace RevokeCertificateInfoResponse {
+  export type AsObject = {
+  }
+}
+
 export class ListCertificateInfoRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCertificateInfoRequest.AsObject;
