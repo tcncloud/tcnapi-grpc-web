@@ -478,6 +478,78 @@ Acd.AgentUnmute = {
   responseType: api_v0alpha_acd_pb.AgentUnmuteReply
 };
 
+Acd.SecureFormHandlingPrepare = {
+  methodName: "SecureFormHandlingPrepare",
+  service: Acd,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_acd_pb.SecureFormHandlingPrepareReq,
+  responseType: api_v0alpha_acd_pb.SecureFormHandlingPrepareRes
+};
+
+Acd.StartSecureForm = {
+  methodName: "StartSecureForm",
+  service: Acd,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_acd_pb.StartSecureFormReq,
+  responseType: api_v0alpha_acd_pb.StartSecureFormRes
+};
+
+Acd.CollectCallerSecureFormField = {
+  methodName: "CollectCallerSecureFormField",
+  service: Acd,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v0alpha_acd_pb.CollectCallerSecureFormFieldReq,
+  responseType: api_v0alpha_acd_pb.CollectCallerSecureFormFieldRes
+};
+
+Acd.ResetCallerSecureFormField = {
+  methodName: "ResetCallerSecureFormField",
+  service: Acd,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_acd_pb.ResetCallerSecureFormFieldReq,
+  responseType: api_v0alpha_acd_pb.ResetCallerSecureFormFieldRes
+};
+
+Acd.ProcessCallerSecureFormField = {
+  methodName: "ProcessCallerSecureFormField",
+  service: Acd,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_acd_pb.ProcessCallerSecureFormFieldReq,
+  responseType: api_v0alpha_acd_pb.ProcessCallerSecureFormFieldRes
+};
+
+Acd.ProcessSecureForm = {
+  methodName: "ProcessSecureForm",
+  service: Acd,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_acd_pb.ProcessSecureFormReq,
+  responseType: api_v0alpha_acd_pb.ProcessSecureFormRes
+};
+
+Acd.CancelSecureFromHandling = {
+  methodName: "CancelSecureFromHandling",
+  service: Acd,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_acd_pb.CancelSecureFromHandlingReq,
+  responseType: api_v0alpha_acd_pb.CancelSecureFromHandlingRes
+};
+
+Acd.FinishSecureFromHandling = {
+  methodName: "FinishSecureFromHandling",
+  service: Acd,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_acd_pb.FinishSecureFromHandlingReq,
+  responseType: api_v0alpha_acd_pb.FinishSecureFromHandlingRes
+};
+
 exports.Acd = Acd;
 
 function AcdClient(serviceHost, options) {
@@ -2079,6 +2151,262 @@ AcdClient.prototype.agentUnmute = function agentUnmute(requestMessage, metadata,
     callback = arguments[1];
   }
   var client = grpc.unary(Acd.AgentUnmute, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AcdClient.prototype.secureFormHandlingPrepare = function secureFormHandlingPrepare(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Acd.SecureFormHandlingPrepare, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AcdClient.prototype.startSecureForm = function startSecureForm(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Acd.StartSecureForm, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AcdClient.prototype.collectCallerSecureFormField = function collectCallerSecureFormField(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(Acd.CollectCallerSecureFormField, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
+AcdClient.prototype.resetCallerSecureFormField = function resetCallerSecureFormField(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Acd.ResetCallerSecureFormField, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AcdClient.prototype.processCallerSecureFormField = function processCallerSecureFormField(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Acd.ProcessCallerSecureFormField, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AcdClient.prototype.processSecureForm = function processSecureForm(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Acd.ProcessSecureForm, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AcdClient.prototype.cancelSecureFromHandling = function cancelSecureFromHandling(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Acd.CancelSecureFromHandling, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AcdClient.prototype.finishSecureFromHandling = function finishSecureFromHandling(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Acd.FinishSecureFromHandling, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

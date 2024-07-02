@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as api_commons_acd_pb from "../../api/commons/acd_pb";
+import * as api_v1alpha1_integrations_service_pb from "../../api/v1alpha1/integrations/service_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 
 export class AgentGetStatusRequest extends jspb.Message {
@@ -2235,6 +2236,303 @@ export class AgentUnmuteReply extends jspb.Message {
 }
 
 export namespace AgentUnmuteReply {
+  export type AsObject = {
+  }
+}
+
+export class SecureFormHandlingPrepareReq extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SecureFormHandlingPrepareReq.AsObject;
+  static toObject(includeInstance: boolean, msg: SecureFormHandlingPrepareReq): SecureFormHandlingPrepareReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SecureFormHandlingPrepareReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SecureFormHandlingPrepareReq;
+  static deserializeBinaryFromReader(message: SecureFormHandlingPrepareReq, reader: jspb.BinaryReader): SecureFormHandlingPrepareReq;
+}
+
+export namespace SecureFormHandlingPrepareReq {
+  export type AsObject = {
+  }
+}
+
+export class SecureFormHandlingPrepareRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SecureFormHandlingPrepareRes.AsObject;
+  static toObject(includeInstance: boolean, msg: SecureFormHandlingPrepareRes): SecureFormHandlingPrepareRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SecureFormHandlingPrepareRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SecureFormHandlingPrepareRes;
+  static deserializeBinaryFromReader(message: SecureFormHandlingPrepareRes, reader: jspb.BinaryReader): SecureFormHandlingPrepareRes;
+}
+
+export namespace SecureFormHandlingPrepareRes {
+  export type AsObject = {
+  }
+}
+
+export class StartSecureFormReq extends jspb.Message {
+  getPortalId(): string;
+  setPortalId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StartSecureFormReq.AsObject;
+  static toObject(includeInstance: boolean, msg: StartSecureFormReq): StartSecureFormReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: StartSecureFormReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StartSecureFormReq;
+  static deserializeBinaryFromReader(message: StartSecureFormReq, reader: jspb.BinaryReader): StartSecureFormReq;
+}
+
+export namespace StartSecureFormReq {
+  export type AsObject = {
+    portalId: string,
+  }
+}
+
+export class StartSecureFormRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StartSecureFormRes.AsObject;
+  static toObject(includeInstance: boolean, msg: StartSecureFormRes): StartSecureFormRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: StartSecureFormRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StartSecureFormRes;
+  static deserializeBinaryFromReader(message: StartSecureFormRes, reader: jspb.BinaryReader): StartSecureFormRes;
+}
+
+export namespace StartSecureFormRes {
+  export type AsObject = {
+  }
+}
+
+export class CollectCallerSecureFormFieldReq extends jspb.Message {
+  getFieldName(): string;
+  setFieldName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CollectCallerSecureFormFieldReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CollectCallerSecureFormFieldReq): CollectCallerSecureFormFieldReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CollectCallerSecureFormFieldReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CollectCallerSecureFormFieldReq;
+  static deserializeBinaryFromReader(message: CollectCallerSecureFormFieldReq, reader: jspb.BinaryReader): CollectCallerSecureFormFieldReq;
+}
+
+export namespace CollectCallerSecureFormFieldReq {
+  export type AsObject = {
+    fieldName: string,
+  }
+}
+
+export class CollectCallerSecureFormFieldRes extends jspb.Message {
+  getDtmfPressed(): number;
+  setDtmfPressed(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CollectCallerSecureFormFieldRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CollectCallerSecureFormFieldRes): CollectCallerSecureFormFieldRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CollectCallerSecureFormFieldRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CollectCallerSecureFormFieldRes;
+  static deserializeBinaryFromReader(message: CollectCallerSecureFormFieldRes, reader: jspb.BinaryReader): CollectCallerSecureFormFieldRes;
+}
+
+export namespace CollectCallerSecureFormFieldRes {
+  export type AsObject = {
+    dtmfPressed: number,
+  }
+}
+
+export class ResetCallerSecureFormFieldReq extends jspb.Message {
+  getFieldName(): string;
+  setFieldName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResetCallerSecureFormFieldReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ResetCallerSecureFormFieldReq): ResetCallerSecureFormFieldReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResetCallerSecureFormFieldReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResetCallerSecureFormFieldReq;
+  static deserializeBinaryFromReader(message: ResetCallerSecureFormFieldReq, reader: jspb.BinaryReader): ResetCallerSecureFormFieldReq;
+}
+
+export namespace ResetCallerSecureFormFieldReq {
+  export type AsObject = {
+    fieldName: string,
+  }
+}
+
+export class ResetCallerSecureFormFieldRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResetCallerSecureFormFieldRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ResetCallerSecureFormFieldRes): ResetCallerSecureFormFieldRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResetCallerSecureFormFieldRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResetCallerSecureFormFieldRes;
+  static deserializeBinaryFromReader(message: ResetCallerSecureFormFieldRes, reader: jspb.BinaryReader): ResetCallerSecureFormFieldRes;
+}
+
+export namespace ResetCallerSecureFormFieldRes {
+  export type AsObject = {
+  }
+}
+
+export class ProcessCallerSecureFormFieldReq extends jspb.Message {
+  getFieldName(): string;
+  setFieldName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProcessCallerSecureFormFieldReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ProcessCallerSecureFormFieldReq): ProcessCallerSecureFormFieldReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProcessCallerSecureFormFieldReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProcessCallerSecureFormFieldReq;
+  static deserializeBinaryFromReader(message: ProcessCallerSecureFormFieldReq, reader: jspb.BinaryReader): ProcessCallerSecureFormFieldReq;
+}
+
+export namespace ProcessCallerSecureFormFieldReq {
+  export type AsObject = {
+    fieldName: string,
+  }
+}
+
+export class ProcessCallerSecureFormFieldRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProcessCallerSecureFormFieldRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ProcessCallerSecureFormFieldRes): ProcessCallerSecureFormFieldRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProcessCallerSecureFormFieldRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProcessCallerSecureFormFieldRes;
+  static deserializeBinaryFromReader(message: ProcessCallerSecureFormFieldRes, reader: jspb.BinaryReader): ProcessCallerSecureFormFieldRes;
+}
+
+export namespace ProcessCallerSecureFormFieldRes {
+  export type AsObject = {
+  }
+}
+
+export class ProcessSecureFormReq extends jspb.Message {
+  getValuesMap(): jspb.Map<string, api_v1alpha1_integrations_service_pb.Value>;
+  clearValuesMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProcessSecureFormReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ProcessSecureFormReq): ProcessSecureFormReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProcessSecureFormReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProcessSecureFormReq;
+  static deserializeBinaryFromReader(message: ProcessSecureFormReq, reader: jspb.BinaryReader): ProcessSecureFormReq;
+}
+
+export namespace ProcessSecureFormReq {
+  export type AsObject = {
+    valuesMap: Array<[string, api_v1alpha1_integrations_service_pb.Value.AsObject]>,
+  }
+}
+
+export class ProcessSecureFormRes extends jspb.Message {
+  getSuccess(): boolean;
+  setSuccess(value: boolean): void;
+
+  getDataMap(): jspb.Map<string, api_v1alpha1_integrations_service_pb.Value>;
+  clearDataMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProcessSecureFormRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ProcessSecureFormRes): ProcessSecureFormRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProcessSecureFormRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProcessSecureFormRes;
+  static deserializeBinaryFromReader(message: ProcessSecureFormRes, reader: jspb.BinaryReader): ProcessSecureFormRes;
+}
+
+export namespace ProcessSecureFormRes {
+  export type AsObject = {
+    success: boolean,
+    dataMap: Array<[string, api_v1alpha1_integrations_service_pb.Value.AsObject]>,
+  }
+}
+
+export class CancelSecureFromHandlingReq extends jspb.Message {
+  getReason(): string;
+  setReason(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CancelSecureFromHandlingReq.AsObject;
+  static toObject(includeInstance: boolean, msg: CancelSecureFromHandlingReq): CancelSecureFromHandlingReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CancelSecureFromHandlingReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CancelSecureFromHandlingReq;
+  static deserializeBinaryFromReader(message: CancelSecureFromHandlingReq, reader: jspb.BinaryReader): CancelSecureFromHandlingReq;
+}
+
+export namespace CancelSecureFromHandlingReq {
+  export type AsObject = {
+    reason: string,
+  }
+}
+
+export class CancelSecureFromHandlingRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CancelSecureFromHandlingRes.AsObject;
+  static toObject(includeInstance: boolean, msg: CancelSecureFromHandlingRes): CancelSecureFromHandlingRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CancelSecureFromHandlingRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CancelSecureFromHandlingRes;
+  static deserializeBinaryFromReader(message: CancelSecureFromHandlingRes, reader: jspb.BinaryReader): CancelSecureFromHandlingRes;
+}
+
+export namespace CancelSecureFromHandlingRes {
+  export type AsObject = {
+  }
+}
+
+export class FinishSecureFromHandlingReq extends jspb.Message {
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  getDataMap(): jspb.Map<string, api_v1alpha1_integrations_service_pb.Value>;
+  clearDataMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FinishSecureFromHandlingReq.AsObject;
+  static toObject(includeInstance: boolean, msg: FinishSecureFromHandlingReq): FinishSecureFromHandlingReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FinishSecureFromHandlingReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FinishSecureFromHandlingReq;
+  static deserializeBinaryFromReader(message: FinishSecureFromHandlingReq, reader: jspb.BinaryReader): FinishSecureFromHandlingReq;
+}
+
+export namespace FinishSecureFromHandlingReq {
+  export type AsObject = {
+    email: string,
+    dataMap: Array<[string, api_v1alpha1_integrations_service_pb.Value.AsObject]>,
+  }
+}
+
+export class FinishSecureFromHandlingRes extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FinishSecureFromHandlingRes.AsObject;
+  static toObject(includeInstance: boolean, msg: FinishSecureFromHandlingRes): FinishSecureFromHandlingRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FinishSecureFromHandlingRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FinishSecureFromHandlingRes;
+  static deserializeBinaryFromReader(message: FinishSecureFromHandlingRes, reader: jspb.BinaryReader): FinishSecureFromHandlingRes;
+}
+
+export namespace FinishSecureFromHandlingRes {
   export type AsObject = {
   }
 }
