@@ -7756,6 +7756,12 @@ export class FTERequiredVsAchievedOccupancyInterval extends jspb.Message {
   getAchievedFteOccupancy(): number;
   setAchievedFteOccupancy(value: number): void;
 
+  getRequiredFte(): number;
+  setRequiredFte(value: number): void;
+
+  getAchievedFte(): number;
+  setAchievedFte(value: number): void;
+
   getProductiveFte(): number;
   setProductiveFte(value: number): void;
 
@@ -7774,6 +7780,8 @@ export namespace FTERequiredVsAchievedOccupancyInterval {
     startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     requiredFteOccupancy: number,
     achievedFteOccupancy: number,
+    requiredFte: number,
+    achievedFte: number,
     productiveFte: number,
   }
 }

@@ -64377,7 +64377,9 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.toObject = functio
     startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     requiredFteOccupancy: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
     achievedFteOccupancy: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    productiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0)
+    requiredFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+    achievedFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
+    productiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0)
   };
 
   if (includeInstance) {
@@ -64428,6 +64430,14 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.deserializeBinaryF
       msg.setAchievedFteOccupancy(value);
       break;
     case 4:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setRequiredFte(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAchievedFte(value);
+      break;
+    case 6:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setProductiveFte(value);
       break;
@@ -64482,10 +64492,24 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.serializeBinaryToW
       f
     );
   }
-  f = message.getProductiveFte();
+  f = message.getRequiredFte();
   if (f !== 0.0) {
     writer.writeFloat(
       4,
+      f
+    );
+  }
+  f = message.getAchievedFte();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      5,
+      f
+    );
+  }
+  f = message.getProductiveFte();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      6,
       f
     );
   }
@@ -64566,10 +64590,10 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.setAchie
 
 
 /**
- * optional float productive_fte = 4;
+ * optional float required_fte = 4;
  * @return {number}
  */
-proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.getProductiveFte = function() {
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.getRequiredFte = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
 };
 
@@ -64578,8 +64602,44 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.getProdu
  * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval} returns this
  */
-proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.setProductiveFte = function(value) {
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.setRequiredFte = function(value) {
   return jspb.Message.setProto3FloatField(this, 4, value);
+};
+
+
+/**
+ * optional float achieved_fte = 5;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.getAchievedFte = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval} returns this
+ */
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.setAchievedFte = function(value) {
+  return jspb.Message.setProto3FloatField(this, 5, value);
+};
+
+
+/**
+ * optional float productive_fte = 6;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.getProductiveFte = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval} returns this
+ */
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.setProductiveFte = function(value) {
+  return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 
