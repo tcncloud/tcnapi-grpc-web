@@ -60405,7 +60405,7 @@ proto.api.v1alpha1.wfm.BuildGlobalDiagnosticsRes.prototype.clearNodesCheckedList
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.PublishedSchedule.repeatedFields_ = [4,5];
+proto.api.v1alpha1.wfm.PublishedSchedule.repeatedFields_ = [4,5,6];
 
 
 
@@ -60444,7 +60444,9 @@ proto.api.v1alpha1.wfm.PublishedSchedule.toObject = function(includeInstance, ms
     shiftInstancesList: jspb.Message.toObjectList(msg.getShiftInstancesList(),
     proto.api.v1alpha1.wfm.ShiftInstance.toObject, includeInstance),
     performanceMetricsList: jspb.Message.toObjectList(msg.getPerformanceMetricsList(),
-    proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance)
+    proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance),
+    performanceMetricsV2List: jspb.Message.toObjectList(msg.getPerformanceMetricsV2List(),
+    proto.api.v1alpha1.wfm.PerformanceMetricV2.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -60504,6 +60506,11 @@ proto.api.v1alpha1.wfm.PublishedSchedule.deserializeBinaryFromReader = function(
       var value = new proto.api.v1alpha1.wfm.PerformanceMetric;
       reader.readMessage(value,proto.api.v1alpha1.wfm.PerformanceMetric.deserializeBinaryFromReader);
       msg.addPerformanceMetrics(value);
+      break;
+    case 6:
+      var value = new proto.api.v1alpha1.wfm.PerformanceMetricV2;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.PerformanceMetricV2.deserializeBinaryFromReader);
+      msg.addPerformanceMetricsV2(value);
       break;
     default:
       reader.skipField();
@@ -60571,6 +60578,14 @@ proto.api.v1alpha1.wfm.PublishedSchedule.serializeBinaryToWriter = function(mess
       5,
       f,
       proto.api.v1alpha1.wfm.PerformanceMetric.serializeBinaryToWriter
+    );
+  }
+  f = message.getPerformanceMetricsV2List();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
+      f,
+      proto.api.v1alpha1.wfm.PerformanceMetricV2.serializeBinaryToWriter
     );
   }
 };
@@ -60744,13 +60759,51 @@ proto.api.v1alpha1.wfm.PublishedSchedule.prototype.clearPerformanceMetricsList =
 };
 
 
+/**
+ * repeated PerformanceMetricV2 performance_metrics_v2 = 6;
+ * @return {!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>}
+ */
+proto.api.v1alpha1.wfm.PublishedSchedule.prototype.getPerformanceMetricsV2List = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.PerformanceMetricV2, 6));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>} value
+ * @return {!proto.api.v1alpha1.wfm.PublishedSchedule} returns this
+*/
+proto.api.v1alpha1.wfm.PublishedSchedule.prototype.setPerformanceMetricsV2List = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.PerformanceMetricV2=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.PerformanceMetricV2}
+ */
+proto.api.v1alpha1.wfm.PublishedSchedule.prototype.addPerformanceMetricsV2 = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.api.v1alpha1.wfm.PerformanceMetricV2, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.PublishedSchedule} returns this
+ */
+proto.api.v1alpha1.wfm.PublishedSchedule.prototype.clearPerformanceMetricsV2List = function() {
+  return this.setPerformanceMetricsV2List([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.DraftSchedule.repeatedFields_ = [8,9];
+proto.api.v1alpha1.wfm.DraftSchedule.repeatedFields_ = [8,9,11];
 
 
 
@@ -60794,7 +60847,9 @@ proto.api.v1alpha1.wfm.DraftSchedule.toObject = function(includeInstance, msg) {
     proto.api.v1alpha1.wfm.ShiftInstance.toObject, includeInstance),
     performanceMetricsList: jspb.Message.toObjectList(msg.getPerformanceMetricsList(),
     proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance),
-    scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 10, 0)
+    scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    performanceMetricsV2List: jspb.Message.toObjectList(msg.getPerformanceMetricsV2List(),
+    proto.api.v1alpha1.wfm.PerformanceMetricV2.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -60875,6 +60930,11 @@ proto.api.v1alpha1.wfm.DraftSchedule.deserializeBinaryFromReader = function(msg,
     case 10:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setScheduleScenarioSid(value);
+      break;
+    case 11:
+      var value = new proto.api.v1alpha1.wfm.PerformanceMetricV2;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.PerformanceMetricV2.deserializeBinaryFromReader);
+      msg.addPerformanceMetricsV2(value);
       break;
     default:
       reader.skipField();
@@ -60978,6 +61038,14 @@ proto.api.v1alpha1.wfm.DraftSchedule.serializeBinaryToWriter = function(message,
     writer.writeInt64(
       10,
       f
+    );
+  }
+  f = message.getPerformanceMetricsV2List();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      11,
+      f,
+      proto.api.v1alpha1.wfm.PerformanceMetricV2.serializeBinaryToWriter
     );
   }
 };
@@ -61260,6 +61328,44 @@ proto.api.v1alpha1.wfm.DraftSchedule.prototype.setScheduleScenarioSid = function
 };
 
 
+/**
+ * repeated PerformanceMetricV2 performance_metrics_v2 = 11;
+ * @return {!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>}
+ */
+proto.api.v1alpha1.wfm.DraftSchedule.prototype.getPerformanceMetricsV2List = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.PerformanceMetricV2, 11));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>} value
+ * @return {!proto.api.v1alpha1.wfm.DraftSchedule} returns this
+*/
+proto.api.v1alpha1.wfm.DraftSchedule.prototype.setPerformanceMetricsV2List = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.PerformanceMetricV2=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.PerformanceMetricV2}
+ */
+proto.api.v1alpha1.wfm.DraftSchedule.prototype.addPerformanceMetricsV2 = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.api.v1alpha1.wfm.PerformanceMetricV2, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.DraftSchedule} returns this
+ */
+proto.api.v1alpha1.wfm.DraftSchedule.prototype.clearPerformanceMetricsV2List = function() {
+  return this.setPerformanceMetricsV2List([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -61302,7 +61408,6 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.toObject = function(i
     dateRange: (f = msg.getDateRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
     totalCallsRequired: jspb.Message.getFieldWithDefault(msg, 2, 0),
     totalFtesAchieved: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    totalProductiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 14, 0.0),
     numIntervalsWithRequiredCalls: jspb.Message.getFieldWithDefault(msg, 4, 0),
     numIntervalsWithFtesButNoSchedules: jspb.Message.getFieldWithDefault(msg, 5, 0),
     numIntervalsWithFtesButNoForecastedCalls: jspb.Message.getFieldWithDefault(msg, 6, 0),
@@ -61363,10 +61468,6 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.deserializeBinaryFrom
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTotalFtesAchieved(value);
-      break;
-    case 14:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setTotalProductiveFte(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -61459,13 +61560,6 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.serializeBinaryToWrit
   if (f !== 0) {
     writer.writeInt32(
       3,
-      f
-    );
-  }
-  f = message.getTotalProductiveFte();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      14,
       f
     );
   }
@@ -61615,24 +61709,6 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.prototype.getTotalFte
  */
 proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.prototype.setTotalFtesAchieved = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
-};
-
-
-/**
- * optional float total_productive_fte = 14;
- * @return {number}
- */
-proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.prototype.getTotalProductiveFte = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 14, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection} returns this
- */
-proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.prototype.setTotalProductiveFte = function(value) {
-  return jspb.Message.setProto3FloatField(this, 14, value);
 };
 
 
@@ -61917,7 +61993,6 @@ proto.api.v1alpha1.wfm.PerformanceMetric.toObject = function(includeInstance, ms
     dateRange: (f = msg.getDateRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
     totalCallsRequired: jspb.Message.getFieldWithDefault(msg, 2, 0),
     totalFtesAchieved: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    totalProductiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 14, 0.0),
     numIntervalsWithRequiredCalls: jspb.Message.getFieldWithDefault(msg, 4, 0),
     numIntervalsWithFtesButNoSchedules: jspb.Message.getFieldWithDefault(msg, 5, 0),
     numIntervalsWithFtesButNoForecastedCalls: jspb.Message.getFieldWithDefault(msg, 6, 0),
@@ -61979,10 +62054,6 @@ proto.api.v1alpha1.wfm.PerformanceMetric.deserializeBinaryFromReader = function(
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTotalFtesAchieved(value);
-      break;
-    case 14:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setTotalProductiveFte(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -62075,13 +62146,6 @@ proto.api.v1alpha1.wfm.PerformanceMetric.serializeBinaryToWriter = function(mess
   if (f !== 0) {
     writer.writeInt32(
       3,
-      f
-    );
-  }
-  f = message.getTotalProductiveFte();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      14,
       f
     );
   }
@@ -62231,24 +62295,6 @@ proto.api.v1alpha1.wfm.PerformanceMetric.prototype.getTotalFtesAchieved = functi
  */
 proto.api.v1alpha1.wfm.PerformanceMetric.prototype.setTotalFtesAchieved = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
-};
-
-
-/**
- * optional float total_productive_fte = 14;
- * @return {number}
- */
-proto.api.v1alpha1.wfm.PerformanceMetric.prototype.getTotalProductiveFte = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 14, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.wfm.PerformanceMetric} returns this
- */
-proto.api.v1alpha1.wfm.PerformanceMetric.prototype.setTotalProductiveFte = function(value) {
-  return jspb.Message.setProto3FloatField(this, 14, value);
 };
 
 
@@ -63999,8 +64045,7 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval.toObject = function(include
   var f, obj = {
     startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     requiredCalls: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    achievedFtes: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    productiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0)
+    achievedFtes: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -64050,10 +64095,6 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval.deserializeBinaryFromReader
       var value = /** @type {number} */ (reader.readInt32());
       msg.setAchievedFtes(value);
       break;
-    case 4:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setProductiveFte(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -64102,13 +64143,6 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval.serializeBinaryToWriter = f
   if (f !== 0) {
     writer.writeInt32(
       3,
-      f
-    );
-  }
-  f = message.getProductiveFte();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      4,
       f
     );
   }
@@ -64185,24 +64219,6 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval.prototype.getAchievedFtes =
  */
 proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval.prototype.setAchievedFtes = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
-};
-
-
-/**
- * optional float productive_fte = 4;
- * @return {number}
- */
-proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval.prototype.getProductiveFte = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval} returns this
- */
-proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval.prototype.setProductiveFte = function(value) {
-  return jspb.Message.setProto3FloatField(this, 4, value);
 };
 
 
@@ -72514,7 +72530,7 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceReq.prototype.clearMetricTypesList = f
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.CreateShiftInstanceRes.repeatedFields_ = [2];
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.repeatedFields_ = [2,3];
 
 
 
@@ -72549,7 +72565,9 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.toObject = function(includeInstanc
   var f, obj = {
     shiftInstance: (f = msg.getShiftInstance()) && proto.api.v1alpha1.wfm.ShiftInstance.toObject(includeInstance, f),
     performanceMetricsList: jspb.Message.toObjectList(msg.getPerformanceMetricsList(),
-    proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance)
+    proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance),
+    performanceMetricsV2List: jspb.Message.toObjectList(msg.getPerformanceMetricsV2List(),
+    proto.api.v1alpha1.wfm.PerformanceMetricV2.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -72596,6 +72614,11 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.deserializeBinaryFromReader = func
       reader.readMessage(value,proto.api.v1alpha1.wfm.PerformanceMetric.deserializeBinaryFromReader);
       msg.addPerformanceMetrics(value);
       break;
+    case 3:
+      var value = new proto.api.v1alpha1.wfm.PerformanceMetricV2;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.PerformanceMetricV2.deserializeBinaryFromReader);
+      msg.addPerformanceMetricsV2(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -72639,6 +72662,14 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.serializeBinaryToWriter = function
       2,
       f,
       proto.api.v1alpha1.wfm.PerformanceMetric.serializeBinaryToWriter
+    );
+  }
+  f = message.getPerformanceMetricsV2List();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      proto.api.v1alpha1.wfm.PerformanceMetricV2.serializeBinaryToWriter
     );
   }
 };
@@ -72716,6 +72747,44 @@ proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.addPerformanceMetrics = 
  */
 proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.clearPerformanceMetricsList = function() {
   return this.setPerformanceMetricsList([]);
+};
+
+
+/**
+ * repeated PerformanceMetricV2 performance_metrics_v2 = 3;
+ * @return {!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>}
+ */
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.getPerformanceMetricsV2List = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.PerformanceMetricV2, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>} value
+ * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceRes} returns this
+*/
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.setPerformanceMetricsV2List = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.PerformanceMetricV2=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.PerformanceMetricV2}
+ */
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.addPerformanceMetricsV2 = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.api.v1alpha1.wfm.PerformanceMetricV2, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.CreateShiftInstanceRes} returns this
+ */
+proto.api.v1alpha1.wfm.CreateShiftInstanceRes.prototype.clearPerformanceMetricsV2List = function() {
+  return this.setPerformanceMetricsV2List([]);
 };
 
 
@@ -74804,7 +74873,7 @@ proto.api.v1alpha1.wfm.UpdateShiftInstanceReq.prototype.clearMetricTypesList = f
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.UpdateShiftInstanceRes.repeatedFields_ = [2];
+proto.api.v1alpha1.wfm.UpdateShiftInstanceRes.repeatedFields_ = [2,3];
 
 
 
@@ -74839,7 +74908,9 @@ proto.api.v1alpha1.wfm.UpdateShiftInstanceRes.toObject = function(includeInstanc
   var f, obj = {
     shiftInstance: (f = msg.getShiftInstance()) && proto.api.v1alpha1.wfm.ShiftInstance.toObject(includeInstance, f),
     performanceMetricsList: jspb.Message.toObjectList(msg.getPerformanceMetricsList(),
-    proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance)
+    proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance),
+    performanceMetricsV2List: jspb.Message.toObjectList(msg.getPerformanceMetricsV2List(),
+    proto.api.v1alpha1.wfm.PerformanceMetricV2.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -74886,6 +74957,11 @@ proto.api.v1alpha1.wfm.UpdateShiftInstanceRes.deserializeBinaryFromReader = func
       reader.readMessage(value,proto.api.v1alpha1.wfm.PerformanceMetric.deserializeBinaryFromReader);
       msg.addPerformanceMetrics(value);
       break;
+    case 3:
+      var value = new proto.api.v1alpha1.wfm.PerformanceMetricV2;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.PerformanceMetricV2.deserializeBinaryFromReader);
+      msg.addPerformanceMetricsV2(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -74929,6 +75005,14 @@ proto.api.v1alpha1.wfm.UpdateShiftInstanceRes.serializeBinaryToWriter = function
       2,
       f,
       proto.api.v1alpha1.wfm.PerformanceMetric.serializeBinaryToWriter
+    );
+  }
+  f = message.getPerformanceMetricsV2List();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      proto.api.v1alpha1.wfm.PerformanceMetricV2.serializeBinaryToWriter
     );
   }
 };
@@ -75006,6 +75090,44 @@ proto.api.v1alpha1.wfm.UpdateShiftInstanceRes.prototype.addPerformanceMetrics = 
  */
 proto.api.v1alpha1.wfm.UpdateShiftInstanceRes.prototype.clearPerformanceMetricsList = function() {
   return this.setPerformanceMetricsList([]);
+};
+
+
+/**
+ * repeated PerformanceMetricV2 performance_metrics_v2 = 3;
+ * @return {!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>}
+ */
+proto.api.v1alpha1.wfm.UpdateShiftInstanceRes.prototype.getPerformanceMetricsV2List = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.PerformanceMetricV2, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>} value
+ * @return {!proto.api.v1alpha1.wfm.UpdateShiftInstanceRes} returns this
+*/
+proto.api.v1alpha1.wfm.UpdateShiftInstanceRes.prototype.setPerformanceMetricsV2List = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.PerformanceMetricV2=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.PerformanceMetricV2}
+ */
+proto.api.v1alpha1.wfm.UpdateShiftInstanceRes.prototype.addPerformanceMetricsV2 = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.api.v1alpha1.wfm.PerformanceMetricV2, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.UpdateShiftInstanceRes} returns this
+ */
+proto.api.v1alpha1.wfm.UpdateShiftInstanceRes.prototype.clearPerformanceMetricsV2List = function() {
+  return this.setPerformanceMetricsV2List([]);
 };
 
 
@@ -77640,7 +77762,7 @@ proto.api.v1alpha1.wfm.GetPerformanceMetricsReq.prototype.setResyncCallStats = f
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.wfm.GetPerformanceMetricsRes.repeatedFields_ = [1];
+proto.api.v1alpha1.wfm.GetPerformanceMetricsRes.repeatedFields_ = [1,2];
 
 
 
@@ -77674,7 +77796,9 @@ proto.api.v1alpha1.wfm.GetPerformanceMetricsRes.prototype.toObject = function(op
 proto.api.v1alpha1.wfm.GetPerformanceMetricsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
     performanceMetricsList: jspb.Message.toObjectList(msg.getPerformanceMetricsList(),
-    proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance)
+    proto.api.v1alpha1.wfm.PerformanceMetric.toObject, includeInstance),
+    performanceMetricsV2List: jspb.Message.toObjectList(msg.getPerformanceMetricsV2List(),
+    proto.api.v1alpha1.wfm.PerformanceMetricV2.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -77716,6 +77840,11 @@ proto.api.v1alpha1.wfm.GetPerformanceMetricsRes.deserializeBinaryFromReader = fu
       reader.readMessage(value,proto.api.v1alpha1.wfm.PerformanceMetric.deserializeBinaryFromReader);
       msg.addPerformanceMetrics(value);
       break;
+    case 2:
+      var value = new proto.api.v1alpha1.wfm.PerformanceMetricV2;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.PerformanceMetricV2.deserializeBinaryFromReader);
+      msg.addPerformanceMetricsV2(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -77751,6 +77880,14 @@ proto.api.v1alpha1.wfm.GetPerformanceMetricsRes.serializeBinaryToWriter = functi
       1,
       f,
       proto.api.v1alpha1.wfm.PerformanceMetric.serializeBinaryToWriter
+    );
+  }
+  f = message.getPerformanceMetricsV2List();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.api.v1alpha1.wfm.PerformanceMetricV2.serializeBinaryToWriter
     );
   }
 };
@@ -77791,6 +77928,44 @@ proto.api.v1alpha1.wfm.GetPerformanceMetricsRes.prototype.addPerformanceMetrics 
  */
 proto.api.v1alpha1.wfm.GetPerformanceMetricsRes.prototype.clearPerformanceMetricsList = function() {
   return this.setPerformanceMetricsList([]);
+};
+
+
+/**
+ * repeated PerformanceMetricV2 performance_metrics_v2 = 2;
+ * @return {!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>}
+ */
+proto.api.v1alpha1.wfm.GetPerformanceMetricsRes.prototype.getPerformanceMetricsV2List = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.wfm.PerformanceMetricV2, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.wfm.PerformanceMetricV2>} value
+ * @return {!proto.api.v1alpha1.wfm.GetPerformanceMetricsRes} returns this
+*/
+proto.api.v1alpha1.wfm.GetPerformanceMetricsRes.prototype.setPerformanceMetricsV2List = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.wfm.PerformanceMetricV2=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.wfm.PerformanceMetricV2}
+ */
+proto.api.v1alpha1.wfm.GetPerformanceMetricsRes.prototype.addPerformanceMetricsV2 = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.api.v1alpha1.wfm.PerformanceMetricV2, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.wfm.GetPerformanceMetricsRes} returns this
+ */
+proto.api.v1alpha1.wfm.GetPerformanceMetricsRes.prototype.clearPerformanceMetricsV2List = function() {
+  return this.setPerformanceMetricsV2List([]);
 };
 
 

@@ -7254,6 +7254,11 @@ export class PublishedSchedule extends jspb.Message {
   setPerformanceMetricsList(value: Array<PerformanceMetric>): void;
   addPerformanceMetrics(value?: PerformanceMetric, index?: number): PerformanceMetric;
 
+  clearPerformanceMetricsV2List(): void;
+  getPerformanceMetricsV2List(): Array<PerformanceMetricV2>;
+  setPerformanceMetricsV2List(value: Array<PerformanceMetricV2>): void;
+  addPerformanceMetricsV2(value?: PerformanceMetricV2, index?: number): PerformanceMetricV2;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PublishedSchedule.AsObject;
   static toObject(includeInstance: boolean, msg: PublishedSchedule): PublishedSchedule.AsObject;
@@ -7271,6 +7276,7 @@ export namespace PublishedSchedule {
     lastUpdatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     shiftInstancesList: Array<ShiftInstance.AsObject>,
     performanceMetricsList: Array<PerformanceMetric.AsObject>,
+    performanceMetricsV2List: Array<PerformanceMetricV2.AsObject>,
   }
 }
 
@@ -7315,6 +7321,11 @@ export class DraftSchedule extends jspb.Message {
   getScheduleScenarioSid(): number;
   setScheduleScenarioSid(value: number): void;
 
+  clearPerformanceMetricsV2List(): void;
+  getPerformanceMetricsV2List(): Array<PerformanceMetricV2>;
+  setPerformanceMetricsV2List(value: Array<PerformanceMetricV2>): void;
+  addPerformanceMetricsV2(value?: PerformanceMetricV2, index?: number): PerformanceMetricV2;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DraftSchedule.AsObject;
   static toObject(includeInstance: boolean, msg: DraftSchedule): DraftSchedule.AsObject;
@@ -7337,6 +7348,7 @@ export namespace DraftSchedule {
     shiftInstancesList: Array<ShiftInstance.AsObject>,
     performanceMetricsList: Array<PerformanceMetric.AsObject>,
     scheduleScenarioSid: number,
+    performanceMetricsV2List: Array<PerformanceMetricV2.AsObject>,
   }
 }
 
@@ -7351,9 +7363,6 @@ export class PerformanceMetricForSkillCollection extends jspb.Message {
 
   getTotalFtesAchieved(): number;
   setTotalFtesAchieved(value: number): void;
-
-  getTotalProductiveFte(): number;
-  setTotalProductiveFte(value: number): void;
 
   getNumIntervalsWithRequiredCalls(): number;
   setNumIntervalsWithRequiredCalls(value: number): void;
@@ -7406,7 +7415,6 @@ export namespace PerformanceMetricForSkillCollection {
     dateRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     totalCallsRequired: number,
     totalFtesAchieved: number,
-    totalProductiveFte: number,
     numIntervalsWithRequiredCalls: number,
     numIntervalsWithFtesButNoSchedules: number,
     numIntervalsWithFtesButNoForecastedCalls: number,
@@ -7431,9 +7439,6 @@ export class PerformanceMetric extends jspb.Message {
 
   getTotalFtesAchieved(): number;
   setTotalFtesAchieved(value: number): void;
-
-  getTotalProductiveFte(): number;
-  setTotalProductiveFte(value: number): void;
 
   getNumIntervalsWithRequiredCalls(): number;
   setNumIntervalsWithRequiredCalls(value: number): void;
@@ -7486,7 +7491,6 @@ export namespace PerformanceMetric {
     dateRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     totalCallsRequired: number,
     totalFtesAchieved: number,
-    totalProductiveFte: number,
     numIntervalsWithRequiredCalls: number,
     numIntervalsWithFtesButNoSchedules: number,
     numIntervalsWithFtesButNoForecastedCalls: number,
@@ -7706,9 +7710,6 @@ export class FTERequiredVsAchievedInterval extends jspb.Message {
   getAchievedFtes(): number;
   setAchievedFtes(value: number): void;
 
-  getProductiveFte(): number;
-  setProductiveFte(value: number): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FTERequiredVsAchievedInterval.AsObject;
   static toObject(includeInstance: boolean, msg: FTERequiredVsAchievedInterval): FTERequiredVsAchievedInterval.AsObject;
@@ -7724,7 +7725,6 @@ export namespace FTERequiredVsAchievedInterval {
     startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     requiredCalls: number,
     achievedFtes: number,
-    productiveFte: number,
   }
 }
 
@@ -8883,6 +8883,11 @@ export class CreateShiftInstanceRes extends jspb.Message {
   setPerformanceMetricsList(value: Array<PerformanceMetric>): void;
   addPerformanceMetrics(value?: PerformanceMetric, index?: number): PerformanceMetric;
 
+  clearPerformanceMetricsV2List(): void;
+  getPerformanceMetricsV2List(): Array<PerformanceMetricV2>;
+  setPerformanceMetricsV2List(value: Array<PerformanceMetricV2>): void;
+  addPerformanceMetricsV2(value?: PerformanceMetricV2, index?: number): PerformanceMetricV2;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateShiftInstanceRes.AsObject;
   static toObject(includeInstance: boolean, msg: CreateShiftInstanceRes): CreateShiftInstanceRes.AsObject;
@@ -8897,6 +8902,7 @@ export namespace CreateShiftInstanceRes {
   export type AsObject = {
     shiftInstance?: ShiftInstance.AsObject,
     performanceMetricsList: Array<PerformanceMetric.AsObject>,
+    performanceMetricsV2List: Array<PerformanceMetricV2.AsObject>,
   }
 }
 
@@ -9191,6 +9197,11 @@ export class UpdateShiftInstanceRes extends jspb.Message {
   setPerformanceMetricsList(value: Array<PerformanceMetric>): void;
   addPerformanceMetrics(value?: PerformanceMetric, index?: number): PerformanceMetric;
 
+  clearPerformanceMetricsV2List(): void;
+  getPerformanceMetricsV2List(): Array<PerformanceMetricV2>;
+  setPerformanceMetricsV2List(value: Array<PerformanceMetricV2>): void;
+  addPerformanceMetricsV2(value?: PerformanceMetricV2, index?: number): PerformanceMetricV2;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateShiftInstanceRes.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateShiftInstanceRes): UpdateShiftInstanceRes.AsObject;
@@ -9205,6 +9216,7 @@ export namespace UpdateShiftInstanceRes {
   export type AsObject = {
     shiftInstance?: ShiftInstance.AsObject,
     performanceMetricsList: Array<PerformanceMetric.AsObject>,
+    performanceMetricsV2List: Array<PerformanceMetricV2.AsObject>,
   }
 }
 
@@ -9572,6 +9584,11 @@ export class GetPerformanceMetricsRes extends jspb.Message {
   setPerformanceMetricsList(value: Array<PerformanceMetric>): void;
   addPerformanceMetrics(value?: PerformanceMetric, index?: number): PerformanceMetric;
 
+  clearPerformanceMetricsV2List(): void;
+  getPerformanceMetricsV2List(): Array<PerformanceMetricV2>;
+  setPerformanceMetricsV2List(value: Array<PerformanceMetricV2>): void;
+  addPerformanceMetricsV2(value?: PerformanceMetricV2, index?: number): PerformanceMetricV2;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPerformanceMetricsRes.AsObject;
   static toObject(includeInstance: boolean, msg: GetPerformanceMetricsRes): GetPerformanceMetricsRes.AsObject;
@@ -9585,6 +9602,7 @@ export class GetPerformanceMetricsRes extends jspb.Message {
 export namespace GetPerformanceMetricsRes {
   export type AsObject = {
     performanceMetricsList: Array<PerformanceMetric.AsObject>,
+    performanceMetricsV2List: Array<PerformanceMetricV2.AsObject>,
   }
 }
 
