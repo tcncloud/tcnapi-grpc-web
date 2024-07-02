@@ -61302,6 +61302,7 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.toObject = function(i
     dateRange: (f = msg.getDateRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
     totalCallsRequired: jspb.Message.getFieldWithDefault(msg, 2, 0),
     totalFtesAchieved: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    totalProductiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 14, 0.0),
     numIntervalsWithRequiredCalls: jspb.Message.getFieldWithDefault(msg, 4, 0),
     numIntervalsWithFtesButNoSchedules: jspb.Message.getFieldWithDefault(msg, 5, 0),
     numIntervalsWithFtesButNoForecastedCalls: jspb.Message.getFieldWithDefault(msg, 6, 0),
@@ -61362,6 +61363,10 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.deserializeBinaryFrom
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTotalFtesAchieved(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTotalProductiveFte(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -61454,6 +61459,13 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.serializeBinaryToWrit
   if (f !== 0) {
     writer.writeInt32(
       3,
+      f
+    );
+  }
+  f = message.getTotalProductiveFte();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      14,
       f
     );
   }
@@ -61603,6 +61615,24 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.prototype.getTotalFte
  */
 proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.prototype.setTotalFtesAchieved = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional float total_productive_fte = 14;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.prototype.getTotalProductiveFte = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 14, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection} returns this
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollection.prototype.setTotalProductiveFte = function(value) {
+  return jspb.Message.setProto3FloatField(this, 14, value);
 };
 
 
@@ -61887,6 +61917,7 @@ proto.api.v1alpha1.wfm.PerformanceMetric.toObject = function(includeInstance, ms
     dateRange: (f = msg.getDateRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
     totalCallsRequired: jspb.Message.getFieldWithDefault(msg, 2, 0),
     totalFtesAchieved: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    totalProductiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 14, 0.0),
     numIntervalsWithRequiredCalls: jspb.Message.getFieldWithDefault(msg, 4, 0),
     numIntervalsWithFtesButNoSchedules: jspb.Message.getFieldWithDefault(msg, 5, 0),
     numIntervalsWithFtesButNoForecastedCalls: jspb.Message.getFieldWithDefault(msg, 6, 0),
@@ -61948,6 +61979,10 @@ proto.api.v1alpha1.wfm.PerformanceMetric.deserializeBinaryFromReader = function(
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTotalFtesAchieved(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTotalProductiveFte(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -62040,6 +62075,13 @@ proto.api.v1alpha1.wfm.PerformanceMetric.serializeBinaryToWriter = function(mess
   if (f !== 0) {
     writer.writeInt32(
       3,
+      f
+    );
+  }
+  f = message.getTotalProductiveFte();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      14,
       f
     );
   }
@@ -62189,6 +62231,24 @@ proto.api.v1alpha1.wfm.PerformanceMetric.prototype.getTotalFtesAchieved = functi
  */
 proto.api.v1alpha1.wfm.PerformanceMetric.prototype.setTotalFtesAchieved = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional float total_productive_fte = 14;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.PerformanceMetric.prototype.getTotalProductiveFte = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 14, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.PerformanceMetric} returns this
+ */
+proto.api.v1alpha1.wfm.PerformanceMetric.prototype.setTotalProductiveFte = function(value) {
+  return jspb.Message.setProto3FloatField(this, 14, value);
 };
 
 
@@ -62474,6 +62534,7 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.toObject = function
     dateRange: (f = msg.getDateRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
     totalFteIntervalsRequired: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
     totalFteIntervalsAchieved: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+    totalProductiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 15, 0.0),
     numIntervalsWithCallFtes: jspb.Message.getFieldWithDefault(msg, 4, 0),
     numIntervalsWithShiftFtes: jspb.Message.getFieldWithDefault(msg, 5, 0),
     numIntervalsWithCallFtesButNoShifts: jspb.Message.getFieldWithDefault(msg, 6, 0),
@@ -62535,6 +62596,10 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.deserializeBinaryFr
     case 3:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setTotalFteIntervalsAchieved(value);
+      break;
+    case 15:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTotalProductiveFte(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -62631,6 +62696,13 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.serializeBinaryToWr
   if (f !== 0.0) {
     writer.writeFloat(
       3,
+      f
+    );
+  }
+  f = message.getTotalProductiveFte();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      15,
       f
     );
   }
@@ -62787,6 +62859,24 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.prototype.getTotalF
  */
 proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.prototype.setTotalFteIntervalsAchieved = function(value) {
   return jspb.Message.setProto3FloatField(this, 3, value);
+};
+
+
+/**
+ * optional float total_productive_fte = 15;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.prototype.getTotalProductiveFte = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 15, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2} returns this
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.prototype.setTotalProductiveFte = function(value) {
+  return jspb.Message.setProto3FloatField(this, 15, value);
 };
 
 
@@ -63089,6 +63179,7 @@ proto.api.v1alpha1.wfm.PerformanceMetricV2.toObject = function(includeInstance, 
     dateRange: (f = msg.getDateRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
     totalFteIntervalsRequired: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
     totalFteIntervalsAchieved: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+    totalProductiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 15, 0.0),
     numIntervalsWithCallFtes: jspb.Message.getFieldWithDefault(msg, 4, 0),
     numIntervalsWithShiftFtes: jspb.Message.getFieldWithDefault(msg, 5, 0),
     numIntervalsWithCallFtesButNoShifts: jspb.Message.getFieldWithDefault(msg, 6, 0),
@@ -63151,6 +63242,10 @@ proto.api.v1alpha1.wfm.PerformanceMetricV2.deserializeBinaryFromReader = functio
     case 3:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setTotalFteIntervalsAchieved(value);
+      break;
+    case 15:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTotalProductiveFte(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -63247,6 +63342,13 @@ proto.api.v1alpha1.wfm.PerformanceMetricV2.serializeBinaryToWriter = function(me
   if (f !== 0.0) {
     writer.writeFloat(
       3,
+      f
+    );
+  }
+  f = message.getTotalProductiveFte();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      15,
       f
     );
   }
@@ -63403,6 +63505,24 @@ proto.api.v1alpha1.wfm.PerformanceMetricV2.prototype.getTotalFteIntervalsAchieve
  */
 proto.api.v1alpha1.wfm.PerformanceMetricV2.prototype.setTotalFteIntervalsAchieved = function(value) {
   return jspb.Message.setProto3FloatField(this, 3, value);
+};
+
+
+/**
+ * optional float total_productive_fte = 15;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricV2.prototype.getTotalProductiveFte = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 15, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.PerformanceMetricV2} returns this
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricV2.prototype.setTotalProductiveFte = function(value) {
+  return jspb.Message.setProto3FloatField(this, 15, value);
 };
 
 
@@ -63879,7 +63999,8 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval.toObject = function(include
   var f, obj = {
     startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     requiredCalls: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    achievedFtes: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    achievedFtes: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    productiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0)
   };
 
   if (includeInstance) {
@@ -63929,6 +64050,10 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval.deserializeBinaryFromReader
       var value = /** @type {number} */ (reader.readInt32());
       msg.setAchievedFtes(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setProductiveFte(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -63977,6 +64102,13 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval.serializeBinaryToWriter = f
   if (f !== 0) {
     writer.writeInt32(
       3,
+      f
+    );
+  }
+  f = message.getProductiveFte();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      4,
       f
     );
   }
@@ -64056,6 +64188,24 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval.prototype.setAchievedFtes =
 };
 
 
+/**
+ * optional float productive_fte = 4;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval.prototype.getProductiveFte = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval} returns this
+ */
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedInterval.prototype.setProductiveFte = function(value) {
+  return jspb.Message.setProto3FloatField(this, 4, value);
+};
+
+
 
 
 
@@ -64090,7 +64240,8 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.toObject = functio
   var f, obj = {
     startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     requiredFteOccupancy: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    achievedFteOccupancy: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0)
+    achievedFteOccupancy: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+    productiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0)
   };
 
   if (includeInstance) {
@@ -64140,6 +64291,10 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.deserializeBinaryF
       var value = /** @type {number} */ (reader.readFloat());
       msg.setAchievedFteOccupancy(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setProductiveFte(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -64188,6 +64343,13 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.serializeBinaryToW
   if (f !== 0.0) {
     writer.writeFloat(
       3,
+      f
+    );
+  }
+  f = message.getProductiveFte();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      4,
       f
     );
   }
@@ -64264,6 +64426,24 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.getAchie
  */
 proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.setAchievedFteOccupancy = function(value) {
   return jspb.Message.setProto3FloatField(this, 3, value);
+};
+
+
+/**
+ * optional float productive_fte = 4;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.getProductiveFte = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval} returns this
+ */
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.setProductiveFte = function(value) {
+  return jspb.Message.setProto3FloatField(this, 4, value);
 };
 
 

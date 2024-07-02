@@ -7352,6 +7352,9 @@ export class PerformanceMetricForSkillCollection extends jspb.Message {
   getTotalFtesAchieved(): number;
   setTotalFtesAchieved(value: number): void;
 
+  getTotalProductiveFte(): number;
+  setTotalProductiveFte(value: number): void;
+
   getNumIntervalsWithRequiredCalls(): number;
   setNumIntervalsWithRequiredCalls(value: number): void;
 
@@ -7403,6 +7406,7 @@ export namespace PerformanceMetricForSkillCollection {
     dateRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     totalCallsRequired: number,
     totalFtesAchieved: number,
+    totalProductiveFte: number,
     numIntervalsWithRequiredCalls: number,
     numIntervalsWithFtesButNoSchedules: number,
     numIntervalsWithFtesButNoForecastedCalls: number,
@@ -7427,6 +7431,9 @@ export class PerformanceMetric extends jspb.Message {
 
   getTotalFtesAchieved(): number;
   setTotalFtesAchieved(value: number): void;
+
+  getTotalProductiveFte(): number;
+  setTotalProductiveFte(value: number): void;
 
   getNumIntervalsWithRequiredCalls(): number;
   setNumIntervalsWithRequiredCalls(value: number): void;
@@ -7479,6 +7486,7 @@ export namespace PerformanceMetric {
     dateRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     totalCallsRequired: number,
     totalFtesAchieved: number,
+    totalProductiveFte: number,
     numIntervalsWithRequiredCalls: number,
     numIntervalsWithFtesButNoSchedules: number,
     numIntervalsWithFtesButNoForecastedCalls: number,
@@ -7503,6 +7511,9 @@ export class PerformanceMetricForSkillCollectionV2 extends jspb.Message {
 
   getTotalFteIntervalsAchieved(): number;
   setTotalFteIntervalsAchieved(value: number): void;
+
+  getTotalProductiveFte(): number;
+  setTotalProductiveFte(value: number): void;
 
   getNumIntervalsWithCallFtes(): number;
   setNumIntervalsWithCallFtes(value: number): void;
@@ -7558,6 +7569,7 @@ export namespace PerformanceMetricForSkillCollectionV2 {
     dateRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     totalFteIntervalsRequired: number,
     totalFteIntervalsAchieved: number,
+    totalProductiveFte: number,
     numIntervalsWithCallFtes: number,
     numIntervalsWithShiftFtes: number,
     numIntervalsWithCallFtesButNoShifts: number,
@@ -7583,6 +7595,9 @@ export class PerformanceMetricV2 extends jspb.Message {
 
   getTotalFteIntervalsAchieved(): number;
   setTotalFteIntervalsAchieved(value: number): void;
+
+  getTotalProductiveFte(): number;
+  setTotalProductiveFte(value: number): void;
 
   getNumIntervalsWithCallFtes(): number;
   setNumIntervalsWithCallFtes(value: number): void;
@@ -7638,6 +7653,7 @@ export namespace PerformanceMetricV2 {
     dateRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     totalFteIntervalsRequired: number,
     totalFteIntervalsAchieved: number,
+    totalProductiveFte: number,
     numIntervalsWithCallFtes: number,
     numIntervalsWithShiftFtes: number,
     numIntervalsWithCallFtesButNoShifts: number,
@@ -7690,6 +7706,9 @@ export class FTERequiredVsAchievedInterval extends jspb.Message {
   getAchievedFtes(): number;
   setAchievedFtes(value: number): void;
 
+  getProductiveFte(): number;
+  setProductiveFte(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FTERequiredVsAchievedInterval.AsObject;
   static toObject(includeInstance: boolean, msg: FTERequiredVsAchievedInterval): FTERequiredVsAchievedInterval.AsObject;
@@ -7705,6 +7724,7 @@ export namespace FTERequiredVsAchievedInterval {
     startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     requiredCalls: number,
     achievedFtes: number,
+    productiveFte: number,
   }
 }
 
@@ -7719,6 +7739,9 @@ export class FTERequiredVsAchievedOccupancyInterval extends jspb.Message {
 
   getAchievedFteOccupancy(): number;
   setAchievedFteOccupancy(value: number): void;
+
+  getProductiveFte(): number;
+  setProductiveFte(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FTERequiredVsAchievedOccupancyInterval.AsObject;
@@ -7735,6 +7758,7 @@ export namespace FTERequiredVsAchievedOccupancyInterval {
     startDatetime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     requiredFteOccupancy: number,
     achievedFteOccupancy: number,
+    productiveFte: number,
   }
 }
 
