@@ -2037,15 +2037,6 @@ Org.DeleteCertificateInfo = {
   responseType: api_v1alpha1_org_preferences_pb.DeleteCertificateInfoResponse
 };
 
-Org.RevokeCertificateInfo = {
-  methodName: "RevokeCertificateInfo",
-  service: Org,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_org_preferences_pb.RevokeCertificateInfoRequest,
-  responseType: api_v1alpha1_org_preferences_pb.RevokeCertificateInfoResponse
-};
-
 Org.ListCertificateInfo = {
   methodName: "ListCertificateInfo",
   service: Org,
@@ -9132,37 +9123,6 @@ OrgClient.prototype.deleteCertificateInfo = function deleteCertificateInfo(reque
     callback = arguments[1];
   }
   var client = grpc.unary(Org.DeleteCertificateInfo, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-OrgClient.prototype.revokeCertificateInfo = function revokeCertificateInfo(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Org.RevokeCertificateInfo, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

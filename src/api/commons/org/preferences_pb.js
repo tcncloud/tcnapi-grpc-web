@@ -16421,8 +16421,7 @@ proto.api.commons.org.CertificateInfo.toObject = function(includeInstance, msg) 
     expirationDate: (f = msg.getExpirationDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     creationDate: (f = msg.getCreationDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     requestBy: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    deleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    revoked: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+    deleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -16496,10 +16495,6 @@ proto.api.commons.org.CertificateInfo.deserializeBinaryFromReader = function(msg
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDeleted(value);
-      break;
-    case 10:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setRevoked(value);
       break;
     default:
       reader.skipField();
@@ -16592,13 +16587,6 @@ proto.api.commons.org.CertificateInfo.serializeBinaryToWriter = function(message
   if (f) {
     writer.writeBool(
       9,
-      f
-    );
-  }
-  f = message.getRevoked();
-  if (f) {
-    writer.writeBool(
-      10,
       f
     );
   }
@@ -16802,24 +16790,6 @@ proto.api.commons.org.CertificateInfo.prototype.getDeleted = function() {
  */
 proto.api.commons.org.CertificateInfo.prototype.setDeleted = function(value) {
   return jspb.Message.setProto3BooleanField(this, 9, value);
-};
-
-
-/**
- * optional bool revoked = 10;
- * @return {boolean}
- */
-proto.api.commons.org.CertificateInfo.prototype.getRevoked = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.commons.org.CertificateInfo} returns this
- */
-proto.api.commons.org.CertificateInfo.prototype.setRevoked = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
