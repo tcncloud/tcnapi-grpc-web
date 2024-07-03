@@ -1768,66 +1768,6 @@ export class ExecuteFlow extends jspb.Message {
   getFinviUpdateCustomer(): ExecuteFinviUpdateCustomer | undefined;
   setFinviUpdateCustomer(value?: ExecuteFinviUpdateCustomer): void;
 
-  hasFinviCreateTransactionAuth(): boolean;
-  clearFinviCreateTransactionAuth(): void;
-  getFinviCreateTransactionAuth(): ExecuteFinviCreateTransactionAuth | undefined;
-  setFinviCreateTransactionAuth(value?: ExecuteFinviCreateTransactionAuth): void;
-
-  hasFinviCreateTransactionCapture(): boolean;
-  clearFinviCreateTransactionCapture(): void;
-  getFinviCreateTransactionCapture(): ExecuteFinviCreateTransactionCapture | undefined;
-  setFinviCreateTransactionCapture(value?: ExecuteFinviCreateTransactionCapture): void;
-
-  hasFinviCreateTransactionCredit(): boolean;
-  clearFinviCreateTransactionCredit(): void;
-  getFinviCreateTransactionCredit(): ExecuteFinviCreateTransactionCredit | undefined;
-  setFinviCreateTransactionCredit(value?: ExecuteFinviCreateTransactionCredit): void;
-
-  hasFinviCreateTransactionRefund(): boolean;
-  clearFinviCreateTransactionRefund(): void;
-  getFinviCreateTransactionRefund(): ExecuteFinviCreateTransactionRefund | undefined;
-  setFinviCreateTransactionRefund(value?: ExecuteFinviCreateTransactionRefund): void;
-
-  hasFinviCreateTransactionSale(): boolean;
-  clearFinviCreateTransactionSale(): void;
-  getFinviCreateTransactionSale(): ExecuteFinviCreateTransactionSale | undefined;
-  setFinviCreateTransactionSale(value?: ExecuteFinviCreateTransactionSale): void;
-
-  hasFinviCreateTransactionValidate(): boolean;
-  clearFinviCreateTransactionValidate(): void;
-  getFinviCreateTransactionValidate(): ExecuteFinviCreateTransactionValidate | undefined;
-  setFinviCreateTransactionValidate(value?: ExecuteFinviCreateTransactionValidate): void;
-
-  hasFinviProcessNewTransactionAuth(): boolean;
-  clearFinviProcessNewTransactionAuth(): void;
-  getFinviProcessNewTransactionAuth(): ExecuteFinviProcessNewTransactionAuth | undefined;
-  setFinviProcessNewTransactionAuth(value?: ExecuteFinviProcessNewTransactionAuth): void;
-
-  hasFinviProcessNewTransactionCapture(): boolean;
-  clearFinviProcessNewTransactionCapture(): void;
-  getFinviProcessNewTransactionCapture(): ExecuteFinviProcessNewTransactionCapture | undefined;
-  setFinviProcessNewTransactionCapture(value?: ExecuteFinviProcessNewTransactionCapture): void;
-
-  hasFinviProcessNewTransactionCredit(): boolean;
-  clearFinviProcessNewTransactionCredit(): void;
-  getFinviProcessNewTransactionCredit(): ExecuteFinviProcessNewTransactionCredit | undefined;
-  setFinviProcessNewTransactionCredit(value?: ExecuteFinviProcessNewTransactionCredit): void;
-
-  hasFinviProcessNewTransactionRefund(): boolean;
-  clearFinviProcessNewTransactionRefund(): void;
-  getFinviProcessNewTransactionRefund(): ExecuteFinviProcessNewTransactionRefund | undefined;
-  setFinviProcessNewTransactionRefund(value?: ExecuteFinviProcessNewTransactionRefund): void;
-
-  hasFinviProcessNewTransactionSale(): boolean;
-  clearFinviProcessNewTransactionSale(): void;
-  getFinviProcessNewTransactionSale(): ExecuteFinviProcessNewTransactionSale | undefined;
-  setFinviProcessNewTransactionSale(value?: ExecuteFinviProcessNewTransactionSale): void;
-
-  hasFinviProcessNewTransactionValidate(): boolean;
-  clearFinviProcessNewTransactionValidate(): void;
-  getFinviProcessNewTransactionValidate(): ExecuteFinviProcessNewTransactionValidate | undefined;
-  setFinviProcessNewTransactionValidate(value?: ExecuteFinviProcessNewTransactionValidate): void;
-
   hasDebugEcho(): boolean;
   clearDebugEcho(): void;
   getDebugEcho(): ExecuteDebugEcho | undefined;
@@ -2076,18 +2016,6 @@ export namespace ExecuteFlow {
     finviQueryTransactions?: ExecuteFinviQueryTransactions.AsObject,
     finviRemoveCustomerToken?: ExecuteFinviRemoveCustomerToken.AsObject,
     finviUpdateCustomer?: ExecuteFinviUpdateCustomer.AsObject,
-    finviCreateTransactionAuth?: ExecuteFinviCreateTransactionAuth.AsObject,
-    finviCreateTransactionCapture?: ExecuteFinviCreateTransactionCapture.AsObject,
-    finviCreateTransactionCredit?: ExecuteFinviCreateTransactionCredit.AsObject,
-    finviCreateTransactionRefund?: ExecuteFinviCreateTransactionRefund.AsObject,
-    finviCreateTransactionSale?: ExecuteFinviCreateTransactionSale.AsObject,
-    finviCreateTransactionValidate?: ExecuteFinviCreateTransactionValidate.AsObject,
-    finviProcessNewTransactionAuth?: ExecuteFinviProcessNewTransactionAuth.AsObject,
-    finviProcessNewTransactionCapture?: ExecuteFinviProcessNewTransactionCapture.AsObject,
-    finviProcessNewTransactionCredit?: ExecuteFinviProcessNewTransactionCredit.AsObject,
-    finviProcessNewTransactionRefund?: ExecuteFinviProcessNewTransactionRefund.AsObject,
-    finviProcessNewTransactionSale?: ExecuteFinviProcessNewTransactionSale.AsObject,
-    finviProcessNewTransactionValidate?: ExecuteFinviProcessNewTransactionValidate.AsObject,
     debugEcho?: ExecuteDebugEcho.AsObject,
     debugValidate?: ExecuteDebugValidate.AsObject,
   }
@@ -2318,18 +2246,6 @@ export namespace ExecuteFlow {
     FINVI_QUERY_TRANSACTIONS = 4308,
     FINVI_REMOVE_CUSTOMER_TOKEN = 4309,
     FINVI_UPDATE_CUSTOMER = 4310,
-    FINVI_CREATE_TRANSACTION_AUTH = 4311,
-    FINVI_CREATE_TRANSACTION_CAPTURE = 4312,
-    FINVI_CREATE_TRANSACTION_CREDIT = 4313,
-    FINVI_CREATE_TRANSACTION_REFUND = 4314,
-    FINVI_CREATE_TRANSACTION_SALE = 4315,
-    FINVI_CREATE_TRANSACTION_VALIDATE = 4316,
-    FINVI_PROCESS_NEW_TRANSACTION_AUTH = 4317,
-    FINVI_PROCESS_NEW_TRANSACTION_CAPTURE = 4318,
-    FINVI_PROCESS_NEW_TRANSACTION_CREDIT = 4319,
-    FINVI_PROCESS_NEW_TRANSACTION_REFUND = 4320,
-    FINVI_PROCESS_NEW_TRANSACTION_SALE = 4321,
-    FINVI_PROCESS_NEW_TRANSACTION_VALIDATE = 4322,
     DEBUG_ECHO = 5001,
     DEBUG_VALIDATE = 5002,
   }
@@ -6504,198 +6420,6 @@ export namespace ExecuteFinviUpdateCustomer {
   }
 }
 
-export class ExecuteFinviCreateTransactionAuth extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateTransactionAuth.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateTransactionAuth): ExecuteFinviCreateTransactionAuth.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateTransactionAuth, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateTransactionAuth;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateTransactionAuth, reader: jspb.BinaryReader): ExecuteFinviCreateTransactionAuth;
-}
-
-export namespace ExecuteFinviCreateTransactionAuth {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviCreateTransactionCapture extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateTransactionCapture.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateTransactionCapture): ExecuteFinviCreateTransactionCapture.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateTransactionCapture, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateTransactionCapture;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateTransactionCapture, reader: jspb.BinaryReader): ExecuteFinviCreateTransactionCapture;
-}
-
-export namespace ExecuteFinviCreateTransactionCapture {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviCreateTransactionCredit extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateTransactionCredit.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateTransactionCredit): ExecuteFinviCreateTransactionCredit.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateTransactionCredit, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateTransactionCredit;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateTransactionCredit, reader: jspb.BinaryReader): ExecuteFinviCreateTransactionCredit;
-}
-
-export namespace ExecuteFinviCreateTransactionCredit {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviCreateTransactionRefund extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateTransactionRefund.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateTransactionRefund): ExecuteFinviCreateTransactionRefund.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateTransactionRefund, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateTransactionRefund;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateTransactionRefund, reader: jspb.BinaryReader): ExecuteFinviCreateTransactionRefund;
-}
-
-export namespace ExecuteFinviCreateTransactionRefund {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviCreateTransactionSale extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateTransactionSale.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateTransactionSale): ExecuteFinviCreateTransactionSale.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateTransactionSale, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateTransactionSale;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateTransactionSale, reader: jspb.BinaryReader): ExecuteFinviCreateTransactionSale;
-}
-
-export namespace ExecuteFinviCreateTransactionSale {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviCreateTransactionValidate extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateTransactionValidate.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateTransactionValidate): ExecuteFinviCreateTransactionValidate.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateTransactionValidate, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateTransactionValidate;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateTransactionValidate, reader: jspb.BinaryReader): ExecuteFinviCreateTransactionValidate;
-}
-
-export namespace ExecuteFinviCreateTransactionValidate {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviProcessNewTransactionAuth extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviProcessNewTransactionAuth.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviProcessNewTransactionAuth): ExecuteFinviProcessNewTransactionAuth.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviProcessNewTransactionAuth, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviProcessNewTransactionAuth;
-  static deserializeBinaryFromReader(message: ExecuteFinviProcessNewTransactionAuth, reader: jspb.BinaryReader): ExecuteFinviProcessNewTransactionAuth;
-}
-
-export namespace ExecuteFinviProcessNewTransactionAuth {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviProcessNewTransactionCapture extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviProcessNewTransactionCapture.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviProcessNewTransactionCapture): ExecuteFinviProcessNewTransactionCapture.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviProcessNewTransactionCapture, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviProcessNewTransactionCapture;
-  static deserializeBinaryFromReader(message: ExecuteFinviProcessNewTransactionCapture, reader: jspb.BinaryReader): ExecuteFinviProcessNewTransactionCapture;
-}
-
-export namespace ExecuteFinviProcessNewTransactionCapture {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviProcessNewTransactionCredit extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviProcessNewTransactionCredit.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviProcessNewTransactionCredit): ExecuteFinviProcessNewTransactionCredit.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviProcessNewTransactionCredit, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviProcessNewTransactionCredit;
-  static deserializeBinaryFromReader(message: ExecuteFinviProcessNewTransactionCredit, reader: jspb.BinaryReader): ExecuteFinviProcessNewTransactionCredit;
-}
-
-export namespace ExecuteFinviProcessNewTransactionCredit {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviProcessNewTransactionRefund extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviProcessNewTransactionRefund.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviProcessNewTransactionRefund): ExecuteFinviProcessNewTransactionRefund.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviProcessNewTransactionRefund, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviProcessNewTransactionRefund;
-  static deserializeBinaryFromReader(message: ExecuteFinviProcessNewTransactionRefund, reader: jspb.BinaryReader): ExecuteFinviProcessNewTransactionRefund;
-}
-
-export namespace ExecuteFinviProcessNewTransactionRefund {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviProcessNewTransactionSale extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviProcessNewTransactionSale.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviProcessNewTransactionSale): ExecuteFinviProcessNewTransactionSale.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviProcessNewTransactionSale, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviProcessNewTransactionSale;
-  static deserializeBinaryFromReader(message: ExecuteFinviProcessNewTransactionSale, reader: jspb.BinaryReader): ExecuteFinviProcessNewTransactionSale;
-}
-
-export namespace ExecuteFinviProcessNewTransactionSale {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviProcessNewTransactionValidate extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviProcessNewTransactionValidate.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviProcessNewTransactionValidate): ExecuteFinviProcessNewTransactionValidate.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviProcessNewTransactionValidate, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviProcessNewTransactionValidate;
-  static deserializeBinaryFromReader(message: ExecuteFinviProcessNewTransactionValidate, reader: jspb.BinaryReader): ExecuteFinviProcessNewTransactionValidate;
-}
-
-export namespace ExecuteFinviProcessNewTransactionValidate {
-  export type AsObject = {
-  }
-}
-
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -6972,18 +6696,6 @@ export interface RequestMethodMap {
   REQUEST_METHOD_FINVI_QUERY_TRANSACTIONS: 4308;
   REQUEST_METHOD_FINVI_REMOVE_CUSTOMER_TOKEN: 4309;
   REQUEST_METHOD_FINVI_UPDATE_CUSTOMER: 4310;
-  REQUEST_METHOD_FINVI_CREATE_TRANSACTION_AUTH: 4311;
-  REQUEST_METHOD_FINVI_CREATE_TRANSACTION_CAPTURE: 4312;
-  REQUEST_METHOD_FINVI_CREATE_TRANSACTION_CREDIT: 4313;
-  REQUEST_METHOD_FINVI_CREATE_TRANSACTION_REFUND: 4314;
-  REQUEST_METHOD_FINVI_CREATE_TRANSACTION_SALE: 4315;
-  REQUEST_METHOD_FINVI_CREATE_TRANSACTION_VALIDATE: 4316;
-  REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_AUTH: 4317;
-  REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_CAPTURE: 4318;
-  REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_CREDIT: 4319;
-  REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_REFUND: 4320;
-  REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_SALE: 4321;
-  REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_VALIDATE: 4322;
   REQUEST_METHOD_DEBUG_ECHO: 5001;
   REQUESET_METHOD_DEBUG_VALIDATE: 5002;
 }
