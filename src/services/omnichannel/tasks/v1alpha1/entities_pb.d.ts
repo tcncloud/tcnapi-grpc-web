@@ -63,6 +63,9 @@ export namespace BulkCancelTasksRequest {
 }
 
 export class BulkCancelTasksResponse extends jspb.Message {
+  getGhostNotifierId(): string;
+  setGhostNotifierId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BulkCancelTasksResponse.AsObject;
   static toObject(includeInstance: boolean, msg: BulkCancelTasksResponse): BulkCancelTasksResponse.AsObject;
@@ -75,6 +78,7 @@ export class BulkCancelTasksResponse extends jspb.Message {
 
 export namespace BulkCancelTasksResponse {
   export type AsObject = {
+    ghostNotifierId: string,
   }
 }
 
