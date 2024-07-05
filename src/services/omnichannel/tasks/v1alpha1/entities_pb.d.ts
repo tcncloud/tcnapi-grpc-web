@@ -42,3 +42,39 @@ export namespace CancelTasksResponse {
   }
 }
 
+export class BulkCancelTasksRequest extends jspb.Message {
+  getFilter(): string;
+  setFilter(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkCancelTasksRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkCancelTasksRequest): BulkCancelTasksRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkCancelTasksRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkCancelTasksRequest;
+  static deserializeBinaryFromReader(message: BulkCancelTasksRequest, reader: jspb.BinaryReader): BulkCancelTasksRequest;
+}
+
+export namespace BulkCancelTasksRequest {
+  export type AsObject = {
+    filter: string,
+  }
+}
+
+export class BulkCancelTasksResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkCancelTasksResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkCancelTasksResponse): BulkCancelTasksResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkCancelTasksResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkCancelTasksResponse;
+  static deserializeBinaryFromReader(message: BulkCancelTasksResponse, reader: jspb.BinaryReader): BulkCancelTasksResponse;
+}
+
+export namespace BulkCancelTasksResponse {
+  export type AsObject = {
+  }
+}
+
