@@ -355,7 +355,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.api.commons.MetaFieldExp = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.commons.MetaFieldExp.repeatedFields_, null);
 };
 goog.inherits(proto.api.commons.MetaFieldExp, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -4099,6 +4099,13 @@ proto.api.commons.HolidayExp.prototype.setType = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.commons.MetaFieldExp.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -4130,7 +4137,8 @@ proto.api.commons.MetaFieldExp.prototype.toObject = function(opt_includeInstance
  */
 proto.api.commons.MetaFieldExp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    field: jspb.Message.getFieldWithDefault(msg, 1, "")
+    field: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    fieldsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4171,6 +4179,10 @@ proto.api.commons.MetaFieldExp.deserializeBinaryFromReader = function(msg, reade
       var value = /** @type {string} */ (reader.readString());
       msg.setField(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addFields(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4207,6 +4219,13 @@ proto.api.commons.MetaFieldExp.serializeBinaryToWriter = function(message, write
       f
     );
   }
+  f = message.getFieldsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -4225,6 +4244,43 @@ proto.api.commons.MetaFieldExp.prototype.getField = function() {
  */
 proto.api.commons.MetaFieldExp.prototype.setField = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * repeated string fields = 2;
+ * @return {!Array<string>}
+ */
+proto.api.commons.MetaFieldExp.prototype.getFieldsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.commons.MetaFieldExp} returns this
+ */
+proto.api.commons.MetaFieldExp.prototype.setFieldsList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.MetaFieldExp} returns this
+ */
+proto.api.commons.MetaFieldExp.prototype.addFields = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.MetaFieldExp} returns this
+ */
+proto.api.commons.MetaFieldExp.prototype.clearFieldsList = function() {
+  return this.setFieldsList([]);
 };
 
 

@@ -492,6 +492,11 @@ export class MetaFieldExp extends jspb.Message {
   getField(): string;
   setField(value: string): void;
 
+  clearFieldsList(): void;
+  getFieldsList(): Array<string>;
+  setFieldsList(value: Array<string>): void;
+  addFields(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MetaFieldExp.AsObject;
   static toObject(includeInstance: boolean, msg: MetaFieldExp): MetaFieldExp.AsObject;
@@ -505,6 +510,7 @@ export class MetaFieldExp extends jspb.Message {
 export namespace MetaFieldExp {
   export type AsObject = {
     field: string,
+    fieldsList: Array<string>,
   }
 }
 
