@@ -534,7 +534,7 @@ proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse.prototype.toOb
  */
 proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ghostNotifierId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    ghostReferenceId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -573,7 +573,7 @@ proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse.deserializeBin
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setGhostNotifierId(value);
+      msg.setGhostReferenceId(value);
       break;
     default:
       reader.skipField();
@@ -604,7 +604,7 @@ proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse.prototype.seri
  */
 proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getGhostNotifierId();
+  f = message.getGhostReferenceId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -615,10 +615,10 @@ proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse.serializeBinar
 
 
 /**
- * optional string ghost_notifier_id = 1;
+ * optional string ghost_reference_id = 1;
  * @return {string}
  */
-proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse.prototype.getGhostNotifierId = function() {
+proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse.prototype.getGhostReferenceId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -627,7 +627,7 @@ proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse.prototype.getG
  * @param {string} value
  * @return {!proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse} returns this
  */
-proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse.prototype.setGhostNotifierId = function(value) {
+proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse.prototype.setGhostReferenceId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
