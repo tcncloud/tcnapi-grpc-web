@@ -424,6 +424,36 @@ export class PaymentFlow extends jspb.Message {
   getPaymentstellaEcheck(): PaymentStellaECheck | undefined;
   setPaymentstellaEcheck(value?: PaymentStellaECheck): void;
 
+  hasFinviCreateTransactionAuth(): boolean;
+  clearFinviCreateTransactionAuth(): void;
+  getFinviCreateTransactionAuth(): PaymentFinviCreateTransactionAuth | undefined;
+  setFinviCreateTransactionAuth(value?: PaymentFinviCreateTransactionAuth): void;
+
+  hasFinviCreateTransactionCapture(): boolean;
+  clearFinviCreateTransactionCapture(): void;
+  getFinviCreateTransactionCapture(): PaymentFinviCreateTransactionCapture | undefined;
+  setFinviCreateTransactionCapture(value?: PaymentFinviCreateTransactionCapture): void;
+
+  hasFinviCreateTransactionCredit(): boolean;
+  clearFinviCreateTransactionCredit(): void;
+  getFinviCreateTransactionCredit(): PaymentFinviCreateTransactionCredit | undefined;
+  setFinviCreateTransactionCredit(value?: PaymentFinviCreateTransactionCredit): void;
+
+  hasFinviCreateTransactionRefund(): boolean;
+  clearFinviCreateTransactionRefund(): void;
+  getFinviCreateTransactionRefund(): PaymentFinviCreateTransactionRefund | undefined;
+  setFinviCreateTransactionRefund(value?: PaymentFinviCreateTransactionRefund): void;
+
+  hasFinviCreateTransactionSale(): boolean;
+  clearFinviCreateTransactionSale(): void;
+  getFinviCreateTransactionSale(): PaymentFinviCreateTransactionSale | undefined;
+  setFinviCreateTransactionSale(value?: PaymentFinviCreateTransactionSale): void;
+
+  hasFinviCreateTransactionValidate(): boolean;
+  clearFinviCreateTransactionValidate(): void;
+  getFinviCreateTransactionValidate(): PaymentFinviCreateTransactionValidate | undefined;
+  setFinviCreateTransactionValidate(value?: PaymentFinviCreateTransactionValidate): void;
+
   clearPaymentFieldsList(): void;
   getPaymentFieldsList(): Array<FieldDefinition>;
   setPaymentFieldsList(value: Array<FieldDefinition>): void;
@@ -460,6 +490,12 @@ export namespace PaymentFlow {
     paymentvisionAch?: PaymentVisionACH.AsObject,
     paymentstellaCc?: PaymentStellaCc.AsObject,
     paymentstellaEcheck?: PaymentStellaECheck.AsObject,
+    finviCreateTransactionAuth?: PaymentFinviCreateTransactionAuth.AsObject,
+    finviCreateTransactionCapture?: PaymentFinviCreateTransactionCapture.AsObject,
+    finviCreateTransactionCredit?: PaymentFinviCreateTransactionCredit.AsObject,
+    finviCreateTransactionRefund?: PaymentFinviCreateTransactionRefund.AsObject,
+    finviCreateTransactionSale?: PaymentFinviCreateTransactionSale.AsObject,
+    finviCreateTransactionValidate?: PaymentFinviCreateTransactionValidate.AsObject,
     paymentFieldsList: Array<FieldDefinition.AsObject>,
   }
 
@@ -482,6 +518,12 @@ export namespace PaymentFlow {
     PAYMENTVISION_ACH = 16,
     PAYMENTSTELLA_CC = 17,
     PAYMENTSTELLA_ECHECK = 18,
+    FINVI_CREATE_TRANSACTION_AUTH = 19,
+    FINVI_CREATE_TRANSACTION_CAPTURE = 21,
+    FINVI_CREATE_TRANSACTION_CREDIT = 22,
+    FINVI_CREATE_TRANSACTION_REFUND = 23,
+    FINVI_CREATE_TRANSACTION_SALE = 24,
+    FINVI_CREATE_TRANSACTION_VALIDATE = 25,
   }
 }
 
@@ -2884,6 +2926,102 @@ export class PaymentStellaECheck extends jspb.Message {
 }
 
 export namespace PaymentStellaECheck {
+  export type AsObject = {
+  }
+}
+
+export class PaymentFinviCreateTransactionAuth extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentFinviCreateTransactionAuth.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentFinviCreateTransactionAuth): PaymentFinviCreateTransactionAuth.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentFinviCreateTransactionAuth, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentFinviCreateTransactionAuth;
+  static deserializeBinaryFromReader(message: PaymentFinviCreateTransactionAuth, reader: jspb.BinaryReader): PaymentFinviCreateTransactionAuth;
+}
+
+export namespace PaymentFinviCreateTransactionAuth {
+  export type AsObject = {
+  }
+}
+
+export class PaymentFinviCreateTransactionCapture extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentFinviCreateTransactionCapture.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentFinviCreateTransactionCapture): PaymentFinviCreateTransactionCapture.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentFinviCreateTransactionCapture, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentFinviCreateTransactionCapture;
+  static deserializeBinaryFromReader(message: PaymentFinviCreateTransactionCapture, reader: jspb.BinaryReader): PaymentFinviCreateTransactionCapture;
+}
+
+export namespace PaymentFinviCreateTransactionCapture {
+  export type AsObject = {
+  }
+}
+
+export class PaymentFinviCreateTransactionCredit extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentFinviCreateTransactionCredit.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentFinviCreateTransactionCredit): PaymentFinviCreateTransactionCredit.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentFinviCreateTransactionCredit, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentFinviCreateTransactionCredit;
+  static deserializeBinaryFromReader(message: PaymentFinviCreateTransactionCredit, reader: jspb.BinaryReader): PaymentFinviCreateTransactionCredit;
+}
+
+export namespace PaymentFinviCreateTransactionCredit {
+  export type AsObject = {
+  }
+}
+
+export class PaymentFinviCreateTransactionRefund extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentFinviCreateTransactionRefund.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentFinviCreateTransactionRefund): PaymentFinviCreateTransactionRefund.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentFinviCreateTransactionRefund, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentFinviCreateTransactionRefund;
+  static deserializeBinaryFromReader(message: PaymentFinviCreateTransactionRefund, reader: jspb.BinaryReader): PaymentFinviCreateTransactionRefund;
+}
+
+export namespace PaymentFinviCreateTransactionRefund {
+  export type AsObject = {
+  }
+}
+
+export class PaymentFinviCreateTransactionSale extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentFinviCreateTransactionSale.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentFinviCreateTransactionSale): PaymentFinviCreateTransactionSale.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentFinviCreateTransactionSale, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentFinviCreateTransactionSale;
+  static deserializeBinaryFromReader(message: PaymentFinviCreateTransactionSale, reader: jspb.BinaryReader): PaymentFinviCreateTransactionSale;
+}
+
+export namespace PaymentFinviCreateTransactionSale {
+  export type AsObject = {
+  }
+}
+
+export class PaymentFinviCreateTransactionValidate extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentFinviCreateTransactionValidate.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentFinviCreateTransactionValidate): PaymentFinviCreateTransactionValidate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentFinviCreateTransactionValidate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentFinviCreateTransactionValidate;
+  static deserializeBinaryFromReader(message: PaymentFinviCreateTransactionValidate, reader: jspb.BinaryReader): PaymentFinviCreateTransactionValidate;
+}
+
+export namespace PaymentFinviCreateTransactionValidate {
   export type AsObject = {
   }
 }
