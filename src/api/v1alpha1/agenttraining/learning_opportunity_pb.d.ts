@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_agent_training_pb from "../../../api/commons/agent_training_pb";
+import * as api_commons_dashboards_pb from "../../../api/commons/dashboards_pb";
 import * as api_commons_scorecards_pb from "../../../api/commons/scorecards_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 
@@ -341,6 +342,48 @@ export class GetLearningOpportunityResponse extends jspb.Message {
 export namespace GetLearningOpportunityResponse {
   export type AsObject = {
     learningOpportunity?: api_commons_agent_training_pb.LearningOpportunity.AsObject,
+  }
+}
+
+export class ListDashboardsRequest extends jspb.Message {
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListDashboardsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDashboardsRequest): ListDashboardsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListDashboardsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDashboardsRequest;
+  static deserializeBinaryFromReader(message: ListDashboardsRequest, reader: jspb.BinaryReader): ListDashboardsRequest;
+}
+
+export namespace ListDashboardsRequest {
+  export type AsObject = {
+    orgId: string,
+  }
+}
+
+export class ListDashboardsResponse extends jspb.Message {
+  clearDashboardsList(): void;
+  getDashboardsList(): Array<api_commons_dashboards_pb.DashboardSummary>;
+  setDashboardsList(value: Array<api_commons_dashboards_pb.DashboardSummary>): void;
+  addDashboards(value?: api_commons_dashboards_pb.DashboardSummary, index?: number): api_commons_dashboards_pb.DashboardSummary;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListDashboardsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDashboardsResponse): ListDashboardsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListDashboardsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDashboardsResponse;
+  static deserializeBinaryFromReader(message: ListDashboardsResponse, reader: jspb.BinaryReader): ListDashboardsResponse;
+}
+
+export namespace ListDashboardsResponse {
+  export type AsObject = {
+    dashboardsList: Array<api_commons_dashboards_pb.DashboardSummary.AsObject>,
   }
 }
 
