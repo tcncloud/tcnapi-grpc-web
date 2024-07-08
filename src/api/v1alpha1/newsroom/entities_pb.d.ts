@@ -480,6 +480,9 @@ export class UserActivityRequest extends jspb.Message {
   getPublishedArticleSid(): string;
   setPublishedArticleSid(value: string): void;
 
+  getForce(): boolean;
+  setForce(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserActivityRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UserActivityRequest): UserActivityRequest.AsObject;
@@ -493,6 +496,7 @@ export class UserActivityRequest extends jspb.Message {
 export namespace UserActivityRequest {
   export type AsObject = {
     publishedArticleSid: string,
+    force: boolean,
   }
 }
 
