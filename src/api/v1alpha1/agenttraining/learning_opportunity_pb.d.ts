@@ -346,9 +346,6 @@ export namespace GetLearningOpportunityResponse {
 }
 
 export class ListDashboardsRequest extends jspb.Message {
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDashboardsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListDashboardsRequest): ListDashboardsRequest.AsObject;
@@ -361,7 +358,6 @@ export class ListDashboardsRequest extends jspb.Message {
 
 export namespace ListDashboardsRequest {
   export type AsObject = {
-    orgId: string,
   }
 }
 

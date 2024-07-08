@@ -2850,7 +2850,7 @@ proto.api.v1alpha1.agenttraining.ListDashboardsRequest.prototype.toObject = func
  */
 proto.api.v1alpha1.agenttraining.ListDashboardsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -2887,10 +2887,6 @@ proto.api.v1alpha1.agenttraining.ListDashboardsRequest.deserializeBinaryFromRead
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrgId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2920,31 +2916,6 @@ proto.api.v1alpha1.agenttraining.ListDashboardsRequest.prototype.serializeBinary
  */
 proto.api.v1alpha1.agenttraining.ListDashboardsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrgId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string org_id = 1;
- * @return {string}
- */
-proto.api.v1alpha1.agenttraining.ListDashboardsRequest.prototype.getOrgId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.agenttraining.ListDashboardsRequest} returns this
- */
-proto.api.v1alpha1.agenttraining.ListDashboardsRequest.prototype.setOrgId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
