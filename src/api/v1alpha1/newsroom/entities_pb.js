@@ -3948,7 +3948,8 @@ proto.api.v1alpha1.newsroom.UserActivityRequest.prototype.toObject = function(op
  */
 proto.api.v1alpha1.newsroom.UserActivityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+    publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+    forceFlag: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -3989,6 +3990,10 @@ proto.api.v1alpha1.newsroom.UserActivityRequest.deserializeBinaryFromReader = fu
       var value = /** @type {string} */ (reader.readInt64String());
       msg.setPublishedArticleSid(value);
       break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setForceFlag(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4025,6 +4030,13 @@ proto.api.v1alpha1.newsroom.UserActivityRequest.serializeBinaryToWriter = functi
       f
     );
   }
+  f = message.getForceFlag();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -4043,6 +4055,24 @@ proto.api.v1alpha1.newsroom.UserActivityRequest.prototype.getPublishedArticleSid
  */
 proto.api.v1alpha1.newsroom.UserActivityRequest.prototype.setPublishedArticleSid = function(value) {
   return jspb.Message.setProto3StringIntField(this, 1, value);
+};
+
+
+/**
+ * optional bool force_flag = 2;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.newsroom.UserActivityRequest.prototype.getForceFlag = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.newsroom.UserActivityRequest} returns this
+ */
+proto.api.v1alpha1.newsroom.UserActivityRequest.prototype.setForceFlag = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
