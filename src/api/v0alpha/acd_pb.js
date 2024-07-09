@@ -17502,7 +17502,7 @@ proto.api.v0alpha.StartSecureFormReq.prototype.toObject = function(opt_includeIn
 proto.api.v0alpha.StartSecureFormReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     portalId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -17545,7 +17545,7 @@ proto.api.v0alpha.StartSecureFormReq.deserializeBinaryFromReader = function(msg,
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setSessionSid(value);
+      msg.setVoiceSessionSid(value);
       break;
     default:
       reader.skipField();
@@ -17583,7 +17583,7 @@ proto.api.v0alpha.StartSecureFormReq.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getSessionSid();
+  f = message.getVoiceSessionSid();
   if (f !== 0) {
     writer.writeInt64(
       2,
@@ -17612,10 +17612,10 @@ proto.api.v0alpha.StartSecureFormReq.prototype.setPortalId = function(value) {
 
 
 /**
- * optional int64 session_sid = 2;
+ * optional int64 voice_session_sid = 2;
  * @return {number}
  */
-proto.api.v0alpha.StartSecureFormReq.prototype.getSessionSid = function() {
+proto.api.v0alpha.StartSecureFormReq.prototype.getVoiceSessionSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -17624,7 +17624,7 @@ proto.api.v0alpha.StartSecureFormReq.prototype.getSessionSid = function() {
  * @param {number} value
  * @return {!proto.api.v0alpha.StartSecureFormReq} returns this
  */
-proto.api.v0alpha.StartSecureFormReq.prototype.setSessionSid = function(value) {
+proto.api.v0alpha.StartSecureFormReq.prototype.setVoiceSessionSid = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -17763,7 +17763,7 @@ proto.api.v0alpha.CollectSecureFormFieldReq.prototype.toObject = function(opt_in
 proto.api.v0alpha.CollectSecureFormFieldReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     fieldName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -17806,7 +17806,7 @@ proto.api.v0alpha.CollectSecureFormFieldReq.deserializeBinaryFromReader = functi
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setSessionSid(value);
+      msg.setVoiceSessionSid(value);
       break;
     default:
       reader.skipField();
@@ -17844,7 +17844,7 @@ proto.api.v0alpha.CollectSecureFormFieldReq.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getSessionSid();
+  f = message.getVoiceSessionSid();
   if (f !== 0) {
     writer.writeInt64(
       2,
@@ -17873,10 +17873,10 @@ proto.api.v0alpha.CollectSecureFormFieldReq.prototype.setFieldName = function(va
 
 
 /**
- * optional int64 session_sid = 2;
+ * optional int64 voice_session_sid = 2;
  * @return {number}
  */
-proto.api.v0alpha.CollectSecureFormFieldReq.prototype.getSessionSid = function() {
+proto.api.v0alpha.CollectSecureFormFieldReq.prototype.getVoiceSessionSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -17885,7 +17885,7 @@ proto.api.v0alpha.CollectSecureFormFieldReq.prototype.getSessionSid = function()
  * @param {number} value
  * @return {!proto.api.v0alpha.CollectSecureFormFieldReq} returns this
  */
-proto.api.v0alpha.CollectSecureFormFieldReq.prototype.setSessionSid = function(value) {
+proto.api.v0alpha.CollectSecureFormFieldReq.prototype.setVoiceSessionSid = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -18023,7 +18023,7 @@ proto.api.v0alpha.ResetSecureFormFieldReq.prototype.toObject = function(opt_incl
  */
 proto.api.v0alpha.ResetSecureFormFieldReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -18062,7 +18062,7 @@ proto.api.v0alpha.ResetSecureFormFieldReq.deserializeBinaryFromReader = function
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setSessionSid(value);
+      msg.setVoiceSessionSid(value);
       break;
     default:
       reader.skipField();
@@ -18093,7 +18093,7 @@ proto.api.v0alpha.ResetSecureFormFieldReq.prototype.serializeBinary = function()
  */
 proto.api.v0alpha.ResetSecureFormFieldReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSessionSid();
+  f = message.getVoiceSessionSid();
   if (f !== 0) {
     writer.writeInt64(
       1,
@@ -18104,10 +18104,10 @@ proto.api.v0alpha.ResetSecureFormFieldReq.serializeBinaryToWriter = function(mes
 
 
 /**
- * optional int64 session_sid = 1;
+ * optional int64 voice_session_sid = 1;
  * @return {number}
  */
-proto.api.v0alpha.ResetSecureFormFieldReq.prototype.getSessionSid = function() {
+proto.api.v0alpha.ResetSecureFormFieldReq.prototype.getVoiceSessionSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -18116,7 +18116,7 @@ proto.api.v0alpha.ResetSecureFormFieldReq.prototype.getSessionSid = function() {
  * @param {number} value
  * @return {!proto.api.v0alpha.ResetSecureFormFieldReq} returns this
  */
-proto.api.v0alpha.ResetSecureFormFieldReq.prototype.setSessionSid = function(value) {
+proto.api.v0alpha.ResetSecureFormFieldReq.prototype.setVoiceSessionSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -18254,7 +18254,7 @@ proto.api.v0alpha.AcceptSecureFormFieldReq.prototype.toObject = function(opt_inc
  */
 proto.api.v0alpha.AcceptSecureFormFieldReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -18293,7 +18293,7 @@ proto.api.v0alpha.AcceptSecureFormFieldReq.deserializeBinaryFromReader = functio
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setSessionSid(value);
+      msg.setVoiceSessionSid(value);
       break;
     default:
       reader.skipField();
@@ -18324,7 +18324,7 @@ proto.api.v0alpha.AcceptSecureFormFieldReq.prototype.serializeBinary = function(
  */
 proto.api.v0alpha.AcceptSecureFormFieldReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSessionSid();
+  f = message.getVoiceSessionSid();
   if (f !== 0) {
     writer.writeInt64(
       1,
@@ -18335,10 +18335,10 @@ proto.api.v0alpha.AcceptSecureFormFieldReq.serializeBinaryToWriter = function(me
 
 
 /**
- * optional int64 session_sid = 1;
+ * optional int64 voice_session_sid = 1;
  * @return {number}
  */
-proto.api.v0alpha.AcceptSecureFormFieldReq.prototype.getSessionSid = function() {
+proto.api.v0alpha.AcceptSecureFormFieldReq.prototype.getVoiceSessionSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -18347,7 +18347,7 @@ proto.api.v0alpha.AcceptSecureFormFieldReq.prototype.getSessionSid = function() 
  * @param {number} value
  * @return {!proto.api.v0alpha.AcceptSecureFormFieldReq} returns this
  */
-proto.api.v0alpha.AcceptSecureFormFieldReq.prototype.setSessionSid = function(value) {
+proto.api.v0alpha.AcceptSecureFormFieldReq.prototype.setVoiceSessionSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -18489,7 +18489,7 @@ proto.api.v0alpha.ProcessSecureFormReq.toObject = function(includeInstance, msg)
     portalId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     segment: jspb.Message.getFieldWithDefault(msg, 3, 0),
     choice: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    sessionSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -18546,7 +18546,7 @@ proto.api.v0alpha.ProcessSecureFormReq.deserializeBinaryFromReader = function(ms
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setSessionSid(value);
+      msg.setVoiceSessionSid(value);
       break;
     default:
       reader.skipField();
@@ -18602,7 +18602,7 @@ proto.api.v0alpha.ProcessSecureFormReq.serializeBinaryToWriter = function(messag
       f
     );
   }
-  f = message.getSessionSid();
+  f = message.getVoiceSessionSid();
   if (f !== 0) {
     writer.writeInt64(
       5,
@@ -18690,10 +18690,10 @@ proto.api.v0alpha.ProcessSecureFormReq.prototype.setChoice = function(value) {
 
 
 /**
- * optional int64 session_sid = 5;
+ * optional int64 voice_session_sid = 5;
  * @return {number}
  */
-proto.api.v0alpha.ProcessSecureFormReq.prototype.getSessionSid = function() {
+proto.api.v0alpha.ProcessSecureFormReq.prototype.getVoiceSessionSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -18702,7 +18702,7 @@ proto.api.v0alpha.ProcessSecureFormReq.prototype.getSessionSid = function() {
  * @param {number} value
  * @return {!proto.api.v0alpha.ProcessSecureFormReq} returns this
  */
-proto.api.v0alpha.ProcessSecureFormReq.prototype.setSessionSid = function(value) {
+proto.api.v0alpha.ProcessSecureFormReq.prototype.setVoiceSessionSid = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -18905,7 +18905,7 @@ proto.api.v0alpha.FinishSecureFormHandlingReq.toObject = function(includeInstanc
   var f, obj = {
     reason: jspb.Message.getFieldWithDefault(msg, 1, ""),
     dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrations.Value.toObject) : [],
-    sessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -18954,7 +18954,7 @@ proto.api.v0alpha.FinishSecureFormHandlingReq.deserializeBinaryFromReader = func
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setSessionSid(value);
+      msg.setVoiceSessionSid(value);
       break;
     default:
       reader.skipField();
@@ -18996,7 +18996,7 @@ proto.api.v0alpha.FinishSecureFormHandlingReq.serializeBinaryToWriter = function
   if (f && f.getLength() > 0) {
     f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.api.v1alpha1.integrations.Value.serializeBinaryToWriter);
   }
-  f = message.getSessionSid();
+  f = message.getVoiceSessionSid();
   if (f !== 0) {
     writer.writeInt64(
       3,
@@ -19048,10 +19048,10 @@ proto.api.v0alpha.FinishSecureFormHandlingReq.prototype.clearDataMap = function(
 
 
 /**
- * optional int64 session_sid = 3;
+ * optional int64 voice_session_sid = 3;
  * @return {number}
  */
-proto.api.v0alpha.FinishSecureFormHandlingReq.prototype.getSessionSid = function() {
+proto.api.v0alpha.FinishSecureFormHandlingReq.prototype.getVoiceSessionSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -19060,7 +19060,7 @@ proto.api.v0alpha.FinishSecureFormHandlingReq.prototype.getSessionSid = function
  * @param {number} value
  * @return {!proto.api.v0alpha.FinishSecureFormHandlingReq} returns this
  */
-proto.api.v0alpha.FinishSecureFormHandlingReq.prototype.setSessionSid = function(value) {
+proto.api.v0alpha.FinishSecureFormHandlingReq.prototype.setVoiceSessionSid = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 

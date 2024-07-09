@@ -2244,8 +2244,8 @@ export class StartSecureFormReq extends jspb.Message {
   getPortalId(): string;
   setPortalId(value: string): void;
 
-  getSessionSid(): number;
-  setSessionSid(value: number): void;
+  getVoiceSessionSid(): number;
+  setVoiceSessionSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StartSecureFormReq.AsObject;
@@ -2260,7 +2260,7 @@ export class StartSecureFormReq extends jspb.Message {
 export namespace StartSecureFormReq {
   export type AsObject = {
     portalId: string,
-    sessionSid: number,
+    voiceSessionSid: number,
   }
 }
 
@@ -2284,8 +2284,8 @@ export class CollectSecureFormFieldReq extends jspb.Message {
   getFieldName(): string;
   setFieldName(value: string): void;
 
-  getSessionSid(): number;
-  setSessionSid(value: number): void;
+  getVoiceSessionSid(): number;
+  setVoiceSessionSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CollectSecureFormFieldReq.AsObject;
@@ -2300,7 +2300,7 @@ export class CollectSecureFormFieldReq extends jspb.Message {
 export namespace CollectSecureFormFieldReq {
   export type AsObject = {
     fieldName: string,
-    sessionSid: number,
+    voiceSessionSid: number,
   }
 }
 
@@ -2321,8 +2321,8 @@ export namespace CollectSecureFormFieldRes {
 }
 
 export class ResetSecureFormFieldReq extends jspb.Message {
-  getSessionSid(): number;
-  setSessionSid(value: number): void;
+  getVoiceSessionSid(): number;
+  setVoiceSessionSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResetSecureFormFieldReq.AsObject;
@@ -2336,7 +2336,7 @@ export class ResetSecureFormFieldReq extends jspb.Message {
 
 export namespace ResetSecureFormFieldReq {
   export type AsObject = {
-    sessionSid: number,
+    voiceSessionSid: number,
   }
 }
 
@@ -2357,8 +2357,8 @@ export namespace ResetSecureFormFieldRes {
 }
 
 export class AcceptSecureFormFieldReq extends jspb.Message {
-  getSessionSid(): number;
-  setSessionSid(value: number): void;
+  getVoiceSessionSid(): number;
+  setVoiceSessionSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AcceptSecureFormFieldReq.AsObject;
@@ -2372,7 +2372,7 @@ export class AcceptSecureFormFieldReq extends jspb.Message {
 
 export namespace AcceptSecureFormFieldReq {
   export type AsObject = {
-    sessionSid: number,
+    voiceSessionSid: number,
   }
 }
 
@@ -2404,8 +2404,8 @@ export class ProcessSecureFormReq extends jspb.Message {
   getChoice(): number;
   setChoice(value: number): void;
 
-  getSessionSid(): number;
-  setSessionSid(value: number): void;
+  getVoiceSessionSid(): number;
+  setVoiceSessionSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessSecureFormReq.AsObject;
@@ -2423,7 +2423,7 @@ export namespace ProcessSecureFormReq {
     portalId: string,
     segment: number,
     choice: number,
-    sessionSid: number,
+    voiceSessionSid: number,
   }
 }
 
@@ -2456,8 +2456,8 @@ export class FinishSecureFormHandlingReq extends jspb.Message {
 
   getDataMap(): jspb.Map<string, api_v1alpha1_integrations_service_pb.Value>;
   clearDataMap(): void;
-  getSessionSid(): number;
-  setSessionSid(value: number): void;
+  getVoiceSessionSid(): number;
+  setVoiceSessionSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FinishSecureFormHandlingReq.AsObject;
@@ -2473,7 +2473,7 @@ export namespace FinishSecureFormHandlingReq {
   export type AsObject = {
     reason: string,
     dataMap: Array<[string, api_v1alpha1_integrations_service_pb.Value.AsObject]>,
-    sessionSid: number,
+    voiceSessionSid: number,
   }
 }
 
