@@ -418,6 +418,31 @@ export class BulkDeleteAutoEvaluationsRequest extends jspb.Message {
   getCompletedAt(): api_commons_scorecards_pb.TimeFilter | undefined;
   setCompletedAt(value?: api_commons_scorecards_pb.TimeFilter): void;
 
+  clearScorecardIdsList(): void;
+  getScorecardIdsList(): Array<number>;
+  setScorecardIdsList(value: Array<number>): void;
+  addScorecardIds(value: number, index?: number): number;
+
+  clearCategoryIdsList(): void;
+  getCategoryIdsList(): Array<number>;
+  setCategoryIdsList(value: Array<number>): void;
+  addCategoryIds(value: number, index?: number): number;
+
+  hasCallSid(): boolean;
+  clearCallSid(): void;
+  getCallSid(): BulkDeleteAutoEvaluationsRequest.CallSidFilter | undefined;
+  setCallSid(value?: BulkDeleteAutoEvaluationsRequest.CallSidFilter): void;
+
+  clearAgentUserIdsList(): void;
+  getAgentUserIdsList(): Array<string>;
+  setAgentUserIdsList(value: Array<string>): void;
+  addAgentUserIds(value: string, index?: number): string;
+
+  clearRiskLevelsList(): void;
+  getRiskLevelsList(): Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>;
+  setRiskLevelsList(value: Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>): void;
+  addRiskLevels(value: api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap], index?: number): api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BulkDeleteAutoEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: BulkDeleteAutoEvaluationsRequest): BulkDeleteAutoEvaluationsRequest.AsObject;
@@ -433,6 +458,53 @@ export namespace BulkDeleteAutoEvaluationsRequest {
     orgId: string,
     autoEvaluationIdsList: Array<number>,
     completedAt?: api_commons_scorecards_pb.TimeFilter.AsObject,
+    scorecardIdsList: Array<number>,
+    categoryIdsList: Array<number>,
+    callSid?: BulkDeleteAutoEvaluationsRequest.CallSidFilter.AsObject,
+    agentUserIdsList: Array<string>,
+    riskLevelsList: Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>,
+  }
+
+  export class CallSidFilter extends jspb.Message {
+    clearAnyOfList(): void;
+    getAnyOfList(): Array<number>;
+    setAnyOfList(value: Array<number>): void;
+    addAnyOf(value: number, index?: number): number;
+
+    getEq(): number;
+    setEq(value: number): void;
+
+    getGte(): number;
+    setGte(value: number): void;
+
+    getLte(): number;
+    setLte(value: number): void;
+
+    getGt(): number;
+    setGt(value: number): void;
+
+    getLt(): number;
+    setLt(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CallSidFilter.AsObject;
+    static toObject(includeInstance: boolean, msg: CallSidFilter): CallSidFilter.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CallSidFilter, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CallSidFilter;
+    static deserializeBinaryFromReader(message: CallSidFilter, reader: jspb.BinaryReader): CallSidFilter;
+  }
+
+  export namespace CallSidFilter {
+    export type AsObject = {
+      anyOfList: Array<number>,
+      eq: number,
+      gte: number,
+      lte: number,
+      gt: number,
+      lt: number,
+    }
   }
 }
 

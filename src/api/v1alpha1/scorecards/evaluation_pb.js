@@ -3522,7 +3522,7 @@ proto.api.v1alpha1.scorecards.DeleteEvaluationByOrgIdRequest.prototype.setEvalua
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.repeatedFields_ = [2];
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.repeatedFields_ = [2,4,5,6,7];
 
 
 
@@ -3557,7 +3557,11 @@ proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.toObject = function(i
   var f, obj = {
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     evaluationIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f)
+    completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f),
+    categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+    scorerIdList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3609,6 +3613,26 @@ proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.deserializeBinaryFrom
       reader.readMessage(value,api_commons_scorecards_pb.TimeFilter.deserializeBinaryFromReader);
       msg.setCompletedAt(value);
       break;
+    case 4:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addCategoryIds(values[i]);
+      }
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addAgentUserIds(value);
+      break;
+    case 6:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addScorecardIds(values[i]);
+      }
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addScorerId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3658,6 +3682,34 @@ proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.serializeBinaryToWrit
       3,
       f,
       api_commons_scorecards_pb.TimeFilter.serializeBinaryToWriter
+    );
+  }
+  f = message.getCategoryIdsList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      4,
+      f
+    );
+  }
+  f = message.getAgentUserIdsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      5,
+      f
+    );
+  }
+  f = message.getScorecardIdsList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      6,
+      f
+    );
+  }
+  f = message.getScorerIdList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      7,
+      f
     );
   }
 };
@@ -3752,6 +3804,154 @@ proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.clearComple
  */
 proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.hasCompletedAt = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * repeated int64 category_ids = 4;
+ * @return {!Array<number>}
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.getCategoryIdsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.setCategoryIdsList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.addCategoryIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.clearCategoryIdsList = function() {
+  return this.setCategoryIdsList([]);
+};
+
+
+/**
+ * repeated string agent_user_ids = 5;
+ * @return {!Array<string>}
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.getAgentUserIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.setAgentUserIdsList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.addAgentUserIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.clearAgentUserIdsList = function() {
+  return this.setAgentUserIdsList([]);
+};
+
+
+/**
+ * repeated int64 scorecard_ids = 6;
+ * @return {!Array<number>}
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.getScorecardIdsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.setScorecardIdsList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.addScorecardIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.clearScorecardIdsList = function() {
+  return this.setScorecardIdsList([]);
+};
+
+
+/**
+ * repeated string scorer_id = 7;
+ * @return {!Array<string>}
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.getScorerIdList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.setScorerIdList = function(value) {
+  return jspb.Message.setField(this, 7, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.addScorerId = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.clearScorerIdList = function() {
+  return this.setScorerIdList([]);
 };
 
 
