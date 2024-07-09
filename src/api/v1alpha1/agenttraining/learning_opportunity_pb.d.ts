@@ -363,9 +363,9 @@ export namespace ListDashboardsRequest {
 
 export class ListDashboardsResponse extends jspb.Message {
   clearDashboardsList(): void;
-  getDashboardsList(): Array<api_commons_dashboards_pb.DashboardSummary>;
-  setDashboardsList(value: Array<api_commons_dashboards_pb.DashboardSummary>): void;
-  addDashboards(value?: api_commons_dashboards_pb.DashboardSummary, index?: number): api_commons_dashboards_pb.DashboardSummary;
+  getDashboardsList(): Array<api_commons_dashboards_pb.DashboardReference>;
+  setDashboardsList(value: Array<api_commons_dashboards_pb.DashboardReference>): void;
+  addDashboards(value?: api_commons_dashboards_pb.DashboardReference, index?: number): api_commons_dashboards_pb.DashboardReference;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDashboardsResponse.AsObject;
@@ -379,7 +379,7 @@ export class ListDashboardsResponse extends jspb.Message {
 
 export namespace ListDashboardsResponse {
   export type AsObject = {
-    dashboardsList: Array<api_commons_dashboards_pb.DashboardSummary.AsObject>,
+    dashboardsList: Array<api_commons_dashboards_pb.DashboardReference.AsObject>,
   }
 }
 

@@ -2959,7 +2959,7 @@ proto.api.v1alpha1.agenttraining.ListDashboardsResponse.prototype.toObject = fun
 proto.api.v1alpha1.agenttraining.ListDashboardsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     dashboardsList: jspb.Message.toObjectList(msg.getDashboardsList(),
-    api_commons_dashboards_pb.DashboardSummary.toObject, includeInstance)
+    api_commons_dashboards_pb.DashboardReference.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2997,8 +2997,8 @@ proto.api.v1alpha1.agenttraining.ListDashboardsResponse.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new api_commons_dashboards_pb.DashboardSummary;
-      reader.readMessage(value,api_commons_dashboards_pb.DashboardSummary.deserializeBinaryFromReader);
+      var value = new api_commons_dashboards_pb.DashboardReference;
+      reader.readMessage(value,api_commons_dashboards_pb.DashboardReference.deserializeBinaryFromReader);
       msg.addDashboards(value);
       break;
     default:
@@ -3035,24 +3035,24 @@ proto.api.v1alpha1.agenttraining.ListDashboardsResponse.serializeBinaryToWriter 
     writer.writeRepeatedMessage(
       1,
       f,
-      api_commons_dashboards_pb.DashboardSummary.serializeBinaryToWriter
+      api_commons_dashboards_pb.DashboardReference.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated api.commons.DashboardSummary dashboards = 1;
- * @return {!Array<!proto.api.commons.DashboardSummary>}
+ * repeated api.commons.DashboardReference dashboards = 1;
+ * @return {!Array<!proto.api.commons.DashboardReference>}
  */
 proto.api.v1alpha1.agenttraining.ListDashboardsResponse.prototype.getDashboardsList = function() {
-  return /** @type{!Array<!proto.api.commons.DashboardSummary>} */ (
-    jspb.Message.getRepeatedWrapperField(this, api_commons_dashboards_pb.DashboardSummary, 1));
+  return /** @type{!Array<!proto.api.commons.DashboardReference>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_commons_dashboards_pb.DashboardReference, 1));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.DashboardSummary>} value
+ * @param {!Array<!proto.api.commons.DashboardReference>} value
  * @return {!proto.api.v1alpha1.agenttraining.ListDashboardsResponse} returns this
 */
 proto.api.v1alpha1.agenttraining.ListDashboardsResponse.prototype.setDashboardsList = function(value) {
@@ -3061,12 +3061,12 @@ proto.api.v1alpha1.agenttraining.ListDashboardsResponse.prototype.setDashboardsL
 
 
 /**
- * @param {!proto.api.commons.DashboardSummary=} opt_value
+ * @param {!proto.api.commons.DashboardReference=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.commons.DashboardSummary}
+ * @return {!proto.api.commons.DashboardReference}
  */
 proto.api.v1alpha1.agenttraining.ListDashboardsResponse.prototype.addDashboards = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.commons.DashboardSummary, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.commons.DashboardReference, opt_index);
 };
 
 
