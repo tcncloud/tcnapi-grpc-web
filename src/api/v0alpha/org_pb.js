@@ -90222,7 +90222,8 @@ proto.api.v0alpha.QueueConfig.toObject = function(includeInstance, msg) {
     callbackTimeoutMinutes: jspb.Message.getFieldWithDefault(msg, 12, 0),
     numberUpdate: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
     inboundOverride: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    intercomConnection: jspb.Message.getFieldWithDefault(msg, 17, 0)
+    intercomConnection: jspb.Message.getFieldWithDefault(msg, 17, 0),
+    passThroughDtmf: jspb.Message.getBooleanFieldWithDefault(msg, 18, false)
   };
 
   if (includeInstance) {
@@ -90336,6 +90337,10 @@ proto.api.v0alpha.QueueConfig.deserializeBinaryFromReader = function(msg, reader
     case 17:
       var value = /** @type {!proto.api.commons.IntercomConnection} */ (reader.readEnum());
       msg.setIntercomConnection(value);
+      break;
+    case 18:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPassThroughDtmf(value);
       break;
     default:
       reader.skipField();
@@ -90492,6 +90497,13 @@ proto.api.v0alpha.QueueConfig.serializeBinaryToWriter = function(message, writer
   if (f !== 0.0) {
     writer.writeEnum(
       17,
+      f
+    );
+  }
+  f = message.getPassThroughDtmf();
+  if (f) {
+    writer.writeBool(
+      18,
       f
     );
   }
@@ -92969,7 +92981,9 @@ proto.api.v0alpha.QueueConfig.AttentionTones.Config.toObject = function(includeI
     agentStatusPaused: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
     agentStatusWrapUp: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
     tonesList: jspb.Message.toObjectList(msg.getTonesList(),
-    proto.api.v0alpha.QueueConfig.AttentionTones.Tones.toObject, includeInstance)
+    proto.api.v0alpha.QueueConfig.AttentionTones.Tones.toObject, includeInstance),
+    playSoundFile: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    agentStatusOnCall: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -93018,6 +93032,14 @@ proto.api.v0alpha.QueueConfig.AttentionTones.Config.deserializeBinaryFromReader 
       var value = new proto.api.v0alpha.QueueConfig.AttentionTones.Tones;
       reader.readMessage(value,proto.api.v0alpha.QueueConfig.AttentionTones.Tones.deserializeBinaryFromReader);
       msg.addTones(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPlaySoundFile(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAgentStatusOnCall(value);
       break;
     default:
       reader.skipField();
@@ -93068,6 +93090,20 @@ proto.api.v0alpha.QueueConfig.AttentionTones.Config.serializeBinaryToWriter = fu
       3,
       f,
       proto.api.v0alpha.QueueConfig.AttentionTones.Tones.serializeBinaryToWriter
+    );
+  }
+  f = message.getPlaySoundFile();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+  f = message.getAgentStatusOnCall();
+  if (f) {
+    writer.writeBool(
+      5,
+      f
     );
   }
 };
@@ -93144,6 +93180,42 @@ proto.api.v0alpha.QueueConfig.AttentionTones.Config.prototype.addTones = functio
  */
 proto.api.v0alpha.QueueConfig.AttentionTones.Config.prototype.clearTonesList = function() {
   return this.setTonesList([]);
+};
+
+
+/**
+ * optional bool play_sound_file = 4;
+ * @return {boolean}
+ */
+proto.api.v0alpha.QueueConfig.AttentionTones.Config.prototype.getPlaySoundFile = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.QueueConfig.AttentionTones.Config} returns this
+ */
+proto.api.v0alpha.QueueConfig.AttentionTones.Config.prototype.setPlaySoundFile = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
+/**
+ * optional bool agent_status_on_call = 5;
+ * @return {boolean}
+ */
+proto.api.v0alpha.QueueConfig.AttentionTones.Config.prototype.getAgentStatusOnCall = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.QueueConfig.AttentionTones.Config} returns this
+ */
+proto.api.v0alpha.QueueConfig.AttentionTones.Config.prototype.setAgentStatusOnCall = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
@@ -97585,7 +97657,8 @@ proto.api.v0alpha.QueueConfig.PbxRingStrategy.Config.toObject = function(include
     highestScoreOnly: (f = msg.getHighestScoreOnly()) && proto.api.v0alpha.QueueConfig.Optionless.toObject(includeInstance, f),
     random: (f = msg.getRandom()) && proto.api.v0alpha.QueueConfig.Optionless.toObject(includeInstance, f),
     agentScore: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    agentScoreMemory: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    agentScoreMemory: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    timeout: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -97644,6 +97717,10 @@ proto.api.v0alpha.QueueConfig.PbxRingStrategy.Config.deserializeBinaryFromReader
     case 5:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setAgentScoreMemory(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTimeout(value);
       break;
     default:
       reader.skipField();
@@ -97709,6 +97786,13 @@ proto.api.v0alpha.QueueConfig.PbxRingStrategy.Config.serializeBinaryToWriter = f
   if (f != null) {
     writer.writeInt64(
       5,
+      f
+    );
+  }
+  f = message.getTimeout();
+  if (f !== 0) {
+    writer.writeInt64(
+      6,
       f
     );
   }
@@ -97895,6 +97979,24 @@ proto.api.v0alpha.QueueConfig.PbxRingStrategy.Config.prototype.clearAgentScoreMe
  */
 proto.api.v0alpha.QueueConfig.PbxRingStrategy.Config.prototype.hasAgentScoreMemory = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional int64 timeout = 6;
+ * @return {number}
+ */
+proto.api.v0alpha.QueueConfig.PbxRingStrategy.Config.prototype.getTimeout = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v0alpha.QueueConfig.PbxRingStrategy.Config} returns this
+ */
+proto.api.v0alpha.QueueConfig.PbxRingStrategy.Config.prototype.setTimeout = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -99020,6 +99122,24 @@ proto.api.v0alpha.QueueConfig.prototype.getIntercomConnection = function() {
  */
 proto.api.v0alpha.QueueConfig.prototype.setIntercomConnection = function(value) {
   return jspb.Message.setProto3EnumField(this, 17, value);
+};
+
+
+/**
+ * optional bool pass_through_dtmf = 18;
+ * @return {boolean}
+ */
+proto.api.v0alpha.QueueConfig.prototype.getPassThroughDtmf = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.QueueConfig} returns this
+ */
+proto.api.v0alpha.QueueConfig.prototype.setPassThroughDtmf = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 18, value);
 };
 
 

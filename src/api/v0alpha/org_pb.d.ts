@@ -11296,6 +11296,9 @@ export class QueueConfig extends jspb.Message {
   getIntercomConnection(): api_commons_org_pb.IntercomConnectionMap[keyof api_commons_org_pb.IntercomConnectionMap];
   setIntercomConnection(value: api_commons_org_pb.IntercomConnectionMap[keyof api_commons_org_pb.IntercomConnectionMap]): void;
 
+  getPassThroughDtmf(): boolean;
+  setPassThroughDtmf(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueueConfig.AsObject;
   static toObject(includeInstance: boolean, msg: QueueConfig): QueueConfig.AsObject;
@@ -11325,6 +11328,7 @@ export namespace QueueConfig {
     numberUpdate: boolean,
     inboundOverride: api_commons_org_pb.InboundOverrideOptionMap[keyof api_commons_org_pb.InboundOverrideOptionMap],
     intercomConnection: api_commons_org_pb.IntercomConnectionMap[keyof api_commons_org_pb.IntercomConnectionMap],
+    passThroughDtmf: boolean,
   }
 
   export class AnnouncementMixing extends jspb.Message {
@@ -11703,6 +11707,12 @@ export namespace QueueConfig {
       setTonesList(value: Array<QueueConfig.AttentionTones.Tones>): void;
       addTones(value?: QueueConfig.AttentionTones.Tones, index?: number): QueueConfig.AttentionTones.Tones;
 
+      getPlaySoundFile(): boolean;
+      setPlaySoundFile(value: boolean): void;
+
+      getAgentStatusOnCall(): boolean;
+      setAgentStatusOnCall(value: boolean): void;
+
       serializeBinary(): Uint8Array;
       toObject(includeInstance?: boolean): Config.AsObject;
       static toObject(includeInstance: boolean, msg: Config): Config.AsObject;
@@ -11718,6 +11728,8 @@ export namespace QueueConfig {
         agentStatusPaused: boolean,
         agentStatusWrapUp: boolean,
         tonesList: Array<QueueConfig.AttentionTones.Tones.AsObject>,
+        playSoundFile: boolean,
+        agentStatusOnCall: boolean,
       }
     }
 
@@ -12327,6 +12339,9 @@ export namespace QueueConfig {
       getAgentScoreMemory(): number;
       setAgentScoreMemory(value: number): void;
 
+      getTimeout(): number;
+      setTimeout(value: number): void;
+
       getStrategyCase(): Config.StrategyCase;
       serializeBinary(): Uint8Array;
       toObject(includeInstance?: boolean): Config.AsObject;
@@ -12345,6 +12360,7 @@ export namespace QueueConfig {
         random?: QueueConfig.Optionless.AsObject,
         agentScore: number,
         agentScoreMemory: number,
+        timeout: number,
       }
 
       export enum StrategyCase {
