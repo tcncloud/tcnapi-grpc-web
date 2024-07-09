@@ -1828,6 +1828,76 @@ export class ExecuteFlow extends jspb.Message {
   getFinviProcessNewTransactionValidate(): ExecuteFinviProcessNewTransactionValidate | undefined;
   setFinviProcessNewTransactionValidate(value?: ExecuteFinviProcessNewTransactionValidate): void;
 
+  hasNavigaDtiCircCreatePayment(): boolean;
+  clearNavigaDtiCircCreatePayment(): void;
+  getNavigaDtiCircCreatePayment(): ExecuteNavigaDTICircCreatePayment | undefined;
+  setNavigaDtiCircCreatePayment(value?: ExecuteNavigaDTICircCreatePayment): void;
+
+  hasNavigaDtiCircChangeBilling(): boolean;
+  clearNavigaDtiCircChangeBilling(): void;
+  getNavigaDtiCircChangeBilling(): ExecuteNavigaDTICircChangeBilling | undefined;
+  setNavigaDtiCircChangeBilling(value?: ExecuteNavigaDTICircChangeBilling): void;
+
+  hasNavigaDtiCsAutoRenewInfo(): boolean;
+  clearNavigaDtiCsAutoRenewInfo(): void;
+  getNavigaDtiCsAutoRenewInfo(): ExecuteNavigaDTICSAutoRenewInfo | undefined;
+  setNavigaDtiCsAutoRenewInfo(value?: ExecuteNavigaDTICSAutoRenewInfo): void;
+
+  hasNavigaDtiCsAutoTran(): boolean;
+  clearNavigaDtiCsAutoTran(): void;
+  getNavigaDtiCsAutoTran(): ExecuteNavigaDTICSAutoTran | undefined;
+  setNavigaDtiCsAutoTran(value?: ExecuteNavigaDTICSAutoTran): void;
+
+  hasNavigaDtiCsBillingInfo(): boolean;
+  clearNavigaDtiCsBillingInfo(): void;
+  getNavigaDtiCsBillingInfo(): ExecuteNavigaDTICSBillingInfo | undefined;
+  setNavigaDtiCsBillingInfo(value?: ExecuteNavigaDTICSBillingInfo): void;
+
+  hasNavigaDtiCsLogin(): boolean;
+  clearNavigaDtiCsLogin(): void;
+  getNavigaDtiCsLogin(): ExecuteNavigaDTICSLogin | undefined;
+  setNavigaDtiCsLogin(value?: ExecuteNavigaDTICSLogin): void;
+
+  hasNavigaDtiCsPayInfo(): boolean;
+  clearNavigaDtiCsPayInfo(): void;
+  getNavigaDtiCsPayInfo(): ExecuteNavigaDTICSPayInfo | undefined;
+  setNavigaDtiCsPayInfo(value?: ExecuteNavigaDTICSPayInfo): void;
+
+  hasNavigaDtiCsPayTran(): boolean;
+  clearNavigaDtiCsPayTran(): void;
+  getNavigaDtiCsPayTran(): ExecuteNavigaDTICSPayTran | undefined;
+  setNavigaDtiCsPayTran(value?: ExecuteNavigaDTICSPayTran): void;
+
+  hasNavigaDtiCsRenewInfo(): boolean;
+  clearNavigaDtiCsRenewInfo(): void;
+  getNavigaDtiCsRenewInfo(): ExecuteNavigaDTICSRenewInfo | undefined;
+  setNavigaDtiCsRenewInfo(value?: ExecuteNavigaDTICSRenewInfo): void;
+
+  hasNavigaDtiCsSearchPage(): boolean;
+  clearNavigaDtiCsSearchPage(): void;
+  getNavigaDtiCsSearchPage(): ExecuteNavigaDTICSSearchPage | undefined;
+  setNavigaDtiCsSearchPage(value?: ExecuteNavigaDTICSSearchPage): void;
+
+  hasNavigaDtiCsServiceErrorInfo(): boolean;
+  clearNavigaDtiCsServiceErrorInfo(): void;
+  getNavigaDtiCsServiceErrorInfo(): ExecuteNavigaDTICSServiceErrorInfo | undefined;
+  setNavigaDtiCsServiceErrorInfo(value?: ExecuteNavigaDTICSServiceErrorInfo): void;
+
+  hasNavigaDtiCsServiceErrorTrans(): boolean;
+  clearNavigaDtiCsServiceErrorTrans(): void;
+  getNavigaDtiCsServiceErrorTrans(): ExecuteNavigaDTICSServiceErrorTrans | undefined;
+  setNavigaDtiCsServiceErrorTrans(value?: ExecuteNavigaDTICSServiceErrorTrans): void;
+
+  hasNavigaDtiCsStopInfo(): boolean;
+  clearNavigaDtiCsStopInfo(): void;
+  getNavigaDtiCsStopInfo(): ExecuteNavigaDTICSStopInfo | undefined;
+  setNavigaDtiCsStopInfo(value?: ExecuteNavigaDTICSStopInfo): void;
+
+  hasNavigaDtiCsStopTrans(): boolean;
+  clearNavigaDtiCsStopTrans(): void;
+  getNavigaDtiCsStopTrans(): ExecuteNavigaDTICSStopTrans | undefined;
+  setNavigaDtiCsStopTrans(value?: ExecuteNavigaDTICSStopTrans): void;
+
   hasDebugEcho(): boolean;
   clearDebugEcho(): void;
   getDebugEcho(): ExecuteDebugEcho | undefined;
@@ -2088,6 +2158,20 @@ export namespace ExecuteFlow {
     finviProcessNewTransactionRefund?: ExecuteFinviProcessNewTransactionRefund.AsObject,
     finviProcessNewTransactionSale?: ExecuteFinviProcessNewTransactionSale.AsObject,
     finviProcessNewTransactionValidate?: ExecuteFinviProcessNewTransactionValidate.AsObject,
+    navigaDtiCircCreatePayment?: ExecuteNavigaDTICircCreatePayment.AsObject,
+    navigaDtiCircChangeBilling?: ExecuteNavigaDTICircChangeBilling.AsObject,
+    navigaDtiCsAutoRenewInfo?: ExecuteNavigaDTICSAutoRenewInfo.AsObject,
+    navigaDtiCsAutoTran?: ExecuteNavigaDTICSAutoTran.AsObject,
+    navigaDtiCsBillingInfo?: ExecuteNavigaDTICSBillingInfo.AsObject,
+    navigaDtiCsLogin?: ExecuteNavigaDTICSLogin.AsObject,
+    navigaDtiCsPayInfo?: ExecuteNavigaDTICSPayInfo.AsObject,
+    navigaDtiCsPayTran?: ExecuteNavigaDTICSPayTran.AsObject,
+    navigaDtiCsRenewInfo?: ExecuteNavigaDTICSRenewInfo.AsObject,
+    navigaDtiCsSearchPage?: ExecuteNavigaDTICSSearchPage.AsObject,
+    navigaDtiCsServiceErrorInfo?: ExecuteNavigaDTICSServiceErrorInfo.AsObject,
+    navigaDtiCsServiceErrorTrans?: ExecuteNavigaDTICSServiceErrorTrans.AsObject,
+    navigaDtiCsStopInfo?: ExecuteNavigaDTICSStopInfo.AsObject,
+    navigaDtiCsStopTrans?: ExecuteNavigaDTICSStopTrans.AsObject,
     debugEcho?: ExecuteDebugEcho.AsObject,
     debugValidate?: ExecuteDebugValidate.AsObject,
   }
@@ -2330,6 +2414,20 @@ export namespace ExecuteFlow {
     FINVI_PROCESS_NEW_TRANSACTION_REFUND = 4320,
     FINVI_PROCESS_NEW_TRANSACTION_SALE = 4321,
     FINVI_PROCESS_NEW_TRANSACTION_VALIDATE = 4322,
+    NAVIGA_DTI_CIRC_CREATE_PAYMENT = 4401,
+    NAVIGA_DTI_CIRC_CHANGE_BILLING = 4402,
+    NAVIGA_DTI_CS_AUTO_RENEW_INFO = 4501,
+    NAVIGA_DTI_CS_AUTO_TRAN = 4502,
+    NAVIGA_DTI_CS_BILLING_INFO = 4503,
+    NAVIGA_DTI_CS_LOGIN = 4504,
+    NAVIGA_DTI_CS_PAY_INFO = 4505,
+    NAVIGA_DTI_CS_PAY_TRAN = 4506,
+    NAVIGA_DTI_CS_RENEW_INFO = 4507,
+    NAVIGA_DTI_CS_SEARCH_PAGE = 4508,
+    NAVIGA_DTI_CS_SERVICE_ERROR_INFO = 4509,
+    NAVIGA_DTI_CS_SERVICE_ERROR_TRANS = 4510,
+    NAVIGA_DTI_CS_STOP_INFO = 4511,
+    NAVIGA_DTI_CS_STOP_TRANS = 4512,
     DEBUG_ECHO = 5001,
     DEBUG_VALIDATE = 5002,
   }
@@ -6696,6 +6794,230 @@ export namespace ExecuteFinviProcessNewTransactionValidate {
   }
 }
 
+export class ExecuteNavigaDTICircCreatePayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICircCreatePayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICircCreatePayment): ExecuteNavigaDTICircCreatePayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICircCreatePayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICircCreatePayment;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICircCreatePayment, reader: jspb.BinaryReader): ExecuteNavigaDTICircCreatePayment;
+}
+
+export namespace ExecuteNavigaDTICircCreatePayment {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaDTICircChangeBilling extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICircChangeBilling.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICircChangeBilling): ExecuteNavigaDTICircChangeBilling.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICircChangeBilling, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICircChangeBilling;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICircChangeBilling, reader: jspb.BinaryReader): ExecuteNavigaDTICircChangeBilling;
+}
+
+export namespace ExecuteNavigaDTICircChangeBilling {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaDTICSAutoRenewInfo extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICSAutoRenewInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICSAutoRenewInfo): ExecuteNavigaDTICSAutoRenewInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICSAutoRenewInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICSAutoRenewInfo;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICSAutoRenewInfo, reader: jspb.BinaryReader): ExecuteNavigaDTICSAutoRenewInfo;
+}
+
+export namespace ExecuteNavigaDTICSAutoRenewInfo {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaDTICSAutoTran extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICSAutoTran.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICSAutoTran): ExecuteNavigaDTICSAutoTran.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICSAutoTran, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICSAutoTran;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICSAutoTran, reader: jspb.BinaryReader): ExecuteNavigaDTICSAutoTran;
+}
+
+export namespace ExecuteNavigaDTICSAutoTran {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaDTICSBillingInfo extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICSBillingInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICSBillingInfo): ExecuteNavigaDTICSBillingInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICSBillingInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICSBillingInfo;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICSBillingInfo, reader: jspb.BinaryReader): ExecuteNavigaDTICSBillingInfo;
+}
+
+export namespace ExecuteNavigaDTICSBillingInfo {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaDTICSLogin extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICSLogin.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICSLogin): ExecuteNavigaDTICSLogin.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICSLogin, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICSLogin;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICSLogin, reader: jspb.BinaryReader): ExecuteNavigaDTICSLogin;
+}
+
+export namespace ExecuteNavigaDTICSLogin {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaDTICSPayInfo extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICSPayInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICSPayInfo): ExecuteNavigaDTICSPayInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICSPayInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICSPayInfo;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICSPayInfo, reader: jspb.BinaryReader): ExecuteNavigaDTICSPayInfo;
+}
+
+export namespace ExecuteNavigaDTICSPayInfo {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaDTICSPayTran extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICSPayTran.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICSPayTran): ExecuteNavigaDTICSPayTran.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICSPayTran, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICSPayTran;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICSPayTran, reader: jspb.BinaryReader): ExecuteNavigaDTICSPayTran;
+}
+
+export namespace ExecuteNavigaDTICSPayTran {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaDTICSRenewInfo extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICSRenewInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICSRenewInfo): ExecuteNavigaDTICSRenewInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICSRenewInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICSRenewInfo;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICSRenewInfo, reader: jspb.BinaryReader): ExecuteNavigaDTICSRenewInfo;
+}
+
+export namespace ExecuteNavigaDTICSRenewInfo {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaDTICSSearchPage extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICSSearchPage.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICSSearchPage): ExecuteNavigaDTICSSearchPage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICSSearchPage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICSSearchPage;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICSSearchPage, reader: jspb.BinaryReader): ExecuteNavigaDTICSSearchPage;
+}
+
+export namespace ExecuteNavigaDTICSSearchPage {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaDTICSServiceErrorInfo extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICSServiceErrorInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICSServiceErrorInfo): ExecuteNavigaDTICSServiceErrorInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICSServiceErrorInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICSServiceErrorInfo;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICSServiceErrorInfo, reader: jspb.BinaryReader): ExecuteNavigaDTICSServiceErrorInfo;
+}
+
+export namespace ExecuteNavigaDTICSServiceErrorInfo {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaDTICSServiceErrorTrans extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICSServiceErrorTrans.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICSServiceErrorTrans): ExecuteNavigaDTICSServiceErrorTrans.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICSServiceErrorTrans, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICSServiceErrorTrans;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICSServiceErrorTrans, reader: jspb.BinaryReader): ExecuteNavigaDTICSServiceErrorTrans;
+}
+
+export namespace ExecuteNavigaDTICSServiceErrorTrans {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaDTICSStopInfo extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICSStopInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICSStopInfo): ExecuteNavigaDTICSStopInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICSStopInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICSStopInfo;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICSStopInfo, reader: jspb.BinaryReader): ExecuteNavigaDTICSStopInfo;
+}
+
+export namespace ExecuteNavigaDTICSStopInfo {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNavigaDTICSStopTrans extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNavigaDTICSStopTrans.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNavigaDTICSStopTrans): ExecuteNavigaDTICSStopTrans.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNavigaDTICSStopTrans, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNavigaDTICSStopTrans;
+  static deserializeBinaryFromReader(message: ExecuteNavigaDTICSStopTrans, reader: jspb.BinaryReader): ExecuteNavigaDTICSStopTrans;
+}
+
+export namespace ExecuteNavigaDTICSStopTrans {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -6741,6 +7063,8 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_PAYNSECONDS: 4100;
   INTEGRATION_TYPE_SUTHERLANDREV: 4200;
   INTEGRATION_TYPE_FINVI: 4300;
+  INTEGRATION_TYPE_NAVIGA_DTI_CIRC: 4400;
+  INTEGRATION_TYPE_NAVIGA_DTI_CS: 4500;
   INTEGRATION_TYPE_DEBUG: 5000;
 }
 
@@ -6984,6 +7308,20 @@ export interface RequestMethodMap {
   REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_REFUND: 4320;
   REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_SALE: 4321;
   REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_VALIDATE: 4322;
+  REQUEST_METHOD_NAVIGA_DTI_CIRC_CREATE_PAYMENT: 4401;
+  REQUEST_METHOD_NAVIGA_DTI_CIRC_CHANGE_BILLING: 4402;
+  REQUEST_METHOD_NAVIGA_DTI_CS_AUTO_RENEW_INFO: 4501;
+  REQUEST_METHOD_NAVIGA_DTI_CS_AUTO_TRAN: 4502;
+  REQUEST_METHOD_NAVIGA_DTI_CS_BILLING_INFO: 4503;
+  REQUEST_METHOD_NAVIGA_DTI_CS_LOGIN: 4504;
+  REQUEST_METHOD_NAVIGA_DTI_CS_PAY_INFO: 4505;
+  REQUEST_METHOD_NAVIGA_DTI_CS_PAY_TRAN: 4506;
+  REQUEST_METHOD_NAVIGA_DTI_CS_RENEW_INFO: 4507;
+  REQUEST_METHOD_NAVIGA_DTI_CS_SEARCH_PAGE: 4508;
+  REQUEST_METHOD_NAVIGA_DTI_CS_SERVICE_ERROR_INFO: 4509;
+  REQUEST_METHOD_NAVIGA_DTI_CS_SERVICE_ERROR_TRANS: 4510;
+  REQUEST_METHOD_NAVIGA_DTI_CS_STOP_INFO: 4511;
+  REQUEST_METHOD_NAVIGA_DTI_CS_STOP_TRANS: 4512;
   REQUEST_METHOD_DEBUG_ECHO: 5001;
   REQUESET_METHOD_DEBUG_VALIDATE: 5002;
 }
