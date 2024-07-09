@@ -418,26 +418,6 @@ export class BulkDeleteAutoEvaluationsRequest extends jspb.Message {
   getCompletedAt(): api_commons_scorecards_pb.TimeFilter | undefined;
   setCompletedAt(value?: api_commons_scorecards_pb.TimeFilter): void;
 
-  clearScorecardIdsList(): void;
-  getScorecardIdsList(): Array<number>;
-  setScorecardIdsList(value: Array<number>): void;
-  addScorecardIds(value: number, index?: number): number;
-
-  clearCategoryIdsList(): void;
-  getCategoryIdsList(): Array<number>;
-  setCategoryIdsList(value: Array<number>): void;
-  addCategoryIds(value: number, index?: number): number;
-
-  clearAgentUserIdsList(): void;
-  getAgentUserIdsList(): Array<string>;
-  setAgentUserIdsList(value: Array<string>): void;
-  addAgentUserIds(value: string, index?: number): string;
-
-  clearRiskLevelsList(): void;
-  getRiskLevelsList(): Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>;
-  setRiskLevelsList(value: Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>): void;
-  addRiskLevels(value: api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap], index?: number): api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap];
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BulkDeleteAutoEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: BulkDeleteAutoEvaluationsRequest): BulkDeleteAutoEvaluationsRequest.AsObject;
@@ -453,10 +433,6 @@ export namespace BulkDeleteAutoEvaluationsRequest {
     orgId: string,
     autoEvaluationIdsList: Array<number>,
     completedAt?: api_commons_scorecards_pb.TimeFilter.AsObject,
-    scorecardIdsList: Array<number>,
-    categoryIdsList: Array<number>,
-    agentUserIdsList: Array<string>,
-    riskLevelsList: Array<api_commons_scorecards_pb.RiskLevelMap[keyof api_commons_scorecards_pb.RiskLevelMap]>,
   }
 }
 

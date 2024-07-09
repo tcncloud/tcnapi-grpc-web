@@ -3259,7 +3259,7 @@ proto.api.v1alpha1.scorecards.DeleteAutoEvaluationByOrgIdRequest.prototype.setAu
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.repeatedFields_ = [2,4,5,6,7];
+proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.repeatedFields_ = [2];
 
 
 
@@ -3294,11 +3294,7 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.toObject = functi
   var f, obj = {
     orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     autoEvaluationIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f),
-    scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    riskLevelsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3350,28 +3346,6 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.deserializeBinary
       reader.readMessage(value,api_commons_scorecards_pb.TimeFilter.deserializeBinaryFromReader);
       msg.setCompletedAt(value);
       break;
-    case 4:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addScorecardIds(values[i]);
-      }
-      break;
-    case 5:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addCategoryIds(values[i]);
-      }
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addAgentUserIds(value);
-      break;
-    case 7:
-      var values = /** @type {!Array<!proto.api.commons.RiskLevel>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addRiskLevels(values[i]);
-      }
-      break;
     default:
       reader.skipField();
       break;
@@ -3421,34 +3395,6 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.serializeBinaryTo
       3,
       f,
       api_commons_scorecards_pb.TimeFilter.serializeBinaryToWriter
-    );
-  }
-  f = message.getScorecardIdsList();
-  if (f.length > 0) {
-    writer.writePackedInt64(
-      4,
-      f
-    );
-  }
-  f = message.getCategoryIdsList();
-  if (f.length > 0) {
-    writer.writePackedInt64(
-      5,
-      f
-    );
-  }
-  f = message.getAgentUserIdsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      6,
-      f
-    );
-  }
-  f = message.getRiskLevelsList();
-  if (f.length > 0) {
-    writer.writePackedEnum(
-      7,
-      f
     );
   }
 };
@@ -3543,154 +3489,6 @@ proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.clearCo
  */
 proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.hasCompletedAt = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * repeated int64 scorecard_ids = 4;
- * @return {!Array<number>}
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.getScorecardIdsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 4));
-};
-
-
-/**
- * @param {!Array<number>} value
- * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.setScorecardIdsList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
-};
-
-
-/**
- * @param {number} value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.addScorecardIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.clearScorecardIdsList = function() {
-  return this.setScorecardIdsList([]);
-};
-
-
-/**
- * repeated int64 category_ids = 5;
- * @return {!Array<number>}
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.getCategoryIdsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 5));
-};
-
-
-/**
- * @param {!Array<number>} value
- * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.setCategoryIdsList = function(value) {
-  return jspb.Message.setField(this, 5, value || []);
-};
-
-
-/**
- * @param {number} value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.addCategoryIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.clearCategoryIdsList = function() {
-  return this.setCategoryIdsList([]);
-};
-
-
-/**
- * repeated string agent_user_ids = 6;
- * @return {!Array<string>}
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.getAgentUserIdsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.setAgentUserIdsList = function(value) {
-  return jspb.Message.setField(this, 6, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.addAgentUserIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.clearAgentUserIdsList = function() {
-  return this.setAgentUserIdsList([]);
-};
-
-
-/**
- * repeated api.commons.RiskLevel risk_levels = 7;
- * @return {!Array<!proto.api.commons.RiskLevel>}
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.getRiskLevelsList = function() {
-  return /** @type {!Array<!proto.api.commons.RiskLevel>} */ (jspb.Message.getRepeatedField(this, 7));
-};
-
-
-/**
- * @param {!Array<!proto.api.commons.RiskLevel>} value
- * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.setRiskLevelsList = function(value) {
-  return jspb.Message.setField(this, 7, value || []);
-};
-
-
-/**
- * @param {!proto.api.commons.RiskLevel} value
- * @param {number=} opt_index
- * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.addRiskLevels = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest} returns this
- */
-proto.api.v1alpha1.scorecards.BulkDeleteAutoEvaluationsRequest.prototype.clearRiskLevelsList = function() {
-  return this.setRiskLevelsList([]);
 };
 
 
