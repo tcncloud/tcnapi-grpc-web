@@ -424,6 +424,16 @@ export class PaymentFlow extends jspb.Message {
   getPaymentstellaEcheck(): PaymentStellaECheck | undefined;
   setPaymentstellaEcheck(value?: PaymentStellaECheck): void;
 
+  hasFinviCc(): boolean;
+  clearFinviCc(): void;
+  getFinviCc(): PaymentFinviCC | undefined;
+  setFinviCc(value?: PaymentFinviCC): void;
+
+  hasFinviAch(): boolean;
+  clearFinviAch(): void;
+  getFinviAch(): PaymentFinviACH | undefined;
+  setFinviAch(value?: PaymentFinviACH): void;
+
   clearPaymentFieldsList(): void;
   getPaymentFieldsList(): Array<FieldDefinition>;
   setPaymentFieldsList(value: Array<FieldDefinition>): void;
@@ -460,6 +470,8 @@ export namespace PaymentFlow {
     paymentvisionAch?: PaymentVisionACH.AsObject,
     paymentstellaCc?: PaymentStellaCc.AsObject,
     paymentstellaEcheck?: PaymentStellaECheck.AsObject,
+    finviCc?: PaymentFinviCC.AsObject,
+    finviAch?: PaymentFinviACH.AsObject,
     paymentFieldsList: Array<FieldDefinition.AsObject>,
   }
 
@@ -482,6 +494,8 @@ export namespace PaymentFlow {
     PAYMENTVISION_ACH = 16,
     PAYMENTSTELLA_CC = 17,
     PAYMENTSTELLA_ECHECK = 18,
+    FINVI_CC = 19,
+    FINVI_ACH = 21,
   }
 }
 
@@ -2982,6 +2996,38 @@ export class PaymentStellaECheck extends jspb.Message {
 }
 
 export namespace PaymentStellaECheck {
+  export type AsObject = {
+  }
+}
+
+export class PaymentFinviCC extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentFinviCC.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentFinviCC): PaymentFinviCC.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentFinviCC, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentFinviCC;
+  static deserializeBinaryFromReader(message: PaymentFinviCC, reader: jspb.BinaryReader): PaymentFinviCC;
+}
+
+export namespace PaymentFinviCC {
+  export type AsObject = {
+  }
+}
+
+export class PaymentFinviACH extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentFinviACH.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentFinviACH): PaymentFinviACH.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentFinviACH, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentFinviACH;
+  static deserializeBinaryFromReader(message: PaymentFinviACH, reader: jspb.BinaryReader): PaymentFinviACH;
+}
+
+export namespace PaymentFinviACH {
   export type AsObject = {
   }
 }
