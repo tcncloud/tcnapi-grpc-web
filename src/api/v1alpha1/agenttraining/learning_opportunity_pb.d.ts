@@ -344,6 +344,68 @@ export namespace GetLearningOpportunityResponse {
   }
 }
 
+export class ListDashboardsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListDashboardsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDashboardsRequest): ListDashboardsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListDashboardsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDashboardsRequest;
+  static deserializeBinaryFromReader(message: ListDashboardsRequest, reader: jspb.BinaryReader): ListDashboardsRequest;
+}
+
+export namespace ListDashboardsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListDashboardsResponse extends jspb.Message {
+  clearDashboardsList(): void;
+  getDashboardsList(): Array<ListDashboardsResponse.Dashboard>;
+  setDashboardsList(value: Array<ListDashboardsResponse.Dashboard>): void;
+  addDashboards(value?: ListDashboardsResponse.Dashboard, index?: number): ListDashboardsResponse.Dashboard;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListDashboardsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDashboardsResponse): ListDashboardsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListDashboardsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDashboardsResponse;
+  static deserializeBinaryFromReader(message: ListDashboardsResponse, reader: jspb.BinaryReader): ListDashboardsResponse;
+}
+
+export namespace ListDashboardsResponse {
+  export type AsObject = {
+    dashboardsList: Array<ListDashboardsResponse.Dashboard.AsObject>,
+  }
+
+  export class Dashboard extends jspb.Message {
+    getResourceId(): string;
+    setResourceId(value: string): void;
+
+    getTitle(): string;
+    setTitle(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Dashboard.AsObject;
+    static toObject(includeInstance: boolean, msg: Dashboard): Dashboard.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Dashboard, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Dashboard;
+    static deserializeBinaryFromReader(message: Dashboard, reader: jspb.BinaryReader): Dashboard;
+  }
+
+  export namespace Dashboard {
+    export type AsObject = {
+      resourceId: string,
+      title: string,
+    }
+  }
+}
+
 export class ListLearningOpportunitiesByOrgIdRequest extends jspb.Message {
   getOrgId(): string;
   setOrgId(value: string): void;

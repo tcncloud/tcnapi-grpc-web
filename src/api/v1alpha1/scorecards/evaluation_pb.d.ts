@@ -447,6 +447,26 @@ export class BulkDeleteEvaluationsRequest extends jspb.Message {
   getCompletedAt(): api_commons_scorecards_pb.TimeFilter | undefined;
   setCompletedAt(value?: api_commons_scorecards_pb.TimeFilter): void;
 
+  clearCategoryIdsList(): void;
+  getCategoryIdsList(): Array<number>;
+  setCategoryIdsList(value: Array<number>): void;
+  addCategoryIds(value: number, index?: number): number;
+
+  clearAgentUserIdsList(): void;
+  getAgentUserIdsList(): Array<string>;
+  setAgentUserIdsList(value: Array<string>): void;
+  addAgentUserIds(value: string, index?: number): string;
+
+  clearScorecardIdsList(): void;
+  getScorecardIdsList(): Array<number>;
+  setScorecardIdsList(value: Array<number>): void;
+  addScorecardIds(value: number, index?: number): number;
+
+  clearScorerIdList(): void;
+  getScorerIdList(): Array<string>;
+  setScorerIdList(value: Array<string>): void;
+  addScorerId(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BulkDeleteEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: BulkDeleteEvaluationsRequest): BulkDeleteEvaluationsRequest.AsObject;
@@ -462,6 +482,10 @@ export namespace BulkDeleteEvaluationsRequest {
     orgId: string,
     evaluationIdsList: Array<number>,
     completedAt?: api_commons_scorecards_pb.TimeFilter.AsObject,
+    categoryIdsList: Array<number>,
+    agentUserIdsList: Array<string>,
+    scorecardIdsList: Array<number>,
+    scorerIdList: Array<string>,
   }
 }
 

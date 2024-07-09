@@ -47,6 +47,15 @@ AgentTrainingService.CompleteAgentLearningOpportunity = {
   responseType: api_v1alpha1_agenttraining_learning_opportunity_pb.CompleteAgentLearningOpportunityResponse
 };
 
+AgentTrainingService.ListDashboards = {
+  methodName: "ListDashboards",
+  service: AgentTrainingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_agenttraining_learning_opportunity_pb.ListDashboardsRequest,
+  responseType: api_v1alpha1_agenttraining_learning_opportunity_pb.ListDashboardsResponse
+};
+
 AgentTrainingService.UpdateLearningOpportunity = {
   methodName: "UpdateLearningOpportunity",
   service: AgentTrainingService,
@@ -179,6 +188,37 @@ AgentTrainingServiceClient.prototype.completeAgentLearningOpportunity = function
     callback = arguments[1];
   }
   var client = grpc.unary(AgentTrainingService.CompleteAgentLearningOpportunity, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AgentTrainingServiceClient.prototype.listDashboards = function listDashboards(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(AgentTrainingService.ListDashboards, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

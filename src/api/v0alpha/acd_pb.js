@@ -17501,7 +17501,8 @@ proto.api.v0alpha.StartSecureFormReq.prototype.toObject = function(opt_includeIn
  */
 proto.api.v0alpha.StartSecureFormReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    portalId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    portalId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -17542,6 +17543,10 @@ proto.api.v0alpha.StartSecureFormReq.deserializeBinaryFromReader = function(msg,
       var value = /** @type {string} */ (reader.readString());
       msg.setPortalId(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setVoiceSessionSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -17578,6 +17583,13 @@ proto.api.v0alpha.StartSecureFormReq.serializeBinaryToWriter = function(message,
       f
     );
   }
+  f = message.getVoiceSessionSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -17596,6 +17608,24 @@ proto.api.v0alpha.StartSecureFormReq.prototype.getPortalId = function() {
  */
 proto.api.v0alpha.StartSecureFormReq.prototype.setPortalId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int64 voice_session_sid = 2;
+ * @return {number}
+ */
+proto.api.v0alpha.StartSecureFormReq.prototype.getVoiceSessionSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v0alpha.StartSecureFormReq} returns this
+ */
+proto.api.v0alpha.StartSecureFormReq.prototype.setVoiceSessionSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -17732,7 +17762,8 @@ proto.api.v0alpha.CollectSecureFormFieldReq.prototype.toObject = function(opt_in
  */
 proto.api.v0alpha.CollectSecureFormFieldReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldName: jspb.Message.getFieldWithDefault(msg, 1, "")
+    fieldName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -17773,6 +17804,10 @@ proto.api.v0alpha.CollectSecureFormFieldReq.deserializeBinaryFromReader = functi
       var value = /** @type {string} */ (reader.readString());
       msg.setFieldName(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setVoiceSessionSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -17809,6 +17844,13 @@ proto.api.v0alpha.CollectSecureFormFieldReq.serializeBinaryToWriter = function(m
       f
     );
   }
+  f = message.getVoiceSessionSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -17827,6 +17869,24 @@ proto.api.v0alpha.CollectSecureFormFieldReq.prototype.getFieldName = function() 
  */
 proto.api.v0alpha.CollectSecureFormFieldReq.prototype.setFieldName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int64 voice_session_sid = 2;
+ * @return {number}
+ */
+proto.api.v0alpha.CollectSecureFormFieldReq.prototype.getVoiceSessionSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v0alpha.CollectSecureFormFieldReq} returns this
+ */
+proto.api.v0alpha.CollectSecureFormFieldReq.prototype.setVoiceSessionSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -17963,7 +18023,7 @@ proto.api.v0alpha.ResetSecureFormFieldReq.prototype.toObject = function(opt_incl
  */
 proto.api.v0alpha.ResetSecureFormFieldReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -18000,6 +18060,10 @@ proto.api.v0alpha.ResetSecureFormFieldReq.deserializeBinaryFromReader = function
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setVoiceSessionSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -18029,6 +18093,31 @@ proto.api.v0alpha.ResetSecureFormFieldReq.prototype.serializeBinary = function()
  */
 proto.api.v0alpha.ResetSecureFormFieldReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getVoiceSessionSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 voice_session_sid = 1;
+ * @return {number}
+ */
+proto.api.v0alpha.ResetSecureFormFieldReq.prototype.getVoiceSessionSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v0alpha.ResetSecureFormFieldReq} returns this
+ */
+proto.api.v0alpha.ResetSecureFormFieldReq.prototype.setVoiceSessionSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -18165,7 +18254,7 @@ proto.api.v0alpha.AcceptSecureFormFieldReq.prototype.toObject = function(opt_inc
  */
 proto.api.v0alpha.AcceptSecureFormFieldReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -18202,6 +18291,10 @@ proto.api.v0alpha.AcceptSecureFormFieldReq.deserializeBinaryFromReader = functio
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setVoiceSessionSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -18231,6 +18324,31 @@ proto.api.v0alpha.AcceptSecureFormFieldReq.prototype.serializeBinary = function(
  */
 proto.api.v0alpha.AcceptSecureFormFieldReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getVoiceSessionSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 voice_session_sid = 1;
+ * @return {number}
+ */
+proto.api.v0alpha.AcceptSecureFormFieldReq.prototype.getVoiceSessionSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v0alpha.AcceptSecureFormFieldReq} returns this
+ */
+proto.api.v0alpha.AcceptSecureFormFieldReq.prototype.setVoiceSessionSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -18370,7 +18488,8 @@ proto.api.v0alpha.ProcessSecureFormReq.toObject = function(includeInstance, msg)
     valuesMap: (f = msg.getValuesMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrations.Value.toObject) : [],
     portalId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     segment: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    choice: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    choice: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -18425,6 +18544,10 @@ proto.api.v0alpha.ProcessSecureFormReq.deserializeBinaryFromReader = function(ms
       var value = /** @type {number} */ (reader.readInt32());
       msg.setChoice(value);
       break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setVoiceSessionSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -18476,6 +18599,13 @@ proto.api.v0alpha.ProcessSecureFormReq.serializeBinaryToWriter = function(messag
   if (f !== 0) {
     writer.writeInt32(
       4,
+      f
+    );
+  }
+  f = message.getVoiceSessionSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      5,
       f
     );
   }
@@ -18556,6 +18686,24 @@ proto.api.v0alpha.ProcessSecureFormReq.prototype.getChoice = function() {
  */
 proto.api.v0alpha.ProcessSecureFormReq.prototype.setChoice = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional int64 voice_session_sid = 5;
+ * @return {number}
+ */
+proto.api.v0alpha.ProcessSecureFormReq.prototype.getVoiceSessionSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v0alpha.ProcessSecureFormReq} returns this
+ */
+proto.api.v0alpha.ProcessSecureFormReq.prototype.setVoiceSessionSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -18756,7 +18904,8 @@ proto.api.v0alpha.FinishSecureFormHandlingReq.prototype.toObject = function(opt_
 proto.api.v0alpha.FinishSecureFormHandlingReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     reason: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrations.Value.toObject) : []
+    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrations.Value.toObject) : [],
+    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -18803,6 +18952,10 @@ proto.api.v0alpha.FinishSecureFormHandlingReq.deserializeBinaryFromReader = func
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.api.v1alpha1.integrations.Value.deserializeBinaryFromReader, "", new proto.api.v1alpha1.integrations.Value());
          });
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setVoiceSessionSid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -18842,6 +18995,13 @@ proto.api.v0alpha.FinishSecureFormHandlingReq.serializeBinaryToWriter = function
   f = message.getDataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.api.v1alpha1.integrations.Value.serializeBinaryToWriter);
+  }
+  f = message.getVoiceSessionSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      3,
+      f
+    );
   }
 };
 
@@ -18884,6 +19044,24 @@ proto.api.v0alpha.FinishSecureFormHandlingReq.prototype.getDataMap = function(op
 proto.api.v0alpha.FinishSecureFormHandlingReq.prototype.clearDataMap = function() {
   this.getDataMap().clear();
   return this;
+};
+
+
+/**
+ * optional int64 voice_session_sid = 3;
+ * @return {number}
+ */
+proto.api.v0alpha.FinishSecureFormHandlingReq.prototype.getVoiceSessionSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v0alpha.FinishSecureFormHandlingReq} returns this
+ */
+proto.api.v0alpha.FinishSecureFormHandlingReq.prototype.setVoiceSessionSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
