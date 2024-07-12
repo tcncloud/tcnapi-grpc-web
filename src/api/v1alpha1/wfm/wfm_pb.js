@@ -37064,7 +37064,8 @@ proto.api.v1alpha1.wfm.SchedulingActivity.toObject = function(includeInstance, m
     schedulingActivitySid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     isSkillActivity: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
     activitySid: (f = msg.getActivitySid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    memberNonSkillActivity: (f = msg.getMemberNonSkillActivity()) && proto.api.v1alpha1.wfm.NonSkillActivity.toObject(includeInstance, f)
+    memberNonSkillActivity: (f = msg.getMemberNonSkillActivity()) && proto.api.v1alpha1.wfm.NonSkillActivity.toObject(includeInstance, f),
+    activityClassification: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -37118,6 +37119,10 @@ proto.api.v1alpha1.wfm.SchedulingActivity.deserializeBinaryFromReader = function
       var value = new proto.api.v1alpha1.wfm.NonSkillActivity;
       reader.readMessage(value,proto.api.v1alpha1.wfm.NonSkillActivity.deserializeBinaryFromReader);
       msg.setMemberNonSkillActivity(value);
+      break;
+    case 5:
+      var value = /** @type {!proto.api.commons.ActivityClassification} */ (reader.readEnum());
+      msg.setActivityClassification(value);
       break;
     default:
       reader.skipField();
@@ -37176,6 +37181,13 @@ proto.api.v1alpha1.wfm.SchedulingActivity.serializeBinaryToWriter = function(mes
       4,
       f,
       proto.api.v1alpha1.wfm.NonSkillActivity.serializeBinaryToWriter
+    );
+  }
+  f = message.getActivityClassification();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      5,
+      f
     );
   }
 };
@@ -37288,6 +37300,24 @@ proto.api.v1alpha1.wfm.SchedulingActivity.prototype.clearMemberNonSkillActivity 
  */
 proto.api.v1alpha1.wfm.SchedulingActivity.prototype.hasMemberNonSkillActivity = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional api.commons.ActivityClassification activity_classification = 5;
+ * @return {!proto.api.commons.ActivityClassification}
+ */
+proto.api.v1alpha1.wfm.SchedulingActivity.prototype.getActivityClassification = function() {
+  return /** @type {!proto.api.commons.ActivityClassification} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.ActivityClassification} value
+ * @return {!proto.api.v1alpha1.wfm.SchedulingActivity} returns this
+ */
+proto.api.v1alpha1.wfm.SchedulingActivity.prototype.setActivityClassification = function(value) {
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -47737,7 +47767,8 @@ proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.toObject = function(includeInstan
   var f, obj = {
     datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
     dayMapsList: jspb.Message.toObjectList(msg.getDayMapsList(),
-    proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW.toObject, includeInstance)
+    proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW.toObject, includeInstance),
+    schedulingActivitySid: (f = msg.getSchedulingActivitySid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -47784,6 +47815,11 @@ proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.deserializeBinaryFromReader = fun
       reader.readMessage(value,proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW.deserializeBinaryFromReader);
       msg.addDayMaps(value);
       break;
+    case 3:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setSchedulingActivitySid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -47827,6 +47863,14 @@ proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.serializeBinaryToWriter = functio
       2,
       f,
       proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW.serializeBinaryToWriter
+    );
+  }
+  f = message.getSchedulingActivitySid();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
   }
 };
@@ -48148,6 +48192,43 @@ proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.prototype.clearDayMapsList = func
 };
 
 
+/**
+ * optional google.protobuf.Int64Value scheduling_activity_sid = 3;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.prototype.getSchedulingActivitySid = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Int64Value|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.DatetimePattern.WeekMap} returns this
+*/
+proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.prototype.setSchedulingActivitySid = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.DatetimePattern.WeekMap} returns this
+ */
+proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.prototype.clearSchedulingActivitySid = function() {
+  return this.setSchedulingActivitySid(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.prototype.hasSchedulingActivitySid = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
 
 
 
@@ -48181,7 +48262,8 @@ proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.toObject = functio
 proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.toObject = function(includeInstance, msg) {
   var f, obj = {
     datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
-    value: (f = msg.getValue()) && api_commons_wfm_pb.OptionTypes.toObject(includeInstance, f)
+    value: (f = msg.getValue()) && api_commons_wfm_pb.OptionTypes.toObject(includeInstance, f),
+    schedulingActivitySid: (f = msg.getSchedulingActivitySid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -48228,6 +48310,11 @@ proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.deserializeBinaryFromReader 
       reader.readMessage(value,api_commons_wfm_pb.OptionTypes.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
+    case 3:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setSchedulingActivitySid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -48271,6 +48358,14 @@ proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.serializeBinaryToWriter = fu
       2,
       f,
       api_commons_wfm_pb.OptionTypes.serializeBinaryToWriter
+    );
+  }
+  f = message.getSchedulingActivitySid();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
   }
 };
@@ -48347,6 +48442,43 @@ proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.clearValue = funct
  */
 proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.hasValue = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value scheduling_activity_sid = 3;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.getSchedulingActivitySid = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Int64Value|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem} returns this
+*/
+proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.setSchedulingActivitySid = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem} returns this
+ */
+proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.clearSchedulingActivitySid = function() {
+  return this.setSchedulingActivitySid(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.hasSchedulingActivitySid = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -92343,7 +92475,8 @@ proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.toObject = function(inclu
     requestedDatetimeRangesList: jspb.Message.toObjectList(msg.getRequestedDatetimeRangesList(),
     api_commons_wfm_pb.DatetimeRange.toObject, includeInstance),
     petitionComment: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    requestedHoursOff: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0)
   };
 
   if (includeInstance) {
@@ -92393,6 +92526,10 @@ proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.deserializeBinaryFromRead
       var value = /** @type {number} */ (reader.readInt64());
       msg.setWfmAgentSid(value);
       break;
+    case 11:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setRequestedHoursOff(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -92441,6 +92578,13 @@ proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.serializeBinaryToWriter =
   if (f !== 0) {
     writer.writeInt64(
       3,
+      f
+    );
+  }
+  f = message.getRequestedHoursOff();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      11,
       f
     );
   }
@@ -92518,6 +92662,24 @@ proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.getWfmAgentSid 
  */
 proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.setWfmAgentSid = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional float requested_hours_off = 11;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.getRequestedHoursOff = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest} returns this
+ */
+proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.setRequestedHoursOff = function(value) {
+  return jspb.Message.setProto3FloatField(this, 11, value);
 };
 
 
@@ -93387,7 +93549,8 @@ proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.toObject = function(incl
     agentLeavePetitionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     petitionStatus: jspb.Message.getFieldWithDefault(msg, 2, 0),
     responseComment: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    retainPartialShifts: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+    retainPartialShifts: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    replaceWithUnassignedAgent: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -93439,6 +93602,10 @@ proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.deserializeBinaryFromRea
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRetainPartialShifts(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setReplaceWithUnassignedAgent(value);
       break;
     default:
       reader.skipField();
@@ -93494,6 +93661,13 @@ proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.serializeBinaryToWriter 
   if (f) {
     writer.writeBool(
       4,
+      f
+    );
+  }
+  f = message.getReplaceWithUnassignedAgent();
+  if (f) {
+    writer.writeBool(
+      5,
       f
     );
   }
@@ -93569,6 +93743,24 @@ proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.prototype.getRetainParti
  */
 proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.prototype.setRetainPartialShifts = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
+/**
+ * optional bool replace_with_unassigned_agent = 5;
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.prototype.getReplaceWithUnassignedAgent = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest} returns this
+ */
+proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.prototype.setReplaceWithUnassignedAgent = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 

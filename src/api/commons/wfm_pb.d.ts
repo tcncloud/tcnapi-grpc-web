@@ -853,6 +853,9 @@ export class AgentLeavePetition extends jspb.Message {
   getResolvedByUserId(): string;
   setResolvedByUserId(value: string): void;
 
+  getRequestedHoursOff(): number;
+  setRequestedHoursOff(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AgentLeavePetition.AsObject;
   static toObject(includeInstance: boolean, msg: AgentLeavePetition): AgentLeavePetition.AsObject;
@@ -875,6 +878,7 @@ export namespace AgentLeavePetition {
     archivedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     resolvedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     resolvedByUserId: string,
+    requestedHoursOff: number,
   }
 }
 
@@ -1163,4 +1167,12 @@ export interface AgentLeavePetitionStatusMap {
 }
 
 export const AgentLeavePetitionStatus: AgentLeavePetitionStatusMap;
+
+export interface ActivityClassificationMap {
+  STANDARD_NONSKILL_ACTIVITY: 0;
+  ON_CALL_ACTIVITY: 1;
+  TIME_OFF_ACTIVITY: 2;
+}
+
+export const ActivityClassification: ActivityClassificationMap;
 

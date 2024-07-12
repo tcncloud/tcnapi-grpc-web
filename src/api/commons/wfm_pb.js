@@ -25,6 +25,7 @@ var global = localGlobalThis ||
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
+goog.exportSymbol('proto.api.commons.ActivityClassification', null, global);
 goog.exportSymbol('proto.api.commons.AgentLeavePetition', null, global);
 goog.exportSymbol('proto.api.commons.AgentLeavePetitionStatus', null, global);
 goog.exportSymbol('proto.api.commons.AgentStateSegment', null, global);
@@ -6262,7 +6263,8 @@ proto.api.commons.AgentLeavePetition.toObject = function(includeInstance, msg) {
     createdTime: (f = msg.getCreatedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     archivedTime: (f = msg.getArchivedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     resolvedTime: (f = msg.getResolvedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    resolvedByUserId: jspb.Message.getFieldWithDefault(msg, 10, "")
+    resolvedByUserId: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    requestedHoursOff: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0)
   };
 
   if (includeInstance) {
@@ -6342,6 +6344,10 @@ proto.api.commons.AgentLeavePetition.deserializeBinaryFromReader = function(msg,
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setResolvedByUserId(value);
+      break;
+    case 11:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setRequestedHoursOff(value);
       break;
     default:
       reader.skipField();
@@ -6443,6 +6449,13 @@ proto.api.commons.AgentLeavePetition.serializeBinaryToWriter = function(message,
   if (f.length > 0) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = message.getRequestedHoursOff();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      11,
       f
     );
   }
@@ -6703,6 +6716,24 @@ proto.api.commons.AgentLeavePetition.prototype.getResolvedByUserId = function() 
  */
 proto.api.commons.AgentLeavePetition.prototype.setResolvedByUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional float requested_hours_off = 11;
+ * @return {number}
+ */
+proto.api.commons.AgentLeavePetition.prototype.getRequestedHoursOff = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.AgentLeavePetition} returns this
+ */
+proto.api.commons.AgentLeavePetition.prototype.setRequestedHoursOff = function(value) {
+  return jspb.Message.setProto3FloatField(this, 11, value);
 };
 
 
@@ -7011,6 +7042,15 @@ proto.api.commons.AgentLeavePetitionStatus = {
   APPROVED_PETITION: 2,
   DENIED_PETITION: 3,
   CANCELLED_PETITION: 4
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.ActivityClassification = {
+  STANDARD_NONSKILL_ACTIVITY: 0,
+  ON_CALL_ACTIVITY: 1,
+  TIME_OFF_ACTIVITY: 2
 };
 
 goog.object.extend(exports, proto.api.commons);

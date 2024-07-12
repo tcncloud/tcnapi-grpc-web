@@ -3942,6 +3942,9 @@ export class SchedulingActivity extends jspb.Message {
   getMemberNonSkillActivity(): NonSkillActivity | undefined;
   setMemberNonSkillActivity(value?: NonSkillActivity): void;
 
+  getActivityClassification(): api_commons_wfm_pb.ActivityClassificationMap[keyof api_commons_wfm_pb.ActivityClassificationMap];
+  setActivityClassification(value: api_commons_wfm_pb.ActivityClassificationMap[keyof api_commons_wfm_pb.ActivityClassificationMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SchedulingActivity.AsObject;
   static toObject(includeInstance: boolean, msg: SchedulingActivity): SchedulingActivity.AsObject;
@@ -3958,6 +3961,7 @@ export namespace SchedulingActivity {
     isSkillActivity: boolean,
     activitySid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     memberNonSkillActivity?: NonSkillActivity.AsObject,
+    activityClassification: api_commons_wfm_pb.ActivityClassificationMap[keyof api_commons_wfm_pb.ActivityClassificationMap],
   }
 }
 
@@ -5458,6 +5462,11 @@ export namespace DatetimePattern {
     setDayMapsList(value: Array<DatetimePattern.WeekMap.WeekMapDOW>): void;
     addDayMaps(value?: DatetimePattern.WeekMap.WeekMapDOW, index?: number): DatetimePattern.WeekMap.WeekMapDOW;
 
+    hasSchedulingActivitySid(): boolean;
+    clearSchedulingActivitySid(): void;
+    getSchedulingActivitySid(): google_protobuf_wrappers_pb.Int64Value | undefined;
+    setSchedulingActivitySid(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): WeekMap.AsObject;
     static toObject(includeInstance: boolean, msg: WeekMap): WeekMap.AsObject;
@@ -5472,6 +5481,7 @@ export namespace DatetimePattern {
     export type AsObject = {
       datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
       dayMapsList: Array<DatetimePattern.WeekMap.WeekMapDOW.AsObject>,
+      schedulingActivitySid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     }
 
     export class WeekMapDOW extends jspb.Message {
@@ -5520,6 +5530,11 @@ export namespace DatetimePattern {
     getValue(): api_commons_wfm_pb.OptionTypes | undefined;
     setValue(value?: api_commons_wfm_pb.OptionTypes): void;
 
+    hasSchedulingActivitySid(): boolean;
+    clearSchedulingActivitySid(): void;
+    getSchedulingActivitySid(): google_protobuf_wrappers_pb.Int64Value | undefined;
+    setSchedulingActivitySid(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CalendarItem.AsObject;
     static toObject(includeInstance: boolean, msg: CalendarItem): CalendarItem.AsObject;
@@ -5534,6 +5549,7 @@ export namespace DatetimePattern {
     export type AsObject = {
       datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
       value?: api_commons_wfm_pb.OptionTypes.AsObject,
+      schedulingActivitySid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     }
   }
 }
@@ -11656,6 +11672,9 @@ export class CreateAgentLeavePetitionRequest extends jspb.Message {
   getWfmAgentSid(): number;
   setWfmAgentSid(value: number): void;
 
+  getRequestedHoursOff(): number;
+  setRequestedHoursOff(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAgentLeavePetitionRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateAgentLeavePetitionRequest): CreateAgentLeavePetitionRequest.AsObject;
@@ -11671,6 +11690,7 @@ export namespace CreateAgentLeavePetitionRequest {
     requestedDatetimeRangesList: Array<api_commons_wfm_pb.DatetimeRange.AsObject>,
     petitionComment: string,
     wfmAgentSid: number,
+    requestedHoursOff: number,
   }
 }
 
@@ -11805,6 +11825,9 @@ export class ResolveAgentLeavePetitionRequest extends jspb.Message {
   getRetainPartialShifts(): boolean;
   setRetainPartialShifts(value: boolean): void;
 
+  getReplaceWithUnassignedAgent(): boolean;
+  setReplaceWithUnassignedAgent(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResolveAgentLeavePetitionRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ResolveAgentLeavePetitionRequest): ResolveAgentLeavePetitionRequest.AsObject;
@@ -11821,6 +11844,7 @@ export namespace ResolveAgentLeavePetitionRequest {
     petitionStatus: api_commons_wfm_pb.AgentLeavePetitionStatusMap[keyof api_commons_wfm_pb.AgentLeavePetitionStatusMap],
     responseComment: string,
     retainPartialShifts: boolean,
+    replaceWithUnassignedAgent: boolean,
   }
 }
 
