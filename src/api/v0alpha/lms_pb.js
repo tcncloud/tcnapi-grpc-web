@@ -57707,7 +57707,9 @@ proto.api.v0alpha.FinviEntrypoint.prototype.toObject = function(opt_includeInsta
  */
 proto.api.v0alpha.FinviEntrypoint.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    poolId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    cronInterval: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    disabled: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -57744,6 +57746,18 @@ proto.api.v0alpha.FinviEntrypoint.deserializeBinaryFromReader = function(msg, re
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPoolId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCronInterval(value);
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDisabled(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -57773,6 +57787,81 @@ proto.api.v0alpha.FinviEntrypoint.prototype.serializeBinary = function() {
  */
 proto.api.v0alpha.FinviEntrypoint.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getPoolId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getCronInterval();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getDisabled();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string pool_id = 1;
+ * @return {string}
+ */
+proto.api.v0alpha.FinviEntrypoint.prototype.getPoolId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.FinviEntrypoint} returns this
+ */
+proto.api.v0alpha.FinviEntrypoint.prototype.setPoolId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string cron_interval = 2;
+ * @return {string}
+ */
+proto.api.v0alpha.FinviEntrypoint.prototype.getCronInterval = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.FinviEntrypoint} returns this
+ */
+proto.api.v0alpha.FinviEntrypoint.prototype.setCronInterval = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bool disabled = 3;
+ * @return {boolean}
+ */
+proto.api.v0alpha.FinviEntrypoint.prototype.getDisabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.FinviEntrypoint} returns this
+ */
+proto.api.v0alpha.FinviEntrypoint.prototype.setDisabled = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 

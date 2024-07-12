@@ -7462,6 +7462,15 @@ export namespace EHREntityType {
 }
 
 export class FinviEntrypoint extends jspb.Message {
+  getPoolId(): string;
+  setPoolId(value: string): void;
+
+  getCronInterval(): string;
+  setCronInterval(value: string): void;
+
+  getDisabled(): boolean;
+  setDisabled(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FinviEntrypoint.AsObject;
   static toObject(includeInstance: boolean, msg: FinviEntrypoint): FinviEntrypoint.AsObject;
@@ -7474,6 +7483,9 @@ export class FinviEntrypoint extends jspb.Message {
 
 export namespace FinviEntrypoint {
   export type AsObject = {
+    poolId: string,
+    cronInterval: string,
+    disabled: boolean,
   }
 }
 
