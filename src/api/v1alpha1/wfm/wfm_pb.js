@@ -93233,7 +93233,7 @@ proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionResponse.prototype.toObject = fu
  */
 proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    agentLeavePetition: (f = msg.getAgentLeavePetition()) && api_commons_wfm_pb.AgentLeavePetition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -93270,6 +93270,11 @@ proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionResponse.deserializeBinaryFromRe
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new api_commons_wfm_pb.AgentLeavePetition;
+      reader.readMessage(value,api_commons_wfm_pb.AgentLeavePetition.deserializeBinaryFromReader);
+      msg.setAgentLeavePetition(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -93299,6 +93304,51 @@ proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionResponse.prototype.serializeBina
  */
 proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getAgentLeavePetition();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      api_commons_wfm_pb.AgentLeavePetition.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional api.commons.AgentLeavePetition agent_leave_petition = 1;
+ * @return {?proto.api.commons.AgentLeavePetition}
+ */
+proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionResponse.prototype.getAgentLeavePetition = function() {
+  return /** @type{?proto.api.commons.AgentLeavePetition} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.AgentLeavePetition, 1));
+};
+
+
+/**
+ * @param {?proto.api.commons.AgentLeavePetition|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionResponse} returns this
+*/
+proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionResponse.prototype.setAgentLeavePetition = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionResponse} returns this
+ */
+proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionResponse.prototype.clearAgentLeavePetition = function() {
+  return this.setAgentLeavePetition(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionResponse.prototype.hasAgentLeavePetition = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -93554,7 +93604,7 @@ proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionResponse.prototype.toObject = fu
  */
 proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    agentLeavePetition: (f = msg.getAgentLeavePetition()) && api_commons_wfm_pb.AgentLeavePetition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -93591,6 +93641,11 @@ proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionResponse.deserializeBinaryFromRe
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new api_commons_wfm_pb.AgentLeavePetition;
+      reader.readMessage(value,api_commons_wfm_pb.AgentLeavePetition.deserializeBinaryFromReader);
+      msg.setAgentLeavePetition(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -93620,6 +93675,51 @@ proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionResponse.prototype.serializeBina
  */
 proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getAgentLeavePetition();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      api_commons_wfm_pb.AgentLeavePetition.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional api.commons.AgentLeavePetition agent_leave_petition = 1;
+ * @return {?proto.api.commons.AgentLeavePetition}
+ */
+proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionResponse.prototype.getAgentLeavePetition = function() {
+  return /** @type{?proto.api.commons.AgentLeavePetition} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.AgentLeavePetition, 1));
+};
+
+
+/**
+ * @param {?proto.api.commons.AgentLeavePetition|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionResponse} returns this
+*/
+proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionResponse.prototype.setAgentLeavePetition = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionResponse} returns this
+ */
+proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionResponse.prototype.clearAgentLeavePetition = function() {
+  return this.setAgentLeavePetition(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionResponse.prototype.hasAgentLeavePetition = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -93785,7 +93885,7 @@ proto.api.v1alpha1.wfm.CancelAgentLeavePetitionResponse.prototype.toObject = fun
  */
 proto.api.v1alpha1.wfm.CancelAgentLeavePetitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    agentLeavePetition: (f = msg.getAgentLeavePetition()) && api_commons_wfm_pb.AgentLeavePetition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -93822,6 +93922,11 @@ proto.api.v1alpha1.wfm.CancelAgentLeavePetitionResponse.deserializeBinaryFromRea
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new api_commons_wfm_pb.AgentLeavePetition;
+      reader.readMessage(value,api_commons_wfm_pb.AgentLeavePetition.deserializeBinaryFromReader);
+      msg.setAgentLeavePetition(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -93851,6 +93956,51 @@ proto.api.v1alpha1.wfm.CancelAgentLeavePetitionResponse.prototype.serializeBinar
  */
 proto.api.v1alpha1.wfm.CancelAgentLeavePetitionResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getAgentLeavePetition();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      api_commons_wfm_pb.AgentLeavePetition.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional api.commons.AgentLeavePetition agent_leave_petition = 1;
+ * @return {?proto.api.commons.AgentLeavePetition}
+ */
+proto.api.v1alpha1.wfm.CancelAgentLeavePetitionResponse.prototype.getAgentLeavePetition = function() {
+  return /** @type{?proto.api.commons.AgentLeavePetition} */ (
+    jspb.Message.getWrapperField(this, api_commons_wfm_pb.AgentLeavePetition, 1));
+};
+
+
+/**
+ * @param {?proto.api.commons.AgentLeavePetition|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.CancelAgentLeavePetitionResponse} returns this
+*/
+proto.api.v1alpha1.wfm.CancelAgentLeavePetitionResponse.prototype.setAgentLeavePetition = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.CancelAgentLeavePetitionResponse} returns this
+ */
+proto.api.v1alpha1.wfm.CancelAgentLeavePetitionResponse.prototype.clearAgentLeavePetition = function() {
+  return this.setAgentLeavePetition(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.CancelAgentLeavePetitionResponse.prototype.hasAgentLeavePetition = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

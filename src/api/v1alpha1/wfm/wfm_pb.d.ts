@@ -11771,6 +11771,11 @@ export namespace ArchiveAgentLeavePetitionRequest {
 }
 
 export class ArchiveAgentLeavePetitionResponse extends jspb.Message {
+  hasAgentLeavePetition(): boolean;
+  clearAgentLeavePetition(): void;
+  getAgentLeavePetition(): api_commons_wfm_pb.AgentLeavePetition | undefined;
+  setAgentLeavePetition(value?: api_commons_wfm_pb.AgentLeavePetition): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ArchiveAgentLeavePetitionResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ArchiveAgentLeavePetitionResponse): ArchiveAgentLeavePetitionResponse.AsObject;
@@ -11783,6 +11788,7 @@ export class ArchiveAgentLeavePetitionResponse extends jspb.Message {
 
 export namespace ArchiveAgentLeavePetitionResponse {
   export type AsObject = {
+    agentLeavePetition?: api_commons_wfm_pb.AgentLeavePetition.AsObject,
   }
 }
 
@@ -11819,6 +11825,11 @@ export namespace ResolveAgentLeavePetitionRequest {
 }
 
 export class ResolveAgentLeavePetitionResponse extends jspb.Message {
+  hasAgentLeavePetition(): boolean;
+  clearAgentLeavePetition(): void;
+  getAgentLeavePetition(): api_commons_wfm_pb.AgentLeavePetition | undefined;
+  setAgentLeavePetition(value?: api_commons_wfm_pb.AgentLeavePetition): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResolveAgentLeavePetitionResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ResolveAgentLeavePetitionResponse): ResolveAgentLeavePetitionResponse.AsObject;
@@ -11831,6 +11842,7 @@ export class ResolveAgentLeavePetitionResponse extends jspb.Message {
 
 export namespace ResolveAgentLeavePetitionResponse {
   export type AsObject = {
+    agentLeavePetition?: api_commons_wfm_pb.AgentLeavePetition.AsObject,
   }
 }
 
@@ -11855,6 +11867,11 @@ export namespace CancelAgentLeavePetitionRequest {
 }
 
 export class CancelAgentLeavePetitionResponse extends jspb.Message {
+  hasAgentLeavePetition(): boolean;
+  clearAgentLeavePetition(): void;
+  getAgentLeavePetition(): api_commons_wfm_pb.AgentLeavePetition | undefined;
+  setAgentLeavePetition(value?: api_commons_wfm_pb.AgentLeavePetition): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CancelAgentLeavePetitionResponse.AsObject;
   static toObject(includeInstance: boolean, msg: CancelAgentLeavePetitionResponse): CancelAgentLeavePetitionResponse.AsObject;
@@ -11867,6 +11884,7 @@ export class CancelAgentLeavePetitionResponse extends jspb.Message {
 
 export namespace CancelAgentLeavePetitionResponse {
   export type AsObject = {
+    agentLeavePetition?: api_commons_wfm_pb.AgentLeavePetition.AsObject,
   }
 }
 
