@@ -23,15 +23,6 @@ type TranslationsServiceListTranslations = {
   readonly responseType: typeof services_translations_v1alpha1_entities_pb.ListTranslationsResponse;
 };
 
-type TranslationsServiceListLanguages = {
-  readonly methodName: string;
-  readonly service: typeof TranslationsService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_translations_v1alpha1_entities_pb.ListLanguagesRequest;
-  readonly responseType: typeof services_translations_v1alpha1_entities_pb.ListLanguagesResponse;
-};
-
 type TranslationsServiceUpdateTranslation = {
   readonly methodName: string;
   readonly service: typeof TranslationsService;
@@ -90,7 +81,6 @@ export class TranslationsService {
   static readonly serviceName: string;
   static readonly TranslateTemplate: TranslationsServiceTranslateTemplate;
   static readonly ListTranslations: TranslationsServiceListTranslations;
-  static readonly ListLanguages: TranslationsServiceListLanguages;
   static readonly UpdateTranslation: TranslationsServiceUpdateTranslation;
   static readonly TriggerLLMTranslation: TranslationsServiceTriggerLLMTranslation;
   static readonly TriggerLLMTranslations: TranslationsServiceTriggerLLMTranslations;
@@ -148,15 +138,6 @@ export class TranslationsServiceClient {
   listTranslations(
     requestMessage: services_translations_v1alpha1_entities_pb.ListTranslationsRequest,
     callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.ListTranslationsResponse|null) => void
-  ): UnaryResponse;
-  listLanguages(
-    requestMessage: services_translations_v1alpha1_entities_pb.ListLanguagesRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.ListLanguagesResponse|null) => void
-  ): UnaryResponse;
-  listLanguages(
-    requestMessage: services_translations_v1alpha1_entities_pb.ListLanguagesRequest,
-    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.ListLanguagesResponse|null) => void
   ): UnaryResponse;
   updateTranslation(
     requestMessage: services_translations_v1alpha1_entities_pb.UpdateTranslationRequest,
