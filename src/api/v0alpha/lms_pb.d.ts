@@ -1941,6 +1941,11 @@ export class Process extends jspb.Message {
   getSum(): SumProcess | undefined;
   setSum(value?: SumProcess): void;
 
+  hasFinviEntrypoint(): boolean;
+  clearFinviEntrypoint(): void;
+  getFinviEntrypoint(): FinviEntrypoint | undefined;
+  setFinviEntrypoint(value?: FinviEntrypoint): void;
+
   getProcCase(): Process.ProcCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Process.AsObject;
@@ -1992,6 +1997,7 @@ export namespace Process {
     epicEntryPoint?: EpicEntrypoint.AsObject,
     contactManagerSink?: ContactManagerSink.AsObject,
     sum?: SumProcess.AsObject,
+    finviEntrypoint?: FinviEntrypoint.AsObject,
   }
 
   export enum ProcCase {
@@ -2033,6 +2039,7 @@ export namespace Process {
     EPIC_ENTRY_POINT = 76,
     CONTACT_MANAGER_SINK = 77,
     SUM = 78,
+    FINVI_ENTRYPOINT = 79,
   }
 }
 
@@ -7451,6 +7458,22 @@ export class EHREntityType extends jspb.Message {
 export namespace EHREntityType {
   export type AsObject = {
     epicEntity: EpicEntityTypeMap[keyof EpicEntityTypeMap],
+  }
+}
+
+export class FinviEntrypoint extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FinviEntrypoint.AsObject;
+  static toObject(includeInstance: boolean, msg: FinviEntrypoint): FinviEntrypoint.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FinviEntrypoint, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FinviEntrypoint;
+  static deserializeBinaryFromReader(message: FinviEntrypoint, reader: jspb.BinaryReader): FinviEntrypoint;
+}
+
+export namespace FinviEntrypoint {
+  export type AsObject = {
   }
 }
 
