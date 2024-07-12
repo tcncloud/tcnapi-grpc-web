@@ -533,6 +533,15 @@ LMS.GetQueuedEventsStatusByElementId = {
   responseType: api_v0alpha_lms_pb.Events
 };
 
+LMS.ListPools = {
+  methodName: "ListPools",
+  service: LMS,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_lms_pb.ListPoolsRequest,
+  responseType: api_v0alpha_lms_pb.ListPoolsResponse
+};
+
 exports.LMS = LMS;
 
 function LMSClient(serviceHost, options) {
@@ -2362,6 +2371,37 @@ LMSClient.prototype.getQueuedEventsStatusByElementId = function getQueuedEventsS
     callback = arguments[1];
   }
   var client = grpc.unary(LMS.GetQueuedEventsStatusByElementId, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LMSClient.prototype.listPools = function listPools(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LMS.ListPools, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

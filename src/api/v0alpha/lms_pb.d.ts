@@ -14,6 +14,64 @@ import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
+export class ListPoolsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPoolsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPoolsRequest): ListPoolsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPoolsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPoolsRequest;
+  static deserializeBinaryFromReader(message: ListPoolsRequest, reader: jspb.BinaryReader): ListPoolsRequest;
+}
+
+export namespace ListPoolsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListPoolsResponse extends jspb.Message {
+  clearPoolsList(): void;
+  getPoolsList(): Array<Pool>;
+  setPoolsList(value: Array<Pool>): void;
+  addPools(value?: Pool, index?: number): Pool;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPoolsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPoolsResponse): ListPoolsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPoolsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPoolsResponse;
+  static deserializeBinaryFromReader(message: ListPoolsResponse, reader: jspb.BinaryReader): ListPoolsResponse;
+}
+
+export namespace ListPoolsResponse {
+  export type AsObject = {
+    poolsList: Array<Pool.AsObject>,
+  }
+}
+
+export class Pool extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Pool.AsObject;
+  static toObject(includeInstance: boolean, msg: Pool): Pool.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Pool, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Pool;
+  static deserializeBinaryFromReader(message: Pool, reader: jspb.BinaryReader): Pool;
+}
+
+export namespace Pool {
+  export type AsObject = {
+    id: string,
+  }
+}
+
 export class GetPublicKeyReq extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPublicKeyReq.AsObject;
