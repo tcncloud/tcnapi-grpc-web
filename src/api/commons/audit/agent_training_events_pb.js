@@ -79,7 +79,7 @@ proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.prototype.to
  */
 proto.api.commons.audit.AgentTrainingCreateLearningOpportunityEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
+learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

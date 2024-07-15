@@ -455,9 +455,9 @@ proto.api.v1alpha1.room303.CreateMessageRequest.prototype.toObject = function(op
  */
 proto.api.v1alpha1.room303.CreateMessageRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    payload: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    nonce: jspb.Message.getFieldWithDefault(msg, 3, "")
+roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+payload: jspb.Message.getFieldWithDefault(msg, 2, ""),
+nonce: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -645,7 +645,7 @@ proto.api.v1alpha1.room303.CreateMessageResponse.prototype.toObject = function(o
  */
 proto.api.v1alpha1.room303.CreateMessageResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: (f = msg.getMessage()) && api_commons_room303_pb.Message.toObject(includeInstance, f)
+message: (f = msg.getMessage()) && api_commons_room303_pb.Message.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -796,10 +796,10 @@ proto.api.v1alpha1.room303.EditMessageRequest.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.room303.EditMessageRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    messageId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    payload: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    roomId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    nonce: jspb.Message.getFieldWithDefault(msg, 4, "")
+messageId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+payload: jspb.Message.getFieldWithDefault(msg, 2, ""),
+roomId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+nonce: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1016,7 +1016,7 @@ proto.api.v1alpha1.room303.EditMessageResponse.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.room303.EditMessageResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: (f = msg.getMessage()) && api_commons_room303_pb.Message.toObject(includeInstance, f)
+message: (f = msg.getMessage()) && api_commons_room303_pb.Message.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1167,8 +1167,8 @@ proto.api.v1alpha1.room303.GetMessagesRequest.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.room303.GetMessagesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    offset: (f = msg.getOffset()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+roomId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+offset: (f = msg.getOffset()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1355,7 +1355,7 @@ proto.api.v1alpha1.room303.GetMessagesResponse.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.room303.GetMessagesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    messagesList: jspb.Message.toObjectList(msg.getMessagesList(),
+messagesList: jspb.Message.toObjectList(msg.getMessagesList(),
     api_commons_room303_pb.Message.toObject, includeInstance)
   };
 
@@ -1508,8 +1508,8 @@ proto.api.v1alpha1.room303.StreamMessageUpdatesRequest.prototype.toObject = func
  */
 proto.api.v1alpha1.room303.StreamMessageUpdatesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    memberId: jspb.Message.getFieldWithDefault(msg, 2, "")
+roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+memberId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1668,7 +1668,7 @@ proto.api.v1alpha1.room303.StreamMessageUpdatesResponse.prototype.toObject = fun
  */
 proto.api.v1alpha1.room303.StreamMessageUpdatesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: (f = msg.getMessage()) && api_commons_room303_pb.Message.toObject(includeInstance, f)
+message: (f = msg.getMessage()) && api_commons_room303_pb.Message.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1819,8 +1819,8 @@ proto.api.v1alpha1.room303.MarkMessageReadRequest.prototype.toObject = function(
  */
 proto.api.v1alpha1.room303.MarkMessageReadRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    messageId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    memberId: jspb.Message.getFieldWithDefault(msg, 2, "")
+messageId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+memberId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2080,7 +2080,7 @@ proto.api.v1alpha1.room303.MarkAllMessagesReadRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.room303.MarkAllMessagesReadRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 1, "")
+roomId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2217,7 +2217,7 @@ proto.api.v1alpha1.room303.MarkAllMessagesReadResponse.prototype.toObject = func
  */
 proto.api.v1alpha1.room303.MarkAllMessagesReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowsUpdatedList: jspb.Message.toObjectList(msg.getRowsUpdatedList(),
+rowsUpdatedList: jspb.Message.toObjectList(msg.getRowsUpdatedList(),
     api_commons_room303_pb.Message.toObject, includeInstance)
   };
 
@@ -2478,7 +2478,7 @@ proto.api.v1alpha1.room303.GetUnreadStatsResponse.prototype.toObject = function(
  */
 proto.api.v1alpha1.room303.GetUnreadStatsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    statsList: jspb.Message.toObjectList(msg.getStatsList(),
+statsList: jspb.Message.toObjectList(msg.getStatsList(),
     api_commons_room303_pb.MessageStat.toObject, includeInstance)
   };
 
@@ -2631,9 +2631,9 @@ proto.api.v1alpha1.room303.DeleteMessageRequest.prototype.toObject = function(op
  */
 proto.api.v1alpha1.room303.DeleteMessageRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    messageId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    roomId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    nonce: jspb.Message.getFieldWithDefault(msg, 3, "")
+messageId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+roomId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+nonce: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2821,7 +2821,7 @@ proto.api.v1alpha1.room303.DeleteMessageResponse.prototype.toObject = function(o
  */
 proto.api.v1alpha1.room303.DeleteMessageResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: (f = msg.getMessage()) && api_commons_room303_pb.Message.toObject(includeInstance, f)
+message: (f = msg.getMessage()) && api_commons_room303_pb.Message.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2979,8 +2979,8 @@ proto.api.v1alpha1.room303.BulkMarkMessageReadRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.room303.BulkMarkMessageReadRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    messageIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+messageIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3165,7 +3165,7 @@ proto.api.v1alpha1.room303.BulkMarkMessageReadResponse.prototype.toObject = func
  */
 proto.api.v1alpha1.room303.BulkMarkMessageReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    messagesList: jspb.Message.toObjectList(msg.getMessagesList(),
+messagesList: jspb.Message.toObjectList(msg.getMessagesList(),
     api_commons_room303_pb.Message.toObject, includeInstance)
   };
 

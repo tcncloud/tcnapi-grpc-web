@@ -134,7 +134,7 @@ proto.api.v1alpha1.vmds.DownloadSpecifiedMessagesRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.vmds.DownloadSpecifiedMessagesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    messagesList: jspb.Message.toObjectList(msg.getMessagesList(),
+messagesList: jspb.Message.toObjectList(msg.getMessagesList(),
     proto.api.v1alpha1.vmds.DownloadSpecifiedMessagesRequest.MessageRequest.toObject, includeInstance)
   };
 
@@ -249,9 +249,9 @@ proto.api.v1alpha1.vmds.DownloadSpecifiedMessagesRequest.MessageRequest.prototyp
  */
 proto.api.v1alpha1.vmds.DownloadSpecifiedMessagesRequest.MessageRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    mailBox: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    callerSid: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    callerType: jspb.Message.getFieldWithDefault(msg, 3, 0)
+mailBox: jspb.Message.getFieldWithDefault(msg, 1, ""),
+callerSid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+callerType: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -477,7 +477,7 @@ proto.api.v1alpha1.vmds.DownloadSpecifiedMessagesResponse.prototype.toObject = f
  */
 proto.api.v1alpha1.vmds.DownloadSpecifiedMessagesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: jspb.Message.getFieldWithDefault(msg, 1, "")
+url: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {

@@ -104,8 +104,8 @@ proto.services.billing.v1alpha3.ExportInvoiceRequest.prototype.toObject = functi
  */
 proto.services.billing.v1alpha3.ExportInvoiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    format: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    invoiceDate: (f = msg.getInvoiceDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+format: jspb.Message.getFieldWithDefault(msg, 1, 0),
+invoiceDate: (f = msg.getInvoiceDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -285,7 +285,7 @@ proto.services.billing.v1alpha3.ExportInvoiceResponse.prototype.toObject = funct
  */
 proto.services.billing.v1alpha3.ExportInvoiceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha3_invoice_pb.Invoice.toObject(includeInstance, f)
+invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha3_invoice_pb.Invoice.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

@@ -133,10 +133,10 @@ proto.annotations.Permissions.prototype.toObject = function(opt_includeInstance)
  */
 proto.annotations.Permissions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setsList: jspb.Message.toObjectList(msg.getSetsList(),
+setsList: jspb.Message.toObjectList(msg.getSetsList(),
     proto.annotations.PermissionSet.toObject, includeInstance),
-    wip: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    noPermissions: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+wip: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+noPermissions: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -389,8 +389,8 @@ proto.annotations.PermissionSet.prototype.toObject = function(opt_includeInstanc
  */
 proto.annotations.PermissionSet.toObject = function(includeInstance, msg) {
   var f, obj = {
-    permissionsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    taint: (f = msg.getTaint()) && proto.annotations.Taint.toObject(includeInstance, f)
+permissionsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+taint: (f = msg.getTaint()) && proto.annotations.Taint.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -591,8 +591,8 @@ proto.annotations.Taint.prototype.toObject = function(opt_includeInstance) {
  */
 proto.annotations.Taint.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    value: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
+id: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+value: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {

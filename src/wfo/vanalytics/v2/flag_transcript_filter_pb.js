@@ -127,9 +127,9 @@ proto.wfo.vanalytics.v2.ListFlagTranscriptFiltersRequest.prototype.toObject = fu
  */
 proto.wfo.vanalytics.v2.ListFlagTranscriptFiltersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    flagSnapshotMask: (f = msg.getFlagSnapshotMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    filterSnapshotMask: (f = msg.getFilterSnapshotMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+flagSnapshotMask: (f = msg.getFlagSnapshotMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+filterSnapshotMask: (f = msg.getFilterSnapshotMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -366,7 +366,7 @@ proto.wfo.vanalytics.v2.ListFlagTranscriptFiltersResponse.prototype.toObject = f
  */
 proto.wfo.vanalytics.v2.ListFlagTranscriptFiltersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagTranscriptFiltersList: jspb.Message.toObjectList(msg.getFlagTranscriptFiltersList(),
+flagTranscriptFiltersList: jspb.Message.toObjectList(msg.getFlagTranscriptFiltersList(),
     proto.wfo.vanalytics.v2.FlagTranscriptFilter.toObject, includeInstance)
   };
 
@@ -519,8 +519,8 @@ proto.wfo.vanalytics.v2.FlagTranscriptFilter.prototype.toObject = function(opt_i
  */
 proto.wfo.vanalytics.v2.FlagTranscriptFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSnapshot: (f = msg.getFlagSnapshot()) && wfo_vanalytics_v2_flag_snapshot_pb.FlagSnapshot.toObject(includeInstance, f),
-    filterSnapshot: (f = msg.getFilterSnapshot()) && wfo_vanalytics_v2_filter_snapshot_pb.FilterSnapshot.toObject(includeInstance, f)
+flagSnapshot: (f = msg.getFlagSnapshot()) && wfo_vanalytics_v2_flag_snapshot_pb.FlagSnapshot.toObject(includeInstance, f),
+filterSnapshot: (f = msg.getFilterSnapshot()) && wfo_vanalytics_v2_filter_snapshot_pb.FilterSnapshot.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

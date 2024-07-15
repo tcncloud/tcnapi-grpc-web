@@ -499,7 +499,7 @@ proto.api.v1alpha1.scorecards.CreateEvaluationRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.scorecards.CreateEvaluationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
+evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -650,7 +650,7 @@ proto.api.v1alpha1.scorecards.CreateEvaluationResponse.prototype.toObject = func
  */
 proto.api.v1alpha1.scorecards.CreateEvaluationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
+evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -801,8 +801,8 @@ proto.api.v1alpha1.scorecards.UpdateEvaluationRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.scorecards.UpdateEvaluationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1003,7 +1003,7 @@ proto.api.v1alpha1.scorecards.UpdateEvaluationResponse.prototype.toObject = func
  */
 proto.api.v1alpha1.scorecards.UpdateEvaluationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
+evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1154,7 +1154,7 @@ proto.api.v1alpha1.scorecards.DeleteEvaluationRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.scorecards.DeleteEvaluationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1284,7 +1284,7 @@ proto.api.v1alpha1.scorecards.DeleteEvaluationResponse.prototype.toObject = func
  */
 proto.api.v1alpha1.scorecards.DeleteEvaluationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
+evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1435,7 +1435,7 @@ proto.api.v1alpha1.scorecards.GetEvaluationRequest.prototype.toObject = function
  */
 proto.api.v1alpha1.scorecards.GetEvaluationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1565,7 +1565,7 @@ proto.api.v1alpha1.scorecards.GetEvaluationResponse.prototype.toObject = functio
  */
 proto.api.v1alpha1.scorecards.GetEvaluationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
+evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1716,7 +1716,7 @@ proto.api.v1alpha1.scorecards.ScoreEvaluationRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.ScoreEvaluationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 3, 0)
+evaluationId: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1846,7 +1846,7 @@ proto.api.v1alpha1.scorecards.ScoreEvaluationResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.scorecards.ScoreEvaluationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
+evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2004,13 +2004,13 @@ proto.api.v1alpha1.scorecards.ListEvaluationsRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.ListEvaluationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorerIdList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f),
-    categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    returnFields: (f = msg.getReturnFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
+scorerIdList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f),
+categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+returnFields: (f = msg.getReturnFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
   };
 
   if (includeInstance) {
@@ -2443,7 +2443,7 @@ proto.api.v1alpha1.scorecards.ListEvaluationsResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.scorecards.ListEvaluationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationsList: jspb.Message.toObjectList(msg.getEvaluationsList(),
+evaluationsList: jspb.Message.toObjectList(msg.getEvaluationsList(),
     api_commons_scorecards_pb.Evaluation.toObject, includeInstance)
   };
 
@@ -2596,8 +2596,8 @@ proto.api.v1alpha1.scorecards.PreviewEvaluationScoreRequest.prototype.toObject =
  */
 proto.api.v1alpha1.scorecards.PreviewEvaluationScoreRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f),
-    scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
+evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f),
+scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2798,7 +2798,7 @@ proto.api.v1alpha1.scorecards.PreviewEvaluationScoreResponse.prototype.toObject 
  */
 proto.api.v1alpha1.scorecards.PreviewEvaluationScoreResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
+evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2956,13 +2956,13 @@ proto.api.v1alpha1.scorecards.ListEvaluationsByOrgIdRequest.prototype.toObject =
  */
 proto.api.v1alpha1.scorecards.ListEvaluationsByOrgIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    scorerIdList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f),
-    categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    returnFields: (f = msg.getReturnFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+scorerIdList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f),
+categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+returnFields: (f = msg.getReturnFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3388,8 +3388,8 @@ proto.api.v1alpha1.scorecards.DeleteEvaluationByOrgIdRequest.prototype.toObject 
  */
 proto.api.v1alpha1.scorecards.DeleteEvaluationByOrgIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -3555,13 +3555,13 @@ proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.prototype.toObject = 
  */
 proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    evaluationIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f),
-    categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    scorerIdList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+evaluationIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+completedAt: (f = msg.getCompletedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f),
+categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+scorecardIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+scorerIdList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3987,7 +3987,7 @@ proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsResponse.prototype.toObject =
  */
 proto.api.v1alpha1.scorecards.BulkDeleteEvaluationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    count: jspb.Message.getFieldWithDefault(msg, 1, 0)
+count: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -4117,8 +4117,8 @@ proto.api.v1alpha1.scorecards.RestoreEvaluationRequest.prototype.toObject = func
  */
 proto.api.v1alpha1.scorecards.RestoreEvaluationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 3, "")
+evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+userId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -4277,7 +4277,7 @@ proto.api.v1alpha1.scorecards.RestoreEvaluationResponse.prototype.toObject = fun
  */
 proto.api.v1alpha1.scorecards.RestoreEvaluationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
+evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

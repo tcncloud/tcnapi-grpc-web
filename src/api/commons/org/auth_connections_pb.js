@@ -131,19 +131,19 @@ proto.api.commons.org.AuthConnectionSettings.prototype.toObject = function(opt_i
  */
 proto.api.commons.org.AuthConnectionSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    issuerUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    tenantUrl: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    clientId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    connectionId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    secretExpiration: (f = msg.getSecretExpiration()) && proto.api.commons.org.AuthConnectionSettings.SecretExpiration.toObject(includeInstance, f),
-    defaultGroup: (f = msg.getDefaultGroup()) && proto.api.commons.org.GroupItem.toObject(includeInstance, f),
-    customGroupsList: jspb.Message.toObjectList(msg.getCustomGroupsList(),
+issuerUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
+tenantUrl: jspb.Message.getFieldWithDefault(msg, 2, ""),
+clientId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+connectionId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+secretExpiration: (f = msg.getSecretExpiration()) && proto.api.commons.org.AuthConnectionSettings.SecretExpiration.toObject(includeInstance, f),
+defaultGroup: (f = msg.getDefaultGroup()) && proto.api.commons.org.GroupItem.toObject(includeInstance, f),
+customGroupsList: jspb.Message.toObjectList(msg.getCustomGroupsList(),
     proto.api.commons.org.GroupItem.toObject, includeInstance),
-    orgId: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    resourceUrl: jspb.Message.getFieldWithDefault(msg, 100, ""),
-    useGovernmentAzure: jspb.Message.getBooleanFieldWithDefault(msg, 101, false)
+orgId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+name: jspb.Message.getFieldWithDefault(msg, 9, ""),
+type: jspb.Message.getFieldWithDefault(msg, 10, 0),
+resourceUrl: jspb.Message.getFieldWithDefault(msg, 100, ""),
+useGovernmentAzure: jspb.Message.getBooleanFieldWithDefault(msg, 101, false)
   };
 
   if (includeInstance) {
@@ -382,7 +382,7 @@ proto.api.commons.org.AuthConnectionSettings.SecretExpiration.prototype.toObject
  */
 proto.api.commons.org.AuthConnectionSettings.SecretExpiration.toObject = function(includeInstance, msg) {
   var f, obj = {
-    date: (f = msg.getDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+date: (f = msg.getDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -814,11 +814,11 @@ proto.api.commons.org.GroupItem.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.commons.org.GroupItem.toObject = function(includeInstance, msg) {
   var f, obj = {
-    groupName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    huntGroupSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    p3PermissionGroupId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    permissionGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+groupName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+huntGroupSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+p3PermissionGroupId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+permissionGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {

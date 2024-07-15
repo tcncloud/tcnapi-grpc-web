@@ -133,40 +133,40 @@ proto.api.commons.SimpleCallData.prototype.toObject = function(opt_includeInstan
  */
 proto.api.commons.SimpleCallData.toObject = function(includeInstance, msg) {
   var f, obj = {
-    taskSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    callSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    taskGroupSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    clientSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    countrySid: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    agentSid: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    startTime: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    callerId: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    phoneNumber: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    countryCode: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    deliveryDuration: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    linkCallDuration: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    result: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    sipCode: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    doRecord: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
-    recordingFileName: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    isDialValidationOk: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
-    isTimeZoneScrubOk: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
-    isCellPhoneScrubOk: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
-    isCustomCallingRulesScrubOk: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
-    isDnclScrubOk: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
-    useGlobalTimeZoneScrub: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
-    doCellPhoneScrub: jspb.Message.getBooleanFieldWithDefault(msg, 23, false),
-    doDnclScrub: jspb.Message.getBooleanFieldWithDefault(msg, 25, false),
-    callDataType: jspb.Message.getFieldWithDefault(msg, 26, ""),
-    callerIdCountryCode: jspb.Message.getFieldWithDefault(msg, 28, ""),
-    callerIdCountrySid: jspb.Message.getFieldWithDefault(msg, 29, 0),
-    zipCode: jspb.Message.getFieldWithDefault(msg, 30, ""),
-    isPreviewByRecord: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
-    ruleSetName: jspb.Message.getFieldWithDefault(msg, 32, ""),
-    isNaturalComplianceOk: jspb.Message.getBooleanFieldWithDefault(msg, 33, false),
-    simpleMetaDataList: jspb.Message.toObjectList(msg.getSimpleMetaDataList(),
+taskSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+callSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+taskGroupSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+clientSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
+countrySid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+agentSid: jspb.Message.getFieldWithDefault(msg, 6, 0),
+startTime: jspb.Message.getFieldWithDefault(msg, 7, 0),
+callerId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+phoneNumber: jspb.Message.getFieldWithDefault(msg, 9, ""),
+countryCode: jspb.Message.getFieldWithDefault(msg, 10, ""),
+deliveryDuration: jspb.Message.getFieldWithDefault(msg, 11, 0),
+linkCallDuration: jspb.Message.getFieldWithDefault(msg, 12, 0),
+result: jspb.Message.getFieldWithDefault(msg, 13, 0),
+sipCode: jspb.Message.getFieldWithDefault(msg, 14, 0),
+doRecord: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
+recordingFileName: jspb.Message.getFieldWithDefault(msg, 16, ""),
+isDialValidationOk: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
+isTimeZoneScrubOk: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
+isCellPhoneScrubOk: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
+isCustomCallingRulesScrubOk: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
+isDnclScrubOk: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
+useGlobalTimeZoneScrub: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
+doCellPhoneScrub: jspb.Message.getBooleanFieldWithDefault(msg, 23, false),
+doDnclScrub: jspb.Message.getBooleanFieldWithDefault(msg, 25, false),
+callDataType: jspb.Message.getFieldWithDefault(msg, 26, ""),
+callerIdCountryCode: jspb.Message.getFieldWithDefault(msg, 28, ""),
+callerIdCountrySid: jspb.Message.getFieldWithDefault(msg, 29, 0),
+zipCode: jspb.Message.getFieldWithDefault(msg, 30, ""),
+isPreviewByRecord: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
+ruleSetName: jspb.Message.getFieldWithDefault(msg, 32, ""),
+isNaturalComplianceOk: jspb.Message.getBooleanFieldWithDefault(msg, 33, false),
+simpleMetaDataList: jspb.Message.toObjectList(msg.getSimpleMetaDataList(),
     proto.api.commons.SimpleKeyValue.toObject, includeInstance),
-    simpleResultMetaDataList: jspb.Message.toObjectList(msg.getSimpleResultMetaDataList(),
+simpleResultMetaDataList: jspb.Message.toObjectList(msg.getSimpleResultMetaDataList(),
     proto.api.commons.SimpleKeyValue.toObject, includeInstance)
   };
 
@@ -1269,8 +1269,8 @@ proto.api.commons.SimpleKeyValue.prototype.toObject = function(opt_includeInstan
  */
 proto.api.commons.SimpleKeyValue.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 2, "")
+key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+value: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1429,11 +1429,11 @@ proto.api.commons.SimpleRecordData.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.SimpleRecordData.toObject = function(includeInstance, msg) {
   var f, obj = {
-    taskSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    taskGroupSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    agentSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    stopTime: (f = msg.getStopTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+taskSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+taskGroupSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+agentSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+stopTime: (f = msg.getStopTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

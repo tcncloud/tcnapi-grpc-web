@@ -136,14 +136,14 @@ proto.api.commons.billing.Plan.prototype.toObject = function(opt_includeInstance
  */
 proto.api.commons.billing.Plan.toObject = function(includeInstance, msg) {
   var f, obj = {
-    detailsList: jspb.Message.toObjectList(msg.getDetailsList(),
+detailsList: jspb.Message.toObjectList(msg.getDetailsList(),
     proto.api.commons.billing.Detail.toObject, includeInstance),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 3, "0"),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+billingPlanId: jspb.Message.getFieldWithDefault(msg, 3, "0"),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -553,14 +553,14 @@ proto.api.commons.billing.Detail.prototype.toObject = function(opt_includeInstan
  */
 proto.api.commons.billing.Detail.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingDetailSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    eventType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    configType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    config: (f = msg.getConfig()) && proto.api.commons.billing.DetailConfig.toObject(includeInstance, f),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    deletedOn: (f = msg.getDeletedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 8, "0")
+billingDetailSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+eventType: jspb.Message.getFieldWithDefault(msg, 2, 0),
+configType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+config: (f = msg.getConfig()) && proto.api.commons.billing.DetailConfig.toObject(includeInstance, f),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+deletedOn: (f = msg.getDeletedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+billingPlanId: jspb.Message.getFieldWithDefault(msg, 8, "0")
   };
 
   if (includeInstance) {
@@ -1040,45 +1040,45 @@ proto.api.commons.billing.DetailConfig.prototype.toObject = function(opt_include
  */
 proto.api.commons.billing.DetailConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentSeatsConfig: (f = msg.getAgentSeatsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    agentTextMessageChatConfig: (f = msg.getAgentTextMessageChatConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    agentTextMessageEmailMessageConfig: (f = msg.getAgentTextMessageEmailMessageConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    agentTextMessageEmailSizeConfig: (f = msg.getAgentTextMessageEmailSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
-    agentTextMessageSmsConfig: (f = msg.getAgentTextMessageSmsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    taskMessageSentEmailMessageConfig: (f = msg.getTaskMessageSentEmailMessageConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    taskMessageSentEmailSizeConfig: (f = msg.getTaskMessageSentEmailSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
-    taskMessageSentSmsConfig: (f = msg.getTaskMessageSentSmsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    connectedInboxPollConfig: (f = msg.getConnectedInboxPollConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    managerTextMessageChatConfig: (f = msg.getManagerTextMessageChatConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    managerTextMessageEmailMessageConfig: (f = msg.getManagerTextMessageEmailMessageConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    managerTextMessageEmailSizeConfig: (f = msg.getManagerTextMessageEmailSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
-    managerTextMessageSmsConfig: (f = msg.getManagerTextMessageSmsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    customerTextMessageChatConfig: (f = msg.getCustomerTextMessageChatConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    customerTextMessageEmailMessageConfig: (f = msg.getCustomerTextMessageEmailMessageConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    customerTextMessageEmailSizeConfig: (f = msg.getCustomerTextMessageEmailSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
-    customerTextMessageSmsConfig: (f = msg.getCustomerTextMessageSmsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    agentTextMessageChatSizeConfig: (f = msg.getAgentTextMessageChatSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
-    managerTextMessageChatSizeConfig: (f = msg.getManagerTextMessageChatSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
-    customerTextMessageChatSizeConfig: (f = msg.getCustomerTextMessageChatSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
-    connectedInboxCreatedConfig: (f = msg.getConnectedInboxCreatedConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    agentTextMessageSmsSizeConfig: (f = msg.getAgentTextMessageSmsSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
-    managerTextMessageSmsSizeConfig: (f = msg.getManagerTextMessageSmsSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
-    customerTextMessageSmsSizeConfig: (f = msg.getCustomerTextMessageSmsSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
-    taskMessageSentSmsSizeConfig: (f = msg.getTaskMessageSentSmsSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
-    agentChatMessageUnitsConfig: (f = msg.getAgentChatMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    agentEmailMessageUnitsConfig: (f = msg.getAgentEmailMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    agentSmsMessageUnitsConfig: (f = msg.getAgentSmsMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    managerChatMessageUnitsConfig: (f = msg.getManagerChatMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    managerEmailMessageUnitsConfig: (f = msg.getManagerEmailMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    managerSmsMessageUnitsConfig: (f = msg.getManagerSmsMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    customerChatMessageUnitsConfig: (f = msg.getCustomerChatMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    customerEmailMessageUnitsConfig: (f = msg.getCustomerEmailMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    customerSmsMessageUnitsConfig: (f = msg.getCustomerSmsMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    systemChatMessageUnitsConfig: (f = msg.getSystemChatMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    systemEmailMessageUnitsConfig: (f = msg.getSystemEmailMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    systemSmsMessageUnitsConfig: (f = msg.getSystemSmsMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    complianceRndQueryConfig: (f = msg.getComplianceRndQueryConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
-    complianceRndQueryCachedConfig: (f = msg.getComplianceRndQueryCachedConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f)
+agentSeatsConfig: (f = msg.getAgentSeatsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+agentTextMessageChatConfig: (f = msg.getAgentTextMessageChatConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+agentTextMessageEmailMessageConfig: (f = msg.getAgentTextMessageEmailMessageConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+agentTextMessageEmailSizeConfig: (f = msg.getAgentTextMessageEmailSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
+agentTextMessageSmsConfig: (f = msg.getAgentTextMessageSmsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+taskMessageSentEmailMessageConfig: (f = msg.getTaskMessageSentEmailMessageConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+taskMessageSentEmailSizeConfig: (f = msg.getTaskMessageSentEmailSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
+taskMessageSentSmsConfig: (f = msg.getTaskMessageSentSmsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+connectedInboxPollConfig: (f = msg.getConnectedInboxPollConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+managerTextMessageChatConfig: (f = msg.getManagerTextMessageChatConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+managerTextMessageEmailMessageConfig: (f = msg.getManagerTextMessageEmailMessageConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+managerTextMessageEmailSizeConfig: (f = msg.getManagerTextMessageEmailSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
+managerTextMessageSmsConfig: (f = msg.getManagerTextMessageSmsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+customerTextMessageChatConfig: (f = msg.getCustomerTextMessageChatConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+customerTextMessageEmailMessageConfig: (f = msg.getCustomerTextMessageEmailMessageConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+customerTextMessageEmailSizeConfig: (f = msg.getCustomerTextMessageEmailSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
+customerTextMessageSmsConfig: (f = msg.getCustomerTextMessageSmsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+agentTextMessageChatSizeConfig: (f = msg.getAgentTextMessageChatSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
+managerTextMessageChatSizeConfig: (f = msg.getManagerTextMessageChatSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
+customerTextMessageChatSizeConfig: (f = msg.getCustomerTextMessageChatSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
+connectedInboxCreatedConfig: (f = msg.getConnectedInboxCreatedConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+agentTextMessageSmsSizeConfig: (f = msg.getAgentTextMessageSmsSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
+managerTextMessageSmsSizeConfig: (f = msg.getManagerTextMessageSmsSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
+customerTextMessageSmsSizeConfig: (f = msg.getCustomerTextMessageSmsSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
+taskMessageSentSmsSizeConfig: (f = msg.getTaskMessageSentSmsSizeConfig()) && api_commons_billing_modules_modules_pb.BasicAmountConfig.toObject(includeInstance, f),
+agentChatMessageUnitsConfig: (f = msg.getAgentChatMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+agentEmailMessageUnitsConfig: (f = msg.getAgentEmailMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+agentSmsMessageUnitsConfig: (f = msg.getAgentSmsMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+managerChatMessageUnitsConfig: (f = msg.getManagerChatMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+managerEmailMessageUnitsConfig: (f = msg.getManagerEmailMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+managerSmsMessageUnitsConfig: (f = msg.getManagerSmsMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+customerChatMessageUnitsConfig: (f = msg.getCustomerChatMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+customerEmailMessageUnitsConfig: (f = msg.getCustomerEmailMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+customerSmsMessageUnitsConfig: (f = msg.getCustomerSmsMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+systemChatMessageUnitsConfig: (f = msg.getSystemChatMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+systemEmailMessageUnitsConfig: (f = msg.getSystemEmailMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+systemSmsMessageUnitsConfig: (f = msg.getSystemSmsMessageUnitsConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+complianceRndQueryConfig: (f = msg.getComplianceRndQueryConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f),
+complianceRndQueryCachedConfig: (f = msg.getComplianceRndQueryCachedConfig()) && api_commons_billing_modules_modules_pb.BasicConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

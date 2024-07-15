@@ -443,9 +443,9 @@ proto.services.pbx.v1.PBXUser.prototype.toObject = function(opt_includeInstance)
  */
 proto.services.pbx.v1.PBXUser.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pbxUserId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    orgUserId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    sipAccountsList: jspb.Message.toObjectList(msg.getSipAccountsList(),
+pbxUserId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+orgUserId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+sipAccountsList: jspb.Message.toObjectList(msg.getSipAccountsList(),
     proto.services.pbx.v1.SIPAccount.toObject, includeInstance)
   };
 
@@ -663,10 +663,10 @@ proto.services.pbx.v1.SIPAccount.prototype.toObject = function(opt_includeInstan
  */
 proto.services.pbx.v1.SIPAccount.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sipId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    extension: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    ringGroupsList: jspb.Message.toObjectList(msg.getRingGroupsList(),
+sipId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+isActive: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+extension: jspb.Message.getFieldWithDefault(msg, 3, 0),
+ringGroupsList: jspb.Message.toObjectList(msg.getRingGroupsList(),
     proto.services.pbx.v1.RingGroup.toObject, includeInstance)
   };
 
@@ -913,12 +913,12 @@ proto.services.pbx.v1.RingGroup.prototype.toObject = function(opt_includeInstanc
  */
 proto.services.pbx.v1.RingGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    extension: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    ringStrategy: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    pbxUsersList: jspb.Message.toObjectList(msg.getPbxUsersList(),
+id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+extension: jspb.Message.getFieldWithDefault(msg, 4, 0),
+ringStrategy: jspb.Message.getFieldWithDefault(msg, 5, 0),
+pbxUsersList: jspb.Message.toObjectList(msg.getPbxUsersList(),
     proto.services.pbx.v1.PBXUser.toObject, includeInstance)
   };
 
@@ -1216,8 +1216,8 @@ proto.services.pbx.v1.QueryPbxUsersRequest.prototype.toObject = function(opt_inc
  */
 proto.services.pbx.v1.QueryPbxUsersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pbxUserId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    responseMask: (f = msg.getResponseMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+pbxUserId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+responseMask: (f = msg.getResponseMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1404,7 +1404,7 @@ proto.services.pbx.v1.QueryPbxUsersResponse.prototype.toObject = function(opt_in
  */
 proto.services.pbx.v1.QueryPbxUsersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    usersList: jspb.Message.toObjectList(msg.getUsersList(),
+usersList: jspb.Message.toObjectList(msg.getUsersList(),
     proto.services.pbx.v1.PBXUser.toObject, includeInstance)
   };
 
@@ -1557,8 +1557,8 @@ proto.services.pbx.v1.QueryRingGroupsRequest.prototype.toObject = function(opt_i
  */
 proto.services.pbx.v1.QueryRingGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    groupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    responseMask: (f = msg.getResponseMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+groupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+responseMask: (f = msg.getResponseMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1745,7 +1745,7 @@ proto.services.pbx.v1.QueryRingGroupsResponse.prototype.toObject = function(opt_
  */
 proto.services.pbx.v1.QueryRingGroupsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    groupsList: jspb.Message.toObjectList(msg.getGroupsList(),
+groupsList: jspb.Message.toObjectList(msg.getGroupsList(),
     proto.services.pbx.v1.RingGroup.toObject, includeInstance)
   };
 
@@ -1898,8 +1898,8 @@ proto.services.pbx.v1.UpdatePbxUserRequest.prototype.toObject = function(opt_inc
  */
 proto.services.pbx.v1.UpdatePbxUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: (f = msg.getUser()) && proto.services.pbx.v1.PBXUser.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+user: (f = msg.getUser()) && proto.services.pbx.v1.PBXUser.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2100,7 +2100,7 @@ proto.services.pbx.v1.UpdatePbxUserResponse.prototype.toObject = function(opt_in
  */
 proto.services.pbx.v1.UpdatePbxUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: (f = msg.getUser()) && proto.services.pbx.v1.PBXUser.toObject(includeInstance, f)
+user: (f = msg.getUser()) && proto.services.pbx.v1.PBXUser.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2251,8 +2251,8 @@ proto.services.pbx.v1.UpdateRingGroupRequest.prototype.toObject = function(opt_i
  */
 proto.services.pbx.v1.UpdateRingGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    group: (f = msg.getGroup()) && proto.services.pbx.v1.RingGroup.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+group: (f = msg.getGroup()) && proto.services.pbx.v1.RingGroup.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2453,7 +2453,7 @@ proto.services.pbx.v1.UpdateRingGroupResponse.prototype.toObject = function(opt_
  */
 proto.services.pbx.v1.UpdateRingGroupResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    group: (f = msg.getGroup()) && proto.services.pbx.v1.RingGroup.toObject(includeInstance, f)
+group: (f = msg.getGroup()) && proto.services.pbx.v1.RingGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2705,7 +2705,7 @@ proto.services.pbx.v1.AssignRandomExtensionResponse.prototype.toObject = functio
  */
 proto.services.pbx.v1.AssignRandomExtensionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    extension: jspb.Message.getFieldWithDefault(msg, 1, 0)
+extension: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2842,11 +2842,11 @@ proto.services.pbx.v1.CreateRingGroupRequest.prototype.toObject = function(opt_i
  */
 proto.services.pbx.v1.CreateRingGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    ringStrategy: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    pbxUserIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    extension: jspb.Message.getFieldWithDefault(msg, 5, 0)
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+description: jspb.Message.getFieldWithDefault(msg, 2, ""),
+ringStrategy: jspb.Message.getFieldWithDefault(msg, 3, 0),
+pbxUserIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+extension: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -3111,7 +3111,7 @@ proto.services.pbx.v1.CreateRingGroupResponse.prototype.toObject = function(opt_
  */
 proto.services.pbx.v1.CreateRingGroupResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    group: (f = msg.getGroup()) && proto.services.pbx.v1.RingGroup.toObject(includeInstance, f)
+group: (f = msg.getGroup()) && proto.services.pbx.v1.RingGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3262,7 +3262,7 @@ proto.services.pbx.v1.DeleteRingGroupRequest.prototype.toObject = function(opt_i
  */
 proto.services.pbx.v1.DeleteRingGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    groupId: jspb.Message.getFieldWithDefault(msg, 1, "")
+groupId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {

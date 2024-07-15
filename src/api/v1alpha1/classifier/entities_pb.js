@@ -351,7 +351,7 @@ proto.api.v1alpha1.classifier.ClassifierEntityTypes.prototype.toObject = functio
  */
 proto.api.v1alpha1.classifier.ClassifierEntityTypes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    typesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+typesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -509,14 +509,14 @@ proto.api.v1alpha1.classifier.FileTemplate.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.classifier.FileTemplate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    filename: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
+fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+filename: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
     proto.api.v1alpha1.classifier.FileTemplate.Field.toObject, includeInstance),
-    parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.classifier.ParseOpts.toObject(includeInstance, f),
-    constraints: (f = msg.getConstraints()) && proto.api.v1alpha1.classifier.Constraints.toObject(includeInstance, f),
-    foid: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    opts: (f = msg.getOpts()) && proto.api.v1alpha1.classifier.Opts.toObject(includeInstance, f)
+parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.classifier.ParseOpts.toObject(includeInstance, f),
+constraints: (f = msg.getConstraints()) && proto.api.v1alpha1.classifier.Constraints.toObject(includeInstance, f),
+foid: jspb.Message.getFieldWithDefault(msg, 6, 0),
+opts: (f = msg.getOpts()) && proto.api.v1alpha1.classifier.Opts.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -702,11 +702,11 @@ proto.api.v1alpha1.classifier.FileTemplate.Field.prototype.toObject = function(o
  */
 proto.api.v1alpha1.classifier.FileTemplate.Field.toObject = function(includeInstance, msg) {
   var f, obj = {
-    syntaxType: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    entityType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    format: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    rawValue: jspb.Message.getFieldWithDefault(msg, 5, "")
+syntaxType: jspb.Message.getFieldWithDefault(msg, 1, ""),
+entityType: jspb.Message.getFieldWithDefault(msg, 2, 0),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+format: jspb.Message.getFieldWithDefault(msg, 4, ""),
+rawValue: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1155,10 +1155,10 @@ proto.api.v1alpha1.classifier.Opts.prototype.toObject = function(opt_includeInst
  */
 proto.api.v1alpha1.classifier.Opts.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dateFormatsMap: (f = msg.getDateFormatsMap()) ? f.toObject(includeInstance, undefined) : [],
-    renameFieldsMap: (f = msg.getRenameFieldsMap()) ? f.toObject(includeInstance, undefined) : [],
-    parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.classifier.ParseOpts.toObject(includeInstance, f),
-    constraints: (f = msg.getConstraints()) && proto.api.v1alpha1.classifier.Constraints.toObject(includeInstance, f)
+dateFormatsMap: (f = msg.getDateFormatsMap()) ? f.toObject(includeInstance, undefined) : [],
+renameFieldsMap: (f = msg.getRenameFieldsMap()) ? f.toObject(includeInstance, undefined) : [],
+parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.classifier.ParseOpts.toObject(includeInstance, f),
+constraints: (f = msg.getConstraints()) && proto.api.v1alpha1.classifier.Constraints.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1454,11 +1454,11 @@ proto.api.v1alpha1.classifier.ParseOpts.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.classifier.ParseOpts.toObject = function(includeInstance, msg) {
   var f, obj = {
-    csv: (f = msg.getCsv()) && proto.api.v1alpha1.classifier.OptsCsv.toObject(includeInstance, f),
-    json: (f = msg.getJson()) && proto.api.v1alpha1.classifier.OptsJson.toObject(includeInstance, f),
-    jsonl: (f = msg.getJsonl()) && proto.api.v1alpha1.classifier.OptsJsonL.toObject(includeInstance, f),
-    fixed: (f = msg.getFixed()) && proto.api.v1alpha1.classifier.OptsFixed.toObject(includeInstance, f),
-    parquet: (f = msg.getParquet()) && proto.api.v1alpha1.classifier.OptsParquet.toObject(includeInstance, f)
+csv: (f = msg.getCsv()) && proto.api.v1alpha1.classifier.OptsCsv.toObject(includeInstance, f),
+json: (f = msg.getJson()) && proto.api.v1alpha1.classifier.OptsJson.toObject(includeInstance, f),
+jsonl: (f = msg.getJsonl()) && proto.api.v1alpha1.classifier.OptsJsonL.toObject(includeInstance, f),
+fixed: (f = msg.getFixed()) && proto.api.v1alpha1.classifier.OptsFixed.toObject(includeInstance, f),
+parquet: (f = msg.getParquet()) && proto.api.v1alpha1.classifier.OptsParquet.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1816,10 +1816,10 @@ proto.api.v1alpha1.classifier.OptsCsv.prototype.toObject = function(opt_includeI
  */
 proto.api.v1alpha1.classifier.OptsCsv.toObject = function(includeInstance, msg) {
   var f, obj = {
-    hasHeader: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    skipRows: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    headerList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    separator: jspb.Message.getFieldWithDefault(msg, 4, "")
+hasHeader: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+skipRows: jspb.Message.getFieldWithDefault(msg, 2, 0),
+headerList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+separator: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -2055,7 +2055,7 @@ proto.api.v1alpha1.classifier.OptsJson.prototype.toObject = function(opt_include
  */
 proto.api.v1alpha1.classifier.OptsJson.toObject = function(includeInstance, msg) {
   var f, obj = {
-    recordsRoot: jspb.Message.getFieldWithDefault(msg, 1, "")
+recordsRoot: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2286,8 +2286,8 @@ proto.api.v1alpha1.classifier.OptsFixed.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.classifier.OptsFixed.toObject = function(includeInstance, msg) {
   var f, obj = {
-    positionsMap: (f = msg.getPositionsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.classifier.OptsFixed.FieldOpts.toObject) : [],
-    hasHeader: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+positionsMap: (f = msg.getPositionsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.classifier.OptsFixed.FieldOpts.toObject) : [],
+hasHeader: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -2409,8 +2409,8 @@ proto.api.v1alpha1.classifier.OptsFixed.FieldOpts.prototype.toObject = function(
  */
 proto.api.v1alpha1.classifier.OptsFixed.FieldOpts.toObject = function(includeInstance, msg) {
   var f, obj = {
-    startingPosition: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    fieldLength: jspb.Message.getFieldWithDefault(msg, 14, 0)
+startingPosition: jspb.Message.getFieldWithDefault(msg, 13, 0),
+fieldLength: jspb.Message.getFieldWithDefault(msg, 14, 0)
   };
 
   if (includeInstance) {
@@ -2711,8 +2711,8 @@ proto.api.v1alpha1.classifier.Constraints.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.classifier.Constraints.toObject = function(includeInstance, msg) {
   var f, obj = {
-    forbidMap: (f = msg.getForbidMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.classifier.ClassifierEntityTypes.toObject) : [],
-    allowMap: (f = msg.getAllowMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.classifier.ClassifierEntityTypes.toObject) : []
+forbidMap: (f = msg.getForbidMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.classifier.ClassifierEntityTypes.toObject) : [],
+allowMap: (f = msg.getAllowMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.classifier.ClassifierEntityTypes.toObject) : []
   };
 
   if (includeInstance) {
@@ -2879,8 +2879,8 @@ proto.api.v1alpha1.classifier.ParseHints.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.classifier.ParseHints.toObject = function(includeInstance, msg) {
   var f, obj = {
-    parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.classifier.ParseOpts.toObject(includeInstance, f),
-    constraints: (f = msg.getConstraints()) && proto.api.v1alpha1.classifier.Constraints.toObject(includeInstance, f)
+parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.classifier.ParseOpts.toObject(includeInstance, f),
+constraints: (f = msg.getConstraints()) && proto.api.v1alpha1.classifier.Constraints.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

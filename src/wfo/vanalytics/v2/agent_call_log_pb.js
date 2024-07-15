@@ -241,7 +241,7 @@ proto.wfo.vanalytics.v2.AgentCallLog.prototype.toObject = function(opt_includeIn
  */
 proto.wfo.vanalytics.v2.AgentCallLog.toObject = function(includeInstance, msg) {
   var f, obj = {
-    actionsList: jspb.Message.toObjectList(msg.getActionsList(),
+actionsList: jspb.Message.toObjectList(msg.getActionsList(),
     proto.wfo.vanalytics.v2.AgentCallLog.Action.toObject, includeInstance)
   };
 
@@ -382,8 +382,8 @@ proto.wfo.vanalytics.v2.AgentCallLog.Action.prototype.toObject = function(opt_in
  */
 proto.wfo.vanalytics.v2.AgentCallLog.Action.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSkillsInitial: (f = msg.getCallSkillsInitial()) && proto.wfo.vanalytics.v2.AgentCallLog.CallSkillsInitial.toObject(includeInstance, f),
-    callEnded: jspb.Message.getFieldWithDefault(msg, 2, "")
+callSkillsInitial: (f = msg.getCallSkillsInitial()) && proto.wfo.vanalytics.v2.AgentCallLog.CallSkillsInitial.toObject(includeInstance, f),
+callEnded: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -588,8 +588,8 @@ proto.wfo.vanalytics.v2.AgentCallLog.CallSkillsInitial.prototype.toObject = func
  */
 proto.wfo.vanalytics.v2.AgentCallLog.CallSkillsInitial.toObject = function(includeInstance, msg) {
   var f, obj = {
-    needList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    wantList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+needList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+wantList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -824,8 +824,8 @@ proto.wfo.vanalytics.v2.AgentCallLogQuery.prototype.toObject = function(opt_incl
  */
 proto.wfo.vanalytics.v2.AgentCallLogQuery.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSkillsInitial: (f = msg.getCallSkillsInitial()) && proto.wfo.vanalytics.v2.AgentCallLogQuery.CallSkillsInitial.toObject(includeInstance, f),
-    callEnded: (f = msg.getCallEnded()) && proto.wfo.vanalytics.v2.AgentCallLogQuery.CallEnded.toObject(includeInstance, f)
+callSkillsInitial: (f = msg.getCallSkillsInitial()) && proto.wfo.vanalytics.v2.AgentCallLogQuery.CallSkillsInitial.toObject(includeInstance, f),
+callEnded: (f = msg.getCallEnded()) && proto.wfo.vanalytics.v2.AgentCallLogQuery.CallEnded.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -952,8 +952,8 @@ proto.wfo.vanalytics.v2.AgentCallLogQuery.CallSkillsInitial.prototype.toObject =
  */
 proto.wfo.vanalytics.v2.AgentCallLogQuery.CallSkillsInitial.toObject = function(includeInstance, msg) {
   var f, obj = {
-    need: (f = msg.getNeed()) && proto.wfo.vanalytics.v2.AgentCallLogQuery.CallSkillsInitial.Need.toObject(includeInstance, f),
-    want: (f = msg.getWant()) && proto.wfo.vanalytics.v2.AgentCallLogQuery.CallSkillsInitial.Want.toObject(includeInstance, f)
+need: (f = msg.getNeed()) && proto.wfo.vanalytics.v2.AgentCallLogQuery.CallSkillsInitial.Need.toObject(includeInstance, f),
+want: (f = msg.getWant()) && proto.wfo.vanalytics.v2.AgentCallLogQuery.CallSkillsInitial.Want.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1087,8 +1087,8 @@ proto.wfo.vanalytics.v2.AgentCallLogQuery.CallSkillsInitial.Need.prototype.toObj
  */
 proto.wfo.vanalytics.v2.AgentCallLogQuery.CallSkillsInitial.Need.toObject = function(includeInstance, msg) {
   var f, obj = {
-    valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    all: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+all: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -1273,8 +1273,8 @@ proto.wfo.vanalytics.v2.AgentCallLogQuery.CallSkillsInitial.Want.prototype.toObj
  */
 proto.wfo.vanalytics.v2.AgentCallLogQuery.CallSkillsInitial.Want.toObject = function(includeInstance, msg) {
   var f, obj = {
-    valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    all: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+all: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -1533,7 +1533,7 @@ proto.wfo.vanalytics.v2.AgentCallLogQuery.CallEnded.prototype.toObject = functio
  */
 proto.wfo.vanalytics.v2.AgentCallLogQuery.CallEnded.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reasonsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+reasonsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {

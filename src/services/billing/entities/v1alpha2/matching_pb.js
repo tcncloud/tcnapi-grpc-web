@@ -126,8 +126,8 @@ proto.services.billing.entities.v1alpha2.MatchingConfig.prototype.toObject = fun
  */
 proto.services.billing.entities.v1alpha2.MatchingConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    countryPrefix: (f = msg.getCountryPrefix()) && proto.services.billing.entities.v1alpha2.MatchingConfigCountryPrefix.toObject(includeInstance, f)
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+countryPrefix: (f = msg.getCountryPrefix()) && proto.services.billing.entities.v1alpha2.MatchingConfigCountryPrefix.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -314,8 +314,8 @@ proto.services.billing.entities.v1alpha2.MatchingConfigCountryPrefix.prototype.t
  */
 proto.services.billing.entities.v1alpha2.MatchingConfigCountryPrefix.toObject = function(includeInstance, msg) {
   var f, obj = {
-    countryCode: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    prefixesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+countryCode: jspb.Message.getFieldWithDefault(msg, 1, 0),
+prefixesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {

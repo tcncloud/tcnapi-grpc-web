@@ -345,15 +345,15 @@ proto.api.v1alpha1.soundboard.SoundboardDetails.prototype.toObject = function(op
  */
 proto.api.v1alpha1.soundboard.SoundboardDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    soundboardId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    fileName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fileType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    title: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastModified: (f = msg.getLastModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    fileSize: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    recordingLength: jspb.Message.getFieldWithDefault(msg, 9, 0)
+soundboardId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+fileName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fileType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+title: jspb.Message.getFieldWithDefault(msg, 4, ""),
+description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lastModified: (f = msg.getLastModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+fileSize: jspb.Message.getFieldWithDefault(msg, 8, 0),
+recordingLength: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -757,7 +757,7 @@ proto.api.v1alpha1.soundboard.GetSoundboardFileReq.prototype.toObject = function
  */
 proto.api.v1alpha1.soundboard.GetSoundboardFileReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    soundboardId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+soundboardId: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -887,7 +887,7 @@ proto.api.v1alpha1.soundboard.GetSoundboardFileRes.prototype.toObject = function
  */
 proto.api.v1alpha1.soundboard.GetSoundboardFileRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    soundboardFile: msg.getSoundboardFile_asB64()
+soundboardFile: msg.getSoundboardFile_asB64()
   };
 
   if (includeInstance) {
@@ -1041,7 +1041,7 @@ proto.api.v1alpha1.soundboard.GetSoundboardReq.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.soundboard.GetSoundboardReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    soundboardId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+soundboardId: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -1171,7 +1171,7 @@ proto.api.v1alpha1.soundboard.GetSoundboardRes.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.soundboard.GetSoundboardRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    soundboard: (f = msg.getSoundboard()) && proto.api.v1alpha1.soundboard.SoundboardDetails.toObject(includeInstance, f)
+soundboard: (f = msg.getSoundboard()) && proto.api.v1alpha1.soundboard.SoundboardDetails.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1322,8 +1322,8 @@ proto.api.v1alpha1.soundboard.CreateSoundboardReq.prototype.toObject = function(
  */
 proto.api.v1alpha1.soundboard.CreateSoundboardReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    soundboard: (f = msg.getSoundboard()) && proto.api.v1alpha1.soundboard.SoundboardDetails.toObject(includeInstance, f),
-    ftsId: jspb.Message.getFieldWithDefault(msg, 2, "")
+soundboard: (f = msg.getSoundboard()) && proto.api.v1alpha1.soundboard.SoundboardDetails.toObject(includeInstance, f),
+ftsId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1503,8 +1503,8 @@ proto.api.v1alpha1.soundboard.CreateSoundboardRes.prototype.toObject = function(
  */
 proto.api.v1alpha1.soundboard.CreateSoundboardRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    soundboardId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    ftsId: jspb.Message.getFieldWithDefault(msg, 2, "")
+soundboardId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+ftsId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1771,7 +1771,7 @@ proto.api.v1alpha1.soundboard.ListSoundboardsRes.prototype.toObject = function(o
  */
 proto.api.v1alpha1.soundboard.ListSoundboardsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    soundboardsList: jspb.Message.toObjectList(msg.getSoundboardsList(),
+soundboardsList: jspb.Message.toObjectList(msg.getSoundboardsList(),
     proto.api.v1alpha1.soundboard.SoundboardDetails.toObject, includeInstance)
   };
 
@@ -1924,7 +1924,7 @@ proto.api.v1alpha1.soundboard.UpdateSoundboardReq.prototype.toObject = function(
  */
 proto.api.v1alpha1.soundboard.UpdateSoundboardReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    soundboard: (f = msg.getSoundboard()) && proto.api.v1alpha1.soundboard.SoundboardDetails.toObject(includeInstance, f)
+soundboard: (f = msg.getSoundboard()) && proto.api.v1alpha1.soundboard.SoundboardDetails.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2075,7 +2075,7 @@ proto.api.v1alpha1.soundboard.UpdateSoundboardRes.prototype.toObject = function(
  */
 proto.api.v1alpha1.soundboard.UpdateSoundboardRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    soundboardId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+soundboardId: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -2205,7 +2205,7 @@ proto.api.v1alpha1.soundboard.DeleteSoundboardReq.prototype.toObject = function(
  */
 proto.api.v1alpha1.soundboard.DeleteSoundboardReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    soundboardId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+soundboardId: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {

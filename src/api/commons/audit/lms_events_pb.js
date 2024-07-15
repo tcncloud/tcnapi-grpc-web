@@ -121,10 +121,10 @@ proto.api.commons.audit.LMSPipelineFailureEvent.prototype.toObject = function(op
  */
 proto.api.commons.audit.LMSPipelineFailureEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    elementId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    elementName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fileName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    failureMessage: jspb.Message.getFieldWithDefault(msg, 4, "")
+elementId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+elementName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fileName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+failureMessage: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -341,10 +341,10 @@ proto.api.commons.audit.LMSPipelineNoOutputEvent.prototype.toObject = function(o
  */
 proto.api.commons.audit.LMSPipelineNoOutputEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    elementId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    elementName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fileName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    eventMessage: jspb.Message.getFieldWithDefault(msg, 4, "")
+elementId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+elementName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fileName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+eventMessage: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -561,10 +561,10 @@ proto.api.commons.audit.LMSPipelineSuccessfulEvent.prototype.toObject = function
  */
 proto.api.commons.audit.LMSPipelineSuccessfulEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    elementId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    elementName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fileName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    eventMessage: jspb.Message.getFieldWithDefault(msg, 4, "")
+elementId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+elementName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fileName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+eventMessage: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {

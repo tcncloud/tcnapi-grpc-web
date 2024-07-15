@@ -111,9 +111,9 @@ proto.services.billing.entities.v1alpha1.BillingPlanSnapshot.prototype.toObject 
  */
 proto.services.billing.entities.v1alpha1.BillingPlanSnapshot.toObject = function(includeInstance, msg) {
   var f, obj = {
-    startDate: (f = msg.getStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    endDate: (f = msg.getEndDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    ratesList: jspb.Message.toObjectList(msg.getRatesList(),
+startDate: (f = msg.getStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+endDate: (f = msg.getEndDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+ratesList: jspb.Message.toObjectList(msg.getRatesList(),
     services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject, includeInstance)
   };
 
@@ -373,15 +373,15 @@ proto.services.billing.entities.v1alpha1.BillingPlan.prototype.toObject = functi
  */
 proto.services.billing.entities.v1alpha1.BillingPlan.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    rateDefinitionIdsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
-    status: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    actualStartTime: (f = msg.getActualStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+rateDefinitionIdsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+status: jspb.Message.getFieldWithDefault(msg, 8, 0),
+actualStartTime: (f = msg.getActualStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

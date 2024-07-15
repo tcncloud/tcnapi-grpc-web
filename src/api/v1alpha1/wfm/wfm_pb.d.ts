@@ -5435,11 +5435,6 @@ export class DatetimePattern extends jspb.Message {
   setCalendarItemsList(value: Array<DatetimePattern.CalendarItem>): void;
   addCalendarItems(value?: DatetimePattern.CalendarItem, index?: number): DatetimePattern.CalendarItem;
 
-  hasSchedulingActivitySid(): boolean;
-  clearSchedulingActivitySid(): void;
-  getSchedulingActivitySid(): google_protobuf_wrappers_pb.Int64Value | undefined;
-  setSchedulingActivitySid(value?: google_protobuf_wrappers_pb.Int64Value): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatetimePattern.AsObject;
   static toObject(includeInstance: boolean, msg: DatetimePattern): DatetimePattern.AsObject;
@@ -5454,7 +5449,6 @@ export namespace DatetimePattern {
   export type AsObject = {
     weekMapsList: Array<DatetimePattern.WeekMap.AsObject>,
     calendarItemsList: Array<DatetimePattern.CalendarItem.AsObject>,
-    schedulingActivitySid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
   }
 
   export class WeekMap extends jspb.Message {
@@ -5499,6 +5493,11 @@ export namespace DatetimePattern {
       getValue(): api_commons_wfm_pb.OptionTypes | undefined;
       setValue(value?: api_commons_wfm_pb.OptionTypes): void;
 
+      hasSchedulingActivitySid(): boolean;
+      clearSchedulingActivitySid(): void;
+      getSchedulingActivitySid(): google_protobuf_wrappers_pb.Int64Value | undefined;
+      setSchedulingActivitySid(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
       serializeBinary(): Uint8Array;
       toObject(includeInstance?: boolean): WeekMapDOW.AsObject;
       static toObject(includeInstance: boolean, msg: WeekMapDOW): WeekMapDOW.AsObject;
@@ -5515,6 +5514,7 @@ export namespace DatetimePattern {
         startMinuteInDay: number,
         endMinuteInDay: number,
         value?: api_commons_wfm_pb.OptionTypes.AsObject,
+        schedulingActivitySid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
       }
     }
   }
@@ -5530,6 +5530,11 @@ export namespace DatetimePattern {
     getValue(): api_commons_wfm_pb.OptionTypes | undefined;
     setValue(value?: api_commons_wfm_pb.OptionTypes): void;
 
+    hasSchedulingActivitySid(): boolean;
+    clearSchedulingActivitySid(): void;
+    getSchedulingActivitySid(): google_protobuf_wrappers_pb.Int64Value | undefined;
+    setSchedulingActivitySid(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CalendarItem.AsObject;
     static toObject(includeInstance: boolean, msg: CalendarItem): CalendarItem.AsObject;
@@ -5544,6 +5549,7 @@ export namespace DatetimePattern {
     export type AsObject = {
       datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
       value?: api_commons_wfm_pb.OptionTypes.AsObject,
+      schedulingActivitySid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     }
   }
 }

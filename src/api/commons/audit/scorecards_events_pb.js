@@ -569,10 +569,10 @@ proto.api.commons.audit.ScorecardsCreateQuestionEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.ScorecardsCreateQuestionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authorId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    questionText: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
+authorId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+questionText: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -810,11 +810,11 @@ proto.api.commons.audit.ScorecardsUpdateQuestionEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.ScorecardsUpdateQuestionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    questionText: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+questionText: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1109,11 +1109,11 @@ proto.api.commons.audit.ScorecardsDeleteQuestionEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.ScorecardsDeleteQuestionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    questionText: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+questionText: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1401,13 +1401,13 @@ proto.api.commons.audit.ScorecardsCreateScorecardEvent.prototype.toObject = func
  */
 proto.api.commons.audit.ScorecardsCreateScorecardEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authorId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    passScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    scoreType: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    evaluationType: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
+authorId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+passScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+scoreType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+evaluationType: jspb.Message.getFieldWithDefault(msg, 6, 0),
+scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1732,16 +1732,16 @@ proto.api.commons.audit.ScorecardsUpdateScorecardEvent.prototype.toObject = func
  */
 proto.api.commons.audit.ScorecardsUpdateScorecardEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    passScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    scoreType: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    evaluationType: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    allowFeedback: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    state: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+passScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+scoreType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+evaluationType: jspb.Message.getFieldWithDefault(msg, 6, 0),
+allowFeedback: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+state: jspb.Message.getFieldWithDefault(msg, 8, 0),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2174,14 +2174,14 @@ proto.api.commons.audit.ScorecardsDeleteScorecardEvent.prototype.toObject = func
  */
 proto.api.commons.audit.ScorecardsDeleteScorecardEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    passScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    scoreType: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    evaluationType: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    state: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+passScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+scoreType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+evaluationType: jspb.Message.getFieldWithDefault(msg, 6, 0),
+state: jspb.Message.getFieldWithDefault(msg, 7, 0),
+scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2535,13 +2535,13 @@ proto.api.commons.audit.ScorecardsCloneScorecardEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.ScorecardsCloneScorecardEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authorId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    passScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    scoreType: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    evaluationType: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
+authorId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+passScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+scoreType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+evaluationType: jspb.Message.getFieldWithDefault(msg, 6, 0),
+scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2866,12 +2866,12 @@ proto.api.commons.audit.ScorecardsCreateEvaluationEvent.prototype.toObject = fun
  */
 proto.api.commons.audit.ScorecardsCreateEvaluationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    scorerId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    agentUserId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    callSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
+evaluationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+scorerId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+agentUserId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+callSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3167,12 +3167,12 @@ proto.api.commons.audit.ScorecardsUpdateEvaluationEvent.prototype.toObject = fun
  */
 proto.api.commons.audit.ScorecardsUpdateEvaluationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    scorerId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    agentUserId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    callSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
+evaluationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+scorerId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+agentUserId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+callSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3468,12 +3468,12 @@ proto.api.commons.audit.ScorecardsDeleteEvaluationEvent.prototype.toObject = fun
  */
 proto.api.commons.audit.ScorecardsDeleteEvaluationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    agentUserId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    callSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
+evaluationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+userId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+agentUserId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+callSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+evaluation: (f = msg.getEvaluation()) && api_commons_scorecards_pb.Evaluation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3769,11 +3769,11 @@ proto.api.commons.audit.ScorecardsCreateSectionEvent.prototype.toObject = functi
  */
 proto.api.commons.audit.ScorecardsCreateSectionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    weight: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+weight: jspb.Message.getFieldWithDefault(msg, 4, 0),
+section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4040,13 +4040,13 @@ proto.api.commons.audit.ScorecardsUpdateSectionEvent.prototype.toObject = functi
  */
 proto.api.commons.audit.ScorecardsUpdateSectionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    weight: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    sortOrder: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+weight: jspb.Message.getFieldWithDefault(msg, 4, 0),
+sortOrder: jspb.Message.getFieldWithDefault(msg, 5, 0),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4392,11 +4392,11 @@ proto.api.commons.audit.ScorecardsDeleteSectionEvent.prototype.toObject = functi
  */
 proto.api.commons.audit.ScorecardsDeleteSectionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    weight: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+weight: jspb.Message.getFieldWithDefault(msg, 4, 0),
+section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4663,11 +4663,11 @@ proto.api.commons.audit.ScorecardsCreateCategoryEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.ScorecardsCreateCategoryEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authorId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
+authorId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4955,11 +4955,11 @@ proto.api.commons.audit.ScorecardsUpdateCategoryEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.ScorecardsUpdateCategoryEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5247,11 +5247,11 @@ proto.api.commons.audit.ScorecardsDeleteCategoryEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.ScorecardsDeleteCategoryEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    deletedAt: (f = msg.getDeletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+deletedAt: (f = msg.getDeletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5539,11 +5539,11 @@ proto.api.commons.audit.ScorecardsCreateEvaluationQuestionEvent.prototype.toObje
  */
 proto.api.commons.audit.ScorecardsCreateEvaluationQuestionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationQuestionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
+evaluationQuestionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5810,14 +5810,14 @@ proto.api.commons.audit.ScorecardsUpdateEvaluationQuestionEvent.prototype.toObje
  */
 proto.api.commons.audit.ScorecardsUpdateEvaluationQuestionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationQuestionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    skipped: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    points: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
+evaluationQuestionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+skipped: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+points: jspb.Message.getFieldWithDefault(msg, 6, 0),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6192,11 +6192,11 @@ proto.api.commons.audit.ScorecardsDeleteEvaluationQuestionEvent.prototype.toObje
  */
 proto.api.commons.audit.ScorecardsDeleteEvaluationQuestionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationQuestionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    evaluationQuestions: (f = msg.getEvaluationQuestions()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
+evaluationQuestionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+evaluationQuestions: (f = msg.getEvaluationQuestions()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6463,13 +6463,13 @@ proto.api.commons.audit.ScorecardsCreateScorecardQuestionEvent.prototype.toObjec
  */
 proto.api.commons.audit.ScorecardsCreateScorecardQuestionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    question: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    allowSkip: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    maxPoints: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    allowMultiSelect: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+question: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+allowSkip: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+maxPoints: jspb.Message.getFieldWithDefault(msg, 5, 0),
+allowMultiSelect: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6794,15 +6794,15 @@ proto.api.commons.audit.ScorecardsUpdateScorecardQuestionEvent.prototype.toObjec
  */
 proto.api.commons.audit.ScorecardsUpdateScorecardQuestionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    question: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    allowSkip: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    maxPoints: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    allowMultiSelect: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    sortOrder: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+question: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+allowSkip: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+maxPoints: jspb.Message.getFieldWithDefault(msg, 5, 0),
+allowMultiSelect: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+sortOrder: jspb.Message.getFieldWithDefault(msg, 7, 0),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7206,13 +7206,13 @@ proto.api.commons.audit.ScorecardsDeleteScorecardQuestionEvent.prototype.toObjec
  */
 proto.api.commons.audit.ScorecardsDeleteScorecardQuestionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    question: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    allowSkip: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    maxPoints: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    allowMultiSelect: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+question: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+allowSkip: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+maxPoints: jspb.Message.getFieldWithDefault(msg, 5, 0),
+allowMultiSelect: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7537,14 +7537,14 @@ proto.api.commons.audit.ScorecardsCreateAutoEvaluationEvent.prototype.toObject =
  */
 proto.api.commons.audit.ScorecardsCreateAutoEvaluationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoEvaluationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    agentUserId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    callSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    callType: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    riskLevel: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    autoEvaluation: (f = msg.getAutoEvaluation()) && api_commons_scorecards_pb.AutoEvaluation.toObject(includeInstance, f)
+autoEvaluationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+agentUserId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+callSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
+callType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 6, 0),
+riskLevel: jspb.Message.getFieldWithDefault(msg, 7, 0),
+autoEvaluation: (f = msg.getAutoEvaluation()) && api_commons_scorecards_pb.AutoEvaluation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

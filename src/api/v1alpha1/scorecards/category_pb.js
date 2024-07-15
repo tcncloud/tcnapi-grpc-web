@@ -375,7 +375,7 @@ proto.api.v1alpha1.scorecards.CreateCategoryRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.scorecards.CreateCategoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
+category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -526,7 +526,7 @@ proto.api.v1alpha1.scorecards.CreateCategoryResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.CreateCategoryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
+category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -684,10 +684,10 @@ proto.api.v1alpha1.scorecards.ListCategoriesRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.scorecards.ListCategoriesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authorIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    skillProfilesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    callTypesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    categoryType: jspb.Message.getFieldWithDefault(msg, 5, 0)
+authorIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+skillProfilesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+callTypesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+categoryType: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -981,7 +981,7 @@ proto.api.v1alpha1.scorecards.ListCategoriesResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.ListCategoriesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    categoriesList: jspb.Message.toObjectList(msg.getCategoriesList(),
+categoriesList: jspb.Message.toObjectList(msg.getCategoriesList(),
     api_commons_scorecards_pb.Category.toObject, includeInstance)
   };
 
@@ -1134,8 +1134,8 @@ proto.api.v1alpha1.scorecards.UpdateCategoryRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.scorecards.UpdateCategoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1336,7 +1336,7 @@ proto.api.v1alpha1.scorecards.UpdateCategoryResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.UpdateCategoryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
+category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1487,7 +1487,7 @@ proto.api.v1alpha1.scorecards.DeleteCategoryRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.scorecards.DeleteCategoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    categoryId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+categoryId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1617,7 +1617,7 @@ proto.api.v1alpha1.scorecards.DeleteCategoryResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.DeleteCategoryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
+category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1768,8 +1768,8 @@ proto.api.v1alpha1.scorecards.GetCategoryRequest.prototype.toObject = function(o
  */
 proto.api.v1alpha1.scorecards.GetCategoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    categoryId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    title: jspb.Message.getFieldWithDefault(msg, 3, "")
+categoryId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+title: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1928,7 +1928,7 @@ proto.api.v1alpha1.scorecards.GetCategoryResponse.prototype.toObject = function(
  */
 proto.api.v1alpha1.scorecards.GetCategoryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
+category: (f = msg.getCategory()) && api_commons_scorecards_pb.Category.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2086,13 +2086,13 @@ proto.api.v1alpha1.scorecards.SampleCallsByCategoryRequest.prototype.toObject = 
  */
 proto.api.v1alpha1.scorecards.SampleCallsByCategoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    categoryId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    scorerMaxEvaluations: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    samplePercentage: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 10, 0)
+categoryId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+scorerMaxEvaluations: jspb.Message.getFieldWithDefault(msg, 5, 0),
+samplePercentage: jspb.Message.getFieldWithDefault(msg, 6, 0),
+agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+scorecardId: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -2464,7 +2464,7 @@ proto.api.v1alpha1.scorecards.SampleCallsByCategoryResponse.prototype.toObject =
  */
 proto.api.v1alpha1.scorecards.SampleCallsByCategoryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentCallsList: jspb.Message.toObjectList(msg.getAgentCallsList(),
+agentCallsList: jspb.Message.toObjectList(msg.getAgentCallsList(),
     proto.api.v1alpha1.scorecards.SampleAgentCall.toObject, includeInstance)
   };
 
@@ -2617,13 +2617,13 @@ proto.api.v1alpha1.scorecards.SampleAgentCall.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.scorecards.SampleAgentCall.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    callType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    callStart: (f = msg.getCallStart()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    callDuration: (f = msg.getCallDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    speech: (f = msg.getSpeech()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    silence: (f = msg.getSilence()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    agentUserId: jspb.Message.getFieldWithDefault(msg, 7, "")
+callSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+callType: jspb.Message.getFieldWithDefault(msg, 2, 0),
+callStart: (f = msg.getCallStart()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+callDuration: (f = msg.getCallDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+speech: (f = msg.getSpeech()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+silence: (f = msg.getSilence()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+agentUserId: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -3018,10 +3018,10 @@ proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.prototype.toObject = 
  */
 proto.api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    authorIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    skillProfilesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    categoryType: jspb.Message.getFieldWithDefault(msg, 4, 0)
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+authorIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+skillProfilesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+categoryType: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {

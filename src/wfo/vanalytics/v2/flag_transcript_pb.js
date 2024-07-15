@@ -110,8 +110,8 @@ proto.wfo.vanalytics.v2.CreateFlagTranscriptRequest.prototype.toObject = functio
  */
 proto.wfo.vanalytics.v2.CreateFlagTranscriptRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    flag: (f = msg.getFlag()) && wfo_vanalytics_v2_flag_pb.Flag.toObject(includeInstance, f)
+transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+flag: (f = msg.getFlag()) && wfo_vanalytics_v2_flag_pb.Flag.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
