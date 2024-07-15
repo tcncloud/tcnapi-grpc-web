@@ -479,9 +479,9 @@ proto.api.v1alpha1.contactmanager.GetContactListRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.contactmanager.GetContactListRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    requestMask: (f = msg.getRequestMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    projectId: jspb.Message.getFieldWithDefault(msg, 3, "0")
+requestMask: (f = msg.getRequestMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+projectId: jspb.Message.getFieldWithDefault(msg, 3, "0")
   };
 
   if (includeInstance) {
@@ -697,7 +697,7 @@ proto.api.v1alpha1.contactmanager.GetContactListResponse.prototype.toObject = fu
  */
 proto.api.v1alpha1.contactmanager.GetContactListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerListList: jspb.Message.toObjectList(msg.getContactManagerListList(),
+contactManagerListList: jspb.Message.toObjectList(msg.getContactManagerListList(),
     proto.api.v1alpha1.contactmanager.ContactManagerList.toObject, includeInstance)
   };
 
@@ -850,9 +850,9 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.prototype.toObject
  */
 proto.api.v1alpha1.contactmanager.ListContactEntryListRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    projectId: jspb.Message.getFieldWithDefault(msg, 3, "")
+contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+projectId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1047,7 +1047,7 @@ proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.prototype.toObjec
  */
 proto.api.v1alpha1.contactmanager.ListContactEntryListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerEntryList: jspb.Message.toObjectList(msg.getContactManagerEntryList(),
+contactManagerEntryList: jspb.Message.toObjectList(msg.getContactManagerEntryList(),
     proto.api.v1alpha1.contactmanager.ContactManagerEntry.toObject, includeInstance)
   };
 
@@ -1200,7 +1200,7 @@ proto.api.v1alpha1.contactmanager.GetEncContactEntryRequest.prototype.toObject =
  */
 proto.api.v1alpha1.contactmanager.GetEncContactEntryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -1337,7 +1337,7 @@ proto.api.v1alpha1.contactmanager.GetEncContactEntryResponse.prototype.toObject 
  */
 proto.api.v1alpha1.contactmanager.GetEncContactEntryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerEntryList: jspb.Message.toObjectList(msg.getContactManagerEntryList(),
+contactManagerEntryList: jspb.Message.toObjectList(msg.getContactManagerEntryList(),
     proto.api.v1alpha1.contactmanager.ContactManagerEntry.toObject, includeInstance)
   };
 
@@ -1497,8 +1497,8 @@ proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest.prototype.toObjec
  */
 proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    projectId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    kycResponseList: jspb.Message.toObjectList(msg.getKycResponseList(),
+projectId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+kycResponseList: jspb.Message.toObjectList(msg.getKycResponseList(),
     proto.api.v1alpha1.contactmanager.ContactManagerEntryVal.toObject, includeInstance)
   };
 
@@ -1687,8 +1687,8 @@ proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.prototype.toObje
  */
 proto.api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    verified: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    contactEntryList: jspb.Message.toObjectList(msg.getContactEntryList(),
+verified: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+contactEntryList: jspb.Message.toObjectList(msg.getContactEntryList(),
     proto.api.v1alpha1.contactmanager.ContactManagerEntry.toObject, includeInstance)
   };
 
@@ -1870,7 +1870,7 @@ proto.api.v1alpha1.contactmanager.GetKYCKeysRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.contactmanager.GetKYCKeysRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    projectSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+projectSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -2007,7 +2007,7 @@ proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.contactmanager.GetKYCKeysResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entryTypeList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+entryTypeList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2156,12 +2156,12 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.toObject = funct
  */
 proto.api.v1alpha1.contactmanager.ContactManagerEntry.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    contactManagerEntryListId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    key: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+contactManagerEntryListId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+key: jspb.Message.getFieldWithDefault(msg, 3, ""),
+value: jspb.Message.getFieldWithDefault(msg, 4, ""),
+type: jspb.Message.getFieldWithDefault(msg, 5, ""),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2464,15 +2464,15 @@ proto.api.v1alpha1.contactmanager.ContactManagerList.prototype.toObject = functi
  */
 proto.api.v1alpha1.contactmanager.ContactManagerList.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    projectId: jspb.Message.getFieldWithDefault(msg, 3, "0"),
-    fileName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    listDetailsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    ttl: jspb.Message.getFieldWithDefault(msg, 7, "0"),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
+contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+projectId: jspb.Message.getFieldWithDefault(msg, 3, "0"),
+fileName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+listDetailsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+ttl: jspb.Message.getFieldWithDefault(msg, 7, "0"),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -2874,8 +2874,8 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntryVal.prototype.toObject = fu
  */
 proto.api.v1alpha1.contactmanager.ContactManagerEntryVal.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 2, "")
+type: jspb.Message.getFieldWithDefault(msg, 1, ""),
+value: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3041,8 +3041,8 @@ proto.api.v1alpha1.contactmanager.AddContactEntryRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.contactmanager.AddContactEntryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    entryList: jspb.Message.toObjectList(msg.getEntryList(),
+contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+entryList: jspb.Message.toObjectList(msg.getEntryList(),
     proto.api.v1alpha1.contactmanager.Entry.toObject, includeInstance)
   };
 
@@ -3224,9 +3224,9 @@ proto.api.v1alpha1.contactmanager.Entry.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.contactmanager.Entry.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 3, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+value: jspb.Message.getFieldWithDefault(msg, 2, ""),
+type: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -3414,7 +3414,7 @@ proto.api.v1alpha1.contactmanager.AddContactEntryResponse.prototype.toObject = f
  */
 proto.api.v1alpha1.contactmanager.AddContactEntryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+contactId: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -3551,9 +3551,9 @@ proto.api.v1alpha1.contactmanager.EditContactEntryRequest.prototype.toObject = f
  */
 proto.api.v1alpha1.contactmanager.EditContactEntryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    editedEntryList: jspb.Message.toObjectList(msg.getEditedEntryList(),
+contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+editedEntryList: jspb.Message.toObjectList(msg.getEditedEntryList(),
     proto.api.v1alpha1.contactmanager.EditedEntry.toObject, includeInstance)
   };
 
@@ -3764,10 +3764,10 @@ proto.api.v1alpha1.contactmanager.EditedEntry.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.contactmanager.EditedEntry.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerEntryListId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 4, "")
+contactManagerEntryListId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+value: jspb.Message.getFieldWithDefault(msg, 3, ""),
+type: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {

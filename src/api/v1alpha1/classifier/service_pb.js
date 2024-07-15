@@ -353,10 +353,10 @@ proto.api.v1alpha1.classifier.ParseFileRequest.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.classifier.ParseFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rawData: msg.getRawData_asB64(),
-    reparseFile: (f = msg.getReparseFile()) && proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.toObject(includeInstance, f),
-    parseWithHints: (f = msg.getParseWithHints()) && proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 5, "")
+rawData: msg.getRawData_asB64(),
+reparseFile: (f = msg.getReparseFile()) && proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.toObject(includeInstance, f),
+parseWithHints: (f = msg.getParseWithHints()) && proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -505,9 +505,9 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.prototype.toObject = 
  */
 proto.api.v1alpha1.classifier.ParseFileRequest.ReParseFile.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    hints: (f = msg.getHints()) && api_v1alpha1_classifier_entities_pb.ParseHints.toObject(includeInstance, f),
-    opts: (f = msg.getOpts()) && api_v1alpha1_classifier_entities_pb.Opts.toObject(includeInstance, f)
+fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+hints: (f = msg.getHints()) && api_v1alpha1_classifier_entities_pb.ParseHints.toObject(includeInstance, f),
+opts: (f = msg.getOpts()) && api_v1alpha1_classifier_entities_pb.Opts.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -737,8 +737,8 @@ proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.prototype.toObject
  */
 proto.api.v1alpha1.classifier.ParseFileRequest.ParseWithHints.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rawData: msg.getRawData_asB64(),
-    opts: (f = msg.getOpts()) && api_v1alpha1_classifier_entities_pb.Opts.toObject(includeInstance, f)
+rawData: msg.getRawData_asB64(),
+opts: (f = msg.getOpts()) && api_v1alpha1_classifier_entities_pb.Opts.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1094,7 +1094,7 @@ proto.api.v1alpha1.classifier.ParseFileResponse.prototype.toObject = function(op
  */
 proto.api.v1alpha1.classifier.ParseFileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_classifier_entities_pb.FileTemplate.toObject(includeInstance, f)
+fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_classifier_entities_pb.FileTemplate.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1245,7 +1245,7 @@ proto.api.v1alpha1.classifier.UpdateFileTemplateRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.classifier.UpdateFileTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_classifier_entities_pb.FileTemplate.toObject(includeInstance, f)
+fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_classifier_entities_pb.FileTemplate.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1497,7 +1497,7 @@ proto.api.v1alpha1.classifier.DeleteFileTemplateRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.classifier.DeleteFileTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: jspb.Message.getFieldWithDefault(msg, 1, "0")
+fileTemplate: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -1728,9 +1728,9 @@ proto.api.v1alpha1.classifier.ListFileTemplatesRequest.prototype.toObject = func
  */
 proto.api.v1alpha1.classifier.ListFileTemplatesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prevId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    asc: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0)
+prevId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+asc: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1925,7 +1925,7 @@ proto.api.v1alpha1.classifier.ListFileTemplatesResponse.prototype.toObject = fun
  */
 proto.api.v1alpha1.classifier.ListFileTemplatesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplatesList: jspb.Message.toObjectList(msg.getFileTemplatesList(),
+fileTemplatesList: jspb.Message.toObjectList(msg.getFileTemplatesList(),
     api_v1alpha1_classifier_entities_pb.FileTemplate.toObject, includeInstance)
   };
 
@@ -2078,7 +2078,7 @@ proto.api.v1alpha1.classifier.GetFileTemplateRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.classifier.GetFileTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -2208,7 +2208,7 @@ proto.api.v1alpha1.classifier.GetFileTemplateResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.classifier.GetFileTemplateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_classifier_entities_pb.FileTemplate.toObject(includeInstance, f)
+fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_classifier_entities_pb.FileTemplate.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

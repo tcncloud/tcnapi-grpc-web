@@ -226,31 +226,31 @@ proto.api.commons.DashboardAgentInfo.prototype.toObject = function(opt_includeIn
  */
 proto.api.commons.DashboardAgentInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    userName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    huntGroupName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    partnerAgentId: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    huntGroupSid: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    agentSid: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    userCallerId: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    firstName: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    lastName: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    created: (f = msg.getCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastUpdated: (f = msg.getLastUpdated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    agentProfileGroupName: jspb.Message.getFieldWithDefault(msg, 18, ""),
-    agentStatus: jspb.Message.getFieldWithDefault(msg, 19, 0),
-    currentConversationSid: jspb.Message.getFieldWithDefault(msg, 20, "0"),
-    averageCustomerWaitTimeSeconds: jspb.Message.getFieldWithDefault(msg, 22, 0),
-    averageTimeToRespondSeconds: jspb.Message.getFieldWithDefault(msg, 23, 0),
-    averageConversationDurationSeconds: jspb.Message.getFieldWithDefault(msg, 24, 0),
-    loginTime: (f = msg.getLoginTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastEventTime: (f = msg.getLastEventTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    eventsList: jspb.Message.toObjectList(msg.getEventsList(),
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+userName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+huntGroupName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+partnerAgentId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+huntGroupSid: jspb.Message.getFieldWithDefault(msg, 9, 0),
+agentSid: jspb.Message.getFieldWithDefault(msg, 10, 0),
+userCallerId: jspb.Message.getFieldWithDefault(msg, 12, ""),
+firstName: jspb.Message.getFieldWithDefault(msg, 13, ""),
+lastName: jspb.Message.getFieldWithDefault(msg, 14, ""),
+created: (f = msg.getCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lastUpdated: (f = msg.getLastUpdated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 17, ""),
+agentProfileGroupName: jspb.Message.getFieldWithDefault(msg, 18, ""),
+agentStatus: jspb.Message.getFieldWithDefault(msg, 19, 0),
+currentConversationSid: jspb.Message.getFieldWithDefault(msg, 20, "0"),
+averageCustomerWaitTimeSeconds: jspb.Message.getFieldWithDefault(msg, 22, 0),
+averageTimeToRespondSeconds: jspb.Message.getFieldWithDefault(msg, 23, 0),
+averageConversationDurationSeconds: jspb.Message.getFieldWithDefault(msg, 24, 0),
+loginTime: (f = msg.getLoginTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lastEventTime: (f = msg.getLastEventTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+eventsList: jspb.Message.toObjectList(msg.getEventsList(),
     proto.api.commons.DashboardAgentInfo.DashboardAgentResponseEvent.toObject, includeInstance),
-    skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : [],
-    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : [],
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -626,9 +626,9 @@ proto.api.commons.DashboardAgentInfo.DashboardAgentResponseEvent.prototype.toObj
  */
 proto.api.commons.DashboardAgentInfo.DashboardAgentResponseEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    responseTimeSeconds: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    time: (f = msg.getTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    isInitialAgentMessage: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+responseTimeSeconds: jspb.Message.getFieldWithDefault(msg, 1, 0),
+time: (f = msg.getTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+isInitialAgentMessage: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -1417,10 +1417,10 @@ proto.api.commons.StreamAgentStateRes.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.StreamAgentStateRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    state: (f = msg.getState()) && api_commons_acd_pb.AgentState.toObject(includeInstance, f),
-    heartBeat: (f = msg.getHeartBeat()) && proto.api.commons.KeepAlive.toObject(includeInstance, f),
-    callQueueAdd: (f = msg.getCallQueueAdd()) && proto.api.commons.QueueCallAdd.toObject(includeInstance, f),
-    callQueueRemove: (f = msg.getCallQueueRemove()) && proto.api.commons.QueueCallRemove.toObject(includeInstance, f)
+state: (f = msg.getState()) && api_commons_acd_pb.AgentState.toObject(includeInstance, f),
+heartBeat: (f = msg.getHeartBeat()) && proto.api.commons.KeepAlive.toObject(includeInstance, f),
+callQueueAdd: (f = msg.getCallQueueAdd()) && proto.api.commons.QueueCallAdd.toObject(includeInstance, f),
+callQueueRemove: (f = msg.getCallQueueRemove()) && proto.api.commons.QueueCallRemove.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1747,8 +1747,8 @@ proto.api.commons.ManagerStreamAgentStateRes.prototype.toObject = function(opt_i
  */
 proto.api.commons.ManagerStreamAgentStateRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    state: (f = msg.getState()) && api_commons_acd_pb.AgentState.toObject(includeInstance, f),
-    heartBeat: (f = msg.getHeartBeat()) && proto.api.commons.KeepAlive.toObject(includeInstance, f)
+state: (f = msg.getState()) && api_commons_acd_pb.AgentState.toObject(includeInstance, f),
+heartBeat: (f = msg.getHeartBeat()) && proto.api.commons.KeepAlive.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2050,15 +2050,15 @@ proto.api.commons.QueueCallAdd.prototype.toObject = function(opt_includeInstance
  */
 proto.api.commons.QueueCallAdd.toObject = function(includeInstance, msg) {
   var f, obj = {
-    phoneNumber: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    callerId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    startDate: (f = msg.getStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    holdDate: (f = msg.getHoldDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    formattedSkillsMap: (f = msg.getFormattedSkillsMap()) ? f.toObject(includeInstance, undefined) : [],
-    agentSpecific: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    queuedNotificationType: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    callerSid: (f = msg.getCallerSid()) && api_commons_acd_pb.CallerSid.toObject(includeInstance, f),
-    skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : []
+phoneNumber: jspb.Message.getFieldWithDefault(msg, 1, ""),
+callerId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+startDate: (f = msg.getStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+holdDate: (f = msg.getHoldDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+formattedSkillsMap: (f = msg.getFormattedSkillsMap()) ? f.toObject(includeInstance, undefined) : [],
+agentSpecific: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+queuedNotificationType: jspb.Message.getFieldWithDefault(msg, 7, 0),
+callerSid: (f = msg.getCallerSid()) && api_commons_acd_pb.CallerSid.toObject(includeInstance, f),
+skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -2491,7 +2491,7 @@ proto.api.commons.QueueCallRemove.prototype.toObject = function(opt_includeInsta
  */
 proto.api.commons.QueueCallRemove.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callerSid: (f = msg.getCallerSid()) && api_commons_acd_pb.CallerSid.toObject(includeInstance, f)
+callerSid: (f = msg.getCallerSid()) && api_commons_acd_pb.CallerSid.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

@@ -239,8 +239,8 @@ proto.api.v0alpha.GetAgentResponseDataReq.prototype.toObject = function(opt_incl
  */
 proto.api.v0alpha.GetAgentResponseDataReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    callType: jspb.Message.getFieldWithDefault(msg, 2, 0)
+callSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+callType: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -399,9 +399,9 @@ proto.api.v0alpha.GetAgentResponseDataRes.prototype.toObject = function(opt_incl
  */
 proto.api.v0alpha.GetAgentResponseDataRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    callType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    responsesMap: (f = msg.getResponsesMap()) ? f.toObject(includeInstance, undefined) : []
+callSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+callType: jspb.Message.getFieldWithDefault(msg, 2, 0),
+responsesMap: (f = msg.getResponsesMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -593,8 +593,8 @@ proto.api.v0alpha.GetCallReq.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.v0alpha.GetCallReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    callType: jspb.Message.getFieldWithDefault(msg, 3, 0)
+callSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+callType: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -753,9 +753,9 @@ proto.api.v0alpha.UpdateVoicemailBoxReq.prototype.toObject = function(opt_includ
  */
 proto.api.v0alpha.UpdateVoicemailBoxReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    callType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    pbxExtension: jspb.Message.getFieldWithDefault(msg, 4, "")
+callSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+callType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+pbxExtension: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1051,29 +1051,29 @@ proto.api.v0alpha.CallObject.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.v0alpha.CallObject.toObject = function(includeInstance, msg) {
   var f, obj = {
-    oid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    callSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    callType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    updated: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : [],
-    recordingFile: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    updatedDate: (f = msg.getUpdatedDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    srcNumber: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    dstNumber: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    callerIdName: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    agentWorker: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    eventsList: (f = jspb.Message.getRepeatedField(msg, 18)) == null ? undefined : f,
-    callData: jspb.Message.getFieldWithDefault(msg, 19, ""),
-    agentResponseDataMap: (f = msg.getAgentResponseDataMap()) ? f.toObject(includeInstance, undefined) : [],
-    recorded: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
-    connected: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
-    suspended: jspb.Message.getBooleanFieldWithDefault(msg, 23, false),
-    disconnectReason: jspb.Message.getFieldWithDefault(msg, 24, ""),
-    voicemailed: jspb.Message.getBooleanFieldWithDefault(msg, 25, false),
-    voicemailBox: jspb.Message.getFieldWithDefault(msg, 26, ""),
-    originated: jspb.Message.getFieldWithDefault(msg, 27, ""),
-    folder: jspb.Message.getFieldWithDefault(msg, 28, ""),
-    rtpInfo: jspb.Message.getFieldWithDefault(msg, 29, "")
+oid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+callSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+callType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+updated: jspb.Message.getFieldWithDefault(msg, 10, 0),
+skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : [],
+recordingFile: jspb.Message.getFieldWithDefault(msg, 12, ""),
+updatedDate: (f = msg.getUpdatedDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+srcNumber: jspb.Message.getFieldWithDefault(msg, 14, ""),
+dstNumber: jspb.Message.getFieldWithDefault(msg, 15, ""),
+callerIdName: jspb.Message.getFieldWithDefault(msg, 16, ""),
+agentWorker: jspb.Message.getFieldWithDefault(msg, 17, ""),
+eventsList: (f = jspb.Message.getRepeatedField(msg, 18)) == null ? undefined : f,
+callData: jspb.Message.getFieldWithDefault(msg, 19, ""),
+agentResponseDataMap: (f = msg.getAgentResponseDataMap()) ? f.toObject(includeInstance, undefined) : [],
+recorded: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
+connected: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
+suspended: jspb.Message.getBooleanFieldWithDefault(msg, 23, false),
+disconnectReason: jspb.Message.getFieldWithDefault(msg, 24, ""),
+voicemailed: jspb.Message.getBooleanFieldWithDefault(msg, 25, false),
+voicemailBox: jspb.Message.getFieldWithDefault(msg, 26, ""),
+originated: jspb.Message.getFieldWithDefault(msg, 27, ""),
+folder: jspb.Message.getFieldWithDefault(msg, 28, ""),
+rtpInfo: jspb.Message.getFieldWithDefault(msg, 29, "")
   };
 
   if (includeInstance) {
@@ -1889,9 +1889,9 @@ proto.api.v0alpha.UpdateAgentResponseDataReq.prototype.toObject = function(opt_i
  */
 proto.api.v0alpha.UpdateAgentResponseDataReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    callType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    responsesMap: (f = msg.getResponsesMap()) ? f.toObject(includeInstance, undefined) : []
+callSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+callType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+responsesMap: (f = msg.getResponsesMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {

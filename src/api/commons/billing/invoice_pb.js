@@ -110,12 +110,12 @@ proto.api.commons.billing.Invoice.prototype.toObject = function(opt_includeInsta
  */
 proto.api.commons.billing.Invoice.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.api.commons.billing.InvoiceItem.toObject, includeInstance),
-    invoiceId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    billingCycle: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+invoiceId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+billingCycle: jspb.Message.getFieldWithDefault(msg, 3, ""),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -425,12 +425,12 @@ proto.api.commons.billing.InvoiceItem.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.billing.InvoiceItem.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoiceItemSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    product: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    amount: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    invoiceId: jspb.Message.getFieldWithDefault(msg, 6, "0")
+invoiceItemSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+product: jspb.Message.getFieldWithDefault(msg, 2, 0),
+amount: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+invoiceId: jspb.Message.getFieldWithDefault(msg, 6, "0")
   };
 
   if (includeInstance) {

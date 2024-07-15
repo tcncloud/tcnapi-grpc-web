@@ -99,8 +99,8 @@ proto.api.commons.DLFSDef.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.DLFSDef.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vfsId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    incremental: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+vfsId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+incremental: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -266,7 +266,7 @@ proto.api.commons.DLFSDefs.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.DLFSDefs.toObject = function(includeInstance, msg) {
   var f, obj = {
-    defsList: jspb.Message.toObjectList(msg.getDefsList(),
+defsList: jspb.Message.toObjectList(msg.getDefsList(),
     proto.api.commons.DLFSDef.toObject, includeInstance)
   };
 

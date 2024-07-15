@@ -328,8 +328,8 @@ proto.services.billing.v1alpha1.CreateInvoiceRequest.prototype.toObject = functi
  */
 proto.services.billing.v1alpha1.CreateInvoiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f)
+invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -509,7 +509,7 @@ proto.services.billing.v1alpha1.CreateInvoiceResponse.prototype.toObject = funct
  */
 proto.services.billing.v1alpha1.CreateInvoiceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoiceId: jspb.Message.getFieldWithDefault(msg, 1, "")
+invoiceId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -639,7 +639,7 @@ proto.services.billing.v1alpha1.DeleteInvoiceRequest.prototype.toObject = functi
  */
 proto.services.billing.v1alpha1.DeleteInvoiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoiceId: jspb.Message.getFieldWithDefault(msg, 1, "")
+invoiceId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -870,9 +870,9 @@ proto.services.billing.v1alpha1.ExportInvoiceRequest.prototype.toObject = functi
  */
 proto.services.billing.v1alpha1.ExportInvoiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    format: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    invoiceDate: (f = msg.getInvoiceDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+format: jspb.Message.getFieldWithDefault(msg, 2, 0),
+invoiceDate: (f = msg.getInvoiceDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1081,7 +1081,7 @@ proto.services.billing.v1alpha1.ExportInvoiceResponse.prototype.toObject = funct
  */
 proto.services.billing.v1alpha1.ExportInvoiceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f)
+invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1232,7 +1232,7 @@ proto.services.billing.v1alpha1.GetInvoiceRequest.prototype.toObject = function(
  */
 proto.services.billing.v1alpha1.GetInvoiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoiceId: jspb.Message.getFieldWithDefault(msg, 1, "")
+invoiceId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1362,7 +1362,7 @@ proto.services.billing.v1alpha1.GetInvoiceResponse.prototype.toObject = function
  */
 proto.services.billing.v1alpha1.GetInvoiceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f)
+invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1520,12 +1520,12 @@ proto.services.billing.v1alpha1.ListInvoicesRequest.prototype.toObject = functio
  */
 proto.services.billing.v1alpha1.ListInvoicesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    filter: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fields: (f = msg.getFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    sortList: jspb.Message.toObjectList(msg.getSortList(),
+invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+filter: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fields: (f = msg.getFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+sortList: jspb.Message.toObjectList(msg.getSortList(),
     services_billing_v1alpha1_core_pb.Sort.toObject, includeInstance),
-    page: (f = msg.getPage()) && services_billing_v1alpha1_core_pb.Page.toObject(includeInstance, f)
+page: (f = msg.getPage()) && services_billing_v1alpha1_core_pb.Page.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1842,9 +1842,9 @@ proto.services.billing.v1alpha1.ListInvoicesResponse.prototype.toObject = functi
  */
 proto.services.billing.v1alpha1.ListInvoicesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoicesList: jspb.Message.toObjectList(msg.getInvoicesList(),
+invoicesList: jspb.Message.toObjectList(msg.getInvoicesList(),
     services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject, includeInstance),
-    token: jspb.Message.getFieldWithDefault(msg, 2, "")
+token: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2025,9 +2025,9 @@ proto.services.billing.v1alpha1.UpdateInvoiceRequest.prototype.toObject = functi
  */
 proto.services.billing.v1alpha1.UpdateInvoiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f),
-    updateFields: (f = msg.getUpdateFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+invoice: (f = msg.getInvoice()) && services_billing_entities_v1alpha1_invoice_pb.Invoice.toObject(includeInstance, f),
+updateFields: (f = msg.getUpdateFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

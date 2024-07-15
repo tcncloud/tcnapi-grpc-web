@@ -329,7 +329,7 @@ proto.api.v1alpha1.bireportgenerator.CreateReportJobRequest.prototype.toObject =
  */
 proto.api.v1alpha1.bireportgenerator.CreateReportJobRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f)
+reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -480,7 +480,7 @@ proto.api.v1alpha1.bireportgenerator.CreateReportJobResponse.prototype.toObject 
  */
 proto.api.v1alpha1.bireportgenerator.CreateReportJobResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f)
+reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -739,7 +739,7 @@ proto.api.v1alpha1.bireportgenerator.ListReportJobsResponse.prototype.toObject =
  */
 proto.api.v1alpha1.bireportgenerator.ListReportJobsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportJobsList: jspb.Message.toObjectList(msg.getReportJobsList(),
+reportJobsList: jspb.Message.toObjectList(msg.getReportJobsList(),
     api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject, includeInstance)
   };
 
@@ -892,8 +892,8 @@ proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest.prototype.toObject =
  */
 proto.api.v1alpha1.bireportgenerator.UpdateReportJobRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1094,7 +1094,7 @@ proto.api.v1alpha1.bireportgenerator.UpdateReportJobResponse.prototype.toObject 
  */
 proto.api.v1alpha1.bireportgenerator.UpdateReportJobResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f)
+reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1245,7 +1245,7 @@ proto.api.v1alpha1.bireportgenerator.DeleteReportJobRequest.prototype.toObject =
  */
 proto.api.v1alpha1.bireportgenerator.DeleteReportJobRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportJobId: jspb.Message.getFieldWithDefault(msg, 1, "")
+reportJobId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1476,7 +1476,7 @@ proto.api.v1alpha1.bireportgenerator.GetReportJobRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.bireportgenerator.GetReportJobRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportJobId: jspb.Message.getFieldWithDefault(msg, 1, "")
+reportJobId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1606,7 +1606,7 @@ proto.api.v1alpha1.bireportgenerator.GetReportJobResponse.prototype.toObject = f
  */
 proto.api.v1alpha1.bireportgenerator.GetReportJobResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f)
+reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1757,8 +1757,8 @@ proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.prototype.toObject = 
  */
 proto.api.v1alpha1.bireportgenerator.GenerateReportRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f),
-    sendAsOfDate: (f = msg.getSendAsOfDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+reportJob: (f = msg.getReportJob()) && api_v1alpha1_bireportgenerator_entities_pb.ReportJob.toObject(includeInstance, f),
+sendAsOfDate: (f = msg.getSendAsOfDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

@@ -571,7 +571,7 @@ proto.api.v1alpha1.integrationspublic.Values.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.integrationspublic.Values.toObject = function(includeInstance, msg) {
   var f, obj = {
-    valuesMap: (f = msg.getValuesMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : []
+valuesMap: (f = msg.getValuesMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : []
   };
 
   if (includeInstance) {
@@ -735,14 +735,14 @@ proto.api.v1alpha1.integrationspublic.Value.prototype.toObject = function(opt_in
  */
 proto.api.v1alpha1.integrationspublic.Value.toObject = function(includeInstance, msg) {
   var f, obj = {
-    strVal: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    numVal: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    boolVal: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    timeVal: (f = msg.getTimeVal()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    compVal: (f = msg.getCompVal()) && proto.api.v1alpha1.integrationspublic.CompositeVal.toObject(includeInstance, f),
-    intVal: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    sensitive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    validation: jspb.Message.getFieldWithDefault(msg, 8, 0)
+strVal: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+numVal: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
+boolVal: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+timeVal: (f = msg.getTimeVal()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+compVal: (f = msg.getCompVal()) && proto.api.v1alpha1.integrationspublic.CompositeVal.toObject(includeInstance, f),
+intVal: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+sensitive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+validation: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -1196,7 +1196,7 @@ proto.api.v1alpha1.integrationspublic.CompositeVal.prototype.toObject = function
  */
 proto.api.v1alpha1.integrationspublic.CompositeVal.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partsList: jspb.Message.toObjectList(msg.getPartsList(),
+partsList: jspb.Message.toObjectList(msg.getPartsList(),
     proto.api.v1alpha1.integrationspublic.FieldOrStr.toObject, includeInstance)
   };
 
@@ -1375,8 +1375,8 @@ proto.api.v1alpha1.integrationspublic.FieldOrStr.prototype.toObject = function(o
  */
 proto.api.v1alpha1.integrationspublic.FieldOrStr.toObject = function(includeInstance, msg) {
   var f, obj = {
-    field: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    strVal: jspb.Message.getFieldWithDefault(msg, 2, "")
+field: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+strVal: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1571,7 +1571,7 @@ proto.api.v1alpha1.integrationspublic.PortalConfigId.prototype.toObject = functi
  */
 proto.api.v1alpha1.integrationspublic.PortalConfigId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 3, "")
+id: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1701,20 +1701,20 @@ proto.api.v1alpha1.integrationspublic.PortalConfig.prototype.toObject = function
  */
 proto.api.v1alpha1.integrationspublic.PortalConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 21, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 22, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 23, ""),
-    chatClientLink: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    contactEmail: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    contactPhone: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    postalCode: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    city: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    state: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    companyName: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    logo: msg.getLogo_asB64(),
-    primaryColor: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    secondaryColor: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    streetAddress: jspb.Message.getFieldWithDefault(msg, 19, "")
+id: jspb.Message.getFieldWithDefault(msg, 21, ""),
+name: jspb.Message.getFieldWithDefault(msg, 22, ""),
+description: jspb.Message.getFieldWithDefault(msg, 23, ""),
+chatClientLink: jspb.Message.getFieldWithDefault(msg, 2, ""),
+contactEmail: jspb.Message.getFieldWithDefault(msg, 3, ""),
+contactPhone: jspb.Message.getFieldWithDefault(msg, 4, ""),
+postalCode: jspb.Message.getFieldWithDefault(msg, 5, ""),
+city: jspb.Message.getFieldWithDefault(msg, 6, ""),
+state: jspb.Message.getFieldWithDefault(msg, 7, ""),
+companyName: jspb.Message.getFieldWithDefault(msg, 8, ""),
+logo: msg.getLogo_asB64(),
+primaryColor: jspb.Message.getFieldWithDefault(msg, 14, ""),
+secondaryColor: jspb.Message.getFieldWithDefault(msg, 15, ""),
+streetAddress: jspb.Message.getFieldWithDefault(msg, 19, "")
   };
 
   if (includeInstance) {
@@ -2245,7 +2245,7 @@ proto.api.v1alpha1.integrationspublic.PortalLinkId.prototype.toObject = function
  */
 proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 3, "")
+id: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2375,7 +2375,7 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataReq.prototype.toObject = functi
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2533,16 +2533,16 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.prototype.toObject = functi
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    complete: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    expired: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    portalConfig: (f = msg.getPortalConfig()) && proto.api.v1alpha1.integrationspublic.PortalConfig.toObject(includeInstance, f),
-    verification: (f = msg.getVerification()) && api_commons_integrations_integrations_pb.VerificationFlow.toObject(includeInstance, f),
-    invoice: (f = msg.getInvoice()) && api_commons_integrations_integrations_pb.InvoiceFlow.toObject(includeInstance, f),
-    paymentsList: jspb.Message.toObjectList(msg.getPaymentsList(),
+complete: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+expired: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+portalConfig: (f = msg.getPortalConfig()) && proto.api.v1alpha1.integrationspublic.PortalConfig.toObject(includeInstance, f),
+verification: (f = msg.getVerification()) && api_commons_integrations_integrations_pb.VerificationFlow.toObject(includeInstance, f),
+invoice: (f = msg.getInvoice()) && api_commons_integrations_integrations_pb.InvoiceFlow.toObject(includeInstance, f),
+paymentsList: jspb.Message.toObjectList(msg.getPaymentsList(),
     api_commons_integrations_integrations_pb.PaymentFlow.toObject, includeInstance),
-    flowFormsList: jspb.Message.toObjectList(msg.getFlowFormsList(),
+flowFormsList: jspb.Message.toObjectList(msg.getFlowFormsList(),
     proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.toObject, includeInstance),
-    portalText: (f = msg.getPortalText()) && proto.api.v1alpha1.integrationspublic.PortalText.toObject(includeInstance, f)
+portalText: (f = msg.getPortalText()) && proto.api.v1alpha1.integrationspublic.PortalText.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2750,9 +2750,9 @@ proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.prototype.toObje
  */
 proto.api.v1alpha1.integrationspublic.GetLinkDataRes.FieldNames.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flow: (f = msg.getFlow()) && api_commons_integrations_integrations_pb.Flow.toObject(includeInstance, f),
-    fieldNamesList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
-    fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
+flow: (f = msg.getFlow()) && api_commons_integrations_integrations_pb.Flow.toObject(includeInstance, f),
+fieldNamesList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
+fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
     api_commons_integrations_integrations_pb.FieldDefinition.toObject, includeInstance)
   };
 
@@ -3263,14 +3263,14 @@ proto.api.v1alpha1.integrationspublic.PortalText.prototype.toObject = function(o
  */
 proto.api.v1alpha1.integrationspublic.PortalText.toObject = function(includeInstance, msg) {
   var f, obj = {
-    verificationHeader: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    verificationFooter: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    paymentHeader: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    paymentFooter: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    receiptHeader: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    receiptFooter: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    invoiceHeader: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    invoiceFooter: jspb.Message.getFieldWithDefault(msg, 8, "")
+verificationHeader: jspb.Message.getFieldWithDefault(msg, 1, ""),
+verificationFooter: jspb.Message.getFieldWithDefault(msg, 2, ""),
+paymentHeader: jspb.Message.getFieldWithDefault(msg, 3, ""),
+paymentFooter: jspb.Message.getFieldWithDefault(msg, 4, ""),
+receiptHeader: jspb.Message.getFieldWithDefault(msg, 5, ""),
+receiptFooter: jspb.Message.getFieldWithDefault(msg, 6, ""),
+invoiceHeader: jspb.Message.getFieldWithDefault(msg, 7, ""),
+invoiceFooter: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -3603,8 +3603,8 @@ proto.api.v1alpha1.integrationspublic.SubmitVerificationReq.prototype.toObject =
  */
 proto.api.v1alpha1.integrationspublic.SubmitVerificationReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f),
-    verificationFieldsMap: (f = msg.getVerificationFieldsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : []
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f),
+verificationFieldsMap: (f = msg.getVerificationFieldsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : []
   };
 
   if (includeInstance) {
@@ -3788,8 +3788,8 @@ proto.api.v1alpha1.integrationspublic.SubmitVerificationRes.prototype.toObject =
  */
 proto.api.v1alpha1.integrationspublic.SubmitVerificationRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    verified: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    sessionId: jspb.Message.getFieldWithDefault(msg, 2, "")
+verified: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+sessionId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3948,8 +3948,8 @@ proto.api.v1alpha1.integrationspublic.SessionKeepAliveReq.prototype.toObject = f
  */
 proto.api.v1alpha1.integrationspublic.SessionKeepAliveReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f),
-    sessionId: jspb.Message.getFieldWithDefault(msg, 2, "")
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f),
+sessionId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -4129,8 +4129,8 @@ proto.api.v1alpha1.integrationspublic.SessionKeepAliveRes.prototype.toObject = f
  */
 proto.api.v1alpha1.integrationspublic.SessionKeepAliveRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ok: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    sessionId: jspb.Message.getFieldWithDefault(msg, 2, "")
+ok: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+sessionId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -4289,8 +4289,8 @@ proto.api.v1alpha1.integrationspublic.GetInvoiceReq.prototype.toObject = functio
  */
 proto.api.v1alpha1.integrationspublic.GetInvoiceReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f),
-    sessionId: jspb.Message.getFieldWithDefault(msg, 2, "")
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f),
+sessionId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -4470,10 +4470,10 @@ proto.api.v1alpha1.integrationspublic.GetInvoiceRes.prototype.toObject = functio
  */
 proto.api.v1alpha1.integrationspublic.GetInvoiceRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldsMap: (f = msg.getFieldsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
-    amountDue: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    amountDueKey: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    invoices: (f = msg.getInvoices()) && api_commons_integrations_integrations_pb.Invoices.toObject(includeInstance, f)
+fieldsMap: (f = msg.getFieldsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
+amountDue: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+amountDueKey: jspb.Message.getFieldWithDefault(msg, 3, ""),
+invoices: (f = msg.getInvoices()) && api_commons_integrations_integrations_pb.Invoices.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4715,10 +4715,10 @@ proto.api.v1alpha1.integrationspublic.SubmitPaymentReq.prototype.toObject = func
  */
 proto.api.v1alpha1.integrationspublic.SubmitPaymentReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f),
-    sessionId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    paymentFieldsMap: (f = msg.getPaymentFieldsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
-    paymentFlow: (f = msg.getPaymentFlow()) && api_commons_integrations_integrations_pb.PaymentFlow.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f),
+sessionId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+paymentFieldsMap: (f = msg.getPaymentFieldsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
+paymentFlow: (f = msg.getPaymentFlow()) && api_commons_integrations_integrations_pb.PaymentFlow.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4981,9 +4981,9 @@ proto.api.v1alpha1.integrationspublic.SubmitPaymentRes.prototype.toObject = func
  */
 proto.api.v1alpha1.integrationspublic.SubmitPaymentRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldsMap: (f = msg.getFieldsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
-    amountPaid: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    amountPaidKey: jspb.Message.getFieldWithDefault(msg, 3, "")
+fieldsMap: (f = msg.getFieldsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
+amountPaid: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+amountPaidKey: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5175,8 +5175,8 @@ proto.api.v1alpha1.integrationspublic.GetReceiptReq.prototype.toObject = functio
  */
 proto.api.v1alpha1.integrationspublic.GetReceiptReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f),
-    sessionId: jspb.Message.getFieldWithDefault(msg, 2, "")
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.integrationspublic.PortalLinkId.toObject(includeInstance, f),
+sessionId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -5356,12 +5356,12 @@ proto.api.v1alpha1.integrationspublic.GetReceiptRes.prototype.toObject = functio
  */
 proto.api.v1alpha1.integrationspublic.GetReceiptRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    receiptId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    requestMap: (f = msg.getRequestMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
-    responseMap: (f = msg.getResponseMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
-    amountPaid: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    amountPaidKey: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    paymentFlow: (f = msg.getPaymentFlow()) && api_commons_integrations_integrations_pb.PaymentFlow.toObject(includeInstance, f)
+receiptId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+requestMap: (f = msg.getRequestMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
+responseMap: (f = msg.getResponseMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : [],
+amountPaid: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+amountPaidKey: jspb.Message.getFieldWithDefault(msg, 5, ""),
+paymentFlow: (f = msg.getPaymentFlow()) && api_commons_integrations_integrations_pb.PaymentFlow.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5665,11 +5665,11 @@ proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq.prototype.toObject = fu
  */
 proto.api.v1alpha1.integrationspublic.ProcessWorkflowReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    portalLinkId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    portalId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    segment: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    choice: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    paramsMap: (f = msg.getParamsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : []
+portalLinkId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+portalId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+segment: jspb.Message.getFieldWithDefault(msg, 3, 0),
+choice: jspb.Message.getFieldWithDefault(msg, 4, 0),
+paramsMap: (f = msg.getParamsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : []
   };
 
   if (includeInstance) {
@@ -5919,8 +5919,8 @@ proto.api.v1alpha1.integrationspublic.ProcessWorkflowRes.prototype.toObject = fu
  */
 proto.api.v1alpha1.integrationspublic.ProcessWorkflowRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    success: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : []
+success: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrationspublic.Value.toObject) : []
   };
 
   if (includeInstance) {

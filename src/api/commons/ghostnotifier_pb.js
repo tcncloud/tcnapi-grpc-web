@@ -206,15 +206,15 @@ proto.api.commons.GhostNotification.prototype.toObject = function(opt_includeIns
  */
 proto.api.commons.GhostNotification.toObject = function(includeInstance, msg) {
   var f, obj = {
-    referenceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    any: (f = msg.getAny()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
-    status: (f = msg.getStatus()) && proto.api.commons.Status.toObject(includeInstance, f),
-    omniConversation: (f = msg.getOmniConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    backofficeMessage: (f = msg.getBackofficeMessage()) && api_commons_acd_pb.AgentBackofficeMessageAlert.toObject(includeInstance, f),
-    directedCallRinging: (f = msg.getDirectedCallRinging()) && api_commons_acd_pb.AgentDirectedCallRingingAlert.toObject(includeInstance, f),
-    directedCallHangup: (f = msg.getDirectedCallHangup()) && api_commons_acd_pb.AgentDirectedCallHangupAlert.toObject(includeInstance, f),
-    agentQueuedCallsNotification: (f = msg.getAgentQueuedCallsNotification()) && proto.api.commons.AgentQueuedCallsNotification.toObject(includeInstance, f),
-    authTokenExpirationNotification: (f = msg.getAuthTokenExpirationNotification()) && proto.api.commons.AuthTokenExpiration.toObject(includeInstance, f)
+referenceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+any: (f = msg.getAny()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
+status: (f = msg.getStatus()) && proto.api.commons.Status.toObject(includeInstance, f),
+omniConversation: (f = msg.getOmniConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+backofficeMessage: (f = msg.getBackofficeMessage()) && api_commons_acd_pb.AgentBackofficeMessageAlert.toObject(includeInstance, f),
+directedCallRinging: (f = msg.getDirectedCallRinging()) && api_commons_acd_pb.AgentDirectedCallRingingAlert.toObject(includeInstance, f),
+directedCallHangup: (f = msg.getDirectedCallHangup()) && api_commons_acd_pb.AgentDirectedCallHangupAlert.toObject(includeInstance, f),
+agentQueuedCallsNotification: (f = msg.getAgentQueuedCallsNotification()) && proto.api.commons.AgentQueuedCallsNotification.toObject(includeInstance, f),
+authTokenExpirationNotification: (f = msg.getAuthTokenExpirationNotification()) && proto.api.commons.AuthTokenExpiration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -744,8 +744,8 @@ proto.api.commons.Status.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.Status.toObject = function(includeInstance, msg) {
   var f, obj = {
-    code: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    message: jspb.Message.getFieldWithDefault(msg, 2, "")
+code: jspb.Message.getFieldWithDefault(msg, 1, 0),
+message: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -911,11 +911,11 @@ proto.api.commons.AgentQueuedCallsNotification.prototype.toObject = function(opt
  */
 proto.api.commons.AgentQueuedCallsNotification.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentQueueCallsList: jspb.Message.toObjectList(msg.getAgentQueueCallsList(),
+agentQueueCallsList: jspb.Message.toObjectList(msg.getAgentQueueCallsList(),
     proto.api.commons.AgentQueuedCallsNotification.QueuedCallData.toObject, includeInstance),
-    onHoldCallsList: jspb.Message.toObjectList(msg.getOnHoldCallsList(),
+onHoldCallsList: jspb.Message.toObjectList(msg.getOnHoldCallsList(),
     proto.api.commons.AgentQueuedCallsNotification.QueuedCallData.toObject, includeInstance),
-    hqmCallsList: jspb.Message.toObjectList(msg.getHqmCallsList(),
+hqmCallsList: jspb.Message.toObjectList(msg.getHqmCallsList(),
     proto.api.commons.AgentQueuedCallsNotification.QueuedCallData.toObject, includeInstance)
   };
 
@@ -1063,15 +1063,15 @@ proto.api.commons.AgentQueuedCallsNotification.QueuedCallData.prototype.toObject
  */
 proto.api.commons.AgentQueuedCallsNotification.QueuedCallData.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    phoneNumber: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    callerId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    callType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    startDate: (f = msg.getStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    holdDate: (f = msg.getHoldDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    skillsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
-    agentSpecific: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    queuedNotificationType: jspb.Message.getFieldWithDefault(msg, 9, 0)
+callSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+phoneNumber: jspb.Message.getFieldWithDefault(msg, 2, ""),
+callerId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+callType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+startDate: (f = msg.getStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+holdDate: (f = msg.getHoldDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+skillsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+agentSpecific: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+queuedNotificationType: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -1608,8 +1608,8 @@ proto.api.commons.AuthTokenExpiration.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.AuthTokenExpiration.toObject = function(includeInstance, msg) {
   var f, obj = {
-    token: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    expiration: (f = msg.getExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+token: jspb.Message.getFieldWithDefault(msg, 1, ""),
+expiration: (f = msg.getExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

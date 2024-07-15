@@ -132,21 +132,21 @@ proto.api.commons.LearningOpportunity.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.LearningOpportunity.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunityId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    callSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    callType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    agentUserId: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    startOffset: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    endOffset: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    description: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    title: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    origin: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    creatorUserId: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 16, 0),
-    autoEvaluationId: jspb.Message.getFieldWithDefault(msg, 17, 0)
+learningOpportunityId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+callSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+callType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+agentUserId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+startOffset: jspb.Message.getFieldWithDefault(msg, 7, 0),
+endOffset: jspb.Message.getFieldWithDefault(msg, 8, 0),
+description: jspb.Message.getFieldWithDefault(msg, 9, ""),
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+title: jspb.Message.getFieldWithDefault(msg, 12, ""),
+status: jspb.Message.getFieldWithDefault(msg, 13, 0),
+origin: jspb.Message.getFieldWithDefault(msg, 14, 0),
+creatorUserId: jspb.Message.getFieldWithDefault(msg, 15, ""),
+evaluationId: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+autoEvaluationId: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -739,8 +739,8 @@ proto.api.commons.CallIdentifier.prototype.toObject = function(opt_includeInstan
  */
 proto.api.commons.CallIdentifier.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0)
+sid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+type: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {

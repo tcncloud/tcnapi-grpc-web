@@ -209,7 +209,7 @@ proto.services.billing.v1alpha3.ListProductsResponse.prototype.toObject = functi
  */
 proto.services.billing.v1alpha3.ListProductsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    productsList: jspb.Message.toObjectList(msg.getProductsList(),
+productsList: jspb.Message.toObjectList(msg.getProductsList(),
     services_billing_entities_v1alpha3_rates_pb.Product.toObject, includeInstance)
   };
 

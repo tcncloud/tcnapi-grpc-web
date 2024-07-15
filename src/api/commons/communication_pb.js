@@ -177,10 +177,10 @@ proto.api.commons.CommType.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.CommType.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callType: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    emailType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    smsType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    whatsappType: jspb.Message.getFieldWithDefault(msg, 4, 0)
+callType: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+emailType: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+smsType: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+whatsappType: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {

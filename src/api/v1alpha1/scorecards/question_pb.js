@@ -434,7 +434,7 @@ proto.api.v1alpha1.scorecards.CreateQuestionRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.scorecards.CreateQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
+question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -585,7 +585,7 @@ proto.api.v1alpha1.scorecards.CreateQuestionResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.CreateQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
+question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -743,8 +743,8 @@ proto.api.v1alpha1.scorecards.ListQuestionsRequest.prototype.toObject = function
  */
 proto.api.v1alpha1.scorecards.ListQuestionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authorIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+authorIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -950,7 +950,7 @@ proto.api.v1alpha1.scorecards.ListQuestionsResponse.prototype.toObject = functio
  */
 proto.api.v1alpha1.scorecards.ListQuestionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    questionsList: jspb.Message.toObjectList(msg.getQuestionsList(),
+questionsList: jspb.Message.toObjectList(msg.getQuestionsList(),
     api_commons_scorecards_pb.Question.toObject, includeInstance)
   };
 
@@ -1103,8 +1103,8 @@ proto.api.v1alpha1.scorecards.UpdateQuestionRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.scorecards.UpdateQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1305,7 +1305,7 @@ proto.api.v1alpha1.scorecards.UpdateQuestionResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.UpdateQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
+question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1456,7 +1456,7 @@ proto.api.v1alpha1.scorecards.DeleteQuestionRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.scorecards.DeleteQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    questionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+questionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1586,7 +1586,7 @@ proto.api.v1alpha1.scorecards.DeleteQuestionResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.DeleteQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
+question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1737,8 +1737,8 @@ proto.api.v1alpha1.scorecards.GetQuestionRequest.prototype.toObject = function(o
  */
 proto.api.v1alpha1.scorecards.GetQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    questionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    question: jspb.Message.getFieldWithDefault(msg, 3, "")
+questionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+question: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1897,7 +1897,7 @@ proto.api.v1alpha1.scorecards.GetQuestionResponse.prototype.toObject = function(
  */
 proto.api.v1alpha1.scorecards.GetQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
+question: (f = msg.getQuestion()) && api_commons_scorecards_pb.Question.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2048,8 +2048,8 @@ proto.api.v1alpha1.scorecards.CreateQuestionCategoryRequest.prototype.toObject =
  */
 proto.api.v1alpha1.scorecards.CreateQuestionCategoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    questionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    categoryId: jspb.Message.getFieldWithDefault(msg, 3, 0)
+questionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+categoryId: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2208,9 +2208,9 @@ proto.api.v1alpha1.scorecards.CreateQuestionCategoryResponse.prototype.toObject 
  */
 proto.api.v1alpha1.scorecards.CreateQuestionCategoryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    questionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    categoryId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    questionCategoryId: jspb.Message.getFieldWithDefault(msg, 4, 0)
+questionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+categoryId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+questionCategoryId: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -2424,8 +2424,8 @@ proto.api.v1alpha1.scorecards.DeleteQuestionCategoryRequest.prototype.toObject =
  */
 proto.api.v1alpha1.scorecards.DeleteQuestionCategoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    questionCategoryId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    bothIds: (f = msg.getBothIds()) && proto.api.v1alpha1.scorecards.DeleteQuestionCategoryRequest.BothIds.toObject(includeInstance, f)
+questionCategoryId: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+bothIds: (f = msg.getBothIds()) && proto.api.v1alpha1.scorecards.DeleteQuestionCategoryRequest.BothIds.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2550,8 +2550,8 @@ proto.api.v1alpha1.scorecards.DeleteQuestionCategoryRequest.BothIds.prototype.to
  */
 proto.api.v1alpha1.scorecards.DeleteQuestionCategoryRequest.BothIds.toObject = function(includeInstance, msg) {
   var f, obj = {
-    questionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    categoryId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+questionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+categoryId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -2783,9 +2783,9 @@ proto.api.v1alpha1.scorecards.DeleteQuestionCategoryResponse.prototype.toObject 
  */
 proto.api.v1alpha1.scorecards.DeleteQuestionCategoryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    questionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    categoryId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    questionCategoryId: jspb.Message.getFieldWithDefault(msg, 4, 0)
+questionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+categoryId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+questionCategoryId: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -2973,8 +2973,8 @@ proto.api.v1alpha1.scorecards.BulkCreateQuestionsRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.scorecards.BulkCreateQuestionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    useDefault: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+scorecardId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+useDefault: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -3140,7 +3140,7 @@ proto.api.v1alpha1.scorecards.BulkCreateQuestionsResponse.prototype.toObject = f
  */
 proto.api.v1alpha1.scorecards.BulkCreateQuestionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    questionsList: jspb.Message.toObjectList(msg.getQuestionsList(),
+questionsList: jspb.Message.toObjectList(msg.getQuestionsList(),
     api_commons_scorecards_pb.Question.toObject, includeInstance)
   };
 

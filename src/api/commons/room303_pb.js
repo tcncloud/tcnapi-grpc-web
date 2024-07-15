@@ -217,9 +217,9 @@ proto.api.commons.UserSid.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.UserSid.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    fullName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    displayName: jspb.Message.getFieldWithDefault(msg, 3, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+fullName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+displayName: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -407,11 +407,11 @@ proto.api.commons.Member.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.Member.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userSid: (f = msg.getUserSid()) && proto.api.commons.UserSid.toObject(includeInstance, f),
-    addedBy: (f = msg.getAddedBy()) && proto.api.commons.UserSid.toObject(includeInstance, f),
-    addedAt: (f = msg.getAddedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    roomId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    admin: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+userSid: (f = msg.getUserSid()) && proto.api.commons.UserSid.toObject(includeInstance, f),
+addedBy: (f = msg.getAddedBy()) && proto.api.commons.UserSid.toObject(includeInstance, f),
+addedAt: (f = msg.getAddedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+roomId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+admin: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -720,16 +720,16 @@ proto.api.commons.Room.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.Room.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    roomId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    id: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    displayName: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    config: (f = msg.getConfig()) && proto.api.commons.RoomConfig.toObject(includeInstance, f),
-    permissionGroupId: (f = msg.getPermissionGroupId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+roomId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+type: jspb.Message.getFieldWithDefault(msg, 4, 0),
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+status: jspb.Message.getFieldWithDefault(msg, 7, 0),
+id: jspb.Message.getFieldWithDefault(msg, 8, ""),
+displayName: jspb.Message.getFieldWithDefault(msg, 9, ""),
+config: (f = msg.getConfig()) && proto.api.commons.RoomConfig.toObject(includeInstance, f),
+permissionGroupId: (f = msg.getPermissionGroupId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1204,16 +1204,16 @@ proto.api.commons.Message.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.Message.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    messageId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    roomId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    fromUser: (f = msg.getFromUser()) && proto.api.commons.UserSid.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    receivedAt: (f = msg.getReceivedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    payload: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    unread: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    nonce: jspb.Message.getFieldWithDefault(msg, 10, "")
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+messageId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+roomId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+fromUser: (f = msg.getFromUser()) && proto.api.commons.UserSid.toObject(includeInstance, f),
+status: jspb.Message.getFieldWithDefault(msg, 5, 0),
+receivedAt: (f = msg.getReceivedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+payload: jspb.Message.getFieldWithDefault(msg, 8, ""),
+unread: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+nonce: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -1667,8 +1667,8 @@ proto.api.commons.MessageStat.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.commons.MessageStat.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    unreadMessages: jspb.Message.getFieldWithDefault(msg, 2, 0)
+roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+unreadMessages: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1827,10 +1827,10 @@ proto.api.commons.GlobalConfig.prototype.toObject = function(opt_includeInstance
  */
 proto.api.commons.GlobalConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    createRoom: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    joinExistingRoom: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    sendMessageToSupervisor: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    sendMessageToNonSupervisor: jspb.Message.getFieldWithDefault(msg, 4, 0)
+createRoom: jspb.Message.getFieldWithDefault(msg, 1, 0),
+joinExistingRoom: jspb.Message.getFieldWithDefault(msg, 2, 0),
+sendMessageToSupervisor: jspb.Message.getFieldWithDefault(msg, 3, 0),
+sendMessageToNonSupervisor: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -2047,12 +2047,12 @@ proto.api.commons.RoomConfig.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.commons.RoomConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    addUser: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    removeUser: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    promoteToAdmin: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    readMessages: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    sendMessage: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    archiveRoom: jspb.Message.getFieldWithDefault(msg, 6, 0)
+addUser: jspb.Message.getFieldWithDefault(msg, 1, 0),
+removeUser: jspb.Message.getFieldWithDefault(msg, 2, 0),
+promoteToAdmin: jspb.Message.getFieldWithDefault(msg, 3, 0),
+readMessages: jspb.Message.getFieldWithDefault(msg, 4, 0),
+sendMessage: jspb.Message.getFieldWithDefault(msg, 5, 0),
+archiveRoom: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {

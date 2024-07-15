@@ -217,11 +217,11 @@ proto.api.commons.ClientInfoDataRow.prototype.toObject = function(opt_includeIns
  */
 proto.api.commons.ClientInfoDataRow.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldLabel: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    fieldValue: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    isPhone: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    dialedNumber: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    contactFieldDescriptionSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
+fieldLabel: jspb.Message.getFieldWithDefault(msg, 1, ""),
+fieldValue: jspb.Message.getFieldWithDefault(msg, 2, ""),
+isPhone: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+dialedNumber: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+contactFieldDescriptionSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -467,9 +467,9 @@ proto.api.commons.RGBColor.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.RGBColor.toObject = function(includeInstance, msg) {
   var f, obj = {
-    red: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    green: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    blue: jspb.Message.getFieldWithDefault(msg, 3, 0)
+red: jspb.Message.getFieldWithDefault(msg, 1, 0),
+green: jspb.Message.getFieldWithDefault(msg, 2, 0),
+blue: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -657,10 +657,10 @@ proto.api.commons.DialedNumberFieldSettings.prototype.toObject = function(opt_in
  */
 proto.api.commons.DialedNumberFieldSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    shouldDisplay: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    color: (f = msg.getColor()) && proto.api.commons.RGBColor.toObject(includeInstance, f),
-    bgColor: (f = msg.getBgColor()) && proto.api.commons.RGBColor.toObject(includeInstance, f),
-    allowAgentCopy: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+shouldDisplay: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+color: (f = msg.getColor()) && proto.api.commons.RGBColor.toObject(includeInstance, f),
+bgColor: (f = msg.getBgColor()) && proto.api.commons.RGBColor.toObject(includeInstance, f),
+allowAgentCopy: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -919,11 +919,11 @@ proto.api.commons.ClientInfoDisplayTemplateRow.prototype.toObject = function(opt
  */
 proto.api.commons.ClientInfoDisplayTemplateRow.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldLabel: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    color: (f = msg.getColor()) && proto.api.commons.RGBColor.toObject(includeInstance, f),
-    bgColor: (f = msg.getBgColor()) && proto.api.commons.RGBColor.toObject(includeInstance, f),
-    contactFieldDescriptionSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    allowAgentCopy: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+fieldLabel: jspb.Message.getFieldWithDefault(msg, 1, ""),
+color: (f = msg.getColor()) && proto.api.commons.RGBColor.toObject(includeInstance, f),
+bgColor: (f = msg.getBgColor()) && proto.api.commons.RGBColor.toObject(includeInstance, f),
+contactFieldDescriptionSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
+allowAgentCopy: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {

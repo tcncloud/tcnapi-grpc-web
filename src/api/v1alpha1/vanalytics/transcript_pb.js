@@ -1920,7 +1920,7 @@ proto.api.v1alpha1.vanalytics.BulkDeleteTranscriptsRequest.prototype.toObject = 
  */
 proto.api.v1alpha1.vanalytics.BulkDeleteTranscriptsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    query: (f = msg.getQuery()) && proto.api.v1alpha1.vanalytics.SearchRequest.toObject(includeInstance, f)
+query: (f = msg.getQuery()) && proto.api.v1alpha1.vanalytics.SearchRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2071,7 +2071,7 @@ proto.api.v1alpha1.vanalytics.BulkDeleteTranscriptsResponse.prototype.toObject =
  */
 proto.api.v1alpha1.vanalytics.BulkDeleteTranscriptsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    total: jspb.Message.getFieldWithDefault(msg, 1, 0)
+total: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2201,7 +2201,7 @@ proto.api.v1alpha1.vanalytics.BulkRestoreTranscriptsRequest.prototype.toObject =
  */
 proto.api.v1alpha1.vanalytics.BulkRestoreTranscriptsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    query: (f = msg.getQuery()) && proto.api.v1alpha1.vanalytics.SearchRequest.toObject(includeInstance, f)
+query: (f = msg.getQuery()) && proto.api.v1alpha1.vanalytics.SearchRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2352,7 +2352,7 @@ proto.api.v1alpha1.vanalytics.BulkRestoreTranscriptsResponse.prototype.toObject 
  */
 proto.api.v1alpha1.vanalytics.BulkRestoreTranscriptsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    total: jspb.Message.getFieldWithDefault(msg, 1, 0)
+total: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2489,29 +2489,29 @@ proto.api.v1alpha1.vanalytics.SearchRequest.prototype.toObject = function(opt_in
  */
 proto.api.v1alpha1.vanalytics.SearchRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    silence: (f = msg.getSilence()) && proto.api.v1alpha1.vanalytics.SearchRequest.Silence.toObject(includeInstance, f),
-    talkTime: (f = msg.getTalkTime()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
-    agent: (f = msg.getAgent()) && proto.api.v1alpha1.vanalytics.SearchRequest.Agent.toObject(includeInstance, f),
-    pageSize: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    sort: (f = msg.getSort()) && proto.api.v1alpha1.vanalytics.Sort.toObject(includeInstance, f),
-    createTime: (f = msg.getCreateTime()) && api_v1alpha1_vanalytics_expr_pb.TimestampExpr.toObject(includeInstance, f),
-    talkOver: (f = msg.getTalkOver()) && proto.api.v1alpha1.vanalytics.SearchRequest.TalkOver.toObject(includeInstance, f),
-    terms: (f = msg.getTerms()) && proto.api.v1alpha1.vanalytics.SearchRequest.Terms.toObject(includeInstance, f),
-    channel: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    phrase: (f = msg.getPhrase()) && proto.api.v1alpha1.vanalytics.SearchRequest.Phrase.toObject(includeInstance, f),
-    transcriptMask: (f = msg.getTranscriptMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    phoneNumber: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    callerId: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
-    callStartTime: (f = msg.getCallStartTime()) && api_v1alpha1_vanalytics_expr_pb.TimestampExpr.toObject(includeInstance, f),
-    callTypesList: (f = jspb.Message.getRepeatedField(msg, 18)) == null ? undefined : f,
-    callSidsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
-    huntGroupSidsList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
-    groupNamesList: (f = jspb.Message.getRepeatedField(msg, 21)) == null ? undefined : f,
-    agentCallLog: (f = msg.getAgentCallLog()) && proto.api.v1alpha1.vanalytics.AgentCallLogQuery.toObject(includeInstance, f),
-    where: (f = msg.getWhere()) && proto.api.v1alpha1.vanalytics.SearchQuery.toObject(includeInstance, f),
-    timeFrame: (f = msg.getTimeFrame()) && api_v1alpha1_vanalytics_expr_pb.Uint32Range.toObject(includeInstance, f)
+silence: (f = msg.getSilence()) && proto.api.v1alpha1.vanalytics.SearchRequest.Silence.toObject(includeInstance, f),
+talkTime: (f = msg.getTalkTime()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
+agent: (f = msg.getAgent()) && proto.api.v1alpha1.vanalytics.SearchRequest.Agent.toObject(includeInstance, f),
+pageSize: jspb.Message.getFieldWithDefault(msg, 5, 0),
+sort: (f = msg.getSort()) && proto.api.v1alpha1.vanalytics.Sort.toObject(includeInstance, f),
+createTime: (f = msg.getCreateTime()) && api_v1alpha1_vanalytics_expr_pb.TimestampExpr.toObject(includeInstance, f),
+talkOver: (f = msg.getTalkOver()) && proto.api.v1alpha1.vanalytics.SearchRequest.TalkOver.toObject(includeInstance, f),
+terms: (f = msg.getTerms()) && proto.api.v1alpha1.vanalytics.SearchRequest.Terms.toObject(includeInstance, f),
+channel: jspb.Message.getFieldWithDefault(msg, 10, 0),
+phrase: (f = msg.getPhrase()) && proto.api.v1alpha1.vanalytics.SearchRequest.Phrase.toObject(includeInstance, f),
+transcriptMask: (f = msg.getTranscriptMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 13, 0),
+phoneNumber: jspb.Message.getFieldWithDefault(msg, 14, ""),
+callerId: jspb.Message.getFieldWithDefault(msg, 15, ""),
+transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
+callStartTime: (f = msg.getCallStartTime()) && api_v1alpha1_vanalytics_expr_pb.TimestampExpr.toObject(includeInstance, f),
+callTypesList: (f = jspb.Message.getRepeatedField(msg, 18)) == null ? undefined : f,
+callSidsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
+huntGroupSidsList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
+groupNamesList: (f = jspb.Message.getRepeatedField(msg, 21)) == null ? undefined : f,
+agentCallLog: (f = msg.getAgentCallLog()) && proto.api.v1alpha1.vanalytics.AgentCallLogQuery.toObject(includeInstance, f),
+where: (f = msg.getWhere()) && proto.api.v1alpha1.vanalytics.SearchQuery.toObject(includeInstance, f),
+timeFrame: (f = msg.getTimeFrame()) && api_v1alpha1_vanalytics_expr_pb.Uint32Range.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2906,15 +2906,15 @@ proto.api.v1alpha1.vanalytics.SearchRequest.Phrase.prototype.toObject = function
  */
 proto.api.v1alpha1.vanalytics.SearchRequest.Phrase.toObject = function(includeInstance, msg) {
   var f, obj = {
-    wordsList: jspb.Message.toObjectList(msg.getWordsList(),
+wordsList: jspb.Message.toObjectList(msg.getWordsList(),
     proto.api.v1alpha1.vanalytics.SearchRequest.Phrase.Word.toObject, includeInstance),
-    slop: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    inOrder: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    highlight: (f = msg.getHighlight()) && proto.api.v1alpha1.vanalytics.SearchRequest.Phrase.Highlight.toObject(includeInstance, f),
-    not: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    agent: (f = msg.getAgent()) && proto.api.v1alpha1.vanalytics.SearchRequest.Agent.toObject(includeInstance, f),
-    channel: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    positionOffset: (f = msg.getPositionOffset()) && proto.api.v1alpha1.vanalytics.SearchRequest.PositionOffset.toObject(includeInstance, f)
+slop: jspb.Message.getFieldWithDefault(msg, 2, 0),
+inOrder: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+highlight: (f = msg.getHighlight()) && proto.api.v1alpha1.vanalytics.SearchRequest.Phrase.Highlight.toObject(includeInstance, f),
+not: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+agent: (f = msg.getAgent()) && proto.api.v1alpha1.vanalytics.SearchRequest.Agent.toObject(includeInstance, f),
+channel: jspb.Message.getFieldWithDefault(msg, 7, 0),
+positionOffset: (f = msg.getPositionOffset()) && proto.api.v1alpha1.vanalytics.SearchRequest.PositionOffset.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3111,8 +3111,8 @@ proto.api.v1alpha1.vanalytics.SearchRequest.Phrase.Word.prototype.toObject = fun
  */
 proto.api.v1alpha1.vanalytics.SearchRequest.Phrase.Word.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    fuzziness: jspb.Message.getFieldWithDefault(msg, 2, "")
+value: jspb.Message.getFieldWithDefault(msg, 1, ""),
+fuzziness: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3278,8 +3278,8 @@ proto.api.v1alpha1.vanalytics.SearchRequest.Phrase.Highlight.prototype.toObject 
  */
 proto.api.v1alpha1.vanalytics.SearchRequest.Phrase.Highlight.toObject = function(includeInstance, msg) {
   var f, obj = {
-    preTagsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    postTagsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+preTagsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+postTagsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3697,8 +3697,8 @@ proto.api.v1alpha1.vanalytics.SearchRequest.PositionOffset.prototype.toObject = 
  */
 proto.api.v1alpha1.vanalytics.SearchRequest.PositionOffset.toObject = function(includeInstance, msg) {
   var f, obj = {
-    start: (f = msg.getStart()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    stop: (f = msg.getStop()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+start: (f = msg.getStart()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+stop: (f = msg.getStop()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3899,10 +3899,10 @@ proto.api.v1alpha1.vanalytics.SearchRequest.Silence.prototype.toObject = functio
  */
 proto.api.v1alpha1.vanalytics.SearchRequest.Silence.toObject = function(includeInstance, msg) {
   var f, obj = {
-    durationTotal: (f = msg.getDurationTotal()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
-    durationMax: (f = msg.getDurationMax()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
-    occurrenceTotal: (f = msg.getOccurrenceTotal()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
-    durationPercentage: (f = msg.getDurationPercentage()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f)
+durationTotal: (f = msg.getDurationTotal()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
+durationMax: (f = msg.getDurationMax()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
+occurrenceTotal: (f = msg.getOccurrenceTotal()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
+durationPercentage: (f = msg.getDurationPercentage()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4203,10 +4203,10 @@ proto.api.v1alpha1.vanalytics.SearchRequest.TalkOver.prototype.toObject = functi
  */
 proto.api.v1alpha1.vanalytics.SearchRequest.TalkOver.toObject = function(includeInstance, msg) {
   var f, obj = {
-    durationTotal: (f = msg.getDurationTotal()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
-    durationMax: (f = msg.getDurationMax()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
-    occurrenceTotal: (f = msg.getOccurrenceTotal()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
-    durationPercentage: (f = msg.getDurationPercentage()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f)
+durationTotal: (f = msg.getDurationTotal()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
+durationMax: (f = msg.getDurationMax()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
+occurrenceTotal: (f = msg.getOccurrenceTotal()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f),
+durationPercentage: (f = msg.getDurationPercentage()) && api_v1alpha1_vanalytics_expr_pb.Uint32Expr.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4514,12 +4514,12 @@ proto.api.v1alpha1.vanalytics.SearchRequest.Terms.prototype.toObject = function(
  */
 proto.api.v1alpha1.vanalytics.SearchRequest.Terms.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    allList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    not: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    agent: (f = msg.getAgent()) && proto.api.v1alpha1.vanalytics.SearchRequest.Agent.toObject(includeInstance, f),
-    channel: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    positionOffset: (f = msg.getPositionOffset()) && proto.api.v1alpha1.vanalytics.SearchRequest.PositionOffset.toObject(includeInstance, f)
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+allList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+not: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+agent: (f = msg.getAgent()) && proto.api.v1alpha1.vanalytics.SearchRequest.Agent.toObject(includeInstance, f),
+channel: jspb.Message.getFieldWithDefault(msg, 5, 0),
+positionOffset: (f = msg.getPositionOffset()) && proto.api.v1alpha1.vanalytics.SearchRequest.PositionOffset.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4874,7 +4874,7 @@ proto.api.v1alpha1.vanalytics.SearchRequest.Agent.prototype.toObject = function(
  */
 proto.api.v1alpha1.vanalytics.SearchRequest.Agent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userName: (f = msg.getUserName()) && proto.api.v1alpha1.vanalytics.SearchRequest.Agent.UserName.toObject(includeInstance, f)
+userName: (f = msg.getUserName()) && proto.api.v1alpha1.vanalytics.SearchRequest.Agent.UserName.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4995,8 +4995,8 @@ proto.api.v1alpha1.vanalytics.SearchRequest.Agent.UserName.prototype.toObject = 
  */
 proto.api.v1alpha1.vanalytics.SearchRequest.Agent.UserName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    allList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+allList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5993,19 +5993,19 @@ proto.api.v1alpha1.vanalytics.SearchQuery.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptSid: (f = msg.getTranscriptSid()) && proto.api.v1alpha1.vanalytics.SearchQuery.TranscriptSid.toObject(includeInstance, f),
-    flagSummary: (f = msg.getFlagSummary()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.toObject(includeInstance, f),
-    orList: jspb.Message.toObjectList(msg.getOrList(),
+transcriptSid: (f = msg.getTranscriptSid()) && proto.api.v1alpha1.vanalytics.SearchQuery.TranscriptSid.toObject(includeInstance, f),
+flagSummary: (f = msg.getFlagSummary()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.toObject(includeInstance, f),
+orList: jspb.Message.toObjectList(msg.getOrList(),
     proto.api.v1alpha1.vanalytics.SearchQuery.toObject, includeInstance),
-    andList: jspb.Message.toObjectList(msg.getAndList(),
+andList: jspb.Message.toObjectList(msg.getAndList(),
     proto.api.v1alpha1.vanalytics.SearchQuery.toObject, includeInstance),
-    audioTime: (f = msg.getAudioTime()) && proto.api.v1alpha1.vanalytics.SearchQuery.AudioTime.toObject(includeInstance, f),
-    deleteTime: (f = msg.getDeleteTime()) && proto.api.v1alpha1.vanalytics.SearchQuery.DeleteTime.toObject(includeInstance, f),
-    not: (f = msg.getNot()) && proto.api.v1alpha1.vanalytics.SearchQuery.toObject(includeInstance, f),
-    results: (f = msg.getResults()) && proto.api.v1alpha1.vanalytics.SearchQuery.Results.toObject(includeInstance, f),
-    agentResponse: (f = msg.getAgentResponse()) && proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.toObject(includeInstance, f),
-    agentCallLog: (f = msg.getAgentCallLog()) && proto.api.v1alpha1.vanalytics.SearchQuery.AgentCallLog.toObject(includeInstance, f),
-    phone: (f = msg.getPhone()) && proto.api.v1alpha1.vanalytics.SearchQuery.Phone.toObject(includeInstance, f)
+audioTime: (f = msg.getAudioTime()) && proto.api.v1alpha1.vanalytics.SearchQuery.AudioTime.toObject(includeInstance, f),
+deleteTime: (f = msg.getDeleteTime()) && proto.api.v1alpha1.vanalytics.SearchQuery.DeleteTime.toObject(includeInstance, f),
+not: (f = msg.getNot()) && proto.api.v1alpha1.vanalytics.SearchQuery.toObject(includeInstance, f),
+results: (f = msg.getResults()) && proto.api.v1alpha1.vanalytics.SearchQuery.Results.toObject(includeInstance, f),
+agentResponse: (f = msg.getAgentResponse()) && proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.toObject(includeInstance, f),
+agentCallLog: (f = msg.getAgentCallLog()) && proto.api.v1alpha1.vanalytics.SearchQuery.AgentCallLog.toObject(includeInstance, f),
+phone: (f = msg.getPhone()) && proto.api.v1alpha1.vanalytics.SearchQuery.Phone.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6249,17 +6249,17 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Phone.prototype.toObject = function(op
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Phone.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cc: (f = msg.getCc()) && proto.api.v1alpha1.vanalytics.SearchQuery.Cc.toObject(includeInstance, f),
-    ndc: (f = msg.getNdc()) && proto.api.v1alpha1.vanalytics.SearchQuery.Ndc.toObject(includeInstance, f),
-    prefix: (f = msg.getPrefix()) && proto.api.v1alpha1.vanalytics.SearchQuery.Prefix.toObject(includeInstance, f),
-    city: (f = msg.getCity()) && proto.api.v1alpha1.vanalytics.SearchQuery.City.toObject(includeInstance, f),
-    iso2: (f = msg.getIso2()) && proto.api.v1alpha1.vanalytics.SearchQuery.Iso2.toObject(includeInstance, f),
-    regionCode: (f = msg.getRegionCode()) && proto.api.v1alpha1.vanalytics.SearchQuery.RegionCode.toObject(includeInstance, f),
-    regionName: (f = msg.getRegionName()) && proto.api.v1alpha1.vanalytics.SearchQuery.RegionName.toObject(includeInstance, f),
-    timeZone: (f = msg.getTimeZone()) && proto.api.v1alpha1.vanalytics.SearchQuery.TimeZone.toObject(includeInstance, f),
-    type: (f = msg.getType()) && proto.api.v1alpha1.vanalytics.SearchQuery.Type.toObject(includeInstance, f),
-    utc: (f = msg.getUtc()) && proto.api.v1alpha1.vanalytics.SearchQuery.Utc.toObject(includeInstance, f),
-    location: (f = msg.getLocation()) && proto.api.v1alpha1.vanalytics.SearchQuery.Location.toObject(includeInstance, f)
+cc: (f = msg.getCc()) && proto.api.v1alpha1.vanalytics.SearchQuery.Cc.toObject(includeInstance, f),
+ndc: (f = msg.getNdc()) && proto.api.v1alpha1.vanalytics.SearchQuery.Ndc.toObject(includeInstance, f),
+prefix: (f = msg.getPrefix()) && proto.api.v1alpha1.vanalytics.SearchQuery.Prefix.toObject(includeInstance, f),
+city: (f = msg.getCity()) && proto.api.v1alpha1.vanalytics.SearchQuery.City.toObject(includeInstance, f),
+iso2: (f = msg.getIso2()) && proto.api.v1alpha1.vanalytics.SearchQuery.Iso2.toObject(includeInstance, f),
+regionCode: (f = msg.getRegionCode()) && proto.api.v1alpha1.vanalytics.SearchQuery.RegionCode.toObject(includeInstance, f),
+regionName: (f = msg.getRegionName()) && proto.api.v1alpha1.vanalytics.SearchQuery.RegionName.toObject(includeInstance, f),
+timeZone: (f = msg.getTimeZone()) && proto.api.v1alpha1.vanalytics.SearchQuery.TimeZone.toObject(includeInstance, f),
+type: (f = msg.getType()) && proto.api.v1alpha1.vanalytics.SearchQuery.Type.toObject(includeInstance, f),
+utc: (f = msg.getUtc()) && proto.api.v1alpha1.vanalytics.SearchQuery.Utc.toObject(includeInstance, f),
+location: (f = msg.getLocation()) && proto.api.v1alpha1.vanalytics.SearchQuery.Location.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6917,7 +6917,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Cc.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Cc.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7073,7 +7073,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Ndc.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Ndc.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7229,7 +7229,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Prefix.prototype.toObject = function(o
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Prefix.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7385,7 +7385,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.City.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.City.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7541,7 +7541,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Iso2.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Iso2.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7697,7 +7697,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.RegionCode.prototype.toObject = functi
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.RegionCode.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7853,7 +7853,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.RegionName.prototype.toObject = functi
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.RegionName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8009,7 +8009,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.TimeZone.prototype.toObject = function
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.TimeZone.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8165,7 +8165,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Type.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Type.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8321,7 +8321,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Utc.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Utc.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f
+inList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8472,7 +8472,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Location.prototype.toObject = function
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Location.toObject = function(includeInstance, msg) {
   var f, obj = {
-    zipCodeProximity: (f = msg.getZipCodeProximity()) && proto.api.v1alpha1.vanalytics.SearchQuery.Location.ZipCodeProximity.toObject(includeInstance, f)
+zipCodeProximity: (f = msg.getZipCodeProximity()) && proto.api.v1alpha1.vanalytics.SearchQuery.Location.ZipCodeProximity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8586,9 +8586,9 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Location.ZipCodeProximity.prototype.to
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Location.ZipCodeProximity.toObject = function(includeInstance, msg) {
   var f, obj = {
-    countryCode: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    zipCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    distance: jspb.Message.getFieldWithDefault(msg, 3, "")
+countryCode: jspb.Message.getFieldWithDefault(msg, 1, ""),
+zipCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
+distance: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -8813,8 +8813,8 @@ proto.api.v1alpha1.vanalytics.SearchQuery.AgentCallLog.prototype.toObject = func
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.AgentCallLog.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSkillsInitial: (f = msg.getCallSkillsInitial()) && proto.api.v1alpha1.vanalytics.SearchQuery.CallSkillsInitial.toObject(includeInstance, f),
-    callEnded: (f = msg.getCallEnded()) && proto.api.v1alpha1.vanalytics.SearchQuery.CallEnded.toObject(includeInstance, f)
+callSkillsInitial: (f = msg.getCallSkillsInitial()) && proto.api.v1alpha1.vanalytics.SearchQuery.CallSkillsInitial.toObject(includeInstance, f),
+callEnded: (f = msg.getCallEnded()) && proto.api.v1alpha1.vanalytics.SearchQuery.CallEnded.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9022,7 +9022,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.CallEnded.prototype.toObject = functio
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.CallEnded.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reasonsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+reasonsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9180,8 +9180,8 @@ proto.api.v1alpha1.vanalytics.SearchQuery.CallSkillsInitial.prototype.toObject =
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.CallSkillsInitial.toObject = function(includeInstance, msg) {
   var f, obj = {
-    needList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    wantList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+needList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+wantList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9378,9 +9378,9 @@ proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.prototype.toObject = fun
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: (f = msg.getKey()) && proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.Key.toObject(includeInstance, f),
-    values: (f = msg.getValues()) && proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.Values.toObject(includeInstance, f),
-    numbers: (f = msg.getNumbers()) && proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.Numbers.toObject(includeInstance, f)
+key: (f = msg.getKey()) && proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.Key.toObject(includeInstance, f),
+values: (f = msg.getValues()) && proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.Values.toObject(includeInstance, f),
+numbers: (f = msg.getNumbers()) && proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.Numbers.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9527,9 +9527,9 @@ proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.Values.prototype.toObjec
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.Values.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    startsWith: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    contains: jspb.Message.getFieldWithDefault(msg, 3, "")
+inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+startsWith: jspb.Message.getFieldWithDefault(msg, 2, ""),
+contains: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -9743,12 +9743,12 @@ proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.Numbers.prototype.toObje
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.Numbers.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
-    gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
-    eq: (f = msg.getEq()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f)
+inList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
+gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+eq: (f = msg.getEq()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10156,9 +10156,9 @@ proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.Key.prototype.toObject =
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.AgentResponse.Key.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    startsWith: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    contains: jspb.Message.getFieldWithDefault(msg, 3, "")
+inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+startsWith: jspb.Message.getFieldWithDefault(msg, 2, ""),
+contains: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -10476,9 +10476,9 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Results.prototype.toObject = function(
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Results.toObject = function(includeInstance, msg) {
   var f, obj = {
-    channel: (f = msg.getChannel()) && proto.api.v1alpha1.vanalytics.SearchQuery.Results.Channel.toObject(includeInstance, f),
-    agentUserName: (f = msg.getAgentUserName()) && proto.api.v1alpha1.vanalytics.SearchQuery.Results.AgentUserName.toObject(includeInstance, f),
-    segments: (f = msg.getSegments()) && proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.toObject(includeInstance, f)
+channel: (f = msg.getChannel()) && proto.api.v1alpha1.vanalytics.SearchQuery.Results.Channel.toObject(includeInstance, f),
+agentUserName: (f = msg.getAgentUserName()) && proto.api.v1alpha1.vanalytics.SearchQuery.Results.AgentUserName.toObject(includeInstance, f),
+segments: (f = msg.getSegments()) && proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10618,7 +10618,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Results.Channel.prototype.toObject = f
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Results.Channel.toObject = function(includeInstance, msg) {
   var f, obj = {
-    eq: jspb.Message.getFieldWithDefault(msg, 1, 0)
+eq: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -10755,8 +10755,8 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Results.AgentUserName.prototype.toObje
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Results.AgentUserName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    allList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+allList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10953,7 +10953,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.prototype.toObject = 
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.toObject = function(includeInstance, msg) {
   var f, obj = {
-    text: (f = msg.getText()) && proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.Text.toObject(includeInstance, f)
+text: (f = msg.getText()) && proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.Text.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11067,7 +11067,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.Text.prototype.toObje
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.Text.toObject = function(includeInstance, msg) {
   var f, obj = {
-    phrase: (f = msg.getPhrase()) && proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.Text.Phrase.toObject(includeInstance, f)
+phrase: (f = msg.getPhrase()) && proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.Text.Phrase.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11188,10 +11188,10 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.Text.Phrase.prototype
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.Text.Phrase.toObject = function(includeInstance, msg) {
   var f, obj = {
-    wordsList: jspb.Message.toObjectList(msg.getWordsList(),
+wordsList: jspb.Message.toObjectList(msg.getWordsList(),
     proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.Text.Phrase.Word.toObject, includeInstance),
-    slop: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    inOrder: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+slop: jspb.Message.getFieldWithDefault(msg, 2, 0),
+inOrder: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -11327,8 +11327,8 @@ proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.Text.Phrase.Word.prot
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.Results.Segments.Text.Phrase.Word.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    fuzziness: jspb.Message.getFieldWithDefault(msg, 2, "")
+value: jspb.Message.getFieldWithDefault(msg, 1, ""),
+fuzziness: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -11746,7 +11746,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.DeleteTime.prototype.toObject = functi
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.DeleteTime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    exists: (f = msg.getExists()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f)
+exists: (f = msg.getExists()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11904,8 +11904,8 @@ proto.api.v1alpha1.vanalytics.SearchQuery.TranscriptSid.prototype.toObject = fun
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.TranscriptSid.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12106,10 +12106,10 @@ proto.api.v1alpha1.vanalytics.SearchQuery.AudioTime.prototype.toObject = functio
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.AudioTime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12410,10 +12410,10 @@ proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.prototype.toObject = funct
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    needReview: (f = msg.getNeedReview()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.NeedReview.toObject(includeInstance, f),
-    reviewStatus: (f = msg.getReviewStatus()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.ReviewStatus.toObject(includeInstance, f),
-    flags: (f = msg.getFlags()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.Flags.toObject(includeInstance, f),
-    count: (f = msg.getCount()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.Count.toObject(includeInstance, f)
+needReview: (f = msg.getNeedReview()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.NeedReview.toObject(includeInstance, f),
+reviewStatus: (f = msg.getReviewStatus()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.ReviewStatus.toObject(includeInstance, f),
+flags: (f = msg.getFlags()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.Flags.toObject(includeInstance, f),
+count: (f = msg.getCount()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.Count.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12566,7 +12566,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.NeedReview.prototype.toObj
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.NeedReview.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSids: (f = msg.getFlagSids()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.NeedReview.FlagSids.toObject(includeInstance, f)
+flagSids: (f = msg.getFlagSids()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.NeedReview.FlagSids.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12687,7 +12687,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.NeedReview.FlagSids.protot
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.NeedReview.FlagSids.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -12882,7 +12882,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.ReviewStatus.prototype.toO
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.ReviewStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13033,7 +13033,7 @@ proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.Flags.prototype.toObject =
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.Flags.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSid: (f = msg.getFlagSid()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.Flags.FlagSid.toObject(includeInstance, f)
+flagSid: (f = msg.getFlagSid()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.Flags.FlagSid.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -13154,8 +13154,8 @@ proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.Flags.FlagSid.prototype.to
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.Flags.FlagSid.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    allList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+allList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13393,11 +13393,11 @@ proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.Count.prototype.toObject =
  */
 proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.Count.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    eq: (f = msg.getEq()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+eq: (f = msg.getEq()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14312,10 +14312,10 @@ proto.api.v1alpha1.vanalytics.SearchResponse.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.vanalytics.SearchResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    total: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    hitsList: jspb.Message.toObjectList(msg.getHitsList(),
+total: jspb.Message.getFieldWithDefault(msg, 1, 0),
+hitsList: jspb.Message.toObjectList(msg.getHitsList(),
     proto.api.v1alpha1.vanalytics.SearchResponse.Hit.toObject, includeInstance),
-    sort: (f = msg.getSort()) && proto.api.v1alpha1.vanalytics.Sort.toObject(includeInstance, f)
+sort: (f = msg.getSort()) && proto.api.v1alpha1.vanalytics.Sort.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14453,7 +14453,7 @@ proto.api.v1alpha1.vanalytics.SearchResponse.Hit.prototype.toObject = function(o
  */
 proto.api.v1alpha1.vanalytics.SearchResponse.Hit.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcript: (f = msg.getTranscript()) && proto.api.v1alpha1.vanalytics.Transcript.toObject(includeInstance, f)
+transcript: (f = msg.getTranscript()) && proto.api.v1alpha1.vanalytics.Transcript.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14697,7 +14697,7 @@ proto.api.v1alpha1.vanalytics.AgentCallLogQuery.prototype.toObject = function(op
  */
 proto.api.v1alpha1.vanalytics.AgentCallLogQuery.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSkillsInitial: (f = msg.getCallSkillsInitial()) && proto.api.v1alpha1.vanalytics.CallSkillsInitialQuery.toObject(includeInstance, f)
+callSkillsInitial: (f = msg.getCallSkillsInitial()) && proto.api.v1alpha1.vanalytics.CallSkillsInitialQuery.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14855,9 +14855,9 @@ proto.api.v1alpha1.vanalytics.CallSkillsInitialQuery.prototype.toObject = functi
  */
 proto.api.v1alpha1.vanalytics.CallSkillsInitialQuery.toObject = function(includeInstance, msg) {
   var f, obj = {
-    needList: jspb.Message.toObjectList(msg.getNeedList(),
+needList: jspb.Message.toObjectList(msg.getNeedList(),
     proto.api.v1alpha1.vanalytics.VanaTermsQuery.toObject, includeInstance),
-    wantList: jspb.Message.toObjectList(msg.getWantList(),
+wantList: jspb.Message.toObjectList(msg.getWantList(),
     proto.api.v1alpha1.vanalytics.VanaTermsQuery.toObject, includeInstance)
   };
 
@@ -15068,9 +15068,9 @@ proto.api.v1alpha1.vanalytics.VanaTermsQuery.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.vanalytics.VanaTermsQuery.toObject = function(includeInstance, msg) {
   var f, obj = {
-    termsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    lacks: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    all: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+termsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+lacks: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+all: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -15284,9 +15284,9 @@ proto.api.v1alpha1.vanalytics.Sort.prototype.toObject = function(opt_includeInst
  */
 proto.api.v1alpha1.vanalytics.Sort.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
+fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
     proto.api.v1alpha1.vanalytics.Sort.Field.toObject, includeInstance),
-    afterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+afterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -15411,8 +15411,8 @@ proto.api.v1alpha1.vanalytics.Sort.Field.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.vanalytics.Sort.Field.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    desc: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+desc: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -15754,7 +15754,7 @@ proto.api.v1alpha1.vanalytics.ListTranscriptGroupNamesResponse.prototype.toObjec
  */
 proto.api.v1alpha1.vanalytics.ListTranscriptGroupNamesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    groupNamesList: jspb.Message.toObjectList(msg.getGroupNamesList(),
+groupNamesList: jspb.Message.toObjectList(msg.getGroupNamesList(),
     proto.api.v1alpha1.vanalytics.TranscriptGroupName.toObject, includeInstance)
   };
 
@@ -15907,7 +15907,7 @@ proto.api.v1alpha1.vanalytics.TranscriptGroupName.prototype.toObject = function(
  */
 proto.api.v1alpha1.vanalytics.TranscriptGroupName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: jspb.Message.getFieldWithDefault(msg, 1, "")
+value: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -16037,7 +16037,7 @@ proto.api.v1alpha1.vanalytics.ListAgentResponseValuesRequest.prototype.toObject 
  */
 proto.api.v1alpha1.vanalytics.ListAgentResponseValuesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 2, "")
+key: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -16174,7 +16174,7 @@ proto.api.v1alpha1.vanalytics.ListAgentResponseValuesResponse.prototype.toObject
  */
 proto.api.v1alpha1.vanalytics.ListAgentResponseValuesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -16330,27 +16330,27 @@ proto.api.v1alpha1.vanalytics.Transcript.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.vanalytics.Transcript.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    callSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    callType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+callSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+callType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.api.v1alpha1.vanalytics.Result.toObject, includeInstance),
-    silence: (f = msg.getSilence()) && proto.api.v1alpha1.vanalytics.Silence.toObject(includeInstance, f),
-    talkTime: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    callStartTime: (f = msg.getCallStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    talkOver: (f = msg.getTalkOver()) && proto.api.v1alpha1.vanalytics.TalkOver.toObject(includeInstance, f),
-    callerId: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    phoneNumber: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    audioTime: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    audioBytes: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    groupName: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    agentCallLog: (f = msg.getAgentCallLog()) && api_v1alpha1_vanalytics_aclpb_aclpb_pb.AgentCallLog.toObject(includeInstance, f),
-    flagSummary: (f = msg.getFlagSummary()) && proto.api.v1alpha1.vanalytics.FlagSummary.toObject(includeInstance, f),
-    deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    numberFormat: jspb.Message.getFieldWithDefault(msg, 21, ""),
-    agentResponseMap: (f = msg.getAgentResponseMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.vanalytics.AgentResponse.toObject) : [],
-    summary: (f = msg.getSummary()) && api_v1alpha1_vanalytics_transcript_summary_pb.TranscriptSummary.toObject(includeInstance, f)
+silence: (f = msg.getSilence()) && proto.api.v1alpha1.vanalytics.Silence.toObject(includeInstance, f),
+talkTime: jspb.Message.getFieldWithDefault(msg, 7, 0),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+callStartTime: (f = msg.getCallStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+talkOver: (f = msg.getTalkOver()) && proto.api.v1alpha1.vanalytics.TalkOver.toObject(includeInstance, f),
+callerId: jspb.Message.getFieldWithDefault(msg, 12, ""),
+phoneNumber: jspb.Message.getFieldWithDefault(msg, 13, ""),
+audioTime: jspb.Message.getFieldWithDefault(msg, 14, 0),
+audioBytes: jspb.Message.getFieldWithDefault(msg, 15, 0),
+groupName: jspb.Message.getFieldWithDefault(msg, 17, ""),
+agentCallLog: (f = msg.getAgentCallLog()) && api_v1alpha1_vanalytics_aclpb_aclpb_pb.AgentCallLog.toObject(includeInstance, f),
+flagSummary: (f = msg.getFlagSummary()) && proto.api.v1alpha1.vanalytics.FlagSummary.toObject(includeInstance, f),
+deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+numberFormat: jspb.Message.getFieldWithDefault(msg, 21, ""),
+agentResponseMap: (f = msg.getAgentResponseMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.vanalytics.AgentResponse.toObject) : [],
+summary: (f = msg.getSummary()) && api_v1alpha1_vanalytics_transcript_summary_pb.TranscriptSummary.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17232,16 +17232,16 @@ proto.api.v1alpha1.vanalytics.Result.prototype.toObject = function(opt_includeIn
  */
 proto.api.v1alpha1.vanalytics.Result.toObject = function(includeInstance, msg) {
   var f, obj = {
-    channel: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    segmentsList: jspb.Message.toObjectList(msg.getSegmentsList(),
+channel: jspb.Message.getFieldWithDefault(msg, 1, 0),
+segmentsList: jspb.Message.toObjectList(msg.getSegmentsList(),
     proto.api.v1alpha1.vanalytics.Segment.toObject, includeInstance),
-    agentFirstName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    agentLastName: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    agentUserName: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    beginTime: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    duration: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    text: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    huntGroupSid: jspb.Message.getFieldWithDefault(msg, 11, 0)
+agentFirstName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+agentLastName: jspb.Message.getFieldWithDefault(msg, 6, ""),
+agentUserName: jspb.Message.getFieldWithDefault(msg, 7, ""),
+beginTime: jspb.Message.getFieldWithDefault(msg, 8, 0),
+duration: jspb.Message.getFieldWithDefault(msg, 9, 0),
+text: jspb.Message.getFieldWithDefault(msg, 10, ""),
+huntGroupSid: jspb.Message.getFieldWithDefault(msg, 11, 0)
   };
 
   if (includeInstance) {
@@ -17632,11 +17632,11 @@ proto.api.v1alpha1.vanalytics.Segment.prototype.toObject = function(opt_includeI
  */
 proto.api.v1alpha1.vanalytics.Segment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    beginTime: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    confidence: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    duration: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    text: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    wordsList: jspb.Message.toObjectList(msg.getWordsList(),
+beginTime: jspb.Message.getFieldWithDefault(msg, 1, 0),
+confidence: jspb.Message.getFieldWithDefault(msg, 2, 0),
+duration: jspb.Message.getFieldWithDefault(msg, 3, 0),
+text: jspb.Message.getFieldWithDefault(msg, 4, ""),
+wordsList: jspb.Message.toObjectList(msg.getWordsList(),
     proto.api.v1alpha1.vanalytics.Word.toObject, includeInstance)
   };
 
@@ -17905,11 +17905,11 @@ proto.api.v1alpha1.vanalytics.Word.prototype.toObject = function(opt_includeInst
  */
 proto.api.v1alpha1.vanalytics.Word.toObject = function(includeInstance, msg) {
   var f, obj = {
-    beginTime: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    confidence: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    duration: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    spoken: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    redacted: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+beginTime: jspb.Message.getFieldWithDefault(msg, 1, 0),
+confidence: jspb.Message.getFieldWithDefault(msg, 2, 0),
+duration: jspb.Message.getFieldWithDefault(msg, 3, 0),
+spoken: jspb.Message.getFieldWithDefault(msg, 4, ""),
+redacted: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -18162,11 +18162,11 @@ proto.api.v1alpha1.vanalytics.Silence.prototype.toObject = function(opt_includeI
  */
 proto.api.v1alpha1.vanalytics.Silence.toObject = function(includeInstance, msg) {
   var f, obj = {
-    duration: (f = msg.getDuration()) && proto.api.v1alpha1.vanalytics.Silence.Duration.toObject(includeInstance, f),
-    segmentsList: jspb.Message.toObjectList(msg.getSegmentsList(),
+duration: (f = msg.getDuration()) && proto.api.v1alpha1.vanalytics.Silence.Duration.toObject(includeInstance, f),
+segmentsList: jspb.Message.toObjectList(msg.getSegmentsList(),
     proto.api.v1alpha1.vanalytics.Silence.Segment.toObject, includeInstance),
-    occurrence: (f = msg.getOccurrence()) && proto.api.v1alpha1.vanalytics.Silence.Occurrence.toObject(includeInstance, f),
-    threshold: jspb.Message.getFieldWithDefault(msg, 4, 0)
+occurrence: (f = msg.getOccurrence()) && proto.api.v1alpha1.vanalytics.Silence.Occurrence.toObject(includeInstance, f),
+threshold: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -18317,9 +18317,9 @@ proto.api.v1alpha1.vanalytics.Silence.Duration.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.vanalytics.Silence.Duration.toObject = function(includeInstance, msg) {
   var f, obj = {
-    total: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    max: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    percentage: jspb.Message.getFieldWithDefault(msg, 3, 0)
+total: jspb.Message.getFieldWithDefault(msg, 1, 0),
+max: jspb.Message.getFieldWithDefault(msg, 2, 0),
+percentage: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -18507,8 +18507,8 @@ proto.api.v1alpha1.vanalytics.Silence.Segment.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.vanalytics.Silence.Segment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    beginTime: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    duration: jspb.Message.getFieldWithDefault(msg, 2, 0)
+beginTime: jspb.Message.getFieldWithDefault(msg, 1, 0),
+duration: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -18667,7 +18667,7 @@ proto.api.v1alpha1.vanalytics.Silence.Occurrence.prototype.toObject = function(o
  */
 proto.api.v1alpha1.vanalytics.Silence.Occurrence.toObject = function(includeInstance, msg) {
   var f, obj = {
-    total: jspb.Message.getFieldWithDefault(msg, 1, 0)
+total: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -18934,11 +18934,11 @@ proto.api.v1alpha1.vanalytics.TalkOver.prototype.toObject = function(opt_include
  */
 proto.api.v1alpha1.vanalytics.TalkOver.toObject = function(includeInstance, msg) {
   var f, obj = {
-    occurrence: (f = msg.getOccurrence()) && proto.api.v1alpha1.vanalytics.TalkOver.Occurrence.toObject(includeInstance, f),
-    duration: (f = msg.getDuration()) && proto.api.v1alpha1.vanalytics.TalkOver.Duration.toObject(includeInstance, f),
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+occurrence: (f = msg.getOccurrence()) && proto.api.v1alpha1.vanalytics.TalkOver.Occurrence.toObject(includeInstance, f),
+duration: (f = msg.getDuration()) && proto.api.v1alpha1.vanalytics.TalkOver.Duration.toObject(includeInstance, f),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.api.v1alpha1.vanalytics.TalkOver.Result.toObject, includeInstance),
-    threshold: jspb.Message.getFieldWithDefault(msg, 4, 0)
+threshold: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -19089,9 +19089,9 @@ proto.api.v1alpha1.vanalytics.TalkOver.Duration.prototype.toObject = function(op
  */
 proto.api.v1alpha1.vanalytics.TalkOver.Duration.toObject = function(includeInstance, msg) {
   var f, obj = {
-    total: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    max: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    percentage: jspb.Message.getFieldWithDefault(msg, 3, 0)
+total: jspb.Message.getFieldWithDefault(msg, 1, 0),
+max: jspb.Message.getFieldWithDefault(msg, 2, 0),
+percentage: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -19286,13 +19286,13 @@ proto.api.v1alpha1.vanalytics.TalkOver.Result.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.vanalytics.TalkOver.Result.toObject = function(includeInstance, msg) {
   var f, obj = {
-    channel: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    occurrence: (f = msg.getOccurrence()) && proto.api.v1alpha1.vanalytics.TalkOver.Occurrence.toObject(includeInstance, f),
-    duration: (f = msg.getDuration()) && proto.api.v1alpha1.vanalytics.TalkOver.Duration.toObject(includeInstance, f),
-    segmentsList: jspb.Message.toObjectList(msg.getSegmentsList(),
+channel: jspb.Message.getFieldWithDefault(msg, 1, 0),
+occurrence: (f = msg.getOccurrence()) && proto.api.v1alpha1.vanalytics.TalkOver.Occurrence.toObject(includeInstance, f),
+duration: (f = msg.getDuration()) && proto.api.v1alpha1.vanalytics.TalkOver.Duration.toObject(includeInstance, f),
+segmentsList: jspb.Message.toObjectList(msg.getSegmentsList(),
     proto.api.v1alpha1.vanalytics.TalkOver.Segment.toObject, includeInstance),
-    agentUserName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    agentSessionSid: jspb.Message.getFieldWithDefault(msg, 6, 0)
+agentUserName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+agentSessionSid: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -19631,8 +19631,8 @@ proto.api.v1alpha1.vanalytics.TalkOver.Segment.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.vanalytics.TalkOver.Segment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    beginTime: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    duration: jspb.Message.getFieldWithDefault(msg, 2, 0)
+beginTime: jspb.Message.getFieldWithDefault(msg, 1, 0),
+duration: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -19791,7 +19791,7 @@ proto.api.v1alpha1.vanalytics.TalkOver.Occurrence.prototype.toObject = function(
  */
 proto.api.v1alpha1.vanalytics.TalkOver.Occurrence.toObject = function(includeInstance, msg) {
   var f, obj = {
-    total: jspb.Message.getFieldWithDefault(msg, 1, 0)
+total: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -20058,13 +20058,13 @@ proto.api.v1alpha1.vanalytics.FlagSummary.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.vanalytics.FlagSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    count: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    prioritySum: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    priorityMax: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    needReview: (f = msg.getNeedReview()) && proto.api.v1alpha1.vanalytics.FlagSummary.NeedReview.toObject(includeInstance, f),
-    flagsList: jspb.Message.toObjectList(msg.getFlagsList(),
+count: jspb.Message.getFieldWithDefault(msg, 1, 0),
+prioritySum: jspb.Message.getFieldWithDefault(msg, 2, 0),
+priorityMax: jspb.Message.getFieldWithDefault(msg, 3, 0),
+needReview: (f = msg.getNeedReview()) && proto.api.v1alpha1.vanalytics.FlagSummary.NeedReview.toObject(includeInstance, f),
+flagsList: jspb.Message.toObjectList(msg.getFlagsList(),
     proto.api.v1alpha1.vanalytics.FlagSummary.Flag.toObject, includeInstance),
-    reviewStatus: jspb.Message.getFieldWithDefault(msg, 6, 0)
+reviewStatus: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -20242,10 +20242,10 @@ proto.api.v1alpha1.vanalytics.FlagSummary.NeedReview.prototype.toObject = functi
  */
 proto.api.v1alpha1.vanalytics.FlagSummary.NeedReview.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prioritySum: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    priorityMax: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    count: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    flagSidsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+prioritySum: jspb.Message.getFieldWithDefault(msg, 1, 0),
+priorityMax: jspb.Message.getFieldWithDefault(msg, 2, 0),
+count: jspb.Message.getFieldWithDefault(msg, 3, 0),
+flagSidsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -20490,15 +20490,15 @@ proto.api.v1alpha1.vanalytics.FlagSummary.Flag.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.vanalytics.FlagSummary.Flag.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    priority: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    version: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
+flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+priority: jspb.Message.getFieldWithDefault(msg, 3, 0),
+version: jspb.Message.getFieldWithDefault(msg, 4, 0),
+filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
     proto.api.v1alpha1.vanalytics.FlagSummary.Filter.toObject, includeInstance),
-    mustReview: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    mustNotify: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    reviewsList: jspb.Message.toObjectList(msg.getReviewsList(),
+mustReview: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+mustNotify: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+reviewsList: jspb.Message.toObjectList(msg.getReviewsList(),
     proto.api.v1alpha1.vanalytics.FlagSummary.Review.toObject, includeInstance)
   };
 
@@ -20876,11 +20876,11 @@ proto.api.v1alpha1.vanalytics.FlagSummary.Filter.prototype.toObject = function(o
  */
 proto.api.v1alpha1.vanalytics.FlagSummary.Filter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    joinKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    flagSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    filterSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    version: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 5, "")
+joinKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+flagSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+filterSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+version: jspb.Message.getFieldWithDefault(msg, 4, 0),
+name: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -21126,9 +21126,9 @@ proto.api.v1alpha1.vanalytics.FlagSummary.Review.prototype.toObject = function(o
  */
 proto.api.v1alpha1.vanalytics.FlagSummary.Review.toObject = function(includeInstance, msg) {
   var f, obj = {
-    joinKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    flagSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 3, "")
+joinKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+flagSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+userId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -21470,7 +21470,7 @@ proto.api.v1alpha1.vanalytics.AgentResponse.prototype.toObject = function(opt_in
  */
 proto.api.v1alpha1.vanalytics.AgentResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -21619,11 +21619,11 @@ proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.toObject = function
  */
 proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    sort: (f = msg.getSort()) && proto.api.v1alpha1.vanalytics.Sort.toObject(includeInstance, f),
-    transcriptMask: (f = msg.getTranscriptMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    flagSummary: (f = msg.getFlagSummary()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.toObject(includeInstance, f)
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+sort: (f = msg.getSort()) && proto.api.v1alpha1.vanalytics.Sort.toObject(includeInstance, f),
+transcriptMask: (f = msg.getTranscriptMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+flagSummary: (f = msg.getFlagSummary()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

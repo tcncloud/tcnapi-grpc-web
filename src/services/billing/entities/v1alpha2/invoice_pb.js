@@ -135,11 +135,11 @@ proto.services.billing.entities.v1alpha2.Invoice.prototype.toObject = function(o
  */
 proto.services.billing.entities.v1alpha2.Invoice.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingCycle: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+billingCycle: jspb.Message.getFieldWithDefault(msg, 1, ""),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.services.billing.entities.v1alpha2.InvoiceItem.toObject, includeInstance),
-    downloadUrl: (f = msg.getDownloadUrl()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+downloadUrl: (f = msg.getDownloadUrl()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -427,15 +427,15 @@ proto.services.billing.entities.v1alpha2.InvoiceItem.prototype.toObject = functi
  */
 proto.services.billing.entities.v1alpha2.InvoiceItem.toObject = function(includeInstance, msg) {
   var f, obj = {
-    clientId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    product: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    date: (f = msg.getDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    price: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
+clientId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+product: jspb.Message.getFieldWithDefault(msg, 2, 0),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+date: (f = msg.getDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+price: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
+columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
     proto.services.billing.entities.v1alpha2.InvoiceItemColumn.toObject, includeInstance),
-    ratedAmount: (f = msg.getRatedAmount()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f),
-    productId: jspb.Message.getFieldWithDefault(msg, 8, "")
+ratedAmount: (f = msg.getRatedAmount()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f),
+productId: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -832,8 +832,8 @@ proto.services.billing.entities.v1alpha2.InvoiceItemColumn.prototype.toObject = 
  */
 proto.services.billing.entities.v1alpha2.InvoiceItemColumn.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 2, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+value: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

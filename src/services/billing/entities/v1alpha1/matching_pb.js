@@ -149,9 +149,9 @@ proto.services.billing.entities.v1alpha1.MatchingConfig.prototype.toObject = fun
  */
 proto.services.billing.entities.v1alpha1.MatchingConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    areaCode: (f = msg.getAreaCode()) && proto.services.billing.entities.v1alpha1.MatchingConfigAreaCode.toObject(includeInstance, f),
-    countryPrefix: (f = msg.getCountryPrefix()) && proto.services.billing.entities.v1alpha1.MatchingConfigCountryPrefix.toObject(includeInstance, f)
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+areaCode: (f = msg.getAreaCode()) && proto.services.billing.entities.v1alpha1.MatchingConfigAreaCode.toObject(includeInstance, f),
+countryPrefix: (f = msg.getCountryPrefix()) && proto.services.billing.entities.v1alpha1.MatchingConfigCountryPrefix.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -388,8 +388,8 @@ proto.services.billing.entities.v1alpha1.MatchingConfigAreaCode.prototype.toObje
  */
 proto.services.billing.entities.v1alpha1.MatchingConfigAreaCode.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    areaCodesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+areaCodesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -574,8 +574,8 @@ proto.services.billing.entities.v1alpha1.MatchingConfigCountryPrefix.prototype.t
  */
 proto.services.billing.entities.v1alpha1.MatchingConfigCountryPrefix.toObject = function(includeInstance, msg) {
   var f, obj = {
-    countryCode: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    prefixesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+countryCode: jspb.Message.getFieldWithDefault(msg, 1, 0),
+prefixesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {

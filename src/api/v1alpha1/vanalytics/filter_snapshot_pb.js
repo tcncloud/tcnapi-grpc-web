@@ -81,12 +81,12 @@ proto.api.v1alpha1.vanalytics.FilterSnapshot.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.vanalytics.FilterSnapshot.toObject = function(includeInstance, msg) {
   var f, obj = {
-    filterSnapshotSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    filterSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    searchRequest: (f = msg.getSearchRequest()) && api_v1alpha1_vanalytics_transcript_pb.SearchRequest.toObject(includeInstance, f),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    version: jspb.Message.getFieldWithDefault(msg, 7, 0)
+filterSnapshotSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+filterSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+searchRequest: (f = msg.getSearchRequest()) && api_v1alpha1_vanalytics_transcript_pb.SearchRequest.toObject(includeInstance, f),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+version: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {

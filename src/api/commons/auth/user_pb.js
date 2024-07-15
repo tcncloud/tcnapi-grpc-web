@@ -99,17 +99,17 @@ proto.api.commons.auth.AuthClaims.prototype.toObject = function(opt_includeInsta
  */
 proto.api.commons.auth.AuthClaims.toObject = function(includeInstance, msg) {
   var f, obj = {
-    auth0UserId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    orgUserId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    apiKey: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    regionId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    impersonate: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    clientSid: jspb.Message.getFieldWithDefault(msg, 1000, 0),
-    agentSid: jspb.Message.getFieldWithDefault(msg, 1001, 0),
-    loginSid: jspb.Message.getFieldWithDefault(msg, 1002, 0),
-    activeOrgId: jspb.Message.getFieldWithDefault(msg, 1100, "")
+auth0UserId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+orgUserId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+orgId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+apiKey: jspb.Message.getFieldWithDefault(msg, 4, ""),
+regionId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+name: jspb.Message.getFieldWithDefault(msg, 6, ""),
+impersonate: jspb.Message.getFieldWithDefault(msg, 7, ""),
+clientSid: jspb.Message.getFieldWithDefault(msg, 1000, 0),
+agentSid: jspb.Message.getFieldWithDefault(msg, 1001, 0),
+loginSid: jspb.Message.getFieldWithDefault(msg, 1002, 0),
+activeOrgId: jspb.Message.getFieldWithDefault(msg, 1100, "")
   };
 
   if (includeInstance) {
@@ -529,7 +529,7 @@ proto.api.commons.auth.AuthenticatedUser.prototype.toObject = function(opt_inclu
  */
 proto.api.commons.auth.AuthenticatedUser.toObject = function(includeInstance, msg) {
   var f, obj = {
-    claims: (f = msg.getClaims()) && proto.api.commons.auth.AuthClaims.toObject(includeInstance, f)
+claims: (f = msg.getClaims()) && proto.api.commons.auth.AuthClaims.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
