@@ -47897,8 +47897,7 @@ proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW.toObject = function(in
 dayOfWeek: jspb.Message.getFieldWithDefault(msg, 1, 0),
 startMinuteInDay: jspb.Message.getFieldWithDefault(msg, 2, 0),
 endMinuteInDay: jspb.Message.getFieldWithDefault(msg, 3, 0),
-value: (f = msg.getValue()) && api_commons_wfm_pb.OptionTypes.toObject(includeInstance, f),
-schedulingActivitySid: (f = msg.getSchedulingActivitySid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+value: (f = msg.getValue()) && api_commons_wfm_pb.OptionTypes.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -47951,11 +47950,6 @@ proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW.deserializeBinaryFromR
       var value = new api_commons_wfm_pb.OptionTypes;
       reader.readMessage(value,api_commons_wfm_pb.OptionTypes.deserializeBinaryFromReader);
       msg.setValue(value);
-      break;
-    case 5:
-      var value = new google_protobuf_wrappers_pb.Int64Value;
-      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
-      msg.setSchedulingActivitySid(value);
       break;
     default:
       reader.skipField();
@@ -48013,14 +48007,6 @@ proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW.serializeBinaryToWrite
       4,
       f,
       api_commons_wfm_pb.OptionTypes.serializeBinaryToWriter
-    );
-  }
-  f = message.getSchedulingActivitySid();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
   }
 };
@@ -48114,43 +48100,6 @@ proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW.prototype.clearValue =
  */
 proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW.prototype.hasValue = function() {
   return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional google.protobuf.Int64Value scheduling_activity_sid = 5;
- * @return {?proto.google.protobuf.Int64Value}
- */
-proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW.prototype.getSchedulingActivitySid = function() {
-  return /** @type{?proto.google.protobuf.Int64Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 5));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Int64Value|undefined} value
- * @return {!proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW} returns this
-*/
-proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW.prototype.setSchedulingActivitySid = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW} returns this
- */
-proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW.prototype.clearSchedulingActivitySid = function() {
-  return this.setSchedulingActivitySid(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v1alpha1.wfm.DatetimePattern.WeekMap.WeekMapDOW.prototype.hasSchedulingActivitySid = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -48262,8 +48211,7 @@ proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.toObject = functio
 proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.toObject = function(includeInstance, msg) {
   var f, obj = {
 datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
-value: (f = msg.getValue()) && api_commons_wfm_pb.OptionTypes.toObject(includeInstance, f),
-schedulingActivitySid: (f = msg.getSchedulingActivitySid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+value: (f = msg.getValue()) && api_commons_wfm_pb.OptionTypes.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -48310,11 +48258,6 @@ proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.deserializeBinaryFromReader 
       reader.readMessage(value,api_commons_wfm_pb.OptionTypes.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
-    case 3:
-      var value = new google_protobuf_wrappers_pb.Int64Value;
-      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
-      msg.setSchedulingActivitySid(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -48358,14 +48301,6 @@ proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.serializeBinaryToWriter = fu
       2,
       f,
       api_commons_wfm_pb.OptionTypes.serializeBinaryToWriter
-    );
-  }
-  f = message.getSchedulingActivitySid();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
   }
 };
@@ -48442,43 +48377,6 @@ proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.clearValue = funct
  */
 proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.hasValue = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional google.protobuf.Int64Value scheduling_activity_sid = 3;
- * @return {?proto.google.protobuf.Int64Value}
- */
-proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.getSchedulingActivitySid = function() {
-  return /** @type{?proto.google.protobuf.Int64Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 3));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Int64Value|undefined} value
- * @return {!proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem} returns this
-*/
-proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.setSchedulingActivitySid = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem} returns this
- */
-proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.clearSchedulingActivitySid = function() {
-  return this.setSchedulingActivitySid(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v1alpha1.wfm.DatetimePattern.CalendarItem.prototype.hasSchedulingActivitySid = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -48593,7 +48491,8 @@ proto.api.v1alpha1.wfm.OpenTimesPattern.toObject = function(includeInstance, msg
 openTimesPatternSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
 parentEntity: (f = msg.getParentEntity()) && proto.api.v1alpha1.wfm.ParentEntity.toObject(includeInstance, f),
 datetimePattern: (f = msg.getDatetimePattern()) && proto.api.v1alpha1.wfm.DatetimePattern.toObject(includeInstance, f),
-scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 4, 0)
+scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
+schedulingActivitySid: (f = msg.getSchedulingActivitySid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -48647,6 +48546,11 @@ proto.api.v1alpha1.wfm.OpenTimesPattern.deserializeBinaryFromReader = function(m
     case 4:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setScheduleScenarioSid(value);
+      break;
+    case 5:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setSchedulingActivitySid(value);
       break;
     default:
       reader.skipField();
@@ -48705,6 +48609,14 @@ proto.api.v1alpha1.wfm.OpenTimesPattern.serializeBinaryToWriter = function(messa
     writer.writeInt64(
       4,
       f
+    );
+  }
+  f = message.getSchedulingActivitySid();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
   }
 };
@@ -48817,6 +48729,43 @@ proto.api.v1alpha1.wfm.OpenTimesPattern.prototype.getScheduleScenarioSid = funct
  */
 proto.api.v1alpha1.wfm.OpenTimesPattern.prototype.setScheduleScenarioSid = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.Int64Value scheduling_activity_sid = 5;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.api.v1alpha1.wfm.OpenTimesPattern.prototype.getSchedulingActivitySid = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Int64Value|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.OpenTimesPattern} returns this
+*/
+proto.api.v1alpha1.wfm.OpenTimesPattern.prototype.setSchedulingActivitySid = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.OpenTimesPattern} returns this
+ */
+proto.api.v1alpha1.wfm.OpenTimesPattern.prototype.clearSchedulingActivitySid = function() {
+  return this.setSchedulingActivitySid(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.OpenTimesPattern.prototype.hasSchedulingActivitySid = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -50563,7 +50512,8 @@ proto.api.v1alpha1.wfm.AgentAvailabilityPattern.toObject = function(includeInsta
 agentAvailabilityPatternSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
 parentEntity: (f = msg.getParentEntity()) && proto.api.v1alpha1.wfm.ParentEntity.toObject(includeInstance, f),
 datetimePattern: (f = msg.getDatetimePattern()) && proto.api.v1alpha1.wfm.DatetimePattern.toObject(includeInstance, f),
-scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 4, 0)
+scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
+schedulingActivitySid: (f = msg.getSchedulingActivitySid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -50617,6 +50567,11 @@ proto.api.v1alpha1.wfm.AgentAvailabilityPattern.deserializeBinaryFromReader = fu
     case 4:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setScheduleScenarioSid(value);
+      break;
+    case 5:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setSchedulingActivitySid(value);
       break;
     default:
       reader.skipField();
@@ -50675,6 +50630,14 @@ proto.api.v1alpha1.wfm.AgentAvailabilityPattern.serializeBinaryToWriter = functi
     writer.writeInt64(
       4,
       f
+    );
+  }
+  f = message.getSchedulingActivitySid();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
   }
 };
@@ -50787,6 +50750,43 @@ proto.api.v1alpha1.wfm.AgentAvailabilityPattern.prototype.getScheduleScenarioSid
  */
 proto.api.v1alpha1.wfm.AgentAvailabilityPattern.prototype.setScheduleScenarioSid = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.Int64Value scheduling_activity_sid = 5;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.api.v1alpha1.wfm.AgentAvailabilityPattern.prototype.getSchedulingActivitySid = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Int64Value|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.AgentAvailabilityPattern} returns this
+*/
+proto.api.v1alpha1.wfm.AgentAvailabilityPattern.prototype.setSchedulingActivitySid = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.AgentAvailabilityPattern} returns this
+ */
+proto.api.v1alpha1.wfm.AgentAvailabilityPattern.prototype.clearSchedulingActivitySid = function() {
+  return this.setSchedulingActivitySid(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.AgentAvailabilityPattern.prototype.hasSchedulingActivitySid = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
