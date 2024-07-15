@@ -37121,7 +37121,7 @@ proto.api.v1alpha1.wfm.SchedulingActivity.deserializeBinaryFromReader = function
       msg.setMemberNonSkillActivity(value);
       break;
     case 5:
-      var value = /** @type {!proto.api.commons.ActivityClassification} */ (reader.readEnum());
+      var value = /** @type {!proto.api.commons.SchedulingActivityClassification} */ (reader.readEnum());
       msg.setActivityClassification(value);
       break;
     default:
@@ -37304,16 +37304,16 @@ proto.api.v1alpha1.wfm.SchedulingActivity.prototype.hasMemberNonSkillActivity = 
 
 
 /**
- * optional api.commons.ActivityClassification activity_classification = 5;
- * @return {!proto.api.commons.ActivityClassification}
+ * optional api.commons.SchedulingActivityClassification activity_classification = 5;
+ * @return {!proto.api.commons.SchedulingActivityClassification}
  */
 proto.api.v1alpha1.wfm.SchedulingActivity.prototype.getActivityClassification = function() {
-  return /** @type {!proto.api.commons.ActivityClassification} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.api.commons.SchedulingActivityClassification} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {!proto.api.commons.ActivityClassification} value
+ * @param {!proto.api.commons.SchedulingActivityClassification} value
  * @return {!proto.api.v1alpha1.wfm.SchedulingActivity} returns this
  */
 proto.api.v1alpha1.wfm.SchedulingActivity.prototype.setActivityClassification = function(value) {

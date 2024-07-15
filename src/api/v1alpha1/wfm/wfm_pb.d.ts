@@ -3942,8 +3942,8 @@ export class SchedulingActivity extends jspb.Message {
   getMemberNonSkillActivity(): NonSkillActivity | undefined;
   setMemberNonSkillActivity(value?: NonSkillActivity): void;
 
-  getActivityClassification(): api_commons_wfm_pb.ActivityClassificationMap[keyof api_commons_wfm_pb.ActivityClassificationMap];
-  setActivityClassification(value: api_commons_wfm_pb.ActivityClassificationMap[keyof api_commons_wfm_pb.ActivityClassificationMap]): void;
+  getActivityClassification(): api_commons_wfm_pb.SchedulingActivityClassificationMap[keyof api_commons_wfm_pb.SchedulingActivityClassificationMap];
+  setActivityClassification(value: api_commons_wfm_pb.SchedulingActivityClassificationMap[keyof api_commons_wfm_pb.SchedulingActivityClassificationMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SchedulingActivity.AsObject;
@@ -3961,7 +3961,7 @@ export namespace SchedulingActivity {
     isSkillActivity: boolean,
     activitySid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     memberNonSkillActivity?: NonSkillActivity.AsObject,
-    activityClassification: api_commons_wfm_pb.ActivityClassificationMap[keyof api_commons_wfm_pb.ActivityClassificationMap],
+    activityClassification: api_commons_wfm_pb.SchedulingActivityClassificationMap[keyof api_commons_wfm_pb.SchedulingActivityClassificationMap],
   }
 }
 

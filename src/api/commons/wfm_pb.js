@@ -25,7 +25,6 @@ var global = localGlobalThis ||
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('proto.api.commons.ActivityClassification', null, global);
 goog.exportSymbol('proto.api.commons.AgentLeavePetition', null, global);
 goog.exportSymbol('proto.api.commons.AgentLeavePetitionStatus', null, global);
 goog.exportSymbol('proto.api.commons.AgentStateSegment', null, global);
@@ -67,6 +66,7 @@ goog.exportSymbol('proto.api.commons.RegressionForecasterModelTypes', null, glob
 goog.exportSymbol('proto.api.commons.ScheduleSelector', null, global);
 goog.exportSymbol('proto.api.commons.ScheduleShouldInclude', null, global);
 goog.exportSymbol('proto.api.commons.ScheduleType', null, global);
+goog.exportSymbol('proto.api.commons.SchedulingActivityClassification', null, global);
 goog.exportSymbol('proto.api.commons.SchedulingResultMetric', null, global);
 goog.exportSymbol('proto.api.commons.SchedulingResultMetricForSkillCollection', null, global);
 goog.exportSymbol('proto.api.commons.SchedulingTargetType', null, global);
@@ -7047,8 +7047,8 @@ proto.api.commons.AgentLeavePetitionStatus = {
 /**
  * @enum {number}
  */
-proto.api.commons.ActivityClassification = {
-  STANDARD_NONSKILL_ACTIVITY: 0,
+proto.api.commons.SchedulingActivityClassification = {
+  STANDARD_SCHEDULING_ACTIVITY: 0,
   ON_CALL_ACTIVITY: 1,
   TIME_OFF_ACTIVITY: 2
 };

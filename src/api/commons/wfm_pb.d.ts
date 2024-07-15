@@ -1168,11 +1168,11 @@ export interface AgentLeavePetitionStatusMap {
 
 export const AgentLeavePetitionStatus: AgentLeavePetitionStatusMap;
 
-export interface ActivityClassificationMap {
-  STANDARD_NONSKILL_ACTIVITY: 0;
+export interface SchedulingActivityClassificationMap {
+  STANDARD_SCHEDULING_ACTIVITY: 0;
   ON_CALL_ACTIVITY: 1;
   TIME_OFF_ACTIVITY: 2;
 }
 
-export const ActivityClassification: ActivityClassificationMap;
+export const SchedulingActivityClassification: SchedulingActivityClassificationMap;
 
