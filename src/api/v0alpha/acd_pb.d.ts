@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as api_commons_acd_pb from "../../api/commons/acd_pb";
+import * as api_commons_integrations_integrations_pb from "../../api/commons/integrations/integrations_pb";
 import * as api_v1alpha1_integrations_service_pb from "../../api/v1alpha1/integrations/service_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 
@@ -2490,6 +2491,67 @@ export class FinishSecureFormHandlingRes extends jspb.Message {
 
 export namespace FinishSecureFormHandlingRes {
   export type AsObject = {
+  }
+}
+
+export class PopulateWorkflowFieldsReq extends jspb.Message {
+  getClientSid(): number;
+  setClientSid(value: number): void;
+
+  getAgentSid(): number;
+  setAgentSid(value: number): void;
+
+  getCallSid(): number;
+  setCallSid(value: number): void;
+
+  getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+  setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
+  getScheduledCallbackId(): string;
+  setScheduledCallbackId(value: string): void;
+
+  clearFieldDefinitionsList(): void;
+  getFieldDefinitionsList(): Array<api_commons_integrations_integrations_pb.FieldDefinition>;
+  setFieldDefinitionsList(value: Array<api_commons_integrations_integrations_pb.FieldDefinition>): void;
+  addFieldDefinitions(value?: api_commons_integrations_integrations_pb.FieldDefinition, index?: number): api_commons_integrations_integrations_pb.FieldDefinition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PopulateWorkflowFieldsReq.AsObject;
+  static toObject(includeInstance: boolean, msg: PopulateWorkflowFieldsReq): PopulateWorkflowFieldsReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PopulateWorkflowFieldsReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PopulateWorkflowFieldsReq;
+  static deserializeBinaryFromReader(message: PopulateWorkflowFieldsReq, reader: jspb.BinaryReader): PopulateWorkflowFieldsReq;
+}
+
+export namespace PopulateWorkflowFieldsReq {
+  export type AsObject = {
+    clientSid: number,
+    agentSid: number,
+    callSid: number,
+    callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+    scheduledCallbackId: string,
+    fieldDefinitionsList: Array<api_commons_integrations_integrations_pb.FieldDefinition.AsObject>,
+  }
+}
+
+export class PopulateWorkflowFieldsRes extends jspb.Message {
+  getValuesMap(): jspb.Map<string, api_v1alpha1_integrations_service_pb.Value>;
+  clearValuesMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PopulateWorkflowFieldsRes.AsObject;
+  static toObject(includeInstance: boolean, msg: PopulateWorkflowFieldsRes): PopulateWorkflowFieldsRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PopulateWorkflowFieldsRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PopulateWorkflowFieldsRes;
+  static deserializeBinaryFromReader(message: PopulateWorkflowFieldsRes, reader: jspb.BinaryReader): PopulateWorkflowFieldsRes;
+}
+
+export namespace PopulateWorkflowFieldsRes {
+  export type AsObject = {
+    valuesMap: Array<[string, api_v1alpha1_integrations_service_pb.Value.AsObject]>,
   }
 }
 
