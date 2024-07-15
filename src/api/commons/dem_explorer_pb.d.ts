@@ -13,6 +13,9 @@ export class SchemaField extends jspb.Message {
   getIsPrimaryKey(): boolean;
   setIsPrimaryKey(value: boolean): void;
 
+  getIsLowCardinality(): boolean;
+  setIsLowCardinality(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SchemaField.AsObject;
   static toObject(includeInstance: boolean, msg: SchemaField): SchemaField.AsObject;
@@ -28,6 +31,7 @@ export namespace SchemaField {
     name: string,
     columnType: SchemaTypeMap[keyof SchemaTypeMap],
     isPrimaryKey: boolean,
+    isLowCardinality: boolean,
   }
 }
 

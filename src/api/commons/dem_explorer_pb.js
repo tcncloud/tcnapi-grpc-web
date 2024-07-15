@@ -103,7 +103,8 @@ proto.api.commons.SchemaField.toObject = function(includeInstance, msg) {
   var f, obj = {
 name: jspb.Message.getFieldWithDefault(msg, 1, ""),
 columnType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-isPrimaryKey: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+isPrimaryKey: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+isLowCardinality: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -152,6 +153,10 @@ proto.api.commons.SchemaField.deserializeBinaryFromReader = function(msg, reader
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsPrimaryKey(value);
       break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsLowCardinality(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -199,6 +204,13 @@ proto.api.commons.SchemaField.serializeBinaryToWriter = function(message, writer
   if (f) {
     writer.writeBool(
       3,
+      f
+    );
+  }
+  f = message.getIsLowCardinality();
+  if (f) {
+    writer.writeBool(
+      4,
       f
     );
   }
@@ -256,6 +268,24 @@ proto.api.commons.SchemaField.prototype.getIsPrimaryKey = function() {
  */
 proto.api.commons.SchemaField.prototype.setIsPrimaryKey = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional bool is_low_cardinality = 4;
+ * @return {boolean}
+ */
+proto.api.commons.SchemaField.prototype.getIsLowCardinality = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.SchemaField} returns this
+ */
+proto.api.commons.SchemaField.prototype.setIsLowCardinality = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
