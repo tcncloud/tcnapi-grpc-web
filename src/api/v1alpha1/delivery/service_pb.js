@@ -2058,8 +2058,8 @@ proto.api.v1alpha1.delivery.CreateTransferConfigReq.prototype.toObject = functio
  */
 proto.api.v1alpha1.delivery.CreateTransferConfigReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2260,7 +2260,7 @@ proto.api.v1alpha1.delivery.CreateTransferConfigRes.prototype.toObject = functio
  */
 proto.api.v1alpha1.delivery.CreateTransferConfigRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2411,9 +2411,9 @@ proto.api.v1alpha1.delivery.ListTransferConfigsReq.prototype.toObject = function
  */
 proto.api.v1alpha1.delivery.ListTransferConfigsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    listReq: (f = msg.getListReq()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+listReq: (f = msg.getListReq()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2671,7 +2671,7 @@ proto.api.v1alpha1.delivery.ListTransferConfigsRes.prototype.toObject = function
  */
 proto.api.v1alpha1.delivery.ListTransferConfigsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     proto.api.v1alpha1.delivery.TransferConfig.toObject, includeInstance)
   };
 
@@ -2824,10 +2824,10 @@ proto.api.v1alpha1.delivery.ListTransferConfigsByCredentialIDReq.prototype.toObj
  */
 proto.api.v1alpha1.delivery.ListTransferConfigsByCredentialIDReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    credentialSid: (f = msg.getCredentialSid()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f),
-    listReq: (f = msg.getListReq()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+credentialSid: (f = msg.getCredentialSid()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f),
+listReq: (f = msg.getListReq()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3135,7 +3135,7 @@ proto.api.v1alpha1.delivery.ListTransferConfigsByCredentialIDRes.prototype.toObj
  */
 proto.api.v1alpha1.delivery.ListTransferConfigsByCredentialIDRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     proto.api.v1alpha1.delivery.TransferConfig.toObject, includeInstance)
   };
 
@@ -3288,8 +3288,8 @@ proto.api.v1alpha1.delivery.UpdateTransferConfigReq.prototype.toObject = functio
  */
 proto.api.v1alpha1.delivery.UpdateTransferConfigReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3490,7 +3490,7 @@ proto.api.v1alpha1.delivery.UpdateTransferConfigRes.prototype.toObject = functio
  */
 proto.api.v1alpha1.delivery.UpdateTransferConfigRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3641,8 +3641,8 @@ proto.api.v1alpha1.delivery.DeleteTransferConfigReq.prototype.toObject = functio
  */
 proto.api.v1alpha1.delivery.DeleteTransferConfigReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3944,8 +3944,8 @@ proto.api.v1alpha1.delivery.GetTransferConfigReq.prototype.toObject = function(o
  */
 proto.api.v1alpha1.delivery.GetTransferConfigReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4146,7 +4146,7 @@ proto.api.v1alpha1.delivery.GetTransferConfigRes.prototype.toObject = function(o
  */
 proto.api.v1alpha1.delivery.GetTransferConfigRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4297,9 +4297,9 @@ proto.api.v1alpha1.delivery.GetTransferConfigByNameReq.prototype.toObject = func
  */
 proto.api.v1alpha1.delivery.GetTransferConfigByNameReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f)
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4529,7 +4529,7 @@ proto.api.v1alpha1.delivery.GetTransferConfigByNameRes.prototype.toObject = func
  */
 proto.api.v1alpha1.delivery.GetTransferConfigByNameRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.TransferConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4680,9 +4680,9 @@ proto.api.v1alpha1.delivery.ListHistoryReq.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.delivery.ListHistoryReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.History.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    listReq: (f = msg.getListReq()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.History.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+listReq: (f = msg.getListReq()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4940,7 +4940,7 @@ proto.api.v1alpha1.delivery.ListHistoryRes.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.delivery.ListHistoryRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     proto.api.v1alpha1.delivery.History.toObject, includeInstance)
   };
 
@@ -5093,8 +5093,8 @@ proto.api.v1alpha1.delivery.ListHistoryByTransferConfigReq.prototype.toObject = 
  */
 proto.api.v1alpha1.delivery.ListHistoryByTransferConfigReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ListByIDReq.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ListByIDReq.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5302,7 +5302,7 @@ proto.api.v1alpha1.delivery.ListHistoryByTransferConfigRes.prototype.toObject = 
  */
 proto.api.v1alpha1.delivery.ListHistoryByTransferConfigRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     proto.api.v1alpha1.delivery.History.toObject, includeInstance)
   };
 
@@ -5455,8 +5455,8 @@ proto.api.v1alpha1.delivery.CreateHistoryReq.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.delivery.CreateHistoryReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.History.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.History.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5657,7 +5657,7 @@ proto.api.v1alpha1.delivery.CreateHistoryRes.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.delivery.CreateHistoryRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5808,8 +5808,8 @@ proto.api.v1alpha1.delivery.GetHistoryReq.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.delivery.GetHistoryReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6010,7 +6010,7 @@ proto.api.v1alpha1.delivery.GetHistoryRes.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.delivery.GetHistoryRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.History.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.History.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6161,7 +6161,7 @@ proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.prototype.toObject = fun
  */
 proto.api.v1alpha1.delivery.CreateDeliveryDefinitionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    definition: (f = msg.getDefinition()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f)
+definition: (f = msg.getDefinition()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6312,7 +6312,7 @@ proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.prototype.toObject = fun
  */
 proto.api.v1alpha1.delivery.CreateDeliveryDefinitionRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6463,7 +6463,7 @@ proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.prototype.toObject = fun
  */
 proto.api.v1alpha1.delivery.DeleteDeliveryDefinitionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6715,8 +6715,8 @@ proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.prototype.toObject = functi
  */
 proto.api.v1alpha1.delivery.GetDeliveryDefinitionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6917,7 +6917,7 @@ proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.prototype.toObject = functi
  */
 proto.api.v1alpha1.delivery.GetDeliveryDefinitionRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7068,9 +7068,9 @@ proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.prototype.toObject = 
  */
 proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f)
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7300,7 +7300,7 @@ proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.prototype.toObject = 
  */
 proto.api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7451,9 +7451,9 @@ proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.prototype.toObject = func
  */
 proto.api.v1alpha1.delivery.ListDeliveryDefinitionsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    listReq: (f = msg.getListReq()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+listReq: (f = msg.getListReq()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7711,7 +7711,7 @@ proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.prototype.toObject = func
  */
 proto.api.v1alpha1.delivery.ListDeliveryDefinitionsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     proto.api.v1alpha1.delivery.DeliveryDefinition.toObject, includeInstance)
   };
 
@@ -7864,10 +7864,10 @@ proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.prototype.t
  */
 proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    credentialSid: (f = msg.getCredentialSid()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f),
-    listReq: (f = msg.getListReq()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+credentialSid: (f = msg.getCredentialSid()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f),
+listReq: (f = msg.getListReq()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8175,7 +8175,7 @@ proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.prototype.t
  */
 proto.api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     proto.api.v1alpha1.delivery.DeliveryDefinition.toObject, includeInstance)
   };
 
@@ -8328,8 +8328,8 @@ proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.prototype.toObject = fun
  */
 proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.DeliveryDefinition.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8530,7 +8530,7 @@ proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.prototype.toObject = fun
  */
 proto.api.v1alpha1.delivery.UpdateDeliveryDefinitionRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8681,7 +8681,7 @@ proto.api.v1alpha1.delivery.CreateEncryptionReq.prototype.toObject = function(op
  */
 proto.api.v1alpha1.delivery.CreateEncryptionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    encryption: (f = msg.getEncryption()) && proto.api.v1alpha1.delivery.Encryption.toObject(includeInstance, f)
+encryption: (f = msg.getEncryption()) && proto.api.v1alpha1.delivery.Encryption.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8832,7 +8832,7 @@ proto.api.v1alpha1.delivery.CreateEncryptionRes.prototype.toObject = function(op
  */
 proto.api.v1alpha1.delivery.CreateEncryptionRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8983,8 +8983,8 @@ proto.api.v1alpha1.delivery.DeleteEncryptionReq.prototype.toObject = function(op
  */
 proto.api.v1alpha1.delivery.DeleteEncryptionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9286,8 +9286,8 @@ proto.api.v1alpha1.delivery.GetEncryptionReq.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.delivery.GetEncryptionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Encryption.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Encryption.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9488,7 +9488,7 @@ proto.api.v1alpha1.delivery.GetEncryptionRes.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.delivery.GetEncryptionRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Encryption.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Encryption.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9639,8 +9639,8 @@ proto.api.v1alpha1.delivery.ListEncryptionsReq.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.delivery.ListEncryptionsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9848,7 +9848,7 @@ proto.api.v1alpha1.delivery.ListEncryptionsRes.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.delivery.ListEncryptionsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     proto.api.v1alpha1.delivery.Encryption.toObject, includeInstance)
   };
 
@@ -10001,8 +10001,8 @@ proto.api.v1alpha1.delivery.UpdateEncryptionReq.prototype.toObject = function(op
  */
 proto.api.v1alpha1.delivery.UpdateEncryptionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Encryption.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Encryption.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10203,7 +10203,7 @@ proto.api.v1alpha1.delivery.UpdateEncryptionRes.prototype.toObject = function(op
  */
 proto.api.v1alpha1.delivery.UpdateEncryptionRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10354,15 +10354,15 @@ proto.api.v1alpha1.delivery.TransferConfig.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.delivery.TransferConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    ttl: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    credential: (f = msg.getCredential()) && proto.api.v1alpha1.delivery.Credential.toObject(includeInstance, f),
-    destination: (f = msg.getDestination()) && proto.api.v1alpha1.delivery.Destination.toObject(includeInstance, f),
-    source: (f = msg.getSource()) && proto.api.v1alpha1.delivery.Source.toObject(includeInstance, f),
-    createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+sid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+ttl: jspb.Message.getFieldWithDefault(msg, 7, 0),
+credential: (f = msg.getCredential()) && proto.api.v1alpha1.delivery.Credential.toObject(includeInstance, f),
+destination: (f = msg.getDestination()) && proto.api.v1alpha1.delivery.Destination.toObject(includeInstance, f),
+source: (f = msg.getSource()) && proto.api.v1alpha1.delivery.Source.toObject(includeInstance, f),
+createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10829,7 +10829,7 @@ proto.api.v1alpha1.delivery.ID.prototype.toObject = function(opt_includeInstance
  */
 proto.api.v1alpha1.delivery.ID.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+sid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -10959,8 +10959,8 @@ proto.api.v1alpha1.delivery.ListReq.prototype.toObject = function(opt_includeIns
  */
 proto.api.v1alpha1.delivery.ListReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    beforeSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    limit: jspb.Message.getFieldWithDefault(msg, 3, 0)
+beforeSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+limit: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -11119,22 +11119,22 @@ proto.api.v1alpha1.delivery.History.prototype.toObject = function(opt_includeIns
  */
 proto.api.v1alpha1.delivery.History.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    transferConfigName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    transferConfigSid: jspb.Message.getFieldWithDefault(msg, 4, "0"),
-    deliveryType: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    success: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    transferStart: (f = msg.getTransferStart()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    transferComplete: (f = msg.getTransferComplete()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    origin: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    orgId: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    messagePayload: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    messagePayloadLen: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    status: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    isInbound: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
-    transactionSid: jspb.Message.getFieldWithDefault(msg, 17, "0")
+sid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+transferConfigName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+transferConfigSid: jspb.Message.getFieldWithDefault(msg, 4, "0"),
+deliveryType: jspb.Message.getFieldWithDefault(msg, 5, ""),
+error: jspb.Message.getFieldWithDefault(msg, 6, ""),
+success: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+transferStart: (f = msg.getTransferStart()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+transferComplete: (f = msg.getTransferComplete()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+origin: jspb.Message.getFieldWithDefault(msg, 11, 0),
+orgId: jspb.Message.getFieldWithDefault(msg, 12, ""),
+messagePayload: jspb.Message.getFieldWithDefault(msg, 13, ""),
+messagePayloadLen: jspb.Message.getFieldWithDefault(msg, 14, 0),
+status: jspb.Message.getFieldWithDefault(msg, 15, 0),
+isInbound: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+transactionSid: jspb.Message.getFieldWithDefault(msg, 17, "0")
   };
 
   if (includeInstance) {
@@ -11762,9 +11762,9 @@ proto.api.v1alpha1.delivery.ListByIDReq.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.delivery.ListByIDReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    beforeSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    limit: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    otherSid: jspb.Message.getFieldWithDefault(msg, 4, 0)
+beforeSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+limit: jspb.Message.getFieldWithDefault(msg, 3, 0),
+otherSid: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -11952,12 +11952,12 @@ proto.api.v1alpha1.delivery.Credential.prototype.toObject = function(opt_include
  */
 proto.api.v1alpha1.delivery.Credential.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    data: (f = msg.getData()) && proto.api.v1alpha1.delivery.CredentialData.toObject(includeInstance, f),
-    createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+sid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+data: (f = msg.getData()) && proto.api.v1alpha1.delivery.CredentialData.toObject(includeInstance, f),
+createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12323,11 +12323,11 @@ proto.api.v1alpha1.delivery.Destination.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.delivery.Destination.toObject = function(includeInstance, msg) {
   var f, obj = {
-    encryption: (f = msg.getEncryption()) && api_commons_delivery_pb.Encryption.toObject(includeInstance, f),
-    email: (f = msg.getEmail()) && proto.api.v1alpha1.delivery.EmailDestination.toObject(includeInstance, f),
-    room303: (f = msg.getRoom303()) && proto.api.v1alpha1.delivery.Room303Destination.toObject(includeInstance, f),
-    sms: (f = msg.getSms()) && proto.api.v1alpha1.delivery.SmsDestination.toObject(includeInstance, f),
-    sftp: (f = msg.getSftp()) && proto.api.v1alpha1.delivery.SftpDestination.toObject(includeInstance, f)
+encryption: (f = msg.getEncryption()) && api_commons_delivery_pb.Encryption.toObject(includeInstance, f),
+email: (f = msg.getEmail()) && proto.api.v1alpha1.delivery.EmailDestination.toObject(includeInstance, f),
+room303: (f = msg.getRoom303()) && proto.api.v1alpha1.delivery.Room303Destination.toObject(includeInstance, f),
+sms: (f = msg.getSms()) && proto.api.v1alpha1.delivery.SmsDestination.toObject(includeInstance, f),
+sftp: (f = msg.getSftp()) && proto.api.v1alpha1.delivery.SftpDestination.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12678,9 +12678,9 @@ proto.api.v1alpha1.delivery.SftpDestination.prototype.toObject = function(opt_in
  */
 proto.api.v1alpha1.delivery.SftpDestination.toObject = function(includeInstance, msg) {
   var f, obj = {
-    baseDirectory: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    address: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    port: jspb.Message.getFieldWithDefault(msg, 4, 0)
+baseDirectory: jspb.Message.getFieldWithDefault(msg, 2, ""),
+address: jspb.Message.getFieldWithDefault(msg, 3, ""),
+port: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -12868,9 +12868,9 @@ proto.api.v1alpha1.delivery.Room303Destination.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.delivery.Room303Destination.toObject = function(includeInstance, msg) {
   var f, obj = {
-    room: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    username: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 3, "")
+room: jspb.Message.getFieldWithDefault(msg, 1, ""),
+username: jspb.Message.getFieldWithDefault(msg, 2, ""),
+userId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -13058,8 +13058,8 @@ proto.api.v1alpha1.delivery.SmsDestination.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.delivery.SmsDestination.toObject = function(includeInstance, msg) {
   var f, obj = {
-    destinationPhone: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sourcePhone: jspb.Message.getFieldWithDefault(msg, 2, "")
+destinationPhone: jspb.Message.getFieldWithDefault(msg, 1, ""),
+sourcePhone: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -13225,10 +13225,10 @@ proto.api.v1alpha1.delivery.EmailDestination.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.delivery.EmailDestination.toObject = function(includeInstance, msg) {
   var f, obj = {
-    toAddr: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    ccAddrsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    fromAddr: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    toAddrsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+toAddr: jspb.Message.getFieldWithDefault(msg, 1, ""),
+ccAddrsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+fromAddr: jspb.Message.getFieldWithDefault(msg, 3, ""),
+toAddrsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13512,11 +13512,11 @@ proto.api.v1alpha1.delivery.CredentialData.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.delivery.CredentialData.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userPassword: (f = msg.getUserPassword()) && proto.api.v1alpha1.delivery.UserPassword.toObject(includeInstance, f),
-    password: (f = msg.getPassword()) && proto.api.v1alpha1.delivery.Password.toObject(includeInstance, f),
-    sshKeyPair: (f = msg.getSshKeyPair()) && proto.api.v1alpha1.delivery.SSHKeyPair.toObject(includeInstance, f),
-    pgpKeyPair: (f = msg.getPgpKeyPair()) && proto.api.v1alpha1.delivery.PGPKeyPair.toObject(includeInstance, f),
-    aesPassword: (f = msg.getAesPassword()) && proto.api.v1alpha1.delivery.AESPassword.toObject(includeInstance, f)
+userPassword: (f = msg.getUserPassword()) && proto.api.v1alpha1.delivery.UserPassword.toObject(includeInstance, f),
+password: (f = msg.getPassword()) && proto.api.v1alpha1.delivery.Password.toObject(includeInstance, f),
+sshKeyPair: (f = msg.getSshKeyPair()) && proto.api.v1alpha1.delivery.SSHKeyPair.toObject(includeInstance, f),
+pgpKeyPair: (f = msg.getPgpKeyPair()) && proto.api.v1alpha1.delivery.PGPKeyPair.toObject(includeInstance, f),
+aesPassword: (f = msg.getAesPassword()) && proto.api.v1alpha1.delivery.AESPassword.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -13867,8 +13867,8 @@ proto.api.v1alpha1.delivery.UserPassword.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.delivery.UserPassword.toObject = function(includeInstance, msg) {
   var f, obj = {
-    username: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 2, "")
+username: jspb.Message.getFieldWithDefault(msg, 1, ""),
+password: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -14027,7 +14027,7 @@ proto.api.v1alpha1.delivery.Password.prototype.toObject = function(opt_includeIn
  */
 proto.api.v1alpha1.delivery.Password.toObject = function(includeInstance, msg) {
   var f, obj = {
-    password: jspb.Message.getFieldWithDefault(msg, 1, "")
+password: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -14157,8 +14157,8 @@ proto.api.v1alpha1.delivery.SSHKeyPair.prototype.toObject = function(opt_include
  */
 proto.api.v1alpha1.delivery.SSHKeyPair.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publicKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    privateKey: jspb.Message.getFieldWithDefault(msg, 2, "")
+publicKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+privateKey: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -14317,8 +14317,8 @@ proto.api.v1alpha1.delivery.PGPKeyPair.prototype.toObject = function(opt_include
  */
 proto.api.v1alpha1.delivery.PGPKeyPair.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publicKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    privateKey: jspb.Message.getFieldWithDefault(msg, 2, "")
+publicKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+privateKey: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -14477,7 +14477,7 @@ proto.api.v1alpha1.delivery.AESPassword.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.delivery.AESPassword.toObject = function(includeInstance, msg) {
   var f, obj = {
-    password: jspb.Message.getFieldWithDefault(msg, 1, "")
+password: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -14632,8 +14632,8 @@ proto.api.v1alpha1.delivery.Source.prototype.toObject = function(opt_includeInst
  */
 proto.api.v1alpha1.delivery.Source.toObject = function(includeInstance, msg) {
   var f, obj = {
-    encryption: (f = msg.getEncryption()) && api_commons_delivery_pb.Encryption.toObject(includeInstance, f),
-    sftp: (f = msg.getSftp()) && proto.api.v1alpha1.delivery.SftpSource.toObject(includeInstance, f)
+encryption: (f = msg.getEncryption()) && api_commons_delivery_pb.Encryption.toObject(includeInstance, f),
+sftp: (f = msg.getSftp()) && proto.api.v1alpha1.delivery.SftpSource.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14834,7 +14834,7 @@ proto.api.v1alpha1.delivery.SftpSource.prototype.toObject = function(opt_include
  */
 proto.api.v1alpha1.delivery.SftpSource.toObject = function(includeInstance, msg) {
   var f, obj = {
-    directory: jspb.Message.getFieldWithDefault(msg, 2, "")
+directory: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -14964,8 +14964,8 @@ proto.api.v1alpha1.delivery.GetCredentialReq.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.delivery.GetCredentialReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Credential.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Credential.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15166,7 +15166,7 @@ proto.api.v1alpha1.delivery.GetCredentialRes.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.delivery.GetCredentialRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    credential: (f = msg.getCredential()) && proto.api.v1alpha1.delivery.Credential.toObject(includeInstance, f)
+credential: (f = msg.getCredential()) && proto.api.v1alpha1.delivery.Credential.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15317,8 +15317,8 @@ proto.api.v1alpha1.delivery.ListCredentialsReq.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.delivery.ListCredentialsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ListReq.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15519,7 +15519,7 @@ proto.api.v1alpha1.delivery.ListCredentialsRes.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.delivery.ListCredentialsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    credentials: (f = msg.getCredentials()) && proto.api.v1alpha1.delivery.Credentials.toObject(includeInstance, f)
+credentials: (f = msg.getCredentials()) && proto.api.v1alpha1.delivery.Credentials.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15670,8 +15670,8 @@ proto.api.v1alpha1.delivery.CreateCredentialReq.prototype.toObject = function(op
  */
 proto.api.v1alpha1.delivery.CreateCredentialReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Credential.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Credential.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15872,7 +15872,7 @@ proto.api.v1alpha1.delivery.CreateCredentialRes.prototype.toObject = function(op
  */
 proto.api.v1alpha1.delivery.CreateCredentialRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16023,8 +16023,8 @@ proto.api.v1alpha1.delivery.DeleteCredentialReq.prototype.toObject = function(op
  */
 proto.api.v1alpha1.delivery.DeleteCredentialReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16326,8 +16326,8 @@ proto.api.v1alpha1.delivery.UpdateCredentialReq.prototype.toObject = function(op
  */
 proto.api.v1alpha1.delivery.UpdateCredentialReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Credential.toObject(includeInstance, f),
-    mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.Credential.toObject(includeInstance, f),
+mask: (f = msg.getMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16528,7 +16528,7 @@ proto.api.v1alpha1.delivery.UpdateCredentialRes.prototype.toObject = function(op
  */
 proto.api.v1alpha1.delivery.UpdateCredentialRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.api.v1alpha1.delivery.ID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16686,7 +16686,7 @@ proto.api.v1alpha1.delivery.Credentials.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.delivery.Credentials.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     proto.api.v1alpha1.delivery.Credential.toObject, includeInstance)
   };
 
@@ -16883,19 +16883,19 @@ proto.api.v1alpha1.delivery.DeliveryDefinition.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.delivery.DeliveryDefinition.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deliveryDefinitionSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    ttl: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    sftp: (f = msg.getSftp()) && proto.api.v1alpha1.delivery.SFTPTransport.toObject(includeInstance, f),
-    email: (f = msg.getEmail()) && proto.api.v1alpha1.delivery.EmailTransport.toObject(includeInstance, f),
-    room303: (f = msg.getRoom303()) && proto.api.v1alpha1.delivery.Room303Transport.toObject(includeInstance, f),
-    sms: (f = msg.getSms()) && proto.api.v1alpha1.delivery.SMSTransport.toObject(includeInstance, f),
-    aes: (f = msg.getAes()) && proto.api.v1alpha1.delivery.AESEncryptionRef.toObject(includeInstance, f),
-    pgp: (f = msg.getPgp()) && proto.api.v1alpha1.delivery.PGPEncryptionRef.toObject(includeInstance, f),
-    createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+deliveryDefinitionSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+ttl: jspb.Message.getFieldWithDefault(msg, 8, 0),
+sftp: (f = msg.getSftp()) && proto.api.v1alpha1.delivery.SFTPTransport.toObject(includeInstance, f),
+email: (f = msg.getEmail()) && proto.api.v1alpha1.delivery.EmailTransport.toObject(includeInstance, f),
+room303: (f = msg.getRoom303()) && proto.api.v1alpha1.delivery.Room303Transport.toObject(includeInstance, f),
+sms: (f = msg.getSms()) && proto.api.v1alpha1.delivery.SMSTransport.toObject(includeInstance, f),
+aes: (f = msg.getAes()) && proto.api.v1alpha1.delivery.AESEncryptionRef.toObject(includeInstance, f),
+pgp: (f = msg.getPgp()) && proto.api.v1alpha1.delivery.PGPEncryptionRef.toObject(includeInstance, f),
+createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17567,12 +17567,12 @@ proto.api.v1alpha1.delivery.SFTPTransport.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.delivery.SFTPTransport.toObject = function(includeInstance, msg) {
   var f, obj = {
-    host: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    port: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    password: (f = msg.getPassword()) && proto.api.v1alpha1.delivery.PasswordRef.toObject(includeInstance, f),
-    sshKey: (f = msg.getSshKey()) && proto.api.v1alpha1.delivery.SSHKeyRef.toObject(includeInstance, f),
-    username: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    baseDir: jspb.Message.getFieldWithDefault(msg, 6, "")
+host: jspb.Message.getFieldWithDefault(msg, 1, ""),
+port: jspb.Message.getFieldWithDefault(msg, 2, 0),
+password: (f = msg.getPassword()) && proto.api.v1alpha1.delivery.PasswordRef.toObject(includeInstance, f),
+sshKey: (f = msg.getSshKey()) && proto.api.v1alpha1.delivery.SSHKeyRef.toObject(includeInstance, f),
+username: jspb.Message.getFieldWithDefault(msg, 5, ""),
+baseDir: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -17896,10 +17896,10 @@ proto.api.v1alpha1.delivery.EmailTransport.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.delivery.EmailTransport.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fromAddress: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    toAddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    ccAddressesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    toAddressesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+fromAddress: jspb.Message.getFieldWithDefault(msg, 1, ""),
+toAddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
+ccAddressesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+toAddressesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -18180,8 +18180,8 @@ proto.api.v1alpha1.delivery.Room303Transport.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.delivery.Room303Transport.toObject = function(includeInstance, msg) {
   var f, obj = {
-    systemMessage: (f = msg.getSystemMessage()) && proto.api.v1alpha1.delivery.Room303SystemMessage.toObject(includeInstance, f),
-    systemMessages: (f = msg.getSystemMessages()) && proto.api.v1alpha1.delivery.Room303SystemMessages.toObject(includeInstance, f)
+systemMessage: (f = msg.getSystemMessage()) && proto.api.v1alpha1.delivery.Room303SystemMessage.toObject(includeInstance, f),
+systemMessages: (f = msg.getSystemMessages()) && proto.api.v1alpha1.delivery.Room303SystemMessages.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -18408,9 +18408,9 @@ proto.api.v1alpha1.delivery.Room303SystemMessage.prototype.toObject = function(o
  */
 proto.api.v1alpha1.delivery.Room303SystemMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    room: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    username: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 3, "")
+room: jspb.Message.getFieldWithDefault(msg, 1, ""),
+username: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+userId: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -18641,7 +18641,7 @@ proto.api.v1alpha1.delivery.Room303SystemMessages.prototype.toObject = function(
  */
 proto.api.v1alpha1.delivery.Room303SystemMessages.toObject = function(includeInstance, msg) {
   var f, obj = {
-    systemMessagesList: jspb.Message.toObjectList(msg.getSystemMessagesList(),
+systemMessagesList: jspb.Message.toObjectList(msg.getSystemMessagesList(),
     proto.api.v1alpha1.delivery.Room303SystemMessage.toObject, includeInstance)
   };
 
@@ -18794,8 +18794,8 @@ proto.api.v1alpha1.delivery.SMSTransport.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.delivery.SMSTransport.toObject = function(includeInstance, msg) {
   var f, obj = {
-    destinationPhone: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sourcePhone: jspb.Message.getFieldWithDefault(msg, 2, "")
+destinationPhone: jspb.Message.getFieldWithDefault(msg, 1, ""),
+sourcePhone: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -18954,7 +18954,7 @@ proto.api.v1alpha1.delivery.AESEncryptionRef.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.delivery.AESEncryptionRef.toObject = function(includeInstance, msg) {
   var f, obj = {
-    aesSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+aesSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -19084,7 +19084,7 @@ proto.api.v1alpha1.delivery.PGPEncryptionRef.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.delivery.PGPEncryptionRef.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pgpSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+pgpSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -19214,7 +19214,7 @@ proto.api.v1alpha1.delivery.PasswordRef.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.delivery.PasswordRef.toObject = function(includeInstance, msg) {
   var f, obj = {
-    passwordSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+passwordSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -19344,7 +19344,7 @@ proto.api.v1alpha1.delivery.SSHKeyRef.prototype.toObject = function(opt_includeI
  */
 proto.api.v1alpha1.delivery.SSHKeyRef.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sshKeySid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+sshKeySid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -19500,14 +19500,14 @@ proto.api.v1alpha1.delivery.Encryption.prototype.toObject = function(opt_include
  */
 proto.api.v1alpha1.delivery.Encryption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    encryptionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    pgpKeyPair: (f = msg.getPgpKeyPair()) && proto.api.v1alpha1.delivery.PGPKeyPair.toObject(includeInstance, f),
-    aesPassword: (f = msg.getAesPassword()) && proto.api.v1alpha1.delivery.AESPassword.toObject(includeInstance, f),
-    createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+encryptionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+pgpKeyPair: (f = msg.getPgpKeyPair()) && proto.api.v1alpha1.delivery.PGPKeyPair.toObject(includeInstance, f),
+aesPassword: (f = msg.getAesPassword()) && proto.api.v1alpha1.delivery.AESPassword.toObject(includeInstance, f),
+createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -20032,7 +20032,7 @@ proto.api.v1alpha1.delivery.ListSMSNumbersRes.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.delivery.ListSMSNumbersRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    smsNumbersList: jspb.Message.toObjectList(msg.getSmsNumbersList(),
+smsNumbersList: jspb.Message.toObjectList(msg.getSmsNumbersList(),
     api_commons_omnichannel_pb.SmsNumber.toObject, includeInstance)
   };
 

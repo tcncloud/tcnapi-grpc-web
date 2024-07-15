@@ -202,13 +202,13 @@ proto.api.v1alpha1.vanalytics.Uint32Expr.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.vanalytics.Uint32Expr.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gt: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    gte: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    lt: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    lte: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    eq: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    notEq: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    range: (f = msg.getRange()) && proto.api.v1alpha1.vanalytics.Uint32Range.toObject(includeInstance, f)
+gt: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+gte: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+lt: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+lte: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+eq: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+notEq: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+range: (f = msg.getRange()) && proto.api.v1alpha1.vanalytics.Uint32Range.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -641,10 +641,10 @@ proto.api.v1alpha1.vanalytics.Uint32Range.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.vanalytics.Uint32Range.toObject = function(includeInstance, msg) {
   var f, obj = {
-    from: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    to: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    includeFrom: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    includeTo: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+from: jspb.Message.getFieldWithDefault(msg, 1, 0),
+to: jspb.Message.getFieldWithDefault(msg, 2, 0),
+includeFrom: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+includeTo: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -887,8 +887,8 @@ proto.api.v1alpha1.vanalytics.TimestampExpr.prototype.toObject = function(opt_in
  */
 proto.api.v1alpha1.vanalytics.TimestampExpr.toObject = function(includeInstance, msg) {
   var f, obj = {
-    range: (f = msg.getRange()) && proto.api.v1alpha1.vanalytics.TimestampRange.toObject(includeInstance, f),
-    moment: (f = msg.getMoment()) && proto.api.v1alpha1.vanalytics.Moment.toObject(includeInstance, f)
+range: (f = msg.getRange()) && proto.api.v1alpha1.vanalytics.TimestampRange.toObject(includeInstance, f),
+moment: (f = msg.getMoment()) && proto.api.v1alpha1.vanalytics.Moment.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1089,8 +1089,8 @@ proto.api.v1alpha1.vanalytics.Moment.prototype.toObject = function(opt_includeIn
  */
 proto.api.v1alpha1.vanalytics.Moment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timeZone: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    interval: jspb.Message.getFieldWithDefault(msg, 2, 0)
+timeZone: jspb.Message.getFieldWithDefault(msg, 1, ""),
+interval: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1249,10 +1249,10 @@ proto.api.v1alpha1.vanalytics.TimestampRange.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.vanalytics.TimestampRange.toObject = function(includeInstance, msg) {
   var f, obj = {
-    from: (f = msg.getFrom()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    to: (f = msg.getTo()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    includeFrom: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    includeTo: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+from: (f = msg.getFrom()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+to: (f = msg.getTo()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+includeFrom: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+includeTo: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {

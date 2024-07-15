@@ -127,9 +127,9 @@ proto.api.v1alpha1.vanalytics.ListFlagTranscriptFiltersRequest.prototype.toObjec
  */
 proto.api.v1alpha1.vanalytics.ListFlagTranscriptFiltersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    flagSnapshotMask: (f = msg.getFlagSnapshotMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    filterSnapshotMask: (f = msg.getFilterSnapshotMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+flagSnapshotMask: (f = msg.getFlagSnapshotMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+filterSnapshotMask: (f = msg.getFilterSnapshotMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -366,7 +366,7 @@ proto.api.v1alpha1.vanalytics.ListFlagTranscriptFiltersResponse.prototype.toObje
  */
 proto.api.v1alpha1.vanalytics.ListFlagTranscriptFiltersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagTranscriptFiltersList: jspb.Message.toObjectList(msg.getFlagTranscriptFiltersList(),
+flagTranscriptFiltersList: jspb.Message.toObjectList(msg.getFlagTranscriptFiltersList(),
     proto.api.v1alpha1.vanalytics.FlagTranscriptFilter.toObject, includeInstance)
   };
 
@@ -519,8 +519,8 @@ proto.api.v1alpha1.vanalytics.FlagTranscriptFilter.prototype.toObject = function
  */
 proto.api.v1alpha1.vanalytics.FlagTranscriptFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSnapshot: (f = msg.getFlagSnapshot()) && api_v1alpha1_vanalytics_flag_snapshot_pb.FlagSnapshot.toObject(includeInstance, f),
-    filterSnapshot: (f = msg.getFilterSnapshot()) && api_v1alpha1_vanalytics_filter_snapshot_pb.FilterSnapshot.toObject(includeInstance, f)
+flagSnapshot: (f = msg.getFlagSnapshot()) && api_v1alpha1_vanalytics_flag_snapshot_pb.FlagSnapshot.toObject(includeInstance, f),
+filterSnapshot: (f = msg.getFilterSnapshot()) && api_v1alpha1_vanalytics_filter_snapshot_pb.FilterSnapshot.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

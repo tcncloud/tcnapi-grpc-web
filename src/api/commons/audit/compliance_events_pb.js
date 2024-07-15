@@ -79,10 +79,10 @@ proto.api.commons.audit.ComplianceRndQueryEvent.prototype.toObject = function(op
  */
 proto.api.commons.audit.ComplianceRndQueryEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    phoneNumber: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    result: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    dateLastContact: (f = msg.getDateLastContact()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+phoneNumber: jspb.Message.getFieldWithDefault(msg, 2, ""),
+result: jspb.Message.getFieldWithDefault(msg, 3, ""),
+dateLastContact: (f = msg.getDateLastContact()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

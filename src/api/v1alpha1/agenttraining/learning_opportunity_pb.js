@@ -479,7 +479,7 @@ proto.api.v1alpha1.agenttraining.CreateLearningOpportunityRequest.prototype.toOb
  */
 proto.api.v1alpha1.agenttraining.CreateLearningOpportunityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
+learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -630,7 +630,7 @@ proto.api.v1alpha1.agenttraining.CreateLearningOpportunityResponse.prototype.toO
  */
 proto.api.v1alpha1.agenttraining.CreateLearningOpportunityResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
+learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -788,11 +788,11 @@ proto.api.v1alpha1.agenttraining.ListLearningOpportunitiesRequest.prototype.toOb
  */
 proto.api.v1alpha1.agenttraining.ListLearningOpportunitiesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callIdentifiersList: jspb.Message.toObjectList(msg.getCallIdentifiersList(),
+callIdentifiersList: jspb.Message.toObjectList(msg.getCallIdentifiersList(),
     api_commons_agent_training_pb.CallIdentifier.toObject, includeInstance),
-    transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    createdAt: (f = msg.getCreatedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f)
+transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+createdAt: (f = msg.getCreatedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1099,7 +1099,7 @@ proto.api.v1alpha1.agenttraining.ListLearningOpportunitiesResponse.prototype.toO
  */
 proto.api.v1alpha1.agenttraining.ListLearningOpportunitiesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunitiesList: jspb.Message.toObjectList(msg.getLearningOpportunitiesList(),
+learningOpportunitiesList: jspb.Message.toObjectList(msg.getLearningOpportunitiesList(),
     api_commons_agent_training_pb.LearningOpportunity.toObject, includeInstance)
   };
 
@@ -1259,10 +1259,10 @@ proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.prototype
  */
 proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callIdentifiersList: jspb.Message.toObjectList(msg.getCallIdentifiersList(),
+callIdentifiersList: jspb.Message.toObjectList(msg.getCallIdentifiersList(),
     api_commons_agent_training_pb.CallIdentifier.toObject, includeInstance),
-    transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    createdAt: (f = msg.getCreatedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f)
+transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+createdAt: (f = msg.getCreatedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1521,7 +1521,7 @@ proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesResponse.prototyp
  */
 proto.api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunitiesList: jspb.Message.toObjectList(msg.getLearningOpportunitiesList(),
+learningOpportunitiesList: jspb.Message.toObjectList(msg.getLearningOpportunitiesList(),
     api_commons_agent_training_pb.LearningOpportunity.toObject, includeInstance)
   };
 
@@ -1674,8 +1674,8 @@ proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.prototype.toOb
  */
 proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1876,7 +1876,7 @@ proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityResponse.prototype.toO
  */
 proto.api.v1alpha1.agenttraining.UpdateLearningOpportunityResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
+learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2027,7 +2027,7 @@ proto.api.v1alpha1.agenttraining.CompleteAgentLearningOpportunityRequest.prototy
  */
 proto.api.v1alpha1.agenttraining.CompleteAgentLearningOpportunityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunityId: jspb.Message.getFieldWithDefault(msg, 3, 0)
+learningOpportunityId: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2157,7 +2157,7 @@ proto.api.v1alpha1.agenttraining.CompleteAgentLearningOpportunityResponse.protot
  */
 proto.api.v1alpha1.agenttraining.CompleteAgentLearningOpportunityResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
+learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2308,7 +2308,7 @@ proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest.prototype.toOb
  */
 proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunityId: jspb.Message.getFieldWithDefault(msg, 3, 0)
+learningOpportunityId: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2438,7 +2438,7 @@ proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityResponse.prototype.toO
  */
 proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
+learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2589,7 +2589,7 @@ proto.api.v1alpha1.agenttraining.GetLearningOpportunityRequest.prototype.toObjec
  */
 proto.api.v1alpha1.agenttraining.GetLearningOpportunityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunity: jspb.Message.getFieldWithDefault(msg, 2, 0)
+learningOpportunity: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -2719,7 +2719,7 @@ proto.api.v1alpha1.agenttraining.GetLearningOpportunityResponse.prototype.toObje
  */
 proto.api.v1alpha1.agenttraining.GetLearningOpportunityResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
+learningOpportunity: (f = msg.getLearningOpportunity()) && api_commons_agent_training_pb.LearningOpportunity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2978,7 +2978,7 @@ proto.api.v1alpha1.agenttraining.ListDashboardsResponse.prototype.toObject = fun
  */
 proto.api.v1alpha1.agenttraining.ListDashboardsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashboardsList: jspb.Message.toObjectList(msg.getDashboardsList(),
+dashboardsList: jspb.Message.toObjectList(msg.getDashboardsList(),
     proto.api.v1alpha1.agenttraining.ListDashboardsResponse.Dashboard.toObject, includeInstance)
   };
 
@@ -3093,8 +3093,8 @@ proto.api.v1alpha1.agenttraining.ListDashboardsResponse.Dashboard.prototype.toOb
  */
 proto.api.v1alpha1.agenttraining.ListDashboardsResponse.Dashboard.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resourceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, "")
+resourceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3298,12 +3298,12 @@ proto.api.v1alpha1.agenttraining.ListLearningOpportunitiesByOrgIdRequest.prototy
  */
 proto.api.v1alpha1.agenttraining.ListLearningOpportunitiesByOrgIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    callIdentifiersList: jspb.Message.toObjectList(msg.getCallIdentifiersList(),
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+callIdentifiersList: jspb.Message.toObjectList(msg.getCallIdentifiersList(),
     api_commons_agent_training_pb.CallIdentifier.toObject, includeInstance),
-    transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    createdAt: (f = msg.getCreatedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f)
+transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+agentUserIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+createdAt: (f = msg.getCreatedAt()) && api_commons_scorecards_pb.TimeFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3632,8 +3632,8 @@ proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityByOrgIdRequest.prototy
  */
 proto.api.v1alpha1.agenttraining.DeleteLearningOpportunityByOrgIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    learningOpportunityId: jspb.Message.getFieldWithDefault(msg, 3, 0)
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+learningOpportunityId: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {

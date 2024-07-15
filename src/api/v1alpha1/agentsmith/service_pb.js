@@ -245,8 +245,8 @@ proto.api.v1alpha1.agentsmith.FollowAgentReq.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.agentsmith.FollowAgentReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+userId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+asmSessionSid: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -469,11 +469,11 @@ proto.api.v1alpha1.agentsmith.FollowAgentRes.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.agentsmith.FollowAgentRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ts: (f = msg.getTs()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    agentStateChange: (f = msg.getAgentStateChange()) && proto.api.v1alpha1.agentsmith.AgentStateChangeEvent.toObject(includeInstance, f),
-    agentVoiceStart: (f = msg.getAgentVoiceStart()) && proto.api.v1alpha1.agentsmith.AgentVoiceStartEvent.toObject(includeInstance, f),
-    agentVoiceEnd: (f = msg.getAgentVoiceEnd()) && proto.api.v1alpha1.agentsmith.AgentVoiceEndEvent.toObject(includeInstance, f),
-    agentSessionEnd: (f = msg.getAgentSessionEnd()) && proto.api.v1alpha1.agentsmith.AgentSessionEndEvent.toObject(includeInstance, f)
+ts: (f = msg.getTs()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+agentStateChange: (f = msg.getAgentStateChange()) && proto.api.v1alpha1.agentsmith.AgentStateChangeEvent.toObject(includeInstance, f),
+agentVoiceStart: (f = msg.getAgentVoiceStart()) && proto.api.v1alpha1.agentsmith.AgentVoiceStartEvent.toObject(includeInstance, f),
+agentVoiceEnd: (f = msg.getAgentVoiceEnd()) && proto.api.v1alpha1.agentsmith.AgentVoiceEndEvent.toObject(includeInstance, f),
+agentSessionEnd: (f = msg.getAgentSessionEnd()) && proto.api.v1alpha1.agentsmith.AgentSessionEndEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -849,9 +849,9 @@ proto.api.v1alpha1.agentsmith.AgentStateChangeEvent.prototype.toObject = functio
  */
 proto.api.v1alpha1.agentsmith.AgentStateChangeEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    oldState: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    newState: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    empty: (f = msg.getEmpty()) && proto.api.v1alpha1.agentsmith.EmptyState.toObject(includeInstance, f)
+oldState: jspb.Message.getFieldWithDefault(msg, 1, 0),
+newState: jspb.Message.getFieldWithDefault(msg, 2, 0),
+empty: (f = msg.getEmpty()) && proto.api.v1alpha1.agentsmith.EmptyState.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1161,7 +1161,7 @@ proto.api.v1alpha1.agentsmith.AgentVoiceStartEvent.prototype.toObject = function
  */
 proto.api.v1alpha1.agentsmith.AgentVoiceStartEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sipDialUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
+sipDialUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {

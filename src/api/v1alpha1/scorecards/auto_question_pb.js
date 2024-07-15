@@ -235,7 +235,7 @@ proto.api.v1alpha1.scorecards.GetAutoQuestionRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.GetAutoQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+autoQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -365,7 +365,7 @@ proto.api.v1alpha1.scorecards.GetAutoQuestionResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.scorecards.GetAutoQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoQuestion: (f = msg.getAutoQuestion()) && api_commons_scorecards_pb.AutoQuestion.toObject(includeInstance, f)
+autoQuestion: (f = msg.getAutoQuestion()) && api_commons_scorecards_pb.AutoQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -516,7 +516,7 @@ proto.api.v1alpha1.scorecards.CreateAutoQuestionRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.scorecards.CreateAutoQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoQuestion: (f = msg.getAutoQuestion()) && api_commons_scorecards_pb.AutoQuestion.toObject(includeInstance, f)
+autoQuestion: (f = msg.getAutoQuestion()) && api_commons_scorecards_pb.AutoQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -667,7 +667,7 @@ proto.api.v1alpha1.scorecards.CreateAutoQuestionResponse.prototype.toObject = fu
  */
 proto.api.v1alpha1.scorecards.CreateAutoQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoQuestion: (f = msg.getAutoQuestion()) && api_commons_scorecards_pb.AutoQuestion.toObject(includeInstance, f)
+autoQuestion: (f = msg.getAutoQuestion()) && api_commons_scorecards_pb.AutoQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -818,8 +818,8 @@ proto.api.v1alpha1.scorecards.UpdateAutoQuestionRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.scorecards.UpdateAutoQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoQuestion: (f = msg.getAutoQuestion()) && api_commons_scorecards_pb.AutoQuestion.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+autoQuestion: (f = msg.getAutoQuestion()) && api_commons_scorecards_pb.AutoQuestion.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1020,7 +1020,7 @@ proto.api.v1alpha1.scorecards.UpdateAutoQuestionResponse.prototype.toObject = fu
  */
 proto.api.v1alpha1.scorecards.UpdateAutoQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoQuestion: (f = msg.getAutoQuestion()) && api_commons_scorecards_pb.AutoQuestion.toObject(includeInstance, f)
+autoQuestion: (f = msg.getAutoQuestion()) && api_commons_scorecards_pb.AutoQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1171,7 +1171,7 @@ proto.api.v1alpha1.scorecards.DeleteAutoQuestionRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.scorecards.DeleteAutoQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoQuestionId: jspb.Message.getFieldWithDefault(msg, 3, 0)
+autoQuestionId: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1301,7 +1301,7 @@ proto.api.v1alpha1.scorecards.DeleteAutoQuestionResponse.prototype.toObject = fu
  */
 proto.api.v1alpha1.scorecards.DeleteAutoQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoQuestion: (f = msg.getAutoQuestion()) && api_commons_scorecards_pb.AutoQuestion.toObject(includeInstance, f)
+autoQuestion: (f = msg.getAutoQuestion()) && api_commons_scorecards_pb.AutoQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

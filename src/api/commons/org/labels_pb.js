@@ -101,12 +101,12 @@ proto.api.commons.org.Label.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.org.Label.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    color: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    labelId: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    deleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 6, ""),
+color: jspb.Message.getFieldWithDefault(msg, 7, ""),
+labelId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+deleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -381,11 +381,11 @@ proto.api.commons.org.LabelAssignment.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.org.LabelAssignment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labelId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    entityId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    label: (f = msg.getLabel()) && proto.api.commons.org.Label.toObject(includeInstance, f)
+labelId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+type: jspb.Message.getFieldWithDefault(msg, 2, 0),
+entityId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+orgId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+label: (f = msg.getLabel()) && proto.api.commons.org.Label.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

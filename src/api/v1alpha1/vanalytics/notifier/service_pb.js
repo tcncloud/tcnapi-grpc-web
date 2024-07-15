@@ -105,7 +105,7 @@ proto.api.v1alpha1.vanalytics.notifier.GetNotifyRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.vanalytics.notifier.GetNotifyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notifyId: jspb.Message.getFieldWithDefault(msg, 1, "")
+notifyId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -235,11 +235,11 @@ proto.api.v1alpha1.vanalytics.notifier.Notify.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.vanalytics.notifier.Notify.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notifyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    startTranscriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    endTranscriptSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    flagSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+notifyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+startTranscriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+endTranscriptSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+flagSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

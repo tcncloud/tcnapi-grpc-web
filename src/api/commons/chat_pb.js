@@ -147,9 +147,9 @@ proto.api.commons.ChatColorProperties.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.ChatColorProperties.toObject = function(includeInstance, msg) {
   var f, obj = {
-    primaryColor: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    headerTextColor: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    paragraphTextColor: jspb.Message.getFieldWithDefault(msg, 3, "")
+primaryColor: jspb.Message.getFieldWithDefault(msg, 1, ""),
+headerTextColor: jspb.Message.getFieldWithDefault(msg, 2, ""),
+paragraphTextColor: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -337,8 +337,8 @@ proto.api.commons.ChatHeader.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.commons.ChatHeader.toObject = function(includeInstance, msg) {
   var f, obj = {
-    header: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    subheader: jspb.Message.getFieldWithDefault(msg, 2, "")
+header: jspb.Message.getFieldWithDefault(msg, 1, ""),
+subheader: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -504,19 +504,19 @@ proto.api.commons.HoursOfOperation.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.HoursOfOperation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    mondayList: jspb.Message.toObjectList(msg.getMondayList(),
+mondayList: jspb.Message.toObjectList(msg.getMondayList(),
     proto.api.commons.HoursOfOperationRange.toObject, includeInstance),
-    tuesdayList: jspb.Message.toObjectList(msg.getTuesdayList(),
+tuesdayList: jspb.Message.toObjectList(msg.getTuesdayList(),
     proto.api.commons.HoursOfOperationRange.toObject, includeInstance),
-    wednesdayList: jspb.Message.toObjectList(msg.getWednesdayList(),
+wednesdayList: jspb.Message.toObjectList(msg.getWednesdayList(),
     proto.api.commons.HoursOfOperationRange.toObject, includeInstance),
-    thursdayList: jspb.Message.toObjectList(msg.getThursdayList(),
+thursdayList: jspb.Message.toObjectList(msg.getThursdayList(),
     proto.api.commons.HoursOfOperationRange.toObject, includeInstance),
-    fridayList: jspb.Message.toObjectList(msg.getFridayList(),
+fridayList: jspb.Message.toObjectList(msg.getFridayList(),
     proto.api.commons.HoursOfOperationRange.toObject, includeInstance),
-    saturdayList: jspb.Message.toObjectList(msg.getSaturdayList(),
+saturdayList: jspb.Message.toObjectList(msg.getSaturdayList(),
     proto.api.commons.HoursOfOperationRange.toObject, includeInstance),
-    sundayList: jspb.Message.toObjectList(msg.getSundayList(),
+sundayList: jspb.Message.toObjectList(msg.getSundayList(),
     proto.api.commons.HoursOfOperationRange.toObject, includeInstance)
   };
 
@@ -975,10 +975,10 @@ proto.api.commons.HoursOfOperationRange.prototype.toObject = function(opt_includ
  */
 proto.api.commons.HoursOfOperationRange.toObject = function(includeInstance, msg) {
   var f, obj = {
-    startHour: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    startMinute: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    endHour: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    endMinute: jspb.Message.getFieldWithDefault(msg, 4, 0)
+startHour: jspb.Message.getFieldWithDefault(msg, 1, 0),
+startMinute: jspb.Message.getFieldWithDefault(msg, 2, 0),
+endHour: jspb.Message.getFieldWithDefault(msg, 3, 0),
+endMinute: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {

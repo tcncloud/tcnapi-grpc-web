@@ -108,14 +108,14 @@ proto.api.commons.audit.DeliveryFailureEvent.prototype.toObject = function(opt_i
  */
 proto.api.commons.audit.DeliveryFailureEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deliveryDefinitionName: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    transactionSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    attachmentNamesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    failureTime: (f = msg.getFailureTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    failureErrorMessage: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    definition: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    originalPayload: jspb.Message.getFieldWithDefault(msg, 8, "")
+deliveryDefinitionName: jspb.Message.getFieldWithDefault(msg, 1, 0),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+transactionSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+attachmentNamesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+failureTime: (f = msg.getFailureTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+failureErrorMessage: jspb.Message.getFieldWithDefault(msg, 6, ""),
+definition: jspb.Message.getFieldWithDefault(msg, 7, ""),
+originalPayload: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -495,12 +495,12 @@ proto.api.commons.audit.DeliverySuccessEvent.prototype.toObject = function(opt_i
  */
 proto.api.commons.audit.DeliverySuccessEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deliveryDefinitionName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    transactionSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    attachmentNamesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    successTime: (f = msg.getSuccessTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    successMessage: jspb.Message.getFieldWithDefault(msg, 6, "")
+deliveryDefinitionName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+transactionSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+attachmentNamesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+successTime: (f = msg.getSuccessTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+successMessage: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {

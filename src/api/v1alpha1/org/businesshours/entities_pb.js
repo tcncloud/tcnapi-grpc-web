@@ -523,7 +523,7 @@ proto.api.v1alpha1.org.businesshours.ListBusinessHoursResponse.prototype.toObjec
  */
 proto.api.v1alpha1.org.businesshours.ListBusinessHoursResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    businessHoursList: jspb.Message.toObjectList(msg.getBusinessHoursList(),
+businessHoursList: jspb.Message.toObjectList(msg.getBusinessHoursList(),
     api_commons_org_preferences_pb.BusinessHours.toObject, includeInstance)
   };
 
@@ -676,7 +676,7 @@ proto.api.v1alpha1.org.businesshours.GetBusinessHoursRequest.prototype.toObject 
  */
 proto.api.v1alpha1.org.businesshours.GetBusinessHoursRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, "")
+businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -806,7 +806,7 @@ proto.api.v1alpha1.org.businesshours.GetBusinessHoursResponse.prototype.toObject
  */
 proto.api.v1alpha1.org.businesshours.GetBusinessHoursResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    businessHours: (f = msg.getBusinessHours()) && api_commons_org_preferences_pb.BusinessHours.toObject(includeInstance, f)
+businessHours: (f = msg.getBusinessHours()) && api_commons_org_preferences_pb.BusinessHours.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -964,11 +964,11 @@ proto.api.v1alpha1.org.businesshours.SetBusinessHoursRequest.prototype.toObject 
  */
 proto.api.v1alpha1.org.businesshours.SetBusinessHoursRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    businessHoursName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    dayIntervalsList: jspb.Message.toObjectList(msg.getDayIntervalsList(),
+businessHoursName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+description: jspb.Message.getFieldWithDefault(msg, 2, ""),
+dayIntervalsList: jspb.Message.toObjectList(msg.getDayIntervalsList(),
     api_commons_org_preferences_pb.DayInterval.toObject, includeInstance),
-    timezone: jspb.Message.getFieldWithDefault(msg, 4, 0)
+timezone: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1207,7 +1207,7 @@ proto.api.v1alpha1.org.businesshours.SetBusinessHoursResponse.prototype.toObject
  */
 proto.api.v1alpha1.org.businesshours.SetBusinessHoursResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, "")
+businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1337,8 +1337,8 @@ proto.api.v1alpha1.org.businesshours.AddIntervalToBusinessHoursRequest.prototype
  */
 proto.api.v1alpha1.org.businesshours.AddIntervalToBusinessHoursRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    dayInterval: (f = msg.getDayInterval()) && api_commons_org_preferences_pb.DayInterval.toObject(includeInstance, f)
+businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+dayInterval: (f = msg.getDayInterval()) && api_commons_org_preferences_pb.DayInterval.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1619,8 +1619,8 @@ proto.api.v1alpha1.org.businesshours.RemoveIntervalFromBusinessHoursRequest.prot
  */
 proto.api.v1alpha1.org.businesshours.RemoveIntervalFromBusinessHoursRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    dayInterval: (f = msg.getDayInterval()) && api_commons_org_preferences_pb.DayInterval.toObject(includeInstance, f)
+businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+dayInterval: (f = msg.getDayInterval()) && api_commons_org_preferences_pb.DayInterval.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1901,11 +1901,11 @@ proto.api.v1alpha1.org.businesshours.UpdateBusinessHoursInfoRequest.prototype.to
  */
 proto.api.v1alpha1.org.businesshours.UpdateBusinessHoursInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    businessHoursName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    timezone: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+businessHoursName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+timezone: jspb.Message.getFieldWithDefault(msg, 4, 0),
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2273,7 +2273,7 @@ proto.api.v1alpha1.org.businesshours.DeleteBusinessHoursRequest.prototype.toObje
  */
 proto.api.v1alpha1.org.businesshours.DeleteBusinessHoursRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, "")
+businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2504,7 +2504,7 @@ proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursRequest.prototype.toOb
  */
 proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, "")
+businessHoursId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2634,8 +2634,8 @@ proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse.prototype.toO
  */
 proto.api.v1alpha1.org.businesshours.EvaluateBusinessHoursResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    withinRange: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    resultExpiration: (f = msg.getResultExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+withinRange: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+resultExpiration: (f = msg.getResultExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

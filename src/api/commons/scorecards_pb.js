@@ -530,11 +530,11 @@ proto.api.commons.TimeFilter.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.commons.TimeFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    eq: (f = msg.getEq()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    gte: (f = msg.getGte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+eq: (f = msg.getEq()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+gte: (f = msg.getGte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -892,15 +892,15 @@ proto.api.commons.Category.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.Category.toObject = function(includeInstance, msg) {
   var f, obj = {
-    categoryId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    authorId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    skillProfilesList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    version: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    callTypesList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
-    isSystem: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    categoryType: jspb.Message.getFieldWithDefault(msg, 12, 0)
+categoryId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+authorId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+title: jspb.Message.getFieldWithDefault(msg, 4, ""),
+description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+skillProfilesList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+version: jspb.Message.getFieldWithDefault(msg, 7, 0),
+callTypesList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
+isSystem: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+categoryType: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -1311,23 +1311,23 @@ proto.api.commons.Evaluation.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.commons.Evaluation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    scorerId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    callSid: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    score: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
-    evaluationState: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    evaluationSectionsList: jspb.Message.toObjectList(msg.getEvaluationSectionsList(),
+evaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+scorecardId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+scorerId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+callSid: jspb.Message.getFieldWithDefault(msg, 6, 0),
+score: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
+evaluationState: jspb.Message.getFieldWithDefault(msg, 8, 0),
+evaluationSectionsList: jspb.Message.toObjectList(msg.getEvaluationSectionsList(),
     proto.api.commons.EvaluationSection.toObject, includeInstance),
-    completedAt: (f = msg.getCompletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    deletedAt: (f = msg.getDeletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    agentUserId: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    callType: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    customFieldsList: jspb.Message.toObjectList(msg.getCustomFieldsList(),
+completedAt: (f = msg.getCompletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+deletedAt: (f = msg.getDeletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+agentUserId: jspb.Message.getFieldWithDefault(msg, 13, ""),
+callType: jspb.Message.getFieldWithDefault(msg, 14, 0),
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 15, 0),
+customFieldsList: jspb.Message.toObjectList(msg.getCustomFieldsList(),
     proto.api.commons.Evaluation.CustomField.toObject, includeInstance),
-    deletedBy: jspb.Message.getFieldWithDefault(msg, 18, ""),
-    isRecoverable: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
+deletedBy: jspb.Message.getFieldWithDefault(msg, 18, ""),
+isRecoverable: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
   };
 
   if (includeInstance) {
@@ -1601,8 +1601,8 @@ proto.api.commons.Evaluation.CustomField.prototype.toObject = function(opt_inclu
  */
 proto.api.commons.Evaluation.CustomField.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    field: jspb.Message.getFieldWithDefault(msg, 2, "")
+key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+field: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2116,19 +2116,19 @@ proto.api.commons.EvaluationSection.prototype.toObject = function(opt_includeIns
  */
 proto.api.commons.EvaluationSection.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationSectionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    sectionId: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    points: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    possiblePoints: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    sortOrder: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    deletedAt: (f = msg.getDeletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    evaluationQuestionsList: jspb.Message.toObjectList(msg.getEvaluationQuestionsList(),
+evaluationSectionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+evaluationId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+sectionId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+points: jspb.Message.getFieldWithDefault(msg, 5, 0),
+possiblePoints: jspb.Message.getFieldWithDefault(msg, 6, 0),
+sortOrder: jspb.Message.getFieldWithDefault(msg, 7, 0),
+deletedAt: (f = msg.getDeletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+evaluationQuestionsList: jspb.Message.toObjectList(msg.getEvaluationQuestionsList(),
     proto.api.commons.EvaluationQuestion.toObject, includeInstance),
-    autoEvaluationQuestionsList: jspb.Message.toObjectList(msg.getAutoEvaluationQuestionsList(),
+autoEvaluationQuestionsList: jspb.Message.toObjectList(msg.getAutoEvaluationQuestionsList(),
     proto.api.commons.AutoEvaluationQuestion.toObject, includeInstance),
-    skipped: jspb.Message.getBooleanFieldWithDefault(msg, 12, false)
+skipped: jspb.Message.getBooleanFieldWithDefault(msg, 12, false)
   };
 
   if (includeInstance) {
@@ -2641,16 +2641,16 @@ proto.api.commons.EvaluationQuestion.prototype.toObject = function(opt_includeIn
  */
 proto.api.commons.EvaluationQuestion.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    evaluationId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    skipped: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    points: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    answersList: jspb.Message.toObjectList(msg.getAnswersList(),
+evaluationQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+evaluationId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+skipped: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+points: jspb.Message.getFieldWithDefault(msg, 6, 0),
+answersList: jspb.Message.toObjectList(msg.getAnswersList(),
     proto.api.commons.EvaluationQuestion.Answer.toObject, includeInstance),
-    evaluationSectionId: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    comment: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    sortOrder: jspb.Message.getFieldWithDefault(msg, 10, 0)
+evaluationSectionId: jspb.Message.getFieldWithDefault(msg, 8, 0),
+comment: jspb.Message.getFieldWithDefault(msg, 9, ""),
+sortOrder: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -2878,9 +2878,9 @@ proto.api.commons.EvaluationQuestion.Answer.prototype.toObject = function(opt_in
  */
 proto.api.commons.EvaluationQuestion.Answer.toObject = function(includeInstance, msg) {
   var f, obj = {
-    answerOption: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    points: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    failType: jspb.Message.getFieldWithDefault(msg, 3, 0)
+answerOption: jspb.Message.getFieldWithDefault(msg, 1, ""),
+points: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+failType: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3293,21 +3293,21 @@ proto.api.commons.AutoEvaluation.prototype.toObject = function(opt_includeInstan
  */
 proto.api.commons.AutoEvaluation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoEvaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    callSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    agentUserId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    autoEvaluationSectionsList: jspb.Message.toObjectList(msg.getAutoEvaluationSectionsList(),
+autoEvaluationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+scorecardId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+callSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
+agentUserId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+autoEvaluationSectionsList: jspb.Message.toObjectList(msg.getAutoEvaluationSectionsList(),
     proto.api.commons.AutoEvaluationSection.toObject, includeInstance),
-    completedAt: (f = msg.getCompletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    deletedAt: (f = msg.getDeletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    callType: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    expressionMatched: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    riskLevel: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    callLength: jspb.Message.getFieldWithDefault(msg, 16, 0),
-    scorecardInfo: (f = msg.getScorecardInfo()) && proto.api.commons.AutoEvaluation.ScorecardInfo.toObject(includeInstance, f),
-    categoryInfo: (f = msg.getCategoryInfo()) && proto.api.commons.AutoEvaluation.CategoryInfo.toObject(includeInstance, f)
+completedAt: (f = msg.getCompletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+deletedAt: (f = msg.getDeletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+callType: jspb.Message.getFieldWithDefault(msg, 9, 0),
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 10, 0),
+expressionMatched: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+riskLevel: jspb.Message.getFieldWithDefault(msg, 12, 0),
+callLength: jspb.Message.getFieldWithDefault(msg, 16, 0),
+scorecardInfo: (f = msg.getScorecardInfo()) && proto.api.commons.AutoEvaluation.ScorecardInfo.toObject(includeInstance, f),
+categoryInfo: (f = msg.getCategoryInfo()) && proto.api.commons.AutoEvaluation.CategoryInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3572,7 +3572,7 @@ proto.api.commons.AutoEvaluation.ScorecardInfo.prototype.toObject = function(opt
  */
 proto.api.commons.AutoEvaluation.ScorecardInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    title: jspb.Message.getFieldWithDefault(msg, 1, "")
+title: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3702,7 +3702,7 @@ proto.api.commons.AutoEvaluation.CategoryInfo.prototype.toObject = function(opt_
  */
 proto.api.commons.AutoEvaluation.CategoryInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    title: jspb.Message.getFieldWithDefault(msg, 1, "")
+title: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -4187,15 +4187,15 @@ proto.api.commons.AutoEvaluationQuestion.prototype.toObject = function(opt_inclu
  */
 proto.api.commons.AutoEvaluationQuestion.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoEvaluationQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    autoEvaluationId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    autoEvaluationSectionId: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    autoQuestionId: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    flaggedList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    passed: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    sortOrder: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    riskLevel: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    expressionMatched: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
+autoEvaluationQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+autoEvaluationId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+autoEvaluationSectionId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+autoQuestionId: jspb.Message.getFieldWithDefault(msg, 5, 0),
+flaggedList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+passed: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+sortOrder: jspb.Message.getFieldWithDefault(msg, 8, 0),
+riskLevel: jspb.Message.getFieldWithDefault(msg, 11, 0),
+expressionMatched: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -4585,15 +4585,15 @@ proto.api.commons.AutoEvaluationSection.prototype.toObject = function(opt_includ
  */
 proto.api.commons.AutoEvaluationSection.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoEvaluationSectionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    autoEvaluationId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    sectionId: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    sortOrder: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    deletedAt: (f = msg.getDeletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    autoEvaluationQuestionsList: jspb.Message.toObjectList(msg.getAutoEvaluationQuestionsList(),
+autoEvaluationSectionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+autoEvaluationId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+sectionId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+sortOrder: jspb.Message.getFieldWithDefault(msg, 5, 0),
+deletedAt: (f = msg.getDeletedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+autoEvaluationQuestionsList: jspb.Message.toObjectList(msg.getAutoEvaluationQuestionsList(),
     proto.api.commons.AutoEvaluationQuestion.toObject, includeInstance),
-    riskLevel: jspb.Message.getFieldWithDefault(msg, 9, 0)
+riskLevel: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -4997,11 +4997,11 @@ proto.api.commons.Question.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.Question.toObject = function(includeInstance, msg) {
   var f, obj = {
-    questionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    authorId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    question: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    categoriesList: jspb.Message.toObjectList(msg.getCategoriesList(),
+questionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+authorId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+question: jspb.Message.getFieldWithDefault(msg, 4, ""),
+description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+categoriesList: jspb.Message.toObjectList(msg.getCategoriesList(),
     proto.api.commons.Category.toObject, includeInstance)
   };
 
@@ -5277,18 +5277,18 @@ proto.api.commons.ScorecardQuestion.prototype.toObject = function(opt_includeIns
  */
 proto.api.commons.ScorecardQuestion.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    question: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    questionId: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    allowSkip: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    answersList: jspb.Message.toObjectList(msg.getAnswersList(),
+scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+question: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+questionId: jspb.Message.getFieldWithDefault(msg, 5, 0),
+allowSkip: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+answersList: jspb.Message.toObjectList(msg.getAnswersList(),
     proto.api.commons.ScorecardQuestion.Answer.toObject, includeInstance),
-    multiSelect: (f = msg.getMultiSelect()) && proto.api.commons.ScorecardQuestion.MultiSelect.toObject(includeInstance, f),
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    sectionId: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    version: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    sortOrder: jspb.Message.getFieldWithDefault(msg, 12, 0)
+multiSelect: (f = msg.getMultiSelect()) && proto.api.commons.ScorecardQuestion.MultiSelect.toObject(includeInstance, f),
+scorecardId: jspb.Message.getFieldWithDefault(msg, 9, 0),
+sectionId: jspb.Message.getFieldWithDefault(msg, 10, 0),
+version: jspb.Message.getFieldWithDefault(msg, 11, 0),
+sortOrder: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -5540,9 +5540,9 @@ proto.api.commons.ScorecardQuestion.Answer.prototype.toObject = function(opt_inc
  */
 proto.api.commons.ScorecardQuestion.Answer.toObject = function(includeInstance, msg) {
   var f, obj = {
-    answerOption: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    points: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    failType: jspb.Message.getFieldWithDefault(msg, 3, 0)
+answerOption: jspb.Message.getFieldWithDefault(msg, 1, ""),
+points: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+failType: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5766,7 +5766,7 @@ proto.api.commons.ScorecardQuestion.MultiSelect.prototype.toObject = function(op
  */
 proto.api.commons.ScorecardQuestion.MultiSelect.toObject = function(includeInstance, msg) {
   var f, obj = {
-    maxPoints: jspb.Message.getFieldWithDefault(msg, 1, 0)
+maxPoints: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -6140,16 +6140,16 @@ proto.api.commons.Section.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.Section.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sectionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    title: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    weight: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    questionsList: jspb.Message.toObjectList(msg.getQuestionsList(),
+sectionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+scorecardId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+title: jspb.Message.getFieldWithDefault(msg, 4, ""),
+description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+weight: jspb.Message.getFieldWithDefault(msg, 6, 0),
+questionsList: jspb.Message.toObjectList(msg.getQuestionsList(),
     proto.api.commons.ScorecardQuestion.toObject, includeInstance),
-    version: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    sortOrder: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    autoQuestionsList: jspb.Message.toObjectList(msg.getAutoQuestionsList(),
+version: jspb.Message.getFieldWithDefault(msg, 8, 0),
+sortOrder: jspb.Message.getFieldWithDefault(msg, 9, 0),
+autoQuestionsList: jspb.Message.toObjectList(msg.getAutoQuestionsList(),
     proto.api.commons.AutoQuestion.toObject, includeInstance)
   };
 
@@ -6563,24 +6563,24 @@ proto.api.commons.Scorecard.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.Scorecard.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    authorId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    passScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-    scoreType: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    evaluationType: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    allowFeedback: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    distributeWeights: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    category: (f = msg.getCategory()) && proto.api.commons.Category.toObject(includeInstance, f),
-    sectionsList: jspb.Message.toObjectList(msg.getSectionsList(),
+scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+authorId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+title: jspb.Message.getFieldWithDefault(msg, 4, ""),
+description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+passScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
+scoreType: jspb.Message.getFieldWithDefault(msg, 7, 0),
+evaluationType: jspb.Message.getFieldWithDefault(msg, 8, 0),
+allowFeedback: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+distributeWeights: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+category: (f = msg.getCategory()) && proto.api.commons.Category.toObject(includeInstance, f),
+sectionsList: jspb.Message.toObjectList(msg.getSectionsList(),
     proto.api.commons.Section.toObject, includeInstance),
-    version: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    state: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    isAdHoc: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
-    customFieldKeysList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
-    callTypesList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
-    updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+version: jspb.Message.getFieldWithDefault(msg, 14, 0),
+state: jspb.Message.getFieldWithDefault(msg, 15, 0),
+isAdHoc: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+customFieldKeysList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
+callTypesList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
+updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7278,16 +7278,16 @@ proto.api.commons.AutoQuestion.prototype.toObject = function(opt_includeInstance
  */
 proto.api.commons.AutoQuestion.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    flagSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    autoSectionId: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    sortOrder: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    flagExpression: (f = msg.getFlagExpression()) && proto.api.commons.AutoQuestion.FlagExpr.toObject(includeInstance, f),
-    question: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    questionId: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    riskLevel: jspb.Message.getFieldWithDefault(msg, 14, 0)
+autoQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+flagSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+scorecardId: jspb.Message.getFieldWithDefault(msg, 5, 0),
+autoSectionId: jspb.Message.getFieldWithDefault(msg, 6, 0),
+sortOrder: jspb.Message.getFieldWithDefault(msg, 7, 0),
+flagExpression: (f = msg.getFlagExpression()) && proto.api.commons.AutoQuestion.FlagExpr.toObject(includeInstance, f),
+question: jspb.Message.getFieldWithDefault(msg, 11, ""),
+description: jspb.Message.getFieldWithDefault(msg, 12, ""),
+questionId: jspb.Message.getFieldWithDefault(msg, 13, 0),
+riskLevel: jspb.Message.getFieldWithDefault(msg, 14, 0)
   };
 
   if (includeInstance) {
@@ -7507,12 +7507,12 @@ proto.api.commons.AutoQuestion.FlagExpr.prototype.toObject = function(opt_includ
  */
 proto.api.commons.AutoQuestion.FlagExpr.toObject = function(includeInstance, msg) {
   var f, obj = {
-    andList: jspb.Message.toObjectList(msg.getAndList(),
+andList: jspb.Message.toObjectList(msg.getAndList(),
     proto.api.commons.AutoQuestion.FlagExpr.toObject, includeInstance),
-    orList: jspb.Message.toObjectList(msg.getOrList(),
+orList: jspb.Message.toObjectList(msg.getOrList(),
     proto.api.commons.AutoQuestion.FlagExpr.toObject, includeInstance),
-    flag: (f = msg.getFlag()) && proto.api.commons.AutoQuestion.FlagExpr.Flag.toObject(includeInstance, f),
-    not: (f = msg.getNot()) && proto.api.commons.AutoQuestion.FlagExpr.toObject(includeInstance, f)
+flag: (f = msg.getFlag()) && proto.api.commons.AutoQuestion.FlagExpr.Flag.toObject(includeInstance, f),
+not: (f = msg.getNot()) && proto.api.commons.AutoQuestion.FlagExpr.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7665,7 +7665,7 @@ proto.api.commons.AutoQuestion.FlagExpr.Flag.prototype.toObject = function(opt_i
  */
 proto.api.commons.AutoQuestion.FlagExpr.Flag.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {

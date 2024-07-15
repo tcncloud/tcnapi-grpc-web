@@ -429,12 +429,12 @@ proto.services.translations.v1alpha1.Translation.prototype.toObject = function(o
  */
 proto.services.translations.v1alpha1.Translation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    translationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    template: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    context: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    languageTag: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    llmTranslation: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    manualTranslation: jspb.Message.getFieldWithDefault(msg, 6, "")
+translationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+template: jspb.Message.getFieldWithDefault(msg, 2, ""),
+context: jspb.Message.getFieldWithDefault(msg, 3, ""),
+languageTag: jspb.Message.getFieldWithDefault(msg, 4, ""),
+llmTranslation: jspb.Message.getFieldWithDefault(msg, 5, ""),
+manualTranslation: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -709,8 +709,8 @@ proto.services.translations.v1alpha1.TranslateTemplateRequest.prototype.toObject
  */
 proto.services.translations.v1alpha1.TranslateTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    template: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    context: jspb.Message.getFieldWithDefault(msg, 2, "")
+template: jspb.Message.getFieldWithDefault(msg, 1, ""),
+context: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -876,7 +876,7 @@ proto.services.translations.v1alpha1.TranslateTemplateResponse.prototype.toObjec
  */
 proto.services.translations.v1alpha1.TranslateTemplateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    translationsList: jspb.Message.toObjectList(msg.getTranslationsList(),
+translationsList: jspb.Message.toObjectList(msg.getTranslationsList(),
     proto.services.translations.v1alpha1.Translation.toObject, includeInstance)
   };
 
@@ -1029,8 +1029,8 @@ proto.services.translations.v1alpha1.ListTranslationsRequest.prototype.toObject 
  */
 proto.services.translations.v1alpha1.ListTranslationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    context: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    languageTag: jspb.Message.getFieldWithDefault(msg, 2, "")
+context: jspb.Message.getFieldWithDefault(msg, 1, ""),
+languageTag: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1196,7 +1196,7 @@ proto.services.translations.v1alpha1.ListTranslationsResponse.prototype.toObject
  */
 proto.services.translations.v1alpha1.ListTranslationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    translationsList: jspb.Message.toObjectList(msg.getTranslationsList(),
+translationsList: jspb.Message.toObjectList(msg.getTranslationsList(),
     proto.services.translations.v1alpha1.Translation.toObject, includeInstance)
   };
 
@@ -1349,8 +1349,8 @@ proto.services.translations.v1alpha1.UpdateTranslationRequest.prototype.toObject
  */
 proto.services.translations.v1alpha1.UpdateTranslationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    translationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    translation: jspb.Message.getFieldWithDefault(msg, 2, "")
+translationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+translation: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1509,7 +1509,7 @@ proto.services.translations.v1alpha1.UpdateTranslationResponse.prototype.toObjec
  */
 proto.services.translations.v1alpha1.UpdateTranslationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    translation: (f = msg.getTranslation()) && proto.services.translations.v1alpha1.Translation.toObject(includeInstance, f)
+translation: (f = msg.getTranslation()) && proto.services.translations.v1alpha1.Translation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1660,7 +1660,7 @@ proto.services.translations.v1alpha1.TriggerLLMTranslationRequest.prototype.toOb
  */
 proto.services.translations.v1alpha1.TriggerLLMTranslationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    translationId: jspb.Message.getFieldWithDefault(msg, 1, "")
+translationId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1790,7 +1790,7 @@ proto.services.translations.v1alpha1.TriggerLLMTranslationResponse.prototype.toO
  */
 proto.services.translations.v1alpha1.TriggerLLMTranslationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    translation: (f = msg.getTranslation()) && proto.services.translations.v1alpha1.Translation.toObject(includeInstance, f)
+translation: (f = msg.getTranslation()) && proto.services.translations.v1alpha1.Translation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1941,8 +1941,8 @@ proto.services.translations.v1alpha1.SetSystemMessageRequest.prototype.toObject 
  */
 proto.services.translations.v1alpha1.SetSystemMessageRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    context: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    systemMessage: jspb.Message.getFieldWithDefault(msg, 2, "")
+context: jspb.Message.getFieldWithDefault(msg, 1, ""),
+systemMessage: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2202,7 +2202,7 @@ proto.services.translations.v1alpha1.GetSystemMessageRequest.prototype.toObject 
  */
 proto.services.translations.v1alpha1.GetSystemMessageRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    context: jspb.Message.getFieldWithDefault(msg, 1, "")
+context: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2332,7 +2332,7 @@ proto.services.translations.v1alpha1.GetSystemMessageResponse.prototype.toObject
  */
 proto.services.translations.v1alpha1.GetSystemMessageResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    systemMessage: jspb.Message.getFieldWithDefault(msg, 1, "")
+systemMessage: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2462,9 +2462,9 @@ proto.services.translations.v1alpha1.TestSystemMessageRequest.prototype.toObject
  */
 proto.services.translations.v1alpha1.TestSystemMessageRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    systemMessage: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    template: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    languageTag: jspb.Message.getFieldWithDefault(msg, 3, "")
+systemMessage: jspb.Message.getFieldWithDefault(msg, 1, ""),
+template: jspb.Message.getFieldWithDefault(msg, 2, ""),
+languageTag: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2652,7 +2652,7 @@ proto.services.translations.v1alpha1.TestSystemMessageResponse.prototype.toObjec
  */
 proto.services.translations.v1alpha1.TestSystemMessageResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    translation: jspb.Message.getFieldWithDefault(msg, 1, "")
+translation: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2782,7 +2782,7 @@ proto.services.translations.v1alpha1.TriggerLLMTranslationsRequest.prototype.toO
  */
 proto.services.translations.v1alpha1.TriggerLLMTranslationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    context: jspb.Message.getFieldWithDefault(msg, 1, "")
+context: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {

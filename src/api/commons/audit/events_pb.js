@@ -77,7 +77,7 @@ proto.api.commons.audit.DummyEvent.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.audit.DummyEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: jspb.Message.getFieldWithDefault(msg, 1, "")
+message: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {

@@ -303,7 +303,7 @@ proto.api.v1alpha1.scorecards.CreateScorecardRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.CreateScorecardRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
+scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -454,7 +454,7 @@ proto.api.v1alpha1.scorecards.CreateScorecardResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.scorecards.CreateScorecardResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
+scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -612,11 +612,11 @@ proto.api.v1alpha1.scorecards.ListScorecardsRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.scorecards.ListScorecardsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authorIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    statesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    evaluationTypesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    callTypesList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+authorIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+statesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+evaluationTypesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+callTypesList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -972,7 +972,7 @@ proto.api.v1alpha1.scorecards.ListScorecardsResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.ListScorecardsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardsList: jspb.Message.toObjectList(msg.getScorecardsList(),
+scorecardsList: jspb.Message.toObjectList(msg.getScorecardsList(),
     api_commons_scorecards_pb.Scorecard.toObject, includeInstance)
   };
 
@@ -1125,8 +1125,8 @@ proto.api.v1alpha1.scorecards.UpdateScorecardRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.UpdateScorecardRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1327,7 +1327,7 @@ proto.api.v1alpha1.scorecards.UpdateScorecardResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.scorecards.UpdateScorecardResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
+scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1478,7 +1478,7 @@ proto.api.v1alpha1.scorecards.DeleteScorecardRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.scorecards.DeleteScorecardRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1608,7 +1608,7 @@ proto.api.v1alpha1.scorecards.DeleteScorecardResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.scorecards.DeleteScorecardResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
+scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1759,8 +1759,8 @@ proto.api.v1alpha1.scorecards.GetScorecardRequest.prototype.toObject = function(
  */
 proto.api.v1alpha1.scorecards.GetScorecardRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    useDefault: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+useDefault: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -1919,7 +1919,7 @@ proto.api.v1alpha1.scorecards.GetScorecardResponse.prototype.toObject = function
  */
 proto.api.v1alpha1.scorecards.GetScorecardResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
+scorecard: (f = msg.getScorecard()) && api_commons_scorecards_pb.Scorecard.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2077,12 +2077,12 @@ proto.api.v1alpha1.scorecards.ListScorecardsByOrgIdRequest.prototype.toObject = 
  */
 proto.api.v1alpha1.scorecards.ListScorecardsByOrgIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    authorIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    statesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    evaluationTypesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    callTypesList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+authorIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+categoryIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+statesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+evaluationTypesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+callTypesList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
