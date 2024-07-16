@@ -321,7 +321,7 @@ proto.api.v1alpha1.org.GetAgentProfileGroupRequest.prototype.toObject = function
  */
 proto.api.v1alpha1.org.GetAgentProfileGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 2, "")
+agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -451,7 +451,7 @@ proto.api.v1alpha1.org.GetAgentProfileGroupResponse.prototype.toObject = functio
  */
 proto.api.v1alpha1.org.GetAgentProfileGroupResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroup: (f = msg.getAgentProfileGroup()) && api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject(includeInstance, f)
+agentProfileGroup: (f = msg.getAgentProfileGroup()) && api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -602,7 +602,7 @@ proto.api.v1alpha1.org.UpdateAgentProfileGroupRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.org.UpdateAgentProfileGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroup: (f = msg.getAgentProfileGroup()) && api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject(includeInstance, f)
+agentProfileGroup: (f = msg.getAgentProfileGroup()) && api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -962,7 +962,7 @@ proto.api.v1alpha1.org.ListAgentProfileGroupsResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.org.ListAgentProfileGroupsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroupsList: jspb.Message.toObjectList(msg.getAgentProfileGroupsList(),
+agentProfileGroupsList: jspb.Message.toObjectList(msg.getAgentProfileGroupsList(),
     api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject, includeInstance)
   };
 
@@ -1115,7 +1115,7 @@ proto.api.v1alpha1.org.CreateAgentProfileGroupRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.org.CreateAgentProfileGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroup: (f = msg.getAgentProfileGroup()) && api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject(includeInstance, f)
+agentProfileGroup: (f = msg.getAgentProfileGroup()) && api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1266,7 +1266,7 @@ proto.api.v1alpha1.org.CreateAgentProfileGroupResponse.prototype.toObject = func
  */
 proto.api.v1alpha1.org.CreateAgentProfileGroupResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
+agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1396,7 +1396,7 @@ proto.api.v1alpha1.org.DeleteAgentProfileGroupRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.org.DeleteAgentProfileGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 2, "")
+agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1634,8 +1634,8 @@ proto.api.v1alpha1.org.AssignAgentProfileGroupsRequest.prototype.toObject = func
  */
 proto.api.v1alpha1.org.AssignAgentProfileGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    userIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+userIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {

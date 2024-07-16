@@ -402,10 +402,10 @@ proto.api.v1alpha1.room303.CreateRoomRequest.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.room303.CreateRoomRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    membersList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    permissionGroupId: (f = msg.getPermissionGroupId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+type: jspb.Message.getFieldWithDefault(msg, 2, 0),
+membersList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+permissionGroupId: (f = msg.getPermissionGroupId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -662,7 +662,7 @@ proto.api.v1alpha1.room303.GetRoomRequest.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.room303.GetRoomRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 1, "")
+roomId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1001,7 +1001,7 @@ proto.api.v1alpha1.room303.ListRoomsResponse.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.room303.ListRoomsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomsList: jspb.Message.toObjectList(msg.getRoomsList(),
+roomsList: jspb.Message.toObjectList(msg.getRoomsList(),
     api_commons_room303_pb.Room.toObject, includeInstance)
   };
 
@@ -1154,7 +1154,7 @@ proto.api.v1alpha1.room303.ArchiveRoomRequest.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.room303.ArchiveRoomRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 1, "")
+roomId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1284,9 +1284,9 @@ proto.api.v1alpha1.room303.ListUsersNamesRequest.prototype.toObject = function(o
  */
 proto.api.v1alpha1.room303.ListUsersNamesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    agent: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    archivedFilter: jspb.Message.getFieldWithDefault(msg, 3, 0)
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+agent: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+archivedFilter: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1481,7 +1481,7 @@ proto.api.v1alpha1.room303.ListUsersNamesResponse.prototype.toObject = function(
  */
 proto.api.v1alpha1.room303.ListUsersNamesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userDetailsList: jspb.Message.toObjectList(msg.getUserDetailsList(),
+userDetailsList: jspb.Message.toObjectList(msg.getUserDetailsList(),
     proto.api.v1alpha1.room303.UserDetails.toObject, includeInstance)
   };
 
@@ -1634,10 +1634,10 @@ proto.api.v1alpha1.room303.UserDetails.prototype.toObject = function(opt_include
  */
 proto.api.v1alpha1.room303.UserDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    lastName: jspb.Message.getFieldWithDefault(msg, 4, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+userName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+lastName: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1854,9 +1854,9 @@ proto.api.v1alpha1.room303.UpdateRoomConfigRequest.prototype.toObject = function
  */
 proto.api.v1alpha1.room303.UpdateRoomConfigRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    config: (f = msg.getConfig()) && api_commons_room303_pb.RoomConfig.toObject(includeInstance, f),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+config: (f = msg.getConfig()) && api_commons_room303_pb.RoomConfig.toObject(includeInstance, f),
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2086,8 +2086,8 @@ proto.api.v1alpha1.room303.UpdateGlobalConfigRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.room303.UpdateGlobalConfigRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    config: (f = msg.getConfig()) && api_commons_room303_pb.GlobalConfig.toObject(includeInstance, f),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+config: (f = msg.getConfig()) && api_commons_room303_pb.GlobalConfig.toObject(includeInstance, f),
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2288,10 +2288,10 @@ proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.room303.UpdateGlobalConfigResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    editedBy: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    config: (f = msg.getConfig()) && api_commons_room303_pb.GlobalConfig.toObject(includeInstance, f),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+editedBy: jspb.Message.getFieldWithDefault(msg, 1, ""),
+config: (f = msg.getConfig()) && api_commons_room303_pb.GlobalConfig.toObject(includeInstance, f),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2672,10 +2672,10 @@ proto.api.v1alpha1.room303.GetGlobalConfigResponse.prototype.toObject = function
  */
 proto.api.v1alpha1.room303.GetGlobalConfigResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    editedBy: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    config: (f = msg.getConfig()) && api_commons_room303_pb.GlobalConfig.toObject(includeInstance, f),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+editedBy: jspb.Message.getFieldWithDefault(msg, 1, ""),
+config: (f = msg.getConfig()) && api_commons_room303_pb.GlobalConfig.toObject(includeInstance, f),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2955,8 +2955,8 @@ proto.api.v1alpha1.room303.UpdateRoomRequest.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.room303.UpdateRoomRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    room: (f = msg.getRoom()) && api_commons_room303_pb.Room.toObject(includeInstance, f),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+room: (f = msg.getRoom()) && api_commons_room303_pb.Room.toObject(includeInstance, f),
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

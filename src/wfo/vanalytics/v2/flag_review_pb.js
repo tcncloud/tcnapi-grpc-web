@@ -189,7 +189,7 @@ proto.wfo.vanalytics.v2.CreateFlagReviewRequest.prototype.toObject = function(op
  */
 proto.wfo.vanalytics.v2.CreateFlagReviewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagReview: (f = msg.getFlagReview()) && proto.wfo.vanalytics.v2.FlagReview.toObject(includeInstance, f)
+flagReview: (f = msg.getFlagReview()) && proto.wfo.vanalytics.v2.FlagReview.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -340,8 +340,8 @@ proto.wfo.vanalytics.v2.BulkCreateFlagReviewRequest.prototype.toObject = functio
  */
 proto.wfo.vanalytics.v2.BulkCreateFlagReviewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    notes: jspb.Message.getFieldWithDefault(msg, 2, "")
+flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+notes: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -601,10 +601,10 @@ proto.wfo.vanalytics.v2.ListFlagReviewsRequest.prototype.toObject = function(opt
  */
 proto.wfo.vanalytics.v2.ListFlagReviewsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    orderBy: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
+pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+orderBy: jspb.Message.getFieldWithDefault(msg, 3, ""),
+pageToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -828,8 +828,8 @@ proto.wfo.vanalytics.v2.ListFlagReviewsResponse.prototype.toObject = function(op
  */
 proto.wfo.vanalytics.v2.ListFlagReviewsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    flagReviewsList: jspb.Message.toObjectList(msg.getFlagReviewsList(),
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
+flagReviewsList: jspb.Message.toObjectList(msg.getFlagReviewsList(),
     proto.wfo.vanalytics.v2.FlagReview.toObject, includeInstance)
   };
 
@@ -1011,11 +1011,11 @@ proto.wfo.vanalytics.v2.FlagReview.prototype.toObject = function(opt_includeInst
  */
 proto.wfo.vanalytics.v2.FlagReview.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagReviewSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    notes: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    flagSnapshotSid: jspb.Message.getFieldWithDefault(msg, 8, 0)
+flagReviewSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+notes: jspb.Message.getFieldWithDefault(msg, 5, ""),
+flagSnapshotSid: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {

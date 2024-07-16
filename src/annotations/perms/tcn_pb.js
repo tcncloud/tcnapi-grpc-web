@@ -89,10 +89,10 @@ proto.annotations.perms.Tcn.prototype.toObject = function(opt_includeInstance) {
  */
 proto.annotations.perms.Tcn.toObject = function(includeInstance, msg) {
   var f, obj = {
-    wip: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    app: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    card: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    featuresList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+wip: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+app: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+card: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+featuresList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {

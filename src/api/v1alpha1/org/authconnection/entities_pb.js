@@ -411,8 +411,8 @@ proto.api.v1alpha1.org.authconnection.CreateAuthConnectionRequest.prototype.toOb
  */
 proto.api.v1alpha1.org.authconnection.CreateAuthConnectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    settings: (f = msg.getSettings()) && api_commons_org_auth_connections_pb.AuthConnectionSettings.toObject(includeInstance, f),
-    clientSecret: jspb.Message.getFieldWithDefault(msg, 2, "")
+settings: (f = msg.getSettings()) && api_commons_org_auth_connections_pb.AuthConnectionSettings.toObject(includeInstance, f),
+clientSecret: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -592,7 +592,7 @@ proto.api.v1alpha1.org.authconnection.CreateAuthConnectionResponse.prototype.toO
  */
 proto.api.v1alpha1.org.authconnection.CreateAuthConnectionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    connectionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+connectionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -823,7 +823,7 @@ proto.api.v1alpha1.org.authconnection.GetAuthConnectionSettingsResponse.prototyp
  */
 proto.api.v1alpha1.org.authconnection.GetAuthConnectionSettingsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    settings: (f = msg.getSettings()) && api_commons_org_auth_connections_pb.AuthConnectionSettings.toObject(includeInstance, f)
+settings: (f = msg.getSettings()) && api_commons_org_auth_connections_pb.AuthConnectionSettings.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -974,7 +974,7 @@ proto.api.v1alpha1.org.authconnection.GetAuthConnectionRequest.prototype.toObjec
  */
 proto.api.v1alpha1.org.authconnection.GetAuthConnectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    connectionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+connectionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1104,7 +1104,7 @@ proto.api.v1alpha1.org.authconnection.GetAuthConnectionResponse.prototype.toObje
  */
 proto.api.v1alpha1.org.authconnection.GetAuthConnectionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    settings: (f = msg.getSettings()) && api_commons_org_auth_connections_pb.AuthConnectionSettings.toObject(includeInstance, f)
+settings: (f = msg.getSettings()) && api_commons_org_auth_connections_pb.AuthConnectionSettings.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1255,7 +1255,7 @@ proto.api.v1alpha1.org.authconnection.DeleteAuthConnectionRequest.prototype.toOb
  */
 proto.api.v1alpha1.org.authconnection.DeleteAuthConnectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    connectionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+connectionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1486,9 +1486,9 @@ proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionSecretRequest.prototyp
  */
 proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionSecretRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    connectionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    clientSecret: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    secretExpiration: (f = msg.getSecretExpiration()) && proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionSecretRequest.SecretExpiration.toObject(includeInstance, f)
+connectionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+clientSecret: jspb.Message.getFieldWithDefault(msg, 2, ""),
+secretExpiration: (f = msg.getSecretExpiration()) && proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionSecretRequest.SecretExpiration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1624,7 +1624,7 @@ proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionSecretRequest.SecretEx
  */
 proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionSecretRequest.SecretExpiration.toObject = function(includeInstance, msg) {
   var f, obj = {
-    date: (f = msg.getDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+date: (f = msg.getDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1956,10 +1956,10 @@ proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionGroupsRequest.prototyp
  */
 proto.api.v1alpha1.org.authconnection.UpdateAuthConnectionGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    defaultGroup: (f = msg.getDefaultGroup()) && api_commons_org_auth_connections_pb.GroupItem.toObject(includeInstance, f),
-    customGroupsList: jspb.Message.toObjectList(msg.getCustomGroupsList(),
+defaultGroup: (f = msg.getDefaultGroup()) && api_commons_org_auth_connections_pb.GroupItem.toObject(includeInstance, f),
+customGroupsList: jspb.Message.toObjectList(msg.getCustomGroupsList(),
     api_commons_org_auth_connections_pb.GroupItem.toObject, includeInstance),
-    connectionId: jspb.Message.getFieldWithDefault(msg, 3, "")
+connectionId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2399,7 +2399,7 @@ proto.api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse.prototype.to
  */
 proto.api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    connectionsList: jspb.Message.toObjectList(msg.getConnectionsList(),
+connectionsList: jspb.Message.toObjectList(msg.getConnectionsList(),
     proto.api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse.Connection.toObject, includeInstance)
   };
 
@@ -2514,8 +2514,8 @@ proto.api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse.Connection.p
  */
 proto.api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse.Connection.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authConnectionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+authConnectionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+name: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

@@ -101,7 +101,7 @@ proto.services.billing.entities.v1alpha1.BasicConfig.prototype.toObject = functi
  */
 proto.services.billing.entities.v1alpha1.BasicConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0)
+rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0)
   };
 
   if (includeInstance) {
@@ -231,10 +231,10 @@ proto.services.billing.entities.v1alpha1.BasicUnitConfig.prototype.toObject = fu
  */
 proto.services.billing.entities.v1alpha1.BasicUnitConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    unitSize: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    minUnits: (f = msg.getMinUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    maxUnits: (f = msg.getMaxUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+unitSize: jspb.Message.getFieldWithDefault(msg, 1, 0),
+rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+minUnits: (f = msg.getMinUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+maxUnits: (f = msg.getMaxUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

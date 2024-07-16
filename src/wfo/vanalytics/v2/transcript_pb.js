@@ -2370,14 +2370,14 @@ proto.wfo.vanalytics.v2.Transcript.prototype.toObject = function(opt_includeInst
  */
 proto.wfo.vanalytics.v2.Transcript.toObject = function(includeInstance, msg) {
   var f, obj = {
-    call: (f = msg.getCall()) && proto.wfo.vanalytics.v2.Call.toObject(includeInstance, f),
-    sms: (f = msg.getSms()) && proto.wfo.vanalytics.v2.Sms.toObject(includeInstance, f),
-    channel: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    flagSummary: (f = msg.getFlagSummary()) && proto.wfo.vanalytics.v2.FlagSummary.toObject(includeInstance, f),
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    summary: (f = msg.getSummary()) && wfo_vanalytics_v2_transcript_summary_pb.TranscriptSummary.toObject(includeInstance, f)
+call: (f = msg.getCall()) && proto.wfo.vanalytics.v2.Call.toObject(includeInstance, f),
+sms: (f = msg.getSms()) && proto.wfo.vanalytics.v2.Sms.toObject(includeInstance, f),
+channel: jspb.Message.getFieldWithDefault(msg, 12, 0),
+startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+flagSummary: (f = msg.getFlagSummary()) && proto.wfo.vanalytics.v2.FlagSummary.toObject(includeInstance, f),
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 17, 0),
+summary: (f = msg.getSummary()) && wfo_vanalytics_v2_transcript_summary_pb.TranscriptSummary.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2843,13 +2843,13 @@ proto.wfo.vanalytics.v2.FlagSummary.prototype.toObject = function(opt_includeIns
  */
 proto.wfo.vanalytics.v2.FlagSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    count: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    prioritySum: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    priorityMax: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    needReview: (f = msg.getNeedReview()) && proto.wfo.vanalytics.v2.FlagSummary.NeedReview.toObject(includeInstance, f),
-    flagsList: jspb.Message.toObjectList(msg.getFlagsList(),
+count: jspb.Message.getFieldWithDefault(msg, 1, 0),
+prioritySum: jspb.Message.getFieldWithDefault(msg, 2, 0),
+priorityMax: jspb.Message.getFieldWithDefault(msg, 3, 0),
+needReview: (f = msg.getNeedReview()) && proto.wfo.vanalytics.v2.FlagSummary.NeedReview.toObject(includeInstance, f),
+flagsList: jspb.Message.toObjectList(msg.getFlagsList(),
     proto.wfo.vanalytics.v2.FlagSummary.Flag.toObject, includeInstance),
-    reviewStatus: jspb.Message.getFieldWithDefault(msg, 6, 0)
+reviewStatus: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -3027,10 +3027,10 @@ proto.wfo.vanalytics.v2.FlagSummary.NeedReview.prototype.toObject = function(opt
  */
 proto.wfo.vanalytics.v2.FlagSummary.NeedReview.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prioritySum: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    priorityMax: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    count: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    flagSidsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+prioritySum: jspb.Message.getFieldWithDefault(msg, 1, 0),
+priorityMax: jspb.Message.getFieldWithDefault(msg, 2, 0),
+count: jspb.Message.getFieldWithDefault(msg, 3, 0),
+flagSidsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3275,15 +3275,15 @@ proto.wfo.vanalytics.v2.FlagSummary.Flag.prototype.toObject = function(opt_inclu
  */
 proto.wfo.vanalytics.v2.FlagSummary.Flag.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    priority: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    version: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
+flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+priority: jspb.Message.getFieldWithDefault(msg, 3, 0),
+version: jspb.Message.getFieldWithDefault(msg, 4, 0),
+filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
     proto.wfo.vanalytics.v2.FlagSummary.Filter.toObject, includeInstance),
-    mustReview: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    mustNotify: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    reviewsList: jspb.Message.toObjectList(msg.getReviewsList(),
+mustReview: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+mustNotify: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+reviewsList: jspb.Message.toObjectList(msg.getReviewsList(),
     proto.wfo.vanalytics.v2.FlagSummary.Review.toObject, includeInstance)
   };
 
@@ -3661,11 +3661,11 @@ proto.wfo.vanalytics.v2.FlagSummary.Filter.prototype.toObject = function(opt_inc
  */
 proto.wfo.vanalytics.v2.FlagSummary.Filter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    joinKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    flagSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    filterSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    version: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 5, "")
+joinKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+flagSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+filterSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+version: jspb.Message.getFieldWithDefault(msg, 4, 0),
+name: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -3911,9 +3911,9 @@ proto.wfo.vanalytics.v2.FlagSummary.Review.prototype.toObject = function(opt_inc
  */
 proto.wfo.vanalytics.v2.FlagSummary.Review.toObject = function(includeInstance, msg) {
   var f, obj = {
-    joinKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    flagSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 3, "")
+joinKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+flagSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+userId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -4255,12 +4255,12 @@ proto.wfo.vanalytics.v2.Sms.prototype.toObject = function(opt_includeInstance) {
  */
 proto.wfo.vanalytics.v2.Sms.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    threadsList: jspb.Message.toObjectList(msg.getThreadsList(),
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+threadsList: jspb.Message.toObjectList(msg.getThreadsList(),
     proto.wfo.vanalytics.v2.Sms.Thread.toObject, includeInstance),
-    phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.Sms.Phone.toObject(includeInstance, f),
-    callerId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
+phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.Sms.Phone.toObject(includeInstance, f),
+callerId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -4420,7 +4420,7 @@ proto.wfo.vanalytics.v2.Sms.Phone.prototype.toObject = function(opt_includeInsta
  */
 proto.wfo.vanalytics.v2.Sms.Phone.toObject = function(includeInstance, msg) {
   var f, obj = {
-    raw: jspb.Message.getFieldWithDefault(msg, 12, "")
+raw: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -4557,11 +4557,11 @@ proto.wfo.vanalytics.v2.Sms.Thread.prototype.toObject = function(opt_includeInst
  */
 proto.wfo.vanalytics.v2.Sms.Thread.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    segmentsList: jspb.Message.toObjectList(msg.getSegmentsList(),
+id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+segmentsList: jspb.Message.toObjectList(msg.getSegmentsList(),
     proto.wfo.vanalytics.v2.Sms.Segment.toObject, includeInstance),
-    userId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    sentiment: (f = msg.getSentiment()) && proto.wfo.vanalytics.v2.Sentiment.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+sentiment: (f = msg.getSentiment()) && proto.wfo.vanalytics.v2.Sentiment.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4828,9 +4828,9 @@ proto.wfo.vanalytics.v2.Sms.Segment.prototype.toObject = function(opt_includeIns
  */
 proto.wfo.vanalytics.v2.Sms.Segment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    text: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    offset: (f = msg.getOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
+text: jspb.Message.getFieldWithDefault(msg, 1, ""),
+offset: (f = msg.getOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
     proto.wfo.vanalytics.v2.Sms.Segment.Attachment.toObject, includeInstance)
   };
 
@@ -4969,7 +4969,7 @@ proto.wfo.vanalytics.v2.Sms.Segment.Attachment.prototype.toObject = function(opt
  */
 proto.wfo.vanalytics.v2.Sms.Segment.Attachment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    attachmentSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+attachmentSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -5328,22 +5328,22 @@ proto.wfo.vanalytics.v2.Call.prototype.toObject = function(opt_includeInstance) 
  */
 proto.wfo.vanalytics.v2.Call.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    callType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    audioTime: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    threadsList: jspb.Message.toObjectList(msg.getThreadsList(),
+callSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+callType: jspb.Message.getFieldWithDefault(msg, 2, 0),
+audioTime: jspb.Message.getFieldWithDefault(msg, 3, 0),
+threadsList: jspb.Message.toObjectList(msg.getThreadsList(),
     proto.wfo.vanalytics.v2.Call.Thread.toObject, includeInstance),
-    silence: (f = msg.getSilence()) && proto.wfo.vanalytics.v2.Call.Silence.toObject(includeInstance, f),
-    talkOver: (f = msg.getTalkOver()) && proto.wfo.vanalytics.v2.Call.TalkOver.toObject(includeInstance, f),
-    talkTime: (f = msg.getTalkTime()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    callerId: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    groupName: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    agentResponseMap: (f = msg.getAgentResponseMap()) ? f.toObject(includeInstance, proto.wfo.vanalytics.v2.Call.AgentResponse.toObject) : [],
-    huntGroupSidsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
-    numberFormat: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    agentCallLog: (f = msg.getAgentCallLog()) && wfo_vanalytics_v2_agent_call_log_pb.AgentCallLog.toObject(includeInstance, f),
-    phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.Call.Phone.toObject(includeInstance, f),
-    audioBytes: jspb.Message.getFieldWithDefault(msg, 16, 0)
+silence: (f = msg.getSilence()) && proto.wfo.vanalytics.v2.Call.Silence.toObject(includeInstance, f),
+talkOver: (f = msg.getTalkOver()) && proto.wfo.vanalytics.v2.Call.TalkOver.toObject(includeInstance, f),
+talkTime: (f = msg.getTalkTime()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+callerId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+groupName: jspb.Message.getFieldWithDefault(msg, 9, ""),
+agentResponseMap: (f = msg.getAgentResponseMap()) ? f.toObject(includeInstance, proto.wfo.vanalytics.v2.Call.AgentResponse.toObject) : [],
+huntGroupSidsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
+numberFormat: jspb.Message.getFieldWithDefault(msg, 12, ""),
+agentCallLog: (f = msg.getAgentCallLog()) && wfo_vanalytics_v2_agent_call_log_pb.AgentCallLog.toObject(includeInstance, f),
+phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.Call.Phone.toObject(includeInstance, f),
+audioBytes: jspb.Message.getFieldWithDefault(msg, 16, 0)
   };
 
   if (includeInstance) {
@@ -5622,7 +5622,7 @@ proto.wfo.vanalytics.v2.Call.Phone.prototype.toObject = function(opt_includeInst
  */
 proto.wfo.vanalytics.v2.Call.Phone.toObject = function(includeInstance, msg) {
   var f, obj = {
-    raw: jspb.Message.getFieldWithDefault(msg, 12, "")
+raw: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -5759,7 +5759,7 @@ proto.wfo.vanalytics.v2.Call.AgentResponse.prototype.toObject = function(opt_inc
  */
 proto.wfo.vanalytics.v2.Call.AgentResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5915,11 +5915,11 @@ proto.wfo.vanalytics.v2.Call.Thread.prototype.toObject = function(opt_includeIns
  */
 proto.wfo.vanalytics.v2.Call.Thread.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    segmentsList: jspb.Message.toObjectList(msg.getSegmentsList(),
+id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+segmentsList: jspb.Message.toObjectList(msg.getSegmentsList(),
     proto.wfo.vanalytics.v2.Call.Segment.toObject, includeInstance),
-    userId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    sentiment: (f = msg.getSentiment()) && proto.wfo.vanalytics.v2.Sentiment.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+sentiment: (f = msg.getSentiment()) && proto.wfo.vanalytics.v2.Sentiment.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6179,9 +6179,9 @@ proto.wfo.vanalytics.v2.Call.Segment.prototype.toObject = function(opt_includeIn
  */
 proto.wfo.vanalytics.v2.Call.Segment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    text: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    offset: (f = msg.getOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    duration: (f = msg.getDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+text: jspb.Message.getFieldWithDefault(msg, 1, ""),
+offset: (f = msg.getOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+duration: (f = msg.getDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6411,9 +6411,9 @@ proto.wfo.vanalytics.v2.Call.TalkOver.prototype.toObject = function(opt_includeI
  */
 proto.wfo.vanalytics.v2.Call.TalkOver.toObject = function(includeInstance, msg) {
   var f, obj = {
-    duration: (f = msg.getDuration()) && proto.wfo.vanalytics.v2.Call.TalkOver.Duration.toObject(includeInstance, f),
-    occurrence: (f = msg.getOccurrence()) && proto.wfo.vanalytics.v2.Call.TalkOver.Occurrence.toObject(includeInstance, f),
-    threshold: jspb.Message.getFieldWithDefault(msg, 3, 0)
+duration: (f = msg.getDuration()) && proto.wfo.vanalytics.v2.Call.TalkOver.Duration.toObject(includeInstance, f),
+occurrence: (f = msg.getOccurrence()) && proto.wfo.vanalytics.v2.Call.TalkOver.Occurrence.toObject(includeInstance, f),
+threshold: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -6551,9 +6551,9 @@ proto.wfo.vanalytics.v2.Call.TalkOver.Duration.prototype.toObject = function(opt
  */
 proto.wfo.vanalytics.v2.Call.TalkOver.Duration.toObject = function(includeInstance, msg) {
   var f, obj = {
-    total: (f = msg.getTotal()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    max: (f = msg.getMax()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    percentage: jspb.Message.getFieldWithDefault(msg, 3, 0)
+total: (f = msg.getTotal()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+max: (f = msg.getMax()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+percentage: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -6783,7 +6783,7 @@ proto.wfo.vanalytics.v2.Call.TalkOver.Occurrence.prototype.toObject = function(o
  */
 proto.wfo.vanalytics.v2.Call.TalkOver.Occurrence.toObject = function(includeInstance, msg) {
   var f, obj = {
-    total: jspb.Message.getFieldWithDefault(msg, 1, 0)
+total: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -7005,9 +7005,9 @@ proto.wfo.vanalytics.v2.Call.Silence.prototype.toObject = function(opt_includeIn
  */
 proto.wfo.vanalytics.v2.Call.Silence.toObject = function(includeInstance, msg) {
   var f, obj = {
-    duration: (f = msg.getDuration()) && proto.wfo.vanalytics.v2.Call.Silence.Duration.toObject(includeInstance, f),
-    occurrence: (f = msg.getOccurrence()) && proto.wfo.vanalytics.v2.Call.Silence.Occurrence.toObject(includeInstance, f),
-    threshold: jspb.Message.getFieldWithDefault(msg, 3, 0)
+duration: (f = msg.getDuration()) && proto.wfo.vanalytics.v2.Call.Silence.Duration.toObject(includeInstance, f),
+occurrence: (f = msg.getOccurrence()) && proto.wfo.vanalytics.v2.Call.Silence.Occurrence.toObject(includeInstance, f),
+threshold: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -7145,9 +7145,9 @@ proto.wfo.vanalytics.v2.Call.Silence.Duration.prototype.toObject = function(opt_
  */
 proto.wfo.vanalytics.v2.Call.Silence.Duration.toObject = function(includeInstance, msg) {
   var f, obj = {
-    total: (f = msg.getTotal()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    max: (f = msg.getMax()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    percentage: jspb.Message.getFieldWithDefault(msg, 3, 0)
+total: (f = msg.getTotal()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+max: (f = msg.getMax()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+percentage: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -7377,7 +7377,7 @@ proto.wfo.vanalytics.v2.Call.Silence.Occurrence.prototype.toObject = function(op
  */
 proto.wfo.vanalytics.v2.Call.Silence.Occurrence.toObject = function(includeInstance, msg) {
   var f, obj = {
-    total: jspb.Message.getFieldWithDefault(msg, 1, 0)
+total: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -8015,11 +8015,11 @@ proto.wfo.vanalytics.v2.Sentiment.prototype.toObject = function(opt_includeInsta
  */
 proto.wfo.vanalytics.v2.Sentiment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    overall: (f = msg.getOverall()) && proto.wfo.vanalytics.v2.Sentiment.Estimate.toObject(includeInstance, f),
-    worst: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    dominant: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    last: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    samplesList: jspb.Message.toObjectList(msg.getSamplesList(),
+overall: (f = msg.getOverall()) && proto.wfo.vanalytics.v2.Sentiment.Estimate.toObject(includeInstance, f),
+worst: jspb.Message.getFieldWithDefault(msg, 2, 0),
+dominant: jspb.Message.getFieldWithDefault(msg, 3, 0),
+last: jspb.Message.getFieldWithDefault(msg, 4, 0),
+samplesList: jspb.Message.toObjectList(msg.getSamplesList(),
     proto.wfo.vanalytics.v2.Sentiment.Sample.toObject, includeInstance)
   };
 
@@ -8180,9 +8180,9 @@ proto.wfo.vanalytics.v2.Sentiment.Sample.prototype.toObject = function(opt_inclu
  */
 proto.wfo.vanalytics.v2.Sentiment.Sample.toObject = function(includeInstance, msg) {
   var f, obj = {
-    estimate: (f = msg.getEstimate()) && proto.wfo.vanalytics.v2.Sentiment.Estimate.toObject(includeInstance, f),
-    offset: (f = msg.getOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    duration: (f = msg.getDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+estimate: (f = msg.getEstimate()) && proto.wfo.vanalytics.v2.Sentiment.Estimate.toObject(includeInstance, f),
+offset: (f = msg.getOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+duration: (f = msg.getDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8433,9 +8433,9 @@ proto.wfo.vanalytics.v2.Sentiment.Estimate.prototype.toObject = function(opt_inc
  */
 proto.wfo.vanalytics.v2.Sentiment.Estimate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    positive: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    neutral: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    negative: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0)
+positive: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+neutral: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+negative: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0)
   };
 
   if (includeInstance) {
@@ -8752,12 +8752,12 @@ proto.wfo.vanalytics.v2.SearchTranscriptsRequest.prototype.toObject = function(o
  */
 proto.wfo.vanalytics.v2.SearchTranscriptsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    orderBy: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    readMask: (f = msg.getReadMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    boolQuery: (f = msg.getBoolQuery()) && proto.wfo.vanalytics.v2.TranscriptBoolQuery.toObject(includeInstance, f),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    highlight: (f = msg.getHighlight()) && proto.wfo.vanalytics.v2.Highlight.toObject(includeInstance, f)
+pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+orderBy: jspb.Message.getFieldWithDefault(msg, 3, ""),
+readMask: (f = msg.getReadMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+boolQuery: (f = msg.getBoolQuery()) && proto.wfo.vanalytics.v2.TranscriptBoolQuery.toObject(includeInstance, f),
+pageToken: jspb.Message.getFieldWithDefault(msg, 6, ""),
+highlight: (f = msg.getHighlight()) && proto.wfo.vanalytics.v2.Highlight.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9095,8 +9095,8 @@ proto.wfo.vanalytics.v2.Highlight.prototype.toObject = function(opt_includeInsta
  */
 proto.wfo.vanalytics.v2.Highlight.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prefix: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    suffix: jspb.Message.getFieldWithDefault(msg, 2, "")
+prefix: jspb.Message.getFieldWithDefault(msg, 1, ""),
+suffix: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -9262,9 +9262,9 @@ proto.wfo.vanalytics.v2.SearchTranscriptsResponse.prototype.toObject = function(
  */
 proto.wfo.vanalytics.v2.SearchTranscriptsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    hitsList: jspb.Message.toObjectList(msg.getHitsList(),
+hitsList: jspb.Message.toObjectList(msg.getHitsList(),
     proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.toObject, includeInstance),
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -9389,7 +9389,7 @@ proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.prototype.toObject = funct
  */
 proto.wfo.vanalytics.v2.SearchTranscriptsResponse.Hit.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcript: (f = msg.getTranscript()) && proto.wfo.vanalytics.v2.Transcript.toObject(includeInstance, f)
+transcript: (f = msg.getTranscript()) && proto.wfo.vanalytics.v2.Transcript.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9596,7 +9596,7 @@ proto.wfo.vanalytics.v2.TranscriptBoolQuery.prototype.toObject = function(opt_in
  */
 proto.wfo.vanalytics.v2.TranscriptBoolQuery.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcript: (f = msg.getTranscript()) && proto.wfo.vanalytics.v2.TranscriptQuery.toObject(includeInstance, f)
+transcript: (f = msg.getTranscript()) && proto.wfo.vanalytics.v2.TranscriptQuery.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9747,15 +9747,15 @@ proto.wfo.vanalytics.v2.TranscriptQuery.prototype.toObject = function(opt_includ
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptSid: (f = msg.getTranscriptSid()) && proto.wfo.vanalytics.v2.TranscriptQuery.TranscriptSid.toObject(includeInstance, f),
-    channel: (f = msg.getChannel()) && proto.wfo.vanalytics.v2.TranscriptQuery.Channel.toObject(includeInstance, f),
-    metadata: (f = msg.getMetadata()) && proto.wfo.vanalytics.v2.TranscriptQuery.Metadata.toObject(includeInstance, f),
-    threads: (f = msg.getThreads()) && proto.wfo.vanalytics.v2.TranscriptQuery.Threads.toObject(includeInstance, f),
-    flagSummary: (f = msg.getFlagSummary()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.toObject(includeInstance, f),
-    startTime: (f = msg.getStartTime()) && proto.wfo.vanalytics.v2.TranscriptQuery.StartTime.toObject(includeInstance, f),
-    deleteTime: (f = msg.getDeleteTime()) && proto.wfo.vanalytics.v2.TranscriptQuery.DeleteTime.toObject(includeInstance, f),
-    phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.toObject(includeInstance, f),
-    channelType: (f = msg.getChannelType()) && proto.wfo.vanalytics.v2.TranscriptQuery.Channel.toObject(includeInstance, f)
+transcriptSid: (f = msg.getTranscriptSid()) && proto.wfo.vanalytics.v2.TranscriptQuery.TranscriptSid.toObject(includeInstance, f),
+channel: (f = msg.getChannel()) && proto.wfo.vanalytics.v2.TranscriptQuery.Channel.toObject(includeInstance, f),
+metadata: (f = msg.getMetadata()) && proto.wfo.vanalytics.v2.TranscriptQuery.Metadata.toObject(includeInstance, f),
+threads: (f = msg.getThreads()) && proto.wfo.vanalytics.v2.TranscriptQuery.Threads.toObject(includeInstance, f),
+flagSummary: (f = msg.getFlagSummary()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.toObject(includeInstance, f),
+startTime: (f = msg.getStartTime()) && proto.wfo.vanalytics.v2.TranscriptQuery.StartTime.toObject(includeInstance, f),
+deleteTime: (f = msg.getDeleteTime()) && proto.wfo.vanalytics.v2.TranscriptQuery.DeleteTime.toObject(includeInstance, f),
+phone: (f = msg.getPhone()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.toObject(includeInstance, f),
+channelType: (f = msg.getChannelType()) && proto.wfo.vanalytics.v2.TranscriptQuery.Channel.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9973,18 +9973,18 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.prototype.toObject = function(opt_
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cc: (f = msg.getCc()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Cc.toObject(includeInstance, f),
-    ndc: (f = msg.getNdc()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Ndc.toObject(includeInstance, f),
-    prefix: (f = msg.getPrefix()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Prefix.toObject(includeInstance, f),
-    city: (f = msg.getCity()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.City.toObject(includeInstance, f),
-    iso2: (f = msg.getIso2()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Iso2.toObject(includeInstance, f),
-    regionCode: (f = msg.getRegionCode()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.RegionCode.toObject(includeInstance, f),
-    regionName: (f = msg.getRegionName()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.RegionName.toObject(includeInstance, f),
-    timeZone: (f = msg.getTimeZone()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.TimeZone.toObject(includeInstance, f),
-    type: (f = msg.getType()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Type.toObject(includeInstance, f),
-    utc: (f = msg.getUtc()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Utc.toObject(includeInstance, f),
-    location: (f = msg.getLocation()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Location.toObject(includeInstance, f),
-    raw: (f = msg.getRaw()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Raw.toObject(includeInstance, f)
+cc: (f = msg.getCc()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Cc.toObject(includeInstance, f),
+ndc: (f = msg.getNdc()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Ndc.toObject(includeInstance, f),
+prefix: (f = msg.getPrefix()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Prefix.toObject(includeInstance, f),
+city: (f = msg.getCity()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.City.toObject(includeInstance, f),
+iso2: (f = msg.getIso2()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Iso2.toObject(includeInstance, f),
+regionCode: (f = msg.getRegionCode()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.RegionCode.toObject(includeInstance, f),
+regionName: (f = msg.getRegionName()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.RegionName.toObject(includeInstance, f),
+timeZone: (f = msg.getTimeZone()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.TimeZone.toObject(includeInstance, f),
+type: (f = msg.getType()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Type.toObject(includeInstance, f),
+utc: (f = msg.getUtc()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Utc.toObject(includeInstance, f),
+location: (f = msg.getLocation()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Location.toObject(includeInstance, f),
+raw: (f = msg.getRaw()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Raw.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10248,7 +10248,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Cc.prototype.toObject = function(o
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Cc.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10404,7 +10404,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Ndc.prototype.toObject = function(
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Ndc.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10560,7 +10560,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Prefix.prototype.toObject = functi
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Prefix.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10716,7 +10716,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.City.prototype.toObject = function
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.City.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10872,7 +10872,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Iso2.prototype.toObject = function
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Iso2.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -11028,7 +11028,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.RegionCode.prototype.toObject = fu
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.RegionCode.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -11184,7 +11184,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.RegionName.prototype.toObject = fu
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.RegionName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -11340,7 +11340,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.TimeZone.prototype.toObject = func
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.TimeZone.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -11496,7 +11496,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Type.prototype.toObject = function
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Type.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -11652,7 +11652,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Utc.prototype.toObject = function(
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Utc.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -11803,7 +11803,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Location.prototype.toObject = func
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Location.toObject = function(includeInstance, msg) {
   var f, obj = {
-    zipCodeProximity: (f = msg.getZipCodeProximity()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Location.ZipCodeProximity.toObject(includeInstance, f)
+zipCodeProximity: (f = msg.getZipCodeProximity()) && proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Location.ZipCodeProximity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11917,9 +11917,9 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Location.ZipCodeProximity.prototyp
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Location.ZipCodeProximity.toObject = function(includeInstance, msg) {
   var f, obj = {
-    countryCode: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    zipCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    distance: jspb.Message.getFieldWithDefault(msg, 3, "")
+countryCode: jspb.Message.getFieldWithDefault(msg, 1, ""),
+zipCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
+distance: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -12151,7 +12151,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Raw.prototype.toObject = function(
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Phone.Raw.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -12751,7 +12751,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.TranscriptSid.prototype.toObject = funct
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.TranscriptSid.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -12909,7 +12909,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Channel.prototype.toObject = function(op
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Channel.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13060,8 +13060,8 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Metadata.prototype.toObject = function(o
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Metadata.toObject = function(includeInstance, msg) {
   var f, obj = {
-    call: (f = msg.getCall()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.toObject(includeInstance, f),
-    sms: (f = msg.getSms()) && proto.wfo.vanalytics.v2.TranscriptQuery.Sms.toObject(includeInstance, f)
+call: (f = msg.getCall()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.toObject(includeInstance, f),
+sms: (f = msg.getSms()) && proto.wfo.vanalytics.v2.TranscriptQuery.Sms.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -13262,18 +13262,18 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.prototype.toObject = function(opt_i
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSid: (f = msg.getCallSid()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.CallSid.toObject(includeInstance, f),
-    audioTime: (f = msg.getAudioTime()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.AudioTime.toObject(includeInstance, f),
-    callType: (f = msg.getCallType()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.CallType.toObject(includeInstance, f),
-    silence: (f = msg.getSilence()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.toObject(includeInstance, f),
-    talkOver: (f = msg.getTalkOver()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.toObject(includeInstance, f),
-    talkTime: (f = msg.getTalkTime()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkTime.toObject(includeInstance, f),
-    callerId: (f = msg.getCallerId()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.CallerId.toObject(includeInstance, f),
-    groupName: (f = msg.getGroupName()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.GroupName.toObject(includeInstance, f),
-    agentResponse: (f = msg.getAgentResponse()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.toObject(includeInstance, f),
-    huntGroupSids: (f = msg.getHuntGroupSids()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.HuntGroupSids.toObject(includeInstance, f),
-    agentCallLog: (f = msg.getAgentCallLog()) && wfo_vanalytics_v2_agent_call_log_pb.AgentCallLogQuery.toObject(includeInstance, f),
-    audioBytes: (f = msg.getAudioBytes()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.AudioBytes.toObject(includeInstance, f)
+callSid: (f = msg.getCallSid()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.CallSid.toObject(includeInstance, f),
+audioTime: (f = msg.getAudioTime()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.AudioTime.toObject(includeInstance, f),
+callType: (f = msg.getCallType()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.CallType.toObject(includeInstance, f),
+silence: (f = msg.getSilence()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.toObject(includeInstance, f),
+talkOver: (f = msg.getTalkOver()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.toObject(includeInstance, f),
+talkTime: (f = msg.getTalkTime()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkTime.toObject(includeInstance, f),
+callerId: (f = msg.getCallerId()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.CallerId.toObject(includeInstance, f),
+groupName: (f = msg.getGroupName()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.GroupName.toObject(includeInstance, f),
+agentResponse: (f = msg.getAgentResponse()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.toObject(includeInstance, f),
+huntGroupSids: (f = msg.getHuntGroupSids()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.HuntGroupSids.toObject(includeInstance, f),
+agentCallLog: (f = msg.getAgentCallLog()) && wfo_vanalytics_v2_agent_call_log_pb.AgentCallLogQuery.toObject(includeInstance, f),
+audioBytes: (f = msg.getAudioBytes()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.AudioBytes.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -13530,10 +13530,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.AudioBytes.prototype.toObject = fun
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.AudioBytes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -13841,7 +13841,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.HuntGroupSids.prototype.toObject = 
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.HuntGroupSids.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13999,14 +13999,14 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.prototype.toObject = 
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    andList: jspb.Message.toObjectList(msg.getAndList(),
+andList: jspb.Message.toObjectList(msg.getAndList(),
     proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.toObject, includeInstance),
-    orList: jspb.Message.toObjectList(msg.getOrList(),
+orList: jspb.Message.toObjectList(msg.getOrList(),
     proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.toObject, includeInstance),
-    not: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    key: (f = msg.getKey()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Key.toObject(includeInstance, f),
-    values: (f = msg.getValues()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Values.toObject(includeInstance, f),
-    numbers: (f = msg.getNumbers()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Numbers.toObject(includeInstance, f)
+not: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+key: (f = msg.getKey()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Key.toObject(includeInstance, f),
+values: (f = msg.getValues()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Values.toObject(includeInstance, f),
+numbers: (f = msg.getNumbers()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Numbers.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14190,9 +14190,9 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Values.prototype.toOb
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Values.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    startsWith: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    contains: jspb.Message.getFieldWithDefault(msg, 3, "")
+inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+startsWith: jspb.Message.getFieldWithDefault(msg, 2, ""),
+contains: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -14406,12 +14406,12 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Numbers.prototype.toO
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Numbers.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
-    gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
-    eq: (f = msg.getEq()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f)
+inList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
+gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+eq: (f = msg.getEq()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14819,9 +14819,9 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Key.prototype.toObjec
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Key.toObject = function(includeInstance, msg) {
   var f, obj = {
-    inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    startsWith: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    contains: jspb.Message.getFieldWithDefault(msg, 3, "")
+inList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+startsWith: jspb.Message.getFieldWithDefault(msg, 2, ""),
+contains: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -15240,7 +15240,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.CallType.prototype.toObject = funct
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.CallType.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -15398,7 +15398,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.GroupName.prototype.toObject = func
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.GroupName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -15554,7 +15554,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.CallSid.prototype.toObject = functi
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.CallSid.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -15712,7 +15712,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.CallerId.prototype.toObject = funct
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.CallerId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -15861,10 +15861,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.AudioTime.prototype.toObject = func
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.AudioTime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16165,10 +16165,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkTime.prototype.toObject = funct
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkTime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16469,10 +16469,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.prototype.toObject = funct
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.toObject = function(includeInstance, msg) {
   var f, obj = {
-    durationTotal: (f = msg.getDurationTotal()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationTotal.toObject(includeInstance, f),
-    durationMax: (f = msg.getDurationMax()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationMax.toObject(includeInstance, f),
-    occurrenceTotal: (f = msg.getOccurrenceTotal()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.OccurrenceTotal.toObject(includeInstance, f),
-    durationPercentage: (f = msg.getDurationPercentage()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationPercentage.toObject(includeInstance, f)
+durationTotal: (f = msg.getDurationTotal()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationTotal.toObject(includeInstance, f),
+durationMax: (f = msg.getDurationMax()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationMax.toObject(includeInstance, f),
+occurrenceTotal: (f = msg.getOccurrenceTotal()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.OccurrenceTotal.toObject(includeInstance, f),
+durationPercentage: (f = msg.getDurationPercentage()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationPercentage.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16625,10 +16625,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationTotal.prototype.to
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationTotal.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16929,10 +16929,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationMax.prototype.toOb
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationMax.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17233,10 +17233,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.OccurrenceTotal.prototype.
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.OccurrenceTotal.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17537,10 +17537,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationPercentage.prototy
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationPercentage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17989,10 +17989,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.prototype.toObject = functi
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.toObject = function(includeInstance, msg) {
   var f, obj = {
-    durationTotal: (f = msg.getDurationTotal()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationTotal.toObject(includeInstance, f),
-    durationMax: (f = msg.getDurationMax()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationMax.toObject(includeInstance, f),
-    occurrenceTotal: (f = msg.getOccurrenceTotal()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.OccurrenceTotal.toObject(includeInstance, f),
-    durationPercentage: (f = msg.getDurationPercentage()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationPercentage.toObject(includeInstance, f)
+durationTotal: (f = msg.getDurationTotal()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationTotal.toObject(includeInstance, f),
+durationMax: (f = msg.getDurationMax()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationMax.toObject(includeInstance, f),
+occurrenceTotal: (f = msg.getOccurrenceTotal()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.OccurrenceTotal.toObject(includeInstance, f),
+durationPercentage: (f = msg.getDurationPercentage()) && proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationPercentage.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -18145,10 +18145,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationTotal.prototype.toO
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationTotal.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -18449,10 +18449,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationMax.prototype.toObj
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationMax.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -18753,10 +18753,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.OccurrenceTotal.prototype.t
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.OccurrenceTotal.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -19057,10 +19057,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationPercentage.prototyp
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationPercentage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.UInt32Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -19953,7 +19953,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Sms.prototype.toObject = function(opt_in
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Sms.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: (f = msg.getConversationSid()) && proto.wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid.toObject(includeInstance, f)
+conversationSid: (f = msg.getConversationSid()) && proto.wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -20074,7 +20074,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid.prototype.toObject =
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -20269,13 +20269,13 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Threads.prototype.toObject = function(op
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Threads.toObject = function(includeInstance, msg) {
   var f, obj = {
-    andList: jspb.Message.toObjectList(msg.getAndList(),
+andList: jspb.Message.toObjectList(msg.getAndList(),
     proto.wfo.vanalytics.v2.TranscriptQuery.Threads.toObject, includeInstance),
-    orList: jspb.Message.toObjectList(msg.getOrList(),
+orList: jspb.Message.toObjectList(msg.getOrList(),
     proto.wfo.vanalytics.v2.TranscriptQuery.Threads.toObject, includeInstance),
-    id: (f = msg.getId()) && proto.wfo.vanalytics.v2.TranscriptQuery.Threads.Id.toObject(includeInstance, f),
-    text: (f = msg.getText()) && proto.wfo.vanalytics.v2.TranscriptQuery.Threads.Text.toObject(includeInstance, f),
-    userId: (f = msg.getUserId()) && proto.wfo.vanalytics.v2.TranscriptQuery.Threads.UserId.toObject(includeInstance, f)
+id: (f = msg.getId()) && proto.wfo.vanalytics.v2.TranscriptQuery.Threads.Id.toObject(includeInstance, f),
+text: (f = msg.getText()) && proto.wfo.vanalytics.v2.TranscriptQuery.Threads.Text.toObject(includeInstance, f),
+userId: (f = msg.getUserId()) && proto.wfo.vanalytics.v2.TranscriptQuery.Threads.UserId.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -20448,7 +20448,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Threads.UserId.prototype.toObject = func
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Threads.UserId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -20604,7 +20604,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Threads.Id.prototype.toObject = function
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Threads.Id.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -20755,10 +20755,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Threads.Text.prototype.toObject = functi
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Threads.Text.toObject = function(includeInstance, msg) {
   var f, obj = {
-    match: (f = msg.getMatch()) && proto.wfo.vanalytics.v2.Match.toObject(includeInstance, f),
-    spanNear: (f = msg.getSpanNear()) && proto.wfo.vanalytics.v2.SpanNear.toObject(includeInstance, f),
-    timespan: (f = msg.getTimespan()) && proto.wfo.vanalytics.v2.TranscriptQuery.Threads.Text.Timespan.toObject(includeInstance, f),
-    not: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+match: (f = msg.getMatch()) && proto.wfo.vanalytics.v2.Match.toObject(includeInstance, f),
+spanNear: (f = msg.getSpanNear()) && proto.wfo.vanalytics.v2.SpanNear.toObject(includeInstance, f),
+timespan: (f = msg.getTimespan()) && proto.wfo.vanalytics.v2.TranscriptQuery.Threads.Text.Timespan.toObject(includeInstance, f),
+not: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -20909,8 +20909,8 @@ proto.wfo.vanalytics.v2.TranscriptQuery.Threads.Text.Timespan.prototype.toObject
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.Threads.Text.Timespan.toObject = function(includeInstance, msg) {
   var f, obj = {
-    head: (f = msg.getHead()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    tail: (f = msg.getTail()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+head: (f = msg.getHead()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+tail: (f = msg.getTail()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -21427,10 +21427,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.prototype.toObject = functio
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    needReview: (f = msg.getNeedReview()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview.toObject(includeInstance, f),
-    reviewStatus: (f = msg.getReviewStatus()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.ReviewStatus.toObject(includeInstance, f),
-    flags: (f = msg.getFlags()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags.toObject(includeInstance, f),
-    count: (f = msg.getCount()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Count.toObject(includeInstance, f)
+needReview: (f = msg.getNeedReview()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview.toObject(includeInstance, f),
+reviewStatus: (f = msg.getReviewStatus()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.ReviewStatus.toObject(includeInstance, f),
+flags: (f = msg.getFlags()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags.toObject(includeInstance, f),
+count: (f = msg.getCount()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Count.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -21583,7 +21583,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview.prototype.toObjec
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSids: (f = msg.getFlagSids()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview.FlagSids.toObject(includeInstance, f)
+flagSids: (f = msg.getFlagSids()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview.FlagSids.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -21704,7 +21704,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview.FlagSids.prototyp
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview.FlagSids.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -21899,7 +21899,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.ReviewStatus.prototype.toObj
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.ReviewStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -22050,7 +22050,7 @@ proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags.prototype.toObject = f
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSid: (f = msg.getFlagSid()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags.FlagSid.toObject(includeInstance, f)
+flagSid: (f = msg.getFlagSid()) && proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags.FlagSid.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -22171,8 +22171,8 @@ proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags.FlagSid.prototype.toOb
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags.FlagSid.toObject = function(includeInstance, msg) {
   var f, obj = {
-    anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    allList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+anyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+allList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -22410,11 +22410,11 @@ proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Count.prototype.toObject = f
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Count.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    eq: (f = msg.getEq()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+eq: (f = msg.getEq()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -22913,11 +22913,11 @@ proto.wfo.vanalytics.v2.TranscriptQuery.StartTime.prototype.toObject = function(
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.StartTime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    moment: (f = msg.getMoment()) && proto.wfo.vanalytics.v2.Moment.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+moment: (f = msg.getMoment()) && proto.wfo.vanalytics.v2.Moment.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -23268,10 +23268,10 @@ proto.wfo.vanalytics.v2.TranscriptQuery.DeleteTime.prototype.toObject = function
  */
 proto.wfo.vanalytics.v2.TranscriptQuery.DeleteTime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gte: (f = msg.getGte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lte: (f = msg.getLte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    gt: (f = msg.getGt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lt: (f = msg.getLt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+gte: (f = msg.getGte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lte: (f = msg.getLte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+gt: (f = msg.getGt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lt: (f = msg.getLt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -23905,8 +23905,8 @@ proto.wfo.vanalytics.v2.Moment.prototype.toObject = function(opt_includeInstance
  */
 proto.wfo.vanalytics.v2.Moment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timeZone: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    interval: jspb.Message.getFieldWithDefault(msg, 2, 0)
+timeZone: jspb.Message.getFieldWithDefault(msg, 1, ""),
+interval: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -24065,8 +24065,8 @@ proto.wfo.vanalytics.v2.FuzzinessAuto.prototype.toObject = function(opt_includeI
  */
 proto.wfo.vanalytics.v2.FuzzinessAuto.toObject = function(includeInstance, msg) {
   var f, obj = {
-    low: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    high: jspb.Message.getFieldWithDefault(msg, 2, 0)
+low: jspb.Message.getFieldWithDefault(msg, 1, 0),
+high: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -24251,10 +24251,10 @@ proto.wfo.vanalytics.v2.Match.prototype.toObject = function(opt_includeInstance)
  */
 proto.wfo.vanalytics.v2.Match.toObject = function(includeInstance, msg) {
   var f, obj = {
-    text: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    operator: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fuzzinessAuto: (f = msg.getFuzzinessAuto()) && proto.wfo.vanalytics.v2.FuzzinessAuto.toObject(includeInstance, f),
-    fuzzinessValue: jspb.Message.getFieldWithDefault(msg, 16, 0)
+text: jspb.Message.getFieldWithDefault(msg, 1, ""),
+operator: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fuzzinessAuto: (f = msg.getFuzzinessAuto()) && proto.wfo.vanalytics.v2.FuzzinessAuto.toObject(includeInstance, f),
+fuzzinessValue: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -24517,9 +24517,9 @@ proto.wfo.vanalytics.v2.SpanNear.prototype.toObject = function(opt_includeInstan
  */
 proto.wfo.vanalytics.v2.SpanNear.toObject = function(includeInstance, msg) {
   var f, obj = {
-    slop: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    inOrder: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    clausesList: jspb.Message.toObjectList(msg.getClausesList(),
+slop: jspb.Message.getFieldWithDefault(msg, 1, 0),
+inOrder: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+clausesList: jspb.Message.toObjectList(msg.getClausesList(),
     proto.wfo.vanalytics.v2.SpanNear.Clause.toObject, includeInstance)
   };
 
@@ -24683,9 +24683,9 @@ proto.wfo.vanalytics.v2.SpanNear.Clause.prototype.toObject = function(opt_includ
  */
 proto.wfo.vanalytics.v2.SpanNear.Clause.toObject = function(includeInstance, msg) {
   var f, obj = {
-    spanNear: (f = msg.getSpanNear()) && proto.wfo.vanalytics.v2.SpanNear.toObject(includeInstance, f),
-    spanFuzzy: (f = msg.getSpanFuzzy()) && proto.wfo.vanalytics.v2.SpanFuzzy.toObject(includeInstance, f),
-    spanTerm: (f = msg.getSpanTerm()) && proto.wfo.vanalytics.v2.SpanTerm.toObject(includeInstance, f)
+spanNear: (f = msg.getSpanNear()) && proto.wfo.vanalytics.v2.SpanNear.toObject(includeInstance, f),
+spanFuzzy: (f = msg.getSpanFuzzy()) && proto.wfo.vanalytics.v2.SpanFuzzy.toObject(includeInstance, f),
+spanTerm: (f = msg.getSpanTerm()) && proto.wfo.vanalytics.v2.SpanTerm.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -25010,7 +25010,7 @@ proto.wfo.vanalytics.v2.SpanTerm.prototype.toObject = function(opt_includeInstan
  */
 proto.wfo.vanalytics.v2.SpanTerm.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: jspb.Message.getFieldWithDefault(msg, 1, "")
+value: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -25166,9 +25166,9 @@ proto.wfo.vanalytics.v2.SpanFuzzy.prototype.toObject = function(opt_includeInsta
  */
 proto.wfo.vanalytics.v2.SpanFuzzy.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    fuzzinessAuto: (f = msg.getFuzzinessAuto()) && proto.wfo.vanalytics.v2.FuzzinessAuto.toObject(includeInstance, f),
-    fuzzinessValue: jspb.Message.getFieldWithDefault(msg, 11, 0)
+value: jspb.Message.getFieldWithDefault(msg, 1, ""),
+fuzzinessAuto: (f = msg.getFuzzinessAuto()) && proto.wfo.vanalytics.v2.FuzzinessAuto.toObject(includeInstance, f),
+fuzzinessValue: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -25395,7 +25395,7 @@ proto.wfo.vanalytics.v2.BulkDeleteTranscriptsRequest.prototype.toObject = functi
  */
 proto.wfo.vanalytics.v2.BulkDeleteTranscriptsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    query: (f = msg.getQuery()) && proto.wfo.vanalytics.v2.TranscriptQuery.toObject(includeInstance, f)
+query: (f = msg.getQuery()) && proto.wfo.vanalytics.v2.TranscriptQuery.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -25546,7 +25546,7 @@ proto.wfo.vanalytics.v2.BulkDeleteTranscriptsResponse.prototype.toObject = funct
  */
 proto.wfo.vanalytics.v2.BulkDeleteTranscriptsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    total: jspb.Message.getFieldWithDefault(msg, 1, 0)
+total: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -25676,7 +25676,7 @@ proto.wfo.vanalytics.v2.BulkRestoreTranscriptsRequest.prototype.toObject = funct
  */
 proto.wfo.vanalytics.v2.BulkRestoreTranscriptsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    query: (f = msg.getQuery()) && proto.wfo.vanalytics.v2.TranscriptQuery.toObject(includeInstance, f)
+query: (f = msg.getQuery()) && proto.wfo.vanalytics.v2.TranscriptQuery.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -25827,7 +25827,7 @@ proto.wfo.vanalytics.v2.BulkRestoreTranscriptsResponse.prototype.toObject = func
  */
 proto.wfo.vanalytics.v2.BulkRestoreTranscriptsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    total: jspb.Message.getFieldWithDefault(msg, 1, 0)
+total: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -26065,7 +26065,7 @@ proto.wfo.vanalytics.v2.ListTranscriptGroupNamesResponse.prototype.toObject = fu
  */
 proto.wfo.vanalytics.v2.ListTranscriptGroupNamesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    groupNamesList: jspb.Message.toObjectList(msg.getGroupNamesList(),
+groupNamesList: jspb.Message.toObjectList(msg.getGroupNamesList(),
     proto.wfo.vanalytics.v2.TranscriptGroupName.toObject, includeInstance)
   };
 
@@ -26218,7 +26218,7 @@ proto.wfo.vanalytics.v2.TranscriptGroupName.prototype.toObject = function(opt_in
  */
 proto.wfo.vanalytics.v2.TranscriptGroupName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: jspb.Message.getFieldWithDefault(msg, 1, "")
+value: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -26348,7 +26348,7 @@ proto.wfo.vanalytics.v2.ListAgentResponseValuesRequest.prototype.toObject = func
  */
 proto.wfo.vanalytics.v2.ListAgentResponseValuesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 2, "")
+key: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -26485,7 +26485,7 @@ proto.wfo.vanalytics.v2.ListAgentResponseValuesResponse.prototype.toObject = fun
  */
 proto.wfo.vanalytics.v2.ListAgentResponseValuesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {

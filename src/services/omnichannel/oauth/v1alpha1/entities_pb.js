@@ -101,8 +101,8 @@ proto.services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthURLRequest.proto
  */
 proto.services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthURLRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authenticationType: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    returningRedirectUri: jspb.Message.getFieldWithDefault(msg, 2, "")
+authenticationType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+returningRedirectUri: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -261,7 +261,7 @@ proto.services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthURLResponse.prot
  */
 proto.services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthURLResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    oauthUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
+oauthUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {

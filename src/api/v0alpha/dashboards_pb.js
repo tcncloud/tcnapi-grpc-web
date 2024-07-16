@@ -841,8 +841,8 @@ proto.api.v0alpha.PublishDashboardRequest.prototype.toObject = function(opt_incl
  */
 proto.api.v0alpha.PublishDashboardRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resourceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    destinationResourceId: jspb.Message.getFieldWithDefault(msg, 2, "")
+resourceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+destinationResourceId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1001,7 +1001,7 @@ proto.api.v0alpha.PublishDashboardResponse.prototype.toObject = function(opt_inc
  */
 proto.api.v0alpha.PublishDashboardResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resourceId: jspb.Message.getFieldWithDefault(msg, 1, "")
+resourceId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1239,7 +1239,7 @@ proto.api.v0alpha.ListDashboardsResponse.prototype.toObject = function(opt_inclu
  */
 proto.api.v0alpha.ListDashboardsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashboardSummariesList: jspb.Message.toObjectList(msg.getDashboardSummariesList(),
+dashboardSummariesList: jspb.Message.toObjectList(msg.getDashboardSummariesList(),
     proto.api.v0alpha.DashboardSummary.toObject, includeInstance)
   };
 
@@ -1392,12 +1392,12 @@ proto.api.v0alpha.DashboardSummary.prototype.toObject = function(opt_includeInst
  */
 proto.api.v0alpha.DashboardSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    panelCount: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    standardDashboard: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+panelCount: jspb.Message.getFieldWithDefault(msg, 4, 0),
+resourceId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+standardDashboard: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -1773,8 +1773,8 @@ proto.api.v0alpha.SetDefaultDashboardRequest.prototype.toObject = function(opt_i
  */
 proto.api.v0alpha.SetDefaultDashboardRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 2, "")
+dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+resourceId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2041,7 +2041,7 @@ proto.api.v0alpha.ListProductTypesResult.prototype.toObject = function(opt_inclu
  */
 proto.api.v0alpha.ListProductTypesResult.toObject = function(includeInstance, msg) {
   var f, obj = {
-    typesList: jspb.Message.toObjectList(msg.getTypesList(),
+typesList: jspb.Message.toObjectList(msg.getTypesList(),
     proto.api.v0alpha.ProductType.toObject, includeInstance)
   };
 
@@ -2194,8 +2194,8 @@ proto.api.v0alpha.ProductType.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.v0alpha.ProductType.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 2, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+id: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2354,8 +2354,8 @@ proto.api.v0alpha.DeleteDashboardRequest.prototype.toObject = function(opt_inclu
  */
 proto.api.v0alpha.DeleteDashboardRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 2, "")
+dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+resourceId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2514,9 +2514,9 @@ proto.api.v0alpha.GetDashboardRequest.prototype.toObject = function(opt_includeI
  */
 proto.api.v0alpha.GetDashboardRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    application: jspb.Message.getFieldWithDefault(msg, 3, 0)
+dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+resourceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+application: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2704,11 +2704,11 @@ proto.api.v0alpha.CreateDashboardRequest.prototype.toObject = function(opt_inclu
  */
 proto.api.v0alpha.CreateDashboardRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    title: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    layout: (f = msg.getLayout()) && proto.api.v0alpha.DashboardLayout.toObject(includeInstance, f),
-    view: (f = msg.getView()) && proto.api.v0alpha.DashboardView.toObject(includeInstance, f),
-    type: (f = msg.getType()) && proto.api.v0alpha.DashboardType.toObject(includeInstance, f)
+title: jspb.Message.getFieldWithDefault(msg, 1, ""),
+description: jspb.Message.getFieldWithDefault(msg, 2, ""),
+layout: (f = msg.getLayout()) && proto.api.v0alpha.DashboardLayout.toObject(includeInstance, f),
+view: (f = msg.getView()) && proto.api.v0alpha.DashboardView.toObject(includeInstance, f),
+type: (f = msg.getType()) && proto.api.v0alpha.DashboardType.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3017,8 +3017,8 @@ proto.api.v0alpha.CreateDashboardResponse.prototype.toObject = function(opt_incl
  */
 proto.api.v0alpha.CreateDashboardResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 2, "")
+dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+resourceId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3184,7 +3184,7 @@ proto.api.v0alpha.DashboardLayout.prototype.toObject = function(opt_includeInsta
  */
 proto.api.v0alpha.DashboardLayout.toObject = function(includeInstance, msg) {
   var f, obj = {
-    panelsList: jspb.Message.toObjectList(msg.getPanelsList(),
+panelsList: jspb.Message.toObjectList(msg.getPanelsList(),
     proto.api.v0alpha.DashboardPanel.toObject, includeInstance)
   };
 
@@ -3337,11 +3337,11 @@ proto.api.v0alpha.DashboardPanel.prototype.toObject = function(opt_includeInstan
  */
 proto.api.v0alpha.DashboardPanel.toObject = function(includeInstance, msg) {
   var f, obj = {
-    panelSource: (f = msg.getPanelSource()) && proto.api.v0alpha.PanelSource.toObject(includeInstance, f),
-    rowLength: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    columnLength: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    rowStart: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    columnStart: jspb.Message.getFieldWithDefault(msg, 5, 0)
+panelSource: (f = msg.getPanelSource()) && proto.api.v0alpha.PanelSource.toObject(includeInstance, f),
+rowLength: jspb.Message.getFieldWithDefault(msg, 2, 0),
+columnLength: jspb.Message.getFieldWithDefault(msg, 3, 0),
+rowStart: jspb.Message.getFieldWithDefault(msg, 4, 0),
+columnStart: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -3635,9 +3635,9 @@ proto.api.v0alpha.PanelSource.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.v0alpha.PanelSource.toObject = function(includeInstance, msg) {
   var f, obj = {
-    insightId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    legacyInsightId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    insightResourceId: jspb.Message.getFieldWithDefault(msg, 3, "")
+insightId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+legacyInsightId: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+insightResourceId: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3879,14 +3879,14 @@ proto.api.v0alpha.Dashboard.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.v0alpha.Dashboard.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    layout: (f = msg.getLayout()) && proto.api.v0alpha.DashboardLayout.toObject(includeInstance, f),
-    view: (f = msg.getView()) && proto.api.v0alpha.DashboardView.toObject(includeInstance, f),
-    type: (f = msg.getType()) && proto.api.v0alpha.DashboardType.toObject(includeInstance, f),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    standardDashboard: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+layout: (f = msg.getLayout()) && proto.api.v0alpha.DashboardLayout.toObject(includeInstance, f),
+view: (f = msg.getView()) && proto.api.v0alpha.DashboardView.toObject(includeInstance, f),
+type: (f = msg.getType()) && proto.api.v0alpha.DashboardType.toObject(includeInstance, f),
+resourceId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+standardDashboard: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -4308,8 +4308,8 @@ proto.api.v0alpha.DashboardType.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.v0alpha.DashboardType.toObject = function(includeInstance, msg) {
   var f, obj = {
-    historic: (f = msg.getHistoric()) && proto.api.v0alpha.HistoricConfig.toObject(includeInstance, f),
-    realTime: (f = msg.getRealTime()) && proto.api.v0alpha.RealTimeConfig.toObject(includeInstance, f)
+historic: (f = msg.getHistoric()) && proto.api.v0alpha.HistoricConfig.toObject(includeInstance, f),
+realTime: (f = msg.getRealTime()) && proto.api.v0alpha.RealTimeConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4536,9 +4536,9 @@ proto.api.v0alpha.HistoricConfig.prototype.toObject = function(opt_includeInstan
  */
 proto.api.v0alpha.HistoricConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timeSpanSimple: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    timeSpanRange: (f = msg.getTimeSpanRange()) && proto.api.v0alpha.TimeSpan.Range.toObject(includeInstance, f),
-    timeZone: jspb.Message.getFieldWithDefault(msg, 4, 0)
+timeSpanSimple: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+timeSpanRange: (f = msg.getTimeSpanRange()) && proto.api.v0alpha.TimeSpan.Range.toObject(includeInstance, f),
+timeZone: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -4866,13 +4866,13 @@ proto.api.v0alpha.UpdateDashboardRequest.prototype.toObject = function(opt_inclu
  */
 proto.api.v0alpha.UpdateDashboardRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    layout: (f = msg.getLayout()) && proto.api.v0alpha.DashboardLayout.toObject(includeInstance, f),
-    view: (f = msg.getView()) && proto.api.v0alpha.DashboardView.toObject(includeInstance, f),
-    type: (f = msg.getType()) && proto.api.v0alpha.DashboardType.toObject(includeInstance, f),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 7, "")
+dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+layout: (f = msg.getLayout()) && proto.api.v0alpha.DashboardLayout.toObject(includeInstance, f),
+view: (f = msg.getView()) && proto.api.v0alpha.DashboardView.toObject(includeInstance, f),
+type: (f = msg.getType()) && proto.api.v0alpha.DashboardType.toObject(includeInstance, f),
+resourceId: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -5239,10 +5239,10 @@ proto.api.v0alpha.UpdateDashboardTitleAndDescriptionRequest.prototype.toObject =
  */
 proto.api.v0alpha.UpdateDashboardTitleAndDescriptionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 4, "")
+dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+resourceId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -5459,9 +5459,9 @@ proto.api.v0alpha.UpdateDashboardLayoutRequest.prototype.toObject = function(opt
  */
 proto.api.v0alpha.UpdateDashboardLayoutRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    layout: (f = msg.getLayout()) && proto.api.v0alpha.DashboardLayout.toObject(includeInstance, f),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 3, "")
+dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+layout: (f = msg.getLayout()) && proto.api.v0alpha.DashboardLayout.toObject(includeInstance, f),
+resourceId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5670,9 +5670,9 @@ proto.api.v0alpha.UpdateDashboardViewRequest.prototype.toObject = function(opt_i
  */
 proto.api.v0alpha.UpdateDashboardViewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    view: (f = msg.getView()) && proto.api.v0alpha.DashboardView.toObject(includeInstance, f),
-    resourceId: jspb.Message.getFieldWithDefault(msg, 3, "")
+dashboardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+view: (f = msg.getView()) && proto.api.v0alpha.DashboardView.toObject(includeInstance, f),
+resourceId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5888,7 +5888,7 @@ proto.api.v0alpha.DashboardView.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.v0alpha.DashboardView.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+orgIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6153,8 +6153,8 @@ proto.api.v0alpha.TimeSpan.Range.prototype.toObject = function(opt_includeInstan
  */
 proto.api.v0alpha.TimeSpan.Range.toObject = function(includeInstance, msg) {
   var f, obj = {
-    start: (f = msg.getStart()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    end: (f = msg.getEnd()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+start: (f = msg.getStart()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+end: (f = msg.getEnd()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6355,9 +6355,9 @@ proto.api.v0alpha.CreateApplicationDashboardRequest.prototype.toObject = functio
  */
 proto.api.v0alpha.CreateApplicationDashboardRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashboardResourceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    application: jspb.Message.getFieldWithDefault(msg, 3, 0)
+dashboardResourceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+application: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -6754,8 +6754,8 @@ proto.api.v0alpha.ApplicationDashboards.prototype.toObject = function(opt_includ
  */
 proto.api.v0alpha.ApplicationDashboards.toObject = function(includeInstance, msg) {
   var f, obj = {
-    application: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    dashboardSummariesList: jspb.Message.toObjectList(msg.getDashboardSummariesList(),
+application: jspb.Message.getFieldWithDefault(msg, 1, 0),
+dashboardSummariesList: jspb.Message.toObjectList(msg.getDashboardSummariesList(),
     proto.api.v0alpha.DashboardSummary.toObject, includeInstance)
   };
 
@@ -6944,7 +6944,7 @@ proto.api.v0alpha.ListApplicationsDashboardsResponse.prototype.toObject = functi
  */
 proto.api.v0alpha.ListApplicationsDashboardsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    applicationDashboardsList: jspb.Message.toObjectList(msg.getApplicationDashboardsList(),
+applicationDashboardsList: jspb.Message.toObjectList(msg.getApplicationDashboardsList(),
     proto.api.v0alpha.ApplicationDashboards.toObject, includeInstance)
   };
 
@@ -7097,9 +7097,9 @@ proto.api.v0alpha.DeleteApplicationDashboardRequest.prototype.toObject = functio
  */
 proto.api.v0alpha.DeleteApplicationDashboardRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    application: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    dashboardResourceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 3, "")
+application: jspb.Message.getFieldWithDefault(msg, 1, 0),
+dashboardResourceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+orgId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {

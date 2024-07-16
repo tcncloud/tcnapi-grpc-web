@@ -281,8 +281,8 @@ proto.api.commons.audit.AsmAgentLoginEvent.prototype.toObject = function(opt_inc
  */
 proto.api.commons.audit.AsmAgentLoginEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -441,9 +441,9 @@ proto.api.commons.audit.AsmOpenVoiceEvent.prototype.toObject = function(opt_incl
  */
 proto.api.commons.audit.AsmOpenVoiceEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -631,8 +631,8 @@ proto.api.commons.audit.AsmOpenOmniAgentEvent.prototype.toObject = function(opt_
  */
 proto.api.commons.audit.AsmOpenOmniAgentEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -791,9 +791,9 @@ proto.api.commons.audit.AsmActivateConversationEvent.prototype.toObject = functi
  */
 proto.api.commons.audit.AsmActivateConversationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1002,9 +1002,9 @@ proto.api.commons.audit.AsmDeactivateConversationEvent.prototype.toObject = func
  */
 proto.api.commons.audit.AsmDeactivateConversationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1213,11 +1213,11 @@ proto.api.commons.audit.AsmAgentStateChangedEvent.prototype.toObject = function(
  */
 proto.api.commons.audit.AsmAgentStateChangedEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    newStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    oldStatus: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    oldStatusDurationMilliseconds: jspb.Message.getFieldWithDefault(msg, 5, 0)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+newStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
+oldStatus: jspb.Message.getFieldWithDefault(msg, 4, 0),
+oldStatusDurationMilliseconds: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -1463,9 +1463,9 @@ proto.api.commons.audit.AsmAgentLogoutEvent.prototype.toObject = function(opt_in
  */
 proto.api.commons.audit.AsmAgentLogoutEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    reason: jspb.Message.getFieldWithDefault(msg, 3, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+reason: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1653,8 +1653,8 @@ proto.api.commons.audit.AsmPauseEvent.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.audit.AsmPauseEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1813,8 +1813,8 @@ proto.api.commons.audit.AsmResumeEvent.prototype.toObject = function(opt_include
  */
 proto.api.commons.audit.AsmResumeEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1973,7 +1973,7 @@ proto.api.commons.audit.AsmConversationPulledEvent.prototype.toObject = function
  */
 proto.api.commons.audit.AsmConversationPulledEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

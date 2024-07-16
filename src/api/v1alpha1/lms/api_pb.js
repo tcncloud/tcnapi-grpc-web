@@ -282,7 +282,7 @@ proto.api.v1alpha1.lms.DeleteFileTemplateRequest.prototype.toObject = function(o
  */
 proto.api.v1alpha1.lms.DeleteFileTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f)
+fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -433,7 +433,7 @@ proto.api.v1alpha1.lms.DeleteFileTemplateResponse.prototype.toObject = function(
  */
 proto.api.v1alpha1.lms.DeleteFileTemplateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f)
+fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -584,7 +584,7 @@ proto.api.v1alpha1.lms.GetFileTemplateRequest.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.lms.GetFileTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f)
+fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -735,7 +735,7 @@ proto.api.v1alpha1.lms.GetFileTemplateResponse.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.lms.GetFileTemplateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f)
+fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -886,9 +886,9 @@ proto.api.v1alpha1.lms.ListFileTemplatesRequest.prototype.toObject = function(op
  */
 proto.api.v1alpha1.lms.ListFileTemplatesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: (f = msg.getValue()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f),
-    lastId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0)
+value: (f = msg.getValue()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f),
+lastId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1104,7 +1104,7 @@ proto.api.v1alpha1.lms.ListFileTemplatesResponse.prototype.toObject = function(o
  */
 proto.api.v1alpha1.lms.ListFileTemplatesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplatesList: jspb.Message.toObjectList(msg.getFileTemplatesList(),
+fileTemplatesList: jspb.Message.toObjectList(msg.getFileTemplatesList(),
     api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject, includeInstance)
   };
 
@@ -1283,8 +1283,8 @@ proto.api.v1alpha1.lms.ParseFileTemplateRequest.prototype.toObject = function(op
  */
 proto.api.v1alpha1.lms.ParseFileTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    newTemplate: (f = msg.getNewTemplate()) && api_v1alpha1_lms_entities_pb.NewTemplate.toObject(includeInstance, f),
-    existingTemplate: (f = msg.getExistingTemplate()) && api_v1alpha1_lms_entities_pb.ExistingTemplate.toObject(includeInstance, f)
+newTemplate: (f = msg.getNewTemplate()) && api_v1alpha1_lms_entities_pb.NewTemplate.toObject(includeInstance, f),
+existingTemplate: (f = msg.getExistingTemplate()) && api_v1alpha1_lms_entities_pb.ExistingTemplate.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1586,7 +1586,7 @@ proto.api.v1alpha1.lms.UpdateFileTemplateRequest.prototype.toObject = function(o
  */
 proto.api.v1alpha1.lms.UpdateFileTemplateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f)
+fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1737,7 +1737,7 @@ proto.api.v1alpha1.lms.UpdateFileTemplateResponse.prototype.toObject = function(
  */
 proto.api.v1alpha1.lms.UpdateFileTemplateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f)
+fileTemplate: (f = msg.getFileTemplate()) && api_v1alpha1_lms_entities_pb.FileTemplateV2.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

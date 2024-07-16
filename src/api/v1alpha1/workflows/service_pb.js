@@ -354,17 +354,17 @@ proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.prototype.toObject = fu
  */
 proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flowDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    application: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    labelsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    definition: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    extra: jspb.Message.getFieldWithDefault(msg, 100, "")
+flowDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+application: jspb.Message.getFieldWithDefault(msg, 3, ""),
+name: jspb.Message.getFieldWithDefault(msg, 4, ""),
+labelsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
+description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+definition: jspb.Message.getFieldWithDefault(msg, 6, ""),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+extra: jspb.Message.getFieldWithDefault(msg, 100, "")
   };
 
   if (includeInstance) {
@@ -866,7 +866,7 @@ proto.api.v1alpha1.workflows.CreateWorkflowDefinitionRequest.prototype.toObject 
  */
 proto.api.v1alpha1.workflows.CreateWorkflowDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
+workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1017,7 +1017,7 @@ proto.api.v1alpha1.workflows.CreateWorkflowDefinitionResponse.prototype.toObject
  */
 proto.api.v1alpha1.workflows.CreateWorkflowDefinitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
+workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1168,7 +1168,7 @@ proto.api.v1alpha1.workflows.GetWorkflowDefinitionRequest.prototype.toObject = f
  */
 proto.api.v1alpha1.workflows.GetWorkflowDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    workflowDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+workflowDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1298,7 +1298,7 @@ proto.api.v1alpha1.workflows.GetWorkflowDefinitionResponse.prototype.toObject = 
  */
 proto.api.v1alpha1.workflows.GetWorkflowDefinitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
+workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1456,9 +1456,9 @@ proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.prototype.toObject =
  */
 proto.api.v1alpha1.workflows.ListWorkflowDefinitionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    application: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+application: jspb.Message.getFieldWithDefault(msg, 2, ""),
+labelsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1665,7 +1665,7 @@ proto.api.v1alpha1.workflows.ListWorkflowDefinitionsResponse.prototype.toObject 
  */
 proto.api.v1alpha1.workflows.ListWorkflowDefinitionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
+workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1816,7 +1816,7 @@ proto.api.v1alpha1.workflows.UpdateWorkflowDefinitionRequest.prototype.toObject 
  */
 proto.api.v1alpha1.workflows.UpdateWorkflowDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
+workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1967,7 +1967,7 @@ proto.api.v1alpha1.workflows.UpdateWorkflowDefinitionResponse.prototype.toObject
  */
 proto.api.v1alpha1.workflows.UpdateWorkflowDefinitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
+workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2118,7 +2118,7 @@ proto.api.v1alpha1.workflows.DeleteWorkflowDefinitionRequest.prototype.toObject 
  */
 proto.api.v1alpha1.workflows.DeleteWorkflowDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    workflowDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+workflowDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2248,7 +2248,7 @@ proto.api.v1alpha1.workflows.DeleteWorkflowDefinitionResponse.prototype.toObject
  */
 proto.api.v1alpha1.workflows.DeleteWorkflowDefinitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
+workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2399,7 +2399,7 @@ proto.api.v1alpha1.workflows.ValidateWorkflowDefinitionRequest.prototype.toObjec
  */
 proto.api.v1alpha1.workflows.ValidateWorkflowDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
+workflowDefinition: (f = msg.getWorkflowDefinition()) && proto.api.v1alpha1.workflows.PersistedWorkflowDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2550,8 +2550,8 @@ proto.api.v1alpha1.workflows.ValidateWorkflowDefinitionResponse.prototype.toObje
  */
 proto.api.v1alpha1.workflows.ValidateWorkflowDefinitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    valid: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+valid: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+error: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

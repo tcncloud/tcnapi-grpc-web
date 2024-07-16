@@ -1031,8 +1031,8 @@ proto.api.v0alpha.ExistReq.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.v0alpha.ExistReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    locale: jspb.Message.getFieldWithDefault(msg, 2, "")
+url: jspb.Message.getFieldWithDefault(msg, 1, ""),
+locale: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1191,7 +1191,7 @@ proto.api.v0alpha.ExistRes.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.v0alpha.ExistRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    exist: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+exist: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -1321,8 +1321,8 @@ proto.api.v0alpha.ContentReq.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.v0alpha.ContentReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    locale: jspb.Message.getFieldWithDefault(msg, 2, "")
+url: jspb.Message.getFieldWithDefault(msg, 1, ""),
+locale: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1488,13 +1488,13 @@ proto.api.v0alpha.ContentRes.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.v0alpha.ContentRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    content: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    imagesList: jspb.Message.toObjectList(msg.getImagesList(),
+content: jspb.Message.getFieldWithDefault(msg, 1, ""),
+lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+imagesList: jspb.Message.toObjectList(msg.getImagesList(),
     proto.api.v0alpha.LearnImage.toObject, includeInstance),
-    title: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    totalViewCount: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    lastEditedUser: jspb.Message.getFieldWithDefault(msg, 6, "")
+title: jspb.Message.getFieldWithDefault(msg, 4, ""),
+totalViewCount: jspb.Message.getFieldWithDefault(msg, 5, 0),
+lastEditedUser: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -1812,8 +1812,8 @@ proto.api.v0alpha.ContentEditorDataReq.prototype.toObject = function(opt_include
  */
 proto.api.v0alpha.ContentEditorDataReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    locale: jspb.Message.getFieldWithDefault(msg, 2, "")
+url: jspb.Message.getFieldWithDefault(msg, 1, ""),
+locale: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1972,7 +1972,7 @@ proto.api.v0alpha.ContentEditorDataRes.prototype.toObject = function(opt_include
  */
 proto.api.v0alpha.ContentEditorDataRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    lastEditedUser: jspb.Message.getFieldWithDefault(msg, 1, "")
+lastEditedUser: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2102,11 +2102,11 @@ proto.api.v0alpha.UpdateReq.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.v0alpha.UpdateReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    content: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    message: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 13, "")
+url: jspb.Message.getFieldWithDefault(msg, 1, ""),
+locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
+content: jspb.Message.getFieldWithDefault(msg, 3, ""),
+message: jspb.Message.getFieldWithDefault(msg, 12, ""),
+title: jspb.Message.getFieldWithDefault(msg, 13, "")
   };
 
   if (includeInstance) {
@@ -2460,9 +2460,9 @@ proto.api.v0alpha.ExportManyReq.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.v0alpha.ExportManyReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    urlList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    content: jspb.Message.getFieldWithDefault(msg, 3, "")
+urlList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
+content: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2669,7 +2669,7 @@ proto.api.v0alpha.ExportRes.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.v0alpha.ExportRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    downloadUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
+downloadUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2799,7 +2799,7 @@ proto.api.v0alpha.StoreStaticImageReq.prototype.toObject = function(opt_includeI
  */
 proto.api.v0alpha.StoreStaticImageReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    image: (f = msg.getImage()) && proto.api.v0alpha.LearnImage.toObject(includeInstance, f)
+image: (f = msg.getImage()) && proto.api.v0alpha.LearnImage.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2950,9 +2950,9 @@ proto.api.v0alpha.LearnImage.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.v0alpha.LearnImage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    content: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    downloadUrl: jspb.Message.getFieldWithDefault(msg, 3, "")
+uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+content: jspb.Message.getFieldWithDefault(msg, 2, ""),
+downloadUrl: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -3140,7 +3140,7 @@ proto.api.v0alpha.StoreStaticImageRes.prototype.toObject = function(opt_includeI
  */
 proto.api.v0alpha.StoreStaticImageRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    image: (f = msg.getImage()) && proto.api.v0alpha.LearnImage.toObject(includeInstance, f)
+image: (f = msg.getImage()) && proto.api.v0alpha.LearnImage.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3291,9 +3291,9 @@ proto.api.v0alpha.SearchContentReq.prototype.toObject = function(opt_includeInst
  */
 proto.api.v0alpha.SearchContentReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    searchContent: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+searchContent: jspb.Message.getFieldWithDefault(msg, 1, ""),
+locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3509,7 +3509,7 @@ proto.api.v0alpha.SearchRes.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.v0alpha.SearchRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    searchDetailsList: jspb.Message.toObjectList(msg.getSearchDetailsList(),
+searchDetailsList: jspb.Message.toObjectList(msg.getSearchDetailsList(),
     proto.api.v0alpha.LearnSearchDetails.toObject, includeInstance)
   };
 
@@ -3662,8 +3662,8 @@ proto.api.v0alpha.LearnSearchDetails.prototype.toObject = function(opt_includeIn
  */
 proto.api.v0alpha.LearnSearchDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    content: jspb.Message.getFieldWithDefault(msg, 2, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+content: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3822,10 +3822,10 @@ proto.api.v0alpha.UploadDynamicScreenshotReq.prototype.toObject = function(opt_i
  */
 proto.api.v0alpha.UploadDynamicScreenshotReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dataLearnId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    locale: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    content: jspb.Message.getFieldWithDefault(msg, 4, "")
+dataLearnId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+version: jspb.Message.getFieldWithDefault(msg, 2, 0),
+locale: jspb.Message.getFieldWithDefault(msg, 3, ""),
+content: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -4042,8 +4042,8 @@ proto.api.v0alpha.UploadDynamicScreenshotRes.prototype.toObject = function(opt_i
  */
 proto.api.v0alpha.UploadDynamicScreenshotRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dataLearnId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    downloadUrl: jspb.Message.getFieldWithDefault(msg, 2, "")
+dataLearnId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+downloadUrl: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -4202,9 +4202,9 @@ proto.api.v0alpha.StandaloneReq.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.v0alpha.StandaloneReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    category: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 3, "")
+locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
+category: jspb.Message.getFieldWithDefault(msg, 2, ""),
+version: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -4399,7 +4399,7 @@ proto.api.v0alpha.StandaloneRes.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.v0alpha.StandaloneRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    standaloneDetailsList: jspb.Message.toObjectList(msg.getStandaloneDetailsList(),
+standaloneDetailsList: jspb.Message.toObjectList(msg.getStandaloneDetailsList(),
     proto.api.v0alpha.LearnStandaloneDetails.toObject, includeInstance)
   };
 
@@ -4552,10 +4552,10 @@ proto.api.v0alpha.LearnStandaloneDetails.prototype.toObject = function(opt_inclu
  */
 proto.api.v0alpha.LearnStandaloneDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    content: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    title: jspb.Message.getFieldWithDefault(msg, 4, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+content: jspb.Message.getFieldWithDefault(msg, 2, ""),
+lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+title: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -4800,9 +4800,9 @@ proto.api.v0alpha.DeleteStandaloneReq.prototype.toObject = function(opt_includeI
  */
 proto.api.v0alpha.DeleteStandaloneReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    articleNamesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    version: jspb.Message.getFieldWithDefault(msg, 3, "")
+locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
+articleNamesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+version: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5110,8 +5110,8 @@ proto.api.v0alpha.SnippetReq.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.v0alpha.SnippetReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 2, "")
+locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
+version: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -5277,7 +5277,7 @@ proto.api.v0alpha.SnippetRes.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.v0alpha.SnippetRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    snippetDetailsList: jspb.Message.toObjectList(msg.getSnippetDetailsList(),
+snippetDetailsList: jspb.Message.toObjectList(msg.getSnippetDetailsList(),
     proto.api.v0alpha.LearnSnippetDetails.toObject, includeInstance)
   };
 
@@ -5430,10 +5430,10 @@ proto.api.v0alpha.LearnSnippetDetails.prototype.toObject = function(opt_includeI
  */
 proto.api.v0alpha.LearnSnippetDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    content: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    title: jspb.Message.getFieldWithDefault(msg, 4, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+content: jspb.Message.getFieldWithDefault(msg, 2, ""),
+lastEditedTimestamp: (f = msg.getLastEditedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+title: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -5678,9 +5678,9 @@ proto.api.v0alpha.DeleteLearnPagesReq.prototype.toObject = function(opt_includeI
  */
 proto.api.v0alpha.DeleteLearnPagesReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    urlList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    version: jspb.Message.getFieldWithDefault(msg, 3, "")
+locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
+urlList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+version: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5988,9 +5988,9 @@ proto.api.v0alpha.CreateEditVersionReq.prototype.toObject = function(opt_include
  */
 proto.api.v0alpha.CreateEditVersionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    srcVersion: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    destVersion: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    destVersionName: jspb.Message.getFieldWithDefault(msg, 3, "")
+srcVersion: jspb.Message.getFieldWithDefault(msg, 1, ""),
+destVersion: jspb.Message.getFieldWithDefault(msg, 2, ""),
+destVersionName: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -6178,7 +6178,7 @@ proto.api.v0alpha.CreateEditVersionRes.prototype.toObject = function(opt_include
  */
 proto.api.v0alpha.CreateEditVersionRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    versionDetails: (f = msg.getVersionDetails()) && proto.api.v0alpha.VersionDetails.toObject(includeInstance, f)
+versionDetails: (f = msg.getVersionDetails()) && proto.api.v0alpha.VersionDetails.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6329,7 +6329,7 @@ proto.api.v0alpha.PublishVersionReq.prototype.toObject = function(opt_includeIns
  */
 proto.api.v0alpha.PublishVersionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publishVersion: jspb.Message.getFieldWithDefault(msg, 1, "")
+publishVersion: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -6459,7 +6459,7 @@ proto.api.v0alpha.PublishVersionRes.prototype.toObject = function(opt_includeIns
  */
 proto.api.v0alpha.PublishVersionRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    versionDetails: (f = msg.getVersionDetails()) && proto.api.v0alpha.VersionDetails.toObject(includeInstance, f)
+versionDetails: (f = msg.getVersionDetails()) && proto.api.v0alpha.VersionDetails.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6610,9 +6610,9 @@ proto.api.v0alpha.ContentByVersionReq.prototype.toObject = function(opt_includeI
  */
 proto.api.v0alpha.ContentByVersionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 3, "")
+url: jspb.Message.getFieldWithDefault(msg, 1, ""),
+locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
+version: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -6800,12 +6800,12 @@ proto.api.v0alpha.UpdateByVersionReq.prototype.toObject = function(opt_includeIn
  */
 proto.api.v0alpha.UpdateByVersionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    content: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    message: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 13, "")
+url: jspb.Message.getFieldWithDefault(msg, 1, ""),
+locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
+content: jspb.Message.getFieldWithDefault(msg, 3, ""),
+version: jspb.Message.getFieldWithDefault(msg, 4, ""),
+message: jspb.Message.getFieldWithDefault(msg, 12, ""),
+title: jspb.Message.getFieldWithDefault(msg, 13, "")
   };
 
   if (includeInstance) {
@@ -7080,10 +7080,10 @@ proto.api.v0alpha.SearchContentByVersionReq.prototype.toObject = function(opt_in
  */
 proto.api.v0alpha.SearchContentByVersionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    searchContent: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    version: jspb.Message.getFieldWithDefault(msg, 6, "")
+searchContent: jspb.Message.getFieldWithDefault(msg, 1, ""),
+locale: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+version: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -7321,9 +7321,9 @@ proto.api.v0alpha.ReviewFileVersionsReq.prototype.toObject = function(opt_includ
  */
 proto.api.v0alpha.ReviewFileVersionsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    locale: jspb.Message.getFieldWithDefault(msg, 3, "")
+url: jspb.Message.getFieldWithDefault(msg, 1, ""),
+version: jspb.Message.getFieldWithDefault(msg, 2, ""),
+locale: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -7518,9 +7518,9 @@ proto.api.v0alpha.ReviewFileVersionsRes.prototype.toObject = function(opt_includ
  */
 proto.api.v0alpha.ReviewFileVersionsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    content: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    diffContent: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    imagesList: jspb.Message.toObjectList(msg.getImagesList(),
+content: jspb.Message.getFieldWithDefault(msg, 1, ""),
+diffContent: jspb.Message.getFieldWithDefault(msg, 2, ""),
+imagesList: jspb.Message.toObjectList(msg.getImagesList(),
     proto.api.v0alpha.LearnImage.toObject, includeInstance)
   };
 
@@ -7731,8 +7731,8 @@ proto.api.v0alpha.ReviewVersionReq.prototype.toObject = function(opt_includeInst
  */
 proto.api.v0alpha.ReviewVersionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    version: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    locale: jspb.Message.getFieldWithDefault(msg, 2, "")
+version: jspb.Message.getFieldWithDefault(msg, 1, ""),
+locale: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -7891,10 +7891,10 @@ proto.api.v0alpha.ReviewVersionRes.prototype.toObject = function(opt_includeInst
  */
 proto.api.v0alpha.ReviewVersionRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    diffUrls: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    diffFileNames: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    srcContent: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    destContent: jspb.Message.getFieldWithDefault(msg, 4, "")
+diffUrls: jspb.Message.getFieldWithDefault(msg, 1, ""),
+diffFileNames: jspb.Message.getFieldWithDefault(msg, 2, ""),
+srcContent: jspb.Message.getFieldWithDefault(msg, 3, ""),
+destContent: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -8111,7 +8111,7 @@ proto.api.v0alpha.ListVersionsReq.prototype.toObject = function(opt_includeInsta
  */
 proto.api.v0alpha.ListVersionsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    locale: jspb.Message.getFieldWithDefault(msg, 1, "")
+locale: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -8248,8 +8248,8 @@ proto.api.v0alpha.ListVersionsRes.prototype.toObject = function(opt_includeInsta
  */
 proto.api.v0alpha.ListVersionsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    versionsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    versionDetailsList: jspb.Message.toObjectList(msg.getVersionDetailsList(),
+versionsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+versionDetailsList: jspb.Message.toObjectList(msg.getVersionDetailsList(),
     proto.api.v0alpha.VersionDetails.toObject, includeInstance)
   };
 
@@ -8450,11 +8450,11 @@ proto.api.v0alpha.VersionDetails.prototype.toObject = function(opt_includeInstan
  */
 proto.api.v0alpha.VersionDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    version: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    versionName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    datePublished: (f = msg.getDatePublished()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 5, "")
+version: jspb.Message.getFieldWithDefault(msg, 1, ""),
+versionName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+datePublished: (f = msg.getDatePublished()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+status: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -8742,8 +8742,8 @@ proto.api.v0alpha.DeleteVersionReq.prototype.toObject = function(opt_includeInst
  */
 proto.api.v0alpha.DeleteVersionReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 2, "")
+locale: jspb.Message.getFieldWithDefault(msg, 1, ""),
+version: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

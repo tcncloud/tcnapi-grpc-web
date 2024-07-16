@@ -233,7 +233,7 @@ proto.api.v1alpha1.org.idp.CreateClientRequest.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.org.idp.CreateClientRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    client: (f = msg.getClient()) && api_commons_org_idp_pb.IdpClient.toObject(includeInstance, f)
+client: (f = msg.getClient()) && api_commons_org_idp_pb.IdpClient.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -384,8 +384,8 @@ proto.api.v1alpha1.org.idp.CreateClientResponse.prototype.toObject = function(op
  */
 proto.api.v1alpha1.org.idp.CreateClientResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    alreadyExists: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    client: (f = msg.getClient()) && api_commons_org_idp_pb.IdpClient.toObject(includeInstance, f)
+alreadyExists: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+client: (f = msg.getClient()) && api_commons_org_idp_pb.IdpClient.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -565,7 +565,7 @@ proto.api.v1alpha1.org.idp.DeleteClientRequest.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.org.idp.DeleteClientRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -695,7 +695,7 @@ proto.api.v1alpha1.org.idp.DeleteClientResponse.prototype.toObject = function(op
  */
 proto.api.v1alpha1.org.idp.DeleteClientResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notFound: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+notFound: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -825,7 +825,7 @@ proto.api.v1alpha1.org.idp.UpdateClientRequest.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.org.idp.UpdateClientRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    client: (f = msg.getClient()) && api_commons_org_idp_pb.IdpClient.toObject(includeInstance, f)
+client: (f = msg.getClient()) && api_commons_org_idp_pb.IdpClient.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -976,7 +976,7 @@ proto.api.v1alpha1.org.idp.UpdateClientResponse.prototype.toObject = function(op
  */
 proto.api.v1alpha1.org.idp.UpdateClientResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notFound: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+notFound: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -1214,7 +1214,7 @@ proto.api.v1alpha1.org.idp.ListClientsResponse.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.org.idp.ListClientsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    clientsList: jspb.Message.toObjectList(msg.getClientsList(),
+clientsList: jspb.Message.toObjectList(msg.getClientsList(),
     api_commons_org_idp_pb.IdpClient.toObject, includeInstance)
   };
 

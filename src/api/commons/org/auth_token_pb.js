@@ -101,10 +101,10 @@ proto.api.commons.org.AuthToken.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.commons.org.AuthToken.toObject = function(includeInstance, msg) {
   var f, obj = {
-    token: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    expiration: (f = msg.getExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+token: jspb.Message.getFieldWithDefault(msg, 1, ""),
+userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+orgId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+expiration: (f = msg.getExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -342,8 +342,8 @@ proto.api.commons.org.AuthTokenExpiration.prototype.toObject = function(opt_incl
  */
 proto.api.commons.org.AuthTokenExpiration.toObject = function(includeInstance, msg) {
   var f, obj = {
-    token: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    expiration: (f = msg.getExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+token: jspb.Message.getFieldWithDefault(msg, 1, ""),
+expiration: (f = msg.getExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

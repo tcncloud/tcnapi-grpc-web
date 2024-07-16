@@ -84,8 +84,8 @@ proto.services.billing.entities.v1alpha3.CountryCodePrefix.prototype.toObject = 
  */
 proto.services.billing.entities.v1alpha3.CountryCodePrefix.toObject = function(includeInstance, msg) {
   var f, obj = {
-    countryCode: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    prefixesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+countryCode: jspb.Message.getFieldWithDefault(msg, 1, 0),
+prefixesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {

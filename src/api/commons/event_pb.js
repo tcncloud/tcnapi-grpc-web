@@ -377,14 +377,14 @@ proto.api.commons.Event.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.Event.toObject = function(includeInstance, msg) {
   var f, obj = {
-    state: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    eventTime: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    activatedConversationEvent: (f = msg.getActivatedConversationEvent()) && proto.api.commons.ActivatedConversationEvent.toObject(includeInstance, f),
-    deactivatedConversationEvent: (f = msg.getDeactivatedConversationEvent()) && proto.api.commons.DeactivatedConversationEvent.toObject(includeInstance, f),
-    sentMessageEvent: (f = msg.getSentMessageEvent()) && proto.api.commons.SentMessageEvent.toObject(includeInstance, f),
-    sendStatusEvent: (f = msg.getSendStatusEvent()) && proto.api.commons.SendStatusEvent.toObject(includeInstance, f),
-    pauseEvent: (f = msg.getPauseEvent()) && proto.api.commons.PauseEvent.toObject(includeInstance, f),
-    resumeEvent: (f = msg.getResumeEvent()) && proto.api.commons.ResumeEvent.toObject(includeInstance, f)
+state: jspb.Message.getFieldWithDefault(msg, 1, 0),
+eventTime: jspb.Message.getFieldWithDefault(msg, 2, 0),
+activatedConversationEvent: (f = msg.getActivatedConversationEvent()) && proto.api.commons.ActivatedConversationEvent.toObject(includeInstance, f),
+deactivatedConversationEvent: (f = msg.getDeactivatedConversationEvent()) && proto.api.commons.DeactivatedConversationEvent.toObject(includeInstance, f),
+sentMessageEvent: (f = msg.getSentMessageEvent()) && proto.api.commons.SentMessageEvent.toObject(includeInstance, f),
+sendStatusEvent: (f = msg.getSendStatusEvent()) && proto.api.commons.SendStatusEvent.toObject(includeInstance, f),
+pauseEvent: (f = msg.getPauseEvent()) && proto.api.commons.PauseEvent.toObject(includeInstance, f),
+resumeEvent: (f = msg.getResumeEvent()) && proto.api.commons.ResumeEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -843,7 +843,7 @@ proto.api.commons.ActivatedConversationEvent.prototype.toObject = function(opt_i
  */
 proto.api.commons.ActivatedConversationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -994,7 +994,7 @@ proto.api.commons.DeactivatedConversationEvent.prototype.toObject = function(opt
  */
 proto.api.commons.DeactivatedConversationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1145,9 +1145,9 @@ proto.api.commons.SentMessageEvent.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.SentMessageEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    responseTimeSeconds: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    isInitialAgentMessage: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+responseTimeSeconds: jspb.Message.getFieldWithDefault(msg, 1, 0),
+isInitialAgentMessage: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1356,7 +1356,7 @@ proto.api.commons.SendStatusEvent.prototype.toObject = function(opt_includeInsta
  */
 proto.api.commons.SendStatusEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    status: jspb.Message.getFieldWithDefault(msg, 1, 0)
+status: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -1517,15 +1517,15 @@ proto.api.commons.AsmEvent.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.AsmEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    state: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    eventTime: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    activatedConversationAsmEvent: (f = msg.getActivatedConversationAsmEvent()) && proto.api.commons.ActivatedConversationAsmEvent.toObject(includeInstance, f),
-    deactivatedConversationAsmEvent: (f = msg.getDeactivatedConversationAsmEvent()) && proto.api.commons.DeactivatedConversationAsmEvent.toObject(includeInstance, f),
-    sentMessageAsmEvent: (f = msg.getSentMessageAsmEvent()) && proto.api.commons.SentMessageAsmEvent.toObject(includeInstance, f),
-    sendStatusAsmEvent: (f = msg.getSendStatusAsmEvent()) && proto.api.commons.SendStatusAsmEvent.toObject(includeInstance, f),
-    pauseEvent: (f = msg.getPauseEvent()) && proto.api.commons.PauseEvent.toObject(includeInstance, f),
-    resumeEvent: (f = msg.getResumeEvent()) && proto.api.commons.ResumeEvent.toObject(includeInstance, f),
-    conversationPulledEvent: (f = msg.getConversationPulledEvent()) && proto.api.commons.ConversationPulledEvent.toObject(includeInstance, f)
+state: jspb.Message.getFieldWithDefault(msg, 1, 0),
+eventTime: jspb.Message.getFieldWithDefault(msg, 2, 0),
+activatedConversationAsmEvent: (f = msg.getActivatedConversationAsmEvent()) && proto.api.commons.ActivatedConversationAsmEvent.toObject(includeInstance, f),
+deactivatedConversationAsmEvent: (f = msg.getDeactivatedConversationAsmEvent()) && proto.api.commons.DeactivatedConversationAsmEvent.toObject(includeInstance, f),
+sentMessageAsmEvent: (f = msg.getSentMessageAsmEvent()) && proto.api.commons.SentMessageAsmEvent.toObject(includeInstance, f),
+sendStatusAsmEvent: (f = msg.getSendStatusAsmEvent()) && proto.api.commons.SendStatusAsmEvent.toObject(includeInstance, f),
+pauseEvent: (f = msg.getPauseEvent()) && proto.api.commons.PauseEvent.toObject(includeInstance, f),
+resumeEvent: (f = msg.getResumeEvent()) && proto.api.commons.ResumeEvent.toObject(includeInstance, f),
+conversationPulledEvent: (f = msg.getConversationPulledEvent()) && proto.api.commons.ConversationPulledEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2034,7 +2034,7 @@ proto.api.commons.ActivatedConversationAsmEvent.prototype.toObject = function(op
  */
 proto.api.commons.ActivatedConversationAsmEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2185,7 +2185,7 @@ proto.api.commons.DeactivatedConversationAsmEvent.prototype.toObject = function(
  */
 proto.api.commons.DeactivatedConversationAsmEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2336,9 +2336,9 @@ proto.api.commons.SentMessageAsmEvent.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.SentMessageAsmEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    responseTimeSeconds: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    isInitialAgentMessage: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+responseTimeSeconds: jspb.Message.getFieldWithDefault(msg, 1, 0),
+isInitialAgentMessage: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2850,7 +2850,7 @@ proto.api.commons.ConversationPulledEvent.prototype.toObject = function(opt_incl
  */
 proto.api.commons.ConversationPulledEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

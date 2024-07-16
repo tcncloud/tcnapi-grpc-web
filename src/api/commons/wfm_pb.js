@@ -659,8 +659,8 @@ proto.api.commons.DatetimeRange.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.commons.DatetimeRange.toObject = function(includeInstance, msg) {
   var f, obj = {
-    startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    endDatetime: (f = msg.getEndDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+endDatetime: (f = msg.getEndDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -919,15 +919,15 @@ proto.api.commons.ForecastingParameters.prototype.toObject = function(opt_includ
  */
 proto.api.commons.ForecastingParameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    intervalWidthInMinutes: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    historicalDataRangeInMonths: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    historicalDataRangeStartDatetime: (f = msg.getHistoricalDataRangeStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    forecastTestRangeInWeeks: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    forecastRangeInWeeks: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    forecastDatetimeRange: (f = msg.getForecastDatetimeRange()) && proto.api.commons.DatetimeRange.toObject(includeInstance, f),
-    trainingDataRangeInMonths: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    trainingDataDatetimeRange: (f = msg.getTrainingDataDatetimeRange()) && proto.api.commons.DatetimeRange.toObject(includeInstance, f),
-    averagesCalculationRangeInMonths: jspb.Message.getFieldWithDefault(msg, 13, 0)
+intervalWidthInMinutes: jspb.Message.getFieldWithDefault(msg, 1, 0),
+historicalDataRangeInMonths: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+historicalDataRangeStartDatetime: (f = msg.getHistoricalDataRangeStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+forecastTestRangeInWeeks: jspb.Message.getFieldWithDefault(msg, 8, 0),
+forecastRangeInWeeks: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+forecastDatetimeRange: (f = msg.getForecastDatetimeRange()) && proto.api.commons.DatetimeRange.toObject(includeInstance, f),
+trainingDataRangeInMonths: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+trainingDataDatetimeRange: (f = msg.getTrainingDataDatetimeRange()) && proto.api.commons.DatetimeRange.toObject(includeInstance, f),
+averagesCalculationRangeInMonths: jspb.Message.getFieldWithDefault(msg, 13, 0)
   };
 
   if (includeInstance) {
@@ -1413,13 +1413,13 @@ proto.api.commons.ProfileTOD.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.commons.ProfileTOD.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sundayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
-    mondayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 2)) == null ? undefined : f,
-    tuesdayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 3)) == null ? undefined : f,
-    wednesdayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 4)) == null ? undefined : f,
-    thursdayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 5)) == null ? undefined : f,
-    fridayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 6)) == null ? undefined : f,
-    saturdayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 7)) == null ? undefined : f
+sundayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
+mondayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 2)) == null ? undefined : f,
+tuesdayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 3)) == null ? undefined : f,
+wednesdayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 4)) == null ? undefined : f,
+thursdayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 5)) == null ? undefined : f,
+fridayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 6)) == null ? undefined : f,
+saturdayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1877,18 +1877,18 @@ proto.api.commons.ProfileWOMS.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.commons.ProfileWOMS.toObject = function(includeInstance, msg) {
   var f, obj = {
-    januaryList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
-    februaryList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 2)) == null ? undefined : f,
-    marchList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 3)) == null ? undefined : f,
-    aprilList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 4)) == null ? undefined : f,
-    mayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 5)) == null ? undefined : f,
-    juneList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 6)) == null ? undefined : f,
-    julyList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 7)) == null ? undefined : f,
-    augustList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 8)) == null ? undefined : f,
-    septemberList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 9)) == null ? undefined : f,
-    octoberList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 10)) == null ? undefined : f,
-    novemberList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 11)) == null ? undefined : f,
-    decemberList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 12)) == null ? undefined : f
+januaryList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
+februaryList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 2)) == null ? undefined : f,
+marchList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 3)) == null ? undefined : f,
+aprilList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 4)) == null ? undefined : f,
+mayList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 5)) == null ? undefined : f,
+juneList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 6)) == null ? undefined : f,
+julyList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 7)) == null ? undefined : f,
+augustList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 8)) == null ? undefined : f,
+septemberList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 9)) == null ? undefined : f,
+octoberList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 10)) == null ? undefined : f,
+novemberList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 11)) == null ? undefined : f,
+decemberList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 12)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2589,13 +2589,13 @@ proto.api.commons.ProfileDOW.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.commons.ProfileDOW.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sunday: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    monday: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    tuesday: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    wednesday: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    thursday: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    friday: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-    saturday: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0)
+sunday: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+monday: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+tuesday: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+wednesday: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+thursday: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
+friday: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
+saturday: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0)
   };
 
   if (includeInstance) {
@@ -2899,18 +2899,18 @@ proto.api.commons.ProfileMOY.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.commons.ProfileMOY.toObject = function(includeInstance, msg) {
   var f, obj = {
-    january: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    february: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    march: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    april: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    may: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    june: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-    july: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
-    august: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
-    september: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
-    october: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
-    november: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
-    december: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0)
+january: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+february: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+march: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+april: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+may: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
+june: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
+july: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
+august: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
+september: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
+october: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
+november: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
+december: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0)
   };
 
   if (includeInstance) {
@@ -3359,10 +3359,10 @@ proto.api.commons.DistributionProfile.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.DistributionProfile.toObject = function(includeInstance, msg) {
   var f, obj = {
-    profileTod: (f = msg.getProfileTod()) && proto.api.commons.ProfileTOD.toObject(includeInstance, f),
-    profileWoms: (f = msg.getProfileWoms()) && proto.api.commons.ProfileWOMS.toObject(includeInstance, f),
-    profileDow: (f = msg.getProfileDow()) && proto.api.commons.ProfileDOW.toObject(includeInstance, f),
-    profileMoy: (f = msg.getProfileMoy()) && proto.api.commons.ProfileMOY.toObject(includeInstance, f)
+profileTod: (f = msg.getProfileTod()) && proto.api.commons.ProfileTOD.toObject(includeInstance, f),
+profileWoms: (f = msg.getProfileWoms()) && proto.api.commons.ProfileWOMS.toObject(includeInstance, f),
+profileDow: (f = msg.getProfileDow()) && proto.api.commons.ProfileDOW.toObject(includeInstance, f),
+profileMoy: (f = msg.getProfileMoy()) && proto.api.commons.ProfileMOY.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3663,8 +3663,8 @@ proto.api.commons.CallProfileGroupCalls.prototype.toObject = function(opt_includ
  */
 proto.api.commons.CallProfileGroupCalls.toObject = function(includeInstance, msg) {
   var f, obj = {
-    totalCalls: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    distributionProfile: (f = msg.getDistributionProfile()) && proto.api.commons.DistributionProfile.toObject(includeInstance, f)
+totalCalls: jspb.Message.getFieldWithDefault(msg, 1, 0),
+distributionProfile: (f = msg.getDistributionProfile()) && proto.api.commons.DistributionProfile.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3844,9 +3844,9 @@ proto.api.commons.CallProfileGroupAvgs.prototype.toObject = function(opt_include
  */
 proto.api.commons.CallProfileGroupAvgs.toObject = function(includeInstance, msg) {
   var f, obj = {
-    minAverage: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    maxAverage: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    distributionProfile: (f = msg.getDistributionProfile()) && proto.api.commons.DistributionProfile.toObject(includeInstance, f)
+minAverage: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+maxAverage: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+distributionProfile: (f = msg.getDistributionProfile()) && proto.api.commons.DistributionProfile.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4081,8 +4081,8 @@ proto.api.commons.OptionTypes.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.commons.OptionTypes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    openTimesOption: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    availabilityOption: jspb.Message.getFieldWithDefault(msg, 2, 0)
+openTimesOption: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+availabilityOption: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4277,8 +4277,8 @@ proto.api.commons.ScheduleSelector.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.ScheduleSelector.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scheduleSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    scheduleType: jspb.Message.getFieldWithDefault(msg, 2, 0)
+scheduleSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+scheduleType: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -4437,8 +4437,8 @@ proto.api.commons.SkillProfileCategory.prototype.toObject = function(opt_include
  */
 proto.api.commons.SkillProfileCategory.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillProfileCategorySid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    skillProfileCategoryType: jspb.Message.getFieldWithDefault(msg, 2, 0)
+skillProfileCategorySid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+skillProfileCategoryType: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -4605,13 +4605,13 @@ proto.api.commons.SchedulingResultMetricForSkillCollection.prototype.toObject = 
  */
 proto.api.commons.SchedulingResultMetricForSkillCollection.toObject = function(includeInstance, msg) {
   var f, obj = {
-    totalInternalIntervals: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    totalIntervalsWithFteRequired: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    totalIntervalsWithFtesRemaining: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    coverage: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    rootMeanSquare: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    hasResult: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    skillCollection: (f = msg.getSkillCollection()) && proto.api.commons.SkillProfileCategory.toObject(includeInstance, f)
+totalInternalIntervals: jspb.Message.getFieldWithDefault(msg, 1, 0),
+totalIntervalsWithFteRequired: jspb.Message.getFieldWithDefault(msg, 2, 0),
+totalIntervalsWithFtesRemaining: jspb.Message.getFieldWithDefault(msg, 3, 0),
+coverage: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+rootMeanSquare: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
+hasResult: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+skillCollection: (f = msg.getSkillCollection()) && proto.api.commons.SkillProfileCategory.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4943,13 +4943,13 @@ proto.api.commons.SchedulingResultMetric.prototype.toObject = function(opt_inclu
  */
 proto.api.commons.SchedulingResultMetric.toObject = function(includeInstance, msg) {
   var f, obj = {
-    totalInternalIntervals: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    totalIntervalsWithFteRequired: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    totalIntervalsWithFtesRemaining: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    coverage: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    rootMeanSquare: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    hasResult: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    metricsBySkillCollectionList: jspb.Message.toObjectList(msg.getMetricsBySkillCollectionList(),
+totalInternalIntervals: jspb.Message.getFieldWithDefault(msg, 1, 0),
+totalIntervalsWithFteRequired: jspb.Message.getFieldWithDefault(msg, 2, 0),
+totalIntervalsWithFtesRemaining: jspb.Message.getFieldWithDefault(msg, 3, 0),
+coverage: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+rootMeanSquare: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
+hasResult: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+metricsBySkillCollectionList: jspb.Message.toObjectList(msg.getMetricsBySkillCollectionList(),
     proto.api.commons.SchedulingResultMetricForSkillCollection.toObject, includeInstance)
   };
 
@@ -5276,8 +5276,8 @@ proto.api.commons.ClientHistoryCacheInfo.prototype.toObject = function(opt_inclu
  */
 proto.api.commons.ClientHistoryCacheInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    state: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    progressPercentage: jspb.Message.getFieldWithDefault(msg, 2, 0)
+state: jspb.Message.getFieldWithDefault(msg, 1, 0),
+progressPercentage: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -5436,7 +5436,7 @@ proto.api.commons.ErrorTrace.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.commons.ErrorTrace.toObject = function(includeInstance, msg) {
   var f, obj = {
-    grpcTraceBin: jspb.Message.getFieldWithDefault(msg, 1, "")
+grpcTraceBin: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -5566,9 +5566,9 @@ proto.api.commons.InitialSetupStatus.prototype.toObject = function(opt_includeIn
  */
 proto.api.commons.InitialSetupStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    state: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    progressPercentage: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    message: jspb.Message.getFieldWithDefault(msg, 3, "")
+state: jspb.Message.getFieldWithDefault(msg, 1, 0),
+progressPercentage: jspb.Message.getFieldWithDefault(msg, 2, 0),
+message: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5763,10 +5763,10 @@ proto.api.commons.AgentStateSegment.prototype.toObject = function(opt_includeIns
  */
 proto.api.commons.AgentStateSegment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orderInRts: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    statesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    widthInMinutes: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    widthInSeconds: jspb.Message.getFieldWithDefault(msg, 4, 0)
+orderInRts: jspb.Message.getFieldWithDefault(msg, 1, 0),
+statesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+widthInMinutes: jspb.Message.getFieldWithDefault(msg, 3, 0),
+widthInSeconds: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -6011,9 +6011,9 @@ proto.api.commons.AgentStateSequence.prototype.toObject = function(opt_includeIn
  */
 proto.api.commons.AgentStateSequence.toObject = function(includeInstance, msg) {
   var f, obj = {
-    wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    stateSegmentsList: jspb.Message.toObjectList(msg.getStateSegmentsList(),
+wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+startDatetime: (f = msg.getStartDatetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+stateSegmentsList: jspb.Message.toObjectList(msg.getStateSegmentsList(),
     proto.api.commons.AgentStateSegment.toObject, includeInstance)
   };
 
@@ -6252,17 +6252,17 @@ proto.api.commons.AgentLeavePetition.prototype.toObject = function(opt_includeIn
  */
 proto.api.commons.AgentLeavePetition.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentLeavePetitionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    petitionStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    petitionComment: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    responseComment: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    requestedDatetimeRangesList: jspb.Message.toObjectList(msg.getRequestedDatetimeRangesList(),
+agentLeavePetitionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+petitionStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
+petitionComment: jspb.Message.getFieldWithDefault(msg, 4, ""),
+responseComment: jspb.Message.getFieldWithDefault(msg, 5, ""),
+requestedDatetimeRangesList: jspb.Message.toObjectList(msg.getRequestedDatetimeRangesList(),
     proto.api.commons.DatetimeRange.toObject, includeInstance),
-    createdTime: (f = msg.getCreatedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    archivedTime: (f = msg.getArchivedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    resolvedTime: (f = msg.getResolvedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    resolvedByUserId: jspb.Message.getFieldWithDefault(msg, 10, "")
+createdTime: (f = msg.getCreatedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+archivedTime: (f = msg.getArchivedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+resolvedTime: (f = msg.getResolvedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+resolvedByUserId: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {

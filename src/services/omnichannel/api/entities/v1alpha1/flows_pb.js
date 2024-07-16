@@ -108,7 +108,7 @@ proto.services.omnichannel.api.entities.v1alpha1.FlowPayload.prototype.toObject 
  */
 proto.services.omnichannel.api.entities.v1alpha1.FlowPayload.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
+fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
     proto.services.omnichannel.api.entities.v1alpha1.FlowField.toObject, includeInstance)
   };
 
@@ -286,8 +286,8 @@ proto.services.omnichannel.api.entities.v1alpha1.FlowField.prototype.toObject = 
  */
 proto.services.omnichannel.api.entities.v1alpha1.FlowField.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    userInput: jspb.Message.getFieldWithDefault(msg, 100, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, 0),
+userInput: (f = jspb.Message.getField(msg, 100)) == null ? undefined : f
   };
 
   if (includeInstance) {
