@@ -3,7 +3,6 @@
 
 var api_v1alpha1_insights_service_pb = require("../../../api/v1alpha1/insights/service_pb");
 var api_v1alpha1_insights_insight_pb = require("../../../api/v1alpha1/insights/insight_pb");
-var api_v1alpha1_insights_output_configuration_pb = require("../../../api/v1alpha1/insights/output_configuration_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var Insights = (function () {
@@ -134,8 +133,8 @@ Insights.ListOutputConfigurations = {
   service: Insights,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_output_configuration_pb.ListOutputConfigurationsRequest,
-  responseType: api_v1alpha1_insights_output_configuration_pb.ListOutputConfigurationsResponse
+  requestType: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsRequest,
+  responseType: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse
 };
 
 Insights.GetOutputConfiguration = {
@@ -143,8 +142,8 @@ Insights.GetOutputConfiguration = {
   service: Insights,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_output_configuration_pb.GetOutputConfigurationRequest,
-  responseType: api_v1alpha1_insights_output_configuration_pb.GetOutputConfigurationResponse
+  requestType: api_v1alpha1_insights_insight_pb.GetOutputConfigurationRequest,
+  responseType: api_v1alpha1_insights_insight_pb.GetOutputConfigurationResponse
 };
 
 Insights.CreateOutputConfiguration = {
@@ -152,8 +151,8 @@ Insights.CreateOutputConfiguration = {
   service: Insights,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_output_configuration_pb.CreateOutputConfigurationRequest,
-  responseType: api_v1alpha1_insights_output_configuration_pb.CreateOutputConfigurationResponse
+  requestType: api_v1alpha1_insights_insight_pb.CreateOutputConfigurationRequest,
+  responseType: api_v1alpha1_insights_insight_pb.CreateOutputConfigurationResponse
 };
 
 Insights.UpdateOutputConfiguration = {
@@ -161,8 +160,8 @@ Insights.UpdateOutputConfiguration = {
   service: Insights,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_output_configuration_pb.UpdateOutputConfigurationRequest,
-  responseType: api_v1alpha1_insights_output_configuration_pb.UpdateOutputConfigurationResponse
+  requestType: api_v1alpha1_insights_insight_pb.UpdateOutputConfigurationRequest,
+  responseType: api_v1alpha1_insights_insight_pb.UpdateOutputConfigurationResponse
 };
 
 Insights.DeleteOutputConfiguration = {
@@ -170,8 +169,8 @@ Insights.DeleteOutputConfiguration = {
   service: Insights,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_insights_output_configuration_pb.DeleteOutputConfigurationRequest,
-  responseType: api_v1alpha1_insights_output_configuration_pb.DeleteOutputConfigurationResponse
+  requestType: api_v1alpha1_insights_insight_pb.DeleteOutputConfigurationRequest,
+  responseType: api_v1alpha1_insights_insight_pb.DeleteOutputConfigurationResponse
 };
 
 exports.Insights = Insights;
