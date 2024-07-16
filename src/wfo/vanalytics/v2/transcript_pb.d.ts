@@ -349,6 +349,9 @@ export namespace Sms {
     getSentiment(): Sentiment | undefined;
     setSentiment(value?: Sentiment): void;
 
+    getUsername(): string;
+    setUsername(value: string): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Thread.AsObject;
     static toObject(includeInstance: boolean, msg: Thread): Thread.AsObject;
@@ -365,6 +368,7 @@ export namespace Sms {
       segmentsList: Array<Sms.Segment.AsObject>,
       userId: string,
       sentiment?: Sentiment.AsObject,
+      username: string,
     }
   }
 
@@ -568,6 +572,9 @@ export namespace Call {
     getSentiment(): Sentiment | undefined;
     setSentiment(value?: Sentiment): void;
 
+    getUsername(): string;
+    setUsername(value: string): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Thread.AsObject;
     static toObject(includeInstance: boolean, msg: Thread): Thread.AsObject;
@@ -584,6 +591,7 @@ export namespace Call {
       segmentsList: Array<Call.Segment.AsObject>,
       userId: string,
       sentiment?: Sentiment.AsObject,
+      username: string,
     }
   }
 
@@ -2501,6 +2509,11 @@ export namespace TranscriptQuery {
     getUserId(): TranscriptQuery.Threads.UserId | undefined;
     setUserId(value?: TranscriptQuery.Threads.UserId): void;
 
+    hasUsername(): boolean;
+    clearUsername(): void;
+    getUsername(): TranscriptQuery.Threads.Username | undefined;
+    setUsername(value?: TranscriptQuery.Threads.Username): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Threads.AsObject;
     static toObject(includeInstance: boolean, msg: Threads): Threads.AsObject;
@@ -2518,6 +2531,7 @@ export namespace TranscriptQuery {
       id?: TranscriptQuery.Threads.Id.AsObject,
       text?: TranscriptQuery.Threads.Text.AsObject,
       userId?: TranscriptQuery.Threads.UserId.AsObject,
+      username?: TranscriptQuery.Threads.Username.AsObject,
     }
 
     export class UserId extends jspb.Message {
@@ -2537,6 +2551,28 @@ export namespace TranscriptQuery {
     }
 
     export namespace UserId {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
+    }
+
+    export class Username extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Username.AsObject;
+      static toObject(includeInstance: boolean, msg: Username): Username.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Username, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Username;
+      static deserializeBinaryFromReader(message: Username, reader: jspb.BinaryReader): Username;
+    }
+
+    export namespace Username {
       export type AsObject = {
         anyList: Array<string>,
       }
