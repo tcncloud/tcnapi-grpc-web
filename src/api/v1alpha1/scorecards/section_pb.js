@@ -279,7 +279,7 @@ proto.api.v1alpha1.scorecards.CreateSectionRequest.prototype.toObject = function
  */
 proto.api.v1alpha1.scorecards.CreateSectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
+section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -430,7 +430,7 @@ proto.api.v1alpha1.scorecards.CreateSectionResponse.prototype.toObject = functio
  */
 proto.api.v1alpha1.scorecards.CreateSectionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
+section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -581,7 +581,7 @@ proto.api.v1alpha1.scorecards.ListSectionsRequest.prototype.toObject = function(
  */
 proto.api.v1alpha1.scorecards.ListSectionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+scorecardId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -718,7 +718,7 @@ proto.api.v1alpha1.scorecards.ListSectionsResponse.prototype.toObject = function
  */
 proto.api.v1alpha1.scorecards.ListSectionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sectionsList: jspb.Message.toObjectList(msg.getSectionsList(),
+sectionsList: jspb.Message.toObjectList(msg.getSectionsList(),
     api_commons_scorecards_pb.Section.toObject, includeInstance)
   };
 
@@ -871,8 +871,8 @@ proto.api.v1alpha1.scorecards.UpdateSectionRequest.prototype.toObject = function
  */
 proto.api.v1alpha1.scorecards.UpdateSectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1073,7 +1073,7 @@ proto.api.v1alpha1.scorecards.UpdateSectionResponse.prototype.toObject = functio
  */
 proto.api.v1alpha1.scorecards.UpdateSectionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
+section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1224,7 +1224,7 @@ proto.api.v1alpha1.scorecards.DeleteSectionRequest.prototype.toObject = function
  */
 proto.api.v1alpha1.scorecards.DeleteSectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sectionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+sectionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1354,7 +1354,7 @@ proto.api.v1alpha1.scorecards.DeleteSectionResponse.prototype.toObject = functio
  */
 proto.api.v1alpha1.scorecards.DeleteSectionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
+section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1505,7 +1505,7 @@ proto.api.v1alpha1.scorecards.GetSectionRequest.prototype.toObject = function(op
  */
 proto.api.v1alpha1.scorecards.GetSectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sectionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+sectionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1635,7 +1635,7 @@ proto.api.v1alpha1.scorecards.GetSectionResponse.prototype.toObject = function(o
  */
 proto.api.v1alpha1.scorecards.GetSectionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
+section: (f = msg.getSection()) && api_commons_scorecards_pb.Section.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

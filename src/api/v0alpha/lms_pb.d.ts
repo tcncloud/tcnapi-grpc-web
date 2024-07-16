@@ -56,6 +56,9 @@ export class Pool extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
+  getDesc(): string;
+  setDesc(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Pool.AsObject;
   static toObject(includeInstance: boolean, msg: Pool): Pool.AsObject;
@@ -69,6 +72,7 @@ export class Pool extends jspb.Message {
 export namespace Pool {
   export type AsObject = {
     id: string,
+    desc: string,
   }
 }
 
@@ -7471,6 +7475,9 @@ export class FinviEntrypoint extends jspb.Message {
   getDisabled(): boolean;
   setDisabled(value: boolean): void;
 
+  getTimezone(): string;
+  setTimezone(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FinviEntrypoint.AsObject;
   static toObject(includeInstance: boolean, msg: FinviEntrypoint): FinviEntrypoint.AsObject;
@@ -7486,6 +7493,7 @@ export namespace FinviEntrypoint {
     poolId: string,
     cronInterval: string,
     disabled: boolean,
+    timezone: string,
   }
 }
 

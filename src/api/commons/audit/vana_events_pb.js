@@ -191,11 +191,11 @@ proto.api.commons.audit.VanaFlagEvent.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.audit.VanaFlagEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    flagSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    url: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    numTranscripts: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    priority: jspb.Message.getFieldWithDefault(msg, 5, 0)
+flagName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+flagSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+url: jspb.Message.getFieldWithDefault(msg, 3, ""),
+numTranscripts: jspb.Message.getFieldWithDefault(msg, 4, 0),
+priority: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -441,11 +441,11 @@ proto.api.commons.audit.VanaFlagReviewEvent.prototype.toObject = function(opt_in
  */
 proto.api.commons.audit.VanaFlagReviewEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    flagSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    url: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    numTranscripts: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    priority: jspb.Message.getFieldWithDefault(msg, 5, 0)
+flagName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+flagSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+url: jspb.Message.getFieldWithDefault(msg, 3, ""),
+numTranscripts: jspb.Message.getFieldWithDefault(msg, 4, 0),
+priority: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -691,9 +691,9 @@ proto.api.commons.audit.VanaBillingReportEvent.prototype.toObject = function(opt
  */
 proto.api.commons.audit.VanaBillingReportEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    url: jspb.Message.getFieldWithDefault(msg, 3, "")
+startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+url: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -930,9 +930,9 @@ proto.api.commons.audit.VanaFlagSummaryEvent.prototype.toObject = function(opt_i
  */
 proto.api.commons.audit.VanaFlagSummaryEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    flagSummariesList: jspb.Message.toObjectList(msg.getFlagSummariesList(),
+startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+flagSummariesList: jspb.Message.toObjectList(msg.getFlagSummariesList(),
     proto.api.commons.audit.VanaFlagSummaryEvent.FlagSummary.toObject, includeInstance)
   };
 
@@ -1080,8 +1080,8 @@ proto.api.commons.audit.VanaFlagSummaryEvent.FlagSummary.prototype.toObject = fu
  */
 proto.api.commons.audit.VanaFlagSummaryEvent.FlagSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    flagSidsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+flagSidsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1373,12 +1373,12 @@ proto.api.commons.audit.VanaPhraseCorrectionEvent.prototype.toObject = function(
  */
 proto.api.commons.audit.VanaPhraseCorrectionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    startOffset: (f = msg.getStartOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    endOffset: (f = msg.getEndOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    originalText: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    proposedText: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    url: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    channel: jspb.Message.getFieldWithDefault(msg, 6, 0)
+startOffset: (f = msg.getStartOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+endOffset: (f = msg.getEndOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+originalText: jspb.Message.getFieldWithDefault(msg, 3, ""),
+proposedText: jspb.Message.getFieldWithDefault(msg, 4, ""),
+url: jspb.Message.getFieldWithDefault(msg, 5, ""),
+channel: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {

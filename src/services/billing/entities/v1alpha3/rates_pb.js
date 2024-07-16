@@ -128,14 +128,14 @@ proto.services.billing.entities.v1alpha3.RateDefinition.prototype.toObject = fun
  */
 proto.services.billing.entities.v1alpha3.RateDefinition.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    skuId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    product: (f = msg.getProduct()) && proto.services.billing.entities.v1alpha3.Product.toObject(includeInstance, f),
-    config: (f = msg.getConfig()) && proto.services.billing.entities.v1alpha3.ProductConfig.toObject(includeInstance, f),
-    isDraft: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+skuId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+product: (f = msg.getProduct()) && proto.services.billing.entities.v1alpha3.Product.toObject(includeInstance, f),
+config: (f = msg.getConfig()) && proto.services.billing.entities.v1alpha3.ProductConfig.toObject(includeInstance, f),
+isDraft: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -573,10 +573,10 @@ proto.services.billing.entities.v1alpha3.Product.prototype.toObject = function(o
  */
 proto.services.billing.entities.v1alpha3.Product.toObject = function(includeInstance, msg) {
   var f, obj = {
-    categoryOne: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    categoryTwo: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    categoryThree: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    productName: jspb.Message.getFieldWithDefault(msg, 4, "")
+categoryOne: jspb.Message.getFieldWithDefault(msg, 1, ""),
+categoryTwo: jspb.Message.getFieldWithDefault(msg, 2, ""),
+categoryThree: jspb.Message.getFieldWithDefault(msg, 3, ""),
+productName: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -858,47 +858,47 @@ proto.services.billing.entities.v1alpha3.ProductConfig.prototype.toObject = func
  */
 proto.services.billing.entities.v1alpha3.ProductConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    communicationsOmniChatAgentMessageUnit: (f = msg.getCommunicationsOmniChatAgentMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
-    communicationsOmniChatAgentAttachment: (f = msg.getCommunicationsOmniChatAgentAttachment()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniChatAgentAccumulatedAttachments: (f = msg.getCommunicationsOmniChatAgentAccumulatedAttachments()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniChatCustomerMessageUnit: (f = msg.getCommunicationsOmniChatCustomerMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
-    communicationsOmniChatCustomerAttachment: (f = msg.getCommunicationsOmniChatCustomerAttachment()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniChatCustomerAccumulatedAttachments: (f = msg.getCommunicationsOmniChatCustomerAccumulatedAttachments()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniChatManagerMessageUnit: (f = msg.getCommunicationsOmniChatManagerMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
-    communicationsOmniChatManagerAttachment: (f = msg.getCommunicationsOmniChatManagerAttachment()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniChatManagerAccumulatedAttachments: (f = msg.getCommunicationsOmniChatManagerAccumulatedAttachments()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniChatSystemMessageUnit: (f = msg.getCommunicationsOmniChatSystemMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
-    communicationsOmniChatSystemAttachment: (f = msg.getCommunicationsOmniChatSystemAttachment()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniChatSystemAccumulatedAttachments: (f = msg.getCommunicationsOmniChatSystemAccumulatedAttachments()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniEmailAgentMessageUnit: (f = msg.getCommunicationsOmniEmailAgentMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
-    communicationsOmniEmailAgentSize: (f = msg.getCommunicationsOmniEmailAgentSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniEmailAgentAccumulatedSize: (f = msg.getCommunicationsOmniEmailAgentAccumulatedSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniEmailCustomerMessageUnit: (f = msg.getCommunicationsOmniEmailCustomerMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
-    communicationsOmniEmailCustomerSize: (f = msg.getCommunicationsOmniEmailCustomerSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniEmailCustomerAccumulatedSize: (f = msg.getCommunicationsOmniEmailCustomerAccumulatedSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniEmailManagerMessageUnit: (f = msg.getCommunicationsOmniEmailManagerMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
-    communicationsOmniEmailManagerSize: (f = msg.getCommunicationsOmniEmailManagerSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniEmailManagerAccumulatedSize: (f = msg.getCommunicationsOmniEmailManagerAccumulatedSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniEmailSystemMessageUnit: (f = msg.getCommunicationsOmniEmailSystemMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
-    communicationsOmniEmailSystemSize: (f = msg.getCommunicationsOmniEmailSystemSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniEmailSystemAccumulatedSize: (f = msg.getCommunicationsOmniEmailSystemAccumulatedSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
-    communicationsOmniSmsAgentMessageUnit: (f = msg.getCommunicationsOmniSmsAgentMessageUnit()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsConfig.toObject(includeInstance, f),
-    communicationsOmniSmsAgentAttatchment: (f = msg.getCommunicationsOmniSmsAgentAttatchment()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
-    communicationsOmniSmsAgentAccumulatedAttatchments: (f = msg.getCommunicationsOmniSmsAgentAccumulatedAttatchments()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
-    communicationsOmniSmsCustomerMessageUnit: (f = msg.getCommunicationsOmniSmsCustomerMessageUnit()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsConfig.toObject(includeInstance, f),
-    communicationsOmniSmsCustomerAttatchment: (f = msg.getCommunicationsOmniSmsCustomerAttatchment()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
-    communicationsOmniSmsCustomerAccumulatedAttatchments: (f = msg.getCommunicationsOmniSmsCustomerAccumulatedAttatchments()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
-    communicationsOmniSmsManagerMessageUnit: (f = msg.getCommunicationsOmniSmsManagerMessageUnit()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsConfig.toObject(includeInstance, f),
-    communicationsOmniSmsManagerAttatchment: (f = msg.getCommunicationsOmniSmsManagerAttatchment()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
-    communicationsOmniSmsManagerAccumulatedAttatchments: (f = msg.getCommunicationsOmniSmsManagerAccumulatedAttatchments()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
-    communicationsOmniSmsSystemMessageUnit: (f = msg.getCommunicationsOmniSmsSystemMessageUnit()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsConfig.toObject(includeInstance, f),
-    communicationsOmniSmsSystemAttatchment: (f = msg.getCommunicationsOmniSmsSystemAttatchment()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
-    communicationsOmniSmsSystemAccumulatedAttatchments: (f = msg.getCommunicationsOmniSmsSystemAccumulatedAttatchments()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
-    communicationsOmniAgentSeats: (f = msg.getCommunicationsOmniAgentSeats()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
-    communicationsOmniResourcesConnectedInboxPoll: (f = msg.getCommunicationsOmniResourcesConnectedInboxPoll()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
-    communicationsOmniResourcesConnectedInboxCreated: (f = msg.getCommunicationsOmniResourcesConnectedInboxCreated()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
-    dataManagementComplianceComplianceRndQuery: (f = msg.getDataManagementComplianceComplianceRndQuery()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
-    dataManagementComplianceComplianceRndQueryCached: (f = msg.getDataManagementComplianceComplianceRndQueryCached()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f)
+communicationsOmniChatAgentMessageUnit: (f = msg.getCommunicationsOmniChatAgentMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
+communicationsOmniChatAgentAttachment: (f = msg.getCommunicationsOmniChatAgentAttachment()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniChatAgentAccumulatedAttachments: (f = msg.getCommunicationsOmniChatAgentAccumulatedAttachments()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniChatCustomerMessageUnit: (f = msg.getCommunicationsOmniChatCustomerMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
+communicationsOmniChatCustomerAttachment: (f = msg.getCommunicationsOmniChatCustomerAttachment()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniChatCustomerAccumulatedAttachments: (f = msg.getCommunicationsOmniChatCustomerAccumulatedAttachments()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniChatManagerMessageUnit: (f = msg.getCommunicationsOmniChatManagerMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
+communicationsOmniChatManagerAttachment: (f = msg.getCommunicationsOmniChatManagerAttachment()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniChatManagerAccumulatedAttachments: (f = msg.getCommunicationsOmniChatManagerAccumulatedAttachments()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniChatSystemMessageUnit: (f = msg.getCommunicationsOmniChatSystemMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
+communicationsOmniChatSystemAttachment: (f = msg.getCommunicationsOmniChatSystemAttachment()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniChatSystemAccumulatedAttachments: (f = msg.getCommunicationsOmniChatSystemAccumulatedAttachments()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniEmailAgentMessageUnit: (f = msg.getCommunicationsOmniEmailAgentMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
+communicationsOmniEmailAgentSize: (f = msg.getCommunicationsOmniEmailAgentSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniEmailAgentAccumulatedSize: (f = msg.getCommunicationsOmniEmailAgentAccumulatedSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniEmailCustomerMessageUnit: (f = msg.getCommunicationsOmniEmailCustomerMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
+communicationsOmniEmailCustomerSize: (f = msg.getCommunicationsOmniEmailCustomerSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniEmailCustomerAccumulatedSize: (f = msg.getCommunicationsOmniEmailCustomerAccumulatedSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniEmailManagerMessageUnit: (f = msg.getCommunicationsOmniEmailManagerMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
+communicationsOmniEmailManagerSize: (f = msg.getCommunicationsOmniEmailManagerSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniEmailManagerAccumulatedSize: (f = msg.getCommunicationsOmniEmailManagerAccumulatedSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniEmailSystemMessageUnit: (f = msg.getCommunicationsOmniEmailSystemMessageUnit()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
+communicationsOmniEmailSystemSize: (f = msg.getCommunicationsOmniEmailSystemSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniEmailSystemAccumulatedSize: (f = msg.getCommunicationsOmniEmailSystemAccumulatedSize()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsAgentMessageUnit: (f = msg.getCommunicationsOmniSmsAgentMessageUnit()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsConfig.toObject(includeInstance, f),
+communicationsOmniSmsAgentAttatchment: (f = msg.getCommunicationsOmniSmsAgentAttatchment()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsAgentAccumulatedAttatchments: (f = msg.getCommunicationsOmniSmsAgentAccumulatedAttatchments()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsCustomerMessageUnit: (f = msg.getCommunicationsOmniSmsCustomerMessageUnit()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsConfig.toObject(includeInstance, f),
+communicationsOmniSmsCustomerAttatchment: (f = msg.getCommunicationsOmniSmsCustomerAttatchment()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsCustomerAccumulatedAttatchments: (f = msg.getCommunicationsOmniSmsCustomerAccumulatedAttatchments()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsManagerMessageUnit: (f = msg.getCommunicationsOmniSmsManagerMessageUnit()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsConfig.toObject(includeInstance, f),
+communicationsOmniSmsManagerAttatchment: (f = msg.getCommunicationsOmniSmsManagerAttatchment()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsManagerAccumulatedAttatchments: (f = msg.getCommunicationsOmniSmsManagerAccumulatedAttatchments()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsSystemMessageUnit: (f = msg.getCommunicationsOmniSmsSystemMessageUnit()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsConfig.toObject(includeInstance, f),
+communicationsOmniSmsSystemAttatchment: (f = msg.getCommunicationsOmniSmsSystemAttatchment()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsSystemAccumulatedAttatchments: (f = msg.getCommunicationsOmniSmsSystemAccumulatedAttatchments()) && services_billing_entities_v1alpha3_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniAgentSeats: (f = msg.getCommunicationsOmniAgentSeats()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
+communicationsOmniResourcesConnectedInboxPoll: (f = msg.getCommunicationsOmniResourcesConnectedInboxPoll()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
+communicationsOmniResourcesConnectedInboxCreated: (f = msg.getCommunicationsOmniResourcesConnectedInboxCreated()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
+dataManagementComplianceComplianceRndQuery: (f = msg.getDataManagementComplianceComplianceRndQuery()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
+dataManagementComplianceComplianceRndQueryCached: (f = msg.getDataManagementComplianceComplianceRndQueryCached()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

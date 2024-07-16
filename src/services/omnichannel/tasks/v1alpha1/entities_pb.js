@@ -152,7 +152,7 @@ proto.services.omnichannel.tasks.v1alpha1.CancelTasksRequest.prototype.toObject 
  */
 proto.services.omnichannel.tasks.v1alpha1.CancelTasksRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    taskSidList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+taskSidList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -404,7 +404,7 @@ proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksRequest.prototype.toObj
  */
 proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    filter: jspb.Message.getFieldWithDefault(msg, 1, "")
+filter: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -534,7 +534,7 @@ proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse.prototype.toOb
  */
 proto.services.omnichannel.tasks.v1alpha1.BulkCancelTasksResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ghostReferenceId: jspb.Message.getFieldWithDefault(msg, 1, "")
+ghostReferenceId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {

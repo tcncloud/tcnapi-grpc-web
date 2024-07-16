@@ -413,8 +413,8 @@ proto.services.billing.v1alpha1.CreateDefaultRateDefinitionRequest.prototype.toO
  */
 proto.services.billing.v1alpha1.CreateDefaultRateDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject(includeInstance, f)
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -594,7 +594,7 @@ proto.services.billing.v1alpha1.CreateDefaultRateDefinitionResponse.prototype.to
  */
 proto.services.billing.v1alpha1.CreateDefaultRateDefinitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -724,8 +724,8 @@ proto.services.billing.v1alpha1.CreateRateDefinitionRequest.prototype.toObject =
  */
 proto.services.billing.v1alpha1.CreateRateDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject(includeInstance, f)
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -905,7 +905,7 @@ proto.services.billing.v1alpha1.CreateRateDefinitionResponse.prototype.toObject 
  */
 proto.services.billing.v1alpha1.CreateRateDefinitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1035,7 +1035,7 @@ proto.services.billing.v1alpha1.DeleteDefaultRateDefinitionRequest.prototype.toO
  */
 proto.services.billing.v1alpha1.DeleteDefaultRateDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1266,7 +1266,7 @@ proto.services.billing.v1alpha1.DeleteRateDefinitionRequest.prototype.toObject =
  */
 proto.services.billing.v1alpha1.DeleteRateDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1497,7 +1497,7 @@ proto.services.billing.v1alpha1.GetRateDefinitionRequest.prototype.toObject = fu
  */
 proto.services.billing.v1alpha1.GetRateDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1627,7 +1627,7 @@ proto.services.billing.v1alpha1.GetRateDefinitionResponse.prototype.toObject = f
  */
 proto.services.billing.v1alpha1.GetRateDefinitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject(includeInstance, f)
+rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1785,12 +1785,12 @@ proto.services.billing.v1alpha1.ListRateDefinitionsRequest.prototype.toObject = 
  */
 proto.services.billing.v1alpha1.ListRateDefinitionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    filter: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fields: (f = msg.getFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    sortList: jspb.Message.toObjectList(msg.getSortList(),
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+filter: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fields: (f = msg.getFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+sortList: jspb.Message.toObjectList(msg.getSortList(),
     services_billing_v1alpha1_core_pb.Sort.toObject, includeInstance),
-    page: (f = msg.getPage()) && services_billing_v1alpha1_core_pb.Page.toObject(includeInstance, f)
+page: (f = msg.getPage()) && services_billing_v1alpha1_core_pb.Page.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2107,9 +2107,9 @@ proto.services.billing.v1alpha1.ListRateDefinitionsResponse.prototype.toObject =
  */
 proto.services.billing.v1alpha1.ListRateDefinitionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionsList: jspb.Message.toObjectList(msg.getRateDefinitionsList(),
+rateDefinitionsList: jspb.Message.toObjectList(msg.getRateDefinitionsList(),
     services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject, includeInstance),
-    token: jspb.Message.getFieldWithDefault(msg, 2, "")
+token: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2290,9 +2290,9 @@ proto.services.billing.v1alpha1.UpdateDefaultRateDefinitionRequest.prototype.toO
  */
 proto.services.billing.v1alpha1.UpdateDefaultRateDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject(includeInstance, f),
-    updateFields: (f = msg.getUpdateFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject(includeInstance, f),
+updateFields: (f = msg.getUpdateFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2623,9 +2623,9 @@ proto.services.billing.v1alpha1.UpdateRateDefinitionRequest.prototype.toObject =
  */
 proto.services.billing.v1alpha1.UpdateRateDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject(includeInstance, f),
-    updateFields: (f = msg.getUpdateFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha1_rates_pb.RateDefinition.toObject(includeInstance, f),
+updateFields: (f = msg.getUpdateFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

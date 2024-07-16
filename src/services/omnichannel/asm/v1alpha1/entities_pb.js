@@ -468,7 +468,7 @@ proto.services.omnichannel.asm.v1alpha1.CreateSessionResponse.prototype.toObject
  */
 proto.services.omnichannel.asm.v1alpha1.CreateSessionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    asmSession: (f = msg.getAsmSession()) && services_omnichannel_asm_entities_v1alpha1_session_pb.AsmSession.toObject(includeInstance, f)
+asmSession: (f = msg.getAsmSession()) && services_omnichannel_asm_entities_v1alpha1_session_pb.AsmSession.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -619,8 +619,8 @@ proto.services.omnichannel.asm.v1alpha1.EndSessionRequest.prototype.toObject = f
  */
 proto.services.omnichannel.asm.v1alpha1.EndSessionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    reason: jspb.Message.getFieldWithDefault(msg, 2, "")
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+reason: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -981,7 +981,7 @@ proto.services.omnichannel.asm.v1alpha1.GetCurrentSessionResponse.prototype.toOb
  */
 proto.services.omnichannel.asm.v1alpha1.GetCurrentSessionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    asmSession: (f = msg.getAsmSession()) && services_omnichannel_asm_entities_v1alpha1_session_pb.AsmSession.toObject(includeInstance, f)
+asmSession: (f = msg.getAsmSession()) && services_omnichannel_asm_entities_v1alpha1_session_pb.AsmSession.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1132,9 +1132,9 @@ proto.services.omnichannel.asm.v1alpha1.EnableVoiceRequest.prototype.toObject = 
  */
 proto.services.omnichannel.asm.v1alpha1.EnableVoiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    huntGroupSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : []
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+huntGroupSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -1326,8 +1326,8 @@ proto.services.omnichannel.asm.v1alpha1.EnableVoiceResponse.prototype.toObject =
  */
 proto.services.omnichannel.asm.v1alpha1.EnableVoiceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    voiceSession: (f = msg.getVoiceSession()) && services_omnichannel_asm_entities_v1alpha1_session_pb.VoiceSession.toObject(includeInstance, f),
-    voiceRegistration: (f = msg.getVoiceRegistration()) && services_omnichannel_asm_entities_v1alpha1_session_pb.VoiceRegistration.toObject(includeInstance, f)
+voiceSession: (f = msg.getVoiceSession()) && services_omnichannel_asm_entities_v1alpha1_session_pb.VoiceSession.toObject(includeInstance, f),
+voiceRegistration: (f = msg.getVoiceRegistration()) && services_omnichannel_asm_entities_v1alpha1_session_pb.VoiceRegistration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1528,7 +1528,7 @@ proto.services.omnichannel.asm.v1alpha1.DisableVoiceRequest.prototype.toObject =
  */
 proto.services.omnichannel.asm.v1alpha1.DisableVoiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -1867,9 +1867,9 @@ proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.prototype.toO
  */
 proto.services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sessionsList: jspb.Message.toObjectList(msg.getSessionsList(),
+sessionsList: jspb.Message.toObjectList(msg.getSessionsList(),
     services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.toObject, includeInstance),
-    asmUserDetailsList: jspb.Message.toObjectList(msg.getAsmUserDetailsList(),
+asmUserDetailsList: jspb.Message.toObjectList(msg.getAsmUserDetailsList(),
     services_omnichannel_asm_entities_v1alpha1_session_pb.AsmUserDetails.toObject, includeInstance)
   };
 
@@ -2080,10 +2080,10 @@ proto.services.omnichannel.asm.v1alpha1.PushEventsRequest.prototype.toObject = f
  */
 proto.services.omnichannel.asm.v1alpha1.PushEventsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    amsSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    asmEventsList: jspb.Message.toObjectList(msg.getAsmEventsList(),
+amsSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+asmEventsList: jspb.Message.toObjectList(msg.getAsmEventsList(),
     api_commons_event_pb.AsmEvent.toObject, includeInstance),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {

@@ -110,13 +110,13 @@ proto.api.commons.org.AgentProfileGroup.prototype.toObject = function(opt_includ
  */
 proto.api.commons.org.AgentProfileGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    priorityGroupsList: jspb.Message.toObjectList(msg.getPriorityGroupsList(),
+id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+priorityGroupsList: jspb.Message.toObjectList(msg.getPriorityGroupsList(),
     proto.api.commons.org.PriorityGroup.toObject, includeInstance),
-    lastUpdated: (f = msg.getLastUpdated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    defaultGroup: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+lastUpdated: (f = msg.getLastUpdated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+defaultGroup: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -434,8 +434,8 @@ proto.api.commons.org.PriorityGroup.prototype.toObject = function(opt_includeIns
  */
 proto.api.commons.org.PriorityGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    threshold: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    channelType: jspb.Message.getFieldWithDefault(msg, 2, 0)
+threshold: jspb.Message.getFieldWithDefault(msg, 1, 0),
+channelType: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {

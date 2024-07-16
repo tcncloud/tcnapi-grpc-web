@@ -523,7 +523,7 @@ proto.api.v1alpha1.org.labels.CreateLabelRequest.prototype.toObject = function(o
  */
 proto.api.v1alpha1.org.labels.CreateLabelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    label: (f = msg.getLabel()) && api_commons_org_labels_pb.Label.toObject(includeInstance, f)
+label: (f = msg.getLabel()) && api_commons_org_labels_pb.Label.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -674,7 +674,7 @@ proto.api.v1alpha1.org.labels.CreateLabelResponse.prototype.toObject = function(
  */
 proto.api.v1alpha1.org.labels.CreateLabelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labelId: jspb.Message.getFieldWithDefault(msg, 1, "")
+labelId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -804,8 +804,8 @@ proto.api.v1alpha1.org.labels.UpdateLabelRequest.prototype.toObject = function(o
  */
 proto.api.v1alpha1.org.labels.UpdateLabelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    label: (f = msg.getLabel()) && api_commons_org_labels_pb.Label.toObject(includeInstance, f),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+label: (f = msg.getLabel()) && api_commons_org_labels_pb.Label.toObject(includeInstance, f),
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1006,7 +1006,7 @@ proto.api.v1alpha1.org.labels.UpdateLabelResponse.prototype.toObject = function(
  */
 proto.api.v1alpha1.org.labels.UpdateLabelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    label: (f = msg.getLabel()) && api_commons_org_labels_pb.Label.toObject(includeInstance, f)
+label: (f = msg.getLabel()) && api_commons_org_labels_pb.Label.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1157,7 +1157,7 @@ proto.api.v1alpha1.org.labels.GetLabelRequest.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.org.labels.GetLabelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labelId: jspb.Message.getFieldWithDefault(msg, 1, "")
+labelId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1287,7 +1287,7 @@ proto.api.v1alpha1.org.labels.GetLabelResponse.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.org.labels.GetLabelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    label: (f = msg.getLabel()) && api_commons_org_labels_pb.Label.toObject(includeInstance, f)
+label: (f = msg.getLabel()) && api_commons_org_labels_pb.Label.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1546,7 +1546,7 @@ proto.api.v1alpha1.org.labels.ListLabelsResponse.prototype.toObject = function(o
  */
 proto.api.v1alpha1.org.labels.ListLabelsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labelList: jspb.Message.toObjectList(msg.getLabelList(),
+labelList: jspb.Message.toObjectList(msg.getLabelList(),
     api_commons_org_labels_pb.Label.toObject, includeInstance)
   };
 
@@ -1699,7 +1699,7 @@ proto.api.v1alpha1.org.labels.DeleteLabelRequest.prototype.toObject = function(o
  */
 proto.api.v1alpha1.org.labels.DeleteLabelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labelId: jspb.Message.getFieldWithDefault(msg, 1, "")
+labelId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1930,9 +1930,9 @@ proto.api.v1alpha1.org.labels.AttachLabelRequest.prototype.toObject = function(o
  */
 proto.api.v1alpha1.org.labels.AttachLabelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labelId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    entityId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    entityType: jspb.Message.getFieldWithDefault(msg, 3, 0)
+labelId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+entityId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+entityType: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2221,9 +2221,9 @@ proto.api.v1alpha1.org.labels.DetachLabelRequest.prototype.toObject = function(o
  */
 proto.api.v1alpha1.org.labels.DetachLabelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labelId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    entityId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    entityType: jspb.Message.getFieldWithDefault(msg, 3, 0)
+labelId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+entityId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+entityType: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2512,7 +2512,7 @@ proto.api.v1alpha1.org.labels.GetLabeledEntityMapRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.org.labels.GetLabeledEntityMapRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entityType: jspb.Message.getFieldWithDefault(msg, 1, 0)
+entityType: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2642,7 +2642,7 @@ proto.api.v1alpha1.org.labels.GetLabeledEntityMapResponse.prototype.toObject = f
  */
 proto.api.v1alpha1.org.labels.GetLabeledEntityMapResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entityMapMap: (f = msg.getEntityMapMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.org.labels.GetLabeledEntityMapResponse.EntityLabels.toObject) : []
+entityMapMap: (f = msg.getEntityMapMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.org.labels.GetLabeledEntityMapResponse.EntityLabels.toObject) : []
   };
 
   if (includeInstance) {
@@ -2760,7 +2760,7 @@ proto.api.v1alpha1.org.labels.GetLabeledEntityMapResponse.EntityLabels.prototype
  */
 proto.api.v1alpha1.org.labels.GetLabeledEntityMapResponse.EntityLabels.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
+labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
     api_commons_org_labels_pb.Label.toObject, includeInstance)
   };
 
@@ -2943,8 +2943,8 @@ proto.api.v1alpha1.org.labels.AssignLabelsRequest.prototype.toObject = function(
  */
 proto.api.v1alpha1.org.labels.AssignLabelsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labelIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    permissionGroupId: jspb.Message.getFieldWithDefault(msg, 2, "")
+labelIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+permissionGroupId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3230,8 +3230,8 @@ proto.api.v1alpha1.org.labels.RevokeLabelsRequest.prototype.toObject = function(
  */
 proto.api.v1alpha1.org.labels.RevokeLabelsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labelIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    permissionGroupId: jspb.Message.getFieldWithDefault(msg, 2, "")
+labelIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+permissionGroupId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

@@ -510,7 +510,7 @@ proto.api.v1alpha1.org.users.CreateAuthTokenResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.org.users.CreateAuthTokenResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authToken: (f = msg.getAuthToken()) && api_commons_org_auth_token_pb.AuthToken.toObject(includeInstance, f)
+authToken: (f = msg.getAuthToken()) && api_commons_org_auth_token_pb.AuthToken.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -661,7 +661,7 @@ proto.api.v1alpha1.org.users.CreateAuthTokenByUserIdRequest.prototype.toObject =
  */
 proto.api.v1alpha1.org.users.CreateAuthTokenByUserIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -791,7 +791,7 @@ proto.api.v1alpha1.org.users.CreateAuthTokenByUserIdResponse.prototype.toObject 
  */
 proto.api.v1alpha1.org.users.CreateAuthTokenByUserIdResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authToken: (f = msg.getAuthToken()) && api_commons_org_auth_token_pb.AuthToken.toObject(includeInstance, f)
+authToken: (f = msg.getAuthToken()) && api_commons_org_auth_token_pb.AuthToken.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1050,7 +1050,7 @@ proto.api.v1alpha1.org.users.ListAuthTokensResponse.prototype.toObject = functio
  */
 proto.api.v1alpha1.org.users.ListAuthTokensResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authTokensList: jspb.Message.toObjectList(msg.getAuthTokensList(),
+authTokensList: jspb.Message.toObjectList(msg.getAuthTokensList(),
     api_commons_org_auth_token_pb.AuthToken.toObject, includeInstance)
   };
 
@@ -1203,7 +1203,7 @@ proto.api.v1alpha1.org.users.ListAuthTokensByUserIdRequest.prototype.toObject = 
  */
 proto.api.v1alpha1.org.users.ListAuthTokensByUserIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1340,7 +1340,7 @@ proto.api.v1alpha1.org.users.ListAuthTokensByUserIdResponse.prototype.toObject =
  */
 proto.api.v1alpha1.org.users.ListAuthTokensByUserIdResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authTokensList: jspb.Message.toObjectList(msg.getAuthTokensList(),
+authTokensList: jspb.Message.toObjectList(msg.getAuthTokensList(),
     api_commons_org_auth_token_pb.AuthToken.toObject, includeInstance)
   };
 
@@ -1493,7 +1493,7 @@ proto.api.v1alpha1.org.users.SetAuthTokenExpirationRequest.prototype.toObject = 
  */
 proto.api.v1alpha1.org.users.SetAuthTokenExpirationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    token: jspb.Message.getFieldWithDefault(msg, 1, "")
+token: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1724,8 +1724,8 @@ proto.api.v1alpha1.org.users.SetAuthTokenExpirationByUserIdRequest.prototype.toO
  */
 proto.api.v1alpha1.org.users.SetAuthTokenExpirationByUserIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    token: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
+token: jspb.Message.getFieldWithDefault(msg, 1, ""),
+userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1985,7 +1985,7 @@ proto.api.v1alpha1.org.users.DeleteAuthTokenRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.org.users.DeleteAuthTokenRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    token: jspb.Message.getFieldWithDefault(msg, 1, "")
+token: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2216,8 +2216,8 @@ proto.api.v1alpha1.org.users.DeleteAuthTokenByUserIdRequest.prototype.toObject =
  */
 proto.api.v1alpha1.org.users.DeleteAuthTokenByUserIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    token: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
+token: jspb.Message.getFieldWithDefault(msg, 1, ""),
+userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

@@ -103,20 +103,20 @@ proto.api.commons.org.Organization.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.org.Organization.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    enabledRegionsMap: (f = msg.getEnabledRegionsMap()) ? f.toObject(includeInstance, undefined) : [],
-    regionId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    billingId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    clientSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    addDate: (f = msg.getAddDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    isManualOnlyAccount: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    backofficeTheme: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    archived: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    crmId: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    timeZone: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    callbacksServiceId: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    p3OwnerId: jspb.Message.getFieldWithDefault(msg, 14, "")
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+enabledRegionsMap: (f = msg.getEnabledRegionsMap()) ? f.toObject(includeInstance, undefined) : [],
+regionId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+billingId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+clientSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+name: jspb.Message.getFieldWithDefault(msg, 6, ""),
+addDate: (f = msg.getAddDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+isManualOnlyAccount: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+backofficeTheme: jspb.Message.getFieldWithDefault(msg, 9, 0),
+archived: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+crmId: jspb.Message.getFieldWithDefault(msg, 11, ""),
+timeZone: jspb.Message.getFieldWithDefault(msg, 12, 0),
+callbacksServiceId: jspb.Message.getFieldWithDefault(msg, 13, ""),
+p3OwnerId: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
 
   if (includeInstance) {
@@ -648,8 +648,8 @@ proto.api.commons.org.OrganizationDetails.prototype.toObject = function(opt_incl
  */
 proto.api.commons.org.OrganizationDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organization: (f = msg.getOrganization()) && proto.api.commons.org.Organization.toObject(includeInstance, f),
-    lastScheduledDate: (f = msg.getLastScheduledDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+organization: (f = msg.getOrganization()) && proto.api.commons.org.Organization.toObject(includeInstance, f),
+lastScheduledDate: (f = msg.getLastScheduledDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

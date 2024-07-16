@@ -169,7 +169,7 @@ proto.api.v0alpha.GetConfigReq.prototype.toObject = function(opt_includeInstance
  */
 proto.api.v0alpha.GetConfigReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    regionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+regionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -299,18 +299,18 @@ proto.api.v0alpha.WebAgent.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.v0alpha.WebAgent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    openSips: (f = msg.getOpenSips()) && proto.api.v0alpha.WebAgent.OpenSips.toObject(includeInstance, f),
-    enginePriority: (f = msg.getEnginePriority()) && proto.api.v0alpha.WebAgent.EnginePriority.toObject(includeInstance, f),
-    logLevel: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    useStun: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    useFastStun: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    useFastIce: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    iceTimeout: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    setFinalCodec: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    useRport: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    server: (f = msg.getServer()) && proto.api.v0alpha.WebAgent.Server.toObject(includeInstance, f),
-    baseUrl: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    stunServerAddress: jspb.Message.getFieldWithDefault(msg, 12, "")
+openSips: (f = msg.getOpenSips()) && proto.api.v0alpha.WebAgent.OpenSips.toObject(includeInstance, f),
+enginePriority: (f = msg.getEnginePriority()) && proto.api.v0alpha.WebAgent.EnginePriority.toObject(includeInstance, f),
+logLevel: jspb.Message.getFieldWithDefault(msg, 3, 0),
+useStun: jspb.Message.getFieldWithDefault(msg, 4, 0),
+useFastStun: jspb.Message.getFieldWithDefault(msg, 5, 0),
+useFastIce: jspb.Message.getFieldWithDefault(msg, 6, 0),
+iceTimeout: jspb.Message.getFieldWithDefault(msg, 7, 0),
+setFinalCodec: jspb.Message.getFieldWithDefault(msg, 8, 0),
+useRport: jspb.Message.getFieldWithDefault(msg, 9, 0),
+server: (f = msg.getServer()) && proto.api.v0alpha.WebAgent.Server.toObject(includeInstance, f),
+baseUrl: jspb.Message.getFieldWithDefault(msg, 11, ""),
+stunServerAddress: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -549,7 +549,7 @@ proto.api.v0alpha.WebAgent.OpenSips.prototype.toObject = function(opt_includeIns
  */
 proto.api.v0alpha.WebAgent.OpenSips.toObject = function(includeInstance, msg) {
   var f, obj = {
-    address: jspb.Message.getFieldWithDefault(msg, 1, "")
+address: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -679,14 +679,14 @@ proto.api.v0alpha.WebAgent.EnginePriority.prototype.toObject = function(opt_incl
  */
 proto.api.v0alpha.WebAgent.EnginePriority.toObject = function(includeInstance, msg) {
   var f, obj = {
-    java: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    webrtc: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    ns: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    flash: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    app: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    p2p: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    accessNum: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    pb_native: jspb.Message.getFieldWithDefault(msg, 8, 0)
+java: jspb.Message.getFieldWithDefault(msg, 1, 0),
+webrtc: jspb.Message.getFieldWithDefault(msg, 2, 0),
+ns: jspb.Message.getFieldWithDefault(msg, 3, 0),
+flash: jspb.Message.getFieldWithDefault(msg, 4, 0),
+app: jspb.Message.getFieldWithDefault(msg, 5, 0),
+p2p: jspb.Message.getFieldWithDefault(msg, 6, 0),
+accessNum: jspb.Message.getFieldWithDefault(msg, 7, 0),
+pb_native: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -1019,8 +1019,8 @@ proto.api.v0alpha.WebAgent.Server.prototype.toObject = function(opt_includeInsta
  */
 proto.api.v0alpha.WebAgent.Server.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sip: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    webrtc: jspb.Message.getFieldWithDefault(msg, 2, "")
+sip: jspb.Message.getFieldWithDefault(msg, 1, ""),
+webrtc: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

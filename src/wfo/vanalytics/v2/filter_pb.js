@@ -239,7 +239,7 @@ proto.wfo.vanalytics.v2.CreateFilterRequest.prototype.toObject = function(opt_in
  */
 proto.wfo.vanalytics.v2.CreateFilterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    filter: (f = msg.getFilter()) && proto.wfo.vanalytics.v2.Filter.toObject(includeInstance, f)
+filter: (f = msg.getFilter()) && proto.wfo.vanalytics.v2.Filter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -416,11 +416,11 @@ proto.wfo.vanalytics.v2.ListFiltersRequest.prototype.toObject = function(opt_inc
  */
 proto.wfo.vanalytics.v2.ListFiltersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    orderBy: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    conflict: (f = msg.getConflict()) && proto.wfo.vanalytics.v2.Filter.toObject(includeInstance, f),
-    flagSid: jspb.Message.getFieldWithDefault(msg, 6, 0)
+pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+orderBy: jspb.Message.getFieldWithDefault(msg, 3, ""),
+pageToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
+conflict: (f = msg.getConflict()) && proto.wfo.vanalytics.v2.Filter.toObject(includeInstance, f),
+flagSid: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -712,8 +712,8 @@ proto.wfo.vanalytics.v2.ListFiltersResponse.prototype.toObject = function(opt_in
  */
 proto.wfo.vanalytics.v2.ListFiltersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
+filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
     proto.wfo.vanalytics.v2.Filter.toObject, includeInstance)
   };
 
@@ -895,9 +895,9 @@ proto.wfo.vanalytics.v2.UpdateFilterRequest.prototype.toObject = function(opt_in
  */
 proto.wfo.vanalytics.v2.UpdateFilterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    filter: (f = msg.getFilter()) && proto.wfo.vanalytics.v2.Filter.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    filterSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
+filter: (f = msg.getFilter()) && proto.wfo.vanalytics.v2.Filter.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+filterSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1127,8 +1127,8 @@ proto.wfo.vanalytics.v2.DeleteFilterRequest.prototype.toObject = function(opt_in
  */
 proto.wfo.vanalytics.v2.DeleteFilterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    filterSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    pb_return: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+filterSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+pb_return: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -1287,7 +1287,7 @@ proto.wfo.vanalytics.v2.DeleteFilterResponse.prototype.toObject = function(opt_i
  */
 proto.wfo.vanalytics.v2.DeleteFilterResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    filter: (f = msg.getFilter()) && proto.wfo.vanalytics.v2.Filter.toObject(includeInstance, f)
+filter: (f = msg.getFilter()) && proto.wfo.vanalytics.v2.Filter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1464,8 +1464,8 @@ proto.wfo.vanalytics.v2.GetFilterRequest.prototype.toObject = function(opt_inclu
  */
 proto.wfo.vanalytics.v2.GetFilterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    filterSid: jspb.Message.getFieldWithDefault(msg, 4, 0)
+name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+filterSid: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1660,11 +1660,11 @@ proto.wfo.vanalytics.v2.Filter.prototype.toObject = function(opt_includeInstance
  */
 proto.wfo.vanalytics.v2.Filter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    filterSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    version: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    transcriptQuery: (f = msg.getTranscriptQuery()) && wfo_vanalytics_v2_transcript_pb.TranscriptQuery.toObject(includeInstance, f)
+filterSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+version: jspb.Message.getFieldWithDefault(msg, 6, 0),
+transcriptQuery: (f = msg.getTranscriptQuery()) && wfo_vanalytics_v2_transcript_pb.TranscriptQuery.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

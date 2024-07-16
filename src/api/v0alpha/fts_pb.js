@@ -103,7 +103,7 @@ proto.api.v0alpha.GetUploadFileUrlReq.prototype.toObject = function(opt_includeI
  */
 proto.api.v0alpha.GetUploadFileUrlReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prefix: jspb.Message.getFieldWithDefault(msg, 5, "")
+prefix: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -233,8 +233,8 @@ proto.api.v0alpha.GetUploadFileUrlRes.prototype.toObject = function(opt_includeI
  */
 proto.api.v0alpha.GetUploadFileUrlRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 3, "")
+url: jspb.Message.getFieldWithDefault(msg, 1, ""),
+id: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {

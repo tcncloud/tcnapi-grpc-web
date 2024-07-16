@@ -173,7 +173,7 @@ proto.api.v1alpha1.sentinel.SentinelEvent.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.sentinel.SentinelEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    logEvent: (f = msg.getLogEvent()) && proto.api.v1alpha1.sentinel.LogEvent.toObject(includeInstance, f)
+logEvent: (f = msg.getLogEvent()) && proto.api.v1alpha1.sentinel.LogEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -324,14 +324,14 @@ proto.api.v1alpha1.sentinel.LogEvent.prototype.toObject = function(opt_includeIn
  */
 proto.api.v1alpha1.sentinel.LogEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    traceId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    sessionId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    message: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    location: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    stackTrace: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    timestamp: (f = msg.getTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
-    severity: jspb.Message.getFieldWithDefault(msg, 10, 0)
+traceId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+sessionId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+message: jspb.Message.getFieldWithDefault(msg, 5, ""),
+location: jspb.Message.getFieldWithDefault(msg, 6, ""),
+stackTrace: jspb.Message.getFieldWithDefault(msg, 7, ""),
+timestamp: (f = msg.getTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
+severity: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -696,7 +696,7 @@ proto.api.v1alpha1.sentinel.SendEventsReq.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.sentinel.SendEventsReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    eventsList: jspb.Message.toObjectList(msg.getEventsList(),
+eventsList: jspb.Message.toObjectList(msg.getEventsList(),
     proto.api.v1alpha1.sentinel.SentinelEvent.toObject, includeInstance)
   };
 

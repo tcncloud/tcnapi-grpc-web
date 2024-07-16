@@ -193,7 +193,7 @@ proto.api.v1alpha1.vanalytics.CreateFlagFilterRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.vanalytics.CreateFlagFilterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagFilter: (f = msg.getFlagFilter()) && proto.api.v1alpha1.vanalytics.FlagFilter.toObject(includeInstance, f)
+flagFilter: (f = msg.getFlagFilter()) && proto.api.v1alpha1.vanalytics.FlagFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -351,11 +351,11 @@ proto.api.v1alpha1.vanalytics.ListFlagFiltersRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.vanalytics.ListFlagFiltersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    flagMask: (f = msg.getFlagMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    filterMask: (f = msg.getFilterMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    flagSidsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+pageToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
+flagMask: (f = msg.getFlagMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+filterMask: (f = msg.getFilterMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+flagSidsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -671,8 +671,8 @@ proto.api.v1alpha1.vanalytics.ListFlagFiltersResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.vanalytics.ListFlagFiltersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    flagFiltersList: jspb.Message.toObjectList(msg.getFlagFiltersList(),
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
+flagFiltersList: jspb.Message.toObjectList(msg.getFlagFiltersList(),
     proto.api.v1alpha1.vanalytics.FlagFilter.toObject, includeInstance)
   };
 
@@ -854,9 +854,9 @@ proto.api.v1alpha1.vanalytics.DeleteFlagFilterRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.vanalytics.DeleteFlagFilterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    filterSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    all: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+filterSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+all: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -1145,11 +1145,11 @@ proto.api.v1alpha1.vanalytics.FlagFilter.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.vanalytics.FlagFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagFilterSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    filterSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    flagSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    flag: (f = msg.getFlag()) && api_v1alpha1_vanalytics_flag_pb.Flag.toObject(includeInstance, f),
-    filter: (f = msg.getFilter()) && api_v1alpha1_vanalytics_filter_pb.Filter.toObject(includeInstance, f)
+flagFilterSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+filterSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+flagSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+flag: (f = msg.getFlag()) && api_v1alpha1_vanalytics_flag_pb.Flag.toObject(includeInstance, f),
+filter: (f = msg.getFilter()) && api_v1alpha1_vanalytics_filter_pb.Filter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

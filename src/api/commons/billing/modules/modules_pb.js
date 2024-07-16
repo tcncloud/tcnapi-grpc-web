@@ -101,7 +101,7 @@ proto.api.commons.billing.modules.BasicConfig.prototype.toObject = function(opt_
  */
 proto.api.commons.billing.modules.BasicConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0)
+rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0)
   };
 
   if (includeInstance) {
@@ -231,10 +231,10 @@ proto.api.commons.billing.modules.BasicAmountConfig.prototype.toObject = functio
  */
 proto.api.commons.billing.modules.BasicAmountConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    amount: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    minIncrement: (f = msg.getMinIncrement()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    maxIncrement: (f = msg.getMaxIncrement()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+amount: jspb.Message.getFieldWithDefault(msg, 1, 0),
+rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+minIncrement: (f = msg.getMinIncrement()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+maxIncrement: (f = msg.getMaxIncrement()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
