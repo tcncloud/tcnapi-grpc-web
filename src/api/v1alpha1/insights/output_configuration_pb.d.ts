@@ -14,9 +14,6 @@ export class OutputConfiguration extends jspb.Message {
   getOutputConfigurationType(): api_commons_insights_pb.OutputConfigurationTypeMap[keyof api_commons_insights_pb.OutputConfigurationTypeMap];
   setOutputConfigurationType(value: api_commons_insights_pb.OutputConfigurationTypeMap[keyof api_commons_insights_pb.OutputConfigurationTypeMap]): void;
 
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   getInsightId(): string;
   setInsightId(value: string): void;
 
@@ -27,8 +24,8 @@ export class OutputConfiguration extends jspb.Message {
 
   hasTableVisualization(): boolean;
   clearTableVisualization(): void;
-  getTableVisualization(): TableVisualization | undefined;
-  setTableVisualization(value?: TableVisualization): void;
+  getTableVisualization(): api_commons_insights_pb.TableVisualization | undefined;
+  setTableVisualization(value?: api_commons_insights_pb.TableVisualization): void;
 
   getBodyCase(): OutputConfiguration.BodyCase;
   serializeBinary(): Uint8Array;
@@ -46,97 +43,15 @@ export namespace OutputConfiguration {
     outputConfigurationId: string,
     outputConfigurationTitle: string,
     outputConfigurationType: api_commons_insights_pb.OutputConfigurationTypeMap[keyof api_commons_insights_pb.OutputConfigurationTypeMap],
-    orgId: string,
     insightId: string,
     blob: string,
-    tableVisualization?: TableVisualization.AsObject,
+    tableVisualization?: api_commons_insights_pb.TableVisualization.AsObject,
   }
 
   export enum BodyCase {
     BODY_NOT_SET = 0,
     BLOB = 6,
     TABLE_VISUALIZATION = 7,
-  }
-}
-
-export class TableVisualization extends jspb.Message {
-  getTableColumnDetailsMap(): jspb.Map<string, TableColumnConfig>;
-  clearTableColumnDetailsMap(): void;
-  getDefaultColumnWidth(): number;
-  setDefaultColumnWidth(value: number): void;
-
-  getSingleColumnSort(): boolean;
-  setSingleColumnSort(value: boolean): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TableVisualization.AsObject;
-  static toObject(includeInstance: boolean, msg: TableVisualization): TableVisualization.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TableVisualization, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TableVisualization;
-  static deserializeBinaryFromReader(message: TableVisualization, reader: jspb.BinaryReader): TableVisualization;
-}
-
-export namespace TableVisualization {
-  export type AsObject = {
-    tableColumnDetailsMap: Array<[string, TableColumnConfig.AsObject]>,
-    defaultColumnWidth: number,
-    singleColumnSort: boolean,
-  }
-}
-
-export class TableColumnConfig extends jspb.Message {
-  getKey(): string;
-  setKey(value: string): void;
-
-  getColumnWidth(): number;
-  setColumnWidth(value: number): void;
-
-  getHideColumn(): boolean;
-  setHideColumn(value: boolean): void;
-
-  getLabel(): string;
-  setLabel(value: string): void;
-
-  getColumnFormatType(): api_commons_insights_pb.OutputConfigurationColumnFormatTypeMap[keyof api_commons_insights_pb.OutputConfigurationColumnFormatTypeMap];
-  setColumnFormatType(value: api_commons_insights_pb.OutputConfigurationColumnFormatTypeMap[keyof api_commons_insights_pb.OutputConfigurationColumnFormatTypeMap]): void;
-
-  clearColumnFormatValuesList(): void;
-  getColumnFormatValuesList(): Array<string>;
-  setColumnFormatValuesList(value: Array<string>): void;
-  addColumnFormatValues(value: string, index?: number): string;
-
-  getColumnSummary(): api_commons_insights_pb.OutputConfigurationColumnSummaryTypeMap[keyof api_commons_insights_pb.OutputConfigurationColumnSummaryTypeMap];
-  setColumnSummary(value: api_commons_insights_pb.OutputConfigurationColumnSummaryTypeMap[keyof api_commons_insights_pb.OutputConfigurationColumnSummaryTypeMap]): void;
-
-  getDescription(): string;
-  setDescription(value: string): void;
-
-  getOrder(): number;
-  setOrder(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TableColumnConfig.AsObject;
-  static toObject(includeInstance: boolean, msg: TableColumnConfig): TableColumnConfig.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TableColumnConfig, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TableColumnConfig;
-  static deserializeBinaryFromReader(message: TableColumnConfig, reader: jspb.BinaryReader): TableColumnConfig;
-}
-
-export namespace TableColumnConfig {
-  export type AsObject = {
-    key: string,
-    columnWidth: number,
-    hideColumn: boolean,
-    label: string,
-    columnFormatType: api_commons_insights_pb.OutputConfigurationColumnFormatTypeMap[keyof api_commons_insights_pb.OutputConfigurationColumnFormatTypeMap],
-    columnFormatValuesList: Array<string>,
-    columnSummary: api_commons_insights_pb.OutputConfigurationColumnSummaryTypeMap[keyof api_commons_insights_pb.OutputConfigurationColumnSummaryTypeMap],
-    description: string,
-    order: number,
   }
 }
 

@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_insights_pb from "../../../api/commons/insights_pb";
+import * as api_v1alpha1_insights_output_configuration_pb from "../../../api/v1alpha1/insights/output_configuration_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 
 export class Insight extends jspb.Message {
@@ -33,6 +34,11 @@ export class Insight extends jspb.Message {
   getStandardInsight(): boolean;
   setStandardInsight(value: boolean): void;
 
+  clearOutputConfigurationsList(): void;
+  getOutputConfigurationsList(): Array<api_v1alpha1_insights_output_configuration_pb.OutputConfiguration>;
+  setOutputConfigurationsList(value: Array<api_v1alpha1_insights_output_configuration_pb.OutputConfiguration>): void;
+  addOutputConfigurations(value?: api_v1alpha1_insights_output_configuration_pb.OutputConfiguration, index?: number): api_v1alpha1_insights_output_configuration_pb.OutputConfiguration;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Insight.AsObject;
   static toObject(includeInstance: boolean, msg: Insight): Insight.AsObject;
@@ -54,6 +60,7 @@ export namespace Insight {
     insightPermissionType: api_commons_insights_pb.InsightPermissionTypeMap[keyof api_commons_insights_pb.InsightPermissionTypeMap],
     resourceId: string,
     standardInsight: boolean,
+    outputConfigurationsList: Array<api_v1alpha1_insights_output_configuration_pb.OutputConfiguration.AsObject>,
   }
 }
 

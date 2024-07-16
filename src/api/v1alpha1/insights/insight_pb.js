@@ -25,6 +25,8 @@ var global = localGlobalThis ||
 
 var api_commons_insights_pb = require('../../../api/commons/insights_pb.js');
 goog.object.extend(proto, api_commons_insights_pb);
+var api_v1alpha1_insights_output_configuration_pb = require('../../../api/v1alpha1/insights/output_configuration_pb.js');
+goog.object.extend(proto, api_v1alpha1_insights_output_configuration_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
 goog.exportSymbol('proto.api.v1alpha1.insights.CreateInsightRequest', null, global);
@@ -60,7 +62,7 @@ goog.exportSymbol('proto.api.v1alpha1.insights.UpdateInsightResponse', null, glo
  * @constructor
  */
 proto.api.v1alpha1.insights.Insight = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.insights.Insight.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.insights.Insight, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -512,6 +514,13 @@ if (goog.DEBUG && !COMPILED) {
   proto.api.v1alpha1.insights.ListVfsSchemasResponse.displayName = 'proto.api.v1alpha1.insights.ListVfsSchemasResponse';
 }
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.insights.Insight.repeatedFields_ = [11];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -551,7 +560,9 @@ insightVersion: jspb.Message.getFieldWithDefault(msg, 6, 0),
 body: jspb.Message.getFieldWithDefault(msg, 7, ""),
 insightPermissionType: jspb.Message.getFieldWithDefault(msg, 8, 0),
 resourceId: jspb.Message.getFieldWithDefault(msg, 9, ""),
-standardInsight: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+standardInsight: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+outputConfigurationsList: jspb.Message.toObjectList(msg.getOutputConfigurationsList(),
+    api_v1alpha1_insights_output_configuration_pb.OutputConfiguration.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -623,6 +634,11 @@ proto.api.v1alpha1.insights.Insight.deserializeBinaryFromReader = function(msg, 
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStandardInsight(value);
+      break;
+    case 11:
+      var value = new api_v1alpha1_insights_output_configuration_pb.OutputConfiguration;
+      reader.readMessage(value,api_v1alpha1_insights_output_configuration_pb.OutputConfiguration.deserializeBinaryFromReader);
+      msg.addOutputConfigurations(value);
       break;
     default:
       reader.skipField();
@@ -714,6 +730,14 @@ proto.api.v1alpha1.insights.Insight.serializeBinaryToWriter = function(message, 
     writer.writeBool(
       10,
       f
+    );
+  }
+  f = message.getOutputConfigurationsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      11,
+      f,
+      api_v1alpha1_insights_output_configuration_pb.OutputConfiguration.serializeBinaryToWriter
     );
   }
 };
@@ -878,6 +902,44 @@ proto.api.v1alpha1.insights.Insight.prototype.getStandardInsight = function() {
  */
 proto.api.v1alpha1.insights.Insight.prototype.setStandardInsight = function(value) {
   return jspb.Message.setProto3BooleanField(this, 10, value);
+};
+
+
+/**
+ * repeated OutputConfiguration output_configurations = 11;
+ * @return {!Array<!proto.api.v1alpha1.insights.OutputConfiguration>}
+ */
+proto.api.v1alpha1.insights.Insight.prototype.getOutputConfigurationsList = function() {
+  return /** @type{!Array<!proto.api.v1alpha1.insights.OutputConfiguration>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_v1alpha1_insights_output_configuration_pb.OutputConfiguration, 11));
+};
+
+
+/**
+ * @param {!Array<!proto.api.v1alpha1.insights.OutputConfiguration>} value
+ * @return {!proto.api.v1alpha1.insights.Insight} returns this
+*/
+proto.api.v1alpha1.insights.Insight.prototype.setOutputConfigurationsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.insights.OutputConfiguration=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.insights.OutputConfiguration}
+ */
+proto.api.v1alpha1.insights.Insight.prototype.addOutputConfigurations = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.api.v1alpha1.insights.OutputConfiguration, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.insights.Insight} returns this
+ */
+proto.api.v1alpha1.insights.Insight.prototype.clearOutputConfigurationsList = function() {
+  return this.setOutputConfigurationsList([]);
 };
 
 
