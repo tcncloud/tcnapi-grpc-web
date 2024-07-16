@@ -27,5 +27,7 @@ var annotations_authz_pb = require('../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
 var api_v1alpha1_insights_insight_pb = require('../../../api/v1alpha1/insights/insight_pb.js');
 goog.object.extend(proto, api_v1alpha1_insights_insight_pb);
+var api_v1alpha1_insights_output_configuration_pb = require('../../../api/v1alpha1/insights/output_configuration_pb.js');
+goog.object.extend(proto, api_v1alpha1_insights_output_configuration_pb);
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);

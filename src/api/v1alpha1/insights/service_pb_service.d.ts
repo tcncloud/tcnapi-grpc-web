@@ -3,6 +3,7 @@
 
 import * as api_v1alpha1_insights_service_pb from "../../../api/v1alpha1/insights/service_pb";
 import * as api_v1alpha1_insights_insight_pb from "../../../api/v1alpha1/insights/insight_pb";
+import * as api_v1alpha1_insights_output_configuration_pb from "../../../api/v1alpha1/insights/output_configuration_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type InsightsCreateInsight = {
@@ -122,6 +123,51 @@ type InsightsPublishInsight = {
   readonly responseType: typeof api_v1alpha1_insights_insight_pb.PublishInsightResponse;
 };
 
+type InsightsListOutputConfigurations = {
+  readonly methodName: string;
+  readonly service: typeof Insights;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_insights_output_configuration_pb.ListOutputConfigurationsRequest;
+  readonly responseType: typeof api_v1alpha1_insights_output_configuration_pb.ListOutputConfigurationsResponse;
+};
+
+type InsightsGetOutputConfiguration = {
+  readonly methodName: string;
+  readonly service: typeof Insights;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_insights_output_configuration_pb.GetOutputConfigurationRequest;
+  readonly responseType: typeof api_v1alpha1_insights_output_configuration_pb.GetOutputConfigurationResponse;
+};
+
+type InsightsCreateOutputConfiguration = {
+  readonly methodName: string;
+  readonly service: typeof Insights;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_insights_output_configuration_pb.CreateOutputConfigurationRequest;
+  readonly responseType: typeof api_v1alpha1_insights_output_configuration_pb.CreateOutputConfigurationResponse;
+};
+
+type InsightsUpdateOutputConfiguration = {
+  readonly methodName: string;
+  readonly service: typeof Insights;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_insights_output_configuration_pb.UpdateOutputConfigurationRequest;
+  readonly responseType: typeof api_v1alpha1_insights_output_configuration_pb.UpdateOutputConfigurationResponse;
+};
+
+type InsightsDeleteOutputConfiguration = {
+  readonly methodName: string;
+  readonly service: typeof Insights;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_insights_output_configuration_pb.DeleteOutputConfigurationRequest;
+  readonly responseType: typeof api_v1alpha1_insights_output_configuration_pb.DeleteOutputConfigurationResponse;
+};
+
 export class Insights {
   static readonly serviceName: string;
   static readonly CreateInsight: InsightsCreateInsight;
@@ -137,6 +183,11 @@ export class Insights {
   static readonly ListVfses: InsightsListVfses;
   static readonly ListVfsSchemas: InsightsListVfsSchemas;
   static readonly PublishInsight: InsightsPublishInsight;
+  static readonly ListOutputConfigurations: InsightsListOutputConfigurations;
+  static readonly GetOutputConfiguration: InsightsGetOutputConfiguration;
+  static readonly CreateOutputConfiguration: InsightsCreateOutputConfiguration;
+  static readonly UpdateOutputConfiguration: InsightsUpdateOutputConfiguration;
+  static readonly DeleteOutputConfiguration: InsightsDeleteOutputConfiguration;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -287,6 +338,51 @@ export class InsightsClient {
   publishInsight(
     requestMessage: api_v1alpha1_insights_insight_pb.PublishInsightRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_insight_pb.PublishInsightResponse|null) => void
+  ): UnaryResponse;
+  listOutputConfigurations(
+    requestMessage: api_v1alpha1_insights_output_configuration_pb.ListOutputConfigurationsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_output_configuration_pb.ListOutputConfigurationsResponse|null) => void
+  ): UnaryResponse;
+  listOutputConfigurations(
+    requestMessage: api_v1alpha1_insights_output_configuration_pb.ListOutputConfigurationsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_output_configuration_pb.ListOutputConfigurationsResponse|null) => void
+  ): UnaryResponse;
+  getOutputConfiguration(
+    requestMessage: api_v1alpha1_insights_output_configuration_pb.GetOutputConfigurationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_output_configuration_pb.GetOutputConfigurationResponse|null) => void
+  ): UnaryResponse;
+  getOutputConfiguration(
+    requestMessage: api_v1alpha1_insights_output_configuration_pb.GetOutputConfigurationRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_output_configuration_pb.GetOutputConfigurationResponse|null) => void
+  ): UnaryResponse;
+  createOutputConfiguration(
+    requestMessage: api_v1alpha1_insights_output_configuration_pb.CreateOutputConfigurationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_output_configuration_pb.CreateOutputConfigurationResponse|null) => void
+  ): UnaryResponse;
+  createOutputConfiguration(
+    requestMessage: api_v1alpha1_insights_output_configuration_pb.CreateOutputConfigurationRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_output_configuration_pb.CreateOutputConfigurationResponse|null) => void
+  ): UnaryResponse;
+  updateOutputConfiguration(
+    requestMessage: api_v1alpha1_insights_output_configuration_pb.UpdateOutputConfigurationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_output_configuration_pb.UpdateOutputConfigurationResponse|null) => void
+  ): UnaryResponse;
+  updateOutputConfiguration(
+    requestMessage: api_v1alpha1_insights_output_configuration_pb.UpdateOutputConfigurationRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_output_configuration_pb.UpdateOutputConfigurationResponse|null) => void
+  ): UnaryResponse;
+  deleteOutputConfiguration(
+    requestMessage: api_v1alpha1_insights_output_configuration_pb.DeleteOutputConfigurationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_output_configuration_pb.DeleteOutputConfigurationResponse|null) => void
+  ): UnaryResponse;
+  deleteOutputConfiguration(
+    requestMessage: api_v1alpha1_insights_output_configuration_pb.DeleteOutputConfigurationRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_output_configuration_pb.DeleteOutputConfigurationResponse|null) => void
   ): UnaryResponse;
 }
 
