@@ -527,6 +527,15 @@ type LMSGetQueuedEventsStatusByElementId = {
   readonly responseType: typeof api_v0alpha_lms_pb.Events;
 };
 
+type LMSListPools = {
+  readonly methodName: string;
+  readonly service: typeof LMS;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_lms_pb.ListPoolsRequest;
+  readonly responseType: typeof api_v0alpha_lms_pb.ListPoolsResponse;
+};
+
 export class LMS {
   static readonly serviceName: string;
   static readonly GetPublicKey: LMSGetPublicKey;
@@ -587,6 +596,7 @@ export class LMS {
   static readonly SampleEndpoint: LMSSampleEndpoint;
   static readonly GetAvailableEHRFields: LMSGetAvailableEHRFields;
   static readonly GetQueuedEventsStatusByElementId: LMSGetQueuedEventsStatusByElementId;
+  static readonly ListPools: LMSListPools;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1094,6 +1104,15 @@ export class LMSClient {
   getQueuedEventsStatusByElementId(
     requestMessage: api_v0alpha_lms_pb.ElementPK,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.Events|null) => void
+  ): UnaryResponse;
+  listPools(
+    requestMessage: api_v0alpha_lms_pb.ListPoolsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ListPoolsResponse|null) => void
+  ): UnaryResponse;
+  listPools(
+    requestMessage: api_v0alpha_lms_pb.ListPoolsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_lms_pb.ListPoolsResponse|null) => void
   ): UnaryResponse;
 }
 
