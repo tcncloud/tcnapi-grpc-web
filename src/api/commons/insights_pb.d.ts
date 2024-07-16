@@ -27,8 +27,8 @@ export namespace TableVisualization {
 }
 
 export class TableColumnConfig extends jspb.Message {
-  getKey(): string;
-  setKey(value: string): void;
+  getColumnName(): string;
+  setColumnName(value: string): void;
 
   getColumnWidth(): number;
   setColumnWidth(value: number): void;
@@ -71,7 +71,7 @@ export class TableColumnConfig extends jspb.Message {
 
 export namespace TableColumnConfig {
   export type AsObject = {
-    key: string,
+    columnName: string,
     columnWidth: number,
     hideColumn: boolean,
     renamedAs: string,
@@ -117,21 +117,19 @@ export const OutputConfigurationType: OutputConfigurationTypeMap;
 
 export interface OutputConfigurationColumnFormatTypeMap {
   OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_UNSPECIFIED: 0;
-  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_PERCENTAGE: 1;
-  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_DOLLARS: 2;
   OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_DATE: 3;
   OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_PREFIX: 4;
   OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_SUFFIX: 5;
   OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_DURATION: 6;
   OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_DURATION_SECONDS: 7;
-  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_NUMBER: 8;
 }
 
 export const OutputConfigurationColumnFormatType: OutputConfigurationColumnFormatTypeMap;
 
 export interface ColumnSortMap {
-  COLUMN_SORT_ASCENDING: 0;
-  COLUMN_SORT_DESCENDING: 1;
+  COLUMN_SORT_UNSPECIFIED: 0;
+  COLUMN_SORT_ASCENDING: 1;
+  COLUMN_SORT_DESCENDING: 2;
 }
 
 export const ColumnSort: ColumnSortMap;

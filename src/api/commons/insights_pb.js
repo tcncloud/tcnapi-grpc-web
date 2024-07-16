@@ -277,7 +277,7 @@ proto.api.commons.TableColumnConfig.prototype.toObject = function(opt_includeIns
  */
 proto.api.commons.TableColumnConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+columnName: jspb.Message.getFieldWithDefault(msg, 1, ""),
 columnWidth: jspb.Message.getFieldWithDefault(msg, 2, 0),
 hideColumn: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
 renamedAs: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -325,7 +325,7 @@ proto.api.commons.TableColumnConfig.deserializeBinaryFromReader = function(msg, 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setKey(value);
+      msg.setColumnName(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
@@ -392,7 +392,7 @@ proto.api.commons.TableColumnConfig.prototype.serializeBinary = function() {
  */
 proto.api.commons.TableColumnConfig.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getKey();
+  f = message.getColumnName();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -466,10 +466,10 @@ proto.api.commons.TableColumnConfig.serializeBinaryToWriter = function(message, 
 
 
 /**
- * optional string key = 1;
+ * optional string column_name = 1;
  * @return {string}
  */
-proto.api.commons.TableColumnConfig.prototype.getKey = function() {
+proto.api.commons.TableColumnConfig.prototype.getColumnName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -478,7 +478,7 @@ proto.api.commons.TableColumnConfig.prototype.getKey = function() {
  * @param {string} value
  * @return {!proto.api.commons.TableColumnConfig} returns this
  */
-proto.api.commons.TableColumnConfig.prototype.setKey = function(value) {
+proto.api.commons.TableColumnConfig.prototype.setColumnName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -704,22 +704,20 @@ proto.api.commons.OutputConfigurationType = {
  */
 proto.api.commons.OutputConfigurationColumnFormatType = {
   OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_UNSPECIFIED: 0,
-  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_PERCENTAGE: 1,
-  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_DOLLARS: 2,
   OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_DATE: 3,
   OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_PREFIX: 4,
   OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_SUFFIX: 5,
   OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_DURATION: 6,
-  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_DURATION_SECONDS: 7,
-  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_NUMBER: 8
+  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_DURATION_SECONDS: 7
 };
 
 /**
  * @enum {number}
  */
 proto.api.commons.ColumnSort = {
-  COLUMN_SORT_ASCENDING: 0,
-  COLUMN_SORT_DESCENDING: 1
+  COLUMN_SORT_UNSPECIFIED: 0,
+  COLUMN_SORT_ASCENDING: 1,
+  COLUMN_SORT_DESCENDING: 2
 };
 
 /**
