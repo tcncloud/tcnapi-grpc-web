@@ -92476,7 +92476,7 @@ requestedDatetimeRangesList: jspb.Message.toObjectList(msg.getRequestedDatetimeR
     api_commons_wfm_pb.DatetimeRange.toObject, includeInstance),
 petitionComment: jspb.Message.getFieldWithDefault(msg, 2, ""),
 wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-requestedHoursOff: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0)
+requestedHoursOff: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0)
   };
 
   if (includeInstance) {
@@ -92526,7 +92526,7 @@ proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.deserializeBinaryFromRead
       var value = /** @type {number} */ (reader.readInt64());
       msg.setWfmAgentSid(value);
       break;
-    case 11:
+    case 4:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setRequestedHoursOff(value);
       break;
@@ -92584,7 +92584,7 @@ proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.serializeBinaryToWriter =
   f = message.getRequestedHoursOff();
   if (f !== 0.0) {
     writer.writeFloat(
-      11,
+      4,
       f
     );
   }
@@ -92666,11 +92666,11 @@ proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.setWfmAgentSid 
 
 
 /**
- * optional float requested_hours_off = 11;
+ * optional float requested_hours_off = 4;
  * @return {number}
  */
 proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.getRequestedHoursOff = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
 };
 
 
@@ -92679,7 +92679,7 @@ proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.getRequestedHou
  * @return {!proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest} returns this
  */
 proto.api.v1alpha1.wfm.CreateAgentLeavePetitionRequest.prototype.setRequestedHoursOff = function(value) {
-  return jspb.Message.setProto3FloatField(this, 11, value);
+  return jspb.Message.setProto3FloatField(this, 4, value);
 };
 
 
