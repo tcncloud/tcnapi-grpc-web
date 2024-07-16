@@ -33,11 +33,6 @@ export class Insight extends jspb.Message {
   getStandardInsight(): boolean;
   setStandardInsight(value: boolean): void;
 
-  clearOutputConfigurationsList(): void;
-  getOutputConfigurationsList(): Array<OutputConfiguration>;
-  setOutputConfigurationsList(value: Array<OutputConfiguration>): void;
-  addOutputConfigurations(value?: OutputConfiguration, index?: number): OutputConfiguration;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Insight.AsObject;
   static toObject(includeInstance: boolean, msg: Insight): Insight.AsObject;
@@ -59,7 +54,6 @@ export namespace Insight {
     insightPermissionType: api_commons_insights_pb.InsightPermissionTypeMap[keyof api_commons_insights_pb.InsightPermissionTypeMap],
     resourceId: string,
     standardInsight: boolean,
-    outputConfigurationsList: Array<OutputConfiguration.AsObject>,
   }
 }
 
@@ -548,6 +542,9 @@ export class OutputConfiguration extends jspb.Message {
   getInsightId(): string;
   setInsightId(value: string): void;
 
+  getIsDefault(): boolean;
+  setIsDefault(value: boolean): void;
+
   hasBlob(): boolean;
   clearBlob(): void;
   getBlob(): string;
@@ -575,14 +572,15 @@ export namespace OutputConfiguration {
     outputConfigurationTitle: string,
     outputConfigurationType: api_commons_insights_pb.OutputConfigurationTypeMap[keyof api_commons_insights_pb.OutputConfigurationTypeMap],
     insightId: string,
+    isDefault: boolean,
     blob: string,
     tableVisualization?: api_commons_insights_pb.TableVisualization.AsObject,
   }
 
   export enum BodyCase {
     BODY_NOT_SET = 0,
-    BLOB = 6,
-    TABLE_VISUALIZATION = 7,
+    BLOB = 7,
+    TABLE_VISUALIZATION = 8,
   }
 }
 
@@ -799,6 +797,88 @@ export class GetOutputConfigurationResponse extends jspb.Message {
 }
 
 export namespace GetOutputConfigurationResponse {
+  export type AsObject = {
+    outputConfiguration?: OutputConfiguration.AsObject,
+  }
+}
+
+export class SetDefaultOutputConfigurationRequest extends jspb.Message {
+  getInsightId(): string;
+  setInsightId(value: string): void;
+
+  getOutputConfigurationId(): string;
+  setOutputConfigurationId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetDefaultOutputConfigurationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetDefaultOutputConfigurationRequest): SetDefaultOutputConfigurationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetDefaultOutputConfigurationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetDefaultOutputConfigurationRequest;
+  static deserializeBinaryFromReader(message: SetDefaultOutputConfigurationRequest, reader: jspb.BinaryReader): SetDefaultOutputConfigurationRequest;
+}
+
+export namespace SetDefaultOutputConfigurationRequest {
+  export type AsObject = {
+    insightId: string,
+    outputConfigurationId: string,
+  }
+}
+
+export class SetDefaultOutputConfigurationResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetDefaultOutputConfigurationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetDefaultOutputConfigurationResponse): SetDefaultOutputConfigurationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetDefaultOutputConfigurationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetDefaultOutputConfigurationResponse;
+  static deserializeBinaryFromReader(message: SetDefaultOutputConfigurationResponse, reader: jspb.BinaryReader): SetDefaultOutputConfigurationResponse;
+}
+
+export namespace SetDefaultOutputConfigurationResponse {
+  export type AsObject = {
+  }
+}
+
+export class GetDefaultOutputConfigurationRequest extends jspb.Message {
+  getInsightId(): string;
+  setInsightId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDefaultOutputConfigurationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDefaultOutputConfigurationRequest): GetDefaultOutputConfigurationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDefaultOutputConfigurationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDefaultOutputConfigurationRequest;
+  static deserializeBinaryFromReader(message: GetDefaultOutputConfigurationRequest, reader: jspb.BinaryReader): GetDefaultOutputConfigurationRequest;
+}
+
+export namespace GetDefaultOutputConfigurationRequest {
+  export type AsObject = {
+    insightId: string,
+  }
+}
+
+export class GetDefaultOutputConfigurationResponse extends jspb.Message {
+  hasOutputConfiguration(): boolean;
+  clearOutputConfiguration(): void;
+  getOutputConfiguration(): OutputConfiguration | undefined;
+  setOutputConfiguration(value?: OutputConfiguration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDefaultOutputConfigurationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDefaultOutputConfigurationResponse): GetDefaultOutputConfigurationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDefaultOutputConfigurationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDefaultOutputConfigurationResponse;
+  static deserializeBinaryFromReader(message: GetDefaultOutputConfigurationResponse, reader: jspb.BinaryReader): GetDefaultOutputConfigurationResponse;
+}
+
+export namespace GetDefaultOutputConfigurationResponse {
   export type AsObject = {
     outputConfiguration?: OutputConfiguration.AsObject,
   }

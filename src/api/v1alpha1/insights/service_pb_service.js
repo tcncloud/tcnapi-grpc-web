@@ -173,6 +173,24 @@ Insights.GetOutputConfiguration = {
   responseType: api_v1alpha1_insights_insight_pb.GetOutputConfigurationResponse
 };
 
+Insights.SetDefaultOutputConfiguration = {
+  methodName: "SetDefaultOutputConfiguration",
+  service: Insights,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_insights_insight_pb.SetDefaultOutputConfigurationRequest,
+  responseType: api_v1alpha1_insights_insight_pb.SetDefaultOutputConfigurationResponse
+};
+
+Insights.GetDefaultOutputConfiguration = {
+  methodName: "GetDefaultOutputConfiguration",
+  service: Insights,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_insights_insight_pb.GetDefaultOutputConfigurationRequest,
+  responseType: api_v1alpha1_insights_insight_pb.GetDefaultOutputConfigurationResponse
+};
+
 exports.Insights = Insights;
 
 function InsightsClient(serviceHost, options) {
@@ -712,6 +730,68 @@ InsightsClient.prototype.getOutputConfiguration = function getOutputConfiguratio
     callback = arguments[1];
   }
   var client = grpc.unary(Insights.GetOutputConfiguration, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.setDefaultOutputConfiguration = function setDefaultOutputConfiguration(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Insights.SetDefaultOutputConfiguration, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.getDefaultOutputConfiguration = function getDefaultOutputConfiguration(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Insights.GetDefaultOutputConfiguration, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

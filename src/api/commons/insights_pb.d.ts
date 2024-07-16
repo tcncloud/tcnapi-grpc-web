@@ -4,10 +4,10 @@
 import * as jspb from "google-protobuf";
 
 export class TableVisualization extends jspb.Message {
-  getTableColumnDetailsMap(): jspb.Map<string, TableColumnConfig>;
-  clearTableColumnDetailsMap(): void;
-  getDefaultColumnWidth(): number;
-  setDefaultColumnWidth(value: number): void;
+  clearTableColumnDetailsList(): void;
+  getTableColumnDetailsList(): Array<TableColumnConfig>;
+  setTableColumnDetailsList(value: Array<TableColumnConfig>): void;
+  addTableColumnDetails(value?: TableColumnConfig, index?: number): TableColumnConfig;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TableVisualization.AsObject;
@@ -21,8 +21,7 @@ export class TableVisualization extends jspb.Message {
 
 export namespace TableVisualization {
   export type AsObject = {
-    tableColumnDetailsMap: Array<[string, TableColumnConfig.AsObject]>,
-    defaultColumnWidth: number,
+    tableColumnDetailsList: Array<TableColumnConfig.AsObject>,
   }
 }
 
@@ -39,22 +38,16 @@ export class TableColumnConfig extends jspb.Message {
   getRenamedAs(): string;
   setRenamedAs(value: string): void;
 
-  getColumnFormatType(): OutputConfigurationColumnFormatTypeMap[keyof OutputConfigurationColumnFormatTypeMap];
-  setColumnFormatType(value: OutputConfigurationColumnFormatTypeMap[keyof OutputConfigurationColumnFormatTypeMap]): void;
-
-  clearColumnFormatValuesList(): void;
-  getColumnFormatValuesList(): Array<string>;
-  setColumnFormatValuesList(value: Array<string>): void;
-  addColumnFormatValues(value: string, index?: number): string;
+  clearOperationsList(): void;
+  getOperationsList(): Array<ColumnOperation>;
+  setOperationsList(value: Array<ColumnOperation>): void;
+  addOperations(value?: ColumnOperation, index?: number): ColumnOperation;
 
   getColumnSummary(): OutputConfigurationColumnSummaryTypeMap[keyof OutputConfigurationColumnSummaryTypeMap];
   setColumnSummary(value: OutputConfigurationColumnSummaryTypeMap[keyof OutputConfigurationColumnSummaryTypeMap]): void;
 
   getDescription(): string;
   setDescription(value: string): void;
-
-  getOrder(): number;
-  setOrder(value: number): void;
 
   getSortDirection(): ColumnSortMap[keyof ColumnSortMap];
   setSortDirection(value: ColumnSortMap[keyof ColumnSortMap]): void;
@@ -75,12 +68,71 @@ export namespace TableColumnConfig {
     columnWidth: number,
     hideColumn: boolean,
     renamedAs: string,
-    columnFormatType: OutputConfigurationColumnFormatTypeMap[keyof OutputConfigurationColumnFormatTypeMap],
-    columnFormatValuesList: Array<string>,
+    operationsList: Array<ColumnOperation.AsObject>,
     columnSummary: OutputConfigurationColumnSummaryTypeMap[keyof OutputConfigurationColumnSummaryTypeMap],
     description: string,
-    order: number,
     sortDirection: ColumnSortMap[keyof ColumnSortMap],
+  }
+}
+
+export class FormatSeries extends jspb.Message {
+  clearFormatPartsList(): void;
+  getFormatPartsList(): Array<string>;
+  setFormatPartsList(value: Array<string>): void;
+  addFormatParts(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FormatSeries.AsObject;
+  static toObject(includeInstance: boolean, msg: FormatSeries): FormatSeries.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FormatSeries, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FormatSeries;
+  static deserializeBinaryFromReader(message: FormatSeries, reader: jspb.BinaryReader): FormatSeries;
+}
+
+export namespace FormatSeries {
+  export type AsObject = {
+    formatPartsList: Array<string>,
+  }
+}
+
+export class ColumnOperation extends jspb.Message {
+  getOperationType(): OperationTypeMap[keyof OperationTypeMap];
+  setOperationType(value: OperationTypeMap[keyof OperationTypeMap]): void;
+
+  hasFloatValue(): boolean;
+  clearFloatValue(): void;
+  getFloatValue(): number;
+  setFloatValue(value: number): void;
+
+  hasFormatSeries(): boolean;
+  clearFormatSeries(): void;
+  getFormatSeries(): FormatSeries | undefined;
+  setFormatSeries(value?: FormatSeries): void;
+
+  getOperationValueCase(): ColumnOperation.OperationValueCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ColumnOperation.AsObject;
+  static toObject(includeInstance: boolean, msg: ColumnOperation): ColumnOperation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ColumnOperation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ColumnOperation;
+  static deserializeBinaryFromReader(message: ColumnOperation, reader: jspb.BinaryReader): ColumnOperation;
+}
+
+export namespace ColumnOperation {
+  export type AsObject = {
+    operationType: OperationTypeMap[keyof OperationTypeMap],
+    floatValue: number,
+    formatSeries?: FormatSeries.AsObject,
+  }
+
+  export enum OperationValueCase {
+    OPERATION_VALUE_NOT_SET = 0,
+    FLOAT_VALUE = 2,
+    FORMAT_SERIES = 3,
   }
 }
 
@@ -111,20 +163,26 @@ export interface OutputConfigurationTypeMap {
   OUTPUT_CONFIGURATION_TYPE_UNSPECIFIED: 0;
   OUTPUT_CONFIGURATION_TYPE_TABLE: 1;
   OUTPUT_CONFIGURATION_TYPE_MULTI_SERIES: 2;
+  OUTPUT_CONFIGURATION_TYPE_PIE_CHART: 3;
 }
 
 export const OutputConfigurationType: OutputConfigurationTypeMap;
 
-export interface OutputConfigurationColumnFormatTypeMap {
-  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_UNSPECIFIED: 0;
-  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_DATE: 3;
-  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_PREFIX: 4;
-  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_SUFFIX: 5;
-  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_DURATION: 6;
-  OUTPUT_CONFIGURATION_COLUMN_FORMAT_TYPE_DURATION_SECONDS: 7;
+export interface OperationTypeMap {
+  OPERATION_TYPE_UNSPECIFIED: 0;
+  OPERATION_TYPE_DATE: 1;
+  OPERATION_TYPE_PREFIX: 2;
+  OPERATION_TYPE_SUFFIX: 3;
+  OPERATION_TYPE_DURATION: 4;
+  OPERATION_TYPE_ADD: 5;
+  OPERATION_TYPE_SUBTRACT: 6;
+  OPERATION_TYPE_MULTIPLY: 7;
+  OPERATION_TYPE_DIVIDE: 8;
+  OPERATION_TYPE_FORMAT_NUMBER: 9;
+  OPERATION_TYPE_PRECISION: 10;
 }
 
-export const OutputConfigurationColumnFormatType: OutputConfigurationColumnFormatTypeMap;
+export const OperationType: OperationTypeMap;
 
 export interface ColumnSortMap {
   COLUMN_SORT_UNSPECIFIED: 0;
