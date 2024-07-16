@@ -36,8 +36,8 @@ export class TableColumnConfig extends jspb.Message {
   getHideColumn(): boolean;
   setHideColumn(value: boolean): void;
 
-  getLabel(): string;
-  setLabel(value: string): void;
+  getRenamedAs(): string;
+  setRenamedAs(value: string): void;
 
   getColumnFormatType(): OutputConfigurationColumnFormatTypeMap[keyof OutputConfigurationColumnFormatTypeMap];
   setColumnFormatType(value: OutputConfigurationColumnFormatTypeMap[keyof OutputConfigurationColumnFormatTypeMap]): void;
@@ -74,7 +74,7 @@ export namespace TableColumnConfig {
     key: string,
     columnWidth: number,
     hideColumn: boolean,
-    label: string,
+    renamedAs: string,
     columnFormatType: OutputConfigurationColumnFormatTypeMap[keyof OutputConfigurationColumnFormatTypeMap],
     columnFormatValuesList: Array<string>,
     columnSummary: OutputConfigurationColumnSummaryTypeMap[keyof OutputConfigurationColumnSummaryTypeMap],

@@ -280,7 +280,7 @@ proto.api.commons.TableColumnConfig.toObject = function(includeInstance, msg) {
 key: jspb.Message.getFieldWithDefault(msg, 1, ""),
 columnWidth: jspb.Message.getFieldWithDefault(msg, 2, 0),
 hideColumn: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-label: jspb.Message.getFieldWithDefault(msg, 4, ""),
+renamedAs: jspb.Message.getFieldWithDefault(msg, 4, ""),
 columnFormatType: jspb.Message.getFieldWithDefault(msg, 5, 0),
 columnFormatValuesList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
 columnSummary: jspb.Message.getFieldWithDefault(msg, 7, 0),
@@ -337,7 +337,7 @@ proto.api.commons.TableColumnConfig.deserializeBinaryFromReader = function(msg, 
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLabel(value);
+      msg.setRenamedAs(value);
       break;
     case 5:
       var value = /** @type {!proto.api.commons.OutputConfigurationColumnFormatType} */ (reader.readEnum());
@@ -413,7 +413,7 @@ proto.api.commons.TableColumnConfig.serializeBinaryToWriter = function(message, 
       f
     );
   }
-  f = message.getLabel();
+  f = message.getRenamedAs();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -520,10 +520,10 @@ proto.api.commons.TableColumnConfig.prototype.setHideColumn = function(value) {
 
 
 /**
- * optional string label = 4;
+ * optional string renamed_as = 4;
  * @return {string}
  */
-proto.api.commons.TableColumnConfig.prototype.getLabel = function() {
+proto.api.commons.TableColumnConfig.prototype.getRenamedAs = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -532,7 +532,7 @@ proto.api.commons.TableColumnConfig.prototype.getLabel = function() {
  * @param {string} value
  * @return {!proto.api.commons.TableColumnConfig} returns this
  */
-proto.api.commons.TableColumnConfig.prototype.setLabel = function(value) {
+proto.api.commons.TableColumnConfig.prototype.setRenamedAs = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 

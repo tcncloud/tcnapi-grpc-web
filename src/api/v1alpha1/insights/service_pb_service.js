@@ -128,24 +128,6 @@ Insights.PublishInsight = {
   responseType: api_v1alpha1_insights_insight_pb.PublishInsightResponse
 };
 
-Insights.ListOutputConfigurations = {
-  methodName: "ListOutputConfigurations",
-  service: Insights,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsRequest,
-  responseType: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse
-};
-
-Insights.GetOutputConfiguration = {
-  methodName: "GetOutputConfiguration",
-  service: Insights,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_insights_insight_pb.GetOutputConfigurationRequest,
-  responseType: api_v1alpha1_insights_insight_pb.GetOutputConfigurationResponse
-};
-
 Insights.CreateOutputConfiguration = {
   methodName: "CreateOutputConfiguration",
   service: Insights,
@@ -153,6 +135,15 @@ Insights.CreateOutputConfiguration = {
   responseStream: false,
   requestType: api_v1alpha1_insights_insight_pb.CreateOutputConfigurationRequest,
   responseType: api_v1alpha1_insights_insight_pb.CreateOutputConfigurationResponse
+};
+
+Insights.ListOutputConfigurations = {
+  methodName: "ListOutputConfigurations",
+  service: Insights,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsRequest,
+  responseType: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse
 };
 
 Insights.UpdateOutputConfiguration = {
@@ -171,6 +162,15 @@ Insights.DeleteOutputConfiguration = {
   responseStream: false,
   requestType: api_v1alpha1_insights_insight_pb.DeleteOutputConfigurationRequest,
   responseType: api_v1alpha1_insights_insight_pb.DeleteOutputConfigurationResponse
+};
+
+Insights.GetOutputConfiguration = {
+  methodName: "GetOutputConfiguration",
+  service: Insights,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_insights_insight_pb.GetOutputConfigurationRequest,
+  responseType: api_v1alpha1_insights_insight_pb.GetOutputConfigurationResponse
 };
 
 exports.Insights = Insights;
@@ -583,73 +583,42 @@ InsightsClient.prototype.publishInsight = function publishInsight(requestMessage
   };
 };
 
-InsightsClient.prototype.listOutputConfigurations = function listOutputConfigurations(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Insights.ListOutputConfigurations, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-InsightsClient.prototype.getOutputConfiguration = function getOutputConfiguration(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(Insights.GetOutputConfiguration, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
 InsightsClient.prototype.createOutputConfiguration = function createOutputConfiguration(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(Insights.CreateOutputConfiguration, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.listOutputConfigurations = function listOutputConfigurations(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Insights.ListOutputConfigurations, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -712,6 +681,37 @@ InsightsClient.prototype.deleteOutputConfiguration = function deleteOutputConfig
     callback = arguments[1];
   }
   var client = grpc.unary(Insights.DeleteOutputConfiguration, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.getOutputConfiguration = function getOutputConfiguration(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Insights.GetOutputConfiguration, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
