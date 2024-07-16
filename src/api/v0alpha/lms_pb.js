@@ -57740,7 +57740,7 @@ proto.api.v0alpha.FinviEntrypoint.toObject = function(includeInstance, msg) {
 poolId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 cronInterval: jspb.Message.getFieldWithDefault(msg, 2, ""),
 disabled: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-timezone: jspb.Message.getFieldWithDefault(msg, 11, "")
+timezone: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -57789,7 +57789,7 @@ proto.api.v0alpha.FinviEntrypoint.deserializeBinaryFromReader = function(msg, re
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDisabled(value);
       break;
-    case 11:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setTimezone(value);
       break;
@@ -57846,7 +57846,7 @@ proto.api.v0alpha.FinviEntrypoint.serializeBinaryToWriter = function(message, wr
   f = message.getTimezone();
   if (f.length > 0) {
     writer.writeString(
-      11,
+      4,
       f
     );
   }
@@ -57908,11 +57908,11 @@ proto.api.v0alpha.FinviEntrypoint.prototype.setDisabled = function(value) {
 
 
 /**
- * optional string timezone = 11;
+ * optional string timezone = 4;
  * @return {string}
  */
 proto.api.v0alpha.FinviEntrypoint.prototype.getTimezone = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -57921,7 +57921,7 @@ proto.api.v0alpha.FinviEntrypoint.prototype.getTimezone = function() {
  * @return {!proto.api.v0alpha.FinviEntrypoint} returns this
  */
 proto.api.v0alpha.FinviEntrypoint.prototype.setTimezone = function(value) {
-  return jspb.Message.setProto3StringField(this, 11, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
