@@ -129,7 +129,7 @@ proto.api.v1alpha1.vanalytics.aclpb.AgentCallLog.prototype.toObject = function(o
  */
 proto.api.v1alpha1.vanalytics.aclpb.AgentCallLog.toObject = function(includeInstance, msg) {
   var f, obj = {
-    actionsList: jspb.Message.toObjectList(msg.getActionsList(),
+actionsList: jspb.Message.toObjectList(msg.getActionsList(),
     proto.api.v1alpha1.vanalytics.aclpb.Action.toObject, includeInstance)
   };
 
@@ -308,8 +308,8 @@ proto.api.v1alpha1.vanalytics.aclpb.Action.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.vanalytics.aclpb.Action.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callSkillsInitial: (f = msg.getCallSkillsInitial()) && proto.api.v1alpha1.vanalytics.aclpb.CallSkillsInitial.toObject(includeInstance, f),
-    callEnded: jspb.Message.getFieldWithDefault(msg, 2, "")
+callSkillsInitial: (f = msg.getCallSkillsInitial()) && proto.api.v1alpha1.vanalytics.aclpb.CallSkillsInitial.toObject(includeInstance, f),
+callEnded: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -514,8 +514,8 @@ proto.api.v1alpha1.vanalytics.aclpb.CallSkillsInitial.prototype.toObject = funct
  */
 proto.api.v1alpha1.vanalytics.aclpb.CallSkillsInitial.toObject = function(includeInstance, msg) {
   var f, obj = {
-    needList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    wantList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+needList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+wantList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {

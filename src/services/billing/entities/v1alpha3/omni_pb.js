@@ -103,8 +103,8 @@ proto.services.billing.entities.v1alpha3.OmniSmsConfig.prototype.toObject = func
  */
 proto.services.billing.entities.v1alpha3.OmniSmsConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prefixes: (f = msg.getPrefixes()) && services_billing_entities_v1alpha3_matching_pb.CountryCodePrefix.toObject(includeInstance, f),
-    config: (f = msg.getConfig()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f)
+prefixes: (f = msg.getPrefixes()) && services_billing_entities_v1alpha3_matching_pb.CountryCodePrefix.toObject(includeInstance, f),
+config: (f = msg.getConfig()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -305,8 +305,8 @@ proto.services.billing.entities.v1alpha3.OmniSmsUnitConfig.prototype.toObject = 
  */
 proto.services.billing.entities.v1alpha3.OmniSmsUnitConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prefixes: (f = msg.getPrefixes()) && services_billing_entities_v1alpha3_matching_pb.CountryCodePrefix.toObject(includeInstance, f),
-    config: (f = msg.getConfig()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f)
+prefixes: (f = msg.getPrefixes()) && services_billing_entities_v1alpha3_matching_pb.CountryCodePrefix.toObject(includeInstance, f),
+config: (f = msg.getConfig()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

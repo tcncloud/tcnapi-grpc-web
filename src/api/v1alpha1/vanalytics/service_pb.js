@@ -235,8 +235,8 @@ proto.api.v1alpha1.vanalytics.AuditRequest.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.vanalytics.AuditRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    since: (f = msg.getSince()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    until: (f = msg.getUntil()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+since: (f = msg.getSince()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+until: (f = msg.getUntil()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -437,10 +437,10 @@ proto.api.v1alpha1.vanalytics.AuditResponse.prototype.toObject = function(opt_in
  */
 proto.api.v1alpha1.vanalytics.AuditResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    audioTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    billedAudioTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    lastUsage: (f = msg.getLastUsage()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    billedTranscripts: jspb.Message.getFieldWithDefault(msg, 4, 0)
+audioTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+billedAudioTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+lastUsage: (f = msg.getLastUsage()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+billedTranscripts: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -678,8 +678,8 @@ proto.api.v1alpha1.vanalytics.GetRecordingUrlRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.vanalytics.GetRecordingUrlRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    kind: jspb.Message.getFieldWithDefault(msg, 4, "")
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+kind: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -838,7 +838,7 @@ proto.api.v1alpha1.vanalytics.GetRecordingUrlResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.vanalytics.GetRecordingUrlResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: jspb.Message.getFieldWithDefault(msg, 1, "")
+url: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -968,8 +968,8 @@ proto.api.v1alpha1.vanalytics.ListBillingSpanRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.vanalytics.ListBillingSpanRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pageSize: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+pageSize: jspb.Message.getFieldWithDefault(msg, 1, 0),
+pageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1135,8 +1135,8 @@ proto.api.v1alpha1.vanalytics.ListBillingSpanResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.vanalytics.ListBillingSpanResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    spansList: jspb.Message.toObjectList(msg.getSpansList(),
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
+spansList: jspb.Message.toObjectList(msg.getSpansList(),
     proto.api.v1alpha1.vanalytics.BillingSpan.toObject, includeInstance)
   };
 
@@ -1318,11 +1318,11 @@ proto.api.v1alpha1.vanalytics.BillingSpan.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.vanalytics.BillingSpan.toObject = function(includeInstance, msg) {
   var f, obj = {
-    calls: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    hours: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    cost: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+calls: jspb.Message.getFieldWithDefault(msg, 1, 0),
+hours: jspb.Message.getFieldWithDefault(msg, 2, 0),
+cost: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

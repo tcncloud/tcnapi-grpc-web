@@ -178,13 +178,13 @@ proto.api.commons.org.PermissionGroup.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.org.PermissionGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    permissionGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    permissionsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    readOnly: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    labelIdsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+permissionGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+permissionsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+readOnly: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+labelIdsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -535,12 +535,12 @@ proto.api.commons.org.P3PermissionGroup.prototype.toObject = function(opt_includ
  */
 proto.api.commons.org.P3PermissionGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    p3PermissionGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    regionId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    permissionsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+p3PermissionGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+regionId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+name: jspb.Message.getFieldWithDefault(msg, 5, ""),
+description: jspb.Message.getFieldWithDefault(msg, 6, ""),
+permissionsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -843,10 +843,10 @@ proto.api.commons.org.License.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.commons.org.License.toObject = function(includeInstance, msg) {
   var f, obj = {
-    app: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    cardsList: jspb.Message.toObjectList(msg.getCardsList(),
+app: jspb.Message.getFieldWithDefault(msg, 1, 0),
+cardsList: jspb.Message.toObjectList(msg.getCardsList(),
     proto.api.commons.org.License.Card.toObject, includeInstance),
-    name: jspb.Message.getFieldWithDefault(msg, 3, "")
+name: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -989,10 +989,10 @@ proto.api.commons.org.License.Card.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.org.License.Card.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
+type: jspb.Message.getFieldWithDefault(msg, 1, 0),
+permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
     proto.api.commons.org.License.Permission.toObject, includeInstance),
-    name: jspb.Message.getFieldWithDefault(msg, 3, "")
+name: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1209,10 +1209,10 @@ proto.api.commons.org.License.Permission.prototype.toObject = function(opt_inclu
  */
 proto.api.commons.org.License.Permission.toObject = function(includeInstance, msg) {
   var f, obj = {
-    permission: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    enabled: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    featuresList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    name: jspb.Message.getFieldWithDefault(msg, 4, "")
+permission: jspb.Message.getFieldWithDefault(msg, 1, 0),
+enabled: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+featuresList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+name: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {

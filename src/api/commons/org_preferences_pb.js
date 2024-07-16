@@ -82,9 +82,9 @@ proto.api.commons.LocalePreferences.prototype.toObject = function(opt_includeIns
  */
 proto.api.commons.LocalePreferences.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languageTag: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    useScriptDirectionRightToLeft: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    defaultCurrency: jspb.Message.getFieldWithDefault(msg, 3, "")
+languageTag: jspb.Message.getFieldWithDefault(msg, 1, ""),
+useScriptDirectionRightToLeft: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+defaultCurrency: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {

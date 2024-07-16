@@ -893,7 +893,7 @@ proto.api.v1alpha1.org.skills.CreateSkillGroupRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.org.skills.CreateSkillGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroup: (f = msg.getSkillGroup()) && api_commons_org_skill_group_pb.SkillGroup.toObject(includeInstance, f)
+skillGroup: (f = msg.getSkillGroup()) && api_commons_org_skill_group_pb.SkillGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1044,7 +1044,7 @@ proto.api.v1alpha1.org.skills.CreateSkillGroupResponse.prototype.toObject = func
  */
 proto.api.v1alpha1.org.skills.CreateSkillGroupResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
+skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1181,7 +1181,7 @@ proto.api.v1alpha1.org.skills.ListSkillGroupsRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.org.skills.ListSkillGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldMaskList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+fieldMaskList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1337,7 +1337,7 @@ proto.api.v1alpha1.org.skills.ListSkillGroupsResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.org.skills.ListSkillGroupsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupsList: jspb.Message.toObjectList(msg.getSkillGroupsList(),
+skillGroupsList: jspb.Message.toObjectList(msg.getSkillGroupsList(),
     api_commons_org_skill_group_pb.SkillGroup.toObject, includeInstance)
   };
 
@@ -1497,8 +1497,8 @@ proto.api.v1alpha1.org.skills.UpdateSkillGroupRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.org.skills.UpdateSkillGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroup: (f = msg.getSkillGroup()) && api_commons_org_skill_group_pb.SkillGroup.toObject(includeInstance, f),
-    fieldMaskList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+skillGroup: (f = msg.getSkillGroup()) && api_commons_org_skill_group_pb.SkillGroup.toObject(includeInstance, f),
+fieldMaskList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1805,8 +1805,8 @@ proto.api.v1alpha1.org.skills.GetSkillGroupRequest.prototype.toObject = function
  */
 proto.api.v1alpha1.org.skills.GetSkillGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    fieldMaskList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+fieldMaskList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1984,7 +1984,7 @@ proto.api.v1alpha1.org.skills.GetSkillGroupResponse.prototype.toObject = functio
  */
 proto.api.v1alpha1.org.skills.GetSkillGroupResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroup: (f = msg.getSkillGroup()) && api_commons_org_skill_group_pb.SkillGroup.toObject(includeInstance, f)
+skillGroup: (f = msg.getSkillGroup()) && api_commons_org_skill_group_pb.SkillGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2135,7 +2135,7 @@ proto.api.v1alpha1.org.skills.DeleteSkillGroupRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.org.skills.DeleteSkillGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
+skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2366,7 +2366,7 @@ proto.api.v1alpha1.org.skills.RemoveSkillFromAllGroupsRequest.prototype.toObject
  */
 proto.api.v1alpha1.org.skills.RemoveSkillFromAllGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+skillSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2604,8 +2604,8 @@ proto.api.v1alpha1.org.skills.AssignSkillGroupsRequest.prototype.toObject = func
  */
 proto.api.v1alpha1.org.skills.AssignSkillGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
+skillGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2891,8 +2891,8 @@ proto.api.v1alpha1.org.skills.RevokeSkillGroupsRequest.prototype.toObject = func
  */
 proto.api.v1alpha1.org.skills.RevokeSkillGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
+skillGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3171,7 +3171,7 @@ proto.api.v1alpha1.org.skills.GetUserSkillGroupsRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.org.skills.GetUserSkillGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3308,7 +3308,7 @@ proto.api.v1alpha1.org.skills.GetUserSkillGroupsResponse.prototype.toObject = fu
  */
 proto.api.v1alpha1.org.skills.GetUserSkillGroupsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+skillGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3457,7 +3457,7 @@ proto.api.v1alpha1.org.skills.GetUserSkillsRequest.prototype.toObject = function
  */
 proto.api.v1alpha1.org.skills.GetUserSkillsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3594,7 +3594,7 @@ proto.api.v1alpha1.org.skills.GetUserSkillsResponse.prototype.toObject = functio
  */
 proto.api.v1alpha1.org.skills.GetUserSkillsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillSetsList: jspb.Message.toObjectList(msg.getSkillSetsList(),
+skillSetsList: jspb.Message.toObjectList(msg.getSkillSetsList(),
     api_commons_org_skill_group_pb.SkillSet.toObject, includeInstance)
   };
 
@@ -3747,7 +3747,7 @@ proto.api.v1alpha1.org.skills.GetSkillGroupMembersRequest.prototype.toObject = f
  */
 proto.api.v1alpha1.org.skills.GetSkillGroupMembersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
+skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3884,7 +3884,7 @@ proto.api.v1alpha1.org.skills.GetSkillGroupMembersResponse.prototype.toObject = 
  */
 proto.api.v1alpha1.org.skills.GetSkillGroupMembersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+userIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4141,7 +4141,7 @@ proto.api.v1alpha1.org.skills.ListSkillGroupsMembersResponse.prototype.toObject 
  */
 proto.api.v1alpha1.org.skills.ListSkillGroupsMembersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupMembersList: jspb.Message.toObjectList(msg.getSkillGroupMembersList(),
+skillGroupMembersList: jspb.Message.toObjectList(msg.getSkillGroupMembersList(),
     proto.api.v1alpha1.org.skills.SkillGroupMembers.toObject, includeInstance)
   };
 
@@ -4301,8 +4301,8 @@ proto.api.v1alpha1.org.skills.SkillGroupMembers.prototype.toObject = function(op
  */
 proto.api.v1alpha1.org.skills.SkillGroupMembers.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+userIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4487,8 +4487,8 @@ proto.api.v1alpha1.org.skills.UpdateUsersOnSkillGroupRequest.prototype.toObject 
  */
 proto.api.v1alpha1.org.skills.UpdateUsersOnSkillGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+userIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4875,7 +4875,7 @@ proto.api.v1alpha1.org.skills.ListSkillsForCurrentAgentResponse.prototype.toObje
  */
 proto.api.v1alpha1.org.skills.ListSkillsForCurrentAgentResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillsList: jspb.Message.toObjectList(msg.getSkillsList(),
+skillsList: jspb.Message.toObjectList(msg.getSkillsList(),
     proto.api.v1alpha1.org.skills.ListSkillsForCurrentAgentResponse.AgentSkill.toObject, includeInstance)
   };
 
@@ -4990,9 +4990,9 @@ proto.api.v1alpha1.org.skills.ListSkillsForCurrentAgentResponse.AgentSkill.proto
  */
 proto.api.v1alpha1.org.skills.ListSkillsForCurrentAgentResponse.AgentSkill.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentSkillSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+agentSkillSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5319,7 +5319,7 @@ proto.api.v1alpha1.org.skills.GetAgentSkillsResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.org.skills.GetAgentSkillsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : []
+skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -5561,7 +5561,7 @@ proto.api.v1alpha1.org.skills.ListAssignedSkillGroupsResponse.prototype.toObject
  */
 proto.api.v1alpha1.org.skills.ListAssignedSkillGroupsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupsList: jspb.Message.toObjectList(msg.getSkillGroupsList(),
+skillGroupsList: jspb.Message.toObjectList(msg.getSkillGroupsList(),
     api_commons_org_skill_group_pb.SkillGroup.toObject, includeInstance)
   };
 
@@ -5721,7 +5721,7 @@ proto.api.v1alpha1.org.skills.AssignOwnSkillGroupsRequest.prototype.toObject = f
  */
 proto.api.v1alpha1.org.skills.AssignOwnSkillGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+skillGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5978,7 +5978,7 @@ proto.api.v1alpha1.org.skills.RevokeOwnSkillGroupsRequest.prototype.toObject = f
  */
 proto.api.v1alpha1.org.skills.RevokeOwnSkillGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+skillGroupIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {

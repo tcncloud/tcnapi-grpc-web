@@ -123,12 +123,12 @@ proto.api.commons.ContactManagerEntry.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.ContactManagerEntry.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    contactManagerEntryListId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    key: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+contactManagerEntryId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+contactManagerEntryListId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+key: jspb.Message.getFieldWithDefault(msg, 3, ""),
+value: jspb.Message.getFieldWithDefault(msg, 4, ""),
+type: jspb.Message.getFieldWithDefault(msg, 5, ""),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -431,14 +431,14 @@ proto.api.commons.ContactManagerList.prototype.toObject = function(opt_includeIn
  */
 proto.api.commons.ContactManagerList.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    projectId: jspb.Message.getFieldWithDefault(msg, 3, "0"),
-    fileName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    listDetailsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    ttl: jspb.Message.getFieldWithDefault(msg, 7, "0"),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+contactManagerListId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+projectId: jspb.Message.getFieldWithDefault(msg, 3, "0"),
+fileName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+listDetailsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+ttl: jspb.Message.getFieldWithDefault(msg, 7, "0"),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -811,8 +811,8 @@ proto.api.commons.ContactManagerEntryVal.prototype.toObject = function(opt_inclu
  */
 proto.api.commons.ContactManagerEntryVal.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 2, "")
+type: jspb.Message.getFieldWithDefault(msg, 1, ""),
+value: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

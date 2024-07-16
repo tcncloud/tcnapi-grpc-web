@@ -111,19 +111,19 @@ proto.api.commons.SimpleSmsMamData.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.SimpleSmsMamData.toObject = function(includeInstance, msg) {
   var f, obj = {
-    src: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    dst: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    msg: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    smsGroupSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    smsTaskSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    isTollFree: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    isTimeZone: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    providerName: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    huntGroupSid: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    clientSid: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    simpleSmsMamMetaDataList: jspb.Message.toObjectList(msg.getSimpleSmsMamMetaDataList(),
+src: jspb.Message.getFieldWithDefault(msg, 1, ""),
+dst: jspb.Message.getFieldWithDefault(msg, 2, ""),
+msg: jspb.Message.getFieldWithDefault(msg, 3, ""),
+smsGroupSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
+smsTaskSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+isTollFree: jspb.Message.getFieldWithDefault(msg, 6, ""),
+isTimeZone: jspb.Message.getFieldWithDefault(msg, 7, ""),
+providerName: jspb.Message.getFieldWithDefault(msg, 8, ""),
+huntGroupSid: jspb.Message.getFieldWithDefault(msg, 9, 0),
+clientSid: jspb.Message.getFieldWithDefault(msg, 10, 0),
+simpleSmsMamMetaDataList: jspb.Message.toObjectList(msg.getSimpleSmsMamMetaDataList(),
     proto.api.commons.SimpleSmsMamKeyValue.toObject, includeInstance),
-    dstCountryCode: jspb.Message.getFieldWithDefault(msg, 12, 0)
+dstCountryCode: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -594,8 +594,8 @@ proto.api.commons.SimpleSmsMamKeyValue.prototype.toObject = function(opt_include
  */
 proto.api.commons.SimpleSmsMamKeyValue.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 2, "")
+key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+value: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

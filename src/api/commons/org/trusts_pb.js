@@ -179,16 +179,16 @@ proto.api.commons.org.Trust.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.org.Trust.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trustId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    grantor: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    grantee: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    permissionsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
+trustId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+grantor: jspb.Message.getFieldWithDefault(msg, 2, ""),
+grantee: jspb.Message.getFieldWithDefault(msg, 3, ""),
+name: jspb.Message.getFieldWithDefault(msg, 4, ""),
+description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+permissionsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
     api_commons_org_labels_pb.Label.toObject, includeInstance),
-    status: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    deleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
+status: jspb.Message.getFieldWithDefault(msg, 8, 0),
+deleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -600,8 +600,8 @@ proto.api.commons.org.TrustGroup.prototype.toObject = function(opt_includeInstan
  */
 proto.api.commons.org.TrustGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    grantor: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    labeledPermissionsList: jspb.Message.toObjectList(msg.getLabeledPermissionsList(),
+grantor: jspb.Message.getFieldWithDefault(msg, 1, ""),
+labeledPermissionsList: jspb.Message.toObjectList(msg.getLabeledPermissionsList(),
     proto.api.commons.org.TrustGroup.LabeledPermissions.toObject, includeInstance)
   };
 
@@ -734,8 +734,8 @@ proto.api.commons.org.TrustGroup.LabeledPermissions.prototype.toObject = functio
  */
 proto.api.commons.org.TrustGroup.LabeledPermissions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    permissionsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
+permissionsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
     api_commons_org_labels_pb.Label.toObject, includeInstance)
   };
 
@@ -994,9 +994,9 @@ proto.api.commons.org.TrustFilter.prototype.toObject = function(opt_includeInsta
  */
 proto.api.commons.org.TrustFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    grantor: (f = msg.getGrantor()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    grantee: (f = msg.getGrantee()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    statusFilter: (f = msg.getStatusFilter()) && proto.api.commons.org.TrustFilter.StatusFilter.toObject(includeInstance, f)
+grantor: (f = msg.getGrantor()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+grantee: (f = msg.getGrantee()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+statusFilter: (f = msg.getStatusFilter()) && proto.api.commons.org.TrustFilter.StatusFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1143,7 +1143,7 @@ proto.api.commons.org.TrustFilter.StatusFilter.prototype.toObject = function(opt
  */
 proto.api.commons.org.TrustFilter.StatusFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+valuesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {

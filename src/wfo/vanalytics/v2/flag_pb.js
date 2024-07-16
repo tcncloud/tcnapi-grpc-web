@@ -283,7 +283,7 @@ proto.wfo.vanalytics.v2.CreateFlagRequest.prototype.toObject = function(opt_incl
  */
 proto.wfo.vanalytics.v2.CreateFlagRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flag: (f = msg.getFlag()) && proto.wfo.vanalytics.v2.Flag.toObject(includeInstance, f)
+flag: (f = msg.getFlag()) && proto.wfo.vanalytics.v2.Flag.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -466,16 +466,16 @@ proto.wfo.vanalytics.v2.ListFlagsRequest.prototype.toObject = function(opt_inclu
  */
 proto.wfo.vanalytics.v2.ListFlagsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    orderBy: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    filterSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    flagSidsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    readMask: (f = msg.getReadMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    namesList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-    prioritiesList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
-    mustReviewList: (f = jspb.Message.getRepeatedBooleanField(msg, 10)) == null ? undefined : f,
-    mustNotifyList: (f = jspb.Message.getRepeatedBooleanField(msg, 11)) == null ? undefined : f
+pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+orderBy: jspb.Message.getFieldWithDefault(msg, 3, ""),
+pageToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
+filterSid: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+flagSidsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+readMask: (f = msg.getReadMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+namesList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
+prioritiesList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
+mustReviewList: (f = jspb.Message.getRepeatedBooleanField(msg, 10)) == null ? undefined : f,
+mustNotifyList: (f = jspb.Message.getRepeatedBooleanField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1015,10 +1015,10 @@ proto.wfo.vanalytics.v2.ListFlagsResponse.prototype.toObject = function(opt_incl
  */
 proto.wfo.vanalytics.v2.ListFlagsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    flagsList: jspb.Message.toObjectList(msg.getFlagsList(),
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
+flagsList: jspb.Message.toObjectList(msg.getFlagsList(),
     proto.wfo.vanalytics.v2.Flag.toObject, includeInstance),
-    total: jspb.Message.getFieldWithDefault(msg, 3, 0)
+total: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1228,9 +1228,9 @@ proto.wfo.vanalytics.v2.UpdateFlagRequest.prototype.toObject = function(opt_incl
  */
 proto.wfo.vanalytics.v2.UpdateFlagRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    flag: (f = msg.getFlag()) && proto.wfo.vanalytics.v2.Flag.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+flag: (f = msg.getFlag()) && proto.wfo.vanalytics.v2.Flag.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1460,8 +1460,8 @@ proto.wfo.vanalytics.v2.DeleteFlagRequest.prototype.toObject = function(opt_incl
  */
 proto.wfo.vanalytics.v2.DeleteFlagRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    pb_return: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+pb_return: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -1620,7 +1620,7 @@ proto.wfo.vanalytics.v2.DeleteFlagResponse.prototype.toObject = function(opt_inc
  */
 proto.wfo.vanalytics.v2.DeleteFlagResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flag: (f = msg.getFlag()) && proto.wfo.vanalytics.v2.Flag.toObject(includeInstance, f)
+flag: (f = msg.getFlag()) && proto.wfo.vanalytics.v2.Flag.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1797,8 +1797,8 @@ proto.wfo.vanalytics.v2.GetFlagRequest.prototype.toObject = function(opt_include
  */
 proto.wfo.vanalytics.v2.GetFlagRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    flagSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+flagSid: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2000,18 +2000,18 @@ proto.wfo.vanalytics.v2.Flag.prototype.toObject = function(opt_includeInstance) 
  */
 proto.wfo.vanalytics.v2.Flag.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    reviewGroupId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    notifyGroupId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    priority: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    version: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
+flagSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+reviewGroupId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+notifyGroupId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+priority: jspb.Message.getFieldWithDefault(msg, 6, 0),
+version: jspb.Message.getFieldWithDefault(msg, 7, 0),
+filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
     wfo_vanalytics_v2_filter_pb.Filter.toObject, includeInstance),
-    mustReview: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    mustNotify: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    boolExpr: (f = msg.getBoolExpr()) && proto.wfo.vanalytics.v2.Flag.BoolExpr.toObject(includeInstance, f),
-    dnclListList: jspb.Message.toObjectList(msg.getDnclListList(),
+mustReview: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+mustNotify: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+boolExpr: (f = msg.getBoolExpr()) && proto.wfo.vanalytics.v2.Flag.BoolExpr.toObject(includeInstance, f),
+dnclListList: jspb.Message.toObjectList(msg.getDnclListList(),
     wfo_vanalytics_v2_dncl_list_pb.DnclList.toObject, includeInstance)
   };
 
@@ -2247,12 +2247,12 @@ proto.wfo.vanalytics.v2.Flag.BoolExpr.prototype.toObject = function(opt_includeI
  */
 proto.wfo.vanalytics.v2.Flag.BoolExpr.toObject = function(includeInstance, msg) {
   var f, obj = {
-    andList: jspb.Message.toObjectList(msg.getAndList(),
+andList: jspb.Message.toObjectList(msg.getAndList(),
     proto.wfo.vanalytics.v2.Flag.BoolExpr.toObject, includeInstance),
-    orList: jspb.Message.toObjectList(msg.getOrList(),
+orList: jspb.Message.toObjectList(msg.getOrList(),
     proto.wfo.vanalytics.v2.Flag.BoolExpr.toObject, includeInstance),
-    filter: (f = msg.getFilter()) && proto.wfo.vanalytics.v2.Flag.BoolExpr.Filter.toObject(includeInstance, f),
-    not: (f = msg.getNot()) && proto.wfo.vanalytics.v2.Flag.BoolExpr.toObject(includeInstance, f)
+filter: (f = msg.getFilter()) && proto.wfo.vanalytics.v2.Flag.BoolExpr.Filter.toObject(includeInstance, f),
+not: (f = msg.getNot()) && proto.wfo.vanalytics.v2.Flag.BoolExpr.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2405,7 +2405,7 @@ proto.wfo.vanalytics.v2.Flag.BoolExpr.Filter.prototype.toObject = function(opt_i
  */
 proto.wfo.vanalytics.v2.Flag.BoolExpr.Filter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    filterSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+filterSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {

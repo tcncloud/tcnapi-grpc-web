@@ -471,13 +471,13 @@ proto.api.commons.AgentSession.prototype.toObject = function(opt_includeInstance
  */
 proto.api.commons.AgentSession.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    tenantSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    sessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    orgId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    regionId: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 8, "")
+agentSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+tenantSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+sessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
+orgId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+regionId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+userId: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -781,10 +781,10 @@ proto.api.commons.CallerSid.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.CallerSid.toObject = function(includeInstance, msg) {
   var f, obj = {
-    callerSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    tenantSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    orgId: jspb.Message.getFieldWithDefault(msg, 4, "")
+callerSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+type: jspb.Message.getFieldWithDefault(msg, 2, 0),
+tenantSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+orgId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -2380,12 +2380,12 @@ proto.api.commons.TransferMember.prototype.toObject = function(opt_includeInstan
  */
 proto.api.commons.TransferMember.toObject = function(includeInstance, msg) {
   var f, obj = {
-    identifier: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    displayLabel: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    memberType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    agentSession: (f = msg.getAgentSession()) && proto.api.commons.AgentSession.toObject(includeInstance, f),
-    callerSid: (f = msg.getCallerSid()) && proto.api.commons.CallerSid.toObject(includeInstance, f),
-    outboundId: jspb.Message.getFieldWithDefault(msg, 102, "")
+identifier: jspb.Message.getFieldWithDefault(msg, 1, ""),
+displayLabel: jspb.Message.getFieldWithDefault(msg, 2, ""),
+memberType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+agentSession: (f = msg.getAgentSession()) && proto.api.commons.AgentSession.toObject(includeInstance, f),
+callerSid: (f = msg.getCallerSid()) && proto.api.commons.CallerSid.toObject(includeInstance, f),
+outboundId: (f = jspb.Message.getField(msg, 102)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2747,9 +2747,9 @@ proto.api.commons.AgentAlert.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.commons.AgentAlert.toObject = function(includeInstance, msg) {
   var f, obj = {
-    backofficeMessage: (f = msg.getBackofficeMessage()) && proto.api.commons.AgentBackofficeMessageAlert.toObject(includeInstance, f),
-    directedCallRinging: (f = msg.getDirectedCallRinging()) && proto.api.commons.AgentDirectedCallRingingAlert.toObject(includeInstance, f),
-    directedCallHangup: (f = msg.getDirectedCallHangup()) && proto.api.commons.AgentDirectedCallHangupAlert.toObject(includeInstance, f)
+backofficeMessage: (f = msg.getBackofficeMessage()) && proto.api.commons.AgentBackofficeMessageAlert.toObject(includeInstance, f),
+directedCallRinging: (f = msg.getDirectedCallRinging()) && proto.api.commons.AgentDirectedCallRingingAlert.toObject(includeInstance, f),
+directedCallHangup: (f = msg.getDirectedCallHangup()) && proto.api.commons.AgentDirectedCallHangupAlert.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3000,11 +3000,11 @@ proto.api.commons.AgentBackofficeMessageAlert.prototype.toObject = function(opt_
  */
 proto.api.commons.AgentBackofficeMessageAlert.toObject = function(includeInstance, msg) {
   var f, obj = {
-    expireDuration: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    timestamp: (f = msg.getTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    targetAgentSession: (f = msg.getTargetAgentSession()) && proto.api.commons.AgentSession.toObject(includeInstance, f),
-    message: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 5, "")
+expireDuration: jspb.Message.getFieldWithDefault(msg, 1, 0),
+timestamp: (f = msg.getTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+targetAgentSession: (f = msg.getTargetAgentSession()) && proto.api.commons.AgentSession.toObject(includeInstance, f),
+message: jspb.Message.getFieldWithDefault(msg, 4, ""),
+id: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -3292,13 +3292,13 @@ proto.api.commons.AgentDirectedCallRingingAlert.prototype.toObject = function(op
  */
 proto.api.commons.AgentDirectedCallRingingAlert.toObject = function(includeInstance, msg) {
   var f, obj = {
-    expireDuration: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    timestamp: (f = msg.getTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    targetAgentSession: (f = msg.getTargetAgentSession()) && proto.api.commons.AgentSession.toObject(includeInstance, f),
-    callerSid: (f = msg.getCallerSid()) && proto.api.commons.CallerSid.toObject(includeInstance, f),
-    callerId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    destinationNumber: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 7, "")
+expireDuration: jspb.Message.getFieldWithDefault(msg, 1, 0),
+timestamp: (f = msg.getTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+targetAgentSession: (f = msg.getTargetAgentSession()) && proto.api.commons.AgentSession.toObject(includeInstance, f),
+callerSid: (f = msg.getCallerSid()) && proto.api.commons.CallerSid.toObject(includeInstance, f),
+callerId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+destinationNumber: jspb.Message.getFieldWithDefault(msg, 6, ""),
+id: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -3665,11 +3665,11 @@ proto.api.commons.AgentDirectedCallHangupAlert.prototype.toObject = function(opt
  */
 proto.api.commons.AgentDirectedCallHangupAlert.toObject = function(includeInstance, msg) {
   var f, obj = {
-    expireDuration: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    timestamp: (f = msg.getTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    targetAgentSession: (f = msg.getTargetAgentSession()) && proto.api.commons.AgentSession.toObject(includeInstance, f),
-    callerSid: (f = msg.getCallerSid()) && proto.api.commons.CallerSid.toObject(includeInstance, f),
-    id: jspb.Message.getFieldWithDefault(msg, 5, "")
+expireDuration: jspb.Message.getFieldWithDefault(msg, 1, 0),
+timestamp: (f = msg.getTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+targetAgentSession: (f = msg.getTargetAgentSession()) && proto.api.commons.AgentSession.toObject(includeInstance, f),
+callerSid: (f = msg.getCallerSid()) && proto.api.commons.CallerSid.toObject(includeInstance, f),
+id: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -3985,26 +3985,26 @@ proto.api.commons.AgentState.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.commons.AgentState.toObject = function(includeInstance, msg) {
   var f, obj = {
-    status: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    statusDesc: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    paused: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    queue: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    currentSessionId: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    lastStatusChange: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    monitoring: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    callsCount: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    lastSipCode: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    agentPeerIsLostCall: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    disabled: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
-    callerWasSuspended: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-    transferMembersList: jspb.Message.toObjectList(msg.getTransferMembersList(),
+status: jspb.Message.getFieldWithDefault(msg, 2, 0),
+statusDesc: jspb.Message.getFieldWithDefault(msg, 3, 0),
+paused: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+queue: jspb.Message.getFieldWithDefault(msg, 5, ""),
+currentSessionId: jspb.Message.getFieldWithDefault(msg, 6, 0),
+lastStatusChange: jspb.Message.getFieldWithDefault(msg, 7, 0),
+monitoring: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+callsCount: jspb.Message.getFieldWithDefault(msg, 9, 0),
+lastSipCode: jspb.Message.getFieldWithDefault(msg, 10, 0),
+agentPeerIsLostCall: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+disabled: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
+callerWasSuspended: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
+transferMembersList: jspb.Message.toObjectList(msg.getTransferMembersList(),
     proto.api.commons.TransferMember.toObject, includeInstance),
-    agentPeerIsDirectToAgent: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
-    userId: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    agentSid: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 18, 0),
-    agentIsMuted: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
-    uuid: jspb.Message.getFieldWithDefault(msg, 20, "")
+agentPeerIsDirectToAgent: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
+userId: jspb.Message.getFieldWithDefault(msg, 16, ""),
+agentSid: jspb.Message.getFieldWithDefault(msg, 17, 0),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 18, 0),
+agentIsMuted: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
+uuid: jspb.Message.getFieldWithDefault(msg, 20, "")
   };
 
   if (includeInstance) {

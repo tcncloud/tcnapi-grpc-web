@@ -84,11 +84,11 @@ proto.api.commons.org.IdpClient.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.commons.org.IdpClient.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idpClientId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    secret: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    redirectUrisList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    trustedPeersList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    name: jspb.Message.getFieldWithDefault(msg, 5, "")
+idpClientId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+secret: jspb.Message.getFieldWithDefault(msg, 2, ""),
+redirectUrisList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+trustedPeersList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+name: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {

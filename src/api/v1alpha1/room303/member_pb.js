@@ -255,9 +255,9 @@ proto.api.v1alpha1.room303.AddRoomMemberRequest.prototype.toObject = function(op
  */
 proto.api.v1alpha1.room303.AddRoomMemberRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    admin: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+admin: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -445,8 +445,8 @@ proto.api.v1alpha1.room303.RemoveRoomMemberRequest.prototype.toObject = function
  */
 proto.api.v1alpha1.room303.RemoveRoomMemberRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    roomId: jspb.Message.getFieldWithDefault(msg, 2, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+roomId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -706,7 +706,7 @@ proto.api.v1alpha1.room303.ListRoomMembersRequest.prototype.toObject = function(
  */
 proto.api.v1alpha1.room303.ListRoomMembersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 1, "")
+roomId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -843,7 +843,7 @@ proto.api.v1alpha1.room303.ListRoomMembersResponse.prototype.toObject = function
  */
 proto.api.v1alpha1.room303.ListRoomMembersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    membersList: jspb.Message.toObjectList(msg.getMembersList(),
+membersList: jspb.Message.toObjectList(msg.getMembersList(),
     api_commons_room303_pb.Member.toObject, includeInstance)
   };
 
@@ -996,8 +996,8 @@ proto.api.v1alpha1.room303.SetAdminForRoomMemberRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.room303.SetAdminForRoomMemberRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
+roomId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1257,7 +1257,7 @@ proto.api.v1alpha1.room303.JoinRoomRequest.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.room303.JoinRoomRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 1, "")
+roomId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1387,8 +1387,8 @@ proto.api.v1alpha1.room303.GetRoomMemberRequest.prototype.toObject = function(op
  */
 proto.api.v1alpha1.room303.GetRoomMemberRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roomId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 3, "")
+roomId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+userId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {

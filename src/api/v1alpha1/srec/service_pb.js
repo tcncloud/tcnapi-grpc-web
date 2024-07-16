@@ -215,8 +215,8 @@ proto.api.v1alpha1.srec.ListScreenRecordingsRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.srec.ListScreenRecordingsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+pageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -382,8 +382,8 @@ proto.api.v1alpha1.srec.ListScreenRecordingsResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.srec.ListScreenRecordingsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    recordingsList: jspb.Message.toObjectList(msg.getRecordingsList(),
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
+recordingsList: jspb.Message.toObjectList(msg.getRecordingsList(),
     proto.api.v1alpha1.srec.ScreenRecording.toObject, includeInstance)
   };
 
@@ -565,12 +565,12 @@ proto.api.v1alpha1.srec.ScreenRecording.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.srec.ScreenRecording.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sessionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    agentFirstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    agentLastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    audioTime: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    audioBytes: jspb.Message.getFieldWithDefault(msg, 7, 0)
+sessionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+agentFirstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+agentLastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+audioTime: jspb.Message.getFieldWithDefault(msg, 6, 0),
+audioBytes: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -866,7 +866,7 @@ proto.api.v1alpha1.srec.GetScreenRecordingURLRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.srec.GetScreenRecordingURLRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sessionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+sessionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -996,7 +996,7 @@ proto.api.v1alpha1.srec.GetScreenRecordingURLResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.srec.GetScreenRecordingURLResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: jspb.Message.getFieldWithDefault(msg, 1, "")
+url: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1126,7 +1126,7 @@ proto.api.v1alpha1.srec.DeleteScreenRecordingRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.srec.DeleteScreenRecordingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sessionId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+sessionId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {

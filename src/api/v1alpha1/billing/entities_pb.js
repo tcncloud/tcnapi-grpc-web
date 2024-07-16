@@ -246,7 +246,7 @@ proto.api.v1alpha1.billing.GetBillingPlanReq.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.billing.GetBillingPlanReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, "")
+orgId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -376,7 +376,7 @@ proto.api.v1alpha1.billing.GetBillingPlanRes.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.billing.GetBillingPlanRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlan: (f = msg.getBillingPlan()) && api_commons_billing_detail_pb.Plan.toObject(includeInstance, f)
+billingPlan: (f = msg.getBillingPlan()) && api_commons_billing_detail_pb.Plan.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -534,9 +534,9 @@ proto.api.v1alpha1.billing.UpdateBillingPlanReq.prototype.toObject = function(op
  */
 proto.api.v1alpha1.billing.UpdateBillingPlanReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingDetailsList: jspb.Message.toObjectList(msg.getBillingDetailsList(),
+billingDetailsList: jspb.Message.toObjectList(msg.getBillingDetailsList(),
     api_commons_billing_detail_pb.Detail.toObject, includeInstance),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, "")
+orgId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -717,7 +717,7 @@ proto.api.v1alpha1.billing.UpdateBillingPlanRes.prototype.toObject = function(op
  */
 proto.api.v1alpha1.billing.UpdateBillingPlanRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlan: (f = msg.getBillingPlan()) && api_commons_billing_detail_pb.Plan.toObject(includeInstance, f)
+billingPlan: (f = msg.getBillingPlan()) && api_commons_billing_detail_pb.Plan.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -868,10 +868,10 @@ proto.api.v1alpha1.billing.GetInvoiceReq.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.billing.GetInvoiceReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoiceDate: (f = msg.getInvoiceDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    format: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    invoiceFormat: jspb.Message.getFieldWithDefault(msg, 4, 0)
+invoiceDate: (f = msg.getInvoiceDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+format: jspb.Message.getFieldWithDefault(msg, 3, 0),
+invoiceFormat: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1151,12 +1151,12 @@ proto.api.v1alpha1.billing.GetInvoiceRes.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.billing.GetInvoiceRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoice: (f = msg.getInvoice()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
-    proto: (f = msg.getProto()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
-    csvUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    invoiceProto: (f = msg.getInvoiceProto()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
-    invoiceCsvUrl: jspb.Message.getFieldWithDefault(msg, 101, ""),
-    billingCycle: jspb.Message.getFieldWithDefault(msg, 4, "")
+invoice: (f = msg.getInvoice()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
+proto: (f = msg.getProto()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
+csvUrl: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+invoiceProto: (f = msg.getInvoiceProto()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
+invoiceCsvUrl: (f = jspb.Message.getField(msg, 101)) == null ? undefined : f,
+billingCycle: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1530,10 +1530,10 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.prototype.toObject = functi
  */
 proto.api.v1alpha1.billing.ExportGeneratedInvoiceReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invoiceDate: (f = msg.getInvoiceDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    format: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    invoiceFormat: jspb.Message.getFieldWithDefault(msg, 4, 0)
+invoiceDate: (f = msg.getInvoiceDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+format: jspb.Message.getFieldWithDefault(msg, 3, 0),
+invoiceFormat: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1813,11 +1813,11 @@ proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.prototype.toObject = functi
  */
 proto.api.v1alpha1.billing.ExportGeneratedInvoiceRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    proto: (f = msg.getProto()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
-    csvUrl: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    invoiceProto: (f = msg.getInvoiceProto()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
-    invoiceCsvUrl: jspb.Message.getFieldWithDefault(msg, 101, ""),
-    billingCycle: jspb.Message.getFieldWithDefault(msg, 4, "")
+proto: (f = msg.getProto()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
+csvUrl: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+invoiceProto: (f = msg.getInvoiceProto()) && api_commons_billing_invoice_pb.Invoice.toObject(includeInstance, f),
+invoiceCsvUrl: (f = jspb.Message.getField(msg, 101)) == null ? undefined : f,
+billingCycle: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {

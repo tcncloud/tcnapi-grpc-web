@@ -556,9 +556,9 @@ proto.services.billing.v1alpha3.ApplyBillingPlanDraftRequest.prototype.toObject 
  */
 proto.services.billing.v1alpha3.ApplyBillingPlanDraftRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    orgIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+orgIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -793,7 +793,7 @@ proto.services.billing.v1alpha3.ApplyBillingPlanDraftResponse.prototype.toObject
  */
 proto.services.billing.v1alpha3.ApplyBillingPlanDraftResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+billingPlanIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -942,8 +942,8 @@ proto.services.billing.v1alpha3.CreateBillingPlanRequest.prototype.toObject = fu
  */
 proto.services.billing.v1alpha3.CreateBillingPlanRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    billingPlan: (f = msg.getBillingPlan()) && services_billing_entities_v1alpha3_plan_pb.BillingPlan.toObject(includeInstance, f)
+billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+billingPlan: (f = msg.getBillingPlan()) && services_billing_entities_v1alpha3_plan_pb.BillingPlan.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1123,7 +1123,7 @@ proto.services.billing.v1alpha3.CreateBillingPlanResponse.prototype.toObject = f
  */
 proto.services.billing.v1alpha3.CreateBillingPlanResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, "")
+billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1253,7 +1253,7 @@ proto.services.billing.v1alpha3.DeleteBillingPlanRequest.prototype.toObject = fu
  */
 proto.services.billing.v1alpha3.DeleteBillingPlanRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, "")
+billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1484,7 +1484,7 @@ proto.services.billing.v1alpha3.GetBillingPlanRequest.prototype.toObject = funct
  */
 proto.services.billing.v1alpha3.GetBillingPlanRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, "")
+billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1614,7 +1614,7 @@ proto.services.billing.v1alpha3.GetBillingPlanResponse.prototype.toObject = func
  */
 proto.services.billing.v1alpha3.GetBillingPlanResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlan: (f = msg.getBillingPlan()) && services_billing_entities_v1alpha3_plan_pb.BillingPlan.toObject(includeInstance, f)
+billingPlan: (f = msg.getBillingPlan()) && services_billing_entities_v1alpha3_plan_pb.BillingPlan.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1772,12 +1772,12 @@ proto.services.billing.v1alpha3.ListBillingPlansRequest.prototype.toObject = fun
  */
 proto.services.billing.v1alpha3.ListBillingPlansRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    filter: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fields: (f = msg.getFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    sortList: jspb.Message.toObjectList(msg.getSortList(),
+billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+filter: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fields: (f = msg.getFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+sortList: jspb.Message.toObjectList(msg.getSortList(),
     services_billing_v1alpha3_core_pb.Sort.toObject, includeInstance),
-    page: (f = msg.getPage()) && services_billing_v1alpha3_core_pb.Page.toObject(includeInstance, f)
+page: (f = msg.getPage()) && services_billing_v1alpha3_core_pb.Page.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2094,9 +2094,9 @@ proto.services.billing.v1alpha3.ListBillingPlansResponse.prototype.toObject = fu
  */
 proto.services.billing.v1alpha3.ListBillingPlansResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlansList: jspb.Message.toObjectList(msg.getBillingPlansList(),
+billingPlansList: jspb.Message.toObjectList(msg.getBillingPlansList(),
     services_billing_entities_v1alpha3_plan_pb.BillingPlan.toObject, includeInstance),
-    token: jspb.Message.getFieldWithDefault(msg, 2, "")
+token: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2277,9 +2277,9 @@ proto.services.billing.v1alpha3.UpdateBillingPlanRequest.prototype.toObject = fu
  */
 proto.services.billing.v1alpha3.UpdateBillingPlanRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    billingPlan: (f = msg.getBillingPlan()) && services_billing_entities_v1alpha3_plan_pb.BillingPlan.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+billingPlan: (f = msg.getBillingPlan()) && services_billing_entities_v1alpha3_plan_pb.BillingPlan.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2610,8 +2610,8 @@ proto.services.billing.v1alpha3.CreateRateDefinitionRequest.prototype.toObject =
  */
 proto.services.billing.v1alpha3.CreateRateDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha3_rates_pb.RateDefinition.toObject(includeInstance, f)
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha3_rates_pb.RateDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2791,7 +2791,7 @@ proto.services.billing.v1alpha3.CreateRateDefinitionResponse.prototype.toObject 
  */
 proto.services.billing.v1alpha3.CreateRateDefinitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2921,7 +2921,7 @@ proto.services.billing.v1alpha3.DeleteRateDefinitionRequest.prototype.toObject =
  */
 proto.services.billing.v1alpha3.DeleteRateDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3152,7 +3152,7 @@ proto.services.billing.v1alpha3.GetRateDefinitionRequest.prototype.toObject = fu
  */
 proto.services.billing.v1alpha3.GetRateDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3282,7 +3282,7 @@ proto.services.billing.v1alpha3.GetRateDefinitionResponse.prototype.toObject = f
  */
 proto.services.billing.v1alpha3.GetRateDefinitionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha3_rates_pb.RateDefinition.toObject(includeInstance, f)
+rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha3_rates_pb.RateDefinition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3440,12 +3440,12 @@ proto.services.billing.v1alpha3.ListRateDefinitionsRequest.prototype.toObject = 
  */
 proto.services.billing.v1alpha3.ListRateDefinitionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    filter: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fields: (f = msg.getFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    sortList: jspb.Message.toObjectList(msg.getSortList(),
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+filter: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fields: (f = msg.getFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+sortList: jspb.Message.toObjectList(msg.getSortList(),
     services_billing_v1alpha3_core_pb.Sort.toObject, includeInstance),
-    page: (f = msg.getPage()) && services_billing_v1alpha3_core_pb.Page.toObject(includeInstance, f)
+page: (f = msg.getPage()) && services_billing_v1alpha3_core_pb.Page.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3762,9 +3762,9 @@ proto.services.billing.v1alpha3.ListRateDefinitionsResponse.prototype.toObject =
  */
 proto.services.billing.v1alpha3.ListRateDefinitionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionsList: jspb.Message.toObjectList(msg.getRateDefinitionsList(),
+rateDefinitionsList: jspb.Message.toObjectList(msg.getRateDefinitionsList(),
     services_billing_entities_v1alpha3_rates_pb.RateDefinition.toObject, includeInstance),
-    token: jspb.Message.getFieldWithDefault(msg, 2, "")
+token: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3945,9 +3945,9 @@ proto.services.billing.v1alpha3.UpdateRateDefinitionRequest.prototype.toObject =
  */
 proto.services.billing.v1alpha3.UpdateRateDefinitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha3_rates_pb.RateDefinition.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+rateDefinitionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+rateDefinition: (f = msg.getRateDefinition()) && services_billing_entities_v1alpha3_rates_pb.RateDefinition.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

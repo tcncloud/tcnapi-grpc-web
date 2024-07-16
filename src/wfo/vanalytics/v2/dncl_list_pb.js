@@ -80,11 +80,11 @@ proto.wfo.vanalytics.v2.DnclList.prototype.toObject = function(opt_includeInstan
  */
 proto.wfo.vanalytics.v2.DnclList.toObject = function(includeInstance, msg) {
   var f, obj = {
-    listId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    contentType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    expirePeriod: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    expireOffset: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    agentResponseKey: jspb.Message.getFieldWithDefault(msg, 6, "")
+listId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+contentType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+expirePeriod: jspb.Message.getFieldWithDefault(msg, 4, 0),
+expireOffset: jspb.Message.getFieldWithDefault(msg, 5, 0),
+agentResponseKey: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {

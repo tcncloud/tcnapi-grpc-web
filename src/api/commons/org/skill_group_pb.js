@@ -106,11 +106,11 @@ proto.api.commons.org.SkillGroup.prototype.toObject = function(opt_includeInstan
  */
 proto.api.commons.org.SkillGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    skillSetsList: jspb.Message.toObjectList(msg.getSkillSetsList(),
+skillGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+skillSetsList: jspb.Message.toObjectList(msg.getSkillSetsList(),
     proto.api.commons.org.SkillSet.toObject, includeInstance)
   };
 
@@ -379,8 +379,8 @@ proto.api.commons.org.SkillSet.prototype.toObject = function(opt_includeInstance
  */
 proto.api.commons.org.SkillSet.toObject = function(includeInstance, msg) {
   var f, obj = {
-    proficiency: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    skillSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
+proficiency: jspb.Message.getFieldWithDefault(msg, 2, 0),
+skillSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {

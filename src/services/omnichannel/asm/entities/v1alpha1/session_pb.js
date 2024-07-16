@@ -170,10 +170,10 @@ proto.services.omnichannel.asm.entities.v1alpha1.AsmSession.prototype.toObject =
  */
 proto.services.omnichannel.asm.entities.v1alpha1.AsmSession.toObject = function(includeInstance, msg) {
   var f, obj = {
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    asmSessionStart: (f = msg.getAsmSessionStart()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    asmSessionEnd: (f = msg.getAsmSessionEnd()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    voiceSession: (f = msg.getVoiceSession()) && proto.services.omnichannel.asm.entities.v1alpha1.VoiceSession.toObject(includeInstance, f)
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+asmSessionStart: (f = msg.getAsmSessionStart()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+asmSessionEnd: (f = msg.getAsmSessionEnd()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+voiceSession: (f = msg.getVoiceSession()) && proto.services.omnichannel.asm.entities.v1alpha1.VoiceSession.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -453,9 +453,9 @@ proto.services.omnichannel.asm.entities.v1alpha1.VoiceSession.prototype.toObject
  */
 proto.services.omnichannel.asm.entities.v1alpha1.VoiceSession.toObject = function(includeInstance, msg) {
   var f, obj = {
-    voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    voiceSessionStart: (f = msg.getVoiceSessionStart()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    voiceSessionEnd: (f = msg.getVoiceSessionEnd()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+voiceSessionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+voiceSessionStart: (f = msg.getVoiceSessionStart()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+voiceSessionEnd: (f = msg.getVoiceSessionEnd()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -685,12 +685,12 @@ proto.services.omnichannel.asm.entities.v1alpha1.VoiceRegistration.prototype.toO
  */
 proto.services.omnichannel.asm.entities.v1alpha1.VoiceRegistration.toObject = function(includeInstance, msg) {
   var f, obj = {
-    username: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    dialUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    pstnPhone: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    defaultTimeZone: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    expirationTimestamp: jspb.Message.getFieldWithDefault(msg, 7, 0)
+username: jspb.Message.getFieldWithDefault(msg, 2, ""),
+password: jspb.Message.getFieldWithDefault(msg, 3, ""),
+dialUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
+pstnPhone: jspb.Message.getFieldWithDefault(msg, 5, ""),
+defaultTimeZone: jspb.Message.getFieldWithDefault(msg, 6, ""),
+expirationTimestamp: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -972,20 +972,20 @@ proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.prototype.toObje
  */
 proto.services.omnichannel.asm.entities.v1alpha1.AsmUserDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    agentSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    agentStatus: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    agentProfileGroupName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    currentConversationSid: jspb.Message.getFieldWithDefault(msg, 6, "0"),
-    averageCustomerWaitTimeSeconds: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    averageTimeToRespondSeconds: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    lastEventTime: (f = msg.getLastEventTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : [],
-    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    eventsList: jspb.Message.toObjectList(msg.getEventsList(),
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+agentSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+agentStatus: jspb.Message.getFieldWithDefault(msg, 4, 0),
+agentProfileGroupName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+currentConversationSid: jspb.Message.getFieldWithDefault(msg, 6, "0"),
+averageCustomerWaitTimeSeconds: jspb.Message.getFieldWithDefault(msg, 7, 0),
+averageTimeToRespondSeconds: jspb.Message.getFieldWithDefault(msg, 8, 0),
+lastEventTime: (f = msg.getLastEventTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : [],
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+eventsList: jspb.Message.toObjectList(msg.getEventsList(),
     proto.services.omnichannel.asm.entities.v1alpha1.DashboardAgentResponseEvent.toObject, includeInstance),
-    loginTime: (f = msg.getLoginTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+loginTime: (f = msg.getLoginTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1552,9 +1552,9 @@ proto.services.omnichannel.asm.entities.v1alpha1.DashboardAgentResponseEvent.pro
  */
 proto.services.omnichannel.asm.entities.v1alpha1.DashboardAgentResponseEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    responseTimeSeconds: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    time: (f = msg.getTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    isInitialAgentMessage: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+responseTimeSeconds: jspb.Message.getFieldWithDefault(msg, 1, 0),
+time: (f = msg.getTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+isInitialAgentMessage: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {

@@ -141,7 +141,7 @@ proto.api.commons.TimeZoneWrapper.prototype.toObject = function(opt_includeInsta
  */
 proto.api.commons.TimeZoneWrapper.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: jspb.Message.getFieldWithDefault(msg, 1, 0)
+value: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -271,7 +271,7 @@ proto.api.commons.DigitWrapper.prototype.toObject = function(opt_includeInstance
  */
 proto.api.commons.DigitWrapper.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: jspb.Message.getFieldWithDefault(msg, 1, 0)
+value: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {

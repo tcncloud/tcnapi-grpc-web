@@ -246,8 +246,8 @@ proto.api.commons.DeliveryTimes.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.commons.DeliveryTimes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deliveryTimesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    repeatFrequency: jspb.Message.getFieldWithDefault(msg, 3, 0)
+deliveryTimesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+repeatFrequency: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -434,8 +434,8 @@ proto.api.commons.DayOfWeekFilter.prototype.toObject = function(opt_includeInsta
  */
 proto.api.commons.DayOfWeekFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    daysOfWeeksList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    weeksOfMonthsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+daysOfWeeksList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+weeksOfMonthsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -643,8 +643,8 @@ proto.api.commons.DayOfMonthFilter.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.DayOfMonthFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dayOfMonthsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    isLastDayOfMonth: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+dayOfMonthsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+isLastDayOfMonth: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -850,9 +850,9 @@ proto.api.commons.DayFilter.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.DayFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    dayOfWeekFilter: (f = msg.getDayOfWeekFilter()) && proto.api.commons.DayOfWeekFilter.toObject(includeInstance, f),
-    dayOfMonthFilter: (f = msg.getDayOfMonthFilter()) && proto.api.commons.DayOfMonthFilter.toObject(includeInstance, f)
+type: jspb.Message.getFieldWithDefault(msg, 1, 0),
+dayOfWeekFilter: (f = msg.getDayOfWeekFilter()) && proto.api.commons.DayOfWeekFilter.toObject(includeInstance, f),
+dayOfMonthFilter: (f = msg.getDayOfMonthFilter()) && proto.api.commons.DayOfMonthFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1089,8 +1089,8 @@ proto.api.commons.FormatOptions.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.commons.FormatOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportFormat: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    filenamePartsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+reportFormat: jspb.Message.getFieldWithDefault(msg, 1, 0),
+filenamePartsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1275,8 +1275,8 @@ proto.api.commons.DeliveryOptions.prototype.toObject = function(opt_includeInsta
  */
 proto.api.commons.DeliveryOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transferConfigSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    failureNotificationEmailsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+transferConfigSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+failureNotificationEmailsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1461,9 +1461,9 @@ proto.api.commons.FilenamePart.prototype.toObject = function(opt_includeInstance
  */
 proto.api.commons.FilenamePart.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    staticText: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    datePartsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+type: jspb.Message.getFieldWithDefault(msg, 1, 0),
+staticText: jspb.Message.getFieldWithDefault(msg, 2, ""),
+datePartsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1677,8 +1677,8 @@ proto.api.commons.TransferOptions.prototype.toObject = function(opt_includeInsta
  */
 proto.api.commons.TransferOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transferConfigSid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    filenamePartsList: jspb.Message.toObjectList(msg.getFilenamePartsList(),
+transferConfigSid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+filenamePartsList: jspb.Message.toObjectList(msg.getFilenamePartsList(),
     proto.api.commons.FilenamePart.toObject, includeInstance)
   };
 

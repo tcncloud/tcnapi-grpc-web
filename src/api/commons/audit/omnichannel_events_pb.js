@@ -1137,10 +1137,10 @@ proto.api.commons.audit.OmnichannelCreateProjectEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.OmnichannelCreateProjectEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    clientSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    complianceConfig: (f = msg.getComplianceConfig()) && api_commons_omnichannel_pb.OmniProjectComplianceConfig.toObject(includeInstance, f)
+clientSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+complianceConfig: (f = msg.getComplianceConfig()) && api_commons_omnichannel_pb.OmniProjectComplianceConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1378,13 +1378,13 @@ proto.api.commons.audit.OmnichannelCreateCampaignEvent.prototype.toObject = func
  */
 proto.api.commons.audit.OmnichannelCreateCampaignEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    campaignDirection: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 5, "0"),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f),
-    projectSid: jspb.Message.getFieldWithDefault(msg, 7, "0")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+description: jspb.Message.getFieldWithDefault(msg, 2, ""),
+channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+campaignDirection: jspb.Message.getFieldWithDefault(msg, 4, 0),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 5, "0"),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f),
+projectSid: jspb.Message.getFieldWithDefault(msg, 7, "0")
   };
 
   if (includeInstance) {
@@ -1709,11 +1709,11 @@ proto.api.commons.audit.OmnichannelT10Event.prototype.toObject = function(opt_in
  */
 proto.api.commons.audit.OmnichannelT10Event.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2001,7 +2001,7 @@ proto.api.commons.audit.OmnichannelDailyProjectReportEvent.prototype.toObject = 
  */
 proto.api.commons.audit.OmnichannelDailyProjectReportEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    downloadUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
+downloadUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2131,7 +2131,7 @@ proto.api.commons.audit.OmnichannelDailyConversationReportEvent.prototype.toObje
  */
 proto.api.commons.audit.OmnichannelDailyConversationReportEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    downloadUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
+downloadUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2261,13 +2261,13 @@ proto.api.commons.audit.OmnichannelAgentAssignConversationEvent.prototype.toObje
  */
 proto.api.commons.audit.OmnichannelAgentAssignConversationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2634,13 +2634,13 @@ proto.api.commons.audit.OmnichannelAgentUnassignConversationEvent.prototype.toOb
  */
 proto.api.commons.audit.OmnichannelAgentUnassignConversationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3007,15 +3007,15 @@ proto.api.commons.audit.OmnichannelAgentReassignConversationEvent.prototype.toOb
  */
 proto.api.commons.audit.OmnichannelAgentReassignConversationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    currentUserId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    newUserId: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    newUserAsmSessionSid: (f = msg.getNewUserAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+currentUserId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+newUserId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+newUserAsmSessionSid: (f = msg.getNewUserAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3440,9 +3440,9 @@ proto.api.commons.audit.OmnichannelCustomerTextMessageEvent.prototype.toObject =
  */
 proto.api.commons.audit.OmnichannelCustomerTextMessageEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3672,11 +3672,11 @@ proto.api.commons.audit.OmnichannelAgentTextMessageEvent.prototype.toObject = fu
  */
 proto.api.commons.audit.OmnichannelAgentTextMessageEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    userId: jspb.Message.getFieldWithDefault(msg, 7, "")
+conversationSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+userId: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -3985,11 +3985,11 @@ proto.api.commons.audit.OmnichannelManagerTextMessageEvent.prototype.toObject = 
  */
 proto.api.commons.audit.OmnichannelManagerTextMessageEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    userId: jspb.Message.getFieldWithDefault(msg, 7, "")
+conversationSid: jspb.Message.getFieldWithDefault(msg, 3, "0"),
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+userId: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -4298,12 +4298,12 @@ proto.api.commons.audit.OmnichannelFinishWrapUpEvent.prototype.toObject = functi
  */
 proto.api.commons.audit.OmnichannelFinishWrapUpEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4641,13 +4641,13 @@ proto.api.commons.audit.OmnichannelBeginWrapUpEvent.prototype.toObject = functio
  */
 proto.api.commons.audit.OmnichannelBeginWrapUpEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    userId: jspb.Message.getFieldWithDefault(msg, 7, "")
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+userId: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -5014,10 +5014,10 @@ proto.api.commons.audit.OmnichannelT11Event.prototype.toObject = function(opt_in
  */
 proto.api.commons.audit.OmnichannelT11Event.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5255,10 +5255,10 @@ proto.api.commons.audit.OmnichannelCreateConversationEvent.prototype.toObject = 
  */
 proto.api.commons.audit.OmnichannelCreateConversationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    channelType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f)
+campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+channelType: jspb.Message.getFieldWithDefault(msg, 2, 0),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5517,9 +5517,9 @@ proto.api.commons.audit.OmnichannelAgentSuspendEvent.prototype.toObject = functi
  */
 proto.api.commons.audit.OmnichannelAgentSuspendEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5770,10 +5770,10 @@ proto.api.commons.audit.OmnichannelCloseConversationEvent.prototype.toObject = f
  */
 proto.api.commons.audit.OmnichannelCloseConversationEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
-    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    userId: jspb.Message.getFieldWithDefault(msg, 4, "")
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f),
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+userId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -6053,9 +6053,9 @@ proto.api.commons.audit.OmnichannelTranscriptSavedEvent.prototype.toObject = fun
  */
 proto.api.commons.audit.OmnichannelTranscriptSavedEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    transcriptPath: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+transcriptPath: jspb.Message.getFieldWithDefault(msg, 2, ""),
+conversation: (f = msg.getConversation()) && api_commons_omnichannel_pb.OmniConversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6264,11 +6264,11 @@ proto.api.commons.audit.OmnichannelUpdateCampaignEvent.prototype.toObject = func
  */
 proto.api.commons.audit.OmnichannelUpdateCampaignEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    channelType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+channelType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6535,12 +6535,12 @@ proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.prototype.t
  */
 proto.api.commons.audit.OmnichannelSetConversationCollectedDataEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    campaignDirection: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    collectedData: (f = msg.getCollectedData()) && api_commons_omnichannel_pb.ConversationCollectedData.toObject(includeInstance, f),
-    asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+campaignDirection: jspb.Message.getFieldWithDefault(msg, 4, 0),
+collectedData: (f = msg.getCollectedData()) && api_commons_omnichannel_pb.ConversationCollectedData.toObject(includeInstance, f),
+asmSessionSid: (f = msg.getAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6857,11 +6857,11 @@ proto.api.commons.audit.OmnichannelCompleteCampaignEvent.prototype.toObject = fu
  */
 proto.api.commons.audit.OmnichannelCompleteCampaignEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    channelType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+channelType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7128,11 +7128,11 @@ proto.api.commons.audit.OmnichannelArchiveCampaignEvent.prototype.toObject = fun
  */
 proto.api.commons.audit.OmnichannelArchiveCampaignEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    channelType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+channelType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7399,11 +7399,11 @@ proto.api.commons.audit.OmnichannelStartCampaignEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.OmnichannelStartCampaignEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    channelType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+channelType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7670,11 +7670,11 @@ proto.api.commons.audit.OmnichannelPauseCampaignEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.OmnichannelPauseCampaignEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    channelType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+channelType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7941,11 +7941,11 @@ proto.api.commons.audit.OmnichannelResumeCampaignEvent.prototype.toObject = func
  */
 proto.api.commons.audit.OmnichannelResumeCampaignEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    channelType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+channelType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8212,8 +8212,8 @@ proto.api.commons.audit.OmnichannelScheduleModuleEvent.prototype.toObject = func
  */
 proto.api.commons.audit.OmnichannelScheduleModuleEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8393,8 +8393,8 @@ proto.api.commons.audit.OmnichannelStartModuleEvent.prototype.toObject = functio
  */
 proto.api.commons.audit.OmnichannelStartModuleEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8574,8 +8574,8 @@ proto.api.commons.audit.OmnichannelPauseModuleEvent.prototype.toObject = functio
  */
 proto.api.commons.audit.OmnichannelPauseModuleEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8755,8 +8755,8 @@ proto.api.commons.audit.OmnichannelResumeModuleEvent.prototype.toObject = functi
  */
 proto.api.commons.audit.OmnichannelResumeModuleEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8936,8 +8936,8 @@ proto.api.commons.audit.OmnichannelErrorModuleEvent.prototype.toObject = functio
  */
 proto.api.commons.audit.OmnichannelErrorModuleEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9117,8 +9117,8 @@ proto.api.commons.audit.OmnichannelSuccessModuleEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.OmnichannelSuccessModuleEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9298,8 +9298,8 @@ proto.api.commons.audit.OmnichannelFailModuleEvent.prototype.toObject = function
  */
 proto.api.commons.audit.OmnichannelFailModuleEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9479,8 +9479,8 @@ proto.api.commons.audit.OmnichannelCompleteModuleEvent.prototype.toObject = func
  */
 proto.api.commons.audit.OmnichannelCompleteModuleEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9660,8 +9660,8 @@ proto.api.commons.audit.OmnichannelArchiveModuleEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.OmnichannelArchiveModuleEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9841,8 +9841,8 @@ proto.api.commons.audit.OmnichannelUpdateModuleEvent.prototype.toObject = functi
  */
 proto.api.commons.audit.OmnichannelUpdateModuleEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10022,10 +10022,10 @@ proto.api.commons.audit.OmnichannelSmsMessageSentModuleEvent.prototype.toObject 
  */
 proto.api.commons.audit.OmnichannelSmsMessageSentModuleEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    messageUnits: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f),
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f)
+moduleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+messageUnits: jspb.Message.getFieldWithDefault(msg, 2, 0),
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f),
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10284,13 +10284,13 @@ proto.api.commons.audit.OmnichannelModuleInitialReplyEvent.prototype.toObject = 
  */
 proto.api.commons.audit.OmnichannelModuleInitialReplyEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    channelType: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    campaign: (f = msg.getCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+conversationSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
+channelType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+campaign: (f = msg.getCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10636,13 +10636,13 @@ proto.api.commons.audit.OmnichannelTaskMessageSentEvent.prototype.toObject = fun
  */
 proto.api.commons.audit.OmnichannelTaskMessageSentEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    taskSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    moduleSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    messageUnits: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    campaign: (f = msg.getCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f),
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    task: (f = msg.getTask()) && api_commons_omnichannel_pb.OmniTask.toObject(includeInstance, f)
+taskSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+moduleSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+messageUnits: jspb.Message.getFieldWithDefault(msg, 4, 0),
+campaign: (f = msg.getCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f),
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+task: (f = msg.getTask()) && api_commons_omnichannel_pb.OmniTask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11009,9 +11009,9 @@ proto.api.commons.audit.OmnichannelConnectedInboxPollEvent.prototype.toObject = 
  */
 proto.api.commons.audit.OmnichannelConnectedInboxPollEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f),
-    campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    connectedInbox: (f = msg.getConnectedInbox()) && api_commons_omnichannel_pb.ConnectedInbox.toObject(includeInstance, f)
+omniCampaign: (f = msg.getOmniCampaign()) && api_commons_omnichannel_pb.OmniCampaign.toObject(includeInstance, f),
+campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+connectedInbox: (f = msg.getConnectedInbox()) && api_commons_omnichannel_pb.ConnectedInbox.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11241,7 +11241,7 @@ proto.api.commons.audit.OmnichannelConnectedInboxCreatedEvent.prototype.toObject
  */
 proto.api.commons.audit.OmnichannelConnectedInboxCreatedEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    connectedInbox: (f = msg.getConnectedInbox()) && api_commons_omnichannel_pb.ConnectedInbox.toObject(includeInstance, f)
+connectedInbox: (f = msg.getConnectedInbox()) && api_commons_omnichannel_pb.ConnectedInbox.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11392,8 +11392,8 @@ proto.api.commons.audit.OmnichannelAgentMessageUnitsEvent.prototype.toObject = f
  */
 proto.api.commons.audit.OmnichannelAgentMessageUnitsEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    messageUnits: jspb.Message.getFieldWithDefault(msg, 2, 0)
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+messageUnits: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -11573,8 +11573,8 @@ proto.api.commons.audit.OmnichannelManagerMessageUnitsEvent.prototype.toObject =
  */
 proto.api.commons.audit.OmnichannelManagerMessageUnitsEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    messageUnits: jspb.Message.getFieldWithDefault(msg, 2, 0)
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+messageUnits: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -11754,8 +11754,8 @@ proto.api.commons.audit.OmnichannelCustomerMessageUnitsEvent.prototype.toObject 
  */
 proto.api.commons.audit.OmnichannelCustomerMessageUnitsEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    messageUnits: jspb.Message.getFieldWithDefault(msg, 2, 0)
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+messageUnits: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -11935,8 +11935,8 @@ proto.api.commons.audit.OmnichannelSystemMessageUnitsEvent.prototype.toObject = 
  */
 proto.api.commons.audit.OmnichannelSystemMessageUnitsEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    messageUnits: jspb.Message.getFieldWithDefault(msg, 2, 0)
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+messageUnits: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -12116,8 +12116,8 @@ proto.api.commons.audit.OmnichannelPaymentLinkSentEvent.prototype.toObject = fun
  */
 proto.api.commons.audit.OmnichannelPaymentLinkSentEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
-    link: jspb.Message.getFieldWithDefault(msg, 2, "")
+message: (f = msg.getMessage()) && api_commons_omnichannel_pb.OmniMessage.toObject(includeInstance, f),
+link: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -12297,9 +12297,9 @@ proto.api.commons.audit.OmnichannelManualApproveTaskAcceptedEvent.prototype.toOb
  */
 proto.api.commons.audit.OmnichannelManualApproveTaskAcceptedEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    task: (f = msg.getTask()) && api_commons_omnichannel_pb.OmniTask.toObject(includeInstance, f),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
+task: (f = msg.getTask()) && api_commons_omnichannel_pb.OmniTask.toObject(includeInstance, f),
+userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -12508,9 +12508,9 @@ proto.api.commons.audit.OmnichannelManualApproveTaskRejectedEvent.prototype.toOb
  */
 proto.api.commons.audit.OmnichannelManualApproveTaskRejectedEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    task: (f = msg.getTask()) && api_commons_omnichannel_pb.OmniTask.toObject(includeInstance, f),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
+task: (f = msg.getTask()) && api_commons_omnichannel_pb.OmniTask.toObject(includeInstance, f),
+userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -12719,9 +12719,9 @@ proto.api.commons.audit.OmnichannelManualApproveTaskTimeoutEvent.prototype.toObj
  */
 proto.api.commons.audit.OmnichannelManualApproveTaskTimeoutEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    task: (f = msg.getTask()) && api_commons_omnichannel_pb.OmniTask.toObject(includeInstance, f),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
+task: (f = msg.getTask()) && api_commons_omnichannel_pb.OmniTask.toObject(includeInstance, f),
+userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -12930,9 +12930,9 @@ proto.api.commons.audit.OmnichannelManualApproveTaskRequeueEvent.prototype.toObj
  */
 proto.api.commons.audit.OmnichannelManualApproveTaskRequeueEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    task: (f = msg.getTask()) && api_commons_omnichannel_pb.OmniTask.toObject(includeInstance, f),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
+task: (f = msg.getTask()) && api_commons_omnichannel_pb.OmniTask.toObject(includeInstance, f),
+userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {

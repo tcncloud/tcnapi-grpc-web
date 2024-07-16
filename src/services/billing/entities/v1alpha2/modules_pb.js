@@ -103,8 +103,8 @@ proto.services.billing.entities.v1alpha2.BasicConfig.prototype.toObject = functi
  */
 proto.services.billing.entities.v1alpha2.BasicConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    rateDecimal: (f = msg.getRateDecimal()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f)
+rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+rateDecimal: (f = msg.getRateDecimal()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -284,13 +284,13 @@ proto.services.billing.entities.v1alpha2.BasicUnitConfig.prototype.toObject = fu
  */
 proto.services.billing.entities.v1alpha2.BasicUnitConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    unitSize: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    minUnits: (f = msg.getMinUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    maxUnits: (f = msg.getMaxUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    minUnitsPerCycle: (f = msg.getMinUnitsPerCycle()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    maxUnitsPerCycle: (f = msg.getMaxUnitsPerCycle()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    rateDecimal: (f = msg.getRateDecimal()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f)
+unitSize: jspb.Message.getFieldWithDefault(msg, 1, 0),
+rate: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+minUnits: (f = msg.getMinUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+maxUnits: (f = msg.getMaxUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+minUnitsPerCycle: (f = msg.getMinUnitsPerCycle()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+maxUnitsPerCycle: (f = msg.getMaxUnitsPerCycle()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+rateDecimal: (f = msg.getRateDecimal()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
