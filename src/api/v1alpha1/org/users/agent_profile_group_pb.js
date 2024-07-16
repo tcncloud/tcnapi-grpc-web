@@ -321,7 +321,7 @@ proto.api.v1alpha1.org.users.GetAgentProfileGroupRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.org.users.GetAgentProfileGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
+agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -451,7 +451,7 @@ proto.api.v1alpha1.org.users.GetAgentProfileGroupResponse.prototype.toObject = f
  */
 proto.api.v1alpha1.org.users.GetAgentProfileGroupResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroup: (f = msg.getAgentProfileGroup()) && api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject(includeInstance, f)
+agentProfileGroup: (f = msg.getAgentProfileGroup()) && api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -602,7 +602,7 @@ proto.api.v1alpha1.org.users.UpdateAgentProfileGroupRequest.prototype.toObject =
  */
 proto.api.v1alpha1.org.users.UpdateAgentProfileGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroup: (f = msg.getAgentProfileGroup()) && api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject(includeInstance, f)
+agentProfileGroup: (f = msg.getAgentProfileGroup()) && api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -962,7 +962,7 @@ proto.api.v1alpha1.org.users.ListAgentProfileGroupsResponse.prototype.toObject =
  */
 proto.api.v1alpha1.org.users.ListAgentProfileGroupsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroupsList: jspb.Message.toObjectList(msg.getAgentProfileGroupsList(),
+agentProfileGroupsList: jspb.Message.toObjectList(msg.getAgentProfileGroupsList(),
     api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject, includeInstance)
   };
 
@@ -1115,7 +1115,7 @@ proto.api.v1alpha1.org.users.CreateAgentProfileGroupRequest.prototype.toObject =
  */
 proto.api.v1alpha1.org.users.CreateAgentProfileGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroup: (f = msg.getAgentProfileGroup()) && api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject(includeInstance, f)
+agentProfileGroup: (f = msg.getAgentProfileGroup()) && api_commons_org_agent_profile_group_pb.AgentProfileGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1266,7 +1266,7 @@ proto.api.v1alpha1.org.users.CreateAgentProfileGroupResponse.prototype.toObject 
  */
 proto.api.v1alpha1.org.users.CreateAgentProfileGroupResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
+agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1396,7 +1396,7 @@ proto.api.v1alpha1.org.users.DeleteAgentProfileGroupRequest.prototype.toObject =
  */
 proto.api.v1alpha1.org.users.DeleteAgentProfileGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
+agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1634,8 +1634,8 @@ proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.prototype.toObject 
  */
 proto.api.v1alpha1.org.users.AssignAgentProfileGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+agentProfileGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+userIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {

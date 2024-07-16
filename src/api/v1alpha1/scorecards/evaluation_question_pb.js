@@ -191,7 +191,7 @@ proto.api.v1alpha1.scorecards.CreateEvaluationQuestionRequest.prototype.toObject
  */
 proto.api.v1alpha1.scorecards.CreateEvaluationQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
+evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -342,7 +342,7 @@ proto.api.v1alpha1.scorecards.CreateEvaluationQuestionResponse.prototype.toObjec
  */
 proto.api.v1alpha1.scorecards.CreateEvaluationQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
+evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -493,8 +493,8 @@ proto.api.v1alpha1.scorecards.UpdateEvaluationQuestionRequest.prototype.toObject
  */
 proto.api.v1alpha1.scorecards.UpdateEvaluationQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -695,7 +695,7 @@ proto.api.v1alpha1.scorecards.UpdateEvaluationQuestionResponse.prototype.toObjec
  */
 proto.api.v1alpha1.scorecards.UpdateEvaluationQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
+evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -846,7 +846,7 @@ proto.api.v1alpha1.scorecards.DeleteEvaluationQuestionRequest.prototype.toObject
  */
 proto.api.v1alpha1.scorecards.DeleteEvaluationQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+evaluationQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -976,7 +976,7 @@ proto.api.v1alpha1.scorecards.DeleteEvaluationQuestionResponse.prototype.toObjec
  */
 proto.api.v1alpha1.scorecards.DeleteEvaluationQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
+evaluationQuestion: (f = msg.getEvaluationQuestion()) && api_commons_scorecards_pb.EvaluationQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

@@ -360,8 +360,8 @@ proto.google.api.CommonLanguageSettings.prototype.toObject = function(opt_includ
  */
 proto.google.api.CommonLanguageSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    referenceDocsUri: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    destinationsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+referenceDocsUri: jspb.Message.getFieldWithDefault(msg, 1, ""),
+destinationsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -541,17 +541,17 @@ proto.google.api.ClientLibrarySettings.prototype.toObject = function(opt_include
  */
 proto.google.api.ClientLibrarySettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    version: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    launchStage: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    restNumericEnums: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    javaSettings: (f = msg.getJavaSettings()) && proto.google.api.JavaSettings.toObject(includeInstance, f),
-    cppSettings: (f = msg.getCppSettings()) && proto.google.api.CppSettings.toObject(includeInstance, f),
-    phpSettings: (f = msg.getPhpSettings()) && proto.google.api.PhpSettings.toObject(includeInstance, f),
-    pythonSettings: (f = msg.getPythonSettings()) && proto.google.api.PythonSettings.toObject(includeInstance, f),
-    nodeSettings: (f = msg.getNodeSettings()) && proto.google.api.NodeSettings.toObject(includeInstance, f),
-    dotnetSettings: (f = msg.getDotnetSettings()) && proto.google.api.DotnetSettings.toObject(includeInstance, f),
-    rubySettings: (f = msg.getRubySettings()) && proto.google.api.RubySettings.toObject(includeInstance, f),
-    goSettings: (f = msg.getGoSettings()) && proto.google.api.GoSettings.toObject(includeInstance, f)
+version: jspb.Message.getFieldWithDefault(msg, 1, ""),
+launchStage: jspb.Message.getFieldWithDefault(msg, 2, 0),
+restNumericEnums: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+javaSettings: (f = msg.getJavaSettings()) && proto.google.api.JavaSettings.toObject(includeInstance, f),
+cppSettings: (f = msg.getCppSettings()) && proto.google.api.CppSettings.toObject(includeInstance, f),
+phpSettings: (f = msg.getPhpSettings()) && proto.google.api.PhpSettings.toObject(includeInstance, f),
+pythonSettings: (f = msg.getPythonSettings()) && proto.google.api.PythonSettings.toObject(includeInstance, f),
+nodeSettings: (f = msg.getNodeSettings()) && proto.google.api.NodeSettings.toObject(includeInstance, f),
+dotnetSettings: (f = msg.getDotnetSettings()) && proto.google.api.DotnetSettings.toObject(includeInstance, f),
+rubySettings: (f = msg.getRubySettings()) && proto.google.api.RubySettings.toObject(includeInstance, f),
+goSettings: (f = msg.getGoSettings()) && proto.google.api.GoSettings.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1146,19 +1146,19 @@ proto.google.api.Publishing.prototype.toObject = function(opt_includeInstance) {
  */
 proto.google.api.Publishing.toObject = function(includeInstance, msg) {
   var f, obj = {
-    methodSettingsList: jspb.Message.toObjectList(msg.getMethodSettingsList(),
+methodSettingsList: jspb.Message.toObjectList(msg.getMethodSettingsList(),
     proto.google.api.MethodSettings.toObject, includeInstance),
-    newIssueUri: jspb.Message.getFieldWithDefault(msg, 101, ""),
-    documentationUri: jspb.Message.getFieldWithDefault(msg, 102, ""),
-    apiShortName: jspb.Message.getFieldWithDefault(msg, 103, ""),
-    githubLabel: jspb.Message.getFieldWithDefault(msg, 104, ""),
-    codeownerGithubTeamsList: (f = jspb.Message.getRepeatedField(msg, 105)) == null ? undefined : f,
-    docTagPrefix: jspb.Message.getFieldWithDefault(msg, 106, ""),
-    organization: jspb.Message.getFieldWithDefault(msg, 107, 0),
-    librarySettingsList: jspb.Message.toObjectList(msg.getLibrarySettingsList(),
+newIssueUri: jspb.Message.getFieldWithDefault(msg, 101, ""),
+documentationUri: jspb.Message.getFieldWithDefault(msg, 102, ""),
+apiShortName: jspb.Message.getFieldWithDefault(msg, 103, ""),
+githubLabel: jspb.Message.getFieldWithDefault(msg, 104, ""),
+codeownerGithubTeamsList: (f = jspb.Message.getRepeatedField(msg, 105)) == null ? undefined : f,
+docTagPrefix: jspb.Message.getFieldWithDefault(msg, 106, ""),
+organization: jspb.Message.getFieldWithDefault(msg, 107, 0),
+librarySettingsList: jspb.Message.toObjectList(msg.getLibrarySettingsList(),
     proto.google.api.ClientLibrarySettings.toObject, includeInstance),
-    protoReferenceDocumentationUri: jspb.Message.getFieldWithDefault(msg, 110, ""),
-    restReferenceDocumentationUri: jspb.Message.getFieldWithDefault(msg, 111, "")
+protoReferenceDocumentationUri: jspb.Message.getFieldWithDefault(msg, 110, ""),
+restReferenceDocumentationUri: jspb.Message.getFieldWithDefault(msg, 111, "")
   };
 
   if (includeInstance) {
@@ -1641,9 +1641,9 @@ proto.google.api.JavaSettings.prototype.toObject = function(opt_includeInstance)
  */
 proto.google.api.JavaSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    libraryPackage: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    serviceClassNamesMap: (f = msg.getServiceClassNamesMap()) ? f.toObject(includeInstance, undefined) : [],
-    common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
+libraryPackage: jspb.Message.getFieldWithDefault(msg, 1, ""),
+serviceClassNamesMap: (f = msg.getServiceClassNamesMap()) ? f.toObject(includeInstance, undefined) : [],
+common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1856,7 +1856,7 @@ proto.google.api.CppSettings.prototype.toObject = function(opt_includeInstance) 
  */
 proto.google.api.CppSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
+common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2007,7 +2007,7 @@ proto.google.api.PhpSettings.prototype.toObject = function(opt_includeInstance) 
  */
 proto.google.api.PhpSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
+common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2158,7 +2158,7 @@ proto.google.api.PythonSettings.prototype.toObject = function(opt_includeInstanc
  */
 proto.google.api.PythonSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
+common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2309,7 +2309,7 @@ proto.google.api.NodeSettings.prototype.toObject = function(opt_includeInstance)
  */
 proto.google.api.NodeSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
+common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2467,12 +2467,12 @@ proto.google.api.DotnetSettings.prototype.toObject = function(opt_includeInstanc
  */
 proto.google.api.DotnetSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f),
-    renamedServicesMap: (f = msg.getRenamedServicesMap()) ? f.toObject(includeInstance, undefined) : [],
-    renamedResourcesMap: (f = msg.getRenamedResourcesMap()) ? f.toObject(includeInstance, undefined) : [],
-    ignoredResourcesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    forcedNamespaceAliasesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    handwrittenSignaturesList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f),
+renamedServicesMap: (f = msg.getRenamedServicesMap()) ? f.toObject(includeInstance, undefined) : [],
+renamedResourcesMap: (f = msg.getRenamedResourcesMap()) ? f.toObject(includeInstance, undefined) : [],
+ignoredResourcesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+forcedNamespaceAliasesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+handwrittenSignaturesList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2833,7 +2833,7 @@ proto.google.api.RubySettings.prototype.toObject = function(opt_includeInstance)
  */
 proto.google.api.RubySettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
+common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2984,7 +2984,7 @@ proto.google.api.GoSettings.prototype.toObject = function(opt_includeInstance) {
  */
 proto.google.api.GoSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
+common: (f = msg.getCommon()) && proto.google.api.CommonLanguageSettings.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3142,9 +3142,9 @@ proto.google.api.MethodSettings.prototype.toObject = function(opt_includeInstanc
  */
 proto.google.api.MethodSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
-    selector: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    longRunning: (f = msg.getLongRunning()) && proto.google.api.MethodSettings.LongRunning.toObject(includeInstance, f),
-    autoPopulatedFieldsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+selector: jspb.Message.getFieldWithDefault(msg, 1, ""),
+longRunning: (f = msg.getLongRunning()) && proto.google.api.MethodSettings.LongRunning.toObject(includeInstance, f),
+autoPopulatedFieldsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3280,10 +3280,10 @@ proto.google.api.MethodSettings.LongRunning.prototype.toObject = function(opt_in
  */
 proto.google.api.MethodSettings.LongRunning.toObject = function(includeInstance, msg) {
   var f, obj = {
-    initialPollDelay: (f = msg.getInitialPollDelay()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    pollDelayMultiplier: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    maxPollDelay: (f = msg.getMaxPollDelay()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    totalPollTimeout: (f = msg.getTotalPollTimeout()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+initialPollDelay: (f = msg.getInitialPollDelay()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+pollDelayMultiplier: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+maxPollDelay: (f = msg.getMaxPollDelay()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+totalPollTimeout: (f = msg.getTotalPollTimeout()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

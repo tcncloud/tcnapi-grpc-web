@@ -92,25 +92,25 @@ proto.api.v1alpha1.bireportgenerator.ReportJob.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.bireportgenerator.ReportJob.toObject = function(includeInstance, msg) {
   var f, obj = {
-    reportJobId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    dashboardId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    timeZone: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    timePeriod: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    deliveryTimes: (f = msg.getDeliveryTimes()) && api_commons_bireportgenerator_pb.DeliveryTimes.toObject(includeInstance, f),
-    dayFilter: (f = msg.getDayFilter()) && api_commons_bireportgenerator_pb.DayFilter.toObject(includeInstance, f),
-    monthsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
-    formatOptions: (f = msg.getFormatOptions()) && api_commons_bireportgenerator_pb.FormatOptions.toObject(includeInstance, f),
-    deliveryOptions: (f = msg.getDeliveryOptions()) && api_commons_bireportgenerator_pb.DeliveryOptions.toObject(includeInstance, f),
-    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
-    sendEmptyReport: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-    dashboardResourceId: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    timeZoneWrapper: (f = msg.getTimeZoneWrapper()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
-    hideCsvFooter: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
-    transferConfigSid: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    cronExpression: (f = msg.getCronExpression()) && api_commons_types_pb.CronExpression.toObject(includeInstance, f),
-    transferOptions: (f = msg.getTransferOptions()) && api_commons_bireportgenerator_pb.TransferOptions.toObject(includeInstance, f)
+reportJobId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+dashboardId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+timeZone: jspb.Message.getFieldWithDefault(msg, 5, ""),
+timePeriod: jspb.Message.getFieldWithDefault(msg, 6, 0),
+deliveryTimes: (f = msg.getDeliveryTimes()) && api_commons_bireportgenerator_pb.DeliveryTimes.toObject(includeInstance, f),
+dayFilter: (f = msg.getDayFilter()) && api_commons_bireportgenerator_pb.DayFilter.toObject(includeInstance, f),
+monthsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
+formatOptions: (f = msg.getFormatOptions()) && api_commons_bireportgenerator_pb.FormatOptions.toObject(includeInstance, f),
+deliveryOptions: (f = msg.getDeliveryOptions()) && api_commons_bireportgenerator_pb.DeliveryOptions.toObject(includeInstance, f),
+isActive: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
+sendEmptyReport: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
+dashboardResourceId: jspb.Message.getFieldWithDefault(msg, 14, ""),
+timeZoneWrapper: (f = msg.getTimeZoneWrapper()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
+hideCsvFooter: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+transferConfigSid: jspb.Message.getFieldWithDefault(msg, 17, 0),
+cronExpression: (f = msg.getCronExpression()) && api_commons_types_pb.CronExpression.toObject(includeInstance, f),
+transferOptions: (f = msg.getTransferOptions()) && api_commons_bireportgenerator_pb.TransferOptions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

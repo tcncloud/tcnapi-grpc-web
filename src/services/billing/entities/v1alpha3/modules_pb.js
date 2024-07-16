@@ -103,8 +103,8 @@ proto.services.billing.entities.v1alpha3.BasicConfig.prototype.toObject = functi
  */
 proto.services.billing.entities.v1alpha3.BasicConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rate: (f = msg.getRate()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f),
-    precision: jspb.Message.getFieldWithDefault(msg, 2, 0)
+rate: (f = msg.getRate()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f),
+precision: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -284,11 +284,11 @@ proto.services.billing.entities.v1alpha3.BasicUnitConfig.prototype.toObject = fu
  */
 proto.services.billing.entities.v1alpha3.BasicUnitConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    unitSize: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    minUnits: (f = msg.getMinUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    maxUnits: (f = msg.getMaxUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    rate: (f = msg.getRate()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f),
-    precision: jspb.Message.getFieldWithDefault(msg, 5, 0)
+unitSize: jspb.Message.getFieldWithDefault(msg, 1, 0),
+minUnits: (f = msg.getMinUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+maxUnits: (f = msg.getMaxUnits()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+rate: (f = msg.getRate()) && google_type_decimal_pb.Decimal.toObject(includeInstance, f),
+precision: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {

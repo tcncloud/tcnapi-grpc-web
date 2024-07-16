@@ -279,8 +279,8 @@ proto.api.v1alpha1.vanalytics.UpdateCorrectionRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.vanalytics.UpdateCorrectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    correction: (f = msg.getCorrection()) && proto.api.v1alpha1.vanalytics.Correction.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+correction: (f = msg.getCorrection()) && proto.api.v1alpha1.vanalytics.Correction.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -481,7 +481,7 @@ proto.api.v1alpha1.vanalytics.UpdateCorrectionResponse.prototype.toObject = func
  */
 proto.api.v1alpha1.vanalytics.UpdateCorrectionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    correction: (f = msg.getCorrection()) && proto.api.v1alpha1.vanalytics.Correction.toObject(includeInstance, f)
+correction: (f = msg.getCorrection()) && proto.api.v1alpha1.vanalytics.Correction.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -632,7 +632,7 @@ proto.api.v1alpha1.vanalytics.CreateCorrectionRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.vanalytics.CreateCorrectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    correction: (f = msg.getCorrection()) && proto.api.v1alpha1.vanalytics.Correction.toObject(includeInstance, f)
+correction: (f = msg.getCorrection()) && proto.api.v1alpha1.vanalytics.Correction.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -783,7 +783,7 @@ proto.api.v1alpha1.vanalytics.CreateCorrectionResponse.prototype.toObject = func
  */
 proto.api.v1alpha1.vanalytics.CreateCorrectionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    correction: (f = msg.getCorrection()) && proto.api.v1alpha1.vanalytics.Correction.toObject(includeInstance, f)
+correction: (f = msg.getCorrection()) && proto.api.v1alpha1.vanalytics.Correction.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -934,7 +934,7 @@ proto.api.v1alpha1.vanalytics.GetCorrectionRequest.prototype.toObject = function
  */
 proto.api.v1alpha1.vanalytics.GetCorrectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    correctionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+correctionSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1064,7 +1064,7 @@ proto.api.v1alpha1.vanalytics.ListCorrectionsRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.vanalytics.ListCorrectionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1201,7 +1201,7 @@ proto.api.v1alpha1.vanalytics.ListCorrectionsResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.vanalytics.ListCorrectionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    correctionsList: jspb.Message.toObjectList(msg.getCorrectionsList(),
+correctionsList: jspb.Message.toObjectList(msg.getCorrectionsList(),
     proto.api.v1alpha1.vanalytics.Correction.toObject, includeInstance)
   };
 
@@ -1354,8 +1354,8 @@ proto.api.v1alpha1.vanalytics.DeleteCorrectionRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.vanalytics.DeleteCorrectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    correctionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    pb_return: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+correctionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+pb_return: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -1514,7 +1514,7 @@ proto.api.v1alpha1.vanalytics.DeleteCorrectionResponse.prototype.toObject = func
  */
 proto.api.v1alpha1.vanalytics.DeleteCorrectionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    correction: (f = msg.getCorrection()) && proto.api.v1alpha1.vanalytics.Correction.toObject(includeInstance, f)
+correction: (f = msg.getCorrection()) && proto.api.v1alpha1.vanalytics.Correction.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1665,12 +1665,12 @@ proto.api.v1alpha1.vanalytics.Correction.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.vanalytics.Correction.toObject = function(includeInstance, msg) {
   var f, obj = {
-    correctionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    startOffset: (f = msg.getStartOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    endOffset: (f = msg.getEndOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    proposedText: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    channel: jspb.Message.getFieldWithDefault(msg, 7, 0)
+correctionSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+startOffset: (f = msg.getStartOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+endOffset: (f = msg.getEndOffset()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+proposedText: jspb.Message.getFieldWithDefault(msg, 6, ""),
+channel: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {

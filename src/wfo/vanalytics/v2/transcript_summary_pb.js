@@ -123,7 +123,7 @@ proto.wfo.vanalytics.v2.GetTranscriptSummaryRequest.prototype.toObject = functio
  */
 proto.wfo.vanalytics.v2.GetTranscriptSummaryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -253,7 +253,7 @@ proto.wfo.vanalytics.v2.GetTranscriptSummaryResponse.prototype.toObject = functi
  */
 proto.wfo.vanalytics.v2.GetTranscriptSummaryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptSummary: (f = msg.getTranscriptSummary()) && proto.wfo.vanalytics.v2.TranscriptSummary.toObject(includeInstance, f)
+transcriptSummary: (f = msg.getTranscriptSummary()) && proto.wfo.vanalytics.v2.TranscriptSummary.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -411,8 +411,8 @@ proto.wfo.vanalytics.v2.TranscriptSummary.prototype.toObject = function(opt_incl
  */
 proto.wfo.vanalytics.v2.TranscriptSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    bulletPointsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    status: jspb.Message.getFieldWithDefault(msg, 2, 0)
+bulletPointsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+status: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {

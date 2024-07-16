@@ -191,10 +191,10 @@ proto.api.v1alpha1.tickets.EnableProjectReq.prototype.toObject = function(opt_in
  */
 proto.api.v1alpha1.tickets.EnableProjectReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    projectSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    projectCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    projectTitle: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+projectSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+projectCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
+projectTitle: jspb.Message.getFieldWithDefault(msg, 3, ""),
+isActive: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -411,7 +411,7 @@ proto.api.v1alpha1.tickets.EnableProjectRes.prototype.toObject = function(opt_in
  */
 proto.api.v1alpha1.tickets.EnableProjectRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    success: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+success: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -649,7 +649,7 @@ proto.api.v1alpha1.tickets.ListEnabledProjectsRes.prototype.toObject = function(
  */
 proto.api.v1alpha1.tickets.ListEnabledProjectsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
+projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
     api_commons_tickets_pb.TicketProject.toObject, includeInstance)
   };
 
@@ -802,8 +802,8 @@ proto.api.v1alpha1.tickets.ListTicketAuditLogReq.prototype.toObject = function(o
  */
 proto.api.v1alpha1.tickets.ListTicketAuditLogReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ticketSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    ticketCode: jspb.Message.getFieldWithDefault(msg, 16, "")
+ticketSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+ticketCode: jspb.Message.getFieldWithDefault(msg, 16, "")
   };
 
   if (includeInstance) {
@@ -969,7 +969,7 @@ proto.api.v1alpha1.tickets.ListTicketAuditLogRes.prototype.toObject = function(o
  */
 proto.api.v1alpha1.tickets.ListTicketAuditLogRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    eventsList: jspb.Message.toObjectList(msg.getEventsList(),
+eventsList: jspb.Message.toObjectList(msg.getEventsList(),
     api_commons_audit_audit_pb.AuditEvent.toObject, includeInstance)
   };
 

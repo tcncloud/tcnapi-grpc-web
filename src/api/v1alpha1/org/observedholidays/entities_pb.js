@@ -523,7 +523,7 @@ proto.api.v1alpha1.org.observedholidays.ListObservedHolidaysResponse.prototype.t
  */
 proto.api.v1alpha1.org.observedholidays.ListObservedHolidaysResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedHolidaysList: jspb.Message.toObjectList(msg.getObservedHolidaysList(),
+observedHolidaysList: jspb.Message.toObjectList(msg.getObservedHolidaysList(),
     api_commons_org_preferences_pb.ObservedHolidays.toObject, includeInstance)
   };
 
@@ -676,7 +676,7 @@ proto.api.v1alpha1.org.observedholidays.GetObservedHolidaysRequest.prototype.toO
  */
 proto.api.v1alpha1.org.observedholidays.GetObservedHolidaysRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, "")
+observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -806,7 +806,7 @@ proto.api.v1alpha1.org.observedholidays.GetObservedHolidaysResponse.prototype.to
  */
 proto.api.v1alpha1.org.observedholidays.GetObservedHolidaysResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedHolidays: (f = msg.getObservedHolidays()) && api_commons_org_preferences_pb.ObservedHolidays.toObject(includeInstance, f)
+observedHolidays: (f = msg.getObservedHolidays()) && api_commons_org_preferences_pb.ObservedHolidays.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -964,10 +964,10 @@ proto.api.v1alpha1.org.observedholidays.SetObservedHolidaysRequest.prototype.toO
  */
 proto.api.v1alpha1.org.observedholidays.SetObservedHolidaysRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedHolidaysName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    timezone: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    daysList: jspb.Message.toObjectList(msg.getDaysList(),
+observedHolidaysName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+description: jspb.Message.getFieldWithDefault(msg, 2, ""),
+timezone: jspb.Message.getFieldWithDefault(msg, 3, 0),
+daysList: jspb.Message.toObjectList(msg.getDaysList(),
     api_commons_org_preferences_pb.ObservedHoliday.toObject, includeInstance)
   };
 
@@ -1207,7 +1207,7 @@ proto.api.v1alpha1.org.observedholidays.SetObservedHolidaysResponse.prototype.to
  */
 proto.api.v1alpha1.org.observedholidays.SetObservedHolidaysResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, "")
+observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1337,8 +1337,8 @@ proto.api.v1alpha1.org.observedholidays.AddToObservedHolidaysRequest.prototype.t
  */
 proto.api.v1alpha1.org.observedholidays.AddToObservedHolidaysRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    day: (f = msg.getDay()) && api_commons_org_preferences_pb.ObservedHoliday.toObject(includeInstance, f)
+observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+day: (f = msg.getDay()) && api_commons_org_preferences_pb.ObservedHoliday.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1619,8 +1619,8 @@ proto.api.v1alpha1.org.observedholidays.RemoveFromObservedHolidaysRequest.protot
  */
 proto.api.v1alpha1.org.observedholidays.RemoveFromObservedHolidaysRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    day: (f = msg.getDay()) && api_commons_org_preferences_pb.ObservedHoliday.toObject(includeInstance, f)
+observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+day: (f = msg.getDay()) && api_commons_org_preferences_pb.ObservedHoliday.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1901,11 +1901,11 @@ proto.api.v1alpha1.org.observedholidays.UpdateObservedHolidaysInfoRequest.protot
  */
 proto.api.v1alpha1.org.observedholidays.UpdateObservedHolidaysInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    observedHolidaysName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    timezone: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+observedHolidaysName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+timezone: jspb.Message.getFieldWithDefault(msg, 4, 0),
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2273,7 +2273,7 @@ proto.api.v1alpha1.org.observedholidays.DeleteObservedHolidaysRequest.prototype.
  */
 proto.api.v1alpha1.org.observedholidays.DeleteObservedHolidaysRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, "")
+observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2403,7 +2403,7 @@ proto.api.v1alpha1.org.observedholidays.DeleteObservedHolidaysResponse.prototype
  */
 proto.api.v1alpha1.org.observedholidays.DeleteObservedHolidaysResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, "")
+observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2533,7 +2533,7 @@ proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysRequest.prototyp
  */
 proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, "")
+observedHolidaysId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2663,8 +2663,8 @@ proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.prototy
  */
 proto.api.v1alpha1.org.observedholidays.EvaluateObservedHolidaysResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dateMatched: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    resultExpiration: (f = msg.getResultExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+dateMatched: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+resultExpiration: (f = msg.getResultExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

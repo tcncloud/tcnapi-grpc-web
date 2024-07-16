@@ -79,8 +79,8 @@ proto.api.commons.audit.TicketEvent.prototype.toObject = function(opt_includeIns
  */
 proto.api.commons.audit.TicketEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    editticket: (f = msg.getEditticket()) && api_commons_tickets_pb.EditTicket.toObject(includeInstance, f),
-    createdById: jspb.Message.getFieldWithDefault(msg, 2, "")
+editticket: (f = msg.getEditticket()) && api_commons_tickets_pb.EditTicket.toObject(includeInstance, f),
+createdById: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

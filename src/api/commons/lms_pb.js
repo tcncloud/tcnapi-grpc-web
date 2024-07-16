@@ -196,8 +196,8 @@ proto.api.commons.RecordField.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.commons.RecordField.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0)
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+type: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -363,15 +363,15 @@ proto.api.commons.FilePattern.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.commons.FilePattern.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    directory: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    filename: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    prefixesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    dateFormat: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    suffix: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    fileExtension: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    datePrefix: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    dayToUse: jspb.Message.getFieldWithDefault(msg, 9, 0)
+type: jspb.Message.getFieldWithDefault(msg, 1, 0),
+directory: jspb.Message.getFieldWithDefault(msg, 2, ""),
+filename: jspb.Message.getFieldWithDefault(msg, 3, ""),
+prefixesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+dateFormat: jspb.Message.getFieldWithDefault(msg, 5, ""),
+suffix: jspb.Message.getFieldWithDefault(msg, 6, ""),
+fileExtension: jspb.Message.getFieldWithDefault(msg, 7, ""),
+datePrefix: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+dayToUse: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -752,13 +752,13 @@ proto.api.commons.ConstructedFilename.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.ConstructedFilename.toObject = function(includeInstance, msg) {
   var f, obj = {
-    overrideFilename: (f = msg.getOverrideFilename()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    prefix: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    dateFormat: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    suffix: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    fileExtension: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    datePosition: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    dayToUse: jspb.Message.getFieldWithDefault(msg, 9, 0)
+overrideFilename: (f = msg.getOverrideFilename()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+prefix: jspb.Message.getFieldWithDefault(msg, 4, ""),
+dateFormat: jspb.Message.getFieldWithDefault(msg, 5, ""),
+suffix: jspb.Message.getFieldWithDefault(msg, 6, ""),
+fileExtension: jspb.Message.getFieldWithDefault(msg, 7, ""),
+datePosition: jspb.Message.getFieldWithDefault(msg, 8, 0),
+dayToUse: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -1115,16 +1115,16 @@ proto.api.commons.PaginationTerminator.prototype.toObject = function(opt_include
  */
 proto.api.commons.PaginationTerminator.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    negate: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    existsCheck: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    numGreaterThan: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    numLessThan: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    numEquals: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-    countLessThan: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    strEquals: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    strContains: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    boolEquals: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+negate: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+existsCheck: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+numGreaterThan: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
+numLessThan: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
+numEquals: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f,
+countLessThan: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+strEquals: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+strContains: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+boolEquals: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1659,8 +1659,8 @@ proto.api.commons.Expiration.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.commons.Expiration.toObject = function(includeInstance, msg) {
   var f, obj = {
-    units: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    quantity: jspb.Message.getFieldWithDefault(msg, 2, 0)
+units: jspb.Message.getFieldWithDefault(msg, 1, 0),
+quantity: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {

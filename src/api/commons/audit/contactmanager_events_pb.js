@@ -211,7 +211,7 @@ proto.api.commons.audit.ContactManagerEntryAddEvent.prototype.toObject = functio
  */
 proto.api.commons.audit.ContactManagerEntryAddEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    addevent: (f = msg.getAddevent()) && proto.api.commons.audit.ContactManagerEntryEvent.toObject(includeInstance, f)
+addevent: (f = msg.getAddevent()) && proto.api.commons.audit.ContactManagerEntryEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -362,7 +362,7 @@ proto.api.commons.audit.ContactManagerEntryGetEncEvent.prototype.toObject = func
  */
 proto.api.commons.audit.ContactManagerEntryGetEncEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    viewevent: (f = msg.getViewevent()) && proto.api.commons.audit.ContactManagerEntryEvent.toObject(includeInstance, f)
+viewevent: (f = msg.getViewevent()) && proto.api.commons.audit.ContactManagerEntryEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -513,7 +513,7 @@ proto.api.commons.audit.ContactManagerEntryEditEvent.prototype.toObject = functi
  */
 proto.api.commons.audit.ContactManagerEntryEditEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    editevent: (f = msg.getEditevent()) && proto.api.commons.audit.ContactManagerEntryEvent.toObject(includeInstance, f)
+editevent: (f = msg.getEditevent()) && proto.api.commons.audit.ContactManagerEntryEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -772,9 +772,9 @@ proto.api.commons.audit.ContactManagerEntryEvent.prototype.toObject = function(o
  */
 proto.api.commons.audit.ContactManagerEntryEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactmanagerlistid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    contactmanagerentryid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    contactmanagerentrylistidsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+contactmanagerlistid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+contactmanagerentryid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+contactmanagerentrylistidsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -983,10 +983,10 @@ proto.api.commons.audit.ContactManagerListUploadEvent.prototype.toObject = funct
  */
 proto.api.commons.audit.ContactManagerListUploadEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactmanagerlistid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    numberofcontactsuploaded: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    numberofsuccessfulcontactsuploaded: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    numberoffailedcontacts: jspb.Message.getFieldWithDefault(msg, 4, 0)
+contactmanagerlistid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+numberofcontactsuploaded: jspb.Message.getFieldWithDefault(msg, 2, 0),
+numberofsuccessfulcontactsuploaded: jspb.Message.getFieldWithDefault(msg, 3, 0),
+numberoffailedcontacts: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1210,10 +1210,10 @@ proto.api.commons.audit.ContactManagerKycEvent.prototype.toObject = function(opt
  */
 proto.api.commons.audit.ContactManagerKycEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactmanagerlistid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    contactmanagerentryid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    typesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    contactmanagerentrylistidsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+contactmanagerlistid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+contactmanagerentryid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+typesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+contactmanagerentrylistidsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {

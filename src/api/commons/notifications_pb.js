@@ -100,8 +100,8 @@ proto.api.commons.FieldValueFilter.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.FieldValueFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 2, "")
+key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+value: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

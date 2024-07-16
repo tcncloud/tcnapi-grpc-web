@@ -100,8 +100,8 @@ proto.services.billing.v1alpha1.Page.prototype.toObject = function(opt_includeIn
  */
 proto.services.billing.v1alpha1.Page.toObject = function(includeInstance, msg) {
   var f, obj = {
-    limit: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    token: jspb.Message.getFieldWithDefault(msg, 2, "")
+limit: jspb.Message.getFieldWithDefault(msg, 1, 0),
+token: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -260,8 +260,8 @@ proto.services.billing.v1alpha1.Sort.prototype.toObject = function(opt_includeIn
  */
 proto.services.billing.v1alpha1.Sort.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    direction: jspb.Message.getFieldWithDefault(msg, 2, 0)
+key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+direction: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {

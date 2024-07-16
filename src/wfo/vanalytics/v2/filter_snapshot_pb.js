@@ -81,12 +81,12 @@ proto.wfo.vanalytics.v2.FilterSnapshot.prototype.toObject = function(opt_include
  */
 proto.wfo.vanalytics.v2.FilterSnapshot.toObject = function(includeInstance, msg) {
   var f, obj = {
-    filterSnapshotSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    filterSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    version: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    transcriptQuery: (f = msg.getTranscriptQuery()) && wfo_vanalytics_v2_transcript_pb.TranscriptQuery.toObject(includeInstance, f)
+filterSnapshotSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+filterSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+version: jspb.Message.getFieldWithDefault(msg, 7, 0),
+transcriptQuery: (f = msg.getTranscriptQuery()) && wfo_vanalytics_v2_transcript_pb.TranscriptQuery.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

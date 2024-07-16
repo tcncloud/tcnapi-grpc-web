@@ -371,8 +371,8 @@ proto.api.v1alpha1.lms.FileTemplateV2.prototype.toObject = function(opt_includeI
  */
 proto.api.v1alpha1.lms.FileTemplateV2.toObject = function(includeInstance, msg) {
   var f, obj = {
-    legacyTemplate: (f = msg.getLegacyTemplate()) && api_v0alpha_lms_pb.FileTemplate.toObject(includeInstance, f),
-    dockTemplate: (f = msg.getDockTemplate()) && proto.api.v1alpha1.lms.FileTemplate.toObject(includeInstance, f)
+legacyTemplate: (f = msg.getLegacyTemplate()) && api_v0alpha_lms_pb.FileTemplate.toObject(includeInstance, f),
+dockTemplate: (f = msg.getDockTemplate()) && proto.api.v1alpha1.lms.FileTemplate.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -580,7 +580,7 @@ proto.api.v1alpha1.lms.FileTemplates.prototype.toObject = function(opt_includeIn
  */
 proto.api.v1alpha1.lms.FileTemplates.toObject = function(includeInstance, msg) {
   var f, obj = {
-    templatesList: jspb.Message.toObjectList(msg.getTemplatesList(),
+templatesList: jspb.Message.toObjectList(msg.getTemplatesList(),
     proto.api.v1alpha1.lms.FileTemplateV2.toObject, includeInstance)
   };
 
@@ -740,13 +740,13 @@ proto.api.v1alpha1.lms.FileTemplate.prototype.toObject = function(opt_includeIns
  */
 proto.api.v1alpha1.lms.FileTemplate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    filename: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+fileTemplateId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+filename: jspb.Message.getFieldWithDefault(msg, 3, ""),
+fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
     proto.api.v1alpha1.lms.Field.toObject, includeInstance),
-    parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.lms.ParseOpts.toObject(includeInstance, f),
-    foid: jspb.Message.getFieldWithDefault(msg, 6, 0)
+parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.lms.ParseOpts.toObject(includeInstance, f),
+foid: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -1064,11 +1064,11 @@ proto.api.v1alpha1.lms.Field.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.v1alpha1.lms.Field.toObject = function(includeInstance, msg) {
   var f, obj = {
-    syntaxType: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    presiType: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    format: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    rawValue: jspb.Message.getFieldWithDefault(msg, 5, "")
+syntaxType: jspb.Message.getFieldWithDefault(msg, 1, ""),
+presiType: jspb.Message.getFieldWithDefault(msg, 2, ""),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+format: jspb.Message.getFieldWithDefault(msg, 4, ""),
+rawValue: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1343,11 +1343,11 @@ proto.api.v1alpha1.lms.ParseOpts.prototype.toObject = function(opt_includeInstan
  */
 proto.api.v1alpha1.lms.ParseOpts.toObject = function(includeInstance, msg) {
   var f, obj = {
-    csv: (f = msg.getCsv()) && proto.api.v1alpha1.lms.OptsCsv.toObject(includeInstance, f),
-    json: (f = msg.getJson()) && proto.api.v1alpha1.lms.OptsJson.toObject(includeInstance, f),
-    jsonl: (f = msg.getJsonl()) && proto.api.v1alpha1.lms.OptsJsonL.toObject(includeInstance, f),
-    fixed: (f = msg.getFixed()) && proto.api.v1alpha1.lms.OptsFixed.toObject(includeInstance, f),
-    parquet: (f = msg.getParquet()) && proto.api.v1alpha1.lms.OptsParquet.toObject(includeInstance, f)
+csv: (f = msg.getCsv()) && proto.api.v1alpha1.lms.OptsCsv.toObject(includeInstance, f),
+json: (f = msg.getJson()) && proto.api.v1alpha1.lms.OptsJson.toObject(includeInstance, f),
+jsonl: (f = msg.getJsonl()) && proto.api.v1alpha1.lms.OptsJsonL.toObject(includeInstance, f),
+fixed: (f = msg.getFixed()) && proto.api.v1alpha1.lms.OptsFixed.toObject(includeInstance, f),
+parquet: (f = msg.getParquet()) && proto.api.v1alpha1.lms.OptsParquet.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1705,10 +1705,10 @@ proto.api.v1alpha1.lms.OptsCsv.prototype.toObject = function(opt_includeInstance
  */
 proto.api.v1alpha1.lms.OptsCsv.toObject = function(includeInstance, msg) {
   var f, obj = {
-    hasHeader: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    skipRows: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    headerList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    separator: jspb.Message.getFieldWithDefault(msg, 4, "")
+hasHeader: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+skipRows: jspb.Message.getFieldWithDefault(msg, 2, 0),
+headerList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+separator: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1944,7 +1944,7 @@ proto.api.v1alpha1.lms.OptsJson.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.v1alpha1.lms.OptsJson.toObject = function(includeInstance, msg) {
   var f, obj = {
-    recordsRoot: jspb.Message.getFieldWithDefault(msg, 1, "")
+recordsRoot: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2182,8 +2182,8 @@ proto.api.v1alpha1.lms.OptsFixed.prototype.toObject = function(opt_includeInstan
  */
 proto.api.v1alpha1.lms.OptsFixed.toObject = function(includeInstance, msg) {
   var f, obj = {
-    hasHeader: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    headerList: jspb.Message.toObjectList(msg.getHeaderList(),
+hasHeader: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+headerList: jspb.Message.toObjectList(msg.getHeaderList(),
     proto.api.v1alpha1.lms.OptsFixed.Field.toObject, includeInstance)
   };
 
@@ -2309,8 +2309,8 @@ proto.api.v1alpha1.lms.OptsFixed.Field.prototype.toObject = function(opt_include
  */
 proto.api.v1alpha1.lms.OptsFixed.Field.toObject = function(includeInstance, msg) {
   var f, obj = {
-    startingPosition: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    fieldLength: jspb.Message.getFieldWithDefault(msg, 14, 0)
+startingPosition: jspb.Message.getFieldWithDefault(msg, 13, 0),
+fieldLength: jspb.Message.getFieldWithDefault(msg, 14, 0)
   };
 
   if (includeInstance) {
@@ -2626,9 +2626,9 @@ proto.api.v1alpha1.lms.NewTemplate.prototype.toObject = function(opt_includeInst
  */
 proto.api.v1alpha1.lms.NewTemplate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    filename: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    data: msg.getData_asB64()
+orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+filename: jspb.Message.getFieldWithDefault(msg, 2, ""),
+data: msg.getData_asB64()
   };
 
   if (includeInstance) {
@@ -2840,8 +2840,8 @@ proto.api.v1alpha1.lms.ExistingTemplate.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.lms.ExistingTemplate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.lms.ParseOpts.toObject(includeInstance, f)
+fileTemplateId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+parseOpts: (f = msg.getParseOpts()) && proto.api.v1alpha1.lms.ParseOpts.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

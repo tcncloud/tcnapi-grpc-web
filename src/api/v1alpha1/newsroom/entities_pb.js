@@ -655,10 +655,10 @@ proto.api.v1alpha1.newsroom.CreateNewsArticleRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.newsroom.CreateNewsArticleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    title: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    content: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    author: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    imageReferenceId: jspb.Message.getFieldWithDefault(msg, 4, "")
+title: jspb.Message.getFieldWithDefault(msg, 1, ""),
+content: jspb.Message.getFieldWithDefault(msg, 2, ""),
+author: jspb.Message.getFieldWithDefault(msg, 3, ""),
+imageReferenceId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -875,7 +875,7 @@ proto.api.v1alpha1.newsroom.CreateNewsArticleResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.newsroom.CreateNewsArticleResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    articleDetails: (f = msg.getArticleDetails()) && proto.api.v1alpha1.newsroom.NewsArticleDetails.toObject(includeInstance, f)
+articleDetails: (f = msg.getArticleDetails()) && proto.api.v1alpha1.newsroom.NewsArticleDetails.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1033,8 +1033,8 @@ proto.api.v1alpha1.newsroom.ListNewsArticlesRequest.prototype.toObject = functio
  */
 proto.api.v1alpha1.newsroom.ListNewsArticlesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    statusesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+statusesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1242,7 +1242,7 @@ proto.api.v1alpha1.newsroom.ListNewsArticlesResponse.prototype.toObject = functi
  */
 proto.api.v1alpha1.newsroom.ListNewsArticlesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    articleDetailsList: jspb.Message.toObjectList(msg.getArticleDetailsList(),
+articleDetailsList: jspb.Message.toObjectList(msg.getArticleDetailsList(),
     proto.api.v1alpha1.newsroom.NewsArticleDetails.toObject, includeInstance)
   };
 
@@ -1395,7 +1395,7 @@ proto.api.v1alpha1.newsroom.GetNewsArticleByIdRequest.prototype.toObject = funct
  */
 proto.api.v1alpha1.newsroom.GetNewsArticleByIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -1525,7 +1525,7 @@ proto.api.v1alpha1.newsroom.GetNewsArticleByIdResponse.prototype.toObject = func
  */
 proto.api.v1alpha1.newsroom.GetNewsArticleByIdResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    articleDetails: (f = msg.getArticleDetails()) && proto.api.v1alpha1.newsroom.NewsArticleDetails.toObject(includeInstance, f)
+articleDetails: (f = msg.getArticleDetails()) && proto.api.v1alpha1.newsroom.NewsArticleDetails.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1676,8 +1676,8 @@ proto.api.v1alpha1.newsroom.UpdateNewsArticleRequest.prototype.toObject = functi
  */
 proto.api.v1alpha1.newsroom.UpdateNewsArticleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    articleDetails: (f = msg.getArticleDetails()) && proto.api.v1alpha1.newsroom.NewsArticleDetails.toObject(includeInstance, f),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+articleDetails: (f = msg.getArticleDetails()) && proto.api.v1alpha1.newsroom.NewsArticleDetails.toObject(includeInstance, f),
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1878,7 +1878,7 @@ proto.api.v1alpha1.newsroom.UpdateNewsArticleResponse.prototype.toObject = funct
  */
 proto.api.v1alpha1.newsroom.UpdateNewsArticleResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    articleDetails: (f = msg.getArticleDetails()) && proto.api.v1alpha1.newsroom.NewsArticleDetails.toObject(includeInstance, f)
+articleDetails: (f = msg.getArticleDetails()) && proto.api.v1alpha1.newsroom.NewsArticleDetails.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2029,14 +2029,14 @@ proto.api.v1alpha1.newsroom.NewsArticleDetails.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.newsroom.NewsArticleDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    content: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    author: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    imageReferenceId: jspb.Message.getFieldWithDefault(msg, 8, "")
+newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+content: jspb.Message.getFieldWithDefault(msg, 3, ""),
+status: jspb.Message.getFieldWithDefault(msg, 4, 0),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lastEdited: (f = msg.getLastEdited()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+author: jspb.Message.getFieldWithDefault(msg, 7, ""),
+imageReferenceId: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -2411,10 +2411,10 @@ proto.api.v1alpha1.newsroom.PublishedArticleDetails.prototype.toObject = functio
  */
 proto.api.v1alpha1.newsroom.PublishedArticleDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    newsArticleDetails: (f = msg.getNewsArticleDetails()) && proto.api.v1alpha1.newsroom.NewsArticleDetails.toObject(includeInstance, f),
-    datePublished: (f = msg.getDatePublished()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    displayToUser: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+newsArticleDetails: (f = msg.getNewsArticleDetails()) && proto.api.v1alpha1.newsroom.NewsArticleDetails.toObject(includeInstance, f),
+datePublished: (f = msg.getDatePublished()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+displayToUser: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -2673,9 +2673,9 @@ proto.api.v1alpha1.newsroom.UserActivity.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.newsroom.UserActivity.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userActivityLogSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    userActivityDetails: (f = msg.getUserActivityDetails()) && proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.toObject(includeInstance, f)
+userActivityLogSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+userActivityDetails: (f = msg.getUserActivityDetails()) && proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2813,7 +2813,7 @@ proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.prototype.toObject 
  */
 proto.api.v1alpha1.newsroom.UserActivity.UserActivityDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -3035,9 +3035,9 @@ proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.prototype.toObject = f
  */
 proto.api.v1alpha1.newsroom.CreatePublishedArticleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    displayToUser: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    articleLink: jspb.Message.getFieldWithDefault(msg, 3, "")
+newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+displayToUser: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+articleLink: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -3225,7 +3225,7 @@ proto.api.v1alpha1.newsroom.CreatePublishedArticleResponse.prototype.toObject = 
  */
 proto.api.v1alpha1.newsroom.CreatePublishedArticleResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publishedArticleDetails: (f = msg.getPublishedArticleDetails()) && proto.api.v1alpha1.newsroom.PublishedArticleDetails.toObject(includeInstance, f)
+publishedArticleDetails: (f = msg.getPublishedArticleDetails()) && proto.api.v1alpha1.newsroom.PublishedArticleDetails.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3484,7 +3484,7 @@ proto.api.v1alpha1.newsroom.ListPublishedArticlesResponse.prototype.toObject = f
  */
 proto.api.v1alpha1.newsroom.ListPublishedArticlesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publishedArticleDetailsList: jspb.Message.toObjectList(msg.getPublishedArticleDetailsList(),
+publishedArticleDetailsList: jspb.Message.toObjectList(msg.getPublishedArticleDetailsList(),
     proto.api.v1alpha1.newsroom.PublishedArticleDetails.toObject, includeInstance)
   };
 
@@ -3637,8 +3637,8 @@ proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest.prototype.toObject = 
  */
 proto.api.v1alpha1.newsroom.GetPublishedArticleByIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 2, "0")
+newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 2, "0")
   };
 
   if (includeInstance) {
@@ -3797,7 +3797,7 @@ proto.api.v1alpha1.newsroom.GetPublishedArticleByIdResponse.prototype.toObject =
  */
 proto.api.v1alpha1.newsroom.GetPublishedArticleByIdResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publishedArticleDetails: (f = msg.getPublishedArticleDetails()) && proto.api.v1alpha1.newsroom.PublishedArticleDetails.toObject(includeInstance, f)
+publishedArticleDetails: (f = msg.getPublishedArticleDetails()) && proto.api.v1alpha1.newsroom.PublishedArticleDetails.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3948,8 +3948,8 @@ proto.api.v1alpha1.newsroom.UserActivityRequest.prototype.toObject = function(op
  */
 proto.api.v1alpha1.newsroom.UserActivityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    force: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+publishedArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+force: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -4108,7 +4108,7 @@ proto.api.v1alpha1.newsroom.UserActivityResponse.prototype.toObject = function(o
  */
 proto.api.v1alpha1.newsroom.UserActivityResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userActivity: (f = msg.getUserActivity()) && proto.api.v1alpha1.newsroom.UserActivity.toObject(includeInstance, f)
+userActivity: (f = msg.getUserActivity()) && proto.api.v1alpha1.newsroom.UserActivity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4367,7 +4367,7 @@ proto.api.v1alpha1.newsroom.GetNewsForUserResponse.prototype.toObject = function
  */
 proto.api.v1alpha1.newsroom.GetNewsForUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publishedArticleDetailsList: jspb.Message.toObjectList(msg.getPublishedArticleDetailsList(),
+publishedArticleDetailsList: jspb.Message.toObjectList(msg.getPublishedArticleDetailsList(),
     proto.api.v1alpha1.newsroom.PublishedArticleDetails.toObject, includeInstance)
   };
 
@@ -4520,7 +4520,7 @@ proto.api.v1alpha1.newsroom.StoreNewsArticleImageRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.newsroom.StoreNewsArticleImageRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    image: (f = msg.getImage()) && proto.api.v1alpha1.newsroom.NewsArticleImage.toObject(includeInstance, f)
+image: (f = msg.getImage()) && proto.api.v1alpha1.newsroom.NewsArticleImage.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4671,12 +4671,12 @@ proto.api.v1alpha1.newsroom.NewsArticleImage.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.newsroom.NewsArticleImage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    newArticleSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    content: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    downloadUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    imageReferenceId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    imageType: jspb.Message.getFieldWithDefault(msg, 6, "")
+uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+newArticleSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+content: jspb.Message.getFieldWithDefault(msg, 3, ""),
+downloadUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
+imageReferenceId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+imageType: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -4951,7 +4951,7 @@ proto.api.v1alpha1.newsroom.StoreNewsArticleImageResponse.prototype.toObject = f
  */
 proto.api.v1alpha1.newsroom.StoreNewsArticleImageResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    image: (f = msg.getImage()) && proto.api.v1alpha1.newsroom.NewsArticleImage.toObject(includeInstance, f)
+image: (f = msg.getImage()) && proto.api.v1alpha1.newsroom.NewsArticleImage.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5102,7 +5102,7 @@ proto.api.v1alpha1.newsroom.ListImagesForNewsArticleRequest.prototype.toObject =
  */
 proto.api.v1alpha1.newsroom.ListImagesForNewsArticleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
+newArticleSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -5239,7 +5239,7 @@ proto.api.v1alpha1.newsroom.ListImagesForNewsArticleResponse.prototype.toObject 
  */
 proto.api.v1alpha1.newsroom.ListImagesForNewsArticleResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    newsArticleImagesList: jspb.Message.toObjectList(msg.getNewsArticleImagesList(),
+newsArticleImagesList: jspb.Message.toObjectList(msg.getNewsArticleImagesList(),
     proto.api.v1alpha1.newsroom.NewsArticleImage.toObject, includeInstance)
   };
 

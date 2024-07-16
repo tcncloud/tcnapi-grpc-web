@@ -1488,21 +1488,21 @@ proto.api.commons.OmniCampaign.prototype.toObject = function(opt_includeInstance
  */
 proto.api.commons.OmniCampaign.toObject = function(includeInstance, msg) {
   var f, obj = {
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    skills: (f = msg.getSkills()) && proto.api.commons.OmniConversationSkills.toObject(includeInstance, f),
-    startDate: (f = msg.getStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    channelType: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    projectSid: jspb.Message.getFieldWithDefault(msg, 10, "0"),
-    modulesList: jspb.Message.toObjectList(msg.getModulesList(),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+skills: (f = msg.getSkills()) && proto.api.commons.OmniConversationSkills.toObject(includeInstance, f),
+startDate: (f = msg.getStartDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+status: jspb.Message.getFieldWithDefault(msg, 6, 0),
+channelType: jspb.Message.getFieldWithDefault(msg, 7, 0),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+projectSid: jspb.Message.getFieldWithDefault(msg, 10, "0"),
+modulesList: jspb.Message.toObjectList(msg.getModulesList(),
     proto.api.commons.OmniCampaignModule.toObject, includeInstance),
-    timeZone: (f = msg.getTimeZone()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
-    shortenUrl: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-    complianceConfig: (f = msg.getComplianceConfig()) && proto.api.commons.OmniComplianceConfig.toObject(includeInstance, f)
+timeZone: (f = msg.getTimeZone()) && api_commons_org_pb.TimeZoneWrapper.toObject(includeInstance, f),
+shortenUrl: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
+complianceConfig: (f = msg.getComplianceConfig()) && proto.api.commons.OmniComplianceConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2164,18 +2164,18 @@ proto.api.commons.OmniCampaignModule.prototype.toObject = function(opt_includeIn
  */
 proto.api.commons.OmniCampaignModule.toObject = function(includeInstance, msg) {
   var f, obj = {
-    campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    moduleType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    status: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    config: (f = msg.getConfig()) && proto.api.commons.OmniCampaignModuleConfig.toObject(includeInstance, f),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    scheduledStopDate: (f = msg.getScheduledStopDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    actualStopDate: (f = msg.getActualStopDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    hoursOfOperation: (f = msg.getHoursOfOperation()) && proto.api.commons.WeekdayTimeRange.toObject(includeInstance, f),
-    details: (f = msg.getDetails()) && proto.api.commons.OmniCampaignModule.Details.toObject(includeInstance, f),
-    attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
+campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+moduleType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+status: jspb.Message.getFieldWithDefault(msg, 4, 0),
+config: (f = msg.getConfig()) && proto.api.commons.OmniCampaignModuleConfig.toObject(includeInstance, f),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+scheduledStopDate: (f = msg.getScheduledStopDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+actualStopDate: (f = msg.getActualStopDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+hoursOfOperation: (f = msg.getHoursOfOperation()) && proto.api.commons.WeekdayTimeRange.toObject(includeInstance, f),
+details: (f = msg.getDetails()) && proto.api.commons.OmniCampaignModule.Details.toObject(includeInstance, f),
+attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
     proto.api.commons.OmniAttachment.toObject, includeInstance)
   };
 
@@ -2425,13 +2425,13 @@ proto.api.commons.OmniCampaignModule.Details.prototype.toObject = function(opt_i
  */
 proto.api.commons.OmniCampaignModule.Details.toObject = function(includeInstance, msg) {
   var f, obj = {
-    totalTaskCount: (f = msg.getTotalTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    completedTaskCount: (f = msg.getCompletedTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    connectedInboxAddress: (f = msg.getConnectedInboxAddress()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    verifiedEmailAddress: (f = msg.getVerifiedEmailAddress()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    pendingTaskCount: (f = msg.getPendingTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    failedTaskCount: (f = msg.getFailedTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    canceledTaskCount: (f = msg.getCanceledTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+totalTaskCount: (f = msg.getTotalTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+completedTaskCount: (f = msg.getCompletedTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+connectedInboxAddress: (f = msg.getConnectedInboxAddress()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+verifiedEmailAddress: (f = msg.getVerifiedEmailAddress()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+pendingTaskCount: (f = msg.getPendingTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+failedTaskCount: (f = msg.getFailedTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+canceledTaskCount: (f = msg.getCanceledTaskCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3258,32 +3258,32 @@ proto.api.commons.OmniCampaignModuleConfig.prototype.toObject = function(opt_inc
  */
 proto.api.commons.OmniCampaignModuleConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    apiKeyPrimary: (f = msg.getApiKeyPrimary()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    apiKeySecondary: (f = msg.getApiKeySecondary()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    colorProperties: (f = msg.getColorProperties()) && api_commons_chat_pb.ChatColorProperties.toObject(includeInstance, f),
-    connectedInboxSid: (f = msg.getConnectedInboxSid()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
-    dispositionsList: jspb.Message.toObjectList(msg.getDispositionsList(),
+apiKeyPrimary: (f = msg.getApiKeyPrimary()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+apiKeySecondary: (f = msg.getApiKeySecondary()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+colorProperties: (f = msg.getColorProperties()) && api_commons_chat_pb.ChatColorProperties.toObject(includeInstance, f),
+connectedInboxSid: (f = msg.getConnectedInboxSid()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
+dispositionsList: jspb.Message.toObjectList(msg.getDispositionsList(),
     proto.api.commons.Disposition.toObject, includeInstance),
-    email: (f = msg.getEmail()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    messageBody: (f = msg.getMessageBody()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    emailSubject: (f = msg.getEmailSubject()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    smsNumber: (f = msg.getSmsNumber()) && proto.api.commons.SmsNumber.toObject(includeInstance, f),
-    header: (f = msg.getHeader()) && api_commons_chat_pb.ChatHeader.toObject(includeInstance, f),
-    slaTimeouts: (f = msg.getSlaTimeouts()) && proto.api.commons.SLATimeouts.toObject(includeInstance, f),
-    sendsPerHour: (f = msg.getSendsPerHour()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    unsubscribeLinkSid: (f = msg.getUnsubscribeLinkSid()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
-    verifiedEmailSid: (f = msg.getVerifiedEmailSid()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
-    stopOnTaskDeplete: (f = msg.getStopOnTaskDeplete()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f),
-    attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
+email: (f = msg.getEmail()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+messageBody: (f = msg.getMessageBody()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+emailSubject: (f = msg.getEmailSubject()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+smsNumber: (f = msg.getSmsNumber()) && proto.api.commons.SmsNumber.toObject(includeInstance, f),
+header: (f = msg.getHeader()) && api_commons_chat_pb.ChatHeader.toObject(includeInstance, f),
+slaTimeouts: (f = msg.getSlaTimeouts()) && proto.api.commons.SLATimeouts.toObject(includeInstance, f),
+sendsPerHour: (f = msg.getSendsPerHour()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+unsubscribeLinkSid: (f = msg.getUnsubscribeLinkSid()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
+verifiedEmailSid: (f = msg.getVerifiedEmailSid()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
+stopOnTaskDeplete: (f = msg.getStopOnTaskDeplete()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f),
+attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
     proto.api.commons.OmniAttachment.toObject, includeInstance),
-    complianceRuleSetId: (f = msg.getComplianceRuleSetId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    paymentPortalIdsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
-    flowId: (f = msg.getFlowId()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
-    skills: (f = msg.getSkills()) && proto.api.commons.OmniConversationSkills.toObject(includeInstance, f),
-    whatsappNumber: (f = msg.getWhatsappNumber()) && proto.api.commons.WhatsAppNumber.toObject(includeInstance, f),
-    providerMetadataMap: (f = msg.getProviderMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
-    countryCode: jspb.Message.getFieldWithDefault(msg, 24, 0),
-    postalCodeField: jspb.Message.getFieldWithDefault(msg, 25, "")
+complianceRuleSetId: (f = msg.getComplianceRuleSetId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+paymentPortalIdsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
+flowId: (f = msg.getFlowId()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
+skills: (f = msg.getSkills()) && proto.api.commons.OmniConversationSkills.toObject(includeInstance, f),
+whatsappNumber: (f = msg.getWhatsappNumber()) && proto.api.commons.WhatsAppNumber.toObject(includeInstance, f),
+providerMetadataMap: (f = msg.getProviderMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
+countryCode: jspb.Message.getFieldWithDefault(msg, 24, 0),
+postalCodeField: jspb.Message.getFieldWithDefault(msg, 25, "")
   };
 
   if (includeInstance) {
@@ -4525,10 +4525,10 @@ proto.api.commons.SmsNumber.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.SmsNumber.toObject = function(includeInstance, msg) {
   var f, obj = {
-    number: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    provider: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    countryCode: jspb.Message.getFieldWithDefault(msg, 4, 0)
+number: jspb.Message.getFieldWithDefault(msg, 1, ""),
+type: jspb.Message.getFieldWithDefault(msg, 2, 0),
+provider: jspb.Message.getFieldWithDefault(msg, 3, 0),
+countryCode: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -4745,9 +4745,9 @@ proto.api.commons.ConversationCustomerInformation.prototype.toObject = function(
  */
 proto.api.commons.ConversationCustomerInformation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    phoneNumber: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    emailAddress: jspb.Message.getFieldWithDefault(msg, 3, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+phoneNumber: jspb.Message.getFieldWithDefault(msg, 2, ""),
+emailAddress: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -4935,12 +4935,12 @@ proto.api.commons.SLATimeouts.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.commons.SLATimeouts.toObject = function(includeInstance, msg) {
   var f, obj = {
-    t1: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    t2: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    t3: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    t10: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    t11: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    t12: jspb.Message.getFieldWithDefault(msg, 12, 0)
+t1: jspb.Message.getFieldWithDefault(msg, 1, 0),
+t2: jspb.Message.getFieldWithDefault(msg, 2, 0),
+t3: jspb.Message.getFieldWithDefault(msg, 3, 0),
+t10: jspb.Message.getFieldWithDefault(msg, 10, 0),
+t11: jspb.Message.getFieldWithDefault(msg, 11, 0),
+t12: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -5222,7 +5222,7 @@ proto.api.commons.ConversationCollectedData.prototype.toObject = function(opt_in
  */
 proto.api.commons.ConversationCollectedData.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.api.commons.ConversationCollectedData_Item.toObject, includeInstance)
   };
 
@@ -5375,12 +5375,12 @@ proto.api.commons.ConversationCollectedData_Item.prototype.toObject = function(o
  */
 proto.api.commons.ConversationCollectedData_Item.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationCollectedDataSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    dataName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    dataValue: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    collectionTime: (f = msg.getCollectionTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    userId: (f = msg.getUserId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+conversationCollectedDataSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+conversationSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+dataName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+dataValue: jspb.Message.getFieldWithDefault(msg, 4, ""),
+collectionTime: (f = msg.getCollectionTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+userId: (f = msg.getUserId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5697,23 +5697,23 @@ proto.api.commons.OmniMessage.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.commons.OmniMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    messageSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    userId: (f = msg.getUserId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    sentFrom: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    sentTo: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    channelType: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    referenceId: (f = msg.getReferenceId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    uiReferenceId: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    payload: (f = msg.getPayload()) && proto.api.commons.OmniMessagePayload.toObject(includeInstance, f),
-    conversationSid: (f = msg.getConversationSid()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 17, "0"),
-    subject: (f = msg.getSubject()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    senderType: jspb.Message.getFieldWithDefault(msg, 21, 0),
-    statusMessage: (f = msg.getStatusMessage()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    messageFormat: jspb.Message.getFieldWithDefault(msg, 23, 0)
+messageSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+userId: (f = msg.getUserId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+sentFrom: jspb.Message.getFieldWithDefault(msg, 5, ""),
+sentTo: jspb.Message.getFieldWithDefault(msg, 6, ""),
+channelType: jspb.Message.getFieldWithDefault(msg, 7, 0),
+referenceId: (f = msg.getReferenceId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+uiReferenceId: jspb.Message.getFieldWithDefault(msg, 10, ""),
+payload: (f = msg.getPayload()) && proto.api.commons.OmniMessagePayload.toObject(includeInstance, f),
+conversationSid: (f = msg.getConversationSid()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
+status: jspb.Message.getFieldWithDefault(msg, 14, 0),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 17, "0"),
+subject: (f = msg.getSubject()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+senderType: jspb.Message.getFieldWithDefault(msg, 21, 0),
+statusMessage: (f = msg.getStatusMessage()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+messageFormat: jspb.Message.getFieldWithDefault(msg, 23, 0)
   };
 
   if (includeInstance) {
@@ -6475,11 +6475,11 @@ proto.api.commons.CustomerChatWidgetMessage.prototype.toObject = function(opt_in
  */
 proto.api.commons.CustomerChatWidgetMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    messageSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    payload: (f = msg.getPayload()) && proto.api.commons.OmniMessagePayload.toObject(includeInstance, f),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    uiReferenceId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    customerInformation: (f = msg.getCustomerInformation()) && proto.api.commons.ConversationCustomerInformation.toObject(includeInstance, f)
+messageSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+payload: (f = msg.getPayload()) && proto.api.commons.OmniMessagePayload.toObject(includeInstance, f),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+uiReferenceId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+customerInformation: (f = msg.getCustomerInformation()) && proto.api.commons.ConversationCustomerInformation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6788,13 +6788,13 @@ proto.api.commons.AgentChatWidgetMessage.prototype.toObject = function(opt_inclu
  */
 proto.api.commons.AgentChatWidgetMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    messageSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    payload: (f = msg.getPayload()) && proto.api.commons.OmniMessagePayload.toObject(includeInstance, f),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    uiReferenceId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    userInformation: (f = msg.getUserInformation()) && proto.api.commons.OmniConversationUserInformation.toObject(includeInstance, f),
-    senderType: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    messageFormat: jspb.Message.getFieldWithDefault(msg, 7, 0)
+messageSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+payload: (f = msg.getPayload()) && proto.api.commons.OmniMessagePayload.toObject(includeInstance, f),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+uiReferenceId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+userInformation: (f = msg.getUserInformation()) && proto.api.commons.OmniConversationUserInformation.toObject(includeInstance, f),
+senderType: jspb.Message.getFieldWithDefault(msg, 6, 0),
+messageFormat: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -7202,23 +7202,23 @@ proto.api.commons.OmniMessagePayload.prototype.toObject = function(opt_includeIn
  */
 proto.api.commons.OmniMessagePayload.toObject = function(includeInstance, msg) {
   var f, obj = {
-    textMessage: (f = msg.getTextMessage()) && proto.api.commons.OmniTextMessage.toObject(includeInstance, f),
-    typingNotification: (f = msg.getTypingNotification()) && proto.api.commons.OmniTypingNotification.toObject(includeInstance, f),
-    reassignment: (f = msg.getReassignment()) && proto.api.commons.OmniReassignmentNotification.toObject(includeInstance, f),
-    requestAttachmentUploadUrl: (f = msg.getRequestAttachmentUploadUrl()) && proto.api.commons.OmniRequestAttachmentUploadURL.toObject(includeInstance, f),
-    attachmentUploadUrl: (f = msg.getAttachmentUploadUrl()) && proto.api.commons.OmniAttachmentUploadURL.toObject(includeInstance, f),
-    attachment: (f = msg.getAttachment()) && proto.api.commons.OmniAttachment.toObject(includeInstance, f),
-    closeConversation: (f = msg.getCloseConversation()) && proto.api.commons.OmniCloseConversation.toObject(includeInstance, f),
-    assignConversation: (f = msg.getAssignConversation()) && proto.api.commons.OmniAssignConversation.toObject(includeInstance, f),
-    unassignConversation: (f = msg.getUnassignConversation()) && proto.api.commons.OmniUnassignConversation.toObject(includeInstance, f),
-    finishWrapUp: (f = msg.getFinishWrapUp()) && proto.api.commons.OmniFinishWrapUp.toObject(includeInstance, f),
-    suspend: (f = msg.getSuspend()) && proto.api.commons.OmniSuspend.toObject(includeInstance, f),
-    startWrapUp: (f = msg.getStartWrapUp()) && proto.api.commons.OmniStartWrapUp.toObject(includeInstance, f),
-    queueInformation: (f = msg.getQueueInformation()) && proto.api.commons.OmniQueueInformation.toObject(includeInstance, f),
-    requestQueueInformation: (f = msg.getRequestQueueInformation()) && proto.api.commons.OmniRequestQueueInformation.toObject(includeInstance, f),
-    offLoadedTextMessage: (f = msg.getOffLoadedTextMessage()) && proto.api.commons.OmniOffLoadedTextMessage.toObject(includeInstance, f),
-    cannedMessage: (f = msg.getCannedMessage()) && proto.api.commons.OmniCannedMessage.toObject(includeInstance, f),
-    dataMessage: (f = msg.getDataMessage()) && proto.api.commons.OmniDataMessage.toObject(includeInstance, f)
+textMessage: (f = msg.getTextMessage()) && proto.api.commons.OmniTextMessage.toObject(includeInstance, f),
+typingNotification: (f = msg.getTypingNotification()) && proto.api.commons.OmniTypingNotification.toObject(includeInstance, f),
+reassignment: (f = msg.getReassignment()) && proto.api.commons.OmniReassignmentNotification.toObject(includeInstance, f),
+requestAttachmentUploadUrl: (f = msg.getRequestAttachmentUploadUrl()) && proto.api.commons.OmniRequestAttachmentUploadURL.toObject(includeInstance, f),
+attachmentUploadUrl: (f = msg.getAttachmentUploadUrl()) && proto.api.commons.OmniAttachmentUploadURL.toObject(includeInstance, f),
+attachment: (f = msg.getAttachment()) && proto.api.commons.OmniAttachment.toObject(includeInstance, f),
+closeConversation: (f = msg.getCloseConversation()) && proto.api.commons.OmniCloseConversation.toObject(includeInstance, f),
+assignConversation: (f = msg.getAssignConversation()) && proto.api.commons.OmniAssignConversation.toObject(includeInstance, f),
+unassignConversation: (f = msg.getUnassignConversation()) && proto.api.commons.OmniUnassignConversation.toObject(includeInstance, f),
+finishWrapUp: (f = msg.getFinishWrapUp()) && proto.api.commons.OmniFinishWrapUp.toObject(includeInstance, f),
+suspend: (f = msg.getSuspend()) && proto.api.commons.OmniSuspend.toObject(includeInstance, f),
+startWrapUp: (f = msg.getStartWrapUp()) && proto.api.commons.OmniStartWrapUp.toObject(includeInstance, f),
+queueInformation: (f = msg.getQueueInformation()) && proto.api.commons.OmniQueueInformation.toObject(includeInstance, f),
+requestQueueInformation: (f = msg.getRequestQueueInformation()) && proto.api.commons.OmniRequestQueueInformation.toObject(includeInstance, f),
+offLoadedTextMessage: (f = msg.getOffLoadedTextMessage()) && proto.api.commons.OmniOffLoadedTextMessage.toObject(includeInstance, f),
+cannedMessage: (f = msg.getCannedMessage()) && proto.api.commons.OmniCannedMessage.toObject(includeInstance, f),
+dataMessage: (f = msg.getDataMessage()) && proto.api.commons.OmniDataMessage.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8176,10 +8176,10 @@ proto.api.commons.OmniTextMessage.prototype.toObject = function(opt_includeInsta
  */
 proto.api.commons.OmniTextMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
+message: jspb.Message.getFieldWithDefault(msg, 1, ""),
+attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
     proto.api.commons.OmniAttachment.toObject, includeInstance),
-    primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8417,8 +8417,8 @@ proto.api.commons.OmniOffLoadedTextMessage.prototype.toObject = function(opt_inc
  */
 proto.api.commons.OmniOffLoadedTextMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    location: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
+location: jspb.Message.getFieldWithDefault(msg, 1, ""),
+attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
     proto.api.commons.OmniAttachment.toObject, includeInstance)
   };
 
@@ -8701,9 +8701,9 @@ proto.api.commons.OmniAssignConversation.prototype.toObject = function(opt_inclu
  */
 proto.api.commons.OmniAssignConversation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    primaryAsmSessionSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+userName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+primaryAsmSessionSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -8891,11 +8891,11 @@ proto.api.commons.OmniReassignmentNotification.prototype.toObject = function(opt
  */
 proto.api.commons.OmniReassignmentNotification.toObject = function(includeInstance, msg) {
   var f, obj = {
-    currentUserId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    currentUserName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    newUserId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    newUserName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    newUserAsmSessionSid: (f = msg.getNewUserAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+currentUserId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+currentUserName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+newUserId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+newUserName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+newUserAsmSessionSid: (f = msg.getNewUserAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9162,10 +9162,10 @@ proto.api.commons.OmniUnassignConversation.prototype.toObject = function(opt_inc
  */
 proto.api.commons.OmniUnassignConversation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: (f = msg.getUserId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    userName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    all: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+userId: (f = msg.getUserId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+userName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+all: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9525,8 +9525,8 @@ proto.api.commons.OmniAttachmentUploadURL.prototype.toObject = function(opt_incl
  */
 proto.api.commons.OmniAttachmentUploadURL.toObject = function(includeInstance, msg) {
   var f, obj = {
-    uploadUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 2, "")
+uploadUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
+id: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -9685,18 +9685,18 @@ proto.api.commons.OmniAttachment.prototype.toObject = function(opt_includeInstan
  */
 proto.api.commons.OmniAttachment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    omniAttachmentSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fileType: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    fileSize: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    path: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    tempId: (f = msg.getTempId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    downloadUrl: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    contentId: (f = msg.getContentId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    width: (f = msg.getWidth()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    height: (f = msg.getHeight()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+omniAttachmentSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fileType: jspb.Message.getFieldWithDefault(msg, 3, ""),
+fileSize: jspb.Message.getFieldWithDefault(msg, 4, 0),
+path: jspb.Message.getFieldWithDefault(msg, 5, ""),
+tempId: (f = msg.getTempId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+downloadUrl: jspb.Message.getFieldWithDefault(msg, 7, ""),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+contentId: (f = msg.getContentId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+width: (f = msg.getWidth()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+height: (f = msg.getHeight()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10271,7 +10271,7 @@ proto.api.commons.OmniStartWrapUp.prototype.toObject = function(opt_includeInsta
  */
 proto.api.commons.OmniStartWrapUp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10422,7 +10422,7 @@ proto.api.commons.OmniFinishWrapUp.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.OmniFinishWrapUp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10573,7 +10573,7 @@ proto.api.commons.OmniSuspend.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.commons.OmniSuspend.toObject = function(includeInstance, msg) {
   var f, obj = {
-    primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10724,7 +10724,7 @@ proto.api.commons.OmniCloseConversation.prototype.toObject = function(opt_includ
  */
 proto.api.commons.OmniCloseConversation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10875,7 +10875,7 @@ proto.api.commons.OmniQueueInformation.prototype.toObject = function(opt_include
  */
 proto.api.commons.OmniQueueInformation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    position: jspb.Message.getFieldWithDefault(msg, 1, 0)
+position: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -11005,7 +11005,7 @@ proto.api.commons.OmniRequestQueueInformation.prototype.toObject = function(opt_
  */
 proto.api.commons.OmniRequestQueueInformation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    position: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+position: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -11135,7 +11135,7 @@ proto.api.commons.OmniCannedMessage.prototype.toObject = function(opt_includeIns
  */
 proto.api.commons.OmniCannedMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cannedMessageId: jspb.Message.getFieldWithDefault(msg, 1, "")
+cannedMessageId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -11265,8 +11265,8 @@ proto.api.commons.OmniDataMessage.prototype.toObject = function(opt_includeInsta
  */
 proto.api.commons.OmniDataMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    messageSid: jspb.Message.getFieldWithDefault(msg, 2, "0")
+message: jspb.Message.getFieldWithDefault(msg, 1, ""),
+messageSid: jspb.Message.getFieldWithDefault(msg, 2, "0")
   };
 
   if (includeInstance) {
@@ -11425,8 +11425,8 @@ proto.api.commons.OmniConversationUserInformation.prototype.toObject = function(
  */
 proto.api.commons.OmniConversationUserInformation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+name: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -11592,7 +11592,7 @@ proto.api.commons.CustomerCollectedData.prototype.toObject = function(opt_includ
  */
 proto.api.commons.CustomerCollectedData.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.api.commons.CustomerCollectedDataItem.toObject, includeInstance)
   };
 
@@ -11745,8 +11745,8 @@ proto.api.commons.CustomerCollectedDataItem.prototype.toObject = function(opt_in
  */
 proto.api.commons.CustomerCollectedDataItem.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 2, "")
+key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+value: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -11912,29 +11912,29 @@ proto.api.commons.OmniConversation.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.OmniConversation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    channelType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    skills: (f = msg.getSkills()) && proto.api.commons.OmniConversationSkills.toObject(includeInstance, f),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    customerEmailAddress: (f = msg.getCustomerEmailAddress()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    customerPhoneNumber: (f = msg.getCustomerPhoneNumber()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    customerName: (f = msg.getCustomerName()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 10, "0"),
-    referenceId: (f = msg.getReferenceId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    lastMessageTime: (f = msg.getLastMessageTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    conversationCollectedData: (f = msg.getConversationCollectedData()) && proto.api.commons.ConversationCollectedData.toObject(includeInstance, f),
-    slaTimeouts: (f = msg.getSlaTimeouts()) && proto.api.commons.SLATimeouts.toObject(includeInstance, f),
-    conversationAssignmentsList: jspb.Message.toObjectList(msg.getConversationAssignmentsList(),
+conversationSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+channelType: jspb.Message.getFieldWithDefault(msg, 2, 0),
+skills: (f = msg.getSkills()) && proto.api.commons.OmniConversationSkills.toObject(includeInstance, f),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+status: jspb.Message.getFieldWithDefault(msg, 6, 0),
+customerEmailAddress: (f = msg.getCustomerEmailAddress()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+customerPhoneNumber: (f = msg.getCustomerPhoneNumber()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+customerName: (f = msg.getCustomerName()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 10, "0"),
+referenceId: (f = msg.getReferenceId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+lastMessageTime: (f = msg.getLastMessageTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+conversationCollectedData: (f = msg.getConversationCollectedData()) && proto.api.commons.ConversationCollectedData.toObject(includeInstance, f),
+slaTimeouts: (f = msg.getSlaTimeouts()) && proto.api.commons.SLATimeouts.toObject(includeInstance, f),
+conversationAssignmentsList: jspb.Message.toObjectList(msg.getConversationAssignmentsList(),
     proto.api.commons.OmniConversationAssignment.toObject, includeInstance),
-    metadata: (f = msg.getMetadata()) && proto.api.commons.OmniConversation.ConversationDetails.toObject(includeInstance, f),
-    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 19, "0"),
-    lastMessageGroupTime: (f = msg.getLastMessageGroupTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastMessageGroupType: jspb.Message.getFieldWithDefault(msg, 21, 0),
-    result: jspb.Message.getFieldWithDefault(msg, 22, 0),
-    lastStateChangedTime: (f = msg.getLastStateChangedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+metadata: (f = msg.getMetadata()) && proto.api.commons.OmniConversation.ConversationDetails.toObject(includeInstance, f),
+endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 19, "0"),
+lastMessageGroupTime: (f = msg.getLastMessageGroupTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lastMessageGroupType: jspb.Message.getFieldWithDefault(msg, 21, 0),
+result: jspb.Message.getFieldWithDefault(msg, 22, 0),
+lastStateChangedTime: (f = msg.getLastStateChangedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12314,10 +12314,10 @@ proto.api.commons.OmniConversation.ConversationDetails.prototype.toObject = func
  */
 proto.api.commons.OmniConversation.ConversationDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    campaignName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    supportEmail: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    campaignShortenUrl: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    paymentPortalIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+campaignName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+supportEmail: jspb.Message.getFieldWithDefault(msg, 2, ""),
+campaignShortenUrl: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+paymentPortalIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13235,15 +13235,15 @@ proto.api.commons.OmniConversationAssignment.prototype.toObject = function(opt_i
  */
 proto.api.commons.OmniConversationAssignment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conversationAssignmentSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    conversationSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    assignmentType: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    userId: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    metadata: (f = msg.getMetadata()) && proto.api.commons.OmniConversationAssignment.ConversationAssignmentDetails.toObject(includeInstance, f),
-    asmSessionSid: jspb.Message.getFieldWithDefault(msg, 11, 0)
+conversationAssignmentSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+conversationSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+isActive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+assignmentType: jspb.Message.getFieldWithDefault(msg, 6, 0),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+userId: jspb.Message.getFieldWithDefault(msg, 9, ""),
+metadata: (f = msg.getMetadata()) && proto.api.commons.OmniConversationAssignment.ConversationAssignmentDetails.toObject(includeInstance, f),
+asmSessionSid: jspb.Message.getFieldWithDefault(msg, 11, 0)
   };
 
   if (includeInstance) {
@@ -13449,7 +13449,7 @@ proto.api.commons.OmniConversationAssignment.ConversationAssignmentDetails.proto
  */
 proto.api.commons.OmniConversationAssignment.ConversationAssignmentDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userName: jspb.Message.getFieldWithDefault(msg, 1, "")
+userName: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -13798,7 +13798,7 @@ proto.api.commons.OmniConversationSkills.prototype.toObject = function(opt_inclu
  */
 proto.api.commons.OmniConversationSkills.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : []
+skillsMap: (f = msg.getSkillsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -13939,7 +13939,7 @@ proto.api.commons.WeekdayTimeRange.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.WeekdayTimeRange.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entriesList: jspb.Message.toObjectList(msg.getEntriesList(),
+entriesList: jspb.Message.toObjectList(msg.getEntriesList(),
     proto.api.commons.WeekdayTimeRangeEntry.toObject, includeInstance)
   };
 
@@ -14092,12 +14092,12 @@ proto.api.commons.WeekdayTimeRangeEntry.prototype.toObject = function(opt_includ
  */
 proto.api.commons.WeekdayTimeRangeEntry.toObject = function(includeInstance, msg) {
   var f, obj = {
-    startDay: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    startHour: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    startMinute: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    endDay: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    endHour: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    endMinute: jspb.Message.getFieldWithDefault(msg, 6, 0)
+startDay: jspb.Message.getFieldWithDefault(msg, 1, 0),
+startHour: jspb.Message.getFieldWithDefault(msg, 2, 0),
+startMinute: jspb.Message.getFieldWithDefault(msg, 3, 0),
+endDay: jspb.Message.getFieldWithDefault(msg, 4, 0),
+endHour: jspb.Message.getFieldWithDefault(msg, 5, 0),
+endMinute: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -14372,11 +14372,11 @@ proto.api.commons.Disposition.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.commons.Disposition.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dispositionSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    disposition: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    deleted: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+dispositionSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+disposition: jspb.Message.getFieldWithDefault(msg, 4, ""),
+deleted: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -14671,7 +14671,7 @@ proto.api.commons.GetQueuesDetailsRes.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.GetQueuesDetailsRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-    queueDetailsList: jspb.Message.toObjectList(msg.getQueueDetailsList(),
+queueDetailsList: jspb.Message.toObjectList(msg.getQueueDetailsList(),
     proto.api.commons.GetQueuesDetailsRes.QueueDetails.toObject, includeInstance)
   };
 
@@ -14786,8 +14786,8 @@ proto.api.commons.GetQueuesDetailsRes.QueueDetails.prototype.toObject = function
  */
 proto.api.commons.GetQueuesDetailsRes.QueueDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    channelType: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    queuesize: jspb.Message.getFieldWithDefault(msg, 2, 0)
+channelType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+queuesize: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -14984,15 +14984,15 @@ proto.api.commons.OmniCustomUnsubscribeLink.prototype.toObject = function(opt_in
  */
 proto.api.commons.OmniCustomUnsubscribeLink.toObject = function(includeInstance, msg) {
   var f, obj = {
-    customUnsubscribeLinkSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    linkName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    linkUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    validated: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateValidated: (f = msg.getDateValidated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    description: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    deleted: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+customUnsubscribeLinkSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+linkName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+linkUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
+validated: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateValidated: (f = msg.getDateValidated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+description: jspb.Message.getFieldWithDefault(msg, 9, ""),
+deleted: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -15424,16 +15424,16 @@ proto.api.commons.ContactList.prototype.toObject = function(opt_includeInstance)
  */
 proto.api.commons.ContactList.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactListSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    fieldNamesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    projectSid: (f = msg.getProjectSid()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    contactEntriesList: jspb.Message.toObjectList(msg.getContactEntriesList(),
+contactListSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+fieldNamesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+projectSid: (f = msg.getProjectSid()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+contactEntriesList: jspb.Message.toObjectList(msg.getContactEntriesList(),
     proto.api.commons.ContactEntry.toObject, includeInstance),
-    metadata: (f = msg.getMetadata()) && proto.api.commons.ContactList.Metadata.toObject(includeInstance, f)
+metadata: (f = msg.getMetadata()) && proto.api.commons.ContactList.Metadata.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15643,7 +15643,7 @@ proto.api.commons.ContactList.Metadata.prototype.toObject = function(opt_include
  */
 proto.api.commons.ContactList.Metadata.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entryCount: jspb.Message.getFieldWithDefault(msg, 1, 0)
+entryCount: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -16057,12 +16057,12 @@ proto.api.commons.ContactEntry.prototype.toObject = function(opt_includeInstance
  */
 proto.api.commons.ContactEntry.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactEntrySid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    contactListSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    fieldNamesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    dataFieldsList: jspb.Message.toObjectList(msg.getDataFieldsList(),
+contactEntrySid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+contactListSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+fieldNamesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+dataFieldsList: jspb.Message.toObjectList(msg.getDataFieldsList(),
     proto.api.commons.OmniDataField.toObject, includeInstance)
   };
 
@@ -16428,21 +16428,21 @@ proto.api.commons.OmniTask.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.OmniTask.toObject = function(includeInstance, msg) {
   var f, obj = {
-    taskSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    status: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 5, "0"),
-    campaignSid: jspb.Message.getFieldWithDefault(msg, 6, "0"),
-    contactEntrySid: (f = msg.getContactEntrySid()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
-    state: (f = msg.getState()) && proto.api.commons.OmniTaskState.toObject(includeInstance, f),
-    dataFieldsList: jspb.Message.toObjectList(msg.getDataFieldsList(),
+taskSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+status: jspb.Message.getFieldWithDefault(msg, 2, 0),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+campaignModuleSid: jspb.Message.getFieldWithDefault(msg, 5, "0"),
+campaignSid: jspb.Message.getFieldWithDefault(msg, 6, "0"),
+contactEntrySid: (f = msg.getContactEntrySid()) && api_commons_types_pb.Int64Id.toObject(includeInstance, f),
+state: (f = msg.getState()) && proto.api.commons.OmniTaskState.toObject(includeInstance, f),
+dataFieldsList: jspb.Message.toObjectList(msg.getDataFieldsList(),
     proto.api.commons.OmniDataField.toObject, includeInstance),
-    details: (f = msg.getDetails()) && proto.api.commons.OmniTask.Details.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    statusMessage: (f = msg.getStatusMessage()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    scheduledTime: (f = msg.getScheduledTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    taskConfig: (f = msg.getTaskConfig()) && proto.api.commons.OmniTaskConfig.toObject(includeInstance, f)
+details: (f = msg.getDetails()) && proto.api.commons.OmniTask.Details.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 11, ""),
+statusMessage: (f = msg.getStatusMessage()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+scheduledTime: (f = msg.getScheduledTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+taskConfig: (f = msg.getTaskConfig()) && proto.api.commons.OmniTaskConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16715,7 +16715,7 @@ proto.api.commons.OmniTask.Details.prototype.toObject = function(opt_includeInst
  */
 proto.api.commons.OmniTask.Details.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contactListName: (f = msg.getContactListName()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+contactListName: (f = msg.getContactListName()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17290,12 +17290,12 @@ proto.api.commons.OmniTaskConfig.prototype.toObject = function(opt_includeInstan
  */
 proto.api.commons.OmniTaskConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    skills: (f = msg.getSkills()) && proto.api.commons.OmniConversationSkills.toObject(includeInstance, f),
-    absoluteTimeoutDuration: (f = msg.getAbsoluteTimeoutDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    agentTimeoutDuration: (f = msg.getAgentTimeoutDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    subject: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    message: (f = msg.getMessage()) && proto.api.commons.OmniMessagePayload.toObject(includeInstance, f),
-    userId: jspb.Message.getFieldWithDefault(msg, 6, "")
+skills: (f = msg.getSkills()) && proto.api.commons.OmniConversationSkills.toObject(includeInstance, f),
+absoluteTimeoutDuration: (f = msg.getAbsoluteTimeoutDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+agentTimeoutDuration: (f = msg.getAgentTimeoutDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+subject: jspb.Message.getFieldWithDefault(msg, 4, ""),
+message: (f = msg.getMessage()) && proto.api.commons.OmniMessagePayload.toObject(includeInstance, f),
+userId: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -17661,12 +17661,12 @@ proto.api.commons.OmniTaskState.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.commons.OmniTaskState.toObject = function(includeInstance, msg) {
   var f, obj = {
-    destinationsList: jspb.Message.toObjectList(msg.getDestinationsList(),
+destinationsList: jspb.Message.toObjectList(msg.getDestinationsList(),
     proto.api.commons.OmniTaskState.Entry.toObject, includeInstance),
-    sourcesList: jspb.Message.toObjectList(msg.getSourcesList(),
+sourcesList: jspb.Message.toObjectList(msg.getSourcesList(),
     proto.api.commons.OmniTaskState.Entry.toObject, includeInstance),
-    ruleSet: (f = msg.getRuleSet()) && proto.api.commons.ComplianceRuleSet.toObject(includeInstance, f),
-    scrubListId: (f = msg.getScrubListId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+ruleSet: (f = msg.getRuleSet()) && proto.api.commons.ComplianceRuleSet.toObject(includeInstance, f),
+scrubListId: (f = msg.getScrubListId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17819,9 +17819,9 @@ proto.api.commons.OmniTaskState.Entry.prototype.toObject = function(opt_includeI
  */
 proto.api.commons.OmniTaskState.Entry.toObject = function(includeInstance, msg) {
   var f, obj = {
-    address: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    timesUsed: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    lastUsed: (f = msg.getLastUsed()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+address: jspb.Message.getFieldWithDefault(msg, 1, ""),
+timesUsed: jspb.Message.getFieldWithDefault(msg, 2, 0),
+lastUsed: (f = msg.getLastUsed()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -18187,10 +18187,10 @@ proto.api.commons.ComplianceRuleSet.prototype.toObject = function(opt_includeIns
  */
 proto.api.commons.ComplianceRuleSet.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    sha: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    rulesList: jspb.Message.toObjectList(msg.getRulesList(),
+id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+sha: jspb.Message.getFieldWithDefault(msg, 3, ""),
+rulesList: jspb.Message.toObjectList(msg.getRulesList(),
     proto.api.commons.ComplianceRule.toObject, includeInstance)
   };
 
@@ -18430,9 +18430,9 @@ proto.api.commons.ComplianceRule.prototype.toObject = function(opt_includeInstan
  */
 proto.api.commons.ComplianceRule.toObject = function(includeInstance, msg) {
   var f, obj = {
-    text: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    permit: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    pluginResponse: jspb.Message.getFieldWithDefault(msg, 3, "")
+text: jspb.Message.getFieldWithDefault(msg, 1, ""),
+permit: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+pluginResponse: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -18620,11 +18620,11 @@ proto.api.commons.OmniDataField.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.commons.OmniDataField.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    parentSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 5, 0)
+fieldSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+parentSid: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+value: jspb.Message.getFieldWithDefault(msg, 4, ""),
+type: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -18870,28 +18870,28 @@ proto.api.commons.ConnectedInbox.prototype.toObject = function(opt_includeInstan
  */
 proto.api.commons.ConnectedInbox.toObject = function(includeInstance, msg) {
   var f, obj = {
-    connectedInboxSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    emailAddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    username: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    checkFrequencyMinutes: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    serverName: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    serverPort: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    lastScheduledTime: (f = msg.getLastScheduledTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastChecked: (f = msg.getLastChecked()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    purgeThreshold: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    emailSalt: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    numConsecutiveFailures: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    lastError: (f = msg.getLastError()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    standbyErrorTime: (f = msg.getStandbyErrorTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    lastUpdated: (f = msg.getLastUpdated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    maxMessageSize: jspb.Message.getFieldWithDefault(msg, 16, 0),
-    maxMessages: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    googleXoauth2RefreshToken: (f = msg.getGoogleXoauth2RefreshToken()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    googleXoauth2AccessToken: (f = msg.getGoogleXoauth2AccessToken()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    googleXoauth2AccessTokenExpiration: (f = msg.getGoogleXoauth2AccessTokenExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    authenticationType: jspb.Message.getFieldWithDefault(msg, 21, 0),
-    oauthReferenceId: (f = msg.getOauthReferenceId()) && proto.api.commons.ConnectedInboxOAuthConfig.toObject(includeInstance, f)
+connectedInboxSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+emailAddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
+username: jspb.Message.getFieldWithDefault(msg, 3, ""),
+password: jspb.Message.getFieldWithDefault(msg, 4, ""),
+checkFrequencyMinutes: jspb.Message.getFieldWithDefault(msg, 5, 0),
+serverName: jspb.Message.getFieldWithDefault(msg, 6, ""),
+serverPort: jspb.Message.getFieldWithDefault(msg, 7, 0),
+lastScheduledTime: (f = msg.getLastScheduledTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lastChecked: (f = msg.getLastChecked()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+purgeThreshold: jspb.Message.getFieldWithDefault(msg, 10, 0),
+emailSalt: jspb.Message.getFieldWithDefault(msg, 11, ""),
+numConsecutiveFailures: jspb.Message.getFieldWithDefault(msg, 12, 0),
+lastError: (f = msg.getLastError()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+standbyErrorTime: (f = msg.getStandbyErrorTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+lastUpdated: (f = msg.getLastUpdated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+maxMessageSize: jspb.Message.getFieldWithDefault(msg, 16, 0),
+maxMessages: jspb.Message.getFieldWithDefault(msg, 17, 0),
+googleXoauth2RefreshToken: (f = msg.getGoogleXoauth2RefreshToken()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+googleXoauth2AccessToken: (f = msg.getGoogleXoauth2AccessToken()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+googleXoauth2AccessTokenExpiration: (f = msg.getGoogleXoauth2AccessTokenExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+authenticationType: jspb.Message.getFieldWithDefault(msg, 21, 0),
+oauthReferenceId: (f = msg.getOauthReferenceId()) && proto.api.commons.ConnectedInboxOAuthConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -19819,10 +19819,10 @@ proto.api.commons.ConnectedInboxOAuthConfig.prototype.toObject = function(opt_in
  */
 proto.api.commons.ConnectedInboxOAuthConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accessToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    expiresAt: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    referenceId: jspb.Message.getFieldWithDefault(msg, 4, "")
+accessToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
+refreshToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
+expiresAt: jspb.Message.getFieldWithDefault(msg, 3, 0),
+referenceId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -20039,13 +20039,13 @@ proto.api.commons.VerifiedEmail.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.commons.VerifiedEmail.toObject = function(includeInstance, msg) {
   var f, obj = {
-    verifiedEmailSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    emailAddress: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    verified: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    verifiedOn: (f = msg.getVerifiedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    deleted: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    description: (f = msg.getDescription()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+verifiedEmailSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+emailAddress: jspb.Message.getFieldWithDefault(msg, 3, ""),
+verified: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+verifiedOn: (f = msg.getVerifiedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+deleted: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+description: (f = msg.getDescription()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -20412,13 +20412,13 @@ proto.api.commons.Signature.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.commons.Signature.toObject = function(includeInstance, msg) {
   var f, obj = {
-    signatureSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-    signature: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    deletedOn: (f = msg.getDeletedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 7, "")
+signatureSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+signature: jspb.Message.getFieldWithDefault(msg, 2, ""),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+deletedOn: (f = msg.getDeletedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 6, ""),
+description: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -20785,9 +20785,9 @@ proto.api.commons.OmniProjectComplianceConfig.prototype.toObject = function(opt_
  */
 proto.api.commons.OmniProjectComplianceConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    email: (f = msg.getEmail()) && proto.api.commons.OmniComplianceConfig.toObject(includeInstance, f),
-    sms: (f = msg.getSms()) && proto.api.commons.OmniComplianceConfig.toObject(includeInstance, f),
-    whatsapp: (f = msg.getWhatsapp()) && proto.api.commons.OmniComplianceConfig.toObject(includeInstance, f)
+email: (f = msg.getEmail()) && proto.api.commons.OmniComplianceConfig.toObject(includeInstance, f),
+sms: (f = msg.getSms()) && proto.api.commons.OmniComplianceConfig.toObject(includeInstance, f),
+whatsapp: (f = msg.getWhatsapp()) && proto.api.commons.OmniComplianceConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -21045,9 +21045,9 @@ proto.api.commons.OmniComplianceAction.prototype.toObject = function(opt_include
  */
 proto.api.commons.OmniComplianceAction.toObject = function(includeInstance, msg) {
   var f, obj = {
-    keywordsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    confirmationMessage: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    isFuzzyMatch: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+keywordsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+confirmationMessage: jspb.Message.getFieldWithDefault(msg, 2, ""),
+isFuzzyMatch: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -21254,12 +21254,12 @@ proto.api.commons.OmniComplianceConfig.prototype.toObject = function(opt_include
  */
 proto.api.commons.OmniComplianceConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    optIn: (f = msg.getOptIn()) && proto.api.commons.OmniComplianceAction.toObject(includeInstance, f),
-    optOut: (f = msg.getOptOut()) && proto.api.commons.OmniComplianceAction.toObject(includeInstance, f),
-    help: (f = msg.getHelp()) && proto.api.commons.OmniComplianceAction.toObject(includeInstance, f),
-    information: (f = msg.getInformation()) && proto.api.commons.OmniComplianceAction.toObject(includeInstance, f),
-    scrubListId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    ruleSetId: (f = msg.getRuleSetId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+optIn: (f = msg.getOptIn()) && proto.api.commons.OmniComplianceAction.toObject(includeInstance, f),
+optOut: (f = msg.getOptOut()) && proto.api.commons.OmniComplianceAction.toObject(includeInstance, f),
+help: (f = msg.getHelp()) && proto.api.commons.OmniComplianceAction.toObject(includeInstance, f),
+information: (f = msg.getInformation()) && proto.api.commons.OmniComplianceAction.toObject(includeInstance, f),
+scrubListId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+ruleSetId: (f = msg.getRuleSetId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -21639,13 +21639,13 @@ proto.api.commons.WhatsAppNumber.prototype.toObject = function(opt_includeInstan
  */
 proto.api.commons.WhatsAppNumber.toObject = function(includeInstance, msg) {
   var f, obj = {
-    number: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    provider: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    countryCode: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    whatsappNumberSid: jspb.Message.getFieldWithDefault(msg, 4, "0"),
-    displayName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+number: jspb.Message.getFieldWithDefault(msg, 1, ""),
+provider: jspb.Message.getFieldWithDefault(msg, 2, 0),
+countryCode: jspb.Message.getFieldWithDefault(msg, 3, 0),
+whatsappNumberSid: jspb.Message.getFieldWithDefault(msg, 4, "0"),
+displayName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+dateModified: (f = msg.getDateModified()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

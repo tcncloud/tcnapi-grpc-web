@@ -235,7 +235,7 @@ proto.api.v1alpha1.scorecards.GetScorecardQuestionRequest.prototype.toObject = f
  */
 proto.api.v1alpha1.scorecards.GetScorecardQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -365,7 +365,7 @@ proto.api.v1alpha1.scorecards.GetScorecardQuestionResponse.prototype.toObject = 
  */
 proto.api.v1alpha1.scorecards.GetScorecardQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
+scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -516,7 +516,7 @@ proto.api.v1alpha1.scorecards.CreateScorecardQuestionRequest.prototype.toObject 
  */
 proto.api.v1alpha1.scorecards.CreateScorecardQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
+scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -667,7 +667,7 @@ proto.api.v1alpha1.scorecards.CreateScorecardQuestionResponse.prototype.toObject
  */
 proto.api.v1alpha1.scorecards.CreateScorecardQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
+scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -818,8 +818,8 @@ proto.api.v1alpha1.scorecards.UpdateScorecardQuestionRequest.prototype.toObject 
  */
 proto.api.v1alpha1.scorecards.UpdateScorecardQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1020,7 +1020,7 @@ proto.api.v1alpha1.scorecards.UpdateScorecardQuestionResponse.prototype.toObject
  */
 proto.api.v1alpha1.scorecards.UpdateScorecardQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
+scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1171,7 +1171,7 @@ proto.api.v1alpha1.scorecards.DeleteScorecardQuestionRequest.prototype.toObject 
  */
 proto.api.v1alpha1.scorecards.DeleteScorecardQuestionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+scorecardQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1301,7 +1301,7 @@ proto.api.v1alpha1.scorecards.DeleteScorecardQuestionResponse.prototype.toObject
  */
 proto.api.v1alpha1.scorecards.DeleteScorecardQuestionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
+scorecardQuestion: (f = msg.getScorecardQuestion()) && api_commons_scorecards_pb.ScorecardQuestion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

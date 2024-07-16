@@ -572,11 +572,11 @@ proto.api.v1alpha1.org.CreateTrustRequest.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.org.CreateTrustRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    grantee: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    permissionsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    labelIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+grantee: jspb.Message.getFieldWithDefault(msg, 1, ""),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+permissionsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+labelIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -862,7 +862,7 @@ proto.api.v1alpha1.org.CreateTrustResponse.prototype.toObject = function(opt_inc
  */
 proto.api.v1alpha1.org.CreateTrustResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trustId: jspb.Message.getFieldWithDefault(msg, 1, "")
+trustId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -992,7 +992,7 @@ proto.api.v1alpha1.org.AcceptTrustRequest.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.org.AcceptTrustRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trustId: jspb.Message.getFieldWithDefault(msg, 1, "")
+trustId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1223,7 +1223,7 @@ proto.api.v1alpha1.org.RejectTrustRequest.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.org.RejectTrustRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trustId: jspb.Message.getFieldWithDefault(msg, 1, "")
+trustId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1454,7 +1454,7 @@ proto.api.v1alpha1.org.GetTrustRequest.prototype.toObject = function(opt_include
  */
 proto.api.v1alpha1.org.GetTrustRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trustId: jspb.Message.getFieldWithDefault(msg, 1, "")
+trustId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1584,9 +1584,9 @@ proto.api.v1alpha1.org.GetTrustResponse.prototype.toObject = function(opt_includ
  */
 proto.api.v1alpha1.org.GetTrustResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trust: (f = msg.getTrust()) && api_commons_org_trusts_pb.Trust.toObject(includeInstance, f),
-    grantorName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    granteeName: jspb.Message.getFieldWithDefault(msg, 3, "")
+trust: (f = msg.getTrust()) && api_commons_org_trusts_pb.Trust.toObject(includeInstance, f),
+grantorName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+granteeName: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1903,7 +1903,7 @@ proto.api.v1alpha1.org.ListIncomingTrustsResponse.prototype.toObject = function(
  */
 proto.api.v1alpha1.org.ListIncomingTrustsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
+trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
     proto.api.v1alpha1.org.ListIncomingTrustsResponse.Payload.toObject, includeInstance)
   };
 
@@ -2018,9 +2018,9 @@ proto.api.v1alpha1.org.ListIncomingTrustsResponse.Payload.prototype.toObject = f
  */
 proto.api.v1alpha1.org.ListIncomingTrustsResponse.Payload.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trust: (f = msg.getTrust()) && api_commons_org_trusts_pb.Trust.toObject(includeInstance, f),
-    grantorName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    granteeName: jspb.Message.getFieldWithDefault(msg, 3, "")
+trust: (f = msg.getTrust()) && api_commons_org_trusts_pb.Trust.toObject(includeInstance, f),
+grantorName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+granteeName: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2375,7 +2375,7 @@ proto.api.v1alpha1.org.ListGivenTrustsResponse.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.org.ListGivenTrustsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
+trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
     proto.api.v1alpha1.org.ListGivenTrustsResponse.Payload.toObject, includeInstance)
   };
 
@@ -2490,9 +2490,9 @@ proto.api.v1alpha1.org.ListGivenTrustsResponse.Payload.prototype.toObject = func
  */
 proto.api.v1alpha1.org.ListGivenTrustsResponse.Payload.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trust: (f = msg.getTrust()) && api_commons_org_trusts_pb.Trust.toObject(includeInstance, f),
-    grantorName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    granteeName: jspb.Message.getFieldWithDefault(msg, 3, "")
+trust: (f = msg.getTrust()) && api_commons_org_trusts_pb.Trust.toObject(includeInstance, f),
+grantorName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+granteeName: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2847,7 +2847,7 @@ proto.api.v1alpha1.org.ListAssignableTrustsResponse.prototype.toObject = functio
  */
 proto.api.v1alpha1.org.ListAssignableTrustsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
+trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
     proto.api.v1alpha1.org.ListAssignableTrustsResponse.Payload.toObject, includeInstance)
   };
 
@@ -2962,9 +2962,9 @@ proto.api.v1alpha1.org.ListAssignableTrustsResponse.Payload.prototype.toObject =
  */
 proto.api.v1alpha1.org.ListAssignableTrustsResponse.Payload.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trust: (f = msg.getTrust()) && api_commons_org_trusts_pb.Trust.toObject(includeInstance, f),
-    grantorName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    granteeName: jspb.Message.getFieldWithDefault(msg, 3, "")
+trust: (f = msg.getTrust()) && api_commons_org_trusts_pb.Trust.toObject(includeInstance, f),
+grantorName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+granteeName: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -3211,7 +3211,7 @@ proto.api.v1alpha1.org.DeleteTrustRequest.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.org.DeleteTrustRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trustId: jspb.Message.getFieldWithDefault(msg, 1, "")
+trustId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3449,8 +3449,8 @@ proto.api.v1alpha1.org.AssignTrustRequest.prototype.toObject = function(opt_incl
  */
 proto.api.v1alpha1.org.AssignTrustRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trustId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+trustId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+userIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3729,8 +3729,8 @@ proto.api.v1alpha1.org.UnassignTrustRequest.prototype.toObject = function(opt_in
  */
 proto.api.v1alpha1.org.UnassignTrustRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trustId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
+trustId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
