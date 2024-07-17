@@ -8175,9 +8175,6 @@ export namespace Extension {
     getUserId(): string;
     setUserId(value: string): void;
 
-    getArchived(): boolean;
-    setArchived(value: boolean): void;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Agent.AsObject;
     static toObject(includeInstance: boolean, msg: Agent): Agent.AsObject;
@@ -8193,7 +8190,6 @@ export namespace Extension {
       firstName: string,
       lastName: string,
       userId: string,
-      archived: boolean,
     }
   }
 
@@ -8203,9 +8199,6 @@ export namespace Extension {
 
     getHuntGroupName(): string;
     setHuntGroupName(value: string): void;
-
-    getArchived(): boolean;
-    setArchived(value: boolean): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): HuntGroup.AsObject;
@@ -8221,7 +8214,6 @@ export namespace Extension {
     export type AsObject = {
       huntGroupSid: number,
       huntGroupName: string,
-      archived: boolean,
     }
   }
 

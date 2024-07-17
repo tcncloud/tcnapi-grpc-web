@@ -64228,8 +64228,7 @@ proto.api.v0alpha.Extension.Agent.toObject = function(includeInstance, msg) {
   var f, obj = {
 firstName: jspb.Message.getFieldWithDefault(msg, 2, ""),
 lastName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-archived: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+userId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -64278,10 +64277,6 @@ proto.api.v0alpha.Extension.Agent.deserializeBinaryFromReader = function(msg, re
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
       break;
-    case 5:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setArchived(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -64329,13 +64324,6 @@ proto.api.v0alpha.Extension.Agent.serializeBinaryToWriter = function(message, wr
   if (f.length > 0) {
     writer.writeString(
       4,
-      f
-    );
-  }
-  f = message.getArchived();
-  if (f) {
-    writer.writeBool(
-      5,
       f
     );
   }
@@ -64396,24 +64384,6 @@ proto.api.v0alpha.Extension.Agent.prototype.setUserId = function(value) {
 };
 
 
-/**
- * optional bool archived = 5;
- * @return {boolean}
- */
-proto.api.v0alpha.Extension.Agent.prototype.getArchived = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v0alpha.Extension.Agent} returns this
- */
-proto.api.v0alpha.Extension.Agent.prototype.setArchived = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 5, value);
-};
-
-
 
 
 
@@ -64447,8 +64417,7 @@ proto.api.v0alpha.Extension.HuntGroup.prototype.toObject = function(opt_includeI
 proto.api.v0alpha.Extension.HuntGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
 huntGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-huntGroupName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-archived: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+huntGroupName: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -64493,10 +64462,6 @@ proto.api.v0alpha.Extension.HuntGroup.deserializeBinaryFromReader = function(msg
       var value = /** @type {string} */ (reader.readString());
       msg.setHuntGroupName(value);
       break;
-    case 3:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setArchived(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -64540,13 +64505,6 @@ proto.api.v0alpha.Extension.HuntGroup.serializeBinaryToWriter = function(message
       f
     );
   }
-  f = message.getArchived();
-  if (f) {
-    writer.writeBool(
-      3,
-      f
-    );
-  }
 };
 
 
@@ -64583,24 +64541,6 @@ proto.api.v0alpha.Extension.HuntGroup.prototype.getHuntGroupName = function() {
  */
 proto.api.v0alpha.Extension.HuntGroup.prototype.setHuntGroupName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional bool archived = 3;
- * @return {boolean}
- */
-proto.api.v0alpha.Extension.HuntGroup.prototype.getArchived = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v0alpha.Extension.HuntGroup} returns this
- */
-proto.api.v0alpha.Extension.HuntGroup.prototype.setArchived = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
