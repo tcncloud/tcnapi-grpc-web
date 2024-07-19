@@ -11912,3 +11912,163 @@ export namespace CancelAgentLeavePetitionResponse {
   }
 }
 
+export class CreateRgbaColorRequest extends jspb.Message {
+  hasColor(): boolean;
+  clearColor(): void;
+  getColor(): RgbaColor | undefined;
+  setColor(value?: RgbaColor): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateRgbaColorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateRgbaColorRequest): CreateRgbaColorRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateRgbaColorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateRgbaColorRequest;
+  static deserializeBinaryFromReader(message: CreateRgbaColorRequest, reader: jspb.BinaryReader): CreateRgbaColorRequest;
+}
+
+export namespace CreateRgbaColorRequest {
+  export type AsObject = {
+    color?: RgbaColor.AsObject,
+  }
+}
+
+export class CreateRgbaColorResponse extends jspb.Message {
+  getRgbaColorId(): number;
+  setRgbaColorId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateRgbaColorResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateRgbaColorResponse): CreateRgbaColorResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateRgbaColorResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateRgbaColorResponse;
+  static deserializeBinaryFromReader(message: CreateRgbaColorResponse, reader: jspb.BinaryReader): CreateRgbaColorResponse;
+}
+
+export namespace CreateRgbaColorResponse {
+  export type AsObject = {
+    rgbaColorId: number,
+  }
+}
+
+export class ListRgbaColorsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListRgbaColorsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListRgbaColorsRequest): ListRgbaColorsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListRgbaColorsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListRgbaColorsRequest;
+  static deserializeBinaryFromReader(message: ListRgbaColorsRequest, reader: jspb.BinaryReader): ListRgbaColorsRequest;
+}
+
+export namespace ListRgbaColorsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListRgbaColorsResponse extends jspb.Message {
+  clearColorsList(): void;
+  getColorsList(): Array<RgbaColor>;
+  setColorsList(value: Array<RgbaColor>): void;
+  addColors(value?: RgbaColor, index?: number): RgbaColor;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListRgbaColorsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListRgbaColorsResponse): ListRgbaColorsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListRgbaColorsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListRgbaColorsResponse;
+  static deserializeBinaryFromReader(message: ListRgbaColorsResponse, reader: jspb.BinaryReader): ListRgbaColorsResponse;
+}
+
+export namespace ListRgbaColorsResponse {
+  export type AsObject = {
+    colorsList: Array<RgbaColor.AsObject>,
+  }
+}
+
+export class UpdateRgbaColorRequest extends jspb.Message {
+  hasColor(): boolean;
+  clearColor(): void;
+  getColor(): RgbaColor | undefined;
+  setColor(value?: RgbaColor): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateRgbaColorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateRgbaColorRequest): UpdateRgbaColorRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateRgbaColorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateRgbaColorRequest;
+  static deserializeBinaryFromReader(message: UpdateRgbaColorRequest, reader: jspb.BinaryReader): UpdateRgbaColorRequest;
+}
+
+export namespace UpdateRgbaColorRequest {
+  export type AsObject = {
+    color?: RgbaColor.AsObject,
+  }
+}
+
+export class UpdateRgbaColorResponse extends jspb.Message {
+  hasColor(): boolean;
+  clearColor(): void;
+  getColor(): RgbaColor | undefined;
+  setColor(value?: RgbaColor): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateRgbaColorResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateRgbaColorResponse): UpdateRgbaColorResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateRgbaColorResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateRgbaColorResponse;
+  static deserializeBinaryFromReader(message: UpdateRgbaColorResponse, reader: jspb.BinaryReader): UpdateRgbaColorResponse;
+}
+
+export namespace UpdateRgbaColorResponse {
+  export type AsObject = {
+    color?: RgbaColor.AsObject,
+  }
+}
+
+export class DeleteRgbaColorRequest extends jspb.Message {
+  getRgbaColorId(): number;
+  setRgbaColorId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteRgbaColorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteRgbaColorRequest): DeleteRgbaColorRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteRgbaColorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteRgbaColorRequest;
+  static deserializeBinaryFromReader(message: DeleteRgbaColorRequest, reader: jspb.BinaryReader): DeleteRgbaColorRequest;
+}
+
+export namespace DeleteRgbaColorRequest {
+  export type AsObject = {
+    rgbaColorId: number,
+  }
+}
+
+export class DeleteRgbaColorResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteRgbaColorResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteRgbaColorResponse): DeleteRgbaColorResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteRgbaColorResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteRgbaColorResponse;
+  static deserializeBinaryFromReader(message: DeleteRgbaColorResponse, reader: jspb.BinaryReader): DeleteRgbaColorResponse;
+}
+
+export namespace DeleteRgbaColorResponse {
+  export type AsObject = {
+  }
+}
+
