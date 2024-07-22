@@ -3075,6 +3075,9 @@ export namespace VerifyTOTPCodeRequest {
 }
 
 export class VerifyTOTPCodeResponse extends jspb.Message {
+  getValid(): boolean;
+  setValid(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VerifyTOTPCodeResponse.AsObject;
   static toObject(includeInstance: boolean, msg: VerifyTOTPCodeResponse): VerifyTOTPCodeResponse.AsObject;
@@ -3087,6 +3090,7 @@ export class VerifyTOTPCodeResponse extends jspb.Message {
 
 export namespace VerifyTOTPCodeResponse {
   export type AsObject = {
+    valid: boolean,
   }
 }
 
