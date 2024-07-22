@@ -24146,7 +24146,7 @@ proto.api.v1alpha1.org.VerifyTOTPCodeResponse.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.org.VerifyTOTPCodeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-valid: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+
   };
 
   if (includeInstance) {
@@ -24183,10 +24183,6 @@ proto.api.v1alpha1.org.VerifyTOTPCodeResponse.deserializeBinaryFromReader = func
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setValid(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -24216,31 +24212,6 @@ proto.api.v1alpha1.org.VerifyTOTPCodeResponse.prototype.serializeBinary = functi
  */
 proto.api.v1alpha1.org.VerifyTOTPCodeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getValid();
-  if (f) {
-    writer.writeBool(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional bool valid = 1;
- * @return {boolean}
- */
-proto.api.v1alpha1.org.VerifyTOTPCodeResponse.prototype.getValid = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v1alpha1.org.VerifyTOTPCodeResponse} returns this
- */
-proto.api.v1alpha1.org.VerifyTOTPCodeResponse.prototype.setValid = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
