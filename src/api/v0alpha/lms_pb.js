@@ -50589,7 +50589,9 @@ term: jspb.Message.getFieldWithDefault(msg, 1, ""),
 fuzziness: jspb.Message.getFieldWithDefault(msg, 2, 0),
 substring: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
 negate: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-caseSensitive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+caseSensitive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+value: jspb.Message.getFieldWithDefault(msg, 6, ""),
+fieldType: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -50645,6 +50647,14 @@ proto.api.v0alpha.Search.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCaseSensitive(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setValue(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFieldType(value);
       break;
     default:
       reader.skipField();
@@ -50707,6 +50717,20 @@ proto.api.v0alpha.Search.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       5,
+      f
+    );
+  }
+  f = message.getValue();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getFieldType();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -50800,6 +50824,42 @@ proto.api.v0alpha.Search.prototype.getCaseSensitive = function() {
  */
 proto.api.v0alpha.Search.prototype.setCaseSensitive = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * optional string value = 6;
+ * @return {string}
+ */
+proto.api.v0alpha.Search.prototype.getValue = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.Search} returns this
+ */
+proto.api.v0alpha.Search.prototype.setValue = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string field_type = 7;
+ * @return {string}
+ */
+proto.api.v0alpha.Search.prototype.getFieldType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.Search} returns this
+ */
+proto.api.v0alpha.Search.prototype.setFieldType = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
