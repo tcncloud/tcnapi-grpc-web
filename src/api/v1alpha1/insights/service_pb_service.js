@@ -128,6 +128,69 @@ Insights.PublishInsight = {
   responseType: api_v1alpha1_insights_insight_pb.PublishInsightResponse
 };
 
+Insights.CreateOutputConfiguration = {
+  methodName: "CreateOutputConfiguration",
+  service: Insights,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_insights_insight_pb.CreateOutputConfigurationRequest,
+  responseType: api_v1alpha1_insights_insight_pb.CreateOutputConfigurationResponse
+};
+
+Insights.ListOutputConfigurations = {
+  methodName: "ListOutputConfigurations",
+  service: Insights,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsRequest,
+  responseType: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse
+};
+
+Insights.UpdateOutputConfiguration = {
+  methodName: "UpdateOutputConfiguration",
+  service: Insights,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_insights_insight_pb.UpdateOutputConfigurationRequest,
+  responseType: api_v1alpha1_insights_insight_pb.UpdateOutputConfigurationResponse
+};
+
+Insights.DeleteOutputConfiguration = {
+  methodName: "DeleteOutputConfiguration",
+  service: Insights,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_insights_insight_pb.DeleteOutputConfigurationRequest,
+  responseType: api_v1alpha1_insights_insight_pb.DeleteOutputConfigurationResponse
+};
+
+Insights.GetOutputConfiguration = {
+  methodName: "GetOutputConfiguration",
+  service: Insights,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_insights_insight_pb.GetOutputConfigurationRequest,
+  responseType: api_v1alpha1_insights_insight_pb.GetOutputConfigurationResponse
+};
+
+Insights.SetDefaultOutputConfiguration = {
+  methodName: "SetDefaultOutputConfiguration",
+  service: Insights,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_insights_insight_pb.SetDefaultOutputConfigurationRequest,
+  responseType: api_v1alpha1_insights_insight_pb.SetDefaultOutputConfigurationResponse
+};
+
+Insights.GetDefaultOutputConfiguration = {
+  methodName: "GetDefaultOutputConfiguration",
+  service: Insights,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_insights_insight_pb.GetDefaultOutputConfigurationRequest,
+  responseType: api_v1alpha1_insights_insight_pb.GetDefaultOutputConfigurationResponse
+};
+
 exports.Insights = Insights;
 
 function InsightsClient(serviceHost, options) {
@@ -512,6 +575,231 @@ InsightsClient.prototype.publishInsight = function publishInsight(requestMessage
     callback = arguments[1];
   }
   var client = grpc.unary(Insights.PublishInsight, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.createOutputConfiguration = function createOutputConfiguration(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Insights.CreateOutputConfiguration, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.listOutputConfigurations = function listOutputConfigurations(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(Insights.ListOutputConfigurations, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.updateOutputConfiguration = function updateOutputConfiguration(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Insights.UpdateOutputConfiguration, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.deleteOutputConfiguration = function deleteOutputConfiguration(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Insights.DeleteOutputConfiguration, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.getOutputConfiguration = function getOutputConfiguration(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Insights.GetOutputConfiguration, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.setDefaultOutputConfiguration = function setDefaultOutputConfiguration(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Insights.SetDefaultOutputConfiguration, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.getDefaultOutputConfiguration = function getDefaultOutputConfiguration(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Insights.GetDefaultOutputConfiguration, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

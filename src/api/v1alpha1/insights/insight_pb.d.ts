@@ -529,3 +529,530 @@ export namespace ListVfsSchemasResponse {
   }
 }
 
+export class TableVisualization extends jspb.Message {
+  clearTableColumnDetailsList(): void;
+  getTableColumnDetailsList(): Array<TableColumnConfig>;
+  setTableColumnDetailsList(value: Array<TableColumnConfig>): void;
+  addTableColumnDetails(value?: TableColumnConfig, index?: number): TableColumnConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TableVisualization.AsObject;
+  static toObject(includeInstance: boolean, msg: TableVisualization): TableVisualization.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TableVisualization, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TableVisualization;
+  static deserializeBinaryFromReader(message: TableVisualization, reader: jspb.BinaryReader): TableVisualization;
+}
+
+export namespace TableVisualization {
+  export type AsObject = {
+    tableColumnDetailsList: Array<TableColumnConfig.AsObject>,
+  }
+}
+
+export class TableColumnConfig extends jspb.Message {
+  getColumnName(): string;
+  setColumnName(value: string): void;
+
+  getColumnWidth(): number;
+  setColumnWidth(value: number): void;
+
+  getHideColumn(): boolean;
+  setHideColumn(value: boolean): void;
+
+  getRenamedAs(): string;
+  setRenamedAs(value: string): void;
+
+  clearOperationsList(): void;
+  getOperationsList(): Array<ColumnOperation>;
+  setOperationsList(value: Array<ColumnOperation>): void;
+  addOperations(value?: ColumnOperation, index?: number): ColumnOperation;
+
+  getColumnSummary(): OutputConfigurationColumnSummaryTypeMap[keyof OutputConfigurationColumnSummaryTypeMap];
+  setColumnSummary(value: OutputConfigurationColumnSummaryTypeMap[keyof OutputConfigurationColumnSummaryTypeMap]): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getSortDirection(): ColumnSortMap[keyof ColumnSortMap];
+  setSortDirection(value: ColumnSortMap[keyof ColumnSortMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TableColumnConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: TableColumnConfig): TableColumnConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TableColumnConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TableColumnConfig;
+  static deserializeBinaryFromReader(message: TableColumnConfig, reader: jspb.BinaryReader): TableColumnConfig;
+}
+
+export namespace TableColumnConfig {
+  export type AsObject = {
+    columnName: string,
+    columnWidth: number,
+    hideColumn: boolean,
+    renamedAs: string,
+    operationsList: Array<ColumnOperation.AsObject>,
+    columnSummary: OutputConfigurationColumnSummaryTypeMap[keyof OutputConfigurationColumnSummaryTypeMap],
+    description: string,
+    sortDirection: ColumnSortMap[keyof ColumnSortMap],
+  }
+}
+
+export class FormatSeries extends jspb.Message {
+  clearFormatPartsList(): void;
+  getFormatPartsList(): Array<string>;
+  setFormatPartsList(value: Array<string>): void;
+  addFormatParts(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FormatSeries.AsObject;
+  static toObject(includeInstance: boolean, msg: FormatSeries): FormatSeries.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FormatSeries, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FormatSeries;
+  static deserializeBinaryFromReader(message: FormatSeries, reader: jspb.BinaryReader): FormatSeries;
+}
+
+export namespace FormatSeries {
+  export type AsObject = {
+    formatPartsList: Array<string>,
+  }
+}
+
+export class ColumnOperation extends jspb.Message {
+  getOperationType(): OperationTypeMap[keyof OperationTypeMap];
+  setOperationType(value: OperationTypeMap[keyof OperationTypeMap]): void;
+
+  hasFloatValue(): boolean;
+  clearFloatValue(): void;
+  getFloatValue(): number;
+  setFloatValue(value: number): void;
+
+  hasFormatSeries(): boolean;
+  clearFormatSeries(): void;
+  getFormatSeries(): FormatSeries | undefined;
+  setFormatSeries(value?: FormatSeries): void;
+
+  getOperationValueCase(): ColumnOperation.OperationValueCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ColumnOperation.AsObject;
+  static toObject(includeInstance: boolean, msg: ColumnOperation): ColumnOperation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ColumnOperation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ColumnOperation;
+  static deserializeBinaryFromReader(message: ColumnOperation, reader: jspb.BinaryReader): ColumnOperation;
+}
+
+export namespace ColumnOperation {
+  export type AsObject = {
+    operationType: OperationTypeMap[keyof OperationTypeMap],
+    floatValue: number,
+    formatSeries?: FormatSeries.AsObject,
+  }
+
+  export enum OperationValueCase {
+    OPERATION_VALUE_NOT_SET = 0,
+    FLOAT_VALUE = 2,
+    FORMAT_SERIES = 3,
+  }
+}
+
+export class OutputConfiguration extends jspb.Message {
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
+  getOutputConfigurationTitle(): string;
+  setOutputConfigurationTitle(value: string): void;
+
+  getOutputConfigurationType(): OutputConfigurationTypeMap[keyof OutputConfigurationTypeMap];
+  setOutputConfigurationType(value: OutputConfigurationTypeMap[keyof OutputConfigurationTypeMap]): void;
+
+  getInsightResourceId(): string;
+  setInsightResourceId(value: string): void;
+
+  getIsDefault(): boolean;
+  setIsDefault(value: boolean): void;
+
+  hasBlob(): boolean;
+  clearBlob(): void;
+  getBlob(): string;
+  setBlob(value: string): void;
+
+  hasTableVisualization(): boolean;
+  clearTableVisualization(): void;
+  getTableVisualization(): TableVisualization | undefined;
+  setTableVisualization(value?: TableVisualization): void;
+
+  getBodyCase(): OutputConfiguration.BodyCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OutputConfiguration.AsObject;
+  static toObject(includeInstance: boolean, msg: OutputConfiguration): OutputConfiguration.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OutputConfiguration, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OutputConfiguration;
+  static deserializeBinaryFromReader(message: OutputConfiguration, reader: jspb.BinaryReader): OutputConfiguration;
+}
+
+export namespace OutputConfiguration {
+  export type AsObject = {
+    resourceId: string,
+    outputConfigurationTitle: string,
+    outputConfigurationType: OutputConfigurationTypeMap[keyof OutputConfigurationTypeMap],
+    insightResourceId: string,
+    isDefault: boolean,
+    blob: string,
+    tableVisualization?: TableVisualization.AsObject,
+  }
+
+  export enum BodyCase {
+    BODY_NOT_SET = 0,
+    BLOB = 7,
+    TABLE_VISUALIZATION = 8,
+  }
+}
+
+export class CreateOutputConfigurationRequest extends jspb.Message {
+  hasOutputConfiguration(): boolean;
+  clearOutputConfiguration(): void;
+  getOutputConfiguration(): OutputConfiguration | undefined;
+  setOutputConfiguration(value?: OutputConfiguration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateOutputConfigurationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateOutputConfigurationRequest): CreateOutputConfigurationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateOutputConfigurationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateOutputConfigurationRequest;
+  static deserializeBinaryFromReader(message: CreateOutputConfigurationRequest, reader: jspb.BinaryReader): CreateOutputConfigurationRequest;
+}
+
+export namespace CreateOutputConfigurationRequest {
+  export type AsObject = {
+    outputConfiguration?: OutputConfiguration.AsObject,
+  }
+}
+
+export class CreateOutputConfigurationResponse extends jspb.Message {
+  hasOutputConfiguration(): boolean;
+  clearOutputConfiguration(): void;
+  getOutputConfiguration(): OutputConfiguration | undefined;
+  setOutputConfiguration(value?: OutputConfiguration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateOutputConfigurationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateOutputConfigurationResponse): CreateOutputConfigurationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateOutputConfigurationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateOutputConfigurationResponse;
+  static deserializeBinaryFromReader(message: CreateOutputConfigurationResponse, reader: jspb.BinaryReader): CreateOutputConfigurationResponse;
+}
+
+export namespace CreateOutputConfigurationResponse {
+  export type AsObject = {
+    outputConfiguration?: OutputConfiguration.AsObject,
+  }
+}
+
+export class ListOutputConfigurationsRequest extends jspb.Message {
+  getInsightResourceId(): string;
+  setInsightResourceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListOutputConfigurationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListOutputConfigurationsRequest): ListOutputConfigurationsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListOutputConfigurationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListOutputConfigurationsRequest;
+  static deserializeBinaryFromReader(message: ListOutputConfigurationsRequest, reader: jspb.BinaryReader): ListOutputConfigurationsRequest;
+}
+
+export namespace ListOutputConfigurationsRequest {
+  export type AsObject = {
+    insightResourceId: string,
+  }
+}
+
+export class ListOutputConfigurationsResponse extends jspb.Message {
+  clearOutputConfigurationsList(): void;
+  getOutputConfigurationsList(): Array<OutputConfiguration>;
+  setOutputConfigurationsList(value: Array<OutputConfiguration>): void;
+  addOutputConfigurations(value?: OutputConfiguration, index?: number): OutputConfiguration;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListOutputConfigurationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListOutputConfigurationsResponse): ListOutputConfigurationsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListOutputConfigurationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListOutputConfigurationsResponse;
+  static deserializeBinaryFromReader(message: ListOutputConfigurationsResponse, reader: jspb.BinaryReader): ListOutputConfigurationsResponse;
+}
+
+export namespace ListOutputConfigurationsResponse {
+  export type AsObject = {
+    outputConfigurationsList: Array<OutputConfiguration.AsObject>,
+  }
+}
+
+export class UpdateOutputConfigurationRequest extends jspb.Message {
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): void;
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  hasOutputConfiguration(): boolean;
+  clearOutputConfiguration(): void;
+  getOutputConfiguration(): OutputConfiguration | undefined;
+  setOutputConfiguration(value?: OutputConfiguration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateOutputConfigurationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateOutputConfigurationRequest): UpdateOutputConfigurationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateOutputConfigurationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateOutputConfigurationRequest;
+  static deserializeBinaryFromReader(message: UpdateOutputConfigurationRequest, reader: jspb.BinaryReader): UpdateOutputConfigurationRequest;
+}
+
+export namespace UpdateOutputConfigurationRequest {
+  export type AsObject = {
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    outputConfiguration?: OutputConfiguration.AsObject,
+  }
+}
+
+export class UpdateOutputConfigurationResponse extends jspb.Message {
+  hasOutputConfiguration(): boolean;
+  clearOutputConfiguration(): void;
+  getOutputConfiguration(): OutputConfiguration | undefined;
+  setOutputConfiguration(value?: OutputConfiguration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateOutputConfigurationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateOutputConfigurationResponse): UpdateOutputConfigurationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateOutputConfigurationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateOutputConfigurationResponse;
+  static deserializeBinaryFromReader(message: UpdateOutputConfigurationResponse, reader: jspb.BinaryReader): UpdateOutputConfigurationResponse;
+}
+
+export namespace UpdateOutputConfigurationResponse {
+  export type AsObject = {
+    outputConfiguration?: OutputConfiguration.AsObject,
+  }
+}
+
+export class DeleteOutputConfigurationRequest extends jspb.Message {
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteOutputConfigurationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteOutputConfigurationRequest): DeleteOutputConfigurationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteOutputConfigurationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteOutputConfigurationRequest;
+  static deserializeBinaryFromReader(message: DeleteOutputConfigurationRequest, reader: jspb.BinaryReader): DeleteOutputConfigurationRequest;
+}
+
+export namespace DeleteOutputConfigurationRequest {
+  export type AsObject = {
+    resourceId: string,
+  }
+}
+
+export class DeleteOutputConfigurationResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteOutputConfigurationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteOutputConfigurationResponse): DeleteOutputConfigurationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteOutputConfigurationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteOutputConfigurationResponse;
+  static deserializeBinaryFromReader(message: DeleteOutputConfigurationResponse, reader: jspb.BinaryReader): DeleteOutputConfigurationResponse;
+}
+
+export namespace DeleteOutputConfigurationResponse {
+  export type AsObject = {
+  }
+}
+
+export class GetOutputConfigurationRequest extends jspb.Message {
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetOutputConfigurationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetOutputConfigurationRequest): GetOutputConfigurationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetOutputConfigurationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetOutputConfigurationRequest;
+  static deserializeBinaryFromReader(message: GetOutputConfigurationRequest, reader: jspb.BinaryReader): GetOutputConfigurationRequest;
+}
+
+export namespace GetOutputConfigurationRequest {
+  export type AsObject = {
+    resourceId: string,
+  }
+}
+
+export class GetOutputConfigurationResponse extends jspb.Message {
+  hasOutputConfiguration(): boolean;
+  clearOutputConfiguration(): void;
+  getOutputConfiguration(): OutputConfiguration | undefined;
+  setOutputConfiguration(value?: OutputConfiguration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetOutputConfigurationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetOutputConfigurationResponse): GetOutputConfigurationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetOutputConfigurationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetOutputConfigurationResponse;
+  static deserializeBinaryFromReader(message: GetOutputConfigurationResponse, reader: jspb.BinaryReader): GetOutputConfigurationResponse;
+}
+
+export namespace GetOutputConfigurationResponse {
+  export type AsObject = {
+    outputConfiguration?: OutputConfiguration.AsObject,
+  }
+}
+
+export class SetDefaultOutputConfigurationRequest extends jspb.Message {
+  getResourceId(): string;
+  setResourceId(value: string): void;
+
+  getInsightResourceId(): string;
+  setInsightResourceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetDefaultOutputConfigurationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetDefaultOutputConfigurationRequest): SetDefaultOutputConfigurationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetDefaultOutputConfigurationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetDefaultOutputConfigurationRequest;
+  static deserializeBinaryFromReader(message: SetDefaultOutputConfigurationRequest, reader: jspb.BinaryReader): SetDefaultOutputConfigurationRequest;
+}
+
+export namespace SetDefaultOutputConfigurationRequest {
+  export type AsObject = {
+    resourceId: string,
+    insightResourceId: string,
+  }
+}
+
+export class SetDefaultOutputConfigurationResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetDefaultOutputConfigurationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetDefaultOutputConfigurationResponse): SetDefaultOutputConfigurationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetDefaultOutputConfigurationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetDefaultOutputConfigurationResponse;
+  static deserializeBinaryFromReader(message: SetDefaultOutputConfigurationResponse, reader: jspb.BinaryReader): SetDefaultOutputConfigurationResponse;
+}
+
+export namespace SetDefaultOutputConfigurationResponse {
+  export type AsObject = {
+  }
+}
+
+export class GetDefaultOutputConfigurationRequest extends jspb.Message {
+  getInsightResourceId(): string;
+  setInsightResourceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDefaultOutputConfigurationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDefaultOutputConfigurationRequest): GetDefaultOutputConfigurationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDefaultOutputConfigurationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDefaultOutputConfigurationRequest;
+  static deserializeBinaryFromReader(message: GetDefaultOutputConfigurationRequest, reader: jspb.BinaryReader): GetDefaultOutputConfigurationRequest;
+}
+
+export namespace GetDefaultOutputConfigurationRequest {
+  export type AsObject = {
+    insightResourceId: string,
+  }
+}
+
+export class GetDefaultOutputConfigurationResponse extends jspb.Message {
+  hasOutputConfiguration(): boolean;
+  clearOutputConfiguration(): void;
+  getOutputConfiguration(): OutputConfiguration | undefined;
+  setOutputConfiguration(value?: OutputConfiguration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDefaultOutputConfigurationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDefaultOutputConfigurationResponse): GetDefaultOutputConfigurationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDefaultOutputConfigurationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDefaultOutputConfigurationResponse;
+  static deserializeBinaryFromReader(message: GetDefaultOutputConfigurationResponse, reader: jspb.BinaryReader): GetDefaultOutputConfigurationResponse;
+}
+
+export namespace GetDefaultOutputConfigurationResponse {
+  export type AsObject = {
+    outputConfiguration?: OutputConfiguration.AsObject,
+  }
+}
+
+export interface OutputConfigurationTypeMap {
+  OUTPUT_CONFIGURATION_TYPE_UNSPECIFIED: 0;
+  OUTPUT_CONFIGURATION_TYPE_TABLE: 1;
+  OUTPUT_CONFIGURATION_TYPE_MULTI_SERIES: 2;
+  OUTPUT_CONFIGURATION_TYPE_PIE_CHART: 3;
+}
+
+export const OutputConfigurationType: OutputConfigurationTypeMap;
+
+export interface OperationTypeMap {
+  OPERATION_TYPE_UNSPECIFIED: 0;
+  OPERATION_TYPE_DATE: 1;
+  OPERATION_TYPE_PREFIX: 2;
+  OPERATION_TYPE_SUFFIX: 3;
+  OPERATION_TYPE_DURATION: 4;
+  OPERATION_TYPE_ADD: 5;
+  OPERATION_TYPE_SUBTRACT: 6;
+  OPERATION_TYPE_MULTIPLY: 7;
+  OPERATION_TYPE_DIVIDE: 8;
+  OPERATION_TYPE_FORMAT_NUMBER: 9;
+  OPERATION_TYPE_PRECISION: 10;
+}
+
+export const OperationType: OperationTypeMap;
+
+export interface ColumnSortMap {
+  COLUMN_SORT_UNSPECIFIED: 0;
+  COLUMN_SORT_ASCENDING: 1;
+  COLUMN_SORT_DESCENDING: 2;
+}
+
+export const ColumnSort: ColumnSortMap;
+
+export interface OutputConfigurationColumnSummaryTypeMap {
+  OUTPUT_CONFIGURATION_COLUMN_SUMMARY_TYPE_UNSPECIFIED: 0;
+  OUTPUT_CONFIGURATION_COLUMN_SUMMARY_TYPE_AVG: 1;
+  OUTPUT_CONFIGURATION_COLUMN_SUMMARY_TYPE_SUM: 2;
+  OUTPUT_CONFIGURATION_COLUMN_SUMMARY_TYPE_MIN: 3;
+  OUTPUT_CONFIGURATION_COLUMN_SUMMARY_TYPE_MAX: 4;
+}
+
+export const OutputConfigurationColumnSummaryType: OutputConfigurationColumnSummaryTypeMap;
+
