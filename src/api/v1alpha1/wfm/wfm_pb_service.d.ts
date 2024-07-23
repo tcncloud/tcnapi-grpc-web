@@ -1606,6 +1606,42 @@ type WFMListRealTimeManagementStateColors = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsResponse;
 };
 
+type WFMCreateRgbaColor = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateRgbaColorRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateRgbaColorResponse;
+};
+
+type WFMListRgbaColors = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListRgbaColorsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListRgbaColorsResponse;
+};
+
+type WFMUpdateRgbaColor = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateRgbaColorRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateRgbaColorResponse;
+};
+
+type WFMDeleteRgbaColor = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteRgbaColorRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteRgbaColorResponse;
+};
+
 export class WFM {
   static readonly serviceName: string;
   static readonly PerformInitialClientSetup: WFMPerformInitialClientSetup;
@@ -1786,6 +1822,10 @@ export class WFM {
   static readonly ListAgentStatesForDay: WFMListAgentStatesForDay;
   static readonly ListRealTimeManagementStates: WFMListRealTimeManagementStates;
   static readonly ListRealTimeManagementStateColors: WFMListRealTimeManagementStateColors;
+  static readonly CreateRgbaColor: WFMCreateRgbaColor;
+  static readonly ListRgbaColors: WFMListRgbaColors;
+  static readonly UpdateRgbaColor: WFMUpdateRgbaColor;
+  static readonly DeleteRgbaColor: WFMDeleteRgbaColor;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3373,6 +3413,42 @@ export class WFMClient {
   listRealTimeManagementStateColors(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsResponse|null) => void
+  ): UnaryResponse;
+  createRgbaColor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateRgbaColorRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateRgbaColorResponse|null) => void
+  ): UnaryResponse;
+  createRgbaColor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateRgbaColorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateRgbaColorResponse|null) => void
+  ): UnaryResponse;
+  listRgbaColors(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListRgbaColorsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRgbaColorsResponse|null) => void
+  ): UnaryResponse;
+  listRgbaColors(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListRgbaColorsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRgbaColorsResponse|null) => void
+  ): UnaryResponse;
+  updateRgbaColor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateRgbaColorRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateRgbaColorResponse|null) => void
+  ): UnaryResponse;
+  updateRgbaColor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateRgbaColorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateRgbaColorResponse|null) => void
+  ): UnaryResponse;
+  deleteRgbaColor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteRgbaColorRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteRgbaColorResponse|null) => void
+  ): UnaryResponse;
+  deleteRgbaColor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteRgbaColorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteRgbaColorResponse|null) => void
   ): UnaryResponse;
 }
 
