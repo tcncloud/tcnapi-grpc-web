@@ -72,6 +72,34 @@ export namespace Transcript {
     summary?: wfo_vanalytics_v2_transcript_summary_pb.TranscriptSummary.AsObject,
   }
 
+  export class Skills extends jspb.Message {
+    clearNeedList(): void;
+    getNeedList(): Array<string>;
+    setNeedList(value: Array<string>): void;
+    addNeed(value: string, index?: number): string;
+
+    clearWantList(): void;
+    getWantList(): Array<string>;
+    setWantList(value: Array<string>): void;
+    addWant(value: string, index?: number): string;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Skills.AsObject;
+    static toObject(includeInstance: boolean, msg: Skills): Skills.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Skills, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Skills;
+    static deserializeBinaryFromReader(message: Skills, reader: jspb.BinaryReader): Skills;
+  }
+
+  export namespace Skills {
+    export type AsObject = {
+      needList: Array<string>,
+      wantList: Array<string>,
+    }
+  }
+
   export enum MetadataCase {
     METADATA_NOT_SET = 0,
     CALL = 1,
@@ -1076,6 +1104,11 @@ export class TranscriptQuery extends jspb.Message {
   getChannelType(): TranscriptQuery.Channel | undefined;
   setChannelType(value?: TranscriptQuery.Channel): void;
 
+  hasSkills(): boolean;
+  clearSkills(): void;
+  getSkills(): TranscriptQuery.SkillsQuery | undefined;
+  setSkills(value?: TranscriptQuery.SkillsQuery): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TranscriptQuery.AsObject;
   static toObject(includeInstance: boolean, msg: TranscriptQuery): TranscriptQuery.AsObject;
@@ -1097,6 +1130,69 @@ export namespace TranscriptQuery {
     deleteTime?: TranscriptQuery.DeleteTime.AsObject,
     phone?: TranscriptQuery.Phone.AsObject,
     channelType?: TranscriptQuery.Channel.AsObject,
+    skills?: TranscriptQuery.SkillsQuery.AsObject,
+  }
+
+  export class SkillsQuery extends jspb.Message {
+    hasNeed(): boolean;
+    clearNeed(): void;
+    getNeed(): TranscriptQuery.SkillsQuery.Skills | undefined;
+    setNeed(value?: TranscriptQuery.SkillsQuery.Skills): void;
+
+    hasWant(): boolean;
+    clearWant(): void;
+    getWant(): TranscriptQuery.SkillsQuery.Skills | undefined;
+    setWant(value?: TranscriptQuery.SkillsQuery.Skills): void;
+
+    clearOrList(): void;
+    getOrList(): Array<TranscriptQuery.SkillsQuery>;
+    setOrList(value: Array<TranscriptQuery.SkillsQuery>): void;
+    addOr(value?: TranscriptQuery.SkillsQuery, index?: number): TranscriptQuery.SkillsQuery;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SkillsQuery.AsObject;
+    static toObject(includeInstance: boolean, msg: SkillsQuery): SkillsQuery.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SkillsQuery, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SkillsQuery;
+    static deserializeBinaryFromReader(message: SkillsQuery, reader: jspb.BinaryReader): SkillsQuery;
+  }
+
+  export namespace SkillsQuery {
+    export type AsObject = {
+      need?: TranscriptQuery.SkillsQuery.Skills.AsObject,
+      want?: TranscriptQuery.SkillsQuery.Skills.AsObject,
+      orList: Array<TranscriptQuery.SkillsQuery.AsObject>,
+    }
+
+    export class Skills extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      clearAllList(): void;
+      getAllList(): Array<string>;
+      setAllList(value: Array<string>): void;
+      addAll(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Skills.AsObject;
+      static toObject(includeInstance: boolean, msg: Skills): Skills.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Skills, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Skills;
+      static deserializeBinaryFromReader(message: Skills, reader: jspb.BinaryReader): Skills;
+    }
+
+    export namespace Skills {
+      export type AsObject = {
+        anyList: Array<string>,
+        allList: Array<string>,
+      }
+    }
   }
 
   export class Phone extends jspb.Message {
@@ -2437,6 +2533,11 @@ export namespace TranscriptQuery {
     getConversationSid(): TranscriptQuery.Sms.ConversationSid | undefined;
     setConversationSid(value?: TranscriptQuery.Sms.ConversationSid): void;
 
+    hasCampaignSid(): boolean;
+    clearCampaignSid(): void;
+    getCampaignSid(): TranscriptQuery.Sms.CampaignSid | undefined;
+    setCampaignSid(value?: TranscriptQuery.Sms.CampaignSid): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Sms.AsObject;
     static toObject(includeInstance: boolean, msg: Sms): Sms.AsObject;
@@ -2450,6 +2551,7 @@ export namespace TranscriptQuery {
   export namespace Sms {
     export type AsObject = {
       conversationSid?: TranscriptQuery.Sms.ConversationSid.AsObject,
+      campaignSid?: TranscriptQuery.Sms.CampaignSid.AsObject,
     }
 
     export class ConversationSid extends jspb.Message {
@@ -2469,6 +2571,28 @@ export namespace TranscriptQuery {
     }
 
     export namespace ConversationSid {
+      export type AsObject = {
+        anyList: Array<string>,
+      }
+    }
+
+    export class CampaignSid extends jspb.Message {
+      clearAnyList(): void;
+      getAnyList(): Array<string>;
+      setAnyList(value: Array<string>): void;
+      addAny(value: string, index?: number): string;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): CampaignSid.AsObject;
+      static toObject(includeInstance: boolean, msg: CampaignSid): CampaignSid.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: CampaignSid, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): CampaignSid;
+      static deserializeBinaryFromReader(message: CampaignSid, reader: jspb.BinaryReader): CampaignSid;
+    }
+
+    export namespace CampaignSid {
       export type AsObject = {
         anyList: Array<string>,
       }
