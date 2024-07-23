@@ -6478,6 +6478,9 @@ export class Search extends jspb.Message {
   getCaseSensitive(): boolean;
   setCaseSensitive(value: boolean): void;
 
+  getValue(): string;
+  setValue(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Search.AsObject;
   static toObject(includeInstance: boolean, msg: Search): Search.AsObject;
@@ -6495,6 +6498,7 @@ export namespace Search {
     substring: boolean,
     negate: boolean,
     caseSensitive: boolean,
+    value: string,
   }
 }
 

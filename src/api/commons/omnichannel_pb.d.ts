@@ -349,6 +349,11 @@ export class OmniCampaignModuleConfig extends jspb.Message {
   getPostalCodeField(): string;
   setPostalCodeField(value: string): void;
 
+  hasTimeoutMessageConfig(): boolean;
+  clearTimeoutMessageConfig(): void;
+  getTimeoutMessageConfig(): ConversationTimeoutMessageConfig | undefined;
+  setTimeoutMessageConfig(value?: ConversationTimeoutMessageConfig): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCampaignModuleConfig.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCampaignModuleConfig): OmniCampaignModuleConfig.AsObject;
@@ -385,6 +390,31 @@ export namespace OmniCampaignModuleConfig {
     providerMetadataMap: Array<[string, string]>,
     countryCode: number,
     postalCodeField: string,
+    timeoutMessageConfig?: ConversationTimeoutMessageConfig.AsObject,
+  }
+}
+
+export class ConversationTimeoutMessageConfig extends jspb.Message {
+  getIsDisabled(): boolean;
+  setIsDisabled(value: boolean): void;
+
+  getMsg(): string;
+  setMsg(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConversationTimeoutMessageConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: ConversationTimeoutMessageConfig): ConversationTimeoutMessageConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConversationTimeoutMessageConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConversationTimeoutMessageConfig;
+  static deserializeBinaryFromReader(message: ConversationTimeoutMessageConfig, reader: jspb.BinaryReader): ConversationTimeoutMessageConfig;
+}
+
+export namespace ConversationTimeoutMessageConfig {
+  export type AsObject = {
+    isDisabled: boolean,
+    msg: string,
   }
 }
 
