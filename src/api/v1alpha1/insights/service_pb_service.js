@@ -141,7 +141,7 @@ Insights.ListOutputConfigurations = {
   methodName: "ListOutputConfigurations",
   service: Insights,
   requestStream: false,
-  responseStream: true,
+  responseStream: false,
   requestType: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsRequest,
   responseType: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse
 };
@@ -632,40 +632,32 @@ InsightsClient.prototype.createOutputConfiguration = function createOutputConfig
   };
 };
 
-InsightsClient.prototype.listOutputConfigurations = function listOutputConfigurations(requestMessage, metadata) {
-  var listeners = {
-    data: [],
-    end: [],
-    status: []
-  };
-  var client = grpc.invoke(Insights.ListOutputConfigurations, {
+InsightsClient.prototype.listOutputConfigurations = function listOutputConfigurations(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Insights.ListOutputConfigurations, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
     transport: this.options.transport,
     debug: this.options.debug,
-    onMessage: function (responseMessage) {
-      listeners.data.forEach(function (handler) {
-        handler(responseMessage);
-      });
-    },
-    onEnd: function (status, statusMessage, trailers) {
-      listeners.status.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners.end.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners = null;
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
     }
   });
   return {
-    on: function (type, handler) {
-      listeners[type].push(handler);
-      return this;
-    },
     cancel: function () {
-      listeners = null;
+      callback = null;
       client.close();
     }
   };

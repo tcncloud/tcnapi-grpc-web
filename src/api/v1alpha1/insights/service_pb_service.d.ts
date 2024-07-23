@@ -135,7 +135,7 @@ type InsightsListOutputConfigurations = {
   readonly methodName: string;
   readonly service: typeof Insights;
   readonly requestStream: false;
-  readonly responseStream: true;
+  readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_insights_insight_pb.ListOutputConfigurationsRequest;
   readonly responseType: typeof api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse;
 };
@@ -367,7 +367,15 @@ export class InsightsClient {
     requestMessage: api_v1alpha1_insights_insight_pb.CreateOutputConfigurationRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_insight_pb.CreateOutputConfigurationResponse|null) => void
   ): UnaryResponse;
-  listOutputConfigurations(requestMessage: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse>;
+  listOutputConfigurations(
+    requestMessage: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse|null) => void
+  ): UnaryResponse;
+  listOutputConfigurations(
+    requestMessage: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse|null) => void
+  ): UnaryResponse;
   updateOutputConfiguration(
     requestMessage: api_v1alpha1_insights_insight_pb.UpdateOutputConfigurationRequest,
     metadata: grpc.Metadata,
