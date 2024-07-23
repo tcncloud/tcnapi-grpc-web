@@ -425,44 +425,6 @@ export namespace ListLanguagesResponse {
   }
 }
 
-export class ListContextsRequest extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListContextsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListContextsRequest): ListContextsRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListContextsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListContextsRequest;
-  static deserializeBinaryFromReader(message: ListContextsRequest, reader: jspb.BinaryReader): ListContextsRequest;
-}
-
-export namespace ListContextsRequest {
-  export type AsObject = {
-  }
-}
-
-export class ListContextsResponse extends jspb.Message {
-  clearContextsList(): void;
-  getContextsList(): Array<string>;
-  setContextsList(value: Array<string>): void;
-  addContexts(value: string, index?: number): string;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListContextsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListContextsResponse): ListContextsResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListContextsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListContextsResponse;
-  static deserializeBinaryFromReader(message: ListContextsResponse, reader: jspb.BinaryReader): ListContextsResponse;
-}
-
-export namespace ListContextsResponse {
-  export type AsObject = {
-    contextsList: Array<string>,
-  }
-}
-
 export class LocalizationLanguage extends jspb.Message {
   getLanguageTag(): string;
   setLanguageTag(value: string): void;
