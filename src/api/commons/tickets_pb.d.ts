@@ -1020,8 +1020,8 @@ export class EditTicket extends jspb.Message {
   getTicketCode(): string;
   setTicketCode(value: string): void;
 
-  getTicketActionId(): string;
-  setTicketActionId(value: string): void;
+  getTicketActionId(): number;
+  setTicketActionId(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EditTicket.AsObject;
@@ -1038,7 +1038,7 @@ export namespace EditTicket {
     ticketSid: string,
     editValue?: EditAttribute.AsObject,
     ticketCode: string,
-    ticketActionId: string,
+    ticketActionId: number,
   }
 }
 
