@@ -69,6 +69,9 @@ export class RateDefinition extends jspb.Message {
   getIsDraft(): boolean;
   setIsDraft(value: boolean): void;
 
+  getIsOverwrite(): boolean;
+  setIsOverwrite(value: boolean): void;
+
   hasCreateTime(): boolean;
   clearCreateTime(): void;
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -100,6 +103,7 @@ export namespace RateDefinition {
     skuId: string,
     product?: Product.AsObject,
     isDraft: boolean,
+    isOverwrite: boolean,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
