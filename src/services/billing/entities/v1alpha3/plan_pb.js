@@ -88,7 +88,8 @@ startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.to
 createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-userId: jspb.Message.getFieldWithDefault(msg, 9, "")
+userId: jspb.Message.getFieldWithDefault(msg, 9, ""),
+orgId: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -164,6 +165,10 @@ proto.services.billing.entities.v1alpha3.BillingPlan.deserializeBinaryFromReader
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrgId(value);
       break;
     default:
       reader.skipField();
@@ -258,6 +263,13 @@ proto.services.billing.entities.v1alpha3.BillingPlan.serializeBinaryToWriter = f
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getOrgId();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -499,6 +511,24 @@ proto.services.billing.entities.v1alpha3.BillingPlan.prototype.getUserId = funct
  */
 proto.services.billing.entities.v1alpha3.BillingPlan.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string org_id = 10;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha3.BillingPlan.prototype.getOrgId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha3.BillingPlan} returns this
+ */
+proto.services.billing.entities.v1alpha3.BillingPlan.prototype.setOrgId = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
