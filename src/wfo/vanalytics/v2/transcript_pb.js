@@ -5262,7 +5262,7 @@ proto.wfo.vanalytics.v2.Sms.Segment.Attachment.prototype.toObject = function(opt
  */
 proto.wfo.vanalytics.v2.Sms.Segment.Attachment.toObject = function(includeInstance, msg) {
   var f, obj = {
-attachmentSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+attachmentSid: jspb.Message.getFieldWithDefault(msg, 1, "0")
   };
 
   if (includeInstance) {
@@ -5300,7 +5300,7 @@ proto.wfo.vanalytics.v2.Sms.Segment.Attachment.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAttachmentSid(value);
       break;
     default:
@@ -5333,8 +5333,8 @@ proto.wfo.vanalytics.v2.Sms.Segment.Attachment.prototype.serializeBinary = funct
 proto.wfo.vanalytics.v2.Sms.Segment.Attachment.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAttachmentSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -5344,19 +5344,19 @@ proto.wfo.vanalytics.v2.Sms.Segment.Attachment.serializeBinaryToWriter = functio
 
 /**
  * optional int64 attachment_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.wfo.vanalytics.v2.Sms.Segment.Attachment.prototype.getAttachmentSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.wfo.vanalytics.v2.Sms.Segment.Attachment} returns this
  */
 proto.wfo.vanalytics.v2.Sms.Segment.Attachment.prototype.setAttachmentSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
