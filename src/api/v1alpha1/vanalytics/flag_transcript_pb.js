@@ -23,6 +23,8 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_v1alpha1_vanalytics_expr_pb = require('../../../api/v1alpha1/vanalytics/expr_pb.js');
+goog.object.extend(proto, api_v1alpha1_vanalytics_expr_pb);
 var api_v1alpha1_vanalytics_flag_pb = require('../../../api/v1alpha1/vanalytics/flag_pb.js');
 goog.object.extend(proto, api_v1alpha1_vanalytics_flag_pb);
 var api_v1alpha1_vanalytics_transcript_pb = require('../../../api/v1alpha1/vanalytics/transcript_pb.js');
@@ -598,7 +600,8 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.toObject = f
 proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+query: (f = msg.getQuery()) && api_v1alpha1_vanalytics_transcript_pb.SearchRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -645,6 +648,11 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.deserializeBinaryFromR
         msg.addTranscriptSids(values[i]);
       }
       break;
+    case 3:
+      var value = new api_v1alpha1_vanalytics_transcript_pb.SearchRequest;
+      reader.readMessage(value,api_v1alpha1_vanalytics_transcript_pb.SearchRequest.deserializeBinaryFromReader);
+      msg.setQuery(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -686,6 +694,14 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.serializeBinaryToWrite
     writer.writePackedInt64(
       2,
       f
+    );
+  }
+  f = message.getQuery();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      api_v1alpha1_vanalytics_transcript_pb.SearchRequest.serializeBinaryToWriter
     );
   }
 };
@@ -743,6 +759,43 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.addTranscrip
  */
 proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.clearTranscriptSidsList = function() {
   return this.setTranscriptSidsList([]);
+};
+
+
+/**
+ * optional SearchRequest query = 3;
+ * @return {?proto.api.v1alpha1.vanalytics.SearchRequest}
+ */
+proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.getQuery = function() {
+  return /** @type{?proto.api.v1alpha1.vanalytics.SearchRequest} */ (
+    jspb.Message.getWrapperField(this, api_v1alpha1_vanalytics_transcript_pb.SearchRequest, 3));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.vanalytics.SearchRequest|undefined} value
+ * @return {!proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest} returns this
+*/
+proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.setQuery = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest} returns this
+ */
+proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.clearQuery = function() {
+  return this.setQuery(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.hasQuery = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

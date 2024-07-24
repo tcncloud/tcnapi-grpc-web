@@ -2,6 +2,7 @@
 // file: api/v1alpha1/vanalytics/flag_transcript.proto
 
 import * as jspb from "google-protobuf";
+import * as api_v1alpha1_vanalytics_expr_pb from "../../../api/v1alpha1/vanalytics/expr_pb";
 import * as api_v1alpha1_vanalytics_flag_pb from "../../../api/v1alpha1/vanalytics/flag_pb";
 import * as api_v1alpha1_vanalytics_transcript_pb from "../../../api/v1alpha1/vanalytics/transcript_pb";
 
@@ -58,6 +59,11 @@ export class DeleteFlagTranscriptRequest extends jspb.Message {
   setTranscriptSidsList(value: Array<number>): void;
   addTranscriptSids(value: number, index?: number): number;
 
+  hasQuery(): boolean;
+  clearQuery(): void;
+  getQuery(): api_v1alpha1_vanalytics_transcript_pb.SearchRequest | undefined;
+  setQuery(value?: api_v1alpha1_vanalytics_transcript_pb.SearchRequest): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteFlagTranscriptRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DeleteFlagTranscriptRequest): DeleteFlagTranscriptRequest.AsObject;
@@ -72,6 +78,7 @@ export namespace DeleteFlagTranscriptRequest {
   export type AsObject = {
     orgId: string,
     transcriptSidsList: Array<number>,
+    query?: api_v1alpha1_vanalytics_transcript_pb.SearchRequest.AsObject,
   }
 }
 
