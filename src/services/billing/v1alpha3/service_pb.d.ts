@@ -8,5 +8,4 @@ import * as services_billing_v1alpha3_defaults_pb from "../../../services/billin
 import * as services_billing_v1alpha3_invoice_pb from "../../../services/billing/v1alpha3/invoice_pb";
 import * as services_billing_v1alpha3_plan_pb from "../../../services/billing/v1alpha3/plan_pb";
 import * as services_billing_v1alpha3_product_pb from "../../../services/billing/v1alpha3/product_pb";
-import * as services_billing_v1alpha3_sku_pb from "../../../services/billing/v1alpha3/sku_pb";
 

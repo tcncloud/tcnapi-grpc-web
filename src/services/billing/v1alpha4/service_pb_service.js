@@ -1,16 +1,17 @@
-// package: services.billing.v1alpha3
-// file: services/billing/v1alpha3/service.proto
+// package: services.billing.v1alpha4
+// file: services/billing/v1alpha4/service.proto
 
-var services_billing_v1alpha3_service_pb = require("../../../services/billing/v1alpha3/service_pb");
-var services_billing_v1alpha3_defaults_pb = require("../../../services/billing/v1alpha3/defaults_pb");
-var services_billing_v1alpha3_invoice_pb = require("../../../services/billing/v1alpha3/invoice_pb");
-var services_billing_v1alpha3_plan_pb = require("../../../services/billing/v1alpha3/plan_pb");
-var services_billing_v1alpha3_product_pb = require("../../../services/billing/v1alpha3/product_pb");
+var services_billing_v1alpha4_service_pb = require("../../../services/billing/v1alpha4/service_pb");
+var services_billing_v1alpha4_defaults_pb = require("../../../services/billing/v1alpha4/defaults_pb");
+var services_billing_v1alpha4_invoice_pb = require("../../../services/billing/v1alpha4/invoice_pb");
+var services_billing_v1alpha4_plan_pb = require("../../../services/billing/v1alpha4/plan_pb");
+var services_billing_v1alpha4_product_pb = require("../../../services/billing/v1alpha4/product_pb");
+var services_billing_v1alpha4_sku_pb = require("../../../services/billing/v1alpha4/sku_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var BillingService = (function () {
   function BillingService() {}
-  BillingService.serviceName = "services.billing.v1alpha3.BillingService";
+  BillingService.serviceName = "services.billing.v1alpha4.BillingService";
   return BillingService;
 }());
 
@@ -19,8 +20,8 @@ BillingService.ListProducts = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_product_pb.ListProductsRequest,
-  responseType: services_billing_v1alpha3_product_pb.ListProductsResponse
+  requestType: services_billing_v1alpha4_product_pb.ListProductsRequest,
+  responseType: services_billing_v1alpha4_product_pb.ListProductsResponse
 };
 
 BillingService.ApplyBillingPlanDraft = {
@@ -28,8 +29,8 @@ BillingService.ApplyBillingPlanDraft = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_plan_pb.ApplyBillingPlanDraftRequest,
-  responseType: services_billing_v1alpha3_plan_pb.ApplyBillingPlanDraftResponse
+  requestType: services_billing_v1alpha4_plan_pb.ApplyBillingPlanDraftRequest,
+  responseType: services_billing_v1alpha4_plan_pb.ApplyBillingPlanDraftResponse
 };
 
 BillingService.CreateBillingPlan = {
@@ -37,8 +38,8 @@ BillingService.CreateBillingPlan = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_plan_pb.CreateBillingPlanRequest,
-  responseType: services_billing_v1alpha3_plan_pb.CreateBillingPlanResponse
+  requestType: services_billing_v1alpha4_plan_pb.CreateBillingPlanRequest,
+  responseType: services_billing_v1alpha4_plan_pb.CreateBillingPlanResponse
 };
 
 BillingService.DeleteBillingPlan = {
@@ -46,8 +47,8 @@ BillingService.DeleteBillingPlan = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_plan_pb.DeleteBillingPlanRequest,
-  responseType: services_billing_v1alpha3_plan_pb.DeleteBillingPlanResponse
+  requestType: services_billing_v1alpha4_plan_pb.DeleteBillingPlanRequest,
+  responseType: services_billing_v1alpha4_plan_pb.DeleteBillingPlanResponse
 };
 
 BillingService.GetBillingPlan = {
@@ -55,8 +56,8 @@ BillingService.GetBillingPlan = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_plan_pb.GetBillingPlanRequest,
-  responseType: services_billing_v1alpha3_plan_pb.GetBillingPlanResponse
+  requestType: services_billing_v1alpha4_plan_pb.GetBillingPlanRequest,
+  responseType: services_billing_v1alpha4_plan_pb.GetBillingPlanResponse
 };
 
 BillingService.ListBillingPlans = {
@@ -64,8 +65,8 @@ BillingService.ListBillingPlans = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_plan_pb.ListBillingPlansRequest,
-  responseType: services_billing_v1alpha3_plan_pb.ListBillingPlansResponse
+  requestType: services_billing_v1alpha4_plan_pb.ListBillingPlansRequest,
+  responseType: services_billing_v1alpha4_plan_pb.ListBillingPlansResponse
 };
 
 BillingService.UpdateBillingPlan = {
@@ -73,8 +74,8 @@ BillingService.UpdateBillingPlan = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_plan_pb.UpdateBillingPlanRequest,
-  responseType: services_billing_v1alpha3_plan_pb.UpdateBillingPlanResponse
+  requestType: services_billing_v1alpha4_plan_pb.UpdateBillingPlanRequest,
+  responseType: services_billing_v1alpha4_plan_pb.UpdateBillingPlanResponse
 };
 
 BillingService.ApplyDefaultBillingPlanDraft = {
@@ -82,8 +83,8 @@ BillingService.ApplyDefaultBillingPlanDraft = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_defaults_pb.ApplyDefaultBillingPlanDraftRequest,
-  responseType: services_billing_v1alpha3_defaults_pb.ApplyDefaultBillingPlanDraftResponse
+  requestType: services_billing_v1alpha4_defaults_pb.ApplyDefaultBillingPlanDraftRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.ApplyDefaultBillingPlanDraftResponse
 };
 
 BillingService.CreateDefaultBillingPlan = {
@@ -91,8 +92,8 @@ BillingService.CreateDefaultBillingPlan = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_defaults_pb.CreateDefaultBillingPlanRequest,
-  responseType: services_billing_v1alpha3_defaults_pb.CreateDefaultBillingPlanResponse
+  requestType: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanResponse
 };
 
 BillingService.DeleteDefaultBillingPlan = {
@@ -100,8 +101,8 @@ BillingService.DeleteDefaultBillingPlan = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_defaults_pb.DeleteDefaultBillingPlanRequest,
-  responseType: services_billing_v1alpha3_defaults_pb.DeleteDefaultBillingPlanResponse
+  requestType: services_billing_v1alpha4_defaults_pb.DeleteDefaultBillingPlanRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.DeleteDefaultBillingPlanResponse
 };
 
 BillingService.GetDefaultBillingPlan = {
@@ -109,8 +110,8 @@ BillingService.GetDefaultBillingPlan = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_defaults_pb.GetDefaultBillingPlanRequest,
-  responseType: services_billing_v1alpha3_defaults_pb.GetDefaultBillingPlanResponse
+  requestType: services_billing_v1alpha4_defaults_pb.GetDefaultBillingPlanRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.GetDefaultBillingPlanResponse
 };
 
 BillingService.ListDefaultBillingPlans = {
@@ -118,8 +119,8 @@ BillingService.ListDefaultBillingPlans = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_defaults_pb.ListDefaultBillingPlansRequest,
-  responseType: services_billing_v1alpha3_defaults_pb.ListDefaultBillingPlansResponse
+  requestType: services_billing_v1alpha4_defaults_pb.ListDefaultBillingPlansRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.ListDefaultBillingPlansResponse
 };
 
 BillingService.UpdateDefaultBillingPlan = {
@@ -127,8 +128,8 @@ BillingService.UpdateDefaultBillingPlan = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_defaults_pb.UpdateDefaultBillingPlanRequest,
-  responseType: services_billing_v1alpha3_defaults_pb.UpdateDefaultBillingPlanResponse
+  requestType: services_billing_v1alpha4_defaults_pb.UpdateDefaultBillingPlanRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.UpdateDefaultBillingPlanResponse
 };
 
 BillingService.CreateRateDefinition = {
@@ -136,8 +137,8 @@ BillingService.CreateRateDefinition = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_plan_pb.CreateRateDefinitionRequest,
-  responseType: services_billing_v1alpha3_plan_pb.CreateRateDefinitionResponse
+  requestType: services_billing_v1alpha4_plan_pb.CreateRateDefinitionRequest,
+  responseType: services_billing_v1alpha4_plan_pb.CreateRateDefinitionResponse
 };
 
 BillingService.DeleteRateDefinition = {
@@ -145,8 +146,8 @@ BillingService.DeleteRateDefinition = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_plan_pb.DeleteRateDefinitionRequest,
-  responseType: services_billing_v1alpha3_plan_pb.DeleteRateDefinitionResponse
+  requestType: services_billing_v1alpha4_plan_pb.DeleteRateDefinitionRequest,
+  responseType: services_billing_v1alpha4_plan_pb.DeleteRateDefinitionResponse
 };
 
 BillingService.GetRateDefinition = {
@@ -154,8 +155,8 @@ BillingService.GetRateDefinition = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_plan_pb.GetRateDefinitionRequest,
-  responseType: services_billing_v1alpha3_plan_pb.GetRateDefinitionResponse
+  requestType: services_billing_v1alpha4_plan_pb.GetRateDefinitionRequest,
+  responseType: services_billing_v1alpha4_plan_pb.GetRateDefinitionResponse
 };
 
 BillingService.ListRateDefinitions = {
@@ -163,8 +164,8 @@ BillingService.ListRateDefinitions = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_plan_pb.ListRateDefinitionsRequest,
-  responseType: services_billing_v1alpha3_plan_pb.ListRateDefinitionsResponse
+  requestType: services_billing_v1alpha4_plan_pb.ListRateDefinitionsRequest,
+  responseType: services_billing_v1alpha4_plan_pb.ListRateDefinitionsResponse
 };
 
 BillingService.UpdateRateDefinition = {
@@ -172,8 +173,8 @@ BillingService.UpdateRateDefinition = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_plan_pb.UpdateRateDefinitionRequest,
-  responseType: services_billing_v1alpha3_plan_pb.UpdateRateDefinitionResponse
+  requestType: services_billing_v1alpha4_plan_pb.UpdateRateDefinitionRequest,
+  responseType: services_billing_v1alpha4_plan_pb.UpdateRateDefinitionResponse
 };
 
 BillingService.CreateDefaultRateDefinition = {
@@ -181,8 +182,8 @@ BillingService.CreateDefaultRateDefinition = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_defaults_pb.CreateDefaultRateDefinitionRequest,
-  responseType: services_billing_v1alpha3_defaults_pb.CreateDefaultRateDefinitionResponse
+  requestType: services_billing_v1alpha4_defaults_pb.CreateDefaultRateDefinitionRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.CreateDefaultRateDefinitionResponse
 };
 
 BillingService.DeleteDefaultRateDefinition = {
@@ -190,8 +191,8 @@ BillingService.DeleteDefaultRateDefinition = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_defaults_pb.DeleteDefaultRateDefinitionRequest,
-  responseType: services_billing_v1alpha3_defaults_pb.DeleteDefaultRateDefinitionResponse
+  requestType: services_billing_v1alpha4_defaults_pb.DeleteDefaultRateDefinitionRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.DeleteDefaultRateDefinitionResponse
 };
 
 BillingService.GetDefaultRateDefinition = {
@@ -199,8 +200,8 @@ BillingService.GetDefaultRateDefinition = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_defaults_pb.GetDefaultRateDefinitionRequest,
-  responseType: services_billing_v1alpha3_defaults_pb.GetDefaultRateDefinitionResponse
+  requestType: services_billing_v1alpha4_defaults_pb.GetDefaultRateDefinitionRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.GetDefaultRateDefinitionResponse
 };
 
 BillingService.ListDefaultRateDefinitions = {
@@ -208,8 +209,8 @@ BillingService.ListDefaultRateDefinitions = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_defaults_pb.ListDefaultRateDefinitionsRequest,
-  responseType: services_billing_v1alpha3_defaults_pb.ListDefaultRateDefinitionsResponse
+  requestType: services_billing_v1alpha4_defaults_pb.ListDefaultRateDefinitionsRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.ListDefaultRateDefinitionsResponse
 };
 
 BillingService.UpdateDefaultRateDefinition = {
@@ -217,8 +218,53 @@ BillingService.UpdateDefaultRateDefinition = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_defaults_pb.UpdateDefaultRateDefinitionRequest,
-  responseType: services_billing_v1alpha3_defaults_pb.UpdateDefaultRateDefinitionResponse
+  requestType: services_billing_v1alpha4_defaults_pb.UpdateDefaultRateDefinitionRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.UpdateDefaultRateDefinitionResponse
+};
+
+BillingService.CreateSku = {
+  methodName: "CreateSku",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha4_sku_pb.CreateSkuRequest,
+  responseType: services_billing_v1alpha4_sku_pb.CreateSkuResponse
+};
+
+BillingService.DeleteSku = {
+  methodName: "DeleteSku",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha4_sku_pb.DeleteSkuRequest,
+  responseType: services_billing_v1alpha4_sku_pb.DeleteSkuResponse
+};
+
+BillingService.GetSku = {
+  methodName: "GetSku",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha4_sku_pb.GetSkuRequest,
+  responseType: services_billing_v1alpha4_sku_pb.GetSkuResponse
+};
+
+BillingService.ListSkus = {
+  methodName: "ListSkus",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha4_sku_pb.ListSkusRequest,
+  responseType: services_billing_v1alpha4_sku_pb.ListSkusResponse
+};
+
+BillingService.UpdateSku = {
+  methodName: "UpdateSku",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha4_sku_pb.UpdateSkuRequest,
+  responseType: services_billing_v1alpha4_sku_pb.UpdateSkuResponse
 };
 
 BillingService.ExportInvoice = {
@@ -226,8 +272,8 @@ BillingService.ExportInvoice = {
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha3_invoice_pb.ExportInvoiceRequest,
-  responseType: services_billing_v1alpha3_invoice_pb.ExportInvoiceResponse
+  requestType: services_billing_v1alpha4_invoice_pb.ExportInvoiceRequest,
+  responseType: services_billing_v1alpha4_invoice_pb.ExportInvoiceResponse
 };
 
 exports.BillingService = BillingService;
@@ -924,6 +970,161 @@ BillingServiceClient.prototype.updateDefaultRateDefinition = function updateDefa
     callback = arguments[1];
   }
   var client = grpc.unary(BillingService.UpdateDefaultRateDefinition, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.createSku = function createSku(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.CreateSku, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.deleteSku = function deleteSku(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.DeleteSku, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.getSku = function getSku(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.GetSku, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.listSkus = function listSkus(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.ListSkus, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.updateSku = function updateSku(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.UpdateSku, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
