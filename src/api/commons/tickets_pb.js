@@ -7885,7 +7885,7 @@ proto.api.commons.EditTicket.toObject = function(includeInstance, msg) {
 ticketSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 editValue: (f = msg.getEditValue()) && proto.api.commons.EditAttribute.toObject(includeInstance, f),
 ticketCode: jspb.Message.getFieldWithDefault(msg, 3, ""),
-ticketActionId: jspb.Message.getFieldWithDefault(msg, 4, 0)
+ticketActionId: jspb.Message.getFieldWithDefault(msg, 4, "0")
   };
 
   if (includeInstance) {
@@ -7936,7 +7936,7 @@ proto.api.commons.EditTicket.deserializeBinaryFromReader = function(msg, reader)
       msg.setTicketCode(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setTicketActionId(value);
       break;
     default:
@@ -7991,8 +7991,8 @@ proto.api.commons.EditTicket.serializeBinaryToWriter = function(message, writer)
     );
   }
   f = message.getTicketActionId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       4,
       f
     );
@@ -8075,19 +8075,19 @@ proto.api.commons.EditTicket.prototype.setTicketCode = function(value) {
 
 /**
  * optional int64 ticket_action_id = 4;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.EditTicket.prototype.getTicketActionId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.EditTicket} returns this
  */
 proto.api.commons.EditTicket.prototype.setTicketActionId = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringIntField(this, 4, value);
 };
 
 
