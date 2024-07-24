@@ -6,6 +6,7 @@ import * as services_billing_v1alpha3_defaults_pb from "../../../services/billin
 import * as services_billing_v1alpha3_invoice_pb from "../../../services/billing/v1alpha3/invoice_pb";
 import * as services_billing_v1alpha3_plan_pb from "../../../services/billing/v1alpha3/plan_pb";
 import * as services_billing_v1alpha3_product_pb from "../../../services/billing/v1alpha3/product_pb";
+import * as services_billing_v1alpha3_sku_pb from "../../../services/billing/v1alpha3/sku_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type BillingServiceListProducts = {
@@ -215,6 +216,51 @@ type BillingServiceUpdateDefaultRateDefinition = {
   readonly responseType: typeof services_billing_v1alpha3_defaults_pb.UpdateDefaultRateDefinitionResponse;
 };
 
+type BillingServiceCreateSku = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha3_sku_pb.CreateSkuRequest;
+  readonly responseType: typeof services_billing_v1alpha3_sku_pb.CreateSkuResponse;
+};
+
+type BillingServiceDeleteSku = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha3_sku_pb.DeleteSkuRequest;
+  readonly responseType: typeof services_billing_v1alpha3_sku_pb.DeleteSkuResponse;
+};
+
+type BillingServiceGetSku = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha3_sku_pb.GetSkuRequest;
+  readonly responseType: typeof services_billing_v1alpha3_sku_pb.GetSkuResponse;
+};
+
+type BillingServiceListSkus = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha3_sku_pb.ListSkusRequest;
+  readonly responseType: typeof services_billing_v1alpha3_sku_pb.ListSkusResponse;
+};
+
+type BillingServiceUpdateSku = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha3_sku_pb.UpdateSkuRequest;
+  readonly responseType: typeof services_billing_v1alpha3_sku_pb.UpdateSkuResponse;
+};
+
 type BillingServiceExportInvoice = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -249,6 +295,11 @@ export class BillingService {
   static readonly GetDefaultRateDefinition: BillingServiceGetDefaultRateDefinition;
   static readonly ListDefaultRateDefinitions: BillingServiceListDefaultRateDefinitions;
   static readonly UpdateDefaultRateDefinition: BillingServiceUpdateDefaultRateDefinition;
+  static readonly CreateSku: BillingServiceCreateSku;
+  static readonly DeleteSku: BillingServiceDeleteSku;
+  static readonly GetSku: BillingServiceGetSku;
+  static readonly ListSkus: BillingServiceListSkus;
+  static readonly UpdateSku: BillingServiceUpdateSku;
   static readonly ExportInvoice: BillingServiceExportInvoice;
 }
 
@@ -490,6 +541,51 @@ export class BillingServiceClient {
   updateDefaultRateDefinition(
     requestMessage: services_billing_v1alpha3_defaults_pb.UpdateDefaultRateDefinitionRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_defaults_pb.UpdateDefaultRateDefinitionResponse|null) => void
+  ): UnaryResponse;
+  createSku(
+    requestMessage: services_billing_v1alpha3_sku_pb.CreateSkuRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_sku_pb.CreateSkuResponse|null) => void
+  ): UnaryResponse;
+  createSku(
+    requestMessage: services_billing_v1alpha3_sku_pb.CreateSkuRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_sku_pb.CreateSkuResponse|null) => void
+  ): UnaryResponse;
+  deleteSku(
+    requestMessage: services_billing_v1alpha3_sku_pb.DeleteSkuRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_sku_pb.DeleteSkuResponse|null) => void
+  ): UnaryResponse;
+  deleteSku(
+    requestMessage: services_billing_v1alpha3_sku_pb.DeleteSkuRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_sku_pb.DeleteSkuResponse|null) => void
+  ): UnaryResponse;
+  getSku(
+    requestMessage: services_billing_v1alpha3_sku_pb.GetSkuRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_sku_pb.GetSkuResponse|null) => void
+  ): UnaryResponse;
+  getSku(
+    requestMessage: services_billing_v1alpha3_sku_pb.GetSkuRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_sku_pb.GetSkuResponse|null) => void
+  ): UnaryResponse;
+  listSkus(
+    requestMessage: services_billing_v1alpha3_sku_pb.ListSkusRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_sku_pb.ListSkusResponse|null) => void
+  ): UnaryResponse;
+  listSkus(
+    requestMessage: services_billing_v1alpha3_sku_pb.ListSkusRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_sku_pb.ListSkusResponse|null) => void
+  ): UnaryResponse;
+  updateSku(
+    requestMessage: services_billing_v1alpha3_sku_pb.UpdateSkuRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_sku_pb.UpdateSkuResponse|null) => void
+  ): UnaryResponse;
+  updateSku(
+    requestMessage: services_billing_v1alpha3_sku_pb.UpdateSkuRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha3_sku_pb.UpdateSkuResponse|null) => void
   ): UnaryResponse;
   exportInvoice(
     requestMessage: services_billing_v1alpha3_invoice_pb.ExportInvoiceRequest,
