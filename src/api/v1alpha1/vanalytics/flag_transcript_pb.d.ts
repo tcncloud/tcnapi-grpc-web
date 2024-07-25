@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as api_v1alpha1_vanalytics_expr_pb from "../../../api/v1alpha1/vanalytics/expr_pb";
 import * as api_v1alpha1_vanalytics_flag_pb from "../../../api/v1alpha1/vanalytics/flag_pb";
 import * as api_v1alpha1_vanalytics_transcript_pb from "../../../api/v1alpha1/vanalytics/transcript_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class CreateFlagTranscriptRequest extends jspb.Message {
   clearTranscriptSidsList(): void;
@@ -59,10 +60,20 @@ export class DeleteFlagTranscriptRequest extends jspb.Message {
   setTranscriptSidsList(value: Array<number>): void;
   addTranscriptSids(value: number, index?: number): number;
 
-  hasQuery(): boolean;
-  clearQuery(): void;
-  getQuery(): api_v1alpha1_vanalytics_transcript_pb.SearchRequest | undefined;
-  setQuery(value?: api_v1alpha1_vanalytics_transcript_pb.SearchRequest): void;
+  hasCallStartTime(): boolean;
+  clearCallStartTime(): void;
+  getCallStartTime(): api_v1alpha1_vanalytics_expr_pb.TimestampExpr | undefined;
+  setCallStartTime(value?: api_v1alpha1_vanalytics_expr_pb.TimestampExpr): void;
+
+  hasReviewStatus(): boolean;
+  clearReviewStatus(): void;
+  getReviewStatus(): DeleteFlagTranscriptRequest.ReviewStatus | undefined;
+  setReviewStatus(value?: DeleteFlagTranscriptRequest.ReviewStatus): void;
+
+  hasCount(): boolean;
+  clearCount(): void;
+  getCount(): DeleteFlagTranscriptRequest.Count | undefined;
+  setCount(value?: DeleteFlagTranscriptRequest.Count): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteFlagTranscriptRequest.AsObject;
@@ -78,7 +89,77 @@ export namespace DeleteFlagTranscriptRequest {
   export type AsObject = {
     orgId: string,
     transcriptSidsList: Array<number>,
-    query?: api_v1alpha1_vanalytics_transcript_pb.SearchRequest.AsObject,
+    callStartTime?: api_v1alpha1_vanalytics_expr_pb.TimestampExpr.AsObject,
+    reviewStatus?: DeleteFlagTranscriptRequest.ReviewStatus.AsObject,
+    count?: DeleteFlagTranscriptRequest.Count.AsObject,
+  }
+
+  export class ReviewStatus extends jspb.Message {
+    clearAnyList(): void;
+    getAnyList(): Array<api_v1alpha1_vanalytics_transcript_pb.TranscriptReviewStatusMap[keyof api_v1alpha1_vanalytics_transcript_pb.TranscriptReviewStatusMap]>;
+    setAnyList(value: Array<api_v1alpha1_vanalytics_transcript_pb.TranscriptReviewStatusMap[keyof api_v1alpha1_vanalytics_transcript_pb.TranscriptReviewStatusMap]>): void;
+    addAny(value: api_v1alpha1_vanalytics_transcript_pb.TranscriptReviewStatusMap[keyof api_v1alpha1_vanalytics_transcript_pb.TranscriptReviewStatusMap], index?: number): api_v1alpha1_vanalytics_transcript_pb.TranscriptReviewStatusMap[keyof api_v1alpha1_vanalytics_transcript_pb.TranscriptReviewStatusMap];
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ReviewStatus.AsObject;
+    static toObject(includeInstance: boolean, msg: ReviewStatus): ReviewStatus.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ReviewStatus, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ReviewStatus;
+    static deserializeBinaryFromReader(message: ReviewStatus, reader: jspb.BinaryReader): ReviewStatus;
+  }
+
+  export namespace ReviewStatus {
+    export type AsObject = {
+      anyList: Array<api_v1alpha1_vanalytics_transcript_pb.TranscriptReviewStatusMap[keyof api_v1alpha1_vanalytics_transcript_pb.TranscriptReviewStatusMap]>,
+    }
+  }
+
+  export class Count extends jspb.Message {
+    hasGte(): boolean;
+    clearGte(): void;
+    getGte(): google_protobuf_wrappers_pb.Int32Value | undefined;
+    setGte(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+    hasLte(): boolean;
+    clearLte(): void;
+    getLte(): google_protobuf_wrappers_pb.Int32Value | undefined;
+    setLte(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+    hasGt(): boolean;
+    clearGt(): void;
+    getGt(): google_protobuf_wrappers_pb.Int32Value | undefined;
+    setGt(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+    hasLt(): boolean;
+    clearLt(): void;
+    getLt(): google_protobuf_wrappers_pb.Int32Value | undefined;
+    setLt(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+    hasEq(): boolean;
+    clearEq(): void;
+    getEq(): google_protobuf_wrappers_pb.Int32Value | undefined;
+    setEq(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Count.AsObject;
+    static toObject(includeInstance: boolean, msg: Count): Count.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Count, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Count;
+    static deserializeBinaryFromReader(message: Count, reader: jspb.BinaryReader): Count;
+  }
+
+  export namespace Count {
+    export type AsObject = {
+      gte?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+      lte?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+      gt?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+      lt?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+      eq?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+    }
   }
 }
 
