@@ -29,6 +29,7 @@ var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/fie
 goog.object.extend(proto, google_protobuf_field_mask_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
+goog.exportSymbol('proto.api.v1alpha1.tickets.ActionTypes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.AddEntityRefRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.AddEntityRefResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.AssignProjectTemplateRequest', null, global);
@@ -93,6 +94,7 @@ goog.exportSymbol('proto.api.v1alpha1.tickets.PingReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.PingRes', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.ReplyCommentReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.ReplyCommentRes', null, global);
+goog.exportSymbol('proto.api.v1alpha1.tickets.SLAConditions', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.Skill', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.UpdateSlaReq', null, global);
 goog.exportSymbol('proto.api.v1alpha1.tickets.UpdateSlaRes', null, global);
@@ -13350,5 +13352,24 @@ proto.api.v1alpha1.tickets.EntityRef.prototype.setUri = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.api.v1alpha1.tickets.ActionTypes = {
+  NA: 0,
+  CALLBACK: 1,
+  EMAILBACK: 2,
+  SMSBACK: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.v1alpha1.tickets.SLAConditions = {
+  NONE: 0,
+  RESPOND: 1,
+  RESOLVE: 2
+};
 
 goog.object.extend(exports, proto.api.v1alpha1.tickets);
