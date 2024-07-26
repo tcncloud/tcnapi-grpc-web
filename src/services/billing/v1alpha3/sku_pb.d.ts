@@ -1,10 +1,10 @@
-// package: services.billing.v1alpha4
-// file: services/billing/v1alpha4/sku.proto
+// package: services.billing.v1alpha3
+// file: services/billing/v1alpha3/sku.proto
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
-import * as services_billing_entities_v1alpha4_rates_pb from "../../../services/billing/entities/v1alpha4/rates_pb";
-import * as services_billing_v1alpha4_core_pb from "../../../services/billing/v1alpha4/core_pb";
+import * as services_billing_entities_v1alpha3_rates_pb from "../../../services/billing/entities/v1alpha3/rates_pb";
+import * as services_billing_v1alpha3_core_pb from "../../../services/billing/v1alpha3/core_pb";
 
 export class CreateSkuRequest extends jspb.Message {
   getSkuId(): string;
@@ -12,8 +12,8 @@ export class CreateSkuRequest extends jspb.Message {
 
   hasSku(): boolean;
   clearSku(): void;
-  getSku(): services_billing_entities_v1alpha4_rates_pb.Sku | undefined;
-  setSku(value?: services_billing_entities_v1alpha4_rates_pb.Sku): void;
+  getSku(): services_billing_entities_v1alpha3_rates_pb.Sku | undefined;
+  setSku(value?: services_billing_entities_v1alpha3_rates_pb.Sku): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateSkuRequest.AsObject;
@@ -28,7 +28,7 @@ export class CreateSkuRequest extends jspb.Message {
 export namespace CreateSkuRequest {
   export type AsObject = {
     skuId: string,
-    sku?: services_billing_entities_v1alpha4_rates_pb.Sku.AsObject,
+    sku?: services_billing_entities_v1alpha3_rates_pb.Sku.AsObject,
   }
 }
 
@@ -111,8 +111,8 @@ export namespace GetSkuRequest {
 export class GetSkuResponse extends jspb.Message {
   hasSku(): boolean;
   clearSku(): void;
-  getSku(): services_billing_entities_v1alpha4_rates_pb.Sku | undefined;
-  setSku(value?: services_billing_entities_v1alpha4_rates_pb.Sku): void;
+  getSku(): services_billing_entities_v1alpha3_rates_pb.Sku | undefined;
+  setSku(value?: services_billing_entities_v1alpha3_rates_pb.Sku): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetSkuResponse.AsObject;
@@ -126,7 +126,7 @@ export class GetSkuResponse extends jspb.Message {
 
 export namespace GetSkuResponse {
   export type AsObject = {
-    sku?: services_billing_entities_v1alpha4_rates_pb.Sku.AsObject,
+    sku?: services_billing_entities_v1alpha3_rates_pb.Sku.AsObject,
   }
 }
 
@@ -143,14 +143,14 @@ export class ListSkusRequest extends jspb.Message {
   setFields(value?: google_protobuf_field_mask_pb.FieldMask): void;
 
   clearSortList(): void;
-  getSortList(): Array<services_billing_v1alpha4_core_pb.Sort>;
-  setSortList(value: Array<services_billing_v1alpha4_core_pb.Sort>): void;
-  addSort(value?: services_billing_v1alpha4_core_pb.Sort, index?: number): services_billing_v1alpha4_core_pb.Sort;
+  getSortList(): Array<services_billing_v1alpha3_core_pb.Sort>;
+  setSortList(value: Array<services_billing_v1alpha3_core_pb.Sort>): void;
+  addSort(value?: services_billing_v1alpha3_core_pb.Sort, index?: number): services_billing_v1alpha3_core_pb.Sort;
 
   hasPage(): boolean;
   clearPage(): void;
-  getPage(): services_billing_v1alpha4_core_pb.Page | undefined;
-  setPage(value?: services_billing_v1alpha4_core_pb.Page): void;
+  getPage(): services_billing_v1alpha3_core_pb.Page | undefined;
+  setPage(value?: services_billing_v1alpha3_core_pb.Page): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSkusRequest.AsObject;
@@ -167,16 +167,16 @@ export namespace ListSkusRequest {
     skuId: string,
     filter: string,
     fields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    sortList: Array<services_billing_v1alpha4_core_pb.Sort.AsObject>,
-    page?: services_billing_v1alpha4_core_pb.Page.AsObject,
+    sortList: Array<services_billing_v1alpha3_core_pb.Sort.AsObject>,
+    page?: services_billing_v1alpha3_core_pb.Page.AsObject,
   }
 }
 
 export class ListSkusResponse extends jspb.Message {
   clearSkusList(): void;
-  getSkusList(): Array<services_billing_entities_v1alpha4_rates_pb.Sku>;
-  setSkusList(value: Array<services_billing_entities_v1alpha4_rates_pb.Sku>): void;
-  addSkus(value?: services_billing_entities_v1alpha4_rates_pb.Sku, index?: number): services_billing_entities_v1alpha4_rates_pb.Sku;
+  getSkusList(): Array<services_billing_entities_v1alpha3_rates_pb.Sku>;
+  setSkusList(value: Array<services_billing_entities_v1alpha3_rates_pb.Sku>): void;
+  addSkus(value?: services_billing_entities_v1alpha3_rates_pb.Sku, index?: number): services_billing_entities_v1alpha3_rates_pb.Sku;
 
   getToken(): string;
   setToken(value: string): void;
@@ -193,7 +193,7 @@ export class ListSkusResponse extends jspb.Message {
 
 export namespace ListSkusResponse {
   export type AsObject = {
-    skusList: Array<services_billing_entities_v1alpha4_rates_pb.Sku.AsObject>,
+    skusList: Array<services_billing_entities_v1alpha3_rates_pb.Sku.AsObject>,
     token: string,
   }
 }
@@ -204,8 +204,8 @@ export class UpdateSkuRequest extends jspb.Message {
 
   hasSku(): boolean;
   clearSku(): void;
-  getSku(): services_billing_entities_v1alpha4_rates_pb.Sku | undefined;
-  setSku(value?: services_billing_entities_v1alpha4_rates_pb.Sku): void;
+  getSku(): services_billing_entities_v1alpha3_rates_pb.Sku | undefined;
+  setSku(value?: services_billing_entities_v1alpha3_rates_pb.Sku): void;
 
   hasUpdateMask(): boolean;
   clearUpdateMask(): void;
@@ -225,7 +225,7 @@ export class UpdateSkuRequest extends jspb.Message {
 export namespace UpdateSkuRequest {
   export type AsObject = {
     skuId: string,
-    sku?: services_billing_entities_v1alpha4_rates_pb.Sku.AsObject,
+    sku?: services_billing_entities_v1alpha3_rates_pb.Sku.AsObject,
     updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

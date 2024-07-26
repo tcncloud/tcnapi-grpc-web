@@ -16,6 +16,9 @@ export class OmniSmsConfig extends jspb.Message {
   getConfig(): services_billing_entities_v1alpha3_modules_pb.BasicConfig | undefined;
   setConfig(value?: services_billing_entities_v1alpha3_modules_pb.BasicConfig): void;
 
+  getName(): string;
+  setName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniSmsConfig.AsObject;
   static toObject(includeInstance: boolean, msg: OmniSmsConfig): OmniSmsConfig.AsObject;
@@ -30,6 +33,7 @@ export namespace OmniSmsConfig {
   export type AsObject = {
     prefixes?: services_billing_entities_v1alpha3_matching_pb.CountryCodePrefix.AsObject,
     config?: services_billing_entities_v1alpha3_modules_pb.BasicConfig.AsObject,
+    name: string,
   }
 }
 
@@ -43,6 +47,9 @@ export class OmniSmsUnitConfig extends jspb.Message {
   clearConfig(): void;
   getConfig(): services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig | undefined;
   setConfig(value?: services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig): void;
+
+  getName(): string;
+  setName(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniSmsUnitConfig.AsObject;
@@ -58,6 +65,7 @@ export namespace OmniSmsUnitConfig {
   export type AsObject = {
     prefixes?: services_billing_entities_v1alpha3_matching_pb.CountryCodePrefix.AsObject,
     config?: services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.AsObject,
+    name: string,
   }
 }
 

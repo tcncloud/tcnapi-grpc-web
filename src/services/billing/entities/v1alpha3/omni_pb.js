@@ -104,7 +104,8 @@ proto.services.billing.entities.v1alpha3.OmniSmsConfig.prototype.toObject = func
 proto.services.billing.entities.v1alpha3.OmniSmsConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
 prefixes: (f = msg.getPrefixes()) && services_billing_entities_v1alpha3_matching_pb.CountryCodePrefix.toObject(includeInstance, f),
-config: (f = msg.getConfig()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f)
+config: (f = msg.getConfig()) && services_billing_entities_v1alpha3_modules_pb.BasicConfig.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -151,6 +152,10 @@ proto.services.billing.entities.v1alpha3.OmniSmsConfig.deserializeBinaryFromRead
       reader.readMessage(value,services_billing_entities_v1alpha3_modules_pb.BasicConfig.deserializeBinaryFromReader);
       msg.setConfig(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -194,6 +199,13 @@ proto.services.billing.entities.v1alpha3.OmniSmsConfig.serializeBinaryToWriter =
       2,
       f,
       services_billing_entities_v1alpha3_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -273,6 +285,24 @@ proto.services.billing.entities.v1alpha3.OmniSmsConfig.prototype.hasConfig = fun
 };
 
 
+/**
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha3.OmniSmsConfig.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha3.OmniSmsConfig} returns this
+ */
+proto.services.billing.entities.v1alpha3.OmniSmsConfig.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
 
 
 
@@ -306,7 +336,8 @@ proto.services.billing.entities.v1alpha3.OmniSmsUnitConfig.prototype.toObject = 
 proto.services.billing.entities.v1alpha3.OmniSmsUnitConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
 prefixes: (f = msg.getPrefixes()) && services_billing_entities_v1alpha3_matching_pb.CountryCodePrefix.toObject(includeInstance, f),
-config: (f = msg.getConfig()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f)
+config: (f = msg.getConfig()) && services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -353,6 +384,10 @@ proto.services.billing.entities.v1alpha3.OmniSmsUnitConfig.deserializeBinaryFrom
       reader.readMessage(value,services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.deserializeBinaryFromReader);
       msg.setConfig(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -396,6 +431,13 @@ proto.services.billing.entities.v1alpha3.OmniSmsUnitConfig.serializeBinaryToWrit
       2,
       f,
       services_billing_entities_v1alpha3_modules_pb.BasicUnitConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -472,6 +514,24 @@ proto.services.billing.entities.v1alpha3.OmniSmsUnitConfig.prototype.clearConfig
  */
 proto.services.billing.entities.v1alpha3.OmniSmsUnitConfig.prototype.hasConfig = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha3.OmniSmsUnitConfig.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha3.OmniSmsUnitConfig} returns this
+ */
+proto.services.billing.entities.v1alpha3.OmniSmsUnitConfig.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

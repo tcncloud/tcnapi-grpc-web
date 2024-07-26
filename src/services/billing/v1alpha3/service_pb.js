@@ -35,3 +35,5 @@ var services_billing_v1alpha3_plan_pb = require('../../../services/billing/v1alp
 goog.object.extend(proto, services_billing_v1alpha3_plan_pb);
 var services_billing_v1alpha3_product_pb = require('../../../services/billing/v1alpha3/product_pb.js');
 goog.object.extend(proto, services_billing_v1alpha3_product_pb);
+var services_billing_v1alpha3_sku_pb = require('../../../services/billing/v1alpha3/sku_pb.js');
+goog.object.extend(proto, services_billing_v1alpha3_sku_pb);
