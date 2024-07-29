@@ -1597,6 +1597,15 @@ type WFMListRealTimeManagementStates = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStatesResponse;
 };
 
+type WFMUpsertRealTimeManagementStateColor = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpsertRealTimeManagementStateColorRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpsertRealTimeManagementStateColorResponse;
+};
+
 type WFMListRealTimeManagementStateColors = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1604,6 +1613,15 @@ type WFMListRealTimeManagementStateColors = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsRequest;
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsResponse;
+};
+
+type WFMDeleteRealTimeManagementStateColor = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteRealTimeManagementStateColorRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteRealTimeManagementStateColorResponse;
 };
 
 type WFMCreateRgbaColor = {
@@ -1821,7 +1839,9 @@ export class WFM {
   static readonly HelloWorldWFMAdherence: WFMHelloWorldWFMAdherence;
   static readonly ListAgentStatesForDay: WFMListAgentStatesForDay;
   static readonly ListRealTimeManagementStates: WFMListRealTimeManagementStates;
+  static readonly UpsertRealTimeManagementStateColor: WFMUpsertRealTimeManagementStateColor;
   static readonly ListRealTimeManagementStateColors: WFMListRealTimeManagementStateColors;
+  static readonly DeleteRealTimeManagementStateColor: WFMDeleteRealTimeManagementStateColor;
   static readonly CreateRgbaColor: WFMCreateRgbaColor;
   static readonly ListRgbaColors: WFMListRgbaColors;
   static readonly UpdateRgbaColor: WFMUpdateRgbaColor;
@@ -3405,6 +3425,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStatesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStatesResponse|null) => void
   ): UnaryResponse;
+  upsertRealTimeManagementStateColor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpsertRealTimeManagementStateColorRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpsertRealTimeManagementStateColorResponse|null) => void
+  ): UnaryResponse;
+  upsertRealTimeManagementStateColor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpsertRealTimeManagementStateColorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpsertRealTimeManagementStateColorResponse|null) => void
+  ): UnaryResponse;
   listRealTimeManagementStateColors(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsRequest,
     metadata: grpc.Metadata,
@@ -3413,6 +3442,15 @@ export class WFMClient {
   listRealTimeManagementStateColors(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsResponse|null) => void
+  ): UnaryResponse;
+  deleteRealTimeManagementStateColor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteRealTimeManagementStateColorRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteRealTimeManagementStateColorResponse|null) => void
+  ): UnaryResponse;
+  deleteRealTimeManagementStateColor(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteRealTimeManagementStateColorRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteRealTimeManagementStateColorResponse|null) => void
   ): UnaryResponse;
   createRgbaColor(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateRgbaColorRequest,
