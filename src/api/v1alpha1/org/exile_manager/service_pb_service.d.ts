@@ -2,7 +2,7 @@
 // file: api/v1alpha1/org/exile_manager/service.proto
 
 import * as api_v1alpha1_org_exile_manager_service_pb from "../../../../api/v1alpha1/org/exile_manager/service_pb";
-import * as api_v1alpha1_org_exile_manager_entities_pb from "../../../../api/v1alpha1/org/exile_manager/entities_pb";
+import * as api_v1alpha1_org_exile_manager_certificate_info_pb from "../../../../api/v1alpha1/org/exile_manager/certificate_info_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type ExileManagerServiceCreateCertificateInfo = {
@@ -10,8 +10,8 @@ type ExileManagerServiceCreateCertificateInfo = {
   readonly service: typeof ExileManagerService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_exile_manager_entities_pb.CreateCertificateInfoRequest;
-  readonly responseType: typeof api_v1alpha1_org_exile_manager_entities_pb.CreateCertificateInfoResponse;
+  readonly requestType: typeof api_v1alpha1_org_exile_manager_certificate_info_pb.CreateCertificateInfoRequest;
+  readonly responseType: typeof api_v1alpha1_org_exile_manager_certificate_info_pb.CreateCertificateInfoResponse;
 };
 
 type ExileManagerServiceDeleteCertificateInfo = {
@@ -19,8 +19,8 @@ type ExileManagerServiceDeleteCertificateInfo = {
   readonly service: typeof ExileManagerService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_exile_manager_entities_pb.DeleteCertificateInfoRequest;
-  readonly responseType: typeof api_v1alpha1_org_exile_manager_entities_pb.DeleteCertificateInfoResponse;
+  readonly requestType: typeof api_v1alpha1_org_exile_manager_certificate_info_pb.DeleteCertificateInfoRequest;
+  readonly responseType: typeof api_v1alpha1_org_exile_manager_certificate_info_pb.DeleteCertificateInfoResponse;
 };
 
 type ExileManagerServiceRevokeCertificateInfo = {
@@ -28,8 +28,8 @@ type ExileManagerServiceRevokeCertificateInfo = {
   readonly service: typeof ExileManagerService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_exile_manager_entities_pb.RevokeCertificateInfoRequest;
-  readonly responseType: typeof api_v1alpha1_org_exile_manager_entities_pb.RevokeCertificateInfoResponse;
+  readonly requestType: typeof api_v1alpha1_org_exile_manager_certificate_info_pb.RevokeCertificateInfoRequest;
+  readonly responseType: typeof api_v1alpha1_org_exile_manager_certificate_info_pb.RevokeCertificateInfoResponse;
 };
 
 type ExileManagerServiceListCertificateInfo = {
@@ -37,8 +37,8 @@ type ExileManagerServiceListCertificateInfo = {
   readonly service: typeof ExileManagerService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_org_exile_manager_entities_pb.ListCertificateInfoRequest;
-  readonly responseType: typeof api_v1alpha1_org_exile_manager_entities_pb.ListCertificateInfoResponse;
+  readonly requestType: typeof api_v1alpha1_org_exile_manager_certificate_info_pb.ListCertificateInfoRequest;
+  readonly responseType: typeof api_v1alpha1_org_exile_manager_certificate_info_pb.ListCertificateInfoResponse;
 };
 
 export class ExileManagerService {
@@ -82,40 +82,40 @@ export class ExileManagerServiceClient {
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
   createCertificateInfo(
-    requestMessage: api_v1alpha1_org_exile_manager_entities_pb.CreateCertificateInfoRequest,
+    requestMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.CreateCertificateInfoRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_entities_pb.CreateCertificateInfoResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.CreateCertificateInfoResponse|null) => void
   ): UnaryResponse;
   createCertificateInfo(
-    requestMessage: api_v1alpha1_org_exile_manager_entities_pb.CreateCertificateInfoRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_entities_pb.CreateCertificateInfoResponse|null) => void
+    requestMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.CreateCertificateInfoRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.CreateCertificateInfoResponse|null) => void
   ): UnaryResponse;
   deleteCertificateInfo(
-    requestMessage: api_v1alpha1_org_exile_manager_entities_pb.DeleteCertificateInfoRequest,
+    requestMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.DeleteCertificateInfoRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_entities_pb.DeleteCertificateInfoResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.DeleteCertificateInfoResponse|null) => void
   ): UnaryResponse;
   deleteCertificateInfo(
-    requestMessage: api_v1alpha1_org_exile_manager_entities_pb.DeleteCertificateInfoRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_entities_pb.DeleteCertificateInfoResponse|null) => void
+    requestMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.DeleteCertificateInfoRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.DeleteCertificateInfoResponse|null) => void
   ): UnaryResponse;
   revokeCertificateInfo(
-    requestMessage: api_v1alpha1_org_exile_manager_entities_pb.RevokeCertificateInfoRequest,
+    requestMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.RevokeCertificateInfoRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_entities_pb.RevokeCertificateInfoResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.RevokeCertificateInfoResponse|null) => void
   ): UnaryResponse;
   revokeCertificateInfo(
-    requestMessage: api_v1alpha1_org_exile_manager_entities_pb.RevokeCertificateInfoRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_entities_pb.RevokeCertificateInfoResponse|null) => void
+    requestMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.RevokeCertificateInfoRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.RevokeCertificateInfoResponse|null) => void
   ): UnaryResponse;
   listCertificateInfo(
-    requestMessage: api_v1alpha1_org_exile_manager_entities_pb.ListCertificateInfoRequest,
+    requestMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.ListCertificateInfoRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_entities_pb.ListCertificateInfoResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.ListCertificateInfoResponse|null) => void
   ): UnaryResponse;
   listCertificateInfo(
-    requestMessage: api_v1alpha1_org_exile_manager_entities_pb.ListCertificateInfoRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_entities_pb.ListCertificateInfoResponse|null) => void
+    requestMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.ListCertificateInfoRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_org_exile_manager_certificate_info_pb.ListCertificateInfoResponse|null) => void
   ): UnaryResponse;
 }
 

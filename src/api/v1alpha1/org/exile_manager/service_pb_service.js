@@ -2,7 +2,7 @@
 // file: api/v1alpha1/org/exile_manager/service.proto
 
 var api_v1alpha1_org_exile_manager_service_pb = require("../../../../api/v1alpha1/org/exile_manager/service_pb");
-var api_v1alpha1_org_exile_manager_entities_pb = require("../../../../api/v1alpha1/org/exile_manager/entities_pb");
+var api_v1alpha1_org_exile_manager_certificate_info_pb = require("../../../../api/v1alpha1/org/exile_manager/certificate_info_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var ExileManagerService = (function () {
@@ -16,8 +16,8 @@ ExileManagerService.CreateCertificateInfo = {
   service: ExileManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_exile_manager_entities_pb.CreateCertificateInfoRequest,
-  responseType: api_v1alpha1_org_exile_manager_entities_pb.CreateCertificateInfoResponse
+  requestType: api_v1alpha1_org_exile_manager_certificate_info_pb.CreateCertificateInfoRequest,
+  responseType: api_v1alpha1_org_exile_manager_certificate_info_pb.CreateCertificateInfoResponse
 };
 
 ExileManagerService.DeleteCertificateInfo = {
@@ -25,8 +25,8 @@ ExileManagerService.DeleteCertificateInfo = {
   service: ExileManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_exile_manager_entities_pb.DeleteCertificateInfoRequest,
-  responseType: api_v1alpha1_org_exile_manager_entities_pb.DeleteCertificateInfoResponse
+  requestType: api_v1alpha1_org_exile_manager_certificate_info_pb.DeleteCertificateInfoRequest,
+  responseType: api_v1alpha1_org_exile_manager_certificate_info_pb.DeleteCertificateInfoResponse
 };
 
 ExileManagerService.RevokeCertificateInfo = {
@@ -34,8 +34,8 @@ ExileManagerService.RevokeCertificateInfo = {
   service: ExileManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_exile_manager_entities_pb.RevokeCertificateInfoRequest,
-  responseType: api_v1alpha1_org_exile_manager_entities_pb.RevokeCertificateInfoResponse
+  requestType: api_v1alpha1_org_exile_manager_certificate_info_pb.RevokeCertificateInfoRequest,
+  responseType: api_v1alpha1_org_exile_manager_certificate_info_pb.RevokeCertificateInfoResponse
 };
 
 ExileManagerService.ListCertificateInfo = {
@@ -43,8 +43,8 @@ ExileManagerService.ListCertificateInfo = {
   service: ExileManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_exile_manager_entities_pb.ListCertificateInfoRequest,
-  responseType: api_v1alpha1_org_exile_manager_entities_pb.ListCertificateInfoResponse
+  requestType: api_v1alpha1_org_exile_manager_certificate_info_pb.ListCertificateInfoRequest,
+  responseType: api_v1alpha1_org_exile_manager_certificate_info_pb.ListCertificateInfoResponse
 };
 
 exports.ExileManagerService = ExileManagerService;
