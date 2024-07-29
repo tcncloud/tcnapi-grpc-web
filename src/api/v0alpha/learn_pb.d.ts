@@ -6,6 +6,7 @@ import * as annotations_authz_pb from "../../annotations/authz_pb";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class ExistReq extends jspb.Message {
   getUrl(): string;
@@ -297,6 +298,14 @@ export class LearnImage extends jspb.Message {
   getDownloadUrl(): string;
   setDownloadUrl(value: string): void;
 
+  hasTempId(): boolean;
+  clearTempId(): void;
+  getTempId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setTempId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  getPath(): string;
+  setPath(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LearnImage.AsObject;
   static toObject(includeInstance: boolean, msg: LearnImage): LearnImage.AsObject;
@@ -312,6 +321,8 @@ export namespace LearnImage {
     uuid: string,
     content: string,
     downloadUrl: string,
+    tempId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    path: string,
   }
 }
 
@@ -1158,6 +1169,50 @@ export class DeleteVersionRes extends jspb.Message {
 
 export namespace DeleteVersionRes {
   export type AsObject = {
+  }
+}
+
+export class UploadStaticImageReq extends jspb.Message {
+  hasImage(): boolean;
+  clearImage(): void;
+  getImage(): LearnImage | undefined;
+  setImage(value?: LearnImage): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadStaticImageReq.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadStaticImageReq): UploadStaticImageReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UploadStaticImageReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadStaticImageReq;
+  static deserializeBinaryFromReader(message: UploadStaticImageReq, reader: jspb.BinaryReader): UploadStaticImageReq;
+}
+
+export namespace UploadStaticImageReq {
+  export type AsObject = {
+    image?: LearnImage.AsObject,
+  }
+}
+
+export class UploadStaticImageRes extends jspb.Message {
+  hasImage(): boolean;
+  clearImage(): void;
+  getImage(): LearnImage | undefined;
+  setImage(value?: LearnImage): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadStaticImageRes.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadStaticImageRes): UploadStaticImageRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UploadStaticImageRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadStaticImageRes;
+  static deserializeBinaryFromReader(message: UploadStaticImageRes, reader: jspb.BinaryReader): UploadStaticImageRes;
+}
+
+export namespace UploadStaticImageRes {
+  export type AsObject = {
+    image?: LearnImage.AsObject,
   }
 }
 

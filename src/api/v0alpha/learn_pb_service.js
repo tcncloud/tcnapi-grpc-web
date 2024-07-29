@@ -226,6 +226,15 @@ Learn.DeleteVersion = {
   responseType: api_v0alpha_learn_pb.DeleteVersionRes
 };
 
+Learn.UploadStaticImage = {
+  methodName: "UploadStaticImage",
+  service: Learn,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v0alpha_learn_pb.UploadStaticImageReq,
+  responseType: api_v0alpha_learn_pb.UploadStaticImageRes
+};
+
 exports.Learn = Learn;
 
 function LearnClient(serviceHost, options) {
@@ -983,6 +992,37 @@ LearnClient.prototype.deleteVersion = function deleteVersion(requestMessage, met
     callback = arguments[1];
   }
   var client = grpc.unary(Learn.DeleteVersion, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LearnClient.prototype.uploadStaticImage = function uploadStaticImage(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Learn.UploadStaticImage, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
