@@ -2999,8 +2999,7 @@ proto.api.v0alpha.LearnImage.toObject = function(includeInstance, msg) {
 uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
 content: jspb.Message.getFieldWithDefault(msg, 2, ""),
 downloadUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
-tempId: (f = msg.getTempId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-path: jspb.Message.getFieldWithDefault(msg, 5, "")
+tempId: (f = msg.getTempId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3053,10 +3052,6 @@ proto.api.v0alpha.LearnImage.deserializeBinaryFromReader = function(msg, reader)
       var value = new google_protobuf_wrappers_pb.StringValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setTempId(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPath(value);
       break;
     default:
       reader.skipField();
@@ -3114,13 +3109,6 @@ proto.api.v0alpha.LearnImage.serializeBinaryToWriter = function(message, writer)
       4,
       f,
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
-    );
-  }
-  f = message.getPath();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
     );
   }
 };
@@ -3214,24 +3202,6 @@ proto.api.v0alpha.LearnImage.prototype.clearTempId = function() {
  */
 proto.api.v0alpha.LearnImage.prototype.hasTempId = function() {
   return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string path = 5;
- * @return {string}
- */
-proto.api.v0alpha.LearnImage.prototype.getPath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v0alpha.LearnImage} returns this
- */
-proto.api.v0alpha.LearnImage.prototype.setPath = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

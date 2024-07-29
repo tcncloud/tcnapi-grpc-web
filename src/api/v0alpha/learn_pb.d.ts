@@ -303,9 +303,6 @@ export class LearnImage extends jspb.Message {
   getTempId(): google_protobuf_wrappers_pb.StringValue | undefined;
   setTempId(value?: google_protobuf_wrappers_pb.StringValue): void;
 
-  getPath(): string;
-  setPath(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LearnImage.AsObject;
   static toObject(includeInstance: boolean, msg: LearnImage): LearnImage.AsObject;
@@ -322,7 +319,6 @@ export namespace LearnImage {
     content: string,
     downloadUrl: string,
     tempId?: google_protobuf_wrappers_pb.StringValue.AsObject,
-    path: string,
   }
 }
 
