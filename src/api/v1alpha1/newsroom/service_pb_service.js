@@ -110,6 +110,15 @@ NewsroomAPI.ListImagesForNewsArticle = {
   responseType: api_v1alpha1_newsroom_entities_pb.ListImagesForNewsArticleResponse
 };
 
+NewsroomAPI.UploadNewsArticleImage = {
+  methodName: "UploadNewsArticleImage",
+  service: NewsroomAPI,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_newsroom_entities_pb.UploadNewsArticleImageRequest,
+  responseType: api_v1alpha1_newsroom_entities_pb.UploadNewsArticleImageResponse
+};
+
 exports.NewsroomAPI = NewsroomAPI;
 
 function NewsroomAPIClient(serviceHost, options) {
@@ -432,6 +441,37 @@ NewsroomAPIClient.prototype.listImagesForNewsArticle = function listImagesForNew
     callback = arguments[1];
   }
   var client = grpc.unary(NewsroomAPI.ListImagesForNewsArticle, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+NewsroomAPIClient.prototype.uploadNewsArticleImage = function uploadNewsArticleImage(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(NewsroomAPI.UploadNewsArticleImage, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

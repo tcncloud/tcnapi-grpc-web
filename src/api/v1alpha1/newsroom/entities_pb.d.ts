@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as api_commons_newsroom_pb from "../../../api/commons/newsroom_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class CreateNewsArticleRequest extends jspb.Message {
   getTitle(): string;
@@ -601,6 +602,14 @@ export class NewsArticleImage extends jspb.Message {
   getImageType(): string;
   setImageType(value: string): void;
 
+  hasTempId(): boolean;
+  clearTempId(): void;
+  getTempId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setTempId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  getPath(): string;
+  setPath(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NewsArticleImage.AsObject;
   static toObject(includeInstance: boolean, msg: NewsArticleImage): NewsArticleImage.AsObject;
@@ -619,6 +628,8 @@ export namespace NewsArticleImage {
     downloadUrl: string,
     imageReferenceId: string,
     imageType: string,
+    tempId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    path: string,
   }
 }
 
@@ -683,6 +694,50 @@ export class ListImagesForNewsArticleResponse extends jspb.Message {
 export namespace ListImagesForNewsArticleResponse {
   export type AsObject = {
     newsArticleImagesList: Array<NewsArticleImage.AsObject>,
+  }
+}
+
+export class UploadNewsArticleImageRequest extends jspb.Message {
+  hasImage(): boolean;
+  clearImage(): void;
+  getImage(): NewsArticleImage | undefined;
+  setImage(value?: NewsArticleImage): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadNewsArticleImageRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadNewsArticleImageRequest): UploadNewsArticleImageRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UploadNewsArticleImageRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadNewsArticleImageRequest;
+  static deserializeBinaryFromReader(message: UploadNewsArticleImageRequest, reader: jspb.BinaryReader): UploadNewsArticleImageRequest;
+}
+
+export namespace UploadNewsArticleImageRequest {
+  export type AsObject = {
+    image?: NewsArticleImage.AsObject,
+  }
+}
+
+export class UploadNewsArticleImageResponse extends jspb.Message {
+  hasImage(): boolean;
+  clearImage(): void;
+  getImage(): NewsArticleImage | undefined;
+  setImage(value?: NewsArticleImage): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadNewsArticleImageResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadNewsArticleImageResponse): UploadNewsArticleImageResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UploadNewsArticleImageResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadNewsArticleImageResponse;
+  static deserializeBinaryFromReader(message: UploadNewsArticleImageResponse, reader: jspb.BinaryReader): UploadNewsArticleImageResponse;
+}
+
+export namespace UploadNewsArticleImageResponse {
+  export type AsObject = {
+    image?: NewsArticleImage.AsObject,
   }
 }
 

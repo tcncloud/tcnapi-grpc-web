@@ -104,6 +104,15 @@ type NewsroomAPIListImagesForNewsArticle = {
   readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.ListImagesForNewsArticleResponse;
 };
 
+type NewsroomAPIUploadNewsArticleImage = {
+  readonly methodName: string;
+  readonly service: typeof NewsroomAPI;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_newsroom_entities_pb.UploadNewsArticleImageRequest;
+  readonly responseType: typeof api_v1alpha1_newsroom_entities_pb.UploadNewsArticleImageResponse;
+};
+
 export class NewsroomAPI {
   static readonly serviceName: string;
   static readonly CreateNewsArticle: NewsroomAPICreateNewsArticle;
@@ -117,6 +126,7 @@ export class NewsroomAPI {
   static readonly GetNewsForUser: NewsroomAPIGetNewsForUser;
   static readonly StoreNewsArticleImage: NewsroomAPIStoreNewsArticleImage;
   static readonly ListImagesForNewsArticle: NewsroomAPIListImagesForNewsArticle;
+  static readonly UploadNewsArticleImage: NewsroomAPIUploadNewsArticleImage;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -249,6 +259,15 @@ export class NewsroomAPIClient {
   listImagesForNewsArticle(
     requestMessage: api_v1alpha1_newsroom_entities_pb.ListImagesForNewsArticleRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.ListImagesForNewsArticleResponse|null) => void
+  ): UnaryResponse;
+  uploadNewsArticleImage(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.UploadNewsArticleImageRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.UploadNewsArticleImageResponse|null) => void
+  ): UnaryResponse;
+  uploadNewsArticleImage(
+    requestMessage: api_v1alpha1_newsroom_entities_pb.UploadNewsArticleImageRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_newsroom_entities_pb.UploadNewsArticleImageResponse|null) => void
   ): UnaryResponse;
 }
 
