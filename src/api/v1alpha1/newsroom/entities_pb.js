@@ -4723,8 +4723,7 @@ content: jspb.Message.getFieldWithDefault(msg, 3, ""),
 downloadUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
 imageReferenceId: jspb.Message.getFieldWithDefault(msg, 5, ""),
 imageType: jspb.Message.getFieldWithDefault(msg, 6, ""),
-tempId: (f = msg.getTempId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-path: jspb.Message.getFieldWithDefault(msg, 8, "")
+tempId: (f = msg.getTempId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4789,10 +4788,6 @@ proto.api.v1alpha1.newsroom.NewsArticleImage.deserializeBinaryFromReader = funct
       var value = new google_protobuf_wrappers_pb.StringValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setTempId(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPath(value);
       break;
     default:
       reader.skipField();
@@ -4871,13 +4866,6 @@ proto.api.v1alpha1.newsroom.NewsArticleImage.serializeBinaryToWriter = function(
       7,
       f,
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
-    );
-  }
-  f = message.getPath();
-  if (f.length > 0) {
-    writer.writeString(
-      8,
-      f
     );
   }
 };
@@ -5025,24 +5013,6 @@ proto.api.v1alpha1.newsroom.NewsArticleImage.prototype.clearTempId = function() 
  */
 proto.api.v1alpha1.newsroom.NewsArticleImage.prototype.hasTempId = function() {
   return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional string path = 8;
- * @return {string}
- */
-proto.api.v1alpha1.newsroom.NewsArticleImage.prototype.getPath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.newsroom.NewsArticleImage} returns this
- */
-proto.api.v1alpha1.newsroom.NewsArticleImage.prototype.setPath = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
