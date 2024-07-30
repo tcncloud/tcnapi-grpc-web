@@ -1,4 +1,4 @@
-// source: services/org/exile_certificate_manager/v1/certficate_configuration.proto
+// source: services/org/exile_certificate_manager/v1/certificate_configuration.proto
 /**
  * @fileoverview
  * @enhanceable

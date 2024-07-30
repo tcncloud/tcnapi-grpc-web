@@ -27,5 +27,7 @@ var annotations_authz_pb = require('../../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
 var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
+var services_org_exile_certificate_manager_v1_certificate_configuration_pb = require('../../../../services/org/exile_certificate_manager/v1/certificate_configuration_pb.js');
+goog.object.extend(proto, services_org_exile_certificate_manager_v1_certificate_configuration_pb);
 var services_org_exile_certificate_manager_v1_certificate_info_pb = require('../../../../services/org/exile_certificate_manager/v1/certificate_info_pb.js');
 goog.object.extend(proto, services_org_exile_certificate_manager_v1_certificate_info_pb);

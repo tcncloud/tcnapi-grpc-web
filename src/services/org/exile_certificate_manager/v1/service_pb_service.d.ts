@@ -2,6 +2,7 @@
 // file: services/org/exile_certificate_manager/v1/service.proto
 
 import * as services_org_exile_certificate_manager_v1_service_pb from "../../../../services/org/exile_certificate_manager/v1/service_pb";
+import * as services_org_exile_certificate_manager_v1_certificate_configuration_pb from "../../../../services/org/exile_certificate_manager/v1/certificate_configuration_pb";
 import * as services_org_exile_certificate_manager_v1_certificate_info_pb from "../../../../services/org/exile_certificate_manager/v1/certificate_info_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
@@ -32,15 +33,6 @@ type ExileCertificateManagerServiceRevokeCertificateInfo = {
   readonly responseType: typeof services_org_exile_certificate_manager_v1_certificate_info_pb.RevokeCertificateInfoResponse;
 };
 
-type ExileCertificateManagerServiceListCertificateInfo = {
-  readonly methodName: string;
-  readonly service: typeof ExileCertificateManagerService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoRequest;
-  readonly responseType: typeof services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoResponse;
-};
-
 type ExileCertificateManagerServiceAssignCertificateConfiguration = {
   readonly methodName: string;
   readonly service: typeof ExileCertificateManagerService;
@@ -59,14 +51,63 @@ type ExileCertificateManagerServiceUnassignCertificateConfiguration = {
   readonly responseType: typeof services_org_exile_certificate_manager_v1_certificate_info_pb.UnassignCertificateConfigurationResponse;
 };
 
+type ExileCertificateManagerServiceListCertificateInfo = {
+  readonly methodName: string;
+  readonly service: typeof ExileCertificateManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoRequest;
+  readonly responseType: typeof services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoResponse;
+};
+
+type ExileCertificateManagerServiceCreateCertificateConfiguration = {
+  readonly methodName: string;
+  readonly service: typeof ExileCertificateManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_org_exile_certificate_manager_v1_certificate_configuration_pb.CreateCertificateConfigurationRequest;
+  readonly responseType: typeof services_org_exile_certificate_manager_v1_certificate_configuration_pb.CreateCertificateConfigurationResponse;
+};
+
+type ExileCertificateManagerServiceUpdateCertificateConfiguration = {
+  readonly methodName: string;
+  readonly service: typeof ExileCertificateManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_org_exile_certificate_manager_v1_certificate_configuration_pb.UpdateCertificateConfigurationRequest;
+  readonly responseType: typeof services_org_exile_certificate_manager_v1_certificate_configuration_pb.UpdateCertificateConfigurationResponse;
+};
+
+type ExileCertificateManagerServiceDeleteCertificateConfiguration = {
+  readonly methodName: string;
+  readonly service: typeof ExileCertificateManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_org_exile_certificate_manager_v1_certificate_configuration_pb.DeleteCertificateConfigurationRequest;
+  readonly responseType: typeof services_org_exile_certificate_manager_v1_certificate_configuration_pb.DeleteCertificateConfigurationResponse;
+};
+
+type ExileCertificateManagerServiceListCertificateConfigurations = {
+  readonly methodName: string;
+  readonly service: typeof ExileCertificateManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_org_exile_certificate_manager_v1_certificate_configuration_pb.ListCertificateConfigurationsRequest;
+  readonly responseType: typeof services_org_exile_certificate_manager_v1_certificate_configuration_pb.ListCertificateConfigurationsResponse;
+};
+
 export class ExileCertificateManagerService {
   static readonly serviceName: string;
   static readonly CreateCertificateInfo: ExileCertificateManagerServiceCreateCertificateInfo;
   static readonly DeleteCertificateInfo: ExileCertificateManagerServiceDeleteCertificateInfo;
   static readonly RevokeCertificateInfo: ExileCertificateManagerServiceRevokeCertificateInfo;
-  static readonly ListCertificateInfo: ExileCertificateManagerServiceListCertificateInfo;
   static readonly AssignCertificateConfiguration: ExileCertificateManagerServiceAssignCertificateConfiguration;
   static readonly UnassignCertificateConfiguration: ExileCertificateManagerServiceUnassignCertificateConfiguration;
+  static readonly ListCertificateInfo: ExileCertificateManagerServiceListCertificateInfo;
+  static readonly CreateCertificateConfiguration: ExileCertificateManagerServiceCreateCertificateConfiguration;
+  static readonly UpdateCertificateConfiguration: ExileCertificateManagerServiceUpdateCertificateConfiguration;
+  static readonly DeleteCertificateConfiguration: ExileCertificateManagerServiceDeleteCertificateConfiguration;
+  static readonly ListCertificateConfigurations: ExileCertificateManagerServiceListCertificateConfigurations;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -128,15 +169,6 @@ export class ExileCertificateManagerServiceClient {
     requestMessage: services_org_exile_certificate_manager_v1_certificate_info_pb.RevokeCertificateInfoRequest,
     callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_info_pb.RevokeCertificateInfoResponse|null) => void
   ): UnaryResponse;
-  listCertificateInfo(
-    requestMessage: services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoResponse|null) => void
-  ): UnaryResponse;
-  listCertificateInfo(
-    requestMessage: services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoRequest,
-    callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoResponse|null) => void
-  ): UnaryResponse;
   assignCertificateConfiguration(
     requestMessage: services_org_exile_certificate_manager_v1_certificate_info_pb.AssignCertificateConfigurationRequest,
     metadata: grpc.Metadata,
@@ -154,6 +186,51 @@ export class ExileCertificateManagerServiceClient {
   unassignCertificateConfiguration(
     requestMessage: services_org_exile_certificate_manager_v1_certificate_info_pb.UnassignCertificateConfigurationRequest,
     callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_info_pb.UnassignCertificateConfigurationResponse|null) => void
+  ): UnaryResponse;
+  listCertificateInfo(
+    requestMessage: services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoResponse|null) => void
+  ): UnaryResponse;
+  listCertificateInfo(
+    requestMessage: services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoResponse|null) => void
+  ): UnaryResponse;
+  createCertificateConfiguration(
+    requestMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.CreateCertificateConfigurationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.CreateCertificateConfigurationResponse|null) => void
+  ): UnaryResponse;
+  createCertificateConfiguration(
+    requestMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.CreateCertificateConfigurationRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.CreateCertificateConfigurationResponse|null) => void
+  ): UnaryResponse;
+  updateCertificateConfiguration(
+    requestMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.UpdateCertificateConfigurationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.UpdateCertificateConfigurationResponse|null) => void
+  ): UnaryResponse;
+  updateCertificateConfiguration(
+    requestMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.UpdateCertificateConfigurationRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.UpdateCertificateConfigurationResponse|null) => void
+  ): UnaryResponse;
+  deleteCertificateConfiguration(
+    requestMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.DeleteCertificateConfigurationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.DeleteCertificateConfigurationResponse|null) => void
+  ): UnaryResponse;
+  deleteCertificateConfiguration(
+    requestMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.DeleteCertificateConfigurationRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.DeleteCertificateConfigurationResponse|null) => void
+  ): UnaryResponse;
+  listCertificateConfigurations(
+    requestMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.ListCertificateConfigurationsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.ListCertificateConfigurationsResponse|null) => void
+  ): UnaryResponse;
+  listCertificateConfigurations(
+    requestMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.ListCertificateConfigurationsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_exile_certificate_manager_v1_certificate_configuration_pb.ListCertificateConfigurationsResponse|null) => void
   ): UnaryResponse;
 }
 
