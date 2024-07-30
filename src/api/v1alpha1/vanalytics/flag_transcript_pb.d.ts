@@ -58,6 +58,9 @@ export class DeleteFlagTranscriptRequest extends jspb.Message {
   setTranscriptSidsList(value: Array<number>): void;
   addTranscriptSids(value: number, index?: number): number;
 
+  getFilter(): string;
+  setFilter(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteFlagTranscriptRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DeleteFlagTranscriptRequest): DeleteFlagTranscriptRequest.AsObject;
@@ -72,6 +75,7 @@ export namespace DeleteFlagTranscriptRequest {
   export type AsObject = {
     orgId: string,
     transcriptSidsList: Array<number>,
+    filter: string,
   }
 }
 

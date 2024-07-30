@@ -2714,6 +2714,9 @@ export class SearchByOrgIdRequest extends jspb.Message {
   getFlagSummary(): SearchQuery.FlagSummary | undefined;
   setFlagSummary(value?: SearchQuery.FlagSummary): void;
 
+  getFilter(): string;
+  setFilter(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchByOrgIdRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SearchByOrgIdRequest): SearchByOrgIdRequest.AsObject;
@@ -2731,6 +2734,7 @@ export namespace SearchByOrgIdRequest {
     sort?: Sort.AsObject,
     transcriptMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
     flagSummary?: SearchQuery.FlagSummary.AsObject,
+    filter: string,
   }
 }
 
