@@ -598,7 +598,8 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.toObject = f
 proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+transcriptSidsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+filter: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -645,6 +646,10 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.deserializeBinaryFromR
         msg.addTranscriptSids(values[i]);
       }
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilter(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -685,6 +690,13 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.serializeBinaryToWrite
   if (f.length > 0) {
     writer.writePackedInt64(
       2,
+      f
+    );
+  }
+  f = message.getFilter();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -743,6 +755,24 @@ proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.addTranscrip
  */
 proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.clearTranscriptSidsList = function() {
   return this.setTranscriptSidsList([]);
+};
+
+
+/**
+ * optional string filter = 3;
+ * @return {string}
+ */
+proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.getFilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest} returns this
+ */
+proto.api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest.prototype.setFilter = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

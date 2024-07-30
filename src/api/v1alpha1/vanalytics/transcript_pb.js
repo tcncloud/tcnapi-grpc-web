@@ -21623,7 +21623,8 @@ orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
 sort: (f = msg.getSort()) && proto.api.v1alpha1.vanalytics.Sort.toObject(includeInstance, f),
 transcriptMask: (f = msg.getTranscriptMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-flagSummary: (f = msg.getFlagSummary()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.toObject(includeInstance, f)
+flagSummary: (f = msg.getFlagSummary()) && proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.toObject(includeInstance, f),
+filter: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -21682,6 +21683,10 @@ proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.deserializeBinaryFromReader =
       var value = new proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary;
       reader.readMessage(value,proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.deserializeBinaryFromReader);
       msg.setFlagSummary(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilter(value);
       break;
     default:
       reader.skipField();
@@ -21748,6 +21753,13 @@ proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.serializeBinaryToWriter = fun
       5,
       f,
       proto.api.v1alpha1.vanalytics.SearchQuery.FlagSummary.serializeBinaryToWriter
+    );
+  }
+  f = message.getFilter();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
     );
   }
 };
@@ -21897,6 +21909,24 @@ proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.clearFlagSummary = 
  */
 proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.hasFlagSummary = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string filter = 6;
+ * @return {string}
+ */
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.getFilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest} returns this
+ */
+proto.api.v1alpha1.vanalytics.SearchByOrgIdRequest.prototype.setFilter = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
