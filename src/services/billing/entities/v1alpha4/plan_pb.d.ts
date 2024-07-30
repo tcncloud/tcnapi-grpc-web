@@ -1,5 +1,5 @@
-// package: services.billing.entities.v1alpha3
-// file: services/billing/entities/v1alpha3/plan.proto
+// package: services.billing.entities.v1alpha4
+// file: services/billing/entities/v1alpha4/plan.proto
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
@@ -40,6 +40,9 @@ export class BillingPlan extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BillingPlan.AsObject;
   static toObject(includeInstance: boolean, msg: BillingPlan): BillingPlan.AsObject;
@@ -61,6 +64,7 @@ export namespace BillingPlan {
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     userId: string,
+    orgId: string,
   }
 }
 

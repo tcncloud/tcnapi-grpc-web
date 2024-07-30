@@ -6,54 +6,6 @@ import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/t
 import * as services_billing_entities_v1alpha3_modules_pb from "../../../../services/billing/entities/v1alpha3/modules_pb";
 import * as services_billing_entities_v1alpha3_omni_pb from "../../../../services/billing/entities/v1alpha3/omni_pb";
 
-export class Sku extends jspb.Message {
-  getSkuId(): string;
-  setSkuId(value: string): void;
-
-  hasConfig(): boolean;
-  clearConfig(): void;
-  getConfig(): ProductConfig | undefined;
-  setConfig(value?: ProductConfig): void;
-
-  getIsDraft(): boolean;
-  setIsDraft(value: boolean): void;
-
-  hasCreateTime(): boolean;
-  clearCreateTime(): void;
-  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  hasDeleteTime(): boolean;
-  clearDeleteTime(): void;
-  getDeleteTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDeleteTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  hasUpdateTime(): boolean;
-  clearUpdateTime(): void;
-  getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Sku.AsObject;
-  static toObject(includeInstance: boolean, msg: Sku): Sku.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Sku, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Sku;
-  static deserializeBinaryFromReader(message: Sku, reader: jspb.BinaryReader): Sku;
-}
-
-export namespace Sku {
-  export type AsObject = {
-    skuId: string,
-    config?: ProductConfig.AsObject,
-    isDraft: boolean,
-    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-  }
-}
-
 export class RateDefinition extends jspb.Message {
   getRateDefinitionId(): string;
   setRateDefinitionId(value: string): void;
@@ -89,9 +41,6 @@ export class RateDefinition extends jspb.Message {
   getDeleteTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setDeleteTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  getIsOverwrite(): boolean;
-  setIsOverwrite(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RateDefinition.AsObject;
   static toObject(includeInstance: boolean, msg: RateDefinition): RateDefinition.AsObject;
@@ -112,7 +61,6 @@ export namespace RateDefinition {
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    isOverwrite: boolean,
   }
 }
 
