@@ -2,6 +2,7 @@
 // file: services/org/exile_certificate_manager/v1/certificate_info.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as services_org_exile_certificate_manager_v1_entities_pb from "../../../../services/org/exile_certificate_manager/v1/entities_pb";
 
 export class CreateCertificateInfoRequest extends jspb.Message {
@@ -124,8 +125,8 @@ export class AssignCertificateConfigurationRequest extends jspb.Message {
   getCertificateInfoId(): string;
   setCertificateInfoId(value: string): void;
 
-  getConfigurationInfoId(): string;
-  setConfigurationInfoId(value: string): void;
+  getCertificateConfigurationId(): string;
+  setCertificateConfigurationId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AssignCertificateConfigurationRequest.AsObject;
@@ -140,7 +141,7 @@ export class AssignCertificateConfigurationRequest extends jspb.Message {
 export namespace AssignCertificateConfigurationRequest {
   export type AsObject = {
     certificateInfoId: string,
-    configurationInfoId: string,
+    certificateConfigurationId: string,
   }
 }
 
@@ -197,6 +198,11 @@ export namespace UnassignCertificateConfigurationResponse {
 }
 
 export class ListCertificateInfoRequest extends jspb.Message {
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCertificateInfoRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListCertificateInfoRequest): ListCertificateInfoRequest.AsObject;
@@ -209,6 +215,7 @@ export class ListCertificateInfoRequest extends jspb.Message {
 
 export namespace ListCertificateInfoRequest {
   export type AsObject = {
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 

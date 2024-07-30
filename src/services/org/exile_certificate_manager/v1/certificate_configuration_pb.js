@@ -23,6 +23,8 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
+goog.object.extend(proto, google_protobuf_field_mask_pb);
 var services_org_exile_certificate_manager_v1_entities_pb = require('../../../../services/org/exile_certificate_manager/v1/entities_pb.js');
 goog.object.extend(proto, services_org_exile_certificate_manager_v1_entities_pb);
 goog.exportSymbol('proto.services.org.exile_certificate_manager.v1.CreateCertificateConfigurationRequest', null, global);
@@ -453,7 +455,7 @@ proto.services.org.exile_certificate_manager.v1.CreateCertificateConfigurationRe
  */
 proto.services.org.exile_certificate_manager.v1.CreateCertificateConfigurationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-configurationInfoId: jspb.Message.getFieldWithDefault(msg, 1, "")
+certificateConfigurationId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -492,7 +494,7 @@ proto.services.org.exile_certificate_manager.v1.CreateCertificateConfigurationRe
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setConfigurationInfoId(value);
+      msg.setCertificateConfigurationId(value);
       break;
     default:
       reader.skipField();
@@ -523,7 +525,7 @@ proto.services.org.exile_certificate_manager.v1.CreateCertificateConfigurationRe
  */
 proto.services.org.exile_certificate_manager.v1.CreateCertificateConfigurationResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getConfigurationInfoId();
+  f = message.getCertificateConfigurationId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -534,10 +536,10 @@ proto.services.org.exile_certificate_manager.v1.CreateCertificateConfigurationRe
 
 
 /**
- * optional string configuration_info_id = 1;
+ * optional string certificate_configuration_id = 1;
  * @return {string}
  */
-proto.services.org.exile_certificate_manager.v1.CreateCertificateConfigurationResponse.prototype.getConfigurationInfoId = function() {
+proto.services.org.exile_certificate_manager.v1.CreateCertificateConfigurationResponse.prototype.getCertificateConfigurationId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -546,7 +548,7 @@ proto.services.org.exile_certificate_manager.v1.CreateCertificateConfigurationRe
  * @param {string} value
  * @return {!proto.services.org.exile_certificate_manager.v1.CreateCertificateConfigurationResponse} returns this
  */
-proto.services.org.exile_certificate_manager.v1.CreateCertificateConfigurationResponse.prototype.setConfigurationInfoId = function(value) {
+proto.services.org.exile_certificate_manager.v1.CreateCertificateConfigurationResponse.prototype.setCertificateConfigurationId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -583,11 +585,8 @@ proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRe
  */
 proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-configurationInfoId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-type: jspb.Message.getFieldWithDefault(msg, 4, 0),
-parameters: jspb.Message.getFieldWithDefault(msg, 5, "")
+configuration: (f = msg.getConfiguration()) && services_org_exile_certificate_manager_v1_entities_pb.CertificateConfiguration.toObject(includeInstance, f),
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -625,24 +624,14 @@ proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setConfigurationInfoId(value);
+      var value = new services_org_exile_certificate_manager_v1_entities_pb.CertificateConfiguration;
+      reader.readMessage(value,services_org_exile_certificate_manager_v1_entities_pb.CertificateConfiguration.deserializeBinaryFromReader);
+      msg.setConfiguration(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
-      break;
-    case 4:
-      var value = /** @type {!proto.services.org.exile_certificate_manager.v1.CertificateConfigurationType} */ (reader.readEnum());
-      msg.setType(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setParameters(value);
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setFieldMask(value);
       break;
     default:
       reader.skipField();
@@ -673,131 +662,96 @@ proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRe
  */
 proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getConfigurationInfoId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getConfiguration();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      services_org_exile_certificate_manager_v1_entities_pb.CertificateConfiguration.serializeBinaryToWriter
     );
   }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getFieldMask();
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
-    );
-  }
-  f = message.getDescription();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getType();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      4,
-      f
-    );
-  }
-  f = message.getParameters();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string configuration_info_id = 1;
- * @return {string}
+ * optional CertificateConfiguration configuration = 1;
+ * @return {?proto.services.org.exile_certificate_manager.v1.CertificateConfiguration}
  */
-proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.getConfigurationInfoId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.getConfiguration = function() {
+  return /** @type{?proto.services.org.exile_certificate_manager.v1.CertificateConfiguration} */ (
+    jspb.Message.getWrapperField(this, services_org_exile_certificate_manager_v1_entities_pb.CertificateConfiguration, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.services.org.exile_certificate_manager.v1.CertificateConfiguration|undefined} value
+ * @return {!proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest} returns this
+*/
+proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.setConfiguration = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest} returns this
  */
-proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.setConfigurationInfoId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.clearConfiguration = function() {
+  return this.setConfiguration(undefined);
 };
 
 
 /**
- * optional string name = 2;
- * @return {string}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.hasConfiguration = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * @param {string} value
+ * optional google.protobuf.FieldMask field_mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.getFieldMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest} returns this
+*/
+proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.setFieldMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest} returns this
  */
-proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.clearFieldMask = function() {
+  return this.setFieldMask(undefined);
 };
 
 
 /**
- * optional string description = 3;
- * @return {string}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest} returns this
- */
-proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.setDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional CertificateConfigurationType type = 4;
- * @return {!proto.services.org.exile_certificate_manager.v1.CertificateConfigurationType}
- */
-proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.getType = function() {
-  return /** @type {!proto.services.org.exile_certificate_manager.v1.CertificateConfigurationType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {!proto.services.org.exile_certificate_manager.v1.CertificateConfigurationType} value
- * @return {!proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest} returns this
- */
-proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.setType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 4, value);
-};
-
-
-/**
- * optional string parameters = 5;
- * @return {string}
- */
-proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.getParameters = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest} returns this
- */
-proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.setParameters = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.services.org.exile_certificate_manager.v1.UpdateCertificateConfigurationRequest.prototype.hasFieldMask = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -934,7 +888,7 @@ proto.services.org.exile_certificate_manager.v1.DeleteCertificateConfigurationRe
  */
 proto.services.org.exile_certificate_manager.v1.DeleteCertificateConfigurationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-configurationInfoId: jspb.Message.getFieldWithDefault(msg, 1, "")
+certificateConfigurationId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -973,7 +927,7 @@ proto.services.org.exile_certificate_manager.v1.DeleteCertificateConfigurationRe
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setConfigurationInfoId(value);
+      msg.setCertificateConfigurationId(value);
       break;
     default:
       reader.skipField();
@@ -1004,7 +958,7 @@ proto.services.org.exile_certificate_manager.v1.DeleteCertificateConfigurationRe
  */
 proto.services.org.exile_certificate_manager.v1.DeleteCertificateConfigurationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getConfigurationInfoId();
+  f = message.getCertificateConfigurationId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1015,10 +969,10 @@ proto.services.org.exile_certificate_manager.v1.DeleteCertificateConfigurationRe
 
 
 /**
- * optional string configuration_info_id = 1;
+ * optional string certificate_configuration_id = 1;
  * @return {string}
  */
-proto.services.org.exile_certificate_manager.v1.DeleteCertificateConfigurationRequest.prototype.getConfigurationInfoId = function() {
+proto.services.org.exile_certificate_manager.v1.DeleteCertificateConfigurationRequest.prototype.getCertificateConfigurationId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1027,7 +981,7 @@ proto.services.org.exile_certificate_manager.v1.DeleteCertificateConfigurationRe
  * @param {string} value
  * @return {!proto.services.org.exile_certificate_manager.v1.DeleteCertificateConfigurationRequest} returns this
  */
-proto.services.org.exile_certificate_manager.v1.DeleteCertificateConfigurationRequest.prototype.setConfigurationInfoId = function(value) {
+proto.services.org.exile_certificate_manager.v1.DeleteCertificateConfigurationRequest.prototype.setCertificateConfigurationId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1165,7 +1119,7 @@ proto.services.org.exile_certificate_manager.v1.ListCertificateConfigurationsReq
  */
 proto.services.org.exile_certificate_manager.v1.ListCertificateConfigurationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1202,6 +1156,11 @@ proto.services.org.exile_certificate_manager.v1.ListCertificateConfigurationsReq
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setFieldMask(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1231,6 +1190,51 @@ proto.services.org.exile_certificate_manager.v1.ListCertificateConfigurationsReq
  */
 proto.services.org.exile_certificate_manager.v1.ListCertificateConfigurationsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getFieldMask();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.FieldMask field_mask = 1;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.services.org.exile_certificate_manager.v1.ListCertificateConfigurationsRequest.prototype.getFieldMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 1));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.services.org.exile_certificate_manager.v1.ListCertificateConfigurationsRequest} returns this
+*/
+proto.services.org.exile_certificate_manager.v1.ListCertificateConfigurationsRequest.prototype.setFieldMask = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.org.exile_certificate_manager.v1.ListCertificateConfigurationsRequest} returns this
+ */
+proto.services.org.exile_certificate_manager.v1.ListCertificateConfigurationsRequest.prototype.clearFieldMask = function() {
+  return this.setFieldMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.org.exile_certificate_manager.v1.ListCertificateConfigurationsRequest.prototype.hasFieldMask = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

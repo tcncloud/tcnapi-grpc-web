@@ -112,7 +112,7 @@ creationDate: (f = msg.getCreationDate()) && google_protobuf_timestamp_pb.Timest
 requestBy: jspb.Message.getFieldWithDefault(msg, 8, ""),
 deleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
 revoked: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-configurationInfoId: jspb.Message.getFieldWithDefault(msg, 11, ""),
+certificateConfigurationId: jspb.Message.getFieldWithDefault(msg, 11, ""),
 renewalInstance: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
@@ -194,7 +194,7 @@ proto.services.org.exile_certificate_manager.v1.CertificateInfo.deserializeBinar
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
-      msg.setConfigurationInfoId(value);
+      msg.setCertificateConfigurationId(value);
       break;
     case 12:
       var value = /** @type {number} */ (reader.readInt64());
@@ -301,7 +301,7 @@ proto.services.org.exile_certificate_manager.v1.CertificateInfo.serializeBinaryT
       f
     );
   }
-  f = message.getConfigurationInfoId();
+  f = message.getCertificateConfigurationId();
   if (f.length > 0) {
     writer.writeString(
       11,
@@ -537,10 +537,10 @@ proto.services.org.exile_certificate_manager.v1.CertificateInfo.prototype.setRev
 
 
 /**
- * optional string configuration_info_id = 11;
+ * optional string certificate_configuration_id = 11;
  * @return {string}
  */
-proto.services.org.exile_certificate_manager.v1.CertificateInfo.prototype.getConfigurationInfoId = function() {
+proto.services.org.exile_certificate_manager.v1.CertificateInfo.prototype.getCertificateConfigurationId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
@@ -549,7 +549,7 @@ proto.services.org.exile_certificate_manager.v1.CertificateInfo.prototype.getCon
  * @param {string} value
  * @return {!proto.services.org.exile_certificate_manager.v1.CertificateInfo} returns this
  */
-proto.services.org.exile_certificate_manager.v1.CertificateInfo.prototype.setConfigurationInfoId = function(value) {
+proto.services.org.exile_certificate_manager.v1.CertificateInfo.prototype.setCertificateConfigurationId = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
 };
 
@@ -604,7 +604,7 @@ proto.services.org.exile_certificate_manager.v1.CertificateConfiguration.prototy
  */
 proto.services.org.exile_certificate_manager.v1.CertificateConfiguration.toObject = function(includeInstance, msg) {
   var f, obj = {
-configurationInfoId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+certificateConfigurationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 orgId: jspb.Message.getFieldWithDefault(msg, 2, ""),
 name: jspb.Message.getFieldWithDefault(msg, 3, ""),
 description: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -648,7 +648,7 @@ proto.services.org.exile_certificate_manager.v1.CertificateConfiguration.deseria
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setConfigurationInfoId(value);
+      msg.setCertificateConfigurationId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -699,7 +699,7 @@ proto.services.org.exile_certificate_manager.v1.CertificateConfiguration.prototy
  */
 proto.services.org.exile_certificate_manager.v1.CertificateConfiguration.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getConfigurationInfoId();
+  f = message.getCertificateConfigurationId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -745,10 +745,10 @@ proto.services.org.exile_certificate_manager.v1.CertificateConfiguration.seriali
 
 
 /**
- * optional string configuration_info_id = 1;
+ * optional string certificate_configuration_id = 1;
  * @return {string}
  */
-proto.services.org.exile_certificate_manager.v1.CertificateConfiguration.prototype.getConfigurationInfoId = function() {
+proto.services.org.exile_certificate_manager.v1.CertificateConfiguration.prototype.getCertificateConfigurationId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -757,7 +757,7 @@ proto.services.org.exile_certificate_manager.v1.CertificateConfiguration.prototy
  * @param {string} value
  * @return {!proto.services.org.exile_certificate_manager.v1.CertificateConfiguration} returns this
  */
-proto.services.org.exile_certificate_manager.v1.CertificateConfiguration.prototype.setConfigurationInfoId = function(value) {
+proto.services.org.exile_certificate_manager.v1.CertificateConfiguration.prototype.setCertificateConfigurationId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

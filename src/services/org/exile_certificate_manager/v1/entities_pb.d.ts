@@ -39,8 +39,8 @@ export class CertificateInfo extends jspb.Message {
   getRevoked(): boolean;
   setRevoked(value: boolean): void;
 
-  getConfigurationInfoId(): string;
-  setConfigurationInfoId(value: string): void;
+  getCertificateConfigurationId(): string;
+  setCertificateConfigurationId(value: string): void;
 
   getRenewalInstance(): number;
   setRenewalInstance(value: number): void;
@@ -67,14 +67,14 @@ export namespace CertificateInfo {
     requestBy: string,
     deleted: boolean,
     revoked: boolean,
-    configurationInfoId: string,
+    certificateConfigurationId: string,
     renewalInstance: number,
   }
 }
 
 export class CertificateConfiguration extends jspb.Message {
-  getConfigurationInfoId(): string;
-  setConfigurationInfoId(value: string): void;
+  getCertificateConfigurationId(): string;
+  setCertificateConfigurationId(value: string): void;
 
   getOrgId(): string;
   setOrgId(value: string): void;
@@ -103,7 +103,7 @@ export class CertificateConfiguration extends jspb.Message {
 
 export namespace CertificateConfiguration {
   export type AsObject = {
-    configurationInfoId: string,
+    certificateConfigurationId: string,
     orgId: string,
     name: string,
     description: string,
