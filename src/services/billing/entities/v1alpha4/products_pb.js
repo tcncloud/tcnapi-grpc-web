@@ -91,17 +91,17 @@ proto.services.billing.entities.v1alpha4.ProductConfig.ConfigCase = {
   COMMUNICATIONS_OMNI_EMAIL_SYSTEM_SIZE: 1131,
   COMMUNICATIONS_OMNI_EMAIL_SYSTEM_ACCUMULATED_SIZE: 1132,
   COMMUNICATIONS_OMNI_SMS_AGENT_MESSAGE_UNIT: 1200,
-  COMMUNICATIONS_OMNI_SMS_AGENT_ATTATCHMENT: 1201,
-  COMMUNICATIONS_OMNI_SMS_AGENT_ACCUMULATED_ATTATCHMENTS: 1202,
+  COMMUNICATIONS_OMNI_SMS_AGENT_ATTACHMENT: 1201,
+  COMMUNICATIONS_OMNI_SMS_AGENT_ACCUMULATED_ATTACHMENTS: 1202,
   COMMUNICATIONS_OMNI_SMS_CUSTOMER_MESSAGE_UNIT: 1210,
-  COMMUNICATIONS_OMNI_SMS_CUSTOMER_ATTATCHMENT: 1211,
-  COMMUNICATIONS_OMNI_SMS_CUSTOMER_ACCUMULATED_ATTATCHMENTS: 1212,
+  COMMUNICATIONS_OMNI_SMS_CUSTOMER_ATTACHMENT: 1211,
+  COMMUNICATIONS_OMNI_SMS_CUSTOMER_ACCUMULATED_ATTACHMENTS: 1212,
   COMMUNICATIONS_OMNI_SMS_MANAGER_MESSAGE_UNIT: 1220,
-  COMMUNICATIONS_OMNI_SMS_MANAGER_ATTATCHMENT: 1221,
-  COMMUNICATIONS_OMNI_SMS_MANAGER_ACCUMULATED_ATTATCHMENTS: 1222,
+  COMMUNICATIONS_OMNI_SMS_MANAGER_ATTACHMENT: 1221,
+  COMMUNICATIONS_OMNI_SMS_MANAGER_ACCUMULATED_ATTACHMENTS: 1222,
   COMMUNICATIONS_OMNI_SMS_SYSTEM_MESSAGE_UNIT: 1230,
-  COMMUNICATIONS_OMNI_SMS_SYSTEM_ATTATCHMENT: 1231,
-  COMMUNICATIONS_OMNI_SMS_SYSTEM_ACCUMULATED_ATTATCHMENTS: 1232,
+  COMMUNICATIONS_OMNI_SMS_SYSTEM_ATTACHMENT: 1231,
+  COMMUNICATIONS_OMNI_SMS_SYSTEM_ACCUMULATED_ATTACHMENTS: 1232,
   COMMUNICATIONS_OMNI_AGENT_SEATS: 1300,
   COMMUNICATIONS_OMNI_RESOURCES_CONNECTED_INBOX_POLL: 1400,
   COMMUNICATIONS_OMNI_RESOURCES_CONNECTED_INBOX_CREATED: 1401,
@@ -172,17 +172,17 @@ communicationsOmniEmailSystemMessageUnit: (f = msg.getCommunicationsOmniEmailSys
 communicationsOmniEmailSystemSize: (f = msg.getCommunicationsOmniEmailSystemSize()) && services_billing_entities_v1alpha4_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
 communicationsOmniEmailSystemAccumulatedSize: (f = msg.getCommunicationsOmniEmailSystemAccumulatedSize()) && services_billing_entities_v1alpha4_modules_pb.BasicUnitConfig.toObject(includeInstance, f),
 communicationsOmniSmsAgentMessageUnit: (f = msg.getCommunicationsOmniSmsAgentMessageUnit()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig.toObject(includeInstance, f),
-communicationsOmniSmsAgentAttatchment: (f = msg.getCommunicationsOmniSmsAgentAttatchment()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
-communicationsOmniSmsAgentAccumulatedAttatchments: (f = msg.getCommunicationsOmniSmsAgentAccumulatedAttatchments()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsAgentAttachment: (f = msg.getCommunicationsOmniSmsAgentAttachment()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsAgentAccumulatedAttachments: (f = msg.getCommunicationsOmniSmsAgentAccumulatedAttachments()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
 communicationsOmniSmsCustomerMessageUnit: (f = msg.getCommunicationsOmniSmsCustomerMessageUnit()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig.toObject(includeInstance, f),
-communicationsOmniSmsCustomerAttatchment: (f = msg.getCommunicationsOmniSmsCustomerAttatchment()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
-communicationsOmniSmsCustomerAccumulatedAttatchments: (f = msg.getCommunicationsOmniSmsCustomerAccumulatedAttatchments()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsCustomerAttachment: (f = msg.getCommunicationsOmniSmsCustomerAttachment()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsCustomerAccumulatedAttachments: (f = msg.getCommunicationsOmniSmsCustomerAccumulatedAttachments()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
 communicationsOmniSmsManagerMessageUnit: (f = msg.getCommunicationsOmniSmsManagerMessageUnit()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig.toObject(includeInstance, f),
-communicationsOmniSmsManagerAttatchment: (f = msg.getCommunicationsOmniSmsManagerAttatchment()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
-communicationsOmniSmsManagerAccumulatedAttatchments: (f = msg.getCommunicationsOmniSmsManagerAccumulatedAttatchments()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsManagerAttachment: (f = msg.getCommunicationsOmniSmsManagerAttachment()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsManagerAccumulatedAttachments: (f = msg.getCommunicationsOmniSmsManagerAccumulatedAttachments()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
 communicationsOmniSmsSystemMessageUnit: (f = msg.getCommunicationsOmniSmsSystemMessageUnit()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig.toObject(includeInstance, f),
-communicationsOmniSmsSystemAttatchment: (f = msg.getCommunicationsOmniSmsSystemAttatchment()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
-communicationsOmniSmsSystemAccumulatedAttatchments: (f = msg.getCommunicationsOmniSmsSystemAccumulatedAttatchments()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsSystemAttachment: (f = msg.getCommunicationsOmniSmsSystemAttachment()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
+communicationsOmniSmsSystemAccumulatedAttachments: (f = msg.getCommunicationsOmniSmsSystemAccumulatedAttachments()) && services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.toObject(includeInstance, f),
 communicationsOmniAgentSeats: (f = msg.getCommunicationsOmniAgentSeats()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
 communicationsOmniResourcesConnectedInboxPoll: (f = msg.getCommunicationsOmniResourcesConnectedInboxPoll()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
 communicationsOmniResourcesConnectedInboxCreated: (f = msg.getCommunicationsOmniResourcesConnectedInboxCreated()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
@@ -352,12 +352,12 @@ proto.services.billing.entities.v1alpha4.ProductConfig.deserializeBinaryFromRead
     case 1201:
       var value = new services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.deserializeBinaryFromReader);
-      msg.setCommunicationsOmniSmsAgentAttatchment(value);
+      msg.setCommunicationsOmniSmsAgentAttachment(value);
       break;
     case 1202:
       var value = new services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.deserializeBinaryFromReader);
-      msg.setCommunicationsOmniSmsAgentAccumulatedAttatchments(value);
+      msg.setCommunicationsOmniSmsAgentAccumulatedAttachments(value);
       break;
     case 1210:
       var value = new services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig;
@@ -367,12 +367,12 @@ proto.services.billing.entities.v1alpha4.ProductConfig.deserializeBinaryFromRead
     case 1211:
       var value = new services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.deserializeBinaryFromReader);
-      msg.setCommunicationsOmniSmsCustomerAttatchment(value);
+      msg.setCommunicationsOmniSmsCustomerAttachment(value);
       break;
     case 1212:
       var value = new services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.deserializeBinaryFromReader);
-      msg.setCommunicationsOmniSmsCustomerAccumulatedAttatchments(value);
+      msg.setCommunicationsOmniSmsCustomerAccumulatedAttachments(value);
       break;
     case 1220:
       var value = new services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig;
@@ -382,12 +382,12 @@ proto.services.billing.entities.v1alpha4.ProductConfig.deserializeBinaryFromRead
     case 1221:
       var value = new services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.deserializeBinaryFromReader);
-      msg.setCommunicationsOmniSmsManagerAttatchment(value);
+      msg.setCommunicationsOmniSmsManagerAttachment(value);
       break;
     case 1222:
       var value = new services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.deserializeBinaryFromReader);
-      msg.setCommunicationsOmniSmsManagerAccumulatedAttatchments(value);
+      msg.setCommunicationsOmniSmsManagerAccumulatedAttachments(value);
       break;
     case 1230:
       var value = new services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig;
@@ -397,12 +397,12 @@ proto.services.billing.entities.v1alpha4.ProductConfig.deserializeBinaryFromRead
     case 1231:
       var value = new services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.deserializeBinaryFromReader);
-      msg.setCommunicationsOmniSmsSystemAttatchment(value);
+      msg.setCommunicationsOmniSmsSystemAttachment(value);
       break;
     case 1232:
       var value = new services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig;
       reader.readMessage(value,services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.deserializeBinaryFromReader);
-      msg.setCommunicationsOmniSmsSystemAccumulatedAttatchments(value);
+      msg.setCommunicationsOmniSmsSystemAccumulatedAttachments(value);
       break;
     case 1300:
       var value = new services_billing_entities_v1alpha4_modules_pb.BasicConfig;
@@ -658,7 +658,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.serializeBinaryToWriter =
       services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig.serializeBinaryToWriter
     );
   }
-  f = message.getCommunicationsOmniSmsAgentAttatchment();
+  f = message.getCommunicationsOmniSmsAgentAttachment();
   if (f != null) {
     writer.writeMessage(
       1201,
@@ -666,7 +666,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.serializeBinaryToWriter =
       services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getCommunicationsOmniSmsAgentAccumulatedAttatchments();
+  f = message.getCommunicationsOmniSmsAgentAccumulatedAttachments();
   if (f != null) {
     writer.writeMessage(
       1202,
@@ -682,7 +682,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.serializeBinaryToWriter =
       services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig.serializeBinaryToWriter
     );
   }
-  f = message.getCommunicationsOmniSmsCustomerAttatchment();
+  f = message.getCommunicationsOmniSmsCustomerAttachment();
   if (f != null) {
     writer.writeMessage(
       1211,
@@ -690,7 +690,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.serializeBinaryToWriter =
       services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getCommunicationsOmniSmsCustomerAccumulatedAttatchments();
+  f = message.getCommunicationsOmniSmsCustomerAccumulatedAttachments();
   if (f != null) {
     writer.writeMessage(
       1212,
@@ -706,7 +706,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.serializeBinaryToWriter =
       services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig.serializeBinaryToWriter
     );
   }
-  f = message.getCommunicationsOmniSmsManagerAttatchment();
+  f = message.getCommunicationsOmniSmsManagerAttachment();
   if (f != null) {
     writer.writeMessage(
       1221,
@@ -714,7 +714,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.serializeBinaryToWriter =
       services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getCommunicationsOmniSmsManagerAccumulatedAttatchments();
+  f = message.getCommunicationsOmniSmsManagerAccumulatedAttachments();
   if (f != null) {
     writer.writeMessage(
       1222,
@@ -730,7 +730,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.serializeBinaryToWriter =
       services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig.serializeBinaryToWriter
     );
   }
-  f = message.getCommunicationsOmniSmsSystemAttatchment();
+  f = message.getCommunicationsOmniSmsSystemAttachment();
   if (f != null) {
     writer.writeMessage(
       1231,
@@ -738,7 +738,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.serializeBinaryToWriter =
       services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.serializeBinaryToWriter
     );
   }
-  f = message.getCommunicationsOmniSmsSystemAccumulatedAttatchments();
+  f = message.getCommunicationsOmniSmsSystemAccumulatedAttachments();
   if (f != null) {
     writer.writeMessage(
       1232,
@@ -1715,10 +1715,10 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicatio
 
 
 /**
- * optional OmniSmsUnitConfig communications_omni_sms_agent_attatchment = 1201;
+ * optional OmniSmsUnitConfig communications_omni_sms_agent_attachment = 1201;
  * @return {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsAgentAttatchment = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsAgentAttachment = function() {
   return /** @type{?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig, 1201));
 };
@@ -1728,7 +1728,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicatio
  * @param {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
 */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsAgentAttatchment = function(value) {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsAgentAttachment = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1201, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
 };
 
@@ -1737,8 +1737,8 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicatio
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsAgentAttatchment = function() {
-  return this.setCommunicationsOmniSmsAgentAttatchment(undefined);
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsAgentAttachment = function() {
+  return this.setCommunicationsOmniSmsAgentAttachment(undefined);
 };
 
 
@@ -1746,16 +1746,16 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicat
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsAgentAttatchment = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsAgentAttachment = function() {
   return jspb.Message.getField(this, 1201) != null;
 };
 
 
 /**
- * optional OmniSmsUnitConfig communications_omni_sms_agent_accumulated_attatchments = 1202;
+ * optional OmniSmsUnitConfig communications_omni_sms_agent_accumulated_attachments = 1202;
  * @return {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsAgentAccumulatedAttatchments = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsAgentAccumulatedAttachments = function() {
   return /** @type{?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig, 1202));
 };
@@ -1765,7 +1765,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicatio
  * @param {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
 */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsAgentAccumulatedAttatchments = function(value) {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsAgentAccumulatedAttachments = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1202, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
 };
 
@@ -1774,8 +1774,8 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicatio
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsAgentAccumulatedAttatchments = function() {
-  return this.setCommunicationsOmniSmsAgentAccumulatedAttatchments(undefined);
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsAgentAccumulatedAttachments = function() {
+  return this.setCommunicationsOmniSmsAgentAccumulatedAttachments(undefined);
 };
 
 
@@ -1783,7 +1783,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicat
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsAgentAccumulatedAttatchments = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsAgentAccumulatedAttachments = function() {
   return jspb.Message.getField(this, 1202) != null;
 };
 
@@ -1826,10 +1826,10 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicatio
 
 
 /**
- * optional OmniSmsUnitConfig communications_omni_sms_customer_attatchment = 1211;
+ * optional OmniSmsUnitConfig communications_omni_sms_customer_attachment = 1211;
  * @return {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsCustomerAttatchment = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsCustomerAttachment = function() {
   return /** @type{?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig, 1211));
 };
@@ -1839,7 +1839,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicatio
  * @param {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
 */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsCustomerAttatchment = function(value) {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsCustomerAttachment = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1211, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
 };
 
@@ -1848,8 +1848,8 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicatio
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsCustomerAttatchment = function() {
-  return this.setCommunicationsOmniSmsCustomerAttatchment(undefined);
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsCustomerAttachment = function() {
+  return this.setCommunicationsOmniSmsCustomerAttachment(undefined);
 };
 
 
@@ -1857,16 +1857,16 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicat
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsCustomerAttatchment = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsCustomerAttachment = function() {
   return jspb.Message.getField(this, 1211) != null;
 };
 
 
 /**
- * optional OmniSmsUnitConfig communications_omni_sms_customer_accumulated_attatchments = 1212;
+ * optional OmniSmsUnitConfig communications_omni_sms_customer_accumulated_attachments = 1212;
  * @return {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsCustomerAccumulatedAttatchments = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsCustomerAccumulatedAttachments = function() {
   return /** @type{?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig, 1212));
 };
@@ -1876,7 +1876,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicatio
  * @param {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
 */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsCustomerAccumulatedAttatchments = function(value) {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsCustomerAccumulatedAttachments = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1212, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
 };
 
@@ -1885,8 +1885,8 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicatio
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsCustomerAccumulatedAttatchments = function() {
-  return this.setCommunicationsOmniSmsCustomerAccumulatedAttatchments(undefined);
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsCustomerAccumulatedAttachments = function() {
+  return this.setCommunicationsOmniSmsCustomerAccumulatedAttachments(undefined);
 };
 
 
@@ -1894,7 +1894,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicat
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsCustomerAccumulatedAttatchments = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsCustomerAccumulatedAttachments = function() {
   return jspb.Message.getField(this, 1212) != null;
 };
 
@@ -1937,10 +1937,10 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicatio
 
 
 /**
- * optional OmniSmsUnitConfig communications_omni_sms_manager_attatchment = 1221;
+ * optional OmniSmsUnitConfig communications_omni_sms_manager_attachment = 1221;
  * @return {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsManagerAttatchment = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsManagerAttachment = function() {
   return /** @type{?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig, 1221));
 };
@@ -1950,7 +1950,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicatio
  * @param {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
 */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsManagerAttatchment = function(value) {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsManagerAttachment = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1221, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
 };
 
@@ -1959,8 +1959,8 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicatio
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsManagerAttatchment = function() {
-  return this.setCommunicationsOmniSmsManagerAttatchment(undefined);
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsManagerAttachment = function() {
+  return this.setCommunicationsOmniSmsManagerAttachment(undefined);
 };
 
 
@@ -1968,16 +1968,16 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicat
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsManagerAttatchment = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsManagerAttachment = function() {
   return jspb.Message.getField(this, 1221) != null;
 };
 
 
 /**
- * optional OmniSmsUnitConfig communications_omni_sms_manager_accumulated_attatchments = 1222;
+ * optional OmniSmsUnitConfig communications_omni_sms_manager_accumulated_attachments = 1222;
  * @return {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsManagerAccumulatedAttatchments = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsManagerAccumulatedAttachments = function() {
   return /** @type{?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig, 1222));
 };
@@ -1987,7 +1987,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicatio
  * @param {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
 */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsManagerAccumulatedAttatchments = function(value) {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsManagerAccumulatedAttachments = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1222, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
 };
 
@@ -1996,8 +1996,8 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicatio
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsManagerAccumulatedAttatchments = function() {
-  return this.setCommunicationsOmniSmsManagerAccumulatedAttatchments(undefined);
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsManagerAccumulatedAttachments = function() {
+  return this.setCommunicationsOmniSmsManagerAccumulatedAttachments(undefined);
 };
 
 
@@ -2005,7 +2005,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicat
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsManagerAccumulatedAttatchments = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsManagerAccumulatedAttachments = function() {
   return jspb.Message.getField(this, 1222) != null;
 };
 
@@ -2048,10 +2048,10 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicatio
 
 
 /**
- * optional OmniSmsUnitConfig communications_omni_sms_system_attatchment = 1231;
+ * optional OmniSmsUnitConfig communications_omni_sms_system_attachment = 1231;
  * @return {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsSystemAttatchment = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsSystemAttachment = function() {
   return /** @type{?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig, 1231));
 };
@@ -2061,7 +2061,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicatio
  * @param {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
 */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsSystemAttatchment = function(value) {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsSystemAttachment = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1231, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
 };
 
@@ -2070,8 +2070,8 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicatio
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsSystemAttatchment = function() {
-  return this.setCommunicationsOmniSmsSystemAttatchment(undefined);
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsSystemAttachment = function() {
+  return this.setCommunicationsOmniSmsSystemAttachment(undefined);
 };
 
 
@@ -2079,16 +2079,16 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicat
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsSystemAttatchment = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsSystemAttachment = function() {
   return jspb.Message.getField(this, 1231) != null;
 };
 
 
 /**
- * optional OmniSmsUnitConfig communications_omni_sms_system_accumulated_attatchments = 1232;
+ * optional OmniSmsUnitConfig communications_omni_sms_system_accumulated_attachments = 1232;
  * @return {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsSystemAccumulatedAttatchments = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicationsOmniSmsSystemAccumulatedAttachments = function() {
   return /** @type{?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig} */ (
     jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig, 1232));
 };
@@ -2098,7 +2098,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getCommunicatio
  * @param {?proto.services.billing.entities.v1alpha4.OmniSmsUnitConfig|undefined} value
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
 */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsSystemAccumulatedAttatchments = function(value) {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicationsOmniSmsSystemAccumulatedAttachments = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1232, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
 };
 
@@ -2107,8 +2107,8 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setCommunicatio
  * Clears the message field making it undefined.
  * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsSystemAccumulatedAttatchments = function() {
-  return this.setCommunicationsOmniSmsSystemAccumulatedAttatchments(undefined);
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicationsOmniSmsSystemAccumulatedAttachments = function() {
+  return this.setCommunicationsOmniSmsSystemAccumulatedAttachments(undefined);
 };
 
 
@@ -2116,7 +2116,7 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearCommunicat
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsSystemAccumulatedAttatchments = function() {
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasCommunicationsOmniSmsSystemAccumulatedAttachments = function() {
   return jspb.Message.getField(this, 1232) != null;
 };
 

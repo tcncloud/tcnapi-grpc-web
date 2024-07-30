@@ -131,60 +131,60 @@ export class ProductConfig extends jspb.Message {
   getCommunicationsOmniSmsAgentMessageUnit(): services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig | undefined;
   setCommunicationsOmniSmsAgentMessageUnit(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig): void;
 
-  hasCommunicationsOmniSmsAgentAttatchment(): boolean;
-  clearCommunicationsOmniSmsAgentAttatchment(): void;
-  getCommunicationsOmniSmsAgentAttatchment(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
-  setCommunicationsOmniSmsAgentAttatchment(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
+  hasCommunicationsOmniSmsAgentAttachment(): boolean;
+  clearCommunicationsOmniSmsAgentAttachment(): void;
+  getCommunicationsOmniSmsAgentAttachment(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
+  setCommunicationsOmniSmsAgentAttachment(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
 
-  hasCommunicationsOmniSmsAgentAccumulatedAttatchments(): boolean;
-  clearCommunicationsOmniSmsAgentAccumulatedAttatchments(): void;
-  getCommunicationsOmniSmsAgentAccumulatedAttatchments(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
-  setCommunicationsOmniSmsAgentAccumulatedAttatchments(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
+  hasCommunicationsOmniSmsAgentAccumulatedAttachments(): boolean;
+  clearCommunicationsOmniSmsAgentAccumulatedAttachments(): void;
+  getCommunicationsOmniSmsAgentAccumulatedAttachments(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
+  setCommunicationsOmniSmsAgentAccumulatedAttachments(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
 
   hasCommunicationsOmniSmsCustomerMessageUnit(): boolean;
   clearCommunicationsOmniSmsCustomerMessageUnit(): void;
   getCommunicationsOmniSmsCustomerMessageUnit(): services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig | undefined;
   setCommunicationsOmniSmsCustomerMessageUnit(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig): void;
 
-  hasCommunicationsOmniSmsCustomerAttatchment(): boolean;
-  clearCommunicationsOmniSmsCustomerAttatchment(): void;
-  getCommunicationsOmniSmsCustomerAttatchment(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
-  setCommunicationsOmniSmsCustomerAttatchment(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
+  hasCommunicationsOmniSmsCustomerAttachment(): boolean;
+  clearCommunicationsOmniSmsCustomerAttachment(): void;
+  getCommunicationsOmniSmsCustomerAttachment(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
+  setCommunicationsOmniSmsCustomerAttachment(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
 
-  hasCommunicationsOmniSmsCustomerAccumulatedAttatchments(): boolean;
-  clearCommunicationsOmniSmsCustomerAccumulatedAttatchments(): void;
-  getCommunicationsOmniSmsCustomerAccumulatedAttatchments(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
-  setCommunicationsOmniSmsCustomerAccumulatedAttatchments(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
+  hasCommunicationsOmniSmsCustomerAccumulatedAttachments(): boolean;
+  clearCommunicationsOmniSmsCustomerAccumulatedAttachments(): void;
+  getCommunicationsOmniSmsCustomerAccumulatedAttachments(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
+  setCommunicationsOmniSmsCustomerAccumulatedAttachments(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
 
   hasCommunicationsOmniSmsManagerMessageUnit(): boolean;
   clearCommunicationsOmniSmsManagerMessageUnit(): void;
   getCommunicationsOmniSmsManagerMessageUnit(): services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig | undefined;
   setCommunicationsOmniSmsManagerMessageUnit(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig): void;
 
-  hasCommunicationsOmniSmsManagerAttatchment(): boolean;
-  clearCommunicationsOmniSmsManagerAttatchment(): void;
-  getCommunicationsOmniSmsManagerAttatchment(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
-  setCommunicationsOmniSmsManagerAttatchment(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
+  hasCommunicationsOmniSmsManagerAttachment(): boolean;
+  clearCommunicationsOmniSmsManagerAttachment(): void;
+  getCommunicationsOmniSmsManagerAttachment(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
+  setCommunicationsOmniSmsManagerAttachment(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
 
-  hasCommunicationsOmniSmsManagerAccumulatedAttatchments(): boolean;
-  clearCommunicationsOmniSmsManagerAccumulatedAttatchments(): void;
-  getCommunicationsOmniSmsManagerAccumulatedAttatchments(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
-  setCommunicationsOmniSmsManagerAccumulatedAttatchments(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
+  hasCommunicationsOmniSmsManagerAccumulatedAttachments(): boolean;
+  clearCommunicationsOmniSmsManagerAccumulatedAttachments(): void;
+  getCommunicationsOmniSmsManagerAccumulatedAttachments(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
+  setCommunicationsOmniSmsManagerAccumulatedAttachments(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
 
   hasCommunicationsOmniSmsSystemMessageUnit(): boolean;
   clearCommunicationsOmniSmsSystemMessageUnit(): void;
   getCommunicationsOmniSmsSystemMessageUnit(): services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig | undefined;
   setCommunicationsOmniSmsSystemMessageUnit(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig): void;
 
-  hasCommunicationsOmniSmsSystemAttatchment(): boolean;
-  clearCommunicationsOmniSmsSystemAttatchment(): void;
-  getCommunicationsOmniSmsSystemAttatchment(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
-  setCommunicationsOmniSmsSystemAttatchment(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
+  hasCommunicationsOmniSmsSystemAttachment(): boolean;
+  clearCommunicationsOmniSmsSystemAttachment(): void;
+  getCommunicationsOmniSmsSystemAttachment(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
+  setCommunicationsOmniSmsSystemAttachment(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
 
-  hasCommunicationsOmniSmsSystemAccumulatedAttatchments(): boolean;
-  clearCommunicationsOmniSmsSystemAccumulatedAttatchments(): void;
-  getCommunicationsOmniSmsSystemAccumulatedAttatchments(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
-  setCommunicationsOmniSmsSystemAccumulatedAttatchments(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
+  hasCommunicationsOmniSmsSystemAccumulatedAttachments(): boolean;
+  clearCommunicationsOmniSmsSystemAccumulatedAttachments(): void;
+  getCommunicationsOmniSmsSystemAccumulatedAttachments(): services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig | undefined;
+  setCommunicationsOmniSmsSystemAccumulatedAttachments(value?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig): void;
 
   hasCommunicationsOmniAgentSeats(): boolean;
   clearCommunicationsOmniAgentSeats(): void;
@@ -249,17 +249,17 @@ export namespace ProductConfig {
     communicationsOmniEmailSystemSize?: services_billing_entities_v1alpha4_modules_pb.BasicUnitConfig.AsObject,
     communicationsOmniEmailSystemAccumulatedSize?: services_billing_entities_v1alpha4_modules_pb.BasicUnitConfig.AsObject,
     communicationsOmniSmsAgentMessageUnit?: services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig.AsObject,
-    communicationsOmniSmsAgentAttatchment?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
-    communicationsOmniSmsAgentAccumulatedAttatchments?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
+    communicationsOmniSmsAgentAttachment?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
+    communicationsOmniSmsAgentAccumulatedAttachments?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
     communicationsOmniSmsCustomerMessageUnit?: services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig.AsObject,
-    communicationsOmniSmsCustomerAttatchment?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
-    communicationsOmniSmsCustomerAccumulatedAttatchments?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
+    communicationsOmniSmsCustomerAttachment?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
+    communicationsOmniSmsCustomerAccumulatedAttachments?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
     communicationsOmniSmsManagerMessageUnit?: services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig.AsObject,
-    communicationsOmniSmsManagerAttatchment?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
-    communicationsOmniSmsManagerAccumulatedAttatchments?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
+    communicationsOmniSmsManagerAttachment?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
+    communicationsOmniSmsManagerAccumulatedAttachments?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
     communicationsOmniSmsSystemMessageUnit?: services_billing_entities_v1alpha4_omni_pb.OmniSmsConfig.AsObject,
-    communicationsOmniSmsSystemAttatchment?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
-    communicationsOmniSmsSystemAccumulatedAttatchments?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
+    communicationsOmniSmsSystemAttachment?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
+    communicationsOmniSmsSystemAccumulatedAttachments?: services_billing_entities_v1alpha4_omni_pb.OmniSmsUnitConfig.AsObject,
     communicationsOmniAgentSeats?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
     communicationsOmniResourcesConnectedInboxPoll?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
     communicationsOmniResourcesConnectedInboxCreated?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
@@ -294,17 +294,17 @@ export namespace ProductConfig {
     COMMUNICATIONS_OMNI_EMAIL_SYSTEM_SIZE = 1131,
     COMMUNICATIONS_OMNI_EMAIL_SYSTEM_ACCUMULATED_SIZE = 1132,
     COMMUNICATIONS_OMNI_SMS_AGENT_MESSAGE_UNIT = 1200,
-    COMMUNICATIONS_OMNI_SMS_AGENT_ATTATCHMENT = 1201,
-    COMMUNICATIONS_OMNI_SMS_AGENT_ACCUMULATED_ATTATCHMENTS = 1202,
+    COMMUNICATIONS_OMNI_SMS_AGENT_ATTACHMENT = 1201,
+    COMMUNICATIONS_OMNI_SMS_AGENT_ACCUMULATED_ATTACHMENTS = 1202,
     COMMUNICATIONS_OMNI_SMS_CUSTOMER_MESSAGE_UNIT = 1210,
-    COMMUNICATIONS_OMNI_SMS_CUSTOMER_ATTATCHMENT = 1211,
-    COMMUNICATIONS_OMNI_SMS_CUSTOMER_ACCUMULATED_ATTATCHMENTS = 1212,
+    COMMUNICATIONS_OMNI_SMS_CUSTOMER_ATTACHMENT = 1211,
+    COMMUNICATIONS_OMNI_SMS_CUSTOMER_ACCUMULATED_ATTACHMENTS = 1212,
     COMMUNICATIONS_OMNI_SMS_MANAGER_MESSAGE_UNIT = 1220,
-    COMMUNICATIONS_OMNI_SMS_MANAGER_ATTATCHMENT = 1221,
-    COMMUNICATIONS_OMNI_SMS_MANAGER_ACCUMULATED_ATTATCHMENTS = 1222,
+    COMMUNICATIONS_OMNI_SMS_MANAGER_ATTACHMENT = 1221,
+    COMMUNICATIONS_OMNI_SMS_MANAGER_ACCUMULATED_ATTACHMENTS = 1222,
     COMMUNICATIONS_OMNI_SMS_SYSTEM_MESSAGE_UNIT = 1230,
-    COMMUNICATIONS_OMNI_SMS_SYSTEM_ATTATCHMENT = 1231,
-    COMMUNICATIONS_OMNI_SMS_SYSTEM_ACCUMULATED_ATTATCHMENTS = 1232,
+    COMMUNICATIONS_OMNI_SMS_SYSTEM_ATTACHMENT = 1231,
+    COMMUNICATIONS_OMNI_SMS_SYSTEM_ACCUMULATED_ATTACHMENTS = 1232,
     COMMUNICATIONS_OMNI_AGENT_SEATS = 1300,
     COMMUNICATIONS_OMNI_RESOURCES_CONNECTED_INBOX_POLL = 1400,
     COMMUNICATIONS_OMNI_RESOURCES_CONNECTED_INBOX_CREATED = 1401,
