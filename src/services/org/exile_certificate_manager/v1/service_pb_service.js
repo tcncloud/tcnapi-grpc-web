@@ -47,6 +47,24 @@ ExileCertificateManagerService.ListCertificateInfo = {
   responseType: services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoResponse
 };
 
+ExileCertificateManagerService.AssignCertificateConfiguration = {
+  methodName: "AssignCertificateConfiguration",
+  service: ExileCertificateManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_org_exile_certificate_manager_v1_certificate_info_pb.AssignCertificateConfigurationRequest,
+  responseType: services_org_exile_certificate_manager_v1_certificate_info_pb.AssignCertificateConfigurationResponse
+};
+
+ExileCertificateManagerService.UnassignCertificateConfiguration = {
+  methodName: "UnassignCertificateConfiguration",
+  service: ExileCertificateManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_org_exile_certificate_manager_v1_certificate_info_pb.UnassignCertificateConfigurationRequest,
+  responseType: services_org_exile_certificate_manager_v1_certificate_info_pb.UnassignCertificateConfigurationResponse
+};
+
 exports.ExileCertificateManagerService = ExileCertificateManagerService;
 
 function ExileCertificateManagerServiceClient(serviceHost, options) {
@@ -152,6 +170,68 @@ ExileCertificateManagerServiceClient.prototype.listCertificateInfo = function li
     callback = arguments[1];
   }
   var client = grpc.unary(ExileCertificateManagerService.ListCertificateInfo, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ExileCertificateManagerServiceClient.prototype.assignCertificateConfiguration = function assignCertificateConfiguration(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ExileCertificateManagerService.AssignCertificateConfiguration, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ExileCertificateManagerServiceClient.prototype.unassignCertificateConfiguration = function unassignCertificateConfiguration(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ExileCertificateManagerService.UnassignCertificateConfiguration, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

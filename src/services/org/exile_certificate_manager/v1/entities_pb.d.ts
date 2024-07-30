@@ -72,7 +72,7 @@ export namespace CertificateInfo {
   }
 }
 
-export class ConfigurationInfo extends jspb.Message {
+export class CertificateConfiguration extends jspb.Message {
   getConfigurationInfoId(): string;
   setConfigurationInfoId(value: string): void;
 
@@ -85,39 +85,40 @@ export class ConfigurationInfo extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  getType(): ConfigurationInfoTypeMap[keyof ConfigurationInfoTypeMap];
-  setType(value: ConfigurationInfoTypeMap[keyof ConfigurationInfoTypeMap]): void;
+  getType(): CertificateConfigurationTypeMap[keyof CertificateConfigurationTypeMap];
+  setType(value: CertificateConfigurationTypeMap[keyof CertificateConfigurationTypeMap]): void;
 
   getParameters(): string;
   setParameters(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConfigurationInfo.AsObject;
-  static toObject(includeInstance: boolean, msg: ConfigurationInfo): ConfigurationInfo.AsObject;
+  toObject(includeInstance?: boolean): CertificateConfiguration.AsObject;
+  static toObject(includeInstance: boolean, msg: CertificateConfiguration): CertificateConfiguration.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ConfigurationInfo, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConfigurationInfo;
-  static deserializeBinaryFromReader(message: ConfigurationInfo, reader: jspb.BinaryReader): ConfigurationInfo;
+  static serializeBinaryToWriter(message: CertificateConfiguration, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CertificateConfiguration;
+  static deserializeBinaryFromReader(message: CertificateConfiguration, reader: jspb.BinaryReader): CertificateConfiguration;
 }
 
-export namespace ConfigurationInfo {
+export namespace CertificateConfiguration {
   export type AsObject = {
     configurationInfoId: string,
     orgId: string,
     name: string,
     description: string,
-    type: ConfigurationInfoTypeMap[keyof ConfigurationInfoTypeMap],
+    type: CertificateConfigurationTypeMap[keyof CertificateConfigurationTypeMap],
     parameters: string,
   }
 }
 
-export interface ConfigurationInfoTypeMap {
-  CONFIGURATION_INFO_TYPE_UNSPECIFIED: 0;
-  CONFIGURATION_INFO_TYPE_DUMMY_ONE: 1;
-  CONFIGURATION_INFO_TYPE_DUMMY_TWO: 2;
-  CONFIGURATION_INFO_TYPE_DUMMY_THREE: 3;
+export interface CertificateConfigurationTypeMap {
+  CERTIFICATE_CONFIGURATION_TYPE_UNSPECIFIED: 0;
+  CERTIFICATE_CONFIGURATION_TYPE_NONE: 1;
+  CERTIFICATE_CONFIGURATION_TYPE_ARTIVA_HCX: 2;
+  CERTIFICATE_CONFIGURATION_TYPE_ARTIVA_RM: 3;
+  CERTIFICATE_CONFIGURATION_TYPE_FACS: 4;
 }
 
-export const ConfigurationInfoType: ConfigurationInfoTypeMap;
+export const CertificateConfigurationType: CertificateConfigurationTypeMap;
 

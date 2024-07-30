@@ -120,6 +120,82 @@ export namespace RevokeCertificateInfoResponse {
   }
 }
 
+export class AssignCertificateConfigurationRequest extends jspb.Message {
+  getCertificateInfoId(): string;
+  setCertificateInfoId(value: string): void;
+
+  getConfigurationInfoId(): string;
+  setConfigurationInfoId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignCertificateConfigurationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignCertificateConfigurationRequest): AssignCertificateConfigurationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignCertificateConfigurationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignCertificateConfigurationRequest;
+  static deserializeBinaryFromReader(message: AssignCertificateConfigurationRequest, reader: jspb.BinaryReader): AssignCertificateConfigurationRequest;
+}
+
+export namespace AssignCertificateConfigurationRequest {
+  export type AsObject = {
+    certificateInfoId: string,
+    configurationInfoId: string,
+  }
+}
+
+export class AssignCertificateConfigurationResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssignCertificateConfigurationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignCertificateConfigurationResponse): AssignCertificateConfigurationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssignCertificateConfigurationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignCertificateConfigurationResponse;
+  static deserializeBinaryFromReader(message: AssignCertificateConfigurationResponse, reader: jspb.BinaryReader): AssignCertificateConfigurationResponse;
+}
+
+export namespace AssignCertificateConfigurationResponse {
+  export type AsObject = {
+  }
+}
+
+export class UnassignCertificateConfigurationRequest extends jspb.Message {
+  getCertificateInfoId(): string;
+  setCertificateInfoId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UnassignCertificateConfigurationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UnassignCertificateConfigurationRequest): UnassignCertificateConfigurationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UnassignCertificateConfigurationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UnassignCertificateConfigurationRequest;
+  static deserializeBinaryFromReader(message: UnassignCertificateConfigurationRequest, reader: jspb.BinaryReader): UnassignCertificateConfigurationRequest;
+}
+
+export namespace UnassignCertificateConfigurationRequest {
+  export type AsObject = {
+    certificateInfoId: string,
+  }
+}
+
+export class UnassignCertificateConfigurationResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UnassignCertificateConfigurationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UnassignCertificateConfigurationResponse): UnassignCertificateConfigurationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UnassignCertificateConfigurationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UnassignCertificateConfigurationResponse;
+  static deserializeBinaryFromReader(message: UnassignCertificateConfigurationResponse, reader: jspb.BinaryReader): UnassignCertificateConfigurationResponse;
+}
+
+export namespace UnassignCertificateConfigurationResponse {
+  export type AsObject = {
+  }
+}
+
 export class ListCertificateInfoRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCertificateInfoRequest.AsObject;
