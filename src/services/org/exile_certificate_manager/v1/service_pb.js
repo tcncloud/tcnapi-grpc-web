@@ -1,4 +1,4 @@
-// source: api/v1alpha1/org/exile_manager/service.proto
+// source: services/org/exile_certificate_manager/v1/service.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -25,7 +25,7 @@ var global = localGlobalThis ||
 
 var annotations_authz_pb = require('../../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
-var api_v1alpha1_org_exile_manager_certificate_info_pb = require('../../../../api/v1alpha1/org/exile_manager/certificate_info_pb.js');
-goog.object.extend(proto, api_v1alpha1_org_exile_manager_certificate_info_pb);
 var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
+var services_org_exile_certificate_manager_v1_certificate_info_pb = require('../../../../services/org/exile_certificate_manager/v1/certificate_info_pb.js');
+goog.object.extend(proto, services_org_exile_certificate_manager_v1_certificate_info_pb);

@@ -1,64 +1,64 @@
-// package: api.v1alpha1.org.exile_manager
-// file: api/v1alpha1/org/exile_manager/service.proto
+// package: services.org.exile_certificate_manager.v1
+// file: services/org/exile_certificate_manager/v1/service.proto
 
-var api_v1alpha1_org_exile_manager_service_pb = require("../../../../api/v1alpha1/org/exile_manager/service_pb");
-var api_v1alpha1_org_exile_manager_certificate_info_pb = require("../../../../api/v1alpha1/org/exile_manager/certificate_info_pb");
+var services_org_exile_certificate_manager_v1_service_pb = require("../../../../services/org/exile_certificate_manager/v1/service_pb");
+var services_org_exile_certificate_manager_v1_certificate_info_pb = require("../../../../services/org/exile_certificate_manager/v1/certificate_info_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var ExileManagerService = (function () {
-  function ExileManagerService() {}
-  ExileManagerService.serviceName = "api.v1alpha1.org.exile_manager.ExileManagerService";
-  return ExileManagerService;
+var ExileCertificateManagerService = (function () {
+  function ExileCertificateManagerService() {}
+  ExileCertificateManagerService.serviceName = "services.org.exile_certificate_manager.v1.ExileCertificateManagerService";
+  return ExileCertificateManagerService;
 }());
 
-ExileManagerService.CreateCertificateInfo = {
+ExileCertificateManagerService.CreateCertificateInfo = {
   methodName: "CreateCertificateInfo",
-  service: ExileManagerService,
+  service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_exile_manager_certificate_info_pb.CreateCertificateInfoRequest,
-  responseType: api_v1alpha1_org_exile_manager_certificate_info_pb.CreateCertificateInfoResponse
+  requestType: services_org_exile_certificate_manager_v1_certificate_info_pb.CreateCertificateInfoRequest,
+  responseType: services_org_exile_certificate_manager_v1_certificate_info_pb.CreateCertificateInfoResponse
 };
 
-ExileManagerService.DeleteCertificateInfo = {
+ExileCertificateManagerService.DeleteCertificateInfo = {
   methodName: "DeleteCertificateInfo",
-  service: ExileManagerService,
+  service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_exile_manager_certificate_info_pb.DeleteCertificateInfoRequest,
-  responseType: api_v1alpha1_org_exile_manager_certificate_info_pb.DeleteCertificateInfoResponse
+  requestType: services_org_exile_certificate_manager_v1_certificate_info_pb.DeleteCertificateInfoRequest,
+  responseType: services_org_exile_certificate_manager_v1_certificate_info_pb.DeleteCertificateInfoResponse
 };
 
-ExileManagerService.RevokeCertificateInfo = {
+ExileCertificateManagerService.RevokeCertificateInfo = {
   methodName: "RevokeCertificateInfo",
-  service: ExileManagerService,
+  service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_exile_manager_certificate_info_pb.RevokeCertificateInfoRequest,
-  responseType: api_v1alpha1_org_exile_manager_certificate_info_pb.RevokeCertificateInfoResponse
+  requestType: services_org_exile_certificate_manager_v1_certificate_info_pb.RevokeCertificateInfoRequest,
+  responseType: services_org_exile_certificate_manager_v1_certificate_info_pb.RevokeCertificateInfoResponse
 };
 
-ExileManagerService.ListCertificateInfo = {
+ExileCertificateManagerService.ListCertificateInfo = {
   methodName: "ListCertificateInfo",
-  service: ExileManagerService,
+  service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_org_exile_manager_certificate_info_pb.ListCertificateInfoRequest,
-  responseType: api_v1alpha1_org_exile_manager_certificate_info_pb.ListCertificateInfoResponse
+  requestType: services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoRequest,
+  responseType: services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoResponse
 };
 
-exports.ExileManagerService = ExileManagerService;
+exports.ExileCertificateManagerService = ExileCertificateManagerService;
 
-function ExileManagerServiceClient(serviceHost, options) {
+function ExileCertificateManagerServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-ExileManagerServiceClient.prototype.createCertificateInfo = function createCertificateInfo(requestMessage, metadata, callback) {
+ExileCertificateManagerServiceClient.prototype.createCertificateInfo = function createCertificateInfo(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ExileManagerService.CreateCertificateInfo, {
+  var client = grpc.unary(ExileCertificateManagerService.CreateCertificateInfo, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -85,11 +85,11 @@ ExileManagerServiceClient.prototype.createCertificateInfo = function createCerti
   };
 };
 
-ExileManagerServiceClient.prototype.deleteCertificateInfo = function deleteCertificateInfo(requestMessage, metadata, callback) {
+ExileCertificateManagerServiceClient.prototype.deleteCertificateInfo = function deleteCertificateInfo(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ExileManagerService.DeleteCertificateInfo, {
+  var client = grpc.unary(ExileCertificateManagerService.DeleteCertificateInfo, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -116,11 +116,11 @@ ExileManagerServiceClient.prototype.deleteCertificateInfo = function deleteCerti
   };
 };
 
-ExileManagerServiceClient.prototype.revokeCertificateInfo = function revokeCertificateInfo(requestMessage, metadata, callback) {
+ExileCertificateManagerServiceClient.prototype.revokeCertificateInfo = function revokeCertificateInfo(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ExileManagerService.RevokeCertificateInfo, {
+  var client = grpc.unary(ExileCertificateManagerService.RevokeCertificateInfo, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -147,11 +147,11 @@ ExileManagerServiceClient.prototype.revokeCertificateInfo = function revokeCerti
   };
 };
 
-ExileManagerServiceClient.prototype.listCertificateInfo = function listCertificateInfo(requestMessage, metadata, callback) {
+ExileCertificateManagerServiceClient.prototype.listCertificateInfo = function listCertificateInfo(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(ExileManagerService.ListCertificateInfo, {
+  var client = grpc.unary(ExileCertificateManagerService.ListCertificateInfo, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -178,5 +178,5 @@ ExileManagerServiceClient.prototype.listCertificateInfo = function listCertifica
   };
 };
 
-exports.ExileManagerServiceClient = ExileManagerServiceClient;
+exports.ExileCertificateManagerServiceClient = ExileCertificateManagerServiceClient;
 
