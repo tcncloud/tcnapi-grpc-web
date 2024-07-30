@@ -213,3 +213,23 @@ export namespace VanaPhraseCorrectionEvent {
   }
 }
 
+export class VanaCreateTranscriptEvent extends jspb.Message {
+  getTranscriptSid(): number;
+  setTranscriptSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VanaCreateTranscriptEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: VanaCreateTranscriptEvent): VanaCreateTranscriptEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: VanaCreateTranscriptEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VanaCreateTranscriptEvent;
+  static deserializeBinaryFromReader(message: VanaCreateTranscriptEvent, reader: jspb.BinaryReader): VanaCreateTranscriptEvent;
+}
+
+export namespace VanaCreateTranscriptEvent {
+  export type AsObject = {
+    transcriptSid: number,
+  }
+}
+

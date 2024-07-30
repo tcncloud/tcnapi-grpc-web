@@ -68,6 +68,11 @@ export class AuditEvent extends jspb.Message {
   getVanaPhraseCorrectionEvent(): api_commons_audit_vana_events_pb.VanaPhraseCorrectionEvent | undefined;
   setVanaPhraseCorrectionEvent(value?: api_commons_audit_vana_events_pb.VanaPhraseCorrectionEvent): void;
 
+  hasVanaCreateTranscriptEvent(): boolean;
+  clearVanaCreateTranscriptEvent(): void;
+  getVanaCreateTranscriptEvent(): api_commons_audit_vana_events_pb.VanaCreateTranscriptEvent | undefined;
+  setVanaCreateTranscriptEvent(value?: api_commons_audit_vana_events_pb.VanaCreateTranscriptEvent): void;
+
   hasOmnichannelCreateProjectEvent(): boolean;
   clearOmnichannelCreateProjectEvent(): void;
   getOmnichannelCreateProjectEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelCreateProjectEvent | undefined;
@@ -638,6 +643,7 @@ export namespace AuditEvent {
     vanaBillingReportEvent?: api_commons_audit_vana_events_pb.VanaBillingReportEvent.AsObject,
     vanaFlagSummaryEvent?: api_commons_audit_vana_events_pb.VanaFlagSummaryEvent.AsObject,
     vanaPhraseCorrectionEvent?: api_commons_audit_vana_events_pb.VanaPhraseCorrectionEvent.AsObject,
+    vanaCreateTranscriptEvent?: api_commons_audit_vana_events_pb.VanaCreateTranscriptEvent.AsObject,
     omnichannelCreateProjectEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelCreateProjectEvent.AsObject,
     omnichannelCreateCampaignEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelCreateCampaignEvent.AsObject,
     omnichannelDailyProjectReportEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelDailyProjectReportEvent.AsObject,
@@ -757,6 +763,7 @@ export namespace AuditEvent {
     VANA_BILLING_REPORT_EVENT = 202,
     VANA_FLAG_SUMMARY_EVENT = 203,
     VANA_PHRASE_CORRECTION_EVENT = 204,
+    VANA_CREATE_TRANSCRIPT_EVENT = 205,
     OMNICHANNEL_CREATE_PROJECT_EVENT = 300,
     OMNICHANNEL_CREATE_CAMPAIGN_EVENT = 301,
     OMNICHANNEL_DAILY_PROJECT_REPORT_EVENT = 302,
