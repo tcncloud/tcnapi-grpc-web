@@ -140,15 +140,6 @@ type InsightsListOutputConfigurations = {
   readonly responseType: typeof api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse;
 };
 
-type InsightsListOutputConfigurationsStreamed = {
-  readonly methodName: string;
-  readonly service: typeof Insights;
-  readonly requestStream: false;
-  readonly responseStream: true;
-  readonly requestType: typeof api_v1alpha1_insights_insight_pb.ListOutputConfigurationsRequest;
-  readonly responseType: typeof api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse;
-};
-
 type InsightsUpdateOutputConfiguration = {
   readonly methodName: string;
   readonly service: typeof Insights;
@@ -211,7 +202,6 @@ export class Insights {
   static readonly PublishInsight: InsightsPublishInsight;
   static readonly CreateOutputConfiguration: InsightsCreateOutputConfiguration;
   static readonly ListOutputConfigurations: InsightsListOutputConfigurations;
-  static readonly ListOutputConfigurationsStreamed: InsightsListOutputConfigurationsStreamed;
   static readonly UpdateOutputConfiguration: InsightsUpdateOutputConfiguration;
   static readonly DeleteOutputConfiguration: InsightsDeleteOutputConfiguration;
   static readonly GetOutputConfiguration: InsightsGetOutputConfiguration;
@@ -386,7 +376,6 @@ export class InsightsClient {
     requestMessage: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse|null) => void
   ): UnaryResponse;
-  listOutputConfigurationsStreamed(requestMessage: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsRequest, metadata?: grpc.Metadata): ResponseStream<api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse>;
   updateOutputConfiguration(
     requestMessage: api_v1alpha1_insights_insight_pb.UpdateOutputConfigurationRequest,
     metadata: grpc.Metadata,
