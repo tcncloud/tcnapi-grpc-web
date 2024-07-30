@@ -146,6 +146,15 @@ Insights.ListOutputConfigurations = {
   responseType: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse
 };
 
+Insights.ListOutputConfigurationsStreamed = {
+  methodName: "ListOutputConfigurationsStreamed",
+  service: Insights,
+  requestStream: false,
+  responseStream: true,
+  requestType: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsRequest,
+  responseType: api_v1alpha1_insights_insight_pb.ListOutputConfigurationsResponse
+};
+
 Insights.UpdateOutputConfiguration = {
   methodName: "UpdateOutputConfiguration",
   service: Insights,
@@ -658,6 +667,45 @@ InsightsClient.prototype.listOutputConfigurations = function listOutputConfigura
   return {
     cancel: function () {
       callback = null;
+      client.close();
+    }
+  };
+};
+
+InsightsClient.prototype.listOutputConfigurationsStreamed = function listOutputConfigurationsStreamed(requestMessage, metadata) {
+  var listeners = {
+    data: [],
+    end: [],
+    status: []
+  };
+  var client = grpc.invoke(Insights.ListOutputConfigurationsStreamed, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
+  });
+  return {
+    on: function (type, handler) {
+      listeners[type].push(handler);
+      return this;
+    },
+    cancel: function () {
+      listeners = null;
       client.close();
     }
   };
