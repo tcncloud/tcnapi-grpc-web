@@ -428,8 +428,8 @@ export namespace Sms {
     }
 
     export class Attachment extends jspb.Message {
-      getAttachmentSid(): number;
-      setAttachmentSid(value: number): void;
+      getAttachmentSid(): string;
+      setAttachmentSid(value: string): void;
 
       serializeBinary(): Uint8Array;
       toObject(includeInstance?: boolean): Attachment.AsObject;
@@ -443,7 +443,7 @@ export namespace Sms {
 
     export namespace Attachment {
       export type AsObject = {
-        attachmentSid: number,
+        attachmentSid: string,
       }
     }
   }
