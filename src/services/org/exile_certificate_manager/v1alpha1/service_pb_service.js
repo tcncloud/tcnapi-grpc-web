@@ -1,14 +1,14 @@
-// package: services.org.exile_certificate_manager.v1
-// file: services/org/exile_certificate_manager/v1/service.proto
+// package: services.org.exile_certificate_manager.v1alpha1
+// file: services/org/exile_certificate_manager/v1alpha1/service.proto
 
-var services_org_exile_certificate_manager_v1_service_pb = require("../../../../services/org/exile_certificate_manager/v1/service_pb");
-var services_org_exile_certificate_manager_v1_certificate_configuration_pb = require("../../../../services/org/exile_certificate_manager/v1/certificate_configuration_pb");
-var services_org_exile_certificate_manager_v1_certificate_info_pb = require("../../../../services/org/exile_certificate_manager/v1/certificate_info_pb");
+var services_org_exile_certificate_manager_v1alpha1_service_pb = require("../../../../services/org/exile_certificate_manager/v1alpha1/service_pb");
+var services_org_exile_certificate_manager_v1alpha1_certificate_configuration_pb = require("../../../../services/org/exile_certificate_manager/v1alpha1/certificate_configuration_pb");
+var services_org_exile_certificate_manager_v1alpha1_certificate_info_pb = require("../../../../services/org/exile_certificate_manager/v1alpha1/certificate_info_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var ExileCertificateManagerService = (function () {
   function ExileCertificateManagerService() {}
-  ExileCertificateManagerService.serviceName = "services.org.exile_certificate_manager.v1.ExileCertificateManagerService";
+  ExileCertificateManagerService.serviceName = "services.org.exile_certificate_manager.v1alpha1.ExileCertificateManagerService";
   return ExileCertificateManagerService;
 }());
 
@@ -17,8 +17,8 @@ ExileCertificateManagerService.CreateCertificateInfo = {
   service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: services_org_exile_certificate_manager_v1_certificate_info_pb.CreateCertificateInfoRequest,
-  responseType: services_org_exile_certificate_manager_v1_certificate_info_pb.CreateCertificateInfoResponse
+  requestType: services_org_exile_certificate_manager_v1alpha1_certificate_info_pb.CreateCertificateInfoRequest,
+  responseType: services_org_exile_certificate_manager_v1alpha1_certificate_info_pb.CreateCertificateInfoResponse
 };
 
 ExileCertificateManagerService.DeleteCertificateInfo = {
@@ -26,8 +26,8 @@ ExileCertificateManagerService.DeleteCertificateInfo = {
   service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: services_org_exile_certificate_manager_v1_certificate_info_pb.DeleteCertificateInfoRequest,
-  responseType: services_org_exile_certificate_manager_v1_certificate_info_pb.DeleteCertificateInfoResponse
+  requestType: services_org_exile_certificate_manager_v1alpha1_certificate_info_pb.DeleteCertificateInfoRequest,
+  responseType: services_org_exile_certificate_manager_v1alpha1_certificate_info_pb.DeleteCertificateInfoResponse
 };
 
 ExileCertificateManagerService.RevokeCertificateInfo = {
@@ -35,8 +35,8 @@ ExileCertificateManagerService.RevokeCertificateInfo = {
   service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: services_org_exile_certificate_manager_v1_certificate_info_pb.RevokeCertificateInfoRequest,
-  responseType: services_org_exile_certificate_manager_v1_certificate_info_pb.RevokeCertificateInfoResponse
+  requestType: services_org_exile_certificate_manager_v1alpha1_certificate_info_pb.RevokeCertificateInfoRequest,
+  responseType: services_org_exile_certificate_manager_v1alpha1_certificate_info_pb.RevokeCertificateInfoResponse
 };
 
 ExileCertificateManagerService.AssignCertificateConfiguration = {
@@ -44,8 +44,8 @@ ExileCertificateManagerService.AssignCertificateConfiguration = {
   service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: services_org_exile_certificate_manager_v1_certificate_info_pb.AssignCertificateConfigurationRequest,
-  responseType: services_org_exile_certificate_manager_v1_certificate_info_pb.AssignCertificateConfigurationResponse
+  requestType: services_org_exile_certificate_manager_v1alpha1_certificate_info_pb.AssignCertificateConfigurationRequest,
+  responseType: services_org_exile_certificate_manager_v1alpha1_certificate_info_pb.AssignCertificateConfigurationResponse
 };
 
 ExileCertificateManagerService.UnassignCertificateConfiguration = {
@@ -53,8 +53,8 @@ ExileCertificateManagerService.UnassignCertificateConfiguration = {
   service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: services_org_exile_certificate_manager_v1_certificate_info_pb.UnassignCertificateConfigurationRequest,
-  responseType: services_org_exile_certificate_manager_v1_certificate_info_pb.UnassignCertificateConfigurationResponse
+  requestType: services_org_exile_certificate_manager_v1alpha1_certificate_info_pb.UnassignCertificateConfigurationRequest,
+  responseType: services_org_exile_certificate_manager_v1alpha1_certificate_info_pb.UnassignCertificateConfigurationResponse
 };
 
 ExileCertificateManagerService.ListCertificateInfo = {
@@ -62,8 +62,8 @@ ExileCertificateManagerService.ListCertificateInfo = {
   service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoRequest,
-  responseType: services_org_exile_certificate_manager_v1_certificate_info_pb.ListCertificateInfoResponse
+  requestType: services_org_exile_certificate_manager_v1alpha1_certificate_info_pb.ListCertificateInfoRequest,
+  responseType: services_org_exile_certificate_manager_v1alpha1_certificate_info_pb.ListCertificateInfoResponse
 };
 
 ExileCertificateManagerService.CreateCertificateConfiguration = {
@@ -71,8 +71,8 @@ ExileCertificateManagerService.CreateCertificateConfiguration = {
   service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: services_org_exile_certificate_manager_v1_certificate_configuration_pb.CreateCertificateConfigurationRequest,
-  responseType: services_org_exile_certificate_manager_v1_certificate_configuration_pb.CreateCertificateConfigurationResponse
+  requestType: services_org_exile_certificate_manager_v1alpha1_certificate_configuration_pb.CreateCertificateConfigurationRequest,
+  responseType: services_org_exile_certificate_manager_v1alpha1_certificate_configuration_pb.CreateCertificateConfigurationResponse
 };
 
 ExileCertificateManagerService.UpdateCertificateConfiguration = {
@@ -80,8 +80,8 @@ ExileCertificateManagerService.UpdateCertificateConfiguration = {
   service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: services_org_exile_certificate_manager_v1_certificate_configuration_pb.UpdateCertificateConfigurationRequest,
-  responseType: services_org_exile_certificate_manager_v1_certificate_configuration_pb.UpdateCertificateConfigurationResponse
+  requestType: services_org_exile_certificate_manager_v1alpha1_certificate_configuration_pb.UpdateCertificateConfigurationRequest,
+  responseType: services_org_exile_certificate_manager_v1alpha1_certificate_configuration_pb.UpdateCertificateConfigurationResponse
 };
 
 ExileCertificateManagerService.DeleteCertificateConfiguration = {
@@ -89,8 +89,8 @@ ExileCertificateManagerService.DeleteCertificateConfiguration = {
   service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: services_org_exile_certificate_manager_v1_certificate_configuration_pb.DeleteCertificateConfigurationRequest,
-  responseType: services_org_exile_certificate_manager_v1_certificate_configuration_pb.DeleteCertificateConfigurationResponse
+  requestType: services_org_exile_certificate_manager_v1alpha1_certificate_configuration_pb.DeleteCertificateConfigurationRequest,
+  responseType: services_org_exile_certificate_manager_v1alpha1_certificate_configuration_pb.DeleteCertificateConfigurationResponse
 };
 
 ExileCertificateManagerService.ListCertificateConfigurations = {
@@ -98,8 +98,8 @@ ExileCertificateManagerService.ListCertificateConfigurations = {
   service: ExileCertificateManagerService,
   requestStream: false,
   responseStream: false,
-  requestType: services_org_exile_certificate_manager_v1_certificate_configuration_pb.ListCertificateConfigurationsRequest,
-  responseType: services_org_exile_certificate_manager_v1_certificate_configuration_pb.ListCertificateConfigurationsResponse
+  requestType: services_org_exile_certificate_manager_v1alpha1_certificate_configuration_pb.ListCertificateConfigurationsRequest,
+  responseType: services_org_exile_certificate_manager_v1alpha1_certificate_configuration_pb.ListCertificateConfigurationsResponse
 };
 
 exports.ExileCertificateManagerService = ExileCertificateManagerService;

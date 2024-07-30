@@ -1,5 +1,5 @@
-// package: services.org.exile_certificate_manager.v1
-// file: services/org/exile_certificate_manager/v1/entities.proto
+// package: services.org.exile_certificate_manager.v1alpha1
+// file: services/org/exile_certificate_manager/v1alpha1/entities.proto
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";

@@ -1,9 +1,9 @@
-// package: services.org.exile_certificate_manager.v1
-// file: services/org/exile_certificate_manager/v1/certificate_configuration.proto
+// package: services.org.exile_certificate_manager.v1alpha1
+// file: services/org/exile_certificate_manager/v1alpha1/certificate_configuration.proto
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
-import * as services_org_exile_certificate_manager_v1_entities_pb from "../../../../services/org/exile_certificate_manager/v1/entities_pb";
+import * as services_org_exile_certificate_manager_v1alpha1_entities_pb from "../../../../services/org/exile_certificate_manager/v1alpha1/entities_pb";
 
 export class CreateCertificateConfigurationRequest extends jspb.Message {
   getName(): string;
@@ -12,8 +12,8 @@ export class CreateCertificateConfigurationRequest extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  getType(): services_org_exile_certificate_manager_v1_entities_pb.CertificateConfigurationTypeMap[keyof services_org_exile_certificate_manager_v1_entities_pb.CertificateConfigurationTypeMap];
-  setType(value: services_org_exile_certificate_manager_v1_entities_pb.CertificateConfigurationTypeMap[keyof services_org_exile_certificate_manager_v1_entities_pb.CertificateConfigurationTypeMap]): void;
+  getType(): services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfigurationTypeMap[keyof services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfigurationTypeMap];
+  setType(value: services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfigurationTypeMap[keyof services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfigurationTypeMap]): void;
 
   getParameters(): string;
   setParameters(value: string): void;
@@ -32,7 +32,7 @@ export namespace CreateCertificateConfigurationRequest {
   export type AsObject = {
     name: string,
     description: string,
-    type: services_org_exile_certificate_manager_v1_entities_pb.CertificateConfigurationTypeMap[keyof services_org_exile_certificate_manager_v1_entities_pb.CertificateConfigurationTypeMap],
+    type: services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfigurationTypeMap[keyof services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfigurationTypeMap],
     parameters: string,
   }
 }
@@ -60,8 +60,8 @@ export namespace CreateCertificateConfigurationResponse {
 export class UpdateCertificateConfigurationRequest extends jspb.Message {
   hasConfiguration(): boolean;
   clearConfiguration(): void;
-  getConfiguration(): services_org_exile_certificate_manager_v1_entities_pb.CertificateConfiguration | undefined;
-  setConfiguration(value?: services_org_exile_certificate_manager_v1_entities_pb.CertificateConfiguration): void;
+  getConfiguration(): services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfiguration | undefined;
+  setConfiguration(value?: services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfiguration): void;
 
   hasFieldMask(): boolean;
   clearFieldMask(): void;
@@ -80,7 +80,7 @@ export class UpdateCertificateConfigurationRequest extends jspb.Message {
 
 export namespace UpdateCertificateConfigurationRequest {
   export type AsObject = {
-    configuration?: services_org_exile_certificate_manager_v1_entities_pb.CertificateConfiguration.AsObject,
+    configuration?: services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfiguration.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -161,9 +161,9 @@ export namespace ListCertificateConfigurationsRequest {
 
 export class ListCertificateConfigurationsResponse extends jspb.Message {
   clearCertificateConfigurationsList(): void;
-  getCertificateConfigurationsList(): Array<services_org_exile_certificate_manager_v1_entities_pb.CertificateConfiguration>;
-  setCertificateConfigurationsList(value: Array<services_org_exile_certificate_manager_v1_entities_pb.CertificateConfiguration>): void;
-  addCertificateConfigurations(value?: services_org_exile_certificate_manager_v1_entities_pb.CertificateConfiguration, index?: number): services_org_exile_certificate_manager_v1_entities_pb.CertificateConfiguration;
+  getCertificateConfigurationsList(): Array<services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfiguration>;
+  setCertificateConfigurationsList(value: Array<services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfiguration>): void;
+  addCertificateConfigurations(value?: services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfiguration, index?: number): services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfiguration;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCertificateConfigurationsResponse.AsObject;
@@ -177,7 +177,7 @@ export class ListCertificateConfigurationsResponse extends jspb.Message {
 
 export namespace ListCertificateConfigurationsResponse {
   export type AsObject = {
-    certificateConfigurationsList: Array<services_org_exile_certificate_manager_v1_entities_pb.CertificateConfiguration.AsObject>,
+    certificateConfigurationsList: Array<services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateConfiguration.AsObject>,
   }
 }
 

@@ -1,9 +1,9 @@
-// package: services.org.exile_certificate_manager.v1
-// file: services/org/exile_certificate_manager/v1/certificate_info.proto
+// package: services.org.exile_certificate_manager.v1alpha1
+// file: services/org/exile_certificate_manager/v1alpha1/certificate_info.proto
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
-import * as services_org_exile_certificate_manager_v1_entities_pb from "../../../../services/org/exile_certificate_manager/v1/entities_pb";
+import * as services_org_exile_certificate_manager_v1alpha1_entities_pb from "../../../../services/org/exile_certificate_manager/v1alpha1/entities_pb";
 
 export class CreateCertificateInfoRequest extends jspb.Message {
   getName(): string;
@@ -221,9 +221,9 @@ export namespace ListCertificateInfoRequest {
 
 export class ListCertificateInfoResponse extends jspb.Message {
   clearCertificateInfoListList(): void;
-  getCertificateInfoListList(): Array<services_org_exile_certificate_manager_v1_entities_pb.CertificateInfo>;
-  setCertificateInfoListList(value: Array<services_org_exile_certificate_manager_v1_entities_pb.CertificateInfo>): void;
-  addCertificateInfoList(value?: services_org_exile_certificate_manager_v1_entities_pb.CertificateInfo, index?: number): services_org_exile_certificate_manager_v1_entities_pb.CertificateInfo;
+  getCertificateInfoListList(): Array<services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateInfo>;
+  setCertificateInfoListList(value: Array<services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateInfo>): void;
+  addCertificateInfoList(value?: services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateInfo, index?: number): services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCertificateInfoResponse.AsObject;
@@ -237,7 +237,7 @@ export class ListCertificateInfoResponse extends jspb.Message {
 
 export namespace ListCertificateInfoResponse {
   export type AsObject = {
-    certificateInfoListList: Array<services_org_exile_certificate_manager_v1_entities_pb.CertificateInfo.AsObject>,
+    certificateInfoListList: Array<services_org_exile_certificate_manager_v1alpha1_entities_pb.CertificateInfo.AsObject>,
   }
 }
 
