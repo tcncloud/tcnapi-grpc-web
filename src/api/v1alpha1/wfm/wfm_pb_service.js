@@ -1603,6 +1603,15 @@ WFM.ListRealTimeManagementStates = {
   responseType: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStatesResponse
 };
 
+WFM.UpsertRealTimeManagementStateColor = {
+  methodName: "UpsertRealTimeManagementStateColor",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpsertRealTimeManagementStateColorRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpsertRealTimeManagementStateColorResponse
+};
+
 WFM.ListRealTimeManagementStateColors = {
   methodName: "ListRealTimeManagementStateColors",
   service: WFM,
@@ -1610,6 +1619,15 @@ WFM.ListRealTimeManagementStateColors = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsRequest,
   responseType: api_v1alpha1_wfm_wfm_pb.ListRealTimeManagementStateColorsResponse
+};
+
+WFM.DeleteRealTimeManagementStateColor = {
+  methodName: "DeleteRealTimeManagementStateColor",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.DeleteRealTimeManagementStateColorRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.DeleteRealTimeManagementStateColorResponse
 };
 
 WFM.CreateRgbaColor = {
@@ -7190,11 +7208,73 @@ WFMClient.prototype.listRealTimeManagementStates = function listRealTimeManageme
   };
 };
 
+WFMClient.prototype.upsertRealTimeManagementStateColor = function upsertRealTimeManagementStateColor(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpsertRealTimeManagementStateColor, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.listRealTimeManagementStateColors = function listRealTimeManagementStateColors(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.ListRealTimeManagementStateColors, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.deleteRealTimeManagementStateColor = function deleteRealTimeManagementStateColor(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.DeleteRealTimeManagementStateColor, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

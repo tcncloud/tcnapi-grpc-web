@@ -11622,6 +11622,52 @@ export namespace RealTimeManagementStateColor {
   }
 }
 
+export class UpsertRealTimeManagementStateColorRequest extends jspb.Message {
+  getState(): api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap];
+  setState(value: api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap]): void;
+
+  getRgbaColorId(): number;
+  setRgbaColorId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpsertRealTimeManagementStateColorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpsertRealTimeManagementStateColorRequest): UpsertRealTimeManagementStateColorRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpsertRealTimeManagementStateColorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpsertRealTimeManagementStateColorRequest;
+  static deserializeBinaryFromReader(message: UpsertRealTimeManagementStateColorRequest, reader: jspb.BinaryReader): UpsertRealTimeManagementStateColorRequest;
+}
+
+export namespace UpsertRealTimeManagementStateColorRequest {
+  export type AsObject = {
+    state: api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap],
+    rgbaColorId: number,
+  }
+}
+
+export class UpsertRealTimeManagementStateColorResponse extends jspb.Message {
+  hasStateColor(): boolean;
+  clearStateColor(): void;
+  getStateColor(): RealTimeManagementStateColor | undefined;
+  setStateColor(value?: RealTimeManagementStateColor): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpsertRealTimeManagementStateColorResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpsertRealTimeManagementStateColorResponse): UpsertRealTimeManagementStateColorResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpsertRealTimeManagementStateColorResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpsertRealTimeManagementStateColorResponse;
+  static deserializeBinaryFromReader(message: UpsertRealTimeManagementStateColorResponse, reader: jspb.BinaryReader): UpsertRealTimeManagementStateColorResponse;
+}
+
+export namespace UpsertRealTimeManagementStateColorResponse {
+  export type AsObject = {
+    stateColor?: RealTimeManagementStateColor.AsObject,
+  }
+}
+
 export class ListRealTimeManagementStateColorsRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRealTimeManagementStateColorsRequest.AsObject;
@@ -11657,6 +11703,42 @@ export class ListRealTimeManagementStateColorsResponse extends jspb.Message {
 export namespace ListRealTimeManagementStateColorsResponse {
   export type AsObject = {
     stateColorsList: Array<RealTimeManagementStateColor.AsObject>,
+  }
+}
+
+export class DeleteRealTimeManagementStateColorRequest extends jspb.Message {
+  getState(): api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap];
+  setState(value: api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteRealTimeManagementStateColorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteRealTimeManagementStateColorRequest): DeleteRealTimeManagementStateColorRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteRealTimeManagementStateColorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteRealTimeManagementStateColorRequest;
+  static deserializeBinaryFromReader(message: DeleteRealTimeManagementStateColorRequest, reader: jspb.BinaryReader): DeleteRealTimeManagementStateColorRequest;
+}
+
+export namespace DeleteRealTimeManagementStateColorRequest {
+  export type AsObject = {
+    state: api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap],
+  }
+}
+
+export class DeleteRealTimeManagementStateColorResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteRealTimeManagementStateColorResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteRealTimeManagementStateColorResponse): DeleteRealTimeManagementStateColorResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteRealTimeManagementStateColorResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteRealTimeManagementStateColorResponse;
+  static deserializeBinaryFromReader(message: DeleteRealTimeManagementStateColorResponse, reader: jspb.BinaryReader): DeleteRealTimeManagementStateColorResponse;
+}
+
+export namespace DeleteRealTimeManagementStateColorResponse {
+  export type AsObject = {
   }
 }
 
