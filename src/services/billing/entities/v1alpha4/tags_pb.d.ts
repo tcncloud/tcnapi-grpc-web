@@ -26,9 +26,6 @@ export class BillingTag extends jspb.Message {
   getDeleteTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setDeleteTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  getCategory(): string;
-  setCategory(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BillingTag.AsObject;
   static toObject(includeInstance: boolean, msg: BillingTag): BillingTag.AsObject;
@@ -46,7 +43,6 @@ export namespace BillingTag {
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    category: string,
   }
 }
 

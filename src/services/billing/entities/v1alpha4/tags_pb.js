@@ -83,8 +83,7 @@ billingTagId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 name: jspb.Message.getFieldWithDefault(msg, 2, ""),
 createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-category: jspb.Message.getFieldWithDefault(msg, 6, "")
+deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -143,10 +142,6 @@ proto.services.billing.entities.v1alpha4.BillingTag.deserializeBinaryFromReader 
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setDeleteTime(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCategory(value);
       break;
     default:
       reader.skipField();
@@ -213,13 +208,6 @@ proto.services.billing.entities.v1alpha4.BillingTag.serializeBinaryToWriter = fu
       5,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getCategory();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
     );
   }
 };
@@ -369,24 +357,6 @@ proto.services.billing.entities.v1alpha4.BillingTag.prototype.clearDeleteTime = 
  */
 proto.services.billing.entities.v1alpha4.BillingTag.prototype.hasDeleteTime = function() {
   return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional string category = 6;
- * @return {string}
- */
-proto.services.billing.entities.v1alpha4.BillingTag.prototype.getCategory = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.services.billing.entities.v1alpha4.BillingTag} returns this
- */
-proto.services.billing.entities.v1alpha4.BillingTag.prototype.setCategory = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
