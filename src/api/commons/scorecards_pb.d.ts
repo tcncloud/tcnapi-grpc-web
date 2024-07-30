@@ -1046,6 +1046,7 @@ export const CategoryType: CategoryTypeMap;
 export interface EvaluationTypeMap {
   EVALUATE_MANUAL: 0;
   EVALUATE_AUTO: 1;
+  EVALUATE_SMART: 2;
 }
 
 export const EvaluationType: EvaluationTypeMap;
