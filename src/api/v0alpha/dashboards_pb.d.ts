@@ -427,6 +427,9 @@ export class PanelSource extends jspb.Message {
   getInsightResourceId(): string;
   setInsightResourceId(value: string): void;
 
+  getOutputConfigurationResourceId(): string;
+  setOutputConfigurationResourceId(value: string): void;
+
   getPanelTypeCase(): PanelSource.PanelTypeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PanelSource.AsObject;
@@ -443,6 +446,7 @@ export namespace PanelSource {
     insightId: string,
     legacyInsightId: string,
     insightResourceId: string,
+    outputConfigurationResourceId: string,
   }
 
   export enum PanelTypeCase {

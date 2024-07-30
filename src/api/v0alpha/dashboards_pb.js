@@ -3637,7 +3637,8 @@ proto.api.v0alpha.PanelSource.toObject = function(includeInstance, msg) {
   var f, obj = {
 insightId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 legacyInsightId: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-insightResourceId: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+insightResourceId: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+outputConfigurationResourceId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -3686,6 +3687,10 @@ proto.api.v0alpha.PanelSource.deserializeBinaryFromReader = function(msg, reader
       var value = /** @type {string} */ (reader.readString());
       msg.setInsightResourceId(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOutputConfigurationResourceId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3733,6 +3738,13 @@ proto.api.v0alpha.PanelSource.serializeBinaryToWriter = function(message, writer
   if (f != null) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getOutputConfigurationResourceId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -3844,6 +3856,24 @@ proto.api.v0alpha.PanelSource.prototype.clearInsightResourceId = function() {
  */
 proto.api.v0alpha.PanelSource.prototype.hasInsightResourceId = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string output_configuration_resource_id = 4;
+ * @return {string}
+ */
+proto.api.v0alpha.PanelSource.prototype.getOutputConfigurationResourceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.PanelSource} returns this
+ */
+proto.api.v0alpha.PanelSource.prototype.setOutputConfigurationResourceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
