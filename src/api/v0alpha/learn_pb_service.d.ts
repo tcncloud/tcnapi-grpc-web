@@ -220,6 +220,15 @@ type LearnDeleteVersion = {
   readonly responseType: typeof api_v0alpha_learn_pb.DeleteVersionRes;
 };
 
+type LearnUploadStaticImage = {
+  readonly methodName: string;
+  readonly service: typeof Learn;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_learn_pb.UploadStaticImageReq;
+  readonly responseType: typeof api_v0alpha_learn_pb.UploadStaticImageRes;
+};
+
 export class Learn {
   static readonly serviceName: string;
   static readonly Exist: LearnExist;
@@ -246,6 +255,7 @@ export class Learn {
   static readonly ListVersions: LearnListVersions;
   static readonly ReviewVersionStream: LearnReviewVersionStream;
   static readonly DeleteVersion: LearnDeleteVersion;
+  static readonly UploadStaticImage: LearnUploadStaticImage;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -463,6 +473,15 @@ export class LearnClient {
   deleteVersion(
     requestMessage: api_v0alpha_learn_pb.DeleteVersionReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.DeleteVersionRes|null) => void
+  ): UnaryResponse;
+  uploadStaticImage(
+    requestMessage: api_v0alpha_learn_pb.UploadStaticImageReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.UploadStaticImageRes|null) => void
+  ): UnaryResponse;
+  uploadStaticImage(
+    requestMessage: api_v0alpha_learn_pb.UploadStaticImageReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_learn_pb.UploadStaticImageRes|null) => void
   ): UnaryResponse;
 }
 
