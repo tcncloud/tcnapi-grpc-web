@@ -1,5 +1,5 @@
-// package: api.v1alpha1.org.exile_manager
-// file: api/v1alpha1/org/exile_manager/entities.proto
+// package: services.org.exile_certificate_manager.v1
+// file: services/org/exile_certificate_manager/v1/entities.proto
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
@@ -39,6 +39,12 @@ export class CertificateInfo extends jspb.Message {
   getRevoked(): boolean;
   setRevoked(value: boolean): void;
 
+  getConfigurationInfoId(): string;
+  setConfigurationInfoId(value: string): void;
+
+  getRenewalInstance(): number;
+  setRenewalInstance(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CertificateInfo.AsObject;
   static toObject(includeInstance: boolean, msg: CertificateInfo): CertificateInfo.AsObject;
@@ -61,6 +67,8 @@ export namespace CertificateInfo {
     requestBy: string,
     deleted: boolean,
     revoked: boolean,
+    configurationInfoId: string,
+    renewalInstance: number,
   }
 }
 
