@@ -1,4 +1,4 @@
-// source: services/org/hunt_group/v1alpha1/service.proto
+// source: services/org/hunt_groups/v1alpha1/service.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -27,5 +27,5 @@ var annotations_authz_pb = require('../../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
 var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
-var services_org_hunt_group_v1alpha1_entities_pb = require('../../../../services/org/hunt_group/v1alpha1/entities_pb.js');
-goog.object.extend(proto, services_org_hunt_group_v1alpha1_entities_pb);
+var services_org_hunt_groups_v1alpha1_entities_pb = require('../../../../services/org/hunt_groups/v1alpha1/entities_pb.js');
+goog.object.extend(proto, services_org_hunt_groups_v1alpha1_entities_pb);

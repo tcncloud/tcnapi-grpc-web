@@ -1,5 +1,5 @@
-// package: services.org.hunt_group.v1alpha1
-// file: services/org/hunt_group/v1alpha1/entities.proto
+// package: services.org.hunt_groups.v1alpha1
+// file: services/org/hunt_groups/v1alpha1/entities.proto
 
 import * as jspb from "google-protobuf";
 import * as api_commons_org_huntgroup_pb from "../../../../api/commons/org/huntgroup_pb";

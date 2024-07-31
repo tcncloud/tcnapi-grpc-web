@@ -1,22 +1,22 @@
-// package: services.org.hunt_group.v1alpha1
-// file: services/org/hunt_group/v1alpha1/service.proto
+// package: services.org.hunt_groups.v1alpha1
+// file: services/org/hunt_groups/v1alpha1/service.proto
 
-import * as services_org_hunt_group_v1alpha1_service_pb from "../../../../services/org/hunt_group/v1alpha1/service_pb";
-import * as services_org_hunt_group_v1alpha1_entities_pb from "../../../../services/org/hunt_group/v1alpha1/entities_pb";
+import * as services_org_hunt_groups_v1alpha1_service_pb from "../../../../services/org/hunt_groups/v1alpha1/service_pb";
+import * as services_org_hunt_groups_v1alpha1_entities_pb from "../../../../services/org/hunt_groups/v1alpha1/entities_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type HuntGroupServiceListHuntGroupExileLinks = {
+type HuntGroupsServiceListHuntGroupExileLinks = {
   readonly methodName: string;
-  readonly service: typeof HuntGroupService;
+  readonly service: typeof HuntGroupsService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_org_hunt_group_v1alpha1_entities_pb.ListHuntGroupExileLinksRequest;
-  readonly responseType: typeof services_org_hunt_group_v1alpha1_entities_pb.ListHuntGroupExileLinksResponse;
+  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.ListHuntGroupExileLinksRequest;
+  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.ListHuntGroupExileLinksResponse;
 };
 
-export class HuntGroupService {
+export class HuntGroupsService {
   static readonly serviceName: string;
-  static readonly ListHuntGroupExileLinks: HuntGroupServiceListHuntGroupExileLinks;
+  static readonly ListHuntGroupExileLinks: HuntGroupsServiceListHuntGroupExileLinks;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -47,18 +47,18 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class HuntGroupServiceClient {
+export class HuntGroupsServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
   listHuntGroupExileLinks(
-    requestMessage: services_org_hunt_group_v1alpha1_entities_pb.ListHuntGroupExileLinksRequest,
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListHuntGroupExileLinksRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_org_hunt_group_v1alpha1_entities_pb.ListHuntGroupExileLinksResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListHuntGroupExileLinksResponse|null) => void
   ): UnaryResponse;
   listHuntGroupExileLinks(
-    requestMessage: services_org_hunt_group_v1alpha1_entities_pb.ListHuntGroupExileLinksRequest,
-    callback: (error: ServiceError|null, responseMessage: services_org_hunt_group_v1alpha1_entities_pb.ListHuntGroupExileLinksResponse|null) => void
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListHuntGroupExileLinksRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListHuntGroupExileLinksResponse|null) => void
   ): UnaryResponse;
 }
 
