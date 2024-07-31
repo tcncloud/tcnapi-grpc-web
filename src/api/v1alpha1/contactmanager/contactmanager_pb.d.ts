@@ -518,3 +518,49 @@ export namespace EditContactEntryResponse {
   }
 }
 
+export class ListContactsByEntityRequest extends jspb.Message {
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  getEntityId(): number;
+  setEntityId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListContactsByEntityRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListContactsByEntityRequest): ListContactsByEntityRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListContactsByEntityRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListContactsByEntityRequest;
+  static deserializeBinaryFromReader(message: ListContactsByEntityRequest, reader: jspb.BinaryReader): ListContactsByEntityRequest;
+}
+
+export namespace ListContactsByEntityRequest {
+  export type AsObject = {
+    projectId: string,
+    entityId: number,
+  }
+}
+
+export class ListContactsByEntityResponse extends jspb.Message {
+  clearContactManagerEntryList(): void;
+  getContactManagerEntryList(): Array<ContactManagerEntry>;
+  setContactManagerEntryList(value: Array<ContactManagerEntry>): void;
+  addContactManagerEntry(value?: ContactManagerEntry, index?: number): ContactManagerEntry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListContactsByEntityResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListContactsByEntityResponse): ListContactsByEntityResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListContactsByEntityResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListContactsByEntityResponse;
+  static deserializeBinaryFromReader(message: ListContactsByEntityResponse, reader: jspb.BinaryReader): ListContactsByEntityResponse;
+}
+
+export namespace ListContactsByEntityResponse {
+  export type AsObject = {
+    contactManagerEntryList: Array<ContactManagerEntry.AsObject>,
+  }
+}
+

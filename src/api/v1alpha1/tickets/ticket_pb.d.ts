@@ -87,6 +87,9 @@ export class CreateTicketReq extends jspb.Message {
   setTicketAssigneeList(value: Array<string>): void;
   addTicketAssignee(value: string, index?: number): string;
 
+  getContactEntryId(): string;
+  setContactEntryId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTicketReq.AsObject;
   static toObject(includeInstance: boolean, msg: CreateTicketReq): CreateTicketReq.AsObject;
@@ -111,6 +114,7 @@ export namespace CreateTicketReq {
     assignOther: string,
     ticketActionList: Array<api_commons_tickets_pb.TicketAction.AsObject>,
     ticketAssigneeList: Array<string>,
+    contactEntryId: string,
   }
 }
 
@@ -471,6 +475,9 @@ export class EditMaskTicketReq extends jspb.Message {
   getTicketCode(): string;
   setTicketCode(value: string): void;
 
+  getContactEntryId(): string;
+  setContactEntryId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EditMaskTicketReq.AsObject;
   static toObject(includeInstance: boolean, msg: EditMaskTicketReq): EditMaskTicketReq.AsObject;
@@ -487,6 +494,7 @@ export namespace EditMaskTicketReq {
     editValue?: api_commons_tickets_pb.Ticket.AsObject,
     editedFieldsMaskList: Array<google_protobuf_field_mask_pb.FieldMask.AsObject>,
     ticketCode: string,
+    contactEntryId: string,
   }
 }
 
