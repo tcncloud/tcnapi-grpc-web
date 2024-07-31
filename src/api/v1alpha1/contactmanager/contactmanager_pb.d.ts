@@ -522,8 +522,8 @@ export class ListContactsByEntityRequest extends jspb.Message {
   getProjectId(): string;
   setProjectId(value: string): void;
 
-  getEntityId(): number;
-  setEntityId(value: number): void;
+  getEntityId(): string;
+  setEntityId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContactsByEntityRequest.AsObject;
@@ -538,7 +538,7 @@ export class ListContactsByEntityRequest extends jspb.Message {
 export namespace ListContactsByEntityRequest {
   export type AsObject = {
     projectId: string,
-    entityId: number,
+    entityId: string,
   }
 }
 

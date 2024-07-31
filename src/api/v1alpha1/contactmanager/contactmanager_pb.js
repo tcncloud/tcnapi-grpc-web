@@ -4130,7 +4130,7 @@ proto.api.v1alpha1.contactmanager.ListContactsByEntityRequest.prototype.toObject
 proto.api.v1alpha1.contactmanager.ListContactsByEntityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 projectId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
-entityId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+entityId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -4172,7 +4172,7 @@ proto.api.v1alpha1.contactmanager.ListContactsByEntityRequest.deserializeBinaryF
       msg.setProjectId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setEntityId(value);
       break;
     default:
@@ -4212,8 +4212,8 @@ proto.api.v1alpha1.contactmanager.ListContactsByEntityRequest.serializeBinaryToW
     );
   }
   f = message.getEntityId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -4240,20 +4240,20 @@ proto.api.v1alpha1.contactmanager.ListContactsByEntityRequest.prototype.setProje
 
 
 /**
- * optional int64 entity_id = 2;
- * @return {number}
+ * optional string entity_id = 2;
+ * @return {string}
  */
 proto.api.v1alpha1.contactmanager.ListContactsByEntityRequest.prototype.getEntityId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.v1alpha1.contactmanager.ListContactsByEntityRequest} returns this
  */
 proto.api.v1alpha1.contactmanager.ListContactsByEntityRequest.prototype.setEntityId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
