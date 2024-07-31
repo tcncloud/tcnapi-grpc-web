@@ -11452,6 +11452,9 @@ export class RgbaColor extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
+  getRgbaColorId(): number;
+  setRgbaColorId(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RgbaColor.AsObject;
   static toObject(includeInstance: boolean, msg: RgbaColor): RgbaColor.AsObject;
@@ -11469,6 +11472,7 @@ export namespace RgbaColor {
     blue: number,
     alpha: number,
     name: string,
+    rgbaColorId: number,
   }
 }
 
