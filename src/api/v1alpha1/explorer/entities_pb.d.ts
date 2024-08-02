@@ -16,6 +16,9 @@ export class SchemaField extends jspb.Message {
   getIsLowCardinality(): boolean;
   setIsLowCardinality(value: boolean): void;
 
+  getColumnDescription(): string;
+  setColumnDescription(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SchemaField.AsObject;
   static toObject(includeInstance: boolean, msg: SchemaField): SchemaField.AsObject;
@@ -32,6 +35,7 @@ export namespace SchemaField {
     columnType: SchemaTypeMap[keyof SchemaTypeMap],
     isPrimaryKey: boolean,
     isLowCardinality: boolean,
+    columnDescription: string,
   }
 }
 
@@ -46,6 +50,9 @@ export class Schema extends jspb.Message {
   getFieldsList(): Array<SchemaField>;
   setFieldsList(value: Array<SchemaField>): void;
   addFields(value?: SchemaField, index?: number): SchemaField;
+
+  getTableDescription(): string;
+  setTableDescription(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Schema.AsObject;
@@ -62,6 +69,7 @@ export namespace Schema {
     name: string,
     datasourceType: DatasourceTypeMap[keyof DatasourceTypeMap],
     fieldsList: Array<SchemaField.AsObject>,
+    tableDescription: string,
   }
 }
 

@@ -43,7 +43,7 @@ goog.exportSymbol('proto.api.v1alpha1.explorer.QueryResponse', null, global);
  * @constructor
  */
 proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.repeatedFields_, null);
 };
 goog.inherits(proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -117,6 +117,13 @@ if (goog.DEBUG && !COMPILED) {
   proto.api.v1alpha1.explorer.QueryResponse.displayName = 'proto.api.v1alpha1.explorer.QueryResponse';
 }
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.repeatedFields_ = [1];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -148,7 +155,7 @@ proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+datasourceNamesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -185,6 +192,10 @@ proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.deserializeBinaryFromRe
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addDatasourceNames(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -214,6 +225,50 @@ proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.prototype.serializeBina
  */
 proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getDatasourceNamesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated string datasource_names = 1;
+ * @return {!Array<string>}
+ */
+proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.prototype.getDatasourceNamesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest} returns this
+ */
+proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.prototype.setDatasourceNamesList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest} returns this
+ */
+proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.prototype.addDatasourceNames = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest} returns this
+ */
+proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.prototype.clearDatasourceNamesList = function() {
+  return this.setDatasourceNamesList([]);
 };
 
 
@@ -452,7 +507,8 @@ endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObje
 timezone: jspb.Message.getFieldWithDefault(msg, 8, ""),
 pipelineParameters: (f = msg.getPipelineParameters()) && api_v1alpha1_explorer_entities_pb.Parameters.toObject(includeInstance, f),
 uiTraceId: jspb.Message.getFieldWithDefault(msg, 10, ""),
-comment: jspb.Message.getFieldWithDefault(msg, 11, "")
+comment: jspb.Message.getFieldWithDefault(msg, 11, ""),
+format: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -535,6 +591,10 @@ proto.api.v1alpha1.explorer.QueryRequest.deserializeBinaryFromReader = function(
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setComment(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFormat(value);
       break;
     default:
       reader.skipField();
@@ -642,6 +702,13 @@ proto.api.v1alpha1.explorer.QueryRequest.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getFormat();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
       f
     );
   }
@@ -955,6 +1022,24 @@ proto.api.v1alpha1.explorer.QueryRequest.prototype.getComment = function() {
  */
 proto.api.v1alpha1.explorer.QueryRequest.prototype.setComment = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional string format = 12;
+ * @return {string}
+ */
+proto.api.v1alpha1.explorer.QueryRequest.prototype.getFormat = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.explorer.QueryRequest} returns this
+ */
+proto.api.v1alpha1.explorer.QueryRequest.prototype.setFormat = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
