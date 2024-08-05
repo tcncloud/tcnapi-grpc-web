@@ -77565,7 +77565,8 @@ proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.prototype.toObjec
 proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 scheduleSelector: (f = msg.getScheduleSelector()) && api_commons_wfm_pb.ScheduleSelector.toObject(includeInstance, f),
-datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f)
+datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
+nodeSelector: (f = msg.getNodeSelector()) && proto.api.v1alpha1.wfm.ParentEntity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -77612,6 +77613,11 @@ proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.deserializeBinary
       reader.readMessage(value,api_commons_wfm_pb.DatetimeRange.deserializeBinaryFromReader);
       msg.setDatetimeRange(value);
       break;
+    case 3:
+      var value = new proto.api.v1alpha1.wfm.ParentEntity;
+      reader.readMessage(value,proto.api.v1alpha1.wfm.ParentEntity.deserializeBinaryFromReader);
+      msg.setNodeSelector(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -77655,6 +77661,14 @@ proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.serializeBinaryTo
       2,
       f,
       api_commons_wfm_pb.DatetimeRange.serializeBinaryToWriter
+    );
+  }
+  f = message.getNodeSelector();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.api.v1alpha1.wfm.ParentEntity.serializeBinaryToWriter
     );
   }
 };
@@ -77731,6 +77745,43 @@ proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.prototype.clearDa
  */
 proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.prototype.hasDatetimeRange = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional ParentEntity node_selector = 3;
+ * @return {?proto.api.v1alpha1.wfm.ParentEntity}
+ */
+proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.prototype.getNodeSelector = function() {
+  return /** @type{?proto.api.v1alpha1.wfm.ParentEntity} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1alpha1.wfm.ParentEntity, 3));
+};
+
+
+/**
+ * @param {?proto.api.v1alpha1.wfm.ParentEntity|undefined} value
+ * @return {!proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest} returns this
+*/
+proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.prototype.setNodeSelector = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.prototype.clearNodeSelector = function() {
+  return this.setNodeSelector(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.prototype.hasNodeSelector = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
