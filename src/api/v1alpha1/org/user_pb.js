@@ -19558,7 +19558,8 @@ permissionGroupsList: jspb.Message.toObjectList(msg.getPermissionGroupsList(),
 labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
     api_commons_org_labels_pb.Label.toObject, includeInstance),
 orgAllowedMfa: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-localePreferences: (f = msg.getLocalePreferences()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f)
+localePreferences: (f = msg.getLocalePreferences()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f),
+billingId: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -19628,6 +19629,10 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.deserializeBinaryFromReader = 
       var value = new api_commons_org_preferences_pb.LocalePreferences;
       reader.readMessage(value,api_commons_org_preferences_pb.LocalePreferences.deserializeBinaryFromReader);
       msg.setLocalePreferences(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBillingId(value);
       break;
     default:
       reader.skipField();
@@ -19709,6 +19714,13 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.serializeBinaryToWriter = func
       7,
       f,
       api_commons_org_preferences_pb.LocalePreferences.serializeBinaryToWriter
+    );
+  }
+  f = message.getBillingId();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
     );
   }
 };
@@ -21307,6 +21319,24 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.clearLocalePreferenc
  */
 proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.hasLocalePreferences = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string billing_id = 8;
+ * @return {string}
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.getBillingId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse} returns this
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.setBillingId = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
