@@ -280,7 +280,8 @@ proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateRequ
 proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-description: jspb.Message.getFieldWithDefault(msg, 2, "")
+description: jspb.Message.getFieldWithDefault(msg, 2, ""),
+configurationId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -325,6 +326,10 @@ proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateRequ
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConfigurationId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -368,6 +373,13 @@ proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateRequ
       f
     );
   }
+  f = message.getConfigurationId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -404,6 +416,24 @@ proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateRequ
  */
 proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateRequest.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string configuration_id = 3;
+ * @return {string}
+ */
+proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateRequest.prototype.getConfigurationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateRequest} returns this
+ */
+proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateRequest.prototype.setConfigurationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

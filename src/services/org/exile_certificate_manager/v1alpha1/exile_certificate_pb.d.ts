@@ -12,6 +12,9 @@ export class CreateExileCertificateRequest extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
+  getConfigurationId(): string;
+  setConfigurationId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateExileCertificateRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateExileCertificateRequest): CreateExileCertificateRequest.AsObject;
@@ -26,6 +29,7 @@ export namespace CreateExileCertificateRequest {
   export type AsObject = {
     name: string,
     description: string,
+    configurationId: string,
   }
 }
 
