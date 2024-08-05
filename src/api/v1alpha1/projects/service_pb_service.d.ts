@@ -19,8 +19,8 @@ type ProjectsGetProjectById = {
   readonly service: typeof Projects;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_projects_projects_pb.GetProjectByIdRequest;
-  readonly responseType: typeof api_v1alpha1_projects_projects_pb.GetProjectByIdResponse;
+  readonly requestType: typeof api_v1alpha1_projects_projects_pb.GetProjectRequest;
+  readonly responseType: typeof api_v1alpha1_projects_projects_pb.GetProjectResponse;
 };
 
 export class Projects {
@@ -71,13 +71,13 @@ export class ProjectsClient {
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_projects_projects_pb.ListProjectsResponse|null) => void
   ): UnaryResponse;
   getProjectById(
-    requestMessage: api_v1alpha1_projects_projects_pb.GetProjectByIdRequest,
+    requestMessage: api_v1alpha1_projects_projects_pb.GetProjectRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_projects_projects_pb.GetProjectByIdResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_projects_projects_pb.GetProjectResponse|null) => void
   ): UnaryResponse;
   getProjectById(
-    requestMessage: api_v1alpha1_projects_projects_pb.GetProjectByIdRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_projects_projects_pb.GetProjectByIdResponse|null) => void
+    requestMessage: api_v1alpha1_projects_projects_pb.GetProjectRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_projects_projects_pb.GetProjectResponse|null) => void
   ): UnaryResponse;
 }
 

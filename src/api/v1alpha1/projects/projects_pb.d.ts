@@ -51,7 +51,7 @@ export namespace ListProjectsResponse {
   }
 }
 
-export class GetProjectByIdRequest extends jspb.Message {
+export class GetProjectRequest extends jspb.Message {
   getProjectSid(): string;
   setProjectSid(value: string): void;
 
@@ -61,39 +61,39 @@ export class GetProjectByIdRequest extends jspb.Message {
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetProjectByIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetProjectByIdRequest): GetProjectByIdRequest.AsObject;
+  toObject(includeInstance?: boolean): GetProjectRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetProjectRequest): GetProjectRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetProjectByIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetProjectByIdRequest;
-  static deserializeBinaryFromReader(message: GetProjectByIdRequest, reader: jspb.BinaryReader): GetProjectByIdRequest;
+  static serializeBinaryToWriter(message: GetProjectRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetProjectRequest;
+  static deserializeBinaryFromReader(message: GetProjectRequest, reader: jspb.BinaryReader): GetProjectRequest;
 }
 
-export namespace GetProjectByIdRequest {
+export namespace GetProjectRequest {
   export type AsObject = {
     projectSid: string,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
-export class GetProjectByIdResponse extends jspb.Message {
+export class GetProjectResponse extends jspb.Message {
   hasProject(): boolean;
   clearProject(): void;
   getProject(): Project | undefined;
   setProject(value?: Project): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetProjectByIdResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetProjectByIdResponse): GetProjectByIdResponse.AsObject;
+  toObject(includeInstance?: boolean): GetProjectResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetProjectResponse): GetProjectResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetProjectByIdResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetProjectByIdResponse;
-  static deserializeBinaryFromReader(message: GetProjectByIdResponse, reader: jspb.BinaryReader): GetProjectByIdResponse;
+  static serializeBinaryToWriter(message: GetProjectResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetProjectResponse;
+  static deserializeBinaryFromReader(message: GetProjectResponse, reader: jspb.BinaryReader): GetProjectResponse;
 }
 
-export namespace GetProjectByIdResponse {
+export namespace GetProjectResponse {
   export type AsObject = {
     project?: Project.AsObject,
   }

@@ -25,8 +25,8 @@ Projects.GetProjectById = {
   service: Projects,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_projects_projects_pb.GetProjectByIdRequest,
-  responseType: api_v1alpha1_projects_projects_pb.GetProjectByIdResponse
+  requestType: api_v1alpha1_projects_projects_pb.GetProjectRequest,
+  responseType: api_v1alpha1_projects_projects_pb.GetProjectResponse
 };
 
 exports.Projects = Projects;
