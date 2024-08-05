@@ -24016,7 +24016,8 @@ proto.api.v1alpha1.org.VerifyTOTPCodeRequest.prototype.toObject = function(opt_i
  */
 proto.api.v1alpha1.org.VerifyTOTPCodeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-code: jspb.Message.getFieldWithDefault(msg, 1, "")
+code: jspb.Message.getFieldWithDefault(msg, 1, ""),
+secretKey: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -24057,6 +24058,10 @@ proto.api.v1alpha1.org.VerifyTOTPCodeRequest.deserializeBinaryFromReader = funct
       var value = /** @type {string} */ (reader.readString());
       msg.setCode(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSecretKey(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -24093,6 +24098,13 @@ proto.api.v1alpha1.org.VerifyTOTPCodeRequest.serializeBinaryToWriter = function(
       f
     );
   }
+  f = message.getSecretKey();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -24111,6 +24123,24 @@ proto.api.v1alpha1.org.VerifyTOTPCodeRequest.prototype.getCode = function() {
  */
 proto.api.v1alpha1.org.VerifyTOTPCodeRequest.prototype.setCode = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string secret_key = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.org.VerifyTOTPCodeRequest.prototype.getSecretKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.org.VerifyTOTPCodeRequest} returns this
+ */
+proto.api.v1alpha1.org.VerifyTOTPCodeRequest.prototype.setSecretKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
