@@ -63079,7 +63079,9 @@ serviceLevelIntervalsList: jspb.Message.toObjectList(msg.getServiceLevelInterval
 skillCollection: (f = msg.getSkillCollection()) && api_commons_wfm_pb.SkillProfileCategory.toObject(includeInstance, f),
 totalRequiredFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 15, 0.0),
 totalAchievedFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 16, 0.0),
-totalProductiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 17, 0.0)
+totalProductiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 17, 0.0),
+totalAchievedFteWithShrinkageApplied: jspb.Message.getFloatingPointFieldWithDefault(msg, 18, 0.0),
+totalProductiveFteWithShrinkageApplied: jspb.Message.getFloatingPointFieldWithDefault(msg, 19, 0.0)
   };
 
   if (includeInstance) {
@@ -63187,6 +63189,14 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.deserializeBinaryFr
     case 17:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setTotalProductiveFte(value);
+      break;
+    case 18:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTotalAchievedFteWithShrinkageApplied(value);
+      break;
+    case 19:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTotalProductiveFteWithShrinkageApplied(value);
       break;
     default:
       reader.skipField();
@@ -63337,6 +63347,20 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.serializeBinaryToWr
   if (f !== 0.0) {
     writer.writeFloat(
       17,
+      f
+    );
+  }
+  f = message.getTotalAchievedFteWithShrinkageApplied();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      18,
+      f
+    );
+  }
+  f = message.getTotalProductiveFteWithShrinkageApplied();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      19,
       f
     );
   }
@@ -63727,6 +63751,42 @@ proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.prototype.setTotalP
 };
 
 
+/**
+ * optional float total_achieved_fte_with_shrinkage_applied = 18;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.prototype.getTotalAchievedFteWithShrinkageApplied = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 18, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2} returns this
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.prototype.setTotalAchievedFteWithShrinkageApplied = function(value) {
+  return jspb.Message.setProto3FloatField(this, 18, value);
+};
+
+
+/**
+ * optional float total_productive_fte_with_shrinkage_applied = 19;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.prototype.getTotalProductiveFteWithShrinkageApplied = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 19, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2} returns this
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.prototype.setTotalProductiveFteWithShrinkageApplied = function(value) {
+  return jspb.Message.setProto3FloatField(this, 19, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -63785,7 +63845,9 @@ metricsBySkillCollectionList: jspb.Message.toObjectList(msg.getMetricsBySkillCol
     proto.api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2.toObject, includeInstance),
 totalRequiredFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 15, 0.0),
 totalAchievedFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 16, 0.0),
-totalProductiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 17, 0.0)
+totalProductiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 17, 0.0),
+totalAchievedFteWithShrinkageApplied: jspb.Message.getFloatingPointFieldWithDefault(msg, 18, 0.0),
+totalProductiveFteWithShrinkageApplied: jspb.Message.getFloatingPointFieldWithDefault(msg, 19, 0.0)
   };
 
   if (includeInstance) {
@@ -63893,6 +63955,14 @@ proto.api.v1alpha1.wfm.PerformanceMetricV2.deserializeBinaryFromReader = functio
     case 17:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setTotalProductiveFte(value);
+      break;
+    case 18:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTotalAchievedFteWithShrinkageApplied(value);
+      break;
+    case 19:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTotalProductiveFteWithShrinkageApplied(value);
       break;
     default:
       reader.skipField();
@@ -64043,6 +64113,20 @@ proto.api.v1alpha1.wfm.PerformanceMetricV2.serializeBinaryToWriter = function(me
   if (f !== 0.0) {
     writer.writeFloat(
       17,
+      f
+    );
+  }
+  f = message.getTotalAchievedFteWithShrinkageApplied();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      18,
+      f
+    );
+  }
+  f = message.getTotalProductiveFteWithShrinkageApplied();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      19,
       f
     );
   }
@@ -64431,6 +64515,42 @@ proto.api.v1alpha1.wfm.PerformanceMetricV2.prototype.getTotalProductiveFte = fun
  */
 proto.api.v1alpha1.wfm.PerformanceMetricV2.prototype.setTotalProductiveFte = function(value) {
   return jspb.Message.setProto3FloatField(this, 17, value);
+};
+
+
+/**
+ * optional float total_achieved_fte_with_shrinkage_applied = 18;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricV2.prototype.getTotalAchievedFteWithShrinkageApplied = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 18, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.PerformanceMetricV2} returns this
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricV2.prototype.setTotalAchievedFteWithShrinkageApplied = function(value) {
+  return jspb.Message.setProto3FloatField(this, 18, value);
+};
+
+
+/**
+ * optional float total_productive_fte_with_shrinkage_applied = 19;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricV2.prototype.getTotalProductiveFteWithShrinkageApplied = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 19, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.PerformanceMetricV2} returns this
+ */
+proto.api.v1alpha1.wfm.PerformanceMetricV2.prototype.setTotalProductiveFteWithShrinkageApplied = function(value) {
+  return jspb.Message.setProto3FloatField(this, 19, value);
 };
 
 
@@ -64863,7 +64983,9 @@ requiredFteOccupancy: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
 achievedFteOccupancy: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
 requiredFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
 achievedFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-productiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0)
+productiveFte: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
+achievedFteWithShrinkageApplied: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
+productiveFteWithShrinkageApplied: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0)
   };
 
   if (includeInstance) {
@@ -64924,6 +65046,14 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.deserializeBinaryF
     case 6:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setProductiveFte(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAchievedFteWithShrinkageApplied(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setProductiveFteWithShrinkageApplied(value);
       break;
     default:
       reader.skipField();
@@ -64994,6 +65124,20 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.serializeBinaryToW
   if (f !== 0.0) {
     writer.writeFloat(
       6,
+      f
+    );
+  }
+  f = message.getAchievedFteWithShrinkageApplied();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      7,
+      f
+    );
+  }
+  f = message.getProductiveFteWithShrinkageApplied();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      8,
       f
     );
   }
@@ -65124,6 +65268,42 @@ proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.getProdu
  */
 proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.setProductiveFte = function(value) {
   return jspb.Message.setProto3FloatField(this, 6, value);
+};
+
+
+/**
+ * optional float achieved_fte_with_shrinkage_applied = 7;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.getAchievedFteWithShrinkageApplied = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval} returns this
+ */
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.setAchievedFteWithShrinkageApplied = function(value) {
+  return jspb.Message.setProto3FloatField(this, 7, value);
+};
+
+
+/**
+ * optional float productive_fte_with_shrinkage_applied = 8;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.getProductiveFteWithShrinkageApplied = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval} returns this
+ */
+proto.api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval.prototype.setProductiveFteWithShrinkageApplied = function(value) {
+  return jspb.Message.setProto3FloatField(this, 8, value);
 };
 
 

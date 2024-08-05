@@ -7580,6 +7580,12 @@ export class PerformanceMetricForSkillCollectionV2 extends jspb.Message {
   getTotalProductiveFte(): number;
   setTotalProductiveFte(value: number): void;
 
+  getTotalAchievedFteWithShrinkageApplied(): number;
+  setTotalAchievedFteWithShrinkageApplied(value: number): void;
+
+  getTotalProductiveFteWithShrinkageApplied(): number;
+  setTotalProductiveFteWithShrinkageApplied(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PerformanceMetricForSkillCollectionV2.AsObject;
   static toObject(includeInstance: boolean, msg: PerformanceMetricForSkillCollectionV2): PerformanceMetricForSkillCollectionV2.AsObject;
@@ -7609,6 +7615,8 @@ export namespace PerformanceMetricForSkillCollectionV2 {
     totalRequiredFte: number,
     totalAchievedFte: number,
     totalProductiveFte: number,
+    totalAchievedFteWithShrinkageApplied: number,
+    totalProductiveFteWithShrinkageApplied: number,
   }
 }
 
@@ -7672,6 +7680,12 @@ export class PerformanceMetricV2 extends jspb.Message {
   getTotalProductiveFte(): number;
   setTotalProductiveFte(value: number): void;
 
+  getTotalAchievedFteWithShrinkageApplied(): number;
+  setTotalAchievedFteWithShrinkageApplied(value: number): void;
+
+  getTotalProductiveFteWithShrinkageApplied(): number;
+  setTotalProductiveFteWithShrinkageApplied(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PerformanceMetricV2.AsObject;
   static toObject(includeInstance: boolean, msg: PerformanceMetricV2): PerformanceMetricV2.AsObject;
@@ -7701,6 +7715,8 @@ export namespace PerformanceMetricV2 {
     totalRequiredFte: number,
     totalAchievedFte: number,
     totalProductiveFte: number,
+    totalAchievedFteWithShrinkageApplied: number,
+    totalProductiveFteWithShrinkageApplied: number,
   }
 }
 
@@ -7781,6 +7797,12 @@ export class FTERequiredVsAchievedOccupancyInterval extends jspb.Message {
   getProductiveFte(): number;
   setProductiveFte(value: number): void;
 
+  getAchievedFteWithShrinkageApplied(): number;
+  setAchievedFteWithShrinkageApplied(value: number): void;
+
+  getProductiveFteWithShrinkageApplied(): number;
+  setProductiveFteWithShrinkageApplied(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FTERequiredVsAchievedOccupancyInterval.AsObject;
   static toObject(includeInstance: boolean, msg: FTERequiredVsAchievedOccupancyInterval): FTERequiredVsAchievedOccupancyInterval.AsObject;
@@ -7799,6 +7821,8 @@ export namespace FTERequiredVsAchievedOccupancyInterval {
     requiredFte: number,
     achievedFte: number,
     productiveFte: number,
+    achievedFteWithShrinkageApplied: number,
+    productiveFteWithShrinkageApplied: number,
   }
 }
 
