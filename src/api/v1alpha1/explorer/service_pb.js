@@ -155,7 +155,8 @@ proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.prototype.toObject = fu
  */
 proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-datasourceNamesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+datasourceNamesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+datasourceType: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -196,6 +197,10 @@ proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.deserializeBinaryFromRe
       var value = /** @type {string} */ (reader.readString());
       msg.addDatasourceNames(value);
       break;
+    case 2:
+      var value = /** @type {!proto.api.v1alpha1.explorer.DatasourceType} */ (reader.readEnum());
+      msg.setDatasourceType(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -229,6 +234,13 @@ proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.serializeBinaryToWriter
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
+      f
+    );
+  }
+  f = message.getDatasourceType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
       f
     );
   }
@@ -269,6 +281,24 @@ proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.prototype.addDatasource
  */
 proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.prototype.clearDatasourceNamesList = function() {
   return this.setDatasourceNamesList([]);
+};
+
+
+/**
+ * optional DatasourceType datasource_type = 2;
+ * @return {!proto.api.v1alpha1.explorer.DatasourceType}
+ */
+proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.prototype.getDatasourceType = function() {
+  return /** @type {!proto.api.v1alpha1.explorer.DatasourceType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.explorer.DatasourceType} value
+ * @return {!proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest} returns this
+ */
+proto.api.v1alpha1.explorer.ListDatasourceSchemasRequest.prototype.setDatasourceType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 

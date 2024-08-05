@@ -11,6 +11,9 @@ export class ListDatasourceSchemasRequest extends jspb.Message {
   setDatasourceNamesList(value: Array<string>): void;
   addDatasourceNames(value: string, index?: number): string;
 
+  getDatasourceType(): api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap];
+  setDatasourceType(value: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDatasourceSchemasRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListDatasourceSchemasRequest): ListDatasourceSchemasRequest.AsObject;
@@ -24,6 +27,7 @@ export class ListDatasourceSchemasRequest extends jspb.Message {
 export namespace ListDatasourceSchemasRequest {
   export type AsObject = {
     datasourceNamesList: Array<string>,
+    datasourceType: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap],
   }
 }
 
