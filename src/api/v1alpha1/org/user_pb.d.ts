@@ -3058,9 +3058,6 @@ export class VerifyTOTPCodeRequest extends jspb.Message {
   getCode(): string;
   setCode(value: string): void;
 
-  getSecretKey(): string;
-  setSecretKey(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VerifyTOTPCodeRequest.AsObject;
   static toObject(includeInstance: boolean, msg: VerifyTOTPCodeRequest): VerifyTOTPCodeRequest.AsObject;
@@ -3074,7 +3071,6 @@ export class VerifyTOTPCodeRequest extends jspb.Message {
 export namespace VerifyTOTPCodeRequest {
   export type AsObject = {
     code: string,
-    secretKey: string,
   }
 }
 
