@@ -9508,6 +9508,9 @@ export class ListShiftInstanceSidsForScheduleRequest extends jspb.Message {
   getNodeSelector(): ParentEntity | undefined;
   setNodeSelector(value?: ParentEntity): void;
 
+  getScheduleScenarioSid(): number;
+  setScheduleScenarioSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListShiftInstanceSidsForScheduleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListShiftInstanceSidsForScheduleRequest): ListShiftInstanceSidsForScheduleRequest.AsObject;
@@ -9523,6 +9526,7 @@ export namespace ListShiftInstanceSidsForScheduleRequest {
     scheduleSelector?: api_commons_wfm_pb.ScheduleSelector.AsObject,
     datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
     nodeSelector?: ParentEntity.AsObject,
+    scheduleScenarioSid: number,
   }
 }
 

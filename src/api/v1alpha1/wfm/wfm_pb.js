@@ -77566,7 +77566,8 @@ proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.toObject = functi
   var f, obj = {
 scheduleSelector: (f = msg.getScheduleSelector()) && api_commons_wfm_pb.ScheduleSelector.toObject(includeInstance, f),
 datetimeRange: (f = msg.getDatetimeRange()) && api_commons_wfm_pb.DatetimeRange.toObject(includeInstance, f),
-nodeSelector: (f = msg.getNodeSelector()) && proto.api.v1alpha1.wfm.ParentEntity.toObject(includeInstance, f)
+nodeSelector: (f = msg.getNodeSelector()) && proto.api.v1alpha1.wfm.ParentEntity.toObject(includeInstance, f),
+scheduleScenarioSid: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -77617,6 +77618,10 @@ proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.deserializeBinary
       var value = new proto.api.v1alpha1.wfm.ParentEntity;
       reader.readMessage(value,proto.api.v1alpha1.wfm.ParentEntity.deserializeBinaryFromReader);
       msg.setNodeSelector(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setScheduleScenarioSid(value);
       break;
     default:
       reader.skipField();
@@ -77669,6 +77674,13 @@ proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.serializeBinaryTo
       3,
       f,
       proto.api.v1alpha1.wfm.ParentEntity.serializeBinaryToWriter
+    );
+  }
+  f = message.getScheduleScenarioSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      4,
+      f
     );
   }
 };
@@ -77782,6 +77794,24 @@ proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.prototype.clearNo
  */
 proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.prototype.hasNodeSelector = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int64 schedule_scenario_sid = 4;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.prototype.getScheduleScenarioSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest} returns this
+ */
+proto.api.v1alpha1.wfm.ListShiftInstanceSidsForScheduleRequest.prototype.setScheduleScenarioSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
