@@ -113,7 +113,8 @@ isDraft: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
 isOverwrite: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
 createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+billingTagId: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -190,6 +191,10 @@ proto.services.billing.entities.v1alpha4.RateDefinition.deserializeBinaryFromRea
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setDeleteTime(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBillingTagId(value);
       break;
     default:
       reader.skipField();
@@ -286,6 +291,13 @@ proto.services.billing.entities.v1alpha4.RateDefinition.serializeBinaryToWriter 
       9,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getBillingTagId();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
     );
   }
 };
@@ -545,6 +557,24 @@ proto.services.billing.entities.v1alpha4.RateDefinition.prototype.clearDeleteTim
  */
 proto.services.billing.entities.v1alpha4.RateDefinition.prototype.hasDeleteTime = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string billing_tag_id = 10;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha4.RateDefinition.prototype.getBillingTagId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha4.RateDefinition} returns this
+ */
+proto.services.billing.entities.v1alpha4.RateDefinition.prototype.setBillingTagId = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
