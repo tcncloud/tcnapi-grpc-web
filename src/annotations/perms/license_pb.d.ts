@@ -23,6 +23,7 @@ export interface ApplicationMap {
   APPLICATION_WORKFLOWS: 16;
   APPLICATION_NEWSROOM: 17;
   APPLICATION_CONTACTMANAGER: 18;
+  APPLICATION_AGENT_MANAGER: 19;
 }
 
 export const Application: ApplicationMap;
