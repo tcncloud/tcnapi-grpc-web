@@ -71933,8 +71933,7 @@ shiftInstanceSidsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? und
 includeShiftSegments: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
 includeShiftTemplate: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
 includeSchedulingActivity: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-includeActivity: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-includeShiftSegmentCallStats: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+includeActivity: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -71992,10 +71991,6 @@ proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.deserializeBinaryFromReader = 
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIncludeActivity(value);
-      break;
-    case 6:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIncludeShiftSegmentCallStats(value);
       break;
     default:
       reader.skipField();
@@ -72058,13 +72053,6 @@ proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.serializeBinaryToWriter = func
   if (f) {
     writer.writeBool(
       5,
-      f
-    );
-  }
-  f = message.getIncludeShiftSegmentCallStats();
-  if (f) {
-    writer.writeBool(
-      6,
       f
     );
   }
@@ -72177,24 +72165,6 @@ proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.getIncludeActivity =
  */
 proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.setIncludeActivity = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
-};
-
-
-/**
- * optional bool include_shift_segment_call_stats = 6;
- * @return {boolean}
- */
-proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.getIncludeShiftSegmentCallStats = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq} returns this
- */
-proto.api.v1alpha1.wfm.ListShiftInstancesBySidReq.prototype.setIncludeShiftSegmentCallStats = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 

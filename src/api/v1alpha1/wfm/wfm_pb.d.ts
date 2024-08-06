@@ -8750,9 +8750,6 @@ export class ListShiftInstancesBySidReq extends jspb.Message {
   getIncludeActivity(): boolean;
   setIncludeActivity(value: boolean): void;
 
-  getIncludeShiftSegmentCallStats(): boolean;
-  setIncludeShiftSegmentCallStats(value: boolean): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListShiftInstancesBySidReq.AsObject;
   static toObject(includeInstance: boolean, msg: ListShiftInstancesBySidReq): ListShiftInstancesBySidReq.AsObject;
@@ -8770,7 +8767,6 @@ export namespace ListShiftInstancesBySidReq {
     includeShiftTemplate: boolean,
     includeSchedulingActivity: boolean,
     includeActivity: boolean,
-    includeShiftSegmentCallStats: boolean,
   }
 }
 
