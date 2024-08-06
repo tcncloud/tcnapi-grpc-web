@@ -24,6 +24,7 @@ var global = localGlobalThis ||
     Function('return this')();
 
 goog.exportSymbol('proto.api.v1alpha1.explorer.DatasourceType', null, global);
+goog.exportSymbol('proto.api.v1alpha1.explorer.ExportFormat', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.Parameters', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.Parameters.Parameter', null, global);
 goog.exportSymbol('proto.api.v1alpha1.explorer.Schema', null, global);
@@ -148,7 +149,8 @@ proto.api.v1alpha1.explorer.SchemaField.toObject = function(includeInstance, msg
 name: jspb.Message.getFieldWithDefault(msg, 1, ""),
 columnType: jspb.Message.getFieldWithDefault(msg, 2, 0),
 isPrimaryKey: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-isLowCardinality: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+isLowCardinality: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+columnDescription: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -200,6 +202,10 @@ proto.api.v1alpha1.explorer.SchemaField.deserializeBinaryFromReader = function(m
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsLowCardinality(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setColumnDescription(value);
       break;
     default:
       reader.skipField();
@@ -255,6 +261,13 @@ proto.api.v1alpha1.explorer.SchemaField.serializeBinaryToWriter = function(messa
   if (f) {
     writer.writeBool(
       4,
+      f
+    );
+  }
+  f = message.getColumnDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -333,6 +346,24 @@ proto.api.v1alpha1.explorer.SchemaField.prototype.setIsLowCardinality = function
 };
 
 
+/**
+ * optional string column_description = 5;
+ * @return {string}
+ */
+proto.api.v1alpha1.explorer.SchemaField.prototype.getColumnDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.explorer.SchemaField} returns this
+ */
+proto.api.v1alpha1.explorer.SchemaField.prototype.setColumnDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -375,7 +406,8 @@ proto.api.v1alpha1.explorer.Schema.toObject = function(includeInstance, msg) {
 name: jspb.Message.getFieldWithDefault(msg, 1, ""),
 datasourceType: jspb.Message.getFieldWithDefault(msg, 2, 0),
 fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
-    proto.api.v1alpha1.explorer.SchemaField.toObject, includeInstance)
+    proto.api.v1alpha1.explorer.SchemaField.toObject, includeInstance),
+tableDescription: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -424,6 +456,10 @@ proto.api.v1alpha1.explorer.Schema.deserializeBinaryFromReader = function(msg, r
       var value = new proto.api.v1alpha1.explorer.SchemaField;
       reader.readMessage(value,proto.api.v1alpha1.explorer.SchemaField.deserializeBinaryFromReader);
       msg.addFields(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTableDescription(value);
       break;
     default:
       reader.skipField();
@@ -474,6 +510,13 @@ proto.api.v1alpha1.explorer.Schema.serializeBinaryToWriter = function(message, w
       3,
       f,
       proto.api.v1alpha1.explorer.SchemaField.serializeBinaryToWriter
+    );
+  }
+  f = message.getTableDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -550,6 +593,24 @@ proto.api.v1alpha1.explorer.Schema.prototype.addFields = function(opt_value, opt
  */
 proto.api.v1alpha1.explorer.Schema.prototype.clearFieldsList = function() {
   return this.setFieldsList([]);
+};
+
+
+/**
+ * optional string table_description = 4;
+ * @return {string}
+ */
+proto.api.v1alpha1.explorer.Schema.prototype.getTableDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.explorer.Schema} returns this
+ */
+proto.api.v1alpha1.explorer.Schema.prototype.setTableDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -846,6 +907,15 @@ proto.api.v1alpha1.explorer.Parameters.prototype.clearParametersMap = function()
   return this;
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.api.v1alpha1.explorer.ExportFormat = {
+  REPORT_FORMAT_UNSPECIFIED: 0,
+  REPORT_FORMAT_CSV: 1,
+  REPORT_FORMAT_PARQUET: 2
+};
 
 /**
  * @enum {number}

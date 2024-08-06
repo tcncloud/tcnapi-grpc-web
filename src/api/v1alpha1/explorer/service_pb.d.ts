@@ -3,9 +3,18 @@
 
 import * as jspb from "google-protobuf";
 import * as api_v1alpha1_explorer_entities_pb from "../../../api/v1alpha1/explorer/entities_pb";
+import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class ListDatasourceSchemasRequest extends jspb.Message {
+  clearDatasourceNamesList(): void;
+  getDatasourceNamesList(): Array<string>;
+  setDatasourceNamesList(value: Array<string>): void;
+  addDatasourceNames(value: string, index?: number): string;
+
+  getDatasourceType(): api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap];
+  setDatasourceType(value: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDatasourceSchemasRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListDatasourceSchemasRequest): ListDatasourceSchemasRequest.AsObject;
@@ -18,6 +27,8 @@ export class ListDatasourceSchemasRequest extends jspb.Message {
 
 export namespace ListDatasourceSchemasRequest {
   export type AsObject = {
+    datasourceNamesList: Array<string>,
+    datasourceType: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap],
   }
 }
 
@@ -89,6 +100,9 @@ export class QueryRequest extends jspb.Message {
   getComment(): string;
   setComment(value: string): void;
 
+  getFormat(): api_v1alpha1_explorer_entities_pb.ExportFormatMap[keyof api_v1alpha1_explorer_entities_pb.ExportFormatMap];
+  setFormat(value: api_v1alpha1_explorer_entities_pb.ExportFormatMap[keyof api_v1alpha1_explorer_entities_pb.ExportFormatMap]): void;
+
   getQueryCase(): QueryRequest.QueryCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryRequest.AsObject;
@@ -113,6 +127,7 @@ export namespace QueryRequest {
     pipelineParameters?: api_v1alpha1_explorer_entities_pb.Parameters.AsObject,
     uiTraceId: string,
     comment: string,
+    format: api_v1alpha1_explorer_entities_pb.ExportFormatMap[keyof api_v1alpha1_explorer_entities_pb.ExportFormatMap],
   }
 
   export enum QueryCase {
