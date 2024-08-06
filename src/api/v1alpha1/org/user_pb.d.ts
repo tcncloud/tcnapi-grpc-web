@@ -2449,6 +2449,9 @@ export class GetUserSessionDataResponse extends jspb.Message {
   getLocalePreferences(): api_commons_org_preferences_pb.LocalePreferences | undefined;
   setLocalePreferences(value?: api_commons_org_preferences_pb.LocalePreferences): void;
 
+  getBillingId(): string;
+  setBillingId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserSessionDataResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserSessionDataResponse): GetUserSessionDataResponse.AsObject;
@@ -2468,6 +2471,7 @@ export namespace GetUserSessionDataResponse {
     labelsList: Array<api_commons_org_labels_pb.Label.AsObject>,
     orgAllowedMfa: boolean,
     localePreferences?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
+    billingId: string,
   }
 
   export class User extends jspb.Message {
