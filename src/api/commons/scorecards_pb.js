@@ -8126,7 +8126,8 @@ proto.api.commons.CategoryType = {
  */
 proto.api.commons.EvaluationType = {
   EVALUATE_MANUAL: 0,
-  EVALUATE_AUTO: 1
+  EVALUATE_AUTO: 1,
+  EVALUATE_SMART: 2
 };
 
 /**
