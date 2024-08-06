@@ -95,6 +95,33 @@ type TranslationsServiceTestSystemMessage = {
   readonly responseType: typeof services_translations_v1alpha1_entities_pb.TestSystemMessageResponse;
 };
 
+type TranslationsServiceEnableContext = {
+  readonly methodName: string;
+  readonly service: typeof TranslationsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_translations_v1alpha1_entities_pb.EnableContextRequest;
+  readonly responseType: typeof services_translations_v1alpha1_entities_pb.EnableContextResponse;
+};
+
+type TranslationsServiceDisableContext = {
+  readonly methodName: string;
+  readonly service: typeof TranslationsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_translations_v1alpha1_entities_pb.DisableContextRequest;
+  readonly responseType: typeof services_translations_v1alpha1_entities_pb.DisableContextResponse;
+};
+
+type TranslationsServiceBulkDeleteTranslations = {
+  readonly methodName: string;
+  readonly service: typeof TranslationsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsRequest;
+  readonly responseType: typeof services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsResponse;
+};
+
 export class TranslationsService {
   static readonly serviceName: string;
   static readonly TranslateTemplate: TranslationsServiceTranslateTemplate;
@@ -107,6 +134,9 @@ export class TranslationsService {
   static readonly SetSystemMessage: TranslationsServiceSetSystemMessage;
   static readonly GetSystemMessage: TranslationsServiceGetSystemMessage;
   static readonly TestSystemMessage: TranslationsServiceTestSystemMessage;
+  static readonly EnableContext: TranslationsServiceEnableContext;
+  static readonly DisableContext: TranslationsServiceDisableContext;
+  static readonly BulkDeleteTranslations: TranslationsServiceBulkDeleteTranslations;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -230,6 +260,33 @@ export class TranslationsServiceClient {
   testSystemMessage(
     requestMessage: services_translations_v1alpha1_entities_pb.TestSystemMessageRequest,
     callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.TestSystemMessageResponse|null) => void
+  ): UnaryResponse;
+  enableContext(
+    requestMessage: services_translations_v1alpha1_entities_pb.EnableContextRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.EnableContextResponse|null) => void
+  ): UnaryResponse;
+  enableContext(
+    requestMessage: services_translations_v1alpha1_entities_pb.EnableContextRequest,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.EnableContextResponse|null) => void
+  ): UnaryResponse;
+  disableContext(
+    requestMessage: services_translations_v1alpha1_entities_pb.DisableContextRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.DisableContextResponse|null) => void
+  ): UnaryResponse;
+  disableContext(
+    requestMessage: services_translations_v1alpha1_entities_pb.DisableContextRequest,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.DisableContextResponse|null) => void
+  ): UnaryResponse;
+  bulkDeleteTranslations(
+    requestMessage: services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsResponse|null) => void
+  ): UnaryResponse;
+  bulkDeleteTranslations(
+    requestMessage: services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsResponse|null) => void
   ): UnaryResponse;
 }
 

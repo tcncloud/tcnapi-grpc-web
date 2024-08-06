@@ -101,6 +101,33 @@ TranslationsService.TestSystemMessage = {
   responseType: services_translations_v1alpha1_entities_pb.TestSystemMessageResponse
 };
 
+TranslationsService.EnableContext = {
+  methodName: "EnableContext",
+  service: TranslationsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_translations_v1alpha1_entities_pb.EnableContextRequest,
+  responseType: services_translations_v1alpha1_entities_pb.EnableContextResponse
+};
+
+TranslationsService.DisableContext = {
+  methodName: "DisableContext",
+  service: TranslationsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_translations_v1alpha1_entities_pb.DisableContextRequest,
+  responseType: services_translations_v1alpha1_entities_pb.DisableContextResponse
+};
+
+TranslationsService.BulkDeleteTranslations = {
+  methodName: "BulkDeleteTranslations",
+  service: TranslationsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsRequest,
+  responseType: services_translations_v1alpha1_entities_pb.BulkDeleteTranslationsResponse
+};
+
 exports.TranslationsService = TranslationsService;
 
 function TranslationsServiceClient(serviceHost, options) {
@@ -392,6 +419,99 @@ TranslationsServiceClient.prototype.testSystemMessage = function testSystemMessa
     callback = arguments[1];
   }
   var client = grpc.unary(TranslationsService.TestSystemMessage, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TranslationsServiceClient.prototype.enableContext = function enableContext(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(TranslationsService.EnableContext, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TranslationsServiceClient.prototype.disableContext = function disableContext(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(TranslationsService.DisableContext, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TranslationsServiceClient.prototype.bulkDeleteTranslations = function bulkDeleteTranslations(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(TranslationsService.BulkDeleteTranslations, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

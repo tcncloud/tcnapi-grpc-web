@@ -2,6 +2,7 @@
 // file: services/translations/v1alpha1/entities.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class Translation extends jspb.Message {
   getTranslationId(): string;
@@ -22,6 +23,11 @@ export class Translation extends jspb.Message {
   getManualTranslation(): string;
   setManualTranslation(value: string): void;
 
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): void;
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Translation.AsObject;
   static toObject(includeInstance: boolean, msg: Translation): Translation.AsObject;
@@ -40,6 +46,59 @@ export namespace Translation {
     languageTag: string,
     llmTranslation: string,
     manualTranslation: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class LocalizationLanguage extends jspb.Message {
+  getLanguageTag(): string;
+  setLanguageTag(value: string): void;
+
+  getEnglishName(): string;
+  setEnglishName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LocalizationLanguage.AsObject;
+  static toObject(includeInstance: boolean, msg: LocalizationLanguage): LocalizationLanguage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LocalizationLanguage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LocalizationLanguage;
+  static deserializeBinaryFromReader(message: LocalizationLanguage, reader: jspb.BinaryReader): LocalizationLanguage;
+}
+
+export namespace LocalizationLanguage {
+  export type AsObject = {
+    languageTag: string,
+    englishName: string,
+  }
+}
+
+export class LocalizationContext extends jspb.Message {
+  getContext(): string;
+  setContext(value: string): void;
+
+  getSystemMessage(): string;
+  setSystemMessage(value: string): void;
+
+  getEnabled(): boolean;
+  setEnabled(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LocalizationContext.AsObject;
+  static toObject(includeInstance: boolean, msg: LocalizationContext): LocalizationContext.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LocalizationContext, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LocalizationContext;
+  static deserializeBinaryFromReader(message: LocalizationContext, reader: jspb.BinaryReader): LocalizationContext;
+}
+
+export namespace LocalizationContext {
+  export type AsObject = {
+    context: string,
+    systemMessage: string,
+    enabled: boolean,
   }
 }
 
@@ -447,6 +506,11 @@ export class ListContextsResponse extends jspb.Message {
   setContextsList(value: Array<string>): void;
   addContexts(value: string, index?: number): string;
 
+  clearLocalizationContextsList(): void;
+  getLocalizationContextsList(): Array<LocalizationContext>;
+  setLocalizationContextsList(value: Array<LocalizationContext>): void;
+  addLocalizationContexts(value?: LocalizationContext, index?: number): LocalizationContext;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContextsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListContextsResponse): ListContextsResponse.AsObject;
@@ -460,30 +524,117 @@ export class ListContextsResponse extends jspb.Message {
 export namespace ListContextsResponse {
   export type AsObject = {
     contextsList: Array<string>,
+    localizationContextsList: Array<LocalizationContext.AsObject>,
   }
 }
 
-export class LocalizationLanguage extends jspb.Message {
-  getLanguageTag(): string;
-  setLanguageTag(value: string): void;
-
-  getEnglishName(): string;
-  setEnglishName(value: string): void;
+export class EnableContextRequest extends jspb.Message {
+  getContext(): string;
+  setContext(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LocalizationLanguage.AsObject;
-  static toObject(includeInstance: boolean, msg: LocalizationLanguage): LocalizationLanguage.AsObject;
+  toObject(includeInstance?: boolean): EnableContextRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableContextRequest): EnableContextRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: LocalizationLanguage, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LocalizationLanguage;
-  static deserializeBinaryFromReader(message: LocalizationLanguage, reader: jspb.BinaryReader): LocalizationLanguage;
+  static serializeBinaryToWriter(message: EnableContextRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableContextRequest;
+  static deserializeBinaryFromReader(message: EnableContextRequest, reader: jspb.BinaryReader): EnableContextRequest;
 }
 
-export namespace LocalizationLanguage {
+export namespace EnableContextRequest {
   export type AsObject = {
-    languageTag: string,
-    englishName: string,
+    context: string,
+  }
+}
+
+export class EnableContextResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnableContextResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableContextResponse): EnableContextResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EnableContextResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableContextResponse;
+  static deserializeBinaryFromReader(message: EnableContextResponse, reader: jspb.BinaryReader): EnableContextResponse;
+}
+
+export namespace EnableContextResponse {
+  export type AsObject = {
+  }
+}
+
+export class DisableContextRequest extends jspb.Message {
+  getContext(): string;
+  setContext(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DisableContextRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DisableContextRequest): DisableContextRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DisableContextRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DisableContextRequest;
+  static deserializeBinaryFromReader(message: DisableContextRequest, reader: jspb.BinaryReader): DisableContextRequest;
+}
+
+export namespace DisableContextRequest {
+  export type AsObject = {
+    context: string,
+  }
+}
+
+export class DisableContextResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DisableContextResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DisableContextResponse): DisableContextResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DisableContextResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DisableContextResponse;
+  static deserializeBinaryFromReader(message: DisableContextResponse, reader: jspb.BinaryReader): DisableContextResponse;
+}
+
+export namespace DisableContextResponse {
+  export type AsObject = {
+  }
+}
+
+export class BulkDeleteTranslationsRequest extends jspb.Message {
+  clearTranslationIdsList(): void;
+  getTranslationIdsList(): Array<string>;
+  setTranslationIdsList(value: Array<string>): void;
+  addTranslationIds(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkDeleteTranslationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkDeleteTranslationsRequest): BulkDeleteTranslationsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkDeleteTranslationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkDeleteTranslationsRequest;
+  static deserializeBinaryFromReader(message: BulkDeleteTranslationsRequest, reader: jspb.BinaryReader): BulkDeleteTranslationsRequest;
+}
+
+export namespace BulkDeleteTranslationsRequest {
+  export type AsObject = {
+    translationIdsList: Array<string>,
+  }
+}
+
+export class BulkDeleteTranslationsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkDeleteTranslationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkDeleteTranslationsResponse): BulkDeleteTranslationsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BulkDeleteTranslationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkDeleteTranslationsResponse;
+  static deserializeBinaryFromReader(message: BulkDeleteTranslationsResponse, reader: jspb.BinaryReader): BulkDeleteTranslationsResponse;
+}
+
+export namespace BulkDeleteTranslationsResponse {
+  export type AsObject = {
   }
 }
 
