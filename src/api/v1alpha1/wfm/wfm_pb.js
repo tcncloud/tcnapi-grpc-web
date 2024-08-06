@@ -91189,7 +91189,8 @@ red: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
 green: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
 blue: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
 alpha: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-name: jspb.Message.getFieldWithDefault(msg, 5, "")
+name: jspb.Message.getFieldWithDefault(msg, 5, ""),
+rgbaColorId: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -91245,6 +91246,10 @@ proto.api.v1alpha1.wfm.RgbaColor.deserializeBinaryFromReader = function(msg, rea
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setRgbaColorId(value);
       break;
     default:
       reader.skipField();
@@ -91307,6 +91312,13 @@ proto.api.v1alpha1.wfm.RgbaColor.serializeBinaryToWriter = function(message, wri
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getRgbaColorId();
+  if (f !== 0) {
+    writer.writeInt64(
+      6,
       f
     );
   }
@@ -91400,6 +91412,24 @@ proto.api.v1alpha1.wfm.RgbaColor.prototype.getName = function() {
  */
 proto.api.v1alpha1.wfm.RgbaColor.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional int64 rgba_color_id = 6;
+ * @return {number}
+ */
+proto.api.v1alpha1.wfm.RgbaColor.prototype.getRgbaColorId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.wfm.RgbaColor} returns this
+ */
+proto.api.v1alpha1.wfm.RgbaColor.prototype.setRgbaColorId = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
