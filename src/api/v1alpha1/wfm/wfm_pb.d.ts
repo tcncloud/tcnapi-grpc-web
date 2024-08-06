@@ -9492,6 +9492,66 @@ export namespace ListShiftInstanceSidsForAgentRes {
   }
 }
 
+export class ListShiftInstanceSidsForScheduleRequest extends jspb.Message {
+  hasScheduleSelector(): boolean;
+  clearScheduleSelector(): void;
+  getScheduleSelector(): api_commons_wfm_pb.ScheduleSelector | undefined;
+  setScheduleSelector(value?: api_commons_wfm_pb.ScheduleSelector): void;
+
+  hasDatetimeRange(): boolean;
+  clearDatetimeRange(): void;
+  getDatetimeRange(): api_commons_wfm_pb.DatetimeRange | undefined;
+  setDatetimeRange(value?: api_commons_wfm_pb.DatetimeRange): void;
+
+  hasNodeSelector(): boolean;
+  clearNodeSelector(): void;
+  getNodeSelector(): ParentEntity | undefined;
+  setNodeSelector(value?: ParentEntity): void;
+
+  getScheduleScenarioSid(): number;
+  setScheduleScenarioSid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListShiftInstanceSidsForScheduleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListShiftInstanceSidsForScheduleRequest): ListShiftInstanceSidsForScheduleRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListShiftInstanceSidsForScheduleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListShiftInstanceSidsForScheduleRequest;
+  static deserializeBinaryFromReader(message: ListShiftInstanceSidsForScheduleRequest, reader: jspb.BinaryReader): ListShiftInstanceSidsForScheduleRequest;
+}
+
+export namespace ListShiftInstanceSidsForScheduleRequest {
+  export type AsObject = {
+    scheduleSelector?: api_commons_wfm_pb.ScheduleSelector.AsObject,
+    datetimeRange?: api_commons_wfm_pb.DatetimeRange.AsObject,
+    nodeSelector?: ParentEntity.AsObject,
+    scheduleScenarioSid: number,
+  }
+}
+
+export class ListShiftInstanceSidsForScheduleResponse extends jspb.Message {
+  clearShiftInstanceSidsList(): void;
+  getShiftInstanceSidsList(): Array<number>;
+  setShiftInstanceSidsList(value: Array<number>): void;
+  addShiftInstanceSids(value: number, index?: number): number;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListShiftInstanceSidsForScheduleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListShiftInstanceSidsForScheduleResponse): ListShiftInstanceSidsForScheduleResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListShiftInstanceSidsForScheduleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListShiftInstanceSidsForScheduleResponse;
+  static deserializeBinaryFromReader(message: ListShiftInstanceSidsForScheduleResponse, reader: jspb.BinaryReader): ListShiftInstanceSidsForScheduleResponse;
+}
+
+export namespace ListShiftInstanceSidsForScheduleResponse {
+  export type AsObject = {
+    shiftInstanceSidsList: Array<number>,
+  }
+}
+
 export class ListShiftSegmentsByShiftInstanceSidsReq extends jspb.Message {
   clearShiftInstanceSidsList(): void;
   getShiftInstanceSidsList(): Array<number>;
