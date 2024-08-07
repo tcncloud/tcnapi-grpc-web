@@ -1704,3 +1704,20 @@ export namespace EntityRef {
   }
 }
 
+export interface ActionTypesMap {
+  NA: 0;
+  CALLBACK: 1;
+  EMAILBACK: 2;
+  SMSBACK: 3;
+}
+
+export const ActionTypes: ActionTypesMap;
+
+export interface SLAConditionsMap {
+  NONE: 0;
+  RESPOND: 1;
+  RESOLVE: 2;
+}
+
+export const SLAConditions: SLAConditionsMap;
+
