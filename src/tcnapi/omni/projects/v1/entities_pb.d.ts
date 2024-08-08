@@ -107,3 +107,51 @@ export namespace CreateProjectRequest {
   }
 }
 
+export class UpdateProjectRequest extends jspb.Message {
+  hasProject(): boolean;
+  clearProject(): void;
+  getProject(): tcnapi_omni_projects_v1_projects_pb.Project | undefined;
+  setProject(value?: tcnapi_omni_projects_v1_projects_pb.Project): void;
+
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): void;
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateProjectRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateProjectRequest): UpdateProjectRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateProjectRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateProjectRequest;
+  static deserializeBinaryFromReader(message: UpdateProjectRequest, reader: jspb.BinaryReader): UpdateProjectRequest;
+}
+
+export namespace UpdateProjectRequest {
+  export type AsObject = {
+    project?: tcnapi_omni_projects_v1_projects_pb.Project.AsObject,
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class DeleteProjectRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteProjectRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteProjectRequest): DeleteProjectRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteProjectRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteProjectRequest;
+  static deserializeBinaryFromReader(message: DeleteProjectRequest, reader: jspb.BinaryReader): DeleteProjectRequest;
+}
+
+export namespace DeleteProjectRequest {
+  export type AsObject = {
+    name: string,
+  }
+}
+

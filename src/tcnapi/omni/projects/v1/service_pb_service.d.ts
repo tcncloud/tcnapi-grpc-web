@@ -33,11 +33,31 @@ type ProjectsCreateProject = {
   readonly responseType: typeof tcnapi_omni_projects_v1_projects_pb.Project;
 };
 
+type ProjectsUpdateProject = {
+  readonly methodName: string;
+  readonly service: typeof Projects;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof tcnapi_omni_projects_v1_entities_pb.UpdateProjectRequest;
+  readonly responseType: typeof tcnapi_omni_projects_v1_projects_pb.Project;
+};
+
+type ProjectsDeleteProject = {
+  readonly methodName: string;
+  readonly service: typeof Projects;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof tcnapi_omni_projects_v1_entities_pb.DeleteProjectRequest;
+  readonly responseType: typeof tcnapi_omni_projects_v1_projects_pb.Project;
+};
+
 export class Projects {
   static readonly serviceName: string;
   static readonly ListProjects: ProjectsListProjects;
   static readonly GetProject: ProjectsGetProject;
   static readonly CreateProject: ProjectsCreateProject;
+  static readonly UpdateProject: ProjectsUpdateProject;
+  static readonly DeleteProject: ProjectsDeleteProject;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -97,6 +117,24 @@ export class ProjectsClient {
   ): UnaryResponse;
   createProject(
     requestMessage: tcnapi_omni_projects_v1_entities_pb.CreateProjectRequest,
+    callback: (error: ServiceError|null, responseMessage: tcnapi_omni_projects_v1_projects_pb.Project|null) => void
+  ): UnaryResponse;
+  updateProject(
+    requestMessage: tcnapi_omni_projects_v1_entities_pb.UpdateProjectRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: tcnapi_omni_projects_v1_projects_pb.Project|null) => void
+  ): UnaryResponse;
+  updateProject(
+    requestMessage: tcnapi_omni_projects_v1_entities_pb.UpdateProjectRequest,
+    callback: (error: ServiceError|null, responseMessage: tcnapi_omni_projects_v1_projects_pb.Project|null) => void
+  ): UnaryResponse;
+  deleteProject(
+    requestMessage: tcnapi_omni_projects_v1_entities_pb.DeleteProjectRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: tcnapi_omni_projects_v1_projects_pb.Project|null) => void
+  ): UnaryResponse;
+  deleteProject(
+    requestMessage: tcnapi_omni_projects_v1_entities_pb.DeleteProjectRequest,
     callback: (error: ServiceError|null, responseMessage: tcnapi_omni_projects_v1_projects_pb.Project|null) => void
   ): UnaryResponse;
 }
