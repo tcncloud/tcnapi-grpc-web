@@ -1827,7 +1827,8 @@ assignSelf: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
 assignOther: jspb.Message.getFieldWithDefault(msg, 14, ""),
 ticketActionList: jspb.Message.toObjectList(msg.getTicketActionList(),
     api_commons_tickets_pb.TicketAction.toObject, includeInstance),
-ticketAssigneeList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f
+ticketAssigneeList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
+contactEntryId: jspb.Message.getFieldWithDefault(msg, 17, "0")
   };
 
   if (includeInstance) {
@@ -1916,6 +1917,10 @@ proto.api.v1alpha1.tickets.CreateTicketReq.deserializeBinaryFromReader = functio
     case 16:
       var value = /** @type {string} */ (reader.readString());
       msg.addTicketAssignee(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setContactEntryId(value);
       break;
     default:
       reader.skipField();
@@ -2032,6 +2037,13 @@ proto.api.v1alpha1.tickets.CreateTicketReq.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writeRepeatedString(
       16,
+      f
+    );
+  }
+  f = message.getContactEntryId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      17,
       f
     );
   }
@@ -2369,6 +2381,24 @@ proto.api.v1alpha1.tickets.CreateTicketReq.prototype.addTicketAssignee = functio
  */
 proto.api.v1alpha1.tickets.CreateTicketReq.prototype.clearTicketAssigneeList = function() {
   return this.setTicketAssigneeList([]);
+};
+
+
+/**
+ * optional int64 contact_entry_id = 17;
+ * @return {string}
+ */
+proto.api.v1alpha1.tickets.CreateTicketReq.prototype.getContactEntryId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.tickets.CreateTicketReq} returns this
+ */
+proto.api.v1alpha1.tickets.CreateTicketReq.prototype.setContactEntryId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 17, value);
 };
 
 
@@ -4787,7 +4817,8 @@ ticketSid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 editValue: (f = msg.getEditValue()) && api_commons_tickets_pb.Ticket.toObject(includeInstance, f),
 editedFieldsMaskList: jspb.Message.toObjectList(msg.getEditedFieldsMaskList(),
     google_protobuf_field_mask_pb.FieldMask.toObject, includeInstance),
-ticketCode: jspb.Message.getFieldWithDefault(msg, 4, "")
+ticketCode: jspb.Message.getFieldWithDefault(msg, 4, ""),
+contactEntryId: jspb.Message.getFieldWithDefault(msg, 5, "0")
   };
 
   if (includeInstance) {
@@ -4841,6 +4872,10 @@ proto.api.v1alpha1.tickets.EditMaskTicketReq.deserializeBinaryFromReader = funct
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setTicketCode(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readInt64String());
+      msg.setContactEntryId(value);
       break;
     default:
       reader.skipField();
@@ -4898,6 +4933,13 @@ proto.api.v1alpha1.tickets.EditMaskTicketReq.serializeBinaryToWriter = function(
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getContactEntryId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
+      5,
       f
     );
   }
@@ -5012,6 +5054,24 @@ proto.api.v1alpha1.tickets.EditMaskTicketReq.prototype.getTicketCode = function(
  */
 proto.api.v1alpha1.tickets.EditMaskTicketReq.prototype.setTicketCode = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional int64 contact_entry_id = 5;
+ * @return {string}
+ */
+proto.api.v1alpha1.tickets.EditMaskTicketReq.prototype.getContactEntryId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.tickets.EditMaskTicketReq} returns this
+ */
+proto.api.v1alpha1.tickets.EditMaskTicketReq.prototype.setContactEntryId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 5, value);
 };
 
 

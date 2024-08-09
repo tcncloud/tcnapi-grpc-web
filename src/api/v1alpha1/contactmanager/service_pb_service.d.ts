@@ -68,6 +68,15 @@ type ContactManagerEditContactEntry = {
   readonly responseType: typeof api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryResponse;
 };
 
+type ContactManagerListContactsByEntity = {
+  readonly methodName: string;
+  readonly service: typeof ContactManager;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_contactmanager_contactmanager_pb.ListContactsByEntityRequest;
+  readonly responseType: typeof api_v1alpha1_contactmanager_contactmanager_pb.ListContactsByEntityResponse;
+};
+
 export class ContactManager {
   static readonly serviceName: string;
   static readonly GetContactList: ContactManagerGetContactList;
@@ -77,6 +86,7 @@ export class ContactManager {
   static readonly GetKYCKeys: ContactManagerGetKYCKeys;
   static readonly AddContactEntry: ContactManagerAddContactEntry;
   static readonly EditContactEntry: ContactManagerEditContactEntry;
+  static readonly ListContactsByEntity: ContactManagerListContactsByEntity;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -173,6 +183,15 @@ export class ContactManagerClient {
   editContactEntry(
     requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.EditContactEntryResponse|null) => void
+  ): UnaryResponse;
+  listContactsByEntity(
+    requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.ListContactsByEntityRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.ListContactsByEntityResponse|null) => void
+  ): UnaryResponse;
+  listContactsByEntity(
+    requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.ListContactsByEntityRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.ListContactsByEntityResponse|null) => void
   ): UnaryResponse;
 }
 
