@@ -13,6 +13,15 @@ type PBXServiceListPBXUsers = {
   readonly responseType: typeof services_pbx_v2_service_pb.ListPBXUsersResponse;
 };
 
+type PBXServiceGetDialUrlByExtension = {
+  readonly methodName: string;
+  readonly service: typeof PBXService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_pbx_v2_service_pb.GetDialUrlByExtensionRequest;
+  readonly responseType: typeof services_pbx_v2_service_pb.GetDialUrlByExtensionResponse;
+};
+
 type PBXServiceGetPBXUser = {
   readonly methodName: string;
   readonly service: typeof PBXService;
@@ -20,6 +29,15 @@ type PBXServiceGetPBXUser = {
   readonly responseStream: false;
   readonly requestType: typeof services_pbx_v2_service_pb.GetPBXUserRequest;
   readonly responseType: typeof services_pbx_v2_service_pb.GetPBXUserResponse;
+};
+
+type PBXServiceListActivePBXProfiles = {
+  readonly methodName: string;
+  readonly service: typeof PBXService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_pbx_v2_service_pb.ListActivePBXProfilesRequest;
+  readonly responseType: typeof services_pbx_v2_service_pb.ListActivePBXProfilesResponse;
 };
 
 type PBXServiceListRingGroups = {
@@ -106,7 +124,9 @@ type PBXServiceAssignRandomExtension = {
 export class PBXService {
   static readonly serviceName: string;
   static readonly ListPBXUsers: PBXServiceListPBXUsers;
+  static readonly GetDialUrlByExtension: PBXServiceGetDialUrlByExtension;
   static readonly GetPBXUser: PBXServiceGetPBXUser;
+  static readonly ListActivePBXProfiles: PBXServiceListActivePBXProfiles;
   static readonly ListRingGroups: PBXServiceListRingGroups;
   static readonly GetRingGroup: PBXServiceGetRingGroup;
   static readonly GetSIPAccount: PBXServiceGetSIPAccount;
@@ -159,6 +179,15 @@ export class PBXServiceClient {
     requestMessage: services_pbx_v2_service_pb.ListPBXUsersRequest,
     callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.ListPBXUsersResponse|null) => void
   ): UnaryResponse;
+  getDialUrlByExtension(
+    requestMessage: services_pbx_v2_service_pb.GetDialUrlByExtensionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.GetDialUrlByExtensionResponse|null) => void
+  ): UnaryResponse;
+  getDialUrlByExtension(
+    requestMessage: services_pbx_v2_service_pb.GetDialUrlByExtensionRequest,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.GetDialUrlByExtensionResponse|null) => void
+  ): UnaryResponse;
   getPBXUser(
     requestMessage: services_pbx_v2_service_pb.GetPBXUserRequest,
     metadata: grpc.Metadata,
@@ -167,6 +196,15 @@ export class PBXServiceClient {
   getPBXUser(
     requestMessage: services_pbx_v2_service_pb.GetPBXUserRequest,
     callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.GetPBXUserResponse|null) => void
+  ): UnaryResponse;
+  listActivePBXProfiles(
+    requestMessage: services_pbx_v2_service_pb.ListActivePBXProfilesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.ListActivePBXProfilesResponse|null) => void
+  ): UnaryResponse;
+  listActivePBXProfiles(
+    requestMessage: services_pbx_v2_service_pb.ListActivePBXProfilesRequest,
+    callback: (error: ServiceError|null, responseMessage: services_pbx_v2_service_pb.ListActivePBXProfilesResponse|null) => void
   ): UnaryResponse;
   listRingGroups(
     requestMessage: services_pbx_v2_service_pb.ListRingGroupsRequest,

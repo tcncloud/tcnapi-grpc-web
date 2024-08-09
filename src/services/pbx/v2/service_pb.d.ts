@@ -116,6 +116,30 @@ export namespace RingGroup {
   }
 }
 
+export class PBXProfile extends jspb.Message {
+  getExtension$(): string;
+  setExtension$(value: string): void;
+
+  getDisplayName(): string;
+  setDisplayName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PBXProfile.AsObject;
+  static toObject(includeInstance: boolean, msg: PBXProfile): PBXProfile.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PBXProfile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PBXProfile;
+  static deserializeBinaryFromReader(message: PBXProfile, reader: jspb.BinaryReader): PBXProfile;
+}
+
+export namespace PBXProfile {
+  export type AsObject = {
+    extension: string,
+    displayName: string,
+  }
+}
+
 export class ListPBXUsersRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPBXUsersRequest.AsObject;
@@ -151,6 +175,46 @@ export class ListPBXUsersResponse extends jspb.Message {
 export namespace ListPBXUsersResponse {
   export type AsObject = {
     usersList: Array<PBXUser.AsObject>,
+  }
+}
+
+export class GetDialUrlByExtensionRequest extends jspb.Message {
+  getExtension$(): string;
+  setExtension$(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDialUrlByExtensionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDialUrlByExtensionRequest): GetDialUrlByExtensionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDialUrlByExtensionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDialUrlByExtensionRequest;
+  static deserializeBinaryFromReader(message: GetDialUrlByExtensionRequest, reader: jspb.BinaryReader): GetDialUrlByExtensionRequest;
+}
+
+export namespace GetDialUrlByExtensionRequest {
+  export type AsObject = {
+    extension: string,
+  }
+}
+
+export class GetDialUrlByExtensionResponse extends jspb.Message {
+  getDialUrl(): string;
+  setDialUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDialUrlByExtensionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDialUrlByExtensionResponse): GetDialUrlByExtensionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDialUrlByExtensionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDialUrlByExtensionResponse;
+  static deserializeBinaryFromReader(message: GetDialUrlByExtensionResponse, reader: jspb.BinaryReader): GetDialUrlByExtensionResponse;
+}
+
+export namespace GetDialUrlByExtensionResponse {
+  export type AsObject = {
+    dialUrl: string,
   }
 }
 
@@ -273,6 +337,44 @@ export class GetPBXUserResponse extends jspb.Message {
 export namespace GetPBXUserResponse {
   export type AsObject = {
     user?: PBXUser.AsObject,
+  }
+}
+
+export class ListActivePBXProfilesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListActivePBXProfilesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListActivePBXProfilesRequest): ListActivePBXProfilesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListActivePBXProfilesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListActivePBXProfilesRequest;
+  static deserializeBinaryFromReader(message: ListActivePBXProfilesRequest, reader: jspb.BinaryReader): ListActivePBXProfilesRequest;
+}
+
+export namespace ListActivePBXProfilesRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListActivePBXProfilesResponse extends jspb.Message {
+  clearProfilesList(): void;
+  getProfilesList(): Array<PBXProfile>;
+  setProfilesList(value: Array<PBXProfile>): void;
+  addProfiles(value?: PBXProfile, index?: number): PBXProfile;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListActivePBXProfilesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListActivePBXProfilesResponse): ListActivePBXProfilesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListActivePBXProfilesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListActivePBXProfilesResponse;
+  static deserializeBinaryFromReader(message: ListActivePBXProfilesResponse, reader: jspb.BinaryReader): ListActivePBXProfilesResponse;
+}
+
+export namespace ListActivePBXProfilesResponse {
+  export type AsObject = {
+    profilesList: Array<PBXProfile.AsObject>,
   }
 }
 

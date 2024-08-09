@@ -19,6 +19,15 @@ PBXService.ListPBXUsers = {
   responseType: services_pbx_v2_service_pb.ListPBXUsersResponse
 };
 
+PBXService.GetDialUrlByExtension = {
+  methodName: "GetDialUrlByExtension",
+  service: PBXService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_pbx_v2_service_pb.GetDialUrlByExtensionRequest,
+  responseType: services_pbx_v2_service_pb.GetDialUrlByExtensionResponse
+};
+
 PBXService.GetPBXUser = {
   methodName: "GetPBXUser",
   service: PBXService,
@@ -26,6 +35,15 @@ PBXService.GetPBXUser = {
   responseStream: false,
   requestType: services_pbx_v2_service_pb.GetPBXUserRequest,
   responseType: services_pbx_v2_service_pb.GetPBXUserResponse
+};
+
+PBXService.ListActivePBXProfiles = {
+  methodName: "ListActivePBXProfiles",
+  service: PBXService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_pbx_v2_service_pb.ListActivePBXProfilesRequest,
+  responseType: services_pbx_v2_service_pb.ListActivePBXProfilesResponse
 };
 
 PBXService.ListRingGroups = {
@@ -147,11 +165,73 @@ PBXServiceClient.prototype.listPBXUsers = function listPBXUsers(requestMessage, 
   };
 };
 
+PBXServiceClient.prototype.getDialUrlByExtension = function getDialUrlByExtension(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(PBXService.GetDialUrlByExtension, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 PBXServiceClient.prototype.getPBXUser = function getPBXUser(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(PBXService.GetPBXUser, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+PBXServiceClient.prototype.listActivePBXProfiles = function listActivePBXProfiles(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(PBXService.ListActivePBXProfiles, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
