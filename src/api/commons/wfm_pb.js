@@ -6976,7 +6976,7 @@ proto.api.commons.ConfigEntity.prototype.toObject = function(opt_includeInstance
  */
 proto.api.commons.ConfigEntity.toObject = function(includeInstance, msg) {
   var f, obj = {
-entitySid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+entitySid: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 entityType: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
@@ -7015,7 +7015,7 @@ proto.api.commons.ConfigEntity.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setEntitySid(value);
       break;
     case 2:
@@ -7052,8 +7052,8 @@ proto.api.commons.ConfigEntity.prototype.serializeBinary = function() {
 proto.api.commons.ConfigEntity.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getEntitySid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -7070,19 +7070,19 @@ proto.api.commons.ConfigEntity.serializeBinaryToWriter = function(message, write
 
 /**
  * optional int64 entity_sid = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.ConfigEntity.prototype.getEntitySid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.ConfigEntity} returns this
  */
 proto.api.commons.ConfigEntity.prototype.setEntitySid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -7136,7 +7136,7 @@ proto.api.commons.AdherenceRuleNotificationConfig.prototype.toObject = function(
  */
 proto.api.commons.AdherenceRuleNotificationConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-adherenceRuleNotificationConfigId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+adherenceRuleNotificationConfigId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 name: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -7175,7 +7175,7 @@ proto.api.commons.AdherenceRuleNotificationConfig.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAdherenceRuleNotificationConfigId(value);
       break;
     case 2:
@@ -7212,8 +7212,8 @@ proto.api.commons.AdherenceRuleNotificationConfig.prototype.serializeBinary = fu
 proto.api.commons.AdherenceRuleNotificationConfig.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAdherenceRuleNotificationConfigId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -7230,19 +7230,19 @@ proto.api.commons.AdherenceRuleNotificationConfig.serializeBinaryToWriter = func
 
 /**
  * optional int64 adherence_rule_notification_config_id = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.AdherenceRuleNotificationConfig.prototype.getAdherenceRuleNotificationConfigId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.AdherenceRuleNotificationConfig} returns this
  */
 proto.api.commons.AdherenceRuleNotificationConfig.prototype.setAdherenceRuleNotificationConfigId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -7296,8 +7296,8 @@ proto.api.commons.AdherenceRuleNotificationConfigEntry.prototype.toObject = func
  */
 proto.api.commons.AdherenceRuleNotificationConfigEntry.toObject = function(includeInstance, msg) {
   var f, obj = {
-adherenceRuleNotificationConfigEntryId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-adherenceRuleNotificationConfigId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+adherenceRuleNotificationConfigEntryId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+adherenceRuleNotificationConfigId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
 recipientUserId: jspb.Message.getFieldWithDefault(msg, 3, ""),
 notificationMedium: jspb.Message.getFieldWithDefault(msg, 4, 0),
 secondsToWaitForNoResponse: jspb.Message.getFieldWithDefault(msg, 5, 0)
@@ -7338,11 +7338,11 @@ proto.api.commons.AdherenceRuleNotificationConfigEntry.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAdherenceRuleNotificationConfigEntryId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAdherenceRuleNotificationConfigId(value);
       break;
     case 3:
@@ -7387,15 +7387,15 @@ proto.api.commons.AdherenceRuleNotificationConfigEntry.prototype.serializeBinary
 proto.api.commons.AdherenceRuleNotificationConfigEntry.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAdherenceRuleNotificationConfigEntryId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
   }
   f = message.getAdherenceRuleNotificationConfigId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       2,
       f
     );
@@ -7426,37 +7426,37 @@ proto.api.commons.AdherenceRuleNotificationConfigEntry.serializeBinaryToWriter =
 
 /**
  * optional int64 adherence_rule_notification_config_entry_id = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.AdherenceRuleNotificationConfigEntry.prototype.getAdherenceRuleNotificationConfigEntryId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.AdherenceRuleNotificationConfigEntry} returns this
  */
 proto.api.commons.AdherenceRuleNotificationConfigEntry.prototype.setAdherenceRuleNotificationConfigEntryId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
 /**
  * optional int64 adherence_rule_notification_config_id = 2;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.AdherenceRuleNotificationConfigEntry.prototype.getAdherenceRuleNotificationConfigId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.AdherenceRuleNotificationConfigEntry} returns this
  */
 proto.api.commons.AdherenceRuleNotificationConfigEntry.prototype.setAdherenceRuleNotificationConfigId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringIntField(this, 2, value);
 };
 
 
@@ -7676,12 +7676,12 @@ proto.api.commons.AdherenceDepartmentalRule.prototype.toObject = function(opt_in
  */
 proto.api.commons.AdherenceDepartmentalRule.toObject = function(includeInstance, msg) {
   var f, obj = {
-adherenceDepartmentalRuleId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+adherenceDepartmentalRuleId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 name: jspb.Message.getFieldWithDefault(msg, 2, ""),
 selectedEntity: (f = msg.getSelectedEntity()) && proto.api.commons.ConfigEntity.toObject(includeInstance, f),
 ruleRequirementType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-adherenceRuleNotificationConfigId: jspb.Message.getFieldWithDefault(msg, 5, 0),
-ruleRange: (f = msg.getRuleRange()) && proto.api.commons.AdherenceDepartmentalRule.toObject(includeInstance, f),
+adherenceRuleNotificationConfigId: jspb.Message.getFieldWithDefault(msg, 5, "0"),
+ruleRange: jspb.Message.getFieldWithDefault(msg, 6, 0),
 customRange: (f = msg.getCustomRange()) && proto.api.commons.DatetimeRange.toObject(includeInstance, f)
   };
 
@@ -7720,7 +7720,7 @@ proto.api.commons.AdherenceDepartmentalRule.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAdherenceDepartmentalRuleId(value);
       break;
     case 2:
@@ -7737,12 +7737,11 @@ proto.api.commons.AdherenceDepartmentalRule.deserializeBinaryFromReader = functi
       msg.setRuleRequirementType(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAdherenceRuleNotificationConfigId(value);
       break;
     case 6:
-      var value = new proto.api.commons.AdherenceDepartmentalRule;
-      reader.readMessage(value,proto.api.commons.AdherenceDepartmentalRule.deserializeBinaryFromReader);
+      var value = /** @type {!proto.api.commons.AdherenceRuleRange} */ (reader.readEnum());
       msg.setRuleRange(value);
       break;
     case 7:
@@ -7780,8 +7779,8 @@ proto.api.commons.AdherenceDepartmentalRule.prototype.serializeBinary = function
 proto.api.commons.AdherenceDepartmentalRule.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAdherenceDepartmentalRuleId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -7809,18 +7808,17 @@ proto.api.commons.AdherenceDepartmentalRule.serializeBinaryToWriter = function(m
     );
   }
   f = message.getAdherenceRuleNotificationConfigId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       5,
       f
     );
   }
   f = message.getRuleRange();
-  if (f != null) {
-    writer.writeMessage(
+  if (f !== 0.0) {
+    writer.writeEnum(
       6,
-      f,
-      proto.api.commons.AdherenceDepartmentalRule.serializeBinaryToWriter
+      f
     );
   }
   f = message.getCustomRange();
@@ -7836,19 +7834,19 @@ proto.api.commons.AdherenceDepartmentalRule.serializeBinaryToWriter = function(m
 
 /**
  * optional int64 adherence_departmental_rule_id = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.AdherenceDepartmentalRule.prototype.getAdherenceDepartmentalRuleId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.AdherenceDepartmentalRule} returns this
  */
 proto.api.commons.AdherenceDepartmentalRule.prototype.setAdherenceDepartmentalRuleId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -7927,56 +7925,37 @@ proto.api.commons.AdherenceDepartmentalRule.prototype.setRuleRequirementType = f
 
 /**
  * optional int64 adherence_rule_notification_config_id = 5;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.AdherenceDepartmentalRule.prototype.getAdherenceRuleNotificationConfigId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.AdherenceDepartmentalRule} returns this
  */
 proto.api.commons.AdherenceDepartmentalRule.prototype.setAdherenceRuleNotificationConfigId = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3StringIntField(this, 5, value);
 };
 
 
 /**
- * optional AdherenceDepartmentalRule rule_range = 6;
- * @return {?proto.api.commons.AdherenceDepartmentalRule}
+ * optional AdherenceRuleRange rule_range = 6;
+ * @return {!proto.api.commons.AdherenceRuleRange}
  */
 proto.api.commons.AdherenceDepartmentalRule.prototype.getRuleRange = function() {
-  return /** @type{?proto.api.commons.AdherenceDepartmentalRule} */ (
-    jspb.Message.getWrapperField(this, proto.api.commons.AdherenceDepartmentalRule, 6));
+  return /** @type {!proto.api.commons.AdherenceRuleRange} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /**
- * @param {?proto.api.commons.AdherenceDepartmentalRule|undefined} value
+ * @param {!proto.api.commons.AdherenceRuleRange} value
  * @return {!proto.api.commons.AdherenceDepartmentalRule} returns this
-*/
+ */
 proto.api.commons.AdherenceDepartmentalRule.prototype.setRuleRange = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.AdherenceDepartmentalRule} returns this
- */
-proto.api.commons.AdherenceDepartmentalRule.prototype.clearRuleRange = function() {
-  return this.setRuleRange(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.AdherenceDepartmentalRule.prototype.hasRuleRange = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.setProto3EnumField(this, 6, value);
 };
 
 
@@ -8049,8 +8028,8 @@ proto.api.commons.AdherenceDepartmentalRuleClause.prototype.toObject = function(
  */
 proto.api.commons.AdherenceDepartmentalRuleClause.toObject = function(includeInstance, msg) {
   var f, obj = {
-adherenceDepartmentalRuleClauseId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-adherenceDepartmentalRuleId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+adherenceDepartmentalRuleClauseId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+adherenceDepartmentalRuleId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
 action: (f = msg.getAction()) && proto.api.commons.AdherenceDepartmentalRuleAction.toObject(includeInstance, f),
 condition: jspb.Message.getFieldWithDefault(msg, 4, 0),
 amount: jspb.Message.getFieldWithDefault(msg, 5, 0),
@@ -8094,11 +8073,11 @@ proto.api.commons.AdherenceDepartmentalRuleClause.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAdherenceDepartmentalRuleClauseId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAdherenceDepartmentalRuleId(value);
       break;
     case 3:
@@ -8157,15 +8136,15 @@ proto.api.commons.AdherenceDepartmentalRuleClause.prototype.serializeBinary = fu
 proto.api.commons.AdherenceDepartmentalRuleClause.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAdherenceDepartmentalRuleClauseId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
   }
   f = message.getAdherenceDepartmentalRuleId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       2,
       f
     );
@@ -8219,37 +8198,37 @@ proto.api.commons.AdherenceDepartmentalRuleClause.serializeBinaryToWriter = func
 
 /**
  * optional int64 adherence_departmental_rule_clause_id = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.AdherenceDepartmentalRuleClause.prototype.getAdherenceDepartmentalRuleClauseId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.AdherenceDepartmentalRuleClause} returns this
  */
 proto.api.commons.AdherenceDepartmentalRuleClause.prototype.setAdherenceDepartmentalRuleClauseId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
 /**
  * optional int64 adherence_departmental_rule_id = 2;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.AdherenceDepartmentalRuleClause.prototype.getAdherenceDepartmentalRuleId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.AdherenceDepartmentalRuleClause} returns this
  */
 proto.api.commons.AdherenceDepartmentalRuleClause.prototype.setAdherenceDepartmentalRuleId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringIntField(this, 2, value);
 };
 
 
@@ -8431,11 +8410,11 @@ proto.api.commons.AdherenceAgentRule.prototype.toObject = function(opt_includeIn
  */
 proto.api.commons.AdherenceAgentRule.toObject = function(includeInstance, msg) {
   var f, obj = {
-adherenceAgentRuleId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+adherenceAgentRuleId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 name: jspb.Message.getFieldWithDefault(msg, 2, ""),
 selectedEntity: (f = msg.getSelectedEntity()) && proto.api.commons.ConfigEntity.toObject(includeInstance, f),
 ruleRequirementType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-adherenceRuleNotificationConfigId: jspb.Message.getFieldWithDefault(msg, 5, 0)
+adherenceRuleNotificationConfigId: jspb.Message.getFieldWithDefault(msg, 5, "0")
   };
 
   if (includeInstance) {
@@ -8473,7 +8452,7 @@ proto.api.commons.AdherenceAgentRule.deserializeBinaryFromReader = function(msg,
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAdherenceAgentRuleId(value);
       break;
     case 2:
@@ -8490,7 +8469,7 @@ proto.api.commons.AdherenceAgentRule.deserializeBinaryFromReader = function(msg,
       msg.setRuleRequirementType(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAdherenceRuleNotificationConfigId(value);
       break;
     default:
@@ -8523,8 +8502,8 @@ proto.api.commons.AdherenceAgentRule.prototype.serializeBinary = function() {
 proto.api.commons.AdherenceAgentRule.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAdherenceAgentRuleId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -8552,8 +8531,8 @@ proto.api.commons.AdherenceAgentRule.serializeBinaryToWriter = function(message,
     );
   }
   f = message.getAdherenceRuleNotificationConfigId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       5,
       f
     );
@@ -8563,19 +8542,19 @@ proto.api.commons.AdherenceAgentRule.serializeBinaryToWriter = function(message,
 
 /**
  * optional int64 adherence_agent_rule_id = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.AdherenceAgentRule.prototype.getAdherenceAgentRuleId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.AdherenceAgentRule} returns this
  */
 proto.api.commons.AdherenceAgentRule.prototype.setAdherenceAgentRuleId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
@@ -8654,19 +8633,19 @@ proto.api.commons.AdherenceAgentRule.prototype.setRuleRequirementType = function
 
 /**
  * optional int64 adherence_rule_notification_config_id = 5;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.AdherenceAgentRule.prototype.getAdherenceRuleNotificationConfigId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.AdherenceAgentRule} returns this
  */
 proto.api.commons.AdherenceAgentRule.prototype.setAdherenceRuleNotificationConfigId = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3StringIntField(this, 5, value);
 };
 
 
@@ -8832,8 +8811,8 @@ proto.api.commons.AdherenceAgentRuleClause.prototype.toObject = function(opt_inc
  */
 proto.api.commons.AdherenceAgentRuleClause.toObject = function(includeInstance, msg) {
   var f, obj = {
-adherenceAgentRuleClauseId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-adherenceAgentRuleId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+adherenceAgentRuleClauseId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+adherenceAgentRuleId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
 action: (f = msg.getAction()) && proto.api.commons.AdherenceAgentRuleAction.toObject(includeInstance, f),
 condition: jspb.Message.getFieldWithDefault(msg, 4, 0),
 amount: jspb.Message.getFieldWithDefault(msg, 5, 0),
@@ -8875,11 +8854,11 @@ proto.api.commons.AdherenceAgentRuleClause.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAdherenceAgentRuleClauseId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAdherenceAgentRuleId(value);
       break;
     case 3:
@@ -8929,15 +8908,15 @@ proto.api.commons.AdherenceAgentRuleClause.prototype.serializeBinary = function(
 proto.api.commons.AdherenceAgentRuleClause.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAdherenceAgentRuleClauseId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
   }
   f = message.getAdherenceAgentRuleId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       2,
       f
     );
@@ -8976,37 +8955,37 @@ proto.api.commons.AdherenceAgentRuleClause.serializeBinaryToWriter = function(me
 
 /**
  * optional int64 adherence_agent_rule_clause_id = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.AdherenceAgentRuleClause.prototype.getAdherenceAgentRuleClauseId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.AdherenceAgentRuleClause} returns this
  */
 proto.api.commons.AdherenceAgentRuleClause.prototype.setAdherenceAgentRuleClauseId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
 /**
  * optional int64 adherence_agent_rule_id = 2;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.AdherenceAgentRuleClause.prototype.getAdherenceAgentRuleId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.AdherenceAgentRuleClause} returns this
  */
 proto.api.commons.AdherenceAgentRuleClause.prototype.setAdherenceAgentRuleId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringIntField(this, 2, value);
 };
 
 

@@ -884,8 +884,8 @@ export namespace AgentLeavePetition {
 }
 
 export class ConfigEntity extends jspb.Message {
-  getEntitySid(): number;
-  setEntitySid(value: number): void;
+  getEntitySid(): string;
+  setEntitySid(value: string): void;
 
   getEntityType(): ConfigEntityTypeMap[keyof ConfigEntityTypeMap];
   setEntityType(value: ConfigEntityTypeMap[keyof ConfigEntityTypeMap]): void;
@@ -902,14 +902,14 @@ export class ConfigEntity extends jspb.Message {
 
 export namespace ConfigEntity {
   export type AsObject = {
-    entitySid: number,
+    entitySid: string,
     entityType: ConfigEntityTypeMap[keyof ConfigEntityTypeMap],
   }
 }
 
 export class AdherenceRuleNotificationConfig extends jspb.Message {
-  getAdherenceRuleNotificationConfigId(): number;
-  setAdherenceRuleNotificationConfigId(value: number): void;
+  getAdherenceRuleNotificationConfigId(): string;
+  setAdherenceRuleNotificationConfigId(value: string): void;
 
   getName(): string;
   setName(value: string): void;
@@ -926,17 +926,17 @@ export class AdherenceRuleNotificationConfig extends jspb.Message {
 
 export namespace AdherenceRuleNotificationConfig {
   export type AsObject = {
-    adherenceRuleNotificationConfigId: number,
+    adherenceRuleNotificationConfigId: string,
     name: string,
   }
 }
 
 export class AdherenceRuleNotificationConfigEntry extends jspb.Message {
-  getAdherenceRuleNotificationConfigEntryId(): number;
-  setAdherenceRuleNotificationConfigEntryId(value: number): void;
+  getAdherenceRuleNotificationConfigEntryId(): string;
+  setAdherenceRuleNotificationConfigEntryId(value: string): void;
 
-  getAdherenceRuleNotificationConfigId(): number;
-  setAdherenceRuleNotificationConfigId(value: number): void;
+  getAdherenceRuleNotificationConfigId(): string;
+  setAdherenceRuleNotificationConfigId(value: string): void;
 
   getRecipientUserId(): string;
   setRecipientUserId(value: string): void;
@@ -959,8 +959,8 @@ export class AdherenceRuleNotificationConfigEntry extends jspb.Message {
 
 export namespace AdherenceRuleNotificationConfigEntry {
   export type AsObject = {
-    adherenceRuleNotificationConfigEntryId: number,
-    adherenceRuleNotificationConfigId: number,
+    adherenceRuleNotificationConfigEntryId: string,
+    adherenceRuleNotificationConfigId: string,
     recipientUserId: string,
     notificationMedium: AdherenceRuleNotificationMediumMap[keyof AdherenceRuleNotificationMediumMap],
     secondsToWaitForNoResponse: number,
@@ -988,8 +988,8 @@ export namespace AdherenceDepartmentalRuleAction {
 }
 
 export class AdherenceDepartmentalRule extends jspb.Message {
-  getAdherenceDepartmentalRuleId(): number;
-  setAdherenceDepartmentalRuleId(value: number): void;
+  getAdherenceDepartmentalRuleId(): string;
+  setAdherenceDepartmentalRuleId(value: string): void;
 
   getName(): string;
   setName(value: string): void;
@@ -1002,13 +1002,11 @@ export class AdherenceDepartmentalRule extends jspb.Message {
   getRuleRequirementType(): AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap];
   setRuleRequirementType(value: AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap]): void;
 
-  getAdherenceRuleNotificationConfigId(): number;
-  setAdherenceRuleNotificationConfigId(value: number): void;
+  getAdherenceRuleNotificationConfigId(): string;
+  setAdherenceRuleNotificationConfigId(value: string): void;
 
-  hasRuleRange(): boolean;
-  clearRuleRange(): void;
-  getRuleRange(): AdherenceDepartmentalRule | undefined;
-  setRuleRange(value?: AdherenceDepartmentalRule): void;
+  getRuleRange(): AdherenceRuleRangeMap[keyof AdherenceRuleRangeMap];
+  setRuleRange(value: AdherenceRuleRangeMap[keyof AdherenceRuleRangeMap]): void;
 
   hasCustomRange(): boolean;
   clearCustomRange(): void;
@@ -1027,22 +1025,22 @@ export class AdherenceDepartmentalRule extends jspb.Message {
 
 export namespace AdherenceDepartmentalRule {
   export type AsObject = {
-    adherenceDepartmentalRuleId: number,
+    adherenceDepartmentalRuleId: string,
     name: string,
     selectedEntity?: ConfigEntity.AsObject,
     ruleRequirementType: AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap],
-    adherenceRuleNotificationConfigId: number,
-    ruleRange?: AdherenceDepartmentalRule.AsObject,
+    adherenceRuleNotificationConfigId: string,
+    ruleRange: AdherenceRuleRangeMap[keyof AdherenceRuleRangeMap],
     customRange?: DatetimeRange.AsObject,
   }
 }
 
 export class AdherenceDepartmentalRuleClause extends jspb.Message {
-  getAdherenceDepartmentalRuleClauseId(): number;
-  setAdherenceDepartmentalRuleClauseId(value: number): void;
+  getAdherenceDepartmentalRuleClauseId(): string;
+  setAdherenceDepartmentalRuleClauseId(value: string): void;
 
-  getAdherenceDepartmentalRuleId(): number;
-  setAdherenceDepartmentalRuleId(value: number): void;
+  getAdherenceDepartmentalRuleId(): string;
+  setAdherenceDepartmentalRuleId(value: string): void;
 
   hasAction(): boolean;
   clearAction(): void;
@@ -1078,8 +1076,8 @@ export class AdherenceDepartmentalRuleClause extends jspb.Message {
 
 export namespace AdherenceDepartmentalRuleClause {
   export type AsObject = {
-    adherenceDepartmentalRuleClauseId: number,
-    adherenceDepartmentalRuleId: number,
+    adherenceDepartmentalRuleClauseId: string,
+    adherenceDepartmentalRuleId: string,
     action?: AdherenceDepartmentalRuleAction.AsObject,
     condition: AdherenceRuleConditionMap[keyof AdherenceRuleConditionMap],
     amount: number,
@@ -1090,8 +1088,8 @@ export namespace AdherenceDepartmentalRuleClause {
 }
 
 export class AdherenceAgentRule extends jspb.Message {
-  getAdherenceAgentRuleId(): number;
-  setAdherenceAgentRuleId(value: number): void;
+  getAdherenceAgentRuleId(): string;
+  setAdherenceAgentRuleId(value: string): void;
 
   getName(): string;
   setName(value: string): void;
@@ -1104,8 +1102,8 @@ export class AdherenceAgentRule extends jspb.Message {
   getRuleRequirementType(): AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap];
   setRuleRequirementType(value: AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap]): void;
 
-  getAdherenceRuleNotificationConfigId(): number;
-  setAdherenceRuleNotificationConfigId(value: number): void;
+  getAdherenceRuleNotificationConfigId(): string;
+  setAdherenceRuleNotificationConfigId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AdherenceAgentRule.AsObject;
@@ -1119,11 +1117,11 @@ export class AdherenceAgentRule extends jspb.Message {
 
 export namespace AdherenceAgentRule {
   export type AsObject = {
-    adherenceAgentRuleId: number,
+    adherenceAgentRuleId: string,
     name: string,
     selectedEntity?: ConfigEntity.AsObject,
     ruleRequirementType: AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap],
-    adherenceRuleNotificationConfigId: number,
+    adherenceRuleNotificationConfigId: string,
   }
 }
 
@@ -1148,11 +1146,11 @@ export namespace AdherenceAgentRuleAction {
 }
 
 export class AdherenceAgentRuleClause extends jspb.Message {
-  getAdherenceAgentRuleClauseId(): number;
-  setAdherenceAgentRuleClauseId(value: number): void;
+  getAdherenceAgentRuleClauseId(): string;
+  setAdherenceAgentRuleClauseId(value: string): void;
 
-  getAdherenceAgentRuleId(): number;
-  setAdherenceAgentRuleId(value: number): void;
+  getAdherenceAgentRuleId(): string;
+  setAdherenceAgentRuleId(value: string): void;
 
   hasAction(): boolean;
   clearAction(): void;
@@ -1180,8 +1178,8 @@ export class AdherenceAgentRuleClause extends jspb.Message {
 
 export namespace AdherenceAgentRuleClause {
   export type AsObject = {
-    adherenceAgentRuleClauseId: number,
-    adherenceAgentRuleId: number,
+    adherenceAgentRuleClauseId: string,
+    adherenceAgentRuleId: string,
     action?: AdherenceAgentRuleAction.AsObject,
     condition: AdherenceRuleConditionMap[keyof AdherenceRuleConditionMap],
     amount: number,
