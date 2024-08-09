@@ -1842,36 +1842,6 @@ export class ExecuteFlow extends jspb.Message {
   getFinviProcessNewTransactionValidate(): ExecuteFinviProcessNewTransactionValidate | undefined;
   setFinviProcessNewTransactionValidate(value?: ExecuteFinviProcessNewTransactionValidate): void;
 
-  hasFinviExileQueryRecords(): boolean;
-  clearFinviExileQueryRecords(): void;
-  getFinviExileQueryRecords(): ExecuteFinviExileQueryRecords | undefined;
-  setFinviExileQueryRecords(value?: ExecuteFinviExileQueryRecords): void;
-
-  hasFinviExileReadFields(): boolean;
-  clearFinviExileReadFields(): void;
-  getFinviExileReadFields(): ExecuteFinviExileReadFields | undefined;
-  setFinviExileReadFields(value?: ExecuteFinviExileReadFields): void;
-
-  hasFinviExileWriteFields(): boolean;
-  clearFinviExileWriteFields(): void;
-  getFinviExileWriteFields(): ExecuteFinviExileWriteFields | undefined;
-  setFinviExileWriteFields(value?: ExecuteFinviExileWriteFields): void;
-
-  hasFinviExileExecuteLogic(): boolean;
-  clearFinviExileExecuteLogic(): void;
-  getFinviExileExecuteLogic(): ExecuteFinviExileExecuteLogic | undefined;
-  setFinviExileExecuteLogic(value?: ExecuteFinviExileExecuteLogic): void;
-
-  hasFinviExileCreatePayment(): boolean;
-  clearFinviExileCreatePayment(): void;
-  getFinviExileCreatePayment(): ExecuteFinviExileCreatePayment | undefined;
-  setFinviExileCreatePayment(value?: ExecuteFinviExileCreatePayment): void;
-
-  hasFinviExilePopAccount(): boolean;
-  clearFinviExilePopAccount(): void;
-  getFinviExilePopAccount(): ExecuteFinviExilePopAccount | undefined;
-  setFinviExilePopAccount(value?: ExecuteFinviExilePopAccount): void;
-
   hasNavigaDtiCircCreatePayment(): boolean;
   clearNavigaDtiCircCreatePayment(): void;
   getNavigaDtiCircCreatePayment(): ExecuteNavigaDTICircCreatePayment | undefined;
@@ -2202,12 +2172,6 @@ export namespace ExecuteFlow {
     finviProcessNewTransactionRefund?: ExecuteFinviProcessNewTransactionRefund.AsObject,
     finviProcessNewTransactionSale?: ExecuteFinviProcessNewTransactionSale.AsObject,
     finviProcessNewTransactionValidate?: ExecuteFinviProcessNewTransactionValidate.AsObject,
-    finviExileQueryRecords?: ExecuteFinviExileQueryRecords.AsObject,
-    finviExileReadFields?: ExecuteFinviExileReadFields.AsObject,
-    finviExileWriteFields?: ExecuteFinviExileWriteFields.AsObject,
-    finviExileExecuteLogic?: ExecuteFinviExileExecuteLogic.AsObject,
-    finviExileCreatePayment?: ExecuteFinviExileCreatePayment.AsObject,
-    finviExilePopAccount?: ExecuteFinviExilePopAccount.AsObject,
     navigaDtiCircCreatePayment?: ExecuteNavigaDTICircCreatePayment.AsObject,
     navigaDtiCircChangeBilling?: ExecuteNavigaDTICircChangeBilling.AsObject,
     navigaDtiCsAutoRenewInfo?: ExecuteNavigaDTICSAutoRenewInfo.AsObject,
@@ -2464,12 +2428,6 @@ export namespace ExecuteFlow {
     FINVI_PROCESS_NEW_TRANSACTION_REFUND = 4320,
     FINVI_PROCESS_NEW_TRANSACTION_SALE = 4321,
     FINVI_PROCESS_NEW_TRANSACTION_VALIDATE = 4322,
-    FINVI_EXILE_QUERY_RECORDS = 4323,
-    FINVI_EXILE_READ_FIELDS = 4324,
-    FINVI_EXILE_WRITE_FIELDS = 4325,
-    FINVI_EXILE_EXECUTE_LOGIC = 4326,
-    FINVI_EXILE_CREATE_PAYMENT = 4327,
-    FINVI_EXILE_POP_ACCOUNT = 4328,
     NAVIGA_DTI_CIRC_CREATE_PAYMENT = 4401,
     NAVIGA_DTI_CIRC_CHANGE_BILLING = 4402,
     NAVIGA_DTI_CS_AUTO_RENEW_INFO = 4501,
@@ -6878,102 +6836,6 @@ export class ExecuteFinviProcessNewTransactionValidate extends jspb.Message {
 }
 
 export namespace ExecuteFinviProcessNewTransactionValidate {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviExileQueryRecords extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviExileQueryRecords.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviExileQueryRecords): ExecuteFinviExileQueryRecords.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviExileQueryRecords, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviExileQueryRecords;
-  static deserializeBinaryFromReader(message: ExecuteFinviExileQueryRecords, reader: jspb.BinaryReader): ExecuteFinviExileQueryRecords;
-}
-
-export namespace ExecuteFinviExileQueryRecords {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviExileReadFields extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviExileReadFields.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviExileReadFields): ExecuteFinviExileReadFields.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviExileReadFields, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviExileReadFields;
-  static deserializeBinaryFromReader(message: ExecuteFinviExileReadFields, reader: jspb.BinaryReader): ExecuteFinviExileReadFields;
-}
-
-export namespace ExecuteFinviExileReadFields {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviExileWriteFields extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviExileWriteFields.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviExileWriteFields): ExecuteFinviExileWriteFields.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviExileWriteFields, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviExileWriteFields;
-  static deserializeBinaryFromReader(message: ExecuteFinviExileWriteFields, reader: jspb.BinaryReader): ExecuteFinviExileWriteFields;
-}
-
-export namespace ExecuteFinviExileWriteFields {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviExileExecuteLogic extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviExileExecuteLogic.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviExileExecuteLogic): ExecuteFinviExileExecuteLogic.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviExileExecuteLogic, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviExileExecuteLogic;
-  static deserializeBinaryFromReader(message: ExecuteFinviExileExecuteLogic, reader: jspb.BinaryReader): ExecuteFinviExileExecuteLogic;
-}
-
-export namespace ExecuteFinviExileExecuteLogic {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviExileCreatePayment extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviExileCreatePayment.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviExileCreatePayment): ExecuteFinviExileCreatePayment.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviExileCreatePayment, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviExileCreatePayment;
-  static deserializeBinaryFromReader(message: ExecuteFinviExileCreatePayment, reader: jspb.BinaryReader): ExecuteFinviExileCreatePayment;
-}
-
-export namespace ExecuteFinviExileCreatePayment {
-  export type AsObject = {
-  }
-}
-
-export class ExecuteFinviExilePopAccount extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviExilePopAccount.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviExilePopAccount): ExecuteFinviExilePopAccount.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviExilePopAccount, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviExilePopAccount;
-  static deserializeBinaryFromReader(message: ExecuteFinviExilePopAccount, reader: jspb.BinaryReader): ExecuteFinviExilePopAccount;
-}
-
-export namespace ExecuteFinviExilePopAccount {
   export type AsObject = {
   }
 }
