@@ -87,6 +87,15 @@ BillingService.CreateDefaultBillingPlan = {
   responseType: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanResponse
 };
 
+BillingService.CopyDefaultBillingPlan = {
+  methodName: "CopyDefaultBillingPlan",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanResponse
+};
+
 BillingService.DeleteDefaultBillingPlan = {
   methodName: "DeleteDefaultBillingPlan",
   service: BillingService,
@@ -541,6 +550,37 @@ BillingServiceClient.prototype.createDefaultBillingPlan = function createDefault
     callback = arguments[1];
   }
   var client = grpc.unary(BillingService.CreateDefaultBillingPlan, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.copyDefaultBillingPlan = function copyDefaultBillingPlan(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.CopyDefaultBillingPlan, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

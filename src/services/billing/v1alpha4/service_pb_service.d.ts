@@ -81,6 +81,15 @@ type BillingServiceCreateDefaultBillingPlan = {
   readonly responseType: typeof services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanResponse;
 };
 
+type BillingServiceCopyDefaultBillingPlan = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanRequest;
+  readonly responseType: typeof services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanResponse;
+};
+
 type BillingServiceDeleteDefaultBillingPlan = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -316,6 +325,7 @@ export class BillingService {
   static readonly UpdateBillingPlan: BillingServiceUpdateBillingPlan;
   static readonly ApplyDefaultBillingPlanDraft: BillingServiceApplyDefaultBillingPlanDraft;
   static readonly CreateDefaultBillingPlan: BillingServiceCreateDefaultBillingPlan;
+  static readonly CopyDefaultBillingPlan: BillingServiceCopyDefaultBillingPlan;
   static readonly DeleteDefaultBillingPlan: BillingServiceDeleteDefaultBillingPlan;
   static readonly GetDefaultBillingPlan: BillingServiceGetDefaultBillingPlan;
   static readonly ListDefaultBillingPlans: BillingServiceListDefaultBillingPlans;
@@ -446,6 +456,15 @@ export class BillingServiceClient {
   createDefaultBillingPlan(
     requestMessage: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  copyDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  copyDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanResponse|null) => void
   ): UnaryResponse;
   deleteDefaultBillingPlan(
     requestMessage: services_billing_v1alpha4_defaults_pb.DeleteDefaultBillingPlanRequest,

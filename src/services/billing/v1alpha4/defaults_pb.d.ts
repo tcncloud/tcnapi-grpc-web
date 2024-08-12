@@ -108,6 +108,46 @@ export namespace CreateDefaultBillingPlanResponse {
   }
 }
 
+export class CopyDefaultBillingPlanRequest extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyDefaultBillingPlanRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyDefaultBillingPlanRequest): CopyDefaultBillingPlanRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyDefaultBillingPlanRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyDefaultBillingPlanRequest;
+  static deserializeBinaryFromReader(message: CopyDefaultBillingPlanRequest, reader: jspb.BinaryReader): CopyDefaultBillingPlanRequest;
+}
+
+export namespace CopyDefaultBillingPlanRequest {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
+export class CopyDefaultBillingPlanResponse extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyDefaultBillingPlanResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyDefaultBillingPlanResponse): CopyDefaultBillingPlanResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyDefaultBillingPlanResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyDefaultBillingPlanResponse;
+  static deserializeBinaryFromReader(message: CopyDefaultBillingPlanResponse, reader: jspb.BinaryReader): CopyDefaultBillingPlanResponse;
+}
+
+export namespace CopyDefaultBillingPlanResponse {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
 export class DeleteDefaultBillingPlanRequest extends jspb.Message {
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;
