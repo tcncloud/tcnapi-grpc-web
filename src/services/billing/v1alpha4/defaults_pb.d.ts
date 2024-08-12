@@ -62,6 +62,46 @@ export namespace ApplyDefaultBillingPlanDraftResponse {
   }
 }
 
+export class CloneDefaultBillingPlanRequest extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CloneDefaultBillingPlanRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CloneDefaultBillingPlanRequest): CloneDefaultBillingPlanRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CloneDefaultBillingPlanRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CloneDefaultBillingPlanRequest;
+  static deserializeBinaryFromReader(message: CloneDefaultBillingPlanRequest, reader: jspb.BinaryReader): CloneDefaultBillingPlanRequest;
+}
+
+export namespace CloneDefaultBillingPlanRequest {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
+export class CloneDefaultBillingPlanResponse extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CloneDefaultBillingPlanResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CloneDefaultBillingPlanResponse): CloneDefaultBillingPlanResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CloneDefaultBillingPlanResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CloneDefaultBillingPlanResponse;
+  static deserializeBinaryFromReader(message: CloneDefaultBillingPlanResponse, reader: jspb.BinaryReader): CloneDefaultBillingPlanResponse;
+}
+
+export namespace CloneDefaultBillingPlanResponse {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
 export class CreateDefaultBillingPlanRequest extends jspb.Message {
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;
@@ -103,46 +143,6 @@ export class CreateDefaultBillingPlanResponse extends jspb.Message {
 }
 
 export namespace CreateDefaultBillingPlanResponse {
-  export type AsObject = {
-    billingPlanId: string,
-  }
-}
-
-export class CloneDefaultBillingPlanRequest extends jspb.Message {
-  getBillingPlanId(): string;
-  setBillingPlanId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CloneDefaultBillingPlanRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CloneDefaultBillingPlanRequest): CloneDefaultBillingPlanRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CloneDefaultBillingPlanRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CloneDefaultBillingPlanRequest;
-  static deserializeBinaryFromReader(message: CloneDefaultBillingPlanRequest, reader: jspb.BinaryReader): CloneDefaultBillingPlanRequest;
-}
-
-export namespace CloneDefaultBillingPlanRequest {
-  export type AsObject = {
-    billingPlanId: string,
-  }
-}
-
-export class CloneDefaultBillingPlanResponse extends jspb.Message {
-  getBillingPlanId(): string;
-  setBillingPlanId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CloneDefaultBillingPlanResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CloneDefaultBillingPlanResponse): CloneDefaultBillingPlanResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CloneDefaultBillingPlanResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CloneDefaultBillingPlanResponse;
-  static deserializeBinaryFromReader(message: CloneDefaultBillingPlanResponse, reader: jspb.BinaryReader): CloneDefaultBillingPlanResponse;
-}
-
-export namespace CloneDefaultBillingPlanResponse {
   export type AsObject = {
     billingPlanId: string,
   }
