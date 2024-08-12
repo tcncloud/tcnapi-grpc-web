@@ -154,10 +154,10 @@ export class CopyHuntGroupExileLinkRequest extends jspb.Message {
   getToHuntGroupSid(): number;
   setToHuntGroupSid(value: number): void;
 
-  hasLink(): boolean;
-  clearLink(): void;
-  getLink(): ExileLink | undefined;
-  setLink(value?: ExileLink): void;
+  hasExileLink(): boolean;
+  clearExileLink(): void;
+  getExileLink(): ExileLink | undefined;
+  setExileLink(value?: ExileLink): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CopyHuntGroupExileLinkRequest.AsObject;
@@ -172,7 +172,7 @@ export class CopyHuntGroupExileLinkRequest extends jspb.Message {
 export namespace CopyHuntGroupExileLinkRequest {
   export type AsObject = {
     toHuntGroupSid: number,
-    link?: ExileLink.AsObject,
+    exileLink?: ExileLink.AsObject,
   }
 }
 

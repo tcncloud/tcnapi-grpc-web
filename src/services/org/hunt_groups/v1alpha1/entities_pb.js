@@ -1290,7 +1290,7 @@ proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.prototype.
 proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 toHuntGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-link: (f = msg.getLink()) && proto.services.org.hunt_groups.v1alpha1.ExileLink.toObject(includeInstance, f)
+exileLink: (f = msg.getExileLink()) && proto.services.org.hunt_groups.v1alpha1.ExileLink.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1334,7 +1334,7 @@ proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.deserializ
     case 2:
       var value = new proto.services.org.hunt_groups.v1alpha1.ExileLink;
       reader.readMessage(value,proto.services.org.hunt_groups.v1alpha1.ExileLink.deserializeBinaryFromReader);
-      msg.setLink(value);
+      msg.setExileLink(value);
       break;
     default:
       reader.skipField();
@@ -1372,7 +1372,7 @@ proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.serializeB
       f
     );
   }
-  f = message.getLink();
+  f = message.getExileLink();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1402,10 +1402,10 @@ proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.prototype.
 
 
 /**
- * optional ExileLink link = 2;
+ * optional ExileLink exile_link = 2;
  * @return {?proto.services.org.hunt_groups.v1alpha1.ExileLink}
  */
-proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.prototype.getLink = function() {
+proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.prototype.getExileLink = function() {
   return /** @type{?proto.services.org.hunt_groups.v1alpha1.ExileLink} */ (
     jspb.Message.getWrapperField(this, proto.services.org.hunt_groups.v1alpha1.ExileLink, 2));
 };
@@ -1415,7 +1415,7 @@ proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.prototype.
  * @param {?proto.services.org.hunt_groups.v1alpha1.ExileLink|undefined} value
  * @return {!proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest} returns this
 */
-proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.prototype.setLink = function(value) {
+proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.prototype.setExileLink = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -1424,8 +1424,8 @@ proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.prototype.
  * Clears the message field making it undefined.
  * @return {!proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest} returns this
  */
-proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.prototype.clearLink = function() {
-  return this.setLink(undefined);
+proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.prototype.clearExileLink = function() {
+  return this.setExileLink(undefined);
 };
 
 
@@ -1433,7 +1433,7 @@ proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.prototype.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.prototype.hasLink = function() {
+proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupExileLinkRequest.prototype.hasExileLink = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
