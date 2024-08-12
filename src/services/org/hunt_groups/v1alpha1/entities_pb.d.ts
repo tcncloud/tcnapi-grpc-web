@@ -150,3 +150,87 @@ export namespace ListHuntGroupExileLinksResponse {
   }
 }
 
+export class CopyHuntGroupExileLinkRequest extends jspb.Message {
+  getToHuntGroupSid(): number;
+  setToHuntGroupSid(value: number): void;
+
+  hasLink(): boolean;
+  clearLink(): void;
+  getLink(): ExileLink | undefined;
+  setLink(value?: ExileLink): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyHuntGroupExileLinkRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyHuntGroupExileLinkRequest): CopyHuntGroupExileLinkRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyHuntGroupExileLinkRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyHuntGroupExileLinkRequest;
+  static deserializeBinaryFromReader(message: CopyHuntGroupExileLinkRequest, reader: jspb.BinaryReader): CopyHuntGroupExileLinkRequest;
+}
+
+export namespace CopyHuntGroupExileLinkRequest {
+  export type AsObject = {
+    toHuntGroupSid: number,
+    link?: ExileLink.AsObject,
+  }
+}
+
+export class CopyHuntGroupExileLinkResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyHuntGroupExileLinkResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyHuntGroupExileLinkResponse): CopyHuntGroupExileLinkResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyHuntGroupExileLinkResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyHuntGroupExileLinkResponse;
+  static deserializeBinaryFromReader(message: CopyHuntGroupExileLinkResponse, reader: jspb.BinaryReader): CopyHuntGroupExileLinkResponse;
+}
+
+export namespace CopyHuntGroupExileLinkResponse {
+  export type AsObject = {
+  }
+}
+
+export class UpdateHuntGroupExileLinksRequest extends jspb.Message {
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
+  clearExileLinksList(): void;
+  getExileLinksList(): Array<ExileLink>;
+  setExileLinksList(value: Array<ExileLink>): void;
+  addExileLinks(value?: ExileLink, index?: number): ExileLink;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateHuntGroupExileLinksRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateHuntGroupExileLinksRequest): UpdateHuntGroupExileLinksRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateHuntGroupExileLinksRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateHuntGroupExileLinksRequest;
+  static deserializeBinaryFromReader(message: UpdateHuntGroupExileLinksRequest, reader: jspb.BinaryReader): UpdateHuntGroupExileLinksRequest;
+}
+
+export namespace UpdateHuntGroupExileLinksRequest {
+  export type AsObject = {
+    huntGroupSid: number,
+    exileLinksList: Array<ExileLink.AsObject>,
+  }
+}
+
+export class UpdateHuntGroupExileLinksResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateHuntGroupExileLinksResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateHuntGroupExileLinksResponse): UpdateHuntGroupExileLinksResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateHuntGroupExileLinksResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateHuntGroupExileLinksResponse;
+  static deserializeBinaryFromReader(message: UpdateHuntGroupExileLinksResponse, reader: jspb.BinaryReader): UpdateHuntGroupExileLinksResponse;
+}
+
+export namespace UpdateHuntGroupExileLinksResponse {
+  export type AsObject = {
+  }
+}
+

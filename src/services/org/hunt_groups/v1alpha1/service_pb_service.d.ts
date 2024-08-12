@@ -14,9 +14,29 @@ type HuntGroupsServiceListHuntGroupExileLinks = {
   readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.ListHuntGroupExileLinksResponse;
 };
 
+type HuntGroupsServiceCopyHuntGroupExileLink = {
+  readonly methodName: string;
+  readonly service: typeof HuntGroupsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupExileLinkRequest;
+  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupExileLinkResponse;
+};
+
+type HuntGroupsServiceUpdateHuntGroupExileLinks = {
+  readonly methodName: string;
+  readonly service: typeof HuntGroupsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupExileLinksRequest;
+  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupExileLinksResponse;
+};
+
 export class HuntGroupsService {
   static readonly serviceName: string;
   static readonly ListHuntGroupExileLinks: HuntGroupsServiceListHuntGroupExileLinks;
+  static readonly CopyHuntGroupExileLink: HuntGroupsServiceCopyHuntGroupExileLink;
+  static readonly UpdateHuntGroupExileLinks: HuntGroupsServiceUpdateHuntGroupExileLinks;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -59,6 +79,24 @@ export class HuntGroupsServiceClient {
   listHuntGroupExileLinks(
     requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListHuntGroupExileLinksRequest,
     callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.ListHuntGroupExileLinksResponse|null) => void
+  ): UnaryResponse;
+  copyHuntGroupExileLink(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupExileLinkRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupExileLinkResponse|null) => void
+  ): UnaryResponse;
+  copyHuntGroupExileLink(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupExileLinkRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupExileLinkResponse|null) => void
+  ): UnaryResponse;
+  updateHuntGroupExileLinks(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupExileLinksRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupExileLinksResponse|null) => void
+  ): UnaryResponse;
+  updateHuntGroupExileLinks(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupExileLinksRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupExileLinksResponse|null) => void
   ): UnaryResponse;
 }
 
