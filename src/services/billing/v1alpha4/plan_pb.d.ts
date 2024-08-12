@@ -62,6 +62,46 @@ export namespace ApplyBillingPlanDraftResponse {
   }
 }
 
+export class CloneBillingPlanRequest extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CloneBillingPlanRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CloneBillingPlanRequest): CloneBillingPlanRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CloneBillingPlanRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CloneBillingPlanRequest;
+  static deserializeBinaryFromReader(message: CloneBillingPlanRequest, reader: jspb.BinaryReader): CloneBillingPlanRequest;
+}
+
+export namespace CloneBillingPlanRequest {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
+export class CloneBillingPlanResponse extends jspb.Message {
+  getBillingPlanId(): string;
+  setBillingPlanId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CloneBillingPlanResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CloneBillingPlanResponse): CloneBillingPlanResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CloneBillingPlanResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CloneBillingPlanResponse;
+  static deserializeBinaryFromReader(message: CloneBillingPlanResponse, reader: jspb.BinaryReader): CloneBillingPlanResponse;
+}
+
+export namespace CloneBillingPlanResponse {
+  export type AsObject = {
+    billingPlanId: string,
+  }
+}
+
 export class CreateBillingPlanRequest extends jspb.Message {
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;

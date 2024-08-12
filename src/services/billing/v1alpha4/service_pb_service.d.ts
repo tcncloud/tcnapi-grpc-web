@@ -18,6 +18,15 @@ type BillingServiceApplyBillingPlanDraft = {
   readonly responseType: typeof services_billing_v1alpha4_plan_pb.ApplyBillingPlanDraftResponse;
 };
 
+type BillingServiceCloneBillingPlan = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha4_plan_pb.CloneBillingPlanRequest;
+  readonly responseType: typeof services_billing_v1alpha4_plan_pb.CloneBillingPlanResponse;
+};
+
 type BillingServiceCreateBillingPlan = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -72,15 +81,6 @@ type BillingServiceApplyDefaultBillingPlanDraft = {
   readonly responseType: typeof services_billing_v1alpha4_defaults_pb.ApplyDefaultBillingPlanDraftResponse;
 };
 
-type BillingServiceCreateDefaultBillingPlan = {
-  readonly methodName: string;
-  readonly service: typeof BillingService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanRequest;
-  readonly responseType: typeof services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanResponse;
-};
-
 type BillingServiceCloneDefaultBillingPlan = {
   readonly methodName: string;
   readonly service: typeof BillingService;
@@ -88,6 +88,15 @@ type BillingServiceCloneDefaultBillingPlan = {
   readonly responseStream: false;
   readonly requestType: typeof services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanRequest;
   readonly responseType: typeof services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanResponse;
+};
+
+type BillingServiceCreateDefaultBillingPlan = {
+  readonly methodName: string;
+  readonly service: typeof BillingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanRequest;
+  readonly responseType: typeof services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanResponse;
 };
 
 type BillingServiceDeleteDefaultBillingPlan = {
@@ -318,14 +327,15 @@ type BillingServiceExportInvoice = {
 export class BillingService {
   static readonly serviceName: string;
   static readonly ApplyBillingPlanDraft: BillingServiceApplyBillingPlanDraft;
+  static readonly CloneBillingPlan: BillingServiceCloneBillingPlan;
   static readonly CreateBillingPlan: BillingServiceCreateBillingPlan;
   static readonly DeleteBillingPlan: BillingServiceDeleteBillingPlan;
   static readonly GetBillingPlan: BillingServiceGetBillingPlan;
   static readonly ListBillingPlans: BillingServiceListBillingPlans;
   static readonly UpdateBillingPlan: BillingServiceUpdateBillingPlan;
   static readonly ApplyDefaultBillingPlanDraft: BillingServiceApplyDefaultBillingPlanDraft;
-  static readonly CreateDefaultBillingPlan: BillingServiceCreateDefaultBillingPlan;
   static readonly CloneDefaultBillingPlan: BillingServiceCloneDefaultBillingPlan;
+  static readonly CreateDefaultBillingPlan: BillingServiceCreateDefaultBillingPlan;
   static readonly DeleteDefaultBillingPlan: BillingServiceDeleteDefaultBillingPlan;
   static readonly GetDefaultBillingPlan: BillingServiceGetDefaultBillingPlan;
   static readonly ListDefaultBillingPlans: BillingServiceListDefaultBillingPlans;
@@ -394,6 +404,15 @@ export class BillingServiceClient {
     requestMessage: services_billing_v1alpha4_plan_pb.ApplyBillingPlanDraftRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_plan_pb.ApplyBillingPlanDraftResponse|null) => void
   ): UnaryResponse;
+  cloneBillingPlan(
+    requestMessage: services_billing_v1alpha4_plan_pb.CloneBillingPlanRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_plan_pb.CloneBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  cloneBillingPlan(
+    requestMessage: services_billing_v1alpha4_plan_pb.CloneBillingPlanRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_plan_pb.CloneBillingPlanResponse|null) => void
+  ): UnaryResponse;
   createBillingPlan(
     requestMessage: services_billing_v1alpha4_plan_pb.CreateBillingPlanRequest,
     metadata: grpc.Metadata,
@@ -448,15 +467,6 @@ export class BillingServiceClient {
     requestMessage: services_billing_v1alpha4_defaults_pb.ApplyDefaultBillingPlanDraftRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.ApplyDefaultBillingPlanDraftResponse|null) => void
   ): UnaryResponse;
-  createDefaultBillingPlan(
-    requestMessage: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanResponse|null) => void
-  ): UnaryResponse;
-  createDefaultBillingPlan(
-    requestMessage: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanRequest,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanResponse|null) => void
-  ): UnaryResponse;
   cloneDefaultBillingPlan(
     requestMessage: services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanRequest,
     metadata: grpc.Metadata,
@@ -465,6 +475,15 @@ export class BillingServiceClient {
   cloneDefaultBillingPlan(
     requestMessage: services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  createDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanResponse|null) => void
+  ): UnaryResponse;
+  createDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanResponse|null) => void
   ): UnaryResponse;
   deleteDefaultBillingPlan(
     requestMessage: services_billing_v1alpha4_defaults_pb.DeleteDefaultBillingPlanRequest,
