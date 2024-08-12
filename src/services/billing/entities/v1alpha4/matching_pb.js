@@ -85,7 +85,9 @@ proto.services.billing.entities.v1alpha4.CountryCodePrefix.prototype.toObject = 
 proto.services.billing.entities.v1alpha4.CountryCodePrefix.toObject = function(includeInstance, msg) {
   var f, obj = {
 countryCode: jspb.Message.getFieldWithDefault(msg, 1, 0),
-prefixesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+prefixesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+matchingRuleId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+name: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -130,6 +132,14 @@ proto.services.billing.entities.v1alpha4.CountryCodePrefix.deserializeBinaryFrom
       var value = /** @type {string} */ (reader.readString());
       msg.addPrefixes(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMatchingRuleId(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -170,6 +180,20 @@ proto.services.billing.entities.v1alpha4.CountryCodePrefix.serializeBinaryToWrit
   if (f.length > 0) {
     writer.writeRepeatedString(
       2,
+      f
+    );
+  }
+  f = message.getMatchingRuleId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -228,6 +252,42 @@ proto.services.billing.entities.v1alpha4.CountryCodePrefix.prototype.addPrefixes
  */
 proto.services.billing.entities.v1alpha4.CountryCodePrefix.prototype.clearPrefixesList = function() {
   return this.setPrefixesList([]);
+};
+
+
+/**
+ * optional string matching_rule_id = 3;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha4.CountryCodePrefix.prototype.getMatchingRuleId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha4.CountryCodePrefix} returns this
+ */
+proto.services.billing.entities.v1alpha4.CountryCodePrefix.prototype.setMatchingRuleId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string name = 4;
+ * @return {string}
+ */
+proto.services.billing.entities.v1alpha4.CountryCodePrefix.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.entities.v1alpha4.CountryCodePrefix} returns this
+ */
+proto.services.billing.entities.v1alpha4.CountryCodePrefix.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
