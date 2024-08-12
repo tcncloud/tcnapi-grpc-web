@@ -2677,6 +2677,9 @@ export class TriggerActionOption extends jspb.Message {
   getIntegrationLinkSid(): number;
   setIntegrationLinkSid(value: number): void;
 
+  getExileLinkSid(): number;
+  setExileLinkSid(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TriggerActionOption.AsObject;
   static toObject(includeInstance: boolean, msg: TriggerActionOption): TriggerActionOption.AsObject;
@@ -2694,6 +2697,7 @@ export namespace TriggerActionOption {
     advanceToStatus: AgentStatusMap[keyof AgentStatusMap],
     webLinkSid: number,
     integrationLinkSid: number,
+    exileLinkSid: number,
   }
 }
 

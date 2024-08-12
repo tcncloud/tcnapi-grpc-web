@@ -21138,7 +21138,8 @@ action: jspb.Message.getFieldWithDefault(msg, 1, 0),
 displayMessage: jspb.Message.getFieldWithDefault(msg, 2, ""),
 advanceToStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
 webLinkSid: jspb.Message.getFieldWithDefault(msg, 4, 0),
-integrationLinkSid: jspb.Message.getFieldWithDefault(msg, 5, 0)
+integrationLinkSid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+exileLinkSid: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -21194,6 +21195,10 @@ proto.api.commons.org.TriggerActionOption.deserializeBinaryFromReader = function
     case 5:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setIntegrationLinkSid(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setExileLinkSid(value);
       break;
     default:
       reader.skipField();
@@ -21256,6 +21261,13 @@ proto.api.commons.org.TriggerActionOption.serializeBinaryToWriter = function(mes
   if (f !== 0) {
     writer.writeInt64(
       5,
+      f
+    );
+  }
+  f = message.getExileLinkSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      6,
       f
     );
   }
@@ -21349,6 +21361,24 @@ proto.api.commons.org.TriggerActionOption.prototype.getIntegrationLinkSid = func
  */
 proto.api.commons.org.TriggerActionOption.prototype.setIntegrationLinkSid = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional int64 exile_link_sid = 6;
+ * @return {number}
+ */
+proto.api.commons.org.TriggerActionOption.prototype.getExileLinkSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.org.TriggerActionOption} returns this
+ */
+proto.api.commons.org.TriggerActionOption.prototype.setExileLinkSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
