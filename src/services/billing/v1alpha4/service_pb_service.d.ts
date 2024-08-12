@@ -81,13 +81,13 @@ type BillingServiceCreateDefaultBillingPlan = {
   readonly responseType: typeof services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanResponse;
 };
 
-type BillingServiceCopyDefaultBillingPlan = {
+type BillingServiceCloneDefaultBillingPlan = {
   readonly methodName: string;
   readonly service: typeof BillingService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanRequest;
-  readonly responseType: typeof services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanResponse;
+  readonly requestType: typeof services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanRequest;
+  readonly responseType: typeof services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanResponse;
 };
 
 type BillingServiceDeleteDefaultBillingPlan = {
@@ -325,7 +325,7 @@ export class BillingService {
   static readonly UpdateBillingPlan: BillingServiceUpdateBillingPlan;
   static readonly ApplyDefaultBillingPlanDraft: BillingServiceApplyDefaultBillingPlanDraft;
   static readonly CreateDefaultBillingPlan: BillingServiceCreateDefaultBillingPlan;
-  static readonly CopyDefaultBillingPlan: BillingServiceCopyDefaultBillingPlan;
+  static readonly CloneDefaultBillingPlan: BillingServiceCloneDefaultBillingPlan;
   static readonly DeleteDefaultBillingPlan: BillingServiceDeleteDefaultBillingPlan;
   static readonly GetDefaultBillingPlan: BillingServiceGetDefaultBillingPlan;
   static readonly ListDefaultBillingPlans: BillingServiceListDefaultBillingPlans;
@@ -457,14 +457,14 @@ export class BillingServiceClient {
     requestMessage: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanRequest,
     callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanResponse|null) => void
   ): UnaryResponse;
-  copyDefaultBillingPlan(
-    requestMessage: services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanRequest,
+  cloneDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanResponse|null) => void
   ): UnaryResponse;
-  copyDefaultBillingPlan(
-    requestMessage: services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanRequest,
-    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanResponse|null) => void
+  cloneDefaultBillingPlan(
+    requestMessage: services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanRequest,
+    callback: (error: ServiceError|null, responseMessage: services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanResponse|null) => void
   ): UnaryResponse;
   deleteDefaultBillingPlan(
     requestMessage: services_billing_v1alpha4_defaults_pb.DeleteDefaultBillingPlanRequest,

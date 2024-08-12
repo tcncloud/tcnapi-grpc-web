@@ -87,13 +87,13 @@ BillingService.CreateDefaultBillingPlan = {
   responseType: services_billing_v1alpha4_defaults_pb.CreateDefaultBillingPlanResponse
 };
 
-BillingService.CopyDefaultBillingPlan = {
-  methodName: "CopyDefaultBillingPlan",
+BillingService.CloneDefaultBillingPlan = {
+  methodName: "CloneDefaultBillingPlan",
   service: BillingService,
   requestStream: false,
   responseStream: false,
-  requestType: services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanRequest,
-  responseType: services_billing_v1alpha4_defaults_pb.CopyDefaultBillingPlanResponse
+  requestType: services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanResponse
 };
 
 BillingService.DeleteDefaultBillingPlan = {
@@ -576,11 +576,11 @@ BillingServiceClient.prototype.createDefaultBillingPlan = function createDefault
   };
 };
 
-BillingServiceClient.prototype.copyDefaultBillingPlan = function copyDefaultBillingPlan(requestMessage, metadata, callback) {
+BillingServiceClient.prototype.cloneDefaultBillingPlan = function cloneDefaultBillingPlan(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(BillingService.CopyDefaultBillingPlan, {
+  var client = grpc.unary(BillingService.CloneDefaultBillingPlan, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
