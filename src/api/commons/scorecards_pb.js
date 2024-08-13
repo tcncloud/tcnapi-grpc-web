@@ -859,7 +859,7 @@ proto.api.commons.TimeFilter.prototype.hasLt = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.Category.repeatedFields_ = [6,10];
+proto.api.commons.Category.repeatedFields_ = [6,10,13];
 
 
 
@@ -900,7 +900,8 @@ skillProfilesList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefin
 version: jspb.Message.getFieldWithDefault(msg, 7, 0),
 callTypesList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
 isSystem: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-categoryType: jspb.Message.getFieldWithDefault(msg, 12, 0)
+categoryType: jspb.Message.getFieldWithDefault(msg, 12, 0),
+skillProfileGroupSidsList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -976,6 +977,12 @@ proto.api.commons.Category.deserializeBinaryFromReader = function(msg, reader) {
     case 12:
       var value = /** @type {!proto.api.commons.CategoryType} */ (reader.readEnum());
       msg.setCategoryType(value);
+      break;
+    case 13:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addSkillProfileGroupSids(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -1066,6 +1073,13 @@ proto.api.commons.Category.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       12,
+      f
+    );
+  }
+  f = message.getSkillProfileGroupSidsList();
+  if (f.length > 0) {
+    writer.writePackedInt64(
+      13,
       f
     );
   }
@@ -1269,6 +1283,43 @@ proto.api.commons.Category.prototype.getCategoryType = function() {
  */
 proto.api.commons.Category.prototype.setCategoryType = function(value) {
   return jspb.Message.setProto3EnumField(this, 12, value);
+};
+
+
+/**
+ * repeated int64 skill_profile_group_sids = 13;
+ * @return {!Array<number>}
+ */
+proto.api.commons.Category.prototype.getSkillProfileGroupSidsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 13));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.api.commons.Category} returns this
+ */
+proto.api.commons.Category.prototype.setSkillProfileGroupSidsList = function(value) {
+  return jspb.Message.setField(this, 13, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.Category} returns this
+ */
+proto.api.commons.Category.prototype.addSkillProfileGroupSids = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 13, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.Category} returns this
+ */
+proto.api.commons.Category.prototype.clearSkillProfileGroupSidsList = function() {
+  return this.setSkillProfileGroupSidsList([]);
 };
 
 

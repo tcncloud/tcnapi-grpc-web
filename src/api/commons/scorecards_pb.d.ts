@@ -83,6 +83,11 @@ export class Category extends jspb.Message {
   getCategoryType(): CategoryTypeMap[keyof CategoryTypeMap];
   setCategoryType(value: CategoryTypeMap[keyof CategoryTypeMap]): void;
 
+  clearSkillProfileGroupSidsList(): void;
+  getSkillProfileGroupSidsList(): Array<number>;
+  setSkillProfileGroupSidsList(value: Array<number>): void;
+  addSkillProfileGroupSids(value: number, index?: number): number;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Category.AsObject;
   static toObject(includeInstance: boolean, msg: Category): Category.AsObject;
@@ -104,6 +109,7 @@ export namespace Category {
     callTypesList: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>,
     isSystem: boolean,
     categoryType: CategoryTypeMap[keyof CategoryTypeMap],
+    skillProfileGroupSidsList: Array<number>,
   }
 }
 
