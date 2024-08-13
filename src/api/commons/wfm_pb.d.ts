@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class SkillType extends jspb.Message {
   serializeBinary(): Uint8Array;
@@ -882,6 +883,310 @@ export namespace AgentLeavePetition {
   }
 }
 
+export class ConfigEntity extends jspb.Message {
+  getEntitySid(): string;
+  setEntitySid(value: string): void;
+
+  getEntityType(): ConfigEntityTypeMap[keyof ConfigEntityTypeMap];
+  setEntityType(value: ConfigEntityTypeMap[keyof ConfigEntityTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConfigEntity.AsObject;
+  static toObject(includeInstance: boolean, msg: ConfigEntity): ConfigEntity.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConfigEntity, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConfigEntity;
+  static deserializeBinaryFromReader(message: ConfigEntity, reader: jspb.BinaryReader): ConfigEntity;
+}
+
+export namespace ConfigEntity {
+  export type AsObject = {
+    entitySid: string,
+    entityType: ConfigEntityTypeMap[keyof ConfigEntityTypeMap],
+  }
+}
+
+export class AdherenceRuleNotificationConfig extends jspb.Message {
+  getAdherenceRuleNotificationConfigId(): string;
+  setAdherenceRuleNotificationConfigId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdherenceRuleNotificationConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: AdherenceRuleNotificationConfig): AdherenceRuleNotificationConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdherenceRuleNotificationConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdherenceRuleNotificationConfig;
+  static deserializeBinaryFromReader(message: AdherenceRuleNotificationConfig, reader: jspb.BinaryReader): AdherenceRuleNotificationConfig;
+}
+
+export namespace AdherenceRuleNotificationConfig {
+  export type AsObject = {
+    adherenceRuleNotificationConfigId: string,
+    name: string,
+  }
+}
+
+export class AdherenceRuleNotificationConfigEntry extends jspb.Message {
+  getAdherenceRuleNotificationConfigEntryId(): string;
+  setAdherenceRuleNotificationConfigEntryId(value: string): void;
+
+  getAdherenceRuleNotificationConfigId(): string;
+  setAdherenceRuleNotificationConfigId(value: string): void;
+
+  getRecipientUserId(): string;
+  setRecipientUserId(value: string): void;
+
+  getNotificationMedium(): AdherenceRuleNotificationMediumMap[keyof AdherenceRuleNotificationMediumMap];
+  setNotificationMedium(value: AdherenceRuleNotificationMediumMap[keyof AdherenceRuleNotificationMediumMap]): void;
+
+  getSecondsToWaitForNoResponse(): number;
+  setSecondsToWaitForNoResponse(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdherenceRuleNotificationConfigEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: AdherenceRuleNotificationConfigEntry): AdherenceRuleNotificationConfigEntry.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdherenceRuleNotificationConfigEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdherenceRuleNotificationConfigEntry;
+  static deserializeBinaryFromReader(message: AdherenceRuleNotificationConfigEntry, reader: jspb.BinaryReader): AdherenceRuleNotificationConfigEntry;
+}
+
+export namespace AdherenceRuleNotificationConfigEntry {
+  export type AsObject = {
+    adherenceRuleNotificationConfigEntryId: string,
+    adherenceRuleNotificationConfigId: string,
+    recipientUserId: string,
+    notificationMedium: AdherenceRuleNotificationMediumMap[keyof AdherenceRuleNotificationMediumMap],
+    secondsToWaitForNoResponse: number,
+  }
+}
+
+export class AdherenceDepartmentalRuleAction extends jspb.Message {
+  getActionType(): AdherenceDepartmentalRuleActionTypeMap[keyof AdherenceDepartmentalRuleActionTypeMap];
+  setActionType(value: AdherenceDepartmentalRuleActionTypeMap[keyof AdherenceDepartmentalRuleActionTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdherenceDepartmentalRuleAction.AsObject;
+  static toObject(includeInstance: boolean, msg: AdherenceDepartmentalRuleAction): AdherenceDepartmentalRuleAction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdherenceDepartmentalRuleAction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdherenceDepartmentalRuleAction;
+  static deserializeBinaryFromReader(message: AdherenceDepartmentalRuleAction, reader: jspb.BinaryReader): AdherenceDepartmentalRuleAction;
+}
+
+export namespace AdherenceDepartmentalRuleAction {
+  export type AsObject = {
+    actionType: AdherenceDepartmentalRuleActionTypeMap[keyof AdherenceDepartmentalRuleActionTypeMap],
+  }
+}
+
+export class AdherenceDepartmentalRule extends jspb.Message {
+  getAdherenceDepartmentalRuleId(): string;
+  setAdherenceDepartmentalRuleId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  hasSelectedEntity(): boolean;
+  clearSelectedEntity(): void;
+  getSelectedEntity(): ConfigEntity | undefined;
+  setSelectedEntity(value?: ConfigEntity): void;
+
+  getRuleRequirementType(): AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap];
+  setRuleRequirementType(value: AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap]): void;
+
+  getAdherenceRuleNotificationConfigId(): string;
+  setAdherenceRuleNotificationConfigId(value: string): void;
+
+  getRuleRange(): AdherenceRuleRangeMap[keyof AdherenceRuleRangeMap];
+  setRuleRange(value: AdherenceRuleRangeMap[keyof AdherenceRuleRangeMap]): void;
+
+  hasCustomRange(): boolean;
+  clearCustomRange(): void;
+  getCustomRange(): DatetimeRange | undefined;
+  setCustomRange(value?: DatetimeRange): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdherenceDepartmentalRule.AsObject;
+  static toObject(includeInstance: boolean, msg: AdherenceDepartmentalRule): AdherenceDepartmentalRule.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdherenceDepartmentalRule, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdherenceDepartmentalRule;
+  static deserializeBinaryFromReader(message: AdherenceDepartmentalRule, reader: jspb.BinaryReader): AdherenceDepartmentalRule;
+}
+
+export namespace AdherenceDepartmentalRule {
+  export type AsObject = {
+    adherenceDepartmentalRuleId: string,
+    name: string,
+    selectedEntity?: ConfigEntity.AsObject,
+    ruleRequirementType: AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap],
+    adherenceRuleNotificationConfigId: string,
+    ruleRange: AdherenceRuleRangeMap[keyof AdherenceRuleRangeMap],
+    customRange?: DatetimeRange.AsObject,
+  }
+}
+
+export class AdherenceDepartmentalRuleClause extends jspb.Message {
+  getAdherenceDepartmentalRuleClauseId(): string;
+  setAdherenceDepartmentalRuleClauseId(value: string): void;
+
+  getAdherenceDepartmentalRuleId(): string;
+  setAdherenceDepartmentalRuleId(value: string): void;
+
+  hasAction(): boolean;
+  clearAction(): void;
+  getAction(): AdherenceDepartmentalRuleAction | undefined;
+  setAction(value?: AdherenceDepartmentalRuleAction): void;
+
+  getCondition(): AdherenceRuleConditionMap[keyof AdherenceRuleConditionMap];
+  setCondition(value: AdherenceRuleConditionMap[keyof AdherenceRuleConditionMap]): void;
+
+  getAmount(): number;
+  setAmount(value: number): void;
+
+  getUnit(): AdherenceRuleUnitMap[keyof AdherenceRuleUnitMap];
+  setUnit(value: AdherenceRuleUnitMap[keyof AdherenceRuleUnitMap]): void;
+
+  hasPerAmount(): boolean;
+  clearPerAmount(): void;
+  getPerAmount(): google_protobuf_wrappers_pb.Int32Value | undefined;
+  setPerAmount(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+  getPerUnit(): AdherenceRuleUnitMap[keyof AdherenceRuleUnitMap];
+  setPerUnit(value: AdherenceRuleUnitMap[keyof AdherenceRuleUnitMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdherenceDepartmentalRuleClause.AsObject;
+  static toObject(includeInstance: boolean, msg: AdherenceDepartmentalRuleClause): AdherenceDepartmentalRuleClause.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdherenceDepartmentalRuleClause, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdherenceDepartmentalRuleClause;
+  static deserializeBinaryFromReader(message: AdherenceDepartmentalRuleClause, reader: jspb.BinaryReader): AdherenceDepartmentalRuleClause;
+}
+
+export namespace AdherenceDepartmentalRuleClause {
+  export type AsObject = {
+    adherenceDepartmentalRuleClauseId: string,
+    adherenceDepartmentalRuleId: string,
+    action?: AdherenceDepartmentalRuleAction.AsObject,
+    condition: AdherenceRuleConditionMap[keyof AdherenceRuleConditionMap],
+    amount: number,
+    unit: AdherenceRuleUnitMap[keyof AdherenceRuleUnitMap],
+    perAmount?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+    perUnit: AdherenceRuleUnitMap[keyof AdherenceRuleUnitMap],
+  }
+}
+
+export class AdherenceAgentRule extends jspb.Message {
+  getAdherenceAgentRuleId(): string;
+  setAdherenceAgentRuleId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  hasSelectedEntity(): boolean;
+  clearSelectedEntity(): void;
+  getSelectedEntity(): ConfigEntity | undefined;
+  setSelectedEntity(value?: ConfigEntity): void;
+
+  getRuleRequirementType(): AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap];
+  setRuleRequirementType(value: AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap]): void;
+
+  getAdherenceRuleNotificationConfigId(): string;
+  setAdherenceRuleNotificationConfigId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdherenceAgentRule.AsObject;
+  static toObject(includeInstance: boolean, msg: AdherenceAgentRule): AdherenceAgentRule.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdherenceAgentRule, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdherenceAgentRule;
+  static deserializeBinaryFromReader(message: AdherenceAgentRule, reader: jspb.BinaryReader): AdherenceAgentRule;
+}
+
+export namespace AdherenceAgentRule {
+  export type AsObject = {
+    adherenceAgentRuleId: string,
+    name: string,
+    selectedEntity?: ConfigEntity.AsObject,
+    ruleRequirementType: AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap],
+    adherenceRuleNotificationConfigId: string,
+  }
+}
+
+export class AdherenceAgentRuleAction extends jspb.Message {
+  getActionType(): AdherenceAgentRuleActionTypeMap[keyof AdherenceAgentRuleActionTypeMap];
+  setActionType(value: AdherenceAgentRuleActionTypeMap[keyof AdherenceAgentRuleActionTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdherenceAgentRuleAction.AsObject;
+  static toObject(includeInstance: boolean, msg: AdherenceAgentRuleAction): AdherenceAgentRuleAction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdherenceAgentRuleAction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdherenceAgentRuleAction;
+  static deserializeBinaryFromReader(message: AdherenceAgentRuleAction, reader: jspb.BinaryReader): AdherenceAgentRuleAction;
+}
+
+export namespace AdherenceAgentRuleAction {
+  export type AsObject = {
+    actionType: AdherenceAgentRuleActionTypeMap[keyof AdherenceAgentRuleActionTypeMap],
+  }
+}
+
+export class AdherenceAgentRuleClause extends jspb.Message {
+  getAdherenceAgentRuleClauseId(): string;
+  setAdherenceAgentRuleClauseId(value: string): void;
+
+  getAdherenceAgentRuleId(): string;
+  setAdherenceAgentRuleId(value: string): void;
+
+  hasAction(): boolean;
+  clearAction(): void;
+  getAction(): AdherenceAgentRuleAction | undefined;
+  setAction(value?: AdherenceAgentRuleAction): void;
+
+  getCondition(): AdherenceRuleConditionMap[keyof AdherenceRuleConditionMap];
+  setCondition(value: AdherenceRuleConditionMap[keyof AdherenceRuleConditionMap]): void;
+
+  getAmount(): number;
+  setAmount(value: number): void;
+
+  getUnit(): AdherenceRuleUnitMap[keyof AdherenceRuleUnitMap];
+  setUnit(value: AdherenceRuleUnitMap[keyof AdherenceRuleUnitMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdherenceAgentRuleClause.AsObject;
+  static toObject(includeInstance: boolean, msg: AdherenceAgentRuleClause): AdherenceAgentRuleClause.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdherenceAgentRuleClause, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdherenceAgentRuleClause;
+  static deserializeBinaryFromReader(message: AdherenceAgentRuleClause, reader: jspb.BinaryReader): AdherenceAgentRuleClause;
+}
+
+export namespace AdherenceAgentRuleClause {
+  export type AsObject = {
+    adherenceAgentRuleClauseId: string,
+    adherenceAgentRuleId: string,
+    action?: AdherenceAgentRuleAction.AsObject,
+    condition: AdherenceRuleConditionMap[keyof AdherenceRuleConditionMap],
+    amount: number,
+    unit: AdherenceRuleUnitMap[keyof AdherenceRuleUnitMap],
+  }
+}
+
 export interface RegressionForecasterModelTypesMap {
   RANDOM_FOREST: 0;
   ADABOOST: 1;
@@ -1175,4 +1480,68 @@ export interface SchedulingActivityClassificationMap {
 }
 
 export const SchedulingActivityClassification: SchedulingActivityClassificationMap;
+
+export interface AdherenceRuleNotificationMediumMap {
+  ADHERENCE_RULE_NOTIFICATION_MEDIUM_IN_PRODUCT: 0;
+  ADHERENCE_RULE_NOTIFICATION_MEDIUM_EMAIL: 1;
+}
+
+export const AdherenceRuleNotificationMedium: AdherenceRuleNotificationMediumMap;
+
+export interface AdherenceRuleRequirementTypeMap {
+  ADHERENCE_RULE_REQUIREMENT_TYPE_NOT_USED: 0;
+  ADHERENCE_RULE_REQUIREMENT_TYPE_OPTIONAL: 1;
+  ADHERENCE_RULE_REQUIREMENT_TYPE_MANDATORY: 2;
+}
+
+export const AdherenceRuleRequirementType: AdherenceRuleRequirementTypeMap;
+
+export interface AdherenceRuleRangeMap {
+  ADHERENCE_RULE_RANGE_START_OF_DAY: 0;
+  ADHERENCE_RULE_RANGE_START_OF_WEEK: 1;
+  ADHERENCE_RULE_RANGE_START_OF_MONTH: 2;
+  ADHERENCE_RULE_RANGE_REST_OF_DAY: 3;
+  ADHERENCE_RULE_RANGE_CUSTOM_DATE_RANGE: 4;
+}
+
+export const AdherenceRuleRange: AdherenceRuleRangeMap;
+
+export interface AdherenceDepartmentalRuleActionTypeMap {
+  ADHERENCE_DEPARTMENTAL_RULE_ACTION_TYPE_CALLS_ANSWERED: 0;
+}
+
+export const AdherenceDepartmentalRuleActionType: AdherenceDepartmentalRuleActionTypeMap;
+
+export interface AdherenceRuleConditionMap {
+  ADHERENCE_RULE_CONDITION_GREATER_THAN: 0;
+  ADHERENCE_RULE_CONDITION_GREATER_THAN_EQUAL: 1;
+  ADHERENCE_RULE_CONDITION_LESS_THAN: 2;
+  ADHERENCE_RULE_CONDITION_LESS_THAN_EQUAL: 3;
+}
+
+export const AdherenceRuleCondition: AdherenceRuleConditionMap;
+
+export interface AdherenceRuleUnitMap {
+  ADHERENCE_RULE_UNIT_SECONDS: 0;
+  ADHERENCE_RULE_UNIT_MINUTES: 1;
+  ADHERENCE_RULE_UNIT_CALLS: 2;
+  ADHERENCE_RULE_UNIT_PERCENTAGE: 3;
+}
+
+export const AdherenceRuleUnit: AdherenceRuleUnitMap;
+
+export interface AdherenceAgentRuleActionTypeMap {
+  ADHERENCE_AGENT_RULE_ACTION_TYPE_WRAP_UP: 0;
+  ADHERENCE_AGENT_RULE_ACTION_TYPE_WAITING: 1;
+  ADHERENCE_AGENT_RULE_ACTION_TYPE_MANUAL_DIAL: 2;
+  ADHERENCE_AGENT_RULE_ACTION_TYPE_PREVIEW_DIAL: 3;
+  ADHERENCE_AGENT_RULE_ACTION_TYPE_ANSWER_CALLS: 4;
+  ADHERENCE_AGENT_RULE_ACTION_TYPE_ON_CALL: 5;
+  ADHERENCE_AGENT_RULE_ACTION_TYPE_ON_HOLD: 6;
+  ADHERENCE_AGENT_RULE_ACTION_TYPE_SHIFT_START: 7;
+  ADHERENCE_AGENT_RULE_ACTION_TYPE_SHIFT_START_LATE: 8;
+  ADHERENCE_AGENT_RULE_ACTION_TYPE_SHIFT_END_EARLY: 9;
+}
+
+export const AdherenceAgentRuleActionType: AdherenceAgentRuleActionTypeMap;
 
