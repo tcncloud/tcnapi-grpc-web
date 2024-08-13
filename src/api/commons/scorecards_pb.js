@@ -47,6 +47,7 @@ goog.exportSymbol('proto.api.commons.EvaluationState', null, global);
 goog.exportSymbol('proto.api.commons.EvaluationType', null, global);
 goog.exportSymbol('proto.api.commons.FailType', null, global);
 goog.exportSymbol('proto.api.commons.Question', null, global);
+goog.exportSymbol('proto.api.commons.QuestionFocus', null, global);
 goog.exportSymbol('proto.api.commons.RiskLevel', null, global);
 goog.exportSymbol('proto.api.commons.ScoreType', null, global);
 goog.exportSymbol('proto.api.commons.Scorecard', null, global);
@@ -5053,7 +5054,8 @@ authorId: jspb.Message.getFieldWithDefault(msg, 3, ""),
 question: jspb.Message.getFieldWithDefault(msg, 4, ""),
 description: jspb.Message.getFieldWithDefault(msg, 5, ""),
 categoriesList: jspb.Message.toObjectList(msg.getCategoriesList(),
-    proto.api.commons.Category.toObject, includeInstance)
+    proto.api.commons.Category.toObject, includeInstance),
+focus: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -5110,6 +5112,10 @@ proto.api.commons.Question.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.api.commons.Category;
       reader.readMessage(value,proto.api.commons.Category.deserializeBinaryFromReader);
       msg.addCategories(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.api.commons.QuestionFocus} */ (reader.readEnum());
+      msg.setFocus(value);
       break;
     default:
       reader.skipField();
@@ -5174,6 +5180,13 @@ proto.api.commons.Question.serializeBinaryToWriter = function(message, writer) {
       6,
       f,
       proto.api.commons.Category.serializeBinaryToWriter
+    );
+  }
+  f = message.getFocus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
+      f
     );
   }
 };
@@ -5286,6 +5299,24 @@ proto.api.commons.Question.prototype.addCategories = function(opt_value, opt_ind
  */
 proto.api.commons.Question.prototype.clearCategoriesList = function() {
   return this.setCategoriesList([]);
+};
+
+
+/**
+ * optional QuestionFocus focus = 7;
+ * @return {!proto.api.commons.QuestionFocus}
+ */
+proto.api.commons.Question.prototype.getFocus = function() {
+  return /** @type {!proto.api.commons.QuestionFocus} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.QuestionFocus} value
+ * @return {!proto.api.commons.Question} returns this
+ */
+proto.api.commons.Question.prototype.setFocus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 
@@ -8197,6 +8228,15 @@ proto.api.commons.FailType = {
   FAIL_QUESTION: 0,
   FAIL_SECTION: 1,
   FAIL_SCORECARD: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.QuestionFocus = {
+  QUESTION_FOCUS_UNSPECIFIED: 0,
+  QUESTION_FOCUS_AGENT: 1,
+  QUESTION_FOCUS_CUSTOMER: 2
 };
 
 /**

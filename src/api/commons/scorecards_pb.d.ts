@@ -630,6 +630,9 @@ export class Question extends jspb.Message {
   setCategoriesList(value: Array<Category>): void;
   addCategories(value?: Category, index?: number): Category;
 
+  getFocus(): QuestionFocusMap[keyof QuestionFocusMap];
+  setFocus(value: QuestionFocusMap[keyof QuestionFocusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Question.AsObject;
   static toObject(includeInstance: boolean, msg: Question): Question.AsObject;
@@ -647,6 +650,7 @@ export namespace Question {
     question: string,
     description: string,
     categoriesList: Array<Category.AsObject>,
+    focus: QuestionFocusMap[keyof QuestionFocusMap],
   }
 }
 
@@ -1072,6 +1076,14 @@ export interface FailTypeMap {
 }
 
 export const FailType: FailTypeMap;
+
+export interface QuestionFocusMap {
+  QUESTION_FOCUS_UNSPECIFIED: 0;
+  QUESTION_FOCUS_AGENT: 1;
+  QUESTION_FOCUS_CUSTOMER: 2;
+}
+
+export const QuestionFocus: QuestionFocusMap;
 
 export interface ScorecardStateMap {
   SCORECARD_IS_DRAFT: 0;
