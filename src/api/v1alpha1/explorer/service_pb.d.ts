@@ -2,6 +2,7 @@
 // file: api/v1alpha1/explorer/service.proto
 
 import * as jspb from "google-protobuf";
+import * as annotations_authz_pb from "../../../annotations/authz_pb";
 import * as api_v1alpha1_explorer_entities_pb from "../../../api/v1alpha1/explorer/entities_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
