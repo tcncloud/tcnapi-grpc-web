@@ -424,15 +424,15 @@ export class PaymentFlow extends jspb.Message {
   getPaymentstellaEcheck(): PaymentStellaECheck | undefined;
   setPaymentstellaEcheck(value?: PaymentStellaECheck): void;
 
-  hasFinviCc(): boolean;
-  clearFinviCc(): void;
-  getFinviCc(): PaymentFinviCC | undefined;
-  setFinviCc(value?: PaymentFinviCC): void;
+  hasSwervepayCc(): boolean;
+  clearSwervepayCc(): void;
+  getSwervepayCc(): PaymentSwervePayCC | undefined;
+  setSwervepayCc(value?: PaymentSwervePayCC): void;
 
-  hasFinviAch(): boolean;
-  clearFinviAch(): void;
-  getFinviAch(): PaymentFinviACH | undefined;
-  setFinviAch(value?: PaymentFinviACH): void;
+  hasSwervepayAch(): boolean;
+  clearSwervepayAch(): void;
+  getSwervepayAch(): PaymentSwervePayACH | undefined;
+  setSwervepayAch(value?: PaymentSwervePayACH): void;
 
   clearPaymentFieldsList(): void;
   getPaymentFieldsList(): Array<FieldDefinition>;
@@ -470,8 +470,8 @@ export namespace PaymentFlow {
     paymentvisionAch?: PaymentVisionACH.AsObject,
     paymentstellaCc?: PaymentStellaCc.AsObject,
     paymentstellaEcheck?: PaymentStellaECheck.AsObject,
-    finviCc?: PaymentFinviCC.AsObject,
-    finviAch?: PaymentFinviACH.AsObject,
+    swervepayCc?: PaymentSwervePayCC.AsObject,
+    swervepayAch?: PaymentSwervePayACH.AsObject,
     paymentFieldsList: Array<FieldDefinition.AsObject>,
   }
 
@@ -494,8 +494,8 @@ export namespace PaymentFlow {
     PAYMENTVISION_ACH = 16,
     PAYMENTSTELLA_CC = 17,
     PAYMENTSTELLA_ECHECK = 18,
-    FINVI_CC = 19,
-    FINVI_ACH = 21,
+    SWERVEPAY_CC = 19,
+    SWERVEPAY_ACH = 21,
   }
 }
 
@@ -1732,115 +1732,35 @@ export class ExecuteFlow extends jspb.Message {
   getSutherlandrevPaymentConnect(): ExecuteSutherlandrevPaymentConnect | undefined;
   setSutherlandrevPaymentConnect(value?: ExecuteSutherlandrevPaymentConnect): void;
 
-  hasFinviCreateCustomer(): boolean;
-  clearFinviCreateCustomer(): void;
-  getFinviCreateCustomer(): ExecuteFinviCreateCustomer | undefined;
-  setFinviCreateCustomer(value?: ExecuteFinviCreateCustomer): void;
+  hasFinviExileQueryRecords(): boolean;
+  clearFinviExileQueryRecords(): void;
+  getFinviExileQueryRecords(): ExecuteFinviExileQueryRecords | undefined;
+  setFinviExileQueryRecords(value?: ExecuteFinviExileQueryRecords): void;
 
-  hasFinviQueryCustomerDetails(): boolean;
-  clearFinviQueryCustomerDetails(): void;
-  getFinviQueryCustomerDetails(): ExecuteFinviQueryCustomerDetails | undefined;
-  setFinviQueryCustomerDetails(value?: ExecuteFinviQueryCustomerDetails): void;
+  hasFinviExileReadFields(): boolean;
+  clearFinviExileReadFields(): void;
+  getFinviExileReadFields(): ExecuteFinviExileReadFields | undefined;
+  setFinviExileReadFields(value?: ExecuteFinviExileReadFields): void;
 
-  hasFinviQueryCustomerTokenDetails(): boolean;
-  clearFinviQueryCustomerTokenDetails(): void;
-  getFinviQueryCustomerTokenDetails(): ExecuteFinviQueryCustomerTokenDetails | undefined;
-  setFinviQueryCustomerTokenDetails(value?: ExecuteFinviQueryCustomerTokenDetails): void;
+  hasFinviExileWriteFields(): boolean;
+  clearFinviExileWriteFields(): void;
+  getFinviExileWriteFields(): ExecuteFinviExileWriteFields | undefined;
+  setFinviExileWriteFields(value?: ExecuteFinviExileWriteFields): void;
 
-  hasFinviQueryCustomerTokens(): boolean;
-  clearFinviQueryCustomerTokens(): void;
-  getFinviQueryCustomerTokens(): ExecuteFinviQueryQueryCustomerTokens | undefined;
-  setFinviQueryCustomerTokens(value?: ExecuteFinviQueryQueryCustomerTokens): void;
+  hasFinviExileExecuteLogic(): boolean;
+  clearFinviExileExecuteLogic(): void;
+  getFinviExileExecuteLogic(): ExecuteFinviExileExecuteLogic | undefined;
+  setFinviExileExecuteLogic(value?: ExecuteFinviExileExecuteLogic): void;
 
-  hasFinviQueryCustomerTransactions(): boolean;
-  clearFinviQueryCustomerTransactions(): void;
-  getFinviQueryCustomerTransactions(): ExecuteFinviQueryCustomerTransactions | undefined;
-  setFinviQueryCustomerTransactions(value?: ExecuteFinviQueryCustomerTransactions): void;
+  hasFinviExileCreatePayment(): boolean;
+  clearFinviExileCreatePayment(): void;
+  getFinviExileCreatePayment(): ExecuteFinviExileCreatePayment | undefined;
+  setFinviExileCreatePayment(value?: ExecuteFinviExileCreatePayment): void;
 
-  hasFinviQueryCustomers(): boolean;
-  clearFinviQueryCustomers(): void;
-  getFinviQueryCustomers(): ExecuteFinviQueryCustomers | undefined;
-  setFinviQueryCustomers(value?: ExecuteFinviQueryCustomers): void;
-
-  hasFinviQueryTransactionDetails(): boolean;
-  clearFinviQueryTransactionDetails(): void;
-  getFinviQueryTransactionDetails(): ExecuteFinviQueryQueryTransactionDetails | undefined;
-  setFinviQueryTransactionDetails(value?: ExecuteFinviQueryQueryTransactionDetails): void;
-
-  hasFinviQueryTransactions(): boolean;
-  clearFinviQueryTransactions(): void;
-  getFinviQueryTransactions(): ExecuteFinviQueryTransactions | undefined;
-  setFinviQueryTransactions(value?: ExecuteFinviQueryTransactions): void;
-
-  hasFinviRemoveCustomerToken(): boolean;
-  clearFinviRemoveCustomerToken(): void;
-  getFinviRemoveCustomerToken(): ExecuteFinviRemoveCustomerToken | undefined;
-  setFinviRemoveCustomerToken(value?: ExecuteFinviRemoveCustomerToken): void;
-
-  hasFinviUpdateCustomer(): boolean;
-  clearFinviUpdateCustomer(): void;
-  getFinviUpdateCustomer(): ExecuteFinviUpdateCustomer | undefined;
-  setFinviUpdateCustomer(value?: ExecuteFinviUpdateCustomer): void;
-
-  hasFinviCreateTransactionAuth(): boolean;
-  clearFinviCreateTransactionAuth(): void;
-  getFinviCreateTransactionAuth(): ExecuteFinviCreateTransactionAuth | undefined;
-  setFinviCreateTransactionAuth(value?: ExecuteFinviCreateTransactionAuth): void;
-
-  hasFinviCreateTransactionCapture(): boolean;
-  clearFinviCreateTransactionCapture(): void;
-  getFinviCreateTransactionCapture(): ExecuteFinviCreateTransactionCapture | undefined;
-  setFinviCreateTransactionCapture(value?: ExecuteFinviCreateTransactionCapture): void;
-
-  hasFinviCreateTransactionCredit(): boolean;
-  clearFinviCreateTransactionCredit(): void;
-  getFinviCreateTransactionCredit(): ExecuteFinviCreateTransactionCredit | undefined;
-  setFinviCreateTransactionCredit(value?: ExecuteFinviCreateTransactionCredit): void;
-
-  hasFinviCreateTransactionRefund(): boolean;
-  clearFinviCreateTransactionRefund(): void;
-  getFinviCreateTransactionRefund(): ExecuteFinviCreateTransactionRefund | undefined;
-  setFinviCreateTransactionRefund(value?: ExecuteFinviCreateTransactionRefund): void;
-
-  hasFinviCreateTransactionSale(): boolean;
-  clearFinviCreateTransactionSale(): void;
-  getFinviCreateTransactionSale(): ExecuteFinviCreateTransactionSale | undefined;
-  setFinviCreateTransactionSale(value?: ExecuteFinviCreateTransactionSale): void;
-
-  hasFinviCreateTransactionValidate(): boolean;
-  clearFinviCreateTransactionValidate(): void;
-  getFinviCreateTransactionValidate(): ExecuteFinviCreateTransactionValidate | undefined;
-  setFinviCreateTransactionValidate(value?: ExecuteFinviCreateTransactionValidate): void;
-
-  hasFinviProcessNewTransactionAuth(): boolean;
-  clearFinviProcessNewTransactionAuth(): void;
-  getFinviProcessNewTransactionAuth(): ExecuteFinviProcessNewTransactionAuth | undefined;
-  setFinviProcessNewTransactionAuth(value?: ExecuteFinviProcessNewTransactionAuth): void;
-
-  hasFinviProcessNewTransactionCapture(): boolean;
-  clearFinviProcessNewTransactionCapture(): void;
-  getFinviProcessNewTransactionCapture(): ExecuteFinviProcessNewTransactionCapture | undefined;
-  setFinviProcessNewTransactionCapture(value?: ExecuteFinviProcessNewTransactionCapture): void;
-
-  hasFinviProcessNewTransactionCredit(): boolean;
-  clearFinviProcessNewTransactionCredit(): void;
-  getFinviProcessNewTransactionCredit(): ExecuteFinviProcessNewTransactionCredit | undefined;
-  setFinviProcessNewTransactionCredit(value?: ExecuteFinviProcessNewTransactionCredit): void;
-
-  hasFinviProcessNewTransactionRefund(): boolean;
-  clearFinviProcessNewTransactionRefund(): void;
-  getFinviProcessNewTransactionRefund(): ExecuteFinviProcessNewTransactionRefund | undefined;
-  setFinviProcessNewTransactionRefund(value?: ExecuteFinviProcessNewTransactionRefund): void;
-
-  hasFinviProcessNewTransactionSale(): boolean;
-  clearFinviProcessNewTransactionSale(): void;
-  getFinviProcessNewTransactionSale(): ExecuteFinviProcessNewTransactionSale | undefined;
-  setFinviProcessNewTransactionSale(value?: ExecuteFinviProcessNewTransactionSale): void;
-
-  hasFinviProcessNewTransactionValidate(): boolean;
-  clearFinviProcessNewTransactionValidate(): void;
-  getFinviProcessNewTransactionValidate(): ExecuteFinviProcessNewTransactionValidate | undefined;
-  setFinviProcessNewTransactionValidate(value?: ExecuteFinviProcessNewTransactionValidate): void;
+  hasFinviExilePopAccount(): boolean;
+  clearFinviExilePopAccount(): void;
+  getFinviExilePopAccount(): ExecuteFinviExilePopAccount | undefined;
+  setFinviExilePopAccount(value?: ExecuteFinviExilePopAccount): void;
 
   hasNavigaDtiCircCreatePayment(): boolean;
   clearNavigaDtiCircCreatePayment(): void;
@@ -1911,6 +1831,116 @@ export class ExecuteFlow extends jspb.Message {
   clearNavigaDtiCsStopTrans(): void;
   getNavigaDtiCsStopTrans(): ExecuteNavigaDTICSStopTrans | undefined;
   setNavigaDtiCsStopTrans(value?: ExecuteNavigaDTICSStopTrans): void;
+
+  hasSwervepayCreateCustomer(): boolean;
+  clearSwervepayCreateCustomer(): void;
+  getSwervepayCreateCustomer(): ExecuteSwervepayCreateCustomer | undefined;
+  setSwervepayCreateCustomer(value?: ExecuteSwervepayCreateCustomer): void;
+
+  hasSwervepayQueryCustomerDetails(): boolean;
+  clearSwervepayQueryCustomerDetails(): void;
+  getSwervepayQueryCustomerDetails(): ExecuteSwervepayQueryCustomerDetails | undefined;
+  setSwervepayQueryCustomerDetails(value?: ExecuteSwervepayQueryCustomerDetails): void;
+
+  hasSwervepayQueryCustomerTokenDetails(): boolean;
+  clearSwervepayQueryCustomerTokenDetails(): void;
+  getSwervepayQueryCustomerTokenDetails(): ExecuteSwervepayQueryCustomerTokenDetails | undefined;
+  setSwervepayQueryCustomerTokenDetails(value?: ExecuteSwervepayQueryCustomerTokenDetails): void;
+
+  hasSwervepayQueryCustomerTokens(): boolean;
+  clearSwervepayQueryCustomerTokens(): void;
+  getSwervepayQueryCustomerTokens(): ExecuteSwervepayQueryQueryCustomerTokens | undefined;
+  setSwervepayQueryCustomerTokens(value?: ExecuteSwervepayQueryQueryCustomerTokens): void;
+
+  hasSwervepayQueryCustomerTransactions(): boolean;
+  clearSwervepayQueryCustomerTransactions(): void;
+  getSwervepayQueryCustomerTransactions(): ExecuteSwervepayQueryCustomerTransactions | undefined;
+  setSwervepayQueryCustomerTransactions(value?: ExecuteSwervepayQueryCustomerTransactions): void;
+
+  hasSwervepayQueryCustomers(): boolean;
+  clearSwervepayQueryCustomers(): void;
+  getSwervepayQueryCustomers(): ExecuteSwervepayQueryCustomers | undefined;
+  setSwervepayQueryCustomers(value?: ExecuteSwervepayQueryCustomers): void;
+
+  hasSwervepayQueryTransactionDetails(): boolean;
+  clearSwervepayQueryTransactionDetails(): void;
+  getSwervepayQueryTransactionDetails(): ExecuteSwervepayQueryQueryTransactionDetails | undefined;
+  setSwervepayQueryTransactionDetails(value?: ExecuteSwervepayQueryQueryTransactionDetails): void;
+
+  hasSwervepayQueryTransactions(): boolean;
+  clearSwervepayQueryTransactions(): void;
+  getSwervepayQueryTransactions(): ExecuteSwervepayQueryTransactions | undefined;
+  setSwervepayQueryTransactions(value?: ExecuteSwervepayQueryTransactions): void;
+
+  hasSwervepayRemoveCustomerToken(): boolean;
+  clearSwervepayRemoveCustomerToken(): void;
+  getSwervepayRemoveCustomerToken(): ExecuteSwervepayRemoveCustomerToken | undefined;
+  setSwervepayRemoveCustomerToken(value?: ExecuteSwervepayRemoveCustomerToken): void;
+
+  hasSwervepayUpdateCustomer(): boolean;
+  clearSwervepayUpdateCustomer(): void;
+  getSwervepayUpdateCustomer(): ExecuteSwervepayUpdateCustomer | undefined;
+  setSwervepayUpdateCustomer(value?: ExecuteSwervepayUpdateCustomer): void;
+
+  hasSwervepayCreateTransactionAuth(): boolean;
+  clearSwervepayCreateTransactionAuth(): void;
+  getSwervepayCreateTransactionAuth(): ExecuteSwervepayCreateTransactionAuth | undefined;
+  setSwervepayCreateTransactionAuth(value?: ExecuteSwervepayCreateTransactionAuth): void;
+
+  hasSwervepayCreateTransactionCapture(): boolean;
+  clearSwervepayCreateTransactionCapture(): void;
+  getSwervepayCreateTransactionCapture(): ExecuteSwervepayCreateTransactionCapture | undefined;
+  setSwervepayCreateTransactionCapture(value?: ExecuteSwervepayCreateTransactionCapture): void;
+
+  hasSwervepayCreateTransactionCredit(): boolean;
+  clearSwervepayCreateTransactionCredit(): void;
+  getSwervepayCreateTransactionCredit(): ExecuteSwervepayCreateTransactionCredit | undefined;
+  setSwervepayCreateTransactionCredit(value?: ExecuteSwervepayCreateTransactionCredit): void;
+
+  hasSwervepayCreateTransactionRefund(): boolean;
+  clearSwervepayCreateTransactionRefund(): void;
+  getSwervepayCreateTransactionRefund(): ExecuteSwervepayCreateTransactionRefund | undefined;
+  setSwervepayCreateTransactionRefund(value?: ExecuteSwervepayCreateTransactionRefund): void;
+
+  hasSwervepayCreateTransactionSale(): boolean;
+  clearSwervepayCreateTransactionSale(): void;
+  getSwervepayCreateTransactionSale(): ExecuteSwervepayCreateTransactionSale | undefined;
+  setSwervepayCreateTransactionSale(value?: ExecuteSwervepayCreateTransactionSale): void;
+
+  hasSwervepayCreateTransactionValidate(): boolean;
+  clearSwervepayCreateTransactionValidate(): void;
+  getSwervepayCreateTransactionValidate(): ExecuteSwervepayCreateTransactionValidate | undefined;
+  setSwervepayCreateTransactionValidate(value?: ExecuteSwervepayCreateTransactionValidate): void;
+
+  hasSwervepayProcessNewTransactionAuth(): boolean;
+  clearSwervepayProcessNewTransactionAuth(): void;
+  getSwervepayProcessNewTransactionAuth(): ExecuteSwervepayProcessNewTransactionAuth | undefined;
+  setSwervepayProcessNewTransactionAuth(value?: ExecuteSwervepayProcessNewTransactionAuth): void;
+
+  hasSwervepayProcessNewTransactionCapture(): boolean;
+  clearSwervepayProcessNewTransactionCapture(): void;
+  getSwervepayProcessNewTransactionCapture(): ExecuteSwervepayProcessNewTransactionCapture | undefined;
+  setSwervepayProcessNewTransactionCapture(value?: ExecuteSwervepayProcessNewTransactionCapture): void;
+
+  hasSwervepayProcessNewTransactionCredit(): boolean;
+  clearSwervepayProcessNewTransactionCredit(): void;
+  getSwervepayProcessNewTransactionCredit(): ExecuteSwervepayProcessNewTransactionCredit | undefined;
+  setSwervepayProcessNewTransactionCredit(value?: ExecuteSwervepayProcessNewTransactionCredit): void;
+
+  hasSwervepayProcessNewTransactionRefund(): boolean;
+  clearSwervepayProcessNewTransactionRefund(): void;
+  getSwervepayProcessNewTransactionRefund(): ExecuteSwervepayProcessNewTransactionRefund | undefined;
+  setSwervepayProcessNewTransactionRefund(value?: ExecuteSwervepayProcessNewTransactionRefund): void;
+
+  hasSwervepayProcessNewTransactionSale(): boolean;
+  clearSwervepayProcessNewTransactionSale(): void;
+  getSwervepayProcessNewTransactionSale(): ExecuteSwervepayProcessNewTransactionSale | undefined;
+  setSwervepayProcessNewTransactionSale(value?: ExecuteSwervepayProcessNewTransactionSale): void;
+
+  hasSwervepayProcessNewTransactionValidate(): boolean;
+  clearSwervepayProcessNewTransactionValidate(): void;
+  getSwervepayProcessNewTransactionValidate(): ExecuteSwervepayProcessNewTransactionValidate | undefined;
+  setSwervepayProcessNewTransactionValidate(value?: ExecuteSwervepayProcessNewTransactionValidate): void;
 
   hasDebugEcho(): boolean;
   clearDebugEcho(): void;
@@ -2150,28 +2180,12 @@ export namespace ExecuteFlow {
     navigaChangeBilling?: ExecuteNavigaChangeBilling.AsObject,
     paynsecondsTokenizeCard?: ExecutePaynsecondsTokenizeCard.AsObject,
     sutherlandrevPaymentConnect?: ExecuteSutherlandrevPaymentConnect.AsObject,
-    finviCreateCustomer?: ExecuteFinviCreateCustomer.AsObject,
-    finviQueryCustomerDetails?: ExecuteFinviQueryCustomerDetails.AsObject,
-    finviQueryCustomerTokenDetails?: ExecuteFinviQueryCustomerTokenDetails.AsObject,
-    finviQueryCustomerTokens?: ExecuteFinviQueryQueryCustomerTokens.AsObject,
-    finviQueryCustomerTransactions?: ExecuteFinviQueryCustomerTransactions.AsObject,
-    finviQueryCustomers?: ExecuteFinviQueryCustomers.AsObject,
-    finviQueryTransactionDetails?: ExecuteFinviQueryQueryTransactionDetails.AsObject,
-    finviQueryTransactions?: ExecuteFinviQueryTransactions.AsObject,
-    finviRemoveCustomerToken?: ExecuteFinviRemoveCustomerToken.AsObject,
-    finviUpdateCustomer?: ExecuteFinviUpdateCustomer.AsObject,
-    finviCreateTransactionAuth?: ExecuteFinviCreateTransactionAuth.AsObject,
-    finviCreateTransactionCapture?: ExecuteFinviCreateTransactionCapture.AsObject,
-    finviCreateTransactionCredit?: ExecuteFinviCreateTransactionCredit.AsObject,
-    finviCreateTransactionRefund?: ExecuteFinviCreateTransactionRefund.AsObject,
-    finviCreateTransactionSale?: ExecuteFinviCreateTransactionSale.AsObject,
-    finviCreateTransactionValidate?: ExecuteFinviCreateTransactionValidate.AsObject,
-    finviProcessNewTransactionAuth?: ExecuteFinviProcessNewTransactionAuth.AsObject,
-    finviProcessNewTransactionCapture?: ExecuteFinviProcessNewTransactionCapture.AsObject,
-    finviProcessNewTransactionCredit?: ExecuteFinviProcessNewTransactionCredit.AsObject,
-    finviProcessNewTransactionRefund?: ExecuteFinviProcessNewTransactionRefund.AsObject,
-    finviProcessNewTransactionSale?: ExecuteFinviProcessNewTransactionSale.AsObject,
-    finviProcessNewTransactionValidate?: ExecuteFinviProcessNewTransactionValidate.AsObject,
+    finviExileQueryRecords?: ExecuteFinviExileQueryRecords.AsObject,
+    finviExileReadFields?: ExecuteFinviExileReadFields.AsObject,
+    finviExileWriteFields?: ExecuteFinviExileWriteFields.AsObject,
+    finviExileExecuteLogic?: ExecuteFinviExileExecuteLogic.AsObject,
+    finviExileCreatePayment?: ExecuteFinviExileCreatePayment.AsObject,
+    finviExilePopAccount?: ExecuteFinviExilePopAccount.AsObject,
     navigaDtiCircCreatePayment?: ExecuteNavigaDTICircCreatePayment.AsObject,
     navigaDtiCircChangeBilling?: ExecuteNavigaDTICircChangeBilling.AsObject,
     navigaDtiCsAutoRenewInfo?: ExecuteNavigaDTICSAutoRenewInfo.AsObject,
@@ -2186,6 +2200,28 @@ export namespace ExecuteFlow {
     navigaDtiCsServiceErrorTrans?: ExecuteNavigaDTICSServiceErrorTrans.AsObject,
     navigaDtiCsStopInfo?: ExecuteNavigaDTICSStopInfo.AsObject,
     navigaDtiCsStopTrans?: ExecuteNavigaDTICSStopTrans.AsObject,
+    swervepayCreateCustomer?: ExecuteSwervepayCreateCustomer.AsObject,
+    swervepayQueryCustomerDetails?: ExecuteSwervepayQueryCustomerDetails.AsObject,
+    swervepayQueryCustomerTokenDetails?: ExecuteSwervepayQueryCustomerTokenDetails.AsObject,
+    swervepayQueryCustomerTokens?: ExecuteSwervepayQueryQueryCustomerTokens.AsObject,
+    swervepayQueryCustomerTransactions?: ExecuteSwervepayQueryCustomerTransactions.AsObject,
+    swervepayQueryCustomers?: ExecuteSwervepayQueryCustomers.AsObject,
+    swervepayQueryTransactionDetails?: ExecuteSwervepayQueryQueryTransactionDetails.AsObject,
+    swervepayQueryTransactions?: ExecuteSwervepayQueryTransactions.AsObject,
+    swervepayRemoveCustomerToken?: ExecuteSwervepayRemoveCustomerToken.AsObject,
+    swervepayUpdateCustomer?: ExecuteSwervepayUpdateCustomer.AsObject,
+    swervepayCreateTransactionAuth?: ExecuteSwervepayCreateTransactionAuth.AsObject,
+    swervepayCreateTransactionCapture?: ExecuteSwervepayCreateTransactionCapture.AsObject,
+    swervepayCreateTransactionCredit?: ExecuteSwervepayCreateTransactionCredit.AsObject,
+    swervepayCreateTransactionRefund?: ExecuteSwervepayCreateTransactionRefund.AsObject,
+    swervepayCreateTransactionSale?: ExecuteSwervepayCreateTransactionSale.AsObject,
+    swervepayCreateTransactionValidate?: ExecuteSwervepayCreateTransactionValidate.AsObject,
+    swervepayProcessNewTransactionAuth?: ExecuteSwervepayProcessNewTransactionAuth.AsObject,
+    swervepayProcessNewTransactionCapture?: ExecuteSwervepayProcessNewTransactionCapture.AsObject,
+    swervepayProcessNewTransactionCredit?: ExecuteSwervepayProcessNewTransactionCredit.AsObject,
+    swervepayProcessNewTransactionRefund?: ExecuteSwervepayProcessNewTransactionRefund.AsObject,
+    swervepayProcessNewTransactionSale?: ExecuteSwervepayProcessNewTransactionSale.AsObject,
+    swervepayProcessNewTransactionValidate?: ExecuteSwervepayProcessNewTransactionValidate.AsObject,
     debugEcho?: ExecuteDebugEcho.AsObject,
     debugValidate?: ExecuteDebugValidate.AsObject,
   }
@@ -2406,28 +2442,12 @@ export namespace ExecuteFlow {
     NAVIGA_CHANGE_BILLING = 4002,
     PAYNSECONDS_TOKENIZE_CARD = 4101,
     SUTHERLANDREV_PAYMENT_CONNECT = 4201,
-    FINVI_CREATE_CUSTOMER = 4301,
-    FINVI_QUERY_CUSTOMER_DETAILS = 4302,
-    FINVI_QUERY_CUSTOMER_TOKEN_DETAILS = 4303,
-    FINVI_QUERY_CUSTOMER_TOKENS = 4304,
-    FINVI_QUERY_CUSTOMER_TRANSACTIONS = 4305,
-    FINVI_QUERY_CUSTOMERS = 4306,
-    FINVI_QUERY_TRANSACTION_DETAILS = 4307,
-    FINVI_QUERY_TRANSACTIONS = 4308,
-    FINVI_REMOVE_CUSTOMER_TOKEN = 4309,
-    FINVI_UPDATE_CUSTOMER = 4310,
-    FINVI_CREATE_TRANSACTION_AUTH = 4311,
-    FINVI_CREATE_TRANSACTION_CAPTURE = 4312,
-    FINVI_CREATE_TRANSACTION_CREDIT = 4313,
-    FINVI_CREATE_TRANSACTION_REFUND = 4314,
-    FINVI_CREATE_TRANSACTION_SALE = 4315,
-    FINVI_CREATE_TRANSACTION_VALIDATE = 4316,
-    FINVI_PROCESS_NEW_TRANSACTION_AUTH = 4317,
-    FINVI_PROCESS_NEW_TRANSACTION_CAPTURE = 4318,
-    FINVI_PROCESS_NEW_TRANSACTION_CREDIT = 4319,
-    FINVI_PROCESS_NEW_TRANSACTION_REFUND = 4320,
-    FINVI_PROCESS_NEW_TRANSACTION_SALE = 4321,
-    FINVI_PROCESS_NEW_TRANSACTION_VALIDATE = 4322,
+    FINVI_EXILE_QUERY_RECORDS = 4301,
+    FINVI_EXILE_READ_FIELDS = 4302,
+    FINVI_EXILE_WRITE_FIELDS = 4303,
+    FINVI_EXILE_EXECUTE_LOGIC = 4304,
+    FINVI_EXILE_CREATE_PAYMENT = 4305,
+    FINVI_EXILE_POP_ACCOUNT = 4306,
     NAVIGA_DTI_CIRC_CREATE_PAYMENT = 4401,
     NAVIGA_DTI_CIRC_CHANGE_BILLING = 4402,
     NAVIGA_DTI_CS_AUTO_RENEW_INFO = 4501,
@@ -2442,6 +2462,28 @@ export namespace ExecuteFlow {
     NAVIGA_DTI_CS_SERVICE_ERROR_TRANS = 4510,
     NAVIGA_DTI_CS_STOP_INFO = 4511,
     NAVIGA_DTI_CS_STOP_TRANS = 4512,
+    SWERVEPAY_CREATE_CUSTOMER = 4601,
+    SWERVEPAY_QUERY_CUSTOMER_DETAILS = 4602,
+    SWERVEPAY_QUERY_CUSTOMER_TOKEN_DETAILS = 4603,
+    SWERVEPAY_QUERY_CUSTOMER_TOKENS = 4604,
+    SWERVEPAY_QUERY_CUSTOMER_TRANSACTIONS = 4605,
+    SWERVEPAY_QUERY_CUSTOMERS = 4606,
+    SWERVEPAY_QUERY_TRANSACTION_DETAILS = 4607,
+    SWERVEPAY_QUERY_TRANSACTIONS = 4608,
+    SWERVEPAY_REMOVE_CUSTOMER_TOKEN = 4609,
+    SWERVEPAY_UPDATE_CUSTOMER = 4610,
+    SWERVEPAY_CREATE_TRANSACTION_AUTH = 4611,
+    SWERVEPAY_CREATE_TRANSACTION_CAPTURE = 4612,
+    SWERVEPAY_CREATE_TRANSACTION_CREDIT = 4613,
+    SWERVEPAY_CREATE_TRANSACTION_REFUND = 4614,
+    SWERVEPAY_CREATE_TRANSACTION_SALE = 4615,
+    SWERVEPAY_CREATE_TRANSACTION_VALIDATE = 4616,
+    SWERVEPAY_PROCESS_NEW_TRANSACTION_AUTH = 4617,
+    SWERVEPAY_PROCESS_NEW_TRANSACTION_CAPTURE = 4618,
+    SWERVEPAY_PROCESS_NEW_TRANSACTION_CREDIT = 4619,
+    SWERVEPAY_PROCESS_NEW_TRANSACTION_REFUND = 4620,
+    SWERVEPAY_PROCESS_NEW_TRANSACTION_SALE = 4621,
+    SWERVEPAY_PROCESS_NEW_TRANSACTION_VALIDATE = 4622,
     DEBUG_ECHO = 5001,
     DEBUG_VALIDATE = 5002,
   }
@@ -3028,6 +3070,38 @@ export class PaymentFinviACH extends jspb.Message {
 }
 
 export namespace PaymentFinviACH {
+  export type AsObject = {
+  }
+}
+
+export class PaymentSwervePayCC extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentSwervePayCC.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentSwervePayCC): PaymentSwervePayCC.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentSwervePayCC, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentSwervePayCC;
+  static deserializeBinaryFromReader(message: PaymentSwervePayCC, reader: jspb.BinaryReader): PaymentSwervePayCC;
+}
+
+export namespace PaymentSwervePayCC {
+  export type AsObject = {
+  }
+}
+
+export class PaymentSwervePayACH extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PaymentSwervePayACH.AsObject;
+  static toObject(includeInstance: boolean, msg: PaymentSwervePayACH): PaymentSwervePayACH.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PaymentSwervePayACH, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PaymentSwervePayACH;
+  static deserializeBinaryFromReader(message: PaymentSwervePayACH, reader: jspb.BinaryReader): PaymentSwervePayACH;
+}
+
+export namespace PaymentSwervePayACH {
   export type AsObject = {
   }
 }
@@ -6488,354 +6562,450 @@ export namespace ExecuteDebugValidate {
   }
 }
 
-export class ExecuteFinviCreateCustomer extends jspb.Message {
+export class ExecuteFinviExileQueryRecords extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateCustomer.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateCustomer): ExecuteFinviCreateCustomer.AsObject;
+  toObject(includeInstance?: boolean): ExecuteFinviExileQueryRecords.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFinviExileQueryRecords): ExecuteFinviExileQueryRecords.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateCustomer, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateCustomer;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateCustomer, reader: jspb.BinaryReader): ExecuteFinviCreateCustomer;
+  static serializeBinaryToWriter(message: ExecuteFinviExileQueryRecords, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFinviExileQueryRecords;
+  static deserializeBinaryFromReader(message: ExecuteFinviExileQueryRecords, reader: jspb.BinaryReader): ExecuteFinviExileQueryRecords;
 }
 
-export namespace ExecuteFinviCreateCustomer {
+export namespace ExecuteFinviExileQueryRecords {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviQueryCustomerDetails extends jspb.Message {
+export class ExecuteFinviExileReadFields extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviQueryCustomerDetails.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviQueryCustomerDetails): ExecuteFinviQueryCustomerDetails.AsObject;
+  toObject(includeInstance?: boolean): ExecuteFinviExileReadFields.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFinviExileReadFields): ExecuteFinviExileReadFields.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviQueryCustomerDetails, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviQueryCustomerDetails;
-  static deserializeBinaryFromReader(message: ExecuteFinviQueryCustomerDetails, reader: jspb.BinaryReader): ExecuteFinviQueryCustomerDetails;
+  static serializeBinaryToWriter(message: ExecuteFinviExileReadFields, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFinviExileReadFields;
+  static deserializeBinaryFromReader(message: ExecuteFinviExileReadFields, reader: jspb.BinaryReader): ExecuteFinviExileReadFields;
 }
 
-export namespace ExecuteFinviQueryCustomerDetails {
+export namespace ExecuteFinviExileReadFields {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviQueryCustomerTokenDetails extends jspb.Message {
+export class ExecuteFinviExileWriteFields extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviQueryCustomerTokenDetails.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviQueryCustomerTokenDetails): ExecuteFinviQueryCustomerTokenDetails.AsObject;
+  toObject(includeInstance?: boolean): ExecuteFinviExileWriteFields.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFinviExileWriteFields): ExecuteFinviExileWriteFields.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviQueryCustomerTokenDetails, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviQueryCustomerTokenDetails;
-  static deserializeBinaryFromReader(message: ExecuteFinviQueryCustomerTokenDetails, reader: jspb.BinaryReader): ExecuteFinviQueryCustomerTokenDetails;
+  static serializeBinaryToWriter(message: ExecuteFinviExileWriteFields, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFinviExileWriteFields;
+  static deserializeBinaryFromReader(message: ExecuteFinviExileWriteFields, reader: jspb.BinaryReader): ExecuteFinviExileWriteFields;
 }
 
-export namespace ExecuteFinviQueryCustomerTokenDetails {
+export namespace ExecuteFinviExileWriteFields {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviQueryQueryCustomerTokens extends jspb.Message {
+export class ExecuteFinviExileExecuteLogic extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviQueryQueryCustomerTokens.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviQueryQueryCustomerTokens): ExecuteFinviQueryQueryCustomerTokens.AsObject;
+  toObject(includeInstance?: boolean): ExecuteFinviExileExecuteLogic.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFinviExileExecuteLogic): ExecuteFinviExileExecuteLogic.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviQueryQueryCustomerTokens, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviQueryQueryCustomerTokens;
-  static deserializeBinaryFromReader(message: ExecuteFinviQueryQueryCustomerTokens, reader: jspb.BinaryReader): ExecuteFinviQueryQueryCustomerTokens;
+  static serializeBinaryToWriter(message: ExecuteFinviExileExecuteLogic, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFinviExileExecuteLogic;
+  static deserializeBinaryFromReader(message: ExecuteFinviExileExecuteLogic, reader: jspb.BinaryReader): ExecuteFinviExileExecuteLogic;
 }
 
-export namespace ExecuteFinviQueryQueryCustomerTokens {
+export namespace ExecuteFinviExileExecuteLogic {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviQueryCustomerTransactions extends jspb.Message {
+export class ExecuteFinviExileCreatePayment extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviQueryCustomerTransactions.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviQueryCustomerTransactions): ExecuteFinviQueryCustomerTransactions.AsObject;
+  toObject(includeInstance?: boolean): ExecuteFinviExileCreatePayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFinviExileCreatePayment): ExecuteFinviExileCreatePayment.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviQueryCustomerTransactions, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviQueryCustomerTransactions;
-  static deserializeBinaryFromReader(message: ExecuteFinviQueryCustomerTransactions, reader: jspb.BinaryReader): ExecuteFinviQueryCustomerTransactions;
+  static serializeBinaryToWriter(message: ExecuteFinviExileCreatePayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFinviExileCreatePayment;
+  static deserializeBinaryFromReader(message: ExecuteFinviExileCreatePayment, reader: jspb.BinaryReader): ExecuteFinviExileCreatePayment;
 }
 
-export namespace ExecuteFinviQueryCustomerTransactions {
+export namespace ExecuteFinviExileCreatePayment {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviQueryCustomers extends jspb.Message {
+export class ExecuteFinviExilePopAccount extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviQueryCustomers.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviQueryCustomers): ExecuteFinviQueryCustomers.AsObject;
+  toObject(includeInstance?: boolean): ExecuteFinviExilePopAccount.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteFinviExilePopAccount): ExecuteFinviExilePopAccount.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviQueryCustomers, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviQueryCustomers;
-  static deserializeBinaryFromReader(message: ExecuteFinviQueryCustomers, reader: jspb.BinaryReader): ExecuteFinviQueryCustomers;
+  static serializeBinaryToWriter(message: ExecuteFinviExilePopAccount, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteFinviExilePopAccount;
+  static deserializeBinaryFromReader(message: ExecuteFinviExilePopAccount, reader: jspb.BinaryReader): ExecuteFinviExilePopAccount;
 }
 
-export namespace ExecuteFinviQueryCustomers {
+export namespace ExecuteFinviExilePopAccount {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviQueryQueryTransactionDetails extends jspb.Message {
+export class ExecuteSwervepayCreateCustomer extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviQueryQueryTransactionDetails.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviQueryQueryTransactionDetails): ExecuteFinviQueryQueryTransactionDetails.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayCreateCustomer.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayCreateCustomer): ExecuteSwervepayCreateCustomer.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviQueryQueryTransactionDetails, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviQueryQueryTransactionDetails;
-  static deserializeBinaryFromReader(message: ExecuteFinviQueryQueryTransactionDetails, reader: jspb.BinaryReader): ExecuteFinviQueryQueryTransactionDetails;
+  static serializeBinaryToWriter(message: ExecuteSwervepayCreateCustomer, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayCreateCustomer;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayCreateCustomer, reader: jspb.BinaryReader): ExecuteSwervepayCreateCustomer;
 }
 
-export namespace ExecuteFinviQueryQueryTransactionDetails {
+export namespace ExecuteSwervepayCreateCustomer {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviQueryTransactions extends jspb.Message {
+export class ExecuteSwervepayQueryCustomerDetails extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviQueryTransactions.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviQueryTransactions): ExecuteFinviQueryTransactions.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayQueryCustomerDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayQueryCustomerDetails): ExecuteSwervepayQueryCustomerDetails.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviQueryTransactions, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviQueryTransactions;
-  static deserializeBinaryFromReader(message: ExecuteFinviQueryTransactions, reader: jspb.BinaryReader): ExecuteFinviQueryTransactions;
+  static serializeBinaryToWriter(message: ExecuteSwervepayQueryCustomerDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayQueryCustomerDetails;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayQueryCustomerDetails, reader: jspb.BinaryReader): ExecuteSwervepayQueryCustomerDetails;
 }
 
-export namespace ExecuteFinviQueryTransactions {
+export namespace ExecuteSwervepayQueryCustomerDetails {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviRemoveCustomerToken extends jspb.Message {
+export class ExecuteSwervepayQueryCustomerTokenDetails extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviRemoveCustomerToken.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviRemoveCustomerToken): ExecuteFinviRemoveCustomerToken.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayQueryCustomerTokenDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayQueryCustomerTokenDetails): ExecuteSwervepayQueryCustomerTokenDetails.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviRemoveCustomerToken, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviRemoveCustomerToken;
-  static deserializeBinaryFromReader(message: ExecuteFinviRemoveCustomerToken, reader: jspb.BinaryReader): ExecuteFinviRemoveCustomerToken;
+  static serializeBinaryToWriter(message: ExecuteSwervepayQueryCustomerTokenDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayQueryCustomerTokenDetails;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayQueryCustomerTokenDetails, reader: jspb.BinaryReader): ExecuteSwervepayQueryCustomerTokenDetails;
 }
 
-export namespace ExecuteFinviRemoveCustomerToken {
+export namespace ExecuteSwervepayQueryCustomerTokenDetails {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviUpdateCustomer extends jspb.Message {
+export class ExecuteSwervepayQueryQueryCustomerTokens extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviUpdateCustomer.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviUpdateCustomer): ExecuteFinviUpdateCustomer.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayQueryQueryCustomerTokens.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayQueryQueryCustomerTokens): ExecuteSwervepayQueryQueryCustomerTokens.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviUpdateCustomer, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviUpdateCustomer;
-  static deserializeBinaryFromReader(message: ExecuteFinviUpdateCustomer, reader: jspb.BinaryReader): ExecuteFinviUpdateCustomer;
+  static serializeBinaryToWriter(message: ExecuteSwervepayQueryQueryCustomerTokens, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayQueryQueryCustomerTokens;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayQueryQueryCustomerTokens, reader: jspb.BinaryReader): ExecuteSwervepayQueryQueryCustomerTokens;
 }
 
-export namespace ExecuteFinviUpdateCustomer {
+export namespace ExecuteSwervepayQueryQueryCustomerTokens {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviCreateTransactionAuth extends jspb.Message {
+export class ExecuteSwervepayQueryCustomerTransactions extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateTransactionAuth.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateTransactionAuth): ExecuteFinviCreateTransactionAuth.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayQueryCustomerTransactions.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayQueryCustomerTransactions): ExecuteSwervepayQueryCustomerTransactions.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateTransactionAuth, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateTransactionAuth;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateTransactionAuth, reader: jspb.BinaryReader): ExecuteFinviCreateTransactionAuth;
+  static serializeBinaryToWriter(message: ExecuteSwervepayQueryCustomerTransactions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayQueryCustomerTransactions;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayQueryCustomerTransactions, reader: jspb.BinaryReader): ExecuteSwervepayQueryCustomerTransactions;
 }
 
-export namespace ExecuteFinviCreateTransactionAuth {
+export namespace ExecuteSwervepayQueryCustomerTransactions {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviCreateTransactionCapture extends jspb.Message {
+export class ExecuteSwervepayQueryCustomers extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateTransactionCapture.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateTransactionCapture): ExecuteFinviCreateTransactionCapture.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayQueryCustomers.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayQueryCustomers): ExecuteSwervepayQueryCustomers.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateTransactionCapture, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateTransactionCapture;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateTransactionCapture, reader: jspb.BinaryReader): ExecuteFinviCreateTransactionCapture;
+  static serializeBinaryToWriter(message: ExecuteSwervepayQueryCustomers, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayQueryCustomers;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayQueryCustomers, reader: jspb.BinaryReader): ExecuteSwervepayQueryCustomers;
 }
 
-export namespace ExecuteFinviCreateTransactionCapture {
+export namespace ExecuteSwervepayQueryCustomers {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviCreateTransactionCredit extends jspb.Message {
+export class ExecuteSwervepayQueryQueryTransactionDetails extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateTransactionCredit.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateTransactionCredit): ExecuteFinviCreateTransactionCredit.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayQueryQueryTransactionDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayQueryQueryTransactionDetails): ExecuteSwervepayQueryQueryTransactionDetails.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateTransactionCredit, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateTransactionCredit;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateTransactionCredit, reader: jspb.BinaryReader): ExecuteFinviCreateTransactionCredit;
+  static serializeBinaryToWriter(message: ExecuteSwervepayQueryQueryTransactionDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayQueryQueryTransactionDetails;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayQueryQueryTransactionDetails, reader: jspb.BinaryReader): ExecuteSwervepayQueryQueryTransactionDetails;
 }
 
-export namespace ExecuteFinviCreateTransactionCredit {
+export namespace ExecuteSwervepayQueryQueryTransactionDetails {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviCreateTransactionRefund extends jspb.Message {
+export class ExecuteSwervepayQueryTransactions extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateTransactionRefund.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateTransactionRefund): ExecuteFinviCreateTransactionRefund.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayQueryTransactions.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayQueryTransactions): ExecuteSwervepayQueryTransactions.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateTransactionRefund, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateTransactionRefund;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateTransactionRefund, reader: jspb.BinaryReader): ExecuteFinviCreateTransactionRefund;
+  static serializeBinaryToWriter(message: ExecuteSwervepayQueryTransactions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayQueryTransactions;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayQueryTransactions, reader: jspb.BinaryReader): ExecuteSwervepayQueryTransactions;
 }
 
-export namespace ExecuteFinviCreateTransactionRefund {
+export namespace ExecuteSwervepayQueryTransactions {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviCreateTransactionSale extends jspb.Message {
+export class ExecuteSwervepayRemoveCustomerToken extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateTransactionSale.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateTransactionSale): ExecuteFinviCreateTransactionSale.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayRemoveCustomerToken.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayRemoveCustomerToken): ExecuteSwervepayRemoveCustomerToken.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateTransactionSale, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateTransactionSale;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateTransactionSale, reader: jspb.BinaryReader): ExecuteFinviCreateTransactionSale;
+  static serializeBinaryToWriter(message: ExecuteSwervepayRemoveCustomerToken, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayRemoveCustomerToken;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayRemoveCustomerToken, reader: jspb.BinaryReader): ExecuteSwervepayRemoveCustomerToken;
 }
 
-export namespace ExecuteFinviCreateTransactionSale {
+export namespace ExecuteSwervepayRemoveCustomerToken {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviCreateTransactionValidate extends jspb.Message {
+export class ExecuteSwervepayUpdateCustomer extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviCreateTransactionValidate.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviCreateTransactionValidate): ExecuteFinviCreateTransactionValidate.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayUpdateCustomer.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayUpdateCustomer): ExecuteSwervepayUpdateCustomer.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviCreateTransactionValidate, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviCreateTransactionValidate;
-  static deserializeBinaryFromReader(message: ExecuteFinviCreateTransactionValidate, reader: jspb.BinaryReader): ExecuteFinviCreateTransactionValidate;
+  static serializeBinaryToWriter(message: ExecuteSwervepayUpdateCustomer, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayUpdateCustomer;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayUpdateCustomer, reader: jspb.BinaryReader): ExecuteSwervepayUpdateCustomer;
 }
 
-export namespace ExecuteFinviCreateTransactionValidate {
+export namespace ExecuteSwervepayUpdateCustomer {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviProcessNewTransactionAuth extends jspb.Message {
+export class ExecuteSwervepayCreateTransactionAuth extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviProcessNewTransactionAuth.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviProcessNewTransactionAuth): ExecuteFinviProcessNewTransactionAuth.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayCreateTransactionAuth.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayCreateTransactionAuth): ExecuteSwervepayCreateTransactionAuth.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviProcessNewTransactionAuth, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviProcessNewTransactionAuth;
-  static deserializeBinaryFromReader(message: ExecuteFinviProcessNewTransactionAuth, reader: jspb.BinaryReader): ExecuteFinviProcessNewTransactionAuth;
+  static serializeBinaryToWriter(message: ExecuteSwervepayCreateTransactionAuth, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayCreateTransactionAuth;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayCreateTransactionAuth, reader: jspb.BinaryReader): ExecuteSwervepayCreateTransactionAuth;
 }
 
-export namespace ExecuteFinviProcessNewTransactionAuth {
+export namespace ExecuteSwervepayCreateTransactionAuth {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviProcessNewTransactionCapture extends jspb.Message {
+export class ExecuteSwervepayCreateTransactionCapture extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviProcessNewTransactionCapture.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviProcessNewTransactionCapture): ExecuteFinviProcessNewTransactionCapture.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayCreateTransactionCapture.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayCreateTransactionCapture): ExecuteSwervepayCreateTransactionCapture.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviProcessNewTransactionCapture, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviProcessNewTransactionCapture;
-  static deserializeBinaryFromReader(message: ExecuteFinviProcessNewTransactionCapture, reader: jspb.BinaryReader): ExecuteFinviProcessNewTransactionCapture;
+  static serializeBinaryToWriter(message: ExecuteSwervepayCreateTransactionCapture, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayCreateTransactionCapture;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayCreateTransactionCapture, reader: jspb.BinaryReader): ExecuteSwervepayCreateTransactionCapture;
 }
 
-export namespace ExecuteFinviProcessNewTransactionCapture {
+export namespace ExecuteSwervepayCreateTransactionCapture {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviProcessNewTransactionCredit extends jspb.Message {
+export class ExecuteSwervepayCreateTransactionCredit extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviProcessNewTransactionCredit.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviProcessNewTransactionCredit): ExecuteFinviProcessNewTransactionCredit.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayCreateTransactionCredit.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayCreateTransactionCredit): ExecuteSwervepayCreateTransactionCredit.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviProcessNewTransactionCredit, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviProcessNewTransactionCredit;
-  static deserializeBinaryFromReader(message: ExecuteFinviProcessNewTransactionCredit, reader: jspb.BinaryReader): ExecuteFinviProcessNewTransactionCredit;
+  static serializeBinaryToWriter(message: ExecuteSwervepayCreateTransactionCredit, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayCreateTransactionCredit;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayCreateTransactionCredit, reader: jspb.BinaryReader): ExecuteSwervepayCreateTransactionCredit;
 }
 
-export namespace ExecuteFinviProcessNewTransactionCredit {
+export namespace ExecuteSwervepayCreateTransactionCredit {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviProcessNewTransactionRefund extends jspb.Message {
+export class ExecuteSwervepayCreateTransactionRefund extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviProcessNewTransactionRefund.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviProcessNewTransactionRefund): ExecuteFinviProcessNewTransactionRefund.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayCreateTransactionRefund.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayCreateTransactionRefund): ExecuteSwervepayCreateTransactionRefund.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviProcessNewTransactionRefund, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviProcessNewTransactionRefund;
-  static deserializeBinaryFromReader(message: ExecuteFinviProcessNewTransactionRefund, reader: jspb.BinaryReader): ExecuteFinviProcessNewTransactionRefund;
+  static serializeBinaryToWriter(message: ExecuteSwervepayCreateTransactionRefund, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayCreateTransactionRefund;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayCreateTransactionRefund, reader: jspb.BinaryReader): ExecuteSwervepayCreateTransactionRefund;
 }
 
-export namespace ExecuteFinviProcessNewTransactionRefund {
+export namespace ExecuteSwervepayCreateTransactionRefund {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviProcessNewTransactionSale extends jspb.Message {
+export class ExecuteSwervepayCreateTransactionSale extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviProcessNewTransactionSale.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviProcessNewTransactionSale): ExecuteFinviProcessNewTransactionSale.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayCreateTransactionSale.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayCreateTransactionSale): ExecuteSwervepayCreateTransactionSale.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviProcessNewTransactionSale, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviProcessNewTransactionSale;
-  static deserializeBinaryFromReader(message: ExecuteFinviProcessNewTransactionSale, reader: jspb.BinaryReader): ExecuteFinviProcessNewTransactionSale;
+  static serializeBinaryToWriter(message: ExecuteSwervepayCreateTransactionSale, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayCreateTransactionSale;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayCreateTransactionSale, reader: jspb.BinaryReader): ExecuteSwervepayCreateTransactionSale;
 }
 
-export namespace ExecuteFinviProcessNewTransactionSale {
+export namespace ExecuteSwervepayCreateTransactionSale {
   export type AsObject = {
   }
 }
 
-export class ExecuteFinviProcessNewTransactionValidate extends jspb.Message {
+export class ExecuteSwervepayCreateTransactionValidate extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecuteFinviProcessNewTransactionValidate.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecuteFinviProcessNewTransactionValidate): ExecuteFinviProcessNewTransactionValidate.AsObject;
+  toObject(includeInstance?: boolean): ExecuteSwervepayCreateTransactionValidate.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayCreateTransactionValidate): ExecuteSwervepayCreateTransactionValidate.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecuteFinviProcessNewTransactionValidate, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecuteFinviProcessNewTransactionValidate;
-  static deserializeBinaryFromReader(message: ExecuteFinviProcessNewTransactionValidate, reader: jspb.BinaryReader): ExecuteFinviProcessNewTransactionValidate;
+  static serializeBinaryToWriter(message: ExecuteSwervepayCreateTransactionValidate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayCreateTransactionValidate;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayCreateTransactionValidate, reader: jspb.BinaryReader): ExecuteSwervepayCreateTransactionValidate;
 }
 
-export namespace ExecuteFinviProcessNewTransactionValidate {
+export namespace ExecuteSwervepayCreateTransactionValidate {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteSwervepayProcessNewTransactionAuth extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteSwervepayProcessNewTransactionAuth.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayProcessNewTransactionAuth): ExecuteSwervepayProcessNewTransactionAuth.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteSwervepayProcessNewTransactionAuth, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayProcessNewTransactionAuth;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayProcessNewTransactionAuth, reader: jspb.BinaryReader): ExecuteSwervepayProcessNewTransactionAuth;
+}
+
+export namespace ExecuteSwervepayProcessNewTransactionAuth {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteSwervepayProcessNewTransactionCapture extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteSwervepayProcessNewTransactionCapture.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayProcessNewTransactionCapture): ExecuteSwervepayProcessNewTransactionCapture.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteSwervepayProcessNewTransactionCapture, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayProcessNewTransactionCapture;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayProcessNewTransactionCapture, reader: jspb.BinaryReader): ExecuteSwervepayProcessNewTransactionCapture;
+}
+
+export namespace ExecuteSwervepayProcessNewTransactionCapture {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteSwervepayProcessNewTransactionCredit extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteSwervepayProcessNewTransactionCredit.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayProcessNewTransactionCredit): ExecuteSwervepayProcessNewTransactionCredit.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteSwervepayProcessNewTransactionCredit, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayProcessNewTransactionCredit;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayProcessNewTransactionCredit, reader: jspb.BinaryReader): ExecuteSwervepayProcessNewTransactionCredit;
+}
+
+export namespace ExecuteSwervepayProcessNewTransactionCredit {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteSwervepayProcessNewTransactionRefund extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteSwervepayProcessNewTransactionRefund.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayProcessNewTransactionRefund): ExecuteSwervepayProcessNewTransactionRefund.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteSwervepayProcessNewTransactionRefund, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayProcessNewTransactionRefund;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayProcessNewTransactionRefund, reader: jspb.BinaryReader): ExecuteSwervepayProcessNewTransactionRefund;
+}
+
+export namespace ExecuteSwervepayProcessNewTransactionRefund {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteSwervepayProcessNewTransactionSale extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteSwervepayProcessNewTransactionSale.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayProcessNewTransactionSale): ExecuteSwervepayProcessNewTransactionSale.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteSwervepayProcessNewTransactionSale, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayProcessNewTransactionSale;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayProcessNewTransactionSale, reader: jspb.BinaryReader): ExecuteSwervepayProcessNewTransactionSale;
+}
+
+export namespace ExecuteSwervepayProcessNewTransactionSale {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteSwervepayProcessNewTransactionValidate extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteSwervepayProcessNewTransactionValidate.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSwervepayProcessNewTransactionValidate): ExecuteSwervepayProcessNewTransactionValidate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteSwervepayProcessNewTransactionValidate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSwervepayProcessNewTransactionValidate;
+  static deserializeBinaryFromReader(message: ExecuteSwervepayProcessNewTransactionValidate, reader: jspb.BinaryReader): ExecuteSwervepayProcessNewTransactionValidate;
+}
+
+export namespace ExecuteSwervepayProcessNewTransactionValidate {
   export type AsObject = {
   }
 }
@@ -7111,6 +7281,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_FINVI: 4300;
   INTEGRATION_TYPE_NAVIGA_DTI_CIRC: 4400;
   INTEGRATION_TYPE_NAVIGA_DTI_CS: 4500;
+  INTEGRATION_TYPE_SWERVEPAY: 4600;
   INTEGRATION_TYPE_DEBUG: 5000;
 }
 
@@ -7332,34 +7503,12 @@ export interface RequestMethodMap {
   REQUEST_METHOD_NAVIGA_CHANGE_BILLING: 4002;
   REQUEST_METHOD_PAYNSECONDS_TOKENIZE_CARD: 4101;
   REQUEST_METHOD_SUTHERLANDREV_PAYMENT_CONNECT: 4201;
-  REQUEST_METHOD_FINVI_CREATE_CUSTOMER: 4301;
-  REQUEST_METHOD_FINVI_QUERY_CUSTOMER_DETAILS: 4302;
-  REQUEST_METHOD_FINVI_QUERY_CUSTOMER_TOKEN_DETAILS: 4303;
-  REQUEST_METHOD_FINVI_QUERY_CUSTOMER_TOKENS: 4304;
-  REQUEST_METHOD_FINVI_QUERY_CUSTOMER_TRANSACTIONS: 4305;
-  REQUEST_METHOD_FINVI_QUERY_CUSTOMERS: 4306;
-  REQUEST_METHOD_FINVI_QUERY_TRANSACTION_DETAILS: 4307;
-  REQUEST_METHOD_FINVI_QUERY_TRANSACTIONS: 4308;
-  REQUEST_METHOD_FINVI_REMOVE_CUSTOMER_TOKEN: 4309;
-  REQUEST_METHOD_FINVI_UPDATE_CUSTOMER: 4310;
-  REQUEST_METHOD_FINVI_CREATE_TRANSACTION_AUTH: 4311;
-  REQUEST_METHOD_FINVI_CREATE_TRANSACTION_CAPTURE: 4312;
-  REQUEST_METHOD_FINVI_CREATE_TRANSACTION_CREDIT: 4313;
-  REQUEST_METHOD_FINVI_CREATE_TRANSACTION_REFUND: 4314;
-  REQUEST_METHOD_FINVI_CREATE_TRANSACTION_SALE: 4315;
-  REQUEST_METHOD_FINVI_CREATE_TRANSACTION_VALIDATE: 4316;
-  REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_AUTH: 4317;
-  REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_CAPTURE: 4318;
-  REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_CREDIT: 4319;
-  REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_REFUND: 4320;
-  REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_SALE: 4321;
-  REQUEST_METHOD_FINVI_PROCESS_NEW_TRANSACTION_VALIDATE: 4322;
-  REQUEST_METHOD_FINVI_EXILE_QUERY_RECORDS: 4323;
-  REQUEST_METHOD_FINVI_EXILE_READ_FIELDS: 4324;
-  REQUEST_METHOD_FINVI_EXILE_WRITE_FIELDS: 4325;
-  REQUEST_METHOD_FINVI_EXILE_EXECUTE_LOGIC: 4326;
-  REQUEST_METHOD_FINVI_EXILE_CREATE_PAYMENT: 4327;
-  REQUEST_METHOD_FINVI_EXILE_POP_ACCOUNT: 4328;
+  REQUEST_METHOD_FINVI_EXILE_QUERY_RECORDS: 4301;
+  REQUEST_METHOD_FINVI_EXILE_READ_FIELDS: 4302;
+  REQUEST_METHOD_FINVI_EXILE_WRITE_FIELDS: 4303;
+  REQUEST_METHOD_FINVI_EXILE_EXECUTE_LOGIC: 4304;
+  REQUEST_METHOD_FINVI_EXILE_CREATE_PAYMENT: 4305;
+  REQUEST_METHOD_FINVI_EXILE_POP_ACCOUNT: 4306;
   REQUEST_METHOD_NAVIGA_DTI_CIRC_CREATE_PAYMENT: 4401;
   REQUEST_METHOD_NAVIGA_DTI_CIRC_CHANGE_BILLING: 4402;
   REQUEST_METHOD_NAVIGA_DTI_CS_AUTO_RENEW_INFO: 4501;
@@ -7374,6 +7523,28 @@ export interface RequestMethodMap {
   REQUEST_METHOD_NAVIGA_DTI_CS_SERVICE_ERROR_TRANS: 4510;
   REQUEST_METHOD_NAVIGA_DTI_CS_STOP_INFO: 4511;
   REQUEST_METHOD_NAVIGA_DTI_CS_STOP_TRANS: 4512;
+  REQUEST_METHOD_SWERVEPAY_CREATE_CUSTOMER: 4601;
+  REQUEST_METHOD_SWERVEPAY_QUERY_CUSTOMER_DETAILS: 4602;
+  REQUEST_METHOD_SWERVEPAY_QUERY_CUSTOMER_TOKEN_DETAILS: 4603;
+  REQUEST_METHOD_SWERVEPAY_QUERY_CUSTOMER_TOKENS: 4604;
+  REQUEST_METHOD_SWERVEPAY_QUERY_CUSTOMER_TRANSACTIONS: 4605;
+  REQUEST_METHOD_SWERVEPAY_QUERY_CUSTOMERS: 4606;
+  REQUEST_METHOD_SWERVEPAY_QUERY_TRANSACTION_DETAILS: 4607;
+  REQUEST_METHOD_SWERVEPAY_QUERY_TRANSACTIONS: 4608;
+  REQUEST_METHOD_SWERVEPAY_REMOVE_CUSTOMER_TOKEN: 4609;
+  REQUEST_METHOD_SWERVEPAY_UPDATE_CUSTOMER: 4610;
+  REQUEST_METHOD_SWERVEPAY_CREATE_TRANSACTION_AUTH: 4611;
+  REQUEST_METHOD_SWERVEPAY_CREATE_TRANSACTION_CAPTURE: 4612;
+  REQUEST_METHOD_SWERVEPAY_CREATE_TRANSACTION_CREDIT: 4613;
+  REQUEST_METHOD_SWERVEPAY_CREATE_TRANSACTION_REFUND: 4614;
+  REQUEST_METHOD_SWERVEPAY_CREATE_TRANSACTION_SALE: 4615;
+  REQUEST_METHOD_SWERVEPAY_CREATE_TRANSACTION_VALIDATE: 4616;
+  REQUEST_METHOD_SWERVEPAY_PROCESS_NEW_TRANSACTION_AUTH: 4617;
+  REQUEST_METHOD_SWERVEPAY_PROCESS_NEW_TRANSACTION_CAPTURE: 4618;
+  REQUEST_METHOD_SWERVEPAY_PROCESS_NEW_TRANSACTION_CREDIT: 4619;
+  REQUEST_METHOD_SWERVEPAY_PROCESS_NEW_TRANSACTION_REFUND: 4620;
+  REQUEST_METHOD_SWERVEPAY_PROCESS_NEW_TRANSACTION_SALE: 4621;
+  REQUEST_METHOD_SWERVEPAY_PROCESS_NEW_TRANSACTION_VALIDATE: 4622;
   REQUEST_METHOD_DEBUG_ECHO: 5001;
   REQUESET_METHOD_DEBUG_VALIDATE: 5002;
 }
