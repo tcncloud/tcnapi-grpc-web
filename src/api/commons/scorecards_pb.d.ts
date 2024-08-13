@@ -1072,7 +1072,7 @@ export interface FailTypeMap {
 export const FailType: FailTypeMap;
 
 export interface QuestionFocusMap {
-  QUESTION_FOCUS_UNDEFINED: 0;
+  QUESTION_FOCUS_UNSPECIFIED: 0;
   QUESTION_FOCUS_AGENT: 1;
   QUESTION_FOCUS_CUSTOMER: 2;
 }
