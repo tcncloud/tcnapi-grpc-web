@@ -38,6 +38,33 @@ HuntGroupsService.UpdateHuntGroupExileLinks = {
   responseType: services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupExileLinksResponse
 };
 
+HuntGroupsService.ListHuntGroupAgentTriggers = {
+  methodName: "ListHuntGroupAgentTriggers",
+  service: HuntGroupsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_org_hunt_groups_v1alpha1_entities_pb.ListHuntGroupAgentTriggersRequest,
+  responseType: services_org_hunt_groups_v1alpha1_entities_pb.ListHuntGroupAgentTriggersResponse
+};
+
+HuntGroupsService.CopyHuntGroupAgentTrigger = {
+  methodName: "CopyHuntGroupAgentTrigger",
+  service: HuntGroupsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupAgentTriggerRequest,
+  responseType: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupAgentTriggerResponse
+};
+
+HuntGroupsService.UpdateHuntGroupAgentTriggers = {
+  methodName: "UpdateHuntGroupAgentTriggers",
+  service: HuntGroupsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupAgentTriggersRequest,
+  responseType: services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupAgentTriggersResponse
+};
+
 exports.HuntGroupsService = HuntGroupsService;
 
 function HuntGroupsServiceClient(serviceHost, options) {
@@ -112,6 +139,99 @@ HuntGroupsServiceClient.prototype.updateHuntGroupExileLinks = function updateHun
     callback = arguments[1];
   }
   var client = grpc.unary(HuntGroupsService.UpdateHuntGroupExileLinks, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+HuntGroupsServiceClient.prototype.listHuntGroupAgentTriggers = function listHuntGroupAgentTriggers(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(HuntGroupsService.ListHuntGroupAgentTriggers, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+HuntGroupsServiceClient.prototype.copyHuntGroupAgentTrigger = function copyHuntGroupAgentTrigger(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(HuntGroupsService.CopyHuntGroupAgentTrigger, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+HuntGroupsServiceClient.prototype.updateHuntGroupAgentTriggers = function updateHuntGroupAgentTriggers(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(HuntGroupsService.UpdateHuntGroupAgentTriggers, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
