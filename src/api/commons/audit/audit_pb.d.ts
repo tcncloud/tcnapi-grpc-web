@@ -573,6 +573,11 @@ export class AuditEvent extends jspb.Message {
   getBillingUpdateRateDefinitionEvent(): api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent | undefined;
   setBillingUpdateRateDefinitionEvent(value?: api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent): void;
 
+  hasBillingRatedItemsGeneratedEvent(): boolean;
+  clearBillingRatedItemsGeneratedEvent(): void;
+  getBillingRatedItemsGeneratedEvent(): api_commons_audit_billing_events_pb.BillingRatedItemsGeneratedEvent | undefined;
+  setBillingRatedItemsGeneratedEvent(value?: api_commons_audit_billing_events_pb.BillingRatedItemsGeneratedEvent): void;
+
   hasDeliveryFailureEvent(): boolean;
   clearDeliveryFailureEvent(): void;
   getDeliveryFailureEvent(): api_commons_audit_delivery_events_pb.DeliveryFailureEvent | undefined;
@@ -744,6 +749,7 @@ export namespace AuditEvent {
     billingUpdateBillingPlanEvent?: api_commons_audit_billing_events_pb.BillingUpdateBillingPlanEvent.AsObject,
     billingUpdateInvoiceEvent?: api_commons_audit_billing_events_pb.BillingUpdateInvoiceEvent.AsObject,
     billingUpdateRateDefinitionEvent?: api_commons_audit_billing_events_pb.BillingUpdateRateDefinitionEvent.AsObject,
+    billingRatedItemsGeneratedEvent?: api_commons_audit_billing_events_pb.BillingRatedItemsGeneratedEvent.AsObject,
     deliveryFailureEvent?: api_commons_audit_delivery_events_pb.DeliveryFailureEvent.AsObject,
     deliverySuccessEvent?: api_commons_audit_delivery_events_pb.DeliverySuccessEvent.AsObject,
     contactManagerEntryAddEvent?: api_commons_audit_contactmanager_events_pb.ContactManagerEntryAddEvent.AsObject,
@@ -864,6 +870,7 @@ export namespace AuditEvent {
     BILLING_UPDATE_BILLING_PLAN_EVENT = 1008,
     BILLING_UPDATE_INVOICE_EVENT = 1009,
     BILLING_UPDATE_RATE_DEFINITION_EVENT = 1010,
+    BILLING_RATED_ITEMS_GENERATED_EVENT = 1011,
     DELIVERY_FAILURE_EVENT = 1100,
     DELIVERY_SUCCESS_EVENT = 1101,
     CONTACT_MANAGER_ENTRY_ADD_EVENT = 1200,
