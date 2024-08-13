@@ -24,6 +24,15 @@ BillingService.ApplyBillingPlanDraft = {
   responseType: services_billing_v1alpha4_plan_pb.ApplyBillingPlanDraftResponse
 };
 
+BillingService.CloneBillingPlan = {
+  methodName: "CloneBillingPlan",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha4_plan_pb.CloneBillingPlanRequest,
+  responseType: services_billing_v1alpha4_plan_pb.CloneBillingPlanResponse
+};
+
 BillingService.CreateBillingPlan = {
   methodName: "CreateBillingPlan",
   service: BillingService,
@@ -76,6 +85,15 @@ BillingService.ApplyDefaultBillingPlanDraft = {
   responseStream: false,
   requestType: services_billing_v1alpha4_defaults_pb.ApplyDefaultBillingPlanDraftRequest,
   responseType: services_billing_v1alpha4_defaults_pb.ApplyDefaultBillingPlanDraftResponse
+};
+
+BillingService.CloneDefaultBillingPlan = {
+  methodName: "CloneDefaultBillingPlan",
+  service: BillingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanRequest,
+  responseType: services_billing_v1alpha4_defaults_pb.CloneDefaultBillingPlanResponse
 };
 
 BillingService.CreateDefaultBillingPlan = {
@@ -350,6 +368,37 @@ BillingServiceClient.prototype.applyBillingPlanDraft = function applyBillingPlan
   };
 };
 
+BillingServiceClient.prototype.cloneBillingPlan = function cloneBillingPlan(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.CloneBillingPlan, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 BillingServiceClient.prototype.createBillingPlan = function createBillingPlan(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -510,6 +559,37 @@ BillingServiceClient.prototype.applyDefaultBillingPlanDraft = function applyDefa
     callback = arguments[1];
   }
   var client = grpc.unary(BillingService.ApplyDefaultBillingPlanDraft, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+BillingServiceClient.prototype.cloneDefaultBillingPlan = function cloneDefaultBillingPlan(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(BillingService.CloneDefaultBillingPlan, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

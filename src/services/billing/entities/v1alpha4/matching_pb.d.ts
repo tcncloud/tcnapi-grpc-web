@@ -12,6 +12,12 @@ export class CountryCodePrefix extends jspb.Message {
   setPrefixesList(value: Array<string>): void;
   addPrefixes(value: string, index?: number): string;
 
+  getMatchingRuleId(): string;
+  setMatchingRuleId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CountryCodePrefix.AsObject;
   static toObject(includeInstance: boolean, msg: CountryCodePrefix): CountryCodePrefix.AsObject;
@@ -26,6 +32,8 @@ export namespace CountryCodePrefix {
   export type AsObject = {
     countryCode: number,
     prefixesList: Array<string>,
+    matchingRuleId: string,
+    name: string,
   }
 }
 

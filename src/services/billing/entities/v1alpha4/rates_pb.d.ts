@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as services_billing_entities_v1alpha4_matching_pb from "../../../../services/billing/entities/v1alpha4/matching_pb";
 import * as services_billing_entities_v1alpha4_products_pb from "../../../../services/billing/entities/v1alpha4/products_pb";
 import * as services_billing_entities_v1alpha4_tags_pb from "../../../../services/billing/entities/v1alpha4/tags_pb";
 
@@ -96,6 +97,12 @@ export class MatchingRule extends jspb.Message {
   getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasCountryCodePrefix(): boolean;
+  clearCountryCodePrefix(): void;
+  getCountryCodePrefix(): services_billing_entities_v1alpha4_matching_pb.CountryCodePrefix | undefined;
+  setCountryCodePrefix(value?: services_billing_entities_v1alpha4_matching_pb.CountryCodePrefix): void;
+
+  getMatchingConfigCase(): MatchingRule.MatchingConfigCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MatchingRule.AsObject;
   static toObject(includeInstance: boolean, msg: MatchingRule): MatchingRule.AsObject;
@@ -113,6 +120,12 @@ export namespace MatchingRule {
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    countryCodePrefix?: services_billing_entities_v1alpha4_matching_pb.CountryCodePrefix.AsObject,
+  }
+
+  export enum MatchingConfigCase {
+    MATCHING_CONFIG_NOT_SET = 0,
+    COUNTRY_CODE_PREFIX = 100,
   }
 }
 
