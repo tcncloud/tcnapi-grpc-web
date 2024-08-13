@@ -267,3 +267,69 @@ export namespace BillingUpdateRateDefinitionEvent {
   }
 }
 
+export class BillingRatedItemsGeneratedEvent extends jspb.Message {
+  clearRatedItemsList(): void;
+  getRatedItemsList(): Array<BillingRatedItemsGeneratedEvent.RatedItem>;
+  setRatedItemsList(value: Array<BillingRatedItemsGeneratedEvent.RatedItem>): void;
+  addRatedItems(value?: BillingRatedItemsGeneratedEvent.RatedItem, index?: number): BillingRatedItemsGeneratedEvent.RatedItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BillingRatedItemsGeneratedEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: BillingRatedItemsGeneratedEvent): BillingRatedItemsGeneratedEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BillingRatedItemsGeneratedEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BillingRatedItemsGeneratedEvent;
+  static deserializeBinaryFromReader(message: BillingRatedItemsGeneratedEvent, reader: jspb.BinaryReader): BillingRatedItemsGeneratedEvent;
+}
+
+export namespace BillingRatedItemsGeneratedEvent {
+  export type AsObject = {
+    ratedItemsList: Array<BillingRatedItemsGeneratedEvent.RatedItem.AsObject>,
+  }
+
+  export class RatedItem extends jspb.Message {
+    getRatedItemId(): string;
+    setRatedItemId(value: string): void;
+
+    getBillingCycle(): string;
+    setBillingCycle(value: string): void;
+
+    getEventLogId(): string;
+    setEventLogId(value: string): void;
+
+    getModuleName(): string;
+    setModuleName(value: string): void;
+
+    getOrgId(): string;
+    setOrgId(value: string): void;
+
+    getRateDefinitionId(): string;
+    setRateDefinitionId(value: string): void;
+
+    getSkuId(): string;
+    setSkuId(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): RatedItem.AsObject;
+    static toObject(includeInstance: boolean, msg: RatedItem): RatedItem.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: RatedItem, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): RatedItem;
+    static deserializeBinaryFromReader(message: RatedItem, reader: jspb.BinaryReader): RatedItem;
+  }
+
+  export namespace RatedItem {
+    export type AsObject = {
+      ratedItemId: string,
+      billingCycle: string,
+      eventLogId: string,
+      moduleName: string,
+      orgId: string,
+      rateDefinitionId: string,
+      skuId: string,
+    }
+  }
+}
+
