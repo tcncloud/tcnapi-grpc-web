@@ -1669,6 +1669,60 @@ type WFMDeleteRgbaColor = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteRgbaColorResponse;
 };
 
+type WFMCreateAdherenceRuleNotificationConfig = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigResponse;
+};
+
+type WFMCreateAdherenceRuleNotificationConfigEntry = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryResponse;
+};
+
+type WFMCreateAdherenceDepartmentalRule = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleResponse;
+};
+
+type WFMCreateAdherenceDepartmentalRuleClause = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseResponse;
+};
+
+type WFMCreateAdherenceAgentRule = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleResponse;
+};
+
+type WFMCreateAdherenceAgentRuleClause = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseResponse;
+};
+
 export class WFM {
   static readonly serviceName: string;
   static readonly PerformInitialClientSetup: WFMPerformInitialClientSetup;
@@ -1856,6 +1910,12 @@ export class WFM {
   static readonly ListRgbaColors: WFMListRgbaColors;
   static readonly UpdateRgbaColor: WFMUpdateRgbaColor;
   static readonly DeleteRgbaColor: WFMDeleteRgbaColor;
+  static readonly CreateAdherenceRuleNotificationConfig: WFMCreateAdherenceRuleNotificationConfig;
+  static readonly CreateAdherenceRuleNotificationConfigEntry: WFMCreateAdherenceRuleNotificationConfigEntry;
+  static readonly CreateAdherenceDepartmentalRule: WFMCreateAdherenceDepartmentalRule;
+  static readonly CreateAdherenceDepartmentalRuleClause: WFMCreateAdherenceDepartmentalRuleClause;
+  static readonly CreateAdherenceAgentRule: WFMCreateAdherenceAgentRule;
+  static readonly CreateAdherenceAgentRuleClause: WFMCreateAdherenceAgentRuleClause;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3506,6 +3566,60 @@ export class WFMClient {
   deleteRgbaColor(
     requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteRgbaColorRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteRgbaColorResponse|null) => void
+  ): UnaryResponse;
+  createAdherenceRuleNotificationConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigResponse|null) => void
+  ): UnaryResponse;
+  createAdherenceRuleNotificationConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigResponse|null) => void
+  ): UnaryResponse;
+  createAdherenceRuleNotificationConfigEntry(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryResponse|null) => void
+  ): UnaryResponse;
+  createAdherenceRuleNotificationConfigEntry(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryResponse|null) => void
+  ): UnaryResponse;
+  createAdherenceDepartmentalRule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleResponse|null) => void
+  ): UnaryResponse;
+  createAdherenceDepartmentalRule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleResponse|null) => void
+  ): UnaryResponse;
+  createAdherenceDepartmentalRuleClause(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseResponse|null) => void
+  ): UnaryResponse;
+  createAdherenceDepartmentalRuleClause(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseResponse|null) => void
+  ): UnaryResponse;
+  createAdherenceAgentRule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleResponse|null) => void
+  ): UnaryResponse;
+  createAdherenceAgentRule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleResponse|null) => void
+  ): UnaryResponse;
+  createAdherenceAgentRuleClause(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseResponse|null) => void
+  ): UnaryResponse;
+  createAdherenceAgentRuleClause(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseResponse|null) => void
   ): UnaryResponse;
 }
 

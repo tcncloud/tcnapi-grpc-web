@@ -12246,3 +12246,255 @@ export namespace DeleteRgbaColorResponse {
   }
 }
 
+export class CreateAdherenceRuleNotificationConfigRequest extends jspb.Message {
+  hasNotificationConfig(): boolean;
+  clearNotificationConfig(): void;
+  getNotificationConfig(): api_commons_wfm_pb.AdherenceRuleNotificationConfig | undefined;
+  setNotificationConfig(value?: api_commons_wfm_pb.AdherenceRuleNotificationConfig): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAdherenceRuleNotificationConfigRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAdherenceRuleNotificationConfigRequest): CreateAdherenceRuleNotificationConfigRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAdherenceRuleNotificationConfigRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAdherenceRuleNotificationConfigRequest;
+  static deserializeBinaryFromReader(message: CreateAdherenceRuleNotificationConfigRequest, reader: jspb.BinaryReader): CreateAdherenceRuleNotificationConfigRequest;
+}
+
+export namespace CreateAdherenceRuleNotificationConfigRequest {
+  export type AsObject = {
+    notificationConfig?: api_commons_wfm_pb.AdherenceRuleNotificationConfig.AsObject,
+  }
+}
+
+export class CreateAdherenceRuleNotificationConfigResponse extends jspb.Message {
+  getAdherenceRuleNotificationConfigId(): number;
+  setAdherenceRuleNotificationConfigId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAdherenceRuleNotificationConfigResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAdherenceRuleNotificationConfigResponse): CreateAdherenceRuleNotificationConfigResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAdherenceRuleNotificationConfigResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAdherenceRuleNotificationConfigResponse;
+  static deserializeBinaryFromReader(message: CreateAdherenceRuleNotificationConfigResponse, reader: jspb.BinaryReader): CreateAdherenceRuleNotificationConfigResponse;
+}
+
+export namespace CreateAdherenceRuleNotificationConfigResponse {
+  export type AsObject = {
+    adherenceRuleNotificationConfigId: number,
+  }
+}
+
+export class CreateAdherenceRuleNotificationConfigEntryRequest extends jspb.Message {
+  hasNotificationConfigEntry(): boolean;
+  clearNotificationConfigEntry(): void;
+  getNotificationConfigEntry(): api_commons_wfm_pb.AdherenceRuleNotificationConfigEntry | undefined;
+  setNotificationConfigEntry(value?: api_commons_wfm_pb.AdherenceRuleNotificationConfigEntry): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAdherenceRuleNotificationConfigEntryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAdherenceRuleNotificationConfigEntryRequest): CreateAdherenceRuleNotificationConfigEntryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAdherenceRuleNotificationConfigEntryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAdherenceRuleNotificationConfigEntryRequest;
+  static deserializeBinaryFromReader(message: CreateAdherenceRuleNotificationConfigEntryRequest, reader: jspb.BinaryReader): CreateAdherenceRuleNotificationConfigEntryRequest;
+}
+
+export namespace CreateAdherenceRuleNotificationConfigEntryRequest {
+  export type AsObject = {
+    notificationConfigEntry?: api_commons_wfm_pb.AdherenceRuleNotificationConfigEntry.AsObject,
+  }
+}
+
+export class CreateAdherenceRuleNotificationConfigEntryResponse extends jspb.Message {
+  getAdherenceRuleNotificationConfigEntryId(): number;
+  setAdherenceRuleNotificationConfigEntryId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAdherenceRuleNotificationConfigEntryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAdherenceRuleNotificationConfigEntryResponse): CreateAdherenceRuleNotificationConfigEntryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAdherenceRuleNotificationConfigEntryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAdherenceRuleNotificationConfigEntryResponse;
+  static deserializeBinaryFromReader(message: CreateAdherenceRuleNotificationConfigEntryResponse, reader: jspb.BinaryReader): CreateAdherenceRuleNotificationConfigEntryResponse;
+}
+
+export namespace CreateAdherenceRuleNotificationConfigEntryResponse {
+  export type AsObject = {
+    adherenceRuleNotificationConfigEntryId: number,
+  }
+}
+
+export class CreateAdherenceDepartmentalRuleRequest extends jspb.Message {
+  hasRule(): boolean;
+  clearRule(): void;
+  getRule(): api_commons_wfm_pb.AdherenceDepartmentalRule | undefined;
+  setRule(value?: api_commons_wfm_pb.AdherenceDepartmentalRule): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAdherenceDepartmentalRuleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAdherenceDepartmentalRuleRequest): CreateAdherenceDepartmentalRuleRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAdherenceDepartmentalRuleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAdherenceDepartmentalRuleRequest;
+  static deserializeBinaryFromReader(message: CreateAdherenceDepartmentalRuleRequest, reader: jspb.BinaryReader): CreateAdherenceDepartmentalRuleRequest;
+}
+
+export namespace CreateAdherenceDepartmentalRuleRequest {
+  export type AsObject = {
+    rule?: api_commons_wfm_pb.AdherenceDepartmentalRule.AsObject,
+  }
+}
+
+export class CreateAdherenceDepartmentalRuleResponse extends jspb.Message {
+  getAdherenceDepartmentalRuleId(): number;
+  setAdherenceDepartmentalRuleId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAdherenceDepartmentalRuleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAdherenceDepartmentalRuleResponse): CreateAdherenceDepartmentalRuleResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAdherenceDepartmentalRuleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAdherenceDepartmentalRuleResponse;
+  static deserializeBinaryFromReader(message: CreateAdherenceDepartmentalRuleResponse, reader: jspb.BinaryReader): CreateAdherenceDepartmentalRuleResponse;
+}
+
+export namespace CreateAdherenceDepartmentalRuleResponse {
+  export type AsObject = {
+    adherenceDepartmentalRuleId: number,
+  }
+}
+
+export class CreateAdherenceDepartmentalRuleClauseRequest extends jspb.Message {
+  hasClause(): boolean;
+  clearClause(): void;
+  getClause(): api_commons_wfm_pb.AdherenceDepartmentalRuleClause | undefined;
+  setClause(value?: api_commons_wfm_pb.AdherenceDepartmentalRuleClause): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAdherenceDepartmentalRuleClauseRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAdherenceDepartmentalRuleClauseRequest): CreateAdherenceDepartmentalRuleClauseRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAdherenceDepartmentalRuleClauseRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAdherenceDepartmentalRuleClauseRequest;
+  static deserializeBinaryFromReader(message: CreateAdherenceDepartmentalRuleClauseRequest, reader: jspb.BinaryReader): CreateAdherenceDepartmentalRuleClauseRequest;
+}
+
+export namespace CreateAdherenceDepartmentalRuleClauseRequest {
+  export type AsObject = {
+    clause?: api_commons_wfm_pb.AdherenceDepartmentalRuleClause.AsObject,
+  }
+}
+
+export class CreateAdherenceDepartmentalRuleClauseResponse extends jspb.Message {
+  getAdherenceDepartmentalRuleClauseId(): number;
+  setAdherenceDepartmentalRuleClauseId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAdherenceDepartmentalRuleClauseResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAdherenceDepartmentalRuleClauseResponse): CreateAdherenceDepartmentalRuleClauseResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAdherenceDepartmentalRuleClauseResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAdherenceDepartmentalRuleClauseResponse;
+  static deserializeBinaryFromReader(message: CreateAdherenceDepartmentalRuleClauseResponse, reader: jspb.BinaryReader): CreateAdherenceDepartmentalRuleClauseResponse;
+}
+
+export namespace CreateAdherenceDepartmentalRuleClauseResponse {
+  export type AsObject = {
+    adherenceDepartmentalRuleClauseId: number,
+  }
+}
+
+export class CreateAdherenceAgentRuleRequest extends jspb.Message {
+  hasRule(): boolean;
+  clearRule(): void;
+  getRule(): api_commons_wfm_pb.AdherenceAgentRule | undefined;
+  setRule(value?: api_commons_wfm_pb.AdherenceAgentRule): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAdherenceAgentRuleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAdherenceAgentRuleRequest): CreateAdherenceAgentRuleRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAdherenceAgentRuleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAdherenceAgentRuleRequest;
+  static deserializeBinaryFromReader(message: CreateAdherenceAgentRuleRequest, reader: jspb.BinaryReader): CreateAdherenceAgentRuleRequest;
+}
+
+export namespace CreateAdherenceAgentRuleRequest {
+  export type AsObject = {
+    rule?: api_commons_wfm_pb.AdherenceAgentRule.AsObject,
+  }
+}
+
+export class CreateAdherenceAgentRuleResponse extends jspb.Message {
+  getAdherenceAgentRuleId(): number;
+  setAdherenceAgentRuleId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAdherenceAgentRuleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAdherenceAgentRuleResponse): CreateAdherenceAgentRuleResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAdherenceAgentRuleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAdherenceAgentRuleResponse;
+  static deserializeBinaryFromReader(message: CreateAdherenceAgentRuleResponse, reader: jspb.BinaryReader): CreateAdherenceAgentRuleResponse;
+}
+
+export namespace CreateAdherenceAgentRuleResponse {
+  export type AsObject = {
+    adherenceAgentRuleId: number,
+  }
+}
+
+export class CreateAdherenceAgentRuleClauseRequest extends jspb.Message {
+  hasClause(): boolean;
+  clearClause(): void;
+  getClause(): api_commons_wfm_pb.AdherenceAgentRuleClause | undefined;
+  setClause(value?: api_commons_wfm_pb.AdherenceAgentRuleClause): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAdherenceAgentRuleClauseRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAdherenceAgentRuleClauseRequest): CreateAdherenceAgentRuleClauseRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAdherenceAgentRuleClauseRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAdherenceAgentRuleClauseRequest;
+  static deserializeBinaryFromReader(message: CreateAdherenceAgentRuleClauseRequest, reader: jspb.BinaryReader): CreateAdherenceAgentRuleClauseRequest;
+}
+
+export namespace CreateAdherenceAgentRuleClauseRequest {
+  export type AsObject = {
+    clause?: api_commons_wfm_pb.AdherenceAgentRuleClause.AsObject,
+  }
+}
+
+export class CreateAdherenceAgentRuleClauseResponse extends jspb.Message {
+  getAdherenceAgentRuleClauseId(): number;
+  setAdherenceAgentRuleClauseId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAdherenceAgentRuleClauseResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAdherenceAgentRuleClauseResponse): CreateAdherenceAgentRuleClauseResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAdherenceAgentRuleClauseResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAdherenceAgentRuleClauseResponse;
+  static deserializeBinaryFromReader(message: CreateAdherenceAgentRuleClauseResponse, reader: jspb.BinaryReader): CreateAdherenceAgentRuleClauseResponse;
+}
+
+export namespace CreateAdherenceAgentRuleClauseResponse {
+  export type AsObject = {
+    adherenceAgentRuleClauseId: number,
+  }
+}
+
