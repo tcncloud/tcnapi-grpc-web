@@ -578,6 +578,9 @@ export class TableColumnConfig extends jspb.Message {
   getSortDirection(): ColumnSortMap[keyof ColumnSortMap];
   setSortDirection(value: ColumnSortMap[keyof ColumnSortMap]): void;
 
+  getContextualAction(): ContextualActionTypeMap[keyof ContextualActionTypeMap];
+  setContextualAction(value: ContextualActionTypeMap[keyof ContextualActionTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TableColumnConfig.AsObject;
   static toObject(includeInstance: boolean, msg: TableColumnConfig): TableColumnConfig.AsObject;
@@ -598,6 +601,7 @@ export namespace TableColumnConfig {
     columnSummary: OutputConfigurationColumnSummaryTypeMap[keyof OutputConfigurationColumnSummaryTypeMap],
     description: string,
     sortDirection: ColumnSortMap[keyof ColumnSortMap],
+    contextualAction: ContextualActionTypeMap[keyof ContextualActionTypeMap],
   }
 }
 
@@ -659,6 +663,26 @@ export namespace ColumnOperation {
     OPERATION_VALUE_NOT_SET = 0,
     FLOAT_VALUE = 2,
     FORMAT_SERIES = 3,
+  }
+}
+
+export class InsightContextualAction extends jspb.Message {
+  getContextualActionType(): ContextualActionTypeMap[keyof ContextualActionTypeMap];
+  setContextualActionType(value: ContextualActionTypeMap[keyof ContextualActionTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InsightContextualAction.AsObject;
+  static toObject(includeInstance: boolean, msg: InsightContextualAction): InsightContextualAction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: InsightContextualAction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InsightContextualAction;
+  static deserializeBinaryFromReader(message: InsightContextualAction, reader: jspb.BinaryReader): InsightContextualAction;
+}
+
+export namespace InsightContextualAction {
+  export type AsObject = {
+    contextualActionType: ContextualActionTypeMap[keyof ContextualActionTypeMap],
   }
 }
 
@@ -1055,4 +1079,12 @@ export interface OutputConfigurationColumnSummaryTypeMap {
 }
 
 export const OutputConfigurationColumnSummaryType: OutputConfigurationColumnSummaryTypeMap;
+
+export interface ContextualActionTypeMap {
+  CONTEXTUAL_ACTION_TYPE_UNSPECIFIED: 0;
+  INSIGHT_CONTEXTUAL_ACTION_TYPE_LINK: 1;
+  INSIGHT_CONTEXTUAL_ACTION_TYPE_COMPONENT: 2;
+}
+
+export const ContextualActionType: ContextualActionTypeMap;
 
