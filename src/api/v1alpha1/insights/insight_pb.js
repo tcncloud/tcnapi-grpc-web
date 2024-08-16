@@ -31,7 +31,6 @@ goog.exportSymbol('proto.api.v1alpha1.insights.ColumnOperation', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.ColumnOperation.OperationValueCase', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.ColumnSort', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.ComponentAction', null, global);
-goog.exportSymbol('proto.api.v1alpha1.insights.ContextualActionType', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.CreateInsightRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.CreateInsightResponse', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.CreateOutputConfigurationRequest', null, global);
@@ -52,7 +51,8 @@ goog.exportSymbol('proto.api.v1alpha1.insights.GetVfsSchemaResponse', null, glob
 goog.exportSymbol('proto.api.v1alpha1.insights.GetVfsSchemaResponse.Field', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.Insight', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.InsightContextualAction', null, global);
-goog.exportSymbol('proto.api.v1alpha1.insights.InsightContextualAction.ContextualActionValueCase', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.InsightContextualAction.ActionCase', null, global);
+goog.exportSymbol('proto.api.v1alpha1.insights.InsightContextualActionType', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.LinkAction', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.ListInsightsRequest', null, global);
 goog.exportSymbol('proto.api.v1alpha1.insights.ListInsightsResponse', null, global);
@@ -4835,7 +4835,7 @@ operationsList: jspb.Message.toObjectList(msg.getOperationsList(),
 columnSummary: jspb.Message.getFieldWithDefault(msg, 6, 0),
 description: jspb.Message.getFieldWithDefault(msg, 7, ""),
 sortDirection: jspb.Message.getFieldWithDefault(msg, 8, 0),
-contextualAction: (f = msg.getContextualAction()) && proto.api.v1alpha1.insights.InsightContextualAction.toObject(includeInstance, f)
+insightContextualAction: (f = msg.getInsightContextualAction()) && proto.api.v1alpha1.insights.InsightContextualAction.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4908,7 +4908,7 @@ proto.api.v1alpha1.insights.TableColumnConfig.deserializeBinaryFromReader = func
     case 9:
       var value = new proto.api.v1alpha1.insights.InsightContextualAction;
       reader.readMessage(value,proto.api.v1alpha1.insights.InsightContextualAction.deserializeBinaryFromReader);
-      msg.setContextualAction(value);
+      msg.setInsightContextualAction(value);
       break;
     default:
       reader.skipField();
@@ -4996,7 +4996,7 @@ proto.api.v1alpha1.insights.TableColumnConfig.serializeBinaryToWriter = function
       f
     );
   }
-  f = message.getContextualAction();
+  f = message.getInsightContextualAction();
   if (f != null) {
     writer.writeMessage(
       9,
@@ -5172,10 +5172,10 @@ proto.api.v1alpha1.insights.TableColumnConfig.prototype.setSortDirection = funct
 
 
 /**
- * optional InsightContextualAction contextual_action = 9;
+ * optional InsightContextualAction insight_contextual_action = 9;
  * @return {?proto.api.v1alpha1.insights.InsightContextualAction}
  */
-proto.api.v1alpha1.insights.TableColumnConfig.prototype.getContextualAction = function() {
+proto.api.v1alpha1.insights.TableColumnConfig.prototype.getInsightContextualAction = function() {
   return /** @type{?proto.api.v1alpha1.insights.InsightContextualAction} */ (
     jspb.Message.getWrapperField(this, proto.api.v1alpha1.insights.InsightContextualAction, 9));
 };
@@ -5185,7 +5185,7 @@ proto.api.v1alpha1.insights.TableColumnConfig.prototype.getContextualAction = fu
  * @param {?proto.api.v1alpha1.insights.InsightContextualAction|undefined} value
  * @return {!proto.api.v1alpha1.insights.TableColumnConfig} returns this
 */
-proto.api.v1alpha1.insights.TableColumnConfig.prototype.setContextualAction = function(value) {
+proto.api.v1alpha1.insights.TableColumnConfig.prototype.setInsightContextualAction = function(value) {
   return jspb.Message.setWrapperField(this, 9, value);
 };
 
@@ -5194,8 +5194,8 @@ proto.api.v1alpha1.insights.TableColumnConfig.prototype.setContextualAction = fu
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.insights.TableColumnConfig} returns this
  */
-proto.api.v1alpha1.insights.TableColumnConfig.prototype.clearContextualAction = function() {
-  return this.setContextualAction(undefined);
+proto.api.v1alpha1.insights.TableColumnConfig.prototype.clearInsightContextualAction = function() {
+  return this.setInsightContextualAction(undefined);
 };
 
 
@@ -5203,7 +5203,7 @@ proto.api.v1alpha1.insights.TableColumnConfig.prototype.clearContextualAction = 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.insights.TableColumnConfig.prototype.hasContextualAction = function() {
+proto.api.v1alpha1.insights.TableColumnConfig.prototype.hasInsightContextualAction = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
@@ -5633,17 +5633,17 @@ proto.api.v1alpha1.insights.InsightContextualAction.oneofGroups_ = [[2,3]];
 /**
  * @enum {number}
  */
-proto.api.v1alpha1.insights.InsightContextualAction.ContextualActionValueCase = {
-  CONTEXTUAL_ACTION_VALUE_NOT_SET: 0,
+proto.api.v1alpha1.insights.InsightContextualAction.ActionCase = {
+  ACTION_NOT_SET: 0,
   LINK_ACTION: 2,
   COMPONENT_ACTION: 3
 };
 
 /**
- * @return {proto.api.v1alpha1.insights.InsightContextualAction.ContextualActionValueCase}
+ * @return {proto.api.v1alpha1.insights.InsightContextualAction.ActionCase}
  */
-proto.api.v1alpha1.insights.InsightContextualAction.prototype.getContextualActionValueCase = function() {
-  return /** @type {proto.api.v1alpha1.insights.InsightContextualAction.ContextualActionValueCase} */(jspb.Message.computeOneofCase(this, proto.api.v1alpha1.insights.InsightContextualAction.oneofGroups_[0]));
+proto.api.v1alpha1.insights.InsightContextualAction.prototype.getActionCase = function() {
+  return /** @type {proto.api.v1alpha1.insights.InsightContextualAction.ActionCase} */(jspb.Message.computeOneofCase(this, proto.api.v1alpha1.insights.InsightContextualAction.oneofGroups_[0]));
 };
 
 
@@ -5717,7 +5717,7 @@ proto.api.v1alpha1.insights.InsightContextualAction.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.api.v1alpha1.insights.ContextualActionType} */ (reader.readEnum());
+      var value = /** @type {!proto.api.v1alpha1.insights.InsightContextualActionType} */ (reader.readEnum());
       msg.setContextualActionType(value);
       break;
     case 2:
@@ -5786,16 +5786,16 @@ proto.api.v1alpha1.insights.InsightContextualAction.serializeBinaryToWriter = fu
 
 
 /**
- * optional ContextualActionType contextual_action_type = 1;
- * @return {!proto.api.v1alpha1.insights.ContextualActionType}
+ * optional InsightContextualActionType contextual_action_type = 1;
+ * @return {!proto.api.v1alpha1.insights.InsightContextualActionType}
  */
 proto.api.v1alpha1.insights.InsightContextualAction.prototype.getContextualActionType = function() {
-  return /** @type {!proto.api.v1alpha1.insights.ContextualActionType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.api.v1alpha1.insights.InsightContextualActionType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.api.v1alpha1.insights.ContextualActionType} value
+ * @param {!proto.api.v1alpha1.insights.InsightContextualActionType} value
  * @return {!proto.api.v1alpha1.insights.InsightContextualAction} returns this
  */
 proto.api.v1alpha1.insights.InsightContextualAction.prototype.setContextualActionType = function(value) {
@@ -8655,7 +8655,7 @@ proto.api.v1alpha1.insights.OutputConfigurationColumnSummaryType = {
 /**
  * @enum {number}
  */
-proto.api.v1alpha1.insights.ContextualActionType = {
+proto.api.v1alpha1.insights.InsightContextualActionType = {
   INSIGHT_CONTEXTUAL_ACTION_TYPE_UNSPECIFIED: 0,
   INSIGHT_CONTEXTUAL_ACTION_TYPE_LINK: 1,
   INSIGHT_CONTEXTUAL_ACTION_TYPE_COMPONENT: 2

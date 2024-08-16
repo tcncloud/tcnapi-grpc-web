@@ -578,10 +578,10 @@ export class TableColumnConfig extends jspb.Message {
   getSortDirection(): ColumnSortMap[keyof ColumnSortMap];
   setSortDirection(value: ColumnSortMap[keyof ColumnSortMap]): void;
 
-  hasContextualAction(): boolean;
-  clearContextualAction(): void;
-  getContextualAction(): InsightContextualAction | undefined;
-  setContextualAction(value?: InsightContextualAction): void;
+  hasInsightContextualAction(): boolean;
+  clearInsightContextualAction(): void;
+  getInsightContextualAction(): InsightContextualAction | undefined;
+  setInsightContextualAction(value?: InsightContextualAction): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TableColumnConfig.AsObject;
@@ -603,7 +603,7 @@ export namespace TableColumnConfig {
     columnSummary: OutputConfigurationColumnSummaryTypeMap[keyof OutputConfigurationColumnSummaryTypeMap],
     description: string,
     sortDirection: ColumnSortMap[keyof ColumnSortMap],
-    contextualAction?: InsightContextualAction.AsObject,
+    insightContextualAction?: InsightContextualAction.AsObject,
   }
 }
 
@@ -669,8 +669,8 @@ export namespace ColumnOperation {
 }
 
 export class InsightContextualAction extends jspb.Message {
-  getContextualActionType(): ContextualActionTypeMap[keyof ContextualActionTypeMap];
-  setContextualActionType(value: ContextualActionTypeMap[keyof ContextualActionTypeMap]): void;
+  getContextualActionType(): InsightContextualActionTypeMap[keyof InsightContextualActionTypeMap];
+  setContextualActionType(value: InsightContextualActionTypeMap[keyof InsightContextualActionTypeMap]): void;
 
   hasLinkAction(): boolean;
   clearLinkAction(): void;
@@ -682,7 +682,7 @@ export class InsightContextualAction extends jspb.Message {
   getComponentAction(): ComponentAction | undefined;
   setComponentAction(value?: ComponentAction): void;
 
-  getContextualActionValueCase(): InsightContextualAction.ContextualActionValueCase;
+  getActionCase(): InsightContextualAction.ActionCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InsightContextualAction.AsObject;
   static toObject(includeInstance: boolean, msg: InsightContextualAction): InsightContextualAction.AsObject;
@@ -695,13 +695,13 @@ export class InsightContextualAction extends jspb.Message {
 
 export namespace InsightContextualAction {
   export type AsObject = {
-    contextualActionType: ContextualActionTypeMap[keyof ContextualActionTypeMap],
+    contextualActionType: InsightContextualActionTypeMap[keyof InsightContextualActionTypeMap],
     linkAction?: LinkAction.AsObject,
     componentAction?: ComponentAction.AsObject,
   }
 
-  export enum ContextualActionValueCase {
-    CONTEXTUAL_ACTION_VALUE_NOT_SET = 0,
+  export enum ActionCase {
+    ACTION_NOT_SET = 0,
     LINK_ACTION = 2,
     COMPONENT_ACTION = 3,
   }
@@ -1149,11 +1149,11 @@ export interface OutputConfigurationColumnSummaryTypeMap {
 
 export const OutputConfigurationColumnSummaryType: OutputConfigurationColumnSummaryTypeMap;
 
-export interface ContextualActionTypeMap {
+export interface InsightContextualActionTypeMap {
   INSIGHT_CONTEXTUAL_ACTION_TYPE_UNSPECIFIED: 0;
   INSIGHT_CONTEXTUAL_ACTION_TYPE_LINK: 1;
   INSIGHT_CONTEXTUAL_ACTION_TYPE_COMPONENT: 2;
 }
 
-export const ContextualActionType: ContextualActionTypeMap;
+export const InsightContextualActionType: InsightContextualActionTypeMap;
 
