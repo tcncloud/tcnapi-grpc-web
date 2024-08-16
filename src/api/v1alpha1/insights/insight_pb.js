@@ -8656,7 +8656,7 @@ proto.api.v1alpha1.insights.OutputConfigurationColumnSummaryType = {
  * @enum {number}
  */
 proto.api.v1alpha1.insights.ContextualActionType = {
-  CONTEXTUAL_ACTION_TYPE_UNSPECIFIED: 0,
+  INSIGHT_CONTEXTUAL_ACTION_TYPE_UNSPECIFIED: 0,
   INSIGHT_CONTEXTUAL_ACTION_TYPE_LINK: 1,
   INSIGHT_CONTEXTUAL_ACTION_TYPE_COMPONENT: 2
 };

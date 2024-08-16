@@ -1150,7 +1150,7 @@ export interface OutputConfigurationColumnSummaryTypeMap {
 export const OutputConfigurationColumnSummaryType: OutputConfigurationColumnSummaryTypeMap;
 
 export interface ContextualActionTypeMap {
-  CONTEXTUAL_ACTION_TYPE_UNSPECIFIED: 0;
+  INSIGHT_CONTEXTUAL_ACTION_TYPE_UNSPECIFIED: 0;
   INSIGHT_CONTEXTUAL_ACTION_TYPE_LINK: 1;
   INSIGHT_CONTEXTUAL_ACTION_TYPE_COMPONENT: 2;
 }
