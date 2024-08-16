@@ -66,9 +66,6 @@ export class CloneBillingPlanRequest extends jspb.Message {
   getBillingPlanId(): string;
   setBillingPlanId(value: string): void;
 
-  getTitle(): string;
-  setTitle(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CloneBillingPlanRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CloneBillingPlanRequest): CloneBillingPlanRequest.AsObject;
@@ -82,7 +79,6 @@ export class CloneBillingPlanRequest extends jspb.Message {
 export namespace CloneBillingPlanRequest {
   export type AsObject = {
     billingPlanId: string,
-    title: string,
   }
 }
 
