@@ -986,7 +986,8 @@ proto.services.billing.v1alpha4.CloneBillingPlanRequest.prototype.toObject = fun
  */
 proto.services.billing.v1alpha4.CloneBillingPlanRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, "")
+billingPlanId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+title: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1027,6 +1028,10 @@ proto.services.billing.v1alpha4.CloneBillingPlanRequest.deserializeBinaryFromRea
       var value = /** @type {string} */ (reader.readString());
       msg.setBillingPlanId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTitle(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1063,6 +1068,13 @@ proto.services.billing.v1alpha4.CloneBillingPlanRequest.serializeBinaryToWriter 
       f
     );
   }
+  f = message.getTitle();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -1081,6 +1093,24 @@ proto.services.billing.v1alpha4.CloneBillingPlanRequest.prototype.getBillingPlan
  */
 proto.services.billing.v1alpha4.CloneBillingPlanRequest.prototype.setBillingPlanId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string title = 2;
+ * @return {string}
+ */
+proto.services.billing.v1alpha4.CloneBillingPlanRequest.prototype.getTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.billing.v1alpha4.CloneBillingPlanRequest} returns this
+ */
+proto.services.billing.v1alpha4.CloneBillingPlanRequest.prototype.setTitle = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
