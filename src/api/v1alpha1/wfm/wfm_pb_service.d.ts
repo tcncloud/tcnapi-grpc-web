@@ -13,6 +13,15 @@ type WFMPerformInitialClientSetup = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.PerformInitialClientSetupResponse;
 };
 
+type WFMCreateInitialDemoActivities = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateInitialDemoActivitiesRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateInitialDemoActivitiesResponse;
+};
+
 type WFMListSkillProfiles = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1672,6 +1681,7 @@ type WFMDeleteRgbaColor = {
 export class WFM {
   static readonly serviceName: string;
   static readonly PerformInitialClientSetup: WFMPerformInitialClientSetup;
+  static readonly CreateInitialDemoActivities: WFMCreateInitialDemoActivities;
   static readonly ListSkillProfiles: WFMListSkillProfiles;
   static readonly UpdateSkillProfile: WFMUpdateSkillProfile;
   static readonly UpdateSkillProfileProficiencies: WFMUpdateSkillProfileProficiencies;
@@ -1898,6 +1908,15 @@ export class WFMClient {
   performInitialClientSetup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.PerformInitialClientSetupRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.PerformInitialClientSetupResponse|null) => void
+  ): UnaryResponse;
+  createInitialDemoActivities(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateInitialDemoActivitiesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateInitialDemoActivitiesResponse|null) => void
+  ): UnaryResponse;
+  createInitialDemoActivities(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.CreateInitialDemoActivitiesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateInitialDemoActivitiesResponse|null) => void
   ): UnaryResponse;
   listSkillProfiles(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListSkillProfilesReq,

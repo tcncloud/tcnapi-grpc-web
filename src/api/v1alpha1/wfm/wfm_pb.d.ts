@@ -47,6 +47,38 @@ export namespace PerformInitialClientSetupResponse {
   }
 }
 
+export class CreateInitialDemoActivitiesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateInitialDemoActivitiesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateInitialDemoActivitiesRequest): CreateInitialDemoActivitiesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateInitialDemoActivitiesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateInitialDemoActivitiesRequest;
+  static deserializeBinaryFromReader(message: CreateInitialDemoActivitiesRequest, reader: jspb.BinaryReader): CreateInitialDemoActivitiesRequest;
+}
+
+export namespace CreateInitialDemoActivitiesRequest {
+  export type AsObject = {
+  }
+}
+
+export class CreateInitialDemoActivitiesResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateInitialDemoActivitiesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateInitialDemoActivitiesResponse): CreateInitialDemoActivitiesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateInitialDemoActivitiesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateInitialDemoActivitiesResponse;
+  static deserializeBinaryFromReader(message: CreateInitialDemoActivitiesResponse, reader: jspb.BinaryReader): CreateInitialDemoActivitiesResponse;
+}
+
+export namespace CreateInitialDemoActivitiesResponse {
+  export type AsObject = {
+  }
+}
+
 export class Skill extends jspb.Message {
   getSkillSid(): number;
   setSkillSid(value: number): void;
