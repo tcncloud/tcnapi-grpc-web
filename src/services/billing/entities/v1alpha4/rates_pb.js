@@ -643,6 +643,7 @@ config: (f = msg.getConfig()) && services_billing_entities_v1alpha4_products_pb.
 createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 deleteTime: (f = msg.getDeleteTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+ruleConfig: (f = msg.getRuleConfig()) && services_billing_entities_v1alpha4_matching_pb.MatchingConfig.toObject(includeInstance, f),
 countryCodePrefix: (f = msg.getCountryCodePrefix()) && services_billing_entities_v1alpha4_matching_pb.CountryCodePrefix.toObject(includeInstance, f)
   };
 
@@ -703,6 +704,11 @@ proto.services.billing.entities.v1alpha4.MatchingRule.deserializeBinaryFromReade
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateTime(value);
+      break;
+    case 6:
+      var value = new services_billing_entities_v1alpha4_matching_pb.MatchingConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha4_matching_pb.MatchingConfig.deserializeBinaryFromReader);
+      msg.setRuleConfig(value);
       break;
     case 100:
       var value = new services_billing_entities_v1alpha4_matching_pb.CountryCodePrefix;
@@ -775,6 +781,14 @@ proto.services.billing.entities.v1alpha4.MatchingRule.serializeBinaryToWriter = 
       5,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getRuleConfig();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      services_billing_entities_v1alpha4_matching_pb.MatchingConfig.serializeBinaryToWriter
     );
   }
   f = message.getCountryCodePrefix();
@@ -951,6 +965,43 @@ proto.services.billing.entities.v1alpha4.MatchingRule.prototype.clearUpdateTime 
  */
 proto.services.billing.entities.v1alpha4.MatchingRule.prototype.hasUpdateTime = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional MatchingConfig rule_config = 6;
+ * @return {?proto.services.billing.entities.v1alpha4.MatchingConfig}
+ */
+proto.services.billing.entities.v1alpha4.MatchingRule.prototype.getRuleConfig = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha4.MatchingConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_matching_pb.MatchingConfig, 6));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha4.MatchingConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha4.MatchingRule} returns this
+*/
+proto.services.billing.entities.v1alpha4.MatchingRule.prototype.setRuleConfig = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha4.MatchingRule} returns this
+ */
+proto.services.billing.entities.v1alpha4.MatchingRule.prototype.clearRuleConfig = function() {
+  return this.setRuleConfig(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha4.MatchingRule.prototype.hasRuleConfig = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

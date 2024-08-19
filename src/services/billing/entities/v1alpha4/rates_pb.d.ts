@@ -97,6 +97,11 @@ export class MatchingRule extends jspb.Message {
   getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasRuleConfig(): boolean;
+  clearRuleConfig(): void;
+  getRuleConfig(): services_billing_entities_v1alpha4_matching_pb.MatchingConfig | undefined;
+  setRuleConfig(value?: services_billing_entities_v1alpha4_matching_pb.MatchingConfig): void;
+
   hasCountryCodePrefix(): boolean;
   clearCountryCodePrefix(): void;
   getCountryCodePrefix(): services_billing_entities_v1alpha4_matching_pb.CountryCodePrefix | undefined;
@@ -120,6 +125,7 @@ export namespace MatchingRule {
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    ruleConfig?: services_billing_entities_v1alpha4_matching_pb.MatchingConfig.AsObject,
     countryCodePrefix?: services_billing_entities_v1alpha4_matching_pb.CountryCodePrefix.AsObject,
   }
 
