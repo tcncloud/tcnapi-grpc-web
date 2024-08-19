@@ -33,8 +33,10 @@ export class CreateExileCertificateResponse extends jspb.Message {
   getEncodedExileCertificate(): string;
   setEncodedExileCertificate(value: string): void;
 
-  getExileCertificateId(): string;
-  setExileCertificateId(value: string): void;
+  hasExileCertificate(): boolean;
+  clearExileCertificate(): void;
+  getExileCertificate(): services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileCertificate | undefined;
+  setExileCertificate(value?: services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileCertificate): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateExileCertificateResponse.AsObject;
@@ -49,7 +51,7 @@ export class CreateExileCertificateResponse extends jspb.Message {
 export namespace CreateExileCertificateResponse {
   export type AsObject = {
     encodedExileCertificate: string,
-    exileCertificateId: string,
+    exileCertificate?: services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileCertificate.AsObject,
   }
 }
 
