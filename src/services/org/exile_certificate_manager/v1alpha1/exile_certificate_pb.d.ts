@@ -33,6 +33,9 @@ export class CreateExileCertificateResponse extends jspb.Message {
   getEncodedExileCertificate(): string;
   setEncodedExileCertificate(value: string): void;
 
+  getExileCertificateId(): string;
+  setExileCertificateId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateExileCertificateResponse.AsObject;
   static toObject(includeInstance: boolean, msg: CreateExileCertificateResponse): CreateExileCertificateResponse.AsObject;
@@ -46,6 +49,7 @@ export class CreateExileCertificateResponse extends jspb.Message {
 export namespace CreateExileCertificateResponse {
   export type AsObject = {
     encodedExileCertificate: string,
+    exileCertificateId: string,
   }
 }
 
