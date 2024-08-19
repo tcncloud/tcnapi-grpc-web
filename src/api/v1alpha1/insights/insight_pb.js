@@ -5635,8 +5635,8 @@ proto.api.v1alpha1.insights.InsightContextualAction.oneofGroups_ = [[2,3]];
  */
 proto.api.v1alpha1.insights.InsightContextualAction.ActionCase = {
   ACTION_NOT_SET: 0,
-  LINK_ACTION: 2,
-  COMPONENT_ACTION: 3
+  LINK: 2,
+  COMPONENT: 3
 };
 
 /**
@@ -5677,9 +5677,9 @@ proto.api.v1alpha1.insights.InsightContextualAction.prototype.toObject = functio
  */
 proto.api.v1alpha1.insights.InsightContextualAction.toObject = function(includeInstance, msg) {
   var f, obj = {
-contextualActionType: jspb.Message.getFieldWithDefault(msg, 1, 0),
-linkAction: (f = msg.getLinkAction()) && proto.api.v1alpha1.insights.LinkAction.toObject(includeInstance, f),
-componentAction: (f = msg.getComponentAction()) && proto.api.v1alpha1.insights.ComponentAction.toObject(includeInstance, f)
+type: jspb.Message.getFieldWithDefault(msg, 1, 0),
+link: (f = msg.getLink()) && proto.api.v1alpha1.insights.LinkAction.toObject(includeInstance, f),
+component: (f = msg.getComponent()) && proto.api.v1alpha1.insights.ComponentAction.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5718,17 +5718,17 @@ proto.api.v1alpha1.insights.InsightContextualAction.deserializeBinaryFromReader 
     switch (field) {
     case 1:
       var value = /** @type {!proto.api.v1alpha1.insights.InsightContextualActionType} */ (reader.readEnum());
-      msg.setContextualActionType(value);
+      msg.setType(value);
       break;
     case 2:
       var value = new proto.api.v1alpha1.insights.LinkAction;
       reader.readMessage(value,proto.api.v1alpha1.insights.LinkAction.deserializeBinaryFromReader);
-      msg.setLinkAction(value);
+      msg.setLink(value);
       break;
     case 3:
       var value = new proto.api.v1alpha1.insights.ComponentAction;
       reader.readMessage(value,proto.api.v1alpha1.insights.ComponentAction.deserializeBinaryFromReader);
-      msg.setComponentAction(value);
+      msg.setComponent(value);
       break;
     default:
       reader.skipField();
@@ -5759,14 +5759,14 @@ proto.api.v1alpha1.insights.InsightContextualAction.prototype.serializeBinary = 
  */
 proto.api.v1alpha1.insights.InsightContextualAction.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getContextualActionType();
+  f = message.getType();
   if (f !== 0.0) {
     writer.writeEnum(
       1,
       f
     );
   }
-  f = message.getLinkAction();
+  f = message.getLink();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -5774,7 +5774,7 @@ proto.api.v1alpha1.insights.InsightContextualAction.serializeBinaryToWriter = fu
       proto.api.v1alpha1.insights.LinkAction.serializeBinaryToWriter
     );
   }
-  f = message.getComponentAction();
+  f = message.getComponent();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -5786,10 +5786,10 @@ proto.api.v1alpha1.insights.InsightContextualAction.serializeBinaryToWriter = fu
 
 
 /**
- * optional InsightContextualActionType contextual_action_type = 1;
+ * optional InsightContextualActionType type = 1;
  * @return {!proto.api.v1alpha1.insights.InsightContextualActionType}
  */
-proto.api.v1alpha1.insights.InsightContextualAction.prototype.getContextualActionType = function() {
+proto.api.v1alpha1.insights.InsightContextualAction.prototype.getType = function() {
   return /** @type {!proto.api.v1alpha1.insights.InsightContextualActionType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -5798,16 +5798,16 @@ proto.api.v1alpha1.insights.InsightContextualAction.prototype.getContextualActio
  * @param {!proto.api.v1alpha1.insights.InsightContextualActionType} value
  * @return {!proto.api.v1alpha1.insights.InsightContextualAction} returns this
  */
-proto.api.v1alpha1.insights.InsightContextualAction.prototype.setContextualActionType = function(value) {
+proto.api.v1alpha1.insights.InsightContextualAction.prototype.setType = function(value) {
   return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
 /**
- * optional LinkAction link_action = 2;
+ * optional LinkAction link = 2;
  * @return {?proto.api.v1alpha1.insights.LinkAction}
  */
-proto.api.v1alpha1.insights.InsightContextualAction.prototype.getLinkAction = function() {
+proto.api.v1alpha1.insights.InsightContextualAction.prototype.getLink = function() {
   return /** @type{?proto.api.v1alpha1.insights.LinkAction} */ (
     jspb.Message.getWrapperField(this, proto.api.v1alpha1.insights.LinkAction, 2));
 };
@@ -5817,7 +5817,7 @@ proto.api.v1alpha1.insights.InsightContextualAction.prototype.getLinkAction = fu
  * @param {?proto.api.v1alpha1.insights.LinkAction|undefined} value
  * @return {!proto.api.v1alpha1.insights.InsightContextualAction} returns this
 */
-proto.api.v1alpha1.insights.InsightContextualAction.prototype.setLinkAction = function(value) {
+proto.api.v1alpha1.insights.InsightContextualAction.prototype.setLink = function(value) {
   return jspb.Message.setOneofWrapperField(this, 2, proto.api.v1alpha1.insights.InsightContextualAction.oneofGroups_[0], value);
 };
 
@@ -5826,8 +5826,8 @@ proto.api.v1alpha1.insights.InsightContextualAction.prototype.setLinkAction = fu
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.insights.InsightContextualAction} returns this
  */
-proto.api.v1alpha1.insights.InsightContextualAction.prototype.clearLinkAction = function() {
-  return this.setLinkAction(undefined);
+proto.api.v1alpha1.insights.InsightContextualAction.prototype.clearLink = function() {
+  return this.setLink(undefined);
 };
 
 
@@ -5835,16 +5835,16 @@ proto.api.v1alpha1.insights.InsightContextualAction.prototype.clearLinkAction = 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.insights.InsightContextualAction.prototype.hasLinkAction = function() {
+proto.api.v1alpha1.insights.InsightContextualAction.prototype.hasLink = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional ComponentAction component_action = 3;
+ * optional ComponentAction component = 3;
  * @return {?proto.api.v1alpha1.insights.ComponentAction}
  */
-proto.api.v1alpha1.insights.InsightContextualAction.prototype.getComponentAction = function() {
+proto.api.v1alpha1.insights.InsightContextualAction.prototype.getComponent = function() {
   return /** @type{?proto.api.v1alpha1.insights.ComponentAction} */ (
     jspb.Message.getWrapperField(this, proto.api.v1alpha1.insights.ComponentAction, 3));
 };
@@ -5854,7 +5854,7 @@ proto.api.v1alpha1.insights.InsightContextualAction.prototype.getComponentAction
  * @param {?proto.api.v1alpha1.insights.ComponentAction|undefined} value
  * @return {!proto.api.v1alpha1.insights.InsightContextualAction} returns this
 */
-proto.api.v1alpha1.insights.InsightContextualAction.prototype.setComponentAction = function(value) {
+proto.api.v1alpha1.insights.InsightContextualAction.prototype.setComponent = function(value) {
   return jspb.Message.setOneofWrapperField(this, 3, proto.api.v1alpha1.insights.InsightContextualAction.oneofGroups_[0], value);
 };
 
@@ -5863,8 +5863,8 @@ proto.api.v1alpha1.insights.InsightContextualAction.prototype.setComponentAction
  * Clears the message field making it undefined.
  * @return {!proto.api.v1alpha1.insights.InsightContextualAction} returns this
  */
-proto.api.v1alpha1.insights.InsightContextualAction.prototype.clearComponentAction = function() {
-  return this.setComponentAction(undefined);
+proto.api.v1alpha1.insights.InsightContextualAction.prototype.clearComponent = function() {
+  return this.setComponent(undefined);
 };
 
 
@@ -5872,7 +5872,7 @@ proto.api.v1alpha1.insights.InsightContextualAction.prototype.clearComponentActi
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.v1alpha1.insights.InsightContextualAction.prototype.hasComponentAction = function() {
+proto.api.v1alpha1.insights.InsightContextualAction.prototype.hasComponent = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

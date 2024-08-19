@@ -886,15 +886,6 @@ type P3ApiListSmsNumbers = {
   readonly responseType: typeof api_v0alpha_p3api_pb.ListSmsNumbersRes;
 };
 
-type P3ApiGetMailMerge = {
-  readonly methodName: string;
-  readonly service: typeof P3Api;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof api_v0alpha_p3api_pb.GetMailMergeReq;
-  readonly responseType: typeof api_v0alpha_p3api_pb.GetMailMergeRes;
-};
-
 export class P3Api {
   static readonly serviceName: string;
   static readonly GetAgentHuntGroup: P3ApiGetAgentHuntGroup;
@@ -995,7 +986,6 @@ export class P3Api {
   static readonly ListScheduleRules: P3ApiListScheduleRules;
   static readonly ListCustomReportFilters: P3ApiListCustomReportFilters;
   static readonly ListSmsNumbers: P3ApiListSmsNumbers;
-  static readonly GetMailMerge: P3ApiGetMailMerge;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1895,15 +1885,6 @@ export class P3ApiClient {
   listSmsNumbers(
     requestMessage: api_v0alpha_p3api_pb.ListSmsNumbersReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_p3api_pb.ListSmsNumbersRes|null) => void
-  ): UnaryResponse;
-  getMailMerge(
-    requestMessage: api_v0alpha_p3api_pb.GetMailMergeReq,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_p3api_pb.GetMailMergeRes|null) => void
-  ): UnaryResponse;
-  getMailMerge(
-    requestMessage: api_v0alpha_p3api_pb.GetMailMergeReq,
-    callback: (error: ServiceError|null, responseMessage: api_v0alpha_p3api_pb.GetMailMergeRes|null) => void
   ): UnaryResponse;
 }
 

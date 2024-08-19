@@ -669,18 +669,18 @@ export namespace ColumnOperation {
 }
 
 export class InsightContextualAction extends jspb.Message {
-  getContextualActionType(): InsightContextualActionTypeMap[keyof InsightContextualActionTypeMap];
-  setContextualActionType(value: InsightContextualActionTypeMap[keyof InsightContextualActionTypeMap]): void;
+  getType(): InsightContextualActionTypeMap[keyof InsightContextualActionTypeMap];
+  setType(value: InsightContextualActionTypeMap[keyof InsightContextualActionTypeMap]): void;
 
-  hasLinkAction(): boolean;
-  clearLinkAction(): void;
-  getLinkAction(): LinkAction | undefined;
-  setLinkAction(value?: LinkAction): void;
+  hasLink(): boolean;
+  clearLink(): void;
+  getLink(): LinkAction | undefined;
+  setLink(value?: LinkAction): void;
 
-  hasComponentAction(): boolean;
-  clearComponentAction(): void;
-  getComponentAction(): ComponentAction | undefined;
-  setComponentAction(value?: ComponentAction): void;
+  hasComponent(): boolean;
+  clearComponent(): void;
+  getComponent(): ComponentAction | undefined;
+  setComponent(value?: ComponentAction): void;
 
   getActionCase(): InsightContextualAction.ActionCase;
   serializeBinary(): Uint8Array;
@@ -695,15 +695,15 @@ export class InsightContextualAction extends jspb.Message {
 
 export namespace InsightContextualAction {
   export type AsObject = {
-    contextualActionType: InsightContextualActionTypeMap[keyof InsightContextualActionTypeMap],
-    linkAction?: LinkAction.AsObject,
-    componentAction?: ComponentAction.AsObject,
+    type: InsightContextualActionTypeMap[keyof InsightContextualActionTypeMap],
+    link?: LinkAction.AsObject,
+    component?: ComponentAction.AsObject,
   }
 
   export enum ActionCase {
     ACTION_NOT_SET = 0,
-    LINK_ACTION = 2,
-    COMPONENT_ACTION = 3,
+    LINK = 2,
+    COMPONENT = 3,
   }
 }
 
