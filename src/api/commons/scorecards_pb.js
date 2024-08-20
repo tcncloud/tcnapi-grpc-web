@@ -8286,7 +8286,8 @@ description: jspb.Message.getFieldWithDefault(msg, 6, ""),
 question: jspb.Message.getFieldWithDefault(msg, 7, ""),
 answersList: jspb.Message.toObjectList(msg.getAnswersList(),
     proto.api.commons.SmartQuestion.Answer.toObject, includeInstance),
-focus: jspb.Message.getFieldWithDefault(msg, 11, 0)
+focus: jspb.Message.getFieldWithDefault(msg, 11, 0),
+sortOrder: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -8355,6 +8356,10 @@ proto.api.commons.SmartQuestion.deserializeBinaryFromReader = function(msg, read
     case 11:
       var value = /** @type {!proto.api.commons.QuestionFocus} */ (reader.readEnum());
       msg.setFocus(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSortOrder(value);
       break;
     default:
       reader.skipField();
@@ -8439,6 +8444,13 @@ proto.api.commons.SmartQuestion.serializeBinaryToWriter = function(message, writ
   if (f !== 0.0) {
     writer.writeEnum(
       11,
+      f
+    );
+  }
+  f = message.getSortOrder();
+  if (f !== 0) {
+    writer.writeInt32(
+      12,
       f
     );
   }
@@ -8858,6 +8870,24 @@ proto.api.commons.SmartQuestion.prototype.getFocus = function() {
  */
 proto.api.commons.SmartQuestion.prototype.setFocus = function(value) {
   return jspb.Message.setProto3EnumField(this, 11, value);
+};
+
+
+/**
+ * optional int32 sort_order = 12;
+ * @return {number}
+ */
+proto.api.commons.SmartQuestion.prototype.getSortOrder = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.SmartQuestion} returns this
+ */
+proto.api.commons.SmartQuestion.prototype.setSortOrder = function(value) {
+  return jspb.Message.setProto3IntField(this, 12, value);
 };
 
 
