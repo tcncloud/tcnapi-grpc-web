@@ -11,6 +11,7 @@ var api_v1alpha1_scorecards_question_pb = require("../../../api/v1alpha1/scoreca
 var api_v1alpha1_scorecards_scorecard_pb = require("../../../api/v1alpha1/scorecards/scorecard_pb");
 var api_v1alpha1_scorecards_scorecard_question_pb = require("../../../api/v1alpha1/scorecards/scorecard_question_pb");
 var api_v1alpha1_scorecards_section_pb = require("../../../api/v1alpha1/scorecards/section_pb");
+var api_v1alpha1_scorecards_smart_question_pb = require("../../../api/v1alpha1/scorecards/smart_question_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var Scorecards = (function () {
@@ -440,6 +441,15 @@ Scorecards.RestoreEvaluation = {
   responseStream: false,
   requestType: api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationRequest,
   responseType: api_v1alpha1_scorecards_evaluation_pb.RestoreEvaluationResponse
+};
+
+Scorecards.CreateSmartQuestion = {
+  methodName: "CreateSmartQuestion",
+  service: Scorecards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_scorecards_smart_question_pb.CreateSmartQuestionRequest,
+  responseType: api_v1alpha1_scorecards_smart_question_pb.CreateSmartQuestionResponse
 };
 
 exports.Scorecards = Scorecards;
@@ -1888,6 +1898,37 @@ ScorecardsClient.prototype.restoreEvaluation = function restoreEvaluation(reques
     callback = arguments[1];
   }
   var client = grpc.unary(Scorecards.RestoreEvaluation, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ScorecardsClient.prototype.createSmartQuestion = function createSmartQuestion(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Scorecards.CreateSmartQuestion, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

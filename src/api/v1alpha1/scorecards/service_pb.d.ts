@@ -12,5 +12,6 @@ import * as api_v1alpha1_scorecards_question_pb from "../../../api/v1alpha1/scor
 import * as api_v1alpha1_scorecards_scorecard_pb from "../../../api/v1alpha1/scorecards/scorecard_pb";
 import * as api_v1alpha1_scorecards_scorecard_question_pb from "../../../api/v1alpha1/scorecards/scorecard_question_pb";
 import * as api_v1alpha1_scorecards_section_pb from "../../../api/v1alpha1/scorecards/section_pb";
+import * as api_v1alpha1_scorecards_smart_question_pb from "../../../api/v1alpha1/scorecards/smart_question_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 
