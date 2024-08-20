@@ -439,7 +439,8 @@ proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateResp
  */
 proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-encodedExileCertificate: jspb.Message.getFieldWithDefault(msg, 1, "")
+encodedExileCertificate: jspb.Message.getFieldWithDefault(msg, 1, ""),
+exileCertificate: (f = msg.getExileCertificate()) && services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileCertificate.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -480,6 +481,11 @@ proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateResp
       var value = /** @type {string} */ (reader.readString());
       msg.setEncodedExileCertificate(value);
       break;
+    case 2:
+      var value = new services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileCertificate;
+      reader.readMessage(value,services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileCertificate.deserializeBinaryFromReader);
+      msg.setExileCertificate(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -516,6 +522,14 @@ proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateResp
       f
     );
   }
+  f = message.getExileCertificate();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileCertificate.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -534,6 +548,43 @@ proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateResp
  */
 proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateResponse.prototype.setEncodedExileCertificate = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional ExileCertificate exile_certificate = 2;
+ * @return {?proto.services.org.exile_certificate_manager.v1alpha1.ExileCertificate}
+ */
+proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateResponse.prototype.getExileCertificate = function() {
+  return /** @type{?proto.services.org.exile_certificate_manager.v1alpha1.ExileCertificate} */ (
+    jspb.Message.getWrapperField(this, services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileCertificate, 2));
+};
+
+
+/**
+ * @param {?proto.services.org.exile_certificate_manager.v1alpha1.ExileCertificate|undefined} value
+ * @return {!proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateResponse} returns this
+*/
+proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateResponse.prototype.setExileCertificate = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateResponse} returns this
+ */
+proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateResponse.prototype.clearExileCertificate = function() {
+  return this.setExileCertificate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.org.exile_certificate_manager.v1alpha1.CreateExileCertificateResponse.prototype.hasExileCertificate = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

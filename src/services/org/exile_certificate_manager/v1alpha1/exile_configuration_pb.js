@@ -455,7 +455,8 @@ proto.services.org.exile_certificate_manager.v1alpha1.CreateExileConfigurationRe
  */
 proto.services.org.exile_certificate_manager.v1alpha1.CreateExileConfigurationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-exileConfigurationId: jspb.Message.getFieldWithDefault(msg, 1, "")
+exileConfigurationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+exileConfiguration: (f = msg.getExileConfiguration()) && services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileConfiguration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -496,6 +497,11 @@ proto.services.org.exile_certificate_manager.v1alpha1.CreateExileConfigurationRe
       var value = /** @type {string} */ (reader.readString());
       msg.setExileConfigurationId(value);
       break;
+    case 2:
+      var value = new services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileConfiguration;
+      reader.readMessage(value,services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileConfiguration.deserializeBinaryFromReader);
+      msg.setExileConfiguration(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -532,6 +538,14 @@ proto.services.org.exile_certificate_manager.v1alpha1.CreateExileConfigurationRe
       f
     );
   }
+  f = message.getExileConfiguration();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileConfiguration.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -550,6 +564,43 @@ proto.services.org.exile_certificate_manager.v1alpha1.CreateExileConfigurationRe
  */
 proto.services.org.exile_certificate_manager.v1alpha1.CreateExileConfigurationResponse.prototype.setExileConfigurationId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional ExileConfiguration exile_configuration = 2;
+ * @return {?proto.services.org.exile_certificate_manager.v1alpha1.ExileConfiguration}
+ */
+proto.services.org.exile_certificate_manager.v1alpha1.CreateExileConfigurationResponse.prototype.getExileConfiguration = function() {
+  return /** @type{?proto.services.org.exile_certificate_manager.v1alpha1.ExileConfiguration} */ (
+    jspb.Message.getWrapperField(this, services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileConfiguration, 2));
+};
+
+
+/**
+ * @param {?proto.services.org.exile_certificate_manager.v1alpha1.ExileConfiguration|undefined} value
+ * @return {!proto.services.org.exile_certificate_manager.v1alpha1.CreateExileConfigurationResponse} returns this
+*/
+proto.services.org.exile_certificate_manager.v1alpha1.CreateExileConfigurationResponse.prototype.setExileConfiguration = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.org.exile_certificate_manager.v1alpha1.CreateExileConfigurationResponse} returns this
+ */
+proto.services.org.exile_certificate_manager.v1alpha1.CreateExileConfigurationResponse.prototype.clearExileConfiguration = function() {
+  return this.setExileConfiguration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.org.exile_certificate_manager.v1alpha1.CreateExileConfigurationResponse.prototype.hasExileConfiguration = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

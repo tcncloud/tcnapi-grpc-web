@@ -41,6 +41,11 @@ export class CreateExileConfigurationResponse extends jspb.Message {
   getExileConfigurationId(): string;
   setExileConfigurationId(value: string): void;
 
+  hasExileConfiguration(): boolean;
+  clearExileConfiguration(): void;
+  getExileConfiguration(): services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileConfiguration | undefined;
+  setExileConfiguration(value?: services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileConfiguration): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateExileConfigurationResponse.AsObject;
   static toObject(includeInstance: boolean, msg: CreateExileConfigurationResponse): CreateExileConfigurationResponse.AsObject;
@@ -54,6 +59,7 @@ export class CreateExileConfigurationResponse extends jspb.Message {
 export namespace CreateExileConfigurationResponse {
   export type AsObject = {
     exileConfigurationId: string,
+    exileConfiguration?: services_org_exile_certificate_manager_v1alpha1_entities_pb.ExileConfiguration.AsObject,
   }
 }
 
