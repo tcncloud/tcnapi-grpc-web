@@ -578,6 +578,11 @@ export class TableColumnConfig extends jspb.Message {
   getSortDirection(): ColumnSortMap[keyof ColumnSortMap];
   setSortDirection(value: ColumnSortMap[keyof ColumnSortMap]): void;
 
+  hasInsightContextualAction(): boolean;
+  clearInsightContextualAction(): void;
+  getInsightContextualAction(): InsightContextualAction | undefined;
+  setInsightContextualAction(value?: InsightContextualAction): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TableColumnConfig.AsObject;
   static toObject(includeInstance: boolean, msg: TableColumnConfig): TableColumnConfig.AsObject;
@@ -598,6 +603,7 @@ export namespace TableColumnConfig {
     columnSummary: OutputConfigurationColumnSummaryTypeMap[keyof OutputConfigurationColumnSummaryTypeMap],
     description: string,
     sortDirection: ColumnSortMap[keyof ColumnSortMap],
+    insightContextualAction?: InsightContextualAction.AsObject,
   }
 }
 
@@ -659,6 +665,93 @@ export namespace ColumnOperation {
     OPERATION_VALUE_NOT_SET = 0,
     FLOAT_VALUE = 2,
     FORMAT_SERIES = 3,
+  }
+}
+
+export class InsightContextualAction extends jspb.Message {
+  getType(): InsightContextualActionTypeMap[keyof InsightContextualActionTypeMap];
+  setType(value: InsightContextualActionTypeMap[keyof InsightContextualActionTypeMap]): void;
+
+  hasLink(): boolean;
+  clearLink(): void;
+  getLink(): LinkAction | undefined;
+  setLink(value?: LinkAction): void;
+
+  hasComponent(): boolean;
+  clearComponent(): void;
+  getComponent(): ComponentAction | undefined;
+  setComponent(value?: ComponentAction): void;
+
+  getActionCase(): InsightContextualAction.ActionCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InsightContextualAction.AsObject;
+  static toObject(includeInstance: boolean, msg: InsightContextualAction): InsightContextualAction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: InsightContextualAction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InsightContextualAction;
+  static deserializeBinaryFromReader(message: InsightContextualAction, reader: jspb.BinaryReader): InsightContextualAction;
+}
+
+export namespace InsightContextualAction {
+  export type AsObject = {
+    type: InsightContextualActionTypeMap[keyof InsightContextualActionTypeMap],
+    link?: LinkAction.AsObject,
+    component?: ComponentAction.AsObject,
+  }
+
+  export enum ActionCase {
+    ACTION_NOT_SET = 0,
+    LINK = 2,
+    COMPONENT = 3,
+  }
+}
+
+export class LinkAction extends jspb.Message {
+  clearLinkElementsList(): void;
+  getLinkElementsList(): Array<string>;
+  setLinkElementsList(value: Array<string>): void;
+  addLinkElements(value: string, index?: number): string;
+
+  getComponentValueMap(): jspb.Map<string, string>;
+  clearComponentValueMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LinkAction.AsObject;
+  static toObject(includeInstance: boolean, msg: LinkAction): LinkAction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LinkAction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LinkAction;
+  static deserializeBinaryFromReader(message: LinkAction, reader: jspb.BinaryReader): LinkAction;
+}
+
+export namespace LinkAction {
+  export type AsObject = {
+    linkElementsList: Array<string>,
+    componentValueMap: Array<[string, string]>,
+  }
+}
+
+export class ComponentAction extends jspb.Message {
+  getComponentName(): string;
+  setComponentName(value: string): void;
+
+  getComponentValueMap(): jspb.Map<string, string>;
+  clearComponentValueMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ComponentAction.AsObject;
+  static toObject(includeInstance: boolean, msg: ComponentAction): ComponentAction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ComponentAction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ComponentAction;
+  static deserializeBinaryFromReader(message: ComponentAction, reader: jspb.BinaryReader): ComponentAction;
+}
+
+export namespace ComponentAction {
+  export type AsObject = {
+    componentName: string,
+    componentValueMap: Array<[string, string]>,
   }
 }
 
@@ -1055,4 +1148,12 @@ export interface OutputConfigurationColumnSummaryTypeMap {
 }
 
 export const OutputConfigurationColumnSummaryType: OutputConfigurationColumnSummaryTypeMap;
+
+export interface InsightContextualActionTypeMap {
+  INSIGHT_CONTEXTUAL_ACTION_TYPE_UNSPECIFIED: 0;
+  INSIGHT_CONTEXTUAL_ACTION_TYPE_LINK: 1;
+  INSIGHT_CONTEXTUAL_ACTION_TYPE_COMPONENT: 2;
+}
+
+export const InsightContextualActionType: InsightContextualActionTypeMap;
 
