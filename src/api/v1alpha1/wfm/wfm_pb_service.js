@@ -1675,6 +1675,60 @@ WFM.DeleteRgbaColor = {
   responseType: api_v1alpha1_wfm_wfm_pb.DeleteRgbaColorResponse
 };
 
+WFM.CreateAdherenceRuleNotificationConfig = {
+  methodName: "CreateAdherenceRuleNotificationConfig",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigResponse
+};
+
+WFM.CreateAdherenceRuleNotificationConfigEntry = {
+  methodName: "CreateAdherenceRuleNotificationConfigEntry",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryResponse
+};
+
+WFM.CreateAdherenceDepartmentalRule = {
+  methodName: "CreateAdherenceDepartmentalRule",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleResponse
+};
+
+WFM.CreateAdherenceDepartmentalRuleClause = {
+  methodName: "CreateAdherenceDepartmentalRuleClause",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseResponse
+};
+
+WFM.CreateAdherenceAgentRule = {
+  methodName: "CreateAdherenceAgentRule",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleResponse
+};
+
+WFM.CreateAdherenceAgentRuleClause = {
+  methodName: "CreateAdherenceAgentRuleClause",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseResponse
+};
+
 exports.WFM = WFM;
 
 function WFMClient(serviceHost, options) {
@@ -7439,6 +7493,192 @@ WFMClient.prototype.deleteRgbaColor = function deleteRgbaColor(requestMessage, m
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.DeleteRgbaColor, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createAdherenceRuleNotificationConfig = function createAdherenceRuleNotificationConfig(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateAdherenceRuleNotificationConfig, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createAdherenceRuleNotificationConfigEntry = function createAdherenceRuleNotificationConfigEntry(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateAdherenceRuleNotificationConfigEntry, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createAdherenceDepartmentalRule = function createAdherenceDepartmentalRule(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateAdherenceDepartmentalRule, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createAdherenceDepartmentalRuleClause = function createAdherenceDepartmentalRuleClause(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateAdherenceDepartmentalRuleClause, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createAdherenceAgentRule = function createAdherenceAgentRule(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateAdherenceAgentRule, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.createAdherenceAgentRuleClause = function createAdherenceAgentRuleClause(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.CreateAdherenceAgentRuleClause, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
