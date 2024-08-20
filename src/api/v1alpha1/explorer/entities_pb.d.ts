@@ -135,7 +135,6 @@ export interface SchemaTypeMap {
   SCHEMA_TYPE_FLOAT_ARRAY: 9;
   SCHEMA_TYPE_STRING_ARRAY: 10;
   SCHEMA_TYPE_BOOL_ARRAY: 11;
-  SCHEMA_TYPE_MAP: 12;
 }
 
 export const SchemaType: SchemaTypeMap;
