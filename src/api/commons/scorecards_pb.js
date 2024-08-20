@@ -6234,7 +6234,7 @@ proto.api.commons.ScorecardQuestion.prototype.setSortOrder = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.Section.repeatedFields_ = [7,11];
+proto.api.commons.Section.repeatedFields_ = [7,11,12];
 
 
 
@@ -6277,7 +6277,9 @@ questionsList: jspb.Message.toObjectList(msg.getQuestionsList(),
 version: jspb.Message.getFieldWithDefault(msg, 8, 0),
 sortOrder: jspb.Message.getFieldWithDefault(msg, 9, 0),
 autoQuestionsList: jspb.Message.toObjectList(msg.getAutoQuestionsList(),
-    proto.api.commons.AutoQuestion.toObject, includeInstance)
+    proto.api.commons.AutoQuestion.toObject, includeInstance),
+smartQuestionsList: jspb.Message.toObjectList(msg.getSmartQuestionsList(),
+    proto.api.commons.SmartQuestion.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -6351,6 +6353,11 @@ proto.api.commons.Section.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.api.commons.AutoQuestion;
       reader.readMessage(value,proto.api.commons.AutoQuestion.deserializeBinaryFromReader);
       msg.addAutoQuestions(value);
+      break;
+    case 12:
+      var value = new proto.api.commons.SmartQuestion;
+      reader.readMessage(value,proto.api.commons.SmartQuestion.deserializeBinaryFromReader);
+      msg.addSmartQuestions(value);
       break;
     default:
       reader.skipField();
@@ -6444,6 +6451,14 @@ proto.api.commons.Section.serializeBinaryToWriter = function(message, writer) {
       11,
       f,
       proto.api.commons.AutoQuestion.serializeBinaryToWriter
+    );
+  }
+  f = message.getSmartQuestionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      12,
+      f,
+      proto.api.commons.SmartQuestion.serializeBinaryToWriter
     );
   }
 };
@@ -6648,6 +6663,44 @@ proto.api.commons.Section.prototype.addAutoQuestions = function(opt_value, opt_i
  */
 proto.api.commons.Section.prototype.clearAutoQuestionsList = function() {
   return this.setAutoQuestionsList([]);
+};
+
+
+/**
+ * repeated SmartQuestion smart_questions = 12;
+ * @return {!Array<!proto.api.commons.SmartQuestion>}
+ */
+proto.api.commons.Section.prototype.getSmartQuestionsList = function() {
+  return /** @type{!Array<!proto.api.commons.SmartQuestion>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.SmartQuestion, 12));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.SmartQuestion>} value
+ * @return {!proto.api.commons.Section} returns this
+*/
+proto.api.commons.Section.prototype.setSmartQuestionsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 12, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.SmartQuestion=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.SmartQuestion}
+ */
+proto.api.commons.Section.prototype.addSmartQuestions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.api.commons.SmartQuestion, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.Section} returns this
+ */
+proto.api.commons.Section.prototype.clearSmartQuestionsList = function() {
+  return this.setSmartQuestionsList([]);
 };
 
 

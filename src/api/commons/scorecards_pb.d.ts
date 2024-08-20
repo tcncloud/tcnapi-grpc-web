@@ -809,6 +809,11 @@ export class Section extends jspb.Message {
   setAutoQuestionsList(value: Array<AutoQuestion>): void;
   addAutoQuestions(value?: AutoQuestion, index?: number): AutoQuestion;
 
+  clearSmartQuestionsList(): void;
+  getSmartQuestionsList(): Array<SmartQuestion>;
+  setSmartQuestionsList(value: Array<SmartQuestion>): void;
+  addSmartQuestions(value?: SmartQuestion, index?: number): SmartQuestion;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Section.AsObject;
   static toObject(includeInstance: boolean, msg: Section): Section.AsObject;
@@ -830,6 +835,7 @@ export namespace Section {
     version: number,
     sortOrder: number,
     autoQuestionsList: Array<AutoQuestion.AsObject>,
+    smartQuestionsList: Array<SmartQuestion.AsObject>,
   }
 }
 
