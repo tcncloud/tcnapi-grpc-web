@@ -1069,6 +1069,9 @@ export class SmartQuestion extends jspb.Message {
   setAnswersList(value: Array<SmartQuestion.Answer>): void;
   addAnswers(value?: SmartQuestion.Answer, index?: number): SmartQuestion.Answer;
 
+  getFocus(): QuestionFocusMap[keyof QuestionFocusMap];
+  setFocus(value: QuestionFocusMap[keyof QuestionFocusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SmartQuestion.AsObject;
   static toObject(includeInstance: boolean, msg: SmartQuestion): SmartQuestion.AsObject;
@@ -1088,6 +1091,7 @@ export namespace SmartQuestion {
     description: string,
     question: string,
     answersList: Array<SmartQuestion.Answer.AsObject>,
+    focus: QuestionFocusMap[keyof QuestionFocusMap],
   }
 
   export class Answer extends jspb.Message {

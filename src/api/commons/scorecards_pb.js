@@ -8285,7 +8285,8 @@ questionId: jspb.Message.getFieldWithDefault(msg, 5, 0),
 description: jspb.Message.getFieldWithDefault(msg, 6, ""),
 question: jspb.Message.getFieldWithDefault(msg, 7, ""),
 answersList: jspb.Message.toObjectList(msg.getAnswersList(),
-    proto.api.commons.SmartQuestion.Answer.toObject, includeInstance)
+    proto.api.commons.SmartQuestion.Answer.toObject, includeInstance),
+focus: jspb.Message.getFieldWithDefault(msg, 11, 0)
   };
 
   if (includeInstance) {
@@ -8350,6 +8351,10 @@ proto.api.commons.SmartQuestion.deserializeBinaryFromReader = function(msg, read
       var value = new proto.api.commons.SmartQuestion.Answer;
       reader.readMessage(value,proto.api.commons.SmartQuestion.Answer.deserializeBinaryFromReader);
       msg.addAnswers(value);
+      break;
+    case 11:
+      var value = /** @type {!proto.api.commons.QuestionFocus} */ (reader.readEnum());
+      msg.setFocus(value);
       break;
     default:
       reader.skipField();
@@ -8428,6 +8433,13 @@ proto.api.commons.SmartQuestion.serializeBinaryToWriter = function(message, writ
       8,
       f,
       proto.api.commons.SmartQuestion.Answer.serializeBinaryToWriter
+    );
+  }
+  f = message.getFocus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      11,
+      f
     );
   }
 };
@@ -8828,6 +8840,24 @@ proto.api.commons.SmartQuestion.prototype.addAnswers = function(opt_value, opt_i
  */
 proto.api.commons.SmartQuestion.prototype.clearAnswersList = function() {
   return this.setAnswersList([]);
+};
+
+
+/**
+ * optional QuestionFocus focus = 11;
+ * @return {!proto.api.commons.QuestionFocus}
+ */
+proto.api.commons.SmartQuestion.prototype.getFocus = function() {
+  return /** @type {!proto.api.commons.QuestionFocus} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.QuestionFocus} value
+ * @return {!proto.api.commons.SmartQuestion} returns this
+ */
+proto.api.commons.SmartQuestion.prototype.setFocus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 11, value);
 };
 
 
