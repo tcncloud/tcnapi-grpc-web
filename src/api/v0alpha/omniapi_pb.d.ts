@@ -859,6 +859,11 @@ export class ListConversationsReq extends jspb.Message {
   getByAssignedUser(): ListConversationsReq.ByAssignedUser | undefined;
   setByAssignedUser(value?: ListConversationsReq.ByAssignedUser): void;
 
+  hasByConversationSids(): boolean;
+  clearByConversationSids(): void;
+  getByConversationSids(): ListConversationsReq.ByConversationSids | undefined;
+  setByConversationSids(value?: ListConversationsReq.ByConversationSids): void;
+
   getFilterCase(): ListConversationsReq.FilterCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListConversationsReq.AsObject;
@@ -877,6 +882,7 @@ export namespace ListConversationsReq {
     statusesList: Array<api_commons_omnichannel_pb.ConversationStatusMap[keyof api_commons_omnichannel_pb.ConversationStatusMap]>,
     byTime?: ListConversationsReq.ByTime.AsObject,
     byAssignedUser?: ListConversationsReq.ByAssignedUser.AsObject,
+    byConversationSids?: ListConversationsReq.ByConversationSids.AsObject,
   }
 
   export class ByTime extends jspb.Message {
@@ -949,10 +955,41 @@ export namespace ListConversationsReq {
     }
   }
 
+  export class ByConversationSids extends jspb.Message {
+    clearConversationSidsList(): void;
+    getConversationSidsList(): Array<string>;
+    setConversationSidsList(value: Array<string>): void;
+    addConversationSids(value: string, index?: number): string;
+
+    getPageSize(): number;
+    setPageSize(value: number): void;
+
+    getPageToken(): string;
+    setPageToken(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ByConversationSids.AsObject;
+    static toObject(includeInstance: boolean, msg: ByConversationSids): ByConversationSids.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ByConversationSids, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ByConversationSids;
+    static deserializeBinaryFromReader(message: ByConversationSids, reader: jspb.BinaryReader): ByConversationSids;
+  }
+
+  export namespace ByConversationSids {
+    export type AsObject = {
+      conversationSidsList: Array<string>,
+      pageSize: number,
+      pageToken: string,
+    }
+  }
+
   export enum FilterCase {
     FILTER_NOT_SET = 0,
     BY_TIME = 100,
     BY_ASSIGNED_USER = 101,
+    BY_CONVERSATION_SIDS = 102,
   }
 }
 
