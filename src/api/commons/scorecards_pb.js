@@ -8547,7 +8547,7 @@ proto.api.commons.SmartQuestion.Answer.deserializeBinaryFromReader = function(ms
       msg.setAnswer(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setPoints(value);
       break;
     case 3:
@@ -8592,7 +8592,7 @@ proto.api.commons.SmartQuestion.Answer.serializeBinaryToWriter = function(messag
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeUint32(
+    writer.writeInt32(
       2,
       f
     );
@@ -8626,7 +8626,7 @@ proto.api.commons.SmartQuestion.Answer.prototype.setAnswer = function(value) {
 
 
 /**
- * optional uint32 points = 2;
+ * optional int32 points = 2;
  * @return {number}
  */
 proto.api.commons.SmartQuestion.Answer.prototype.getPoints = function() {
