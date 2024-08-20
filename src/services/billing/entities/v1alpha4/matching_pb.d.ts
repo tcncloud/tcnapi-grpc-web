@@ -3,6 +3,34 @@
 
 import * as jspb from "google-protobuf";
 
+export class MatchingConfig extends jspb.Message {
+  hasCountryCodePrefix(): boolean;
+  clearCountryCodePrefix(): void;
+  getCountryCodePrefix(): CountryCodePrefix | undefined;
+  setCountryCodePrefix(value?: CountryCodePrefix): void;
+
+  getConfigCase(): MatchingConfig.ConfigCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MatchingConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: MatchingConfig): MatchingConfig.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MatchingConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MatchingConfig;
+  static deserializeBinaryFromReader(message: MatchingConfig, reader: jspb.BinaryReader): MatchingConfig;
+}
+
+export namespace MatchingConfig {
+  export type AsObject = {
+    countryCodePrefix?: CountryCodePrefix.AsObject,
+  }
+
+  export enum ConfigCase {
+    CONFIG_NOT_SET = 0,
+    COUNTRY_CODE_PREFIX = 1,
+  }
+}
+
 export class CountryCodePrefix extends jspb.Message {
   getCountryCode(): number;
   setCountryCode(value: number): void;
