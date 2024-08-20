@@ -1477,6 +1477,7 @@ export interface SchedulingActivityClassificationMap {
   STANDARD_SCHEDULING_ACTIVITY: 0;
   ON_CALL_ACTIVITY: 1;
   TIME_OFF_ACTIVITY: 2;
+  MEETING_ACTIVITY: 3;
 }
 
 export const SchedulingActivityClassification: SchedulingActivityClassificationMap;
