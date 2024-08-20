@@ -197,7 +197,8 @@ proto.tcnapi.omni.projects.v1.ListProjectsRequest.toObject = function(includeIns
   var f, obj = {
 parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
 pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-pageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+pageToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
+filter: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -246,6 +247,10 @@ proto.tcnapi.omni.projects.v1.ListProjectsRequest.deserializeBinaryFromReader = 
       var value = /** @type {string} */ (reader.readString());
       msg.setPageToken(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilter(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -293,6 +298,13 @@ proto.tcnapi.omni.projects.v1.ListProjectsRequest.serializeBinaryToWriter = func
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getFilter();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -350,6 +362,24 @@ proto.tcnapi.omni.projects.v1.ListProjectsRequest.prototype.getPageToken = funct
  */
 proto.tcnapi.omni.projects.v1.ListProjectsRequest.prototype.setPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string filter = 4;
+ * @return {string}
+ */
+proto.tcnapi.omni.projects.v1.ListProjectsRequest.prototype.getFilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.tcnapi.omni.projects.v1.ListProjectsRequest} returns this
+ */
+proto.tcnapi.omni.projects.v1.ListProjectsRequest.prototype.setFilter = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

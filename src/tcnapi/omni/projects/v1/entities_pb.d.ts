@@ -17,6 +17,9 @@ export class ListProjectsRequest extends jspb.Message {
   getPageToken(): string;
   setPageToken(value: string): void;
 
+  getFilter(): string;
+  setFilter(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListProjectsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListProjectsRequest): ListProjectsRequest.AsObject;
@@ -32,6 +35,7 @@ export namespace ListProjectsRequest {
     parent: string,
     pageSize: number,
     pageToken: string,
+    filter: string,
   }
 }
 
