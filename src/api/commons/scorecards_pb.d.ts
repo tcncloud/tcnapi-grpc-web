@@ -809,6 +809,11 @@ export class Section extends jspb.Message {
   setAutoQuestionsList(value: Array<AutoQuestion>): void;
   addAutoQuestions(value?: AutoQuestion, index?: number): AutoQuestion;
 
+  clearSmartQuestionsList(): void;
+  getSmartQuestionsList(): Array<SmartQuestion>;
+  setSmartQuestionsList(value: Array<SmartQuestion>): void;
+  addSmartQuestions(value?: SmartQuestion, index?: number): SmartQuestion;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Section.AsObject;
   static toObject(includeInstance: boolean, msg: Section): Section.AsObject;
@@ -830,6 +835,7 @@ export namespace Section {
     version: number,
     sortOrder: number,
     autoQuestionsList: Array<AutoQuestion.AsObject>,
+    smartQuestionsList: Array<SmartQuestion.AsObject>,
   }
 }
 
@@ -1041,6 +1047,99 @@ export namespace AutoQuestion {
       export type AsObject = {
         flagSid: number,
       }
+    }
+  }
+}
+
+export class SmartQuestion extends jspb.Message {
+  getSmartQuestionId(): number;
+  setSmartQuestionId(value: number): void;
+
+  getScorecardId(): number;
+  setScorecardId(value: number): void;
+
+  getSectionId(): number;
+  setSectionId(value: number): void;
+
+  getQuestionId(): number;
+  setQuestionId(value: number): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getQuestion(): string;
+  setQuestion(value: string): void;
+
+  clearAnswersList(): void;
+  getAnswersList(): Array<SmartQuestion.Answer>;
+  setAnswersList(value: Array<SmartQuestion.Answer>): void;
+  addAnswers(value?: SmartQuestion.Answer, index?: number): SmartQuestion.Answer;
+
+  getFocus(): QuestionFocusMap[keyof QuestionFocusMap];
+  setFocus(value: QuestionFocusMap[keyof QuestionFocusMap]): void;
+
+  getSortOrder(): number;
+  setSortOrder(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SmartQuestion.AsObject;
+  static toObject(includeInstance: boolean, msg: SmartQuestion): SmartQuestion.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SmartQuestion, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SmartQuestion;
+  static deserializeBinaryFromReader(message: SmartQuestion, reader: jspb.BinaryReader): SmartQuestion;
+}
+
+export namespace SmartQuestion {
+  export type AsObject = {
+    smartQuestionId: number,
+    scorecardId: number,
+    sectionId: number,
+    questionId: number,
+    description: string,
+    question: string,
+    answersList: Array<SmartQuestion.Answer.AsObject>,
+    focus: QuestionFocusMap[keyof QuestionFocusMap],
+    sortOrder: number,
+  }
+
+  export class Answer extends jspb.Message {
+    getAnswer(): string;
+    setAnswer(value: string): void;
+
+    hasPoints(): boolean;
+    clearPoints(): void;
+    getPoints(): number;
+    setPoints(value: number): void;
+
+    hasFailType(): boolean;
+    clearFailType(): void;
+    getFailType(): FailTypeMap[keyof FailTypeMap];
+    setFailType(value: FailTypeMap[keyof FailTypeMap]): void;
+
+    getResultCase(): Answer.ResultCase;
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Answer.AsObject;
+    static toObject(includeInstance: boolean, msg: Answer): Answer.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Answer, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Answer;
+    static deserializeBinaryFromReader(message: Answer, reader: jspb.BinaryReader): Answer;
+  }
+
+  export namespace Answer {
+    export type AsObject = {
+      answer: string,
+      points: number,
+      failType: FailTypeMap[keyof FailTypeMap],
+    }
+
+    export enum ResultCase {
+      RESULT_NOT_SET = 0,
+      POINTS = 2,
+      FAIL_TYPE = 3,
     }
   }
 }
