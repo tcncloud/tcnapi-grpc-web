@@ -446,6 +446,24 @@ type ScorecardsCreateSmartQuestion = {
   readonly responseType: typeof api_v1alpha1_scorecards_smart_question_pb.CreateSmartQuestionResponse;
 };
 
+type ScorecardsUpdateSmartQuestion = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_smart_question_pb.UpdateSmartQuestionRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_smart_question_pb.UpdateSmartQuestionResponse;
+};
+
+type ScorecardsDeleteSmartQuestion = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_smart_question_pb.DeleteSmartQuestionRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_smart_question_pb.DeleteSmartQuestionResponse;
+};
+
 export class Scorecards {
   static readonly serviceName: string;
   static readonly CreateScorecard: ScorecardsCreateScorecard;
@@ -496,6 +514,8 @@ export class Scorecards {
   static readonly PreviewEvaluationScore: ScorecardsPreviewEvaluationScore;
   static readonly RestoreEvaluation: ScorecardsRestoreEvaluation;
   static readonly CreateSmartQuestion: ScorecardsCreateSmartQuestion;
+  static readonly UpdateSmartQuestion: ScorecardsUpdateSmartQuestion;
+  static readonly DeleteSmartQuestion: ScorecardsDeleteSmartQuestion;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -953,6 +973,24 @@ export class ScorecardsClient {
   createSmartQuestion(
     requestMessage: api_v1alpha1_scorecards_smart_question_pb.CreateSmartQuestionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_smart_question_pb.CreateSmartQuestionResponse|null) => void
+  ): UnaryResponse;
+  updateSmartQuestion(
+    requestMessage: api_v1alpha1_scorecards_smart_question_pb.UpdateSmartQuestionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_smart_question_pb.UpdateSmartQuestionResponse|null) => void
+  ): UnaryResponse;
+  updateSmartQuestion(
+    requestMessage: api_v1alpha1_scorecards_smart_question_pb.UpdateSmartQuestionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_smart_question_pb.UpdateSmartQuestionResponse|null) => void
+  ): UnaryResponse;
+  deleteSmartQuestion(
+    requestMessage: api_v1alpha1_scorecards_smart_question_pb.DeleteSmartQuestionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_smart_question_pb.DeleteSmartQuestionResponse|null) => void
+  ): UnaryResponse;
+  deleteSmartQuestion(
+    requestMessage: api_v1alpha1_scorecards_smart_question_pb.DeleteSmartQuestionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_smart_question_pb.DeleteSmartQuestionResponse|null) => void
   ): UnaryResponse;
 }
 
