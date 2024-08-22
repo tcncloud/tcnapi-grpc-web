@@ -3,7 +3,6 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_insights_pb from "../../../api/commons/insights_pb";
-import * as api_v1alpha1_explorer_entities_pb from "../../../api/v1alpha1/explorer/entities_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 
 export class Insight extends jspb.Message {
@@ -34,9 +33,6 @@ export class Insight extends jspb.Message {
   getStandardInsight(): boolean;
   setStandardInsight(value: boolean): void;
 
-  getDatasourceType(): api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap];
-  setDatasourceType(value: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap]): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Insight.AsObject;
   static toObject(includeInstance: boolean, msg: Insight): Insight.AsObject;
@@ -58,7 +54,6 @@ export namespace Insight {
     insightPermissionType: api_commons_insights_pb.InsightPermissionTypeMap[keyof api_commons_insights_pb.InsightPermissionTypeMap],
     resourceId: string,
     standardInsight: boolean,
-    datasourceType: api_v1alpha1_explorer_entities_pb.DatasourceTypeMap[keyof api_v1alpha1_explorer_entities_pb.DatasourceTypeMap],
   }
 }
 
