@@ -25,8 +25,8 @@ export class Campaign extends jspb.Message {
   getState(): Campaign.CampaignStateMap[keyof Campaign.CampaignStateMap];
   setState(value: Campaign.CampaignStateMap[keyof Campaign.CampaignStateMap]): void;
 
-  getChannelType(): ChannelTypeMap[keyof ChannelTypeMap];
-  setChannelType(value: ChannelTypeMap[keyof ChannelTypeMap]): void;
+  getChannelType(): Campaign.ChannelTypeMap[keyof Campaign.ChannelTypeMap];
+  setChannelType(value: Campaign.ChannelTypeMap[keyof Campaign.ChannelTypeMap]): void;
 
   hasCreateTime(): boolean;
   clearCreateTime(): void;
@@ -71,7 +71,7 @@ export namespace Campaign {
     description: string,
     startDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     state: Campaign.CampaignStateMap[keyof Campaign.CampaignStateMap],
-    channelType: ChannelTypeMap[keyof ChannelTypeMap],
+    channelType: Campaign.ChannelTypeMap[keyof Campaign.ChannelTypeMap],
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     projectSid: number,
@@ -87,11 +87,16 @@ export namespace Campaign {
     getCampaignSid(): number;
     setCampaignSid(value: number): void;
 
-    getModuleType(): ModuleTypeMap[keyof ModuleTypeMap];
-    setModuleType(value: ModuleTypeMap[keyof ModuleTypeMap]): void;
+    getModuleType(): Campaign.Module.ModuleTypeMap[keyof Campaign.Module.ModuleTypeMap];
+    setModuleType(value: Campaign.Module.ModuleTypeMap[keyof Campaign.Module.ModuleTypeMap]): void;
 
     getState(): Campaign.Module.ModuleStateMap[keyof Campaign.Module.ModuleStateMap];
     setState(value: Campaign.Module.ModuleStateMap[keyof Campaign.Module.ModuleStateMap]): void;
+
+    hasConfig(): boolean;
+    clearConfig(): void;
+    getConfig(): Campaign.Module.ModuleConfig | undefined;
+    setConfig(value?: Campaign.Module.ModuleConfig): void;
 
     hasDateCreated(): boolean;
     clearDateCreated(): void;
@@ -113,6 +118,16 @@ export namespace Campaign {
     getActualStopDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setActualStopDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+    hasHoursOfOperation(): boolean;
+    clearHoursOfOperation(): void;
+    getHoursOfOperation(): WeekdayTimeRange | undefined;
+    setHoursOfOperation(value?: WeekdayTimeRange): void;
+
+    hasDetails(): boolean;
+    clearDetails(): void;
+    getDetails(): Campaign.Module.Details | undefined;
+    setDetails(value?: Campaign.Module.Details): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Module.AsObject;
     static toObject(includeInstance: boolean, msg: Module): Module.AsObject;
@@ -127,12 +142,436 @@ export namespace Campaign {
     export type AsObject = {
       campaignModuleSid: number,
       campaignSid: number,
-      moduleType: ModuleTypeMap[keyof ModuleTypeMap],
+      moduleType: Campaign.Module.ModuleTypeMap[keyof Campaign.Module.ModuleTypeMap],
       state: Campaign.Module.ModuleStateMap[keyof Campaign.Module.ModuleStateMap],
+      config?: Campaign.Module.ModuleConfig.AsObject,
       dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       scheduledStopDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       actualStopDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      hoursOfOperation?: WeekdayTimeRange.AsObject,
+      details?: Campaign.Module.Details.AsObject,
+    }
+
+    export class ModuleConfig extends jspb.Message {
+      hasApiKeyPrimary(): boolean;
+      clearApiKeyPrimary(): void;
+      getApiKeyPrimary(): google_protobuf_wrappers_pb.StringValue | undefined;
+      setApiKeyPrimary(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+      hasApiKeySecondary(): boolean;
+      clearApiKeySecondary(): void;
+      getApiKeySecondary(): google_protobuf_wrappers_pb.StringValue | undefined;
+      setApiKeySecondary(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+      hasColorProperties(): boolean;
+      clearColorProperties(): void;
+      getColorProperties(): Campaign.Module.ModuleConfig.ChatColorProperties | undefined;
+      setColorProperties(value?: Campaign.Module.ModuleConfig.ChatColorProperties): void;
+
+      hasConnectedInboxSid(): boolean;
+      clearConnectedInboxSid(): void;
+      getConnectedInboxSid(): Int64Id | undefined;
+      setConnectedInboxSid(value?: Int64Id): void;
+
+      clearDispositionsList(): void;
+      getDispositionsList(): Array<Disposition>;
+      setDispositionsList(value: Array<Disposition>): void;
+      addDispositions(value?: Disposition, index?: number): Disposition;
+
+      hasEmail(): boolean;
+      clearEmail(): void;
+      getEmail(): google_protobuf_wrappers_pb.StringValue | undefined;
+      setEmail(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+      hasMessageBody(): boolean;
+      clearMessageBody(): void;
+      getMessageBody(): google_protobuf_wrappers_pb.StringValue | undefined;
+      setMessageBody(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+      hasEmailSubject(): boolean;
+      clearEmailSubject(): void;
+      getEmailSubject(): google_protobuf_wrappers_pb.StringValue | undefined;
+      setEmailSubject(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+      hasSmsNumber(): boolean;
+      clearSmsNumber(): void;
+      getSmsNumber(): Campaign.Module.ModuleConfig.SmsNumber | undefined;
+      setSmsNumber(value?: Campaign.Module.ModuleConfig.SmsNumber): void;
+
+      hasHeader(): boolean;
+      clearHeader(): void;
+      getHeader(): Campaign.Module.ModuleConfig.ChatHeader | undefined;
+      setHeader(value?: Campaign.Module.ModuleConfig.ChatHeader): void;
+
+      hasSlaTimeouts(): boolean;
+      clearSlaTimeouts(): void;
+      getSlaTimeouts(): SLATimeouts | undefined;
+      setSlaTimeouts(value?: SLATimeouts): void;
+
+      hasSendsPerHour(): boolean;
+      clearSendsPerHour(): void;
+      getSendsPerHour(): google_protobuf_wrappers_pb.Int64Value | undefined;
+      setSendsPerHour(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+      hasUnsubscribeLinkSid(): boolean;
+      clearUnsubscribeLinkSid(): void;
+      getUnsubscribeLinkSid(): Int64Id | undefined;
+      setUnsubscribeLinkSid(value?: Int64Id): void;
+
+      hasVerifiedEmailSid(): boolean;
+      clearVerifiedEmailSid(): void;
+      getVerifiedEmailSid(): Int64Id | undefined;
+      setVerifiedEmailSid(value?: Int64Id): void;
+
+      hasStopOnTaskDeplete(): boolean;
+      clearStopOnTaskDeplete(): void;
+      getStopOnTaskDeplete(): google_protobuf_wrappers_pb.BoolValue | undefined;
+      setStopOnTaskDeplete(value?: google_protobuf_wrappers_pb.BoolValue): void;
+
+      clearAttachmentsList(): void;
+      getAttachmentsList(): Array<OmniAttachment>;
+      setAttachmentsList(value: Array<OmniAttachment>): void;
+      addAttachments(value?: OmniAttachment, index?: number): OmniAttachment;
+
+      hasComplianceRuleSetId(): boolean;
+      clearComplianceRuleSetId(): void;
+      getComplianceRuleSetId(): google_protobuf_wrappers_pb.StringValue | undefined;
+      setComplianceRuleSetId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+      clearPaymentPortalIdsList(): void;
+      getPaymentPortalIdsList(): Array<string>;
+      setPaymentPortalIdsList(value: Array<string>): void;
+      addPaymentPortalIds(value: string, index?: number): string;
+
+      hasFlowId(): boolean;
+      clearFlowId(): void;
+      getFlowId(): Int64Id | undefined;
+      setFlowId(value?: Int64Id): void;
+
+      hasSkills(): boolean;
+      clearSkills(): void;
+      getSkills(): Campaign.Module.ModuleConfig.OmniConversationSkills | undefined;
+      setSkills(value?: Campaign.Module.ModuleConfig.OmniConversationSkills): void;
+
+      hasWhatsappNumber(): boolean;
+      clearWhatsappNumber(): void;
+      getWhatsappNumber(): Campaign.Module.ModuleConfig.WhatsAppNumber | undefined;
+      setWhatsappNumber(value?: Campaign.Module.ModuleConfig.WhatsAppNumber): void;
+
+      getProviderMetadataMap(): jspb.Map<string, string>;
+      clearProviderMetadataMap(): void;
+      getCountryCode(): number;
+      setCountryCode(value: number): void;
+
+      getPostalCodeField(): string;
+      setPostalCodeField(value: string): void;
+
+      hasTimeoutMessageConfig(): boolean;
+      clearTimeoutMessageConfig(): void;
+      getTimeoutMessageConfig(): Campaign.Module.ModuleConfig.ConversationTimeoutMessageConfig | undefined;
+      setTimeoutMessageConfig(value?: Campaign.Module.ModuleConfig.ConversationTimeoutMessageConfig): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): ModuleConfig.AsObject;
+      static toObject(includeInstance: boolean, msg: ModuleConfig): ModuleConfig.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: ModuleConfig, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): ModuleConfig;
+      static deserializeBinaryFromReader(message: ModuleConfig, reader: jspb.BinaryReader): ModuleConfig;
+    }
+
+    export namespace ModuleConfig {
+      export type AsObject = {
+        apiKeyPrimary?: google_protobuf_wrappers_pb.StringValue.AsObject,
+        apiKeySecondary?: google_protobuf_wrappers_pb.StringValue.AsObject,
+        colorProperties?: Campaign.Module.ModuleConfig.ChatColorProperties.AsObject,
+        connectedInboxSid?: Int64Id.AsObject,
+        dispositionsList: Array<Disposition.AsObject>,
+        email?: google_protobuf_wrappers_pb.StringValue.AsObject,
+        messageBody?: google_protobuf_wrappers_pb.StringValue.AsObject,
+        emailSubject?: google_protobuf_wrappers_pb.StringValue.AsObject,
+        smsNumber?: Campaign.Module.ModuleConfig.SmsNumber.AsObject,
+        header?: Campaign.Module.ModuleConfig.ChatHeader.AsObject,
+        slaTimeouts?: SLATimeouts.AsObject,
+        sendsPerHour?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+        unsubscribeLinkSid?: Int64Id.AsObject,
+        verifiedEmailSid?: Int64Id.AsObject,
+        stopOnTaskDeplete?: google_protobuf_wrappers_pb.BoolValue.AsObject,
+        attachmentsList: Array<OmniAttachment.AsObject>,
+        complianceRuleSetId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+        paymentPortalIdsList: Array<string>,
+        flowId?: Int64Id.AsObject,
+        skills?: Campaign.Module.ModuleConfig.OmniConversationSkills.AsObject,
+        whatsappNumber?: Campaign.Module.ModuleConfig.WhatsAppNumber.AsObject,
+        providerMetadataMap: Array<[string, string]>,
+        countryCode: number,
+        postalCodeField: string,
+        timeoutMessageConfig?: Campaign.Module.ModuleConfig.ConversationTimeoutMessageConfig.AsObject,
+      }
+
+      export class ChatColorProperties extends jspb.Message {
+        getPrimaryColor(): string;
+        setPrimaryColor(value: string): void;
+
+        getHeaderTextColor(): string;
+        setHeaderTextColor(value: string): void;
+
+        getParagraphTextColor(): string;
+        setParagraphTextColor(value: string): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): ChatColorProperties.AsObject;
+        static toObject(includeInstance: boolean, msg: ChatColorProperties): ChatColorProperties.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: ChatColorProperties, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): ChatColorProperties;
+        static deserializeBinaryFromReader(message: ChatColorProperties, reader: jspb.BinaryReader): ChatColorProperties;
+      }
+
+      export namespace ChatColorProperties {
+        export type AsObject = {
+          primaryColor: string,
+          headerTextColor: string,
+          paragraphTextColor: string,
+        }
+      }
+
+      export class ChatHeader extends jspb.Message {
+        getHeader(): string;
+        setHeader(value: string): void;
+
+        getSubheader(): string;
+        setSubheader(value: string): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): ChatHeader.AsObject;
+        static toObject(includeInstance: boolean, msg: ChatHeader): ChatHeader.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: ChatHeader, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): ChatHeader;
+        static deserializeBinaryFromReader(message: ChatHeader, reader: jspb.BinaryReader): ChatHeader;
+      }
+
+      export namespace ChatHeader {
+        export type AsObject = {
+          header: string,
+          subheader: string,
+        }
+      }
+
+      export class OmniConversationSkills extends jspb.Message {
+        getSkillsMap(): jspb.Map<string, boolean>;
+        clearSkillsMap(): void;
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): OmniConversationSkills.AsObject;
+        static toObject(includeInstance: boolean, msg: OmniConversationSkills): OmniConversationSkills.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: OmniConversationSkills, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): OmniConversationSkills;
+        static deserializeBinaryFromReader(message: OmniConversationSkills, reader: jspb.BinaryReader): OmniConversationSkills;
+      }
+
+      export namespace OmniConversationSkills {
+        export type AsObject = {
+          skillsMap: Array<[string, boolean]>,
+        }
+      }
+
+      export class SmsNumber extends jspb.Message {
+        getNumber(): string;
+        setNumber(value: string): void;
+
+        getType(): Campaign.Module.ModuleConfig.SmsNumber.SmsNumberTypeMap[keyof Campaign.Module.ModuleConfig.SmsNumber.SmsNumberTypeMap];
+        setType(value: Campaign.Module.ModuleConfig.SmsNumber.SmsNumberTypeMap[keyof Campaign.Module.ModuleConfig.SmsNumber.SmsNumberTypeMap]): void;
+
+        getProvider(): Campaign.Module.ModuleConfig.SmsNumber.SmsNumberProviderMap[keyof Campaign.Module.ModuleConfig.SmsNumber.SmsNumberProviderMap];
+        setProvider(value: Campaign.Module.ModuleConfig.SmsNumber.SmsNumberProviderMap[keyof Campaign.Module.ModuleConfig.SmsNumber.SmsNumberProviderMap]): void;
+
+        getCountryCode(): number;
+        setCountryCode(value: number): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): SmsNumber.AsObject;
+        static toObject(includeInstance: boolean, msg: SmsNumber): SmsNumber.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: SmsNumber, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): SmsNumber;
+        static deserializeBinaryFromReader(message: SmsNumber, reader: jspb.BinaryReader): SmsNumber;
+      }
+
+      export namespace SmsNumber {
+        export type AsObject = {
+          number: string,
+          type: Campaign.Module.ModuleConfig.SmsNumber.SmsNumberTypeMap[keyof Campaign.Module.ModuleConfig.SmsNumber.SmsNumberTypeMap],
+          provider: Campaign.Module.ModuleConfig.SmsNumber.SmsNumberProviderMap[keyof Campaign.Module.ModuleConfig.SmsNumber.SmsNumberProviderMap],
+          countryCode: number,
+        }
+
+        export interface SmsNumberTypeMap {
+          SMS_SHORT_CODE_TYPE: 0;
+          SMS_ALPHANUMERIC_TYPE: 1;
+          SMS_NUMBER_TYPE: 2;
+        }
+
+        export const SmsNumberType: SmsNumberTypeMap;
+
+        export interface SmsNumberProviderMap {
+          UNKNOWN_PROVIDER: 0;
+          BANDWIDTH_PROVIDER: 1;
+          BURST_SMS_PROVIDER: 2;
+          PLIVO_PROVIDER: 3;
+          APEIRON_PROVIDER: 4;
+          AUSBURST_SMS_PROVIDER: 5;
+          MEDIASAT_SMS_PROVIDER: 6;
+          TEXTLOCAL_SMS_PROVIDER: 7;
+          SMARTPING_SMS_PROVIDER: 8;
+        }
+
+        export const SmsNumberProvider: SmsNumberProviderMap;
+      }
+
+      export class WhatsAppNumber extends jspb.Message {
+        getNumber(): string;
+        setNumber(value: string): void;
+
+        getProvider(): Campaign.Module.ModuleConfig.WhatsAppNumber.WhatsAppNumberProviderMap[keyof Campaign.Module.ModuleConfig.WhatsAppNumber.WhatsAppNumberProviderMap];
+        setProvider(value: Campaign.Module.ModuleConfig.WhatsAppNumber.WhatsAppNumberProviderMap[keyof Campaign.Module.ModuleConfig.WhatsAppNumber.WhatsAppNumberProviderMap]): void;
+
+        getCountryCode(): number;
+        setCountryCode(value: number): void;
+
+        getWhatsappNumberSid(): string;
+        setWhatsappNumberSid(value: string): void;
+
+        getDisplayName(): string;
+        setDisplayName(value: string): void;
+
+        hasDateCreated(): boolean;
+        clearDateCreated(): void;
+        getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+        setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+        hasDateModified(): boolean;
+        clearDateModified(): void;
+        getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
+        setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): WhatsAppNumber.AsObject;
+        static toObject(includeInstance: boolean, msg: WhatsAppNumber): WhatsAppNumber.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: WhatsAppNumber, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): WhatsAppNumber;
+        static deserializeBinaryFromReader(message: WhatsAppNumber, reader: jspb.BinaryReader): WhatsAppNumber;
+      }
+
+      export namespace WhatsAppNumber {
+        export type AsObject = {
+          number: string,
+          provider: Campaign.Module.ModuleConfig.WhatsAppNumber.WhatsAppNumberProviderMap[keyof Campaign.Module.ModuleConfig.WhatsAppNumber.WhatsAppNumberProviderMap],
+          countryCode: number,
+          whatsappNumberSid: string,
+          displayName: string,
+          dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+          dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        }
+
+        export interface WhatsAppNumberProviderMap {
+          UNKNOWN_WHATSAPP_PROVIDER: 0;
+          WHATSAPP_SMS_PROVIDER: 1;
+        }
+
+        export const WhatsAppNumberProvider: WhatsAppNumberProviderMap;
+      }
+
+      export class ConversationTimeoutMessageConfig extends jspb.Message {
+        getIsDisabled(): boolean;
+        setIsDisabled(value: boolean): void;
+
+        getMsg(): string;
+        setMsg(value: string): void;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): ConversationTimeoutMessageConfig.AsObject;
+        static toObject(includeInstance: boolean, msg: ConversationTimeoutMessageConfig): ConversationTimeoutMessageConfig.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: ConversationTimeoutMessageConfig, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): ConversationTimeoutMessageConfig;
+        static deserializeBinaryFromReader(message: ConversationTimeoutMessageConfig, reader: jspb.BinaryReader): ConversationTimeoutMessageConfig;
+      }
+
+      export namespace ConversationTimeoutMessageConfig {
+        export type AsObject = {
+          isDisabled: boolean,
+          msg: string,
+        }
+      }
+    }
+
+    export class Details extends jspb.Message {
+      hasTotalTaskCount(): boolean;
+      clearTotalTaskCount(): void;
+      getTotalTaskCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
+      setTotalTaskCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+      hasCompletedTaskCount(): boolean;
+      clearCompletedTaskCount(): void;
+      getCompletedTaskCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
+      setCompletedTaskCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+      hasConnectedInboxAddress(): boolean;
+      clearConnectedInboxAddress(): void;
+      getConnectedInboxAddress(): google_protobuf_wrappers_pb.StringValue | undefined;
+      setConnectedInboxAddress(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+      hasVerifiedEmailAddress(): boolean;
+      clearVerifiedEmailAddress(): void;
+      getVerifiedEmailAddress(): google_protobuf_wrappers_pb.StringValue | undefined;
+      setVerifiedEmailAddress(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+      hasPendingTaskCount(): boolean;
+      clearPendingTaskCount(): void;
+      getPendingTaskCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
+      setPendingTaskCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+      hasFailedTaskCount(): boolean;
+      clearFailedTaskCount(): void;
+      getFailedTaskCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
+      setFailedTaskCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+      hasCanceledTaskCount(): boolean;
+      clearCanceledTaskCount(): void;
+      getCanceledTaskCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
+      setCanceledTaskCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): Details.AsObject;
+      static toObject(includeInstance: boolean, msg: Details): Details.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: Details, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): Details;
+      static deserializeBinaryFromReader(message: Details, reader: jspb.BinaryReader): Details;
+    }
+
+    export namespace Details {
+      export type AsObject = {
+        totalTaskCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+        completedTaskCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+        connectedInboxAddress?: google_protobuf_wrappers_pb.StringValue.AsObject,
+        verifiedEmailAddress?: google_protobuf_wrappers_pb.StringValue.AsObject,
+        pendingTaskCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+        failedTaskCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+        canceledTaskCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+      }
     }
 
     export interface ModuleStateMap {
@@ -148,7 +587,26 @@ export namespace Campaign {
     }
 
     export const ModuleState: ModuleStateMap;
+
+    export interface ModuleTypeMap {
+      MODULE_TYPE_INBOUND: 0;
+      MODULE_TYPE_OUTBOUND: 1;
+      MODULE_TYPE_MANUAL_APPROVAL: 2;
+      MODULE_TYPE_MANUAL: 3;
+    }
+
+    export const ModuleType: ModuleTypeMap;
   }
+
+  export interface ChannelTypeMap {
+    CHANNEL_TYPE_EMAIL: 0;
+    CHANNEL_TYPE_SMS: 1;
+    CHANNEL_TYPE_CHAT: 2;
+    CHANNEL_TYPE_VOICE: 3;
+    CHANNEL_TYPE_WHATSAPP: 4;
+  }
+
+  export const ChannelType: ChannelTypeMap;
 
   export interface CampaignStateMap {
     SCHEDULING: 0;
@@ -243,6 +701,162 @@ export namespace WeekdayTimeRangeEntry {
   }
 }
 
+export class SLATimeouts extends jspb.Message {
+  getT1(): number;
+  setT1(value: number): void;
+
+  getT2(): number;
+  setT2(value: number): void;
+
+  getT3(): number;
+  setT3(value: number): void;
+
+  getT10(): number;
+  setT10(value: number): void;
+
+  getT11(): number;
+  setT11(value: number): void;
+
+  getT12(): number;
+  setT12(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SLATimeouts.AsObject;
+  static toObject(includeInstance: boolean, msg: SLATimeouts): SLATimeouts.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SLATimeouts, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SLATimeouts;
+  static deserializeBinaryFromReader(message: SLATimeouts, reader: jspb.BinaryReader): SLATimeouts;
+}
+
+export namespace SLATimeouts {
+  export type AsObject = {
+    t1: number,
+    t2: number,
+    t3: number,
+    t10: number,
+    t11: number,
+    t12: number,
+  }
+}
+
+export class Disposition extends jspb.Message {
+  getDispositionSid(): string;
+  setDispositionSid(value: string): void;
+
+  hasDateCreated(): boolean;
+  clearDateCreated(): void;
+  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasDateModified(): boolean;
+  clearDateModified(): void;
+  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getDisposition(): string;
+  setDisposition(value: string): void;
+
+  getDeleted(): boolean;
+  setDeleted(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Disposition.AsObject;
+  static toObject(includeInstance: boolean, msg: Disposition): Disposition.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Disposition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Disposition;
+  static deserializeBinaryFromReader(message: Disposition, reader: jspb.BinaryReader): Disposition;
+}
+
+export namespace Disposition {
+  export type AsObject = {
+    dispositionSid: string,
+    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    disposition: string,
+    deleted: boolean,
+  }
+}
+
+export class OmniAttachment extends jspb.Message {
+  getOmniAttachmentSid(): string;
+  setOmniAttachmentSid(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getFileType(): string;
+  setFileType(value: string): void;
+
+  getFileSize(): number;
+  setFileSize(value: number): void;
+
+  getPath(): string;
+  setPath(value: string): void;
+
+  hasTempId(): boolean;
+  clearTempId(): void;
+  getTempId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setTempId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  getDownloadUrl(): string;
+  setDownloadUrl(value: string): void;
+
+  hasDateCreated(): boolean;
+  clearDateCreated(): void;
+  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasDateModified(): boolean;
+  clearDateModified(): void;
+  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasContentId(): boolean;
+  clearContentId(): void;
+  getContentId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setContentId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasWidth(): boolean;
+  clearWidth(): void;
+  getWidth(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setWidth(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasHeight(): boolean;
+  clearHeight(): void;
+  getHeight(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setHeight(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmniAttachment.AsObject;
+  static toObject(includeInstance: boolean, msg: OmniAttachment): OmniAttachment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmniAttachment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmniAttachment;
+  static deserializeBinaryFromReader(message: OmniAttachment, reader: jspb.BinaryReader): OmniAttachment;
+}
+
+export namespace OmniAttachment {
+  export type AsObject = {
+    omniAttachmentSid: string,
+    name: string,
+    fileType: string,
+    fileSize: number,
+    path: string,
+    tempId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    downloadUrl: string,
+    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    contentId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    width?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    height?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
 export class Weekday extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Weekday.AsObject;
@@ -271,24 +885,25 @@ export namespace Weekday {
   export const Enum: EnumMap;
 }
 
-export interface ChannelTypeMap {
-  CHANNEL_TYPE_EMAIL: 0;
-  CHANNEL_TYPE_SMS: 1;
-  CHANNEL_TYPE_CHAT: 2;
-  CHANNEL_TYPE_VOICE: 3;
-  CHANNEL_TYPE_WHATSAPP: 4;
+export class Int64Id extends jspb.Message {
+  getValue(): string;
+  setValue(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Int64Id.AsObject;
+  static toObject(includeInstance: boolean, msg: Int64Id): Int64Id.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Int64Id, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Int64Id;
+  static deserializeBinaryFromReader(message: Int64Id, reader: jspb.BinaryReader): Int64Id;
 }
 
-export const ChannelType: ChannelTypeMap;
-
-export interface ModuleTypeMap {
-  MODULE_TYPE_INBOUND: 0;
-  MODULE_TYPE_OUTBOUND: 1;
-  MODULE_TYPE_MANUAL_APPROVAL: 2;
-  MODULE_TYPE_MANUAL: 3;
+export namespace Int64Id {
+  export type AsObject = {
+    value: string,
+  }
 }
-
-export const ModuleType: ModuleTypeMap;
 
 export interface TimeZoneMap {
   TIME_ZONE_AMERICA_PUERTO_RICO: 0;
