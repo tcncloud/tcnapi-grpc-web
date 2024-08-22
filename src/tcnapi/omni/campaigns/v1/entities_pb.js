@@ -109,7 +109,8 @@ proto.tcnapi.omni.campaigns.v1.ListcampaignsRequest.toObject = function(includeI
   var f, obj = {
 parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
 pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-pageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+pageToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
+filter: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -158,6 +159,10 @@ proto.tcnapi.omni.campaigns.v1.ListcampaignsRequest.deserializeBinaryFromReader 
       var value = /** @type {string} */ (reader.readString());
       msg.setPageToken(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilter(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -205,6 +210,13 @@ proto.tcnapi.omni.campaigns.v1.ListcampaignsRequest.serializeBinaryToWriter = fu
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getFilter();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -262,6 +274,24 @@ proto.tcnapi.omni.campaigns.v1.ListcampaignsRequest.prototype.getPageToken = fun
  */
 proto.tcnapi.omni.campaigns.v1.ListcampaignsRequest.prototype.setPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string filter = 4;
+ * @return {string}
+ */
+proto.tcnapi.omni.campaigns.v1.ListcampaignsRequest.prototype.getFilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.tcnapi.omni.campaigns.v1.ListcampaignsRequest} returns this
+ */
+proto.tcnapi.omni.campaigns.v1.ListcampaignsRequest.prototype.setFilter = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

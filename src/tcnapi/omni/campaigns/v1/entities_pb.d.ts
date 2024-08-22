@@ -17,6 +17,9 @@ export class ListcampaignsRequest extends jspb.Message {
   getPageToken(): string;
   setPageToken(value: string): void;
 
+  getFilter(): string;
+  setFilter(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListcampaignsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListcampaignsRequest): ListcampaignsRequest.AsObject;
@@ -32,6 +35,7 @@ export namespace ListcampaignsRequest {
     parent: string,
     pageSize: number,
     pageToken: string,
+    filter: string,
   }
 }
 
