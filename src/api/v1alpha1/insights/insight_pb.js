@@ -25,6 +25,8 @@ var global = localGlobalThis ||
 
 var api_commons_insights_pb = require('../../../api/commons/insights_pb.js');
 goog.object.extend(proto, api_commons_insights_pb);
+var api_v1alpha1_explorer_entities_pb = require('../../../api/v1alpha1/explorer/entities_pb.js');
+goog.object.extend(proto, api_v1alpha1_explorer_entities_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
 goog.exportSymbol('proto.api.v1alpha1.insights.ColumnOperation', null, global);
@@ -1043,7 +1045,8 @@ insightVersion: jspb.Message.getFieldWithDefault(msg, 6, 0),
 body: jspb.Message.getFieldWithDefault(msg, 7, ""),
 insightPermissionType: jspb.Message.getFieldWithDefault(msg, 8, 0),
 resourceId: jspb.Message.getFieldWithDefault(msg, 9, ""),
-standardInsight: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+standardInsight: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+datasourceType: jspb.Message.getFieldWithDefault(msg, 11, 0)
   };
 
   if (includeInstance) {
@@ -1115,6 +1118,10 @@ proto.api.v1alpha1.insights.Insight.deserializeBinaryFromReader = function(msg, 
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStandardInsight(value);
+      break;
+    case 11:
+      var value = /** @type {!proto.api.v1alpha1.explorer.DatasourceType} */ (reader.readEnum());
+      msg.setDatasourceType(value);
       break;
     default:
       reader.skipField();
@@ -1205,6 +1212,13 @@ proto.api.v1alpha1.insights.Insight.serializeBinaryToWriter = function(message, 
   if (f) {
     writer.writeBool(
       10,
+      f
+    );
+  }
+  f = message.getDatasourceType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      11,
       f
     );
   }
@@ -1370,6 +1384,24 @@ proto.api.v1alpha1.insights.Insight.prototype.getStandardInsight = function() {
  */
 proto.api.v1alpha1.insights.Insight.prototype.setStandardInsight = function(value) {
   return jspb.Message.setProto3BooleanField(this, 10, value);
+};
+
+
+/**
+ * optional api.v1alpha1.explorer.DatasourceType datasource_type = 11;
+ * @return {!proto.api.v1alpha1.explorer.DatasourceType}
+ */
+proto.api.v1alpha1.insights.Insight.prototype.getDatasourceType = function() {
+  return /** @type {!proto.api.v1alpha1.explorer.DatasourceType} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {!proto.api.v1alpha1.explorer.DatasourceType} value
+ * @return {!proto.api.v1alpha1.insights.Insight} returns this
+ */
+proto.api.v1alpha1.insights.Insight.prototype.setDatasourceType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 11, value);
 };
 
 
