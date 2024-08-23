@@ -11114,7 +11114,8 @@ fieldType: jspb.Message.getFieldWithDefault(msg, 3, 0),
 validationType: jspb.Message.getFieldWithDefault(msg, 4, 0),
 formatsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
 invoiceType: jspb.Message.getFieldWithDefault(msg, 7, 0),
-helperText: (f = msg.getHelperText()) && proto.api.commons.integrations.HelperText.toObject(includeInstance, f)
+helperText: (f = msg.getHelperText()) && proto.api.commons.integrations.HelperText.toObject(includeInstance, f),
+required: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -11183,6 +11184,10 @@ proto.api.commons.integrations.FieldDefinition.deserializeBinaryFromReader = fun
       var value = new proto.api.commons.integrations.HelperText;
       reader.readMessage(value,proto.api.commons.integrations.HelperText.deserializeBinaryFromReader);
       msg.setHelperText(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setRequired(value);
       break;
     default:
       reader.skipField();
@@ -11268,6 +11273,13 @@ proto.api.commons.integrations.FieldDefinition.serializeBinaryToWriter = functio
       8,
       f,
       proto.api.commons.integrations.HelperText.serializeBinaryToWriter
+    );
+  }
+  f = message.getRequired();
+  if (f) {
+    writer.writeBool(
+      9,
+      f
     );
   }
 };
@@ -11452,6 +11464,24 @@ proto.api.commons.integrations.FieldDefinition.prototype.clearHelperText = funct
  */
 proto.api.commons.integrations.FieldDefinition.prototype.hasHelperText = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional bool required = 9;
+ * @return {boolean}
+ */
+proto.api.commons.integrations.FieldDefinition.prototype.getRequired = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.integrations.FieldDefinition} returns this
+ */
+proto.api.commons.integrations.FieldDefinition.prototype.setRequired = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 

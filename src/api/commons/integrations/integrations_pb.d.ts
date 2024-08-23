@@ -615,6 +615,9 @@ export class FieldDefinition extends jspb.Message {
   getHelperText(): HelperText | undefined;
   setHelperText(value?: HelperText): void;
 
+  getRequired(): boolean;
+  setRequired(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FieldDefinition.AsObject;
   static toObject(includeInstance: boolean, msg: FieldDefinition): FieldDefinition.AsObject;
@@ -635,6 +638,7 @@ export namespace FieldDefinition {
     formatsList: Array<string>,
     invoiceType: InvoiceDisplayTypeMap[keyof InvoiceDisplayTypeMap],
     helperText?: HelperText.AsObject,
+    required: boolean,
   }
 }
 
