@@ -123,11 +123,6 @@ export namespace Campaign {
     getHoursOfOperation(): WeekdayTimeRange | undefined;
     setHoursOfOperation(value?: WeekdayTimeRange): void;
 
-    hasDetails(): boolean;
-    clearDetails(): void;
-    getDetails(): Campaign.Module.Details | undefined;
-    setDetails(value?: Campaign.Module.Details): void;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Module.AsObject;
     static toObject(includeInstance: boolean, msg: Module): Module.AsObject;
@@ -150,7 +145,6 @@ export namespace Campaign {
       scheduledStopDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       actualStopDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       hoursOfOperation?: WeekdayTimeRange.AsObject,
-      details?: Campaign.Module.Details.AsObject,
     }
 
     export class ModuleConfig extends jspb.Message {
@@ -173,11 +167,6 @@ export namespace Campaign {
       clearConnectedInboxSid(): void;
       getConnectedInboxSid(): Int64Id | undefined;
       setConnectedInboxSid(value?: Int64Id): void;
-
-      clearDispositionsList(): void;
-      getDispositionsList(): Array<Disposition>;
-      setDispositionsList(value: Array<Disposition>): void;
-      addDispositions(value?: Disposition, index?: number): Disposition;
 
       hasEmail(): boolean;
       clearEmail(): void;
@@ -228,11 +217,6 @@ export namespace Campaign {
       clearStopOnTaskDeplete(): void;
       getStopOnTaskDeplete(): google_protobuf_wrappers_pb.BoolValue | undefined;
       setStopOnTaskDeplete(value?: google_protobuf_wrappers_pb.BoolValue): void;
-
-      clearAttachmentsList(): void;
-      getAttachmentsList(): Array<OmniAttachment>;
-      setAttachmentsList(value: Array<OmniAttachment>): void;
-      addAttachments(value?: OmniAttachment, index?: number): OmniAttachment;
 
       hasComplianceRuleSetId(): boolean;
       clearComplianceRuleSetId(): void;
@@ -288,7 +272,6 @@ export namespace Campaign {
         apiKeySecondary?: google_protobuf_wrappers_pb.StringValue.AsObject,
         colorProperties?: Campaign.Module.ModuleConfig.ChatColorProperties.AsObject,
         connectedInboxSid?: Int64Id.AsObject,
-        dispositionsList: Array<Disposition.AsObject>,
         email?: google_protobuf_wrappers_pb.StringValue.AsObject,
         messageBody?: google_protobuf_wrappers_pb.StringValue.AsObject,
         emailSubject?: google_protobuf_wrappers_pb.StringValue.AsObject,
@@ -299,7 +282,6 @@ export namespace Campaign {
         unsubscribeLinkSid?: Int64Id.AsObject,
         verifiedEmailSid?: Int64Id.AsObject,
         stopOnTaskDeplete?: google_protobuf_wrappers_pb.BoolValue.AsObject,
-        attachmentsList: Array<OmniAttachment.AsObject>,
         complianceRuleSetId?: google_protobuf_wrappers_pb.StringValue.AsObject,
         paymentPortalIdsList: Array<string>,
         flowId?: Int64Id.AsObject,
@@ -516,64 +498,6 @@ export namespace Campaign {
       }
     }
 
-    export class Details extends jspb.Message {
-      hasTotalTaskCount(): boolean;
-      clearTotalTaskCount(): void;
-      getTotalTaskCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
-      setTotalTaskCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
-
-      hasCompletedTaskCount(): boolean;
-      clearCompletedTaskCount(): void;
-      getCompletedTaskCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
-      setCompletedTaskCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
-
-      hasConnectedInboxAddress(): boolean;
-      clearConnectedInboxAddress(): void;
-      getConnectedInboxAddress(): google_protobuf_wrappers_pb.StringValue | undefined;
-      setConnectedInboxAddress(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-      hasVerifiedEmailAddress(): boolean;
-      clearVerifiedEmailAddress(): void;
-      getVerifiedEmailAddress(): google_protobuf_wrappers_pb.StringValue | undefined;
-      setVerifiedEmailAddress(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-      hasPendingTaskCount(): boolean;
-      clearPendingTaskCount(): void;
-      getPendingTaskCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
-      setPendingTaskCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
-
-      hasFailedTaskCount(): boolean;
-      clearFailedTaskCount(): void;
-      getFailedTaskCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
-      setFailedTaskCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
-
-      hasCanceledTaskCount(): boolean;
-      clearCanceledTaskCount(): void;
-      getCanceledTaskCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
-      setCanceledTaskCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
-
-      serializeBinary(): Uint8Array;
-      toObject(includeInstance?: boolean): Details.AsObject;
-      static toObject(includeInstance: boolean, msg: Details): Details.AsObject;
-      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-      static serializeBinaryToWriter(message: Details, writer: jspb.BinaryWriter): void;
-      static deserializeBinary(bytes: Uint8Array): Details;
-      static deserializeBinaryFromReader(message: Details, reader: jspb.BinaryReader): Details;
-    }
-
-    export namespace Details {
-      export type AsObject = {
-        totalTaskCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-        completedTaskCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-        connectedInboxAddress?: google_protobuf_wrappers_pb.StringValue.AsObject,
-        verifiedEmailAddress?: google_protobuf_wrappers_pb.StringValue.AsObject,
-        pendingTaskCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-        failedTaskCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-        canceledTaskCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-      }
-    }
-
     export interface ModuleStateMap {
       MODULE_PREPARING: 0;
       MODULE_SCHEDULING: 100;
@@ -738,122 +662,6 @@ export namespace SLATimeouts {
     t10: number,
     t11: number,
     t12: number,
-  }
-}
-
-export class Disposition extends jspb.Message {
-  getDispositionSid(): string;
-  setDispositionSid(value: string): void;
-
-  hasDateCreated(): boolean;
-  clearDateCreated(): void;
-  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  hasDateModified(): boolean;
-  clearDateModified(): void;
-  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  getDisposition(): string;
-  setDisposition(value: string): void;
-
-  getDeleted(): boolean;
-  setDeleted(value: boolean): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Disposition.AsObject;
-  static toObject(includeInstance: boolean, msg: Disposition): Disposition.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Disposition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Disposition;
-  static deserializeBinaryFromReader(message: Disposition, reader: jspb.BinaryReader): Disposition;
-}
-
-export namespace Disposition {
-  export type AsObject = {
-    dispositionSid: string,
-    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    disposition: string,
-    deleted: boolean,
-  }
-}
-
-export class OmniAttachment extends jspb.Message {
-  getOmniAttachmentSid(): string;
-  setOmniAttachmentSid(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getFileType(): string;
-  setFileType(value: string): void;
-
-  getFileSize(): number;
-  setFileSize(value: number): void;
-
-  getPath(): string;
-  setPath(value: string): void;
-
-  hasTempId(): boolean;
-  clearTempId(): void;
-  getTempId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setTempId(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  getDownloadUrl(): string;
-  setDownloadUrl(value: string): void;
-
-  hasDateCreated(): boolean;
-  clearDateCreated(): void;
-  getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  hasDateModified(): boolean;
-  clearDateModified(): void;
-  getDateModified(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateModified(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  hasContentId(): boolean;
-  clearContentId(): void;
-  getContentId(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setContentId(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  hasWidth(): boolean;
-  clearWidth(): void;
-  getWidth(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setWidth(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  hasHeight(): boolean;
-  clearHeight(): void;
-  getHeight(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setHeight(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OmniAttachment.AsObject;
-  static toObject(includeInstance: boolean, msg: OmniAttachment): OmniAttachment.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OmniAttachment, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OmniAttachment;
-  static deserializeBinaryFromReader(message: OmniAttachment, reader: jspb.BinaryReader): OmniAttachment;
-}
-
-export namespace OmniAttachment {
-  export type AsObject = {
-    omniAttachmentSid: string,
-    name: string,
-    fileType: string,
-    fileSize: number,
-    path: string,
-    tempId?: google_protobuf_wrappers_pb.StringValue.AsObject,
-    downloadUrl: string,
-    dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    dateModified?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    contentId?: google_protobuf_wrappers_pb.StringValue.AsObject,
-    width?: google_protobuf_wrappers_pb.StringValue.AsObject,
-    height?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 
