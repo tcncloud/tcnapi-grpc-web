@@ -356,6 +356,11 @@ export namespace EvaluationQuestion {
     getFailType(): FailTypeMap[keyof FailTypeMap];
     setFailType(value: FailTypeMap[keyof FailTypeMap]): void;
 
+    hasAnswerPoints(): boolean;
+    clearAnswerPoints(): void;
+    getAnswerPoints(): number;
+    setAnswerPoints(value: number): void;
+
     getResultCase(): Answer.ResultCase;
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Answer.AsObject;
@@ -372,12 +377,14 @@ export namespace EvaluationQuestion {
       answerOption: string,
       points: number,
       failType: FailTypeMap[keyof FailTypeMap],
+      answerPoints: number,
     }
 
     export enum ResultCase {
       RESULT_NOT_SET = 0,
       POINTS = 2,
       FAIL_TYPE = 3,
+      ANSWER_POINTS = 4,
     }
   }
 }
@@ -731,6 +738,11 @@ export namespace ScorecardQuestion {
     getFailType(): FailTypeMap[keyof FailTypeMap];
     setFailType(value: FailTypeMap[keyof FailTypeMap]): void;
 
+    hasAnswerPoints(): boolean;
+    clearAnswerPoints(): void;
+    getAnswerPoints(): number;
+    setAnswerPoints(value: number): void;
+
     getResultCase(): Answer.ResultCase;
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Answer.AsObject;
@@ -747,12 +759,14 @@ export namespace ScorecardQuestion {
       answerOption: string,
       points: number,
       failType: FailTypeMap[keyof FailTypeMap],
+      answerPoints: number,
     }
 
     export enum ResultCase {
       RESULT_NOT_SET = 0,
       POINTS = 2,
       FAIL_TYPE = 3,
+      ANSWER_POINTS = 4,
     }
   }
 
