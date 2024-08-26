@@ -26,6 +26,7 @@ var global = localGlobalThis ||
 goog.exportSymbol('proto.api.commons.AnsweringMachineDetection', null, global);
 goog.exportSymbol('proto.api.commons.BroadcastTemplateOrdering', null, global);
 goog.exportSymbol('proto.api.commons.DialListPenetrationStrategy', null, global);
+goog.exportSymbol('proto.api.commons.LanguageDirectionPreference', null, global);
 goog.exportSymbol('proto.api.commons.LocalePreferences', null, global);
 goog.exportSymbol('proto.api.commons.ScheduleByTimeZoneScope', null, global);
 goog.exportSymbol('proto.api.commons.StandardReportFilter', null, global);
@@ -319,6 +320,16 @@ proto.api.commons.StandardReportFilter = {
   FILTER_BY_POUND_KEY: 33,
   FILTER_BY_MACHINE_HANGUP_AND_UNCONNECTED: 34,
   FILTER_BY_EXCLUDING_CANCELED_AND_INVALID: 35
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.LanguageDirectionPreference = {
+  LANGUAGE_DIRECTION_PREFERENCE_UNSPECIFIED: 0,
+  LANGUAGE_DIRECTION_PREFERENCE_DEFAULT: 1,
+  LANGUAGE_DIRECTION_PREFERENCE_LEFT_TO_RIGHT: 2,
+  LANGUAGE_DIRECTION_PREFERENCE_RIGHT_TO_LEFT: 3
 };
 
 goog.object.extend(exports, proto.api.commons);

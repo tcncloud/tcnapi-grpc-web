@@ -107,3 +107,12 @@ export interface StandardReportFilterMap {
 
 export const StandardReportFilter: StandardReportFilterMap;
 
+export interface LanguageDirectionPreferenceMap {
+  LANGUAGE_DIRECTION_PREFERENCE_UNSPECIFIED: 0;
+  LANGUAGE_DIRECTION_PREFERENCE_DEFAULT: 1;
+  LANGUAGE_DIRECTION_PREFERENCE_LEFT_TO_RIGHT: 2;
+  LANGUAGE_DIRECTION_PREFERENCE_RIGHT_TO_LEFT: 3;
+}
+
+export const LanguageDirectionPreference: LanguageDirectionPreferenceMap;
+
