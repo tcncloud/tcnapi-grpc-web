@@ -13,6 +13,9 @@ export class LocalePreferences extends jspb.Message {
   getDefaultCurrency(): string;
   setDefaultCurrency(value: string): void;
 
+  getLanguageDirectionPreference(): LanguageDirectionPreferenceMap[keyof LanguageDirectionPreferenceMap];
+  setLanguageDirectionPreference(value: LanguageDirectionPreferenceMap[keyof LanguageDirectionPreferenceMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LocalePreferences.AsObject;
   static toObject(includeInstance: boolean, msg: LocalePreferences): LocalePreferences.AsObject;
@@ -28,6 +31,7 @@ export namespace LocalePreferences {
     languageTag: string,
     useScriptDirectionRightToLeft: boolean,
     defaultCurrency: string,
+    languageDirectionPreference: LanguageDirectionPreferenceMap[keyof LanguageDirectionPreferenceMap],
   }
 }
 
