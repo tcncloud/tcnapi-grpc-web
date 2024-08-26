@@ -1848,11 +1848,6 @@ export class UpdateUserRequest extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): void;
 
-  hasLocalePreferencesOverride(): boolean;
-  clearLocalePreferencesOverride(): void;
-  getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
-  setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
-
   hasFieldMask(): boolean;
   clearFieldMask(): void;
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
@@ -1884,7 +1879,6 @@ export namespace UpdateUserRequest {
     agentProfileGroupId: string,
     labelEntitiesList: Array<Label.AsObject>,
     email: string,
-    localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -1950,11 +1944,6 @@ export class UpdateMyUserRequest extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): void;
 
-  hasLocalePreferencesOverride(): boolean;
-  clearLocalePreferencesOverride(): void;
-  getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
-  setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
-
   hasFieldMask(): boolean;
   clearFieldMask(): void;
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
@@ -1984,7 +1973,6 @@ export namespace UpdateMyUserRequest {
     agentProfileGroupId: string,
     labelEntitiesList: Array<Label.AsObject>,
     email: string,
-    localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -10320,11 +10308,6 @@ export class CreateUserRequest extends jspb.Message {
   getTimeZoneOverride(): api_commons_org_pb.TimeZoneWrapper | undefined;
   setTimeZoneOverride(value?: api_commons_org_pb.TimeZoneWrapper): void;
 
-  hasLocalePreferencesOverride(): boolean;
-  clearLocalePreferencesOverride(): void;
-  getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
-  setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateUserRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateUserRequest): CreateUserRequest.AsObject;
@@ -10354,7 +10337,6 @@ export namespace CreateUserRequest {
     agentProfileGroupId: string,
     labelsList: Array<string>,
     timeZoneOverride?: api_commons_org_pb.TimeZoneWrapper.AsObject,
-    localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
   }
 }
 
