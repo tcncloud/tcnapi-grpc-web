@@ -75,6 +75,11 @@ export class CreateUserRequest extends jspb.Message {
   getHuntGroupSid(): number;
   setHuntGroupSid(value: number): void;
 
+  hasLocalePreferencesOverride(): boolean;
+  clearLocalePreferencesOverride(): void;
+  getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateUserRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateUserRequest): CreateUserRequest.AsObject;
@@ -104,6 +109,7 @@ export namespace CreateUserRequest {
     labelIdsList: Array<string>,
     timeZoneOverride?: api_commons_org_pb.TimeZoneWrapper.AsObject,
     huntGroupSid: number,
+    localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
   }
 }
 
@@ -482,6 +488,11 @@ export class GetUserResponse extends jspb.Message {
   getEmailVerified(): boolean;
   setEmailVerified(value: boolean): void;
 
+  hasLocalePreferencesOverride(): boolean;
+  clearLocalePreferencesOverride(): void;
+  getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserResponse): GetUserResponse.AsObject;
@@ -524,6 +535,7 @@ export namespace GetUserResponse {
     passwordResetRequired: boolean,
     accountOwner: boolean,
     emailVerified: boolean,
+    localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
   }
 
   export class HuntGroup extends jspb.Message {
@@ -656,6 +668,11 @@ export class GetUserByOrgIdResponse extends jspb.Message {
   getEmailVerified(): boolean;
   setEmailVerified(value: boolean): void;
 
+  hasLocalePreferencesOverride(): boolean;
+  clearLocalePreferencesOverride(): void;
+  getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserByOrgIdResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserByOrgIdResponse): GetUserByOrgIdResponse.AsObject;
@@ -682,6 +699,7 @@ export namespace GetUserByOrgIdResponse {
     trustsList: Array<api_commons_org_trusts_pb.Trust.AsObject>,
     accountOwner: boolean,
     emailVerified: boolean,
+    localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
   }
 
   export class HuntGroup extends jspb.Message {
@@ -1430,6 +1448,11 @@ export class UpdateMyUserRequest extends jspb.Message {
   getDefaultApp(): api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap];
   setDefaultApp(value: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap]): void;
 
+  hasLocalePreferencesOverride(): boolean;
+  clearLocalePreferencesOverride(): void;
+  getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
+
   clearFieldMaskList(): void;
   getFieldMaskList(): Array<string>;
   setFieldMaskList(value: Array<string>): void;
@@ -1451,6 +1474,7 @@ export namespace UpdateMyUserRequest {
     callerIdsList: Array<string>,
     timeZoneOverride?: api_commons_org_pb.TimeZoneWrapper.AsObject,
     defaultApp: api_commons_org_pb.OperatorApplicationsMap[keyof api_commons_org_pb.OperatorApplicationsMap],
+    localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
     fieldMaskList: Array<string>,
   }
 }
@@ -1522,6 +1546,11 @@ export class UpdateUserRequest extends jspb.Message {
   setLabelIdsList(value: Array<string>): void;
   addLabelIds(value: string, index?: number): string;
 
+  hasLocalePreferencesOverride(): boolean;
+  clearLocalePreferencesOverride(): void;
+  getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
+
   clearFieldMaskList(): void;
   getFieldMaskList(): Array<string>;
   setFieldMaskList(value: Array<string>): void;
@@ -1553,6 +1582,7 @@ export namespace UpdateUserRequest {
     email: string,
     userCallerId: string,
     labelIdsList: Array<string>,
+    localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
     fieldMaskList: Array<string>,
   }
 }
@@ -2581,6 +2611,11 @@ export namespace GetUserSessionDataResponse {
     getPasswordResetDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setPasswordResetDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+    hasLocalePreferencesOverride(): boolean;
+    clearLocalePreferencesOverride(): void;
+    getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+    setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): User.AsObject;
     static toObject(includeInstance: boolean, msg: User): User.AsObject;
@@ -2622,6 +2657,7 @@ export namespace GetUserSessionDataResponse {
       accountOwner: boolean,
       mfaTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       passwordResetDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
     }
 
     export class RegionSids extends jspb.Message {
