@@ -2926,7 +2926,7 @@ proto.api.commons.EvaluationQuestion.serializeBinaryToWriter = function(message,
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.EvaluationQuestion.Answer.oneofGroups_ = [[2,3]];
+proto.api.commons.EvaluationQuestion.Answer.oneofGroups_ = [[2,3,4]];
 
 /**
  * @enum {number}
@@ -2934,7 +2934,8 @@ proto.api.commons.EvaluationQuestion.Answer.oneofGroups_ = [[2,3]];
 proto.api.commons.EvaluationQuestion.Answer.ResultCase = {
   RESULT_NOT_SET: 0,
   POINTS: 2,
-  FAIL_TYPE: 3
+  FAIL_TYPE: 3,
+  ANSWER_POINTS: 4
 };
 
 /**
@@ -2977,7 +2978,8 @@ proto.api.commons.EvaluationQuestion.Answer.toObject = function(includeInstance,
   var f, obj = {
 answerOption: jspb.Message.getFieldWithDefault(msg, 1, ""),
 points: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-failType: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+failType: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+answerPoints: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3026,6 +3028,10 @@ proto.api.commons.EvaluationQuestion.Answer.deserializeBinaryFromReader = functi
       var value = /** @type {!proto.api.commons.FailType} */ (reader.readEnum());
       msg.setFailType(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setAnswerPoints(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3073,6 +3079,13 @@ proto.api.commons.EvaluationQuestion.Answer.serializeBinaryToWriter = function(m
   if (f != null) {
     writer.writeEnum(
       3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
       f
     );
   }
@@ -3166,6 +3179,42 @@ proto.api.commons.EvaluationQuestion.Answer.prototype.clearFailType = function()
  */
 proto.api.commons.EvaluationQuestion.Answer.prototype.hasFailType = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 answer_points = 4;
+ * @return {number}
+ */
+proto.api.commons.EvaluationQuestion.Answer.prototype.getAnswerPoints = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.EvaluationQuestion.Answer} returns this
+ */
+proto.api.commons.EvaluationQuestion.Answer.prototype.setAnswerPoints = function(value) {
+  return jspb.Message.setOneofField(this, 4, proto.api.commons.EvaluationQuestion.Answer.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.commons.EvaluationQuestion.Answer} returns this
+ */
+proto.api.commons.EvaluationQuestion.Answer.prototype.clearAnswerPoints = function() {
+  return jspb.Message.setOneofField(this, 4, proto.api.commons.EvaluationQuestion.Answer.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.EvaluationQuestion.Answer.prototype.hasAnswerPoints = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -5618,7 +5667,7 @@ proto.api.commons.ScorecardQuestion.serializeBinaryToWriter = function(message, 
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.ScorecardQuestion.Answer.oneofGroups_ = [[2,3]];
+proto.api.commons.ScorecardQuestion.Answer.oneofGroups_ = [[2,3,4]];
 
 /**
  * @enum {number}
@@ -5626,7 +5675,8 @@ proto.api.commons.ScorecardQuestion.Answer.oneofGroups_ = [[2,3]];
 proto.api.commons.ScorecardQuestion.Answer.ResultCase = {
   RESULT_NOT_SET: 0,
   POINTS: 2,
-  FAIL_TYPE: 3
+  FAIL_TYPE: 3,
+  ANSWER_POINTS: 4
 };
 
 /**
@@ -5669,7 +5719,8 @@ proto.api.commons.ScorecardQuestion.Answer.toObject = function(includeInstance, 
   var f, obj = {
 answerOption: jspb.Message.getFieldWithDefault(msg, 1, ""),
 points: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-failType: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+failType: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+answerPoints: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5718,6 +5769,10 @@ proto.api.commons.ScorecardQuestion.Answer.deserializeBinaryFromReader = functio
       var value = /** @type {!proto.api.commons.FailType} */ (reader.readEnum());
       msg.setFailType(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setAnswerPoints(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5765,6 +5820,13 @@ proto.api.commons.ScorecardQuestion.Answer.serializeBinaryToWriter = function(me
   if (f != null) {
     writer.writeEnum(
       3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
       f
     );
   }
@@ -5858,6 +5920,42 @@ proto.api.commons.ScorecardQuestion.Answer.prototype.clearFailType = function() 
  */
 proto.api.commons.ScorecardQuestion.Answer.prototype.hasFailType = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 answer_points = 4;
+ * @return {number}
+ */
+proto.api.commons.ScorecardQuestion.Answer.prototype.getAnswerPoints = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.ScorecardQuestion.Answer} returns this
+ */
+proto.api.commons.ScorecardQuestion.Answer.prototype.setAnswerPoints = function(value) {
+  return jspb.Message.setOneofField(this, 4, proto.api.commons.ScorecardQuestion.Answer.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.commons.ScorecardQuestion.Answer} returns this
+ */
+proto.api.commons.ScorecardQuestion.Answer.prototype.clearAnswerPoints = function() {
+  return jspb.Message.setOneofField(this, 4, proto.api.commons.ScorecardQuestion.Answer.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.ScorecardQuestion.Answer.prototype.hasAnswerPoints = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
