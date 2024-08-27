@@ -85,8 +85,7 @@ proto.api.commons.LocalePreferences.toObject = function(includeInstance, msg) {
   var f, obj = {
 languageTag: jspb.Message.getFieldWithDefault(msg, 1, ""),
 useScriptDirectionRightToLeft: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-defaultCurrency: jspb.Message.getFieldWithDefault(msg, 3, ""),
-languageDirectionPreference: jspb.Message.getFieldWithDefault(msg, 4, 0)
+defaultCurrency: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -135,10 +134,6 @@ proto.api.commons.LocalePreferences.deserializeBinaryFromReader = function(msg, 
       var value = /** @type {string} */ (reader.readString());
       msg.setDefaultCurrency(value);
       break;
-    case 4:
-      var value = /** @type {!proto.api.commons.LanguageDirectionPreference} */ (reader.readEnum());
-      msg.setLanguageDirectionPreference(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -186,13 +181,6 @@ proto.api.commons.LocalePreferences.serializeBinaryToWriter = function(message, 
   if (f.length > 0) {
     writer.writeString(
       3,
-      f
-    );
-  }
-  f = message.getLanguageDirectionPreference();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      4,
       f
     );
   }
@@ -250,24 +238,6 @@ proto.api.commons.LocalePreferences.prototype.getDefaultCurrency = function() {
  */
 proto.api.commons.LocalePreferences.prototype.setDefaultCurrency = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional LanguageDirectionPreference language_direction_preference = 4;
- * @return {!proto.api.commons.LanguageDirectionPreference}
- */
-proto.api.commons.LocalePreferences.prototype.getLanguageDirectionPreference = function() {
-  return /** @type {!proto.api.commons.LanguageDirectionPreference} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {!proto.api.commons.LanguageDirectionPreference} value
- * @return {!proto.api.commons.LocalePreferences} returns this
- */
-proto.api.commons.LocalePreferences.prototype.setLanguageDirectionPreference = function(value) {
-  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
