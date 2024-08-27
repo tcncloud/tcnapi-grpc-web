@@ -40,7 +40,8 @@ proto.api.commons.EntityType = {
 proto.api.commons.LabeledEntity = {
   LABELED_ENTITY_UNSPECIFIED: 0,
   LABELED_ENTITY_SKILL_GROUP: 1,
-  LABELED_ENTITY_USER: 2
+  LABELED_ENTITY_USER: 2,
+  LABELED_ENTITY_TICKET: 3
 };
 
 goog.object.extend(exports, proto.api.commons);
