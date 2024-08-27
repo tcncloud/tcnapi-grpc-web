@@ -11,6 +11,7 @@ import * as api_v1alpha1_scorecards_question_pb from "../../../api/v1alpha1/scor
 import * as api_v1alpha1_scorecards_scorecard_pb from "../../../api/v1alpha1/scorecards/scorecard_pb";
 import * as api_v1alpha1_scorecards_scorecard_question_pb from "../../../api/v1alpha1/scorecards/scorecard_question_pb";
 import * as api_v1alpha1_scorecards_section_pb from "../../../api/v1alpha1/scorecards/section_pb";
+import * as api_v1alpha1_scorecards_smart_evaluation_pb from "../../../api/v1alpha1/scorecards/smart_evaluation_pb";
 import * as api_v1alpha1_scorecards_smart_question_pb from "../../../api/v1alpha1/scorecards/smart_question_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
@@ -464,6 +465,33 @@ type ScorecardsDeleteSmartQuestion = {
   readonly responseType: typeof api_v1alpha1_scorecards_smart_question_pb.DeleteSmartQuestionResponse;
 };
 
+type ScorecardsListSmartEvaluations = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_smart_evaluation_pb.ListSmartEvaluationsRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_smart_evaluation_pb.ListSmartEvaluationsResponse;
+};
+
+type ScorecardsDeleteSmartEvaluation = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_smart_evaluation_pb.DeleteSmartEvaluationRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_smart_evaluation_pb.DeleteSmartEvaluationResponse;
+};
+
+type ScorecardsGetSmartEvaluation = {
+  readonly methodName: string;
+  readonly service: typeof Scorecards;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_scorecards_smart_evaluation_pb.GetSmartEvaluationRequest;
+  readonly responseType: typeof api_v1alpha1_scorecards_smart_evaluation_pb.GetSmartEvaluationResponse;
+};
+
 export class Scorecards {
   static readonly serviceName: string;
   static readonly CreateScorecard: ScorecardsCreateScorecard;
@@ -516,6 +544,9 @@ export class Scorecards {
   static readonly CreateSmartQuestion: ScorecardsCreateSmartQuestion;
   static readonly UpdateSmartQuestion: ScorecardsUpdateSmartQuestion;
   static readonly DeleteSmartQuestion: ScorecardsDeleteSmartQuestion;
+  static readonly ListSmartEvaluations: ScorecardsListSmartEvaluations;
+  static readonly DeleteSmartEvaluation: ScorecardsDeleteSmartEvaluation;
+  static readonly GetSmartEvaluation: ScorecardsGetSmartEvaluation;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -991,6 +1022,33 @@ export class ScorecardsClient {
   deleteSmartQuestion(
     requestMessage: api_v1alpha1_scorecards_smart_question_pb.DeleteSmartQuestionRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_smart_question_pb.DeleteSmartQuestionResponse|null) => void
+  ): UnaryResponse;
+  listSmartEvaluations(
+    requestMessage: api_v1alpha1_scorecards_smart_evaluation_pb.ListSmartEvaluationsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_smart_evaluation_pb.ListSmartEvaluationsResponse|null) => void
+  ): UnaryResponse;
+  listSmartEvaluations(
+    requestMessage: api_v1alpha1_scorecards_smart_evaluation_pb.ListSmartEvaluationsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_smart_evaluation_pb.ListSmartEvaluationsResponse|null) => void
+  ): UnaryResponse;
+  deleteSmartEvaluation(
+    requestMessage: api_v1alpha1_scorecards_smart_evaluation_pb.DeleteSmartEvaluationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_smart_evaluation_pb.DeleteSmartEvaluationResponse|null) => void
+  ): UnaryResponse;
+  deleteSmartEvaluation(
+    requestMessage: api_v1alpha1_scorecards_smart_evaluation_pb.DeleteSmartEvaluationRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_smart_evaluation_pb.DeleteSmartEvaluationResponse|null) => void
+  ): UnaryResponse;
+  getSmartEvaluation(
+    requestMessage: api_v1alpha1_scorecards_smart_evaluation_pb.GetSmartEvaluationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_smart_evaluation_pb.GetSmartEvaluationResponse|null) => void
+  ): UnaryResponse;
+  getSmartEvaluation(
+    requestMessage: api_v1alpha1_scorecards_smart_evaluation_pb.GetSmartEvaluationRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_scorecards_smart_evaluation_pb.GetSmartEvaluationResponse|null) => void
   ): UnaryResponse;
 }
 

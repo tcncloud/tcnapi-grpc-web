@@ -43,6 +43,8 @@ var api_v1alpha1_scorecards_scorecard_question_pb = require('../../../api/v1alph
 goog.object.extend(proto, api_v1alpha1_scorecards_scorecard_question_pb);
 var api_v1alpha1_scorecards_section_pb = require('../../../api/v1alpha1/scorecards/section_pb.js');
 goog.object.extend(proto, api_v1alpha1_scorecards_section_pb);
+var api_v1alpha1_scorecards_smart_evaluation_pb = require('../../../api/v1alpha1/scorecards/smart_evaluation_pb.js');
+goog.object.extend(proto, api_v1alpha1_scorecards_smart_evaluation_pb);
 var api_v1alpha1_scorecards_smart_question_pb = require('../../../api/v1alpha1/scorecards/smart_question_pb.js');
 goog.object.extend(proto, api_v1alpha1_scorecards_smart_question_pb);
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
