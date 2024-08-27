@@ -3,6 +3,26 @@
 
 import * as jspb from "google-protobuf";
 
+export class OperatorDisplayLanguage extends jspb.Message {
+  getValue(): string;
+  setValue(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OperatorDisplayLanguage.AsObject;
+  static toObject(includeInstance: boolean, msg: OperatorDisplayLanguage): OperatorDisplayLanguage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OperatorDisplayLanguage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OperatorDisplayLanguage;
+  static deserializeBinaryFromReader(message: OperatorDisplayLanguage, reader: jspb.BinaryReader): OperatorDisplayLanguage;
+}
+
+export namespace OperatorDisplayLanguage {
+  export type AsObject = {
+    value: string,
+  }
+}
+
 export class LocalePreferences extends jspb.Message {
   getLanguageTag(): string;
   setLanguageTag(value: string): void;
@@ -12,6 +32,14 @@ export class LocalePreferences extends jspb.Message {
 
   getDefaultCurrency(): string;
   setDefaultCurrency(value: string): void;
+
+  hasOperatorDisplayLanguage(): boolean;
+  clearOperatorDisplayLanguage(): void;
+  getOperatorDisplayLanguage(): OperatorDisplayLanguage | undefined;
+  setOperatorDisplayLanguage(value?: OperatorDisplayLanguage): void;
+
+  getOperatorLanguageDirection(): OperatorLanguageDirectionMap[keyof OperatorLanguageDirectionMap];
+  setOperatorLanguageDirection(value: OperatorLanguageDirectionMap[keyof OperatorLanguageDirectionMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LocalePreferences.AsObject;
@@ -28,6 +56,8 @@ export namespace LocalePreferences {
     languageTag: string,
     useScriptDirectionRightToLeft: boolean,
     defaultCurrency: string,
+    operatorDisplayLanguage?: OperatorDisplayLanguage.AsObject,
+    operatorLanguageDirection: OperatorLanguageDirectionMap[keyof OperatorLanguageDirectionMap],
   }
 }
 
@@ -106,4 +136,13 @@ export interface StandardReportFilterMap {
 }
 
 export const StandardReportFilter: StandardReportFilterMap;
+
+export interface OperatorLanguageDirectionMap {
+  OPERATOR_LANGUAGE_DIRECTION_UNSPECIFIED: 0;
+  OPERATOR_LANGUAGE_DIRECTION_DEFAULT: 1;
+  OPERATOR_LANGUAGE_DIRECTION_LEFT_TO_RIGHT: 2;
+  OPERATOR_LANGUAGE_DIRECTION_RIGHT_TO_LEFT: 3;
+}
+
+export const OperatorLanguageDirection: OperatorLanguageDirectionMap;
 
