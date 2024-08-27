@@ -1158,6 +1158,206 @@ export namespace SmartQuestion {
   }
 }
 
+export class SmartEvaluation extends jspb.Message {
+  getSmartEvaluationId(): number;
+  setSmartEvaluationId(value: number): void;
+
+  getScorecardId(): number;
+  setScorecardId(value: number): void;
+
+  getTranscriptSid(): number;
+  setTranscriptSid(value: number): void;
+
+  getAgentUserId(): string;
+  setAgentUserId(value: string): void;
+
+  getScore(): number;
+  setScore(value: number): void;
+
+  getScoringVersion(): number;
+  setScoringVersion(value: number): void;
+
+  getScorecardVersion(): number;
+  setScorecardVersion(value: number): void;
+
+  hasCompleteTime(): boolean;
+  clearCompleteTime(): void;
+  getCompleteTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCompleteTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasDeleteTime(): boolean;
+  clearDeleteTime(): void;
+  getDeleteTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDeleteTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  clearSmartEvaluationSectionsList(): void;
+  getSmartEvaluationSectionsList(): Array<SmartEvaluationSection>;
+  setSmartEvaluationSectionsList(value: Array<SmartEvaluationSection>): void;
+  addSmartEvaluationSections(value?: SmartEvaluationSection, index?: number): SmartEvaluationSection;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SmartEvaluation.AsObject;
+  static toObject(includeInstance: boolean, msg: SmartEvaluation): SmartEvaluation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SmartEvaluation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SmartEvaluation;
+  static deserializeBinaryFromReader(message: SmartEvaluation, reader: jspb.BinaryReader): SmartEvaluation;
+}
+
+export namespace SmartEvaluation {
+  export type AsObject = {
+    smartEvaluationId: number,
+    scorecardId: number,
+    transcriptSid: number,
+    agentUserId: string,
+    score: number,
+    scoringVersion: number,
+    scorecardVersion: number,
+    completeTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    smartEvaluationSectionsList: Array<SmartEvaluationSection.AsObject>,
+  }
+}
+
+export class SmartEvaluationSection extends jspb.Message {
+  getSectionId(): number;
+  setSectionId(value: number): void;
+
+  getPoints(): number;
+  setPoints(value: number): void;
+
+  getPossiblePoints(): number;
+  setPossiblePoints(value: number): void;
+
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasDeleteTime(): boolean;
+  clearDeleteTime(): void;
+  getDeleteTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDeleteTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  clearSmartEvaluationQuestionsList(): void;
+  getSmartEvaluationQuestionsList(): Array<SmartEvaluationQuestion>;
+  setSmartEvaluationQuestionsList(value: Array<SmartEvaluationQuestion>): void;
+  addSmartEvaluationQuestions(value?: SmartEvaluationQuestion, index?: number): SmartEvaluationQuestion;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SmartEvaluationSection.AsObject;
+  static toObject(includeInstance: boolean, msg: SmartEvaluationSection): SmartEvaluationSection.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SmartEvaluationSection, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SmartEvaluationSection;
+  static deserializeBinaryFromReader(message: SmartEvaluationSection, reader: jspb.BinaryReader): SmartEvaluationSection;
+}
+
+export namespace SmartEvaluationSection {
+  export type AsObject = {
+    sectionId: number,
+    points: number,
+    possiblePoints: number,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    smartEvaluationQuestionsList: Array<SmartEvaluationQuestion.AsObject>,
+  }
+}
+
+export class SmartEvaluationQuestion extends jspb.Message {
+  getSmartQuestionId(): number;
+  setSmartQuestionId(value: number): void;
+
+  getPoints(): number;
+  setPoints(value: number): void;
+
+  getPossiblePoints(): number;
+  setPossiblePoints(value: number): void;
+
+  hasAnswer(): boolean;
+  clearAnswer(): void;
+  getAnswer(): SmartEvaluationQuestion.Answer | undefined;
+  setAnswer(value?: SmartEvaluationQuestion.Answer): void;
+
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasDeleteTime(): boolean;
+  clearDeleteTime(): void;
+  getDeleteTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDeleteTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SmartEvaluationQuestion.AsObject;
+  static toObject(includeInstance: boolean, msg: SmartEvaluationQuestion): SmartEvaluationQuestion.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SmartEvaluationQuestion, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SmartEvaluationQuestion;
+  static deserializeBinaryFromReader(message: SmartEvaluationQuestion, reader: jspb.BinaryReader): SmartEvaluationQuestion;
+}
+
+export namespace SmartEvaluationQuestion {
+  export type AsObject = {
+    smartQuestionId: number,
+    points: number,
+    possiblePoints: number,
+    answer?: SmartEvaluationQuestion.Answer.AsObject,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    deleteTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+
+  export class Answer extends jspb.Message {
+    getAnswer(): string;
+    setAnswer(value: string): void;
+
+    hasPoints(): boolean;
+    clearPoints(): void;
+    getPoints(): number;
+    setPoints(value: number): void;
+
+    hasFailType(): boolean;
+    clearFailType(): void;
+    getFailType(): FailTypeMap[keyof FailTypeMap];
+    setFailType(value: FailTypeMap[keyof FailTypeMap]): void;
+
+    hasAnswerPoints(): boolean;
+    clearAnswerPoints(): void;
+    getAnswerPoints(): number;
+    setAnswerPoints(value: number): void;
+
+    getResultCase(): Answer.ResultCase;
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Answer.AsObject;
+    static toObject(includeInstance: boolean, msg: Answer): Answer.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Answer, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Answer;
+    static deserializeBinaryFromReader(message: Answer, reader: jspb.BinaryReader): Answer;
+  }
+
+  export namespace Answer {
+    export type AsObject = {
+      answer: string,
+      points: number,
+      failType: FailTypeMap[keyof FailTypeMap],
+      answerPoints: number,
+    }
+
+    export enum ResultCase {
+      RESULT_NOT_SET = 0,
+      POINTS = 2,
+      FAIL_TYPE = 3,
+      ANSWER_POINTS = 4,
+    }
+  }
+}
+
 export interface CategoryTypeMap {
   INVALID: 0;
   SKILL_CALLS: 1;
