@@ -452,6 +452,24 @@ Scorecards.CreateSmartQuestion = {
   responseType: api_v1alpha1_scorecards_smart_question_pb.CreateSmartQuestionResponse
 };
 
+Scorecards.UpdateSmartQuestion = {
+  methodName: "UpdateSmartQuestion",
+  service: Scorecards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_scorecards_smart_question_pb.UpdateSmartQuestionRequest,
+  responseType: api_v1alpha1_scorecards_smart_question_pb.UpdateSmartQuestionResponse
+};
+
+Scorecards.DeleteSmartQuestion = {
+  methodName: "DeleteSmartQuestion",
+  service: Scorecards,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_scorecards_smart_question_pb.DeleteSmartQuestionRequest,
+  responseType: api_v1alpha1_scorecards_smart_question_pb.DeleteSmartQuestionResponse
+};
+
 exports.Scorecards = Scorecards;
 
 function ScorecardsClient(serviceHost, options) {
@@ -1929,6 +1947,68 @@ ScorecardsClient.prototype.createSmartQuestion = function createSmartQuestion(re
     callback = arguments[1];
   }
   var client = grpc.unary(Scorecards.CreateSmartQuestion, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ScorecardsClient.prototype.updateSmartQuestion = function updateSmartQuestion(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Scorecards.UpdateSmartQuestion, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ScorecardsClient.prototype.deleteSmartQuestion = function deleteSmartQuestion(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Scorecards.DeleteSmartQuestion, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
