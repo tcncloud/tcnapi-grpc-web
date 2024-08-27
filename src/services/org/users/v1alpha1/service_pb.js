@@ -27,5 +27,5 @@ var annotations_authz_pb = require('../../../../annotations/authz_pb.js');
 goog.object.extend(proto, annotations_authz_pb);
 var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
-var services_org_users_v1alpha1_entities_pb = require('../../../../services/org/users/v1alpha1/entities_pb.js');
-goog.object.extend(proto, services_org_users_v1alpha1_entities_pb);
+var services_org_users_v1alpha1_preferences_pb = require('../../../../services/org/users/v1alpha1/preferences_pb.js');
+goog.object.extend(proto, services_org_users_v1alpha1_preferences_pb);

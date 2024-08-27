@@ -147,7 +147,7 @@ proto.services.org.organizations.v1alpha1.GetOrganizationLocalePreferencesReques
  */
 proto.services.org.organizations.v1alpha1.GetOrganizationLocalePreferencesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -184,6 +184,11 @@ proto.services.org.organizations.v1alpha1.GetOrganizationLocalePreferencesReques
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setFieldMask(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -213,6 +218,51 @@ proto.services.org.organizations.v1alpha1.GetOrganizationLocalePreferencesReques
  */
 proto.services.org.organizations.v1alpha1.GetOrganizationLocalePreferencesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getFieldMask();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.FieldMask field_mask = 1;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.services.org.organizations.v1alpha1.GetOrganizationLocalePreferencesRequest.prototype.getFieldMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 1));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.services.org.organizations.v1alpha1.GetOrganizationLocalePreferencesRequest} returns this
+*/
+proto.services.org.organizations.v1alpha1.GetOrganizationLocalePreferencesRequest.prototype.setFieldMask = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.org.organizations.v1alpha1.GetOrganizationLocalePreferencesRequest} returns this
+ */
+proto.services.org.organizations.v1alpha1.GetOrganizationLocalePreferencesRequest.prototype.clearFieldMask = function() {
+  return this.setFieldMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.org.organizations.v1alpha1.GetOrganizationLocalePreferencesRequest.prototype.hasFieldMask = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

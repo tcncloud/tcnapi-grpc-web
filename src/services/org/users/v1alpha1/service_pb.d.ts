@@ -4,5 +4,5 @@
 import * as jspb from "google-protobuf";
 import * as annotations_authz_pb from "../../../../annotations/authz_pb";
 import * as google_api_annotations_pb from "../../../../google/api/annotations_pb";
-import * as services_org_users_v1alpha1_entities_pb from "../../../../services/org/users/v1alpha1/entities_pb";
+import * as services_org_users_v1alpha1_preferences_pb from "../../../../services/org/users/v1alpha1/preferences_pb";
 

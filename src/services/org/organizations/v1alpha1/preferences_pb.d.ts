@@ -6,6 +6,11 @@ import * as api_commons_org_preferences_pb from "../../../../api/commons/org_pre
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 
 export class GetOrganizationLocalePreferencesRequest extends jspb.Message {
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetOrganizationLocalePreferencesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetOrganizationLocalePreferencesRequest): GetOrganizationLocalePreferencesRequest.AsObject;
@@ -18,6 +23,7 @@ export class GetOrganizationLocalePreferencesRequest extends jspb.Message {
 
 export namespace GetOrganizationLocalePreferencesRequest {
   export type AsObject = {
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
