@@ -1241,6 +1241,11 @@ export class UserDetails extends jspb.Message {
   getEmailVerified(): boolean;
   setEmailVerified(value: boolean): void;
 
+  hasLocalePreferencesOverride(): boolean;
+  clearLocalePreferencesOverride(): void;
+  getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
+
   clearTrustsList(): void;
   getTrustsList(): Array<api_commons_org_trusts_pb.Trust>;
   setTrustsList(value: Array<api_commons_org_trusts_pb.Trust>): void;
@@ -1289,6 +1294,7 @@ export namespace UserDetails {
     timeZoneOverride?: api_commons_org_pb.TimeZoneWrapper.AsObject,
     email: string,
     emailVerified: boolean,
+    localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
     trustsList: Array<api_commons_org_trusts_pb.Trust.AsObject>,
   }
 }

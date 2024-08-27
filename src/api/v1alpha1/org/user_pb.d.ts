@@ -488,6 +488,11 @@ export class GetUserResponse extends jspb.Message {
   getEmailVerified(): boolean;
   setEmailVerified(value: boolean): void;
 
+  hasLocalePreferencesOverride(): boolean;
+  clearLocalePreferencesOverride(): void;
+  getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserResponse): GetUserResponse.AsObject;
@@ -530,6 +535,7 @@ export namespace GetUserResponse {
     passwordResetRequired: boolean,
     accountOwner: boolean,
     emailVerified: boolean,
+    localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
   }
 
   export class HuntGroup extends jspb.Message {
@@ -662,6 +668,11 @@ export class GetUserByOrgIdResponse extends jspb.Message {
   getEmailVerified(): boolean;
   setEmailVerified(value: boolean): void;
 
+  hasLocalePreferencesOverride(): boolean;
+  clearLocalePreferencesOverride(): void;
+  getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
+  setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserByOrgIdResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserByOrgIdResponse): GetUserByOrgIdResponse.AsObject;
@@ -688,6 +699,7 @@ export namespace GetUserByOrgIdResponse {
     trustsList: Array<api_commons_org_trusts_pb.Trust.AsObject>,
     accountOwner: boolean,
     emailVerified: boolean,
+    localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
   }
 
   export class HuntGroup extends jspb.Message {
