@@ -23,6 +23,8 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_commons_omnichannel_pb = require('../../../api/commons/omnichannel_pb.js');
+goog.object.extend(proto, api_commons_omnichannel_pb);
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 goog.object.extend(proto, google_protobuf_duration_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -1717,7 +1719,9 @@ proto.api.commons.audit.VanaCreateTranscriptEvent.prototype.toObject = function(
  */
 proto.api.commons.audit.VanaCreateTranscriptEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-transcriptSid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+transcriptSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+audioTime: jspb.Message.getFieldWithDefault(msg, 2, 0),
+channelType: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1758,6 +1762,14 @@ proto.api.commons.audit.VanaCreateTranscriptEvent.deserializeBinaryFromReader = 
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTranscriptSid(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setAudioTime(value);
+      break;
+    case 3:
+      var value = /** @type {!proto.api.commons.ChannelType} */ (reader.readEnum());
+      msg.setChannelType(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1794,6 +1806,20 @@ proto.api.commons.audit.VanaCreateTranscriptEvent.serializeBinaryToWriter = func
       f
     );
   }
+  f = message.getAudioTime();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = message.getChannelType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -1812,6 +1838,42 @@ proto.api.commons.audit.VanaCreateTranscriptEvent.prototype.getTranscriptSid = f
  */
 proto.api.commons.audit.VanaCreateTranscriptEvent.prototype.setTranscriptSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional uint32 audio_time = 2;
+ * @return {number}
+ */
+proto.api.commons.audit.VanaCreateTranscriptEvent.prototype.getAudioTime = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.audit.VanaCreateTranscriptEvent} returns this
+ */
+proto.api.commons.audit.VanaCreateTranscriptEvent.prototype.setAudioTime = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional api.commons.ChannelType channel_type = 3;
+ * @return {!proto.api.commons.ChannelType}
+ */
+proto.api.commons.audit.VanaCreateTranscriptEvent.prototype.getChannelType = function() {
+  return /** @type {!proto.api.commons.ChannelType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.ChannelType} value
+ * @return {!proto.api.commons.audit.VanaCreateTranscriptEvent} returns this
+ */
+proto.api.commons.audit.VanaCreateTranscriptEvent.prototype.setChannelType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
