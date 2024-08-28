@@ -6443,9 +6443,6 @@ export class SearchCollectionsPaginatedReq extends jspb.Message {
   getPageSize(): number;
   setPageSize(value: number): void;
 
-  getLastId(): string;
-  setLastId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchCollectionsPaginatedReq.AsObject;
   static toObject(includeInstance: boolean, msg: SearchCollectionsPaginatedReq): SearchCollectionsPaginatedReq.AsObject;
@@ -6462,7 +6459,6 @@ export namespace SearchCollectionsPaginatedReq {
     search?: Search.AsObject,
     from: number,
     pageSize: number,
-    lastId: string,
   }
 }
 
@@ -6515,12 +6511,6 @@ export class PaginatedSearchRes extends jspb.Message {
   getTotal(): number;
   setTotal(value: number): void;
 
-  getMoreResults(): boolean;
-  setMoreResults(value: boolean): void;
-
-  getLastId(): string;
-  setLastId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PaginatedSearchRes.AsObject;
   static toObject(includeInstance: boolean, msg: PaginatedSearchRes): PaginatedSearchRes.AsObject;
@@ -6535,8 +6525,6 @@ export namespace PaginatedSearchRes {
   export type AsObject = {
     entriesList: Array<CollectionEntry.AsObject>,
     total: number,
-    moreResults: boolean,
-    lastId: string,
   }
 }
 
