@@ -216,6 +216,11 @@ export class ProductConfig extends jspb.Message {
   getWorkforeEngagemgentWorkforeOptimizationVoiceAnalyticsCallTranscripts(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
   setWorkforeEngagemgentWorkforeOptimizationVoiceAnalyticsCallTranscripts(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
 
+  hasWorkforeEngagemgentWorkforeOptimizationVoiceAnalyticsAccumulatedCallTranscripts(): boolean;
+  clearWorkforeEngagemgentWorkforeOptimizationVoiceAnalyticsAccumulatedCallTranscripts(): void;
+  getWorkforeEngagemgentWorkforeOptimizationVoiceAnalyticsAccumulatedCallTranscripts(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
+  setWorkforeEngagemgentWorkforeOptimizationVoiceAnalyticsAccumulatedCallTranscripts(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
+
   getConfigCase(): ProductConfig.ConfigCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductConfig.AsObject;
@@ -271,6 +276,7 @@ export namespace ProductConfig {
     dataManagementComplianceComplianceRndQuery?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
     dataManagementComplianceComplianceRndQueryCached?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
     workforeEngagemgentWorkforeOptimizationVoiceAnalyticsCallTranscripts?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
+    workforeEngagemgentWorkforeOptimizationVoiceAnalyticsAccumulatedCallTranscripts?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
   }
 
   export enum ConfigCase {
@@ -317,6 +323,7 @@ export namespace ProductConfig {
     DATA_MANAGEMENT_COMPLIANCE_COMPLIANCE_RND_QUERY = 10000,
     DATA_MANAGEMENT_COMPLIANCE_COMPLIANCE_RND_QUERY_CACHED = 10001,
     WORKFORE_ENGAGEMGENT_WORKFORE_OPTIMIZATION_VOICE_ANALYTICS_CALL_TRANSCRIPTS = 20000,
+    WORKFORE_ENGAGEMGENT_WORKFORE_OPTIMIZATION_VOICE_ANALYTICS_ACCUMULATED_CALL_TRANSCRIPTS = 20001,
   }
 }
 

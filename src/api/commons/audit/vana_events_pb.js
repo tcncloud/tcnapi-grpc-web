@@ -1721,7 +1721,8 @@ proto.api.commons.audit.VanaCreateTranscriptEvent.toObject = function(includeIns
   var f, obj = {
 transcriptSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
 audioTime: jspb.Message.getFieldWithDefault(msg, 2, 0),
-channelType: jspb.Message.getFieldWithDefault(msg, 3, 0)
+channelType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+talkTime: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1770,6 +1771,10 @@ proto.api.commons.audit.VanaCreateTranscriptEvent.deserializeBinaryFromReader = 
       var value = /** @type {!proto.api.commons.ChannelType} */ (reader.readEnum());
       msg.setChannelType(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setTalkTime(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1817,6 +1822,13 @@ proto.api.commons.audit.VanaCreateTranscriptEvent.serializeBinaryToWriter = func
   if (f !== 0.0) {
     writer.writeEnum(
       3,
+      f
+    );
+  }
+  f = message.getTalkTime();
+  if (f !== 0) {
+    writer.writeUint32(
+      4,
       f
     );
   }
@@ -1874,6 +1886,24 @@ proto.api.commons.audit.VanaCreateTranscriptEvent.prototype.getChannelType = fun
  */
 proto.api.commons.audit.VanaCreateTranscriptEvent.prototype.setChannelType = function(value) {
   return jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * optional uint32 talk_time = 4;
+ * @return {number}
+ */
+proto.api.commons.audit.VanaCreateTranscriptEvent.prototype.getTalkTime = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.audit.VanaCreateTranscriptEvent} returns this
+ */
+proto.api.commons.audit.VanaCreateTranscriptEvent.prototype.setTalkTime = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 

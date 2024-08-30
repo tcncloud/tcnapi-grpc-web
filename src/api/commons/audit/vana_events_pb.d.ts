@@ -224,6 +224,9 @@ export class VanaCreateTranscriptEvent extends jspb.Message {
   getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
   setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
 
+  getTalkTime(): number;
+  setTalkTime(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VanaCreateTranscriptEvent.AsObject;
   static toObject(includeInstance: boolean, msg: VanaCreateTranscriptEvent): VanaCreateTranscriptEvent.AsObject;
@@ -239,6 +242,7 @@ export namespace VanaCreateTranscriptEvent {
     transcriptSid: number,
     audioTime: number,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
+    talkTime: number,
   }
 }
 
