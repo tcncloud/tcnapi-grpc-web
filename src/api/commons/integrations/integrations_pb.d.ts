@@ -3,6 +3,56 @@
 
 import * as jspb from "google-protobuf";
 
+export class Receipt extends jspb.Message {
+  clearFieldsList(): void;
+  getFieldsList(): Array<ReceiptField>;
+  setFieldsList(value: Array<ReceiptField>): void;
+  addFields(value?: ReceiptField, index?: number): ReceiptField;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Receipt.AsObject;
+  static toObject(includeInstance: boolean, msg: Receipt): Receipt.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Receipt, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Receipt;
+  static deserializeBinaryFromReader(message: Receipt, reader: jspb.BinaryReader): Receipt;
+}
+
+export namespace Receipt {
+  export type AsObject = {
+    fieldsList: Array<ReceiptField.AsObject>,
+  }
+}
+
+export class ReceiptField extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getDisplayName(): string;
+  setDisplayName(value: string): void;
+
+  getValue(): string;
+  setValue(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReceiptField.AsObject;
+  static toObject(includeInstance: boolean, msg: ReceiptField): ReceiptField.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReceiptField, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReceiptField;
+  static deserializeBinaryFromReader(message: ReceiptField, reader: jspb.BinaryReader): ReceiptField;
+}
+
+export namespace ReceiptField {
+  export type AsObject = {
+    name: string,
+    displayName: string,
+    value: string,
+  }
+}
+
 export class Invoices extends jspb.Message {
   clearTopLevelFieldsList(): void;
   getTopLevelFieldsList(): Array<InvoiceField>;
