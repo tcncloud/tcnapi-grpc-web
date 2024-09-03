@@ -664,7 +664,7 @@ proto.api.commons.audit.ContactManagerDeleteEvent.prototype.toObject = function(
  */
 proto.api.commons.audit.ContactManagerDeleteEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+deleteevent: (f = msg.getDeleteevent()) && proto.api.commons.audit.ContactManagerEntryEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -701,6 +701,11 @@ proto.api.commons.audit.ContactManagerDeleteEvent.deserializeBinaryFromReader = 
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new proto.api.commons.audit.ContactManagerEntryEvent;
+      reader.readMessage(value,proto.api.commons.audit.ContactManagerEntryEvent.deserializeBinaryFromReader);
+      msg.setDeleteevent(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -730,6 +735,51 @@ proto.api.commons.audit.ContactManagerDeleteEvent.prototype.serializeBinary = fu
  */
 proto.api.commons.audit.ContactManagerDeleteEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getDeleteevent();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.commons.audit.ContactManagerEntryEvent.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ContactManagerEntryEvent deleteEvent = 1;
+ * @return {?proto.api.commons.audit.ContactManagerEntryEvent}
+ */
+proto.api.commons.audit.ContactManagerDeleteEvent.prototype.getDeleteevent = function() {
+  return /** @type{?proto.api.commons.audit.ContactManagerEntryEvent} */ (
+    jspb.Message.getWrapperField(this, proto.api.commons.audit.ContactManagerEntryEvent, 1));
+};
+
+
+/**
+ * @param {?proto.api.commons.audit.ContactManagerEntryEvent|undefined} value
+ * @return {!proto.api.commons.audit.ContactManagerDeleteEvent} returns this
+*/
+proto.api.commons.audit.ContactManagerDeleteEvent.prototype.setDeleteevent = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.ContactManagerDeleteEvent} returns this
+ */
+proto.api.commons.audit.ContactManagerDeleteEvent.prototype.clearDeleteevent = function() {
+  return this.setDeleteevent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.ContactManagerDeleteEvent.prototype.hasDeleteevent = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

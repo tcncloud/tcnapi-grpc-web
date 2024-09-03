@@ -71,6 +71,11 @@ export namespace ContactManagerEntryEditEvent {
 }
 
 export class ContactManagerDeleteEvent extends jspb.Message {
+  hasDeleteevent(): boolean;
+  clearDeleteevent(): void;
+  getDeleteevent(): ContactManagerEntryEvent | undefined;
+  setDeleteevent(value?: ContactManagerEntryEvent): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerDeleteEvent.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerDeleteEvent): ContactManagerDeleteEvent.AsObject;
@@ -83,6 +88,7 @@ export class ContactManagerDeleteEvent extends jspb.Message {
 
 export namespace ContactManagerDeleteEvent {
   export type AsObject = {
+    deleteevent?: ContactManagerEntryEvent.AsObject,
   }
 }
 
