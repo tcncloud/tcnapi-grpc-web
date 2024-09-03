@@ -23,8 +23,10 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var api_v1alpha1_contactmanager_contactmanager_pb = require('../../../api/v1alpha1/contactmanager/contactmanager_pb.js');
-goog.object.extend(proto, api_v1alpha1_contactmanager_contactmanager_pb);
+var api_commons_classifier_pb = require('../../../api/commons/classifier_pb.js');
+goog.object.extend(proto, api_commons_classifier_pb);
+var api_commons_contactmanager_pb = require('../../../api/commons/contactmanager_pb.js');
+goog.object.extend(proto, api_commons_contactmanager_pb);
 goog.exportSymbol('proto.api.commons.audit.ContactManagerDeleteEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.ContactManagerEntryAddEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.ContactManagerEntryEditEvent', null, global);
@@ -1036,7 +1038,11 @@ proto.api.commons.audit.ContactManagerListUploadEvent.toObject = function(includ
 contactmanagerlistid: jspb.Message.getFieldWithDefault(msg, 1, 0),
 numberofcontactsuploaded: jspb.Message.getFieldWithDefault(msg, 2, 0),
 numberofsuccessfulcontactsuploaded: jspb.Message.getFieldWithDefault(msg, 3, 0),
-numberoffailedcontacts: jspb.Message.getFieldWithDefault(msg, 4, 0)
+numberoffailedcontacts: jspb.Message.getFieldWithDefault(msg, 4, 0),
+numberofnewcontacts: jspb.Message.getFieldWithDefault(msg, 5, 0),
+numberofduplicatecontacts: jspb.Message.getFieldWithDefault(msg, 6, 0),
+dedupfieldtype: jspb.Message.getFieldWithDefault(msg, 7, 0),
+dedupmergestrategy: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -1088,6 +1094,22 @@ proto.api.commons.audit.ContactManagerListUploadEvent.deserializeBinaryFromReade
     case 4:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setNumberoffailedcontacts(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setNumberofnewcontacts(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setNumberofduplicatecontacts(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.api.commons.ClassifierEntityType} */ (reader.readEnum());
+      msg.setDedupfieldtype(value);
+      break;
+    case 8:
+      var value = /** @type {!proto.api.commons.DeDuplicationMergeStrategy} */ (reader.readEnum());
+      msg.setDedupmergestrategy(value);
       break;
     default:
       reader.skipField();
@@ -1143,6 +1165,34 @@ proto.api.commons.audit.ContactManagerListUploadEvent.serializeBinaryToWriter = 
   if (f !== 0) {
     writer.writeInt64(
       4,
+      f
+    );
+  }
+  f = message.getNumberofnewcontacts();
+  if (f !== 0) {
+    writer.writeInt64(
+      5,
+      f
+    );
+  }
+  f = message.getNumberofduplicatecontacts();
+  if (f !== 0) {
+    writer.writeInt64(
+      6,
+      f
+    );
+  }
+  f = message.getDedupfieldtype();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
+      f
+    );
+  }
+  f = message.getDedupmergestrategy();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      8,
       f
     );
   }
@@ -1218,6 +1268,78 @@ proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getNumberoffaile
  */
 proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setNumberoffailedcontacts = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional int64 NumberOfNewContacts = 5;
+ * @return {number}
+ */
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getNumberofnewcontacts = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.audit.ContactManagerListUploadEvent} returns this
+ */
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setNumberofnewcontacts = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional int64 NumberOfDuplicateContacts = 6;
+ * @return {number}
+ */
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getNumberofduplicatecontacts = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.audit.ContactManagerListUploadEvent} returns this
+ */
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setNumberofduplicatecontacts = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional api.commons.ClassifierEntityType DeDupFieldType = 7;
+ * @return {!proto.api.commons.ClassifierEntityType}
+ */
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getDedupfieldtype = function() {
+  return /** @type {!proto.api.commons.ClassifierEntityType} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.ClassifierEntityType} value
+ * @return {!proto.api.commons.audit.ContactManagerListUploadEvent} returns this
+ */
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setDedupfieldtype = function(value) {
+  return jspb.Message.setProto3EnumField(this, 7, value);
+};
+
+
+/**
+ * optional api.commons.DeDuplicationMergeStrategy DeDupMergeStrategy = 8;
+ * @return {!proto.api.commons.DeDuplicationMergeStrategy}
+ */
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.getDedupmergestrategy = function() {
+  return /** @type {!proto.api.commons.DeDuplicationMergeStrategy} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.DeDuplicationMergeStrategy} value
+ * @return {!proto.api.commons.audit.ContactManagerListUploadEvent} returns this
+ */
+proto.api.commons.audit.ContactManagerListUploadEvent.prototype.setDedupmergestrategy = function(value) {
+  return jspb.Message.setProto3EnumField(this, 8, value);
 };
 
 
