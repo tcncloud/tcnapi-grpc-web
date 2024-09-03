@@ -50328,7 +50328,8 @@ proto.api.v0alpha.SearchCollectionsPaginatedReq.toObject = function(includeInsta
 collectionIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
 search: (f = msg.getSearch()) && proto.api.v0alpha.Search.toObject(includeInstance, f),
 from: jspb.Message.getFieldWithDefault(msg, 5, 0),
-pageSize: jspb.Message.getFieldWithDefault(msg, 6, 0)
+pageSize: jspb.Message.getFieldWithDefault(msg, 6, 0),
+lastId: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -50381,6 +50382,10 @@ proto.api.v0alpha.SearchCollectionsPaginatedReq.deserializeBinaryFromReader = fu
     case 6:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setPageSize(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLastId(value);
       break;
     default:
       reader.skipField();
@@ -50437,6 +50442,13 @@ proto.api.v0alpha.SearchCollectionsPaginatedReq.serializeBinaryToWriter = functi
   if (f !== 0) {
     writer.writeInt64(
       6,
+      f
+    );
+  }
+  f = message.getLastId();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -50550,6 +50562,24 @@ proto.api.v0alpha.SearchCollectionsPaginatedReq.prototype.getPageSize = function
  */
 proto.api.v0alpha.SearchCollectionsPaginatedReq.prototype.setPageSize = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional string last_id = 7;
+ * @return {string}
+ */
+proto.api.v0alpha.SearchCollectionsPaginatedReq.prototype.getLastId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.SearchCollectionsPaginatedReq} returns this
+ */
+proto.api.v0alpha.SearchCollectionsPaginatedReq.prototype.setLastId = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -50874,7 +50904,9 @@ proto.api.v0alpha.PaginatedSearchRes.toObject = function(includeInstance, msg) {
   var f, obj = {
 entriesList: jspb.Message.toObjectList(msg.getEntriesList(),
     proto.api.v0alpha.CollectionEntry.toObject, includeInstance),
-total: jspb.Message.getFieldWithDefault(msg, 2, 0)
+total: jspb.Message.getFieldWithDefault(msg, 2, 0),
+moreResults: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+lastId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -50920,6 +50952,14 @@ proto.api.v0alpha.PaginatedSearchRes.deserializeBinaryFromReader = function(msg,
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTotal(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setMoreResults(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLastId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -50961,6 +51001,20 @@ proto.api.v0alpha.PaginatedSearchRes.serializeBinaryToWriter = function(message,
   if (f !== 0) {
     writer.writeInt64(
       2,
+      f
+    );
+  }
+  f = message.getMoreResults();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
+  f = message.getLastId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -51020,6 +51074,42 @@ proto.api.v0alpha.PaginatedSearchRes.prototype.getTotal = function() {
  */
 proto.api.v0alpha.PaginatedSearchRes.prototype.setTotal = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional bool more_results = 3;
+ * @return {boolean}
+ */
+proto.api.v0alpha.PaginatedSearchRes.prototype.getMoreResults = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.v0alpha.PaginatedSearchRes} returns this
+ */
+proto.api.v0alpha.PaginatedSearchRes.prototype.setMoreResults = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional string last_id = 4;
+ * @return {string}
+ */
+proto.api.v0alpha.PaginatedSearchRes.prototype.getLastId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.PaginatedSearchRes} returns this
+ */
+proto.api.v0alpha.PaginatedSearchRes.prototype.setLastId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
