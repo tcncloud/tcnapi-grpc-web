@@ -182,6 +182,12 @@ export class ProcessReq extends jspb.Message {
   setCondsList(value: Array<Condition>): void;
   addConds(value?: Condition, index?: number): Condition;
 
+  getCallSid(): number;
+  setCallSid(value: number): void;
+
+  getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+  setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessReq.AsObject;
   static toObject(includeInstance: boolean, msg: ProcessReq): ProcessReq.AsObject;
@@ -201,6 +207,8 @@ export namespace ProcessReq {
     configId: string,
     paramsMap: Array<[string, Value.AsObject]>,
     condsList: Array<Condition.AsObject>,
+    callSid: number,
+    callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
   }
 }
 
@@ -3585,6 +3593,12 @@ export class ProcessWorkflowReq extends jspb.Message {
 
   getParamsMap(): jspb.Map<string, Value>;
   clearParamsMap(): void;
+  getCallSid(): number;
+  setCallSid(value: number): void;
+
+  getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+  setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessWorkflowReq.AsObject;
   static toObject(includeInstance: boolean, msg: ProcessWorkflowReq): ProcessWorkflowReq.AsObject;
@@ -3602,6 +3616,8 @@ export namespace ProcessWorkflowReq {
     segment: number,
     choice: number,
     paramsMap: Array<[string, Value.AsObject]>,
+    callSid: number,
+    callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
   }
 }
 

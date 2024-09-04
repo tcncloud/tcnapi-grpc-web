@@ -3589,7 +3589,9 @@ configName: jspb.Message.getFieldWithDefault(msg, 5, ""),
 configId: jspb.Message.getFieldWithDefault(msg, 9, ""),
 paramsMap: (f = msg.getParamsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrations.Value.toObject) : [],
 condsList: jspb.Message.toObjectList(msg.getCondsList(),
-    proto.api.v1alpha1.integrations.Condition.toObject, includeInstance)
+    proto.api.v1alpha1.integrations.Condition.toObject, includeInstance),
+callSid: jspb.Message.getFieldWithDefault(msg, 10, 0),
+callType: jspb.Message.getFieldWithDefault(msg, 11, 0)
   };
 
   if (includeInstance) {
@@ -3656,6 +3658,14 @@ proto.api.v1alpha1.integrations.ProcessReq.deserializeBinaryFromReader = functio
       var value = new proto.api.v1alpha1.integrations.Condition;
       reader.readMessage(value,proto.api.v1alpha1.integrations.Condition.deserializeBinaryFromReader);
       msg.addConds(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setCallSid(value);
+      break;
+    case 11:
+      var value = /** @type {!proto.api.commons.CallType.Enum} */ (reader.readEnum());
+      msg.setCallType(value);
       break;
     default:
       reader.skipField();
@@ -3731,6 +3741,20 @@ proto.api.v1alpha1.integrations.ProcessReq.serializeBinaryToWriter = function(me
       7,
       f,
       proto.api.v1alpha1.integrations.Condition.serializeBinaryToWriter
+    );
+  }
+  f = message.getCallSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      10,
+      f
+    );
+  }
+  f = message.getCallType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      11,
+      f
     );
   }
 };
@@ -3884,6 +3908,42 @@ proto.api.v1alpha1.integrations.ProcessReq.prototype.addConds = function(opt_val
  */
 proto.api.v1alpha1.integrations.ProcessReq.prototype.clearCondsList = function() {
   return this.setCondsList([]);
+};
+
+
+/**
+ * optional int64 call_sid = 10;
+ * @return {number}
+ */
+proto.api.v1alpha1.integrations.ProcessReq.prototype.getCallSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.integrations.ProcessReq} returns this
+ */
+proto.api.v1alpha1.integrations.ProcessReq.prototype.setCallSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 10, value);
+};
+
+
+/**
+ * optional api.commons.CallType.Enum call_type = 11;
+ * @return {!proto.api.commons.CallType.Enum}
+ */
+proto.api.v1alpha1.integrations.ProcessReq.prototype.getCallType = function() {
+  return /** @type {!proto.api.commons.CallType.Enum} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.CallType.Enum} value
+ * @return {!proto.api.v1alpha1.integrations.ProcessReq} returns this
+ */
+proto.api.v1alpha1.integrations.ProcessReq.prototype.setCallType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 11, value);
 };
 
 
@@ -28247,7 +28307,9 @@ portalLinkId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 portalId: jspb.Message.getFieldWithDefault(msg, 2, ""),
 segment: jspb.Message.getFieldWithDefault(msg, 3, 0),
 choice: jspb.Message.getFieldWithDefault(msg, 4, 0),
-paramsMap: (f = msg.getParamsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrations.Value.toObject) : []
+paramsMap: (f = msg.getParamsMap()) ? f.toObject(includeInstance, proto.api.v1alpha1.integrations.Value.toObject) : [],
+callSid: jspb.Message.getFieldWithDefault(msg, 6, 0),
+callType: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -28305,6 +28367,14 @@ proto.api.v1alpha1.integrations.ProcessWorkflowReq.deserializeBinaryFromReader =
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.api.v1alpha1.integrations.Value.deserializeBinaryFromReader, "", new proto.api.v1alpha1.integrations.Value());
          });
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setCallSid(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.api.commons.CallType.Enum} */ (reader.readEnum());
+      msg.setCallType(value);
       break;
     default:
       reader.skipField();
@@ -28366,6 +28436,20 @@ proto.api.v1alpha1.integrations.ProcessWorkflowReq.serializeBinaryToWriter = fun
   f = message.getParamsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.api.v1alpha1.integrations.Value.serializeBinaryToWriter);
+  }
+  f = message.getCallSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      6,
+      f
+    );
+  }
+  f = message.getCallType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
+      f
+    );
   }
 };
 
@@ -28462,6 +28546,42 @@ proto.api.v1alpha1.integrations.ProcessWorkflowReq.prototype.getParamsMap = func
 proto.api.v1alpha1.integrations.ProcessWorkflowReq.prototype.clearParamsMap = function() {
   this.getParamsMap().clear();
   return this;
+};
+
+
+/**
+ * optional int64 call_sid = 6;
+ * @return {number}
+ */
+proto.api.v1alpha1.integrations.ProcessWorkflowReq.prototype.getCallSid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.integrations.ProcessWorkflowReq} returns this
+ */
+proto.api.v1alpha1.integrations.ProcessWorkflowReq.prototype.setCallSid = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional api.commons.CallType.Enum call_type = 7;
+ * @return {!proto.api.commons.CallType.Enum}
+ */
+proto.api.v1alpha1.integrations.ProcessWorkflowReq.prototype.getCallType = function() {
+  return /** @type {!proto.api.commons.CallType.Enum} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.CallType.Enum} value
+ * @return {!proto.api.v1alpha1.integrations.ProcessWorkflowReq} returns this
+ */
+proto.api.v1alpha1.integrations.ProcessWorkflowReq.prototype.setCallType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 
