@@ -6460,7 +6460,7 @@ proto.api.commons.AgentLeavePetition.prototype.toObject = function(opt_includeIn
  */
 proto.api.commons.AgentLeavePetition.toObject = function(includeInstance, msg) {
   var f, obj = {
-agentLeavePetitionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+agentLeavePetitionId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
 wfmAgentSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
 petitionStatus: jspb.Message.getFieldWithDefault(msg, 3, 0),
 petitionComment: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -6509,7 +6509,7 @@ proto.api.commons.AgentLeavePetition.deserializeBinaryFromReader = function(msg,
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readInt64String());
       msg.setAgentLeavePetitionId(value);
       break;
     case 2:
@@ -6586,8 +6586,8 @@ proto.api.commons.AgentLeavePetition.prototype.serializeBinary = function() {
 proto.api.commons.AgentLeavePetition.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAgentLeavePetitionId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (parseInt(f, 10) !== 0) {
+    writer.writeInt64String(
       1,
       f
     );
@@ -6671,19 +6671,19 @@ proto.api.commons.AgentLeavePetition.serializeBinaryToWriter = function(message,
 
 /**
  * optional int64 agent_leave_petition_id = 1;
- * @return {number}
+ * @return {string}
  */
 proto.api.commons.AgentLeavePetition.prototype.getAgentLeavePetitionId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.api.commons.AgentLeavePetition} returns this
  */
 proto.api.commons.AgentLeavePetition.prototype.setAgentLeavePetitionId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringIntField(this, 1, value);
 };
 
 
