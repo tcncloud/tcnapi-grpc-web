@@ -50,6 +50,23 @@ export namespace CreateSmartEvaluationResponse {
 }
 
 export class ListSmartEvaluationsRequest extends jspb.Message {
+  getOrderBy(): string;
+  setOrderBy(value: string): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
+  hasReturnFields(): boolean;
+  clearReturnFields(): void;
+  getReturnFields(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setReturnFields(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  getFilter(): string;
+  setFilter(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSmartEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListSmartEvaluationsRequest): ListSmartEvaluationsRequest.AsObject;
@@ -62,6 +79,11 @@ export class ListSmartEvaluationsRequest extends jspb.Message {
 
 export namespace ListSmartEvaluationsRequest {
   export type AsObject = {
+    orderBy: string,
+    pageSize: number,
+    pageToken: string,
+    returnFields?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    filter: string,
   }
 }
 
@@ -70,6 +92,9 @@ export class ListSmartEvaluationsResponse extends jspb.Message {
   getSmartEvaluationsList(): Array<api_commons_scorecards_pb.SmartEvaluation>;
   setSmartEvaluationsList(value: Array<api_commons_scorecards_pb.SmartEvaluation>): void;
   addSmartEvaluations(value?: api_commons_scorecards_pb.SmartEvaluation, index?: number): api_commons_scorecards_pb.SmartEvaluation;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSmartEvaluationsResponse.AsObject;
@@ -84,6 +109,7 @@ export class ListSmartEvaluationsResponse extends jspb.Message {
 export namespace ListSmartEvaluationsResponse {
   export type AsObject = {
     smartEvaluationsList: Array<api_commons_scorecards_pb.SmartEvaluation.AsObject>,
+    nextPageToken: string,
   }
 }
 
