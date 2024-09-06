@@ -816,8 +816,8 @@ export namespace AgentStateSequence {
 }
 
 export class AgentLeavePetition extends jspb.Message {
-  getAgentLeavePetitionId(): number;
-  setAgentLeavePetitionId(value: number): void;
+  getAgentLeavePetitionId(): string;
+  setAgentLeavePetitionId(value: string): void;
 
   getWfmAgentSid(): number;
   setWfmAgentSid(value: number): void;
@@ -869,7 +869,7 @@ export class AgentLeavePetition extends jspb.Message {
 
 export namespace AgentLeavePetition {
   export type AsObject = {
-    agentLeavePetitionId: number,
+    agentLeavePetitionId: string,
     wfmAgentSid: number,
     petitionStatus: AgentLeavePetitionStatusMap[keyof AgentLeavePetitionStatusMap],
     petitionComment: string,

@@ -11572,8 +11572,8 @@ export class RgbaColor extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getRgbaColorId(): number;
-  setRgbaColorId(value: number): void;
+  getRgbaColorId(): string;
+  setRgbaColorId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RgbaColor.AsObject;
@@ -11592,7 +11592,7 @@ export namespace RgbaColor {
     blue: number,
     alpha: number,
     name: string,
-    rgbaColorId: number,
+    rgbaColorId: string,
   }
 }
 
@@ -11750,8 +11750,8 @@ export class UpsertRealTimeManagementStateColorRequest extends jspb.Message {
   getState(): api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap];
   setState(value: api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap]): void;
 
-  getRgbaColorId(): number;
-  setRgbaColorId(value: number): void;
+  getRgbaColorId(): string;
+  setRgbaColorId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpsertRealTimeManagementStateColorRequest.AsObject;
@@ -11766,7 +11766,7 @@ export class UpsertRealTimeManagementStateColorRequest extends jspb.Message {
 export namespace UpsertRealTimeManagementStateColorRequest {
   export type AsObject = {
     state: api_commons_wfm_pb.RealTimeManagementStateMap[keyof api_commons_wfm_pb.RealTimeManagementStateMap],
-    rgbaColorId: number,
+    rgbaColorId: string,
   }
 }
 
@@ -11977,8 +11977,8 @@ export namespace ListAgentLeavePetitionsResponse {
 }
 
 export class ArchiveAgentLeavePetitionRequest extends jspb.Message {
-  getAgentLeavePetitionId(): number;
-  setAgentLeavePetitionId(value: number): void;
+  getAgentLeavePetitionId(): string;
+  setAgentLeavePetitionId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ArchiveAgentLeavePetitionRequest.AsObject;
@@ -11992,7 +11992,7 @@ export class ArchiveAgentLeavePetitionRequest extends jspb.Message {
 
 export namespace ArchiveAgentLeavePetitionRequest {
   export type AsObject = {
-    agentLeavePetitionId: number,
+    agentLeavePetitionId: string,
   }
 }
 
@@ -12019,8 +12019,8 @@ export namespace ArchiveAgentLeavePetitionResponse {
 }
 
 export class ResolveAgentLeavePetitionRequest extends jspb.Message {
-  getAgentLeavePetitionId(): number;
-  setAgentLeavePetitionId(value: number): void;
+  getAgentLeavePetitionId(): string;
+  setAgentLeavePetitionId(value: string): void;
 
   getPetitionStatus(): api_commons_wfm_pb.AgentLeavePetitionStatusMap[keyof api_commons_wfm_pb.AgentLeavePetitionStatusMap];
   setPetitionStatus(value: api_commons_wfm_pb.AgentLeavePetitionStatusMap[keyof api_commons_wfm_pb.AgentLeavePetitionStatusMap]): void;
@@ -12046,7 +12046,7 @@ export class ResolveAgentLeavePetitionRequest extends jspb.Message {
 
 export namespace ResolveAgentLeavePetitionRequest {
   export type AsObject = {
-    agentLeavePetitionId: number,
+    agentLeavePetitionId: string,
     petitionStatus: api_commons_wfm_pb.AgentLeavePetitionStatusMap[keyof api_commons_wfm_pb.AgentLeavePetitionStatusMap],
     responseComment: string,
     retainPartialShifts: boolean,
@@ -12077,8 +12077,8 @@ export namespace ResolveAgentLeavePetitionResponse {
 }
 
 export class CancelAgentLeavePetitionRequest extends jspb.Message {
-  getAgentLeavePetitionId(): number;
-  setAgentLeavePetitionId(value: number): void;
+  getAgentLeavePetitionId(): string;
+  setAgentLeavePetitionId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CancelAgentLeavePetitionRequest.AsObject;
@@ -12092,7 +12092,7 @@ export class CancelAgentLeavePetitionRequest extends jspb.Message {
 
 export namespace CancelAgentLeavePetitionRequest {
   export type AsObject = {
-    agentLeavePetitionId: number,
+    agentLeavePetitionId: string,
   }
 }
 
@@ -12141,8 +12141,8 @@ export namespace CreateRgbaColorRequest {
 }
 
 export class CreateRgbaColorResponse extends jspb.Message {
-  getRgbaColorId(): number;
-  setRgbaColorId(value: number): void;
+  getRgbaColorId(): string;
+  setRgbaColorId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRgbaColorResponse.AsObject;
@@ -12156,7 +12156,7 @@ export class CreateRgbaColorResponse extends jspb.Message {
 
 export namespace CreateRgbaColorResponse {
   export type AsObject = {
-    rgbaColorId: number,
+    rgbaColorId: string,
   }
 }
 
@@ -12243,8 +12243,8 @@ export namespace UpdateRgbaColorResponse {
 }
 
 export class DeleteRgbaColorRequest extends jspb.Message {
-  getRgbaColorId(): number;
-  setRgbaColorId(value: number): void;
+  getRgbaColorId(): string;
+  setRgbaColorId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteRgbaColorRequest.AsObject;
@@ -12258,7 +12258,7 @@ export class DeleteRgbaColorRequest extends jspb.Message {
 
 export namespace DeleteRgbaColorRequest {
   export type AsObject = {
-    rgbaColorId: number,
+    rgbaColorId: string,
   }
 }
 
@@ -12301,8 +12301,8 @@ export namespace CreateAdherenceRuleNotificationConfigRequest {
 }
 
 export class CreateAdherenceRuleNotificationConfigResponse extends jspb.Message {
-  getAdherenceRuleNotificationConfigId(): number;
-  setAdherenceRuleNotificationConfigId(value: number): void;
+  getAdherenceRuleNotificationConfigId(): string;
+  setAdherenceRuleNotificationConfigId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAdherenceRuleNotificationConfigResponse.AsObject;
@@ -12316,7 +12316,7 @@ export class CreateAdherenceRuleNotificationConfigResponse extends jspb.Message 
 
 export namespace CreateAdherenceRuleNotificationConfigResponse {
   export type AsObject = {
-    adherenceRuleNotificationConfigId: number,
+    adherenceRuleNotificationConfigId: string,
   }
 }
 
@@ -12343,8 +12343,8 @@ export namespace CreateAdherenceRuleNotificationConfigEntryRequest {
 }
 
 export class CreateAdherenceRuleNotificationConfigEntryResponse extends jspb.Message {
-  getAdherenceRuleNotificationConfigEntryId(): number;
-  setAdherenceRuleNotificationConfigEntryId(value: number): void;
+  getAdherenceRuleNotificationConfigEntryId(): string;
+  setAdherenceRuleNotificationConfigEntryId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAdherenceRuleNotificationConfigEntryResponse.AsObject;
@@ -12358,7 +12358,7 @@ export class CreateAdherenceRuleNotificationConfigEntryResponse extends jspb.Mes
 
 export namespace CreateAdherenceRuleNotificationConfigEntryResponse {
   export type AsObject = {
-    adherenceRuleNotificationConfigEntryId: number,
+    adherenceRuleNotificationConfigEntryId: string,
   }
 }
 
@@ -12385,8 +12385,8 @@ export namespace CreateAdherenceDepartmentalRuleRequest {
 }
 
 export class CreateAdherenceDepartmentalRuleResponse extends jspb.Message {
-  getAdherenceDepartmentalRuleId(): number;
-  setAdherenceDepartmentalRuleId(value: number): void;
+  getAdherenceDepartmentalRuleId(): string;
+  setAdherenceDepartmentalRuleId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAdherenceDepartmentalRuleResponse.AsObject;
@@ -12400,7 +12400,7 @@ export class CreateAdherenceDepartmentalRuleResponse extends jspb.Message {
 
 export namespace CreateAdherenceDepartmentalRuleResponse {
   export type AsObject = {
-    adherenceDepartmentalRuleId: number,
+    adherenceDepartmentalRuleId: string,
   }
 }
 
@@ -12427,8 +12427,8 @@ export namespace CreateAdherenceDepartmentalRuleClauseRequest {
 }
 
 export class CreateAdherenceDepartmentalRuleClauseResponse extends jspb.Message {
-  getAdherenceDepartmentalRuleClauseId(): number;
-  setAdherenceDepartmentalRuleClauseId(value: number): void;
+  getAdherenceDepartmentalRuleClauseId(): string;
+  setAdherenceDepartmentalRuleClauseId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAdherenceDepartmentalRuleClauseResponse.AsObject;
@@ -12442,7 +12442,7 @@ export class CreateAdherenceDepartmentalRuleClauseResponse extends jspb.Message 
 
 export namespace CreateAdherenceDepartmentalRuleClauseResponse {
   export type AsObject = {
-    adherenceDepartmentalRuleClauseId: number,
+    adherenceDepartmentalRuleClauseId: string,
   }
 }
 
@@ -12469,8 +12469,8 @@ export namespace CreateAdherenceAgentRuleRequest {
 }
 
 export class CreateAdherenceAgentRuleResponse extends jspb.Message {
-  getAdherenceAgentRuleId(): number;
-  setAdherenceAgentRuleId(value: number): void;
+  getAdherenceAgentRuleId(): string;
+  setAdherenceAgentRuleId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAdherenceAgentRuleResponse.AsObject;
@@ -12484,7 +12484,7 @@ export class CreateAdherenceAgentRuleResponse extends jspb.Message {
 
 export namespace CreateAdherenceAgentRuleResponse {
   export type AsObject = {
-    adherenceAgentRuleId: number,
+    adherenceAgentRuleId: string,
   }
 }
 
@@ -12511,8 +12511,8 @@ export namespace CreateAdherenceAgentRuleClauseRequest {
 }
 
 export class CreateAdherenceAgentRuleClauseResponse extends jspb.Message {
-  getAdherenceAgentRuleClauseId(): number;
-  setAdherenceAgentRuleClauseId(value: number): void;
+  getAdherenceAgentRuleClauseId(): string;
+  setAdherenceAgentRuleClauseId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAdherenceAgentRuleClauseResponse.AsObject;
@@ -12526,7 +12526,7 @@ export class CreateAdherenceAgentRuleClauseResponse extends jspb.Message {
 
 export namespace CreateAdherenceAgentRuleClauseResponse {
   export type AsObject = {
-    adherenceAgentRuleClauseId: number,
+    adherenceAgentRuleClauseId: string,
   }
 }
 
