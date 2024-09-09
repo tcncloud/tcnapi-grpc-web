@@ -211,6 +211,16 @@ export class ProductConfig extends jspb.Message {
   getDataManagementComplianceComplianceRndQueryCached(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
   setDataManagementComplianceComplianceRndQueryCached(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
 
+  hasWorkforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts(): boolean;
+  clearWorkforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts(): void;
+  getWorkforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
+  setWorkforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
+
+  hasWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts(): boolean;
+  clearWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts(): void;
+  getWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts(): services_billing_entities_v1alpha4_modules_pb.BasicConfig | undefined;
+  setWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts(value?: services_billing_entities_v1alpha4_modules_pb.BasicConfig): void;
+
   getConfigCase(): ProductConfig.ConfigCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductConfig.AsObject;
@@ -265,6 +275,8 @@ export namespace ProductConfig {
     communicationsOmniResourcesConnectedInboxCreated?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
     dataManagementComplianceComplianceRndQuery?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
     dataManagementComplianceComplianceRndQueryCached?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
+    workforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
+    workforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts?: services_billing_entities_v1alpha4_modules_pb.BasicConfig.AsObject,
   }
 
   export enum ConfigCase {
@@ -310,6 +322,8 @@ export namespace ProductConfig {
     COMMUNICATIONS_OMNI_RESOURCES_CONNECTED_INBOX_CREATED = 1401,
     DATA_MANAGEMENT_COMPLIANCE_COMPLIANCE_RND_QUERY = 10000,
     DATA_MANAGEMENT_COMPLIANCE_COMPLIANCE_RND_QUERY_CACHED = 10001,
+    WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_VOICE_ANALYTICS_CALL_TRANSCRIPTS = 20000,
+    WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_VOICE_ANALYTICS_ACCUMULATED_CALL_TRANSCRIPTS = 20001,
   }
 }
 

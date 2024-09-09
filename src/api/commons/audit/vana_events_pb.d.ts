@@ -2,6 +2,7 @@
 // file: api/commons/audit/vana_events.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_omnichannel_pb from "../../../api/commons/omnichannel_pb";
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -217,6 +218,15 @@ export class VanaCreateTranscriptEvent extends jspb.Message {
   getTranscriptSid(): number;
   setTranscriptSid(value: number): void;
 
+  getAudioTime(): number;
+  setAudioTime(value: number): void;
+
+  getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
+  setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
+
+  getTalkTime(): number;
+  setTalkTime(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VanaCreateTranscriptEvent.AsObject;
   static toObject(includeInstance: boolean, msg: VanaCreateTranscriptEvent): VanaCreateTranscriptEvent.AsObject;
@@ -230,6 +240,9 @@ export class VanaCreateTranscriptEvent extends jspb.Message {
 export namespace VanaCreateTranscriptEvent {
   export type AsObject = {
     transcriptSid: number,
+    audioTime: number,
+    channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
+    talkTime: number,
   }
 }
 

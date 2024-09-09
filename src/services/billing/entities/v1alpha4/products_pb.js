@@ -59,7 +59,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_ = [[1000,1001,1002,1010,1011,1012,1020,1021,1022,1030,1031,1032,1100,1101,1102,1110,1111,1112,1120,1121,1122,1130,1131,1132,1200,1201,1202,1210,1211,1212,1220,1221,1222,1230,1231,1232,1300,1400,1401,10000,10001]];
+proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_ = [[1000,1001,1002,1010,1011,1012,1020,1021,1022,1030,1031,1032,1100,1101,1102,1110,1111,1112,1120,1121,1122,1130,1131,1132,1200,1201,1202,1210,1211,1212,1220,1221,1222,1230,1231,1232,1300,1400,1401,10000,10001,20000,20001]];
 
 /**
  * @enum {number}
@@ -106,7 +106,9 @@ proto.services.billing.entities.v1alpha4.ProductConfig.ConfigCase = {
   COMMUNICATIONS_OMNI_RESOURCES_CONNECTED_INBOX_POLL: 1400,
   COMMUNICATIONS_OMNI_RESOURCES_CONNECTED_INBOX_CREATED: 1401,
   DATA_MANAGEMENT_COMPLIANCE_COMPLIANCE_RND_QUERY: 10000,
-  DATA_MANAGEMENT_COMPLIANCE_COMPLIANCE_RND_QUERY_CACHED: 10001
+  DATA_MANAGEMENT_COMPLIANCE_COMPLIANCE_RND_QUERY_CACHED: 10001,
+  WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_VOICE_ANALYTICS_CALL_TRANSCRIPTS: 20000,
+  WORKFORCE_ENGAGEMENT_WORKFORCE_OPTIMIZATION_VOICE_ANALYTICS_ACCUMULATED_CALL_TRANSCRIPTS: 20001
 };
 
 /**
@@ -187,7 +189,9 @@ communicationsOmniAgentSeats: (f = msg.getCommunicationsOmniAgentSeats()) && ser
 communicationsOmniResourcesConnectedInboxPoll: (f = msg.getCommunicationsOmniResourcesConnectedInboxPoll()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
 communicationsOmniResourcesConnectedInboxCreated: (f = msg.getCommunicationsOmniResourcesConnectedInboxCreated()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
 dataManagementComplianceComplianceRndQuery: (f = msg.getDataManagementComplianceComplianceRndQuery()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
-dataManagementComplianceComplianceRndQueryCached: (f = msg.getDataManagementComplianceComplianceRndQueryCached()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f)
+dataManagementComplianceComplianceRndQueryCached: (f = msg.getDataManagementComplianceComplianceRndQueryCached()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
+workforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts: (f = msg.getWorkforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f),
+workforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts: (f = msg.getWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts()) && services_billing_entities_v1alpha4_modules_pb.BasicConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -428,6 +432,16 @@ proto.services.billing.entities.v1alpha4.ProductConfig.deserializeBinaryFromRead
       var value = new services_billing_entities_v1alpha4_modules_pb.BasicConfig;
       reader.readMessage(value,services_billing_entities_v1alpha4_modules_pb.BasicConfig.deserializeBinaryFromReader);
       msg.setDataManagementComplianceComplianceRndQueryCached(value);
+      break;
+    case 20000:
+      var value = new services_billing_entities_v1alpha4_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha4_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setWorkforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts(value);
+      break;
+    case 20001:
+      var value = new services_billing_entities_v1alpha4_modules_pb.BasicConfig;
+      reader.readMessage(value,services_billing_entities_v1alpha4_modules_pb.BasicConfig.deserializeBinaryFromReader);
+      msg.setWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts(value);
       break;
     default:
       reader.skipField();
@@ -782,6 +796,22 @@ proto.services.billing.entities.v1alpha4.ProductConfig.serializeBinaryToWriter =
   if (f != null) {
     writer.writeMessage(
       10001,
+      f,
+      services_billing_entities_v1alpha4_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getWorkforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts();
+  if (f != null) {
+    writer.writeMessage(
+      20000,
+      f,
+      services_billing_entities_v1alpha4_modules_pb.BasicConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts();
+  if (f != null) {
+    writer.writeMessage(
+      20001,
       f,
       services_billing_entities_v1alpha4_modules_pb.BasicConfig.serializeBinaryToWriter
     );
@@ -2303,6 +2333,80 @@ proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearDataManage
  */
 proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasDataManagementComplianceComplianceRndQueryCached = function() {
   return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
+ * optional BasicConfig workforce_engagement_workforce_optimization_voice_analytics_call_transcripts = 20000;
+ * @return {?proto.services.billing.entities.v1alpha4.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getWorkforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha4.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_modules_pb.BasicConfig, 20000));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha4.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+*/
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setWorkforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 20000, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearWorkforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts = function() {
+  return this.setWorkforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasWorkforceEngagementWorkforceOptimizationVoiceAnalyticsCallTranscripts = function() {
+  return jspb.Message.getField(this, 20000) != null;
+};
+
+
+/**
+ * optional BasicConfig workforce_engagement_workforce_optimization_voice_analytics_accumulated_call_transcripts = 20001;
+ * @return {?proto.services.billing.entities.v1alpha4.BasicConfig}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.getWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts = function() {
+  return /** @type{?proto.services.billing.entities.v1alpha4.BasicConfig} */ (
+    jspb.Message.getWrapperField(this, services_billing_entities_v1alpha4_modules_pb.BasicConfig, 20001));
+};
+
+
+/**
+ * @param {?proto.services.billing.entities.v1alpha4.BasicConfig|undefined} value
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+*/
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.setWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 20001, proto.services.billing.entities.v1alpha4.ProductConfig.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.services.billing.entities.v1alpha4.ProductConfig} returns this
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.clearWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts = function() {
+  return this.setWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.billing.entities.v1alpha4.ProductConfig.prototype.hasWorkforceEngagementWorkforceOptimizationVoiceAnalyticsAccumulatedCallTranscripts = function() {
+  return jspb.Message.getField(this, 20001) != null;
 };
 
 
