@@ -771,10 +771,10 @@ export class DrillThroughAction extends jspb.Message {
   getInsightResourceId(): string;
   setInsightResourceId(value: string): void;
 
-  clearDrillThroughActionsList(): void;
-  getDrillThroughActionsList(): Array<DrillThrough>;
-  setDrillThroughActionsList(value: Array<DrillThrough>): void;
-  addDrillThroughActions(value?: DrillThrough, index?: number): DrillThrough;
+  clearDrillThroughParametersList(): void;
+  getDrillThroughParametersList(): Array<DrillThroughParameter>;
+  setDrillThroughParametersList(value: Array<DrillThroughParameter>): void;
+  addDrillThroughParameters(value?: DrillThroughParameter, index?: number): DrillThroughParameter;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DrillThroughAction.AsObject;
@@ -789,31 +789,31 @@ export class DrillThroughAction extends jspb.Message {
 export namespace DrillThroughAction {
   export type AsObject = {
     insightResourceId: string,
-    drillThroughActionsList: Array<DrillThrough.AsObject>,
+    drillThroughParametersList: Array<DrillThroughParameter.AsObject>,
   }
 }
 
-export class DrillThrough extends jspb.Message {
-  getDrillThroughParameter(): string;
-  setDrillThroughParameter(value: string): void;
+export class DrillThroughParameter extends jspb.Message {
+  getParameterName(): string;
+  setParameterName(value: string): void;
 
-  getDrillThroughParameterValue(): string;
-  setDrillThroughParameterValue(value: string): void;
+  getColumnName(): string;
+  setColumnName(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DrillThrough.AsObject;
-  static toObject(includeInstance: boolean, msg: DrillThrough): DrillThrough.AsObject;
+  toObject(includeInstance?: boolean): DrillThroughParameter.AsObject;
+  static toObject(includeInstance: boolean, msg: DrillThroughParameter): DrillThroughParameter.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DrillThrough, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DrillThrough;
-  static deserializeBinaryFromReader(message: DrillThrough, reader: jspb.BinaryReader): DrillThrough;
+  static serializeBinaryToWriter(message: DrillThroughParameter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DrillThroughParameter;
+  static deserializeBinaryFromReader(message: DrillThroughParameter, reader: jspb.BinaryReader): DrillThroughParameter;
 }
 
-export namespace DrillThrough {
+export namespace DrillThroughParameter {
   export type AsObject = {
-    drillThroughParameter: string,
-    drillThroughParameterValue: string,
+    parameterName: string,
+    columnName: string,
   }
 }
 
