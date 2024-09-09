@@ -92395,7 +92395,7 @@ green: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
 blue: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
 alpha: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
 name: jspb.Message.getFieldWithDefault(msg, 5, ""),
-rgbaColorId: jspb.Message.getFieldWithDefault(msg, 6, "0")
+rgbaColorId: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -92453,7 +92453,7 @@ proto.api.v1alpha1.wfm.RgbaColor.deserializeBinaryFromReader = function(msg, rea
       msg.setName(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setRgbaColorId(value);
       break;
     default:
@@ -92521,8 +92521,8 @@ proto.api.v1alpha1.wfm.RgbaColor.serializeBinaryToWriter = function(message, wri
     );
   }
   f = message.getRgbaColorId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       6,
       f
     );
@@ -92622,19 +92622,19 @@ proto.api.v1alpha1.wfm.RgbaColor.prototype.setName = function(value) {
 
 /**
  * optional int64 rgba_color_id = 6;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.wfm.RgbaColor.prototype.getRgbaColorId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.RgbaColor} returns this
  */
 proto.api.v1alpha1.wfm.RgbaColor.prototype.setRgbaColorId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -93704,7 +93704,7 @@ proto.api.v1alpha1.wfm.UpsertRealTimeManagementStateColorRequest.prototype.toObj
 proto.api.v1alpha1.wfm.UpsertRealTimeManagementStateColorRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 state: jspb.Message.getFieldWithDefault(msg, 1, 0),
-rgbaColorId: jspb.Message.getFieldWithDefault(msg, 2, "0")
+rgbaColorId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -93746,7 +93746,7 @@ proto.api.v1alpha1.wfm.UpsertRealTimeManagementStateColorRequest.deserializeBina
       msg.setState(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setRgbaColorId(value);
       break;
     default:
@@ -93786,8 +93786,8 @@ proto.api.v1alpha1.wfm.UpsertRealTimeManagementStateColorRequest.serializeBinary
     );
   }
   f = message.getRgbaColorId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       2,
       f
     );
@@ -93815,19 +93815,19 @@ proto.api.v1alpha1.wfm.UpsertRealTimeManagementStateColorRequest.prototype.setSt
 
 /**
  * optional int64 rgba_color_id = 2;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.wfm.UpsertRealTimeManagementStateColorRequest.prototype.getRgbaColorId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.UpsertRealTimeManagementStateColorRequest} returns this
  */
 proto.api.v1alpha1.wfm.UpsertRealTimeManagementStateColorRequest.prototype.setRgbaColorId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -95306,7 +95306,7 @@ proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-agentLeavePetitionId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+agentLeavePetitionId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -95344,7 +95344,7 @@ proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionRequest.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setAgentLeavePetitionId(value);
       break;
     default:
@@ -95377,8 +95377,8 @@ proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionRequest.prototype.serializeBinar
 proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAgentLeavePetitionId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -95388,19 +95388,19 @@ proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionRequest.serializeBinaryToWriter 
 
 /**
  * optional int64 agent_leave_petition_id = 1;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionRequest.prototype.getAgentLeavePetitionId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionRequest} returns this
  */
 proto.api.v1alpha1.wfm.ArchiveAgentLeavePetitionRequest.prototype.setAgentLeavePetitionId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -95587,7 +95587,7 @@ proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.prototype.toObject = fun
  */
 proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-agentLeavePetitionId: jspb.Message.getFieldWithDefault(msg, 1, "0"),
+agentLeavePetitionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
 petitionStatus: jspb.Message.getFieldWithDefault(msg, 2, 0),
 responseComment: jspb.Message.getFieldWithDefault(msg, 3, ""),
 retainPartialShifts: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
@@ -95629,7 +95629,7 @@ proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setAgentLeavePetitionId(value);
       break;
     case 2:
@@ -95678,8 +95678,8 @@ proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.prototype.serializeBinar
 proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAgentLeavePetitionId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -95717,19 +95717,19 @@ proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.serializeBinaryToWriter 
 
 /**
  * optional int64 agent_leave_petition_id = 1;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.prototype.getAgentLeavePetitionId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest} returns this
  */
 proto.api.v1alpha1.wfm.ResolveAgentLeavePetitionRequest.prototype.setAgentLeavePetitionId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -95988,7 +95988,7 @@ proto.api.v1alpha1.wfm.CancelAgentLeavePetitionRequest.prototype.toObject = func
  */
 proto.api.v1alpha1.wfm.CancelAgentLeavePetitionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-agentLeavePetitionId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+agentLeavePetitionId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -96026,7 +96026,7 @@ proto.api.v1alpha1.wfm.CancelAgentLeavePetitionRequest.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setAgentLeavePetitionId(value);
       break;
     default:
@@ -96059,8 +96059,8 @@ proto.api.v1alpha1.wfm.CancelAgentLeavePetitionRequest.prototype.serializeBinary
 proto.api.v1alpha1.wfm.CancelAgentLeavePetitionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAgentLeavePetitionId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -96070,19 +96070,19 @@ proto.api.v1alpha1.wfm.CancelAgentLeavePetitionRequest.serializeBinaryToWriter =
 
 /**
  * optional int64 agent_leave_petition_id = 1;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.wfm.CancelAgentLeavePetitionRequest.prototype.getAgentLeavePetitionId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.CancelAgentLeavePetitionRequest} returns this
  */
 proto.api.v1alpha1.wfm.CancelAgentLeavePetitionRequest.prototype.setAgentLeavePetitionId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -96420,7 +96420,7 @@ proto.api.v1alpha1.wfm.CreateRgbaColorResponse.prototype.toObject = function(opt
  */
 proto.api.v1alpha1.wfm.CreateRgbaColorResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-rgbaColorId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+rgbaColorId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -96458,7 +96458,7 @@ proto.api.v1alpha1.wfm.CreateRgbaColorResponse.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setRgbaColorId(value);
       break;
     default:
@@ -96491,8 +96491,8 @@ proto.api.v1alpha1.wfm.CreateRgbaColorResponse.prototype.serializeBinary = funct
 proto.api.v1alpha1.wfm.CreateRgbaColorResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getRgbaColorId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -96502,19 +96502,19 @@ proto.api.v1alpha1.wfm.CreateRgbaColorResponse.serializeBinaryToWriter = functio
 
 /**
  * optional int64 rgba_color_id = 1;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.wfm.CreateRgbaColorResponse.prototype.getRgbaColorId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.CreateRgbaColorResponse} returns this
  */
 proto.api.v1alpha1.wfm.CreateRgbaColorResponse.prototype.setRgbaColorId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -97113,7 +97113,7 @@ proto.api.v1alpha1.wfm.DeleteRgbaColorRequest.prototype.toObject = function(opt_
  */
 proto.api.v1alpha1.wfm.DeleteRgbaColorRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-rgbaColorId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+rgbaColorId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -97151,7 +97151,7 @@ proto.api.v1alpha1.wfm.DeleteRgbaColorRequest.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setRgbaColorId(value);
       break;
     default:
@@ -97184,8 +97184,8 @@ proto.api.v1alpha1.wfm.DeleteRgbaColorRequest.prototype.serializeBinary = functi
 proto.api.v1alpha1.wfm.DeleteRgbaColorRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getRgbaColorId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -97195,19 +97195,19 @@ proto.api.v1alpha1.wfm.DeleteRgbaColorRequest.serializeBinaryToWriter = function
 
 /**
  * optional int64 rgba_color_id = 1;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.wfm.DeleteRgbaColorRequest.prototype.getRgbaColorId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.DeleteRgbaColorRequest} returns this
  */
 proto.api.v1alpha1.wfm.DeleteRgbaColorRequest.prototype.setRgbaColorId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -97495,7 +97495,7 @@ proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigResponse.prototype.t
  */
 proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-adherenceRuleNotificationConfigId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+adherenceRuleNotificationConfigId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -97533,7 +97533,7 @@ proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigResponse.deserialize
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setAdherenceRuleNotificationConfigId(value);
       break;
     default:
@@ -97566,8 +97566,8 @@ proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigResponse.prototype.s
 proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAdherenceRuleNotificationConfigId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -97577,19 +97577,19 @@ proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigResponse.serializeBi
 
 /**
  * optional int64 adherence_rule_notification_config_id = 1;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigResponse.prototype.getAdherenceRuleNotificationConfigId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigResponse} returns this
  */
 proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigResponse.prototype.setAdherenceRuleNotificationConfigId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -97776,7 +97776,7 @@ proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigEntryResponse.protot
  */
 proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigEntryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-adherenceRuleNotificationConfigEntryId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+adherenceRuleNotificationConfigEntryId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -97814,7 +97814,7 @@ proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigEntryResponse.deseri
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setAdherenceRuleNotificationConfigEntryId(value);
       break;
     default:
@@ -97847,8 +97847,8 @@ proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigEntryResponse.protot
 proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigEntryResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAdherenceRuleNotificationConfigEntryId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -97858,19 +97858,19 @@ proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigEntryResponse.serial
 
 /**
  * optional int64 adherence_rule_notification_config_entry_id = 1;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigEntryResponse.prototype.getAdherenceRuleNotificationConfigEntryId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigEntryResponse} returns this
  */
 proto.api.v1alpha1.wfm.CreateAdherenceRuleNotificationConfigEntryResponse.prototype.setAdherenceRuleNotificationConfigEntryId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -98057,7 +98057,7 @@ proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleResponse.prototype.toObjec
  */
 proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-adherenceDepartmentalRuleId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+adherenceDepartmentalRuleId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -98095,7 +98095,7 @@ proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleResponse.deserializeBinary
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setAdherenceDepartmentalRuleId(value);
       break;
     default:
@@ -98128,8 +98128,8 @@ proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleResponse.prototype.seriali
 proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAdherenceDepartmentalRuleId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -98139,19 +98139,19 @@ proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleResponse.serializeBinaryTo
 
 /**
  * optional int64 adherence_departmental_rule_id = 1;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleResponse.prototype.getAdherenceDepartmentalRuleId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleResponse} returns this
  */
 proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleResponse.prototype.setAdherenceDepartmentalRuleId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -98338,7 +98338,7 @@ proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleClauseResponse.prototype.t
  */
 proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleClauseResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-adherenceDepartmentalRuleClauseId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+adherenceDepartmentalRuleClauseId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -98376,7 +98376,7 @@ proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleClauseResponse.deserialize
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setAdherenceDepartmentalRuleClauseId(value);
       break;
     default:
@@ -98409,8 +98409,8 @@ proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleClauseResponse.prototype.s
 proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleClauseResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAdherenceDepartmentalRuleClauseId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -98420,19 +98420,19 @@ proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleClauseResponse.serializeBi
 
 /**
  * optional int64 adherence_departmental_rule_clause_id = 1;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleClauseResponse.prototype.getAdherenceDepartmentalRuleClauseId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleClauseResponse} returns this
  */
 proto.api.v1alpha1.wfm.CreateAdherenceDepartmentalRuleClauseResponse.prototype.setAdherenceDepartmentalRuleClauseId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -98619,7 +98619,7 @@ proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleResponse.prototype.toObject = fun
  */
 proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-adherenceAgentRuleId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+adherenceAgentRuleId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -98657,7 +98657,7 @@ proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleResponse.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setAdherenceAgentRuleId(value);
       break;
     default:
@@ -98690,8 +98690,8 @@ proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleResponse.prototype.serializeBinar
 proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAdherenceAgentRuleId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -98701,19 +98701,19 @@ proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleResponse.serializeBinaryToWriter 
 
 /**
  * optional int64 adherence_agent_rule_id = 1;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleResponse.prototype.getAdherenceAgentRuleId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleResponse} returns this
  */
 proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleResponse.prototype.setAdherenceAgentRuleId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -98900,7 +98900,7 @@ proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleClauseResponse.prototype.toObject
  */
 proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleClauseResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-adherenceAgentRuleClauseId: jspb.Message.getFieldWithDefault(msg, 1, "0")
+adherenceAgentRuleClauseId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -98938,7 +98938,7 @@ proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleClauseResponse.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readInt64String());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setAdherenceAgentRuleClauseId(value);
       break;
     default:
@@ -98971,8 +98971,8 @@ proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleClauseResponse.prototype.serializ
 proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleClauseResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAdherenceAgentRuleClauseId();
-  if (parseInt(f, 10) !== 0) {
-    writer.writeInt64String(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -98982,19 +98982,19 @@ proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleClauseResponse.serializeBinaryToW
 
 /**
  * optional int64 adherence_agent_rule_clause_id = 1;
- * @return {string}
+ * @return {number}
  */
 proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleClauseResponse.prototype.getAdherenceAgentRuleClauseId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, "0"));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleClauseResponse} returns this
  */
 proto.api.v1alpha1.wfm.CreateAdherenceAgentRuleClauseResponse.prototype.setAdherenceAgentRuleClauseId = function(value) {
-  return jspb.Message.setProto3StringIntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
