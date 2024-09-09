@@ -687,6 +687,11 @@ export class InsightContextualAction extends jspb.Message {
   getComponent(): ComponentAction | undefined;
   setComponent(value?: ComponentAction): void;
 
+  hasDrillThrough(): boolean;
+  clearDrillThrough(): void;
+  getDrillThrough(): DrillThroughAction | undefined;
+  setDrillThrough(value?: DrillThroughAction): void;
+
   getActionCase(): InsightContextualAction.ActionCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InsightContextualAction.AsObject;
@@ -703,12 +708,14 @@ export namespace InsightContextualAction {
     type: InsightContextualActionTypeMap[keyof InsightContextualActionTypeMap],
     link?: LinkAction.AsObject,
     component?: ComponentAction.AsObject,
+    drillThrough?: DrillThroughAction.AsObject,
   }
 
   export enum ActionCase {
     ACTION_NOT_SET = 0,
     LINK = 2,
     COMPONENT = 3,
+    DRILL_THROUGH = 4,
   }
 }
 
@@ -757,6 +764,56 @@ export namespace ComponentAction {
   export type AsObject = {
     componentName: string,
     componentValueMap: Array<[string, string]>,
+  }
+}
+
+export class DrillThroughAction extends jspb.Message {
+  getInsightResourceId(): string;
+  setInsightResourceId(value: string): void;
+
+  clearDrillThroughActionsList(): void;
+  getDrillThroughActionsList(): Array<DrillThrough>;
+  setDrillThroughActionsList(value: Array<DrillThrough>): void;
+  addDrillThroughActions(value?: DrillThrough, index?: number): DrillThrough;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DrillThroughAction.AsObject;
+  static toObject(includeInstance: boolean, msg: DrillThroughAction): DrillThroughAction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DrillThroughAction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DrillThroughAction;
+  static deserializeBinaryFromReader(message: DrillThroughAction, reader: jspb.BinaryReader): DrillThroughAction;
+}
+
+export namespace DrillThroughAction {
+  export type AsObject = {
+    insightResourceId: string,
+    drillThroughActionsList: Array<DrillThrough.AsObject>,
+  }
+}
+
+export class DrillThrough extends jspb.Message {
+  getDrillThroughParameter(): string;
+  setDrillThroughParameter(value: string): void;
+
+  getDrillThroughParameterValue(): string;
+  setDrillThroughParameterValue(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DrillThrough.AsObject;
+  static toObject(includeInstance: boolean, msg: DrillThrough): DrillThrough.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DrillThrough, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DrillThrough;
+  static deserializeBinaryFromReader(message: DrillThrough, reader: jspb.BinaryReader): DrillThrough;
+}
+
+export namespace DrillThrough {
+  export type AsObject = {
+    drillThroughParameter: string,
+    drillThroughParameterValue: string,
   }
 }
 
@@ -1158,6 +1215,7 @@ export interface InsightContextualActionTypeMap {
   INSIGHT_CONTEXTUAL_ACTION_TYPE_UNSPECIFIED: 0;
   INSIGHT_CONTEXTUAL_ACTION_TYPE_LINK: 1;
   INSIGHT_CONTEXTUAL_ACTION_TYPE_COMPONENT: 2;
+  INSIGHT_CONTEXTUAL_ACTION_TYPE_DRILL_THROUGH: 3;
 }
 
 export const InsightContextualActionType: InsightContextualActionTypeMap;
