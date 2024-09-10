@@ -7077,7 +7077,9 @@ proto.api.commons.integrations.ReceiptField.toObject = function(includeInstance,
   var f, obj = {
 name: jspb.Message.getFieldWithDefault(msg, 1, ""),
 displayName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-value: jspb.Message.getFieldWithDefault(msg, 3, "")
+value: jspb.Message.getFieldWithDefault(msg, 3, ""),
+validationType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+format: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -7126,6 +7128,14 @@ proto.api.commons.integrations.ReceiptField.deserializeBinaryFromReader = functi
       var value = /** @type {string} */ (reader.readString());
       msg.setValue(value);
       break;
+    case 4:
+      var value = /** @type {!proto.api.commons.integrations.Validation} */ (reader.readEnum());
+      msg.setValidationType(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFormat(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -7173,6 +7183,20 @@ proto.api.commons.integrations.ReceiptField.serializeBinaryToWriter = function(m
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getValidationType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
+      f
+    );
+  }
+  f = message.getFormat();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -7230,6 +7254,42 @@ proto.api.commons.integrations.ReceiptField.prototype.getValue = function() {
  */
 proto.api.commons.integrations.ReceiptField.prototype.setValue = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional Validation validation_type = 4;
+ * @return {!proto.api.commons.integrations.Validation}
+ */
+proto.api.commons.integrations.ReceiptField.prototype.getValidationType = function() {
+  return /** @type {!proto.api.commons.integrations.Validation} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.integrations.Validation} value
+ * @return {!proto.api.commons.integrations.ReceiptField} returns this
+ */
+proto.api.commons.integrations.ReceiptField.prototype.setValidationType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+/**
+ * optional string format = 5;
+ * @return {string}
+ */
+proto.api.commons.integrations.ReceiptField.prototype.getFormat = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.integrations.ReceiptField} returns this
+ */
+proto.api.commons.integrations.ReceiptField.prototype.setFormat = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -7854,7 +7914,9 @@ proto.api.commons.integrations.InvoiceField.toObject = function(includeInstance,
 itemType: jspb.Message.getFieldWithDefault(msg, 1, 0),
 name: jspb.Message.getFieldWithDefault(msg, 2, ""),
 displayName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-value: jspb.Message.getFieldWithDefault(msg, 4, "")
+value: jspb.Message.getFieldWithDefault(msg, 4, ""),
+validationType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+format: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -7906,6 +7968,14 @@ proto.api.commons.integrations.InvoiceField.deserializeBinaryFromReader = functi
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setValue(value);
+      break;
+    case 5:
+      var value = /** @type {!proto.api.commons.integrations.Validation} */ (reader.readEnum());
+      msg.setValidationType(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFormat(value);
       break;
     default:
       reader.skipField();
@@ -7961,6 +8031,20 @@ proto.api.commons.integrations.InvoiceField.serializeBinaryToWriter = function(m
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getValidationType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      5,
+      f
+    );
+  }
+  f = message.getFormat();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -8036,6 +8120,42 @@ proto.api.commons.integrations.InvoiceField.prototype.getValue = function() {
  */
 proto.api.commons.integrations.InvoiceField.prototype.setValue = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional Validation validation_type = 5;
+ * @return {!proto.api.commons.integrations.Validation}
+ */
+proto.api.commons.integrations.InvoiceField.prototype.getValidationType = function() {
+  return /** @type {!proto.api.commons.integrations.Validation} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.integrations.Validation} value
+ * @return {!proto.api.commons.integrations.InvoiceField} returns this
+ */
+proto.api.commons.integrations.InvoiceField.prototype.setValidationType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 5, value);
+};
+
+
+/**
+ * optional string format = 6;
+ * @return {string}
+ */
+proto.api.commons.integrations.InvoiceField.prototype.getFormat = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.integrations.InvoiceField} returns this
+ */
+proto.api.commons.integrations.InvoiceField.prototype.setFormat = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
