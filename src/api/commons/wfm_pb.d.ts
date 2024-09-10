@@ -1019,10 +1019,10 @@ export class AdherenceDepartmentalRule extends jspb.Message {
   getCustomRange(): DatetimeRange | undefined;
   setCustomRange(value?: DatetimeRange): void;
 
-  clearClausesList(): void;
-  getClausesList(): Array<AdherenceDepartmentalRule>;
-  setClausesList(value: Array<AdherenceDepartmentalRule>): void;
-  addClauses(value?: AdherenceDepartmentalRule, index?: number): AdherenceDepartmentalRule;
+  clearRuleClausesList(): void;
+  getRuleClausesList(): Array<AdherenceDepartmentalRuleClause>;
+  setRuleClausesList(value: Array<AdherenceDepartmentalRuleClause>): void;
+  addRuleClauses(value?: AdherenceDepartmentalRuleClause, index?: number): AdherenceDepartmentalRuleClause;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AdherenceDepartmentalRule.AsObject;
@@ -1043,7 +1043,7 @@ export namespace AdherenceDepartmentalRule {
     adherenceRuleNotificationConfigId: string,
     ruleRange: AdherenceRuleRangeMap[keyof AdherenceRuleRangeMap],
     customRange?: DatetimeRange.AsObject,
-    clausesList: Array<AdherenceDepartmentalRule.AsObject>,
+    ruleClausesList: Array<AdherenceDepartmentalRuleClause.AsObject>,
   }
 }
 
@@ -1117,10 +1117,10 @@ export class AdherenceAgentRule extends jspb.Message {
   getAdherenceRuleNotificationConfigId(): string;
   setAdherenceRuleNotificationConfigId(value: string): void;
 
-  clearClausesList(): void;
-  getClausesList(): Array<AdherenceAgentRuleClause>;
-  setClausesList(value: Array<AdherenceAgentRuleClause>): void;
-  addClauses(value?: AdherenceAgentRuleClause, index?: number): AdherenceAgentRuleClause;
+  clearRuleClausesList(): void;
+  getRuleClausesList(): Array<AdherenceAgentRuleClause>;
+  setRuleClausesList(value: Array<AdherenceAgentRuleClause>): void;
+  addRuleClauses(value?: AdherenceAgentRuleClause, index?: number): AdherenceAgentRuleClause;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AdherenceAgentRule.AsObject;
@@ -1139,7 +1139,7 @@ export namespace AdherenceAgentRule {
     selectedEntity?: ConfigEntity.AsObject,
     ruleRequirementType: AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap],
     adherenceRuleNotificationConfigId: string,
-    clausesList: Array<AdherenceAgentRuleClause.AsObject>,
+    ruleClausesList: Array<AdherenceAgentRuleClause.AsObject>,
   }
 }
 
