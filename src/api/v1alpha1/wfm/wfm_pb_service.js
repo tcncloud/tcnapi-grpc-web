@@ -1702,13 +1702,13 @@ WFM.CreateAdherenceRuleNotificationConfigEntry = {
   responseType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryResponse
 };
 
-WFM.ListAdherenceAgentRules = {
-  methodName: "ListAdherenceAgentRules",
+WFM.ListAdherenceRuleNotificationConfigs = {
+  methodName: "ListAdherenceRuleNotificationConfigs",
   service: WFM,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesRequest,
-  responseType: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesResponse
+  requestType: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsResponse
 };
 
 WFM.CreateAdherenceDepartmentalRule = {
@@ -1756,13 +1756,13 @@ WFM.CreateAdherenceAgentRuleClause = {
   responseType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseResponse
 };
 
-WFM.ListAdherenceRuleNotificationConfigs = {
-  methodName: "ListAdherenceRuleNotificationConfigs",
+WFM.ListAdherenceAgentRules = {
+  methodName: "ListAdherenceAgentRules",
   service: WFM,
   requestStream: false,
   responseStream: false,
-  requestType: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsRequest,
-  responseType: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsResponse
+  requestType: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesResponse
 };
 
 exports.WFM = WFM;
@@ -7648,11 +7648,11 @@ WFMClient.prototype.createAdherenceRuleNotificationConfigEntry = function create
   };
 };
 
-WFMClient.prototype.listAdherenceAgentRules = function listAdherenceAgentRules(requestMessage, metadata, callback) {
+WFMClient.prototype.listAdherenceRuleNotificationConfigs = function listAdherenceRuleNotificationConfigs(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WFM.ListAdherenceAgentRules, {
+  var client = grpc.unary(WFM.ListAdherenceRuleNotificationConfigs, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -7834,11 +7834,11 @@ WFMClient.prototype.createAdherenceAgentRuleClause = function createAdherenceAge
   };
 };
 
-WFMClient.prototype.listAdherenceRuleNotificationConfigs = function listAdherenceRuleNotificationConfigs(requestMessage, metadata, callback) {
+WFMClient.prototype.listAdherenceAgentRules = function listAdherenceAgentRules(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WFM.ListAdherenceRuleNotificationConfigs, {
+  var client = grpc.unary(WFM.ListAdherenceAgentRules, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

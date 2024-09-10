@@ -1696,13 +1696,13 @@ type WFMCreateAdherenceRuleNotificationConfigEntry = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryResponse;
 };
 
-type WFMListAdherenceAgentRules = {
+type WFMListAdherenceRuleNotificationConfigs = {
   readonly methodName: string;
   readonly service: typeof WFM;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesRequest;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesResponse;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsResponse;
 };
 
 type WFMCreateAdherenceDepartmentalRule = {
@@ -1750,13 +1750,13 @@ type WFMCreateAdherenceAgentRuleClause = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseResponse;
 };
 
-type WFMListAdherenceRuleNotificationConfigs = {
+type WFMListAdherenceAgentRules = {
   readonly methodName: string;
   readonly service: typeof WFM;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsRequest;
-  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsResponse;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesResponse;
 };
 
 export class WFM {
@@ -1949,13 +1949,13 @@ export class WFM {
   static readonly DeleteRgbaColor: WFMDeleteRgbaColor;
   static readonly CreateAdherenceRuleNotificationConfig: WFMCreateAdherenceRuleNotificationConfig;
   static readonly CreateAdherenceRuleNotificationConfigEntry: WFMCreateAdherenceRuleNotificationConfigEntry;
-  static readonly ListAdherenceAgentRules: WFMListAdherenceAgentRules;
+  static readonly ListAdherenceRuleNotificationConfigs: WFMListAdherenceRuleNotificationConfigs;
   static readonly CreateAdherenceDepartmentalRule: WFMCreateAdherenceDepartmentalRule;
   static readonly CreateAdherenceDepartmentalRuleClause: WFMCreateAdherenceDepartmentalRuleClause;
   static readonly ListAdherenceDepartmentalRules: WFMListAdherenceDepartmentalRules;
   static readonly CreateAdherenceAgentRule: WFMCreateAdherenceAgentRule;
   static readonly CreateAdherenceAgentRuleClause: WFMCreateAdherenceAgentRuleClause;
-  static readonly ListAdherenceRuleNotificationConfigs: WFMListAdherenceRuleNotificationConfigs;
+  static readonly ListAdherenceAgentRules: WFMListAdherenceAgentRules;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3634,14 +3634,14 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryResponse|null) => void
   ): UnaryResponse;
-  listAdherenceAgentRules(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesRequest,
+  listAdherenceRuleNotificationConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsResponse|null) => void
   ): UnaryResponse;
-  listAdherenceAgentRules(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesResponse|null) => void
+  listAdherenceRuleNotificationConfigs(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsResponse|null) => void
   ): UnaryResponse;
   createAdherenceDepartmentalRule(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleRequest,
@@ -3688,14 +3688,14 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseResponse|null) => void
   ): UnaryResponse;
-  listAdherenceRuleNotificationConfigs(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsRequest,
+  listAdherenceAgentRules(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesResponse|null) => void
   ): UnaryResponse;
-  listAdherenceRuleNotificationConfigs(
-    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsRequest,
-    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsResponse|null) => void
+  listAdherenceAgentRules(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesResponse|null) => void
   ): UnaryResponse;
 }
 
