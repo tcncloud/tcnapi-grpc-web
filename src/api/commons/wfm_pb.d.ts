@@ -914,6 +914,11 @@ export class AdherenceRuleNotificationConfig extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
+  clearEntriesList(): void;
+  getEntriesList(): Array<AdherenceRuleNotificationConfigEntry>;
+  setEntriesList(value: Array<AdherenceRuleNotificationConfigEntry>): void;
+  addEntries(value?: AdherenceRuleNotificationConfigEntry, index?: number): AdherenceRuleNotificationConfigEntry;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AdherenceRuleNotificationConfig.AsObject;
   static toObject(includeInstance: boolean, msg: AdherenceRuleNotificationConfig): AdherenceRuleNotificationConfig.AsObject;
@@ -928,6 +933,7 @@ export namespace AdherenceRuleNotificationConfig {
   export type AsObject = {
     adherenceRuleNotificationConfigId: string,
     name: string,
+    entriesList: Array<AdherenceRuleNotificationConfigEntry.AsObject>,
   }
 }
 
@@ -1013,6 +1019,11 @@ export class AdherenceDepartmentalRule extends jspb.Message {
   getCustomRange(): DatetimeRange | undefined;
   setCustomRange(value?: DatetimeRange): void;
 
+  clearClausesList(): void;
+  getClausesList(): Array<AdherenceDepartmentalRule>;
+  setClausesList(value: Array<AdherenceDepartmentalRule>): void;
+  addClauses(value?: AdherenceDepartmentalRule, index?: number): AdherenceDepartmentalRule;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AdherenceDepartmentalRule.AsObject;
   static toObject(includeInstance: boolean, msg: AdherenceDepartmentalRule): AdherenceDepartmentalRule.AsObject;
@@ -1032,6 +1043,7 @@ export namespace AdherenceDepartmentalRule {
     adherenceRuleNotificationConfigId: string,
     ruleRange: AdherenceRuleRangeMap[keyof AdherenceRuleRangeMap],
     customRange?: DatetimeRange.AsObject,
+    clausesList: Array<AdherenceDepartmentalRule.AsObject>,
   }
 }
 
@@ -1105,6 +1117,11 @@ export class AdherenceAgentRule extends jspb.Message {
   getAdherenceRuleNotificationConfigId(): string;
   setAdherenceRuleNotificationConfigId(value: string): void;
 
+  clearClausesList(): void;
+  getClausesList(): Array<AdherenceAgentRuleClause>;
+  setClausesList(value: Array<AdherenceAgentRuleClause>): void;
+  addClauses(value?: AdherenceAgentRuleClause, index?: number): AdherenceAgentRuleClause;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AdherenceAgentRule.AsObject;
   static toObject(includeInstance: boolean, msg: AdherenceAgentRule): AdherenceAgentRule.AsObject;
@@ -1122,6 +1139,7 @@ export namespace AdherenceAgentRule {
     selectedEntity?: ConfigEntity.AsObject,
     ruleRequirementType: AdherenceRuleRequirementTypeMap[keyof AdherenceRuleRequirementTypeMap],
     adherenceRuleNotificationConfigId: string,
+    clausesList: Array<AdherenceAgentRuleClause.AsObject>,
   }
 }
 

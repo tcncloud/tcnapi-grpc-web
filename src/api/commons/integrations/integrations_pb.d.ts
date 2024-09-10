@@ -35,6 +35,12 @@ export class ReceiptField extends jspb.Message {
   getValue(): string;
   setValue(value: string): void;
 
+  getValidationType(): ValidationMap[keyof ValidationMap];
+  setValidationType(value: ValidationMap[keyof ValidationMap]): void;
+
+  getFormat(): string;
+  setFormat(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReceiptField.AsObject;
   static toObject(includeInstance: boolean, msg: ReceiptField): ReceiptField.AsObject;
@@ -50,6 +56,8 @@ export namespace ReceiptField {
     name: string,
     displayName: string,
     value: string,
+    validationType: ValidationMap[keyof ValidationMap],
+    format: string,
   }
 }
 
@@ -144,6 +152,12 @@ export class InvoiceField extends jspb.Message {
   getValue(): string;
   setValue(value: string): void;
 
+  getValidationType(): ValidationMap[keyof ValidationMap];
+  setValidationType(value: ValidationMap[keyof ValidationMap]): void;
+
+  getFormat(): string;
+  setFormat(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InvoiceField.AsObject;
   static toObject(includeInstance: boolean, msg: InvoiceField): InvoiceField.AsObject;
@@ -160,6 +174,8 @@ export namespace InvoiceField {
     name: string,
     displayName: string,
     value: string,
+    validationType: ValidationMap[keyof ValidationMap],
+    format: string,
   }
 }
 

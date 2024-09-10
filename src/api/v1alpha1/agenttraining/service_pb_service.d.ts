@@ -50,6 +50,15 @@ type AgentTrainingServiceListDashboards = {
   readonly responseType: typeof api_v1alpha1_agenttraining_learning_opportunity_pb.ListDashboardsResponse;
 };
 
+type AgentTrainingServiceListManagerDashboards = {
+  readonly methodName: string;
+  readonly service: typeof AgentTrainingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_agenttraining_learning_opportunity_pb.ListDashboardsRequest;
+  readonly responseType: typeof api_v1alpha1_agenttraining_learning_opportunity_pb.ListDashboardsResponse;
+};
+
 type AgentTrainingServiceUpdateLearningOpportunity = {
   readonly methodName: string;
   readonly service: typeof AgentTrainingService;
@@ -84,6 +93,7 @@ export class AgentTrainingService {
   static readonly ListAgentLearningOpportunities: AgentTrainingServiceListAgentLearningOpportunities;
   static readonly CompleteAgentLearningOpportunity: AgentTrainingServiceCompleteAgentLearningOpportunity;
   static readonly ListDashboards: AgentTrainingServiceListDashboards;
+  static readonly ListManagerDashboards: AgentTrainingServiceListManagerDashboards;
   static readonly UpdateLearningOpportunity: AgentTrainingServiceUpdateLearningOpportunity;
   static readonly DeleteLearningOpportunity: AgentTrainingServiceDeleteLearningOpportunity;
   static readonly GetLearningOpportunity: AgentTrainingServiceGetLearningOpportunity;
@@ -163,6 +173,15 @@ export class AgentTrainingServiceClient {
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.ListDashboardsResponse|null) => void
   ): UnaryResponse;
   listDashboards(
+    requestMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.ListDashboardsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.ListDashboardsResponse|null) => void
+  ): UnaryResponse;
+  listManagerDashboards(
+    requestMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.ListDashboardsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.ListDashboardsResponse|null) => void
+  ): UnaryResponse;
+  listManagerDashboards(
     requestMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.ListDashboardsRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_agenttraining_learning_opportunity_pb.ListDashboardsResponse|null) => void
   ): UnaryResponse;

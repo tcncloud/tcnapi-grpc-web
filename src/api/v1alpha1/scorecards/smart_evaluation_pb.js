@@ -581,7 +581,11 @@ proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.toObject = f
  */
 proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+orderBy: jspb.Message.getFieldWithDefault(msg, 2, ""),
+pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0),
+pageToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
+returnFields: (f = msg.getReturnFields()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+filter: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -618,6 +622,27 @@ proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.deserializeBinaryFromR
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrderBy(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
+    case 5:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setReturnFields(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilter(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -647,6 +672,151 @@ proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.serializeBin
  */
 proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getOrderBy();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getReturnFields();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+  f = message.getFilter();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string order_by = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.getOrderBy = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.setOrderBy = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional int32 page_size = 3;
+ * @return {number}
+ */
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string page_token = 4;
+ * @return {string}
+ */
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.FieldMask return_fields = 5;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.getReturnFields = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest} returns this
+*/
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.setReturnFields = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.clearReturnFields = function() {
+  return this.setReturnFields(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.hasReturnFields = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string filter = 6;
+ * @return {string}
+ */
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.getFilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest} returns this
+ */
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsRequest.prototype.setFilter = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -690,7 +860,8 @@ proto.api.v1alpha1.scorecards.ListSmartEvaluationsResponse.prototype.toObject = 
 proto.api.v1alpha1.scorecards.ListSmartEvaluationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 smartEvaluationsList: jspb.Message.toObjectList(msg.getSmartEvaluationsList(),
-    api_commons_scorecards_pb.SmartEvaluation.toObject, includeInstance)
+    api_commons_scorecards_pb.SmartEvaluation.toObject, includeInstance),
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -732,6 +903,10 @@ proto.api.v1alpha1.scorecards.ListSmartEvaluationsResponse.deserializeBinaryFrom
       reader.readMessage(value,api_commons_scorecards_pb.SmartEvaluation.deserializeBinaryFromReader);
       msg.addSmartEvaluations(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -767,6 +942,13 @@ proto.api.v1alpha1.scorecards.ListSmartEvaluationsResponse.serializeBinaryToWrit
       1,
       f,
       api_commons_scorecards_pb.SmartEvaluation.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -807,6 +989,24 @@ proto.api.v1alpha1.scorecards.ListSmartEvaluationsResponse.prototype.addSmartEva
  */
 proto.api.v1alpha1.scorecards.ListSmartEvaluationsResponse.prototype.clearSmartEvaluationsList = function() {
   return this.setSmartEvaluationsList([]);
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.scorecards.ListSmartEvaluationsResponse} returns this
+ */
+proto.api.v1alpha1.scorecards.ListSmartEvaluationsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

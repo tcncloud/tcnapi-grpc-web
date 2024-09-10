@@ -83,7 +83,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.commons.LearningOpportunity.oneofGroups_ = [[16,17]];
+proto.api.commons.LearningOpportunity.oneofGroups_ = [[16,17,18]];
 
 /**
  * @enum {number}
@@ -91,7 +91,8 @@ proto.api.commons.LearningOpportunity.oneofGroups_ = [[16,17]];
 proto.api.commons.LearningOpportunity.OriginIdentifierCase = {
   ORIGIN_IDENTIFIER_NOT_SET: 0,
   EVALUATION_ID: 16,
-  AUTO_EVALUATION_ID: 17
+  AUTO_EVALUATION_ID: 17,
+  SMART_EVALUATION_ID: 18
 };
 
 /**
@@ -146,7 +147,8 @@ status: jspb.Message.getFieldWithDefault(msg, 13, 0),
 origin: jspb.Message.getFieldWithDefault(msg, 14, 0),
 creatorUserId: jspb.Message.getFieldWithDefault(msg, 15, ""),
 evaluationId: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
-autoEvaluationId: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f
+autoEvaluationId: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+smartEvaluationId: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -243,6 +245,10 @@ proto.api.commons.LearningOpportunity.deserializeBinaryFromReader = function(msg
     case 17:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setAutoEvaluationId(value);
+      break;
+    case 18:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setSmartEvaluationId(value);
       break;
     default:
       reader.skipField();
@@ -376,6 +382,13 @@ proto.api.commons.LearningOpportunity.serializeBinaryToWriter = function(message
   if (f != null) {
     writer.writeInt64(
       17,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 18));
+  if (f != null) {
+    writer.writeInt64(
+      18,
       f
     );
   }
@@ -707,6 +720,42 @@ proto.api.commons.LearningOpportunity.prototype.hasAutoEvaluationId = function()
 };
 
 
+/**
+ * optional int64 smart_evaluation_id = 18;
+ * @return {number}
+ */
+proto.api.commons.LearningOpportunity.prototype.getSmartEvaluationId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.commons.LearningOpportunity} returns this
+ */
+proto.api.commons.LearningOpportunity.prototype.setSmartEvaluationId = function(value) {
+  return jspb.Message.setOneofField(this, 18, proto.api.commons.LearningOpportunity.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.commons.LearningOpportunity} returns this
+ */
+proto.api.commons.LearningOpportunity.prototype.clearSmartEvaluationId = function() {
+  return jspb.Message.setOneofField(this, 18, proto.api.commons.LearningOpportunity.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.LearningOpportunity.prototype.hasSmartEvaluationId = function() {
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
 
 
 
@@ -884,7 +933,8 @@ proto.api.commons.LearningOpportunityOrigin = {
   AUTO_EVALUATION: 2,
   FLAG_EVALUATION: 3,
   CONVERSATION: 4,
-  FLAGGED_CONVERSATION: 5
+  FLAGGED_CONVERSATION: 5,
+  SMART_EVALUATION: 6
 };
 
 goog.object.extend(exports, proto.api.commons);
