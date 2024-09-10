@@ -7710,7 +7710,7 @@ proto.api.commons.AdherenceDepartmentalRuleAction.prototype.setActionType = func
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.AdherenceDepartmentalRule.repeatedFields_ = [9];
+proto.api.commons.AdherenceDepartmentalRule.repeatedFields_ = [8];
 
 
 
@@ -7750,8 +7750,8 @@ ruleRequirementType: jspb.Message.getFieldWithDefault(msg, 4, 0),
 adherenceRuleNotificationConfigId: jspb.Message.getFieldWithDefault(msg, 5, "0"),
 ruleRange: jspb.Message.getFieldWithDefault(msg, 6, 0),
 customRange: (f = msg.getCustomRange()) && proto.api.commons.DatetimeRange.toObject(includeInstance, f),
-ruleClausesList: jspb.Message.toObjectList(msg.getRuleClausesList(),
-    proto.api.commons.AdherenceDepartmentalRuleClause.toObject, includeInstance)
+clausesList: jspb.Message.toObjectList(msg.getClausesList(),
+    proto.api.commons.AdherenceDepartmentalRule.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -7818,10 +7818,10 @@ proto.api.commons.AdherenceDepartmentalRule.deserializeBinaryFromReader = functi
       reader.readMessage(value,proto.api.commons.DatetimeRange.deserializeBinaryFromReader);
       msg.setCustomRange(value);
       break;
-    case 9:
-      var value = new proto.api.commons.AdherenceDepartmentalRuleClause;
-      reader.readMessage(value,proto.api.commons.AdherenceDepartmentalRuleClause.deserializeBinaryFromReader);
-      msg.addRuleClauses(value);
+    case 8:
+      var value = new proto.api.commons.AdherenceDepartmentalRule;
+      reader.readMessage(value,proto.api.commons.AdherenceDepartmentalRule.deserializeBinaryFromReader);
+      msg.addClauses(value);
       break;
     default:
       reader.skipField();
@@ -7903,12 +7903,12 @@ proto.api.commons.AdherenceDepartmentalRule.serializeBinaryToWriter = function(m
       proto.api.commons.DatetimeRange.serializeBinaryToWriter
     );
   }
-  f = message.getRuleClausesList();
+  f = message.getClausesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      9,
+      8,
       f,
-      proto.api.commons.AdherenceDepartmentalRuleClause.serializeBinaryToWriter
+      proto.api.commons.AdherenceDepartmentalRule.serializeBinaryToWriter
     );
   }
 };
@@ -8079,31 +8079,31 @@ proto.api.commons.AdherenceDepartmentalRule.prototype.hasCustomRange = function(
 
 
 /**
- * repeated AdherenceDepartmentalRuleClause rule_clauses = 9;
- * @return {!Array<!proto.api.commons.AdherenceDepartmentalRuleClause>}
+ * repeated AdherenceDepartmentalRule clauses = 8;
+ * @return {!Array<!proto.api.commons.AdherenceDepartmentalRule>}
  */
-proto.api.commons.AdherenceDepartmentalRule.prototype.getRuleClausesList = function() {
-  return /** @type{!Array<!proto.api.commons.AdherenceDepartmentalRuleClause>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.AdherenceDepartmentalRuleClause, 9));
+proto.api.commons.AdherenceDepartmentalRule.prototype.getClausesList = function() {
+  return /** @type{!Array<!proto.api.commons.AdherenceDepartmentalRule>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.AdherenceDepartmentalRule, 8));
 };
 
 
 /**
- * @param {!Array<!proto.api.commons.AdherenceDepartmentalRuleClause>} value
+ * @param {!Array<!proto.api.commons.AdherenceDepartmentalRule>} value
  * @return {!proto.api.commons.AdherenceDepartmentalRule} returns this
 */
-proto.api.commons.AdherenceDepartmentalRule.prototype.setRuleClausesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+proto.api.commons.AdherenceDepartmentalRule.prototype.setClausesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
 /**
- * @param {!proto.api.commons.AdherenceDepartmentalRuleClause=} opt_value
+ * @param {!proto.api.commons.AdherenceDepartmentalRule=} opt_value
  * @param {number=} opt_index
- * @return {!proto.api.commons.AdherenceDepartmentalRuleClause}
+ * @return {!proto.api.commons.AdherenceDepartmentalRule}
  */
-proto.api.commons.AdherenceDepartmentalRule.prototype.addRuleClauses = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.api.commons.AdherenceDepartmentalRuleClause, opt_index);
+proto.api.commons.AdherenceDepartmentalRule.prototype.addClauses = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.api.commons.AdherenceDepartmentalRule, opt_index);
 };
 
 
@@ -8111,8 +8111,8 @@ proto.api.commons.AdherenceDepartmentalRule.prototype.addRuleClauses = function(
  * Clears the list making it empty but non-null.
  * @return {!proto.api.commons.AdherenceDepartmentalRule} returns this
  */
-proto.api.commons.AdherenceDepartmentalRule.prototype.clearRuleClausesList = function() {
-  return this.setRuleClausesList([]);
+proto.api.commons.AdherenceDepartmentalRule.prototype.clearClausesList = function() {
+  return this.setClausesList([]);
 };
 
 
@@ -8504,7 +8504,7 @@ proto.api.commons.AdherenceDepartmentalRuleClause.prototype.setPerUnit = functio
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.AdherenceAgentRule.repeatedFields_ = [7];
+proto.api.commons.AdherenceAgentRule.repeatedFields_ = [6];
 
 
 
@@ -8542,7 +8542,7 @@ name: jspb.Message.getFieldWithDefault(msg, 2, ""),
 selectedEntity: (f = msg.getSelectedEntity()) && proto.api.commons.ConfigEntity.toObject(includeInstance, f),
 ruleRequirementType: jspb.Message.getFieldWithDefault(msg, 4, 0),
 adherenceRuleNotificationConfigId: jspb.Message.getFieldWithDefault(msg, 5, "0"),
-ruleClausesList: jspb.Message.toObjectList(msg.getRuleClausesList(),
+clausesList: jspb.Message.toObjectList(msg.getClausesList(),
     proto.api.commons.AdherenceAgentRuleClause.toObject, includeInstance)
   };
 
@@ -8601,10 +8601,10 @@ proto.api.commons.AdherenceAgentRule.deserializeBinaryFromReader = function(msg,
       var value = /** @type {string} */ (reader.readInt64String());
       msg.setAdherenceRuleNotificationConfigId(value);
       break;
-    case 7:
+    case 6:
       var value = new proto.api.commons.AdherenceAgentRuleClause;
       reader.readMessage(value,proto.api.commons.AdherenceAgentRuleClause.deserializeBinaryFromReader);
-      msg.addRuleClauses(value);
+      msg.addClauses(value);
       break;
     default:
       reader.skipField();
@@ -8671,10 +8671,10 @@ proto.api.commons.AdherenceAgentRule.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getRuleClausesList();
+  f = message.getClausesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      6,
       f,
       proto.api.commons.AdherenceAgentRuleClause.serializeBinaryToWriter
     );
@@ -8792,12 +8792,12 @@ proto.api.commons.AdherenceAgentRule.prototype.setAdherenceRuleNotificationConfi
 
 
 /**
- * repeated AdherenceAgentRuleClause rule_clauses = 7;
+ * repeated AdherenceAgentRuleClause clauses = 6;
  * @return {!Array<!proto.api.commons.AdherenceAgentRuleClause>}
  */
-proto.api.commons.AdherenceAgentRule.prototype.getRuleClausesList = function() {
+proto.api.commons.AdherenceAgentRule.prototype.getClausesList = function() {
   return /** @type{!Array<!proto.api.commons.AdherenceAgentRuleClause>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.AdherenceAgentRuleClause, 7));
+    jspb.Message.getRepeatedWrapperField(this, proto.api.commons.AdherenceAgentRuleClause, 6));
 };
 
 
@@ -8805,8 +8805,8 @@ proto.api.commons.AdherenceAgentRule.prototype.getRuleClausesList = function() {
  * @param {!Array<!proto.api.commons.AdherenceAgentRuleClause>} value
  * @return {!proto.api.commons.AdherenceAgentRule} returns this
 */
-proto.api.commons.AdherenceAgentRule.prototype.setRuleClausesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+proto.api.commons.AdherenceAgentRule.prototype.setClausesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -8815,8 +8815,8 @@ proto.api.commons.AdherenceAgentRule.prototype.setRuleClausesList = function(val
  * @param {number=} opt_index
  * @return {!proto.api.commons.AdherenceAgentRuleClause}
  */
-proto.api.commons.AdherenceAgentRule.prototype.addRuleClauses = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.api.commons.AdherenceAgentRuleClause, opt_index);
+proto.api.commons.AdherenceAgentRule.prototype.addClauses = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.api.commons.AdherenceAgentRuleClause, opt_index);
 };
 
 
@@ -8824,8 +8824,8 @@ proto.api.commons.AdherenceAgentRule.prototype.addRuleClauses = function(opt_val
  * Clears the list making it empty but non-null.
  * @return {!proto.api.commons.AdherenceAgentRule} returns this
  */
-proto.api.commons.AdherenceAgentRule.prototype.clearRuleClausesList = function() {
-  return this.setRuleClausesList([]);
+proto.api.commons.AdherenceAgentRule.prototype.clearClausesList = function() {
+  return this.setClausesList([]);
 };
 
 
