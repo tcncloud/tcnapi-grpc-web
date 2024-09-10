@@ -2,7 +2,8 @@
 // file: api/commons/audit/contactmanager_events.proto
 
 import * as jspb from "google-protobuf";
-import * as api_v1alpha1_contactmanager_contactmanager_pb from "../../../api/v1alpha1/contactmanager/contactmanager_pb";
+import * as api_commons_classifier_pb from "../../../api/commons/classifier_pb";
+import * as api_commons_contactmanager_pb from "../../../api/commons/contactmanager_pb";
 
 export class ContactManagerEntryAddEvent extends jspb.Message {
   hasAddevent(): boolean;
@@ -71,6 +72,11 @@ export namespace ContactManagerEntryEditEvent {
 }
 
 export class ContactManagerDeleteEvent extends jspb.Message {
+  hasDeleteevent(): boolean;
+  clearDeleteevent(): void;
+  getDeleteevent(): ContactManagerEntryEvent | undefined;
+  setDeleteevent(value?: ContactManagerEntryEvent): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerDeleteEvent.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerDeleteEvent): ContactManagerDeleteEvent.AsObject;
@@ -83,6 +89,7 @@ export class ContactManagerDeleteEvent extends jspb.Message {
 
 export namespace ContactManagerDeleteEvent {
   export type AsObject = {
+    deleteevent?: ContactManagerEntryEvent.AsObject,
   }
 }
 
@@ -129,6 +136,18 @@ export class ContactManagerListUploadEvent extends jspb.Message {
   getNumberoffailedcontacts(): number;
   setNumberoffailedcontacts(value: number): void;
 
+  getNumberofnewcontacts(): number;
+  setNumberofnewcontacts(value: number): void;
+
+  getNumberofduplicatecontacts(): number;
+  setNumberofduplicatecontacts(value: number): void;
+
+  getDedupfieldtype(): api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap];
+  setDedupfieldtype(value: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap]): void;
+
+  getDedupmergestrategy(): api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap[keyof api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap];
+  setDedupmergestrategy(value: api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap[keyof api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerListUploadEvent.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerListUploadEvent): ContactManagerListUploadEvent.AsObject;
@@ -145,6 +164,10 @@ export namespace ContactManagerListUploadEvent {
     numberofcontactsuploaded: number,
     numberofsuccessfulcontactsuploaded: number,
     numberoffailedcontacts: number,
+    numberofnewcontacts: number,
+    numberofduplicatecontacts: number,
+    dedupfieldtype: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap],
+    dedupmergestrategy: api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap[keyof api_commons_contactmanager_pb.DeDuplicationMergeStrategyMap],
   }
 }
 

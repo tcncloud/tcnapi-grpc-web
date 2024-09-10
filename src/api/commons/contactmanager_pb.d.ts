@@ -122,3 +122,10 @@ export namespace ContactManagerEntryVal {
   }
 }
 
+export interface DeDuplicationMergeStrategyMap {
+  KEEP_EXISTING_LIST: 0;
+  REPLACE_EXISTING_LIST: 1;
+}
+
+export const DeDuplicationMergeStrategy: DeDuplicationMergeStrategyMap;
+
