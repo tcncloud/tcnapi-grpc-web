@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_org_huntgroup_pb from "../../../../api/commons/org/huntgroup_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class ExileLink extends jspb.Message {
   getParameterSid(): number;
@@ -548,11 +549,19 @@ export namespace UpdateHuntGroupAgentTriggersResponse {
 }
 
 export class CopyHuntGroupToOrganizationRequest extends jspb.Message {
+  getFromOrganizationId(): string;
+  setFromOrganizationId(value: string): void;
+
+  getToOrganizationId(): string;
+  setToOrganizationId(value: string): void;
+
   getHuntGroupSid(): number;
   setHuntGroupSid(value: number): void;
 
-  getOrganizationId(): number;
-  setOrganizationId(value: number): void;
+  hasHuntGroupName(): boolean;
+  clearHuntGroupName(): void;
+  getHuntGroupName(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setHuntGroupName(value?: google_protobuf_wrappers_pb.StringValue): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CopyHuntGroupToOrganizationRequest.AsObject;
@@ -566,8 +575,10 @@ export class CopyHuntGroupToOrganizationRequest extends jspb.Message {
 
 export namespace CopyHuntGroupToOrganizationRequest {
   export type AsObject = {
+    fromOrganizationId: string,
+    toOrganizationId: string,
     huntGroupSid: number,
-    organizationId: number,
+    huntGroupName?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 

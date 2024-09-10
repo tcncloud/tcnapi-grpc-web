@@ -25,6 +25,8 @@ var global = localGlobalThis ||
 
 var api_commons_org_huntgroup_pb = require('../../../../api/commons/org/huntgroup_pb.js');
 goog.object.extend(proto, api_commons_org_huntgroup_pb);
+var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
+goog.object.extend(proto, google_protobuf_wrappers_pb);
 goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AgentStatus', null, global);
 goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AgentStatusOption', null, global);
 goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AgentTrigger', null, global);
@@ -4321,8 +4323,10 @@ proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.proto
  */
 proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-huntGroupSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+fromOrganizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+toOrganizationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+huntGroupSid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+huntGroupName: (f = msg.getHuntGroupName()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4360,12 +4364,21 @@ proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFromOrganizationId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setToOrganizationId(value);
+      break;
+    case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setHuntGroupSid(value);
       break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setOrganizationId(value);
+    case 4:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setHuntGroupName(value);
       break;
     default:
       reader.skipField();
@@ -4396,29 +4409,80 @@ proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.proto
  */
 proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getHuntGroupSid();
-  if (f !== 0) {
-    writer.writeInt64(
+  f = message.getFromOrganizationId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
-  f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeInt64(
+  f = message.getToOrganizationId();
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
+    );
+  }
+  f = message.getHuntGroupSid();
+  if (f !== 0) {
+    writer.writeInt64(
+      3,
+      f
+    );
+  }
+  f = message.getHuntGroupName();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional int64 hunt_group_sid = 1;
+ * optional string from_organization_id = 1;
+ * @return {string}
+ */
+proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.prototype.getFromOrganizationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest} returns this
+ */
+proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.prototype.setFromOrganizationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string to_organization_id = 2;
+ * @return {string}
+ */
+proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.prototype.getToOrganizationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest} returns this
+ */
+proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.prototype.setToOrganizationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional int64 hunt_group_sid = 3;
  * @return {number}
  */
 proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.prototype.getHuntGroupSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -4427,25 +4491,44 @@ proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.proto
  * @return {!proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest} returns this
  */
 proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.prototype.setHuntGroupSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional int64 organization_id = 2;
- * @return {number}
+ * optional google.protobuf.StringValue hunt_group_name = 4;
+ * @return {?proto.google.protobuf.StringValue}
  */
-proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.prototype.getHuntGroupName = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 4));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.StringValue|undefined} value
+ * @return {!proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest} returns this
+*/
+proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.prototype.setHuntGroupName = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest} returns this
  */
-proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.prototype.clearHuntGroupName = function() {
+  return this.setHuntGroupName(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.services.org.hunt_groups.v1alpha1.CopyHuntGroupToOrganizationRequest.prototype.hasHuntGroupName = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
