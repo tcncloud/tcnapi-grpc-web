@@ -57,6 +57,11 @@ export class LearningOpportunity extends jspb.Message {
   getAutoEvaluationId(): number;
   setAutoEvaluationId(value: number): void;
 
+  hasSmartEvaluationId(): boolean;
+  clearSmartEvaluationId(): void;
+  getSmartEvaluationId(): number;
+  setSmartEvaluationId(value: number): void;
+
   getOriginIdentifierCase(): LearningOpportunity.OriginIdentifierCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LearningOpportunity.AsObject;
@@ -85,12 +90,14 @@ export namespace LearningOpportunity {
     creatorUserId: string,
     evaluationId: number,
     autoEvaluationId: number,
+    smartEvaluationId: number,
   }
 
   export enum OriginIdentifierCase {
     ORIGIN_IDENTIFIER_NOT_SET = 0,
     EVALUATION_ID = 16,
     AUTO_EVALUATION_ID = 17,
+    SMART_EVALUATION_ID = 18,
   }
 }
 
@@ -132,6 +139,7 @@ export interface LearningOpportunityOriginMap {
   FLAG_EVALUATION: 3;
   CONVERSATION: 4;
   FLAGGED_CONVERSATION: 5;
+  SMART_EVALUATION: 6;
 }
 
 export const LearningOpportunityOrigin: LearningOpportunityOriginMap;
