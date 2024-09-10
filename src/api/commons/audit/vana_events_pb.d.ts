@@ -2,6 +2,7 @@
 // file: api/commons/audit/vana_events.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_acd_pb from "../../../api/commons/acd_pb";
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -249,11 +250,18 @@ export namespace VanaCreateTranscriptEvent {
     getCallSid(): number;
     setCallSid(value: number): void;
 
-    getTalkTime(): number;
-    setTalkTime(value: number): void;
+    getCallType(): api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap];
+    setCallType(value: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]): void;
 
-    getAudioTime(): number;
-    setAudioTime(value: number): void;
+    hasTalkTime(): boolean;
+    clearTalkTime(): void;
+    getTalkTime(): google_protobuf_duration_pb.Duration | undefined;
+    setTalkTime(value?: google_protobuf_duration_pb.Duration): void;
+
+    hasAudioTime(): boolean;
+    clearAudioTime(): void;
+    getAudioTime(): google_protobuf_duration_pb.Duration | undefined;
+    setAudioTime(value?: google_protobuf_duration_pb.Duration): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Call.AsObject;
@@ -268,8 +276,9 @@ export namespace VanaCreateTranscriptEvent {
   export namespace Call {
     export type AsObject = {
       callSid: number,
-      talkTime: number,
-      audioTime: number,
+      callType: api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap],
+      talkTime?: google_protobuf_duration_pb.Duration.AsObject,
+      audioTime?: google_protobuf_duration_pb.Duration.AsObject,
     }
   }
 
