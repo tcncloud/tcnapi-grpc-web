@@ -7708,6 +7708,7 @@ export interface ValidationMap {
   VALIDATION_REGEX: 402;
   VALIDATION_ROUTING: 501;
   VALIDATION_ACCOUNT: 502;
+  VALIDATION_TRANSACTION_ID: 601;
 }
 
 export const Validation: ValidationMap;
