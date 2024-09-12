@@ -1732,6 +1732,15 @@ type WFMCreateAdherenceDepartmentalRule = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleResponse;
 };
 
+type WFMUpdateAdherenceDepartmentalRule = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAdherenceDepartmentalRuleRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAdherenceDepartmentalRuleResponse;
+};
+
 type WFMCreateAdherenceDepartmentalRuleClause = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1739,6 +1748,15 @@ type WFMCreateAdherenceDepartmentalRuleClause = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseRequest;
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseResponse;
+};
+
+type WFMUpdateAdherenceDepartmentalRuleClause = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAdherenceDepartmentalRuleClauseRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAdherenceDepartmentalRuleClauseResponse;
 };
 
 type WFMListAdherenceDepartmentalRules = {
@@ -1989,7 +2007,9 @@ export class WFM {
   static readonly UpdateAdherenceRuleNotificationConfigEntry: WFMUpdateAdherenceRuleNotificationConfigEntry;
   static readonly ListAdherenceRuleNotificationConfigs: WFMListAdherenceRuleNotificationConfigs;
   static readonly CreateAdherenceDepartmentalRule: WFMCreateAdherenceDepartmentalRule;
+  static readonly UpdateAdherenceDepartmentalRule: WFMUpdateAdherenceDepartmentalRule;
   static readonly CreateAdherenceDepartmentalRuleClause: WFMCreateAdherenceDepartmentalRuleClause;
+  static readonly UpdateAdherenceDepartmentalRuleClause: WFMUpdateAdherenceDepartmentalRuleClause;
   static readonly ListAdherenceDepartmentalRules: WFMListAdherenceDepartmentalRules;
   static readonly CreateAdherenceAgentRule: WFMCreateAdherenceAgentRule;
   static readonly UpdateAdherenceAgentRule: WFMUpdateAdherenceAgentRule;
@@ -3710,6 +3730,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleResponse|null) => void
   ): UnaryResponse;
+  updateAdherenceDepartmentalRule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceDepartmentalRuleRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceDepartmentalRuleResponse|null) => void
+  ): UnaryResponse;
+  updateAdherenceDepartmentalRule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceDepartmentalRuleRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceDepartmentalRuleResponse|null) => void
+  ): UnaryResponse;
   createAdherenceDepartmentalRuleClause(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseRequest,
     metadata: grpc.Metadata,
@@ -3718,6 +3747,15 @@ export class WFMClient {
   createAdherenceDepartmentalRuleClause(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseResponse|null) => void
+  ): UnaryResponse;
+  updateAdherenceDepartmentalRuleClause(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceDepartmentalRuleClauseRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceDepartmentalRuleClauseResponse|null) => void
+  ): UnaryResponse;
+  updateAdherenceDepartmentalRuleClause(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceDepartmentalRuleClauseRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceDepartmentalRuleClauseResponse|null) => void
   ): UnaryResponse;
   listAdherenceDepartmentalRules(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceDepartmentalRulesRequest,
