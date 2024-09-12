@@ -12363,8 +12363,8 @@ export namespace CreateAdherenceRuleNotificationConfigEntryResponse {
 }
 
 export class DeleteAdherenceRuleNotificationConfigEntryRequest extends jspb.Message {
-  getAdherenceRuleNotificationConfigEntryId(): number;
-  setAdherenceRuleNotificationConfigEntryId(value: number): void;
+  getAdherenceRuleNotificationConfigEntryId(): string;
+  setAdherenceRuleNotificationConfigEntryId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteAdherenceRuleNotificationConfigEntryRequest.AsObject;
@@ -12378,7 +12378,7 @@ export class DeleteAdherenceRuleNotificationConfigEntryRequest extends jspb.Mess
 
 export namespace DeleteAdherenceRuleNotificationConfigEntryRequest {
   export type AsObject = {
-    adherenceRuleNotificationConfigEntryId: number,
+    adherenceRuleNotificationConfigEntryId: string,
   }
 }
 
@@ -12521,8 +12521,8 @@ export namespace CreateAdherenceDepartmentalRuleClauseResponse {
 }
 
 export class DeleteAdherenceDepartmentalRuleClauseRequest extends jspb.Message {
-  getAdherenceDepartmentalRuleClauseId(): number;
-  setAdherenceDepartmentalRuleClauseId(value: number): void;
+  getAdherenceDepartmentalRuleClauseId(): string;
+  setAdherenceDepartmentalRuleClauseId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteAdherenceDepartmentalRuleClauseRequest.AsObject;
@@ -12536,7 +12536,7 @@ export class DeleteAdherenceDepartmentalRuleClauseRequest extends jspb.Message {
 
 export namespace DeleteAdherenceDepartmentalRuleClauseRequest {
   export type AsObject = {
-    adherenceDepartmentalRuleClauseId: number,
+    adherenceDepartmentalRuleClauseId: string,
   }
 }
 
@@ -12679,8 +12679,8 @@ export namespace CreateAdherenceAgentRuleClauseResponse {
 }
 
 export class DeleteAdherenceAgentRuleClauseRequest extends jspb.Message {
-  getAdherenceAgentRuleClauseId(): number;
-  setAdherenceAgentRuleClauseId(value: number): void;
+  getAdherenceAgentRuleClauseId(): string;
+  setAdherenceAgentRuleClauseId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteAdherenceAgentRuleClauseRequest.AsObject;
@@ -12694,7 +12694,7 @@ export class DeleteAdherenceAgentRuleClauseRequest extends jspb.Message {
 
 export namespace DeleteAdherenceAgentRuleClauseRequest {
   export type AsObject = {
-    adherenceAgentRuleClauseId: number,
+    adherenceAgentRuleClauseId: string,
   }
 }
 
