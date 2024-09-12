@@ -12320,6 +12320,44 @@ export namespace CreateAdherenceRuleNotificationConfigResponse {
   }
 }
 
+export class UpdateAdherenceRuleNotificationConfigRequest extends jspb.Message {
+  hasNotificationConfig(): boolean;
+  clearNotificationConfig(): void;
+  getNotificationConfig(): api_commons_wfm_pb.AdherenceRuleNotificationConfig | undefined;
+  setNotificationConfig(value?: api_commons_wfm_pb.AdherenceRuleNotificationConfig): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAdherenceRuleNotificationConfigRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAdherenceRuleNotificationConfigRequest): UpdateAdherenceRuleNotificationConfigRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAdherenceRuleNotificationConfigRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAdherenceRuleNotificationConfigRequest;
+  static deserializeBinaryFromReader(message: UpdateAdherenceRuleNotificationConfigRequest, reader: jspb.BinaryReader): UpdateAdherenceRuleNotificationConfigRequest;
+}
+
+export namespace UpdateAdherenceRuleNotificationConfigRequest {
+  export type AsObject = {
+    notificationConfig?: api_commons_wfm_pb.AdherenceRuleNotificationConfig.AsObject,
+  }
+}
+
+export class UpdateAdherenceRuleNotificationConfigResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAdherenceRuleNotificationConfigResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAdherenceRuleNotificationConfigResponse): UpdateAdherenceRuleNotificationConfigResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAdherenceRuleNotificationConfigResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAdherenceRuleNotificationConfigResponse;
+  static deserializeBinaryFromReader(message: UpdateAdherenceRuleNotificationConfigResponse, reader: jspb.BinaryReader): UpdateAdherenceRuleNotificationConfigResponse;
+}
+
+export namespace UpdateAdherenceRuleNotificationConfigResponse {
+  export type AsObject = {
+  }
+}
+
 export class CreateAdherenceRuleNotificationConfigEntryRequest extends jspb.Message {
   hasNotificationConfigEntry(): boolean;
   clearNotificationConfigEntry(): void;
@@ -12359,6 +12397,44 @@ export class CreateAdherenceRuleNotificationConfigEntryResponse extends jspb.Mes
 export namespace CreateAdherenceRuleNotificationConfigEntryResponse {
   export type AsObject = {
     adherenceRuleNotificationConfigEntryId: string,
+  }
+}
+
+export class UpdateAdherenceRuleNotificationConfigEntryRequest extends jspb.Message {
+  hasNotificationConfigEntry(): boolean;
+  clearNotificationConfigEntry(): void;
+  getNotificationConfigEntry(): api_commons_wfm_pb.AdherenceRuleNotificationConfigEntry | undefined;
+  setNotificationConfigEntry(value?: api_commons_wfm_pb.AdherenceRuleNotificationConfigEntry): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAdherenceRuleNotificationConfigEntryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAdherenceRuleNotificationConfigEntryRequest): UpdateAdherenceRuleNotificationConfigEntryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAdherenceRuleNotificationConfigEntryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAdherenceRuleNotificationConfigEntryRequest;
+  static deserializeBinaryFromReader(message: UpdateAdherenceRuleNotificationConfigEntryRequest, reader: jspb.BinaryReader): UpdateAdherenceRuleNotificationConfigEntryRequest;
+}
+
+export namespace UpdateAdherenceRuleNotificationConfigEntryRequest {
+  export type AsObject = {
+    notificationConfigEntry?: api_commons_wfm_pb.AdherenceRuleNotificationConfigEntry.AsObject,
+  }
+}
+
+export class UpdateAdherenceRuleNotificationConfigEntryResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAdherenceRuleNotificationConfigEntryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAdherenceRuleNotificationConfigEntryResponse): UpdateAdherenceRuleNotificationConfigEntryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAdherenceRuleNotificationConfigEntryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAdherenceRuleNotificationConfigEntryResponse;
+  static deserializeBinaryFromReader(message: UpdateAdherenceRuleNotificationConfigEntryResponse, reader: jspb.BinaryReader): UpdateAdherenceRuleNotificationConfigEntryResponse;
+}
+
+export namespace UpdateAdherenceRuleNotificationConfigEntryResponse {
+  export type AsObject = {
   }
 }
 

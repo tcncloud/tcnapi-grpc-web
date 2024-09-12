@@ -1687,6 +1687,15 @@ type WFMCreateAdherenceRuleNotificationConfig = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigResponse;
 };
 
+type WFMUpdateAdherenceRuleNotificationConfig = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigResponse;
+};
+
 type WFMCreateAdherenceRuleNotificationConfigEntry = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1694,6 +1703,15 @@ type WFMCreateAdherenceRuleNotificationConfigEntry = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryRequest;
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryResponse;
+};
+
+type WFMUpdateAdherenceRuleNotificationConfigEntry = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigEntryRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigEntryResponse;
 };
 
 type WFMListAdherenceRuleNotificationConfigs = {
@@ -1948,7 +1966,9 @@ export class WFM {
   static readonly UpdateRgbaColor: WFMUpdateRgbaColor;
   static readonly DeleteRgbaColor: WFMDeleteRgbaColor;
   static readonly CreateAdherenceRuleNotificationConfig: WFMCreateAdherenceRuleNotificationConfig;
+  static readonly UpdateAdherenceRuleNotificationConfig: WFMUpdateAdherenceRuleNotificationConfig;
   static readonly CreateAdherenceRuleNotificationConfigEntry: WFMCreateAdherenceRuleNotificationConfigEntry;
+  static readonly UpdateAdherenceRuleNotificationConfigEntry: WFMUpdateAdherenceRuleNotificationConfigEntry;
   static readonly ListAdherenceRuleNotificationConfigs: WFMListAdherenceRuleNotificationConfigs;
   static readonly CreateAdherenceDepartmentalRule: WFMCreateAdherenceDepartmentalRule;
   static readonly CreateAdherenceDepartmentalRuleClause: WFMCreateAdherenceDepartmentalRuleClause;
@@ -3625,6 +3645,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigResponse|null) => void
   ): UnaryResponse;
+  updateAdherenceRuleNotificationConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigResponse|null) => void
+  ): UnaryResponse;
+  updateAdherenceRuleNotificationConfig(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigResponse|null) => void
+  ): UnaryResponse;
   createAdherenceRuleNotificationConfigEntry(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryRequest,
     metadata: grpc.Metadata,
@@ -3633,6 +3662,15 @@ export class WFMClient {
   createAdherenceRuleNotificationConfigEntry(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryResponse|null) => void
+  ): UnaryResponse;
+  updateAdherenceRuleNotificationConfigEntry(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigEntryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigEntryResponse|null) => void
+  ): UnaryResponse;
+  updateAdherenceRuleNotificationConfigEntry(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigEntryRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigEntryResponse|null) => void
   ): UnaryResponse;
   listAdherenceRuleNotificationConfigs(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsRequest,

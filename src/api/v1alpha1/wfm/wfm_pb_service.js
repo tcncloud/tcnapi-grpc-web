@@ -1693,6 +1693,15 @@ WFM.CreateAdherenceRuleNotificationConfig = {
   responseType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigResponse
 };
 
+WFM.UpdateAdherenceRuleNotificationConfig = {
+  methodName: "UpdateAdherenceRuleNotificationConfig",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigResponse
+};
+
 WFM.CreateAdherenceRuleNotificationConfigEntry = {
   methodName: "CreateAdherenceRuleNotificationConfigEntry",
   service: WFM,
@@ -1700,6 +1709,15 @@ WFM.CreateAdherenceRuleNotificationConfigEntry = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryRequest,
   responseType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryResponse
+};
+
+WFM.UpdateAdherenceRuleNotificationConfigEntry = {
+  methodName: "UpdateAdherenceRuleNotificationConfigEntry",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigEntryRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceRuleNotificationConfigEntryResponse
 };
 
 WFM.ListAdherenceRuleNotificationConfigs = {
@@ -7617,11 +7635,73 @@ WFMClient.prototype.createAdherenceRuleNotificationConfig = function createAdher
   };
 };
 
+WFMClient.prototype.updateAdherenceRuleNotificationConfig = function updateAdherenceRuleNotificationConfig(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdateAdherenceRuleNotificationConfig, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.createAdherenceRuleNotificationConfigEntry = function createAdherenceRuleNotificationConfigEntry(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.CreateAdherenceRuleNotificationConfigEntry, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.updateAdherenceRuleNotificationConfigEntry = function updateAdherenceRuleNotificationConfigEntry(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdateAdherenceRuleNotificationConfigEntry, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
