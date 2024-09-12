@@ -25,8 +25,6 @@ var global = localGlobalThis ||
 
 var api_commons_org_huntgroup_pb = require('../../../../api/commons/org/huntgroup_pb.js');
 goog.object.extend(proto, api_commons_org_huntgroup_pb);
-var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
-goog.object.extend(proto, google_protobuf_wrappers_pb);
 goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AgentStatus', null, global);
 goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AgentStatusOption', null, global);
 goog.exportSymbol('proto.services.org.hunt_groups.v1alpha1.AgentTrigger', null, global);

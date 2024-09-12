@@ -3,7 +3,6 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_org_huntgroup_pb from "../../../../api/commons/org/huntgroup_pb";
-import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class ExileLink extends jspb.Message {
   getParameterSid(): number;
