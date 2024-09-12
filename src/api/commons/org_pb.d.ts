@@ -88,6 +88,7 @@ export interface TimeZoneMap {
   TIME_ZONE_PACIFIC_CHATHAM: 41;
   TIME_ZONE_ASIA_SINGAPORE: 42;
   TIME_ZONE_ASIA_JAPAN: 43;
+  TIME_ZONE_AMERICA_SANTIAGO: 44;
 }
 
 export const TimeZone: TimeZoneMap;
