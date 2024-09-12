@@ -1759,6 +1759,15 @@ type WFMCreateAdherenceAgentRule = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleResponse;
 };
 
+type WFMUpdateAdherenceAgentRule = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleResponse;
+};
+
 type WFMCreateAdherenceAgentRuleClause = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1766,6 +1775,15 @@ type WFMCreateAdherenceAgentRuleClause = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseRequest;
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseResponse;
+};
+
+type WFMUpdateAdherenceAgentRuleClause = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleClauseRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleClauseResponse;
 };
 
 type WFMListAdherenceAgentRules = {
@@ -1974,7 +1992,9 @@ export class WFM {
   static readonly CreateAdherenceDepartmentalRuleClause: WFMCreateAdherenceDepartmentalRuleClause;
   static readonly ListAdherenceDepartmentalRules: WFMListAdherenceDepartmentalRules;
   static readonly CreateAdherenceAgentRule: WFMCreateAdherenceAgentRule;
+  static readonly UpdateAdherenceAgentRule: WFMUpdateAdherenceAgentRule;
   static readonly CreateAdherenceAgentRuleClause: WFMCreateAdherenceAgentRuleClause;
+  static readonly UpdateAdherenceAgentRuleClause: WFMUpdateAdherenceAgentRuleClause;
   static readonly ListAdherenceAgentRules: WFMListAdherenceAgentRules;
 }
 
@@ -3717,6 +3737,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleResponse|null) => void
   ): UnaryResponse;
+  updateAdherenceAgentRule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleResponse|null) => void
+  ): UnaryResponse;
+  updateAdherenceAgentRule(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleResponse|null) => void
+  ): UnaryResponse;
   createAdherenceAgentRuleClause(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseRequest,
     metadata: grpc.Metadata,
@@ -3725,6 +3754,15 @@ export class WFMClient {
   createAdherenceAgentRuleClause(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseResponse|null) => void
+  ): UnaryResponse;
+  updateAdherenceAgentRuleClause(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleClauseRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleClauseResponse|null) => void
+  ): UnaryResponse;
+  updateAdherenceAgentRuleClause(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleClauseRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleClauseResponse|null) => void
   ): UnaryResponse;
   listAdherenceAgentRules(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesRequest,

@@ -1765,6 +1765,15 @@ WFM.CreateAdherenceAgentRule = {
   responseType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleResponse
 };
 
+WFM.UpdateAdherenceAgentRule = {
+  methodName: "UpdateAdherenceAgentRule",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleResponse
+};
+
 WFM.CreateAdherenceAgentRuleClause = {
   methodName: "CreateAdherenceAgentRuleClause",
   service: WFM,
@@ -1772,6 +1781,15 @@ WFM.CreateAdherenceAgentRuleClause = {
   responseStream: false,
   requestType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseRequest,
   responseType: api_v1alpha1_wfm_wfm_pb.CreateAdherenceAgentRuleClauseResponse
+};
+
+WFM.UpdateAdherenceAgentRuleClause = {
+  methodName: "UpdateAdherenceAgentRuleClause",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleClauseRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.UpdateAdherenceAgentRuleClauseResponse
 };
 
 WFM.ListAdherenceAgentRules = {
@@ -7883,11 +7901,73 @@ WFMClient.prototype.createAdherenceAgentRule = function createAdherenceAgentRule
   };
 };
 
+WFMClient.prototype.updateAdherenceAgentRule = function updateAdherenceAgentRule(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdateAdherenceAgentRule, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 WFMClient.prototype.createAdherenceAgentRuleClause = function createAdherenceAgentRuleClause(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.CreateAdherenceAgentRuleClause, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.updateAdherenceAgentRuleClause = function updateAdherenceAgentRuleClause(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.UpdateAdherenceAgentRuleClause, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
