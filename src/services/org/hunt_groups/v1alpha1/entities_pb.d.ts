@@ -558,10 +558,8 @@ export class CopyHuntGroupToOrganizationRequest extends jspb.Message {
   getHuntGroupSid(): number;
   setHuntGroupSid(value: number): void;
 
-  hasHuntGroupName(): boolean;
-  clearHuntGroupName(): void;
-  getHuntGroupName(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setHuntGroupName(value?: google_protobuf_wrappers_pb.StringValue): void;
+  getNewHuntGroupName(): string;
+  setNewHuntGroupName(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CopyHuntGroupToOrganizationRequest.AsObject;
@@ -578,7 +576,7 @@ export namespace CopyHuntGroupToOrganizationRequest {
     fromOrganizationId: string,
     toOrganizationId: string,
     huntGroupSid: number,
-    huntGroupName?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    newHuntGroupName: string,
   }
 }
 
