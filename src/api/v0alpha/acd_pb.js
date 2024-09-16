@@ -19922,7 +19922,8 @@ proto.api.v0alpha.ValidateFieldRes.prototype.toObject = function(opt_includeInst
  */
 proto.api.v0alpha.ValidateFieldRes.toObject = function(includeInstance, msg) {
   var f, obj = {
-valid: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+valid: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+reason: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -19963,6 +19964,10 @@ proto.api.v0alpha.ValidateFieldRes.deserializeBinaryFromReader = function(msg, r
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setValid(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReason(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -19999,6 +20004,13 @@ proto.api.v0alpha.ValidateFieldRes.serializeBinaryToWriter = function(message, w
       f
     );
   }
+  f = message.getReason();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -20017,6 +20029,24 @@ proto.api.v0alpha.ValidateFieldRes.prototype.getValid = function() {
  */
 proto.api.v0alpha.ValidateFieldRes.prototype.setValid = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
+};
+
+
+/**
+ * optional string reason = 2;
+ * @return {string}
+ */
+proto.api.v0alpha.ValidateFieldRes.prototype.getReason = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v0alpha.ValidateFieldRes} returns this
+ */
+proto.api.v0alpha.ValidateFieldRes.prototype.setReason = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

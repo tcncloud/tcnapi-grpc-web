@@ -2587,6 +2587,9 @@ export class ValidateFieldRes extends jspb.Message {
   getValid(): boolean;
   setValid(value: boolean): void;
 
+  getReason(): string;
+  setReason(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ValidateFieldRes.AsObject;
   static toObject(includeInstance: boolean, msg: ValidateFieldRes): ValidateFieldRes.AsObject;
@@ -2600,6 +2603,7 @@ export class ValidateFieldRes extends jspb.Message {
 export namespace ValidateFieldRes {
   export type AsObject = {
     valid: boolean,
+    reason: string,
   }
 }
 
