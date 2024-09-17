@@ -12362,6 +12362,42 @@ export namespace CreateAdherenceRuleNotificationConfigEntryResponse {
   }
 }
 
+export class DeleteAdherenceRuleNotificationConfigEntryRequest extends jspb.Message {
+  getAdherenceRuleNotificationConfigEntryId(): string;
+  setAdherenceRuleNotificationConfigEntryId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAdherenceRuleNotificationConfigEntryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAdherenceRuleNotificationConfigEntryRequest): DeleteAdherenceRuleNotificationConfigEntryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAdherenceRuleNotificationConfigEntryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAdherenceRuleNotificationConfigEntryRequest;
+  static deserializeBinaryFromReader(message: DeleteAdherenceRuleNotificationConfigEntryRequest, reader: jspb.BinaryReader): DeleteAdherenceRuleNotificationConfigEntryRequest;
+}
+
+export namespace DeleteAdherenceRuleNotificationConfigEntryRequest {
+  export type AsObject = {
+    adherenceRuleNotificationConfigEntryId: string,
+  }
+}
+
+export class DeleteAdherenceRuleNotificationConfigEntryResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAdherenceRuleNotificationConfigEntryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAdherenceRuleNotificationConfigEntryResponse): DeleteAdherenceRuleNotificationConfigEntryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAdherenceRuleNotificationConfigEntryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAdherenceRuleNotificationConfigEntryResponse;
+  static deserializeBinaryFromReader(message: DeleteAdherenceRuleNotificationConfigEntryResponse, reader: jspb.BinaryReader): DeleteAdherenceRuleNotificationConfigEntryResponse;
+}
+
+export namespace DeleteAdherenceRuleNotificationConfigEntryResponse {
+  export type AsObject = {
+  }
+}
+
 export class ListAdherenceRuleNotificationConfigsRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAdherenceRuleNotificationConfigsRequest.AsObject;
@@ -12484,6 +12520,42 @@ export namespace CreateAdherenceDepartmentalRuleClauseResponse {
   }
 }
 
+export class DeleteAdherenceDepartmentalRuleClauseRequest extends jspb.Message {
+  getAdherenceDepartmentalRuleClauseId(): string;
+  setAdherenceDepartmentalRuleClauseId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAdherenceDepartmentalRuleClauseRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAdherenceDepartmentalRuleClauseRequest): DeleteAdherenceDepartmentalRuleClauseRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAdherenceDepartmentalRuleClauseRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAdherenceDepartmentalRuleClauseRequest;
+  static deserializeBinaryFromReader(message: DeleteAdherenceDepartmentalRuleClauseRequest, reader: jspb.BinaryReader): DeleteAdherenceDepartmentalRuleClauseRequest;
+}
+
+export namespace DeleteAdherenceDepartmentalRuleClauseRequest {
+  export type AsObject = {
+    adherenceDepartmentalRuleClauseId: string,
+  }
+}
+
+export class DeleteAdherenceDepartmentalRuleClauseResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAdherenceDepartmentalRuleClauseResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAdherenceDepartmentalRuleClauseResponse): DeleteAdherenceDepartmentalRuleClauseResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAdherenceDepartmentalRuleClauseResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAdherenceDepartmentalRuleClauseResponse;
+  static deserializeBinaryFromReader(message: DeleteAdherenceDepartmentalRuleClauseResponse, reader: jspb.BinaryReader): DeleteAdherenceDepartmentalRuleClauseResponse;
+}
+
+export namespace DeleteAdherenceDepartmentalRuleClauseResponse {
+  export type AsObject = {
+  }
+}
+
 export class ListAdherenceDepartmentalRulesRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAdherenceDepartmentalRulesRequest.AsObject;
@@ -12603,6 +12675,42 @@ export class CreateAdherenceAgentRuleClauseResponse extends jspb.Message {
 export namespace CreateAdherenceAgentRuleClauseResponse {
   export type AsObject = {
     adherenceAgentRuleClauseId: string,
+  }
+}
+
+export class DeleteAdherenceAgentRuleClauseRequest extends jspb.Message {
+  getAdherenceAgentRuleClauseId(): string;
+  setAdherenceAgentRuleClauseId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAdherenceAgentRuleClauseRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAdherenceAgentRuleClauseRequest): DeleteAdherenceAgentRuleClauseRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAdherenceAgentRuleClauseRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAdherenceAgentRuleClauseRequest;
+  static deserializeBinaryFromReader(message: DeleteAdherenceAgentRuleClauseRequest, reader: jspb.BinaryReader): DeleteAdherenceAgentRuleClauseRequest;
+}
+
+export namespace DeleteAdherenceAgentRuleClauseRequest {
+  export type AsObject = {
+    adherenceAgentRuleClauseId: string,
+  }
+}
+
+export class DeleteAdherenceAgentRuleClauseResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAdherenceAgentRuleClauseResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAdherenceAgentRuleClauseResponse): DeleteAdherenceAgentRuleClauseResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAdherenceAgentRuleClauseResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAdherenceAgentRuleClauseResponse;
+  static deserializeBinaryFromReader(message: DeleteAdherenceAgentRuleClauseResponse, reader: jspb.BinaryReader): DeleteAdherenceAgentRuleClauseResponse;
+}
+
+export namespace DeleteAdherenceAgentRuleClauseResponse {
+  export type AsObject = {
   }
 }
 

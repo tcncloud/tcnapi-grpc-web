@@ -1696,6 +1696,15 @@ type WFMCreateAdherenceRuleNotificationConfigEntry = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryResponse;
 };
 
+type WFMDeleteAdherenceRuleNotificationConfigEntry = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteAdherenceRuleNotificationConfigEntryRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteAdherenceRuleNotificationConfigEntryResponse;
+};
+
 type WFMListAdherenceRuleNotificationConfigs = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1721,6 +1730,15 @@ type WFMCreateAdherenceDepartmentalRuleClause = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseRequest;
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseResponse;
+};
+
+type WFMDeleteAdherenceDepartmentalRuleClause = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteAdherenceDepartmentalRuleClauseRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteAdherenceDepartmentalRuleClauseResponse;
 };
 
 type WFMListAdherenceDepartmentalRules = {
@@ -1757,6 +1775,15 @@ type WFMListAdherenceAgentRules = {
   readonly responseStream: false;
   readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesRequest;
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesResponse;
+};
+
+type WFMDeleteAdherenceAgentRuleClause = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.DeleteAdherenceAgentRuleClauseRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.DeleteAdherenceAgentRuleClauseResponse;
 };
 
 export class WFM {
@@ -1949,13 +1976,16 @@ export class WFM {
   static readonly DeleteRgbaColor: WFMDeleteRgbaColor;
   static readonly CreateAdherenceRuleNotificationConfig: WFMCreateAdherenceRuleNotificationConfig;
   static readonly CreateAdherenceRuleNotificationConfigEntry: WFMCreateAdherenceRuleNotificationConfigEntry;
+  static readonly DeleteAdherenceRuleNotificationConfigEntry: WFMDeleteAdherenceRuleNotificationConfigEntry;
   static readonly ListAdherenceRuleNotificationConfigs: WFMListAdherenceRuleNotificationConfigs;
   static readonly CreateAdherenceDepartmentalRule: WFMCreateAdherenceDepartmentalRule;
   static readonly CreateAdherenceDepartmentalRuleClause: WFMCreateAdherenceDepartmentalRuleClause;
+  static readonly DeleteAdherenceDepartmentalRuleClause: WFMDeleteAdherenceDepartmentalRuleClause;
   static readonly ListAdherenceDepartmentalRules: WFMListAdherenceDepartmentalRules;
   static readonly CreateAdherenceAgentRule: WFMCreateAdherenceAgentRule;
   static readonly CreateAdherenceAgentRuleClause: WFMCreateAdherenceAgentRuleClause;
   static readonly ListAdherenceAgentRules: WFMListAdherenceAgentRules;
+  static readonly DeleteAdherenceAgentRuleClause: WFMDeleteAdherenceAgentRuleClause;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -3634,6 +3664,15 @@ export class WFMClient {
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceRuleNotificationConfigEntryResponse|null) => void
   ): UnaryResponse;
+  deleteAdherenceRuleNotificationConfigEntry(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceRuleNotificationConfigEntryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceRuleNotificationConfigEntryResponse|null) => void
+  ): UnaryResponse;
+  deleteAdherenceRuleNotificationConfigEntry(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceRuleNotificationConfigEntryRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceRuleNotificationConfigEntryResponse|null) => void
+  ): UnaryResponse;
   listAdherenceRuleNotificationConfigs(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceRuleNotificationConfigsRequest,
     metadata: grpc.Metadata,
@@ -3660,6 +3699,15 @@ export class WFMClient {
   createAdherenceDepartmentalRuleClause(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.CreateAdherenceDepartmentalRuleClauseResponse|null) => void
+  ): UnaryResponse;
+  deleteAdherenceDepartmentalRuleClause(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceDepartmentalRuleClauseRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceDepartmentalRuleClauseResponse|null) => void
+  ): UnaryResponse;
+  deleteAdherenceDepartmentalRuleClause(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceDepartmentalRuleClauseRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceDepartmentalRuleClauseResponse|null) => void
   ): UnaryResponse;
   listAdherenceDepartmentalRules(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceDepartmentalRulesRequest,
@@ -3696,6 +3744,15 @@ export class WFMClient {
   listAdherenceAgentRules(
     requestMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListAdherenceAgentRulesResponse|null) => void
+  ): UnaryResponse;
+  deleteAdherenceAgentRuleClause(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceAgentRuleClauseRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceAgentRuleClauseResponse|null) => void
+  ): UnaryResponse;
+  deleteAdherenceAgentRuleClause(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceAgentRuleClauseRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.DeleteAdherenceAgentRuleClauseResponse|null) => void
   ): UnaryResponse;
 }
 
