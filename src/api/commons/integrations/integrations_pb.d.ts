@@ -1447,6 +1447,16 @@ export class ExecuteFlow extends jspb.Message {
   getNtvbAuthtest(): ExecuteNtvbAuthtest | undefined;
   setNtvbAuthtest(value?: ExecuteNtvbAuthtest): void;
 
+  hasNtvbCompletePendingOrder(): boolean;
+  clearNtvbCompletePendingOrder(): void;
+  getNtvbCompletePendingOrder(): ExecuteNtvbCompletePendingOrder | undefined;
+  setNtvbCompletePendingOrder(value?: ExecuteNtvbCompletePendingOrder): void;
+
+  hasNtvbPlaceOrder(): boolean;
+  clearNtvbPlaceOrder(): void;
+  getNtvbPlaceOrder(): ExecuteNtvbPlaceOrder | undefined;
+  setNtvbPlaceOrder(value?: ExecuteNtvbPlaceOrder): void;
+
   hasElavonCreditCardSale(): boolean;
   clearElavonCreditCardSale(): void;
   getElavonCreditCardSale(): ExecuteElavonCreditCardSale | undefined;
@@ -1771,6 +1781,11 @@ export class ExecuteFlow extends jspb.Message {
   clearNewzwarePhoneLookupMulti(): void;
   getNewzwarePhoneLookupMulti(): ExecuteNewzwarePhoneLookupMulti | undefined;
   setNewzwarePhoneLookupMulti(value?: ExecuteNewzwarePhoneLookupMulti): void;
+
+  hasNewzwareSubscriptionRestart(): boolean;
+  clearNewzwareSubscriptionRestart(): void;
+  getNewzwareSubscriptionRestart(): ExecuteNewzwareSubscriptionRestart | undefined;
+  setNewzwareSubscriptionRestart(value?: ExecuteNewzwareSubscriptionRestart): void;
 
   hasPriocommerceAchPayment(): boolean;
   clearPriocommerceAchPayment(): void;
@@ -2214,6 +2229,8 @@ export namespace ExecuteFlow {
     ntvbSubscriptionInfo?: ExecuteNtvbSubscriptionInfo.AsObject,
     ntvbVacationStop?: ExecuteNtvbVacationStop.AsObject,
     ntvbAuthtest?: ExecuteNtvbAuthtest.AsObject,
+    ntvbCompletePendingOrder?: ExecuteNtvbCompletePendingOrder.AsObject,
+    ntvbPlaceOrder?: ExecuteNtvbPlaceOrder.AsObject,
     elavonCreditCardSale?: ExecuteElavonCreditCardSale.AsObject,
     elavonAddRecurring?: ExecuteElavonAddRecurring.AsObject,
     elavonDccResponse?: ExecuteElavonDccResponse.AsObject,
@@ -2279,6 +2296,7 @@ export namespace ExecuteFlow {
     newzwareVacationRestart?: ExecuteNewzwareVacationRestart.AsObject,
     newzwareVacationUpdate?: ExecuteNewzwareVacationUpdate.AsObject,
     newzwarePhoneLookupMulti?: ExecuteNewzwarePhoneLookupMulti.AsObject,
+    newzwareSubscriptionRestart?: ExecuteNewzwareSubscriptionRestart.AsObject,
     priocommerceAchPayment?: ExecutePriocommerceAchPayment.AsObject,
     priocommerceCcPayment?: ExecutePriocommerceCcPayment.AsObject,
     navigaCreatePayment?: ExecuteNavigaCreatePayment.AsObject,
@@ -2483,6 +2501,8 @@ export namespace ExecuteFlow {
     NTVB_SUBSCRIPTION_INFO = 2812,
     NTVB_VACATION_STOP = 2813,
     NTVB_AUTHTEST = 2814,
+    NTVB_COMPLETE_PENDING_ORDER = 2815,
+    NTVB_PLACE_ORDER = 2816,
     ELAVON_CREDIT_CARD_SALE = 2901,
     ELAVON_ADD_RECURRING = 2902,
     ELAVON_DCC_RESPONSE = 2903,
@@ -2548,6 +2568,7 @@ export namespace ExecuteFlow {
     NEWZWARE_VACATION_RESTART = 3807,
     NEWZWARE_VACATION_UPDATE = 3808,
     NEWZWARE_PHONE_LOOKUP_MULTI = 3809,
+    NEWZWARE_SUBSCRIPTION_RESTART = 3810,
     PRIOCOMMERCE_ACH_PAYMENT = 3901,
     PRIOCOMMERCE_CC_PAYMENT = 3902,
     NAVIGA_CREATE_PAYMENT = 4001,
@@ -5513,6 +5534,38 @@ export namespace ExecuteNtvbAuthtest {
   }
 }
 
+export class ExecuteNtvbCompletePendingOrder extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNtvbCompletePendingOrder.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNtvbCompletePendingOrder): ExecuteNtvbCompletePendingOrder.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNtvbCompletePendingOrder, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNtvbCompletePendingOrder;
+  static deserializeBinaryFromReader(message: ExecuteNtvbCompletePendingOrder, reader: jspb.BinaryReader): ExecuteNtvbCompletePendingOrder;
+}
+
+export namespace ExecuteNtvbCompletePendingOrder {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNtvbPlaceOrder extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNtvbPlaceOrder.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNtvbPlaceOrder): ExecuteNtvbPlaceOrder.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNtvbPlaceOrder, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNtvbPlaceOrder;
+  static deserializeBinaryFromReader(message: ExecuteNtvbPlaceOrder, reader: jspb.BinaryReader): ExecuteNtvbPlaceOrder;
+}
+
+export namespace ExecuteNtvbPlaceOrder {
+  export type AsObject = {
+  }
+}
+
 export class ExecuteElavonCreditCardSale extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteElavonCreditCardSale.AsObject;
@@ -6549,6 +6602,22 @@ export class ExecuteNewzwarePhoneLookupMulti extends jspb.Message {
 }
 
 export namespace ExecuteNewzwarePhoneLookupMulti {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteNewzwareSubscriptionRestart extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteNewzwareSubscriptionRestart.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteNewzwareSubscriptionRestart): ExecuteNewzwareSubscriptionRestart.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteNewzwareSubscriptionRestart, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteNewzwareSubscriptionRestart;
+  static deserializeBinaryFromReader(message: ExecuteNewzwareSubscriptionRestart, reader: jspb.BinaryReader): ExecuteNewzwareSubscriptionRestart;
+}
+
+export namespace ExecuteNewzwareSubscriptionRestart {
   export type AsObject = {
   }
 }
@@ -7664,6 +7733,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_NTVB_SUBSCRIPTION_INFO: 2812;
   REQUEST_METHOD_NTVB_VACATION_STOP: 2813;
   REQUEST_METHOD_NTVB_AUTHTEST: 2814;
+  REQUEST_METHOD_NTVB_COMPLETE_PENDING_ORDER: 2815;
+  REQUEST_METHOD_NTVB_PLACE_ORDER: 2816;
   REQUEST_METHOD_ELAVON_CREDIT_CARD_SALE: 2901;
   REQUEST_METHOD_ELAVON_ADD_RECURRING: 2902;
   REQUEST_METHOD_ELAVON_DCC_RESPONSE: 2903;
@@ -7729,6 +7800,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_NEWZWARE_VACATION_RESTART: 3807;
   REQUEST_METHOD_NEWZWARE_VACATION_UPDATE: 3808;
   REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP_MULTI: 3809;
+  REQUEST_METHOD_NEWZWARE_SUBSCRIPTION_RESTART: 3810;
   REQUEST_METHOD_PRIOCOMMERCE_ACH_PAYMENT: 3901;
   REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT: 3902;
   REQUEST_METHOD_NAVIGA_CREATE_PAYMENT: 4001;
