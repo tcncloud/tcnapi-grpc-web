@@ -547,6 +547,54 @@ export namespace UpdateHuntGroupAgentTriggersResponse {
   }
 }
 
+export class AdminCopyHuntGroupToOrganizationRequest extends jspb.Message {
+  getFromOrganizationId(): string;
+  setFromOrganizationId(value: string): void;
+
+  getToOrganizationId(): string;
+  setToOrganizationId(value: string): void;
+
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
+  getNewHuntGroupName(): string;
+  setNewHuntGroupName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdminCopyHuntGroupToOrganizationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AdminCopyHuntGroupToOrganizationRequest): AdminCopyHuntGroupToOrganizationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdminCopyHuntGroupToOrganizationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdminCopyHuntGroupToOrganizationRequest;
+  static deserializeBinaryFromReader(message: AdminCopyHuntGroupToOrganizationRequest, reader: jspb.BinaryReader): AdminCopyHuntGroupToOrganizationRequest;
+}
+
+export namespace AdminCopyHuntGroupToOrganizationRequest {
+  export type AsObject = {
+    fromOrganizationId: string,
+    toOrganizationId: string,
+    huntGroupSid: number,
+    newHuntGroupName: string,
+  }
+}
+
+export class AdminCopyHuntGroupToOrganizationResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdminCopyHuntGroupToOrganizationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AdminCopyHuntGroupToOrganizationResponse): AdminCopyHuntGroupToOrganizationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdminCopyHuntGroupToOrganizationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdminCopyHuntGroupToOrganizationResponse;
+  static deserializeBinaryFromReader(message: AdminCopyHuntGroupToOrganizationResponse, reader: jspb.BinaryReader): AdminCopyHuntGroupToOrganizationResponse;
+}
+
+export namespace AdminCopyHuntGroupToOrganizationResponse {
+  export type AsObject = {
+  }
+}
+
 export interface AgentStatusMap {
   AGENT_STATUS_UNSPECIFIED: 0;
   AGENT_STATUS_LOGGED_IN: 1;
