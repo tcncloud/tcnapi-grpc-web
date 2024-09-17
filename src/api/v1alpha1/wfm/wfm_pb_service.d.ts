@@ -589,6 +589,24 @@ type WFMGetOnCallSchedulingActivity = {
   readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityRes;
 };
 
+type WFMListPatternsForSchedulingActivityClassifications = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.ListPatternsForSchedulingActivityClassificationsRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.ListPatternsForSchedulingActivityClassificationsResponse;
+};
+
+type WFMGetTimeOffSchedulingActivity = {
+  readonly methodName: string;
+  readonly service: typeof WFM;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_wfm_wfm_pb.GetTimeOffSchedulingActivityRequest;
+  readonly responseType: typeof api_v1alpha1_wfm_wfm_pb.GetTimeOffSchedulingActivityResponse;
+};
+
 type WFMCreateAgentGroup = {
   readonly methodName: string;
   readonly service: typeof WFM;
@@ -1853,6 +1871,8 @@ export class WFM {
   static readonly ListNonSkillActivityAssociations: WFMListNonSkillActivityAssociations;
   static readonly ListCandidateSchedulingActivities: WFMListCandidateSchedulingActivities;
   static readonly GetOnCallSchedulingActivity: WFMGetOnCallSchedulingActivity;
+  static readonly ListPatternsForSchedulingActivityClassifications: WFMListPatternsForSchedulingActivityClassifications;
+  static readonly GetTimeOffSchedulingActivity: WFMGetTimeOffSchedulingActivity;
   static readonly CreateAgentGroup: WFMCreateAgentGroup;
   static readonly ListAgentScheduleGroups: WFMListAgentScheduleGroups;
   static readonly UpdateAgentGroup: WFMUpdateAgentGroup;
@@ -2556,6 +2576,24 @@ export class WFMClient {
   getOnCallSchedulingActivity(
     requestMessage: api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityRes|null) => void
+  ): UnaryResponse;
+  listPatternsForSchedulingActivityClassifications(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListPatternsForSchedulingActivityClassificationsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListPatternsForSchedulingActivityClassificationsResponse|null) => void
+  ): UnaryResponse;
+  listPatternsForSchedulingActivityClassifications(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.ListPatternsForSchedulingActivityClassificationsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.ListPatternsForSchedulingActivityClassificationsResponse|null) => void
+  ): UnaryResponse;
+  getTimeOffSchedulingActivity(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTimeOffSchedulingActivityRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTimeOffSchedulingActivityResponse|null) => void
+  ): UnaryResponse;
+  getTimeOffSchedulingActivity(
+    requestMessage: api_v1alpha1_wfm_wfm_pb.GetTimeOffSchedulingActivityRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_wfm_wfm_pb.GetTimeOffSchedulingActivityResponse|null) => void
   ): UnaryResponse;
   createAgentGroup(
     requestMessage: api_v1alpha1_wfm_wfm_pb.CreateAgentGroupReq,
