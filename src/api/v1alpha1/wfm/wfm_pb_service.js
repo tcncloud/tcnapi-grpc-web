@@ -595,6 +595,24 @@ WFM.GetOnCallSchedulingActivity = {
   responseType: api_v1alpha1_wfm_wfm_pb.GetOnCallSchedulingActivityRes
 };
 
+WFM.ListPatternsForSchedulingActivityClassifications = {
+  methodName: "ListPatternsForSchedulingActivityClassifications",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.ListPatternsForSchedulingActivityClassificationsRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.ListPatternsForSchedulingActivityClassificationsResponse
+};
+
+WFM.GetTimeOffSchedulingActivity = {
+  methodName: "GetTimeOffSchedulingActivity",
+  service: WFM,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_wfm_wfm_pb.GetTimeOffSchedulingActivityRequest,
+  responseType: api_v1alpha1_wfm_wfm_pb.GetTimeOffSchedulingActivityResponse
+};
+
 WFM.CreateAgentGroup = {
   methodName: "CreateAgentGroup",
   service: WFM,
@@ -3809,6 +3827,68 @@ WFMClient.prototype.getOnCallSchedulingActivity = function getOnCallSchedulingAc
     callback = arguments[1];
   }
   var client = grpc.unary(WFM.GetOnCallSchedulingActivity, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.listPatternsForSchedulingActivityClassifications = function listPatternsForSchedulingActivityClassifications(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.ListPatternsForSchedulingActivityClassifications, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WFMClient.prototype.getTimeOffSchedulingActivity = function getTimeOffSchedulingActivity(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WFM.GetTimeOffSchedulingActivity, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

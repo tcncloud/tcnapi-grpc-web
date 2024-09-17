@@ -4083,6 +4083,100 @@ export namespace GetOnCallSchedulingActivityRes {
   }
 }
 
+export class ListPatternsForSchedulingActivityClassificationsRequest extends jspb.Message {
+  hasParentEntity(): boolean;
+  clearParentEntity(): void;
+  getParentEntity(): ParentEntity | undefined;
+  setParentEntity(value?: ParentEntity): void;
+
+  clearSchedulingActivityClassificationsList(): void;
+  getSchedulingActivityClassificationsList(): Array<api_commons_wfm_pb.SchedulingActivityClassificationMap[keyof api_commons_wfm_pb.SchedulingActivityClassificationMap]>;
+  setSchedulingActivityClassificationsList(value: Array<api_commons_wfm_pb.SchedulingActivityClassificationMap[keyof api_commons_wfm_pb.SchedulingActivityClassificationMap]>): void;
+  addSchedulingActivityClassifications(value: api_commons_wfm_pb.SchedulingActivityClassificationMap[keyof api_commons_wfm_pb.SchedulingActivityClassificationMap], index?: number): api_commons_wfm_pb.SchedulingActivityClassificationMap[keyof api_commons_wfm_pb.SchedulingActivityClassificationMap];
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPatternsForSchedulingActivityClassificationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPatternsForSchedulingActivityClassificationsRequest): ListPatternsForSchedulingActivityClassificationsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPatternsForSchedulingActivityClassificationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPatternsForSchedulingActivityClassificationsRequest;
+  static deserializeBinaryFromReader(message: ListPatternsForSchedulingActivityClassificationsRequest, reader: jspb.BinaryReader): ListPatternsForSchedulingActivityClassificationsRequest;
+}
+
+export namespace ListPatternsForSchedulingActivityClassificationsRequest {
+  export type AsObject = {
+    parentEntity?: ParentEntity.AsObject,
+    schedulingActivityClassificationsList: Array<api_commons_wfm_pb.SchedulingActivityClassificationMap[keyof api_commons_wfm_pb.SchedulingActivityClassificationMap]>,
+  }
+}
+
+export class ListPatternsForSchedulingActivityClassificationsResponse extends jspb.Message {
+  clearOpenTimesPatternsList(): void;
+  getOpenTimesPatternsList(): Array<OpenTimesPattern>;
+  setOpenTimesPatternsList(value: Array<OpenTimesPattern>): void;
+  addOpenTimesPatterns(value?: OpenTimesPattern, index?: number): OpenTimesPattern;
+
+  clearAgentAvailabilityPatternsList(): void;
+  getAgentAvailabilityPatternsList(): Array<AgentAvailabilityPattern>;
+  setAgentAvailabilityPatternsList(value: Array<AgentAvailabilityPattern>): void;
+  addAgentAvailabilityPatterns(value?: AgentAvailabilityPattern, index?: number): AgentAvailabilityPattern;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPatternsForSchedulingActivityClassificationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPatternsForSchedulingActivityClassificationsResponse): ListPatternsForSchedulingActivityClassificationsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPatternsForSchedulingActivityClassificationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPatternsForSchedulingActivityClassificationsResponse;
+  static deserializeBinaryFromReader(message: ListPatternsForSchedulingActivityClassificationsResponse, reader: jspb.BinaryReader): ListPatternsForSchedulingActivityClassificationsResponse;
+}
+
+export namespace ListPatternsForSchedulingActivityClassificationsResponse {
+  export type AsObject = {
+    openTimesPatternsList: Array<OpenTimesPattern.AsObject>,
+    agentAvailabilityPatternsList: Array<AgentAvailabilityPattern.AsObject>,
+  }
+}
+
+export class GetTimeOffSchedulingActivityRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTimeOffSchedulingActivityRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTimeOffSchedulingActivityRequest): GetTimeOffSchedulingActivityRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetTimeOffSchedulingActivityRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTimeOffSchedulingActivityRequest;
+  static deserializeBinaryFromReader(message: GetTimeOffSchedulingActivityRequest, reader: jspb.BinaryReader): GetTimeOffSchedulingActivityRequest;
+}
+
+export namespace GetTimeOffSchedulingActivityRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetTimeOffSchedulingActivityResponse extends jspb.Message {
+  hasSchedulingActivity(): boolean;
+  clearSchedulingActivity(): void;
+  getSchedulingActivity(): SchedulingActivity | undefined;
+  setSchedulingActivity(value?: SchedulingActivity): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTimeOffSchedulingActivityResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTimeOffSchedulingActivityResponse): GetTimeOffSchedulingActivityResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetTimeOffSchedulingActivityResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTimeOffSchedulingActivityResponse;
+  static deserializeBinaryFromReader(message: GetTimeOffSchedulingActivityResponse, reader: jspb.BinaryReader): GetTimeOffSchedulingActivityResponse;
+}
+
+export namespace GetTimeOffSchedulingActivityResponse {
+  export type AsObject = {
+    schedulingActivity?: SchedulingActivity.AsObject,
+  }
+}
+
 export class AgentGroup extends jspb.Message {
   getAgentGroupSid(): number;
   setAgentGroupSid(value: number): void;
