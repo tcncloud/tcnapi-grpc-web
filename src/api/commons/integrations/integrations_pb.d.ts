@@ -2012,6 +2012,41 @@ export class ExecuteFlow extends jspb.Message {
   getSwervepayProcessNewTransactionValidate(): ExecuteSwervepayProcessNewTransactionValidate | undefined;
   setSwervepayProcessNewTransactionValidate(value?: ExecuteSwervepayProcessNewTransactionValidate): void;
 
+  hasVeradigmGetLocations(): boolean;
+  clearVeradigmGetLocations(): void;
+  getVeradigmGetLocations(): ExecuteVeradigmGetLocations | undefined;
+  setVeradigmGetLocations(value?: ExecuteVeradigmGetLocations): void;
+
+  hasVeradigmGetPatientAccountBalance(): boolean;
+  clearVeradigmGetPatientAccountBalance(): void;
+  getVeradigmGetPatientAccountBalance(): ExecuteVeradigmGetPatientAccountBalance | undefined;
+  setVeradigmGetPatientAccountBalance(value?: ExecuteVeradigmGetPatientAccountBalance): void;
+
+  hasVeradigmGetPayments(): boolean;
+  clearVeradigmGetPayments(): void;
+  getVeradigmGetPayments(): ExecuteVeradigmGetPayments | undefined;
+  setVeradigmGetPayments(value?: ExecuteVeradigmGetPayments): void;
+
+  hasVeradigmGetPlacesOfService(): boolean;
+  clearVeradigmGetPlacesOfService(): void;
+  getVeradigmGetPlacesOfService(): ExecuteVeradigmGetPlacesOfService | undefined;
+  setVeradigmGetPlacesOfService(value?: ExecuteVeradigmGetPlacesOfService): void;
+
+  hasVeradigmSavePaymentTransaction(): boolean;
+  clearVeradigmSavePaymentTransaction(): void;
+  getVeradigmSavePaymentTransaction(): ExecuteVeradigmSavePaymentTransaction | undefined;
+  setVeradigmSavePaymentTransaction(value?: ExecuteVeradigmSavePaymentTransaction): void;
+
+  hasVeradigmSaveRefundTransaction(): boolean;
+  clearVeradigmSaveRefundTransaction(): void;
+  getVeradigmSaveRefundTransaction(): ExecuteVeradigmSaveRefundTransaction | undefined;
+  setVeradigmSaveRefundTransaction(value?: ExecuteVeradigmSaveRefundTransaction): void;
+
+  hasVeradigmSaveVoucherPayment(): boolean;
+  clearVeradigmSaveVoucherPayment(): void;
+  getVeradigmSaveVoucherPayment(): ExecuteVeradigmSaveVoucherPayment | undefined;
+  setVeradigmSaveVoucherPayment(value?: ExecuteVeradigmSaveVoucherPayment): void;
+
   hasDebugEcho(): boolean;
   clearDebugEcho(): void;
   getDebugEcho(): ExecuteDebugEcho | undefined;
@@ -2292,6 +2327,13 @@ export namespace ExecuteFlow {
     swervepayProcessNewTransactionRefund?: ExecuteSwervepayProcessNewTransactionRefund.AsObject,
     swervepayProcessNewTransactionSale?: ExecuteSwervepayProcessNewTransactionSale.AsObject,
     swervepayProcessNewTransactionValidate?: ExecuteSwervepayProcessNewTransactionValidate.AsObject,
+    veradigmGetLocations?: ExecuteVeradigmGetLocations.AsObject,
+    veradigmGetPatientAccountBalance?: ExecuteVeradigmGetPatientAccountBalance.AsObject,
+    veradigmGetPayments?: ExecuteVeradigmGetPayments.AsObject,
+    veradigmGetPlacesOfService?: ExecuteVeradigmGetPlacesOfService.AsObject,
+    veradigmSavePaymentTransaction?: ExecuteVeradigmSavePaymentTransaction.AsObject,
+    veradigmSaveRefundTransaction?: ExecuteVeradigmSaveRefundTransaction.AsObject,
+    veradigmSaveVoucherPayment?: ExecuteVeradigmSaveVoucherPayment.AsObject,
     debugEcho?: ExecuteDebugEcho.AsObject,
     debugValidate?: ExecuteDebugValidate.AsObject,
   }
@@ -2554,6 +2596,13 @@ export namespace ExecuteFlow {
     SWERVEPAY_PROCESS_NEW_TRANSACTION_REFUND = 4620,
     SWERVEPAY_PROCESS_NEW_TRANSACTION_SALE = 4621,
     SWERVEPAY_PROCESS_NEW_TRANSACTION_VALIDATE = 4622,
+    VERADIGM_GET_LOCATIONS = 4701,
+    VERADIGM_GET_PATIENT_ACCOUNT_BALANCE = 4702,
+    VERADIGM_GET_PAYMENTS = 4703,
+    VERADIGM_GET_PLACES_OF_SERVICE = 4704,
+    VERADIGM_SAVE_PAYMENT_TRANSACTION = 4705,
+    VERADIGM_SAVE_REFUND_TRANSACTION = 4706,
+    VERADIGM_SAVE_VOUCHER_PAYMENT = 4707,
     DEBUG_ECHO = 5001,
     DEBUG_VALIDATE = 5002,
   }
@@ -7304,6 +7353,118 @@ export namespace ExecuteNavigaDTICSStopTrans {
   }
 }
 
+export class ExecuteVeradigmGetLocations extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteVeradigmGetLocations.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteVeradigmGetLocations): ExecuteVeradigmGetLocations.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteVeradigmGetLocations, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteVeradigmGetLocations;
+  static deserializeBinaryFromReader(message: ExecuteVeradigmGetLocations, reader: jspb.BinaryReader): ExecuteVeradigmGetLocations;
+}
+
+export namespace ExecuteVeradigmGetLocations {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteVeradigmGetPatientAccountBalance extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteVeradigmGetPatientAccountBalance.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteVeradigmGetPatientAccountBalance): ExecuteVeradigmGetPatientAccountBalance.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteVeradigmGetPatientAccountBalance, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteVeradigmGetPatientAccountBalance;
+  static deserializeBinaryFromReader(message: ExecuteVeradigmGetPatientAccountBalance, reader: jspb.BinaryReader): ExecuteVeradigmGetPatientAccountBalance;
+}
+
+export namespace ExecuteVeradigmGetPatientAccountBalance {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteVeradigmGetPayments extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteVeradigmGetPayments.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteVeradigmGetPayments): ExecuteVeradigmGetPayments.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteVeradigmGetPayments, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteVeradigmGetPayments;
+  static deserializeBinaryFromReader(message: ExecuteVeradigmGetPayments, reader: jspb.BinaryReader): ExecuteVeradigmGetPayments;
+}
+
+export namespace ExecuteVeradigmGetPayments {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteVeradigmGetPlacesOfService extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteVeradigmGetPlacesOfService.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteVeradigmGetPlacesOfService): ExecuteVeradigmGetPlacesOfService.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteVeradigmGetPlacesOfService, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteVeradigmGetPlacesOfService;
+  static deserializeBinaryFromReader(message: ExecuteVeradigmGetPlacesOfService, reader: jspb.BinaryReader): ExecuteVeradigmGetPlacesOfService;
+}
+
+export namespace ExecuteVeradigmGetPlacesOfService {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteVeradigmSavePaymentTransaction extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteVeradigmSavePaymentTransaction.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteVeradigmSavePaymentTransaction): ExecuteVeradigmSavePaymentTransaction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteVeradigmSavePaymentTransaction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteVeradigmSavePaymentTransaction;
+  static deserializeBinaryFromReader(message: ExecuteVeradigmSavePaymentTransaction, reader: jspb.BinaryReader): ExecuteVeradigmSavePaymentTransaction;
+}
+
+export namespace ExecuteVeradigmSavePaymentTransaction {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteVeradigmSaveRefundTransaction extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteVeradigmSaveRefundTransaction.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteVeradigmSaveRefundTransaction): ExecuteVeradigmSaveRefundTransaction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteVeradigmSaveRefundTransaction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteVeradigmSaveRefundTransaction;
+  static deserializeBinaryFromReader(message: ExecuteVeradigmSaveRefundTransaction, reader: jspb.BinaryReader): ExecuteVeradigmSaveRefundTransaction;
+}
+
+export namespace ExecuteVeradigmSaveRefundTransaction {
+  export type AsObject = {
+  }
+}
+
+export class ExecuteVeradigmSaveVoucherPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteVeradigmSaveVoucherPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteVeradigmSaveVoucherPayment): ExecuteVeradigmSaveVoucherPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteVeradigmSaveVoucherPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteVeradigmSaveVoucherPayment;
+  static deserializeBinaryFromReader(message: ExecuteVeradigmSaveVoucherPayment, reader: jspb.BinaryReader): ExecuteVeradigmSaveVoucherPayment;
+}
+
+export namespace ExecuteVeradigmSaveVoucherPayment {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -7352,6 +7513,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_NAVIGA_DTI_CIRC: 4400;
   INTEGRATION_TYPE_NAVIGA_DTI_CS: 4500;
   INTEGRATION_TYPE_SWERVEPAY: 4600;
+  INTEGRATION_TYPE_VERADIGM: 4700;
   INTEGRATION_TYPE_DEBUG: 5000;
 }
 
@@ -7615,6 +7777,15 @@ export interface RequestMethodMap {
   REQUEST_METHOD_SWERVEPAY_PROCESS_NEW_TRANSACTION_REFUND: 4620;
   REQUEST_METHOD_SWERVEPAY_PROCESS_NEW_TRANSACTION_SALE: 4621;
   REQUEST_METHOD_SWERVEPAY_PROCESS_NEW_TRANSACTION_VALIDATE: 4622;
+  REQUEST_METHOD_VERADIGM_GET_TOKEN: 4701;
+  REQUEST_METHOD_VERADIGM_GET_USER_AUTHENTICATION: 4702;
+  REQUEST_METHOD_VERADIGM_GET_LOCATIONS: 4703;
+  REQUEST_METHOD_VERADIGM_GET_PATIENT_ACCOUNT_BALANCE: 4704;
+  REQUEST_METHOD_VERADIGM_GET_PAYMENTS: 4705;
+  REQUEST_METHOD_VERADIGM_GET_PLACES_OF_SERVICE: 4706;
+  REQUEST_METHOD_VERADIGM_SAVE_PAYMENT_TRANSACTION: 4707;
+  REQUEST_METHOD_VERADIGM_SAVE_REFUND_TRANSACTION: 4708;
+  REQUEST_METHOD_VERADIGM_SAVE_VOUCHER_PAYMENT: 4709;
   REQUEST_METHOD_DEBUG_ECHO: 5001;
   REQUESET_METHOD_DEBUG_VALIDATE: 5002;
 }
