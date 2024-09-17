@@ -2616,6 +2616,11 @@ export namespace GetUserSessionDataResponse {
     getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
     setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
 
+    hasAccessTokenExpiration(): boolean;
+    clearAccessTokenExpiration(): void;
+    getAccessTokenExpiration(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setAccessTokenExpiration(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): User.AsObject;
     static toObject(includeInstance: boolean, msg: User): User.AsObject;
@@ -2658,6 +2663,7 @@ export namespace GetUserSessionDataResponse {
       mfaTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       passwordResetDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
       localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
+      accessTokenExpiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
 
     export class RegionSids extends jspb.Message {
