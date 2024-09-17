@@ -2482,6 +2482,11 @@ export class GetUserSessionDataResponse extends jspb.Message {
   getBillingId(): string;
   setBillingId(value: string): void;
 
+  hasAccessTokenExpiration(): boolean;
+  clearAccessTokenExpiration(): void;
+  getAccessTokenExpiration(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setAccessTokenExpiration(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserSessionDataResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserSessionDataResponse): GetUserSessionDataResponse.AsObject;
@@ -2502,6 +2507,7 @@ export namespace GetUserSessionDataResponse {
     orgAllowedMfa: boolean,
     localePreferences?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
     billingId: string,
+    accessTokenExpiration?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 
   export class User extends jspb.Message {

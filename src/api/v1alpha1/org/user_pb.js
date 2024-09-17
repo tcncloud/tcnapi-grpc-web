@@ -19814,7 +19814,8 @@ labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
     api_commons_org_labels_pb.Label.toObject, includeInstance),
 orgAllowedMfa: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
 localePreferences: (f = msg.getLocalePreferences()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f),
-billingId: jspb.Message.getFieldWithDefault(msg, 8, "")
+billingId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+accessTokenExpiration: (f = msg.getAccessTokenExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -19888,6 +19889,11 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.deserializeBinaryFromReader = 
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setBillingId(value);
+      break;
+    case 9:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setAccessTokenExpiration(value);
       break;
     default:
       reader.skipField();
@@ -19976,6 +19982,14 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.serializeBinaryToWriter = func
     writer.writeString(
       8,
       f
+    );
+  }
+  f = message.getAccessTokenExpiration();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -21643,6 +21657,43 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.getBillingId = funct
  */
 proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.setBillingId = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp access_token_expiration = 9;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.getAccessTokenExpiration = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse} returns this
+*/
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.setAccessTokenExpiration = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse} returns this
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.clearAccessTokenExpiration = function() {
+  return this.setAccessTokenExpiration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.prototype.hasAccessTokenExpiration = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
