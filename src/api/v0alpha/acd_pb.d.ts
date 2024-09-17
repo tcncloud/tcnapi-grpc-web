@@ -2555,3 +2555,55 @@ export namespace PopulateWorkflowFieldsRes {
   }
 }
 
+export class ValidateFieldReq extends jspb.Message {
+  getVoiceSessionSid(): number;
+  setVoiceSessionSid(value: number): void;
+
+  getValidationType(): api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap];
+  setValidationType(value: api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap]): void;
+
+  getFieldName(): string;
+  setFieldName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ValidateFieldReq.AsObject;
+  static toObject(includeInstance: boolean, msg: ValidateFieldReq): ValidateFieldReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ValidateFieldReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ValidateFieldReq;
+  static deserializeBinaryFromReader(message: ValidateFieldReq, reader: jspb.BinaryReader): ValidateFieldReq;
+}
+
+export namespace ValidateFieldReq {
+  export type AsObject = {
+    voiceSessionSid: number,
+    validationType: api_commons_integrations_integrations_pb.ValidationMap[keyof api_commons_integrations_integrations_pb.ValidationMap],
+    fieldName: string,
+  }
+}
+
+export class ValidateFieldRes extends jspb.Message {
+  getValid(): boolean;
+  setValid(value: boolean): void;
+
+  getReason(): string;
+  setReason(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ValidateFieldRes.AsObject;
+  static toObject(includeInstance: boolean, msg: ValidateFieldRes): ValidateFieldRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ValidateFieldRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ValidateFieldRes;
+  static deserializeBinaryFromReader(message: ValidateFieldRes, reader: jspb.BinaryReader): ValidateFieldRes;
+}
+
+export namespace ValidateFieldRes {
+  export type AsObject = {
+    valid: boolean,
+    reason: string,
+  }
+}
+

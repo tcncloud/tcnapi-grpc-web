@@ -535,6 +535,15 @@ type AcdPopulateWorkflowFields = {
   readonly responseType: typeof api_v0alpha_acd_pb.PopulateWorkflowFieldsRes;
 };
 
+type AcdValidateField = {
+  readonly methodName: string;
+  readonly service: typeof Acd;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v0alpha_acd_pb.ValidateFieldReq;
+  readonly responseType: typeof api_v0alpha_acd_pb.ValidateFieldRes;
+};
+
 export class Acd {
   static readonly serviceName: string;
   static readonly AgentGetStatusStream: AcdAgentGetStatusStream;
@@ -596,6 +605,7 @@ export class Acd {
   static readonly ProcessSecureForm: AcdProcessSecureForm;
   static readonly FinishSecureFormHandling: AcdFinishSecureFormHandling;
   static readonly PopulateWorkflowFields: AcdPopulateWorkflowFields;
+  static readonly ValidateField: AcdValidateField;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1144,6 +1154,15 @@ export class AcdClient {
   populateWorkflowFields(
     requestMessage: api_v0alpha_acd_pb.PopulateWorkflowFieldsReq,
     callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.PopulateWorkflowFieldsRes|null) => void
+  ): UnaryResponse;
+  validateField(
+    requestMessage: api_v0alpha_acd_pb.ValidateFieldReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ValidateFieldRes|null) => void
+  ): UnaryResponse;
+  validateField(
+    requestMessage: api_v0alpha_acd_pb.ValidateFieldReq,
+    callback: (error: ServiceError|null, responseMessage: api_v0alpha_acd_pb.ValidateFieldRes|null) => void
   ): UnaryResponse;
 }
 
