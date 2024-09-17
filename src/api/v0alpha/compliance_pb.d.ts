@@ -384,6 +384,14 @@ export class ScrubListRes extends jspb.Message {
   setInvalidEntriesList(value: Array<string>): void;
   addInvalidEntries(value: string, index?: number): string;
 
+  getTotalInvalid(): number;
+  setTotalInvalid(value: number): void;
+
+  clearInvalidListList(): void;
+  getInvalidListList(): Array<api_commons_compliance_pb.InvalidScrubListEntry>;
+  setInvalidListList(value: Array<api_commons_compliance_pb.InvalidScrubListEntry>): void;
+  addInvalidList(value?: api_commons_compliance_pb.InvalidScrubListEntry, index?: number): api_commons_compliance_pb.InvalidScrubListEntry;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ScrubListRes.AsObject;
   static toObject(includeInstance: boolean, msg: ScrubListRes): ScrubListRes.AsObject;
@@ -401,6 +409,8 @@ export namespace ScrubListRes {
     contentType: api_commons_compliance_pb.ContentTypeMap[keyof api_commons_compliance_pb.ContentTypeMap],
     entriesAdded: number,
     invalidEntriesList: Array<string>,
+    totalInvalid: number,
+    invalidListList: Array<api_commons_compliance_pb.InvalidScrubListEntry.AsObject>,
   }
 }
 

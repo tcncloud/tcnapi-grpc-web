@@ -1045,6 +1045,30 @@ export namespace RuleResponse {
   }
 }
 
+export class InvalidScrubListEntry extends jspb.Message {
+  getEntry(): string;
+  setEntry(value: string): void;
+
+  getErrorMessage(): string;
+  setErrorMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InvalidScrubListEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: InvalidScrubListEntry): InvalidScrubListEntry.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: InvalidScrubListEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InvalidScrubListEntry;
+  static deserializeBinaryFromReader(message: InvalidScrubListEntry, reader: jspb.BinaryReader): InvalidScrubListEntry;
+}
+
+export namespace InvalidScrubListEntry {
+  export type AsObject = {
+    entry: string,
+    errorMessage: string,
+  }
+}
+
 export interface VerbMap {
   V_UNKNOWN: 0;
   V_ALLOW: 1;

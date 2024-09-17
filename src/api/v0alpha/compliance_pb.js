@@ -5188,7 +5188,7 @@ proto.api.v0alpha.ScrubListsRes.prototype.clearListsList = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.v0alpha.ScrubListRes.repeatedFields_ = [5];
+proto.api.v0alpha.ScrubListRes.repeatedFields_ = [5,7];
 
 
 
@@ -5225,7 +5225,10 @@ listId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 readOnly: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
 contentType: jspb.Message.getFieldWithDefault(msg, 3, 0),
 entriesAdded: jspb.Message.getFieldWithDefault(msg, 4, 0),
-invalidEntriesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+invalidEntriesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+totalInvalid: jspb.Message.getFieldWithDefault(msg, 6, 0),
+invalidListList: jspb.Message.toObjectList(msg.getInvalidListList(),
+    api_commons_compliance_pb.InvalidScrubListEntry.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -5281,6 +5284,15 @@ proto.api.v0alpha.ScrubListRes.deserializeBinaryFromReader = function(msg, reade
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.addInvalidEntries(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTotalInvalid(value);
+      break;
+    case 7:
+      var value = new api_commons_compliance_pb.InvalidScrubListEntry;
+      reader.readMessage(value,api_commons_compliance_pb.InvalidScrubListEntry.deserializeBinaryFromReader);
+      msg.addInvalidList(value);
       break;
     default:
       reader.skipField();
@@ -5344,6 +5356,21 @@ proto.api.v0alpha.ScrubListRes.serializeBinaryToWriter = function(message, write
     writer.writeRepeatedString(
       5,
       f
+    );
+  }
+  f = message.getTotalInvalid();
+  if (f !== 0) {
+    writer.writeInt64(
+      6,
+      f
+    );
+  }
+  f = message.getInvalidListList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      7,
+      f,
+      api_commons_compliance_pb.InvalidScrubListEntry.serializeBinaryToWriter
     );
   }
 };
@@ -5455,6 +5482,62 @@ proto.api.v0alpha.ScrubListRes.prototype.addInvalidEntries = function(value, opt
  */
 proto.api.v0alpha.ScrubListRes.prototype.clearInvalidEntriesList = function() {
   return this.setInvalidEntriesList([]);
+};
+
+
+/**
+ * optional int64 total_invalid = 6;
+ * @return {number}
+ */
+proto.api.v0alpha.ScrubListRes.prototype.getTotalInvalid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.api.v0alpha.ScrubListRes} returns this
+ */
+proto.api.v0alpha.ScrubListRes.prototype.setTotalInvalid = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * repeated api.commons.InvalidScrubListEntry invalid_list = 7;
+ * @return {!Array<!proto.api.commons.InvalidScrubListEntry>}
+ */
+proto.api.v0alpha.ScrubListRes.prototype.getInvalidListList = function() {
+  return /** @type{!Array<!proto.api.commons.InvalidScrubListEntry>} */ (
+    jspb.Message.getRepeatedWrapperField(this, api_commons_compliance_pb.InvalidScrubListEntry, 7));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.InvalidScrubListEntry>} value
+ * @return {!proto.api.v0alpha.ScrubListRes} returns this
+*/
+proto.api.v0alpha.ScrubListRes.prototype.setInvalidListList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+};
+
+
+/**
+ * @param {!proto.api.commons.InvalidScrubListEntry=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.InvalidScrubListEntry}
+ */
+proto.api.v0alpha.ScrubListRes.prototype.addInvalidList = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.api.commons.InvalidScrubListEntry, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.v0alpha.ScrubListRes} returns this
+ */
+proto.api.v0alpha.ScrubListRes.prototype.clearInvalidListList = function() {
+  return this.setInvalidListList([]);
 };
 
 
