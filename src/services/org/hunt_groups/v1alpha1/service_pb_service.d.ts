@@ -59,13 +59,13 @@ type HuntGroupsServiceUpdateHuntGroupAgentTriggers = {
   readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupAgentTriggersResponse;
 };
 
-type HuntGroupsServiceCopyHuntGroupToOrganization = {
+type HuntGroupsServiceAdminCopyHuntGroupToOrganization = {
   readonly methodName: string;
   readonly service: typeof HuntGroupsService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationRequest;
-  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationResponse;
+  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AdminCopyHuntGroupToOrganizationRequest;
+  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AdminCopyHuntGroupToOrganizationResponse;
 };
 
 export class HuntGroupsService {
@@ -76,7 +76,7 @@ export class HuntGroupsService {
   static readonly ListHuntGroupAgentTriggers: HuntGroupsServiceListHuntGroupAgentTriggers;
   static readonly CopyHuntGroupAgentTrigger: HuntGroupsServiceCopyHuntGroupAgentTrigger;
   static readonly UpdateHuntGroupAgentTriggers: HuntGroupsServiceUpdateHuntGroupAgentTriggers;
-  static readonly CopyHuntGroupToOrganization: HuntGroupsServiceCopyHuntGroupToOrganization;
+  static readonly AdminCopyHuntGroupToOrganization: HuntGroupsServiceAdminCopyHuntGroupToOrganization;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -165,14 +165,14 @@ export class HuntGroupsServiceClient {
     requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupAgentTriggersRequest,
     callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupAgentTriggersResponse|null) => void
   ): UnaryResponse;
-  copyHuntGroupToOrganization(
-    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationRequest,
+  adminCopyHuntGroupToOrganization(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminCopyHuntGroupToOrganizationRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminCopyHuntGroupToOrganizationResponse|null) => void
   ): UnaryResponse;
-  copyHuntGroupToOrganization(
-    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationRequest,
-    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationResponse|null) => void
+  adminCopyHuntGroupToOrganization(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminCopyHuntGroupToOrganizationRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminCopyHuntGroupToOrganizationResponse|null) => void
   ): UnaryResponse;
 }
 

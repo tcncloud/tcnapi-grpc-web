@@ -65,13 +65,13 @@ HuntGroupsService.UpdateHuntGroupAgentTriggers = {
   responseType: services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupAgentTriggersResponse
 };
 
-HuntGroupsService.CopyHuntGroupToOrganization = {
-  methodName: "CopyHuntGroupToOrganization",
+HuntGroupsService.AdminCopyHuntGroupToOrganization = {
+  methodName: "AdminCopyHuntGroupToOrganization",
   service: HuntGroupsService,
   requestStream: false,
   responseStream: false,
-  requestType: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationRequest,
-  responseType: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationResponse
+  requestType: services_org_hunt_groups_v1alpha1_entities_pb.AdminCopyHuntGroupToOrganizationRequest,
+  responseType: services_org_hunt_groups_v1alpha1_entities_pb.AdminCopyHuntGroupToOrganizationResponse
 };
 
 exports.HuntGroupsService = HuntGroupsService;
@@ -267,11 +267,11 @@ HuntGroupsServiceClient.prototype.updateHuntGroupAgentTriggers = function update
   };
 };
 
-HuntGroupsServiceClient.prototype.copyHuntGroupToOrganization = function copyHuntGroupToOrganization(requestMessage, metadata, callback) {
+HuntGroupsServiceClient.prototype.adminCopyHuntGroupToOrganization = function adminCopyHuntGroupToOrganization(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(HuntGroupsService.CopyHuntGroupToOrganization, {
+  var client = grpc.unary(HuntGroupsService.AdminCopyHuntGroupToOrganization, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
