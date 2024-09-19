@@ -3492,11 +3492,6 @@ export class Template extends jspb.Message {
   getInvoiceTemplate(): api_commons_integrations_integrations_pb.Invoices | undefined;
   setInvoiceTemplate(value?: api_commons_integrations_integrations_pb.Invoices): void;
 
-  hasReceiptTemplate(): boolean;
-  clearReceiptTemplate(): void;
-  getReceiptTemplate(): api_commons_integrations_integrations_pb.Receipt | undefined;
-  setReceiptTemplate(value?: api_commons_integrations_integrations_pb.Receipt): void;
-
   getValCase(): Template.ValCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Template.AsObject;
@@ -3511,13 +3506,11 @@ export class Template extends jspb.Message {
 export namespace Template {
   export type AsObject = {
     invoiceTemplate?: api_commons_integrations_integrations_pb.Invoices.AsObject,
-    receiptTemplate?: api_commons_integrations_integrations_pb.Receipt.AsObject,
   }
 
   export enum ValCase {
     VAL_NOT_SET = 0,
     INVOICE_TEMPLATE = 1,
-    RECEIPT_TEMPLATE = 2,
   }
 }
 

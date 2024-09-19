@@ -27652,15 +27652,14 @@ proto.api.v1alpha1.integrations.Action.prototype.clearOptsMap = function() {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.api.v1alpha1.integrations.Template.oneofGroups_ = [[1,2]];
+proto.api.v1alpha1.integrations.Template.oneofGroups_ = [[1]];
 
 /**
  * @enum {number}
  */
 proto.api.v1alpha1.integrations.Template.ValCase = {
   VAL_NOT_SET: 0,
-  INVOICE_TEMPLATE: 1,
-  RECEIPT_TEMPLATE: 2
+  INVOICE_TEMPLATE: 1
 };
 
 /**
@@ -27701,8 +27700,7 @@ proto.api.v1alpha1.integrations.Template.prototype.toObject = function(opt_inclu
  */
 proto.api.v1alpha1.integrations.Template.toObject = function(includeInstance, msg) {
   var f, obj = {
-invoiceTemplate: (f = msg.getInvoiceTemplate()) && api_commons_integrations_integrations_pb.Invoices.toObject(includeInstance, f),
-receiptTemplate: (f = msg.getReceiptTemplate()) && api_commons_integrations_integrations_pb.Receipt.toObject(includeInstance, f)
+invoiceTemplate: (f = msg.getInvoiceTemplate()) && api_commons_integrations_integrations_pb.Invoices.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -27744,11 +27742,6 @@ proto.api.v1alpha1.integrations.Template.deserializeBinaryFromReader = function(
       reader.readMessage(value,api_commons_integrations_integrations_pb.Invoices.deserializeBinaryFromReader);
       msg.setInvoiceTemplate(value);
       break;
-    case 2:
-      var value = new api_commons_integrations_integrations_pb.Receipt;
-      reader.readMessage(value,api_commons_integrations_integrations_pb.Receipt.deserializeBinaryFromReader);
-      msg.setReceiptTemplate(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -27784,14 +27777,6 @@ proto.api.v1alpha1.integrations.Template.serializeBinaryToWriter = function(mess
       1,
       f,
       api_commons_integrations_integrations_pb.Invoices.serializeBinaryToWriter
-    );
-  }
-  f = message.getReceiptTemplate();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      api_commons_integrations_integrations_pb.Receipt.serializeBinaryToWriter
     );
   }
 };
@@ -27831,43 +27816,6 @@ proto.api.v1alpha1.integrations.Template.prototype.clearInvoiceTemplate = functi
  */
 proto.api.v1alpha1.integrations.Template.prototype.hasInvoiceTemplate = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional api.commons.integrations.Receipt receipt_template = 2;
- * @return {?proto.api.commons.integrations.Receipt}
- */
-proto.api.v1alpha1.integrations.Template.prototype.getReceiptTemplate = function() {
-  return /** @type{?proto.api.commons.integrations.Receipt} */ (
-    jspb.Message.getWrapperField(this, api_commons_integrations_integrations_pb.Receipt, 2));
-};
-
-
-/**
- * @param {?proto.api.commons.integrations.Receipt|undefined} value
- * @return {!proto.api.v1alpha1.integrations.Template} returns this
-*/
-proto.api.v1alpha1.integrations.Template.prototype.setReceiptTemplate = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 2, proto.api.v1alpha1.integrations.Template.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.v1alpha1.integrations.Template} returns this
- */
-proto.api.v1alpha1.integrations.Template.prototype.clearReceiptTemplate = function() {
-  return this.setReceiptTemplate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.v1alpha1.integrations.Template.prototype.hasReceiptTemplate = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
