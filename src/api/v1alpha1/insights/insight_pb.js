@@ -4753,7 +4753,7 @@ proto.api.v1alpha1.insights.ListVfsSchemasResponse.prototype.clearVfsSchemasList
  * @private {!Array<number>}
  * @const
  */
-proto.api.v1alpha1.insights.FixedWidthVisualization.repeatedFields_ = [3];
+proto.api.v1alpha1.insights.FixedWidthVisualization.repeatedFields_ = [1];
 
 
 
@@ -4824,7 +4824,7 @@ proto.api.v1alpha1.insights.FixedWidthVisualization.deserializeBinaryFromReader 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 3:
+    case 1:
       var value = new proto.api.v1alpha1.insights.TableColumnConfig;
       reader.readMessage(value,proto.api.v1alpha1.insights.TableColumnConfig.deserializeBinaryFromReader);
       msg.addTableColumnDetails(value);
@@ -4861,7 +4861,7 @@ proto.api.v1alpha1.insights.FixedWidthVisualization.serializeBinaryToWriter = fu
   f = message.getTableColumnDetailsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      1,
       f,
       proto.api.v1alpha1.insights.TableColumnConfig.serializeBinaryToWriter
     );
@@ -4870,12 +4870,12 @@ proto.api.v1alpha1.insights.FixedWidthVisualization.serializeBinaryToWriter = fu
 
 
 /**
- * repeated TableColumnConfig table_column_details = 3;
+ * repeated TableColumnConfig table_column_details = 1;
  * @return {!Array<!proto.api.v1alpha1.insights.TableColumnConfig>}
  */
 proto.api.v1alpha1.insights.FixedWidthVisualization.prototype.getTableColumnDetailsList = function() {
   return /** @type{!Array<!proto.api.v1alpha1.insights.TableColumnConfig>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.insights.TableColumnConfig, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.api.v1alpha1.insights.TableColumnConfig, 1));
 };
 
 
@@ -4884,7 +4884,7 @@ proto.api.v1alpha1.insights.FixedWidthVisualization.prototype.getTableColumnDeta
  * @return {!proto.api.v1alpha1.insights.FixedWidthVisualization} returns this
 */
 proto.api.v1alpha1.insights.FixedWidthVisualization.prototype.setTableColumnDetailsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -4894,7 +4894,7 @@ proto.api.v1alpha1.insights.FixedWidthVisualization.prototype.setTableColumnDeta
  * @return {!proto.api.v1alpha1.insights.TableColumnConfig}
  */
 proto.api.v1alpha1.insights.FixedWidthVisualization.prototype.addTableColumnDetails = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.api.v1alpha1.insights.TableColumnConfig, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.api.v1alpha1.insights.TableColumnConfig, opt_index);
 };
 
 
