@@ -20049,7 +20049,8 @@ agent: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
 accountOwner: jspb.Message.getBooleanFieldWithDefault(msg, 32, false),
 mfaTimestamp: (f = msg.getMfaTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 passwordResetDate: (f = msg.getPasswordResetDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-localePreferencesOverride: (f = msg.getLocalePreferencesOverride()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f)
+localePreferencesOverride: (f = msg.getLocalePreferencesOverride()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f),
+accessTokenExpiration: (f = msg.getAccessTokenExpiration()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -20214,6 +20215,11 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.deserializeBinaryFromRead
       var value = new api_commons_org_preferences_pb.LocalePreferences;
       reader.readMessage(value,api_commons_org_preferences_pb.LocalePreferences.deserializeBinaryFromReader);
       msg.setLocalePreferencesOverride(value);
+      break;
+    case 36:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setAccessTokenExpiration(value);
       break;
     default:
       reader.skipField();
@@ -20456,6 +20462,14 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.serializeBinaryToWriter =
       35,
       f,
       api_commons_org_preferences_pb.LocalePreferences.serializeBinaryToWriter
+    );
+  }
+  f = message.getAccessTokenExpiration();
+  if (f != null) {
+    writer.writeMessage(
+      36,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -21402,6 +21416,43 @@ proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.clearLocalePref
  */
 proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.hasLocalePreferencesOverride = function() {
   return jspb.Message.getField(this, 35) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp access_token_expiration = 36;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.getAccessTokenExpiration = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 36));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse.User} returns this
+*/
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.setAccessTokenExpiration = function(value) {
+  return jspb.Message.setWrapperField(this, 36, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1alpha1.org.GetUserSessionDataResponse.User} returns this
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.clearAccessTokenExpiration = function() {
+  return this.setAccessTokenExpiration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.org.GetUserSessionDataResponse.User.prototype.hasAccessTokenExpiration = function() {
+  return jspb.Message.getField(this, 36) != null;
 };
 
 
