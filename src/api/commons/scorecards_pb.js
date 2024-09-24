@@ -25,6 +25,8 @@ var global = localGlobalThis ||
 
 var api_commons_acd_pb = require('../../api/commons/acd_pb.js');
 goog.object.extend(proto, api_commons_acd_pb);
+var api_commons_omnichannel_pb = require('../../api/commons/omnichannel_pb.js');
+goog.object.extend(proto, api_commons_omnichannel_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.api.commons.AutoEvaluation', null, global);
@@ -6897,7 +6899,7 @@ proto.api.commons.Section.prototype.clearSmartQuestionsList = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.commons.Scorecard.repeatedFields_ = [13,19,20];
+proto.api.commons.Scorecard.repeatedFields_ = [13,19,20,22];
 
 
 
@@ -6947,7 +6949,8 @@ state: jspb.Message.getFieldWithDefault(msg, 15, 0),
 isAdHoc: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
 customFieldKeysList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
 callTypesList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
-updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+channelsList: (f = jspb.Message.getRepeatedField(msg, 22)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7056,6 +7059,12 @@ proto.api.commons.Scorecard.deserializeBinaryFromReader = function(msg, reader) 
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdatedAt(value);
+      break;
+    case 22:
+      var values = /** @type {!Array<!proto.api.commons.ChannelType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addChannels(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -7206,6 +7215,13 @@ proto.api.commons.Scorecard.serializeBinaryToWriter = function(message, writer) 
       21,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getChannelsList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      22,
+      f
     );
   }
 };
@@ -7610,6 +7626,43 @@ proto.api.commons.Scorecard.prototype.clearUpdatedAt = function() {
  */
 proto.api.commons.Scorecard.prototype.hasUpdatedAt = function() {
   return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * repeated ChannelType channels = 22;
+ * @return {!Array<!proto.api.commons.ChannelType>}
+ */
+proto.api.commons.Scorecard.prototype.getChannelsList = function() {
+  return /** @type {!Array<!proto.api.commons.ChannelType>} */ (jspb.Message.getRepeatedField(this, 22));
+};
+
+
+/**
+ * @param {!Array<!proto.api.commons.ChannelType>} value
+ * @return {!proto.api.commons.Scorecard} returns this
+ */
+proto.api.commons.Scorecard.prototype.setChannelsList = function(value) {
+  return jspb.Message.setField(this, 22, value || []);
+};
+
+
+/**
+ * @param {!proto.api.commons.ChannelType} value
+ * @param {number=} opt_index
+ * @return {!proto.api.commons.Scorecard} returns this
+ */
+proto.api.commons.Scorecard.prototype.addChannels = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 22, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.api.commons.Scorecard} returns this
+ */
+proto.api.commons.Scorecard.prototype.clearChannelsList = function() {
+  return this.setChannelsList([]);
 };
 
 

@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as api_commons_acd_pb from "../../api/commons/acd_pb";
+import * as api_commons_omnichannel_pb from "../../api/commons/omnichannel_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class TimeFilter extends jspb.Message {
@@ -915,6 +916,11 @@ export class Scorecard extends jspb.Message {
   getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  clearChannelsList(): void;
+  getChannelsList(): Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>;
+  setChannelsList(value: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>): void;
+  addChannels(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap], index?: number): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Scorecard.AsObject;
   static toObject(includeInstance: boolean, msg: Scorecard): Scorecard.AsObject;
@@ -944,6 +950,7 @@ export namespace Scorecard {
     customFieldKeysList: Array<string>,
     callTypesList: Array<api_commons_acd_pb.CallType.EnumMap[keyof api_commons_acd_pb.CallType.EnumMap]>,
     updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    channelsList: Array<api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]>,
   }
 }
 
