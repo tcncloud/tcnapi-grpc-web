@@ -534,28 +534,6 @@ export namespace ListVfsSchemasResponse {
   }
 }
 
-export class FixedWidthVisualization extends jspb.Message {
-  clearTableColumnDetailsList(): void;
-  getTableColumnDetailsList(): Array<TableColumnConfig>;
-  setTableColumnDetailsList(value: Array<TableColumnConfig>): void;
-  addTableColumnDetails(value?: TableColumnConfig, index?: number): TableColumnConfig;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FixedWidthVisualization.AsObject;
-  static toObject(includeInstance: boolean, msg: FixedWidthVisualization): FixedWidthVisualization.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: FixedWidthVisualization, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FixedWidthVisualization;
-  static deserializeBinaryFromReader(message: FixedWidthVisualization, reader: jspb.BinaryReader): FixedWidthVisualization;
-}
-
-export namespace FixedWidthVisualization {
-  export type AsObject = {
-    tableColumnDetailsList: Array<TableColumnConfig.AsObject>,
-  }
-}
-
 export class TableVisualization extends jspb.Message {
   clearTableColumnDetailsList(): void;
   getTableColumnDetailsList(): Array<TableColumnConfig>;
