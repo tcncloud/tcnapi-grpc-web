@@ -534,6 +534,28 @@ export namespace ListVfsSchemasResponse {
   }
 }
 
+export class FixedWidthVisualization extends jspb.Message {
+  clearTableColumnDetailsList(): void;
+  getTableColumnDetailsList(): Array<TableColumnConfig>;
+  setTableColumnDetailsList(value: Array<TableColumnConfig>): void;
+  addTableColumnDetails(value?: TableColumnConfig, index?: number): TableColumnConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FixedWidthVisualization.AsObject;
+  static toObject(includeInstance: boolean, msg: FixedWidthVisualization): FixedWidthVisualization.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FixedWidthVisualization, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FixedWidthVisualization;
+  static deserializeBinaryFromReader(message: FixedWidthVisualization, reader: jspb.BinaryReader): FixedWidthVisualization;
+}
+
+export namespace FixedWidthVisualization {
+  export type AsObject = {
+    tableColumnDetailsList: Array<TableColumnConfig.AsObject>,
+  }
+}
+
 export class TableVisualization extends jspb.Message {
   clearTableColumnDetailsList(): void;
   getTableColumnDetailsList(): Array<TableColumnConfig>;
@@ -634,6 +656,34 @@ export namespace FormatSeries {
   }
 }
 
+export class PadOperation extends jspb.Message {
+  getPadCharacter(): string;
+  setPadCharacter(value: string): void;
+
+  getPadLeft(): boolean;
+  setPadLeft(value: boolean): void;
+
+  getPadSize(): number;
+  setPadSize(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PadOperation.AsObject;
+  static toObject(includeInstance: boolean, msg: PadOperation): PadOperation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PadOperation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PadOperation;
+  static deserializeBinaryFromReader(message: PadOperation, reader: jspb.BinaryReader): PadOperation;
+}
+
+export namespace PadOperation {
+  export type AsObject = {
+    padCharacter: string,
+    padLeft: boolean,
+    padSize: number,
+  }
+}
+
 export class ColumnOperation extends jspb.Message {
   getOperationType(): OperationTypeMap[keyof OperationTypeMap];
   setOperationType(value: OperationTypeMap[keyof OperationTypeMap]): void;
@@ -647,6 +697,11 @@ export class ColumnOperation extends jspb.Message {
   clearFormatSeries(): void;
   getFormatSeries(): FormatSeries | undefined;
   setFormatSeries(value?: FormatSeries): void;
+
+  hasPadOperation(): boolean;
+  clearPadOperation(): void;
+  getPadOperation(): PadOperation | undefined;
+  setPadOperation(value?: PadOperation): void;
 
   getOperationValueCase(): ColumnOperation.OperationValueCase;
   serializeBinary(): Uint8Array;
@@ -664,12 +719,14 @@ export namespace ColumnOperation {
     operationType: OperationTypeMap[keyof OperationTypeMap],
     floatValue: number,
     formatSeries?: FormatSeries.AsObject,
+    padOperation?: PadOperation.AsObject,
   }
 
   export enum OperationValueCase {
     OPERATION_VALUE_NOT_SET = 0,
     FLOAT_VALUE = 2,
     FORMAT_SERIES = 3,
+    PAD_OPERATION = 4,
   }
 }
 
@@ -1173,6 +1230,7 @@ export interface OutputConfigurationTypeMap {
   OUTPUT_CONFIGURATION_TYPE_TABLE: 1;
   OUTPUT_CONFIGURATION_TYPE_MULTI_SERIES: 2;
   OUTPUT_CONFIGURATION_TYPE_PIE_CHART: 3;
+  OUTPUT_CONFIGURATION_TYPE_FIXED_WIDTH: 4;
 }
 
 export const OutputConfigurationType: OutputConfigurationTypeMap;
@@ -1189,6 +1247,7 @@ export interface OperationTypeMap {
   OPERATION_TYPE_DIVIDE: 8;
   OPERATION_TYPE_FORMAT_NUMBER: 9;
   OPERATION_TYPE_PRECISION: 10;
+  OPERATION_TYPE_PAD: 11;
 }
 
 export const OperationType: OperationTypeMap;
