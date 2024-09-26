@@ -68,6 +68,15 @@ type HuntGroupsServiceAdminCopyHuntGroupToOrganization = {
   readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AdminCopyHuntGroupToOrganizationResponse;
 };
 
+type HuntGroupsServiceAdminListHuntGroups = {
+  readonly methodName: string;
+  readonly service: typeof HuntGroupsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsRequest;
+  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsResponse;
+};
+
 export class HuntGroupsService {
   static readonly serviceName: string;
   static readonly ListHuntGroupExileLinks: HuntGroupsServiceListHuntGroupExileLinks;
@@ -77,6 +86,7 @@ export class HuntGroupsService {
   static readonly CopyHuntGroupAgentTrigger: HuntGroupsServiceCopyHuntGroupAgentTrigger;
   static readonly UpdateHuntGroupAgentTriggers: HuntGroupsServiceUpdateHuntGroupAgentTriggers;
   static readonly AdminCopyHuntGroupToOrganization: HuntGroupsServiceAdminCopyHuntGroupToOrganization;
+  static readonly AdminListHuntGroups: HuntGroupsServiceAdminListHuntGroups;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -173,6 +183,15 @@ export class HuntGroupsServiceClient {
   adminCopyHuntGroupToOrganization(
     requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminCopyHuntGroupToOrganizationRequest,
     callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminCopyHuntGroupToOrganizationResponse|null) => void
+  ): UnaryResponse;
+  adminListHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsResponse|null) => void
+  ): UnaryResponse;
+  adminListHuntGroups(
+    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsRequest,
+    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsResponse|null) => void
   ): UnaryResponse;
 }
 

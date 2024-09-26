@@ -595,6 +595,76 @@ export namespace AdminCopyHuntGroupToOrganizationResponse {
   }
 }
 
+export class AdminListHuntGroupsRequest extends jspb.Message {
+  getOrganizationId(): string;
+  setOrganizationId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdminListHuntGroupsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AdminListHuntGroupsRequest): AdminListHuntGroupsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdminListHuntGroupsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdminListHuntGroupsRequest;
+  static deserializeBinaryFromReader(message: AdminListHuntGroupsRequest, reader: jspb.BinaryReader): AdminListHuntGroupsRequest;
+}
+
+export namespace AdminListHuntGroupsRequest {
+  export type AsObject = {
+    organizationId: string,
+  }
+}
+
+export class AdminListHuntGroupsResponse extends jspb.Message {
+  clearHuntGroupsList(): void;
+  getHuntGroupsList(): Array<AdminListHuntGroupsResponse.HuntGroup>;
+  setHuntGroupsList(value: Array<AdminListHuntGroupsResponse.HuntGroup>): void;
+  addHuntGroups(value?: AdminListHuntGroupsResponse.HuntGroup, index?: number): AdminListHuntGroupsResponse.HuntGroup;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdminListHuntGroupsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AdminListHuntGroupsResponse): AdminListHuntGroupsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdminListHuntGroupsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdminListHuntGroupsResponse;
+  static deserializeBinaryFromReader(message: AdminListHuntGroupsResponse, reader: jspb.BinaryReader): AdminListHuntGroupsResponse;
+}
+
+export namespace AdminListHuntGroupsResponse {
+  export type AsObject = {
+    huntGroupsList: Array<AdminListHuntGroupsResponse.HuntGroup.AsObject>,
+  }
+
+  export class HuntGroup extends jspb.Message {
+    getClientSid(): number;
+    setClientSid(value: number): void;
+
+    getHuntGroupSid(): number;
+    setHuntGroupSid(value: number): void;
+
+    getHuntGroupName(): string;
+    setHuntGroupName(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): HuntGroup.AsObject;
+    static toObject(includeInstance: boolean, msg: HuntGroup): HuntGroup.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: HuntGroup, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): HuntGroup;
+    static deserializeBinaryFromReader(message: HuntGroup, reader: jspb.BinaryReader): HuntGroup;
+  }
+
+  export namespace HuntGroup {
+    export type AsObject = {
+      clientSid: number,
+      huntGroupSid: number,
+      huntGroupName: string,
+    }
+  }
+}
+
 export interface AgentStatusMap {
   AGENT_STATUS_UNSPECIFIED: 0;
   AGENT_STATUS_LOGGED_IN: 1;

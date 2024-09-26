@@ -74,6 +74,15 @@ HuntGroupsService.AdminCopyHuntGroupToOrganization = {
   responseType: services_org_hunt_groups_v1alpha1_entities_pb.AdminCopyHuntGroupToOrganizationResponse
 };
 
+HuntGroupsService.AdminListHuntGroups = {
+  methodName: "AdminListHuntGroups",
+  service: HuntGroupsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsRequest,
+  responseType: services_org_hunt_groups_v1alpha1_entities_pb.AdminListHuntGroupsResponse
+};
+
 exports.HuntGroupsService = HuntGroupsService;
 
 function HuntGroupsServiceClient(serviceHost, options) {
@@ -272,6 +281,37 @@ HuntGroupsServiceClient.prototype.adminCopyHuntGroupToOrganization = function ad
     callback = arguments[1];
   }
   var client = grpc.unary(HuntGroupsService.AdminCopyHuntGroupToOrganization, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+HuntGroupsServiceClient.prototype.adminListHuntGroups = function adminListHuntGroups(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(HuntGroupsService.AdminListHuntGroups, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
