@@ -596,8 +596,8 @@ export namespace AdminCopyHuntGroupToOrganizationResponse {
 }
 
 export class AdminListHuntGroupsRequest extends jspb.Message {
-  getOrganizationId(): string;
-  setOrganizationId(value: string): void;
+  getOrgId(): string;
+  setOrgId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AdminListHuntGroupsRequest.AsObject;
@@ -611,7 +611,7 @@ export class AdminListHuntGroupsRequest extends jspb.Message {
 
 export namespace AdminListHuntGroupsRequest {
   export type AsObject = {
-    organizationId: string,
+    orgId: string,
   }
 }
 

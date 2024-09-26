@@ -4708,7 +4708,7 @@ proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest.prototype.toO
  */
 proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-organizationId: jspb.Message.getFieldWithDefault(msg, 1, "")
+orgId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -4747,7 +4747,7 @@ proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest.deserializeBi
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOrganizationId(value);
+      msg.setOrgId(value);
       break;
     default:
       reader.skipField();
@@ -4778,7 +4778,7 @@ proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest.prototype.ser
  */
 proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrganizationId();
+  f = message.getOrgId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -4789,10 +4789,10 @@ proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest.serializeBina
 
 
 /**
- * optional string organization_id = 1;
+ * optional string org_id = 1;
  * @return {string}
  */
-proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest.prototype.getOrganizationId = function() {
+proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest.prototype.getOrgId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -4801,7 +4801,7 @@ proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest.prototype.get
  * @param {string} value
  * @return {!proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest} returns this
  */
-proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest.prototype.setOrganizationId = function(value) {
+proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsRequest.prototype.setOrgId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
