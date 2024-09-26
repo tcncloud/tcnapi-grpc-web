@@ -4960,7 +4960,6 @@ proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsResponse.HuntGroup.pr
  */
 proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsResponse.HuntGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-clientSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
 huntGroupSid: jspb.Message.getFieldWithDefault(msg, 2, 0),
 huntGroupName: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
@@ -4999,10 +4998,6 @@ proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsResponse.HuntGroup.de
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setClientSid(value);
-      break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setHuntGroupSid(value);
@@ -5040,13 +5035,6 @@ proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsResponse.HuntGroup.pr
  */
 proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsResponse.HuntGroup.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getClientSid();
-  if (f !== 0) {
-    writer.writeInt64(
-      1,
-      f
-    );
-  }
   f = message.getHuntGroupSid();
   if (f !== 0) {
     writer.writeInt64(
@@ -5061,24 +5049,6 @@ proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsResponse.HuntGroup.se
       f
     );
   }
-};
-
-
-/**
- * optional int64 client_sid = 1;
- * @return {number}
- */
-proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsResponse.HuntGroup.prototype.getClientSid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsResponse.HuntGroup} returns this
- */
-proto.services.org.hunt_groups.v1alpha1.AdminListHuntGroupsResponse.HuntGroup.prototype.setClientSid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 

@@ -637,9 +637,6 @@ export namespace AdminListHuntGroupsResponse {
   }
 
   export class HuntGroup extends jspb.Message {
-    getClientSid(): number;
-    setClientSid(value: number): void;
-
     getHuntGroupSid(): number;
     setHuntGroupSid(value: number): void;
 
@@ -658,7 +655,6 @@ export namespace AdminListHuntGroupsResponse {
 
   export namespace HuntGroup {
     export type AsObject = {
-      clientSid: number,
       huntGroupSid: number,
       huntGroupName: string,
     }
