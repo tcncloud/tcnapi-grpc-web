@@ -59,15 +59,6 @@ type HuntGroupsServiceUpdateHuntGroupAgentTriggers = {
   readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupAgentTriggersResponse;
 };
 
-type HuntGroupsServiceCopyHuntGroupToOrganization = {
-  readonly methodName: string;
-  readonly service: typeof HuntGroupsService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationRequest;
-  readonly responseType: typeof services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationResponse;
-};
-
 type HuntGroupsServiceAdminCopyHuntGroupToOrganization = {
   readonly methodName: string;
   readonly service: typeof HuntGroupsService;
@@ -94,7 +85,6 @@ export class HuntGroupsService {
   static readonly ListHuntGroupAgentTriggers: HuntGroupsServiceListHuntGroupAgentTriggers;
   static readonly CopyHuntGroupAgentTrigger: HuntGroupsServiceCopyHuntGroupAgentTrigger;
   static readonly UpdateHuntGroupAgentTriggers: HuntGroupsServiceUpdateHuntGroupAgentTriggers;
-  static readonly CopyHuntGroupToOrganization: HuntGroupsServiceCopyHuntGroupToOrganization;
   static readonly AdminCopyHuntGroupToOrganization: HuntGroupsServiceAdminCopyHuntGroupToOrganization;
   static readonly AdminListHuntGroups: HuntGroupsServiceAdminListHuntGroups;
 }
@@ -184,15 +174,6 @@ export class HuntGroupsServiceClient {
   updateHuntGroupAgentTriggers(
     requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupAgentTriggersRequest,
     callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.UpdateHuntGroupAgentTriggersResponse|null) => void
-  ): UnaryResponse;
-  copyHuntGroupToOrganization(
-    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationResponse|null) => void
-  ): UnaryResponse;
-  copyHuntGroupToOrganization(
-    requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationRequest,
-    callback: (error: ServiceError|null, responseMessage: services_org_hunt_groups_v1alpha1_entities_pb.CopyHuntGroupToOrganizationResponse|null) => void
   ): UnaryResponse;
   adminCopyHuntGroupToOrganization(
     requestMessage: services_org_hunt_groups_v1alpha1_entities_pb.AdminCopyHuntGroupToOrganizationRequest,
