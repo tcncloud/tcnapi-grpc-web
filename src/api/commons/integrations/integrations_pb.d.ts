@@ -2107,11 +2107,6 @@ export class ExecuteFlow extends jspb.Message {
   getVeradigmPracticeManagementSaveVoucherPayment(): ExecuteVeradigmPracticeManagementSaveVoucherPayment | undefined;
   setVeradigmPracticeManagementSaveVoucherPayment(value?: ExecuteVeradigmPracticeManagementSaveVoucherPayment): void;
 
-  hasPdcflowGetAuthToken(): boolean;
-  clearPdcflowGetAuthToken(): void;
-  getPdcflowGetAuthToken(): ExecutePDCFlowGetAuthToken | undefined;
-  setPdcflowGetAuthToken(value?: ExecutePDCFlowGetAuthToken): void;
-
   hasPdcflowTokenizeCreditCard(): boolean;
   clearPdcflowTokenizeCreditCard(): void;
   getPdcflowTokenizeCreditCard(): ExecutePDCFlowTokenizeCreditCard | undefined;
@@ -2421,7 +2416,6 @@ export namespace ExecuteFlow {
     veradigmPracticeManagementSavePaymentTransaction?: ExecuteVeradigmPracticeManagementSavePaymentTransaction.AsObject,
     veradigmPracticeManagementSaveRefundTransaction?: ExecuteVeradigmPracticeManagementSaveRefundTransaction.AsObject,
     veradigmPracticeManagementSaveVoucherPayment?: ExecuteVeradigmPracticeManagementSaveVoucherPayment.AsObject,
-    pdcflowGetAuthToken?: ExecutePDCFlowGetAuthToken.AsObject,
     pdcflowTokenizeCreditCard?: ExecutePDCFlowTokenizeCreditCard.AsObject,
     pdcflowCcTransaction?: ExecutePDCFlowCCTransaction.AsObject,
     debugEcho?: ExecuteDebugEcho.AsObject,
@@ -2705,9 +2699,8 @@ export namespace ExecuteFlow {
     VERADIGM_PRACTICE_MANAGEMENT_SAVE_PAYMENT_TRANSACTION = 4807,
     VERADIGM_PRACTICE_MANAGEMENT_SAVE_REFUND_TRANSACTION = 4808,
     VERADIGM_PRACTICE_MANAGEMENT_SAVE_VOUCHER_PAYMENT = 4809,
-    PDCFLOW_GET_AUTH_TOKEN = 4901,
-    PDCFLOW_TOKENIZE_CREDIT_CARD = 4902,
-    PDCFLOW_CC_TRANSACTION = 4903,
+    PDCFLOW_TOKENIZE_CREDIT_CARD = 4901,
+    PDCFLOW_CC_TRANSACTION = 4902,
     DEBUG_ECHO = 5001,
     DEBUG_VALIDATE = 5002,
   }
@@ -7762,22 +7755,6 @@ export namespace ExecuteVeradigmPracticeManagementSaveVoucherPayment {
   }
 }
 
-export class ExecutePDCFlowGetAuthToken extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExecutePDCFlowGetAuthToken.AsObject;
-  static toObject(includeInstance: boolean, msg: ExecutePDCFlowGetAuthToken): ExecutePDCFlowGetAuthToken.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ExecutePDCFlowGetAuthToken, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExecutePDCFlowGetAuthToken;
-  static deserializeBinaryFromReader(message: ExecutePDCFlowGetAuthToken, reader: jspb.BinaryReader): ExecutePDCFlowGetAuthToken;
-}
-
-export namespace ExecutePDCFlowGetAuthToken {
-  export type AsObject = {
-  }
-}
-
 export class ExecutePDCFlowTokenizeCreditCard extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecutePDCFlowTokenizeCreditCard.AsObject;
@@ -8145,9 +8122,8 @@ export interface RequestMethodMap {
   REQUEST_METHOD_VERADIGM_PRACTICE_MANAGEMENT_SAVE_PAYMENT_TRANSACTION: 4807;
   REQUEST_METHOD_VERADIGM_PRACTICE_MANAGEMENT_SAVE_REFUND_TRANSACTION: 4808;
   REQUEST_METHOD_VERADIGM_PRACTICE_MANAGEMENT_SAVE_VOUCHER_PAYMENT: 4809;
-  REQUEST_METHOD_PDCFLOW_GET_AUTH_TOKEN: 4901;
-  REQUEST_METHOD_PDCFLOW_TOKENIZE_CREDIT_CARD: 4902;
-  REQUEST_METHOD_PDCFLOW_CC_TRANSACTION: 4903;
+  REQUEST_METHOD_PDCFLOW_TOKENIZE_CREDIT_CARD: 4901;
+  REQUEST_METHOD_PDCFLOW_CC_TRANSACTION: 4902;
   REQUEST_METHOD_DEBUG_ECHO: 5001;
   REQUESET_METHOD_DEBUG_VALIDATE: 5002;
 }
