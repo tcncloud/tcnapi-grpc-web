@@ -547,6 +547,50 @@ export namespace UpdateHuntGroupAgentTriggersResponse {
   }
 }
 
+export class CopyHuntGroupToOrganizationRequest extends jspb.Message {
+  getToOrganizationId(): string;
+  setToOrganizationId(value: string): void;
+
+  getHuntGroupSid(): number;
+  setHuntGroupSid(value: number): void;
+
+  getNewHuntGroupName(): string;
+  setNewHuntGroupName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyHuntGroupToOrganizationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyHuntGroupToOrganizationRequest): CopyHuntGroupToOrganizationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyHuntGroupToOrganizationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyHuntGroupToOrganizationRequest;
+  static deserializeBinaryFromReader(message: CopyHuntGroupToOrganizationRequest, reader: jspb.BinaryReader): CopyHuntGroupToOrganizationRequest;
+}
+
+export namespace CopyHuntGroupToOrganizationRequest {
+  export type AsObject = {
+    toOrganizationId: string,
+    huntGroupSid: number,
+    newHuntGroupName: string,
+  }
+}
+
+export class CopyHuntGroupToOrganizationResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CopyHuntGroupToOrganizationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CopyHuntGroupToOrganizationResponse): CopyHuntGroupToOrganizationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CopyHuntGroupToOrganizationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CopyHuntGroupToOrganizationResponse;
+  static deserializeBinaryFromReader(message: CopyHuntGroupToOrganizationResponse, reader: jspb.BinaryReader): CopyHuntGroupToOrganizationResponse;
+}
+
+export namespace CopyHuntGroupToOrganizationResponse {
+  export type AsObject = {
+  }
+}
+
 export class AdminCopyHuntGroupToOrganizationRequest extends jspb.Message {
   getFromOrganizationId(): string;
   setFromOrganizationId(value: string): void;
