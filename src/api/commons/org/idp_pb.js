@@ -88,7 +88,8 @@ idpClientId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 secret: jspb.Message.getFieldWithDefault(msg, 2, ""),
 redirectUrisList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
 trustedPeersList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-name: jspb.Message.getFieldWithDefault(msg, 5, "")
+name: jspb.Message.getFieldWithDefault(msg, 5, ""),
+billingId: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -144,6 +145,10 @@ proto.api.commons.org.IdpClient.deserializeBinaryFromReader = function(msg, read
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBillingId(value);
       break;
     default:
       reader.skipField();
@@ -206,6 +211,13 @@ proto.api.commons.org.IdpClient.serializeBinaryToWriter = function(message, writ
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getBillingId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -337,6 +349,24 @@ proto.api.commons.org.IdpClient.prototype.getName = function() {
  */
 proto.api.commons.org.IdpClient.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string billing_id = 6;
+ * @return {string}
+ */
+proto.api.commons.org.IdpClient.prototype.getBillingId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.org.IdpClient} returns this
+ */
+proto.api.commons.org.IdpClient.prototype.setBillingId = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
