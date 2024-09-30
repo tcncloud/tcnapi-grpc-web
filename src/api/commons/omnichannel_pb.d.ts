@@ -1280,12 +1280,6 @@ export class OmniCloseConversation extends jspb.Message {
   getPrimaryAsmSessionSid(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setPrimaryAsmSessionSid(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
-  getUserId(): string;
-  setUserId(value: string): void;
-
-  getUserName(): string;
-  setUserName(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmniCloseConversation.AsObject;
   static toObject(includeInstance: boolean, msg: OmniCloseConversation): OmniCloseConversation.AsObject;
@@ -1299,8 +1293,6 @@ export class OmniCloseConversation extends jspb.Message {
 export namespace OmniCloseConversation {
   export type AsObject = {
     primaryAsmSessionSid?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-    userId: string,
-    userName: string,
   }
 }
 
