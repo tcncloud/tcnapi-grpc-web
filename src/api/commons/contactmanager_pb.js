@@ -25,6 +25,8 @@ var global = localGlobalThis ||
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
+goog.exportSymbol('proto.api.commons.ContactEntryStatus', null, global);
+goog.exportSymbol('proto.api.commons.ContactListStatus', null, global);
 goog.exportSymbol('proto.api.commons.ContactManagerEntry', null, global);
 goog.exportSymbol('proto.api.commons.ContactManagerEntryVal', null, global);
 goog.exportSymbol('proto.api.commons.ContactManagerList', null, global);
@@ -946,6 +948,24 @@ proto.api.commons.ContactManagerEntryVal.prototype.setValue = function(value) {
 proto.api.commons.DeDuplicationMergeStrategy = {
   KEEP_EXISTING_LIST: 0,
   REPLACE_EXISTING_LIST: 1
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.ContactListStatus = {
+  CONTACT_LIST_STATUS_NEW: 0
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.commons.ContactEntryStatus = {
+  CONTACT_ENTRY_STATUS_NEW: 0,
+  CONTACT_ENTRY_STATUS_INUSE: 1,
+  CONTACT_ENTRY_STATUS_NOTREF: 2,
+  CONTACT_ENTRY_STATUS_DONE: 3,
+  CONTACT_ENTRY_STATUS_EXPIRED: 4
 };
 
 goog.object.extend(exports, proto.api.commons);

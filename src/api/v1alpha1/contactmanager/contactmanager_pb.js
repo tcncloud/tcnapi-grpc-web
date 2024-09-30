@@ -2205,7 +2205,8 @@ contactManagerEntryListId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
 key: jspb.Message.getFieldWithDefault(msg, 3, ""),
 value: jspb.Message.getFieldWithDefault(msg, 4, ""),
 type: jspb.Message.getFieldWithDefault(msg, 5, ""),
-dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+status: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -2266,6 +2267,10 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntry.deserializeBinaryFromReade
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setDateCreated(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.api.commons.ContactEntryStatus} */ (reader.readEnum());
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -2337,6 +2342,13 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntry.serializeBinaryToWriter = 
       6,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
+      f
     );
   }
 };
@@ -2469,6 +2481,24 @@ proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.hasDateCreated =
 };
 
 
+/**
+ * optional api.commons.ContactEntryStatus status = 7;
+ * @return {!proto.api.commons.ContactEntryStatus}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.getStatus = function() {
+  return /** @type {!proto.api.commons.ContactEntryStatus} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.ContactEntryStatus} value
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerEntry} returns this
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerEntry.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 7, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -2516,7 +2546,8 @@ description: jspb.Message.getFieldWithDefault(msg, 5, ""),
 listDetailsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
 ttl: jspb.Message.getFieldWithDefault(msg, 7, "0"),
 dateCreated: (f = msg.getDateCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
+isDeleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+status: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -2589,6 +2620,10 @@ proto.api.v1alpha1.contactmanager.ContactManagerList.deserializeBinaryFromReader
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsDeleted(value);
+      break;
+    case 10:
+      var value = /** @type {!proto.api.commons.ContactListStatus} */ (reader.readEnum());
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -2680,6 +2715,13 @@ proto.api.v1alpha1.contactmanager.ContactManagerList.serializeBinaryToWriter = f
   if (f) {
     writer.writeBool(
       9,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      10,
       f
     );
   }
@@ -2883,6 +2925,24 @@ proto.api.v1alpha1.contactmanager.ContactManagerList.prototype.getIsDeleted = fu
  */
 proto.api.v1alpha1.contactmanager.ContactManagerList.prototype.setIsDeleted = function(value) {
   return jspb.Message.setProto3BooleanField(this, 9, value);
+};
+
+
+/**
+ * optional api.commons.ContactListStatus status = 10;
+ * @return {!proto.api.commons.ContactListStatus}
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerList.prototype.getStatus = function() {
+  return /** @type {!proto.api.commons.ContactListStatus} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.ContactListStatus} value
+ * @return {!proto.api.v1alpha1.contactmanager.ContactManagerList} returns this
+ */
+proto.api.v1alpha1.contactmanager.ContactManagerList.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 10, value);
 };
 
 

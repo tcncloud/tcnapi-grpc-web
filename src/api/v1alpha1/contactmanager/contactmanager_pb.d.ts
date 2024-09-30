@@ -265,6 +265,9 @@ export class ContactManagerEntry extends jspb.Message {
   getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getStatus(): api_commons_contactmanager_pb.ContactEntryStatusMap[keyof api_commons_contactmanager_pb.ContactEntryStatusMap];
+  setStatus(value: api_commons_contactmanager_pb.ContactEntryStatusMap[keyof api_commons_contactmanager_pb.ContactEntryStatusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerEntry.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerEntry): ContactManagerEntry.AsObject;
@@ -283,6 +286,7 @@ export namespace ContactManagerEntry {
     value: string,
     type: string,
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    status: api_commons_contactmanager_pb.ContactEntryStatusMap[keyof api_commons_contactmanager_pb.ContactEntryStatusMap],
   }
 }
 
@@ -318,6 +322,9 @@ export class ContactManagerList extends jspb.Message {
   getIsDeleted(): boolean;
   setIsDeleted(value: boolean): void;
 
+  getStatus(): api_commons_contactmanager_pb.ContactListStatusMap[keyof api_commons_contactmanager_pb.ContactListStatusMap];
+  setStatus(value: api_commons_contactmanager_pb.ContactListStatusMap[keyof api_commons_contactmanager_pb.ContactListStatusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerList.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerList): ContactManagerList.AsObject;
@@ -339,6 +346,7 @@ export namespace ContactManagerList {
     ttl: string,
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     isDeleted: boolean,
+    status: api_commons_contactmanager_pb.ContactListStatusMap[keyof api_commons_contactmanager_pb.ContactListStatusMap],
   }
 }
 
