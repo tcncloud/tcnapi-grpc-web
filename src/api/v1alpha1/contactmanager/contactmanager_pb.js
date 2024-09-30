@@ -23,6 +23,8 @@ var global = localGlobalThis ||
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var api_commons_classifier_pb = require('../../../api/commons/classifier_pb.js');
+goog.object.extend(proto, api_commons_classifier_pb);
 var api_commons_contactmanager_pb = require('../../../api/commons/contactmanager_pb.js');
 goog.object.extend(proto, api_commons_contactmanager_pb);
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
@@ -4683,7 +4685,7 @@ proto.api.v1alpha1.contactmanager.GetContactFieldTypeResponse.prototype.toObject
  */
 proto.api.v1alpha1.contactmanager.GetContactFieldTypeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-fieldType: jspb.Message.getFieldWithDefault(msg, 1, "")
+fieldType: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -4721,7 +4723,7 @@ proto.api.v1alpha1.contactmanager.GetContactFieldTypeResponse.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {!proto.api.commons.ClassifierEntityType} */ (reader.readEnum());
       msg.setFieldType(value);
       break;
     default:
@@ -4754,8 +4756,8 @@ proto.api.v1alpha1.contactmanager.GetContactFieldTypeResponse.prototype.serializ
 proto.api.v1alpha1.contactmanager.GetContactFieldTypeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFieldType();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0.0) {
+    writer.writeEnum(
       1,
       f
     );
@@ -4764,20 +4766,20 @@ proto.api.v1alpha1.contactmanager.GetContactFieldTypeResponse.serializeBinaryToW
 
 
 /**
- * optional string field_type = 1;
- * @return {string}
+ * optional api.commons.ClassifierEntityType field_type = 1;
+ * @return {!proto.api.commons.ClassifierEntityType}
  */
 proto.api.v1alpha1.contactmanager.GetContactFieldTypeResponse.prototype.getFieldType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!proto.api.commons.ClassifierEntityType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {!proto.api.commons.ClassifierEntityType} value
  * @return {!proto.api.v1alpha1.contactmanager.GetContactFieldTypeResponse} returns this
  */
 proto.api.v1alpha1.contactmanager.GetContactFieldTypeResponse.prototype.setFieldType = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 

@@ -2,6 +2,7 @@
 // file: api/v1alpha1/contactmanager/contactmanager.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_classifier_pb from "../../../api/commons/classifier_pb";
 import * as api_commons_contactmanager_pb from "../../../api/commons/contactmanager_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
@@ -593,8 +594,8 @@ export namespace GetContactFieldTypeRequest {
 }
 
 export class GetContactFieldTypeResponse extends jspb.Message {
-  getFieldType(): string;
-  setFieldType(value: string): void;
+  getFieldType(): api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap];
+  setFieldType(value: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetContactFieldTypeResponse.AsObject;
@@ -608,7 +609,7 @@ export class GetContactFieldTypeResponse extends jspb.Message {
 
 export namespace GetContactFieldTypeResponse {
   export type AsObject = {
-    fieldType: string,
+    fieldType: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap],
   }
 }
 
