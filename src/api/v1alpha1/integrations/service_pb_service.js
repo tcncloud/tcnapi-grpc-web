@@ -289,6 +289,15 @@ Integrations.ProcessWorkflow = {
   responseType: api_v1alpha1_integrations_service_pb.ProcessWorkflowRes
 };
 
+Integrations.InsertPrivateField = {
+  methodName: "InsertPrivateField",
+  service: Integrations,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_v1alpha1_integrations_service_pb.InsertPrivateFieldReq,
+  responseType: api_v1alpha1_integrations_service_pb.InsertPrivateFieldRes
+};
+
 exports.Integrations = Integrations;
 
 function IntegrationsClient(serviceHost, options) {
@@ -1231,6 +1240,37 @@ IntegrationsClient.prototype.processWorkflow = function processWorkflow(requestM
     callback = arguments[1];
   }
   var client = grpc.unary(Integrations.ProcessWorkflow, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+IntegrationsClient.prototype.insertPrivateField = function insertPrivateField(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Integrations.InsertPrivateField, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
