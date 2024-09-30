@@ -3652,9 +3652,6 @@ export namespace ProcessWorkflowRes {
 }
 
 export class InsertPrivateFieldReq extends jspb.Message {
-  getOrgId(): string;
-  setOrgId(value: string): void;
-
   getName(): string;
   setName(value: string): void;
 
@@ -3679,7 +3676,6 @@ export class InsertPrivateFieldReq extends jspb.Message {
 
 export namespace InsertPrivateFieldReq {
   export type AsObject = {
-    orgId: string,
     name: string,
     server: string,
     value: string,

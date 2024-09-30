@@ -28878,11 +28878,10 @@ proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.toObject = funct
  */
 proto.api.v1alpha1.integrations.InsertPrivateFieldReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-orgId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-server: jspb.Message.getFieldWithDefault(msg, 3, ""),
-value: jspb.Message.getFieldWithDefault(msg, 4, ""),
-privateFieldType: jspb.Message.getFieldWithDefault(msg, 5, 0)
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+server: jspb.Message.getFieldWithDefault(msg, 2, ""),
+value: jspb.Message.getFieldWithDefault(msg, 3, ""),
+privateFieldType: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -28921,21 +28920,17 @@ proto.api.v1alpha1.integrations.InsertPrivateFieldReq.deserializeBinaryFromReade
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOrgId(value);
+      msg.setName(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setServer(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setServer(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
       msg.setValue(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {!proto.api.v1alpha1.integrations.PrivateFieldType} */ (reader.readEnum());
       msg.setPrivateFieldType(value);
       break;
@@ -28968,38 +28963,31 @@ proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.serializeBinary 
  */
 proto.api.v1alpha1.integrations.InsertPrivateFieldReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrgId();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getName();
+  f = message.getServer();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getServer();
+  f = message.getValue();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getValue();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
   f = message.getPrivateFieldType();
   if (f !== 0.0) {
     writer.writeEnum(
-      5,
+      4,
       f
     );
   }
@@ -29007,10 +28995,10 @@ proto.api.v1alpha1.integrations.InsertPrivateFieldReq.serializeBinaryToWriter = 
 
 
 /**
- * optional string org_id = 1;
+ * optional string name = 1;
  * @return {string}
  */
-proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.getOrgId = function() {
+proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -29019,16 +29007,16 @@ proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.getOrgId = funct
  * @param {string} value
  * @return {!proto.api.v1alpha1.integrations.InsertPrivateFieldReq} returns this
  */
-proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.setOrgId = function(value) {
+proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string name = 2;
+ * optional string server = 2;
  * @return {string}
  */
-proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.getName = function() {
+proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.getServer = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -29037,16 +29025,16 @@ proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.getName = functi
  * @param {string} value
  * @return {!proto.api.v1alpha1.integrations.InsertPrivateFieldReq} returns this
  */
-proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.setName = function(value) {
+proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.setServer = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string server = 3;
+ * optional string value = 3;
  * @return {string}
  */
-proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.getServer = function() {
+proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.getValue = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -29055,35 +29043,17 @@ proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.getServer = func
  * @param {string} value
  * @return {!proto.api.v1alpha1.integrations.InsertPrivateFieldReq} returns this
  */
-proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.setServer = function(value) {
+proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.setValue = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string value = 4;
- * @return {string}
- */
-proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.getValue = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.v1alpha1.integrations.InsertPrivateFieldReq} returns this
- */
-proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.setValue = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional PrivateFieldType private_field_type = 5;
+ * optional PrivateFieldType private_field_type = 4;
  * @return {!proto.api.v1alpha1.integrations.PrivateFieldType}
  */
 proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.getPrivateFieldType = function() {
-  return /** @type {!proto.api.v1alpha1.integrations.PrivateFieldType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.api.v1alpha1.integrations.PrivateFieldType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -29092,7 +29062,7 @@ proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.getPrivateFieldT
  * @return {!proto.api.v1alpha1.integrations.InsertPrivateFieldReq} returns this
  */
 proto.api.v1alpha1.integrations.InsertPrivateFieldReq.prototype.setPrivateFieldType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
