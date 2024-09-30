@@ -10957,7 +10957,8 @@ proto.api.commons.OmniCloseConversation.prototype.toObject = function(opt_includ
  */
 proto.api.commons.OmniCloseConversation.toObject = function(includeInstance, msg) {
   var f, obj = {
-primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+primaryAsmSessionSid: (f = msg.getPrimaryAsmSessionSid()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+userName: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -10999,6 +11000,10 @@ proto.api.commons.OmniCloseConversation.deserializeBinaryFromReader = function(m
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setPrimaryAsmSessionSid(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -11034,6 +11039,13 @@ proto.api.commons.OmniCloseConversation.serializeBinaryToWriter = function(messa
       1,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getUserName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -11073,6 +11085,24 @@ proto.api.commons.OmniCloseConversation.prototype.clearPrimaryAsmSessionSid = fu
  */
 proto.api.commons.OmniCloseConversation.prototype.hasPrimaryAsmSessionSid = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string user_name = 2;
+ * @return {string}
+ */
+proto.api.commons.OmniCloseConversation.prototype.getUserName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.commons.OmniCloseConversation} returns this
+ */
+proto.api.commons.OmniCloseConversation.prototype.setUserName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
