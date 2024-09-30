@@ -572,3 +572,43 @@ export namespace ListContactsByEntityResponse {
   }
 }
 
+export class GetContactFieldTypeRequest extends jspb.Message {
+  getFieldValue(): string;
+  setFieldValue(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetContactFieldTypeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetContactFieldTypeRequest): GetContactFieldTypeRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetContactFieldTypeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetContactFieldTypeRequest;
+  static deserializeBinaryFromReader(message: GetContactFieldTypeRequest, reader: jspb.BinaryReader): GetContactFieldTypeRequest;
+}
+
+export namespace GetContactFieldTypeRequest {
+  export type AsObject = {
+    fieldValue: string,
+  }
+}
+
+export class GetContactFieldTypeResponse extends jspb.Message {
+  getFieldType(): string;
+  setFieldType(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetContactFieldTypeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetContactFieldTypeResponse): GetContactFieldTypeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetContactFieldTypeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetContactFieldTypeResponse;
+  static deserializeBinaryFromReader(message: GetContactFieldTypeResponse, reader: jspb.BinaryReader): GetContactFieldTypeResponse;
+}
+
+export namespace GetContactFieldTypeResponse {
+  export type AsObject = {
+    fieldType: string,
+  }
+}
+
