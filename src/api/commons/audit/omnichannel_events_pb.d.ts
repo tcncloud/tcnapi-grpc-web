@@ -1677,3 +1677,55 @@ export namespace OmnichannelManualApproveTaskRequeueEvent {
   }
 }
 
+export class OmnichannelMessageEvent extends jspb.Message {
+  getMessageSid(): number;
+  setMessageSid(value: number): void;
+
+  getChannelType(): api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap];
+  setChannelType(value: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap]): void;
+
+  getSentFrom(): string;
+  setSentFrom(value: string): void;
+
+  getSentTo(): string;
+  setSentTo(value: string): void;
+
+  getUnits(): number;
+  setUnits(value: number): void;
+
+  getMessageSize(): number;
+  setMessageSize(value: number): void;
+
+  getAttachmentSize(): number;
+  setAttachmentSize(value: number): void;
+
+  getSenderType(): api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap];
+  setSenderType(value: api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap]): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OmnichannelMessageEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: OmnichannelMessageEvent): OmnichannelMessageEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OmnichannelMessageEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmnichannelMessageEvent;
+  static deserializeBinaryFromReader(message: OmnichannelMessageEvent, reader: jspb.BinaryReader): OmnichannelMessageEvent;
+}
+
+export namespace OmnichannelMessageEvent {
+  export type AsObject = {
+    messageSid: number,
+    channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
+    sentFrom: string,
+    sentTo: string,
+    units: number,
+    messageSize: number,
+    attachmentSize: number,
+    senderType: api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap],
+    userId: string,
+  }
+}
+
