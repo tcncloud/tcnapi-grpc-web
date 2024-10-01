@@ -57,7 +57,7 @@ goog.exportSymbol('proto.api.commons.audit.OmnichannelManualApproveTaskAcceptedE
 goog.exportSymbol('proto.api.commons.audit.OmnichannelManualApproveTaskRejectedEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.OmnichannelManualApproveTaskRequeueEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.OmnichannelManualApproveTaskTimeoutEvent', null, global);
-goog.exportSymbol('proto.api.commons.audit.OmnichannelMessageEvent', null, global);
+goog.exportSymbol('proto.api.commons.audit.OmnichannelMessageSentEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.OmnichannelModuleInitialReplyEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.OmnichannelPauseCampaignEvent', null, global);
 goog.exportSymbol('proto.api.commons.audit.OmnichannelPauseModuleEvent', null, global);
@@ -1116,16 +1116,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.commons.audit.OmnichannelMessageEvent = function(opt_data) {
+proto.api.commons.audit.OmnichannelMessageSentEvent = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.commons.audit.OmnichannelMessageEvent, jspb.Message);
+goog.inherits(proto.api.commons.audit.OmnichannelMessageSentEvent, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.commons.audit.OmnichannelMessageEvent.displayName = 'proto.api.commons.audit.OmnichannelMessageEvent';
+  proto.api.commons.audit.OmnichannelMessageSentEvent.displayName = 'proto.api.commons.audit.OmnichannelMessageSentEvent';
 }
 
 
@@ -13147,8 +13147,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.commons.audit.OmnichannelMessageEvent.toObject(opt_includeInstance, this);
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.commons.audit.OmnichannelMessageSentEvent.toObject(opt_includeInstance, this);
 };
 
 
@@ -13157,11 +13157,11 @@ proto.api.commons.audit.OmnichannelMessageEvent.prototype.toObject = function(op
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.commons.audit.OmnichannelMessageEvent} msg The msg instance to transform.
+ * @param {!proto.api.commons.audit.OmnichannelMessageSentEvent} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.commons.audit.OmnichannelMessageEvent.toObject = function(includeInstance, msg) {
+proto.api.commons.audit.OmnichannelMessageSentEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
 messageSid: jspb.Message.getFieldWithDefault(msg, 1, 0),
 channelType: jspb.Message.getFieldWithDefault(msg, 2, 0),
@@ -13171,8 +13171,7 @@ units: jspb.Message.getFieldWithDefault(msg, 5, 0),
 messageSize: jspb.Message.getFieldWithDefault(msg, 6, 0),
 attachmentSize: jspb.Message.getFieldWithDefault(msg, 7, 0),
 senderType: jspb.Message.getFieldWithDefault(msg, 8, 0),
-userId: jspb.Message.getFieldWithDefault(msg, 9, ""),
-payload: (f = msg.getPayload()) && api_commons_omnichannel_pb.OmniMessagePayload.toObject(includeInstance, f)
+userId: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -13186,23 +13185,23 @@ payload: (f = msg.getPayload()) && api_commons_omnichannel_pb.OmniMessagePayload
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.commons.audit.OmnichannelMessageEvent}
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent}
  */
-proto.api.commons.audit.OmnichannelMessageEvent.deserializeBinary = function(bytes) {
+proto.api.commons.audit.OmnichannelMessageSentEvent.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.commons.audit.OmnichannelMessageEvent;
-  return proto.api.commons.audit.OmnichannelMessageEvent.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.commons.audit.OmnichannelMessageSentEvent;
+  return proto.api.commons.audit.OmnichannelMessageSentEvent.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.commons.audit.OmnichannelMessageEvent} msg The message object to deserialize into.
+ * @param {!proto.api.commons.audit.OmnichannelMessageSentEvent} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.commons.audit.OmnichannelMessageEvent}
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent}
  */
-proto.api.commons.audit.OmnichannelMessageEvent.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.commons.audit.OmnichannelMessageSentEvent.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -13245,11 +13244,6 @@ proto.api.commons.audit.OmnichannelMessageEvent.deserializeBinaryFromReader = fu
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
       break;
-    case 10:
-      var value = new api_commons_omnichannel_pb.OmniMessagePayload;
-      reader.readMessage(value,api_commons_omnichannel_pb.OmniMessagePayload.deserializeBinaryFromReader);
-      msg.setPayload(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -13263,9 +13257,9 @@ proto.api.commons.audit.OmnichannelMessageEvent.deserializeBinaryFromReader = fu
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.serializeBinary = function() {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.commons.audit.OmnichannelMessageEvent.serializeBinaryToWriter(this, writer);
+  proto.api.commons.audit.OmnichannelMessageSentEvent.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -13273,11 +13267,11 @@ proto.api.commons.audit.OmnichannelMessageEvent.prototype.serializeBinary = func
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.commons.audit.OmnichannelMessageEvent} message
+ * @param {!proto.api.commons.audit.OmnichannelMessageSentEvent} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.commons.audit.OmnichannelMessageEvent.serializeBinaryToWriter = function(message, writer) {
+proto.api.commons.audit.OmnichannelMessageSentEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMessageSid();
   if (f !== 0) {
@@ -13342,14 +13336,6 @@ proto.api.commons.audit.OmnichannelMessageEvent.serializeBinaryToWriter = functi
       f
     );
   }
-  f = message.getPayload();
-  if (f != null) {
-    writer.writeMessage(
-      10,
-      f,
-      api_commons_omnichannel_pb.OmniMessagePayload.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -13357,16 +13343,16 @@ proto.api.commons.audit.OmnichannelMessageEvent.serializeBinaryToWriter = functi
  * optional int64 message_sid = 1;
  * @return {number}
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.getMessageSid = function() {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.getMessageSid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.commons.audit.OmnichannelMessageEvent} returns this
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent} returns this
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.setMessageSid = function(value) {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setMessageSid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -13375,16 +13361,16 @@ proto.api.commons.audit.OmnichannelMessageEvent.prototype.setMessageSid = functi
  * optional api.commons.ChannelType channel_type = 2;
  * @return {!proto.api.commons.ChannelType}
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.getChannelType = function() {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.getChannelType = function() {
   return /** @type {!proto.api.commons.ChannelType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {!proto.api.commons.ChannelType} value
- * @return {!proto.api.commons.audit.OmnichannelMessageEvent} returns this
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent} returns this
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.setChannelType = function(value) {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setChannelType = function(value) {
   return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
@@ -13393,16 +13379,16 @@ proto.api.commons.audit.OmnichannelMessageEvent.prototype.setChannelType = funct
  * optional string sent_from = 3;
  * @return {string}
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.getSentFrom = function() {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.getSentFrom = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.commons.audit.OmnichannelMessageEvent} returns this
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent} returns this
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.setSentFrom = function(value) {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setSentFrom = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -13411,16 +13397,16 @@ proto.api.commons.audit.OmnichannelMessageEvent.prototype.setSentFrom = function
  * optional string sent_to = 4;
  * @return {string}
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.getSentTo = function() {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.getSentTo = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.commons.audit.OmnichannelMessageEvent} returns this
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent} returns this
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.setSentTo = function(value) {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setSentTo = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -13429,16 +13415,16 @@ proto.api.commons.audit.OmnichannelMessageEvent.prototype.setSentTo = function(v
  * optional int32 units = 5;
  * @return {number}
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.getUnits = function() {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.getUnits = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.commons.audit.OmnichannelMessageEvent} returns this
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent} returns this
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.setUnits = function(value) {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setUnits = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -13447,16 +13433,16 @@ proto.api.commons.audit.OmnichannelMessageEvent.prototype.setUnits = function(va
  * optional int64 message_size = 6;
  * @return {number}
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.getMessageSize = function() {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.getMessageSize = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.commons.audit.OmnichannelMessageEvent} returns this
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent} returns this
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.setMessageSize = function(value) {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setMessageSize = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
 };
 
@@ -13465,16 +13451,16 @@ proto.api.commons.audit.OmnichannelMessageEvent.prototype.setMessageSize = funct
  * optional int64 attachment_size = 7;
  * @return {number}
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.getAttachmentSize = function() {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.getAttachmentSize = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.commons.audit.OmnichannelMessageEvent} returns this
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent} returns this
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.setAttachmentSize = function(value) {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setAttachmentSize = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
@@ -13483,16 +13469,16 @@ proto.api.commons.audit.OmnichannelMessageEvent.prototype.setAttachmentSize = fu
  * optional api.commons.OmniSenderType sender_type = 8;
  * @return {!proto.api.commons.OmniSenderType}
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.getSenderType = function() {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.getSenderType = function() {
   return /** @type {!proto.api.commons.OmniSenderType} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
 /**
  * @param {!proto.api.commons.OmniSenderType} value
- * @return {!proto.api.commons.audit.OmnichannelMessageEvent} returns this
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent} returns this
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.setSenderType = function(value) {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setSenderType = function(value) {
   return jspb.Message.setProto3EnumField(this, 8, value);
 };
 
@@ -13501,54 +13487,17 @@ proto.api.commons.audit.OmnichannelMessageEvent.prototype.setSenderType = functi
  * optional string user_id = 9;
  * @return {string}
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.getUserId = function() {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.getUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.commons.audit.OmnichannelMessageEvent} returns this
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent} returns this
  */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.setUserId = function(value) {
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
-};
-
-
-/**
- * optional api.commons.OmniMessagePayload payload = 10;
- * @return {?proto.api.commons.OmniMessagePayload}
- */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.getPayload = function() {
-  return /** @type{?proto.api.commons.OmniMessagePayload} */ (
-    jspb.Message.getWrapperField(this, api_commons_omnichannel_pb.OmniMessagePayload, 10));
-};
-
-
-/**
- * @param {?proto.api.commons.OmniMessagePayload|undefined} value
- * @return {!proto.api.commons.audit.OmnichannelMessageEvent} returns this
-*/
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.setPayload = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.api.commons.audit.OmnichannelMessageEvent} returns this
- */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.clearPayload = function() {
-  return this.setPayload(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.commons.audit.OmnichannelMessageEvent.prototype.hasPayload = function() {
-  return jspb.Message.getField(this, 10) != null;
 };
 
 

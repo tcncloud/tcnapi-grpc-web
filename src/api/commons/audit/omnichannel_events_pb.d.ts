@@ -1677,7 +1677,7 @@ export namespace OmnichannelManualApproveTaskRequeueEvent {
   }
 }
 
-export class OmnichannelMessageEvent extends jspb.Message {
+export class OmnichannelMessageSentEvent extends jspb.Message {
   getMessageSid(): number;
   setMessageSid(value: number): void;
 
@@ -1705,22 +1705,17 @@ export class OmnichannelMessageEvent extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
-  hasPayload(): boolean;
-  clearPayload(): void;
-  getPayload(): api_commons_omnichannel_pb.OmniMessagePayload | undefined;
-  setPayload(value?: api_commons_omnichannel_pb.OmniMessagePayload): void;
-
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OmnichannelMessageEvent.AsObject;
-  static toObject(includeInstance: boolean, msg: OmnichannelMessageEvent): OmnichannelMessageEvent.AsObject;
+  toObject(includeInstance?: boolean): OmnichannelMessageSentEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: OmnichannelMessageSentEvent): OmnichannelMessageSentEvent.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OmnichannelMessageEvent, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OmnichannelMessageEvent;
-  static deserializeBinaryFromReader(message: OmnichannelMessageEvent, reader: jspb.BinaryReader): OmnichannelMessageEvent;
+  static serializeBinaryToWriter(message: OmnichannelMessageSentEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OmnichannelMessageSentEvent;
+  static deserializeBinaryFromReader(message: OmnichannelMessageSentEvent, reader: jspb.BinaryReader): OmnichannelMessageSentEvent;
 }
 
-export namespace OmnichannelMessageEvent {
+export namespace OmnichannelMessageSentEvent {
   export type AsObject = {
     messageSid: number,
     channelType: api_commons_omnichannel_pb.ChannelTypeMap[keyof api_commons_omnichannel_pb.ChannelTypeMap],
@@ -1731,7 +1726,6 @@ export namespace OmnichannelMessageEvent {
     attachmentSize: number,
     senderType: api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap],
     userId: string,
-    payload?: api_commons_omnichannel_pb.OmniMessagePayload.AsObject,
   }
 }
 

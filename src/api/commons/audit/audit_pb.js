@@ -146,7 +146,7 @@ proto.api.commons.audit.AuditEvent.EventCase = {
   OMNICHANNEL_MANUAL_APPROVE_TASK_TIMEOUT_EVENT: 360,
   OMNICHANNEL_MANUAL_APPROVE_TASK_REQUEUE_EVENT: 361,
   OMNICHANNEL_TRANSCRIPT_SAVED_EVENT: 362,
-  OMNICHANNEL_MESSAGE_EVENT: 363,
+  OMNICHANNEL_MESSAGE_SENT_EVENT: 363,
   ASM_AGENT_LOGIN_EVENT: 400,
   ASM_OPEN_VOICE_EVENT: 401,
   ASM_OPEN_OMNI_AGENT_EVENT: 402,
@@ -311,7 +311,7 @@ omnichannelManualApproveTaskRejectedEvent: (f = msg.getOmnichannelManualApproveT
 omnichannelManualApproveTaskTimeoutEvent: (f = msg.getOmnichannelManualApproveTaskTimeoutEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskTimeoutEvent.toObject(includeInstance, f),
 omnichannelManualApproveTaskRequeueEvent: (f = msg.getOmnichannelManualApproveTaskRequeueEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.toObject(includeInstance, f),
 omnichannelTranscriptSavedEvent: (f = msg.getOmnichannelTranscriptSavedEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent.toObject(includeInstance, f),
-omnichannelMessageEvent: (f = msg.getOmnichannelMessageEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelMessageEvent.toObject(includeInstance, f),
+omnichannelMessageSentEvent: (f = msg.getOmnichannelMessageSentEvent()) && api_commons_audit_omnichannel_events_pb.OmnichannelMessageSentEvent.toObject(includeInstance, f),
 asmAgentLoginEvent: (f = msg.getAsmAgentLoginEvent()) && api_commons_audit_asm_events_pb.AsmAgentLoginEvent.toObject(includeInstance, f),
 asmOpenVoiceEvent: (f = msg.getAsmOpenVoiceEvent()) && api_commons_audit_asm_events_pb.AsmOpenVoiceEvent.toObject(includeInstance, f),
 asmOpenOmniAgentEvent: (f = msg.getAsmOpenOmniAgentEvent()) && api_commons_audit_asm_events_pb.AsmOpenOmniAgentEvent.toObject(includeInstance, f),
@@ -716,9 +716,9 @@ proto.api.commons.audit.AuditEvent.deserializeBinaryFromReader = function(msg, r
       msg.setOmnichannelTranscriptSavedEvent(value);
       break;
     case 363:
-      var value = new api_commons_audit_omnichannel_events_pb.OmnichannelMessageEvent;
-      reader.readMessage(value,api_commons_audit_omnichannel_events_pb.OmnichannelMessageEvent.deserializeBinaryFromReader);
-      msg.setOmnichannelMessageEvent(value);
+      var value = new api_commons_audit_omnichannel_events_pb.OmnichannelMessageSentEvent;
+      reader.readMessage(value,api_commons_audit_omnichannel_events_pb.OmnichannelMessageSentEvent.deserializeBinaryFromReader);
+      msg.setOmnichannelMessageSentEvent(value);
       break;
     case 400:
       var value = new api_commons_audit_asm_events_pb.AsmAgentLoginEvent;
@@ -1550,12 +1550,12 @@ proto.api.commons.audit.AuditEvent.serializeBinaryToWriter = function(message, w
       api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent.serializeBinaryToWriter
     );
   }
-  f = message.getOmnichannelMessageEvent();
+  f = message.getOmnichannelMessageSentEvent();
   if (f != null) {
     writer.writeMessage(
       363,
       f,
-      api_commons_audit_omnichannel_events_pb.OmnichannelMessageEvent.serializeBinaryToWriter
+      api_commons_audit_omnichannel_events_pb.OmnichannelMessageSentEvent.serializeBinaryToWriter
     );
   }
   f = message.getAsmAgentLoginEvent();
@@ -4257,20 +4257,20 @@ proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelTranscriptSavedEvent 
 
 
 /**
- * optional OmnichannelMessageEvent omnichannel_message_event = 363;
- * @return {?proto.api.commons.audit.OmnichannelMessageEvent}
+ * optional OmnichannelMessageSentEvent omnichannel_message_sent_event = 363;
+ * @return {?proto.api.commons.audit.OmnichannelMessageSentEvent}
  */
-proto.api.commons.audit.AuditEvent.prototype.getOmnichannelMessageEvent = function() {
-  return /** @type{?proto.api.commons.audit.OmnichannelMessageEvent} */ (
-    jspb.Message.getWrapperField(this, api_commons_audit_omnichannel_events_pb.OmnichannelMessageEvent, 363));
+proto.api.commons.audit.AuditEvent.prototype.getOmnichannelMessageSentEvent = function() {
+  return /** @type{?proto.api.commons.audit.OmnichannelMessageSentEvent} */ (
+    jspb.Message.getWrapperField(this, api_commons_audit_omnichannel_events_pb.OmnichannelMessageSentEvent, 363));
 };
 
 
 /**
- * @param {?proto.api.commons.audit.OmnichannelMessageEvent|undefined} value
+ * @param {?proto.api.commons.audit.OmnichannelMessageSentEvent|undefined} value
  * @return {!proto.api.commons.audit.AuditEvent} returns this
 */
-proto.api.commons.audit.AuditEvent.prototype.setOmnichannelMessageEvent = function(value) {
+proto.api.commons.audit.AuditEvent.prototype.setOmnichannelMessageSentEvent = function(value) {
   return jspb.Message.setOneofWrapperField(this, 363, proto.api.commons.audit.AuditEvent.oneofGroups_[0], value);
 };
 
@@ -4279,8 +4279,8 @@ proto.api.commons.audit.AuditEvent.prototype.setOmnichannelMessageEvent = functi
  * Clears the message field making it undefined.
  * @return {!proto.api.commons.audit.AuditEvent} returns this
  */
-proto.api.commons.audit.AuditEvent.prototype.clearOmnichannelMessageEvent = function() {
-  return this.setOmnichannelMessageEvent(undefined);
+proto.api.commons.audit.AuditEvent.prototype.clearOmnichannelMessageSentEvent = function() {
+  return this.setOmnichannelMessageSentEvent(undefined);
 };
 
 
@@ -4288,7 +4288,7 @@ proto.api.commons.audit.AuditEvent.prototype.clearOmnichannelMessageEvent = func
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelMessageEvent = function() {
+proto.api.commons.audit.AuditEvent.prototype.hasOmnichannelMessageSentEvent = function() {
   return jspb.Message.getField(this, 363) != null;
 };
 

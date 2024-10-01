@@ -318,10 +318,10 @@ export class AuditEvent extends jspb.Message {
   getOmnichannelTranscriptSavedEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent | undefined;
   setOmnichannelTranscriptSavedEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent): void;
 
-  hasOmnichannelMessageEvent(): boolean;
-  clearOmnichannelMessageEvent(): void;
-  getOmnichannelMessageEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelMessageEvent | undefined;
-  setOmnichannelMessageEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelMessageEvent): void;
+  hasOmnichannelMessageSentEvent(): boolean;
+  clearOmnichannelMessageSentEvent(): void;
+  getOmnichannelMessageSentEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelMessageSentEvent | undefined;
+  setOmnichannelMessageSentEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelMessageSentEvent): void;
 
   hasAsmAgentLoginEvent(): boolean;
   clearAsmAgentLoginEvent(): void;
@@ -708,7 +708,7 @@ export namespace AuditEvent {
     omnichannelManualApproveTaskTimeoutEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskTimeoutEvent.AsObject,
     omnichannelManualApproveTaskRequeueEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.AsObject,
     omnichannelTranscriptSavedEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent.AsObject,
-    omnichannelMessageEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelMessageEvent.AsObject,
+    omnichannelMessageSentEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelMessageSentEvent.AsObject,
     asmAgentLoginEvent?: api_commons_audit_asm_events_pb.AsmAgentLoginEvent.AsObject,
     asmOpenVoiceEvent?: api_commons_audit_asm_events_pb.AsmOpenVoiceEvent.AsObject,
     asmOpenOmniAgentEvent?: api_commons_audit_asm_events_pb.AsmOpenOmniAgentEvent.AsObject,
@@ -831,7 +831,7 @@ export namespace AuditEvent {
     OMNICHANNEL_MANUAL_APPROVE_TASK_TIMEOUT_EVENT = 360,
     OMNICHANNEL_MANUAL_APPROVE_TASK_REQUEUE_EVENT = 361,
     OMNICHANNEL_TRANSCRIPT_SAVED_EVENT = 362,
-    OMNICHANNEL_MESSAGE_EVENT = 363,
+    OMNICHANNEL_MESSAGE_SENT_EVENT = 363,
     ASM_AGENT_LOGIN_EVENT = 400,
     ASM_OPEN_VOICE_EVENT = 401,
     ASM_OPEN_OMNI_AGENT_EVENT = 402,
