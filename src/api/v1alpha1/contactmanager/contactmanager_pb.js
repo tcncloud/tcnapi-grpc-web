@@ -4555,7 +4555,9 @@ proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.prototype.toObject 
  */
 proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-fieldValue: jspb.Message.getFieldWithDefault(msg, 1, "")
+fieldName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+fieldValue: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fieldType: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4594,7 +4596,15 @@ proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.deserializeBinaryFr
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
+      msg.setFieldName(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
       msg.setFieldValue(value);
+      break;
+    case 3:
+      var value = /** @type {!proto.api.commons.ClassifierEntityType} */ (reader.readEnum());
+      msg.setFieldType(value);
       break;
     default:
       reader.skipField();
@@ -4625,10 +4635,24 @@ proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.prototype.serialize
  */
 proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFieldValue();
+  f = message.getFieldName();
   if (f.length > 0) {
     writer.writeString(
       1,
+      f
+    );
+  }
+  f = message.getFieldValue();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {!proto.api.commons.ClassifierEntityType} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeEnum(
+      3,
       f
     );
   }
@@ -4636,10 +4660,10 @@ proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.serializeBinaryToWr
 
 
 /**
- * optional string field_value = 1;
+ * optional string field_name = 1;
  * @return {string}
  */
-proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.prototype.getFieldValue = function() {
+proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.prototype.getFieldName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -4648,8 +4672,62 @@ proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.prototype.getFieldV
  * @param {string} value
  * @return {!proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest} returns this
  */
-proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.prototype.setFieldValue = function(value) {
+proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.prototype.setFieldName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string field_value = 2;
+ * @return {string}
+ */
+proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.prototype.getFieldValue = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.prototype.setFieldValue = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional api.commons.ClassifierEntityType field_type = 3;
+ * @return {!proto.api.commons.ClassifierEntityType}
+ */
+proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.prototype.getFieldType = function() {
+  return /** @type {!proto.api.commons.ClassifierEntityType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.api.commons.ClassifierEntityType} value
+ * @return {!proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.prototype.setFieldType = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest} returns this
+ */
+proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.prototype.clearFieldType = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1alpha1.contactmanager.GetContactFieldTypeRequest.prototype.hasFieldType = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

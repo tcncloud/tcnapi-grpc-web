@@ -574,8 +574,16 @@ export namespace ListContactsByEntityResponse {
 }
 
 export class GetContactFieldTypeRequest extends jspb.Message {
+  getFieldName(): string;
+  setFieldName(value: string): void;
+
   getFieldValue(): string;
   setFieldValue(value: string): void;
+
+  hasFieldType(): boolean;
+  clearFieldType(): void;
+  getFieldType(): api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap];
+  setFieldType(value: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetContactFieldTypeRequest.AsObject;
@@ -589,7 +597,9 @@ export class GetContactFieldTypeRequest extends jspb.Message {
 
 export namespace GetContactFieldTypeRequest {
   export type AsObject = {
+    fieldName: string,
     fieldValue: string,
+    fieldType: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap],
   }
 }
 
