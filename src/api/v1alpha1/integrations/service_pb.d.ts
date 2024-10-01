@@ -3651,3 +3651,58 @@ export namespace ProcessWorkflowRes {
   }
 }
 
+export class InsertPrivateFieldReq extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getValue(): string;
+  setValue(value: string): void;
+
+  getPrivateFieldType(): PrivateFieldTypeMap[keyof PrivateFieldTypeMap];
+  setPrivateFieldType(value: PrivateFieldTypeMap[keyof PrivateFieldTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InsertPrivateFieldReq.AsObject;
+  static toObject(includeInstance: boolean, msg: InsertPrivateFieldReq): InsertPrivateFieldReq.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: InsertPrivateFieldReq, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InsertPrivateFieldReq;
+  static deserializeBinaryFromReader(message: InsertPrivateFieldReq, reader: jspb.BinaryReader): InsertPrivateFieldReq;
+}
+
+export namespace InsertPrivateFieldReq {
+  export type AsObject = {
+    name: string,
+    value: string,
+    privateFieldType: PrivateFieldTypeMap[keyof PrivateFieldTypeMap],
+  }
+}
+
+export class InsertPrivateFieldRes extends jspb.Message {
+  getPrivateFieldId(): number;
+  setPrivateFieldId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InsertPrivateFieldRes.AsObject;
+  static toObject(includeInstance: boolean, msg: InsertPrivateFieldRes): InsertPrivateFieldRes.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: InsertPrivateFieldRes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InsertPrivateFieldRes;
+  static deserializeBinaryFromReader(message: InsertPrivateFieldRes, reader: jspb.BinaryReader): InsertPrivateFieldRes;
+}
+
+export namespace InsertPrivateFieldRes {
+  export type AsObject = {
+    privateFieldId: number,
+  }
+}
+
+export interface PrivateFieldTypeMap {
+  UNKNOWN: 0;
+  PRIVATE_KEY: 1;
+}
+
+export const PrivateFieldType: PrivateFieldTypeMap;
+

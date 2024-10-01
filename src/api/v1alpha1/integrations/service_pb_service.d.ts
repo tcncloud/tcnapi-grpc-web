@@ -283,6 +283,15 @@ type IntegrationsProcessWorkflow = {
   readonly responseType: typeof api_v1alpha1_integrations_service_pb.ProcessWorkflowRes;
 };
 
+type IntegrationsInsertPrivateField = {
+  readonly methodName: string;
+  readonly service: typeof Integrations;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_integrations_service_pb.InsertPrivateFieldReq;
+  readonly responseType: typeof api_v1alpha1_integrations_service_pb.InsertPrivateFieldRes;
+};
+
 export class Integrations {
   static readonly serviceName: string;
   static readonly Process: IntegrationsProcess;
@@ -316,6 +325,7 @@ export class Integrations {
   static readonly GenerateEpicKeyPairs: IntegrationsGenerateEpicKeyPairs;
   static readonly PopulateIntegrationLink: IntegrationsPopulateIntegrationLink;
   static readonly ProcessWorkflow: IntegrationsProcessWorkflow;
+  static readonly InsertPrivateField: IntegrationsInsertPrivateField;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -628,6 +638,15 @@ export class IntegrationsClient {
   processWorkflow(
     requestMessage: api_v1alpha1_integrations_service_pb.ProcessWorkflowReq,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.ProcessWorkflowRes|null) => void
+  ): UnaryResponse;
+  insertPrivateField(
+    requestMessage: api_v1alpha1_integrations_service_pb.InsertPrivateFieldReq,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.InsertPrivateFieldRes|null) => void
+  ): UnaryResponse;
+  insertPrivateField(
+    requestMessage: api_v1alpha1_integrations_service_pb.InsertPrivateFieldReq,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_integrations_service_pb.InsertPrivateFieldRes|null) => void
   ): UnaryResponse;
 }
 
