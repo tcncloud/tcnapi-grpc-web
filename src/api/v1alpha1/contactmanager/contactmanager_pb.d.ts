@@ -2,6 +2,7 @@
 // file: api/v1alpha1/contactmanager/contactmanager.proto
 
 import * as jspb from "google-protobuf";
+import * as api_commons_classifier_pb from "../../../api/commons/classifier_pb";
 import * as api_commons_contactmanager_pb from "../../../api/commons/contactmanager_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
@@ -265,6 +266,9 @@ export class ContactManagerEntry extends jspb.Message {
   getDateCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setDateCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getStatus(): api_commons_contactmanager_pb.ContactEntryStatusMap[keyof api_commons_contactmanager_pb.ContactEntryStatusMap];
+  setStatus(value: api_commons_contactmanager_pb.ContactEntryStatusMap[keyof api_commons_contactmanager_pb.ContactEntryStatusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerEntry.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerEntry): ContactManagerEntry.AsObject;
@@ -283,6 +287,7 @@ export namespace ContactManagerEntry {
     value: string,
     type: string,
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    status: api_commons_contactmanager_pb.ContactEntryStatusMap[keyof api_commons_contactmanager_pb.ContactEntryStatusMap],
   }
 }
 
@@ -318,6 +323,9 @@ export class ContactManagerList extends jspb.Message {
   getIsDeleted(): boolean;
   setIsDeleted(value: boolean): void;
 
+  getStatus(): api_commons_contactmanager_pb.ContactListStatusMap[keyof api_commons_contactmanager_pb.ContactListStatusMap];
+  setStatus(value: api_commons_contactmanager_pb.ContactListStatusMap[keyof api_commons_contactmanager_pb.ContactListStatusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactManagerList.AsObject;
   static toObject(includeInstance: boolean, msg: ContactManagerList): ContactManagerList.AsObject;
@@ -339,6 +347,7 @@ export namespace ContactManagerList {
     ttl: string,
     dateCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     isDeleted: boolean,
+    status: api_commons_contactmanager_pb.ContactListStatusMap[keyof api_commons_contactmanager_pb.ContactListStatusMap],
   }
 }
 
@@ -561,6 +570,56 @@ export class ListContactsByEntityResponse extends jspb.Message {
 export namespace ListContactsByEntityResponse {
   export type AsObject = {
     contactManagerEntryList: Array<ContactManagerEntry.AsObject>,
+  }
+}
+
+export class GetContactFieldTypeRequest extends jspb.Message {
+  getFieldName(): string;
+  setFieldName(value: string): void;
+
+  getFieldValue(): string;
+  setFieldValue(value: string): void;
+
+  hasFieldType(): boolean;
+  clearFieldType(): void;
+  getFieldType(): api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap];
+  setFieldType(value: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetContactFieldTypeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetContactFieldTypeRequest): GetContactFieldTypeRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetContactFieldTypeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetContactFieldTypeRequest;
+  static deserializeBinaryFromReader(message: GetContactFieldTypeRequest, reader: jspb.BinaryReader): GetContactFieldTypeRequest;
+}
+
+export namespace GetContactFieldTypeRequest {
+  export type AsObject = {
+    fieldName: string,
+    fieldValue: string,
+    fieldType: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap],
+  }
+}
+
+export class GetContactFieldTypeResponse extends jspb.Message {
+  getFieldType(): api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap];
+  setFieldType(value: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetContactFieldTypeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetContactFieldTypeResponse): GetContactFieldTypeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetContactFieldTypeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetContactFieldTypeResponse;
+  static deserializeBinaryFromReader(message: GetContactFieldTypeResponse, reader: jspb.BinaryReader): GetContactFieldTypeResponse;
+}
+
+export namespace GetContactFieldTypeResponse {
+  export type AsObject = {
+    fieldType: api_commons_classifier_pb.ClassifierEntityTypeMap[keyof api_commons_classifier_pb.ClassifierEntityTypeMap],
   }
 }
 

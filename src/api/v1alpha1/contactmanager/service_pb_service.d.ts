@@ -77,6 +77,15 @@ type ContactManagerListContactsByEntity = {
   readonly responseType: typeof api_v1alpha1_contactmanager_contactmanager_pb.ListContactsByEntityResponse;
 };
 
+type ContactManagerGetContactFieldType = {
+  readonly methodName: string;
+  readonly service: typeof ContactManager;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeRequest;
+  readonly responseType: typeof api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeResponse;
+};
+
 export class ContactManager {
   static readonly serviceName: string;
   static readonly GetContactList: ContactManagerGetContactList;
@@ -87,6 +96,7 @@ export class ContactManager {
   static readonly AddContactEntry: ContactManagerAddContactEntry;
   static readonly EditContactEntry: ContactManagerEditContactEntry;
   static readonly ListContactsByEntity: ContactManagerListContactsByEntity;
+  static readonly GetContactFieldType: ContactManagerGetContactFieldType;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -192,6 +202,15 @@ export class ContactManagerClient {
   listContactsByEntity(
     requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.ListContactsByEntityRequest,
     callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.ListContactsByEntityResponse|null) => void
+  ): UnaryResponse;
+  getContactFieldType(
+    requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeResponse|null) => void
+  ): UnaryResponse;
+  getContactFieldType(
+    requestMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeRequest,
+    callback: (error: ServiceError|null, responseMessage: api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeResponse|null) => void
   ): UnaryResponse;
 }
 
