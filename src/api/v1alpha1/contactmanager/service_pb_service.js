@@ -83,15 +83,6 @@ ContactManager.ListContactsByEntity = {
   responseType: api_v1alpha1_contactmanager_contactmanager_pb.ListContactsByEntityResponse
 };
 
-ContactManager.GetContactFieldType = {
-  methodName: "GetContactFieldType",
-  service: ContactManager,
-  requestStream: false,
-  responseStream: false,
-  requestType: api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeRequest,
-  responseType: api_v1alpha1_contactmanager_contactmanager_pb.GetContactFieldTypeResponse
-};
-
 exports.ContactManager = ContactManager;
 
 function ContactManagerClient(serviceHost, options) {
@@ -321,37 +312,6 @@ ContactManagerClient.prototype.listContactsByEntity = function listContactsByEnt
     callback = arguments[1];
   }
   var client = grpc.unary(ContactManager.ListContactsByEntity, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-ContactManagerClient.prototype.getContactFieldType = function getContactFieldType(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(ContactManager.GetContactFieldType, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

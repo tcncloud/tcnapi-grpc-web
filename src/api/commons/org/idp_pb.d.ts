@@ -23,9 +23,6 @@ export class IdpClient extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getBillingId(): string;
-  setBillingId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IdpClient.AsObject;
   static toObject(includeInstance: boolean, msg: IdpClient): IdpClient.AsObject;
@@ -43,7 +40,6 @@ export namespace IdpClient {
     redirectUrisList: Array<string>,
     trustedPeersList: Array<string>,
     name: string,
-    billingId: string,
   }
 }
 

@@ -129,19 +129,3 @@ export interface DeDuplicationMergeStrategyMap {
 
 export const DeDuplicationMergeStrategy: DeDuplicationMergeStrategyMap;
 
-export interface ContactListStatusMap {
-  CONTACT_LIST_STATUS_NEW: 0;
-}
-
-export const ContactListStatus: ContactListStatusMap;
-
-export interface ContactEntryStatusMap {
-  CONTACT_ENTRY_STATUS_NEW: 0;
-  CONTACT_ENTRY_STATUS_INUSE: 1;
-  CONTACT_ENTRY_STATUS_NOTREF: 2;
-  CONTACT_ENTRY_STATUS_DONE: 3;
-  CONTACT_ENTRY_STATUS_EXPIRED: 4;
-}
-
-export const ContactEntryStatus: ContactEntryStatusMap;
-
