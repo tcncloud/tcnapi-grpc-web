@@ -323,6 +323,11 @@ export class AuditEvent extends jspb.Message {
   getOmnichannelMessageSentEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelMessageSentEvent | undefined;
   setOmnichannelMessageSentEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelMessageSentEvent): void;
 
+  hasOmnichannelProviderResponseEvent(): boolean;
+  clearOmnichannelProviderResponseEvent(): void;
+  getOmnichannelProviderResponseEvent(): api_commons_audit_omnichannel_events_pb.OmnichannelProviderResponseEvent | undefined;
+  setOmnichannelProviderResponseEvent(value?: api_commons_audit_omnichannel_events_pb.OmnichannelProviderResponseEvent): void;
+
   hasAsmAgentLoginEvent(): boolean;
   clearAsmAgentLoginEvent(): void;
   getAsmAgentLoginEvent(): api_commons_audit_asm_events_pb.AsmAgentLoginEvent | undefined;
@@ -709,6 +714,7 @@ export namespace AuditEvent {
     omnichannelManualApproveTaskRequeueEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelManualApproveTaskRequeueEvent.AsObject,
     omnichannelTranscriptSavedEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelTranscriptSavedEvent.AsObject,
     omnichannelMessageSentEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelMessageSentEvent.AsObject,
+    omnichannelProviderResponseEvent?: api_commons_audit_omnichannel_events_pb.OmnichannelProviderResponseEvent.AsObject,
     asmAgentLoginEvent?: api_commons_audit_asm_events_pb.AsmAgentLoginEvent.AsObject,
     asmOpenVoiceEvent?: api_commons_audit_asm_events_pb.AsmOpenVoiceEvent.AsObject,
     asmOpenOmniAgentEvent?: api_commons_audit_asm_events_pb.AsmOpenOmniAgentEvent.AsObject,
@@ -832,6 +838,7 @@ export namespace AuditEvent {
     OMNICHANNEL_MANUAL_APPROVE_TASK_REQUEUE_EVENT = 361,
     OMNICHANNEL_TRANSCRIPT_SAVED_EVENT = 362,
     OMNICHANNEL_MESSAGE_SENT_EVENT = 363,
+    OMNICHANNEL_PROVIDER_RESPONSE_EVENT = 364,
     ASM_AGENT_LOGIN_EVENT = 400,
     ASM_OPEN_VOICE_EVENT = 401,
     ASM_OPEN_OMNI_AGENT_EVENT = 402,
