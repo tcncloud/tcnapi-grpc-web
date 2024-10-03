@@ -1205,6 +1205,46 @@ export namespace AdherenceAgentRuleClause {
   }
 }
 
+export class WfmUser extends jspb.Message {
+  getWfmUserId(): number;
+  setWfmUserId(value: number): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getOrgId(): string;
+  setOrgId(value: string): void;
+
+  getFirstName(): string;
+  setFirstName(value: string): void;
+
+  getLastName(): string;
+  setLastName(value: string): void;
+
+  getUsername(): string;
+  setUsername(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WfmUser.AsObject;
+  static toObject(includeInstance: boolean, msg: WfmUser): WfmUser.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: WfmUser, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WfmUser;
+  static deserializeBinaryFromReader(message: WfmUser, reader: jspb.BinaryReader): WfmUser;
+}
+
+export namespace WfmUser {
+  export type AsObject = {
+    wfmUserId: number,
+    userId: string,
+    orgId: string,
+    firstName: string,
+    lastName: string,
+    username: string,
+  }
+}
+
 export interface RegressionForecasterModelTypesMap {
   RANDOM_FOREST: 0;
   ADABOOST: 1;
