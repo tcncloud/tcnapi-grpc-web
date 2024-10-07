@@ -47,6 +47,15 @@ TranslationsService.ListContexts = {
   responseType: services_translations_v1alpha1_entities_pb.ListContextsResponse
 };
 
+TranslationsService.CreateTranslation = {
+  methodName: "CreateTranslation",
+  service: TranslationsService,
+  requestStream: false,
+  responseStream: false,
+  requestType: services_translations_v1alpha1_entities_pb.CreateTranslationRequest,
+  responseType: services_translations_v1alpha1_entities_pb.CreateTranslationResponse
+};
+
 TranslationsService.UpdateTranslation = {
   methodName: "UpdateTranslation",
   service: TranslationsService,
@@ -233,6 +242,37 @@ TranslationsServiceClient.prototype.listContexts = function listContexts(request
     callback = arguments[1];
   }
   var client = grpc.unary(TranslationsService.ListContexts, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TranslationsServiceClient.prototype.createTranslation = function createTranslation(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(TranslationsService.CreateTranslation, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

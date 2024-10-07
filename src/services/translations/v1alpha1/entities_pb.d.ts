@@ -194,6 +194,56 @@ export namespace ListTranslationsResponse {
   }
 }
 
+export class CreateTranslationRequest extends jspb.Message {
+  getTemplate(): string;
+  setTemplate(value: string): void;
+
+  getLanguageTag(): string;
+  setLanguageTag(value: string): void;
+
+  getTranslation(): string;
+  setTranslation(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTranslationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTranslationRequest): CreateTranslationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTranslationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTranslationRequest;
+  static deserializeBinaryFromReader(message: CreateTranslationRequest, reader: jspb.BinaryReader): CreateTranslationRequest;
+}
+
+export namespace CreateTranslationRequest {
+  export type AsObject = {
+    template: string,
+    languageTag: string,
+    translation: string,
+  }
+}
+
+export class CreateTranslationResponse extends jspb.Message {
+  hasTranslation(): boolean;
+  clearTranslation(): void;
+  getTranslation(): Translation | undefined;
+  setTranslation(value?: Translation): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTranslationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTranslationResponse): CreateTranslationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateTranslationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTranslationResponse;
+  static deserializeBinaryFromReader(message: CreateTranslationResponse, reader: jspb.BinaryReader): CreateTranslationResponse;
+}
+
+export namespace CreateTranslationResponse {
+  export type AsObject = {
+    translation?: Translation.AsObject,
+  }
+}
+
 export class UpdateTranslationRequest extends jspb.Message {
   getTranslationId(): string;
   setTranslationId(value: string): void;
