@@ -41,6 +41,9 @@ export class ReceiptField extends jspb.Message {
   getFormat(): string;
   setFormat(value: string): void;
 
+  getCopiable(): boolean;
+  setCopiable(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReceiptField.AsObject;
   static toObject(includeInstance: boolean, msg: ReceiptField): ReceiptField.AsObject;
@@ -58,6 +61,7 @@ export namespace ReceiptField {
     value: string,
     validationType: ValidationMap[keyof ValidationMap],
     format: string,
+    copiable: boolean,
   }
 }
 
