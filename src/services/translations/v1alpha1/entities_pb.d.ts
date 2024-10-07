@@ -195,6 +195,9 @@ export namespace ListTranslationsResponse {
 }
 
 export class CreateTranslationRequest extends jspb.Message {
+  getContext(): string;
+  setContext(value: string): void;
+
   getTemplate(): string;
   setTemplate(value: string): void;
 
@@ -216,6 +219,7 @@ export class CreateTranslationRequest extends jspb.Message {
 
 export namespace CreateTranslationRequest {
   export type AsObject = {
+    context: string,
     template: string,
     languageTag: string,
     translation: string,

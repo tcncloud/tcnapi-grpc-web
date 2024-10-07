@@ -2060,9 +2060,10 @@ proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.toObject
  */
 proto.services.translations.v1alpha1.CreateTranslationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-template: jspb.Message.getFieldWithDefault(msg, 1, ""),
-languageTag: jspb.Message.getFieldWithDefault(msg, 2, ""),
-translation: jspb.Message.getFieldWithDefault(msg, 3, "")
+context: jspb.Message.getFieldWithDefault(msg, 1, ""),
+template: jspb.Message.getFieldWithDefault(msg, 2, ""),
+languageTag: jspb.Message.getFieldWithDefault(msg, 3, ""),
+translation: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -2101,13 +2102,17 @@ proto.services.translations.v1alpha1.CreateTranslationRequest.deserializeBinaryF
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTemplate(value);
+      msg.setContext(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLanguageTag(value);
+      msg.setTemplate(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLanguageTag(value);
+      break;
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setTranslation(value);
       break;
@@ -2140,24 +2145,31 @@ proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.serializ
  */
 proto.services.translations.v1alpha1.CreateTranslationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTemplate();
+  f = message.getContext();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getLanguageTag();
+  f = message.getTemplate();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getTranslation();
+  f = message.getLanguageTag();
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getTranslation();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -2165,10 +2177,10 @@ proto.services.translations.v1alpha1.CreateTranslationRequest.serializeBinaryToW
 
 
 /**
- * optional string template = 1;
+ * optional string context = 1;
  * @return {string}
  */
-proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.getTemplate = function() {
+proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.getContext = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -2177,16 +2189,16 @@ proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.getTempl
  * @param {string} value
  * @return {!proto.services.translations.v1alpha1.CreateTranslationRequest} returns this
  */
-proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.setTemplate = function(value) {
+proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.setContext = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string language_tag = 2;
+ * optional string template = 2;
  * @return {string}
  */
-proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.getLanguageTag = function() {
+proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.getTemplate = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -2195,16 +2207,16 @@ proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.getLangu
  * @param {string} value
  * @return {!proto.services.translations.v1alpha1.CreateTranslationRequest} returns this
  */
-proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.setLanguageTag = function(value) {
+proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.setTemplate = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string translation = 3;
+ * optional string language_tag = 3;
  * @return {string}
  */
-proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.getTranslation = function() {
+proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.getLanguageTag = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -2213,8 +2225,26 @@ proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.getTrans
  * @param {string} value
  * @return {!proto.services.translations.v1alpha1.CreateTranslationRequest} returns this
  */
-proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.setTranslation = function(value) {
+proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.setLanguageTag = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string translation = 4;
+ * @return {string}
+ */
+proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.getTranslation = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.services.translations.v1alpha1.CreateTranslationRequest} returns this
+ */
+proto.services.translations.v1alpha1.CreateTranslationRequest.prototype.setTranslation = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
