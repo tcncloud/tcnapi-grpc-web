@@ -318,8 +318,8 @@ export class Sms extends jspb.Message {
   getCallerId(): string;
   setCallerId(value: string): void;
 
-  getCampaignSid(): string;
-  setCampaignSid(value: string): void;
+  getCampaignSid(): number;
+  setCampaignSid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Sms.AsObject;
@@ -337,7 +337,7 @@ export namespace Sms {
     threadsList: Array<Sms.Thread.AsObject>,
     phone?: Sms.Phone.AsObject,
     callerId: string,
-    campaignSid: string,
+    campaignSid: number,
   }
 
   export class Phone extends jspb.Message {
