@@ -41,6 +41,15 @@ type TranslationsServiceListContexts = {
   readonly responseType: typeof services_translations_v1alpha1_entities_pb.ListContextsResponse;
 };
 
+type TranslationsServiceCreateTranslation = {
+  readonly methodName: string;
+  readonly service: typeof TranslationsService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof services_translations_v1alpha1_entities_pb.CreateTranslationRequest;
+  readonly responseType: typeof services_translations_v1alpha1_entities_pb.CreateTranslationResponse;
+};
+
 type TranslationsServiceUpdateTranslation = {
   readonly methodName: string;
   readonly service: typeof TranslationsService;
@@ -128,6 +137,7 @@ export class TranslationsService {
   static readonly ListTranslations: TranslationsServiceListTranslations;
   static readonly ListLanguages: TranslationsServiceListLanguages;
   static readonly ListContexts: TranslationsServiceListContexts;
+  static readonly CreateTranslation: TranslationsServiceCreateTranslation;
   static readonly UpdateTranslation: TranslationsServiceUpdateTranslation;
   static readonly TriggerLLMTranslation: TranslationsServiceTriggerLLMTranslation;
   static readonly TriggerLLMTranslations: TranslationsServiceTriggerLLMTranslations;
@@ -206,6 +216,15 @@ export class TranslationsServiceClient {
   listContexts(
     requestMessage: services_translations_v1alpha1_entities_pb.ListContextsRequest,
     callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.ListContextsResponse|null) => void
+  ): UnaryResponse;
+  createTranslation(
+    requestMessage: services_translations_v1alpha1_entities_pb.CreateTranslationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.CreateTranslationResponse|null) => void
+  ): UnaryResponse;
+  createTranslation(
+    requestMessage: services_translations_v1alpha1_entities_pb.CreateTranslationRequest,
+    callback: (error: ServiceError|null, responseMessage: services_translations_v1alpha1_entities_pb.CreateTranslationResponse|null) => void
   ): UnaryResponse;
   updateTranslation(
     requestMessage: services_translations_v1alpha1_entities_pb.UpdateTranslationRequest,
