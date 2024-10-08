@@ -20389,6 +20389,7 @@ timeZoneOverride: (f = msg.getTimeZoneOverride()) && api_commons_org_pb.TimeZone
 email: jspb.Message.getFieldWithDefault(msg, 34, ""),
 emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 36, false),
 localePreferencesOverride: (f = msg.getLocalePreferencesOverride()) && api_commons_org_preferences_pb.LocalePreferences.toObject(includeInstance, f),
+passwordResetDate: (f = msg.getPasswordResetDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 trustsList: jspb.Message.toObjectList(msg.getTrustsList(),
     api_commons_org_trusts_pb.Trust.toObject, includeInstance)
   };
@@ -20561,6 +20562,11 @@ proto.api.v0alpha.UserDetails.deserializeBinaryFromReader = function(msg, reader
       var value = new api_commons_org_preferences_pb.LocalePreferences;
       reader.readMessage(value,api_commons_org_preferences_pb.LocalePreferences.deserializeBinaryFromReader);
       msg.setLocalePreferencesOverride(value);
+      break;
+    case 38:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setPasswordResetDate(value);
       break;
     case 200:
       var value = new api_commons_org_trusts_pb.Trust;
@@ -20825,6 +20831,14 @@ proto.api.v0alpha.UserDetails.serializeBinaryToWriter = function(message, writer
       37,
       f,
       api_commons_org_preferences_pb.LocalePreferences.serializeBinaryToWriter
+    );
+  }
+  f = message.getPasswordResetDate();
+  if (f != null) {
+    writer.writeMessage(
+      38,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
   f = message.getTrustsList();
@@ -21604,6 +21618,43 @@ proto.api.v0alpha.UserDetails.prototype.clearLocalePreferencesOverride = functio
  */
 proto.api.v0alpha.UserDetails.prototype.hasLocalePreferencesOverride = function() {
   return jspb.Message.getField(this, 37) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp password_reset_date = 38;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.api.v0alpha.UserDetails.prototype.getPasswordResetDate = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 38));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.api.v0alpha.UserDetails} returns this
+*/
+proto.api.v0alpha.UserDetails.prototype.setPasswordResetDate = function(value) {
+  return jspb.Message.setWrapperField(this, 38, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v0alpha.UserDetails} returns this
+ */
+proto.api.v0alpha.UserDetails.prototype.clearPasswordResetDate = function() {
+  return this.setPasswordResetDate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v0alpha.UserDetails.prototype.hasPasswordResetDate = function() {
+  return jspb.Message.getField(this, 38) != null;
 };
 
 
