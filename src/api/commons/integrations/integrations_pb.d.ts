@@ -2131,6 +2131,11 @@ export class ExecuteFlow extends jspb.Message {
   getDebugValidate(): ExecuteDebugValidate | undefined;
   setDebugValidate(value?: ExecuteDebugValidate): void;
 
+  hasAcquiredProcessPayment(): boolean;
+  clearAcquiredProcessPayment(): void;
+  getAcquiredProcessPayment(): ExecuteAcquiredProcessPayment | undefined;
+  setAcquiredProcessPayment(value?: ExecuteAcquiredProcessPayment): void;
+
   getValueCase(): ExecuteFlow.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExecuteFlow.AsObject;
@@ -2424,6 +2429,7 @@ export namespace ExecuteFlow {
     pdcflowCcTransaction?: ExecutePDCFlowCCTransaction.AsObject,
     debugEcho?: ExecuteDebugEcho.AsObject,
     debugValidate?: ExecuteDebugValidate.AsObject,
+    acquiredProcessPayment?: ExecuteAcquiredProcessPayment.AsObject,
   }
 
   export enum ValueCase {
@@ -2707,6 +2713,7 @@ export namespace ExecuteFlow {
     PDCFLOW_CC_TRANSACTION = 4902,
     DEBUG_ECHO = 5001,
     DEBUG_VALIDATE = 5002,
+    ACQUIRED_PROCESS_PAYMENT = 5101,
   }
 }
 
@@ -7791,6 +7798,22 @@ export namespace ExecutePDCFlowCCTransaction {
   }
 }
 
+export class ExecuteAcquiredProcessPayment extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteAcquiredProcessPayment.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteAcquiredProcessPayment): ExecuteAcquiredProcessPayment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExecuteAcquiredProcessPayment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteAcquiredProcessPayment;
+  static deserializeBinaryFromReader(message: ExecuteAcquiredProcessPayment, reader: jspb.BinaryReader): ExecuteAcquiredProcessPayment;
+}
+
+export namespace ExecuteAcquiredProcessPayment {
+  export type AsObject = {
+  }
+}
+
 export interface IntegrationTypeMap {
   INTEGRATION_TYPE_UNKNOWN: 0;
   INTEGRATION_TYPE_BRAINTREE: 100;
@@ -7843,6 +7866,7 @@ export interface IntegrationTypeMap {
   INTEGRATION_TYPE_VERADIGM_PRACTICE_MANAGEMENT: 4800;
   INTEGRATION_TYPE_PDCFLOW: 4900;
   INTEGRATION_TYPE_DEBUG: 5000;
+  INTEGRATION_TYPE_ACQUIRED: 5100;
 }
 
 export const IntegrationType: IntegrationTypeMap;
@@ -8130,6 +8154,7 @@ export interface RequestMethodMap {
   REQUEST_METHOD_PDCFLOW_CC_TRANSACTION: 4902;
   REQUEST_METHOD_DEBUG_ECHO: 5001;
   REQUESET_METHOD_DEBUG_VALIDATE: 5002;
+  REQUEST_METHOD_ACQUIRED_PROCESS_PAYMENT: 5101;
 }
 
 export const RequestMethod: RequestMethodMap;
