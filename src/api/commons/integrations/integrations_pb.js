@@ -7541,7 +7541,8 @@ name: jspb.Message.getFieldWithDefault(msg, 1, ""),
 displayName: jspb.Message.getFieldWithDefault(msg, 2, ""),
 value: jspb.Message.getFieldWithDefault(msg, 3, ""),
 validationType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-format: jspb.Message.getFieldWithDefault(msg, 5, "")
+format: jspb.Message.getFieldWithDefault(msg, 5, ""),
+copiable: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -7597,6 +7598,10 @@ proto.api.commons.integrations.ReceiptField.deserializeBinaryFromReader = functi
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setFormat(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCopiable(value);
       break;
     default:
       reader.skipField();
@@ -7659,6 +7664,13 @@ proto.api.commons.integrations.ReceiptField.serializeBinaryToWriter = function(m
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getCopiable();
+  if (f) {
+    writer.writeBool(
+      6,
       f
     );
   }
@@ -7752,6 +7764,24 @@ proto.api.commons.integrations.ReceiptField.prototype.getFormat = function() {
  */
 proto.api.commons.integrations.ReceiptField.prototype.setFormat = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional bool copiable = 6;
+ * @return {boolean}
+ */
+proto.api.commons.integrations.ReceiptField.prototype.getCopiable = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.api.commons.integrations.ReceiptField} returns this
+ */
+proto.api.commons.integrations.ReceiptField.prototype.setCopiable = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
