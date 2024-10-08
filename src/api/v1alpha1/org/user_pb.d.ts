@@ -493,6 +493,11 @@ export class GetUserResponse extends jspb.Message {
   getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
   setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
 
+  hasPasswordResetDate(): boolean;
+  clearPasswordResetDate(): void;
+  getPasswordResetDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPasswordResetDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserResponse): GetUserResponse.AsObject;
@@ -536,6 +541,7 @@ export namespace GetUserResponse {
     accountOwner: boolean,
     emailVerified: boolean,
     localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
+    passwordResetDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 
   export class HuntGroup extends jspb.Message {
