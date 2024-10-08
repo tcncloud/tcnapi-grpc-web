@@ -1246,6 +1246,11 @@ export class UserDetails extends jspb.Message {
   getLocalePreferencesOverride(): api_commons_org_preferences_pb.LocalePreferences | undefined;
   setLocalePreferencesOverride(value?: api_commons_org_preferences_pb.LocalePreferences): void;
 
+  hasPasswordResetDate(): boolean;
+  clearPasswordResetDate(): void;
+  getPasswordResetDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPasswordResetDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   clearTrustsList(): void;
   getTrustsList(): Array<api_commons_org_trusts_pb.Trust>;
   setTrustsList(value: Array<api_commons_org_trusts_pb.Trust>): void;
@@ -1295,6 +1300,7 @@ export namespace UserDetails {
     email: string,
     emailVerified: boolean,
     localePreferencesOverride?: api_commons_org_preferences_pb.LocalePreferences.AsObject,
+    passwordResetDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     trustsList: Array<api_commons_org_trusts_pb.Trust.AsObject>,
   }
 }
