@@ -1702,6 +1702,11 @@ export class OmnichannelMessageSentEvent extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
+  hasPayload(): boolean;
+  clearPayload(): void;
+  getPayload(): api_commons_omnichannel_pb.OmniMessagePayload | undefined;
+  setPayload(value?: api_commons_omnichannel_pb.OmniMessagePayload): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OmnichannelMessageSentEvent.AsObject;
   static toObject(includeInstance: boolean, msg: OmnichannelMessageSentEvent): OmnichannelMessageSentEvent.AsObject;
@@ -1722,6 +1727,7 @@ export namespace OmnichannelMessageSentEvent {
     attachmentSize: number,
     senderType: api_commons_omnichannel_pb.OmniSenderTypeMap[keyof api_commons_omnichannel_pb.OmniSenderTypeMap],
     userId: string,
+    payload?: api_commons_omnichannel_pb.OmniMessagePayload.AsObject,
   }
 }
 

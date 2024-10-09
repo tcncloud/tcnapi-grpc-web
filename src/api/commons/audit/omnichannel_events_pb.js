@@ -13192,7 +13192,8 @@ sentTo: jspb.Message.getFieldWithDefault(msg, 4, ""),
 messageSize: jspb.Message.getFieldWithDefault(msg, 5, 0),
 attachmentSize: jspb.Message.getFieldWithDefault(msg, 6, 0),
 senderType: jspb.Message.getFieldWithDefault(msg, 7, 0),
-userId: jspb.Message.getFieldWithDefault(msg, 8, "")
+userId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+payload: (f = msg.getPayload()) && api_commons_omnichannel_pb.OmniMessagePayload.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -13260,6 +13261,11 @@ proto.api.commons.audit.OmnichannelMessageSentEvent.deserializeBinaryFromReader 
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
+      break;
+    case 9:
+      var value = new api_commons_omnichannel_pb.OmniMessagePayload;
+      reader.readMessage(value,api_commons_omnichannel_pb.OmniMessagePayload.deserializeBinaryFromReader);
+      msg.setPayload(value);
       break;
     default:
       reader.skipField();
@@ -13344,6 +13350,14 @@ proto.api.commons.audit.OmnichannelMessageSentEvent.serializeBinaryToWriter = fu
     writer.writeString(
       8,
       f
+    );
+  }
+  f = message.getPayload();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      api_commons_omnichannel_pb.OmniMessagePayload.serializeBinaryToWriter
     );
   }
 };
@@ -13490,6 +13504,43 @@ proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.getUserId = functi
  */
 proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional api.commons.OmniMessagePayload payload = 9;
+ * @return {?proto.api.commons.OmniMessagePayload}
+ */
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.getPayload = function() {
+  return /** @type{?proto.api.commons.OmniMessagePayload} */ (
+    jspb.Message.getWrapperField(this, api_commons_omnichannel_pb.OmniMessagePayload, 9));
+};
+
+
+/**
+ * @param {?proto.api.commons.OmniMessagePayload|undefined} value
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent} returns this
+*/
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.setPayload = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.commons.audit.OmnichannelMessageSentEvent} returns this
+ */
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.clearPayload = function() {
+  return this.setPayload(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.commons.audit.OmnichannelMessageSentEvent.prototype.hasPayload = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
